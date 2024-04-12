@@ -55,7 +55,7 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(linkedinLink).toBeVisible();
     await expect(linkedinLink).toHaveAttribute(
       'href',
-      `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Responsive%20Web%20Design&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=https://freecodecamp.org/certification/certifieduser/responsive-web-design&certId=certifieduser-rwd`
+      `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Responsive%20Web%20Design&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=https://freecodecamp.org/certification/certifieduser/responsive-web-design`
     );
 
     const twitterLink = certLink.getByTestId('twitter-share-btn');
@@ -191,7 +191,7 @@ test.describe('Certification page - Microsoft', () => {
     await expect(linkedinLink).toBeVisible();
     await expect(linkedinLink).toHaveAttribute(
       'href',
-      'https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Foundational%20C%23%20with%20Microsoft&organizationId=4831032&issueYear=2023&issueMonth=9&certUrl=https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft&certId=certifieduser-fcswm'
+      'https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Foundational%20C%23%20with%20Microsoft&organizationId=4831032&issueYear=2023&issueMonth=9&certUrl=https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
     const twitterLink = certLink.getByTestId('twitter-share-btn');

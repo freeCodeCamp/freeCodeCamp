@@ -35,10 +35,8 @@ import {
 import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
-  CertSlug,
   certTypes,
-  certTypeTitleMap,
-  linkedInCredentialIds
+  certTypeTitleMap
 } from '../../../shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import callGA from '../analytics/call-ga';
@@ -50,7 +48,7 @@ const localeCode = getLangCode(clientLocale);
 type Cert = {
   username: string;
   name: string;
-  certSlug: CertSlug;
+  certName: string;
   certTitle: string;
   completionTime: number;
   date: number;
@@ -220,7 +218,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     name: userFullName = null,
     username,
     certTitle,
-    certSlug,
     completionTime
   } = cert;
 
@@ -289,7 +286,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const urlFriendlyCertTitle = encodeURIComponent(certTitle);
-  const linkedInCredentialId = `${username}-${linkedInCredentialIds[certSlug]}`;
 
   const shareCertBtns = (
     <Row className='text-center'>
@@ -300,7 +296,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           variant='primary'
           href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
-          }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
+          }&certUrl=${certURL}`}
           target='_blank'
           data-playwright-test-label='linkedin-share-btn'
         >
