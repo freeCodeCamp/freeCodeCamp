@@ -22,12 +22,15 @@ const LearnAlert = ({
     <Alert variant='info' className='annual-donation-alert'>
       {value && (
         <>
+          <div className='text-center'>
+            <h2>{t('learn.donation-heading')}</h2>
+            <h3>{`${value}%`}</h3>
+          </div>
           <div aria-hidden='true' className='progress-wrapper'>
             <div>
               <ProgressBar now={value} />
             </div>
           </div>
-          <h3 className='text-center'>{`${value}%`}</h3>
         </>
       )}
       <p>{text}</p>
