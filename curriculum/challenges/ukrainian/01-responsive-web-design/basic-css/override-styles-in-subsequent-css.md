@@ -19,7 +19,7 @@ dashedName: override-styles-in-subsequent-css
 
 Застосуйте клас `blue-text` до елемента `h1` на додачу до класу `pink-text` і погляньмо хто ж з них переможе.
 
-Застосувати декілька атрибутів класу до елемента HTML можна за допомогою пробілу між ними таким чином:
+Applying multiple class attributes to an HTML element is done with a space between them like this:
 
 ```html
 class="class1 class2"

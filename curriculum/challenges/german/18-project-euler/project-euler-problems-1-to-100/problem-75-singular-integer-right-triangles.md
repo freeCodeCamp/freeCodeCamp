@@ -8,7 +8,7 @@ dashedName: problem-75-singular-integer-right-triangles
 
 # --description--
 
-It turns out that 12 cm is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are many more examples.
+Es stellt sich heraus, dass 12 cm die kleinste Drahtlänge ist, die so gebogen werden kann, dass sie auf genau eine Weise ein ganzseitiges rechtwinkliges Dreieck bildet, aber es gibt noch viele weitere Beispiele.
 
 <div style='margin-left: 4em;'>
   <strong>12 cm:</strong> (3,4,5)<br>
@@ -25,35 +25,35 @@ In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer
   <strong>120 cm:</strong> (30,40,50), (20,48,52), (24,45,51)<br><br>
 </div>
 
-Given that L is the length of the wire, for how many values of L ≤ `n` can exactly one, integer sided right angle, triangle be formed?
+Wenn L die Länge des Drahtes ist, für wie viele Werte von L ≤ `n` kann genau ein rechtwinkliges Dreieck mit ganzzahligen Seiten gebildet werden?
 
 # --hints--
 
-`singularIntRightTriangles(48)` should return a number.
+`singularIntRightTriangles(48)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof singularIntRightTriangles(48) === 'number');
 ```
 
-`singularIntRightTriangles(48)` should return `6`.
+`singularIntRightTriangles(48)` sollte `6` zurückgeben.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(48), 6);
 ```
 
-`singularIntRightTriangles(700000)` should return `75783`.
+`singularIntRightTriangles(700000)` sollte `75783` zurückgeben.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(700000), 75783);
 ```
 
-`singularIntRightTriangles(1000000)` should return `107876`.
+`singularIntRightTriangles(1000000)` sollte `107876` zurückgeben.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(1000000), 107876);
 ```
 
-`singularIntRightTriangles(1500000)` should return `161667`.
+`singularIntRightTriangles(1500000)` sollte `161667` zurückgeben.
 
 ```js
 assert.strictEqual(singularIntRightTriangles(1500000), 161667);

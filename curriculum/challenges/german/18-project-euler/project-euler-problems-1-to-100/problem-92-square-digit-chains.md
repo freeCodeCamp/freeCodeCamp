@@ -1,6 +1,6 @@
 ---
 id: 5900f3c81000cf542c50fedb
-title: 'Problem 92: Square digit chains'
+title: 'Problem 92: Quadratische Zifferketten'
 challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
@@ -8,44 +8,44 @@ dashedName: problem-92-square-digit-chains
 
 # --description--
 
-A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
+Eine Zahlenkette entsteht, indem das Quadrat der Ziffern einer Zahl so lange hinzugeführt wird, um eine neue Zahl zu bilden, bis sie wieder auftaucht.
 
-For example,
+Zum Beispiel,
 
 $$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
   & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
-Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
+Daher wird jede Kette, die 1 oder 89 erreicht, in einer Endlosschleife feststecken. Am erstaunlichsten ist, dass JEDE Startnummer irgendwann bei 1 oder 89 ankommen wird.
 
-How many starting numbers below `limit` will arrive at 89?
+Wie viele Startnummern unter `limit` werden bei 89 ankommen?
 
 # --hints--
 
-`squareDigitChains(100)` should return a number.
+`squareDigitChains(100)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof squareDigitChains(100) === 'number');
 ```
 
-`squareDigitChains(100)` should return `80`.
+`squareDigitChains(100)` sollte `80` zurückgeben.
 
 ```js
 assert.strictEqual(squareDigitChains(100), 80);
 ```
 
-`squareDigitChains(1000)` should return `857`.
+`squareDigitChains(1000)` sollte `857` zurückgeben.
 
 ```js
 assert.strictEqual(squareDigitChains(1000), 857);
 ```
 
-`squareDigitChains(100000)` should return `85623`.
+`squareDigitChains(100000)` sollte `85623` zurückgeben.
 
 ```js
 assert.strictEqual(squareDigitChains(100000), 85623);
 ```
 
-`squareDigitChains(10000000)` should return `8581146`.
+`squareDigitChains(10000000)` sollte `8581146` zurückgeben.
 
 ```js
 assert.strictEqual(squareDigitChains(10000000), 8581146);

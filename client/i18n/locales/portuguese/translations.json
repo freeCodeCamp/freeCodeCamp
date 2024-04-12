@@ -57,6 +57,7 @@
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
     "check-code-2": "Verifique seu código",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Redefinir",
     "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
@@ -727,7 +728,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "Exemplo de código de {{codeName}}",
-    "opens-new-window": "Abre em uma nova janela"
+    "opens-new-window": "Abre em uma nova janela",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
@@ -1034,8 +1037,9 @@
     "execute-challenge": "Executar desafio",
     "focus-editor": "Foco no editor",
     "focus-instructions-panel": "Foco no painel de instruções",
-    "navigate-previous": "Navegar para o exercício anterior",
-    "navigate-next": "Navegar para o próximo exercício"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Sair da sua conta",

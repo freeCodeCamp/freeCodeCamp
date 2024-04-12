@@ -8,13 +8,13 @@ dashedName: problem-183-maximum-product-of-parts
 
 # --description--
 
-Let $N$ be a positive integer and let $N$ be split into $k$ equal parts, $r = \frac{N}{k}$, so that $N = r + r + \cdots + r$.
+Lasse $N$ eine positive Integer sein und lasse $N$ in $k$ gleiche Teile zerlegen, $r = \frac{N}{k}$, sodass $N = r + r + \cdots + r$.
 
-Let $P$ be the product of these parts, $P = r × r × \cdots × r = r^k$.
+Lasse $P$ das Produkt dieser Teile sein, $P = r × r × \cdots × r = r^k$.
 
-For example, if 11 is split into five equal parts, 11 = 2.2 + 2.2 + 2.2 + 2.2 + 2.2, then $P = {2.2}^5 = 51.53632$.
+Wenn zum Beispiel 11 in fünf gleiche Teile aufgeteilt wird, 11 = 2.2 + 2.2 + 2.2 + 2.2 + 2.2, dann ist $P = {2.2}^5 = 51,53632$.
 
-Let $M(N) = P_{max}$ for a given value of $N$.
+Lass $M(N) = P_{max}$ für einen gegebenen Wert von $N$.
 
 It turns out that the maximum for $N = 11$ is found by splitting eleven into four equal parts which leads to $P_{max} = {(\frac{11}{4})}^4$; that is, $M(11) = \frac{14641}{256} = 57.19140625$, which is a terminating decimal.
 

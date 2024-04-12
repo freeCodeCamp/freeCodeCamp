@@ -1,6 +1,6 @@
 ---
 id: 5900f3ad1000cf542c50fec0
-title: 'Problem 65: Convergents of e'
+title: 'Problem 65: Konvergenzen von e'
 challengeType: 1
 forumTopicId: 302177
 dashedName: problem-65-convergents-of-e
@@ -8,59 +8,59 @@ dashedName: problem-65-convergents-of-e
 
 # --description--
 
-The square root of 2 can be written as an infinite continued fraction.
+Die Quadratwurzel aus 2 kann als unendlicher Kettenbruch geschrieben werden.
 
 $\\sqrt{2} = 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2 + ...}}}}$
 
-The infinite continued fraction can be written, $\\sqrt{2} = \[1; (2)]$ indicates that 2 repeats *ad infinitum*. In a similar way, $\\sqrt{23} = \[4; (1, 3, 1, 8)]$. It turns out that the sequence of partial values of continued fractions for square roots provide the best rational approximations. Let us consider the convergents for $\\sqrt{2}$.
+Der unendliche Kettenbruch kann geschrieben werden: $\\sqrt{2} = \[1; (2)]$ bedeutet, dass sich 2 *ad infinitum* wiederholt. Ähnlich verhält sich $\\sqrt{23} = \[4; (1, 3, 1, 8)]$. Es stellt sich heraus, dass die Abfolge von Teilwerten fortgesetzter Brüche für Quadratwurzeln die besten rationalen Annäherungswerte liefert. Betrachten wir die Konvergenzen für $\\sqrt{2}$.
 
 $1 + \\dfrac{1}{2} = \\dfrac{3}{2}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2}} = \\dfrac{7}{5}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2}}} = \\dfrac{17}{12}\\\\ 1 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2 + \\dfrac{1}{2}}}} = \\dfrac{41}{29}$
 
-Hence the sequence of the first ten convergents for $\\sqrt{2}$ are:
+Die Folge der ersten zehn Konvergenzen für $\\sqrt{2}$ sind also:
 
 $1, \\dfrac{3}{2}, \\dfrac{7}{5}, \\dfrac{17}{12}, \\dfrac{41}{29}, \\dfrac{99}{70}, \\dfrac{239}{169}, \\dfrac{577}{408}, \\dfrac{1393}{985}, \\dfrac{3363}{2378}, ...$
 
-What is most surprising is that the important mathematical constant, $e = \[2; 1, 2, 1, 1, 4, 1, 1, 6, 1, ... , 1, 2k, 1, ...]$. The first ten terms in the sequence of convergents for `e` are:
+Am überraschendsten ist die wichtige mathematische Konstante $e = \[2; 1, 2, 1, 1, 4, 1, 1, 6, 1, ... , 1, 2k, 1, ...]$. Die ersten zehn Begriffe in der Abfolge der Konvergenzen für `e` sind:
 
 $2, 3, \\dfrac{8}{3}, \\dfrac{11}{4}, \\dfrac{19}{7}, \\dfrac{87}{32}, \\dfrac{106}{39}, \\dfrac{193}{71}, \\dfrac{1264}{465}, \\dfrac{1457}{536}, ...$
 
-The sum of digits in the numerator of the 10<sup>th</sup> convergent is $1 + 4 + 5 + 7 = 17$.
+Die Summe der Ziffern im Zähler der 10<sup>th</sup>-Konvergenz ist $1 + 4 + 5 + 7 = 17$.
 
-Find the sum of digits in the numerator of the `n`<sup>th</sup> convergent of the continued fraction for `e`.
+Finde die Summe der Ziffern im Zähler der `n`<sup>th</sup>-Konvergenz des fortgesetzten Bruchs für `e`.
 
 # --hints--
 
-`convergentsOfE(10)` should return a number.
+`convergentsOfE(10)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof convergentsOfE(10) === 'number');
 ```
 
-`convergentsOfE(10)` should return `17`.
+`convergentsOfE(10)` sollte `17` zurückgeben.
 
 ```js
 assert.strictEqual(convergentsOfE(10), 17);
 ```
 
-`convergentsOfE(30)` should return `53`.
+`convergentsOfE(30)` sollte `53` zurückgeben.
 
 ```js
 assert.strictEqual(convergentsOfE(30), 53);
 ```
 
-`convergentsOfE(50)` should return `91`.
+`convergentsOfE(50)` sollte `91` zurückgeben.
 
 ```js
 assert.strictEqual(convergentsOfE(50), 91);
 ```
 
-`convergentsOfE(70)` should return `169`.
+`convergentsOfE(70)` sollte `169` zurückgeben.
 
 ```js
 assert.strictEqual(convergentsOfE(70), 169);
 ```
 
-`convergentsOfE(100)` should return `272`.
+`convergentsOfE(100)` sollte `272` zurückgeben.
 
 ```js
 assert.strictEqual(convergentsOfE(100), 272);
