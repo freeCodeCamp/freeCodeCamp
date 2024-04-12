@@ -1,21 +1,52 @@
 ---
-id: 65f83a7ca7047318e3ccff7c
-title: Step 35
+id: 661890c4abae9f2a0eddad6b
+title: Step 22
 challengeType: 0
-dashedName: step-35
+dashedName: step-22
 ---
 
 # --description--
 
-Returning the `counts` variable was only for testing purposes. Now that you are done testing, remove the `return counts` line from the `getMode` function. 
+In the next few steps, you'll learn how to determine if an array's length is even or odd, as well as how to find the median. You will then be able to apply what you learned to the `getMedian` function.
+
+To check if a number is even or odd, you can use the <dfn>modulus operator</dfn>(`%`). The modulus operator returns the remainder of the division of two numbers. 
+
+Here is an example checking if an array length is even or odd:
+
+```js
+// check if array length is even
+arr.length % 2 === 0;
+
+// check if array length is odd
+arr.length % 2 === 1;
+```
+
+If the remainder is `0`, the number is even. If the remainder is `1`, the number is odd.
+
+Create a variable called `isEven`. Then use the modulus operator to check if the length of the `testArr2` array is even. Assign that expression to the `isEven` variable.
+
+Below your `isEven` variable, log out the `isEven` variable to the console.
+
+Open up the console to see the result. 
 
 # --hints--
 
-You should not have a `return counts` inside your `getMode` function.
+You should have an `isEven` variable.
 
 ```js
-assert.notMatch(getMode.toString(), /return\s+counts\s*;/);
+assert.isDefined(isEven);
+```
 
+You should check if the length of the `testArr2` array is even. Refer back to the example provided for you: `arr.length % 2 === 0;`
+
+```js
+assert.isTrue(isEven);
+```
+
+You should have a `console.log` statement that logs the `isEven` variable.
+
+```js
+assert.match(code, /console\.log\(isEven\)/);
 ```
 
 # --seed--
@@ -107,23 +138,14 @@ input {
 ```js
 const getMean = (array) => array.reduce((acc, el) => acc + el, 0) / array.length;
 
-const getMedian = (array) => {
-  const sorted = array.sort((a, b) => a - b);
-  const median =
-    array.length % 2 === 0
-      ? getMean([sorted[array.length / 2], sorted[array.length / 2 - 1]])
-      : sorted[Math.floor(array.length / 2)];
-  return median;
-}
+--fcc-editable-region--
+const testArr1 = [1, 2, 3, 4, 5];
+const testArr2 = [1, 2, 3, 4, 5, 6];
 
 --fcc-editable-region--
-const getMode = (array) => {
-  const counts = {};
-  array.forEach(el => counts[el] = (counts[el] || 0) + 1)
-  console.log(counts)
-  return counts;
+const getMedian = (array) => {
+  const sorted = array.sort((a, b) => a - b);
 }
---fcc-editable-region--
 
 const calculate = () => {
   const value = document.querySelector("#numbers").value;
@@ -131,11 +153,7 @@ const calculate = () => {
   const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
   
   const mean = getMean(numbers);
-  const median = getMedian(numbers);
 
   document.querySelector("#mean").textContent = mean;
-  document.querySelector("#median").textContent = median;
 }
-
-
 ```
