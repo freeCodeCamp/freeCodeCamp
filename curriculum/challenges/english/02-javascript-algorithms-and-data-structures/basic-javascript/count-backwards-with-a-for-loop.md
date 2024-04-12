@@ -40,7 +40,7 @@ assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 You should be using the array method `push`.
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 `myArray` should equal `[9, 7, 5, 3, 1]`.

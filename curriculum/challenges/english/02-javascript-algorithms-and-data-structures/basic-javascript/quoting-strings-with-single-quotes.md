@@ -57,7 +57,7 @@ assert(
 You should have two single quotes `'` and four double quotes `"`.
 
 ```js
-assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/"/g).length === 4 && __helpers.removeJSComments(code).match(/'/g).length === 2);
 ```
 
 # --seed--

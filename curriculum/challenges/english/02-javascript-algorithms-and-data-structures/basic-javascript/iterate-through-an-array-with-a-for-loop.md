@@ -30,7 +30,7 @@ Declare and initialize a variable `total` to `0`. Use a `for` loop to add the va
 `total` should be declared and initialized to 0.
 
 ```js
-assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
 ```
 
 `total` should equal 20.

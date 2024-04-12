@@ -47,7 +47,7 @@ assert(myStr === 'This is the start. This is the end.');
 You should use the `+` operator to build `myStr`.
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
 `myStr` should be created using the `const` keyword.

@@ -57,7 +57,7 @@ assert(!/if/g.test(__helpers.removeJSComments(code)));
 You should have at least four `break` statements
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` should return the string `Marley`

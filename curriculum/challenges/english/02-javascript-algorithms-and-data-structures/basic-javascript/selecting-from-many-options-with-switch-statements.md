@@ -69,7 +69,7 @@ assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.
 You should have at least 3 `break` statements
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

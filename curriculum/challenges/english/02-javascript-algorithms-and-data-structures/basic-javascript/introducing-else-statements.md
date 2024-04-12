@@ -28,7 +28,7 @@ Combine the `if` statements into a single `if/else` statement.
 You should only have one `if` statement in the editor
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 You should use an `else` statement

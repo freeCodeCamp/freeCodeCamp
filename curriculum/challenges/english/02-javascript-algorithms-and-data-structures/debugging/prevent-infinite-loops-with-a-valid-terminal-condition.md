@@ -31,13 +31,13 @@ The `myFunc()` function contains an infinite loop because the terminal condition
 Your code should change the comparison operator in the terminal condition (the middle part) of the `for` loop.
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 Your code should fix the comparison operator in the terminal condition of the loop.
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

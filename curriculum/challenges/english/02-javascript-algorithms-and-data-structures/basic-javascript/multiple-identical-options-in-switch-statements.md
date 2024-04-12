@@ -100,7 +100,7 @@ assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.
 You should have nine `case` statements
 
 ```js
-assert(code.match(/case/g).length === 9);
+assert(__helpers.removeJSComments(code).match(/case/g).length === 9);
 ```
 
 # --seed--

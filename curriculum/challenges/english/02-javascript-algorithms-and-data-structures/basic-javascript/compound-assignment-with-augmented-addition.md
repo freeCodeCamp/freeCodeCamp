@@ -54,7 +54,7 @@ assert(c === 19);
 You should use the `+=` operator for each variable.
 
 ```js
-assert(code.match(/\+=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/\+=/g).length === 3);
 ```
 
 You should not modify the code above the specified comment.

@@ -56,7 +56,7 @@ assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/half=
 Destructured parameter should be used.
 
 ```js
-assert(!code.match(/stats\.max|stats\.min/));
+assert(!__helpers.removeJSComments(code).match(/stats\.max|stats\.min/));
 ```
 
 # --seed--
