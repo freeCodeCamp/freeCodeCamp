@@ -1186,6 +1186,12 @@
       "top-learn-data-types-and-conditionals": {
         "title": "Learn Data Types and Conditionals",
         "intro": ["Learn about data types and conditionals in JavaScript."]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Project",
+        "intro": [
+          "Put your JavaScript skills to the test by building a basic function project. This hands-on project allows you to apply your knowledge and create a functional web page while reinforcing key concepts of JavaScript programming."
+        ]
       }
     }
   },
