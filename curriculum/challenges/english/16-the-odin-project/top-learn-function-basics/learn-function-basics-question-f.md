@@ -1,16 +1,17 @@
 ---
 id: 6617aef85b87c334e7ae8017
-title: Learn Function Basics Questions F
+title: Learn Function Basics Question F
 challengeType: 15
-dashedName: learn-function-basics-questions-f
+dashedName: learn-function-basics-question-f
 ---
+
 # --description--
 
 Arrow functions are a more modern way to write functions in JavaScript. They provide a more compact syntax compared to traditional function expressions. Arrow functions are defined using the `=>` syntax. 
 
 ```js
 const add = (a, b) => {
-    return a + b;
+  return a + b;
 }
 ```
 
