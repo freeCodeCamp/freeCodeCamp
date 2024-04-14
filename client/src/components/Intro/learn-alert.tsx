@@ -24,7 +24,7 @@ const LearnAlert = ({
         <>
           <div className='text-center'>
             <h2>{t('learn.donation-heading')}</h2>
-            <h3>{`${value}%`}</h3>
+            <p className='m-0'>{`${value}%`}</p>
           </div>
           <div aria-hidden='true' className='progress-wrapper'>
             <div>
