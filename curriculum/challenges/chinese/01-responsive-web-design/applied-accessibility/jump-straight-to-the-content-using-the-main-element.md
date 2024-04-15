@@ -29,7 +29,7 @@ Camper Cat 对他的忍者武器页面有一些新的想法。 请帮他在 `hea
 assert($('main').length == 1);
 ```
 
-`main` 标签应位于 `header` 标签与 `footer` 标签之间。
+`main` 标签应位于 `header` 结束标签与 `footer` 开始标签之间。
 
 ```js
 assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi));
