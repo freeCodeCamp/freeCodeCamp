@@ -34,10 +34,10 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const generateSearchLink = (title: string, block: string) => {
+export const generateSearchLink = (title: string, block: string) => {
   const blockWithoutHyphens = block.replace(/-/g, ' ');
 
-  const query = /^step\s*\d*$/i.test(title)
+  const query = /^(step|task)\s*\d*$/i.test(title)
     ? encodeURIComponent(`${blockWithoutHyphens} - ${title}`)
     : encodeURIComponent(title);
   const search = `${forumLocation}/search?q=${query}`;
