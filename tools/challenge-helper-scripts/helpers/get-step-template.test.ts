@@ -48,7 +48,8 @@ Test 1
           tail: ''
         }
       },
-      stepNum: 5
+      stepNum: 5,
+      challengeType: 0
     };
 
     expect(getStepTemplate(props)).toEqual(baseOutput);

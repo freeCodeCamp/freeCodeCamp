@@ -57,6 +57,7 @@
     "run-test": "تشغيل الاختبارات (Ctrl + Enter)",
     "check-code": "تيقن من كودك (Ctrl + Enter)",
     "check-code-2": "تيقن من كودك",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "إعادة ضبط",
     "reset-step": "إعادة الخطوة إلى حالتها الأولية",
     "help": "مساعدة",
@@ -727,7 +728,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} مثال على الكود",
-    "opens-new-window": "فتح في نافذة جديدة"
+    "opens-new-window": "فتح في نافذة جديدة",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "للمطالبة بشهادة، يجب عليك أولاً الموافقة على سياسة للصدق الأكاديمي",
@@ -1034,8 +1037,9 @@
     "execute-challenge": "تنفيذ التحدي",
     "focus-editor": "ركز على محرر الكود",
     "focus-instructions-panel": "ركز على لوحة تعليمات",
-    "navigate-previous": "تنقل إلى التمرين السابق",
-    "navigate-next": "تنقل إلى التمرين التالي"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "تسجيل الخروج من حسابك",

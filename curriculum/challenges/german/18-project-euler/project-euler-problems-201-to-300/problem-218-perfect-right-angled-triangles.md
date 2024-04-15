@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff59
-title: 'Problem 218: Perfect right-angled triangles'
+title: 'Problem 218: Perfekte rechtwinklige Dreiecke'
 challengeType: 1
 forumTopicId: 301860
 dashedName: problem-218-perfect-right-angled-triangles
@@ -8,29 +8,29 @@ dashedName: problem-218-perfect-right-angled-triangles
 
 # --description--
 
-Consider the right-angled triangle with sides $a=7$, $b=24$ and $c=25$.
+Betrachte das rechtwinklige Dreieck mit den Seiten $a=7$, $b=24$ und $c=25$.
 
-The area of this triangle is 84, which is divisible by the perfect numbers 6 and 28.
+Die Fläche dieses Dreiecks beträgt 84, was durch die perfekten Zahlen 6 und 28 teilbar ist.
 
-Moreover it is a primitive right-angled triangle as $gcd(a,b) = 1$ and $gcd(b,c) = 1$.
+Außerdem ist es ein primitives rechtwinkliges Dreieck, wie $gcd(a,b) = 1$ und $gcd(b,c) = 1$.
 
-Also $c$ is a perfect square.
+Auch $c$ ist ein perfektes Quadrat.
 
-We will call a right-angled triangle perfect if:
+Wir nennen ein rechtwinkliges Dreieck perfekt, wenn:
 
-- it is a primitive right-angled triangle
-- its hypotenuse is a perfect square
+- es ein primitives rechtwinkliges Dreieck ist
+- seine Hypotenuse ein perfektes Quadrat ist
 
 We will call a right-angled triangle super-perfect if:
 
-- it is a perfect right-angled triangle
-- its area is a multiple of the perfect numbers 6 and 28.
+- es ein perfektes rechtwinkliges Dreieck ist
+- seine Fläche ein Vielfaches der perfekten Zahlen 6 und 28 ist.
 
-How many perfect right-angled triangles with $c ≤ {10}^{16}$ exist that are not super-perfect?
+Wie viele perfekte rechtwinklige Dreiecke mit $c ≤ {10}^{16}$ gibt es, die nicht super-perfekt sind?
 
 # --hints--
 
-`perfectRightAngledTriangles()` should return `0`.
+`perfectRightAngledTriangles()` sollte `0` zurückgeben.
 
 ```js
 assert.strictEqual(perfectRightAngledTriangles(), 0);

@@ -1,43 +1,9 @@
-.completion-message {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.completion-modal-body {
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.video-modal-body {
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding-inline-start: 30px;
-}
-
-.completion-challenge-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
 .completion-success-icon {
   width: 200px;
   height: 200px;
   transform: scale(1.5);
   opacity: 0;
   animation: success-icon-animation 150ms linear 100ms forwards;
-}
-
-.challenge-success-modal .btn-cta-big {
-  max-width: 100%;
-  font-size: 1.3rem;
 }
 
 @keyframes success-icon-animation {
@@ -55,7 +21,6 @@
   justify-content: space-between;
   width: 100%;
   gap: 0.5rem;
-  max-width: 500px;
 }
 
 .completion-block-name {

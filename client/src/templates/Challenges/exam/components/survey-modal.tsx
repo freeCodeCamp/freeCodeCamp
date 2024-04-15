@@ -1,8 +1,8 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Modal } from '@freecodecamp/ui';
 
 import { closeModal } from '../../redux/actions';
 import { isSurveyModalOpenSelector } from '../../redux/selectors';
@@ -39,11 +39,8 @@ function SurveyModal({
 }: SurveyModalProps): JSX.Element {
   return (
     <Modal
-      animation={false}
-      dialogClassName='survey-modal'
-      keyboard={true}
-      onHide={() => (isProcessing ? '' : closeSurveyModal())}
-      show={isSurveyModalOpen}
+      onClose={() => (isProcessing ? '' : closeSurveyModal())}
+      open={isSurveyModalOpen}
     >
       <FoundationalCSharpSurvey />
     </Modal>

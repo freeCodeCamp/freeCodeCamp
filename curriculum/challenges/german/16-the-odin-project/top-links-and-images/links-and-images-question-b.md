@@ -15,38 +15,46 @@ Um die Verwendung von Links und Bildern in dieser Lektion zu üben, benötigst d
 
 - Fülle das übliche HTML-Boilerplate aus.
 
-- Füge schließlich den folgenden `h1` zum `body` hinzu: `<h1>Homepage</h1>`
+- Finally, add the following `h1` to the `body`: `<h1>Homepage</h1>`
 
 ## Ankerelemente
-Um einen Link in HTML zu erstellen, verwendest du ein Ankerelement. Ein Anchor-Element wird definiert, indem man den Text oder ein anderes HTML-Element, welches ein Link sein soll, mit einem `<a>`-Tag umgibt. Füge das Folgende dem `body` der von dir erstellten `index.html`-Seite hinzu und öffne sie im Browser:
+Um einen Link in HTML zu erstellen, verwendest du ein Ankerelement. Ein Anchor-Element wird definiert, indem man den Text oder ein anderes HTML-Element, welches ein Link sein soll, mit einem `<a>`-Tag umgibt.
+
+Add the following to the `body` of the `index.html` page you created and open it in the browser:
 
 ```html
 <a>click me</a>
 ```
 
-Vielleicht hast du bemerkt, dass ein Klick auf diesen Link nichts bewirkt. Dies liegt daran, dass ein Ankertag von sich aus nicht weiß, wohin du verlinken willst. Du musst ihm ein Ziel mitteilen, zu dem er führen soll. Dies kannst du mit einem HTML-Attribut tun. Ein HTML-Attribut gibt einem HTML-Element zusätzliche Informationen und steht immer im öffnenden Tag des Elements. Ein Attribut besteht normalerweise aus zwei Teilen: einem Namen und einem Wert; jedoch benötigen nicht alle Attribute einen Wert. In deinem Fall musst du ein `href` (hyperlink reference)-Attribut zum öffnenden Ankertag hinzufügen. Der Wert des `href`-Attributs ist das Ziel, zu dem dein Link führen soll. Füge das folgende `href`-Attribut zu dem zuvor von dir erstellten Ankerelement hinzu und versuche es erneut anzuklicken. Denke daran, den Browser zu aktualisieren, damit die neuen Änderungen übernommen werden können.
+You may have noticed that clicking this link doesn’t do anything. This is because an anchor tag on its own won’t know where you want to link to. You have to tell it a destination to go to. You do this by using an HTML attribute.
+
+An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag. An attribute is usually made up of two parts: a name, and a value; however, not all attributes require a value. In your case, you need to add an `href` (hyperlink reference) attribute to the opening anchor tag. The value of the `href` attribute is the destination you want your link to go to.
+
+Add the following `href` attribute to the anchor element you created previously and try clicking it again, don’t forget to refresh the browser so the new changes can be applied.
 
 ```html
 <a href="https://www.theodinproject.com/about">click me</a>
 ```
 
-By default, any text wrapped with an anchor tag without a `href` attribute will look like plain text. Wenn das `href`-Attribut vorhanden ist, wird der Browser den Text blau färben und ihn unterstreichen, um zu signalisieren, dass es sich um einen Link handelt. Es ist erwähnenswert, dass du Anker-Tags verwenden kannst, um auf jede Art von Ressource im Internet zu verlinken, und nicht nur auf andere HTML-Dokumente. Du kannst auf Videos, PDF-Dateien, Bilder usw. verlinken, aber größtenteils wirst du auf andere HTML-Dokumente verlinken.
+By default, any text wrapped with an anchor tag without an `href` attribute will look like plain text. If the `href` attribute is present, the browser will give the text a blue color and underline it to signify it is a link.
+
+It’s worth noting you can use anchor tags to link to any kind of resource on the internet, not just other HTML documents. You can link to videos, pdf files, images, and so on, but for the most part, you will be linking to other HTML documents.
 
 # --question--
 ## --text--
 
-Was ist ein Attribut?
+What is an attribute?
 ## --answers--
 
-Ein HTML-Attribut gibt einem HTML-Element zusätzliche Informationen und steht immer im abschließenden Tag des Elements.
+An HTML attribute gives additional information to an HTML element and always goes in the element’s closing tag.
 
 ---
 
-Ein HTML-Attribut wird verwendet, um dem Browser mitzuteilen, was das Element enthält.
+An HTML attribute is used to tell the browser what the element contains.
 
 ---
 
-Ein HTML-Attribut gibt einem HTML-Element zusätzliche Informationen und steht immer im öffnenden Tag des Elements.
+An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag.
 
 
 ## --video-solution--

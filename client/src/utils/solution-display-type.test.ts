@@ -23,7 +23,7 @@ describe('getSolutionDisplayType', () => {
       'showMultifileProjectSolution'
     );
     expect(getSolutionDisplayType(multifilePythonSolution)).toBe(
-      'showMultifileProjectSolution'
+      'showUserCode'
     );
   });
   it('should handle solutions with a single valid url', () => {
