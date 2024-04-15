@@ -1185,6 +1185,10 @@
       "top-learn-data-types-and-conditionals": {
         "title": "學習數據類型和條件",
         "intro": ["在 JavaScript 中學習數據類型和條件"]
+      },
+      "top-learn-function-basics": {
+        "title": "Learn Function Basics",
+        "intro": ["Learn about functions in JavaScript."]
       }
     }
   },
