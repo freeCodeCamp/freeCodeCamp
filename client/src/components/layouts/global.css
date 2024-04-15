@@ -1,3 +1,12 @@
+*,
+::before,
+::after {
+  /* Override the browser default border width in order to style individual border sides
+   * Ref: https://stackoverflow.com/a/76961084
+   */
+  border-width: 0;
+}
+
 html {
   height: 100%;
   font-size: 18px;
@@ -27,11 +36,8 @@ body {
   height: 100%;
 }
 
-.codeally-frame {
-  display: block;
-  height: calc(100vh - var(--header-height));
-  width: 100%;
-  border: 0;
+.page-wrapper-80 {
+  min-height: 80vh;
 }
 
 .btn-cta-big {
@@ -69,28 +75,19 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: var(--font-family-monospace);
   margin: 0 0 0.6rem;
-}
-
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-monospace);
 }
 
 h4,
@@ -265,6 +262,8 @@ input[type='submit']:hover,
   color: var(--secondary-background);
 }
 
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn,
@@ -286,16 +285,14 @@ fieldset[disabled] .btn-primary.focus {
 .btn-cta {
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
-  border-width: 3px;
-  border-color: #feac32;
+  border: 3px solid #feac32;
   color: #0a0a23 !important;
 }
 .btn-cta:hover,
 .btn-cta:focus,
 .btn-cta:active:hover {
   background-color: #fecc4c !important;
-  border-width: 3px;
-  border-color: #f1a02a;
+  border: 3px solid #f1a02a;
   background-image: none;
   color: #0a0a23 !important;
 }
@@ -480,32 +477,6 @@ hr {
   color: var(--secondary-background);
 }
 
-.challenge-instructions table {
-  display: inline-block;
-  overflow: auto;
-}
-
-.challenge-instructions table thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-.challenge-instructions table th {
-  font-weight: 700;
-}
-
-.challenge-instructions table th,
-.challenge-instructions table td {
-  padding: 6px 13px;
-  border: 1px solid var(--secondary-color);
-  text-align: center;
-}
-
-.challenge-instructions table tbody tr:nth-of-type(odd) {
-  background-color: var(--tertiary-background);
-}
-
 .challenge-output span {
   font-size: 1rem;
 }
@@ -545,9 +516,9 @@ blockquote .small {
 
 .alert .btn,
 [role='alert'] .btn {
-  background-color: #d9edf7;
-  color: #31708f;
-  border-color: #31708f;
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
 }
 .alert .btn:hover,
 .alert .btn:focus,
@@ -595,4 +566,15 @@ blockquote .small {
 .sr-only {
   color: white;
   background-color: black;
+}
+
+/* 
+ * /learn sets some default styles to all `h2`s.
+ * These rules are to override the defaults and apply danger styles to `danger` modal.
+ */
+#headlessui-portal-root h2 {
+  font-weight: normal;
+}
+#headlessui-portal-root .text-background-danger h2 {
+  color: var(--background-danger);
 }

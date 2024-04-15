@@ -170,6 +170,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
       challengeOrder === 0 &&
       usesMultifileEditor &&
       challengeType !== challengeTypes.multifileCertProject &&
+      challengeType !== challengeTypes.multifilePythonCertProject &&
       // TODO: revert this to enable project previews for python challenges
       challengeType !== challengeTypes.python,
     challengeData: {

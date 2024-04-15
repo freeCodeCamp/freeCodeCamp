@@ -20,23 +20,39 @@ import {
 import {
   canFocusEditorSelector,
   challengeFilesSelector,
-  challengeTestsSelector
+  challengeTestsSelector,
+  isHelpModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
+  isResetModalOpenSelector,
+  isShortcutsModalOpenSelector
 } from '../redux/selectors';
 import './hotkeys.css';
-import { isFinalProject } from '../../../../../shared/config/challenge-types';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
 
 const mapStateToProps = createSelector(
+  isHelpModalOpenSelector,
+  isResetModalOpenSelector,
+  isShortcutsModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
   canFocusEditorSelector,
   challengeFilesSelector,
   challengeTestsSelector,
   userSelector,
   (
+    isHelpModalOpen: boolean,
+    isResetModalOpen: boolean,
+    isShortcutsModalOpen: boolean,
+    isProjectPreviewModalOpen: boolean,
     canFocusEditor: boolean,
     challengeFiles: ChallengeFiles,
     tests: Test[],
     user: User
   ) => ({
+    isHelpModalOpen,
+    isResetModalOpen,
+    isShortcutsModalOpen,
+    isProjectPreviewModalOpen,
     canFocusEditor,
     challengeFiles,
     tests,
@@ -49,16 +65,6 @@ const mapDispatchToProps = {
   submitChallenge,
   openShortcutsModal: () => openModal('shortcuts'),
   setIsAdvancing
-};
-
-const keyMap = {
-  navigationMode: 'escape',
-  executeChallenge: ['ctrl+enter', 'command+enter'],
-  focusEditor: 'e',
-  focusInstructionsPanel: 'r',
-  navigatePrev: ['p'],
-  navigateNext: ['n'],
-  showShortcuts: 'shift+/'
 };
 
 export type HotkeysProps = Pick<
@@ -79,12 +85,17 @@ export type HotkeysProps = Pick<
     | 'submitChallenge'
     | 'setEditorFocusability'
   > & {
+    isHelpModalOpen?: boolean;
+    isResetModalOpen?: boolean;
+    isShortcutsModalOpen?: boolean;
+    isProjectPreviewModalOpen?: boolean;
     canFocusEditor: boolean;
     children: React.ReactElement;
     instructionsPanelRef?: React.RefObject<HTMLElement>;
     setEditorFocusability: (arg0: boolean) => void;
     setIsAdvancing: (arg0: boolean) => void;
     openShortcutsModal: () => void;
+    playScene?: () => void;
     user: User;
   };
 
@@ -104,8 +115,34 @@ function Hotkeys({
   tests,
   usesMultifileEditor,
   openShortcutsModal,
-  user: { keyboardShortcuts }
+  playScene,
+  user: { keyboardShortcuts },
+  isHelpModalOpen,
+  isResetModalOpen,
+  isShortcutsModalOpen,
+  isProjectPreviewModalOpen
 }: HotkeysProps): JSX.Element {
+  const isModalOpen = [
+    isHelpModalOpen,
+    isResetModalOpen,
+    isShortcutsModalOpen,
+    isProjectPreviewModalOpen
+  ].some(Boolean);
+
+  const keyMap = {
+    // The Modal component needs to listen to the 'Escape' keypress event
+    // in order to close itself when the key is press.
+    // Therefore, we don't want HotKeys to hijack the 'escape' event when a modal is open.
+    navigationMode: isModalOpen ? '' : 'escape',
+    executeChallenge: ['ctrl+enter', 'command+enter'],
+    focusEditor: 'e',
+    focusInstructionsPanel: 'r',
+    navigatePrev: ['p'],
+    navigateNext: ['n'],
+    showShortcuts: 'shift+/',
+    playScene: ['ctrl+space']
+  };
+
   const handlers = {
     executeChallenge: (keyEvent?: KeyboardEvent) => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
@@ -121,7 +158,7 @@ function Hotkeys({
       if (
         usesMultifileEditor &&
         typeof challengeType == 'number' &&
-        !isFinalProject(challengeType)
+        !isProjectBased(challengeType)
       ) {
         if (testsArePassing) {
           submitChallenge();
@@ -134,6 +171,11 @@ function Hotkeys({
     },
     ...(keyboardShortcuts
       ? {
+          showShortcuts: (keyEvent?: KeyboardEvent) => {
+            if (keyEvent?.key === '?') {
+              openShortcutsModal();
+            }
+          },
           focusEditor: (keyEvent?: KeyboardEvent) => {
             keyEvent?.preventDefault();
             if (editorRef && editorRef.current) {
@@ -166,10 +208,9 @@ function Hotkeys({
               }
             }
           },
-          showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (!canFocusEditor && keyEvent?.shiftKey && keyEvent.key === '?') {
-              openShortcutsModal();
-            }
+          playScene: () => {
+            if (!playScene) return;
+            playScene();
           }
         }
       : {})

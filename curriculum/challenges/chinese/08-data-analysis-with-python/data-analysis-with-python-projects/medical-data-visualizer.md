@@ -8,22 +8,17 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
-
--   首先在 Replit 中导入项目。
--   接着，你将看到一个 `.replit` 窗口。
--   选择 `Use run command` 并点击 `Done` 按钮。
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-medical-data-visualizer/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">每个人视频课程的 Python</a> (14小时)
 
 - <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">如何使用 Python Pandas 分析数据</a>（10 小时）
 
 # --instructions--
 
-在本项目中，您将使用 matplotlib、seaborn 和 pandas 来对体检数据进行可视化和计算。 数据集的数值是从体检中收集的。
+In this project, you will visualize and make calculations from medical examination data using `matplotlib`, `seaborn`, and `pandas`. 数据集的数值是从体检中收集的。
 
 ## 数据说明
 
@@ -48,32 +43,56 @@ dashedName: medical-data-visualizer
 
 ## 任务
 
-创建一个类似于 `examples/Figure_1.png` 的图表，其中我们显示 `cholesterol`、`gluc`、`alco`、`active` 和 `smoke` 变量，用于不同面板中 heart=1 和 heart=0 的患者。
+Create a chart similar to `examples/Figure_1.png`, where we show the counts of good and bad outcomes for the `cholesterol`, `gluc`, `alco`, `active`, and `smoke` variables for patients with `cardio=1` and `cardio=0` in different panels.
 
 在 `medical_data_visualizer.py` 中使用数据完成以下任务：
 
-- 给数据添加一列 `overweight`。 要确定一个人是否超重，首先通过将他们的体重（公斤）除以他们的身高（米）的平方来计算他们的 BMI。 如果该值是 > 25，则此人超重。 使用值 0 表示不超重，使用值 1 表示超重。
-- 使用 0 表示好的和 1 表示坏，来规范化数据。 如果 `cholesterol` 或 `gluc` 的值为 1，则将值设为 0。 如果值大于 1，则将值设为 1。
-- 将数据转换为长格式并使用 seaborn 的 `catplot()` 创建一个显示分类特征值计数的图表。 数据集应按 “Cardio” 拆分，因此每个 `cardio` 值都有一个图表。 该图表应该看起来像 `examples/Figure_1.png`。
+- 给数据添加一列 `overweight`。 要确定一个人是否超重，首先通过将他们的体重（公斤）除以他们的身高（米）的平方来计算他们的 BMI。 如果该值是 > 25，则此人超重。 Use the value `0` for NOT overweight and the value `1` for overweight.
+- Normalize the data by making `0` always good and `1` always bad. If the value of `cholesterol` or `gluc` is `1`, make the value `0`. If the value is more than `1`, make the value `1`.
+- Convert the data into long format and create a chart that shows the value counts of the categorical features using `seaborn`'s `catplot()`. The dataset should be split by `Cardio` so there is one chart for each `cardio` value. 该图表应该看起来像 `examples/Figure_1.png`。
 - 清理数据。 过滤掉以下代表不正确数据的患者段：
   - 舒张压高于收缩压（使用 `(df['ap_lo'] <= df['ap_hi'])` 保留正确的数据）
   - 高度小于第 2.5 个百分位数（使用 `(df['height'] >= df['height'].quantile(0.025))` 保留正确的数据）
   - 身高超过第 97.5 个百分位
   - 体重小于第 2.5 个百分位
   - 体重超过第 97.5 个百分位
-- 使用数据集创建相关矩阵。 使用 seaborn 的 `heatmap()` 绘制相关矩阵。 遮罩上三角。 该图表应类似于 `examples/Figure_2.png`。
+- 使用数据集创建相关矩阵。 Plot the correlation matrix using `seaborn`'s `heatmap()`. 遮罩上三角。 该图表应类似于 `examples/Figure_2.png`。
 
 每当变量设置为 `None` 时，请确保将其设置为正确的代码。
 
-单元测试是在 `test_module.py` 下为你编写的。
+Unit tests are written for you under `test_module.py`.
+
+## Instructions
+By each number in the `medical_data_visualizer.py` file, add the code from the associated instruction number below.
+
+1. Import the data from `medical_examination.csv` and assign it to the `df` variable
+2. Create the `overweight` column in the `df` variable
+3. Normalize data by making `0` always good and `1` always bad. If the value of `cholesterol` or `gluc` is 1, set the value to `0`. If the value is more than `1`, set the value to `1`.
+4. Draw the Categorical Plot in the `draw_cat_plot` function
+5. Create a DataFrame for the cat plot using `pd.melt` with values from `cholesterol`, `gluc`, `smoke`, `alco`, `active`, and `overweight` in the `df_cat` variable.
+6. Group and reformat the data in `df_cat` to split it by `cardio`. Show the counts of each feature. You will have to rename one of the columns for the `catplot` to work correctly.
+7. Convert the data into `long` format and create a chart that shows the value counts of the categorical features using the following method provided by the seaborn library import : `sns.catplot()`
+8. Get the figure for the output and store it in the `fig` variable
+9. Do not modify the next two lines
+10. Draw the Heat Map in the `draw_heat_map` function
+11. Clean the data in the `df_heat` variable by filtering out the following patient segments that represent incorrect data:
+    - height is less than the 2.5th percentile (Keep the correct data with `(df['height'] >= df['height'].quantile(0.025))`)
+    - height is more than the 97.5th percentile
+    - weight is less than the 2.5th percentile
+    - weight is more than the 97.5th percentile
+12. Calculate the correlation matrix and store it in the `corr` variable
+13. Generate a mask for the upper triangle and store it in the `mask` variable
+14. Set up the `matplotlib` figure
+15. Plot the correlation matrix using the method provided by the `seaborn` library import: `sns.heatmap()`
+16. Do not modify the next two lines
 
 ## 开发
 
-对于开发，你可以使用 `main.py` 来测试你的函数。 单击“运行”按钮，`main.py` 将运行。
+Write your code in `medical_data_visualizer.py`. For development, you can use `main.py` to test your code.
 
 ## 测试
 
-为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。 只要你点击“运行”按钮，测试就会自动运行。
+The unit tests for this project are in `test_module.py`. 为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。
 
 ## 提交
 

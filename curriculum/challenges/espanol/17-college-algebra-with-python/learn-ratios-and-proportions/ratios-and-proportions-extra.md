@@ -10,7 +10,7 @@ dashedName: ratios-and-proportions-extra
 
 The last video in this section will show you how to use proportions in other applications, such as currency exchange rates and unit conversion. It will also show you more about setting up your notebook and working through the practice assignment.
 
-# --assignment--
+# --tarea--
 
 Open the following Colab notebook, run the cell, and <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">practice solving one-step algebra problems.</a> As a bonus, look at the code that generates the practice problems.
 

@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
 let page: Page;
 
@@ -10,9 +10,22 @@ test.beforeAll(async ({ browser }) => {
 });
 
 test.describe('Progress bar component', () => {
-  test('Should appear with the correct content after the user has submitted their code', async () => {
+  test('Should appear with the correct content after the user has submitted their code', async ({
+    isMobile,
+    browserName
+  }) => {
     const monacoEditor = page.getByLabel('Editor content');
-    await monacoEditor.click();
+
+    // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
+    // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
+    // in place of `.click()` to focus on the editor.
+    // Ref: https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+    if (isMobile && browserName === 'webkit') {
+      await monacoEditor.focus();
+    } else {
+      await monacoEditor.click();
+    }
+
     await page.keyboard.press('Control+A');
     //Meta + A works in webkit
     await page.keyboard.press('Meta+A');
@@ -21,9 +34,8 @@ test.describe('Progress bar component', () => {
     await page.keyboard.insertText(
       '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2></body></html>'
     );
-    await page
-      .getByRole('button', { name: 'Check Your Code (Ctrl + Enter)' })
-      .click();
+
+    await page.getByRole('button', { name: 'Check Your Code' }).click();
 
     const progressBarContainer = page.getByTestId('progress-bar-container');
     await expect(progressBarContainer).toContainText(

@@ -8,7 +8,7 @@ dashedName: disable-client-side-caching-with-helmet-nocache
 
 # --description--
 
-Como recordatorio, este proyecto está siendo construído en base al siguiente proyecto iniciado en <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Si esta lanzando una actualización para su sitio web, y quiere que los usuarios siempre descarguen la versión más reciente, puede (intentar) desactivar la cache en el navegador del cliente. Puede ser útil también en desarrollo. El almacenamiento de cache tiene beneficios de rendimiento, los cuales perderás, así que solo usa está opción cuando haya una necesidad real.
 

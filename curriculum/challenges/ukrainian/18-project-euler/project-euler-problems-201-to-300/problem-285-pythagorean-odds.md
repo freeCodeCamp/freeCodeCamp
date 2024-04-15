@@ -1,6 +1,6 @@
 ---
 id: 5900f48a1000cf542c50ff9c
-title: 'Problem 285: Pythagorean odds'
+title: 'Завдання 285: коефіцієнт Піфагора'
 challengeType: 1
 forumTopicId: 301936
 dashedName: problem-285-pythagorean-odds
@@ -8,15 +8,15 @@ dashedName: problem-285-pythagorean-odds
 
 # --description--
 
-Albert chooses a positive integer $k$, then two real numbers $a$, $b$ are randomly chosen in the interval [0,1] with uniform distribution.
+Альберт обирає натуральне число $k$, після чого два дійсних числа $a$ та $b$ випадково обираються з рівномірним розподілом з інтервалу [0,1].
 
-The square root of the sum ${(ka + 1)}^2 + {(kb + 1)}^2$ is then computed and rounded to the nearest integer. If the result is equal to $k$, he scores $k$ points; otherwise he scores nothing.
+Потім вираховують квадратний корінь суми ${(ka + 1)}^2 + {(kb + 1)}^2$ та округлюють його до найближчого цілого числа. Якщо результат дорівнює $k$, він отримує $k$ балів; в іншому випадку — нічого.
 
-Наприклад, якщо $k = 6$, $a = 0.2$ та $b = 0.85$, то ${(ka + 1)}^2 + {(kb + 1)}^2 = 42.05$. The square root of 42.05 is 6.484... and when rounded to the nearest integer, it becomes 6. This is equal to $k$, so he scores 6 points.
+Наприклад, якщо $k = 6$, $a = 0.2$ та $b = 0.85$, то ${(ka + 1)}^2 + {(kb + 1)}^2 = 42.05$. Квадратним коренем з 42.05 є 6.484..., а якщо його округлити до найближчого цілого числа, він дорівнюватиме 6. Отримане число дорівнює $k$, тому Альберт отримує 6 балів.
 
-It can be shown that if he plays 10 turns with $k = 1, k = 2, \ldots, k = 10$, the expected value of his total score, rounded to five decimal places, is 10.20914.
+Можна довести, що якщо Альберт зіграє 10 разів підряд за умови $k = 1, k = 2, \ldots, k = 10$, то очікуваним значенням загального балу, округленим до п’яти знаків після коми, буде 10.20914.
 
-If he plays ${10}^5$ turns with $k = 1, k = 2, k = 3, \ldots, k = {10}^5$, what is the expected value of his total score, rounded to five decimal places?
+Чому дорівнюватиме очікуване значення загального балу, округлене до п’яти знаків після коми, якщо він зіграє ${10}^5$ разів за умови $k = 1, k = 2, k = 3, \ldots, k = {10}^5$?
 
 # --hints--
 

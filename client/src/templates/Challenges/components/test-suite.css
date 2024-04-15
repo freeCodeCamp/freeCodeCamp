@@ -20,6 +20,7 @@
   display: flex;
   width: 100%;
   align-items: center;
+  line-height: 1.5;
 }
 
 .test-result:nth-child(odd) {

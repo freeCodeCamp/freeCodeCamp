@@ -5,6 +5,7 @@ export const savedChallengesSelector = state =>
   userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const userIdSelector = state => userSelector(state).id;
 export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
 export const currentChallengeIdSelector = state =>
@@ -28,6 +29,7 @@ export const recentlyClaimedBlockSelector = state =>
   state[MainApp].recentlyClaimedBlock;
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
+export const updateCardStateSelector = state => state[MainApp].updateCardState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[MainApp].showCert;
@@ -41,7 +43,6 @@ export const shouldRequestDonationSelector = state => {
   const progressDonationModalShown = progressDonationModalShownSelector(state);
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -50,15 +51,9 @@ export const shouldRequestDonationSelector = state => {
   if (recentlyClaimedBlock) return true;
 
   /*
-  When AB testing for showing multiple progress modals is active,
-  show a donation modal every 30 challenges after the first 50
+    Different intervals need to be tested for optimization.
    */
-  if (
-    showMultipleProgressModals &&
-    progressDonationModalShown &&
-    completedChallengesLength > 50 &&
-    completionCount - lastCompletionCount >= 30
-  )
+  if (progressDonationModalShown && completionCount - lastCompletionCount >= 20)
     return true;
 
   // a donation has already been requested
@@ -75,10 +70,6 @@ export const shouldRequestDonationSelector = state => {
 
 export const userTokenSelector = state => {
   return userSelector(state).userToken;
-};
-
-export const showCodeAllySelector = state => {
-  return state[MainApp].showCodeAlly;
 };
 
 export const examInProgressSelector = state => {
@@ -128,14 +119,14 @@ export const certificatesByNameSelector = username => state => {
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8
+    isFoundationalCSharpCertV8,
+    isJsAlgoDataStructCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
       isRespWebDesignCert ||
       is2018DataVisCert ||
       isFrontEndLibsCert ||
-      isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
       isQaCertV7 ||
       isInfosecCertV7 ||
@@ -145,9 +136,14 @@ export const certificatesByNameSelector = username => state => {
       isMachineLearningPyCertV7 ||
       isRelationalDatabaseCertV8 ||
       isCollegeAlgebraPyCertV8 ||
-      isFoundationalCSharpCertV8,
+      isFoundationalCSharpCertV8 ||
+      isJsAlgoDataStructCertV8,
     hasLegacyCert:
-      isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
+      isFrontEndCert ||
+      isJsAlgoDataStructCert ||
+      isBackEndCert ||
+      isDataVisCert ||
+      isInfosecQaCert,
     isFullStackCert,
     currentCerts: [
       {
@@ -156,9 +152,9 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.RespWebDesign
       },
       {
-        show: isJsAlgoDataStructCert,
-        title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: Certification.JsAlgoDataStruct
+        show: isJsAlgoDataStructCertV8,
+        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
+        certSlug: Certification.JsAlgoDataStructNew
       },
       {
         show: isFrontEndLibsCert,
@@ -171,19 +167,19 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.DataVis
       },
       {
+        show: isRelationalDatabaseCertV8,
+        title: 'Relational Database Certification',
+        certSlug: Certification.RelationalDb
+      },
+      {
         show: isApisMicroservicesCert,
         title: 'Back End Development and APIs Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
         show: isQaCertV7,
-        title: ' Quality Assurance Certification',
+        title: 'Quality Assurance Certification',
         certSlug: Certification.QualityAssurance
-      },
-      {
-        show: isInfosecCertV7,
-        title: 'Information Security Certification',
-        certSlug: Certification.InfoSec
       },
       {
         show: isSciCompPyCertV7,
@@ -196,14 +192,14 @@ export const certificatesByNameSelector = username => state => {
         certSlug: Certification.DataAnalysisPy
       },
       {
+        show: isInfosecCertV7,
+        title: 'Information Security Certification',
+        certSlug: Certification.InfoSec
+      },
+      {
         show: isMachineLearningPyCertV7,
         title: 'Machine Learning with Python Certification',
         certSlug: Certification.MachineLearningPy
-      },
-      {
-        show: isRelationalDatabaseCertV8,
-        title: 'Relational Database Certification',
-        certSlug: Certification.RelationalDb
       },
       {
         show: isCollegeAlgebraPyCertV8,
@@ -221,6 +217,11 @@ export const certificatesByNameSelector = username => state => {
         show: isFrontEndCert,
         title: 'Front End Certification',
         certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        show: isJsAlgoDataStructCert,
+        title: 'Legacy JavaScript Algorithms and Data Structures Certification',
+        certSlug: Certification.JsAlgoDataStruct
       },
       {
         show: isBackEndCert,

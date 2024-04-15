@@ -16,5 +16,6 @@
   "fullStack": "isFullStackCert",
   "relationalDatabaseV8": "isRelationalDatabaseV8",
   "collegeAlgebraPyV8": "isCollegeAlgebraPyCertV8",
-  "foundationalCSharpV8": "isFoundationalCSharpCertV8"
+  "foundationalCSharpV8": "isFoundationalCSharpCertV8",
+  "isJsAlgoDataStructCertV8": "isJsAlgoDataStructCertV8"
 }

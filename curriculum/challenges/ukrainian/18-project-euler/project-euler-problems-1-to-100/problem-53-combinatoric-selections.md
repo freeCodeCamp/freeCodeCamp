@@ -16,7 +16,7 @@ dashedName: problem-53-combinatoric-selections
 
 Загалом, $\\displaystyle \\binom n r = \\dfrac{n!}{r!(n-r)!}$, де $r \\le n$, $n! = n \\times (n-1) \\times ... \\times 3 \\times 2 \\times 1$ та $0! = 1$.
 
-Починаючи з $n = 23$, значення перевищуватиме мільйон: $\\displaystyle \\binom {23} {10} = 1144066$.
+Починаючи з $n = 23$ значення перевищуватиме мільйон: $\\displaystyle \\binom {23} {10} = 1144066$.
 
 Скільки (не обов’язково різних) значень $\\displaystyle \\binom n r$ за умови $1 \\le n \\le 100$ є більшими за мільйон?
 

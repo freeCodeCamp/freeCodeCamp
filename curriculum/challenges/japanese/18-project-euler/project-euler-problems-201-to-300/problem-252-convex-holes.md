@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7b
-title: 'Problem 252: Convex Holes'
+title: '問題 252: 凸状の穴'
 challengeType: 1
 forumTopicId: 301900
 dashedName: problem-252-convex-holes
@@ -8,24 +8,24 @@ dashedName: problem-252-convex-holes
 
 # --description--
 
-Given a set of points on a plane, we define a convex hole to be a convex polygon having as vertices any of the given points and not containing any of the given points in its interior (in addition to the vertices, other given points may lie on the perimeter of the polygon).
+平面上の点の集合が与えられたとき、「凸状の穴」とは、与えられた点のいずれかを頂点とし、与えられた点のいずれもその内部に含まない凸多角形であると定義します (与えられた点が、多角形の頂点だけでなく辺上にもあって良い）。
 
-As an example, the image below shows a set of twenty points and a few such convex holes. The convex hole shown as a red heptagon has an area equal to 1049694.5 square units, which is the highest possible area for a convex hole on the given set of points.
+一例として、20 個の点の集合と、上で定義した凸状の穴を下図にいくつか示します。 赤の多角形で示されている凸状の穴は、面積が 1049694.5 平方単位であり、これらの点の集合で作られる最大の凸状の穴です。
 
-<img class="img-responsive center-block" alt="set of twenty points and convex holes on plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="平面上にある 20 個の点の集合と凸状の穴" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
 
-For our example, we used the first 20 points ($T_{2k − 1}$, $T_{2k}$), for $k = 1, 2, \ldots, 20$, produced with the pseudo-random number generator:
+この例では、次の擬似乱数法によって生成された最初の 20 個の点 ($T_{2k − 1}$, $T_{2k}$) (ここで $k = 1, 2, \ldots, 20$) を使用しました。
 
 $$\begin{align}   S_0 & = 290\\,797 \\\\
   S_{n+1} & = {S_n}^2 \\; \text{mod} \\; 50\\,515\\,093 \\\\ T_n & = (S_n \\; \text{mod} \\; 2000) − 1000 \end{align}$$
 
-i.e. (527, 144), (−488, 732), (−454, −947), …
+すなわち、(527, 144), (−488, 732), (−454, −947), …です。
 
-What is the maximum area for a convex hole on the set containing the first 500 points in the pseudo-random sequence? Specify your answer including one digit after the decimal point.
+この擬似乱数列の最初の 500 個の点で作られる凸状の穴について、その最大面積を求めなさい。 回答は、小数第 1 位まで示すこと。
 
 # --hints--
 
-`convexHoles()` should return `104924`.
+`convexHoles()` は `104924` を返す必要があります。
 
 ```js
 assert.strictEqual(convexHoles(), 104924);

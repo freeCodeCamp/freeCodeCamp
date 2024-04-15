@@ -1,7 +1,7 @@
 ---
 id: 5900f41c1000cf542c50ff2e
 title: >-
-  Problem 175: Fractions involving the number of different ways a number can be expressed as a sum of powers of 2
+  问题175：涉及不同方式的数量的分数数字可以表示为2的幂的总和
 challengeType: 1
 forumTopicId: 301810
 dashedName: >-

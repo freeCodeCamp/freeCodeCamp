@@ -8,8 +8,8 @@ const certs = [
     url: '/certification/certifieduser/responsive-web-design'
   },
   {
-    name: 'JavaScript Algorithms and Data Structures',
-    url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
+    name: 'JavaScript Algorithms and Data Structures (Beta)',
+    url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
     name: 'Front End Development Libraries',
@@ -58,17 +58,27 @@ const certs = [
 ];
 
 const legacyCerts = [
-  { name: 'Front End', url: '/certification/certifieduser/legacy-front-end' },
-  { name: 'Back End', url: '/certification/certifieduser/legacy-back-end' },
   {
-    name: 'Data Visualization',
+    name: 'Legacy Front End',
+    url: '/certification/certifieduser/legacy-front-end'
+  },
+  {
+    name: 'Legacy JavaScript Algorithms and Data Structures',
+    url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
+  },
+  {
+    name: 'Legacy Back End',
+    url: '/certification/certifieduser/legacy-back-end'
+  },
+  {
+    name: 'Legacy Data Visualization',
     url: '/certification/certifieduser/legacy-data-visualization'
   },
   {
-    name: 'Information Security and Quality Assurance',
+    name: 'Legacy Information Security and Quality Assurance',
     url: '/certification/certifieduser/information-security-and-quality-assurance'
   },
-  { name: 'Full Stack', url: '/certification/certifieduser/full-stack' }
+  { name: 'Legacy Full Stack', url: '/certification/certifieduser/full-stack' }
 ];
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
@@ -109,7 +119,12 @@ test.describe('Profile component', () => {
     await expect(page.getByText('Number of points: 1')).toBeVisible();
   });
 
-  test('renders the heat map correctly', async ({ page }) => {
+  // The date range computation in this test doesn't match the implementation code,
+  // and causes the test to fail in some cases.
+  // We would want to mock system time to keep the test stable,
+  // but Playwright currently doesn't offer a built-in mechanism for this.
+  // Ref: https://github.com/microsoft/playwright/issues/6347
+  test.skip('renders the heat map correctly', async ({ page }) => {
     const today = new Date();
     const currentMonth = today.toLocaleString('en-US', { month: 'short' });
     const sixMonthsAgo = new Date(today.setMonth(today.getMonth() - 6));

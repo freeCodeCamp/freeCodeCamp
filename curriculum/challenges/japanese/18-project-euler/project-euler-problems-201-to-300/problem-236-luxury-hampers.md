@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6b
-title: 'Problem 236: Luxury Hampers'
+title: '問題 236: 高級詰め合わせギフト'
 challengeType: 1
 forumTopicId: 301881
 dashedName: problem-236-luxury-hampers
@@ -8,38 +8,38 @@ dashedName: problem-236-luxury-hampers
 
 # --description--
 
-Suppliers 'A' and 'B' provided the following numbers of products for the luxury hamper market:
+納入業者 'A' と 'B' は、高級詰め合わせギフト用に、下表に示された数量の商品を納入しました。
 
-| Product            | 'A'  | 'B'  |
-| ------------------ | ---- | ---- |
-| Beluga Caviar      | 5248 | 640  |
-| Christmas Cake     | 1312 | 1888 |
-| Gammon Joint       | 2624 | 3776 |
-| Vintage Port       | 5760 | 3776 |
-| Champagne Truffles | 3936 | 5664 |
+| 商品           | 'A'  | 'B'  |
+| ------------ | ---- | ---- |
+| ベルーガキャビア     | 5248 | 640  |
+| クリスマスケーキ     | 1312 | 1888 |
+| ガモンジョイント(ハム) | 2624 | 3776 |
+| ヴィンテージポートワイン | 5760 | 3776 |
+| シャンパーニュトリュフ  | 3936 | 5664 |
 
-Although the suppliers try very hard to ship their goods in perfect condition, there is inevitably some spoilage - i.e. products gone bad.
+納入業者は商品を完全な状態で出荷するよう努めますが、どうしても損傷が生じます。つまり、商品がだめになってしまいます。
 
-The suppliers compare their performance using two types of statistic:
+納入業者 2 社は、両社の実績を次の 2 種類の統計を使って比較しました。
 
-- The five per-product spoilage rates for each supplier are equal to the number of products gone bad divided by the number of products supplied, for each of the five products in turn.
-- The overall spoilage rate for each supplier is equal to the total number of products gone bad divided by the total number of products provided by that supplier.
+- 各納入業者の商品当たり損傷率 (5 つ): 損傷した商品の数を納入した商品の数で割ったもの。5 つの商品のそれぞれについて順に算出する。
+- 各納入業者の全体損傷率: 損傷した商品の全数を、納入した商品の全数で割ったもの。
 
-To their surprise, the suppliers found that each of the five per-product spoilage rates was worse (higher) for 'B' than for 'A' by the same factor (ratio of spoilage rates), $m > 1$; and yet, paradoxically, the overall spoilage rate was worse for 'A' than for 'B', also by a factor of $m$.
+結果は意外なものでした。5 つの各商品の損傷率は A よりも B が悪く(高く)、その係数 (両社の損傷率の比率) $m > 1$ はいずれも同じでした。しかし全体損傷率は逆に B よりも A が悪く、その係数は再び $m$ でした。
 
-There are thirty-five $m > 1$ for which this surprising result could have occurred, the smallest of which is $\frac{1476}{1475}$.
+この驚くべき結果が起こり得るような $m &#062 1$ は 35 個存在し、最小のものは $\frac{1476}{1475}$です。
 
-What's the largest possible value of $m$? Give your answer as a string with fraction reduced to its lowest terms, in the form `u/v`.
+考えられる最大の $m$ の値を求めなさい。 回答は、最小の項で約分した分数 `u/v` の形式にすること。
 
 # --hints--
 
-`luxuryHampers()` should return a string.
+`luxuryHampers()` は文字列を返す必要があります。
 
 ```js
 assert(typeof luxuryHampers() === 'string');
 ```
 
-`luxuryHampers()` should return the string `123/59`.
+`luxuryHampers()` は文字列 `123/59` を返す必要があります。
 
 ```js
 assert.strictEqual(luxuryHampers(), '123/59');

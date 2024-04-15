@@ -20,7 +20,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/challenge-pro
 
 ## --text--
 
-Which of the following options can be used set a breakpoint in Visual Studio Code?
+Which of the following options can be used to set a breakpoint in Visual Studio Code?
 
 ## --answers--
 

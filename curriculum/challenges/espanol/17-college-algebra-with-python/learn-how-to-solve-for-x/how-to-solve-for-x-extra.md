@@ -12,7 +12,7 @@ This video will go deeper, with more examples of how to use SymPy solve. It will
 
 Here is the <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a> Use it to add more to the algebra Colab notebook that you are building.
 
-# --assignment--
+# --tarea--
 
 Add the code for more ways to solve for x from the video to your algebra Colab notebook.
 

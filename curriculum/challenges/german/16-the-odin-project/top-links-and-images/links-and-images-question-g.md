@@ -21,7 +21,7 @@ To use images that you have on your own websites, you can use a relative path.
 
 - Create a new directory named `images` within the `odin-links-and-images` project.
 
-- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the images directory you just created.
+- Next, download <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">this image</a> and move it into the images directory you just created.
 
 - Rename the image to `dog.jpg`.
 
@@ -45,7 +45,7 @@ Save the `index.html` file and open it in a browser to view Charles in all his g
 
 What if you want to use the dog image in the `about` page? You would first have to go up one level out of the pages directory into its parent directory so you could then access the images directory.
 
-To go to the parent directory you need to use two dots in the relative filepath like this: `../.` Let’s see this in action, within the `body` of the `about.html` file, add the following image below the heading you added earlier:
+Um zum übergeordneten Verzeichnis zu gelangen, musst du zwei Punkte im relativen Pfad wie folgt verwenden: `../.` Lass uns dies in Aktion sehen, füge innerhalb des `body` der `about.html`-Datei das folgende Bild unter der Überschrift ein, die du zuvor hinzugefügt hast:
 
 ```html
 <img src="../images/dog.jpg">

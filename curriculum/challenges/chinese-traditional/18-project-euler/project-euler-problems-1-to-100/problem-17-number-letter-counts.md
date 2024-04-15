@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe90
-title: 'Problem 17: Number letter counts'
+title: '問題17：數字字母計數'
 challengeType: 1
 forumTopicId: 301804
 dashedName: problem-17-number-letter-counts
@@ -10,31 +10,31 @@ dashedName: problem-17-number-letter-counts
 
 If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
 
-If all the numbers from 1 to given `limit` inclusive were written out in words, how many letters would be used?
+`numberLetterCounts(5)`應返回19。
 
-**Note:** Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+**注意：** 不要計算空格或連字符。 例如，342（三百四十二）包含23個字母，115（一百一十五）包含20個字母。 在寫出數字時使用“和”符合英國的用法。
 
 # --hints--
 
-`numberLetterCounts(5)` should return a number.
+`numberLetterCounts(1000)`應該返回21124。
 
 ```js
 assert(typeof numberLetterCounts(5) === 'number');
 ```
 
-`numberLetterCounts(5)` should return 19.
+`numberLetterCounts(150)`應該返回1903。
 
 ```js
 assert.strictEqual(numberLetterCounts(5), 19);
 ```
 
-`numberLetterCounts(150)` should return 1903.
+`numberLetterCounts(150)` 應該返回 1903。
 
 ```js
 assert.strictEqual(numberLetterCounts(150), 1903);
 ```
 
-`numberLetterCounts(1000)` should return 21124.
+`numberLetterCounts(1000)` 應該返回 21124。
 
 ```js
 assert.strictEqual(numberLetterCounts(1000), 21124);

@@ -9,12 +9,7 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-你将使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 的初始化项目</a>来完成这个项目。
-
--   首先在 Replit 中导入项目。
--   接着，你将看到一个 `.replit` 窗口。
--   选择 `Use run command` 并点击 `Done` 按钮。
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 我们仍在开发 Python 课程的交互式教学部分。 目前，你可以在 YouTube 上通过 freeCodeCamp.org 上传的一些视频学习这个项目相关的知识。
 
@@ -52,11 +47,11 @@ dashedName: sha-1-password-cracker
 
 ## 开发
 
-在 `password_cracker.py` 中编写你的代码。 对于开发，你可以使用 `main.py` 来测试你的代码。 单击“运行”按钮，`main.py` 将运行。
+在 `password_cracker.py` 中编写你的代码。 对于开发，你可以使用 `main.py` 来测试你的代码。
 
 ## 测试
 
-此项目的单元测试在 `test_module.py` 中。 为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。 只要你点击“运行”按钮，测试就会自动运行。
+此项目的单元测试在 `test_module.py` 中。 为了你的方便，我们将测试从 `test_module.py` 导入到 `main.py`。
 
 ## 提交
 

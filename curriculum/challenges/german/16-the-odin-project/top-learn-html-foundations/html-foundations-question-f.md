@@ -1,65 +1,48 @@
 ---
-id: 637f4e2f72c65bc8e73dfe22
-title: HTML Foundations Question F
+id: 637f4e3672c65bc8e73dfe23
+videoId: V8UAEoOvqFg
+title: HTML-Grundlagen Frage F
 challengeType: 15
 dashedName: html-foundations-question-f
 ---
 
 # --description--
 
-The `<head>` element is where you put important meta-information about your webpages, and stuff required for your webpages to render correctly in the browser. Inside the `<head>`, you should not use any element that displays content on the webpage.
+Das letzte Element, das zur Vervollständigung der HTML-Boilerplate benötigt wird, ist das `<body>`-Element. Hier werden alle Inhalte gespeichert, die den Nutzern angezeigt werden sollen - Texte, Bilder, Listen, Links usw.
 
-## The Charset Meta Element
-You should always have the `meta` tag for the `charset` encoding of the webpage in the `head` element: `<meta charset="utf-8">`.
+Um die Boilerplate zu vervollständigen, füge der `index.html`-Datei ein `body`-Element hinzu. Das `body`-Element befindet sich auch innerhalb des `html`-Elements und steht immer unter dem `head`-Element, etwa so:
 
-Setting the encoding is very important because it ensures that the webpage will display special symbols and characters from different languages correctly in the browser.
+# --Auftrag--
 
-## Title Element
-Another element you should always include in the head of an HTML document is the `title` element:
+Sieh dir oben Kevin Powells brillantes Video zum Aufbau deiner ersten Website an und folge ihm.
 
-```html
-<title>My First Webpage</title>
-```
+---
 
-The `title` element is used to give webpages a human-readable title which is displayed in your webpage’s browser tab.
+Um sich an etwas zu erinnern, lösche den Inhalt der `index.html`-Datei und versuche, den gesamten Text aus dem Gedächtnis neu zu schreiben. Keine Sorge, wenn du bei den ersten Malen den Inhalt der Lektion nachschlagen musst, wenn du nicht weiterkommst. Mache einfach weiter, bis du es ein paar Mal auswendig kannst.
 
-If you didn’t include a `title` element, the webpage’s title would default to its file name. In your case that would be `index.html`, which isn’t very meaningful for users; this would make it very difficult to find your webpage if the user has many browser tabs open.
+---
 
-There are many more elements that can go within the `head` of an HTML document. However, for now it’s only crucial to know about the two elements you have covered here. You will introduce more elements that go into the `head` throughout the rest of the curriculum.
-
-Back in `index.html` file, let’s add a `head` element with a `charset` `meta` element and a `title` within it. The head element goes within the HTML element and should always be the first element under the opening `<html>` tag:
-
-
-```html
-<!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Webpage</title>
-  </head>
-</html>
-```
+Lass dein Boilerplate durch diesen [HTML validator](https://www.freeformatter.com/html-validator.html) laufen. Validatoren stellen sicher, dass dein Markup korrekt ist, und sind ein hervorragendes Lernwerkzeug, da sie dir Feedback zu Syntaxfehlern geben, die du vielleicht häufig machst und dir dessen nicht bewusst bist, wie zum Beispiel fehlende schließende Tags und zusätzliche Leerzeichen in deinem HTML.
 
 # --question--
 
 ## --text--
 
-What is the purpose of the `head` element?
+Was ist der Zweck des `body`-Elements?
 
 ## --answers--
 
-The `head` element is used to display all elements that are displayed on the webpage.
+Hier werden alle wichtigen Informationen über die Website, wie der `title` und `meta`-Tags, angezeigt.
 
 ---
 
-The `head` element is used to display important information about your webpage and is used to render web pages correctly with `meta` elements.
+Hier wird dem Browser mitgeteilt, wie die Website richtig dargestellt werden soll.
 
 ---
 
-The `head` element is used to display the header content on top of the webpage.
+Hier werden alle Inhalte auf der Seite wie Bilder, Text und Links angezeigt.
 
 
 ## --video-solution--
 
-2
+3

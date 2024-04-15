@@ -20,8 +20,6 @@ dashedName: use-the--env-file
 
 次に、前のチャレンジで作成した `/json` GET ルートハンドラーで、`process.env.MESSAGE_STYLE` にアクセスし、変数が `uppercase` に等しい場合にレスポンスオブジェクトの `message` を大文字に変換してください。 レスポンスオブジェクトは、 `MESSAGE_STYLE` の値に応じて、`{"message": "Hello json"}` または `{"message": "HELLO JSON"}` のいずれかにする必要があります。 テストの都合上、`process.env.MESSAGE_STYLE` の値はルートハンドラーの外側ではなく**内側**で読み取る必要がありますので注意してください。
 
-** 注: ** Replit を使用している場合は、 `.env` ファイルを作成することはできません。 代わりに、組み込みの <dfn>SECRETS</dfn> タブを使用して変数を追加してください。
-
 ローカル環境で作業している場合は、`dotenv` パッケージが必要です。 このパッケージにより、環境変数が `.env` ファイルから `process.env` に読み込まれます。 `dotenv` パッケージはすでにインストールされており、プロジェクトの `package.json` ファイルに含まれています。 `myApp.js` ファイルの先頭に `require('dotenv').config()` を追加して、環境変数を読み込んでください。
 
 # --hints--

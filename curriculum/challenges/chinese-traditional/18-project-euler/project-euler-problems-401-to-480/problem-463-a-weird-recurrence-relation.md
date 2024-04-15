@@ -1,6 +1,6 @@
 ---
 id: 5900f53c1000cf542c51004e
-title: 'Problem 463: A weird recurrence relation'
+title: '問題463：一種奇怪的復發關係'
 challengeType: 1
 forumTopicId: 302138
 dashedName: problem-463-a-weird-recurrence-relation

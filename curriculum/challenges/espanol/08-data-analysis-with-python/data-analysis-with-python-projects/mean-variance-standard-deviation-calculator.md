@@ -8,16 +8,11 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-Estarás <a href="https://replit.com/github/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator" target="_blank" rel="noopener noreferrer nofollow" mark="crwd-mark ">trabajando en este proyecto con nuestro código de inicio Replit</a>.
-
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Todavía estamos desarrollando la parte interactiva del currículo de Python. Por ahora, aquí hay algunos videos en el canal de YouTube de freeCodeCamp.org que te enseñaran todo lo que necesitas saber para completar este proyecto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso en Vídeo de Python para Todos</a> (Duración: 14 horas)
 
 - <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 hours)
 
@@ -55,15 +50,13 @@ Por ejemplo, `calculate([0,1,2,3,4,5,6,7,8])` debe regresar:
 }
 ```
 
-Las pruebas unitarias para este proyecto están en `test_module.py`.
-
 ## Desarrollo
 
-Durante el desarrollo, puede usar `main.py` para probar su función `calculate()`. Haz clic en el botón "run" y se ejecutará `main.py`.
+Write your code in `mean_var_std.py`. For development, you can use `main.py` to test your code.
 
 ## Pruebas
 
-Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia. Las pruebas se ejecutarán automáticamente cada vez que pulses el botón "run".
+Las pruebas unitarias para este proyecto están en `test_module.py`. Hemos importado las pruebas de `test_module.py` a `main.py` para tu conveniencia.
 
 ## Envío
 

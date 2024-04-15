@@ -7,20 +7,20 @@ dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-s
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
 1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">Debug a C# Console Application Using Visual Studio Code</a> challenge project on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">Debug a C# Console Application Using Visual Studio Code</a> challenge project on Microsoft Learn. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-Which of the following options can be used set a breakpoint in Visual Studio Code?
+Which of the following options can be used to set a breakpoint in Visual Studio Code?
 
 ## --answers--
 

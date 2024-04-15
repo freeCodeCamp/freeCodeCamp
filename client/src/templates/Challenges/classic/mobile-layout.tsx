@@ -30,6 +30,7 @@ interface MobileLayoutProps {
   instructions: JSX.Element;
   notes: ReactElement;
   preview: JSX.Element;
+  onPreviewResize: () => void;
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
@@ -157,6 +158,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       hasPreview,
       notes,
       preview,
+      onPreviewResize,
       showPreviewPane,
       showPreviewPortal,
       removePortalWindow,
@@ -328,7 +330,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           )}
         </Tabs>
         {displayPreviewPortal && (
-          <PreviewPortal windowTitle={windowTitle}>{preview}</PreviewPortal>
+          <PreviewPortal onResize={onPreviewResize} windowTitle={windowTitle}>
+            {preview}
+          </PreviewPortal>
         )}
       </>
     );

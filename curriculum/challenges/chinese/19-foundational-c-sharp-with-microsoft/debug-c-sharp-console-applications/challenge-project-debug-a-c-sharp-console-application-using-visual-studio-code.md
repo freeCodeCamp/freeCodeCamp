@@ -1,38 +1,38 @@
 ---
 id: 647e22778acb466c97ccbef2
-title: 'Challenge Project - Debug a C# Console Application Using Visual Studio Code'
+title: '挑战项目 - 使用 Visual Studio Code 调试 C# 控制台应用程序'
 challengeType: 19
 dashedName: challenge-project-debug-a-c-sharp-console-application-using-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/</a> and complete all the tasks for the "Challenge Project - Debug a C# Console Application Using Visual Studio Code" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/</a>，然后完成“挑战项目 - 使用 Visual Studio Code 调试 C# 控制台应用程序”模块的所有任务。 这是在 Microsoft Learn 上获得“调试 C# 控制台应用程序”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">Debug a C# Console Application Using Visual Studio Code</a> challenge project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成<a href="https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/" target="_blank" rel="noreferrer">挑战项目 - 使用 Visual Studio Code 调试 C# 控制台应用程序</a>的挑战项目。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-Which of the following options can be used set a breakpoint in Visual Studio Code?
+下列哪个选项可以在 Visual Studio Code 中设置断点？
 
 ## --answers--
 
-Left-click in the column to the left of a line number in the code editor.
+在代码编辑器中行号的左边栏处单击鼠标左键。
 
 ---
 
-Select Toggle Breakpoint on the Edit menu.
+在编辑菜单上选择切换断点。
 
 ---
 
-Right-click in the middle of a line of code, and then select Toggle Breakpoint.
+在代码行的中间单击鼠标右键，然后选择切换断点。
 
 ## --video-solution--
 

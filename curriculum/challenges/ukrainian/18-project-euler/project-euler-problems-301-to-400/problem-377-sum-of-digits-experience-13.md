@@ -1,6 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff8
-title: 'Problem 377: Sum of digits, experience 13'
+title: 'Завдання 377: сума цифр, випадок №13'
 challengeType: 1
 forumTopicId: 302039
 dashedName: problem-377-sum-of-digits-experience-13
@@ -8,13 +8,13 @@ dashedName: problem-377-sum-of-digits-experience-13
 
 # --description--
 
-There are 16 positive integers that do not have a zero in their digits and that have a digital sum equal to 5, namely:
+Дано 16 натуральних чисел, які не містять нулів та сума цифр яких дорівнює 5:
 
-5, 14, 23, 32, 41, 113, 122, 131, 212, 221, 311, 1112, 1121, 1211, 2111 and 11111.
+5, 14, 23, 32, 41, 113, 122, 131, 212, 221, 311, 1112, 1121, 1211, 2111 та 11111.
 
-Their sum is 17891.
+Їх сума дорівнює 17891.
 
-Let $f(n)$ be the sum of all positive integers that do not have a zero in their digits and have a digital sum equal to $n$.
+Нехай $f(n)$ буде сумою всіх натуральних чисел, які не місять нулів та сума цифр яких дорівнює $n$.
 
 Знайдіть $\displaystyle\sum_{i=1}^{17} f(13^i)$. У відповіді запишіть 9 останніх цифр.
 

@@ -8,12 +8,7 @@ dashedName: page-view-time-series-visualizer
 
 # --description--
 
-Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode</a> an diesem Projekt arbeiten.
-
--   Beginne, indem du das Projekt in Replit importierst.
--   Als nächstes wird ein `.replit`-Fenster angezeigt.
--   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-page-view-time-series-visualizer" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. Hier sind erstmal einige Videos auf dem freeCodeCamp.org YouTube-Kanal, die dir alles beibringen, was du wissen musst, um dieses Projekt abzuschließen:
 
@@ -33,17 +28,17 @@ Benutze die Daten, um die folgenden Aufgaben abzuschließen:
 - Erstelle eine `draw_bar_plot` Funktion, die ein Balkendiagramm ähnlich wie in "examples/Figure_2.png" zeichnet. Es sollte die durchschnittlichen täglichen Seitenaufrufe für jeden Monat, gruppiert nach Jahr, anzeigen. Die Legende sollte Monatsbezeichnungen zeigen und den Titel `Months` haben. Im Diagramm sollte die Beschriftung auf der x-Achse `Years` und die Beschriftung auf der y-Achse `Average Page Views` sein.
 - Erstelle eine `draw_box_plot`-Funktion, die Seaborn verwendet, um zwei angrenzende Boxplots, ähnlich wie "examples/Figure_3.png" zu zeichnen. Diese Boxplots sollen zeigen, wie die Werte innerhalb eines bestimmten Jahres oder Monats verteilt sind und wie sie sich im Zeitvergleich darstellen. Der Titel des ersten Diagramms sollte `Year-wise Box Plot (Trend)` und der des zweiten Diagramms sollte `Month-wise Box Plot (Seasonality)` lauten. Vergewissere dich, dass die Monatsbeschriftungen unten mit `Jan` beginnen und die x- und y-Achse korrekt beschriftet sind. Die Boilerplate enthält Befehle zur Vorbereitung der Daten.
 
-Bitte verwende für jedes Diagramm eine Kopie des Dataframes. Unit-Tests werden für dich unter `test_module.py` geschrieben.
+Bitte verwende für jedes Diagramm eine Kopie des Dataframes.
 
 Der Boilerplate-Code enthält auch Befehle zum Speichern und Übermitteln des Bildes.
 
 ## Entwicklung
 
-Für die Entwicklung kannst du `main.py` verwenden, um deinen Code zu testen. Klicke den "Run"-Button und `main.py` wird ausgeführt.
+Write your code in `time_series_visualizer.py`. For development, you can use `main.py` to test your code.
 
 ## Testen
 
-Wir haben die Tests von `test_module.py` zu `main.py` bereits für dich importiert. Die Tests werden automatisch ausgeführt, wenn du auf den "Run"-Button klickst.
+The unit tests for this project are in `test_module.py`. Wir haben die Tests von `test_module.py` zu `main.py` bereits für dich importiert.
 
 ## Absenden
 

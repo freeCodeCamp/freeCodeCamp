@@ -9,12 +9,7 @@ dashedName: port-scanner
 
 # --description--
 
-Du wirst <a href="https://replit.com/github/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">mit unserem Replit-Startercode</a> an diesem Projekt arbeiten.
-
--   Beginne mit dem Importieren des Projekts in Replit.
--   Daraufhin wird ein `.replit`-Fenster angezeigt.
--   Wähle `Use run command` und klicke auf die `Done`-Schaltfläche.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-port-scanner" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Wir sind noch dabei, den interaktiven Teil des Python-Kurses zu entwickeln. Hier sind einige Videos auf dem freeCodeCamp.org YouTube-Kanal, die dir alles beibringen, was du wissen musst, um dieses Projekt abzuschließen:
 
@@ -75,11 +70,11 @@ If the IP address passed into the `get_open_ports` function is invalid, the func
 
 ## Entwicklung
 
-Schreibe deinen Code in `port_scanner.py`. Für die Entwicklung kannst du `main.py` verwenden, um deinen Code zu testen. Klicke den "Run"-Button und `main.py` wird ausgeführt.
+Schreibe deinen Code in `port_scanner.py`. Für die Entwicklung kannst du `main.py` verwenden, um deinen Code zu testen.
 
 ## Testen
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. Die Tests werden automatisch ausgeführt, wenn du auf den "Run"-Button klickst.
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience.
 
 ## Submitting
 

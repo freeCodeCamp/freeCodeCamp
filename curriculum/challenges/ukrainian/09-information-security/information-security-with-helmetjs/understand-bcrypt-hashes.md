@@ -8,7 +8,7 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-У наступних завданнях ви будете працювати з новим початковим проєктом, який відрізняється від попереднього. Ви можете знайти новий початковий проєкт на <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонувати його з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+У наступних завданнях ви будете працювати з новим початковим проєктом, який відрізняється від попереднього. Ви можете знайти новий стартовий проєкт на <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a> або клонувати його з <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Хеші BCrypt відзначаються своєю надійністю. Хеш — це «відбиток» початкових даних, який завжди унікальний. Така функція виконується шляхом введення початкових даних в алгоритм і виведення фіксованого результату довжини. Щоб ускладнити процес і зробити його безпечнішим, можна *посолити* свій хеш. Соління хешу — це додавання випадкових даних до початкових даних перед процесом хешування, що ускладнює злам хешу.
 

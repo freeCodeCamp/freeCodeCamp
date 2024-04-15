@@ -1,8 +1,8 @@
 ---
 id: 63c9f24afbc9cf324dcaa9a4
-title: Крок 92
+title: Step 94
 challengeType: 0
-dashedName: step-92
+dashedName: step-94
 ---
 
 # --description--
@@ -91,7 +91,7 @@ assert.isAbove(clearForm.toString().indexOf('output'), clearForm.toString().inde
             </span>
           </div>
           <div>
-            <button type="submit" id="calculate-calories">
+            <button type="submit">
               Calculate Remaining Calories
             </button>
             <button type="button" id="clear">Clear</button>
@@ -150,17 +150,10 @@ legend {
 }
 
 button {
-  outline: none;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--light-yellow);
   border: 2px solid var(--dark-yellow);
-}
-
-.clear {
-  background-color: var(--light-pink);
-  color: var(--dark-red);
-  border-color: var(--dark-red);
 }
 
 button,
@@ -194,11 +187,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 
@@ -260,7 +253,7 @@ function calculateCalories(e) {
 
   const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
   const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
-  const surplusOrDeficit = remainingCalories >= 0 ? 'Surplus' : 'Deficit';
+  const surplusOrDeficit = remainingCalories < 0 ? 'Surplus' : 'Deficit';
   output.innerHTML = `
   <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
   <hr>
@@ -275,8 +268,8 @@ function calculateCalories(e) {
 function getCaloriesFromInputs(list) {
   let calories = 0;
 
-  for (let i = 0; i < list.length; i++) {
-    const currVal = cleanInputString(list[i].value);
+  for (const item of list) {
+    const currVal = cleanInputString(item.value);
     const invalidInputMatch = isInvalidInput(currVal);
 
     if (invalidInputMatch) {
@@ -293,8 +286,8 @@ function getCaloriesFromInputs(list) {
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
 
-  for (let i = 0; i < inputContainers.length; i++) {
-    inputContainers[i].innerHTML = '';
+  for (const container of inputContainers) {
+    container.innerHTML = '';
   }
 
   budgetNumberInput.value = '';

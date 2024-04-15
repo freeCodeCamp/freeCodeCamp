@@ -1,6 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff83
-title: 'Problem 260: Stone Game'
+title: '问题260：石头游戏'
 challengeType: 1
 forumTopicId: 301909
 dashedName: problem-260-stone-game

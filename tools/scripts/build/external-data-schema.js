@@ -14,7 +14,11 @@ const blockSchema = Joi.object({}).keys({
       'HTML-CSS',
       'Python',
       'Backend Development',
-      'C-Sharp'
+      'C-Sharp',
+      'English',
+      'Odin',
+      'Euler',
+      'Rosetta'
     ),
     order: Joi.number(),
     time: Joi.string().allow(''),
@@ -28,7 +32,8 @@ const blockSchema = Joi.object({}).keys({
       })
     ),
     disableLoopProtectTests: Joi.boolean(),
-    disableLoopProtectPreview: Joi.boolean()
+    disableLoopProtectPreview: Joi.boolean(),
+    superOrder: Joi.number()
   })
 });
 

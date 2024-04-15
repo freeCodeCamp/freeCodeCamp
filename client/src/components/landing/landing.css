@@ -9,10 +9,6 @@
   white-space: pre-line;
 }
 
-.cert-btn {
-  margin-top: 40px;
-}
-
 .landing-page ul {
   list-style: none;
   padding-inline-start: 0;
@@ -25,13 +21,7 @@
   margin-top: 0;
 }
 
-.landing-page h1,
-.landing-page h2 {
-  font-family: var(--font-family-sans-serif);
-}
-
 .landing-page .landing-page-happy {
-  font-family: var(--font-family-monospace);
   font-size: 1.1rem;
   margin-top: 0;
 }
@@ -77,7 +67,6 @@ figcaption.caption {
 .faq-question {
   font-weight: bold;
   font-size: 1.25rem;
-  font-family: var(--font-family-sans-serif);
   margin-bottom: 1.2rem;
 }
 
@@ -151,7 +140,6 @@ figcaption.caption {
 }
 
 .testimonial-meta h3 {
-  font-family: var(--font-family-sans-serif);
   font-size: 1.3rem;
   font-weight: normal;
   margin-bottom: 0;

@@ -5,6 +5,7 @@ function CSharpLogo(
 ): JSX.Element {
   return (
     <svg
+      aria-hidden='true'
       width='72'
       height='72'
       viewBox='0 0 340 378'

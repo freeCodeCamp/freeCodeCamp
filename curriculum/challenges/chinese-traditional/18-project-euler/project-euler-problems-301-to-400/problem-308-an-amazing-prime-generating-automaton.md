@@ -1,6 +1,6 @@
 ---
 id: 5900f4a11000cf542c50ffb3
-title: 'Problem 308: An amazing Prime-generating Automaton'
+title: '問題308：驚人的生成素數的自動機'
 challengeType: 1
 forumTopicId: 301962
 dashedName: problem-308-an-amazing-prime-generating-automaton
@@ -10,7 +10,7 @@ dashedName: problem-308-an-amazing-prime-generating-automaton
 
 A program written in the programming language Fractran consists of a list of fractions.
 
-The internal state of the Fractran Virtual Machine is a positive integer, which is initially set to a seed value. Each iteration of a Fractran program multiplies the state integer by the first fraction in the list which will leave it an integer.
+Fractran虛擬機的內部狀態是一個正整數，該整數最初設置爲種子值。 Fractran程序的每次迭代都將狀態整數乘以列表中的第一個分數，從而將其保留爲整數。
 
 For example, one of the Fractran programs that John Horton Conway wrote for prime-generation consists of the following 14 fractions:
 

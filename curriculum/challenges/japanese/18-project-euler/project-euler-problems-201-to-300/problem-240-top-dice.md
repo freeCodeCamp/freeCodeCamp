@@ -1,6 +1,6 @@
 ---
 id: 5900f45d1000cf542c50ff6f
-title: 'Problem 240: Top Dice'
+title: '問題 240: サイコロの目の上位'
 challengeType: 1
 forumTopicId: 301887
 dashedName: problem-240-top-dice
@@ -8,17 +8,17 @@ dashedName: problem-240-top-dice
 
 # --description--
 
-There are 1111 ways in which five 6-sided dice (sides numbered 1 to 6) can be rolled so that the top three sum to 15. Some examples are:
+6 面のサイコロ (各面の数字は 1 から 6) を 5 個振り、出目の上位 3 個の和が 15 になるケースは 1111 通りあります。 その例をいくつか下に示します。
 
 $$\begin{align}   & D_1,D_2,D_3,D_4,D_5 = 4,3,6,3,5 \\\\
   & D_1,D_2,D_3,D_4,D_5 = 4,3,3,5,6 \\\\   & D_1,D_2,D_3,D_4,D_5 = 3,3,3,6,6 \\\\
   & D_1,D_2,D_3,D_4,D_5 = 6,6,3,3,3 \end{align}$$
 
-In how many ways can twenty 12-sided dice (sides numbered 1 to 12) be rolled so that the top ten sum to 70?
+12 面のサイコロ (各面の数字は 1 から 12) を 20 個振り、出目の上位 10 個の和が 70 になるケースは何通りありますか?
 
 # --hints--
 
-`topDice()` should return `7448717393364182000`.
+`topDice()` は `7448717393364182000` を返す必要があります。
 
 ```js
 assert.strictEqual(topDice(), 7448717393364182000);

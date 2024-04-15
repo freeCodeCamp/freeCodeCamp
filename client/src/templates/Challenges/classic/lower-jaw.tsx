@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
 
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -21,8 +20,7 @@ import {
   challengeMetaSelector,
   completedPercentageSelector
 } from '../redux/selectors';
-
-const lowerJawButtonStyle = 'btn-block btn';
+import callGA from '../../../analytics/call-ga';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -287,28 +285,35 @@ const LowerJaw = ({
     testsLength &&
     (currentAttempts >= testsLength || currentAttempts >= 3);
 
-  const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
+  const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+  const isMacOS = navigator.userAgent.includes('Mac OS');
 
-  const checkButtonText = showDesktopButton
-    ? t('buttons.check-code')
+  const checkButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.check-code-3')
+      : t('buttons.check-code')
     : t('buttons.check-code-2');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
   return (
     <div className='action-row-container'>
       {showSignInButton && (
-        <Button
+        <a
           data-cy='sign-in-button'
-          block={true}
           href={`${apiLocation}/signin`}
-          className='btn-cta'
+          className='btn-cta btn btn-block'
+          onClick={() => {
+            callGA({
+              event: 'sign_in'
+            });
+          }}
         >
           {t('learn.sign-in-save')}
-        </Button>
+        </a>
       )}
       <button
         data-playwright-test-label='lowerJaw-submit-button'
-        className={lowerJawButtonStyle}
+        className='btn-block btn'
         data-cy='submit-lowerJaw-button'
         onClick={tryToSubmitChallenge}
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
@@ -318,7 +323,7 @@ const LowerJaw = ({
       </button>
       <button
         data-playwright-test-label='lowerJaw-check-button'
-        className={lowerJawButtonStyle}
+        className='btn-block btn'
         data-cy='check-lowerJaw-button'
         onClick={tryToExecuteChallenge}
         {...(challengeIsCompleted &&

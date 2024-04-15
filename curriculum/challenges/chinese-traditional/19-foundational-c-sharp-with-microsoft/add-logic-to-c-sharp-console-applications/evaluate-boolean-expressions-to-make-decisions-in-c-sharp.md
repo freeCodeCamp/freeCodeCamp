@@ -1,26 +1,26 @@
 ---
 id: 647e21708acb466c97ccbee3
-title: 'Evaluate Boolean Expressions to Make Decisions in C#'
+title: '在 C# 中評估布爾表達式以做出決策'
 challengeType: 19
 dashedName: evaluate-boolean-expressions-to-make-decisions-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/</a> and complete all the tasks for the "Evaluate Boolean Expressions to Make Decisions in C#" module. This is **required** to earn the "Add Logic to C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/</a>，然後完成“在 C# 中評估布爾表達式以做出決策”模塊的所有任務。 這是在 Microsoft Learn 上獲得“向 C# 控制檯應用程序添加邏輯”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">Evaluate Boolean Expressions to Make Decisions in C#</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/csharp-evaluate-boolean-expressions/" target="_blank" rel="noreferrer">在 C# 中評估布爾表達式以做出決策</a> 模塊。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-Which of the following lines of code is a valid use of the conditional operator?
+下列哪一行代碼有效使用條件運算符？
 
 ## --answers--
 

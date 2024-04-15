@@ -1,6 +1,6 @@
 ---
 id: 5900f3e91000cf542c50fefc
-title: 'Problem 125: Palindromic sums'
+title: '问题 125：回文求和'
 challengeType: 1
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
@@ -10,12 +10,12 @@ dashedName: problem-125-palindromic-sums
 
 The palindromic number 595 is interesting because it can be written as the sum of consecutive squares: $6^2 + 7^2 + 8^2 + 9^2 + 10^2 + 11^2 + 12^2$.
 
-There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that $1 = 0^2 + 1^2$ has not been included as this problem is concerned with the squares of positive integers.
+一千以下的回文正好有十一个可以写成连续平方和，这些回文的和是4164。 请注意，未包含 $1 = 0^2 + 1^2$，因为此问题与正整数的平方有关。
 
-Find the sum of all the numbers less than the  `limit`  that are both palindromic and can be written as the sum of consecutive squares.
+找到所有小于 范围 的数字之和，这些数字都是回文的，可以写成连续平方的和。
 
 # --hints--
-`palindromicSums(100000000)` should return `2906969179`.
+palindromicSums (100000000)  应返回  2906969179  。
 
 ```js
 
@@ -23,13 +23,13 @@ assert.strictEqual(palindromicSums(100000000), 2906969179);
 
 ```
 
-`palindromicSums(100)` should return `137`.
+palindromicSums (100) 应返回 137  。
 
 ```js
 assert.strictEqual(palindromicSums(100), 137);
 ```
 
-`palindromicSums(1000)` should return `4164`.
+palindromicSums (1000)  应返回 4164 。
 
 ```js
 assert.strictEqual(palindromicSums(1000),4164);

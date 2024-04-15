@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "Legacy Responsive Web Design Challenges",
+    "title": "(レガシー) レスポンシブウェブデザイン チャレンジ課題",
     "intro": [
       "このレスポンシブウェブデザイン認定講座では、開発者がウェブページを実装するために使う言語について学びます。ページの内容には HTML (Hypertext Markup Language)、デザインには CSS (Cascading Style Sheets) を使用します。",
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
@@ -208,18 +208,18 @@
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
-        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "title": "CSS 中級の学習: 猫の絵を作成する",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "見た目に美しく、レスポンシブなウェブレイアウトを作成するには CSS の配置をマスターすることが不可欠です。",
+          "このコースでは猫の絵を作成しながら、絶対位置指定、z-index プロパティ、transform プロパティの使い方を学習します。"
         ]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript のアルゴリズムとデータ構造",
+    "title": "(レガシー) JavaScript アルゴリズムとデータ構造",
     "intro": [
-      "HTML と CSS はページの内容とスタイルを制御しますが、JavaScript はそれを対話式にすることを手掛けます。JavaScript のアルゴリズムとデータ構造認定講座では、変数、配列、オブジェクト、ループ、そして関数を含む JavaScript の基礎を学習します。",
+      "HTML と CSS はページの内容とスタイルを制御しますが、JavaScript はそれを対話式にすることを手掛けます。JavaScript アルゴリズムとデータ構造認定講座では、変数、配列、オブジェクト、ループ、そして関数を含む JavaScript の基礎を学習します。",
       "いったん基礎を習得すれば、その知識を応用して文字列を扱うためのアルゴリズムを作成したり、数の階乗を計算したり、さらに国際宇宙ステーションの軌道を計算することもできます。",
       "途中で、オブジェクト指向プログラミング (OOP) と関数型プログラミング (FP) の 2 つの重要なプログラミングの様式または典型について学習します。"
     ],
@@ -299,128 +299,164 @@
       }
     }
   },
-  "2022/javascript-algorithms-and-data-structures": {
+  "javascript-algorithms-and-data-structures-v8": {
     "title": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
     "intro": [
-      "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript like variables, arrays, objects, loops, functions, the DOM and more.",
-      "In addition to the fundamentals, you will learn about Object Oriented Programming (OOP), Functional Programming (FP), algorithmic thinking, how to work with local storage and how to fetch data from an API."
+      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
+      "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
+      "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "注: 広告ブロッカーやスクリプトブロッカーのようなブラウザ拡張機能は、テストを妨害することがあります。もし問題に直面したら、受講中はページの内容を変更もしくはブロックする拡張機能を無効にすることをお勧めします。",
     "blocks": {
-      "build-a-caesars-cipher-project": {
-        "title": "シーザー暗号解析器作成プロジェクト",
-        "intro": ["", ""]
+      "build-a-pokemon-search-app-project": {
+        "title": "ポケモン検索アプリ作成プロジェクト",
+        "intro": [
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "For this project, you will build a Pokémon search app."
+        ]
       },
       "build-a-cash-register-project": {
         "title": "キャッシュレジスター作成プロジェクト",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will build a cash register web app."
+          "For this project, you'll build a cash register web app."
         ]
       },
       "build-a-palindrome-checker-project": {
         "title": "回文チェッカー作成プロジェクト",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will build an application that checks if a word is a palindrome."
+          "For this project, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
       "build-a-roman-numeral-converter-project": {
         "title": "ローマ数字コンバーター作成プロジェクト",
         "intro": [
           "This is one of the required projects to claim your certification.",
-          "For this project, you will build an application that converts integers to Roman numerals."
+          "For this project, you'll build an application that converts integers to Roman numerals."
         ]
       },
       "build-a-telephone-number-validator-project": {
         "title": "電話番号バリデーター作成プロジェクト",
         "intro": [
           "This is one of the required projects to claim your certification.",
-          "For this project, you will build an application that checks if a number is a valid United States phone number."
+          "For this project, you'll build an application that checks if a number is a valid United States phone number."
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "JavaScript の基礎の学習: ロールプレイングゲームを作る",
+        "title": "基礎的な JavaScript の学習: ロールプレイングゲームを作成する",
         "intro": [
-          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by building a role playing game. You'll learn to work with arrays, strings, objects, functions, loops, if/else statements, and more."
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "フォームの検証の学習: カロリー計算機を作る",
+        "title": "フォームの検証の学習: カロリー計算機を作成する",
         "intro": [
-          "When building out web applications, there will be times where you will need to work with user input and form validation. In this calorie counter project, you will learn how to handle user input, perform calculations based on that input, and dynamically update the interface to display the results.",
-          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method and more."
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "関数型プログラミングの学習: スプレッドシートを作る",
+        "title": "関数型プログラミングの学習: スプレッドシートを作成する",
         "intro": [
-          "Functional Programming is a popular approach to software development. In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.",
-          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces with dynamic content updates based on user input.  This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method and more."
+          "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
+          "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
+          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods By Building Football Team Cards",
+        "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
         "intro": [
-          "A common aspect of building web applications is to work with data sets and output that information on the screen. In this football team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
-          "This project will cover concepts like the switch statement, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method and more."
+          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
+          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
+        "title": "高度な配列メソッドの学習: 統計計算機を作成する",
         "intro": [
-          "Getting comfortable with working with array manipulation methods such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code> is a fundamental part of JavaScript.",
-          "In this statistics calculator project, you'll gain experience in handling user input, DOM manipulation, and method chaining by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
+          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "title": "基礎的なオブジェクト指向プログラミングの学習: ショッピングカートを作成する",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes organize code to describe things and what they can do.",
-          "In this shopping cart project, you'll learn learn how to define and utilize classes, create class instances, and implement methods for data manipulation. This project will cover concepts including the ternary operator, spread operator, the <code>this</code> keyword and more."
+          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
+          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
+          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises By Building an fCC Authors Page",
+        "title": "Learn Fetch and Promises by Building an fCC Authors Page",
         "intro": [
-          "A common aspect of web development is learning how to fetch data from an external API and work with asynchronous JavaScript.  This freeCodeCamp authors page project will show you how to work with the fetch method and dynamically update the DOM to display the fetched data,",
-          "This project will also teach you how to paginate your data so you can load results in batches. "
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
+          "This project will also teach you how to paginate your data so you can load results in batches."
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "Learn Regular Expressions by Building a Spam Filter",
+        "title": "正規表現の学習: スパムフィルターを作成する",
         "intro": [
-          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be hard to read because they use special characters to make more complex, flexible matches.",
-          "In this spam filter project, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "基礎的なアルゴリズム的思考の学習: 数値ソートを作成する",
         "intro": [
-          "In computer science there are fundamental sorting algorithms that all developers should learn.  In this number sorter project, you will learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort using JavaScript.",
-          "This project will help you understand the fundamental concepts behind these algorithms and how they can be applied to sort numerical data in a web applications."
+          "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
+          "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
+        ]
+      },
+      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "中級アルゴリズム的思考の学習: ダイスゲームを作成する",
+        "intro": [
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
-        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "title": "中級オブジェクト指向プログラミングの学習: プラットフォームゲームを作成する",
         "intro": [
-          "Building games allows you to grasp fundamental programming principles while creating a dynamic and interactive gaming experience.",
-          "In this platformer game project, you will continue to learn about classes, objects, inheritance, and encapsulation. You will also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
+          "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
+          "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
-        "title": "Learn localStorage by Building a Todo App",
+        "title": "localStorage の学習: Todo リストを作成する",
         "intro": [
-          "Local storage is a web browser feature that allows web applications to store key-value pairs persistently within a user's browser, enabling data to be saved and retrieved across page sessions.",
-          "In this TODO application, you will learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implementing event listeners, and toggling UI elements."
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
-        "title": "Learn the Date Object by Building a Date Formatter",
+        "title": "Date オブジェクトの学習: 日付フォーマッターを作成する",
         "intro": [
-          "Working with dates in JavaScript can be both powerful and challenging, as you navigate through various methods, formats, and time zones. In this project you will learn how to work with the JavaScript Date object, including its methods and properties, and learn how to format dates effectively.",
+          "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
           "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
+        ]
+      },
+      "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
+        "title": "非同期プログラミングの学習: freeCodeCamp フォーラムのリーダーボードを作成する",
+        "intro": [
+          "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
+          "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
+        ]
+      },
+      "learn-basic-string-and-array-methods-by-building-a-music-player": {
+        "title": "基礎的な文字列・配列メソッドの学習: 音楽プレイヤーを作成する",
+        "intro": [
+          "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
+          "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
+        ]
+      },
+      "learn-recursion-by-building-a-decimal-to-binary-converter": {
+        "title": "再帰処理の学習: 十進数・二進数変換ツールを作成する",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
         ]
       }
     }
@@ -712,24 +748,88 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Python を用いた科学技術計算",
+    "title": "Python を用いた科学計算 (ベータ版)",
     "intro": [
-      "Python は現在最も一般的で適応性のあるプログラミング言語です。基本的なスクリプトから機械学習まで幅広く使用することができます。",
-      "Python を用いた科学技術計算認定講座では、変数、ループ、条件式、そして関数のような、Python の基本を学習します。それから、複雑なデータ構造、ネットワーキング、リレーショナルデータベース、そしてデータ可視化まで素早く強化します。"
+      "The Scientific Computing with Python (Beta) curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "This comprehensive course will guide you through the fundamentals of scientific computing, including data structures, and algorithms."
     ],
     "note": "",
     "blocks": {
-      "python-for-everybody": {
-        "title": "みんなの Python",
+      "learn-string-manipulation-by-building-a-cipher": {
+        "title": "文字列操作の学習: 暗号プログラムを作成する",
         "intro": [
-          "みんなの Python は、Python 3 使用法の基本を教える無料のビデオコースです。",
-          "このコースは Charles Severance 博士 (Chuck 博士としても知られています) によって作成されました。彼はミシガン大学情報学部の臨床学教授で、そこでプログラミング、データベース設計、そしてウェブ開発を含む様々なテクノロジー指向のコースを教えています。"
+          "Python is a powerful and popular programming language widely used for data science, data visualization, web development, game development, machine learning and more.",
+          "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loops, and conditional statements. You'll use these to code your first programs."
+        ]
+      },
+      "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
+        "title": "数値と文字列を扱う学習: Luhn アルゴリズムを実装する",
+        "intro": [
+          "The Luhn Algorithm is widely used for error-checking in various applications, such as verifying credit card numbers.",
+          "By building this project, you'll gain experience working with numerical computations and string manipulation."
+        ]
+      },
+      "learn-list-comprehension-by-building-a-case-converter-program": {
+        "title": "Learn Python List Comprehension by Building a Case Converter Program",
+        "intro": [
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
+          "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
+          "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
+        ]
+      },
+      "learn-regular-expressions-by-building-a-password-generator": {
+        "title": "正規表現の学習: パスワードジェネレーターを作成する",
+        "intro": [
+          "A Python module is a file that contains a set of statements and definitions that you can use in your code.",
+          "In this project, you'll learn how to import modules from the Python standard library. You'll also learn how to use Regular Expressions by building your own password generator program."
+        ]
+      },
+      "learn-algorithm-design-by-building-a-shortest-path-algorithm": {
+        "title": "アルゴリズムデザインの学習: 最短経路アルゴリズムを作成する",
+        "intro": [
+          "Algorithms are step-by-step procedures that developers use to perform calculations and solve computational problems.",
+          "In this project, you'll learn how to use functions, loops, conditional statements, and dictionary comprehensions to implement a Shortest Path algorithm."
+        ]
+      },
+      "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
+        "title": "再帰処理の学習: ハノイの塔パズルを解く",
+        "intro": [
+          "Recursion is a programming approach that allows you to solve complicated computational problems with just a little code.",
+          "In this project, you'll start with a loop-based approach to solving the tower of Hanoi mathematical puzzle. Then you'll learn how to implement a recursive solution."
+        ]
+      },
+      "learn-data-structures-by-building-the-merge-sort-algorithm": {
+        "title": "データ構造の学習: マージソートアルゴリズムを作成する",
+        "intro": [
+          "The Merge Sort Algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
+        ]
+      },
+      "learn-classes-and-objects-by-building-a-sudoku-solver": {
+        "title": "クラスとオブジェクトの学習: 数独ソルバーを作成する",
+        "intro": [
+          "Classes and objects are important programming concepts. These Object-Oriented Programming tools help developers to achieve code modularity, abstraction, and readability. And they promote reusability.",
+          "In this Sudoku Solver project, you'll learn how to use classes and objects to build a Sudoku grid and to solve a Sudoku puzzle."
+        ]
+      },
+      "learn-tree-traversal-by-building-a-binary-search-tree": {
+        "title": "木構造の走査の学習: 二分探索木を作成する",
+        "intro": [
+          "A Binary Search Tree (BST) is an common data structure where data is sorted hierarchically.",
+          "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
+        ]
+      },
+      "learn-lambda-functions-by-building-an-expense-tracker": {
+        "title": "ラムダ関数の学習: 経費記録ツールを作成する",
+        "intro": [
+          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
+          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
         ]
       },
       "scientific-computing-with-python-projects": {
-        "title": "Python を用いた科学技術計算プロジェクト",
+        "title": "Python を用いた科学計算プロジェクト",
         "intro": [
-          "Python の技能をテストする時です。これらのプロジェクトを完成させることによって、Python の優れた基礎知識をもっていることと、Python を用いた科学技術計算認定証を得る資格があることを証明します。"
+          "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
         ]
       }
     }
@@ -838,126 +938,142 @@
     "note": "",
     "blocks": {
       "learn-ratios-and-proportions": {
-        "title": "Learn Ratios and Proportions",
+        "title": "比率と比例式を学ぶ",
         "intro": [
-          "Your journey begins here as you learn how to set up a Colab Notebook that can run Python code. Then, use the notebook to follow along with the videos to learn ratios and proportions using Python."
+          "まずは Python のコードを実行するための Colab ノートブックの設定方法を学ぶところから始めましょう。次に、動画に沿ってそのノートブックを使いながら、比率と比例式について Python を使って学びます。"
         ]
       },
       "learn-how-to-solve-for-x": {
-        "title": "Learn How to Solve for X",
+        "title": "X について解く方法を学ぶ",
         "intro": [
-          "This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code."
+          "この単元では、代数と Python のコードを使って未知の数 (しばしば \"x\" と呼ばれます) について解く方法を学びます。"
         ]
       },
       "learn-fractions-and-decimals": {
-        "title": "Learn Fractions and Decimals",
+        "title": "分数と小数を学ぶ",
         "intro": [
-          "This unit will focus on converting decimals to fractions and percents."
+          "この単元では、小数から分数とパーセントへの変換について学習します。"
         ]
       },
       "learn-functions-and-graphing": {
-        "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "title": "関数とグラフを学ぶ",
+        "intro": ["この単元では、数学の関数について学習します。"]
       },
       "learn-linear-functions": {
-        "title": "Learn Linear Functions",
+        "title": "線形関数を学ぶ",
         "intro": [
-          "This unit will show you how to develop linear equations from two points."
+          "この動画では、2 つの点から線形方程式を導出する方法を学習します。"
         ]
       },
       "learn-common-factors-and-square-roots": {
-        "title": "Learn Common Factors and Square Roots",
+        "title": "共通因数と平方根を学ぶ",
         "intro": [
-          "In this unit, you will learn how to find common factors and divide them out. This will be useful when simplifying fractions and factoring square roots."
+          "この単元では、共通因数を見つけて除算を行う方法を学習します。これは約分や平方根の中身の因数分解をする際に役立ちます。"
         ]
       },
       "build-a-multi-function-calculator-project": {
-        "title": "Multi-Function Calculator",
+        "title": "多機能計算機",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a multi-function calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、多機能計算機を作成します。"
         ]
       },
       "learn-how-to-graph-systems-of-equations": {
-        "title": "Learn How to Graph Systems of Equations",
+        "title": "連立方程式のグラフのかき方を学ぶ",
         "intro": [
-          "This unit will focus on graphing two equations on the same coordinate plane, so that you can see where the lines intersect."
+          "この単元では、同じ座標平面上に 2 つの方程式のグラフをかき、線が交差する場所を見つける方法を学習します。"
         ]
       },
       "learn-how-to-solve-systems-of-equations": {
-        "title": "Learn How to Solve Systems of Equations",
+        "title": "連立方程式の解き方を学ぶ",
         "intro": [
-          "In this unit, you will learn how to solve a system of two equations (with two variables) without graphing. You will see how you can factor an equation and solve for a certain variable in Python. By the end of this unit, you will be able to solve and graph the system with one block of code."
+          "この単元では、2 つの式からなる連立方程式 (変数が 2 つ) を、グラフをかかずに解く方法を学習します。Python で方程式の因数分解を行ったり、特定の変数について解いたりする方法を見ていきます。この単元の終わりには、コードを書いて連立方程式を解いたりグラフ表示したりできるようになるでしょう。"
         ]
       },
       "learn-applications-of-linear-systems": {
-        "title": "Learn Applications of Linear Systems",
+        "title": "連立一次方程式の応用を学ぶ",
         "intro": [
-          "In this unit, you will see how you can use the algebra you learned so far to solve real world problems."
+          "この単元では、ここまで学習してきた代数学を使って現実世界の問題を解決する方法を見ていきます。"
         ]
       },
       "learn-quadratic-equations": {
-        "title": "Learn Quadratic Equations",
+        "title": "二次方程式を学ぶ",
         "intro": [
-          "This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations."
+          "この単元では線形方程式の範囲を超えて、指数を扱ったり、放物線のグラフをかいたりします。放物線の重要な点の見つけ方や、二次方程式の解き方を学習します。"
         ]
       },
       "build-a-graphing-calculator-project": {
-        "title": "Graphing Calculator",
+        "title": "グラフ電卓",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a graphing calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、グラフ電卓を作成します。"
         ]
       },
       "learn-parent-graphs-and-polynomials": {
-        "title": "Learn Parent Graphs and Polynomials",
+        "title": "親関数と多項式を学ぶ",
         "intro": [
-          "This unit will show you many different types of \"parent\" graphs, the basic patterns that make up more complicated graphs. Polynomials are mathematical expressions with \"multiple things\" - the more complicated equations that are built with basic patterns. You will see what these graphs look like, how to modify them, and how to do this all with Python code."
+          "この単元では、より複雑なグラフの元となる基本のパターンである「親」グラフのさまざまな種類を説明します。多項式は「複数のもの」からなる数式で、基本のパターンが組み合わさって複雑な方程式を構成しています。これらのグラフがどのような見た目をしているか、それを変化させる方法、Python のコードを使って同じことをする方法を学びます。"
         ]
       },
       "build-three-math-games-project": {
-        "title": "Three Math Games",
+        "title": "3 つの数学ゲーム",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build three math games."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、3 つの数学ゲームを作成します。"
         ]
       },
       "learn-business-applications-of-college-algebra": {
-        "title": "Learn Business Applications of College Algebra",
+        "title": "代数学のビジネスへの応用を学ぶ",
         "intro": [
-          "This unit will show you how to apply your solving and graphing skills to find cost, revenue, and profit. You will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other."
+          "この単元では、方程式を解いたりグラフをかいたりするスキルを、費用、収益、利益の計算に適用する方法を説明します。2 点から需要関数を導くコードを書いたり、価格が利益のグラフにどう影響するか、これらの方程式が互いにどう関係しているかを学びます。"
         ]
       },
       "learn-simple-and-compound-interest": {
-        "title": "Learn Simple and Compound Interest",
+        "title": "単利と複利を学ぶ",
         "intro": [
-          "This unit will show you how to calculate interest, loan payments, and the estimated value of investments. You will see the math formula and turn that into code. Because these formulas tend to get complicated, you will appreciate having the code where you can just modify a few values."
+          "この単元では、利子、ローンの支払い、投資の推定価値を計算する方法を説明します。数式を見て、それをコードに書き換えます。これらの計算式は複雑になりがちなので、ほんのいくつかの値を変更するだけで使えるコードのありがたみが感じられることでしょう。"
         ]
       },
       "learn-exponents-and-logarithms": {
-        "title": "Learn Exponents and Logarithms",
+        "title": "指数と対数を学ぶ",
         "intro": [
-          "This unit will show you how exponents and logarithms are inverse functions, and how you can use these functions in various applications."
+          "この単元では、指数関数と対数関数が逆関数であること、これらの関数をどのように応用できるかを学習します。"
         ]
       },
       "build-a-financial-calculator-project": {
-        "title": "Financial Calculator",
+        "title": "財務計算機",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a financial calculator."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、財務計算機を作成します。"
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "College Algebra with Python: Conclusion",
+        "title": "Python を用いた代数学: まとめ",
         "intro": [
-          "This will be the last unit in this course. Let's look at how you can connect your Math and Python knowledge with external data."
+          "これはこのコース最後の単元となります。あなたの数学と Python の知識を、外部データと結びつける方法を学びましょう。"
         ]
       },
       "build-a-data-graph-explorer-project": {
-        "title": "Data Graph Explorer",
+        "title": "データグラフエクスプローラー",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build a data graph explorer."
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
+          "このプロジェクトでは、データグラフエクスプローラーを作成します。"
+        ]
+      }
+    }
+  },
+  "python-for-everybody": {
+    "title": "(レガシー) みんなの Python",
+    "intro": [
+      "Python is one of the most popular, flexible programming languages today. You can use it for everything from basic scripting to machine learning."
+    ],
+    "note": "",
+    "blocks": {
+      "python-for-everybody": {
+        "title": "みんなの Python",
+        "intro": [
+          "Python for everybody is a free video course series that teaches the basics of using Python 3.",
+          "The courses were created by Dr. Charles Severance (also known as Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development."
         ]
       }
     }
@@ -968,7 +1084,7 @@
       "次回の就職面接に備えて無料のコーディング演習をお探しでしたら、こちらにご用意しています。",
       "このセクションはアルゴリズム、データ構造、および数学の知識をテストする何百ものコーディングチャレンジを含んでいます。技能を向上させ、またはポートフォリオに加えるために活用できる多くの宿題プロジェクトもあります。"
     ],
-    "note": "プロジェクト・オイラーのプロジェクトは独立したコースに移動しました。カリキュラムに戻ってコース一覧を確認してください。",
+    "note": "The Project Euler Project and Rosetta Code have been moved to their own courses. Go back to the curriculum to see the list of courses we offer.",
     "blocks": {
       "algorithms": {
         "title": "アルゴリズム",
@@ -990,56 +1106,89 @@
           "プログラミングの就職面接は常にストレスの多いものです。応募者はときどき面接外での宿題プロジェクトを与えられることがあります。このようなタイプの面接は通常多くの作業を要求しますが、しかしそれらは雇用主にとって、あなたがどのように仕事に取り組むかを確かめるのにうってつけの方法です。",
           "追加演習として、以下のボーナスコーディングプロジェクトを構築してください。ゆっくり時間をかけ、素晴らしいものにして、将来の雇用主へ披露するために履歴書やポートフォリオに追加しましょう。"
         ]
-      },
-      "rosetta-code": {
-        "title": "ロゼッタコード",
-        "intro": [
-          "由緒あるロゼッタコードライブラリから取られた以下の無料のプログラミングタスクで、クリエイティブな課題解決技能を向上させましょう。",
-          "これらの課題は困難かもしれませんが、あなたのアルゴリズムのロジックを新たな高みに押し上げます。",
-          "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>作: Rosetta Code</a>"
-        ]
       }
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project",
+    "title": "The Odin Project - freeCodeCamp Remix (Beta)",
     "intro": [
-      "The Odin Project is one of those \"What I wish I had when I was learning\" resources. ",
-      "Not everyone has access to a computer science education or the funds to attend an intensive coding school and neither of those is right for everyone anyway.",
-      "This project is designed to fill in the gap for people who are trying to hack it on their own but still want a high quality education."
+      "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
+      "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
+      "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world.",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
+      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
         "title": "Learn HTML Foundations",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Get a solid grasp of HTML essentials with this course. From structuring web pages to understanding semantic tags, you'll build a strong foundation for creating well-organized and accessible content on the web."
+        ]
       },
       "top-working-with-text": {
         "title": "Working with Text",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Explore the intricacies of working with text in web development. Learn about text formatting, manipulation, and presentation to enhance your skills in creating web content."
+        ]
       },
       "top-links-and-images": {
         "title": "Links and Images",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Learn how to incorporate links and images into your web projects. This course covers the fundamentals of creating links and embedding images to make your websites more interactive and visually appealing."
+        ]
       },
       "top-build-a-recipe-project": {
         "title": "Learn HTML Foundations by Building a Recipe Page",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Put your HTML skills into practice by building a recipe page. This hands-on project allows you to apply your knowledge and create a functional web page while reinforcing key concepts of HTML development."
+        ]
       },
       "top-learn-css-foundations": {
         "title": "Learn CSS Foundations",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Dive into the world of Cascading Style Sheets (CSS) and learn how to style your HTML elements. Explore styling properties, selectors, and layouts to bring your web pages to life."
+        ]
       },
       "top-learn-css-foundations-projects": {
         "title": "Learn CSS Foundations Projects",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Take your CSS skills to the next level by working on practical projects. This course provides hands-on experience in applying CSS to create responsive designs for real-world scenarios."
+        ]
       },
       "top-learn-css-specificity": {
         "title": "Learn CSS Specificity",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Learn CSS specificity and gain a better understanding of how styles are applied to HTML elements. This course explores the nuances of CSS rules and helps you write efficient and targeted styles for your web pages."
+        ]
       },
       "top-the-box-model": {
         "title": "Learn the Box Model",
-        "intro": ["A description is to be determined"]
+        "intro": [
+          "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
+        ]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
+        ]
+      },
+      "top-learn-block-and-inline": {
+        "title": "Learn the difference between Block and Inline",
+        "intro": [
+          "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      },
+      "top-learn-variables-and-operators": {
+        "title": "Learn Variables and Operators",
+        "intro": [
+          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+        ]
+      },
+      "top-learn-data-types-and-conditionals": {
+        "title": "Learn Data Types and Conditionals",
+        "intro": ["Learn about data types and conditionals in JavaScript."]
       }
     }
   },
@@ -1083,54 +1232,54 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(New) Foundational C# with Microsoft",
+    "title": "(新) Microsoft 連携・基礎 C#",
     "intro": [
-      "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
-      "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
-      "By the end of this course, you will have gained the practical skills and knowledge needed to confidently leverage C# for building applications."
+      "このコースは、C# プログラミングについての総合的な入門講座です。中心となる概念、構文、ソフトウェア開発における実践的な応用例などをカバーします。",
+      "以下のハンズオン演習とプロジェクトを通して、変数、データ型、制御構造、オブジェクト指向プログラミングの原則など、C# の基礎を学習します。",
+      "このコースを完了する頃には、C# を使いこなしてアプリケーションを作成できる実践的なスキルと知識が身についていることでしょう。"
     ],
-    "note": "Each section below has a trophy associated with it that you must earn on the Microsoft Learn platform. After earning each trophy, you need to verify them on freeCodeCamp. Once you have done those, you can qualify for the certification exam.",
+    "note": "以下の各セクションでは、それぞれ関連するトロフィーを Microsoft Learn プラットフォームで獲得する必要があります。それぞれのトロフィーを獲得後、freeCodeCamp のサイトで確認を実行してください。すべてのトロフィーの確認が完了すると、認定試験の受験資格が得られます。",
     "blocks": {
       "write-your-first-code-using-c-sharp": {
-        "title": "Write Your First Code Using C#",
+        "title": "初めての C# コードを書く",
         "intro": [
-          "Begin your journey by learning to write your first code using C#. Develop a strong foundation as you explore the fundamentals and syntax of the language, setting the stage for your programming adventures."
+          "C# を使った初めてのコードを書くところから始めましょう。言語の基本と構文を学び、プログラミングの世界の冒険に備えてしっかりと基礎を固めます。"
         ]
       },
       "create-and-run-simple-c-sharp-console-applications": {
-        "title": "Create and Run Simple C# Console Applications",
+        "title": "シンプルな C# コンソールアプリケーションを作成、実行する",
         "intro": [
-          "Master the art of creating and running simple C# console applications. Dive into the world of console-based programming, where you will gain hands-on experience executing your code and seeing it in action."
+          "C# でシンプルなコンソールアプリケーションを作成、実行する技術を習得しましょう。コンソールベースのプログラミングの世界に飛び込み、自分で書いたコードを実行して動作を確認する体験をハンズオンで学習します。"
         ]
       },
       "add-logic-to-c-sharp-console-applications": {
-        "title": "Add Logic to C# Console Applications",
+        "title": "C# コンソールアプリケーションにロジックを追加する",
         "intro": [
-          "Unlock the power of logic in C# console applications. Learn how to add logic and decision-making capabilities to your code, enabling your applications to make dynamic choices and respond intelligently to different scenarios."
+          "C# コンソールアプリケーションでロジックの力を活用しましょう。あなたのアプリケーションが動的な選択を行ってさまざまなシナリオに賢く対応できるように、コードに論理と判断の機能を追加する方法を学習します。"
         ]
       },
       "work-with-variable-data-in-c-sharp-console-applications": {
-        "title": "Work with Variable Data in C# Console Applications",
+        "title": "C# コンソールアプリケーションで変数データを扱う",
         "intro": [
-          "Discover the versatility of variable data in C# console applications. Harness the ability to store and manipulate different types of data, such as numbers and text, as you delve into the essential concepts of variables and data handling."
+          "C# コンソールアプリケーションで、変数データの汎用性に触れましょう。変数とデータ処理の本質的な概念を掘り下げながら、数値やテキストなど、さまざまな種類のデータを保存、操作する機能を活用します。"
         ]
       },
       "create-methods-in-c-sharp-console-applications": {
-        "title": "Create Methods in C# Console Applications",
+        "title": "C# コンソールアプリケーションでメソッドを作成する",
         "intro": [
-          "Take your C# console applications to the next level by mastering the art of creating methods. Learn how to organize and modularize your code, making it more manageable, reusable, and efficient."
+          "メソッドを作成する技術を習得して、あなたの C# コンソールアプリケーションを次のレベルへと引き上げましょう。コードを管理しやすく、再利用しやすく、そして効率的にするために、整理したりモジュール化したりする方法を学習します。"
         ]
       },
       "debug-c-sharp-console-applications": {
-        "title": "Debug C# Console Applications",
+        "title": "C# コンソールアプリケーションをデバッグする",
         "intro": [
-          "Sharpen your troubleshooting skills as you dive into the world of debugging C# console applications. Gain the ability to identify and fix issues in your code, ensuring your applications run smoothly and deliver the desired results."
+          "C# コンソールアプリケーションをデバッグしながら、トラブルシューティングのスキルを磨きましょう。コード内の問題を特定して修正し、アプリケーションがスムーズに実行されて期待通りの結果が得られるようにする力を身に付けます。"
         ]
       },
       "foundational-c-sharp-with-microsoft-certification-exam": {
-        "title": "Foundational C# with Microsoft Certification Exam",
+        "title": "Microsoft 連携・基礎 C# 認定試験",
         "intro": [
-          "Use what you've learned to pass the exam to earn your Foundational C# with Microsoft Certification"
+          "ここまで学んだことを活かして認定試験に合格し、Microsoft 連携・基礎 C# 認定証を獲得しましょう。"
         ]
       }
     }
@@ -1152,45 +1301,65 @@
   "a2-english-for-developers": {
     "title": "A2 English for Developers (Beta)",
     "intro": [
-      "This course teaches the English language, designed for developers.",
-      "More text here."
+      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
+      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
+      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
+      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Learn Greetings in your First Day at the Office",
-        "intro": ["Learn greetings."]
+        "intro": [
+          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+        ]
       },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Learn Introductions in an Online Team Meeting",
-        "intro": ["Learn introductions."]
+        "intro": [
+          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+        ]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Learn Conversation Starters in the Break Room",
-        "intro": ["Learn conversation starters."]
+        "intro": [
+          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+        ]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+        ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+        ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Learn How to Describe Your Current Project",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+        ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
+        ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Learn How to Talk About Hobbies and Interests",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
+        ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "Learn How to Discuss Roles and Responsibilities",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+        ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Learn How to Have a Conversation About Preferences and Motivations",
@@ -1270,6 +1439,20 @@
       }
     }
   },
+  "rosetta-code": {
+    "title": "Rosetta Code",
+    "intro": [
+      "Level up your creative problem solving skills with these free programming tasks from the classic Rosetta Code library.",
+      "These challenges can prove to be difficult, but they will push your algorithm logic to new heights.",
+      "<a href='https://rosettacode.org/wiki/Rosetta_Code' target='_blank' rel='noopener noreferrer nofollow'>Attribute: Rosetta Code</a>"
+    ],
+    "blocks": {
+      "rosetta-code-challenges": {
+        "title": "Rosetta Code Challenges",
+        "intro": ["These are the challenges for Rosetta Code."]
+      }
+    }
+  },
   "example-certification": {
     "title": "Example Certification",
     "intro": ["placeholder"],
@@ -1290,11 +1473,15 @@
     "legacy-header": "レガシーコース",
     "legacy-desc": "このコースは認定講座から除外されましたが、追加の学習用に引き続きご利用いただけます。",
     "legacy-go-back": "カリキュラムの最新版へ移動",
-    "course-maintenance": "These courses are undergoing maintenance. If they are not working, you can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
-    "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
+    "course-maintenance": "こちらのコースは現在メンテナンス中です。アクセスできない場合、こちらの記事の方法でローカル実行することも可能です:\n <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>",
+    "course-disabling-soon": "The browser version of these courses will be temporarily disabled soon and your virtual machines will be deleted. Any progress in your virtual machines will be lost. If you have any files you want from them, you should save them to your computer. We apologize for any inconvenience. We hope to have an improved browser version of these courses available again in the next few weeks.",
+    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again soon.",
+    "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "progress-wont-save": "ただしローカルで実行する場合には、進捗状況は freeCodeCamp アカウントに反映されません。",
     "go-back-to-learn": "カリキュラムの安定版へ戻る。",
     "read-database-cert-article": "続行する前に、こちらのフォーラム投稿をお読みください。",
     "enable-cookies": "サードパーティーの Cookie が有効になっていることを確認してから開始してください。",
-    "english-only": "このセクションのコースは、英語版でのみ利用可能です。現時点ではタイトルと紹介文のみが翻訳に対応しており、レッスン自体は翻訳されておりません。"
+    "english-only": "このセクションのコースは、英語版でのみ利用可能です。現時点ではタイトルと紹介文のみが翻訳に対応しており、レッスン自体は翻訳されておりません。",
+    "exam-english-only": "認定試験は現在、英語のみとなっています。その他の部分は翻訳版が提供されている可能性があります。"
   }
 }

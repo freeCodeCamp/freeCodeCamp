@@ -75,7 +75,7 @@ const directoryToSuperblock = {
   '13-relational-databases': 'relational-database',
   '14-responsive-web-design-22': '2022/responsive-web-design',
   '15-javascript-algorithms-and-data-structures-22':
-    '2022/javascript-algorithms-and-data-structures',
+    'javascript-algorithms-and-data-structures-v8',
   '16-the-odin-project': 'the-odin-project',
   '17-college-algebra-with-python': 'college-algebra-with-python',
   '18-project-euler': 'project-euler',
@@ -83,6 +83,8 @@ const directoryToSuperblock = {
     'foundational-c-sharp-with-microsoft',
   '20-upcoming-python': 'upcoming-python',
   '21-a2-english-for-developers': 'a2-english-for-developers',
+  '22-rosetta-code': 'rosetta-code',
+  '23-python-for-everybody': 'python-for-everybody',
   '99-example-certification': 'example-certification'
 };
 

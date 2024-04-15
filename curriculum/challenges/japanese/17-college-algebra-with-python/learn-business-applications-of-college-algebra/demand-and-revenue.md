@@ -1,6 +1,6 @@
 ---
 id: 6363d2649078df117ce4c404
-title: "Demand and Revenue"
+title: "需要と収益"
 challengeType: 15
 videoId: 8PIZmiMFmfk
 dashedName: demand-and-revenue
@@ -8,39 +8,39 @@ dashedName: demand-and-revenue
 
 # --description--
 
-In this video, you will write code to develop a demand function from two points. You will see how price affects the profit graph and how all of these equations relate to each other.
+この動画では、2 つの点から需要関数を導出するコードを記述します。 価格が利益のグラフに及ぼす影響と、これらすべての等式の相互関係がわかります。
 
-Here is the <a href="https://colab.research.google.com/drive/1foxkSd90q1tHCSqyY6NFAEnMfH0nNwXe?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+この動画と合わせて<a href="https://colab.research.google.com/drive/1foxkSd90q1tHCSqyY6NFAEnMfH0nNwXe?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用してください。
 
-**Here is a link to the textbook you will need to complete the assignment for this video:**
+**この動画の課題に取り組むのに必要な教科書へのリンクを下記に示します:**
 
-\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">Business Math, a Step-by-Step Handbook (2021) by Jean-Paul Oliver</a>
+\- <a href="https://lyryx.com/subjects/business/business-mathematics/" target="_blank" rel="noopener noreferrer nofollow">『Business Math, a Step-by-Step Handbook (2021)』、Jean-Paul Oliver著</a>
 
 # --assignment--
 
-Complete the problems on pages 155 and 163 from "Business Math, a Step-by-Step Handbook (2021)".
+『Business Math, a Step-by-Step Handbook (2021)』の 155 ページと 163 ページにある問題を解いてください。
 
 # --question--
 
 ## --text--
 
-Which of the following business equations is not correct?
+次のビジネス方程式のうち、正しくないものはどれですか？
 
 ## --answers--
 
-Profit = Revenue - Cost
+利益 = 収益 - 費用
 
 ---
 
-Revenue = Price * Demand
+収益 = 価格 * 需要
 
 ---
 
-Cost = Fixed Expenses + Variable Expenses
+費用 = 固定費 + 変動費
 
 ---
 
-Marginal Revenue = Margins + Revenue
+限界利益 = 利益 + 収益
 
 ## --video-solution--
 

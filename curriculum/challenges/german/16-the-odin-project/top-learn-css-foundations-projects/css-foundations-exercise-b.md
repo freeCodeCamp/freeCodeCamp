@@ -1,35 +1,35 @@
 ---
 id: 63ee3fe4381756f9716727f0
-title: CSS Foundations Exercise B
+title: CSS-Grundlagen Übung B
 challengeType: 14
 dashedName: css-foundations-exercise-b
 ---
 
 # --description--
 
-**Objective:** There are several elements in the HTML file provided, which you will have to add either class or ID attributes to. You will then have to add rules in the CSS file provided using the correct selector syntax.
+**Objective:** There are several elements in the HTML file provided, which you will have to add either class or ID attributes to. Danach musst du die Regeln in der CSS-Datei mit der richtigen Selektor-Syntax hinzufügen.
 
 ## User Stories
 
-1. You should see a `yellow` background for all odd numbered elements in the list.
+1. Du solltest einen `yellow` Hintergrund für alle ungerade nummerierten Elemente in der Liste sehen.
 
-1. You should have a `class` selector used for all odd numbered elements in the list.
+1. Du solltest einen `class`-Selektor haben, den du für alle ungerade nummerierten Elemente in der Liste verwendest.
 
-1. You should see that the second element in the list has `blue` text and a `font-size` of `36px`.
+1. Du solltest sehen, dass das zweite Element in der Liste einen `blue`-Text und eine `font-size` von `36px` hat.
 
-1. The `font-size` and text color on the second element should be set by using an `id` attribute.
+1. Die `font-size` und die Textfarbe auf dem zweiten Element sollten durch ein `id`-Attribut festgelegt werden.
 
-1. You should see that the third element in the list has a `font-size` of `24px`.
+1. Du solltest sehen, dass das dritte Element in der Liste eine `font-size` von `24px` hat.
 
-1. The `font-size` on the third element should be set by using a `class` attribute.
+1. Die `font-size` auf dem dritten Element sollte unter Verwendung eines `class`-Attributs festgelegt werden.
 
-1. You should see that the fourth element in the list has a `red` background, a `font-size` of `24px`, and a `font-weight` of `bold`.
+1. Du solltest sehen, dass das vierte Element in der Liste einen `red` Hintergrund, eine `font-size` von `24px` und eine `font-weight` von `bold` hat.
 
-1. The `font-size` of the fourth element should be set with a `class` attribute. The `font-weight` and the color should be set with an `id` attribute.
+1. Die `font-size` des vierten Elements sollte mit einem `class`-Attribut festgelegt werden. Die `font-weight` und die Farbe sollten mit einem `id`-Attribut festgelegt werden.
 
 # --hints--
 
-Every odd element should have a `class` attribute.
+Jedes ungerade Element sollte ein `class`-Attribut haben.
 
 ```js
 const p = Array.from(document.querySelectorAll('P'));
@@ -39,31 +39,32 @@ const everyPHasClass = p?.every((paragraph) => paragraph.classList.length > 0);
 assert(everyPHasClass);
 ```
 
-Your odd elements should have a `background-color` of `yellow`.
+Deine ungeraden Elemente sollten eine `yellow` `background-color` haben.
 
 ```js
 const p = Array.from(document.querySelectorAll('P'));
 
-const everyPhasBackgroundColor = p?.every((paragraph) => {
-
+const everyPHasBackgroundColor = p?.every((paragraph) => {
   const style = getComputedStyle(paragraph);
 
   return style?.backgroundColor === 'rgb(255, 255, 0)';
 })
+
+assert.equal(everyPHasBackgroundColor, true);
 ```
 
-Your second element should have `blue` text and a `font-size` of `36px`.
+Dein zweites Element sollte einen `blue` Text und eine `font-size` von `36px` haben.
 
 ```js
 const secondElementId = document.querySelectorAll('div')?.[0]?.id;
 
 const style = new __helpers.CSSHelp(document).getStyle(`#${secondElementId}`);
 
-assert.equal(style?.color, 'rgb(0, 0, 255)')
+assert.equal(style?.color, 'blue');
 assert.equal(style?.fontSize, '36px');
 ```
 
-Your third element should have text and a `font-size` of `24px`.
+Dein drittes Element sollte einen Text und eine `font-size` von `24px` haben.
 
 ```js
 const thirdElement = document.querySelectorAll('p')?.[1];
@@ -82,7 +83,7 @@ assert(thirdElementClasses.some(thirdElementClass => {
 
 ```
 
-The fourth element should have a `font-size` of `24px`.
+Das vierte Element sollte eine `font-size` von `24px` haben.
 
 ```js
 const fourthElementClass = document.querySelectorAll('div')?.[1]?.classList[0];
@@ -92,7 +93,7 @@ const style = new __helpers.CSSHelp(document).getStyle(`.${fourthElementClass}`)
 assert(style?.fontSize === '24px');
 ```
 
-The fourth element should have a `red` `background-color`.
+Das vierte Element sollte eine `red` `background-color` haben.
 
 ```js
 const fourthElement = document.querySelectorAll('div')?.[1]?.id;
@@ -102,7 +103,7 @@ const style = new __helpers.CSSHelp(document).getStyle(`#${fourthElement}`);
 assert(style?.backgroundColor === 'red');
 ```
 
-The fourth element should have a `font-weight` of `bold`.
+Das vierte Element sollte eine `bold` `font-weight` haben.
 
 ```js
 const fourthElement = document.querySelectorAll('div')?.[1]?.id;
@@ -164,7 +165,7 @@ assert(style?.fontWeight === 'bold');
 
 ```css
 .odd {
-  background-color: rgb(255, 167, 167);
+  background-color: yellow;
   font-family: Verdana, "DejaVu Sans", sans-serif;
 }
 
@@ -173,7 +174,7 @@ assert(style?.fontWeight === 'bold');
 }
 
 #two {
-  color: #0000ff;
+  color: blue;
   font-size: 36px;
 }
 

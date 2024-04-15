@@ -2,7 +2,7 @@ import currData from '../../../shared/config/curriculum.json';
 import { orderedSuperBlockInfo } from '../../../tools/scripts/build/build-external-curricula-data';
 
 const nonEditorSB = [
-  'scientific-computing-with-python',
+  'python-for-everybody',
   'data-analysis-with-python',
   'machine-learning-with-python'
 ];

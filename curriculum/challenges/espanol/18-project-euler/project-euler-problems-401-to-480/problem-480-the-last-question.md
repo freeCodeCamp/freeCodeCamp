@@ -38,7 +38,7 @@ Define $W(p)$ as the word in position $p$.
 
 We can see that $P(w)$ and $W(p)$ are inverses: $P(W(p)) = p$ and $W(P(w)) = w$.
 
-Examples:
+Ejemplos:
 
 $$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
   & P(\text{aaaaaacdee}) = 10 \\\\   & W(115246685191495243) = \text{ euler} \\\\

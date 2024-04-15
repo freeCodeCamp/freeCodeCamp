@@ -1,6 +1,6 @@
 ---
 id: 5900f4371000cf542c50ff49
-title: 'Problem 202: Laserbeam'
+title: '問題202：Laserbeam'
 challengeType: 1
 forumTopicId: 301843
 dashedName: problem-202-laserbeam

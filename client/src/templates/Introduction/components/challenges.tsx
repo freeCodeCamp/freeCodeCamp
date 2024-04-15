@@ -1,39 +1,58 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { executeGA } from '../../../redux/actions';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
-import { isNewJsCert, isNewRespCert } from '../../../utils/is-a-cert';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ executeGA }, dispatch);
+const getStepNumber = (dashedName: string) => {
+  // dashedName should be in the format 'step-1' or 'task-1'
+  const match = dashedName.match(/-(\d+)/);
+  return match ? match[1] : '';
+};
 
 interface Challenges {
   challengesWithCompleted: ChallengeWithCompletedNode[];
   isProjectBlock: boolean;
-  superBlock: SuperBlocks;
+  isGridMap?: boolean;
   blockTitle?: string | null;
 }
 
 const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
   isCompleted ? <GreenPass /> : <GreenNotCompleted />;
 
+const Challenge = ({
+  challenge
+}: {
+  challenge: ChallengeWithCompletedNode;
+}) => (
+  <Link to={challenge.fields.slug}>
+    <span className='badge map-badge'>
+      <CheckMark isCompleted={challenge.isCompleted} />
+    </span>
+    {challenge.title}
+  </Link>
+);
+
+const Project = ({ challenge }: { challenge: ChallengeWithCompletedNode }) => (
+  <Link to={challenge.fields.slug}>
+    {challenge.title}
+    <span className=' badge map-badge map-project-checkmark'>
+      <CheckMark isCompleted={challenge.isCompleted} />
+    </span>
+  </Link>
+);
+
 function Challenges({
   challengesWithCompleted,
   isProjectBlock,
-  superBlock,
+  isGridMap = false,
   blockTitle
 }: Challenges): JSX.Element {
   const { t } = useTranslation();
-
-  const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
 
   const firstIncompleteChallenge = challengesWithCompleted.find(
     challenge => !challenge.isCompleted
@@ -60,40 +79,51 @@ function Challenges({
       )}
       <nav
         aria-label={
-          blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')
+          blockTitle
+            ? challengesWithCompleted[0].superBlock === SuperBlocks.A2English
+              ? t('aria.dialogues-and-tasks-for', { blockTitle })
+              : t('aria.steps-for', { blockTitle })
+            : t('aria.steps')
         }
       >
         <ul className={`map-challenges-ul map-challenges-grid `}>
-          {challengesWithCompleted.map((challenge, i) => (
+          {challengesWithCompleted.map(challenge => (
             <li
               className={`map-challenge-title map-challenge-title-grid ${
-                isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
+                isProjectBlock
+                  ? 'map-project-wrap'
+                  : challenge.challengeType === challengeTypes.dialogue
+                    ? 'map-dialogue-wrap'
+                    : 'map-challenge-wrap'
               }`}
               id={challenge.dashedName}
               key={`map-challenge ${challenge.fields.slug}`}
             >
-              {!isProjectBlock ? (
+              {!isProjectBlock &&
+              challenge.challengeType !== challengeTypes.dialogue ? (
+                // Step or Task challenge
                 <Link
                   to={challenge.fields.slug}
                   className={`map-grid-item ${
                     +challenge.isCompleted ? 'challenge-completed' : ''
                   }`}
                 >
-                  <span className='sr-only'>{t('aria.step')}</span>
-                  <span>{i + 1}</span>
+                  <span className='sr-only'>
+                    {challenge.superBlock === SuperBlocks.A2English
+                      ? t('aria.task')
+                      : t('aria.step')}
+                  </span>
+                  <span>{getStepNumber(challenge.dashedName)}</span>
                   <span className='sr-only'>
                     {challenge.isCompleted
                       ? t('icons.passed')
                       : t('icons.not-passed')}
                   </span>
                 </Link>
+              ) : challenge.challengeType === challengeTypes.dialogue ? (
+                <Challenge challenge={challenge} />
               ) : (
-                <Link to={challenge.fields.slug}>
-                  {challenge.title}
-                  <span className=' badge map-badge map-project-checkmark'>
-                    <CheckMark isCompleted={challenge.isCompleted} />
-                  </span>
-                </Link>
+                <Project challenge={challenge} />
               )}
             </li>
           ))}
@@ -111,19 +141,9 @@ function Challenges({
           key={'map-challenge' + challenge.fields.slug}
         >
           {!isProjectBlock ? (
-            <Link to={challenge.fields.slug}>
-              <span className='badge map-badge'>
-                <CheckMark isCompleted={challenge.isCompleted} />
-              </span>
-              {challenge.title}
-            </Link>
+            <Challenge challenge={challenge} />
           ) : (
-            <Link to={challenge.fields.slug}>
-              {challenge.title}
-              <span className='badge map-badge map-project-checkmark'>
-                <CheckMark isCompleted={challenge.isCompleted} />
-              </span>
-            </Link>
+            <Project challenge={challenge} />
           )}
         </li>
       ))}
@@ -133,4 +153,4 @@ function Challenges({
 
 Challenges.displayName = 'Challenges';
 
-export default connect(null, mapDispatchToProps)(withTranslation()(Challenges));
+export default withTranslation()(Challenges);

@@ -16,7 +16,7 @@ dashedName: create-a-controlled-input
 
 أولا، إنشاء طريقة تسمى `handleChange()` تحتوي على وسيط يسمى `event`. عندما يتم تسمية الطريقة، فإنها تتلقى كائن `event` يحتوي على سلسلة من النص من عنصر `input`. يمكنك الوصول إلى هذه السلسلة باستخدام `event.target.value` داخل الطريقة. حديث خاصية (property) تسمى `input` في `state` للمكون (component) مع هذا المقطع النصي (string) الجديدة.
 
-في طريقة `render`، أنشئ عنصر `input` فوق علامة `h4`. أضف سمة (attribute) تسمى `value` تساوي خاصية (property) تسمى `input` في `state` للمكون (component). ثم أضف معالج الحدث `onChange()` إلى طريقة `handleChange()`.
+في طريقة `render`، أنشئ عنصر `input` فوق علامة `h4`. أضف سمة (attribute) تسمى `value` تساوي خاصية (property) تسمى `input` في `state` للمكون (component). Then add an `onChange` property set to the `handleChange()` event handler method.
 
 عندما تكتب في صندوق الإدخال (input)، يتم معالجة هذا النص بواسطة طريقة (method) تسمى `handleChange()`، تُعيين كخاصية (property) تسمى `input` في `state` المحلية، وتم أنتاجها كقيمة في صندوق `input` على الصفحة. تكون `state` المكون (component) المصدر الوحيد للحقيقة (single source of truth) فيما يتعلق ببيانات الإدخال (input).
 

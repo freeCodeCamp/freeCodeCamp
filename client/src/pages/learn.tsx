@@ -4,21 +4,19 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { bindActionCreators, Dispatch } from 'redux';
 import { Container, Col, Row } from '@freecodecamp/ui';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
 import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
-import { defaultDonation } from '../../../shared/config/donation-settings';
 import {
   isSignedInSelector,
   userSelector,
   userFetchStateSelector
 } from '../redux/selectors';
 
-import { executeGA } from '../redux/actions';
+import callGA from '../analytics/call-ga';
 
 interface FetchState {
   pending: boolean;
@@ -53,7 +51,6 @@ interface LearnPageProps {
   fetchState: FetchState;
   state: Record<string, unknown>;
   user: User;
-  executeGA: (payload: Record<string, unknown>) => void;
   data: {
     challengeNode: {
       challenge: {
@@ -63,12 +60,8 @@ interface LearnPageProps {
   };
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ executeGA }, dispatch);
-
 function LearnPage({
   isSignedIn,
-  executeGA,
   fetchState: { pending, complete },
   user: { name = '', completedChallengeCount = 0, isDonating = false },
   data: {
@@ -81,12 +74,10 @@ function LearnPage({
 }: LearnPageProps) {
   const { t } = useTranslation();
 
-  const onDonationAlertClick = () => {
-    executeGA({
+  const onLearnDonationAlertClick = () => {
+    callGA({
       event: 'donation_related',
-      action: `Learn Donation Alert Click`,
-      duration: defaultDonation.donationDuration,
-      amount: defaultDonation.donationAmount
+      action: `Learn Donation Alert Click`
     });
   };
   return (
@@ -102,7 +93,7 @@ function LearnPage({
               name={name}
               pending={pending}
               slug={slug}
-              onDonationAlertClick={onDonationAlertClick}
+              onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
             />
             <Map />
@@ -116,7 +107,7 @@ function LearnPage({
 
 LearnPage.displayName = 'LearnPage';
 
-export default connect(mapStateToProps, mapDispatchToProps)(LearnPage);
+export default connect(mapStateToProps)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {

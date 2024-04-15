@@ -56,8 +56,8 @@ function Progress({
 }: ProgressProps): JSX.Element {
   const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   // Always false for legacy full stack, since it has no projects.
-  const isCertificationProject = liveCerts.some(
-    cert => cert.projects?.some((project: { id: string }) => project.id === id)
+  const isCertificationProject = liveCerts.some(cert =>
+    cert.projects?.some((project: { id: string }) => project.id === id)
   );
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;

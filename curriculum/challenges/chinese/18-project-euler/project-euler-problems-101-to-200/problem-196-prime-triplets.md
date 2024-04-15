@@ -1,6 +1,6 @@
 ---
 id: 5900f4301000cf542c50ff42
-title: 'Problem 196: Prime triplets'
+title: '问题196：Prime三胞胎'
 challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
@@ -18,13 +18,13 @@ $$\begin{array}{rrr}   &  1 \\\\
   & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\   & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\
   & \cdots \end{array}$$
 
-Each positive integer has up to eight neighbours in the triangle.
+每个正整数在三角形中最多有八个邻居。
 
-A set of three primes is called a prime triplet if one of the three primes has the other two as neighbours in the triangle.
+如果三个素数中的一个具有另外两个作为三角形中的邻居，则一组三个素数被称为素数三元组。
 
-For example, in the second row, the prime numbers 2 and 3 are elements of some prime triplet.
+例如，在第二行中，素数2和3是某些素数三元组的元素。
 
-If row 8 is considered, it contains two primes which are elements of some prime triplet, i.e. 29 and 31. If row 9 is considered, it contains only one prime which is an element of some prime triplet: 37.
+如果考虑第8行，它包含两个素数，它们是某些素数三元组的元素，即29和31.如果考虑第9行，它只包含一个素数，它是某个素数三元组的元素：37。 If row 9 is considered, it contains only one prime which is an element of some prime triplet: 37.
 
 Define $S(n)$ as the sum of the primes in row $n$ which are elements of any prime triplet. Then $S(8) = 60$ and $S(9) = 37$.
 

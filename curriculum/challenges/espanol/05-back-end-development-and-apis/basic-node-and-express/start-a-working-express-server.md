@@ -22,7 +22,7 @@ servirá la cadena 'Response String'.
 
 # --instructions--
 
-Utiliza el método `app.get()` para servir la cadena "Hello Express" a las peticiones GET que coincidan con la ruta `/` (raíz). Asegúrate de que tu código funciona mirando los registros, luego ve los resultados en la vista previa si estás usando Replit.
+Utiliza el método `app.get()` para servir la cadena "Hello Express" a las peticiones GET que coincidan con la ruta `/` (raíz). Be sure that your code works by looking at the logs, then see the results in the preview if you are using Gitpod.
 
 **Nota:** Todo el código de estas lecciones debe añadirse entre las pocas líneas de código con las que hemos iniciado.
 

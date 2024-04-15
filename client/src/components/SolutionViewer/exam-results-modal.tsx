@@ -1,8 +1,7 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Row } from '@freecodecamp/ui';
+import { Row, Button, Modal } from '@freecodecamp/ui';
 
 import type { GeneratedExamResults } from '../../redux/prop-types';
 import { closeModal } from '../../templates/Challenges/redux/actions';
@@ -51,39 +50,39 @@ const ExamResultsModal = ({
 
   return (
     <Modal
-      aria-labelledby='solution-viewer-modal-title'
-      bsSize='large'
-      onHide={() => {
+      onClose={() => {
         closeModal('examResults');
       }}
-      show={isOpen}
-      size='lg'
+      open={isOpen}
+      size='large'
     >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='solution-viewer-modal-title'>
-          {t('settings.labels.results-for', { projectTitle })}
-        </Modal.Title>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+        {t('settings.labels.results-for', { projectTitle })}
       </Modal.Header>
-      <Modal.Body style={{ paddingLeft: 30 }}>
+      <Modal.Body alignment='start'>
         <Spacer size='medium' />
-        <Row>
-          {t('learn.exam.number-of-questions', {
-            n: numberOfQuestionsInExam
-          })}
-        </Row>{' '}
-        <Spacer size='medium' />
-        <Row>
-          {t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
-        </Row>{' '}
-        <Spacer size='medium' />
-        <Row>{t('learn.exam.percent-correct', { n: percentCorrect })}</Row>
-        <Spacer size='medium' />{' '}
-        <Row>
-          {t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
-        </Row>
+        <div style={{ paddingLeft: '30px' }}>
+          <Row>
+            {t('learn.exam.number-of-questions', {
+              n: numberOfQuestionsInExam
+            })}
+          </Row>{' '}
+          <Spacer size='medium' />
+          <Row>
+            {t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
+          </Row>{' '}
+          <Spacer size='medium' />
+          <Row>{t('learn.exam.percent-correct', { n: percentCorrect })}</Row>
+          <Spacer size='medium' />{' '}
+          <Row>
+            {t('learn.exam.time', {
+              t: formatSecondsToTime(examTimeInSeconds)
+            })}
+          </Row>
+        </div>
         <Spacer size='medium' />
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer alignment='end'>
         <Button
           onClick={() => {
             closeModal('examResults');

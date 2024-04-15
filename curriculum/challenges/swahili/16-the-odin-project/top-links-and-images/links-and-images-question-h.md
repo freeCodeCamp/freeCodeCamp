@@ -21,7 +21,7 @@ To use images that you have on your own websites, you can use a relative path.
 
 - Create a new directory named `images` within the `odin-links-and-images` project.
 
-- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the images directory you just created.
+- Next, download <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">this image</a> and move it into the images directory you just created.
 
 - Rename the image to `dog.jpg`.
 
@@ -72,7 +72,7 @@ This is how the The Odin Project logo example you used earlier looks with an alt
 
 # --assignment--
 
-Read about the  <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">four main image formats</a> that can be used on the web.
+Read about the <a href="https://www.freecodecamp.org/news/image-file-types-picture-format-extensions-jpeg-gif-png-svg-tiff/" target="_blank">four main image formats</a> that can be used on the web.
 
 # --question--
 
@@ -82,7 +82,7 @@ What are the four main image formats that you can use for images on the web?
 
 ## --answers--
 
-TIFF, GIF, PNG, and SVG.
+MOV, GIF, PNG, and SVG.
 
 ---
 

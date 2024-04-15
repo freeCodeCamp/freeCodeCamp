@@ -38,4 +38,4 @@ A decimal
 
 ## --video-solution--
 
-3
+الثالث

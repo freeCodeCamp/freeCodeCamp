@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/learn/scientific-computing-with-python/python-for-everybody/introduction-why-program'
+    '/learn/python-for-everybody/python-for-everybody/introduction-why-program'
   );
 });
 

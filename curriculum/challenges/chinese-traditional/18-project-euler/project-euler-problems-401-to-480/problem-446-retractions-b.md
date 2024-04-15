@@ -1,6 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003d
-title: 'Problem 446: Retractions B'
+title: '問題446：撤回B.'
 challengeType: 1
 forumTopicId: 302118
 dashedName: problem-446-retractions-b

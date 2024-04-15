@@ -11,16 +11,8 @@ dashedName: metric-imperial-converter
 构建一个 JavaScript 全栈应用，在功能上与 <a href="https://metric-imperial-converter.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://metric-imperial-converter.freecodecamp.rocks/</a> 类似。 可以采用下面的任意一种方式完成这个挑战：
 
 - 克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
-- 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 - 使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
-
-如果你使用 Replit，请按照以下步骤设置项目：
-
--   首先在 Replit 中导入项目。
--   接着，你将看到一个 `.replit` 窗口。
--   选择 `Use run command` 并点击 `Done` 按钮。
-
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。 也可以将项目的源码链接提交到 GitHub Link 字段中。
 
 **Note:** This project's tests do not work when using `glitch.com`.
 
@@ -29,8 +21,8 @@ dashedName: metric-imperial-converter
 - 在 `/controllers/convertHandler.js` 中完成必要的转换逻辑
 - 在 `/routes/api.js` 中完成必要的路由
 - 复制 `sample.env` 文件到 `.env` 并按需设置变量
-- 在 `.env` 文件中取消注释 `NODE_ENV=test` 来运行测试
-- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台
+- To run the tests automatically, add `NODE_ENV=test` in your `.env` file
+- 使用 `npm run test` 命令在 console 中运行测试。
 
 Write the following tests in `tests/1_unit-tests.js`:
 
@@ -51,7 +43,7 @@ Write the following tests in `tests/1_unit-tests.js`:
 - `convertHandler` 应该正确地将 `lbs` 转换为 `kg`。
 - `convertHandler` 应该正确地将 `kg` 转换为 `lbs`。
 
-Write the following tests in `tests/2_functional-tests.js`:
+在 `tests/2_functional-tests.js` 中编写以下测试：
 
 - 转换一个有效的输入例如 `10L`：`GET` 请求到 `/api/convert`。
 - 转换一个无效的输入例如 `32g`：`GET` 请求到 `/api/convert`。
@@ -61,7 +53,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+你应该提交你自己的项目，而不是示例 URL
 
 ```js
 getUserInput => {

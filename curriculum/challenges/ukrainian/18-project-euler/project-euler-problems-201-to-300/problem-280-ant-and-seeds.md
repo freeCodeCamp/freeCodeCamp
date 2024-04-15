@@ -1,6 +1,6 @@
 ---
 id: 5900f4841000cf542c50ff97
-title: 'Problem 280: Ant and seeds'
+title: 'Завдання 280: мураха та насіння'
 challengeType: 1
 forumTopicId: 301931
 dashedName: problem-280-ant-and-seeds
@@ -8,11 +8,11 @@ dashedName: problem-280-ant-and-seeds
 
 # --description--
 
-A laborious ant walks randomly on a 5x5 grid. The walk starts from the central square. At each step, the ant moves to an adjacent square at random, without leaving the grid; thus there are 2, 3 or 4 possible moves at each step depending on the ant's position.
+Працьовита мураха ходить навмання по сітці 5×5. Шлях починається з центрального квадрата. На кожному кроці мураха переміщується до сусіднього квадрата навмання, не покидаючи сітку. Таким чином на кожному кроці є 2, 3 або 4 можливі ходи залежно від положення мурахи.
 
-At the start of the walk, a seed is placed on each square of the lower row. When the ant isn't carrying a seed and reaches a square of the lower row containing a seed, it will start to carry the seed. The ant will drop the seed on the first empty square of the upper row it eventually reaches.
+На початку шляху на кожному квадраті нижнього ряду кладеться насіння. Коли мураха не несе насіння і досягає квадрата нижнього ряду, що містить насіння, вона почне переносити насіння. Мураха перенесе насіння на перший порожній квадрат верхнього ряду, якого вона з часом досягне.
 
-What's the expected number of steps until all seeds have been dropped in the top row? Дайте відповідь, заокруглену до шести знаків після коми.
+Яка очікувана кількість кроків, поки все насіння не буде перенесене у верхній ряд? Дайте відповідь, заокруглену до шести знаків після коми.
 
 # --hints--
 

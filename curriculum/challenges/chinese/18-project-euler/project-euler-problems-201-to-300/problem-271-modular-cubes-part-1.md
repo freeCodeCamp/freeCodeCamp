@@ -1,6 +1,6 @@
 ---
 id: 5900f47b1000cf542c50ff8d
-title: 'Problem 271: Modular Cubes, part 1'
+title: '问题271：模块化立方体，第1部分'
 challengeType: 1
 forumTopicId: 301921
 dashedName: problem-271-modular-cubes-part-1

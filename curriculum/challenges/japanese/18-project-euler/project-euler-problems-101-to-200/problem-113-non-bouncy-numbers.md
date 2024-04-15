@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50fef0
-title: 'Problem 113: Non-bouncy numbers'
+title: '問題 113: 弾み数ではない数'
 challengeType: 1
 forumTopicId: 301739
 dashedName: problem-113-non-bouncy-numbers
@@ -8,19 +8,19 @@ dashedName: problem-113-non-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+ある数を左から右へ見ていき、すべての数字がその左側の数字を下回らない場合、その数は増加数と呼ばれます。例えば 134468 です。
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+同様に、すべての数字がその右側の数字を下回らない場合、その数は減少数と呼ばれます。例えば 66420 です。
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+増加数、減少数のどちらでもない正の整数を「弾み」数と呼ぶことにします。例えば 155349 です。
 
-As n increases, the proportion of bouncy numbers below n increases such that there are only 12951 numbers below one-million that are not bouncy and only 277032 non-bouncy numbers below ${10}^{10}$.
+n が大きくなるにつれ、n 未満の弾み数の割合も大きくなります。弾み数ではない数は 100万未満で 12951 個、${10}^{10}$ 未満で 277032 個しかありません。
 
-How many numbers below a googol (${10}^{100}$) are not bouncy?
+グーゴル数 (${10}^{100}$) 未満で弾み数でない数はいくつありますか。
 
 # --hints--
 
-`nonBouncyNumbers()` should return `51161058134250`.
+`nonBouncyNumbers()` は `51161058134250` を返す必要があります。
 
 ```js
 assert.strictEqual(nonBouncyNumbers(), 51161058134250);

@@ -33,9 +33,12 @@ import {
   updatePreview,
   updateProjectPreview
 } from '../utils/build';
-import { runPythonInFrame, mainPreviewId } from '../utils/frame';
-import { executeGA } from '../../../redux/actions';
+import {
+  interruptCodeExecution,
+  runPythonCode
+} from '../utils/python-worker-handler';
 import { fireConfetti } from '../../../utils/fire-confetti';
+import callGA from '../../../analytics/call-ga';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -67,7 +70,10 @@ function* executeCancellableChallengeSaga(payload) {
   const { challengeFiles } = yield select(challengeDataSelector);
 
   // if multifileCertProject, see if body/code size is submittable
-  if (challengeType === challengeTypes.multifileCertProject) {
+  if (
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -137,14 +143,12 @@ export function* executeChallengeSaga({ payload }) {
     } else {
       playTone('tests-failed');
       if (challengeMeta.certification === 'responsive-web-design') {
-        yield put(
-          executeGA({
-            event: 'challenge_failed',
-            challenge_id: challengeMeta.id,
-            challenge_path: window?.location?.pathname,
-            challenge_files: challengeData.challengeFiles
-          })
-        );
+        yield call(callGA, {
+          event: 'challenge_failed',
+          challenge_id: challengeMeta.id,
+          challenge_path: window?.location?.pathname,
+          challenge_files: challengeData.challengeFiles
+        });
       }
     }
 
@@ -206,7 +210,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      const { actual, expected } = err;
+      const { actual, expected, errorType } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -214,11 +218,18 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
+      } else if (errorType) {
+        const msgKey =
+          errorType === 'indentation'
+            ? 'learn.indentation-error'
+            : 'learn.syntax-error';
+        newTest.message = `<p>${i18next.t(msgKey)}</p>`;
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
       }
+      console.log('newTest', newTest);
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
@@ -228,25 +239,26 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 }
 
 // updates preview frame and the fcc console.
-function* previewChallengeSaga({ flushLogs = true } = {}) {
-  yield delay(700);
-
+export function* previewChallengeSaga(action) {
+  const flushLogs = action?.type !== actionTypes.previewMounted;
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
   }
 
+  const isExecuting = yield select(isExecutingSelector);
+  // executeChallengeSaga flushes the logs, so there's no need to if that's
+  // just happened.
+  if (flushLogs && !isExecuting) {
+    yield put(initLogs());
+    yield put(initConsole(''));
+  }
+  yield delay(700);
+
   const logProxy = yield channel();
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    const isExecuting = yield select(isExecutingSelector);
-    // executeChallengeSaga flushes the logs, so there's no need to if that's
-    // just happened.
-    if (flushLogs && !isExecuting) {
-      yield put(initLogs());
-      yield put(initConsole(''));
-    }
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
@@ -264,15 +276,17 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
         const portalDocument = yield select(portalDocumentSelector);
         const finalDocument = portalDocument || document;
 
-        yield call(updatePreview, buildData, finalDocument, proxyLogger);
-
-        // Python challenges need to be created in two steps:
-        // 1) build the frame
-        // 2) evaluate the code in the frame. This is necessary to avoid
-        //    recreating the frame (which is slow since loadPyodide takes a long
-        //    time)on every change.
-        if (challengeData.challengeType === challengeTypes.python) {
+        // Python challenges do not use the preview frame, they use a web worker
+        // to run the code. The UI is handled by the xterm component, so there
+        // is no need to update the preview frame.
+        if (
+          challengeData.challengeType === challengeTypes.python ||
+          challengeData.challengeType ===
+            challengeTypes.multifilePythonCertProject
+        ) {
           yield updatePython(challengeData);
+        } else {
+          yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
@@ -295,30 +309,36 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 }
 
-function* updatePreviewSaga() {
+// TODO: refactor this so that we can use a single saga for all challenge
+// updates (then they can all go in the same `takeLatest` call and be cancelled
+// appropriately)
+function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
-  if (challengeData.challengeType === challengeTypes.python) {
+  if (
+    challengeData.challengeType === challengeTypes.python ||
+    challengeData.challengeType === challengeTypes.multifilePythonCertProject
+  ) {
     yield updatePython(challengeData);
   } else {
     // all other challenges have to recreate the preview
-    yield previewChallengeSaga();
+    yield previewChallengeSaga(action);
   }
 }
 
 function* updatePython(challengeData) {
-  const document = yield getContext('document');
   // TODO: refactor the build pipeline so that we have discrete, composable
   // functions to handle transforming code, embedding it and building the
   // final html. Then we can just use the transformation function here.
   const buildData = yield buildChallengeData(challengeData);
-  const code = buildData.transformedPython;
+  interruptCodeExecution();
+  const code = {
+    contents: buildData.sources.index,
+    editableContents: buildData.sources.editableContents,
+    original: buildData.sources.original
+  };
+
+  runPythonCode(code);
   // TODO: proxy errors to the console
-  try {
-    yield call(runPythonInFrame, document, code, mainPreviewId);
-  } catch (err) {
-    console.log('Error evaluating python code', code);
-    console.log('Message:', err.message);
-  }
 }
 
 function* previewProjectSolutionSaga({ payload }) {
@@ -344,12 +364,9 @@ export function createExecuteChallengeSaga(types) {
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge],
+      [types.challengeMounted, types.resetChallenge, types.previewMounted],
       previewChallengeSaga
     ),
-    takeLatest(types.previewMounted, previewChallengeSaga, {
-      flushLogs: false
-    }),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
 }

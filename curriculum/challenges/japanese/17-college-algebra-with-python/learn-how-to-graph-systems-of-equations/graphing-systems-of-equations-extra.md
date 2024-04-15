@@ -1,6 +1,6 @@
 ---
 id: 6331d276b51aeedd1a2bd64d
-title: "Graphing Systems of Equations: Extra"
+title: "連立方程式のグラフ表示: おまけ"
 challengeType: 15
 videoId: q8ad1tTFqns
 dashedName: graphing-systems-of-equations-extra
@@ -8,31 +8,31 @@ dashedName: graphing-systems-of-equations-extra
 
 # --description--
 
-This next video will give you a deeper dive into what you can do with graphing systems of equations, graphing inequalities, and shading above or below the line. You will also see how to download the graph to your computer or your Google Drive.
+次の動画では、連立方程式や不等式をグラフ表示し、線の上または下に色を付けて、どのようなことができるかを詳しく見ていきます。 また、グラフをコンピューターまたは Google ドライブにダウンロードする方法も紹介します。
 
-Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+<a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">この動画で使用している Colab ノートブックはこちら</a>です。
 
 # --question--
 
 ## --text--
 
-If you want to create an interactive plot with a slider to zoom in and out, where does most of the graphing code appear?
+スライダーで拡大縮小ができる対話式のプロットを作成したい場合、グラフ表示のコードの大部分はどこに記述しますか？
 
 ## --answers--
 
-Within the interactive() function
+interactive() 関数内
 
 ---
 
-In the slider
+スライダー内
 
 ---
 
-Within the function that the interactive() calls
+interactive() が呼び出す関数内
 
 ---
 
-Before all of the functions
+すべての関数の前
 
 ## --video-solution--
 

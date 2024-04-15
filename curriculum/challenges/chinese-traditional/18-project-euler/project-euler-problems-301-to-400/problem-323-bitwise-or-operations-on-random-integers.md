@@ -1,6 +1,6 @@
 ---
 id: 5900f4b01000cf542c50ffc2
-title: 'Problem 323: Bitwise-OR operations on random integers'
+title: '問題323：對隨機整數進行按位或運算'
 challengeType: 1
 forumTopicId: 301980
 dashedName: problem-323-bitwise-or-operations-on-random-integers

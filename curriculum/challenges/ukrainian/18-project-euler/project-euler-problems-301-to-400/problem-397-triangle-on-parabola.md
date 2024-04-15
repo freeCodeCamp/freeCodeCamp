@@ -1,6 +1,6 @@
 ---
 id: 5900f4f91000cf542c51000c
-title: 'Problem 397: Triangle on parabola'
+title: 'Завдання 397: трикутник на параболі'
 challengeType: 1
 forumTopicId: 302062
 dashedName: problem-397-triangle-on-parabola
@@ -8,9 +8,9 @@ dashedName: problem-397-triangle-on-parabola
 
 # --description--
 
-On the parabola $y = \frac{x^2}{k}$, three points $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ and $C(c, \frac{c^2}{k})$ are chosen.
+На параболі $y = \frac{x^2}{k}$ обрано три точки: $A(a, \frac{a^2}{k})$, $B(b, \frac{b^2}{k})$ та $C(c, \frac{c^2}{k})$.
 
-Let $F(K, X)$ be the number of the integer quadruplets $(k, a, b, c)$ such that at least one angle of the triangle $ABC$ is 45°, with $1 ≤ k ≤ K$ and $-X ≤ a &lt; b &lt; c ≤ X$.
+Нехай $F(K, X)$ буде кількістю четвірок цілих чисел $(k, a, b, c)$, щоб хоча б один кут трикутника $ABC$ дорівнював 45°, за умов $1 ≤ k ≤ K$ та $-X ≤ a &lt; b &lt; c ≤ X$.
 
 Наприклад, $F(1, 10) = 41$ та $F(10, 100) = 12\\,492$.
 

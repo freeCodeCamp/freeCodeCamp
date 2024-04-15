@@ -1,6 +1,6 @@
 ---
 id: 5900f3d61000cf542c50fee8
-title: 'Problem 105: Special subset sums: testing'
+title: '問題 105: 特殊和集合: 検証'
 challengeType: 1
 forumTopicId: 301729
 dashedName: problem-105-special-subset-sums-testing
@@ -8,20 +8,20 @@ dashedName: problem-105-special-subset-sums-testing
 
 # --description--
 
-Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
+大きさが n である集合 A の要素の和を、$S(A)$ で表します。 空でなく互いに素な 2 つの部分集合 B と C について、次の性質が真の場合、それを「特殊和集合」と呼ぶことにします。
 
-1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+1. $S(B) ≠ S(C)$ である。すなわち、部分集合の和が等しくてはならない。
+2. B が C より多くの要素を含むとき、$S(B) > S(C)$ である。
 
-For example, {81, 88, 75, 42, 87, 84, 86, 65} is not a special sum set because 65 + 87 + 88 = 75 + 81 + 84, whereas {157, 150, 164, 119, 79, 159, 161, 139, 158} satisfies both rules for all possible subset pair combinations and $S(A) = 1286$.
+例えば、{81, 88, 75, 42, 87, 84, 86, 65} は、65 + 87 + 88 = 75 + 81 + 84 なので特殊和集合ではありません。一方、{157, 150, 164, 119, 79, 159, 161, 139, 158} は、考えられるすべての部分集合ペアの組み合わせの両ルールを満たし、$S(A) = 1286$ です。
 
-Using `sets`, an array with one-hundred sets, containing seven to twelve elements (the two examples given above are the first two sets), identify all the special sum sets, $A_1, A_2, \ldots, A_k$, and find the value of $(A_1) + S(A_2) + \cdots + S(A_k)$.
+7 個から 12 個の要素からなる集合が 100 個含まれている配列 `sets` を使用して (上の 2 例はこの配列に含まれる最初の 2 つの集合)、特殊和集合 $A_1, A_2, \ldots, A_k$ をすべて見つけ、$(A_1) + S(A_2) + \cdots + S(A_k)$ の値を求めなさい。
 
-**Note:** This problem is related to Problem 103 and Problem 106.
+**注:** この問題は、問題 103 および問題 106 と関連しています。
 
 # --hints--
 
-`testingSpecialSubsetSums(testSets)` should return `73702`.
+`testingSpecialSubsetSums(testSets)` は `73702` を返す必要があります。
 
 ```js
 assert.strictEqual(testingSpecialSubsetSums(_testSets), 73702);

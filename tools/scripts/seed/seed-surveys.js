@@ -74,12 +74,13 @@ const certifiedUserSurvey = {
 
 const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
-log('Connected successfully to mongo');
-
-const db = client.db('freecodecamp');
-const survey = db.collection('Survey');
-
 const run = async () => {
+  await client.db('admin').command({ ping: 1 });
+  log('Connected successfully to mongo');
+
+  const db = client.db('freecodecamp');
+  const survey = db.collection('Survey');
+
   await survey.deleteMany({
     _id: {
       $in: surveyIds

@@ -1,6 +1,6 @@
 ---
 id: 5900f3bd1000cf542c50fed0
-title: 'Problem 81: Path sum: two ways'
+title: 'Problema 81: Suma de la ruta: dos maneras'
 challengeType: 1
 forumTopicId: 302195
 dashedName: problem-81-path-sum-two-ways

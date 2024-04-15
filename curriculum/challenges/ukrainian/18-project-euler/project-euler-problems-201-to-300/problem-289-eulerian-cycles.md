@@ -1,6 +1,6 @@
 ---
 id: 5900f48d1000cf542c50ffa0
-title: 'Problem 289: Eulerian Cycles'
+title: 'Завдання 289: цикли Ейлера'
 challengeType: 1
 forumTopicId: 301940
 dashedName: problem-289-eulerian-cycles
@@ -8,17 +8,17 @@ dashedName: problem-289-eulerian-cycles
 
 # --description--
 
-Let $C(x,y)$ be a circle passing through the points ($x$, $y$), ($x$, $y + 1$), ($x + 1$, $y$) and ($x + 1$, $y + 1$).
+Нехай $C(x,y)$ буде колом, що проходить через точки ($x$, $y$), ($x$, $y + 1$), ($x + 1$, $y$) та ($x + 1$, $y + 1$).
 
-For positive integers $m$ and $n$, let $E(m,n)$ be a configuration which consists of the $m·n$ circles: { $C(x,y)$: $0 ≤ x &lt; m$, $0 ≤ y &lt; n$, $x$ and $y$ are integers }
+Нехай $E(m,n)$, де $m$ та $n$ є натуральними числами, буде конфігурацією, яка складається з $m·n$ кіл: { $C(x,y)$: $0 ≤ x &lt; m$, $0 ≤ y &lt; n$, $x$ та $y$ є цілими числами }
 
-An Eulerian cycle on $E(m,n)$ is a closed path that passes through each arc exactly once. Many such paths are possible on $E(m,n)$, but we are only interested in those which are not self-crossing: A non-crossing path just touches itself at lattice points, but it never crosses itself.
+Цикл Ейлера на $E(m,n)$ є закритим шляхом, який проходить через кожну дугу один раз. На $E(m,n)$ можливо багато таких шляхів, однак нас цікавлять лише ті, які не є самоперетинними: неперетинні шляхи просто торкаються до себе, але ніколи не перетинають.
 
-The image below shows $E(3,3)$ and an example of an Eulerian non-crossing path.
+На зображенні нижче показано $E(3,3)$ і наведено приклад неперетинного шляху Ейлера.
 
-<img class="img-responsive center-block" alt="Eulerian cycle E(3, 3) and Eulerian non-crossing path" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="цикл Ейлера E(3, 3) та неперетинний шлях Ейлера" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;" />
 
-Let $L(m,n)$ be the number of Eulerian non-crossing paths on $E(m,n)$. Наприклад, $L(1,2) = 2$, $L(2,2) = 37$ та $L(3,3) = 104290$.
+Нехай $L(m,n)$ буде кількістю неперетинних шляхів Ейлера на $E(m,n)$. Наприклад, $L(1,2) = 2$, $L(2,2) = 37$ та $L(3,3) = 104290$.
 
 Знайдіть $L(6,10)\bmod {10}^{10}$.
 

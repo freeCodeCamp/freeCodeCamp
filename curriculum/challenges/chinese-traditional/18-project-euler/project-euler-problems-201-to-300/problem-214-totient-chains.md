@@ -1,6 +1,6 @@
 ---
 id: 5900f4421000cf542c50ff55
-title: 'Problem 214: Totient Chains'
+title: '問題 214：Totient 鏈'
 challengeType: 1
 forumTopicId: 301856
 dashedName: problem-214-totient-chains

@@ -34,6 +34,7 @@ interface PreviewPortalProps {
   isAdvancing: boolean;
   setChapterSlug: (arg: string) => void;
   chapterSlug: string;
+  onResize: () => void;
 }
 
 const mapDispatchToProps = {
@@ -134,6 +135,10 @@ class PreviewPortal extends Component<PreviewPortalProps> {
         this.props.setShowPreviewPane(true);
       }
       this.props.removePortalWindow();
+    });
+
+    this.externalWindow?.addEventListener('resize', () => {
+      this.props.onResize();
     });
 
     this.props.storePortalWindow(this.externalWindow);

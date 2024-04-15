@@ -18,7 +18,7 @@ $M(3, 5, 100) = 75$ and not 90 because 90 is divisible by 2, 3 and 5. Also $M(2,
 
 Let $S(N)$ be the sum of all distinct $M(p, q, N)$. $S(100)=2262$.
 
-Find $S(10\\,000\\,000)$.
+Encuentra $S(10\\,000\\,000)$.
 
 # --hints--
 

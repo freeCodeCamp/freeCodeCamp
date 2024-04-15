@@ -74,3 +74,38 @@ export function enhancePrismAccessibility(
     })
   );
 }
+
+// Adjusts scrollbar arrows based on scrollbar width
+export function setScrollbarArrowStyles(scrollbarWidth: number): void {
+  const root = document.documentElement;
+
+  // make the arrow box a square
+  root.style.setProperty(
+    '--monaco-scrollbar-arrow-box-size',
+    `${scrollbarWidth}px`
+  );
+
+  // adjust arrow icon size to fit arrow box
+  const iconSize = scrollbarWidth < 11 ? scrollbarWidth : scrollbarWidth - 5;
+  const iconFontSize =
+    scrollbarWidth < 11 ? scrollbarWidth : scrollbarWidth - 5;
+  root.style.setProperty('--monaco-scrollbar-arrow-icon-size', `${iconSize}px`);
+  root.style.setProperty(
+    '--monaco-scrollbar-arrow-icon-font-size',
+    `${iconFontSize}px`
+  );
+
+  // position arrow icon in arrow box
+  const iconTopBottom =
+    scrollbarWidth < 11 ? 0 : scrollbarWidth / 2 - iconFontSize / 2 - 1;
+  const iconLeftPosition =
+    scrollbarWidth < 11 ? 0 : (scrollbarWidth - iconFontSize) / 2;
+  root.style.setProperty(
+    '--monaco-scrollbar-arrow-icon-top-bottom',
+    `${iconTopBottom}px`
+  );
+  root.style.setProperty(
+    '--monaco-scrollbar-arrow-icon-left',
+    `${iconLeftPosition}px`
+  );
+}

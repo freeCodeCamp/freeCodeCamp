@@ -1,38 +1,38 @@
 ---
 id: 647e21eb8acb466c97ccbeea
-title: 'Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#'
+title: 'ガイド付きプロジェクト - C# で配列データを処理するための foreach および if-elseif-else 構造を開発する'
 challengeType: 19
 dashedName: guided-project-develop-foreach-and-if-elseif-else-structures-to-process-array-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/</a> and complete all the tasks for the "Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/</a> へ移動し、「ガイド付きプロジェクト - C# で配列データを処理するための foreach および if-elseif-else 構造を開発する (Guided Project - Develop foreach and if-elseif-else Structures to Process Array Data in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「単純な C# コンソール アプリケーションを作成して実行する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">Develop `foreach` and `if`-`elseif`-`else` Structures to Process Array Data in C#</a> guided project on Microsoft Learn. Then, answer the question below.
+Microsoft Learn でガイド付きプロジェクト「<a href="https://learn.microsoft.com/training/modules/guided-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">C# で配列データを処理するための `foreach` および `if`-`elseif`-`else` 構造を開発する</a>」を完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-A developer writes an application that uses a `foreach` loop to iterate through an array containing 20 elements. After the application is complete, the developer learns that the array must be updated to include 40 elements. The application needs to examine all 40 array elements. Which of the following items describes the required code update?
+ある開発者が、`foreach` ループを使用して 20 個の要素を持つ配列を反復処理するアプリケーションを開発しています。 アプリケーションが完成した後で、配列を変更して 40 個の要素を持つようにしなければならないことが分かりました。 アプリケーションは配列内の要素 40 個すべてを検査する必要があります。 次のうち、コードに必要となる変更を説明しているのはどれですか？
 
 ## --answers--
 
-Create a second `foreach` loop that iterates through the additional items.
+追加の項目を反復処理する 2 つ目の `foreach` ループを作成する。
 
 ---
 
-No changes are required to the `foreach` loop.
+`foreach` ループには変更は必要ない。
 
 ---
 
-Place the original `foreach` loop inside the code block of a second `foreach` loop that iterates twice.
+元の `foreach` ループを、処理を 2 回繰り返す 2 つ目の `foreach` ループの中に入れる。
 
 ## --video-solution--
 

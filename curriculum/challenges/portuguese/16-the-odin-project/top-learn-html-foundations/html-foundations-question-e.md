@@ -1,5 +1,5 @@
 ---
-id: 6374f208de18c50e48ba767b
+id: 637f4e2f72c65bc8e73dfe22
 title: Questão E sobre Fundamentos de HTML
 challengeType: 15
 dashedName: html-foundations-question-e
@@ -7,31 +7,57 @@ dashedName: html-foundations-question-e
 
 # --description--
 
-O HTML e o CSS são duas linguagens que trabalham em conjunto para criar tudo o que você vê quando está na internet. O HTML são os dados brutos que constituem uma página da web. Todos os textos, links, cards, listas e botões são criados em HTML. O CSS é o que adiciona estilo a esses elementos simples. O HTML coloca informações em uma página da web e o CSS posiciona essas informações, dá cor a elas, muda as fontes, o que dá a elas uma aparência melhor!
+O elemento `<head>` é onde você coloca as metainformações importantes sobre suas páginas da web, além de coisas necessárias para que suas páginas da web sejam renderizadas corretamente no navegador. Dentro de `<head>`, você não deve usar elementos que exibam conteúdo na página.
 
-Muitos recursos úteis seguem se referindo ao HTML e ao CSS como linguagens de programação. Se quisermos ser técnicos, no entanto, chamá-las assim não é algo preciso. Isso ocorre porque se tratam apenas de apresentar informações. Elas não são usadas para programar a lógica. O JavaScript, que você aprenderá na próxima seção, é uma linguagem de programação, pois é usada para fazer as páginas da web fazerem coisas. No entanto, há muito que você pode fazer apenas com o HTML e o CSS – e você, definitivamente, vai precisar dos dois. As lições a seguir visam dar a você as ferramentas necessárias para que possa seguir com sucesso ao alcançar o conteúdo do JavaScript.
+## O elemento meta charset
+Você deve sempre ter a tag `meta` para a codificação do conjunto de caracteres, ou `charset`, da página no elemento `head`: `<meta charset="utf-8">`.
 
-# --atividade
+Definir a codificação é muito importante, pois garante que a página da web exibirá símbolos especiais e caracteres de diferentes idiomas corretamente no navegador.
 
-Leia o artigo sobre <a href="https://brytdesigns.com/html-css-javascript-whats-the-difference#What_is_HTML" target="_blank">HTML, CSS e JavaScript</a> (texto em inglês). É uma visão geral rápida das relações entre HTML, CSS e JavaScript.
+## Elemento title
+Outro elemento que você sempre deve incluir na head de um documento HTML é o elemento `title`:
+
+```html
+<title>My First Webpage</title>
+```
+
+O elemento `title` é usado para dar às páginas da web um título legível, o qual é exibido na guia do navegador da sua página.
+
+Se você não incluir um elemento `title`, o título da página da web seria o padrão para o nome do arquivo. No seu caso, seria `index.html`, o que não é muito significativo para usuários. Isto tornaria muito difícil encontrar sua página da web se o usuário tivesse muitas abas do navegador abertas.
+
+Há muito mais elementos que podem ser inseridos em `head` em um documento HTML. No entanto, por agora, é crucial saber apenas os dois elementos que vemos aqui. Você verá mais elementos que serão colocados em `head` durante a continuação do currículo.
+
+De volta ao arquivo `index.html`, vamos adicionar um elemento `head` e, dentro dele, um elemento `meta` `charset` e um elemento `title`. O elemento head vai dentro do elemento HTML e deve ser sempre o primeiro elemento após a tag de abertura de `<html>`:
+
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Webpage</title>
+  </head>
+</html>
+```
 
 # --question--
 
 ## --text--
 
-Qual das seguintes afirmações é verdadeira?
+Qual é a finalidade do elemento `head`?
 
 ## --answers--
 
-O CSS é usado para criar a estrutura básica de uma página web e o HTML é usado para adicionar estilo.
+O elemento `head` é usado para exibir todos os elementos que são exibidos na página da web.
 
 ---
 
-HTML é usado para criar a estrutura básica de uma página web e o CSS é usado para adicionar estilo.
+O elemento `head` é usado para exibir informações importantes sobre sua página da web e é usado para renderizar as páginas da web corretamente com elementos `meta`.
 
 ---
 
-O HTML e o CSS são usados para adicionar estilo a uma página da web, enquanto o JavaScript é usado para criar a estrutura básica.
+O elemento `head` é usado para exibir o conteúdo do cabeçalho na parte superior da página da web.
 
 
 ## --video-solution--

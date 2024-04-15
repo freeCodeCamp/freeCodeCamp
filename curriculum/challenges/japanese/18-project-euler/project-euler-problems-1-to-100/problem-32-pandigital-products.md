@@ -1,6 +1,6 @@
 ---
 id: 5900f38c1000cf542c50fe9f
-title: 'Problem 32: Pandigital products'
+title: '問題 32: パンデジタル積'
 challengeType: 1
 forumTopicId: 301976
 dashedName: problem-32-pandigital-products
@@ -8,47 +8,47 @@ dashedName: problem-32-pandigital-products
 
 # --description--
 
-We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
+1 から `n` までのすべての数字がちょうど 1 回ずつ使われている `n` 桁の数を、「パンデジタルである」と表現することにします。例えば、5 桁の数 15234 は 1 から 5 のパンデジタルです。
 
-The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
+積 7254 は珍しい数です。なぜなら等式 39 × 186 = 7254 で表すことができ、その被乗数、乗数、積が 1 から 9 のパンデジタルだからです。
 
-Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through `n` pandigital.
+被乗数、乗数、積の等式を 1 から `n` までのパンデジタルとして表せる、すべての積の和を求めなさい。
 
-**Hint:** Some products can be obtained in more than one way so be sure to only include it once in your sum.
+**ヒント:** 一部の積は複数の等式で得られますが、それを和に一度だけ含めるようにしてください。
 
 # --hints--
 
-`pandigitalProducts(4)` should return a number.
+`pandigitalProducts(4)` は数値を返す必要があります。
 
 ```js
 assert(typeof pandigitalProducts(4) === 'number');
 ```
 
-`pandigitalProducts(4)` should return `12`.
+`pandigitalProducts(4)` は `12` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalProducts(4), 12);
 ```
 
-`pandigitalProducts(6)` should return `162`.
+`pandigitalProducts(6)` は `162` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalProducts(6), 162);
 ```
 
-`pandigitalProducts(7)` should return `0`.
+`pandigitalProducts(7)` は `0` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalProducts(7), 0);
 ```
 
-`pandigitalProducts(8)` should return `13458`.
+`pandigitalProducts(8)` は `13458` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalProducts(8), 13458);
 ```
 
-`pandigitalProducts(9)` should return `45228`.
+`pandigitalProducts(9)` は `45228` を返す必要があります。
 
 ```js
 assert.strictEqual(pandigitalProducts(9), 45228);

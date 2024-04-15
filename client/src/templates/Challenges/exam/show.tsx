@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql, navigate } from 'gatsby';
 
 import React, { Component, RefObject } from 'react';
@@ -10,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Alert, Row } from '@freecodecamp/ui';
+import { Container, Col, Alert, Row, Button } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
@@ -58,7 +57,7 @@ import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
 import MissingPrerequisites from './components/missing-prerequisites';
-import FoundationCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
+import FoundationalCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
 
 import './exam.css';
 
@@ -468,7 +467,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     block={true}
                     className='exam-button'
                     disabled={currentQuestionIndex <= 0}
-                    bsStyle='primary'
+                    variant='primary'
                     data-cy='previous-exam-question-btn'
                     onClick={this.goToPreviousQuestion}
                   >
@@ -483,7 +482,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                         !userExamQuestions[currentQuestionIndex].answer.id
                       }
                       className='exam-button'
-                      bsStyle='primary'
+                      variant='primary'
                       data-cy='finish-exam-btn'
                       onClick={openFinishExamModal}
                     >
@@ -496,7 +495,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                         !userExamQuestions[currentQuestionIndex].answer.id
                       }
                       className='exam-button'
-                      bsStyle='primary'
+                      variant='primary'
                       data-cy='next-exam-question-btn'
                       onClick={this.goToNextQuestion}
                     >
@@ -511,7 +510,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   <Button
                     block={true}
                     className='exam-button'
-                    bsStyle='primary'
+                    variant='primary'
                     data-cy='exit-exam-btn'
                     onClick={openExitExamModal}
                   >
@@ -555,20 +554,21 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                         missingPrerequisites={missingPrerequisites}
                       />
                     ) : (
-                      <FoundationCSharpSurveyAlert />
+                      <FoundationalCSharpSurveyAlert />
                     )}
                   </>
                 )}
-
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
                 <PrismFormatted text={instructions} />
 
                 <Button
                   block={true}
-                  bsStyle='primary'
+                  variant='primary'
                   data-cy='start-exam-btn'
                   disabled={!qualifiedForExam}
+                  // `this.runExam` being an async callback is acceptable
+                  //eslint-disable-next-line @typescript-eslint/no-misused-promises
                   onClick={this.runExam}
                 >
                   {t('buttons.click-start-exam')}

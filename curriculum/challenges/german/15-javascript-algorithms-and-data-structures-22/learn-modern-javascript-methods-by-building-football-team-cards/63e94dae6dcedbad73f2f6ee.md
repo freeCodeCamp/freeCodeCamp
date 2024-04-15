@@ -1,15 +1,15 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Schritt 27
+title: Step 26
 challengeType: 0
-dashedName: step-27
+dashedName: step-26
 ---
 
 # --description--
 
-`arr` contains a series of objects that each contain a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside the callback function, you will need to use object destructuring to unpack them into variables.
+`arr` contains a series of objects that each contains a `name`, `position`, `number`, `isCaptain` and `nickname` property. Um auf jede dieser Eigenschaften innerhalb der Callback-Funktion zugreifen zu können, musst du die Objektdestrukturierung verwenden, um sie in Variablen zu entpacken.
 
-Here is an example:
+Hier ist ein Beispiel:
 
 ```js
 function myExampleFunction({ name, age, job, city }) {
@@ -17,15 +17,15 @@ function myExampleFunction({ name, age, job, city }) {
 }
 ```
 
-Inside the parameter list in the callback function for the `map` method, unpack all 5 object properties from objects in `arr` using object destructuring.
+Innerhalb der Parameterliste in der Callback-Funktion für die `map`-Methode entpackst du alle 5 Objekteigenschaften von Objekten in `arr` mit Hilfe der Objektdestrukturierung.
 
 # --hints--
 
-You should unpack all 5 object properties from objects in `arr` using object destructuring.
+Du solltest alle 5 Objekteigenschaften von Objekten in `arr` mit Hilfe der Objektdestrukturierung entpacken.
 
 ```js
 
-assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
 
 
 ```
@@ -452,10 +452,10 @@ Object.freeze(myFavoriteFootballTeam);
 const { sport, team, year, players } = myFavoriteFootballTeam;
 const { coachName } = myFavoriteFootballTeam.headCoach;
 
-typeOfSport.innerHTML = sport;
-teamName.innerHTML = team;
-worldCupYear.innerHTML = year;
-headCoach.innerHTML = coachName;
+typeOfSport.textContent = sport;
+teamName.textContent = team;
+worldCupYear.textContent = year;
+headCoach.textContent = coachName;
 
 const setPlayerCards = (arr = players) => {
 

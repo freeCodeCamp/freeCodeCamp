@@ -1,6 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea6
-title: 'Problem 39: Integer right triangles'
+title: '問題 39: 整数辺を持つ直角三角形'
 challengeType: 1
 forumTopicId: 302054
 dashedName: problem-39-integer-right-triangles
@@ -8,39 +8,39 @@ dashedName: problem-39-integer-right-triangles
 
 # --description--
 
-If `p` is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+長さが整数である辺 {a,b,c} を持つ直角三角形の周長を `p` とします。p = 120 のとき、ちょうど 3 つの解があります。
 
 {20,48,52}, {24,45,51}, {30,40,50}
 
-For which value of `p` ≤ `n`, is the number of solutions maximized?
+`p` ≤ `n` のとき、解の個数が最大になる `p` を求めなさい。
 
 # --hints--
 
-`intRightTriangles(500)` should return a number.
+`intRightTriangles(500)` は数値を返す必要があります。
 
 ```js
 assert(typeof intRightTriangles(500) === 'number');
 ```
 
-`intRightTriangles(500)` should return 420.
+`intRightTriangles(500)` は 420 を返す必要があります。
 
 ```js
 assert(intRightTriangles(500) == 420);
 ```
 
-`intRightTriangles(800)` should return 720.
+`intRightTriangles(800)` は 720 を返す必要があります。
 
 ```js
 assert(intRightTriangles(800) == 720);
 ```
 
-`intRightTriangles(900)` should return 840.
+`intRightTriangles(900)` は 840 を返す必要があります。
 
 ```js
 assert(intRightTriangles(900) == 840);
 ```
 
-`intRightTriangles(1000)` should return 840.
+`intRightTriangles(1000)` は 840 を返す必要があります。
 
 ```js
 assert(intRightTriangles(1000) == 840);

@@ -1,47 +1,33 @@
 ---
-id: 637f4e3672c65bc8e73dfe23
-videoId: V8UAEoOvqFg
+id: 6376327e2724a688c04636e3
 title: HTML Foundations Question G
 challengeType: 15
 dashedName: html-foundations-question-g
 ---
+
 # --description--
 
-The final element needed to complete the HTML boilerplate is the `<body>` element. This is where all the content that will be displayed to users will go - the text, images, lists, links, and so on.
-
-To complete the boilerplate, add a `body` element to the `index.html` file. The `body` element also goes within the `html` element and is always below the `head` element, like so:
-
-# --assignment--
-
-Watch and follow along to Kevin Powell’s brilliant Building your first web page video above.
-
----
-
-Build some muscle memory by deleting the contents of the `index.html` file and trying to write out all the boilerplate again from memory. Don’t worry if you have to peek at the lesson content the first few times if you get stuck. Just keep going until you can do it a couple of times from memory.
-
----
-
-Run your boilerplate through this [HTML validator](https://www.freeformatter.com/html-validator.html). Validators ensure your markup is correct and are an excellent learning tool, as they provide feedback on syntax errors you may be making often and aren’t aware of, such as missing closing tags and extra spaces in your HTML.
+HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
 
 # --question--
-
+    
 ## --text--
 
-What is the purpose of the `body` element?
+What are the primary responsibilities of HTML and CSS in creating a webpage?
 
 ## --answers--
 
-This is where all important information about the webpage is displayed such as the `title` and `meta` tags.
+HTML structures the content, while CSS styles the elements.
 
 ---
 
-This is where you tell the browser how to render the webpage correctly.
+HTML creates the visual design, while CSS organizes the content.
 
 ---
 
-This is where all content will be displayed on the page such images, text, and links.
+CSS manages the functionality, while HTML controls the layout.
 
 
 ## --video-solution--
 
-3
+1

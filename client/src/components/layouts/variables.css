@@ -31,9 +31,9 @@
   --focus-outline-color: var(--blue-mid);
   --font-family-sans-serif: 'Lato', sans-serif;
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
-  --header-element-size: 30px;
+  --header-element-size: 28px;
   --header-sub-element-size: 45px;
-  --header-height: 56px;
+  --header-height: 38px;
   --breadcrumbs-height: 44px;
   --z-index-site-header: 200;
 }

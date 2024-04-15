@@ -58,3 +58,9 @@ export interface DonateFormState {
     paypal: boolean;
   };
 }
+
+export interface UpdateCardState {
+  redirecting: boolean;
+  success: boolean;
+  error: string;
+}

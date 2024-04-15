@@ -82,5 +82,10 @@ test.describe('The unsubscribed page with unsubscribeId', () => {
     await resubscribeButton.click();
 
     await expect(page).toHaveURL(`${encoded_url_text}`);
+    await expect(
+      page.getByText(
+        "We've successfully updated your email preferences. Thank you for resubscribing."
+      )
+    ).toBeVisible();
   });
 });

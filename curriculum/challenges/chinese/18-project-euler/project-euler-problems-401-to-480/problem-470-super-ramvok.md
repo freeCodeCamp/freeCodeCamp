@@ -1,6 +1,6 @@
 ---
 id: 5900f5431000cf542c510055
-title: 'Problem 470: Super Ramvok'
+title: '问题470：超级拉姆沃克'
 challengeType: 1
 forumTopicId: 302146
 dashedName: problem-470-super-ramvok

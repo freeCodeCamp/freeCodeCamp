@@ -1,4 +1,4 @@
-import { user } from '@prisma/client';
+import { ExamResults, user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
@@ -14,6 +14,10 @@ export const jsCertProjectIds = [
 
 export const multifileCertProjectIds = getChallenges()
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
+  .map(c => c.id);
+
+export const multifilePythonCertProjectIds = getChallenges()
+  .filter(c => c.challengeType === challengeTypes.multifilePythonCertProject)
   .map(c => c.id);
 
 export const msTrophyChallenges = getChallenges()
@@ -55,6 +59,7 @@ type CompletedChallengeFile = {
   path?: string | null;
 };
 
+// TODO: Should probably prefer `import{CompletedChallenge}from'@prisma/client'` instead of defining it here
 export type CompletedChallenge = {
   id: string;
   solution?: string | null;
@@ -63,6 +68,7 @@ export type CompletedChallenge = {
   completedDate: number;
   isManuallyApproved?: boolean | null;
   files?: CompletedChallengeFile[];
+  examResults?: ExamResults | null;
 };
 
 /**
@@ -123,7 +129,8 @@ export async function updateUserChallengeData(
 
   if (
     jsCertProjectIds.includes(challengeId) ||
-    multifileCertProjectIds.includes(challengeId)
+    multifileCertProjectIds.includes(challengeId) ||
+    multifilePythonCertProjectIds.includes(challengeId)
   ) {
     completedChallenge = {
       ..._completedChallenge,
@@ -185,7 +192,10 @@ export async function updateUserChallengeData(
     userCompletedChallenges.push(finalChallenge);
   }
 
-  if (multifileCertProjectIds.includes(challengeId)) {
+  if (
+    multifileCertProjectIds.includes(challengeId) ||
+    multifilePythonCertProjectIds.includes(challengeId)
+  ) {
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,

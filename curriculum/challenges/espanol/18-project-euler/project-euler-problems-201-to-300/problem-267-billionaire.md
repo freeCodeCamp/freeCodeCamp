@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff8a
-title: 'Problem 267: Billionaire'
+title: 'Problema 267: Billonario'
 challengeType: 1
 forumTopicId: 301916
 dashedName: problem-267-billionaire
@@ -10,19 +10,19 @@ dashedName: problem-267-billionaire
 
 You are given a unique investment opportunity.
 
-Starting with £1 of capital, you can choose a fixed proportion, $f$, of your capital to bet on a fair coin toss repeatedly for 1000 tosses.
+Empezando con 1£ de capital, puedes elegir una proporción fija, $f$, de tu capital para apostar a un lanzamiento justo de moneda repetidamente hasta 1000 lanzamientos.
 
-Your return is double your bet for heads and you lose your bet for tails.
+Si sale cara, tu devolución será el doble de tu apuesta, y si sale cruz, perderás tu apuesta.
 
-For example, if $f = \frac{1}{4}$, for the first toss you bet £0.25, and if heads comes up you win £0.5 and so then have £1.5. You then bet £0.375 and if the second toss is tails, you have £1.125.
+Por ejemplo, si $f = \frac{1}{4}$, para el primer lanzamiento apuestas 0,25£, y si sale cara ganas 0,5£, y así, tener 1,5£. Entonces, apuestas 0,375£ y si en el segundo lanzamiento sale cruz, tienes 1,125£.
 
-Choosing $f$ to maximize your chances of having at least £1,000,000,000 after 1,000 flips, what is the chance that you become a billionaire?
+Eligiendo $f$ para maximizar tus probabilidades de tener al menos 1.000.000.000£ después de 1.000 lanzamientos, ¿cuál sería la probabilidad de que te convirtieras en un multimillonario?
 
-All computations are assumed to be exact (no rounding), but give your answer rounded to 12 digits behind the decimal point in the form 0.abcdefghijkl.
+Se asume que todos los cálculos son exactos (no redondeados), pero da tu respuesta redondeada a 12 dígitos detrás del punto decimal en la forma 0.abcdefghijkl.
 
 # --hints--
 
-`billionaire()` should return `0.999992836187`.
+`billionaire()` debería devolver `0.999992836187`.
 
 ```js
 assert.strictEqual(billionaire(), 0.999992836187);

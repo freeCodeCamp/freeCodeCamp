@@ -1,6 +1,6 @@
 ---
 id: 5900f4941000cf542c50ffa7
-title: 'Problem 296: Angular Bisector and Tangent'
+title: 'Завдання 296: бісектриса і дотична'
 challengeType: 1
 forumTopicId: 301948
 dashedName: problem-296-angular-bisector-and-tangent
@@ -8,13 +8,13 @@ dashedName: problem-296-angular-bisector-and-tangent
 
 # --description--
 
-Given is an integer sided triangle $ABC$ with $BC ≤ AC ≤ AB$. $k$ is the angular bisector of angle $ACB$. $m$ is the tangent at $C$ to the circumscribed circle of $ABC$. $n$ is a line parallel to $m$ through $B$.
+Дано трикутник $ABC$, сторони якого є цілими числами, а $BC ≤ AC ≤ AB$. $k$ є бісектрисою кута $ACB$. $m$ є дотичною описаного навколо трикутника $ABC$ кола, проведена через точку $C$. $n$ є прямою, яка паралельна $m$ та проходить через $B$.
 
-The intersection of $n$ and $k$ is called $E$.
+Точкою перетину $n$ та $k$ є $E$.
 
-<img class="img-responsive center-block" alt="triangle ABC, with k - the angular bisector of angle ACB, m - tangent at point C, n - line parallel to m through B, and point E - intersection of k and n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="трикутник ABC, в якому k — це бісектриса кута ACB, m — дотична в точці C, n — пряма, паралельна до m, яка проходить через B, і точка E — перетин k та n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
 
-How many triangles $ABC$ with a perimeter not exceeding $100\\,000$ exist such that $BE$ has integral length?
+Скільки існує трикутників $ABC$ з периметром не більше $100\\,000$, в яких довжина $BE$ є цілим числом?
 
 # --hints--
 

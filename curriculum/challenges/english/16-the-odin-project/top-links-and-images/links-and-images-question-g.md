@@ -20,7 +20,7 @@ To use images that you have on your own websites, you can use a relative path.
 
 - Create a new directory named `images` within the `odin-links-and-images` project.
 
-- Next, download [this image](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) and move it into the images directory you just created.
+- Next, download <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">this image</a> and move it into the images directory you just created.
 
 - Rename the image to `dog.jpg`.
 

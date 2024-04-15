@@ -1,6 +1,9 @@
 import fs from 'fs';
+import { SuperBlocks } from '../../shared/config/superblocks';
+import { challengeTypes } from '../../shared/config/challenge-types';
 import { getProjectPath } from './helpers/get-project-info';
-import { getMetaData } from './helpers/project-metadata';
+import { getMetaData, updateMetaData } from './helpers/project-metadata';
+import { getChallengeOrderFromFileTree } from './helpers/get-challenge-order';
 import {
   createStepFile,
   deleteStepFromMeta,
@@ -38,6 +41,12 @@ function insertStep(stepNum: number): void {
     throw `Step not inserted. New step number must be less than ${
       challengeOrder.length + 2
     }.`;
+  const challengeType = [
+    SuperBlocks.SciCompPy,
+    SuperBlocks.UpcomingPython
+  ].includes(getMetaData().superBlock)
+    ? challengeTypes.python
+    : challengeTypes.html;
 
   const challengeSeeds =
     stepNum > 1
@@ -48,6 +57,7 @@ function insertStep(stepNum: number): void {
 
   const stepId = createStepFile({
     stepNum,
+    challengeType,
     challengeSeeds
   });
 
@@ -62,12 +72,36 @@ function createEmptySteps(num: number): void {
   }
 
   const nextStepNum = getMetaData().challengeOrder.length + 1;
+  const challengeType = [
+    SuperBlocks.SciCompPy,
+    SuperBlocks.UpcomingPython
+  ].includes(getMetaData().superBlock)
+    ? challengeTypes.python
+    : challengeTypes.html;
 
   for (let stepNum = nextStepNum; stepNum < nextStepNum + num; stepNum++) {
-    const stepId = createStepFile({ stepNum });
+    const stepId = createStepFile({ stepNum, challengeType });
     insertStepIntoMeta({ stepNum, stepId });
   }
   console.log(`Successfully added ${num} steps`);
 }
 
-export { deleteStep, insertStep, createEmptySteps };
+const repairMeta = async () => {
+  const sortByStepNum = (a: string, b: string) =>
+    parseInt(a.split(' ')[1]) - parseInt(b.split(' ')[1]);
+
+  const challengeOrder = await getChallengeOrderFromFileTree();
+  if (!challengeOrder.every(({ title }) => /Step \d+/.test(title))) {
+    throw new Error(
+      'You can only run this command on project-based blocks with step files.'
+    );
+  }
+  const sortedChallengeOrder = challengeOrder.sort((a, b) =>
+    sortByStepNum(a.title, b.title)
+  );
+  const meta = getMetaData();
+  meta.challengeOrder = sortedChallengeOrder;
+  updateMetaData(meta);
+};
+
+export { deleteStep, insertStep, createEmptySteps, repairMeta };

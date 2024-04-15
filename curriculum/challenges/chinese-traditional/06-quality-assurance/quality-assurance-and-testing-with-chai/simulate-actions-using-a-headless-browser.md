@@ -7,13 +7,13 @@ dashedName: simulate-actions-using-a-headless-browser
 
 # --description--
 
-請注意，本項目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化項目的基礎上進行開發，你也可以從 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 在接下來的挑戰中，你將使用無頭瀏覽器模擬人類與頁面的交互。
 
 無頭瀏覽器是沒有 GUI 的 Web 瀏覽器。 它們能夠以與常規瀏覽器相同的方式呈現和解釋 HTML、CSS 和 JavaScript，這使得它們對於測試網頁特別有用。
 
-在下面的挑戰中，你將使用Zombie.js，它是一個輕量級的無頭瀏覽器，不依賴額外的二進制文件來安裝。 這一特點使其可以在 Replit 這樣的有限環境中使用。 但是還有許多其他更強大的無頭瀏覽器選項。
+在下面的挑戰中，你將使用Zombie.js，它是一個輕量級的無頭瀏覽器，不依賴額外的二進制文件來安裝。 但是還有許多其他更強大的無頭瀏覽器選項。
 
 Mocha 允許你在任何實際測試運行之前運行一些代碼。 這對做一些事情很有用，比如向數據庫添加條目，這些條目將在其餘測試中使用。
 
@@ -28,7 +28,7 @@ Mocha 允許你在任何實際測試運行之前運行一些代碼。 這對做�
 在 `tests/2_functional-tests.js` 中，緊跟在 `Browser` 聲明之後，將你的項目 URL 添加到變量的 `site` 屬性：
 
 ```js
-Browser.site = 'https://boilerplate-mochachai.your-username.repl.co'; // Your URL here
+Browser.site = 'http://localhost:3000'; // Your URL here
 ```
 
 然後在 `'Functional Tests with Zombie.js'` 套件的根級別，使用以下代碼實例化 `Browser` 對象的新實例：

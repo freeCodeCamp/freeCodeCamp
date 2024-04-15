@@ -43,7 +43,8 @@ const {
   machineLearningPyV7Id,
   relationalDatabaseV8Id,
   collegeAlgebraPyV8Id,
-  foundationalCSharpV8Id
+  foundationalCSharpV8Id,
+  jsAlgoDataStructV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -105,6 +106,10 @@ function createCertTypeIds(allChallenges) {
   return {
     // legacy
     [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, allChallenges),
+    [certTypes.jsAlgoDataStruct]: getCertById(
+      jsAlgoDataStructId,
+      allChallenges
+    ),
     [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, allChallenges),
     [certTypes.dataVis]: getCertById(legacyDataVisId, allChallenges),
     [certTypes.infosecQa]: getCertById(legacyInfosecQaId, allChallenges),
@@ -112,12 +117,12 @@ function createCertTypeIds(allChallenges) {
 
     // modern
     [certTypes.respWebDesign]: getCertById(respWebDesignId, allChallenges),
-    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
-    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
-    [certTypes.jsAlgoDataStruct]: getCertById(
-      jsAlgoDataStructId,
+    [certTypes.jsAlgoDataStructV8]: getCertById(
+      jsAlgoDataStructV8Id,
       allChallenges
     ),
+    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
+    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
     [certTypes.apisMicroservices]: getCertById(
       apisMicroservicesId,
       allChallenges
@@ -171,8 +176,8 @@ function sendCertifiedEmail(
     name,
     username,
     isRespWebDesignCert,
+    isJsAlgoDataStructCertV8,
     isFrontEndLibsCert,
-    isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
     isQaCertV7,
@@ -189,8 +194,8 @@ function sendCertifiedEmail(
   if (
     !isEmail(email) ||
     !isRespWebDesignCert ||
+    !isJsAlgoDataStructCertV8 ||
     !isFrontEndLibsCert ||
-    !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
     !isQaCertV7 ||
@@ -224,6 +229,7 @@ function getUserIsCertMap(user) {
   const {
     isRespWebDesignCert = false,
     isJsAlgoDataStructCert = false,
+    isJsAlgoDataStructCertV8 = false,
     isFrontEndLibsCert = false,
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
@@ -245,6 +251,7 @@ function getUserIsCertMap(user) {
   return {
     isRespWebDesignCert,
     isJsAlgoDataStructCert,
+    isJsAlgoDataStructCertV8,
     isFrontEndLibsCert,
     is2018DataVisCert,
     isApisMicroservicesCert,
@@ -395,6 +402,7 @@ function createShowCert(app) {
       isRespWebDesignCert: true,
       isFrontEndLibsCert: true,
       isJsAlgoDataStructCert: true,
+      isJsAlgoDataStructCertV8: true,
       isDataVisCert: true,
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
@@ -461,7 +469,9 @@ function createShowCert(app) {
         });
       }
 
-      if (!user.name) {
+      // If the user does not have a name, and have set their name to public,
+      // warn them. Otherwise, fallback to username
+      if (!user.name && user.showName) {
         return res.json({
           messages: [
             {

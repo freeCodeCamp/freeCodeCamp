@@ -12,7 +12,7 @@ dashedName: graphing
 
 這是<a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV#scrollTo=yJiVB8wdHRxS" target="_blank" rel="noopener noreferrer nofollow">和上兩個視頻配套的 Colab 筆記本</a>，這樣你可以開始製作你自己的圖像。
 
-# --assignment--
+# --作業--
 
 在你的代數 Colab 筆記本上添加代碼，用於函數和圖像。
 

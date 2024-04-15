@@ -87,6 +87,74 @@ export interface VideoLocaleIds {
   portuguese?: string;
 }
 
+// English types for animations
+export interface Dialogue {
+  text: string;
+  align: 'left' | 'right' | 'center';
+}
+
+export interface CharacterPosition {
+  x?: number;
+  y?: number;
+  z?: number;
+}
+
+export interface SceneCommand {
+  background?: string;
+  character: string;
+  position?: CharacterPosition;
+  opacity?: number;
+  startTime: number;
+  finishTime?: number;
+  dialogue?: Dialogue;
+}
+
+export type Characters =
+  | 'Alice'
+  | 'Amy'
+  | 'Anna'
+  | 'Bob'
+  | 'Brian'
+  | 'Candidate'
+  | 'David'
+  | 'Expert'
+  | 'Jake'
+  | 'James'
+  | 'Linda'
+  | 'Lisa'
+  | 'Maria'
+  | 'Mark'
+  | 'Sarah'
+  | 'Second Candidate'
+  | 'Sophie'
+  | 'Tom';
+
+export interface SetupCharacter {
+  character: Characters;
+  position: CharacterPosition;
+  opacity: number;
+  isTalking?: boolean;
+}
+
+export interface SetupAudio {
+  filename: string;
+  startTime: number;
+  startTimestamp?: number;
+  finishTimestamp?: number;
+}
+
+export interface SceneSetup {
+  background: string;
+  characters: SetupCharacter[];
+  audio: SetupAudio;
+  alwaysShowDialogue?: boolean;
+}
+
+export interface FullScene {
+  setup: SceneSetup;
+  commands: SceneCommand[];
+}
+
 export interface PrerequisiteChallenge {
   id: string;
   title: string;
@@ -146,6 +214,7 @@ export type ChallengeNode = {
     question: Question;
     assignments: string[];
     required: Required[];
+    scene: FullScene;
     solutions: {
       [T in FileKey]: FileKeyChallenge;
     };
@@ -282,6 +351,7 @@ export type ClaimedCertifications = {
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;
+  isJsAlgoDataStructCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];

@@ -1,6 +1,6 @@
 ---
 id: 6331d258b51aeedd1a2bd649
-title: "Converting Fractions and Decimals"
+title: "分数と小数の変換"
 challengeType: 15
 videoId: hVHWr4KXZn0
 dashedName: converting-fractions-and-decimals
@@ -8,19 +8,19 @@ dashedName: converting-fractions-and-decimals
 
 # --description--
 
-The first video will show you how to convert between fractions, decimals, and percents on paper. Then, it will show you how to do it with Python code.
+最初の動画では、紙の上で分数、小数、パーセントを変換する方法を紹介します。 次に、Python のコードを使用した方法を紹介します。
 
-Here is the <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in the video.</a> Use this code as a model, and write your own code to convert fractions and decimals.
+<a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">この動画で使用している Colab ノートブックはこちら</a>です。このコードを参考にして、分数と小数を変換するコードを自分で記述してください。
 
 # --assignment--
 
-Add the code to convert fractions and decimals to your algebra Colab notebook.
+分数と小数を変換するコードを代数学用の Colab ノートブックに追加してください。
 
 # --question--
 
 ## --text--
 
-Which of the following correctly represents "three hundredths" as a decimal?
+次のうち小数の「100 分の 3」を正しく表すものはどれですか？
 
 ## --answers--
 

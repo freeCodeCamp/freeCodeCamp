@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff30
-title: 'Problem 177: Integer angled Quadrilaterals'
+title: '問題 177: 整角四角形'
 challengeType: 1
 forumTopicId: 301812
 dashedName: problem-177-integer-angled-quadrilaterals
@@ -8,21 +8,21 @@ dashedName: problem-177-integer-angled-quadrilaterals
 
 # --description--
 
-Let ABCD be a convex quadrilateral, with diagonals AC and BD. At each vertex the diagonal makes an angle with each of the two sides, creating eight corner angles.
+対角線 AC と BD を持つ 凸四角形を ABCD とします。 各頂点で、対角線を引くと 2 辺のそれぞれを使って角が作られ、計 8 つの角ができます。
 
-<img class="img-responsive center-block" alt="convex quadrilateral ABCD, with diagonals AC and BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="対角線 AC と BD が引かれた凸四角形 ABCD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
 
-For example, at vertex A, the two angles are CAD, CAB.
+例えば、頂点 A では CAD, CAB という 2 つの角ができます。
 
-We call such a quadrilateral for which all eight corner angles have integer values when measured in degrees an "integer angled quadrilateral". An example of an integer angled quadrilateral is a square, where all eight corner angles are 45°. Another example is given by DAC = 20°, BAC = 60°, ABD = 50°, CBD = 30°, BCA = 40°, DCA = 30°, CDB = 80°, ADB = 50°.
+8 つすべての角の角度が整数値である四角形を、「整角四角形」と呼びます。 整角四角形の一例は正方形で、8 つの角がすべて 45° になります。 別の例は、DAC = 20°, BAC = 60°, ABD = 50°, CBD = 30°, BCA = 40°, DCA = 30°, CDB = 80°, ADB = 50° です。
 
-What is the total number of non-similar integer angled quadrilaterals?
+相似でない整角四角形は全部でいくつありますか。
 
-**Note:** In your calculations you may assume that a calculated angle is integral if it is within a tolerance of ${10}^{-9}$ of an integer value.
+**注:** 角度の計算において、整数値の許容誤差 ${10}^{-9}$ の範囲内であれば計算値を整数とみなすことができます。
 
 # --hints--
 
-`integerAngledQuadrilaterals()` should return `129325`.
+`integerAngledQuadrilaterals()` は `129325` を返す必要があります。
 
 ```js
 assert.strictEqual(integerAngledQuadrilaterals(), 129325);

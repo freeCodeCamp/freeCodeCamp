@@ -36,4 +36,4 @@ The WATCH section.
 
 ## --video-solution--
 
-2
+٢

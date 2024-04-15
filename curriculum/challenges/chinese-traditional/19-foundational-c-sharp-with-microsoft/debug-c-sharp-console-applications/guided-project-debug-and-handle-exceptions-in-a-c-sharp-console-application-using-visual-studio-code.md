@@ -1,38 +1,38 @@
 ---
 id: 647e22958acb466c97ccbef4
-title: 'Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code'
+title: '引導項目 - 使用 VS Code 在 C# 控制檯應用程序中調試和處理異常'
 challengeType: 19
 dashedName: guided-project-debug-and-handle-exceptions-in-a-c-sharp-console-application-using-visual-studio-code
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+這個挑戰將有一部分在 Microsoft Learn 平臺上完成。 請按照如下說明來完成挑戰：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a> and complete all the tasks for the "Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳轉到 <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/</a>，然後完成“引導項目 - 使用 VS Code 在 C# 控制檯應用程序中調試和處理異常”模塊的所有任務。 這是在 Microsoft Learn 上獲得“調試 C# 控制檯應用程序”的獎盃以及參加認證考試所**必需**的。
+1. 完成後，返回並正確回答下面的問題。
 
-# --assignment--
+# --任務--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code</a> guided project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成<a href="https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/" target="_blank" rel="noreferrer">使用 Visual Studio Code 調試和處理 C# 控制檯應用程序中的異常</a>的引導項目。 然後，回答下面的問題。
 
 # --question--
 
 ## --text--
 
-When is an `ArgumentOutOfRangeException` exception thrown?
+何時拋出 `ArgumentOutOfRangeException` 異常？
 
 ## --answers--
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
+當嘗試索引數組超出數組邊界時，會拋出 `ArgumentOutOfRangeException` 異常。
 
 ---
 
-An `ArgumentOutOfRangeException` exception is thrown when the value of an argument is outside the allowable range of values as defined by the method.
+當參數的值在方法定義的允許值範圍之外時，會拋出 `ArgumentOutOfRangeException` 異常。
 
 ---
 
-An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
+當嘗試將一種類型的值存儲在另一種類型的值的數組中時，會拋出 `ArgumentOutOfRangeException` 異常。
 
 ## --video-solution--
 

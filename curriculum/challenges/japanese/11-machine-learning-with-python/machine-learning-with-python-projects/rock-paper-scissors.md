@@ -8,57 +8,51 @@ dashedName: rock-paper-scissors
 
 # --description--
 
-For this challenge, you will create a program to play Rock, Paper, Scissors. A program that picks at random will usually win 50% of the time. To pass this challenge your program must play matches against four different bots, winning at least 60% of the games in each match.
+このチャレンジでは、じゃんけんするプログラムを作成します。 手をランダムに選択するプログラムの勝率は、通常は 50% になります。 このチャレンジに合格するには、プログラムで 4 つの異なるボットを相手に試合を行う必要があり、各試合で 60％ 以上の勝率を達成しなければなりません。
 
-<a href="https://replit.com/github/freeCodeCamp/boilerplate-rock-paper-scissors" target="_blank" rel="noopener noreferrer nofollow">このプロジェクトには Replit スターターコードを使用して取り組んでください</a>。
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-rock-paper-scissors/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
-We are still developing the interactive instructional part of the machine learning curriculum. For now, you will have to use other resources to learn how to pass this challenge.
+機械学習カリキュラム用の対話型教育コンテンツは、現在開発中です。 現在、このチャレンジに合格する方法を学ぶには他の資料を活用する必要があります。
 
 # --instructions--
 
-In the file `RPS.py` you are provided with a function called `player`. The function takes an argument that is a string describing the last move of the opponent ("R", "P", or "S"). The function should return a string representing the next move for it to play ("R", "P", or "S").
+ファイル `RPS.py` には `player` という関数が用意されています。 この関数は、相手の前回の手を示す文字列 ("R" (グー)、"P" (パー)、または "S" (チョキ)) を引数として取ります。 関数は、次の手を表す文字列 ("R"、"P"、または "S") を返す必要があります。
 
-A player function will receive an empty string as an argument for the first game in a match since there is no previous play.
+最初の対戦では過去のプレイがないので、player 関数は引数として空の文字列を受け取ります。
 
-The file `RPS.py` shows an example function that you will need to update. The example function is defined with two arguments (`player(prev_play, opponent_history = [])`). The function is never called with a second argument so that one is completely optional. The reason why the example function contains a second argument (`opponent_history = []`) is because that is the only way to save state between consecutive calls of the `player` function. You only need the `opponent_history` argument if you want to keep track of the opponent_history.
+ファイル `RPS.py` はサンプルの関数で、内容を変更する必要があります。 サンプル関数は 2 つの引数で定義されています (`player(prev_play, opponent_history = [])`)。 関数は第 2 引数を付けて呼び出されることがないので、第 2 引数は省略可能です。 サンプル関数に第 2 引数 (`opponent_history = []`) が含まれている理由は、`player` 関数を連続して呼び出す合間に状態を保存する唯一の方法だからです。 `opponent_history` 引数は、opponent_history を追跡したい場合にのみ必要です。
 
-*Hint: To defeat all four opponents, your program may need to have multiple strategies that change depending on the plays of the opponent.*
+*ヒント: 4 つすべての対戦相手に勝つためには、プログラムで複数の戦略を用意しておき、対戦相手のプレイに応じて変更する必要があります。*
 
-## Development
+## 開発
 
-Do not modify `RPS_game.py`. Write all your code in `RPS.py`. For development, you can use `main.py` to test your code.
+`RPS_game.py` を変更しないでください。 あなたのコードはすべて `RPS.py` に記述してください。 開発には `main.py` を使用してコードをテストすることができます。
 
-`main.py` imports the game function and bots from `RPS_game.py`.
+`main.py` は、`RPS_game.py` からゲーム関数とボットをインポートします。
 
-To test your code, play a game with the `play` function. The `play` function takes four arguments:
+コードをテストするには、`play` 関数を使用してゲームをプレイします。 `play` 関数は 4 つの引数を取ります:
 
-- two players to play against each other (the players are actually functions)
-- the number of games to play in the match
-- an optional argument to see a log of each game. Set it to `True` to see these messages.
+- 互いに対戦する 2 人のプレーヤー (プレイヤーは実際には関数)
+- その対戦でプレイするゲームの数
+- 各ゲームのログを表示するオプション引数。 `True` に設定するとそれらのメッセージが表示されます。
 
 ```py
 play(player1, player2, num_games[, verbose])
 ```
 
-For example, here is how you would call the function if you want `player` and `quincy` to play 1000 games against each other and you want to see the results of each game:
+たとえば、`player` と `quincy` を 1000 回対戦させて、各ゲームの結果を表示したい場合は、次のように関数を呼び出します:
 
 ```py
 play(player, quincy, 1000, verbose=True)
 ```
 
-Click the "run" button and `main.py` will run.
+## テスト
 
-## Testing
+このプロジェクトの単体テストは `test_module.py` にあります。 あらかじめ `test_module.py` から `main.py` にテストをインポートしてあります。 If you uncomment the last line in `main.py`, the tests will run automatically whenever you run `python main.py` in the console.
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. If you uncomment the last line in `main.py`, the tests will run automatically whenever you hit the "run" button.
+## 提出
 
-## Submitting
-
-Copy your project's URL and submit it to freeCodeCamp.
+プロジェクトの URL をコピーし、freeCodeCamp に提出してください。
 
 # --hints--
 

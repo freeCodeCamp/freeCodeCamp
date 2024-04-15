@@ -19,7 +19,7 @@ setLastName(last)
 setFullName(first, last)
 ```
 
-قم بتشغيل الاختبارات لرؤية المخرجات المتوقعة لكل method. These methods must be the only available means of interacting with the object. Each test will declare a new `Person` instance as `new Person('Bob', 'Ross')`.
+قم بتشغيل الاختبارات لرؤية المخرجات المتوقعة لكل method. يجب أن تكون هذه الـ methods هي الوسيلة الوحيدة المتاحة للتفاعل مع الـ object. Each test will declare a new `Person` instance as `new Person('Bob', 'Ross')`.
 
 # --hints--
 

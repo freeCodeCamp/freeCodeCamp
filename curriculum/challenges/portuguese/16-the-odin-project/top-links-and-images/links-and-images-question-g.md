@@ -21,7 +21,7 @@ Para usar imagens que você tem em seus próprios sites, você pode usar um cami
 
 - Crie um diretório chamado `images` dentro do projeto `odin-links-and-images`.
 
-- Em seguida, faça o download [desta imagem](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) e mova-a para o diretório de imagens que você acabou de criar.
+- Next, download <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">this image</a> and move it into the images directory you just created.
 
 - Renomeie a imagem para `dog.jpg`.
 

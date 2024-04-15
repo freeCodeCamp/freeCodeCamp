@@ -1,6 +1,6 @@
 ---
 id: 6331d291b51aeedd1a2bd651
-title: "Slope"
+title: "傾き"
 challengeType: 15
 videoId: nURsz7SR5aM
 dashedName: slope
@@ -8,15 +8,15 @@ dashedName: slope
 
 # --description--
 
-This first video will focus on the slope of a line and how to calculate it.
+この最初の動画では、線の傾きとその計算方法について説明します。
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this and the next videos.</a>
+<a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">この動画と次の動画で使用している Colab ノートブックはこちら</a>です。
 
 # --question--
 
 ## --text--
 
-If you have already defined these variables, which of the following is the correct slope formula?
+以下の変数をすでに定義している場合、傾きの式として正しいものはどれですか？
 
 ## --answers--
 

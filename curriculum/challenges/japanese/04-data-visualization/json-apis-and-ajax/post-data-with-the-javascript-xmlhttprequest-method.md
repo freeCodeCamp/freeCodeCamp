@@ -28,31 +28,31 @@ xhr.send(body);
 
 これらのメソッドのいくつかは見覚えがあるでしょう。 Here the `open` method initializes the request as a `POST` to the given URL of the external resource, and passes `true` as the third parameter - indicating to perform the operation asynchronously.
 
-The `setRequestHeader` method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the `open` method, but before the `send` method. The two parameters are the name of the header and the value to set as the body of that header.
+`setRequestHeader` メソッドは HTTP リクエストヘッダーの値を設定します。これには送信者とリクエストに関する情報が格納されています。 それは `open` メソッドより後、かつ、`send` メソッドより前に呼び出される必要があります。 この 2 つのパラメータは、ヘッダーの名前と、ヘッダーのボディーとして設定する値です。
 
-Next, the `onreadystatechange` event listener handles a change in the state of the request. A `readyState` of `4` means the operation is complete, and a `status` of `201` means it was a successful request. Therefore, the document's HTML can be updated.
+次に、`onreadystatechange` イベントリスナーがリクエスト状態の変化を処理します。 `readyState` の `4` は操作の完了を意味し、`status` の `201` はリクエストが成功したことを意味します。 Therefore, the document's HTML can be updated.
 
 Finally, the `send` method sends the request with the `body` value. The `body` consists of a `userName` and a `suffix` key.
 
 # --instructions--
 
-Update the code so it makes a `POST` request to the API endpoint. Then type your name in the input field and click `Send Message`. Your AJAX function should replace `Reply from Server will be here.` with data from the server. Format the response to display your name appended with the text `loves cats`.
+API エンドポイントに `POST` リクエストを行うように、コードを更新してください。 次に、入力フィールドに自分の名前を入力し、`Send Message` をクリックしてください。 AJAX 関数によって、`Reply from Server will be here.` がサーバーからのデータに置き換えられる必要があります。 自分の名前に `loves cats` というテキストが追加されたものが表示されるように、レスポンスをフォーマットしてください。
 
 # --hints--
 
-Your code should create a new `XMLHttpRequest`.
+新しい `XMLHttpRequest` を作成する必要があります。
 
 ```js
 assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-Your code should use the `open` method to initialize a `POST` request to the server.
+`open` メソッドを使用してサーバーへの `POST` リクエストを初期化する必要があります。
 
 ```js
 assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
 ```
 
-Your code should use the `setRequestHeader` method.
+`setRequestHeader` メソッドを使用する必要があります。
 
 ```js
 assert(
@@ -62,13 +62,13 @@ assert(
 );
 ```
 
-Your code should have an `onreadystatechange` event handler set to a function.
+`onreadystatechange` イベントハンドラを関数に設定する必要があります。
 
 ```js
 assert(code.match(/\.onreadystatechange\s*?=/g));
 ```
 
-Your code should get the element with class `message` and change its `textContent` to `userName loves cats`
+`message` クラスを持つ要素を取得し、`textContent` を `userName loves cats` に変更する必要があります。
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-Your code should use the `send` method.
+`send` メソッドを使用する必要があります。
 
 ```js
 assert(code.match(/\.send\(\s*?body\s*?\)/g));

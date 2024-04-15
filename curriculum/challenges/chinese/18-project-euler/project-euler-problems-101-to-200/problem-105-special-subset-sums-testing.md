@@ -1,6 +1,6 @@
 ---
 id: 5900f3d61000cf542c50fee8
-title: 'Problem 105: Special subset sums: testing'
+title: '问题 105：特殊子集和：测试'
 challengeType: 1
 forumTopicId: 301729
 dashedName: problem-105-special-subset-sums-testing
@@ -11,17 +11,17 @@ dashedName: problem-105-special-subset-sums-testing
 Let $S(A)$ represent the sum of elements in set A of size n. We shall call it a special sum set if for any two non-empty disjoint subsets, B and C, the following properties are true:
 
 1. $S(B) ≠ S(C)$; that is, sums of subsets cannot be equal.
-2. If B contains more elements than C then $S(B) > S(C)$.
+2. 如果 B 包含的元素多于 C，则 $S(B) > S(C)$。
 
-For example, {81, 88, 75, 42, 87, 84, 86, 65} is not a special sum set because 65 + 87 + 88 = 75 + 81 + 84, whereas {157, 150, 164, 119, 79, 159, 161, 139, 158} satisfies both rules for all possible subset pair combinations and $S(A) = 1286$.
+例如，{81, 88, 75, 42, 87, 84, 86, 65} 不是特殊和集，因为 65 + 87 + 88 = 75 + 81 + 84，而 {157, 150, 164, 119, 79, 159, 161, 139, 158} 满足所有可能的子集对组合的规则和 $S(A) = 1286$。
 
-Using `sets`, an array with one-hundred sets, containing seven to twelve elements (the two examples given above are the first two sets), identify all the special sum sets, $A_1, A_2, \ldots, A_k$, and find the value of $(A_1) + S(A_2) + \cdots + S(A_k)$.
+使用 `sets`，一个一百个集合的数组，包含七到十二个元素（上面给出的两个例子是前两个集合），识别所有的特殊和集，$A_1, A_2, \ldots, A_k$，并求出 $(A_1) + S(A_2) + \cdots + S(A_k)$ 的值。
 
-**Note:** This problem is related to Problem 103 and Problem 106.
+**注意：** 此问题与问题 103 和问题 106 相关。
 
 # --hints--
 
-`testingSpecialSubsetSums(testSets)` should return `73702`.
+`testingSpecialSubsetSums(testSets)` 应该返回 `73702`。
 
 ```js
 assert.strictEqual(testingSpecialSubsetSums(_testSets), 73702);

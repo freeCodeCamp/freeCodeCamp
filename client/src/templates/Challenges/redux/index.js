@@ -255,7 +255,11 @@ export const reducer = handleActions(
           [payload]: !state.visibleEditors[payload]
         }
       };
-    }
+    },
+    [actionTypes.createQuestion]: (state, { payload }) => ({
+      ...state,
+      description: payload
+    })
   },
   initialState
 );

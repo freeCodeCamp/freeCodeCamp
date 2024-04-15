@@ -1,5 +1,7 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
+import stripe from 'stripe';
+import { ObjectId } from 'mongodb';
 import keys from '../../../config/secrets';
 import {
   mockApp,
@@ -14,10 +16,18 @@ import {
   verifyWebHook,
   updateUser,
   capitalizeKeys,
-  createDonationObj
+  createDonationObj,
+  handleStripeCardUpdateSession
 } from './donation';
 
 jest.mock('axios');
+jest.mock('stripe', () => ({
+  checkout: {
+    sessions: {
+      create: jest.fn()
+    }
+  }
+}));
 
 const verificationUrl = `https://api.sandbox.paypal.com/v1/notifications/verify-webhook-signature`;
 const tokenUrl = `https://api.sandbox.paypal.com/v1/oauth2/token`;
@@ -153,6 +163,51 @@ describe('donation', () => {
         endDate: new Date(status_update_time).toISOString()
       });
       expect(updateUserAttr).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('handleStripeCardUpdateSession', () => {
+    const mockUserId = ObjectId('507f1f77bcf86cd799439011');
+    const mockDonation = {
+      customerId: 'customer_123',
+      subscriptionId: 'sub_123'
+    };
+    const req = { user: { id: mockUserId } };
+    const app = {
+      models: {
+        Donation: { findOne: jest.fn().mockResolvedValue(mockDonation) }
+      }
+    };
+
+    stripe.checkout.sessions.create.mockResolvedValue({ id: 'session_123' });
+
+    it('creates a session successfully', async () => {
+      const result = await handleStripeCardUpdateSession(req, app, stripe);
+      expect(app.models.Donation.findOne).toHaveBeenCalledWith({
+        where: { userId: mockUserId, provider: 'stripe' }
+      });
+      expect(stripe.checkout.sessions.create).toHaveBeenCalled();
+      expect(result).toEqual({ sessionId: 'session_123' });
+    });
+
+    it('throws an error when donation not found', async () => {
+      const app = {
+        models: { Donation: { findOne: jest.fn().mockResolvedValue(null) } }
+      };
+
+      await expect(
+        handleStripeCardUpdateSession(req, app, stripe)
+      ).rejects.toThrow('Stripe donation record not found');
+    });
+
+    it('handles stripe session creation failure', async () => {
+      stripe.checkout.sessions.create.mockRejectedValue(
+        new Error('Stripe error')
+      );
+
+      await expect(
+        handleStripeCardUpdateSession(req, app, stripe)
+      ).rejects.toThrow('Stripe error');
     });
   });
 });

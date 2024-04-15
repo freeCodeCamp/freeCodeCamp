@@ -10,7 +10,7 @@ dashedName: problem-235-an-arithmetic-geometric-sequence
 
 Given is the arithmetic-geometric sequence $u(k) = (900 - 3k)r^{k - 1}$.
 
-Let $s(n) = \sum_{k=1 \ldots n} u(k)$.
+Lasse $s(n) = \sum_{k=1 \ldots n} u(k)$.
 
 Find the value of $r$ for which $s(5000) = -600\\,000\\,000\\,000$.
 

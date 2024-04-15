@@ -1,6 +1,6 @@
 ---
 id: 5900f4b51000cf542c50ffc8
-title: 'Problem 329: Prime Frog'
+title: 'Завдання 329: проста жаба'
 challengeType: 1
 forumTopicId: 301986
 dashedName: problem-329-prime-frog
@@ -8,17 +8,17 @@ dashedName: problem-329-prime-frog
 
 # --description--
 
-Susan has a prime frog.
+У Сьюзен є проста жаба.
 
-Her frog is jumping around over 500 squares numbered 1 to 500.
+Її жаба стрибає по 500 квадратам, пронумерованими від 1 до 500.
 
-He can only jump one square to the left or to the right, with equal probability, and he cannot jump outside the range [1;500]. (if it lands at either end, it automatically jumps to the only available square on the next move.)
+Вона може стрибнути лише на один квадрат ліворуч або праворуч з однаковою ймовірністю і не може вистрибнути з діапазону [1;500]. (Якщо вона опиниться на будь-якому з кінців, то автоматично перестрибне на єдиний доступний квадрат під час наступного ходу.)
 
-When he is on a square with a prime number on it, he croaks 'P' (PRIME) with probability $\frac{2}{3}$ or 'N' (NOT PRIME) with probability $\frac{1}{3}$ just before jumping to the next square. When he is on a square with a number on it that is not a prime he croaks 'P' with probability $\frac{1}{3}$ or 'N' with probability $\frac{2}{3}$ just before jumping to the next square.
+Якщо вона знаходиться на квадраті з простим числом, вона квакає «P» (ПРОСТЕ) з ймовірністю $\frac{2}{3}$ або «N» (НЕПРОСТЕ) з ймовірністю $\frac{1}{3}$ перед тим, як перестрибнути на наступний квадрат. Коли вона опиняється на квадраті з числом, яке не є простим, вона квакає «P» з ймовірністю $\frac{1}{3}$ або «N» з ймовірністю $\frac{2}{3}$ перед тим, як перестрибнути на наступний квадрат.
 
-Given that the frog's starting position is random with the same probability for every square, and given that she listens to his first 15 croaks, what is the probability that she hears the sequence PPPPNNPPPNPPNPN?
+Припустимо, що початкова позиція жаби випадкова з однаковою ймовірністю для кожного квадрату, і що Сьюзен слухає перші 15 квакань. Яка ймовірність того, що Сьюзен почує таку послідовність: PPPPNNPPPNPPNPN?
 
-Give your answer as a string as a fraction `p/q` in reduced form.
+Надайте відповідь у вигляді дробу `p/q` в скороченій формі.
 
 # --hints--
 

@@ -1,9 +1,10 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { navigate } from 'gatsby-link';
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
+
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
@@ -123,13 +124,12 @@ const CertChallenge = ({
         : createFlashMessage(honestyInfoMessage);
     };
   return (
-    <div className='block'>
+    <div>
       {isSignedIn && (
         <Button
           block={true}
-          bsStyle='primary'
-          className='cert-btn'
-          href={isCertified ? certLocation : `/settings#certification-settings`}
+          variant='primary'
+          href={isCertified ? certLocation : `/settings#cert-${certSlug}`}
           onClick={() => (isCertified ? createClickHandler(certSlug) : false)}
         >
           {isCertified && userLoaded

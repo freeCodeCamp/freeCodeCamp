@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Usando a notação de ponto e de colchetes, defina a variável `secondTree` para o segundo item na lista de `trees` do objeto `myPlants`.
+Usando a notação de ponto e a de colchetes, defina a variável `secondTree` como o segundo item no array `list` do segundo objeto no array `myPlants`.
 
 # --hints--
 

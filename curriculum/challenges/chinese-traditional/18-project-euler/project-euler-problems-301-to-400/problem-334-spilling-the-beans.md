@@ -1,6 +1,6 @@
 ---
 id: 5900f4ba1000cf542c50ffcd
-title: 'Problem 334: Spilling the beans'
+title: '問題334：溢出豆子'
 challengeType: 1
 forumTopicId: 301992
 dashedName: problem-334-spilling-the-beans

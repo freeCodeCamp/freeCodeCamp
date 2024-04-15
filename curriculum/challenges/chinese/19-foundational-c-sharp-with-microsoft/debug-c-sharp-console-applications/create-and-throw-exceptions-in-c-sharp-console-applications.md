@@ -1,38 +1,38 @@
 ---
 id: 647e228a8acb466c97ccbef3
-title: 'Create and Throw Exceptions in C# Console Applications'
+title: '在 C# 控制台应用程序中创建和抛出异常'
 challengeType: 19
 dashedName: create-and-throw-exceptions-in-c-sharp-console-applications
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/</a> and complete all the tasks for the "Create and Throw Exceptions in C# Console Applications" module. This is **required** earn to the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/</a>，然后完成“在 C# 控制台应用程序中创建和抛出异常”模块的所有任务。 这是在 Microsoft Learn 上获得“调试 C# 控制台应用程序”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">Create and Throw Exceptions in C# Console Applications</a> module on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/" target="_blank" rel="noreferrer">在 C# 控制台应用程序中创建和抛出异常</a> 模块。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-When should a method throw an exception?
+一个方法什么时候应该抛出异常？
 
 ## --answers--
 
-A method should throw an exception when the method can complete its intended purpose.
+当方法能够实现其预期目标时，应该抛出异常。
 
 ---
 
-A method should throw an exception when the method can't complete its intended purpose.
+当方法不能够实现其预期目标时，应该抛出异常。
 
 ---
 
-A method should throw an exception when an exception type matches the intended purpose of the method.
+当异常类型与方法的预期目标匹配时，应该抛出异常。
 
 ## --video-solution--
 

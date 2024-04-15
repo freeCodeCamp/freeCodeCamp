@@ -11,16 +11,8 @@ dashedName: metric-imperial-converter
 Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://metric-imperial-converter.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://metric-imperial-converter.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 - Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
-- Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
+- Використайте <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Gitpod</a>, щоб виконати свій проєкт.
 - Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
-
-Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
-
--   Почніть з імпорту проєкту на Replit.
--   Потім ви побачите вікно `.replit`.
--   Оберіть `Use run command` та натисніть кнопку `Done`.
-
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на розв’язок». За бажанням введіть посилання на початковий код проєкту в полі «Посилання на GitHub».
 
 **Примітка:** тести цього проєкту не працюють при використанні `glitch.com`.
 
@@ -29,8 +21,8 @@ dashedName: metric-imperial-converter
 - Завершіть необхідну логіку перетворення у `/controllers/convertHandler.js`
 - Завершіть необхідні маршрути у `/routes/api.js`
 - Скопіюйте файл `sample.env` до `.env` та відповідно встановіть змінні
-- Щоб провести тести, розкоментуйте `NODE_ENV=test` у своєму файлі `.env`
-- Щоб запустити тести на консолі, використайте команду `npm run test`. Щоб відкрити консоль Replit, натисніть Ctrl+Shift+P (Cmd на Mac) та введіть «open shell»
+- Щоб запустити тести автоматично, додайте `NODE_ENV=test` до файлу `.env`
+- Щоб запустити тести на консолі, використайте команду `npm run test`.
 
 Напишіть наступні тести в `tests/1_unit-tests.js`:
 

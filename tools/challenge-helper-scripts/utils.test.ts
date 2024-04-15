@@ -24,27 +24,25 @@ import {
   updateStepTitles
 } from './utils';
 
-const metaPath = join(
+const basePath = join(
   process.cwd(),
-  'curriculum',
-  'challenges',
-  '_meta',
-  'project'
+  '__fixtures__' + process.env.JEST_WORKER_ID
 );
-const superBlockPath = join(
-  process.cwd(),
-  'curriculum',
-  'challenges',
-  'english',
-  'superblock'
-);
-const projectPath = join(superBlockPath, 'project');
+const commonPath = join(basePath, 'curriculum', 'challenges');
+
+const block = 'utils-project';
+const metaPath = join(commonPath, '_meta', block);
+const superBlockPath = join(commonPath, 'english', 'utils-superblock');
+const projectPath = join(superBlockPath, block);
 
 describe('Challenge utils helper scripts', () => {
+  beforeEach(() => {
+    fs.mkdirSync(superBlockPath, { recursive: true });
+    fs.mkdirSync(projectPath, { recursive: true });
+    fs.mkdirSync(metaPath, { recursive: true });
+  });
   describe('createStepFile util', () => {
     it('should create next step and return its identifier', () => {
-      fs.mkdirSync(superBlockPath);
-      fs.mkdirSync(projectPath);
       fs.writeFileSync(
         join(projectPath, 'step-001.md'),
         'Lorem ipsum...',
@@ -57,7 +55,8 @@ describe('Challenge utils helper scripts', () => {
       );
       process.env.CALLING_DIR = projectPath;
       const step = createStepFile({
-        stepNum: 3
+        stepNum: 3,
+        challengeType: 0
       });
 
       // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -81,8 +80,6 @@ describe('Challenge utils helper scripts', () => {
 
   describe('createChallengeFile util', () => {
     it('should create the challenge', () => {
-      fs.mkdirSync(superBlockPath);
-      fs.mkdirSync(projectPath);
       fs.writeFileSync(
         join(projectPath, 'fake-challenge.md'),
         'Lorem ipsum...',
@@ -110,7 +107,6 @@ describe('Challenge utils helper scripts', () => {
 
   describe('insertStepIntoMeta util', () => {
     it('should update the meta with a new file id and name', () => {
-      fs.mkdirSync(metaPath);
       fs.writeFileSync(
         join(metaPath, 'meta.json'),
         `{"id": "mock-id",
@@ -163,14 +159,11 @@ describe('Challenge utils helper scripts', () => {
 
   describe('updateStepTitles util', () => {
     it('should apply meta.challengeOrder to step files', () => {
-      fs.mkdirSync(metaPath);
       fs.writeFileSync(
         join(metaPath, 'meta.json'),
         `{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-3", "title": "Step 2"}, {"id": "id-2", "title": "Step 3"}]}`,
         'utf-8'
       );
-      fs.mkdirSync(superBlockPath);
-      fs.mkdirSync(projectPath);
       fs.writeFileSync(
         join(projectPath, 'id-1.md'),
         `---
@@ -232,14 +225,10 @@ dashedName: step-3
   afterEach(() => {
     delete process.env.CALLING_DIR;
     try {
-      fs.rmSync(superBlockPath, { recursive: true });
+      fs.rmSync(basePath, { recursive: true });
     } catch (err) {
-      console.log('Could not remove superblock mock folder. ');
-    }
-    try {
-      fs.rmSync(metaPath, { recursive: true });
-    } catch (err) {
-      console.log('Could not remove meta mock folder.');
+      console.log(err);
+      console.log('Could not remove fixtures folder.');
     }
   });
 });

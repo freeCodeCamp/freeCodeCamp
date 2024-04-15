@@ -1,6 +1,6 @@
 ---
 id: 5900f49f1000cf542c50ffb1
-title: 'Problem 306: Paper-strip Game'
+title: '問題306：紙條遊戲'
 challengeType: 1
 forumTopicId: 301960
 dashedName: problem-306-paper-strip-game
@@ -10,7 +10,7 @@ dashedName: problem-306-paper-strip-game
 
 The following game is a classic example of Combinatorial Game Theory:
 
-Two players start with a strip of $n$ white squares and they take alternate turns. On each turn, a player picks two contiguous white squares and paints them black. The first player who cannot make a move loses.
+Two players start with a strip of $n$ white squares and they take alternate turns. 在每個回合中，玩家選擇兩個連續的白色方塊並將其塗成黑色。 第一個無法移動的玩家輸了。
 
 - $n = 1$: No valid moves, so the first player loses automatically.
 - $n = 2$: Only one valid move, after which the second player loses.

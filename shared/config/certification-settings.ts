@@ -13,7 +13,7 @@ import { SuperBlocks } from '../../shared/config/superblocks';
  */
 export enum Certification {
   RespWebDesign = 'responsive-web-design',
-  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
+  JsAlgoDataStructNew = 'javascript-algorithms-and-data-structures-v8',
   FrontEndDevLibs = 'front-end-development-libraries',
   DataVis = 'data-visualization',
   RelationalDb = 'relational-database-v8',
@@ -30,6 +30,7 @@ export enum Certification {
   A2English = 'a2-english-for-developers-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
+  JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
   LegacyBackEnd = 'legacy-back-end',
   LegacyDataVis = 'legacy-data-visualization',
   LegacyInfoSecQa = 'information-security-and-quality-assurance',
@@ -40,7 +41,7 @@ export enum Certification {
 // live and not legacy.
 export const currentCertifications = [
   Certification.RespWebDesign,
-  Certification.JsAlgoDataStruct,
+  Certification.JsAlgoDataStructNew,
   Certification.FrontEndDevLibs,
   Certification.DataVis,
   Certification.RelationalDb,
@@ -58,6 +59,7 @@ export const currentCertifications = [
 // still live and claimable, but some parts of the UI handle them differently.
 export const legacyCertifications = [
   Certification.LegacyFrontEnd,
+  Certification.JsAlgoDataStruct,
   Certification.LegacyBackEnd,
   Certification.LegacyDataVis,
   Certification.LegacyInfoSecQa
@@ -95,7 +97,8 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  upcomingPythonV8: 'isUpcomingPythonCertV8'
+  upcomingPythonV8: 'isUpcomingPythonCertV8',
+  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
 } as const;
 
 export const certIds = {
@@ -117,7 +120,8 @@ export const certIds = {
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
   foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
-  upcomingPythonV8Id: '64afc4e8f3b37856e035b85f'
+  upcomingPythonV8Id: '64afc4e8f3b37856e035b85f',
+  jsAlgoDataStructV8Id: '658180220947283cdc0689ce'
 };
 
 export const completionHours = {
@@ -139,12 +143,14 @@ export const completionHours = {
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
   [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.upcomingPythonV8]: 300
+  [certTypes.upcomingPythonV8]: 300,
+  [certTypes.jsAlgoDataStructV8]: 300
 };
 
 export const certSlugTypeMap = {
   // legacy
   [Certification.LegacyFrontEnd]: certTypes.frontEnd,
+  [Certification.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
   [Certification.LegacyBackEnd]: certTypes.backEnd,
   [Certification.LegacyDataVis]: certTypes.dataVis,
   [Certification.LegacyInfoSecQa]: certTypes.infosecQa,
@@ -152,7 +158,7 @@ export const certSlugTypeMap = {
 
   // modern
   [Certification.RespWebDesign]: certTypes.respWebDesign,
-  [Certification.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [Certification.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
   [Certification.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [Certification.DataVis]: certTypes.dataVis2018,
   [Certification.BackEndDevApis]: certTypes.apisMicroservices,
@@ -172,6 +178,7 @@ export const certSlugTypeMap = {
 export const superBlockCertTypeMap = {
   // legacy
   'legacy-front-end': certTypes.frontEnd,
+  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
   'legacy-back-end': certTypes.backEnd,
   'legacy-data-visualization': certTypes.dataVis,
   'information-security-and-quality-assurance': certTypes.infosecQa,
@@ -179,7 +186,7 @@ export const superBlockCertTypeMap = {
 
   // modern
   [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
+  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
   [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
   [SuperBlocks.DataVis]: certTypes.dataVis2018,
   [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
@@ -195,7 +202,6 @@ export const superBlockCertTypeMap = {
   // post-modern
   // TODO: use enum
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStruct,
 
   // upcoming
   [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
@@ -220,7 +226,8 @@ export const certTypeIdMap = {
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id
+  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id,
+  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id
 };
 
 export const certTypeTitleMap = {
@@ -231,7 +238,8 @@ export const certTypeTitleMap = {
   [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
   [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
-  [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
+  [certTypes.jsAlgoDataStruct]:
+    'Legacy JavaScript Algorithms and Data Structures',
   [certTypes.dataVis2018]: 'Data Visualization',
   [certTypes.apisMicroservices]: 'Back End Development and APIs',
   [certTypes.qaV7]: 'Quality Assurance',
@@ -242,7 +250,35 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.upcomingPythonV8]: 'Upcoming Python'
+  [certTypes.upcomingPythonV8]: 'Upcoming Python',
+  [certTypes.jsAlgoDataStructV8]:
+    'JavaScript Algorithms and Data Structures (Beta)'
+};
+
+export type CertSlug = (typeof Certification)[keyof typeof Certification];
+
+export const linkedInCredentialIds = {
+  [Certification.LegacyFrontEnd]: 'lfe',
+  [Certification.LegacyBackEnd]: 'lbe',
+  [Certification.LegacyDataVis]: 'ldv',
+  [Certification.LegacyInfoSecQa]: 'lisaqa',
+  [Certification.LegacyFullStack]: 'lfs',
+  [Certification.RespWebDesign]: 'rwd',
+  [Certification.FrontEndDevLibs]: 'fedl',
+  [Certification.JsAlgoDataStruct]: 'ljaads',
+  [Certification.DataVis]: 'dv',
+  [Certification.BackEndDevApis]: 'bedaa',
+  [Certification.QualityAssurance]: 'qa',
+  [Certification.InfoSec]: 'is',
+  [Certification.SciCompPy]: 'scwp',
+  [Certification.DataAnalysisPy]: 'dawp',
+  [Certification.MachineLearningPy]: 'mlwp',
+  [Certification.RelationalDb]: 'rd',
+  [Certification.CollegeAlgebraPy]: 'cawp',
+  [Certification.FoundationalCSharp]: 'fcswm',
+  [Certification.UpcomingPython]: 'up',
+  [Certification.JsAlgoDataStructNew]: 'jaads',
+  [Certification.A2English]: 'a2efd'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

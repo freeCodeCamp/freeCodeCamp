@@ -1,5 +1,5 @@
 import { AllChallengesInfo } from '../redux/prop-types';
-import { isFinalProject } from '../../../shared/config/challenge-types';
+import { isProjectBased } from './curriculum-layout';
 
 export function getCompletedPercentage(
   completedChallengesIds: string[] = [],
@@ -48,7 +48,7 @@ export const getCurrentBlockIds = (
     .filter(edge => edge.node.challenge.block === block)
     .map(edge => edge.node.challenge.id);
 
-  return isFinalProject(challengeType)
+  return isProjectBased(challengeType)
     ? currentCertificateIds
     : currentBlockIds;
 };

@@ -8,12 +8,11 @@ dashedName: the-box-model-question-d
 
 На панелі елементів можна побачити повну структуру HTML. Ви можете натиснути на будь-який елемент панелі, щоб обрати певний елемент. Або ж ви можете натиснути на голубий значок зліва (показано нижче) та навести на будь-який елемент сторінки.
 
-![Значок інспектора](https://cdn.statically.io/gh/TheOdinProject/curriculum/594984d7c9f9e744577f19ea475b3864e8cc7c91/html_css/v2/foundations/inspecting-html-and-css/imgs/01.png)
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/inspector-icon.png" alt="Середовище веброзробки з відкритими інструментами розробника, де у верхньому лівому куті виділено синій значок інспектора для вибору елементів вебсторінки, щоб переглянути структуру та стилі HTML." />
 
-Коли елемент обрано, вкладка стилів покаже всі застосовані стилі, а також усі змінені стилі (у вигляді закресленого тексту). Наприклад, якщо використати інспектора та натиснути на заголовок «Your Career in Web Development Starts Here» [домашньої сторінки TOP](https://www.theodinproject.com/), справа ви побачите всі стилі, які наразі застосовані до елемента:
+Коли елемент обрано, вкладка стилів покаже всі застосовані стилі, а також усі змінені стилі (у вигляді закресленого тексту). Наприклад, якщо використати інспектора та натиснути на заголовок «Your Career in Web Development Starts Here» <a href="https://www.theodinproject.com/" target="_blank">домашньої сторінки проєкту Odin</a>, справа ви побачите всі стилі, які наразі застосовані до елемента:
 
-![Змінений стиль](https://cdn.statically.io/gh/TheOdinProject/curriculum/f8fd38fc62578d8e8368f5303126215a492847f0/foundations/html_css/inspecting-html-and-css/imgs/03.png)
-
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/overwritten-style.png" alt="Фрагмент коду CSS на консолі розробника, що показує .hero_main-heading із застосованими margin-bottom: 100px, padding-bottom: 1,875rem, .accent color #ce973e. До правил стилю h1 належать font-size, weight, letter-spacing з перевизначеним margin-bottom: 2rem." />
 # --assignment--
 
 Розгляньте інструменти веброзробника Chrome та дізнайтесь, чи зможете відповісти на запитання.

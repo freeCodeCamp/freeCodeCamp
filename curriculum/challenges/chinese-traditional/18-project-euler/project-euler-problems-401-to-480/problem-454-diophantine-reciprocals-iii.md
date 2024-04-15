@@ -1,6 +1,6 @@
 ---
 id: 5900f5331000cf542c510045
-title: 'Problem 454: Diophantine reciprocals III'
+title: '問題454：丟番圖倒數III'
 challengeType: 1
 forumTopicId: 302127
 dashedName: problem-454-diophantine-reciprocals-iii

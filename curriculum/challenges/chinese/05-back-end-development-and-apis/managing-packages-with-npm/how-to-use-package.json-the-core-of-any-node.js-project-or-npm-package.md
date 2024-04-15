@@ -11,18 +11,12 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 你可以采用下面的任意一种编写代码的方式来完成这些挑战：
 
 - 克隆<a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成这些挑战。
-- 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成这些挑战。
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - 使用你选择的网站生成器来完成项目。 需要包含我们 GitHub 仓库的所有文件。
 
-如果你使用 Replit，请按照以下步骤设置项目：
+`package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， It stores information about your project. 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
 
--   首先在 Replit 中导入项目。
--   接着，你将看到一个 `.replit` 窗口。
--   选择 `Use run command` 并点击 `Done` 按钮。
-
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。
-
-`package.json` 文件是所有 Node.js 项目和 npm 包的枢纽， 它存储有关项目的信息，就像 HTML 文档中的 `head` 部分描述网页内容一样。 它由单个 JSON 对象组成，并以键值对的形式存储项目信息， 且至少包含两个必填字段 `name` 和 `version`，但是最好提供有关项目的其他信息，这将对用户或者维护者有所帮助。
+You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
 
 如果你查看项目的文件树，那么可以在文件树的最外层找到 `package.json`。 在接下来的几个挑战中你将完善这个文件。
 
@@ -37,6 +31,8 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 在 `package.json` 文件中加入你的名字作为项目的 `author`。
 
 **注意：**你正在写 JSON，所有的字段名必须用双引号（"）包裹，也必须用逗号（,）分割。
+
+If you are using Gitpod, make sure the app is running and the preview window is open. Copy the preview window's URL and paste it into the Solution Link input below.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff6a
-title: 'Problem 235: An Arithmetic Geometric sequence'
+title: '問題 235: 算術幾何数列'
 challengeType: 1
 forumTopicId: 301879
 dashedName: problem-235-an-arithmetic-geometric-sequence
@@ -8,17 +8,17 @@ dashedName: problem-235-an-arithmetic-geometric-sequence
 
 # --description--
 
-Given is the arithmetic-geometric sequence $u(k) = (900 - 3k)r^{k - 1}$.
+算術幾何数列 $u(k) = (900 - 3k)r^{k - 1}$ が与えられます。
 
-Let $s(n) = \sum_{k=1 \ldots n} u(k)$.
+$s(n) = \sum_{k=1 \ldots n} u(k)$ と定義します。
 
-Find the value of $r$ for which $s(5000) = -600\\,000\\,000\\,000$.
+$s(5000) = -600\\,000\\,000\\,000$ となる $r$ の値を求めなさい。
 
-Give your answer rounded to 12 places behind the decimal point.
+回答は、四捨五入して小数第 12 位まで示すこと。
 
 # --hints--
 
-`arithmeticGeometricSequence()` should return `1.002322108633`.
+`arithmeticGeometricSequence()` は `1.002322108633` を返す必要があります。
 
 ```js
 assert.strictEqual(arithmeticGeometricSequence(), 1.002322108633);

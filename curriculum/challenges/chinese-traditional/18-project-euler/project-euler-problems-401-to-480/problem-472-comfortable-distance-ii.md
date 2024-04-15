@@ -1,6 +1,6 @@
 ---
 id: 5900f5451000cf542c510057
-title: 'Problem 472: Comfortable Distance II'
+title: '問題472：舒適的距離II'
 challengeType: 1
 forumTopicId: 302149
 dashedName: problem-472-comfortable-distance-ii

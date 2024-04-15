@@ -1,17 +1,13 @@
 import {
   PaymentRequestButtonElement,
-  Elements,
   ElementsConsumer
 } from '@stripe/react-stripe-js';
-import { Stripe, loadStripe } from '@stripe/stripe-js';
-import type { Token, PaymentRequest } from '@stripe/stripe-js';
+import type { Token, PaymentRequest, Stripe } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
-import envData from '../../../config/env.json';
+
 import { Themes } from '../settings/theme';
 import { PaymentProvider } from '../../../../shared/config/donation-settings';
 import { DonationApprovalData, PostPayment } from './types';
-
-const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 
 interface WrapperProps {
   label: string;
@@ -76,6 +72,11 @@ const WalletsButton = ({
         checkPaymentPossibility(false);
       }
     });
+
+    return () => {
+      setPaymentRequest(null);
+      checkPaymentPossibility(false);
+    };
   }, [label, amount, stripe, postPayment, handlePaymentButtonLoad]);
 
   const displayRefreshError = (): void => {
@@ -113,25 +114,12 @@ const WalletsButton = ({
   );
 };
 
-const InjectedCheckoutForm = (props: WrapperProps): JSX.Element => (
-  <ElementsConsumer>
-    {({ stripe }: { stripe: Stripe | null }) => (
-      <WalletsButton stripe={stripe} {...props} />
-    )}
-  </ElementsConsumer>
-);
-
-const WalletsWrapper = (props: WrapperProps): JSX.Element | null => {
-  if (!stripePublicKey) {
-    return null;
-  } else {
-    const stripePromise = loadStripe(stripePublicKey);
-    return (
-      <Elements stripe={stripePromise}>
-        <InjectedCheckoutForm {...props} />
-      </Elements>
-    );
-  }
-};
-
-export default WalletsWrapper;
+export default function InjectedCheckoutForm(props: WrapperProps): JSX.Element {
+  return (
+    <ElementsConsumer>
+      {({ stripe }: { stripe: Stripe | null }) => (
+        <WalletsButton stripe={stripe} {...props} />
+      )}
+    </ElementsConsumer>
+  );
+}

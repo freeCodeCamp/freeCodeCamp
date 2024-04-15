@@ -1,6 +1,6 @@
 ---
 id: 5900f3be1000cf542c50fed1
-title: 'Problem 82: Path sum: three ways'
+title: '問題 82: 経路の和: 3 方向'
 challengeType: 1
 forumTopicId: 302196
 dashedName: problem-82-path-sum-three-ways
@@ -8,31 +8,31 @@ dashedName: problem-82-path-sum-three-ways
 
 # --description--
 
-**Note:** This problem is a more challenging version of Problem 81.
+**注:** これは、問題 81 をより難しくした問題です。
 
-The minimal path sum in the 5 by 5 matrix below, by starting in any cell in the left column and finishing in any cell in the right column, and only moving up, down, and right, is indicated in red and bold; the sum is equal to `994`.
+下の 5 x 5 行列において、左列の任意のセルから始め、上、下、右のみに移動して右列の任意のセルで終わるものとします。和が最小になる経路が赤い太字で示され、その和は `994` になります。
 
   $$\begin{pmatrix}   131 & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & 150\\\\   630 & 803 & 746 & 422 & 111\\\\
   537 & 699 & 497 & 121 & 956\\\\ 805 & 732 & 524 & 37 & 331 \end{pmatrix}$$
 
-Find the minimal path sum from the left column to the right column in `matrix`, a 2D array representing a matrix. The maximum matrix size used in tests will be 80 by 80.
+行列を表す二次元配列 `matrix` において、左列から右列へ到達する経路の最小和を求めなさい。 このテストで使用される行列の大きさは最大 80 x 80 です。
 
 # --hints--
 
-`pathSumThreeWays(testMatrix1)` should return a number.
+`pathSumThreeWays(testMatrix1)` は数値を返す必要があります。
 
 ```js
 assert(typeof pathSumThreeWays(_testMatrix1) === 'number');
 ```
 
-`pathSumThreeWays(testMatrix1)` should return `994`.
+`pathSumThreeWays(testMatrix1)` は `994` を返す必要があります。
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix1), 994);
 ```
 
-`pathSumThreeWays(testMatrix2)` should return `260324`.
+`pathSumThreeWays(testMatrix2)` は `260324` を返す必要があります。
 
 ```js
 assert.strictEqual(pathSumThreeWays(_testMatrix2), 260324);

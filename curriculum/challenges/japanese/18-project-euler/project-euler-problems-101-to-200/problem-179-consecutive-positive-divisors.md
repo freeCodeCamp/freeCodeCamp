@@ -1,6 +1,6 @@
 ---
 id: 5900f41f1000cf542c50ff32
-title: 'Problem 179: Consecutive positive divisors'
+title: '問題 179: 連続する正の約数'
 challengeType: 1
 forumTopicId: 301814
 dashedName: problem-179-consecutive-positive-divisors
@@ -8,11 +8,11 @@ dashedName: problem-179-consecutive-positive-divisors
 
 # --description--
 
-Find the number of integers $1 &lt; n &lt; {10}^7$, for which $n$ and $n + 1$ have the same number of positive divisors. For example, 14 has the positive divisors 1, 2, 7, 14 while 15 has 1, 3, 5, 15.
+$n$ と $n + 1$ とで正の約数の個数が同じになるような $1 &lt; n &lt; {10}^7$ の整数はいくつありますか。 例えば、14 の正の約数は 1, 2, 7, 14 で、15 の正の約数は 1, 3, 5, 15 です。
 
 # --hints--
 
-`consecutivePositiveDivisors()` should return `986262`.
+`consecutivePositiveDivisors()` は `986262` を返す必要があります。
 
 ```js
 assert.strictEqual(consecutivePositiveDivisors(), 986262);

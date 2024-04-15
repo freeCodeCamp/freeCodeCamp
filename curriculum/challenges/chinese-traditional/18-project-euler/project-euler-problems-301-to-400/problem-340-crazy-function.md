@@ -1,6 +1,6 @@
 ---
 id: 5900f4c21000cf542c50ffd4
-title: 'Problem 340: Crazy Function'
+title: '問題340：瘋狂的功能'
 challengeType: 1
 forumTopicId: 301999
 dashedName: problem-340-crazy-function

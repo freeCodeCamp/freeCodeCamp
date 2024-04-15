@@ -1,6 +1,6 @@
 ---
 id: 5900f46b1000cf542c50ff7d
-title: 'Problem 254: Sums of Digit Factorials'
+title: '問題 254: 各位の階乗の和'
 challengeType: 1
 forumTopicId: 301902
 dashedName: problem-254-sums-of-digit-factorials
@@ -8,21 +8,21 @@ dashedName: problem-254-sums-of-digit-factorials
 
 # --description--
 
-Define $f(n)$ as the sum of the factorials of the digits of $n$. For example, $f(342) = 3! + 4! + 2! = 32$.
+$f(n)$ を、$n$ の各位の階乗の和と定義します。 例えば、$f(342) = 3! + 4! + 2! = 32$ です。
 
-Define $sf(n)$ as the sum of the digits of $f(n)$. So $sf(342) = 3 + 2 = 5$.
+$sf(n)$ を、$f(n)$ の各位の和と定義します。 したがって、$sf(342) = 3 + 2 = 5$です。
 
-Define $g(i)$ to be the smallest positive integer $n$ such that $sf(n) = i$. Though $sf(342)$ is 5, $sf(25)$ is also 5, and it can be verified that $g(5)$ is 25.
+$g(i)$ を、$sf(n) = i$ となる最小の正の整数 $n$ と定義します。 $sf(342)$ は 5 ですが、$sf(25)$ も 5 であり、$g(5)$ は 25 であることを確認できます。
 
-Define $sg(i)$ as the sum of the digits of $g(i)$. So $sg(5) = 2 + 5 = 7$.
+$sg(i)$ を、$g(i)$ の各位の和と定義します。 したがって、$sg(5) = 2 + 5 = 7$ です。
 
-Further, it can be verified that $g(20)$ is 267 and $\sum sg(i)$ for $1 ≤ i ≤ 20$ is 156.
+さらに、$g(20)$ は 267 であり、$1 ≤ i ≤ 20$ のときの $\sum sg(i)$ は 156 であることを確認できます。
 
-What is $\sum sg(i)$ for $1 ≤ i ≤ 150$?
+$1 ≤ n ≤ 150$ のとき、$\sum N(i)$ を求めなさい。
 
 # --hints--
 
-`sumsOfDigitFactorials()` should return `8184523820510`.
+`sumsOfDigitFactorials()` は `8184523820510` を返す必要があります。
 
 ```js
 assert.strictEqual(sumsOfDigitFactorials(), 8184523820510);

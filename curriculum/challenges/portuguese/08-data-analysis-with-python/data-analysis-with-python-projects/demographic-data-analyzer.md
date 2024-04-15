@@ -8,12 +8,7 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-demographic-data-analyzer" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
-
--   Comece importando o projeto no Replit.
--   Em seguida, você verá uma janela `.replit`.
--   Selecione `Use run command` e clique no botão `Done`.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-demographic-data-analyzer/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
@@ -47,17 +42,15 @@ Você deve usar o Pandas para responder as seguintes questões:
 - Qual país tem a maior porcentagem de pessoas que ganham > 50mil e qual é essa porcentagem?
 - Identifique a ocupação mais popular entre aqueles que ganham > 50 mil na Índia.
 
-Use o código inicial do arquivo `demographic_data_analyzer`. Atualize o código para que todas as variáveis definidas como "None" sejam definidas com o cálculo ou código apropriado. Arredonde todos os números decimais para o décimo mais próximo.
-
-Os testes unitários foram escritos para você no `test_module.py`.
+Use the starter code in the file `demographic_data_analyzer.py`. Update the code so all variables set to `None` are set to the appropriate calculation or code. Arredonde todos os números decimais para o décimo mais próximo.
 
 ## Desenvolvimento
 
-Para o desenvolvimento, você pode usar `main.py` para testar suas funções. Clique no botão "Run" e `main.py` será executado.
+Write your code in `demographic_data_analyzer.py`. For development, you can use `main.py` to test your code.
 
 ## Testes
 
-Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. Os testes serão executados automaticamente sempre que você clicar no botão "Run".
+The unit tests for this project are in `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência.
 
 ## Envio
 

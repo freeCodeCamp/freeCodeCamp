@@ -210,6 +210,6 @@ api-server/lib/*
 curriculum/dist
 curriculum/build
 
-### UI Components ###
-tools/ui-components/dist
+### Playwright ###
 
+/playwright

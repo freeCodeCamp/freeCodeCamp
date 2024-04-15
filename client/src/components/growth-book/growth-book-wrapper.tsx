@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect, useMemo } from 'react';
 import {
   FeatureDefinition,
   GrowthBook,
@@ -14,6 +14,7 @@ import {
 import envData from '../../../config/env.json';
 import { User, UserFetchState } from '../../redux/prop-types';
 import { getUUID } from '../../utils/growthbook-cookie';
+import callGA from '../../analytics/call-ga';
 import GrowthBookReduxConnector from './growth-book-redux-connector';
 
 const { clientLocale, growthbookUri } = envData as {
@@ -26,17 +27,6 @@ declare global {
     dataLayer: [Record<string, number | string>];
   }
 }
-
-const growthbook = new GrowthBook({
-  trackingCallback: (experiment, result) => {
-    window?.dataLayer.push({
-      event: 'experiment_viewed',
-      event_category: 'experiment',
-      experiment_id: experiment.key,
-      variation_id: result.variationId
-    });
-  }
-});
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -69,6 +59,22 @@ const GrowthBookWrapper = ({
   user,
   userFetchState
 }: GrowthBookWrapper) => {
+  const growthbook = useMemo(
+    () =>
+      new GrowthBook({
+        trackingCallback: (experiment, result) => {
+          callGA({
+            event: 'experiment_viewed',
+            event_category: 'experiment',
+            experiment_id: experiment.key,
+            variation_id: result.variationId
+          });
+        }
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   useEffect(() => {
     async function setGrowthBookFeatures() {
       if (!growthbookUri) return;
@@ -86,7 +92,7 @@ const GrowthBookWrapper = ({
     }
 
     void setGrowthBookFeatures();
-  }, []);
+  }, [growthbook]);
 
   useEffect(() => {
     if (userFetchState.complete) {
@@ -106,7 +112,7 @@ const GrowthBookWrapper = ({
       }
       growthbook.setAttributes(userAttributes);
     }
-  }, [isSignedIn, user, userFetchState]);
+  }, [isSignedIn, user, userFetchState, growthbook]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>

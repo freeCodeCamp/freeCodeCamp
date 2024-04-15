@@ -8,7 +8,7 @@ dashedName: use-dot-notation-to-access-the-properties-of-an-object
 
 # --description--
 
-The last challenge created an object with various properties. Now you'll see how to access the values of those properties. Here's an example:
+The last challenge created an object with various properties. Now you'll see how to access the values of those properties. Hapa kuna mfano:
 
 ```js
 let duck = {

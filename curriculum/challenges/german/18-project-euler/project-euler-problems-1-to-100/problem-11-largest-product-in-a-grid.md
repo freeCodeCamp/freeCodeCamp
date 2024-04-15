@@ -1,6 +1,6 @@
 ---
 id: 5900f3781000cf542c50fe8a
-title: 'Problem 11: Largest product in a grid'
+title: 'Problem 11: Größtes Produkt in einem Raster'
 challengeType: 1
 forumTopicId: 301734
 dashedName: problem-11-largest-product-in-a-grid
@@ -8,7 +8,7 @@ dashedName: problem-11-largest-product-in-a-grid
 
 # --description--
 
-In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+In dem nachstehenden 20×20-Raster wurden vier Zahlen entlang einer diagonalen Linie rot markiert.
 
 <div style='text-align: center;'>
   08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08<br>
@@ -33,25 +33,25 @@ In the 20×20 grid below, four numbers along a diagonal line have been marked in
   01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48<br>
 </div>
 
-The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+Das Produkt dieser Zahlen ist 26 × 63 × 78 × 14 = 1788696.
 
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in a given `arr` grid?
+Was ist das größte Produkt von vier benachbarten Zahlen in derselben Richtung (oben, unten, links, rechts oder diagonal) in einem gegebenen `arr`-Raster?
 
 # --hints--
 
-`largestGridProduct(testGrid)` should return a number.
+`largestGridProduct(testGrid)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof largestGridProduct(testGrid) === 'number');
 ```
 
-`largestGridProduct(testGrid)` should return 14169081.
+`largestGridProduct(testGrid)` sollte 14169081 zurückgeben.
 
 ```js
 assert.strictEqual(largestGridProduct(testGrid), 14169081);
 ```
 
-`largestGridProduct(grid)` should return 70600674.
+`largestGridProduct(grid)` sollte 70600674 zurückgeben.
 
 ```js
 assert.strictEqual(largestGridProduct(grid), 70600674);

@@ -1,6 +1,6 @@
 ---
 id: 5900f3c81000cf542c50fedb
-title: 'Problem 92: Square digit chains'
+title: '问题 92：平方数链'
 challengeType: 1
 forumTopicId: 302209
 dashedName: problem-92-square-digit-chains
@@ -10,42 +10,42 @@ dashedName: problem-92-square-digit-chains
 
 A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
 
-For example,
+例如，
 
 $$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
   & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$
 
-Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
+可以发现，每条到达 1 或 89 的数链都会陷入循环。 最令人惊讶的是，从任意数字开始，数链最终都会到达 1 或 89。
 
-How many starting numbers below `limit` will arrive at 89?
+求出有多少个小于 `limit` 的数字最终会到达 89？
 
 # --hints--
 
-`squareDigitChains(100)` should return a number.
+`squareDigitChains(100)` 应该返回一个数字。
 
 ```js
 assert(typeof squareDigitChains(100) === 'number');
 ```
 
-`squareDigitChains(100)` should return `80`.
+`squareDigitChains(100)` 应该返回 `80`。
 
 ```js
 assert.strictEqual(squareDigitChains(100), 80);
 ```
 
-`squareDigitChains(1000)` should return `857`.
+`squareDigitChains(1000)` 应该返回 `857`。
 
 ```js
 assert.strictEqual(squareDigitChains(1000), 857);
 ```
 
-`squareDigitChains(100000)` should return `85623`.
+`squareDigitChains(100000)` 应该返回 `85623`。
 
 ```js
 assert.strictEqual(squareDigitChains(100000), 85623);
 ```
 
-`squareDigitChains(10000000)` should return `8581146`.
+`squareDigitChains(10000000)` 应该返回 `8581146`。
 
 ```js
 assert.strictEqual(squareDigitChains(10000000), 8581146);

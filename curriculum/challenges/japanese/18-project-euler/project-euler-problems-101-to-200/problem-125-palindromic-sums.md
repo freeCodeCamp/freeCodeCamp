@@ -1,6 +1,6 @@
 ---
 id: 5900f3e91000cf542c50fefc
-title: 'Problem 125: Palindromic sums'
+title: '問題 125: 回文数の和'
 challengeType: 1
 forumTopicId: 301752
 dashedName: problem-125-palindromic-sums
@@ -8,14 +8,14 @@ dashedName: problem-125-palindromic-sums
 
 # --description--
 
-The palindromic number 595 is interesting because it can be written as the sum of consecutive squares: $6^2 + 7^2 + 8^2 + 9^2 + 10^2 + 11^2 + 12^2$.
+回文数 595 は、連続する平方数の和 ($6^2 + 7^2 + 8^2 + 9^2 + 10^2 + 10^2 + 11^2 + 12^2$) として表せる興味深い数です。
 
-There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that $1 = 0^2 + 1^2$ has not been included as this problem is concerned with the squares of positive integers.
+連続した平方数の和で表せる 1,000 未満の回文数はちょうど 11 個あり、それらの回文数の和は 4164 です。 なお、この問題では正の整数の平方数のみを扱うので、$1 = 0^2 + 1^2$ は含まれません。
 
-Find the sum of all the numbers less than the  `limit`  that are both palindromic and can be written as the sum of consecutive squares.
+回文数であり、かつ、連続する平方数の和として表すことができる、`limit` 未満の数の総和を求めなさい。
 
 # --hints--
-`palindromicSums(100000000)` should return `2906969179`.
+`palindromicSums(100000000)` は `2906969179` を返す必要があります。
 
 ```js
 
@@ -23,13 +23,13 @@ assert.strictEqual(palindromicSums(100000000), 2906969179);
 
 ```
 
-`palindromicSums(100)` should return `137`.
+`palindromicSums(100)` は `137` を返す必要があります。
 
 ```js
 assert.strictEqual(palindromicSums(100), 137);
 ```
 
-`palindromicSums(1000)` should return `4164`.
+`palindromicSums(1000)` は `4164` を返す必要があります。
 
 ```js
 assert.strictEqual(palindromicSums(1000),4164);

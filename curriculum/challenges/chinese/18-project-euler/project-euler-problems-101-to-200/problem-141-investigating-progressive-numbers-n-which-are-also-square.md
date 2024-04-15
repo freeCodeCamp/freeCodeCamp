@@ -1,6 +1,6 @@
 ---
 id: 5900f3f91000cf542c50ff0b
-title: 'Problem 141: Investigating progressive numbers, n, which are also square'
+title: '问题 141：累进平方数 n'
 challengeType: 1
 forumTopicId: 301770
 dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-square
@@ -10,17 +10,17 @@ dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-squar
 
 A positive integer, $n$, is divided by $d$ and the quotient and remainder are $q$ and $r$ respectively. In addition $d$, $q$, and $r$ are consecutive positive integer terms in a geometric sequence, but not necessarily in that order.
 
-For example, 58 divided by 6 has a quotient of 9 and a remainder of 4. It can also be seen that 4, 6, 9 are consecutive terms in a geometric sequence (common ratio $\frac{3}{2}$).
+例如，58 除以 6 后得到商 9 和余数 4。 可以发现，4、6、9 构成一个等比数列的连续三项（公比为 $\frac{3}{2}$）。
 
-We will call such numbers, $n$, progressive.
+我们称这样的数字 $n$ 为累进数。
 
-Some progressive numbers, such as 9 and 10404 = ${102}^2$, also happen to be perfect squares. The sum of all progressive perfect squares below one hundred thousand is 124657.
+一些累进数，如 9 和 10404 = ${102}^2$，同时也是完全平方数。 所有小于十万的累进平方数之和为 124657。
 
-Find the sum of all progressive perfect squares below one trillion (${10}^{12}$).
+请求出所有小于一万亿（${10}^{12}$）累进平方数之和。
 
 # --hints--
 
-`progressivePerfectSquares()` should return `878454337159`.
+`progressivePerfectSquares()` 应该返回 `878454337159`。
 
 ```js
 assert.strictEqual(progressivePerfectSquares(), 878454337159);

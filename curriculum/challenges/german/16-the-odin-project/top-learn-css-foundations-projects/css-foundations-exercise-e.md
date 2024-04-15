@@ -1,24 +1,24 @@
 ---
 id: 63ee3ff8381756f9716727f3
-title: CSS Foundations Exercise E
+title: CSS-Grundlagen Übung E
 challengeType: 14
 dashedName: css-foundations-exercise-e
 ---
 
 # --description--
 
-Understanding how combinators work can become a lot easier when you start playing around with them and see what exactly is affected by them versus what isn't.
+Die Wirkungsweise von Kombinatoren ist viel einfacher zu verstehen, wenn man mit ihnen herumspielt und sieht, was genau von ihnen beeinflusst wird und was nicht.
 
-The goal of this exercise is to apply styles to elements that are descendants of another element, while leaving elements that aren't descendants of that element unstyled.
+Das Ziel dieser Aufgabe ist es, Stile auf Elemente anzuwenden, die von einem anderen Element abstammen, während Elemente, die nicht von diesem Element abstammen, nicht gestyled werden.
 
-1. You should see a `yellow` background for `p` elements that are descendants of the `div` element.
-1. You should see a text color of `red` for elements that are descendants of the `div` element.
-1. You should see a font size of `20px` for elements that are descendants of the `div` element.
-1. You should center align text for elements that are descendants of the `div` element.
+1. Du solltest einen `yellow` Hintergrund für `p`-Elemente sehen, die Nachkommen des `div`-Elements sind.
+1. Du solltest eine `red` Textfarbe für Elemente sehen, die von dem `div`-Element abstammen.
+1. Du solltest eine Schriftgröße von `20px` für Elemente sehen, die Nachkommen des `div`-Elements sind.
+1. Du solltest den Text für Elemente, die Nachkommen des `div`-Elements sind, zentriert ausrichten.
 
 # --hints--
 
-You should have a background color of `yellow` on your descendants.
+Du solltest eine Hintergrundfarbe von `yellow` auf deinen Nachkommen haben.
 
 ```js
 const styleOne = new __helpers.CSSHelp(document).getStyle('.container .text');
@@ -62,7 +62,7 @@ assert(getCorrectStyle()?.color === 'red');
 
 ```
 
-You should have a font size of `20px` on your descendants.
+Deine Nachkommen sollte eine Schriftgröße von `20px` haben.
 
 ```js
 const styleOne = new __helpers.CSSHelp(document).getStyle('.container .text');
@@ -84,7 +84,7 @@ assert(getCorrectStyle()?.fontSize === '20px');
 
 ```
 
-You should center align the text on your descendants.
+Du solltest den Text auf deinen Nachkommen zentriert ausrichten.
 
 ```js
 const styleOne = new __helpers.CSSHelp(document).getStyle('.container .text');

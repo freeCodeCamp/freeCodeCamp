@@ -1,26 +1,26 @@
 ---
 id: 647e23188acb466c97ccbefa
-title: 'Choose the Correct Data Type in Your C# Code'
+title: 'C# コードで正しいデータ型を選択する'
 challengeType: 19
 dashedName: choose-the-correct-data-type-in-your-c-sharp-code
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-choose-data-type/</a> and complete all the tasks for the "Choose the Correct Data Type in Your C# Code" module. This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-choose-data-type/</a> へ移動し、「C# コードで正しいデータ型を選択する (Choose the Correct Data Type in Your C# Code)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションで変数データを操作する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">Choose the Correct Data Type in Your C# Code</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-choose-data-type/" target="_blank" rel="noreferrer">C# コードで正しいデータ型を選択する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-A piece of code must store whole numeric values between negative and positive `1,000,000`. Which data type should you choose?
+あるコードで、± `1,000,000` の間にある整数の値を格納しなければならないとします。 どのデータ型を使いますか？
 
 ## --answers--
 

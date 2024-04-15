@@ -22,7 +22,7 @@ function(req, res) {
 
 # --instructions--
 
-استخدم طريقة `app.get()` لتمديد المقطع "Hello Express" إلى طلبات GET المطابقة للمسار `/` (منفذ المصدر). أنظر إلى السجلات لتتأكد من أن الكود يعمل، ثم شاهد النتائج في علامة تبويب preview إذا كنت تستخدم Replit.
+استخدم طريقة `app.get()` لتمديد المقطع "Hello Express" إلى طلبات GET المطابقة للمسار `/` (منفذ المصدر). Be sure that your code works by looking at the logs, then see the results in the preview if you are using Gitpod.
 
 **ملاحظة:** يجب إضافة كل الكود لهذه الدروس بين سطور الكود التي بدأنا بها.
 

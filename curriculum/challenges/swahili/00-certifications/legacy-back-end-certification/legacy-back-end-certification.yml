@@ -10,7 +10,7 @@ tests:
     title: Timestamp Microservice
   - 
     id: bd7158d8c443edefaeb5bdff
-    title: Request Header Parser Microservice
+    title: Omba huduma ndogo ya uchanganuzi wa kichwa
   - 
     id: bd7158d8c443edefaeb5bd0e
     title: URL Shortener Microservice
@@ -19,7 +19,7 @@ tests:
     title: Image Search Abstraction Layer
   - 
     id: bd7158d8c443edefaeb5bd0f
-    title: File Metadata Microservice
+    title: Huduma ndogo ya Metadata ya faili
   - 
     id: bd7158d8c443eddfaeb5bdef
     title: Build a Voting App

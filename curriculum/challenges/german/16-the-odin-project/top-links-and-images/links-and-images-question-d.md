@@ -1,7 +1,7 @@
 ---
 id: 637f702872c65bc8e73dfe33
 videoId: ta3Oxx7Yqbo
-title: Links and Images Question D
+title: Links und Bilder Frage D
 challengeType: 15
 dashedName: links-and-images-question-d
 ---
@@ -9,26 +9,26 @@ dashedName: links-and-images-question-d
 # --description--
 
 
-Generally, there are two kinds of links you will create:
+Im Allgemeinen gibt es zwei Arten von Links, die du erstellen wirst:
 
-- Links to pages on other websites on the internet
+- Links zu Seiten auf anderen Websites im Internet
 
-- Links to pages located on your own websites
+- Links zu Seiten auf deinen eigenen Websites
 
 
 ## Absolute Links
-Links to pages on other websites on the internet are called absolute links. A typical absolute link will be made up of the following parts: `protocol://domain/path`. An absolute link will always contain the protocol and domain of the destination.
+Links zu Seiten auf anderen Websites im Internet werden als absolute Links bezeichnet. Ein typischer absoluter Link besteht aus den folgenden Teilen: `protocol://domain/path`. Ein absoluter Link wird immer das Protokoll und die Domäne des Ziels enthalten.
 
-You’ve already seen an absolute link in action. The link you created to The Odin Project’s About page earlier was an absolute link as it contains the protocol and domain.
+Du hast bereits einen absoluten Link in Aktion gesehen. The link you created to The Odin Project’s About page earlier was an absolute link as it contains the protocol and domain.
 
 `https://www.theodinproject.com/about`
 
 ## Relative Links
-Links to other pages within your own website are called relative links. Relative links do not include the domain name, since it is another page on the same site, it assumes the domain name will be the same as the page you created the link on.
+Links zu anderen Seiten innerhalb deiner eigenen Website werden als relative Links bezeichnet. Relative Links enthalten keine Domain-Namen, da es sich um eine andere Seite auf derselben Website handelt, wird davon ausgegangen, dass der Domain-Name derselbe ist wie der der Seite, auf der du den Link erstellt hast.
 
-Relative links only include the file path to the other page, relative to the page you are creating the link on. This is quite abstract, let’s see this in action using an example.
+Relative Links enthalten nur den Datei-Pfad zu der anderen Seite, relativ zu der Seite, auf der du den Link erstellst. Dies ist ziemlich abstrakt, lasst uns dies anhand eines Beispiels in Aktion sehen.
 
-Within the `odin-links-and-images` directory, create another HTML file named `about.html` and paste the following code into it:
+Erstelle im Verzeichnis `odin-links-and-images` eine weitere HTML-Datei namens `about.html` und füge den folgenden Code ein:
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ Within the `odin-links-and-images` directory, create another HTML file named `ab
 </html>
 ```
 
-Back in the `index` page, add the following anchor element to create a link to the `about` page:
+Auf der `index`-Seite fügst du das folgende Ankerelement ein, um einen Link zur `about`-Seite zu erstellen:
 
 ```html
 <body>
@@ -55,17 +55,17 @@ Back in the `index` page, add the following anchor element to create a link to t
 </body>
 ```
 
-Open the `index.html` file in a browser and click on the about link to make sure it is all wired together correctly. Clicking the link should go to the `about` page you just created.
+Öffne die `index.html`-Datei in einem Browser und klicke auf den Link "Über", um sicherzustellen, dass alles richtig verknüpft ist. Ein Klick auf den Link sollte zu der `about`-Seite führen, die du soeben erstellt hast.
 
-This works because the `index` and `about` page are in the same directory. That means you can simply use its name (`about.html`) as the link’s `href` value.
+Das funktioniert, weil sich die `index`- und die `about`-Seite in demselben Verzeichnis befinden. Das bedeutet, dass du einfach seinen Namen (`about.html`) als `href`-Wert des Links verwenden kannst.
 
-But you will usually want to organize your website directories a little better. Normally you would only have the `index.html` at the root directory and all other HTML files in their own directory.
+Aber normalerweise wirst du deine Website-Verzeichnisse ein wenig besser organisieren wollen. Normalerweise würdest du nur die `index.html` im Stammverzeichnis haben und alle anderen HTML-Dateien in ihrem eigenen Verzeichnis.
 
-Create a directory named `pages` within the `odin-links-and-images` directory and move the `about.html` file into this new directory.
+Erstelle ein Verzeichnis namens `pages` innerhalb des `odin-links-and-images`-Verzeichnisses und verschiebe die Datei `about.html` in dieses neue Verzeichnis.
 
-Refresh the `index` page in the browser and then click on the `about` link. It will now be broken. This is because the location of the `about` page file has changed.
+Aktualisiere die `index`-Seite im Browser und klicke dann auf den `about`-Link. Sie wird nun gebrochen. Das liegt daran, dass sich der Speicherort der `about`-Seitendatei geändert hat.
 
-To fix this, you just need to update the `about` link `href` value to include the `pages/` directory since that is the new location of the `about.html` file relative to the `index.html` file.
+Um dies zu beheben, musst du nur den `about`-Link `href`-Wert aktualisieren, um das `pages/`-Verzeichnis einzuschließen, da dies die neue Position der `about.html`-Datei relativ zur `index.html`-Datei ist.
 
 ```html
 <body>
@@ -74,9 +74,9 @@ To fix this, you just need to update the `about` link `href` value to include th
 </body>
 ```
 
-Refresh the `index` page in the browser and try clicking the `about` link again, it should now be back in working order.
+Aktualisiere die `index`-Seite im Browser und klicke erneut auf den `about`-Link, er sollte jetzt wieder funktionieren.
 
-In many cases, this will work just fine; however, you can still run into unexpected issues with this approach. Prepending `./` before the link will in most cases prevent such issues. By adding `./` you are specifying to your code that it should start looking for the file/directory relative to the **current** directory.
+In den meisten Fällen wird dies problemlos funktionieren, aber es kann auch zu unerwarteten Problemen führen. Das Voranstellen von `./` vor den Link verhindert in den meisten Fällen solche Probleme. Durch das Hinzufügen von `./` gibst du deinem Code an, dass er nach der Datei/dem Verzeichnis relativ zum **aktuellem**-Verzeichnis suchen soll.
 
 ```html
 <body>
@@ -87,25 +87,25 @@ In many cases, this will work just fine; however, you can still run into unexpec
 
 # --assignment--
 
-Watch Kevin Powell’s HTML File Structure video above.
+Sieh dir oben Kevin Powells Video zur HTML-Dateistruktur an.
 
 # --question--
 
 ## --text--
 
-What is the difference between an absolute and a relative link?
+Was ist der Unterschied zwischen einem absoluten und einem relativen Link?
 
 ## --answers--
 
-An absolute link is a link to another page on the current website. A relative link is a link to another website.
+Ein absoluter Link ist ein Link zu einer anderen Seite auf der aktuellen Website. Ein relativer Link ist ein Link zu einer anderen Website.
 
 ---
 
-An absolute link is a link to another website. A relative link is a link another page on the current website.
+Ein absoluter Link ist ein Link zu einer anderen Website. Ein relativer Link ist ein Link zu einer anderen Seite auf der aktuellen Website.
 
 ---
 
-There is no difference between absolute and relative links.
+Es besteht kein Unterschied zwischen absoluten und relativen Links.
 
 ## --video-solution--
 

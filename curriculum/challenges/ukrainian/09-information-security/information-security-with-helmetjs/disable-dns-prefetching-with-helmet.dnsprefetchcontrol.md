@@ -8,7 +8,7 @@ dashedName: disable-dns-prefetching-with-helmet-dnsprefetchcontrol
 
 # --description--
 
-Нагадуємо, що цей проєкт створюється на основі стартового проєкту на <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Нагадуємо, що цей проєкт створюється на основі наступного стартового проєкту на <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a> або клонований з <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Щоб покращити продуктивність, більшість браузерів випереджають записи DNS для посилань на сторінці. Таким способом IP призначення уже відоме, коли користувач натискає на посилання. Це може призвести до надмірного використання сервісу DNS (якщо у вас великий вебсайт, який відвідують мільйони людей…), проблем із конфідеційністю (злочинець зможе встановити, що ви перебуваєте на певній сторінці) або змін статистики сторінки (деякі посилання можуть відображатись як вже відвідані, навіть якщо це не так). Якщо вам необхідний високий рівень безпеки, можна вимкнути передвибірку DNS, але втративши продуктивність.
 

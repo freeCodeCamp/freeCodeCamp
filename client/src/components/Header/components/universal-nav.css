@@ -172,6 +172,24 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   color: var(--gray-45);
 }
 
+.nav-link-supporter {
+  color: var(--yellow-light);
+  background: var(--yellow-dark);
+}
+
+.nav-link-supporter:hover,
+.nav-link-supporter:active,
+.nav-link-supporter:focus,
+.nav-link-supporter:focus-visible {
+  color: var(--yellow-dark) !important;
+  background: var(--yellow-light) !important;
+}
+
+.nav-link-supporter svg {
+  height: auto;
+  width: 1em;
+}
+
 /**
  * Check mark for current language
  */
@@ -324,6 +342,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   max-height: var(--header-element-size);
   min-width: var(--header-element-size);
   padding: 0 4px;
+  text-decoration: none;
 }
 
 @media (min-width: 601px) {
@@ -404,10 +423,10 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 /**
  * Handle submenu containers collapsed and expanded states
  */
-button[aria-expanded='false'] + div {
+#universal-nav button[aria-expanded='false'] + div {
   display: none;
 }
 
-button[aria-expanded='true'] + div {
+#universal-nav button[aria-expanded='true'] + div {
   display: block;
 }

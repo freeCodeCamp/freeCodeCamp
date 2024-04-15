@@ -8,15 +8,15 @@ dashedName: create-an-es6-javascript-map
 
 # --description--
 
-JavaScript の新バージョンでは、前回のチャレンジで手書きした機能の多くを提供する、組み込みの Map ブジェクトが提供されています。 この Map オブジェクトは通常の JavaScript オブジェクトと似ていますが、通常のオブジェクトにはない便利な機能を提供します。 例えば ES6 Map は、それに追加された要素の挿入順序を追跡します。 Here is a more complete overview of its methods:
+JavaScript の新バージョンでは、前回のチャレンジで手書きした機能の多くを提供する、組み込みの Map ブジェクトが提供されています。 この Map オブジェクトは通常の JavaScript オブジェクトと似ていますが、通常のオブジェクトにはない便利な機能を提供します。 例えば ES6 Map は、それに追加された要素の挿入順序を追跡します。 以下が Map オブジェクトの概要です:
 
-- `.has(key)` returns true or false based on the presence of a key
-- `.get(key)` returns the value associated with a key
-- `.set(key, value)` sets a new key, value pair
-- `.delete(key)` removes a key, value pair
-- `.clear()` removes all key, value pairs
-- `.entries()` returns an array of all the keys in insertion order
-- `.values()` returns an array of all the values in insertion order
+- `.has(key)` はキーの有無をもとに true または false を返します。
+- `.get(key)` はキーに関連付けられた値を返します。
+- `.set(key, value)` は新しいキーと値のペアを設定します。
+- `.delete(key)` はキーと値のペアを削除します。
+- `.clear()` はキーと値のペアをすべて削除します。
+- `.entries()` はすべてのキーを挿入順に並べた配列を返します。
+- `.values()` はすべての値を挿入順に並べた配列を返します。
 
 # --instructions--
 
@@ -24,13 +24,13 @@ JavaScript Map オブジェクトを定義し、変数 myMap をそのオブジ�
 
 # --hints--
 
-The `myMap` object should exist.
+`myMap` オブジェクトを用意する必要があります。
 
 ```js
 assert(typeof myMap === 'object');
 ```
 
-`myMap` should contain the key value pair `freeCodeCamp`, `Awesome!`.
+`myMap` にはキーと値のペアである `freeCodeCamp` と `Awesome!` のペアが含まれている必要があります。
 
 ```js
 assert(myMap.get('freeCodeCamp') === 'Awesome!');

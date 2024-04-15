@@ -1,6 +1,6 @@
 ---
 id: 64e4ebc7eabc5a6babd479cd
-title: Step 9
+title: الخطوة 9
 challengeType: 0
 dashedName: step-9
 ---
@@ -22,25 +22,25 @@ assert.match(code, /discardBtn\.addEventListener\(/)
 Your event listener should listen for a `click` event.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1/)
 ```
 
 You should use arrow syntax to set your event listener to an empty pair of curly braces.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*\{/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{/)
 ```
 
 Your event listener should use the `close()` method on `confirmCloseDialog`.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\s*\)\s*;?/)
 ```
 
 Your event listener should use `classList` to toggle the class `hidden` on `taskForm`.
 
 ```js
-assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\);?\s*taskForm\.classList\.toggle\(\1hidden\1\);?\s*\}\);?/)
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\s*\)\s*;?\s*taskForm\.classList\.toggle\(\s*('|"|`)hidden\2\s*\)\s*;?\s*\}\s*\)\s*;?/)
 ```
 
 # --seed--
@@ -55,7 +55,7 @@ assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn localStorage By Building a Todo App</title>
+  <title>Learn localStorage by Building a Todo App</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -81,7 +81,7 @@ assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*
           <textarea class="form-control" id="description-input" cols="30" rows="5"></textarea>
         </div>
         <div class="task-form-footer">
-          <button id="add-or-update-task-btn" class="btn large-btn" type="submit" aria-label="add task">
+          <button id="add-or-update-task-btn" class="btn large-btn" type="submit">
             Add Task
           </button>
         </div>
@@ -90,10 +90,10 @@ assert.match(code, /discardBtn\.addEventListener\(('|"|`)click\1,\s*\(\)\s*=>\s*
         <form method="dialog">
           <p class="discard-message-text">Discard unsaved changes?</p>
           <div class="confirm-close-dialog-btn-container">
-            <button id="cancel-btn" class="btn" aria-label="cancel">
+            <button id="cancel-btn" class="btn">
               Cancel
             </button>
-            <button id="discard-btn" class="btn" aria-label="discard">
+            <button id="discard-btn" class="btn">
               Discard
             </button>
           </div>

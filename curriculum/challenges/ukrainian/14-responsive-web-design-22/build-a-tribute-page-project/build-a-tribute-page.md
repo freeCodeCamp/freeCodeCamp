@@ -8,7 +8,8 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Мета:** створити застосунок, функціонально схожий до <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>
+**Мета:** створити застосунок, функціонально схожий до <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>. **Не копіюйте цей демонстраційний проєкт**.
+
 
 **Історія користувача:**
 

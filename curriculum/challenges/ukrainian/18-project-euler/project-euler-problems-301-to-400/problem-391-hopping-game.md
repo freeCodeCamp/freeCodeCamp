@@ -1,6 +1,6 @@
 ---
 id: 5900f4f31000cf542c510006
-title: 'Problem 391: Hopping Game'
+title: 'Завдання 391: гра «Класики»'
 challengeType: 1
 forumTopicId: 302056
 dashedName: problem-391-hopping-game
@@ -8,26 +8,26 @@ dashedName: problem-391-hopping-game
 
 # --description--
 
-Let $s_k$ be the number of 1’s when writing the numbers from 0 to $k$ in binary.
+Нехай $s_k$ буде кількістю одиниць при записі чисел від 0 до $k$ у бінарній системі.
 
-For example, writing 0 to 5 in binary, we have 0, 1, 10, 11, 100, 101. There are seven 1’s, so $s_5 = 7$.
+Наприклад, записуючи числа від 0 до 5 у бінарній системі, ми отримаємо 0, 1, 10, 11, 100, 101. Всього сім одиниць, тому $s_5 = 7$.
 
-The sequence $S = \\{s_k : k ≥ 0\\}$ starts $\\{0, 1, 2, 4, 5, 7, 9, 12, \ldots\\}$.
+Послідовність $S = \\{s_k : k ≥ 0\\}$ починається з $\\{0, 1, 2, 4, 5, 7, 9, 12, \ldots\\}$.
 
-A game is played by two players. Before the game starts, a number $n$ is chosen. A counter $c$ starts at 0. At each turn, the player chooses a number from 1 to $n$ (inclusive) and increases $c$ by that number. The resulting value of $c$ must be a member of $S$. If there are no more valid moves, the player loses.
+Грають два гравці. Перед початком гри обрано число $n$. Лічильник $c$ починається з 0. На кожному ході гравець обирає число від 1 до $n$ (включно) і збільшує $c$ на це число. Отримане значення $c$ має належати $S$. Якщо гравець не має можливих ходів, то він програє.
 
-For example, with $n = 5$ and starting with $c = 0$:
+Наприклад, за умови $n = 5$ і починаючи з $c = 0$:
 
-- Player 1 chooses 4, so $c$ becomes $0 + 4 = 4$.
-- Player 2 chooses 5, so $c$ becomes $4 + 5 = 9$.
-- Player 1 chooses 3, so $c$ becomes $9 + 3 = 12$.
-- etc.
+- Гравець 1 обирає 4, тому значенням $c$ стає $0 + 4 = 4$.
+- Гравець 2 обирає 5, тому значенням $c$ стає $4 + 5 = 9$.
+- Гравець 1 обирає 3, тому значенням $c$ стає $9 + 3 = 12$.
+- і т. д.
 
-Note that $c$ must always belong to $S$, and each player can increase $c$ by at most $n$.
+Зверніть увагу, що $c$ завжди належить $S$, і кожен гравець може збільшити $c$ не більше ніж на $n$.
 
-Let $M(n)$ be the highest number the first player can choose at her first turn to force a win, and $M(n) = 0$ if there is no such move. Наприклад, $M(2) = 2$, $M(7) = 1$ та $M(20) = 4$.
+Нехай $M(n)$ буде найбільшим числом, яке може обрати перший гравець за перший хід, щоб виграти, і $M(n) = 0$, якщо такого ходу немає. Наприклад, $M(2) = 2$, $M(7) = 1$ та $M(20) = 4$.
 
-It can be verified $\sum M{(n)}^3 = 8150$ for $1 ≤ n ≤ 20$.
+Можна довести, що $\sum M{(n)}^3 = 8150$ за умови $1 ≤ n ≤ 20$.
 
 Знайдіть $\sum M{(n)}^3$ за умови $1 ≤ n ≤ 1000$.
 

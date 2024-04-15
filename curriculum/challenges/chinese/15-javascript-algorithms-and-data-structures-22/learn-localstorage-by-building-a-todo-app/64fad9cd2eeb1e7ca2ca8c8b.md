@@ -1,8 +1,8 @@
 ---
 id: 64fad9cd2eeb1e7ca2ca8c8b
-title: Step 31
+title: Step 37
 challengeType: 0
-dashedName: step-31
+dashedName: step-37
 ---
 
 # --description--
@@ -14,13 +14,13 @@ Use arrow syntax to create an `updateTaskContainer` function. Then move the `tas
 You should use `const` and arrow syntax to create a `updateTaskContainer` function.
 
 ```js
-assert.match(code, /const\s*updateTaskContainer\s*=\s*\(\)\s*=>\s*\{/)
+assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\s*\)\s*=>\s*\{/)
 ```
 
 You should move `taskData.forEach()` and its content into the `updateTaskContainer()` function.
 
 ```js
-assert.match(code, /const\s+updateTaskContainer\s+=\s*\(\)\s*=>\s*\{\s*taskData\.forEach\(\s*\(\{\s*id,\s*title,\s*date,\s*description\s*\}\)\s*=>\s*\(tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s+class=('|")task\1\s*id=\1\$\{id\}\1>\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s+type=\1button\1\s*class=\1btn\1>Edit<\/button>\s*<button\s+type=\1button\1\s*class=\1btn\1>Delete<\/button>\s*<\/div>\s*`\)\s*\);?\s*\};?/)
+assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\s*\)\s*=>\s*\{\s*taskData\.forEach\(\s*\(\s*\{\s*id\s*,\s*title\s*,\s*date\s*,\s*description\s*\}\s*\)\s*=>\s*{\s*\(\s*tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s+class\s*=\s*('|")task\1\s*id\s*=\s*('|")\$\{id\}\2>\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s+type\s*=\s*('|")button\3\s*class\s*=\s*('|")btn\4>Edit<\/button>\s*<button\s+type\s*=\s*('|")button\5\s*class\s*=\s*('|")btn\6>Delete<\/button>\s*<\/div>\s*`\s*\)\s*}\s*\)\s*;?\s*\}\s*;?/)
 ```
 
 # --seed--
@@ -35,7 +35,7 @@ assert.match(code, /const\s+updateTaskContainer\s+=\s*\(\)\s*=>\s*\{\s*taskData\
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn localStorage By Building a Todo App</title>
+  <title>Learn localStorage by Building a Todo App</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -61,7 +61,7 @@ assert.match(code, /const\s+updateTaskContainer\s+=\s*\(\)\s*=>\s*\{\s*taskData\
           <textarea class="form-control" id="description-input" cols="30" rows="5"></textarea>
         </div>
         <div class="task-form-footer">
-          <button id="add-or-update-task-btn" class="btn large-btn" type="submit" aria-label="add task">
+          <button id="add-or-update-task-btn" class="btn large-btn" type="submit">
             Add Task
           </button>
         </div>
@@ -70,10 +70,10 @@ assert.match(code, /const\s+updateTaskContainer\s+=\s*\(\)\s*=>\s*\{\s*taskData\
         <form method="dialog">
           <p class="discard-message-text">Discard unsaved changes?</p>
           <div class="confirm-close-dialog-btn-container">
-            <button id="cancel-btn" class="btn" aria-label="cancel">
+            <button id="cancel-btn" class="btn">
               Cancel
             </button>
-            <button id="discard-btn" class="btn" aria-label="discard">
+            <button id="discard-btn" class="btn">
               Discard
             </button>
           </div>
@@ -341,16 +341,17 @@ taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   taskData.forEach(
-    ({ id, title, date, description }) =>
-      (tasksContainer.innerHTML += `
-      <div class="task" id="${id}">
-        <p><strong>Title:</strong> ${title}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Description:</strong> ${description}</p>
-        <button type="button" class="btn">Edit</button>
-        <button type="button" class="btn">Delete</button>
-      </div>
-    `)
+    ({ id, title, date, description }) => {
+        (tasksContainer.innerHTML += `
+        <div class="task" id="${id}">
+          <p><strong>Title:</strong> ${title}</p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Description:</strong> ${description}</p>
+          <button type="button" class="btn">Edit</button>
+          <button type="button" class="btn">Delete</button>
+        </div>
+      `)
+    }
   );
 
   reset()

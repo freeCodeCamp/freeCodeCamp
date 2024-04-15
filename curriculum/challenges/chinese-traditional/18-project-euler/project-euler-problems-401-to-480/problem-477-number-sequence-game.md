@@ -1,6 +1,6 @@
 ---
 id: 5900f54a1000cf542c51005c
-title: 'Problem 477: Number Sequence Game'
+title: '問題 477：數字序列遊戲'
 challengeType: 1
 forumTopicId: 302154
 dashedName: problem-477-number-sequence-game
@@ -10,9 +10,9 @@ dashedName: problem-477-number-sequence-game
 
 The number sequence game starts with a sequence $S$ of $N$ numbers written on a line.
 
-Two players alternate turns. At his turn, a player must select and remove either the first or the last number remaining in the sequence.
+兩名玩家交替輪流。 在輪到他時，玩家必須選擇並刪除序列中剩餘的第一個或最後一個數字。
 
-The player score is the sum of all the numbers he has taken. Each player attempts to maximize his own sum.
+玩家得分是他所取所有數字的總和。 每個玩家都試圖最大化自己的總和。
 
 If $N = 4$ and $S = \\{1, 2, 10, 3\\}$, then each player maximizes his score as follows:
 

@@ -21,7 +21,7 @@ Para usar imagens que você tem em seus próprios sites, você pode usar um cami
 
 - Crie um diretório chamado `images` dentro do projeto `odin-links-and-images`.
 
-- Em seguida, faça o download [desta imagem](https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640) e mova-a para o diretório de imagens que você acabou de criar.
+- Next, download <a href="https://unsplash.com/photos/Mv9hjnEUHR4/download?force=true&w=640" target="_blank">this image</a> and move it into the images directory you just created.
 
 - Renomeie a imagem para `dog.jpg`.
 
@@ -72,7 +72,7 @@ O atributo `alt` é usado para descrever uma imagem. Ele será usado no lugar da
 
 # --assignment--
 
-Leia sobre os <a href="https://www.internetingishard.com/html-and-css/links-and-images/#image-formats" target="_blank">quatro formatos principais de imagens</a> que podem ser usados na web.
+Read about the <a href="https://www.freecodecamp.org/news/image-file-types-picture-format-extensions-jpeg-gif-png-svg-tiff/" target="_blank">four main image formats</a> that can be used on the web.
 
 # --question--
 
@@ -82,7 +82,7 @@ Quais são os quatro formatos principais de imagens que você pode usar na web?
 
 ## --answers--
 
-TIFF, GIF, PNG e SVG.
+MOV, GIF, PNG, and SVG.
 
 ---
 

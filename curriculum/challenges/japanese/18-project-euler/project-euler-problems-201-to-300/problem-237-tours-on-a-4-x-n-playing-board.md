@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6c
-title: 'Problem 237: Tours on a 4 x n playing board'
+title: '問題 237: 4 × n のゲーム盤上の経路'
 challengeType: 1
 forumTopicId: 301882
 dashedName: problem-237-tours-on-a-4-x-n-playing-board
@@ -8,22 +8,22 @@ dashedName: problem-237-tours-on-a-4-x-n-playing-board
 
 # --description--
 
-Let $T(n)$ be the number of tours over a 4 × $n$ playing board such that:
+次のようなルールがあるゲームについて、4 × $n$ のゲーム盤上を進む経路の数を $T(n)$ とします。
 
-- The tour starts in the top left corner.
-- The tour consists of moves that are up, down, left, or right one square.
-- The tour visits each square exactly once.
-- The tour ends in the bottom left corner.
+- 左上隅のマスから始める。
+- 上下左右に 1 マスずつ移動する。
+- 各マスをちょうど 1 回ずつ通る。
+- 左下隅のマスで終わる。
 
-The diagram shows one tour over a 4 × 10 board:
+下図は、4 × 10 の盤上での経路の一例です。
 
-<img class="img-responsive center-block" alt="one tour over 4 x 10 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="4 × 10 の盤上の経路の一例" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
 
-$T(10)$ is 2329. What is $T({10}^{12})$ modulo ${10}^8$?
+$T(10)$ は 2329 です。 $T({10}^{12})$ mod ${10}^8$ を求めなさい。
 
 # --hints--
 
-`toursOnPlayingBoard()` should return `15836928`.
+`toursOnPlayingBoard()` は `15836928` を返す必要があります。
 
 ```js
 assert.strictEqual(toursOnPlayingBoard(), 15836928);

@@ -11,16 +11,8 @@ dashedName: timestamp-microservice
 Build a full stack JavaScript app that is functionally similar to this: <a href="https://timestamp-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://timestamp-microservice.freecodecamp.rocks</a>. سوف يقوم يلزمك العمل على هذا المشروع بكتابة كود باستخدام إحدى الطرق التالية:
 
 -   أستنسخ <a href="https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">هذا مستودع من GitHub</a> واكمل مشروعك محلياً.
--   استخدم <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">مشروعنا المبدئي في Replit</a> لإكمال مشروعك.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   استخدم أي منشئ لموقع لإكمال المشروع. تأكد من دمج جميع الملفات من مستودعنا في GitHub في مشروعك.
-
-إذا كنت تستخدم Replit، اتبع هذه الخطوات لإعداد المشروع:
-
--   ابدأ باستيراد (import) المشروع على Replit.
--   بعد ذلك، سترى نافذة `.replit`.
--   اختار `Use run command` وانقر على زر `Done`.
-
-When you are done, make sure a working demo of your project is hosted somewhere public. ثم أرسل عنوان (URL) إليه في خانة "رابط الحل". وإن أردت تستطيع أيضًا إرسال رابط لكود المصدر لمشروعك في الخانة "رابط Github".
 
 **ملاحظة:** ليس الغرض من هذا المشروع تحويل المناطق الزمنية، لذلك افترض إن جميع التواريخ الصحيحة المرسلة ستحلل بواسطة `new Date()` كتواريخ GMT.
 

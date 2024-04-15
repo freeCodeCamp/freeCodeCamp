@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@vitejs/plugin-react": "4.1.1",
-    "codemirror": "5.65.15",
+    "@vitejs/plugin-react": "4.2.1",
+    "codemirror": "5.65.16",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-router-dom": "6.18.0",
     "typescript": "5.2.2",
-    "vite": "4.5.0",
+    "vite": "4.5.2",
     "vite-tsconfig-paths": "4.2.1"
   },
   "scripts": {
@@ -20,9 +20,9 @@
     "postinstall": "shx cp ./sample.env ./.env"
   },
   "devDependencies": {
-    "@types/codemirror": "5.60.13",
-    "@types/react": "16.14.51",
-    "@types/react-dom": "16.9.22",
+    "@types/codemirror": "5.60.15",
+    "@types/react": "16.14.56",
+    "@types/react-dom": "16.9.24",
     "@uiw/react-codemirror": "3.2.10",
     "cross-env": "7.0.3",
     "eslint-plugin-react-hooks": "4.6.0",

@@ -9,6 +9,40 @@ test.beforeEach(({ browserName }) => {
   );
 });
 
+test('should render the modal content correctly', async ({ page }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+  );
+
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
+
+  await expect(
+    page.getByRole('dialog', { name: translations.learn.reset })
+  ).toBeVisible();
+
+  await expect(
+    page.getByRole('button', {
+      name: translations.buttons.close
+    })
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading', {
+      name: translations.learn.reset
+    })
+  ).toBeVisible();
+
+  await expect(page.getByText(translations.learn['reset-warn'])).toBeVisible();
+  await expect(
+    page.getByText(translations.learn['reset-warn-2'])
+  ).toBeVisible();
+
+  await expect(
+    page.getByRole('button', {
+      name: translations.buttons['reset-lesson']
+    })
+  ).toBeVisible();
+});
+
 test('User can reset challenge', async ({ page }) => {
   await page.goto(
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
@@ -50,7 +84,7 @@ test('User can reset challenge', async ({ page }) => {
   ).not.toBeVisible();
 });
 
-test('User can reset classic challenge', async ({ page }) => {
+test('User can reset classic challenge', async ({ page, isMobile }) => {
   await page.goto(
     '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
   );
@@ -61,7 +95,9 @@ test('User can reset classic challenge', async ({ page }) => {
 
   await page.getByLabel(editorPaneLabel).fill(challengeSolution);
 
-  const submitButton = page.getByLabel('Run the tests use shortcut Ctrl+enter');
+  const submitButton = page.getByRole('button', {
+    name: isMobile ? translations.buttons.run : translations.buttons['run-test']
+  });
   await submitButton.click();
 
   await expect(
@@ -91,4 +127,26 @@ test('User can reset classic challenge', async ({ page }) => {
     page.getByText(translations.learn['tests-completed'])
   ).not.toBeVisible();
   await expect(page.getByText(translations.learn['test-output'])).toBeVisible();
+});
+
+test('should close when the user clicks the close button', async ({ page }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+  );
+
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
+
+  await expect(
+    page.getByRole('dialog', { name: translations.learn.reset })
+  ).toBeVisible();
+
+  await page
+    .getByRole('button', {
+      name: translations.buttons.close
+    })
+    .click();
+
+  await expect(
+    page.getByRole('dialog', { name: translations.learn.reset })
+  ).toBeHidden();
 });

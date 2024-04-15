@@ -123,6 +123,41 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   superOrder
                   template
                   usesMultifileEditor
+                  scene {
+                    setup {
+                      background
+                      characters {
+                        character
+                        position {
+                          x
+                          y
+                          z
+                        }
+                      }
+                      audio {
+                        filename
+                        startTime
+                        startTimestamp
+                        finishTimestamp
+                      }
+                      alwaysShowDialogue
+                    }
+                    commands {
+                      background
+                      character
+                      position {
+                        x
+                        y
+                        z
+                      }
+                      startTime
+                      finishTime
+                      dialogue {
+                        text
+                        align
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -263,15 +298,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from'
   });
-  actions.setBabelPlugin({
-    name: 'babel-plugin-transform-imports',
-    options: {
-      '@freecodecamp/react-bootstrap': {
-        transform: '@freecodecamp/react-bootstrap/lib/${member}',
-        preventFullImport: true
-      }
-    }
-  });
 };
 
 exports.onCreatePage = async ({ page, actions }) => {
@@ -303,6 +329,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       prerequisites: [PrerequisiteChallenge]
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
+      scene: Scene
     }
     type FileContents {
       fileKey: String
@@ -324,6 +351,45 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Blank {
       answer: String
       feedback: String
+    }
+    type Scene {
+      setup: SceneSetup
+      commands: [SceneCommands]
+    }
+    type SceneSetup {
+      background: String
+      characters: [SetupCharacter]
+      audio: SetupAudio
+      alwaysShowDialogue: Boolean
+    }
+    type SetupCharacter {
+      character: String
+      position: CharacterPosition
+      opacity: Float
+    }
+    type SetupAudio {
+      filename: String
+      startTime: Float
+      startTimestamp: Float
+      finishTimestamp: Float
+    }
+    type SceneCommands {
+      background: String
+      character: String
+      position: CharacterPosition
+      opacity: Float
+      startTime: Float
+      finishTime: Float
+      dialogue: Dialogue
+    }
+    type Dialogue {
+      text: String
+      align: String
+    }
+    type CharacterPosition {
+      x: Float
+      y: Float
+      z: Float
     }
   `;
   createTypes(typeDefs);

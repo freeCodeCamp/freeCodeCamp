@@ -1,6 +1,6 @@
 ---
 id: 5900f3b21000cf542c50fec5
-title: 'Problem 70: Totient permutation'
+title: '問題 70: トーティエント関数の置換'
 challengeType: 1
 forumTopicId: 302183
 dashedName: problem-70-totient-permutation
@@ -8,39 +8,39 @@ dashedName: problem-70-totient-permutation
 
 # --description--
 
-Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is used to determine the number of positive numbers less than or equal to `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, ${\phi}(9) = 6$. The number 1 is considered to be relatively prime to every positive number, so ${\phi}(1) = 1$.
+オイラーのトーティエント関数 ${\phi}(n)$ (別名: ファイ関数) は、`n` と互いに素な `n` 以下の正の数の個数を求めるために使用されます。 例えば 1, 2, 4, 5, 7, 8 はすべて 9 未満で、かつ 9 と互いに素なので、${\phi}(9) = 6$ と表されます。 数字 1 はすべての正の数に対して互いに素であると考えられるので、${\phi}(1) = 1$ です。
 
-Interestingly, ${\phi}(87109) = 79180$, and it can be seen that 87109 is a permutation of 79180.
+興味深いことに、${\phi}(87109) = 79180$ であり、87109 は 79180 の数字を入れ替えた数になっています。
 
-Find the value of `n`, 1 &lt; `n` &lt; `limit`, for which ${\phi}(n)$ is a permutation of `n` and the ratio $\displaystyle\frac{n}{{\phi}(n)}$ produces a minimum.
+1 &lt; `n` &lt; `limit` のとき、`n` の数字を入れ替えると${\phi}(n)$ になり、かつ、比率 $\displaystyle\frac{n}{{\phi}(n)}$ が最小となるような `n` の値を求めなさい。
 
 # --hints--
 
-`totientPermutation(10000)` should return a number.
+`totientPermutation(10000)` は数値を返す必要があります。
 
 ```js
 assert(typeof totientPermutation(10000) === 'number');
 ```
 
-`totientPermutation(10000)` should return `4435`.
+`totientPermutation(10000)` は `4435` を返す必要があります。
 
 ```js
 assert.strictEqual(totientPermutation(10000), 4435);
 ```
 
-`totientPermutation(100000)` should return `75841`.
+`totientPermutation(100000)` は `75841` を返す必要があります。
 
 ```js
 assert.strictEqual(totientPermutation(100000), 75841);
 ```
 
-`totientPermutation(500000)` should return `474883`.
+`totientPermutation(500000)` は `474883` を返す必要があります。
 
 ```js
 assert.strictEqual(totientPermutation(500000), 474883);
 ```
 
-`totientPermutation(10000000)` should return `8319823`.
+`totientPermutation(10000000)` は `8319823` を返す必要があります。
 
 ```js
 assert.strictEqual(totientPermutation(10000000), 8319823);

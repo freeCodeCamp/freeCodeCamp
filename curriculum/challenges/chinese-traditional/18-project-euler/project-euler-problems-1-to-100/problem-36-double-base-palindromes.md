@@ -1,6 +1,6 @@
 ---
 id: 5900f3901000cf542c50fea3
-title: 'Problem 36: Double-base palindromes'
+title: '問題36：雙基迴文'
 challengeType: 1
 forumTopicId: 302020
 dashedName: problem-36-double-base-palindromes

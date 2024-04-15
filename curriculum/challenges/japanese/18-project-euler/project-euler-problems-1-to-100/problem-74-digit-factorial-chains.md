@@ -1,6 +1,6 @@
 ---
 id: 5900f3b61000cf542c50fec9
-title: 'Problem 74: Digit factorial chains'
+title: '問題 74: 各位の階乗の連鎖'
 challengeType: 1
 forumTopicId: 302187
 dashedName: problem-74-digit-factorial-chains
@@ -8,53 +8,53 @@ dashedName: problem-74-digit-factorial-chains
 
 # --description--
 
-The number 145 is well known for the property that the sum of the factorial of its digits is equal to 145:
+145 という数は、各位の階乗の和も 145 に等しいことがよく知られています。
 
 $$1! + 4! + 5! = 1 + 24 + 120 = 145$$
 
-Perhaps less well known is 169, in that it produces the longest chain of numbers that link back to 169; it turns out that there are only three such loops that exist:
+169 にはあまり知られていない性質があります。169 は、その数自体に戻るまでの数の連鎖が最長です。このようなループは次の 3 つしか存在しません。
 
 $$\begin{align} &169 → 363601 → 1454 → 169\\\\
 &871 → 45361 → 871\\\\ &872 → 45362 → 872\\\\
 \end{align}$$
 
-It is not difficult to prove that EVERY starting number will eventually get stuck in a loop. For example,
+どの数から始めても最終的にはループに入るということを証明するのは難しくありません。 下に例を挙げます。
 
 $$\begin{align} &69 → 363600 → 1454 → 169 → 363601\\ (→ 1454)\\\\
 &78 → 45360 → 871 → 45361\\ (→ 871)\\\\ &540 → 145\\ (→ 145)\\\\
 \end{align}$$
 
-Starting with 69 produces a chain of five non-repeating terms, but the longest non-repeating chain with a starting number below one million is sixty terms.
+69 から始めると 5 つの非反復項を持つ連鎖になりますが、100 万より小さい数から始めると、最長の非反復連鎖は 60 項です。
 
-How many chains, with a starting number below `n`, contain exactly sixty non-repeating terms?
+`n` 未満の数から始めた場合、ちょうど 60 項の非反復項を持つ連鎖はいくつありますか。
 
 # --hints--
 
-`digitFactorialChains(2000)` should return a number.
+`digitFactorialChains(2000)` は数値を返す必要があります。
 
 ```js
 assert(typeof digitFactorialChains(2000) === 'number');
 ```
 
-`digitFactorialChains(2000)` should return `6`.
+`digitFactorialChains(2000)` は `6` を返す必要があります。
 
 ```js
 assert.strictEqual(digitFactorialChains(2000), 6);
 ```
 
-`digitFactorialChains(100000)` should return `42`.
+`digitFactorialChains(100000)` は `42` を返す必要があります。
 
 ```js
 assert.strictEqual(digitFactorialChains(100000), 42);
 ```
 
-`digitFactorialChains(500000)` should return `282`.
+`digitFactorialChains(500000)` は `282` を返す必要があります。
 
 ```js
 assert.strictEqual(digitFactorialChains(500000), 282);
 ```
 
-`digitFactorialChains(1000000)` should return `402`.
+`digitFactorialChains(1000000)` は `402` を返す必要があります。
 
 ```js
 assert.strictEqual(digitFactorialChains(1000000), 402);

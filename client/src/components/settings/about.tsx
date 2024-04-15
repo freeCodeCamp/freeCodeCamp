@@ -217,33 +217,36 @@ class AboutSettings extends Component<AboutProps, AboutState> {
           >
             <div role='group' aria-label={t('settings.headings.personal-info')}>
               <FormGroup controlId='about-name'>
-                <ControlLabel>
+                <ControlLabel htmlFor='about-name-input'>
                   <strong>{t('settings.labels.name')}</strong>
                 </ControlLabel>
                 <FormControl
                   onChange={this.handleNameChange}
                   type='text'
                   value={name}
+                  id='about-name-input'
                 />
               </FormGroup>
               <FormGroup controlId='about-location'>
-                <ControlLabel>
+                <ControlLabel htmlFor='about-location-input'>
                   <strong>{t('settings.labels.location')}</strong>
                 </ControlLabel>
                 <FormControl
                   onChange={this.handleLocationChange}
                   type='text'
                   value={location}
+                  id='about-location-input'
                 />
               </FormGroup>
               <FormGroup controlId='about-picture'>
-                <ControlLabel>
+                <ControlLabel htmlFor='about-picture-input'>
                   <strong>{t('settings.labels.picture')}</strong>
                 </ControlLabel>
                 <FormControl
                   onChange={this.handlePictureChange}
                   type='url'
                   value={picture}
+                  id='about-picture-input'
                 />
                 {!this.state.isPictureUrlValid && (
                   <ShowImageValidationWarning
@@ -252,19 +255,20 @@ class AboutSettings extends Component<AboutProps, AboutState> {
                 )}
               </FormGroup>
               <FormGroup controlId='about-about'>
-                <ControlLabel>
+                <ControlLabel htmlFor='about-about-input'>
                   <strong>{t('settings.labels.about')}</strong>
                 </ControlLabel>
                 <FormControl
                   componentClass='textarea'
                   onChange={this.handleAboutChange}
                   value={about}
+                  id='about-about-input'
                 />
               </FormGroup>
             </div>
             <BlockSaveButton
-              aria-disabled={this.isFormPristine()}
-              bgSize='lg'
+              disabled={this.isFormPristine()}
+              bgSize='large'
               {...(this.isFormPristine() && { tabIndex: -1 })}
             >
               {t('buttons.save')}{' '}
@@ -284,6 +288,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
           <KeyboardShortcutsSettings
             keyboardShortcuts={keyboardShortcuts}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+            explain={t('settings.shortcuts-explained')}
           />
           <ScrollbarWidthSettings />
         </FullWidthRow>

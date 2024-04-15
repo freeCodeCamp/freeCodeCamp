@@ -11,7 +11,7 @@ dashedName: turn-an-image-into-a-link
 
 You can make elements into links by nesting them within an `a` element.
 
-Nest your image within an `a` element. Here's an example:
+Nest your image within an `a` element. Hapa kuna mfano:
 
 ```html
 <a href="#"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="Three kittens running towards the camera."></a>
@@ -33,7 +33,7 @@ The existing `img` element should be nested within an `a` element.
 assert($('a').children('img').length > 0);
 ```
 
-Your `a` element should be a dead link with a `href` attribute set to `#`.
+Your `a` element should be a dead link with an `href` attribute set to `#`.
 
 ```js
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));

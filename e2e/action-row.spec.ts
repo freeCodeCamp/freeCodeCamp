@@ -47,7 +47,7 @@ test('Action row buttons are visible', async ({ isMobile, page }) => {
   }
 });
 
-test('Clicking instructions button hides editor buttons', async ({
+test('Clicking instructions button hides instructions panel, but not editor buttons', async ({
   isMobile,
   page
 }) => {
@@ -62,7 +62,7 @@ test('Clicking instructions button hides editor buttons', async ({
 
     for (let i = 0; i < editorButtons.length; i++) {
       const btn = tabsRow.getByRole('button', { name: editorButtons[i] });
-      await expect(btn).toBeHidden();
+      await expect(btn).toBeVisible();
     }
 
     const instructionsPanelTitle = page.getByRole('heading', {

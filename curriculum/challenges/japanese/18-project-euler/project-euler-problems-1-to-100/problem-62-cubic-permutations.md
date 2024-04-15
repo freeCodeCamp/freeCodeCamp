@@ -1,6 +1,6 @@
 ---
 id: 5900f3aa1000cf542c50febd
-title: 'Problem 62: Cubic permutations'
+title: '問題 62: 立方数の置換'
 challengeType: 1
 forumTopicId: 302174
 dashedName: problem-62-cubic-permutations
@@ -8,37 +8,37 @@ dashedName: problem-62-cubic-permutations
 
 # --description--
 
-The cube, 41063625 ($345^3$), can be permuted to produce two other cubes: 56623104 ($384^3$) and 66430125 ($405^3$). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
+立方数 41063625 ($345^3$) は、数字を並び替えると 56623104 ($384^3$) と 66430125 ($405^3$) という 2 つの立方数になります。 実際、41063625 は、再び立方数を作るような数字の置き換え方をちょうど 3 通り持つ、最小の立方数です。
 
-Find the smallest cube for which exactly `n` permutations of its digits are cube.
+再び立方数を作るような数字の置き換え方をちょうど `n` 通り持つ、最小の立方数を求めなさい。
 
 # --hints--
 
-`cubicPermutations(2)` should return a number.
+`cubicPermutations(2)` は数値を返す必要があります。
 
 ```js
 assert(typeof cubicPermutations(2) === 'number');
 ```
 
-`cubicPermutations(2)` should return `125`.
+`cubicPermutations(2)` は `125` を返す必要があります。
 
 ```js
 assert.strictEqual(cubicPermutations(2), 125);
 ```
 
-`cubicPermutations(3)` should return `41063625`.
+`cubicPermutations(3)` は `41063625` を返す必要があります。
 
 ```js
 assert.strictEqual(cubicPermutations(3), 41063625);
 ```
 
-`cubicPermutations(4)` should return `1006012008`.
+`cubicPermutations(4)` は `1006012008` を返す必要があります。
 
 ```js
 assert.strictEqual(cubicPermutations(4), 1006012008);
 ```
 
-`cubicPermutations(5)` should return `127035954683`.
+`cubicPermutations(5)` は `127035954683` を返す必要があります。
 
 ```js
 assert.strictEqual(cubicPermutations(5), 127035954683);

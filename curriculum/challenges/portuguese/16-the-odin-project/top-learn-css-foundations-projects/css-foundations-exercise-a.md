@@ -156,7 +156,7 @@ assert(document.getElementsByTagName('button')?.[0]?.hasAttribute('style'));
 ```
 
 ```css
-/* style.css */
+/* styles.css */
 ```
 
 # --solutions--

@@ -1,6 +1,6 @@
 ---
 id: 647e22d18acb466c97ccbef8
-title: 'Foundational C# with Microsoft Certification Exam'
+title: 'Microsoft 連携・基礎 C# 認定試験'
 challengeType: 17
 dashedName: foundational-c-sharp-with-microsoft-certification-exam
 prerequisites:
@@ -26,13 +26,13 @@ prerequisites:
 
 # --description--
 
-Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:
+認定試験に合格して、Microsoft 連携・基礎 C# 認定証を獲得しましょう。 試験を始める前に、以下のガイドラインを確認してください:
 
-- You must complete the entire exam in one session.
-- Exiting the exam at any point before you are finished, will result in the loss of your progress.
-- There is no time limit, but your total time taken will be recorded.
-- The exam consists of 80 multiple-choice questions.
-- Complete the exam and correctly answer at least 70% of the questions to earn your certification.
+- 試験全体を一度に完了しなければなりません。
+- 完了前に試験を中断した場合、進捗状況は失われます。
+- 時間制限はありませんが、かかった時間の合計は記録されます。
+- 試験は 80 問の多肢選択式問題で構成されています。
+- 認定証を獲得するには、試験を完了し、70% 以上の質問に正解する必要があります。
 
 # --instructions--
 

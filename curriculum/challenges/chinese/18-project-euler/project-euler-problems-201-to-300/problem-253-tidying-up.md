@@ -1,6 +1,6 @@
 ---
 id: 5900f4691000cf542c50ff7c
-title: 'Problem 253: Tidying up'
+title: '问题253：整理'
 challengeType: 1
 forumTopicId: 301901
 dashedName: problem-253-tidying-up
@@ -10,11 +10,11 @@ dashedName: problem-253-tidying-up
 
 A small child has a "number caterpillar" consisting of forty jigsaw pieces, each with one number on it, which, when connected together in a line, reveal the numbers 1 to 40 in order.
 
-Every night, the child's father has to pick up the pieces of the caterpillar that have been scattered across the play room. He picks up the pieces at random and places them in the correct order.
+每天晚上，孩子的父亲必须拿起散落在游戏室的毛毛虫的碎片。 他随机拿起碎片并按正确顺序放置。
 
 As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
 
-For example:
+例如：
 
 | Piece Placed | Segments So Far |
 | ------------ | --------------- |

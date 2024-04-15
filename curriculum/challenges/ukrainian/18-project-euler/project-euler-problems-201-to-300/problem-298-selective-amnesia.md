@@ -1,6 +1,6 @@
 ---
 id: 5900f4971000cf542c50ffa9
-title: 'Problem 298: Selective Amnesia'
+title: 'Завдання 298: вибіркова амнезія'
 challengeType: 1
 forumTopicId: 301950
 dashedName: problem-298-selective-amnesia
@@ -8,26 +8,26 @@ dashedName: problem-298-selective-amnesia
 
 # --description--
 
-Larry and Robin play a memory game involving of a sequence of random numbers between 1 and 10, inclusive, that are called out one at a time. Each player can remember up to 5 previous numbers. When the called number is in a player's memory, that player is awarded a point. If it's not, the player adds the called number to his memory, removing another number if his memory is full.
+Ларрі та Робін грають в гру на запам’ятовування послідовності випадкових чисел від 1 до 10 включно, які називають по черзі. Кожен гравець може запам’ятати до 5 попередніх цифр. Якщо назване число знаходиться в пам’яті гравця, він отримує один бал. Якщо ні, гравець додає назване число до своєї пам’яті, видаляючи інше число, якщо пам’ять заповнена.
 
-Both players start with empty memories. Both players always add new missed numbers to their memory but use a different strategy in deciding which number to remove: Larry's strategy is to remove the number that hasn't been called in the longest time. Robin's strategy is to remove the number that's been in the memory the longest time.
+Обидва гравці починають з порожньої пам’яті. Обидва гравці завжди додають нові пропущені числа до своєї пам’яті, однак використовують різні стратегії для вибору числа, яке потрібно видалити: Ларрі видаляє число, яке довго не згадувалось. Робін видаляє число, яке знаходилось в пам’яті найдовше.
 
-Example game:
+Приклад гри:
 
-| Turn | Called number | Larry's memory | Larry's score | Robin's memory | Robin's score |
-| ---- | ------------- | --------------:| ------------- | -------------- | ------------- |
-| 1    | 1             |              1 | 0             | 1              | 0             |
-| 2    | 2             |            1,2 | 0             | 1,2            | 0             |
-| 3    | 4             |          1,2,4 | 0             | 1,2,4          | 0             |
-| 4    | 6             |        1,2,4,6 | 0             | 1,2,4,6        | 0             |
-| 5    | 1             |        1,2,4,6 | 1             | 1,2,4,6        | 1             |
-| 6    | 8             |      1,2,4,6,8 | 1             | 1,2,4,6,8      | 1             |
-| 7    | 10            |     1,4,6,8,10 | 1             | 2,4,6,8,10     | 1             |
-| 8    | 2             |     1,2,6,8,10 | 1             | 2,4,6,8,10     | 2             |
-| 9    | 4             |     1,2,4,8,10 | 1             | 2,4,6,8,10     | 3             |
-| 10   | 1             |     1,2,4,8,10 | 2             | 1,4,6,8,10     | 3             |
+| Хід | Назване число | Пам’ять Ларрі | Бали Ларрі | Пам’ять Робіна | Бали Робіна |
+| --- | ------------- | -------------:| ---------- | -------------- | ----------- |
+| 1   | 1             |             1 | 0          | 1              | 0           |
+| 2   | 2             |           1,2 | 0          | 1,2            | 0           |
+| 3   | 4             |         1,2,4 | 0          | 1,2,4          | 0           |
+| 4   | 6             |       1,2,4,6 | 0          | 1,2,4,6        | 0           |
+| 5   | 1             |       1,2,4,6 | 1          | 1,2,4,6        | 1           |
+| 6   | 8             |     1,2,4,6,8 | 1          | 1,2,4,6,8      | 1           |
+| 7   | 10            |    1,4,6,8,10 | 1          | 2,4,6,8,10     | 1           |
+| 8   | 2             |    1,2,6,8,10 | 1          | 2,4,6,8,10     | 2           |
+| 9   | 4             |    1,2,4,8,10 | 1          | 2,4,6,8,10     | 3           |
+| 10  | 1             |    1,2,4,8,10 | 2          | 1,4,6,8,10     | 3           |
 
-Denoting Larry's score by $L$ and Robin's score by $R$, what is the expected value of $|L - R|$ after 50 turns? Дайте відповідь, заокруглену до восьми знаків після коми у форматі x.xxxxxxxx.
+Нехай $L$ позначає бали Ларрі, а $R$ позначає бали Робіна. Яке очікуване значення $|L - R|$ після 50 ходів? Дайте відповідь, заокруглену до восьми знаків після коми у форматі x.xxxxxxxx.
 
 # --hints--
 

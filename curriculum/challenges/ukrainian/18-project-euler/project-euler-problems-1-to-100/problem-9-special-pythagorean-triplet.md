@@ -1,6 +1,6 @@
 ---
 id: 5900f3761000cf542c50fe88
-title: 'Завдання 9: особлива Піфагорова трійка'
+title: 'Завдання 9: особлива трійка Піфагора'
 challengeType: 1
 forumTopicId: 302205
 dashedName: problem-9-special-pythagorean-triplet
@@ -14,7 +14,7 @@ dashedName: problem-9-special-pythagorean-triplet
 
 Наприклад, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
 
-Існує лише одна Піфагорова трійка, за якої `a` + `b` + `c` = 1000. Знайдіть такий добуток `abc`, щоб `a` + `b` + `c` = `n`.
+Існує лише одна Піфагорова трійка, за якої `a` + `b` + `c` = 1000. Знайдіть добуток `abc`, за якого `a` + `b` + `c` = `n`.
 
 # --hints--
 

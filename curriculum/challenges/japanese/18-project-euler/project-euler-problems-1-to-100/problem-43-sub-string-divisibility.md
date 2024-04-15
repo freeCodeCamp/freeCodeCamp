@@ -1,6 +1,6 @@
 ---
 id: 5900f3971000cf542c50feaa
-title: 'Problem 43: Sub-string divisibility'
+title: '問題 43: 部分文字列の被整除性'
 challengeType: 1
 forumTopicId: 302100
 dashedName: problem-43-sub-string-divisibility
@@ -8,49 +8,49 @@ dashedName: problem-43-sub-string-divisibility
 
 # --description--
 
-The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
+1406357289 という数は、0 から 9 の数字が何らかの順に各位に使われているので 0 から 9 のパンデジタル数ですが、さらに、部分文字列の被整除性という興味深い性質も持っています。
 
-Let $d_1$ be the $1^{st}$ digit, $d_2$ be the $2^{nd}$ digit, and so on. In this way, we note the following:
+$d_1$ を $1$ 桁目にし、$d_2$ を $2$ 桁目にし、以降も同様にします。 そうすると次のことに気付きます。
 
-- ${d_2}{d_3}{d_4} = 406$ is divisible by 2
-- ${d_3}{d_4}{d_5} = 063$ is divisible by 3
-- ${d_4}{d_5}{d_6} = 635$ is divisible by 5
-- ${d_5}{d_6}{d_7} = 357$ is divisible by 7
-- ${d_6}{d_7}{d_8} = 572$ is divisible by 11
-- ${d_7}{d_8}{d_9} = 728$ is divisible by 13
-- ${d_8}{d_9}{d_{10}} = 289$ is divisible by 17
+- ${d_2}{d_3}{d_4} = 406$ は 2 で割り切れる
+- ${d_3}{d_4}{d_5} = 063$ は 3 で割り切れる
+- ${d_4}{d_5}{d_6} = 635$ は 5 で割り切れる
+- ${d_5}{d_6}{d_7} = 357$ は 7 で割り切れる
+- ${d_6}{d_7}{d_8} = 572$ は 11 で割り切れる
+- ${d_7}{d_8}{d_9} = 728$ は 13 で割り切れる
+- ${d_8}{d_9}{d_{10}} = 289$ は 17 で割り切れる
 
-Find the sum of all 0 to `n` pandigital numbers with sub-strings fulfilling `n - 2` of these divisibility properties.
+`n - 2` 個の部分文字列がこのような被整除性を持つ、0 から `n` のパンデジタル数の総和を求めなさい。
 
-**Note:** Pandigital numbers starting with `0` are to be considered in the result.
+**注:** `0` で始まるパンデジタル数は結果の中で考慮されます。
 
 # --hints--
 
-`substringDivisibility(5)` should return a number.
+`substringDivisibility(5)` は数値を返す必要があります。
 
 ```js
 assert(typeof substringDivisibility(5) === 'number');
 ```
 
-`substringDivisibility(5)` should return `12444480`.
+`substringDivisibility(5)` は `12444480` を返す必要があります。
 
 ```js
 assert.strictEqual(substringDivisibility(5), 12444480)
 ```
 
-`substringDivisibility(7)` should return `1099210170`.
+`substringDivisibility(7)` は `1099210170` を返す必要があります。
 
 ```js
 assert.strictEqual(substringDivisibility(7), 1099210170)
 ```
 
-`substringDivisibility(8)` should return `1113342912`.
+`substringDivisibility(8)` は `1113342912` を返す必要があります。
 
 ```js
 assert.strictEqual(substringDivisibility(8), 1113342912)
 ```
 
-`substringDivisibility(9)` should return `16695334890`.
+`substringDivisibility(9)` は `16695334890` を返す必要があります。
 
 ```js
 assert.strictEqual(substringDivisibility(9), 16695334890)

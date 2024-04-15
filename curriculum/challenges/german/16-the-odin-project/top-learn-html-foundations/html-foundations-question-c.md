@@ -1,52 +1,52 @@
 ---
 id: 637f4e1c72c65bc8e73dfe20
-title: HTML Foundations Question C
+title: HTML-Grundlagen Frage C
 challengeType: 15
 dashedName: html-foundations-question-c
 ---
 
 # --description--
 
-To demonstrate an HTML boilerplate, you first need an HTML file to work with.
+Um eine HTML-Boilerplate zu demonstieren, benötigst du zunächst eine HTML-Datei, mit der du arbeiten kannst.
 
-Create a new folder on your computer and name it `html-boilerplate`. Within that folder create a new file and name it `index.html`.
+Create a new folder on your computer and name it `html-boilerplate`. Erstelle innerhalb dieses Ordners eine neue Datei und benenne sie `index.html`.
 
-You’re probably already familiar with a lot of different types of files, for example doc, pdf, and image files.
+Wahrscheinlich bist du bereits mit vielen verschiedenen Dateitypen vertraut, z. B. Doc-, PDF- und Bilddateien.
 
-To let the computer know you want to create an HTML file, you need to append the filename with the `.html` extension as you have done when creating the `index.html` file.
+Damit der Computer weiß, dass du eine HTML-Datei erstellen möchtest, musst du den Dateinamen mit der `.html`-Erweiterung anhängen, wie du es bei der Erstellung der `index.html`-Datei getan hast.
 
-It is worth noting that you named your HTML file index. You should always name the HTML file that will contain the homepage of your websites `index.html`. This is because web servers will by default look for an index.html page when users land on your websites - and not having one will cause big problems.
+Es ist wichtig zu erwähnen, dass du deine HTML-Datei index benannt hast. Du solltest die HTML-Datei, die die Startseite deiner Websites enthält, immer `index.html` nennen. Dies liegt daran, dass Webserver standardmäßig nach einer `index.html`-Seite suchen, wenn Nutzer auf deine Websites gelangen - und das Fehlen einer solchen Seite kann große Probleme verursachen.
 
-## The DOCTYPE
+## Der DOCTYPE
 
-Every HTML page starts with a doctype declaration. The doctype’s purpose is to tell the browser what version of HTML it should use to render the document. The latest version of HTML is HTML5, and the doctype for that version is simply `<!DOCTYPE html>`.
+Jede HTML-Seite beginnt mit einer Doctype-Deklaration. Der Zweck des Doctypes ist es, dem Browser mitzuteilen, welche HTML-Version er verwenden soll, um das Dokument darzustellen. Die neueste HTML-Version ist HTML5 und der Doctype für diese Version ist einfach `<!DOCTYPE html>`.
 
-The doctypes for older versions of HTML were a bit more complicated. For example, this is the doctype declaration for HTML4:
+Die Doctypen für ältere HTML-Versionen waren etwas komplizierter. Zum Beispiel ist dies die Doctype-Deklaration für HTML4:
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 ```
 
-However, you probably won’t ever want to be using an older version of HTML, and so you’ll always use `<!DOCTYPE html>`.
+Allerdings wirst du wahrscheinlich nie eine ältere Version von HTML verwenden wollen, und deshalb wirst du immer `<!DOCTYPE html>` verwenden.
 
-Open the `index.html` file created earlier in your text editor and add `<!DOCTYPE html>` to the very first line.
+Öffne die `index.html`-Datei, die zuvor in deinem Texteditor erstellt wurde, und füge in die allererste Zeile `<!DOCTYPE html>` ein.
 
 # --question--
 ## --text--
 
-What is the purpose of the `DOCTYPE` declaration?
+Was ist der Zweck der `DOCTYPE`-Deklaration?
 
 ## --answers--
 
-It tells the browser which version of HTML to use to render the document.
+Sie teilt dem Browser mit, welche HTML-Version verwendet werden soll, um das Dokument darzustellen.
 
 ---
 
-It tells the browser that this document uses JavaScript.
+Sie teilt dem Browser mit, dass dieses Dokument JavaScript verwendet.
 
 ---
 
-It tells the browser the title of the document.
+Sie teilt dem Browser den Titel des Dokuments mit.
 
 
 ## --video-solution--

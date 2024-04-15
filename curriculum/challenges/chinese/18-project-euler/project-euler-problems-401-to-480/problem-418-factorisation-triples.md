@@ -1,6 +1,6 @@
 ---
 id: 5900f50f1000cf542c510021
-title: 'Problem 418: Factorisation triples'
+title: '问题418：三重分解'
 challengeType: 1
 forumTopicId: 302087
 dashedName: problem-418-factorisation-triples
@@ -13,7 +13,7 @@ Let $n$ be a positive integer. An integer triple ($a$, $b$, $c$) is called a fac
 - $1 ≤ a ≤ b ≤ c$
 - $a \times b \times c = n$.
 
-Define $f(n)$ to be $a + b + c$ for the factorisation triple ($a$, $b$, $c$) of $n$ which minimises $\frac{c}{a}$. One can show that this triple is unique.
+Define $f(n)$ to be $a + b + c$ for the factorisation triple ($a$, $b$, $c$) of $n$ which minimises $\frac{c}{a}$. 可以证明这一三元组是独特的。
 
 For example, $f(165) = 19$, $f(100\\,100) = 142$ and $f(20!) = 4\\,034\\,872$.
 

@@ -11,16 +11,8 @@ dashedName: metric-imperial-converter
 Crea una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <a href="https://metric-imperial-converter.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://metric-imperial-converter.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
 - Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
-- Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 - Usa un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
-
-If you use Replit, follow these steps to set up the project:
-
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 **Note:** This project's tests do not work when using `glitch.com`.
 
@@ -28,9 +20,9 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 - Complete the necessary conversion logic in `/controllers/convertHandler.js`
 - Complete the necessary routes in `/routes/api.js`
-- Copy the `sample.env` file to `.env` and set the variables appropriately
-- To run the tests uncomment `NODE_ENV=test` in your `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Replit console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- Copie el archivo `sample.env` a `.env` y establezca las variables apropiadamente
+- To run the tests automatically, add `NODE_ENV=test` in your `.env` file
+- Para ejecutar las pruebas en la consola, use el comando `npm run test`.
 
 Write the following tests in `tests/1_unit-tests.js`:
 
@@ -61,7 +53,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Puedes proporcionar tu propio proyecto, no el URL de ejemplo.
 
 ```js
 getUserInput => {

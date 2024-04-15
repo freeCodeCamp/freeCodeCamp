@@ -453,6 +453,7 @@ function postResetProgress(req, res, next) {
       isRelationalDatabaseCertV8: false,
       isCollegeAlgebraPyCertV8: false,
       isFoundationalCSharpCertV8: false,
+      isJsAlgoDataStructCertV8: false,
       completedChallenges: [],
       completedExams: [],
       savedChallenges: [],

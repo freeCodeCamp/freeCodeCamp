@@ -19,19 +19,19 @@ It was proposed by Christian Goldbach that every odd composite number can be wri
   33 = 31 + 2×1<sup>2</sup>
 </div>
 
-It turns out that the conjecture was false.
+Resulta que la conjetura resulta ser falsa.
 
-What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
+¿Cuál es el compuesto impar más pequeño que no puede ser escrito como la suma de un primo y dos veces una cuadrado?
 
 # --hints--
 
-`goldbachsOtherConjecture()` should return a number.
+`goldbachsOtherConjecture()` debería devolver un número.
 
 ```js
 assert(typeof goldbachsOtherConjecture() === 'number');
 ```
 
-`goldbachsOtherConjecture()` should return 5777.
+`goldbachsOtherConjecture()` debería devolver 5777.
 
 ```js
 assert.strictEqual(goldbachsOtherConjecture(), 5777);

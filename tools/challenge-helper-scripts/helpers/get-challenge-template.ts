@@ -37,19 +37,6 @@ challengeType: ${challengeType}
 dashedName: ${dashedName}
 ---`;
 
-const buildFrontMatterWithAudio = ({
-  challengeId,
-  title,
-  dashedName,
-  challengeType
-}: ChallengeOptions) => `---
-id: ${challengeId.toString()}
-title: ${sanitizeTitle(title)}
-challengeType: ${challengeType}
-dashedName: ${dashedName}
-audioPath: Add the path to the audio file here. Or, delete this if you don't have audio.
----`;
-
 export const getLegacyChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
@@ -182,7 +169,7 @@ Answer 3
 
 export const getMultipleChoiceChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatterWithAudio(options)}
+): string => `${buildFrontMatter(options)}
 
 # --description--
 
@@ -213,7 +200,7 @@ Answer 3
 
 export const getFillInTheBlankChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatterWithAudio(options)}
+): string => `${buildFrontMatter(options)}
 
 # --description--
 
@@ -240,16 +227,28 @@ It's \`in\`
 
 export const getDialogueChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatterWithVideo(options)}
+): string => `${buildFrontMatter(options)}
 
 # --description--
 
-${options.title} description.
+Watch the video below to understand the context of the upcoming lessons.
 
 ## --assignment--
 
-${options.title} assignment!
+Watch the video.
 `;
+
+type Template = (opts: ChallengeOptions) => string;
+
+export const getTemplate = (challengeType: string): Template => {
+  const template = challengeTypeToTemplate[challengeType];
+  if (!template) {
+    throw Error(`Challenge type ${challengeType} has no template.
+To create one, please add a new function to this file and include it in the challengeTypeToTemplate map.
+`);
+  }
+  return template;
+};
 
 /**
  * This should be kept in parity with the challengeTypes in the
@@ -258,8 +257,9 @@ ${options.title} assignment!
  * Keys are explicitly marked null so we know the challenge type itself
  * exists, and can expand this to use the correct template later on.
  */
-export const challengeTypeToTemplate: {
-  [key: string]: null | ((opts: ChallengeOptions) => string);
+
+const challengeTypeToTemplate: {
+  [key: string]: null | Template;
 } = {
   0: getLegacyChallengeTemplate,
   1: getLegacyChallengeTemplate,

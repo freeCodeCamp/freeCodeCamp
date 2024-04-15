@@ -2,6 +2,8 @@ import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
 import React from 'react';
 
+import { isMathJaxAllowed, mathJaxSrc } from '../src/utils/math-jax';
+
 export function getheadTagComponents(): JSX.Element[] {
   const socialImage =
     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
@@ -59,15 +61,12 @@ export function getPostBodyComponents(pathname: string): JSX.Element[] {
       async={false}
       id='mathjax'
       key='mathjax'
-      src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
+      src={mathJaxSrc}
       type='text/javascript'
     />
   );
 
-  if (
-    pathname.includes('/learn/coding-interview-prep/rosetta-code') ||
-    pathname.includes('/learn/project-euler/')
-  ) {
+  if (isMathJaxAllowed(pathname)) {
     scripts.push(mathJaxScriptElement);
   }
 

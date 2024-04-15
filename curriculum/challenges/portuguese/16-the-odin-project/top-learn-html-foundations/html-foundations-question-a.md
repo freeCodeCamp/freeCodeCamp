@@ -16,19 +16,11 @@ As tags de fechamento dizem ao navegador onde um elemento termina. Quase sempre,
 
 Um elemento de parágrafo completo terá esta aparência:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/90b1a362af0bb8635af9593cd8911c9aefb68569/foundations/html_css/html-foundations/imgs/00.png" alt="diagrama de elemento" />
-
-Você pode pensar em elementos como contêineres de conteúdo. As tags de abertura e fechamento informam ao navegador o conteúdo que o elemento contém. O navegador pode, então, usar essas informações para determinar como deve interpretar e formatar o conteúdo.
-
-Existem alguns elementos do HTML que não possuem uma tag de fechamento. Esses elementos geralmente têm esta aparência: `<br />` ou `<img/>`. Alguns, porém, também podem ser vistos sem a barra de fechamento, como `<br>` ou `<img>`. Essas tags são conhecidos como tags de fechamento próprio ou como elementos vazios, pois não envolvem nenhum conteúdo. Você encontrará algumas delas em lições posteriores, mas a maior parte dos elementos terá tags de abertura e de fechamento.
-
-O HTML tem uma vasta lista de tags predefinidas que você pode usar para criar tipos diferentes de elementos. É importante usar as tags corretas para o conteúdo. Usar as tags corretas pode ter um grande impacto em dois aspectos dos seus sites: como eles são classificados em mecanismos de busca e se eles serão acessíveis aos usuários que dependem de tecnologias assistivas para usar a internet, como, por exemplo, os leitores de telas.
-
-O uso de elementos corretos para o conteúdo é chamado HTML semântico. Você explorará isso com muito mais profundidade mais tarde no currículo.
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='An opening p tag, followed by the content string "some text content", followed by a closing p tag.' />
 
 # --assignment--
 
-Assista ao vídeo de Kevin Powell [Introduction to HTML](https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-)
+Watch Kevin Powell’s <a href="https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-" target="_blank">Introduction to HTML video</a>
 
 # --question--
 

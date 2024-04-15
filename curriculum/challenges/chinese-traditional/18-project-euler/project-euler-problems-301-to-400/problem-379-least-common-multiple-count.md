@@ -1,6 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffa
-title: 'Problem 379: Least common multiple count'
+title: '問題379：最少共同的多重計數'
 challengeType: 1
 forumTopicId: 302041
 dashedName: problem-379-least-common-multiple-count

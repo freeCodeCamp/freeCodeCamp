@@ -1,6 +1,6 @@
 ---
 id: 63dbd1335d93712ff177d96a
-title: "Simple and Compound Interest: Extra"
+title: "単利と複利: おまけ"
 challengeType: 15
 videoId: 2cbrstoKNSc
 dashedName: simple-and-compound-interest-extra
@@ -8,13 +8,13 @@ dashedName: simple-and-compound-interest-extra
 
 # --description--
 
-Here is a detour from the Python code, as this video shows you how to create mortgage payment amortization tables in Google Sheets. You will also learn about how to use a very similar setup to estimate retirement account investment returns. This is the video that shows you where your money is going.
+Python コードから少し外れますが、この動画では、Google スプレッドシートで住宅ローンの支払い償却表を作成する方法を紹介しています。 また、これとよく似た設定を用いて、退職金口座の投資収益を見積もる方法についても説明します。 この動画でお金の流れを理解することができます。
 
 # --question--
 
 ## --text--
 
-What marker do you use to attach a formula to a cell in a spreadsheet?
+スプレッドシートのセルに数式を入力するために使用する印はどれですか？
 
 ## --answers--
 

@@ -1,9 +1,12 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
+const nextChallengeURL =
+  '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
+
 test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter'
+    '/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator'
   );
   await page.getByLabel('Solution Link').fill('https://example.com');
   await page
@@ -41,9 +44,7 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
     await page
       .getByRole('button', { name: translations.buttons['go-to-next'] })
       .click();
-    await expect(page).toHaveURL(
-      'http://localhost:8000/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator'
-    );
+    await expect(page).toHaveURL(nextChallengeURL);
   });
 });
 
@@ -68,12 +69,26 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should redirect to next challenge', async ({ page }) => {
+  test('should submit and go to the next challenge when the user clicks the submit button', async ({
+    page
+  }) => {
     await page
       .getByRole('button', { name: translations.buttons['submit-and-go'] })
       .click();
-    await expect(page).toHaveURL(
-      'http://localhost:8000/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator'
-    );
+    await expect(page).toHaveURL(nextChallengeURL);
+  });
+
+  test('should submit and go to the next challenge when the user presses Ctrl + Enter', async ({
+    page
+  }) => {
+    await page.keyboard.press('Control+Enter');
+    await expect(page).toHaveURL(nextChallengeURL);
+  });
+
+  test('should submit and go to the next challenge when the user presses Command + Enter', async ({
+    page
+  }) => {
+    await page.keyboard.press('Meta+Enter');
+    await expect(page).toHaveURL(nextChallengeURL);
   });
 });

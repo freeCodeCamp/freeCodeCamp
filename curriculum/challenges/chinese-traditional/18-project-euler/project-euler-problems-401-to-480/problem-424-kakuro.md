@@ -1,6 +1,6 @@
 ---
 id: 5900f5141000cf542c510026
-title: 'Problem 424: Kakuro'
+title: '問題424：九郎'
 challengeType: 1
 forumTopicId: 302094
 dashedName: problem-424-kakuro

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
 import { Alert } from '@freecodecamp/ui';
 
-import { Spacer } from '../helpers';
+import { Link, Spacer } from '../helpers';
 
 type DonateCompletionProps = {
   error: string | null;
@@ -50,7 +50,20 @@ function DonateCompletion({
         {success && (
           <div>
             <p>{t('donate.free-tech')}</p>
-            {isSignedIn && <p>{t('donate.no-halo')}</p>}
+            {isSignedIn && (
+              <>
+                <p>{t('donate.visit-supporters')}</p>
+
+                <Link
+                  className='btn'
+                  key='supporters'
+                  sameTab={false}
+                  to='/supporters'
+                >
+                  {t('buttons.go-to-supporters')}
+                </Link>
+              </>
+            )}
           </div>
         )}
         {error && <p>{error}</p>}

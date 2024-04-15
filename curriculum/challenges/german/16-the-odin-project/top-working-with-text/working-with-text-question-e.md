@@ -1,17 +1,17 @@
 ---
 id: 637f4e7972c65bc8e73dfe2b
-title: Working With Text Question E
+title: Arbeiten mit Text Frage E
 challengeType: 15
 dashedName: working-with-text-question-e
 ---
 
 # --description--
 
-You may have noticed that in all the examples in this lesson you indent any elements that are within other elements. This is known as nesting elements.
+Du hast velleicht bemerkt, dass du in allen Beispielen dieser Lektion alle Elemente einrückst, die sich innerhalb anderer Elemente befinden. Diese werden als eingebettete Elemente bezeichnet.
 
-When you nest elements within other elements, you create a parent and child relationship between them. The nested elements are the children and the element they are nested within is the parent.
+Wenn du Elemente in andere Elemente verschachtelst, erstellst du eine übergeordnete und untergeordnete Beziehung zwischen ihnen. Die verschachtelten Elemente sind die untergeordneten Elemente und das Element, in dem sie verschachtelt sind, ist das übergeordnete Element.
 
-In the following example, the `body` element is the parent and the `p` is the child:
+Im folgenden Beispiel, ist das `body`-Element das übergeordnete Element und das `p` ist das untergeordnete Element:
 
 ```html
 <html>
@@ -23,9 +23,9 @@ In the following example, the `body` element is the parent and the `p` is the ch
  </html>
 ```
 
-Just as in human relationships, HTML parent elements can have many children. Elements at the same level of nesting are considered to be siblings.
+Genau wie in menschlichen Beziehungen können übergeordnete HTML-Elemente viele untergeordnete Elemente haben. Elemente auf der gleichen Verschachtelungsebene werden als Geschwister betrachtet.
 
-For example, the two `p` elements in the following code are siblings, since they are both children of the `body` tag and are at the same level of nesting as each other:
+Die beiden `p`-Elemente im folgenden Code sind beispielweise Geschwisterelemente, da beide untergeordnete Elemente des `body`-Tags sind und sich auf der gleichen Verschachtlungsebene befinden:
 
 ```html
 <html>
@@ -38,27 +38,27 @@ For example, the two `p` elements in the following code are siblings, since they
  </html>
 ```
 
-You use indentation to make the level of nesting clear and readable for yourselves and other developers who will work with your HTML in the future. It is recommended to indent any child elements by two spaces.
+Du verwendest die Einrückung, um die Verschachtelungsebene für dich selbst und andere Entwickler, die in Zukunft mit deinem HTML-Code arbeiten werden, klar und lesbar zu machen. Es wird empfohlen, alle untergeordneten Elemente um zwei Leerzeichen einzurücken.
 
-The parent, child, and sibling relationships between elements will become much more important later when you start styling your HTML with CSS and adding behavior with JavaScript. For now, however, it is just important to know the distinction between how elements are related and the terminology used to describe their relationships.
+Die Beziehungen zwischen übergeordneten, untergeordneten und geschwisterlichen Elementen werden später viel wichtiger, wenn du beginnst, dein HTML mit CSS zu gestalten und mit JavaScript Funktionen hinzuzufügen. Im Moment ist es jedoch nur wichtig, den Unterschied zwischen der Art der Beziehung zwischen den Elementen und der Terminologie, die zur Beschreibung ihrer Beziehungen verwendet wird, zu kennen.
 
 # --question--
 
 ## --text--
 
-What relationship do two elements have if they are at the same level of nesting?
+Welches Verhältnis haben zwei Elemente, wenn sie sich auf der gleichen Verschachtlungsebene befinden?
 
 ## --answers--
 
-The elements are each other's parents.
+Die Elemente sind die übergeordneten Elemente des anderen.
 
 ---
 
-The elements are each other's children.
+Die Elemente sind die untergeordneten Elemente des anderen.
 
 ---
 
-The elements are siblings.
+Die Elemente sind Geschwisterelemente.
 
 ## --video-solution--
 

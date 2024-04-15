@@ -1,17 +1,14 @@
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 const settingsPageElement = {
-  yourInternetPresenceSectionHeader: 'your-internet-presence-header',
   githubInput: 'internet-github-input',
   githubCheckmark: 'internet-github-check',
-  linkedinInput: 'internet-linkedin-input',
   linkedinCheckmark: 'internet-linkedin-check',
-  twitterInput: 'internet-twitter-input',
   twitterCheckmark: 'internet-twitter-check',
-  personalWebsiteInput: 'internet-website-input',
   personalWebsiteCheckmark: 'internet-website-check',
-  saveButton: 'internet-save-button',
-  flashMessageAlert: 'flash-message'
+  flashMessageAlert: 'flash-message',
+  internetPresenceForm: 'internet-presence'
 } as const;
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
@@ -21,61 +18,86 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Your Internet Presence', () => {
-  test('should display section header on settings page', async ({ page }) => {
+  test('should display the section with save button being disabled', async ({
+    page
+  }) => {
     await expect(
-      page.getByTestId(settingsPageElement.yourInternetPresenceSectionHeader)
-    ).toHaveText('Your Internet Presence');
+      page.getByRole('heading', {
+        level: 2,
+        name: translations.settings.headings.internet
+      })
+    ).toBeVisible();
+
+    await expect(
+      page
+        .getByTestId(settingsPageElement.internetPresenceForm)
+        .getByRole('button', { name: translations.buttons.save })
+    ).toBeVisible();
   });
 
   const socials = [
     {
       name: 'github',
       url: 'https://github.com/certified-user',
-      inputTestId: settingsPageElement.githubInput,
+      label: 'GitHub',
       checkTestId: settingsPageElement.githubCheckmark
     },
     {
       name: 'linkedin',
       url: 'https://www.linkedin.com/in/certified-user',
-      inputTestId: settingsPageElement.linkedinInput,
+      label: 'LinkedIn',
       checkTestId: settingsPageElement.linkedinCheckmark
     },
     {
       name: 'twitter',
       url: 'https://twitter.com/certified-user',
-      inputTestId: settingsPageElement.twitterInput,
+      label: 'Twitter',
       checkTestId: settingsPageElement.twitterCheckmark
     },
     {
       name: 'website',
       url: 'https://certified-user.com',
-      inputTestId: settingsPageElement.personalWebsiteInput,
+      label: translations.settings.labels.personal,
       checkTestId: settingsPageElement.personalWebsiteCheckmark
     }
   ];
 
   socials.forEach(social => {
+    test(`should hide ${social.name} checkmark by default`, async ({
+      page
+    }) => {
+      await expect(page.getByTestId(social.checkTestId)).toBeHidden();
+    });
+
     test(`should update ${social.name} URL`, async ({ browserName, page }) => {
       test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
 
-      await page.getByTestId(social.inputTestId).fill(social.url);
-      await expect(page.getByTestId(social.checkTestId)).toBeVisible();
+      const socialInput = page.getByLabel(social.label);
+      await socialInput.fill(social.url);
+      const socialCheckmark = page.getByTestId(social.checkTestId);
+      await expect(socialCheckmark).toBeVisible();
 
-      await page.getByTestId(settingsPageElement.saveButton).click();
+      const saveButton = page
+        .getByTestId(settingsPageElement.internetPresenceForm)
+        .getByRole('button', { name: translations.buttons.save });
+
+      await expect(saveButton).toBeVisible();
+      await saveButton.click();
       await expect(
         page.getByTestId(settingsPageElement.flashMessageAlert)
       ).toContainText('We have updated your social links');
 
       // clear value before next test
-      await page.getByTestId(social.inputTestId).clear();
+      await socialInput.clear();
       await Promise.all([
         page.waitForResponse(
           response =>
             response.url().includes('update-my-socials') &&
             response.status() === 200
         ),
-        page.getByTestId(settingsPageElement.saveButton).click()
+        saveButton.click()
       ]);
+      await expect(socialCheckmark).toBeHidden();
     });
   });
 });

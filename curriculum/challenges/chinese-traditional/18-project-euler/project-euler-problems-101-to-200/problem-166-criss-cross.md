@@ -1,6 +1,6 @@
 ---
 id: 5900f4131000cf542c50ff25
-title: 'Problem 166: Criss Cross'
+title: '問題166：交叉翻轉'
 challengeType: 1
 forumTopicId: 301800
 dashedName: problem-166-criss-cross
@@ -10,19 +10,19 @@ dashedName: problem-166-criss-cross
 
 A 4x4 grid is filled with digits $d$, $0 ≤ d ≤ 9$.
 
-It can be seen that in the grid
+可以看到在網格中
 
 $$\begin{array}{}   6 & 3 & 3 & 0 \\\\
   5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
   1 & 2 & 4 & 5 \end{array}$$
 
-the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
+每行和每一列的總和都有值12。 每行和每列的總和值爲12. 此外，每個對角線的總和也是12。
 
-In how many ways can you fill a 4x4 grid with the digits $d$, $0 ≤ d ≤ 9$ so that each row, each column, and both diagonals have the same sum?
+你可以通過多少方式用數字 $d$填充4x4 格子， 每一行、每一欄和兩個對角都有相同的總和？
 
 # --hints--
 
-`crissCross()` should return `7130034`.
+`crissCross()` 應該返回 `7130034`.
 
 ```js
 assert.strictEqual(crissCross(), 7130034);

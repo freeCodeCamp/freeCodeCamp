@@ -8,7 +8,7 @@ dashedName: serialization-of-a-user-object
 
 # --description--
 
-序列化和反序列化在身份認證中是很重要的概念。 序列化一個對象就是將其內容轉換成一個體積很小的 *key*，後續可以通過它反序列化爲原始對象。 這樣，服務器就可以在用戶未登錄時識別用戶，或者說給這個用戶一個唯一標識，用戶也不需要在每次訪問不同頁面時都給服務器發送用戶名和密碼。
+Serialization and deserialization are important concepts in regard to authentication. 序列化一個對象就是將其內容轉換成一個體積很小的 *key*，後續可以通過它反序列化爲原始對象。 這樣，服務器就可以在用戶未登錄時識別用戶，或者說給這個用戶一個唯一標識，用戶也不需要在每次訪問不同頁面時都給服務器發送用戶名和密碼。
 
 要正確設置此功能，你需要一個序列化的函數和一個反序列化函數。 在 Passport 中間件中，可以使用以下方法創建它們：
 

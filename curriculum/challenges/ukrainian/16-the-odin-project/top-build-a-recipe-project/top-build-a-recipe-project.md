@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-Ви повинні мати `<ol>` з кроками приготування у вигляді елементів списку `<li>`.
+Ви повинні мати `<ol>` з кроками як елементи списку `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -171,7 +171,7 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
   </head>
   <body>
     <h1>Creamy Chocolate Fudge</h1>
-    <img src="https://i.imgur.com/p0J5baJ.jpg" alt="A delicious chocolate fudge dessert">
+    <img src="https://cdn.freecodecamp.org/curriculum/odin-project/build-a-recipe-page/build-a-recipe-page-01.jpg" alt="A delicious chocolate fudge dessert">
     <h2>Description</h2>
     <p>This recipe is for a rich and creamy chocolate fudge that is sure to satisfy your sweet tooth. It's perfect for a special occasion or as a tasty treat for any time of the year.</p>
     <p>This recipe is easy to follow and only requires a few simple ingredients. With just a few steps, you'll be able to create a delicious dessert that everyone will love.</p>
@@ -201,4 +201,8 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
     </ul>
   </body>
 </html>
+```
+
+```css
+
 ```

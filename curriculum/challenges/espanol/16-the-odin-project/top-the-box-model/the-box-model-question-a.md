@@ -13,7 +13,7 @@ To open up the inspector, you can right-click on any element of a webpage and cl
 
 Don’t get overwhelmed with all the tools you’re now seeing! For this lesson, we want to focus on the Elements and Styles panes.
 
-# --assignment--
+# --tarea--
 
 Play around with Chrome Dev Tools and see if you can answer the following question.
 

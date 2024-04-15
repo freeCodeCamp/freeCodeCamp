@@ -10,7 +10,7 @@ curriculum-server/data/curriculum.json
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 docs/**/*.md
-e2e/playwright/.auth
+/playwright
 pnpm-lock.yaml
 shared/config/*.js
 shared/config/curriculum.json
@@ -19,6 +19,4 @@ shared/utils/get-lines.test.js
 shared/utils/is-audited.js
 shared/utils/validate.js
 shared/utils/validate.test.js
-tools/ui-components/dist
-tools/ui-components/types
 web/.next

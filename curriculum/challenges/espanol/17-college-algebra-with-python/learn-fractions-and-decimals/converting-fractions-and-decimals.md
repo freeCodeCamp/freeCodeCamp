@@ -12,7 +12,7 @@ The first video will show you how to convert between fractions, decimals, and pe
 
 Here is the <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in the video.</a> Use this code as a model, and write your own code to convert fractions and decimals.
 
-# --assignment--
+# --tarea--
 
 Add the code to convert fractions and decimals to your algebra Colab notebook.
 

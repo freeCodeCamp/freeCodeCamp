@@ -16,7 +16,7 @@ interface IntroProps {
   pending?: boolean;
   slug?: string;
   username?: string;
-  onDonationAlertClick: () => void;
+  onLearnDonationAlertClick: () => void;
   isDonating: boolean;
 }
 
@@ -27,7 +27,7 @@ const Intro = ({
   complete,
   completedChallengeCount,
   slug,
-  onDonationAlertClick,
+  onLearnDonationAlertClick,
   isDonating
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
@@ -51,7 +51,7 @@ const Intro = ({
         </h1>
         <Spacer size='medium' />
         <div className='text-center quote-partial'>
-          <blockquote className='blockquote'>
+          <blockquote className='blockquote' data-testid='quote-block'>
             <span>
               <q data-playwright-test-label='random-quote'>{quote}</q>
               <footer className='quote-author blockquote-footer'>
@@ -61,7 +61,7 @@ const Intro = ({
           </blockquote>
         </div>
         <LearnAlert
-          onDonationAlertClick={onDonationAlertClick}
+          onLearnDonationAlertClick={onLearnDonationAlertClick}
           isDonating={isDonating}
         />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (

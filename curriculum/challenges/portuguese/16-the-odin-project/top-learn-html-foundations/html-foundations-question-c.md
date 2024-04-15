@@ -15,7 +15,7 @@ Você, provavelmente, já está familiarizado com muitos tipos diferentes de arq
 
 Para que o computador saiba que você deseja criar um arquivo HTML, é preciso anexar ao nome do arquivo a extensão `.html`, como você fez ao criar o arquivo `index.html`.
 
-Vale a pena observar que você nomeou o seu arquivo HTML como index. Você sempre deve dar ao arquivo HTML que conterá a página inicial do seu site o nome de `index.html`. Isso ocorre porque os servidores da web procurarão, por padrão, por uma página index.html quando os usuários chegarem ao seu site – não ter uma página com esse nome poderá causar grandes problemas.
+Vale a pena observar que você nomeou o seu arquivo HTML como index. Você sempre deve dar ao arquivo HTML que conterá a página inicial do seu site o nome de `index.html`. This is because web servers will by default look for an `index.html` page when users land on your websites - and not having one will cause big problems.
 
 ## O DOCTYPE
 

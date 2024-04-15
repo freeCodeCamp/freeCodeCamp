@@ -1,7 +1,7 @@
 ---
 id: 5900f4181000cf542c50ff2a
 title: >-
-  Problem 171: Finding numbers for which the sum of the squares of the digits is a square
+  問題171：找到數字的平方和爲正方形的數字
 challengeType: 1
 forumTopicId: 301806
 dashedName: >-

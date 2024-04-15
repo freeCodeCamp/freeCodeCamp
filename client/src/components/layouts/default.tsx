@@ -26,7 +26,6 @@ import {
   userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
-  showCodeAllySelector,
   userFetchStateSelector
 } from '../../redux/selectors';
 
@@ -60,7 +59,6 @@ const mapStateToProps = createSelector(
   isOnlineSelector,
   isServerOnlineSelector,
   userFetchStateSelector,
-  showCodeAllySelector,
   userSelector,
   (
     isSignedIn,
@@ -69,7 +67,6 @@ const mapStateToProps = createSelector(
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
-    showCodeAlly: boolean,
     user: User
   ) => ({
     isSignedIn,
@@ -80,7 +77,6 @@ const mapStateToProps = createSelector(
     isServerOnline,
     fetchState,
     theme: user.theme,
-    showCodeAlly,
     user
   })
 );
@@ -108,7 +104,6 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   isChallenge?: boolean;
   block?: string;
   examInProgress: boolean;
-  showCodeAlly: boolean;
   superBlock?: string;
 }
 
@@ -134,7 +129,6 @@ function DefaultLayout({
   block,
   superBlock,
   theme,
-  showCodeAlly,
   user,
   fetchUser,
   updateAllChallengesInfo
@@ -248,7 +242,7 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && !showCodeAlly && !examInProgress && (
+          {isChallenge && !examInProgress && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}

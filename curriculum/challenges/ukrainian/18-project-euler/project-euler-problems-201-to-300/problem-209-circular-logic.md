@@ -28,7 +28,7 @@ dashedName: problem-209-circular-logic
 
 $$τ(a, b, c, d, e, f) \\; AND \\; τ(b, c, d, e, f, a \\; XOR \\; (b \\; AND \\; c)) = 0$$
 
-за всіх $6$-бітних входів ($a$, $b$, $c$, $d$, $e$, $f$)?
+для всіх $6$-бітних входів ($a$, $b$, $c$, $d$, $e$, $f$)?
 
 # --hints--
 

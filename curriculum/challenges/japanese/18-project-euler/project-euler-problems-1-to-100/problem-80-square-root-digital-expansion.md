@@ -1,6 +1,6 @@
 ---
 id: 5900f3bc1000cf542c50fecf
-title: 'Problem 80: Square root digital expansion'
+title: '問題 80: 平方根の小数展開'
 challengeType: 1
 forumTopicId: 302194
 dashedName: problem-80-square-root-digital-expansion
@@ -8,33 +8,33 @@ dashedName: problem-80-square-root-digital-expansion
 
 # --description--
 
-It is well known that if the square root of a natural number is not an integer, then it is irrational. The decimal expansion of such square roots is infinite without any repeating pattern at all.
+よく知られているとおり、自然数の平方根は、整数でない場合は無理数です。 このような平方根の小数展開は無限であり、繰り返されるパターンが全くありません。
 
-The square root of two is `1.41421356237309504880...`, and the digital sum of the first one hundred decimal digits is `475`.
+2 の平方根は `1.41421356237309504880...` で、小数第 1 位から第 100 位までの各位の和は `475` です。
 
-For the first `n` natural numbers, find the total of the digital sums of the first one hundred decimal digits for all the irrational square roots.
+最初の `n` 個の自然数について、その平方根が無理数であれば小数第 1 位から第 100 位までの各位の和を求めるとします。その和を、該当するすべての無理数で合計するといくつになりますか。
 
 # --hints--
 
-`sqrtDigitalExpansion(2)` should return a number.
+`sqrtDigitalExpansion(2)` は数値を返す必要があります。
 
 ```js
 assert(typeof sqrtDigitalExpansion(2) === 'number');
 ```
 
-`sqrtDigitalExpansion(2)` should return `475`.
+`sqrtDigitalExpansion(2)` は `475` を返す必要があります。
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(2), 475);
 ```
 
-`sqrtDigitalExpansion(50)` should return `19543`.
+`sqrtDigitalExpansion(50)` は `19543` を返す必要があります。
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(50), 19543);
 ```
 
-`sqrtDigitalExpansion(100)` should return `40886`.
+`sqrtDigitalExpansion(100)` は `40886` を返す必要があります。
 
 ```js
 assert.strictEqual(sqrtDigitalExpansion(100), 40886);

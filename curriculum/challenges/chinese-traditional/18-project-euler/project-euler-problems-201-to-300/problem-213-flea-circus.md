@@ -1,6 +1,6 @@
 ---
 id: 5900f4411000cf542c50ff54
-title: 'Problem 213: Flea Circus'
+title: '問題213：跳蚤馬戲團'
 challengeType: 1
 forumTopicId: 301855
 dashedName: problem-213-flea-circus
@@ -10,9 +10,9 @@ dashedName: problem-213-flea-circus
 
 A 30×30 grid of squares contains 900 fleas, initially one flea per square.
 
-When a bell is rung, each flea jumps to an adjacent square at random (usually 4 possibilities, except for fleas on the edge of the grid or at the corners).
+當響鈴響起時，每個跳蚤隨機跳到相鄰的廣場（通常有4種可能，除了網格邊緣或角落處的跳蚤）。
 
-What is the expected number of unoccupied squares after 50 rings of the bell? Give your answer rounded to six decimal places.
+在響鈴50次後，預計的未佔用方格數量是多少？ 將您的答案四捨五入到小數點後六位。
 
 # --hints--
 

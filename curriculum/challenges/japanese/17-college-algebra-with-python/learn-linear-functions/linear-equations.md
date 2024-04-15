@@ -1,6 +1,6 @@
 ---
 id: 6331d28ab51aeedd1a2bd650
-title: "Linear Equations"
+title: "線形方程式"
 challengeType: 15
 videoId: u0bgovPh4ME
 dashedName: linear-equations
@@ -8,19 +8,19 @@ dashedName: linear-equations
 
 # --description--
 
-This video will show you the math behind finding the y-intercept in a linear function, so you can develop the whole equation. Then the video will show you how to graph the whole function. You will also see how to do the whole process with Python code.
+この動画では、方程式全体を求めるために、数学を用いて線形関数の y 切片を調べる方法を紹介します。 そして、関数全体をグラフ表示する方法を示します。 また、プロセス全体を Python のコードで実行する方法も示します。
 
-Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go with the last two videos,</a> so you can see the formulas.
+直前の 2 つの動画と合わせて<a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2GT0lbxd2HO3tQ6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用して、式を確認してください。
 
 # --assignment--
 
-Add code to your algebra Colab notebook to graph a function from points or from equation input.
+点または方程式の入力から関数をグラフ表示するコードを代数学用の Colab ノートブックに追加してください。
 
 # --question--
 
 ## --text--
 
-If you know the slope ("m") and you have one (x,y) coordinate point, which of the following equations could you use to find "b", representing the y-intercept in Python?
+傾き ("m") がわかっていて、1 つの (x,y) 座標点が与えられた場合、Python で y 切片を表す "b" を調べるのに使用できる方程式は次のうちどれですか？
 
 ## --answers--
 

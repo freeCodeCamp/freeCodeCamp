@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Padding = Object.freeze({
+  xxSmall: 2.5,
   small: 5,
   xSmall: 10,
   medium: 15,

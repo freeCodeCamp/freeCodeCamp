@@ -1,6 +1,6 @@
 ---
 id: 5900f4d21000cf542c50ffe5
-title: 'Problem 358: Cyclic numbers'
+title: 'Завдання 358: циклічні числа'
 challengeType: 1
 forumTopicId: 302018
 dashedName: problem-358-cyclic-numbers
@@ -8,26 +8,26 @@ dashedName: problem-358-cyclic-numbers
 
 # --description--
 
-A cyclic number with $n$ digits has a very interesting property:
+Циклічне число з $n$ цифр має цікаву властивість:
 
-When it is multiplied by 1, 2, 3, 4, ... $n$, all the products have exactly the same digits, in the same order, but rotated in a circular fashion!
+Якщо його помножити на 1, 2, 3, 4, ... $n$, то всі добутки складатимуться з однакових цифр в однаковому порядку, але будуть переміщатись по колу!
 
-The smallest cyclic number is the 6-digit number 142857:
+Найменше циклічне число — це шестизначне число 142857:
 
 $$\begin{align}   & 142857 × 1 = 142857 \\\\
   & 142857 × 2 = 285714 \\\\   & 142857 × 3 = 428571 \\\\
   & 142857 × 4 = 571428 \\\\   & 142857 × 5 = 714285 \\\\
   & 142857 × 6 = 857142 \end{align}$$
 
-The next cyclic number is 0588235294117647 with 16 digits:
+Наступне циклічне число 0588235294117647 з 16 цифр:
 
 $$\begin{align}   & 0588235294117647 × 1 = 0588235294117647 \\\\
   & 0588235294117647 × 2 = 1176470588235294 \\\\   & 0588235294117647 × 3 = 1764705882352941 \\\\
   & \ldots \\\\ & 0588235294117647 × 16 = 9411764705882352 \end{align}$$
 
-Note that for cyclic numbers, leading zeros are important.
+Зауважте, що для циклічних чисел важливі нулі на початку.
 
-There is only one cyclic number for which, the eleven leftmost digits are 00000000137 and the five rightmost digits are 56789 (i.e., it has the form $00000000137\ldots56789$ with an unknown number of digits in the middle). Find the sum of all its digits.
+Існує лише одне циклічне число, одинадцятьма крайніми лівими цифрами якого є 00000000137 та п’ятьма крайніми правими цифрами є 56789 (тобто воно має вигляд $00000000137\ldots56789$ з невідомою кількістю цифр всередині). Знайдіть суму всіх його цифр.
 
 # --hints--
 

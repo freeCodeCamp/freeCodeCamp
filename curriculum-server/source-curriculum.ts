@@ -5,18 +5,10 @@ import curriculum from '../shared/config/curriculum.json';
 interface Curriculum {
   [key: string]: unknown;
 }
+const typedCurriculum = curriculum as Curriculum;
 
-const curriculumList = Object.keys(curriculum as Curriculum).map(key => {
-  if (key.includes('/')) {
-    const newKey = key.split('/').join('-');
-    return { [newKey]: (curriculum as Curriculum)[key] };
-  } else {
-    return { [key]: (curriculum as Curriculum)[key] };
-  }
-});
-
-const patchedCurriculum = curriculumList.reduce((prev, curr) => {
-  return { ...prev, ...curr };
+const patchedCurriculum = Object.keys(typedCurriculum).reduce((acc, key) => {
+  return { ...acc, [key.replace(/\//g, '-')]: typedCurriculum[key] };
 }, {});
 
 void fs

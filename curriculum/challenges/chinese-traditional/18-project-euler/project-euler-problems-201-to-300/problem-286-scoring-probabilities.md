@@ -1,6 +1,6 @@
 ---
 id: 5900f48a1000cf542c50ff9d
-title: 'Problem 286: Scoring probabilities'
+title: '問題 286：計分概率'
 challengeType: 1
 forumTopicId: 301937
 dashedName: problem-286-scoring-probabilities

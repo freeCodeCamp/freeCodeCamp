@@ -1,6 +1,6 @@
 ---
 id: 5900f4341000cf542c50ff46
-title: 'Problem 199: Iterative Circle Packing'
+title: '問題199：迭代圓包裝'
 challengeType: 1
 forumTopicId: 301837
 dashedName: problem-199-iterative-circle-packing
@@ -12,9 +12,9 @@ Three circles of equal radius are placed inside a larger circle such that each p
 
 <img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
 
-At each iteration, a maximally sized circle is placed in each gap, which creates more gaps for the next iteration. After 3 iterations (pictured), there are 108 gaps and the fraction of the area which is not covered by circles is 0.06790342, rounded to eight decimal places.
+在每次迭代中，在每個間隙中放置最大尺寸的圓，這爲下一次迭代創建了更多的間隙。 經過3次迭代（如圖）後，有108個間隙，未被圓圈覆蓋的區域部分爲0.06790342，四捨五入到小數點後8位。
 
-What fraction of the area is not covered by circles after `n` iterations? Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
+What fraction of the area is not covered by circles after `n` iterations? 使用 x.xxxxxxxx 格式將答案四捨五入到小數點後八位。
 
 # --hints--
 

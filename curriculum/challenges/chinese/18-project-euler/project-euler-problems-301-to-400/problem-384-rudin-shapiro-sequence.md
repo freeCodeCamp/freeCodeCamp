@@ -1,6 +1,6 @@
 ---
 id: 5900f4ed1000cf542c50fffe
-title: 'Problem 384: Rudin-Shapiro sequence'
+title: '问题384：Rudin-Shapiro序列'
 challengeType: 1
 forumTopicId: 302048
 dashedName: problem-384-rudin-shapiro-sequence
@@ -12,7 +12,7 @@ Define the sequence $a(n)$ as the number of adjacent pairs of ones in the binary
 
 E.g.: $a(5) = a({101}_2) = 0$, $a(6) = a({110}_2) = 1$, $a(7) = a({111}_2) = 2$
 
-Define the sequence $b(n) = {(-1)}^{a(n)}$. This sequence is called the Rudin-Shapiro sequence.
+Define the sequence $b(n) = {(-1)}^{a(n)}$. 该序列称为Rudin-Shapiro序列。
 
 Also consider the summatory sequence of $b(n)$: $s(n) = \displaystyle\sum_{i = 0}^{n} b(i)$.
 

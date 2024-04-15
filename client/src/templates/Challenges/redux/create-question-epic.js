@@ -4,6 +4,7 @@ import { mapTo, tap } from 'rxjs/operators';
 
 import envData from '../../../../config/env.json';
 import { transformEditorLink } from '../utils';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
 import {
@@ -41,9 +42,18 @@ function filesToMarkdown(challengeFiles = []) {
 export function insertEditableRegions(challengeFiles = []) {
   if (challengeFiles?.some(file => file.editableRegionBoundaries?.length > 0)) {
     const editableRegionStrings = fileExtension => {
-      const startComment = fileExtension === 'html' ? '<!--' : '/*';
-      const endComment = fileExtension === 'html' ? '-->' : '*/';
-      return `\n${startComment} User Editable Region ${endComment}\n`;
+      switch (fileExtension) {
+        case 'html':
+          return '\n<!-- User Editable Region -->\n';
+        case 'css':
+          return '\n/* User Editable Region */\n';
+        case 'py':
+          return '\n# User Editable Region\n';
+        case 'js':
+          return '\n// User Editable Region\n';
+        default:
+          return '\nUser Editable Region\n';
+      }
     };
 
     const filesWithEditableRegions = challengeFiles.map(file => {
@@ -63,20 +73,67 @@ export function insertEditableRegions(challengeFiles = []) {
   return challengeFiles;
 }
 
+function editableRegionsToMarkdown(challengeFiles = []) {
+  const moreThanOneFile = challengeFiles?.length > 1;
+  return challengeFiles.reduce((fileString, challengeFile) => {
+    if (!challengeFile) {
+      return fileString;
+    }
+
+    const fileExtension = challengeFile.ext;
+    const fileName = challengeFile.name;
+    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
+    let fileDescription;
+
+    if (!moreThanOneFile) {
+      fileDescription = '';
+    } else if (fileExtension === 'html') {
+      fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
+    } else {
+      fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+    }
+
+    const [start, end] = challengeFile.editableRegionBoundaries;
+    const lines = challengeFile.contents.split('\n');
+    const editableRegion = lines.slice(start + 1, end + 4).join('\n');
+
+    return `${fileString}\`\`\`${fileType}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
+  }, '\n');
+}
+
+function linksOrMarkdown(projectFormValues, markdown) {
+  return (
+    projectFormValues
+      ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
+      ?.join('') || markdown
+  );
+}
+
 function createQuestionEpic(action$, state$, { window }) {
   return action$.pipe(
     ofType(actionTypes.createQuestion),
-    tap(() => {
+    tap(({ payload: describe }) => {
       const state = state$.value;
       let challengeFiles = challengeFilesSelector(state);
       const {
         title: challengeTitle,
         superBlock,
         block,
-        helpCategory
+        helpCategory,
+        challengeType
       } = challengeMetaSelector(state);
 
       challengeFiles = insertEditableRegions(challengeFiles);
+
+      const nonCodeChallenges = [
+        challengeTypes.fillInTheBlank,
+        challengeTypes.exam,
+        challengeTypes.multipleChoice,
+        challengeTypes.video,
+        challengeTypes.dialogue,
+        challengeTypes.msTrophy,
+        challengeTypes.quiz
+      ];
 
       const {
         navigator: { userAgent },
@@ -96,18 +153,26 @@ function createQuestionEpic(action$, state$, { window }) {
       const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
       const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}`;
 
-      const camperCodeHeading = i18next.t('forum-help.camper-code');
+      const camperCodeHeading = nonCodeChallenges.includes(challengeType)
+        ? ''
+        : '### ' + i18next.t('forum-help.camper-code') + '\n\n';
 
       const whatsHappeningHeading = i18next.t('forum-help.whats-happening');
-      const describe = i18next.t('forum-help.describe');
       const projectOrCodeHeading = projectFormValues.length
-        ? `${i18next.t('forum-help.camper-project')}\n`
+        ? `###${i18next.t('forum-help.camper-project')}\n\n`
         : camperCodeHeading;
-      const markdownCodeOrLinks =
-        projectFormValues
-          ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
-          ?.join('') || filesToMarkdown(challengeFiles);
-      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n### ${projectOrCodeHeading}\n\n${markdownCodeOrLinks}${endingText}`;
+
+      const fullCode = filesToMarkdown(challengeFiles);
+      const fullCodeOrLinks = linksOrMarkdown(projectFormValues, fullCode);
+
+      const onlyEditableRegion = editableRegionsToMarkdown(challengeFiles);
+      const editableRegionOrLinks = linksOrMarkdown(
+        projectFormValues,
+        onlyEditableRegion
+      );
+
+      const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${fullCodeOrLinks}${endingText}`;
+      const textMessageOnlyEditableRegion = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${editableRegionOrLinks}${endingText}`;
 
       const warning = i18next.t('forum-help.warning');
       const tooLongOne = i18next.t('forum-help.too-long-one');
@@ -116,7 +181,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const addCodeOne = i18next.t('forum-help.add-code-one');
       const addCodeTwo = i18next.t('forum-help.add-code-two');
       const addCodeThree = i18next.t('forum-help.add-code-three');
-      const altTextMessage = `### ${whatsHappeningHeading}\n\n### ${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
+      const altTextMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
       const titleText = window.encodeURIComponent(
         `${i18next.t(
@@ -129,13 +194,25 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       const studentCode = window.encodeURIComponent(textMessage);
+      const editableRegionCode = window.encodeURIComponent(
+        textMessageOnlyEditableRegion
+      );
       const altStudentCode = window.encodeURIComponent(altTextMessage);
 
       const baseURI = `${forumLocation}/new-topic?category=${category}&title=${titleText}&body=`;
       const defaultURI = `${baseURI}${studentCode}`;
+      const onlyEditableRegionURI = `${baseURI}${editableRegionCode}`;
       const altURI = `${baseURI}${altStudentCode}`;
 
-      window.open(defaultURI.length < 8000 ? defaultURI : altURI, '_blank');
+      let URIToOpen = defaultURI;
+      if (defaultURI.length > 8000) {
+        URIToOpen = onlyEditableRegionURI;
+      }
+      if (onlyEditableRegionURI.length > 8000) {
+        URIToOpen = altURI;
+      }
+
+      window.open(URIToOpen, '_blank');
     }),
     mapTo(closeModal('help'))
   );

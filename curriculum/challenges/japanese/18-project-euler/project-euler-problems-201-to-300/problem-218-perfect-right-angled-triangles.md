@@ -1,6 +1,6 @@
 ---
 id: 5900f4461000cf542c50ff59
-title: 'Problem 218: Perfect right-angled triangles'
+title: '問題 218: 完全直角三角形'
 challengeType: 1
 forumTopicId: 301860
 dashedName: problem-218-perfect-right-angled-triangles
@@ -8,29 +8,29 @@ dashedName: problem-218-perfect-right-angled-triangles
 
 # --description--
 
-Consider the right-angled triangle with sides $a=7$, $b=24$ and $c=25$.
+辺 $a=7$, $b=24$, $c=25$ の直角三角形について考えます。
 
-The area of this triangle is 84, which is divisible by the perfect numbers 6 and 28.
+この三角形の面積は 84 で、完全数 6 と 28 で割り切れます。
 
-Moreover it is a primitive right-angled triangle as $gcd(a,b) = 1$ and $gcd(b,c) = 1$.
+また、$gcd(a,b) = 1$ かつ $gcd(b,c) = 1$ なので、この三角形は原始的 (primitive) な直角三角形です。
 
-Also $c$ is a perfect square.
+さらに、$c$ は完全平方数です。
 
-We will call a right-angled triangle perfect if:
+次の条件を満たす三角形を「完全直角三角形」と呼ぶことにします。
 
-- it is a primitive right-angled triangle
-- its hypotenuse is a perfect square
+- 原始的な直角三角形である
+- 斜辺が完全平方数である
 
-We will call a right-angled triangle super-perfect if:
+次の条件を満たす三角形を「超完全直角三角形」と呼ぶことにします。
 
-- it is a perfect right-angled triangle
-- its area is a multiple of the perfect numbers 6 and 28.
+- 完全直角三角形である
+- 面積が 6 と 28 の完全数の倍数である
 
-How many perfect right-angled triangles with $c ≤ {10}^{16}$ exist that are not super-perfect?
+$c ≤ {10}^{16}$ のとき、超完全ではない完全直角三角形はいくつありますか。
 
 # --hints--
 
-`perfectRightAngledTriangles()` should return `0`.
+`perfectRightAngledTriangles()` は `0` を返す必要があります。
 
 ```js
 assert.strictEqual(perfectRightAngledTriangles(), 0);

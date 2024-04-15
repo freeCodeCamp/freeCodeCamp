@@ -1,29 +1,29 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Schritt 36
+title: Step 38
 challengeType: 0
-dashedName: step-36
+dashedName: step-38
 ---
 
 # --description--
 
-Your next step is to allow users to add entries to the calorie counter. Declare an empty function `addEntry`. This function should not take any parameters.
+Dein nächster Schritt besteht darin, den Nutzern die Möglichkeit zu geben, Einträge zum Kalorienzähler hinzuzufügen. Deklariere eine leere `addEntry`-Funktion. Diese Funktion sollte keine Parameter verwenden.
 
 # --hints--
 
-You should declare an `addEntry` variable.
+Du solltest eine `addEntry`-Variable deklarieren.
 
 ```js
 assert.isDefined(addEntry);
 ```
 
-Your `addEntry` variable should be a function.
+Deine `addEntry`-Variable sollte eine Funktion sein.
 
 ```js
 assert.isFunction(addEntry);
 ```
 
-Your `addEntry` function should not take any parameters.
+Deine `addEntry`-Funktion sollte keinen Parameter verwenden.
 
 ```js
 assert.match(addEntry?.toString(), /\(\s*\)/);
@@ -89,7 +89,7 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
             </span>
           </div>
           <div>
-            <button type="submit" id="calculate-calories">
+            <button type="submit">
               Calculate Remaining Calories
             </button>
             <button type="button" id="clear">Clear</button>
@@ -148,17 +148,10 @@ legend {
 }
 
 button {
-  outline: none;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--light-yellow);
   border: 2px solid var(--dark-yellow);
-}
-
-.clear {
-  background-color: var(--light-pink);
-  color: var(--dark-red);
-  border-color: var(--dark-red);
 }
 
 button,
@@ -192,11 +185,11 @@ select {
 }
 
 .surplus {
-  color: var(--light-green);
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: var(--light-pink);
+  color: var(--light-green);
 }
 ```
 

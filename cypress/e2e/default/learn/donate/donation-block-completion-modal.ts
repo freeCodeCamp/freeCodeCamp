@@ -34,8 +34,6 @@ describe('Donate page', () => {
     projects.forEach(project => submitProject(project));
 
     // pop up modal
-    cy.contains(
-      'Nicely done. You just completed Front End Development Libraries Projects.'
-    );
+    cy.get("div[role='dialog'] img#donation-animation").should('be.visible');
   });
 });

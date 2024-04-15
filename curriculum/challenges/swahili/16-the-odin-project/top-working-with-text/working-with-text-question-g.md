@@ -9,7 +9,7 @@ dashedName: working-with-text-question-g
 
 HTML comments are not visible to the browser; they allow us to comment on your code so that other developers or your future selves can read them and get some context about something that might not be clear in the code.
 
-Writing an HTML comment is simple: You just enclose the comment with `<!--` and `-->`tags. For example:
+Writing an HTML comment is simple: You just enclose the comment with `<!--` and `-->`tags. Kwa mfano:
 
 ```html
 <h1> View the html to see the hidden comments </h1>

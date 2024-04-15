@@ -1,6 +1,6 @@
 ---
 id: 5900f45d1000cf542c50ff70
-title: 'Problem 241: Perfection Quotients'
+title: '問題 241: 完全商'
 challengeType: 1
 forumTopicId: 301888
 dashedName: problem-241-perfection-quotients
@@ -8,17 +8,17 @@ dashedName: problem-241-perfection-quotients
 
 # --description--
 
-For a positive integer $n$, let $σ(n)$ be the sum of all divisors of $n$, so e.g. $σ(6) = 1 + 2 + 3 + 6 = 12$.
+正の整数 $n$ について、$n$ の約数の総和を $σ(n)$ とします。例えば、$σ(6) = 1 + 2 + 3 + 6 = 12$ です。
 
-A perfect number, as you probably know, is a number with $σ(n) = 2n$.
+周知のとおり、完全数とは $σ(n) = 2n$ が成り立つ数です。
 
-Let us define the perfection quotient of a positive integer as $p(n) = \frac{σ(n)}{n}$.
+正の整数の完全商 (perfect quotient) を $p(n) = \frac{s(n)}{n} $ と定義します。
 
-Find the sum of all positive integers $n ≤ {10}^{18}$ for which $p(n)$ has the form $k + \frac{1}{2}$, where $k$ is an integer.
+$p(n)$ が $k + \frac{1}{2}$ (ここで $k$ は整数) となる正の整数 $n ≤ {10}^{18}$ の総和を求めなさい。
 
 # --hints--
 
-`perfectionQuotients()` should return `482316491800641150`.
+`perfectionQuotients()` は `482316491800641150` を返す必要があります。
 
 ```js
 assert.strictEqual(perfectionQuotients(), 482316491800641150);

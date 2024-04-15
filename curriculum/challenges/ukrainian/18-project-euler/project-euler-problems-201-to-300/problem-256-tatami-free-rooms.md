@@ -1,6 +1,6 @@
 ---
 id: 5900f46c1000cf542c50ff7e
-title: 'Problem 256: Tatami-Free Rooms'
+title: 'Завдання 256: кімнати без татамі'
 challengeType: 1
 forumTopicId: 301904
 dashedName: problem-256-tatami-free-rooms
@@ -8,25 +8,25 @@ dashedName: problem-256-tatami-free-rooms
 
 # --description--
 
-Tatami are rectangular mats, used to completely cover the floor of a room, without overlap.
+Татамі — це прямокутні мати, якими повністю покривають підлогу кімнати таким чином, що вони не перекривають один одного.
 
-Assuming that the only type of available tatami has dimensions 1×2, there are obviously some limitations for the shape and size of the rooms that can be covered.
+Припустимо, що єдиний можливий вид татамі має заміри 1×2. Очевидно, що розмір та форма кімнати мають деякі обмеження, щоб підлогу кімнати можна було покрити повністю.
 
-For this problem, we consider only rectangular rooms with integer dimensions $a$, $b$ and even size $s = a \times b$. We use the term 'size' to denote the floor surface area of the room, and — without loss of generality — we add the condition $a ≤ b$.
+У цьому завданні ми розглядаємо тільки кімнати прямокутної форми з цілими замірами $a$, $b$ і парним розміром $s = a \times b$. Ми використовуємо термін «розмір» на позначення площі підлоги кімнати і, без втрати узагальненості, додамо умову $a ≤ b$.
 
-There is one rule to follow when laying out tatami: there must be no points where corners of four different mats meet. For example, consider the two arrangements below for a 4×4 room:
+При укладанні татамі є одне правило, якого необхідно дотримуватися: не повинно бути жодної такої точки, де стикаються кути чотирьох різних матів. Наприклад, розглянемо два варіанти покриття підлоги кімнати 4×4:
 
-<img class="img-responsive center-block" alt="two arrangements of mats in 4x4 room" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="два покриття матів в кімнаті 4x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
 
-The arrangement on the left is acceptable, whereas the one on the right is not: a red "<strong><span style="color: red;">X</span></strong>" in the middle, marks the point where four tatami meet.
+Покриття ліворуч прийнятне, а покриття праворуч — ні: червоний знак <strong><span style="color: red;">X</span></strong> посередині позначає точку стикання чотирьох татамі.
 
-Because of this rule, certain even-sized rooms cannot be covered with tatami: we call them tatami-free rooms. Further, we define $T(s)$ as the number of tatami-free rooms of size $s$.
+Через це правило у деяких кімнатах з парними розмірами не можна покрити підлогу татамі: назвемо їх кімнатами без татамі. Також визначимо $T(s)$ як кількість кімнат без татамі розміром $s$.
 
-The smallest tatami-free room has size $s = 70$ and dimensions 7×10. All the other rooms of size $s = 70$ can be covered with tatami; they are: 1×70, 2×35 and 5×14. Hence, $T(70) = 1$.
+Найменша кімната без татамі має розмір $s = 70$ та заміри 7×10. Підлоги всіх інших кімнат розміром $s = 70$ можна покрити татамі; заміри таких кімнат: 1×70, 2×35 та 5×14. Отже, $T(70) = 1$.
 
-Similarly, we can verify that $T(1320) = 5$ because there are exactly 5 tatami-free rooms of size $s = 1320$: 20×66, 22×60, 24×55, 30×44 and 33×40. In fact, $s = 1320$ is the smallest room-size $s$ for which $T(s) = 5$.
+Аналогічно, ми можемо переконатися в тому, що $T(1320) = 5$, оскільки існує лише 5 кімнат без татамі розміром $s = 1320$: 20×66, 22×60, 24×55, 30×44 та 33×40. Фактично, $s = 1320$ є найменшим розміром $s$, за якого $T(s) = 5$.
 
-Find the smallest room-size $s$ for which $T(s) = 200$.
+Знайдіть найменший розмір кімнати $s$, за якої $T(s) = 200$.
 
 # --hints--
 

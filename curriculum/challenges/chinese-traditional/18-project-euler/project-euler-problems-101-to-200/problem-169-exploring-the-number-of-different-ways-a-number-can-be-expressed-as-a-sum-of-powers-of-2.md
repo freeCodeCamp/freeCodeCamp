@@ -1,7 +1,7 @@
 ---
 id: 5900f4151000cf542c50ff28
 title: >-
-  Problem 169: Exploring the number of different ways a number can be expressed as a sum of powers of 2
+  問題169：探索數字可以表示爲2的冪之和的不同方式的數量
 challengeType: 1
 forumTopicId: 301803
 dashedName: >-

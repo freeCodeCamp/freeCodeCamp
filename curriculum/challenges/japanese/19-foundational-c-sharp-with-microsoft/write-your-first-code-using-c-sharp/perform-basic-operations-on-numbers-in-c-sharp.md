@@ -1,26 +1,26 @@
 ---
 id: 647e23788acb466c97ccbf02
-title: 'Perform Basic Operations on Numbers in C#'
+title: 'C# で数値に基本的操作を実行する'
 challengeType: 19
 dashedName: perform-basic-operations-on-numbers-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-operations/</a> and complete all the tasks for the "Perform Basic Operations on Numbers in C#" module. This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-operations/</a> へ移動し、「C# で数値に基本的操作を実行する (Perform Basic Operations on Numbers in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# を使用して最初のコードを書く」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">Perform Basic Operations on Numbers in C#</a> module on Microsoft Learn. Then, answer the question below.
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">C# で数値に基本的操作を実行する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-What is the value of the following result?
+次の result の値は何ですか？
 
 ```clike
 int result = 3 + 1 * 5 / 2;

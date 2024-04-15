@@ -11,7 +11,7 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 You can set a checkbox or radio button to be checked by default using the `checked` attribute.
 
-To do this, just add the word `checked` to the inside of an `input` element. For example:
+To do this, just add the word `checked` to the inside of an `input` element. Kwa mfano:
 
 ```html
 <input type="radio" name="test-name" checked>
@@ -60,7 +60,7 @@ assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), '
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -93,7 +93,7 @@ assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), '
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

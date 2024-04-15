@@ -1,40 +1,40 @@
 ---
 id: 647e23368acb466c97ccbefd
-title: 'Guided Project - Work with Variable Data in C#'
+title: '引导项目 - 在 C# 中使用变量数据'
 challengeType: 19
 dashedName: guided-project-work-with-variable-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+这个挑战将有一部分在 Microsoft Learn 平台上完成。 请按照如下说明来完成挑战：
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/</a> and complete all the tasks for the "Guided Project - Work with Variable Data in C#" module. This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. 跳转到 <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/</a>，然后完成“引导项目 - 在 C# 中使用变量数据”模块的所有任务。 这是在 Microsoft Learn 上获得“在 C# 控制台应用程序中使用变量数据”的奖杯以及参加认证考试所**必需**的。
+1. 完成后，返回并正确回答下面的问题。
 
-# --assignment--
+# --任务--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Work with Variable Data in C#</a> guided project on Microsoft Learn. Then, answer the question below.
+在 Microsoft Learn 上完成 <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">在 C# 中使用变量数据</a> 的引导项目。 然后，回答下面的问题。
 
 # --question--
 
 ## --text--
 
-For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String.
+对于代码 `decimal.TryParse(numberString, out myConvert))`，当 `numberString` 的类型是字符串时。
 
-Which best describes the value type for `myConvert` when the `TryParse()` is successful?
+当 `TryParse()` 成功时，哪个最能描述 `myConvert` 的值的类型？
 
 ## --answers--
 
-A string representing numeric digits.
+表示数字的字符串
 
 ---
 
-A Boolean value.
+布尔值
 
 ---
 
-A decimal
+小数
 
 ## --video-solution--
 

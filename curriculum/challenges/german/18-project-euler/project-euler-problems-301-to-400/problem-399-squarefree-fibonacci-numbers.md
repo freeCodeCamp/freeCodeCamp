@@ -1,6 +1,6 @@
 ---
 id: 5900f4fc1000cf542c51000e
-title: 'Problem 399: Squarefree Fibonacci Numbers'
+title: 'Problem 399: Quadratfreie Fibonacci-Zahlen'
 challengeType: 1
 forumTopicId: 302064
 dashedName: problem-399-squarefree-fibonacci-numbers
@@ -12,19 +12,19 @@ The first 15 fibonacci numbers are:
 
 $$1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.$$
 
-It can be seen that 8 and 144 are not squarefree: 8 is divisible by 4 and 144 is divisible by 4 and by 9.
+Es ist erkennbar, dass 8 und 144 nicht quadratfrei sind: 8 ist durch 4 teilbar und 144 is durch 4 und 9 teilbar.
 
-So the first 13 squarefree fibonacci numbers are:
+Also sind die ersten 13 quadratfreien Fibonacci-Zahlen:
 
 $$1,1,2,3,5,13,21,34,55,89,233,377 \text{ and } 610.$$
 
-The $200$th squarefree fibonacci number is: 971183874599339129547649988289594072811608739584170445. The last sixteen digits of this number are: 1608739584170445 and in scientific notation this number can be written as `9.7e53`.
+Die $200$-ste quadratfreie Fibonacci-Zahl ist: 971183874599339129547649988289594072811608739584170445. Die letzten sechzehn Ziffern dieser Zahl sind: 1608739584170445 und in wissenschaftlicher Notation kann diese Zahl als `9.7e53` geschrieben werden.
 
-Find the $100\\,000\\,000$th squarefree fibonacci number. Give as your answer as a string with its last sixteen digits followed by a comma followed by the number in scientific notation (rounded to one digit after the decimal point). For the $200$th squarefree number the answer would have been: `1608739584170445,9.7e53`
+Finde die $100\\,000\\,000$-te quadratfreie Fibonacci-Zahl. Gebe als Antwort eine Zeichenfolge mit deren letzten sechzehn Ziffern, gefolgt von einen Komma und der Zahl in wissenschaftlicher Notation (gerundet auf eine Stelle nach dem Komma). Für die $200$-te quadratfreie Zahl wäre die Antwort: `1608739584170445,9.7e53`
 
-**Note:** For this problem, assume that for every prime $p$, the first fibonacci number divisible by $p$ is not divisible by $p^2$ (this is part of Wall's conjecture). This has been verified for primes $≤ 3 \times {10}^{15}$, but has not been proven in general.
+**Hinweis:** Nehme für dieses Problem an, dass für jede Primzahl $p$ die erste durch $p$ teilbare Fibonacci-Zahl nicht durch $p^2$ teilbar ist (dies ist Teil von Walls Vermutung). Dies wurde für die Primzahlen $≤ 3 \times {10}^{15}$, aber nicht im Allgemeinen bewiesen.
 
-If it happens that the conjecture is false, then the accepted answer to this problem isn't guaranteed to be the $100\\,000\\,000$th squarefree fibonacci number, rather it represents only a lower bound for that number.
+Wenn die Vermutung falsch ist, dann ist die angenommene Antwort auf dieses Problem nicht garantiert die $100\\,000\\,000$-te quadratfreie Fibonacci-Zahl, sondern stellt nur eine untere Grenze dieser Zahl dar.
 
 # --hints--
 

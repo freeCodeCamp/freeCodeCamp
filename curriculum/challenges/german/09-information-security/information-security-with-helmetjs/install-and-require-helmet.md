@@ -11,16 +11,8 @@ dashedName: install-and-require-helmet
 Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Methoden schreiben:
 
 - Klone <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
-- Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starter-Projekt</a>, um diese Aufgaben abzuschließen.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
-
-If you use Replit, follow these steps to set up the project:
-
--   Start by importing the project on Replit.
--   Daraufhin wird ein `.replit`-Fenster angezeigt.
--   Wähle `Use run command` aus klicke auf die `Done`-Schaltfläche.
-
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
 
 Helmet hilft dir, deine Express-Anwendungen durch die Einstellung verschiedener HTTP-Header zu sichern.
 

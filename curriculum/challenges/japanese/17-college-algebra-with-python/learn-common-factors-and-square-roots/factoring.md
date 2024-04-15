@@ -1,6 +1,6 @@
 ---
 id: 6331d251b51aeedd1a2bd648
-title: "Factoring"
+title: "因数分解"
 challengeType: 15
 videoId: Puyp_-ZYA54
 dashedName: factoring
@@ -8,31 +8,31 @@ dashedName: factoring
 
 # --description--
 
-This first video will show you how to find common factors and divide them out - in writing, then in code using loops and modulus operations.
+この最初の動画では、共通因数を見つけて除算を行う方法をまずは紙に書く方法で紹介し、次にコードでループとモジュロ演算子を使用する方法を示します。
 
-Here is the <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
+<a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">この動画で使用している Colab ノートブックはこちら</a>です。
 
 # --question--
 
 ## --text--
 
-What does the modulus (`%`) operator do in Python?
+Python のモジュロ (`%`) 演算子は何を実行しますか？
 
 ## --answers--
 
-returns the percent
+パーセントを返す
 
 ---
 
-divides
+除算する
 
 ---
 
-returns the remainder when dividing
+除算の余りを返す
 
 ---
 
-creates a space
+スペースを生成する
 
 ## --video-solution--
 

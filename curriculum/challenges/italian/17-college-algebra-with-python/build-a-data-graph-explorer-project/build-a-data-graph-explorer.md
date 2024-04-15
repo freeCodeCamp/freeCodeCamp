@@ -13,7 +13,7 @@ Una volta completato il progetto, invia il link del progetto qui sotto. Se stai 
 
 # --instructions--
 
-Per questa sfida, usando Python devi creare una calcolatrice multifunzione che prende un input ed esegue le seguenti operazioni:
+For this challenge, you need to create a data graph explorer using Python that take input and do the following:
 
 - Ottenere un file .csv in tre modi
   - caricandolo dal computer locale

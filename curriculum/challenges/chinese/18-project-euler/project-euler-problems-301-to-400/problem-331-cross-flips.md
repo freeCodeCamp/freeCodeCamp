@@ -1,6 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffca
-title: 'Problem 331: Cross flips'
+title: '问题331：交叉翻转'
 challengeType: 1
 forumTopicId: 301989
 dashedName: problem-331-cross-flips
@@ -10,7 +10,7 @@ dashedName: problem-331-cross-flips
 
 N×N disks are placed on a square game board. Each disk has a black side and white side.
 
-At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus $2 × N - 1$ disks are flipped. The game ends when all disks show their white side. The following example shows a game on a 5×5 board.
+At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus $2 × N - 1$ disks are flipped. 当所有磁盘显示其白色边时，游戏结束。 以下示例显示了5×5板上的游戏。
 
 <img class="img-responsive center-block" alt="animation showing game on 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
 
