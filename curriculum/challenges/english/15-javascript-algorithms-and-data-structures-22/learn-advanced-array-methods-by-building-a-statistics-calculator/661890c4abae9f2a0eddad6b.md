@@ -9,7 +9,7 @@ dashedName: step-22
 
 In the next few steps, you'll learn how to determine if an array's length is even or odd, as well as how to find the median. You will then be able to apply what you learned to the `getMedian` function.
 
-To check if a number is even or odd, you can use the <dfn>modulus operator</dfn>(`%`). The modulus operator returns the remainder of the division of two numbers. 
+To check if a number is even or odd, you can use the <dfn>modulus operator</dfn> `%`. The modulus operator returns the remainder of the division of two numbers. 
 
 Here is an example checking if an array length is even or odd:
 
