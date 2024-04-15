@@ -13,6 +13,20 @@ Also, calculate the square of the midpoint (`mid`) and store it in the variable 
     
 # --hints--
 
+You should remove the `pass` keyword.
+
+```js
+({
+    test: () => 
+    {
+        assert.isFalse(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_for_loops()[0].find_bodies()[0].has_pass()`))
+        
+    }
+
+})
+
+```
+
 You should declare a variable `mid` and assign it `(low + high) / 2` inside the body of the `for` loop.
 
 ```js
@@ -58,6 +72,7 @@ def square_root_bisection(square_target, tolerance=1e-7, max_iterations=100):
         
 --fcc-editable-region--
         for _ in range(max_iterations):
+            pass
 
 --fcc-editable-region--
 ```
