@@ -17,6 +17,8 @@ While learning to code, you'll need to understand basic concepts that apply to a
 
 There's no right or wrong language to start with. The most important thing is to learn the basic concepts of programming, which will help you code in any situation.
 
+<h2>Hinglish</h2>
+
 Ek programming language ek tareeka hai computer ko batane ka ki kya karna hai. For example, agar aap chahte hain ki computer panch tak ginti kare, to aapko ek programming language ka istemal karke use sahi instructions deni hogi.
 
 Programming languages symbols se bani hoti hain jo computer ke liye khaas instructions ko represent karte hain. Ye symbols milakar ek computer program banate hain, jo computer ko follow karne ke liye instructions ka set hota hai.

@@ -16,6 +16,8 @@ Output:
 Output is what the computer or program gives back to you after it processes the input. It's like the response you get. You could see this on the screen, like text or images.
 In Javascript, output is displayed on the screen using console.log().
 
+
+
 Example:
 let name = prompt(“Enter your name”)
 console.log(name)

@@ -19,6 +19,8 @@ On the other hand, an interpreter translates the source code line by line, execu
 
 Both compilers and interpreters play crucial roles in the development and execution of software, making it possible for programmers to write code in high-level languages and have it run on computers effectively.
 
+<h2>Hinglish</h2>
+
 Compilers aur interpreters ke baare mein seekhna aapko samajhne mein madad karta hai ki computers English aur Hindi jaise languages ko kaise process karte hain. Computers sirf machine language ko samajh sakte hain, isliye hum programming languages jaise C++ aur Java ka istemal karte hain jo instructions likhne mein computers ko samajhne mein madad karte hain. Ye languages compilers aur interpreters ka istemal karke human-readable code ko machine language mein convert karte hain. Ye process hume computers ke saath communicate karne aur software banane mein madad karta hai.
 
 Compilers aur interpreters programming ki duniya mein mahatvapurn tools hote hain. Dono hi high-level programming languages ko machine code mein translate karne ka kaam karte hain jo computers samajh sakte hain, lekin ye alag tareeke se karte hain.
@@ -56,4 +58,4 @@ Interpreter, Interpreter, Compiler, Compiler
 
 ## --video-solution--
 
-2
+1

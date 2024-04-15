@@ -1,6 +1,8 @@
 ---
 id: 661260d77fe6b7f6af628f7b
 title: Comment Your JavaScript Code
+removeComments: false
+videoUrl: 'https://scrimba.com/c/c7ynnTp'
 challengeType: 1
 dashedName: comment-code
 ---

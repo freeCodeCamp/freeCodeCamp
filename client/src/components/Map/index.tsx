@@ -25,11 +25,13 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-const coreCurriculum = [
+{
+  /*const coreCurriculum = [
   ...superBlockOrder[SuperBlockStages.FrontEnd],
   ...superBlockOrder[SuperBlockStages.Backend],
   ...superBlockOrder[SuperBlockStages.Python]
-];
+];*/
+}
 
 function MapLi({
   superBlock,
@@ -61,7 +63,7 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
-      <h2 className={forLanding ? 'big-heading' : ''}>
+      {/* <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.core-certs-heading')}
       </h2>
       <ul>
@@ -95,7 +97,7 @@ function Map({ forLanding = false }: MapProps): React.ReactElement {
         {superBlockOrder[SuperBlockStages.Extra].map((superBlock, i) => (
           <MapLi key={i} superBlock={superBlock} landing={forLanding} />
         ))}
-      </ul>
+      </ul> */}
       <Spacer size='medium' />
       <h2 className={forLanding ? 'big-heading' : ''}>
         {t('landing.legacy-curriculum-heading')}

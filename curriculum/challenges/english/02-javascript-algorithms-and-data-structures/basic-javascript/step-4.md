@@ -16,6 +16,8 @@ Computers are really good at following instructions, but they can't think for th
 
 Learning to code is fun and useful. It's like learning a new language that lets you create all sorts of cool things, from websites to games. Plus, it's a skill that can open up many exciting opportunities in the future!
 
+<h2>Hinglish</h2>
+
 Programming ek tarah se computer ko instructions dene jaisa hai. Ye hai hamara tareeka computer ko batane ka ki kya karna hai, jaise ki kisi game ko khelna ya website ko dikhana. Coding actual mein ye instructions likhna hai ek aise bhasha mein jo computer samajh sake.
 
 Imagine karo ki aap cake bana rahe hain. Recipe ek program ki tarah hai, aur us recipe ko follow karna coding ki tarah hai. Aapko apne instructions mein spasht aur vishesh hona chahiye, jaise coding mein hota hai.
@@ -28,7 +30,7 @@ Coding sikhna mazedaar aur upyogi hai. Ye ek aise nayi bhasha sikhne jaisa hai j
 
 ## --text--
 
-What is Code?
+What is Coding?
 
 ## --answers--
 

@@ -50,6 +50,10 @@
       "title": "Comment Your JavaScript Code"
     },
     {
+      "id": "661bc7a2b575475da9a67513",
+      "title": "Variable Declaration"
+    },
+    {
       "id": "6606c952f62155112026cbb0",
       "title": "Declare JavaScript Variables"
     },
@@ -60,6 +64,10 @@
     {
       "id": "6606ca03a0aa92116bead97f",
       "title": "Storing values with the assignment operator"
+    },
+    {
+      "id": "661a6e7d66f4ca43cb3c3a78",
+      "title": "Print BirthDay Details"
     },
     {
       "id": "6606ca2b9b8fc711a74602f5",
@@ -98,8 +106,8 @@
       "title": "Assigning the Value of One Variable to Another"
     },
     {
-      "id": "6612636b1d3630f8831f390e",
-      "title": "Swapping of Variables"
+      "id": "661a6798129b0c40e6cc6fed",
+      "title": "Swapping Variable-values"
     },
     {
       "id": "661263e70d0e83f9399022ad",
@@ -166,6 +174,10 @@
       "title": "Perfectly Divisible"
     },
     {
+      "id": "661bb2ec557e2c551a684538",
+      "title": "Finding Last Digit"
+    },
+    {
       "id": "6612dc88af197504846d7451",
       "title": "Relational Operators"
     },
@@ -200,6 +212,10 @@
     {
       "id": "6606ce425820df15df086618",
       "title": "Comparison with the strict Inequality Operator"
+    },
+    {
+      "id": "661bb3ac21bbd0556144beb2",
+      "title": "Check Odd or Even"
     },
     {
       "id": "6606ce62940aa6160f7ac863",
@@ -266,6 +282,10 @@
       "title": "Calculate Electricity Bill"
     },
     {
+      "id": "661a69e57f6c0c41f2128c3a",
+      "title": "Loops in JavaScript"
+    },
+    {
       "id": "6606d0e224f91f17cffa8b46",
       "title": "Increment a number with Javascript"
     },
@@ -274,12 +294,80 @@
       "title": "Decrement a number with Javascript"
     },
     {
+      "id": "661a6d0eded4cf42e594bd3c",
+      "title": "Start with Your First Loop"
+    },
+    {
+      "id": "661a6d9381ae1d433a6e5ec3",
+      "title": "Finding Even Numbers in a Range"
+    },
+    {
+      "id": "661a6e055483ba4385d58e4d",
+      "title": "Sum of Odd Numbers"
+    },
+    {
+      "id": "661a6f10ce4c51441d61a568",
+      "title": "Calculate Sum of a Range"
+    },
+    {
+      "id": "661a6fd12f879044795843ea",
+      "title": "Interesting Decimal Series"
+    },
+    {
+      "id": "661a70248a02a745810c70fa",
+      "title": "Finding Digits"
+    },
+    {
+      "id": "661a7087c7f03a45b7d04fc0",
+      "title": "Sum of Digits"
+    },
+    {
+      "id": "661a70d9105d3745fb8289f3",
+      "title": "Reverse Digits"
+    },
+    {
+      "id": "661a724d73a29d468e9f809c",
+      "title": "Checking Primes"
+    },
+    {
+      "id": "661a72950a02b346c33e851f",
+      "title": "Checking Perfect Numbers"
+    },
+    {
+      "id": "661a75553723024999eec4f0",
+      "title": "Understanding Nested Loops"
+    },
+    {
+      "id": "661bb9b0f3a78a57622e0446",
+      "title": "Understanding Arrays"
+    },
+    {
       "id": "6606d150c472e91833764b63",
       "title": "Store Multiple Values in one Variable using JavaScript Arrays"
     },
     {
+      "id": "661bbb0abe070c57af09be41",
+      "title": "Create an Array of Natural Numbers"
+    },
+    {
       "id": "6606d17360f6cb18637f1ed7",
       "title": "Access Array data with indexes"
+    },
+    {
+      "id": "661bbd211675cd580e7cb917",
+      "title": "Resverse Array"
+    },
+    {
+      "id": "661bbda189d54858509990c3",
+      "title": "Odd Even Sum"
+    },
+    {
+      "id": "661bbe8b685931595f61b791",
+      "title": "Exiting the Loop early"
+    },
+    {
+      "id": "661bc0e16083b65a7f3a3cb1",
+      "title": "Check Existance of an Element in an Array"
     },
     {
       "id": "6606d1b654829718951900ae",

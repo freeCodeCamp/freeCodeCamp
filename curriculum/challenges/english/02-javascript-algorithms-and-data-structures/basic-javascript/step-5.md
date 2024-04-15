@@ -19,6 +19,8 @@ Programming isn't just for nerds; it's for anyone who wants to create something 
 
 Learning to program teaches how to think, imagine, and create. It gives a better understanding of the world and is a great foundation for life. It's not just about telling computers what to do; it's also about communicating with the team to accomplish amazing things together.
 
+<h2>Hinglish</h2>
+
 Programming sikhna sach mein bahut mahatvapurn hai. Ye kisi vakeel banne ke liye nahi hai, balki ye ek khaas tarah ka sochne ka tareeka sikhata hai. Programming ke tarah—ye ek alag tareeke se sochne ka tareeka sikhata hai.
 
 Computer science ek mukt kala hai, kuch aisa jo har koi sikhna chahiye. Ye ek saal ka course karne ki tarah hai jisme programming sikhayi jaati hai. Programming ka matlab hai computer ko batana ki kya karna hai, jaise ki games khelna ya numbers ko convert karna.

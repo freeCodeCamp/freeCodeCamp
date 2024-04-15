@@ -20,6 +20,8 @@ A pop-up appeared(T)
 A command executed
 A page opens up
 
+<h2>Hinglish</h2>
+
 Apne pehle JS program ko is tarah se likho:
 > F12 dabakar developer tools ko kholo
 > Console tab mein jaao aur neeche diye gaye code ko type karo:
