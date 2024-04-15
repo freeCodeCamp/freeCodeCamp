@@ -10,19 +10,16 @@ dashedName: step-9
 In Python, the `max()` function returns the largest of the input values.
 
 ```python
-# max() usage
-max(1, 2, 3)
-
-# Output: 3
+max(1, 2, 3) # Output: 3
 ```
 
 The variables `low` and `high` will be used to define the initial interval where the square root lies.
 
-Inside the else clause, initialize the `low` variable to `0` and the `high` variable to be the maximum of either `1` or `square_target` as the square root of a number is always less than or equal to the number itself.
+Inside the `else` clause, initialize the `low` variable to `0` and the `high` variable to be the maximum of either `1` or `square_target` as the square root of a number is always less than or equal to the number itself.
 
 # --hints--
 
-Remove the pass keyword.
+You should remove the `pass` keyword.
 
 ```js
 ({
