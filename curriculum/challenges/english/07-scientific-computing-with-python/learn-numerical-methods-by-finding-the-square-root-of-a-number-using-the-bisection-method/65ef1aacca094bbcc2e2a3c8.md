@@ -30,16 +30,26 @@ You should remove the `pass` keyword.
 })
 ```
 
-Your low variable should be `0` and your `high` variable should be the maximum of `1` or `square_target`, use the built in `max` function.
+You should declare a variable `low` and assign it `0`.
 
 ```js
 ({
     test: () => 
     {
-        assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].is_equivalent("low = 0\\nhigh = max(1, square_target)")`));
-    }
+        assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_variable("low").is_equivalent("low = 0")`));    }
 })
 
+```
+
+You should declare a variable `high` and use the `max()` function to assign it the maximum value between `1` and `square_target`.
+
+```js
+
+({ test: () => assert(runPython(`
+node = _Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_variable("high")
+values = ["high = max(1, square_target)", "high = max(square_target, 1)"]
+any(node.is_equivalent(val) for val in values)
+`)) })
 ```
 
 # --seed--

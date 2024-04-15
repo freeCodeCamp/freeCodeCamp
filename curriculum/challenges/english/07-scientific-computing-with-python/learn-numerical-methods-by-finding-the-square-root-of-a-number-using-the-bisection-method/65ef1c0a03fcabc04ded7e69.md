@@ -13,17 +13,27 @@ Also, calculate the square of the midpoint (`mid`) and store it in the variable 
     
 # --hints--
 
-You should have the  `mid = (low + high) / 2` and `square_mid = mid**2` inside the body of the `for` loop.
+You should declare a variable `mid` and assign it `(low + high) / 2` inside the body of the `for` loop.
 
 ```js
 ({
     test: () => 
     {
-        assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_for_loops()[0].is_equivalent("for _ in range(max_iterations):\\n    mid = (low + high) / 2\\n    square_mid = mid**2")`))
+        assert(runPython(`
+	node = _Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_for_loops()[0].find_bodies()[0].find_variable("mid")
+	values = ["mid = (low + high) / 2", "mid = (high + low) / 2"]
+	any(node.is_equivalent(val) for val in values)
+	`))
         
     }
 
 })
+```
+
+You should declare a variable square_mid and assign it mid**2 inside the body of the for loop.
+
+```js
+({ test: () => assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_for_loops()[0].find_bodies()[0].find_variable("square_mid").is_equivalent("square_mid = mid**2")`)) })
 ```
 
 # --seed--
