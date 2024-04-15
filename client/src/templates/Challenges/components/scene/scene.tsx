@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
 import { Col } from '@freecodecamp/ui';
+import { t } from 'i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
@@ -225,7 +226,10 @@ export function Scene({
                     setIsPlaying(true);
                   }}
                 >
-                  <img src={`${images}/play-button.png`} alt='Press Play' />
+                  <img
+                    src={`${images}/play-button.png`}
+                    alt={t('buttons.play-scene')}
+                  />
                 </button>
 
                 {!alwaysShowDialogue && (
