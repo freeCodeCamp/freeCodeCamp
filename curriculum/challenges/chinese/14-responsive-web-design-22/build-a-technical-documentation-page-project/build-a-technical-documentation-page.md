@@ -148,7 +148,7 @@ const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-你所有的 `.nav-link` 元素都应该是锚点（`a`）元素。
+你所有的 `.nav-link` 元素都应该是锚元素（`a`）。
 
 ```js
 const els = document.querySelectorAll('.nav-link')

@@ -225,17 +225,6 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(transPath, dict, lang, parse = parseMD) {
-  const translatedChal = await parse(transPath);
-
-  const { challengeType } = translatedChal;
-  // challengeType 11 is for video challenges and 3 is for front-end projects
-  // neither of which have seeds.
-  return challengeType !== 11 && challengeType !== 3
-    ? translateCommentsInChallenge(translatedChal, lang, dict)
-    : translatedChal;
-}
-
 async function createCertification(basePath, filePath) {
   function getFullPath(pathLang) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
@@ -349,20 +338,20 @@ ${getFullPath('english', filePath)}
 
     await validate(filePath, meta.superBlock);
 
-    // We always try to translate comments (even English ones) to confirm that translations exist.
-    const translateComments =
+    // If we can use the language, do so. Otherwise, default to english.
+    const langUsed =
       isAuditedSuperBlock(lang, meta.superBlock, {
         showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
         showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-      }) && fs.existsSync(getFullPath(lang, filePath));
+      }) && fs.existsSync(getFullPath(lang, filePath))
+        ? lang
+        : 'english';
 
-    const challenge = await (translateComments
-      ? parseTranslation(
-          getFullPath(lang, filePath),
-          COMMENT_TRANSLATIONS,
-          lang
-        )
-      : parseMD(getFullPath('english', filePath)));
+    const challenge = translateCommentsInChallenge(
+      await parseMD(getFullPath(langUsed, filePath)),
+      langUsed,
+      COMMENT_TRANSLATIONS
+    );
 
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
@@ -405,5 +394,4 @@ function getBlockNameFromPath(filePath) {
 }
 
 exports.hasEnglishSource = hasEnglishSource;
-exports.parseTranslation = parseTranslation;
 exports.generateChallengeCreator = generateChallengeCreator;

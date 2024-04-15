@@ -12,7 +12,7 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 # --description--
 
-`Awesome` is a word people use when they really like something. It's like saying `very good!` It's an informal way to show approval or admiration.
+Люди використовують `awesome`, коли говорять про щось, що їм дійсно подобається. Це те ж саме, що й `very good!`. Це неофіційний спосіб показати згоду або захоплення.
 
 # --fillInTheBlank--
 
@@ -26,7 +26,7 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 ### --feedback--
 
-Listen for a word that means `very good` or `I really like it.`
+Уважно послухайте, щоб почути слово, яке означає `very good` або `I really like it.`
 
 # --scene--
 
