@@ -14,9 +14,7 @@ export default function getCsurf() {
     const { path } = req;
     if (
       // eslint-disable-next-line max-len
-      /^\/hooks\/update-paypal$|^\/donate\/charge-stripe$|^\/coderoad-challenge-completed$/.test(
-        path
-      )
+      /^\/donate\/charge-stripe$|^\/coderoad-challenge-completed$/.test(path)
     ) {
       next();
     } else {
