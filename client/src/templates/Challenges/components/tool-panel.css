@@ -49,6 +49,6 @@
 
 @media screen and (max-width: 450px) {
   #get-help-dropdown {
-    max-width: 90px;
+    min-width: 90px;
   }
 }
