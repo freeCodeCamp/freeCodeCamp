@@ -221,8 +221,14 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   }
   const { meta } = challengeBlock;
   const isCert = path.extname(filePath) === '.yml';
-  const englishPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
-  const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
+  const englishPath = path.resolve(
+    __dirname,
+    CHALLENGES_DIR,
+    'english',
+    filePath
+  );
+  const i18nPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
+  const createChallenge = generateChallengeCreator(lang, englishPath, i18nPath);
 
   await assertHasEnglishSource(filePath, lang, englishPath);
   const challenge = isCert
@@ -234,11 +240,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
 
 // This is a slightly weird abstraction, but it lets us define helper functions
 // without passing around a ton of arguments.
-function generateChallengeCreator(basePath, lang) {
-  function getFullPath(pathLang, filePath) {
-    return path.resolve(__dirname, basePath, pathLang, filePath);
-  }
-
+function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
     const challengeOrder = findIndex(
       meta.challengeOrder,
@@ -316,13 +318,10 @@ function generateChallengeCreator(basePath, lang) {
     });
 
     // If we can use the language, do so. Otherwise, default to english.
-    const langUsed =
-      isAudited && fs.existsSync(getFullPath(lang, filePath))
-        ? lang
-        : 'english';
+    const langUsed = isAudited && fs.existsSync(i18nPath) ? lang : 'english';
 
     const challenge = translateCommentsInChallenge(
-      await parseMD(getFullPath(langUsed, filePath)),
+      await parseMD(langUsed === 'english' ? englishPath : i18nPath),
       langUsed,
       COMMENT_TRANSLATIONS
     );
