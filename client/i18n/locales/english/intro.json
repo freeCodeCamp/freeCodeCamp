@@ -1190,6 +1190,10 @@
       "top-learn-function-basics": {
         "title": "Learn Function Basics",
         "intro": ["Learn about functions in JavaScript."]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Learn Arrays and Loops",
+        "intro": ["Learn about arrays and loops in JavaScript."]
       }
     }
   },
