@@ -38,7 +38,7 @@ assert.strictEqual(multiply(10, 10), 100);
 
 ```
 
-## --solution--
+## --solutions--
 
 ```js 
 function multiply(a, b) {

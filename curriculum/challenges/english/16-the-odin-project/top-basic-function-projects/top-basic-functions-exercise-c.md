@@ -38,7 +38,7 @@ assert.strictEqual(capatalize('sem'), 'Sem');
 
 ```
 
-## --solution--
+## --solutions--
 
 ```js
 function capatalize(str) {

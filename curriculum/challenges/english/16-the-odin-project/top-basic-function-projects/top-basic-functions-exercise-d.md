@@ -38,7 +38,7 @@ assert.strictEqual(lastLetter('Sem'), 'm');
 
 ```
 
-## --solution--
+## --solutions--
 
 ```js
 function lastLetter(str) {

@@ -48,7 +48,7 @@ assert.strictEqual(addOrSubtract(10), 7);
 
 ```
 
-## --solution--
+## --solutions--
 
 ```js
 function addOrSubtract(num) {
