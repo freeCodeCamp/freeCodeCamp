@@ -508,12 +508,15 @@ function ShowClassic({
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal />
-        <ProjectPreviewModal
-          challengeData={challengeData}
-          closeText={t('buttons.start-coding')}
-          previewTitle={t('learn.project-preview-title')}
-          showProjectPreview={showProjectPreview}
-        />
+        {block !==
+          'learn-introductory-javascript-by-building-a-pyramid-generator' && (
+          <ProjectPreviewModal
+            challengeData={challengeData}
+            closeText={t('buttons.start-coding')}
+            previewTitle={t('learn.project-preview-title')}
+            showProjectPreview={showProjectPreview}
+          />
+        )}
         <ShortcutsModal />
       </LearnLayout>
     </Hotkeys>
