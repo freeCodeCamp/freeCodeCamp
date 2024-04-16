@@ -1,8 +1,8 @@
 ---
 id: 6619240f46cec8e04d77e03a
-title: Build 
+title: Basic Functions Exercise A 
 challengeType: 1
-dashedName: top-basic-function-project-a
+dashedName: top-basic-functions-exercise-a
 ---
 
 # --description--
@@ -46,4 +46,16 @@ assert.strictEqual(addOrSubtract(10), 7);
 
 ```js
 
+```
+
+## --solution--
+
+```js
+function addOrSubtract(num) {
+  if (num < 10) {
+    return num + 7;
+  } else {
+    return num - 3;
+  }
+}
 ```
