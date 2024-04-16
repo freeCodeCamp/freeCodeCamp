@@ -229,7 +229,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
       }
-      console.log('newTest', newTest);
+
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
