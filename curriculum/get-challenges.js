@@ -280,12 +280,6 @@ function generateChallengeCreator(basePath, lang) {
     challenge.template = meta.template;
     challenge.time = meta.time;
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
-    challenge.translationPending =
-      lang !== 'english' &&
-      !isAuditedSuperBlock(lang, meta.superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
-      });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
     challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
@@ -316,12 +310,14 @@ function generateChallengeCreator(basePath, lang) {
           path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
         );
 
+    const isAudited = isAuditedSuperBlock(lang, meta.superBlock, {
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+    });
+
     // If we can use the language, do so. Otherwise, default to english.
     const langUsed =
-      isAuditedSuperBlock(lang, meta.superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-      }) && fs.existsSync(getFullPath(lang, filePath))
+      isAudited && fs.existsSync(getFullPath(lang, filePath))
         ? lang
         : 'english';
 
@@ -330,7 +326,7 @@ function generateChallengeCreator(basePath, lang) {
       langUsed,
       COMMENT_TRANSLATIONS
     );
-
+    challenge.translationPending = lang !== 'english' && !isAudited;
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
 
