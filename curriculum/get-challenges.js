@@ -133,6 +133,10 @@ const walk = (root, target, options, cb) => {
 };
 
 exports.getChallengesForLang = async function getChallengesForLang(lang) {
+  const invalidLang = !curriculumLangs.includes(lang);
+  if (invalidLang)
+    throw Error(`${lang} is not a accepted language.
+Accepted languages are ${curriculumLangs.join(', ')}`);
   // english determines the shape of the curriculum, all other languages mirror
   // it.
   const root = getChallengesDirForLang('english');
@@ -217,7 +221,10 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   }
   const { meta } = challengeBlock;
   const isCert = path.extname(filePath) === '.yml';
+  const englishPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
   const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
+
+  await assertHasEnglishSource(filePath, lang, englishPath);
   const challenge = isCert
     ? await createCertification(CHALLENGES_DIR, filePath, lang)
     : await createChallenge(filePath, meta);
@@ -241,22 +248,6 @@ async function createCertification(basePath, filePath) {
 function generateChallengeCreator(basePath, lang) {
   function getFullPath(pathLang, filePath) {
     return path.resolve(__dirname, basePath, pathLang, filePath);
-  }
-
-  async function validate(filePath) {
-    const invalidLang = !curriculumLangs.includes(lang);
-    if (invalidLang)
-      throw Error(`${lang} is not a accepted language.
-Trying to parse ${filePath}`);
-
-    const missingEnglish =
-      lang !== 'english' && !(await hasEnglishSource(basePath, filePath));
-    if (missingEnglish)
-      throw Error(`Missing English challenge for
-${filePath}
-It should be in
-${getFullPath('english', filePath)}
-`);
   }
 
   function addMetaToChallenge(challenge, meta) {
@@ -336,8 +327,6 @@ ${getFullPath('english', filePath)}
           path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
         );
 
-    await validate(filePath, meta.superBlock);
-
     // If we can use the language, do so. Otherwise, default to english.
     const langUsed =
       isAuditedSuperBlock(lang, meta.superBlock, {
@@ -371,6 +360,17 @@ function challengeFilesToPolys(files) {
       }
     ];
   }, []);
+}
+
+async function assertHasEnglishSource(filePath, lang, englishPath) {
+  const missingEnglish =
+    lang !== 'english' && !(await hasEnglishSource(CHALLENGES_DIR, filePath));
+  if (missingEnglish)
+    throw Error(`Missing English challenge for
+${filePath}
+It should be in
+${englishPath}
+`);
 }
 
 async function hasEnglishSource(basePath, translationPath) {
