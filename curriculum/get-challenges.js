@@ -226,21 +226,10 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
 
   await assertHasEnglishSource(filePath, lang, englishPath);
   const challenge = isCert
-    ? await createCertification(CHALLENGES_DIR, filePath, lang)
+    ? await parseCert(englishPath)
     : await createChallenge(filePath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
-}
-
-async function createCertification(basePath, filePath) {
-  function getFullPath(pathLang) {
-    return path.resolve(__dirname, basePath, pathLang, filePath);
-  }
-  // TODO: restart using isAudited() once we can determine a) the superBlocks
-  // (plural) a certification belongs to and b) get that info from the parsed
-  // certification, rather than the path. ASSUMING that this is used by the
-  // client.  If not, delete this comment and the lang param.
-  return parseCert(getFullPath('english'));
 }
 
 // This is a slightly weird abstraction, but it lets us define helper functions
