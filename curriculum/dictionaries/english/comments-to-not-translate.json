@@ -7,5 +7,6 @@
   "4143lg": "TODO: Add link to cat photos",
   "3q1p2l": "console.log(spreadsheetFunctions[\"random\"](1, 1000) === spreadsheetFunctions[\"random\"](1, 1000))",
   "gq2zsq": "window.onload();",
-  "3xhkhx": "highPrecedence(\"2*2\");"
+  "3xhkhx": "highPrecedence(\"2*2\");",
+  "4143lf": "initialize buttons"
 }
