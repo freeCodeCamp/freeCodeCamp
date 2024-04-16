@@ -1,9 +1,9 @@
 {
-  "name": "Learn Numerical Methods by Finding the Square Root of a Number Using the Bisection Method",
+  "name": "Learn the Bisection Method by Finding the Square Root of a Number",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "learn-numerical-methods-by-finding-the-square-root-of-a-number-using-the-bisection-method",
+  "dashedName": "learn-the-bisection-method-by-finding-the-square-root-of-a-number",
   "order": 42,
   "time": "5 hours",
   "template": "",
