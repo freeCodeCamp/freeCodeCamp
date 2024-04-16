@@ -16,7 +16,7 @@ characters.splice(1, 1);
 console.log(characters); // Output: ['Harry', 'Hermione']
 ```
 
-The above elemnt removes the second element from the `characters` array. The `splice()` method takes two arguments: the index of the element to remove and the number of elements to remove.
+The above element removes the second element from the `characters` array. The `splice()` method takes two arguments: the index of the element to remove and the number of elements to remove.
 
 
 To create a new array with the second element from the `character` array, you can use the following code:

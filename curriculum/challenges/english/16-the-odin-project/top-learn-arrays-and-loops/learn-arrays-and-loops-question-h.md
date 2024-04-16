@@ -6,30 +6,49 @@ dashedName: learn-arrays-and-loops-question-h
 ---
 # --description--
 
-Descriptions
+One other useful array method is the `filter()` method. The `filter()` method creates a new array with all elements that pass the test implemented by the provided function. The syntax of the `filter()` method is as follows:
+
+```javascript
+const numbers = [2, 5, 6, 1, 9, -1]
+
+const newNumbers = numbers.filter((number) => {
+  return number > 2;
+});
+
+console.log(newNumbers); // Output: [5, 6, 9]
+```
 
 # --question--
 
 ## --text--
 
-Question
+What will be the output of the following JavaScript code snippet?
+
+```javascript
+const strings = ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango'];
+const newStrings = strings.filter((string) => {
+  return string.length > 5;
+});
+
+```
 
 ## --answers--
 
-Answer 1
+`['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']`
 
 ---
 
-Answer 2
+`['apple', 'banana', 'cherry', 'orange', 'kiwi']`
 
 ---
 
-Answer 3
+`['banana, 'cherry', 'orange']`
 
 ---
 
-Answer 4
+`['apple', 'banana', 'cherry', 'orange', 'kiwi']`
+
 
 ## --video-solution--
 
-2
+3
