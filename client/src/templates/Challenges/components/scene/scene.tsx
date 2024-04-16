@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
 import { Col } from '@freecodecamp/ui';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
@@ -18,6 +18,7 @@ export function Scene({
   isPlaying: boolean;
   setIsPlaying: (shouldPlay: boolean) => void;
 }): JSX.Element {
+  const { t } = useTranslation();
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
 
