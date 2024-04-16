@@ -6,29 +6,57 @@ dashedName: learn-arrays-and-loops-question-c
 ---
 # --description--
 
-Descriptions
+One of the most common ways to add a new element to an array is by using the `push()` method. The `push()` method adds one or more elements to the end of an array and returns the new length of the array.
+
+For example, to add a new element to the `pet` array, you can use the following code:
+
+```javascript
+const pet = ['cat', 'dog', 'bunny'];
+pet.push('parrot');
+console.log(pet); // Output: ['cat', 'dog', 'bunny', 'parrot']
+```
+
+To remove the last element of an array, you can use the `pop()` method. The `pop()` method removes the last element from an array and returns that element.
+
+For example, to remove the last element from the `pet` array, you can use the following code:
+
+```javascript
+const pet = ['cat', 'dog', 'tiger'];
+pet.pop();
+console.log(pet); // Output: ['cat', 'dog']
+```
+
 
 # --question--
 
 ## --text--
 
-Question
+Given the following JavaScript code, what will be the output after executing the code snippet?
+
+```javascript
+const animals = ['deer', 'whale', 'frog'];
+animals.push('shark', 'bear');
+const removed = animals.pop();
+
+console.log(animals);
+console.log(removed);
+```
 
 ## --answers--
 
-Answer 1
+`['deer', 'whale', 'frog', 'shark', 'bear']` and `'bear'`
 
 ---
 
-Answer 2
+`['deer', 'whale', 'frog', 'shark']` and `'bear'`
 
 ---
 
-Answer 3
+`['deer', 'whale', 'frog', 'shark', 'bear']` and `null`
 
 ---
 
-Answer 4
+`['deer', 'whale', 'frog', 'shark', 'bear']` and `['deer', 'whale', 'frog', 'shark']`
 
 ## --video-solution--
 

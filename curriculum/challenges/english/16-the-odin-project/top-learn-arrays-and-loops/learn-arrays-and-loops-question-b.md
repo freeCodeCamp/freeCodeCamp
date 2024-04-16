@@ -6,30 +6,41 @@ dashedName: learn-arrays-and-loops-question-b
 ---
 # --description--
 
-Descriptions
+To access the elements of an array, you can use the index number. The index number starts from 0, so the first element of an array is at index 0, the second element is at index 1, and so on.
+
+For example, to access the first element of the `fruits` array, you can use the following code:
+
+```javascript
+const fruits = ['apple', 'banana', 'orange'];
+console.log(fruits[0]); // Output: apple
+console.log(fruits[2]); // Output: orange
+```
+
+If the index is out of range, JavaScript will return `undefined`. Meaning that if you try to access `fruits[3]` in the above example, it will return `undefined`.
+
 
 # --question--
 
 ## --text--
 
-Question
+What is the index number of the fourth element in the `fruits` array?
 
 ## --answers--
 
-Answer 1
+`orange`
 
 ---
 
-Answer 2
+`apple`
 
 ---
 
-Answer 3
+`pineapple`
 
 ---
 
-Answer 4
+`undefined`
 
 ## --video-solution--
 
-2
+4
