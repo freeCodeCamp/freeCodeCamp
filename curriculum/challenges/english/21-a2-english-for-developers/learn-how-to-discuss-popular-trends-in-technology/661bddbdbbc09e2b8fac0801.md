@@ -53,8 +53,8 @@ The preposition used to help you understand where something is or happens.
     "audio": {
       "filename": "4.2-4.mp3",
       "startTime": 1,
-      "startTimestamp": 15.42,
-      "finishTimestamp": 19.04
+      "startTimestamp": 15.22,
+      "finishTimestamp": 18.84
     }
   },
   "commands": [
