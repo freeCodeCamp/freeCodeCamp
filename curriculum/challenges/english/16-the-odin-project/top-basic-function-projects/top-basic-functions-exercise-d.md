@@ -7,17 +7,17 @@ dashedName: top-basic-functions-exercise-d
 
 # --description--
 
-Write a function, named `lastLetter`, that takes a string as an argument and returns the last letter of the string.
+Write a function, named `lastLetter`, that takes a string as a parameter and returns the last letter of the string.
 
 # --hints--
 
 You should have a function named `lastLetter`.
 
 ```js
-assert.strictEqual(lastLetter('hello') , 'o');
+assert.isFunction(lastLetter);
 ```
 
-Your function should take in a string as an argument. 
+Your function should take in a string as a parameter. 
 
 ```js
 assert.strictEqual(lastLetter('world'), 'd');

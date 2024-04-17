@@ -7,7 +7,7 @@ dashedName: top-basic-functions-exercise-a
 
 # --description--
 
-Create a function that takes in an integer. This function should return the given interger + 7 if the integer is less than 10, if the integer is greater than or equal to 10, it should return the given integer - 3.
+Create a function that takes in an integer. This function should return the given `integer + 7` if the integer is less than `10`. If the integer is greater than or equal to `10`, it should return the given `integer - 3`.
 
 The name of the function should be `addOrSubtract`.
 
@@ -16,7 +16,7 @@ The name of the function should be `addOrSubtract`.
 You should have a function called `addOrSubtract`.
 
 ```js
-assert.strictEqual(addOrSubtract(5), 12);
+assert.isFunction(addOrSubtract);
 ```
 
 Your function should take in an integer as an argument.

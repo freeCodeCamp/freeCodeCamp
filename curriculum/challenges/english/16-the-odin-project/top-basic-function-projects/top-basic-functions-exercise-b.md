@@ -7,7 +7,7 @@ dashedName: top-basic-functions-exercise-b
 
 # --description--
 
-Write a function, named `multiply`, that takes two arguments and returns their product.
+Write a function, named `multiply`, that takes two parameters and returns their product.
 
 # --hints--
 
