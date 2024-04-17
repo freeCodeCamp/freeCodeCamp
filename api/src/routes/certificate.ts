@@ -307,9 +307,13 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         if (!isKnownCertSlug(certSlug)) {
           void reply.code(404);
           return reply.send({
-            type: 'info',
-            message: 'flash.cert-not-found',
-            variables: { certSlug }
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.cert-not-found',
+                variables: { certSlug }
+              }
+            ]
           });
         }
 
