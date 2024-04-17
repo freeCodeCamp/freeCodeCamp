@@ -45,7 +45,7 @@ cats_and_dogs
 
 爲三個圖像數據集（訓練、驗證、測試）中的每一個創建圖像生成器。 使用 `ImageDataGenerator` 讀取/解碼圖像並將它們轉換爲浮點張量。 使用 `rescale` 參數（目前沒有其他參數）將張量從 0 到 255 之間的值重新縮放到 0 到 1 之間的值。
 
-對於 `*_data_gen` 變量，使用 `flow_from_directory` 方法。 傳入批處理大小、目錄、目標大小（`(IMG_HEIGHT, IMG_WIDTH)`）、類模式以及其他所需的內容。 `test_data_gen` 將是最棘手的一個。 對於 `test_data_gen`，確保將 `shuffle=False` 傳遞給 `flow_from_directory` 方法。 這將確保最終預測保持在我們的測試預期的順序。 對於 `test_data_gen`，觀察目錄結構也很有幫助。
+對於 `*_data_gen` 變量，使用 `flow_from_directory` 方法。 傳入批處理大小、目錄、目標大小（`(IMG_HEIGHT, IMG_WIDTH)`）、類模式以及其他所需的內容。 `test_data_gen` 將是最棘手的一個。 對於 `test_data_gen`，確保將 `shuffle=False` 傳遞給 `flow_from_directory` 方法。 This will make sure the final predictions stay in the order that our test expects. 對於 `test_data_gen`，觀察目錄結構也很有幫助。
 
 
 運行代碼後，輸出應如下所示：

@@ -45,7 +45,7 @@ cats_and_dogs
 
 3 つのそれぞれの画像データセット (トレーニング、検証、テスト) について画像ジェネレータを作成します。 `ImageDataGenerator` を使用して画像を読み取ってデコードし、浮動小数点テンソルに変換します。 `rescale` 引数を使用して (この時点では他の引数は使用しません)、テンソルを 0～255 の値から 0～1 の値にスケール変更します。
 
-`*_data_gen` 変数には、`flow_from_directory` メソッドを使用します。 バッチサイズ、ディレクトリ、ターゲットサイズ (`(IMG_HEIGHT, IMG_WIDTH)`)、クラスモード、その他必要なものを渡します。 `test_data_gen` の場合が最もトリッキーです。 `test_data_gen` では、必ず `shuffle=False` を `flow_from_directory` メソッドに渡してください。 そうすることで、最終的な予測の順序が freeCodeCamp 側のテストの期待どおりに保たれます。 `test_data_gen` に関しては、ディレクトリ構造をよく見ることも重要です。
+`*_data_gen` 変数には、`flow_from_directory` メソッドを使用します。 バッチサイズ、ディレクトリ、ターゲットサイズ (`(IMG_HEIGHT, IMG_WIDTH)`)、クラスモード、その他必要なものを渡します。 `test_data_gen` の場合が最もトリッキーです。 `test_data_gen` では、必ず `shuffle=False` を `flow_from_directory` メソッドに渡してください。 This will make sure the final predictions stay in the order that our test expects. `test_data_gen` に関しては、ディレクトリ構造をよく見ることも重要です。
 
 
 コードを実行すると、出力は次のようになります。
