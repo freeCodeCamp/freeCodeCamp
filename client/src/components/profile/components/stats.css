@@ -1,19 +1,22 @@
-.stats-container {
+.stats {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  font-size: 18px;
   color: var(--primary-color);
 }
 
-.stat {
-  margin-top: 16px;
+.stats dt {
+  font-size: 18px;
+}
+
+.stats dd {
   font-size: 2rem;
+  margin-top: 16px;
 }
 
 @media (max-width: 600px) {
-  .stat {
+  .stats dd {
     font-size: 1.5rem;
   }
 }

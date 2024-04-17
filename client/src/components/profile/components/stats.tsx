@@ -114,20 +114,26 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
     <FullWidthRow>
       <h2 className='text-center'>Stats</h2>
       <Spacer size='small' />
-      <div className='stats-container'>
+      <dl className='stats'>
         <div>
-          <b data-testid='current-streak'>{t('profile.current-streak')}</b>
-          <p className='stat'>{currentStreak || 0}</p>
+          <dt>
+            <b data-testid='current-streak'>{t('profile.current-streak')}</b>
+          </dt>
+          <dd>{currentStreak || 0}</dd>
         </div>
         <div>
-          <b>{t('profile.total-points')}</b>
-          <p className='stat'>{points}</p>
+          <dt>
+            <b>{t('profile.total-points')}</b>
+          </dt>
+          <dd>{points}</dd>
         </div>
         <div>
-          <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
-          <p className='stat'>{longestStreak || 0}</p>
+          <dt>
+            <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
+          </dt>
+          <dd>{longestStreak || 0}</dd>
         </div>
-      </div>
+      </dl>
       <hr />
     </FullWidthRow>
   );
