@@ -498,7 +498,6 @@ ToDo: find out why, and remove the need for it */
   border-right: 1px solid var(--blue70);
   background-color: var(--blue-mid);
   box-shadow: none;
-  animation: progress-bar-stripes 3s linear infinite;
   background-size: 100px 100px;
 }
 
