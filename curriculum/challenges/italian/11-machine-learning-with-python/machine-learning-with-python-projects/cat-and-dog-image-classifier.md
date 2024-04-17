@@ -45,7 +45,7 @@ Ora è il tuo turno! Imposta correttamente ciascuna delle variabili in questa ce
 
 Crea generatori di immagini per ognuno dei tre set di dati di immagini (addestramento, validazione, test). Usa `ImageDataGenerator` per leggere / decodificare le immagini e convertire in tensori a virgola mobile. Usa l'argomento `rescale` (e nessun altro argomento per ora) per riscalare i tensori da valori tra 0 e 255 a valori tra 0 e 1.
 
-Per le variabili `*_data_gen`, usa il metodo `flow_from_directory`. Passa la dimensione del batch, la directory, la dimensione del target (`(IMG_HEIGHT, IMG_WIDTH)`, modo di classe, e qualsiasi altra cosa richiesta. `test_data_gen` sarà la cosa più complicata. Per `test_data_gen`, assicurati di passare `shuffle=False` al metodo `flow_from_directory`. Questo sarà si che le predizioni finali stanno nell'ordine che i nostri test si aspettano. Per `test_data_gen` sarà anche utile osservare la struttura della cartella.
+Per le variabili `*_data_gen`, usa il metodo `flow_from_directory`. Passa la dimensione del batch, la directory, la dimensione del target (`(IMG_HEIGHT, IMG_WIDTH)`, modo di classe, e qualsiasi altra cosa richiesta. `test_data_gen` sarà la cosa più complicata. Per `test_data_gen`, assicurati di passare `shuffle=False` al metodo `flow_from_directory`. This will make sure the final predictions stay in the order that our test expects. Per `test_data_gen` sarà anche utile osservare la struttura della cartella.
 
 
 Dopo che esegui il codice, l'output dovrebbe essere tipo questo:
