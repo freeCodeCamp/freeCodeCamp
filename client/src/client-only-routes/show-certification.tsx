@@ -213,11 +213,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <Loader fullScreen={true} />;
   }
 
-  if (!pending && errored) {
-    return <RedirectHome />;
-  }
-
-  if (!pending && !complete && !errored) {
+  if (errored || !complete) {
     return <RedirectHome />;
   }
 
