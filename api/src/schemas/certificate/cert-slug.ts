@@ -108,10 +108,6 @@ export const certSlug = {
         )
       })
     ]),
-    400: Type.Object({
-      type: Type.Literal('error'),
-      message: Type.String()
-    }),
     404: Type.Object({
       messages: Type.Array(
         Type.Object({
