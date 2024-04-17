@@ -386,8 +386,8 @@
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
     "read-search-ask-checkbox": "<0>Read-Search-Ask (読む - 検索する - 質問する)</0>メソッドを試しました",
     "similar-questions-checkbox": "<0>フォーラムで解決済みの類似質問</0>を探しました",
-    "minimum-characters": "最低 {{characters}} 文字追加してください",
-    "characters-left": "残り {{characters}} 文字",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
     "must-confirm-statements": "フォーラムに投稿する前に、以下を実行したことを確認してください。",
     "min-50-max-500": "50 文字以上、500 文字以下",
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
@@ -804,6 +804,7 @@
     "challenge-submit-too-big": "コードを提出できませんでした。あなたのコードは {{user-size}} バイトですが、提出可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
     "invalid-update-flag": "禁止されたリソースにアクセスしようとしています。正当なリクエストの場合、https://forum.freecodecamp.org でサポートを依頼してください。",
     "generate-exam-error": "試験の準備中にエラーが発生しました。",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "リクエストに Microsoft の成績証明書の URL を含めてください。",
@@ -1005,7 +1006,7 @@
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
     "challenge": "チャレンジの情報:",
     "whats-happening": "状況を説明しましょう:",
-    "describe": "質問内容をここに詳しく記入してください。",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "プロジェクトのリンク",
     "camper-code": "現状のコード",
     "warning": "注意",

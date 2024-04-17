@@ -57,7 +57,7 @@
     "run-test": "Запустити тест (Ctrl + Enter)",
     "check-code": "Перевірити код (Ctrl + Enter)",
     "check-code-2": "Перевірити код",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code-3": "Перевірити код (Command + Enter)",
     "reset": "Скинути",
     "reset-step": "Скинути цей крок",
     "help": "Допомога",
@@ -386,8 +386,8 @@
     "tried-rsa": "Якщо ви вже спробували метод <0>читати-шукати-питати</0>, то ви можете звернутися за допомогою на форум freeCodeCamp.",
     "read-search-ask-checkbox": "Я спробував(-ла) метод <0>читати-шукати-питати</0>",
     "similar-questions-checkbox": "Я шукав(-ла) <0>схожі запитання на форумі, на які вже є відповідь</0>",
-    "minimum-characters": "Додайте мінімум {{characters}} символів",
-    "characters-left": "Залишилось символів: {{characters}}",
+    "minimum-characters": "Будь ласка, додайте більше символів (принаймні {{characters}})",
+    "characters-left": "Скільки символів ще можна додати: {{characters}}",
     "must-confirm-statements": "Підтвердьте наступні твердження, перш ніж опублікувати допис на форумі.",
     "min-50-max-500": "Мінімум 50 символів, максимум 500 символів",
     "rsa": "Читати, шукати, питати",
@@ -804,6 +804,7 @@
     "challenge-submit-too-big": "На жаль, ви не можете надіслати свій код. Скільки байтів займає ваш код: {{user-size}}. Максимальна кількість байтів: {{max-size}}. Будь ласка, зменште свій код і повторіть спробу або попросіть допомоги на https://forum.freecodecamp.org",
     "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом.",
     "generate-exam-error": "Під час спроби створити екзамен виникла помилка.",
+    "cert-not-found": "Сертифікація «{{certSlug}}» не існує.",
     "ms": {
       "transcript": {
         "link-err-1": "Будь ласка, вкажіть посилання на стенограму Microsoft в запиті.",
@@ -1005,7 +1006,7 @@
     "user-agent": "Агент користувача: <code>{{userAgent}}</code>",
     "challenge": "Інформація про завдання:",
     "whats-happening": "Розкажіть нам, що сталося:",
-    "describe": "Детально опишіть свою проблему тут.",
+    "describe": "Детально опишіть свою проблему. Наприклад: \nВ моєму елементі h1 немає початкового тегу. Мій код потрібно перевірити. \nАБО \nМій цикл for виконується нескінченно. Як запобігти цьому?",
     "camper-project": "Посилання на ваші проєкти",
     "camper-code": "Ваш код",
     "warning": "УВАГА",
@@ -1037,9 +1038,9 @@
     "execute-challenge": "Виконати завдання",
     "focus-editor": "Редактор фокусу",
     "focus-instructions-panel": "Панель інструкцій щодо фокусування",
-    "navigate-previous": "Navigate To Previous Exercise",
-    "navigate-next": "Navigate To Next Exercise",
-    "play-scene": "Play Scene"
+    "navigate-previous": "Перейти до попередньої вправи",
+    "navigate-next": "Перейти до наступної вправи",
+    "play-scene": "Відтворити"
   },
   "signout": {
     "heading": "Вийти з облікового запису",
