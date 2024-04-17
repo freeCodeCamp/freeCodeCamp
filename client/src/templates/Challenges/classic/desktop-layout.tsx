@@ -194,6 +194,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
       {(projectBasedChallenge || isMultifileCertProject) && (
         <ActionRow
+          hasPreview={hasPreview}
           hasNotes={hasNotes}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
