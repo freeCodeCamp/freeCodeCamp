@@ -20,19 +20,19 @@ const div = $('div')[0];
 assert(div.id === 'menu');
 ```
 
-You should have a closing `</div>` tag.
+你应该有一个 `</div>` 结束标签。
 
 ```js
 assert(code.match(/<\/div>/i));
 ```
 
-You should not change your existing `body` element. Make sure you did not delete the closing tag.
+你不应该改变你现有的 `body`元素。 确保你没有删除结束标签。
 
 ```js
 assert($('body').length === 1);
 ```
 
-Your `div` tag should be nested in the `body`.
+你的 `div` 元素应该嵌套在你的 `body` 元素中。
 
 ```js
 const div = $('div')[0];
