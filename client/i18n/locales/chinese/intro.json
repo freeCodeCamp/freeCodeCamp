@@ -439,10 +439,10 @@
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "通过建立fCC论坛排行榜学习异步编程。",
+        "title": "通过创建 fCC 论坛排行榜学习异步编程",
         "intro": [
-          "JavaScript 是一种异步编程语言。这个项目将帮助您掌握异步概念。您将编译自己的免费CodeCamp论坛排行榜。",
-          "该项目将包括Fetch API、promises、Async/Await 和try..catch 声明。"
+          "JavaScript 是一种异步编程语言。这个项目将帮助你掌握异步概念。你将编写自己的 freeCodeCamp 论坛排行榜。",
+          "该项目将包括 Fetch API、promises、Async/Await 和 try..catch 语句。"
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
@@ -1187,8 +1187,8 @@
         "intro": ["在 JavaScript 中学习数据类型和条件"]
       },
       "top-learn-function-basics": {
-        "title": "Learn Function Basics",
-        "intro": ["Learn about functions in JavaScript."]
+        "title": "学习函数基础",
+        "intro": ["学习 JavaScript 中的函数。"]
       }
     }
   },
