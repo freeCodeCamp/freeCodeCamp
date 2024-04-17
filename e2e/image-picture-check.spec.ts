@@ -23,7 +23,7 @@ test.describe('Picture input field', () => {
       'https://s3.amazonaws.com/freecodecamp/camper-image'
     );
     await expect(
-      page.locator('text=URL must link directly to an image file')
+      page.getByText('URL must link directly to an image file')
     ).toBeVisible();
   });
 
@@ -34,8 +34,8 @@ test.describe('Picture input field', () => {
       'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
     );
 
-    await page.waitForTimeout(500);
-    const saveButton = page.locator('#camper-identity button:has-text("Save")');
+    const form = page.getByTestId('camper-identity');
+    const saveButton = form.getByRole('button', { name: 'Save' });
     await expect(saveButton).toBeEnabled();
   });
 });
