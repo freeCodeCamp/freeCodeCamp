@@ -9,7 +9,7 @@ dashedName: task-86
 
 # --description--
 
-In this exercise, you will explore the phrase `pique one's interest`. This phrase means to stimulate or arouse someone's curiosity or interest in something. It's often used when something catches your attention and makes you want to learn more about it. Alongside this phrase, you will fill in the blanks with familiar words that you've already learned.
+In this exercise, you will explore the phrase `pique one's interest`. This phrase means to stimulate or arouse someone's curiosity or interest in something. Es wird oft verwendet, wenn etwas deine Aufmerksamkeit erregt und du mehr darüber lernen möchtest. Neben dieser Phrase, wirst du die Lehrzeichen mit vertrauten Wörtern ausfüllen, die du bereits gelernt hast.
 
 # --fillInTheBlank--
 
@@ -23,7 +23,7 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 ### --Feedback--
 
-This word refers to the action of participating in or completing a course.
+Dieses Wort bezieht sich auf die Teilnahme an einem Kurs oder der Beendigung eines Kurses.
 
 ---
 
@@ -31,7 +31,7 @@ This word refers to the action of participating in or completing a course.
 
 ### --Feedback--
 
-This word describes the study of the mind and behavior, particularly in a workplace setting in this context.
+Dieses Wort beschreibt in diesem Kontext die Untersuchung des Geistes und des Verhaltens, insbesondere an einem Arbeitsplatz.
 
 ---
 
@@ -39,7 +39,7 @@ This word describes the study of the mind and behavior, particularly in a workpl
 
 ### --feedback--
 
-This word means to arouse or stimulate interest or curiosity. You should correctly use its simple past tense.
+Dieses Wort bedeutet, Interesse oder Neugierde zu wecken oder zu stimulieren. Du solltest die korrekte einfache Vergangenheitsform verwenden.
 
 # --scene--
 

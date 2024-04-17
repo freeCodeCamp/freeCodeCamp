@@ -13,12 +13,14 @@ import {
 
 interface Options {
   stepNum: number;
+  challengeType: number;
   projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
 }
 
 const createStepFile = ({
   stepNum,
+  challengeType,
   projectPath = getProjectPath(),
   challengeSeeds = {}
 }: Options): ObjectID => {
@@ -27,7 +29,8 @@ const createStepFile = ({
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
-    stepNum
+    stepNum,
+    challengeType
   });
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string

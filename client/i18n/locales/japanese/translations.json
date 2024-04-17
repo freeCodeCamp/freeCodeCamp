@@ -57,6 +57,7 @@
     "run-test": "テスト実行 (Ctrl + Enter)",
     "check-code": "コードをチェック (Ctrl + Enter)",
     "check-code-2": "コードをチェック",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "リセット",
     "reset-step": "ステップをリセット",
     "help": "ヘルプ",
@@ -123,8 +124,8 @@
         "testimony": "「私はいつも JavaScript を学ぶことに躓いていました。たくさんのコースを受講しましたが、freeCodeCamp に一番のめり込みました。JavaScript だけでなくデータ構造とアルゴリズムも学べることで、ソフトウェアエンジニアとして Spotify という夢の仕事を得るために必要な自信と<strong>スキルを freeCodeCamp は私に与えてくれました</strong>」"
       }
     },
-    "certification-heading": "以下の検証済み認定証を無料で取得できます。",
-    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証済み認定証を無料で取得:",
+    "certification-heading": "以下の検証済認定証を無料で取得できます。",
+    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証済認定証を無料で取得:",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
     "professional-certs-heading": "プロフェッショナル認定証を無料で取得:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
@@ -142,7 +143,7 @@
         "question": "freeCodeCamp ではどのようにしてプログラミングを学べますか？",
         "answer": [
           "ブラウザ、コードエディター、モバイルアプリなどからすぐに使える環境で、段階的に、たくさんのプロジェクトを作成しながら学習します。",
-          "また、無料で検証済み認定証を取得できます。"
+          "また、無料で検証済認定証を取得できます。"
         ]
       },
       {
@@ -176,7 +177,7 @@
         ]
       },
       {
-        "question": "無料の検証済み認定証はどうすれば取得できますか？",
+        "question": "無料の検証済認定証はどうすれば取得できますか？",
         "answer": [
           "認定証を取得するには、それぞれ 5 つある認定プロジェクトを完成させ、すべてのテストを成功させる必要があります。"
         ]
@@ -277,7 +278,7 @@
       "weekly": "Quincy からのメールを毎週受け取る"
     },
     "honesty": {
-      "p1": "検証済み認定証を取得する前に、以下の学問的誠実性誓約に同意する必要があります:",
+      "p1": "検証済認定証を取得する前に、以下の学問的誠実性誓約に同意する必要があります:",
       "p2": "「私は、盗作とは他人の作品をコピーして、原作者を明示することなくまるで自分の作品であるかのように提示することであると理解しています。」",
       "p3": "「私は、盗作は知的不正行為であり、発覚した場合、通常は退学または退職などの処分となり得る行為であると理解しています。」",
       "p4": "「jQuery や Bootstrap などのオープンソースライブラリの使用や、オリジナルの作者を明示した短いコードスニペットの使用を除き、私のプロジェクトのコードの 100% は私が書いたもの、または、リアルタイムでペアプログラミングを行った他の freeCodeCamp のカリキュラム受講者とともに書かれたものです。」",
@@ -385,8 +386,8 @@
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
     "read-search-ask-checkbox": "<0>Read-Search-Ask (読む - 検索する - 質問する)</0>メソッドを試しました",
     "similar-questions-checkbox": "<0>フォーラムで解決済みの類似質問</0>を探しました",
-    "minimum-characters": "最低 {{characters}} 文字追加してください",
-    "characters-left": "残り {{characters}} 文字",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
     "must-confirm-statements": "フォーラムに投稿する前に、以下を実行したことを確認してください。",
     "min-50-max-500": "50 文字以上、500 文字以下",
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
@@ -727,7 +728,9 @@
     "task": "タスク",
     "dialogues-and-tasks-for": "「{{blockTitle}}」のダイアログとタスク",
     "code-example": "{{codeName}} のコード例",
-    "opens-new-window": "新しいウィンドウで開く"
+    "opens-new-window": "新しいウィンドウで開く",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -801,6 +804,7 @@
     "challenge-submit-too-big": "コードを提出できませんでした。あなたのコードは {{user-size}} バイトですが、提出可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
     "invalid-update-flag": "禁止されたリソースにアクセスしようとしています。正当なリクエストの場合、https://forum.freecodecamp.org でサポートを依頼してください。",
     "generate-exam-error": "試験の準備中にエラーが発生しました。",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "リクエストに Microsoft の成績証明書の URL を含めてください。",
@@ -1002,7 +1006,7 @@
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
     "challenge": "チャレンジの情報:",
     "whats-happening": "状況を説明しましょう:",
-    "describe": "質問内容をここに詳しく記入してください。",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "プロジェクトのリンク",
     "camper-code": "現状のコード",
     "warning": "注意",
@@ -1034,8 +1038,9 @@
     "execute-challenge": "チャレンジを実行",
     "focus-editor": "エディターにフォーカス",
     "focus-instructions-panel": "手順書パネルにフォーカス",
-    "navigate-previous": "前の課題へ移動",
-    "navigate-next": "次の課題へ移動"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "アカウントからサインアウト",
