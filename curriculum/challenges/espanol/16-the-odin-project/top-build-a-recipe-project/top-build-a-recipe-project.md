@@ -24,7 +24,7 @@ El sitio web constará de una página de índice principal que tendrá enlaces a
 1. Deberías ver una lista ordenada con algunos de los pasos necesarios para completar la receta.
 1. Under the steps there should be an `h2` element with the text `More Recipes`.
 1. Deberías ver algunos enlaces a otras recetas, dentro de una lista desordenada que con elementos anchor dentro de los elementos de lista.
-1. These anchor elements should have `href` attribute with the value set to `#`.
+1. These anchor elements should have an `href` attribute with the value set to `#`.
 
 # --hints--
 
@@ -34,7 +34,7 @@ Deberías tener una etiqueta `DOCTYPE`.
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-Deberías tener un elemento `html` con los elementos `head` y `body`.
+You should have an `html` element with `head` and `body` element.
 
 ```js
 const html = document.querySelectorAll('html')[0];
@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-You should have a `<ol>` with the steps as the list items `<li>`.
+You should have an `<ol>` with the steps as the list items `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -137,7 +137,7 @@ const containsAnchors =  [...listItems].every(function(listItem) {
 assert(unorderedList && allAreListItems && containsAnchors && listItems.length > 1);
 ```
 
-Your anchor tags linking to the recipes should have a `href` attribute with the value set to `#`
+Your anchor tags linking to the recipes should have an `href` attribute with the value set to `#`.
 
 ```js
 const anchorTags = document.querySelectorAll("a");

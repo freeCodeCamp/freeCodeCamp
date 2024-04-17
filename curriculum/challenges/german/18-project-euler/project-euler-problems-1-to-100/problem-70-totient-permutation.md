@@ -1,6 +1,6 @@
 ---
 id: 5900f3b21000cf542c50fec5
-title: 'Problem 70: Totient permutation'
+title: 'Problem 70: Totient-Permutation'
 challengeType: 1
 forumTopicId: 302183
 dashedName: problem-70-totient-permutation
@@ -8,39 +8,39 @@ dashedName: problem-70-totient-permutation
 
 # --description--
 
-Euler's Totient function, ${\phi}(n)$ (sometimes called the phi function), is used to determine the number of positive numbers less than or equal to `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, ${\phi}(9) = 6$. The number 1 is considered to be relatively prime to every positive number, so ${\phi}(1) = 1$.
+Die Eulersche Totient-Funktion, ${\phi}(n)$ (manchmal Phi-Funktion genannt), wird genutzt, um die Anzahl der positiven Zahlen kleiner oder gleich `n` zu bestimmen, die relativ prim zu `n` sind. Da zum Beispiel 1, 2, 4, 5, 7 und 8 alle kleiner als neun und relativ prim zu neun sind, ist ${\phi}(9) = 6$. Die Zahl 1 gilt als relativ prim für jede positive Zahl, also ${\phi}(1) = 1$.
 
-Interestingly, ${\phi}(87109) = 79180$, and it can be seen that 87109 is a permutation of 79180.
+Interessanterweise ist ${\phi}(87109) = 79180$ und man kann sehen, dass 87109 eine Permutation von 79180 ist.
 
-Find the value of `n`, 1 &lt; `n` &lt; `limit`, for which ${\phi}(n)$ is a permutation of `n` and the ratio $\displaystyle\frac{n}{{\phi}(n)}$ produces a minimum.
+Finde den Wert von `n`, 1 &lt; `n` &lt; `limit`, für das ${\phi}(n)$ eine Permutation von `n` ist und das Verhältnis $\displaystyle\frac{n}{{\phi}(n)}$ ein Minimum erzeugt.
 
 # --hints--
 
-`totientPermutation(10000)` should return a number.
+`totientPermutation(10000)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof totientPermutation(10000) === 'number');
 ```
 
-`totientPermutation(10000)` should return `4435`.
+`totientPermutation(10000)` sollte `4435` zurückgeben.
 
 ```js
 assert.strictEqual(totientPermutation(10000), 4435);
 ```
 
-`totientPermutation(100000)` should return `75841`.
+`totientPermutation(100000)` sollte `75841` zurückgeben.
 
 ```js
 assert.strictEqual(totientPermutation(100000), 75841);
 ```
 
-`totientPermutation(500000)` should return `474883`.
+`totientPermutation(500000)` sollte `474883` zurückgeben.
 
 ```js
 assert.strictEqual(totientPermutation(500000), 474883);
 ```
 
-`totientPermutation(10000000)` should return `8319823`.
+`totientPermutation(10000000)` sollte `8319823` zurückgeben.
 
 ```js
 assert.strictEqual(totientPermutation(10000000), 8319823);

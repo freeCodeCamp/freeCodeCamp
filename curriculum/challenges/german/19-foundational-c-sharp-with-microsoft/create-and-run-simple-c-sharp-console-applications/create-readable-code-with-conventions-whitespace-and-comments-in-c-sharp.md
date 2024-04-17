@@ -1,20 +1,20 @@
 ---
 id: 647e21df8acb466c97ccbee9
-title: 'Create Readable Code with Conventions, Whitespace, and Comments in C#'
+title: 'Erstellen von lesbarem Code mit Konventionen, Leerzeichen und Kommentaren in C#'
 challengeType: 19
 dashedName: create-readable-code-with-conventions-whitespace-and-comments-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-readable-code/</a> and complete all the tasks for the "Create Readable Code with Conventions, Whitespace, and Comments in C#" module. This is **required** to earn the "Create and Run Simple C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-readable-code/</a> und löse alle Aufgaben für das Modul "Erstellen von lesbarem Code mit Konventionen, Leerzeichen und Kommentaren in C#". Dies ist **erforderlich**, um die "Create und Run Simple C# Console Applicaions"-Trophäe auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">Create Readable Code with Conventions, Whitespace, and Comments in C#</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/csharp-readable-code/" target="_blank" rel="noreferrer">Erstellen von lesbarem Code mit Konventionen, Leerzeichen und Kommentaren in C#</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
@@ -24,15 +24,15 @@ Which of the following is a bad reason to use a code comment?
 
 ## --answers--
 
-To describe the high-level intent of the code.
+Um die High-Level-Absicht des Codes zu beschreiben.
 
 ---
 
-To temporarily comment out a line of code while evaluating a feature in a different way.
+Um eine Codezeile vorübergehend auszukommentieren, während ein Merkmal auf eine andere Weise bewertet wird.
 
 ---
 
-To explain how a new C# keyword works.
+Um zu erklären, wie ein neues C#-Schlüsselwort funktioniert.
 
 ## --video-solution--
 

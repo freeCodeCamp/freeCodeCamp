@@ -1,11 +1,8 @@
-import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { Button, FormControl } from '@freecodecamp/ui';
 import React, { useMemo, useState, useRef, useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
+import { Button, FormControl, Modal } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
 import { Spacer } from '../../../components/helpers';
@@ -37,9 +34,11 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const generateSearchLink = (title: string, block: string) => {
-  const query = /^step\s*\d*$/i.test(title)
-    ? encodeURIComponent(`${block} - ${title}`)
+export const generateSearchLink = (title: string, block: string) => {
+  const blockWithoutHyphens = block.replace(/-/g, ' ');
+
+  const query = /^(step|task)\s*\d*$/i.test(title)
+    ? encodeURIComponent(`${blockWithoutHyphens} - ${title}`)
     : encodeURIComponent(title);
   const search = `${forumLocation}/search?q=${query}`;
   return search;
@@ -47,34 +46,45 @@ const generateSearchLink = (title: string, block: string) => {
 
 interface CheckboxProps {
   name: string;
-  i18nkey: string;
+  i18nKey: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: boolean;
   href: string;
+  label: string;
 }
 
-function Checkbox({ name, i18nkey, onChange, value, href }: CheckboxProps) {
+function Checkbox({
+  name,
+  i18nKey,
+  onChange,
+  value,
+  href,
+  label
+}: CheckboxProps) {
   const { t } = useTranslation();
 
   return (
-    <div className='checkbox'>
-      <label>
-        <input
-          name={name}
-          type='checkbox'
-          onChange={onChange}
-          checked={value}
-          required
-        />
-        <span className='checkbox-text'>
-          <Trans i18nKey={i18nkey}>
-            <a href={href} rel='noopener noreferrer' target='_blank'>
-              placeholder
-              <span className='sr-only'>{t('aria.opens-new-window')}</span>
-            </a>
-          </Trans>
-        </span>
-      </label>
+    <div className='checkbox-container'>
+      <input
+        id={name}
+        name={name}
+        type='checkbox'
+        onChange={onChange}
+        checked={value}
+        required
+        // Instead of reusing the `i18nKey`, use a plain text version for label
+        // as input label should not contain interactive elements
+        aria-label={t(label)}
+      />
+
+      <span>
+        <Trans i18nKey={i18nKey}>
+          <a href={href} rel='noopener noreferrer' target='_blank'>
+            placeholder
+            <span className='sr-only'>{t('aria.opens-new-window')}</span>
+          </a>
+        </Trans>
+      </span>
     </div>
   );
 }
@@ -138,22 +148,11 @@ function HelpModal({
     callGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
-    <Modal
-      dialogClassName='help-modal'
-      onHide={handleClose}
-      show={isOpen}
-      aria-labelledby='ask-for-help-modal'
-    >
-      <Modal.Header
-        className='help-modal-header fcc-modal'
-        closeButton={true}
-        closeLabel={t('buttons.close')}
-      >
-        <Modal.Title id='ask-for-help-modal' className='text-center'>
-          {t('buttons.ask-for-help')}
-        </Modal.Title>
+    <Modal onClose={handleClose} open={!!isOpen}>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('buttons.ask-for-help')}
       </Modal.Header>
-      <Modal.Body className='text-center'>
+      <Modal.Body>
         {showHelpForm ? (
           <form onSubmit={handleSubmit} ref={formRef}>
             <fieldset>
@@ -163,7 +162,8 @@ function HelpModal({
 
               <Checkbox
                 name='read-search-ask-checkbox'
-                i18nkey='learn.read-search-ask-checkbox'
+                i18nKey='learn.read-search-ask-checkbox'
+                label='aria.rsa-checkbox'
                 onChange={event => setReadSearchCheckbox(event.target.checked)}
                 value={readSearchCheckbox}
                 href={RSA}
@@ -173,7 +173,8 @@ function HelpModal({
 
               <Checkbox
                 name='similar-questions-checkbox'
-                i18nkey='learn.similar-questions-checkbox'
+                i18nKey='learn.similar-questions-checkbox'
+                label='aria.similar-questions-checkbox'
                 onChange={event =>
                   setSimilarQuestionsCheckbox(event.target.checked)
                 }
@@ -198,6 +199,7 @@ function HelpModal({
               componentClass='textarea'
               rows={5}
               value={description}
+              placeholder={t('forum-help.describe')}
               minLength={DESCRIPTION_MIN_CHARS}
               maxLength={DESCRIPTION_MAX_CHARS}
               required
@@ -242,27 +244,28 @@ function HelpModal({
           </form>
         ) : (
           <>
-            <p>
-              <Trans i18nKey='learn.tried-rsa'>
-                <a href={RSA} rel='noopener noreferrer' target='_blank'>
-                  placeholder
-                </a>
-              </Trans>
-            </p>
-            <div className='alert alert-danger'>
-              <FontAwesomeIcon icon={faExclamationCircle} />
-              <p>
-                <Trans i18nKey='learn.rsa-forum'>
-                  <a
-                    href={generateSearchLink(challengeTitle, challengeBlock)}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
+            <div className='alert'>
+              <div className='help-text-warning'>
+                <p>
+                  <Trans i18nKey='learn.tried-rsa'>
+                    <a href={RSA} rel='noopener noreferrer' target='_blank'>
+                      placeholder
+                    </a>
+                  </Trans>
+                </p>
+                <p>
+                  <Trans i18nKey='learn.rsa-forum'>
+                    <a
+                      href={generateSearchLink(challengeTitle, challengeBlock)}
+                      rel='noopener noreferrer'
+                      target='_blank'
+                    >
+                      placeholder
+                    </a>
                     placeholder
-                  </a>
-                  placeholder
-                </Trans>
-              </p>
+                  </Trans>
+                </p>
+              </div>
             </div>
 
             <Button

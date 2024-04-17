@@ -19,7 +19,7 @@ Crea una clase CSS adicional llamada `blue-text` que asigne a un elemento el col
 
 Aplica la clase `blue-text` a tu elemento `h1` además de tu clase `pink-text`, y veamos cuál de las dos gana.
 
-Para aplicar múltiples atributos de clase a un elemento HTML debes dejar un espacio entre ellos, como se muestra a continuación:
+La aplicación de múltiples atributos de clase a un elemento HTML se realiza con un espacio entre ellos de la siguiente manera:
 
 ```html
 class="class1 class2"

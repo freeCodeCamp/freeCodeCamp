@@ -10,29 +10,29 @@ Second Candidate: I have a master's degree in computer science. -->
 
 # --description--
 
-In English, the noun suffixed with `'s` followed by a second noun structure is used to show possession or belonging. If the first noun is singular, as in `Sarah's laptop`, it indicates that the laptop belongs to Sarah. However, if the first noun is plural, the structure changes to noun suffixed with `'`, as in `teachers' office`, indicating an office for teachers.
+In English, the noun suffixed with `'s` followed by a second noun structure is used to show possession or belonging. Wenn das erste Substantiv Singular ist, wie in `Sarah's laptop`, bedeutet das, dass der Laptop Sarah gehört. However, if the first noun is plural, the structure changes to noun suffixed with `'`, as in `teachers' office`, indicating an office for teachers.
 
 # --question--
 
 ## --text--
 
-What does `master's degree` in the context of the dialogue refer to?
+Worauf bezieht sich `master's degree` im Kontext des Dialogs?
 
 ## --answers--
 
-A degree for school teachers
+Ein Abschluss für Lehrer
 
 ### --Feedback--
 
-`Master's degree` refers to an advanced academic degree, not specifically for teachers.
+`Master's degree` bezieht sich auf einen fortgeschrittenen akademischen Abschluss, nicht speziell für Lehrer.
 
 ---
 
-A primary level educational degree
+Ein Bildungsabschluss der Grundstufe
 
 ### --Feedback--
 
-`Master's degree` is a higher education qualification, beyond the primary level.
+`Master's degree` ist ein höherer Bildungsabschluss, der über die Grundstufe hinausgeht.
 
 ---
 
@@ -40,11 +40,11 @@ A degree in mastering skills
 
 ### --feedback--
 
-While it implies expertise, `master's degree` specifically refers to an academic qualification.
+Während es Fachwissen impliziert, bezieht sich `master's degree` spezifisch auf einen akademischen Abschluss.
 
 ---
 
-An advanced academic degree
+Einen erweiterten akademischen Abschluss
 
 ## --video-solution--
 

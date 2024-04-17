@@ -1,38 +1,38 @@
 ---
 id: 647e23248acb466c97ccbefb
-title: 'Convert Data Types Using Casting and Conversion Techniques in C#'
+title: 'Konvertieren von Datentypen mit Casting und Konvertierungstechniken in C#'
 challengeType: 19
 dashedName: convert-data-types-using-casting-and-conversion-techniques-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-convert-cast/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-convert-cast/</a> and complete all the tasks for the "Convert Data Types Using Casting and Conversion Techniques in C#" module. This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/csharp-convert-cast/" target="_blank" rel="noreferrer">href="https://learn.microsoft.com/training/modules/csharp-convert-cast/</a> und löse alle Aufgaben für das Modul "Konvertieren von Datentypen mit Casting und Konvertierungstechniken in C#". This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
-# --assignment--
+# --Auftrag--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-convert-cast/" target="_blank" rel="noreferrer">Convert Data Types Using Casting and Conversion Techniques in C#</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/csharp-convert-cast/" target="_blank" rel="noreferrer">Konvertieren von Datentypen mit Casting und Konvertierungstechniken in C#</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-What type of action is being performed when changing a `float` into an `int`?
+Welche Art von Aktion wird ausgeführt, wenn ein `float` in eine `int` geändert wird?
 
 ## --answers--
 
-A narrowing conversion.
+Eine einengende Konvertierung.
 
 ---
 
-A widening conversion.
+Eine Erweiterung der Konvertierung.
 
 ---
 
-An illegal conversion.
+Eine illegale Umwandlung.
 
 ## --video-solution--
 

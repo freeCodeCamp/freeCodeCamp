@@ -1,6 +1,7 @@
-import { Alert } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Alert } from '@freecodecamp/ui';
+
 import Spacer from '../../../../components/helpers/spacer';
 import { PrerequisiteChallenge } from '../../../../redux/prop-types';
 
@@ -14,7 +15,7 @@ function MissingPrerequisites({
   const { t } = useTranslation();
 
   return (
-    <Alert data-cy='missing-prerequisites-alert' bsStyle='danger'>
+    <Alert variant='danger'>
       <p>{t('learn.exam.not-qualified')}</p>
       <Spacer size='small' />
       <ul>
