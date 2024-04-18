@@ -5,14 +5,32 @@ interface RibbonProps {
 }
 
 export const Arrow = () => (
-  <svg
-    className='arrow'
-    width='30'
-    height='30'
-    viewBox='0 0 50 50'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path d='M25 50L0 0H50z' fill='black' transform='rotate(180deg)' />
+  <svg width={100} height={40} xmlns='http://www.w3.org/2000/svg'>
+    <line
+      x1={50}
+      y1={0}
+      x2={50}
+      y2={35}
+      stroke='black'
+      strokeWidth={3}
+      strokeDasharray='6,1.3'
+    />
+    <rect
+      x={37}
+      y={35}
+      width={15}
+      height={3}
+      fill='black'
+      transform='rotate(45, 50, 36)'
+    />
+    <rect
+      x={48}
+      y={35}
+      width={15}
+      height={3}
+      fill='black'
+      transform='rotate(-45, 50, 36)'
+    />
   </svg>
 );
 
