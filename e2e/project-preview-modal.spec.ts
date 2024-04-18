@@ -59,3 +59,27 @@ test.describe('Exit Project Preview Modal E2E Test Suite', () => {
     await expect(dialog).not.toBeVisible();
   });
 });
+
+test.describe('Project Preview Modal Conditional Rendering', () => {
+  test('Does not render on second step of a project', async ({ page }) => {
+    await page.goto(
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    );
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).toHaveCount(0);
+  });
+
+  test('Does not render on first step of a project without a preview', async ({
+    page
+  }) => {
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures-v8/learn-introductory-javascript-by-building-a-pyramid-generator/step-1'
+    );
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).toHaveCount(0);
+  });
+});

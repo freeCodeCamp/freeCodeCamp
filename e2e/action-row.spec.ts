@@ -125,3 +125,13 @@ test('Clicking Preview Portal button opens the preview in a new tab', async ({
 
   await newPage.close();
 });
+
+test('Preview Buttons should not appear when preview is disabled', async ({
+  page
+}) => {
+  await page.goto(
+    '/learn/javascript-algorithms-and-data-structures-v8/learn-introductory-javascript-by-building-a-pyramid-generator/step-1'
+  );
+  const previewButton = page.getByTestId('preview-pane-button');
+  await expect(previewButton).toHaveCount(0);
+});
