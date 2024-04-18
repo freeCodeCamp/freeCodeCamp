@@ -108,29 +108,46 @@ export const createValidatorErrorHandler =
     return next();
   };
 
+const allowedDomains = ['codewars-tracker-be.herokuapp.com'];
+
 export async function ifValidWebhookURL(req, res, next) {
-  const standardErrorMessage = {
-    type: 'danger',
-    message: 'flash.wrong-updating'
-  };
   const {
     user: { username },
     body: { webhook, webhookSecret }
   } = req;
 
+  if (!isURL(webhook, { require_protocol: true, protocols: ['https'] })) {
+    return res.status(400).json({
+      type: 'danger',
+      message: 'flash.webhook-invalid'
+    });
+  }
+
+  const webhookUrl = new URL(webhook);
+  const isDomainAllowed = allowedDomains.some(domain => {
+    return webhookUrl.hostname === domain;
+  });
+
+  if (!isDomainAllowed) {
+    return res.status(403).json({
+      type: 'danger',
+      message: 'flash.webhook-not-allowed'
+    });
+  }
+
   try {
-    if (!isURL(webhook, { require_protocol: true, protocols: ['https'] })) {
-      throw new Error('Invalid URL');
-    }
     await triggerWebhook(webhook, webhookSecret, username);
     next();
   } catch (error) {
-    standardErrorMessage.message = error.message;
-    return res.status(500).json(standardErrorMessage);
+    return res.status(400).json({
+      type: 'danger',
+      message: 'flash.webhook-validation-failed',
+      technicalMessage: error.message
+    });
   }
 }
 
-const triggerWebhook = async (url, secret, username) => {
+async function triggerWebhook(url, secret, username) {
   const response = await fetch(url, {
     method: 'POST',
     body: JSON.stringify({
@@ -143,4 +160,4 @@ const triggerWebhook = async (url, secret, username) => {
   if (!response.ok) {
     throw new Error('There was an error sending data to the provided URL.');
   }
-};
+}

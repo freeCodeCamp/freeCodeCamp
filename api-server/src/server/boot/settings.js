@@ -347,6 +347,7 @@ function updateMyQuincyEmail(...args) {
 
 function updateMyWebhook(...args) {
   const buildUpdate = body => _.pick(body, ['webhook', 'webhookSecret']);
+  // TODO: Currently, this check is run twice. First time in the middleware.
   const validate = ({ webhook }) =>
     isURL(webhook, { require_protocol: true, protocols: ['https'] });
   createUpdateUserProperties(

@@ -280,9 +280,9 @@
     "webhook": {
       "heading": "Webhook Settings",
       "secret": "Secret",
-      "new": "Payload url",
       "url": "URL",
-      "current": "Current Webhook"
+      "beta": "This feature is in beta, and is expected to change. Currently, the data sent will include your username, the completed challenge, and the total number of points you have, regardless of your privacy settings.",
+      "domains": "<0>Currently, only the following domains are allowed:</0> <1>{{domains}}</1>"
     },
     "honesty": {
       "p1": "Before you can claim a verified certification, you must accept our Academic Honesty Pledge, which reads:",
@@ -813,6 +813,9 @@
     "generate-exam-error": "An error occurred trying to generate your exam.",
     "webhook-updated": "Your webhook has been updated.",
     "webhook-removed": "Your webhook has been removed.",
+    "webhook-invalid": "The URL used for your webhook is not valid",
+    "webhook-not-allowed": "The domain used for your webhook is not allowed",
+    "webhook-validation-failed": "The requested resource did not appropriately respond",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {

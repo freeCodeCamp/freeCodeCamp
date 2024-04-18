@@ -432,8 +432,8 @@ export async function modernChallengeCompleted(req, res, next) {
       return next(err);
     }
 
+    // Webhook URL, if exists, is guaranteed to be a valid URL
     if (user.webhook) {
-      // emit webhook here
       fetch(user.webhook, {
         method: 'POST',
         body: JSON.stringify({
@@ -442,6 +442,7 @@ export async function modernChallengeCompleted(req, res, next) {
           points
         }),
         headers: { 'Content-Type': 'application/json' }
+        // Any errors are caught to prevent failed response
       }).catch(() => {});
     }
 

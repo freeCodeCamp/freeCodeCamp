@@ -40,8 +40,6 @@ export const publicUserProps = [
   'savedChallenges',
   'twitter',
   'username',
-  'webhook',
-  'webhookSecret',
   'website',
   'yearsTopContributor'
 ];
