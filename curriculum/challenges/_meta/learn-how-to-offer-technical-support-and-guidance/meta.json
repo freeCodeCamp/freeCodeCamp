@@ -10,8 +10,56 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655cd641cf05ad9560af2fbf",
-      "title": "Dialogue: Placeholder"
+      "id": "661f629b4c12b93b615653be",
+      "title": "Dialogue 1: A code review session"
+    },
+    {
+      "id": "661f62dcabe3153bebf1f72a",
+      "title": "Task 1"
+    },
+    {
+      "id": "661f8dd25cb5063e427337c9",
+      "title": "Task 2"
+    },
+    {
+      "id": "661f8cea1f72013d96065104",
+      "title": "Task 3"
+    },
+    {
+      "id": "661f906d5019b63f27af438c",
+      "title": "Task 4"
+    },
+    {
+      "id": "661f9142b11c393fa2e77593",
+      "title": "Task 5"
+    },
+    {
+      "id": "661f92163598134025d84a8e",
+      "title": "Task 6"
+    },
+    {
+      "id": "661f92a4f77e0740906355cb",
+      "title": "Task 7"
+    },
+    {
+      "id": "661f92f280d7f340dcfc56ca",
+      "title": "Task 8"
+    },
+    {
+      "id": "661f94a82f94a341819c0c9c",
+      "title": "Task 9"
+    },
+    {
+      "id": "6620829558e03f4653f58deb",
+      "title": "Task 10"
+    },
+    {
+      "id": "6620836572e36e46d688c04c",
+      "title": "Task 11"
+    },
+    {
+      "id": "66209f7a6550cf489ba9a9cd",
+      "title": "Task 12"
     }
   ],
   "helpCategory": "English"
