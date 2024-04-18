@@ -158,7 +158,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const { completedChallenge, showCode, projectTitle } = solutionState;
   const examResults = completedChallenge?.examResults;
 
-  const getCertHanding = (certName: string) => {
+  const getCertHeading = (certName: string) => {
     if (certName == 'Legacy Full Stack') {
       return 'certification.project.heading-legacy-full-stack';
     } else if (certName == 'Foundational C# with Microsoft') {
@@ -186,7 +186,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   return (
     <div data-cy='solution-widget' data-playwright-test-label='project-links'>
-      {t(getCertHanding(certName), { user: name })}
+      {t(getCertHeading(certName), { user: name })}
       <Spacer size='medium' />
       <Table striped>
         <thead>
