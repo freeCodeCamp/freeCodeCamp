@@ -234,6 +234,8 @@ function ShowClassic({
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  const showConsole =
+    block === 'learn-introductory-javascript-by-building-a-pyramid-generator';
   // TODO: show preview should NOT be computed like this. That determination is
   // made during the build (at least twice!). It should be either a prop or
   // computed from challengeType
@@ -243,7 +245,7 @@ function ShowClassic({
       challengeType === challengeTypes.multifileCertProject ||
       challengeType === challengeTypes.multifilePythonCertProject ||
       challengeType === challengeTypes.python) &&
-    block !== 'learn-introductory-javascript-by-building-a-pyramid-generator';
+    !showConsole;
 
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
@@ -503,6 +505,7 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             windowTitle={windowTitle}
+            startWithConsoleShown={showConsole}
           />
         )}
         <CompletionModal />
