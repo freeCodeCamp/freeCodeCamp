@@ -1,32 +1,32 @@
 ---
 id: 647e224b8acb466c97ccbeef
-title: 'Create C# Methods with Parameters'
+title: 'Erstelle C#-Methoden mit Parametern'
 challengeType: 19
 dashedName: create-c-sharp-methods-with-parameters
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/</a> and complete all the tasks for the "Create C# Methods with Parameters" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe zu <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/</a> und löse alle Aufgaben für das Modul "Erstellen von C#-Methoden mit Parametern". Dies ist **erforderlich**, um die Trophäe "Create Methods in C# Console Applications" auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">Create C# Methods with Parameters</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/" target="_blank" rel="noreferrer">Erstellen von C#-Methoden mit Parametern</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-Given the method signature,
+Angesichts der Methodensignatur,
 
 ```clike
 void Print(string name, string number = "", bool member = false)
 ```
 
-Which of the following options correctly uses named and optional arguments?
+Welche der folgenden Optionen verwendet korrekt benannte und optionale Argumente?
 
 ## --answers--
 

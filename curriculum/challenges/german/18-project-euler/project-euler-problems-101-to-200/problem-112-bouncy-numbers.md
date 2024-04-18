@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50feef
-title: 'Problem 112: Bouncy numbers'
+title: 'Problem 112: "Bouncy Zahlen"'
 challengeType: 1
 forumTopicId: 301738
 dashedName: problem-112-bouncy-numbers
@@ -8,21 +8,21 @@ dashedName: problem-112-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+Wenn man von links nach rechts arbeitet und keine Ziffer durch die Ziffer links davon übertroffen wird, spricht man von einer aufsteigenden Zahl, zum Beispiel 134468.
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+Ähnlich verhält es sich, wenn keine Ziffer von der Ziffer rechts daneben übertroffen wird. Man spricht dann von einer absteigenden Zahl, zum Beispiel 66420.
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+Wir nennen eine positive ganze Zahl, die weder steigt noch fällt, eine "Bouncy Zahl", zum Beispiel, 155349.
 
-Clearly there cannot be any bouncy numbers below one-hundred, but just over half of the numbers below one-thousand (525) are bouncy. In fact, the least number for which the proportion of bouncy numbers first reaches 50% is 538.
+Natürlich kann es keine "Bouncy Zahl" unter hundert geben, aber etwas mehr als die Hälfte der Zahlen unter eintausend (525) sind sprunghaft. In der Tat ist die geringste Zahl, für die der Anteil der "Bouncy Zahl" zuerst 50% erreicht, ist 538.
 
 Surprisingly, bouncy numbers become more and more common and by the time we reach 21780 the proportion of bouncy numbers is equal to 90%.
 
-Find the least number for which the proportion of bouncy numbers is exactly 99%.
+Finden Sie die kleinste Zahl, für die der Anteil der "Bouncy Zahl" genau 99% beträgt.
 
 # --hints--
 
-`bouncyNumbers()` should return `1587000`.
+`bouncyNumbers()` sollte `1587000` zurückgeben.
 
 ```js
 assert.strictEqual(bouncyNumbers(), 1587000);

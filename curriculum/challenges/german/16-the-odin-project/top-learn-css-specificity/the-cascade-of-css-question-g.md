@@ -1,15 +1,15 @@
 ---
 id: 6489cf7682cf2e4f86f03ae8
-title: The Cascade of CSS Question G
+title: Die CSS-Kaskade Frage G
 challengeType: 15
 dashedName: the-cascade-of-css-question-g
 ---
 
 # --description--
 
-Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typography based properties (`color`, `font-size`, `font-family`, etc.) are usually inherited, while most other properties aren’t.
+Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typografie-basierte Eigenschaften (`color`, `font-size`, `font-family`, etc.) werden in der Regel vererbt, während die meisten anderen Eigenschaften nicht vererbt werden.
 
-The exception to this is when directly targeting an element, as this always beats inheritance:
+Eine Ausnahme bildet das direkte Anvisieren eines Elements, da dies immer die Vererbbarkeit übertrifft:
 
 ```html
 <!-- index.html -->
@@ -31,21 +31,21 @@ The exception to this is when directly targeting an element, as this always beat
 }
 ```
 
-Despite the `parent` element having a higher specificity with an ID, the `child` element would have the `color: blue` style applied since that declaration directly targets it, while `color: red` from the parent is only inherited.
+Obwohl das `parent`-Element eine höhere Spezifität mit einer ID hat, würde auf das `child`-Element der `color: blue`-Stil angewandt, da diese Deklaration direkt darauf abzielt, während `color: red` vom übergeordneten Element nur vererbt wird.
 
 # --question--
 
 ## --text--
 
-Based on the given HTML and CSS code, what would be the color of the `<div class="child"></div>` element?
+Basierend auf dem gegebenen HTML- und CSS-Code, was wäre die Farbe des `<div class="child"></div>`-Elements?
 
 ## --answers--
 
-Red
+Rot
 
 ---
 
-Blue
+Blau
 
 ---
 

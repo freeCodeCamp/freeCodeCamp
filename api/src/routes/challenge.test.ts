@@ -362,7 +362,33 @@ describe('challengeRoutes', () => {
           expect(response.body).toStrictEqual(
             isValidChallengeCompletionErrorMsg
           );
-          expect(response.statusCode).toBe(400);
+          expect(response.statusCode).toBe(403);
+        });
+
+        it('POST rejects backendProject requests without URL githubLinks', async () => {
+          const response = await superPost('/project-completed').send({
+            id: id1,
+            challengeType: challengeTypes.backEndProject,
+            // Solution is allowed to be localhost for backEndProject
+            solution: 'http://localhost:3000'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(403);
+
+          const response_2 = await superPost('/project-completed').send({
+            id: id1,
+            challengeType: challengeTypes.backEndProject,
+            solution: 'http://localhost:3000',
+            githubLink: 'not-a-valid-url'
+          });
+
+          expect(response_2.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response_2.statusCode).toBe(403);
         });
 
         it('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
@@ -775,7 +801,7 @@ describe('challengeRoutes', () => {
                 challengeType: multiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
-                isManuallyApproved: true
+                isManuallyApproved: false
               }
             ],
             savedChallenges: [
@@ -839,7 +865,7 @@ describe('challengeRoutes', () => {
                 challengeType: updatedMultiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
-                isManuallyApproved: true
+                isManuallyApproved: false
               },
               {
                 id: HtmlChallengeId,
@@ -1032,7 +1058,7 @@ describe('challengeRoutes', () => {
         // Create and Run Simple C# Console Applications's id:
         const trophyChallengeId2 = '647f87dc07d29547b3bee1bf';
         const nonTrophyChallengeId = 'bd7123c8c441eddfaeb5bdef';
-        const solutionUrl = `https://learn.microsoft.com/api/gamestatus/${msUserId}`;
+        const solutionUrl = `https://learn.microsoft.com/api/achievements/user/${msUserId}`;
 
         const idIsMissingOrInvalid = {
           type: 'error',
@@ -1149,7 +1175,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const msUsername = 'ANRandom';
@@ -1192,7 +1218,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const msUsername = 'ANRandom';
@@ -1205,7 +1231,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const resTwo = await superPost(
@@ -1217,7 +1243,7 @@ describe('challengeRoutes', () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
-                msGameStatusApiUrl: solutionUrl
+                msUserAchievementsApiUrl: solutionUrl
               })
             );
             const resUpdate = await superPost(

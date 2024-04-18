@@ -15,7 +15,7 @@ import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
-import { showCert, executeGA, fetchProfileForUser } from '../redux/actions';
+import { showCert, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
   showCertFetchStateSelector,
@@ -35,10 +35,13 @@ import {
 import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
+  CertSlug,
   certTypes,
-  certTypeTitleMap
+  certTypeTitleMap,
+  linkedInCredentialIds
 } from '../../../shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
+import callGA from '../analytics/call-ga';
 import ShowProjectLinks from './show-project-links';
 
 const { clientLocale } = envData;
@@ -47,7 +50,7 @@ const localeCode = getLangCode(clientLocale);
 type Cert = {
   username: string;
   name: string;
-  certName: string;
+  certSlug: CertSlug;
   certTitle: string;
   completionTime: number;
   date: number;
@@ -57,7 +60,6 @@ interface ShowCertificationProps {
   certDashedName: string;
   certSlug: string;
   createFlashMessage: typeof createFlashMessage;
-  executeGA: (payload: Record<string, unknown>) => void;
   fetchProfileForUser: (username: string) => void;
   fetchState: {
     pending: boolean;
@@ -118,7 +120,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
-    { createFlashMessage, showCert, fetchProfileForUser, executeGA },
+    { createFlashMessage, showCert, fetchProfileForUser },
     dispatch
   );
 
@@ -143,8 +145,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       isDonating,
       cert: { username = '' },
       fetchProfileForUser,
-      user,
-      executeGA
+      user
     } = props;
 
     if (!signedInUserName || signedInUserName !== username) {
@@ -161,7 +162,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       !isDonating
     ) {
       setIsDonationDisplayed(true);
-      executeGA({
+      callGA({
         event: 'donation_view',
         action: 'Displayed Certificate Donation'
       });
@@ -172,8 +173,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     props.userFetchState,
     props.signedInUserName,
     props.isDonating,
-    props.cert,
-    props.executeGA
+    props.cert
   ]);
 
   const hideDonationSection = () => {
@@ -193,25 +193,27 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     signedInUserName,
     location: { pathname }
   } = props;
+  const { pending, complete, errored } = fetchState;
+
+  useEffect(() => {
+    if (!isValidCert) {
+      createFlashMessage(certificateMissingErrorMessage);
+    } else if (!pending && errored) {
+      createFlashMessage(standardErrorMessage);
+    } else if (!pending && !complete && !errored) {
+      createFlashMessage(reallyWeirdErrorMessage);
+    }
+  }, [isValidCert, createFlashMessage, pending, errored, complete]);
 
   if (!isValidCert) {
-    createFlashMessage(certificateMissingErrorMessage);
     return <RedirectHome />;
   }
-
-  const { pending, complete, errored } = fetchState;
 
   if (pending) {
     return <Loader fullScreen={true} />;
   }
 
-  if (!pending && errored) {
-    createFlashMessage(standardErrorMessage);
-    return <RedirectHome />;
-  }
-
-  if (!pending && !complete && !errored) {
-    createFlashMessage(reallyWeirdErrorMessage);
+  if (errored || !complete) {
     return <RedirectHome />;
   }
 
@@ -220,6 +222,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     name: userFullName = null,
     username,
     certTitle,
+    certSlug,
     completionTime
   } = cert;
 
@@ -288,6 +291,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   );
 
   const urlFriendlyCertTitle = encodeURIComponent(certTitle);
+  const linkedInCredentialId = `${username}-${linkedInCredentialIds[certSlug]}`;
 
   const shareCertBtns = (
     <Row className='text-center'>
@@ -298,7 +302,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           variant='primary'
           href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
-          }&certUrl=${certURL}`}
+          }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
           target='_blank'
           data-playwright-test-label='linkedin-share-btn'
         >

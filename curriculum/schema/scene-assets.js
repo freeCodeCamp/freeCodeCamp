@@ -4,6 +4,7 @@ const availableCharacters = [
   'Anna',
   'Bob',
   'Brian',
+  'Candidate',
   'David',
   'Expert',
   'Jake',
@@ -13,6 +14,7 @@ const availableCharacters = [
   'Maria',
   'Mark',
   'Sarah',
+  'Second Candidate',
   'Sophie',
   'Tom'
 ];
@@ -100,7 +102,22 @@ const availableAudios = [
   '2.3-2.mp3',
   '2.3-3.mp3',
   '2.3-4.mp3',
-  '2.3-5.mp3'
+  '2.3-5.mp3',
+  '3.1-1.mp3',
+  '3.1-2.mp3',
+  '3.1-3.mp3',
+  '3.1-4.mp3',
+  '3.1-5.mp3',
+  '3.2-1.mp3',
+  '3.2-2.mp3',
+  '3.2-3.mp3',
+  '3.2-4.mp3',
+  '3.2-5.mp3',
+  '3.3-1.mp3',
+  '3.3-2.mp3',
+  '3.3-3.mp3',
+  '3.3-4.mp3',
+  '3.3-5.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];

@@ -7,7 +7,7 @@ dashedName: working-with-text-question-d
 
 # --description--
 
-Елемент `em` робить текст курсивним. Він також робить акцент на тексті, що може вплинути на читачів екрана. Щоб визначити елемент, загорніть текст в тег `<em>`.
+Елемент `em` робить текст курсивним. Він також робить акцент на тексті, що може вплинути на читачів екрана. Щоб визначити виділений елемент, загорніть текст в тег `<em>`.
 
 Ви можете використовувати `em` окремо:
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_6" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/wvewqpp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=wvewqpp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_6" style="width: 100%; overflow:hidden; display:block;" title="Вставка CodePen" loading="lazy" id="cp_embed_wvewqpp"></iframe>

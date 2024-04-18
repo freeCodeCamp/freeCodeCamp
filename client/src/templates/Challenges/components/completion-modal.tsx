@@ -1,16 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
-import { executeGA } from '../../../redux/actions';
 import {
   isSignedInSelector,
   allChallengesInfoSelector
@@ -30,6 +27,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { Spacer } from '../../../components/helpers';
 
 import './completion-modal.css';
+import callGA from '../../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -64,15 +62,13 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   close: () => closeModal('completion'),
-  submitChallenge,
-  executeGA
+  submitChallenge
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 
 interface CompletionModalsProps extends StateProps {
   close: () => void;
-  executeGA: () => void;
   submitChallenge: () => void;
   t: TFunction;
 }
@@ -148,6 +144,14 @@ class CompletionModal extends Component<
     this.props.close();
   }
 
+  componentDidUpdate(prevProps: CompletionModalsProps): void {
+    const { isOpen: prevIsOpen } = prevProps;
+    const { isOpen } = this.props;
+    if (!prevIsOpen && isOpen) {
+      callGA({ event: 'pageview', pagePath: '/completion-modal' });
+    }
+  }
+
   render(): JSX.Element {
     const {
       close,
@@ -160,36 +164,21 @@ class CompletionModal extends Component<
       submitChallenge
     } = this.props;
 
-    if (isOpen) {
-      executeGA({ event: 'pageview', pagePath: '/completion-modal' });
-    }
-
     return (
       <Modal
-        data-cy='completion-modal'
-        animation={false}
-        bsSize='lg'
-        dialogClassName='challenge-success-modal'
-        keyboard={true}
-        onHide={close}
+        onClose={close}
+        open={!!isOpen}
+        size='large'
         // eslint-disable-next-line @typescript-eslint/unbound-method
-        onKeyDown={isOpen ? this.handleKeypress : noop}
-        show={isOpen}
+        onKeyDown={isOpen ? this.handleKeypress : undefined}
       >
-        <Modal.Header
-          className='challenge-list-header fcc-modal'
-          closeButton={true}
-        >
-          <Modal.Title className='completion-message'>{message}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='completion-modal-body'>
-          <div className='completion-challenge-details'>
-            <GreenPass
-              className='completion-success-icon'
-              data-testid='fcc-completion-success-icon'
-              data-playwright-test-label='completion-success-icon'
-            />
-          </div>
+        <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
+        <Modal.Body>
+          <GreenPass
+            className='completion-success-icon'
+            data-testid='fcc-completion-success-icon'
+            data-playwright-test-label='completion-success-icon'
+          />
           <div className='completion-block-details'>
             <Progress />
           </div>

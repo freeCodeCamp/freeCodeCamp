@@ -14,7 +14,7 @@ dashedName: dictionaries-common-applications
 
 ## --text--
 
-What will the following code print?
+次のコードは何を表示しますか？
 
 ```python
 counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}

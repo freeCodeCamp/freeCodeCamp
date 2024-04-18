@@ -57,6 +57,7 @@
     "run-test": "تشغيل الاختبارات (Ctrl + Enter)",
     "check-code": "تيقن من كودك (Ctrl + Enter)",
     "check-code-2": "تيقن من كودك",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "إعادة ضبط",
     "reset-step": "إعادة الخطوة إلى حالتها الأولية",
     "help": "مساعدة",
@@ -95,7 +96,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement"
+    "skip-advertisement": "Skip Advertisement",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
@@ -383,8 +385,14 @@
     "percent-complete": "{{percent}}% مكتمل",
     "project-complete": "أكملت {{completedChallengesInBlock}} من {{totalChallengesInBlock}} مشروعات الشهادات",
     "tried-rsa": "إذا كنت قد جربت طريقة <0>اقرأ-ابحث-اسأل</0>، فيمكنك طلب المساعدة في منتدى freeCodeCamp.",
+    "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
+    "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
+    "must-confirm-statements": "You must confirm the following statements before you can submit your post to the forum.",
+    "min-50-max-500": "50 character minimum, 500 character maximum",
     "rsa": "اقرأ ، ابحث ، اسأل",
-    "rsa-forum": "<strong>قبل إجراء موضوع جديدة</strong> يرجى الاطلاع على ما إذا كان سؤالك <0> قد تم الإجابة عليه فعلًا في المنتدى </0>.",
+    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "أعد الدرس ألى حالته الأولية؟",
     "reset-warn": "هل أنت متأكد من رغبتك في إعادة الدرس ألى حالته الأولية؟ سيتم إعادة المحرر والاختبارات إلى حالتهما الأولية.",
     "reset-warn-2": "لا يمكن التراجع عن هذا",
@@ -448,8 +456,8 @@
     "challenges-completed": "اكتمل {{completedCount}} من {{totalChallenges}} تحديات",
     "season-greetings-fcc": "تحيات الموسم من مجتمع freeCodeCamp 🎉",
     "if-getting-value": "إذا أفادك freeCodeCamp بشكل مثمر، يمكنك تتبرع دعما لرسالتنا التطوعية حتي يستمر مهمتنا.",
-    "building-a-university": "نحن نبني برنامَج مجاني لشهادة جامعة علوم الكمبيوتر Computer Science",
-    "if-help-university": "لقد حققنا قدرا كبيرا من التقدم بالفعل. أدعم منظمتنا الخيرية بالطريق الطويل الذي أمامنا.",
+    "building-a-university": "We're Building a Free Computer Science University Degree Program 🎉",
+    "if-help-university": "We've already made a ton of progress. Donate now to help our charity with the road ahead.",
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
@@ -721,7 +729,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} مثال على الكود",
-    "opens-new-window": "فتح في نافذة جديدة"
+    "opens-new-window": "فتح في نافذة جديدة",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "للمطالبة بشهادة، يجب عليك أولاً الموافقة على سياسة للصدق الأكاديمي",
@@ -795,6 +805,7 @@
     "challenge-submit-too-big": "عذراً، لا يمكنك إرسال كودك. تكون مساحة كودك {{user-size}} بايت. نحن نسمح بحد أقصى {{max-size}} بايت. الرجاء جعل كود أصغر وحاول مرة أخرى أو طلب المساعدة على https://forum.freecodecamp.org",
     "invalid-update-flag": "أنت تحاول الوصول إلى موارد محظورة. يرجى طلب المساعدة على https://forum.freecodecamp.org إذا كان هذا طلب صالح.",
     "generate-exam-error": "An error occurred trying to generate your exam.",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -969,16 +980,16 @@
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
-      "legacy-front-end": "شهادة الواجهة الأمامية التراثية",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "الواجهة الخلفية التراثية",
-      "legacy-back-end": "شهادة الواجهة الخلفية التراثية",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "التصوير المرئي للبيانات التراثي",
-      "legacy-data-visualization": "شهادة التصوير المرئي للبيانات",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "أمن المعلومات وشهادة ضمان الجودة التراثية",
-      "information-security-and-quality-assurance": "شهادة أمن المعلومات وشهادة ضمان الجودة",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "شهادة الشامل الخلفية التراثية",
       "Legacy Full Stack": "الشامل الخلفية التراثية",
-      "full-stack": "شهادة الشامل الخلفية"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {
@@ -996,7 +1007,7 @@
     "user-agent": "وكيل المستخدم هو: <code>{{userAgent}}</code>",
     "challenge": "Challenge Information:",
     "whats-happening": "Tell us what's happening:",
-    "describe": "قم بوصف مشكلتك بالتفصيل هنا.",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "Your project link(s)",
     "camper-code": "Your code so far",
     "warning": "تحذير",
@@ -1028,8 +1039,9 @@
     "execute-challenge": "تنفيذ التحدي",
     "focus-editor": "ركز على محرر الكود",
     "focus-instructions-panel": "ركز على لوحة تعليمات",
-    "navigate-previous": "تنقل إلى التمرين السابق",
-    "navigate-next": "تنقل إلى التمرين التالي"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "تسجيل الخروج من حسابك",

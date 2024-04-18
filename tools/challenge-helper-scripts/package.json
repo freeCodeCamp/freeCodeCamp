@@ -2,7 +2,7 @@
   "name": "@freecodecamp/curriculum-helper-scripts",
   "version": "0.0.0-next.1",
   "description": "freeCodeCamp's project-based curriculum scripts",
-  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "license": "BSD-3-Clause",
   "private": true,
   "engines": {
     "node": ">=16",

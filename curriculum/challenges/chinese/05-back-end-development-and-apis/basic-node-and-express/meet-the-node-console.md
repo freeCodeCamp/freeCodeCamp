@@ -20,6 +20,14 @@ Node 只是一个 JavaScript 环境。 与客户端 JavaScript 一样，你可�
 
 我们建议在做这些挑战题时保持终端打开的状态。 通过阅读终端的输出，你可以看到可能发生的任何错误。
 
+The server must be restarted after making changes to its files.
+
+You can stop the server from the terminal using `Ctrl + C` and start it using Node directly (`node mainEntryFile.js`) or using a run script in the `package.json` file with `npm run`.
+
+For example, the `"start": "node server.js"` script would be run from the terminal using `npm run start`.
+
+To implement server auto restarting on file save Node provides the `--watch` flag you can add to your start script `"start": "node --watch server.js"` or you can install an npm package like `nodemon`. We will leave this to you as an exercise.
+
 # --instructions--
 
 修改 `myApp.js` 文件，在控制台打印出 “Hello World”。

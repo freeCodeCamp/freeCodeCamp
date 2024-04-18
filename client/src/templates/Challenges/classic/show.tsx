@@ -238,11 +238,12 @@ function ShowClassic({
   // made during the build (at least twice!). It should be either a prop or
   // computed from challengeType
   const showPreview =
-    challengeType === challengeTypes.html ||
-    challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.python;
+    (challengeType === challengeTypes.html ||
+      challengeType === challengeTypes.modern ||
+      challengeType === challengeTypes.multifileCertProject ||
+      challengeType === challengeTypes.multifilePythonCertProject ||
+      challengeType === challengeTypes.python) &&
+    block !== 'learn-introductory-javascript-by-building-a-pyramid-generator';
 
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
@@ -508,12 +509,14 @@ function ShowClassic({
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal />
-        <ProjectPreviewModal
-          challengeData={challengeData}
-          closeText={t('buttons.start-coding')}
-          previewTitle={t('learn.project-preview-title')}
-          showProjectPreview={showProjectPreview}
-        />
+        {showPreview && (
+          <ProjectPreviewModal
+            challengeData={challengeData}
+            closeText={t('buttons.start-coding')}
+            previewTitle={t('learn.project-preview-title')}
+            showProjectPreview={showProjectPreview}
+          />
+        )}
         <ShortcutsModal />
       </LearnLayout>
     </Hotkeys>

@@ -1,5 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import isEmail from 'validator/lib/isEmail';
+import { find } from 'lodash';
+import { CompletedChallenge } from '@prisma/client';
 import { schemas } from '../schemas';
 import { getChallenges } from '../utils/get-challenges';
 import {
@@ -10,11 +12,14 @@ import {
   currentCertifications,
   legacyCertifications,
   legacyFullStackCertification,
+  certTypeIdMap,
+  completionHours,
+  oldDataVizId,
   upcomingCertifications
 } from '../../../shared/config/certification-settings';
 import { normalizeChallenges, removeNulls } from '../utils/normalize';
-import { CompletedChallenge } from '../utils/common-challenge-functions';
 import { SHOW_UPCOMING_CHANGES } from '../utils/env';
+import { formatCertificationValidation } from '../utils/error-formatting';
 
 const {
   legacyFrontEndChallengeId,
@@ -40,13 +45,13 @@ const {
 } = certIds;
 
 /**
- * Plugin for the certificate endpoints.
+ * Plugin for the protected certificate endpoints.
  *
  * @param fastify The Fastify instance.
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done The callback to signal that the plugin is ready.
  */
-export const certificateRoutes: FastifyPluginCallbackTypebox = (
+export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
   done
@@ -57,7 +62,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
 
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
   // OR: Always respond with current user - full user object - not random pieces.
@@ -82,10 +87,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { certSlug } = req.body;
 
-      if (
-        !assertCertSlugIsKeyofCertSlugTypeMap(certSlug) ||
-        !isCertAllowed(certSlug)
-      ) {
+      if (!isKnownCertSlug(certSlug) || !isCertAllowed(certSlug)) {
         void reply.code(400);
         return {
           response: {
@@ -102,7 +104,7 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
 
       try {
         const user = await fastify.prisma.user.findUnique({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
 
         if (!user) {
@@ -270,6 +272,243 @@ export const certificateRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
+/**
+ * Plugin for the unprotected certificate endpoints.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done The callback to signal that the plugin is ready.
+ */
+export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.get(
+    '/certificate/showCert/:username/:certSlug',
+    {
+      schema: schemas.certSlug,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          return formatCertificationValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const username = req.params.username.toLowerCase();
+        const certSlug = req.params.certSlug;
+
+        fastify.log.info(`certSlug: ${certSlug}`);
+
+        if (!isKnownCertSlug(certSlug)) {
+          void reply.code(404);
+          return reply.send({
+            type: 'info',
+            message: 'flash.cert-not-found',
+            variables: { certSlug }
+          });
+        }
+
+        const certType = certSlugTypeMap[certSlug];
+        const certId = certTypeIdMap[certType];
+        const certTitle = certTypeTitleMap[certType];
+        const completionTime = completionHours[certType] || 300;
+        const user = await fastify.prisma.user.findFirst({
+          where: { username },
+          select: {
+            isBanned: true,
+            isCheater: true,
+            isFrontEndCert: true,
+            isBackEndCert: true,
+            isFullStackCert: true,
+            isRespWebDesignCert: true,
+            isFrontEndLibsCert: true,
+            isJsAlgoDataStructCert: true,
+            isJsAlgoDataStructCertV8: true,
+            isDataVisCert: true,
+            is2018DataVisCert: true,
+            isApisMicroservicesCert: true,
+            isInfosecQaCert: true,
+            isQaCertV7: true,
+            isInfosecCertV7: true,
+            isSciCompPyCertV7: true,
+            isDataAnalysisPyCertV7: true,
+            isMachineLearningPyCertV7: true,
+            isRelationalDatabaseCertV8: true,
+            isCollegeAlgebraPyCertV8: true,
+            isFoundationalCSharpCertV8: true,
+            isUpcomingPythonCertV8: true,
+            isHonest: true,
+            username: true,
+            name: true,
+            completedChallenges: true,
+            profileUI: true
+          }
+        });
+
+        if (user === null) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.username-not-found',
+                variables: { username }
+              }
+            ]
+          });
+        }
+
+        if (user.isCheater || user.isBanned) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.not-eligible'
+              }
+            ]
+          });
+        }
+
+        if (!user.isHonest) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.not-honest',
+                variables: { username }
+              }
+            ]
+          });
+        }
+
+        if (user.profileUI?.isLocked) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.profile-private',
+                variables: { username }
+              }
+            ]
+          });
+        }
+
+        if (!user.name) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.add-name'
+              }
+            ]
+          });
+        }
+
+        if (!user.profileUI?.showCerts) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.certs-private',
+                variables: { username }
+              }
+            ]
+          });
+        }
+
+        if (!user.profileUI?.showTimeLine) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.timeline-private',
+                variables: { username }
+              }
+            ]
+          });
+        }
+
+        if (!user[certType]) {
+          return reply.send({
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.user-not-certified',
+                variables: { username, cert: certTypeTitleMap[certType] }
+              }
+            ]
+          });
+        }
+
+        const { completedChallenges } = user;
+        const certChallenge = find(
+          completedChallenges,
+          ({ id }) => certId === id
+        );
+
+        let { completedDate = Date.now() } = certChallenge || {};
+
+        // the challenge id has been rotated for isDataVisCert
+        if (certType === 'isDataVisCert' && !certChallenge) {
+          const oldDataVisIdChall = find(
+            completedChallenges,
+            ({ id }) => oldDataVizId === id
+          );
+
+          if (oldDataVisIdChall) {
+            completedDate = oldDataVisIdChall.completedDate || completedDate;
+          }
+        }
+
+        // if fullcert is not found, return the latest completedDate
+        if (certType === 'isFullStackCert' && !certChallenge) {
+          completedDate = getFallbackFullStackDate(
+            completedChallenges,
+            completedDate
+          );
+        }
+
+        const { name } = user;
+
+        if (!user.profileUI.showName) {
+          void reply.code(200);
+          return reply.send({
+            certSlug,
+            certTitle,
+            username,
+            date: completedDate,
+            completionTime
+          });
+        }
+
+        void reply.code(200);
+        return reply.send({
+          certSlug,
+          certTitle,
+          username,
+          name,
+          date: completedDate,
+          completionTime
+        });
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return reply.send({
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        });
+      }
+    }
+  );
+
+  done();
+};
+
 function isCertAllowed(certSlug: string): boolean {
   if (
     currentCertifications.includes(certSlug) ||
@@ -319,7 +558,7 @@ function hasCompletedTests(
   );
 }
 
-function assertCertSlugIsKeyofCertSlugTypeMap(
+function isKnownCertSlug(
   certSlug: string
 ): certSlug is keyof typeof certSlugTypeMap {
   return certSlug in certSlugTypeMap;
@@ -466,4 +705,31 @@ function getUserIsCertMap(user: CertI) {
     isFoundationalCSharpCertV8,
     isUpcomingPythonCertV8
   };
+}
+
+/**
+ * Retrieves the completion date for the full stack certification, if it exists.
+ *
+ * @param completedChallenges - The array of completed challenges.
+ * @param completedDate - The fallback completed date.
+ * @returns The latest certification date or the completed date if no certification is found.
+ */
+export function getFallbackFullStackDate(
+  completedChallenges: { id: string; completedDate: number }[],
+  completedDate: number
+) {
+  const chalIds = [
+    respWebDesignId,
+    jsAlgoDataStructId,
+    frontEndDevLibsId,
+    dataVis2018Id,
+    apisMicroservicesId,
+    legacyInfosecQaId
+  ];
+
+  const latestCertDate = completedChallenges
+    .filter(chal => chalIds.includes(chal.id))
+    .sort((a, b) => b.completedDate - a.completedDate)[0]?.completedDate;
+
+  return latestCertDate ?? completedDate;
 }

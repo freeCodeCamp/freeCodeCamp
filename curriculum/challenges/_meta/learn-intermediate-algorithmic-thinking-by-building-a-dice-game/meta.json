@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-algorithmic-thinking-by-building-a-dice-game",
-  "order": 16,
+  "order": 17,
   "time": "5 hours",
   "template": "",
   "required": [],
@@ -345,11 +345,11 @@
       "title": "Step 83"
     },
     {
-      "id": "657e2ecee9f60092c89338d9",
+      "id": "657e30e116d50c946b189925",
       "title": "Step 84"
     },
     {
-      "id": "657e30e116d50c946b189925",
+      "id": "657e2ecee9f60092c89338d9",
       "title": "Step 85"
     },
     {

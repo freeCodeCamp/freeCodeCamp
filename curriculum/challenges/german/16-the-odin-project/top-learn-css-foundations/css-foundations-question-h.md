@@ -1,7 +1,7 @@
 ---
 id: 63ee354c0d8d4841c3a70921
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question H
+title: CSS-Grundlagen Frage H
 challengeType: 15
 dashedName: css-foundations-question-h
 ---
@@ -16,29 +16,29 @@ Inline `CSS` makes it possible to add styles directly to `HTML` elements, though
 </body>
 ```
 
-The first thing to note is that there aren't any selectors here, since the styles are being added directly to the opening `<div>` tag itself. Next, you have the `style` attribute, with its value within the pair of quotation marks being the declarations.
+Als Erstes ist anzumerken, dass es hier keine Selektoren gibt, da die Stile direkt zum öffnenden `<div>`-Tag selbst hinzugefügt werden. Als nächstes hast du das `style`-Attribut, dessen Wert innerhalb des Paares von Anführungszeichen die Deklarationen sind.
 
-If you need to add a unique style for a single element, this method can work just fine. Generally, though, this isn’t exactly a recommended way for adding CSS to HTML for a few reasons:
+Wenn du einen einzigartigen Stil für ein einzelnes Element hinzufügen musst, kann diese Methode sehr gut funktionieren. Generell ist dies allerdings aus mehreren Gründen kein empfehlenswertes Vorgehen für das Hinzufügen von CSS zu HTML:
 
-It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your HTML file to become unnecessarily bloated. If you want many elements to have the same style, you would have to copy + paste the same style to each individual element, causing lots of unnecessary repetition and more bloat. Any inline CSS will override the other two methods, which can cause unexpected results. (While you won’t dive into it here, this can actually be taken advantage of).
+Es kann schnell ziemlich unübersichtlich werden, sobald du anfängst, viele Deklarationen zu einem einzigen Element hinzuzufügen, und dadurch wird deine HTML-Datei unnötig aufgebläht. Möchtest du, dass viele Elemente denselben Stil haben, müsstest du diesen Stil per "copy and paste" in jedes einzelne Element einfügen, was zu vielen unnötigen Wiederholungen und noch mehr Ballast führt. Jedes Inline-CSS überschreibt die beiden anderen Methoden, was zu unvorhergesehenen Ergebnissen führen kann. (Obwohl hier nicht näher darauf eingegangen wird, kann dies tatsächlich ausgenutzt werden).
 
 # --question--
 
 ## --text--
 
-Which of the following is the main disadvantage of using inline CSS?
+Welcher der nachfolgenden Punkte ist der Hauptnachteil der Verwendung von Inline-CSS?
 
 ## --answers--
 
-It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your HTML file to become unnecessarily bloated.
+Es kann schnell ziemlich unübersichtlich werden, sobald du anfängst, viele Deklarationen zu einem einzigen Element hinzuzufügen, was deine HTML-Datei unnötig aufbläht.
 
 ---
 
-It requires using selectors, which can be complicated for beginners.
+Dies erfordert die Verwendung von Selektoren, was für Anfänger kompliziert sein kann.
 
 ---
 
-Any inline CSS will override the other two methods (internal and external), which can cause unexpected results.
+Jedes Inline-CSS setzt die beiden anderen Methoden (intern und extern) außer Kraft, was zu unvorhergesehenen Ergebnissen führen kann.
 
 
 ## --video-solution--

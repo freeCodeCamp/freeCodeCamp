@@ -1,6 +1,6 @@
 ---
 id: 657dbdae2bd6f60bda3226cc
-title: Task 78
+title: Aufgabe 78
 challengeType: 22
 dashedName: task-78
 ---
@@ -11,7 +11,7 @@ dashedName: task-78
 
 # --description--
 
-When you want to know how often something happens, you can use `every` followed by a time period like `day,` `week,` or `year.` In this dialogue, Tom is asking about the frequency of the team meetings.
+Wenn du wissen möchtest, wie oft etwas passiert, kannst du `every` verwenden, gefolgt von einer Zeitperiode wie `day,` `week,` oder `year.` In diesem Dialog fragt Tom nach der Häufigkeit der Teammeetings.
 
 # --instructions--
 
@@ -29,7 +29,7 @@ Höre dir das Audio an, um die unteren Sätze zu vervollständigen.
 
 ### --feedback--
 
-Tom is asking if the meetings happen every week.
+Tom fragt, ob die Meetings jede Woche stattfinden.
 
 
 # --Szene--
