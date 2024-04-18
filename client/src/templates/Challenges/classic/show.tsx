@@ -512,7 +512,7 @@ function ShowClassic({
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal />
-        {showPreview && (
+        {showProjectPreview && (
           <ProjectPreviewModal
             challengeData={challengeData}
             closeText={t('buttons.start-coding')}
