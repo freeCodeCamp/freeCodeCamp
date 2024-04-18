@@ -52,6 +52,7 @@ interface DesktopLayoutProps {
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
+  startWithConsoleShown: boolean;
   removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
@@ -94,11 +95,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     removePortalWindow,
     setShowPreviewPane,
     setShowPreviewPortal,
-    portalWindow
+    portalWindow,
+    startWithConsoleShown
   } = props;
 
   const [showNotes, setShowNotes] = useState(false);
-  const [showConsole, setShowConsole] = useState(false);
+  const [showConsole, setShowConsole] = useState(startWithConsoleShown);
   const [showInstructions, setShowInstructions] = useState(true);
 
   const togglePane = (pane: string): void => {
