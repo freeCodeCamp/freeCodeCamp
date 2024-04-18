@@ -5,7 +5,7 @@ interface RibbonProps {
 }
 
 export const Arrow = () => (
-  <svg width={100} height={40} xmlns='http://www.w3.org/2000/svg'>
+  <svg width={70} height={40} xmlns='http://www.w3.org/2000/svg'>
     <line
       x1={50}
       y1={0}
@@ -53,21 +53,21 @@ export const RibbonIcon = ({ value }: RibbonProps): JSX.Element => {
         d='M9.11059 29L19.5957 36.3418L10.4851 49.353L8.85418 41.0821L-4.67677e-07 42.0113L9.11059 29Z'
         className='map-icon'
       />
-      <circle cx='21.9999' cy='21' r='20' fill='black' />
+      <circle cx={21.9999} cy={21} r={20} fill='black' />
       <circle
-        cx='22.5'
-        cy='21'
-        r='17.5'
+        cx={22.5}
+        cy={21}
+        r={17.5}
         fill='black'
         stroke='white'
-        strokeWidth='2'
+        strokeWidth={2}
       />
       <text
         x='50%'
-        y='55%'
+        y='40%'
         fontFamily='Verdana'
         color='black'
-        fontSize='1.3rem'
+        fontSize='1.0rem'
         fill='#fff'
         textAnchor='middle'
         alignmentBaseline='central'
@@ -100,10 +100,10 @@ export const IncompleteIcon = ({ value }: RibbonProps): JSX.Element => {
       />
       <text
         x='50%'
-        y='55%'
+        y='40%'
         fontFamily='Verdana'
         color='black'
-        fontSize='1.3rem'
+        fontSize='1.0rem'
         fill='#fff'
         textAnchor='middle'
         alignmentBaseline='central'

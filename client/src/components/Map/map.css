@@ -8,6 +8,12 @@
   padding: 0;
 }
 
+.test {
+  position: absolute;
+  margin-top: 80px;
+  margin-left: -18px;
+}
+
 .map-ui ul .progress-icon {
   display: flex;
   flex-direction: column;

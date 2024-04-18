@@ -82,15 +82,18 @@ function MapLi({
         data-playwright-test-label='curriculum-map-button'
       >
         {trackProgress && (
-          <div className='progress-icon'>
-            {completed ? (
-              <RibbonIcon value={index} />
-            ) : (
-              <IncompleteIcon value={index} />
-            )}
-            {!last && <Arrow />}
-          </div>
+          <>
+            <div className='progress-icon'>
+              {completed ? (
+                <RibbonIcon value={index} />
+              ) : (
+                <IncompleteIcon value={index} />
+              )}
+            </div>
+            <div className='test'>{!last && <Arrow />}</div>
+          </>
         )}
+
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
           <div style={linkSpacingStyle}>
             <SuperBlockIcon className='map-icon' superBlock={superBlock} />
