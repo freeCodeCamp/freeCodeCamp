@@ -7,7 +7,7 @@ dashedName: step-162
 
 # --description--
 
-After your `numbers` array, create a `while` loop. Your `while` loop should run while `numbers.length` is less than `10`.
+After your `numbers` array, create a `while` loop that runs as long as `numbers.length` is less than `10`.
 
 In the previous project, you learned how to work with `while` loops like this:
 

@@ -15,9 +15,9 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-`for` loops are declared with three expressions separated by semicolons. `for (a; b; c)`, where `a` is the initialization expression, `b` is the condition, and `c` is the final expression.
+`for` loops are declared with three expressions separated by semicolons: `for (a; b; c)`, where `a` is the initialization expression, `b` is the condition, and `c` is the final expression.
 
-In this step, create a `for` loop where `i` is initialized to `0`, the loop runs while `i` is less than `10`, and `i` is incremented by `1` after each loop. Remember to use the increment operator `++` to increase the value of `i` by `1`.
+In this step, create a `for` loop where `i` is initialized to `0`, the loop runs as long as `i` is less than `10`, and `i` is incremented by `1` after each iteration using the increment operator `++`.
 
 
 # --hints--
