@@ -20,7 +20,7 @@ assert.isFunction(lastLetter);
 Your function should take in a string as a parameter. 
 
 ```js
-assert.strictEqual(lastLetter('world'), 'd');
+assert.match(lastLetter.toString(), /\s*lastLetter\(\s*\w+\s*\)/);
 ```
 
 You should return the last letter of the string.

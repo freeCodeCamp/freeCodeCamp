@@ -11,7 +11,7 @@ Write a function, named `capitalize`, that takes a string as an parameter and re
 
 # --hints--
 
-You should have a function named `capitalize `.
+You should have a function named `capitalize`.
 
 ```js
 assert.isFunction(capitalize);
@@ -20,7 +20,7 @@ assert.isFunction(capitalize);
 Your function should take in a string as a parameter. 
 
 ```js
-assert.strictEqual(capitalize('world'), 'World');
+assert.match(capitalize.toString(), /\s*capitalize\(\s*\w+\s*\)/);
 ```
 
 Your function should return a new string with the first letter capitalized.

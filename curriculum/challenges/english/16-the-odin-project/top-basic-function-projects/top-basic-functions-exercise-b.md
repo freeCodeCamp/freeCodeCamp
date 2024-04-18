@@ -11,16 +11,16 @@ Write a function, named `multiply`, that takes two parameters and returns their 
 
 # --hints--
 
-You should have a function named `multiply` that takes two arguments.
+You should have a function named `multiply`.
 
 ```js
-assert.strictEqual(multiply(2, 3), 6);
+assert.isFunction(multiply);
 ```
 
-Your function should take in an integer as an argument.
+Your function should take in two integers as arguments.
 
 ```js
-assert.strictEqual(multiply(5, 5), 25);
+assert.match(multiply.toString(), /\s*multiply\(\s*\w+\s*,\s*\w+\s*\)/);
 ```
 
 You should return the product of the two integers.

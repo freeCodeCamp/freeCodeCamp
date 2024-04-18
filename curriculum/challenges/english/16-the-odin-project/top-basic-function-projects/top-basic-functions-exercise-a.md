@@ -22,7 +22,7 @@ assert.isFunction(addOrSubtract);
 Your function should take in an integer as an argument.
 
 ```js
-assert.strictEqual(addOrSubtract(10), 7);
+assert.match(addOrSubtract.toString(), /\s*addOrSubtract\(\s*\w+\s*\)/);
 ```
 
 You should return the given integer + 7 if the integer is less than 10.
