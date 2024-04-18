@@ -90,7 +90,7 @@ function MapLi({
                 <IncompleteIcon value={index} />
               )}
             </div>
-            <div className='test'>{!last && <Arrow />}</div>
+            <div className='progression-arrow'>{!last && <Arrow />}</div>
           </>
         )}
 
