@@ -1191,6 +1191,10 @@
         "intro": [
           "Дізнайтесь про типи даних та умовні інструкції в JavaScript."
         ]
+      },
+      "top-learn-function-basics": {
+        "title": "Learn Function Basics",
+        "intro": ["Learn about functions in JavaScript."]
       }
     }
   },

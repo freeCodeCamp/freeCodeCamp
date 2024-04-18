@@ -66,9 +66,9 @@ Puedes utilizar cualquier combinación de HTML, JavaScript, CSS, Bootstrap, SASS
 
 **Historia de Usuario #25:** Cuando la cuenta regresiva llegue a cero (NOTA: el temporizador DEBE llegar a 00:00), debe comenzar una nueva sesión de conteo regresivo, el cual debe hacerse desde el valor desplegado actualmente en el elemento `id="session-length"`.
 
-**User Story #26:** When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 `audio` tag and have a corresponding `id="beep"`.
+**Historia de Usuario #26:** Cuando el conteo regresivo llegue a cero (NOTA: el temporizador DEBE llegar a 00:00), se debe reproducir un sonido que indica que el tiempo ha terminado. Se debe implementar una etiqueta `audio` de HTML5 y tener su `id="beep"` correspondiente.
 
-**User Story #27:** The audio element with `id="beep"` must be 1 second or longer.
+**Historia de usuario #27:** El elemento de audio `id="beep"` debe durar 1 segundo o más.
 
 **User Story #28:** The audio element with id of `beep` must stop playing and be rewound to the beginning when the element with the id of `reset` is clicked.
 
