@@ -158,6 +158,16 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const { completedChallenge, showCode, projectTitle } = solutionState;
   const examResults = completedChallenge?.examResults;
 
+  const getCertHanding = (certName: string) => {
+    if (certName == 'Legacy Full Stack') {
+      return 'certification.project.heading-legacy-full-stack';
+    } else if (certName == 'Foundational C# with Microsoft') {
+      return 'certification.project.heading-exam';
+    } else {
+      return 'certification.project.heading';
+    }
+  };
+
   const challengeData: CompletedChallenge | null = completedChallenge
     ? {
         ...completedChallenge,
@@ -176,12 +186,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   return (
     <div data-cy='solution-widget' data-playwright-test-label='project-links'>
-      {t(
-        certName === 'Legacy Full Stack'
-          ? 'certification.project.heading-legacy-full-stack'
-          : 'certification.project.heading',
-        { user: name }
-      )}
+      {t(getCertHanding(certName), { user: name })}
       <Spacer size='medium' />
       <Table striped>
         <thead>
@@ -213,25 +218,27 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
 
-      <Trans i18nKey='certification.project.footnote'>
-        If you suspect that any of these projects violate the{' '}
-        <a
-          href='https://www.freecodecamp.org/news/academic-honesty-policy/'
-          rel='noreferrer'
-          target='_blank'
-        >
-          academic honesty policy
-        </a>
-        , please{' '}
-        <a
-          href={`/user/${username}/report-user`}
-          rel='noreferrer'
-          target='_blank'
-        >
-          report this to our team
-        </a>
-        .
-      </Trans>
+      {certName != 'Foundational C# with Microsoft' && (
+        <Trans i18nKey='certification.project.footnote'>
+          If you suspect that any of these projects violate the{' '}
+          <a
+            href='https://www.freecodecamp.org/news/academic-honesty-policy/'
+            rel='noreferrer'
+            target='_blank'
+          >
+            academic honesty policy
+          </a>
+          , please{' '}
+          <a
+            href={`/user/${username}/report-user`}
+            rel='noreferrer'
+            target='_blank'
+          >
+            report this to our team
+          </a>
+          .
+        </Trans>
+      )}
     </div>
   );
 };
