@@ -174,8 +174,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
       challengeType !== challengeTypes.multifileCertProject &&
       challengeType !== challengeTypes.multifilePythonCertProject &&
       // TODO: revert this to enable project previews for python challenges
-      challengeType !== challengeTypes.python &&
-      block !== 'learn-introductory-javascript-by-building-a-pyramid-generator',
+      challengeType !== challengeTypes.python,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles

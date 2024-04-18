@@ -240,12 +240,11 @@ function ShowClassic({
   // made during the build (at least twice!). It should be either a prop or
   // computed from challengeType
   const showPreview =
-    (challengeType === challengeTypes.html ||
-      challengeType === challengeTypes.modern ||
-      challengeType === challengeTypes.multifileCertProject ||
-      challengeType === challengeTypes.multifilePythonCertProject ||
-      challengeType === challengeTypes.python) &&
-    !showConsole;
+    challengeType === challengeTypes.html ||
+    challengeType === challengeTypes.modern ||
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.python;
 
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
