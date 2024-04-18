@@ -512,14 +512,12 @@ function ShowClassic({
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal />
-        {showProjectPreview && (
-          <ProjectPreviewModal
-            challengeData={challengeData}
-            closeText={t('buttons.start-coding')}
-            previewTitle={t('learn.project-preview-title')}
-            showProjectPreview={showProjectPreview}
-          />
-        )}
+        <ProjectPreviewModal
+          challengeData={challengeData}
+          closeText={t('buttons.start-coding')}
+          previewTitle={t('learn.project-preview-title')}
+          showProjectPreview={showProjectPreview}
+        />
         <ShortcutsModal />
       </LearnLayout>
     </Hotkeys>
