@@ -1,13 +1,15 @@
 ---
-id: 6616eb31b778814547f5e0e6
-title: Step 22
-challengeType: 0
-dashedName: step-22
+id: 661fafa5ecd07f2bcb0d8f53
+title: Step 25
+challengeType: 20
+dashedName: step-25
 ---
 
 # --description--
 
-Add a last line in the f-string, start with the word `displacement` and a colon, then in a template call the `__calculate_displacement` method, and round the output to one decimal place. The measure unit is `m`.
+Create a new variable `acceleration_component`, and give it the right value following the equation:
+
+\\( acceleration component = \frac{g x^2}{2 v_0^2 \cos^2(\theta)}\\)
 
 # --hints--
 
@@ -34,15 +36,14 @@ class Projectile:
         self.__speed = speed
         self.__angle = math.radians(angle)
         
---fcc-editable-region--
     def __str__(self):
         return f'''
 Projectile details:
 height: {self.__height} m
 speed: {self.__speed} m/s
 angle: {round(math.degrees(self.__angle))}°
+displacement: {round(self.__calculate_displacement(), 1)} m
 '''
---fcc-editable-region--
 
     def __calculate_displacement(self):
         horizontal_component = self.__speed * math.cos(self.__angle)
@@ -54,6 +55,12 @@ angle: {round(math.degrees(self.__angle))}°
         displacement = horizontal_component * (vertical_component + sqrt_component) / GRAVITATIONAL_ACCELERATION
         return displacement
         
+--fcc-editable-region--
+    def __calculate_y_coordinate(self, x):
+        height_component = self.__height
+        angle_component = math.tan(self.__angle) * x
+--fcc-editable-region--
+
 ball = Projectile(45, 45, 45)
 print(ball)
    
