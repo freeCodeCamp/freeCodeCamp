@@ -213,11 +213,11 @@ test.describe('Certification page - Microsoft', () => {
       '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam'
     );
 
-    await expect(
+    expect(
       page.getByText(
         'If you suspect that any of these projects violate the academic honesty policy, please report this to our team.'
       )
-    ).toBeVisible();
+    ).toBeNull();
 
     const policyLink = projectLinks.getByRole('link', {
       name: 'academic honesty policy'
