@@ -24,6 +24,10 @@
   border: none;
 }
 
+.progress-percent-value {
+  font-weight: 700;
+}
+
 .intro-description strong,
 .intro-description p {
   font-size: 1.17rem;
