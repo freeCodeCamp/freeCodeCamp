@@ -526,10 +526,10 @@ export default function initializeUser(User) {
           Observable.fromPromise(userUpdate)
         );
       })
-      .map(() => ({
+      .map({
         type: 'info',
         message: dedent`Check your email and click the link we sent you to confirm your new email address.`
-      }));
+      });
   }
 
   User.prototype.requestAuthEmail = requestAuthEmail;
@@ -609,7 +609,7 @@ export default function initializeUser(User) {
           return Observable.forkJoin(
             Observable.fromPromise(updatePromise),
             this.requestAuthEmail(false, newEmail),
-            (_, response) => response.message
+            (_, message) => message
           );
         });
     } else {

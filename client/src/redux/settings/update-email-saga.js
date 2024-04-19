@@ -19,7 +19,6 @@ function* updateMyEmailSaga({ payload: email = '' }) {
         payload: { email, isEmailVerified: false }
       })
     );
-    console.log(data);
     yield put(createFlashMessage(data));
   } catch (e) {
     yield put(updateMyEmailError(e));
