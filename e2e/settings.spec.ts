@@ -7,7 +7,7 @@ const settingsTestIds = {
   internetPresence: 'internet-presence',
   portfolioItems: 'portfolio-items',
   camperIdentity: 'camper-identity'
-};
+} as const;
 
 const settingsObject = {
   email: 'foo@bar.com',
@@ -23,7 +23,7 @@ const settingsObject = {
   public: 'Public',
   supportEmail: 'support@freecodecamp.org',
   supportEmailPlaceholder: '<0>{{email}}</0>'
-};
+} as const;
 
 const certifications = [
   translations.certification.title['Responsive Web Design'],
@@ -39,7 +39,7 @@ const certifications = [
   translations.certification.title['Machine Learning with Python'],
   translations.certification.title['College Algebra with Python'],
   translations.certification.title['Foundational C# with Microsoft']
-];
+] as const;
 
 const legacyCertifications = [
   translations.certification.title['Legacy Front End'],
@@ -48,7 +48,7 @@ const legacyCertifications = [
   translations.certification.title[
     'Legacy Information Security and Quality Assurance'
   ]
-];
+] as const;
 
 test.describe('Settings', () => {
   test.beforeEach(async ({ page }) => {
@@ -269,7 +269,7 @@ test.describe('Settings', () => {
     await page
       .getByLabel(translations.settings.labels.title)
       .fill('My portfolio');
-    await page
+    await portfolioItems
       .getByLabel(translations.settings.labels.url)
       .fill('https://my-portfolio.com');
     await page
