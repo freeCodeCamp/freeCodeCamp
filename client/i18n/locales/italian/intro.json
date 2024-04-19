@@ -1189,6 +1189,10 @@
       "top-learn-data-types-and-conditionals": {
         "title": "Impara i Tipi di Dato e le Istruzioni Condizionali",
         "intro": ["Learn about data types and conditionals in JavaScript."]
+      },
+      "top-learn-function-basics": {
+        "title": "Learn Function Basics",
+        "intro": ["Learn about functions in JavaScript."]
       }
     }
   },

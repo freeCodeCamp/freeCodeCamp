@@ -1,6 +1,6 @@
 ---
 id: 655c17377f3b199fff96fa7f
-title: "Dialogue: Placeholder"
+title: "Dialog: Platzhalter"
 challengeType: 21
 videoId: nLDychdBwUg
 dashedName: dialogue-placeholder
@@ -8,8 +8,8 @@ dashedName: dialogue-placeholder
 
 # --description--
 
-Watch the video above to understand the context of the upcoming lessons.
+Sieh dir das Video oben an, um den Kontext der kommenden Lektionen zu verstehen.
 
 # --Auftrag--
 
-Watch the video
+Schaue das Video

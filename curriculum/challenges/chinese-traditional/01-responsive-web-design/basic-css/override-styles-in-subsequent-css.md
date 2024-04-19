@@ -19,7 +19,7 @@ dashedName: override-styles-in-subsequent-css
 
 將 `blue-text` class 應用於 `h1` 元素，看看它和該元素上的 `pink-text` class 哪一個會優先顯示。
 
-Applying multiple class attributes to an HTML element is done with a space between them like this:
+對一個 HTML 元素應用多個 class 屬性時，它們之間可以用空格隔開，就像這樣：
 
 ```html
 class="class1 class2"

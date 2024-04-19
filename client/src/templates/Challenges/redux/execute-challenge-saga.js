@@ -229,7 +229,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
       }
-      console.log('newTest', newTest);
+
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
@@ -241,24 +241,24 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 // updates preview frame and the fcc console.
 export function* previewChallengeSaga(action) {
   const flushLogs = action?.type !== actionTypes.previewMounted;
-  yield delay(700);
-
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
   }
 
+  const isExecuting = yield select(isExecutingSelector);
+  // executeChallengeSaga flushes the logs, so there's no need to if that's
+  // just happened.
+  if (flushLogs && !isExecuting) {
+    yield put(initLogs());
+    yield put(initConsole(''));
+  }
+  yield delay(700);
+
   const logProxy = yield channel();
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    const isExecuting = yield select(isExecutingSelector);
-    // executeChallengeSaga flushes the logs, so there's no need to if that's
-    // just happened.
-    if (flushLogs && !isExecuting) {
-      yield put(initLogs());
-      yield put(initConsole(''));
-    }
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);

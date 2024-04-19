@@ -1,10 +1,8 @@
-import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, FormControl, Modal } from '@freecodecamp/ui';
 import React, { useMemo, useState, useRef, useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
+import { Button, FormControl, Modal } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
 import { Spacer } from '../../../components/helpers';
@@ -36,9 +34,11 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const generateSearchLink = (title: string, block: string) => {
-  const query = /^step\s*\d*$/i.test(title)
-    ? encodeURIComponent(`${block} - ${title}`)
+export const generateSearchLink = (title: string, block: string) => {
+  const blockWithoutHyphens = block.replace(/-/g, ' ');
+
+  const query = /^(step|task)\s*\d*$/i.test(title)
+    ? encodeURIComponent(`${blockWithoutHyphens} - ${title}`)
     : encodeURIComponent(title);
   const search = `${forumLocation}/search?q=${query}`;
   return search;
@@ -199,6 +199,7 @@ function HelpModal({
               componentClass='textarea'
               rows={5}
               value={description}
+              placeholder={t('forum-help.describe')}
               minLength={DESCRIPTION_MIN_CHARS}
               maxLength={DESCRIPTION_MAX_CHARS}
               required
@@ -243,27 +244,28 @@ function HelpModal({
           </form>
         ) : (
           <>
-            <p>
-              <Trans i18nKey='learn.tried-rsa'>
-                <a href={RSA} rel='noopener noreferrer' target='_blank'>
-                  placeholder
-                </a>
-              </Trans>
-            </p>
-            <div className='alert alert-danger'>
-              <FontAwesomeIcon icon={faExclamationCircle} />
-              <p>
-                <Trans i18nKey='learn.rsa-forum'>
-                  <a
-                    href={generateSearchLink(challengeTitle, challengeBlock)}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
+            <div className='alert'>
+              <div className='help-text-warning'>
+                <p>
+                  <Trans i18nKey='learn.tried-rsa'>
+                    <a href={RSA} rel='noopener noreferrer' target='_blank'>
+                      placeholder
+                    </a>
+                  </Trans>
+                </p>
+                <p>
+                  <Trans i18nKey='learn.rsa-forum'>
+                    <a
+                      href={generateSearchLink(challengeTitle, challengeBlock)}
+                      rel='noopener noreferrer'
+                      target='_blank'
+                    >
+                      placeholder
+                    </a>
                     placeholder
-                  </a>
-                  placeholder
-                </Trans>
-              </p>
+                  </Trans>
+                </p>
+              </div>
             </div>
 
             <Button

@@ -439,10 +439,10 @@
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "通過建立fCC論壇排行榜學習異步編程。",
+        "title": "通過創建 fCC 論壇排行榜學習異步編程",
         "intro": [
-          "JavaScript 是一種異步編程語言。這個項目將幫助您掌握異步概念。您將編譯自己的免費CodeCamp論壇排行榜。",
-          "該項目將包括Fetch API、promises、Async/Await 和try..catch 聲明。"
+          "JavaScript 是一種異步編程語言。這個項目將幫助你掌握異步概念。你將編寫自己的 freeCodeCamp 論壇排行榜。",
+          "該項目將包括 Fetch API、promises、Async/Await 和 try..catch 語句。"
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
@@ -1185,6 +1185,10 @@
       "top-learn-data-types-and-conditionals": {
         "title": "學習數據類型和條件",
         "intro": ["在 JavaScript 中學習數據類型和條件"]
+      },
+      "top-learn-function-basics": {
+        "title": "學習函數基礎",
+        "intro": ["學習 JavaScript 中的函數。"]
       }
     }
   },
