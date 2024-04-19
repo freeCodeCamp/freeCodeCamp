@@ -14,22 +14,25 @@ export const Arrow = () => (
       stroke='black'
       strokeWidth={3}
       strokeDasharray='6,1.3'
+      className='map-arrow-icon'
     />
     <rect
-      x={37}
+      x={36}
       y={35}
       width={15}
-      height={3}
+      height={2}
       fill='black'
       transform='rotate(45, 50, 36)'
+      className='map-arrow-icon'
     />
     <rect
-      x={48}
+      x={49}
       y={35}
       width={15}
-      height={3}
+      height={2}
       fill='black'
       transform='rotate(-45, 50, 36)'
+      className='map-arrow-icon'
     />
   </svg>
 );

@@ -85,9 +85,9 @@ function MapLi({
           <>
             <div className='progress-icon'>
               {completed ? (
-                <RibbonIcon value={index} />
+                <RibbonIcon value={index + 1} />
               ) : (
-                <IncompleteIcon value={index} />
+                <IncompleteIcon value={index + 1} />
               )}
             </div>
             <div className='progression-arrow'>{!last && <Arrow />}</div>
