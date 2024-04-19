@@ -7,13 +7,16 @@
         "freeCodeCamp.freecodecamp-dark-vscode-theme"
       ]
     }
-  },
+  }
+  ,
   "dockerFile": "Dockerfile",
   "forwardPorts": [3000, 8000, 27017],
   "portsAttributes": {
     "8000": {
+      
       "label": "Learn",
       "onAutoForward": "openPreview"
+      
     }
   },
   "postCreateCommand": "cp sample.env .env && npm ci",
