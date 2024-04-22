@@ -1,3 +1,5 @@
+import { execSync } from 'child_process';
+
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
@@ -104,16 +106,12 @@ test.describe('Email sign-up page when user is signed in', () => {
       'user appears to not signed in on Webkit'
     );
 
-    await page.route('*/**/user/get-session-user', async route => {
-      const response = await route.fetch();
-      const json = await response.json();
-
-      // /email-sign-up is only accessible if `acceptedPrivacyTerms` is `false`.
-      // We need to patch the response in order to access the page.
-      json.user.certifieduser.acceptedPrivacyTerms = false;
-      json.user.certifieduser.sendQuincyEmail = false;
-      await route.fulfill({ json });
-    });
+    // It's necessary to seed with a user that has not accepted the privacy
+    // terms, otherwise the user will be redirected away from the email sign-up
+    // page.
+    execSync(
+      'node ./tools/scripts/seed/seed-demo-user certified-user --unset-privacy-terms'
+    );
 
     await page.goto('/email-sign-up');
   });
