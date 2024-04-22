@@ -47,6 +47,11 @@ test.describe('Editor theme', () => {
         // The button's click event is intercepted by the `li`,
         // so we need to click on the `li` to trigger the theme change action.
         await listItem.click();
+
+        // Ensure that the action is completed before checking the editor.
+        await expect(
+          page.getByText('We have updated your theme')
+        ).toBeVisible();
       }
 
       const editor = page.locator("div[role='code'].monaco-editor");
@@ -67,6 +72,11 @@ test.describe('Editor theme', () => {
         // The button's click event is intercepted by the `li`,
         // so we need to click on the `li` to trigger the theme change action.
         await listItem.click();
+
+        // Ensure that the action is completed before checking the editor.
+        await expect(
+          page.getByText('We have updated your theme')
+        ).toBeVisible();
       }
 
       const editor = page.locator("div[role='code'].monaco-editor");
