@@ -147,6 +147,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.browsers }}
           path: playwright/reporter
           retention-days: 30
