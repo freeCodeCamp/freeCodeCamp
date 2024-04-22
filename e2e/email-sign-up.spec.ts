@@ -115,12 +115,6 @@ test.describe('Email sign-up page when user is signed in', () => {
       await route.fulfill({ json });
     });
 
-    // Intercept the endpoint to prevent `acceptedPrivacyTerms` from being set
-    await page.route('*/**/update-privacy-terms', async route => {
-      const json = [{ message: 'flash.privacy-updated', type: 'success' }];
-      await route.fulfill({ json });
-    });
-
     await page.goto('/email-sign-up');
   });
 
