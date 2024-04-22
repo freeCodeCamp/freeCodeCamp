@@ -67,7 +67,7 @@ export const RibbonIcon = ({ value }: RibbonProps): JSX.Element => {
       />
       <text
         x='50%'
-        y='40%'
+        y='50%'
         fontFamily='Verdana'
         color='black'
         fontSize='1.0rem'
