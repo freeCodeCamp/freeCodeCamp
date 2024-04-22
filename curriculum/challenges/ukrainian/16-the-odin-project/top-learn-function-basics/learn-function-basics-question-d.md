@@ -1,13 +1,13 @@
 ---
 id: 6617aee95b87c334e7ae8015
-title: Learn Function Basics Question D
+title: Вивчіть основи функцій. Запитання D
 challengeType: 15
 dashedName: learn-function-basics-question-d
 ---
 
 # --description--
 
-If a function is called, but an argument is not provided, then the parameter will be assigned the value of `undefined`. This can lead to unexpected results if the function is not designed to handle this case.
+Якщо функція викликана, але аргумент не надано, то параметр матиме значення `undefined`. Це може призвести до неочікуваних результатів, якщо функція не готова обробляти такий випадок.
 
 ```js
 function favoriteAnimal(animal) {
@@ -17,9 +17,9 @@ function favoriteAnimal(animal) {
 console.log(favoriteAnimal()); // Output: undefined is my favorite animal!
 ```
 
-In the example above, the function `favoriteAnimal` is called without an argument. The parameter `animal` is assigned the value of `undefined`, which is then concatenated with the string `" is my favorite animal!"`.
+Функція `favoriteAnimal` в прикладі вище викликається без аргумента. Параметру `animal` призначено значення `undefined`, що потім об’єднується з рядком `" is my favorite animal!"`.
 
-If a value is not provided you can make use of default parameters. Default parameters allow you to assign a default value to a parameter if no value is provided when the function is called.
+Якщо значення не надано, можна використовувати параметри за замовчуванням. Параметри за замовчуванням дозволяють призначати значення за замовчуванням до параметра, якщо при виклику функції не надано значення.
 
 ```js
 function favoriteAnimal(animal = 'Giant Panda') {
@@ -27,29 +27,29 @@ function favoriteAnimal(animal = 'Giant Panda') {
 }
 ```
 
-In the example above, the default value of the parameter `animal` is set to `'Giant Panda'`. If the function `favoriteAnimal` is called without an argument, the parameter `animal` will be assigned the value `'Giant Panda'`.
+Значення параметра `animal` за замовчуванням в прикладі вище встановлене на `'Giant Panda'`. Якщо функція `favoriteAnimal` викликана без аргумента, то параметр `animal` матиме значення `'Giant Panda'`.
 
 # --question--
 
 ## --text--
 
-How do default parameters in JavaScript functions enhance the behavior of functions like `favoriteAnimal` when called without any arguments?
+Як параметри за замовчуванням у функціях JavaScript покращують поведінку функцій (наприклад, `favoriteAnimal`), якщо викликані без аргументів?
 
 ## --answers--
 
-They cause the function to throw an error if no argument is provided.
+Вони спричиняють помилку, якщо не надано жодного аргументу.
 
 ---
 
-They prevent the function from being called without the required number of arguments.
+Вони перешкоджають виклику функції, якщо не надано певної кількості аргументів.
 
 ---
 
-They ensure the function returns `null` to indicate that no argument was passed.
+Вони гарантують, що функція поверне `null`, тим самим вказуючи, що аргументів не передано.
 
 ---
 
-They allow the function to execute with a predefined value, avoiding `undefined` related issues.
+Вони дозволяють виконати функції з попередньо визначеним значенням, уникаючи помилок, пов’язаних з `undefined`.
 
 ## --video-solution--
 

@@ -1,6 +1,6 @@
 ---
 id: 655b37ecf9da446bd1dcff4f
-title: "Task 94"
+title: "Завдання 94"
 challengeType: 22
 dashedName: task-94
 ---
