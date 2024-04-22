@@ -96,7 +96,8 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "skip-advertisement": "広告をスキップ"
+    "skip-advertisement": "広告をスキップ",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
