@@ -1,10 +1,17 @@
+import { execSync } from 'child_process';
+
 import { test, expect } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
+});
+
+test.afterAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
 });
 
 test.describe('Delete Modal component', () => {
@@ -75,13 +82,6 @@ test.describe('Delete Modal component', () => {
   test('should close the modal and redirect to /learn after the user clicks delete', async ({
     page
   }) => {
-    await page.route('*/**/account/delete', async route => {
-      // intercept the endpoint to prevent user account from being deleted
-      // as the deletion will cause subsequent tests to fail
-      const json = {};
-      await route.fulfill({ json });
-    });
-
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
