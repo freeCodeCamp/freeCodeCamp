@@ -10,8 +10,80 @@
   "isBeta": true,
   "challengeOrder": [
     {
-      "id": "655cd6e975fb4c9778bd5f3a",
-      "title": "Dialogue: Placeholder"
+      "id": "6626261426a32b191320ecbe",
+      "title": "Dialogue 1: An Issue with the Computer"
+    },
+    {
+      "id": "662626b2e13cfe1d39bc40fd",
+      "title": "Task 1"
+    },
+    {
+      "id": "66262700a108801e85319172",
+      "title": "Task 2"
+    },
+    {
+      "id": "6626273eb00c031f4988f129",
+      "title": "Task 3"
+    },
+    {
+      "id": "662629de1d3ccf2559a76a02",
+      "title": "Task 4"
+    },
+    {
+      "id": "66262a51f3a76626829fe191",
+      "title": "Task 5"
+    },
+    {
+      "id": "66262a982c6ae427498f9871",
+      "title": "Task 6"
+    },
+    {
+      "id": "66262b58c53d902944183b44",
+      "title": "Task 7"
+    },
+    {
+      "id": "66262b91a2380f2a02d20e94",
+      "title": "Task 8"
+    },
+    {
+      "id": "66262c938943392c6aa23d39",
+      "title": "Task 9"
+    },
+    {
+      "id": "66262d2afcdcf52e02a98d24",
+      "title": "Task 10"
+    },
+    {
+      "id": "66262d74745ccb2efde7670e",
+      "title": "Task 11"
+    },
+    {
+      "id": "66263023754e892fd8fd3eee",
+      "title": "Task 12"
+    },
+    {
+      "id": "6626346c3db7ed3eab925b8c",
+      "title": "Task 13"
+    },
+    {
+      "id": "662634fa4dab0640457469f6",
+      "title": "Task 14"
+    },
+    {
+      "id": "6626355a442bde41613ed03b",
+      "title": "Task 15"
+    },
+    {
+      "id": "662635b73cca81426d091f59",
+      "title": "Task 16"
+    },
+    {
+      "id": "66263606a953984372df559a",
+      "title": "Task 17"
+    },
+    {
+      "id": "662636481f9a3a4467dcaec3",
+      "title": "Task 18"
     }
   ],
   "helpCategory": "English"
