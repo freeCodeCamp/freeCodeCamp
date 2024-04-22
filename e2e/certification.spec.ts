@@ -217,7 +217,7 @@ test.describe('Certification page - Microsoft', () => {
       page.getByText(
         'If you suspect that any of these projects violate the academic honesty policy, please report this to our team.'
       )
-    ).toBeNull();
+    ).toHaveCount(0);
 
     const policyLink = projectLinks.getByRole('link', {
       name: 'academic honesty policy'
