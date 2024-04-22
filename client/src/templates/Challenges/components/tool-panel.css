@@ -18,32 +18,20 @@
   bottom: 0;
 }
 
-.tool-panel-group-mobile > .btn-block {
-  margin: 0 2px 0 0;
-  padding: 5px 0;
-}
-
-.tool-panel-group .btn-group {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.tool-panel-group-mobile .btn-group {
-  display: block;
-  width: 100%;
-  margin: 0 2px;
-}
-
-.tool-panel-group-mobile .btn {
-  margin: 0 !important;
-}
-
 .tool-panel-group-mobile #get-help-dropdown {
   height: 37px;
 }
 
-.tool-panel-group-mobile *:focus-visible {
+.tool-panel-group-mobile > button {
+  margin-block-start: 0px;
+}
+
+.tool-panel-group-mobile > button:focus-visible {
+  border: 0;
+  margin: 3px;
+}
+
+.tool-panel-group-mobile button:focus-visible {
   outline-offset: -3px;
 }
 
