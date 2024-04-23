@@ -16,17 +16,16 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test('Action row buttons are visible', async ({ isMobile, page }) => {
-  const previewPaneButton = page.getByTestId('preview-pane-button');
-  const previewPortalButton = page.getByRole('button', {
-    name: translations.aria['move-preview-to-new-window']
-  });
-  const actionRow = page.getByTestId('action-row');
+test.describe('Desktop view', () => {
+  test.skip(({ isMobile }) => isMobile, 'Only test on desktop');
 
-  // if it's mobile action row component does not render
-  if (isMobile) {
-    await expect(actionRow).toBeHidden();
-  } else {
+  test('Action row buttons are visible', async ({ page }) => {
+    const previewPaneButton = page.getByTestId('preview-pane-button');
+    const previewPortalButton = page.getByRole('button', {
+      name: translations.aria['move-preview-to-new-window']
+    });
+    const actionRow = page.getByTestId('action-row');
+
     const n = challengeButtons.length;
     for (let i = 0; i < n; i++) {
       const btn = actionRow.getByRole('button', { name: challengeButtons[i] });
@@ -35,19 +34,14 @@ test('Action row buttons are visible', async ({ isMobile, page }) => {
 
     await expect(previewPaneButton).toBeVisible();
     await expect(previewPortalButton).toBeVisible();
-  }
-});
+  });
 
-test('Clicking instructions button hides instructions panel, but not editor buttons', async ({
-  isMobile,
-  page
-}) => {
-  const instructionsButton = page.getByTestId('instructions-button');
-  const actionRow = page.getByTestId('action-row');
+  test('Clicking instructions button hides instructions panel, but not editor buttons', async ({
+    page
+  }) => {
+    const instructionsButton = page.getByTestId('instructions-button');
+    const actionRow = page.getByTestId('action-row');
 
-  if (isMobile) {
-    await expect(actionRow).toBeHidden();
-  } else {
     // Click instructions button to hide instructions panel and editor buttons
     await instructionsButton.click();
 
@@ -60,68 +54,62 @@ test('Clicking instructions button hides instructions panel, but not editor butt
       name: 'Build a Survey Form'
     });
     await expect(instructionsPanelTitle).toBeHidden();
-  }
-});
+  });
 
-test('Clicking Console button shows console panel', async ({
-  isMobile,
-  page
-}) => {
-  const actionRow = page.getByTestId('action-row');
-  const consoleBtn = actionRow.getByRole('button', { name: 'Console' });
+  test('Clicking Console button shows console panel', async ({ page }) => {
+    const actionRow = page.getByTestId('action-row');
+    const consoleBtn = actionRow.getByRole('button', { name: 'Console' });
 
-  if (isMobile) {
-    await expect(actionRow).toBeHidden();
-  } else {
     // Click the console button to show the console panel
     await consoleBtn.click();
     const consolePanel = page.getByLabel('Console');
     await expect(consolePanel).toBeVisible();
-  }
-});
+  });
 
-test('Clicking Preview Pane button hides preview', async ({
-  isMobile,
-  page
-}) => {
-  const previewButton = page.getByTestId('preview-pane-button');
-  const previewFrame = page.getByTitle('challenge preview');
-  const actionRow = page.getByTestId('action-row');
+  test('Clicking Preview Pane button hides preview', async ({ page }) => {
+    const previewButton = page.getByTestId('preview-pane-button');
+    const previewFrame = page.getByTitle('challenge preview');
 
-  if (isMobile) {
-    await expect(actionRow).toBeHidden();
-  } else {
     await previewButton.click();
     await expect(previewFrame).toBeHidden();
-  }
-});
-
-test('Clicking Preview Portal button opens the preview in a new tab', async ({
-  page
-}) => {
-  const previewPortalButton = page.getByRole('button', {
-    name: translations.aria['move-preview-to-new-window']
   });
-  const browserContext = page.context();
 
-  const [newPage] = await Promise.all([
-    browserContext.waitForEvent('page'),
-    previewPortalButton.click()
-  ]);
+  test('Clicking Preview Portal button opens the preview in a new tab', async ({
+    page
+  }) => {
+    const previewPortalButton = page.getByRole('button', {
+      name: translations.aria['move-preview-to-new-window']
+    });
+    const browserContext = page.context();
 
-  await newPage.waitForLoadState();
+    const [newPage] = await Promise.all([
+      browserContext.waitForEvent('page'),
+      previewPortalButton.click()
+    ]);
 
-  await expect(newPage).toHaveURL('about:blank');
+    await newPage.waitForLoadState();
 
-  await newPage.close();
+    await expect(newPage).toHaveURL('about:blank');
+
+    await newPage.close();
+  });
+
+  test('Preview Buttons should not appear when preview is disabled', async ({
+    page
+  }) => {
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures-v8/learn-introductory-javascript-by-building-a-pyramid-generator/step-1'
+    );
+    const previewButton = page.getByTestId('preview-pane-button');
+    await expect(previewButton).toHaveCount(0);
+  });
 });
 
-test('Preview Buttons should not appear when preview is disabled', async ({
-  page
-}) => {
-  await page.goto(
-    '/learn/javascript-algorithms-and-data-structures-v8/learn-introductory-javascript-by-building-a-pyramid-generator/step-1'
-  );
-  const previewButton = page.getByTestId('preview-pane-button');
-  await expect(previewButton).toHaveCount(0);
+test.describe('Mobile view', () => {
+  test.skip(({ isMobile }) => !isMobile, 'Only test on mobile');
+
+  test('Action row is hidden', async ({ page }) => {
+    const actionRow = page.getByTestId('action-row');
+    await expect(actionRow).toBeHidden();
+  });
 });
