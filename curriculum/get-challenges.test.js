@@ -1,9 +1,9 @@
 const path = require('path');
 
 const {
-  generateChallengeCreator,
   hasEnglishSource,
-  createCommentMap
+  createCommentMap,
+  getChallengesForLang
 } = require('./get-challenges');
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
@@ -12,25 +12,11 @@ const MISSING_CHALLENGE_PATH = 'no/challenge.md';
 const basePath = '__fixtures__';
 
 describe('create non-English challenge', () => {
-  describe('generateChallengeCreator', () => {
-    describe('createChallenge', () => {
-      it('throws if lang is an invalid language', async () => {
-        const createChallenge = generateChallengeCreator(basePath, 'notlang');
-        await expect(
-          createChallenge(EXISTING_CHALLENGE_PATH, {})
-        ).rejects.toThrow('notlang is not a accepted language');
-      });
-      it('throws an error if the source challenge is missing', async () => {
-        const createChallenge = generateChallengeCreator(basePath, 'chinese');
-        await expect(
-          createChallenge(MISSING_CHALLENGE_PATH, {})
-        ).rejects.toThrow(
-          `Missing English challenge for
-${MISSING_CHALLENGE_PATH}
-It should be in
-`
-        );
-      });
+  describe('getChallengesForLang', () => {
+    it('throws if lang is an invalid language', async () => {
+      await expect(() => getChallengesForLang('notlang')).rejects.toThrow(
+        'notlang is not a accepted language'
+      );
     });
   });
   describe('hasEnglishSource', () => {
