@@ -13,6 +13,7 @@ test.beforeEach(async ({ page }) => {
 test.afterAll(() => {
   execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   execSync('node ./tools/scripts/seed/seed-surveys');
+  execSync('node ./tools/scripts/seed/seed-ms-username');
 });
 
 test.describe('Delete Modal component', () => {
