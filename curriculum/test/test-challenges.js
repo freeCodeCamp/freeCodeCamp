@@ -31,10 +31,7 @@ const {
 const {
   WorkerExecutor
 } = require('../../client/src/templates/Challenges/utils/worker-executor');
-const {
-  challengeTypes,
-  hasNoSolution
-} = require('../../shared/config/challenge-types');
+const { challengeTypes } = require('../../shared/config/challenge-types');
 // the config files are created during the build, but not before linting
 const javaScriptTestEvaluator =
   require('../../client/config/browser-scripts/test-evaluator.json').filename;
@@ -377,9 +374,9 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
               );
             });
 
-            const { challengeType } = challenge;
+            const { challengeType, challengeFiles } = challenge;
 
-            if (hasNoSolution(challengeType)) return;
+            if (challengeFiles === null) return;
 
             let { tests = [] } = challenge;
             tests = tests.filter(test => !!test.testString);

@@ -1,13 +1,17 @@
 const html = 0;
 const js = 1;
 const backend = 2;
+// Unused
 const zipline = 3;
 const frontEndProject = 3;
 const backEndProject = 4;
 const jsProject = 5;
 const modern = 6;
+// CERTIFICATION not STEP
 const step = 7;
+// Unused
 const quiz = 8;
+// Unused
 const invalid = 9;
 const pythonProject = 10;
 const video = 11;
@@ -15,6 +19,7 @@ const codeAllyPractice = 12;
 const codeAllyCert = 13;
 const multifileCertProject = 14;
 const theOdinProject = 15;
+// Unused
 const colab = 16;
 const exam = 17;
 const msTrophy = 18;
@@ -58,31 +63,6 @@ export const hasNoTests = (challengeType: number): boolean =>
   challengeType === video ||
   challengeType === dialogue ||
   challengeType === fillInTheBlank;
-
-export const hasNoSolution = (challengeType: number): boolean => {
-  const noSolutions = [
-    backend,
-    zipline,
-    frontEndProject,
-    backEndProject,
-    step,
-    quiz,
-    invalid,
-    pythonProject,
-    video,
-    codeAllyPractice,
-    codeAllyCert,
-    theOdinProject,
-    colab,
-    exam,
-    msTrophy,
-    multipleChoice,
-    dialogue,
-    fillInTheBlank
-  ];
-
-  return noSolutions.includes(challengeType);
-};
 
 // determine the component view for each challenge
 export const viewTypes = {
