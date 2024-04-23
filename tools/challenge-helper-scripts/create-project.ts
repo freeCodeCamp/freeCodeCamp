@@ -121,7 +121,6 @@ async function createIntroMD(superBlock: string, block: string, title: string) {
 title: Introduction to the ${title}
 block: ${block}
 superBlock: ${superBlock}
-isBeta: true
 ---
 
 ## Introduction to the ${title}
