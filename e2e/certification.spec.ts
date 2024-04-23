@@ -218,21 +218,5 @@ test.describe('Certification page - Microsoft', () => {
         'If you suspect that any of these projects violate the academic honesty policy, please report this to our team.'
       )
     ).toHaveCount(0);
-
-    const policyLink = projectLinks.getByRole('link', {
-      name: 'academic honesty policy'
-    });
-    await expect(policyLink).toHaveAttribute(
-      'href',
-      'https://www.freecodecamp.org/news/academic-honesty-policy/'
-    );
-
-    const reportLink = projectLinks.getByRole('link', {
-      name: 'report this to our team'
-    });
-    await expect(reportLink).toHaveAttribute(
-      'href',
-      '/user/certifieduser/report-user'
-    );
   });
 });
