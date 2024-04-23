@@ -1,8 +1,11 @@
-import { execSync } from 'child_process';
+import { exec } from 'child_process';
+import { promisify } from 'util';
 
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+
+const execP = promisify(exec);
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
@@ -10,11 +13,14 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
 
-test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
-  execSync('node ./tools/scripts/seed/seed-surveys');
-  execSync('node ./tools/scripts/seed/seed-ms-username');
-});
+test.afterAll(
+  async () =>
+    await Promise.all([
+      await execP('node ./tools/scripts/seed/seed-demo-user certified-user'),
+      await execP('node ./tools/scripts/seed/seed-surveys'),
+      await execP('node ./tools/scripts/seed/seed-ms-username')
+    ])
+);
 
 test.describe('Delete Modal component', () => {
   test('should render the modal correctly', async ({ page }) => {
