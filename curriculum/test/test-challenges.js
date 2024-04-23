@@ -376,7 +376,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
 
             const { challengeType, challengeFiles } = challenge;
 
-            if (challengeFiles === null) return;
+            if (!challengeFiles) return;
 
             let { tests = [] } = challenge;
             tests = tests.filter(test => !!test.testString);
