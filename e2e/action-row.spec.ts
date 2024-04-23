@@ -1,4 +1,4 @@
-import { test, expect, type Page, type Locator } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const challengeButtons = [
@@ -16,21 +16,12 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-function getActionRowLocator(page: Page): Locator {
-  return page.getByTestId('action-row');
-}
-
-function getTabsRowLocator(page: Page): Locator {
-  return page.getByTestId('action-row');
-}
-
 test('Action row buttons are visible', async ({ isMobile, page }) => {
   const previewPaneButton = page.getByTestId('preview-pane-button');
   const previewPortalButton = page.getByRole('button', {
     name: translations.aria['move-preview-to-new-window']
   });
-  const actionRow = getActionRowLocator(page);
-  const tabsRow = getTabsRowLocator(page);
+  const actionRow = page.getByTestId('action-row');
 
   // if it's mobile action row component does not render
   if (isMobile) {
@@ -38,7 +29,7 @@ test('Action row buttons are visible', async ({ isMobile, page }) => {
   } else {
     const n = challengeButtons.length;
     for (let i = 0; i < n; i++) {
-      const btn = tabsRow.getByRole('button', { name: challengeButtons[i] });
+      const btn = actionRow.getByRole('button', { name: challengeButtons[i] });
       await expect(btn).toBeVisible();
     }
 
@@ -52,16 +43,16 @@ test('Clicking instructions button hides instructions panel, but not editor butt
   page
 }) => {
   const instructionsButton = page.getByTestId('instructions-button');
-  const tabsRow = getTabsRowLocator(page);
+  const actionRow = page.getByTestId('action-row');
 
   if (isMobile) {
-    await expect(tabsRow).toBeHidden();
+    await expect(actionRow).toBeHidden();
   } else {
     // Click instructions button to hide instructions panel and editor buttons
     await instructionsButton.click();
 
     for (let i = 0; i < editorButtons.length; i++) {
-      const btn = tabsRow.getByRole('button', { name: editorButtons[i] });
+      const btn = actionRow.getByRole('button', { name: editorButtons[i] });
       await expect(btn).toBeVisible();
     }
 
@@ -76,9 +67,8 @@ test('Clicking Console button shows console panel', async ({
   isMobile,
   page
 }) => {
-  const actionRow = getActionRowLocator(page);
-  const tabsRow = getTabsRowLocator(page);
-  const consoleBtn = tabsRow.getByRole('button', { name: 'Console' });
+  const actionRow = page.getByTestId('action-row');
+  const consoleBtn = actionRow.getByRole('button', { name: 'Console' });
 
   if (isMobile) {
     await expect(actionRow).toBeHidden();
@@ -96,7 +86,7 @@ test('Clicking Preview Pane button hides preview', async ({
 }) => {
   const previewButton = page.getByTestId('preview-pane-button');
   const previewFrame = page.getByTitle('challenge preview');
-  const actionRow = getActionRowLocator(page);
+  const actionRow = page.getByTestId('action-row');
 
   if (isMobile) {
     await expect(actionRow).toBeHidden();
