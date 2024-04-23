@@ -39,6 +39,7 @@ test.describe('Editor theme', () => {
       await page.getByRole('button', { name: 'Menu' }).click();
 
       const toggle = page.getByRole('button', { name: 'Night Mode' });
+      await expect(toggle).toBeVisible();
       const isDarkMode = await toggle.getAttribute('aria-pressed');
 
       if (isDarkMode === 'false') {
@@ -64,6 +65,7 @@ test.describe('Editor theme', () => {
       await page.getByRole('button', { name: 'Menu' }).click();
 
       const toggle = page.getByRole('button', { name: 'Night Mode' });
+      await expect(toggle).toBeVisible();
       const isDarkMode = await toggle.getAttribute('aria-pressed');
 
       if (isDarkMode === 'true') {
