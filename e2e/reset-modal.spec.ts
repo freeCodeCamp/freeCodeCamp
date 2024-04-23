@@ -150,3 +150,42 @@ test('should close when the user clicks the close button', async ({ page }) => {
     page.getByRole('dialog', { name: translations.learn.reset })
   ).toBeHidden();
 });
+
+test('User can reset on a multi-file project', async ({ page }) => {
+  {
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
+    );
+    await page
+      .getByRole('button', { name: translations.buttons.reset })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', { name: translations.learn.reset })
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', {
+        name: translations.buttons.close
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('heading', {
+        name: translations.learn.reset
+      })
+    ).toBeVisible();
+
+    await expect(
+      page.getByText(translations.learn['reset-warn'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.learn['reset-warn-2'])
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', {
+        name: translations.buttons['reset-lesson']
+      })
+    ).toBeVisible();
+  }
+});
