@@ -1,14 +1,7 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-const challengeButtons = [
-  'Instructions',
-  'index.html',
-  'styles.css',
-  'Console'
-];
-
-const editorButtons = ['index.html', 'styles.css'];
+const buttonNames = ['Instructions', 'index.html', 'styles.css', 'Console'];
 
 test.describe('Desktop view', () => {
   test.skip(({ isMobile }) => isMobile, 'Only test on desktop');
@@ -27,30 +20,25 @@ test.describe('Desktop view', () => {
       });
       const actionRow = page.getByTestId('action-row');
 
-      const n = challengeButtons.length;
-      for (let i = 0; i < n; i++) {
-        const btn = actionRow.getByRole('button', {
-          name: challengeButtons[i]
-        });
-        await expect(btn).toBeVisible();
+      for (const name of buttonNames) {
+        await expect(actionRow.getByRole('button', { name })).toBeVisible();
       }
 
       await expect(previewPaneButton).toBeVisible();
       await expect(previewPortalButton).toBeVisible();
     });
 
-    test('Clicking instructions button hides instructions panel, but not editor buttons', async ({
+    test('Clicking instructions button hides instructions panel, but not any buttons', async ({
       page
     }) => {
       const instructionsButton = page.getByTestId('instructions-button');
       const actionRow = page.getByTestId('action-row');
 
-      // Click instructions button to hide instructions panel and editor buttons
+      // Click instructions button to hide instructions panel
       await instructionsButton.click();
 
-      for (let i = 0; i < editorButtons.length; i++) {
-        const btn = actionRow.getByRole('button', { name: editorButtons[i] });
-        await expect(btn).toBeVisible();
+      for (const name of buttonNames) {
+        await expect(actionRow.getByRole('button', { name })).toBeVisible();
       }
 
       const instructionsPanelTitle = page.getByRole('heading', {
