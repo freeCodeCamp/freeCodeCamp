@@ -140,6 +140,47 @@ t.result.wasSuccessful()
 });
 ```
 
+The `draw` method should behave correctly when the number of balls to extract is bigger than the number of balls in the hat.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+    pyodide.FS.writeFile(
+      "/home/pyodide/test_module.py",
+      `
+import unittest
+import probability_calculator
+from importlib import reload
+
+reload(probability_calculator)
+
+probability_calculator.random.seed(95)
+def test_hat_draw_2(self):
+        hat = probability_calculator.Hat(yellow=5,red=1,green=3,blue=9,test=1)
+        actual = hat.draw(20)
+        expected = ['yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'red', 'green', 'green', 'green', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'test']
+        self.assertEqual(actual, expected, 'Expected hat draw to return all items from hat contents.')
+        actual = len(hat.contents)
+        expected = 0
+        self.assertEqual(actual, expected, 'Expected hat draw to leave no items in contents.')
+        `
+    );
+    const testCode = `
+from unittest import main
+import test_module
+from importlib import reload
+
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  },
+});
+```
+
 The `experiment` method should return a different probability.
 
 
