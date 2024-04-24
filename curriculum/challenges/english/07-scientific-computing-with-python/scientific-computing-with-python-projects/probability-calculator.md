@@ -115,7 +115,10 @@ from importlib import reload
 reload(probability_calculator)
 
 probability_calculator.random.seed(95)
-def test_hat_draw(self):
+
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_hat_draw(self):
         hat = probability_calculator.Hat(red=5,blue=2)
         actual = hat.draw(2)
         expected = ['blue', 'red']
@@ -156,7 +159,9 @@ from importlib import reload
 reload(probability_calculator)
 
 probability_calculator.random.seed(95)
-def test_hat_draw_2(self):
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_hat_draw_2(self):
         hat = probability_calculator.Hat(yellow=5,red=1,green=3,blue=9,test=1)
         actual = hat.draw(20)
         expected = ['yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'red', 'green', 'green', 'green', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'test']
@@ -262,7 +267,8 @@ class Hat:
     def draw(self, number): 
         drawn = []
         if number >= len(self.contents):
-            return self.contents
+            drawn.extend(self.contents)
+            self.contents = []
         else:
             for i in range(number):
                 drawn.append(
@@ -270,8 +276,7 @@ class Hat:
                 )                
         return drawn
 
-def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
-    
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):    
     expected_balls_list = []
     drawn_list = []
     success = 0
@@ -289,12 +294,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
             except:
                 continue
         if len(exp_ball_list_copy) == 0:
-            success += 1
-
-        
-
-        
-    probability = success/num_experiments
-    
+            success += 1        
+    probability = success/num_experiments    
     return probability
 ```
