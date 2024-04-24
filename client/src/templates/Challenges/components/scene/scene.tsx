@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
 import { Col } from '@freecodecamp/ui';
+import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
@@ -8,7 +9,16 @@ import Character from './character';
 
 import './scene.css';
 
-export function Scene({ scene }: { scene: FullScene }): JSX.Element {
+export function Scene({
+  scene,
+  isPlaying,
+  setIsPlaying
+}: {
+  scene: FullScene;
+  isPlaying: boolean;
+  setIsPlaying: (shouldPlay: boolean) => void;
+}): JSX.Element {
+  const { t } = useTranslation();
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
 
@@ -68,12 +78,20 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
 
   const [audioLoaded, setAudioLoaded] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
+
+  useEffect(() => {
+    if (isPlaying) {
+      playScene();
+    } else {
+      finishScene();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying]);
 
   const playScene = () => {
     setIsPlaying(true);
@@ -147,7 +165,7 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
       if (commandIndex === commands.length - 1) {
         setTimeout(
           () => {
-            finishScene();
+            setIsPlaying(false);
           },
           command.finishTime
             ? command.finishTime * 1000 + 500
@@ -214,9 +232,14 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
               <div className='scene-start-screen'>
                 <button
                   className='scene-start-btn scene-play-btn'
-                  onClick={playScene}
+                  onClick={() => {
+                    setIsPlaying(true);
+                  }}
                 >
-                  <img src={`${images}/play-button.png`} alt='Press Play' />
+                  <img
+                    src={`${images}/play-button.png`}
+                    alt={t('buttons.play-scene')}
+                  />
                 </button>
 
                 {!alwaysShowDialogue && (
