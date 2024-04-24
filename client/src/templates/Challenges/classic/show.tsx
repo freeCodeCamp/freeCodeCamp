@@ -235,8 +235,7 @@ function ShowClassic({
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
   const showConsole =
-    block === 'learn-introductory-javascript-by-building-a-pyramid-generator' ||
-    block === 'review-js-fundamentals-by-building-a-gradebook-app';
+    block === 'learn-introductory-javascript-by-building-a-pyramid-generator';
   // TODO: show preview should NOT be computed like this. That determination is
   // made during the build (at least twice!). It should be either a prop or
   // computed from challengeType
