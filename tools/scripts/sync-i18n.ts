@@ -20,6 +20,7 @@ const loadDirectory = async (path: string): Promise<string[]> => {
 };
 
 const syncChallenges = async () => {
+  const block = process.env.FCC_BLOCK;
   const ignore = ['.markdownlint.yaml', '_meta', 'english'];
   const basePath = join(process.cwd(), 'curriculum', 'challenges');
   const allLangs = await readdir(basePath);
@@ -29,6 +30,9 @@ const syncChallenges = async () => {
   for (const path of english) {
     await Promise.all(
       filtered.map(async lang => {
+        if (block && !path.includes(block)) {
+          return;
+        }
         const targetPath = path.replace('english', lang);
         // we swallow the error here to detect if the file doesn't exist
         const status = await stat(targetPath).catch(() => null);
@@ -81,6 +85,9 @@ const syncChallenges = async () => {
     const langPath = join(process.cwd(), 'curriculum', 'challenges', lang);
     const langFiles = await loadDirectory(langPath);
     for (const path of langFiles) {
+      if (block && !path.includes(block)) {
+        continue;
+      }
       const engPath = path.replace(lang, 'english');
       // we don't want an error, only need to know that the file exists
       const existsEnglish = await stat(engPath).catch(() => null);
