@@ -12,7 +12,7 @@ describe('getSetAccessToken', () => {
   const invalidJWTSecret = 'This is not correct secret';
   const now = new Date(Date.now());
   const theBeginningOfTime = new Date(0);
-  const domain = process.env.COOKIE_DOMAIN || 'localhost';
+  const domain = 'www.example.com';
   const accessToken = {
     id: '123abc',
     userId: '456def',
