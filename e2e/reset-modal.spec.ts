@@ -58,7 +58,8 @@ test('User can reset challenge', async ({ page }) => {
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
   );
 
-  await expect(initialFrame).toBeVisible();
+  // Building the preview can take a while
+  await expect(initialFrame).toBeVisible({ timeout: 10000 });
 
   const editorPaneLabel =
     'Editor content;Press Alt+F1 for Accessibility Options.';
