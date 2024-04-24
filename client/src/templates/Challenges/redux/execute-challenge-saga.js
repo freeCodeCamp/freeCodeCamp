@@ -298,14 +298,15 @@ export function* previewChallengeSaga(action) {
       }
     }
   } catch (err) {
-    console.log('previewChallengeSaga error', err);
     if (err[0] === 'timeout') {
       // TODO: translate the error
       // eslint-disable-next-line no-ex-assign
       err[0] = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
-    console.log(err);
-    yield put(updateConsole(escape(err)));
+    // If the preview fails, the most useful thing to do is to show the learner
+    // what the error is. As such, we replace whatever is in the console with
+    // the error message.
+    yield put(initConsole(escape(err)));
   }
 }
 
