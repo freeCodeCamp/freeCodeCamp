@@ -11,6 +11,7 @@ dashedName: nested-loops
 In this task we will see how nested loops will look in Javascript code.
 The flowchart given below shows an example of a pattern printed by nested loops.
 
+![A Nested Loop](https://i.ibb.co/v3kpZxG/Screenshot-from-2024-04-19-15-16-53.png)
 
 
 # --question--

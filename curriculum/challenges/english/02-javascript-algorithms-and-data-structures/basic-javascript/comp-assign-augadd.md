@@ -9,15 +9,12 @@ dashedName: comp-assign-augadd
 
 In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:
 
-Programming mein, variables ke contents ko modify karne ke liye assignments ka istemal karna aam hai. Yaad rakhein ki equals sign ke daayein wale sab kuch pehle evaluate hota hai, isliye hum keh sakte hain:
 
 ```js
 myVar = myVar + 5;
 ```
 
 to add `5` to `myVar`. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
-
-`myVar` mein `5` ko add karne ke liye. Kyunki ye ek aam pattern hai, isliye aise operators hote hain jo ek step mein mathematical operation aur assignment dono karte hain.
 
 One such operator is the `+=` operator.
 
@@ -28,6 +25,18 @@ console.log(myVar);
 ```
 
 `6` would be displayed in the console.
+
+<h2>Hinglish</h2>
+
+Programming mein, variables ke contents ko modify karne ke liye assignments ka istemal karna aam hai. Yaad rakhein ki equals sign ke daayein wale sab kuch pehle evaluate hota hai, isliye hum keh sakte hain:
+
+```js
+myVar = myVar + 5;
+```
+
+`myVar` mein `5` ko add karne ke liye. Kyunki ye ek aam pattern hai, isliye aise operators hote hain jo ek step mein mathematical operation aur assignment dono karte hain.
+
+Aisa ek operator hain `=+`.
 
 # --instructions--
 

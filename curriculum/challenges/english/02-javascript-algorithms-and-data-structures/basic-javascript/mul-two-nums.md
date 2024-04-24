@@ -19,6 +19,8 @@ const myVar = 13 * 13;
 
 `myVar` would have the value `169`.
 
+<h2>Hinglish</h2>
+
 Hum ek number ko doosre se bhi guna kar sakte hain.
 
 JavaScript mein do numbers ko guna karne ke liye `*` symbol ka istemal hota hai.

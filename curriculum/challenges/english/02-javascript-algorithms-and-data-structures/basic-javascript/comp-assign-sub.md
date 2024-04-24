@@ -19,6 +19,8 @@ will subtract `5` from `myVar`. This can be rewritten as:
 myVar -= 5;
 ```
 
+<h2>Hinglish</h2>
+
 `-=` operator, `+=` operator ki tarah, ek variable se ek number ko subtract karta hai.
 
 ```js

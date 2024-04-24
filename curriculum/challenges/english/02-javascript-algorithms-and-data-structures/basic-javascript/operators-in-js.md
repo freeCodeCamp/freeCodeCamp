@@ -8,9 +8,9 @@ dashedName: operators-in-js
 
 # --description--
 
-Arithmetic operators in JavaScript are like the tools in a math toolbox, allowing you to perform basic math operations on numbers. Whether you're adding, subtracting, multiplying, or dividing, these operators make it easy to manipulate numbers and solve equations. With JavaScript, you can unleash your inner math whiz and crunch numbers with ease!
+Arithmatic operators in JavaScript are like the tools in a math toolbox, allowing you to perform basic math operations on numbers. Whether you're adding, subtracting, multiplying, or dividing, these operators make it easy to manipulate numbers and solve equations. With JavaScript, you can unleash your inner math whiz and crunch numbers with ease!
 
-Certainly! Here's a brief overview of the individual arithmetic operators in JavaScript:
+Here's a brief overview of the individual arithmetic operators in JavaScript:
 
 **Addition (+):** The addition operator is used to add two numbers together. For example, `2 + 3` evaluates to `5`.
 
@@ -24,7 +24,7 @@ Certainly! Here's a brief overview of the individual arithmetic operators in Jav
 
 These operators are fundamental in performing mathematical calculations and manipulating numerical values in JavaScript.
 
-Translation
+<h2>Hinglish</h2>
 
 
 JavaScript mein arithmetic operators math toolbox ki tarah hote hain, jo aapko numbers par basic math operations perform karne ki anumati dete hain. Chahe aap addition, subtraction, multiplication ya division kar rahe ho, ye operators numbers ko manipulate karne aur equations ko solve karne mein aasan banate hain. JavaScript ke saath, aap apne andar ke math whiz ko jagao aur numbers ko aasanise crunch karo!  

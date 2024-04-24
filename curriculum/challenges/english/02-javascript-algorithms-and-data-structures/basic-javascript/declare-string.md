@@ -21,6 +21,15 @@ var myName = "your name";
 
 `"your name"` is called a <dfn>string</dfn> <dfn>literal</dfn>. A string literal, or string, is a series of zero or more characters enclosed in single or double quotes.
 
+
+
+# --instructions--
+
+Create two new string variables: `myFirstName` and `myLastName` and assign them the values of your first and last name, respectively.
+
+
+<h2>Hinglish</h2>
+
 Pehle aapne variable declare karne ke liye ye code istemal kiya tha:
 
 ```js
@@ -35,11 +44,10 @@ var myName = "your name";
 
 `"your name"` ko ek <dfn>string</dfn> <dfn>literal</dfn> kehte hain. Ek string literal, ya string, ek series hoti hai jisme zero ya zyada characters single ya double quotes mein hote hain.
 
-# --instructions--
-
-Create two new string variables: `myFirstName` and `myLastName` and assign them the values of your first and last name, respectively.
 
 Do naye string variables banayein: `myFirstName` aur `myLastName` aur unhein aapke first aur last name ke values assign karein.
+
+
 
 # --hints--
 

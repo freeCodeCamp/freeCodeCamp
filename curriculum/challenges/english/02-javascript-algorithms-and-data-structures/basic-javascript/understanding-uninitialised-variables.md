@@ -9,13 +9,16 @@ dashedName: understanding-uninitialised-variables
 
 When JavaScript variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN` which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a <dfn>string</dfn> of `undefined`.
 
-Jab JavaScript variables declare kiye jaate hain, to unka initial value hota hai `undefined`. Agar aap ek `undefined` variable par mathematical operation karte hain, to aapka result `NaN` hoga, jo <dfn>"Not a Number"</dfn> ka matlab hai. Agar aap ek string ko ek `undefined` variable ke saath concatenate karte hain, to aapko ek `undefined` string milegi.
-
 # --instructions--
 
 Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` respectively so that they will not be `undefined`.
 
+<h2>Hinglish</h2>
+
+Jab JavaScript variables declare kiye jaate hain, to unka initial value hota hai `undefined`. Agar aap ek `undefined` variable par mathematical operation karte hain, to aapka result `NaN` hoga, jo <dfn>"Not a Number"</dfn> ka matlab hai. Agar aap ek string ko ek `undefined` variable ke saath concatenate karte hain, to aapko ek `undefined` string milegi.
+
 `a`, `b`, aur `c` teen variables ko `5`, `10`, aur `"I am a"` ke saath initialize karo taki wo `undefined` na rahein.
+
 
 # --hints--
 

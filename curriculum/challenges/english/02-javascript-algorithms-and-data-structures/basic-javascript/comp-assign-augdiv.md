@@ -19,6 +19,8 @@ Will divide `myVar` by `5`. This can be rewritten as:
 myVar /= 5;
 ```
 
+<h2>Hinglish</h2>
+
 `/=` operator ek variable ko doosre number se divide karta hai.
 
 ```js

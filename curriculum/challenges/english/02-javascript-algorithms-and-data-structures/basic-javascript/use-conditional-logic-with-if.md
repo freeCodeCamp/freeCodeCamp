@@ -37,6 +37,36 @@ When `test` is called with a value of `true`, the `if` statement evaluates `myCo
 
 Create an `if` statement inside the function to return `Yes, that was true` if the parameter `wasThatTrue` is `true` and return `No, that was false` otherwise.
 
+<h2>Hinglish</h2>
+
+`if` statements ka istemal code mein faislay karne ke liye kiya jata hai. Keyword `if` JavaScript ko yeh batata hai ki certain conditions ke neeche curly braces mein code ko execute karna hai, jo parentheses mein define ki gayi hain. Ye conditions `Boolean` conditions ke roop mein jaani jaati hain aur sirf `true` ya `false` ho sakti hain.
+
+Jab condition `true` ho jaati hai, tab program curly braces ke andar wale statement ko execute karta hai. Jab Boolean condition `false` ho jaati hai, tab curly braces ke andar wala statement execute nahi hota.
+
+**Pseudocode**
+
+<blockquote>if (<i>condition true ho</i>) {<br>  <i>statement execute ho</i><br>}</blockquote>
+
+**Example**
+
+```js
+function test(myCondition) {
+  if (myCondition) {
+    return "It was true";
+  }
+  return "It was false";
+}
+
+test(true);
+test(false);
+```
+
+`test(true)` string `It was true` ko return karta hai, aur `test(false)` string `It was false` ko return karta hai.
+
+Jab `test` ko `true` ke value ke saath call kiya jata hai, tab `if` statement `myCondition` ko evaluate karta hai ki yeh `true` hai ya nahi. Kyunki yeh `true` hai, function `It was true` ko return karta hai. Jab hum `test` ko `false` ke value ke saath call karte hain, tab `myCondition` *true* nahi hota aur curly braces mein wala statement execute nahi hota aur function `It was false` ko return karta hai.
+
+Funktion ke andar ek `if` statement create karo jo parameter `wasThatTrue` ko `true` hone par `Yes, that was true` return kare aur agar `false` ho to `No, that was false` return kare.
+
 # --hints--
 
 `trueOrFalse` should be a function

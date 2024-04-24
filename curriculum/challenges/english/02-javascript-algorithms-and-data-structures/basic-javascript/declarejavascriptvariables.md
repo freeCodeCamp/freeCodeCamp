@@ -28,6 +28,8 @@ Computer science mein, <dfn>data</dfn> kuch bhi ho sakta hai jo computer ke liye
 
 For example, computers ko numbers jaise ki number `12`, aur `strings` jaise ki `"12"`, `"dog"`, ya `"123 cats"` ko differentiate karne ki capability hoti hai, jo characters ki collections hoti hain. Computers numbers par mathematical operations perform kar sakte hain, lekin strings par nahi.
 
+<h2>Hinglish</h2>
+
 <dfn>Variables</dfn> computers ko data ko store aur manipulate karne ki dynamic tarike se karne ki anumati deti hain. Ye is tarike se karte hain ki wo data ka istemal data ke bajaye us data ko point karne ke liye ek "label" ka istemal karte hain. Kisi bhi aath data types ko variable mein store kiya ja sakta hai.
 
 Variables mathematics mein istemal kiye jaane wale x aur y variables ke similar hote hain, jo yeh matlab hai ki ye data ko represent karne ke liye ek simple naam hote hain jise hum refer karna chahte hain. Computer variables mathematics ke variables se is tarike se alag hote hain ki wo alag alag waqt par alag alag values ko store kar sakte hain.

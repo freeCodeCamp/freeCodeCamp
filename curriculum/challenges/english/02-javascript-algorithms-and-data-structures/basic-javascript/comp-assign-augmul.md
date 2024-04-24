@@ -19,6 +19,8 @@ will multiply `myVar` by `5`. This can be rewritten as:
 myVar *= 5;
 ```
 
+<h2>Hinglish</h2>
+
 `*=` operator ek variable ko ek number se multiply karta hai.
 
 ```js

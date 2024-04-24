@@ -19,6 +19,8 @@ const myVar = 12 - 6;
 
 `myVar` would have the value `6`.
 
+<h2>Hinglish</h2>
+
 Hum ek number se doosre number ko bhi subtract kar sakte hain.
 
 JavaScript mein subtraction ke liye `-` symbol ka istemal hota hai.

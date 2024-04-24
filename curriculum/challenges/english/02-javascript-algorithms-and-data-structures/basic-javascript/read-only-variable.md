@@ -31,6 +31,8 @@ const FAV_PET = "Cats";
 FAV_PET = "Dogs";
 ```
 
+<h2>Hinglish</h2>
+
 Console ek error dikha dega `FAV_PET` ki value ko dobara assign karne ki wajah se.
 
 Aapko hamesha variables ko jo reassign nahi karna chahte hain unhe `const` keyword ka istemal karna chahiye. Ye madad karta hai jab aap galti se kisi variable ko reassign karne ki koshish karte hain jo constant rehna chahiye.

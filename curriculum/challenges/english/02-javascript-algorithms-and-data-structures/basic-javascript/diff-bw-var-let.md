@@ -32,6 +32,8 @@ The error can be seen in your browser console.
 
 So unlike `var`, when you use `let`, a variable with the same name can only be declared once.
 
+<h2>Hinglish</h2>
+
 `var` keyword ka istemal karke variables declare karne mein ek bada problem ye hai ki aap aasani se variable declarations ko overwrite kar sakte hain:
 
 ```js

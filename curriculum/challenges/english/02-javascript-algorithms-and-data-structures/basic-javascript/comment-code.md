@@ -28,6 +28,26 @@ multi-line comment */
 
 **NOTE:** As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code—both for others *and* for your future self.
 
+
+Comments yaane ki code ki lines jo JavaScript ko jaanboojhkar ignore karni hai. Comments khud ke liye aur dusre logon ke liye notes chhodne ka ek achha tareeka hai jo baad mein uss code ka kya kaam hai woh samajhne ke liye upyogi hota hai.
+
+JavaScript mein comments likhne ke do tareeke hote hain:
+
+`//` ka istemal karke aap JavaScript ko current line par baki text ko ignore karne ke liye keh sakte hain. Ye ek in-line comment hai:
+
+```js
+// Ye ek in-line comment hai.
+```
+
+Aap `/*` se shuru karke aur `*/` se samapt karke multi-line comment bana sakte hain. Ye ek multi-line comment hai:
+
+```js
+/* Ye ek
+multi-line comment hai */
+```
+
+**NOTE:** Jab aap code likhte hain, aapko apne code ke hisson ke function ko spasht karne ke liye regular roop se comments add karte rahna chahiye. Achhi commenting aapke code ke maksad ko samjhaane mein madad kar sakti hai—dusron ke liye *aur* aapke liye bhi.
+
 # --instructions--
 
 Try creating one of each type of comment.

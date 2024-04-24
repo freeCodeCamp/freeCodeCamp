@@ -21,6 +21,21 @@ if (num > 10) {
 
 Combine the `if` statements into a single `if/else` statement.
 
+<h2>Hinglish</h2>
+
+Jab kisi `if` statement ki condition true hoti hai, to uske baad wale code block ko execute kiya jata hai. Lekin agar wo condition false hoti hai, to normally kuch nahi hota. `else` statement ke saath, ek alternate code block execute kiya ja sakta hai.
+
+```js
+if (num > 10) {
+  return "Bigger than 10";
+} else {
+  return "10 or Less";
+}
+```
+
+`if` statements ko ek single `if/else` statement mein combine karo.
+
+
 # --hints--
 
 You should only have one `if` statement in the editor

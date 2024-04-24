@@ -23,6 +23,8 @@ var anotherVariableName;
 var thisVariableNameIsSoLong;
 ```
 
+<h2>Hinglish</h2>
+
 JavaScript mein sabhi variables aur function names case sensitive hote hain. Iska matlab hai ki capitalization ka matlab hota hai.
 
 `MYVAR` `MyVar` ya `myvar` ke barabar nahi hota. Yeh sambhav hai ki ek hi naam ke multiple alag variables ho sakte hain lekin alag casing ke saath. Is language feature ka istemal na karne ki liye mazboot rai hai.

@@ -66,12 +66,12 @@
       "title": "Storing values with the assignment operator"
     },
     {
-      "id": "661a6e7d66f4ca43cb3c3a78",
-      "title": "Print BirthDay Details"
-    },
-    {
       "id": "6606ca2b9b8fc711a74602f5",
       "title": "Initializing Variables with the assignment operator"
+    },
+    {
+      "id": "66232ce20e33bc54d6b6181b",
+      "title": "Print Birthday Details"
     },
     {
       "id": "6612d2e8e949deff0fb67b5c",
@@ -338,6 +338,10 @@
       "title": "Understanding Nested Loops"
     },
     {
+      "id": "66288e7c3bcc7716ca2bca1b",
+      "title": "Sum of Digits-2"
+    },
+    {
       "id": "661bb9b0f3a78a57622e0446",
       "title": "Understanding Arrays"
     },
@@ -376,6 +380,18 @@
     {
       "id": "6606d1d09b1f7e18cf5bf127",
       "title": "Modifying Array data with indexes"
+    },
+    {
+      "id": "66288ccd87056f15c01c3abc",
+      "title": "Find Duplicates"
+    },
+    {
+      "id": "66288f543b9f6a171d8d635c",
+      "title": "Merging Arrays"
+    },
+    {
+      "id": "66288d9daeeabf161b9ccb3c",
+      "title": "Print Pattern from an Array"
     },
     {
       "id": "6606d1f8bf5baa18fea7b77e",

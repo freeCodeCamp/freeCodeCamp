@@ -11,6 +11,8 @@ In JavaScript, you can also perform calculations with decimal numbers, just like
 
 Let's multiply two decimals together to get their product.
 
+<h2>Hinglish</h2>
+
 JavaScript mein aap poore numbers ki tarah decimal numbers ke saath bhi ganana kar sakte hain.
 
 Chaliye do decimal numbers ko ek doosre se guna karte hain unke product ko paane ke liye.

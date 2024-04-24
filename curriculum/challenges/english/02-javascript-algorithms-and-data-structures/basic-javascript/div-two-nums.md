@@ -9,11 +9,16 @@ dashedName: div-two-decs
 
 Now let's divide one decimal by another.
 
-Ab ek decimal ko dusre decimal se divide krte hain.
+
 
 # --instructions--
 
 Change the `0.0` so that `quotient` will equal to `2.2`.
+
+
+<h2>Hinglish</h2>
+
+Ab ek decimal ko dusre decimal se divide krte hain.
 
 `0.0` ko badle taki `quotient` `2.2` ke barabar ho jaye.
 

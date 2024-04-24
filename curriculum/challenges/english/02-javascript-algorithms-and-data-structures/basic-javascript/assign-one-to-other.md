@@ -22,6 +22,23 @@ The above declares a `myVar` variable with no value, then assigns it the value `
 
 Assign the contents of `a` to variable `b`.
 
+<h2>Hinglish</h2>
+
+Ek bar ek variable ko ek value <dfn>assignment</dfn> operator ka upyog karke assign kar diya jata hai, tab aap us variable ki value ko doosre variable ko assign karne ke liye bhi <dfn>assignment</dfn> operator ka upyog kar sakte hain.
+
+```js
+var myVar;
+myVar = 5;
+var myNum;
+myNum = myVar;
+```
+
+Upar diya gaya code `myVar` variable ko bina kisi value ke declare karta hai, phir isko value `5` assign karta hai. Agla, ek variable `myNum` declare kiya jata hai bina kisi value ke. Fir, `myVar` ke content (jo `5` hai) ko variable `myNum` mein assign kiya jata hai. Ab, `myNum` mein bhi `5` ki value hai.
+
+# --instructions--
+
+`a` ke content ko variable `b` mein assign karen.
+
 # --hints--
 
 You should not change code above the specified comment.
