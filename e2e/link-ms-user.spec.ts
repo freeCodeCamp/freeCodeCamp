@@ -54,7 +54,7 @@ test.describe('Link MS user component (signed-in user)', () => {
     ).toBeVisible();
 
     await expect(page.locator('main')).toHaveText(
-      /The Microsoft account with username "certifieduser" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link./
+      /The Microsoft account with username "certifieduser" is currently linked to your freeCodeCamp account\. If this is not your Microsoft username, remove the link\./
     );
   });
 
