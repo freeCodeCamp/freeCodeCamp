@@ -68,7 +68,7 @@ test('User can reset challenge', async ({ page }) => {
   // text will be selected before typing
   await page.getByLabel(editorPaneLabel).fill('');
   await page.getByLabel(editorPaneLabel).fill(updatedText);
-  await expect(updatedFrame).toBeVisible({ timeout: 10000});
+  await expect(updatedFrame).toBeVisible({ timeout: 10000 });
 
   // Run the tests so the lower jaw updates (later we confirm that the update
   // are reset)
