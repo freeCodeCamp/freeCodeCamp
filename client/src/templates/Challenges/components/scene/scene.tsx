@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
 import { Col } from '@freecodecamp/ui';
-import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
@@ -9,27 +8,12 @@ import Character from './character';
 
 import './scene.css';
 
-export function Scene({
-  scene,
-  isPlaying,
-  setIsPlaying
-}: {
-  scene: FullScene;
-  isPlaying: boolean;
-  setIsPlaying: (shouldPlay: boolean) => void;
-}): JSX.Element {
-  const { t } = useTranslation();
+export function Scene({ scene }: { scene: FullScene }): JSX.Element {
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
 
-  const audioTimestamp =
-    audio.startTimestamp !== null && audio.finishTimestamp !== null
-      ? `#t=${audio.startTimestamp},${audio.finishTimestamp}`
-      : '';
-
-  const audioRef = useRef<HTMLAudioElement>(
-    new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
-  );
+  const audioContext = useRef<AudioContext>(new AudioContext());
+  const audioBuffer = useRef<AudioBuffer | null>(null);
 
   const loadImage = (src: string | null) => {
     if (src) new Image().src = src;
@@ -37,8 +21,14 @@ export function Scene({
 
   // on mount
   useEffect(() => {
-    const { current } = audioRef;
-    current.addEventListener('canplaythrough', audioLoaded);
+    fetch(`${sounds}/${audio.filename}`)
+      .then(response => response.arrayBuffer())
+      .then(arrayBuffer => audioContext.current.decodeAudioData(arrayBuffer))
+      .then(decodedAudioData => {
+        audioBuffer.current = decodedAudioData;
+        setAudioLoaded(true);
+      })
+      .catch(error => console.error('Error loading audio file:', error));
 
     // preload images
     loadImage(`${backgrounds}/${setup.background}`);
@@ -54,19 +44,17 @@ export function Scene({
       )
       .forEach(loadImage);
 
+    setImagesLoaded(true);
+
+    const cleanup = async () => {
+      await audioContext.current.close();
+    };
+
     // on unmount
     return () => {
-      const { current } = audioRef;
-
-      current.pause();
-      current.currentTime = 0;
-      current.removeEventListener('canplaythrough', audioLoaded);
+      cleanup;
     };
-  }, [audioRef, setup.background, setup.characters, commands]);
-
-  const audioLoaded = () => {
-    setSceneIsReady(true);
-  };
+  }, [audio, setup.background, setup.characters, commands]);
 
   const initBackground = setup.background;
   const initDialogue = { label: '', text: '', align: 'left' };
@@ -78,31 +66,36 @@ export function Scene({
     };
   });
 
-  const [sceneIsReady, setSceneIsReady] = useState(true);
+  const [audioLoaded, setAudioLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
 
-  useEffect(() => {
-    if (isPlaying) {
-      playScene();
-    } else {
-      finishScene();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPlaying]);
-
   const playScene = () => {
+    setIsPlaying(true);
     setShowDialogue(true);
 
-    commands.forEach((command, commandIndex) => {
-      // Start audio timeout
-      setTimeout(function () {
-        void audioRef.current.play();
-      }, audio.startTime * 1000);
+    // Start audio timeout
+    setTimeout(function () {
+      if (!audioLoaded || !audioBuffer.current) {
+        console.error('Audio data not loaded.');
+        return;
+      }
 
+      const startTime = audio.startTimestamp || 0;
+      const endTime = audio.finishTimestamp || audioBuffer.current.duration;
+
+      const bufferSource = audioContext.current.createBufferSource();
+      bufferSource.buffer = audioBuffer.current;
+      bufferSource.connect(audioContext.current.destination);
+      bufferSource.start(0, startTime, endTime - startTime);
+    }, audio.startTime * 1000);
+
+    commands.forEach((command, commandIndex) => {
       // Start command timeout
       setTimeout(() => {
         if (command.background) setBackground(command.background);
@@ -154,7 +147,7 @@ export function Scene({
       if (commandIndex === commands.length - 1) {
         setTimeout(
           () => {
-            setIsPlaying(false);
+            finishScene();
           },
           command.finishTime
             ? command.finishTime * 1000 + 500
@@ -165,9 +158,7 @@ export function Scene({
   };
 
   const finishScene = () => {
-    audioRef.current.pause();
-    audioRef.current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
-    audioRef.current.currentTime = audio.startTimestamp || 0;
+    setIsPlaying(false);
     setShowDialogue(false);
     setDialogue(initDialogue);
     setCharacters(initCharacters);
@@ -186,7 +177,7 @@ export function Scene({
           aspectRatio: '16 / 9'
         }}
       >
-        {!sceneIsReady ? (
+        {!audioLoaded || !imagesLoaded ? (
           <Loader />
         ) : (
           <>
@@ -223,14 +214,9 @@ export function Scene({
               <div className='scene-start-screen'>
                 <button
                   className='scene-start-btn scene-play-btn'
-                  onClick={() => {
-                    setIsPlaying(true);
-                  }}
+                  onClick={playScene}
                 >
-                  <img
-                    src={`${images}/play-button.png`}
-                    alt={t('buttons.play-scene')}
-                  />
+                  <img src={`${images}/play-button.png`} alt='Press Play' />
                 </button>
 
                 {!alwaysShowDialogue && (
