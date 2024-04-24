@@ -115,6 +115,7 @@ figcaption.caption {
   font-size: 1.1rem;
   margin: 0;
   color: var(--quaternary-color);
+  justify-content: 'center';
 }
 .testimonial-meta p:last-child {
   margin-top: 15px;
