@@ -20,6 +20,19 @@ describe('getSetAccessToken', () => {
     created: now
   };
 
+  // https://stackoverflow.com/questions/48033841/test-process-env-with-jest
+  const OLD_ENV = process.env;
+
+  beforeEach(() => {
+    jest.resetModules(); // process is implicitly cached by Jest, so hence the reset
+    process.env = { ...OLD_ENV }; // Shallow clone that we can modify
+    process.env.COOKIE_DOMAIN = domain;
+  });
+
+  afterAll(() => {
+    process.env = OLD_ENV;
+  });
+
   describe('getAccessTokenFromRequest', () => {
     it('return `no token` error if no token is found', () => {
       const req = mockReq({ headers: {}, cookie: {} });
