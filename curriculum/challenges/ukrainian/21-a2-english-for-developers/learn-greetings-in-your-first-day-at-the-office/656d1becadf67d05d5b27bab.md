@@ -7,19 +7,19 @@ dashedName: task-146
 
 # --description--
 
-Just like when you learned about the pronoun `he`, pronouns like `she` are used to refer to female individuals. They help avoid repetition in conversation. Look at this part of the dialogue:
+Ви вже дізнались про займенник `he`, а ось займенник `she` використовують до особи жіночої статі. Такі займенники дозволяють уникнути повторень в розмові. Гляньте на цю частину діалогу:
 
-Sophie: `Oh, come on, Brian!`
+Софі: `Oh, come on, Brian!`
 
-Brian: `But it is true. She's the person to go to if you need help!`
+Браян: `But it is true. She's the person to go to if you need help!`
 
-Here, `She` is used by Brian to refer to Sophie. Instead of repeating Sophie's name, Brian uses the pronoun `she` to make the conversation smoother and avoid redundancy.
+Браян використовує `she`, щоб поговорити про Софі. Замість того, щоб використовувати ім’я Софі, Браян використовує займенник `she`, щоб зробити розмову природнішою та уникнути повторень.
 
 # --question--
 
 ## --text--
 
-In the dialogue, which word does Brian use to refer to Sophie without repeating her name?
+Яке слово використовує Браян, щоб уникнути повторення імені Софі?
 
 ## --answers--
 
@@ -27,7 +27,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 ### --feedback--
 
-`He` refers to a male.
+`He` є займенником, який позначає чоловіка.
 
 ---
 
@@ -35,7 +35,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 ### --feedback--
 
-`They` is plural and refers to more than one person.
+`They` позначає множину та стосується більше однієї людини.
 
 ---
 
@@ -43,7 +43,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 ### --feedback--
 
-`It` is usually used for things or animals.
+`It` зазвичай стосується речей та тварин.
 
 ---
 
@@ -51,7 +51,7 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 ### --feedback--
 
-`She` refers to a female person.
+`She` є займенником, який позначає жінку.
 
 ## --video-solution--
 

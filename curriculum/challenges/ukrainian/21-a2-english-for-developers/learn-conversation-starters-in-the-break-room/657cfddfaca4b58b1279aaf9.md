@@ -13,7 +13,7 @@ To `encourage` means to give support, confidence, or hope to someone. It's what 
 
 # --instructions--
 
-Listen to the audio to complete the sentence below.
+Послухайте аудіо та доповніть речення нижче.
 
 # --fillInTheBlank--
 
