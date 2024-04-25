@@ -8,8 +8,8 @@ dashedName: dialogue-placeholder
 
 # --description--
 
-Watch the video above to understand the context of the upcoming lessons.
+Перегляньте відео, щоб зрозуміти контекст майбутніх уроків.
 
 # --assignment--
 
-Watch the video
+Перегляньте відео

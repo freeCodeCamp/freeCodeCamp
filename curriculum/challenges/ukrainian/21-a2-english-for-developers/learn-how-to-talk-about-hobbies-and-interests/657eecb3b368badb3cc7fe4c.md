@@ -1,6 +1,6 @@
 ---
 id: 657eecb3b368badb3cc7fe4c
-title: Task 60
+title: Завдання 60
 challengeType: 22
 dashedName: task-60
 ---

@@ -15,7 +15,7 @@ When you want to know how often something happens, you can use `every` followed 
 
 # --instructions--
 
-Listen to the audio to complete the sentence below.
+Послухайте аудіо та доповніть речення нижче.
 
 # --fillInTheBlank--
 

@@ -46,3 +46,9 @@
 .tool-panel-group-mobile *:focus-visible {
   outline-offset: -3px;
 }
+
+@media screen and (max-width: 450px) {
+  #get-help-dropdown {
+    min-width: 90px;
+  }
+}
