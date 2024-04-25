@@ -1,10 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import type { Prisma } from '@prisma/client';
 import {
   createSuperRequest,
   devLogin,
   setupServer,
-  superRequest
+  superRequest,
+  defaultUserEmail
 } from '../../jest.utils';
+import { createUserInput } from '../utils/create-user';
 
 const chargeStripeCardReqBody = {
   paymentMethodId: 'UID',
@@ -45,6 +48,39 @@ jest.mock('stripe', () => {
   });
 });
 
+const userWithoutProgress: Prisma.userCreateInput =
+  createUserInput(defaultUserEmail);
+
+const userWithProgress: Prisma.userCreateInput = {
+  ...createUserInput(defaultUserEmail),
+  completedChallenges: [
+    {
+      id: 'a6b0bb188d873cb2c8729495',
+      completedDate: 1520002973119,
+      solution: null,
+      challengeType: 5
+    },
+    {
+      id: '33b0bb188d873cb2c8729433',
+      completedDate: 4420002973122,
+      solution: null,
+      challengeType: 5
+    },
+    {
+      id: 'a5229172f011153519423690',
+      completedDate: 1520440323273,
+      solution: null,
+      challengeType: 5
+    },
+    {
+      id: 'a5229172f011153519423692',
+      completedDate: 1520440323274,
+      githubLink: '',
+      challengeType: 5
+    }
+  ]
+};
+
 describe('Donate', () => {
   setupServer();
 
@@ -54,6 +90,10 @@ describe('Donate', () => {
     beforeEach(async () => {
       const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
+      await fastifyTestInstance.prisma.user.updateMany({
+        where: { email: userWithProgress.email },
+        data: userWithProgress
+      });
     });
 
     describe('POST /donate/charge-stripe-card', () => {
@@ -124,6 +164,17 @@ describe('Donate', () => {
           type: 'danger',
           message: 'Donation failed due to a server error.'
         });
+      });
+
+      it('should return 400 if user has not completed challenges', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: userWithProgress.email },
+          data: userWithoutProgress
+        });
+        const failResponse = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+        expect(failResponse.status).toBe(400);
       });
     });
 

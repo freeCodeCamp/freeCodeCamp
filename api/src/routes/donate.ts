@@ -103,6 +103,15 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const { email, name } = user;
+        const threeChallengesCompleted = user.completedChallenges.length >= 3;
+
+        if (!threeChallengesCompleted) {
+          void reply.code(400);
+          return {
+            message: `Donate using another method`,
+            type: 'MethodRestrictionError'
+          } as const;
+        }
 
         if (user.isDonating) {
           void reply.code(400);
