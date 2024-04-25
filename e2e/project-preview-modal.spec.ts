@@ -44,7 +44,7 @@ test.describe('It should on appear', () => {
     const dialog = page.getByRole('dialog', {
       name: translations.learn['project-preview-title']
     });
-    await expect(dialog).toHaveCount(0);
+    await expect(dialog).not.toBeVisible();
   });
 
   test('on first step of a project without a preview', async ({ page }) => {
@@ -54,6 +54,6 @@ test.describe('It should on appear', () => {
     const dialog = page.getByRole('dialog', {
       name: translations.learn['project-preview-title']
     });
-    await expect(dialog).toHaveCount(0);
+    await expect(dialog).not.toBeVisible();
   });
 });
