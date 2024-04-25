@@ -26,13 +26,11 @@
   margin-block-start: 0px;
 }
 
-.tool-panel-group-mobile > button:focus-visible {
-  border: 0;
-  margin: 3px;
-}
-
 .tool-panel-group-mobile button:focus-visible {
   outline-offset: -3px;
+  border-color: var(--focus-outline-color);
+  outline: none;
+  box-shadow: none;
 }
 
 @media screen and (max-width: 450px) {
