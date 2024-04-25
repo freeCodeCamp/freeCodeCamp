@@ -193,25 +193,27 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     signedInUserName,
     location: { pathname }
   } = props;
+  const { pending, complete, errored } = fetchState;
+
+  useEffect(() => {
+    if (!isValidCert) {
+      createFlashMessage(certificateMissingErrorMessage);
+    } else if (!pending && errored) {
+      createFlashMessage(standardErrorMessage);
+    } else if (!pending && !complete && !errored) {
+      createFlashMessage(reallyWeirdErrorMessage);
+    }
+  }, [isValidCert, createFlashMessage, pending, errored, complete]);
 
   if (!isValidCert) {
-    createFlashMessage(certificateMissingErrorMessage);
     return <RedirectHome />;
   }
-
-  const { pending, complete, errored } = fetchState;
 
   if (pending) {
     return <Loader fullScreen={true} />;
   }
 
-  if (!pending && errored) {
-    createFlashMessage(standardErrorMessage);
-    return <RedirectHome />;
-  }
-
-  if (!pending && !complete && !errored) {
-    createFlashMessage(reallyWeirdErrorMessage);
+  if (errored || !complete) {
     return <RedirectHome />;
   }
 
