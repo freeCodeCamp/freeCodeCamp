@@ -9,11 +9,11 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Lembre-se: este projeto está sendo craido conforme o seguinte projeto inicial em <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado de <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 O cross-site scripting (XSS) é um tipo frequente de ataque, onde scripts maliciosos são injetados em páginas vulneráveis com o objetivo de roubar dados confidenciais, como cookies de sessão ou senhas.
 
-The basic rule to lower the risk of an XSS attack is simple: "Never trust user's input". Como desenvolvedor, você deve sempre sanitizar todas as entradas vindas de fora. Isso inclui dados provenientes de formulários, URLs de consultas GET e até mesmo de bodies com POST. Sanitizar significa encontrar e codificar os caracteres que podem ser perigosos, como &lt;, >.
+A regra básica para diminuir o risco de um ataque de XSS é simples: "Nunca confie na entrada do usuário". Como desenvolvedor, você deve sempre sanitizar todas as entradas vindas de fora. Isso inclui dados provenientes de formulários, URLs de consultas GET e até mesmo de bodies com POST. Sanitizar significa encontrar e codificar os caracteres que podem ser perigosos, como &lt;, >.
 
 Navegadores modernos podem ajudar a reduzir o risco, adotando melhores estratégias de software. Elas muitas vezes são configuráveis através de cabeçalhos de http.
 
