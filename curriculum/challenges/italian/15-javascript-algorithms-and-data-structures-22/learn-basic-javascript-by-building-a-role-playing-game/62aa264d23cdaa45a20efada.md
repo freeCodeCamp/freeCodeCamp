@@ -1,21 +1,19 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 166
+title: Step 162
 challengeType: 0
-dashedName: step-166
+dashedName: step-162
 ---
 
 # --description--
 
-Dopo l'array `numbers`, crea un loop `while`. Un loop <dfn>while</dfn> accetta una condizione ed esegue il codice all'interno del blocco fino al momento in cui la condizione non è più vera.
+After your `numbers` array, create a `while` loop that runs as long as `numbers.length` is less than `10`.
 
-Il loop `while` dovrebbe essere eseguito mentre `numbers.length` è minore di `10`.
-
-Ecco un esempio di loop `while` che viene eseguito mentre `i` è minore di cinque.
+In the previous project, you learned how to work with `while` loops like this:
 
 ```js
-while (i < 5) {
-
+while (condition) {
+  // code to run
 }
 ```
 
