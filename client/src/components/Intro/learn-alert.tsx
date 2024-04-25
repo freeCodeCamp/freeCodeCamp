@@ -23,7 +23,7 @@ const LearnAlert = ({
       {value && (
         <>
           <div className='text-center'>
-            <h2>{t('learn.donation-heading')}</h2>
+            <h2 className='donation-heading'>{t('learn.donation-heading')}</h2>
             <p className='m-0 progress-percent-value'>{`${value}%`}</p>
           </div>
           <div aria-hidden='true' className='progress-wrapper'>

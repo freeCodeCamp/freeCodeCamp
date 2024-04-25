@@ -28,6 +28,10 @@
   font-weight: 700;
 }
 
+.donation-heading {
+  color: #1b1b32;
+}
+
 .intro-description strong,
 .intro-description p {
   font-size: 1.17rem;
