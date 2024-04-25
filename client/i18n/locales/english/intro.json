@@ -859,6 +859,10 @@
         "intro": [
           "This is one of the required projects to claim your certification."
         ]
+      },
+      "learn-inheritance-by-building-an-equation-solver": {
+        "title": "Learn Inheritance by Building an Equation Solver",
+        "intro": ["", ""]
       }
     }
   },
