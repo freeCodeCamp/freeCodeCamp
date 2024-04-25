@@ -1,21 +1,19 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 166
+title: Step 162
 challengeType: 0
-dashedName: step-166
+dashedName: step-162
 ---
 
 # --description--
 
-Depois do array `numbers`, crie um laço `while`. Um laço <dfn>while</dfn> aceita uma condição. Ele executará o código no bloco até que a condição não seja mais verdadeira.
+After your `numbers` array, create a `while` loop that runs as long as `numbers.length` is less than `10`.
 
-O laço `while` deve ser executado enquanto `numbers.length` é menor que `10`.
-
-Aqui está um exemplo de um laço `while` que é executado enquanto `i` é menor que cinco.
+In the previous project, you learned how to work with `while` loops like this:
 
 ```js
-while (i < 5) {
-
+while (condition) {
+  // code to run
 }
 ```
 
