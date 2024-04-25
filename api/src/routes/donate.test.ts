@@ -77,9 +77,11 @@ describe('Donate', () => {
         );
 
         expect(response.body).toEqual({
-          type: 'UserActionRequired',
-          message: 'Payment requires user action',
-          client_secret: 'superSecret'
+          error: {
+            type: 'UserActionRequired',
+            message: 'Payment requires user action',
+            client_secret: 'superSecret'
+          }
         });
         expect(response.status).toBe(402);
       });
@@ -93,8 +95,10 @@ describe('Donate', () => {
         );
 
         expect(response.body).toEqual({
-          type: 'PaymentMethodRequired',
-          message: 'Card has been declined'
+          error: {
+            type: 'PaymentMethodRequired',
+            message: 'Card has been declined'
+          }
         });
         expect(response.status).toBe(402);
       });
@@ -111,6 +115,12 @@ describe('Donate', () => {
         const failResponse = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
+        expect(failResponse.body).toEqual({
+          error: {
+            type: 'AlreadyDonatingError',
+            message: 'User is already donating.'
+          }
+        });
         expect(failResponse.status).toBe(400);
       });
 
@@ -121,8 +131,7 @@ describe('Donate', () => {
         );
         expect(response.status).toBe(500);
         expect(response.body).toEqual({
-          type: 'danger',
-          message: 'Donation failed due to a server error.'
+          error: 'Donation failed due to a server error.'
         });
       });
     });

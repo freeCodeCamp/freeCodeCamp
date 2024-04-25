@@ -12,18 +12,24 @@ export const chargeStripeCard = {
       type: Type.Literal('success')
     }),
     400: Type.Object({
-      message: Type.String(),
-      type: Type.Literal('info')
+      error: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('AlreadyDonatingError')
+      })
     }),
     402: Type.Object({
-      message: Type.String(),
-      type: Type.String(),
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      client_secret: Type.Optional(Type.String())
+      error: Type.Object({
+        message: Type.String(),
+        type: Type.Union([
+          Type.Literal('UserActionRequired'),
+          Type.Literal('PaymentMethodRequired')
+        ]),
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        client_secret: Type.Optional(Type.String())
+      })
     }),
     500: Type.Object({
-      message: Type.String(),
-      type: Type.Literal('danger')
+      error: Type.Literal('Donation failed due to a server error.')
     })
   }
 };
