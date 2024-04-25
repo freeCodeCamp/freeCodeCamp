@@ -12,7 +12,7 @@ Aquí construirás una aplicación de caja registradora que devolverá el cambio
 
 En el archivo `script.js`, se te han proporcionado las variables `price` y `cid`. La variable `price` es el precio del artículo, y la variable `cid` es el cambio que hay caja, que es un arreglo 2D que enumera la moneda disponible en la caja registradora.
 
-The other variable you will need add is the `cash` variable, which is the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
+The other variable you will need to add is the `cash` variable, which is the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
 
 If you'd like to test your application with different values for `price` and `cid`, make sure to declare them with the `let` keyword so they can be reassigned by our tests.
 

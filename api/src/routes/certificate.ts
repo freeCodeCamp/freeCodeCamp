@@ -19,7 +19,6 @@ import {
 } from '../../../shared/config/certification-settings';
 import { normalizeChallenges, removeNulls } from '../utils/normalize';
 import { SHOW_UPCOMING_CHANGES } from '../utils/env';
-import { formatCertificationValidation } from '../utils/error-formatting';
 
 const {
   legacyFrontEndChallengeId,
@@ -87,10 +86,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { certSlug } = req.body;
 
-      if (
-        !assertCertSlugIsKeyofCertSlugTypeMap(certSlug) ||
-        !isCertAllowed(certSlug)
-      ) {
+      if (!isKnownCertSlug(certSlug) || !isCertAllowed(certSlug)) {
         void reply.code(400);
         return {
           response: {
@@ -290,30 +286,25 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   fastify.get(
     '/certificate/showCert/:username/:certSlug',
     {
-      schema: schemas.certSlug,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return formatCertificationValidation(error.validation);
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      schema: schemas.certSlug
     },
     async (req, reply) => {
       try {
-        let username = req.params.username;
+        const username = req.params.username.toLowerCase();
         const certSlug = req.params.certSlug;
 
-        username = username.toLowerCase();
         fastify.log.info(`certSlug: ${certSlug}`);
 
-        if (!assertCertSlugIsKeyofCertSlugTypeMap(certSlug)) {
+        if (!isKnownCertSlug(certSlug)) {
           void reply.code(404);
           return reply.send({
-            type: 'info',
-            message: 'flash.cert-not-found',
-            variables: { certSlug }
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.cert-not-found',
+                variables: { certSlug }
+              }
+            ]
           });
         }
 
@@ -436,58 +427,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        if (user[certType]) {
-          const { completedChallenges } = user;
-          const certChallenge = find(
-            completedChallenges,
-            ({ id }) => certId === id
-          );
-
-          let { completedDate = Date.now() } = certChallenge || {};
-
-          // the challenge id has been rotated for isDataVisCert
-          if (certType === 'isDataVisCert' && !certChallenge) {
-            const oldDataVisIdChall = find(
-              completedChallenges,
-              ({ id }) => oldDataVizId === id
-            );
-
-            if (oldDataVisIdChall) {
-              completedDate = oldDataVisIdChall.completedDate || completedDate;
-            }
-          }
-
-          // if fullcert is not found, return the latest completedDate
-          if (certType === 'isFullStackCert' && !certChallenge) {
-            completedDate = getFallbackFullStackDate(
-              completedChallenges,
-              completedDate
-            );
-          }
-
-          const { username, name } = user;
-
-          if (!user.profileUI.showName) {
-            void reply.code(200);
-            return reply.send({
-              certSlug,
-              certTitle,
-              username,
-              date: completedDate,
-              completionTime
-            });
-          }
-
-          void reply.code(200);
-          return reply.send({
-            certSlug,
-            certTitle,
-            username,
-            name,
-            date: completedDate,
-            completionTime
-          });
-        } else {
+        if (!user[certType]) {
           return reply.send({
             messages: [
               {
@@ -498,6 +438,57 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
             ]
           });
         }
+
+        const { completedChallenges } = user;
+        const certChallenge = find(
+          completedChallenges,
+          ({ id }) => certId === id
+        );
+
+        let { completedDate = Date.now() } = certChallenge || {};
+
+        // the challenge id has been rotated for isDataVisCert
+        if (certType === 'isDataVisCert' && !certChallenge) {
+          const oldDataVisIdChall = find(
+            completedChallenges,
+            ({ id }) => oldDataVizId === id
+          );
+
+          if (oldDataVisIdChall) {
+            completedDate = oldDataVisIdChall.completedDate || completedDate;
+          }
+        }
+
+        // if fullcert is not found, return the latest completedDate
+        if (certType === 'isFullStackCert' && !certChallenge) {
+          completedDate = getFallbackFullStackDate(
+            completedChallenges,
+            completedDate
+          );
+        }
+
+        const { name } = user;
+
+        if (!user.profileUI.showName) {
+          void reply.code(200);
+          return reply.send({
+            certSlug,
+            certTitle,
+            username,
+            date: completedDate,
+            completionTime
+          });
+        }
+
+        void reply.code(200);
+        return reply.send({
+          certSlug,
+          certTitle,
+          username,
+          name,
+          date: completedDate,
+          completionTime
+        });
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
@@ -562,7 +553,7 @@ function hasCompletedTests(
   );
 }
 
-function assertCertSlugIsKeyofCertSlugTypeMap(
+function isKnownCertSlug(
   certSlug: string
 ): certSlug is keyof typeof certSlugTypeMap {
   return certSlug in certSlugTypeMap;
@@ -711,8 +702,15 @@ function getUserIsCertMap(user: CertI) {
   };
 }
 
-function getFallbackFullStackDate(
-  completedChallenges: CompletedChallenge[],
+/**
+ * Retrieves the completion date for the full stack certification, if it exists.
+ *
+ * @param completedChallenges - The array of completed challenges.
+ * @param completedDate - The fallback completed date.
+ * @returns The latest certification date or the completed date if no certification is found.
+ */
+export function getFallbackFullStackDate(
+  completedChallenges: { id: string; completedDate: number }[],
   completedDate: number
 ) {
   const chalIds = [
@@ -728,5 +726,5 @@ function getFallbackFullStackDate(
     .filter(chal => chalIds.includes(chal.id))
     .sort((a, b) => b.completedDate - a.completedDate)[0]?.completedDate;
 
-  return latestCertDate ? latestCertDate : completedDate;
+  return latestCertDate ?? completedDate;
 }
