@@ -1,3 +1,8 @@
+/* Monaco editor has its own font-family rule, which overrides ours */
+.monaco-editor {
+  font-family: inherit;
+}
+
 .monaco-editor .margin-view-overlays .line-numbers,
 .monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
   color: var(--primary-color);
