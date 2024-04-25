@@ -439,10 +439,10 @@
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "通过建立fCC论坛排行榜学习异步编程。",
+        "title": "通过创建 fCC 论坛排行榜学习异步编程",
         "intro": [
-          "JavaScript 是一种异步编程语言。这个项目将帮助您掌握异步概念。您将编译自己的免费CodeCamp论坛排行榜。",
-          "该项目将包括Fetch API、promises、Async/Await 和try..catch 声明。"
+          "JavaScript 是一种异步编程语言。这个项目将帮助你掌握异步概念。你将编写自己的 freeCodeCamp 论坛排行榜。",
+          "该项目将包括 Fetch API、promises、Async/Await 和 try..catch 语句。"
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
@@ -457,6 +457,13 @@
         "intro": [
           "递归是一种编程概念，即函数调用自身。这可以将复杂的问题简化为更简单的子问题，直到它们变得简单易解。",
           "在这个项目中，你将使用 JavaScript 创建一个十进制到二进制的转换器。你将学习递归的基本概念，探索调用栈，并通过动画直观地展示递归过程。"
+        ]
+      },
+      "learn-introductory-javascript-by-building-a-pyramid-generator": {
+        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
         ]
       }
     }
@@ -1187,8 +1194,8 @@
         "intro": ["在 JavaScript 中学习数据类型和条件"]
       },
       "top-learn-function-basics": {
-        "title": "Learn Function Basics",
-        "intro": ["Learn about functions in JavaScript."]
+        "title": "学习函数基础",
+        "intro": ["学习 JavaScript 中的函数。"]
       }
     }
   },

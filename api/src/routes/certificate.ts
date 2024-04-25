@@ -19,7 +19,6 @@ import {
 } from '../../../shared/config/certification-settings';
 import { normalizeChallenges, removeNulls } from '../utils/normalize';
 import { SHOW_UPCOMING_CHANGES } from '../utils/env';
-import { formatCertificationValidation } from '../utils/error-formatting';
 
 const {
   legacyFrontEndChallengeId,
@@ -287,15 +286,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   fastify.get(
     '/certificate/showCert/:username/:certSlug',
     {
-      schema: schemas.certSlug,
-      errorHandler(error, request, reply) {
-        if (error.validation) {
-          void reply.code(400);
-          return formatCertificationValidation(error.validation);
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      schema: schemas.certSlug
     },
     async (req, reply) => {
       try {
@@ -307,9 +298,13 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         if (!isKnownCertSlug(certSlug)) {
           void reply.code(404);
           return reply.send({
-            type: 'info',
-            message: 'flash.cert-not-found',
-            variables: { certSlug }
+            messages: [
+              {
+                type: 'info',
+                message: 'flash.cert-not-found',
+                variables: { certSlug }
+              }
+            ]
           });
         }
 

@@ -108,16 +108,16 @@ export const certSlug = {
         )
       })
     ]),
-    400: Type.Object({
-      type: Type.Literal('error'),
-      message: Type.String()
-    }),
     404: Type.Object({
-      message: Type.Literal('flash.cert-not-found'),
-      type: Type.Literal('info'),
-      variables: Type.Object({
-        certSlug: Type.String()
-      })
+      messages: Type.Array(
+        Type.Object({
+          message: Type.Literal('flash.cert-not-found'),
+          type: Type.Literal('info'),
+          variables: Type.Object({
+            certSlug: Type.String()
+          })
+        })
+      )
     }),
     500: Type.Object({
       type: Type.Literal('danger'),

@@ -1,13 +1,13 @@
 ---
 id: 6617aef05b87c334e7ae8016
-title: Learn Function Basics Question E
+title: Вивчіть основи функцій. Запитання E
 challengeType: 15
 dashedName: learn-function-basics-question-e
 ---
 
 # --description--
 
-As you have seen before, functions can return a value using the `return` keyword. The `return` keyword is used to return a value from a function. When the `return` keyword is used, the function will stop executing and return the value specified after the `return` keyword.
+Як ви бачили раніше, функції можуть повернути значення, використовуючи ключове слово `return`. Ключове слово `return` використовують, щоб повернути значення з функції. Якщо використано ключове слово `return`, то функція припинить виконуватись та поверне значення, вказане після ключового слова `return`.
 
 ```js
 function add(a, b) {
@@ -17,7 +17,7 @@ function add(a, b) {
 console.log(add(2, 3)); // Output: 5
 ```
 
-But what happens if the `return` keyword is used before the end of the function? To answer this question, consider the following example:
+Але що відбувається, якщо ключове слово `return` використано перед кінцем функції? Щоб відповісти на це запитання, розгляньте приклад:
 
 ```js
 function add(a, b) {
@@ -31,13 +31,13 @@ function add(a, b) {
 console.log(add(3, 7)); // Output: 7
 ```
 
-In the example above, the function `add` has a conditional statement that checks if the value of `a` is greater than `2`. If the condition is met, the function will return the value of `b` and stop executing. If the condition is not met, the function will return the sum of `a` and `b`.
+Функція `add` в прикладі вище має умовну інструкцію, яка перевіряє, чи значення `a` більше за `2`. Якщо умова виконана, то функція поверне значення `b` і припинить виконуватись. Якщо умова не виконана, то функція поверне суму `a` та `b`.
 
 # --question--
 
 ## --text--
 
-What is the output of the following code snippet?
+Як буде виглядати результат виконання даного коду?
 
 ```js
 function add(a, b = 12) {
@@ -55,19 +55,19 @@ console.log(add(3));
 
 ## --answers--
 
-The output is `24`.
+Вихідними даними буде `24`.
 
 ---
 
-The output is `14`.
+Вихідними даними буде `14`.
 
 ---
 
-The output is `15`.
+Вихідними даними буде `15`.
 
 ---
 
-The output is `12`.
+Вихідними даними буде `12`.
 
 ## --video-solution--
 

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
@@ -133,6 +133,33 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(reportLink).toHaveAttribute(
       'href',
       '/user/certifieduser/report-user'
+    );
+  });
+});
+
+test.describe('Invalid certification page', () => {
+  const testInvalidCertification = async ({ page }: { page: Page }) => {
+    {
+      await page.goto('/certification/certifieduser/invalid-certification');
+      await expect(page).toHaveURL('/');
+      await expect(page.getByRole('alert')).toHaveText(
+        /The certification you tried to view does not exist/
+      );
+    }
+  };
+  test.describe('for authenticated user', () => {
+    test.use({ storageState: 'playwright/.auth/certified-user.json' });
+    test(
+      'it should redirect to / and display an error message',
+      testInvalidCertification
+    );
+  });
+
+  test.describe('for unauthenticated user', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
+    test(
+      'it should redirect to / and display an error message',
+      testInvalidCertification
     );
   });
 });

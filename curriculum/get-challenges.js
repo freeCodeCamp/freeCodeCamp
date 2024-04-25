@@ -133,6 +133,10 @@ const walk = (root, target, options, cb) => {
 };
 
 exports.getChallengesForLang = async function getChallengesForLang(lang) {
+  const invalidLang = !curriculumLangs.includes(lang);
+  if (invalidLang)
+    throw Error(`${lang} is not a accepted language.
+Accepted languages are ${curriculumLangs.join(', ')}`);
   // english determines the shape of the curriculum, all other languages mirror
   // it.
   const root = getChallengesDirForLang('english');
@@ -217,48 +221,26 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   }
   const { meta } = challengeBlock;
   const isCert = path.extname(filePath) === '.yml';
-  const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
+  const englishPath = path.resolve(
+    __dirname,
+    CHALLENGES_DIR,
+    'english',
+    filePath
+  );
+  const i18nPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
+  const createChallenge = generateChallengeCreator(lang, englishPath, i18nPath);
+
+  await assertHasEnglishSource(filePath, lang, englishPath);
   const challenge = isCert
-    ? await createCertification(CHALLENGES_DIR, filePath, lang)
+    ? await parseCert(englishPath)
     : await createChallenge(filePath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function createCertification(basePath, filePath) {
-  function getFullPath(pathLang) {
-    return path.resolve(__dirname, basePath, pathLang, filePath);
-  }
-  // TODO: restart using isAudited() once we can determine a) the superBlocks
-  // (plural) a certification belongs to and b) get that info from the parsed
-  // certification, rather than the path. ASSUMING that this is used by the
-  // client.  If not, delete this comment and the lang param.
-  return parseCert(getFullPath('english'));
-}
-
 // This is a slightly weird abstraction, but it lets us define helper functions
 // without passing around a ton of arguments.
-function generateChallengeCreator(basePath, lang) {
-  function getFullPath(pathLang, filePath) {
-    return path.resolve(__dirname, basePath, pathLang, filePath);
-  }
-
-  async function validate(filePath) {
-    const invalidLang = !curriculumLangs.includes(lang);
-    if (invalidLang)
-      throw Error(`${lang} is not a accepted language.
-Trying to parse ${filePath}`);
-
-    const missingEnglish =
-      lang !== 'english' && !(await hasEnglishSource(basePath, filePath));
-    if (missingEnglish)
-      throw Error(`Missing English challenge for
-${filePath}
-It should be in
-${getFullPath('english', filePath)}
-`);
-  }
-
+function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
     const challengeOrder = findIndex(
       meta.challengeOrder,
@@ -300,12 +282,6 @@ ${getFullPath('english', filePath)}
     challenge.template = meta.template;
     challenge.time = meta.time;
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
-    challenge.translationPending =
-      lang !== 'english' &&
-      !isAuditedSuperBlock(lang, meta.superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
-      });
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
     challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
@@ -336,23 +312,20 @@ ${getFullPath('english', filePath)}
           path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
         );
 
-    await validate(filePath, meta.superBlock);
+    const isAudited = isAuditedSuperBlock(lang, meta.superBlock, {
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+    });
 
     // If we can use the language, do so. Otherwise, default to english.
-    const langUsed =
-      isAuditedSuperBlock(lang, meta.superBlock, {
-        showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-        showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-      }) && fs.existsSync(getFullPath(lang, filePath))
-        ? lang
-        : 'english';
+    const langUsed = isAudited && fs.existsSync(i18nPath) ? lang : 'english';
 
     const challenge = translateCommentsInChallenge(
-      await parseMD(getFullPath(langUsed, filePath)),
+      await parseMD(langUsed === 'english' ? englishPath : i18nPath),
       langUsed,
       COMMENT_TRANSLATIONS
     );
-
+    challenge.translationPending = lang !== 'english' && !isAudited;
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
 
@@ -371,6 +344,17 @@ function challengeFilesToPolys(files) {
       }
     ];
   }, []);
+}
+
+async function assertHasEnglishSource(filePath, lang, englishPath) {
+  const missingEnglish =
+    lang !== 'english' && !(await hasEnglishSource(CHALLENGES_DIR, filePath));
+  if (missingEnglish)
+    throw Error(`Missing English challenge for
+${filePath}
+It should be in
+${englishPath}
+`);
 }
 
 async function hasEnglishSource(basePath, translationPath) {
