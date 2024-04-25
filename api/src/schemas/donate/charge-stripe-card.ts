@@ -24,7 +24,6 @@ export const chargeStripeCard = {
           Type.Literal('UserActionRequired'),
           Type.Literal('PaymentMethodRequired')
         ]),
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         client_secret: Type.Optional(Type.String())
       })
     }),

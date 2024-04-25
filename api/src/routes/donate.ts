@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import {
   Type,
   type FastifyPluginCallbackTypebox
