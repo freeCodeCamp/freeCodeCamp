@@ -1,26 +1,43 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 170
+title: Step 166
 challengeType: 0
-dashedName: step-170
+dashedName: step-166
 ---
 
 # --description--
 
-A `for` loop runs for a specific number of times. Desglosaremos cómo se ejecuta un bucle `for` en los siguientes pasos. For now, copy this loop below and paste it at the end of your `pick` function.
+In the previous project, you learned how to work with `for` loops like this:
 
 ```js
-for (let x = 1; x < 5; x++) {
-
+for (let i = 0; i < 5; i++) {
+  // code to run
 }
 ```
 
+`for` loops are declared with three expressions separated by semicolons: `for (a; b; c)`, where `a` is the initialization expression, `b` is the condition, and `c` is the final expression.
+
+In this step, create a `for` loop where `i` is initialized to `0`, the loop runs as long as `i` is less than `10`, and `i` is incremented by `1` after each iteration using the increment operator `++`.
+
+
 # --hints--
 
-You should copy the above loop into your `pick` function.
+Your `for` loop initialization should have `i` initialized to `0`.
 
 ```js
-assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;/)
+```
+
+Your loop condition should run as long as `i` is less than `10`.
+
+```js
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*10\s*;/)
+```
+
+Your loop should increment `i` by `1` after each iteration. Remember to use the increment operator `++`.
+
+```js
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*10\s*;\s*i\+\+\s*\)/)
 ```
 
 # --seed--
