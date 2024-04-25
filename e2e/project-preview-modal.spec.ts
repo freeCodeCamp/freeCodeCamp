@@ -2,14 +2,13 @@ import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
-const currentUrlPath =
-  '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1';
-
-test.beforeEach(async ({ page }) => {
-  await page.goto(currentUrlPath);
-});
-
 test.describe('Exit Project Preview Modal E2E Test Suite', () => {
+  test.beforeEach(async ({ page }) => {
+    const urlWithProjectPreview =
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1';
+    await page.goto(urlWithProjectPreview);
+  });
+
   test('Verifies the Correct Rendering of the Project Preview Modal', async ({
     page
   }) => {
