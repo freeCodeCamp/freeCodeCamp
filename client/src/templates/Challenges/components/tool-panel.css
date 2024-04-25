@@ -19,11 +19,7 @@
 }
 
 .tool-panel-group-mobile #get-help-dropdown {
-  height: 37px;
-}
-
-.tool-panel-group-mobile > button {
-  margin-block-start: 0px;
+  height: 36.5px;
 }
 
 .tool-panel-group-mobile button:focus-visible {
