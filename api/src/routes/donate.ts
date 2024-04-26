@@ -1,9 +1,10 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
-
+import isEmail from 'validator/lib/isEmail';
 import { donationSubscriptionConfig } from '../../../shared/config/donation-settings';
 import { schemas } from '../schemas';
 import { STRIPE_SECRET_KEY } from '../utils/env';
+import { findOrCreateUser } from './helpers/auth-helpers';
 
 /**
  * Plugin for the donation endpoints.
@@ -179,6 +180,89 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         return reply.send({
           error: 'Donation failed due to a server error.'
         });
+      }
+    }
+  );
+
+  fastify.post(
+    '/donate/charge-stripe',
+    {
+      schema: schemas.chargeStripe
+    },
+    async (req, reply) => {
+      try {
+        const id = req.user!.id;
+        const { email, name, token, amount, duration } = req.body;
+
+        // verify the parameters
+        if (
+          !isEmail(email) ||
+          !donationSubscriptionConfig.plans[duration].includes(amount)
+        ) {
+          void reply.code(500);
+          return {
+            error: 'The donation form had invalid values for this submission.'
+          } as const;
+        }
+
+        // TODO(Post-MVP) new users should not be created if user is not found
+        const user = id
+          ? await fastify.prisma.user.findUniqueOrThrow({ where: { id } })
+          : await findOrCreateUser(fastify, email);
+
+        // TODO(Post-MVP) stripe has moved to a paymentintent flow, the create call should be updated to reflect this
+        // ts-ignore
+        const { id: customerId } = await stripe.customers.create({
+          email,
+          card: token.id,
+          name
+        });
+
+        const plan = `${donationSubscriptionConfig.duration[
+          duration
+        ].toLowerCase()}-donation-${amount}`;
+
+        const { id: subscriptionId } = await stripe.subscriptions.create({
+          customer: customerId,
+          items: [{ plan }]
+        });
+
+        const donation = {
+          userId: user.id,
+          email,
+          amount,
+          duration,
+          provider: 'stripe',
+          subscriptionId,
+          customerId,
+          // TODO(Post-MVP) migrate to startDate: new Date()
+          startDate: {
+            date: new Date().toISOString(),
+            when: new Date().toISOString().replace(/.$/, '+00:00')
+          }
+        };
+
+        await fastify.prisma.donation.create({
+          data: donation
+        });
+
+        await fastify.prisma.user.update({
+          where: { id },
+          data: {
+            isDonating: true
+          }
+        });
+
+        return reply.send({
+          type: 'success',
+          isDonating: true
+        });
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return {
+          error: 'Donation failed due to a server error.'
+        } as const;
       }
     }
   );
