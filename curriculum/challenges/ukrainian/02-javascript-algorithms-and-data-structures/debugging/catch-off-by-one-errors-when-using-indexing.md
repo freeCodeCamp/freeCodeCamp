@@ -37,25 +37,25 @@ for (let k = 0; k < len; k++) {
 Ваш код повинен встановити початкову умову циклу так, щоб він починався з першого індексу.
 
 ```js
-assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
 Ваш код повинен виправити початкову умову циклу таким чином, щоб індекс починався з 0.
 
 ```js
-assert(!code.match(/i\s?=\s*?1\s*?;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s?=\s*?1\s*?;/g));
 ```
 
 Ваш код повинен встановити кінцеву умову циклу так, щоб він закінчувався на останньому індексі.
 
 ```js
-assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 Ваш код повинен встановити кінцеву умову циклу таким чином, щоб він зупинявся на одиниці від довжини.
 
 ```js
-assert(!code.match(/i\s*?<=\s*?len;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?<=\s*?len;/g));
 ```
 
 # --seed--

@@ -61,7 +61,7 @@ assert(userActivity.data.online === 45);
 Налаштуйте властивість `online` за допомогою точкової або дужкової нотації.
 
 ```js
-assert.strictEqual(code.search(/online: 45/), -1);
+assert.strictEqual(__helpers.removeJSComments(code).search(/online: 45/), -1);
 ```
 
 # --seed--

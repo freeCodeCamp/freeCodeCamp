@@ -40,7 +40,7 @@ assert(myStr === 'Hello World');
 لا يجب عليك تعديل الكود فوق التعليق المحدد.
 
 ```js
-assert(/myStr = "Jello World"/.test(code));
+assert(/myStr = "Jello World"/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

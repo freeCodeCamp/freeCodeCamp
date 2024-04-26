@@ -33,7 +33,7 @@ Use o método `split` na função `splitify` para dividir `str` em um array de p
 Você deve usar o método `split`.
 
 ```js
-assert(code.match(/\.split/g));
+assert(__helpers.removeJSComments(code).match(/\.split/g));
 ```
 
 `splitify("Hello World,I-am code")` deve retornar `["Hello", "World", "I", "am", "code"]`.

@@ -64,7 +64,7 @@ assert(drinkValue === 'water');
 Du solltest die Klammerschreibweise zweimal verwenden
 
 ```js
-assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ```
 
 # --seed--

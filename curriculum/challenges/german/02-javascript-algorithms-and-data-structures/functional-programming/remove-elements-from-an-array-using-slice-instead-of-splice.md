@@ -30,13 +30,13 @@ Verändere das ursprüngliche Array, das der Funktion übergeben wird, nicht.
 Dein Code sollte die Methode `slice` verwenden.
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 Dein Code sollte nicht die Methode `splice` verwenden.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?splice/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 ```
 
 You should not mutate the original array passed to the function.

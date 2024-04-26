@@ -2,7 +2,6 @@
 title: Introduction to the Learn Lambda Functions by Building an Expense Tracker
 block: learn-lambda-functions-by-building-an-expense-tracker
 superBlock: scientific-computing-with-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Lambda Functions by Building an Expense Tracker

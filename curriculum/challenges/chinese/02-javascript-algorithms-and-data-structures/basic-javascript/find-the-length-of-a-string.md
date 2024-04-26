@@ -29,8 +29,8 @@ console.log("Alan Peter".length);
 
 ```js
 assert(
-  code.match(/let lastNameLength = 0;/) &&
-    code.match(/const lastName = "Lovelace";/)
+  __helpers.removeJSComments(code).match(/let lastNameLength = 0;/) &&
+    __helpers.removeJSComments(code).match(/const lastName = "Lovelace";/)
 );
 ```
 
@@ -43,7 +43,7 @@ assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8);
 你应该使用 `.length` 获取 `lastName` 的长度，像这样 `lastName.length`。
 
 ```js
-assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
+assert(__helpers.removeJSComments(code).match(/=\s*lastName\.length/g) && !__helpers.removeJSComments(code).match(/lastName\s*=\s*8/));
 ```
 
 # --seed--

@@ -27,13 +27,13 @@ const str = arr.join(" ");
 يجب أن يستخدم الكود الخاص بك دالة `join`.
 
 ```js
-assert(code.match(/\.join/g));
+assert(__helpers.removeJSComments(code).match(/\.join/g));
 ```
 
 يجب ألا يستخدم الكود الخاص بك دالة `replace`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `sentensify("May-the-force-be-with-you")` يجب أن يعيد string.

@@ -94,13 +94,13 @@ assert(sequentialSizes(9) === 'High');
 `if` ステートメントまたは `else` ステートメントを使用しないでください。
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 9 つの `case` ステートメントが必要です。
 
 ```js
-assert(code.match(/case/g).length === 9);
+assert(__helpers.removeJSComments(code).match(/case/g).length === 9);
 ```
 
 # --seed--

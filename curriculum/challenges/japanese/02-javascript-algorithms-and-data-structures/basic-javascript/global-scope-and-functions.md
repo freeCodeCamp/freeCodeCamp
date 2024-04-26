@@ -36,7 +36,7 @@ assert(myGlobal === 10);
 `myGlobal` は `let` キーワードまたは `const` キーワードを使用して宣言する必要があります。
 
 ```js
-assert(/(let|const)\s+myGlobal/.test(code));
+assert(/(let|const)\s+myGlobal/.test(__helpers.removeJSComments(code)));
 ```
 
 `oopsGlobal` はグローバル変数で、値は `5` である必要があります。

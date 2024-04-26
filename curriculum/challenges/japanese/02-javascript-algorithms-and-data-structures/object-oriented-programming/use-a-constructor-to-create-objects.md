@@ -52,7 +52,7 @@ assert(hound instanceof Dog);
 `Dog` のインスタンスを作成するには、`new` 演算子を使用する必要があります。
 
 ```js
-assert(code.match(/new/g));
+assert(__helpers.removeJSComments(code).match(/new/g));
 ```
 
 # --seed--

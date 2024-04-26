@@ -54,7 +54,7 @@ function findGreaterOrEqual(a, b) {
 `checkSign` 应该使用多个三元运算符。
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(__helpers.removeJSComments(code)));
 ```
 
 `checkSign(10)` 应该返回字符串 `positive`。 注意区分大写字母和小写字母。

@@ -31,7 +31,7 @@ L'output non dovrebbe avere spazi
 Il tuo codice non dovrebbe usare il metodo `replace` per questa sfida.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` dovrebbe restituire la stringa `winter-is-coming`.

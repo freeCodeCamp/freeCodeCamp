@@ -36,19 +36,19 @@ console.log(s);
 不要替换 `const` 关键字。
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `s` 应该是一个常量变量（通过使用 `const`）。
 
 ```js
-assert(code.match(/const\s+s/g));
+assert(__helpers.removeJSComments(code).match(/const\s+s/g));
 ```
 
 不要改变原数组的声明。
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
 /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
 ));
 ```

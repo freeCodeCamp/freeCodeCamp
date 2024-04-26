@@ -53,7 +53,7 @@ assert(myDog.bark !== undefined);
 不應該在 `myDog` 的初始化中添加 `bark`。
 
 ```js
-assert(!/bark[^\n]:/.test(code));
+assert(!/bark[^\n]:/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -34,13 +34,13 @@ Füge die ungeraden Zahlen von 9 bis 1 in `myArray` ein und verwende dazu eine `
 Du solltest dafür eine `for`-Schleife verwenden.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 Du solltest die Array-Methode `push` verwenden.
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 `myArray` sollte gleich `[9, 7, 5, 3, 1]` sein.

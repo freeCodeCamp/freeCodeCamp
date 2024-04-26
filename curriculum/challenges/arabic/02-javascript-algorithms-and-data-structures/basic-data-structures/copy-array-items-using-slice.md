@@ -38,7 +38,7 @@ assert.deepEqual(
 يجب أن تستخدم وظيفة `forecast` الطريقة `slice()`
 
 ```js
-assert(/\.slice\(/.test(code));
+assert(/\.slice\(/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

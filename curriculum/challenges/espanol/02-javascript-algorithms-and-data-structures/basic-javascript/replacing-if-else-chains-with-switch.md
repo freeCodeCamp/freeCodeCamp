@@ -45,19 +45,19 @@ Cambia la cadena de sentencias `if`/`else if` por una sentencia `switch`.
 No debes utilizar sentencias `else` en ningún lugar en el editor
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 No debes utilizar sentencias `if` en ningún lugar en el editor
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Debes tener al menos cuatro sentencias `break`
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` debe devolver una cadena `Marley`

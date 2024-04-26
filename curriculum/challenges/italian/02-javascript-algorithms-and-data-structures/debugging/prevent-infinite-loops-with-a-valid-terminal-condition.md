@@ -31,13 +31,13 @@ La funzione `myFunc()` contiene un ciclo infinito perché la condizione terminal
 Il tuo codice dovrebbe cambiare l'operatore di confronto nella condizione di chiusura (la parte centrale) del ciclo `for`.
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 Il tuo codice dovrebbe aggiustare l'operatore di confronto nella condizione di chiusura del ciclo.
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

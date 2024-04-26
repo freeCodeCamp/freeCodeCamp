@@ -94,13 +94,13 @@ assert(sequentialSizes(9) === 'High');
 Ви не повинні використовувати інструкції `if` або `else`
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Ви повинні мати дев’ять інструкцій `case`
 
 ```js
-assert(code.match(/case/g).length === 9);
+assert(__helpers.removeJSComments(code).match(/case/g).length === 9);
 ```
 
 # --seed--
