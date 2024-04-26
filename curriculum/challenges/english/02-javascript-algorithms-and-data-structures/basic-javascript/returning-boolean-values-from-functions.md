@@ -52,7 +52,7 @@ assert(isLess(15, 10) === false);
 You should not use any `if` or `else` statements
 
 ```js
-assert(!/if|else/g.test(code));
+assert(!/if|else/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
