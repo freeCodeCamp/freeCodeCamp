@@ -20,13 +20,9 @@ import {
   currentCertsSelector
 } from '../../redux/selectors';
 
-import {
-  RibbonIcon,
-  Arrow,
-  IncompleteIcon
-} from '../../assets/icons/completion-ribbon';
+import { RibbonIcon, Arrow } from '../../assets/icons/completion-ribbon';
 
-import { CurrentCert } from '../../redux/prop-types';
+import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
@@ -36,6 +32,7 @@ interface MapProps {
   forLanding?: boolean;
   isSignedIn: boolean;
   currentCerts: CurrentCert[];
+  claimedCertifications?: ClaimedCertifications;
 }
 
 const linkSpacingStyle = {
@@ -66,6 +63,7 @@ function MapLi({
   last = false,
   trackProgress,
   completed,
+  claimed,
   index
 }: {
   superBlock: SuperBlocks;
@@ -73,6 +71,7 @@ function MapLi({
   last?: boolean;
   trackProgress: boolean;
   completed: boolean;
+  claimed: boolean;
   index: number;
 }) {
   return (
@@ -84,11 +83,11 @@ function MapLi({
         {trackProgress && (
           <>
             <div className='progress-icon'>
-              {completed ? (
-                <RibbonIcon value={index + 1} />
-              ) : (
-                <IncompleteIcon value={index + 1} />
-              )}
+              <RibbonIcon
+                value={index + 1}
+                isCompleted={completed}
+                isClaimed={claimed}
+              />
             </div>
             <div className='progression-arrow'>{!last && <Arrow />}</div>
           </>
@@ -131,6 +130,18 @@ function Map({
       : false;
   };
 
+  const isClaimed = (stage: SuperBlocks) => {
+    return isSignedIn
+      ? Boolean(
+          currentCerts?.find(
+            (cert: { certSlug: string }) =>
+              (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
+              (superBlockCertTypeMap as { [key: string]: string })[stage]
+          )?.show
+        )
+      : false;
+  };
+
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       <h2 className={forLanding ? 'big-heading' : ''}>
@@ -144,6 +155,7 @@ function Map({
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
             index={i}
+            claimed={isClaimed(superBlock)}
             completed={isCompleted(superBlock)}
             last={i + 1 == coreCurriculum.length}
           />
@@ -161,6 +173,7 @@ function Map({
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
             completed={isCompleted(superBlock)}
+            claimed={isClaimed(superBlock)}
             index={i}
             last={i + 1 == superBlockOrder[SuperBlockStages.English].length}
           />
@@ -178,6 +191,7 @@ function Map({
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
             completed={isCompleted(superBlock)}
+            claimed={isClaimed(superBlock)}
             index={i}
             last={
               i + 1 == superBlockOrder[SuperBlockStages.Professional].length
@@ -197,6 +211,7 @@ function Map({
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
             completed={isCompleted(superBlock)}
+            claimed={isClaimed(superBlock)}
             index={i}
             last={i + 1 == superBlockOrder[SuperBlockStages.Extra].length}
           />
@@ -214,6 +229,7 @@ function Map({
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
             completed={isCompleted(superBlock)}
+            claimed={isClaimed(superBlock)}
             index={i}
             last={i + 1 == superBlockOrder[SuperBlockStages.Legacy].length}
           />
@@ -234,6 +250,7 @@ function Map({
                 trackProgress={isTracking(superBlock)}
                 completed={isCompleted(superBlock)}
                 index={i}
+                claimed={isClaimed(superBlock)}
                 last={
                   i + 1 == superBlockOrder[SuperBlockStages.Upcoming].length
                 }
