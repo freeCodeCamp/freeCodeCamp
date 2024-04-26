@@ -40,21 +40,6 @@ describe('Navbar Logged in', () => {
     }
   );
 
-  // have the curriculum and CTA on landing and /learn pages.
-  it(
-    'Should have `Radio`, `Forum`, and `Curriculum` links on landing and learn pages' +
-      'page when not signed in',
-    () => {
-      cy.get(navBarselectors.menuButton).click();
-      cy.get(navBarselectors.navigationLinks).contains('Forum');
-      cy.get(navBarselectors.navigationLinks).contains('Curriculum').click();
-      cy.url().should('include', '/learn');
-      cy.get(navBarselectors.navigationLinks).contains('Curriculum');
-      cy.get(navBarselectors.navigationLinks).contains('Forum');
-      cy.get(navBarselectors.navigationLinks).contains('Radio');
-    }
-  );
-
   it('Should have `Profile` link when user is signed in', () => {
     cy.get(navBarselectors.menuButton).click();
     cy.get(navBarselectors.navigationLinks).contains('Profile').click();

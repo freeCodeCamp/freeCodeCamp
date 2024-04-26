@@ -25,7 +25,7 @@ Utilizza il metodo `concat` nella funzione `nonMutatingConcat` per concatenare `
 Il tuo codice dovrebbe usare il metodo `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 L'array `first` non dovrebbe cambiare.

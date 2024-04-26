@@ -1,5 +1,4 @@
 import { expect, test, type Page } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
 
 let page: Page;
 
@@ -36,15 +35,7 @@ test.describe('Progress bar component', () => {
       '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2></body></html>'
     );
 
-    if (isMobile) {
-      await page
-        .getByRole('button', { name: translations.buttons['check-code-2'] })
-        .click();
-    } else {
-      await page
-        .getByRole('button', { name: translations.buttons['check-code'] })
-        .click();
-    }
+    await page.getByRole('button', { name: 'Check Your Code' }).click();
 
     const progressBarContainer = page.getByTestId('progress-bar-container');
     await expect(progressBarContainer).toContainText(

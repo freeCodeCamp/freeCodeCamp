@@ -52,13 +52,6 @@ export const challengeTypes = {
   multifilePythonCertProject
 };
 
-export const hasNoTests = (challengeType: number): boolean =>
-  challengeType === multipleChoice ||
-  challengeType === theOdinProject ||
-  challengeType === video ||
-  challengeType === dialogue ||
-  challengeType === fillInTheBlank;
-
 export const hasNoSolution = (challengeType: number): boolean => {
   const noSolutions = [
     backend,

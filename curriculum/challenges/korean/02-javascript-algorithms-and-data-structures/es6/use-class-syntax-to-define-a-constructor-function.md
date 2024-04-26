@@ -66,7 +66,7 @@ assert(
 The `class` keyword should be used.
 
 ```js
-assert(code.match(/class/g));
+assert(__helpers.removeJSComments(code).match(/class/g));
 ```
 
 `Vegetable` should be able to be instantiated.

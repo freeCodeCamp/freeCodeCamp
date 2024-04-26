@@ -50,13 +50,13 @@ assert(half(stats) === 28.015);
 Es sollte eine Destrukturierung vorgenommen werden.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/half=\({\w+,\w+}\)/));
 ```
 
 Es sollten destrukturierte Parameter verwendet werden.
 
 ```js
-assert(!code.match(/stats\.max|stats\.min/));
+assert(!__helpers.removeJSComments(code).match(/stats\.max|stats\.min/));
 ```
 
 # --seed--

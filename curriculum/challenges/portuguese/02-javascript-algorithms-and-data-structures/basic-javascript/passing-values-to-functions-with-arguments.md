@@ -60,7 +60,7 @@ Você deve chamar a função `functionWithArgs` com dois números depois de defi
 ```js
 assert(
   /functionWithArgs\([-+]?\d*\.?\d*,[-+]?\d*\.?\d*\)/.test(
-    code.replace(/\s/g, '')
+    __helpers.removeJSComments(code).replace(/\s/g, '')
   )
 );
 ```

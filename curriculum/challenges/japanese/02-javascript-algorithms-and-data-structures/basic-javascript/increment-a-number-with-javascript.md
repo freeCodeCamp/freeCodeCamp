@@ -39,20 +39,20 @@ assert(myVar === 88);
 
 ```js
 assert(
-  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(code)
+  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(__helpers.removeJSComments(code))
 );
 ```
 
 `++` 演算子を使用する必要があります。
 
 ```js
-assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
+assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 指定のコメントより上にあるコードを変更しないでください。
 
 ```js
-assert(/let myVar = 87;/.test(code));
+assert(/let myVar = 87;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

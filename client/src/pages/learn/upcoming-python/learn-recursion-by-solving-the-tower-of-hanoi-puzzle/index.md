@@ -2,7 +2,6 @@
 title: Introduction to the Learn Recursion by Solving the Tower of Hanoi Puzzle
 block: learn-recursion-by-solving-the-tower-of-hanoi-puzzle
 superBlock: upcoming-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Recursion by Solving the Tower of Hanoi Puzzle

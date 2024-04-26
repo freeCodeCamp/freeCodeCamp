@@ -38,7 +38,7 @@ assert.deepEqual(
 The `forecast` function should utilize the `slice()` method
 
 ```js
-assert(/\.slice\(/.test(code));
+assert(/\.slice\(/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -37,7 +37,7 @@ wrongText.replace(silverRegex, "blue");
 يجب عليك استخدام `.replace()` للبحث والاستبدال.
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 يجب أن يقوم الـ regex الخاص بك بتغيير السلسلة `one two three` إلى السلسلة `three two one`
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 لا يجب عليك تغيير السطر الأخير.
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` يجب أن تستخدم ثلاث مجموعات التقاط على الأقل.

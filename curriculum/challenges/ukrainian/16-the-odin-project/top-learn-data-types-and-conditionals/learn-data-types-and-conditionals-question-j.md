@@ -1,15 +1,15 @@
 ---
 id: 65e97288484dd50f720e6fef
-title: Learn Data Types and Conditionals Question J
+title: Вивчіть типи даних та умови. Запитання J
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-j
 ---
 
 # --description--
 
-More complex conditional statements might include multiple conditions. That is why logical operators are used to combine multiple conditions. The logical operators are `&&`, `||` and `!` which are used to represent `and`, `or` and `not` respectively.
+Складніші умовні інструкції можуть містити декілька умов. Ось чому логічні оператори використовуються для об’єднання декількох умов. Логічними операторами є `&&`, `||` та `!`, які відповідно представляють `and`, `or` та `not`.
 
-The logical operator `||` is used to combine two boolean conditions. It returns `true` if at least one of the conditions is `true`. Otherwise, it returns `false`:
+Логічний оператор `||` використовують, щоб об’єднати дві булеві умови. Він повертає `true`, якщо принаймні одна умова `true`. В іншому випадку він повертає `false`:
 
 ```javascript
 let a = 5;
@@ -23,7 +23,7 @@ if (a > b || a > c) {
 }
 ```
 
-The logical operator `&&` is used to combine two boolean conditions. It returns `true` only if both of the conditions are `true`. Otherwise, it returns `false`:
+Логічний оператор `&&` використовують, щоб об’єднати дві булеві умови. Він повертає `true`, якщо обидві умови `true`. В іншому випадку він повертає `false`:
 
 ```javascript
 let a = 5;
@@ -37,7 +37,7 @@ if (a < b && a < c) {
 }
 ```
 
-The logical operator `!` is used to negate a boolean condition. It returns `true` if the condition is `false`. Otherwise, it returns `false`:
+Логічний оператор `!` використовують, щоб змінити булеву умову на протилежну. Він повертає `true`, якщо умова `false`. В іншому випадку він повертає `false`:
 
 ```javascript
 let a = 5;
@@ -50,19 +50,19 @@ if (!(a > b)) {
 }
 ```
 
-In the above example, the extra pair of parentheses is used to make the code more readable. It is not necessary to use them.
+У прикладі вище використано додаткову пару дужок, щоб зробити код читабельнішим. Їх необов’язково використовувати.
 
 # --question--
 
 ## --text--
 
-You're tasked with writing an `if` statement that checks for the following conditions in a web app to display `Welcome!` to the user:
+Вам потрібно написати інструкцію `if`, яка перевіряє наступні умови в вебзастосунку, щоб відтворити `Welcome!` для користувача:
 
-1. The user must either have a premium account (`isPremium`) or have been a member for more than a year (`membershipDuration` > 12 months).
+1. Користувач має преміум профіль (`isPremium`) або користується застосунком більше року (`membershipDuration` > 12 місяців).
 
-1. The user must not be currently blocked from the service (`!isBlocked`).
+1. Користувач не може бути заблокованим (`!isBlocked`).
 
-Which if statement correctly checks these conditions?
+Яка з інструкцій `if` правильно перевіряє ці умови?
 
 ## --answers--
 

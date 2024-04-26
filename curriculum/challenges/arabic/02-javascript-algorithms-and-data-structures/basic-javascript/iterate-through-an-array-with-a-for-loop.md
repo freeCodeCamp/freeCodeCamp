@@ -30,7 +30,7 @@ for (let i = 0; i < arr.length; i++) {
 يجب إعلان وتهيئة `total` بقيمة 0.
 
 ```js
-assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
 ```
 
 يجب أن يساوي `total` قيمة 20.
@@ -42,13 +42,13 @@ assert(total === 20);
 يجب عليك استخدام حلقة `for` للتكرار عبر `myArr`.
 
 ```js
-assert(/for\s*\(/g.test(code) && /myArr\s*\[/g.test(code));
+assert(/for\s*\(/g.test(__helpers.removeJSComments(code)) && /myArr\s*\[/g.test(__helpers.removeJSComments(code)));
 ```
 
 لا يجب عليك محاولة تعيين القيمة 20 إلى `total` قاصدًا.
 
 ```js
-assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));
+assert(!__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/total[=+-]0*[1-9]+/gm));
 ```
 
 # --seed--

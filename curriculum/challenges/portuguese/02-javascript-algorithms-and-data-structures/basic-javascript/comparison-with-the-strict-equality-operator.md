@@ -49,7 +49,7 @@ assert(testStrict('7') === 'Not Equal');
 Você deve usar o operador `===`
 
 ```js
-assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);
 ```
 
 # --seed--

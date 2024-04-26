@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Use Basic Programming Vocabulary in Conversations
 block: learn-how-to-use-basic-programming-vocabulary-in-conversations
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Use Basic Programming Vocabulary in Conversations

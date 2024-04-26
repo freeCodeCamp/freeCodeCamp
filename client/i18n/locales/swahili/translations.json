@@ -57,6 +57,7 @@
     "run-test": "Endesha Majaribio (Ctrl + Enter)",
     "check-code": "Angalia Code yako (Ctrl + Enter)",
     "check-code-2": "Angalia Code Yako",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Anzisha Upya",
     "reset-step": "Weka Upya Hatua Hii",
     "help": "Msaada",
@@ -95,7 +96,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement"
+    "skip-advertisement": "Skip Advertisement",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
@@ -385,8 +387,8 @@
     "tried-rsa": "Ikiwa tayari umejaribu mbinu ya <0>Soma-Tafuta-Uliza</0>, basi unaweza kuomba usaidizi kwenye jukwaa la freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
-    "minimum-characters": "Add a minimum of {{characters}} characters",
-    "characters-left": "{{characters}} characters left",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
     "must-confirm-statements": "You must confirm the following statements before you can submit your post to the forum.",
     "min-50-max-500": "50 character minimum, 500 character maximum",
     "rsa": "Soma, tafuta, uliza",
@@ -727,7 +729,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "mfano wa msimbo wa {{codeName}}",
-    "opens-new-window": "Inafungua katika kurasa mpya"
+    "opens-new-window": "Inafungua katika kurasa mpya",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "Ili kudai uthibitisho, lazima kwanza ukubali sera yetu ya uaminifu kitaaluma",
@@ -801,6 +805,7 @@
     "challenge-submit-too-big": "Samahani, huwezi kuwasilisha msimbo wako. Msimbo wako ni baiti {{user-size}}. Tunaruhusu upeo wa baiti {{max-size}}. Tafadhali punguza msimbo wako na ujaribu tena au uombe usaidizi katika https://forum.freecodecamp.org",
     "invalid-update-flag": "Unajaribu kufikia rasilimali zilizopigwa marufuku. Tafadhali omba usaidizi katika https://forum.freecodecamp.org ikiwa hili ni ombi halali.",
     "generate-exam-error": "Hitilafu ilitokea wakati wa kujaribu kuunda mtihani wako.",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -1002,7 +1007,7 @@
     "user-agent": "Wakala wa Mtumiaji ni: <code>{{userAgent}}</code>",
     "challenge": "Challenge Information:",
     "whats-happening": "Tell us what's happening:",
-    "describe": "Eleza suala lako kwa undani hapa.",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "Your project link(s)",
     "camper-code": "Your code so far",
     "warning": "ONYO",
@@ -1034,8 +1039,9 @@
     "execute-challenge": "Tekeleza Changamoto",
     "focus-editor": "Lenga Kihariri",
     "focus-instructions-panel": "Lenga Paneli ya Maelekezo",
-    "navigate-previous": "Pitia Zoezi Lililotangulia",
-    "navigate-next": "Pitia Zoezi Linalofuata"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Ondoka kwenye akaunti yako",

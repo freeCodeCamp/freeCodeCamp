@@ -29,7 +29,7 @@ myNum = myVar;
 指定のコメントより上にあるコードを変更しないでください。
 
 ```js
-assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
 ```
 
 `b` の値は `7` でなければなりません。
@@ -41,7 +41,7 @@ assert(typeof b === 'number' && b === 7);
 `a` は `=` を使って `b` に割り当てられなければなりません。
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(code));
+assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

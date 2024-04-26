@@ -39,19 +39,19 @@ if (condition1) {
 應至少有 4 個 `else` 語句。
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 應至少有 4 個 `if` 語句。
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 應至少有 1 個 `return` 語句。
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` 應該返回字符串 `Tiny`

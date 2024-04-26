@@ -1,41 +1,41 @@
 ---
 id: 65e9725a484dd50f720e6fe9
-title: Learn Data Types and Conditionals Question D
+title: Вивчіть типи даних та умови. Запитання D
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-d
 ---
 
 # --description--
 
-Seeing the example below You want to know the index of the last occurence of the word `The` in the string.
+Дано приклад нижче. Потрібно дізнатись індекс, коли слово `The` зустрічається в рядку востаннє.
 
 ```javascript
 let sentence = "freeCodeCamp loves The Odin Project! The Odin Project is great!";
 ```
 
-<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Link to Guide </a>
+<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Посилання на інструкцію </a>
 
 # --question--
 
 ## --text--
 
-Which method should be used to find the index of the last occurence of the word `The` in the string?
+Який метод потрібно використати, щоб дізнатись індекс, коли слово `The` зустрічається в рядку востаннє?
 
 ## --answers--
 
-The `includes()` method should be used to find the index of the last occurence of the word `The` in the string.
+Щоб дізнатись індекс, коли слово `The` зустрічається в рядку востаннє, потрібно використати метод `includes()`.
 
 ---
 
-The `lastIndexOf()` method should be used to find the index of the last occurence of the word `The` in the string.
+Щоб дізнатись індекс, коли слово `The` зустрічається в рядку востаннє, потрібно використати метод `lastIndexOf()`.
 
 ---
 
-The `indexOf()` method should be used to find the index of the last occurence of the word `The` in the string.
+Щоб дізнатись індекс, коли слово `The` зустрічається в рядку востаннє, потрібно використати метод `indexOf()`.
 
 ---
 
-The `search()` method should be used to find the index of the last occurence of the word `The` in the string.
+Щоб дізнатись індекс, коли слово `The` зустрічається в рядку востаннє, потрібно використати метод `search()`.
 
 ## --video-solution--
 

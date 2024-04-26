@@ -27,13 +27,13 @@ Use the `join` method (among others) inside the `sentensify` function to make a 
 Your code should use the `join` method.
 
 ```js
-assert(code.match(/\.join/g));
+assert(__helpers.removeJSComments(code).match(/\.join/g));
 ```
 
 Your code should not use the `replace` method.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `sentensify("May-the-force-be-with-you")` should return a string.

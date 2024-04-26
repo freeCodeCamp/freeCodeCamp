@@ -39,7 +39,7 @@ Setze `remainder` gleich dem Rest von `11` geteilt durch `3` mit dem <dfn>Rest</
 Die Variable `remainder` sollte initialisiert werden.
 
 ```js
-assert(/(const|let|var)\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(__helpers.removeJSComments(code)));
 ```
 
 Der Wert von `remainder` sollte `2` sein.
@@ -51,7 +51,7 @@ assert(remainder === 2);
 Du solltest den Operator `%` verwenden.
 
 ```js
-assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

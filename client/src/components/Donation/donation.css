@@ -262,8 +262,6 @@ li.disabled > a {
 .donation-modal h2 {
   font-weight: 600 !important;
   font-size: 1.2rem;
-  /* TODO: Remove this rule once https://github.com/freeCodeCamp/freeCodeCamp/issues/54047 is resolved */
-  font-family: var(--font-family-sans-serif);
 }
 
 .donation-modal b {
@@ -646,13 +644,6 @@ a.patreon-button:hover {
 }
 
 /* donation page */
-
-.donate-supporter-page-section h1,
-.donate-supporter-page-section h2,
-.donate-supporter-page-section h3 {
-  font-family: var(--font-family-sans-serif);
-}
-
 .donate-supporter-page-section h1 {
   font-size: 2.5rem;
 }

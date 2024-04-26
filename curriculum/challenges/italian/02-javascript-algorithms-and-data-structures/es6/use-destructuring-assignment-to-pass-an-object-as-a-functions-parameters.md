@@ -50,13 +50,13 @@ assert(half(stats) === 28.015);
 Dovresti ricorrere alla destrutturazione.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/half=\({\w+,\w+}\)/));
 ```
 
 Dovresti utilizzare il parametro destrutturato.
 
 ```js
-assert(!code.match(/stats\.max|stats\.min/));
+assert(!__helpers.removeJSComments(code).match(/stats\.max|stats\.min/));
 ```
 
 # --seed--

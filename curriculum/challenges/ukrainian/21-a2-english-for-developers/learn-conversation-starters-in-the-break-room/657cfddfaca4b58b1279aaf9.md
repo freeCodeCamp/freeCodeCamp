@@ -1,6 +1,6 @@
 ---
 id: 657cfddfaca4b58b1279aaf9
-title: Task 72
+title: Завдання 72
 challengeType: 22
 dashedName: task-72
 ---
@@ -13,7 +13,7 @@ To `encourage` means to give support, confidence, or hope to someone. It's what 
 
 # --instructions--
 
-Listen to the audio to complete the sentence below.
+Послухайте аудіо та доповніть речення нижче.
 
 # --fillInTheBlank--
 

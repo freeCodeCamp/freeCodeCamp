@@ -45,7 +45,7 @@ assert(myOutfit() === 'sweater');
 不要修改 return 语句。
 
 ```js
-assert(/return outerWear/.test(code));
+assert(/return outerWear/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

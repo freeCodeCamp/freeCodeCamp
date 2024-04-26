@@ -57,7 +57,7 @@ assert(sum() === 0);
 يجب أن تكون `sum` وظيفة السهم, التي تستخدم تشكيل وسيط rest الآتي (`...`) على وسيط `args`.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/sum=\(\.\.\.args\)=>/));
 ```
 
 # --seed--

@@ -2,7 +2,6 @@
 title: Introduction to the Learn Functional Programming by Building a Spreadsheet
 block: learn-functional-programming-by-building-a-spreadsheet
 superBlock: JavaScript Algorithms and Data Structures
-isBeta: true
 ---
 
 ## Introduction to the Learn Functional Programming by Building a Spreadsheet

@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 ドット記法とブラケット記法を使用して `myPlants` にアクセスする必要があります。
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
