@@ -44,7 +44,7 @@ Usa un ciclo `for` per inserire i valori da 1 a 5 in `myArray`.
 Dovresti usare un ciclo `for`.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` dovrebbe essere uguale a `[1, 2, 3, 4, 5]`.

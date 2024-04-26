@@ -43,7 +43,7 @@ assert(result == 'Not equal!');
 条件语句可以使用 `==` 或 `===` 来测试是否相等。
 
 ```js
-assert(code.match(/x\s*?===?\s*?y/g));
+assert(__helpers.removeJSComments(code).match(/x\s*?===?\s*?y/g));
 ```
 
 # --seed--

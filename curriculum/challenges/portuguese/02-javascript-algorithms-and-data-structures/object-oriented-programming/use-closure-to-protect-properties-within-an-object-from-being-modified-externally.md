@@ -43,7 +43,7 @@ Modifique como `weight` é declarado na função `Bird` para que seja uma variá
 A propriedade `weight` deve ser uma variável privada e deve ser atribuída a ela o valor `15`.
 
 ```js
-assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
 O código deve criar o método dentro de `Bird` chamado `getWeight` que retorna o valor da variável privada `weight`.
@@ -55,7 +55,7 @@ assert(new Bird().getWeight() === 15);
 A função `getWeight` deve retornar a variável privada `weight`.
 
 ```js
-assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
+assert(__helpers.removeJSComments(code).match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
 ```
 
 # --seed--

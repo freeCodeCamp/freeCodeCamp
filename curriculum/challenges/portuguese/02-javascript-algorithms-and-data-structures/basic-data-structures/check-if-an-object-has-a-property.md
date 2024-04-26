@@ -27,7 +27,7 @@ O objeto `users` não deve ser acessado diretamente
 
 ```js 
 
-assert(code.match(/users/gm).length <= 2)
+assert(__helpers.removeJSComments(code).match(/users/gm).length <= 2)
 
 ```
 

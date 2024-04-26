@@ -188,7 +188,6 @@ function ShowClassic({
         instructions,
         fields: { tests, blockName },
         challengeType,
-        removeComments,
         hasEditableBoundaries,
         superBlock,
         helpCategory,
@@ -234,19 +233,17 @@ function ShowClassic({
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-  const showConsole =
-    block === 'learn-introductory-javascript-by-building-a-pyramid-generator';
+  const showConsole = challengeType === challengeTypes.js;
   // TODO: show preview should NOT be computed like this. That determination is
   // made during the build (at least twice!). It should be either a prop or
   // computed from challengeType
-  const showPreview =
-    (challengeType === challengeTypes.html ||
-      challengeType === challengeTypes.modern ||
-      challengeType === challengeTypes.multifileCertProject ||
-      challengeType === challengeTypes.multifilePythonCertProject ||
-      challengeType === challengeTypes.python) &&
-    !showConsole;
-
+  const showPreview = [
+    challengeTypes.html,
+    challengeTypes.modern,
+    challengeTypes.multifileCertProject,
+    challengeTypes.multifilePythonCertProject,
+    challengeTypes.python
+  ].includes(challengeType);
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
 
@@ -365,7 +362,6 @@ function ShowClassic({
     updateChallengeMeta({
       ...challengeMeta,
       title,
-      removeComments: removeComments !== false,
       challengeType,
       helpCategory
     });
@@ -512,14 +508,12 @@ function ShowClassic({
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal />
-        {showPreview && (
-          <ProjectPreviewModal
-            challengeData={challengeData}
-            closeText={t('buttons.start-coding')}
-            previewTitle={t('learn.project-preview-title')}
-            showProjectPreview={showProjectPreview}
-          />
-        )}
+        <ProjectPreviewModal
+          challengeData={challengeData}
+          closeText={t('buttons.start-coding')}
+          previewTitle={t('learn.project-preview-title')}
+          showProjectPreview={showProjectPreview}
+        />
         <ShortcutsModal />
       </LearnLayout>
     </Hotkeys>
@@ -541,7 +535,6 @@ export const query = graphql`
         hasEditableBoundaries
         instructions
         notes
-        removeComments
         challengeType
         helpCategory
         videoUrl

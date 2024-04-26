@@ -35,7 +35,7 @@ assert(typeof myName !== 'undefined' && myName.length > 2);
 2つの `+` 演算子を使用して、`myName` を挿入した `myStr` を作成する必要があります。
 
 ```js
-assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 ```
 
 # --seed--

@@ -29,13 +29,13 @@ console.log(duck.name);
 `console.log` を使用して、`dog` オブジェクトの `name` プロパティの値を出力します。
 
 ```js
-assert(/console.log\(.*dog\.name.*\)/g.test(code));
+assert(/console.log\(.*dog\.name.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 `console.log` を使用して、`dog` オブジェクトの `numLegs` プロパティの値を出力します。
 
 ```js
-assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
+assert(/console.log\(.*dog\.numLegs.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

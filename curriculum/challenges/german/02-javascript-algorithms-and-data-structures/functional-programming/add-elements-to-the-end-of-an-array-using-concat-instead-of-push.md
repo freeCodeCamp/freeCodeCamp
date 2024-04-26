@@ -30,13 +30,13 @@ arr.push(4, 5, 6);
 Dein Code sollte die `concat`-Methode verwenden.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 Dein Code sollte nicht die `push`-Methode verwenden.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 Das `first`-Array sollte sich nicht verändern.

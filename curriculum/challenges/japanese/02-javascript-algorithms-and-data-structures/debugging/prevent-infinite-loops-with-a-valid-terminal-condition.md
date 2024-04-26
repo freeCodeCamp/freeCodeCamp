@@ -31,13 +31,13 @@ function loopy() {
 `for` ループの終了条件 (真ん中の部分) の比較演算子を変更する必要があります。
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 ループの終了条件にある比較演算子を修正する必要があります。
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

@@ -47,19 +47,19 @@ assert(myStr === 'This is the start. This is the end.');
 يجب عليك استخدام مشغل `+` لبناء `myStr`.
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
 يجب أن يتم إنشاء `myStr` باستخدام كلمة `const`.
 
 ```js
-assert(/const\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب عليك تعيين النتيجة إلى المتغير `myStr`.
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

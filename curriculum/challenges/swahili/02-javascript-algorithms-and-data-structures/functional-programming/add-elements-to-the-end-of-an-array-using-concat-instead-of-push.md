@@ -30,13 +30,13 @@ Change the `nonMutatingPush` function so it uses `concat` to merge `newItem` to 
 Your code should use the `concat` method.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 Your code should not use the `push` method.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 The `first` array should not change.

@@ -54,7 +54,7 @@ assert.match(code, /const\s+myConcat/g);
 
 ```js
 assert(
-  /myConcat=\(\w+,\w+\)=>/.test(code.replace(/\s/g, '')) &&
+  /myConcat=\(\w+,\w+\)=>/.test(__helpers.removeJSComments(code).replace(/\s/g, '')) &&
     typeof myConcat === 'function'
 );
 ```

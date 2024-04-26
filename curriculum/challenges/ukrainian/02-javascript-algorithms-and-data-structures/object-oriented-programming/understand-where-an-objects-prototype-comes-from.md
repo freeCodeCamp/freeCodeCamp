@@ -35,7 +35,7 @@ Bird.prototype.isPrototypeOf(duck);
 Ви повинні показати, що `Dog.prototype` є прототипом `beagle`
 
 ```js
-assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
+assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -30,13 +30,13 @@ arr.push(4, 5, 6);
 Ваш код повинен використовувати метод `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 Ваш код не повинен використовувати метод `push`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 Масив `first` не повинен змінюватись.

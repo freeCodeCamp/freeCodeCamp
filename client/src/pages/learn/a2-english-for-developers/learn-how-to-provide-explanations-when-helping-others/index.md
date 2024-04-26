@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Provide Explanations When Helping Others
 block: learn-how-to-provide-explanations-when-helping-others
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Provide Explanations When Helping Others

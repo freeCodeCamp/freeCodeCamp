@@ -48,14 +48,14 @@ assert(c === 2);
 Du solltest den Operator `-=` für jede Variable verwenden.
 
 ```js
-assert(code.match(/-=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/-=/g).length === 3);
 ```
 
 Du solltest den Code oberhalb des vorgegebenen Kommentars nicht verändern.
 
 ```js
 assert(
-  /let a = 11;/.test(code) && /let b = 9;/.test(code) && /let c = 3;/.test(code)
+  /let a = 11;/.test(__helpers.removeJSComments(code)) && /let b = 9;/.test(__helpers.removeJSComments(code)) && /let c = 3;/.test(__helpers.removeJSComments(code))
 );
 ```
 

@@ -35,7 +35,7 @@ Bird.prototype.isPrototypeOf(duck);
 يجب أن تظهر أن `Dog.prototype` هو `prototype` الـ `beagle`
 
 ```js
-assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
+assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

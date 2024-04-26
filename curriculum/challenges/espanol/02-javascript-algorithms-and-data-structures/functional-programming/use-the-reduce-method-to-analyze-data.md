@@ -66,7 +66,7 @@ assert(
 Tu código debe utilizar el método `reduce`.
 
 ```js
-assert(code.match(/\.reduce/g));
+assert(__helpers.removeJSComments(code).match(/\.reduce/g));
 ```
 
 `getRating(watchList)` debe ser igual a 8.675.
@@ -78,7 +78,7 @@ assert(getRating(watchList) === 8.675);
 Tu código no debe usar un bucle `for`.
 
 ```js
-assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/g));
 ```
 
 Tu código debe devolver el resultado correcto después de modificar el objeto `watchList`.
