@@ -47,7 +47,7 @@ Use the `sort` method in the `alphabeticalOrder` function to sort the elements o
 Your code should use the `sort` method.
 
 ```js
-assert(code.match(/\.sort/g));
+assert(__helpers.removeJSComments(code).match(/\.sort/g));
 ```
 
 `alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` should return `["a", "a", "c", "d", "g", "z"]`.

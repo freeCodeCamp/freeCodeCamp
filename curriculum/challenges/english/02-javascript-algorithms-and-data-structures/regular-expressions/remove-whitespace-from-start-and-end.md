@@ -27,13 +27,13 @@ assert(result === 'Hello, World!');
 Your solution should not use the `String.prototype.trim()` method.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?trim/));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?trim/));
 ```
 
 The `result` variable should not directly be set to a string
 
 ```js
-assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
+assert(!__helpers.removeJSComments(code).match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
 The value of the `hello` variable should not be changed.
