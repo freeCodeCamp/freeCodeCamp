@@ -21,7 +21,7 @@ dashedName: catch-unclosed-parentheses-brackets-braces-and-quotes
 應該修復數組缺少的部分。
 
 ```js
-assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
+assert(__helpers.removeJSComments(code).match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 ```
 
 應該修復 `.reduce()` 方法缺少的部分。 控制檯應該輸出 `Sum of array values is: 6`。

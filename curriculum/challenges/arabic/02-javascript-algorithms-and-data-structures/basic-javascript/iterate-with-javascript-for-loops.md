@@ -44,7 +44,7 @@ for (let i = 0; i < 5; i++) {
 يجب أن تستخدم حلقة `for`.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن يساوي `myArray` قيمة `[1, 2, 3, 4, 5]`.

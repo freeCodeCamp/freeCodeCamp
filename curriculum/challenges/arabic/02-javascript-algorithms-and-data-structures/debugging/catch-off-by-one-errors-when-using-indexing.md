@@ -37,25 +37,25 @@ for (let k = 0; k < len; k++) {
 يجب أن يقوم الكود الخاص بك بتعيين الشرط الأولي للحلقة (loop) بحيث يبدأ من الترتيب الأول.
 
 ```js
-assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
 يجب أن يقوم الكود الخاص بك بإصلاح الشرط الأولي للحلقة بحيث يبدأ الترتيب من 0.
 
 ```js
-assert(!code.match(/i\s?=\s*?1\s*?;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s?=\s*?1\s*?;/g));
 ```
 
 يجب أن يضبط الكود الخاص بك الشرط الطرفي (terminal condition) للحلقة بحيث يتوقف عند الترتيب الأخير.
 
 ```js
-assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 يجب أن يصلح الكود الخاص بك الشرط الطرفي للحلقة بحيث يتوقف عند 1 قبل الطول.
 
 ```js
-assert(!code.match(/i\s*?<=\s*?len;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?<=\s*?len;/g));
 ```
 
 # --seed--

@@ -25,7 +25,7 @@ import add from "./math_functions.js";
 应从 `math_functions.js` 中正确导入 `subtract`。
 
 ```js
-assert(code.match(/import\s+subtract\s+from\s+('|")\.\/math_functions\.js\1/g));
+assert(__helpers.removeJSComments(code).match(/import\s+subtract\s+from\s+('|")\.\/math_functions\.js\1/g));
 ```
 
 # --seed--

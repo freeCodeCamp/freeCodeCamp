@@ -29,13 +29,13 @@ console.log(duck.name);
 你應該使用 `console.log` 來將 `dog` 對象的 `name` 屬性值輸出到控制檯。
 
 ```js
-assert(/console.log\(.*dog\.name.*\)/g.test(code));
+assert(/console.log\(.*dog\.name.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 你應該使用 `console.log` 來將 `dog` 對象的 `numLegs` 屬性值輸出到控制檯。
 
 ```js
-assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
+assert(/console.log\(.*dog\.numLegs.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

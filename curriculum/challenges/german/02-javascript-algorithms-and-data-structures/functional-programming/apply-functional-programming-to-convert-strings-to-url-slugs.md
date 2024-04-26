@@ -31,7 +31,7 @@ Die Ausgabe sollte keine Leerzeichen haben
 Dein Code sollte nicht die `replace` Methode für diese Challenge verwenden.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` sollte den String `winter-is-coming` zurückgeben.

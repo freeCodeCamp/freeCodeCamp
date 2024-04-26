@@ -46,22 +46,22 @@ assert(
 Ви повинні використати `Math.random`, щоб згенерувати випадкове число.
 
 ```js
-assert(code.match(/Math.random/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/Math.random/g).length >= 1);
 ```
 
 Ви повинні помножити результат `Math.random` на 10, щоб зробити його числом в діапазоні від 0 до 9.
 
 ```js
 assert(
-  code.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
-    code.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
+  __helpers.removeJSComments(code).match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
+    __helpers.removeJSComments(code).match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
 );
 ```
 
 Ви повинні використати `Math.floor`, щоб видалити десяткову частину числа.
 
 ```js
-assert(code.match(/Math.floor/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/Math.floor/g).length >= 1);
 ```
 
 # --seed--

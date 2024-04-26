@@ -29,7 +29,7 @@ console.log('Hello world!');
 変数 `a` の値を確認するために `console.log()` を使用する必要があります。
 
 ```js
-assert(code.match(/console\.log\(a\)/g));
+assert(__helpers.removeJSComments(code).match(/console\.log\(a\)/g));
 ```
 
 # --seed--

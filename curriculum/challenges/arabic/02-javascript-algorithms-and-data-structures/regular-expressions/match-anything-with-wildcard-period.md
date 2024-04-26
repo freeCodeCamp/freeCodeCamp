@@ -31,7 +31,7 @@ huRegex.test(hugStr);
 يجب أن يستخدم الكود الخاص بك دالة `.test()`.
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 يجب عليك استخدام الـ wildcard character في الـ regex الخاص بك `unRegex`

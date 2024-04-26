@@ -39,7 +39,7 @@ assert(secondToLastLetterOfLastName === 'c');
 Ви повинні використати `.length`, щоб отримати передостанню літеру.
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

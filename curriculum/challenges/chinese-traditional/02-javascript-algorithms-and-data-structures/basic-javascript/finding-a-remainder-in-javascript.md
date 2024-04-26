@@ -39,7 +39,7 @@ dashedName: finding-a-remainder-in-javascript
 變量 `remainder` 應該被初始化。
 
 ```js
-assert(/(const|let|var)\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(__helpers.removeJSComments(code)));
 ```
 
 `remainder` 的值應該等於 `2`。
@@ -51,7 +51,7 @@ assert(remainder === 2);
 你應該使用 `%` 運算符。
 
 ```js
-assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

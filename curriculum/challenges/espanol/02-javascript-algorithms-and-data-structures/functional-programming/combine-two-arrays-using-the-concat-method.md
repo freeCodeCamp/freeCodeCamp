@@ -25,7 +25,7 @@ Usa el método `concat` en la función `nonMutatingConcat` para concatenar `atta
 Tu código debe usar el método `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 El arreglo `first` no debe cambiar.

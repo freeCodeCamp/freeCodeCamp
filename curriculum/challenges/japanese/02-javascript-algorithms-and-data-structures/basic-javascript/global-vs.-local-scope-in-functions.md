@@ -45,7 +45,7 @@ assert(myOutfit() === 'sweater');
 return ステートメントを変更してはいけません。
 
 ```js
-assert(/return outerWear/.test(code));
+assert(/return outerWear/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

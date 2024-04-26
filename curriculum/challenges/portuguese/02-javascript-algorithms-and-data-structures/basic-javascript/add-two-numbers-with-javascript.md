@@ -38,7 +38,7 @@ assert(sum === 20);
 Você deve usar o operador `+`.
 
 ```js
-assert(/\+/.test(code));
+assert(/\+/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

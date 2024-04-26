@@ -39,7 +39,7 @@ assert(lastLetterOfLastName === 'e');
 您应该使用 `.length` 获取最后一个字母。
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

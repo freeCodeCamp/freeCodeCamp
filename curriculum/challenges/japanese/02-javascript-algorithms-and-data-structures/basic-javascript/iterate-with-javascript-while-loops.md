@@ -36,7 +36,7 @@ while ループを利用して配列に値を push してみましょう。
 この課題には `while` ループを使用してください。
 
 ```js
-assert(code.match(/while/g));
+assert(__helpers.removeJSComments(code).match(/while/g));
 ```
 
 `myArray` は `[5, 4, 3, 2, 1, 0]` となる必要があります。

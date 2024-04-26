@@ -38,25 +38,25 @@ assert(myVar === 10);
 `myVar = myVar - 1;` deve ser alterado.
 
 ```js
-assert(!code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
 ```
 
 Você não deve atribuir a `myVar` o valor `10`.
 
 ```js
-assert(!code.match(/myVar\s*=\s*10.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*10.*?;?/));
 ```
 
 Você deve usar o operador `--` na variável `myVar`.
 
 ```js
-assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
+assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 Você não deve alterar o código acima do comentário especificado.
 
 ```js
-assert(/let myVar = 11;/.test(code));
+assert(/let myVar = 11;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

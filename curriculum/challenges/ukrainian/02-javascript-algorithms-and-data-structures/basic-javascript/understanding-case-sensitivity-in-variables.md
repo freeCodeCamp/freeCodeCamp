@@ -56,19 +56,19 @@ assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 `studlyCapVar` повинна використовувати верблюдячийРегістр як в оголошенні, так і в присвоєнні.
 
 ```js
-assert(code.match(/studlyCapVar/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/studlyCapVar/g).length === 2);
 ```
 
 `properCamelCase` повинна використовувати верблюдячийРегістр як в оголошенні, так і в присвоєнні.
 
 ```js
-assert(code.match(/properCamelCase/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/properCamelCase/g).length === 2);
 ```
 
 `titleCaseOver` повинна використовувати верблюдячийРегістр як в оголошенні, так і в присвоєнні.
 
 ```js
-assert(code.match(/titleCaseOver/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/titleCaseOver/g).length === 2);
 ```
 
 # --seed--

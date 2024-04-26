@@ -39,7 +39,7 @@ Establece `remainder` igual al resto de `11` dividido entre `3` usando el operad
 La variable `remainder` debe inicializarse
 
 ```js
-assert(/(const|let|var)\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(__helpers.removeJSComments(code)));
 ```
 
 El valor de `remainder` debe ser `2`
@@ -51,7 +51,7 @@ assert(remainder === 2);
 Debes usar el operador `%`
 
 ```js
-assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

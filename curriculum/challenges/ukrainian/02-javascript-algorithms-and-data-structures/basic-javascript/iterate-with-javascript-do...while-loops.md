@@ -56,7 +56,7 @@ do {
 Для цього завдання ви повинні використати цикл `do...while`.
 
 ```js
-assert(code.match(/do/g));
+assert(__helpers.removeJSComments(code).match(/do/g));
 ```
 
 `myArray` має дорівнювати `[10]`.

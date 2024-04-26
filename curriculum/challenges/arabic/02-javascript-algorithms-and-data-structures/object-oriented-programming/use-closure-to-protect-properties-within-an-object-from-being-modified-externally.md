@@ -43,7 +43,7 @@ ducky.getHatchedEggCount();
 يجب أن تكون خاصية `weight` متغير خاص ويجب تعيينه قيمة `15`.
 
 ```js
-assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
 يجب أن ينشئ الكود الخاص بك method في `Bird` تسمى `getWeight` لإرجاع قيمة المتغير الخاص `weight`.
@@ -55,7 +55,7 @@ assert(new Bird().getWeight() === 15);
 يجب أن تقوم دالة `getWeight` بإرجاع المتغير الخاص `weight`.
 
 ```js
-assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
+assert(__helpers.removeJSComments(code).match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
 ```
 
 # --seed--

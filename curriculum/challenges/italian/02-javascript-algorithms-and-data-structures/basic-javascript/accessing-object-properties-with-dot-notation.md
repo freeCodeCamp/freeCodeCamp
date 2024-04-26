@@ -60,7 +60,7 @@ assert(shirtValue === 'jersey');
 Dovresti usare due volte la notazione a punti
 
 ```js
-assert(code.match(/testObj\.\w+/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\.\w+/g).length > 1);
 ```
 
 # --seed--

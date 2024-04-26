@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 У коді не повинно бути змінних з орфографічними помилками.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 Змінна `receivables` повинна бути правильно оголошеною та використаною.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 У коді не повинно бути змінних з орфографічними помилками.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 Змінна `payables` повинна бути правильно оголошеною та використаною.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--
