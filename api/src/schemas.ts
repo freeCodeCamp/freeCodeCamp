@@ -10,6 +10,7 @@ import { projectCompleted } from './schemas/challenge/project-completed';
 import { saveChallenge } from './schemas/challenge/save-challenge';
 import { deprecatedEndpoints } from './schemas/deprecated';
 import { chargeStripeCard } from './schemas/donate/charge-stripe-card';
+import { addDonation } from './schemas/donate/add-donation';
 import { updateMyAbout } from './schemas/settings/update-my-about';
 import { updateMyClassroomMode } from './schemas/settings/update-my-classroom-mode';
 import { updateMyEmail } from './schemas/settings/update-my-email';
@@ -36,6 +37,7 @@ export const schemas = {
   certificateVerify,
   certSlug,
   chargeStripeCard,
+  addDonation,
   coderoadChallengeCompleted,
   deleteMyAccount,
   deleteMsUsername,
