@@ -1,4 +1,4 @@
-import { Page, expect, test } from '@playwright/test';
+import { APIRequestContext, expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
@@ -9,24 +9,21 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-// Enable keyboard shortcuts
-const enableKeyboardShortcuts = async (page: Page) => {
-  await page.goto('/settings');
-  const keyboardShortcutGroup = page.getByRole('group', {
-    name: translations.settings.labels['keyboard-shortcuts']
-  });
-  await keyboardShortcutGroup
-    .getByRole('button', { name: translations.buttons.on, exact: true })
-    .click();
-};
+const enableKeyboardShortcuts = async (request: APIRequestContext) =>
+  await request.put(
+    process.env.API_LOCATION + '/update-my-keyboard-shortcuts',
+    {
+      data: { keyboardShortcuts: true }
+    }
+  );
 
-test.beforeEach(async ({ page,  isMobile }) => {
+test.beforeEach(async ({ page, isMobile, request }) => {
   test.skip(
-     isMobile,
+    isMobile,
     'Skipping on mobile as it does not have a physical keyboard'
   );
 
-  await enableKeyboardShortcuts(page);
+  await enableKeyboardShortcuts(request);
   await page.goto(course);
 });
 
