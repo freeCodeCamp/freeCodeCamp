@@ -53,7 +53,7 @@ assert(myDog.bark !== undefined);
 لا ينبغي أن تضيف `bark` إلى التعليمات البرمجية تهيئة الكائن `myDog`.
 
 ```js
-assert(!/bark[^\n]:/.test(code));
+assert(!/bark[^\n]:/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -72,7 +72,7 @@ assert(testLessOrEqual(55) === 'More Than 24');
 Du solltest den `<=` Operator mindestens zweimal verwenden
 
 ```js
-assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
 ```
 
 # --seed--

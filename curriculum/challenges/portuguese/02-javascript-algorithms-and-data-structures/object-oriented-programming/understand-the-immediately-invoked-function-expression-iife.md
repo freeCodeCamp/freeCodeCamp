@@ -29,13 +29,13 @@ Rescreva a função `makeNest` e remova a chamada a ela para que no lugar seja u
 A função deve ser anônima.
 
 ```js
-assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
+assert(/\((function|\(\))(=>|\(\)){?/.test(__helpers.removeJSComments(code).replace(/\s/g, '')));
 ```
 
 A função deve ter parênteses no final da expressão para chamar ela imediatamente.
 
 ```js
-assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));
+assert(/\(.*(\)\(|\}\(\))\)/.test(__helpers.removeJSComments(code).replace(/[\s;]/g, '')));
 ```
 
 # --seed--

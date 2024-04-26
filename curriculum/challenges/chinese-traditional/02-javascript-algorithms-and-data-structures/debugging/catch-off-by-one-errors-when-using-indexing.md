@@ -37,25 +37,25 @@ for (let k = 0; k < len; k++) {
 應該設置循環的初始條件，使循環從第一個索引開始。
 
 ```js
-assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
 應修復循環的初始條件，使循環從索引 0 開始。
 
 ```js
-assert(!code.match(/i\s?=\s*?1\s*?;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s?=\s*?1\s*?;/g));
 ```
 
 應該設置循環的終止條件，使循環在最後一個索引處停止。
 
 ```js
-assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 應該修復循環的終止條件，使循環在索引爲字符串長度減 1 的位置停止。
 
 ```js
-assert(!code.match(/i\s*?<=\s*?len;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?<=\s*?len;/g));
 ```
 
 # --seed--

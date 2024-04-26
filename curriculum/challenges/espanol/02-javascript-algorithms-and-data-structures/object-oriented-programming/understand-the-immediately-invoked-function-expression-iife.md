@@ -29,13 +29,13 @@ Reescribe la función `makeNest` y elimina su llamada, por lo que es una expresi
 La función debe ser anónima.
 
 ```js
-assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
+assert(/\((function|\(\))(=>|\(\)){?/.test(__helpers.removeJSComments(code).replace(/\s/g, '')));
 ```
 
 Tu función debe tener paréntesis al final de la expresión para llamarle de inmediato.
 
 ```js
-assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));
+assert(/\(.*(\)\(|\}\(\))\)/.test(__helpers.removeJSComments(code).replace(/[\s;]/g, '')));
 ```
 
 # --seed--

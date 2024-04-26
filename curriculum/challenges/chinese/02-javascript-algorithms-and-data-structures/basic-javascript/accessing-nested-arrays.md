@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 你的代码应该使用点号和方括号访问 `myPlants`。
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

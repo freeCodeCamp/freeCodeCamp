@@ -39,19 +39,19 @@ Scrivi delle istruzioni `if`/`else if` concatenate per soddisfare le seguenti co
 Dovresti avere almeno quattro istruzioni `else`
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 Dovresti avere almeno quattro istruzioni `if`
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 Dovresti avere almeno un'istruzione `return`
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` dovrebbe restituire la stringa `Tiny`

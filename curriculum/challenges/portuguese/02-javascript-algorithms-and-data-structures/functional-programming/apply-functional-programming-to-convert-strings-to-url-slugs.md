@@ -31,7 +31,7 @@ A saída não deve conter espaços
 Você não pode usar o método `replace` neste desafio.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` deve retornar a string `winter-is-coming`.

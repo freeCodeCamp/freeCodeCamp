@@ -458,6 +458,13 @@
           "递归是一种编程概念，即函数调用自身。这可以将复杂的问题简化为更简单的子问题，直到它们变得简单易解。",
           "在这个项目中，你将使用 JavaScript 创建一个十进制到二进制的转换器。你将学习递归的基本概念，探索调用栈，并通过动画直观地展示递归过程。"
         ]
+      },
+      "learn-introductory-javascript-by-building-a-pyramid-generator": {
+        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+        ]
       }
     }
   },

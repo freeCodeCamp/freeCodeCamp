@@ -53,7 +53,7 @@ assert(typeof myHouse.numBedrooms === 'number');
 应该使用 `instanceof` 操作符验证 `myHouse` 这个对象是 `House` 构造函数的一个实例。
 
 ```js
-assert(/myHouse\s*instanceof\s*House/.test(code));
+assert(/myHouse\s*instanceof\s*House/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 代碼中不應該有拼寫錯誤的變量實例。
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 應在代碼中聲明並正確使用 `receivables` 變量。
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 代碼中不應該有拼寫錯誤的變量實例。
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 應在代碼中聲明並正確使用 `payables` 變量。
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

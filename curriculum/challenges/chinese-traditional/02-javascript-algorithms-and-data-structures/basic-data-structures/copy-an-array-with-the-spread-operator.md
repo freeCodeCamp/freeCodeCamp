@@ -65,7 +65,7 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 `copyMachine` 函數中應對 `arr` 使用展開運算符（`spread operator`）。
 
 ```js
-assert(code.match(/\.\.\.\s*arr/));
+assert(__helpers.removeJSComments(__helpers.removeJSComments(code)).match(/\.\.\.\s*arr/));
 ```
 
 # --seed--

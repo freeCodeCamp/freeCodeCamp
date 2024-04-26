@@ -44,7 +44,7 @@ assert(increment(5) === 6);
 参数 `value` 的默认值是 `1`。
 
 ```js
-assert(code.match(/value\s*=\s*1/g));
+assert(__helpers.removeJSComments(code).match(/value\s*=\s*1/g));
 ```
 
 # --seed--

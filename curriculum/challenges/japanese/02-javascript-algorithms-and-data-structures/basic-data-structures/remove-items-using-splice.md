@@ -40,7 +40,7 @@ let newArray = array.splice(3, 2);
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
 );
 ```
 
@@ -56,14 +56,14 @@ assert.strictEqual(
 コードでは、`arr` に対して `splice()` メソッドを使用する必要があります。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(/));
 ```
 
 splice は `arr` から要素を削除するのみで、`arr` にどんな新しい要素も追加しないものとします。
 
 ```js
 assert(
-  !__helpers.removeWhiteSpace(code).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
+  !__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
 );
 ```
 

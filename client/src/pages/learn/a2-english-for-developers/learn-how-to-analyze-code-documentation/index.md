@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Analyze Code Documentation
 block: learn-how-to-analyze-code-documentation
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Analyze Code Documentation

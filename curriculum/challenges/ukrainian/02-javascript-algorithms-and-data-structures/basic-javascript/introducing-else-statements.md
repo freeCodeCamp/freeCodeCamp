@@ -28,13 +28,13 @@ if (num > 10) {
 Ви повинні мати лише одну інструкцію `if` у редакторі
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 Ви повинні використати інструкцію `else`
 
 ```js
-assert(/else/g.test(code));
+assert(/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 `testElse(4)` має повертати рядок `5 or Smaller`
@@ -64,7 +64,7 @@ assert(testElse(10) === 'Bigger than 5');
 Не змінюйте код над/під зазначеним коментарем.
 
 ```js
-assert(/let result = "";/.test(code) && /return result;/.test(code));
+assert(/let result = "";/.test(__helpers.removeJSComments(code)) && /return result;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

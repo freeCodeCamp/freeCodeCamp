@@ -52,7 +52,6 @@ const defaultProps = {
         },
         notes: 'mockNotes',
         prerequisites: [] as PrerequisiteChallenge[],
-        removeComments: false,
         isLocked: false,
         isPrivate: false,
         order: 1,

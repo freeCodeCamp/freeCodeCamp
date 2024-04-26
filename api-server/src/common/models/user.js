@@ -526,15 +526,17 @@ export default function initializeUser(User) {
           Observable.fromPromise(userUpdate)
         );
       })
-      .map(
-        () =>
-          'Check your email and click the link we sent you to confirm' +
-          ' your new email address.'
-      );
+      .map({
+        type: 'info',
+        message: dedent`Check your email and click the link we sent you to confirm your new email address.`
+      });
   }
 
   User.prototype.requestAuthEmail = requestAuthEmail;
 
+  /**
+   * @param {String} requestedEmail
+   */
   function requestUpdateEmail(requestedEmail) {
     const newEmail = ensureLowerCaseString(requestedEmail);
     const currentEmail = ensureLowerCaseString(this.email);

@@ -31,7 +31,7 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 Ваш код не повинен використовувати метод `replace` у цьому завданні.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` має повертати рядок `winter-is-coming`.

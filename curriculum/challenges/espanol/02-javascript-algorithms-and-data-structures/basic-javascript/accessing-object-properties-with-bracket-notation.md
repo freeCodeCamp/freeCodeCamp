@@ -64,7 +64,7 @@ assert(drinkValue === 'water');
 Debes usar la notación de corchetes dos veces
 
 ```js
-assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ```
 
 # --seed--

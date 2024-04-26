@@ -25,14 +25,14 @@ dashedName: create-a-module-script
 يجب عليك إنشاء علامة `script`.
 
 ```js
-assert(code.match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
+assert(__helpers.removeJSComments(code).match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
 ```
 
 يجب أن يحتوي علامة `script` على سمة `type` بقيمة `module`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^t]*type\s*=\s*('|")module\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );
@@ -42,7 +42,7 @@ assert(
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^s]*src\s*=\s*('|")index\.js\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );

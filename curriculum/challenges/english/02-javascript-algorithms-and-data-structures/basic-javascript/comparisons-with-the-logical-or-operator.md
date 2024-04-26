@@ -43,13 +43,13 @@ Combine the two `if` statements into one statement which returns the string `Out
 You should use the `||` operator once
 
 ```js
-assert(code.match(/\|\|/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/\|\|/g).length === 1);
 ```
 
 You should only have one `if` statement
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalOr(0)` should return the string `Outside`

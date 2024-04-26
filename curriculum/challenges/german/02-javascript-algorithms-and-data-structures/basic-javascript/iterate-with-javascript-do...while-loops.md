@@ -56,7 +56,7 @@ In diesem Fall initialisieren wir den Wert von `i` auf 5, genau wie in der `whil
 Du solltest für diese Übung eine `do...while`-Schleife verwenden.
 
 ```js
-assert(code.match(/do/g));
+assert(__helpers.removeJSComments(code).match(/do/g));
 ```
 
 `myArray` sollte gleich `[10]` sein.

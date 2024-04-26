@@ -31,7 +31,7 @@ testRegex.test(testStr);
 يجب عليك استخدام `.test()` لاختبار الـ regex.
 
 ```js
-assert(code.match(/myRegex.test\(\s*myString\s*\)/));
+assert(__helpers.removeJSComments(code).match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
 يجب أن تنتج `true`.

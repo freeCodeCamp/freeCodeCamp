@@ -46,22 +46,22 @@ assert(
 يجب عليك استخدام `Math.random` لتوليد رَقَم عشوائي.
 
 ```js
-assert(code.match(/Math.random/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/Math.random/g).length >= 1);
 ```
 
 You should have multiplied the result of `Math.random` by 10 to make it a number in the range from zero to nine.
 
 ```js
 assert(
-  code.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
-    code.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
+  __helpers.removeJSComments(code).match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
+    __helpers.removeJSComments(code).match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
 );
 ```
 
 يجب عليك استخدام `Math.floor` لإزالة الجزء العشري من الرَّقَم.
 
 ```js
-assert(code.match(/Math.floor/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/Math.floor/g).length >= 1);
 ```
 
 # --seed--

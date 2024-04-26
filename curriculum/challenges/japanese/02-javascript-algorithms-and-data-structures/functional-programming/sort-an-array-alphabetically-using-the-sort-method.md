@@ -47,7 +47,7 @@ JavaScript のデフォルトのソート方法で基準となるのは文字列
 コードで `sort` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.sort/g));
+assert(__helpers.removeJSComments(code).match(/\.sort/g));
 ```
 
 `alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` は `["a", "a", "c", "d", "g", "z"]` を返す必要があります。

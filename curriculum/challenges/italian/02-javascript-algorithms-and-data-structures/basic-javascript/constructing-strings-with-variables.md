@@ -35,7 +35,7 @@ assert(typeof myName !== 'undefined' && myName.length > 2);
 Dovresti usare due operatori `+` per costruire `myStr` con `myName` al suo interno.
 
 ```js
-assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 ```
 
 # --seed--

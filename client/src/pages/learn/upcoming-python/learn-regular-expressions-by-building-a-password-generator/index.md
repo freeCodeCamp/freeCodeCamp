@@ -2,7 +2,6 @@
 title: Introduction to the Learn Regular Expressions by Building a Password Generator
 block: learn-regular-expressions-by-building-a-password-generator
 superBlock: upcoming-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Regular Expressions by Building a Password Generator

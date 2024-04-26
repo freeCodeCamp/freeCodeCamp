@@ -32,19 +32,19 @@ Füge zwei `console.log()` Anweisungen hinzu, um den Typ (`typeof`) jeder der be
 Dein Code sollte `typeof` in zwei `console.log()` Anweisungen verwenden, um den Typ der Variablen zu überprüfen.
 
 ```js
-assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 Dein Code sollte `typeof` verwenden, um den Typ der Variablen `seven` zu überprüfen.
 
 ```js
-assert(code.match(/typeof[\( ]seven\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]seven\)?/g));
 ```
 
 Dein Code sollte `typeof` verwenden, um den Typ der Variablen `three` zu überprüfen.
 
 ```js
-assert(code.match(/typeof[\( ]three\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]three\)?/g));
 ```
 
 # --seed--
