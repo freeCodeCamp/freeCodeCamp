@@ -627,6 +627,25 @@ describe('certificate routes', () => {
         });
         expect(response.status).toBe(200);
       });
+
+      test('should return cert-not-found if there is no cert with that slug', async () => {
+        const response = await superRequest(
+          '/certificate/showCert/foobar/not-a-valid-cert-slug',
+          {
+            method: 'GET'
+          }
+        );
+        expect(response.body).toEqual({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.cert-not-found',
+              variables: { certSlug: 'not-a-valid-cert-slug' }
+            }
+          ]
+        });
+        expect(response.status).toBe(404);
+      });
     });
   });
 });
