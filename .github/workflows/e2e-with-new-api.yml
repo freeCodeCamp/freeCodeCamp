@@ -115,7 +115,7 @@ jobs:
   playwright-run:
     name: Run Playwright Tests (with new Api)
     runs-on: ubuntu-22.04
-    needs: [build-client, build-api]
+    needs: [build-client, build-new-api]
     strategy:
       fail-fast: false
       matrix:
