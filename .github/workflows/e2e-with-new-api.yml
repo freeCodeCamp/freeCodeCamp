@@ -106,7 +106,7 @@ jobs:
 
   playwright-run:
     runs-on: ubuntu-22.04
-    needs: [build-client, build-api]
+    needs: [build-client, build-new-api]
     strategy:
       fail-fast: false
       matrix:
