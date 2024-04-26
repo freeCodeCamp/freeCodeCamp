@@ -31,7 +31,7 @@
     },
     "isComingSoon": {
       "type": "boolean",
-      "description": "Challenge shows in production, but is unreachable and disabled. Is reachable in beta/dev only if isBeta flag is set"
+      "description": "Challenge shows in production, but is unreachable and disabled."
     },
     "dashedName": {
       "type": "string"
