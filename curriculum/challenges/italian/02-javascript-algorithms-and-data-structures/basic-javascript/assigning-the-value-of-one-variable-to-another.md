@@ -29,7 +29,7 @@ Assegna il contenuto di `a` alla variabile `b`.
 Non dovresti modificare il codice sopra il commento specificato.
 
 ```js
-assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
 ```
 
 `b` dovrebbe avere un valore di `7`.
@@ -41,7 +41,7 @@ assert(typeof b === 'number' && b === 7);
 `a` dovrebbe essere assegnato a `b` con `=`.
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(code));
+assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

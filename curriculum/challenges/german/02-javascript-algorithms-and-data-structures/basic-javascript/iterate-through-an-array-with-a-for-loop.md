@@ -30,7 +30,7 @@ Deklariere und initialisiere eine Variable `total` auf `0`. Verwende eine `for`-
 `total` sollte deklariert und auf 0 initialisiert werden.
 
 ```js
-assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
 ```
 
 `total` sollte gleich 20 sein.
@@ -42,13 +42,13 @@ assert(total === 20);
 Du solltest eine `for`-Schleife verwenden, um durch `myArr` zu iterieren.
 
 ```js
-assert(/for\s*\(/g.test(code) && /myArr\s*\[/g.test(code));
+assert(/for\s*\(/g.test(__helpers.removeJSComments(code)) && /myArr\s*\[/g.test(__helpers.removeJSComments(code)));
 ```
 
 Du solltest nicht versuchen, `total` direkt den Wert 20 zuzuweisen.
 
 ```js
-assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));
+assert(!__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/total[=+-]0*[1-9]+/gm));
 ```
 
 # --seed--

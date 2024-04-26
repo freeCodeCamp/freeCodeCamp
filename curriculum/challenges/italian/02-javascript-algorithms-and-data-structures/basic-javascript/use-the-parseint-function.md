@@ -26,7 +26,7 @@ Usa `parseInt()` nella funzione `convertToInteger` in modo che converta la serie
 `convertToInteger` dovrebbe utilizzare la funzione `parseInt()`
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("56")` dovrebbe restituire un numero

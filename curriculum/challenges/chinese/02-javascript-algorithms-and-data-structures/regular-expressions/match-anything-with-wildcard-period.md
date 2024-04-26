@@ -31,7 +31,7 @@ huRegex.test(hugStr);
 你应该使用 `.test()` 方法。
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 你应该在你的正则表达式 `unRegex` 中使用通配符。

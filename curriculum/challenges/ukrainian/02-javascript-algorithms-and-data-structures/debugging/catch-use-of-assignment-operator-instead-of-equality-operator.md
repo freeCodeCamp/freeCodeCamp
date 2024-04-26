@@ -43,7 +43,7 @@ assert(result == 'Not equal!');
 Умова повинна використовувати `==` або `===`, щоб перевірити рівність.
 
 ```js
-assert(code.match(/x\s*?===?\s*?y/g));
+assert(__helpers.removeJSComments(code).match(/x\s*?===?\s*?y/g));
 ```
 
 # --seed--

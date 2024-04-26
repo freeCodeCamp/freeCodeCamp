@@ -51,7 +51,7 @@ We've defined a function `countOnline` which accepts one argument, `allUsers`. U
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)/
   )
 );

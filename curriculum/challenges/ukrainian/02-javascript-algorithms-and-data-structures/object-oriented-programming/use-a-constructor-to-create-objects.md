@@ -52,7 +52,7 @@ assert(hound instanceof Dog);
 Код має використати оператор `new`, щоб створити екземпляр `Dog`.
 
 ```js
-assert(code.match(/new/g));
+assert(__helpers.removeJSComments(code).match(/new/g));
 ```
 
 # --seed--

@@ -30,13 +30,13 @@ Cambia la funzione `nonMutatingPush` in modo che utilizzi `concat` per aggiunger
 Dovresti usare il metodo `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 Non dovresti usare il metodo `push`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 L'array `first` non dovrebbe cambiare.

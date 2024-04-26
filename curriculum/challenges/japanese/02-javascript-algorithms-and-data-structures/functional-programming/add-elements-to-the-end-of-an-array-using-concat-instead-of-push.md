@@ -30,13 +30,13 @@ arr.push(4, 5, 6);
 コードで `concat` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 コードで `push` メソッドを使用しないでください。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 `first` 配列を変更しないようにする必要があります。

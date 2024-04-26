@@ -45,7 +45,7 @@ assert(myData === 8);
 你應該使用方括號從 `myArray` 中讀取正確的值。
 
 ```js
-assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));
+assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

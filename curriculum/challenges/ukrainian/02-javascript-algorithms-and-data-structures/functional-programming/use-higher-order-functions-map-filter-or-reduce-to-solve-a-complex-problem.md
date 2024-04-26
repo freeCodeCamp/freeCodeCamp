@@ -28,7 +28,7 @@ assert.typeOf(squareList, 'function'),
 Ви не повинні використовувати `for`, `while` або `forEach`.
 
 ```js
-assert(!code.match(/for|while|forEach/g));
+assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
 ```
 
 Ви повинні використовувати `map`, `filter` або `reduce`.
@@ -36,7 +36,7 @@ assert(!code.match(/for|while|forEach/g));
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/\.(map|filter|reduce)\(/g)
 );
 ```

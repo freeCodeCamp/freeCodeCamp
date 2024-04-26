@@ -53,7 +53,7 @@ assert(
 你不應該直接使用 `dog`、`ran`、`big` 或 `quickly` 來創建 `wordBlanks`。
 
 ```js
-const newCode = removeAssignments(code);
+const newCode = removeAssignments(__helpers.removeJSComments(code));
 assert(
   !/dog/.test(newCode) &&
     !/ran/.test(newCode) &&

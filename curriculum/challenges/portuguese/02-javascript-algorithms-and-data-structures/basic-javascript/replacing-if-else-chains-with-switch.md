@@ -45,19 +45,19 @@ Altere a cadeia de instruções `if`/`else if` por um comando `switch`.
 Você não deve usar nenhuma instrução `else` em nenhum lugar no editor
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 Você não deve usar nenhuma instrução `if` em nenhum lugar no editor
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Você deve ter pelo menos instruções `break`
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` deve retornar a string `Marley`
