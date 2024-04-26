@@ -9,13 +9,29 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-const enableKeyboardShortcuts = async (request: APIRequestContext) =>
-  await request.put(
+const enableKeyboardShortcuts = async (
+  page: Page,
+  request: APIRequestContext
+) => {
+  const csrfToken = (await request.storageState()).cookies.find(
+    c => c.name === 'csrf_token'
+  )?.value;
+
+  expect(csrfToken).toBeTruthy();
+
+  const res = await request.put(
     process.env.API_LOCATION + '/update-my-keyboard-shortcuts',
     {
-      data: { keyboardShortcuts: true }
+      data: { keyboardShortcuts: true },
+      headers: { 'csrf-token': csrfToken! }
     }
   );
+  expect(res.status()).toBe(200);
+  expect(await res.json()).toEqual({
+    message: 'flash.keyboard-shortcut-updated',
+    type: 'success'
+  });
+};
 
 const openModal = async (page: Page) => {
   // The editor pane is focused by default, so we need to escape or it will
@@ -30,7 +46,7 @@ test.beforeEach(async ({ page, isMobile, request }) => {
     'Skipping on mobile as it does not have a physical keyboard'
   );
 
-  await enableKeyboardShortcuts(request);
+  await enableKeyboardShortcuts(page, request);
   await page.goto(course);
 });
 
