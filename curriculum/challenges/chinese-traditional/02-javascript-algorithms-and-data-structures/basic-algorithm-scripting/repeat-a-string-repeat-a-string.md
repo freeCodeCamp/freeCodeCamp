@@ -51,7 +51,7 @@ assert(repeatStringNumTimes('abc', -2) === '');
 不應使用內置的 `repeat()` 方法。
 
 ```js
-assert(!/\.repeat/g.test(code));
+assert(!/\.repeat/g.test(__helpers.removeJSComments(code)));
 ```
 
 `repeatStringNumTimes("abc", 0)` 應返回 `""`。

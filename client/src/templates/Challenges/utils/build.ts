@@ -172,29 +172,29 @@ export function getTestRunner(
 
 function getJSTestRunner(
   { build, sources }: BuildChallengeData,
-  { proxyLogger, removeComments }: TestRunnerConfig
+  { proxyLogger }: TestRunnerConfig
 ) {
   return getWorkerTestRunner(
     { build, sources },
-    { proxyLogger, removeComments },
+    { proxyLogger },
     jsWorkerExecutor
   );
 }
 
 function getPyTestRunner(
   { build, sources }: BuildChallengeData,
-  { proxyLogger, removeComments }: TestRunnerConfig
+  { proxyLogger }: TestRunnerConfig
 ) {
   return getWorkerTestRunner(
     { build, sources },
-    { proxyLogger, removeComments },
+    { proxyLogger },
     pythonWorkerExecutor
   );
 }
 
 function getWorkerTestRunner(
   { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
-  { proxyLogger, removeComments }: TestRunnerConfig,
+  { proxyLogger }: TestRunnerConfig,
   workerExecutor: WorkerExecutor
 ) {
   const code = {
@@ -210,7 +210,7 @@ function getWorkerTestRunner(
 
   return (testString: string, testTimeout: number, firstTest = true) => {
     const result = workerExecutor.execute(
-      { build, testString, code, sources, firstTest, removeComments },
+      { build, testString, code, sources, firstTest },
       testTimeout
     ) as TestWorkerExecutor;
 

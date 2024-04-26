@@ -35,7 +35,7 @@ assert(difference === 12);
 يجب أن تطرح رَقَم واحد فقط من `45`.
 
 ```js
-assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
+assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

@@ -47,19 +47,19 @@ assert(myStr === 'This is the start. This is the end.');
 `+` 演算子を使用して `myStr` を作成する必要があります。
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
 `const` キーワードを使用して `myStr` を作成する必要があります。
 
 ```js
-assert(/const\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 結果を `myStr` 変数に代入する必要があります。
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

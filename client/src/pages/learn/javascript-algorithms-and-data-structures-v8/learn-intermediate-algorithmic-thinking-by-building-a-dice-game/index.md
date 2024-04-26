@@ -2,7 +2,6 @@
 title: Introduction to the Learn Intermediate Algorithmic Thinking by Building a Dice Game
 block: learn-intermediate-algorithmic-thinking-by-building-a-dice-game
 superBlock: javascript-algorithms-and-data-structures-v8
-isBeta: true
 ---
 
 ## Introduction to the Learn Intermediate Algorithmic Thinking by Building a Dice Game

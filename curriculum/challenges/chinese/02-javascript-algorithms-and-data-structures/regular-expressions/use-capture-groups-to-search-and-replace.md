@@ -37,7 +37,7 @@ wrongText.replace(silverRegex, "blue");
 你应该使用 `.replace()` 搜索并替换。
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 你的正则表达式应该将字符串 `one two three` 更改为字符串 `three two one`
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 你不应该改变最后一行。
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` 应该至少使用三个抓取组。

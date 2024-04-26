@@ -40,13 +40,13 @@ Replace the two if statements with one statement, using the `&&` operator, which
 You should use the `&&` operator once
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 You should only have one `if` statement
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalAnd(0)` should return the string `No`

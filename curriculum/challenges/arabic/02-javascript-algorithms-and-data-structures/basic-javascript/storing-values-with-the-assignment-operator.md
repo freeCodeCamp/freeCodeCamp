@@ -35,7 +35,7 @@ myVar = 5;
 لا يجب عليك تعديل الكود فوق التعليق المحدد.
 
 ```js
-assert(/var a;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن يحتوي `a` قيمة 7.

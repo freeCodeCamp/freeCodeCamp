@@ -45,7 +45,7 @@ assert(myData === 8);
 Ви повинні використати дужкову нотацію, щоб зчитати правильне значення з `myArray`.
 
 ```js
-assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));
+assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

@@ -57,7 +57,7 @@ assert(sum() === 0);
 `sum` は、`args` パラメーターで残余引数の構文 (`...`) を使用するアロー関数にする必要があります。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/sum=\(\.\.\.args\)=>/));
 ```
 
 # --seed--

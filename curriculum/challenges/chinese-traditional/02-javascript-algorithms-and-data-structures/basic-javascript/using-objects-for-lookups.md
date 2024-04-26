@@ -83,14 +83,14 @@ assert(typeof phoneticLookup('') === 'undefined');
 請不要修改 `return` 語句
 
 ```js
-assert(code.match(/return\sresult;/));
+assert(__helpers.removeJSComments(code).match(/return\sresult;/));
 ```
 
 請不要使用 `case`、`switch`、`if` 語句
 
 ```js
 assert(
-  !/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
+  !/case|switch|if/g.test(__helpers.removeJSComments(code).replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
 );
 ```
 

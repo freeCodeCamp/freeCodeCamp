@@ -34,7 +34,7 @@ Usa `parseInt()` nella funzione `convertToInteger` in modo che converta un numer
 `convertToInteger` dovrebbe utilizzare la funzione `parseInt()`
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("10011")` dovrebbe restituire un numero

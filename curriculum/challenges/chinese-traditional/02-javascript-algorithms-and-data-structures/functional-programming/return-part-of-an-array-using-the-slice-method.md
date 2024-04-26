@@ -28,7 +28,7 @@ const newArray = arr.slice(1, 3);
 應該使用 `slice` 方法。
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 不能改變 `inputAnim` 變量。

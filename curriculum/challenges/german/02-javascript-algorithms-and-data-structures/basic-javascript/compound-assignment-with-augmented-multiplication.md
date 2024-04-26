@@ -48,16 +48,16 @@ assert(c === 46);
 Du solltest den Operator `*=` für jede Variable verwenden.
 
 ```js
-assert(code.match(/\*=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/\*=/g).length === 3);
 ```
 
 Du solltest den Code oberhalb des vorgegebenen Kommentars nicht verändern.
 
 ```js
 assert(
-  /let a = 5;/.test(code) &&
-    /let b = 12;/.test(code) &&
-    /let c = 4\.6;/.test(code)
+  /let a = 5;/.test(__helpers.removeJSComments(code)) &&
+    /let b = 12;/.test(__helpers.removeJSComments(code)) &&
+    /let c = 4\.6;/.test(__helpers.removeJSComments(code))
 );
 ```
 

@@ -31,7 +31,7 @@ huRegex.test(hugStr);
 `.test()` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 正規表現 `unRegex`でワイルドカード文字を使用する必要があります。

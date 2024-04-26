@@ -43,7 +43,7 @@ assert(JSON.stringify(_test_s.filter(_callback)) === JSON.stringify(_test_s.myFi
 Dein Code sollte die Methode `filter` nicht verwenden.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?filter/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?filter/g));
 ```
 
 # --seed--

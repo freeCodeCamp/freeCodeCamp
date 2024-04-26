@@ -26,13 +26,13 @@ assert(quotient === 2.2);
 `/` 演算子を使用して 4.4 を 2.0 で割る必要があります。
 
 ```js
-assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
+assert(/4\.40*\s*\/\s*2\.*0*/.test(__helpers.removeJSComments(code)));
 ```
 
 変数 quotient には一度だけ代入してください。
 
 ```js
-assert(code.match(/quotient\s*=/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/quotient\s*=/g).length === 1);
 ```
 
 # --seed--

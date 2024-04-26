@@ -54,7 +54,7 @@ Dovresti accedere ai dati nella variabile `myArray` usando la notazione a parent
 ```js
 assert(
   (function () {
-    if (code.match(/\s*=\s*myArray\[0\]/g)) {
+    if (__helpers.removeJSComments(code).match(/\s*=\s*myArray\[0\]/g)) {
       return true;
     } else {
       return false;

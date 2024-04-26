@@ -36,7 +36,7 @@ assert((randomFraction() + '').match(/\./g));
 يجب أن تستخدم `Math.random` لإنشاء رَقَم عشري عشوائي.
 
 ```js
-assert(code.match(/Math\.random/g).length >= 0);
+assert(__helpers.removeJSComments(code).match(/Math\.random/g).length >= 0);
 ```
 
 # --seed--

@@ -54,7 +54,7 @@ function findGreaterOrEqual(a, b) {
 `checkSign` で複数条件演算子を使用する必要があります
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(__helpers.removeJSComments(code)));
 ```
 
 `checkSign(10)` は文字列 `positive` を返す必要があります。 大文字の記述が重要であることに注意してください。

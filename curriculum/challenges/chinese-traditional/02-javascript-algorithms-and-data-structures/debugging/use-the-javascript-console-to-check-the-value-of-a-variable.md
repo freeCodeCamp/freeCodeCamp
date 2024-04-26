@@ -29,7 +29,7 @@ console.log('Hello world!');
 應使用 `console.log()` 來檢查變量 `a` 的值。
 
 ```js
-assert(code.match(/console\.log\(a\)/g));
+assert(__helpers.removeJSComments(code).match(/console\.log\(a\)/g));
 ```
 
 # --seed--

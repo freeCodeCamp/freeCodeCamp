@@ -42,7 +42,7 @@ Utilizzare l'operatore condizionale nella funzione `checkEqual` per verificare s
 `checkEqual` dovrebbe utilizzare l'operatore condizionale
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(__helpers.removeJSComments(code)));
 ```
 
 `checkEqual(1, 2)` dovrebbe restituire la stringa `Not Equal`
