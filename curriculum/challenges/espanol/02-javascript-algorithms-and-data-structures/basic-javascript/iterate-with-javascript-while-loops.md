@@ -36,7 +36,7 @@ Agrega los números de 5 a 0 (inclusivo) en orden descendente a `myArray` usando
 Debes utilizar un bucle `while` para esto.
 
 ```js
-assert(code.match(/while/g));
+assert(__helpers.removeJSComments(code).match(/while/g));
 ```
 
 `myArray` debe ser igual a `[5, 4, 3, 2, 1, 0]`.

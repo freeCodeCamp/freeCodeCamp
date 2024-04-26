@@ -48,16 +48,16 @@ assert(c === 3);
 各変数で `/=` 演算子を使用してください。
 
 ```js
-assert(code.match(/\/=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/\/=/g).length === 3);
 ```
 
 指定のコメントより上にあるコードを変更しないでください。
 
 ```js
 assert(
-  /let a = 48;/.test(code) &&
-    /let b = 108;/.test(code) &&
-    /let c = 33;/.test(code)
+  /let a = 48;/.test(__helpers.removeJSComments(code)) &&
+    /let b = 108;/.test(__helpers.removeJSComments(code)) &&
+    /let c = 33;/.test(__helpers.removeJSComments(code))
 );
 ```
 

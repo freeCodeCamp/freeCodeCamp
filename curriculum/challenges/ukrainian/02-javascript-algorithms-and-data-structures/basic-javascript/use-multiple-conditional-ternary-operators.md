@@ -54,7 +54,7 @@ function findGreaterOrEqual(a, b) {
 `checkSign` має використовувати декілька умовних операторів
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(__helpers.removeJSComments(code)));
 ```
 
 `checkSign(10)` має повертати рядок `positive`. Зверніть увагу на те, що важливе написання з великої/малої літери

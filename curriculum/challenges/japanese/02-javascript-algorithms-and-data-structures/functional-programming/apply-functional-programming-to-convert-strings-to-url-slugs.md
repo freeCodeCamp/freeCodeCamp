@@ -31,7 +31,7 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 このチャレンジに `replace` メソッドを使用しないでください。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` は文字列 `winter-is-coming` を返す必要があります。

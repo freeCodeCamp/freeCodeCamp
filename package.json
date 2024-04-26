@@ -91,7 +91,9 @@
     "test-tools": "jest tools",
     "test-utils": "jest utils",
     "postinstall": "cypress cache prune",
-    "prepare": "husky"
+    "prepare": "husky",
+    "playwright:run": "playwright test",
+    "playwright:watch": "playwright test --ui"
   },
   "dependencies": {
     "dotenv": "16.4.5"

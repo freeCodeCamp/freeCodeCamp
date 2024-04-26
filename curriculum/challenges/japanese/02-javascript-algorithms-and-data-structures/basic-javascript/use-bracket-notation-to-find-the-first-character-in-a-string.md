@@ -41,7 +41,7 @@ assert(firstLetterOfLastName === 'L');
 ブラケット記法を使用してください。
 
 ```js
-assert(code.match(/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
+assert(__helpers.removeJSComments(code).match(/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

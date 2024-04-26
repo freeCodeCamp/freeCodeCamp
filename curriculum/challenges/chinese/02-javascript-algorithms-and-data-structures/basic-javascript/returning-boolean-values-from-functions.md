@@ -52,7 +52,7 @@ assert(isLess(15, 10) === false);
 不应该使用 `if` 或者 `else` 语句
 
 ```js
-assert(!/if|else/g.test(code));
+assert(!/if|else/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

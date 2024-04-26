@@ -83,14 +83,14 @@ assert(typeof phoneticLookup('') === 'undefined');
 `return` ステートメントを変更しないでください。
 
 ```js
-assert(code.match(/return\sresult;/));
+assert(__helpers.removeJSComments(code).match(/return\sresult;/));
 ```
 
 `case` ステートメント、`switch` ステートメント、`if` ステートメントを使用しないでください。
 
 ```js
 assert(
-  !/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
+  !/case|switch|if/g.test(__helpers.removeJSComments(code).replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
 );
 ```
 

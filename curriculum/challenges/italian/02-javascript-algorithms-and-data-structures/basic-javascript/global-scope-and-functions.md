@@ -36,7 +36,7 @@ assert(myGlobal === 10);
 `myGlobal` dovrebbe essere dichiarata usando la parola chiave `let` o `const`
 
 ```js
-assert(/(let|const)\s+myGlobal/.test(code));
+assert(/(let|const)\s+myGlobal/.test(__helpers.removeJSComments(code)));
 ```
 
 `oopsGlobal` dovrebbe essere una variabile globale e avere un valore di `5`

@@ -548,7 +548,7 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
-  const { required = [], template, removeComments } = challenge;
+  const { required = [], template } = challenge;
 
   const challengeFiles = replaceChallengeFilesContentsWithSolutions(
     challenge.challengeFiles,
@@ -575,13 +575,7 @@ async function createTestRunner(
 
   const evaluator = await (runsInBrowser
     ? getContextEvaluator(build, sources, code, loadEnzyme)
-    : getWorkerEvaluator(
-        build,
-        sources,
-        code,
-        removeComments,
-        runsInPythonWorker
-      ));
+    : getWorkerEvaluator(build, sources, code, runsInPythonWorker));
 
   return async ({ text, testString }) => {
     try {
@@ -643,13 +637,7 @@ async function getContextEvaluator(build, sources, code, loadEnzyme) {
   };
 }
 
-async function getWorkerEvaluator(
-  build,
-  sources,
-  code,
-  removeComments,
-  runsInPythonWorker
-) {
+async function getWorkerEvaluator(build, sources, code, runsInPythonWorker) {
   // The python worker clears the globals between tests, so it should be fine
   // to use the same evaluator for all tests. TODO: check if this is true for
   // sys, since sys.modules is not being reset.
@@ -658,10 +646,8 @@ async function getWorkerEvaluator(
     : new WorkerExecutor(javaScriptTestEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
-      await testWorker.execute(
-        { testString, build, code, sources, removeComments },
-        timeout
-      ).done
+      await testWorker.execute({ testString, build, code, sources }, timeout)
+        .done
   };
 }
 

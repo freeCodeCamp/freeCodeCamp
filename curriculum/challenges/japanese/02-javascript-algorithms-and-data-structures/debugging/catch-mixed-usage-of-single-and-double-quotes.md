@@ -37,13 +37,13 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 `href` の値 `#Home` を囲む引用符を変更するか、またはエスケープして、コードを修正します。
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 文字列全体をダブルクォートで囲みます。
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

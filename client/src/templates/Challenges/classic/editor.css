@@ -1,3 +1,8 @@
+/* Monaco editor has its own font-family rule, which overrides ours */
+.monaco-editor {
+  font-family: inherit;
+}
+
 .monaco-editor .margin-view-overlays .line-numbers,
 .monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
   color: var(--primary-color);
@@ -56,6 +61,7 @@ textarea.inputarea {
 .challenge-description-header {
   display: flex;
   gap: 7px;
+  margin: 0.1em 0 0.6rem;
 }
 
 .description-container h1 {
@@ -63,7 +69,7 @@ textarea.inputarea {
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
-  margin: 0.1em 0 0.6rem;
+  margin: 0;
 }
 
 .description-highlighter {

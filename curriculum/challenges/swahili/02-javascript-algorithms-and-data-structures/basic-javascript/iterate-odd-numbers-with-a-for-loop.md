@@ -32,7 +32,7 @@ Push the odd numbers from 1 through 9 to `myArray` using a `for` loop.
 You should be using a `for` loop for this.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` should equal `[1, 3, 5, 7, 9]`.

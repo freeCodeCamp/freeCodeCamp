@@ -52,7 +52,7 @@ assert(hound instanceof Dog);
 Tu código debe usar el operador `new` para crear una instancia de `Dog`.
 
 ```js
-assert(code.match(/new/g));
+assert(__helpers.removeJSComments(code).match(/new/g));
 ```
 
 # --seed--

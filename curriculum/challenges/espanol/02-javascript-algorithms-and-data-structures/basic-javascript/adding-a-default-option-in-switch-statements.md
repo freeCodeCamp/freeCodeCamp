@@ -71,7 +71,7 @@ assert(switchOfStuff(4) === 'stuff');
 No debes usar ninguna sentencia `if` o `else`
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Debes utilizar una declaración `default`
@@ -83,7 +83,7 @@ assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 Debes tener al menos 3 declaraciones de ruptura (`break`)
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

@@ -55,7 +55,7 @@ assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 `...` spread operator should be used to duplicate `arr1`.
 
 ```js
-assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
+assert(__helpers.removeJSComments(code).match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
 `arr2` should remain unchanged when `arr1` is changed.

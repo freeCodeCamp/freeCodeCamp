@@ -45,19 +45,19 @@ switch (val) {
 プログラムにはどんな `else` ステートメントも使用しないでください。
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 プログラムにはどんな `if` ステートメントも使用しないでください。
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 少なくとも 4 つの `break` ステートメントを含める要があります。
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` は文字列 `Marley` を返す必要があります。

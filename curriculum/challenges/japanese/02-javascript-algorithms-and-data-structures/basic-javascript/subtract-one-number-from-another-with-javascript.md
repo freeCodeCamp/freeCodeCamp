@@ -35,7 +35,7 @@ assert(difference === 12);
 `45` から 1 つの数値だけを引いてください。
 
 ```js
-assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
+assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

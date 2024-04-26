@@ -51,7 +51,7 @@ assert(b === 8);
 Dovresti usare la destrutturazione di array per scambiare `a` e `b`.
 
 ```js
-assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code));
+assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

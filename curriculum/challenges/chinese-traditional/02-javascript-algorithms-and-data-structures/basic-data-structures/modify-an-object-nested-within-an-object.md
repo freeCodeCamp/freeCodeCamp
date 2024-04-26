@@ -61,7 +61,7 @@ assert(userActivity.data.online === 45);
 應使用點號表示法或方括號表示法來修改 `online` 屬性值。
 
 ```js
-assert.strictEqual(code.search(/online: 45/), -1);
+assert.strictEqual(__helpers.removeJSComments(code).search(/online: 45/), -1);
 ```
 
 # --seed--

@@ -32,19 +32,19 @@ JavaScript розпізнає сім примітивних (незмінних)
 Ваш код повинен використати оператор `typeof` у двох інструкціях `console.log()`, щоб перевірити тип змінних.
 
 ```js
-assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 Ваш код повинен використати оператор `typeof`, щоб перевірити тип змінної `seven`.
 
 ```js
-assert(code.match(/typeof[\( ]seven\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]seven\)?/g));
 ```
 
 Ваш код повинен використати оператор `typeof`, щоб перевірити тип змінної `three`.
 
 ```js
-assert(code.match(/typeof[\( ]three\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]three\)?/g));
 ```
 
 # --seed--

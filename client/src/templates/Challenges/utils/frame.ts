@@ -28,7 +28,6 @@ export interface Context {
 
 export interface TestRunnerConfig {
   proxyLogger: ProxyLogger;
-  removeComments?: boolean;
 }
 
 export type ProxyLogger = (msg: string) => void;

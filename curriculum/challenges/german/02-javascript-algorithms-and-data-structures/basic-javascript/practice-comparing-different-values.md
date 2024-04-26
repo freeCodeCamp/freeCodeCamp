@@ -47,7 +47,7 @@ assert(compareEquality('20', 20) === 'Not Equal');
 Du solltest den Operator `===` verwenden
 
 ```js
-assert(code.match(/===/g));
+assert(__helpers.removeJSComments(code).match(/===/g));
 ```
 
 # --seed--
