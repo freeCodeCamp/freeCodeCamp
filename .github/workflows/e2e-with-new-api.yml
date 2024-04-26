@@ -78,9 +78,6 @@ jobs:
             -t fcc-api \
             -f docker/api/Dockerfile .
 
-      - name: Save Image
-        run: docker save fcc-api > api-artifact.tar
-
   build-new-api:
     name: Build New Api (Container)
     runs-on: ubuntu-22.04
@@ -97,6 +94,9 @@ jobs:
           docker build \
             -t fcc-new-api \
             -f docker/new-api/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-new-api > api-artifact.tar
 
       - name: Upload Api Artifact
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
