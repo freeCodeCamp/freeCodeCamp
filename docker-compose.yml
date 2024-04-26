@@ -13,7 +13,7 @@ services:
     depends_on:
       - mongo
       - mailhog
-    image: fcc-api
+    image: fcc-new-api
     env_file:
       - .env
     environment:
