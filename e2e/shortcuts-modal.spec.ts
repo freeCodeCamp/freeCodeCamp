@@ -1,4 +1,4 @@
-import { APIRequestContext, expect, test } from '@playwright/test';
+import { APIRequestContext, Page, expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
@@ -17,6 +17,13 @@ const enableKeyboardShortcuts = async (request: APIRequestContext) =>
     }
   );
 
+const openModal = async (page: Page) => {
+  // The editor pane is focused by default, so we need to escape or it will
+  // capture the keyboard shortcuts
+  await page.getByLabel(editorPaneLabel).press('Escape');
+  await page.keyboard.press('Shift+?');
+};
+
 test.beforeEach(async ({ page, isMobile, request }) => {
   test.skip(
     isMobile,
@@ -30,11 +37,7 @@ test.beforeEach(async ({ page, isMobile, request }) => {
 test('the modal can be opened with SHIFT + ? and closed with ESC', async ({
   page
 }) => {
-  // The editor pane is focused by default, so we need to escape or it will
-  // capture the keyboard shortcuts
-  await page.getByLabel(editorPaneLabel).press('Escape');
-  await page.keyboard.press('Shift+?');
-
+  await openModal(page);
   const dialog = page.getByRole('dialog', {
     name: translations.shortcuts.title
   });
@@ -67,6 +70,7 @@ test('the modal can be opened with SHIFT + ? and closed with ESC', async ({
 test('has a button to disable or enable keyboard shortcuts', async ({
   page
 }) => {
+  await openModal(page);
   const dialog = page.getByRole('dialog', {
     name: translations.shortcuts.title
   });
