@@ -182,6 +182,12 @@ describe('Donate', () => {
         const failResponse = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
+        expect(failResponse.body).toEqual({
+          error: {
+            type: 'MethodRestrictionError',
+            message: `Donate using another method`
+          }
+        });
         expect(failResponse.status).toBe(400);
       });
     });
