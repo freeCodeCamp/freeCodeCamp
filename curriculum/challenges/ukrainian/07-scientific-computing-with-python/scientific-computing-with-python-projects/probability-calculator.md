@@ -12,7 +12,7 @@ dashedName: probability-calculator
 
 У цьому проєкті напишіть програму, яка визначатиме вірогідність випадкового діставання певних кульок із капелюха.
 
-First, create a `Hat` class in `main.py`. Клас має прийняти змінну кількість аргументів, що вказують кількість кульок усіх кольорів із капелюха. Наприклад, об’єкт класу можна створити такими способами:
+Спочатку створіть клас `Hat` в `main.py`. Клас має приймати змінну кількість аргументів, які вказують кількість кульок всіх кольорів із капелюха. Наприклад, об’єкт класу можна створити такими способами:
 
 ```py
 hat1 = Hat(yellow=3, blue=2, green=6)
@@ -20,11 +20,11 @@ hat2 = Hat(red=5, orange=4)
 hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 ```
 
-Капелюх завжди створюється з принаймні однією кулькою. Аргументи, які передаються в об’єкт-капелюх, під час створення мають конвертуватися в поле класу `contents`. `contents` має бути списком рядків, де один елемент дорівнює кожній кульці у капелюсі. Кожний елемент списку має бути назвою кольору, яка позначає кульку певного кольору. Наприклад, якщо ваш капелюх `{"red": 2, "blue": 1}`, то `contents` має бути `["red", "red", "blue"]`.
+Капелюх завжди створюється з принаймні однією кулькою. Аргументи, які передаються в об’єкт-капелюх, під час створення мають конвертуватися в поле класу `contents`. `contents` має бути списком рядків, де один елемент дорівнює кожній кульці у капелюсі. Кожний елемент списку має бути назвою кольору, яка позначає кульку певного кольору. Наприклад, якщо капелюх `{"red": 2, "blue": 1}`, то `contents` має бути `["red", "red", "blue"]`.
 
-Клас `Hat` повинен мати метод `draw`, який приймає аргумент з позначенням кількості кульок, які можна витягти з капелюха. Цей метод має випадково витягати кульки з `contents` та повертати ці кульки списком рядків. Кульки не повинні повертатися до капелюха після того, як їх витягли (як в експерименті з урною без заміни). Якщо кількість кульок, які треба витягти, перевищує доступну кількість, поверніть усі кульки.
+Клас `Hat` повинен мати метод `draw`, який приймає аргумент з позначенням кількості кульок, які можна витягти з капелюха. Цей метод має випадково витягати кульки з `contents` та повертати ці кульки у вигляді списку рядків. Кульки не повинні повертатися до капелюха після того, як їх витягли (як в експерименті з урною без заміни). Якщо кількість кульок, які треба витягти, перевищує доступну кількість, поверніть усі кульки.
 
-Next, create an `experiment` function in `main.py` (not inside the `Hat` class). Ця функція повинна приймати наступні аргументи:
+Потім створіть функцію `experiment` в `main.py` (не в класі `Hat`). Ця функція повинна приймати наступні аргументи:
 
 - `hat`: об’єкт-капелюх з кульками, що потрібно скопіювати у функцію.
 - `expected_balls`: об’єкт, який вказує на точну кількість кульок, які треба вийняти з капелюха для експерименту. Наприклад, щоб визначити вірогідність того, що ви витягнете 2 сині та 1 червону кульки з капелюха, встановіть `expected_balls` на `{"blue":2, "red":1}`.
@@ -33,7 +33,7 @@ Next, create an `experiment` function in `main.py` (not inside the `Hat` class).
 
 Функція `experiment` повинна повертати вірогідність.
 
-Допустимо, якщо ви хочете визначити вірогідність витягти щонайменше 2 червоні кульки та одну зелену, коли витягаєте п’ять кульок з капелюха, де лежить шість чорних, чотири червоні та три зелені кульки. Для цього вам треба виконати `N` експериментів, порахувати скільки `M` разів ви можете витягти принаймні дві червоні кульки та одну зелену кульку та вирахувати вірогідність як `M/N`. Кожен експеримент складається з капелюха (з певними кульками), витягування декількох кульок та перевірки, чи ви витягли необхідні кульки.
+Допустимо, ви хочете визначити вірогідність витягти щонайменше дві червоні кульки та одну зелену, коли витягаєте п’ять кульок з капелюха, який містить шість чорних, чотири червоні та три зелені кульки. Для цього вам треба виконати `N` експериментів, порахувати скільки `M` разів ви можете витягти принаймні дві червоні кульки і одну зелену кульку та вирахувати вірогідність як `M/N`. Кожен експеримент складається з капелюха (з певними кульками), витягування декількох кульок та перевірки, чи ви витягли необхідні кульки.
 
 Ось так ви можете викликати функцію `experiment`, базуючись на прикладі зверху з 2000 експериментами:
 
@@ -45,7 +45,7 @@ probability = experiment(hat=hat,
                   num_experiments=2000)
 ```
 
-The output would be something like this:
+Результат буде приблизно таким:
 
 ```bash
 >>> 0.356
@@ -53,12 +53,12 @@ The output would be something like this:
 
 Оскільки все базується на випадкових витяганнях, то вірогідність буде злегка відрізнятися з кожним новим запуском коду.
 
-_Hint: Consider using the modules that are already imported at the top. Do not initialize random seed within the file._
+_Підказка: спробуйте використати вже імпортовані модулі зверху. Не ініціалізуйте випадкове початкове значення у файлі._
 
 
 # --hints--
 
-Creation of `hat` object should add correct contents.
+Створення об’єкта `hat` має додати правильний вміст.
 
 ```js
 ({
@@ -98,7 +98,7 @@ t.result.wasSuccessful()
 });
 ```
 
-The `draw` method in `hat` class should reduce number of items in contents.
+Метод `draw` у класі `hat` має зменшити кількість елементів у вмісті.
 
 
 ```js
@@ -115,7 +115,10 @@ from importlib import reload
 reload(probability_calculator)
 
 probability_calculator.random.seed(95)
-def test_hat_draw(self):
+
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_hat_draw(self):
         hat = probability_calculator.Hat(red=5,blue=2)
         actual = hat.draw(2)
         expected = ['blue', 'red']
@@ -140,7 +143,50 @@ t.result.wasSuccessful()
 });
 ```
 
-The `experiment` method should return a different probability.
+The `draw` method should behave correctly when the number of balls to extract is bigger than the number of balls in the hat.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+    pyodide.FS.writeFile(
+      "/home/pyodide/test_module.py",
+      `
+import unittest
+import probability_calculator
+from importlib import reload
+
+reload(probability_calculator)
+
+probability_calculator.random.seed(95)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def test_hat_draw_2(self):
+        hat = probability_calculator.Hat(yellow=5,red=1,green=3,blue=9,test=1)
+        actual = hat.draw(20)
+        expected = ['yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'red', 'green', 'green', 'green', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'test']
+        self.assertEqual(actual, expected, 'Expected hat draw to return all items from hat contents.')
+        actual = len(hat.contents)
+        expected = 0
+        self.assertEqual(actual, expected, 'Expected hat draw to leave no items in contents.')
+        `
+    );
+    const testCode = `
+from unittest import main
+import test_module
+from importlib import reload
+
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = __pyodide.runPython(testCode);
+    assert(out);
+  },
+});
+```
+
+Метод `experiment` має повернути іншу вірогідність.
 
 
 ```js
@@ -221,7 +267,8 @@ class Hat:
     def draw(self, number): 
         drawn = []
         if number >= len(self.contents):
-            return self.contents
+            drawn.extend(self.contents)
+            self.contents = []
         else:
             for i in range(number):
                 drawn.append(
@@ -229,8 +276,7 @@ class Hat:
                 )                
         return drawn
 
-def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
-
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):    
     expected_balls_list = []
     drawn_list = []
     success = 0
@@ -248,12 +294,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
             except:
                 continue
         if len(exp_ball_list_copy) == 0:
-            success += 1
-
-
-
-
-    probability = success/num_experiments
-
+            success += 1        
+    probability = success/num_experiments    
     return probability
 ```

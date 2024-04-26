@@ -66,7 +66,7 @@ assert(
 Використайте ключове слово `class`.
 
 ```js
-assert(code.match(/class/g));
+assert(__helpers.removeJSComments(code).match(/class/g));
 ```
 
 `Vegetable` повинен бути реалізованим.

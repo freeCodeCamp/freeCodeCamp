@@ -6,7 +6,7 @@ import {
 } from '../../jest.utils';
 import { createUserInput } from '../utils/create-user';
 
-import { isPictureWithProtocol } from './settings';
+import { isPictureWithProtocol, getWaitMessage } from './settings';
 
 const baseProfileUI = {
   isLocked: false,
@@ -689,51 +689,126 @@ Please wait 5 minutes to resend an authentication link.`
         expect(response.statusCode).toEqual(400);
       });
     });
-  });
 
-  describe('Unauthenticated User', () => {
-    let setCookies: string[];
+    describe('/update-my-classroom-mode', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const response = await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: true
+        });
 
-    // Get the CSRF cookies from an unprotected route
-    beforeAll(async () => {
-      const res = await superRequest('/status/ping', { method: 'GET' });
-      setCookies = res.get('Set-Cookie');
+        expect(response.body).toEqual({
+          message: 'flash.classroom-mode-updated',
+          type: 'success'
+        });
+
+        expect(response.statusCode).toEqual(200);
+      });
+
+      test('After updating the classroom mode, the user should have this property set', async () => {
+        await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: false
+        });
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: {
+            email: developerUserEmail
+          }
+        });
+
+        expect(user?.isClassroomAccount).toEqual(false);
+      });
     });
 
-    const endpoints: { path: string; method: 'PUT' }[] = [
-      { path: '/update-my-profileui', method: 'PUT' },
-      { path: '/update-my-theme', method: 'PUT' },
-      { path: '/update-my-username', method: 'PUT' },
-      { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
-      { path: '/update-my-socials', method: 'PUT' },
-      { path: '/update-my-quincy-email', method: 'PUT' },
-      { path: '/update-my-about', method: 'PUT' },
-      { path: '/update-my-honesty', method: 'PUT' },
-      { path: '/update-privacy-terms', method: 'PUT' },
-      { path: '/update-my-portfolio', method: 'PUT' }
-    ];
+    describe('Unauthenticated User', () => {
+      let setCookies: string[];
 
-    endpoints.forEach(({ path, method }) => {
-      test(`${method} ${path} returns 401 status code with error message`, async () => {
-        const response = await superRequest(path, {
-          method,
-          setCookies
-        });
-        expect(response.statusCode).toBe(401);
+      // Get the CSRF cookies from an unprotected route
+      beforeAll(async () => {
+        const res = await superRequest('/status/ping', { method: 'GET' });
+        setCookies = res.get('Set-Cookie');
       });
+
+      const endpoints: { path: string; method: 'PUT' }[] = [
+        { path: '/update-my-profileui', method: 'PUT' },
+        { path: '/update-my-theme', method: 'PUT' },
+        { path: '/update-my-username', method: 'PUT' },
+        { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
+        { path: '/update-my-socials', method: 'PUT' },
+        { path: '/update-my-quincy-email', method: 'PUT' },
+        { path: '/update-my-about', method: 'PUT' },
+        { path: '/update-my-honesty', method: 'PUT' },
+        { path: '/update-privacy-terms', method: 'PUT' },
+        { path: '/update-my-portfolio', method: 'PUT' }
+      ];
+
+      endpoints.forEach(({ path, method }) => {
+        test(`${method} ${path} returns 401 status code with error message`, async () => {
+          const response = await superRequest(path, {
+            method,
+            setCookies
+          });
+          expect(response.statusCode).toBe(401);
+        });
+      });
+    });
+  });
+
+  describe('isPictureWithProtocol', () => {
+    test('Valid protocol', () => {
+      expect(isPictureWithProtocol('https://www.example.com/')).toEqual(true);
+      expect(isPictureWithProtocol('http://www.example.com/')).toEqual(true);
+    });
+
+    test('Invalid protocol', () => {
+      expect(isPictureWithProtocol('htps://www.example.com/')).toEqual(false);
+      expect(isPictureWithProtocol('tp://www.example.com/')).toEqual(false);
+      expect(isPictureWithProtocol('www.example.com/')).toEqual(false);
     });
   });
 });
 
-describe('isPictureWithProtocol', () => {
-  test('Valid protocol', () => {
-    expect(isPictureWithProtocol('https://www.example.com/')).toEqual(true);
-    expect(isPictureWithProtocol('http://www.example.com/')).toEqual(true);
-  });
+describe('getWaitMessage', () => {
+  const sec = 1000;
+  const min = 60 * 1000;
+  it.each([
+    {
+      sentAt: new Date(0),
+      now: new Date(0),
+      expected: 'Please wait 5 minutes to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(59 * sec),
+      expected: 'Please wait 5 minutes to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(4 * min),
+      expected: 'Please wait 1 minute to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(4 * min + 59 * sec),
+      expected: 'Please wait 1 minute to resend an authentication link.'
+    },
+    {
+      sentAt: new Date(0),
+      now: new Date(5 * min),
+      expected: null
+    }
+  ])(
+    `returns "$expected" when sentAt is $sentAt and now is $now`,
+    ({ sentAt, now, expected }) => {
+      expect(getWaitMessage({ sentAt, now })).toEqual(expected);
+    }
+  );
 
-  test('Invalid protocol', () => {
-    expect(isPictureWithProtocol('htps://www.example.com/')).toEqual(false);
-    expect(isPictureWithProtocol('tp://www.example.com/')).toEqual(false);
-    expect(isPictureWithProtocol('www.example.com/')).toEqual(false);
+  it('returns null when sentAt is null', () => {
+    expect(getWaitMessage({ sentAt: null, now: new Date(0) })).toBeNull();
+  });
+  it('uses the current time when now is not provided', () => {
+    expect(getWaitMessage({ sentAt: new Date() })).toEqual(
+      'Please wait 5 minutes to resend an authentication link.'
+    );
   });
 });

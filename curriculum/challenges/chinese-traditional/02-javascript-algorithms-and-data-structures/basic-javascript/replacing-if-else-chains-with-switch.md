@@ -45,19 +45,19 @@ switch (val) {
 不要使用 `else` 表達式
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 不要使用 `if` 表達式
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 你應該有至少 4 個 `break` 表達式
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` 應該返回字符串 `Marley`

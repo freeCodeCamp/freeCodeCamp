@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 لا ينبغي أن تكون هناك استخدامات للمتغيرات تملى بشكل خاطئ في الكود.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 يجب إعلان متغير باسم `receivables` واستخدامه بشكل صحيح في الكود.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 لا ينبغي أن تكون هناك استخدامات للمتغيرات تملى بشكل خاطئ في الكود.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 يجب إعلان متغير باسم `payables` واستخدامه بشكل صحيح في الكود.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

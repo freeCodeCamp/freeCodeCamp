@@ -36,7 +36,7 @@ I am a "double quoted" string inside "double quotes".
 2 つのダブルクォート (`"`) と 4 つのエスケープされたダブルクォート (`\"`) を使用する必要があります。
 
 ```js
-assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/\\"/g).length === 4 && __helpers.removeJSComments(code).match(/[^\\]"/g).length === 2);
 ```
 
 変数 `myStr` は文字列 `I am a "double quoted" string inside "double quotes".` になる必要があります。

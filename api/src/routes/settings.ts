@@ -13,37 +13,38 @@ import type {
   RouteGenericInterface
 } from 'fastify';
 import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
-import { getMinutes, isBefore, sub } from 'date-fns';
+import { differenceInMinutes } from 'date-fns';
 import { isProfane } from 'no-profanity';
 
 import { blocklistedUsernames } from '../../../shared/config/constants';
 import { isValidUsername } from '../../../shared/utils/validate';
 import { schemas } from '../schemas';
 
-// TODO: move getWaitMessage and getWaitPeriod to own module and add tests
-function getWaitMessage(lastEmailSentAt: Date | null) {
-  const minutesLeft = getWaitPeriod(lastEmailSentAt);
-  if (minutesLeft <= 0) {
-    return null;
-  }
+type WaitMesssageArgs = {
+  sentAt: Date | null;
+  now?: Date;
+};
 
-  const timeToWait = minutesLeft
-    ? `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}`
-    : 'a few seconds';
+/**
+ * Get a message to display to the user about how long they need to wait before
+ * they can request an authentication link.
+ *
+ * @param param The parameters.
+ * @param param.sentAt The date the last email was sent at.
+ * @param param.now The current date.
+ * @returns The message to display to the user.
+ */
+export function getWaitMessage({ sentAt, now = new Date() }: WaitMesssageArgs) {
+  const minutesLeft = getWaitPeriod({ sentAt, now });
+  if (minutesLeft <= 0) return null;
 
+  const timeToWait = `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}`;
   return `Please wait ${timeToWait} to resend an authentication link.`;
 }
 
-function getWaitPeriod(lastEmailSentAt: Date | null) {
-  if (!lastEmailSentAt) return 0;
-
-  const now = new Date();
-  const fiveMinutesAgo = sub(now, { minutes: 5 });
-  const isWaitPeriodOver = isBefore(lastEmailSentAt, fiveMinutesAgo);
-
-  return isWaitPeriodOver
-    ? 0
-    : 5 - (getMinutes(now) - getMinutes(lastEmailSentAt));
+function getWaitPeriod({ sentAt, now }: Required<WaitMesssageArgs>) {
+  if (sentAt == null) return 0;
+  return 5 - differenceInMinutes(now, sentAt);
 }
 
 /**
@@ -79,7 +80,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
 
   type CommonResponseSchema = {
     response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
@@ -123,7 +124,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             profileUI: {
               isLocked: req.body.profileUI.isLocked,
@@ -167,7 +168,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.session.user.id },
+        where: { id: req.user?.id },
         select: {
           email: true,
           emailVerifyTTL: true,
@@ -191,7 +192,9 @@ You can update a new email address instead.`
 
       const isResendUpdateToSameEmail =
         newEmail === user.newEmail?.toLowerCase();
-      const isLinkSentWithinLimitTTL = getWaitMessage(user.emailVerifyTTL);
+      const isLinkSentWithinLimitTTL = getWaitMessage({
+        sentAt: user.emailVerifyTTL
+      });
 
       if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
         void reply.code(429);
@@ -216,7 +219,7 @@ ${isLinkSentWithinLimitTTL}`
       // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             newEmail,
             emailVerified: false,
@@ -228,7 +231,9 @@ ${isLinkSentWithinLimitTTL}`
         // we need emailVeriftyTTL given that the main thing we want is to
         // restrict the rate of attempts and the emailAuthLinkTTL already does
         // that.
-        const tooManyRequestsMessage = getWaitMessage(user.emailAuthLinkTTL);
+        const tooManyRequestsMessage = getWaitMessage({
+          sentAt: user.emailAuthLinkTTL
+        });
 
         if (tooManyRequestsMessage) {
           void reply.code(429);
@@ -239,7 +244,7 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             emailAuthLinkTTL: new Date()
           }
@@ -263,7 +268,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             theme: req.body.theme
           }
@@ -290,7 +295,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             website: req.body.website,
             twitter: req.body.twitter,
@@ -320,7 +325,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findFirstOrThrow({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
 
         const newUsernameDisplay = req.body.username.trim();
@@ -379,7 +384,7 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             username: newUsername,
             usernameDisplay: newUsernameDisplay
@@ -408,7 +413,7 @@ ${isLinkSentWithinLimitTTL}`
 
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             about: req.body.about,
             name: req.body.name,
@@ -438,7 +443,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             keyboardShortcuts: req.body.keyboardShortcuts
           }
@@ -465,7 +470,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             sendQuincyEmail: req.body.sendQuincyEmail
           }
@@ -492,7 +497,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             isHonest: req.body.isHonest
           }
@@ -519,7 +524,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       try {
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             acceptedPrivacyTerms: true,
             sendQuincyEmail: req.body.quincyEmails
@@ -558,7 +563,7 @@ ${isLinkSentWithinLimitTTL}`
           })
         );
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             portfolio
           }
@@ -571,6 +576,42 @@ ${isLinkSentWithinLimitTTL}`
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-classroom-mode',
+    {
+      schema: schemas.updateMyClassroomMode,
+      errorHandler: (error, request, reply) => {
+        if (error.validation) {
+          void reply.code(403);
+          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      try {
+        const classroomMode = req.body.isClassroomAccount;
+
+        await fastify.prisma.user.update({
+          where: { id: req.user!.id },
+          data: {
+            isClassroomAccount: classroomMode
+          }
+        });
+
+        return {
+          message: 'flash.classroom-mode-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(403);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }

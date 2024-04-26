@@ -1,17 +1,17 @@
 ---
 id: 65e1aaf8500d930ce8ed90aa
-title: Learn Variables and Operators Question G
+title: Вивчіть змінні та оператори. Запитання G
 challengeType: 15
 dashedName: learn-variables-and-operators-question-g
 ---
 
 # --description--
 
-The plus `+` exists in two forms: the binary form that you used in the last challenge and the unary form.
+`+` існує в двох формах: бінарна (як в попередньому завданні) та унарна.
 
-The unary plus or, in other words, the plus operator `+` applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
+Унарний плюс (або іншими словами — оператор `+`, застосований до одного значення) нічого не робить з числами. Але, якщо операнд не є числом, то унарний плюс перетворить його на число.
 
-For example:
+Наприклад:
 
 ```js
 // No effect on numbers
@@ -26,9 +26,9 @@ console.log( +true ); // 1
 console.log( +"" );   //
 ```
 
-The need to convert strings to numbers arises very often. For example, if you are getting values from HTML form fields, they are usually strings. What if you want to sum them?
+Часто виникає потреба перетворити рядки на числа. Наприклад, ви отримуєте значення з полів форми HTML, але вони є рядками. Що робити, якщо їх потрібно додати?
 
-The binary plus would add them as strings:
+Бінарний плюс додасть їх як рядки:
 
 ```js
 let apples = "2";
@@ -37,7 +37,7 @@ let oranges = "3";
 alert( apples + oranges ); // "23", the binary plus concatenates strings
 ```
 
-If you want to treat them as numbers, you need to convert and then sum them:
+Якщо ви хочете поводитись з ними як з числами, їх потрібно перетворити та додати:
 
 ```js
 let apples = "2";
@@ -50,14 +50,14 @@ alert( +apples + +oranges ); // 5
 // alert( Number(apples) + Number(oranges) ); // 5
 ```
 
-From a mathematician’s standpoint, the abundance of pluses may seem strange. But from a programmer’s standpoint, there’s nothing special: unary pluses are applied first, they convert strings to numbers, and then the binary plus sums them up.
+З точки зору математика, велика кількість плюсів може здатися дивною. Але з точки зору програміста нічого особливого: спочатку застосовуються унарні плюси, які перетворюють рядки на числа, а потім бінарний плюс додає їх.
 
-Why are unary pluses applied to values before the binary ones? As you’re going to see, that’s because of their _higher_ precedence.
+Чому унарні плюси застосовуються до значень перед бінарними? Як побачите пізніше, причина в їхньому _пріоритеті_.
 
 # --question--
 
 ## --text--
-Given the explanation of unary and binary `+` operators in JavaScript, how can you correctly sum the string values `'2'` and `'3'` as numbers using unary `+`?
+Ви дізнались про різницю між унарним та бінарним операторами `+` в JavaScript. Як правильно додати значення рядків `'2'` та `'3'` як чисел, використовуючи унарний `+`?
 
 ## --answers--
 

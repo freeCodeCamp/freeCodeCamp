@@ -22,7 +22,6 @@ export type MarkdownRemark = {
   fileAbsolutePath: string;
   frontmatter: {
     block: string;
-    isBeta: boolean;
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
@@ -207,7 +206,6 @@ export type ChallengeNode = {
     msTrophyId: string;
     notes: string;
     prerequisites: PrerequisiteChallenge[];
-    removeComments: boolean;
     isLocked: boolean;
     isPrivate: boolean;
     order: number;
@@ -391,7 +389,6 @@ export type ChallengeMeta = {
   isFirstStep: boolean;
   nextChallengePath: string | null;
   prevChallengePath: string | null;
-  removeComments: boolean;
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;

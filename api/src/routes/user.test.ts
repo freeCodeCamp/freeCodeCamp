@@ -499,7 +499,7 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('user/get-user-session', () => {
+    describe('/user/get-user-session', () => {
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
@@ -523,6 +523,14 @@ describe('userRoutes', () => {
 
         expect(response.body).toStrictEqual({ user: {}, result: '' });
         expect(response.statusCode).toBe(500);
+      });
+
+      // This should help debugging, since this the route returns this if
+      // anything throws in the handler.
+      test('GET does not return the error response if the request is valid', async () => {
+        const response = await superGet('/user/get-session-user');
+
+        expect(response.body).not.toEqual({ user: {}, result: '' });
       });
 
       test('GET returns username as the result property', async () => {
@@ -582,6 +590,21 @@ describe('userRoutes', () => {
         expect(tokenData.id).toBe(userToken);
       });
 
+      test('GET returns the msUsername if it exists', async () => {
+        await fastifyTestInstance.prisma.msUsername.create({
+          data: msUsernameData[0] as (typeof msUsernameData)[0]
+        });
+
+        const msUsernames = await fastifyTestInstance.prisma.msUsername.count();
+        expect(msUsernames).toBe(1);
+
+        const response = await superGet('/user/get-session-user');
+
+        const { msUsername } = response.body.user.foobar;
+
+        expect(msUsername).toBe(msUsernameData[0]?.msUsername);
+      });
+
       test('GET returns a minimal user when all optional properties are missing', async () => {
         // To get a minimal test user we first delete the existing one...
         await fastifyTestInstance.prisma.user.deleteMany({
@@ -597,7 +620,7 @@ describe('userRoutes', () => {
         });
 
         // devLogin must not be used here since it overrides the user
-        const res = await superRequest('/auth/dev-callback', { method: 'GET' });
+        const res = await superRequest('/signin', { method: 'GET' });
         const setCookies = res.get('Set-Cookie');
 
         const publicUser = {

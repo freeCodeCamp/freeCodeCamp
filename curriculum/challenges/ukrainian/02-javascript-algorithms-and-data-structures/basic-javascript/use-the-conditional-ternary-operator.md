@@ -42,7 +42,7 @@ function findGreater(a, b) {
 `checkEqual` має використовувати умовний оператор
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(__helpers.removeJSComments(code)));
 ```
 
 `checkEqual(1, 2)` має повертати рядок `Not Equal`

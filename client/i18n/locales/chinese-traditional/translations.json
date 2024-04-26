@@ -55,8 +55,9 @@
     "reset-lesson": "重置課程",
     "run": "運行",
     "run-test": "運行測試（Ctrl + Enter）",
-    "check-code": "檢查您的代碼 (Ctrl + Enter)",
+    "check-code": "檢查你的代碼（Ctrl + Enter）",
     "check-code-2": "檢查你的代碼",
+    "check-code-3": "檢查你的代碼（Command + Enter）",
     "reset": "重置",
     "reset-step": "重置此步驟",
     "help": "幫助",
@@ -95,7 +96,8 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "確認金額",
-    "skip-advertisement": "跳過廣告"
+    "skip-advertisement": "跳過廣告",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -383,8 +385,14 @@
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成 {{totalChallengesInBlock}} 認證項目中的 {{completedChallengesInBlock}}",
     "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
+    "read-search-ask-checkbox": "我已經嘗試了 <0>Read-Search-Ask</0> 方法",
+    "similar-questions-checkbox": "我已經<0>在論壇上搜索了類似的問題和相應的答案</0>",
+    "minimum-characters": "請至少再用 {{characters}} 個字符進行描述",
+    "characters-left": "你可以在查詢中再添加 {{characters}} 個字符",
+    "must-confirm-statements": "在向論壇提交帖子之前，你必須確認以下事項。",
+    "min-50-max-500": "最少 50 個字符，最多 500 個字符",
     "rsa": "閱讀，搜索，提問",
-    "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請確認你的問題是否<0>已經在論壇上被回答過</0>。",
+    "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請<0>查看你的問題是否已經在論壇上被回答過</0>。",
     "reset": "重置這一節課程？",
     "reset-warn": "你確定要重置這一節課程嗎？編輯器和測試將被重置。",
     "reset-warn-2": "這個操作不可撤銷",
@@ -721,7 +729,9 @@
     "task": "任務",
     "dialogues-and-tasks-for": "{{blockTitle}} 的對話和任務",
     "code-example": "{{codeName}} 代碼示例",
-    "opens-new-window": "在新窗口打開"
+    "opens-new-window": "在新窗口打開",
+    "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
+    "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案"
   },
   "flash": {
     "honest-first": "在申請認證前，你必須先同意我們的《學術誠信條例》",
@@ -795,6 +805,7 @@
     "challenge-submit-too-big": "抱歉，你無法提交代碼。你的代碼是 {{user-size}} 字節。我們最多允許 {{max-size}} 個字節。請減少你的代碼並重試，或在 https://forum.freecodecamp.org 上請求幫助。",
     "invalid-update-flag": "你正在嘗試訪問禁止的資源。如果這是一個有效的請求，請在 https://forum.freecodecamp.org 上請求幫助。",
     "generate-exam-error": "生成考試時發生錯誤。",
+    "cert-not-found": "認證 {{certSlug}} 不存在。",
     "ms": {
       "transcript": {
         "link-err-1": "請在請求中包含一個 Microsoft 成績單的 URL。",
@@ -969,16 +980,16 @@
       "A2 English for Developers": "面向開發者的 A2 英語",
       "a2-english-for-developers": "面向開發者的 A2 英語認證",
       "Legacy Front End": "舊版前端",
-      "legacy-front-end": "前端認證",
+      "legacy-front-end": "舊版前端認證",
       "Legacy Back End": "舊版後端",
-      "legacy-back-end": "後端認證",
+      "legacy-back-end": "舊版後端認證",
       "Legacy Data Visualization": "舊版數據可視化",
-      "legacy-data-visualization": "數據可視化認證",
+      "legacy-data-visualization": "舊版數據可視化認證",
       "Legacy Information Security and Quality Assurance": "舊版信息安全和質量保證",
-      "information-security-and-quality-assurance": "信息安全和質量保證認證",
+      "information-security-and-quality-assurance": "舊版信息安全和質量保證認證",
       "Legacy Full Stack Certification": "舊版全棧認證",
       "Legacy Full Stack": "舊版的全棧",
-      "full-stack": "全棧認證"
+      "full-stack": "舊版全棧認證"
     }
   },
   "certification-card": {
@@ -996,7 +1007,7 @@
     "user-agent": "用戶代理是： <code>{{userAgent}}</code>",
     "challenge": "挑戰信息：",
     "whats-happening": "告訴我們發生了什麼：",
-    "describe": "在此詳細描述你的問題。",
+    "describe": "在此詳細描述你的問題。例如：\n我的 h1 元素缺少一個開始標籤。需要幫助檢查我的代碼。\n或者\n我的 for 循環無限運行。如何避免？",
     "camper-project": "你的項目鏈接",
     "camper-code": "到目前爲止你的代碼",
     "warning": "警告",
@@ -1029,7 +1040,8 @@
     "focus-editor": "聚焦編輯器",
     "focus-instructions-panel": "聚焦指示面板",
     "navigate-previous": "跳轉至上一個練習",
-    "navigate-next": "跳轉至下一個練習"
+    "navigate-next": "跳轉至下一個練習",
+    "play-scene": "播放場景"
   },
   "signout": {
     "heading": "註銷你的賬戶",

@@ -1,3 +1,12 @@
+*,
+::before,
+::after {
+  /* Override the browser default border width in order to style individual border sides
+   * Ref: https://stackoverflow.com/a/76961084
+   */
+  border-width: 0;
+}
+
 html {
   height: 100%;
   font-size: 18px;
@@ -66,28 +75,19 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: var(--font-family-monospace);
   margin: 0 0 0.6rem;
-}
-
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-monospace);
 }
 
 h4,
@@ -566,4 +566,15 @@ blockquote .small {
 .sr-only {
   color: white;
   background-color: black;
+}
+
+/* 
+ * /learn sets some default styles to all `h2`s.
+ * These rules are to override the defaults and apply danger styles to `danger` modal.
+ */
+#headlessui-portal-root h2 {
+  font-weight: normal;
+}
+#headlessui-portal-root .text-background-danger h2 {
+  color: var(--background-danger);
 }

@@ -53,7 +53,7 @@ assert(typeof myHouse.numBedrooms === 'number');
 Ви повинні перевірити, що `myHouse` є екземпляром `House`, використавши оператор `instanceof`.
 
 ```js
-assert(/myHouse\s*instanceof\s*House/.test(code));
+assert(/myHouse\s*instanceof\s*House/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -25,7 +25,7 @@ dashedName: combine-two-arrays-using-the-concat-method
 应该使用 `concat` 方法。
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 不应该改变 `first` 数组。

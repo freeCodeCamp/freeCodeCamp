@@ -29,13 +29,13 @@ console.log(duck.name);
 Код має використати `console.log`, щоб вивести значення властивості `name` об’єкта `dog`.
 
 ```js
-assert(/console.log\(.*dog\.name.*\)/g.test(code));
+assert(/console.log\(.*dog\.name.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 Код має використати `console.log`, щоб вивести значення властивості `numLegs` об’єкта `dog`.
 
 ```js
-assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
+assert(/console.log\(.*dog\.numLegs.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

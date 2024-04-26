@@ -38,25 +38,25 @@ assert(myVar === 10);
 應該修改 `myVar = myVar - 1;`。
 
 ```js
-assert(!code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
 ```
 
 你不應將 `10` 分配給 `myVar`。
 
 ```js
-assert(!code.match(/myVar\s*=\s*10.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*10.*?;?/));
 ```
 
 應該對 `myVar` 使用 `--` 運算符。
 
 ```js
-assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
+assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 你不應該修改註釋上面的代碼。
 
 ```js
-assert(/let myVar = 11;/.test(code));
+assert(/let myVar = 11;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -39,7 +39,7 @@ assert(/happy coder/gi.test(myDog.name));
 `myDog` の定義を編集しないでください。
 
 ```js
-assert(/"name": "Coder"/.test(code));
+assert(/"name": "Coder"/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

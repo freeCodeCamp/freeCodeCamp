@@ -57,6 +57,7 @@
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
     "check-code-2": "Verifique seu código",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Redefinir",
     "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
@@ -95,7 +96,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement"
+    "skip-advertisement": "Skip Advertisement",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -383,8 +385,14 @@
     "percent-complete": "{{percent}}% completo",
     "project-complete": "Concluídos {{completedChallengesInBlock}} de {{totalChallengesInBlock}} projetos de certificação",
     "tried-rsa": "Se você já tentou usar o método de <0>ler, pesquisar e perguntar</0>, então pode pedir ajuda no fórum freeCodeCamp.",
+    "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
+    "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
+    "must-confirm-statements": "You must confirm the following statements before you can submit your post to the forum.",
+    "min-50-max-500": "50 character minimum, 500 character maximum",
     "rsa": "Leia, pesquise, pergunte",
-    "rsa-forum": "<strong>Antes de fazer uma nova publicação</strong>, certifique-se de que sua pergunta <0>ainda não foi respondida no fórum</0>.",
+    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito",
@@ -721,7 +729,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "Exemplo de código de {{codeName}}",
-    "opens-new-window": "Abre em uma nova janela"
+    "opens-new-window": "Abre em uma nova janela",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
@@ -795,6 +805,7 @@
     "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
     "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "Inclua um URL de transcrição da Microsoft na solicitação.",
@@ -969,16 +980,16 @@
       "A2 English for Developers": "A2 Inglês para Desenvolvedores",
       "a2-english-for-developers": "Certificação A2 Inglês para Desenvolvedores",
       "Legacy Front End": "Front-end legado",
-      "legacy-front-end": "Certificação de front-end",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Back-end legado",
-      "legacy-back-end": "Certificação de back-end",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "Visualização de dados legada",
-      "legacy-data-visualization": "Certificação de visualização de dados",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "Segurança da informação e garantia da qualidade legado",
-      "information-security-and-quality-assurance": "Certificação de segurança da informação e garantia da qualidade",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "Certificação de full-stack legada",
       "Legacy Full Stack": "Full-stack legado",
-      "full-stack": "Certificação de full-stack"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {
@@ -996,7 +1007,7 @@
     "user-agent": "Agente de usuário: <code>{{userAgent}}</code>",
     "challenge": "Informações do desafio:",
     "whats-happening": "Conte-nos o que está acontecendo:",
-    "describe": "Descreva detalhadamente o problema aqui.",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "Os links para seu projeto",
     "camper-code": "Seu código até o momento",
     "warning": "AVISO",
@@ -1028,8 +1039,9 @@
     "execute-challenge": "Executar desafio",
     "focus-editor": "Foco no editor",
     "focus-instructions-panel": "Foco no painel de instruções",
-    "navigate-previous": "Navegar para o exercício anterior",
-    "navigate-next": "Navegar para o próximo exercício"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Sair da sua conta",

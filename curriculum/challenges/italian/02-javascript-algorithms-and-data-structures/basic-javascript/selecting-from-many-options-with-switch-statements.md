@@ -63,13 +63,13 @@ assert(caseInSwitch(4) === 'delta');
 Non dovresti usare alcuna dichiarazione `if` o `else`
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Dovresti avere almeno 3 istruzioni `break`
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

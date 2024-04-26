@@ -59,7 +59,7 @@ assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
 
 ```js
 assert(
-  !code.match(/for|while|forEach|map|filter|reduce/g)
+  !__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 

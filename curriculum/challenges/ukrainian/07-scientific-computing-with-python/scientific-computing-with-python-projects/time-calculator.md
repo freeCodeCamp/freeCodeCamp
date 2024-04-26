@@ -16,7 +16,7 @@ dashedName: time-calculator
 
 Функція повинна додати проміжок часу до початкового часу та повернути результат.
 
-Якщо результатом буде наступний день, то повинне бути `(next day)` після часу. Якщо результат буде за декілька днів, то повинне бути `(n days later)` після часу, де n — це кількість днів.
+Якщо результатом буде наступний день, то після часу має бути `(next day)`. Якщо результат буде за декілька днів, то після часу має бути `(n days later)`, де n — це кількість днів.
 
 Якщо функції задано довільний параметр першого дня тижня, то вивід має показувати день тижня у результаті. День тижня у виводі повинен бути після часу та перед кількістю днів.
 
@@ -45,7 +45,7 @@ add_time('6:30 PM', '205:12')
 Не імпортуйте бібліотеки Python. Припустимо, що початковий час є дійсним часом. Хвилини у проміжку часу будуть цілим числом меншим за 60, але години можуть бути будь-яким числом.
 
 # --hints--
-Calling `add_time('3:30 PM', '2:12')` should return `'5:42 PM'`.
+Виклик `add_time('3:30 PM', '2:12')` має повернути `'5:42 PM'`.
 
 ```js
 ({
@@ -81,7 +81,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time('11:55 AM', '3:12')`  should return `'3:07 PM'`.
+Виклик `add_time('11:55 AM', '3:12')` має повернути `'3:07 PM'`.
 
 ```js
 ({
@@ -117,7 +117,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Expected time to end with `'(next day)'` when it is the next day.
+Очікується, що в кінці часу буде `'(next day)'`, якщо це наступний день.
 
 ```js
 ({
@@ -153,7 +153,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Expected period to change from `AM` to `PM` at `12:00`.
+Очікується, що час зміниться з `AM` на `PM` о `12:00`.
 
 ```js
 ({
@@ -190,7 +190,7 @@ t.result.wasSuccessful()
 ```
 
 
-Calling `add_time('2:59 AM', '24:00')` should return `'2:59 AM (next day)'`.
+Виклик `add_time('2:59 AM', '24:00')` має повернути `'2:59 AM (next day)'`.
 
 ```js
 ({
@@ -226,7 +226,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time('11:59 PM', '24:05')` should return `'12:04 AM (2 days later)'`.
+Виклик `add_time('11:59 PM', '24:05')` має повернути `'12:04 AM (2 days later)'`.
 
 ```js
 ({
@@ -262,7 +262,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time('8:16 PM', '466:02')` should return `'6:18 AM (20 days later)'`.
+Виклик `add_time('8:16 PM', '466:02')` має повернути `'6:18 AM (20 days later)'`.
 
 ```js
 ({
@@ -298,7 +298,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Expected adding `0:00` to return the initial time.
+Очікується, що буде додано `0:00`, щоб повернути початковий час.
 
 ```js
 ({
@@ -335,7 +335,7 @@ t.result.wasSuccessful()
 ```
 
 
-Calling `add_time('3:30 PM', '2:12', 'Monday')`should return `'5:42 PM, Monday'`.
+Виклик `add_time('3:30 PM', '2:12', 'Monday')` має повернути `'5:42 PM, Monday'`.
 
 ```js
 ({
@@ -372,7 +372,7 @@ t.result.wasSuccessful()
 ```
 
 
-Calling `add_time('2:59 AM', '24:00', 'saturDay')` should return `'2:59 AM, Sunday (next day)'`.
+Виклик `add_time('2:59 AM', '24:00', 'saturDay')` має повернути `'2:59 AM, Sunday (next day)'`.
 
 ```js
 ({
@@ -408,7 +408,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time('11:59 PM', '24:05', 'Wednesday')` should return `'12:04 AM, Friday (2 days later)'`.
+Виклик `add_time('11:59 PM', '24:05', 'Wednesday')` має повернути `'12:04 AM, Friday (2 days later)'`.
 
 ```js
 ({
@@ -444,7 +444,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Calling `add_time('8:16 PM', '466:02', 'tuesday')`should return `'6:18 AM, Monday (20 days later)'`.
+Виклик `add_time('8:16 PM', '466:02', 'tuesday')` має повернути `'6:18 AM, Monday (20 days later)'`.
 
 ```js
 ({

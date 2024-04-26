@@ -35,7 +35,7 @@ myVar = 5;
 不应该修改注释上面的代码。
 
 ```js
-assert(/var a;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)));
 ```
 
 `a` 的值应该为 7。

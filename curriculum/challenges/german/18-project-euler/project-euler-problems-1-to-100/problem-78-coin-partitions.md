@@ -8,7 +8,7 @@ dashedName: problem-78-coin-partitions
 
 # --description--
 
-Let ${p}(n)$ represent the number of different ways in which `n` coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so ${p}(5) = 7$.
+Lasse ${p}(n)$ die Anzahl an verschiedenen Wegen repräsentieren, in denen `n` Münzen in Haufen geteilt werden können. Zum Beispiel können fünf Münzen auf genau sieben verschiedene Arten in Haufen aufgeteilt werden, also ${p}(5) = 7$.
 
 <div style='text-align: center;'>
 
@@ -24,35 +24,35 @@ Let ${p}(n)$ represent the number of different ways in which `n` coins can be se
 
 </div><br>
 
-Find the least value of `n` for which ${p}(n)$ is divisible by `divisor`.
+Finde den kleinsten Wert von `n`, für den ${p}(n)$ durch `divisor` teilbar ist.
 
 # --hints--
 
-`coinPartitions(7)` should return a number.
+`coinPartitions(7)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof coinPartitions(7) === 'number');
 ```
 
-`coinPartitions(7)` should return `5`.
+`coinPartitions(7)` sollte `5` zurückgeben.
 
 ```js
 assert.strictEqual(coinPartitions(7), 5);
 ```
 
-`coinPartitions(10000)` should return `599`.
+`coinPartitions(10000)` sollte `599` zurückgeben.
 
 ```js
 assert.strictEqual(coinPartitions(10000), 599);
 ```
 
-`coinPartitions(100000)` should return `11224`.
+`coinPartitions(100000)` sollte `11224` zurückgeben.
 
 ```js
 assert.strictEqual(coinPartitions(100000), 11224);
 ```
 
-`coinPartitions(1000000)` should return `55374`.
+`coinPartitions(1000000)` sollte `55374` zurückgeben.
 
 ```js
 assert.strictEqual(coinPartitions(1000000), 55374);

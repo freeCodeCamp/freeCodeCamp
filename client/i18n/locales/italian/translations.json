@@ -57,6 +57,7 @@
     "run-test": "Esegui i test (Ctrl + Invio)",
     "check-code": "Verifica il tuo codice (Ctrl + Invio)",
     "check-code-2": "Verifica il tuo codice",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Resetta",
     "reset-step": "Resetta questo step",
     "help": "Guida",
@@ -95,7 +96,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement"
+    "skip-advertisement": "Skip Advertisement",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -383,8 +385,14 @@
     "percent-complete": "{{percent}}% completato",
     "project-complete": "Completati {{completedChallengesInBlock}} di {{totalChallengesInBlock}} progetti di certificazione",
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
+    "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
+    "similar-questions-checkbox": "Ho cercato <0>domande simili che hanno già ricevuto risposta sul forum</0>",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
+    "must-confirm-statements": "Devi confermare le seguenti dichiarazioni prima di poter inviare il tuo post al forum.",
+    "min-50-max-500": "minimo 50 caratteri, massimo 500 caratteri",
     "rsa": "Leggi, cerca, chiedi",
-    "rsa-forum": "<strong>Prima di creare un nuovo post</strong> per favore, controlla se <0>la tua domanda ha già una risposta sul forum</0>.",
+    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Vuoi resettare questa lezione?",
     "reset-warn": "Sei sicuro di voler resettare questa lezione? Gli editor e i test saranno resettati.",
     "reset-warn-2": "Questa operazione non potrà essere annullata",
@@ -455,32 +463,32 @@
     "blank": "blank",
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
-      "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
-      "time": "Time: {{ t }}",
-      "questions": "Question {{ n }} of {{ t }}",
+      "not-qualified": "Non hai soddisfatto i requisiti per accedere all'esame. Per qualificarti, completa le seguenti sfide:",
+      "time": "Tempo: {{ t }}",
+      "questions": "Domanda {{ n }} di {{ t }}",
       "passed": "Passed",
       "not-passed": "Not Passed",
-      "number-of-questions": "Number of questions: {{ n }}",
-      "correct-answers": "Correct answers: {{ n }}",
+      "number-of-questions": "Numero di domande: {{ n }}",
+      "correct-answers": "Risposte corrette: {{ n }}",
       "percent-correct": "Percent correct: {{ n }}%",
-      "passed-message": "Congratulations! You passed the exam and can claim your certification.",
-      "not-passed-message": "Sorry, but you did not answer enough questions correctly to pass the exam.",
-      "results-header": "{{ title }} Results",
-      "question-results": "You correctly answered {{ n }} out of {{ q }} questions",
+      "passed-message": "Congratulazioni! Hai superato l'esame e puoi richiedere la certificazione.",
+      "not-passed-message": "Siamo spiacenti, ma non hai risposto correttamente ad abbastanza domande per superare l'esame.",
+      "results-header": "Risultati {{ title }}",
+      "question-results": "Hai risposto correttamente a {{ n }} domande su {{ q }}",
       "percent-results": "{{ p }}% correct",
-      "finish-header": "Finish Exam",
-      "finish": "Are you sure you want to finish the exam? You will not be able to change any answers. Your results will be final.",
-      "finish-yes": "Yes, I am finished",
-      "finish-no": "No, I would like to continue the exam",
-      "exit-header": "Exit Exam",
-      "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
-      "exit-yes": "Yes, I want to leave the exam",
-      "exit-no": "No, I would like to continue the exam"
+      "finish-header": "Termina Esame",
+      "finish": "Sei sicuro di voler terminare l'esame? Non sarai in grado di modificare alcuna risposta. I tuoi risultati saranno definitivi.",
+      "finish-yes": "Sì, ho finito",
+      "finish-no": "No, vorrei continuare l'esame",
+      "exit-header": "Abbandona Esame",
+      "exit": "Sei sicuro di voler abbandonare l'esame? Perderai ogni progresso fatto.",
+      "exit-yes": "Sì, voglio abbandonare l'esame",
+      "exit-no": "No, vorrei continuare l'esame"
     },
     "ms": {
-      "link-header": "Link your Microsoft account",
+      "link-header": "Collega il tuo account Microsoft",
       "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
-      "linked": "The Microsoft account with username \"{{ msUsername }}\" is currently linked to your freeCodeCamp account. If this is not your Microsoft username, remove the link.",
+      "linked": "L'account Microsoft con nome utente \"{{ msUsername }}\" è attualmente collegato al tuo account freeCodeCamp. Se questo non è il tuo nome utente Microsoft, rimuovi il link.",
       "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
       "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
       "link-li-2": "Find and click the \"Share link\" button.",
@@ -721,7 +729,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} esempio di codice",
-    "opens-new-window": "Apri in una nuova finestra"
+    "opens-new-window": "Apri in una nuova finestra",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
@@ -795,6 +805,7 @@
     "challenge-submit-too-big": "Ci dispiace, non puoi consegnare il tuo codice. Il tuo codice è {{user-size}} byte. Il massimo è di {{max-size}} byte. Per cortesia rendi il tuo codice più piccolo o richiedi assistenza a https://forum.freecodecamp.org",
     "invalid-update-flag": "Stai cercando di accedere a risorse proibite. Per favore richiedi assistenza su https://forum.freecodecamp.org se questa è una richiesta valida.",
     "generate-exam-error": "An error occurred trying to generate your exam.",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -969,16 +980,16 @@
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
       "Legacy Front End": "Front End Legacy",
-      "legacy-front-end": "Certificazione Front End",
+      "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Back End Legacy",
-      "legacy-back-end": "Certificazione Back End",
+      "legacy-back-end": "Legacy Back End Certification",
       "Legacy Data Visualization": "Visualizzazione Dati Legacy",
-      "legacy-data-visualization": "Certificazione Visualizzazione Dati",
+      "legacy-data-visualization": "Legacy Data Visualization Certification",
       "Legacy Information Security and Quality Assurance": "Sicurezza delle Informazioni e Garanzia di Qualità Legacy",
-      "information-security-and-quality-assurance": "Certificazione di Sicurezza delle Informazioni e Garanzia di Qualità",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance Certification",
       "Legacy Full Stack Certification": "Certificazione Full Stack Legacy",
       "Legacy Full Stack": "Full Stack Legacy",
-      "full-stack": "Certificazione Full Stack"
+      "full-stack": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {
@@ -996,7 +1007,7 @@
     "user-agent": "Lo user agent è: <code>{{userAgent}}</code>",
     "challenge": "Challenge Information:",
     "whats-happening": "Tell us what's happening:",
-    "describe": "Descrivi qui il tuo problema in dettaglio.",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "Your project link(s)",
     "camper-code": "Your code so far",
     "warning": "ATTENZIONE",
@@ -1028,8 +1039,9 @@
     "execute-challenge": "Esegui Sfida",
     "focus-editor": "Focus Editor",
     "focus-instructions-panel": "Focus sul pannello delle istruzioni",
-    "navigate-previous": "Passa all'esercizio precedente",
-    "navigate-next": "Passa all'esercizio successivo"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Esci dal tuo account",
@@ -1068,7 +1080,7 @@
       "take": "Take the survey",
       "submit": "Submit the survey",
       "exit": "Exit the survey",
-      "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+      "two-questions": "Congratulazioni per essere arrivato fin qui. Prima di iniziare l'esame, per favore rispondi a queste due brevi domande."
     }
   }
 }

@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe8f
-title: 'Problem 16: Power digit sum'
+title: 'Problem 16: Potenzziffernsumme'
 challengeType: 1
 forumTopicId: 301791
 dashedName: problem-16-power-digit-sum
@@ -8,25 +8,25 @@ dashedName: problem-16-power-digit-sum
 
 # --description--
 
-2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+2<sup>15</sup> = 32768 und die Summe der Ziffern ist 3 + 2 + 7 + 6 + 8 = 26.
 
-What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
+Was ist die Summe der Ziffern der Zahl 2<<sup><code>exponent</code></sup>?
 
 # --hints--
 
-`powerDigitSum(15)` should return a number.
+`powerDigitSum(15)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof powerDigitSum(15) === 'number');
 ```
 
-`powerDigitSum(15)` should return 26.
+`powerDigitSum(15)` sollte 26 zurückgeben.
 
 ```js
 assert.strictEqual(powerDigitSum(15), 26);
 ```
 
-`powerDigitSum(128)` should return 166.
+`powerDigitSum(128)` sollte 166 zurückgeben.
 
 ```js
 assert.strictEqual(powerDigitSum(128), 166);

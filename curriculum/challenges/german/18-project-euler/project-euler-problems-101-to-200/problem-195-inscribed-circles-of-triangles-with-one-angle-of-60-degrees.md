@@ -1,6 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff43
-title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+title: 'Problem 195: Eingeschriebene Kreise von Dreiecken mit einem Winkel von 60 Grad'
 challengeType: 1
 forumTopicId: 301833
 dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degrees
@@ -8,19 +8,19 @@ dashedName: problem-195-inscribed-circles-of-triangles-with-one-angle-of-60-degr
 
 # --description--
 
-Let's call an integer sided triangle with exactly one angle of 60° a 60° triangle.
+Ein ganzseitiges Dreieck mit genau einem Winkel von 60° nennen wir ein 60°-Dreieck.
 
-Let $r$ be the radius of the inscribed circle of such a 60° triangle.
+Lasse $r$ der Radius des Inkreises eines solchen 60°-Dreiecks sein.
 
-There are 1234 60° triangles for which $r ≤ 100$.
+Es gibt 1234 60°-Dreiecke, für die $r ≤ 100$ ist.
 
-Let $T(n)$ be the number of 60° triangles for which $r ≤ n$, so $T(100) = 1234$, $T(1000) = 22767$, and $T(10000) = 359912$.
+Sei $T(n)$ die Anzahl der 60°-Dreiecke, für die $r ≤ n$, also $T(100) = 1234$, $T(1000) = 22767$, und $T(10000) = 359912$.
 
-Find $T(1053779)$.
+Finde $T(1053779)$.
 
 # --hints--
 
-`inscribedCirclesOfTriangles()` should return `75085391`.
+`inscribedCirclesOfTriangles()` sollte `75085391` zurückgeben.
 
 ```js
 assert.strictEqual(inscribedCirclesOfTriangles(), 75085391);

@@ -27,13 +27,13 @@ Benutze (unter anderem) die `join` Methode innerhalb der `sentensify` Funktion, 
 Dein Code sollte die `join` Methode verwenden.
 
 ```js
-assert(code.match(/\.join/g));
+assert(__helpers.removeJSComments(code).match(/\.join/g));
 ```
 
 Dein Code sollte nicht die `replace` Methode verwenden.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `sentensify("May-the-force-be-with-you")` sollte einen String zurückgeben.

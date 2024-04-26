@@ -32,7 +32,7 @@ Dovresti importare correttamente `uppercaseString`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /import\s*{\s*(uppercaseString[^}]*|[^,]*,\s*uppercaseString\s*)}\s+from\s+('|")\.\/string_functions\.js\2/g
   )
 );
@@ -42,7 +42,7 @@ Dovresti importare correttamente `lowercaseString`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /import\s*{\s*(lowercaseString[^}]*|[^,]*,\s*lowercaseString\s*)}\s+from\s+('|")\.\/string_functions\.js\2/g
   )
 );

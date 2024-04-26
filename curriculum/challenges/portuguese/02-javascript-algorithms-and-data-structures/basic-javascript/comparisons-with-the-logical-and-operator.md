@@ -40,13 +40,13 @@ Substitua as duas instruções if por uma declaração, usando o operador `&&`, 
 Você deve usar o operador `&&` uma vez
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 Você deve ter apenas um comando `if`
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalAnd(0)` deve retornar a string `No`

@@ -28,7 +28,7 @@ You should call the `catch` method on the promise.
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.catch\(/g)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/(makeServerRequest|\))\.catch\(/g)
 );
 ```
 
@@ -44,7 +44,7 @@ You should log `error` to the console.
 assert(
   errorIsParameter &&
     __helpers
-      .removeWhiteSpace(code)
+      .removeWhiteSpace(__helpers.removeJSComments(code))
       .match(/\.catch\(.*?error.*?console.log\(error\).*?\)/)
 );
 ```
@@ -54,7 +54,7 @@ assert(
 ## --after-user-code--
 
 ```js
-const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(__helpers.removeWhiteSpace(code));
+const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)));
 ```
 
 ## --seed-contents--

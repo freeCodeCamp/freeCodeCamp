@@ -31,7 +31,7 @@ Utiliza el método `some` dentro de la función `checkPositive` para comprobar s
 Tu código debe usar el método `some`.
 
 ```js
-assert(code.match(/\.some/g));
+assert(__helpers.removeJSComments(code).match(/\.some/g));
 ```
 
 `checkPositive([1, 2, 3, -4, 5])` debe devolver `true`.
