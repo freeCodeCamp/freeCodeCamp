@@ -49,7 +49,7 @@ Bird.prototype = {
 `Dog.prototype` に新しいオブジェクトを設定する必要があります。
 
 ```js
-assert(/Dog\.prototype\s*?=\s*?{/.test(code));
+assert(/Dog\.prototype\s*?=\s*?{/.test(__helpers.removeJSComments(code)));
 ```
 
 `Dog.prototype` はプロパティ `numLegs` を持つ必要があります。

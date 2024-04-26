@@ -38,7 +38,7 @@ assert.deepEqual(
 `forecast` 関数で `slice()` メソッドを使用する必要があります。
 
 ```js
-assert(/\.slice\(/.test(code));
+assert(/\.slice\(/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

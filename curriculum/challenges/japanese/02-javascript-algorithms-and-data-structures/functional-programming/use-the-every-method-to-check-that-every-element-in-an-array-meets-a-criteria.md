@@ -31,7 +31,7 @@ numbers.every(function(currentValue) {
 コードで `every` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.every/g));
+assert(__helpers.removeJSComments(code).match(/\.every/g));
 ```
 
 `checkPositive([1, 2, 3, -4, 5])` は `false` を返す必要があります。

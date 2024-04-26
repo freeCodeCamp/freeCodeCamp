@@ -37,7 +37,7 @@ Write a regex `fixRegex` using three capture groups that will search for each wo
 You should use `.replace()` to search and replace.
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 Your regex should change the string `one two three` to the string `three two one`
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 You should not change the last line.
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` should use at least three capture groups.

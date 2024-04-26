@@ -42,7 +42,7 @@ Modifica el código para mostrar la cadena de prototipos correcta.
 El código debe mostrar que `Object.prototype` es el prototipo de `Dog.prototype`
 
 ```js
-assert(/Object\.prototype\.isPrototypeOf/.test(code));
+assert(/Object\.prototype\.isPrototypeOf/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

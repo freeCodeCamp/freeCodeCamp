@@ -31,7 +31,7 @@ Wende den Regex `myRegex` auf den String `myString` mit der Methode `.test()` an
 Du solltest `.test()` verwenden, um den Regex zu testen.
 
 ```js
-assert(code.match(/myRegex.test\(\s*myString\s*\)/));
+assert(__helpers.removeJSComments(code).match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
 Dein Ergebnis sollte `true` zurückgeben.

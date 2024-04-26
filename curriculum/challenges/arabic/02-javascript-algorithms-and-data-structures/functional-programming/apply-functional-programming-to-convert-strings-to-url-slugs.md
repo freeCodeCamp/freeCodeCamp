@@ -31,7 +31,7 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 لا ينبغي أن يستخدم الكود الخاص بك `replace` لهذا التحدي.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` يجب أن يعيد السلسلة `winter-is-coming`.

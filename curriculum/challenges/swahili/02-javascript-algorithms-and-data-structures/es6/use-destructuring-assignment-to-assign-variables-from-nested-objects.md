@@ -43,8 +43,8 @@ You should remove the ES5 assignment syntax.
 
 ```js
 assert(
-  !code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) &&
-    !code.match(/highToday = LOCAL_FORECAST\.today.high/g)
+  !__helpers.removeJSComments(code).match(/lowToday = LOCAL_FORECAST\.today\.low/g) &&
+    !__helpers.removeJSComments(code).match(/highToday = LOCAL_FORECAST\.today.high/g)
 );
 ```
 
@@ -52,7 +52,7 @@ You should use destructuring to create the `lowToday` variable.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)},?\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g
   )
 );
@@ -62,7 +62,7 @@ You should use destructuring to create the `highToday` variable.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday,?\s*)},?\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g
   )
 );

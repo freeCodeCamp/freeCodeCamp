@@ -50,13 +50,13 @@ assert(half(stats) === 28.015);
 應該使用解構賦值。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/half=\({\w+,\w+}\)/));
 ```
 
 應該使用解構參數。
 
 ```js
-assert(!code.match(/stats\.max|stats\.min/));
+assert(!__helpers.removeJSComments(code).match(/stats\.max|stats\.min/));
 ```
 
 # --seed--

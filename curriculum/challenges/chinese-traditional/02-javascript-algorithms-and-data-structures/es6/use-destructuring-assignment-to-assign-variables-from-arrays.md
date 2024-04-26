@@ -51,7 +51,7 @@ assert(b === 8);
 應使用數組解構來交換 `a` 和 `b` 的值。
 
 ```js
-assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code));
+assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

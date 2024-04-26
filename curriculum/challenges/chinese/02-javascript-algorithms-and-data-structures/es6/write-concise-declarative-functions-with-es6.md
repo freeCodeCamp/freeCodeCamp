@@ -39,14 +39,14 @@ const person = {
 不应使用传统的函数定义方法。
 
 ```js
-assert(!code.match(/function/));
+assert(!__helpers.removeJSComments(code).match(/function/));
 ```
 
 `setGear` 应是一个声明函数。
 
 ```js
 assert(
-  typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/)
+  typeof bicycle.setGear === 'function' && __helpers.removeJSComments(code).match(/setGear\s*\(.+\)\s*\{/)
 );
 ```
 

@@ -44,7 +44,7 @@ Verwende eine `for`-Schleife, um die Werte 1 bis 5 in `myArray` zu übertragen.
 Du solltest dafür eine `for`-Schleife verwenden.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` sollte gleich `[1, 2, 3, 4, 5]` sein.

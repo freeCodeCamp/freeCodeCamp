@@ -37,13 +37,13 @@ Korrigiere den String so, dass er entweder andere Anführungszeichen für den We
 Dein Code sollte die Anführungszeichen um den Wert `href` `#Home` korrigieren, indem du sie entweder änderst oder umgehst (escaping).
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 Dein Code sollte die doppelten Anführungszeichen um den gesamten String herum beibehalten.
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

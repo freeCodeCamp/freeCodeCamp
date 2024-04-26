@@ -50,13 +50,13 @@ assert(half(stats) === 28.015);
 Desestruturação deve ser usado.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/half=\({\w+,\w+}\)/));
 ```
 
 O parâmetro desestruturado deve ser usado.
 
 ```js
-assert(!code.match(/stats\.max|stats\.min/));
+assert(!__helpers.removeJSComments(code).match(/stats\.max|stats\.min/));
 ```
 
 # --seed--

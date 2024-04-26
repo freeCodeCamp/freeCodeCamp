@@ -37,7 +37,7 @@ Schreibe einen regulären Ausdruck `fixRegex` mit drei Erfassungsgruppen, der na
 Du solltest `.replace()` für das Suchen und Ersetzen verwenden.
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 Dein regulärer Ausdruck sollte den String `one two three` in den String `three two one` ändern.
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 Du solltest die letzte Zeile nicht ändern.
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` sollte mindestens drei Erfassungsgruppen verwenden.

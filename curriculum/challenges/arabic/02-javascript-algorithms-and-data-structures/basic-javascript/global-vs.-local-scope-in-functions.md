@@ -45,7 +45,7 @@ assert(myOutfit() === 'sweater');
 لا يجب عليك تغيير التعبير المنتج (return statement).
 
 ```js
-assert(/return outerWear/.test(code));
+assert(/return outerWear/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

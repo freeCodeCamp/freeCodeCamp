@@ -39,14 +39,14 @@ Refatore a função `setGear` dentro do objeto `bicycle` para usar a sintaxe cur
 Expressão tradicional de função não deve ser usado.
 
 ```js
-assert(!code.match(/function/));
+assert(!__helpers.removeJSComments(code).match(/function/));
 ```
 
 `setGear` deve ser uma função declarativa.
 
 ```js
 assert(
-  typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/)
+  typeof bicycle.setGear === 'function' && __helpers.removeJSComments(code).match(/setGear\s*\(.+\)\s*\{/)
 );
 ```
 

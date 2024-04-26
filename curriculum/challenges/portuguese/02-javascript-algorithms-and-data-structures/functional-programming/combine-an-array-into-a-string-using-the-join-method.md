@@ -27,13 +27,13 @@ Use o método `join` (entre outros) dentro da função `sentensify` para criar u
 Você deve usar o método `join`.
 
 ```js
-assert(code.match(/\.join/g));
+assert(__helpers.removeJSComments(code).match(/\.join/g));
 ```
 
 Você não deve usar o método `replace`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `sentensify("May-the-force-be-with-you")` deve retornar uma string.

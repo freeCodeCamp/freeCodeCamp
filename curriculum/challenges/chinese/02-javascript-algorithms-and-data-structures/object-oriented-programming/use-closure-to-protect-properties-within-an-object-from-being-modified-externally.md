@@ -43,7 +43,7 @@ ducky.getHatchedEggCount();
 `weight` 属性应该是一个私有变量，值应该是 `15`。
 
 ```js
-assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
 你的代码应该在 `Bird` 中创建一个名为 `getWeight` 方法，该方法返回私有变量 `weight`。
@@ -55,7 +55,7 @@ assert(new Bird().getWeight() === 15);
 你的 `getWeight` 函数应该返回私有变量 `weight`。
 
 ```js
-assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
+assert(__helpers.removeJSComments(code).match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
 ```
 
 # --seed--

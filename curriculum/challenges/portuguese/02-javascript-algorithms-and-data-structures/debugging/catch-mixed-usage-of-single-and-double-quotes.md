@@ -37,13 +37,13 @@ Corrija a string para que use aspas diferentes para o valor de `href` ou escape 
 O código deve corrigir as aspas em torno do valor de `href`: `#Home` mudando-as ou escapando-as.
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 O código deve manter as aspas duplas ao redor de toda a string.
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

@@ -39,19 +39,19 @@ if (condition1) {
 يجب أن يكون لديك في الأقل أربع تعبيرات `else`
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 يجب أن يكون لديك في الأقل أربع تعبيرات `if`
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 يجب أن يكون لديك في الأقل تعبير واحد `return`
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` يجب أن تنتج المقطع النصي `Tiny`

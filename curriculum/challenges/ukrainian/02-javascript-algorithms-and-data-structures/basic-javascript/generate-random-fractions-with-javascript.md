@@ -36,7 +36,7 @@ assert((randomFraction() + '').match(/\./g));
 Ви повинні використати `Math.random`, щоб згенерувати випадкове десяткове число.
 
 ```js
-assert(code.match(/Math\.random/g).length >= 0);
+assert(__helpers.removeJSComments(code).match(/Math\.random/g).length >= 0);
 ```
 
 # --seed--

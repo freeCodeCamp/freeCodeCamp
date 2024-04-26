@@ -36,7 +36,7 @@ I am a "double quoted" string inside "double quotes".
 Du solltest zwei doppelte Anführungszeichen (`"`) und vier versteckte doppelte Anführungszeichen (`\"`) verwenden.
 
 ```js
-assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/\\"/g).length === 4 && __helpers.removeJSComments(code).match(/[^\\]"/g).length === 2);
 ```
 
 Die Variable `myStr` sollte den folgenden String enthalten: `I am a "double quoted" string inside "double quotes".`

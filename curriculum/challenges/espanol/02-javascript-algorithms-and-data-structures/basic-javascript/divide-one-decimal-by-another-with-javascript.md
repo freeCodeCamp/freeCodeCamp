@@ -26,13 +26,13 @@ assert(quotient === 2.2);
 Debes usar el operador `/` para dividir 4.4 entre 2
 
 ```js
-assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
+assert(/4\.40*\s*\/\s*2\.*0*/.test(__helpers.removeJSComments(code)));
 ```
 
 La variable quotient debe ser asignada solo una vez
 
 ```js
-assert(code.match(/quotient\s*=/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/quotient\s*=/g).length === 1);
 ```
 
 # --seed--

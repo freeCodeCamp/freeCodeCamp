@@ -31,7 +31,7 @@ numbers.every(function(currentValue) {
 يجب أن يستخدم الكود الخاص بك دالة `every`.
 
 ```js
-assert(code.match(/\.every/g));
+assert(__helpers.removeJSComments(code).match(/\.every/g));
 ```
 
 `checkPositive([1, 2, 3, -4, 5])` يجب أن ترجع `false`.

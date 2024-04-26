@@ -29,13 +29,13 @@ Schreibe die Funktion `makeNest` um und entferne ihren Aufruf, sodass sie stattd
 Die Funktion sollte anonym sein.
 
 ```js
-assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
+assert(/\((function|\(\))(=>|\(\)){?/.test(__helpers.removeJSComments(code).replace(/\s/g, '')));
 ```
 
 Deine Funktion sollte am Ende des Ausdrucks Klammern haben, um sie sofort aufrufen zu können.
 
 ```js
-assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));
+assert(/\(.*(\)\(|\}\(\))\)/.test(__helpers.removeJSComments(code).replace(/[\s;]/g, '')));
 ```
 
 # --seed--

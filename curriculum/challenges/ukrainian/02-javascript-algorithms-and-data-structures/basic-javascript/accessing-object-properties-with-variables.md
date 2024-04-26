@@ -56,19 +56,19 @@ assert(player === 'Montana');
 Щоб отримати доступ до `testObj`, використайте дужкову нотацію
 
 ```js
-assert(/testObj\s*?\[.*?\]/.test(code));
+assert(/testObj\s*?\[.*?\]/.test(__helpers.removeJSComments(code)));
 ```
 
 Не присвоюйте значення `Montana` до змінної `player` напряму.
 
 ```js
-assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
+assert(!__helpers.removeJSComments(code).match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
 Ви повинні використати змінну `playerNumber` у своїй дужковій нотації
 
 ```js
-assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

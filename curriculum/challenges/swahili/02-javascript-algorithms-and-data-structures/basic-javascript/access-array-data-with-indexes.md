@@ -54,7 +54,7 @@ The data in variable `myArray` should be accessed using bracket notation.
 ```js
 assert(
   (function () {
-    if (code.match(/\s*=\s*myArray\[0\]/g)) {
+    if (__helpers.removeJSComments(code).match(/\s*=\s*myArray\[0\]/g)) {
       return true;
     } else {
       return false;

@@ -45,7 +45,7 @@ assert(myOutfit() === 'sweater');
 Ви не повинні змінювати інструкцію повернення.
 
 ```js
-assert(/return outerWear/.test(code));
+assert(/return outerWear/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

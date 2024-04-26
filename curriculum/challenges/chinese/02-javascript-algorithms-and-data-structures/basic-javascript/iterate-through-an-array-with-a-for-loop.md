@@ -30,7 +30,7 @@ for (let i = 0; i < arr.length; i++) {
 `total` 应该被声明, 并且初始化值为 0。
 
 ```js
-assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
 ```
 
 `total` 应该等于 20。
@@ -42,13 +42,13 @@ assert(total === 20);
 你应该使用 `for` 循环在 `myArr` 中遍历。
 
 ```js
-assert(/for\s*\(/g.test(code) && /myArr\s*\[/g.test(code));
+assert(/for\s*\(/g.test(__helpers.removeJSComments(code)) && /myArr\s*\[/g.test(__helpers.removeJSComments(code)));
 ```
 
 不能直接把 `total` 设置成 20。
 
 ```js
-assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));
+assert(!__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/total[=+-]0*[1-9]+/gm));
 ```
 
 # --seed--
