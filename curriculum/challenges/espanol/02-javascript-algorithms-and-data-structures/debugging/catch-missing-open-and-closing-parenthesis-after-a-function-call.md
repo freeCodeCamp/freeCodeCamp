@@ -37,7 +37,7 @@ assert(result == 9);
 Tu código debe llamar a la función `getNine`.
 
 ```js
-assert(code.match(/getNine\(\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/getNine\(\)/g).length == 2);
 ```
 
 # --seed--

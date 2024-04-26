@@ -40,13 +40,13 @@ return "No";
 你应该使用 `&&` 运算符一次。
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 你应该只有一个 `if` 表达式。
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalAnd(0)` 应该返回字符串 `No`

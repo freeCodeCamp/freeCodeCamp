@@ -37,7 +37,7 @@ var ourName;
 `myName` を `var` キーワードで宣言し、末尾にセミコロンを付ける必要があります。
 
 ```js
-assert(/var\s+myName\s*;/.test(code));
+assert(/var\s+myName\s*;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

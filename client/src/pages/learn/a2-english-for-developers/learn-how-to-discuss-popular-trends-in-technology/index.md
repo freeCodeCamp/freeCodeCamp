@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Discuss Popular Trends in Technology
 block: learn-how-to-discuss-popular-trends-in-technology
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Discuss Popular Trends in Technology

@@ -32,7 +32,7 @@ Inserisci i numeri dispari da 1 a 9 in `myArray` usando un ciclo `for`.
 Dovresti usare un ciclo `for`.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` dovrebbe essere uguale a `[1, 3, 5, 7, 9]`.

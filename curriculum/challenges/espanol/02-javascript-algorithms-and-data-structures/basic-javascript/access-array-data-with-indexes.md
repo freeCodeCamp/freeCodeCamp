@@ -54,7 +54,7 @@ Los datos en la variable `myArray` deben ser accedidos utilizando notación de c
 ```js
 assert(
   (function () {
-    if (code.match(/\s*=\s*myArray\[0\]/g)) {
+    if (__helpers.removeJSComments(code).match(/\s*=\s*myArray\[0\]/g)) {
       return true;
     } else {
       return false;

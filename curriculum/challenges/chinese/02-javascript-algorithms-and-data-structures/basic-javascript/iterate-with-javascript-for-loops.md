@@ -44,7 +44,7 @@ for (let i = 0; i < 5; i++) {
 你应该使用 `for` 循环。
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` 应该等于 `[1, 2, 3, 4, 5]`。

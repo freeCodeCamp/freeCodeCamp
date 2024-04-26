@@ -39,7 +39,7 @@ assert(/happy coder/gi.test(myDog.name));
 Du solltest die Definition von `myDog` nicht bearbeiten.
 
 ```js
-assert(/"name": "Coder"/.test(code));
+assert(/"name": "Coder"/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

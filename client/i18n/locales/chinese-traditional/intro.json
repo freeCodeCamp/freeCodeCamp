@@ -458,6 +458,13 @@
           "遞歸是一種編程概念，即函數調用自身。這可以將複雜的問題簡化爲更簡單的子問題，直到它們變得簡單易解。",
           "在這個項目中，你將使用 JavaScript 創建一個十進制到二進制的轉換器。你將學習遞歸的基本概念，探索調用棧，並通過動畫直觀地展示遞歸過程。"
         ]
+      },
+      "learn-introductory-javascript-by-building-a-pyramid-generator": {
+        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+        ]
       }
     }
   },

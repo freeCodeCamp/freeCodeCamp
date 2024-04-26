@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Follow Basic Email Convention
 block: learn-how-to-follow-basic-email-convention
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Follow Basic Email Convention

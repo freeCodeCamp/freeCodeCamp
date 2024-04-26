@@ -37,7 +37,7 @@ var ourName;
 يجب أن تعلن `myName` باستخدام كلمة `var` و تنهي بالفاصلة المنقوطة (;)
 
 ```js
-assert(/var\s+myName\s*;/.test(code));
+assert(/var\s+myName\s*;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -54,7 +54,7 @@ function findGreaterOrEqual(a, b) {
 يجب أن يستخدم `checkSign` مشغلين مشروطين متعددين
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن ينتج `checkSign(10)` مقطع `positive`. هذا يعني أن الكتابة بالأحرف الكبيرة (capitalization) شيئ مؤثر

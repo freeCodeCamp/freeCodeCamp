@@ -25,14 +25,14 @@ Füge dem HTML-Dokument ein Skript vom Typ Modul (`module`) hinzu und gib ihm di
 Du solltest ein `script`-Tag erstellen.
 
 ```js
-assert(code.match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
+assert(__helpers.removeJSComments(code).match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
 ```
 
 Dein `script`-Tag sollte das Attribut `type` mit dem Wert `module` besitzen.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^t]*type\s*=\s*('|")module\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );
@@ -42,7 +42,7 @@ Dein `script`-Tag sollte die Quelle (`src`) von `index.js` haben.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^s]*src\s*=\s*('|")index\.js\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );

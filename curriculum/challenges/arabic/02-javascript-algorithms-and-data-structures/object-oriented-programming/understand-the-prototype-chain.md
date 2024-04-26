@@ -42,7 +42,7 @@ duck.hasOwnProperty("name");
 يجب أن يظهر الكود الخاص بك أن `Object.prototype` هو ال prototype لـ `Dog.prototype`
 
 ```js
-assert(/Object\.prototype\.isPrototypeOf/.test(code));
+assert(/Object\.prototype\.isPrototypeOf/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

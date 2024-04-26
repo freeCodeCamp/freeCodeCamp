@@ -39,19 +39,19 @@ if (condition1) {
 少なくとも 4 つの `else` ステートメントが必要です。
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 少なくとも 4 つの `if` ステートメントが必要です。
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 少なくとも 1 つの `return` ステートメントが必要です。
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` は文字列 `Tiny` を返す必要があります。

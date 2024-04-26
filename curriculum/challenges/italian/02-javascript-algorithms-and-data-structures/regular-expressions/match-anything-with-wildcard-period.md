@@ -31,7 +31,7 @@ Completa l'espressione regolare `unRegex` in modo che corrisponda alle stringhe 
 Dovresti usare il metodo `.test()`.
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 Dovresti usare il carattere jolly nella tua espressione regolare `unRegex`

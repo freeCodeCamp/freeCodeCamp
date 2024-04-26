@@ -39,7 +39,7 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 A solução não deve usar os métodos `Array.prototype.flat()` ou `Array.prototype.flatMap()`.
 
 ```js
-assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+assert(!__helpers.removeJSComments(code).match(/\.\s*flat\s*\(/) && !__helpers.removeJSComments(code).match(/\.\s*flatMap\s*\(/));
 ```
 
 As variáveis globais não devem ser utilizadas.

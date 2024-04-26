@@ -43,13 +43,13 @@ return "Yes";
 应该使用一次 `||` 操作符。
 
 ```js
-assert(code.match(/\|\|/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/\|\|/g).length === 1);
 ```
 
 应该只有一个 `if` 表达式。
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalOr(0)` 应该返回字符串 `Outside`

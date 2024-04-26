@@ -56,19 +56,19 @@ assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 يجب أن يستخدم `studlyCapVar` حالة camelCase في كل من أقسام الإعلان والتخصيص.
 
 ```js
-assert(code.match(/studlyCapVar/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/studlyCapVar/g).length === 2);
 ```
 
 يجب أن يستخدم `properCamelCase` حالة camelCase في كل من أقسام التعريف والتخصيص.
 
 ```js
-assert(code.match(/properCamelCase/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/properCamelCase/g).length === 2);
 ```
 
 يجب أن يستخدم `titleCaseOver` حالة camelCase في كل من أقسام التعريف و التخصيص.
 
 ```js
-assert(code.match(/titleCaseOver/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/titleCaseOver/g).length === 2);
 ```
 
 # --seed--

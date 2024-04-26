@@ -35,7 +35,7 @@ assert(quotient === 2);
 Você deve usar o operador `/`.
 
 ```js
-assert(/\d+\s*\/\s*\d+/.test(code));
+assert(/\d+\s*\/\s*\d+/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
