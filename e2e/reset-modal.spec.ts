@@ -67,7 +67,9 @@ test('User can reset challenge', async ({ page }) => {
   // are reset)
   await page
     .getByRole('button', {
-      name: translations.buttons['check-code']
+      // check-code-2 works on all browsers because it does not include Command
+      // or Ctrl
+      name: translations.buttons['check-code-2']
     })
     .click();
 
