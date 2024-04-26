@@ -24,7 +24,7 @@ export function Scene({
 
   const audioTimestamp =
     audio.startTimestamp !== null && audio.finishTimestamp !== null
-      ? `#t=${audio.startTimestamp},${audio.finishTimestamp}`
+      ? `#t=${audio.startTimestamp}`
       : '';
 
   const audioRef = useRef<HTMLAudioElement>(
@@ -35,10 +35,17 @@ export function Scene({
     if (src) new Image().src = src;
   };
 
+  const sToMs = (n: number) => {
+    return n * 1000;
+  };
+
   // on mount
   useEffect(() => {
-    const { current } = audioRef;
-    current.addEventListener('canplaythrough', audioLoaded);
+    // preload audio
+    // audioRef.current.load();
+    // setAudioLoaded(true);
+
+    audioRef.current.addEventListener('canplaythrough', audioLoaded);
 
     // preload images
     loadImage(`${backgrounds}/${setup.background}`);
@@ -54,6 +61,8 @@ export function Scene({
       )
       .forEach(loadImage);
 
+    // setImagesLoaded(true);
+
     // on unmount
     return () => {
       const { current } = audioRef;
@@ -63,10 +72,6 @@ export function Scene({
       current.removeEventListener('canplaythrough', audioLoaded);
     };
   }, [audioRef, setup.background, setup.characters, commands]);
-
-  const audioLoaded = () => {
-    setSceneIsReady(true);
-  };
 
   const initBackground = setup.background;
   const initDialogue = { label: '', text: '', align: 'left' };
@@ -78,7 +83,9 @@ export function Scene({
     };
   });
 
-  const [sceneIsReady, setSceneIsReady] = useState(true);
+  const [sceneIsReady, setSceneIsReady] = useState(false);
+  // const [audioLoaded, setAudioLoaded] = useState(false);
+  // const [imagesLoaded, setImagesLoaded] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
   const [characters, setCharacters] = useState(initCharacters);
@@ -94,15 +101,67 @@ export function Scene({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying]);
 
+  const audioLoaded = () => {
+    setSceneIsReady(true);
+  };
+
+  let startNow = 0;
+  let duration = Infinity;
+  let stopAudio = false;
+
+  // this function exists because we couldn't reliably stop the audio when
+  // playing only part of the audio file. So it would get cut off
+  function playAudio() {
+    const finishNow = Date.now();
+    const runningTime = finishNow - startNow;
+
+    // start audio after startTime has been reached
+    if (runningTime >= sToMs(audio.startTime) && audioRef.current.paused) {
+      console.log('playing audio');
+      void audioRef.current.play();
+    }
+
+    // stop audio if the duration has been reached
+    if (runningTime >= duration) {
+      console.log('finishNow', finishNow);
+      console.log('duration ran', finishNow - startNow);
+      console.log('stopping audio');
+      stopAudio = true;
+      audioRef.current.pause();
+    }
+
+    if (!stopAudio) {
+      window.requestAnimationFrame(playAudio);
+    }
+  }
+
   const playScene = () => {
     setShowDialogue(true);
 
-    commands.forEach((command, commandIndex) => {
-      // Start audio timeout
+    console.log(audioRef.current);
+
+    // the timestamps don't exist when we play the whole audio, so we only need
+    // to use the playAudio function if they are set. Otherwise, we can just
+    // play the whole clip
+    if (audio.startTimestamp && audio.finishTimestamp) {
+      console.log('running playAudio');
+      duration =
+        sToMs(audio.finishTimestamp) -
+        sToMs(audio.startTimestamp) +
+        sToMs(audio.startTime);
+      console.log('duration', duration);
+      startNow = Date.now();
+      console.log('startNow', startNow);
+
+      playAudio();
+    } else {
+      console.log('not running playAudio');
       setTimeout(function () {
         void audioRef.current.play();
-      }, audio.startTime * 1000);
+      }, sToMs(audio.startTime));
+    }
 
+    commands.forEach((command, commandIndex) => {
       // Start command timeout
       setTimeout(() => {
         if (command.background) setBackground(command.background);
@@ -127,7 +186,7 @@ export function Scene({
           });
           return newCharacters;
         });
-      }, command.startTime * 1000);
+      }, sToMs(command.startTime));
 
       // Finish command timeout, only used when there's a dialogue
       if (command.dialogue) {
@@ -146,7 +205,7 @@ export function Scene({
               return newCharacters;
             });
           },
-          (command.finishTime as number) * 1000
+          sToMs(command.finishTime as number)
         );
       }
 
@@ -157,14 +216,16 @@ export function Scene({
             setIsPlaying(false);
           },
           command.finishTime
-            ? command.finishTime * 1000 + 500
-            : command.startTime * 1000 + 500
+            ? // an extra 500ms at the end to let the characters fade out (CSS transition)
+              sToMs(command.finishTime) + 500
+            : sToMs(command.startTime) + 500
         );
       }
     });
   };
 
   const finishScene = () => {
+    console.log(audioRef.current);
     audioRef.current.pause();
     audioRef.current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
     audioRef.current.currentTime = audio.startTimestamp || 0;
@@ -186,7 +247,7 @@ export function Scene({
           aspectRatio: '16 / 9'
         }}
       >
-        {!sceneIsReady ? (
+        {sceneIsReady /*!audioLoaded || !imagesLoaded ? (*/ ? (
           <Loader />
         ) : (
           <>
