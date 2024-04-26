@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Share Your Progress in Weekly Stand-up Meetings
 block: learn-how-to-share-your-progress-in-weekly-stand-up-meetings
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Share Your Progress in Weekly Stand-up Meetings

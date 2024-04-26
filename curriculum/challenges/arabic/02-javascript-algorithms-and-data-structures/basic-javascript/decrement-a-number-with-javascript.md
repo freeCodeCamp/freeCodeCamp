@@ -38,25 +38,25 @@ assert(myVar === 10);
 يجب تغيير `myVar = myVar - 1;`.
 
 ```js
-assert(!code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
 ```
 
 لا يجب عليك تعيين `myVar` بقيمة `10`.
 
 ```js
-assert(!code.match(/myVar\s*=\s*10.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*10.*?;?/));
 ```
 
 يجب عليك استخدام المشغل `--` على `myVar`.
 
 ```js
-assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
+assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 لا يجب عليك تعديل الكود فوق التعليق المحدد.
 
 ```js
-assert(/let myVar = 11;/.test(code));
+assert(/let myVar = 11;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

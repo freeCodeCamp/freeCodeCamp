@@ -29,7 +29,7 @@ console.log('Hello world!');
 يجب أن يستخدم الكود الخاص بك `console.log()` للتحقق من قيمة المتغير `a`.
 
 ```js
-assert(code.match(/console\.log\(a\)/g));
+assert(__helpers.removeJSComments(code).match(/console\.log\(a\)/g));
 ```
 
 # --seed--

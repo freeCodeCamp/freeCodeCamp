@@ -28,7 +28,7 @@ Usa il metodo `slice` nella funzione `sliceArray` per restituire parte dell'arra
 Il tuo codice dovrebbe utilizzare il metodo `slice`.
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 La variabile `inputAnim` non dovrebbe cambiare.

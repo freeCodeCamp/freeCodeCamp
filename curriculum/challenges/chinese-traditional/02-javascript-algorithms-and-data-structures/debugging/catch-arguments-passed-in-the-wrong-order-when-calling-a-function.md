@@ -25,7 +25,7 @@ assert(power == 8);
 你調用 `raiseToPower` 函數時，傳遞參數的順序應正確。
 
 ```js
-assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
+assert(__helpers.removeJSComments(code).match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 ```
 
 # --seed--

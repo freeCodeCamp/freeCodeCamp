@@ -42,7 +42,7 @@ Die Methode `hasOwnProperty` ist in `Object.prototype` definiert, auf die `Bird.
 Dein Code sollte zeigen, dass `Object.prototype` der Prototyp von `Dog.prototype` ist.
 
 ```js
-assert(/Object\.prototype\.isPrototypeOf/.test(code));
+assert(/Object\.prototype\.isPrototypeOf/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

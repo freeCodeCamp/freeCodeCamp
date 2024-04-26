@@ -52,13 +52,13 @@ assert(
 Dein Code sollte keine `for`-Schleife verwenden.
 
 ```js
-assert(!code.match(/for\s*?\([\s\S]*?\)/));
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
 ```
 
 Dein Code sollte die Methode `map` verwenden.
 
 ```js
-assert(code.match(/\.map/g));
+assert(__helpers.removeJSComments(code).match(/\.map/g));
 ```
 
 `ratings` sollte gleich `[{"title": "Inception", "rating": "8.8"}, {"title": "Interstellar", "rating": "8.6"}, {"title": "The Dark Knight", "rating": "9.0"},{"title": "Batman Begins", "rating": "8.3"}, {"title": "Avatar", "rating": "7.9"}]` sein.

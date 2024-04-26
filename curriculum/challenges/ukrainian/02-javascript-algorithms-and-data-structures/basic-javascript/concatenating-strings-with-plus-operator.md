@@ -47,19 +47,19 @@ assert(myStr === 'This is the start. This is the end.');
 Ви повинні використати оператор `+`, щоб побудувати `myStr`.
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
 Ви повинні використати ключове слово `const`, щоб створити `myStr`.
 
 ```js
-assert(/const\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 Ви повинні присвоїти результат до змінної `myStr`.
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

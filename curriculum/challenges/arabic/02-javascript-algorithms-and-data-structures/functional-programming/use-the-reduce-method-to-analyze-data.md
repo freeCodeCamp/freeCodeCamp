@@ -66,7 +66,7 @@ assert(
 يجب أن يستخدم الكود الخاص بك دالة `reduce`.
 
 ```js
-assert(code.match(/\.reduce/g));
+assert(__helpers.removeJSComments(code).match(/\.reduce/g));
 ```
 
 The `getRating(watchList)` يجب أن يساوي 8.675.
@@ -78,7 +78,7 @@ assert(getRating(watchList) === 8.675);
 يجب ألا يستخدم الكود الخاص بك حلقة `for`.
 
 ```js
-assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/g));
 ```
 
 يجب أن يعيد الكود الإخراج الصحيح بعد تعديل كائن `watchList`.

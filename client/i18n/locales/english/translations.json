@@ -867,6 +867,7 @@
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
+      "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
       "solution": "solution",
       "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",

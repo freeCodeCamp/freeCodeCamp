@@ -34,7 +34,7 @@ Use `parseInt()` in the `convertToInteger` function so it converts a binary numb
 `convertToInteger` should use the `parseInt()` function
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("10011")` should return a number

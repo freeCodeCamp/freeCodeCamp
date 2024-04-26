@@ -31,7 +31,7 @@ dashedName: apply-functional-programming-to-convert-strings-to-url-slugs
 不能使用 `replace` 方法。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` 應返回 `winter-is-coming`。

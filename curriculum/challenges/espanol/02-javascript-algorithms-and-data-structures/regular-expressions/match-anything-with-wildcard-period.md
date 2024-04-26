@@ -31,7 +31,7 @@ Completa la expresión regular `unRegex` para que coincida con las cadenas `run`
 Debes usar el método `.test()`.
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 Debes usar el carácter de comodín en tu expresión regular `unRegex`

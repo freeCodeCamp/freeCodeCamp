@@ -66,7 +66,7 @@ assert(testLessThan(99) === '55 or Over');
 Você deve usar o operador `<` pelo menos duas vezes
 
 ```js
-assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
 ```
 
 # --seed--

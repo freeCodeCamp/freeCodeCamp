@@ -42,7 +42,7 @@ Verwende den bedingten Operator in der Funktion `checkEqual`, um zu prüfen, ob 
 `checkEqual` sollte den bedingten Operator verwenden
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(__helpers.removeJSComments(code)));
 ```
 
 `checkEqual(1, 2)` sollte den String `Not Equal` zurückgeben

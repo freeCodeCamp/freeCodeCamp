@@ -31,7 +31,7 @@ numbers.some(function(currentValue) {
 コードで `some` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.some/g));
+assert(__helpers.removeJSComments(code).match(/\.some/g));
 ```
 
 `checkPositive([1, 2, 3, -4, 5])` は `true` を返す必要があります。

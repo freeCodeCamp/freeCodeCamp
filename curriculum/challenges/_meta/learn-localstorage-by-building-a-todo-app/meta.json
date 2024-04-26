@@ -4,13 +4,12 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-localstorage-by-building-a-todo-app",
-  "order": 7,
+  "order": 8,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "superOrder": 4,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "64e4e4c4ec263b62ae7bf54d",

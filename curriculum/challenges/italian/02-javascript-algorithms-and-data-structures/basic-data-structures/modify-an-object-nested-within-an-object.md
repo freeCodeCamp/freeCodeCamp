@@ -61,7 +61,7 @@ assert(userActivity.data.online === 45);
 La proprietà `online` dovrebbe essere impostata usando la notazione a punti o a parentesi.
 
 ```js
-assert.strictEqual(code.search(/online: 45/), -1);
+assert.strictEqual(__helpers.removeJSComments(code).search(/online: 45/), -1);
 ```
 
 # --seed--
