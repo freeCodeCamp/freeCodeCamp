@@ -22,7 +22,7 @@ export function getChallenges() {
     }, []);
 }
 
-export function getBlockToChallengeIdMap() {
+function getBlockToChallengeIdMap() {
   let blockToChallengeIdMap = {};
 
   Object.values(curriculum).forEach(superBlock => {
