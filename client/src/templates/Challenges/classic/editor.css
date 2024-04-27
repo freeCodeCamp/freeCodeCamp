@@ -37,11 +37,11 @@ textarea.inputarea {
 .editor-lower-jaw {
   padding-inline: 0 15px;
   padding-block: 15px;
-  white-space: pre-wrap;
 }
 
 .editor-upper-jaw {
   max-width: unset !important;
+  white-space: pre-wrap;
 }
 
 .action-row-container,
