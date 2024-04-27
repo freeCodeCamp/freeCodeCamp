@@ -43,6 +43,10 @@ textarea.inputarea {
   max-width: unset !important;
 }
 
+code {
+  white-space: pre-wrap;
+}
+
 .action-row-container,
 .description-container {
   background-color: var(--secondary-background);
@@ -51,10 +55,6 @@ textarea.inputarea {
   /* the max-width is set to keep the characters in a line at below ~70 to help
   with readability */
   max-width: 600px;
-}
-
-.description-container {
-  white-space: pre-wrap;
 }
 
 .challenge-description-header {
