@@ -64,8 +64,3 @@ tasks:
       gp ports await 3000 &&
       pnpm run develop:client -- -H '0.0.0.0'
     openMode: split-right
-
-vscode:
-  extensions:
-    - dbaeumer.vscode-eslint
-    - esbenp.prettier-vscode
