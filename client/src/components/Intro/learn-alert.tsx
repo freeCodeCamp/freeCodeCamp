@@ -23,8 +23,9 @@ const LearnAlert = ({
       {value && (
         <>
           <div className='text-center'>
-            <h2 className='donation-heading'>{t('learn.donation-heading')}</h2>
-            <p className='m-0 progress-percent-value'>{`${value}%`}</p>
+            <h2>{t('learn.donation-heading')}</h2>
+            <Spacer size='small' />
+            <b className='m-0 progress-percent-value'>{`${value}%`}</b>
           </div>
           <div aria-hidden='true' className='progress-wrapper'>
             <div>
@@ -34,8 +35,8 @@ const LearnAlert = ({
         </>
       )}
       <p>{text}</p>
-      <hr />
-      <p className={'text-center'}>
+      <Spacer size='medium' />
+      <div className={'text-center'}>
         <Link
           className='btn'
           key='donate'
@@ -45,7 +46,7 @@ const LearnAlert = ({
         >
           {t('buttons.donate')}
         </Link>
-      </p>
+      </div>
     </Alert>
   );
 
