@@ -9,10 +9,10 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeEach(async ({ page, browserName, isMobile }) => {
+test.beforeEach(async ({ page, isMobile }) => {
   test.skip(
-    browserName === 'webkit' || isMobile,
-    'Failing on webkit for no apparent reason. Can not reproduce locally. Also, skipping on mobile as it does not have a physical keyboard'
+    isMobile,
+    'Skipping on mobile as it does not have a physical keyboard'
   );
 
   // Enable keyboard shortcuts
