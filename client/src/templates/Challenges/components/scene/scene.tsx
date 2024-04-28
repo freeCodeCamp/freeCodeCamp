@@ -102,6 +102,7 @@ export function Scene({
   }, [isPlaying]);
 
   const audioLoaded = () => {
+    console.log('scene is ready');
     setSceneIsReady(true);
   };
 
@@ -247,7 +248,7 @@ export function Scene({
           aspectRatio: '16 / 9'
         }}
       >
-        {sceneIsReady /*!audioLoaded || !imagesLoaded ? (*/ ? (
+        {!sceneIsReady ? (
           <Loader />
         ) : (
           <>
