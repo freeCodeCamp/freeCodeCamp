@@ -41,10 +41,6 @@ export function Scene({
 
   // on mount
   useEffect(() => {
-    // preload audio
-    // audioRef.current.load();
-    // setAudioLoaded(true);
-
     audioRef.current.addEventListener('canplaythrough', audioLoaded);
 
     // preload images
@@ -60,8 +56,6 @@ export function Scene({
         background ? `${backgrounds}/${background}` : null
       )
       .forEach(loadImage);
-
-    // setImagesLoaded(true);
 
     // on unmount
     return () => {
@@ -84,8 +78,6 @@ export function Scene({
   });
 
   const [sceneIsReady, setSceneIsReady] = useState(false);
-  // const [audioLoaded, setAudioLoaded] = useState(false);
-  // const [imagesLoaded, setImagesLoaded] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
   const [characters, setCharacters] = useState(initCharacters);
@@ -102,7 +94,6 @@ export function Scene({
   }, [isPlaying]);
 
   const audioLoaded = () => {
-    console.log('scene is ready');
     setSceneIsReady(true);
   };
 
@@ -118,15 +109,11 @@ export function Scene({
 
     // start audio after startTime has been reached
     if (runningTime >= sToMs(audio.startTime) && audioRef.current.paused) {
-      console.log('playing audio');
       void audioRef.current.play();
     }
 
     // stop audio if the duration has been reached
     if (runningTime >= duration) {
-      console.log('finishNow', finishNow);
-      console.log('duration ran', finishNow - startNow);
-      console.log('stopping audio');
       stopAudio = true;
       audioRef.current.pause();
     }
@@ -139,24 +126,18 @@ export function Scene({
   const playScene = () => {
     setShowDialogue(true);
 
-    console.log(audioRef.current);
-
     // the timestamps don't exist when we play the whole audio, so we only need
     // to use the playAudio function if they are set. Otherwise, we can just
     // play the whole clip
     if (audio.startTimestamp && audio.finishTimestamp) {
-      console.log('running playAudio');
       duration =
         sToMs(audio.finishTimestamp) -
         sToMs(audio.startTimestamp) +
         sToMs(audio.startTime);
-      console.log('duration', duration);
       startNow = Date.now();
-      console.log('startNow', startNow);
 
       playAudio();
     } else {
-      console.log('not running playAudio');
       setTimeout(function () {
         void audioRef.current.play();
       }, sToMs(audio.startTime));
@@ -226,7 +207,6 @@ export function Scene({
   };
 
   const finishScene = () => {
-    console.log(audioRef.current);
     audioRef.current.pause();
     audioRef.current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
     audioRef.current.currentTime = audio.startTimestamp || 0;
