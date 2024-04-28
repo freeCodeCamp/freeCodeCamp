@@ -193,18 +193,14 @@ textarea.inputarea {
   margin-bottom: 18px;
 }
 
-.dropdown {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  margin-left: 8px;
+.code-details {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
 .code-details-summary {
-  font-weight: 700;
-  margin-bottom: 0.6rem;
+  display: list-item;
+  cursor: pointer;
 }
 
 /* overwriting default arrow styles for accessibility */

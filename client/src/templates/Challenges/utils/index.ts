@@ -1,7 +1,5 @@
 import i18next from 'i18next';
-import { renderToStaticMarkup } from 'react-dom/server';
 import envData from '../../../../config/env.json';
-import DropDown from '../../../assets/icons/dropdown';
 
 const { forumLocation } = envData;
 
@@ -96,19 +94,13 @@ export function makePrismCollapsible(
   const details = document.createElement('details');
   details.classList.add('code-details');
 
-  const dropdown = document.createElement('i');
-  dropdown.classList.add('dropdown');
-  const dropdownJsx = DropDown();
-  const dropdownString = renderToStaticMarkup(dropdownJsx);
-  dropdown.innerHTML = dropdownString;
-
   const summary = document.createElement('summary');
-  details.classList.add('code-details-summary');
-  summary.innerHTML = 'Code';
-  summary.appendChild(dropdown);
+  summary.classList.add('code-details-summary');
+  summary.innerHTML = 'Example Code';
 
   details.appendChild(summary);
   details.appendChild(preElem.cloneNode(true));
+  details.open = true;
 
   sectionElem.replaceChild(details, preElem);
 }
