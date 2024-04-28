@@ -210,12 +210,20 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           ? await fastify.prisma.user.findUniqueOrThrow({ where: { id } })
           : await findOrCreateUser(fastify, email);
 
-        // TODO(Post-MVP) stripe has moved to a paymentintent flow, the create call should be updated to reflect this
-        // ts-ignore
         const { id: customerId } = await stripe.customers.create({
           email,
-          card: token.id,
           name
+        });
+
+        // TODO(Post-MVP) stripe has moved to a paymentintent flow, the create call should be updated to reflect this
+        const paymentMethod = await stripe.paymentMethods.attach(token.id, {
+          customer: customerId
+        });
+
+        await stripe.customers.update(customerId, {
+          invoice_settings: {
+            default_payment_method: paymentMethod.id
+          }
         });
 
         const plan = `${donationSubscriptionConfig.duration[
