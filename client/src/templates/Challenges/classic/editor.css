@@ -44,7 +44,7 @@ textarea.inputarea {
 }
 
 code {
-  white-space: pre-wrap;
+  white-space: pre;
 }
 
 .action-row-container,
