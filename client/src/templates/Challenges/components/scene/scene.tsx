@@ -197,9 +197,9 @@ export function Scene({
           () => {
             setIsPlaying(false);
           },
+          // an extra 500ms at the end to let the characters fade out (CSS transition)
           command.finishTime
-            ? // an extra 500ms at the end to let the characters fade out (CSS transition)
-              sToMs(command.finishTime) + 500
+            ? sToMs(command.finishTime) + 500
             : sToMs(command.startTime) + 500
         );
       }
