@@ -29,7 +29,7 @@ assert(
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You are missing a closing (`a`) tag after the image.
+你的图片后缺少一个结束（`a`）标签。
 
 ```js
 assert(document.querySelectorAll('a').length === 2);

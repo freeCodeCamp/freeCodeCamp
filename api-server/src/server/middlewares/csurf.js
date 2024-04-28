@@ -1,7 +1,7 @@
 import csurf from 'csurf';
 
 export const csrfOptions = {
-  domain: process.env.COOKIE_DOMAIN || 'localhost',
+  domain: process.env.COOKIE_DOMAIN,
   sameSite: 'strict',
   secure: process.env.FREECODECAMP_NODE_ENV === 'production'
 };

@@ -34,13 +34,13 @@ for (let i = 10; i > 0; i -= 2) {
 Ви повинні використати цикл `for`.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 Ви повинні використати метод масиву `push`.
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 `myArray` має дорівнювати `[9, 7, 5, 3, 1]`.

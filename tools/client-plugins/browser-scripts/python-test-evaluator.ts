@@ -18,7 +18,6 @@ interface PythonRunEvent extends MessageEvent {
       editableContents: string;
       original: { [id: string]: string };
     };
-    removeComments: boolean;
     firstTest: unknown;
     testString: string;
     build: string;
@@ -64,7 +63,6 @@ void setupPyodide();
 
 ctx.onmessage = async (e: PythonRunEvent) => {
   const pyodide = await setupPyodide();
-  // TODO: Use removeComments when we have it
   /* eslint-disable @typescript-eslint/no-unused-vars */
   const code = (e.data.code.contents || '').slice();
   const editableContents = (e.data.code.editableContents || '').slice();

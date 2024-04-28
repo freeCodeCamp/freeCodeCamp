@@ -9,6 +9,7 @@ import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
 import Certifications from './components/certifications';
+import Stats from './components/stats';
 import HeatMap from './components/heat-map';
 import { PortfolioProjects } from './components/portfolio-projects';
 
@@ -56,13 +57,7 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({
-  user,
-  t
-}: {
-  user: ProfileProps['user'];
-  t: TFunction;
-}): JSX.Element {
+function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
   const {
     profileUI: {
       showAbout,
@@ -92,6 +87,7 @@ function UserProfile({
     yearsTopContributor,
     isDonating
   } = user;
+
   return (
     <>
       <Camper
@@ -108,11 +104,7 @@ function UserProfile({
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {showPoints && (
-        <p className='text-center points'>
-          {t('profile.total-points', { count: points })}
-        </p>
-      )}
+      {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? (
@@ -146,7 +138,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         {isLocked && (
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
-        {showUserProfile && <UserProfile user={user} t={t} />}
+        {showUserProfile && <UserProfile user={user} />}
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>

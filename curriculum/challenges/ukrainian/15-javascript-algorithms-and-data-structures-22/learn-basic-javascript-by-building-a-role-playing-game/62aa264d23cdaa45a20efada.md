@@ -1,21 +1,19 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 166
+title: Step 162
 challengeType: 0
-dashedName: step-166
+dashedName: step-162
 ---
 
 # --description--
 
-Після масиву `numbers` створіть цикл `while`. Цикл <dfn>while</dfn> приймає умову та виконує код до того моменту, як умова перестане бути істинною.
+After your `numbers` array, create a `while` loop that runs as long as `numbers.length` is less than `10`.
 
-Ваш цикл `while` повинен виконуватись, поки `numbers.length` менше за `10`.
-
-Ось приклад циклу `while`, який виконується, поки `i` менше ніж п'ять.
+In the previous project, you learned how to work with `while` loops like this:
 
 ```js
-while (i < 5) {
-
+while (condition) {
+  // code to run
 }
 ```
 

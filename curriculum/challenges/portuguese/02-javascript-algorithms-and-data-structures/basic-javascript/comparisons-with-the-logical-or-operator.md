@@ -43,13 +43,13 @@ Combine as duas instruções `if` em uma mesma instrução a qual retorna a stri
 Você deve usar o operador `||` uma vez
 
 ```js
-assert(code.match(/\|\|/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/\|\|/g).length === 1);
 ```
 
 Você deve ter apenas uma instrução `if`
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalOr(0)` deve retornar a string `Outside`

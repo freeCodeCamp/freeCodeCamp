@@ -47,19 +47,19 @@ assert(myStr === 'This is the start. This is the end.');
 Deberías usar el operador `+` para construir `myStr`.
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
 `myStr` Debe crearse una variable con la palabra reservada `const`.
 
 ```js
-assert(/const\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 Debes asignar el resultado a la variable `myStr`.
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

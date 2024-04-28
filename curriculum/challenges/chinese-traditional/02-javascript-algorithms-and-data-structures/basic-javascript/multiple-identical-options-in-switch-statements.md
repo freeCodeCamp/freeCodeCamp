@@ -94,13 +94,13 @@ assert(sequentialSizes(9) === 'High');
 你不應使用 `if` 或 `else` 語句。
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 你應該編寫 9 個`case`語句。
 
 ```js
-assert(code.match(/case/g).length === 9);
+assert(__helpers.removeJSComments(code).match(/case/g).length === 9);
 ```
 
 # --seed--

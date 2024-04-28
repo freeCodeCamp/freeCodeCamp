@@ -25,14 +25,14 @@ type が `module` のスクリプトを HTML ドキュメントに追加し、`i
 `script` タグを作成する必要があります。
 
 ```js
-assert(code.match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
+assert(__helpers.removeJSComments(code).match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
 ```
 
 `script` タグに、`module` という値を設定した `type` 属性を持たせる必要があります。
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^t]*type\s*=\s*('|")module\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );
@@ -42,7 +42,7 @@ assert(
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^s]*src\s*=\s*('|")index\.js\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );

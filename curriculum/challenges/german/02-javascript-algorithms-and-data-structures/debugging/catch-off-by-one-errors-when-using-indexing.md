@@ -37,25 +37,25 @@ Behebe die beiden Indizierungsfehler in der folgenden Funktion, damit alle Zahle
 Dein Code sollte die Anfangsbedingung der Schleife so setzen, dass sie beim ersten Index beginnt.
 
 ```js
-assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
 Dein Code sollte die Anfangsbedingung der Schleife so festlegen, dass der Index bei 0 beginnt.
 
 ```js
-assert(!code.match(/i\s?=\s*?1\s*?;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s?=\s*?1\s*?;/g));
 ```
 
 Dein Code sollte die Endbedingung der Schleife so setzen, dass sie beim letzten Index anhält.
 
 ```js
-assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 Dein Code sollte die Endbedingung der Schleife so festlegen, dass sie bei 1 vor der Länge aufhört.
 
 ```js
-assert(!code.match(/i\s*?<=\s*?len;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?<=\s*?len;/g));
 ```
 
 # --seed--

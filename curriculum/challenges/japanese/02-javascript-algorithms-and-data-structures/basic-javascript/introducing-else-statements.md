@@ -28,13 +28,13 @@ if (num > 10) {
 エディターでは 1 つの `if` ステートメントのみを記述する必要があります。
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `else` ステートメントを使用する必要があります。
 
 ```js
-assert(/else/g.test(code));
+assert(/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 `testElse(4)` は文字列 `5 or Smaller` を返す必要があります。
@@ -64,7 +64,7 @@ assert(testElse(10) === 'Bigger than 5');
 指定のコメントの上または下のコードを変更しないでください。
 
 ```js
-assert(/let result = "";/.test(code) && /return result;/.test(code));
+assert(/let result = "";/.test(__helpers.removeJSComments(code)) && /return result;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -52,7 +52,7 @@ assert(hound instanceof Dog);
 الكود الخاص بك يجب أن يستخدم مشغل `new` لإنشاء instance الـ `Dog`.
 
 ```js
-assert(code.match(/new/g));
+assert(__helpers.removeJSComments(code).match(/new/g));
 ```
 
 # --seed--

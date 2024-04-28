@@ -1,13 +1,13 @@
 ---
 id: 6617aef85b87c334e7ae8017
-title: Learn Function Basics Question F
+title: Вивчіть основи функцій. Запитання F
 challengeType: 15
 dashedName: learn-function-basics-question-f
 ---
 
 # --description--
 
-Arrow functions are a more modern way to write functions in JavaScript. They provide a more compact syntax compared to traditional function expressions. Arrow functions are defined using the `=>` syntax.
+Стрілкові функції — це сучасніший спосіб написання функцій в JavaScript. Вони надають стисліший синтаксис у порівнянні з традиційними виразами. Стрілкові функції визначені за допомогою синтаксису `=>`.
 
 ```js
 const add = (a, b) => {
@@ -15,37 +15,37 @@ const add = (a, b) => {
 }
 ```
 
-In the example above, the arrow function `add` takes two parameters `a` and `b` and returns their sum. The `return` keyword is used to return the result of the addition operation.
+Стрілкова функція `add` в прикладі вище приймає два параметри (`a` та `b`) і повертає їхню суму. Ключове слово `return` використано, щоб повернути результат операції додавання.
 
-If the arrow function has only one expression, the curly braces `{}` and the `return` keyword can be omitted. The expression will be implicitly returned.
+Якщо стрілкова функція має лише один вираз, то можна уникнути фігурних дужок `{}` та ключового слова `return`. Вираз буде неявно повернутий.
 
 ```js
 const add = (a, b) => a + b;
 ```
 
-In the example above, the arrow function `add` takes two parameters `a` and `b` and returns their sum. The `return` keyword and curly braces `{}` are omitted, and the result of the addition operation is implicitly returned.
+Стрілкова функція `add` в прикладі вище приймає два параметри (`a` та `b`) і повертає їхню суму. Ключове слово `return` та фігурні дужки `{}` опущено, а результат операції додавання неявно повернуто.
 
 # --question--
 
 ## --text--
 
-What makes arrow functions different from traditional function expressions in JavaScript?
+Що відрізняє стрілкові функції від звичайних виразів функцій в JavaScript?
 
 ## --answers--
 
-They cannot return values.
+Вони не можуть повернути значення.
 
 ---
 
-They cannot take parameters.
+Вони не можуть приймати параметри.
 
 ---
 
-They have a more compact syntax compared to traditional function expressions.
+Вони надають стисліший синтаксис у порівнянні з традиційними виразами.
 
 ---
 
-They require the use of the `function` keyword.
+Вони вимагають ключове слово `function`.
 
 ## --video-solution--
 

@@ -51,7 +51,7 @@ assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 Du solltest diese Aufgabe lösen, ohne die eingebaute Methode `Object.keys()` zu verwenden.
 
 ```js
-assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
+assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(__helpers.removeJSComments(code)));
 ```
 
 Du solltest diese Aufgabe lösen, ohne das Array `ownProps` fest zu kodieren.
@@ -59,7 +59,7 @@ Du solltest diese Aufgabe lösen, ohne das Array `ownProps` fest zu kodieren.
 ```js
 assert(
   !/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```

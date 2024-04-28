@@ -1,6 +1,6 @@
 ---
 id: 657e1fd7b5ffaebc0ff4bd9f
-title: Task 26
+title: Завдання 26
 challengeType: 19
 dashedName: task-26
 ---
@@ -9,7 +9,7 @@ dashedName: task-26
 
 # --description--
 
-Listen to the audio and answer the question below.
+Послухайте аудіо та дайте відповідь на запитання.
 
 # --question--
 

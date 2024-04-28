@@ -32,7 +32,7 @@ for (let i = 0; i < 10; i += 2) {
 يجب أن تستخدم حلقة `for`.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن يساوي `myArray` قيمة `[1, 3, 5, 7, 9]`.

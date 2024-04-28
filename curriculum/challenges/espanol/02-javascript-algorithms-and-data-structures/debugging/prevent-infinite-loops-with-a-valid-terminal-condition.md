@@ -31,13 +31,13 @@ La función `myFunc()` contiene un bucle infinito porque la condición terminal 
 Tu código debe cambiar el operador de comparación en la condición terminal (la parte central) del bucle `for`.
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 Tu código debe corregir el operador de comparación en la condición terminal del bucle.
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

@@ -75,7 +75,7 @@ assert.match(code, /(`.*\${.*}.*`)/);
 Es sollte ein Iterator verwendet werden.
 
 ```js
-assert(code.match(/for|map|reduce|forEach|while/));
+assert(__helpers.removeJSComments(code).match(/for|map|reduce|forEach|while/));
 ```
 
 # --seed--

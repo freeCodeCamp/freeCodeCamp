@@ -31,7 +31,7 @@ Complete a regex `unRegex` para que ela encontre as strings `run`, `sun`, `fun`,
 Você deve usar o método `.test()`.
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 Você deve usar o caractere curinga na regex `unRegex`

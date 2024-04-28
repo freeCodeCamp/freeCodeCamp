@@ -13,7 +13,7 @@ Sarah: "Sure, Bob. What’s the problem?"
 
 # --description--
 
-Listen to the audio and complete the sentence.
+Послухайте аудіо та доповніть речення.
 
 # --fillInTheBlank--
 

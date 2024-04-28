@@ -29,13 +29,13 @@ Mostra entrambe le proprietà dell'oggetto `dog` sulla tua console.
 Il tuo codice dovrebbe utilizzare `console.log` per mostrare il valore della proprietà `name` dell'oggetto `dog`.
 
 ```js
-assert(/console.log\(.*dog\.name.*\)/g.test(code));
+assert(/console.log\(.*dog\.name.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 Il tuo codice dovrebbe utilizzare `console.log` per mostrare il valore della proprietà `numLegs` dell'oggetto `dog`.
 
 ```js
-assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
+assert(/console.log\(.*dog\.numLegs.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -61,7 +61,7 @@ assert(userActivity.data.online === 45);
 A propriedade `online` deve ser definindo usando a notação de ponto ou de colchetes.
 
 ```js
-assert.strictEqual(code.search(/online: 45/), -1);
+assert.strictEqual(__helpers.removeJSComments(code).search(/online: 45/), -1);
 ```
 
 # --seed--

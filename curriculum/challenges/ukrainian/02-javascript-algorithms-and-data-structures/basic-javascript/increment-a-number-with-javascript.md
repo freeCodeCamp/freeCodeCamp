@@ -39,20 +39,20 @@ assert(myVar === 88);
 
 ```js
 assert(
-  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(code)
+  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(__helpers.removeJSComments(code))
 );
 ```
 
 Ви повинні використати оператор `++`.
 
 ```js
-assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
+assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 Не змінюйте код над зазначеним коментарем.
 
 ```js
-assert(/let myVar = 87;/.test(code));
+assert(/let myVar = 87;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

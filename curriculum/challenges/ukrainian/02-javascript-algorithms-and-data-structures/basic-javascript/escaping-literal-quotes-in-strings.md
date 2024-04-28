@@ -36,7 +36,7 @@ I am a "double quoted" string inside "double quotes".
 Ви повинні використати дві подвійні лапки (`"`) та чотири екрановані подвійні лапки (`\"`).
 
 ```js
-assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/\\"/g).length === 4 && __helpers.removeJSComments(code).match(/[^\\]"/g).length === 2);
 ```
 
 Змінна `myStr` повинна містити рядок `I am a "double quoted" string inside "double quotes".`

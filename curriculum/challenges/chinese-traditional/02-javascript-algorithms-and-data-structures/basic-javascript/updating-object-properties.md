@@ -39,7 +39,7 @@ assert(/happy coder/gi.test(myDog.name));
 不要修改 `myDog` 的定義。
 
 ```js
-assert(/"name": "Coder"/.test(code));
+assert(/"name": "Coder"/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

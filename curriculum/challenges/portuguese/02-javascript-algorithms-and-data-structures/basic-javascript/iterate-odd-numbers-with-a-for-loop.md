@@ -32,7 +32,7 @@ Adicione (push) os números ímpares de 9 até 1 para `myArray` usando um laço 
 Você deve estar usando um laço `for` para isso.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` deve ser igual a `[1, 3, 5, 7, 9]`.

@@ -39,7 +39,7 @@ assert(thirdLetterOfLastName === 'v');
 应该使用方括号表示法。
 
 ```js
-assert(code.match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
+assert(__helpers.removeJSComments(code).match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

@@ -47,7 +47,7 @@ assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_
 Ваш код не повинен використовувати метод `map`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?map/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?map/g));
 ```
 
 # --seed--

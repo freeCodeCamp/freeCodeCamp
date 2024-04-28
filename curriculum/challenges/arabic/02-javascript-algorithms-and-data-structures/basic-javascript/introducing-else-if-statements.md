@@ -30,20 +30,20 @@ if (num > 15) {
 يجب أن يكون لديك اثنين من تعبيرات `else` في الأقل
 
 ```js
-assert(code.match(/else/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 1);
 ```
 
 يجب أن يكون لديك اثنين من تعبيرات `if` في الأقل
 
 ```js
-assert(code.match(/if/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 1);
 ```
 
 يجب أن يكون لديك قوسين مقرونتين (curly braces) لكل `if else` لكتابه الكود بداخلها.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s+if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/
   )
 );
