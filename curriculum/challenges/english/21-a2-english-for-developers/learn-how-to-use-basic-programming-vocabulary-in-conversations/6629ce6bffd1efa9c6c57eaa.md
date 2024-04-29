@@ -28,7 +28,7 @@ For example, When you see an old friend, you may say `Hey, how's it going? I hav
 
 ### --feedback--
 
-This contraction is commonly used in informal greetings and combines `how` and `is`.
+This contraction is commonly used in informal greetings.
 
 ---
 
