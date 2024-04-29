@@ -41,20 +41,36 @@
       "title": "Step 7"
     },
     {
-      "id": "662f6a33710e6e2db2f9af73",
+      "id": "662f96576ef178927de87975",
       "title": "Step 8"
     },
     {
-      "id": "662f6aa5710ddf2e5c86bf22",
+      "id": "662f6d7c92381a3049e4c987",
       "title": "Step 9"
     },
     {
-      "id": "662f6d7c92381a3049e4c987",
+      "id": "662fa2e2cf27c09f21f4f5d0",
       "title": "Step 10"
     },
     {
-      "id": "662f77e2276de8396f80603a",
+      "id": "662fa7a2e834a7a3530db75b",
       "title": "Step 11"
+    },
+    {
+      "id": "662fab95a3f903a7aa028550",
+      "title": "Step 12"
+    },
+    {
+      "id": "662fba5aa58abab470a2e6b8",
+      "title": "Step 13"
+    },
+    {
+      "id": "662fbcef5f05e1b84f541a0c",
+      "title": "Step 14"
+    },
+    {
+      "id": "662fc3eba556a6bf800d48c1",
+      "title": "Step 15"
     }
   ],
   "helpCategory": "Python"
