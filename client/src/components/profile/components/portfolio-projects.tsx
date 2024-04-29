@@ -19,31 +19,45 @@ export const PortfolioProjects = ({
   return (
     <>
       <h2 className='text-center'>{t('profile.portfolio')}</h2>
-      {portfolioProjects.map(({ title, url, image, description, id }) => (
-        <div className='portfolio-container' key={id}>
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <a href={url} rel='nofollow noopener noreferrer' target='_blank'>
-            {t('buttons.view')}
-            <span className='sr-only'>
-              {title}, {t('aria.opens-new-window')}
-            </span>
-            <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
-          </a>
-          {image && (
-            <img
-              alt=''
-              className='portfolio-screen-shot'
-              src={image}
-              onError={({ currentTarget }) => {
-                currentTarget.src =
-                  'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
-              }}
-            />
-          )}
-        </div>
-      ))}
-      <hr />
+      <div className='portfolio-field'>
+        {portfolioProjects.map(({ title, url, image, description, id }) => (
+          <div className='portfolio-card' key={id}>
+            {image && (
+              <img
+                alt=''
+                className='portfolio-card-image'
+                src={image}
+                onError={({ currentTarget }) => {
+                  currentTarget.src =
+                    'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
+                }}
+              />
+            )}
+            <div className='portfolio-card-description'>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <div className='portfolio-button-container'>
+                <a
+                  href={url}
+                  rel='nofollow noopener noreferrer'
+                  target='_blank'
+                  className='portfolio-card-button'
+                >
+                  {t('buttons.view')}
+                  <span className='sr-only'>
+                    {title}, {t('aria.opens-new-window')}
+                  </span>
+                  <FontAwesomeIcon
+                    id='link-icon'
+                    icon={faArrowUpRightFromSquare}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+        <hr />
+      </div>
     </>
   );
 };
