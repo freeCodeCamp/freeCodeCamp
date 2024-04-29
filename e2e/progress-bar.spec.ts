@@ -1,31 +1,18 @@
-import { expect, test, type Page } from '@playwright/test';
-
-let page: Page;
-
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-  await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
-  );
-});
+import { expect, test } from '@playwright/test';
 
 test.describe('Progress bar component', () => {
   test('Should appear with the correct content after the user has submitted their code', async ({
-    isMobile,
-    browserName
+    page
   }) => {
+    await page.goto(
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    );
+
     const monacoEditor = page.getByLabel('Editor content');
 
-    // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
-    // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
-    // in place of `.click()` to focus on the editor.
-    // Ref: https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-    if (isMobile && browserName === 'webkit') {
-      await monacoEditor.focus();
-    } else {
-      await monacoEditor.click();
-    }
-
+    // Using focus instead of click since we're not testing if the editor
+    // behaves correctly, we're using it to complete the challenge.
+    await monacoEditor.focus();
     await page.keyboard.press('Control+A');
     //Meta + A works in webkit
     await page.keyboard.press('Meta+A');
