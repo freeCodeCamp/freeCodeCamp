@@ -10,8 +10,8 @@
 
 .progression-arrow {
   position: absolute;
-  bottom: -18px;
-  left: -18px;
+  bottom: -16px;
+  left: 25px;
 }
 
 .map-ui ul .progress-icon {
