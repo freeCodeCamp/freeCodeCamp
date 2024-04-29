@@ -4,7 +4,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test('should render the modal content correctly', async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 
   await page.getByRole('button', { name: translations.buttons.reset }).click();
@@ -48,7 +48,7 @@ test('User can reset challenge', async ({ page }) => {
     .getByText(updatedText);
 
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 
   // Building the preview can take a while
@@ -137,7 +137,7 @@ test('User can reset classic challenge', async ({ page, isMobile }) => {
 
 test('should close when the user clicks the close button', async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 
   await page.getByRole('button', { name: translations.buttons.reset }).click();
