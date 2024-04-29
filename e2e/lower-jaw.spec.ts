@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 });
 

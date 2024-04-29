@@ -5,7 +5,7 @@ let page: Page;
 test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 });
 
