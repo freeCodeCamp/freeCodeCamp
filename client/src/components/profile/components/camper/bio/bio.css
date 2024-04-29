@@ -2,15 +2,15 @@
   gap: 20px;
 }
 .light-gray-color {
-  color: #d9d9d9;
+  color: var(--gray15);
 }
 .gray-color {
-  color: #5b5b5b;
+  color: var(--gray45);
   display: inline-block;
   margin-left: 6px;
 }
 .border-b {
-  border-bottom: 1px solid #efeeee;
+  border-bottom: 1px solid var(--gray15);
 }
 .location-and-date {
   flex-direction: row;
@@ -19,12 +19,4 @@
   .location-and-date {
     flex-direction: column;
   }
-}
-.bio-icons-container {
-  margin-top: 20px;
-}
-.bio-icons-container figure div {
-  height: 30px;
-  width: 30px;
-  background-color: #d9d9d9;
 }

@@ -78,16 +78,7 @@ function TwitterIcon(handle: string, username: string): JSX.Element {
 }
 
 function SocialIcons(props: SocialIconsProps): JSX.Element | null {
-  // i put those values here for demonstration purpose -
-  // this way person who checks my `bio` component will see the icons displayed
-  // after the the successfull review i plan to restore original code of this component
-  const {
-    githubProfile = 'https://github.com/shootermv',
-    linkedin = 'https://www.linkedin.com/in/moshe-vilner-7a7745a/',
-    twitter = 'https://twitter.com/shootermv',
-    username = 'Vasili',
-    website = 'https://gs500coder.blogspot.com'
-  } = props;
+  const { githubProfile, linkedin, twitter, username, website } = props;
   const show = linkedin || githubProfile || website || twitter;
   if (!show) {
     return null;

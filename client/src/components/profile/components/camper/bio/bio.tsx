@@ -11,7 +11,7 @@ import { userSelector } from '../../../../../redux/selectors';
 import { User } from '../../../../../redux/prop-types';
 import './bio.css';
 import SocialIcons from '../../social-icons';
-import { AvatarRenderer } from '../../../../helpers';
+import { AvatarRenderer, FullWidthRow } from '../../../../helpers';
 const { clientLocale } = envData;
 const localeCode = getLangCode(clientLocale);
 function parseDate(joinDate: string, t: TFunction): string {
@@ -39,7 +39,7 @@ const Bio = () => {
     picture
   } = useSelector(userSelector) as User; //using redux selectors
   return (
-    <section className='flex-col padding-vertical-3 border-b'>
+    <FullWidthRow>
       <Row>
         <Col className='avatar-camper' xs={12}>
           <AvatarRenderer
@@ -73,7 +73,8 @@ const Bio = () => {
         username={username}
         website={website}
       />
-    </section>
+      <hr />
+    </FullWidthRow>
   );
 };
 export default Bio;
