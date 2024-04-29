@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Use Code-related Concepts and Terms
 block: learn-how-to-use-code-related-concepts-and-terms
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Use Code-related Concepts and Terms

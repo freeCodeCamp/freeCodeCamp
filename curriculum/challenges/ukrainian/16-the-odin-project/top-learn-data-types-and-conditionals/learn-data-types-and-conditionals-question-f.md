@@ -1,26 +1,26 @@
 ---
 id: 65e97267484dd50f720e6feb
-title: Learn Data Types and Conditionals Question F
+title: Вивчіть типи даних та умови. Запитання F
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-f
 ---
 
 # --description--
 
-You know that JavaScript has a variety of data types, including strings, numbers and booleans. You can use comparison operators to compare these data types and make decisions based on the results.
+Ви знаєте, що JavaScript має багато типів даних, включно з рядками, числами і булевими значеннями. Щоб порівняти ці типи даних та прийняти рішення на основі результатів, можна використати оператори порівняння.
 
-The following comparison operators are available in JavaScript:
+В JavaScript доступні наступні оператори порівняння:
 
-| Operator | Description              | Example |
-| -------- | ------------------------ | ------- |
-| ==       | Equal (value comparison) | x == y  |
-| !=       | Not equal                | x != y  |
-| >        | Greater than             | x > y   |
-| <        | Less than                | x < y   |
-| >=       | Greater than or equal to | x >= y  |
-| <=       | Less than or equal to    | x <= y  |
+| Оператор | Опис                          | Приклад |
+| -------- | ----------------------------- | ------- |
+| ==       | Дорівнює (порівняння значень) | x == y  |
+| !=       | Не дорівнює                   | x != y  |
+| >        | Більше ніж                    | x > y   |
+| <        | Менше ніж                     | x < y   |
+| >=       | Більше або дорівнює           | x >= y  |
+| <=       | Менше або дорівнює            | x <= y  |
 
-To use a comparison in a variable assignment, you can use the `==` operator. For example:
+Щоб використати порівняння в присвоєнні змінної, можна використати оператор `==`. Наприклад:
 
 ```javascript
 let x = 5;
@@ -36,7 +36,7 @@ console.log(result); // true
 
 ## --text--
 
-Which of the following is the correct way to check if the variable `x` is equal to the number `5` in JavaScript?
+Як правильно перевірити, чи змінна `x` дорівнює числу `5` в JavaScript?
 
 ## --answers--
 

@@ -27,7 +27,7 @@ Non dovresti accedere direttamente all'oggetto `users`
 
 ```js 
 
-assert(code.match(/users/gm).length <= 2)
+assert(__helpers.removeJSComments(code).match(/users/gm).length <= 2)
 
 ```
 

@@ -60,7 +60,7 @@ assert(testNotEqual('bob') === 'Not Equal');
 `!=` 演算子を使用してください。
 
 ```js
-assert(code.match(/(?!!==)!=/));
+assert(__helpers.removeJSComments(code).match(/(?!!==)!=/));
 ```
 
 # --seed--

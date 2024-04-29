@@ -67,6 +67,10 @@ function ShortcutsModal({
               <td>CTRL/Command + Enter</td>
             </tr>
             <tr>
+              <td>{t('shortcuts.play-scene')}</td>
+              <td>CTRL + Space</td>
+            </tr>
+            <tr>
               <td>{t('shortcuts.focus-editor')}</td>
               <td>e</td>
             </tr>

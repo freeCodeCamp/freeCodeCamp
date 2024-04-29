@@ -27,13 +27,13 @@ assert(result === 'Hello, World!');
 解答では `String.prototype.trim()` メソッドを使用しないでください。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?trim/));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?trim/));
 ```
 
 `result` 変数に文字列を直接設定しないでください。
 
 ```js
-assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
+assert(!__helpers.removeJSComments(code).match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
 `hello` 変数の値は変更しないでください。

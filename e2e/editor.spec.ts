@@ -29,7 +29,7 @@ test.describe('Editor Component', () => {
     browserName
   }) => {
     await page.goto(
-      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
     );
 
     await focusEditor({ page, isMobile, browserName });

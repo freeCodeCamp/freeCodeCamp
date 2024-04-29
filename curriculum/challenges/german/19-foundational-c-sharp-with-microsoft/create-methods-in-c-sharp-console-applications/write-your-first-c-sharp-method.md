@@ -1,26 +1,26 @@
 ---
 id: 647e226a8acb466c97ccbef1
-title: 'Write Your First C# Method'
+title: 'Schreibe Deine Erste C#-Methode'
 challengeType: 19
 dashedName: write-your-first-c-sharp-method
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/write-first-c-sharp-method/</a> and complete all the tasks for the "Write Your First C# Method" module. This is **required** to earn the "Create Methods in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/write-first-c-sharp-method/</a> und löse alle Aufgaben für das Modul "Schreibe deine erste C#-Methode". Dies ist **erforderlich**, um die Trophäe "Create Methods in C# Console Applications" auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">Write Your First C# Method</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">Schreibe deine erste C#-Methode</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-Which of the following correctly declares a method?
+Welche der folgenden Optionen deklariert eine Methode korrekt?
 
 ## --answers--
 

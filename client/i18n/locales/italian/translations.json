@@ -57,6 +57,7 @@
     "run-test": "Esegui i test (Ctrl + Invio)",
     "check-code": "Verifica il tuo codice (Ctrl + Invio)",
     "check-code-2": "Verifica il tuo codice",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Resetta",
     "reset-step": "Resetta questo step",
     "help": "Guida",
@@ -95,7 +96,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement"
+    "skip-advertisement": "Skip Advertisement",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -385,8 +387,8 @@
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "Ho cercato <0>domande simili che hanno già ricevuto risposta sul forum</0>",
-    "minimum-characters": "Aggiungi un minimo di {{characters}} caratteri",
-    "characters-left": "{{characters}} caratteri rimanenti",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
     "must-confirm-statements": "Devi confermare le seguenti dichiarazioni prima di poter inviare il tuo post al forum.",
     "min-50-max-500": "minimo 50 caratteri, massimo 500 caratteri",
     "rsa": "Leggi, cerca, chiedi",
@@ -727,7 +729,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} esempio di codice",
-    "opens-new-window": "Apri in una nuova finestra"
+    "opens-new-window": "Apri in una nuova finestra",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
@@ -801,6 +805,7 @@
     "challenge-submit-too-big": "Ci dispiace, non puoi consegnare il tuo codice. Il tuo codice è {{user-size}} byte. Il massimo è di {{max-size}} byte. Per cortesia rendi il tuo codice più piccolo o richiedi assistenza a https://forum.freecodecamp.org",
     "invalid-update-flag": "Stai cercando di accedere a risorse proibite. Per favore richiedi assistenza su https://forum.freecodecamp.org se questa è una richiesta valida.",
     "generate-exam-error": "An error occurred trying to generate your exam.",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -1002,7 +1007,7 @@
     "user-agent": "Lo user agent è: <code>{{userAgent}}</code>",
     "challenge": "Challenge Information:",
     "whats-happening": "Tell us what's happening:",
-    "describe": "Descrivi qui il tuo problema in dettaglio.",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "Your project link(s)",
     "camper-code": "Your code so far",
     "warning": "ATTENZIONE",
@@ -1034,8 +1039,9 @@
     "execute-challenge": "Esegui Sfida",
     "focus-editor": "Focus Editor",
     "focus-instructions-panel": "Focus sul pannello delle istruzioni",
-    "navigate-previous": "Passa all'esercizio precedente",
-    "navigate-next": "Passa all'esercizio successivo"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Esci dal tuo account",

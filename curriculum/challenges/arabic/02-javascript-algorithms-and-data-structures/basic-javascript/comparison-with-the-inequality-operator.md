@@ -60,7 +60,7 @@ assert(testNotEqual('bob') === 'Not Equal');
 يجب عليك استخدام المشغل `!=`
 
 ```js
-assert(code.match(/(?!!==)!=/));
+assert(__helpers.removeJSComments(code).match(/(?!!==)!=/));
 ```
 
 # --seed--

@@ -38,25 +38,25 @@ assert(myVar === 10);
 `myVar = myVar - 1;` を書き換える必要があります。
 
 ```js
-assert(!code.match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
 ```
 
 `myVar` に `10` を代入してはいけません。
 
 ```js
-assert(!code.match(/myVar\s*=\s*10.*?;?/));
+assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*10.*?;?/));
 ```
 
 `myVar` には `--` 演算子を使用する必要があります。
 
 ```js
-assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
+assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 指定されたコメントより上のコードを変更してはいけません。
 
 ```js
-assert(/let myVar = 11;/.test(code));
+assert(/let myVar = 11;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -39,7 +39,7 @@ dashedName: finding-a-remainder-in-javascript
 変数 `remainder` を初期化する必要があります。
 
 ```js
-assert(/(const|let|var)\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(__helpers.removeJSComments(code)));
 ```
 
 `remainder` の値は `2` になる必要があります。
@@ -51,7 +51,7 @@ assert(remainder === 2);
 `%` 演算子を使用してください。
 
 ```js
-assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

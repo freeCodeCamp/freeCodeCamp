@@ -66,7 +66,7 @@ assert(
 應使用 `class` 關鍵字。
 
 ```js
-assert(code.match(/class/g));
+assert(__helpers.removeJSComments(code).match(/class/g));
 ```
 
 `Vegetable` 可以被實例化。

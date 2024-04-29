@@ -51,7 +51,7 @@ assert(repeatStringNumTimes('abc', -2) === '');
 Die built-in Methode `repeat()` sollte hier nicht verwendet werden.
 
 ```js
-assert(!/\.repeat/g.test(code));
+assert(!/\.repeat/g.test(__helpers.removeJSComments(code)));
 ```
 
 `repeatStringNumTimes("abc", 0)` sollte `""` zurückgeben.

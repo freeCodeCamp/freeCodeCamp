@@ -43,7 +43,7 @@ assert(dog.sayLegs() === 'This dog has 4 legs.');
 應該使用 `this` 關鍵字來訪問 `dog` 對象的 `numLegs` 屬性值。
 
 ```js
-assert(code.match(/this\.numLegs/g));
+assert(__helpers.removeJSComments(code).match(/this\.numLegs/g));
 ```
 
 # --seed--

@@ -39,7 +39,7 @@ In mathematics, a number can be checked to be even or odd by checking the remain
 يجب تهيئة المتغير `remainder`. بمعنى آخر، يجب أن يكون initialized
 
 ```js
-assert(/(const|let|var)\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن تكون قيمة `remainder` تساوي `2`
@@ -51,7 +51,7 @@ assert(remainder === 2);
 يجب عليك استخدام المشغل `%`
 
 ```js
-assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

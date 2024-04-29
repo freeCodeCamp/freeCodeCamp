@@ -95,6 +95,7 @@ export type HotkeysProps = Pick<
     setEditorFocusability: (arg0: boolean) => void;
     setIsAdvancing: (arg0: boolean) => void;
     openShortcutsModal: () => void;
+    playScene?: () => void;
     user: User;
   };
 
@@ -114,6 +115,7 @@ function Hotkeys({
   tests,
   usesMultifileEditor,
   openShortcutsModal,
+  playScene,
   user: { keyboardShortcuts },
   isHelpModalOpen,
   isResetModalOpen,
@@ -137,7 +139,8 @@ function Hotkeys({
     focusInstructionsPanel: 'r',
     navigatePrev: ['p'],
     navigateNext: ['n'],
-    showShortcuts: 'shift+/'
+    showShortcuts: 'shift+/',
+    playScene: ['ctrl+space']
   };
 
   const handlers = {
@@ -168,6 +171,11 @@ function Hotkeys({
     },
     ...(keyboardShortcuts
       ? {
+          showShortcuts: (keyEvent?: KeyboardEvent) => {
+            if (keyEvent?.key === '?') {
+              openShortcutsModal();
+            }
+          },
           focusEditor: (keyEvent?: KeyboardEvent) => {
             keyEvent?.preventDefault();
             if (editorRef && editorRef.current) {
@@ -200,10 +208,9 @@ function Hotkeys({
               }
             }
           },
-          showShortcuts: (keyEvent?: KeyboardEvent) => {
-            if (!canFocusEditor && keyEvent?.key === '?') {
-              openShortcutsModal();
-            }
+          playScene: () => {
+            if (!playScene) return;
+            playScene();
           }
         }
       : {})

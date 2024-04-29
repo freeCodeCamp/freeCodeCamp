@@ -30,20 +30,20 @@ Converta a lógica para usar instruções `else if`.
 Você deve ter pelo menos duas instruções `else`
 
 ```js
-assert(code.match(/else/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 1);
 ```
 
 Você deve ter pelo menos duas instruções `if`
 
 ```js
-assert(code.match(/if/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 1);
 ```
 
 Você deve ter chaves de abertura e fechamento para cada bloco de código de `if else`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s+if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/
   )
 );

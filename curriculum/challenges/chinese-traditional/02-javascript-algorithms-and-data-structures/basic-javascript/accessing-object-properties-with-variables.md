@@ -56,19 +56,19 @@ assert(player === 'Montana');
 你應該使用括號表示法來訪問 `testObj`。
 
 ```js
-assert(/testObj\s*?\[.*?\]/.test(code));
+assert(/testObj\s*?\[.*?\]/.test(__helpers.removeJSComments(code)));
 ```
 
 你不應將值 `Montana` 直接分配給變量 `player`。
 
 ```js
-assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
+assert(!__helpers.removeJSComments(code).match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
 你應該在括號符號中使用變量 `playerNumber`。
 
 ```js
-assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

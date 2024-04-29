@@ -53,19 +53,19 @@ assert.deepEqual(
 `htmlColorNames` 関数で `splice()` メソッドを使用する必要があります。
 
 ```js
-assert(/.splice/.test(code));
+assert(/.splice/.test(__helpers.removeJSComments(code)));
 ```
 
 `shift()` または `unshift()` は使用しないでください。
 
 ```js
-assert(!/shift|unshift/.test(code));
+assert(!/shift|unshift/.test(__helpers.removeJSComments(code)));
 ```
 
 配列ブラケット記法は使用しないでください。
 
 ```js
-assert(!/\[\d\]\s*=/.test(code));
+assert(!/\[\d\]\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

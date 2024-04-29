@@ -33,7 +33,7 @@ Use the `split` method inside the `splitify` function to split `str` into an arr
 Your code should use the `split` method.
 
 ```js
-assert(code.match(/\.split/g));
+assert(__helpers.removeJSComments(code).match(/\.split/g));
 ```
 
 `splitify("Hello World,I-am code")` should return `["Hello", "World", "I", "am", "code"]`.

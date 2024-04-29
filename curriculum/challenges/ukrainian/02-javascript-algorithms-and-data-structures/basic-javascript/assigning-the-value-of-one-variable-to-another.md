@@ -29,7 +29,7 @@ myNum = myVar;
 Не змінюйте код над зазначеним коментарем.
 
 ```js
-assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
 ```
 
 `b` повинна мати значення `7`.
@@ -41,7 +41,7 @@ assert(typeof b === 'number' && b === 7);
 `a` повинна бути присвоєною до `b` за допомогою `=`.
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(code));
+assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

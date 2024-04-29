@@ -39,7 +39,7 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 代码中不应使用 `Array.prototype.flat()` 或 `Array.prototype.flatMap()` 方法。
 
 ```js
-assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+assert(!__helpers.removeJSComments(code).match(/\.\s*flat\s*\(/) && !__helpers.removeJSComments(code).match(/\.\s*flatMap\s*\(/));
 ```
 
 不应使用全局变量。

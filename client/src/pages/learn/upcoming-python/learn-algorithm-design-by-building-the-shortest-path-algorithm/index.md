@@ -2,7 +2,6 @@
 title: Introduction to the Learn Algorithm Design by Building the Shortest Path Algorithm
 block: learn-algorithm-design-by-building-the-shortest-path-algorithm
 superBlock: upcoming-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Algorithm Design by Building the Shortest Path Algorithm

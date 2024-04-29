@@ -7,20 +7,20 @@ dashedName: implement-exception-handling-in-c-sharp-console-applications
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
 1. Go to <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/</a> and complete all the tasks for the "Implement Exception Handling in C# Console Applications" module. This is **required** to earn the "Debug C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Implement Exception Handling in C# Console Applications</a> module on Microsoft Learn. Then, answer the question below.
+Complete the <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Implement Exception Handling in C# Console Applications</a> module on Microsoft Learn. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-When is an `ArrayTypeMismatchException` exception thrown?
+Wann wird eine `ArrayTypeMismatchException`-Ausnahme ausgelöst?
 
 ## --answers--
 

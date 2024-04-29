@@ -1,3 +1,5 @@
+import { execSync } from 'child_process';
+
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
@@ -26,12 +28,6 @@ test.describe('Email sign-up page when user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
   test.beforeEach(async ({ page }) => {
-    // Intercept the endpoint to prevent `acceptedPrivacyTerms` from being set
-    await page.route('*/**/update-privacy-terms', async route => {
-      const json = [{ message: 'flash.privacy-updated', type: 'success' }];
-      await route.fulfill({ json });
-    });
-
     await page.goto('/email-sign-up');
   });
 
@@ -58,14 +54,8 @@ test.describe('Email sign-up page when user is not signed in', () => {
   });
 
   test("should not enable Quincy's weekly newsletter when the user clicks the sign up button", async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(
-      browserName === 'webkit',
-      'user appears to not signed in on Webkit'
-    );
-
     await expect(page).toHaveTitle('Email Sign Up | freeCodeCamp.org');
     await expect(
       page.getByText(
@@ -104,28 +94,13 @@ test.describe('Email sign-up page when user is not signed in', () => {
 test.describe('Email sign-up page when user is signed in', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test.beforeEach(async ({ page, browserName }) => {
-    test.skip(
-      browserName === 'webkit',
-      'user appears to not signed in on Webkit'
+  test.beforeEach(async ({ page }) => {
+    // It's necessary to seed with a user that has not accepted the privacy
+    // terms, otherwise the user will be redirected away from the email sign-up
+    // page.
+    execSync(
+      'node ./tools/scripts/seed/seed-demo-user certified-user --unset-privacy-terms'
     );
-
-    await page.route('*/**/user/get-session-user', async route => {
-      const response = await route.fetch();
-      const json = await response.json();
-
-      // /email-sign-up is only accessible if `acceptedPrivacyTerms` is `false`.
-      // We need to patch the response in order to access the page.
-      json.user.certifieduser.acceptedPrivacyTerms = false;
-      json.user.certifieduser.sendQuincyEmail = false;
-      await route.fulfill({ json });
-    });
-
-    // Intercept the endpoint to prevent `acceptedPrivacyTerms` from being set
-    await page.route('*/**/update-privacy-terms', async route => {
-      const json = [{ message: 'flash.privacy-updated', type: 'success' }];
-      await route.fulfill({ json });
-    });
 
     await page.goto('/email-sign-up');
   });
@@ -153,14 +128,8 @@ test.describe('Email sign-up page when user is signed in', () => {
   });
 
   test("should disable Quincy's weekly newsletter if the user clicks No", async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(
-      browserName === 'webkit',
-      'user appears to not signed in on Webkit'
-    );
-
     await expect(page).toHaveTitle('Email Sign Up | freeCodeCamp.org');
     await expect(
       page.getByText(

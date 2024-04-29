@@ -169,10 +169,12 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
     showProjectPreview:
       challengeOrder === 0 &&
       usesMultifileEditor &&
+      // TODO: handle the special cases better. Create a meta property for
+      // showProjectPreview, maybe? Then we can remove all the following cases
       challengeType !== challengeTypes.multifileCertProject &&
       challengeType !== challengeTypes.multifilePythonCertProject &&
-      // TODO: revert this to enable project previews for python challenges
-      challengeType !== challengeTypes.python,
+      challengeType !== challengeTypes.python &&
+      challengeType !== challengeTypes.js,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles

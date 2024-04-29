@@ -32,7 +32,7 @@ O método `resolve` deve ser chamado com a string informada anteriormente quando
 
 ```js
 assert(
-  code.match(/if\s*\(\s*responseFromServer\s*\)\s*{\s*resolve\s*\(\s*('|"|`)We got the data\1\s*\)(\s*|\s*;\s*)}/g)
+  __helpers.removeJSComments(code).match(/if\s*\(\s*responseFromServer\s*\)\s*{\s*resolve\s*\(\s*('|"|`)We got the data\1\s*\)(\s*|\s*;\s*)}/g)
 );
 ```
 
@@ -40,7 +40,7 @@ O método `reject` deve ser chamado com a string informada anteriormente quando 
 
 ```js
 assert(
-  code.match(/}\s*else\s*{\s*reject\s*\(\s*('|"|`)Data not received\1\s*\)(\s*|\s*;\s*)}/g)
+  __helpers.removeJSComments(code).match(/}\s*else\s*{\s*reject\s*\(\s*('|"|`)Data not received\1\s*\)(\s*|\s*;\s*)}/g)
 );
 ```
 

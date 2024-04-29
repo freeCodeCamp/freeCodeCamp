@@ -64,7 +64,7 @@ assert(drinkValue === 'water');
 ブラケット記法を 2 回使用する必要があります。
 
 ```js
-assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ```
 
 # --seed--

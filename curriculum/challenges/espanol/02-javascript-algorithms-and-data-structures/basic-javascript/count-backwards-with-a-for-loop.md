@@ -34,13 +34,13 @@ Inserta los números impares desde el 9 hasta el 1 en `myArray` utilizando un bu
 Debes utilizar un bucle `for` para esto.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 Debes utilizar el método de arreglo `push`.
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 `myArray` debe ser igual a `[9, 7, 5, 3, 1]`.
