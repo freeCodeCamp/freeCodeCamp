@@ -153,6 +153,7 @@ jobs:
         run: |
           docker compose up -d
           sleep 10
+          docker compose logs
           npx playwright test --project=${{ matrix.browsers }}
 
       - uses: actions/upload-artifact@v4
