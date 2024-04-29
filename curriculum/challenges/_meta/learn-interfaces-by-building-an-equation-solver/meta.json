@@ -1,0 +1,45 @@
+{
+  "name": "Learn Interfaces by Building an Equation Solver",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-interfaces-by-building-an-equation-solver",
+  "order": 15,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 10,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "662a6bc12cde72c32fb526f0",
+      "title": "Step 1"
+    },
+    {
+      "id": "662bd456896f16d9bd03f1a6",
+      "title": "Step 2"
+    },
+    {
+      "id": "662bd552e1c1d2db1b88ba47",
+      "title": "Step 3"
+    },
+    {
+      "id": "662bd8260da84bdd5feae419",
+      "title": "Step 4"
+    },
+    {
+      "id": "662bdb24a63307df57b3dffe",
+      "title": "Step 5"
+    },
+    {
+      "id": "662bdd364bf2cde1487922a9",
+      "title": "Step 6"
+    },
+    {
+      "id": "662bde88dc84f1e249801b1a",
+      "title": "Step 7"
+    }
+  ],
+  "helpCategory": "Python"
+}
