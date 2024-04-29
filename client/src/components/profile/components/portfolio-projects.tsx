@@ -17,31 +17,39 @@ export const PortfolioProjects = ({
     return null;
   }
   return (
-    <>
-      <h2 className='text-center'>{t('profile.portfolio')}</h2>
+    <section aria-labelledby='portfolio-projects-header'>
+      <h2 id='portfolio-projects-header' className='text-center'>
+        {t('profile.projects')}
+      </h2>
       <div className='portfolio-field'>
         {portfolioProjects.map(({ title, url, image, description, id }) => (
-          <div className='portfolio-card' key={id}>
-            {image && (
+          <article className='portfolio-card' key={id}>
+            {image ? (
               <img
-                alt=''
+                alt={`Screenshot of project: ${title}`}
                 className='portfolio-card-image'
                 src={image}
                 onError={({ currentTarget }) => {
+                  currentTarget.alt = 'Default project image not found';
                   currentTarget.src =
                     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
                 }}
               />
+            ) : (
+              <div className='portfolio-card-placeholder'>
+                Image not available
+              </div>
             )}
             <div className='portfolio-card-description'>
               <h3>{title}</h3>
-              <p>{description}</p>
+              <p className='portfolio-description-text'>{description}</p>
               <div className='portfolio-button-container'>
                 <a
                   href={url}
                   rel='nofollow noopener noreferrer'
                   target='_blank'
                   className='portfolio-card-button'
+                  aria-label={`View ${title} (opens in a new window)`}
                 >
                   {t('buttons.view')}
                   <span className='sr-only'>
@@ -50,14 +58,15 @@ export const PortfolioProjects = ({
                   <FontAwesomeIcon
                     id='link-icon'
                     icon={faArrowUpRightFromSquare}
+                    aria-hidden='true'
                   />
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         ))}
         <hr />
       </div>
-    </>
+    </section>
   );
 };
