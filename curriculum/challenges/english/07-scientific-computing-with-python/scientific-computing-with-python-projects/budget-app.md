@@ -18,7 +18,7 @@ Complete the `Category` class. It should be able to instantiate objects based on
 
 When the budget object is printed it should display:
 
-- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
+- A title line of 30 characters where the name of the category is centered in a line of "*" characters.
 - A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
 - A line displaying the category total.
 
