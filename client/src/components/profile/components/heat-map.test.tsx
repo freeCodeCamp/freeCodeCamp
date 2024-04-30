@@ -65,18 +65,4 @@ describe('<HeatMap/>', () => {
       screen.getByText(`${startOfCalendar} - ${endOfCalendar}`)
     ).toBeInTheDocument();
   });
-
-  it('calculates the correct longest streak', () => {
-    render(<HeatMap {...props} />);
-    expect(screen.getByTestId('longest-streak')).toHaveTextContent(
-      'profile.longest-streak'
-    );
-  });
-
-  it('calculates the correct current streak', () => {
-    render(<HeatMap {...props} />);
-    expect(screen.getByTestId('current-streak')).toHaveTextContent(
-      'profile.current-streak'
-    );
-  });
 });

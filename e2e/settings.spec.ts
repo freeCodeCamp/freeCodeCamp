@@ -55,13 +55,11 @@ test.describe('Settings', () => {
     await page.goto('/settings');
   });
 
-  test('Should have the correct page title', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should have the correct page title', async ({ page }) => {
     await expect(page).toHaveTitle(settingsObject.pageTitle);
   });
 
-  test('Should display the correct header', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should display the correct header', async ({ page }) => {
     const header = page.getByTestId(settingsTestIds.settingsHeading);
     await expect(header).toBeVisible();
     await expect(header).toContainText(
@@ -72,8 +70,7 @@ test.describe('Settings', () => {
     );
   });
 
-  test('Should validate Username Settings', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Username Settings', async ({ page }) => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
     await expect(inputLabel).toBeVisible();
     await inputLabel.fill(settingsObject.testUser);
@@ -114,8 +111,7 @@ test.describe('Settings', () => {
     await expect(saveButton).toBeVisible();
   });
 
-  test('Should validate Privacy Settings', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Privacy Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.privacy
@@ -220,11 +216,7 @@ test.describe('Settings', () => {
     await expect(downloadButton).toBeVisible();
   });
 
-  test('Should validate Internet Presence Settings', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Internet Presence Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.internet
@@ -239,8 +231,7 @@ test.describe('Settings', () => {
     await expect(saveButton).toBeVisible();
   });
 
-  test('Should validate Portfolio Settings', async ({ page, browserName }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Portfolio Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.portfolio
@@ -289,11 +280,7 @@ test.describe('Settings', () => {
     await expect(removeButton).toBeHidden();
   });
 
-  test('Should validate Personal Information Settings', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Personal Information Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings['personal-info']
@@ -344,11 +331,7 @@ test.describe('Settings', () => {
     ).toBeVisible();
   });
 
-  test('Should validate Academy Honesty Settings', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Academy Honesty Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.honesty
@@ -390,11 +373,7 @@ test.describe('Settings', () => {
     ).toBeVisible();
   });
 
-  test('Should validate Certification Settings', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Certification Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.certs,
@@ -416,11 +395,7 @@ test.describe('Settings', () => {
     }
   });
 
-  test('Should validate Legacy Certification Settings', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Legacy Certification Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings['legacy-certs'],
@@ -443,11 +418,7 @@ test.describe('Settings', () => {
     }
   });
 
-  test('Should validate Danger Section Settings', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+  test('Should validate Danger Section Settings', async ({ page }) => {
     await expect(
       page.getByText(translations.settings.danger.heading, {
         exact: true

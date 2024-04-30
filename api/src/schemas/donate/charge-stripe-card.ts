@@ -14,7 +14,10 @@ export const chargeStripeCard = {
     400: Type.Object({
       error: Type.Object({
         message: Type.String(),
-        type: Type.Literal('AlreadyDonatingError')
+        type: Type.Union([
+          Type.Literal('AlreadyDonatingError'),
+          Type.Literal('MethodRestrictionError')
+        ])
       })
     }),
     402: Type.Object({

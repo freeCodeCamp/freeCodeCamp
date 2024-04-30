@@ -166,7 +166,7 @@ Tu elemento `#navbar` siempre debe estar en la parte superior del viewport.
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-Tumia vipengele vya orodha (`li`) ili kuunda vitu katika orodha. Hapa kuna mfano wa vitu vya orodha katika orodha isiyopangwa:
+The `li` element is used to create a list item in an ordered or unordered list.
+
+Here is an example of list items in an unordered list:
 
 ```html
 <ul>
@@ -16,19 +18,19 @@ Tumia vipengele vya orodha (`li`) ili kuunda vitu katika orodha. Hapa kuna mfano
 </ul>
 ```
 
-Ndani ya kipengee cha `ul` ongeza orodha ya vitu tatu ili kuonyesha mambo matatu ambayo paka hupenda:
+Within the `ul` element nest three list items to display three things cats love:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-Unapaswa kuwa na vipengele vitatu vya `li`. Kila kipengele cha `li` kinafaa kuwa na tagi yake ya kufungua na kufunga.
+You should have three `li` elements. Each `li` element should have its own opening and closing tag.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-Unapaswa kuwa na vipengele vitatu vya `li` vyenye maandishi `cat nip`, `laser pointers` na `lasagna` kwa mpangilio wowote. Aidha umesahau maandishi, au kuna makosa ya maandishi.
+You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
@@ -39,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-Vipengele vitatu vya `li` vinapaswa kupatikana kati ya tagi za kufungua na kufunga za kipengele `ul`.
+The three `li` elements should be located between the `ul` element's opening and closing tags.
 
 ```js
 assert(
