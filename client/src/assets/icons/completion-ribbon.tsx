@@ -14,13 +14,7 @@ export const Arrow = () => (
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
-    <g filter='url(#filter0_d_108_7)'>
-      <path
-        d='M7 0V30'
-        stroke='var(--secondary-color)'
-        strokeDasharray='6 1.3'
-      />
-    </g>
+    <path d='M7 0V30' stroke='var(--secondary-color)' strokeDasharray='6 1.3' />
     <path
       d='M7.71803 30.3038L1.57973 24.1655L0.87262 24.8726L7.01092 31.0109L7.71803 30.3038Z'
       fill='var(--secondary-color)'
@@ -81,18 +75,19 @@ export const RibbonIcon = ({
           strokeWidth='3'
         />
       )}
-      <text
-        x='48%'
-        y='40%'
-        fontFamily='lato'
-        color={textColor}
-        fontSize='1.0rem'
-        fill={textColor}
-        textAnchor='middle'
-        alignmentBaseline='central'
-      >
-        {value}
-      </text>
+      <g>
+        <text
+          x='48%'
+          y='55%'
+          fontFamily='lato'
+          color={textColor}
+          fontSize='1.0rem'
+          fill={textColor}
+          textAnchor='middle'
+        >
+          {value}
+        </text>
+      </g>
     </svg>
   );
 };
