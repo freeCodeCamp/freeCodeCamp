@@ -23,6 +23,7 @@
 
 .header {
   font-size: 26px;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 600px) {
