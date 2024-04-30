@@ -1,8 +1,18 @@
 services:
   mongo:
     image: mongo
-    ports:
-      - '27017:27017'
+    command: mongod --replSet rs0
+  setup:
+    image: mongo
+    depends_on:
+      - mongo
+    restart: on-failure
+    entrypoint: [
+        'bash',
+        '-c',
+        # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+        'mongosh --host mongo:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
+      ]
   mailhog:
     restart: unless-stopped
     image: mailhog/mailhog
@@ -10,6 +20,7 @@ services:
       - '1025:1025'
       - '8025:8025'
   api:
+    restart: unless-stopped
     depends_on:
       - mongo
       - mailhog
