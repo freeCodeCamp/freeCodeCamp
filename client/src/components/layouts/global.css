@@ -372,7 +372,8 @@ fieldset[disabled] .btn-primary.focus {
   fill: var(--quaternary-background);
 }
 
-.link-btn.btn-lg:hover .map-icon .inverted-color {
+.link-btn.btn-lg:hover .map-icon .inverted-color,
+.map-arrow-icon {
   fill: var(--secondary-color);
 }
 
@@ -380,6 +381,10 @@ fieldset[disabled] .btn-primary.focus {
   width: 35px;
   max-height: 45px;
   margin-inline: 5px;
+}
+
+.map-arrow-icon {
+  stroke: var(--secondary-color);
 }
 
 .cert-header-icon {
@@ -568,7 +573,7 @@ blockquote .small {
   background-color: black;
 }
 
-/* 
+/*
  * /learn sets some default styles to all `h2`s.
  * These rules are to override the defaults and apply danger styles to `danger` modal.
  */
