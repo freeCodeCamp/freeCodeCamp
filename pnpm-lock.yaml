@@ -6260,8 +6260,8 @@ packages:
       react: 16.14.0
     dev: false
 
-  /@freecodecamp/curriculum-helpers@3.3.1:
-    resolution: {integrity: sha512-4cnLhXF7OOdjbB4TZrzx9VG2Khllde/Zh20hUKVt1KrjoH9wW1D2QdSAUjBFc//rGWJqB7DR4aVD2J5llxcxzw==}
+  /@freecodecamp/curriculum-helpers@3.3.2:
+    resolution: {integrity: sha512-a/z72Kyqul9bt+GGT5+fQbbdBkLiE6t4BSypzzeSdE4zKTLtpqmBtg1mNP/tv6b/iC0ItJZSlt5xtukjkJ3J0g==}
     engines: {npm: '>= 4.0.0'}
     dependencies:
       browserify: 17.0.0
