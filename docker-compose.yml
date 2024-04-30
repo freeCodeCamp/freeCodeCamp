@@ -2,12 +2,12 @@ services:
   mongo:
     image: mongo
     command: mongod --replSet rs0
+    ports:
+      - '27017:27017'
   setup:
     image: mongo
     depends_on:
       - mongo
-    ports:
-      - '27017:27017'
     restart: on-failure
     entrypoint: [
         'bash',
