@@ -28,7 +28,7 @@ Use the `slice` method in the `sliceArray` function to return part of the `anim`
 Your code should use the `slice` method.
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 The `inputAnim` variable should not change.

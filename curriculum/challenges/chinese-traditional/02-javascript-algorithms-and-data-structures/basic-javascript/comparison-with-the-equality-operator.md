@@ -58,7 +58,7 @@ assert(testEqual('12') === 'Equal');
 應該使用 `==` 運算符
 
 ```js
-assert(code.match(/==/g) && !code.match(/===/g));
+assert(__helpers.removeJSComments(code).match(/==/g) && !__helpers.removeJSComments(code).match(/===/g));
 ```
 
 # --seed--

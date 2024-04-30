@@ -63,13 +63,13 @@ assert(caseInSwitch(4) === 'delta');
 不能使用任何 `if` 或 `else` 表达式
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 你应该有至少 3 个 `break` 表达式
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

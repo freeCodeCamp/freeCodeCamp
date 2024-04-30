@@ -31,7 +31,7 @@ testRegex.test(testStr);
 Використайте `.test()`, щоб протестувати регулярний вираз.
 
 ```js
-assert(code.match(/myRegex.test\(\s*myString\s*\)/));
+assert(__helpers.removeJSComments(code).match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
 Результат має повернути `true`.

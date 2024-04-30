@@ -36,7 +36,7 @@ assert(product === 80);
 يجب عليك استخدام المشغل `*`.
 
 ```js
-assert(/\*/.test(code));
+assert(/\*/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

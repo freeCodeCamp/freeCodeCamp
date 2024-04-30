@@ -34,7 +34,7 @@ const a = parseInt("11", 2);
 يجب أن يستخدم `convertToInteger` وظيفة `parseInt()`
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن ينتج `convertToInteger("10011")` رقماً

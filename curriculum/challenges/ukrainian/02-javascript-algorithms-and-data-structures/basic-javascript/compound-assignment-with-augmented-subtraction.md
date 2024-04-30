@@ -48,14 +48,14 @@ assert(c === 2);
 Ви повинні використати оператор `-=` для кожної змінної.
 
 ```js
-assert(code.match(/-=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/-=/g).length === 3);
 ```
 
 Не змінюйте код над зазначеним коментарем.
 
 ```js
 assert(
-  /let a = 11;/.test(code) && /let b = 9;/.test(code) && /let c = 3;/.test(code)
+  /let a = 11;/.test(__helpers.removeJSComments(code)) && /let b = 9;/.test(__helpers.removeJSComments(code)) && /let c = 3;/.test(__helpers.removeJSComments(code))
 );
 ```
 

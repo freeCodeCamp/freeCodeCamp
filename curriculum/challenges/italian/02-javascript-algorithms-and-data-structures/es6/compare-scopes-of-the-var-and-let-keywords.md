@@ -87,13 +87,13 @@ Questo esercizio è progettato per illustrare la differenza tra il modo in cui l
 `var` non dovrebbe esistere nel codice.
 
 ```js
-assert(!code.match(/var/g));
+assert(!__helpers.removeJSComments(code).match(/var/g));
 ```
 
 La variabile `i` dichiarata nell'istruzione `if` dovrebbe essere uguale alla stringa `block scope`.
 
 ```js
-assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
+assert(__helpers.removeJSComments(code).match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` dovrebbe restituire la stringa `function scope`

@@ -35,7 +35,7 @@ assert(typeof myName !== 'undefined' && myName.length > 2);
 使用兩個 `+` 操作符創建包含 `myName` 的 `myStr` 變量。
 
 ```js
-assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 ```
 
 # --seed--

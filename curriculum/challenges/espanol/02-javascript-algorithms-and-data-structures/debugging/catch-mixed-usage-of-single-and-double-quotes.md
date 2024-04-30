@@ -37,13 +37,13 @@ Corrige la cadena para que use comillas diferentes para el valor de `href`, o re
 Tu código debe corregir las comillas alrededor del valor `href` `#Home` cambiándolas o escapándolas.
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 Tu código debe mantener las comillas dobles alrededor de toda la cadena.
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

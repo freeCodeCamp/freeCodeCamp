@@ -52,7 +52,7 @@ assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 A busca com a regex deve ser por uma string literal.
 
 ```js
-assert(!/\/.*\/i/.test(code));
+assert(!/\/.*\/i/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

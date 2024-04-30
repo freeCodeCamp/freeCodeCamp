@@ -69,9 +69,7 @@ test.describe('Your Internet Presence', () => {
       await expect(page.getByTestId(social.checkTestId)).toBeHidden();
     });
 
-    test(`should update ${social.name} URL`, async ({ browserName, page }) => {
-      test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-
+    test(`should update ${social.name} URL`, async ({ page }) => {
       const socialInput = page.getByLabel(social.label);
       await socialInput.fill(social.url);
       const socialCheckmark = page.getByTestId(social.checkTestId);

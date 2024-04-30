@@ -40,7 +40,7 @@ let newArray = array.splice(3, 2);
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
 );
 ```
 
@@ -56,14 +56,14 @@ assert.strictEqual(
 应对 `arr` 调用 `splice()` 方法。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(/));
 ```
 
 splice 应只删除 `arr` 里面的元素，不能给 `arr` 添加元素。
 
 ```js
 assert(
-  !__helpers.removeWhiteSpace(code).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
+  !__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
 );
 ```
 

@@ -77,7 +77,7 @@ assert(add(11)(22)(33) === 66);
 應返回 `x + y + z` 的最終結果。
 
 ```js
-assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
+assert(__helpers.removeJSComments(code).match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
 ```
 
 # --seed--

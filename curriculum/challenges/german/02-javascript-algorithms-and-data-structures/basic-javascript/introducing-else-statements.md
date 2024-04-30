@@ -28,13 +28,13 @@ Kombiniere die `if`-Anweisungen zu einer einzigen `if/else`-Anweisung.
 Du solltest nur eine `if`-Anweisung im Editor verwenden
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 Du solltest eine `else`-Anweisung verwenden
 
 ```js
-assert(/else/g.test(code));
+assert(/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 `testElse(4)` sollte den String `5 or Smaller` zurückgeben
@@ -64,7 +64,7 @@ assert(testElse(10) === 'Bigger than 5');
 Du solltest den Code nicht oberhalb oder unterhalb der angegebenen Kommentare ändern.
 
 ```js
-assert(/let result = "";/.test(code) && /return result;/.test(code));
+assert(/let result = "";/.test(__helpers.removeJSComments(code)) && /return result;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

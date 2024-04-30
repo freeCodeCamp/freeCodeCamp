@@ -31,7 +31,7 @@ testRegex.test(testStr);
 你應該使用 `.test()` 方法來檢測正則表達式。
 
 ```js
-assert(code.match(/myRegex.test\(\s*myString\s*\)/));
+assert(__helpers.removeJSComments(code).match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
 你的返回結果應該爲 `true`。

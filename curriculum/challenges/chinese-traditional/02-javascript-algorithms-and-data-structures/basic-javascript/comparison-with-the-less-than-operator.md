@@ -66,7 +66,7 @@ assert(testLessThan(99) === '55 or Over');
 應該使用 `<` 運算符至少兩次
 
 ```js
-assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
 ```
 
 # --seed--

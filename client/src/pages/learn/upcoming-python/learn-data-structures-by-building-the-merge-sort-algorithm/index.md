@@ -2,7 +2,6 @@
 title: Introduction to the Learn Data Structures by Building the Merge Sort Algorithm
 block: learn-data-structures-by-building-the-merge-sort-algorithm
 superBlock: upcoming-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Data Structures by Building the Merge Sort Algorithm

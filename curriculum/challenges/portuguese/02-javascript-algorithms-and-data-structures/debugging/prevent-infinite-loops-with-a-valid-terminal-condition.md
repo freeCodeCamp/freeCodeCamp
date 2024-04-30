@@ -31,13 +31,13 @@ A função `myFunc()` contém um laço infinito porque a condição de parada `i
 O código deve alterar o operador de comparação na condição de parada (parte do meio) do laço `for`.
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 O código deve corrigir o operador de comparação na condição de parada do laço.
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

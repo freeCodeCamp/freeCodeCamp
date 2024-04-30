@@ -31,7 +31,7 @@ Verwende die Methode `every` innerhalb der Funktion `checkPositive`, um zu prüf
 Dein Code sollte die Methode `every` verwenden.
 
 ```js
-assert(code.match(/\.every/g));
+assert(__helpers.removeJSComments(code).match(/\.every/g));
 ```
 
 `checkPositive([1, 2, 3, -4, 5])` sollte `false` zurückgeben.

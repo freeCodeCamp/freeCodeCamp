@@ -30,20 +30,20 @@ Converti la logica per usare le istruzioni `else if`.
 Dovresti avere almeno due istruzioni `else`
 
 ```js
-assert(code.match(/else/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 1);
 ```
 
 Dovresti avere almeno due istruzioni `if`
 
 ```js
-assert(code.match(/if/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 1);
 ```
 
 Dovresti avere una parentesi graffa di apertura e una di chiusura per ogni blocco di codice `if else`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s+if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/
   )
 );
