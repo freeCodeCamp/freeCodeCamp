@@ -11,8 +11,18 @@
 }
 
 .stats dd {
-  font-size: 2rem;
+  font-size: 48px;
+  font-weight: 300;
   margin-top: 16px;
+}
+
+.stats b {
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+}
+
+.header {
+  font-size: 26px;
 }
 
 @media (max-width: 600px) {

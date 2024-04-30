@@ -112,7 +112,8 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
 
   return (
     <FullWidthRow>
-      <h2 className='text-center'>Stats</h2>
+      <hr />
+      <h2 className='header'>Stats</h2>
       <Spacer size='small' />
       <dl className='stats'>
         <div>
