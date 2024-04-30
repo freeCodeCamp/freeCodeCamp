@@ -2,8 +2,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
-  width: fit-content;
-  margin: 0 auto;
+}
+
+#portfolio-projects-header {
+  margin-bottom: 5rem;
 }
 
 .portfolio-card {
@@ -31,11 +33,9 @@
 }
 
 .portfolio-card-image {
-  width: 335px;
+  width: 333px;
   height: 200px;
   object-fit: cover;
-  grid-column: 2 / -1;
-  grid-row: 1;
 }
 
 .portfolio-card-button {
