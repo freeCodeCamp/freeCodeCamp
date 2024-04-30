@@ -116,7 +116,7 @@ test.describe('Profile component', () => {
   });
 
   test('renders total points correctly', async ({ page }) => {
-    await expect(page.getByText('Total Points:')).toBeVisible();
+    await expect(page.getByText('Total Points')).toBeVisible();
   });
 
   // The date range computation in this test doesn't match the implementation code,
