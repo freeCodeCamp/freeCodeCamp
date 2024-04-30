@@ -36,7 +36,7 @@ while (i < 5) {
 你应该使用 `while` 循环。
 
 ```js
-assert(code.match(/while/g));
+assert(__helpers.removeJSComments(code).match(/while/g));
 ```
 
 `myArray` 应该等于 `[5, 4, 3, 2, 1, 0]`。

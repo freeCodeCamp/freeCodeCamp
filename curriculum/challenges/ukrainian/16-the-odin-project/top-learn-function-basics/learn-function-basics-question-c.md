@@ -1,13 +1,13 @@
 ---
 id: 6617aee05b87c334e7ae8014
-title: Learn Function Basics Question C
+title: Вивчіть основи функцій. Запитання C
 challengeType: 15
 dashedName: learn-function-basics-question-c
 ---
 
 # --description--
 
-A variable declared inside a function is only visible inside a function. This is called the scope of the variable, this particular scope is called the local scope. Variables declared outside of a function are called global variables and are visible throughout the program. For example, the following code will raise an error:
+Змінна, оголошена в межах функції, видима лише в функції. Це називається областю видимості змінної, а саме ця область називається локальною. Змінні, оголошені поза функцією, називаються глобальними і вони видимі в програмі. Наприклад, такий код видасть помилку:
 
 ```js
 function myFunction() {
@@ -17,9 +17,9 @@ function myFunction() {
 console.log(x);
 ```
 
-The variable `x` is declared inside the function `myFunction` and is not visible outside of the function. The code will raise a `ReferenceError` because `x` is not defined.
+Змінна `x` оголошена в межах функції `myFunction` та не видима поза функцією. Код видасть помилку `ReferenceError`, оскільки `x` не визначена.
 
-If you declare a variable outside of a function, it is called a global variable and is visible throughout the program. For example, the following code will work:
+Якщо оголосити змінну поза функцією, то вона називатиметься глобальною та буде видимою в програмі. Наприклад, такий код працюватиме:
 
 ```js
 let x = 10;
@@ -31,13 +31,13 @@ function myFunction() {
 myFunction();
 ```
 
-If a same-named variable is declared inside the function then it shadows the outer one.
+Якщо у функції оголошено змінну з тією ж назвою, що змінна поза її межами, то змінна всередині затьмарює іншу.
 
 # --question--
 
 ## --text--
 
-What will be the output of the following code?
+Як буде виглядати результат виконання даного коду?
 
 ```js
 let x = 10;

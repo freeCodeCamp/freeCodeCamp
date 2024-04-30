@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 Não deve haver instâncias de variáveis com ortografia incorreta no código.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 A variável `receivables` deve ser declarada e usada corretamente no código.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 Não deve haver instâncias de variáveis com ortografia incorreta no código.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 A variável `payables` deve ser declarada e usada corretamente no código.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

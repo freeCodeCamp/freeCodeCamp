@@ -21,7 +21,7 @@ Correggi gli errori delle due coppie nel codice.
 Il tuo codice dovrebbe aggiungere la parte mancante dell'array.
 
 ```js
-assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
+assert(__helpers.removeJSComments(code).match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 ```
 
 Il tuo codice dovrebbe correggere la parte mancante del metodo `.reduce()`. L'output su console dovrebbe mostrare che `Sum of array values is: 6`.

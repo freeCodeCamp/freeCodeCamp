@@ -60,7 +60,7 @@ assert(logOutput == 16);
 ```js
 assert(
   /functionWithArgs\([-+]?\d*\.?\d*,[-+]?\d*\.?\d*\)/.test(
-    code.replace(/\s/g, '')
+    __helpers.removeJSComments(code).replace(/\s/g, '')
   )
 );
 ```

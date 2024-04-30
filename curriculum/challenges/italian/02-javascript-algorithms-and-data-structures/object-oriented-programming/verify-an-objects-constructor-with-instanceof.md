@@ -53,7 +53,7 @@ assert(typeof myHouse.numBedrooms === 'number');
 Dovresti verificare che `myHouse` sia un'istanza di `House` usando l'operatore `instanceof`.
 
 ```js
-assert(/myHouse\s*instanceof\s*House/.test(code));
+assert(/myHouse\s*instanceof\s*House/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -46,13 +46,13 @@ assert(
 Il tuo codice dovrebbe utilizzare il metodo `filter`.
 
 ```js
-assert(code.match(/\s*\.\s*filter/g));
+assert(__helpers.removeJSComments(code).match(/\s*\.\s*filter/g));
 ```
 
 Il tuo codice non dovrebbe utilizzare un ciclo `for`.
 
 ```js
-assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/g));
 ```
 
 `filteredList` dovrebbe essere uguale a `[{"title": "Inception", "rating": "8.8"}, {"title": "Interstellar", "rating": "8.6"}, {"title": "The Dark Knight", "rating": "9.0"}, {"title": "Batman Begins", "rating": "8.3"}]`.

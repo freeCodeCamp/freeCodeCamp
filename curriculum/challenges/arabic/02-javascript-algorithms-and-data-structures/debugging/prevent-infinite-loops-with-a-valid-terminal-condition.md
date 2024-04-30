@@ -31,13 +31,13 @@ function loopy() {
 الكود الخاص بك يجب أن يغير مشغل المقارنة في حالة الشرط الانتهائي (الجزء الوسط) من حلقة `for`.
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 الكود الخاص بك يجب أن يصلح مشغل المقارنة (comparison operator) في حالة الشرط الانتهائي للحلقة (terminal condition of the loop).
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

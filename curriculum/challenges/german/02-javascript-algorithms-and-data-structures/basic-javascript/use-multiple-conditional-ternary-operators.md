@@ -54,7 +54,7 @@ In der Funktion `checkSign` verwendest du mehrere bedingte Operatoren - in Anleh
 `checkSign` sollte mehrere bedingte Operatoren verwenden
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(__helpers.removeJSComments(code)));
 ```
 
 `checkSign(10)` sollte den String `positive` zurückgeben. Beachte, dass die Großschreibung wichtig ist

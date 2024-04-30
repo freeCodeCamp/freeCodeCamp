@@ -28,7 +28,7 @@ assert(product === 5.0);
 Debes utilizar el operador `*`
 
 ```js
-assert(/\*/.test(code));
+assert(/\*/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

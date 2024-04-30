@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 Dein Code sollte die Punkt- und Klammerschreibweise verwenden, um auf `myPlants` zuzugreifen.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

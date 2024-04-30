@@ -29,7 +29,7 @@ Verwende die Methode `console.log()`, um den Wert der Variable `a` an den Stelle
 Dein Code sollte `console.log()` verwenden, um den Wert der Variable `a` zu überprüfen.
 
 ```js
-assert(code.match(/console\.log\(a\)/g));
+assert(__helpers.removeJSComments(code).match(/console\.log\(a\)/g));
 ```
 
 # --seed--

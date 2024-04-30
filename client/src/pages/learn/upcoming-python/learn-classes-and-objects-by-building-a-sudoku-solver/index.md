@@ -2,7 +2,6 @@
 title: Introduction to the Learn Classes and Objects by Building a Sudoku Solver
 block: learn-classes-and-objects-by-building-a-sudoku-solver
 superBlock: upcoming-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Classes and Objects by Building a Sudoku Solver

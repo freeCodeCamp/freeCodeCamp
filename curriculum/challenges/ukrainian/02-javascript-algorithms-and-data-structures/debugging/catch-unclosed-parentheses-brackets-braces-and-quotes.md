@@ -21,7 +21,7 @@ dashedName: catch-unclosed-parentheses-brackets-braces-and-quotes
 Ваш код повинен виправити відсутній фрагмент масиву.
 
 ```js
-assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
+assert(__helpers.removeJSComments(code).match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 ```
 
 Ваш код повинен виправити відсутній фрагмент методу `.reduce()`. Вихідні дані консолі повинні показати, що `Sum of array values is: 6`.

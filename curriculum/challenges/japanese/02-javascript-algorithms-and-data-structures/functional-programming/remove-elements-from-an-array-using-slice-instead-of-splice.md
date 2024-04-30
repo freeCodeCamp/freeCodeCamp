@@ -30,13 +30,13 @@ cities.splice(3, 1);
 コードで `slice` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 コードで `splice` メソッドを使用しないでください。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?splice/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 ```
 
 You should not mutate the original array passed to the function.

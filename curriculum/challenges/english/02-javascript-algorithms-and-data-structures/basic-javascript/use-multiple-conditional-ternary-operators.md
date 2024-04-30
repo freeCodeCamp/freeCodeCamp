@@ -54,7 +54,7 @@ In the `checkSign` function, use multiple conditional operators - following the 
 `checkSign` should use multiple conditional operators
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(__helpers.removeJSComments(code)));
 ```
 
 `checkSign(10)` should return the string `positive`. Note that capitalization matters

@@ -28,7 +28,7 @@ assert.typeOf(squareList, 'function'),
 `for`, `while`, e `forEach` non dovrebbero essere usati.
 
 ```js
-assert(!code.match(/for|while|forEach/g));
+assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
 ```
 
 Dovrebbero essere usati `map`, `filter` o `reduce`.
@@ -36,7 +36,7 @@ Dovrebbero essere usati `map`, `filter` o `reduce`.
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/\.(map|filter|reduce)\(/g)
 );
 ```

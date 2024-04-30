@@ -57,7 +57,7 @@ assert(sum() === 0);
 `sum` sollte eine Pfeilfunktion sein, die die Restparametersyntax (`...`) für den `args`-Parameter verwendet.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/sum=\(\.\.\.args\)=>/));
 ```
 
 # --seed--

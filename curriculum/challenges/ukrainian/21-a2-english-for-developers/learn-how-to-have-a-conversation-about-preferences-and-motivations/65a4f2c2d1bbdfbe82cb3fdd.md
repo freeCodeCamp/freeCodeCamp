@@ -1,6 +1,6 @@
 ---
 id: 65a4f2c2d1bbdfbe82cb3fdd
-title: Task 91
+title: Завдання 91
 challengeType: 22
 dashedName: task-91
 ---

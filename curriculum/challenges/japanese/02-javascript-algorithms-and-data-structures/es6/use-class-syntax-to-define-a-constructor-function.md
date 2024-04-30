@@ -66,7 +66,7 @@ assert(
 `class` キーワードを使用する必要があります。
 
 ```js
-assert(code.match(/class/g));
+assert(__helpers.removeJSComments(code).match(/class/g));
 ```
 
 `Vegetable` をインスタンス化できる必要があります。

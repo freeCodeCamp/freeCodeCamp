@@ -73,7 +73,7 @@ assert(testGreaterOrEqual(21) === '20 or Over');
 你應該使用 `>=` 運算符至少兩次。
 
 ```js
-assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
 ```
 
 # --seed--
