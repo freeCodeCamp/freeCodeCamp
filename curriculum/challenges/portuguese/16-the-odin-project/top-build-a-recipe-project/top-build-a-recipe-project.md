@@ -161,7 +161,7 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

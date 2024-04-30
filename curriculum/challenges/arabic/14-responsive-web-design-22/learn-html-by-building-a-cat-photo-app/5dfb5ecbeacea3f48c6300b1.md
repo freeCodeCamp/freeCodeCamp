@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-استخدم عناصر القائمة (`li`) لإنشاء عناصر في قائمة. فيما يلي مثال لعناصر القائمة (list items) في قائمة غير منظمة (unordered list):
+The `li` element is used to create a list item in an ordered or unordered list.
+
+Here is an example of list items in an unordered list:
 
 ```html
 <ul>
@@ -16,19 +18,19 @@ dashedName: step-21
 </ul>
 ```
 
-داخل عنصر `ul` قم بدمج ثلاثة عناصر لعرض ثلاثة أشياء تحبها القطط:
+Within the `ul` element nest three list items to display three things cats love:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-يجب أن يكون لديك ثلاثة عناصر `li`. يجب أن يكون لكل عنصر `li` علامة فتح وإغلاق (opening & closing tag) خاصة به.
+You should have three `li` elements. Each `li` element should have its own opening and closing tag.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-يجب أن يكون لديك ثلاثة عناصر `li` مع النص `cat nip` و `laser pointers` و `lasagna` بأي ترتيب. إما أنك حذفت بعض النصوص أو لديك خطأ إملائي.
+You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
@@ -39,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-عناصر `li` الثلاثة يجب أن تكون بين علامات فتح وإغلاق العنصر `ul`.
+The three `li` elements should be located between the `ul` element's opening and closing tags.
 
 ```js
 assert(
