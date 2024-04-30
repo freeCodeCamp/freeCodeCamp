@@ -70,17 +70,19 @@ function MapLi({
   superBlock,
   landing = false,
   last = false,
-  trackProgress,
   completed,
   claimed,
+  showArrows = false,
+  showNumbers = false,
   index
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
   last?: boolean;
-  trackProgress: boolean;
   completed: boolean;
   claimed: boolean;
+  showArrows?: boolean;
+  showNumbers?: boolean;
   index: number;
 }) {
   return (
@@ -89,23 +91,22 @@ function MapLi({
         data-test-label='curriculum-map-button'
         data-playwright-test-label='curriculum-map-button'
       >
-        {trackProgress && (
-          <>
-            <div className='progress-icon'>
-              <RibbonIcon
-                value={index + 1}
-                isCompleted={completed}
-                isClaimed={claimed}
-              />
-            </div>
-            <div className='progression-arrow'>{!last && <Arrow />}</div>
-          </>
-        )}
+        <div className='progress-icon'>
+          <RibbonIcon
+            value={index + 1}
+            showNumbers={showNumbers}
+            isCompleted={completed}
+            isClaimed={claimed}
+          />
+        </div>
+        <div className='progression-arrow'>
+          {!last && showArrows && <Arrow />}
+        </div>
 
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
-          <div style={linkSpacingStyle}>
-            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
+          <div className='map-btn-btn-btn' style={linkSpacingStyle}>
             {getSuperBlockTitleForMap(superBlock)}
+            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
           </div>
           {landing && <LinkButton />}
         </Link>
@@ -143,12 +144,6 @@ function Map({
 
   const { t } = useTranslation();
 
-  const isTracking = (stage: SuperBlocks) =>
-    ![
-      ...superBlockOrder[SuperBlockStages.Upcoming],
-      ...superBlockOrder[SuperBlockStages.Extra]
-    ].includes(stage);
-
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
     // array of all challenge ID's in the superblock
     const allSuperblockChallenges = allChallenges
@@ -183,9 +178,10 @@ function Map({
             key={i}
             superBlock={superBlock}
             landing={forLanding}
-            trackProgress={isTracking(superBlock)}
             index={i}
             claimed={isClaimed(superBlock)}
+            showArrows={true}
+            showNumbers={true}
             completed={allSuperblockChallengesCompleted(superBlock)}
             last={i + 1 == coreCurriculum.length}
           />
@@ -201,7 +197,6 @@ function Map({
             key={i}
             superBlock={superBlock}
             landing={forLanding}
-            trackProgress={isTracking(superBlock)}
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
@@ -219,7 +214,6 @@ function Map({
             key={i}
             superBlock={superBlock}
             landing={forLanding}
-            trackProgress={isTracking(superBlock)}
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
@@ -239,7 +233,6 @@ function Map({
             key={i}
             superBlock={superBlock}
             landing={forLanding}
-            trackProgress={isTracking(superBlock)}
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
@@ -257,7 +250,6 @@ function Map({
             key={i}
             superBlock={superBlock}
             landing={forLanding}
-            trackProgress={isTracking(superBlock)}
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
@@ -277,7 +269,6 @@ function Map({
                 key={i}
                 superBlock={superBlock}
                 landing={forLanding}
-                trackProgress={isTracking(superBlock)}
                 completed={allSuperblockChallengesCompleted(superBlock)}
                 index={i}
                 claimed={isClaimed(superBlock)}
