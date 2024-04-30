@@ -24,22 +24,16 @@ export const PortfolioProjects = ({
       <div className='portfolio-field'>
         {portfolioProjects.map(({ title, url, image, description, id }) => (
           <article className='portfolio-card' key={id}>
-            {image ? (
-              <img
-                alt={`Screenshot of project: ${title}`}
-                className='portfolio-card-image'
-                src={image}
-                onError={({ currentTarget }) => {
-                  currentTarget.alt = 'Default project image not found';
-                  currentTarget.src =
-                    'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
-                }}
-              />
-            ) : (
-              <div className='portfolio-card-placeholder'>
-                Image not available
-              </div>
-            )}
+            <img
+              alt={`Screenshot of project: ${title}`}
+              className='portfolio-card-image'
+              src={image}
+              onError={({ currentTarget }) => {
+                currentTarget.alt = 'Default project image not found';
+                currentTarget.src =
+                  'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
+              }}
+            />
             <div className='portfolio-card-description'>
               <h3>{title}</h3>
               <p className='portfolio-description-text'>{description}</p>

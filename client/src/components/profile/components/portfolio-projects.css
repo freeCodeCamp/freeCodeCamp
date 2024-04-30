@@ -1,8 +1,9 @@
 .portfolio-field {
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 3rem;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .portfolio-card {
@@ -87,4 +88,21 @@
   width: auto;
   margin-inline-start: 10px;
   position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-field {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-card {
+    max-width: 100%;
+  }
+
+  .portfolio-card-image {
+    width: 100%;
+    height: 200px;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
 }
