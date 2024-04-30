@@ -95,3 +95,18 @@ test.describe('Learn (authenticated user)', () => {
     }
   });
 });
+
+test.describe('Learn (unauthenticated user)', () => {
+  test('the page shows completed icons for a certified user', async function ({
+    page
+  }) {
+    await page.goto('/learn');
+    const curriculumBtns = page.getByTestId('curriculum-map-button');
+    await expect(curriculumBtns).toHaveCount(superBlocks.length);
+    for (let i = 0; i < superBlocks.length; i++) {
+      const btn = curriculumBtns.nth(i);
+      const icon = btn.locator('svg').nth(0);
+      await expect(icon).toHaveClass('incompleteIcon');
+    }
+  });
+});
