@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -22,17 +23,23 @@ import {
 
 import { RibbonIcon, Arrow } from '../../assets/icons/completion-ribbon';
 
-import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
+import {
+  CurrentCert,
+  ClaimedCertifications,
+  AllChallengeNode
+} from '../../redux/prop-types';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../shared/config/certification-settings';
+import { completedChallengesIdsSelector } from '../../templates/Challenges/redux/selectors';
 
 interface MapProps {
   forLanding?: boolean;
   isSignedIn: boolean;
   currentCerts: CurrentCert[];
   claimedCertifications?: ClaimedCertifications;
+  completedChallengeIds: string[];
 }
 
 const linkSpacingStyle = {
@@ -51,9 +58,11 @@ const coreCurriculum = [
 const mapStateToProps = createSelector(
   isSignedInSelector,
   currentCertsSelector,
-  (isSignedIn: boolean, currentCerts) => ({
+  completedChallengesIdsSelector,
+  (isSignedIn: boolean, currentCerts, completedChallengeIds: string[]) => ({
     isSignedIn,
-    currentCerts
+    currentCerts,
+    completedChallengeIds
   })
 );
 
@@ -108,8 +117,30 @@ function MapLi({
 function Map({
   forLanding = false,
   isSignedIn,
-  currentCerts
+  currentCerts,
+  completedChallengeIds
 }: MapProps): React.ReactElement {
+  const {
+    allChallengeNode: { edges }
+  }: {
+    allChallengeNode: AllChallengeNode;
+  } = useStaticQuery(graphql`
+    query allChallenges {
+      allChallengeNode {
+        edges {
+          node {
+            challenge {
+              id
+              superBlock
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const allChallenges = edges.map(edge => edge.node.challenge);
+
   const { t } = useTranslation();
 
   const isTracking = (stage: SuperBlocks) =>
@@ -118,16 +149,15 @@ function Map({
       ...superBlockOrder[SuperBlockStages.Extra]
     ].includes(stage);
 
-  const isCompleted = (stage: SuperBlocks) => {
-    return isSignedIn
-      ? Boolean(
-          currentCerts?.find(
-            (cert: { certSlug: string }) =>
-              (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
-              (superBlockCertTypeMap as { [key: string]: string })[stage]
-          )
-        )
-      : false;
+  const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
+    // array of all challenge ID's in the superblock
+    const allSuperblockChallenges = allChallenges
+      .filter(challenge => challenge.superBlock === superblock)
+      .map(challenge => challenge.id);
+
+    return allSuperblockChallenges.every(id =>
+      completedChallengeIds.includes(id)
+    );
   };
 
   const isClaimed = (stage: SuperBlocks) => {
@@ -156,7 +186,7 @@ function Map({
             trackProgress={isTracking(superBlock)}
             index={i}
             claimed={isClaimed(superBlock)}
-            completed={isCompleted(superBlock)}
+            completed={allSuperblockChallengesCompleted(superBlock)}
             last={i + 1 == coreCurriculum.length}
           />
         ))}
@@ -172,7 +202,7 @@ function Map({
             superBlock={superBlock}
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
-            completed={isCompleted(superBlock)}
+            completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
             last={i + 1 == superBlockOrder[SuperBlockStages.English].length}
@@ -190,7 +220,7 @@ function Map({
             superBlock={superBlock}
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
-            completed={isCompleted(superBlock)}
+            completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
             last={
@@ -210,7 +240,7 @@ function Map({
             superBlock={superBlock}
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
-            completed={isCompleted(superBlock)}
+            completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
             last={i + 1 == superBlockOrder[SuperBlockStages.Extra].length}
@@ -228,7 +258,7 @@ function Map({
             superBlock={superBlock}
             landing={forLanding}
             trackProgress={isTracking(superBlock)}
-            completed={isCompleted(superBlock)}
+            completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
             last={i + 1 == superBlockOrder[SuperBlockStages.Legacy].length}
@@ -248,7 +278,7 @@ function Map({
                 superBlock={superBlock}
                 landing={forLanding}
                 trackProgress={isTracking(superBlock)}
-                completed={isCompleted(superBlock)}
+                completed={allSuperblockChallengesCompleted(superBlock)}
                 index={i}
                 claimed={isClaimed(superBlock)}
                 last={

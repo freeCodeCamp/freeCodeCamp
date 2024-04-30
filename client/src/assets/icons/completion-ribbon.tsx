@@ -62,6 +62,7 @@ export const RibbonIcon = ({
         cx='22'
         cy='21'
         r='20'
+        fill='var(--secondary-background)'
         stroke='var(--secondary-color)'
         strokeWidth='3'
       />
