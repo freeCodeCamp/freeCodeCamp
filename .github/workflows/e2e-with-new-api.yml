@@ -149,6 +149,9 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
+      - name: Seed Database with Certified User
+        run: pnpm run seed:certified-user
+
       - name: Run playwright tests
         run: |
           docker compose up -d
