@@ -104,7 +104,7 @@ function MapLi({
         </div>
 
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
-          <div className='map-btn-btn-btn' style={linkSpacingStyle}>
+          <div style={linkSpacingStyle}>
             <SuperBlockIcon className='map-icon' superBlock={superBlock} />
             {getSuperBlockTitleForMap(superBlock)}
           </div>
