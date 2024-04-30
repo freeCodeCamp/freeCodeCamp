@@ -6,6 +6,8 @@ services:
     image: mongo
     depends_on:
       - mongo
+    ports:
+      - '27017:27017'
     restart: on-failure
     entrypoint: [
         'bash',
