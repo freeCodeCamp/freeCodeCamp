@@ -33,7 +33,7 @@ Usa il metodo `split` all'interno della funzione `splitify` per dividere `str` i
 Il tuo codice dovrebbe utilizzare il metodo `split`.
 
 ```js
-assert(code.match(/\.split/g));
+assert(__helpers.removeJSComments(code).match(/\.split/g));
 ```
 
 `splitify("Hello World,I-am code")` dovrebbe restituire `["Hello", "World", "I", "am", "code"]`.

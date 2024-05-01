@@ -32,7 +32,7 @@ Inserta los números impares desde 1 hasta 9 en `myArray` utilizando un bucle `f
 Debes utilizar un bucle `for` para esto.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` debe ser igual a `[1, 3, 5, 7, 9]`.

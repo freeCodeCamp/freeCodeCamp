@@ -1,6 +1,6 @@
 ---
 id: 657b1a27dc6daf6ffd52ff1f
-title: Task 29
+title: Завдання 29
 challengeType: 19
 dashedName: task-29
 ---

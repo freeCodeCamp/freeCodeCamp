@@ -40,7 +40,7 @@ Non devi cambiare la riga originale `const arr = [2, 4, 5, 1, 7, 5, 2, 1];`.
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
 );
 ```
 
@@ -56,14 +56,14 @@ assert.strictEqual(
 Il tuo codice dovrebbe utilizzare il metodo `splice()` su `arr`.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(/));
 ```
 
 Splice dovrebbe solo rimuovere elementi da `arr` e non aggiungere altri elementi a `arr`.
 
 ```js
 assert(
-  !__helpers.removeWhiteSpace(code).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
+  !__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
 );
 ```
 

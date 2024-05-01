@@ -71,7 +71,7 @@ assert(switchOfStuff(4) === 'stuff');
 `if` または `else` ステートメントを使用することはできません。
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 `default` ステートメントを使用する必要があります。
@@ -83,7 +83,7 @@ assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 少なくとも 3 つの `break` ステートメントを含める必要があります。
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

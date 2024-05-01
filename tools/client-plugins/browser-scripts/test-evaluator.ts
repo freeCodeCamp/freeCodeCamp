@@ -87,7 +87,6 @@ interface TestEvaluatorEvent extends MessageEvent {
       editableContents: string;
       original: { [id: string]: string };
     };
-    removeComments: boolean;
     firstTest: unknown;
     testString: string;
     build: string;
@@ -100,12 +99,8 @@ interface TestEvaluatorEvent extends MessageEvent {
 /* Run the test if there is one.  If not just evaluate the user code */
 ctx.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  let code = (e.data?.code?.contents || '').slice();
-  code = e.data?.removeComments ? helpers.removeJSComments(code) : code;
-  let editableContents = (e.data?.code?.editableContents || '').slice();
-  editableContents = e.data?.removeComments
-    ? helpers.removeJSComments(editableContents)
-    : editableContents;
+  const code = (e.data?.code?.contents || '').slice();
+  const editableContents = (e.data?.code?.editableContents || '').slice();
 
   const assert = chai.assert;
   const __helpers = helpers;
@@ -129,11 +124,7 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = (await eval(`${
-        e.data?.removeComments
-          ? helpers.removeJSComments(e.data.build)
-          : e.data.build
-      }
+      testResult = (await eval(`${e.data.build}
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);

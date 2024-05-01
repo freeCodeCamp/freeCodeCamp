@@ -54,7 +54,7 @@ En la función `checkSign`, usa múltiples operadores condicionales (siguiendo e
 `checkSign` debe utilizar múltiples operadores condicionales
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(__helpers.removeJSComments(code)));
 ```
 
 `checkSign(10)` debe devolver la cadena `positive`. Ten en cuenta que la capitalización importa

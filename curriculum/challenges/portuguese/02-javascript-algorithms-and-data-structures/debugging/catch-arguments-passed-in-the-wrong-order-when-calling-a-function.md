@@ -25,7 +25,7 @@ assert(power == 8);
 O código deve usar a ordem correta dos argumentos para a chamada da função `raiseToPower`.
 
 ```js
-assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
+assert(__helpers.removeJSComments(code).match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 ```
 
 # --seed--

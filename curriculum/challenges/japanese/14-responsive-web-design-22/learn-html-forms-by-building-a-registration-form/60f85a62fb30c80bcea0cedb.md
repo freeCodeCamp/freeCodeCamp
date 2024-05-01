@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-Users will be allowed to choose either a `Personal` or `Business`.
+ユーザーが `Personal` または `Business` のいずれかを選択できるようにします。
 
 そのためには、最初の 2 つの `label` 要素内にそれぞれ 1 つずつ、`type="radio"` を持つ `input` 要素を追加してください。
 

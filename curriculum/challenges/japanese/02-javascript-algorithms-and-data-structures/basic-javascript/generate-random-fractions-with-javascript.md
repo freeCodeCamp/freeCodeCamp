@@ -36,7 +36,7 @@ assert((randomFraction() + '').match(/\./g));
 `Math.random` を使用して、小数の乱数を生成する必要があります。
 
 ```js
-assert(code.match(/Math\.random/g).length >= 0);
+assert(__helpers.removeJSComments(code).match(/Math\.random/g).length >= 0);
 ```
 
 # --seed--

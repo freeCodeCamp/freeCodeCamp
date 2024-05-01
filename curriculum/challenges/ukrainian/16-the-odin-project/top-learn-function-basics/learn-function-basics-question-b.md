@@ -1,6 +1,6 @@
 ---
 id: 6617a1fce90de1b3fd10bd4e
-title: Learn Function Basics Question B
+title: Вивчіть основи функцій. Запитання B
 challengeType: 15
 dashedName: learn-function-basics-question-b
 ---
@@ -15,21 +15,21 @@ function favoriteAnimal(animal) {
 console.log(favoriteAnimal('Goat'));
 ```
 
-By putting `animal` inside the parentheses of the `favoriteAnimal()` function, you are telling JavaScript that you will send some value to your `favoriteAnimal` function. This means that animal is just a placeholder for some future value. But what value are you sending?
+Розмістивши `animal` в круглих дужках функції `favoriteAnimal()`, ви повідомляєте JavaScript про те, що надішлете якесь значення до функції `favoriteAnimal`. Це означає, що `animal` — це всього лиш заповнювач для майбутнього значення. Але яке значення ви надсилаєте?
 
-The last line, `favoriteAnimal('Goat')`, is where you are calling your `favoriteAnimal` function and passing the value `'Goat'` inside that function. Here, `'Goat'` is your argument. You are telling the `favoriteAnimal` function, "Please send `'Goat'` to the `favoriteAnimal` function and use `'Goat'` wherever the `'animal'` placeholder is." Because of the flexibility that using a parameter provides, you can declare any animal to be your favorite.
+Останній рядок `favoriteAnimal('Goat')` — саме те місце, де ви викликаєте функцію `favoriteAnimal` та передаєте до неї значення `'Goat'`. `'Goat'` є аргументом. Ви кажете функції `favoriteAnimal`: «Будь ласка, надішли `'Goat'` до функції `favoriteAnimal` та використай `'Goat'` на місці заповнювача `'animal'`». Завдяки гнучкості, яку надає використання параметра, ви можете оголосити будь-яку тварину улюбленою.
 
-Here is a diagram to help you visualize how parameters are passed to a function, and how values get returned from it.
+Ось картинка, що допоможе візуалізувати, як параметри передаються до функції та як значення повертаються з неї.
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/c53dd9a12f0c9afde0d9229f82a176170f12e120/foundations/javascript_basics/function_basics/imgs/00.png" alt="A description of a function with arrows explaining that the values between the parentheses of the function itself are called parameters, and the values which are issued when the function is used are called arguments" style="width:95%;height:auto;" />
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/c53dd9a12f0c9afde0d9229f82a176170f12e120/foundations/javascript_basics/function_basics/imgs/00.png" alt="Опис функції зі стрілками, де пояснюється, що значення в круглих дужках функції називаються «параметрами», а значення, повернені при використанні функції, називаються «аргументами»" style="width:95%;height:auto;" />
 
-Make note of the fact that by calling `favoriteAnimal()` inside of `console.log()` with the argument `'Goat'`, you get the return value of the function, string of `"Goat is my favorite animal!"`, printed to the console. You're passing in a function call `favoriteAnimal('Goat')` as an argument in a different function call - `log()`.
+Зверніть увагу: якщо викликати `favoriteAnimal()` в межах `console.log()` з аргументом `'Goat'`, то ви отримаєте повернене значення функції — надрукований рядок `"Goat is my favorite animal!"` на консолі. Аргумент `favoriteAnimal('Goat')` передається до виклику функції в іншому виклику функції — `log()`.
 
 # --question--
 
 ## --text--
 
-If you change the argument from `'Goat'` to `'Elephant'` in the `favoriteAnimal('Goat')` function call, what would `console.log(favoriteAnimal('Elephant'))` print to the console?
+Припустимо, ви змінили аргумент `'Goat'` на `'Elephant'` у виклику функції `favoriteAnimal('Goat')`. Що надрукує на консолі `console.log(favoriteAnimal('Elephant'))`?
 
 ## --answers--
 
@@ -37,7 +37,7 @@ If you change the argument from `'Goat'` to `'Elephant'` in the `favoriteAnimal(
 
 ---
 
-The function will return an error because `"Elephant"` is not a recognized argument.
+Функція поверне помилку, оскільки `"Elephant"` є невідомим аргументом.
 
 ---
 

@@ -2,7 +2,6 @@
 title: Introduction to the Learn Python List Comprehension by Building a Case Converter Program
 block: learn-list-comprehension-by-building-a-case-converter-program
 superBlock: upcoming-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Python List Comprehension by Building a Case Converter Program

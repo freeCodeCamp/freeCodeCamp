@@ -60,7 +60,7 @@ assert(testNotEqual('bob') === 'Not Equal');
 You should use the `!=` operator
 
 ```js
-assert(code.match(/(?!!==)!=/));
+assert(__helpers.removeJSComments(code).match(/(?!!==)!=/));
 ```
 
 # --seed--

@@ -56,7 +56,7 @@ Cambia el bucle `while` en el código por un bucle `do...while`. El bucle solo e
 Debes utilizar el bucle `do...while` para este ejercicio.
 
 ```js
-assert(code.match(/do/g));
+assert(__helpers.removeJSComments(code).match(/do/g));
 ```
 
 `myArray` debe ser igual a `[10]`.

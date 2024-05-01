@@ -31,7 +31,7 @@ huRegex.test(hugStr);
 Використайте метод `.test()`.
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 Використайте байдужий символ у регулярному виразі `unRegex`

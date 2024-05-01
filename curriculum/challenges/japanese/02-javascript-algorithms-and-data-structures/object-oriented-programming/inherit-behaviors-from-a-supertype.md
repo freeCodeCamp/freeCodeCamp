@@ -61,7 +61,7 @@ assert(typeof beagle !== 'undefined');
 ```js
 assert(
   /(let|const|var)\s{1,}duck\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```
@@ -71,7 +71,7 @@ assert(
 ```js
 assert(
   /(let|const|var)\s{1,}beagle\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```

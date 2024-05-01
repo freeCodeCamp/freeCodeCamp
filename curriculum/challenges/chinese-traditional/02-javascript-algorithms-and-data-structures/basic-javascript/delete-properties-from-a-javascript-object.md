@@ -55,7 +55,7 @@ assert(typeof myDog === 'object' && myDog.tails === undefined);
 不要修改 `myDog` 的初始化代碼。
 
 ```js
-assert(code.match(/"tails": 1/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/"tails": 1/g).length > 0);
 ```
 
 # --seed--

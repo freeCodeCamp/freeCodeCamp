@@ -52,7 +52,7 @@ assert(hound instanceof Dog);
 你的代碼中應該使用 `new` 操作符來創建 `Dog` 構造函數的新實例。
 
 ```js
-assert(code.match(/new/g));
+assert(__helpers.removeJSComments(code).match(/new/g));
 ```
 
 # --seed--

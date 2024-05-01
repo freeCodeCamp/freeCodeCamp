@@ -39,14 +39,14 @@ const person = {
 Не використовуйте традиційні вирази функцій.
 
 ```js
-assert(!code.match(/function/));
+assert(!__helpers.removeJSComments(code).match(/function/));
 ```
 
 `setGear` повинна бути декларативною функцією.
 
 ```js
 assert(
-  typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/)
+  typeof bicycle.setGear === 'function' && __helpers.removeJSComments(code).match(/setGear\s*\(.+\)\s*\{/)
 );
 ```
 

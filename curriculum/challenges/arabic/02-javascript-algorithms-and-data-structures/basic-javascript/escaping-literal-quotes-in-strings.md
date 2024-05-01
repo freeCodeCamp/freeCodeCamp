@@ -36,7 +36,7 @@ I am a "double quoted" string inside "double quotes".
 يجب عليك استخدام علامة التنصيص المزدوجة (`"`) وتخرج العلامات أربع مرات مثل (`\"`).
 
 ```js
-assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/\\"/g).length === 4 && __helpers.removeJSComments(code).match(/[^\\]"/g).length === 2);
 ```
 
 يجب أن يحتوي المتغير `myStr` على المقطع النصي الآتي: `I am a "double quoted" string inside "double quotes".`

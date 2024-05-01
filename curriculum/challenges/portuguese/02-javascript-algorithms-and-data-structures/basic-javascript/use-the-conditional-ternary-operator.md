@@ -42,7 +42,7 @@ Use o operador condicional na função `checkEqual` para verificar se dois núme
 `checkEqual` deve usar o operador condicional
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(__helpers.removeJSComments(code)));
 ```
 
 `checkEqual(1, 2)` deve retornar a string `Not Equal`

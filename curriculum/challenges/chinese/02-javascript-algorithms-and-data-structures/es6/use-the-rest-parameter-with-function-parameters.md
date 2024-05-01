@@ -57,7 +57,7 @@ assert(sum() === 0);
 `sum` 应是一个箭头函数，对 `args` 参数使用 rest 操作符语法（`...`）。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/sum=\(\.\.\.args\)=>/));
 ```
 
 # --seed--
