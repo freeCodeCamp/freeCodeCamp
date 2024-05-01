@@ -195,6 +195,30 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  done();
+};
+
+/**
+ * Plugin for the donation endpoints.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done The callback to signal that the plugin is ready.
+ */
+export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  // Stripe plugin
+  const stripe = new Stripe(STRIPE_SECRET_KEY, {
+    apiVersion: '2020-08-27',
+    typescript: true
+  });
+
+  // @ts-expect-error - @fastify/csrf-protection needs to update their types
+  // eslint-disable-next-line @typescript-eslint/unbound-method
+  fastify.addHook('onRequest', fastify.csrfProtection);
   fastify.post(
     '/donate/charge-stripe',
     {
@@ -202,7 +226,8 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const id = req.user!.id;
+        console.log('req.user', req.user);
+        const id = req.user?.id;
         const { email, name, token, amount, duration } = req.body;
 
         // verify the parameters
@@ -266,7 +291,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         await fastify.prisma.user.update({
-          where: { id },
+          where: { id: user.id },
           data: {
             isDonating: true
           }
@@ -278,6 +303,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         fastify.log.error(error);
+        console.log(error);
         void reply.code(500);
         return {
           error: 'Donation failed due to a server error.'

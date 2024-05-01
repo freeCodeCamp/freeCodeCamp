@@ -92,6 +92,14 @@ const userWithProgress: Prisma.userCreateInput = {
   ]
 };
 
+const chargeStripeReqBody = {
+  email: 'lololemon@gmail.com',
+  name: 'Lolo Lemon',
+  token: { id: 'tok_123' },
+  amount: 500,
+  duration: 'month'
+};
+
 describe('Donate', () => {
   setupServer();
 
@@ -228,14 +236,6 @@ describe('Donate', () => {
     });
 
     describe('POST /donate/charge-stripe', () => {
-      const chargeStripeReqBody = {
-        email: 'lololemon@gmail.com',
-        name: 'Lolo Lemon',
-        token: { id: 'tok_123' },
-        amount: 500,
-        duration: 'month'
-      };
-
       it('should return 200 and call stripe api properly', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('no-errors')
@@ -314,6 +314,15 @@ describe('Donate', () => {
         });
         expect(response.statusCode).toBe(401);
       });
+    });
+
+    test('POST /donate/charge-stripe should return 200', async () => {
+      mockSubCreate.mockImplementationOnce(generateMockSubCreate('no-errors'));
+      const response = await superRequest('/donate/charge-stripe', {
+        method: 'POST',
+        setCookies
+      }).send(chargeStripeReqBody);
+      expect(response.status).toBe(200);
     });
   });
 });
