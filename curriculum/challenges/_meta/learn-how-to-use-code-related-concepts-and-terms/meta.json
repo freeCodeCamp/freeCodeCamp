@@ -9,8 +9,88 @@
   "superBlock": "a2-english-for-developers",
   "challengeOrder": [
     {
-      "id": "655c12384a3d2e8a0d5e3efd",
-      "title": "Dialogue: Placeholder"
+      "id": "6630b37556424464ba0f984e",
+      "title": "Dialogue 1: Asking about data types"
+    },
+    {
+      "id": "6630b49ade31b06586863453",
+      "title": "Task 1"
+    },
+    {
+      "id": "6630b56594405466378bbfbb",
+      "title": "Task 2"
+    },
+    {
+      "id": "6630b687daf7dd66a730a0be",
+      "title": "Task 3"
+    },
+    {
+      "id": "6630b88fdd1eb2675cba64ec",
+      "title": "Task 4"
+    },
+    {
+      "id": "6630bb08c02b626826c937ae",
+      "title": "Task 5"
+    },
+    {
+      "id": "6630bc7702367d68c7679dba",
+      "title": "Task 6"
+    },
+    {
+      "id": "6630bd815e1b146937422948",
+      "title": "Task 7"
+    },
+    {
+      "id": "6630bf29b2e38669e3c15823",
+      "title": "Task 8"
+    },
+    {
+      "id": "6630e609d81a446cd663c521",
+      "title": "Task 9"
+    },
+    {
+      "id": "6630e7b497466d6d8bb5b863",
+      "title": "Task 10"
+    },
+    {
+      "id": "6630e831b3a1a36de42fb705",
+      "title": "Task 11"
+    },
+    {
+      "id": "6630e965a9e9c46e8b5a3ee2",
+      "title": "Task 12"
+    },
+    {
+      "id": "663246e8f661af779398be0e",
+      "title": "Task 13"
+    },
+    {
+      "id": "6632497b37b28b78907c0a97",
+      "title": "Task 14"
+    },
+    {
+      "id": "66324d85e67a5c7a072a5b4d",
+      "title": "Task 15"
+    },
+    {
+      "id": "66324c110747c079691211a1",
+      "title": "Task 16"
+    },
+    {
+      "id": "66324f956a24867b039d95c4",
+      "title": "Task 17"
+    },
+    {
+      "id": "663253fdb77eab7c9f3bbd16",
+      "title": "Task 18"
+    },
+    {
+      "id": "66325225b08cff7be37ac2e7",
+      "title": "Task 19"
+    },
+    {
+      "id": "66325752419d337dc13ffd83",
+      "title": "Task 20"
     }
   ],
   "helpCategory": "English"
