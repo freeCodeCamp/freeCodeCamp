@@ -8,10 +8,14 @@
   padding: 0;
 }
 
+.progress-icon-wrapper {
+  position: relative;
+}
+
 .progression-arrow {
   position: absolute;
-  bottom: -16px;
-  left: 25px;
+  bottom: -31px;
+  left: 29px;
 }
 
 .map-ui ul .progress-icon {
@@ -45,7 +49,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 .map-ui ul li .arrow path {
