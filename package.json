@@ -136,7 +136,7 @@
     "husky": "9.0.11",
     "jest": "29.7.0",
     "js-yaml": "3.14.1",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "15.2.2",
     "lodash": "4.17.21",
     "markdownlint": "0.33.0",
     "npm-run-all2": "5.0.2",
