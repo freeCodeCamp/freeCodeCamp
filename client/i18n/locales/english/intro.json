@@ -1204,6 +1204,12 @@
       "top-learn-function-basics": {
         "title": "Learn Function Basics",
         "intro": ["Learn about functions in JavaScript."]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Projects",
+        "intro": [
+          "Put your JavaScript skills to the test by building basic functions."
+        ]
       }
     }
   },
