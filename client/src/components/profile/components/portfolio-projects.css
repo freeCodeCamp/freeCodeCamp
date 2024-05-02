@@ -5,6 +5,7 @@
   flex-direction: row;
   min-width: 700px;
   max-height: 200px;
+  overflow: hidden;
 }
 
 .portfolio-image {
