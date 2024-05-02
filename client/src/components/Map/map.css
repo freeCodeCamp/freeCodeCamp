@@ -51,6 +51,10 @@
   flex-direction: row;
 }
 
+.map-ui ul li a > svg {
+  overflow: visible;
+}
+
 .map-ui ul li .arrow path {
   fill: var(--secondary-color);
 }
