@@ -219,6 +219,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
+  fastify.addHook('onRequest', fastify.addUserIfAuthorized);
   fastify.post(
     '/donate/charge-stripe',
     {
@@ -226,7 +227,6 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        console.log('req.user', req.user);
         const id = req.user?.id;
         const { email, name, token, amount, duration } = req.body;
 
@@ -303,7 +303,6 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         fastify.log.error(error);
-        console.log(error);
         void reply.code(500);
         return {
           error: 'Donation failed due to a server error.'

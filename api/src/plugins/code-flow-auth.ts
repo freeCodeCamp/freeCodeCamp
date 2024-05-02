@@ -23,6 +23,10 @@ declare module 'fastify' {
   interface FastifyInstance {
     authorize: (req: FastifyRequest, reply: FastifyReply) => void;
   }
+
+  interface FastifyInstance {
+    addUserIfAuthorized: (req: FastifyRequest, reply: FastifyReply) => void;
+  }
 }
 
 const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
@@ -77,6 +81,34 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
       });
       if (!user) return send401(reply, TOKEN_INVALID);
       req.user = user;
+    }
+  );
+
+  fastify.decorate(
+    'addUserIfAuthorized',
+    async function (req: FastifyRequest, reply: FastifyReply) {
+      const tokenCookie = req.cookies.jwt_access_token;
+      if (tokenCookie) {
+        const unsignedToken = req.unsignCookie(tokenCookie);
+        if (unsignedToken.valid) {
+          const jwtAccessToken = unsignedToken.value;
+          try {
+            jwt.verify(jwtAccessToken!, JWT_SECRET);
+            const {
+              accessToken: { created, ttl, userId }
+            } = jwt.decode(jwtAccessToken!) as { accessToken: AccessToken };
+            const valid = isBefore(Date.now(), Date.parse(created) + ttl);
+            if (valid) {
+              const user = await fastify.prisma.user.findUnique({
+                where: { id: userId }
+              });
+              if (user) req.user = user;
+            }
+          } catch {
+            return send401(reply, TOKEN_INVALID);
+          }
+        }
+      }
     }
   );
 
