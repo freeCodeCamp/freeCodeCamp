@@ -117,9 +117,9 @@ class InternetSettings extends Component<InternetProps, InternetState> {
 
   isFormPristine = () => {
     const { formValues, originalValues } = this.state;
-    return (Object.keys(originalValues) as Array<keyof Socials>)
-      .map(key => originalValues[key] === formValues[key])
-      .every(bool => bool);
+    return (Object.keys(originalValues) as Array<keyof Socials>).every(
+      key => originalValues[key] === formValues[key]
+    );
   };
 
   isFormValid = (): boolean =>
