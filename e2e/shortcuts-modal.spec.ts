@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { APIRequestContext, Page, expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
@@ -9,39 +9,55 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test.beforeEach(async ({ page, isMobile }) => {
+const enableKeyboardShortcuts = async (
+  page: Page,
+  request: APIRequestContext
+) => {
+  const csrfToken = (await request.storageState()).cookies.find(
+    c => c.name === 'csrf_token'
+  )?.value;
+
+  expect(csrfToken).toBeTruthy();
+
+  const res = await request.put(
+    process.env.API_LOCATION + '/update-my-keyboard-shortcuts',
+    {
+      data: { keyboardShortcuts: true },
+      headers: { 'csrf-token': csrfToken! }
+    }
+  );
+  expect(res.status()).toBe(200);
+  expect(await res.json()).toEqual({
+    message: 'flash.keyboard-shortcut-updated',
+    type: 'success'
+  });
+};
+
+const openModal = async (page: Page) => {
+  // The editor pane is focused by default, so we need to escape or it will
+  // capture the keyboard shortcuts
+  await page.getByLabel(editorPaneLabel).press('Escape');
+  await page.keyboard.press('Shift+?');
+};
+
+test.beforeEach(async ({ page, isMobile, request }) => {
   test.skip(
     isMobile,
     'Skipping on mobile as it does not have a physical keyboard'
   );
 
-  // Enable keyboard shortcuts
-  await page.goto('/settings');
-  const keyboardShortcutGroup = page.getByRole('group', {
-    name: translations.settings.labels['keyboard-shortcuts']
-  });
-  await keyboardShortcutGroup
-    .getByRole('button', { name: translations.buttons.on, exact: true })
-    .click();
-
-  // Open shortcuts modal
+  await enableKeyboardShortcuts(page, request);
   await page.goto(course);
-  await page.getByLabel(editorPaneLabel).press('Escape');
-  await page.keyboard.press('Shift+?');
 });
 
-test('User can see list of shortcuts  by pressing SHIFT + ?', async ({
-  page,
-  isMobile
+test('the modal can be opened with SHIFT + ? and closed with ESC', async ({
+  page
 }) => {
-  test.skip(
-    isMobile,
-    'Skipping on mobile as it does not have a physical keyboard.'
-  );
-
-  await expect(
-    page.getByRole('dialog', { name: translations.shortcuts.title })
-  ).toBeVisible();
+  await openModal(page);
+  const dialog = page.getByRole('dialog', {
+    name: translations.shortcuts.title
+  });
+  await expect(dialog).toBeVisible();
 
   for (const shortcut of Object.values(translations.shortcuts)) {
     if (shortcut === translations.shortcuts.title) continue;
@@ -61,31 +77,16 @@ test('User can see list of shortcuts  by pressing SHIFT + ?', async ({
   await expect(
     page.getByRole('button', { name: translations.buttons.close })
   ).toBeVisible();
-});
-
-test('User can close the modal by pressing ESC', async ({ page, isMobile }) => {
-  test.skip(
-    isMobile,
-    'Skipping on mobile as it does not have a physical keyboard.'
-  );
-
-  const dialog = page.getByRole('dialog', {
-    name: translations.shortcuts.title
-  });
-
-  await expect(dialog).toBeVisible();
 
   await page.keyboard.press('Escape');
 
   await expect(dialog).not.toBeVisible();
 });
 
-test('User can disable keyboard shortcuts', async ({ page, isMobile }) => {
-  test.skip(
-    isMobile,
-    'Skipping on mobile as it does not have a physical keyboard.'
-  );
-
+test('has a button to disable or enable keyboard shortcuts', async ({
+  page
+}) => {
+  await openModal(page);
   const dialog = page.getByRole('dialog', {
     name: translations.shortcuts.title
   });
