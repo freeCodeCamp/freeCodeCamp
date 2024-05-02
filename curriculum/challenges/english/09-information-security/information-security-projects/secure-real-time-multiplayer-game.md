@@ -173,6 +173,18 @@ async (getUserInput) => {
 };
 ```
 
+All 11 boilerplate tests are passing. 
+
+```js
+async (getUserInput) => {
+  const tests = await fetch(getUserInput('url') + '/_api/get-tests');
+  const parsed = await tests.json();
+  assert.isTrue(parsed.length >= 11);
+  parsed.forEach((test) => {
+    assert.equal(test.state, 'passed');
+  });
+};
+
 # --solutions--
 
 ```js
