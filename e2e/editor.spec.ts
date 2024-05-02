@@ -51,7 +51,12 @@ test.describe('Python Terminal', () => {
 
     await focusEditor({ page, isMobile, browserName });
     // First clear the editor
-    await page.keyboard.press('Control+a');
+    // TODO: replace with ControlOrMeta when it's supported
+    if (browserName === 'webkit') {
+      await page.keyboard.press('Meta+a');
+    } else {
+      await page.keyboard.press('Control+a');
+    }
     await page.keyboard.press('Backspace');
     // Then enter invalid code
     await page.keyboard.insertText('def');
