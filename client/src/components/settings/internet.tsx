@@ -122,29 +122,10 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       .every(bool => bool);
   };
 
-  isFormValid = (): boolean => {
-    const { formValues, originalValues } = this.state;
-    const valueReducer = (obj: Socials) => {
-      return Object.values(obj).reduce(
-        (acc, cur): boolean => (acc ? acc : cur !== ''),
-        false
-      ) as boolean;
-    };
-
-    const formHasValues = valueReducer(formValues);
-    const OriginalHasValues = valueReducer(originalValues);
-
-    // check if user had values but wants to delete them all
-    if (OriginalHasValues && !formHasValues) return true;
-
-    return (Object.keys(formValues) as Array<keyof Socials>).reduce(
-      (bool: boolean, key: keyof Socials): boolean => {
-        const maybeUrl = formValues[key];
-        return maybeUrl ? isURL(maybeUrl) : bool;
-      },
-      false
+  isFormValid = (): boolean =>
+    Object.values(this.state.formValues).every(
+      (value: string) => value === '' || isURL(value)
     );
-  };
 
   handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
