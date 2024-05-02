@@ -15,10 +15,15 @@ const settingsObject = {
   testEmail: 'test@gmail.com',
   pageTitle: `${translations.buttons.settings} | freeCodeCamp.org`,
   userNamePlaceholder: '{{username}}',
+  userNameUpdateLowerCase: 'quincy',
+  userNameUpdateUpperCase: 'Mrugesh',
+  userNameAvailable: 'Sem',
+  userNameAvailablePressingEnter: 'Oliver',
   testUser: 'testuser',
   errorCode: '404',
   invalidUserName: 'user!',
   tooShortUserName: 'us',
+  notAvailableUsername: 'Twaha',
   private: 'Private',
   public: 'Public',
   supportEmail: 'support@freecodecamp.org',
@@ -72,11 +77,13 @@ test.describe('Settings', () => {
 
   test('Should validate Username Settings', async ({ page }) => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
+    const saveButton = page.getByRole('button', {
+      name: translations.settings.labels.username
+    });
     await expect(inputLabel).toBeVisible();
-    await inputLabel.fill(settingsObject.testUser);
-    await expect(
-      page.getByText(translations.settings.username.validating)
-    ).toBeVisible();
+
+    // When user puts in a reserved error code
+
     await inputLabel.fill(settingsObject.errorCode);
     await expect(
       page.getByText(
@@ -86,6 +93,9 @@ test.describe('Settings', () => {
         )
       )
     ).toBeVisible();
+
+    // When user puts in a invalid name (with special characters)
+
     await inputLabel.fill(settingsObject.invalidUserName);
     await expect(
       page.getByText(
@@ -95,6 +105,27 @@ test.describe('Settings', () => {
         )
       )
     ).toBeVisible();
+
+    // When user puts in a name that is already taken
+
+    await inputLabel.fill(settingsObject.notAvailableUsername);
+    await expect(
+      page.getByText(
+        translations.settings.username['unavailable'].replace(
+          settingsObject.userNamePlaceholder,
+          settingsObject.notAvailableUsername
+        )
+      )
+    ).toBeVisible();
+    await expect(saveButton).toBeDisabled();
+
+    // When user puts in their own name
+
+    await inputLabel.fill(settingsObject.certifiedUsername);
+    await expect(saveButton).toBeDisabled();
+
+    // When the username is too short
+
     await inputLabel.fill(settingsObject.tooShortUserName);
     await expect(
       page.getByText(
@@ -104,11 +135,88 @@ test.describe('Settings', () => {
         )
       )
     ).toBeVisible();
-    await inputLabel.fill(settingsObject.certifiedUsername);
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.labels.username
-    });
-    await expect(saveButton).toBeVisible();
+
+    // User will be able to save the username if it is valid
+
+    await inputLabel.fill(settingsObject.userNameAvailable);
+
+    await expect(
+      page.getByText(translations.settings.username.available)
+    ).toBeVisible();
+
+    await expect(
+      page.getByText(translations.settings.username.change)
+    ).toBeVisible();
+
+    await expect(saveButton).not.toBeDisabled();
+    await saveButton.click();
+
+    await expect(
+      page.getByText(
+        translations.flash['username-updated'].replace(
+          settingsObject.userNamePlaceholder,
+          settingsObject.userNameAvailable
+        )
+      )
+    ).toBeVisible();
+
+    // Should be able to save the username lowercase
+    await inputLabel.fill(settingsObject.userNameUpdateLowerCase);
+
+    await expect(
+      page.getByText(translations.settings.username.available)
+    ).toBeVisible();
+
+    await expect(saveButton).not.toBeDisabled();
+    await saveButton.click();
+
+    await expect(
+      page.getByText(
+        translations.flash['username-updated'].replace(
+          settingsObject.userNamePlaceholder,
+          settingsObject.userNameUpdateLowerCase
+        )
+      )
+    ).toBeVisible();
+
+    // Should be able to save the username uppercase
+
+    await inputLabel.fill(settingsObject.userNameUpdateUpperCase);
+
+    await expect(
+      page.getByText(translations.settings.username.available)
+    ).toBeVisible();
+
+    await expect(saveButton).not.toBeDisabled();
+    await saveButton.click();
+
+    await expect(
+      page.getByText(
+        translations.flash['username-updated'].replace(
+          settingsObject.userNamePlaceholder,
+          settingsObject.userNameUpdateUpperCase
+        )
+      )
+    ).toBeVisible();
+
+    // should be able to save the username pressing enter
+
+    await inputLabel.fill(settingsObject.testUser);
+
+    await expect(
+      page.getByText(translations.settings.username.available)
+    ).toBeVisible();
+
+    await inputLabel.press('Enter');
+
+    await expect(
+      page.getByText(
+        translations.flash['username-updated'].replace(
+          settingsObject.userNameAvailablePressingEnter,
+          settingsObject.testUser
+        )
+      )
+    ).toBeVisible();
   });
 
   test('Should validate Privacy Settings', async ({ page }) => {
