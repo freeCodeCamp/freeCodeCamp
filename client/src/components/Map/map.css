@@ -9,23 +9,25 @@
 }
 
 .progress-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
 .progression-arrow {
   position: absolute;
-  bottom: -31px;
-  left: 29px;
+  top: calc(78%);
+  left: 21px;
 }
 
 .map-ui ul .progress-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  margin: 0 10px 10px 0;
   position: relative;
+  right: 7px;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .map-ui ul .progress-icon .cert-icon-outline {
@@ -47,8 +49,6 @@
 .map-ui ul li {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .map-ui ul li .arrow path {
