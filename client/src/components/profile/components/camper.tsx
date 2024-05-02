@@ -6,7 +6,7 @@ import type { User } from '../../../redux/prop-types';
 import Link from '../../helpers/link';
 import { formatYears } from './utils';
 import './camper.css';
-import Bio from './camper/bio';
+import Bio from './bio';
 
 export type CamperProps = Pick<
   User,
@@ -28,7 +28,7 @@ function Camper({ yearsTopContributor }: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className='bio-container'>
       <Bio />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>

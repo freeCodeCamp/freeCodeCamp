@@ -86,7 +86,7 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
 
   return (
     <Row>
-      <Col className='social-media-icons'>
+      <Col className='social-icons-row'>
         {linkedin ? LinkedInIcon(linkedin, username) : null}
         {githubProfile ? GitHubIcon(githubProfile, username) : null}
         {website ? WebsiteIcon(website, username) : null}

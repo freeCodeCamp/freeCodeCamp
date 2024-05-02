@@ -28,3 +28,28 @@
   width: auto;
   margin: 0 0.2em -0.3em 0.2em;
 }
+
+.profile-meta-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  color: var(--quaternary-color);
+}
+
+.profile-meta-container div {
+  margin-inline-end: 12px;
+}
+
+.profile-meta-container svg {
+  margin-inline-end: 4px;
+}
+
+.social-icons-row a {
+  display: inline-block;
+  margin-inline-end: 12px;
+  color: var(--quaternary-color);
+}
+
+.bio-container h2 {
+  color: var(--quaternary-color);
+}

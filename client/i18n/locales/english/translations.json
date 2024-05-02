@@ -314,6 +314,7 @@
     "tweet": "I just earned the {{certTitle}} certification @freeCodeCamp! Check it out here: {{certURL}}",
     "avatar": "{{username}}'s avatar",
     "joined": "Joined {{date}}",
+    "from": "From {{location}}",
     "total-points": "Total Points:",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
