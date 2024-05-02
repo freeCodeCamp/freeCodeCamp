@@ -12,9 +12,9 @@ dashedName: neural-networks-with-tensorflow
 
 # --description--
 
-<br>
+---
 
-<small>The next few video lessons will reference [this Colab notebook](https://colab.research.google.com/drive/1m2cg3D1x3j5vrFc-Cu0gMvc48gWyCOuG#forceEdit=true&sandboxMode=true).</small>
+The next few video lessons will reference [this Colab notebook](https://colab.research.google.com/drive/1m2cg3D1x3j5vrFc-Cu0gMvc48gWyCOuG#forceEdit=true&sandboxMode=true).
 
 # --question--
 
