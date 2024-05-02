@@ -9,6 +9,14 @@ dashedName: step-15
 
 在之前的步骤中，你使用了锚元素将文本转换为链接。 也可以把其他类型的内容放在锚标签中，将其转换成一个链接。
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 用必要的元素标签包裹图片，把它变成一个链接。 使用 `https://freecatphotoapp.com` 作为锚元素中 `href` 属性的值。
 
 # --hints--
