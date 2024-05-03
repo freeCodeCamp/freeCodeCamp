@@ -47,7 +47,7 @@ reverseAlpha(['l', 'h', 'z', 'b', 's']);
 يجب أن يستخدم الكود الخاص بك دالة `sort`.
 
 ```js
-assert(code.match(/\.sort/g));
+assert(__helpers.removeJSComments(code).match(/\.sort/g));
 ```
 
 `alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` يجب ان تعيد `["a", "a", "c", "d", "g", "z"]`.

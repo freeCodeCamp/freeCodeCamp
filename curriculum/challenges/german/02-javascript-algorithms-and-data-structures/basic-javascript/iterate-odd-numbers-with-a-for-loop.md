@@ -32,7 +32,7 @@ Füge die ungeraden Zahlen von 1 bis 9 in `myArray` ein und verwende dazu eine `
 Du solltest dafür eine `for`-Schleife verwenden.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` sollte gleich `[1, 3, 5, 7, 9]` sein.

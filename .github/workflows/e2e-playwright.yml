@@ -143,3 +143,10 @@ jobs:
           pnpm run start-ci &
           sleep 10
           npx playwright test --project=${{ matrix.browsers }}
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-${{ matrix.browsers }}
+          path: playwright/reporter
+          retention-days: 30

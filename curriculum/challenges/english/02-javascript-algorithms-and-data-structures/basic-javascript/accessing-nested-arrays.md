@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 Your code should use dot and bracket notation to access `myPlants`.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -56,7 +56,7 @@ Cambia il ciclo `while` nel codice con un ciclo `do...while` in modo che il cicl
 Dovresti usare un ciclo `do...while` per questo esercizio.
 
 ```js
-assert(code.match(/do/g));
+assert(__helpers.removeJSComments(code).match(/do/g));
 ```
 
 `myArray` dovrebbe essere uguale a `[10]`.

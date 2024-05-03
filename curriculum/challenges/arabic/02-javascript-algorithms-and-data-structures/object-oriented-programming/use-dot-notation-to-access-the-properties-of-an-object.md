@@ -29,13 +29,13 @@ console.log(duck.name);
 يجب أن يستخدم كودك `console.log` لطباعة قيمة خاصية `name` لكائن `dog`.
 
 ```js
-assert(/console.log\(.*dog\.name.*\)/g.test(code));
+assert(/console.log\(.*dog\.name.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن يستخدم كودك `console.log` لطباعة قيمة خاصية `numLegs` لكائن `dog`.
 
 ```js
-assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
+assert(/console.log\(.*dog\.numLegs.*\)/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

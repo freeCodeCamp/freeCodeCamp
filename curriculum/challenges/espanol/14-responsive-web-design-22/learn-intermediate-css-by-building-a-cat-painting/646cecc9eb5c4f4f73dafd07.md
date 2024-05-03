@@ -81,12 +81,12 @@ body {
   border-radius: 46%;
 }
 
+--fcc-editable-region--
 .cat-left-ear {
---fcc-editable-region--
 
---fcc-editable-region--
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-bottom: 70px solid #5e5e5e;
 }
+--fcc-editable-region--
 ```

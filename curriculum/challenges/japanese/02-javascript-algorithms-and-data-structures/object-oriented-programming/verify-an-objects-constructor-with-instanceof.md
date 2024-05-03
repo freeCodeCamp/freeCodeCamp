@@ -53,7 +53,7 @@ assert(typeof myHouse.numBedrooms === 'number');
 `instanceof` 演算子を使用して、`myHouse` が `House` のインスタンスであることを検証する必要があります。
 
 ```js
-assert(/myHouse\s*instanceof\s*House/.test(code));
+assert(/myHouse\s*instanceof\s*House/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

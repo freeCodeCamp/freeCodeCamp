@@ -45,19 +45,19 @@ switch (val) {
 Du solltest nirgendwo im Editor `else`-Anweisungen verwenden
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 Du solltest nirgendwo im Editor `if`-Anweisungen verwenden
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Du solltest mindestens vier `break`-Anweisungen verwenden
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` sollte den String `Marley` zurückgeben

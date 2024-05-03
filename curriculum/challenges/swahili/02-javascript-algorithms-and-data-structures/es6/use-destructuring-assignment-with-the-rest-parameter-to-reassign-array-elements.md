@@ -47,7 +47,7 @@ assert.deepEqual(_testArr, [1, 2, 3, 4, 5])
 `Array.slice()` should not be used.
 
 ```js
-assert(!code.match(/\.\s*slice\s*\(/));
+assert(!__helpers.removeJSComments(code).match(/\.\s*slice\s*\(/));
 ```
 
 You should use the rest syntax.

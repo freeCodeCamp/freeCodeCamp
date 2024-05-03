@@ -57,7 +57,7 @@ assert(sum() === 0);
 `sum` debe ser una función flecha que utilice la sintaxis de parámetro rest (`...`) en el parámetro `args`.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/sum=\(\.\.\.args\)=>/));
 ```
 
 # --seed--

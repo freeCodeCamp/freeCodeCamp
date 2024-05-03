@@ -39,7 +39,7 @@ assert(secondToLastLetterOfLastName === 'c');
 Dovresti usare `.length` per ottenere la penultima lettera.
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

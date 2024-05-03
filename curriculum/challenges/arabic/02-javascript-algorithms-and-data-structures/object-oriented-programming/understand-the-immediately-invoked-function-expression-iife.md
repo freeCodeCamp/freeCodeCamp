@@ -29,13 +29,13 @@ dashedName: understand-the-immediately-invoked-function-expression-iife
 وينبغي أن يكون ال function مجهول اي anonymous.
 
 ```js
-assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
+assert(/\((function|\(\))(=>|\(\)){?/.test(__helpers.removeJSComments(code).replace(/\s/g, '')));
 ```
 
 يجب أن يكون ال function الخاص بك بين قوسين في نهاية العبارة لاستدعائه على الفور.
 
 ```js
-assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));
+assert(/\(.*(\)\(|\}\(\))\)/.test(__helpers.removeJSComments(code).replace(/[\s;]/g, '')));
 ```
 
 # --seed--

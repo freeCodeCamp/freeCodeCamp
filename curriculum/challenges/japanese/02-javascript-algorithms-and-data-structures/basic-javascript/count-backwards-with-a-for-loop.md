@@ -34,13 +34,13 @@ for (let i = 10; i > 0; i -= 2) {
 この作業では `for` ループを使用してください。
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 配列メソッド `push` を使用してください。
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 `myArray` は `[9, 7, 5, 3, 1]` となる必要があります。

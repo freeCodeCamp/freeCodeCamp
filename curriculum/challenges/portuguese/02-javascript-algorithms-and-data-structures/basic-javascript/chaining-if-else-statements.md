@@ -39,19 +39,19 @@ Escreva instruções encadeadas `if`/`else if` para atender às seguintes condi�
 Você deve ter pelo menos quatro instruções `else`
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 Você deve ter pelo menos quatro instruções `if`
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 Você deve ter pelo menos um comando `return`
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` deve retornar a string `Tiny`

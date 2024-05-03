@@ -61,7 +61,7 @@ assert(userActivity.data.online === 45);
 `online` プロパティを、ドット記法またはブラケット記法を使用して設定する必要があります。
 
 ```js
-assert.strictEqual(code.search(/online: 45/), -1);
+assert.strictEqual(__helpers.removeJSComments(code).search(/online: 45/), -1);
 ```
 
 # --seed--

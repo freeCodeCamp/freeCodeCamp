@@ -39,7 +39,7 @@ assert(secondToLastLetterOfLastName === 'c');
 您應該使用 `.length` 獲取倒數第二個字母。
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

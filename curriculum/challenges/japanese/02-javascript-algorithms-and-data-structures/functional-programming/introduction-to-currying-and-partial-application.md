@@ -77,7 +77,7 @@ assert(add(11)(22)(33) === 66);
 コードの最後には、`x + y + z` を返すステートメントを含める必要があります。
 
 ```js
-assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
+assert(__helpers.removeJSComments(code).match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
 ```
 
 # --seed--

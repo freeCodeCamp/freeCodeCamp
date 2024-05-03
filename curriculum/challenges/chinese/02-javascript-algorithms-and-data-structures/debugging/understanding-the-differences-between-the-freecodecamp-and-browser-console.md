@@ -23,7 +23,7 @@ dashedName: understanding-the-differences-between-the-freecodecamp-and-browser-c
 你应该使用 `console.log()` 来打印 `output` 变量。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/console\.log\(output\)/));
 ```
 
 你应该使用 `console.clear()` 来清除浏览器控制台。
@@ -31,7 +31,7 @@ assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/console.clear\(\)/)
 );
 ```
@@ -41,7 +41,7 @@ assert(
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/console\.log\(output\)[\s\S]*console.clear\(\)/)
 );
 ```

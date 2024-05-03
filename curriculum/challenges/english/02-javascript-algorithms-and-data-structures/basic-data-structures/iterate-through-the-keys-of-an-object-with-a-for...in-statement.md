@@ -51,7 +51,7 @@ The function `countOnline` should use a `for in` statement to iterate through th
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)/
   )
 );

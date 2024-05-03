@@ -43,7 +43,7 @@ Du solltest die ES5-Zuweisungssyntax entfernen.
 
 ```js
 assert(
-  !code.match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g)
+  !__helpers.removeJSComments(code).match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g)
 );
 ```
 
@@ -51,7 +51,7 @@ Du solltest die Destrukturierung verwenden, um die Variable `today` zu erstellen
 
 ```js
 assert(
-  code.match(/(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g)
+  __helpers.removeJSComments(code).match(/(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g)
 );
 ```
 
@@ -59,7 +59,7 @@ Du solltest die Destrukturierung verwenden, um die Variable `tomorrow` zu erstel
 
 ```js
 assert(
-  code.match(/(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g)
+  __helpers.removeJSComments(code).match(/(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g)
 );
 ```
 
