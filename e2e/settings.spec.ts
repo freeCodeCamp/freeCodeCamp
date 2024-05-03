@@ -435,18 +435,27 @@ test.describe('Settings', () => {
         exact: true
       })
       .click();
-    await page
-      .getByRole('button', {
+    await expect(
+      page.getByRole('button', {
         name: translations.settings.danger['nevermind-2'],
         exact: true
       })
-      .click();
-    await expect(
-      page.getByRole('button', {
+    ).toBeVisible();
+
+    await page
+      .getByRole('button', {
         name: translations.settings.danger['reset-confirm'],
         exact: true
       })
-    ).toBeVisible();
+      .click();
+
+    await expect(page).toHaveURL(/\//);
+
+    await expect(page.getByTestId('flash-message')).toContainText(
+      translations.flash['progress-reset']
+    );
+
+    await page.goto('/settings');
     await page
       .getByRole('button', {
         name: translations.settings.danger.delete,
