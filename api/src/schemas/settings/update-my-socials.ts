@@ -1,13 +1,16 @@
 import { Type } from '@fastify/type-provider-typebox';
 
+const urlOrEmptyString = Type.Union([
+  Type.Literal(''),
+  Type.String({ format: 'uri', maxLength: 1024 })
+]);
+
 export const updateMySocials = {
   body: Type.Object({
-    website: Type.Optional(Type.String({ format: 'url', maxLength: 1024 })),
-    twitter: Type.Optional(Type.String({ format: 'url', maxLength: 1024 })),
-    githubProfile: Type.Optional(
-      Type.String({ format: 'url', maxLength: 1024 })
-    ),
-    linkedin: Type.Optional(Type.String({ format: 'url', maxLength: 1024 }))
+    website: urlOrEmptyString,
+    twitter: urlOrEmptyString,
+    githubProfile: urlOrEmptyString,
+    linkedin: urlOrEmptyString
   }),
   response: {
     200: Type.Object({
