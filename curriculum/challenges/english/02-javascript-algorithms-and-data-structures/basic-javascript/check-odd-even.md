@@ -16,38 +16,41 @@ In programming, we often need to know if a number is even or odd. This challenge
 
 Ask for a number, and check if it is "Even" or "Odd" accordingly.
 
+Create a variable named `result` to store the value.
+
 # --hints--
 
-`isEvenOrOdd(15)` should return `Odd`
+You should create a variable `result`.
 
 ```js
-assert(isEvenOrOdd(15)==="Odd")
+assert(/result/.test(code), "Variable 'result' is not present");
 ```
 
-`isEvenOrOdd(32)` should return `Even`
+`result` should return `Even`.
 
 ```js
-assert(isEvenOrOdd(32)==="Even")
+assert(result==="Even");
 ```
 
 # --seed--
 ## --seed-contents--
 
 ```js
-function isEvenOrOdd(number) {
-   //  Only change code below this line
-}
+var number=32
+var result;
+//  Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-function isEvenOrOdd(number) {
-    if (number % 2 === 0) {
-        return "Even";
-    } else {
-        return "Odd";
-    }
+var number=32
+var result;
+if (number % 2 === 0) {
+    result= "Even";
+} else {
+    result= "Odd";
 }
 
 ```

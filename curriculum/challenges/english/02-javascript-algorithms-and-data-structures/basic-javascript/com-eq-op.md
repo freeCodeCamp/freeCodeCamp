@@ -10,7 +10,7 @@ dashedName: com-eq-op
 There are many <dfn>comparison operators</dfn> in JavaScript. All of these operators return a boolean `true` or `false` value.
 
 The most basic operator is the equality operator `==`. The equality operator compares two values and returns `true` if they're equivalent or `false` if they are not. Note that equality is different from assignment (`=`), which assigns the value on the right of the operator to a variable on the left.
-
+<h2>Hinglish</h2>
 JavaScript mein kai <dfn>comparison operators</dfn> hote hain. Ye sab operators ek boolean `true` ya `false` value return karte hain.
 
 Sabse basic operator hai equality operator `==`. Equality operator do values ko compare karta hai aur agar wo same hain to `true` return karta hai ya agar wo same nahi hain to `false` return karta hai. Dhyan rakhein ki equality assignment (`=`) se alag hai, jo right side ke value ko left side ke variable mein assign karta hai.

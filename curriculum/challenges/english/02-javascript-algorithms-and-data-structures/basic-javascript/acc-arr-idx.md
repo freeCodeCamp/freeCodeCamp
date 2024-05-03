@@ -11,7 +11,7 @@ We can access the data inside arrays using <dfn>indexes</dfn>.
 
 Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of `0`.
 
-Translation
+<h2>Hinglish</h2>
 
 Hum arrays ke andar ke data ko <dfn>indexes</dfn> ka istemal karke access kar sakte hain.
 

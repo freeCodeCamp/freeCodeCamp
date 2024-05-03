@@ -8,7 +8,7 @@ dashedName: comp-less-eq-op
 # --description--
 
 The less than or equal to operator (`<=`) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns `true`. If the number on the left is greater than the number on the right, it returns `false`. Like the equality operator, the less than or equal to operator converts data types.
-
+<h2>Hinglish</h2>
 Less than or equal to operator (`<=`) do numbers ke values ko compare karta hai. Agar left side ka number right side ke number se chota ya barabar hai, to ye `true` return karta hai. Agar left side ka number right side ke number se bada hai, to ye `false` return karta hai. Equality operator ki tarah, less than or equal to operator bhi values ko compare karte waqt data types ko convert kar dega.
 **Examples**
 

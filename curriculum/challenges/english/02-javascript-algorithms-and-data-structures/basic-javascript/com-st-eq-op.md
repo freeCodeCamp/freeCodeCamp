@@ -10,7 +10,7 @@ dashedName: com-st-eq-op
 Strict equality (`===`) is the counterpart to the equality operator (`==`). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
 
 If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
-
+<h2>Hinglish</h2>
 Strict equality operator (`===`) equality operator (`==`) ka counterpart hai. Lekin, equality operator ki tarah, jo dono values ko ek common type mein convert karne ki koshish karta hai, strict equality operator type conversion nahi karta.
 
 Agar compare kiye ja rahe values alag type ke hain, to wo unequal consider ki jati hain, aur strict equality operator false return karega.

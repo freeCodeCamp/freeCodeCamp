@@ -8,7 +8,8 @@ dashedName: challenge-5
 ---
 
 # --description--
-
+<br>
+<br>
 Learning how to program is really important. It's like going to law school, not because everyone should become a lawyer, but because it teaches a certain way of thinking. Programming is similar—it teaches how to think in a different way.
 
 Computer science is a liberal art, something everyone should learn. It's like taking a course for a year to learn how to program. Programming is when telling the computer what to do, like playing games or converting numbers.

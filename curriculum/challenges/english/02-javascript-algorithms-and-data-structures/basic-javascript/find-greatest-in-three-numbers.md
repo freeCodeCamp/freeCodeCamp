@@ -1,8 +1,8 @@
 ---
-id: 6612efd3bc9597095156b8a1
-title: Finding Greatest in Three Numbers
+id: 66338666063672f0f8d895f7
+title: Find Greatest of Three Numbers
 challengeType: 1
-dashedName: greatest-in-three
+dashedName: find-greatest-in-three-numbers
 ---
 
 # --description--
@@ -21,7 +21,7 @@ Prompt: Can you make me understand how to find Greatest number in three Numbers?
 
 # --hints--
 
-`20, 3, 43` should return `43`
+`findGreatestNumber(20, 3, 43)` should return `43`.
 
 
 ```js

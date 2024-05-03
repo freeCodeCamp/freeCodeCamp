@@ -46,6 +46,38 @@
       "title": "Step 9"
     },
     {
+      "id": "66353d1bb82c310e67f08d58",
+      "title": "Explore Your JavaScript Version"
+    },
+    {
+      "id": "66353e2500c6680f1c52e068",
+      "title": "Exploring Node.js"
+    },
+    {
+      "id": "66353f23dddff50f6c78b932",
+      "title": "Explore Request Handling in Node.js"
+    },
+    {
+      "id": "663541809425b71085084621",
+      "title": "Discover the Power of Node.js"
+    },
+    {
+      "id": "663542e6b0922e110ec5dfc9",
+      "title": "Unveiling the Package Manager"
+    },
+    {
+      "id": "66354468b3c1381181b893b4",
+      "title": "Why npm is Essential for Developers?"
+    },
+    {
+      "id": "66354491c0bef611aacffd3a",
+      "title": "Understand npm Scripts"
+    },
+    {
+      "id": "66352b2418c108072d0a062e",
+      "title": "From Flowcharts to JavaScript"
+    },
+    {
       "id": "661260d77fe6b7f6af628f7b",
       "title": "Comment Your JavaScript Code"
     },
@@ -72,10 +104,6 @@
     {
       "id": "66232ce20e33bc54d6b6181b",
       "title": "Print Birthday Details"
-    },
-    {
-      "id": "6612d2e8e949deff0fb67b5c",
-      "title": "Initializing Multiple Variables in a Single Line"
     },
     {
       "id": "6606ca4e13f21011d7519a2b",
@@ -132,6 +160,10 @@
     {
       "id": "6606cc27ba694613bfa54939",
       "title": "Divide one number by another with javascript"
+    },
+    {
+      "id": "66337f396eae04ee875fcb09",
+      "title": "Divide One Number by Another with JavaScript"
     },
     {
       "id": "6606cc4d8e0dc513ee166527",
@@ -226,18 +258,6 @@
       "title": "Comparison with the Less than Operator"
     },
     {
-      "id": "6612ee88a87eb008ba77eb6f",
-      "title": "Find Greater of two Numbers"
-    },
-    {
-      "id": "6612ef30dcb5c609066ac6fc",
-      "title": "Greatest Number in Four Numbers"
-    },
-    {
-      "id": "6612efd3bc9597095156b8a1",
-      "title": "Finding Greatest in Three Numbers"
-    },
-    {
       "id": "6606cf6d22836816903282f5",
       "title": "Comparison with the Greater than or equal to Operator"
     },
@@ -262,16 +282,32 @@
       "title": "Chaining if else statements"
     },
     {
+      "id": "663384135a79fcf03708cafb",
+      "title": "Logical Order in if-else Statements"
+    },
+    {
+      "id": "66352f0ef19e5408d7d43bed",
+      "title": "Getting Started with Functions"
+    },
+    {
+      "id": "663385f778c882f0a886c6ea",
+      "title": "Find Greater of Two Numbers"
+    },
+    {
+      "id": "66338666063672f0f8d895f7",
+      "title": "Find Greatest of Three Numbers"
+    },
+    {
+      "id": "6633870a1bb230f155bc79fd",
+      "title": "Find Greatest Number in Four Numbers"
+    },
+    {
       "id": "6612f20c9620c70a5a2a2f19",
       "title": "Finding Second Maximum in Three Numbers"
     },
     {
       "id": "6612f2a187c0950a9f5d2cbd",
       "title": "Finding Third Maximum in Four Numbers"
-    },
-    {
-      "id": "6612f37a60f6910b3b81728b",
-      "title": "Logical Order in if-else Statements"
     },
     {
       "id": "6612f3accc64ff0b6dc7c9b9",
@@ -392,10 +428,6 @@
     {
       "id": "66288d9daeeabf161b9ccb3c",
       "title": "Print Pattern from an Array"
-    },
-    {
-      "id": "6606d1f8bf5baa18fea7b77e",
-      "title": "Nest one array within another array"
     }
   ]
 }

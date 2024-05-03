@@ -8,8 +8,10 @@ dashedName: challenge-9
 ---
 
 # --description--
-
+<br>
+<br>
 Write your first JS program as follows : -
+> Open a New Tab in your browser.
 > Press f12 to open developer tools
 > Go to the console tab and type in the following: 
 > alert("Hi " + prompt("What's your name?"))

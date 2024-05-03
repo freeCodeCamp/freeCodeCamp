@@ -8,7 +8,8 @@ dashedName: challenge-6
 ---
 
 # --description--
-
+<br>
+<br>
 A programming language is a way to tell a computer what to do. For example, if you want the computer to count to five, you need to use a programming language to give it the right instructions.
 
 Programming languages are made up of symbols that represent specific instructions for the computer. These symbols are combined to create a computer program, which is a set of instructions for the computer to follow.

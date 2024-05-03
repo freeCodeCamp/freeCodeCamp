@@ -19,7 +19,7 @@ ourArray[0] = 15;
 `ourArray` now has the value `[15, 40, 30]`.
 
 **Note:** There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
-
+<h2>Hinglish</h2>
 Strings ke vipreet, arrays ke entries <dfn>mutable</dfn> hote hain aur unhe asaani se badal sakte hain, chahe array `const` ke saath declare kiya gaya ho.
 
 **Example**

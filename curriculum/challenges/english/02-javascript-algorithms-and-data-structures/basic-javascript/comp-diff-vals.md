@@ -23,7 +23,7 @@ typeof '3'
 ```
 
 `typeof 3` returns the string `number`, and `typeof '3'` returns the string `string`.
-
+<h2>Hinglish</h2>
 Pichhle do challenges mein, humne equality operator (`==`) aur strict equality operator (`===`) ke baare mein sikha. Chaliye ek quick review karte hain aur in operators ka istemal thoda aur practice karte hain.
 
 Agar compare kiye ja rahe values ek hi type ke nahi hain, to equality operator ek type conversion karega, aur fir values ko evaluate karega. Lekin, strict equality operator dono data type aur value ko as-is compare karega, ek type ko doosre type mein convert nahi karega.

@@ -8,7 +8,7 @@ dashedName: operators-in-js
 
 # --description--
 
-Arithmatic operators in JavaScript are like the tools in a math toolbox, allowing you to perform basic math operations on numbers. Whether you're adding, subtracting, multiplying, or dividing, these operators make it easy to manipulate numbers and solve equations. With JavaScript, you can unleash your inner math whiz and crunch numbers with ease!
+Arithmetic operators in JavaScript are like the tools in a math toolbox, allowing you to perform basic math operations on numbers. Whether you're adding, subtracting, multiplying, or dividing, these operators make it easy to manipulate numbers and solve equations. With JavaScript, you can unleash your inner math whiz and crunch numbers with ease!
 
 Here's a brief overview of the individual arithmetic operators in JavaScript:
 

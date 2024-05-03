@@ -8,7 +8,8 @@ dashedName: challenge-7
 ---
 
 # --description--
-
+<br>
+<br>
 Learning about compilers and interpreters helps you understand how computers process languages like English and Hindi. Computers only understand machine language, so we use programming languages like C++ and Java to write instructions that computers can understand. These languages convert human-readable code into machine language using compilers and interpreters. This process helps us communicate with computers and create software.
 
 Compilers and interpreters are essential tools in the world of programming. They both serve the purpose of translating high-level programming languages into machine code that computers can understand, but they do it in different ways.
@@ -46,7 +47,7 @@ What should be the answer of the following questions?
 
 ## --answers--
 
-Compiler, Compiler, Interpreter, Interpreter
+Compiler, Interpreter, Interpreter, Compiler
 
 ---
 

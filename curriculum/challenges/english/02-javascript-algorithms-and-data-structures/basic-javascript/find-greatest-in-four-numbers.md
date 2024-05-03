@@ -1,8 +1,8 @@
 ---
-id: 6612ef30dcb5c609066ac6fc
-title: Greatest Number in Four Numbers
+id: 6633870a1bb230f155bc79fd
+title: Find Greatest Number in Four Numbers
 challengeType: 1
-dashedName: max-in-four
+dashedName: find-greatest-in-four-numbers
 ---
 
 # --description--
@@ -61,6 +61,6 @@ function findGreatestNumber(num1, num2, num3, num4) {
     }
     return greatest;
 }
-findGreatestNumber(98, 13, 29, 58)
-findGreatestNumber(7,42,15,3)
+findGreatestNumber(98, 13, 29, 58);
+findGreatestNumber(7,42,15,3);
 ```

@@ -10,7 +10,7 @@ dashedName: com-greater-than
 The greater than operator (`>`) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns `true`. Otherwise, it returns `false`.
 
 Like the equality operator, the greater than operator will convert data types of values while comparing.
-
+<h2>Hinglish</h2>
 Greater than operator (`>`) do numbers ke values ko compare karta hai. Agar left side ka number right side ke number se bada hai, to ye `true` return karta hai. Warna, ye `false` return karta hai.
 
 Equality operator ki tarah, greater than operator bhi values ko compare karte waqt data types ko convert kar dega.

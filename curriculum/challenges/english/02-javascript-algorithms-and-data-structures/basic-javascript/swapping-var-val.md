@@ -7,26 +7,25 @@ dashedName: swapping-var-val
 
 # --description--
 
-Imagine you and your friend have brought different snacks for lunch. However, you want to exchange your snacks with each other. To do this, you decide to enlist the help of a friend who can hold one snack box while you exchange with your other friend. Similarly, in programming, we can use a third variable to help us swap the values of two variables.
+If you have a pen in your right hand and a pencil in your left hand, swapping them would mean putting the pen in your left hand and the pencil in your right hand. Similarly, variables in JavaScript can hold a value temporarily while you swap it with another.
 
-Write a JavaScript function called swapValues that takes two values as input and swaps them. Your function should use a third variable as a helper to facilitate the swap operation.
 
 # --instructions--
 
-Write a JavaScript function called swapValues that takes two values as input and swaps them. Your function should use a third variable as a helper to facilitate the swap operation.
+Write a program that asks the user for two numbers and then swaps their values. Use a temporary variable to hold one value while swapping the other. Finally, print the swapped values.
 
 # --hints--
 
-value should be like `[4,12]`.
+Use a third variable named `temp`.
 
 ```js
-assert(swapValues(12, 4).toString() === [4, 12].toString(), "Values not swapped correctly.");
+assert(code.match(temp));
 ```
- 
- value should be like `[45,99]`
- 
+
+After swapping, `a` and `b` should be  `99` and `45` respectively.
+
 ```js
-assert(swapValues(99, 45).toString() === [45, 99].toString(),  "Values not swapped correctly.");
+assert(A===99 && B===45);
 ```
 
 # --seed--
@@ -35,31 +34,28 @@ assert(swapValues(99, 45).toString() === [45, 99].toString(),  "Values not swapp
 
 ```js
 
-function swapValues(value1, value2) {
-   // Only change code below this line
+var a = 45;
+var b = 99;
+// Only change code below this line
 
 
-    // Only change code above this line
 
-}
-
-console.log(swapValues(12, 4)); 
-console.log(swapValues(99, 45)); 
-
+ // Only change code above this line
+console.log(a);
+console.log(b);
 ```
 
 # --solutions--
 
 ```js
-function swapValues(value1, value2) {
+var a = 12;
+var b = 4;
 
-let helper = value1;
-    value1 = value2;
-    value2 = helper;
-    return [value1, value2];
-}
-console.log(swapValues(12, 4)); 
-console.log(swapValues(99, 45));
+var temp = a;
+a = b;
+b = temp;
+
+console.log(value1);
+console.log(value2);
 
 ``` 
-

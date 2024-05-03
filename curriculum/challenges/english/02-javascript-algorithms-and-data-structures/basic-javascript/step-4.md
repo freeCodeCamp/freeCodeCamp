@@ -38,11 +38,11 @@ Computer's to-do list.
 
 ---
 
-A set of Precise instructions to follow.
+A set of precise instructions to follow.
 
 ---
 
-A set of Directions
+A set of directions
 
 ## --video-solution--
 

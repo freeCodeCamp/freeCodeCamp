@@ -21,7 +21,7 @@ The console will display an error due to reassigning the value of `FAV_PET`.
 You should always name variables you don't want to reassign using the `const` keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant.
 
 **Note:** It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). You will learn more about objects, arrays, and immutable and mutable values in later challenges. Also in later challenges, you will see examples of uppercase, lowercase, or camelCase variable identifiers.
-
+<h2>Hinglish</h2>
 Keyword `let` ek variable declare karne ka naya tareeka nahi hai. ES6 mein, aap `const` keyword ka istemal karke bhi variables ko declare kar sakte hain.
 
 `const` mein `let` ke saare zabardast features hote hain, saath hi variables jo `const` ke saath declare kiye jaate hain, wo read-only hote hain. Ye ek constant value hote hain, jo yani ek baar ek variable ko `const` ke saath assign kar diya gaya hai, use phir se assign nahi kiya ja sakta:
@@ -30,8 +30,6 @@ Keyword `let` ek variable declare karne ka naya tareeka nahi hai. ES6 mein, aap 
 const FAV_PET = "Cats";
 FAV_PET = "Dogs";
 ```
-
-<h2>Hinglish</h2>
 
 Console ek error dikha dega `FAV_PET` ki value ko dobara assign karne ki wajah se.
 

@@ -8,7 +8,7 @@ dashedName: com-st-ineq-op
 # --description--
 
 The strict inequality operator (`!==`) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns `false` where strict equality would return `true` and *vice versa*. The strict inequality operator will not convert data types.
-
+<h2>Hinglish</h2>
 Strict inequality operator (`!==`) strict equality operator (`===`) ka logical opposite hai. Ye "Strictly Not Equal" ka matlab rakhta hai aur wahi jagah `false` return karta hai jahan strict equality `true` return karega aur ulta. Strict inequality operator data types ko convert nahi karega.
 
 **Examples**

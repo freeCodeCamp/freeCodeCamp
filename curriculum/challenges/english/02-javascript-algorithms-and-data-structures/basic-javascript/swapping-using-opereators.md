@@ -28,16 +28,17 @@ JavaScript mein do numbers ko temporary space ke bina swap karna chahte hain? Ye
 Challenge:
 
 Ek program likhiye jo user se do numbers ke liye input le. Fir, in do numbers ke values ko bina kisi temporary variable ke swap kare. Aakhir mein, swapped values ko print kare.
+
 # --instructions--
 
-Swap Them Without Using A Third Variable instructions.
+Swap the values of `a` and `b` without using a third variable. 
 
 # --hints--
 
 `2,3` should return `3,2`
 
 ```js
-assert(a,b===3,2)
+assert(a,b===3,2);
 ```
 
 # --seed--
@@ -45,7 +46,13 @@ assert(a,b===3,2)
 
 ```js
 let a=2;
-let b=3
+let b=3;
+//Only change code below this line
+
+
+//Only change code above this line
+console.log(a);
+console.log(b);
 
 ```
 
@@ -57,4 +64,6 @@ let b= 3
 a = a + b;
 b = a - b;
 a = a - b;
+console.log(a);
+console.log(b);
 ```

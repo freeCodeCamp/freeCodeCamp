@@ -7,11 +7,7 @@ dashedName: find-duplicates
 
 # --description--
 
-# --description--
-
 The objective of this challenge is to write a program that efficiently identifies duplicate numbers in a given array.
-
-
 
 # --instructions--
 

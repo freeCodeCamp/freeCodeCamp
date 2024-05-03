@@ -28,7 +28,7 @@ multi-line comment */
 
 **NOTE:** As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code—both for others *and* for your future self.
 
-
+<h3>Hinglish</h3>
 Comments yaane ki code ki lines jo JavaScript ko jaanboojhkar ignore karni hai. Comments khud ke liye aur dusre logon ke liye notes chhodne ka ek achha tareeka hai jo baad mein uss code ka kya kaam hai woh samajhne ke liye upyogi hota hai.
 
 JavaScript mein comments likhne ke do tareeke hote hain:

@@ -8,7 +8,7 @@ dashedName: com-less-than-op
 # --description--
 
 The less than operator (`<`) compares the values of two numbers. If the number to the left is less than the number to the right, it returns `true`. Otherwise, it returns `false`. Like the equality operator, the less than operator converts data types while comparing.
-
+<h2>Hinglish</h2>
 Less than operator (`<`) do numbers ke values ko compare karta hai. Agar left side ka number right side ke number se chota hai, to ye `true` return karta hai. Warna, ye `false` return karta hai. Equality operator ki tarah, less than operator bhi values ko compare karte waqt data types ko convert kar dega.
 
 **Examples**

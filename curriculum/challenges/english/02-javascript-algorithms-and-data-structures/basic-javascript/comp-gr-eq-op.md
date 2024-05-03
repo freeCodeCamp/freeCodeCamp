@@ -10,7 +10,7 @@ dashedName: comp-gr-eq-op
 The greater than or equal to operator (`>=`) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns `true`. Otherwise, it returns `false`.
 
 Like the equality operator, the greater than or equal to operator will convert data types while comparing.
-
+<h2>Hinglish</h2>
 Greater than or equal to operator (`>=`) do numbers ke values ko compare karta hai. Agar left side ka number right side ke number se bada ya barabar hai, to ye `true` return karta hai. Warna, ye `false` return karta hai. Equality operator ki tarah, greater than or equal to operator bhi values ko compare karte waqt data types ko convert kar dega.
 
 **Examples**

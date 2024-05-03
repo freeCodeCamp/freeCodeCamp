@@ -13,47 +13,40 @@ In JavaScript, there's an operator (%) that can reveal the last digit of any num
 
 # --instructions--
 
-Write a program that prompts the user for a positive number. Then, use the modulo operator (%) to find the last digit of that number. Finally, print the last digit.
+Write a program that uses the modulo operator (%) to find the last digit of that number. Finally, print the last digit.
+
+Create a variable named `lastDigit`.
 
 # --hints--
 
-`lastDigit(843)` should return `3`
+You should use `%` operator
 
 ```js
-assert(lastDigit(843)===3)
+assert(code.match(/%/g));
 ```
 
-`lastDigit(321)` should return `1`
+Value of `lastDigit` should be `3`.
 
 ```js
-assert(lastDigit(321)===1)
-
+assert(lastDigit === "3" || lastDigit === 3);
 ```
+
 
 # --seed--
 ## --seed-contents--
 
 ```js
-function lastDigit(number) {
-    //  Only change code below this line
-}
+var number = 843;
+//Only change code below this line
 
 ```
 
 # --solutions--
 
 ```js
-function lastDigit(number) {
-    // Convert number to a string
-    var numberString = number.toString();
-    
-    // Extract the last character
-    var last = numberString.charAt(numberString.length - 1);
 
-    // Convert the last character back to a number
-    last = parseInt(last);
-
-    return last;
-}
-
+var number = 843;
+var lastDigit = number%10;
+console.log(lastDigit);
+ 
 ```

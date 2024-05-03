@@ -1,13 +1,29 @@
 ---
-id: 6612ee88a87eb008ba77eb6f
-title: Find Greater of two Numbers
+id: 663385f778c882f0a886c6ea
+title: Find Greater of Two Numbers
 challengeType: 1
-dashedName: find-greater-of-two-nums
+dashedName: find-greator-of-two-numbers
 ---
 
 # --description--
 
-Write a program to take two numbers from the user and determine the greater of those two given numbers.
+Objective:  Write JavaScript code to compare two numbers and identify the larger one.
+
+Introduction: Comparing numbers is essential in programming. This challenge will teach you how to find the bigger number entered by the user using JavaScript.
+
+Challenge : This challenge will test your JavaScript skills! Write a program that asks the user for two numbers. Then, use conditional statements to figure out which number is bigger.
+
+Functions can accept multiple parameters. You pass arguments to a function call, and the values you provide are referred to as arguments. Multiple parameters are separated by a comma.
+For example, this function takes two numbers as parameters and add them.
+
+
+```js
+function findSum(number1, number2) {
+	const sumOfNumbers = number1 + number2;
+	return sumOfNumbers;
+}
+```
+
 
 Click on this - <a href = "https://cs50.ai/chat">Link</a> to Go to CS50 AI.
 And use this prompt prompt __________

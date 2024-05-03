@@ -8,7 +8,8 @@ dashedName: challenge-8
 ---
 
 # --description--
-
+<br>
+<br>
 In your first programming class, you probably learned about compilers. Here's how they work: You write your program in a human-readable format, but computers can't understand it directly. So, you use a compiler to translate your program into a format that computers can read. This translated version of your program can then be run on a computer.
 
 When you write code, you use a high-level language that's easy for humans to understand. The compiler translates this high-level code into low-level machine code, which consists of instructions that the computer's processor can execute. This machine code is what actually gets executed when you run your program.

@@ -1,8 +1,8 @@
 ---
-id: 6612f37a60f6910b3b81728b
+id: 663384135a79fcf03708cafb
 title: Logical Order in if-else Statements
 challengeType: 1
-dashedName: logical-ord
+dashedName: logical-order
 ---
 
 # --description--
@@ -13,11 +13,6 @@ The function is executed from top to bottom so you will want to be careful of wh
 
 Take these two functions as an example.
 
-`if`, `else if` statements mein order important hai.
-
-Function ko upar se neeche tak execute kiya jaata hai isliye aapko dhyaan rakhna chahiye ki kaunsa statement pehle aata hai.
-
-In do functions ko udaharan ke roop mein le lo.
 
 Here's the first:
 
@@ -49,7 +44,6 @@ function bar(x) {
 
 While these two functions look nearly identical if we pass a number to both we get different outputs.
 
-Jabki ye do functions lagbhag ek jaise dikhte hain, agar hum dono mein se kisi ek ko ek number pass karte hain to hume alag-alag outputs milte hain.
 
 ```js
 foo(0)
@@ -57,6 +51,50 @@ bar(0)
 ```
 
 `foo(0)` will return the string `Less than one`, and `bar(0)` will return the string `Less than two`.
+
+<h2>Hinglish</h2>
+
+`if`, `else if` statements mein order important hai.
+
+Function ko upar se neeche tak execute kiya jaata hai isliye aapko dhyaan rakhna chahiye ki kaunsa statement pehle aata hai.
+
+In do functions ko udaharan ke roop mein le lo.
+
+Pehla. 
+
+```js
+function foo(x) {
+  if (x < 1) {
+    return "Less than one";
+  } else if (x < 2) {
+    return "Less than two";
+  } else {
+    return "Greater than or equal to two";
+  }
+}
+```
+
+Dusra
+
+```js
+function bar(x) {
+  if (x < 2) {
+    return "Less than two";
+  } else if (x < 1) {
+    return "Less than one";
+  } else {
+    return "Greater than or equal to two";
+  }
+}
+```
+
+
+Jabki ye do functions lagbhag ek jaise dikhte hain, agar hum dono mein se kisi ek ko ek number pass karte hain to hume alag-alag outputs milte hain.
+
+```js
+foo(0)
+bar(0)
+```
 
 `foo(0)` string `Less than one` ko return karega, aur `bar(0)` string `Less than two` ko return karega.
 

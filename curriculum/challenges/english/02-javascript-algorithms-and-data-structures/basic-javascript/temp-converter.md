@@ -32,30 +32,29 @@ C/5 = (F-32)/9
 
 # --hints--
 
-`30` should return `86`
+# --hints--
+Variable `fahrenheit` should return `86`
 
 ```js
-assert(celsiusToFahrenheit(30)===86)
+assert(fahrenheit===86)
 ```
 
 # --seed--
 ## --seed-contents--
 
 ```js
-function celsiusToFahrenheit(celsius) {
-    // Only change code below this line
-}
-
-celsiusToFahrenheit(30)
+var celsius = 30;
+// Only change code below this line
 
 ```
 
 # --solutions--
 
 ```js
-function celsiusToFahrenheit(celsius) {
-    return (celsius * 9/5) + 32;
-}
 
-celsiusToFahrenheit(30)
+var celsius = 30;
+
+// Convert Celsius to Fahrenheit using the provided formula
+var fahrenheit = (celsius * 9 / 5) + 32;
+
 ```

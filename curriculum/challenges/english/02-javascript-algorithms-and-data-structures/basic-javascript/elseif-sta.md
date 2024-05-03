@@ -9,6 +9,7 @@ dashedName: elseif-sta
 
 If you have multiple conditions that need to be addressed, you can chain `if` statements together with `else if` statements.
 
+<h2>Hinglish</h2>
 Agar aapke paas kai sharten hain jo address ki jaani hain, to aap `if` statements ko `else if` statements ke saath chain kar sakte hain.
 
 ```js

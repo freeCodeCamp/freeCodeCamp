@@ -11,22 +11,25 @@ Write a program to take two numbers A and B from the user and calculate the quot
 
 **Note:** Print the output in the order as mentioned in the question.
 
+<h2>Hinglish</h2>
 
+"Ek program likho jo user se do numbers A aur B le aur jab number A ko number B se divide kiya jata hai, to quotient aur remainder calculate kare.
 
+**Note:** Output ko question mein diye gaye order mein print kare."
 
 # --hints--
 
-`12,5` should return `2,2`
+`Quotient(12,5)` should return `2`. `Reminder(12,5)` should return `2`.
 
 ```js
-assert(Quotient(12,5)===2 && Reminder(12,5)===2)
+assert(Quotient(12,5)===2 && Remainder(12,5)===2)
 
 ```
 
-`15,6` should return `2,3`
+Similarly `15,6` should return `2,3`
 
 ```js
-assert(Quotient(15,6)===2 && Reminder(15,6)===3)
+assert(Quotient(15,6)===2 && Remainder(15,6)===3)
 ```
 
 # --seed--
@@ -37,7 +40,7 @@ function Quotient(a, b) {
     //  Only change code below this line
     
 }
-function Reminder (a,b) {
+function Remainder (a,b) {
     //  Only change code below this line
 }
 
