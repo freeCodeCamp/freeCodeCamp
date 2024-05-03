@@ -32,7 +32,7 @@ test.describe('Progress reset modal', () => {
 
     await expect(
       page.getByText(
-        'Your progress through each step/challenge (all completed challenge will be lost)'
+        'Your progress through each step/challenge (all completed challenges will be lost)'
       )
     ).toBeVisible();
 
@@ -96,18 +96,6 @@ test.describe('Progress reset modal', () => {
   test('should reset the progress if the user clicks the reset button', async ({
     page
   }) => {
-    // Filter all API calls,
-    // and only return the response of the `/user/get-session-user` call that happens after the reset,
-    // which can be determined by `completedChallengeCount`.
-    const userDataResponsePromise = page.waitForResponse(async res => {
-      if (!res.url().includes('/user/get-session-user')) {
-        return false;
-      }
-
-      const body = await res.json();
-      return body.user.certifieduser.completedChallengeCount === 0;
-    });
-
     await page
       .getByRole('button', { name: 'Reset all of my progress' })
       .click();
@@ -123,31 +111,12 @@ test.describe('Progress reset modal', () => {
       .click();
 
     await page.waitForURL('/');
-
-    const userDataResponse = await userDataResponsePromise;
-    const userData = await userDataResponse.json();
-
     await expect(page.getByText('Your progress has been reset')).toBeVisible();
-    expect(userData.user.certifieduser).toMatchObject({
-      isFrontEndCert: false,
-      isDataVisCert: false,
-      isBackEndCert: false,
-      isFullStackCert: false,
-      isRespWebDesignCert: false,
-      is2018DataVisCert: false,
-      isFrontEndLibsCert: false,
-      isJsAlgoDataStructCert: false,
-      isApisMicroservicesCert: false,
-      isInfosecQaCert: false,
-      isQaCertV7: false,
-      isInfosecCertV7: false,
-      isSciCompPyCertV7: false,
-      isDataAnalysisPyCertV7: false,
-      isMachineLearningPyCertV7: false,
-      isRelationalDatabaseCertV8: false,
-      isCollegeAlgebraPyCertV8: false,
-      isFoundationalCSharpCertV8: false,
-      isJsAlgoDataStructCertV8: false
-    });
+
+    // Go to /settings and confirm that all certifications are reset
+    await page.goto('/settings');
+    await expect(
+      page.getByRole('link', { name: 'Show Certification' })
+    ).toBeHidden();
   });
 });
