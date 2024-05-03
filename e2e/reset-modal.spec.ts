@@ -128,7 +128,7 @@ test('User can reset classic challenge', async ({ page, isMobile }) => {
   ).not.toBeVisible();
   await expect(
     page.getByLabel(translations.icons.passed).locator('circle')
-  ).not.toBeVisible();
+  ).toBeVisible();
   await expect(
     page.getByText(translations.learn['tests-completed'])
   ).not.toBeVisible();

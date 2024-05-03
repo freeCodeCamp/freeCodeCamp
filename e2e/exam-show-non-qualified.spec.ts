@@ -9,7 +9,9 @@ test.beforeEach(async ({ page }) => {
   await page.goto(examUrl);
 });
 
-test.describe('Exam Show E2E Test Suite for non-qualified user', () => {
+test.describe('Exam Show E2E Test Suite for unauthenticated user', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
   test('The page renders with correct title', async ({ page }) => {
     await expect(page).toHaveTitle(
       'Foundational C# with Microsoft Certification Exam: Foundational C# with Microsoft Certification Exam | freeCodeCamp.org'

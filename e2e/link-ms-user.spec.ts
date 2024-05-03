@@ -8,6 +8,8 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Link MS user component (signed-out user)', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+
   test('should display the page content with a signin CTA', async ({
     page
   }) => {

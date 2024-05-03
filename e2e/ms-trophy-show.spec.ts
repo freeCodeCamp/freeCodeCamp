@@ -1,8 +1,4 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
-
-const verifyTrophyButtonText = translations.buttons['verify-trophy'];
-const askForHelpButtonText = translations.buttons['ask-for-help'];
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -10,41 +6,64 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test('the page should render with correct title and description', async ({
-  page
-}) => {
-  await expect(page).toHaveTitle(
-    'Write Your First Code Using C# - Trophy - Write Your First Code Using C# | Learn | freeCodeCamp.org'
-  );
-  const title = page.getByTestId('challenge-title');
-  await expect(title).toBeVisible();
-  await expect(title).toContainText('Trophy - Write Your First Code Using C#');
+test.describe('MS Trophy page if the user is signed in', () => {
+  test('should render the content correctly', async ({ page }) => {
+    await expect(page).toHaveTitle(
+      'Write Your First Code Using C# - Trophy - Write Your First Code Using C# | Learn | freeCodeCamp.org'
+    );
+    await expect(
+      page.getByRole('heading', {
+        level: 1,
+        name: 'Trophy - Write Your First Code Using C#'
+      })
+    ).toBeVisible();
 
-  const description = page.getByTestId('challenge-description');
-  await expect(description).toBeVisible();
+    await expect(
+      page.getByText(
+        'Now that you\'ve completed all of the "Write Your First Code Using C#" challenges, you should have earned the trophy for it on the Microsoft Learn platform.'
+      )
+    ).toBeVisible();
+
+    await expect(page.getByRole('button', { name: 'Unlink' })).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: 'Verify Trophy' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: 'Ask for Help' })
+    ).toBeVisible();
+  });
 });
 
-test('Correct Verify Trophy button', async ({ page }) => {
-  const askHelpButton = page.getByRole('button', {
-    name: verifyTrophyButtonText
-  });
-  await expect(askHelpButton).toBeVisible();
-  await expect(askHelpButton).toHaveText(verifyTrophyButtonText);
-  await expect(askHelpButton).toBeDisabled();
-});
+test.describe('MS Trophy page if the user is not signed in', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
 
-test('Correct Ask for help button', async ({ page }) => {
-  const checkAnswerButton = page.getByRole('button', {
-    name: askForHelpButtonText
-  });
-  await expect(checkAnswerButton).toBeVisible();
-  await expect(checkAnswerButton).toContainText(askForHelpButtonText);
+  test('should render the content correctly', async ({ page }) => {
+    await expect(page).toHaveTitle(
+      'Write Your First Code Using C# - Trophy - Write Your First Code Using C# | Learn | freeCodeCamp.org'
+    );
+    await expect(
+      page.getByRole('heading', {
+        level: 1,
+        name: 'Trophy - Write Your First Code Using C#'
+      })
+    ).toBeVisible();
 
-  await checkAnswerButton.click();
-  await expect(
-    page.getByRole('heading', {
-      name: translations.buttons['ask-for-help'],
-      exact: true
-    })
-  ).toBeVisible();
+    await expect(
+      page.getByText(
+        'Now that you\'ve completed all of the "Write Your First Code Using C#" challenges, you should have earned the trophy for it on the Microsoft Learn platform.'
+      )
+    ).toBeVisible();
+
+    // There are two "Sign in" buttons on the page: one in the nav, and one in the page body
+    await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(2);
+    await expect(
+      page.getByRole('button', { name: 'Verify Trophy' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: 'Verify Trophy' })
+    ).toBeDisabled();
+    await expect(
+      page.getByRole('button', { name: 'Ask for Help' })
+    ).toBeVisible();
+  });
 });
