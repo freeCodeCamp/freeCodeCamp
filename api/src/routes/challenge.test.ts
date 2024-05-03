@@ -4,6 +4,7 @@ const mockVerifyTrophyWithMicrosoft = jest.fn();
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
+import { Static } from '@fastify/type-provider-typebox';
 
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import {
@@ -13,7 +14,8 @@ import {
   superRequest,
   seedExam,
   defaultUserEmail,
-  createSuperRequest
+  createSuperRequest,
+  defaultUsername
 } from '../../jest.utils';
 import {
   completedExamChallenge2,
@@ -31,6 +33,7 @@ import {
   userExam4
 } from '../../__mocks__/exam';
 import { Answer } from '../utils/exam-types';
+import type { getSessionUser } from '../schemas/user/get-session-user';
 
 jest.mock('./helpers/challenge-helpers', () => {
   const originalModule = jest.requireActual<
@@ -1506,22 +1509,26 @@ describe('challengeRoutes', () => {
             userCompletedExam: userExam1
           });
 
-          const {
-            completedChallenges = [],
-            completedExams = [],
-            progressTimestamps = []
-          } = (await fastifyTestInstance.prisma.user.findFirst({
-            where: { email: 'foo@bar.com' }
-          })) || {};
+          type GetSessionUserResponseBody = Static<
+            (typeof getSessionUser)['response']['200']
+          >['user'];
+
+          const res = (await superGet('/user/get-session-user')).body as {
+            user: GetSessionUserResponseBody;
+          };
+
+          const { completedChallenges, completedExams, calendar } =
+            res.user[defaultUsername]!;
 
           // should have the 1 prerequisite challenge
           expect(completedChallenges).toHaveLength(1);
           expect(completedExams).toHaveLength(1);
-          expect(progressTimestamps).toHaveLength(0);
-          expect(completedChallenges).toMatchObject(completedTrophyChallenges);
-          expect(completedExams[0]).toMatchObject({
+          expect(calendar).toStrictEqual({});
+          expect(completedChallenges).toEqual(completedTrophyChallenges);
+          expect(completedExams[0]).toEqual({
             id: '647e22d18acb466c97ccbef8',
             challengeType: 17,
+            completedDate: expect.any(Number),
             examResults: mockResults1
           });
 

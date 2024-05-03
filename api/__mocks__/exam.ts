@@ -67,7 +67,8 @@ export const completedTrophyChallenges = [
   {
     id: '647f85d407d29547b3bee1bb',
     solution: 'challenge-solution',
-    completedDate: 1695064765244
+    completedDate: 1695064765244,
+    files: []
   }
 ];
 
