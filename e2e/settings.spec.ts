@@ -455,6 +455,8 @@ test.describe('Settings', () => {
       translations.flash['progress-reset']
     );
 
+    test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
     await page.goto('/settings');
     await page
       .getByRole('button', {
