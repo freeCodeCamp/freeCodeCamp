@@ -7,8 +7,6 @@ const course =
 const editorPaneLabel =
   'Editor content;Press Alt+F1 for Accessibility Options.';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 const enableKeyboardShortcuts = async (
   page: Page,
   request: APIRequestContext

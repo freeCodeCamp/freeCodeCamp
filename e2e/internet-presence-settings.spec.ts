@@ -11,8 +11,6 @@ const settingsPageElement = {
   internetPresenceForm: 'internet-presence'
 } as const;
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });

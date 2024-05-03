@@ -7,8 +7,6 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const execP = promisify(exec);
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });

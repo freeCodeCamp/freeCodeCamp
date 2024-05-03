@@ -61,8 +61,6 @@ test('the page should render correctly', async ({ page }) => {
 });
 
 test.describe('Learn (authenticated user)', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('the page shows a random quote for an authenticated user', async ({
     page
   }) => {

@@ -49,8 +49,6 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
 });
 
 test.describe('Challenge Completion Modal Tests (Signed In)', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('should render the modal correctly', async ({ page }) => {
     await expect(page.getByRole('heading')).toBeVisible();
     await expect(page.getByRole('button', { name: 'close' })).toBeVisible();

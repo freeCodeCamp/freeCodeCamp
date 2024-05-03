@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Exam results modal', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');

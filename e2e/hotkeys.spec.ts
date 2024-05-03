@@ -7,8 +7,6 @@ const course =
 const editorPaneLabel =
   'Editor content;Press Alt+F1 for Accessibility Options.';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test('User can interact with the app using the keyboard', async ({ page }) => {
   // Enable keyboard shortcuts
   await page.goto('/settings');

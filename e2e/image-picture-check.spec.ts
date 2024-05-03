@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Picture input field', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
   });

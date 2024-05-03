@@ -1,8 +1,6 @@
 import { test, expect, Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Certification page - Non Microsoft', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certification/certifieduser/responsive-web-design');
@@ -148,7 +146,6 @@ test.describe('Invalid certification page', () => {
     }
   };
   test.describe('for authenticated user', () => {
-    test.use({ storageState: 'playwright/.auth/certified-user.json' });
     test(
       'it should redirect to / and display an error message',
       testInvalidCertification

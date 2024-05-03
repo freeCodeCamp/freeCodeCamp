@@ -74,8 +74,6 @@ test.describe('Challenge Title Component (signed out)', () => {
 });
 
 test.describe('Challenge Title Component (signed in)', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('should display GreenPass after challenge completion', async ({
     page
   }) => {

@@ -20,8 +20,6 @@ const headerComponentElements = {
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });

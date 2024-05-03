@@ -38,7 +38,6 @@ const IntroDescription = [
 ];
 
 test.describe('Intro Component E2E Test Suite with Signed In User', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test('Verifies the Correct Intro component heading', async ({ page }) => {
     await expect(
       page.getByText(
