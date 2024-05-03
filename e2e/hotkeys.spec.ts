@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { authedRequest } from './utils/request';
+import { authedPut } from './utils/request';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
@@ -11,14 +11,14 @@ const editorPaneLabel =
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeAll(async ({ request }) => {
-  await authedRequest(request, 'update-my-keyboard-shortcuts', {
+  await authedPut(request, 'update-my-keyboard-shortcuts', {
     keyboardShortcuts: false
   });
 });
 
 test.afterEach(
   async ({ request }) =>
-    await authedRequest(request, 'update-my-keyboard-shortcuts', {
+    await authedPut(request, 'update-my-keyboard-shortcuts', {
       keyboardShortcuts: false
     })
 );

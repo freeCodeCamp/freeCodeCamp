@@ -1,7 +1,7 @@
 import { APIRequestContext, Page, expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { authedRequest } from './utils/request';
+import { authedPut } from './utils/request';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
@@ -11,7 +11,7 @@ const editorPaneLabel =
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 const enableKeyboardShortcuts = async (request: APIRequestContext) => {
-  const res = await authedRequest(request, '/update-my-keyboard-shortcuts', {
+  const res = await authedPut(request, '/update-my-keyboard-shortcuts', {
     keyboardShortcuts: true
   });
   expect(await res.json()).toEqual({

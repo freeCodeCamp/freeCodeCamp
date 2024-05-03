@@ -3,7 +3,7 @@ import { APIRequestContext, expect } from '@playwright/test';
 const ensureLeadingSlash = (endpoint: string) =>
   endpoint[0] === '/' ? endpoint : '/' + endpoint;
 
-export const authedRequest = async (
+export const authedPut = async (
   request: APIRequestContext,
   endpoint: string,
   data: Record<string, unknown>
