@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { authedRequest } from './utils/request';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
@@ -8,6 +9,19 @@ const editorPaneLabel =
   'Editor content;Press Alt+F1 for Accessibility Options.';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+test.beforeAll(async ({ request }) => {
+  await authedRequest(request, 'update-my-keyboard-shortcuts', {
+    keyboardShortcuts: false
+  });
+});
+
+test.afterEach(
+  async ({ request }) =>
+    await authedRequest(request, 'update-my-keyboard-shortcuts', {
+      keyboardShortcuts: false
+    })
+);
 
 test('User can interact with the app using the keyboard', async ({ page }) => {
   // Enable keyboard shortcuts
@@ -18,6 +32,12 @@ test('User can interact with the app using the keyboard', async ({ page }) => {
   await keyboardShortcutGroup
     .getByRole('button', { name: translations.buttons.on, exact: true })
     .click();
+  // TODO: getByRole('alert', name:
+  // translations.flash['keyboard-shortcut-updated']) did not find the alert.
+  // Should it a) be an alert and b) have a name?
+  await expect(
+    page.getByText(translations.flash['keyboard-shortcut-updated'])
+  ).toBeVisible();
 
   await page.goto(course);
 
