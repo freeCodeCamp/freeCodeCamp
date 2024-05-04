@@ -9,8 +9,88 @@
   "superBlock": "a2-english-for-developers",
   "challengeOrder": [
     {
-      "id": "655c126fa57f068c8e81151f",
-      "title": "Dialogue: Placeholder"
+      "id": "6635c3e30e02d224d4450eac",
+      "title": "Dialogue 1: Discussing low-code development"
+    },
+    {
+      "id": "6635f9203e0ed42948db1e4c",
+      "title": "Task 1"
+    },
+    {
+      "id": "6635f9c305ad6d2a08cb6ad4",
+      "title": "Task 2"
+    },
+    {
+      "id": "6635fc67f6d0f82ad629e71d",
+      "title": "Task 3"
+    },
+    {
+      "id": "6635fdc8fdd98f2b56c3bcf8",
+      "title": "Task 4"
+    },
+    {
+      "id": "663601a777cfc92cbaf8cb7c",
+      "title": "Task 5"
+    },
+    {
+      "id": "66360374d980d82d3cccddf7",
+      "title": "Task 6"
+    },
+    {
+      "id": "663604ab610a932dc9882194",
+      "title": "Task 7"
+    },
+    {
+      "id": "663606cc695a992e81ef521d",
+      "title": "Task 8"
+    },
+    {
+      "id": "663608aa63d5b72f475b7718",
+      "title": "Task 9"
+    },
+    {
+      "id": "663609d95c99422fce1d3824",
+      "title": "Task 10"
+    },
+    {
+      "id": "66360b4ec92e49305fec41ce",
+      "title": "Task 11"
+    },
+    {
+      "id": "66360c141117e030da0c0cb3",
+      "title": "Task 12"
+    },
+    {
+      "id": "6636159376b91532f4f8e49b",
+      "title": "Task 13"
+    },
+    {
+      "id": "66361836f505f333d344da43",
+      "title": "Task 14"
+    },
+    {
+      "id": "66361ad945006834b7eb7ccd",
+      "title": "Task 15"
+    },
+    {
+      "id": "66361c43829cea3535e7a49a",
+      "title": "Task 16"
+    },
+    {
+      "id": "663620974eb4a0369d76b6b8",
+      "title": "Task 17"
+    },
+    {
+      "id": "663621cf8781e93738b3e30f",
+      "title": "Task 18"
+    },
+    {
+      "id": "66362350df72dc37d8c9ca40",
+      "title": "Task 19"
+    },
+    {
+      "id": "6636242c12c019384fd78b5a",
+      "title": "Task 20"
     }
   ],
   "helpCategory": "English"
