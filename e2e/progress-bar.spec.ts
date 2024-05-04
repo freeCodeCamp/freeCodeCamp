@@ -35,7 +35,7 @@ test.describe('Progress bar component', () => {
       .click();
   });
 
-  test('Declare JavaScript Variables Test', async ({ page }) => {
+  test('should appear in the completion modal after user has submitted their code', async ({ page }) => {
     await page.goto(
       '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
     );
