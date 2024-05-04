@@ -274,10 +274,6 @@
       "title": "Check if Positive or Negative"
     },
     {
-      "id": "6612f1287ba2d00a05b622ff",
-      "title": "Leap Year"
-    },
-    {
       "id": "6606d0691e2c3e1780002742",
       "title": "Chaining if else statements"
     },
@@ -288,6 +284,10 @@
     {
       "id": "66352f0ef19e5408d7d43bed",
       "title": "Getting Started with Functions"
+    },
+    {
+      "id": "6635f1834b9dfd17c2f1ffbe",
+      "title": "Leap Year"
     },
     {
       "id": "663385f778c882f0a886c6ea",
