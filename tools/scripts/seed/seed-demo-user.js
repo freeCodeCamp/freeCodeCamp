@@ -87,7 +87,7 @@ const trophyChallenges = [
     user.yearsTopContributor = ['2017', '2018', '2019'];
   }
   if (args.includes('--unset-privacy-terms')) {
-    user.acceptedPrivacyTerms = null;
+    user.acceptedPrivacyTerms = false;
   }
   if (args.includes('--seed-trophy-challenges')) {
     user.completedChallenges = trophyChallenges;
