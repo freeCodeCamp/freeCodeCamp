@@ -25,7 +25,7 @@ dashedName: combine-two-arrays-using-the-concat-method
 يجب أن يستخدم الكود الخاص بك دالة `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 يجب ألا تتغير مصفوفة `first`.

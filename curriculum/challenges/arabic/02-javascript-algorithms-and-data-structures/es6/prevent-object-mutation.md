@@ -34,19 +34,19 @@ console.log(obj);
 لا ينبغي أن تستبدل كلمة `const`.
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `MATH_CONSTANTS` يجب أن يكون متغير ثابت (باستخدام `const`).
 
 ```js
-assert(code.match(/const\s+MATH_CONSTANTS/g));
+assert(__helpers.removeJSComments(code).match(/const\s+MATH_CONSTANTS/g));
 ```
 
 لا يجب عليك تغيير الإعلان الأصلي لـ `MATH_CONSTANTS`.
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
    /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
 ));
 ```

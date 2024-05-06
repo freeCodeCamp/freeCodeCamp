@@ -3,11 +3,9 @@ const examUrl =
 
 const el = {
   qualifiedAlert: "[data-cy='qualified-for-exam-alert']",
-  prerequisitesAlert: "[data-cy='missing-prerequisites-alert']",
   surveyAlert: "[data-cy='c-sharp-survey-alert']",
   startSurveyBtn: "[data-cy='start-csharp-survey-btn']",
   submitSurveyBtn: "[data-cy='submit-csharp-survey-btn']",
-  surveyModal: "[data-cy='c-sharp-survey-modal']",
   startExamBtn: "[data-cy='start-exam-btn']",
   examTime: "[data-cy='exam-time']",
   examInput: '.exam-answer-input-visible',
@@ -27,7 +25,9 @@ describe('C# Exam Challenge', () => {
     it('Should show prerequisites alert and have "start exam" button disabled', () => {
       cy.visit(examUrl);
       cy.get(el.qualifiedAlert).should('not.exist');
-      cy.get(el.prerequisitesAlert).should('be.visible');
+      cy.contains(
+        'You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:'
+      ).should('be.visible');
       cy.contains('Trophy - Write Your First Code Using C#').should(
         'be.visible'
       );
@@ -49,11 +49,13 @@ describe('C# Exam Challenge', () => {
         'not.exist'
       );
       cy.get(el.qualifiedAlert).should('not.exist');
-      cy.get(el.prerequisitesAlert).should('not.exist');
+      cy.contains(
+        'You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:'
+      ).should('not.exist');
       cy.get(el.surveyAlert).should('be.visible');
       cy.get(el.startExamBtn).should('have.attr', 'aria-disabled');
       cy.get(el.startSurveyBtn).click();
-      cy.get(el.surveyModal).should('be.visible');
+      cy.contains('Foundational C# with Microsoft Survey').should('be.visible');
       cy.get(el.submitSurveyBtn).should('have.attr', 'aria-disabled');
       cy.contains('Student developer').click();
       cy.contains('Novice (no prior experience').click();
@@ -73,7 +75,9 @@ describe('C# Exam Challenge', () => {
     it('Should be able to start and complete the exam', () => {
       cy.get(el.qualifiedAlert).should('be.visible');
       cy.get(el.surveyAlert).should('not.exist');
-      cy.get(el.prerequisitesAlert).should('not.exist');
+      cy.contains(
+        'You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:'
+      ).should('not.exist');
       cy.get(el.startExamBtn).click();
       cy.get('.exam-wrapper').should('be.visible');
       cy.contains('Foundational C# with Microsoft Certification Exam').should(

@@ -20,13 +20,13 @@ O Node é apenas um ambiente JavaScript. Como o JavaScript lado do client, você
 
 Recomendamos que o terminal continue aberto enquanto você trabalha nesses desafios. Ao ler a saída no terminal, você poderá ver os erros que podem ocorrer.
 
-The server must be restarted after making changes to its files.
+O servidor deve ser reiniciado após serem feitas alterações em seus arquivos.
 
-You can stop the server from the terminal using `Ctrl + C` and start it using Node directly (`node mainEntryFile.js`) or using a run script in the `package.json` file with `npm run`.
+Você pode interromper o servidor pelo terminal usando `ctrl + c` e iniciá-lo usando o Node diretamente (`node mainEntryFile.js`) ou usando um script de execução no arquivo `package.json` com `npm run`.
 
-For example, the `"start": "node server.js"` script would be run from the terminal using `npm run start`.
+Por exemplo, o script `"start": "node server.js"` seria executado pelo terminal usando `npm run start`.
 
-To implement server auto restarting on file save Node provides the `--watch` flag you can add to your start script `"start": "node --watch server.js"` or you can install an npm package like `nodemon`. We will leave this to you as an exercise.
+Para implementar a reinicialização automática do servidor ao salvar arquivos, o Node fornece a flag `--watch`, que você pode adicionar ao começo do script `"start": "node --watch server.js"` — ou você pode instalar um pacote do npm como o `nodemon`. Deixamos isso para você fazer como exercício.
 
 # --instructions--
 

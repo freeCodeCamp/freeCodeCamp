@@ -39,7 +39,7 @@ assert(secondToLastLetterOfLastName === 'c');
 Du solltest `.length` verwenden, um den vorletzten Buchstaben zu erhalten.
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

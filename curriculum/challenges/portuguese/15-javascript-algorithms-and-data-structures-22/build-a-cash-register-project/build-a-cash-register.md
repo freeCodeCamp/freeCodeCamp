@@ -1,6 +1,6 @@
 ---
 id: 657bdcc3a322aae1eac38392
-title: Build a Cash Register
+title: Crie uma caixa registradora
 challengeType: 14
 forumTopicId: 16012
 dashedName: build-a-cash-register
@@ -8,11 +8,11 @@ dashedName: build-a-cash-register
 
 # --description--
 
-Here you'll build a cash register app that will return change to the customer based on the price of the item, the amount of cash provided by the customer, and the amount of cash in the cash drawer. You'll also need to show different messages to the user in different scenarios, such as when the customer provides too little cash or when the cash drawer doesn't have enough to issue the correct change.
+Aqui, você criará um aplicativo de caixa registradora que vai devolver o troco para o cliente baseado no preço do ‘item’, a quantidade de dinheiro dada pelo consumidor, e a quantidade na gaveta da caixa registradora. Você também precisará mostrar mensagens diferentes para o usuário em diferentes cenários; por exemplo, quando o consumidor providencia muito pouco dinheiro ou quando a caixa registradora não tem o suficiente para entregar o troco corretamente.
 
-In the `script.js` file, you have been provided with the `price` and `cid` variables. The `price` variable is the price of the item, and the `cid` variable is the cash-in-drawer, which is a 2D array listing the available currency in the cash drawer.
+No arquivo `script.js`, você tem as variáveis `price` e `cid`. A variável `price` é o preço do 'item', e a variável `cid` é a caixa registradora, um array bidimensional que lista a quantidade de dinheiro na caixa registradora.
 
-The other variable you will need add is the `cash` variable, which is the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
+A outra variável que você precisará adicionar é a variável `cash`, que é a quantidade de dinheiro dada pelo cliente pelo 'item', providenciado por um elemento `input` na página.
 
 If you'd like to test your application with different values for `price` and `cid`, make sure to declare them with the `let` keyword so they can be reassigned by our tests.
 

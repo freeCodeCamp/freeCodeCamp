@@ -4,10 +4,6 @@ import Stripe from 'stripe';
 import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
 import keys from '../../../config/secrets';
 import {
-  getAsyncPaypalToken,
-  verifyWebHook,
-  updateUser,
-  verifyWebHookType,
   createStripeCardDonation,
   handleStripeCardUpdateSession
 } from '../utils/donation';
@@ -195,37 +191,15 @@ export default function donateBoot(app, done) {
     }
   }
 
-  function updatePaypal(req, res) {
-    const { headers, body } = req;
-    return Promise.resolve(req)
-      .then(verifyWebHookType)
-      .then(getAsyncPaypalToken)
-      .then(token => verifyWebHook(headers, body, token, keys.paypal.webhookId))
-      .then(hookBody => updateUser(hookBody, app))
-      .catch(err => {
-        // Todo: This probably need to be thrown and caught in error handler
-        log(err.message);
-      })
-      .finally(() => res.status(200).json({ message: 'received paypal hook' }));
-  }
-
   const stripeKey = keys.stripe.public;
   const secKey = keys.stripe.secret;
-  const paypalKey = keys.paypal.client;
-  const paypalSec = keys.paypal.secret;
-
   const stripeSecretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
   const stripPublicInvalid =
     !stripeKey || stripeKey === 'pk_from_stripe_dashboard';
-  const paypalSecretInvalid =
-    !paypalKey || paypalKey === 'id_from_paypal_dashboard';
-  const paypalPublicInvalid =
-    !paypalSec || paypalSec === 'secret_from_paypal_dashboard';
 
   const stripeInvalid = stripeSecretInvalid || stripPublicInvalid;
-  const paypalInvalid = paypalPublicInvalid || paypalSecretInvalid;
 
-  if (stripeInvalid || paypalInvalid) {
+  if (stripeInvalid) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Donation API keys are required to boot the server!');
     }
@@ -236,7 +210,6 @@ export default function donateBoot(app, done) {
     api.post('/charge-stripe-card', handleStripeCardDonation);
     api.put('/update-stripe-card', handleStripeCardUpdate);
     api.post('/add-donation', addDonation);
-    hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);
     donateRouter.use('/hooks', hooks);
     app.use(donateRouter);

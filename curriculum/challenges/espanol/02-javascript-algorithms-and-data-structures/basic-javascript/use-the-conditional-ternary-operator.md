@@ -42,7 +42,7 @@ Utiliza el operador condicional en la función `checkEqual` para comprobar si do
 `checkEqual` debe usar el operador condicional
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(__helpers.removeJSComments(code)));
 ```
 
 `checkEqual(1, 2)` debe devolver la cadena `Not Equal`

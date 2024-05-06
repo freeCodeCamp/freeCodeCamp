@@ -34,7 +34,7 @@ const a = parseInt("11", 2);
 `convertToInteger` 应该使用 `parseInt()` 函数。
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("10011")` 应该返回一个数字。

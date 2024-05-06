@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
-
 import './portfolio-projects.css';
 
 interface PortfolioProjectsProps {
@@ -31,9 +30,16 @@ export const PortfolioProjects = ({
             </span>
             <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
           </a>
-
           {image && (
-            <img alt='' className='portfolio-screen-shot' src={image} />
+            <img
+              alt=''
+              className='portfolio-screen-shot'
+              src={image}
+              onError={({ currentTarget }) => {
+                currentTarget.src =
+                  'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
+              }}
+            />
           )}
         </div>
       ))}

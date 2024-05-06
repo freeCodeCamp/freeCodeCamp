@@ -25,7 +25,7 @@ assert(power == 8);
 コードで `raiseToPower` 関数を呼び出すときに、引数を正しい順序で使用する必要があります。
 
 ```js
-assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
+assert(__helpers.removeJSComments(code).match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 ```
 
 # --seed--

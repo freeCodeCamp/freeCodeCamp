@@ -52,7 +52,7 @@ assert(testStrictNotEqual('bob') === 'Not Equal');
 You should use the `!==` operator
 
 ```js
-assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
 ```
 
 # --seed--

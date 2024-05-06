@@ -59,6 +59,7 @@ type CompletedChallengeFile = {
   path?: string | null;
 };
 
+// TODO: Should probably prefer `import{CompletedChallenge}from'@prisma/client'` instead of defining it here
 export type CompletedChallenge = {
   id: string;
   solution?: string | null;

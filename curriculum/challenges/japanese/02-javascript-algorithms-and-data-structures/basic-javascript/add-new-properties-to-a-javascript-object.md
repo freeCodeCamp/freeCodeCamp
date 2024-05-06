@@ -53,7 +53,7 @@ assert(myDog.bark !== undefined);
 `myDog` の初期化に `bark`を追加しないでください。
 
 ```js
-assert(!/bark[^\n]:/.test(code));
+assert(!/bark[^\n]:/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

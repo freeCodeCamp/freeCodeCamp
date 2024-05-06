@@ -20,7 +20,7 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 -   Complete a rota `/api/translate` em `/routes/api.js`
 -   Crie todos os testes unitários/funcionais em `tests/1_unit-tests.js` e `tests/2_functional-tests.js`
 -   Veja os arquivos JavaScript em `/components` para diferentes ortografias e termos que sua aplicação deve traduzir
--   To run the tests automatically, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   Para executar os testes automaticamente, defina `NODE_ENV` como `test` sem aspas no arquivo `.env`
 -   Para executar os testes no console, use o comando `npm run test`.
 
 Escreva os testes a seguir em `tests/1_unit-tests.js`:

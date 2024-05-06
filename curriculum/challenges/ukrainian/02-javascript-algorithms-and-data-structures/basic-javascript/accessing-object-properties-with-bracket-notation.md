@@ -64,7 +64,7 @@ assert(drinkValue === 'water');
 Ви повинні використати дужкову нотацію двічі
 
 ```js
-assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ```
 
 # --seed--

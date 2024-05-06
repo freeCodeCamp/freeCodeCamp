@@ -80,6 +80,10 @@
   border-inline-start-width: 1px;
 }
 
+.panel-display-tabs button:last-of-type:first-of-type {
+  border-inline-start-width: 3px;
+}
+
 .panel-display-tabs button:nth-last-child(2) {
   border-inline-end-width: 1px;
 }

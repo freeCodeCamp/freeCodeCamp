@@ -37,7 +37,7 @@ var ourName;
 Ви повинні оголосити `myName` з ключовим словом `var`, закінчуючи крапкою з комою
 
 ```js
-assert(/var\s+myName\s*;/.test(code));
+assert(/var\s+myName\s*;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

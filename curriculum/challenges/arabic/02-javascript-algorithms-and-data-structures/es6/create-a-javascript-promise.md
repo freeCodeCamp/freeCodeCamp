@@ -32,7 +32,7 @@ assert(makeServerRequest instanceof Promise);
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /Promise\s*\(\s*(function\s*\(\s*resolve\s*,\s*reject\s*\)\s*{|\(\s*resolve\s*,\s*reject\s*\)\s*=>\s*{)[^}]*}/g
   )
 );

@@ -44,7 +44,7 @@ Use a `for` loop to push the values 1 through 5 onto `myArray`.
 You should be using a `for` loop for this.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` should equal `[1, 2, 3, 4, 5]`.

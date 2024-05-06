@@ -61,7 +61,7 @@ assert.deepEqual(prototypeProps, ['numLegs']);
 Dovresti risolvere questa sfida senza usare il metodo integrato `Object.keys()`.
 
 ```js
-assert(!/\Object.keys/.test(code));
+assert(!/\Object.keys/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

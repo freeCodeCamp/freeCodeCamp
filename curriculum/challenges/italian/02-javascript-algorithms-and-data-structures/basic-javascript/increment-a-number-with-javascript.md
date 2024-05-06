@@ -39,20 +39,20 @@ Non dovresti utilizzare l'operatore di assegnazione.
 
 ```js
 assert(
-  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(code)
+  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(__helpers.removeJSComments(code))
 );
 ```
 
 Dovresti usare l'operatore `++`.
 
 ```js
-assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
+assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 Non dovresti cambiare il codice sopra il commento specificato.
 
 ```js
-assert(/let myVar = 87;/.test(code));
+assert(/let myVar = 87;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

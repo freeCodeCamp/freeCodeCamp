@@ -57,6 +57,7 @@
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código (Ctrl + Enter)",
     "check-code-2": "Verifique seu código",
+    "check-code-3": "Check Your Code (Command + Enter)",
     "reset": "Redefinir",
     "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
@@ -95,7 +96,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement"
+    "skip-advertisement": "Skip Advertisement",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -261,8 +263,12 @@
       "nevermind": "Deixa para lá, eu não quero excluir minha conta",
       "certain": "Tenho 100% de certeza. Apague tudo relacionado a essa conta",
       "reset-heading": "Redefinir o meu progresso",
-      "reset-p1": "Isto excluirá de fato todo o seu progresso, pontos, desafios concluídos, nossos registros dos seus projetos, quaisquer certificações que você tiver, tudo.",
-      "reset-p2": "Não seremos capazes de recuperar nada disso para você depois, mesmo que você mude de ideia.",
+      "reset-p1": "This will permanently delete and reset all of the following:",
+      "reset-item-1": "Your progress through each step/challenge (all completed challenges will be lost)",
+      "reset-item-2": "Any saved code, including partially completed challenges, and certification project code",
+      "reset-item-3": "All completed and claimed certifications",
+      "reset-p2": "You will effectively be set back to the very first day you signed up.",
+      "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Deixa para lá, não quero apagar todo o meu progresso",
       "reset-confirm": "Redefinir tudo. Eu quero começar do início"
     },
@@ -308,7 +314,8 @@
     "tweet": "Acabei de receber a certificação {{certTitle}} @freeCodeCamp! Confira aqui: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Entrou em {{date}}",
-    "total-points": "Número de pontos: {{count}}",
+    "from": "From {{location}}",
+    "total-points": "Total Points:",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
@@ -385,8 +392,8 @@
     "tried-rsa": "Se você já tentou usar o método de <0>ler, pesquisar e perguntar</0>, então pode pedir ajuda no fórum freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
-    "minimum-characters": "Add a minimum of {{characters}} characters",
-    "characters-left": "{{characters}} characters left",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
     "must-confirm-statements": "You must confirm the following statements before you can submit your post to the forum.",
     "min-50-max-500": "50 character minimum, 500 character maximum",
     "rsa": "Leia, pesquise, pergunte",
@@ -397,6 +404,7 @@
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "donation-record-not-found": "Your donation record has not been found.",
+    "donation-heading": "Progress towards donation goal",
     "sign-in-card-update": "Sign in to update your card",
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
@@ -727,7 +735,9 @@
     "task": "Task",
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "Exemplo de código de {{codeName}}",
-    "opens-new-window": "Abre em uma nova janela"
+    "opens-new-window": "Abre em uma nova janela",
+    "rsa-checkbox": "I have tried the Read-Search-Ask method",
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
@@ -801,6 +811,7 @@
     "challenge-submit-too-big": "Não foi possível enviar seu código. Seu código tem {{user-size}} bytes. É possível enviar, no máximo, {{max-size}} bytes. Diminua o tamanho do seu código e tente novamente ou peça assistência em https://forum.freecodecamp.org",
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
     "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "Inclua um URL de transcrição da Microsoft na solicitação.",
@@ -862,6 +873,7 @@
     "fulltextNoHours": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
+      "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "solução",
       "no-solution": "erro exibindo a solução, envie um e-mail para support@freeCodeCamp.org para obter ajuda.",
@@ -1002,7 +1014,7 @@
     "user-agent": "Agente de usuário: <code>{{userAgent}}</code>",
     "challenge": "Informações do desafio:",
     "whats-happening": "Conte-nos o que está acontecendo:",
-    "describe": "Descreva detalhadamente o problema aqui.",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "Os links para seu projeto",
     "camper-code": "Seu código até o momento",
     "warning": "AVISO",
@@ -1034,8 +1046,9 @@
     "execute-challenge": "Executar desafio",
     "focus-editor": "Foco no editor",
     "focus-instructions-panel": "Foco no painel de instruções",
-    "navigate-previous": "Navegar para o exercício anterior",
-    "navigate-next": "Navegar para o próximo exercício"
+    "navigate-previous": "Navigate To Previous Exercise",
+    "navigate-next": "Navigate To Next Exercise",
+    "play-scene": "Play Scene"
   },
   "signout": {
     "heading": "Sair da sua conta",

@@ -56,19 +56,19 @@ assert(player === 'Montana');
 Você deve usar a notação de colchetes para acessar `testObj`
 
 ```js
-assert(/testObj\s*?\[.*?\]/.test(code));
+assert(/testObj\s*?\[.*?\]/.test(__helpers.removeJSComments(code)));
 ```
 
 Você não deve usar o valor `Montana` diretamente para a variável `player`.
 
 ```js
-assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
+assert(!__helpers.removeJSComments(code).match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
 Você deve estar usando a variável `playerNumber` na sua notação de colchetes
 
 ```js
-assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

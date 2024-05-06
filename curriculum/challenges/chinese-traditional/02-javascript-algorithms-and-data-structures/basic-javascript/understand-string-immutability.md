@@ -40,7 +40,7 @@ assert(myStr === 'Hello World');
 不要修改註釋上面的代碼。
 
 ```js
-assert(/myStr = "Jello World"/.test(code));
+assert(/myStr = "Jello World"/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

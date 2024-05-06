@@ -56,19 +56,19 @@ assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 `studlyCapVar` 在聲明和賦值時都應該使用駝峯命名法。
 
 ```js
-assert(code.match(/studlyCapVar/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/studlyCapVar/g).length === 2);
 ```
 
 `properCamelCase` 在聲明和賦值時都應該使用駝峯命名法。
 
 ```js
-assert(code.match(/properCamelCase/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/properCamelCase/g).length === 2);
 ```
 
 `titleCaseOver` 在聲明和賦值時都應該使用駝峯命名法。
 
 ```js
-assert(code.match(/titleCaseOver/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/titleCaseOver/g).length === 2);
 ```
 
 # --seed--

@@ -87,13 +87,13 @@ console.log(i);
 `var` має бути відсутнім у коді.
 
 ```js
-assert(!code.match(/var/g));
+assert(!__helpers.removeJSComments(code).match(/var/g));
 ```
 
 Змінна `i`, оголошена в інструкції `if`, повинна дорівнювати рядку `block scope`.
 
 ```js
-assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
+assert(__helpers.removeJSComments(code).match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` має повертати рядок `function scope`

@@ -85,8 +85,8 @@ The definition of the `foods` object should not be changed.
 
 ```js
 assert(
-  code.search(/let foods/) === -1 &&
-  code.search(/const\s+foods\s*=\s*{\s*apples:\s*25,\s*oranges:\s*32,\s*plums:\s*28\s*};/
+  __helpers.removeJSComments(code).search(/let foods/) === -1 &&
+  __helpers.removeJSComments(code).search(/const\s+foods\s*=\s*{\s*apples:\s*25,\s*oranges:\s*32,\s*plums:\s*28\s*};/
 ) !== -1
 );
 ```

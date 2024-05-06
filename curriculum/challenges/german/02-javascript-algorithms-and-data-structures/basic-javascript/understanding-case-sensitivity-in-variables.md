@@ -56,19 +56,19 @@ assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 `studlyCapVar` sollte sowohl im Deklarations- als auch im Zuweisungsabschnitt camelCase verwenden.
 
 ```js
-assert(code.match(/studlyCapVar/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/studlyCapVar/g).length === 2);
 ```
 
 `properCamelCase` sollte sowohl im Deklarations- als auch im Zuweisungsabschnitt camelCase verwenden.
 
 ```js
-assert(code.match(/properCamelCase/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/properCamelCase/g).length === 2);
 ```
 
 `titleCaseOver` sollte sowohl im Deklarations- als auch im Zuweisungsabschnitt camelCase verwenden.
 
 ```js
-assert(code.match(/titleCaseOver/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/titleCaseOver/g).length === 2);
 ```
 
 # --seed--

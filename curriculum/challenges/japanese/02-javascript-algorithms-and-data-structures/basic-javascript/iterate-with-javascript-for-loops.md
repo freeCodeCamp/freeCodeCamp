@@ -44,7 +44,7 @@ for (let i = 0; i < 5; i++) {
 この課題には `for` ループを使用してください。
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` は `[1, 2, 3, 4, 5]` となる必要があります。

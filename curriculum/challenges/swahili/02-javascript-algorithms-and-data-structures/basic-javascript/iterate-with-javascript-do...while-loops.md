@@ -56,7 +56,7 @@ Change the `while` loop in the code to a `do...while` loop so the loop will push
 You should be using a `do...while` loop for this exercise.
 
 ```js
-assert(code.match(/do/g));
+assert(__helpers.removeJSComments(code).match(/do/g));
 ```
 
 `myArray` should equal `[10]`.

@@ -25,7 +25,6 @@
     "client/plugins/*": {
       "entry": "gatsby-node.js"
     },
-    // "tools/ui-components": {},
     "tools/scripts/build": {
       "entry": ["*.ts"]
     }

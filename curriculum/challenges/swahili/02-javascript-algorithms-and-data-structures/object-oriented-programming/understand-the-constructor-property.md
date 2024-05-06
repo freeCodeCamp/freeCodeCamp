@@ -55,7 +55,7 @@ assert(joinDogFraternity(new Dog('')) === true);
 `joinDogFraternity` should use the `constructor` property.
 
 ```js
-assert(/\.constructor/.test(code) && !/instanceof/.test(code));
+assert(/\.constructor/.test(__helpers.removeJSComments(code)) && !/instanceof/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -35,7 +35,7 @@ assert(difference === 12);
 你只能从 `45` 中减去一个数。
 
 ```js
-assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
+assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

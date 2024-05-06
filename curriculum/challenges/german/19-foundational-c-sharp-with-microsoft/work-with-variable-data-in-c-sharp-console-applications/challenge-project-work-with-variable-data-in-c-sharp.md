@@ -1,38 +1,38 @@
 ---
 id: 647e230c8acb466c97ccbef9
-title: 'Challenge Project - Work with Variable Data in C#'
+title: 'Herausforderndes Projekt - Arbeiten mit variablen Daten in C#'
 challengeType: 19
 dashedName: challenge-project-work-with-variable-data-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/</a> and complete all the tasks for the "Challenge Project - Work with Variable Data in C#" module. This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe zu <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/</a> und löse alle Aufgaben des "Challenge Project - Work with Variable Data in C#"-Moduls. Dies ist **erforderlich**, um die Trophäe "Work with Variable Data in C# Console Applications" auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Work with Variable Data in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
+Schließe das <a href="https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Arbeiten mit variablen Daten in C#</a> Challenge-Projekt auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-To sort a string array, why is it important to use the `String.Trim()` method on each array element before sorting?
+Warum ist es beim Sortieren eines String-Arrays wichtig, die `String.Trim()`-Methode für jedes Array-Element anzuwenden, bevor es sortiert wird?
 
 ## --answers--
 
-Only string arrays with elements trimmed with `String.Trim()` can sort
+Nur mit `String.Trim()` beschnittene Elemente können sortiert werden
 
 ---
 
-`String.Trim()` removes leading white space that would sort before numbers and letters.
+`String.Trim()` entfernt führende Leerzeichen, die vor Zahlen und Buchstaben stehen würden.
 
 ---
 
-The array sort is noticeably faster using `String.Trim()` on each element.
+Die Array-Sortierung ist deutlich schneller, wenn `String.Trim()` für jedes Element verwendet wird.
 
 ## --video-solution--
 

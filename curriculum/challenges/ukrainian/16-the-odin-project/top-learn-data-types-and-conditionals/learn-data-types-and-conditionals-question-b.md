@@ -1,15 +1,15 @@
 ---
 id: 65e97164484dd50f720e6fe7
-title: Learn Data Types and Conditionals Question B
+title: Вивчіть типи даних та умови. Запитання B
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-b
 ---
 
 # --description--
 
-Now that you have gone through the points listed in the assignment of the previous challenge, you should have a good understanding of how strings can be manipulated in JavaScript.
+Якщо ви переглянули пункти, вказані в попередньому завданні, то маєте розуміти, як маніпулювати рядками в JavaScript.
 
-Currently, this given string has a trailing space at the end after the exclamation mark. To solve this, you need to remove the trailing space from the string using a predefined method.
+Наразі даний рядок має кінцевий пробіл після знаку оклику. Щоб розв’язати цю проблему, потрібно видалити кінцевий пробіл за допомогою попередньо визначеного методу.
 
 ```javascript
 let greeting = "Hello World!  ";
@@ -17,29 +17,29 @@ let greeting = "Hello World!  ";
 console.log(greeting);
 ```
 
-<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Link to Guide </a>
+<a href="https://www.freecodecamp.org/news/javascript-string-handbook" target="_blank"> Посилання на інструкцію </a>
 
 # --question--
 
 ## --text--
 
-Following the problem above, which method should be used to only remove the trailing space from the string?
+Який метод потрібно використати згідно з проблемою вище, щоб видалити лише кінцевий пробіл з рядка?
 
 ## --answers--
 
-The `trim()` method should be used to only remove the trailing space from the string.
+Щоб видалити лише кінцевий пробіл з рядка, потрібно використати метод `trim()`.
 
 ---
 
-The `replace()` method should be used to only remove the trailing space from the string.
+Щоб видалити лише кінцевий пробіл з рядка, потрібно використати метод `replace()`.
 
 ---
 
-The `trimEnd()` method should be used to only remove the trailing space from the string.
+Щоб видалити лише кінцевий пробіл з рядка, потрібно використати метод `trimEnd()`.
 
 ---
 
-The `trimStart()` method should be used to only remove the trailing space from the string.
+Щоб видалити лише кінцевий пробіл з рядка, потрібно використати метод `trimStart()`.
 
 ## --video-solution--
 

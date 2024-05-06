@@ -71,7 +71,7 @@ assert(switchOfStuff(4) === 'stuff');
 不能使用 `if` 或 `else` 语句。
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 你应该使用 `default` 语句。
@@ -83,7 +83,7 @@ assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 你至少应该写 3 个 `break` 语句。
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

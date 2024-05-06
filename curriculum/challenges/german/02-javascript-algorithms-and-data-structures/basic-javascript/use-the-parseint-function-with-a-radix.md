@@ -34,7 +34,7 @@ Verwende `parseInt()` in der Funktion `convertToInteger`, damit sie eine Binärz
 `convertToInteger` sollte die Funktion `parseInt()` verwenden
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("10011")` sollte eine Zahl zurückgeben
