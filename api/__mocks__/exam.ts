@@ -72,8 +72,20 @@ export const completedTrophyChallenges = [
   }
 ];
 
+export type ExamSubmission = {
+  userExamQuestions: {
+    id: string;
+    question: string;
+    answer: {
+      id: string;
+      answer: string;
+    };
+  }[];
+  examTimeInSeconds: number;
+};
+
 // failed: 0 correct
-export const examWithZeroCorrect = {
+export const examWithZeroCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -95,7 +107,7 @@ export const examWithZeroCorrect = {
 };
 
 // passed: 1 correct
-export const examWithOneCorrect = {
+export const examWithOneCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -117,7 +129,7 @@ export const examWithOneCorrect = {
 };
 
 // passed: 2 correct
-export const examWithTwoCorrect = {
+export const examWithTwoCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -139,7 +151,7 @@ export const examWithTwoCorrect = {
 };
 
 // passed: 3 correct
-export const examWithAllCorrect = {
+export const examWithAllCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',

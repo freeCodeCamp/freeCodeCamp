@@ -30,7 +30,8 @@ import {
   examWithZeroCorrect,
   examWithOneCorrect,
   examWithTwoCorrect,
-  examWithAllCorrect
+  examWithAllCorrect,
+  type ExamSubmission
 } from '../../__mocks__/exam';
 import { Answer } from '../utils/exam-types';
 import type { getSessionUser } from '../schemas/user/get-session-user';
@@ -1496,18 +1497,22 @@ describe('challengeRoutes', () => {
           });
         });
 
-        test('POST handles submitting a failing exam', async () => {
-          const now = Date.now();
-
-          // Submit exam with 0 correct answers
-          const response = await superRequest('/exam-challenge-completed', {
+        const submitExam = async (exam: ExamSubmission) => {
+          return superRequest('/exam-challenge-completed', {
             method: 'POST',
             setCookies
           }).send({
             id: examChallengeId,
             challengeType: 17,
-            userCompletedExam: examWithZeroCorrect
+            userCompletedExam: exam
           });
+        };
+
+        test('POST handles submitting a failing exam', async () => {
+          const now = Date.now();
+
+          // Submit exam with 0 correct answers
+          const response = await submitExam(examWithZeroCorrect);
 
           type GetSessionUserResponseBody = Static<
             (typeof getSessionUser)['response']['200']
@@ -1544,14 +1549,7 @@ describe('challengeRoutes', () => {
         test('POST handles submitting multiple passing exams', async () => {
           // Submit exam with 2/3 correct answers
           const nowA = Date.now();
-          const responseA = await superRequest('/exam-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            id: examChallengeId,
-            challengeType: 17,
-            userCompletedExam: examWithTwoCorrect
-          });
+          const responseA = await submitExam(examWithTwoCorrect);
 
           const userA = await fastifyTestInstance.prisma.user.findFirst({
             where: { id: defaultUserId }
@@ -1586,14 +1584,7 @@ describe('challengeRoutes', () => {
 
           // Submit exam with 1/3 correct answers (worse exam than already submitted)
           const now2 = Date.now();
-          const response2 = await superRequest('/exam-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            id: examChallengeId,
-            challengeType: 17,
-            userCompletedExam: examWithOneCorrect
-          });
+          const response2 = await submitExam(examWithOneCorrect);
 
           const user2 = await fastifyTestInstance.prisma.user.findFirst({
             where: { id: defaultUserId }
@@ -1629,14 +1620,7 @@ describe('challengeRoutes', () => {
 
           // Submit exam with 3/3 correct answers (better exam than already submitted)
           const now3 = Date.now();
-          const response3 = await superRequest('/exam-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            id: examChallengeId,
-            challengeType: 17,
-            userCompletedExam: examWithAllCorrect
-          });
+          const response3 = await submitExam(examWithAllCorrect);
 
           const user3 = await fastifyTestInstance.prisma.user.findFirst({
             where: { email: 'foo@bar.com' }
