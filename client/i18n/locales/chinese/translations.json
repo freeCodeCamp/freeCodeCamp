@@ -162,19 +162,19 @@
       {
         "question": "我将学到什么技能？",
         "answer": [
-          "你将学习大多数开发者在工作中使用的技能：HTML、CSS、JavaScript、Python、Linux、Git 和 SQL 等等。 你还将学习如何使用 web 开发的强大的库、移动应用开发、数据科学和人工智能等。"
+          "你将学习大多数开发者在工作中使用的技能：HTML、CSS、JavaScript、Python、Linux、Git 和 SQL 等等。你还将学习如何使用 web 开发的强大的库、移动应用开发、数据科学和人工智能等。"
         ]
       },
       {
         "question": "学习所有这些知识需要多长时间？",
         "answer": [
-          "你在 freeCodeCamp 学习可以自定义进度。 实际上，要学好这些技能并获得一份软件工程师工作，可能需要几年时间来持续练习编程。在你准备好之前，不要退学或辞职。"
+          "你在 freeCodeCamp 学习可以自定义进度。实际上，要学好这些技能并获得一份软件工程师工作，可能需要几年时间来持续练习编程。在你准备好之前，不要退学或辞职。"
         ]
       },
       {
         "question": "我如何开始？",
         "answer": [
-          "如果你是初学者，你应该从 freeCodeCamp 核心课程开始。 如果你有经验，我们仍然建议从最初的课程开始，但你可以跳到任何你想要学习的领域。"
+          "如果你是初学者，你应该从 freeCodeCamp 核心课程开始。如果你有经验，我们仍然建议从最初的课程开始，但你可以跳到任何你想要学习的领域。"
         ]
       },
       {
@@ -184,7 +184,7 @@
         ]
       },
       {
-        "question": "我在 freeCodeCamp 核心课程中看不到[工具名称]。",
+        "question": "我在 freeCodeCamp 核心课程中看不到 [工具名称]。",
         "answer": [
           "除了 freeCodeCamp 提供的核心课程外，我们还有数千份免费的完整的书、课程和编程教程。我们几乎教授你想学习的任何编程工具。你只需通过使用搜索栏来搜索它们。"
         ]
@@ -388,7 +388,7 @@
     "download-results": "下载我的结果",
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成 {{totalChallengesInBlock}} 认证项目中的 {{completedChallengesInBlock}}",
-    "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
+    "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读 - 搜索 - 提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "read-search-ask-checkbox": "我已经尝试了 <0>Read-Search-Ask</0> 方法",
     "similar-questions-checkbox": "我已经<0>在论坛上搜索了类似的问题和相应的答案</0>",
     "minimum-characters": "请至少再用 {{characters}} 个字符进行描述",
@@ -428,17 +428,17 @@
     "help-translate": "我们还在翻译这个认证课程。",
     "help-translate-link": "帮助我们翻译。",
     "project-preview-title": "下面是你将构建的项目的预览",
-    "github-required": "如果你没有 GitHub 账户，你需要 <0>创建 GitHub</0> 账户。 你需要创建虚拟 Linux 服务器，这个过程可能需要几分钟。",
+    "github-required": "如果你没有 GitHub 账户，你需要 <0>创建 GitHub</0> 账户。你需要创建虚拟 Linux 服务器，这个过程可能需要几分钟。",
     "gitpod": {
       "intro": "本课程使用 Gitpod 在虚拟的 Linux 机器中运行。按照这些说明开始学习课程：",
       "step-1": "如果你没有 GitHub 账户，<0>创建一个</0>。",
       "step-2": "点击下面的开始按钮",
       "step-3": "如果你尚未登录，使用你的 GitHub 账户登录 Gitpod",
       "step-4": "虚拟 Linux 机器加载完成后，启动 CodeRoad 扩展：",
-      "step-5": "点击 VSCode 窗口左上角的 “hamburger” 菜单，",
+      "step-5": "点击 VSCode 窗口左上角的“hamburger”菜单，",
       "step-6": "前往“查看”菜单，",
       "step-7": "点击“命令面板”选项，",
-      "step-8": "并运行 “CodeRoad: Start” 命令",
+      "step-8": "并运行“CodeRoad: Start”命令",
       "step-9": "按照 CodeRoad 中的说明完成课程",
       "continue-project": "点击下面的按钮将启动一个新项目。如果你已经开始了 {{course}} 课程，请进入 <0>你的 Gitpod 面板</0> 继续。",
       "learn-more": "了解更多关于 <0>Gitpod 工作区</0>的信息。",
@@ -492,7 +492,7 @@
     "ms": {
       "link-header": "链接你的微软账户",
       "link-signin": "要完成这个挑战，你必须首先将你的微软用户名链接到你的 freeCodeCamp 帐户。登录以链接你的微软用户名。",
-      "linked": "用户名为 “{{ msUsername }}” 的微软账户已和你的 freeCodeCamp 账户链接。如果这不是你的微软用户名，请删除链接。",
+      "linked": "用户名为“{{ msUsername }}”的微软账户已和你的 freeCodeCamp 账户链接。如果这不是你的微软用户名，请删除链接。",
       "unlinked": "要完成这个挑战，你必须首先按照以下说明将你的微软用户名链接到你的 freeCodeCamp 账户：",
       "link-li-1": "使用已登录微软账号的浏览器，访问 <0>https://learn.microsoft.com/users/me/transcript</0>",
       "link-li-2": "查找并点击“分享链接”按钮。",
@@ -584,7 +584,7 @@
     "one-time": "如果你喜欢一次性捐款，你可以在有闲钱时支持 freeCodeCamp 的事业。你可以使用<0>此链接，通过 PayPal 捐你认为合适的金额</0>。",
     "wire-transfer": "你也可以通过电汇直接发送资金给 freeCodeCamp。如果你需要我们的电汇详细信息，请发送电子邮件到 quincy@freecodecamp.org",
     "does-crypto": "freeCodeCamp 是否接受比特币或其他加密货币的捐赠？",
-    "yes-cryptocurrency": "是的，请给 quincy@freecodecamp.org 发送电子邮件，他可以向你发送 freeCodeCamp 的钱包信息。 如果你需要交税，他还可以向你提供捐赠收据。",
+    "yes-cryptocurrency": "是的，请给 quincy@freecodecamp.org 发送电子邮件，他可以向你发送 freeCodeCamp 的钱包信息。如果你需要交税，他还可以向你提供捐赠收据。",
     "can-check": "我可以邮寄实物支票吗？",
     "yes-check": "是的，我们欢迎支票。你可以将其邮寄给我们：",
     "how-matching-gift": "我如何从我的雇主那里设置匹配的礼物，或者工资扣除？",
@@ -594,7 +594,7 @@
     "how-endowment": "如何为 freeCodeCamp.org 设置捐赠礼物？",
     "endowment": "这将是一个巨大的帮助。由于这是一个更加手动的过程，Quincy 可以帮助你亲自完成它。请直接发送电子邮件至 quincy@freecodecamp.org。",
     "how-legacy": "如何为 freeCodeCamp.org 设置遗产捐赠？",
-    "we-honored": "我们将荣幸地将这种礼物用帮助世界各地的人学会编程。 根据你的居住地，这也可能是免税的。",
+    "we-honored": "我们将荣幸地将这种礼物用帮助世界各地的人学会编程。根据你的居住地，这也可能是免税的。",
     "legacy-gift-message": "我向 freeCodeCamp.org（Free Code Camp, Inc. 税号 82-0779546），一家根据美国特拉华州法律组建的慈善公司，目前位于 3905 Hedgcoxe Rd, PO Box 250352, Plano, Texas, 75025 United States，捐赠、设计和遗赠 [_____ 美元（或其他货币）或我的财产的其余部分和剩余部分的总和的 _____%]，酌情用于其一般慈善目的。",
     "thank-wikimedia": "我们要感谢维基百科基金会为我们提供这种正式文书。",
     "legacy-gift-questions": "如果你对此过程有任何疑问，请给 Quincy 发送电子邮件到 Quincy@freecodecamp.org。",
@@ -603,7 +603,7 @@
     "how-receipt": "我能够收到捐赠收据以从我的税款中扣除我的捐赠吗？",
     "just-forward": "可以，只需将你交易的收据转发到 donors@freecodecamp.org，告诉我们你想要一个收据以及你的使用场景，我们将发给你一个收据。",
     "how-update": "我设置了每月捐款，但我需要更新或暂停每月的重复。我如何做？",
-    "take-care-of-this": "只需转发你的每月捐款记录中的一个记录给 donors@freecodecamp.org， 并告诉我们你要做什么。我们会为你处理这个问题，并向你发送确认。",
+    "take-care-of-this": "只需转发你的每月捐款记录中的一个记录给 donors@freecodecamp.org，并告诉我们你要做什么。我们会为你处理这个问题，并向你发送确认。",
     "anything-else": "还有什么关于为 freeCodeCamp.org 捐赠可以了解的吗？",
     "other-support": "如果你想要通过此处未列出的其他方式支持我们的慈善组织和它的使命，或者如果你有任何问题，请给 Quincy 发送电子邮件到 quincy@freecodecamp.org。",
     "bear-progress-alt": "插图：一只可爱的泰迪熊带着恳求的表情抱着一个空钱罐。",
@@ -734,7 +734,7 @@
     "dialogues-and-tasks-for": "{{blockTitle}} 的对话和任务",
     "code-example": "{{codeName}} 代码示例",
     "opens-new-window": "在新窗口打开",
-    "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读-搜索-提问）方法",
+    "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读 - 搜索 - 提问）方法",
     "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案"
   },
   "flash": {
@@ -823,13 +823,13 @@
         "unlink-err": "尝试移除与你的微软用户名的链接时发生错误。"
       },
       "profile": {
-        "err": "我们无法找到微软用户 “{{msUsername}}” 的微软用户 ID"
+        "err": "我们无法找到微软用户“{{msUsername}}”的微软用户 ID"
       },
       "trophy": {
         "err-1": "我们找不到与你的 freeCodeCodeCamp 账户关联的微软用户名。",
         "err-2": "你正尝试提交的挑战看起来不是奖杯挑战。",
         "err-3": "我们无法从你的微软 ID 获取你的个人信息。",
-        "err-4": "微软用户 “{{msUsername}}” 还没有获得这个奖杯。",
+        "err-4": "微软用户“{{msUsername}}”还没有获得这个奖杯。",
         "err-5": "尝试验证你的奖杯时发生错误。请检查并重试。",
         "err-6": "你的微软帐户可能是私有的。请将其设置为公开后重试。",
         "verified": "你在微软学习平台获得的奖杯已通过验证。"
@@ -855,10 +855,10 @@
     "invalid-protocol": "URL 必须以 http 或 https 开头",
     "url-not-image": "URL 必须直接链接到图片文件",
     "use-valid-url": "请使用有效的 URL",
-    "editor-url": "记得要提交Live App的URL",
+    "editor-url": "记得要提交 Live App 的 URL",
     "http-url": "不能使用不安全的（http）URL。",
     "own-work-url": "记住要提交你自己的作业",
-    "publicly-visible-url": "记得要提交一个公开可见的app URL",
+    "publicly-visible-url": "记得要提交一个公开可见的 app URL",
     "ms-learn-link": "请使用有效的 Microsoft Learn 奖杯链接。",
     "path-url": "你可能想要提交根路径，即 https://example.com，而不是 https://example.com/path。"
   },
@@ -881,7 +881,7 @@
         "Build a Personal Portfolio Webpage": "创建一个个人作品集页面",
         "Build a Random Quote Machine": "创建一个随机引语生成器",
         "Build a 25 + 5 Clock": "创建一个番茄时钟",
-        "Build a JavaScript Calculator": "构建一个JavaScript计算器",
+        "Build a JavaScript Calculator": "构建一个 JavaScript 计算器",
         "Show the Local Weather": "显示本地天气",
         "Use the TwitchTV JSON API": "使用 TwitchTV JSON API",
         "Stylize Stories on Camper News": "风格化学员故事",
@@ -933,7 +933,7 @@
         "Budget App": "预算应用",
         "Polygon Area Calculator": "多边形面积计算器",
         "Probability Calculator": "概率计算器",
-        "Mean-Variance-Standard Deviation Calculator": "平均值-方差-标准差偏差计算器",
+        "Mean-Variance-Standard Deviation Calculator": "平均值 - 方差 - 标准差偏差计算器",
         "Demographic Data Analyzer": "人口数据分析器",
         "Medical Data Visualizer": "医疗数据可视化工具",
         "Page View Time Series Visualizer": "页面视图显示器",
@@ -951,7 +951,7 @@
         "Salon Appointment Scheduler": "沙龙预约程序",
         "Periodic Table Database": "元素周期表数据库",
         "Number Guessing Game": "猜数字游戏",
-        "Build a freeCodeCamp Forum Homepage": "建立一个freeCodeCamp论坛首页"
+        "Build a freeCodeCamp Forum Homepage": "建立一个 freeCodeCamp 论坛首页"
       }
     },
     "title": {
@@ -976,7 +976,7 @@
       "data-analysis-with-python-v7": "Python 和数据分析认证",
       "Information Security": "信息安全",
       "information-security-v7": "信息安全认证",
-      "Machine Learning with Python": "机器学习与Python",
+      "Machine Learning with Python": "机器学习与 Python",
       "machine-learning-with-python-v7": "Python 和机器学习认证",
       "College Algebra with Python": "Python 和大学代数",
       "college-algebra-with-python-v8": "Python 和大学代数认证",

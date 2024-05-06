@@ -6,7 +6,7 @@
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてウェブフォームを作りながらアクセシビリティのベストプラクティスを学びます。",
       "最後に、Flexbox を使った Twitter カードや CSS グリッドを使った複雑なブログレイアウトの作成を通じて、さまざまな画面サイズに応答するウェブページを作成する方法を学びます。"
     ],
-    "note": "注意: 広告ブロッカーやダークモード拡張などの、一部のブラウザ拡張機能がテストに干渉する可能性があります。問題が発生した場合、コース受講中はページのコンテンツやレイアウトを変更する拡張機能を無効にすることをお勧めします。",
+    "note": "注意：広告ブロッカーやダークモード拡張などの、一部のブラウザ拡張機能がテストに干渉する可能性があります。問題が発生した場合、コース受講中はページのコンテンツやレイアウトを変更する拡張機能を無効にすることをお勧めします。",
     "blocks": {
       "basic-html-and-html5": {
         "title": "HTML と HTML5 の基礎",
@@ -66,7 +66,7 @@
       "初めに、HTML と CSS の基礎を学ぶために、猫の写真アプリを作ります。その後、ペンギンの絵を作りながら CSS 変数等のモダンなテクニックを学びます。そしてクイズサイトを作りながらアクセシビリティのベストプラクティスを学びます。",
       "最後に、フレックスボックスを使ったフォトギャラリーや、CSS グリッドを使った雑誌記事のレイアウトの作成を通じて、さまざまな画面サイズに応じて表示されるウェブページの作成方法を学びます。"
     ],
-    "note": "注意: 広告ブロッカーやダークモード拡張などの、一部のブラウザ拡張機能がテストに干渉する可能性があります。問題が発生した場合、コース受講中はページのコンテンツやレイアウトを変更する拡張機能を無効にすることをお勧めします。",
+    "note": "注意：広告ブロッカーやダークモード拡張などの、一部のブラウザ拡張機能がテストに干渉する可能性があります。問題が発生した場合、コース受講中はページのコンテンツやレイアウトを変更する拡張機能を無効にすることをお勧めします。",
     "blocks": {
       "build-a-tribute-page-project": {
         "title": "トリビュートページ",
@@ -104,111 +104,111 @@
         ]
       },
       "learn-html-by-building-a-cat-photo-app": {
-        "title": "HTML の学習: 猫の写真アプリを作成する",
+        "title": "HTML の学習：猫の写真アプリを作成する",
         "intro": [
           "HTML タグはウェブページに構造を与えます。HTML タグで写真やボタン、また他の要素をウェブページに加えることができます。",
           "このコースでは、実際に手を動かして猫の写真アプリを作成しながら、最もよく使う HTML タグを学習します。"
         ]
       },
       "learn-basic-css-by-building-a-cafe-menu": {
-        "title": "CSS 基礎の学習: カフェメニューを作成する",
+        "title": "CSS 基礎の学習：カフェメニューを作成する",
         "intro": [
           "CSS はブラウザにウェブページをどうやって表示するか指示します。CSS を使用して HTML 要素の色、フォント、サイズ、また他の様相を設定できます。",
           "このコースでは、カフェのウェブページ用のメニューページをデザインして CSS を学習します。"
         ]
       },
       "learn-the-css-box-model-by-building-a-rothko-painting": {
-        "title": "CSS ボックスモデルの学習: ロスコの絵画を作成する",
+        "title": "CSS ボックスモデルの学習：ロスコの絵画を作成する",
         "intro": [
           "すべての HTML 要素は間隔と境界を伴ったボックスそのものです。これはボックスモデルと呼ばれています。",
           "このコースでは、CSS とボックスモデルを使ってマーク・ロスコ風の長方形アート作品を作成します。"
         ]
       },
       "learn-css-variables-by-building-a-city-skyline": {
-        "title": "CSS 変数の学習: 都市のスカイラインを作成する",
+        "title": "CSS 変数の学習：都市のスカイラインを作成する",
         "intro": [
           "CSS の変数はスタイルを体系づけたり、再利用するのに役立ちます。",
           "このコースでは、都市のスカイラインの風景を作成します。CSS 変数の設定方法を学習して、必要に応じて再利用できるようにします。"
         ]
       },
       "learn-html-forms-by-building-a-registration-form": {
-        "title": "HTML フォームの学習: 登録フォームを作成する",
+        "title": "HTML フォームの学習：登録フォームを作成する",
         "intro": [
           "HTML のフォームを使用して、ウェブページへ訪問する人々から情報を集めることができます。",
           "このコースでは、サインアップページを作成することで HTML のフォームを学習します。人々がどのデータ型をフォームに入力できるかを制御する方法と、ページをスタイリングする新しい CSS のツールについて学習します。"
         ]
       },
       "learn-accessibility-by-building-a-quiz": {
-        "title": "アクセシビリティの学習: クイズを作成する",
+        "title": "アクセシビリティの学習：クイズを作成する",
         "intro": [
           "アクセシビリティとは、障害のある人を含むすべての人々にとって、ウェブページを利用しやすくすることです。",
           "このコースでは、クイズ (小テスト) のウェブページを作成します。キーボードショートカット、ARIA 属性、デザインのベストプラクティスなど、アクセシビリティのツールについて学習します。"
         ]
       },
       "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "CSS 中級の学習: ピカソの絵画を作成する",
+        "title": "CSS 中級の学習：ピカソの絵画を作成する",
         "intro": [
           "このコースでは、ピカソの絵画のウェブページを自分でコーディングすることで、中級の CSS テクニックの使い方を学習します。SVG アイコンや、CSS の位置決めについて学習し、学んできた他の CSS スキルを復習します。"
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "レスポンシブウェブデザインの学習: ピアノを作成する",
+        "title": "レスポンシブウェブデザインの学習：ピアノを作成する",
         "intro": [
           "レスポンシブデザインはウェブページに異なるサイズのスクリーンでどのように見える必要があるかを伝えます。",
           "このコースでは、CSS とレスポンシブデザインを用いてピアノをコーディングします。メディアクエリと疑似セレクターについてもさらに学習します。"
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
-        "title": "CSS フレックスボックスの学習: フォトギャラリーを作成する",
+        "title": "CSS フレックスボックスの学習：フォトギャラリーを作成する",
         "intro": [
           "フレックスボックスはどの画面サイズでも綺麗に表示されるようにウェブページをデザインするのに役立ちます。",
           "このコースでは、フレックスボックスを用いてレスポンシブなフォトギャラリーウェブページを作成します。"
         ]
       },
       "learn-css-grid-by-building-a-magazine": {
-        "title": "CSS グリッドの学習: 雑誌を作成する",
+        "title": "CSS グリッドの学習：雑誌を作成する",
         "intro": [
           "CSS のグリッドはウェブページデザインの行と列を制御できるようにしてくれます。",
           "このコースでは、雑誌の記事を作成します。グリッド行やグリッド列といった概念を含む CSS のグリッドを使用する方法を学習します。"
         ]
       },
       "learn-typography-by-building-a-nutrition-label": {
-        "title": "タイポグラフィの学習: 栄養成分表示ラベルを作成する",
+        "title": "タイポグラフィの学習：栄養成分表示ラベルを作成する",
         "intro": [
           "タイポグラフィとは、テキストを読み易く、また目的に合うようにスタイリングする技術です。",
           "このコースでは、タイポグラフィを用いて栄養成分表示ラベルのウェブページを作成します。CSS を用いてテキストを整え、行の高さを調節し、テキストを配置することを学習します。"
         ]
       },
       "learn-css-transforms-by-building-a-penguin": {
-        "title": "CSS Transform の学習: ペンギンを作成する",
+        "title": "CSS Transform の学習：ペンギンを作成する",
         "intro": [
           "HTML 要素を変形させて、閲覧者の目を引き付ける魅力的なデザインを生み出すことができます。transform を用いることで要素の回転や、大きさの調整などができます。",
           "このコースでは、ペンギンを作成します。CSS の transform を用いてペンギンのパーツを配置およびリサイズし、背景を作成し、作品をアニメーションさせます。"
         ]
       },
       "learn-css-animation-by-building-a-ferris-wheel": {
-        "title": "CSS アニメーションの学習: 観覧車を作成する",
+        "title": "CSS アニメーションの学習：観覧車を作成する",
         "intro": [
           "CSS のアニメーションを用いることで、ウェブページの特定のセクションに注意を引き付け、ウェブページをより魅力的にできます。",
           "このコースでは、観覧車を作成します。要素のアニメーションや変形、およびスピードの調節に CSS を用いる方法を学習します。"
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "CSS 疑似セレクターの学習: バランスシートを作成する",
+        "title": "CSS 疑似セレクターの学習：バランスシートを作成する",
         "intro": [
           "CSS の疑似セレクターを用いて、特定の HTML 要素を変化させることができます。",
           "このコースでは、疑似セレクターを用いてバランスシート (貸借対照表) を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
         ]
       },
       "learn-css-colors-by-building-a-set-of-colored-markers": {
-        "title": "CSS 色指定の学習: カラーマーカーのセットを作成する",
+        "title": "CSS 色指定の学習：カラーマーカーのセットを作成する",
         "intro": [
           "ウェブページに対して的確な色を選択することにより、閲覧者への見え方の美しさを大いに向上させることができます。",
           "このコースでは、カラーマーカーのセットを作成します。色の値を設定するさまざまな方法や、色を組み合わせる方法を学習します。"
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
-        "title": "CSS 中級の学習: 猫の絵を作成する",
+        "title": "CSS 中級の学習：猫の絵を作成する",
         "intro": [
           "見た目に美しく、レスポンシブなウェブレイアウトを作成するには CSS の配置をマスターすることが不可欠です。",
           "このコースでは猫の絵を作成しながら、絶対位置指定、z-index プロパティ、transform プロパティの使い方を学習します。"
@@ -223,7 +223,7 @@
       "いったん基礎を習得すれば、その知識を応用して文字列を扱うためのアルゴリズムを作成したり、数の階乗を計算したり、さらに国際宇宙ステーションの軌道を計算することもできます。",
       "途中で、オブジェクト指向プログラミング (OOP) と関数型プログラミング (FP) の 2 つの重要なプログラミングの様式または典型について学習します。"
     ],
-    "note": "注: 広告ブロッカーやスクリプトブロッカーのようないくつかのブラウザ拡張機能は、テストを妨害することがあります。もし問題に直面したら、受講中はページの内容を変更もしくはブロックする拡張機能を無効にすることをお勧めします。",
+    "note": "注：広告ブロッカーやスクリプトブロッカーのようないくつかのブラウザ拡張機能は、テストを妨害することがあります。もし問題に直面したら、受講中はページの内容を変更もしくはブロックする拡張機能を無効にすることをお勧めします。",
     "blocks": {
       "basic-javascript": {
         "title": "JavaScript の基本",
@@ -251,7 +251,7 @@
         "title": "デバッグ",
         "intro": [
           "デバッグとは、コードを調べて問題を見つけ、それを修正するプロセスです。",
-          "コード内部の問題は通常 3 つの形で現れます: プログラムの実行を妨げる構文エラー、想定外の挙動を含む場合の実行時エラー、あるいは意図したように動作しない場合の論理エラーです。",
+          "コード内部の問題は通常 3 つの形で現れます：プログラムの実行を妨げる構文エラー、想定外の挙動を含む場合の実行時エラー、あるいは意図したように動作しない場合の論理エラーです。",
           "このコースでは、JavaScript のコンソールをどのように使用してプログラムをデバッグし、一般的な問題を発生する前に防止するのかを学習します。"
         ]
       },
@@ -306,7 +306,7 @@
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
       "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
     ],
-    "note": "注: 広告ブロッカーやスクリプトブロッカーのようなブラウザ拡張機能は、テストを妨害することがあります。もし問題に直面したら、受講中はページの内容を変更もしくはブロックする拡張機能を無効にすることをお勧めします。",
+    "note": "注：広告ブロッカーやスクリプトブロッカーのようなブラウザ拡張機能は、テストを妨害することがあります。もし問題に直面したら、受講中はページの内容を変更もしくはブロックする拡張機能を無効にすることをお勧めします。",
     "blocks": {
       "build-a-pokemon-search-app-project": {
         "title": "ポケモン検索アプリ作成プロジェクト",
@@ -344,21 +344,21 @@
         ]
       },
       "learn-basic-javascript-by-building-a-role-playing-game": {
-        "title": "基礎的な JavaScript の学習: ロールプレイングゲームを作成する",
+        "title": "基礎的な JavaScript の学習：ロールプレイングゲームを作成する",
         "intro": [
           "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
           "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Role Playing Game. You'll learn how to work with arrays, strings, objects, functions, loops, <code>if/else</code> statements, and more."
         ]
       },
       "learn-form-validation-by-building-a-calorie-counter": {
-        "title": "フォームの検証の学習: カロリー計算機を作成する",
+        "title": "フォームの検証の学習：カロリー計算機を作成する",
         "intro": [
           "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
           "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
       "learn-functional-programming-by-building-a-spreadsheet": {
-        "title": "関数型プログラミングの学習: スプレッドシートを作成する",
+        "title": "関数型プログラミングの学習：スプレッドシートを作成する",
         "intro": [
           "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
           "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
@@ -373,14 +373,14 @@
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
-        "title": "高度な配列メソッドの学習: 統計計算機を作成する",
+        "title": "高度な配列メソッドの学習：統計計算機を作成する",
         "intro": [
           "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
           "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "基礎的なオブジェクト指向プログラミングの学習: ショッピングカートを作成する",
+        "title": "基礎的なオブジェクト指向プログラミングの学習：ショッピングカートを作成する",
         "intro": [
           "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
           "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
@@ -396,21 +396,21 @@
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
-        "title": "正規表現の学習: スパムフィルターを作成する",
+        "title": "正規表現の学習：スパムフィルターを作成する",
         "intro": [
           "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
           "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "基礎的なアルゴリズム的思考の学習: 数値ソートを作成する",
+        "title": "基礎的なアルゴリズム的思考の学習：数値ソートを作成する",
         "intro": [
           "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
           "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
         ]
       },
       "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "中級アルゴリズム的思考の学習: ダイスゲームを作成する",
+        "title": "中級アルゴリズム的思考の学習：ダイスゲームを作成する",
         "intro": [
           "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
           "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
@@ -418,42 +418,42 @@
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
-        "title": "中級オブジェクト指向プログラミングの学習: プラットフォームゲームを作成する",
+        "title": "中級オブジェクト指向プログラミングの学習：プラットフォームゲームを作成する",
         "intro": [
           "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
           "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
-        "title": "localStorage の学習: Todo リストを作成する",
+        "title": "localStorage の学習：Todo リストを作成する",
         "intro": [
           "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
           "In this TODO application, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
         ]
       },
       "learn-the-date-object-by-building-a-date-formatter": {
-        "title": "Date オブジェクトの学習: 日付フォーマッターを作成する",
+        "title": "Date オブジェクトの学習：日付フォーマッターを作成する",
         "intro": [
           "Working with dates in JavaScript can be challenging. You have to navigate various methods, formats, and time zones. In this project, you'll learn how to work with the JavaScript Date object, including its methods and properties. You'll also learn how to correctly format dates.",
           "This project will cover concepts such as the <code>getDate()</code>, <code>getMonth()</code>, and <code>getFullYear()</code> methods."
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "非同期プログラミングの学習: freeCodeCamp フォーラムのリーダーボードを作成する",
+        "title": "非同期プログラミングの学習：freeCodeCamp フォーラムのリーダーボードを作成する",
         "intro": [
           "JavaScript is an asynchronous programming language. And this project will help you gain proficiency in asynchronous concepts. You'll code your own freeCodeCamp forum leaderboard.",
           "This project will cover the Fetch API, promises, Async/Await, and the try..catch statement."
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
-        "title": "基礎的な文字列・配列メソッドの学習: 音楽プレイヤーを作成する",
+        "title": "基礎的な文字列・配列メソッドの学習：音楽プレイヤーを作成する",
         "intro": [
           "Now let's learn some essential string and array methods like the <code>find()</code>, <code>forEach()</code>, <code>map()</code>, and <code>join()</code>. These methods are crucial for developing dynamic web applications.",
           "In this project, you'll code a basic MP3 player using HTML, CSS, and JavaScript. The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, previous, and shuffle functionalities. You'll even learn how to dynamically update your user interface based on the current song."
         ]
       },
       "learn-recursion-by-building-a-decimal-to-binary-converter": {
-        "title": "再帰処理の学習: 十進数・二進数変換ツールを作成する",
+        "title": "再帰処理の学習：十進数・二進数変換ツールを作成する",
         "intro": [
           "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
           "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
@@ -496,7 +496,7 @@
         "intro": [
           "jQuery は世界で最も広く使用されている JavaScript ライブラリです。",
           "2006 年に jQuery が公表された時点では、主要なブラウザはそれぞれ若干異なる方法で JavaScript を取り扱っていました。jQuery はクライアント側の JavaScript を記述する工程を単純化し、そしてすべてのブラウザでコードが同じように機能することも保証しました。",
-          "このコースでは、 jQuery を使用してページ上の様々な要素を選択し、削除し、複製し、変更する方法を学習します。"
+          "このコースでは、jQuery を使用してページ上の様々な要素を選択し、削除し、複製し、変更する方法を学習します。"
         ]
       },
       "sass": {
@@ -622,62 +622,62 @@
         ]
       },
       "learn-advanced-bash-by-building-a-kitty-ipsum-translator": {
-        "title": "高度な Bash の学習: Kitty Ipsum 翻訳プログラムを作成する",
+        "title": "高度な Bash の学習：Kitty Ipsum 翻訳プログラムを作成する",
         "intro": [
           "Bash コマンドについて学ぶべきことは、想像以上に多くあります。",
           "この 140 のレッスンから成るコースでは、より複雑なコマンドと、コマンドの仕組みについて学びます。"
         ]
       },
       "learn-bash-and-sql-by-building-a-bike-rental-shop": {
-        "title": "Bash と SQL の学習: 自転車レンタルショップを構築する",
+        "title": "Bash と SQL の学習：自転車レンタルショップを構築する",
         "intro": [
           "この 210 のレッスンから成るコースでは、PostgreSQL を使用して、自転車レンタルショップのレンタル情報を保存するインタラクティブな Bash プログラムを構築します。"
         ]
       },
       "learn-bash-by-building-a-boilerplate": {
-        "title": "Bash の学習: ボイラープレートを構築する",
+        "title": "Bash の学習：ボイラープレートを構築する",
         "intro": [
           "ターミナルによって、コンピュータへテキストコマンドを送信することで、ファイルシステムの操作、プログラムの実行、タスクの自動化などができます。",
           "この 170 のレッスンから成るコースでは、コマンドラインのみを使用してウェブサイトのボイラープレートを作成することで、ターミナルのコマンドについて学習します。"
         ]
       },
       "learn-bash-scripting-by-building-five-programs": {
-        "title": "Bash スクリプトの学習: 5 つのプログラムを作成する",
+        "title": "Bash スクリプトの学習：5 つのプログラムを作成する",
         "intro": [
           "Bash スクリプトは、ターミナルコマンドとロジックを組み合わせてプログラムにします。タスクの実行や自動化、その他多くのことができます。",
           "この 220 のレッスンから成るコースでは、5 つの小規模なプログラムを作成しながら、より多くのターミナルコマンドと、Bash スクリプトでの使い方を学びます。"
         ]
       },
       "learn-git-by-building-an-sql-reference-object": {
-        "title": "Git の学習: SQL リファレンスのオブジェクトを作成する",
+        "title": "Git の学習：SQL リファレンスのオブジェクトを作成する",
         "intro": [
           "Git は、コードベースに対する変更の履歴を記録できるバージョン管理システムです。",
           "この 240 のレッスンから成るコースでは、よく使われる SQL コマンドをデータとして持つオブジェクトを作成しながら、Git がどのようにしてコードの履歴を記録するかを学びます。"
         ]
       },
       "learn-nano-by-building-a-castle": {
-        "title": "Nano の学習: 城の絵を作成する",
+        "title": "Nano の学習：城の絵を作成する",
         "intro": [
           "Nano はターミナル内で直接ファイルを編集できるプログラムです。",
           "この 40 のレッスンから成るコースでは、城の絵を作りながら、ターミナルでファイルを編集する方法を学びます。"
         ]
       },
       "learn-relational-databases-by-building-a-mario-database": {
-        "title": "リレーショナルデータベースの学習: マリオデータベースを作成する",
+        "title": "リレーショナルデータベースの学習：マリオデータベースを作成する",
         "intro": [
           "リレーショナルデータベースは、関係モデルにもとづいて互いに関連付けられたテーブルを用いて、データを整理します。",
           "この 165 のレッスンから成るコースでは、テレビゲームのキャラクターのデータが入った PostgreSQL データベースを作成することで、リレーショナルデータベースの基礎を学習します。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
-        "title": "SQL の学習: 学生データベースを作成する (パート 1)",
+        "title": "SQL の学習：学生データベースを作成する (パート 1)",
         "intro": [
           "SQL または Structured Query Language とは、リレーショナルデータベースとやり取りするための言語です。",
           "この 140 のレッスンから成るコースでは、SQL でコンピューター科学の学生達の情報を PostgreSQL データベースに入力する、Bash スクリプトを作成します。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-2": {
-        "title": "SQL の学習: 学生データベースを作成する (パート 2)",
+        "title": "SQL の学習：学生データベースを作成する (パート 2)",
         "intro": [
           "SQL の JOIN コマンドは、リレーショナルデータベースにおいて複数のテーブルからの情報を結合するために使用されます。",
           "この 140 のレッスンから成るコースでは、SQL コマンドをより深く掘り下げながら、学生データベースを完成させます。"
@@ -770,14 +770,14 @@
     "note": "",
     "blocks": {
       "learn-string-manipulation-by-building-a-cipher": {
-        "title": "文字列操作の学習: 暗号プログラムを作成する",
+        "title": "文字列操作の学習：暗号プログラムを作成する",
         "intro": [
           "Python is a powerful and popular programming language widely used for data science, data visualization, web development, game development, machine learning and more.",
           "In this project, you'll learn fundamental programming concepts in Python, such as variables, functions, loops, and conditional statements. You'll use these to code your first programs."
         ]
       },
       "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm": {
-        "title": "数値と文字列を扱う学習: Luhn アルゴリズムを実装する",
+        "title": "数値と文字列を扱う学習：Luhn アルゴリズムを実装する",
         "intro": [
           "The Luhn Algorithm is widely used for error-checking in various applications, such as verifying credit card numbers.",
           "By building this project, you'll gain experience working with numerical computations and string manipulation."
@@ -792,49 +792,49 @@
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
-        "title": "正規表現の学習: パスワードジェネレーターを作成する",
+        "title": "正規表現の学習：パスワードジェネレーターを作成する",
         "intro": [
           "A Python module is a file that contains a set of statements and definitions that you can use in your code.",
           "In this project, you'll learn how to import modules from the Python standard library. You'll also learn how to use Regular Expressions by building your own password generator program."
         ]
       },
       "learn-algorithm-design-by-building-a-shortest-path-algorithm": {
-        "title": "アルゴリズムデザインの学習: 最短経路アルゴリズムを作成する",
+        "title": "アルゴリズムデザインの学習：最短経路アルゴリズムを作成する",
         "intro": [
           "Algorithms are step-by-step procedures that developers use to perform calculations and solve computational problems.",
           "In this project, you'll learn how to use functions, loops, conditional statements, and dictionary comprehensions to implement a Shortest Path algorithm."
         ]
       },
       "learn-recursion-by-solving-the-tower-of-hanoi-puzzle": {
-        "title": "再帰処理の学習: ハノイの塔パズルを解く",
+        "title": "再帰処理の学習：ハノイの塔パズルを解く",
         "intro": [
           "Recursion is a programming approach that allows you to solve complicated computational problems with just a little code.",
           "In this project, you'll start with a loop-based approach to solving the tower of Hanoi mathematical puzzle. Then you'll learn how to implement a recursive solution."
         ]
       },
       "learn-data-structures-by-building-the-merge-sort-algorithm": {
-        "title": "データ構造の学習: マージソートアルゴリズムを作成する",
+        "title": "データ構造の学習：マージソートアルゴリズムを作成する",
         "intro": [
           "The Merge Sort Algorithm is a sorting algorithm based on the divide and conquer principle.",
           "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
         ]
       },
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
-        "title": "クラスとオブジェクトの学習: 数独ソルバーを作成する",
+        "title": "クラスとオブジェクトの学習：数独ソルバーを作成する",
         "intro": [
           "Classes and objects are important programming concepts. These Object-Oriented Programming tools help developers to achieve code modularity, abstraction, and readability. And they promote reusability.",
           "In this Sudoku Solver project, you'll learn how to use classes and objects to build a Sudoku grid and to solve a Sudoku puzzle."
         ]
       },
       "learn-tree-traversal-by-building-a-binary-search-tree": {
-        "title": "木構造の走査の学習: 二分探索木を作成する",
+        "title": "木構造の走査の学習：二分探索木を作成する",
         "intro": [
           "A Binary Search Tree (BST) is an common data structure where data is sorted hierarchically.",
           "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
         ]
       },
       "learn-lambda-functions-by-building-an-expense-tracker": {
-        "title": "ラムダ関数の学習: 経費記録ツールを作成する",
+        "title": "ラムダ関数の学習：経費記録ツールを作成する",
         "intro": [
           "Lambda functions give you a concise way to write small, throwaway functions in your code.",
           "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
@@ -883,7 +883,7 @@
     "title": "情報セキュリティ",
     "intro": [
       "オンラインで行うすべてのことに伴い、膨大な量の取り扱いに注意すべき情報が危険にさらされます。電子メールアドレス、パスワード、電話番号、その他にもたくさんの情報があります。",
-      "情報セキュリティ認定講座では、オンラインで人々の情報を保護する基本を学習するために、 HelmetJS で安全なウェブアプリを構築します。",
+      "情報セキュリティ認定講座では、オンラインで人々の情報を保護する基本を学習するために、HelmetJS で安全なウェブアプリを構築します。",
       "また、Python で TCP クライアントと、Nmap およびポートスキャナーを構築します。これは優れた情報セキュリティにおいて重要な構成要素である、ペネトレーションテストの基本の学習に役立ちます。"
     ],
     "note": "",
@@ -924,7 +924,7 @@
         "title": "TensorFlow",
         "intro": [
           "TensorFlow は機械学習とニューラルネットワークを使いやすくしてくれるオープンソースフレームワークです。",
-          "以下のビデオコースは “Tech With Tim” としても知られている Tim Ruscica によって作成されました。このコースは TensorFlow とその強力な機能の一部を理解するのに役立つでしょう。"
+          "以下のビデオコースは“Tech With Tim”としても知られている Tim Ruscica によって作成されました。このコースは TensorFlow とその強力な機能の一部を理解するのに役立つでしょう。"
         ]
       },
       "how-neural-networks-work": {
@@ -1062,7 +1062,7 @@
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "Python を用いた代数学: まとめ",
+        "title": "Python を用いた代数学：まとめ",
         "intro": [
           "これはこのコース最後の単元となります。あなたの数学と Python の知識を、外部データと結びつける方法を学びましょう。"
         ]
