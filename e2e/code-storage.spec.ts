@@ -20,6 +20,7 @@ test.describe('Challenge with editor', function () {
 
     await page.reload();
 
-    await expect(page.getByText('Something funny')).toBeVisible();
+    // check editor content
+    await expect(editor).toHaveValue(/Something funny/);
   });
 });
