@@ -48,29 +48,28 @@ function Camper({ yearsTopContributor, isDonating }: CamperProps): JSX.Element {
               </div>
             </div>
           )}
-          {yearsTopContributor.filter(Boolean).map((year, index) => {
-            return (
-              <div className='badge-card' key={index}>
-                <div className='badge'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='100'
-                    height='100'
-                  >
-                    <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
-                  </svg>
-                </div>
-                <div className='badge-card-description'>
-                  <h2>{t('profile.contributor')}</h2>
-                  <p>
-                    {t('profile.contributor-prolific', {
-                      year: year
-                    })}
-                  </p>
-                </div>
+          {yearsTopContributor.filter(Boolean).length > 0 && (
+            <div className='badge-card'>
+              <div className='badge'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='100'
+                  height='100'
+                >
+                  <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
+                </svg>
               </div>
-            );
-          })}
+              <div className='badge-card-description'>
+                <h2>{t('profile.contributor')}</h2>
+                <p>
+                  {t('profile.contributor-prolific', {
+                    year: yearsTopContributor
+                  })}
+                </p>
+              </div>
+            </div>
+          )}
+
           <br />
         </div>
       </FullWidthRow>
