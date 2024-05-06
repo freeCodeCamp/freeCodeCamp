@@ -162,7 +162,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     data,
     payerEmail,
     payerName,
-    token,
     paymentMethodId,
     handleAuthentication
   }: PostPayment): void => {
@@ -176,7 +175,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       amount,
       duration,
       data,
-      token,
       email: email || payerEmail,
       name: payerName,
       paymentMethodId,
@@ -258,7 +256,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             label={walletlabel}
             onDonationStateChange={this.onDonationStateChange}
             postPayment={this.postPayment}
-            refreshErrorMessage={t('donate.refresh-needed')}
             theme={priorityTheme}
           />
           <PaypalButton

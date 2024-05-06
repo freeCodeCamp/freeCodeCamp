@@ -2,11 +2,13 @@ import {
   PaymentRequestButtonElement,
   ElementsConsumer
 } from '@stripe/react-stripe-js';
-import type { Token, PaymentRequest, Stripe } from '@stripe/stripe-js';
+import type { PaymentMethod, PaymentRequest, Stripe } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Themes } from '../settings/theme';
 import { PaymentProvider } from '../../../../shared/config/donation-settings';
+import { createStripePaymentIntent } from '../../utils/ajax';
 import { DonationApprovalData, PostPayment } from './types';
 
 interface WrapperProps {
@@ -15,7 +17,6 @@ interface WrapperProps {
   theme: Themes;
   postPayment: (arg0: PostPayment) => void;
   onDonationStateChange: (donationState: DonationApprovalData) => void;
-  refreshErrorMessage: string;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
 }
 interface WalletsButtonProps extends WrapperProps {
@@ -27,16 +28,17 @@ const WalletsButton = ({
   label,
   amount,
   theme,
-  refreshErrorMessage,
   postPayment,
   onDonationStateChange,
   handlePaymentButtonLoad
 }: WalletsButtonProps) => {
-  const [token, setToken] = useState<Token | null>(null);
+  const [paymentMethod, setpaymentMethod] = useState<PaymentMethod | null>(
+    null
+  );
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
     null
   );
-  const [canMakePayment, checkPaymentPossibility] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!stripe) {
@@ -52,49 +54,84 @@ const WalletsButton = ({
       disableWallets: ['browserCard']
     });
 
-    pr.on('token', event => {
-      const { token, payerEmail, payerName } = event;
-      setToken(token);
-      event.complete('success');
-      postPayment({
-        paymentProvider: PaymentProvider.Stripe,
-        token,
+    pr.on('paymentmethod', async event => {
+      setpaymentMethod(event.paymentMethod);
+
+      const {
         payerEmail,
-        payerName
+        payerName,
+        paymentMethod: { id: paymentMethodId }
+      } = event;
+      //create payment intent
+      const {
+        data: { clientSecret }
+      } = await createStripePaymentIntent({
+        paymentMethodType: 'card',
+        currency: 'usd'
       });
+
+      //confirm payment intent
+      const { paymentIntent, error: confirmError } =
+        await stripe.confirmCardPayment(
+          clientSecret,
+          { payment_method: event.paymentMethod.id },
+          { handleActions: false }
+        );
+
+      if (confirmError) {
+        event.complete('fail');
+        displayError(t('donate.try-another-method'));
+      } else {
+        event.complete('success');
+        if (paymentIntent.status === 'requires_action') {
+          const { error } = await stripe.confirmCardPayment(clientSecret);
+          if (error) {
+            displayError(t('donate.try-another-method'));
+          } else {
+            postPayment({
+              paymentProvider: PaymentProvider.Stripe,
+              paymentMethodId,
+              payerEmail,
+              payerName
+            });
+          }
+        } else {
+          postPayment({
+            paymentProvider: PaymentProvider.Stripe,
+            paymentMethodId,
+            payerEmail,
+            payerName
+          });
+        }
+      }
     });
 
-    void pr.canMakePayment().then(canMakePaymentRes => {
-      if (canMakePaymentRes) {
-        setPaymentRequest(pr);
-        checkPaymentPossibility(true);
-      } else {
-        checkPaymentPossibility(false);
-      }
+    void pr.canMakePayment().then(result => {
+      if (result) setPaymentRequest(pr);
     });
 
     return () => {
       setPaymentRequest(null);
-      checkPaymentPossibility(false);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [label, amount, stripe, postPayment, handlePaymentButtonLoad]);
 
-  const displayRefreshError = (): void => {
+  const displayError = (errorMessage: string): void => {
     onDonationStateChange({
       redirecting: false,
       processing: false,
       success: false,
-      error: refreshErrorMessage
+      error: errorMessage
     });
   };
 
   return (
     <form className='wallets-form'>
-      {canMakePayment && paymentRequest && (
+      {paymentRequest && (
         <PaymentRequestButtonElement
           onClick={() => {
-            if (token) {
-              displayRefreshError();
+            if (paymentMethod) {
+              displayError(t('donate.refresh-needed'));
             }
           }}
           onReady={() => handlePaymentButtonLoad('stripe')}
