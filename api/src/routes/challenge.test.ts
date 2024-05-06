@@ -27,10 +27,10 @@ import {
   mockResults2,
   mockResults3,
   mockResults4,
-  userExam1,
-  userExam2,
-  userExam3,
-  userExam4
+  examWithZeroCorrect,
+  examWithOneCorrect,
+  examWithTwoCorrect,
+  examWithAllCorrect
 } from '../../__mocks__/exam';
 import { Answer } from '../utils/exam-types';
 import type { getSessionUser } from '../schemas/user/get-session-user';
@@ -1506,7 +1506,7 @@ describe('challengeRoutes', () => {
           }).send({
             id: examChallengeId,
             challengeType: 17,
-            userCompletedExam: userExam1
+            userCompletedExam: examWithZeroCorrect
           });
 
           type GetSessionUserResponseBody = Static<
@@ -1550,7 +1550,7 @@ describe('challengeRoutes', () => {
           }).send({
             id: examChallengeId,
             challengeType: 17,
-            userCompletedExam: userExam3
+            userCompletedExam: examWithTwoCorrect
           });
 
           const userA = await fastifyTestInstance.prisma.user.findFirst({
@@ -1592,7 +1592,7 @@ describe('challengeRoutes', () => {
           }).send({
             id: examChallengeId,
             challengeType: 17,
-            userCompletedExam: userExam2
+            userCompletedExam: examWithOneCorrect
           });
 
           const user2 = await fastifyTestInstance.prisma.user.findFirst({
@@ -1635,7 +1635,7 @@ describe('challengeRoutes', () => {
           }).send({
             id: examChallengeId,
             challengeType: 17,
-            userCompletedExam: userExam4
+            userCompletedExam: examWithAllCorrect
           });
 
           const user3 = await fastifyTestInstance.prisma.user.findFirst({

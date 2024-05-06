@@ -1,10 +1,10 @@
 import { Exam, Question } from '@prisma/client';
 import {
   examJson,
-  userExam1,
-  userExam2,
-  userExam3,
-  userExam4,
+  examWithZeroCorrect,
+  examWithOneCorrect,
+  examWithTwoCorrect,
+  examWithAllCorrect,
   mockResults1,
   mockResults2,
   mockResults3,
@@ -45,10 +45,22 @@ describe('Exam helpers', () => {
   });
 
   describe('createExamResults()', () => {
-    const examResults1 = createExamResults(userExam1, examJson as Exam);
-    const examResults2 = createExamResults(userExam2, examJson as Exam);
-    const examResults3 = createExamResults(userExam3, examJson as Exam);
-    const examResults4 = createExamResults(userExam4, examJson as Exam);
+    const examResults1 = createExamResults(
+      examWithZeroCorrect,
+      examJson as Exam
+    );
+    const examResults2 = createExamResults(
+      examWithOneCorrect,
+      examJson as Exam
+    );
+    const examResults3 = createExamResults(
+      examWithTwoCorrect,
+      examJson as Exam
+    );
+    const examResults4 = createExamResults(
+      examWithAllCorrect,
+      examJson as Exam
+    );
 
     it('failing exam should return correct results', () => {
       expect(examResults1).toEqual(mockResults1);

@@ -73,7 +73,7 @@ export const completedTrophyChallenges = [
 ];
 
 // failed: 0 correct
-export const userExam1 = {
+export const examWithZeroCorrect = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -95,7 +95,7 @@ export const userExam1 = {
 };
 
 // passed: 1 correct
-export const userExam2 = {
+export const examWithOneCorrect = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -117,7 +117,7 @@ export const userExam2 = {
 };
 
 // passed: 2 correct
-export const userExam3 = {
+export const examWithTwoCorrect = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -139,7 +139,7 @@ export const userExam3 = {
 };
 
 // passed: 3 correct
-export const userExam4 = {
+export const examWithAllCorrect = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
