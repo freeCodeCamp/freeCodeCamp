@@ -56,7 +56,7 @@ do {
 你應該使用 `do...while` 循環。
 
 ```js
-assert(code.match(/do/g));
+assert(__helpers.removeJSComments(code).match(/do/g));
 ```
 
 `myArray` 應該等於 `[10]`。

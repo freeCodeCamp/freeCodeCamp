@@ -37,7 +37,7 @@ Escreva uma regex, `fixRegex`, que usa três grupos de captura para procurar cad
 Você deve usar `.replace()` para buscar e substituir.
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 A regex deve mudar a string `one two three` para `three two one`
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 Você não deve alterar a última linha.
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` deve usar pelo menos três grupos de captura.

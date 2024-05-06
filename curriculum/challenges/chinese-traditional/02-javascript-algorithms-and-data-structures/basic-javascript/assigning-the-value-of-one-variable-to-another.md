@@ -29,7 +29,7 @@ myNum = myVar;
 你不應該修改註釋上面的代碼。
 
 ```js
-assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
 ```
 
 `b` 的值應該爲 `7`。
@@ -41,7 +41,7 @@ assert(typeof b === 'number' && b === 7);
 應該使用 `=` 將 `a` 賦給 `b`。
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(code));
+assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

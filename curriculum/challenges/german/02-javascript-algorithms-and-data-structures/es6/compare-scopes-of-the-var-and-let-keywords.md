@@ -87,13 +87,13 @@ Diese Übung soll den Unterschied zwischen den Schlüsselwörtern `var` und `let
 `var` sollte nicht im Code vorhanden sein.
 
 ```js
-assert(!code.match(/var/g));
+assert(!__helpers.removeJSComments(code).match(/var/g));
 ```
 
 Die Variable `i`, die in der `if`-Anweisung deklariert wird, sollte gleich dem String `block scope` sein.
 
 ```js
-assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
+assert(__helpers.removeJSComments(code).match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` sollte den String `function scope` zurückgeben.

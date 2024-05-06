@@ -26,7 +26,7 @@ Use `parseInt()` in the `convertToInteger` function so it converts the input str
 `convertToInteger` should use the `parseInt()` function
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("56")` should return a number

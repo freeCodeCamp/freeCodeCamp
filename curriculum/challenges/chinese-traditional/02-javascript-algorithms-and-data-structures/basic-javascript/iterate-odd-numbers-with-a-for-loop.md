@@ -32,7 +32,7 @@ for (let i = 0; i < 10; i += 2) {
 應該使用 `for` 循環。
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` 應該等於 `[1, 3, 5, 7, 9]`。

@@ -9,6 +9,14 @@ dashedName: step-15
 
 Katika hatua za awali ulitumia kipengele cha nanga kugeuza maandishi kuwa kiungo. Aina zingine za maudhui pia zinaweza kugeuzwa kuwa kiunga kwa kuifunga kwa tagi za nanga.
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 Geuza picha kuwa kiungo kwa kuizunguka na tagi za vipengele zinazofaa. Tumia `https://freecatphotoapp.com` kama thamani ya sifa `href`.
 
 # --hints--

@@ -36,7 +36,7 @@ assert(product === 80);
 使用 `*` 運算符。
 
 ```js
-assert(/\*/.test(code));
+assert(/\*/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

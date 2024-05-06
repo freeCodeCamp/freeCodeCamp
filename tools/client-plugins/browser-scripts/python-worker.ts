@@ -3,6 +3,7 @@
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import type { PyProxy, PythonError } from 'pyodide/ffi';
+import * as helpers from '@freecodecamp/curriculum-helpers';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
@@ -52,6 +53,15 @@ async function setupPyodide() {
   // weird state. NOTE: this has to come after pyodide is loaded, because
   // pyodide modifies self while loading.
   Object.freeze(self);
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  pyodide.FS.writeFile(
+    '/home/pyodide/ast_helpers.py',
+    helpers.python.astHelpers,
+    {
+      encoding: 'utf8'
+    }
+  );
 
   ignoreRunMessages = true;
   postMessage({ type: 'stopped' });
@@ -134,10 +144,19 @@ function initRunPython() {
     else:
       return ""
   `);
+  runPython(`
+def print_exception():
+    from ast_helpers import format_exception
+    formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>", new_filename="main.py")
+    print(formatted)
+`);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const printException = globals.get('print_exception') as PyProxy &
+    (() => string);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
-  return { runPython, getResetId, globals };
+  return { runPython, getResetId, globals, printException };
 }
 
 ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | CancelEvent) => {
@@ -166,13 +185,16 @@ function handleRunRequest(data: PythonRunEvent['data']) {
   // TODO: use reset-terminal for clarity?
   postMessage({ type: 'reset' });
 
-  const { runPython, getResetId, globals } = initRunPython();
+  const { runPython, getResetId, globals, printException } = initRunPython();
   // use pyodide.runPythonAsync if we want top-level await
   try {
     runPython(code);
   } catch (e) {
     const err = e as PythonError;
-    console.error(e);
+    // the formatted exception is printed to the terminal
+    printException();
+    // but the full error is logged to the console for debugging
+    console.error(err);
     const resetId = getResetId();
     // TODO: if a user raises a KeyboardInterrupt with a custom message this
     // will be treated as a reset, the client will resend their code and this
@@ -187,6 +209,7 @@ function handleRunRequest(data: PythonRunEvent['data']) {
     }
   } finally {
     getResetId.destroy();
+    printException.destroy();
     globals.destroy();
   }
 }

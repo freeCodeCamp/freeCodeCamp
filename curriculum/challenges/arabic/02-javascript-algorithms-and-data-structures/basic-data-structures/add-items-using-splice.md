@@ -53,19 +53,19 @@ assert.deepEqual(
 يجب أن تستخدم وظيفة `htmlColorNames` الطريقة `splice()`
 
 ```js
-assert(/.splice/.test(code));
+assert(/.splice/.test(__helpers.removeJSComments(code)));
 ```
 
 لا يجب عليك استخدام `shift()` أو `unshift()`.
 
 ```js
-assert(!/shift|unshift/.test(code));
+assert(!/shift|unshift/.test(__helpers.removeJSComments(code)));
 ```
 
 لا يجب عليك استخدام bracket notation القائمة.
 
 ```js
-assert(!/\[\d\]\s*=/.test(code));
+assert(!/\[\d\]\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

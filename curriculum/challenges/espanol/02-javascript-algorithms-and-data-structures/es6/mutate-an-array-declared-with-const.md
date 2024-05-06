@@ -36,19 +36,19 @@ Un arreglo es declarado como `const s = [5, 7, 2]`. Cambia el arreglo a `[2, 5, 
 No debes reemplazar la palabra clave `const`.
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `s` debe ser una variable constante (utilizando `const`).
 
 ```js
-assert(code.match(/const\s+s/g));
+assert(__helpers.removeJSComments(code).match(/const\s+s/g));
 ```
 
 No debes cambiar la declaración original del arreglo.
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
 /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
 ));
 ```

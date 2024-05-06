@@ -39,7 +39,7 @@ assert(secondToLastLetterOfLastName === 'c');
 You should use `.length` to get the second last letter.
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

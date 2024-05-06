@@ -36,19 +36,19 @@ Um array é declarado: `const s = [5, 7, 2]`. Modifique o array para `[2, 5, 7]`
 Você não deve substituir a palavra-chave `const`.
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `s` deve ser uma variável constante (use `const`).
 
 ```js
-assert(code.match(/const\s+s/g));
+assert(__helpers.removeJSComments(code).match(/const\s+s/g));
 ```
 
 Você não deve alterar modificar o array original manualmente.
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
 /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
 ));
 ```

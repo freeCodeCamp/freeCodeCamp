@@ -34,13 +34,13 @@ Inserisci i numeri dispari da 9 a 1 in `myArray` usando un ciclo `for`.
 Dovresti usare un ciclo `for` per questo.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 Dovresti usare il metodo array `push`.
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 `myArray` dovrebbe essere uguale a `[9, 7, 5, 3, 1]`.

@@ -59,7 +59,7 @@ Tu código no debe depender de ningún tipo de bucles (`for`, `while` o funcione
 
 ```js
 assert(
-  !code.match(/for|while|forEach|map|filter|reduce/g)
+  !__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 

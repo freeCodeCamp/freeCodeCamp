@@ -55,7 +55,7 @@ assert(typeof myDog === 'object' && myDog.tails === undefined);
 لا يجب عليك تعديل أسس `myDog`.
 
 ```js
-assert(code.match(/"tails": 1/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/"tails": 1/g).length > 0);
 ```
 
 # --seed--

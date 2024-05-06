@@ -2,7 +2,6 @@
 title: Introduction to the Learn How to Read and Understand Code Documentation
 block: learn-how-to-read-and-understand-code-documentation
 superBlock: a2-english-for-developers
-isBeta: true
 ---
 
 ## Introduction to the Learn How to Read and Understand Code Documentation

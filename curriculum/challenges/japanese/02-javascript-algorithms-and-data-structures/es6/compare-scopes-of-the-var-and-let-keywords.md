@@ -87,13 +87,13 @@ console.log(i);
 `var` をコードに入れてはいけません。
 
 ```js
-assert(!code.match(/var/g));
+assert(!__helpers.removeJSComments(code).match(/var/g));
 ```
 
 `if` ステートメント内で宣言された変数 `i` は、文字列 `block scope` になる必要があります。
 
 ```js
-assert(code.match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
+assert(__helpers.removeJSComments(code).match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
 ```
 
 `checkScope()` は、文字列 `function scope` を返す必要があります。

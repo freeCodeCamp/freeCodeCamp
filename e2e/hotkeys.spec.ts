@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { authedPut } from './utils/request';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
@@ -9,15 +10,20 @@ const editorPaneLabel =
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test('User can interact with the app using the keyboard', async ({
-  page,
-  browserName
-}) => {
-  test.skip(
-    browserName === 'webkit',
-    'Failing on webkit for no apparent reason. Can not reproduce locally.'
-  );
+test.beforeAll(async ({ request }) => {
+  await authedPut(request, 'update-my-keyboard-shortcuts', {
+    keyboardShortcuts: false
+  });
+});
 
+test.afterEach(
+  async ({ request }) =>
+    await authedPut(request, 'update-my-keyboard-shortcuts', {
+      keyboardShortcuts: false
+    })
+);
+
+test('User can interact with the app using the keyboard', async ({ page }) => {
   // Enable keyboard shortcuts
   await page.goto('/settings');
   const keyboardShortcutGroup = page.getByRole('group', {
@@ -26,6 +32,12 @@ test('User can interact with the app using the keyboard', async ({
   await keyboardShortcutGroup
     .getByRole('button', { name: translations.buttons.on, exact: true })
     .click();
+  // TODO: getByRole('alert', name:
+  // translations.flash['keyboard-shortcut-updated']) did not find the alert.
+  // Should it a) be an alert and b) have a name?
+  await expect(
+    page.getByText(translations.flash['keyboard-shortcut-updated'])
+  ).toBeVisible();
 
   await page.goto(course);
 

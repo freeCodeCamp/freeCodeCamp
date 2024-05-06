@@ -47,7 +47,7 @@ Use o método `sort` na função `alphabeticalOrder` para ordenar os elementos d
 Você deve usar o método `sort`.
 
 ```js
-assert(code.match(/\.sort/g));
+assert(__helpers.removeJSComments(code).match(/\.sort/g));
 ```
 
 `alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` deve retornar `["a", "a", "c", "d", "g", "z"]`.

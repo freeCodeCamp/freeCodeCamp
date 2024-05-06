@@ -34,19 +34,19 @@ In dieser Aufgabe wirst du `Object.freeze` verwenden, um zu verhindern, dass sic
 Du solltest das Schlüsselwort `const` nicht ersetzen.
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `MATH_CONSTANTS` sollte eine konstante Variable sein (indem du `const` verwendest).
 
 ```js
-assert(code.match(/const\s+MATH_CONSTANTS/g));
+assert(__helpers.removeJSComments(code).match(/const\s+MATH_CONSTANTS/g));
 ```
 
 Du solltest die ursprüngliche Deklaration von `MATH_CONSTANTS` nicht ändern.
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
    /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
 ));
 ```

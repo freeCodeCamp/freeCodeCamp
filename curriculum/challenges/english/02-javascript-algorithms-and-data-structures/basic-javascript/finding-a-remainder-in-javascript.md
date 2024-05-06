@@ -39,7 +39,7 @@ Set `remainder` equal to the remainder of `11` divided by `3` using the <dfn>rem
 The variable `remainder` should be initialized
 
 ```js
-assert(/(const|let|var)\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(__helpers.removeJSComments(code)));
 ```
 
 The value of `remainder` should be `2`
@@ -51,7 +51,7 @@ assert(remainder === 2);
 You should use the `%` operator
 
 ```js
-assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

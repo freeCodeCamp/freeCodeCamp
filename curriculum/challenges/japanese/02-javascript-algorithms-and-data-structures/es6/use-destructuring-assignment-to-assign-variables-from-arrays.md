@@ -51,7 +51,7 @@ assert(b === 8);
 配列の分割を使用して `a` と `b` を入れ替える必要があります。
 
 ```js
-assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code));
+assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

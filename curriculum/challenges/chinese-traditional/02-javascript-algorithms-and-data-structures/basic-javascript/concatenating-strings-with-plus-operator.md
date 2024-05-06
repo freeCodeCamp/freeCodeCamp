@@ -47,19 +47,19 @@ assert(myStr === 'This is the start. This is the end.');
 應該使用 `+` 運算符來構建 `myStr`。
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
 `myStr` 應該使用 `const` 關鍵字創建。
 
 ```js
-assert(/const\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 應該將結果分配給 `myStr` 變量。
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -44,7 +44,7 @@ Usa un bucle `for` para empujar los valores desde el 1 al 5 en `myArray`.
 Debes usar un bucle `for` para esto.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` debe ser igual a `[1, 2, 3, 4, 5]`.

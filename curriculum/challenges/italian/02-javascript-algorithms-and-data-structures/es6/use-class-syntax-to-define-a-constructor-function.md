@@ -66,7 +66,7 @@ assert(
 Dovresti usare la parola chiave `class`.
 
 ```js
-assert(code.match(/class/g));
+assert(__helpers.removeJSComments(code).match(/class/g));
 ```
 
 `Vegetable` dovrebbe poter essere istanziata.

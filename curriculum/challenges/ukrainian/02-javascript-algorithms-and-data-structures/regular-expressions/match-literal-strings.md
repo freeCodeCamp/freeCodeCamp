@@ -52,7 +52,7 @@ assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 Знайдіть точний збіг рядка за допомогою регулярного виразу.
 
 ```js
-assert(!/\/.*\/i/.test(code));
+assert(!/\/.*\/i/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

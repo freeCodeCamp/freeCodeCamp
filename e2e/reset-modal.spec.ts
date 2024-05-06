@@ -2,16 +2,9 @@ import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.beforeEach(({ browserName }) => {
-  test.skip(
-    browserName === 'webkit',
-    'Failing on webkit for no apparent reason. Can not reproduce locally.'
-  );
-});
-
 test('should render the modal content correctly', async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 
   await page.getByRole('button', { name: translations.buttons.reset }).click();
@@ -44,24 +37,39 @@ test('should render the modal content correctly', async ({ page }) => {
 });
 
 test('User can reset challenge', async ({ page }) => {
+  const initialText = 'CatPhotoApp';
+  const initialFrame = page
+    .frameLocator('iframe[title="challenge preview"]')
+    .getByText(initialText);
+
+  const updatedText = 'Only Dogs';
+  const updatedFrame = page
+    .frameLocator('iframe[title="challenge preview"]')
+    .getByText(updatedText);
+
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
+
+  // Building the preview can take a while
+  await expect(initialFrame).toBeVisible({ timeout: 10000 });
 
   const editorPaneLabel =
     'Editor content;Press Alt+F1 for Accessibility Options.';
-  const challengeSolution = '<h2>Cat Photos</h2>';
 
-  await page.getByLabel(editorPaneLabel).fill(challengeSolution);
-  await expect(
-    page
-      .frameLocator('iframe[title="challenge preview"]')
-      .getByRole('heading', { name: 'Cat Photos' })
-  ).toBeVisible();
+  // Modify the text in the editor pane, clearing first, otherwise the existing
+  // text will be selected before typing
+  await page.getByLabel(editorPaneLabel).fill('');
+  await page.getByLabel(editorPaneLabel).fill(updatedText);
+  await expect(updatedFrame).toBeVisible({ timeout: 10000 });
 
+  // Run the tests so the lower jaw updates (later we confirm that the update
+  // are reset)
   await page
     .getByRole('button', {
-      name: translations.buttons['check-code']
+      // check-code-2 works on all browsers because it does not include Command
+      // or Ctrl
+      name: translations.buttons['check-code-2']
     })
     .click();
 
@@ -69,16 +77,14 @@ test('User can reset challenge', async ({ page }) => {
     page.getByText(translations.learn['sorry-keep-trying'])
   ).toBeVisible();
 
+  // Reset the challenge
   await page.getByTestId('lowerJaw-reset-button').click();
   await page
     .getByRole('button', { name: translations.buttons['reset-lesson'] })
     .click();
 
-  await expect(
-    page
-      .frameLocator('iframe[title="challenge preview"]')
-      .getByRole('heading', { name: 'Cat Photos' })
-  ).not.toBeVisible();
+  // Check it's back to the initial state
+  await expect(initialFrame).toBeVisible({ timeout: 10000 });
   await expect(
     page.getByText(translations.learn['sorry-keep-trying'])
   ).not.toBeVisible();
@@ -131,7 +137,7 @@ test('User can reset classic challenge', async ({ page, isMobile }) => {
 
 test('should close when the user clicks the close button', async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 
   await page.getByRole('button', { name: translations.buttons.reset }).click();

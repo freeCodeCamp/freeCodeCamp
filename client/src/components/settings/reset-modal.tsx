@@ -19,9 +19,15 @@ function ResetModal(props: ResetModalProps): JSX.Element {
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('settings.danger.reset-heading')}
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body alignment='start'>
         <p>{t('settings.danger.reset-p1')}</p>
+        <ul>
+          <li>{t('settings.danger.reset-item-1')}</li>
+          <li>{t('settings.danger.reset-item-2')}</li>
+          <li>{t('settings.danger.reset-item-3')}</li>
+        </ul>
         <p>{t('settings.danger.reset-p2')}</p>
+        <p>{t('settings.danger.reset-p3')}</p>
       </Modal.Body>
       <Modal.Footer>
         <Button

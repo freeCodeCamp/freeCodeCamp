@@ -36,7 +36,7 @@ assert(product === 80);
 You should use the `*` operator.
 
 ```js
-assert(/\*/.test(code));
+assert(/\*/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

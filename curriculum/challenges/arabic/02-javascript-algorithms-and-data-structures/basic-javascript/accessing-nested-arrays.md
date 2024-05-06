@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 التعليمات البرميجة الخاص بك يجب أن يستخدم dot و bracket notation للوصول إلى `myPlants`.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

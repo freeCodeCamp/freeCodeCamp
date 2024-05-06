@@ -37,25 +37,25 @@ Corrija os dois erros de índices nas funções seguintes para que todos os núm
 O código deve definir a condição inicial do laço para começar do primeiro índice.
 
 ```js
-assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
 O código deve corrigir a condição inicial do laço para que o índice comece em 0.
 
 ```js
-assert(!code.match(/i\s?=\s*?1\s*?;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s?=\s*?1\s*?;/g));
 ```
 
 O código deve definir a condição de parada do laço, a fim de parar no último índice.
 
 ```js
-assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 O código deve corrigir a condição de parada do laço, a fim de parar no tamanho menos 1.
 
 ```js
-assert(!code.match(/i\s*?<=\s*?len;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?<=\s*?len;/g));
 ```
 
 # --seed--

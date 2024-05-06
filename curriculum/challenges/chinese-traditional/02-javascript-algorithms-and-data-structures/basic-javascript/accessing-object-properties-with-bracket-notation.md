@@ -64,7 +64,7 @@ assert(drinkValue === 'water');
 你應該使用兩次方括號
 
 ```js
-assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 ```
 
 # --seed--
