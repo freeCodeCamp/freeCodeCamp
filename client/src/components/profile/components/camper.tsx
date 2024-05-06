@@ -1,10 +1,7 @@
-import { faAward } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import type { User } from '../../../redux/prop-types';
-import Link from '../../helpers/link';
-import { formatYears } from './utils';
+import { FullWidthRow } from '../../helpers';
 import './camper.css';
 import Bio from './bio';
 
@@ -28,22 +25,66 @@ function Camper({ yearsTopContributor }: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <div className='bio-container'>
+    <>
       <Bio />
-      {yearsTopContributor.filter(Boolean).length > 0 && (
-        <div>
+      <FullWidthRow>
+        <h2 className='header'>{t('profile.badges')}</h2>
+        <div className='badge-card-container'>
+          {yearsTopContributor.filter(Boolean).length > 0 && (
+            <div className='badge-card'>
+              <div className='badge'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='100'
+                  height='100'
+                >
+                  <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
+                </svg>
+              </div>
+              <div className='badge-card-description'>
+                <h2>{t('profile.supporter')}</h2>
+                <p>{t('profile.donated')}</p>
+              </div>
+            </div>
+          )}
+
+          <div className='badge-card'>
+            <div className='badge'>
+              <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>
+                <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
+              </svg>
+            </div>
+            <div className='badge-card-description'>
+              <h2>{t('profile.supporter')}</h2>
+              <p>{t('profile.donated')}</p>
+            </div>
+          </div>
+          <div className='badge-card'>
+            <div className='badge'>
+              <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>
+                <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
+              </svg>
+            </div>
+            <div className='badge-card-description'>
+              <h2>{t('profile.supporter')}</h2>
+              <p>{t('profile.donated')}</p>
+            </div>
+          </div>
+          <div className='badge-card'>
+            <div className='badge'>
+              <svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>
+                <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
+              </svg>
+            </div>
+            <div className='badge-card-description'>
+              <h2>{t('profile.supporter')}</h2>
+              <p>{t('profile.donated')}</p>
+            </div>
+          </div>
           <br />
-          <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} />{' '}
-            <Link to={t('links:top-contributors')}>
-              {t('profile.contributor')}
-            </Link>
-          </p>
-          <p className='text-center'>{formatYears(yearsTopContributor, t)}</p>
         </div>
-      )}
-      <br />
-    </div>
+      </FullWidthRow>
+    </>
   );
 }
 
