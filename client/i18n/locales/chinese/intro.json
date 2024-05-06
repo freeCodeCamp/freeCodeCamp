@@ -1203,6 +1203,12 @@
       "top-learn-function-basics": {
         "title": "学习函数基础",
         "intro": ["学习 JavaScript 中的函数。"]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Projects",
+        "intro": [
+          "Put your JavaScript skills to the test by building basic functions."
+        ]
       }
     }
   },
@@ -1420,10 +1426,6 @@
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "学习如何分析代码文档",
-        "intro": ["", ""]
-      },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "学习如何遵循基本的电子邮件规范",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
