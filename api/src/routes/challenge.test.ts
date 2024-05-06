@@ -23,10 +23,10 @@ import {
   completedExamChallenge4,
   completedTrophyChallenges,
   examChallengeId,
-  mockResults1,
-  mockResults2,
-  mockResults3,
-  mockResults4,
+  mockResultsZeroCorrect,
+  mockResultsOneCorrect,
+  mockResultsTwoCorrect,
+  mockResultsAllCorrect,
   examWithZeroCorrect,
   examWithOneCorrect,
   examWithTwoCorrect,
@@ -1534,14 +1534,14 @@ describe('challengeRoutes', () => {
             id: '647e22d18acb466c97ccbef8',
             challengeType: 17,
             completedDate: expect.any(Number),
-            examResults: mockResults1
+            examResults: mockResultsZeroCorrect
           });
 
           expect(completedExams[0]?.completedDate).toBeGreaterThan(now);
           expect(response.body).toMatchObject({
             points: 0,
             alreadyCompleted: false,
-            examResults: mockResults1
+            examResults: mockResultsZeroCorrect
           });
           expect(response.statusCode).toBe(200);
         });
@@ -1578,7 +1578,7 @@ describe('challengeRoutes', () => {
           expect(responseA.body).toMatchObject({
             points: 1,
             alreadyCompleted: false,
-            examResults: mockResults3
+            examResults: mockResultsTwoCorrect
           });
           expect(responseA.statusCode).toBe(200);
 
@@ -1614,7 +1614,7 @@ describe('challengeRoutes', () => {
           expect(response2.body).toMatchObject({
             points: 1,
             alreadyCompleted: true,
-            examResults: mockResults2
+            examResults: mockResultsOneCorrect
           });
           expect(response2.statusCode).toBe(200);
 
@@ -1648,7 +1648,7 @@ describe('challengeRoutes', () => {
           expect(response3.body).toMatchObject({
             points: 1,
             alreadyCompleted: true,
-            examResults: mockResults4
+            examResults: mockResultsAllCorrect
           });
           expect(response3.statusCode).toBe(200);
         });

@@ -5,10 +5,10 @@ import {
   examWithOneCorrect,
   examWithTwoCorrect,
   examWithAllCorrect,
-  mockResults1,
-  mockResults2,
-  mockResults3,
-  mockResults4
+  mockResultsZeroCorrect,
+  mockResultsOneCorrect,
+  mockResultsTwoCorrect,
+  mockResultsAllCorrect
 } from '../../__mocks__/exam';
 import { generateRandomExam, createExamResults } from './exam';
 import { GeneratedExam } from './exam-types';
@@ -63,13 +63,13 @@ describe('Exam helpers', () => {
     );
 
     it('failing exam should return correct results', () => {
-      expect(examResults1).toEqual(mockResults1);
+      expect(examResults1).toEqual(mockResultsZeroCorrect);
     });
 
     it('passing exam should return correct results', () => {
-      expect(examResults2).toEqual(mockResults2);
-      expect(examResults3).toEqual(mockResults3);
-      expect(examResults4).toEqual(mockResults4);
+      expect(examResults2).toEqual(mockResultsOneCorrect);
+      expect(examResults3).toEqual(mockResultsTwoCorrect);
+      expect(examResults4).toEqual(mockResultsAllCorrect);
     });
   });
 });

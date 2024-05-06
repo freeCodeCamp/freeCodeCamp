@@ -172,7 +172,7 @@ export const examWithAllCorrect: ExamSubmission = {
   examTimeInSeconds: 20
 };
 
-export const mockResults1 = {
+export const mockResultsZeroCorrect = {
   numberOfCorrectAnswers: 0,
   numberOfQuestionsInExam: 3,
   percentCorrect: 0,
@@ -181,7 +181,7 @@ export const mockResults1 = {
   examTimeInSeconds: 20
 };
 
-export const mockResults2 = {
+export const mockResultsOneCorrect = {
   numberOfCorrectAnswers: 1,
   numberOfQuestionsInExam: 3,
   percentCorrect: 33.3,
@@ -190,7 +190,7 @@ export const mockResults2 = {
   examTimeInSeconds: 20
 };
 
-export const mockResults3 = {
+export const mockResultsTwoCorrect = {
   numberOfCorrectAnswers: 2,
   numberOfQuestionsInExam: 3,
   percentCorrect: 66.7,
@@ -199,7 +199,7 @@ export const mockResults3 = {
   examTimeInSeconds: 20
 };
 
-export const mockResults4 = {
+export const mockResultsAllCorrect = {
   numberOfCorrectAnswers: 3,
   numberOfQuestionsInExam: 3,
   percentCorrect: 100,
@@ -215,20 +215,20 @@ const completedExamChallenge = {
 
 export const completedExamChallenge1 = {
   ...completedExamChallenge,
-  examResults: mockResults1
+  examResults: mockResultsZeroCorrect
 };
 
 export const completedExamChallenge2 = {
   ...completedExamChallenge,
-  examResults: mockResults2
+  examResults: mockResultsOneCorrect
 };
 
 export const completedExamChallenge3 = {
   ...completedExamChallenge,
-  examResults: mockResults3
+  examResults: mockResultsTwoCorrect
 };
 
 export const completedExamChallenge4 = {
   ...completedExamChallenge,
-  examResults: mockResults4
+  examResults: mockResultsAllCorrect
 };
