@@ -83,14 +83,14 @@ assert(typeof phoneticLookup('') === 'undefined');
 Você não deve modificar a instrução `return`
 
 ```js
-assert(code.match(/return\sresult;/));
+assert(__helpers.removeJSComments(code).match(/return\sresult;/));
 ```
 
 Você não deve usar as instruções `case`, `switch` ou `if`
 
 ```js
 assert(
-  !/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
+  !/case|switch|if/g.test(__helpers.removeJSComments(code).replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
 );
 ```
 

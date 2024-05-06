@@ -56,19 +56,19 @@ assert(player === 'Montana');
 Du solltest die Klammerschreibweise verwenden, um auf `testObj` zuzugreifen
 
 ```js
-assert(/testObj\s*?\[.*?\]/.test(code));
+assert(/testObj\s*?\[.*?\]/.test(__helpers.removeJSComments(code)));
 ```
 
 Du solltest den Wert `Montana` nicht direkt der Variable `player` zuweisen.
 
 ```js
-assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
+assert(!__helpers.removeJSComments(code).match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
 ```
 
 Du solltest die Variable `playerNumber` in deiner Klammerschreibweise verwenden
 
 ```js
-assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

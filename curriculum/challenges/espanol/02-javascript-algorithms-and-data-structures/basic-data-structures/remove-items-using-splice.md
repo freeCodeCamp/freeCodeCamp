@@ -40,7 +40,7 @@ No debes cambiar la línea original de `const arr = [2, 4, 5, 1, 7, 5, 2, 1];`.
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
 );
 ```
 
@@ -56,14 +56,14 @@ assert.strictEqual(
 Tu código debe utilizar el método `splice()` en `arr`.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(/));
 ```
 
 La división (splice) sólo debe eliminar elementos de `arr` y no agregar ningún elemento adicional a `arr`.
 
 ```js
 assert(
-  !__helpers.removeWhiteSpace(code).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
+  !__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
 );
 ```
 

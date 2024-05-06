@@ -45,19 +45,19 @@ switch (val) {
 لا يجب عليك استخدام أي `else` في أي مكان في المحرر
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 لا يجب عليك استخدام أي `if` في أي مكان في المحرر
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن يكون لديك على الأقل ٤ عبارات `break`
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` should return the string `Marley`

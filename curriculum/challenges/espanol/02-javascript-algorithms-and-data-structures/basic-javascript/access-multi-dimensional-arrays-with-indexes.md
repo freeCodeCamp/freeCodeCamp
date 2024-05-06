@@ -45,7 +45,7 @@ assert(myData === 8);
 Debes usar notación de corchetes para leer el valor correcto de `myArray`.
 
 ```js
-assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));
+assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

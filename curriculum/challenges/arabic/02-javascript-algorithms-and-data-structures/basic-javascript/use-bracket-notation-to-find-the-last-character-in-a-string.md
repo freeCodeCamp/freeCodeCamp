@@ -39,7 +39,7 @@ assert(lastLetterOfLastName === 'e');
 يجب عليك استخدام `.length` للحصول على آخر حرف.
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

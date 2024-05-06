@@ -1,6 +1,6 @@
 ---
 id: 657dbdae2bd6f60bda3226cc
-title: Task 78
+title: Завдання 78
 challengeType: 22
 dashedName: task-78
 ---
@@ -15,7 +15,7 @@ When you want to know how often something happens, you can use `every` followed 
 
 # --instructions--
 
-Listen to the audio to complete the sentence below.
+Послухайте аудіо та доповніть речення нижче.
 
 # --fillInTheBlank--
 

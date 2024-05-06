@@ -7,14 +7,14 @@ dashedName: modify-the-content-of-string-using-built-in-string-data-type-methods
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-modify-content/</a> and complete all the tasks for the "Modify the Content of Strings Using Built-In String Data Type Methods in C#" module. This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-modify-content/</a> und löse alle Aufgaben für das Modul "Den Inhalt von Strings mit eingebauten String-Datentyp-Methoden in C# ändern". Dies ist **erforderlich**, um die Trophäe "Work with Variable Data in C# Console Applications" auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">Modify the Content of Strings Using Built-In String Data Type Methods in C#</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/csharp-modify-content/" target="_blank" rel="noreferrer">Den Inhalt von Strings mit eingebauten String-Datentyp-Methoden in C# ändern</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 

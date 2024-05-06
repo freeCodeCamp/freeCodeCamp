@@ -53,7 +53,7 @@ assert(myDog.bark !== undefined);
 Du solltest `bark` nicht zur Initialisierung von `myDog` hinzufügen.
 
 ```js
-assert(!/bark[^\n]:/.test(code));
+assert(!/bark[^\n]:/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

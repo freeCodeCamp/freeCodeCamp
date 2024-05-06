@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 Die Variable `receivables` sollte im Code richtig deklariert und verwendet werden.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 Die Variable `payables` sollte im Code richtig deklariert und verwendet werden.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

@@ -29,7 +29,7 @@ Use the `console.log()` method to print the value of the variable `a` where note
 Your code should use `console.log()` to check the value of the variable `a`.
 
 ```js
-assert(code.match(/console\.log\(a\)/g));
+assert(__helpers.removeJSComments(code).match(/console\.log\(a\)/g));
 ```
 
 # --seed--

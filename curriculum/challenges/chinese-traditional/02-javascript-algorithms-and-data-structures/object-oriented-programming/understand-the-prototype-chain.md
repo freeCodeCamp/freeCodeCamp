@@ -42,7 +42,7 @@ duck.hasOwnProperty("name");
 你的代碼應該展示 `Object.prototype` 是 `Dog.prototype` 的原型。
 
 ```js
-assert(/Object\.prototype\.isPrototypeOf/.test(code));
+assert(/Object\.prototype\.isPrototypeOf/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

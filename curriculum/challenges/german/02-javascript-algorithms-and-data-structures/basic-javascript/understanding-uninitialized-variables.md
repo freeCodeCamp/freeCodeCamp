@@ -39,9 +39,9 @@ Du solltest den Code unterhalb des vorgegebenen Kommentars nicht ändern.
 
 ```js
 assert(
-  /a = a \+ 1;/.test(code) &&
-    /b = b \+ 5;/.test(code) &&
-    /c = c \+ " String!";/.test(code)
+  /a = a \+ 1;/.test(__helpers.removeJSComments(code)) &&
+    /b = b \+ 5;/.test(__helpers.removeJSComments(code)) &&
+    /c = c \+ " String!";/.test(__helpers.removeJSComments(code))
 );
 ```
 

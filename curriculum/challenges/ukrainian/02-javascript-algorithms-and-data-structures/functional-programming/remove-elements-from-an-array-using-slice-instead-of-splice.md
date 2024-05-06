@@ -30,13 +30,13 @@ cities.splice(3, 1);
 Ваш код повинен використовувати метод `slice`.
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 Ваш код не повинен використовувати метод `splice`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?splice/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 ```
 
 Не змінюйте початковий масив, переданий до функції.

@@ -37,13 +37,13 @@ Correggi la stringa in modo da usare virgolette diverse per il valore `href` o f
 Il tuo codice dovrebbe correggere le virgolette intorno al valore `href` `#Home` cambiandole o facendone l'escaping.
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 Il tuo codice dovrebbe mantenere le virgolette doppie intorno all'intera stringa.
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

@@ -51,7 +51,7 @@ assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 このチャレンジは組み込みのメソッド `Object.keys()` を使用せずに解決する必要があります。
 
 ```js
-assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
+assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(__helpers.removeJSComments(code)));
 ```
 
 `ownProps` 配列をハードコーディングせずに、このチャレンジを解決する必要があります。
@@ -59,7 +59,7 @@ assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
 ```js
 assert(
   !/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```

@@ -49,7 +49,7 @@ Bird.prototype = {
 Налаштуйте `Dog.prototype` на новий об’єкт.
 
 ```js
-assert(/Dog\.prototype\s*?=\s*?{/.test(code));
+assert(/Dog\.prototype\s*?=\s*?{/.test(__helpers.removeJSComments(code)));
 ```
 
 `Dog.prototype` повинен мати властивість `numLegs`.

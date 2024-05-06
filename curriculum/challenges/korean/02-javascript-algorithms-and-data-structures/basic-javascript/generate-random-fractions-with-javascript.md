@@ -36,7 +36,7 @@ assert((randomFraction() + '').match(/\./g));
 You should be using `Math.random` to generate the random decimal number.
 
 ```js
-assert(code.match(/Math\.random/g).length >= 0);
+assert(__helpers.removeJSComments(code).match(/Math\.random/g).length >= 0);
 ```
 
 # --seed--

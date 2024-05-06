@@ -29,13 +29,13 @@ JavaScript では、関数を宣言したらすぐに実行するというのが
 関数は無名である必要があります。
 
 ```js
-assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, '')));
+assert(/\((function|\(\))(=>|\(\)){?/.test(__helpers.removeJSComments(code).replace(/\s/g, '')));
 ```
 
 関数の式の末尾に括弧を付けて、すぐに呼び出す必要があります。
 
 ```js
-assert(/\(.*(\)\(|\}\(\))\)/.test(code.replace(/[\s;]/g, '')));
+assert(/\(.*(\)\(|\}\(\))\)/.test(__helpers.removeJSComments(code).replace(/[\s;]/g, '')));
 ```
 
 # --seed--

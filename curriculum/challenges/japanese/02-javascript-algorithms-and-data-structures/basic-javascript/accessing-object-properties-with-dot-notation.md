@@ -60,7 +60,7 @@ assert(shirtValue === 'jersey');
 ドット記法を 2 回使用する必要があります。
 
 ```js
-assert(code.match(/testObj\.\w+/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\.\w+/g).length > 1);
 ```
 
 # --seed--

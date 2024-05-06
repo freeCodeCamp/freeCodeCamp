@@ -37,7 +37,7 @@ var ourName;
 使用 `var` 關鍵字定義一個變量 `myName`，並使用分號結尾。
 
 ```js
-assert(/var\s+myName\s*;/.test(code));
+assert(/var\s+myName\s*;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

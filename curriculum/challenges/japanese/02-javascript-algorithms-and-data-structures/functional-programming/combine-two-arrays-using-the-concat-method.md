@@ -25,7 +25,7 @@ dashedName: combine-two-arrays-using-the-concat-method
 コードでは `concat` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 `first` 配列は変更しないでください。

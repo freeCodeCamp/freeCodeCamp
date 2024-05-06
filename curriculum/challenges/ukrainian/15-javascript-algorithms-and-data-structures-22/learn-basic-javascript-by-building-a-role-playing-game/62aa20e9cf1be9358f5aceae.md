@@ -1,8 +1,8 @@
 ---
 id: 62aa20e9cf1be9358f5aceae
-title: Крок 149
+title: Step 152
 challengeType: 0
-dashedName: step-149
+dashedName: step-152
 ---
 
 # --description--

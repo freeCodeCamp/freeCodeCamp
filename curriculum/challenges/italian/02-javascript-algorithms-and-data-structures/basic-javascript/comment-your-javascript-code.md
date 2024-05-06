@@ -2,7 +2,6 @@
 id: bd7123c9c441eddfaeb4bdef
 title: Commentare il codice JavaScript
 challengeType: 1
-removeComments: false
 videoUrl: 'https://scrimba.com/c/c7ynnTp'
 forumTopicId: 16783
 dashedName: comment-your-javascript-code

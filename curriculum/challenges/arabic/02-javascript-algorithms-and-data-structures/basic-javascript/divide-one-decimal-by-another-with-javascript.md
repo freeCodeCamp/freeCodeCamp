@@ -26,13 +26,13 @@ assert(quotient === 2.2);
 يجب عليك استخدام المشغل `/` لتقسيم 4.4 على 2
 
 ```js
-assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
+assert(/4\.40*\s*\/\s*2\.*0*/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب تعيين متغير quotient مرة واحدة فقط
 
 ```js
-assert(code.match(/quotient\s*=/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/quotient\s*=/g).length === 1);
 ```
 
 # --seed--

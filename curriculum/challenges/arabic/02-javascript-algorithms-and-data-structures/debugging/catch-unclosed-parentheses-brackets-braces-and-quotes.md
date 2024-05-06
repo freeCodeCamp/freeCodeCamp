@@ -21,7 +21,7 @@ dashedName: catch-unclosed-parentheses-brackets-braces-and-quotes
 يجب أن يصلح الكود الخاص بك القطعة المفقودة من القائمة.
 
 ```js
-assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
+assert(__helpers.removeJSComments(code).match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 ```
 
 يجب أن يصلح الكود الخاص بك القطعة المفقودة من `.reduce()`. يجب أن يظهر إخراج وحدة التحكم أن `Sum of array values is: 6`.

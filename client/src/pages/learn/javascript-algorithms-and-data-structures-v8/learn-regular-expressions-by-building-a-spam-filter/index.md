@@ -2,7 +2,6 @@
 title: Introduction to the Learn Regular Expressions by Building a Spam Filter
 block: learn-regular-expressions-by-building-a-spam-filter
 superBlock: JavaScript Algorithms and Data Structures
-isBeta: true
 ---
 
 ## Introduction to the Learn Regular Expressions by Building a Spam Filter

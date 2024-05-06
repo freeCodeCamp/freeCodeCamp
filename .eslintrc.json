@@ -69,7 +69,6 @@
           "./tsconfig.json",
           "./api/tsconfig.json",
           "./shared/tsconfig.json",
-          "./tools/ui-components/tsconfig.json",
           "./tools/client-plugins/browser-scripts/tsconfig.json",
           "./web/tsconfig.json",
           "./curriculum-server/tsconfig.json",
@@ -90,10 +89,7 @@
       }
     },
     {
-      "files": [
-        "./tools/ui-components/**/*.test.[jt]s?(x)",
-        "./client/**/*.test.[jt]s?(x)"
-      ],
+      "files": ["./client/**/*.test.[jt]s?(x)"],
       "extends": [
         "plugin:testing-library/react",
         "plugin:jest-dom/recommended"

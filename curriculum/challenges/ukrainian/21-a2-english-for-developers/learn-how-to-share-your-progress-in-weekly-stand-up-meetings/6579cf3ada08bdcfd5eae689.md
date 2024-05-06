@@ -1,6 +1,6 @@
 ---
 id: 6579cf3ada08bdcfd5eae689
-title: Task 5
+title: Завдання 5
 challengeType: 19
 dashedName: task-5
 audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
