@@ -277,7 +277,7 @@ assert(usesFlex || usesFlexMedia)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 ---
 id: 65fc9c5db0a80e6e3d3cfce5
-title: Task 37
+title: Завдання 37
 challengeType: 22
 dashedName: task-37
 ---

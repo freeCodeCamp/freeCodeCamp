@@ -263,8 +263,12 @@
       "nevermind": "لا أريد حذف حسابي",
       "certain": "أنا متأكد 100٪. احذف كل ما يتعلق بهذا الحساب",
       "reset-heading": "أعد تقدمي ألى حالته الأولية",
-      "reset-p1": "سيؤدي هذا بالفعل إلى حذف كل تقدمك، نقاطك، التحديات المكتملة، سجلاتنا لمشاريعك، أي شهادات لديك، كل شيء.",
-      "reset-p2": "لن نكون قادرين على استرجاع أي منها لك في وقت لاحق، حتى لو غيّرت رأيك.",
+      "reset-p1": "This will permanently delete and reset all of the following:",
+      "reset-item-1": "Your progress through each step/challenge (all completed challenges will be lost)",
+      "reset-item-2": "Any saved code, including partially completed challenges, and certification project code",
+      "reset-item-3": "All completed and claimed certifications",
+      "reset-p2": "You will effectively be set back to the very first day you signed up.",
+      "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "لا داعي للقلق ، لا أريد حذف كل تقدمي",
       "reset-confirm": "أعد كل شيء ألى حالته الأولية. أريد أن أبدأ من البداية"
     },
@@ -310,7 +314,7 @@
     "tweet": "لقد حصلت للتو على شهادة {{certTitle}} @freeCodeCamp! تحقق منها هنا: {{certURL}}",
     "avatar": "صورة {{username}}",
     "joined": "تاريخ الانضمام {{date}}",
-    "total-points": "Number of points: {{count}}",
+    "total-points": "Total Points:",
     "points": "{{count}} نقطة في {{date}}",
     "points_plural": "{{count}} نقاط في {{date}}",
     "page-number": "{{pageNumber}} من {{totalPages}}"
@@ -867,6 +871,7 @@
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "كجزء من شهادة Full Stack القديمة هذه، أكمل {{user}} الشهادات التالية:",
+      "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "كجزء من هذه الشهادة، أنشئ {{user}} المشروعات التالية واجتاز جميع مجموعات الاختبار الآلية:",
       "solution": "الحل",
       "no-solution": "خطأ في عرض الحل، أرسل بريد إلكتروني support@freeCodeCamp.org للحصول على المساعدة.",

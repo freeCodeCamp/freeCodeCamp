@@ -263,8 +263,12 @@
       "nevermind": "Deixa para lá, eu não quero excluir minha conta",
       "certain": "Tenho 100% de certeza. Apague tudo relacionado a essa conta",
       "reset-heading": "Redefinir o meu progresso",
-      "reset-p1": "Isto excluirá de fato todo o seu progresso, pontos, desafios concluídos, nossos registros dos seus projetos, quaisquer certificações que você tiver, tudo.",
-      "reset-p2": "Não seremos capazes de recuperar nada disso para você depois, mesmo que você mude de ideia.",
+      "reset-p1": "This will permanently delete and reset all of the following:",
+      "reset-item-1": "Your progress through each step/challenge (all completed challenges will be lost)",
+      "reset-item-2": "Any saved code, including partially completed challenges, and certification project code",
+      "reset-item-3": "All completed and claimed certifications",
+      "reset-p2": "You will effectively be set back to the very first day you signed up.",
+      "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Deixa para lá, não quero apagar todo o meu progresso",
       "reset-confirm": "Redefinir tudo. Eu quero começar do início"
     },
@@ -310,7 +314,7 @@
     "tweet": "Acabei de receber a certificação {{certTitle}} @freeCodeCamp! Confira aqui: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Entrou em {{date}}",
-    "total-points": "Número de pontos: {{count}}",
+    "total-points": "Total Points:",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
     "page-number": "{{pageNumber}} de {{totalPages}}"
@@ -867,6 +871,7 @@
     "fulltextNoHours": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
+      "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "solução",
       "no-solution": "erro exibindo a solução, envie um e-mail para support@freeCodeCamp.org para obter ajuda.",
