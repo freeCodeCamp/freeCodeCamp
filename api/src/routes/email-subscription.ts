@@ -48,16 +48,14 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        const userUpdatePromises = [];
-        for (const user of users) {
-          const userUpdatePromise = fastify.prisma.user.update({
+        const userUpdatePromises = users.map(user =>
+          fastify.prisma.user.update({
             where: { id: user.id },
             data: {
               sendQuincyEmail: false
             }
-          });
-          userUpdatePromises.push(userUpdatePromise);
-        }
+          })
+        );
 
         await Promise.all(userUpdatePromises);
 
@@ -101,7 +99,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       try {
         const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
-        const [user] = await fastify.prisma.user.findMany({
+        const user = await fastify.prisma.user.findFirst({
           where: { unsubscribeId }
         });
 
