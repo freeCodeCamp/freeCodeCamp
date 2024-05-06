@@ -9,6 +9,10 @@ import Character from './character';
 
 import './scene.css';
 
+const sToMs = (n: number) => {
+  return n * 1000;
+};
+
 export function Scene({
   scene,
   isPlaying,
@@ -21,11 +25,19 @@ export function Scene({
   const { t } = useTranslation();
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
+  const { startTimestamp, finishTimestamp } = audio;
 
   const audioTimestamp =
-    audio.startTimestamp !== null && audio.finishTimestamp !== null
-      ? `#t=${audio.startTimestamp}`
+    startTimestamp !== null && finishTimestamp !== null
+      ? `#t=${startTimestamp}`
       : '';
+
+  const hasTimestamps = startTimestamp && finishTimestamp;
+  // if there are timestamps, we use the difference between them as the duration
+  // if not, we assume we're playing the whole audio file.
+  const duration = hasTimestamps
+    ? sToMs(finishTimestamp - startTimestamp)
+    : Infinity;
 
   const audioRef = useRef<HTMLAudioElement>(
     new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
@@ -33,10 +45,6 @@ export function Scene({
 
   const loadImage = (src: string | null) => {
     if (src) new Image().src = src;
-  };
-
-  const sToMs = (n: number) => {
-    return n * 1000;
   };
 
   // on mount
@@ -97,51 +105,35 @@ export function Scene({
     setSceneIsReady(true);
   };
 
-  let startNow = 0;
-  let duration = Infinity;
+  let start = 0;
   let stopAudio = false;
 
   // this function exists because we couldn't reliably stop the audio when
   // playing only part of the audio file. So it would get cut off
-  function playAudio() {
-    const finishNow = Date.now();
-    const runningTime = finishNow - startNow;
+  function maybeStopAudio() {
+    const runningTime = Date.now() - start;
 
-    // start audio after startTime has been reached
-    if (runningTime >= sToMs(audio.startTime) && audioRef.current.paused) {
-      void audioRef.current.play();
-    }
-
-    // stop audio if the duration has been reached
     if (runningTime >= duration) {
       stopAudio = true;
       audioRef.current.pause();
     }
 
     if (!stopAudio) {
-      window.requestAnimationFrame(playAudio);
+      window.requestAnimationFrame(maybeStopAudio);
     }
   }
 
   const playScene = () => {
     setShowDialogue(true);
 
-    // the timestamps don't exist when we play the whole audio, so we only need
-    // to use the playAudio function if they are set. Otherwise, we can just
-    // play the whole clip
-    if (audio.startTimestamp && audio.finishTimestamp) {
-      duration =
-        sToMs(audio.finishTimestamp) -
-        sToMs(audio.startTimestamp) +
-        sToMs(audio.startTime);
-      startNow = Date.now();
-
-      playAudio();
-    } else {
-      setTimeout(function () {
+    setTimeout(() => {
+      if (audioRef.current.paused) {
+        start = Date.now();
         void audioRef.current.play();
-      }, sToMs(audio.startTime));
-    }
+      }
+      // if there are no timestamps, we can let the audio play to the end
+      if (hasTimestamps) maybeStopAudio();
+    }, sToMs(audio.startTime));
 
     commands.forEach((command, commandIndex) => {
       // Start command timeout
