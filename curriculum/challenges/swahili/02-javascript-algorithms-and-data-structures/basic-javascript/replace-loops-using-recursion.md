@@ -66,7 +66,7 @@ Your code should not rely on any kind of loops (`for` or `while` or higher order
 
 ```js
 assert(
-  !code.match(/for|while|forEach|map|filter|reduce/g)
+  !__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 

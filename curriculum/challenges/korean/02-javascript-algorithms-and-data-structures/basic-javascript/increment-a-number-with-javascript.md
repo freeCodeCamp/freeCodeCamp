@@ -39,20 +39,20 @@ You should not use the assignment operator.
 
 ```js
 assert(
-  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(code)
+  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(__helpers.removeJSComments(code))
 );
 ```
 
 You should use the `++` operator.
 
 ```js
-assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
+assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
 You should not change code above the specified comment.
 
 ```js
-assert(/let myVar = 87;/.test(code));
+assert(/let myVar = 87;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

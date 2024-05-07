@@ -26,7 +26,7 @@ Definisci una variabile `a` con `var` e inizializzala ad un valore di `9`.
 Dovresti inizializzare `a` ad un valore di `9`.
 
 ```js
-assert(/var\s+a\s*=\s*9(\s*;?\s*)$/.test(code));
+assert(/var\s+a\s*=\s*9(\s*;?\s*)$/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

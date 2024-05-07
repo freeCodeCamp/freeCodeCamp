@@ -26,7 +26,7 @@ Your code should not use any loop syntax (`for` or `while` or higher order funct
 
 ```js
 assert(
-  !code.match(/for|while|forEach|map|filter|reduce/g)
+  !__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 

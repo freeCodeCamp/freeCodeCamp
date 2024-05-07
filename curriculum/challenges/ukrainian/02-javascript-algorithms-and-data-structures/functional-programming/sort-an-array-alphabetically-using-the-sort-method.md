@@ -47,7 +47,7 @@ reverseAlpha(['l', 'h', 'z', 'b', 's']);
 Ваш код повинен використовувати метод `sort`.
 
 ```js
-assert(code.match(/\.sort/g));
+assert(__helpers.removeJSComments(code).match(/\.sort/g));
 ```
 
 `alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` має повертати `["a", "a", "c", "d", "g", "z"]`.

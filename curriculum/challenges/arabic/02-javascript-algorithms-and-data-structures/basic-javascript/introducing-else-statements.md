@@ -28,13 +28,13 @@ if (num > 10) {
 يجب أن يكون لديك عبارة `if` واحدة فقط في المحرر
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 يجب عليك استخدام عبارة `else`
 
 ```js
-assert(/else/g.test(code));
+assert(/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن تنتج `testElse(4)` المقطع النصي `5 or Smaller`
@@ -64,7 +64,7 @@ assert(testElse(10) === 'Bigger than 5');
 لا يجب عليك تعديل الكود فوق التعليق المحدد.
 
 ```js
-assert(/let result = "";/.test(code) && /return result;/.test(code));
+assert(/let result = "";/.test(__helpers.removeJSComments(code)) && /return result;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

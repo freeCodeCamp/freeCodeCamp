@@ -34,13 +34,13 @@ for (let i = 10; i > 0; i -= 2) {
 应该使用 `for` 循环。
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 应该使用数组方法 `push`。
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 `myArray` 应该等于 `[9, 7, 5, 3, 1]`。

@@ -35,7 +35,7 @@ myVar = 5;
 Не змінюйте код над зазначеним коментарем.
 
 ```js
-assert(/var a;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)));
 ```
 
 `a` повинна мати значення 7.

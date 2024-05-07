@@ -35,7 +35,7 @@ Usa `isPrototypeOf` per controllare il `prototype` di `beagle`.
 Dovresti mostrare che `Dog.prototype` è il `prototype` di `beagle`
 
 ```js
-assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
+assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

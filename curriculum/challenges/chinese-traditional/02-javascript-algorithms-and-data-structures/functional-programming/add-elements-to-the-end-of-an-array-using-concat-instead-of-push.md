@@ -30,13 +30,13 @@ arr.push(4, 5, 6);
 應該使用 `concat` 方法。
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 不能使用 `push` 方法。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 不能改變 `first` 數組。

@@ -39,19 +39,19 @@ if (condition1) {
 Ви повинні мати принаймні 4 інструкції `else`
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 Ви повинні мати принаймні 4 інструкції `if`
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 Ви повинні мати принаймні 1 інструкцію `return`
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` має повертати рядок `Tiny`

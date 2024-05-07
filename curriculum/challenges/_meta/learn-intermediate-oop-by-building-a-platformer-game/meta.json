@@ -5,7 +5,7 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-oop-by-building-a-platformer-game",
   "helpCategory": "JavaScript",
-  "order": 16,
+  "order": 17,
   "time": "5 hours",
   "template": "",
   "required": [],
@@ -13,7 +13,6 @@
   "disableLoopProtectTests": true,
   "disableLoopProtectPreview": true,
   "superOrder": 4,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "6461815bc48998eb15d55349",

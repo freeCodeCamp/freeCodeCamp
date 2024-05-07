@@ -12,13 +12,26 @@ describe('getSetAccessToken', () => {
   const invalidJWTSecret = 'This is not correct secret';
   const now = new Date(Date.now());
   const theBeginningOfTime = new Date(0);
-  const domain = process.env.COOKIE_DOMAIN || 'localhost';
+  const domain = 'www.example.com';
   const accessToken = {
     id: '123abc',
     userId: '456def',
     ttl: 60000,
     created: now
   };
+
+  // https://stackoverflow.com/questions/48033841/test-process-env-with-jest
+  const OLD_ENV = process.env;
+
+  beforeEach(() => {
+    jest.resetModules(); // process is implicitly cached by Jest, so hence the reset
+    process.env = { ...OLD_ENV }; // Shallow clone that we can modify
+    process.env.COOKIE_DOMAIN = domain;
+  });
+
+  afterAll(() => {
+    process.env = OLD_ENV;
+  });
 
   describe('getAccessTokenFromRequest', () => {
     it('return `no token` error if no token is found', () => {

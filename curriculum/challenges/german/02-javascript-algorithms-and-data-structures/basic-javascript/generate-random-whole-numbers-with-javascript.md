@@ -46,22 +46,22 @@ assert(
 Du solltest `Math.random` verwenden, um eine Zufallszahl zu erzeugen.
 
 ```js
-assert(code.match(/Math.random/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/Math.random/g).length >= 1);
 ```
 
 Du solltest das Ergebnis von `Math.random` mit 10 multiplizieren, damit es eine Zahl im Bereich von null bis neun ergibt.
 
 ```js
 assert(
-  code.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
-    code.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
+  __helpers.removeJSComments(code).match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
+    __helpers.removeJSComments(code).match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
 );
 ```
 
 Du solltest `Math.floor` verwenden, um den Dezimalteil der Zahl zu entfernen.
 
 ```js
-assert(code.match(/Math.floor/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/Math.floor/g).length >= 1);
 ```
 
 # --seed--

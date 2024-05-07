@@ -92,15 +92,14 @@ function ToolPanel({
             </Button>
           </>
         )}
-      {challengeType !== challengeTypes.multifileCertProject &&
-        challengeType !== challengeTypes.multifilePythonCertProject && (
-          <>
-            <Spacer size='xxSmall' />
-            <Button block={true} variant='primary' onClick={openResetModal}>
-              {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
-            </Button>
-          </>
-        )}
+      {challengeType !== challengeTypes.multifilePythonCertProject && (
+        <>
+          <Spacer size='xxSmall' />
+          <Button block={true} variant='primary' onClick={openResetModal}>
+            {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
+          </Button>
+        </>
+      )}
       <Spacer size='xxSmall' />
       <Dropdown dropup>
         <Dropdown.Toggle

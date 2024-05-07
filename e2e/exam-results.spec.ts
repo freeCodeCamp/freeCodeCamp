@@ -40,10 +40,8 @@ test.describe('Exam Results E2E Test Suite', () => {
   });
 
   test('Verifies the Correct Rendering of the Exam results', async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(browserName === 'webkit', 'It is failing on webkit');
     await expect(
       page
         .locator('div.exam-results-wrapper')
@@ -81,11 +79,7 @@ test.describe('Exam Results E2E Test Suite', () => {
     ).toBeVisible();
   });
 
-  test('Exam Results when the User clicks on Exit button', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'It is failing on webkit');
+  test('Exam Results when the User clicks on Exit button', async ({ page }) => {
     await page
       .locator('div.exam-results-wrapper')
       .getByRole('button', { name: translations.buttons.exit })
@@ -104,10 +98,8 @@ test.describe('Exam Results E2E Test Suite', () => {
 
   test.describe('Exam Results E2E Test Suite', () => {
     test('Exam Results When the User clicks on Download button', async ({
-      page,
-      browserName
+      page
     }) => {
-      test.skip(browserName === 'webkit', 'It is failing on webkit');
       const [download] = await Promise.all([
         page.waitForEvent('download'),
         page

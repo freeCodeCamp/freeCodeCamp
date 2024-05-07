@@ -27,13 +27,13 @@ assert(result === 'Hello, World!');
 你不應該使用 `String.prototype.trim()` 方法。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?trim/));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?trim/));
 ```
 
 `result` 變量的值不應該是一個字符串。
 
 ```js
-assert(!code.match(/result\s*=\s*["'`].*?["'`]/));
+assert(!__helpers.removeJSComments(code).match(/result\s*=\s*["'`].*?["'`]/));
 ```
 
 `hello` 變量的值不應更改。

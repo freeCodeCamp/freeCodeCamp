@@ -34,7 +34,7 @@ assert(processed === 2);
 You should assign `processArg` to `processed`
 
 ```js
-assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
+assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -39,19 +39,19 @@ Escribe sentencias `if` / `else if` encadenadas para cumplir con las siguientes 
 Debes tener al menos cuatro sentencias `else`
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 Debes tener al menos cuatro sentencias `if`
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 Debes tener al menos una sentencia `return`
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` debe devolver la cadena `Tiny`

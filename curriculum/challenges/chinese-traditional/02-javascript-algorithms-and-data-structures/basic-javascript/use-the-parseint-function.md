@@ -26,7 +26,7 @@ const a = parseInt("007");
 `convertToInteger` 中應該使用 `parseInt()` 函數。
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("56")` 應該返回一個數字。

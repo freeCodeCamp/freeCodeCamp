@@ -458,6 +458,20 @@
           "遞歸是一種編程概念，即函數調用自身。這可以將複雜的問題簡化爲更簡單的子問題，直到它們變得簡單易解。",
           "在這個項目中，你將使用 JavaScript 創建一個十進制到二進制的轉換器。你將學習遞歸的基本概念，探索調用棧，並通過動畫直觀地展示遞歸過程。"
         ]
+      },
+      "learn-introductory-javascript-by-building-a-pyramid-generator": {
+        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+        ]
+      },
+      "review-js-fundamentals-by-building-a-gradebook-app": {
+        "title": "Review JavaScript Fundamentals by Building a Gradebook App",
+        "intro": [
+          "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
+          "This will give you an opportunity to solve small problems and get a better understanding of the basics."
+        ]
       }
     }
   },
@@ -1298,6 +1312,7 @@
   },
   "a2-english-for-developers": {
     "title": "面向開發者的 A2 英語（Beta）",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": [
       "在開發者英語課程中，你將學習英語交流的基本要素。課程遵循歐洲共同語言參考標準（CEFR）的 A2 級，側重於對開發者有用的詞彙。",
       "課程的前半部分將幫助你熟悉英語語法和用法。你將通過大量的實踐練習學習自我介紹、聊天和討論工作等基礎知識。",

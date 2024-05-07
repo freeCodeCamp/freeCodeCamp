@@ -39,19 +39,19 @@ Write chained `if`/`else if` statements to fulfill the following conditions:
 You should have at least four `else` statements
 
 ```js
-assert(code.match(/else/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 3);
 ```
 
 You should have at least four `if` statements
 
 ```js
-assert(code.match(/if/g).length > 3);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 3);
 ```
 
 You should have at least one `return` statement
 
 ```js
-assert(code.match(/return/g).length >= 1);
+assert(__helpers.removeJSComments(code).match(/return/g).length >= 1);
 ```
 
 `testSize(0)` should return the string `Tiny`

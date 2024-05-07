@@ -23,7 +23,7 @@ Depois disso, use `console.log` para registrar a variável `output`. Veja os doi
 Você deve usar `console.log()` para imprimir a variável `output`.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/console\.log\(output\)/));
 ```
 
 Você deve usar `console.clear()` para limpar o console do navegador.
@@ -31,7 +31,7 @@ Você deve usar `console.clear()` para limpar o console do navegador.
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/console.clear\(\)/)
 );
 ```
@@ -41,7 +41,7 @@ Você deve limpar o console após o registro (log).
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/console\.log\(output\)[\s\S]*console.clear\(\)/)
 );
 ```

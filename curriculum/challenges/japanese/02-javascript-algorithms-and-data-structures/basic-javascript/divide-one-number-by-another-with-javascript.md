@@ -35,7 +35,7 @@ assert(quotient === 2);
 `/` 演算子を使用してください。
 
 ```js
-assert(/\d+\s*\/\s*\d+/.test(code));
+assert(/\d+\s*\/\s*\d+/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

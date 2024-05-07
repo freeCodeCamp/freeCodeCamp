@@ -32,7 +32,7 @@ for (let i = 0; i < 10; i += 2) {
 この作業には `for` ループを使用してください。
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` は `[1, 3, 5, 7, 9]` になる必要があります。

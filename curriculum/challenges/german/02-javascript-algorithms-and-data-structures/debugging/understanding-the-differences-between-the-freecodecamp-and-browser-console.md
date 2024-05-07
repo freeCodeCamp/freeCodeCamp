@@ -23,7 +23,7 @@ Verwende danach `console.log`, um die Variable `output` zu protokollieren. Sieh 
 Du solltest `console.log()` verwenden, um die Variable `output` auszugeben.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/console\.log\(output\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/console\.log\(output\)/));
 ```
 
 Du solltest `console.clear()` verwenden, um die Browserkonsole zu löschen.
@@ -31,7 +31,7 @@ Du solltest `console.clear()` verwenden, um die Browserkonsole zu löschen.
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/console.clear\(\)/)
 );
 ```
@@ -41,7 +41,7 @@ Du solltest die Konsole nach deinem Log löschen.
 ```js
 assert(
   __helpers
-    .removeWhiteSpace(code)
+    .removeWhiteSpace(__helpers.removeJSComments(code))
     .match(/console\.log\(output\)[\s\S]*console.clear\(\)/)
 );
 ```

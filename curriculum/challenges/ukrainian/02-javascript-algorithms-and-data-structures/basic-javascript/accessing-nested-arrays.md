@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 Щоб отримати доступ до `myPlants`, використайте точкову та дужкову нотацію.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 No debe haber casos de variables mal escritas en el código.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 La variable `receivables` debe ser declarada y utilizada correctamente en el código.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 No debe haber casos de variables mal escritas en el código.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 La variable `payables` debe ser declarada y utilizada correctamente en el código.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--
