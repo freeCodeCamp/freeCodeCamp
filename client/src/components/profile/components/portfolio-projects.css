@@ -3,16 +3,17 @@
   margin-top: 2rem;
   border: 1px solid var(--gray10);
   flex-direction: row;
-  min-width: 700px;
-  max-height: 200px;
+  min-height: 350px;
+  max-height: 350px;
+  width: 100%;
   overflow: hidden;
 }
 
 .portfolio-image {
   min-width: 300px;
-  min-height: 200px;
+  min-height: 350px;
   max-width: 300px;
-  max-height: 200px;
+  max-height: 350px;
   object-fit: cover;
 }
 
@@ -45,7 +46,7 @@
 }
 
 .portfolio-card-text {
-  height: 120px;
+  height: 250px;
   overflow: scroll;
 }
 
