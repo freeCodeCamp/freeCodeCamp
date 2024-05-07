@@ -1,90 +1,91 @@
+/* Base styles for mobile devices */
 .portfolio-card {
   display: flex;
+  flex-direction: column;
   margin-top: 2rem;
-  border: 1px solid var(--gray10);
-  flex-direction: row;
-  min-height: 350px;
-  max-height: 350px;
   width: 100%;
+  height: auto;
   overflow: hidden;
 }
 
 .portfolio-image {
-  min-width: 300px;
-  min-height: 350px;
-  max-width: 300px;
-  max-height: 350px;
+  position: relative;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
 }
 
 .portfolio-card-description {
-  margin: 1rem;
-  width: 100%;
-}
-
-.portfolio-button-container {
-  display: flex;
-  justify-content: end;
-}
-
-.portfolio-card-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--quaternary-background);
-  color: var(--secondary-color);
-  text-decoration: none;
-  padding: 0.1rem;
-  margin: 0.5rem;
-  width: 130px;
-  border: 3px solid var(--secondary-color);
-  word-break: keep-all;
+  margin: 1rem 0rem;
+  width: auto;
+  overflow-wrap: break-word;
 }
 
 #link-icon {
   margin-inline-start: 10px;
 }
 
-.portfolio-card-text {
-  height: 250px;
-  overflow: scroll;
+a.portfolio-card {
+  text-decoration: none;
 }
 
-/* vertical layout for mobile */
+.portfolio-card p {
+  margin-bottom: 10px;
+}
 
-@media (max-width: 768px) {
+a.portfolio-card:hover,
+a.portfolio-card:focus {
+  background-color: transparent;
+}
+
+a.portfolio-card:hover h3,
+a.portfolio-card:focus h3 {
+  text-decoration: underline;
+}
+
+a.portfolio-card:hover img,
+a.portfolio-card:focus img {
+  opacity: 0.8;
+}
+
+/* Adjust styles for desktop screens */
+@media (min-width: 769px) {
   .portfolio-card {
-    flex-direction: column;
+    flex-direction: row;
     min-width: 0;
     max-height: none;
   }
 
   .portfolio-image {
-    width: 100%;
-    max-width: 100%;
-    min-height: 200px;
+    width: 300px;
+    min-width: 300px;
+    min-height: auto;
   }
 
   .portfolio-card-description {
-    width: auto;
-    margin: 1rem;
-  }
-
-  .portfolio-button-container {
-    justify-content: end;
-  }
-
-  .portfolio-card-button {
-    margin: 0.5rem;
-  }
-
-  .portfolio-card-text {
-    height: auto;
-    overflow: visible;
+    margin: 0rem 1rem 1rem 1rem;
+    width: 100%;
   }
 }
 
-/* Timeline table styles */
+/* Timeline pagination */
+.timeline-pagination_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.timeline-pagination_list_item {
+  margin: 0 5px;
+}
+
+.timeline-pagination_list_item > button {
+  outline-color: transparent;
+}
+
 .timeline-row {
   height: 60px;
 }
