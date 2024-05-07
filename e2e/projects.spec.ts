@@ -114,7 +114,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       dashedName,
       solutions
     } of projectsInOrder) {
-      const url = `/learn/${superBlock}/${block}/${dashedName}`;
+      const url = `/learn/${superBlock}/${block}/${dashedName}?testing=true`;
       await page.goto(url);
 
       for (const files of solutions) {

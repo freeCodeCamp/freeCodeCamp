@@ -280,7 +280,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     fontSize: 18,
     fontFamily: 'Hack-ZeroSlash, monospace',
     scrollBeyondLastLine: true,
-    autoClosingBrackets: 'never',
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
@@ -451,6 +450,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
+    // disable bracket completion for testing purposes
+    const disableBracketCompletion =
+      window.location.href.includes('testing=true');
+
+    console.log(window.location.href, disableBracketCompletion);
+
+    if (disableBracketCompletion) {
+      editor?.updateOptions({
+        autoClosingBrackets: 'never',
+        autoClosingQuotes: 'never'
+      });
+    }
 
     document.fonts.ready
       .then(() => monaco.editor.remeasureFonts())
@@ -1250,6 +1261,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   useEffect(() => {
     const editor = dataRef.current.editor;
+
     editor?.layout();
     // layout() resets the monaco tab trapping back to default (true), so we
     // need to untrap it if the user had it set to false.
