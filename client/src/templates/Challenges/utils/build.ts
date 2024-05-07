@@ -233,73 +233,71 @@ type BuildResult = {
   challengeType: number;
   build?: string;
   sources: Source | undefined;
+  loadEnzyme?: boolean;
 };
 
 // TODO: All the buildXChallenge files have a similar structure, so make that
 // abstraction (function, class, whatever) and then create the various functions
 // out of it.
-export function buildDOMChallenge(
+export async function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   options?: BuildOptions
-): Promise<BuildResult> | undefined {
-  const loadEnzyme = challengeFiles?.some(
+): Promise<BuildResult> {
+  // TODO: make this required in the schema.
+  if (!challengeFiles) throw Error('No challenge files provided');
+  const loadEnzyme = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
 
   const pipeLine = composeFunctions(...getTransformers(options));
-  const finalFiles = challengeFiles?.map(pipeLine);
   const usesTestRunner = options?.usesTestRunner ?? false;
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const checkedFiles = checkFilesErrors(finalFiles);
+  const [embeddedFiles, contents] = (await embedFilesInHtml(checkedFiles)) as [
+    ChallengeFile[],
+    string
+  ];
 
-  if (finalFiles) {
-    return Promise.all(finalFiles)
-      .then(checkFilesErrors)
-      .then(
-        embedFilesInHtml as (
-          x: ChallengeFile[]
-        ) => Promise<[ChallengeFile[], string]>
-      )
-      .then(([challengeFiles, contents]) => ({
-        // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
-        // necessary at the moment.
-        challengeType: challengeTypes.html,
-        build: concatHtml({
-          required,
-          template,
-          contents,
-          ...(usesTestRunner && { testRunner: frameRunnerSrc })
-        }),
-        sources: buildSourceMap(challengeFiles),
-        loadEnzyme
-      }));
-  }
+  return {
+    // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
+    // necessary at the moment.
+    challengeType: challengeTypes.html,
+    build: concatHtml({
+      required,
+      template,
+      contents,
+      ...(usesTestRunner && { testRunner: frameRunnerSrc })
+    }),
+    sources: buildSourceMap(embeddedFiles),
+    loadEnzyme
+  };
 }
 
-export function buildJSChallenge(
+export async function buildJSChallenge(
   { challengeFiles }: { challengeFiles?: ChallengeFile[] },
   options: BuildOptions
-): Promise<BuildResult> | undefined {
+): Promise<BuildResult> {
+  if (!challengeFiles) throw Error('No challenge files provided');
   const pipeLine = composeFunctions(...getTransformers(options));
 
-  const finalFiles = challengeFiles?.map(pipeLine);
-  if (finalFiles) {
-    return Promise.all(finalFiles)
-      .then(checkFilesErrors)
-      .then(challengeFiles => ({
-        challengeType: challengeTypes.js,
-        build: challengeFiles
-          .reduce(
-            (body, challengeFile) => [
-              ...body,
-              challengeFile.head,
-              challengeFile.contents,
-              challengeFile.tail
-            ],
-            [] as string[]
-          )
-          .join('\n'),
-        sources: buildSourceMap(challengeFiles)
-      }));
-  }
+  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
+  const checkedFiles = checkFilesErrors(finalFiles);
+
+  return {
+    challengeType: challengeTypes.js,
+    build: checkedFiles
+      .reduce(
+        (body, challengeFile) => [
+          ...body,
+          challengeFile.head,
+          challengeFile.contents,
+          challengeFile.tail
+        ],
+        [] as string[]
+      )
+      .join('\n'),
+    sources: buildSourceMap(checkedFiles)
+  };
 }
 
 function buildBackendChallenge({ url }: BuildChallengeData) {
@@ -310,26 +308,21 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   };
 }
 
-export function buildPythonChallenge({
+export async function buildPythonChallenge({
   challengeFiles
-}: BuildChallengeData): Promise<BuildResult> | undefined {
+}: BuildChallengeData): Promise<BuildResult> {
+  if (!challengeFiles) throw new Error('No challenge files provided');
   const pipeLine = composeFunctions(...getPythonTransformers());
-  const finalFiles = challengeFiles?.map(pipeLine);
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const checkedFiles = checkFilesErrors(finalFiles);
 
-  if (finalFiles) {
-    return (
-      Promise.all(finalFiles)
-        .then(checkFilesErrors)
-        // Unlike the DOM challenges, there's no need to embed the files in HTML
-        .then(challengeFiles => ({
-          challengeType:
-            challengeFiles[0].editableRegionBoundaries?.length === 0
-              ? challengeTypes.multifilePythonCertProject
-              : challengeTypes.python,
-          sources: buildSourceMap(challengeFiles)
-        }))
-    );
-  }
+  return {
+    challengeType:
+      challengeFiles[0].editableRegionBoundaries?.length === 0
+        ? challengeTypes.multifilePythonCertProject
+        : challengeTypes.python,
+    sources: buildSourceMap(checkedFiles)
+  };
 }
 
 export function updatePreview(
