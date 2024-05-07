@@ -1,6 +1,11 @@
 import crypto from 'node:crypto';
 
 import { type Prisma } from '@prisma/client';
+import { customAlphabet } from 'nanoid';
+
+export const nanoidCharSet =
+  '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const nanoid = customAlphabet(nanoidCharSet, 21);
 
 /**
  * Creates the necessary data to create a new user.
@@ -52,7 +57,7 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     keyboardShortcuts: false,
     location: '',
     name: '',
-    unsubscribeId: '',
+    unsubscribeId: nanoid(),
     partiallyCompletedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
     picture: '',
     portfolio: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
