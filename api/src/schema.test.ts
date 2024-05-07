@@ -39,11 +39,13 @@ describe('Schemas do not use obviously dangerous validation', () => {
           });
         }
 
-        Object.entries(schema.response).forEach(([code, codeSchema]) => {
-          test(`response ${code} is secure`, () => {
-            expect(isSchemaSecure(codeSchema)).toBeTruthy();
+        if ('response' in schema) {
+          Object.entries(schema.response).forEach(([code, codeSchema]) => {
+            test(`response ${code} is secure`, () => {
+              expect(isSchemaSecure(codeSchema)).toBeTruthy();
+            });
           });
-        });
+        }
       });
     });
 });

@@ -1203,6 +1203,12 @@
       "top-learn-function-basics": {
         "title": "學習函數基礎",
         "intro": ["學習 JavaScript 中的函數。"]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Projects",
+        "intro": [
+          "Put your JavaScript skills to the test by building basic functions."
+        ]
       }
     }
   },
@@ -1420,10 +1426,6 @@
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "學習如何分析代碼文檔",
-        "intro": ["", ""]
-      },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "學習如何遵循基本的電子郵件規範",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
