@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import type { User } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
 import './camper.css';
+import SupporterBadgeEmblem from '../../../assets/icons/supporter-badge-emblem';
+import TopContibutorBadgeEmblem from '../../../assets/icons/top-contributor-badge-emblem';
 import Bio from './bio';
 
 export type CamperProps = Pick<
@@ -28,22 +30,16 @@ function Camper({ yearsTopContributor, isDonating }: CamperProps): JSX.Element {
     <>
       <Bio />
       <FullWidthRow>
-        <h2 className='header'>{t('profile.badges')}</h2>
+        <h2 className='text-center'>{t('profile.badges')}</h2>
         <div className='badge-card-container'>
           {console.log(isDonating)}
           {isDonating && (
             <div className='badge-card'>
               <div className='badge'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='100'
-                  height='100'
-                >
-                  <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
-                </svg>
+                <SupporterBadgeEmblem />
               </div>
               <div className='badge-card-description'>
-                <h2>{t('profile.supporter')}</h2>
+                <h3>{t('profile.supporter')}</h3>
                 <p>{t('profile.donated')}</p>
               </div>
             </div>
@@ -51,16 +47,10 @@ function Camper({ yearsTopContributor, isDonating }: CamperProps): JSX.Element {
           {yearsTopContributor.filter(Boolean).length > 0 && (
             <div className='badge-card'>
               <div className='badge'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='100'
-                  height='100'
-                >
-                  <circle cx='50' cy='50' r='50' fill='#D9D9D9' />
-                </svg>
+                <TopContibutorBadgeEmblem />
               </div>
               <div className='badge-card-description'>
-                <h2>{t('profile.contributor')}</h2>
+                <h3>{t('profile.contributor')}</h3>
                 <p>
                   {t('profile.contributor-prolific', {
                     year: yearsTopContributor

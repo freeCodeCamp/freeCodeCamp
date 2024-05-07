@@ -67,8 +67,16 @@
   flex-direction: row;
   width: 300px;
   max-width: 300px;
-  color: var(--gray45);
   font-size: 20px;
+}
+
+.badge-card svg {
+  height: 100px;
+  width: 100px;
+}
+
+.badge-card P {
+  color: var(--quaternary-color);
 }
 
 .badge-card-description {
