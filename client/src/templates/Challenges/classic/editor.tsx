@@ -280,6 +280,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     fontSize: 18,
     fontFamily: 'Hack-ZeroSlash, monospace',
     scrollBeyondLastLine: true,
+    autoClosingBrackets: 'never',
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
@@ -309,6 +310,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       props.challengeType !== challengeTypes.multifilePythonCertProject
         ? 2
         : 4,
+
     dragAndDrop: true,
     lightbulb: {
       enabled: false

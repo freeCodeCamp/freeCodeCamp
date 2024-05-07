@@ -63,10 +63,7 @@ const pythonProjects = {
 };
 
 describe('project submission', () => {
-  beforeEach(() => {
-    cy.task('seed');
-    cy.login();
-  });
+  beforeEach(() => {});
   // NOTE: this will fail once challenge tests are added.
   it('Should be possible to submit Python projects', () => {
     const { superBlock, block, challenges } = pythonProjects;
@@ -90,10 +87,6 @@ describe('project submission', () => {
     });
   });
 
-  // Access to the clipboard reliably works in Electron browser.
-  // In other browsers, there are popups asking for permission
-  // thus we should only run these tests in Electron
-  // Ref: https://github.com/cypress-io/cypress-example-recipes/tree/master/examples/testing-dom__clipboard
   it(
     'JavaScript projects can be submitted and then viewed in /settings and on the certifications',
     { browser: 'electron' },
