@@ -42,17 +42,6 @@ export default defineConfig({
       name: 'Mobile Chrome',
       use: { ...devices['Pixel 5'] }
     }
-    /* Uncomment the blocks out if you want to enable the mentioned features */
-    /* ====================================================== */
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' }
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' }
-    // }
   ],
 
   /* Run your local dev server before starting the tests */
