@@ -101,16 +101,6 @@ function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   return source;
 }
 
-function checkFilesErrors(challengeFiles: ChallengeFile[]): ChallengeFile[] {
-  const errors = challengeFiles
-    .filter(({ error }) => error)
-    .map(({ error }) => error);
-  if (errors.length) {
-    throw errors;
-  }
-  return challengeFiles;
-}
-
 const buildFunctions = {
   [challengeTypes.js]: buildJSChallenge,
   [challengeTypes.jsProject]: buildJSChallenge,
@@ -234,6 +224,7 @@ type BuildResult = {
   build?: string;
   sources: Source | undefined;
   loadEnzyme?: boolean;
+  error?: unknown;
 };
 
 // TODO: All the buildXChallenge files have a similar structure, so make that
@@ -252,24 +243,31 @@ export async function buildDOMChallenge(
   const pipeLine = composeFunctions(...getTransformers(options));
   const usesTestRunner = options?.usesTestRunner ?? false;
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
-  const checkedFiles = checkFilesErrors(finalFiles);
-  const [embeddedFiles, contents] = (await embedFilesInHtml(checkedFiles)) as [
+  const error = finalFiles.find(({ error }) => error)?.error;
+  const [embeddedFiles, contents] = (await embedFilesInHtml(finalFiles)) as [
     ChallengeFile[],
     string
   ];
+
+  // if there is an error, we just build the test runner so that it can be
+  // used to run tests against the code without actually running the code.
+  const toBuild = error
+    ? { ...(usesTestRunner && { testRunner: frameRunnerSrc }) }
+    : {
+        required,
+        template,
+        contents,
+        ...(usesTestRunner && { testRunner: frameRunnerSrc })
+      };
 
   return {
     // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
     // necessary at the moment.
     challengeType: challengeTypes.html,
-    build: concatHtml({
-      required,
-      template,
-      contents,
-      ...(usesTestRunner && { testRunner: frameRunnerSrc })
-    }),
+    build: concatHtml(toBuild),
     sources: buildSourceMap(embeddedFiles),
-    loadEnzyme
+    loadEnzyme,
+    error
   };
 }
 
@@ -281,11 +279,13 @@ export async function buildJSChallenge(
   const pipeLine = composeFunctions(...getTransformers(options));
 
   const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
-  const checkedFiles = checkFilesErrors(finalFiles);
+  const error = finalFiles.find(({ error }) => error)?.error;
+
+  const toBuild = error ? [] : finalFiles;
 
   return {
     challengeType: challengeTypes.js,
-    build: checkedFiles
+    build: toBuild
       .reduce(
         (body, challengeFile) => [
           ...body,
@@ -296,7 +296,8 @@ export async function buildJSChallenge(
         [] as string[]
       )
       .join('\n'),
-    sources: buildSourceMap(checkedFiles)
+    sources: buildSourceMap(finalFiles),
+    error
   };
 }
 
@@ -314,14 +315,15 @@ export async function buildPythonChallenge({
   if (!challengeFiles) throw new Error('No challenge files provided');
   const pipeLine = composeFunctions(...getPythonTransformers());
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
-  const checkedFiles = checkFilesErrors(finalFiles);
+  const error = finalFiles.find(({ error }) => error)?.error;
 
   return {
     challengeType:
       challengeFiles[0].editableRegionBoundaries?.length === 0
         ? challengeTypes.multifilePythonCertProject
         : challengeTypes.python,
-    sources: buildSourceMap(checkedFiles)
+    sources: buildSourceMap(finalFiles),
+    error
   };
 }
 
