@@ -31,11 +31,9 @@ interface ChallengeFile extends PropTypesChallengeFile {
   editableContents: string;
 }
 
-type ChallengeFiles = ChallengeFile[];
-
 interface BuildChallengeData extends Context {
   challengeType: number;
-  challengeFiles: ChallengeFiles;
+  challengeFiles: ChallengeFile[];
   required: { src: string }[];
   template: string;
   url: string;
@@ -84,7 +82,7 @@ const composeFunctions = (...fns: ApplyFunctionProps[]) =>
 
 // TODO: split this into at least two functions. One to create 'original' i.e.
 // the source and another to create the contents.
-function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
+function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
@@ -103,7 +101,7 @@ function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
   return source;
 }
 
-function checkFilesErrors(challengeFiles: ChallengeFiles): ChallengeFiles {
+function checkFilesErrors(challengeFiles: ChallengeFile[]): ChallengeFile[] {
   const errors = challengeFiles
     .filter(({ error }) => error)
     .map(({ error }) => error);
@@ -257,8 +255,8 @@ export function buildDOMChallenge(
       .then(checkFilesErrors)
       .then(
         embedFilesInHtml as (
-          x: ChallengeFiles
-        ) => Promise<[ChallengeFiles, string]>
+          x: ChallengeFile[]
+        ) => Promise<[ChallengeFile[], string]>
       )
       .then(([challengeFiles, contents]) => ({
         // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
@@ -277,7 +275,7 @@ export function buildDOMChallenge(
 }
 
 export function buildJSChallenge(
-  { challengeFiles }: { challengeFiles: ChallengeFiles },
+  { challengeFiles }: { challengeFiles: ChallengeFile[] },
   options: BuildOptions
 ): Promise<BuildResult> | undefined {
   const pipeLine = composeFunctions(...getTransformers(options));
