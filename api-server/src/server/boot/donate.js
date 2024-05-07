@@ -42,6 +42,23 @@ export default function donateBoot(app, done) {
     });
   }
 
+  async function createStripePaymentIntent(req, res) {
+    return createStripeCardDonation(req, res, stripe, app).catch(err => {
+      if (
+        err.type === 'AlreadyDonatingError' ||
+        err.type === 'UserActionRequired' ||
+        err.type === 'PaymentMethodRequired'
+      ) {
+        return res.status(402).send({ error: err });
+      }
+      if (err.type === 'InvalidRequest')
+        return res.status(400).send({ error: err });
+      return res.status(500).send({
+        error: 'Donation failed due to a server error.'
+      });
+    });
+  }
+
   function createStripeDonation(req, res) {
     const { user, body } = req;
 
@@ -208,6 +225,7 @@ export default function donateBoot(app, done) {
   } else {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/charge-stripe-card', handleStripeCardDonation);
+    api.post('/create-stripe-payment-intent', createStripePaymentIntent);
     api.put('/update-stripe-card', handleStripeCardUpdate);
     api.post('/add-donation', addDonation);
     donateRouter.use('/donate', api);
