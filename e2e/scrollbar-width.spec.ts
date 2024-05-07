@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('Editor scrollbar width', () => {
-  let upperJawWidth;
-
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
   });
@@ -14,7 +12,7 @@ test.describe('Editor scrollbar width', () => {
     );
 
     const upperJawElement = page.locator('.editor-upper-jaw');
-    upperJawWidth = await upperJawElement.evaluate(
+    const upperJawWidth = await upperJawElement.evaluate(
       (node: HTMLElement) => node.offsetWidth
     );
 
@@ -41,7 +39,7 @@ test.describe('Editor scrollbar width', () => {
     );
 
     const upperJawElement = page.locator('.editor-upper-jaw');
-    upperJawWidth = await upperJawElement.evaluate(
+    const upperJawWidth = await upperJawElement.evaluate(
       (node: HTMLElement) => node.offsetWidth
     );
 
