@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
 import curriculum from '../shared/config/curriculum.json';
+test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
