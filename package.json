@@ -146,7 +146,7 @@
     "start-server-and-test": "2.0.3",
     "store": "2.0.12",
     "ts-node": "10.9.2",
-    "typescript": "5.2.2",
+    "typescript": "5.4.5",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   }

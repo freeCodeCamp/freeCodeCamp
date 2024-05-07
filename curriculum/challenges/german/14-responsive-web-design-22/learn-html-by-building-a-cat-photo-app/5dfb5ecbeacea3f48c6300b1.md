@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-Verwende (`li`)-Listen-Elemente, um Elemente in einer Liste zu erstellen. Hier ist ein Beispiel für Listen-Elemente in einer unsortierten Liste:
+The `li` element is used to create a list item in an ordered or unordered list.
+
+Here is an example of list items in an unordered list:
 
 ```html
 <ul>
@@ -16,19 +18,19 @@ Verwende (`li`)-Listen-Elemente, um Elemente in einer Liste zu erstellen. Hier i
 </ul>
 ```
 
-Bette innerhalb des `ul`-Elements drei Listen-Elemente ein, um drei Dinge anzuzeigen, die Katzen lieben:
+Within the `ul` element nest three list items to display three things cats love:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-Du solltest drei `li`-Elemente haben. Jedes `li`-Element sollte ein eigenes öffnendes und schließendes Tag besitzen.
+You should have three `li` elements. Each `li` element should have its own opening and closing tag.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-Du solltest drei `li`-Elemente mit dem Text `cat nip`, `laser pointers` und `lasagna` in beliebiger Reihenfolge haben. Du hast entweder etwas Text weggelassen oder einen Tippfehler gemacht.
+You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
@@ -39,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-Die drei `li`-Elemente sollten sich zwischen dem öffnenden und schließenden Tag des `ul`-Elements befinden.
+The three `li` elements should be located between the `ul` element's opening and closing tags.
 
 ```js
 assert(

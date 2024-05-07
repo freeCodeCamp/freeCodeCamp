@@ -9,7 +9,7 @@ dashedName: task-29
 
 # --description--
 
-The word `if` is often used in conditional statements to talk about a possible situation and its consequences. Приміром:
+The word `if` is often used in conditional statements to talk about a possible situation and its consequences. Наприклад:
 
 `If it rains, I will bring an umbrella.` (The action of bringing an umbrella depends on the possibility of rain.)
 
