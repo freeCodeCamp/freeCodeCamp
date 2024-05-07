@@ -33,7 +33,7 @@ interface ChallengeFile extends PropTypesChallengeFile {
 
 interface BuildChallengeData extends Context {
   challengeType: number;
-  challengeFiles: ChallengeFile[];
+  challengeFiles?: ChallengeFile[];
   required: { src: string }[];
   template: string;
   url: string;
@@ -275,7 +275,7 @@ export function buildDOMChallenge(
 }
 
 export function buildJSChallenge(
-  { challengeFiles }: { challengeFiles: ChallengeFile[] },
+  { challengeFiles }: { challengeFiles?: ChallengeFile[] },
   options: BuildOptions
 ): Promise<BuildResult> | undefined {
   const pipeLine = composeFunctions(...getTransformers(options));
@@ -314,7 +314,7 @@ export function buildPythonChallenge({
   challengeFiles
 }: BuildChallengeData): Promise<BuildResult> | undefined {
   const pipeLine = composeFunctions(...getPythonTransformers());
-  const finalFiles = challengeFiles.map(pipeLine);
+  const finalFiles = challengeFiles?.map(pipeLine);
 
   if (finalFiles) {
     return (
