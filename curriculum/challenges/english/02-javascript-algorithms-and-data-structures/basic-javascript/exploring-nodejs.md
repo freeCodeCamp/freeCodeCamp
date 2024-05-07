@@ -23,7 +23,7 @@ Node.js server par JavaScript ka istemal karta hai.
 
 ## --text--
 
-Mark which of the following is incorrect: (1,4,5)
+Mark which of the following is incorrect about Node.js .
 
 
 ## --answers--

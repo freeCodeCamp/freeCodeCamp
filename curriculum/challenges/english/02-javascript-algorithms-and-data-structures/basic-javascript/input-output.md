@@ -23,7 +23,7 @@ let name = prompt(“Enter your name”);
 console.log(name);
 ```
 
-<h2>Hinglish</>
+<h2>Hinglish</h2>
 
 Chaliye samjhein kaise computer hamare aadeshon par kaam karta hai.
 

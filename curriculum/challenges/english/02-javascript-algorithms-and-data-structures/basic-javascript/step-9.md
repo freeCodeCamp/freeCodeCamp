@@ -18,7 +18,7 @@ Write your first JS program as follows : -
 > Hit enter and see what happens!
 
 What happened after you pressed Enter?
-A pop-up appeared(T)
+A pop-up appeared.
 A command executed
 A page opens up
 
@@ -31,7 +31,7 @@ Apne pehle JS program ko is tarah se likho:
 > Enter dabakar dekho kya hota hai!
 
 Enter dabane ke baad kya hua?
-Ek pop-up aaya (T)
+Ek pop-up aaya.
 Ek command execute hui
 Ek page khula
 

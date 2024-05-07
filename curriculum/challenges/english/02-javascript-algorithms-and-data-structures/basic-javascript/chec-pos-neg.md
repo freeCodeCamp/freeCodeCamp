@@ -7,7 +7,7 @@ dashedName: chec-pos-neg
 
 # --description--
 
-Develop JavaScript code that efficiently determines whether a user-entered number is positive, negative, or zero. This skill is essential for various programming tasks involving numerical comparisons.
+Write a JavaScript code that efficiently determines a function is returning positive, negative, or zero. This skill is essential for various programming tasks involving numerical comparisons.
 
 In programming, understanding a number's sign (positive, negative, or zero) is a fundamental concept. This challenge introduces you to conditional statements (like if statements) in Javascript.
 
@@ -19,8 +19,18 @@ Click on this <a href = "https://cs50.ai/chat">Link</a>  to Go to CS50 AI
 And use this prompt prompt __________
 Prompt: What does it mean to 'identify the number's sign' in this context?
 
+<h2>Hinglish</h2>
+Here is the text in Hinglish:
+
+JavaScript mein ek code likho jo efficiently decide kare kiek function ki return value positive hai, negative hai, ya zero hai. Ye skill various programming tasks mein numerical comparisons ke liye essential hai.
+
+Programming mein, ek number ka sign (positive, negative, ya zero) samajhna ek moolya concept hai. Ye challenge aapko conditional statements (jaise if statements) ke saath parichit karta hai.
+
+Is JavaScript challenge mein, aap ek program banayenge jo aapke dwaara enter kiye gaye number ko check karega. Woh positive hoga, negative hoga, ya zero? Hum if statements ka istemal karenge.
 
 
+Is <a href="https://cs50.ai/chat">link</a> par click karo CS50 AI mein jaane ke liye
+Aur ye prompt use karo: "Identify the number's sign ka matlab is context mein kya hai?"
 
 # --hints--
 

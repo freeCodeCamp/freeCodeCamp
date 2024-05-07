@@ -1,8 +1,8 @@
 ---
-id: 66352f0ef19e5408d7d43bed
+id: 663a66f2c0a6d1710495f601
 title: Getting Started with Functions
 challengeType: 1
-dashedName: getting-started-with-functions
+dashedName: getting-functions
 ---
 
 # --description--

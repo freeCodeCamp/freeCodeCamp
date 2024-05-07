@@ -17,7 +17,7 @@ Challenge:
 
 Write a program that prompts the user for two numbers. Then, swap the values of these two numbers without using a temporary variable. Finally, print the swapped values
 
-<h2>HInglish</h2>
+<h2>Hinglish</h2>
 
 **Objective:** Bina kisi extra variable ke do numbers ko swap karna hai!
 

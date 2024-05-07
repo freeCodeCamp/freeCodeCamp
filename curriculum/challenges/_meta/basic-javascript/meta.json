@@ -66,7 +66,7 @@
       "title": "Unveiling the Package Manager"
     },
     {
-      "id": "66354468b3c1381181b893b4",
+      "id": "6639b8d43773f150517b576d",
       "title": "Why npm is Essential for Developers?"
     },
     {
@@ -92,6 +92,10 @@
     {
       "id": "66126195048243f78835919c",
       "title": "Understanding Input and Output in JavaScript"
+    },
+    {
+      "id": "6639bd2d8170d75242be99cb",
+      "title": "Get User Input"
     },
     {
       "id": "6606ca03a0aa92116bead97f",
@@ -218,6 +222,22 @@
       "title": "Understanding Decisions with if statements"
     },
     {
+      "id": "663a66f2c0a6d1710495f601",
+      "title": "Getting Started with Functions"
+    },
+    {
+      "id": "663a681002cceb71ddc38ac6",
+      "title": "Passing Values to Functions with Arguments"
+    },
+    {
+      "id": "663a695533166e723f6facdd",
+      "title": "Return a value from a Function"
+    },
+    {
+      "id": "663a6a375c1eb272829dfc3c",
+      "title": "Assignment with a Returned Value"
+    },
+    {
       "id": "6612ed0b000dcb07f12da1da",
       "title": "Use Conditional Logic with if Statements"
     },
@@ -280,10 +300,6 @@
     {
       "id": "663384135a79fcf03708cafb",
       "title": "Logical Order in if-else Statements"
-    },
-    {
-      "id": "66352f0ef19e5408d7d43bed",
-      "title": "Getting Started with Functions"
     },
     {
       "id": "6635f1834b9dfd17c2f1ffbe",

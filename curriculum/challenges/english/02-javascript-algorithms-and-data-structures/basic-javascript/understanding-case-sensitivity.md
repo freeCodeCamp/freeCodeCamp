@@ -31,7 +31,7 @@ JavaScript mein sabhi variables aur function names case sensitive hote hain. Isk
 
 **Best Practice**
 
-JavaScript mein variable names <dfn>camelCase</dfn> mein likhein. <dfn>CamelCase</dfn> mein, multi-word variable names ka pehla word lowercase mein hota hai aur har agla word ka pehla akshar capital hota hai.
+JavaScript mein variable names <dfn>camelCase</dfn> mein likhein. <dfn>camelCase</dfn> mein, multi-word variable names ka pehla word lowercase mein hota hai aur har agla word ka pehla akshar capital hota hai.
 
 **Examples:**
 

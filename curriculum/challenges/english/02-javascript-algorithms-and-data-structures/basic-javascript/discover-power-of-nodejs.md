@@ -10,14 +10,14 @@ dashedName: discover-power-of-nodejs
 <br>
 <br>
 
--Node.js can generate dynamic page content
--Node.js can create, open, read, write, delete, and close files on the server
--Node.js can collect form data
--Node.js can add, delete, and modify data in your database
--Node.js files contain tasks that will be executed on certain events
--A typical event is someone trying to access a port on the server
--Node.js files must be initiated on the server before having any effect
--Node.js files have the extension ".js"
+- Node.js can generate dynamic page content
+- Node.js can create, open, read, write, delete, and close files on the server
+- Node.js can collect form data
+- Node.js can add, delete, and modify data in your database
+- Node.js files contain tasks that will be executed on certain events
+- A typical event is someone trying to access a port on the server
+- Node.js files must be initiated on the server before having any effect
+- Node.js files have the extension ".js"
 
 <h2>Hinglish</h2>
 

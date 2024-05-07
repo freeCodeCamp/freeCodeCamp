@@ -28,6 +28,11 @@ C/5 = (F-32)/9
 
 # --instructions--
 
+Write a program to convert the temperature from Celsius to Fahrenheit using the formula C/5 = (F-32)/9.
+
+Ek program likho jo temperature ko Celsius se Fahrenheit mein convert kare, formula istemal karke C/5 = (F-32)/9.
+
+
 `C` means Celsius and `F` means Fahrenheit.
 
 # --hints--

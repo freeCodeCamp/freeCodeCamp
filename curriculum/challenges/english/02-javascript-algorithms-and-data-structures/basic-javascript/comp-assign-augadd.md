@@ -36,7 +36,15 @@ myVar = myVar + 5;
 
 `myVar` mein `5` ko add karne ke liye. Kyunki ye ek aam pattern hai, isliye aise operators hote hain jo ek step mein mathematical operation aur assignment dono karte hain.
 
-Aisa ek operator hain `=+`.
+Aisa ek operator hain `+=`.
+
+```js
+let myVar = 1;
+myVar += 5;
+console.log(myVar);
+```
+
+Console pr `6` dikhega.
 
 # --instructions--
 

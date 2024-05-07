@@ -9,6 +9,8 @@ dashedName: finding-last-digit
 
 Find the ending digit of any number!
 
+**Introduction**
+
 In JavaScript, there's an operator (%) that can reveal the last digit of any number. Let's use it to find the last digit of a number.
 
 # --instructions--

@@ -15,7 +15,9 @@ var myVar = 0;
 ```
 
 Creates a new variable called `myVar` and assigns it an initial value of `0`.
+
 <h2>Hinglish</h2>
+
 Yeh aam baat hai ki ek variable ko shuruaati maan mein initialize karna ussi line mein hota hai jahan ye declare kiya jaata hai.
 
 ```js

@@ -13,7 +13,10 @@ If you have a pen in your right hand and a pencil in your left hand, swapping th
 # --instructions--
 
 Write a program that asks the user for two numbers and then swaps their values. Use a temporary variable to hold one value while swapping the other. Finally, print the swapped values.
+<h2>Hinglish</h2>
+Agar aapke right hand mein ek pen hai aur aapke left hand mein ek pencil hai, to unhe swap karna matlab hai pen ko apne left hand mein rakhna aur pencil ko apne right hand mein rakhna. Isi tarah, JavaScript mein variables ek value ko temporarily hold kar sakte hain jab aap use kisi aur value ke saath swap karte hain.
 
+Ek program likhiye jo user se do numbers poochhe aur phir unki values ko swap kare. Ek temporary variable ka istemal karein ek value ko hold karne ke liye jab aap doosri value ke saath swap karte hain. Ant mein, swap ki gayi values ko print karein.
 # --hints--
 
 Use a third variable named `temp`.

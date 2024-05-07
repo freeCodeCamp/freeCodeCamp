@@ -22,35 +22,11 @@ Think of the `if` statement as a magic door that opens only if a certain conditi
    }
    ```
 
-**The Switch Statement:** 
 
-Imagine you're at a crossroads with different paths to take. The `switch` statement is like choosing which path to follow based on a signpost. For example, if it's raining, you might take the umbrella path. Here's how it looks in code:
- 
- ```javascript
-   switch (weather) {
-     case 'rainy':
-       takeUmbrella();
-       break;
-     case 'sunny':
-       wearSunscreen();
-       break;
-     default:
-       enjoyTheWeather();
-   }
-   ```
-
-**The Ternary Operator:** 
-
-This one is like a quick yes-or-no decision. It's perfect for short, one-line choices. For instance, if you're hungry, you might decide to eat. Here's how it works:
-
-```javascript
-   let isHungry = true;
-   let action = isHungry ? 'Eat' : 'Wait';
-   ```
    
 ![The if Statement](https://i.ibb.co/6vT1Jgw/Screenshot-from-2024-04-24-09-59-01.png)
 
-So, the next time you're coding and need your program to make decisions, think of these statements as your trusty tools to guide your code down the right path. Happy coding!
+So, the next time you're coding and need your program to make decisions, think of these statements as your trusty tools to guide your code down the right path. 
 
 <h2>Hinglish</h2>
 
@@ -68,37 +44,12 @@ Sochiye `if` statement ko ek jaadui darwaza jise sirf tab hi khola jaata hai jab
    }
    ```
 
-**Switch Statement:** 
 
-Imagine kijiye aap ek chauraha par hain jahan alag alag raste hain. `switch` statement wahi hai jaise aap ek signpost ke adhaar par kaunsa rasta chalna hai chunte hain. For example, agar baarish ho rahi hai, toh aap chhatri wale raste ko chun sakte hain. Yahaan code mein aisa dikhta hai:
 
- ```javascript
-   switch (weather) {
-     case 'rainy':
-       takeUmbrella();
-       break;
-     case 'sunny':
-       wearSunscreen();
-       break;
-     default:
-       enjoyTheWeather();
-   }
-   ```
-
-**Ternary Operator:** 
-
-Ye ek tezi se haan ya naa ke faisle jaisa hai. Ye chhoti, ek-line ke chunautiyon ke liye perfect hai. For instance, agar aap bhukhe hain, toh aap khana kha lenge. Yahaan ye kis tarah kaam karta hai:
-
-```javascript
-   let isHungry = true;
-   let action = isHungry ? 'Eat' : 'Wait';
-   ```
+![The if Statement](https://i.ibb.co/6vT1Jgw/Screenshot-from-2024-04-24-09-59-01.png).
 
 Toh, agle baar jab aap coding kar rahe hain aur aapko apne program ko faisle lene ki zarurat hai, toh in statements ko apne vishwaas ke saathi tools ke roop mein sochiye jo aapke code ko sahi raste par guide karne ke liye hain. 
 
-![The if Statement](https://i.ibb.co/6vT1Jgw/Screenshot-from-2024-04-24-09-59-01.png)
-
-Happy coding!
 
 # --question--
 

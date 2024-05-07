@@ -1,6 +1,6 @@
 ---
 id: 6606caa003b026122d3796cc
-title: Understanding uninitialized variables
+title: Understanding Uninitialized variables
 challengeType: 1
 dashedName: understanding-uninitialised-variables
 ---
