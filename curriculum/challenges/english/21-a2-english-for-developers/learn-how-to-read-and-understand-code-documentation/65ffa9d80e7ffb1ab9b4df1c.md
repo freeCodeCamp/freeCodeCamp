@@ -12,7 +12,7 @@ Sarah: Once you've found the section you need, you should start by reading the i
 
 # --description–
 
-Let’s practice!
+Fill in the blanks in the dialogue below.
 
 # --fillInTheBlank--
 
