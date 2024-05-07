@@ -26,9 +26,6 @@ export const PortfolioProjects = ({
           className='portfolio-card'
           key={id}
         >
-          <span className='sr-only'>
-            {title}, {t('aria.opens-new-window')}
-          </span>
           {image && (
             <img
               alt=''
