@@ -202,8 +202,7 @@ class CompletionModal extends Component<
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
             <span className='hidden-xs'>
-              {' '}
-              {isMacOS ? '(Command + Enter)' : '(Ctrl + Enter)'}{' '}
+              {isMacOS ? ' (Command + Enter)' : ' (Ctrl + Enter)'}
             </span>
           </Button>
           <Spacer size='xxSmall' />
