@@ -1,26 +1,6 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
-async function focusEditor({
-  page,
-  isMobile,
-  browserName
-}: {
-  page: Page;
-  isMobile: boolean;
-  browserName: string;
-}) {
-  const monacoEditor = page.getByLabel('Editor content');
-
-  // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
-  // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
-  // in place of `.click()` to focus on the editor.
-  // Ref: https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-  if (isMobile && browserName === 'webkit') {
-    await monacoEditor.focus();
-  } else {
-    await monacoEditor.click();
-  }
-}
+import { clearEditor, focusEditor } from './utils/editor';
 
 test.describe('Editor Component', () => {
   test('should allow the user to insert text', async ({
@@ -50,14 +30,7 @@ test.describe('Python Terminal', () => {
     );
 
     await focusEditor({ page, isMobile, browserName });
-    // First clear the editor
-    // TODO: replace with ControlOrMeta when it's supported
-    if (browserName === 'webkit') {
-      await page.keyboard.press('Meta+a');
-    } else {
-      await page.keyboard.press('Control+a');
-    }
-    await page.keyboard.press('Backspace');
+    await clearEditor({ page, browserName });
     // Then enter invalid code
     await page.keyboard.insertText('def');
     const preview = page.getByTestId('preview-pane');
