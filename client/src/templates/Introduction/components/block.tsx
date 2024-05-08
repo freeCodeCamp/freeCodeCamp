@@ -21,7 +21,6 @@ import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import ChallengeBlock from './challenge-block';
-const Challenges = ChallengeBlock;
 
 import '../intro.css';
 
@@ -196,7 +195,7 @@ class Block extends Component<BlockProps> {
               </div>
             </button>
             {isExpanded && (
-              <Challenges
+              <ChallengeBlock
                 progressionNodes={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
               />
@@ -224,7 +223,7 @@ class Block extends Component<BlockProps> {
               )}
             </div>
             <BlockIntros intros={blockIntroArr} />
-            <Challenges
+            <ChallengeBlock
               progressionNodes={challengesWithCompleted}
               isProjectBlock={isProjectBlock}
             />
