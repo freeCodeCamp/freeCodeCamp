@@ -36,7 +36,7 @@ test.describe('Python Terminal', () => {
     const preview = page.getByTestId('preview-pane');
 
     // While it's displayed on multiple lines, the string itself has no newlines, hence:
-    const error = `>>> Traceback (most recent call last):  File "main.py", line 1    def       ^SyntaxError: invalid syntax`;
+    const error = `Traceback (most recent call last):  File "main.py", line 1    def       ^SyntaxError: invalid syntax`;
     // It shouldn't take this long, but the Python worker can be slow to respond.
     await expect(preview).toContainText(error, { timeout: 15000 });
   });
