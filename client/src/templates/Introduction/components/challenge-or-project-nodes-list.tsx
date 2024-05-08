@@ -36,7 +36,7 @@ const ChallengeOrProjectNodesList: React.FC<
             <Link
               to={node.fields.slug}
               className={`map-grid-item ${
-                +node.isCompleted ? 'challenge-completed' : ''
+                node.isCompleted ? 'challenge-completed' : ''
               }`}
             >
               <span className='sr-only'>
