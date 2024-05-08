@@ -65,7 +65,7 @@ assert.deepEqual(copyMachine(['it works'], 3), [
 `copyMachine` 関数では、配列 `arr` を付けた `spread operator` を使用する必要があります。
 
 ```js
-assert(code.match(/\.\.\.\s*arr/));
+assert(__helpers.removeJSComments(__helpers.removeJSComments(code)).match(/\.\.\.\s*arr/));
 ```
 
 # --seed--

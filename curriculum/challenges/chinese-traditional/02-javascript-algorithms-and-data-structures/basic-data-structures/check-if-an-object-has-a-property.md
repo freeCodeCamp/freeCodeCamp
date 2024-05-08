@@ -27,7 +27,7 @@ users.hasOwnProperty('Alan');
 
 ```js 
 
-assert(code.match(/users/gm).length <= 2)
+assert(__helpers.removeJSComments(code).match(/users/gm).length <= 2)
 
 ```
 

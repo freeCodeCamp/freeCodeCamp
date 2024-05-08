@@ -30,13 +30,13 @@ Modifique a função `nonMutatingPush` de modo que ela use `concat` para mesclar
 O código deve usar o método `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 O código não deve usar o método `push`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 O primeiro array, `first`, não deve ser modificado.

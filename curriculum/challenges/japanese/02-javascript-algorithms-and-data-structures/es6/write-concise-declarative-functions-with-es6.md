@@ -39,14 +39,14 @@ const person = {
 従来の関数式は使用しないでください。
 
 ```js
-assert(!code.match(/function/));
+assert(!__helpers.removeJSComments(code).match(/function/));
 ```
 
 `setGear` は宣言的な関数にする必要があります。
 
 ```js
 assert(
-  typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/)
+  typeof bicycle.setGear === 'function' && __helpers.removeJSComments(code).match(/setGear\s*\(.+\)\s*\{/)
 );
 ```
 

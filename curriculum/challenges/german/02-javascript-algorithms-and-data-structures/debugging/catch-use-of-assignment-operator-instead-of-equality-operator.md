@@ -43,7 +43,7 @@ assert(result == 'Not equal!');
 Die Bedingung sollte entweder `==` oder `===` verwenden, um auf Gleichheit zu testen.
 
 ```js
-assert(code.match(/x\s*?===?\s*?y/g));
+assert(__helpers.removeJSComments(code).match(/x\s*?===?\s*?y/g));
 ```
 
 # --seed--

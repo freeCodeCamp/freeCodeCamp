@@ -31,7 +31,7 @@ numbers.some(function(currentValue) {
 應該使用 `some` 方法。
 
 ```js
-assert(code.match(/\.some/g));
+assert(__helpers.removeJSComments(code).match(/\.some/g));
 ```
 
 `checkPositive([1, 2, 3, -4, 5])` 應返回 `true`。

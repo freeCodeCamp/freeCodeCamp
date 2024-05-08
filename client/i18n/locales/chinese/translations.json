@@ -55,8 +55,9 @@
     "reset-lesson": "重置课程",
     "run": "运行",
     "run-test": "运行测试（Ctrl + Enter）",
-    "check-code": "检查您的代码 (Ctrl + Enter)",
+    "check-code": "检查你的代码（Ctrl + Enter）",
     "check-code-2": "检查你的代码",
+    "check-code-3": "检查你的代码（Command + Enter）",
     "reset": "重置",
     "reset-step": "重置此步骤",
     "help": "帮助",
@@ -95,7 +96,8 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "确认金额",
-    "skip-advertisement": "跳过广告"
+    "skip-advertisement": "跳过广告",
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -261,8 +263,12 @@
       "nevermind": "我不想删除我的账户",
       "certain": "我完全确定要删除与此账户相关的所有信息",
       "reset-heading": "重置我的进度",
-      "reset-p1": "这将删除你的所有进度、分数、已完成的挑战、我们对你的项目的记录，以及你获得的所有认证等所有内容。",
-      "reset-p2": "即使你之后改变主意，我们也无法为你恢复任何信息。",
+      "reset-p1": "This will permanently delete and reset all of the following:",
+      "reset-item-1": "Your progress through each step/challenge (all completed challenges will be lost)",
+      "reset-item-2": "Any saved code, including partially completed challenges, and certification project code",
+      "reset-item-3": "All completed and claimed certifications",
+      "reset-p2": "You will effectively be set back to the very first day you signed up.",
+      "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "我不想删除我的所有进度",
       "reset-confirm": "重置所有内容，我想重新开始。"
     },
@@ -308,7 +314,8 @@
     "tweet": "我获得了 {{certTitle}} 认证 @freeCodeCamp！在这里查看：{{certURL}}",
     "avatar": "{{username}} 的头像",
     "joined": "于 {{date}} 加入",
-    "total-points": "点数： {{count}}",
+    "from": "From {{location}}",
+    "total-points": "Total Points:",
     "points": "{{date}} 获得 {{count}} 分",
     "points_plural": "{{date}} 获得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 页，共 {{totalPages}} 页"
@@ -383,14 +390,21 @@
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成 {{totalChallengesInBlock}} 认证项目中的 {{completedChallengesInBlock}}",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
+    "read-search-ask-checkbox": "我已经尝试了 <0>Read-Search-Ask</0> 方法",
+    "similar-questions-checkbox": "我已经<0>在论坛上搜索了类似的问题和相应的答案</0>",
+    "minimum-characters": "请至少再用 {{characters}} 个字符进行描述",
+    "characters-left": "你可以在查询中再添加 {{characters}} 个字符",
+    "must-confirm-statements": "在向论坛提交帖子之前，你必须确认以下事项。",
+    "min-50-max-500": "最少 50 个字符，最多 500 个字符",
     "rsa": "阅读，搜索，提问",
-    "rsa-forum": "<strong>在发布新帖子之前</strong> ，请确认你的问题是否<0>已经在论坛上被回答过</0>。",
+    "rsa-forum": "<strong>在发布新帖子之前</strong> ，请<0>查看你的问题是否已经在论坛上被回答过</0>。",
     "reset": "重置这一节课程？",
     "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
     "reset-warn-2": "这个操作不可撤销",
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "donation-record-not-found": "未找到你的捐款记录。",
+    "donation-heading": "Progress towards donation goal",
     "sign-in-card-update": "登录以更新你的卡片",
     "sign-in-see-benefits": "登录以查看你的支持者权益",
     "card-has-been-updated": "你的卡片已经更新成功。",
@@ -721,7 +735,9 @@
     "task": "任务",
     "dialogues-and-tasks-for": "{{blockTitle}} 的对话和任务",
     "code-example": "{{codeName}} 代码示例",
-    "opens-new-window": "在新窗口打开"
+    "opens-new-window": "在新窗口打开",
+    "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读-搜索-提问）方法",
+    "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案"
   },
   "flash": {
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",
@@ -795,6 +811,7 @@
     "challenge-submit-too-big": "抱歉，你无法提交代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
     "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。",
     "generate-exam-error": "生成考试时发生错误。",
+    "cert-not-found": "认证 {{certSlug}} 不存在。",
     "ms": {
       "transcript": {
         "link-err-1": "请在请求中包含一个 Microsoft 成绩单的 URL。",
@@ -856,6 +873,7 @@
     "fulltextNoHours": "<0>特证明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>开发者认证课程，日期为 {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作为旧版全栈认证的一部分，{{user}} 完成了以下认证：",
+      "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
       "solution": "解决方案",
       "no-solution": "显示解决方案出错时，发送电子邮件到 support@freeCodeCamp.org 获得帮助。",
@@ -969,16 +987,16 @@
       "A2 English for Developers": "面向开发者的 A2 英语",
       "a2-english-for-developers": "面向开发者的 A2 英语认证",
       "Legacy Front End": "旧版前端",
-      "legacy-front-end": "前端认证",
+      "legacy-front-end": "旧版前端认证",
       "Legacy Back End": "旧版后端",
-      "legacy-back-end": "后端认证",
+      "legacy-back-end": "旧版后端认证",
       "Legacy Data Visualization": "旧版数据可视化",
-      "legacy-data-visualization": "数据可视化认证",
+      "legacy-data-visualization": "旧版数据可视化认证",
       "Legacy Information Security and Quality Assurance": "旧版信息安全和质量保证",
-      "information-security-and-quality-assurance": "信息安全和质量保证认证",
+      "information-security-and-quality-assurance": "旧版信息安全和质量保证认证",
       "Legacy Full Stack Certification": "旧版全栈认证",
       "Legacy Full Stack": "旧版的全栈",
-      "full-stack": "全栈认证"
+      "full-stack": "旧版全栈认证"
     }
   },
   "certification-card": {
@@ -996,7 +1014,7 @@
     "user-agent": "用户代理是： <code>{{userAgent}}</code>",
     "challenge": "挑战信息：",
     "whats-happening": "告诉我们发生了什么：",
-    "describe": "在此详细描述你的问题。",
+    "describe": "在此详细描述你的问题。例如：\n我的 h1 元素缺少一个开始标签。需要帮助检查我的代码。\n或者\n我的 for 循环无限运行。如何避免？",
     "camper-project": "你的项目链接",
     "camper-code": "到目前为止你的代码",
     "warning": "警告",
@@ -1029,7 +1047,8 @@
     "focus-editor": "聚焦编辑器",
     "focus-instructions-panel": "聚焦指示面板",
     "navigate-previous": "跳转至上一个练习",
-    "navigate-next": "跳转至下一个练习"
+    "navigate-next": "跳转至下一个练习",
+    "play-scene": "播放场景"
   },
   "signout": {
     "heading": "注销你的账户",

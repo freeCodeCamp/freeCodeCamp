@@ -34,19 +34,19 @@ In questa sfida utilizzerai `Object.freeze` per impedire di cambiare le costanti
 Non dovresti sostituire la parola chiave `const`.
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `MATH_CONSTANTS` dovrebbe essere una variabile costante (usando `const`).
 
 ```js
-assert(code.match(/const\s+MATH_CONSTANTS/g));
+assert(__helpers.removeJSComments(code).match(/const\s+MATH_CONSTANTS/g));
 ```
 
 Non dovresti cambiare la dichiarazione originale di `MATH_CONSTANTS`.
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
    /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
 ));
 ```

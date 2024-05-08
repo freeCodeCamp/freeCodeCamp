@@ -33,7 +33,7 @@ dashedName: turn-an-image-into-a-link
 assert($('a').children('img').length > 0);
 ```
 
-`a` 要素は、`href` 属性が `#` に設定されたデッドリンクである必要があります。
+`a` 要素は、`href` 属性が `#` に設定された、無効なリンクであるべきです。
 
 ```js
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));

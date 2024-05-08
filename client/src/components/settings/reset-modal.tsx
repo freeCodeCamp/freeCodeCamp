@@ -1,7 +1,6 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
 
@@ -16,24 +15,21 @@ function ResetModal(props: ResetModalProps): JSX.Element {
   const { show, onHide } = props;
 
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      backdrop={true}
-      bsSize='lg'
-      className='text-center'
-      keyboard={true}
-      onHide={onHide}
-      show={show}
-    >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>
-          {t('settings.danger.reset-heading')}
-        </Modal.Title>
+    <Modal size='large' onClose={onHide} variant='danger' open={show}>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+        {t('settings.danger.reset-heading')}
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body alignment='start'>
         <p>{t('settings.danger.reset-p1')}</p>
+        <ul>
+          <li>{t('settings.danger.reset-item-1')}</li>
+          <li>{t('settings.danger.reset-item-2')}</li>
+          <li>{t('settings.danger.reset-item-3')}</li>
+        </ul>
         <p>{t('settings.danger.reset-p2')}</p>
-        <hr />
+        <p>{t('settings.danger.reset-p3')}</p>
+      </Modal.Body>
+      <Modal.Footer>
         <Button
           block={true}
           size='large'
@@ -53,9 +49,6 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         >
           {t('settings.danger.reset-confirm')}
         </Button>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );

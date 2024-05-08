@@ -14,7 +14,7 @@ dashedName: networking-text-processing
 
 ## --text--
 
-Which type of encoding do most websites use?
+ほとんどのウェブサイトで使用されているエンコードのタイプはどれですか？
 
 ## --answers--
 

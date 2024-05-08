@@ -30,13 +30,13 @@ Cambia la función `nonMutatingPush` de manera que utilice `concat` para unir `n
 El código debe utilizar el método `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 El código no debe utilizar el método `push`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 El arreglo `first` no debe modificarse.

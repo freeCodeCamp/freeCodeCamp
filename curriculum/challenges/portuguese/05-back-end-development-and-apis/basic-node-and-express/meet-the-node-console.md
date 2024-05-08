@@ -11,14 +11,22 @@ dashedName: meet-the-node-console
 Trabalhar nesses desafios vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete esses desafios localmente.
-- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-express/" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial no Gitpod</a> para completar esses desafios.
 - Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 Durante o processo de desenvolvimento, é importante poder verificar o que está acontecendo no código.
 
-O Node é apenas um ambiente JavaScript. Como o JavaScript lado do client, você pode usar o console para exibir informações úteis de depuração. Em sua máquina local, você veria a saída do console em um terminal. On Gitpod, a terminal is open at the bottom of the editor by default.
+O Node é apenas um ambiente JavaScript. Como o JavaScript lado do client, você pode usar o console para exibir informações úteis de depuração. Em sua máquina local, você veria a saída do console em um terminal. No Gitpod, um terminal é aberto na parte inferior do editor por padrão.
 
 Recomendamos que o terminal continue aberto enquanto você trabalha nesses desafios. Ao ler a saída no terminal, você poderá ver os erros que podem ocorrer.
+
+O servidor deve ser reiniciado após serem feitas alterações em seus arquivos.
+
+Você pode interromper o servidor pelo terminal usando `ctrl + c` e iniciá-lo usando o Node diretamente (`node mainEntryFile.js`) ou usando um script de execução no arquivo `package.json` com `npm run`.
+
+Por exemplo, o script `"start": "node server.js"` seria executado pelo terminal usando `npm run start`.
+
+Para implementar a reinicialização automática do servidor ao salvar arquivos, o Node fornece a flag `--watch`, que você pode adicionar ao começo do script `"start": "node --watch server.js"` — ou você pode instalar um pacote do npm como o `nodemon`. Deixamos isso para você fazer como exercício.
 
 # --instructions--
 

@@ -38,7 +38,7 @@ Tu código debe utilizar un `export` fallback.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /export\s+default\s+function(\s+subtract\s*|\s*)\(\s*x,\s*y\s*\)\s*{/g
   )
 );

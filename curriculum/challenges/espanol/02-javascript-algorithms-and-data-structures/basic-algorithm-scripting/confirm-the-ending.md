@@ -87,7 +87,7 @@ assert(confirmEnding('Abstraction', 'action') === true);
 Tu código no debe usar el método incorporado `.endsWith()` para resolver el desafío.
 
 ```js
-assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));
+assert(!/\.endsWith\(.*?\)\s*?;?/.test(__helpers.removeJSComments(code)) && !/\['endsWith'\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

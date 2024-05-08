@@ -42,7 +42,7 @@ function findGreater(a, b) {
 يجب أن يستخدم `checkEqual` المشغل مشروط
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن ينتج `checkEqual(1, 2)` مقطع الآتي: `Not Equal`

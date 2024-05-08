@@ -37,7 +37,7 @@ wrongText.replace(silverRegex, "blue");
 Використайте `.replace()` для пошуку та заміни.
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 Ваш регулярний вираз має замінити рядок `one two three` на рядок `three two one`
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 Не змінюйте останній рядок.
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` має використати принаймні три групи захоплення.

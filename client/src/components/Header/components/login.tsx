@@ -7,6 +7,7 @@ import { createSelector } from 'reselect';
 
 import envData from '../../../../config/env.json';
 import { isSignedInSelector } from '../../../redux/selectors';
+import callGA from '../../../analytics/call-ga';
 
 const { apiLocation, homeLocation } = envData;
 
@@ -36,6 +37,11 @@ const Login = ({
       data-test-label={dataTestLabel}
       data-playwright-test-label='header-sign-in-button'
       href={href}
+      onClick={() => {
+        callGA({
+          event: 'sign_in'
+        });
+      }}
     >
       <span className='login-btn-icon'>
         <FontAwesomeIcon icon={faRightToBracket} />

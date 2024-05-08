@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import {
   Type,
   type FastifyPluginCallbackTypebox
@@ -32,7 +31,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authenticateSession);
+  fastify.addHook('onRequest', fastify.authorize);
   fastify.post(
     '/donate/add-donation',
     {
@@ -56,7 +55,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const user = await fastify.prisma.user.findUnique({
-          where: { id: req.session.user.id }
+          where: { id: req.user?.id }
         });
 
         if (user?.isDonating) {
@@ -68,7 +67,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         }
 
         await fastify.prisma.user.update({
-          where: { id: req.session.user.id },
+          where: { id: req.user?.id },
           data: {
             isDonating: true
           }
@@ -96,20 +95,33 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const { paymentMethodId, amount, duration } = req.body;
-        const { id } = req.session.user;
+        const id = req.user!.id;
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id }
         });
 
         const { email, name } = user;
+        const threeChallengesCompleted = user.completedChallenges.length >= 3;
+
+        if (!threeChallengesCompleted) {
+          void reply.code(400);
+          return {
+            error: {
+              type: 'MethodRestrictionError',
+              message: `Donate using another method`
+            }
+          } as const;
+        }
 
         if (user.isDonating) {
           void reply.code(400);
-          return {
-            type: 'info',
-            message: 'User is already donating.'
-          } as const;
+          return reply.send({
+            error: {
+              type: 'AlreadyDonatingError',
+              message: 'User is already donating.'
+            }
+          });
         }
 
         // Create Stripe Customer
@@ -141,18 +153,22 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
         if (status === 'requires_source_action') {
           void reply.code(402);
-          return {
-            type: 'UserActionRequired',
-            message: 'Payment requires user action',
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            client_secret
-          } as const;
+          return reply.send({
+            error: {
+              type: 'UserActionRequired',
+              message: 'Payment requires user action',
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              client_secret
+            }
+          });
         } else if (status === 'requires_source') {
           void reply.code(402);
-          return {
-            type: 'PaymentMethodRequired',
-            message: 'Card has been declined'
-          } as const;
+          return reply.send({
+            error: {
+              type: 'PaymentMethodRequired',
+              message: 'Card has been declined'
+            }
+          });
         }
 
         // update record in database
@@ -182,17 +198,16 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        return {
+        return reply.send({
           type: 'success',
           isDonating: true
-        } as const;
+        });
       } catch (error) {
         fastify.log.error(error);
         void reply.code(500);
-        return {
-          type: 'danger',
-          message: 'Donation failed due to a server error.'
-        } as const;
+        return reply.send({
+          error: 'Donation failed due to a server error.'
+        });
       }
     }
   );

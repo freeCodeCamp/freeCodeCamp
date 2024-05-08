@@ -9,18 +9,18 @@ dashedName: step-20
 
 `div` 要素はこれまで使用してきた他のコンテンツ要素とは異なり、主にレイアウトデザイン目的で使用されます。 `body` 要素内に `div` 要素を追加し、他のすべての要素を新しい `div` の中に移動させてください。
 
-Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
+そして `div` の開始タグには、`id` 属性と `menu` という値を追加してください。
 
 # --hints--
 
-Your opening `<div>` tag should have an `id` attribute set to `menu`.
+`<div>` の開始タグは、`id` 属性が `menu` に設定されている必要があります。
 
 ```js
 const div = $('div')[0];
 assert(div.id === 'menu');
 ```
 
-You should have a closing `</div>` tag.
+終了タグ `</div>` が必要です。
 
 ```js
 assert(code.match(/<\/div>/i));

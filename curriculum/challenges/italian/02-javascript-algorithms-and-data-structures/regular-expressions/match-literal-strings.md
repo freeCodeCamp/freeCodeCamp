@@ -52,7 +52,7 @@ assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 Dovresti cercare la corrispondenza di una stringa letterale con la tua espressione regolare.
 
 ```js
-assert(!/\/.*\/i/.test(code));
+assert(!/\/.*\/i/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

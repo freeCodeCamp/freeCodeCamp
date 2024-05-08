@@ -47,7 +47,7 @@ assert(compareEquality('20', 20) === 'Not Equal');
 `===` 演算子を使用してください。
 
 ```js
-assert(code.match(/===/g));
+assert(__helpers.removeJSComments(code).match(/===/g));
 ```
 
 # --seed--

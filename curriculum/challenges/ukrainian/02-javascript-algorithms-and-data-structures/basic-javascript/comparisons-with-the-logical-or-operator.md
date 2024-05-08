@@ -43,13 +43,13 @@ return "Yes";
 Ви повинні використати оператор `||` лише раз
 
 ```js
-assert(code.match(/\|\|/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/\|\|/g).length === 1);
 ```
 
 Ви повинні мати лише одну інструкцію `if`
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalOr(0)` має повертати рядок `Outside`

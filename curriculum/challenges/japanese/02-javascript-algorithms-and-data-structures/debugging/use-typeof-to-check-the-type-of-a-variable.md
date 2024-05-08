@@ -32,19 +32,19 @@ JavaScript は 7 つのプリミティブな (イミュータブル) データ�
 2 つの `console.log()` ステートメントで `typeof` を使用して変数の型を確認する必要があります。
 
 ```js
-assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 `typeof` を使用して変数 `seven` の型を確認する必要があります。
 
 ```js
-assert(code.match(/typeof[\( ]seven\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]seven\)?/g));
 ```
 
 `typeof` を使用して変数 `three` の型を確認する必要があります。
 
 ```js
-assert(code.match(/typeof[\( ]three\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]three\)?/g));
 ```
 
 # --seed--

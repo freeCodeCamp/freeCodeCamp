@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
+        "title": "CSS 疑似セレクターの学習: バランスシートを作成する",
         "intro": [
           "CSS の疑似セレクターを用いて、特定の HTML 要素を変化させることができます。",
           "このコースでは、疑似セレクターを用いてバランスシート (貸借対照表) を作成します。ウェブページ上でマウスポインタを要素の上に合わせた時に要素のスタイルを変更する方法や、他のイベントを起こす方法を学習します。"
@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Legacy JavaScript Algorithms and Data Structures",
+    "title": "(レガシー) JavaScript アルゴリズムとデータ構造",
     "intro": [
       "HTML と CSS はページの内容とスタイルを制御しますが、JavaScript はそれを対話式にすることを手掛けます。JavaScript アルゴリズムとデータ構造認定講座では、変数、配列、オブジェクト、ループ、そして関数を含む JavaScript の基礎を学習します。",
       "いったん基礎を習得すれば、その知識を応用して文字列を扱うためのアルゴリズムを作成したり、数の階乗を計算したり、さらに国際宇宙ステーションの軌道を計算することもできます。",
@@ -306,12 +306,12 @@
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
       "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
     ],
-    "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
+    "note": "注: 広告ブロッカーやスクリプトブロッカーのようなブラウザ拡張機能は、テストを妨害することがあります。もし問題に直面したら、受講中はページの内容を変更もしくはブロックする拡張機能を無効にすることをお勧めします。",
     "blocks": {
       "build-a-pokemon-search-app-project": {
         "title": "ポケモン検索アプリ作成プロジェクト",
         "intro": [
-          "This is one of the required projects to earn your certification.",
+          "これは認定証の取得に必須のプロジェクトの 1 つです。",
           "For this project, you will build a Pokémon search app."
         ]
       },
@@ -457,6 +457,20 @@
         "intro": [
           "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
           "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+        ]
+      },
+      "learn-introductory-javascript-by-building-a-pyramid-generator": {
+        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+        ]
+      },
+      "review-js-fundamentals-by-building-a-gradebook-app": {
+        "title": "Review JavaScript Fundamentals by Building a Gradebook App",
+        "intro": [
+          "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
+          "This will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       }
     }
@@ -1116,7 +1130,8 @@
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
       "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world.",
       "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
-      "<a href='https://github.com/TheOdinProject/curriculum?tab=License-1-ov-file#readme' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>"
+      "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
+      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1183,6 +1198,20 @@
         "title": "Learn Variables and Operators",
         "intro": [
           "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+        ]
+      },
+      "top-learn-data-types-and-conditionals": {
+        "title": "Learn Data Types and Conditionals",
+        "intro": ["Learn about data types and conditionals in JavaScript."]
+      },
+      "top-learn-function-basics": {
+        "title": "Learn Function Basics",
+        "intro": ["Learn about functions in JavaScript."]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Projects",
+        "intro": [
+          "Put your JavaScript skills to the test by building basic functions."
         ]
       }
     }
@@ -1295,6 +1324,7 @@
   },
   "a2-english-for-developers": {
     "title": "A2 English for Developers (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -1340,15 +1370,21 @@
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
+        ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Learn How to Talk About Hobbies and Interests",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
+        ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "Learn How to Discuss Roles and Responsibilities",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+        ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Learn How to Have a Conversation About Preferences and Motivations",
@@ -1396,10 +1432,6 @@
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Learn How to Analyze Code Documentation",
-        "intro": ["", ""]
-      },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "Learn How to Follow Basic Email Convention",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {

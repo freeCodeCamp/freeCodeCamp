@@ -47,7 +47,7 @@ JavaScript 的默认排序方法是 Unicode 值顺序排序，有时可能会得
 应该使用 `sort` 方法。
 
 ```js
-assert(code.match(/\.sort/g));
+assert(__helpers.removeJSComments(code).match(/\.sort/g));
 ```
 
 `alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` 应返回 `["a", "a", "c", "d", "g", "z"]`。

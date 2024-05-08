@@ -39,7 +39,7 @@ assert(secondToLastLetterOfLastName === 'c');
 يجب عليك استخدام `.length` للحصول على الحرف الثاني إلى الأخير.
 
 ```js
-assert(code.match(/\.length/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
 ```
 
 # --seed--

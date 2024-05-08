@@ -29,7 +29,7 @@ console.log('Hello world!');
 Ваш код повинен використовувати `console.log()` для перевірки значення змінної `a`.
 
 ```js
-assert(code.match(/console\.log\(a\)/g));
+assert(__helpers.removeJSComments(code).match(/console\.log\(a\)/g));
 ```
 
 # --seed--

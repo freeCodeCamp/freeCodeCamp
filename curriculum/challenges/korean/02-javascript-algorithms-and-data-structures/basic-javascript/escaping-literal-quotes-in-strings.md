@@ -36,7 +36,7 @@ I am a "double quoted" string inside "double quotes".
 You should use two double quotes (`"`) and four escaped double quotes (`\"`).
 
 ```js
-assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/\\"/g).length === 4 && __helpers.removeJSComments(code).match(/[^\\]"/g).length === 2);
 ```
 
 Variable `myStr` should contain the string: `I am a "double quoted" string inside "double quotes".`

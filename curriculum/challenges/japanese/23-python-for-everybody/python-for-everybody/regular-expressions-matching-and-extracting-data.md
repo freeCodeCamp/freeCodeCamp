@@ -14,7 +14,7 @@ dashedName: regular-expressions-matching-and-extracting-data
 
 ## --text--
 
-What will the following program print?:
+次のプログラムは何を出力しますか？
 
 ```python
 import re

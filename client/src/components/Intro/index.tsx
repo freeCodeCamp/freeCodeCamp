@@ -51,7 +51,7 @@ const Intro = ({
         </h1>
         <Spacer size='medium' />
         <div className='text-center quote-partial'>
-          <blockquote className='blockquote'>
+          <blockquote className='blockquote' data-testid='quote-block'>
             <span>
               <q data-playwright-test-label='random-quote'>{quote}</q>
               <footer className='quote-author blockquote-footer'>

@@ -1,42 +1,38 @@
 ---
 id: 657b1a27dc6daf6ffd52ff1f
-title: Task 28
+title: Task 29
 challengeType: 19
-dashedName: task-28
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
+dashedName: task-29
 ---
 
-<!--
-AUDIO REFERENCE:
-Anna: Excellent! Can you share details about your educational background? Were you trained in a specific field?
-Candidate2: I have a master's degree in computer science.
--->
+<!-- (Audio) Anna: Excellent! Can you share details about your educational background? Were you trained in a specific field?
+Second Candidate: I have a master's degree in computer science. -->
 
 # --description--
 
-In English, the noun suffixed with `'s` followed by a second noun structure is used to show possession or belonging. If the first noun is singular, as in `Sarah's laptop`, it indicates that the laptop belongs to Sarah. However, if the first noun is plural, the structure changes to noun suffixed with `'`, as in `teachers' office`, indicating an office for teachers.
+In English, the noun suffixed with `'s` followed by a second noun structure is used to show possession or belonging. Wenn das erste Substantiv Singular ist, wie in `Sarah's laptop`, bedeutet das, dass der Laptop Sarah gehört. However, if the first noun is plural, the structure changes to noun suffixed with `'`, as in `teachers' office`, indicating an office for teachers.
 
 # --question--
 
 ## --text--
 
-What does `master's degree` in the context of the dialogue refer to?
+Worauf bezieht sich `master's degree` im Kontext des Dialogs?
 
 ## --answers--
 
-A degree for school teachers
+Ein Abschluss für Lehrer
 
 ### --Feedback--
 
-`Master's degree` refers to an advanced academic degree, not specifically for teachers.
+`Master's degree` bezieht sich auf einen fortgeschrittenen akademischen Abschluss, nicht speziell für Lehrer.
 
 ---
 
-A primary level educational degree
+Ein Bildungsabschluss der Grundstufe
 
 ### --Feedback--
 
-`Master's degree` is a higher education qualification, beyond the primary level.
+`Master's degree` ist ein höherer Bildungsabschluss, der über die Grundstufe hinausgeht.
 
 ---
 
@@ -44,12 +40,80 @@ A degree in mastering skills
 
 ### --feedback--
 
-While it implies expertise, `master's degree` specifically refers to an academic qualification.
+Während es Fachwissen impliziert, bezieht sich `master's degree` spezifisch auf einen akademischen Abschluss.
 
 ---
 
-An advanced academic degree
+Einen erweiterten akademischen Abschluss
 
 ## --video-solution--
 
 4
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "interview-room3.png",
+    "characters": [
+      {
+        "character": "Anna",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      },
+      {
+        "character": "Second Candidate",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "3.1-2.mp3",
+      "startTime": 1,
+      "startTimestamp": 43.44,
+      "finishTimestamp": 51.78
+    }
+  },
+  "commands": [
+    {
+      "character": "Anna",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Anna",
+      "startTime": 1,
+      "finishTime": 5.72,
+      "dialogue": {
+        "text": "Excellent. Can you share details about your educational background? Were you trained in a specific field?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Anna",
+      "opacity": 0,
+      "startTime": 6
+    },
+    {
+      "character": "Second Candidate",
+      "opacity": 1,
+      "startTime": 6
+    },
+    {
+      "character": "Second Candidate",
+      "startTime": 6.36,
+      "finishTime": 9.34,
+      "dialogue": {
+        "text": "Yes. I have a master's degree in computer science.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Second Candidate",
+      "opacity": 0,
+      "startTime": 9.84
+    }
+  ]
+}
+```

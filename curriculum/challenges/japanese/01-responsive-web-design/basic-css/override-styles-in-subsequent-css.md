@@ -19,7 +19,7 @@ dashedName: override-styles-in-subsequent-css
 
 `h1` 要素に対し、`pink-text` クラスに加えて `blue-text` クラスも適用して、どちらが勝つか見てみましょう。
 
-1 つの HTML 要素に複数のクラス属性を適用するには、以下のようにスペースで区切ります:
+1 つの HTML 要素に複数のクラス属性を適用するために、以下のようにスペースで属性を区切ります。
 
 ```html
 class="class1 class2"

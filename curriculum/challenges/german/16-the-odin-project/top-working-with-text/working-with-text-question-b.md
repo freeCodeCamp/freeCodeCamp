@@ -1,38 +1,38 @@
 ---
 id: 637f4e5f72c65bc8e73dfe28
-title: Working With Text Question B
+title: Arbeiten mit Text Frage B
 challengeType: 15
 dashedName: working-with-text-question-b
 ---
 
 # --description--
 
-Headings are different from other HTML text elements: they are displayed larger and bolder than other text to signify that they are headings.
+Überschriften unterscheiden sich von anderen HTML-Textelementen: Sie werden größer und fetter als anderer Text dargestellt, um zu verdeutlichen, dass es sich um Überschriften handelt.
 
-There are 6 different levels of headings starting from `<h1>` to `<h6>`. The number within a heading tag represents that heading’s level. The largest and most important heading is `h1`, while `h6` is the tiniest heading at the lowest level.
+Es gibt 6 verschiedene Ebenen von Überschriften, die von `<h1>` bis `<h6>` reichen. Die Zahl innerhalb eines Überschriften-Tags repräsentiert die Ebene dieser Überschrift. Die größte und wichtigste Überschrift ist `h1`, während `h6` die kleinste Überschrift auf der niedrigsten Ebene ist.
 
-Headings are defined much like paragraphs. For example, to create an `h1` heading, we wrap our heading text in a `<h1>` tag.
+Überschriften werden ähnlich wie Absätze definiert. Um zum Beispiel eine `h1`-Überschrift zu erstellen, wird unser Überschriftentext in einem `<h1>`-Tag eingeschlossen.
 
-<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_3" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/LYLPLbg?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=LYLPLbg&amp;user=TheOdinProjectExamples&amp;name=cp_embed_3" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_LYLPLbg"></iframe>
+<iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_3" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/LYLPLbg?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=LYLPLbg&amp;user=TheOdinProjectExamples&amp;name=cp_embed_3" style="width: 100%; overflow:hidden; display:block;" title="CodePen-Einbettung" loading="lazy" id="cp_embed_LYLPLbg"></iframe>
 
-Using the correct level of heading is important as levels provide a hierarchy to the content. An `h1` heading should always be used for the heading of the overall page, and the lower level headings should be used as the headings for content in smaller sections of the page.
+Es ist wichtig, die richtige Ebene der Überschrift zu verwenden, da die Ebenen eine Hierarchie des Inhalts bilden. Eine `h1`-Überschrift sollte immer für die Überschrift der gesamten Seite verwenden werden und die Überschriften der unteren Ebene sollten als Überschriften für den Inhalt in kleineren Abschnitten der Seite verwendet werden.
 
 # --question--
 ## --text--
 
-How many different levels of headings are there and what is the difference between them?
+Wie viele Ebenen von Überschriften gibt es und worin besteht der Unterschied zwischen ihnen?
 
 ## --answers--
 
-There are 5 different levels of headings. `h5` is the smallest and least important heading, and `h1` is the largest and most important heading.
+Es gibt 5 verschiedene Überschriftsebenen. `h5` ist die kleinste und unwichtigste Überschrift, und `h1` ist die größte und wichtigste Überschrift.
 
 ---
 
-There are 6 different levels of headings. `h6` is the largest and most important heading, and `h1` is the smallest and least important heading.
+Es gibt 6 verschiedene Überschriftsebenen. `h6` ist die größte und wichtigste Überschrift, und `h1` ist die kleinste und unwichtigste Überschrift.
 
 ---
 
-There are 6 different levels of headings. `h1` is the largest and most important heading, and `h6` is the smallest and least important heading.
+Es gibt 6 verschiedene Überschriftsebenen. `h1` ist die größte und wichtigste Überschrift, und `h6` ist die kleinste und unwichtigste Überschrift.
 
 ## --video-solution--
 

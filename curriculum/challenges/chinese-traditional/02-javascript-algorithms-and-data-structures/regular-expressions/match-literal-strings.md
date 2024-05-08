@@ -52,7 +52,7 @@ assert(!waldoRegex.test('Somewhere is hiding in this text.'));
 你應該使用你的正則表達式對字符串執行文字匹配。
 
 ```js
-assert(!/\/.*\/i/.test(code));
+assert(!/\/.*\/i/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

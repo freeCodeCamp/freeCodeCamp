@@ -1,6 +1,6 @@
 ---
 id: 5900f39e1000cf542c50feb1
-title: 'Problem 50: Consecutive prime sum'
+title: 'Problem 50: Konsekutive Primzahlsumme'
 challengeType: 1
 forumTopicId: 302161
 dashedName: problem-50-consecutive-prime-sum
@@ -8,31 +8,31 @@ dashedName: problem-50-consecutive-prime-sum
 
 # --description--
 
-The prime 41, can be written as the sum of six consecutive primes:
+Die Primzahl 41 kann als Summe von sechs aufeinanderfolgenden Primzahlen geschrieben werden:
 
 <div style='text-align: center;'>41 = 2 + 3 + 5 + 7 + 11 + 13</div>
 
-This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+Dies ist die längste Summe aufeinanderfolgender Primzahlen, die eine Primzahl unter Hundert ergibt.
 
-The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+Die längste Summe aufeinanderfolgender Primzahlen unter eintausend, die eine Primzahl ergibt, 21 Terme enthält und gleich 953 ist.
 
-Which prime, below one-million, can be written as the sum of the most consecutive primes?
+Welche Primzahl, die unter einer Million liegt, kann als Summe der meisten aufeinanderfolgenden Primzahlen geschrieben werden?
 
 # --hints--
 
-`consecutivePrimeSum(1000)` should return a number.
+`consecutivePrimeSum(1000)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof consecutivePrimeSum(1000) === 'number');
 ```
 
-`consecutivePrimeSum(1000)` should return 953.
+`consecutivePrimeSum(1000)` sollte 953 zurückgeben.
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000), 953);
 ```
 
-`consecutivePrimeSum(1000000)` should return 997651.
+`consecutivePrimeSum(1000000)` sollte 997651 zurückgeben.
 
 ```js
 assert.strictEqual(consecutivePrimeSum(1000000), 997651);

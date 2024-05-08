@@ -30,13 +30,13 @@ arr.push(4, 5, 6);
 يجب أن يستخدم الكود الخاص بك دالة `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 يجب ألا يستخدم الكود الخاص بك دالة `push`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?push/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?push/g));
 ```
 
 يجب ألا تتغير مصفوفة `first`.

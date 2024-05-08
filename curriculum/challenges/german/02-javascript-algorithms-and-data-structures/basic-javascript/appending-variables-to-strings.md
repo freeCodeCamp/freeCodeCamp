@@ -36,7 +36,7 @@ assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
 Du solltest `someAdjective` an `myStr` mit dem Operator `+=` anhängen.
 
 ```js
-assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
+assert(__helpers.removeJSComments(code).match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 ```
 
 # --seed--

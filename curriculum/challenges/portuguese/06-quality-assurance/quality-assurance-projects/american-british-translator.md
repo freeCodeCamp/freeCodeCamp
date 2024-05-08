@@ -11,7 +11,7 @@ dashedName: american-british-translator
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
--   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
+-   Recorra ao <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow"> nosso projeto inicial no Gitpod </a> para completar o seu projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 # --instructions--
@@ -20,7 +20,7 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 -   Complete a rota `/api/translate` em `/routes/api.js`
 -   Crie todos os testes unitários/funcionais em `tests/1_unit-tests.js` e `tests/2_functional-tests.js`
 -   Veja os arquivos JavaScript em `/components` para diferentes ortografias e termos que sua aplicação deve traduzir
--   To run the tests automatically, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   Para executar os testes automaticamente, defina `NODE_ENV` como `test` sem aspas no arquivo `.env`
 -   Para executar os testes no console, use o comando `npm run test`.
 
 Escreva os testes a seguir em `tests/1_unit-tests.js`:

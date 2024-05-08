@@ -4,13 +4,14 @@ title: Learn Variables and Operators Question G
 challengeType: 15
 dashedName: learn-variables-and-operators-question-g
 ---
+
 # --description--
 
 The plus `+` exists in two forms: the binary form that you used in the last challenge and the unary form.
 
 The unary plus or, in other words, the plus operator `+` applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
 
-For example:
+Zum Beispiel:
 
 ```js
 // No effect on numbers
@@ -60,7 +61,7 @@ Given the explanation of unary and binary `+` operators in JavaScript, how can y
 
 ## --answers--
 
-`console.log('2' + '3'); // Outputs: '23'` 
+`console.log('2' + '3'); // Outputs: '23'`
 
 ---
 

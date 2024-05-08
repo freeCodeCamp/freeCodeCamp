@@ -37,25 +37,25 @@ Correggi i due errori di indicizzazione nella funzione seguente così che tutti 
 Il tuo codice dovrebbe impostare la condizione iniziale del ciclo in modo che inizi al primo indice.
 
 ```js
-assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
 Il tuo codice dovrebbe aggiustare la condizione iniziale del ciclo in modo che l'indice inizi da 0.
 
 ```js
-assert(!code.match(/i\s?=\s*?1\s*?;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s?=\s*?1\s*?;/g));
 ```
 
 Il tuo codice dovrebbe impostare la condizione di chiusura del ciclo in modo che si interrompa all'ultimo indice.
 
 ```js
-assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 Il tuo codice dovrebbe fissare la condizione di chiusura del ciclo in modo che si fermi a un passo dalla lunghezza.
 
 ```js
-assert(!code.match(/i\s*?<=\s*?len;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?<=\s*?len;/g));
 ```
 
 # --seed--

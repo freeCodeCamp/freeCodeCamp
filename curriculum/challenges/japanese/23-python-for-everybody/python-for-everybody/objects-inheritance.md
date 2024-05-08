@@ -14,7 +14,7 @@ dashedName: objects-inheritance
 
 ## --text--
 
-What is inheritance in object-oriented programming?
+オブジェクト指向プログラミングにおける継承とは何ですか？
 
 ## --answers--
 

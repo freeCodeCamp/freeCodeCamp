@@ -36,7 +36,7 @@ Füge die Zahlen 5 bis 0 (einschließlich) in absteigender Reihenfolge zu `myArr
 Du solltest dafür eine `while`-Schleife verwenden.
 
 ```js
-assert(code.match(/while/g));
+assert(__helpers.removeJSComments(code).match(/while/g));
 ```
 
 `myArray` sollte gleich `[5, 4, 3, 2, 1, 0]` sein.

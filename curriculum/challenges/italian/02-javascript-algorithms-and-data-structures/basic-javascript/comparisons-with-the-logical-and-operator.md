@@ -40,13 +40,13 @@ Sostituisci i due if con una sola istruzione, utilizzando l’operatore `&&`, ch
 Dovresti utilizzare l'operatore `&&` una sola volta
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 Dovresti avere una sola istruzione `if`
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalAnd(0)` dovrebbe restituire la stringa `No`

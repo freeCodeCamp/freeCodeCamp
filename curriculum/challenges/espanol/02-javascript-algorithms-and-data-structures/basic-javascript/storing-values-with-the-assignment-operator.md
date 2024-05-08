@@ -35,7 +35,7 @@ Asigna el valor `7` a la variable `a`.
 No debes cambiar el código por encima del comentario especificado.
 
 ```js
-assert(/var a;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)));
 ```
 
 `a` debe tener un valor de 7.

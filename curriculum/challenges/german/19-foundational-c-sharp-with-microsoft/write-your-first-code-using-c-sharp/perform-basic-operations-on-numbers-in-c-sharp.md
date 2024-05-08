@@ -1,26 +1,26 @@
 ---
 id: 647e23788acb466c97ccbf02
-title: 'Perform Basic Operations on Numbers in C#'
+title: 'Grundlegende Operationen auf Nummern in C# ausführen'
 challengeType: 19
 dashedName: perform-basic-operations-on-numbers-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on the Microsoft Learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn Plattform erledigt. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-operations/</a> and complete all the tasks for the "Perform Basic Operations on Numbers in C#" module. This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-basic-operations/</a> und löse alle Aufgaben für das Modul "Grundlegende Operationen mit Zahlen in C# durchführen". This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
 
 # --assignment--
 
-Complete the <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">Perform Basic Operations on Numbers in C#</a> module on Microsoft Learn. Then, answer the question below.
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/csharp-basic-operations/" target="_blank" rel="noreferrer">Grundlegende Operationen mit Zahlen in C# durchführen</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-What is the value of the following result?
+Wie lautet der Wert des folgenden Ergebnisses?
 
 ```clike
 int result = 3 + 1 * 5 / 2;
