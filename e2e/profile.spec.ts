@@ -88,9 +88,9 @@ test.describe('Profile component', () => {
       await page.goto('/certifieduser');
 
       // The following line is required if you're running the test in local development
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
+      // await page
+      //   .getByRole('button', { name: 'Preview custom 404 page' })
+      //   .click();
     });
 
     test('renders the camper profile correctly', async ({ page }) => {
@@ -194,14 +194,27 @@ test.describe('Profile component', () => {
       await page.goto('/publicUser');
 
       // The following line is required if you're running the test in local development
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
+      // await page
+      //   .getByRole('button', { name: 'Preview custom 404 page' })
+      //   .click();
     });
 
-    test.describe('when viewing another user profile while logged in', () => {
+    test.describe('while logged in', () => {
       test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+      test('displays the public username', async ({ page }) => {
+        await expect(
+          page.getByRole('heading', { name: '@publicuser' })
+        ).toBeVisible();
+      });
     });
-    test.describe('when viewing another user profile while logged out', () => {});
+
+    test.describe('logged out', () => {
+      test('displays the public username', async ({ page }) => {
+        await expect(
+          page.getByRole('heading', { name: '@publicuser' })
+        ).toBeVisible();
+      });
+    });
   });
 });
