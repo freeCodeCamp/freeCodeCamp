@@ -463,14 +463,14 @@
         "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
         "intro": [
           "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+          "在这个练习项目中，你将会通过编写你自己的金字塔生成器来学习 JavaScript 的基本编程概念。你将学到如何使用数组、字符串、函数、循环、<code>if/else</code> 语句以及更多。"
         ]
       },
       "review-js-fundamentals-by-building-a-gradebook-app": {
-        "title": "Review JavaScript Fundamentals by Building a Gradebook App",
+        "title": "通过创建成绩统计册应用来回顾 JavaScript 基础知识",
         "intro": [
-          "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
-          "This will give you an opportunity to solve small problems and get a better understanding of the basics."
+          "在这个小项目中，你将会通过创建成绩统计册应用回顾 JavaScript 基础知识，如函数、变量、条件以及更多内容。",
+          "你将通过这个机会练习解决小问题，更好地理解基础知识。"
         ]
       }
     }
@@ -1206,9 +1206,7 @@
       },
       "top-basic-function-projects": {
         "title": "Basic Function Projects",
-        "intro": [
-          "Put your JavaScript skills to the test by building basic functions."
-        ]
+        "intro": ["通过构建基本函数来测试你的 JavaScript 技能。"]
       }
     }
   },
@@ -1318,7 +1316,7 @@
   },
   "a2-english-for-developers": {
     "title": "面向开发者的 A2 英语（Beta）",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "note": "该认证目前正在积极开发中。虽然目前还没有可申请的认证，但很快就会有。在此期间，欢迎你探索我们在下面创建的课程。",
     "intro": [
       "在开发者英语课程中，你将学习英语交流的基本要素。课程遵循欧洲共同语言参考标准（CEFR）的 A2 级，侧重于对开发者有用的词汇。",
       "课程的前半部分将帮助你熟悉英语语法和用法。你将通过大量的实践练习学习自我介绍、聊天和讨论工作等基础知识。",
