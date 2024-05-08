@@ -92,3 +92,18 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page).toHaveURL(nextChallengeURL);
   });
 });
+
+test('Should display the text of go to next challenge button accordingly based on device type', async ({
+  page,
+  isMobile,
+  browserName
+}) => {
+  if (isMobile) {
+    await expect(page.getByText('(Command + Enter)')).not.toBeVisible();
+    await expect(page.getByText('(Ctrl + Enter)')).not.toBeVisible();
+  } else if (browserName === 'webkit') {
+    await expect(page.getByText('(Command + Enter)')).toBeVisible();
+  } else {
+    await expect(page.getByText('(Ctrl + Enter)')).toBeVisible();
+  }
+});
