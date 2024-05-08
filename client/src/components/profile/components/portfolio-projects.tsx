@@ -39,7 +39,10 @@ export const PortfolioProjects = ({
           )}
           <div className='portfolio-card-description'>
             <div className='portfolio-card-text'>
-              <h3>{title}</h3>
+              <h3>
+                {title}
+                <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+              </h3>
               <p>{description}</p>
             </div>
           </div>
