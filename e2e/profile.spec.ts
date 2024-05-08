@@ -172,7 +172,7 @@ test.describe('Profile component', () => {
   test('should not show portfolio when empty', async ({ page }) => {
     // @certifieduser doesn't have portfolio information
     await expect(
-      page.getByText(translations.profile.portfolio)
+      page.getByText(translations.profile.projects)
     ).not.toBeVisible();
   });
 
