@@ -10,13 +10,16 @@ test.describe('Progress bar component', () => {
     browserName
   }) => {
     await page.goto(
-      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
     );
+    // If focusEditor fails, typically it's because the instructions are too
+    // large. There's a bug that means `scrollIntoView` does not work in the
+    // editor and so we have to pick less verbose challenges until that's fixed.
     await focusEditor({ page, isMobile, browserName });
     await clearEditor({ page, browserName });
 
     await page.keyboard.insertText(
-      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2></body></html>'
+      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>See more cat photos in our gallery.</p></body></html>'
     );
 
     await page.getByRole('button', { name: 'Check Your Code' }).click();
