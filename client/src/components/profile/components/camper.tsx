@@ -23,16 +23,43 @@ export type CamperProps = Pick<
   | 'joinDate'
 >;
 
-function Camper({ yearsTopContributor, isDonating }: CamperProps): JSX.Element {
+function Camper({
+  name,
+  username,
+  location,
+  picture,
+  about,
+  yearsTopContributor,
+  githubProfile,
+  isDonating,
+  joinDate,
+  linkedin,
+  twitter,
+  website
+}: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
     <>
-      <Bio />
+      <div className='bio-container'>
+        <Bio
+          joinDate={joinDate}
+          location={location}
+          username={username}
+          name={name}
+          about={about}
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          website={website}
+          isDonating={isDonating}
+          yearsTopContributor={yearsTopContributor}
+          picture={picture}
+        />
+      </div>
       <FullWidthRow>
         <h2 className='text-center'>{t('profile.badges')}</h2>
         <div className='badge-card-container'>
-          {console.log(isDonating)}
           {isDonating && (
             <div className='badge-card'>
               <div className='badge'>
@@ -59,9 +86,8 @@ function Camper({ yearsTopContributor, isDonating }: CamperProps): JSX.Element {
               </div>
             </div>
           )}
-
-          <br />
         </div>
+        <hr />
       </FullWidthRow>
     </>
   );

@@ -2,36 +2,36 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { userSelector } from '../../../redux/selectors';
-import { User } from '../../../redux/prop-types';
 import { AvatarRenderer, FullWidthRow, Spacer } from '../../helpers';
 import { parseDate } from './utils';
 import SocialIcons from './social-icons';
+import { type CamperProps } from './camper';
 
-const Bio = () => {
+const Bio = ({
+  joinDate,
+  location,
+  username,
+  name,
+  about,
+  githubProfile,
+  linkedin,
+  twitter,
+  website,
+  isDonating,
+  yearsTopContributor,
+  picture
+}: CamperProps) => {
   const { t } = useTranslation();
-  const {
-    joinDate,
-    location,
-    username,
-    name,
-    about,
-    githubProfile,
-    linkedin,
-    twitter,
-    website,
-    isDonating,
-    yearsTopContributor,
-    picture
-  } = useSelector(userSelector) as User;
+
+  const isTopContributor =
+    yearsTopContributor && yearsTopContributor.length > 0;
 
   return (
     <FullWidthRow>
       <div className='avatar-camper'>
         <AvatarRenderer
           isDonating={isDonating}
-          isTopContributor={yearsTopContributor.length > 0}
+          isTopContributor={isTopContributor}
           picture={picture}
         />
       </div>

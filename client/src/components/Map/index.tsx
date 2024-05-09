@@ -91,16 +91,18 @@ function MapLi({
         data-test-label='curriculum-map-button'
         data-playwright-test-label='curriculum-map-button'
       >
-        <div className='progress-icon'>
-          <RibbonIcon
-            value={index + 1}
-            showNumbers={showNumbers}
-            isCompleted={completed}
-            isClaimed={claimed}
-          />
-        </div>
-        <div className='progression-arrow'>
-          {!last && showArrows && <Arrow />}
+        <div className='progress-icon-wrapper'>
+          <div className='progress-icon'>
+            <RibbonIcon
+              value={index + 1}
+              showNumbers={showNumbers}
+              isCompleted={completed}
+              isClaimed={claimed}
+            />
+          </div>
+          <div className='progression-arrow'>
+            {!last && showArrows && <Arrow />}
+          </div>
         </div>
 
         <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
