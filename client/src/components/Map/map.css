@@ -39,8 +39,8 @@
   width: auto;
 }
 
-.map-ui ul li:not(:first-child) .progress-icon.show-arrow:before,
-.map-ui ul li:not(:last-child) .progress-icon.show-arrow:after {
+.map-ui ul li:not(:first-child) .progress-icon.show-progression-lines:before,
+.map-ui ul li:not(:last-child) .progress-icon.show-progression-lines:after {
   content: '';
   display: block;
   width: 2px;
@@ -50,11 +50,11 @@
   left: calc(37%);
 }
 
-.map-ui ul li:not(:first-child) .progress-icon.show-arrow:before {
+.map-ui ul li:not(:first-child) .progress-icon.show-progression-lines:before {
   bottom: calc(50% + 1.7rem);
 }
 
-.map-ui ul li:not(:last-child) .progress-icon.show-arrow:after {
+.map-ui ul li:not(:last-child) .progress-icon.show-progression-lines:after {
   top: calc(50% + 1.2rem);
 }
 

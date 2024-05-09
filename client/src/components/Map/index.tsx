@@ -71,7 +71,7 @@ function MapLi({
   landing = false,
   completed,
   claimed,
-  showArrows = false,
+  showProgressionLines = false,
   showNumbers = false,
   index
 }: {
@@ -79,7 +79,7 @@ function MapLi({
   landing: boolean;
   completed: boolean;
   claimed: boolean;
-  showArrows?: boolean;
+  showProgressionLines?: boolean;
   showNumbers?: boolean;
   index: number;
 }) {
@@ -90,7 +90,9 @@ function MapLi({
         data-playwright-test-label='curriculum-map-button'
       >
         <div className='progress-icon-wrapper'>
-          <div className={`progress-icon${showArrows ? ' show-arrow' : ''}`}>
+          <div
+            className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
+          >
             <RibbonIcon
               value={index + 1}
               showNumbers={showNumbers}
@@ -177,7 +179,7 @@ function Map({
             landing={forLanding}
             index={i}
             claimed={isClaimed(superBlock)}
-            showArrows={true}
+            showProgressionLines={true}
             showNumbers={true}
             completed={allSuperblockChallengesCompleted(superBlock)}
           />
