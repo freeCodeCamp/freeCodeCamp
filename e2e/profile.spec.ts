@@ -87,7 +87,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/certifieduser');
 
   // The following line is required if you're running the test in local development
-  // await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
+  //await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
 });
 
 test.describe('Profile component', () => {
@@ -109,10 +109,13 @@ test.describe('Profile component', () => {
     ).toBeVisible();
     await expect(page.getByText('Full Stack User')).toBeVisible();
     await expect(page.getByText('Joined November 2020')).toBeVisible();
+
     await expect(
-      page.getByRole('link', { name: 'Top Contributor' })
+      page.getByText(translations.profile.contributor)
     ).toBeVisible();
-    await expect(page.getByText('2019')).toBeVisible();
+    expect(
+      await page.locator('.badge-card-description').textContent()
+    ).toContain('Among most prolific volunteers');
   });
 
   test('renders total points correctly', async ({ page }) => {
