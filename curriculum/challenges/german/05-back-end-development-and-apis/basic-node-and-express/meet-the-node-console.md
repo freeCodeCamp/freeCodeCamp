@@ -30,7 +30,7 @@ To implement server auto restarting on file save Node provides the `--watch` fla
 
 # --instructions--
 
-Ändere die `myApp.js`-Datei, um "Hello World" auf der Konsole zu protokollieren.
+Modify the `myApp.js` file to log "Hello World" to the console.
 
 # --hints--
 

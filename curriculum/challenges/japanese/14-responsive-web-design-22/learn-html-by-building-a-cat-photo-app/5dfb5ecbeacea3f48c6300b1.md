@@ -7,9 +7,9 @@ dashedName: step-21
 
 # --description--
 
-The `li` element is used to create a list item in an ordered or unordered list.
+順序付きリストまたは順序なしリストのリスト項目を作成するには、`li` 要素を使います。
 
-Here is an example of list items in an unordered list:
+こちらが順序なしリスト内のリスト項目の例です。
 
 ```html
 <ul>
@@ -18,19 +18,19 @@ Here is an example of list items in an unordered list:
 </ul>
 ```
 
-Within the `ul` element nest three list items to display three things cats love:
+`ul` 要素内に 3 つのリスト項目をネストして、下記 3 つの猫が好きなものを表示してください:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-You should have three `li` elements. Each `li` element should have its own opening and closing tag.
+`li` 要素が 3 つ必要です。 各 `li` 要素に開始タグと終了タグが必要です。
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+3 つの `li` 要素に、任意の順番でテキスト `cat nip`、`laser pointers`、`lasagna` が設定されている必要があります。 テキストが設定されていないか、誤字脱字があります。
 
 ```js
 assert.deepStrictEqual(
@@ -41,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-The three `li` elements should be located between the `ul` element's opening and closing tags.
+3 つの `li` 要素は、`ul` 要素の開始タグと終了タグの間に配置する必要があります。
 
 ```js
 assert(
