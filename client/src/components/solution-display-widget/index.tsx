@@ -10,7 +10,7 @@ import './solution-display-widget.css';
 import '@freecodecamp/ui/dist/base.css';
 interface Props {
   completedChallenge: CompletedChallenge;
-  dataCy?: string;
+  playwrightData?: string;
   projectTitle: string;
   showUserCode: () => void;
   showProjectPreview?: () => void;
@@ -20,7 +20,7 @@ interface Props {
 
 export function SolutionDisplayWidget({
   completedChallenge,
-  dataCy,
+  playwrightData,
   projectTitle,
   showUserCode,
   showProjectPreview,
@@ -36,7 +36,11 @@ export function SolutionDisplayWidget({
   // two dropdowns for the same project on the page.
   const randomIdSuffix = Math.floor(Math.random() * 1_000_000);
   const ShowFilesSolutionForCertification = (
-    <Button block={true} data-cy={dataCy} onClick={showUserCode}>
+    <Button
+      block={true}
+      data-playwright-test-label={playwrightData}
+      onClick={showUserCode}
+    >
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.solution-for', { projectTitle })}
@@ -103,7 +107,7 @@ export function SolutionDisplayWidget({
     <Button
       block={true}
       variant='primary'
-      data-cy={dataCy}
+      data-playwright-test-label={playwrightData}
       onClick={showUserCode}
     >
       {viewText}{' '}
@@ -193,7 +197,7 @@ export function SolutionDisplayWidget({
     <Button
       block={true}
       variant='primary'
-      data-cy={dataCy}
+      data-playwright-test-label={playwrightData}
       onClick={showExamResults}
     >
       {viewText}{' '}

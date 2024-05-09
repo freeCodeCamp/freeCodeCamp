@@ -142,5 +142,16 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
         }
       }
     }
+    await page.goto('/settings', {
+      timeout: 60000
+    });
+    for (const projectTitle of projectTitles) {
+      await page.getByTestId(projectTitle).click();
+      await expect(
+        page.getByRole('heading', { name: `Solution for ${projectTitle}` })
+      ).toBeVisible();
+      // the data-cy attribute is baked into the freeCodeCamp/ui modal
+      await page.locator('[data-cy="solution-viewer-close-btn"]').click();
+    }
   });
 });

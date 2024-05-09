@@ -63,28 +63,9 @@ const pythonProjects = {
 };
 
 describe('project submission', () => {
-  beforeEach(() => {});
-  // NOTE: this will fail once challenge tests are added.
-  it('Should be possible to submit Python projects', () => {
-    const { superBlock, block, challenges } = pythonProjects;
-    challenges.forEach(({ slug }) => {
-      const url = `/learn/${superBlock}/${block}/${slug}`;
-      cy.visit(url);
-      cy.get('#dynamic-front-end-form')
-        .get('#solution')
-        .type('https://replit.com/@camperbot/python-project#main.py');
-
-      cy.contains("I've completed this challenge").click();
-      cy.contains('go to next challenge');
-      // clicking on 'Go to next challenge' seems to have caused flakiness, so
-      // it's commented out until we figure out why.
-      // cy.contains('Go to next challenge').click();
-
-      // The next two commands are to confirm that go to next challenge has
-      // moved us to the expected challenge before we loop again.
-      // cy.get('.title-text').should('include.text', nextChallengeText);
-      // cy.url().should('not.have.string', url);
-    });
+  beforeEach(() => {
+    cy.task('seed');
+    cy.login();
   });
 
   it(
@@ -101,6 +82,7 @@ describe('project submission', () => {
           const { challenges, meta } = javaScriptSuperBlock.blocks[targetBlock];
 
           const projectTitles = meta.challengeOrder.map(({ title }) => title);
+
           const projectsInOrder = projectTitles.map(projectTitle => {
             return challenges.find(({ title }) => title === projectTitle);
           }) as Challenge[];

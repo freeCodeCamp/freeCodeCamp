@@ -315,7 +315,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
-        dataCy={projectTitle}
+        playwrightData={projectTitle}
         projectTitle={projectTitle}
         showExamResults={showExamResults}
         showUserCode={showUserCode}
