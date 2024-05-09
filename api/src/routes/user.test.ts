@@ -1125,11 +1125,31 @@ Thanks and regards,
     });
 
     describe('/api/users/get-public-profile', () => {
+      const profilelessUser = 'profileless-user';
+      const lockedUser = 'locked-user';
+      const lockedUserProfileUI = {
+        isLocked: true,
+        showAbout: true,
+        showPortfolio: false
+      };
+      const users = [profilelessUser, lockedUser];
       beforeAll(async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: { ...minimalUserData, username: profilelessUser }
+        });
         await fastifyTestInstance.prisma.user.create({
           data: {
             ...minimalUserData,
-            username: 'testuser'
+            username: lockedUser,
+            profileUI: lockedUserProfileUI
+          }
+        });
+      });
+
+      afterAll(async () => {
+        await fastifyTestInstance.prisma.user.deleteMany({
+          where: {
+            OR: users.map(username => ({ username }))
           }
         });
       });
@@ -1160,23 +1180,43 @@ Thanks and regards,
 
         test('returns 200 status code with a locked profile if the profile is private', async () => {
           const response = await superGet(
-            '/api/users/get-public-profile?username=testuser'
+            `/api/users/get-public-profile?username=${lockedUser}`
           );
+
           expect(response.body).toStrictEqual({
             entities: {
               user: {
-                'private-user': {
+                [lockedUser]: {
                   isLocked: true,
-                  profileUI: lockedProfileUI,
-                  username: 'private-user'
+                  profileUI: lockedUserProfileUI,
+                  username: lockedUser
                 }
               }
             },
-            result: 'private-user'
+            result: lockedUser
           });
           expect(response.statusCode).toBe(200);
         });
 
+        test('returns 200 status code locked profile if the profile is missing', async () => {
+          const response = await superGet(
+            `/api/users/get-public-profile?username=${profilelessUser}`
+          );
+
+          expect(response.body).toStrictEqual({
+            entities: {
+              user: {
+                [profilelessUser]: {
+                  isLocked: true,
+                  profileUI: lockedProfileUI,
+                  username: profilelessUser
+                }
+              }
+            },
+            result: profilelessUser
+          });
+          expect(response.statusCode).toBe(200);
+        });
         test.todo('returns 200 status code with public user object');
       });
     });

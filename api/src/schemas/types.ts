@@ -57,3 +57,16 @@ export const examResults = Type.Object({
 export const surveyTitles = Type.Union([
   Type.Literal('Foundational C# with Microsoft Survey')
 ]);
+
+export const profileUI = Type.Object({
+  isLocked: Type.Optional(Type.Boolean()),
+  showAbout: Type.Optional(Type.Boolean()),
+  showCerts: Type.Optional(Type.Boolean()),
+  showDonation: Type.Optional(Type.Boolean()),
+  showHeatMap: Type.Optional(Type.Boolean()),
+  showLocation: Type.Optional(Type.Boolean()),
+  showName: Type.Optional(Type.Boolean()),
+  showPoints: Type.Optional(Type.Boolean()),
+  showPortfolio: Type.Optional(Type.Boolean()),
+  showTimeLine: Type.Optional(Type.Boolean())
+});

@@ -635,6 +635,25 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         void reply.code(404);
         return reply.send({});
       }
+
+      const profileUI = normalizeProfileUI(user.profileUI);
+      if (profileUI.isLocked) {
+        void reply.code(200);
+        return reply.send({
+          // TODO(Post-MVP): just return isLocked and an empty profileUI. No
+          // need for entities or result.
+          entities: {
+            user: {
+              [user.username]: {
+                isLocked: true,
+                profileUI,
+                username: user.username
+              }
+            }
+          },
+          result: user.username
+        });
+      }
     }
   );
 
