@@ -9,8 +9,10 @@ test('should be possible to report a user from their profile page', async ({
 }) => {
   await page.goto('/twaha');
 
-  // The following line is required if you're running the test in local development
-  await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
+  // If you build the client locally, delete the button click below.
+  if (!process.env.CI) {
+    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
+  }
 
   await page.getByText("Flag This User's Account for Abuse").click();
 
