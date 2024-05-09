@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
 import curriculum from '../shared/config/curriculum.json';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 interface Meta {
@@ -79,7 +80,11 @@ test.describe('Projects', () => {
 });
 
 test.describe('JavaScript projects can be submitted and then viewed in /settings and on the certifications', () => {
-  test('projects are submitted and viewed correctly', async ({ page }) => {
+  test('projects are submitted and viewed correctly', async ({
+    page,
+    browserName,
+    isMobile
+  }) => {
     test.setTimeout(60000);
     const cur: Curriculum = { ...curriculum };
 
@@ -120,13 +125,15 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
       for (const files of solutions) {
         for (const { contents } of files) {
-          const editor = page.getByLabel('Editor content');
+          const editor = getEditors(page);
 
-          await editor.click();
-          await page.keyboard.press('Meta+A');
-          await page.keyboard.press('Backspace');
+          await focusEditor({ page, browserName, isMobile });
+          await clearEditor({ page, browserName });
 
-          await editor.fill(contents as string);
+          await editor.evaluate((element, value) => {
+            (element as HTMLTextAreaElement).value = value;
+            element.dispatchEvent(new Event('input', { bubbles: true }));
+          }, contents as string);
 
           await page.getByRole('button', { name: 'Run the Tests' }).click();
           await page
