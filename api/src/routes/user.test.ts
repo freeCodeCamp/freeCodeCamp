@@ -110,6 +110,19 @@ const minimalUserData: Prisma.userCreateInput = {
   unsubscribeId: '1234567890'
 };
 
+const lockedProfileUI = {
+  isLocked: true,
+  showAbout: false,
+  showCerts: false,
+  showDonation: false,
+  showHeatMap: false,
+  showLocation: false,
+  showName: false,
+  showPoints: false,
+  showPortfolio: false,
+  showTimeLine: false
+};
+
 // These are not part of the schema, but are added to the user object by
 // get-session-user's handler
 const computedProperties = {
@@ -119,18 +132,7 @@ const computedProperties = {
   points: 1,
   // This is the default value if profileUI is missing. If individual properties
   // are missing from the db, they will be omitted from the response.
-  profileUI: {
-    isLocked: true,
-    showAbout: false,
-    showCerts: false,
-    showDonation: false,
-    showHeatMap: false,
-    showLocation: false,
-    showName: false,
-    showPoints: false,
-    showPortfolio: false,
-    showTimeLine: false
-  }
+  profileUI: lockedProfileUI
 };
 
 // This is (most of) what we expect to get back from the API. The remaining
@@ -1111,6 +1113,71 @@ Thanks and regards,
           setCookies
         });
         expect(response.statusCode).toBe(401);
+      });
+    });
+  });
+
+  describe('Public', () => {
+    let superGet: ReturnType<typeof createSuperRequest>;
+
+    beforeEach(() => {
+      superGet = createSuperRequest({ method: 'GET' });
+    });
+
+    describe('/api/users/get-public-profile', () => {
+      beforeAll(async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...minimalUserData,
+            username: 'testuser'
+          }
+        });
+      });
+
+      describe('GET', () => {
+        test('returns 400 status code if the username param is missing', async () => {
+          const res = await superGet('/api/users/get-public-profile');
+          // TODO(Post-MVP): return something more informative
+          expect(res.body).toStrictEqual({});
+          expect(res.statusCode).toBe(400);
+        });
+
+        test('returns 400 status code if the username param is empty', async () => {
+          const res = await superGet('/api/users/get-public-profile?username=');
+          // TODO(Post-MVP): return something more informative
+          expect(res.body).toStrictEqual({});
+          expect(res.statusCode).toBe(400);
+        });
+
+        test('returns 404 status code for non-existent user', async () => {
+          const response = await superGet(
+            '/api/users/get-public-profile?username=non-existent'
+          );
+          // TODO(Post-MVP): return something more informative
+          expect(response.body).toStrictEqual({});
+          expect(response.statusCode).toBe(404);
+        });
+
+        test('returns 200 status code with a locked profile if the profile is private', async () => {
+          const response = await superGet(
+            '/api/users/get-public-profile?username=testuser'
+          );
+          expect(response.body).toStrictEqual({
+            entities: {
+              user: {
+                'private-user': {
+                  isLocked: true,
+                  profileUI: lockedProfileUI,
+                  username: 'private-user'
+                }
+              }
+            },
+            result: 'private-user'
+          });
+          expect(response.statusCode).toBe(200);
+        });
+
+        test.todo('returns 200 status code with public user object');
       });
     });
   });
