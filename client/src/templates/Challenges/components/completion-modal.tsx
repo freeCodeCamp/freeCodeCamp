@@ -164,6 +164,8 @@ class CompletionModal extends Component<
       submitChallenge
     } = this.props;
 
+    const isMacOS = navigator.userAgent.includes('Mac OS');
+
     return (
       <Modal
         onClose={close}
@@ -199,7 +201,9 @@ class CompletionModal extends Component<
             onClick={() => submitChallenge()}
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
-            <span className='hidden-xs'> (Ctrl + Enter)</span>
+            <span className='hidden-xs'>
+              {isMacOS ? ' (Command + Enter)' : ' (Ctrl + Enter)'}
+            </span>
           </Button>
           <Spacer size='xxSmall' />
           {this.state.downloadURL ? (
