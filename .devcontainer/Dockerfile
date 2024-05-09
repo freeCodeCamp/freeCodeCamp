@@ -3,7 +3,6 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu-${VARIANT}
 
 ARG NODE_MAJOR=20
 ARG MONGODB_VERSION=6.0.4
-
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y sudo && \
