@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
 test('should render the modal content correctly', async ({ page }) => {
   await page.goto(
@@ -36,7 +37,7 @@ test('should render the modal content correctly', async ({ page }) => {
   ).toBeVisible();
 });
 
-test('User can reset challenge', async ({ page }) => {
+test('User can reset challenge', async ({ page, isMobile, browserName }) => {
   const initialText = 'CatPhotoApp';
   const initialFrame = page
     .frameLocator('iframe[title="challenge preview"]')
@@ -54,13 +55,11 @@ test('User can reset challenge', async ({ page }) => {
   // Building the preview can take a while
   await expect(initialFrame).toBeVisible({ timeout: 10000 });
 
-  const editorPaneLabel =
-    'Editor content;Press Alt+F1 for Accessibility Options.';
-
   // Modify the text in the editor pane, clearing first, otherwise the existing
   // text will be selected before typing
-  await page.getByLabel(editorPaneLabel).fill('');
-  await page.getByLabel(editorPaneLabel).fill(updatedText);
+  await focusEditor({ page, isMobile, browserName });
+  await clearEditor({ page, browserName });
+  await getEditors(page).fill(updatedText);
   await expect(updatedFrame).toBeVisible({ timeout: 10000 });
 
   // Run the tests so the lower jaw updates (later we confirm that the update
@@ -95,11 +94,9 @@ test('User can reset classic challenge', async ({ page, isMobile }) => {
     '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
   );
 
-  const editorPaneLabel =
-    'Editor content;Press Alt+F1 for Accessibility Options.';
   const challengeSolution = '// This is in-line comment';
 
-  await page.getByLabel(editorPaneLabel).fill(challengeSolution);
+  await getEditors(page).fill(challengeSolution);
 
   const submitButton = page.getByRole('button', {
     name: isMobile ? translations.buttons.run : translations.buttons['run-test']
