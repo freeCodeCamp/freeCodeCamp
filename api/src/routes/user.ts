@@ -606,3 +606,37 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
 
   done();
 };
+
+/**
+ * Plugin containing public GET routes for user account management. They are kept
+ * separate because they do not require CSRF protection or authorization.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.get(
+    '/api/users/get-public-profile',
+    {
+      schema: schemas.getPublicProfile
+    },
+    async (req, reply) => {
+      // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
+      const user = await fastify.prisma.user.findFirst({
+        where: { username: req.query.username }
+      });
+
+      if (!user) {
+        void reply.code(404);
+        return reply.send({});
+      }
+    }
+  );
+
+  done();
+};
