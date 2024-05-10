@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
-import curriculum from '../shared/config/curriculum.json';
+import curriculum from './fixtures/js-ads-projects.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { authedPost } from './utils/request';
 
@@ -27,14 +27,10 @@ interface Challenge {
   isPrivate?: boolean;
 }
 
-interface Curriculum {
+interface block {
   [key: string]: {
-    blocks: {
-      [key: string]: {
-        meta: Meta;
-        challenges: Challenge[];
-      };
-    };
+    meta: Meta;
+    challenges: Challenge[];
   };
 }
 
@@ -95,14 +91,12 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     request
   }) => {
     test.setTimeout(60000);
-    const cur: Curriculum = { ...curriculum };
 
+    const block: block = curriculum;
     const targetBlock = 'javascript-algorithms-and-data-structures-projects';
-    const javaScriptSuperBlock = Object.values(cur).filter(
-      ({ blocks }) => blocks[targetBlock]
-    )[0];
+    const javaScriptSuperBlock = block[targetBlock];
 
-    const { challenges, meta } = javaScriptSuperBlock?.blocks[targetBlock] || {
+    const { challenges, meta } = javaScriptSuperBlock || {
       challenges: [],
       meta: {}
     };
