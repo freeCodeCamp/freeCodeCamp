@@ -2,7 +2,11 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
 import curriculum from './fixtures/js-ads-projects.json';
-import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import {
+  focusProjectEditor,
+  getProjectEditors,
+  clearProjectEditor
+} from './utils/project-editor';
 import { authedPost } from './utils/request';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
@@ -79,7 +83,6 @@ test.describe('Projects', () => {
 });
 
 test.describe('JavaScript projects can be submitted and then viewed in /settings and on the certifications', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
   });
@@ -90,7 +93,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     isMobile,
     request
   }) => {
-    test.setTimeout(60000);
+    test.setTimeout(20000);
 
     const block: block = curriculum;
     const targetBlock = 'javascript-algorithms-and-data-structures-projects';
@@ -131,19 +134,17 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     // Test the direct flow once.
 
     await page.goto(
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker?testing=true'
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker'
     );
 
-    const editor = getEditors(page);
-    await focusEditor({ page, browserName, isMobile });
-    await clearEditor({ page, browserName });
+    const editor = await getProjectEditors({ page, isMobile });
+    await focusProjectEditor({ page, browserName, isMobile });
+    await clearProjectEditor({ page, browserName });
 
-    await editor.evaluate((element, value) => {
-      (element as HTMLTextAreaElement).value = value;
-      element.dispatchEvent(new Event('input', { bubbles: true }));
-    }, contents);
+    await editor.fill(contents);
 
-    await page.getByRole('button', { name: 'Run the Tests' }).click();
+    await page.getByRole('button', { name: 'Run' }).click();
+
     await page
       .getByRole('button', { name: 'Go to next challenge', exact: false })
       .click();
