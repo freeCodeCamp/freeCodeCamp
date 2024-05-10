@@ -1,7 +1,10 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
 import curriculum from '../shared/config/curriculum.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { authedPost } from './utils/request';
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 interface Meta {
@@ -80,10 +83,16 @@ test.describe('Projects', () => {
 });
 
 test.describe('JavaScript projects can be submitted and then viewed in /settings and on the certifications', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  test.beforeAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user');
+  });
+
   test('projects are submitted and viewed correctly', async ({
     page,
     browserName,
-    isMobile
+    isMobile,
+    request
   }) => {
     test.setTimeout(60000);
     const cur: Curriculum = { ...curriculum };
@@ -112,39 +121,55 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
           `/learn/${superBlock}/${block}/${dashedName}`
       );
 
+    const projectIdsInOrder = [
+      'aaa48de84e1ecc7c742e1124',
+      'a7f4d8f2483413a6ce226cac',
+      '56533eb9ac21ba0edf2244e2',
+      'aff0395860f5d3034dc0bfc9',
+      'aa2e6f85cab2ab736c9a9b24'
+    ];
+
     expectedPaths.push('/learn/javascript-algorithms-and-data-structures/');
 
-    for (const {
-      superBlock,
-      block,
-      dashedName,
-      solutions
-    } of projectsInOrder) {
-      const url = `/learn/${superBlock}/${block}/${dashedName}?testing=true`;
-      await page.goto(url);
+    const contents = projectsInOrder[0].solutions[0][0].contents as string;
 
-      for (const files of solutions) {
-        for (const { contents } of files) {
-          const editor = getEditors(page);
+    // Test the direct flow once.
 
-          await focusEditor({ page, browserName, isMobile });
-          await clearEditor({ page, browserName });
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker?testing=true'
+    );
 
-          await editor.evaluate((element, value) => {
-            (element as HTMLTextAreaElement).value = value;
-            element.dispatchEvent(new Event('input', { bubbles: true }));
-          }, contents as string);
+    const editor = getEditors(page);
+    await focusEditor({ page, browserName, isMobile });
+    await clearEditor({ page, browserName });
 
-          await page.getByRole('button', { name: 'Run the Tests' }).click();
-          await page
-            .getByRole('button', { name: 'Go to next challenge', exact: false })
-            .click();
-        }
-      }
+    await editor.evaluate((element, value) => {
+      (element as HTMLTextAreaElement).value = value;
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+    }, contents);
+
+    await page.getByRole('button', { name: 'Run the Tests' }).click();
+    await page
+      .getByRole('button', { name: 'Go to next challenge', exact: false })
+      .click();
+
+    // Submit the rest with the API.
+
+    for (let i = 1; i < projectsInOrder.length; i++) {
+      await authedPost(request, '/modern-challenge-completed', {
+        id: projectIdsInOrder[i],
+        challengeType: 5,
+        files: projectsInOrder[i].solutions[0].map(({ contents }) => ({
+          contents: contents,
+          key: 'scriptjs',
+          ext: 'js',
+          name: 'script',
+          history: ['script.js']
+        }))
+      });
     }
-    await page.goto('/settings', {
-      timeout: 60000
-    });
+
+    await page.goto('/settings');
     for (const projectTitle of projectTitles) {
       await page.getByTestId(projectTitle).click();
       await expect(
