@@ -108,12 +108,13 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       challenges.find(challenge => challenge.title === title)
     ) as Challenge[];
 
-    const expectedPaths = projectsInOrder
-      .slice(1)
-      .map(
-        ({ block, superBlock, dashedName }) =>
-          `/learn/${superBlock}/${block}/${dashedName}`
-      );
+    const expectedPaths = [
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker',
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter',
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher',
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator',
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register'
+    ];
 
     const projectIdsInOrder = [
       'aaa48de84e1ecc7c742e1124',
@@ -164,6 +165,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     }
 
     await page.goto('/settings');
+
     for (const projectTitle of projectTitles) {
       await page.getByTestId(projectTitle).click();
       await expect(
@@ -172,5 +174,42 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       // the data-cy attribute is baked into the freeCodeCamp/ui modal
       await page.locator('[data-cy="solution-viewer-close-btn"]').click();
     }
+
+    await page
+      .getByRole('button', {
+        name: "I agree to freeCodeCamp's Academic Honesty Policy."
+      })
+      .click();
+
+    const selector = 'button-for-javascript-algorithms-and-data-structures';
+    await expect(page.getByTestId(selector)).toContainText(
+      'Claim Certification'
+    );
+    await page.getByTestId(selector).click();
+    await expect(page.getByTestId(selector)).toContainText(
+      'Show Certification'
+    );
   });
+
+  // test('Ctrl + enter triggers the completion modal on multifile projects', async ({
+  //   page,
+  //   browserName,
+  //   isMobile
+  // }) => {
+  //   await page.goto(
+  //     '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page?testing=true'
+  //   );
+
+  //   const editor = getEditors(page);
+  //   await focusEditor({ page, browserName, isMobile });
+  //   await clearEditor({ page, browserName });
+
+  //   await editor.evaluate((element, value) => {
+  //     (element as HTMLTextAreaElement).value = value;
+  //     element.dispatchEvent(new Event('input', { bubbles: true }));
+  //   }, 'console.log("Hello, World!");');
+
+  //   await page.keyboard.press('Control+Enter');
+  //   await expect(page.locator('[data-cy="completion-modal"]')).toBeVisible();
+  // });
 });
