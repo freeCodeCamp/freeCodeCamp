@@ -3,17 +3,17 @@ import translations from '../client/i18n/locales/english/translations.json';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 const settingsObject = {
-  userNamePlaceholder: '{{username}}',
-  userNameUpdateLowerCase: 'quincy',
-  userNameUpdateUpperCase: 'Mrugesh',
-  userNameAvailable: 'Sem',
-  userNameAvailablePressingEnter: 'Oliver',
+  usernamePlaceholder: '{{username}}',
+  usernameUpdateToLowerCase: 'quincy',
+  usernameUpdateToUpperCase: 'Mrugesh',
+  usernameAvailable: 'Sem',
+  usernameAvailablePressingEnter: 'Oliver',
+  usernameNotAvailable: 'Twaha',
+  usernameInvalid: 'user!',
+  usernameTooShort: 'us',
   certifiedUsername: 'certifieduser',
   testUser: 'testuser',
-  errorCode: '404',
-  invalidUserName: 'user!',
-  tooShortUserName: 'us',
-  notAvailableUsername: 'Twaha'
+  errorCode: '404'
 };
 
 test.describe('Username Settings Validation', () => {
@@ -36,7 +36,7 @@ test.describe('Username Settings Validation', () => {
     await expect(
       page.getByText(
         translations.settings.username['is a reserved error code'].replace(
-          settingsObject.userNamePlaceholder,
+          settingsObject.usernamePlaceholder,
           settingsObject.errorCode
         )
       )
@@ -45,12 +45,12 @@ test.describe('Username Settings Validation', () => {
 
   test('Should handle Invalid Username Error', async ({ page }) => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
-    await inputLabel.fill(settingsObject.invalidUserName);
+    await inputLabel.fill(settingsObject.usernameInvalid);
     await expect(
       page.getByText(
         translations.settings.username['contains invalid characters'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.invalidUserName
+          settingsObject.usernamePlaceholder,
+          settingsObject.usernameInvalid
         )
       )
     ).toBeVisible();
@@ -58,12 +58,12 @@ test.describe('Username Settings Validation', () => {
 
   test('Should handle Unavailable Username Error', async ({ page }) => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
-    await inputLabel.fill(settingsObject.notAvailableUsername);
+    await inputLabel.fill(settingsObject.usernameNotAvailable);
     await expect(
       page.getByText(
         translations.settings.username['unavailable'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.notAvailableUsername
+          settingsObject.usernamePlaceholder,
+          settingsObject.usernameNotAvailable
         )
       )
     ).toBeVisible();
@@ -71,12 +71,12 @@ test.describe('Username Settings Validation', () => {
 
   test('Should handle Too Short Username Error', async ({ page }) => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
-    await inputLabel.fill(settingsObject.tooShortUserName);
+    await inputLabel.fill(settingsObject.usernameTooShort);
     await expect(
       page.getByText(
         translations.settings.username['is too short'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.tooShortUserName
+          settingsObject.usernamePlaceholder,
+          settingsObject.usernameTooShort
         )
       )
     ).toBeVisible();
@@ -87,14 +87,14 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
-    await inputLabel.fill(settingsObject.userNameAvailable);
+    await inputLabel.fill(settingsObject.usernameAvailable);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
       page.getByText(
         translations.flash['username-updated'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.userNameAvailable
+          settingsObject.usernamePlaceholder,
+          settingsObject.usernameAvailable
         )
       )
     ).toBeVisible();
@@ -107,14 +107,14 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
-    await inputLabel.fill(settingsObject.userNameUpdateLowerCase);
+    await inputLabel.fill(settingsObject.usernameUpdateToLowerCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
       page.getByText(
         translations.flash['username-updated'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.userNameUpdateLowerCase
+          settingsObject.usernamePlaceholder,
+          settingsObject.usernameUpdateToLowerCase
         )
       )
     ).toBeVisible();
@@ -127,14 +127,14 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
-    await inputLabel.fill(settingsObject.userNameUpdateUpperCase);
+    await inputLabel.fill(settingsObject.usernameUpdateToUpperCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
       page.getByText(
         translations.flash['username-updated'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.userNameUpdateUpperCase
+          settingsObject.usernamePlaceholder,
+          settingsObject.usernameUpdateToUpperCase
         )
       )
     ).toBeVisible();
@@ -153,10 +153,21 @@ test.describe('Username Settings Validation', () => {
     await expect(
       page.getByText(
         translations.flash['username-updated'].replace(
-          settingsObject.userNamePlaceholder,
+          settingsObject.usernamePlaceholder,
           settingsObject.testUser
         )
       )
     ).toBeVisible();
+  });
+
+  test('should not be able to update username to the same username', async ({
+    page
+  }) => {
+    const inputLabel = page.getByLabel(translations.settings.labels.username);
+    const saveButton = page.getByRole('button', {
+      name: translations.settings.labels.username
+    });
+    await inputLabel.fill(settingsObject.testUser);
+    await expect(saveButton).toBeDisabled();
   });
 });
