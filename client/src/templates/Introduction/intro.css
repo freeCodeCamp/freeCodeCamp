@@ -423,12 +423,6 @@ a.map-grid-item.challenge-completed {
   padding: 25px;
 }
 
-/* this margin is used to center the element.
-ToDo: find out why, and remove the need for it */
-.block-grid .map-title > svg {
-  margin-bottom: 4px;
-}
-
 .title-wrapper {
   display: flex;
   flex-direction: row;
