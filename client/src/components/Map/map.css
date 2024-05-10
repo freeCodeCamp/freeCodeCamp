@@ -8,7 +8,12 @@
   padding: 0;
 }
 
-.progress-icon-wrapper {
+.map-ui ul li {
+  display: flex;
+  flex-direction: row;
+}
+
+.map-ui ul li .progress-icon-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,26 +63,8 @@
   top: calc(50% + 1.2rem);
 }
 
-.map-ui ul li {
-  display: flex;
-  flex-direction: row;
-}
-
 .map-ui ul li a > svg {
   overflow: visible;
-}
-
-.map-ui ul li .progress-number {
-  width: calc(42px - 0.1rem);
-  height: 4rem;
-  border-radius: 50%;
-  background-color: var(--quaternary-background);
-  color: var(--secondary-color);
-  border: 0.2rem solid var(--secondary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
 }
 
 @media (max-width: 640px) {
