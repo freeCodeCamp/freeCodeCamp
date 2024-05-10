@@ -1,17 +1,17 @@
 ---
 id: 65ca0dfaea3f4112afde6e26
-title: Step 52
+title: Крок 52
 challengeType: 20
 dashedName: step-52
 ---
 
 # --description--
 
-Still inside the `if` block, append the `key` of the current node to the `result` list.
+Все ще в межах блоку `if`, додайте `key` поточного вузла до списку `result`.
 
 # --hints--
 
-You should append `node.key` to the `result` list.
+Додайте `node.key` до списку `result`.
 
 ```js
 assert.match(code, /result\.append\(\s*node\.key\s*\)/);
