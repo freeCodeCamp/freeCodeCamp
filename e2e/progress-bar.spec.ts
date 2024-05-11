@@ -1,26 +1,25 @@
 import { expect, test } from '@playwright/test';
+import { clearEditor, focusEditor } from './utils/editor';
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.describe('Progress bar component', () => {
   test('Should appear with the correct content after the user has submitted their code', async ({
-    page
+    page,
+    isMobile,
+    browserName
   }) => {
     await page.goto(
-      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
     );
-
-    const monacoEditor = page.getByLabel('Editor content');
-
-    // Using focus instead of click since we're not testing if the editor
-    // behaves correctly, we're using it to complete the challenge.
-    await monacoEditor.focus();
-    await page.keyboard.press('Control+A');
-    //Meta + A works in webkit
-    await page.keyboard.press('Meta+A');
-    await page.keyboard.press('Backspace');
+    // If focusEditor fails, typically it's because the instructions are too
+    // large. There's a bug that means `scrollIntoView` does not work in the
+    // editor and so we have to pick less verbose challenges until that's fixed.
+    await focusEditor({ page, isMobile, browserName });
+    await clearEditor({ page, browserName });
 
     await page.keyboard.insertText(
-      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2></body></html>'
+      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>See more cat photos in our gallery.</p></body></html>'
     );
 
     await page.getByRole('button', { name: 'Check Your Code' }).click();
@@ -36,19 +35,15 @@ test.describe('Progress bar component', () => {
   });
 
   test('should appear in the completion modal after user has submitted their code', async ({
-    page
+    page,
+    isMobile,
+    browserName
   }) => {
     await page.goto(
       '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
     );
-
-    const monacoEditor = page.getByLabel('Editor content');
-    await monacoEditor.focus();
-
-    await page.keyboard.press('Control+A');
-
-    await page.keyboard.press('Meta+A');
-    await page.keyboard.press('Backspace');
+    await focusEditor({ page, isMobile, browserName });
+    await clearEditor({ page, browserName });
 
     await page.keyboard.insertText('var myName;');
 

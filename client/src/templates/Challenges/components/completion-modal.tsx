@@ -185,6 +185,7 @@ class CompletionModal extends Component<
         : t('buttons.go-to-next');
     }
 
+
     return (
       <Modal
         onClose={close}
@@ -219,8 +220,6 @@ class CompletionModal extends Component<
             data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
-            {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
-            <span className='hidden-xs'> (Ctrl + Enter)</span>
             {buttonText}
           </Button>
           <Spacer size='xxSmall' />

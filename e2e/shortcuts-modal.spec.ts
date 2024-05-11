@@ -2,11 +2,10 @@ import { APIRequestContext, Page, expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedPut } from './utils/request';
+import { getEditors } from './utils/editor';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
-const editorPaneLabel =
-  'Editor content;Press Alt+F1 for Accessibility Options.';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
@@ -23,7 +22,7 @@ const enableKeyboardShortcuts = async (request: APIRequestContext) => {
 const openModal = async (page: Page) => {
   // The editor pane is focused by default, so we need to escape or it will
   // capture the keyboard shortcuts
-  await page.getByLabel(editorPaneLabel).press('Escape');
+  await getEditors(page).press('Escape');
   await page.keyboard.press('Shift+?');
 };
 

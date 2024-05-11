@@ -1,7 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
 import { customNanoid } from '../utils/ids';

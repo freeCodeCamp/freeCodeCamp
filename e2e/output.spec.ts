@@ -1,5 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
+import { getEditors } from './utils/editor';
 
 const outputTexts = {
   default: `
@@ -33,7 +35,7 @@ const insertTextInCodeEditor = async ({
       .getByRole('tab', { name: translations.learn['editor-tabs'].code })
       .click();
   }
-  await page.getByLabel('Editor content').fill(text);
+  await getEditors(page).fill(text);
   if (isMobile) {
     await page
       .getByRole('tab', { name: translations.learn['editor-tabs'].console })

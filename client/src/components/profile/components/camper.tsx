@@ -24,12 +24,38 @@ export type CamperProps = Pick<
   | 'joinDate'
 >;
 
-function Camper({ yearsTopContributor }: CamperProps): JSX.Element {
+function Camper({
+  name,
+  username,
+  location,
+  picture,
+  about,
+  yearsTopContributor,
+  githubProfile,
+  isDonating,
+  joinDate,
+  linkedin,
+  twitter,
+  website
+}: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
     <div className='bio-container'>
-      <Bio />
+      <Bio
+        joinDate={joinDate}
+        location={location}
+        username={username}
+        name={name}
+        about={about}
+        githubProfile={githubProfile}
+        linkedin={linkedin}
+        twitter={twitter}
+        website={website}
+        isDonating={isDonating}
+        yearsTopContributor={yearsTopContributor}
+        picture={picture}
+      />
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
