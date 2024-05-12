@@ -21,6 +21,8 @@ i = i + 1;
 
 **Note:** The entire line becomes `i++;`, eliminating the need for the equal sign.
 
+<h2>Hinglish</h2>
+
 Aap aasani se ek variable mein ek ko <dfn>increment</dfn> ya add kar sakte hain `++` operator se.
 
 ```js
@@ -91,3 +93,4 @@ myVar = myVar + 1;
 let myVar = 87;
 myVar++;
 ```
+

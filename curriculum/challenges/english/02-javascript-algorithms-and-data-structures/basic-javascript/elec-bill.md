@@ -7,20 +7,30 @@ dashedName: elec-bill
 
 # --description--
 
-Imagine you're responsible for calculating electricity bills for households. Each household consumes electricity, and the bill varies based on the number of units consumed. The bill calculation involves different rates for different ranges of units consumed, along with an additional surcharge.
+Objective: Calculate the electricity bill based on the number of units consumed.
 
-Write a program to input electricity unit charges and calculate the total electricity bill according to the given condition:
-For the first 50 units Rs. 0.50/unit
-For the next 100 units Rs. 0.75/unit
-For the next 100 units Rs. 1.20/unit
-For units above 250 Rs. 1.50/unit
-An additional surcharge of 20% is added to the bill
 
-**Tips** 
+Introduction: As part of your responsibilities, you are tasked with calculating electricity bills for households. The bill calculation depends on the number of units consumed, with different rates applied to various ranges of units, along with an additional surcharge.
 
-1. Understand how the bill amount varies for different ranges of units consumed.
-2. Pay attention to adding the surcharge correctly to the total bill amount.
-3. Ensure accuracy in calculations and handle different scenarios effectively.
+
+Challenge: Write a program to input the number of electricity units consumed and calculate the total electricity bill according to the provided conditions.
+
+<h2>Hinglish</h2>
+
+Lakshya: Bijli ka bill gine gaye units ke aadhar par calculate karna.
+
+Parichay: Apni zimmedariyon ke hisse ke taur par, aapko gharo ke liye bijli ke bill ka hisaab lagana hai. Bill calculation units ke aadhar par hota hai, jisme alag-alag units ke liye vibhinn dar lagu hoti hai, saath hi ek adhikansh surcharge bhi lagta hai.
+
+Challenge: Ek program likho jismein bijli ke units ka input liya jaye aur diye gaye sharton ke anusar total bijli ka bill calculate kiya jaye.
+
+# --instructions--
+
+For the first 50 units, the rate is Rs. 0.50/unit, so the cost is 50 * 0.50 = Rs. 25.
+For the next 100 units, the rate is Rs. 0.75/unit, so the cost is 100 * 0.75 = Rs. 75.
+The total cost for the first 150 units is Rs. 25 + Rs. 75 = Rs. 100.
+For the next 50 units (200 - 150 = 50 units), the rate is Rs. 1.20/unit, so the cost is 50 * 1.20 = Rs. 60.
+The total cost for 200 units is Rs. 100 + Rs. 60 = Rs. 160.
+Adding the 20% surcharge, the total bill becomes 1.20 * 160 = Rs. 192.
 
 **Hints**
 
@@ -46,8 +56,13 @@ assert(calculateElectricityBill(200)===192)
 
 ```js
 function calculateElectricityBill(units) {
+    let totalBill = 0;
     //  Only change code below this line
+
+    // Only change code above this line
+    return totalBill;
 }
+calculateElectricityBill(192)
 
 ```
 
@@ -85,3 +100,4 @@ function calculateElectricityBill(units) {
 }
 
 ```
+

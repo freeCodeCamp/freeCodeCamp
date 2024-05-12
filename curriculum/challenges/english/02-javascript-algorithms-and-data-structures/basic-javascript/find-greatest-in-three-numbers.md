@@ -7,7 +7,17 @@ dashedName: find-greatest-in-three-numbers
 
 # --description--
 
+
+The task is to create a simple program that prompts the user to input three numbers, and then the program determines which of those three numbers is greater.
+
 Write a program to take three numbers from the user and print the greater number of the three numbers. (Assume all three numbers are distinct)
+
+<h2>Hinglish</h2>
+
+Program likho jo istemal ko protsahan deta hai teen numbers daalne ke liye, phir program tay karta hai ki in teeno numbers mein se kaunsa bada hai.
+
+Ek aasan program likho jo istemal se teen numbers le aur un teeno numbers mein se bada number print kare. (Maan lo ki teeno numbers alag-alag hain)
+
 
 # --instructions--
 
@@ -34,7 +44,9 @@ assert(findGreatestNumber(20,3,43)===43)
 ```js
 function findGreatestNumber(num1, num2, num3) {
     //  Only change code below this line
+    return ;
 }
+findGreatestNumber(20,3,43)
 ```
 
 # --solutions--
@@ -51,3 +63,4 @@ function findGreatestNumber(num1, num2, num3) {
 }
 findGreatestNumber(20,3,43)
 ```
+

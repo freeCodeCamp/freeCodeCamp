@@ -16,6 +16,19 @@ Challenge : This challenge will test your JavaScript skills! Write a program tha
 Functions can accept multiple parameters. You pass arguments to a function call, and the values you provide are referred to as arguments. Multiple parameters are separated by a comma.
 For example, this function takes two numbers as parameters and add them.
 
+<h2>Hinglish</h2>
+
+Lakshya: JavaScript code likho jisme do numbers ko tulna karo aur bada number pehchaano.
+
+Prastavana: Numbers ki tulna programming mein mahatvapurn hai. Yeh challenge aapko sikhayega ki JavaScript ka istemal karke user dwara diye gaye bade number ko kaise pata kiya jata hai.
+
+Chunauti: Yeh challenge aapke JavaScript ke kshamataon ko parakhne wala hai! Ek program likho jo user se do numbers poochhe. Fir, conditional statements ka istemal karke pata karo ki kaun sa number bada hai.
+
+Functions kayi parameters ko svikar kar sakti hain. Tum ek function call mein arguments ko pass karte ho, aur diye gaye values ko arguments kaha jata hai. Multiple parameters comma se alag kiye jaate hain.
+Udaharan ke liye, yeh function do numbers ko parameters ke roop mein lekar unhe jodta hai.
+
+
+
 
 ```js
 function findSum(number1, number2) {
@@ -53,7 +66,9 @@ assert(findGreaterNumber(5, 7)===7);
 ```js
 function findGreaterNumber(number1, number2) {
     // Only change code below this line
+    return ;
 }
+findGreaterNumber(5,7)
 
 ```
 
@@ -75,3 +90,4 @@ function findGreaterNumber(number1, number2) {
 findGreaterNumber(20,3)
 findGreaterNumber(5, 7);
 ```
+

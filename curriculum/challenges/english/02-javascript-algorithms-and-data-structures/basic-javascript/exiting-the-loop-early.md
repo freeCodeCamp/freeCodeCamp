@@ -30,7 +30,27 @@ for (let i = 1; i <= 10; i++) {
 
 In this example, the loop stops executing when `i` is equal to 5, and the numbers 1 to 4 are logged to the console.
 
-Similarly, in a `switch` statement, the `break` statement is used to exit the `switch` block after a case has been executed. This prevents the subsequent `case` blocks from being executed.
+<h2>Hinglish</h2>
+
+JavaScript mein, `break` statement ka istemal loop ko pehle se bahar nikalne ya "break" karne ke liye kiya jata hai. Yeh aam taur par `for`, `while`, aur `do...while` loops mein istemal hota hai, sath hi `switch` statements mein bhi.
+
+Is samasya ke liye ek flowchart dekhte hain
+
+`break` statement jab kisi loop ke andar paya jata hai, tab loop turant khatam ho jata hai, aur program loop ke baad ki execution jari rakhta hai. Yeh ek vishesh sthiti ke anusaar ek loop ko jaldi se rokne ke liye ya ek nishchit karya pura hone par ek loop se bahar nikalne ke liye upyogi ho sakta hai.
+
+Yahan ek `for` loop mein `break` ka istemal ka ek udaharan hai:
+
+```javascript
+for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+        break; // i ke barabar 5 hone par loop se bahar nikalna
+    }
+    console.log(i);
+}
+// Output: 1, 2, 3, 4
+```
+
+Is udaharan mein, jab `i` 5 ke barabar hota hai, tab loop ka execution ruk jata hai, aur console mein 1 se lekar 4 tak ke numbers print hote hain.
 
 # --question--
 

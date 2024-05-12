@@ -21,6 +21,7 @@ i = i - 1;
 
 **Note:** The entire line becomes `i--;`, eliminating the need for the equal sign.
 
+<h2>Hinglish</h2>
 Aap aasani se ek variable ko `--` operator se ek kam kar sakte hain.
 
 ```js
@@ -94,3 +95,4 @@ myVar = myVar - 1;
 let myVar = 11;
 myVar--;
 ```
+

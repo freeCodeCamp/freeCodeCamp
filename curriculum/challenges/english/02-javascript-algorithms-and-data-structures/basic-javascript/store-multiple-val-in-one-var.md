@@ -17,6 +17,8 @@ const sandwich = ["peanut butter", "jelly", "bread"];
 
 JavaScript `array` variables ke saath, hum ek jagah par kai data pieces store kar sakte hain.
 
+<h2>Hinglish</h2>
+
 Aap ek array declaration ko ek opening square bracket se shuru karte hain, ek closing square bracket se end karte hain, aur har entry ke beech ek comma daalte hain, jaise ismein:
 
 ```js
@@ -69,3 +71,4 @@ const myArray = [];
 ```js
 const myArray = ["The Answer", 42];
 ```
+

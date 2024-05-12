@@ -7,18 +7,26 @@ dashedName: gross-salary
 
 # --description--
 
-Calculate the gross salary of an employee based on their basic salary and specified allowances.
+Objective: Calculate the gross salary of an employee based on their basic salary and specified allowances.
 
-As a payroll manager in a company, your responsibility is to determine the gross salary of employees considering their basic salary and various allowances such as House Rent Allowance (HRA) and Dearness Allowance (DA). These allowances vary based on the employee's basic salary range.
+Introduction: As a payroll manager in a company, your responsibility is to determine the gross salary of employees considering their basic salary and various allowances such as House Rent Allowance (HRA) and Dearness Allowance (DA). These allowances vary based on the employee's basic salary range.
 
-Write a program to take the basic salary of an employee as input and calculate their gross salary according to predefined rules.
 
-For the first 50 units, the rate is Rs. 0.50/unit, so the cost is 50 * 0.50 = Rs. 25.
-For the next 100 units, the rate is Rs. 0.75/unit, so the cost is 100 * 0.75 = Rs. 75.
-The total cost for the first 150 units is Rs. 25 + Rs. 75 = Rs. 100.
-For the next 50 units (200 - 150 = 50 units), the rate is Rs. 1.20/unit, so the cost is 50 * 1.20 = Rs. 60.
-The total cost for 200 units is Rs. 100 + Rs. 60 = Rs. 160.
-Adding the 20% surcharge, the total bill becomes 1.20 * 160 = Rs. 192.
+Challenge: Write a program to take the basic salary of an employee as input and calculate their gross salary according to predefined rules.
+
+<h2>Hinglish</h2>
+
+Lakshya:
+
+Kisi company mein vetan prabandhak ke roop mein, aapka zimmedari hai karmachariyon ke mool vetan aur vibhinn bhattaon jaise Ghar Kiraya Bhatta (HRA) aur Mahangaayi Bhatta (DA) ke madhya nazar rakhte hue unka gross vetan tay karna. Ye bhatta karmachari ke mool vetan shreni ke aadhaar par vibhinn hote hain.
+
+Prastavana:
+
+Ek program likhein jo ek karmachari ka mool vetan input ke roop mein le aur pree-nirdhaarit niyamon ke anusaar unka gross vetan ganit karein.
+
+Challenge: Ek program likho jismein ek karmachari ka moolya vetan input ke roop mein liya jata hai aur unka bruto vetan pehle se nirdharit niyamon ke anusar calculate kiya jata hai.
+
+
 
 ```js
 Basic Salary <= 10000 : HRA = 20%, DA = 80%
@@ -30,11 +38,10 @@ Basic Salary > 20000 : HRA = 30%, DA = 95%
 
 Since the basic salary lies in the bracket 10000 <= basic salary <= 20000, the HRA equals 25% of the salary = 4250, and the DRA equals 90% of the basic salary = 15300. Hence the total salary is 17000+15300+4250 = 36550.
 
-**Tips** 
+<h2>Hinglish</h2>
 
-1. Understand the different allowance percentages based on the employee's basic salary range.
-2. Pay attention to how the gross salary is calculated by adding the basic salary, HRA, and DA.
-3. Ensure accuracy in calculations and handle different basic salary scenarios effectively.
+Moolya vetan 10000 se kam ya 20000 se adhik hai, isliye HRA 25% of vetan hai = 4250, aur DA moolya vetan ka 90% hai = 15300. Is tarah, total vetan 17000+15300+4250 = 36550 hai.
+
 
 **Hints**
 
@@ -58,7 +65,9 @@ assert(calculateGrossSalary(17000)===36550)
 ```js
 function calculateGrossSalary(basicSalary){
      //  Only change code below this line
+     return ;
     }
+calculateGrossSalary(17000)
 ```
 
 # --solutions--

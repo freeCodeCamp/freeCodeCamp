@@ -7,8 +7,19 @@ dashedName: odd-even-sum
 
 # --description--
 
-Write a program to take a list of integers as input from the user and print the sum of all the odd numbers and even numbers in the given list. The program should print the sum of odd numbers first, followed by the sum of even numbers.
+Objective: The objective of this challenge is to write a program that calculates the sum of odd and even elements separately in a given array.
 
+Introduction: Summing the odd and even elements separately in an array is a common task in programming. This challenge focuses on writing a program that efficiently calculates the sum of odd and even numbers in a given array.
+
+Challenge: Write a program that takes an array of numbers as input and prints the sum of all the odd numbers and even numbers separately, in that order.
+
+<h2>Hinglish</h2>
+
+Lakshya: Iss challenge ka lakshya hai ek program likhna jo di gayi array mein vishesh roop se vishama aur samaankon ke yog ko alag-alag gina.
+
+Prastavana: Ek array mein vishama aur samaankon ke yog ko alag-alag ginaana programming mein ek aam karya hai. Ye challenge us par dhyan kendrit karta hai ki ek diye gaye array mein vishesh roop se vishama aur samaankon ke yog ko kis tarah se prabhavshali tareeke se ginaya ja sake.
+
+Chunauti: Ek program likho jo sankhyon ka ek array input ke roop mein le aur usmein maujood sabhi vishama aur samaankon ke yog ko alag-alag, usi kram mein, print kare.
 
 # --instructions--
 
@@ -23,6 +34,13 @@ Ensure that the output prints the sum of odd numbers and even numbers in this or
 197
 168
 ```
+
+**Prompts**
+Click on this - <a href = "https://cs50.ai/chat">Link</a> to Go to CS50 AI.
+And use this prompt.
+
+1. Prompt 1: Could you describe your approach for calculating the sum of odd and even numbers separately?
+2. Prompt 2: Would you like us to consider any special cases or edge scenarios in our implementation?
 
 # --hints--
 
@@ -48,7 +66,7 @@ assert.deepEqual(actualOutput, expectedOutput, `Expected output: ${expectedOutpu
 function oddEvenSum(arr) {
     // Only change code below this line
 
-
+    return
    // Only change code above this line
    
 }
@@ -57,6 +75,7 @@ const inputArray = [23, 45, 32, 25, 46, 33, 71, 90];
 const result = oddEvenSum(inputArray);
 console.log(result[0]);
 console.log(result[1]);
+
 ```
 
 # --solutions--
@@ -75,4 +94,5 @@ function oddEvenSum(arr) {
     return [oddSum, evenSum];
 }
 ```
+
 

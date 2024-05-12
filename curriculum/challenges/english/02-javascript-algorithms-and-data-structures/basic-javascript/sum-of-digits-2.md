@@ -9,6 +9,10 @@ dashedName: sum-of-digits-2
 
 Given a number N, your task is to repeatedly find the sum of its digits until you get a single-digit number, and then print that digit.
 
+<h2>Hinglish</h2>
+
+Ek number N diya gaya hai, tumhara kaam hai uske digits ka sum lagatar nikalna jab tak tum ek single-digit number na mil jao. Fir jab woh ek single-digit number ho jaye, usse print karo.
+
 **For example:**
 
 For input `483`, the sum of its digits is `4 + 8 + 3 = 15`, and then `1 + 5 = 6`, so the output should be `6`.
@@ -22,6 +26,13 @@ Write a function sumOfDigits that takes a number N as input and returns the sing
 2. Use integer division `Math.floor()` to remove the last digit from the number.
 3. Implement a `loop` to repeatedly sum the digits until you get a single-digit number.
     
+**Prompts**
+Click on this - <a href = "https://cs50.ai/chat">Link</a> to Go to CS50 AI.
+And use this prompt.
+
+1. Prompt 1: Would you like us to consider any special cases or edge scenarios in our implementation?
+
+
 # --hints--
 
 `sumOfDigits(483)` should return `6`.
@@ -48,6 +59,8 @@ function sumOfDigits(N) {
   return "Change Me!";
   // Only change code above this line
 }
+
+sumOfDigits();
 ```
 
 # --solutions--
@@ -66,3 +79,4 @@ function sumOfDigits(N) {
 }
 
 ```
+

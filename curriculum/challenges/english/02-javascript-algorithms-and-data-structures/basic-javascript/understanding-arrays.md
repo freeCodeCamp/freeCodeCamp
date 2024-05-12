@@ -22,11 +22,28 @@ You can access elements in an array using square brackets `[]` and the index of 
 let firstColor = colors[0]; // 'red'
 ```
 
-Arrays in JavaScript are dynamic, which means you can add or remove elements from them. You can use methods like `push()` to add elements to the end of an array, `pop()` to remove the last element, `unshift()` to add elements to the beginning, and `shift()` to remove the first element. We will study about these methods in upcoming lessons.
-
-Arrays also have many built-in methods for performing operations like iterating over elements (`forEach`, `map`, `filter`, etc.), searching for elements (`indexOf`, `includes`, `find`, etc.), and manipulating the array (`slice`, `splice`, `concat`, etc.).
+Arrays in JavaScript are dynamic, which means you can add or remove elements from them.
 
 Overall, arrays in JavaScript are versatile and widely used for storing and manipulating collections of data.
+<h2>Hinglish</h2>
+JavaScript mein, ek array ek data structure hai jo ek collection of elements ko store karta hai, jo ki kisi bhi data type ke ho sakte hain, jaise numbers, strings, objects, ya phir dusre arrays. JavaScript mein arrays zero-indexed hote hain, matlab pehla element index 0 par hota hai, doosra element index 1 par hota hai, aur aise hi aage.
+
+Arrays ko array literals ya `Array` constructor ka istemal karke banaya ja sakta hai. Niche ek array literal ka istemal karke ek array kaise banaya ja sakta hai:
+
+```javascript
+let colors = ['red', 'green', 'blue'];
+```
+
+Aap square brackets `[]` aur element ka index istemal karke ek array mein se elements tak pahuch sakte hain. For example, `colors` array ka pehla element tak pahuchne ke liye:
+
+```javascript
+let firstColor = colors[0]; // 'red'
+```
+
+JavaScript mein arrays dynamic hote hain, jiska matlab hai aap unme elements ko add ya remove kar sakte hain.
+
+Aam taur par, JavaScript mein arrays bahut upyogi hote hain aur inka istemal data collections ko store aur manipulate karne ke liye kiya jata hai.
+
 
 # --question--
 
