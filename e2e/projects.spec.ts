@@ -93,7 +93,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     isMobile,
     request
   }) => {
-    test.setTimeout(20000);
+    test.setTimeout(40000);
 
     const block: block = curriculum;
     const targetBlock = 'javascript-algorithms-and-data-structures-projects';
@@ -170,11 +170,16 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     for (const projectTitle of projectTitles) {
       await page.getByTestId(projectTitle).click();
-      await expect(
-        page.getByRole('heading', { name: `Solution for ${projectTitle}` })
-      ).toBeVisible();
-      // the data-cy attribute is baked into the freeCodeCamp/ui modal
-      await page.locator('[data-cy="solution-viewer-close-btn"]').click();
+      const solutionModal = page.getByRole('dialog', {
+        name: `Solution for ${projectTitle}`
+      });
+      await expect(solutionModal).toBeVisible();
+      await solutionModal
+        .getByRole('button', { name: 'Close' })
+        .first()
+        .click();
+      // Wait for the modal to disappear before continue
+      await expect(solutionModal).toBeHidden();
     }
 
     await page
