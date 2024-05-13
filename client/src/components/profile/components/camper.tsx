@@ -38,6 +38,7 @@ function Camper({
   website
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
+  const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
 
   return (
     <>
@@ -57,38 +58,40 @@ function Camper({
           picture={picture}
         />
       </div>
-      <FullWidthRow>
-        <h2 className='text-center'>{t('profile.badges')}</h2>
-        <div className='badge-card-container'>
-          {isDonating && (
-            <div className='badge-card'>
-              <div className='badge'>
-                <SupporterBadgeEmblem />
+      {(isDonating || isTopContributor) && (
+        <FullWidthRow>
+          <h2 className='text-center'>{t('profile.badges')}</h2>
+          <div className='badge-card-container'>
+            {isDonating && (
+              <div className='badge-card'>
+                <div className='badge'>
+                  <SupporterBadgeEmblem />
+                </div>
+                <div className='badge-card-description'>
+                  <h3>{t('profile.supporter')}</h3>
+                  <p>{t('profile.donated')}</p>
+                </div>
               </div>
-              <div className='badge-card-description'>
-                <h3>{t('profile.supporter')}</h3>
-                <p>{t('profile.donated')}</p>
+            )}
+            {isTopContributor && (
+              <div className='badge-card'>
+                <div className='badge'>
+                  <TopContibutorBadgeEmblem />
+                </div>
+                <div className='badge-card-description'>
+                  <h3>{t('profile.contributor')}</h3>
+                  <p>
+                    {t('profile.contributor-prolific', {
+                      year: yearsTopContributor
+                    })}
+                  </p>
+                </div>
               </div>
-            </div>
-          )}
-          {yearsTopContributor.filter(Boolean).length > 0 && (
-            <div className='badge-card'>
-              <div className='badge'>
-                <TopContibutorBadgeEmblem />
-              </div>
-              <div className='badge-card-description'>
-                <h3>{t('profile.contributor')}</h3>
-                <p>
-                  {t('profile.contributor-prolific', {
-                    year: yearsTopContributor
-                  })}
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-        <hr />
-      </FullWidthRow>
+            )}
+          </div>
+          <hr />
+        </FullWidthRow>
+      )}
     </>
   );
 }
