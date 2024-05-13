@@ -1209,6 +1209,12 @@
       "top-learn-function-basics": {
         "title": "Вивчіть основи функцій",
         "intro": ["Дізнайтесь про функції в JavaScript."]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Projects",
+        "intro": [
+          "Put your JavaScript skills to the test by building basic functions."
+        ]
       }
     }
   },
@@ -1428,10 +1434,6 @@
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Дізнайтесь, як аналізувати документацію",
-        "intro": ["", ""]
-      },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "Дізнайтесь, як дотримуватись базової конвенції е-пошти",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {

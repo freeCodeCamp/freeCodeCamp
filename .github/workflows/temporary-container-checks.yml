@@ -158,4 +158,4 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           # Only run one test to keep the run time down.
-          spec: 'cypress/e2e/default/learn/challenges/backend.ts'
+          spec: 'cypress/e2e/default/learn/challenges/codeally.ts'

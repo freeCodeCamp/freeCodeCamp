@@ -1,7 +1,7 @@
 import Ajv from 'ajv';
 import secureSchema from 'ajv/lib/refs/json-schema-secure.json';
 
-import { schemas } from './schemas';
+import * as schemas from './schemas';
 
 // it's not strict, but that's okay - we're not using it to validate data
 const ajv = new Ajv({ strictTypes: false });
@@ -39,11 +39,13 @@ describe('Schemas do not use obviously dangerous validation', () => {
           });
         }
 
-        Object.entries(schema.response).forEach(([code, codeSchema]) => {
-          test(`response ${code} is secure`, () => {
-            expect(isSchemaSecure(codeSchema)).toBeTruthy();
+        if ('response' in schema) {
+          Object.entries(schema.response).forEach(([code, codeSchema]) => {
+            test(`response ${code} is secure`, () => {
+              expect(isSchemaSecure(codeSchema)).toBeTruthy();
+            });
           });
-        });
+        }
       });
     });
 });
