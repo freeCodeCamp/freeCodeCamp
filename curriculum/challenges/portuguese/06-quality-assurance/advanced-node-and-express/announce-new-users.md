@@ -38,7 +38,7 @@ Envie sua página quando você achar que ela está certa. Se estiver encontrando
 
 # --hints--
 
-Event `'user'` should be emitted with `username`, `currentUsers`, and `connected`.
+O evento `'user'` deve ser emitido com `username`, `currentUsers` e `connected`.
 
 ```js
 async (getUserInput) => {
