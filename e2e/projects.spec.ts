@@ -132,9 +132,10 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     const contents = projectsInOrder[0].solutions[0][0].contents as string;
 
     // Test the direct flow once.
-
+    // Use the `testing=true` parameter to prevent the editor
+    // from automatically adding a closing bracket.
     await page.goto(
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker'
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker?testing=true'
     );
 
     const editor = await getProjectEditors({ page, isMobile });
