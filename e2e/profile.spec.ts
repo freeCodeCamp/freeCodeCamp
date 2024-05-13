@@ -114,9 +114,11 @@ test.describe('Profile component', () => {
       await expect(page.getByText('Full Stack User')).toBeVisible();
       await expect(page.getByText('Joined November 2020')).toBeVisible();
       await expect(
-        page.getByRole('link', { name: 'Top Contributor' })
+        page.getByText(translations.profile.contributor)
       ).toBeVisible();
-      await expect(page.getByText('2019')).toBeVisible();
+      expect(
+        await page.locator('.badge-card-description').textContent()
+      ).toContain('Among most prolific volunteers');
     });
 
     test('renders total points correctly', async ({ page }) => {
@@ -176,6 +178,7 @@ test.describe('Profile component', () => {
     test('should not show portfolio when empty', async ({ page }) => {
       // @certifieduser doesn't have portfolio information
       await expect(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         page.getByText(translations.profile.projects)
       ).not.toBeVisible();
     });
