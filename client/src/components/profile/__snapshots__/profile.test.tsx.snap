@@ -292,23 +292,6 @@ exports[`<Profile/> renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="mx-[-15px] "
-    >
-      <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
-      >
-        <h2
-          class="text-center"
-        >
-          profile.badges
-        </h2>
-        <div
-          class="badge-card-container"
-        />
-        <hr />
-      </div>
-    </div>
-    <div
       class="spacer"
       style="padding: 15px 0px;"
     />
