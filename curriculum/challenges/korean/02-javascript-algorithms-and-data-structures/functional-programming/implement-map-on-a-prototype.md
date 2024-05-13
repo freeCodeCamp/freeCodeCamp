@@ -16,11 +16,11 @@ dashedName: implement-map-on-a-prototype
 
 # --instructions--
 
-`Array.prototype.map()`와 같이 동작하는 고유의 `Array.prototype.myMap()`를 작성하시오. 내장된 `map` 메소드를 사용하지 않아야 합니다. The `Array` instance can be accessed in the `myMap` method using `this`.
+`Array.prototype.map()`와 같이 동작하는 고유의 `Array.prototype.myMap()`를 작성하시오. 내장된 `map` 메소드를 사용하지 않아야 합니다. `Array` 인스턴스는 `this`를 사용하여 `myMap` 메소드에서 접근이 가능합니다.
 
 # --hints--
 
-`[23, 65, 98, 5, 13].myMap(item => item * 2)` should equal `[46, 130, 196, 10, 26]`.
+`[23, 65, 98, 5, 13].myMap(item => item * 2)`는 `[46, 130, 196, 10, 26]`와 같아야 합니다.
 
 ```js
 const _test_s = [23, 65, 98, 5, 13];
@@ -28,7 +28,7 @@ const _callback = item => item * 2;
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())` should return `["NAOMI", "QUINCY", "CAMPERBOT"]`.
+`["naomi", "quincy", "camperbot"].myMap(element => element.toUpperCase())`는 `["NAOMI", "QUINCY", "CAMPERBOT"]`를 반환해야 합니다.
 
 ```js
 const _test_s = ["naomi", "quincy", "camperbot"];
@@ -36,7 +36,7 @@ const _callback = element => element.toUpperCase();
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])` should return `[1, 2, 5, 2, 1]`.
+`[1, 1, 2, 5, 2].myMap((element, index, array) => array[index + 1] || array[0])`는 `[1, 2, 5, 2, 1]`을 반환해야 합니다.
 
 ```js
 const _test_s = [1, 1, 2, 5, 2];
@@ -44,7 +44,7 @@ const _callback = (element, index, array) => array[index + 1] || array[0];
 assert(JSON.stringify(_test_s.map(_callback)) === JSON.stringify(_test_s.myMap(_callback)));
 ```
 
-Your code should not use the `map` method.
+`map` 메소드를 사용하지 않아야 합니다.
 
 ```js
 assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?map/g));
