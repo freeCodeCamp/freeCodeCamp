@@ -2,14 +2,13 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
 import curriculum from './fixtures/js-ads-projects.json';
+
 import {
   focusProjectEditor,
   getProjectEditors,
   clearProjectEditor
 } from './utils/project-editor';
 import { authedPost } from './utils/request';
-
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
@@ -83,6 +82,7 @@ test.describe('Projects', () => {
 });
 
 test.describe('JavaScript projects can be submitted and then viewed in /settings and on the certifications', () => {
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
   test.beforeAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
   });
@@ -203,10 +203,6 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     );
   });
 
-  test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
-  });
-
   // test('Ctrl + enter triggers the completion modal on multifile projects', async ({
   //   page,
   //   browserName,
@@ -228,4 +224,8 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
   //   await page.keyboard.press('Control+Enter');
   //   await expect(page.locator('[data-cy="completion-modal"]')).toBeVisible();
   // });
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  });
 });
