@@ -142,7 +142,12 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     await focusProjectEditor({ page, browserName, isMobile });
     await clearProjectEditor({ page, browserName });
 
-    await editor.fill(contents);
+    // To pass on firefox, we need to make sure the editor value is only set once
+    // instead of multiple times. (Bug in firefox)
+    await editor.evaluate((element, value) => {
+      (element as HTMLTextAreaElement).value = value;
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+    }, contents);
 
     await page.getByRole('button', { name: 'Run' }).click();
 
@@ -196,6 +201,10 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     await expect(page.getByTestId(selector)).toContainText(
       'Show Certification'
     );
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 
   // test('Ctrl + enter triggers the completion modal on multifile projects', async ({
