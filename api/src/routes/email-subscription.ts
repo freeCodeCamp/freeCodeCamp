@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 import { getRedirectParams } from '../utils/redirection';
 
 /**
