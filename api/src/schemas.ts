@@ -1,71 +1,34 @@
-import { certSlug } from './schemas/certificate/cert-slug';
-import { certificateVerify } from './schemas/certificate/certificate-verify';
-import { backendChallengeCompleted } from './schemas/challenge/backend-challenge-completed';
-import { coderoadChallengeCompleted } from './schemas/challenge/coderoad-challenge-completed';
-import { exam } from './schemas/challenge/exam';
-import { examChallengeCompleted } from './schemas/challenge/exam-challenge-completed';
-import { modernChallengeCompleted } from './schemas/challenge/modern-challenge-completed';
-import { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challenge-completed';
-import { projectCompleted } from './schemas/challenge/project-completed';
-import { saveChallenge } from './schemas/challenge/save-challenge';
-import { deprecatedEndpoints } from './schemas/deprecated';
-import { chargeStripeCard } from './schemas/donate/charge-stripe-card';
-import { resubscribe } from './schemas/email-subscription/resubscribe';
-import { unsubscribe } from './schemas/email-subscription/unsubscribe';
-import { updateMyAbout } from './schemas/settings/update-my-about';
-import { updateMyClassroomMode } from './schemas/settings/update-my-classroom-mode';
-import { updateMyEmail } from './schemas/settings/update-my-email';
-import { updateMyHonesty } from './schemas/settings/update-my-honesty';
-import { updateMyKeyboardShortcuts } from './schemas/settings/update-my-keyboard-shortcuts';
-import { updateMyPortfolio } from './schemas/settings/update-my-portfolio';
-import { updateMyPrivacyTerms } from './schemas/settings/update-my-privacy-terms';
-import { updateMyProfileUI } from './schemas/settings/update-my-profile-ui';
-import { updateMyQuincyEmail } from './schemas/settings/update-my-quincy-email';
-import { updateMySocials } from './schemas/settings/update-my-socials';
-import { updateMyTheme } from './schemas/settings/update-my-theme';
-import { updateMyUsername } from './schemas/settings/update-my-username';
-import { deleteMsUsername } from './schemas/user/delete-ms-username';
-import { deleteMyAccount } from './schemas/user/delete-my-account';
-import { deleteUserToken } from './schemas/user/delete-user-token';
-import { getSessionUser } from './schemas/user/get-session-user';
-import { postMsUsername } from './schemas/user/post-ms-username';
-import { reportUser } from './schemas/user/report-user';
-import { resetMyProgress } from './schemas/user/reset-my-progress';
-import { submitSurvey } from './schemas/user/submit-survey';
-
-export const schemas = {
-  backendChallengeCompleted,
-  certificateVerify,
-  certSlug,
-  chargeStripeCard,
-  coderoadChallengeCompleted,
-  deleteMyAccount,
-  deleteMsUsername,
-  deleteUserToken,
-  deprecatedEndpoints,
-  exam,
-  examChallengeCompleted,
-  getSessionUser,
-  modernChallengeCompleted,
-  msTrophyChallengeCompleted,
-  postMsUsername,
-  projectCompleted,
-  saveChallenge,
-  submitSurvey,
-  reportUser,
-  resetMyProgress,
-  resubscribe,
-  unsubscribe,
-  updateMyAbout,
-  updateMyClassroomMode,
-  updateMyEmail,
-  updateMyHonesty,
-  updateMyKeyboardShortcuts,
-  updateMyPortfolio,
-  updateMyPrivacyTerms,
-  updateMyProfileUI,
-  updateMyQuincyEmail,
-  updateMySocials,
-  updateMyTheme,
-  updateMyUsername
-};
+export { certSlug } from './schemas/certificate/cert-slug';
+export { certificateVerify } from './schemas/certificate/certificate-verify';
+export { backendChallengeCompleted } from './schemas/challenge/backend-challenge-completed';
+export { coderoadChallengeCompleted } from './schemas/challenge/coderoad-challenge-completed';
+export { exam } from './schemas/challenge/exam';
+export { examChallengeCompleted } from './schemas/challenge/exam-challenge-completed';
+export { modernChallengeCompleted } from './schemas/challenge/modern-challenge-completed';
+export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challenge-completed';
+export { projectCompleted } from './schemas/challenge/project-completed';
+export { saveChallenge } from './schemas/challenge/save-challenge';
+export { deprecatedEndpoints } from './schemas/deprecated';
+export { chargeStripeCard } from './schemas/donate/charge-stripe-card';
+export { resubscribe } from './schemas/email-subscription/resubscribe';
+export { unsubscribe } from './schemas/email-subscription/unsubscribe';
+export { updateMyAbout } from './schemas/settings/update-my-about';
+export { updateMyClassroomMode } from './schemas/settings/update-my-classroom-mode';
+export { updateMyEmail } from './schemas/settings/update-my-email';
+export { updateMyHonesty } from './schemas/settings/update-my-honesty';
+export { updateMyKeyboardShortcuts } from './schemas/settings/update-my-keyboard-shortcuts';
+export { updateMyPortfolio } from './schemas/settings/update-my-portfolio';
+export { updateMyPrivacyTerms } from './schemas/settings/update-my-privacy-terms';
+export { updateMyProfileUI } from './schemas/settings/update-my-profile-ui';
+export { updateMyQuincyEmail } from './schemas/settings/update-my-quincy-email';
+export { updateMySocials } from './schemas/settings/update-my-socials';
+export { updateMyTheme } from './schemas/settings/update-my-theme';
+export { updateMyUsername } from './schemas/settings/update-my-username';
+export { deleteMsUsername } from './schemas/user/delete-ms-username';
+export { deleteMyAccount } from './schemas/user/delete-my-account';
+export { deleteUserToken } from './schemas/user/delete-user-token';
+export { getSessionUser } from './schemas/user/get-session-user';
+export { postMsUsername } from './schemas/user/post-ms-username';
+export { reportUser } from './schemas/user/report-user';
+export { resetMyProgress } from './schemas/user/reset-my-progress';
+export { submitSurvey } from './schemas/user/submit-survey';

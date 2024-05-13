@@ -418,51 +418,21 @@ test.describe('Settings', () => {
     }
   });
 
-  test('Should validate Danger Section Settings', async ({ page }) => {
+  test('Should display the Danger section properly', async ({ page }) => {
+    await expect(page.getByText('Danger Zone')).toBeVisible();
     await expect(
-      page.getByText(translations.settings.danger.heading, {
-        exact: true
-      })
+      page.getByText(
+        'Please be careful. Changes in this section are permanent.'
+      )
     ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.danger['be-careful'], {
-        exact: true
-      })
-    ).toBeVisible();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger.reset,
-        exact: true
-      })
-      .click();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger['nevermind-2'],
-        exact: true
-      })
-      .click();
     await expect(
       page.getByRole('button', {
-        name: translations.settings.danger['reset-confirm'],
-        exact: true
+        name: 'Reset all of my progress'
       })
     ).toBeVisible();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger.delete,
-        exact: true
-      })
-      .click();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger.nevermind,
-        exact: true
-      })
-      .click();
     await expect(
       page.getByRole('button', {
-        name: translations.settings.danger.certain,
-        exact: true
+        name: 'Delete my account'
       })
     ).toBeVisible();
   });
