@@ -33,6 +33,12 @@ textarea.inputarea {
   height: var(--breadcrumbs-height);
 }
 
+@media only screen and (max-width: 768px) {
+  .breadcrumbs-demo {
+    display: none;
+  }
+}
+
 .editor-upper-jaw,
 .editor-lower-jaw {
   padding-inline: 0 15px;
