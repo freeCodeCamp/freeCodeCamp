@@ -6,6 +6,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/ui';
+import { useMediaQuery } from 'react-responsive';
 
 import Login from '../../../components/Header/components/login';
 import {
@@ -165,6 +166,7 @@ class CompletionModal extends Component<
     } = this.props;
 
     const isMacOS = navigator.userAgent.includes('Mac OS');
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' }); 
 
     return (
       <Modal
@@ -201,9 +203,7 @@ class CompletionModal extends Component<
             onClick={() => submitChallenge()}
           >
             {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
-            <span className='hidden-xs'>
-              {isMacOS ? ' (Command + Enter)' : ' (Ctrl + Enter)'}
-            </span>
+            {isMobile ? (isMacOS ? ' (Command + Enter)' : ' (Ctrl + Enter)') : null}
           </Button>
           <Spacer size='xxSmall' />
           {this.state.downloadURL ? (
