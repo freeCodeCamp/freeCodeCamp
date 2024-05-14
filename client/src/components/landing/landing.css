@@ -171,12 +171,12 @@ figcaption.caption {
 
 .landing-top,
 .as-seen-in,
-.certification-section,
+.landing-page-content-container,
 .testimonials {
   padding-block: 4vw;
 }
 
-.certification-section {
+.landing-page-content-container {
   padding-inline: 4vw;
 }
 

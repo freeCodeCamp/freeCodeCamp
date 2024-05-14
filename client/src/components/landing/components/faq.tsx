@@ -15,7 +15,14 @@ const Faq = (): JSX.Element => {
   const faqItems = t<string, string & FaqItem[]>('landing.faqs');
 
   return (
-    <Col sm={8} smOffset={2} xs={10} xsOffset={1}>
+    <Col
+      className='landing-page-content-container'
+      md={8}
+      mdOffset={2}
+      sm={10}
+      smOffset={1}
+      xs={12}
+    >
       <h2 className='big-heading'>{t('landing.faq')}</h2>
       <Spacer size='small' />
       {faqItems.map((faq, i) => (

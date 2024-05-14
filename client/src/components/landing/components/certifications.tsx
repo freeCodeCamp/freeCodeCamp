@@ -8,7 +8,7 @@ import BigCallToAction from './big-call-to-action';
 const Certifications = (): JSX.Element => {
   return (
     <Col
-      className='certification-section'
+      className='landing-page-content-container'
       md={8}
       mdOffset={2}
       sm={10}
