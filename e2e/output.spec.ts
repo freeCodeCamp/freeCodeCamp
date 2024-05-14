@@ -16,8 +16,7 @@ const outputTexts = {
   You should declare myName with the var keyword, ending with a semicolon
   // tests completed`,
   passed: `// running tests
-// tests completed`,
-  running: '// running tests'
+// tests completed`
 };
 
 interface InsertTextParameters {
@@ -74,6 +73,7 @@ test.describe('For classic challenges', () => {
     isMobile,
     browserName
   }) => {
+    const closeButton = page.getByRole('button', { name: 'Close' });
     await expect(page).toHaveTitle(
       'Basic HTML and HTML5: Say Hello to HTML Elements |' + ' freeCodeCamp.org'
     );
@@ -85,11 +85,12 @@ test.describe('For classic challenges', () => {
       text: '<h1>Hello World</h1>'
     });
     await runChallengeTest(page, isMobile);
+    await closeButton.click();
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toHaveText(outputTexts.running);
+    ).toHaveText(outputTexts.passed);
   });
 
   test('shows test output when the tests are triggered by the keyboard', async ({
@@ -97,6 +98,7 @@ test.describe('For classic challenges', () => {
     isMobile,
     browserName
   }) => {
+    const closeButton = page.getByRole('button', { name: 'Close' });
     await clearEditor({ browserName, page });
     await insertTextInCodeEditor({
       page,
@@ -104,11 +106,12 @@ test.describe('For classic challenges', () => {
       text: '<h1>Hello World</h1>'
     });
     await page.keyboard.press('Control+Enter');
+    await closeButton.click();
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toHaveText(outputTexts.running);
+    ).toHaveText(outputTexts.passed);
   });
 });
 
