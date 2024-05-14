@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { getEditors } from './utils/editor';
+import { clearEditor, getEditors } from './utils/editor';
 
 const outputTexts = {
   default: `
@@ -123,5 +123,57 @@ test.describe('Challenge Output Component Tests', () => {
         name: translations.learn['editor-tabs'].console
       })
     ).toHaveText(outputTexts.passed);
+  });
+
+  test('jquery challenge should render with default output', async ({
+    page
+  }) => {
+    await page.goto(
+      '/learn/front-end-development-libraries/jquery/target-html-elements-with-selectors-using-jquery'
+    );
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toHaveText(outputTexts.default);
+
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).not.toHaveText('ReferenceError: $ is not defined');
+  });
+
+  test('Custom output for JavaScript Objects set and map', async ({
+    page,
+    browserName
+  }) => {
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
+    );
+    await insertTextInCodeEditor({
+      page,
+      isMobile: false,
+      text: 'const set = new Set(); set.add(1); set.add("set"); set.add(10); console.log(set);'
+    });
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toContainText('Set(3) {1, set, 10}');
+
+    await clearEditor({ browserName, page });
+
+    await insertTextInCodeEditor({
+      page,
+      isMobile: false,
+      text: 'const map = new Map(); map.set(1, "one"); map.set("two", 2); console.log(map);'
+    });
+
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toContainText('Map(2) {1 => one, two => 2}');
   });
 });
