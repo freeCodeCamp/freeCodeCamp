@@ -293,7 +293,6 @@
     }
   },
   "profile": {
-    "you-not-public": "You have not made your portfolio public.",
     "username-not-public": "{{username}} has not made their portfolio public.",
     "you-change-privacy": "You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.",
     "username-change-privacy": "{{username}} needs to change their privacy setting in order for you to view their portfolio.",
