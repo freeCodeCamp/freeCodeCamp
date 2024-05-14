@@ -16,7 +16,8 @@ const outputTexts = {
   You should declare myName with the var keyword, ending with a semicolon
   // tests completed`,
   passed: `// running tests
-// tests completed`
+// tests completed`,
+  running: '// running tests'
 };
 
 interface InsertTextParameters {
@@ -53,13 +54,71 @@ const runChallengeTest = async (page: Page, isMobile: boolean) => {
   }
 };
 
-test.beforeEach(async ({ page }) => {
-  await page.goto(
-    '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
-  );
+test.describe('For classic challenges', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(
+      '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
+    );
+  });
+
+  test('it renders the default output', async ({ page }) => {
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toHaveText(outputTexts.default);
+  });
+
+  test('shows test output when the tests are run', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    await expect(page).toHaveTitle(
+      'Basic HTML and HTML5: Say Hello to HTML Elements |' + ' freeCodeCamp.org'
+    );
+
+    await clearEditor({ browserName, page });
+    await insertTextInCodeEditor({
+      page,
+      isMobile,
+      text: '<h1>Hello World</h1>'
+    });
+    await runChallengeTest(page, isMobile);
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toHaveText(outputTexts.running);
+  });
+
+  test('shows test output when the tests are triggered by the keyboard', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    await clearEditor({ browserName, page });
+    await insertTextInCodeEditor({
+      page,
+      isMobile,
+      text: '<h1>Hello World</h1>'
+    });
+    await page.keyboard.press('Control+Enter');
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toHaveText(outputTexts.running);
+  });
 });
 
 test.describe('Challenge Output Component Tests', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
+    );
+  });
+
   test('should render with default output', async ({ page, isMobile }) => {
     if (isMobile) {
       await page.getByRole('tab', { name: 'Console' }).click();
@@ -124,8 +183,10 @@ test.describe('Challenge Output Component Tests', () => {
       })
     ).toHaveText(outputTexts.passed);
   });
+});
 
-  test('jquery challenge should render with default output', async ({
+test.describe('Jquery challenges', () => {
+  test('Jquery challenge should render with default output', async ({
     page
   }) => {
     await page.goto(
@@ -143,8 +204,10 @@ test.describe('Challenge Output Component Tests', () => {
       })
     ).not.toHaveText('ReferenceError: $ is not defined');
   });
+});
 
-  test('Custom output for JavaScript Objects set and map', async ({
+test.describe('Custom output for Set and Map', () => {
+  test('Custom output for JavaScript Objects Set and Map', async ({
     page,
     isMobile,
     browserName
