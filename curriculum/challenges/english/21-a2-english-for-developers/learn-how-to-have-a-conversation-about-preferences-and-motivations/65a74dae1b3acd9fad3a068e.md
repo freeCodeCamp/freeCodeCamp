@@ -56,7 +56,7 @@ This noun refers to the action or process of acknowledging someone's efforts, ac
       "filename": "4.1-5.mp3",
       "startTime": 1,
       "startTimestamp": 41.5,
-      "finishTimestamp": 46.82
+      "finishTimestamp": 47.12
     }
   },
   "commands": [
@@ -68,7 +68,7 @@ This noun refers to the action or process of acknowledging someone's efforts, ac
     {
       "character": "Tom",
       "startTime": 1,
-      "finishTime": 6.32,
+      "finishTime": 6.62,
       "dialogue": {
         "text": "For me, I like the idea of practicing my skills and getting recognition for my contributions.",
         "align": "center"
@@ -77,7 +77,7 @@ This noun refers to the action or process of acknowledging someone's efforts, ac
     {
       "character": "Tom",
       "opacity": 0,
-      "startTime": 6.82
+      "startTime": 7.12
     }
   ]
 }
