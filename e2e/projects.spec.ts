@@ -4,13 +4,13 @@ import { SuperBlocks } from '../shared/config/superblocks';
 import tributePageHtml from './fixtures/tribute-page-html.json';
 import tributePageCss from './fixtures/tribute-page-css.json';
 import curriculum from './fixtures/js-ads-projects.json';
+import { authedPost } from './utils/request';
 
 import {
   focusProjectEditor,
   getProjectEditors,
   clearProjectEditor
 } from './utils/project-editor';
-import { authedPost } from './utils/request';
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
@@ -66,7 +66,7 @@ const pythonProjects = {
   ]
 };
 
-test.skip('Projects', () => {
+test.describe('Projects', () => {
   test('Should be possible to submit Python projects', async ({ page }) => {
     const { superBlock, block, challenges } = pythonProjects; // Ensure these are defined or imported
 
@@ -83,7 +83,7 @@ test.skip('Projects', () => {
   });
 });
 
-test.skip('JavaScript projects can be submitted and then viewed in /settings and on the certifications', () => {
+test.describe('JavaScript projects can be submitted and then viewed in /settings and on the certifications', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
   test.beforeAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
@@ -211,8 +211,7 @@ test.describe('Completion modal should be shown after submitting a project', () 
     page,
     isMobile
   }) => {
-    // timeout 60 seconds
-    test.setTimeout(60000);
+    test.setTimeout(20000);
 
     const tributeContent = [
       tributePageHtml['tribute-page-html'].contents,
@@ -234,6 +233,41 @@ test.describe('Completion modal should be shown after submitting a project', () 
     await page
       .getByRole('button', { name: 'Go to next challenge', exact: false })
       .click();
+  });
+});
+
+test.describe('Should not be able to submit in quick succesion', () => {
+  test('should not be possible to submit twice in quick succession', async ({
+    page
+  }) => {
+    const { superBlock, block, challenges } = pythonProjects;
+    const { slug } = challenges[0];
+
+    const url = `/learn/${superBlock}/${block}/${slug}`;
+    await page.goto(url);
+
+    await page.fill(
+      '#solution',
+      'https://replit.com/@camperbot/python-project#main.py'
+    );
+
+    const completedButton = page.getByRole('button', {
+      name: "I've completed this challenge"
+    });
+
+    await completedButton.click();
+
+    await expect(page.getByRole('dialog')).toBeVisible();
+
+    const submitChallenge = page.getByRole('button', {
+      name: 'Go to next challenge',
+      exact: false
+    });
+    await submitChallenge.click();
+
+    await expect(completedButton).toBeDisabled();
+
+    await expect(page.locator('div[role="dialog"]')).not.toBeVisible();
   });
 
   test.afterAll(() => {

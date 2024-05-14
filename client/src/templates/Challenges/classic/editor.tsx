@@ -454,8 +454,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     const disableBracketCompletion =
       window.location.href.includes('testing=true');
 
-    console.log(window.location.href, disableBracketCompletion);
-
     if (disableBracketCompletion) {
       editor?.updateOptions({
         autoClosingBrackets: 'never',
