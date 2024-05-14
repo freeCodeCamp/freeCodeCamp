@@ -227,10 +227,7 @@ test.describe('Completion modal should be shown after submitting a project', () 
 
     for (let i = 0; i < 2; i++) {
       await editor.nth(i).focus();
-      await editor.nth(i).evaluate((element, value) => {
-        (element as HTMLTextAreaElement).value = value;
-        element.dispatchEvent(new Event('input', { bubbles: true }));
-      }, tributeContent[i]);
+      await page.keyboard.insertText(tributeContent[i]);
     }
 
     await page.keyboard.press('Control+Enter');
