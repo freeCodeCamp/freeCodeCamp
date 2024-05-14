@@ -1,0 +1,5 @@
+{
+  "tribute-page-css": {
+    "contents": "body {\n  background-color: #3a3240;\n  color: white;\n}\nmain {\n  background-color: #92869c;\n  font-family: Lobster;\n  max-width: 500px;\n  margin: 20px auto;\n  color: black;\n  border-radius: 50px;\n  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);\n}\nh2 {\n  text-align: center;\n  font-size: 20pt;\n  font-family: Pacifico;\n}\nbody {\n  text-align: center;\n  font-size: 12pt;\n}\nfooter {\n  text-align: center;\n  font-size: 10pt;\n}\n.border {\n  border-color: black;\n  border-width: 5px;\n  border-style: solid;\n}\n#image {\n  height: auto;\n  display: block;\n  margin: auto;\n  max-width: 100%;\n  border-radius: 50%;\n}\n#img-caption {\n  font-size: 10pt;\n}\na:not(#tribute-link) {\n  color: white;\n}\nhr {\n  border-color: black;\n}"
+  }
+}
