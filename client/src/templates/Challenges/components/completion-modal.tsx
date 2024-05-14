@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/ui';
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from 'react-responsive'; // Import useMediaQuery hook
 
 import Login from '../../../components/Header/components/login';
 import {
@@ -29,6 +27,12 @@ import { Spacer } from '../../../components/helpers';
 
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
+
+
+const MobileDetector = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  return isMobile;
+};
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -166,7 +170,7 @@ class CompletionModal extends Component<
     } = this.props;
 
     const isMacOS = navigator.userAgent.includes('Mac OS');
-    const isMobile = useMediaQuery({ query: '(max-width: 767px)' }); 
+    const isMobile = MobileDetector(); 
 
     return (
       <Modal
