@@ -146,6 +146,7 @@ test.describe('Challenge Output Component Tests', () => {
 
   test('Custom output for JavaScript Objects set and map', async ({
     page,
+    isMobile,
     browserName
   }) => {
     await page.goto(
@@ -153,7 +154,7 @@ test.describe('Challenge Output Component Tests', () => {
     );
     await insertTextInCodeEditor({
       page,
-      isMobile: false,
+      isMobile,
       text: 'const set = new Set(); set.add(1); set.add("set"); set.add(10); console.log(set);'
     });
     await expect(
@@ -166,7 +167,7 @@ test.describe('Challenge Output Component Tests', () => {
 
     await insertTextInCodeEditor({
       page,
-      isMobile: false,
+      isMobile,
       text: 'const map = new Map(); map.set(1, "one"); map.set("two", 2); console.log(map);'
     });
 
