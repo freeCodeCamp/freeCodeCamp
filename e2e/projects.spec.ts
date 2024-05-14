@@ -224,7 +224,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
   //   await page.keyboard.press('Control+Enter');
   //   await expect(page.locator('[data-cy="completion-modal"]')).toBeVisible();
   // });
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  // test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.afterAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
