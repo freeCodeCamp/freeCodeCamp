@@ -185,7 +185,6 @@ class CompletionModal extends Component<
         : t('buttons.go-to-next');
     }
 
-
     return (
       <Modal
         onClose={close}
