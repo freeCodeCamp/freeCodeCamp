@@ -1,11 +1,15 @@
 import debug from 'debug';
 import Stripe from 'stripe';
 
-import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
+import {
+  donationSubscriptionConfig,
+  allStripeProductIdsArray
+} from '../../../../shared/config/donation-settings';
 import keys from '../../../config/secrets';
 import {
   createStripeCardDonation,
-  handleStripeCardUpdateSession
+  handleStripeCardUpdateSession,
+  isWithinFiveMinutes
 } from '../utils/donation';
 import { validStripeForm } from '../utils/stripeHelpers';
 
@@ -42,33 +46,52 @@ export default function donateBoot(app, done) {
     });
   }
 
-  async function createStripePaymentIntent(req, res) {
-    return createStripeCardDonation(req, res, stripe, app).catch(err => {
-      if (
-        err.type === 'AlreadyDonatingError' ||
-        err.type === 'UserActionRequired' ||
-        err.type === 'PaymentMethodRequired'
-      ) {
-        return res.status(402).send({ error: err });
+  async function createStripeDonation(req, res) {
+    const { user, body } = req;
+    const { amount, duration, email, subscriptionId } = body;
+
+    try {
+      const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+      const isSubscriptionActive = subscription.status === 'active';
+      const productId = subscription.items.data[0].plan.product;
+      const isSubscribedInMinutes = isWithinFiveMinutes(
+        subscription.current_period_start
+      );
+
+      const isProductIdValid = allStripeProductIdsArray.includes(productId);
+      if (isSubscriptionActive && isProductIdValid && isSubscribedInMinutes) {
+        const donatingUser = user
+          ? user
+          : User.findOrCreate({ where: { email } });
+
+        let donation = {
+          email,
+          amount,
+          duration,
+          provider: 'stripe',
+          startDate: new Date(Date.now()).toISOString()
+        };
+
+        await donatingUser
+          .createDonation(donation)
+          .toPromise()
+          .catch(err => {
+            throw new Error(err);
+          });
+        return res.status(200).send({ isDonating: true });
+      } else {
+        throw new Error('Payment intent not succeeded');
       }
-      if (err.type === 'InvalidRequest')
-        return res.status(400).send({ error: err });
-      return res.status(500).send({
-        error: 'Donation failed due to a server error.'
-      });
-    });
+    } catch (err) {
+      return res
+        .status(500)
+        .send({ error: 'Donation failed due to a server error.' });
+    }
   }
 
-  function createStripeDonation(req, res) {
-    const { user, body } = req;
-
-    const {
-      amount,
-      duration,
-      token: { id },
-      email,
-      name
-    } = body;
+  async function createStripePaymentIntent(req, res) {
+    const { body } = req;
+    const { amount, duration, email, name } = body;
 
     if (!validStripeForm(amount, duration, email)) {
       return res.status(500).send({
@@ -76,100 +99,36 @@ export default function donateBoot(app, done) {
       });
     }
 
-    const fccUser = user
-      ? Promise.resolve(user)
-      : new Promise((resolve, reject) =>
-          User.findOrCreate(
-            { where: { email } },
-            { email },
-            (err, instance) => {
-              if (err) {
-                return reject(err);
-              }
-              return resolve(instance);
-            }
-          )
-        );
-
-    let donatingUser = {};
-    let donation = {
-      email,
-      amount,
-      duration,
-      provider: 'stripe',
-      startDate: new Date(Date.now()).toISOString()
-    };
-
-    const createCustomer = async user => {
-      let customer;
-      donatingUser = user;
-      try {
-        customer = await stripe.customers.create({
-          email,
-          card: id,
-          name
-        });
-      } catch (err) {
-        throw new Error('Error creating stripe customer');
-      }
-      log(`Stripe customer with id ${customer.id} created`);
-      return customer;
-    };
-
-    const createSubscription = async customer => {
-      donation.customerId = customer.id;
-      let sub;
-      try {
-        sub = await stripe.subscriptions.create({
-          customer: customer.id,
-          items: [
-            {
-              plan: `${donationSubscriptionConfig.duration[
-                duration
-              ].toLowerCase()}-donation-${amount}`
-            }
-          ]
-        });
-      } catch (err) {
-        throw new Error('Error creating stripe subscription');
-      }
-      return sub;
-    };
-
-    const createAsyncUserDonation = () => {
-      donatingUser
-        .createDonation(donation)
-        .toPromise()
-        .catch(err => {
-          throw new Error(err);
-        });
-    };
-
-    return Promise.resolve(fccUser)
-      .then(nonDonatingUser => {
-        // the logic is removed since users can donate without an account
-        return nonDonatingUser;
-      })
-      .then(createCustomer)
-      .then(customer => {
-        return createSubscription(customer).then(subscription => {
-          log(`Stripe subscription with id ${subscription.id} created`);
-          donation.subscriptionId = subscription.id;
-          return res.send(subscription);
-        });
-      })
-      .then(createAsyncUserDonation)
-      .catch(err => {
-        if (
-          err.type === 'StripeCardError' ||
-          err.type === 'AlreadyDonatingError'
-        ) {
-          return res.status(402).send({ error: err.message });
-        }
-        return res
-          .status(500)
-          .send({ error: 'Donation failed due to a server error.' });
+    try {
+      const stripeCustomer = await stripe.customers.create({
+        email,
+        name
       });
+
+      const stripeSubscription = await stripe.subscriptions.create({
+        customer: stripeCustomer.id,
+        items: [
+          {
+            plan: `${donationSubscriptionConfig.duration[
+              duration
+            ].toLowerCase()}-donation-${amount}`
+          }
+        ],
+        payment_behavior: 'default_incomplete',
+        payment_settings: { save_default_payment_method: 'on_subscription' },
+        expand: ['latest_invoice.payment_intent']
+      });
+
+      res.status(200).send({
+        subscriptionId: stripeSubscription.id,
+        clientSecret:
+          stripeSubscription.latest_invoice.payment_intent.client_secret
+      });
+    } catch (err) {
+      return res
+        .status(500)
+        .send({ error: 'Donation failed due to a server error.' });
+    }
   }
 
   function addDonation(req, res) {

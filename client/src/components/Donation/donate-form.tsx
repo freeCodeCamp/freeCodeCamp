@@ -56,6 +56,7 @@ type PostCharge = (data: {
   name?: string | undefined;
   paymentMethodId?: string;
   handleAuthentication?: HandleAuthentication;
+  subscriptionId?: string;
 }) => void;
 
 type DonateFormProps = {
@@ -163,7 +164,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     payerEmail,
     payerName,
     paymentMethodId,
-    handleAuthentication
+    handleAuthentication,
+    subscriptionId
   }: PostPayment): void => {
     const { donationAmount, donationDuration: duration } = this.state;
     const { paymentContext, email, selectedDonationAmount } = this.props;
@@ -178,7 +180,8 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       email: email || payerEmail,
       name: payerName,
       paymentMethodId,
-      handleAuthentication
+      handleAuthentication,
+      subscriptionId
     });
     if (this.props.handleProcessing) this.props.handleProcessing();
   };

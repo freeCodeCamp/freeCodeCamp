@@ -15,6 +15,7 @@ export interface PostPayment {
   payerName?: string | undefined;
   paymentMethodId?: string;
   handleAuthentication?: HandleAuthentication;
+  subscriptionId?: string;
 }
 
 export interface DonationApprovalData {

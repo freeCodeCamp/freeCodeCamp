@@ -56,7 +56,6 @@ const WalletsButton = ({
 
     pr.on('paymentmethod', async event => {
       setpaymentMethod(event.paymentMethod);
-
       const {
         payerEmail,
         payerName,
@@ -64,10 +63,10 @@ const WalletsButton = ({
       } = event;
       //create payment intent
       const {
-        data: { clientSecret }
+        data: { clientSecret, subscriptionId }
       } = await createStripePaymentIntent({
-        paymentMethodType: 'card',
-        currency: 'usd'
+        payerEmail,
+        payerName
       });
 
       //confirm payment intent
@@ -92,7 +91,8 @@ const WalletsButton = ({
               paymentProvider: PaymentProvider.Stripe,
               paymentMethodId,
               payerEmail,
-              payerName
+              payerName,
+              subscriptionId
             });
           }
         } else {
@@ -100,7 +100,7 @@ const WalletsButton = ({
             paymentProvider: PaymentProvider.Stripe,
             paymentMethodId,
             payerEmail,
-            payerName
+            subscriptionId
           });
         }
       }

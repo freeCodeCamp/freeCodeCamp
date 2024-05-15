@@ -258,9 +258,11 @@ export function postChargeStripeCard(
 }
 
 export function createStripePaymentIntent(body: {
-  currency: 'usd';
-  paymentMethodType: 'card';
-}): Promise<ResponseWithData<{ clientSecret: string }>> {
+  payerEmail: string | undefined;
+  payerName: string | undefined;
+}): Promise<
+  ResponseWithData<{ clientSecret: string; subscriptionId: string }>
+> {
   return post('/donate/create-stripe-payment-intent', body);
 }
 
