@@ -125,14 +125,6 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       challenges.find(challenge => challenge.title === title)
     ) as Challenge[];
 
-    const expectedPaths = [
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker',
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter',
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher',
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator',
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register'
-    ];
-
     const projectIdsInOrder = [
       'aaa48de84e1ecc7c742e1124',
       'a7f4d8f2483413a6ce226cac',
@@ -140,8 +132,6 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       'aff0395860f5d3034dc0bfc9',
       'aa2e6f85cab2ab736c9a9b24'
     ];
-
-    expectedPaths.push('/learn/javascript-algorithms-and-data-structures/');
 
     const contents = projectsInOrder[0].solutions[0][0].contents as string;
 
