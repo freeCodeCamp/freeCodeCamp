@@ -48,7 +48,7 @@ probability = experiment(hat=hat,
 The output would be something like this:
 
 ```bash
->>> 0.356
+0.356
 ```
 
 この方法は無作為抽出に基づいているため、コードが実行されるたびに確率が多少変わります。

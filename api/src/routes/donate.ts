@@ -5,7 +5,7 @@ import {
 import Stripe from 'stripe';
 
 import { donationSubscriptionConfig } from '../../../shared/config/donation-settings';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 import { STRIPE_SECRET_KEY } from '../utils/env';
 
 /**

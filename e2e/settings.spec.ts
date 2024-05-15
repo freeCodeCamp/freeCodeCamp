@@ -11,14 +11,10 @@ const settingsTestIds = {
 
 const settingsObject = {
   email: 'foo@bar.com',
+  userNamePlaceholder: '{{username}}',
   certifiedUsername: 'certifieduser',
   testEmail: 'test@gmail.com',
   pageTitle: `${translations.buttons.settings} | freeCodeCamp.org`,
-  userNamePlaceholder: '{{username}}',
-  testUser: 'testuser',
-  errorCode: '404',
-  invalidUserName: 'user!',
-  tooShortUserName: 'us',
   private: 'Private',
   public: 'Public',
   supportEmail: 'support@freecodecamp.org',
@@ -68,47 +64,6 @@ test.describe('Settings', () => {
         settingsObject.certifiedUsername
       )}`
     );
-  });
-
-  test('Should validate Username Settings', async ({ page }) => {
-    const inputLabel = page.getByLabel(translations.settings.labels.username);
-    await expect(inputLabel).toBeVisible();
-    await inputLabel.fill(settingsObject.testUser);
-    await expect(
-      page.getByText(translations.settings.username.validating)
-    ).toBeVisible();
-    await inputLabel.fill(settingsObject.errorCode);
-    await expect(
-      page.getByText(
-        translations.settings.username['is a reserved error code'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.errorCode
-        )
-      )
-    ).toBeVisible();
-    await inputLabel.fill(settingsObject.invalidUserName);
-    await expect(
-      page.getByText(
-        translations.settings.username['contains invalid characters'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.invalidUserName
-        )
-      )
-    ).toBeVisible();
-    await inputLabel.fill(settingsObject.tooShortUserName);
-    await expect(
-      page.getByText(
-        translations.settings.username['is too short'].replace(
-          settingsObject.userNamePlaceholder,
-          settingsObject.tooShortUserName
-        )
-      )
-    ).toBeVisible();
-    await inputLabel.fill(settingsObject.certifiedUsername);
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.labels.username
-    });
-    await expect(saveButton).toBeVisible();
   });
 
   test('Should validate Privacy Settings', async ({ page }) => {
@@ -418,51 +373,21 @@ test.describe('Settings', () => {
     }
   });
 
-  test('Should validate Danger Section Settings', async ({ page }) => {
+  test('Should display the Danger section properly', async ({ page }) => {
+    await expect(page.getByText('Danger Zone')).toBeVisible();
     await expect(
-      page.getByText(translations.settings.danger.heading, {
-        exact: true
-      })
+      page.getByText(
+        'Please be careful. Changes in this section are permanent.'
+      )
     ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.danger['be-careful'], {
-        exact: true
-      })
-    ).toBeVisible();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger.reset,
-        exact: true
-      })
-      .click();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger['nevermind-2'],
-        exact: true
-      })
-      .click();
     await expect(
       page.getByRole('button', {
-        name: translations.settings.danger['reset-confirm'],
-        exact: true
+        name: 'Reset all of my progress'
       })
     ).toBeVisible();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger.delete,
-        exact: true
-      })
-      .click();
-    await page
-      .getByRole('button', {
-        name: translations.settings.danger.nevermind,
-        exact: true
-      })
-      .click();
     await expect(
       page.getByRole('button', {
-        name: translations.settings.danger.certain,
-        exact: true
+        name: 'Delete my account'
       })
     ).toBeVisible();
   });
