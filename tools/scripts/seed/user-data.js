@@ -1361,18 +1361,8 @@ module.exports = {
         files: []
       },
       {
-        id: '587d8253367417b2b2512c6b',
-        completedDate: 1544016209200,
-        files: []
-      },
-      {
         id: '8d1323c8c441eddfaeb5bdef',
         completedDate: 1543963893788,
-        files: []
-      },
-      {
-        id: '8d1923c8c441eddfaeb5bdef',
-        completedDate: 1543842286217,
         files: []
       },
       {
