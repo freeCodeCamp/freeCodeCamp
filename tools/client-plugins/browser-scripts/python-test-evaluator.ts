@@ -119,10 +119,6 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // custom globals.
     const runPython = (pyCode: string) =>
       pyodide.runPython(pyCode, { globals: __userGlobals }) as unknown;
-    // TODO: remove __pyodide once all the test use runPython.
-    const __pyodide = {
-      runPython
-    };
 
     runPython(`
 def __inputGen(xs):
