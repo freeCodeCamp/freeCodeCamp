@@ -160,7 +160,7 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
-export type ProgressionNodesWithCompleted = {
+export type ProgressionTilesWithCompleted = {
   block: string;
   challengeType: number;
   dashedName: string;
