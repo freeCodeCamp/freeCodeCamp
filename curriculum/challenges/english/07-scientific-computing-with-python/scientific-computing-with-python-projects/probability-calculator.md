@@ -92,7 +92,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -137,7 +137,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -180,7 +180,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -227,7 +227,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });

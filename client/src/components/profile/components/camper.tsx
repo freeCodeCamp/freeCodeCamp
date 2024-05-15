@@ -60,7 +60,7 @@ function Camper({
       </div>
       {(isDonating || isTopContributor) && (
         <FullWidthRow>
-          <h2 className='text-center'>{t('profile.badges')}</h2>
+          <h2>{t('profile.badges')}</h2>
           <div className='badge-card-container'>
             {isDonating && (
               <div className='badge-card'>
