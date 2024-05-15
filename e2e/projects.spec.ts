@@ -97,9 +97,11 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     page,
     browserName,
     isMobile,
-    request
+    request,
+    context
   }) => {
     test.setTimeout(40000);
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const block: block = curriculum;
     const targetBlock = 'javascript-algorithms-and-data-structures-projects';
@@ -144,7 +146,6 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker'
     );
 
-    const editor = await getProjectEditors({ page, isMobile });
     await focusProjectEditor({ page, browserName, isMobile });
     await clearProjectEditor({ page, browserName });
 
