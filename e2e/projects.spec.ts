@@ -88,6 +88,10 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
   test.beforeAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
   });
+  test.skip(
+    ({ browserName }) => browserName !== 'chromium',
+    'Only chromium allows us to use the clipboard API.'
+  );
 
   test('projects are submitted and viewed correctly', async ({
     page,
@@ -137,19 +141,19 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     // Use the `testing=true` parameter to prevent the editor
     // from automatically adding a closing bracket.
     await page.goto(
-      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker?testing=true'
+      '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker'
     );
 
     const editor = await getProjectEditors({ page, isMobile });
     await focusProjectEditor({ page, browserName, isMobile });
     await clearProjectEditor({ page, browserName });
 
-    // To pass on firefox, we need to make sure the editor value is only set once
-    // instead of multiple times. (Bug in firefox)
-    await editor.evaluate((element, value) => {
-      (element as HTMLTextAreaElement).value = value;
-      element.dispatchEvent(new Event('input', { bubbles: true }));
-    }, contents);
+    await page.evaluate(
+      async contents => await navigator.clipboard.writeText(contents),
+      contents
+    );
+    // Only runs on Chromium, so Control will work.
+    await page.keyboard.press('Control+v');
 
     await page.getByRole('button', { name: 'Run' }).click();
 

@@ -450,16 +450,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
-    // disable bracket completion when testing as it duplicates brackets when filling text
-    const disableBracketCompletion =
-      window.location.href.includes('testing=true');
-
-    if (disableBracketCompletion) {
-      editor?.updateOptions({
-        autoClosingBrackets: 'never',
-        autoClosingQuotes: 'never'
-      });
-    }
 
     document.fonts.ready
       .then(() => monaco.editor.remeasureFonts())
