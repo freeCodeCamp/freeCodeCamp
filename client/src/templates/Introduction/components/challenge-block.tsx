@@ -1,9 +1,9 @@
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
-import { ProgressionNodesWithCompleted } from '../../../redux/prop-types';
-import ChallengeNodesList from './challenge-nodes-list';
-import ChallengeOrProjectNodesList from './challenge-or-project-nodes-list';
+import { ProgressionTilesWithCompleted } from '../../../redux/prop-types';
+import ChallengeTilesList from './challenge-tiles-list';
+import ChallengeOrProjectTilesList from './challenge-or-project-tiles-list';
 import ProjectController from './project-controller';
 
 const getStepNumber = (dashedName: string) => {
@@ -13,25 +13,25 @@ const getStepNumber = (dashedName: string) => {
 };
 
 interface ChallengeBlock {
-  progressionNodes: ProgressionNodesWithCompleted[];
+  progressionNodes: ProgressionTilesWithCompleted[];
   isProjectBlock: boolean;
   isGridMap?: boolean;
   blockTitle?: string | null;
 }
 
 function ChallengeBlock({
-  progressionNodes,
+  progressionNodes: progressionTiles,
   isProjectBlock,
   isGridMap = false,
   blockTitle
 }: ChallengeBlock): JSX.Element {
   const { t } = useTranslation();
 
-  const firstIncompleteChallenge = progressionNodes.find(
-    node => !node.isCompleted
+  const firstIncompleteChallenge = progressionTiles.find(
+    tile => !tile.isCompleted
   );
 
-  const isChallengeStarted = !!progressionNodes.find(node => node.isCompleted);
+  const isChallengeStarted = !!progressionTiles.find(tile => tile.isCompleted);
 
   const buttons = firstIncompleteChallenge
     ? [
@@ -52,14 +52,14 @@ function ChallengeBlock({
       <nav
         aria-label={
           blockTitle
-            ? progressionNodes[0].superBlock === SuperBlocks.A2English
+            ? progressionTiles[0].superBlock === SuperBlocks.A2English
               ? t('aria.dialogues-and-tasks-for', { blockTitle })
               : t('aria.steps-for', { blockTitle })
             : t('aria.steps')
         }
       >
-        <ChallengeOrProjectNodesList
-          nodes={progressionNodes}
+        <ChallengeOrProjectTilesList
+          tiles={progressionTiles}
           isProject={isProjectBlock}
           getStepNumber={getStepNumber}
           t={t}
@@ -67,7 +67,7 @@ function ChallengeBlock({
       </nav>
     </>
   ) : (
-    <ChallengeNodesList nodes={progressionNodes} isProject={isProjectBlock} />
+    <ChallengeTilesList tiles={progressionTiles} isProject={isProjectBlock} />
   );
 }
 
