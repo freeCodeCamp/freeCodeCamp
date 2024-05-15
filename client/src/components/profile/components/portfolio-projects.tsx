@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
 import './portfolio-projects.css';
-import { FullWidthRow } from '../../helpers';
+import { FullWidthRow, Spacer } from '../../helpers';
 
 interface PortfolioProjectsProps {
   portfolioProjects: PortfolioProjectData[];
@@ -17,7 +17,7 @@ export const PortfolioProjects = ({
   }
   return (
     <FullWidthRow>
-      <h2 className='text-center'>{t('profile.projects')}</h2>
+      <h2>{t('profile.projects')}</h2>
       {portfolioProjects.map(({ title, url, image, description, id }) => (
         <a
           href={url}
@@ -48,6 +48,7 @@ export const PortfolioProjects = ({
           </div>
         </a>
       ))}
+      <Spacer size='medium' />
       <hr />
     </FullWidthRow>
   );

@@ -48,7 +48,7 @@ probability = experiment(hat=hat,
 The output would be something like this:
 
 ```bash
->>> 0.356
+0.356
 ```
 
 由於這是基於隨機抽取的，因此每次運行代碼時概率會略有不同。
