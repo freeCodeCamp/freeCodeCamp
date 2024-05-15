@@ -102,7 +102,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     request,
     context
   }) => {
-    test.setTimeout(40000);
+    test.setTimeout(20000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const block: block = curriculum;
@@ -166,20 +166,25 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       .click();
 
     // Submit the rest with the API.
+    const submissionPromises = [];
 
     for (let i = 1; i < projectsInOrder.length; i++) {
-      await authedPost(request, '/modern-challenge-completed', {
-        id: projectIdsInOrder[i],
-        challengeType: 5,
-        files: projectsInOrder[i].solutions[0].map(({ contents }) => ({
-          contents: contents,
-          key: 'scriptjs',
-          ext: 'js',
-          name: 'script',
-          history: ['script.js']
-        }))
-      });
+      submissionPromises.push(
+        authedPost(request, '/modern-challenge-completed', {
+          id: projectIdsInOrder[i],
+          challengeType: 5,
+          files: projectsInOrder[i].solutions[0].map(({ contents }) => ({
+            contents: contents,
+            key: 'scriptjs',
+            ext: 'js',
+            name: 'script',
+            history: ['script.js']
+          }))
+        })
+      );
     }
+
+    await Promise.all(submissionPromises);
 
     await page.goto('/settings');
 
