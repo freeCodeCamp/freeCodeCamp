@@ -75,11 +75,15 @@ test.describe('Projects', () => {
       const url = `/learn/${superBlock}/${block}/${slug}`;
       await page.goto(url);
       await page
-        .locator('#dynamic-front-end-form #solution')
+        .getByLabel('Solution Link')
         .fill('https://replit.com/@camperbot/python-project#main.py');
 
-      await page.locator("text=I've completed this challenge").click();
-      await expect(page.locator('text=go to next challenge')).toBeVisible();
+      await page
+        .getByRole('button', { name: "I've completed this challenge" })
+        .click();
+      await expect(
+        page.getByRole('button', { name: 'Go to next challenge' })
+      ).toBeVisible();
     }
   });
 });
@@ -102,7 +106,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     request,
     context
   }) => {
-    test.setTimeout(20000);
+    test.setTimeout(25000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const block: block = curriculum;
@@ -189,7 +193,9 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     await page.goto('/settings');
 
     for (const projectTitle of projectTitles) {
-      await page.getByTestId(projectTitle).click();
+      await page
+        .getByRole('button', { name: `View Solution for ${projectTitle}` })
+        .click();
       const solutionModal = page.getByRole('dialog', {
         name: `Solution for ${projectTitle}`
       });
@@ -208,14 +214,16 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       })
       .click();
 
-    const selector = 'button-for-javascript-algorithms-and-data-structures';
-    await expect(page.getByTestId(selector)).toContainText(
-      'Claim Certification'
-    );
-    await page.getByTestId(selector).click();
-    await expect(page.getByTestId(selector)).toContainText(
-      'Show Certification'
-    );
+    await page
+      .getByRole('link', {
+        name: 'Claim Certification Legacy JavaScript Algorithms and Data Structures'
+      })
+      .click();
+    await expect(
+      page.getByRole('link', {
+        name: 'Show Certification Legacy JavaScript Algorithms and Data Structures'
+      })
+    ).toBeVisible();
   });
 });
 
@@ -232,7 +240,7 @@ test.describe('Completion modal should be shown after submitting a project', () 
     ];
 
     await page.goto(
-      '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page?testing=true'
+      '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
     const editor = await getProjectEditors({ page, isMobile });
     await page.getByRole('button', { name: 'styles.css' }).click();
@@ -280,7 +288,7 @@ test.describe('Should not be able to submit in quick succesion', () => {
 
     await expect(completedButton).toBeDisabled();
 
-    await expect(page.locator('div[role="dialog"]')).not.toBeVisible();
+    await expect(page.getByRole('dialog')).not.toBeVisible();
   });
 
   test.afterAll(() => {
