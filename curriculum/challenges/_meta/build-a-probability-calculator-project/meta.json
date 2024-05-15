@@ -3,13 +3,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "build-a-probability-calculator-project",
-  "order": 14,
+  "order": 15,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "scientific-computing-with-python",
-  "superOrder": 10,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "5e44414f903586ffb414c950",
