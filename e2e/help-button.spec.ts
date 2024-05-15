@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('help-button tests for a page with three links (hint, help and video)', () => {
   test('should render the button, menu and the three links when video is available', async ({
@@ -38,5 +39,43 @@ test.describe('help-button tests for a page with two links when video is not ava
     await expect(page.getByTestId('ask-for-help')).toBeVisible();
     //The video link is hidden
     await expect(page.getByTestId('watch-a-video')).toBeHidden();
+  });
+});
+
+test.describe('help-button tests for a page with a reset and help button', () => {
+  test('should not be present before the user checks their code three times', async ({
+    page
+  }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
+    );
+    await expect(page.getByTestId('get-help-button')).toBeHidden();
+  });
+
+  test('should be present after the user checks their code three times', async ({
+    page
+  }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
+    );
+    const checkButton = page.getByTestId('lowerJaw-check-button');
+    await checkButton.click();
+    await checkButton.click();
+    await checkButton.click();
+    await expect(page.getByText(translations.buttons.help)).toBeVisible();
+  });
+  test('icon should be invisible to screen-reader', async ({ page }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
+    );
+    const checkButton = page.getByTestId('lowerJaw-check-button');
+    await checkButton.click();
+    await checkButton.click();
+    await checkButton.click();
+    const helpButton = page.getByText(translations.buttons.help);
+    const helpIconGroup = helpButton.getByRole('group', {
+      includeHidden: false
+    });
+    await expect(helpIconGroup).toBeHidden();
   });
 });
