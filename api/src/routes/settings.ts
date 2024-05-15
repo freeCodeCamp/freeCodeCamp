@@ -18,7 +18,7 @@ import { isProfane } from 'no-profanity';
 
 import { blocklistedUsernames } from '../../../shared/config/constants';
 import { isValidUsername } from '../../../shared/utils/validate';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
