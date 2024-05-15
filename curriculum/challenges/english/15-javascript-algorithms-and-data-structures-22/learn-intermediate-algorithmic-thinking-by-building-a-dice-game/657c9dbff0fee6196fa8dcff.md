@@ -1,8 +1,8 @@
 ---
 id: 657c9dbff0fee6196fa8dcff
-title: Step 9
+title: Step 6
 challengeType: 0
-dashedName: step-9
+dashedName: step-6
 ---
 
 # --description--
