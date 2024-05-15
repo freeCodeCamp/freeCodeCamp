@@ -218,11 +218,15 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
         name: 'Claim Certification Legacy JavaScript Algorithms and Data Structures'
       })
       .click();
-    await expect(
-      page.getByRole('link', {
-        name: 'Show Certification Legacy JavaScript Algorithms and Data Structures'
-      })
-    ).toBeVisible();
+
+    const showCertLink = page.getByRole('link', {
+      name: 'Show Certification Legacy JavaScript Algorithms and Data Structures'
+    });
+    await expect(showCertLink).toBeVisible();
+    await expect(showCertLink).toHaveAttribute(
+      'href',
+      '/certification/developmentuser/javascript-algorithms-and-data-structures'
+    );
   });
 });
 
