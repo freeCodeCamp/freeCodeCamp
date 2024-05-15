@@ -1,5 +1,5 @@
 import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/superblocks';
 import tributePageHtml from './fixtures/tribute-page-html.json';
 import tributePageCss from './fixtures/tribute-page-css.json';
@@ -65,6 +65,14 @@ const pythonProjects = {
       nextChallengeText: 'Cat and Dog Image Classifier'
     }
   ]
+};
+
+const pasteContent = async (page: Page) => {
+  if (isMacOS) {
+    await page.keyboard.press('Meta+v');
+  } else {
+    await page.keyboard.press('Control+v');
+  }
 };
 
 test.describe('Projects', () => {
@@ -147,11 +155,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       contents
     );
 
-    if (isMacOS) {
-      await page.keyboard.press('Meta+v');
-    } else {
-      await page.keyboard.press('Control+v');
-    }
+    await pasteContent(page);
 
     await page.getByRole('button', { name: 'Run' }).click();
 
@@ -218,11 +222,17 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 });
 
 test.describe('Completion modal should be shown after submitting a project', () => {
+  test.skip(
+    ({ browserName }) => browserName !== 'chromium',
+    'Only chromium allows us to use the clipboard API.'
+  );
+
   test('Ctrl + enter triggers the completion modal on multifile projects', async ({
     page,
-    isMobile
+    isMobile,
+    context
   }) => {
-    test.setTimeout(20000);
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const tributeContent = [
       tributePageHtml['tribute-page-html'].contents,
@@ -236,8 +246,13 @@ test.describe('Completion modal should be shown after submitting a project', () 
     await page.getByRole('button', { name: 'styles.css' }).click();
 
     for (let i = 0; i < 2; i++) {
+      await page.evaluate(
+        async contents => await navigator.clipboard.writeText(contents),
+        tributeContent[i]
+      );
+
       await editor.nth(i).focus();
-      await page.keyboard.insertText(tributeContent[i]);
+      await pasteContent(page);
     }
 
     await page.keyboard.press('Control+Enter');
