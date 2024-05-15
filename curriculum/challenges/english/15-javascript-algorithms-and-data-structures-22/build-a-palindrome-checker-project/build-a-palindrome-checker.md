@@ -228,7 +228,7 @@ checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'five|\_/|four is not a palindrome');
 ```
 
-When the `#text-input` element contains a palindrome of random letters and it's reversal, the `#result` element 
+When the `#text-input` element contains a palindrome created from a random sequence of alphanumeric characters, the `#result` element 
 should correctly identify it as a palindrome. 
 
 ```js
