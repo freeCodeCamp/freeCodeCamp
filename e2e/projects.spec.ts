@@ -75,6 +75,16 @@ const pasteContent = async (page: Page) => {
   }
 };
 
+test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+test.beforeAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user');
+});
+
+test.afterAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+});
+
 test.describe('Projects', () => {
   test('Should be possible to submit Python projects', async ({ page }) => {
     const { superBlock, block, challenges } = pythonProjects; // Ensure these are defined or imported
@@ -101,11 +111,6 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     ({ browserName }) => browserName !== 'chromium',
     'Only chromium allows us to use the clipboard API.'
   );
-
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-  test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
-  });
 
   test('projects are submitted and viewed correctly', async ({
     page,
@@ -294,9 +299,5 @@ test.describe('Should not be able to submit in quick succesion', () => {
     await expect(completedButton).toBeDisabled();
 
     await expect(page.getByRole('dialog')).not.toBeVisible();
-  });
-
-  test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 });
