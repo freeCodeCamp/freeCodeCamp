@@ -14,9 +14,9 @@ Trabalhar nesses desafios vai fazer com que você escreva seu código usando um 
 - Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial no Gitpod</a> para completar esses desafios.
 - Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
-O arquivo `package.json` é o centro de qualquer projeto do Node.js ou pacote do npm. It stores information about your project. Ele consiste em um único objeto JSON, onde as informações são armazenadas em pares de chave-valor. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
+O arquivo `package.json` é o centro de qualquer projeto do Node.js ou pacote do npm. Ele armazena informações sobre o seu projeto. Ele consiste em um único objeto JSON, onde as informações são armazenadas em pares de chave-valor. Os dois únicos campos obrigatórios são `name` e `version`, mas é uma boa prática fornecer informações adicionais.
 
-You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
+Você pode criar o arquivo `package.json` no terminal usando o comando `npm init`. Isso executará um assistente de instalação. Usar `npm init` com a flag `-y` gera o arquivo sem fazer qualquer pergunta; `npm init -y`.
 
 Se você olhar a árvore de arquivos do projeto, você encontrará o arquivo `package.json` no nível superior da árvore. Este é o arquivo que você vai melhorar nos próximos desafios.
 

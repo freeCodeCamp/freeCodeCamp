@@ -1,6 +1,6 @@
 ---
 id: cf1111c1c11feddfaeb6bdef
-title: Divide One Number by Another with JavaScript
+title: JavaScript에서 하나의 숫자를 다른 숫자로 나누기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqkbdAr'
 forumTopicId: 17566
@@ -9,30 +9,30 @@ dashedName: divide-one-number-by-another-with-javascript
 
 # --description--
 
-We can also divide one number by another.
+한 숫자를 다른 숫자로 나누는 것도 가능합니다.
 
-JavaScript uses the `/` symbol for division.
+JavaScript에서는 나누기 기호로 `/`를 사용합니다.
 
-**Example**
+**예:**
 
 ```js
 const myVar = 16 / 2;
 ```
 
-`myVar` now has the value `8`.
+`myVar`의 값은 이제 `8`을 갖습니다.
 # --instructions--
 
-Change the `0` so that the `quotient` is equal to `2`.
+`0`를 변경해서, `quotient`(몫) 이 `2`와 같도록 해주세요.
 
 # --hints--
 
-The variable `quotient` should be equal to 2.
+변수 `quotient`의 값이 2와 같아야 합니다.
 
 ```js
 assert(quotient === 2);
 ```
 
-You should use the `/` operator.
+`/` 연산자를 사용해야 합니다.
 
 ```js
 assert(/\d+\s*\/\s*\d+/.test(__helpers.removeJSComments(code)));

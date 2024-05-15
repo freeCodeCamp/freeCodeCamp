@@ -98,31 +98,6 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
 
     return (
       <FullWidthRow>
-        <Row className='heatmap-nav'>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex - 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.prevPage}
-            style={{
-              visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
-            }}
-          >
-            &lt;
-          </button>
-          <span>{title}</span>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex + 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.nextPage}
-            style={{
-              visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
-            }}
-          >
-            &gt;
-          </button>
-        </Row>
         <Spacer size='medium' />
 
         <CalendarHeatMap
@@ -162,6 +137,32 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
           values={dataToDisplay}
         />
         <ReactTooltip className='react-tooltip' effect='solid' html={true} />
+        <Row className='text-center'>
+          <button
+            className='heatmap-nav-btn'
+            disabled={!pages[this.state.pageIndex - 1]}
+            // eslint-disable-next-line @typescript-eslint/unbound-method
+            onClick={this.prevPage}
+            style={{
+              visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
+            }}
+          >
+            &lt;
+          </button>
+          <span>{title}</span>
+          <button
+            className='heatmap-nav-btn'
+            disabled={!pages[this.state.pageIndex + 1]}
+            // eslint-disable-next-line @typescript-eslint/unbound-method
+            onClick={this.nextPage}
+            style={{
+              visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
+            }}
+          >
+            &gt;
+          </button>
+        </Row>
+        <Spacer size='medium' />
         <hr />
       </FullWidthRow>
     );
