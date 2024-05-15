@@ -1,8 +1,8 @@
 ---
 id: 657c9dbff0fee6196fa8dcff
-title: Step 11
+title: Step 9
 challengeType: 0
-dashedName: step-11
+dashedName: step-9
 ---
 
 # --description--
@@ -291,7 +291,7 @@ const rulesBtn = document.getElementById("rules-btn");
 let diceValuesArr = [];
 let isModalShowing = false;
 let score = 0;
-let totalScore = 0;
+let total = 0;
 let round = 1; 
 let rolls = 0; 
 
