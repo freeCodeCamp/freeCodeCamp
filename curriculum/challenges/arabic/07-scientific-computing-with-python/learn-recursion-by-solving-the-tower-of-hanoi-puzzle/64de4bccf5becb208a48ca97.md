@@ -20,7 +20,7 @@ Currently, the `move()` function does not take any parameters. Change the functi
 Your `move()` function should have `n`, `source`, `auxiliary`, and `target` as the parameters. The order matters.
 
 ```js
-({ test: () => assert(__pyodide.runPython(`
+({ test: () => assert(runPython(`
       import inspect
       str(inspect.signature(__locals.get('move'))) == '(n, source, auxiliary, target)'    
   `))
