@@ -11,26 +11,74 @@ In this project, you will learn algorithmic thinking by building a dice game. Th
 
 The HTML and CSS have been provided for you. Feel free to explore them.
 
-When you are ready, use the `querySelectorAll()` method to target all elements with the `class` of `die`, and assign that to a constant called `listOfAllDice`.
+When you are ready, you will need to set up your HTML variables. Get all of your `.die` elements and assign them to a `listOfAllDice` variable. Get your score inputs (the `input` elements in your `#score-options`) and score spans, and assign them to `scoreInputs` and `scoreSpans`. Assign the `#current-round` element to `currentRound` and the `#current-round-rolls` element to `currentRoundRolls`, then do the same for your `#total-score` and `#score-history` elements. Assign your `#roll-dice-btn`, `#keep-score-btn`, `#rules-btn`, and `.rules-container` to variables with properly formatted names.
 
 # --hints--
 
-You should have a `const` variable called `listOfAllDice`.
+You should assign your `.die` elements to `listOfAllDice`.
 
 ```js
-assert.match(code, /const\s+listOfAllDice\s*/);
+assert.deepEqual(listOfAllDice, document.querySelectorAll(".die"));
 ```
 
-You should assign the `document.querySelectorAll()` method to the `listOfAllDice` variable.
+You should assign your `#score-options input` elements to `scoreInputs`.
 
 ```js
-assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(.*\)\s*;?/);
+assert.deepEqual(scoreInputs, document.querySelectorAll("#score-options input"));
 ```
 
-You should target all elements with the `class` of `die` inside the `querySelectorAll` method.
+You should assign your `#score-options span` elements to `scoreSpans`.
 
 ```js
-assert.match(code, /const\s+listOfAllDice\s*=\s*document\.querySelectorAll\s*\(\s*('|")\.die\1\s*\)/);
+assert.deepEqual(scoreSpans, document.querySelectorAll("#score-options span"));
+```
+
+You should assign your `#current-round` element to `currentRoundText`.
+
+```js
+assert.deepInclude([document.getElementById("current-round"), document.querySelector("#current-round")], currentRound);
+```
+
+You should assign your `#current-round-rolls` element to `currentRoundRollsText`.
+
+```js
+assert.deepInclude([document.getElementById("current-round-rolls"), document.querySelector("#current-round-rolls")], currentRoundRolls);
+```
+
+You should assign your `#total-score` element to `totalScoreText`.
+
+```js
+assert.deepInclude([document.getElementById("total-score"), document.querySelector("#total-score")], totalScore);
+```
+
+You should assign your `#score-history` element to `scoreHistory`.
+
+```js
+assert.deepInclude([document.getElementById("score-history"), document.querySelector("#score-history")], scoreHistory);
+```
+
+You should assign your `#roll-dice-btn` element to `rollDiceBtn`.
+
+```js
+assert.deepInclude([document.getElementById("roll-dice-btn"), document.querySelector("#roll-dice-btn")], rollDiceBtn);
+```
+
+You should assign your `#keep-score-btn` element to `keepScoreBtn`.
+
+```js
+assert.deepInclude([document.getElementById("keep-score-btn"), document.querySelector("#keep-score-btn")], keepScoreBtn);
+```
+
+You should assign your `#rules-btn` element to `rulesBtn`.
+
+```js
+assert.deepInclude([document.getElementById("rules-btn"), document.querySelector("#rules-btn")], rulesBtn);
+```
+
+You should assign your `.rules-container` element to `rulesContainer`.
+
+```js
+assert.deepEqual(rulesContainer, document.querySelector(".rules-container"));
 ```
 
 # --seed--

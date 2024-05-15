@@ -1,8 +1,8 @@
 ---
 id: 657c9dbff0fee6196fa8dcff
-title: Step 16
+title: Step 11
 challengeType: 0
-dashedName: step-16
+dashedName: step-11
 ---
 
 # --description--
@@ -279,9 +279,9 @@ input[type="radio"]:disabled + label {
 const listOfAllDice = document.querySelectorAll(".die");
 const scoreInputs = document.querySelectorAll("#score-options input");
 const scoreSpans = document.querySelectorAll("#score-options span");
-const currentRoundText = document.getElementById("current-round");
-const currentRoundRollsText = document.getElementById("current-round-rolls");
-const totalScoreText = document.getElementById("total-score");
+const currentRound = document.getElementById("current-round");
+const currentRoundRolls = document.getElementById("current-round-rolls");
+const totalScore = document.getElementById("total-score");
 const scoreHistory = document.getElementById("score-history");
 const rollDiceBtn = document.getElementById("roll-dice-btn");
 const keepScoreBtn = document.getElementById("keep-score-btn");
