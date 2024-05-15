@@ -5,8 +5,6 @@
   "helpCategory": "Euler",
   "order": 4,
   "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "project-euler",
   "disableLoopProtectTests": true,
   "challengeOrder": [
