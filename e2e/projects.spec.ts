@@ -11,6 +11,7 @@ import {
   getProjectEditors,
   clearProjectEditor
 } from './utils/project-editor';
+import { isMacOS } from './utils/user-agent';
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
@@ -84,14 +85,15 @@ test.describe('Projects', () => {
 });
 
 test.describe('JavaScript projects can be submitted and then viewed in /settings and on the certifications', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-  test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
-  });
   test.skip(
     ({ browserName }) => browserName !== 'chromium',
     'Only chromium allows us to use the clipboard API.'
   );
+
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
+  test.beforeAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user');
+  });
 
   test('projects are submitted and viewed correctly', async ({
     page,
@@ -139,9 +141,6 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     const contents = projectsInOrder[0].solutions[0][0].contents as string;
 
-    // Test the direct flow once.
-    // Use the `testing=true` parameter to prevent the editor
-    // from automatically adding a closing bracket.
     await page.goto(
       '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker'
     );
@@ -153,8 +152,12 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       async contents => await navigator.clipboard.writeText(contents),
       contents
     );
-    // Only runs on Chromium, so Control will work.
-    await page.keyboard.press('Control+v');
+
+    if (isMacOS) {
+      await page.keyboard.press('Meta+v');
+    } else {
+      await page.keyboard.press('Control+v');
+    }
 
     await page.getByRole('button', { name: 'Run' }).click();
 
