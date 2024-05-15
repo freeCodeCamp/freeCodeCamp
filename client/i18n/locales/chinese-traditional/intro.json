@@ -460,9 +460,9 @@
         ]
       },
       "learn-introductory-javascript-by-building-a-pyramid-generator": {
-        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "title": "通過創建金字塔生成器學習 JavaScript 基礎知識",
         "intro": [
-          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "JavaScript 是一種功能強大的腳本語言，可用於使網頁具有交互性。它和 HTML 和 CSS 都是 Web 核心技術。所有現代瀏覽器都支持 JavaScript。",
           "在這個練習項目中，你將會通過編寫你自己的金字塔生成器來學習 JavaScript 的基本編程概念。你將學到如何使用數組、字符串、函數、循環、<code>if/else</code> 語句以及更多。"
         ]
       },
@@ -1205,7 +1205,7 @@
         "intro": ["學習 JavaScript 中的函數。"]
       },
       "top-basic-function-projects": {
-        "title": "Basic Function Projects",
+        "title": "基礎函數項目",
         "intro": ["通過構建基本函數來測試你的 JavaScript 技能。"]
       }
     }

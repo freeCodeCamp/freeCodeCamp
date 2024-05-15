@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
-import { Container, Row } from '@freecodecamp/ui';
+import { Alert, Container, Row } from '@freecodecamp/ui';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
@@ -26,8 +26,7 @@ interface MessageProps {
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
-      <h2 className='text-center'>{t('profile.you-not-public')}</h2>
-      <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
+      <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
       <Spacer size='medium' />
     </FullWidthRow>
   );

@@ -1,6 +1,6 @@
 ---
 id: 587d7b7b367417b2b2512b16
-title: Create complex multi-dimensional arrays
+title: 복잡한 다차원 배열 만들기
 challengeType: 1
 forumTopicId: 301159
 dashedName: create-complex-multi-dimensional-arrays
@@ -8,9 +8,9 @@ dashedName: create-complex-multi-dimensional-arrays
 
 # --description--
 
-Awesome! You have just learned a ton about arrays! This has been a fairly high level overview, and there is plenty more to learn about working with arrays, much of which you will see in later sections. But before moving on to looking at <dfn>Objects</dfn>, let's take one more look, and see how arrays can become a bit more complex than what we have seen in previous challenges.
+멋져요! 이제 배열에 관해 많은 것을 배웠습니다! 이것은 꽤 높은 수준의 개요였습니다. 배열을 사용하는 데 배워야 할 더 많은 내용이 있고, 이 중 많은 부분은 이후 섹션에서 볼 것입니다. 그러나 <dfn>객체(Objects)</dfn>를 살펴보기 전에 배열이 이전 도전에서 봐왔던 것보다 어떻게 조금 더 복잡해질 수 있는지 한 번 더 보도록 하겠습니다.
 
-One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become a very complex data structure, known as a <dfn>multi-dimensional</dfn>, or nested array. Consider the following example:
+데이터 구조로서 배열의 강력한 기능 중 하나는 배열이 다른 배열을 포함하거나 또는 완전히 다른 배열들로만 구성될 수 있다는 것입니다. 우리는 이전 도전에서 배열이 포함된 배열을 보았지만, 그것은 꽤 간단한 것이었습니다. 그러나 배열은 다른 배열을 포함하거나 각자 자체의 임의의 깊이를 가진 무한한 깊이의 배열을 포함할 수 있습니다. 이런 식으로 배열은 아주 빠르게 <dfn>다차원</dfn> 또는 중첩된 배열이라고도 하는 매우 복잡한 데이터 구조가 될 수 있습니다. 다음 예를 고려해 보겠습니다.
 
 ```js
 let nestedArray = [
@@ -31,15 +31,15 @@ let nestedArray = [
 ];
 ```
 
-The `deep` array is nested 2 levels deep. The `deeper` arrays are 3 levels deep. The `deepest` arrays are 4 levels, and the `deepest-est?` is 5.
+`deep` 배열은 2단계로 중첩되어 있습니다. `deeper` 배열은 3단계로 중첩되어 있습니다. `deepest` 배열은 4단계이며, `deepest-est?`는 5단계입니다.
 
-While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data. However, we can still very easily access the deepest levels of an array this complex with bracket notation:
+이 예제는 복잡해 보일 수 있지만, 이 정도의 복잡성은 대량의 데이터를 처리할 때 충분히 일반적으로 볼 수 있습니다. 그러나 여전히 이 복잡한 배열의 가장 깊은 수준에 대괄호 표기법을 사용하여 매우 쉽게 접근할 수 있습니다.
 
 ```js
 console.log(nestedArray[2][1][0][0][0]);
 ```
 
-This logs the string `deepest-est?`. And now that we know where that piece of data is, we can reset it if we need to:
+이것은 문자열 `deepest-est?`을 출력합니다. 이제 해당 데이터가 어디에 있는지 알았으므로 필요한 경우 재설정할 수 있습니다.
 
 ```js
 nestedArray[2][1][0][0][0] = 'deeper still';
@@ -47,15 +47,15 @@ nestedArray[2][1][0][0][0] = 'deeper still';
 console.log(nestedArray[2][1][0][0][0]);
 ```
 
-Now it logs `deeper still`.
+이제 `deeper still`을 출력합니다.
 
 # --instructions--
 
-We have defined a variable, `myNestedArray`, set equal to an array. Modify `myNestedArray`, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string `deep`, on the fourth level, include the string `deeper`, and on the fifth level, include the string `deepest`.
+우리는 변수 `myNestedArray`를 정의했고, 이 변수에 배열을 할당했습니다. `myNestedArray`를 수정하여 데이터 요소로 <dfn>문자열</dfn>, <dfn>숫자</dfn>, 및 <dfn>불리언</dfn>의 조합을 사용하여 깊이가 정확히 다섯 단계인지 확인하십시오 (기억하세요, 가장 바깥쪽 배열은 1단계입니다). 세 번째 수준 어딘가에 문자열 `deep`을 포함하고, 네 번째 수준에 문자열 `deeper`을 포함하며, 다섯 번째 수준에 문자열 `deepest`을 포함하십시오.
 
 # --hints--
 
-`myNestedArray` should contain only numbers, booleans, and strings as data elements
+`myNestedArray`는 데이터 요소로 숫자, 불리언, 문자열만 포함해야 합니다.
 
 ```js
 assert.strictEqual(
@@ -79,7 +79,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should have exactly 5 levels of depth
+`myNestedArray`는 정확히 5단계의 깊이를 가져야 합니다.
 
 ```js
 assert.strictEqual(
@@ -102,7 +102,7 @@ assert.strictEqual(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `deep` on an array nested 3 levels deep
+`myNestedArray`는 3단계까지 중첩된 배열에서 문자열 `deep`이 정확히 한 번 포함되어야 합니다.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `deeper` on an array nested 4 levels deep
+`myNestedArray`는 4단계까지 중첩된 배열에서 문자열 `deeper`가 정확히 한 번 포함되어야 합니다.
 
 ```js
 assert(
@@ -160,7 +160,7 @@ assert(
 );
 ```
 
-`myNestedArray` should contain exactly one occurrence of the string `deepest` on an array nested 5 levels deep
+`myNestedArray`는 5단계까지 중첩된 배열에서 문자열 `deepest`가 정확히 한 번 포함되어야 합니다.
 
 ```js
 assert(
