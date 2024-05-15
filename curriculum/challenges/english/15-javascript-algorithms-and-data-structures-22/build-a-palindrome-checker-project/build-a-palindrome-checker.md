@@ -228,6 +228,30 @@ checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'five|\_/|four is not a palindrome');
 ```
 
+When the `#text-input` element contains a palindrome of random letters and it's reversal, the `#result` element 
+should correctly identify it as a palindrome. 
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+const charactersLength = characters.length;
+
+const firstLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const secondLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const thirdLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const fourthLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+
+const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter + fourthLetter + thirdLetter + secondLetter + firstLetter;
+
+inputEl.value = phrase;
+checkBtn.click();
+
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is a palindrome');
+```
+
 # --seed--
 
 ## --seed-contents--
