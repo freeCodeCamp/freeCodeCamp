@@ -1,9 +1,9 @@
 ---
 id: 5e444136903586ffb414c94d
-title: Time Calculator
+title: Build a Time Calculator Project
 challengeType: 23
 forumTopicId: 462360
-dashedName: time-calculator
+dashedName: build-a-time-calculator-project
 ---
 
 # --description--

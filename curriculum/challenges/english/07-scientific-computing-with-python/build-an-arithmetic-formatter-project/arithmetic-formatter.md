@@ -1,9 +1,9 @@
 ---
 id: 5e44412c903586ffb414c94c
-title: Arithmetic Formatter
+title: Build an Arithmetic Formatter Project
 challengeType: 23
 forumTopicId: 462359
-dashedName: arithmetic-formatter
+dashedName: build-an-arithmetic-formatter-project
 ---
 
 # --description--

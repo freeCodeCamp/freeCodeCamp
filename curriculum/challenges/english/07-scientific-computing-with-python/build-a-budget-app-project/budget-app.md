@@ -1,9 +1,9 @@
 ---
 id: 5e44413e903586ffb414c94e
-title: Budget App
+title: Build a Budget App Project
 challengeType: 23
 forumTopicId: 462361
-dashedName: budget-app
+dashedName: build-a-budget-app-project
 ---
 
 # --description--
