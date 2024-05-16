@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-import { clearEditor, focusEditor } from './utils/editor';
+import { clearEditor, focusEditor } from './utils/challenge-editor';
 
 test.describe('Editor Component', () => {
   test('should allow the user to insert text', async ({

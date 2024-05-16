@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import { getEditors } from './utils/editor';
+import { getEditors } from './utils/challenge-editor';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('Challenge with editor', function () {

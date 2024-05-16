@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { clearEditor, focusEditor } from './utils/editor';
+import { clearEditor, focusEditor } from './utils/challenge-editor';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 

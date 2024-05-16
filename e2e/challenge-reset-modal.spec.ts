@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from './utils/challenge-editor';
 
 test('should render the modal content correctly', async ({ page }) => {
   await page.goto(

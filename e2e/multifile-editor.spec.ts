@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import { getEditors } from './utils/editor';
+import { getEditors } from './utils/challenge-editor';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(

@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import { focusEditor } from './utils/editor';
+import { focusEditor } from './utils/challenge-editor';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
