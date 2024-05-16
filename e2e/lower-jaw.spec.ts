@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { signout } from './utils/logout';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -29,13 +31,74 @@ test('Click on the "check your code" button', async ({ page }) => {
   await expect(hint).toBeVisible();
 });
 
-test('Click on the "Reset" button', async ({ page }) => {
-  const resetButton = page.getByTestId('lowerJaw-reset-button');
-  await resetButton.click();
+test('Resets the lower jaw when prompted', async ({ page }) => {
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+
+  await checkButton.click();
+
+  const failing = page.getByTestId('lowerJaw-failing-test-feedback');
+  const hint = page.getByTestId('lowerJaw-failing-hint');
+  await expect(failing).toBeVisible();
+  await expect(hint).toBeVisible();
+
+  await page.getByTestId('lowerJaw-reset-button').click();
 
   await expect(
     page.getByRole('dialog', { name: 'Reset this lesson?' })
   ).toBeVisible();
+
+  await page.getByRole('button', { name: 'Reset this lesson' }).click();
+  await expect(failing).not.toBeVisible();
+  await expect(hint).not.toBeVisible();
+});
+
+test('Focsues on the submit button after tests passed', async ({
+  page,
+  browserName,
+  isMobile
+}) => {
+  const editor = getEditors(page);
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+  const submitButton = page.getByRole('button', {
+    name: 'Submit and go to next challenge'
+  });
+  await focusEditor({ page, browserName, isMobile });
+  await clearEditor({ page, browserName });
+
+  await editor.fill(
+    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+  );
+  await checkButton.click();
+
+  await expect(submitButton).toBeFocused();
+});
+
+test('Prompts unauthenticated user to sign in to save progress', async ({
+  page,
+  browserName,
+  isMobile
+}) => {
+  await signout(page);
+  await page.reload();
+  const editor = getEditors(page);
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+  const loginButton = page.getByRole('button', {
+    name: 'Sign in to save your progress'
+  });
+  await focusEditor({ page, browserName, isMobile });
+  await clearEditor({ page, browserName });
+
+  await editor.fill(
+    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+  );
+
+  await checkButton.click();
+
+  await expect(loginButton).toBeVisible();
+
+  await loginButton.click();
+
+  // go back
 });
 
 test('Should render UI correctly', async ({ page }) => {

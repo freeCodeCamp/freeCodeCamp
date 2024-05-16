@@ -14,33 +14,6 @@ describe('Challenge with multifile editor', () => {
   beforeEach(() => {
     cy.visit(location);
   });
-  it('renders correctly', () => {
-    // it renders the file tab buttons
-    cy.get(selectors.monacoTabs).contains('index.html');
-    cy.get(selectors.monacoTabs).contains('styles.css');
-
-    // it checks for correct text at different widths
-    cy.viewport(768, 660);
-    cy.get(selectors.checkLowerJawButton).contains(
-      'Check Your Code (Ctrl + Enter)'
-    );
-
-    cy.viewport(767, 660);
-    cy.get(selectors.checkLowerJawButton)
-      .should('not.contain.text', '(Ctrl + Enter)')
-      .contains('Check Your Code');
-  });
-
-  it('resets the lower jaw when prompted', () => {
-    cy.get('[data-cy=failing-test-feedback]').should('not.exist');
-
-    cy.contains('Check Your Code').click();
-    cy.get('[data-cy=failing-test-feedback]').should('be.visible');
-    cy.get(selectors.resetCodeButton).click();
-    cy.get('[data-cy=reset-modal-confirm').click();
-
-    cy.get('[data-cy=failing-test-feedback]').should('not.exist');
-  });
 
   it('prompts unauthenticated user to sign in to save progress', () => {
     cy.focused()
@@ -52,13 +25,6 @@ describe('Challenge with multifile editor', () => {
     cy.get(selectors.signInButton).click();
     cy.go('back');
     cy.get(selectors.signInButton).should('not.exist');
-  });
-
-  it('focuses on the submit button after tests passed', () => {
-    cy.focused().click().type('{end}{enter}<meta charset="UTF-8" />');
-    cy.get(selectors.checkLowerJawButton).should('not.be.focused');
-    cy.get(selectors.checkLowerJawButton).click();
-    cy.get(selectors.submitLowerJawButton).should('be.focused');
   });
 
   it(
