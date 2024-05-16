@@ -79,7 +79,9 @@ const testUserData: Prisma.userCreateInput = {
   ],
   savedChallenges: [
     {
-      id: 'abc123',
+      // TODO: figure out why, when this was a short id, was it that only the get-public-profile
+      // tests failed, not the get-session-user tests.
+      id: 'a6b0bb188d873cb2c8729495',
       lastSavedDate: 123,
       files: [
         {
@@ -1270,9 +1272,9 @@ Thanks and regards,
             // TODO(Post-MVP, maybe): return completedSurveys?
             ..._.omit(publicUserData, 'completedSurveys'),
             username: publicUsername,
-            id: testUser.id,
             joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
-            profileUI: unlockedUserProfileUI
+            profileUI: unlockedUserProfileUI,
+            isDonating: null
           };
 
           expect(response.body).toStrictEqual({
