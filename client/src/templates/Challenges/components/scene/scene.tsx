@@ -13,6 +13,10 @@ const sToMs = (n: number) => {
   return n * 1000;
 };
 
+const loadImage = (src: string | null) => {
+  if (src) new Image().src = src;
+};
+
 export function Scene({
   scene,
   isPlaying,
@@ -25,27 +29,20 @@ export function Scene({
   const { t } = useTranslation();
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
-  const { startTimestamp, finishTimestamp } = audio;
+  const { startTimestamp = null, finishTimestamp = null } = audio;
 
-  const audioTimestamp =
-    startTimestamp !== null && finishTimestamp !== null
-      ? `#t=${startTimestamp}`
-      : '';
-
-  const hasTimestamps = startTimestamp && finishTimestamp;
-  // if there are timestamps, we use the difference between them as the duration
-  // if not, we assume we're playing the whole audio file.
-  const duration = hasTimestamps
-    ? sToMs(finishTimestamp - startTimestamp)
-    : Infinity;
+  const hasTimestamps = startTimestamp !== null && finishTimestamp !== null;
+  const audioTimestamp = hasTimestamps ? `#t=${startTimestamp}` : '';
 
   const audioRef = useRef<HTMLAudioElement>(
     new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
   );
 
-  const loadImage = (src: string | null) => {
-    if (src) new Image().src = src;
-  };
+  // if there are timestamps, we use the difference between them as the duration
+  // if not, we assume we're playing the whole audio file.
+  const duration = hasTimestamps
+    ? sToMs(finishTimestamp - startTimestamp)
+    : Infinity;
 
   // on mount
   useEffect(() => {

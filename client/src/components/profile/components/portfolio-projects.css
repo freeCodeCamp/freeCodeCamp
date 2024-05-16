@@ -1,117 +1,70 @@
-.portfolio-container {
-  display: grid;
-  position: relative;
-  border: 1px solid var(--secondary-color);
-  gap: 1rem 1rem;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 1em;
-  margin-bottom: 3em;
-}
-
-.portfolio-screen-shot {
-  display: block;
+/* Base styles for mobile devices */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  grid-column: 1/-1;
-  grid-row: 1;
+  height: auto;
+  overflow: hidden;
 }
 
-.portfolio-container h3 {
-  grid-column: 1/ -1;
-  grid-row: 2;
-  margin-block: 1em;
+.portfolio-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.portfolio-card-description {
+  margin: 1rem 0rem;
+  width: auto;
+  overflow-wrap: break-word;
 }
 
 #link-icon {
-  margin-inline-start: 1em;
+  margin-inline-start: 10px;
 }
 
-.portfolio-container a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column: 1/ -1;
-  grid-row: 4;
-  font-size: unset;
-  justify-self: end;
-  width: 40%;
-  height: 40px; /* Set a fixed height value */
-  background-color: var(--quaternary-background);
-  color: var(--secondary-color);
-  padding: 0.5rem;
-  border: 3px solid var(--secondary-color);
-  padding-inline: 4rem;
-  margin: 1em;
+a.portfolio-card {
   text-decoration: none;
-  /* prevent line breaks in Chinese/Japanese/Korean */
-  word-break: keep-all;
 }
 
-.portfolio-container:hover a {
-  background-color: var(--primary-color);
-  color: var(--primary-background);
+.portfolio-card p {
+  margin-bottom: 10px;
 }
 
-.portfolio-container a::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+a.portfolio-card:hover,
+a.portfolio-card:focus {
+  background-color: transparent;
 }
 
-.portfolio-container a:is(:hover, :focus, :focus-visible) {
-  outline-offset: 2px;
+a.portfolio-card:hover h3,
+a.portfolio-card:focus h3 {
+  text-decoration: underline;
 }
 
-.portfolio-container p {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  grid-column: 1/ -1;
-  grid-row: 3;
+a.portfolio-card:hover img,
+a.portfolio-card:focus img {
+  opacity: 0.8;
 }
 
-@media (max-width: 994px) {
-  .portfolio-screen-shot {
-    max-height: 300px;
+/* Adjust styles for desktop screens */
+@media (min-width: 769px) {
+  .portfolio-card {
+    flex-direction: row;
+    min-width: 0;
+    max-height: none;
   }
 
-  .portfolio-container h3 {
-    margin: 0.5rem;
+  .portfolio-image {
+    width: 300px;
+    min-width: 300px;
+    min-height: auto;
   }
 
-  .portfolio-container p {
-    margin: 1rem;
-  }
-}
-
-@media (min-width: 995px) {
-  .portfolio-container {
-    grid-template-columns: 450px 1.2fr;
-    grid-template-rows: minmax(65px, 0.1fr) minmax(125px, 1fr) 75px;
-  }
-
-  .portfolio-screen-shot {
-    grid-column: 1;
-    grid-row: 1 / -1;
-  }
-
-  .portfolio-container h3 {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .portfolio-container p {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .portfolio-container a {
-    grid-column: 2;
-    grid-row: 3;
+  .portfolio-card-description {
+    margin: 0rem 1rem 1rem;
+    width: 100%;
   }
 }
 
@@ -122,6 +75,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0.5rem;
 }
 
 .timeline-pagination_list_item {
@@ -132,7 +86,6 @@
   outline-color: transparent;
 }
 
-/* Timeline table styles */
 .timeline-row {
   height: 60px;
 }
