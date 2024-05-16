@@ -52,7 +52,10 @@ export default function ToggleRadioSetting({
           <span className='custom-circle'></span>
           <span>{onLabel}</span>
         </label>
-        <label htmlFor={secondRadioId}>
+        <label
+          htmlFor={secondRadioId}
+          data-playwright-test-label={secondRadioId}
+        >
           <input
             id={secondRadioId}
             type='radio'
