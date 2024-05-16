@@ -9,14 +9,9 @@ import {
 import _ from 'lodash';
 
 type NullToUndefined<T> = T extends null ? undefined : T;
-type NullToFalse<T> = T extends null ? boolean : T;
 
 type NoNullProperties<T> = {
   [P in keyof T]: NullToUndefined<T[P]>;
-};
-
-type DefaultToFalse<T> = {
-  [P in keyof T]: NullToFalse<T[P]>;
 };
 
 /**
@@ -147,7 +142,11 @@ export const normalizeSurveys = (
  */
 export const normalizeFlags = <T extends Record<string, boolean | null>>(
   flags: T
-): DefaultToFalse<T> => {
-  // return { whatever: false };
-  return _.mapValues(flags, flag => flag ?? false) as DefaultToFalse<T>;
+): { [K in keyof T]: boolean } => {
+  const out = {} as { [K in keyof T]: boolean };
+  for (const key in flags) {
+    const v = flags[key];
+    out[key] = typeof v === 'boolean' ? v : false;
+  }
+  return out;
 };
