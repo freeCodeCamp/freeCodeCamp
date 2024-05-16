@@ -1,8 +1,8 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 162
+title: Step 164
 challengeType: 0
-dashedName: step-162
+dashedName: step-164
 ---
 
 # --description--
@@ -19,13 +19,13 @@ while (condition) {
 
 # --hints--
 
-Your `pick` function should have a `while` loop.
+你的 `pick` 函数应该有一个 `while` 循环。
 
 ```js
 assert.match(pick.toString(), /while\s*\(/);
 ```
 
-Your `while` loop should run while `numbers.length < 10`.
+你的 `while` 循环应该在 `numbers.length < 10` 的情况下运行。
 
 ```js
 assert.match(pick.toString(), /while\s*\(\s*numbers\.length\s*<\s*10\s*\)/);

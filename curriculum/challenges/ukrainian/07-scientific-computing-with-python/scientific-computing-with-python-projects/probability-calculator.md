@@ -48,7 +48,7 @@ probability = experiment(hat=hat,
 Результат буде приблизно таким:
 
 ```bash
->>> 0.356
+0.356
 ```
 
 Оскільки все базується на випадкових витяганнях, то вірогідність буде злегка відрізнятися з кожним новим запуском коду.
@@ -143,7 +143,7 @@ t.result.wasSuccessful()
 });
 ```
 
-The `draw` method should behave correctly when the number of balls to extract is bigger than the number of balls in the hat.
+Метод `draw` має поводитись правильно, якщо кількість кульок, які потрібно витягти, більша за кількість кульок в капелюсі.
 
 ```js
 ({

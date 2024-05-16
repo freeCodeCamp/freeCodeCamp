@@ -1207,6 +1207,12 @@
       "top-learn-function-basics": {
         "title": "Learn Function Basics",
         "intro": ["Learn about functions in JavaScript."]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Projects",
+        "intro": [
+          "Put your JavaScript skills to the test by building basic functions."
+        ]
       }
     }
   },
@@ -1426,10 +1432,6 @@
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Learn How to Analyze Code Documentation",
-        "intro": ["", ""]
-      },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "Learn How to Follow Basic Email Convention",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {

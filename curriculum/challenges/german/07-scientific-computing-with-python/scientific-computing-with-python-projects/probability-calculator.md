@@ -48,7 +48,7 @@ probability = experiment(hat=hat,
 The output would be something like this:
 
 ```bash
->>> 0.356
+0.356
 ```
 
 Da dies auf zufälligen Ziehungen basiert, wird die Wahrscheinlichkeit jedes Mal, wenn der Code ausgeführt wird, etwas anders sein.
