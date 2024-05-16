@@ -68,8 +68,6 @@ const pythonProjects = {
 };
 
 const pasteContent = async (page: Page) => {
-  console.log('Pasting content');
-  console.log('isMacOS', process.platform);
   if (isMacOS) {
     await page.keyboard.press('Meta+v');
   } else {
@@ -258,7 +256,7 @@ test.describe('Completion modal should be shown after submitting a project', () 
     await page.goto(
       '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
-    const editor = await getProjectEditors({ page, isMobile });
+    const editors = await getProjectEditors({ page, isMobile });
     await page.getByRole('button', { name: 'styles.css' }).click();
 
     for (let i = 0; i < 2; i++) {
@@ -267,7 +265,7 @@ test.describe('Completion modal should be shown after submitting a project', () 
         tributeContent[i]
       );
 
-      await editor.nth(i).focus();
+      await editors.nth(i).focus();
       await pasteContent(page);
     }
 
@@ -288,10 +286,9 @@ test.describe('Should not be able to submit in quick succesion', () => {
     const url = `/learn/${superBlock}/${block}/${slug}`;
     await page.goto(url);
 
-    await page.fill(
-      '#solution',
-      'https://replit.com/@camperbot/python-project#main.py'
-    );
+    await page
+      .getByLabel('Solution Link')
+      .fill('https://replit.com/@camperbot/python-project#main.py');
 
     const completedButton = page.getByRole('button', {
       name: "I've completed this challenge"
