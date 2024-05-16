@@ -472,6 +472,13 @@
           "在這個小項目中，你將會通過創建成績統計冊應用回顧 JavaScript 基礎知識，如函數、變量、條件以及更多內容。",
           "你將通過這個機會練習解決小問題，更好地理解基礎知識。"
         ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
+        ]
       }
     }
   },
