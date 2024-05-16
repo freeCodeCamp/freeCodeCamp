@@ -50,6 +50,31 @@ test('Resets the lower jaw when prompted', async ({ page }) => {
   await page.getByRole('button', { name: 'Reset this lesson' }).click();
   await expect(failing).not.toBeVisible();
   await expect(hint).not.toBeVisible();
+
+  await expect(checkButton).toBeVisible();
+});
+
+test('Checks hotkeys when instruction is focused', async ({
+  page,
+  browserName
+}) => {
+  const editor = getEditors(page);
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+  const description = page.locator('#description');
+
+  await editor.fill(
+    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+  );
+
+  await description.click();
+
+  if (browserName === 'webkit') {
+    await page.keyboard.press('Meta+Enter');
+  } else {
+    await page.keyboard.press('Control+Enter');
+  }
+
+  await expect(checkButton).not.toBeFocused();
 });
 
 test('Focsues on the submit button after tests passed', async ({
@@ -82,7 +107,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
   await page.reload();
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
-  const loginButton = page.getByRole('button', {
+  const loginButton = page.getByRole('link', {
     name: 'Sign in to save your progress'
   });
   await focusEditor({ page, browserName, isMobile });
@@ -98,7 +123,9 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
 
   await loginButton.click();
 
-  // go back
+  await page.goBack();
+
+  await expect(loginButton).not.toBeVisible();
 });
 
 test('Should render UI correctly', async ({ page }) => {
