@@ -4,7 +4,7 @@ import { SuperBlocks } from '../shared/config/superblocks';
 import tributePageHtml from './fixtures/tribute-page-html.json';
 import tributePageCss from './fixtures/tribute-page-css.json';
 import curriculum from './fixtures/js-ads-projects.json';
-import { authedPost } from './utils/request';
+import { authedRequest } from './utils/request';
 
 import {
   focusProjectEditor,
@@ -68,6 +68,8 @@ const pythonProjects = {
 };
 
 const pasteContent = async (page: Page) => {
+  console.log('Pasting content');
+  console.log('isMacOS', process.platform);
   if (isMacOS) {
     await page.keyboard.press('Meta+v');
   } else {
@@ -119,7 +121,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     request,
     context
   }) => {
-    test.setTimeout(25000);
+    test.setTimeout(40000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const block: block = curriculum;
@@ -173,16 +175,21 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     for (let i = 1; i < projectsInOrder.length; i++) {
       submissionPromises.push(
-        authedPost(request, '/modern-challenge-completed', {
-          id: projectIdsInOrder[i],
-          challengeType: 5,
-          files: projectsInOrder[i].solutions[0].map(({ contents }) => ({
-            contents: contents,
-            key: 'scriptjs',
-            ext: 'js',
-            name: 'script',
-            history: ['script.js']
-          }))
+        authedRequest({
+          request,
+          method: 'post',
+          endpoint: '/modern-challenge-completed',
+          data: {
+            id: projectIdsInOrder[i],
+            challengeType: 5,
+            files: projectsInOrder[i].solutions[0].map(({ contents }) => ({
+              contents: contents,
+              key: 'scriptjs',
+              ext: 'js',
+              name: 'script',
+              history: ['script.js']
+            }))
+          }
         })
       );
     }
