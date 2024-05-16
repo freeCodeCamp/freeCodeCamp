@@ -154,6 +154,7 @@ const AnimationContainer = ({
           </p>
         </div>
         <img
+          key={Date.now()}
           alt=''
           src={donationAnimation}
           id={'donation-animation'}
