@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import store from 'store';
 import { ChallengeData } from '../tools/challenge-editor/api/interfaces/challenge-data';
@@ -19,6 +20,15 @@ const failedUpdatesKey = 'fcc-failed-updates';
 function getCompletedIds(completedChallenges: ChallengeData[]): string[] {
   return completedChallenges.map((challenge: ChallengeData) => challenge.id);
 }
+test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+test.beforeAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user');
+});
+
+test.afterAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+});
 
 test.describe('failed update flushing', () => {
   test.beforeEach(async ({ page }) => {
@@ -45,11 +55,7 @@ test.describe('failed update flushing', () => {
     );
 
     expect(store.get(failedUpdatesKey)).toEqual(failedUpdates);
-    await page.goto('http://localhost:3000');
-    // Wait for both requests to complete
-    await page.waitForResponse(
-      'http://localhost:3000/modern-challenge-completed'
-    );
+    await page.goto('/');
     await page.waitForResponse(
       'http://localhost:3000/modern-challenge-completed'
     );
