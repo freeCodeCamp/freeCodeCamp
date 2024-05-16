@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+
+import { getEditors } from './utils/editor';
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('Challenge with editor', function () {
   test('the shortcut "Ctrl + S" saves the code', async ({ page }) => {
@@ -6,7 +9,7 @@ test.describe('Challenge with editor', function () {
       '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
     );
 
-    const editor = page.locator('textarea');
+    const editor = getEditors(page);
 
     await editor.fill('Something funny');
     await page.keyboard.down('Control');

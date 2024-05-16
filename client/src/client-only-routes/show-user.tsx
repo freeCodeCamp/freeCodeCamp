@@ -124,7 +124,6 @@ function ShowUser({
             <FormGroup controlId='report-user-textarea'>
               <ControlLabel>{t('report.what')}</ControlLabel>
               <FormControl
-                data-cy='report-user'
                 componentClass='textarea'
                 onChange={handleChange}
                 placeholder={t('report.details')}

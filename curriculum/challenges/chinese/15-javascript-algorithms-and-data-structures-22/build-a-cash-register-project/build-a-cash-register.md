@@ -1,6 +1,6 @@
 ---
 id: 657bdcc3a322aae1eac38392
-title: Build a Cash Register
+title: 创建一个收银机
 challengeType: 14
 forumTopicId: 16012
 dashedName: build-a-cash-register
@@ -8,7 +8,7 @@ dashedName: build-a-cash-register
 
 # --description--
 
-Here you'll build a cash register app that will return change to the customer based on the price of the item, the amount of cash provided by the customer, and the amount of cash in the cash drawer. You'll also need to show different messages to the user in different scenarios, such as when the customer provides too little cash or when the cash drawer doesn't have enough to issue the correct change.
+在这里，你将构建一个收银机应用程序，该应用程序将根据商品的价格、客户提供的现金金额以及现金抽屉中的现金金额将零钱退还给客户。 You'll also need to show different messages to the user in different scenarios, such as when the customer provides too little cash or when the cash drawer doesn't have enough to issue the correct change.
 
 In the `script.js` file, you have been provided with the `price` and `cid` variables. The `price` variable is the price of the item, and the `cid` variable is the cash-in-drawer, which is a 2D array listing the available currency in the cash drawer.
 
