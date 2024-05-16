@@ -66,7 +66,7 @@ assert(
 يجب استخدام مصطلح `class`.
 
 ```js
-assert(code.match(/class/g));
+assert(__helpers.removeJSComments(code).match(/class/g));
 ```
 
 يجب أن يمثل `Vegetable`.

@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-リスト項目 (list item、`li`) 要素を使用して、リストの項目を作成しましょう。 こちらが順序なしリスト内のリスト項目の例です。
+順序付きリストまたは順序なしリストのリスト項目を作成するには、`li` 要素を使います。
+
+こちらが順序なしリスト内のリスト項目の例です。
 
 ```html
 <ul>
@@ -28,7 +30,7 @@ dashedName: step-21
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-3 つの `li` 要素に、テキスト `cat nip`、`laser pointers`、`lasagna` が任意の順番で設定されている必要があります。 テキストが設定されていないか、誤字脱字があります。
+3 つの `li` 要素に、任意の順番でテキスト `cat nip`、`laser pointers`、`lasagna` が設定されている必要があります。 テキストが設定されていないか、誤字脱字があります。
 
 ```js
 assert.deepStrictEqual(

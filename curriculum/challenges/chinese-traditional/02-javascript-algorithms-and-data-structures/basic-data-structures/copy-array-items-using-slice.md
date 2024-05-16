@@ -38,7 +38,7 @@ assert.deepEqual(
 `forecast` 函數中應使用 `slice()` 方法。
 
 ```js
-assert(/\.slice\(/.test(code));
+assert(/\.slice\(/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

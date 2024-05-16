@@ -40,13 +40,13 @@ return "No";
 يجب عليك استخدام المشغل `&&` مرة واحدة
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 يجب أن يكون لديك عبارة `if` واحد فقط
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 يجب أن ينتج `testLogicalAnd(0)` المقطع النصي `No`

@@ -72,7 +72,7 @@ assert(testLessOrEqual(55) === 'More Than 24');
 `<=` 演算子を 2 回以上使用してください。
 
 ```js
-assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
 ```
 
 # --seed--

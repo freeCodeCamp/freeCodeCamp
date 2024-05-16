@@ -31,7 +31,7 @@ Você deve usar a sintaxe `import * as`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /import\s*\*\s*as\s+stringFunctions\s+from\s*('|")\.\/string_functions\.js\1/g
   )
 );

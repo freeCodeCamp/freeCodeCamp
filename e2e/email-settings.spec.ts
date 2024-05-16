@@ -47,11 +47,8 @@ test.describe('Email Settings', () => {
   });
 
   test('should display email verification alert after email update', async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-
     const newEmailAddress = 'foo-update@bar.com';
 
     // Need exact match as there are "New email" and "Confirm new email" labels
@@ -87,12 +84,7 @@ test.describe('Email Settings', () => {
     );
   });
 
-  test('should toggle email subscription correctly', async ({
-    page,
-    browserName
-  }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-
+  test('should toggle email subscription correctly', async ({ page }) => {
     const yesPleaseButton = page.getByRole('button', {
       name: translations.buttons['yes-please']
     });
@@ -110,11 +102,8 @@ test.describe('Email Settings', () => {
   });
 
   test('should display flash message when email subscription is toggled', async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
-
     await page
       .getByRole('button', {
         name: translations.buttons['yes-please']

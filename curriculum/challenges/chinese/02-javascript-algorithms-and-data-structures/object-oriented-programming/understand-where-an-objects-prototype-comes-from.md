@@ -35,7 +35,7 @@ Bird.prototype.isPrototypeOf(duck);
 `Dog.prototype` 应该是 `beagle` 的 `prototype`。
 
 ```js
-assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
+assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

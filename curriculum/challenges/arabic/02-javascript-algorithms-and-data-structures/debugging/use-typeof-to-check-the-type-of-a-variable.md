@@ -32,19 +32,19 @@ console.log(typeof {});
 الكود الخاص بك يجب أن يستخدم `typeof` في تعبيرات `console.log()` للتحقق من نوع المتغيرات.
 
 ```js
-assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 الكود الخاص بك يجب أن يستخدم `typeof` للتحقق من نوع المتغير `seven`.
 
 ```js
-assert(code.match(/typeof[\( ]seven\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]seven\)?/g));
 ```
 
 الكود الخاص بك يجب أن يستخدم `typeof` للتحقق من نوع المتغير `three`.
 
 ```js
-assert(code.match(/typeof[\( ]three\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]three\)?/g));
 ```
 
 # --seed--

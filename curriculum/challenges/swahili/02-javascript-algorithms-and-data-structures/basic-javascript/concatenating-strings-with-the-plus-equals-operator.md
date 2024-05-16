@@ -43,7 +43,7 @@ assert(myStr === 'This is the first sentence. This is the second sentence.');
 You should use the `+=` operator to build `myStr`.
 
 ```js
-assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
+assert(__helpers.removeJSComments(code).match(/myStr\s*\+=\s*(["']).*\1/g));
 ```
 
 # --seed--

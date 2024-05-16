@@ -25,7 +25,7 @@ Use o método `concat` na função `nonMutatingConcat` para concatenar `attach` 
 Você deve usar o método `concat`.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 O primeiro array, `first`, não deve ser alterado.

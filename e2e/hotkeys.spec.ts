@@ -1,23 +1,28 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { authedPut } from './utils/request';
+import { getEditors } from './utils/editor';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
-const editorPaneLabel =
-  'Editor content;Press Alt+F1 for Accessibility Options.';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-test('User can interact with the app using the keyboard', async ({
-  page,
-  browserName
-}) => {
-  test.skip(
-    browserName === 'webkit',
-    'Failing on webkit for no apparent reason. Can not reproduce locally.'
-  );
+test.beforeAll(async ({ request }) => {
+  await authedPut(request, 'update-my-keyboard-shortcuts', {
+    keyboardShortcuts: false
+  });
+});
 
+test.afterEach(
+  async ({ request }) =>
+    await authedPut(request, 'update-my-keyboard-shortcuts', {
+      keyboardShortcuts: false
+    })
+);
+
+test('User can interact with the app using the keyboard', async ({ page }) => {
   // Enable keyboard shortcuts
   await page.goto('/settings');
   const keyboardShortcutGroup = page.getByRole('group', {
@@ -26,12 +31,18 @@ test('User can interact with the app using the keyboard', async ({
   await keyboardShortcutGroup
     .getByRole('button', { name: translations.buttons.on, exact: true })
     .click();
+  // TODO: getByRole('alert', name:
+  // translations.flash['keyboard-shortcut-updated']) did not find the alert.
+  // Should it a) be an alert and b) have a name?
+  await expect(
+    page.getByText(translations.flash['keyboard-shortcut-updated'])
+  ).toBeVisible();
 
   await page.goto(course);
 
-  await expect(page.getByLabel(editorPaneLabel)).toBeFocused();
-  await page.getByLabel(editorPaneLabel).press('Escape');
-  await expect(page.getByLabel(editorPaneLabel)).not.toBeFocused();
+  await expect(getEditors(page)).toBeFocused();
+  await getEditors(page).press('Escape');
+  await expect(getEditors(page)).not.toBeFocused();
 
   await page.keyboard.press('n');
   const nextCourse = '**/declare-javascript-variables';
@@ -50,7 +61,7 @@ test('User can interact with the app using the keyboard', async ({
   ).toBeVisible();
 
   await page.keyboard.press('e');
-  await expect(page.getByLabel(editorPaneLabel)).toBeFocused();
+  await expect(getEditors(page)).toBeFocused();
 
   await page.keyboard.press('Control+Enter');
   await expect(page.getByText('running test')).toBeVisible();

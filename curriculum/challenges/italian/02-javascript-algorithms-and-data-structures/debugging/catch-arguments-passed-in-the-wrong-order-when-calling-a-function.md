@@ -25,7 +25,7 @@ assert(power == 8);
 Il tuo codice dovrebbe utilizzare l'ordine corretto degli argomenti per la chiamata della funzione `raiseToPower`.
 
 ```js
-assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
+assert(__helpers.removeJSComments(code).match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 ```
 
 # --seed--

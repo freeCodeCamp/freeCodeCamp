@@ -87,7 +87,7 @@ assert(confirmEnding('Abstraction', 'action') === true);
 Ваш код не повинен використовувати вбудований метод `.endsWith()`, щоб розв’язати це завдання.
 
 ```js
-assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));
+assert(!/\.endsWith\(.*?\)\s*?;?/.test(__helpers.removeJSComments(code)) && !/\['endsWith'\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

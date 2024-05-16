@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import {
   Type,
   type FastifyPluginCallbackTypebox
@@ -6,7 +5,7 @@ import {
 import Stripe from 'stripe';
 
 import { donationSubscriptionConfig } from '../../../shared/config/donation-settings';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 import { STRIPE_SECRET_KEY } from '../utils/env';
 
 /**
@@ -103,13 +102,26 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const { email, name } = user;
+        const threeChallengesCompleted = user.completedChallenges.length >= 3;
+
+        if (!threeChallengesCompleted) {
+          void reply.code(400);
+          return {
+            error: {
+              type: 'MethodRestrictionError',
+              message: `Donate using another method`
+            }
+          } as const;
+        }
 
         if (user.isDonating) {
           void reply.code(400);
-          return {
-            type: 'info',
-            message: 'User is already donating.'
-          } as const;
+          return reply.send({
+            error: {
+              type: 'AlreadyDonatingError',
+              message: 'User is already donating.'
+            }
+          });
         }
 
         // Create Stripe Customer
@@ -141,18 +153,22 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
         if (status === 'requires_source_action') {
           void reply.code(402);
-          return {
-            type: 'UserActionRequired',
-            message: 'Payment requires user action',
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            client_secret
-          } as const;
+          return reply.send({
+            error: {
+              type: 'UserActionRequired',
+              message: 'Payment requires user action',
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              client_secret
+            }
+          });
         } else if (status === 'requires_source') {
           void reply.code(402);
-          return {
-            type: 'PaymentMethodRequired',
-            message: 'Card has been declined'
-          } as const;
+          return reply.send({
+            error: {
+              type: 'PaymentMethodRequired',
+              message: 'Card has been declined'
+            }
+          });
         }
 
         // update record in database
@@ -182,17 +198,16 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        return {
+        return reply.send({
           type: 'success',
           isDonating: true
-        } as const;
+        });
       } catch (error) {
         fastify.log.error(error);
         void reply.code(500);
-        return {
-          type: 'danger',
-          message: 'Donation failed due to a server error.'
-        } as const;
+        return reply.send({
+          error: 'Donation failed due to a server error.'
+        });
       }
     }
   );

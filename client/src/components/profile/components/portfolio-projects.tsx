@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
 import './portfolio-projects.css';
+import { FullWidthRow, Spacer } from '../../helpers';
 
 interface PortfolioProjectsProps {
   portfolioProjects: PortfolioProjectData[];
@@ -17,23 +16,20 @@ export const PortfolioProjects = ({
     return null;
   }
   return (
-    <>
-      <h2 className='text-center'>{t('profile.portfolio')}</h2>
+    <FullWidthRow>
+      <h2>{t('profile.projects')}</h2>
       {portfolioProjects.map(({ title, url, image, description, id }) => (
-        <div className='portfolio-container' key={id}>
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <a href={url} rel='nofollow noopener noreferrer' target='_blank'>
-            {t('buttons.view')}
-            <span className='sr-only'>
-              {title}, {t('aria.opens-new-window')}
-            </span>
-            <FontAwesomeIcon id='link-icon' icon={faArrowUpRightFromSquare} />
-          </a>
+        <a
+          href={url}
+          rel='nofollow noopener noreferrer'
+          target='_blank'
+          className='portfolio-card'
+          key={id}
+        >
           {image && (
             <img
               alt=''
-              className='portfolio-screen-shot'
+              className='portfolio-image'
               src={image}
               onError={({ currentTarget }) => {
                 currentTarget.src =
@@ -41,9 +37,19 @@ export const PortfolioProjects = ({
               }}
             />
           )}
-        </div>
+          <div className='portfolio-card-description'>
+            <div className='portfolio-card-text'>
+              <h3>
+                {title}
+                <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+              </h3>
+              <p>{description}</p>
+            </div>
+          </div>
+        </a>
       ))}
+      <Spacer size='medium' />
       <hr />
-    </>
+    </FullWidthRow>
   );
 };

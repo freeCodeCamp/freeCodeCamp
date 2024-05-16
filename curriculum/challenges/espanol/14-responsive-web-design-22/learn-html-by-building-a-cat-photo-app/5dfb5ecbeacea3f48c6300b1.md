@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-Utiliza la etiqueta (`li` - list item) para agregar elementos a una lista. Aquí hay un ejemplo de una lista de objetos en una lista desordenada:
+The `li` element is used to create a list item in an ordered or unordered list.
+
+Here is an example of list items in an unordered list:
 
 ```html
 <ul>
@@ -16,19 +18,19 @@ Utiliza la etiqueta (`li` - list item) para agregar elementos a una lista. Aquí
 </ul>
 ```
 
-Dentro del elemento `ul` anida tres elementos li para mostrar tres cosas que aman los gatos:
+Within the `ul` element nest three list items to display three things cats love:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-Debes tener tres elementos `li`. Cada elemento `li` debe tener su propia etiqueta de apertura y cierre.
+You should have three `li` elements. Each `li` element should have its own opening and closing tag.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-Debes tener tres elementos `li` con los textos `cat nip`, `laser pointers` y `lasagna` en cualquier orden. Probablemente no has añadido el texto o tienes un error tipográfico.
+You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
@@ -39,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-Los tres elementos `li` deben estar entre las etiquetas de apertura y cierre del elemento `ul`.
+The three `li` elements should be located between the `ul` element's opening and closing tags.
 
 ```js
 assert(

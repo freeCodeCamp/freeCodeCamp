@@ -63,13 +63,13 @@ assert(caseInSwitch(4) === 'delta');
 `if` ステートメントまたは `else` ステートメントを使用しないでください。
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 少なくとも 3 つの `break` ステートメントを記述する必要があります。
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

@@ -1,6 +1,6 @@
 ---
 id: 65dabf5eb13aae9ff91c40a2
-title: Task 104
+title: Завдання 104
 challengeType: 22
 dashedName: task-104
 ---

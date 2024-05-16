@@ -37,13 +37,13 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 Ваш код повинен виправити лапки навколо значення `href` `#Home`, змінюючи або уникаючи їх.
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 Ваш код повинен залишити подвійні лапки навколо цілого рядка.
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

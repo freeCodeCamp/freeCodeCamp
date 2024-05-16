@@ -37,13 +37,13 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 你應通過更改或轉義來修復 `href` 的值 `#Home` 周圍的引號。
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 你應該在整個字符串外圍保留雙引號。
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

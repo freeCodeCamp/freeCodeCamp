@@ -28,7 +28,7 @@ Use o método `slice` na função `sliceArray` para retornar parte do array `ani
 Você deve usar o método `slice`.
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 A variável `inputAnim` não deve ser alterada.

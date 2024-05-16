@@ -32,19 +32,19 @@ JavaScript 有七种原始（不可变）数据类型： `Boolean`，`Null`，`U
 应在两个 `console.log()` 语句中使用 `typeof` 来检查变量的类型。
 
 ```js
-assert(code.match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 应使用 `typeof` 来检查变量 `seven` 的类型。
 
 ```js
-assert(code.match(/typeof[\( ]seven\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]seven\)?/g));
 ```
 
 应使用 `typeof` 来检查变量 `three` 的类型。
 
 ```js
-assert(code.match(/typeof[\( ]three\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]three\)?/g));
 ```
 
 # --seed--

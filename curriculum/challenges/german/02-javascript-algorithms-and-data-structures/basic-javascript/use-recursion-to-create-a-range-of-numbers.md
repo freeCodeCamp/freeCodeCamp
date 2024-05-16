@@ -26,7 +26,7 @@ Dein Code sollte keine Schleifensyntax verwenden (`for` oder `while` oder Funkti
 
 ```js
 assert(
-  !code.match(/for|while|forEach|map|filter|reduce/g)
+  !__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 

@@ -1,6 +1,6 @@
 ---
 id: 657e1fd7b5ffaebc0ff4bd9f
-title: Task 26
+title: Завдання 26
 challengeType: 19
 dashedName: task-26
 ---
@@ -9,41 +9,41 @@ dashedName: task-26
 
 # --description--
 
-Listen to the audio and answer the question below.
+Послухайте аудіо та дайте відповідь на запитання.
 
 # --question--
 
 ## --text--
 
-Why is Tom thanking Sophie?
+Чому Том дякує Софі?
 
 ## --answers--
 
-For giving him a time management app.
+Бо вона порадила застосунок для управління часом.
 
 ### --feedback--
 
-Tom is thanking Sophie for tips, not for giving her an app.
+Том дякує Софі за поради, а не за те, що порадила програму.
 
 ---
 
-Because he finds Sophie's tips helpful.
+Тому що він вважає поради Софі корисними.
 
 ---
 
-For inviting him to lunch.
+Бо вона запросила його на обід.
 
 ### --feedback--
 
-The thank you is for the advice, not for a lunch invitation.
+Він дякує за поради, а не запрошення на обід.
 
 ---
 
-For helping him with a project.
+За допомогу з проєктом.
 
 ### --feedback--
 
-Tom's gratitude is related to the tips about organization, not specific project help.
+Подяка Тома пов’язана з порадами щодо організації, а не проєктом.
 
 ## --video-solution--
 
