@@ -643,7 +643,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         return reply.send({});
       }
 
-      const publicUser = omit<typeof user, keyof typeof user>(user, [
+      const publicUser = omit(user, [
         'currentChallengeId',
         'email',
         'emailVerified',
