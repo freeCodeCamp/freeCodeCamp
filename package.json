@@ -96,18 +96,19 @@
     "playwright:watch": "playwright test --ui"
   },
   "dependencies": {
-    "dotenv": "16.4.5"
+    "dotenv": "16.4.5",
+    "react": "^18.3.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.23.3",
     "@babel/plugin-proposal-function-bind": "7.23.3",
-    "@babel/preset-env": "7.23.7",
-    "@babel/preset-react": "7.23.3",
+    "@babel/preset-env": "^7.23.7",
+    "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "7.23.3",
     "@playwright/test": "^1.43.1",
     "@testing-library/cypress": "10.0.1",
     "@testing-library/dom": "9.3.4",
-    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "14.5.2",
     "@types/jest": "29.5.12",
@@ -118,7 +119,7 @@
     "@types/store": "2.0.5",
     "@typescript-eslint/eslint-plugin": "7.1.1",
     "@typescript-eslint/parser": "7.1.1",
-    "babel-jest": "29.7.0",
+    "babel-jest": "^29.7.0",
     "babel-plugin-transform-imports": "2.0.0",
     "cross-env": "7.0.3",
     "cypress": "12.17.4",
@@ -137,7 +138,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "6.2.0",
     "husky": "9.0.11",
-    "jest": "29.7.0",
+    "jest": "^29.7.0",
     "js-yaml": "3.14.1",
     "lint-staged": "^13.1.0",
     "lodash": "4.17.21",
