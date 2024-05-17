@@ -79,7 +79,7 @@ These can be considered collaboration tools in a virtual environment, but Alice 
       "filename": "4.2-2.mp3",
       "startTime": 1,
       "startTimestamp": 30.82,
-      "finishTimestamp": 41.72
+      "finishTimestamp": 42.02
     }
   },
   "commands": [
@@ -119,7 +119,7 @@ These can be considered collaboration tools in a virtual environment, but Alice 
     {
       "character": "Alice",
       "startTime": 8.06,
-      "finishTime": 11.9,
+      "finishTime": 12.2,
       "dialogue": {
         "text": "Also, cloud storage services make it easy to share and collaborate on documents.",
         "align": "center"
@@ -128,7 +128,7 @@ These can be considered collaboration tools in a virtual environment, but Alice 
     {
       "character": "Alice",
       "opacity": 0,
-      "startTime": 12.4
+      "startTime": 12.7
     }
   ]
 }

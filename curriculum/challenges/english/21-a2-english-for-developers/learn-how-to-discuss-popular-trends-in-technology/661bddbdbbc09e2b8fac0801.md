@@ -54,7 +54,7 @@ The preposition used to help you understand where something is or happens.
       "filename": "4.2-4.mp3",
       "startTime": 1,
       "startTimestamp": 15.22,
-      "finishTimestamp": 18.84
+      "finishTimestamp": 19.04
     }
   },
   "commands": [
@@ -66,7 +66,7 @@ The preposition used to help you understand where something is or happens.
     {
       "character": "Alice",
       "startTime": 1,
-      "finishTime": 4.62,
+      "finishTime": 4.82,
       "dialogue": {
         "text": "Also, it's used for identity verification at airports and secure facilities.",
         "align": "center"
@@ -75,7 +75,7 @@ The preposition used to help you understand where something is or happens.
     {
       "character": "Alice",
       "opacity": 0,
-      "startTime": 5.12
+      "startTime": 5.32
     }
   ]
 }
