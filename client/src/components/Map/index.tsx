@@ -96,7 +96,6 @@ function MapLi({
 }) {
   return (
     <>
-      <div>{superBlock.toString()}</div>
       <li
         data-test-label='curriculum-map-button'
         data-playwright-test-label='curriculum-map-button'
