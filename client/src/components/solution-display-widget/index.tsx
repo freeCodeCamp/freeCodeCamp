@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
 import './solution-display-widget.css';
-import '@freecodecamp/ui/dist/base.css';
+
 interface Props {
   completedChallenge: CompletedChallenge;
   dataCy?: string;

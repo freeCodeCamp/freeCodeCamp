@@ -47,6 +47,9 @@ import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 
 // preload common fonts
+// TODO: Replace `base.css` with '@freecodecamp/ui/dist/base.css';
+import './base.css';
+// TODO: Remove `fonts.css` once we have included fonts in the `@freecodecamp/ui` bundle.
 import './fonts.css';
 import './global.css';
 import './variables.css';
