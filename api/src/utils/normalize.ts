@@ -136,7 +136,7 @@ export const normalizeSurveys = (
 };
 
 /**
- * Replace undefined flags with false.
+ * Replace null flags with false.
  * @param flags Object with nullable boolean flags.
  * @returns Same object with boolean flags, defaulting to false.
  */
