@@ -472,6 +472,13 @@
           "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
           "This will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
+        ]
       }
     }
   },
