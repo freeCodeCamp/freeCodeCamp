@@ -819,11 +819,7 @@ export default function initializeUser(User) {
           joinDate: user.id.getTimestamp()
         };
 
-        console.log('profileUI', profileUI);
-
         const publicUser = prepUserForPublish(allUser, profileUI);
-
-        console.log('publicUser', publicUser);
 
         return Observable.of({
           entities: {
