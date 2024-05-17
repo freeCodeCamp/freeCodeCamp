@@ -100,6 +100,9 @@ export const userByNameSelector = username => state => {
 export const currentCertsSelector = state =>
   certificatesByNameSelector(state[MainApp]?.appUsername)(state)?.currentCerts;
 
+export const legacyCertsSelector = state =>
+  certificatesByNameSelector(state[MainApp]?.appUsername)(state)?.legacyCerts;
+
 export const certificatesByNameSelector = username => state => {
   const {
     isRespWebDesignCert,

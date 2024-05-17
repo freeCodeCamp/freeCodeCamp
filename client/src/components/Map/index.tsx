@@ -18,7 +18,8 @@ import './map.css';
 
 import {
   isSignedInSelector,
-  currentCertsSelector
+  currentCertsSelector,
+  legacyCertsSelector
 } from '../../redux/selectors';
 
 import { RibbonIcon, Arrow } from '../../assets/icons/completion-ribbon';
@@ -38,6 +39,7 @@ interface MapProps {
   forLanding?: boolean;
   isSignedIn: boolean;
   currentCerts: CurrentCert[];
+  legacyCerts: CurrentCert[];
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
 }
@@ -58,10 +60,17 @@ const coreCurriculum = [
 const mapStateToProps = createSelector(
   isSignedInSelector,
   currentCertsSelector,
+  legacyCertsSelector,
   completedChallengesIdsSelector,
-  (isSignedIn: boolean, currentCerts, completedChallengeIds: string[]) => ({
+  (
+    isSignedIn: boolean,
+    currentCerts: CurrentCert[],
+    legacyCerts: CurrentCert[],
+    completedChallengeIds: string[]
+  ) => ({
     isSignedIn,
     currentCerts,
+    legacyCerts,
     completedChallengeIds
   })
 );
@@ -87,6 +96,7 @@ function MapLi({
 }) {
   return (
     <>
+      <div>{superBlock.toString()}</div>
       <li
         data-test-label='curriculum-map-button'
         data-playwright-test-label='curriculum-map-button'
@@ -121,6 +131,7 @@ function Map({
   forLanding = false,
   isSignedIn,
   currentCerts,
+  legacyCerts,
   completedChallengeIds
 }: MapProps): React.ReactElement {
   const {
@@ -160,7 +171,7 @@ function Map({
   const isClaimed = (stage: SuperBlocks) => {
     return isSignedIn
       ? Boolean(
-          currentCerts?.find(
+          [...currentCerts, ...legacyCerts]?.find(
             (cert: { certSlug: string }) =>
               (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
               (superBlockCertTypeMap as { [key: string]: string })[stage]
