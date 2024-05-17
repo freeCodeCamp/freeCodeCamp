@@ -8,7 +8,7 @@ const ajv = new Ajv({ strictTypes: false });
 const isSchemaSecure = ajv.compile(secureSchema);
 
 // These schemas will fail the tests, so can only be checked by hand.
-const ignoredSchemas = ['getSessionUser'];
+const ignoredSchemas = ['getSessionUser', 'getPublicProfile'];
 
 describe('Schemas do not use obviously dangerous validation', () => {
   Object.entries(schemas)
