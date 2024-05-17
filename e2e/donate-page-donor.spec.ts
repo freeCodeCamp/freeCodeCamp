@@ -10,7 +10,7 @@ test.describe('Donate page', () => {
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/clean-up-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 
   test('should render the donate page correctly', async ({ page }) => {
