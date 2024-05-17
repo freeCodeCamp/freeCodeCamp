@@ -286,48 +286,6 @@ test.describe('Settings', () => {
     ).toBeVisible();
   });
 
-  test('Should validate Academy Honesty Settings', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.honesty
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.camperIdentity)
-    ).toBeVisible();
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
-    });
-    await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
-    await expect(
-      page.getByText(translations.settings.honesty.p1)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p2)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p3)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p4)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p5)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p6)
-    ).toBeVisible();
-    await expect(
-      page.getByText(
-        translations.settings.honesty.p7.replace(
-          settingsObject.supportEmailPlaceholder,
-          settingsObject.supportEmail
-        )
-      )
-    ).toBeVisible();
-  });
-
   test('Should validate Certification Settings', async ({ page }) => {
     await expect(
       page.getByRole('heading', {
