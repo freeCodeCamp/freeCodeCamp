@@ -63,7 +63,9 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
 
     await page.getByTestId('btn-for-responsive-web-design').click();
 
-    await expect(page.getByTestId('flash-message')).toBeVisible();
+    await expect(page.getByTestId('flash-message')).toContainText(
+      /It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification./
+    );
   });
 
   test.afterAll(() => {
