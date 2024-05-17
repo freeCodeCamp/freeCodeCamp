@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-91
 ---
 
-<!--
-AUDIO REFERENCE:
-Bob: Hey, Sarah, do you know what really gets me excited about tech? It's all those amazing gadgets!
--->
+<!-- (Audio) Bob: Hey, Sarah, do you know what really gets me excited about tech? It's all those amazing gadgets! -->
 
 # --description--
 
@@ -47,3 +44,47 @@ This word is used to point out specific things that are being talked about, in t
 ### --feedback--
 
 This word refers to small electronic devices or tools that are useful or interesting. It's often used to talk about cool tech items. It is in plural.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-boardroom.png",
+    "characters": [
+      {
+        "character": "Bob",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "4.1-4.mp3",
+      "startTime": 1,
+      "startTimestamp": 0.00,
+      "finishTimestamp": 6.08
+    }
+  },
+  "commands": [
+    {
+      "character": "Bob",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Bob",
+      "startTime": 1,
+      "finishTime": 7.08,
+      "dialogue": {
+        "text": "Hey, Sarah, do you know what really gets me excited about tech? It's all those amazing gadgets.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Bob",
+      "opacity": 0,
+      "startTime": 7.58
+    }
+  ]
+}
+```

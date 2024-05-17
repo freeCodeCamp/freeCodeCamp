@@ -3,13 +3,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "build-a-time-calculator-project",
-  "order": 11,
+  "order": 10,
   "time": "5 hours",
   "template": "",
   "required": [],
   "superBlock": "scientific-computing-with-python",
-  "superOrder": 10,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "5e444136903586ffb414c94d",
