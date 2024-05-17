@@ -23,7 +23,7 @@ import { encodeUserToken } from '../utils/tokens';
 import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
 import { createResetProperties } from '../utils/create-user';
-import { challengeTypes } from '../../dist/shared/config/challenge-types';
+import { challengeTypes } from '../../../shared/config/challenge-types';
 
 // user flags that the api-server returns as false if they're missing in the
 // user document. Since Prisma returns null for missing fields, we need to
