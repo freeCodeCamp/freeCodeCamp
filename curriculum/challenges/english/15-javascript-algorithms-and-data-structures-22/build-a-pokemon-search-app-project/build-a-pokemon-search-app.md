@@ -387,7 +387,7 @@ async () => {
 ```
 
 
-When the `#search-input` element contains an valid Pokemon id and the `#search-button` element is clicked, an alert should appear with the correct type.
+When the `#search-input` element contains a valid Pokemon id and the `#search-button` element is clicked, the UI should be filled with the correct data.
 
 ```js
 async () => {
