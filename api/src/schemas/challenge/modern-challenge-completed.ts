@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { saveChallengeBody } from '../types';
+import { savedChallenge } from '../types';
 
 export const modernChallengeCompleted = {
   body: Type.Object({
@@ -22,12 +22,7 @@ export const modernChallengeCompleted = {
       completedDate: Type.Number(),
       points: Type.Number(),
       alreadyCompleted: Type.Boolean(),
-      savedChallenges: Type.Array(
-        Type.Intersect([
-          saveChallengeBody,
-          Type.Object({ lastSavedDate: Type.Number() })
-        ])
-      )
+      savedChallenges: Type.Array(savedChallenge)
     }),
     400: Type.Object({
       type: Type.Literal('error'),

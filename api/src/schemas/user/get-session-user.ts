@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { examResults, saveChallengeBody, profileUI } from '../types';
+import { examResults, profileUI, savedChallenge } from '../types';
 
 export const getSessionUser = {
   response: {
@@ -95,12 +95,7 @@ export const getSessionUser = {
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),
           joinDate: Type.String(),
-          savedChallenges: Type.Array(
-            Type.Intersect([
-              saveChallengeBody,
-              Type.Object({ lastSavedDate: Type.Number() })
-            ])
-          ),
+          savedChallenges: Type.Optional(Type.Array(savedChallenge)),
           username: Type.String(),
           userToken: Type.Optional(Type.String()),
           completedSurveys: Type.Array(
