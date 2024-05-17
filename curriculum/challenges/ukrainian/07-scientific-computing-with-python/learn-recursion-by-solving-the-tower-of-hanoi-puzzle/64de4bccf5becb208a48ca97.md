@@ -20,7 +20,7 @@ dashedName: step-13
 Функція `move()` повинна мати `n`, `source`, `auxiliary` та `target` як параметри. Порядок має значення.
 
 ```js
-({ test: () => assert(__pyodide.runPython(`
+({ test: () => assert(runPython(`
       import inspect
       str(inspect.signature(__locals.get('move'))) == '(n, source, auxiliary, target)'    
   `))
