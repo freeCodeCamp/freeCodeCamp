@@ -22,7 +22,7 @@ Your `move()` function should have `n`, `source`, `auxiliary`, and `target` as t
 ```js
 ({ test: () => assert(runPython(`
       import inspect
-      str(inspect.signature(__locals.get('move'))) == '(n, source, auxiliary, target)'    
+      str(inspect.signature(move)) == '(n, source, auxiliary, target)'    
   `))
 })
 ```
