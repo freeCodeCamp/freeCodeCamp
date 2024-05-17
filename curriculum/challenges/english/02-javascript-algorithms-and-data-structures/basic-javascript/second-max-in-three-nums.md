@@ -12,7 +12,10 @@ Find the second maximum among three numbers.
 In this challenge, you are tasked with finding the second maximum among three given numbers. This problem tests your ability to compare numbers and determine their order.
 
 Write a program that takes three numbers as input from the user and outputs the second maximum. First, implement it using a traditional approach, then optimize it by using only three comparisons.
+<h2>Hinglish</h2>
+Is challenge mein, aapko diye gaye teen numbers mein se second maximum number find karna hai. Ye problem aapki ability ko test karta hai numbers ko compare karne aur unki order determine karne mein.
 
+Ek program likhiye jo user se teen numbers input le aur second maximum output kare. Pehle ise traditional approach se implement kariye, fir ise sirf teen comparisons ka use karke optimize kariye.
 **Hints**
 
 Click on this -<a href = "https://cs50.ai/chat"> Link</a> to Go to CS50 AI.
@@ -27,19 +30,19 @@ Prompt 3: How would I handle scenarios where two or more numbers are equal?
 `findSecondMax(5,4,6)` should return `5`
 
 ```js
-assert(findSecondMax(5,4,6)===5)
+assert(findSecondMax(5,4,6)===5);
 ```
 
-`findSecondMax(10,10,5)` should return `5`
+`findSecondMax(10,10,5)` should return `10`
 
 ```js
-assert(findSecondMax(10,10,5)===5)
+assert(findSecondMax(10,10,5)===10);
 ```
 
 `findSecondMax(-1,0,-2)` should return `-1`
 
 ```js
-assert(findSecondMax(-1,0,-1)===-1)
+assert(findSecondMax(-1,0,-1)===-1);
 ```
 
 # --seed--

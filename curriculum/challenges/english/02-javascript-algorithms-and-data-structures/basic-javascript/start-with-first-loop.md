@@ -17,6 +17,13 @@ For `example`, if the number is `3` and the name is `"john"`, your function shou
 
 # --hints--
 
+output should be `["Bedanti", "Bedanti"]`.
+
+```js
+assert(printNameMultipleTimes(2, "Bedanti").toString() === ["Bedanti", "Bedanti"].toString());
+
+```
+
 Use a loop to print the name the specified number of times.
 
 ```js
@@ -34,11 +41,9 @@ assert(printNameMultipleTimes(3, "john").toString() === ["john", "john", "john"]
 function printNameMultipleTimes(number, name) {
    // Only change code below this line
 
-
+    return
     // Only change code above this line
 }
-
-printNameMultipleTimes(3, "john");
 
 printNameMultipleTimes(2, "Bedanti");
 
@@ -50,10 +55,12 @@ printNameMultipleTimes(2, "Bedanti");
 
 function printNameMultipleTimes(number, name) {
     let result = [];
-    for (let i = 0; i < numTimes; i++) {
+    for (let i = 0; i < number; i++) {
         result.push(name);
     }
     return result;
 }
 
 ```
+
+

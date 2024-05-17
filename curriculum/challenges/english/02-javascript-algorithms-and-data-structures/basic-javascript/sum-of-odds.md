@@ -6,9 +6,18 @@ dashedName: sum-of-odds
 ---
 
 # --description--
-**Objective:** The objective of this challenge is to write a program that calculates the sum of all odd numbers up to a specified input value.
-**Introduction:** Embark on an adventurous quest to uncover the secrets of numbers! Today's mission leads you to the intriguing realm of odd numbers. Odd numbers, unlike their even counterparts, leave a remainder of 1 when divided by 2. Your task is to calculate the sum of all odd numbers up to a chosen value.
-**Challenge:** Write a program that takes an integer N from the user as input and prints the sum of all odd numbers from 1 up to N.
+
+**Objective:** 
+
+The objective of this challenge is to write a program that calculates the sum of all odd numbers up to a specified input value.
+
+**Introduction:** 
+
+Embark on an adventurous quest to uncover the secrets of numbers! Today's mission leads you to the intriguing realm of odd numbers. Odd numbers, unlike their even counterparts, leave a remainder of 1 when divided by 2. Your task is to calculate the sum of all odd numbers up to a chosen value.
+
+**Challenge:** 
+
+Write a program that takes an integer N from the user as input and prints the sum of all odd numbers from 1 up to N.
 
 **Examples:**
 If the input number is `20`, the sum of odd numbers up to `20` is `100`.
@@ -19,10 +28,20 @@ Output: 100
 ```
 
 <h2>Hinglish</h2>
-Lakshya: Diye gaye input moolya tak sabhi visham sankhyaon ka yog ganana karna.
-Parichay: Sankhyon ke raaz ko khulne ki koshish mein kadam rakho! Aaj ka mission tumhe vishesh sankhyon ke romanchak kshetra mein le jata hai. Vishesh sankhyayen, apne samanta saathiyo ke vipreet, jab 2 se vibhaajit kiya jata hai to ek shesh bachata hai. Tumhara karya hai ek chuninda moolya tak sabhi visham sankhyon ka yog ganana karna.
-Challenge: Ek program likho jo ek puri sankhya N ko upayogakarta se input ke roop mein leta hai aur 1 se lekar N tak ke sabhi visham sankhyon ka yog print karta hai.
+**Lakshya:**
+
+Diye gaye input moolya tak sabhi visham sankhyaon ka yog ganana karna.
+
+**Parichay:**
+
+Sankhyon ke raaz ko khulne ki koshish mein kadam rakho! Aaj ka mission tumhe vishesh sankhyon ke romanchak kshetra mein le jata hai. Vishesh sankhyayen, apne samanta saathiyo ke vipreet, jab 2 se vibhaajit kiya jata hai to ek shesh bachata hai. Tumhara karya hai ek chuninda moolya tak sabhi visham sankhyon ka yog ganana karna.
+
+**Challenge:**
+
+Ek program likho jo ek puri sankhya N ko upayogakarta se input ke roop mein leta hai aur 1 se lekar N tak ke sabhi visham sankhyon ka yog print karta hai.
+
 **Examples:**
+
 Agar input number `20` hai, toh phle `20` odd numbers ka sum `100` hota hai.
 
 ```js

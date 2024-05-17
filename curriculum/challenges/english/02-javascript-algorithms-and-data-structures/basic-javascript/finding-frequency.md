@@ -35,50 +35,58 @@ And use this prompt.
 
 # --hints--
 
-For the input array `[2, 4, 2, 6, 3, 6]`, the expected output is: `[[2, 2], [4, 1], [6, 2], [3, 1]]`
-
+`[3,4,6,3,6]` should return `3=2,4=1,6=2`.
 
 ```js
-assert.deepEqual(findFrequency(6, [2, 4, 2, 6, 3, 6]), [[2, 2], [4, 1], [6, 2], [3, 1]]);
+assert.deepEqual(findFrequency([3,4,6,3,6],5),("3=2,4=1,6=2,")||findFrequency([3,4,6,3,6],5),("3=2, 4=1, 6=2"))
+```
 
+`[2,4,2,6,3,6]` should return `2=2,4=1,6=2,3=1`.
+
+```js
+assert.deepEqual(findFrequency([2,4,2,6,3,6],6),("2=2,4=1,6=2,3=1,")||findFrequency([2,4,2,6,3,6],6),("2=2,4=1,6=2,3=1"))
 ```
 
 # --seed--
-
 ## --seed-contents--
 
 ```js
-function findFrequency(size, arr) {
-  // Only change code below this line
-  return
-  // Only change code above this line
+function findFrequency(a,size) {
+   
+    let ans = "";
+    for (let i = 0; i < size; i++) {
+
+        
+    // Only change code above this line
+    }
+    return ans;
 }
 
-findFrequency(6, [2, 4, 2, 6, 3, 6]);
+findFrequency([2,4,2,6,3,6],6)
 
 ```
 
 # --solutions--
 
 ```js
-function findFrequency(size, arr) {
-    let frequency = [];
+function findFrequency(a,size) {
+   
+    let ans = "";
     for (let i = 0; i < size; i++) {
-        let found = false;
-        for (let j = 0; j < frequency.length; j++) {
-            if (frequency[j][0] === arr[i]) {
-                frequency[j][1]++;
-                found = true;
-                break;
+        let c = 1;
+        if (a[i] !== null) {
+            for (let j = i + 1; j < size; j++) {
+                if (a[i] === a[j]) {
+                    c++;
+                    a[j] = null;
+                }
             }
-        }
-        if (!found) {
-            frequency.push([arr[i], 1]);
+            ans += a[i] + "=" + c + ",";
         }
     }
-    return frequency;
+    return ans;
 }
 
-findFrequency(6, [2, 4, 2, 6, 3, 6]);
-
+findFrequency([2,4,2,6,3,6],6)
 ```
+

@@ -25,18 +25,18 @@ Which is the correct syntax for taking input in Javascript?
 
 ## --answers--
 
-const input = require(“readline-sync”);
+const input = require(“readline-sync”);<br>
 let name = input.question();
 
 
 ---
 
-const input = require(“input”);
+const input = require(“input”);<br>
 const name = input.question();
 
 ---
 
-var input = require(“readline-sync”);
+var input = require(“readline-sync”);<br>
 let name = input().question()
 
 ## --video-solution--

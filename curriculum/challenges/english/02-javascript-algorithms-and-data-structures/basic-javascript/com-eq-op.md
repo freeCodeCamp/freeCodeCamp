@@ -10,7 +10,27 @@ dashedName: com-eq-op
 There are many <dfn>comparison operators</dfn> in JavaScript. All of these operators return a boolean `true` or `false` value.
 
 The most basic operator is the equality operator `==`. The equality operator compares two values and returns `true` if they're equivalent or `false` if they are not. Note that equality is different from assignment (`=`), which assigns the value on the right of the operator to a variable on the left.
+
+```js
+function equalityTest(myVal) {
+  if (myVal == 10) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
+```
+
+If `myVal` is equal to `10`, the equality operator returns `true`, so the code in the curly braces will execute, and the function will return `Equal`. Otherwise, the function will return `Not Equal`. In order for JavaScript to compare two different <dfn>data types</dfn> (for example, `numbers` and `strings`), it must convert one type to another. This is known as Type Coercion. Once it does, however, it can compare terms as follows:
+
+```js
+1   ==  1  // true
+1   ==  2  // false
+1   == '1' // true
+"3" ==  3  // true
+```
+
 <h2>Hinglish</h2>
+
 JavaScript mein kai <dfn>comparison operators</dfn> hote hain. Ye sab operators ek boolean `true` ya `false` value return karte hain.
 
 Sabse basic operator hai equality operator `==`. Equality operator do values ko compare karta hai aur agar wo same hain to `true` return karta hai ya agar wo same nahi hain to `false` return karta hai. Dhyan rakhein ki equality assignment (`=`) se alag hai, jo right side ke value ko left side ke variable mein assign karta hai.
@@ -23,8 +43,6 @@ function equalityTest(myVal) {
   return "Not Equal";
 }
 ```
-
-If `myVal` is equal to `10`, the equality operator returns `true`, so the code in the curly braces will execute, and the function will return `Equal`. Otherwise, the function will return `Not Equal`. In order for JavaScript to compare two different <dfn>data types</dfn> (for example, `numbers` and `strings`), it must convert one type to another. This is known as Type Coercion. Once it does, however, it can compare terms as follows:
 
 Agar `myVal` `10` ke barabar hai, to equality operator `true` return karega, isliye curly braces mein likha hua code execute hoga, aur function `Equal` return karega. Warna, function `Not Equal` return karega. JavaScript ko do alag <dfn>data types</dfn> (for example, `numbers` and `strings`) ko compare karne ke liye, ek type ko doosre type mein convert karna padta hai. Isko Type Coercion kehte hain. Ek baar ye karne ke baad, JavaScript terms ko is tarah se compare kar sakta hai:
 

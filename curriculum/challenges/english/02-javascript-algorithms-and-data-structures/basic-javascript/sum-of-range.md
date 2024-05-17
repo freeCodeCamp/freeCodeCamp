@@ -6,14 +6,34 @@ dashedName: sum-of-range
 ---
 
 # --description--
-**Objective:** The objective of this challenge is to write a program that calculates the sum of numbers within a given range.
-**Introduction:** Calculating the sum of numbers within a specified range is a common task in programming. This challenge focuses on writing a program that efficiently computes the sum of numbers between two integers M and N.
-**Challenge:** Write a program that takes two integers M and N as input and prints the sum of numbers in the range from M to N.
+**Objective:** 
+
+The objective of this challenge is to write a program that calculates the sum of numbers within a given range.
+
+**Introduction:** 
+
+Calculating the sum of numbers within a specified range is a common task in programming. This challenge focuses on writing a program that efficiently computes the sum of numbers between two integers M and N.
+
+**Challenge:**
+
+Write a program that takes two integers M and N as input and prints the sum of numbers in the range from M to N.
+
 <h2>Hinglish</h2>
-Lakshya: Diye gaye range ke andar numbers ka yog ganana karna.
-Parichay: Kisi nirdharit range ke andar numbers ka yog ganana programming mein ek aam karya hai. Yeh challenge ek aise program par dhyan kendrit karta hai jo do integers M aur N ke beech ke numbers ka yog prabhavi tareeke se ganit karta hai.
-Challenge: Ek program likho jo do integers M aur N ko input ke roop mein leta hai aur M se lekar N tak ke range mein numbers ka yog print karta hai.
+
+**Lakshya:**
+
+Diye gaye range ke andar numbers ka yog ganana karna.
+
+**Parichay: **
+
+Kisi nirdharit range ke andar numbers ka yog ganana programming mein ek aam karya hai. Yeh challenge ek aise program par dhyan kendrit karta hai jo do integers M aur N ke beech ke numbers ka yog prabhavi tareeke se ganit karta hai.
+
+**Challenge: **
+
+Ek program likho jo do integers M aur N ko input ke roop mein leta hai aur M se lekar N tak ke range mein numbers ka yog print karta hai.
+
 **Examples:**
+
 If the input integers are `2` and `7`, the sum of numbers in the range from `2` to `7` is `27`.
 
 ```js
@@ -21,7 +41,8 @@ sumInRange(2, 7) // Output: 27
 ```
 
 # --instructions--
-Write a JavaScript function called `sumInRange` that takes two integers `M` and `N` as arguments and prints the sum of numbers in the range from `M` to `N`, inclusive.
+Write a JavaScript function called `sumInRange` that takes two integers `M` and `N` as arguments and prints the sum of numbers in the range from `M` to `N`, inclusive.<br>
+
 Click on this <a href= https://cs50.ai/chat>Link</a> to Go to CS50 AI 
 And use this prompt.
 
@@ -51,13 +72,16 @@ assert(sumInRange(-3,3)===0)
 ## --seed-contents--
 
 ```js
-function sumOfOddNumbers(M, N) {
-   let sum =0
+function sumInRange(M, N) {
+   let sum =0;
    // Only change code below this line
+  
+  
+  
    // Only change code above this line
    return sum;
 }
-sumOfOddNumbers(2,7);
+sumInRange(2,7);
 ```
 
 # --solutions--

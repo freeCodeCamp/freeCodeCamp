@@ -24,7 +24,7 @@ Ab ek decimal ko dusre decimal se divide krte hain.
 
 # --hints--
 
-The variable `quotient` should equal `2.2`
+The variable `quotient` should equal `2.2`.
 
 ```js
 assert(quotient === 2.2);

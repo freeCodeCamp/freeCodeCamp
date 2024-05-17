@@ -41,7 +41,7 @@ assert(checkNumber(6)==="Positive")
 
 ```
 
-`checkNumber(-6)` should return `Positive`
+`checkNumber(0)` should return `Zero`
 
 ```js
 assert(checkNumber(0)==="Zero")

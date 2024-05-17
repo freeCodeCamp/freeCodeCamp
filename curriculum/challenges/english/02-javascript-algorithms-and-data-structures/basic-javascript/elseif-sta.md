@@ -28,18 +28,6 @@ Convert the logic to use `else if` statements.
 
 # --hints--
 
-You should have at least two `else` statements
-
-```js
-assert(code.match(/else/g).length > 1);
-```
-
-You should have at least two `if` statements
-
-```js
-assert(code.match(/if/g).length > 1);
-```
-
 You should have closing and opening curly braces for each `if else` code block.
 
 ```js

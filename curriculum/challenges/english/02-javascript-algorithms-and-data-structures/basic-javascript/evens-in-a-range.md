@@ -9,13 +9,23 @@ dashedName: evens-in-a-range
 
 Imagine you're on a fun journey of exploring numbers! You're on an exciting journey exploring numbers! Your goal is to find and print all the even numbers up to a certain value. Even numbers are those that are divisible by 2 without leaving a remainder.
 
-Write a JavaScript function called printEvenNumbers that takes a number as an argument and prints all the even numbers from 1 up to the given number.
+<h2>Hinglish </h2>
+
+Imagine ki aap ek mazedaar safar par hain sankhyao ko explore karne ka! Aap ek thrilling yatra par hain sankhyao ko explore karte hue! Aapka lakshya hai ek nishchit maan tak sabhi even sankhyao ko khojna aur print karna. Even sankhyaein woh hain jo 2 se bhag karne par bina bacha chhode divisble hoti hain.
 
 # --instructions--
 
-Write a JavaScript function called `printEvenNumbers` that takes a `number` as an argument and prints all the `even` numbers from 1 up to the given number.
+Write a JavaScript function called `printEvenNumbers` that takes a `number` as an argument and prints all the `even` numbers from 1 till `n` (including n)the given number.
 
 For `example`, if the input number is `10`, your function should print `"2 4 6 8 10"`.
+
+ <hr>
+
+Ek JavaScript function likhein `printEvenNumbers` jo ek `number` ko argument ke roop mein le aur 1 se `n` tak (n ko shaamil karke) ke sabhi `even` numbers ko print kare.
+
+For `example`, agar input number `10` hai, to aapka function `"2 4 6 8 10"` ko print karna chahiye.
+
+
 
 # --hints--
 

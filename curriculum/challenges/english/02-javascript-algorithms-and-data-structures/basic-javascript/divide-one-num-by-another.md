@@ -18,9 +18,7 @@ const myVar = 16 / 2;
 ```
 
 `myVar` now has the value `8`.
-# --instructions--
 
-Change the `0` so that the `quotient` is equal to `2`.
 
 <h2>Hinglish</h2>
 
@@ -34,7 +32,13 @@ JavaScript division ke liye `/` symbol ka istemal karta hai.
 const myVar = 16 / 2;
 ```
 
-`myVar` ab keemat `8` rakhti hai.
+`myVar` ki value ab `8` hai.
+
+# --instructions--
+
+Change the `0` so that the `quotient` is equal to `2`.
+
+`0` ko badlo taaki `quotient` `2` ke barabar ho jae.
 
 # --hints--
 

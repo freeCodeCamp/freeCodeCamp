@@ -36,13 +36,14 @@ And use this prompt.
 `createArray(5)` should return `[1,2,3,4,5]`.
 
 ```js
-assert(createArray(5)===[1,2,3,4,5]);
+assert.deepEqual(createArray(5), [1, 2, 3, 4, 5], 'Expected output for input 5 is [1, 2, 3, 4, 5]');
+
 ```
 
 `createArray(10)` should return `[1,2,3,4,5,6,7,8,9,10]`. 
 
 ```js
-assert(createArray(10)===[1,2,3,4,5,6,7,8,9,10]);
+assert.deepEqual(createArray(10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'Expected output for input 10 is [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]');
 ```
 
 # --seed--
@@ -66,16 +67,18 @@ createArray(10);
 # --solutions--
 
 ```js
-function createArray(num) {
-    let result = [];
-    for (let i = 1; i <= num; i++) {
-        result.push(i);
+function createArray(num){
+  const array = [];
+  let i = 1;
+  let j = 0;
+  while (i<=num){
+        array[j]=i;
+        j++;
+        i++;
     }
-    return result;
+    return array;
 }
 
-createArray(5);
 createArray(10);
-
 ```
 

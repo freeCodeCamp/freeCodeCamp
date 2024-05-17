@@ -18,10 +18,6 @@ myNum = myVar;
 
 The above declares a `myVar` variable with no value, then assigns it the value `5`. Next, a variable named `myNum` is declared with no value. Then, the contents of `myVar` (which is `5`) is assigned to the variable `myNum`. Now, `myNum` also has the value of `5`.
 
-# --instructions--
-
-Assign the contents of `a` to variable `b`.
-
 <h2>Hinglish</h2>
 
 Ek bar ek variable ko ek value <dfn>assignment</dfn> operator ka upyog karke assign kar diya jata hai, tab aap us variable ki value ko doosre variable ko assign karne ke liye bhi <dfn>assignment</dfn> operator ka upyog kar sakte hain.
@@ -36,6 +32,8 @@ myNum = myVar;
 Upar diya gaya code `myVar` variable ko bina kisi value ke declare karta hai, phir isko value `5` assign karta hai. Agla, ek variable `myNum` declare kiya jata hai bina kisi value ke. Fir, `myVar` ke content (jo `5` hai) ko variable `myNum` mein assign kiya jata hai. Ab, `myNum` mein bhi `5` ki value hai.
 
 # --instructions--
+
+Assign the contents of `a` to variable `b`.
 
 `a` ke content ko variable `b` mein assign karen.
 

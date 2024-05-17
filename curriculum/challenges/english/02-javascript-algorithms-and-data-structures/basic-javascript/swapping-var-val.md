@@ -22,13 +22,13 @@ Ek program likhiye jo user se do numbers poochhe aur phir unki values ko swap ka
 Use a third variable named `temp`.
 
 ```js
-assert(code.match(temp));
+assert(code.match(/temp\s*=/g));
 ```
 
 After swapping, `a` and `b` should be  `99` and `45` respectively.
 
 ```js
-assert(A===99 && B===45);
+assert(a===99 && b===45);
 ```
 
 # --seed--

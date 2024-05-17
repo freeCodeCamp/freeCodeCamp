@@ -51,26 +51,21 @@ And use this prompt.
 `perfectNumberCheck(6)` should output `Yes`.
 
 ```js
-if (typeof perfectNumberCheck === 'function') {
-  capture();
-  perfectNumberCheck(6);
-  uncapture();
-}
-assert(logOutput === 'Yes');
-
+assert(perfectNumberCheck(6) === "Yes");
 ```
 
 `perfectNumberCheck(12)` should output `No`.
 
 
 ```js
-if (typeof perfectNumberCheck === 'function') {
-  capture();
-  perfectNumberCheck(12);
-  uncapture();
-}
-assert(logOutput === 'No');
+assert(perfectNumberCheck(12) === "No");
 
+```
+
+`perfectNumberCheck(28)` should output `Yes`.
+
+```js
+assert(perfectNumberCheck(28) === "Yes");
 ```
 
 Ensure that you accurately determine whether the number is perfect or not.
@@ -106,7 +101,7 @@ function perfectNumberCheck(number) {
            sum += i;
        }
    }
-   console.log(sum === number ? "Yes" : "No");
+   return(sum === number ? "Yes" : "No");
 }
 ```
 

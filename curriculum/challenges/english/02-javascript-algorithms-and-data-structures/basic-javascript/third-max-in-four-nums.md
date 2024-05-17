@@ -13,6 +13,11 @@ In this challenge, you are tasked with finding the third maximum among four give
 
 Write a program that takes four numbers as input from the user and outputs the third maximum.
 
+<h2>Hinglish</h2>
+
+Is challenge mein, aapko diye gaye chaar numbers mein se third maximum number find karna hai. Ye problem aapki ability ko test karta hai numbers ko compare karne aur unki order determine karne mein.
+
+Ek program likhiye jo user se chaar numbers input le aur third maximum output kare.
 **Hints**
 
 Click on this - <a href = "https://cs50.ai/chat">Link</a> to Go to CS50 AI.

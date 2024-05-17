@@ -25,6 +25,21 @@ myVar = 5;
 
 First, this code creates a variable named `myVar`. Then, the code assigns `5` to `myVar`. Now, if `myVar` appears again in the code, the program will treat it as if it is `5`.
 
+We can also declare multiple variables in a single line. 
+
+```js
+var var1,var2;
+var1 = 5:
+var2 = 10;
+```
+
+Alternatively, you can combine the variable declarations and assignments in a single line like this:
+
+```js
+var var1 = 5, var2 = 10;
+```
+
+Both versions are valid and will work in JavaScript.
 <h2>Hinglish</h2>
 
 JavaScript mein, aap ek variable mein ek value `assignment` operator (`=`) ka istemal karke store kar sakte hain.
@@ -43,6 +58,22 @@ myVar = 5;
 ```
 
 Pehle, yeh code `myVar` naam ka ek variable banata hai. Fir, yeh code `myVar` ko `5` assign karta hai. Ab, agar code mein phir se `myVar` aata hai, to program use `5` ke roop mein treat karega.
+
+Hum ek line mein bhi kai variables declare kar sakte hain.
+
+```js
+var var1, var2;
+var1 = 5;
+var2 = 10;
+```
+
+Ya phir, aap variable declarations aur assignments ko ek line mein bhi combine kar sakte hain jaise yeh:
+
+```js
+var var1 = 5, var2 = 10;
+```
+
+Dono versions sahi hain aur JavaScript mein kaam karenge.
 
 # --instructions--
 

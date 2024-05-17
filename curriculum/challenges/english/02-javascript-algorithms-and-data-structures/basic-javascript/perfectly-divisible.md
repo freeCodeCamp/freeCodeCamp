@@ -23,11 +23,30 @@ B: The size of each container.
 Then, find the biggest whole number (multiple of B) that's less than A. This represents the maximum number of containers you can fill completely. Finally, print this biggest number.
 
 
+<h2>Hinglish</h2>
+**Objective**: Containers mein fit hone wale sabse adhik puri cheezein dhoondhein!
+
+**Introduction**:
+
+Sochiye aapke paas kuch samaan hai (A) aur ek nishchit size ke containers (B) hain. Kitni puri cheezein containers mein fit kar sakte hain (B ke multiples)? Chaliye JavaScript mein iska jawab dhoondhte hain!
+
+**Challenge**:
+
+Aapko do numbers diye gaye hain:
+
+A: Kul samaan ka maatra.
+B: Har container ka size.
+Phir, A se chhota sabse bada poorna sankhya (B ka multiple) dhoondhein. Ye maximum containers ki sankhya ko darshata hai jo aap puri tarah se bhar sakte hain. Ant mein, is bade number ko print karein.
+
 # --instructions--
 
-Find the largest number divisible by `A`. 
+Find the largest number divisible by `B`. 
 
 Create a variable named `largestNumber` that stores the value.
+
+`B` se divisble sabse bada number dhoondhein.
+
+`largestNumber` naam se ek variable banayein jo is value ko store kare.
 
 
 # --hints--

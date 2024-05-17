@@ -9,7 +9,21 @@ dashedName: chaining-ifelse
 
 `if/else` statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained `if` / `else if` statements:
 
+```js
+if (condition1) {
+  statement1
+} else if (condition2) {
+  statement2
+} else if (condition3) {
+  statement3
+. . .
+} else {
+  statementN
+}
+```
+
 <h2>Hinglish</h2>
+
 `if/else` statements ko ek dusre ke saath jodkar complex logic ke liye chain kiya ja sakta hai. Yahan ek multiple chained `if` / `else if` statements ka pseudocode diya gaya hai:
 
 ```js
@@ -36,18 +50,6 @@ Write chained `if`/`else if` statements to fulfill the following conditions:
 `num >= 20` - return `Huge`
 
 # --hints--
-
-You should have at least four `else` statements
-
-```js
-assert(code.match(/else/g).length > 3);
-```
-
-You should have at least four `if` statements
-
-```js
-assert(code.match(/if/g).length > 3);
-```
 
 You should have at least one `return` statement
 

@@ -43,54 +43,6 @@ while (i < 5) {
 
 This loop will also log the numbers 0 to 4 to the console.
 
-## 3. do...while Loop
-
-The `do...while` loop is similar to the `while` loop, but it always executes the block of code at least once before checking the condition.
-
-Example:
-
-```javascript
-let i = 0;
-do {
-  console.log(i);
-  i++;
-} while (i < 5);
-```
-
-This loop will also log the numbers 0 to 4 to the console.
-
-## 4. for...in Loop
-
-The `for...in` loop iterates over the enumerable properties of an object, in arbitrary order.
-
-Example:
-
-```javascript
-const person = { name: 'John', age: 30 };
-
-for (let key in person) {
-  console.log(key, person[key]);
-}
-```
-
-This loop will log the keys (`name`, `age`) and their corresponding values to the console.
-
-## 5. for...of Loop
-
-The `for...of` loop iterates over iterable objects (arrays, strings, etc.) and provides a concise syntax for iterating.
-
-Example:
-
-```javascript
-const fruits = ['apple', 'banana', 'cherry'];
-
-for (let fruit of fruits) {
-  console.log(fruit);
-}
-```
-
-This loop will log each fruit in the `fruits` array to the console.
-
 Loops are essential for iterating over arrays, processing data, and implementing various algorithms in JavaScript.
 
 <h2>Hinglish</h2>
@@ -128,54 +80,6 @@ while (i < 5) {
 ```
 
 Yeh loop bhi console mein numbers 0 se lekar 4 tak ko log karega.
-
-## 3. do...while Loop
-
-`do...while` loop `while` loop ki tarah hota hai, lekin yeh hamesha block of code ko ek baar execute karta hai condition ko check karne se pehle.
-
-Udaharan:
-
-```javascript
-let i = 0;
-do {
-  console.log(i);
-  i++;
-} while (i < 5);
-```
-
-Yeh loop bhi console mein numbers 0 se lekar 4 tak ko log karega.
-
-## 4. for...in Loop
-
-`for...in` loop ek object ke enumerable properties par iterate karta hai, arbitrary order mein.
-
-Udaharan:
-
-```javascript
-const person = { name: 'John', age: 30 };
-
-for (let key in person) {
-  console.log(key, person[key]);
-}
-```
-
-Yeh loop keys (`name`, `age`) aur unke corresponding values ko console mein log karega.
-
-## 5. for...of Loop
-
-`for...of` loop iterable objects (arrays, strings, etc.) par iterate karta hai aur iterating ke liye ek concise syntax pradan karta hai.
-
-Udaharan:
-
-```javascript
-const fruits = ['apple', 'banana', 'cherry'];
-
-for (let fruit of fruits) {
-  console.log(fruit);
-}
-```
-
-Yeh loop `fruits` array mein har fruit ko console mein log karega.
 
 Loops arrays par iterate karne, data ko process karne, aur JavaScript mein vibhinn algorithms ko implement karne ke liye avashyak hai.
 

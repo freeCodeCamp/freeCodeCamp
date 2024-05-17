@@ -30,7 +30,7 @@ Coding sikhna mazedaar aur upyogi hai. Ye ek aise nayi bhasha sikhne jaisa hai j
 
 ## --text--
 
-What is Coding?
+What is Code?
 
 ## --answers--
 

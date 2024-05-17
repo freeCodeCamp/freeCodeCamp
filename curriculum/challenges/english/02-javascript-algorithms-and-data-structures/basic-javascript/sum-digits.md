@@ -71,9 +71,8 @@ function sumOfDigits(number) {
         
 
     // Only change code above this line
-    }
     
-    return(sum);
+    return sum;
 
    
 }

@@ -27,7 +27,7 @@ Challenge: Ek program likho jo ek pooranank n ko input ke roop mein leta hai aur
 # --instructions--
 **Examples:**
 
-The smallest even number that divides 5 is 10.
+The smallest even number that is divisible by 5 is 10.
 
 ```js
 smallestMulti(5)
@@ -44,9 +44,9 @@ Output: 6
 Click on this <a href =https://cs50.ai/chat>Link</a> to Go to CS50 AI 
 And use this prompt.
 
-1. Prompt 1: Are there any edge cases or special scenarios related to 
-n that we should be aware of?
-2. Prompt 2: How would you like us to handle cases where n is even? Should we return n itself or find another divisor?
+1. Prompt 1: Are there any edge cases or special scenarios related to `n` that we should be aware of?
+
+2. Prompt 2: How would you like us to handle cases where n is even? Should we return `n` itself or find another divisor?
 
 
 # --hints--

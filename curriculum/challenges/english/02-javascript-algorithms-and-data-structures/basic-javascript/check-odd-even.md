@@ -12,6 +12,12 @@ Learn how to check if a number is even or odd using JavaScript.
 
 In programming, we often need to know if a number is even or odd. This challenge will teach you how to write JavaScript code to do that!
 
+<h2>Hinglis</h2>
+
+JavaScript me odd ya even check karna sikhen.
+
+Programming mein, humko aksar yeh jaanne ki zaroorat hoti hai ki koi number even hai ya odd. Yeh challenge aapko yeh sikhayega ki kaise JavaScript code likha jaye jo yeh kaam kare!
+
 # --instructions--
 
 Ask for a number, and check if it is "Even" or "Odd" accordingly.
@@ -19,6 +25,12 @@ Ask for a number, and check if it is "Even" or "Odd" accordingly.
 Create a variable named `result` to store the value.
 
 # --hints--
+
+You should use console.log() statements to print the `result`.
+
+```js
+assert(code.includes('console.log'), "Code does not contain 'console.log'");
+```
 
 You should create a variable `result`.
 
@@ -36,7 +48,7 @@ assert(result==="Even");
 ## --seed-contents--
 
 ```js
-var number=32
+var number=32;
 var result;
 //  Only change code below this line
 

@@ -25,28 +25,46 @@ Challenge: Ek program likho jismein bijli ke units ka input liya jaye aur diye g
 
 # --instructions--
 
-For the first 50 units, the rate is Rs. 0.50/unit, so the cost is 50 * 0.50 = Rs. 25.
-For the next 100 units, the rate is Rs. 0.75/unit, so the cost is 100 * 0.75 = Rs. 75.
-The total cost for the first 150 units is Rs. 25 + Rs. 75 = Rs. 100.
-For the next 50 units (200 - 150 = 50 units), the rate is Rs. 1.20/unit, so the cost is 50 * 1.20 = Rs. 60.
-The total cost for 200 units is Rs. 100 + Rs. 60 = Rs. 160.
-Adding the 20% surcharge, the total bill becomes 1.20 * 160 = Rs. 192.
+1. For the first 50 units, the rate is Rs. 0.50/unit.
+
+2. For the next 100 units, the rate is Rs. 0.75/unit.
+
+3. For any extra units, the rate is Rs. 1.20/unit.
+
+4. A surcharge of 20% of the total amount is added in the bill.
+
+5. For Example :
+
+For 160 units, the bill becomes 
+
+```js
+50x0.5 + 100x0.75 + 10x1.20 = 112.
+surcharge : 112x20/100 = 22.40
+
+total bill = 112 + 22.40 = Rs. 134.40.
+```
 
 **Hints**
 
 Click on this <a href = "https://cs50.ai/chat">Link</a> to Go to CS50 AI 
-And use this prompt __________
-Prompt 1: How would I handle scenarios where the number of units consumed exceeds the defined ranges?
-Prompt 2: How would I ensure accuracy in the calculation of the total bill amount, including the surcharge?
+And use this prompt.
 
+1. Prompt 1: How would I handle scenarios where the number of units consumed exceeds the defined ranges?
 
+2. Prompt 2: How would I ensure accuracy in the calculation of the total bill amount, including the surcharge?
 
 # --hints--
 
-`calculateElectricityBill(200)` should return `192`
+`calculateElectricityBill(200)` should return `192`.
 
 ```js
-assert(calculateElectricityBill(200)===192)
+assert(calculateElectricityBill(200)===192);
+```
+
+`calculateElectricityBill(100)` should return `75`.
+
+```js
+assert(calculateElectricityBill(100)===75);
 ```
 
 

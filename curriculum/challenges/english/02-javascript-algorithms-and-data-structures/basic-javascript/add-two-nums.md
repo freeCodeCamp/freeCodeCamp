@@ -20,9 +20,7 @@ const myVar = 5 + 10;
 
 `myVar` now has the value `15`.
 
-# --instructions--
 
-Change the `0` so that sum will equal `20`.
 
 <h2>Hinglish</h2>
 
@@ -40,6 +38,8 @@ const myVar = 5 + 10;
 Ab `myvar` ki value `15` ho gyi hai.
 
 # --instructions--
+
+Change the `0` so that sum will equal `20`.
 
 `0` ko badal kar aisa karein ki sum `20` ke barabar ho.
 

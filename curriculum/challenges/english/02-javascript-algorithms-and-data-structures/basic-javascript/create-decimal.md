@@ -15,7 +15,6 @@ We can store decimal numbers in variables too. Decimal numbers are sometimes ref
 
 # --instructions--
 
-Create a variable `myDecimal` and give it a decimal value with a fractional part (e.g. `5.7`).
 
 <h2>Hinglish</h2>
 
@@ -27,6 +26,8 @@ Hum variables mein decimal numbers bhi store kar sakte hain. Decimal numbers kab
 
 # --instructions--
 
+Create a variable `myDecimal` and give it a decimal value with a fractional part (e.g. `5.7`).
+
 `myDecimal` naam ka ek variable banayein aur use ek decimal value de (e.g. `5.7`).
 
 # --hints--
@@ -37,7 +38,7 @@ Hum variables mein decimal numbers bhi store kar sakte hain. Decimal numbers kab
 assert(typeof myDecimal === 'number');
 ```
 
-`myDecimal` should have a decimal point
+`myDecimal` should have a decimal point.
 
 ```js
 assert(myDecimal % 1 != 0);
@@ -54,9 +55,8 @@ assert(myDecimal % 1 != 0);
 ## --seed-contents--
 
 ```js
-const ourDecimal = 5.7;
 
-// Only change code below this line
+
 
 ```
 

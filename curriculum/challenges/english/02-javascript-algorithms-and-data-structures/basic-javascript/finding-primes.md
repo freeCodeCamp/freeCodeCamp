@@ -37,12 +37,10 @@ primeNumberCheck(97) // Output: Yes
 **Prastavana:**
  Mool sankhya voh vishesh prakar ki sankhya hain jo sirf 1 aur apne aap se hi bhagya ja sakti hain. Ye sankhya siddhant mein mahatvapurn bhumika nibhati hain aur vibhinn ganitik prayogon mein bhi mahatvapurn hain. Ye challenge us par dhyan kendrit karta hai ki ek diye gaye puraank ko kis tarah se prabhavshali tareeke se pahchane ki vah ek mool sankhya hai ya nahin.
 
-Chunauti:
+**Chunauti:**
  Ek program likho jo upyogakarta se ek puraank ko input ke roop mein lekar nirdharit kare ki sankhya ek mool sankhya hai ya nahin. Agar sankhya mool hai, toh program "Haan" ko prastut kare; anyatha, "Nahin" ko prastut kare.
  
 Udaharan ke liye, sankhya 7 ek prime number hai kyunki isse sirf 1 aur 7 se hi baant kar bina bacha chhoda jaa sakta hai. Halanki, sankhya 12 ek prime number nahi hai kyunki iske alag se doosre factors hote hain, jaise 2, 3, 4, aur 6, sath hi 1 aur 12 ke alawa.
-
-Yahan se user se number lein.
 
 **Udaharan:**
 
@@ -72,24 +70,16 @@ And use this prompt.
 
 
 ```js
-if (typeof primeNumberCheck === 'function') {
-  capture();
-  primeNumberCheck(97);
-  uncapture();
-}
-assert(logOutput === 'Yes');
+let logOutput = primeNumberCheck(97);
+console.assert(logOutput === 'Yes', `Expected "Yes", but got "${logOutput}"`);
 ```
 
-`primeNumberCheck(49)` should output `Yes`.
+`primeNumberCheck(49)` should output `No`.
 
 
 ```js
-if (typeof primeNumberCheck === 'function') {
-  capture();
-  primeNumberCheck(49);
-  uncapture();
-}
-assert(logOutput === 'Yes');
+let logOutput = primeNumberCheck(49);
+console.assert(logOutput === 'No', `Expected "No", but got "${logOutput}"`);
 ```
 
 Ensure that you accurately determine whether the number is prime or not.
@@ -106,18 +96,11 @@ assert(!code.match(/\/\//));
 
 ```js
 function primeNumberCheck(number) {
-    if (number <= 1) {
-        console.log("No");
-        return;
-    }
-    let isPrime = true;
+   
        // Only change code below this line
 
-    for (let i = 2; i * i <= number; i++) {
         
         // Only change code above this line
-    }
-    return(isPrime ? "Yes" : "No");
 }
 
 primeNumberCheck(10);
@@ -128,8 +111,7 @@ primeNumberCheck(10);
 ```js
 function primeNumberCheck(number) {
     if (number <= 1) {
-        console.log("No");
-        return;
+        return("No");
     }
     let isPrime = true;
     for (let i = 2; i * i <= number; i++) {
@@ -138,7 +120,7 @@ function primeNumberCheck(number) {
             break;
         }
     }
-    console.log(isPrime ? "Yes" : "No");
+    return(isPrime ? "Yes" : "No");
 }
 primeNumberCheck(10);
 ```

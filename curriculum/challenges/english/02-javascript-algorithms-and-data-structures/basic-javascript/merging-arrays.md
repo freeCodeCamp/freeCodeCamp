@@ -9,10 +9,6 @@ dashedName: merging-arrays
 
 The objective of this challenge is to write a program that merges two sorted arrays into a single sorted array without using sorting algorithms.
 
-```js
-console.log(sumOdd,sumEven)
-```
-
 Merging two sorted arrays into a single sorted array is a common task in programming. This challenge focuses on writing a program that efficiently merges two sorted arrays into a single sorted array without using sorting algorithms.
 
 <h2>Hinglish</h2>

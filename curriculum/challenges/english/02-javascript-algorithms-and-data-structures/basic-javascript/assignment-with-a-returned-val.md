@@ -18,9 +18,6 @@ ourSum = sum(5, 12);
 
 Calling the `sum` function with the arguments of `5` and `12` produces a return value of `17`. This return value is assigned to the `ourSum` variable.
 
-# --instructions--
-
-Call the `processArg` function with an argument of `7` and assign its return value to the variable `processed`.
 
 <h2>Hinglish</h2>
 
@@ -35,6 +32,9 @@ ourSum = sum(5, 12);
 `sum` function ko `5` aur `12` ke arguments ke saath call karna ek return value `17` ko produce karta hai. Yeh return value `ourSum` variable mein assign hota hai.
 
 # --instructions--
+
+Call the `processArg` function with an argument of `7` and assign its return value to the variable `processed`.
+
 
 `processArg` function ko ek argument ke saath call karein `7` aur uska return value `processed` variable mein assign karein.
 
