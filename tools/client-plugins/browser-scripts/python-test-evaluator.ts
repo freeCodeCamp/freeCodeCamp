@@ -168,9 +168,7 @@ with open("/user_code.py", "r") as f:
         }
       });
     }
-    // TODO: remove the next line, creating __locals, once all the tests access
-    // variables directly.
-    runPython('__locals = globals()');
+
     await test();
 
     ctx.postMessage({ pass: true });
