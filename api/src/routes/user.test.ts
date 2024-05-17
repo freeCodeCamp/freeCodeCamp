@@ -16,7 +16,7 @@ import {
   createSuperRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
-import { getMsTranscriptApiUrl } from './user';
+import { getMsTranscriptApiUrl, replacePrivateData } from './user';
 
 const mockedFetch = jest.fn();
 jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
@@ -1271,8 +1271,7 @@ Thanks and regards,
             ..._.omit(publicUserData, 'completedSurveys'),
             username: publicUsername,
             joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
-            profileUI: unlockedUserProfileUI,
-            isDonating: null
+            profileUI: unlockedUserProfileUI
           };
 
           expect(response.body).toStrictEqual({
@@ -1285,9 +1284,6 @@ Thanks and regards,
           });
           expect(response.statusCode).toBe(200);
         });
-        // Create a helper and test that for each of the showXs? Might be
-        // cleaner than testing the endpoint directly.
-        test.todo('filters body based on profileUI');
       });
     });
   });
@@ -1316,6 +1312,150 @@ describe('Microsoft helpers', () => {
       expect(getMsTranscriptApiUrl(urlWithQueryParams)).toBe(expectedUrl);
       expect(getMsTranscriptApiUrl(urlWithQueryParamsAndSlash)).toBe(
         expectedUrl
+      );
+    });
+  });
+});
+
+describe('get-public-profile helpers', () => {
+  describe('replacePrivateData', () => {
+    const user = {
+      about: 'about',
+      calendar: { 1: 1, 2: 1 } as const,
+      completedChallenges: [
+        { id: '123', completedDate: 123, files: [] },
+        { id: '456', completedDate: 456, challengeType: 7, files: [] }
+      ],
+      id: '5f5b1b3b1c9d440000d9e3b4',
+      isDonating: false,
+      location: 'location',
+      joinDate: 'joinDate',
+      name: 'name',
+      points: 2,
+      portfolio: [
+        {
+          id: '789',
+          title: 'portfolio',
+          url: 'url',
+          image: 'image',
+          description: 'description'
+        }
+      ],
+      profileUI: {
+        isLocked: false,
+        showAbout: true,
+        showCerts: true,
+        showDonation: true,
+        showHeatMap: true,
+        showLocation: true,
+        showName: true,
+        showPoints: true,
+        showPortfolio: true,
+        showTimeLine: true
+      }
+    };
+
+    test(`returns "" for 'about' if showAbout is not true`, () => {
+      const userWithoutAbout = {
+        ...user,
+        profileUI: { ...user.profileUI, showAbout: false }
+      };
+      expect(replacePrivateData(userWithoutAbout)).toMatchObject({
+        about: ''
+      });
+    });
+
+    test('returns {} for calendar if showHeatMap is not true', () => {
+      const userWithoutHeatMap = {
+        ...user,
+        profileUI: { ...user.profileUI, showHeatMap: false }
+      };
+      expect(replacePrivateData(userWithoutHeatMap).calendar).toEqual({});
+    });
+
+    test(`returns [] for completeChallenges if showTimeLine is not true`, () => {
+      const userWithoutTimeLine = {
+        ...user,
+        profileUI: { ...user.profileUI, showTimeLine: false }
+      };
+      expect(replacePrivateData(userWithoutTimeLine)).toMatchObject({
+        completedChallenges: []
+      });
+    });
+
+    test('omits certifications from completedChallenges if showCerts is not true', () => {
+      const userWithoutCerts = {
+        ...user,
+        profileUI: { ...user.profileUI, showCerts: false }
+      };
+      expect(replacePrivateData(userWithoutCerts)).toMatchObject({
+        completedChallenges: [{ id: '123', completedDate: 123, files: [] }]
+      });
+    });
+
+    test('returns null for isDonating if showDonation is not true', () => {
+      const userWithoutDonation = {
+        ...user,
+        profileUI: { ...user.profileUI, showDonation: false }
+      };
+      expect(replacePrivateData(userWithoutDonation)).toMatchObject({
+        isDonating: null
+      });
+    });
+
+    test('returns "" for joinDate if showAbout is not true', () => {
+      const userWithoutAbout = {
+        ...user,
+        profileUI: { ...user.profileUI, showAbout: false }
+      };
+      expect(replacePrivateData(userWithoutAbout)).toMatchObject({
+        joinDate: ''
+      });
+    });
+
+    test(`returns "" for 'location' if showLocation is not true`, () => {
+      const userWithoutLocation = {
+        ...user,
+        profileUI: { ...user.profileUI, showLocation: false }
+      };
+      expect(replacePrivateData(userWithoutLocation)).toMatchObject({
+        location: ''
+      });
+    });
+
+    test(`returns "" for 'name' if showName is not true`, () => {
+      const userWithoutName = {
+        ...user,
+        profileUI: { ...user.profileUI, showName: false }
+      };
+      expect(replacePrivateData(userWithoutName)).toMatchObject({
+        name: ''
+      });
+    });
+
+    test('returns null for points if showPoints is not true', () => {
+      const userWithoutPoints = {
+        ...user,
+        profileUI: { ...user.profileUI, showPoints: false }
+      };
+      expect(replacePrivateData(userWithoutPoints)).toMatchObject({
+        points: null
+      });
+    });
+
+    test('returns [] for portfolio if showPortfolio is not true', () => {
+      const userWithoutPortfolio = {
+        ...user,
+        profileUI: { ...user.profileUI, showPortfolio: false }
+      };
+      expect(replacePrivateData(userWithoutPortfolio)).toMatchObject({
+        portfolio: []
+      });
+    });
+
+    test('returns the expected public user object if all showX flags are true', () => {
+      expect(replacePrivateData(user)).toEqual(
+        _.omit(user, ['id', 'profileUI'])
       );
     });
   });

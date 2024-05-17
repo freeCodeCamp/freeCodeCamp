@@ -1,4 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import { omit, pick } from 'lodash';
 
@@ -12,9 +13,11 @@ import {
   normalizeProfileUI,
   normalizeTwitter,
   removeNulls,
-  normalizeSurveys
+  normalizeSurveys,
+  NormalizedChallenge
 } from '../utils/normalize';
 import {
+  Calendar,
   getCalendar,
   getPoints,
   type ProgressTimestamp
@@ -610,6 +613,70 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
+type ProfileUI = Partial<{
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showTimeLine: boolean;
+}>;
+
+type RawUser = {
+  about: string;
+  completedChallenges: NormalizedChallenge[];
+  calendar: Calendar;
+  id: string;
+  isDonating: boolean;
+  joinDate: string;
+  location: string;
+  name: string;
+  points: number;
+  portfolio: Portfolio[];
+  profileUI: ProfileUI;
+};
+
+/**
+ * Creates an object with the properties that are shared with the public.
+ * @param user The raw user object.
+ * @returns The shared user object.
+ */
+export const replacePrivateData = (user: RawUser) => {
+  const {
+    showAbout,
+    showHeatMap,
+    showCerts,
+    showDonation,
+    showLocation,
+    showName,
+    showPoints,
+    showPortfolio,
+    showTimeLine
+  } = user.profileUI;
+
+  return {
+    about: showAbout ? user.about : '',
+    calendar: showHeatMap ? user.calendar : {},
+    completedChallenges: showTimeLine
+      ? showCerts
+        ? user.completedChallenges
+        : user.completedChallenges.filter(
+            c => c.challengeType !== challengeTypes.step
+          )
+      : [],
+    isDonating: showDonation ? user.isDonating : null,
+    joinDate: showAbout ? user.joinDate : '',
+    location: showLocation ? user.location : '',
+    name: showName ? user.name : '',
+    points: showPoints ? user.points : null,
+    portfolio: showPortfolio ? user.portfolio : []
+  };
+};
+
 /**
  * Plugin containing public GET routes for user account management. They are kept
  * separate because they do not require CSRF protection or authorization.
@@ -680,36 +747,24 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           result: user.username
         });
       } else {
-        const normalizedChallenges = normalizedProfileUI.showTimeLine
-          ? normalizeChallenges(user.completedChallenges)
-          : [];
+        const progressTimestamps = user.progressTimestamps as
+          | ProgressTimestamp[]
+          | null;
+        const sharedUser = replacePrivateData({
+          ...user,
+          calendar: getCalendar(progressTimestamps),
+          completedChallenges: normalizeChallenges(user.completedChallenges),
+          location: user.location ?? '',
+          joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+          name: user.name ?? '',
+          points: getPoints(progressTimestamps),
+          profileUI: normalizedProfileUI
+        });
 
         const returnedUser = {
           ...removeNulls(publicUser),
           ...normalizeFlags(flags),
-          about: normalizedProfileUI.showAbout ? user.about : '',
-          calendar: normalizedProfileUI.showHeatMap
-            ? getCalendar(user.progressTimestamps as ProgressTimestamp[] | null)
-            : {},
-          completedChallenges: normalizedProfileUI.showCerts
-            ? normalizedChallenges
-            : normalizedChallenges.filter(
-                ({ challengeType }) => challengeType !== challengeTypes.step // AKA certifications
-              ),
-          isDonating:
-            normalizedProfileUI.showDonation && user.isDonating ? true : null,
-          joinDate: normalizedProfileUI.showAbout
-            ? new ObjectId(user.id).getTimestamp().toISOString()
-            : '',
-          location:
-            normalizedProfileUI.showLocation && user.location
-              ? user.location
-              : '',
-          name: normalizedProfileUI.showName && user.name ? user.name : '',
-          points: normalizedProfileUI.showPoints
-            ? getPoints(user.progressTimestamps as ProgressTimestamp[] | null)
-            : 0,
-          portfolio: normalizedProfileUI.showPortfolio ? user.portfolio : [],
+          ...sharedUser,
           profileUI: normalizedProfileUI,
           // TODO: should this always be returned? Shouldn't some privacy
           // setting control it? Same applies to website, githubProfile,

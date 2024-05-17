@@ -83,7 +83,7 @@ type NormalizedFile = {
   path?: string;
 };
 
-type NormalizedChallenge = {
+export type NormalizedChallenge = {
   challengeType?: number;
   completedDate: number;
   files: NormalizedFile[];
