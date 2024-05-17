@@ -5,11 +5,11 @@ import translations from '../client/i18n/locales/english/translations.json';
 test.describe('When the user has not accepted the Academic Honesty Policy', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
-  test.beforeAll(() => {
+  test.beforeEach(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
   });
 
-  test('Should validate Academy Honesty Settings', async ({ page }) => {
+  test('they should be able to accept it', async ({ page }) => {
     await page.goto('/settings');
     await expect(
       page.getByRole('heading', {
@@ -37,7 +37,6 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
     const agreeButton = page.getByRole('button', {
       name: translations.buttons['agree-honesty']
     });
-    await expect(agreeButton).toBeVisible();
     await agreeButton.click();
 
     await expect(
