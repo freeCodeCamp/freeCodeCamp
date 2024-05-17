@@ -28,13 +28,13 @@ function loopy() {
 
 # --hints--
 
-Your code should change the comparison operator in the terminal condition (the middle part) of the `for` loop.
+코드의 `for` 반복문의 종료 조건(중간 부분) 에서 비교 연산자를 변경해야 합니다.
 
 ```js
 assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
-Your code should fix the comparison operator in the terminal condition of the loop.
+코드의 반복문의 종료조건의 비교 연산자를 변경해야 합니다.
 
 ```js
 assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));

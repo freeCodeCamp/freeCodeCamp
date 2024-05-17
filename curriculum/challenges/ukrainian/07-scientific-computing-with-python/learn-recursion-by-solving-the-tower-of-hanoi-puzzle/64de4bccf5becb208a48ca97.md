@@ -22,7 +22,7 @@ dashedName: step-13
 ```js
 ({ test: () => assert(runPython(`
       import inspect
-      str(inspect.signature(__locals.get('move'))) == '(n, source, auxiliary, target)'    
+      str(inspect.signature(move)) == '(n, source, auxiliary, target)'    
   `))
 })
 ```
