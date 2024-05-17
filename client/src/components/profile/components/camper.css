@@ -56,7 +56,7 @@
 
 .badge-card-container {
   display: grid;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 1rem;
   align-items: top;
