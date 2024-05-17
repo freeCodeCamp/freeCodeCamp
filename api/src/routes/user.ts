@@ -665,9 +665,9 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
 
       void reply.code(200);
       if (normalizedProfileUI.isLocked) {
+        // TODO(Post-MVP): just return isLocked: true and either a null user
+        // or no user at all. (see other TODO in the else branch below)
         return reply.send({
-          // TODO(Post-MVP): just return isLocked and an empty profileUI. No
-          // need for entities or result.
           entities: {
             user: {
               [user.username]: {
@@ -685,45 +685,45 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           : [];
 
         const returnedUser = {
-          [user.username]: {
-            ...removeNulls(publicUser),
-            ...normalizeFlags(flags),
-            about: normalizedProfileUI.showAbout ? user.about : '',
-            calendar: normalizedProfileUI.showHeatMap
-              ? getCalendar(
-                  user.progressTimestamps as ProgressTimestamp[] | null
-                )
-              : {},
-            completedChallenges: normalizedProfileUI.showCerts
-              ? normalizedChallenges
-              : normalizedChallenges.filter(
-                  ({ challengeType }) => challengeType !== challengeTypes.step // AKA certifications
-                ),
-            isDonating:
-              normalizedProfileUI.showDonation && user.isDonating ? true : null,
-            joinDate: normalizedProfileUI.showAbout
-              ? new ObjectId(user.id).getTimestamp().toISOString()
+          ...removeNulls(publicUser),
+          ...normalizeFlags(flags),
+          about: normalizedProfileUI.showAbout ? user.about : '',
+          calendar: normalizedProfileUI.showHeatMap
+            ? getCalendar(user.progressTimestamps as ProgressTimestamp[] | null)
+            : {},
+          completedChallenges: normalizedProfileUI.showCerts
+            ? normalizedChallenges
+            : normalizedChallenges.filter(
+                ({ challengeType }) => challengeType !== challengeTypes.step // AKA certifications
+              ),
+          isDonating:
+            normalizedProfileUI.showDonation && user.isDonating ? true : null,
+          joinDate: normalizedProfileUI.showAbout
+            ? new ObjectId(user.id).getTimestamp().toISOString()
+            : '',
+          location:
+            normalizedProfileUI.showLocation && user.location
+              ? user.location
               : '',
-            location:
-              normalizedProfileUI.showLocation && user.location
-                ? user.location
-                : '',
-            name: normalizedProfileUI.showName && user.name ? user.name : '',
-            points: normalizedProfileUI.showPoints
-              ? getPoints(user.progressTimestamps as ProgressTimestamp[] | null)
-              : 0,
-            portfolio: normalizedProfileUI.showPortfolio ? user.portfolio : [],
-            profileUI: normalizedProfileUI,
-            // TODO: should this always be returned? Shouldn't some privacy
-            // setting control it? Same applies to website, githubProfile,
-            // and linkedin.
-            twitter: normalizeTwitter(user.twitter),
-            yearsTopContributor: user.yearsTopContributor
-          }
+          name: normalizedProfileUI.showName && user.name ? user.name : '',
+          points: normalizedProfileUI.showPoints
+            ? getPoints(user.progressTimestamps as ProgressTimestamp[] | null)
+            : 0,
+          portfolio: normalizedProfileUI.showPortfolio ? user.portfolio : [],
+          profileUI: normalizedProfileUI,
+          // TODO: should this always be returned? Shouldn't some privacy
+          // setting control it? Same applies to website, githubProfile,
+          // and linkedin.
+          twitter: normalizeTwitter(user.twitter),
+          yearsTopContributor: user.yearsTopContributor
         };
         return reply.send({
+          // TODO(Post-MVP): just return a user object (i.e. returnedUser) and
+          // isLocked: false. The there should be no need for Type.Union in the
+          // schema. Alternatively, have the user object be nullable and don't
+          // bother with isLocked.
           entities: {
-            user: returnedUser
+            user: { [user.username]: returnedUser }
           },
           result: user.username
         });
