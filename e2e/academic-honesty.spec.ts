@@ -45,18 +45,6 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
       })
     ).toBeVisible();
   });
-});
-
-test.describe('When the user has not accepted the honesty policy and tries to claim a certification', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-  test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
-  });
 
   test('Should show an error message', async ({ page }) => {
     await page.goto('/settings#cert-responsive-web-design');
@@ -76,5 +64,9 @@ test.describe('When the user has not accepted the honesty policy and tries to cl
     await page.getByTestId('btn-for-responsive-web-design').click();
 
     await expect(page.getByTestId('flash-message')).toBeVisible();
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 });
