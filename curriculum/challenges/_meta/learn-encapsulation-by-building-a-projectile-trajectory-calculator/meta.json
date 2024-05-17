@@ -67,16 +67,32 @@
       "title": "Step 14"
     },
     {
-      "id": "6633bdc3ca38c068c3735984",
+      "id": "66475bab40e5125c84b03337",
       "title": "Step 15"
     },
     {
-      "id": "6633bfcef57e1d70cc3142c6",
+      "id": "66475d40dd42fb614f14fd03",
       "title": "Step 16"
     },
     {
-      "id": "6633c06601c081735063b528",
+      "id": "66475e40f3891c645d50135e",
       "title": "Step 17"
+    },
+    {
+      "id": "66475f7b91d7c6681987739d",
+      "title": "Step 18"
+    },
+    {
+      "id": "6633bdc3ca38c068c3735984",
+      "title": "Step 19"
+    },
+    {
+      "id": "6633bfcef57e1d70cc3142c6",
+      "title": "Step 20"
+    },
+    {
+      "id": "6633c06601c081735063b528",
+      "title": "Step 21"
     }
   ],
   "helpCategory": "Python"
