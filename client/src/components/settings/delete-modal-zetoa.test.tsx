@@ -25,6 +25,24 @@ describe('DeleteModal', () => {
   // Begin tests
 
   // Test 1
+  test('Tests for rendering of the modal when `show` is set to true.', () => {
+    // Passing in empty functions into Delete and onHide. Test for rendering.
+    render(<DeleteModal delete={() => {}} onHide={() => {}} show={true} />);
+
+    // Modal Component has role of dialog, checks if rendered/in the DOM.
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
+  // Test 2
+  test('Tests if `show` is false, that the modal will not show up.', () => {
+    // Passing in empty functions into Delete and onHide.
+    render(<DeleteModal delete={() => {}} onHide={() => {}} show={false} />);
+
+    // Checking to see if modal component is NOT in DOM when `show` is set to false.
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  // Test 3
   test('Searches for specific button element based on name', () => {
     // Passing in empty functions into Delete and onHide. Test for rendering.
     render(<DeleteModal delete={() => {}} onHide={() => {}} show={true} />);
@@ -35,17 +53,31 @@ describe('DeleteModal', () => {
     ).toBeInTheDocument();
   });
 
-  // Test 2
+  // Test 4
   test('When the delete button is clicked, it runs the delete function', () => {
     // A mock function for delete.
     const mockDelete = jest.fn();
     // Passing in mock function for delete Param.
     render(<DeleteModal delete={mockDelete} onHide={() => {}} show={true} />);
 
-    // Clicks on the button inside the delete-modal for delete functionality. Simulates a button click. Will return true.
+    // Clicks on the button inside the delete-modal for delete functionality. Simulates a button click.
     fireEvent.click(
       screen.getByRole('button', { name: 'settings.danger.certain' })
     );
     expect(mockDelete).toHaveBeenCalled();
+  });
+
+  // Test 5
+  test('When the hide button is clicked, it runs the onHide function', () => {
+    // A mock function for onHide.
+    const mockOnHide = jest.fn();
+    // Passing in mock function for onHide Param.
+    render(<DeleteModal delete={() => {}} onHide={mockOnHide} show={true} />);
+
+    // Clicks on the button inside the delete-modal for onHide functionality. Simulates a button click.
+    fireEvent.click(
+      screen.getByRole('button', { name: 'settings.danger.nevermind' })
+    );
+    expect(mockOnHide).toHaveBeenCalled();
   });
 });
