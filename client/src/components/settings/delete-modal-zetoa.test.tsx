@@ -1,13 +1,51 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import DeleteModal from './delete-modal';
 
-test('renders modal', () => {
-  // Passing in empty functions into Delete and onHide. Test for rendering.
-  render(<DeleteModal delete={() => {}} onHide={() => {}} show={true} />);
+// Run a test suite called `Delete Modal`, group unit tests done for particular component.
+describe('DeleteModal', () => {
+  // The following was sourced from the file `staging-warning-modal.test.tsx`; must be added in order for tests to run and pass.
+  beforeAll(() => {
+    // The Modal component uses `ResizeObserver` under the hood.
+    // However, this property is not available in JSDOM, so we need to manually add it to the window object.
+    // Ref: https://github.com/jsdom/jsdom/issues/3368
+    Object.defineProperty(window, 'ResizeObserver', {
+      writable: true,
+      value: jest.fn(() => ({
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn()
+      }))
+    });
+  });
+  // End source
 
-  // Logs the output
-  expect(screen.getByText('Close')).toBeInTheDocument();
+  // Begin tests
+
+  // Test 1
+  test('Searches for specific button element based on name', () => {
+    // Passing in empty functions into Delete and onHide. Test for rendering.
+    render(<DeleteModal delete={() => {}} onHide={() => {}} show={true} />);
+
+    // Searches for a element with a role of button, with a name of `settings.danger.certain`.
+    expect(
+      screen.getByRole('button', { name: 'settings.danger.certain' })
+    ).toBeInTheDocument();
+  });
+
+  // Test 2
+  test('When the delete button is clicked, it runs the delete function', () => {
+    // A mock function for delete.
+    const mockDelete = jest.fn();
+    // Passing in mock function for delete Param.
+    render(<DeleteModal delete={mockDelete} onHide={() => {}} show={true} />);
+
+    // Clicks on the button inside the delete-modal for delete functionality. Simulates a button click. Will return true.
+    fireEvent.click(
+      screen.getByRole('button', { name: 'settings.danger.certain' })
+    );
+    expect(mockDelete).toHaveBeenCalled();
+  });
 });
