@@ -59,7 +59,7 @@ The action you do when you want to show happiness with your mouth.
     "audio": {
       "filename": "4.3-2.mp3",
       "startTime": 1,
-      "startTimestamp": 15.32,
+      "startTimestamp": 15.12,
       "finishTimestamp": 17.74
     }
   },
@@ -72,7 +72,7 @@ The action you do when you want to show happiness with your mouth.
     {
       "character": "Sophie",
       "startTime": 1,
-      "finishTime": 3.42,
+      "finishTime": 3.62,
       "dialogue": {
         "text": "Sure. Tom is a tall guy with a friendly smile.",
         "align": "center"
@@ -81,7 +81,7 @@ The action you do when you want to show happiness with your mouth.
     {
       "character": "Sophie",
       "opacity": 0,
-      "startTime": 3.92
+      "startTime": 4.12
     }
   ]
 }

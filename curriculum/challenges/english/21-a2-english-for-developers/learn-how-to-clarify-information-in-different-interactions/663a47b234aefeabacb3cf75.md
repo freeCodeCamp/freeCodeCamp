@@ -46,7 +46,7 @@ Above the average in terms of height.
     "audio": {
       "filename": "4.3-2.mp3",
       "startTime": 1,
-      "startTimestamp": 15.32,
+      "startTimestamp": 15.12,
       "finishTimestamp": 17.74
     }
   },
@@ -59,7 +59,7 @@ Above the average in terms of height.
     {
       "character": "Sophie",
       "startTime": 1,
-      "finishTime": 3.42,
+      "finishTime": 3.62,
       "dialogue": {
         "text": "Sure. Tom is a tall guy with a friendly smile.",
         "align": "center"
@@ -68,7 +68,7 @@ Above the average in terms of height.
     {
       "character": "Sophie",
       "opacity": 0,
-      "startTime": 3.92
+      "startTime": 4.12
     }
   ]
 }
