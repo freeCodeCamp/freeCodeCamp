@@ -238,7 +238,7 @@ test('The Sign In button should redirect to api/signin', async ({
   await expect(signInButton).toHaveAttribute('href', `${apiLocation}/signin`);
 });
 
-test('When the user is signed out, only certain elements should be visibvle', async ({
+test('When the user is signed out, only certain elements should be visible', async ({
   browser
 }) => {
   const context = await browser.newContext({
