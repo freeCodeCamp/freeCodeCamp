@@ -48,7 +48,7 @@ probability = experiment(hat=hat,
 The output would be something like this:
 
 ```bash
->>> 0.356
+0.356
 ```
 
 この方法は無作為抽出に基づいているため、コードが実行されるたびに確率が多少変わります。
@@ -92,7 +92,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -137,7 +137,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -180,7 +180,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -227,7 +227,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });

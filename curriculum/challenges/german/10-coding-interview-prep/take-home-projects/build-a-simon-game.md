@@ -28,7 +28,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **User Story:** I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 
-**Hint:** Here are mp3s you can use for each button: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
+**Hint:** Here are mp3s you can use for each button: `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound1.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound2.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound3.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound4.mp3`.
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
