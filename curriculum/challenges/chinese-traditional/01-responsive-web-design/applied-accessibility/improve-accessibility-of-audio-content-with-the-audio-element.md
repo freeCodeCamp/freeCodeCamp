@@ -26,7 +26,7 @@ HTML5 的 `audio` 標籤用於呈現音頻內容或音頻流，它也具有語�
 
 # --instructions--
 
-是時候讓 Camper Cat 休息一下，並與朋友 Zersiax (@zersiax) 會面了。 Zersiax 是一位屏幕閱讀器用戶，同時也是無障礙設計的高手。 爲了體驗屏幕閱讀器的朗讀效果，請在 `p` 元素之後添加一個 `audio` 元素， 具有 `controls` 屬性。 然後在 `audio` 標籤裏面放一個帶有 `src` 屬性的 `source` 標籤，屬性值爲 `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3`。將 `type` 屬性設置爲 `"audio/mpeg"`.
+是時候讓 Camper Cat 休息一下，並與朋友 Zersiax (@zersiax) 會面了。 Zersiax 是一位屏幕閱讀器用戶，同時也是無障礙設計的高手。 爲了體驗屏幕閱讀器的朗讀效果，請在 `p` 元素之後添加一個 `audio` 元素， 具有 `controls` 屬性。 Then place a `source` element inside the `audio` tags with the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
 
 **注意：** 音頻片段的播放速度可能會快到令我們難以理解，但是對於屏幕閱讀器用戶來說這是正常速度。
 
@@ -70,7 +70,7 @@ assert($('audio').children('source').length === 1);
 ```js
 assert(
   $('source').attr('src') ===
-    'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3'
+    'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
 );
 ```
 
@@ -108,7 +108,7 @@ assert($('source').attr('type') === 'audio/mpeg');
   <main>
     <p>A sound clip of Zersiax's screen reader in action.</p>
     <audio controls>
-      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+      <source src="https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3" type="audio/mpeg"/>
     </audio>
   </main>
 </body>
