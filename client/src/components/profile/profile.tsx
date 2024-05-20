@@ -38,12 +38,9 @@ const VisitorMessage = ({
 }: Omit<MessageProps, 'isSessionUser'>) => {
   return (
     <FullWidthRow>
-      <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
-        {t('profile.username-not-public', { username: username })}
-      </h2>
-      <p className='alert alert-info'>
-        {t('profile.username-change-privacy', { username: username })}
-      </p>
+      <Alert variant='info'>
+        {t('profile.username-change-privacy', { username })}
+      </Alert>
       <Spacer size='medium' />
     </FullWidthRow>
   );
