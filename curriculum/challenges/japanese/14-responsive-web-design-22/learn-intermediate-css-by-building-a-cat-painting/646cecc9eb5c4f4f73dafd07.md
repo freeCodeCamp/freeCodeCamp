@@ -7,23 +7,23 @@ dashedName: step-24
 
 # --description--
 
-Move the left ear into position by setting a position of `absolute`, a `top` of `-26px`, and a `left` of `-31px`.
+position を `absolute` に、`top` を `-26px` に、`left` を `-31px` に設定して、向かって左の耳をちょうど良い位置に動かしましょう。
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+`.cat-left-ear` セレクターの `position` プロパティを `absolute` に設定してください。 セミコロンを忘れないようにしましょう。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.cat-left-ear` selector should have a `top` property set to `-26px`
+`.cat-left-ear` セレクターの `top` プロパティを `-26px` に設定してください。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.cat-left-ear` selector should have a `left` property set to `-31px`
+`.cat-left-ear` セレクターの `left` プロパティを `-31px` に設定してください。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')
