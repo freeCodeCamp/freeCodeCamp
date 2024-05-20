@@ -2,7 +2,6 @@
 title: Introduction to the Learn Special Methods by Building a Vector Space
 block: learn-special-methods-by-building-a-vector-space
 superBlock: scientific-computing-with-python
-isBeta: true
 ---
 
 ## Introduction to the Learn Special Methods by Building a Vector Space
