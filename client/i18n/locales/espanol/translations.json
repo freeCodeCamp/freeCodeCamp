@@ -297,7 +297,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} no ha hecho público su portafolio.",
     "you-change-privacy": "Debes cambiar tus ajustes de privacidad para que otros puedan ver tu portafolio. Esta es una vista previa de cómo se verá tu portafolio cuando se haga público.",
     "username-change-privacy": "{{username}} necesita cambiar sus ajustes de privacidad para que puedas ver su portafolio.",
     "supporter": "Contribuyente",

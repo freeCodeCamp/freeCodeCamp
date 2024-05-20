@@ -297,7 +297,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} non ha reso pubblico il suo portfolio.",
     "you-change-privacy": "Se desideri rendere visibile il tuo portfolio a tutti dovrai prima modificare le tue impostazioni sulla privacy. Questa è un'anteprima di come il tuo portfolio apparirà quando sarà reso pubblico.",
     "username-change-privacy": "{{username}} devono modificare la loro impostazione di privacy affinché tu possa visualizzare il loro portfolio.",
     "supporter": "Sostenitore",

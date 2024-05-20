@@ -297,7 +297,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} hajaweka wazi portfolio yao.",
     "you-change-privacy": "Unahitaji kubadilisha mpangilio wako wa faragha ili portfolio yako ionekane na wengine. Hili ni onyesho la kukagua jinsi wasifu yako itakavyoonekana ikifanywa kwa umma.",
     "username-change-privacy": "{{username}} anahitaji kubadilisha mipangilio yake ya faragha ili uweze kutazama portfolio yake.",
     "supporter": "Msaidizi",
