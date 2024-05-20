@@ -9,7 +9,7 @@ test('Header to heading element redirect', async ({ page }) => {
     `${basePath}/adjust-the-size-of-a-header-versus-a-paragraph-tag`
   );
 
-  expect(response?.request().redirectedFrom()?.redirectedTo()).toBe(
+  expect(response?.request().redirectedFrom()?.redirectedTo()?.url()).toContain(
     expectedPath
   );
 });
