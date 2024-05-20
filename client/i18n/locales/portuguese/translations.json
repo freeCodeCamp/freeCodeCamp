@@ -297,7 +297,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} não tornou seu portfólio público.",
     "you-change-privacy": "Você precisa alterar sua configuração de privacidade para que seu portfólio seja visto por outros. Esta é uma prévia de como será seu portfólio quando se tornar público.",
     "username-change-privacy": "{{username}} precisa alterar suas configurações de privacidade para que você possa visualizar o portfólio.",
     "supporter": "Apoiador",

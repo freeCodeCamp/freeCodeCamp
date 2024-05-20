@@ -297,7 +297,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} 未把作品集設置爲公開",
     "you-change-privacy": "你需要更改你的隱私設置，才能讓他人看到你的作品集。這是你的作品集公開時候的預覽。",
     "username-change-privacy": "{{username}} 需要修改隱私設置，你才能看到其作品集。",
     "supporter": "支持者",
