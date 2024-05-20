@@ -87,6 +87,7 @@ const convertBtnEl = document.getElementById('convert-btn');
 const outputEl = document.getElementById('output');
 
 numberInputEl.value = '-1';
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a number greater than or equal to 1');
 ```
@@ -99,6 +100,7 @@ const convertBtnEl = document.getElementById('convert-btn');
 const outputEl = document.getElementById('output');
 
 numberInputEl.value = '4000';
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a number less than or equal to 3999');
 ```
@@ -111,6 +113,7 @@ const convertBtnEl = document.getElementById('convert-btn');
 const outputEl = document.getElementById('output');
 
 numberInputEl.value = '9';
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'IX');
 ```
@@ -123,6 +126,7 @@ const convertBtnEl = document.getElementById('convert-btn');
 const outputEl = document.getElementById('output');
 
 numberInputEl.value = '16';
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'XVI');
 ```
@@ -135,6 +139,7 @@ const convertBtnEl = document.getElementById('convert-btn');
 const outputEl = document.getElementById('output');
 
 numberInputEl.value = '649';
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'DCXLIX');
 ```
@@ -147,6 +152,7 @@ const convertBtnEl = document.getElementById('convert-btn');
 const outputEl = document.getElementById('output');
 
 numberInputEl.value = '1023';
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'MXXIII');
 ```
@@ -159,6 +165,7 @@ const convertBtnEl = document.getElementById('convert-btn');
 const outputEl = document.getElementById('output');
 
 numberInputEl.value = '3999';
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'MMMCMXCIX');
 ```

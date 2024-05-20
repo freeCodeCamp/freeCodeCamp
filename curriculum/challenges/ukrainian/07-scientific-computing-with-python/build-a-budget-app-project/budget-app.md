@@ -1,6 +1,6 @@
 ---
 id: 5e44413e903586ffb414c94e
-title: Build a Budget App Project
+title: Проєкт «Створіть застосунок для ведення бюджету»
 challengeType: 23
 forumTopicId: 462361
 dashedName: build-a-budget-app-project
@@ -8,7 +8,7 @@ dashedName: build-a-budget-app-project
 
 # --description--
 
-Complete the `Category` class. It should be able to instantiate objects based on different budget categories like *food*, *clothing*, and *entertainment*. When objects are created, they are passed in the name of the category. The class should have an instance variable called `ledger` that is a list. The class should also contain the following methods:
+Завершіть клас `Category`. Він повинен опрацьовувати об’єкти, базуючись на різних категоріях (наприклад, *їжа*, *одяг* та *розваги*). When objects are created, they are passed in the name of the category. The class should have an instance variable called `ledger` that is a list. Клас також повинен містити наступні методи:
 
 - A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
 - A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.

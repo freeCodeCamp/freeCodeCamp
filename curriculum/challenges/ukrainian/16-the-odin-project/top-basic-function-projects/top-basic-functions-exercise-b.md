@@ -1,29 +1,29 @@
 ---
 id: 661e131f068359c3ccf2f4d6
-title: Basic Functions Exercise B
+title: Базові функції. Вправа B
 challengeType: 1
 dashedName: top-basic-functions-exercise-b
 ---
 
 # --description--
 
-Write a function, named `multiply`, that takes two parameters and returns their product.
+Напишіть функцію під назвою `multiply`, яка приймає два параметри та повертає їхній добуток.
 
 # --hints--
 
-You should have a function named `multiply`.
+Ви повинні мати функцію під назвою `multiply`.
 
 ```js
 assert.isFunction(multiply);
 ```
 
-Your function should take in two integers as arguments.
+Функція має приймати два цілих числа як аргументи.
 
 ```js
 assert.match(multiply.toString(), /\s*multiply\(\s*\w+\s*,\s*\w+\s*\)/);
 ```
 
-You should return the product of the two integers.
+Поверніть добуток двох цілих чисел.
 
 ```js
 assert.strictEqual(multiply(10, 10), 100);
