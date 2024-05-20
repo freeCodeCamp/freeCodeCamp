@@ -2,10 +2,10 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 test.describe('Donate page', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user --donor');
+    execSync('node ./tools/scripts/seed/seed-demo-user --donor');
     await page.goto('/donate');
   });
 
@@ -36,5 +36,24 @@ test.describe('Donate page', () => {
       'href',
       'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/#how-can-i-make-a-one-time-donation'
     );
+  });
+
+  test('The menu should have a supporters link', async ({ page }) => {
+    const menuButton = page.getByTestId('header-menu-button');
+    const menu = page.getByTestId('header-menu');
+
+    await expect(menuButton).toBeVisible();
+    await menuButton.click();
+
+    await expect(menu).toBeVisible();
+
+    await expect(page.getByRole('link', { name: 'Supporters' })).toBeVisible();
+  });
+
+  test('The Avatar should have a special border for donors', async ({
+    page
+  }) => {
+    const container = page.locator('.avatar-container');
+    await expect(container).toHaveClass('avatar-container gold-border');
   });
 });
