@@ -2,7 +2,6 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
-import { isProfane } from 'no-profanity';
 
 import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
@@ -28,6 +27,7 @@ import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
 import { createResetProperties } from '../utils/create-user';
 import { challengeTypes } from '../../../shared/config/challenge-types';
+import { isRestricted } from './helpers/is-restricted';
 
 // user flags that the api-server returns as false if they're missing in the
 // user document. Since Prisma returns null for missing fields, we need to
@@ -64,7 +64,8 @@ const nullableFlags = [
 ] as const;
 
 type NullableFlag = (typeof nullableFlags)[number];
-import { blocklistedUsernames } from '../../../shared/config/constants';
+
+
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -802,10 +803,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
 
       const username = req.query.username.toLowerCase();
 
-      const isRestricted =
-        blocklistedUsernames.includes(username) || isProfane(username);
-
-      if (isRestricted) return await reply.send({ exists: true });
+      if (isRestricted(username)) return await reply.send({ exists: true });
 
       const exists =
         (await fastify.prisma.user.count({
