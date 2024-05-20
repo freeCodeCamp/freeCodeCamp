@@ -6,6 +6,7 @@ const availableCharacters = [
   'Brian',
   'Candidate',
   'David',
+  'Delivery Man',
   'Expert',
   'Jake',
   'James',
