@@ -59,7 +59,7 @@ const UniversalNav = ({
       <Link
         className='universal-nav-logo'
         id='universal-nav-logo'
-        to='/learn'
+        to='/'
         data-playwright-test-label='header-universal-nav-logo'
       >
         <NavLogo />
