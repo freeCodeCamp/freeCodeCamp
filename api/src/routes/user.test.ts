@@ -402,6 +402,8 @@ describe('userRoutes', () => {
         expect(userTokens).toHaveLength(1);
         expect(userTokens[0]?.userId).toBe(otherUserId);
       });
+
+      test.todo('POST resets the user to the default state');
     });
 
     describe('/user/user-token', () => {

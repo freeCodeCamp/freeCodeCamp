@@ -20,6 +20,7 @@ import {
 import { encodeUserToken } from '../utils/tokens';
 import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
+import { createResetProperties } from '../utils/create-user';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -110,33 +111,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         });
         await fastify.prisma.user.update({
           where: { id: req.user!.id },
-          data: {
-            progressTimestamps: [Date.now()],
-            currentChallengeId: '',
-            isRespWebDesignCert: false,
-            is2018DataVisCert: false,
-            isFrontEndLibsCert: false,
-            isJsAlgoDataStructCert: false,
-            isApisMicroservicesCert: false,
-            isInfosecQaCert: false,
-            isQaCertV7: false,
-            isInfosecCertV7: false,
-            is2018FullStackCert: false,
-            isFrontEndCert: false,
-            isBackEndCert: false,
-            isDataVisCert: false,
-            isFullStackCert: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
-            isMachineLearningPyCertV7: false,
-            isRelationalDatabaseCertV8: false,
-            isCollegeAlgebraPyCertV8: false,
-            completedChallenges: [],
-            completedExams: [],
-            savedChallenges: [],
-            partiallyCompletedChallenges: [],
-            needsModeration: false
-          }
+          data: createResetProperties()
         });
 
         return {};
