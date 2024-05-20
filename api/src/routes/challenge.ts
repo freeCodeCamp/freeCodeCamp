@@ -5,7 +5,7 @@ import { CompletedExam, ExamResults } from '@prisma/client';
 import isURL from 'validator/lib/isURL';
 
 import { challengeTypes } from '../../../shared/config/challenge-types';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 import {
   jsCertProjectIds,
   multifileCertProjectIds,

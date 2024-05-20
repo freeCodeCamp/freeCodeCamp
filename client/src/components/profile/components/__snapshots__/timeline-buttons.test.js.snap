@@ -7,11 +7,17 @@ exports[`should check certification page consistency 1`] = `
   <div
     className=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
   >
-    <h2
-      className="text-center"
-    >
+    <h2>
       profile.timeline
     </h2>
+    <div
+      className="spacer"
+      style={
+        {
+          "padding": "5px 0",
+        }
+      }
+    />
     <table
       className="table-auto w-full max-w-full border-collapse text-left text-foreground-tertiary [&_th]:font-normal [&_td]:p-1 [&_th]:p-1 [&>tbody>tr:nth-of-type(odd)]:bg-background-tertiary"
     >

@@ -48,7 +48,7 @@ probability = experiment(hat=hat,
 Результат буде приблизно таким:
 
 ```bash
->>> 0.356
+0.356
 ```
 
 Оскільки все базується на випадкових витяганнях, то вірогідність буде злегка відрізнятися з кожним новим запуском коду.
@@ -92,7 +92,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -137,13 +137,13 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
 ```
 
-The `draw` method should behave correctly when the number of balls to extract is bigger than the number of balls in the hat.
+Метод `draw` має поводитись правильно, якщо кількість кульок, які потрібно витягти, більша за кількість кульок в капелюсі.
 
 ```js
 ({
@@ -180,7 +180,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -227,7 +227,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });

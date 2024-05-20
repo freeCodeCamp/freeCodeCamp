@@ -460,17 +460,24 @@
         ]
       },
       "learn-introductory-javascript-by-building-a-pyramid-generator": {
-        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "title": "通過創建金字塔生成器學習 JavaScript 基礎知識",
         "intro": [
-          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+          "JavaScript 是一種功能強大的腳本語言，可用於使網頁具有交互性。它和 HTML 和 CSS 都是 Web 核心技術。所有現代瀏覽器都支持 JavaScript。",
+          "在這個練習項目中，你將會通過編寫你自己的金字塔生成器來學習 JavaScript 的基本編程概念。你將學到如何使用數組、字符串、函數、循環、<code>if/else</code> 語句以及更多。"
         ]
       },
       "review-js-fundamentals-by-building-a-gradebook-app": {
-        "title": "Review JavaScript Fundamentals by Building a Gradebook App",
+        "title": "通過創建成績統計冊應用來回顧 JavaScript 基礎知識",
         "intro": [
-          "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
-          "This will give you an opportunity to solve small problems and get a better understanding of the basics."
+          "在這個小項目中，你將會通過創建成績統計冊應用回顧 JavaScript 基礎知識，如函數、變量、條件以及更多內容。",
+          "你將通過這個機會練習解決小問題，更好地理解基礎知識。"
+        ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       }
     }
@@ -840,10 +847,41 @@
           "在本項目中，你將通過創建一個費用跟蹤器來探索 Lambda 函數的強大功能。你創建的應用程序將展示如何使用 Lambda 函數實現高效、簡化的操作。"
         ]
       },
-      "scientific-computing-with-python-projects": {
-        "title": "Python 科學計算項目",
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
         "intro": [
-          "是時候測試一下你的 Python 技能了。通過完成這些項目，你可以展示自己已經掌握了紮實的 Python 基礎知識。你還將有資格獲得 freeCodeCamp 的 Python 科學計算認證。"
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-budget-app-project": {
+        "title": "Build a Budget App Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
         ]
       }
     }
@@ -1203,6 +1241,10 @@
       "top-learn-function-basics": {
         "title": "學習函數基礎",
         "intro": ["學習 JavaScript 中的函數。"]
+      },
+      "top-basic-function-projects": {
+        "title": "基礎函數項目",
+        "intro": ["通過構建基本函數來測試你的 JavaScript 技能。"]
       }
     }
   },
@@ -1312,7 +1354,7 @@
   },
   "a2-english-for-developers": {
     "title": "面向開發者的 A2 英語（Beta）",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "note": "該認證目前正在積極開發中。雖然目前還沒有可申請的認證，但很快就會有。在此期間，歡迎你探索我們在下面創建的課程。",
     "intro": [
       "在開發者英語課程中，你將學習英語交流的基本要素。課程遵循歐洲共同語言參考標準（CEFR）的 A2 級，側重於對開發者有用的詞彙。",
       "課程的前半部分將幫助你熟悉英語語法和用法。你將通過大量的實踐練習學習自我介紹、聊天和討論工作等基礎知識。",
@@ -1420,10 +1462,6 @@
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "學習如何分析代碼文檔",
-        "intro": ["", ""]
-      },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "學習如何遵循基本的電子郵件規範",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
