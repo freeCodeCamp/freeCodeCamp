@@ -31,15 +31,15 @@ Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, Reac
 
 Aqui estão algumas amostras de áudio que você pode usar para sua bateria eletrônica:
 
-- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
-- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
-- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
-- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
-- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
-- [Open-HH](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
-- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
-- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
-- [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
+- [Heater 1](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-1.mp3)
+- [Heater 2](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3)
+- [Heater 3](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3)
+- [Heater 4](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3)
+- [Clap](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3)
+- [Open-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3)
+- [Kick](https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3)
+- [Closed-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3)
 
 Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Ou você pode usar esse link CDN para rodar os testes em qualquer ambiente que você goste:`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
