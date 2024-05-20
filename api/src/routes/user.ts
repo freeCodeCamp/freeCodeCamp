@@ -2,6 +2,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
+import { isProfane } from 'no-profanity';
 
 import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
@@ -63,6 +64,7 @@ const nullableFlags = [
 ] as const;
 
 type NullableFlag = (typeof nullableFlags)[number];
+import { blocklistedUsernames } from '../../../shared/config/constants';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -783,6 +785,34 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           result: user.username
         });
       }
+    }
+  );
+
+  fastify.get(
+    '/api/users/exists',
+    {
+      schema: schemas.userExists,
+      attachValidation: true
+    },
+    async (req, reply) => {
+      if (req.validationError) {
+        void reply.code(400);
+        return await reply.send({ exists: true });
+      }
+
+      const username = req.query.username.toLowerCase();
+
+      const isRestricted =
+        blocklistedUsernames.includes(username) || isProfane(username);
+
+      if (isRestricted) return await reply.send({ exists: true });
+
+      const exists =
+        (await fastify.prisma.user.count({
+          where: { username }
+        })) > 0;
+
+      await reply.send({ exists });
     }
   );
 

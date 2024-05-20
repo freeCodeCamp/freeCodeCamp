@@ -1286,6 +1286,56 @@ Thanks and regards,
         });
       });
     });
+    describe('GET /api/users/exists', () => {
+      beforeAll(async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: minimalUserData
+        });
+      });
+
+      it('should return { exists: true } with a 400 status code if the username param is missing or empty', async () => {
+        const res = await superGet('/api/users/exists');
+
+        expect(res.body).toStrictEqual({ exists: true });
+        expect(res.statusCode).toBe(400);
+
+        const res2 = await superGet('/api/users/exists?username=');
+
+        expect(res2.body).toStrictEqual({ exists: true });
+        expect(res2.statusCode).toBe(400);
+      });
+
+      it('should return { exists: true } if the username exists', async () => {
+        const res = await superGet('/api/users/exists?username=testuser');
+
+        expect(res.body).toStrictEqual({ exists: true });
+        expect(res.statusCode).toBe(200);
+      });
+
+      it('should ignore case when checking for username existence', async () => {
+        const res = await superGet('/api/users/exists?username=TeStUsEr');
+
+        expect(res.body).toStrictEqual({ exists: true });
+        expect(res.statusCode).toBe(200);
+      });
+
+      it('should return { exists: false } if the username does not exist', async () => {
+        const res = await superGet('/api/users/exists?username=nonexistent');
+
+        expect(res.body).toStrictEqual({ exists: false });
+        expect(res.statusCode).toBe(200);
+      });
+
+      it('should return { exists: true } if the username is restricted (ignoring case)', async () => {
+        const res = await superGet('/api/users/exists?username=pRofIle');
+
+        expect(res.body).toStrictEqual({ exists: true });
+
+        const res2 = await superGet('/api/users/exists?username=flAnge');
+
+        expect(res2.body).toStrictEqual({ exists: true });
+      });
+    });
   });
 });
 
