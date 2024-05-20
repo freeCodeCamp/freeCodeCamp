@@ -41,7 +41,7 @@ test('Renders universal nav by default', async ({ page }) => {
   );
   await expect(universalNavigation).toBeVisible();
   await expect(universalNavigationLogo).toBeVisible();
-  await expect(universalNavigationLogo).toHaveAttribute('href', '/learn');
+  await expect(universalNavigationLogo).toHaveAttribute('href', '/');
 });
 
 test('Renders exam nav for Foundational C# with Microsoft exam', async ({
