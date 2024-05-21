@@ -41,7 +41,7 @@ test('Resets the lower jaw when prompted', async ({ page }) => {
   await expect(failing).toBeVisible();
   await expect(hint).toBeVisible();
 
-  await page.getByTestId('lowerJaw-reset-button').click();
+  await page.getByRole('button', { name: 'Reset' }).click();
 
   await expect(
     page.getByRole('dialog', { name: 'Reset this lesson?' })
@@ -77,7 +77,7 @@ test('Checks hotkeys when instruction is focused', async ({
   await expect(checkButton).not.toBeFocused();
 });
 
-test('Focsues on the submit button after tests passed', async ({
+test('Focuses on the submit button after tests passed', async ({
   page,
   browserName,
   isMobile
