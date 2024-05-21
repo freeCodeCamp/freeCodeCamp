@@ -1,10 +1,7 @@
-const selectors = {
-  tableOfContents: '.intro-toc',
-  warningMessage: '.flash-message-enter-active'
-};
+import { test, expect } from '@playwright/test';
 
 const locations = {
-  index: '/learn/responsive-web-design/basic-css/'
+  index: '/learn/responsive-web-design/#basic-css'
 };
 
 const lessonNames = [
@@ -55,20 +52,20 @@ const lessonNames = [
 ];
 
 const warningMessage =
-  'Note: Some browser extensions may interfere with elements on the page. ' +
-  'If the tests fail, try disabling your extensions for the most reliable ' +
-  'experience.';
+  'Note: Some browser extensions, such as ad-blockers and dark mode extensions can interfere with the tests. If you face issues, we recommend disabling extensions that modify the content or layout of pages, while taking the course.';
 
-describe('Basic Css Introduction page', function () {
-  it('renders a warning about browser extensions links to the lessons ', () => {
-    cy.visit(locations.index);
+test.describe('Responsive Web Design Projects - Basic CSS', () => {
+  test('renders', async ({ page }) => {
+    await page.goto(locations.index);
 
-    cy.title().should('eq', 'Basic CSS | freeCodeCamp.org');
+    await expect(page.locator('.alert.alert-info')).toContainText(
+      warningMessage
+    );
 
-    cy.get(selectors.warningMessage).contains(warningMessage);
-
-    lessonNames.forEach(name => {
-      cy.get(selectors.tableOfContents).contains('a', name);
-    });
+    for (const lessonName of lessonNames) {
+      await expect(
+        page.getByRole('link', { name: lessonName, exact: false })
+      ).toBeVisible();
+    }
   });
 });
