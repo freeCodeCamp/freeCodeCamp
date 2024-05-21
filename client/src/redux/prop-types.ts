@@ -116,6 +116,7 @@ export type Characters =
   | 'Brian'
   | 'Candidate'
   | 'David'
+  | 'Delivery Man'
   | 'Expert'
   | 'Jake'
   | 'James'

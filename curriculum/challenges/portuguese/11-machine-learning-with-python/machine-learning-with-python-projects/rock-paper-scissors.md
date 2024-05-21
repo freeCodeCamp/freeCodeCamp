@@ -10,7 +10,7 @@ dashedName: rock-paper-scissors
 
 Neste desafio, você vai criar um programa para jogar Pedra, papel e tesoura. Um programa com decisões aleatórias tem uma taxa de vitória média de 50%. Para passar no desafio, seu programa vai enfrentar quatro robôs diferentes e deve vencer pelo menos 60% dos jogos contra cada um.
 
-You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-rock-paper-scissors/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
+Você <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-rock-paper-scissors/" target="_blank" rel="noopener noreferrer nofollow">trabalhará nesse projeto com o nosso código inicial do Gitpod </a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo de aprendizagem de máquina. Por enquanto, você terá que usar outros recursos para aprender a vencer este desafio.
 
@@ -48,7 +48,7 @@ play(player, quincy, 1000, verbose=True)
 
 ## Testes
 
-Os testes unitários para este projeto estão em `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. If you uncomment the last line in `main.py`, the tests will run automatically whenever you run `python main.py` in the console.
+Os testes unitários para este projeto estão em `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. Se você remover dos comentários a última linha de `main.py`, os testes serão executados automaticamente sempre que você executar `python main.py` no console.
 
 ## Envio
 
