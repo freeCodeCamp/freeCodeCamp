@@ -6,11 +6,7 @@ import tributePageCss from './fixtures/tribute-page-css.json';
 import curriculum from './fixtures/js-ads-projects.json';
 import { authedRequest } from './utils/request';
 
-import {
-  focusProjectEditor,
-  getProjectEditors,
-  clearProjectEditor
-} from './utils/project-editor';
+import { focusEditor, getEditors, clearEditor } from './utils/editor';
 import { isMacOS } from './utils/user-agent';
 
 interface Meta {
@@ -152,8 +148,8 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker'
     );
 
-    await focusProjectEditor({ page, browserName, isMobile });
-    await clearProjectEditor({ page, browserName });
+    await focusEditor({ page, browserName, isMobile });
+    await clearEditor({ page, browserName });
 
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),
@@ -256,7 +252,7 @@ test.describe('Completion modal should be shown after submitting a project', () 
     await page.goto(
       '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
-    const editors = await getProjectEditors({ page, isMobile });
+    const editors = await getEditors({ page, isMobile });
     await page.getByRole('button', { name: 'styles.css' }).click();
 
     for (let i = 0; i < 2; i++) {

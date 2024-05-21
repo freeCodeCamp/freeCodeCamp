@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { clearEditor, focusEditor, getEditors } from './utils/challenge-editor';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { signout } from './utils/logout';
 
 test.beforeEach(async ({ page }) => {

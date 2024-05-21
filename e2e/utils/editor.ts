@@ -1,6 +1,6 @@
 import { type Page } from '@playwright/test';
 
-export const getProjectEditors = async ({
+export const getEditors = async ({
   page,
   isMobile
 }: {
@@ -20,7 +20,7 @@ export const getProjectEditors = async ({
   );
 };
 
-export const focusProjectEditor = async ({
+export const focusEditor = async ({
   page,
   isMobile,
   browserName
@@ -29,7 +29,7 @@ export const focusProjectEditor = async ({
   isMobile: boolean;
   browserName: string;
 }) => {
-  const editor = await getProjectEditors({ page, isMobile });
+  const editor = await getEditors({ page, isMobile });
 
   // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
   // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
@@ -42,7 +42,7 @@ export const focusProjectEditor = async ({
   }
 };
 
-export async function clearProjectEditor({
+export async function clearEditor({
   page,
   browserName
 }: {
