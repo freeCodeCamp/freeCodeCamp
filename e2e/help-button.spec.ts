@@ -49,7 +49,7 @@ test.describe('help-button tests for a page with a reset and help button', () =>
     await page.goto(
       'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
     );
-    await expect(page.getByTestId('get-help-button')).toBeHidden();
+    await expect(page.getByRole('button', { name: 'Help' })).toBeHidden();
   });
 
   test('should be present after the user checks their code three times', async ({
