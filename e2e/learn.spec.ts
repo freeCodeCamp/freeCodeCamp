@@ -26,6 +26,30 @@ const superBlocks = [
   'Legacy Python for Everybody'
 ];
 
+//Exclude English curriculum from tests and ones that lack circles; todo: eventually remove
+const superBlocksWithCerts = [
+  'Responsive Web Design',
+  'JavaScript Algorithms and Data Structures (Beta)',
+  'Front End Development Libraries',
+  'Data Visualization',
+  'Relational Database',
+  'Back End Development and APIs',
+  'Quality Assurance',
+  'Scientific Computing with Python (Beta)',
+  'Data Analysis with Python',
+  'Information Security',
+  'Machine Learning with Python',
+  'College Algebra with Python',
+  'Foundational C# with Microsoft',
+  'The Odin Project - freeCodeCamp Remix (Beta)',
+  'Coding Interview Prep',
+  'Project Euler',
+  'Rosetta Code',
+  'Legacy Responsive Web Design Challenges',
+  'JavaScript Algorithms and Data Structures',
+  'Legacy Python for Everybody'
+];
+
 test('the page should render correctly', async ({ page }) => {
   await page.goto('/learn');
   await expect(page).toHaveTitle(
@@ -88,37 +112,27 @@ test.describe('Learn (authenticated user)', () => {
     await page.goto('/learn');
     const curriculumBtns = page.getByTestId('curriculum-map-button');
     await expect(curriculumBtns).toHaveCount(superBlocks.length);
-    for (let i = 0; i < superBlocks.length; i++) {
+    for (let i = 0; i < superBlocksWithCerts.length; i++) {
       //Exclude English curriculum from tests and ones that lack circles; todo: eventually remove
-      if (
-        superBlocks.indexOf('A2 English for Developers (Beta)') != i &&
-        superBlocks.indexOf('Foundational C# with Microsoft') > i
-      ) {
-        const btn = curriculumBtns.nth(i);
-        const icon = btn.locator('.progress-icon > svg').first();
-        await expect(icon).toHaveClass('completeIcon');
-      }
+      const actualIndex = superBlocks.indexOf(superBlocksWithCerts[i]);
+      const btn = curriculumBtns.nth(actualIndex);
+      const icon = btn.locator('.progress-icon > svg').first();
+      await expect(icon).toHaveClass('completeIcon');
     }
   });
 });
 
 test.describe('Learn (unauthenticated user)', () => {
-  test('the page shows completed icons for a certified user', async function ({
+  test('the page shows incomplete icons for a non-authenticated user', async function ({
     page
   }) {
     await page.goto('/learn');
     const curriculumBtns = page.getByTestId('curriculum-map-button');
     await expect(curriculumBtns).toHaveCount(superBlocks.length);
     for (let i = 0; i < superBlocks.length; i++) {
-      //Exclude English curriculum from tests and ones that lack circles; todo: eventually remove
-      if (
-        superBlocks.indexOf('A2 English for Developers (Beta)') != i &&
-        superBlocks.indexOf('Foundational C# with Microsoft') > i
-      ) {
-        const btn = curriculumBtns.nth(i);
-        const icon = btn.locator('.progress-icon > svg').first();
-        await expect(icon).toHaveClass('incompleteIcon');
-      }
+      const btn = curriculumBtns.nth(i);
+      const icon = btn.locator('.progress-icon > svg').first();
+      await expect(icon).toHaveClass('incompleteIcon');
     }
   });
 });
