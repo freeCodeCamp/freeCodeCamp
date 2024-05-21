@@ -90,7 +90,6 @@ test.describe('Learn (authenticated user)', () => {
     await expect(curriculumBtns).toHaveCount(superBlocks.length);
     for (let i = 0; i < superBlocks.length; i++) {
       //Exclude English curriculum from tests and ones that lack circles; todo: eventually remove
-      console.log(i + ' \n' + superBlocks[i]);
       if (
         superBlocks.indexOf('A2 English for Developers (Beta)') != i &&
         superBlocks.indexOf('Foundational C# with Microsoft') > i
