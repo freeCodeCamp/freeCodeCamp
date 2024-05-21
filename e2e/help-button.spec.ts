@@ -62,7 +62,7 @@ test.describe('help-button tests for a page with a reset and help button', () =>
     await checkButton.click();
     await checkButton.click();
     await checkButton.click();
-    await expect(page.getByText(translations.buttons.help)).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Help' })).toBeVisible();
   });
   test('icon should be invisible to screen-reader', async ({ page }) => {
     await page.goto(
