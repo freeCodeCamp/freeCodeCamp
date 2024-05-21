@@ -81,7 +81,7 @@ test.describe('Editor theme if the system theme is dark', () => {
   test.describe('If the user is signed in', () => {
     test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-    test('should be in dark mode the user selected theme is dark', async ({
+    test('should be in dark mode if the user selected theme is dark', async ({
       page
     }) => {
       // Open the nav menu and toggle the theme
@@ -158,7 +158,7 @@ test.describe('Editor theme if the system theme is light', () => {
   test.describe('If the user is signed in', () => {
     test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-    test('should be in dark mode the user selected theme is dark', async ({
+    test('should be in dark mode if the user selected theme is dark', async ({
       page
     }) => {
       await page.getByRole('button', { name: 'Menu' }).click();
