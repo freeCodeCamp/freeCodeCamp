@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('help-button tests for a page with three links (hint, help and video)', () => {
   test('should render the button, menu and the three links when video is available', async ({
@@ -62,17 +61,8 @@ test.describe('help-button tests for a page with a reset and help button', () =>
     await checkButton.click();
     await checkButton.click();
     await checkButton.click();
-    await expect(page.getByRole('button', { name: 'Help' })).toBeVisible();
-  });
-  test('icon should be invisible to screen-reader', async ({ page }) => {
-    await page.goto(
-      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
-    );
-    const checkButton = page.getByTestId('lowerJaw-check-button');
-    await checkButton.click();
-    await checkButton.click();
-    await checkButton.click();
-    const helpButton = page.getByText(translations.buttons.help);
+    const helpButton = page.getByRole('button', { name: 'Help' });
+    await expect(helpButton).toBeVisible();
     const helpIconGroup = helpButton.getByRole('group', {
       includeHidden: false
     });
