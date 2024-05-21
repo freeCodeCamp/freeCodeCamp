@@ -239,7 +239,6 @@ test.describe('Completion modal should be shown after submitting a project', () 
 
   test('Ctrl + enter triggers the completion modal on multifile projects', async ({
     page,
-    isMobile,
     context
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
@@ -252,7 +251,7 @@ test.describe('Completion modal should be shown after submitting a project', () 
     await page.goto(
       '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
-    const editors = await getEditors({ page, isMobile });
+    const editors = getEditors(page);
     await page.getByRole('button', { name: 'styles.css' }).click();
 
     for (let i = 0; i < 2; i++) {

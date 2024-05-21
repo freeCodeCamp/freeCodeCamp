@@ -1,20 +1,6 @@
 import { type Page } from '@playwright/test';
 
-export const getEditors = async ({
-  page,
-  isMobile
-}: {
-  page: Page;
-  isMobile: boolean;
-}) => {
-  if (isMobile) {
-    const codeBtn = page.getByRole('tab', { name: 'Code' });
-    // The outer div intercepts the click action of its children,
-    // preventing Playwright from verifying if the children actually receive the click.
-    // In reality, the children do receive the click, so we bypass that check here.
-    await codeBtn.click({ force: true });
-  }
-
+export const getEditors = (page: Page) => {
   return page.getByLabel(
     'Editor content;Press Alt+F1 for Accessibility Options'
   );
@@ -29,16 +15,22 @@ export const focusEditor = async ({
   isMobile: boolean;
   browserName: string;
 }) => {
-  const editor = await getEditors({ page, isMobile });
+  if (isMobile) {
+    const codeBtn = page.getByRole('tab', { name: 'Code' });
+    // The outer div intercepts the click action of its children,
+    // preventing Playwright from verifying if the children actually receive the click.
+    // In reality, the children do receive the click, so we bypass that check here.
+    await codeBtn.click({ force: true });
+  }
 
   // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
   // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
   // in place of `.click()` to focus on the editor.
   // Ref: https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
   if (isMobile && browserName === 'webkit') {
-    await editor.focus();
+    await getEditors(page).focus();
   } else {
-    await editor.click();
+    await getEditors(page).click();
   }
 };
 
