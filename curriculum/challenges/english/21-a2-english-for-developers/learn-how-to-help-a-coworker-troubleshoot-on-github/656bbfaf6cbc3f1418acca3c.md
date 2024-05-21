@@ -1,14 +1,11 @@
 ---
 id: 656bbfaf6cbc3f1418acca3c
-title: Task 12
+title: Task 6
 challengeType: 22
-dashedName: task-12
+dashedName: task-6
 ---
 
-<!--
-AUDIO REFERENCE: 
-Sarah: "Sure, Bob. What’s the problem?"
--->
+<!-- (Audio) Sarah: Sure, Bob. What's the problem? -->
 
 # --description--
 
@@ -26,7 +23,7 @@ Listen to the audio and complete the sentence.
 
 ### --feedback--
 
-`What`and `is` are in abbreviated form. Remember to capitalize `What`.
+`What` and `is` are in abbreviated form. Remember to capitalize `What`.
 
 # --scene--
 
@@ -48,8 +45,8 @@ Listen to the audio and complete the sentence.
     "audio": {
       "filename": "6.1-1.mp3",
       "startTime": 1,
-      "startTimestamp": 7.5,
-      "finishTimestamp": 8.74
+      "startTimestamp": 7.3,
+      "finishTimestamp": 8.84
     }
   },
   "commands": [
@@ -61,7 +58,7 @@ Listen to the audio and complete the sentence.
     {
       "character": "Sarah",
       "startTime": 1,
-      "finishTime": 2.24,
+      "finishTime": 2.54,
       "dialogue": {
         "text": "Sure, Bob. What's the problem?",
         "align": "center"
@@ -70,7 +67,7 @@ Listen to the audio and complete the sentence.
     {
       "character": "Sarah",
       "opacity": 0,
-      "startTime": 2.74
+      "startTime": 3.04
     }
   ]
 }
