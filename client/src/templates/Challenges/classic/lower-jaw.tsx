@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
@@ -311,7 +312,7 @@ const LowerJaw = ({
           {t('learn.sign-in-save')}
         </a>
       )}
-      <button
+      <Button
         data-playwright-test-label='lowerJaw-submit-button'
         className='btn-block btn'
         data-cy='submit-lowerJaw-button'
@@ -320,7 +321,7 @@ const LowerJaw = ({
         ref={submitButtonRef}
       >
         {t('buttons.submit-and-go')}
-      </button>
+      </Button>
       <button
         data-playwright-test-label='lowerJaw-check-button'
         className='btn-block btn'
