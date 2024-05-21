@@ -27,11 +27,6 @@ export const authedRequest = async ({
       headers: { 'csrf-token': csrfToken! }
     }
   );
-
-  if (res.status() !== 200) {
-    console.log(await res.json());
-  }
-
   expect(res.status()).toBe(200);
   return res;
 };
