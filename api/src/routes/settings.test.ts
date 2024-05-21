@@ -187,11 +187,11 @@ describe('settingRoutes', () => {
           email: 'foo@foo.com'
         });
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           message: 'flash.email-valid',
           type: 'success'
         });
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
       });
 
       test("PUT updates the user's record in preparation for receiving auth email", async () => {
@@ -211,7 +211,7 @@ describe('settingRoutes', () => {
           throw new Error('emailVerifyTTL is not defined');
         }
 
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
 
         // expect the emailVerifyTTL to be within 10 seconds of the current time
         const tenSeconds = 10 * 1000;
@@ -231,11 +231,11 @@ describe('settingRoutes', () => {
 
         // We cannot use fastify's default validation failure response here
         // because the client consumes the response and displays it to the user.
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           type: 'danger',
           message: 'Email format is invalid'
         });
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT accepts requests to update to the current email address (ignoring case) if it is not verified', async () => {
@@ -247,8 +247,8 @@ describe('settingRoutes', () => {
           email: developerUserEmail.toUpperCase()
         });
 
-        expect(response?.statusCode).toEqual(200);
-        expect(response?.body).toEqual({
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toEqual({
           message: 'flash.email-valid',
           type: 'success'
         });
@@ -259,12 +259,12 @@ describe('settingRoutes', () => {
           email: developerUserEmail.toUpperCase()
         });
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           type: 'info',
           message: `${developerUserEmail} is already associated with this account.
 You can update a new email address instead.`
         });
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
@@ -272,7 +272,7 @@ You can update a new email address instead.`
           email: unusedEmailOne
         });
 
-        expect(successResponse?.statusCode).toEqual(200);
+        expect(successResponse.statusCode).toEqual(200);
 
         const failResponse = await superPut('/update-my-email').send({
           email: unusedEmailOne.toUpperCase()
@@ -291,11 +291,11 @@ Please wait 5 minutes to resend an authentication link.`
           email: otherDeveloperUserEmail
         });
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           type: 'info',
           message: `${otherDeveloperUserEmail} is already associated with another account.`
         });
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT rejects the second request if is immediately after the first', async () => {
@@ -303,7 +303,7 @@ Please wait 5 minutes to resend an authentication link.`
           email: unusedEmailOne
         });
 
-        expect(successResponse?.statusCode).toEqual(200);
+        expect(successResponse.statusCode).toEqual(200);
 
         const failResponse = await superPut('/update-my-email').send({
           email: unusedEmailTwo
