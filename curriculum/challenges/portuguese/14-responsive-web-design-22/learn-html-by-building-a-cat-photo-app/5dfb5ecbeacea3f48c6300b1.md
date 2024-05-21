@@ -7,9 +7,9 @@ dashedName: step-21
 
 # --description--
 
-The `li` element is used to create a list item in an ordered or unordered list.
+O elemento `li` é usado para criar um item em uma lista ordenada ou não ordenada.
 
-Here is an example of list items in an unordered list:
+Aqui está um exemplo de itens em uma lista não ordenada:
 
 ```html
 <ul>
@@ -18,19 +18,19 @@ Here is an example of list items in an unordered list:
 </ul>
 ```
 
-Within the `ul` element nest three list items to display three things cats love:
+Aninhe no elemento `ul` uma lista de três coisas que gatos adoram:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-You should have three `li` elements. Each `li` element should have its own opening and closing tag.
+Você deve usar três elementos `li`. Cada elemento `li` deve ter sua própria tag de abertura e de fechamento.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+Use três elementos `li` com os textos `cat nip`, `laser pointers` e `lasagna`, em qualquer ordem. Você esqueceu algum dos textos ou cometeu um erro de digitação.
 
 ```js
 assert.deepStrictEqual(
@@ -41,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-The three `li` elements should be located between the `ul` element's opening and closing tags.
+Os três elementos `li` devem estar entre as tags de abertura e fechamento do elemento `ul`.
 
 ```js
 assert(

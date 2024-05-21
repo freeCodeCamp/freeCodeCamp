@@ -8,12 +8,12 @@ dashedName: state-name-puzzle
 
 # --description--
 
-**State name** is a <em>word puzzle</em> in which you take the letters from two U.S. state names and rearrange them to form the names of two different U.S. states.
+**Nome do estado** é um <em>quebra-cabeça de palavras</em> no qual você pega as letras de dois nomes de estados americanos e as reorganiza para formar os nomes de dois estados americanos diferentes.
 
 
 # --instructions--
 
-Write a function to solve the challenge for a given array of actual U.S. state names, and for fictional state names.
+Escreva uma função para resolver o desafio para um dado array de nomes de estados americanos reais fornecidos e para nomes de estado ficcionais.
 
 A função deve retornar um array. Cada elemento deve ser um objeto neste formato: `{"from":[],"to":[]}`. O array `from` deve conter os nomes originais e o array `to` deve conter os nomes resultantes.
 
