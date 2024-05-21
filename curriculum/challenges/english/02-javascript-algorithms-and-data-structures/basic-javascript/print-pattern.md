@@ -26,6 +26,18 @@ Chunauti: Ek program likho jo upyogakarta se ek sankhyaon ka array input ke roop
 
 Write a function `printPattern` that takes an `array` of numbers as input and prints a pattern based on the elements of the array.
 
+**Example** 
+
+`[2,4,5,2]` should print a pattern as follows:- 
+
+```js
+>>
+>>>>
+>>>>>
+>>
+```
+
+
 **Prompts**
 Click on this - <a href = "https://cs50.ai/chat">Link</a> to Go to CS50 AI.
 And use this prompt.
@@ -35,7 +47,7 @@ And use this prompt.
 
 # --hints--
 
-Ensure that the output pattern matches the expected pattern for `[2, 3, 5, 2, 1]`.
+`[2, 3, 5, 2, 1]` should return `">>\n>>>\n>>>>\n>>\n>"`.
 
 ```js
 assert(printPattern([2, 3, 5, 2, 1]) === ">>\n>>>\n>>>>>\n>>\n>");

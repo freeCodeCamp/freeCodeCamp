@@ -18,6 +18,8 @@ Imagine dividing cookies among friends. You want to know how many cookies each f
 **Challenge:**
 Write a program that asks the user for two numbers (A and B). Use Math. floor() to round down the result to the nearest integer, calculate the quotient (whole number result) of dividing A by B and the remainder (leftover value after the division). Finally, print the quotient and remainder in separate lines.
 
+You should create to variable `quotient` and `remainder` to store the respective values. 
+
 <h2>Hinglish</h2>
 **Lakshya:**
 
@@ -34,9 +36,9 @@ Imagine dividing cookies among friends. Aapko jaana hai kitne cookies har friend
 
 Ek program likhiye jo user se do numbers (A aur B) puchta hai. `Math.floor()` ka use karke result ko nearest integer tak round down kariye, quotient (whole number result) calculate kariye jab A ko B se divide kiya jaye aur remainder (division ke baad bacha hua value) bhi calculate kariye. Aakhir mein, quotient aur remainder alag alag lines mein print kariye.
 
-Yahaan pe JavaScript program hai isse achieve karne ke liye:
+Aapko values ko store krne ke liye do variables `quotient` aur `remainder` declare krna hai.
 
-**Note:** Output ko question mein diye gaye order mein print kare."
+**Note:** Output ko question mein diye gaye order mein print kare.
 
 Click on this <a href="https://cs50.ai/chat"> Link</a>to Go to CS50 AI. Ask this Prompt. 
 
@@ -56,7 +58,7 @@ assert(quotient===2 );
 assert(remainder===2);
 ```
 
-Should use `Math.floor` for `quotient`.
+You should use `Math.floor` for `quotient`.
 
 ```js
 assert(code.match(/Math.floor/g));

@@ -25,13 +25,12 @@ May
 
 # --instructions--
 Create three variables `birthDate`,`birthMonth` and `birthYear` to store the values of birth date, month, and year.
-Print the variables in the order: `date`, `month`, `year`.
 
-Use separate console.log() statements to print each variable's value on a new line:
+Complete the `console.log()` statements to print the variables in the order: 
+`date`, 
+`month`, 
+`year`.
 
-Print birthDate.
-Print birth month.
-Print birthYear.
 
 <h2>Hinglish</h2>
 
@@ -50,16 +49,14 @@ May
 
 ```
 
-
-# --instructions--
 Teen variables `birthDate`,`birthMonth` aur `birthYear` create karein janam din, mahina, aur varsh ke values ko store karne ke liye.
-Variables ko order mein print karein: `date`, `month`, `year`.
 
-Har variable ki value ko alag console.log() statements ka istemal karke ek naye line par print karein:
+`console.log()` ka use krke teeno variables ko is order mein print karein: 
+`date`, 
+`month`, 
+`year`.
 
-birthDate ko print karein.
-birthMonth ko print karein.
-birthYear ko print karein.
+
 
 # --hints--
 
@@ -93,12 +90,22 @@ assert(
 
 ```
 
+You should use `console.log()`  in your code to print values.
+
+```js
+assert(code.match(/console.log/g));
+```
+
 # --seed--
 
 ## --seed-contents--
 
 
 ```js
+
+console.log();
+console.log();
+console.log();	
 
 ```
 

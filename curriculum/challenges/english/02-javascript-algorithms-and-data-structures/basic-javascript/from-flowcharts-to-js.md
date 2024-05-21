@@ -27,11 +27,11 @@ console.log("Hello user");
 
 # --instructions--
 
-Print `"Hello JavaScript"` by using `console.log()`.
+Print "your name" by using `console.log()`.
 
 # --hints--
 
-Your output should be `"Hello JavaScript"`.
+You should use `console.log()` to print your name.
 
 ```js
 assert.doesNotThrow(() => { console.log("Hello JavaScript"); }, Error, "Expected 'Hello JavaScript' to be printed.");
