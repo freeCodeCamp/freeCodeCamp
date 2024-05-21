@@ -9,9 +9,9 @@ dashedName: task-60
 
 # --description--
 
-The expression `at least` is used when you want to say the smallest amount or number of something is okay or enough. It's like saying "no less than this amount".
+Вираз `at least` вказує на мінімальну кількість або число. Тобто не менше за цю кількість.
 
-For example, if you say, `I study English for at least 30 minutes every day`, it means you spend 30 minutes or more studying English daily, but never less than 30 minutes.
+Наприклад, якщо ви кажете `I study English for at least 30 minutes every day`, значить ви приділяєте принаймні 30 хвилин на вивчення англійської мови щодня.
 
 # --fillInTheBlank--
 
@@ -25,7 +25,7 @@ For example, if you say, `I study English for at least 30 minutes every day`, it
 
 ### --feedback--
 
-This word is a preposition commonly used in expressions indicating a minimum amount.
+Це слово використовується як прийменник у фразі, що вказує на мінімальну кількість.
 
 ---
 
@@ -33,7 +33,7 @@ This word is a preposition commonly used in expressions indicating a minimum amo
 
 ### --feedback--
 
-This word often follows the previous word to form a phrase meaning "the minimum amount or degree".
+Це друге слово з виразу, що вказує на мінімальну кількість.
 
 # --scene--
 

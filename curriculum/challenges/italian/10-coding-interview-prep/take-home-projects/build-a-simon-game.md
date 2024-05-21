@@ -28,7 +28,7 @@ Soddisfa le user story qui sotto e supera tutti i test. Utilizza le librerie o l
 
 **User Story:** Posso vincere il gioco inserendo correttamnete una serie di 20 step. Vengo informato della mia vittoria, poi il gioco ricomincia da capo.
 
-**Suggerimento:** Ecco degli mp3s che puoi usare per ogni pulsante: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
+**Hint:** Here are mp3s you can use for each button: `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound1.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound2.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound3.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound4.mp3`.
 
 Quando hai finito, includi un link al tuo progetto su CodePen e clicca sul pulsante "Ho completato questa sfida".
 

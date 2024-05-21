@@ -1,29 +1,29 @@
 ---
 id: 661e17c6068359c3ccf2f4d8
-title: Basic Functions Exercise D
+title: Базові функції. Вправа D
 challengeType: 1
 dashedName: top-basic-functions-exercise-d
 ---
 
 # --description--
 
-Write a function, named `lastLetter`, that takes a string as a parameter and returns the last letter of the string.
+Напишіть функцію під назвою `lastLetter`, яка приймає рядок як параметр та повертає останню літеру рядка.
 
 # --hints--
 
-You should have a function named `lastLetter`.
+Ви повинні мати функцію під назвою `lastLetter`.
 
 ```js
 assert.isFunction(lastLetter);
 ```
 
-Your function should take in a string as a parameter.
+Функція має приймати рядок як параметр.
 
 ```js
 assert.match(lastLetter.toString(), /\s*lastLetter\(\s*\w+\s*\)/);
 ```
 
-You should return the last letter of the string.
+Поверніть останню літеру рядка.
 
 ```js
 assert.strictEqual(lastLetter('Sem'), 'm');
