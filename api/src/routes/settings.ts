@@ -183,11 +183,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       const isOwnEmail = newEmail === currentEmailFormatted;
       if (isOwnEmail && isVerifiedEmail) {
         void reply.code(400);
-        return {
+        return reply.send({
           type: 'info',
           message: `${newEmail} is already associated with this account.
 You can update a new email address instead.`
-        } as const;
+        });
       }
 
       const isResendUpdateToSameEmail =
@@ -198,11 +198,11 @@ You can update a new email address instead.`
 
       if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
         void reply.code(429);
-        return {
+        return reply.send({
           type: 'info',
           message: `We have already sent an email confirmation request to ${newEmail}.
 ${isLinkSentWithinLimitTTL}`
-        } as const;
+        });
       }
 
       const isEmailAlreadyTaken =
@@ -210,10 +210,10 @@ ${isLinkSentWithinLimitTTL}`
 
       if (isEmailAlreadyTaken && !isOwnEmail) {
         void reply.code(400);
-        return {
+        return reply.send({
           type: 'info',
           message: `${newEmail} is already associated with another account.`
-        } as const;
+        });
       }
 
       // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
@@ -237,10 +237,10 @@ ${isLinkSentWithinLimitTTL}`
 
         if (tooManyRequestsMessage) {
           void reply.code(429);
-          return {
+          return reply.send({
             type: 'info',
             message: tooManyRequestsMessage
-          } as const;
+          });
         }
 
         await fastify.prisma.user.update({
@@ -250,11 +250,11 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
-        return { message: 'flash.email-valid', type: 'success' } as const;
+        await reply.send({ message: 'flash.email-valid', type: 'success' });
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
-        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+        await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
     }
   );
