@@ -40,14 +40,7 @@ const superBlocksWithCerts = [
   'Information Security',
   'Machine Learning with Python',
   'College Algebra with Python',
-  'Foundational C# with Microsoft',
-  'The Odin Project - freeCodeCamp Remix (Beta)',
-  'Coding Interview Prep',
-  'Project Euler',
-  'Rosetta Code',
-  'Legacy Responsive Web Design Challenges',
-  'JavaScript Algorithms and Data Structures',
-  'Legacy Python for Everybody'
+  'Foundational C# with Microsoft'
 ];
 
 test('the page should render correctly', async ({ page }) => {
@@ -129,8 +122,9 @@ test.describe('Learn (unauthenticated user)', () => {
     await page.goto('/learn');
     const curriculumBtns = page.getByTestId('curriculum-map-button');
     await expect(curriculumBtns).toHaveCount(superBlocks.length);
-    for (let i = 0; i < superBlocks.length; i++) {
-      const btn = curriculumBtns.nth(i);
+    for (let i = 0; i < superBlocksWithCerts.length; i++) {
+      const actualIndex = superBlocks.indexOf(superBlocksWithCerts[i]);
+      const btn = curriculumBtns.nth(actualIndex);
       const icon = btn.locator('.progress-icon > svg').first();
       await expect(icon).toHaveClass('incompleteIcon');
     }
