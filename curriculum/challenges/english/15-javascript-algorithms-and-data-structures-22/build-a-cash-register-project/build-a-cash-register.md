@@ -60,7 +60,7 @@ price = 10;
 assert.strictEqual(price, 10);
 ```
 
-You have a variable called `cid`. 
+You should have a variable called `cid`. 
 
 ```js
 cid = []; 
