@@ -42,7 +42,7 @@ Hier ist ein JSON-Beispiel:
 [
   {
     "id":0,
-      "imageLink":"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
+      "imageLink":"https://cdn.freecodecamp.org/curriculum/legacy-json-apis-ajax/funny-cat.jpg",
       "altText":"A white cat wearing a green helmet shaped melon on its head. ",
       "codeNames":[ "Juggernaut", "Mrs. Wallace", "Buttercup"
     ]
