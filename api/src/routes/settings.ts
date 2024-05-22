@@ -19,6 +19,8 @@ import { isProfane } from 'no-profanity';
 import { blocklistedUsernames } from '../../../shared/config/constants';
 import { isValidUsername } from '../../../shared/utils/validate';
 import * as schemas from '../schemas';
+import { createAuthToken } from '../utils/tokens';
+import { API_LOCATION } from '../utils/env';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -170,6 +172,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id },
         select: {
+          id: true,
           email: true,
           emailVerifyTTL: true,
           newEmail: true,
@@ -219,7 +222,7 @@ ${isLinkSentWithinLimitTTL}`
       // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
       try {
         await fastify.prisma.user.update({
-          where: { id: req.user?.id },
+          where: { id: user.id },
           data: {
             newEmail,
             emailVerified: false,
@@ -244,10 +247,33 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         await fastify.prisma.user.update({
-          where: { id: req.user?.id },
+          where: { id: user.id },
           data: {
             emailAuthLinkTTL: new Date()
           }
+        });
+
+        const token = await fastify.prisma.authToken.create({
+          data: createAuthToken(user.id)
+        });
+
+        const encodedEmail = Buffer.from(newEmail).toString('base64');
+
+        const text = `Please confirm this email address for freeCodeCamp.org:
+
+${API_LOCATION}/confirm-email?email=${encodedEmail}&token=${token.id}&emailChange=true
+
+Happy coding!
+
+- The freeCodeCamp.org Team
+`;
+
+        await fastify.sendEmail({
+          from: 'team@freecodecamp.org',
+          to: newEmail,
+          subject:
+            'Please confirm your updated email address for freeCodeCamp.org',
+          text
         });
 
         await reply.send({ message: 'flash.email-valid', type: 'success' });

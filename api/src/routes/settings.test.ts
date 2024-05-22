@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   devLogin,
   setupServer,
   superRequest,
-  createSuperRequest
+  createSuperRequest,
+  defaultUserId
 } from '../../jest.utils';
 import { createUserInput } from '../utils/create-user';
 
@@ -171,6 +173,7 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-email', () => {
+      let sendEmailSpy: jest.SpyInstance;
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: developerUserEmail },
@@ -181,15 +184,27 @@ describe('settingRoutes', () => {
             emailAuthLinkTTL: null
           }
         });
+
+        sendEmailSpy = jest
+          .spyOn(fastifyTestInstance, 'sendEmail')
+          .mockImplementationOnce(jest.fn());
       });
-      test('PUT returns 200 status code with "success" message', async () => {
+
+      afterEach(async () => {
+        jest.clearAllMocks();
+        await fastifyTestInstance.prisma.authToken.deleteMany({
+          where: { userId: defaultUserId }
+        });
+      });
+      test('PUT returns 200 status code with "info" message', async () => {
         const response = await superPut('/update-my-email').send({
           email: 'foo@foo.com'
         });
 
         expect(response.body).toEqual({
-          message: 'flash.email-valid',
-          type: 'success'
+          message:
+            'Check your email and click the link we sent you to confirm your new email address.',
+          type: 'info'
         });
         expect(response.statusCode).toEqual(200);
       });
@@ -314,7 +329,60 @@ Please wait 5 minutes to resend an authentication link.`
         });
       });
 
-      // TODO: test that the correct email gets sent
+      test('PUT sends an email to the new email address', async () => {
+        jest
+          .spyOn(fastifyTestInstance.prisma.authToken, 'create')
+          .mockImplementationOnce(() =>
+            // @ts-expect-error This is a mock implementation, all we're
+            // interested in is the id.
+            Promise.resolve({
+              id: '123'
+            })
+          );
+        await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        const expectedLink = `http://localhost:3000/confirm-email?email=${Buffer.from(unusedEmailOne).toString('base64')}&token=123&emailChange=true`;
+        expect(sendEmailSpy).toHaveBeenCalledWith({
+          from: 'team@freecodecamp.org',
+          to: unusedEmailOne,
+          subject:
+            'Please confirm your updated email address for freeCodeCamp.org',
+          text: `Please confirm this email address for freeCodeCamp.org:
+
+${expectedLink}
+
+Happy coding!
+
+- The freeCodeCamp.org Team
+`
+        });
+      });
+
+      test('PUT creates an auth token record for the requesting user', async () => {
+        const noToken = await fastifyTestInstance.prisma.authToken.findFirst({
+          where: { userId: defaultUserId }
+        });
+        expect(noToken).toBeNull();
+
+        await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        const token = await fastifyTestInstance.prisma.authToken.findFirst({
+          where: { userId: defaultUserId }
+        });
+
+        expect(token).toEqual({
+          ttl: 15 * 60 * 1000,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          created: expect.any(Date),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          id: expect.any(String),
+          userId: defaultUserId
+        });
+      });
     });
 
     describe('/update-my-theme', () => {
