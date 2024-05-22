@@ -77,6 +77,8 @@ Percentage spent by category
         g     
 ```
 
+Note: open the browser console with F12 to see a more verbose output of the tests.
+
 # --hints--
 
 The `deposit` method should create a specific object in the ledger instance variable.

@@ -1,6 +1,6 @@
 ---
 id: 5e444147903586ffb414c94f
-title: Build a Polygon Area Calculator Project
+title: Проєкт «Створіть калькулятор площі багатокутника»
 challengeType: 23
 forumTopicId: 462363
 dashedName: build-a-polygon-area-calculator-project
@@ -8,31 +8,31 @@ dashedName: build-a-polygon-area-calculator-project
 
 # --description--
 
-In this project you will use object oriented programming to create a `Rectangle` class and a `Square` class. The `Square` class should be a subclass of `Rectangle`, and inherit its methods and attributes.
+У цьому проєкті ви будете використовувати об’єктноорієнтоване програмування, щоб створити класи `Rectangle` та `Square`. Клас `Square` має бути підкласом класу `Rectangle` та наслідувати його методи й атрибути.
 
-## Rectangle class
+## Клас Rectangle
 
-When a Rectangle object is created, it should be initialized with `width` and `height` attributes. The class should also contain the following methods:
+При створенні об’єкту Rectangle ви повинні ініціалізувати його, використовуючи атрибути `width` та `height`. Клас також повинен містити наступні методи:
 
 - `set_width`
 - `set_height`
-- `get_area`: Returns area (`width * height`)
-- `get_perimeter`: Returns perimeter (`2 * width + 2 * height`)
-- `get_diagonal`: Returns diagonal (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
-- `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
+- `get_area`: повертає площу (`width * height`)
+- `get_perimeter`: повертає периметр (`2 * width + 2 * height`)
+- `get_diagonal`: повертає діагональ (`(width ** 2 + height ** 2) ** .5`)
+- `get_picture`: повертає рядок, який представляє фігуру лініями «\*». Кількість ліній повинна дорівнювати висоті, а кількість «\*» у кожному рядку повинна дорівнювати ширині. Наприкінці кожного рядка має бути новий рядок (`\n`). Якщо ширина або висота більші за 50, то має повернутись рядок «Too big for picture.».
+- `get_amount_inside`: приймає іншу фігуру (квадрат чи трикутник) як аргумент. Повертає ту кількість разів, скільки передана фігура може поміститися у фігурі (без обертання). Наприклад, прямокутник з шириною 4 і висотою 8 може вмістити два квадрати зі сторонами 4.
 
-Additionally, if an instance of a `Rectangle` is represented as a string, it should look like: `Rectangle(width=5, height=10)`
+Додатково, якщо екземпляр класу `Rectangle` представлений як рядок, то він має виглядати так: `Rectangle(width=5, height=10)`.
 
-## Square class
+## Клас Square
 
-The `Square` class should be a subclass of `Rectangle`. When a `Square` object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the `Rectangle` class.
+Клас `Square` має бути підкласом класу `Rectangle`. Коли ви створюєте об’єкт `Square`, передається довжина однієї сторони. Метод `__init__` має зберігати довжину сторони в атрибутах `width` та `height` з класу `Rectangle`.
 
-The `Square` class should be able to access the `Rectangle` class methods but should also contain a `set_side` method. If an instance of a `Square` is represented as a string, it should look like: `Square(side=9)`
+Клас `Square` повинен мати доступ до методів класу `Rectangle`, але також повинен містити метод `set_side`. Якщо екземпляр класу `Square` представлений у вигляді рядка, то він має виглядати так: `Square(side=9)`.
 
-Additionally, the `set_width` and `set_height` methods on the `Square` class should set both the width and height.
+Додатково, методи `set_width` та `set_height` на класі `Square` мають встановити як ширину, так і висоту.
 
-## Usage example
+## Приклад використання
 
 ```py
 rect = Rectangle(10, 5)
@@ -54,7 +54,7 @@ rect.set_width(16)
 print(rect.get_amount_inside(sq))
 ```
 
-That code should return:
+Цей код має повернути:
 
 ```bash
 50
@@ -75,9 +75,11 @@ Square(side=4)
 8
 ```
 
+Note: open the browser console with F12 to see a more verbose output of the tests.
+
 # --hints--
 
-The `Square` class should be a subclass of the `Rectangle` class.
+Клас `Square` має бути підкласом класу `Rectangle`.
 
 ```js
 ({
@@ -110,7 +112,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `Square` class should be a distinct class from the `Rectangle` class.
+Клас `Square` має відрізнятись від класу `Rectangle`.
 
 ```js
 ({
@@ -143,7 +145,7 @@ t.result.wasSuccessful()
 })
 ```
 
-A square object should be an instance of the `Square` class and the `Rectangle` class.
+Об’єкт-квадрат має бути екземпляром класу `Square` та класу `Rectangle`.
 
 ```js
 ({
@@ -178,7 +180,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The string representation of `Rectangle(3, 6)` should be `Rectangle(width=3, height=6)`.
+Рядковим представленням `Rectangle(3, 6)` має бути `Rectangle(width=3, height=6)`.
 
 ```js
 ({
@@ -213,7 +215,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The string representation of `Square(5)` should be `Square(side=5)`.
+Рядковим представленням `Square(5)` має бути `Square(side=5)`.
 
 ```js
 ({
@@ -248,7 +250,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Rectangle(3, 6).get_area()` should return `18`.
+`Rectangle(3, 6).get_area()` має повернути `18`.
 
 ```js
 ({
@@ -283,7 +285,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Square(5).get_area()` should return `25`.
+`Square(5).get_area()` має повернути `25`.
 
 ```js
 ({
@@ -318,7 +320,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Rectangle(3, 6).get_perimeter()` should return `18`.
+`Rectangle(3, 6).get_perimeter()` має повернути `18`.
 
 ```js
 ({
@@ -353,7 +355,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Square(5).get_perimeter()` should return `20`.
+`Square(5).get_perimeter()` має повернути `20`.
 
 ```js
 ({
@@ -388,7 +390,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Rectangle(3, 6).get_diagonal()` should return `6.708203932499369`.
+`Rectangle(3, 6).get_diagonal()` має повернути `6.708203932499369`.
 
 ```js
 ({
@@ -423,7 +425,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Square(5).get_diagonal()` should return `7.0710678118654755`.
+`Square(5).get_diagonal()` має повернути `7.0710678118654755`.
 
 ```js
 ({
@@ -458,7 +460,7 @@ t.result.wasSuccessful()
 })
 ```
 
-An instance of the `Rectangle` class should have a different string representation after setting new values.
+Екземпляр класу `Rectangle` повинен мати інше рядкове представлення після встановлення нових значень.
 
 ```js
 ({
@@ -495,7 +497,7 @@ t.result.wasSuccessful()
 })
 ```
 
-An instance of the `Square` class should have a different string representation after setting new values by using `.set_side()`.
+Екземпляр класу `Square` повинен мати інше рядкове представлення після встановлення нових значень за допомогою `.set_side()`.
 
 ```js
 ({
@@ -531,7 +533,7 @@ t.result.wasSuccessful()
 })
 ```
 
-An instance of the `Square` class should have a different string representation after setting new values by using `.set_width()` or `set_height()`.
+Екземпляр класу `Square` повинен мати інше рядкове представлення після встановлення нових значень за допомогою `.set_width()` або `set_height()`.
 
 ```js
 ({
@@ -571,7 +573,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `.get_picture()` method should return a different string representation of a `Rectangle` instance.
+Метод `.get_picture()` має повернути інше рядкове представлення екземпляра `Rectangle`.
 
 ```js
 ({
@@ -608,7 +610,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `.get_picture()` method should return a different string representation of a `Square` instance.
+Метод `.get_picture()` має повернути інше рядкове представлення екземпляра `Square`.
 
 ```js
 ({
@@ -644,7 +646,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `.get_picture()` method should return the string `Too big for picture.` if the `width` or `height` attributes are larger than `50`.
+Метод `.get_picture()` має повернути рядок `Too big for picture.`, якщо атрибути `width` або `height` більші за `50`.
 
 ```js
 ({
@@ -681,7 +683,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Rectangle(15,10).get_amount_inside(Square(5))` should return `6`.
+`Rectangle(15,10).get_amount_inside(Square(5))` має повернути `6`.
 
 ```js
 ({
@@ -719,7 +721,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Rectangle(4,8).get_amount_inside(Rectangle(3, 6))` should return `1`.
+`Rectangle(4,8).get_amount_inside(Rectangle(3, 6))` має повернути `1`.
 
 ```js
 ({
@@ -755,7 +757,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`Rectangle(2,3).get_amount_inside(Rectangle(3, 6))` should return `0`.
+`Rectangle(2,3).get_amount_inside(Rectangle(3, 6))` має повернути `0`.
 
 ```js
 ({

@@ -30,7 +30,7 @@ You should remove the `pass` keyword.
 })
 ```
 
-You should declare a variable `low` and assign it `0`.
+Оголосіть змінну `low` та призначте до неї `0`.
 
 ```js
 ({
