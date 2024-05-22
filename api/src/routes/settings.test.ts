@@ -195,33 +195,30 @@ describe('settingRoutes', () => {
       });
 
       test("PUT updates the user's record in preparation for receiving auth email", async () => {
+        const timeBefore = Date.now();
         const response = await superPut('/update-my-email').send({
           email: unusedEmailOne
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
           where: { email: developerUserEmail },
-          select: { emailVerifyTTL: true, emailVerified: true, newEmail: true }
+          select: {
+            emailAuthLinkTTL: true,
+            emailVerifyTTL: true,
+            emailVerified: true,
+            newEmail: true
+          }
         });
-        const emailVerifyTTL = user?.emailVerifyTTL;
-        expect(emailVerifyTTL).toBeTruthy();
-        // This throw is to mollify TS (if this is necessary a lot, create a
-        // helper)
-        if (!emailVerifyTTL) {
-          throw new Error('emailVerifyTTL is not defined');
-        }
 
+        // expect the emailVerifyTTL and emailAuthLinkTTL to be set to the current time
+        expect(user.emailVerifyTTL!.getTime()).toBeGreaterThan(timeBefore);
+        expect(user.emailVerifyTTL!.getTime()).toBeLessThan(Date.now());
+        expect(user.emailAuthLinkTTL!.getTime()).toBeGreaterThan(timeBefore);
+        expect(user.emailAuthLinkTTL!.getTime()).toBeLessThan(Date.now());
+
+        expect(user.emailVerified).toEqual(false);
+        expect(user.newEmail).toEqual(unusedEmailOne);
         expect(response.statusCode).toEqual(200);
-
-        // expect the emailVerifyTTL to be within 10 seconds of the current time
-        const tenSeconds = 10 * 1000;
-        expect(emailVerifyTTL.getTime()).toBeGreaterThan(
-          Date.now() - tenSeconds
-        );
-        expect(emailVerifyTTL.getTime()).toBeLessThan(Date.now() + tenSeconds);
-
-        expect(user?.emailVerified).toEqual(false);
-        expect(user?.newEmail).toEqual(unusedEmailOne);
       });
 
       test('PUT rejects invalid email addresses', async () => {
