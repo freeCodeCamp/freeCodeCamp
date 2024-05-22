@@ -1,10 +1,10 @@
 {
   "name": "Learn Special Methods by Building a Vector Space",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-special-methods-by-building-a-vector-space",
-  "order": 15,
+  "order": 14,
   "time": "5 hours",
   "template": "",
   "required": [],
