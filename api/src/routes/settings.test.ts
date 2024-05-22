@@ -261,8 +261,9 @@ describe('settingRoutes', () => {
 
         expect(response.statusCode).toEqual(200);
         expect(response.body).toEqual({
-          message: 'flash.email-valid',
-          type: 'success'
+          message:
+            'Check your email and click the link we sent you to confirm your new email address.',
+          type: 'info'
         });
       });
 

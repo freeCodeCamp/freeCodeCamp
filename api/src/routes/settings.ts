@@ -156,6 +156,18 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  function createUpdateEmailText({ email, id }: { email: string; id: string }) {
+    const encodedEmail = Buffer.from(email).toString('base64');
+    return `Please confirm this email address for freeCodeCamp.org:
+
+${API_LOCATION}/confirm-email?email=${encodedEmail}&token=${id}&emailChange=true
+
+Happy coding!
+
+- The freeCodeCamp.org Team
+`;
+  }
+
   fastify.put(
     '/update-my-email',
     {
@@ -246,6 +258,7 @@ ${isLinkSentWithinLimitTTL}`
           });
         }
 
+        // Update the emailAuthLinkTTL to ensure we don't send too many emails.
         await fastify.prisma.user.update({
           where: { id: user.id },
           data: {
@@ -253,30 +266,27 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
-        const token = await fastify.prisma.authToken.create({
-          data: createAuthToken(user.id)
+        // The auth token is used to confirm that the user owns the email. If
+        // the user provides the correct id (by following the link we send
+        // them), then we can update the email.
+        const { id } = await fastify.prisma.authToken.create({
+          data: createAuthToken(user.id),
+          select: { id: true }
         });
-
-        const encodedEmail = Buffer.from(newEmail).toString('base64');
-
-        const text = `Please confirm this email address for freeCodeCamp.org:
-
-${API_LOCATION}/confirm-email?email=${encodedEmail}&token=${token.id}&emailChange=true
-
-Happy coding!
-
-- The freeCodeCamp.org Team
-`;
 
         await fastify.sendEmail({
           from: 'team@freecodecamp.org',
           to: newEmail,
           subject:
             'Please confirm your updated email address for freeCodeCamp.org',
-          text
+          text: createUpdateEmailText({ email: newEmail, id })
         });
 
-        await reply.send({ message: 'flash.email-valid', type: 'success' });
+        await reply.send({
+          message:
+            'Check your email and click the link we sent you to confirm your new email address.',
+          type: 'info'
+        });
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
