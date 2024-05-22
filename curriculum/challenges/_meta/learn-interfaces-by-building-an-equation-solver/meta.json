@@ -117,24 +117,20 @@
       "title": "Step 26"
     },
     {
-      "id": "663a2c4d5deed8e5358f8768",
+      "id": "663a2dd1901cbeecc28748bd",
       "title": "Step 27"
     },
     {
-      "id": "663a2dd1901cbeecc28748bd",
+      "id": "663a2ecc3bc690f17d2c636f",
       "title": "Step 28"
     },
     {
-      "id": "663a2ecc3bc690f17d2c636f",
+      "id": "663a32735b317af9812eb0d7",
       "title": "Step 29"
     },
     {
-      "id": "663a32735b317af9812eb0d7",
-      "title": "Step 30"
-    },
-    {
       "id": "663b7fefd437bd984e091cbf",
-      "title": "Step 31"
+      "title": "Step 30"
     }
   ],
   "helpCategory": "Python"
