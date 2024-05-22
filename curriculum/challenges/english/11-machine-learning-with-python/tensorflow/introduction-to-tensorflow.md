@@ -18,7 +18,7 @@ The next few video lessons will reference [this Colab notebook](https://colab.re
 
 ## --text--
 
-Which of the following is **not** a type of tensor? 
+Which of the following is **not** a type of tensor?
 
 ## --answers--
 
