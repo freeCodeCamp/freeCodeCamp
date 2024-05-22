@@ -1418,15 +1418,21 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "学习如何就偏好和动机进行对话",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "学习如何讨论流行的技术趋势",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "学习如何在不同的互动中阐明信息",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "学习如何在对话中使用基本编程词汇",
