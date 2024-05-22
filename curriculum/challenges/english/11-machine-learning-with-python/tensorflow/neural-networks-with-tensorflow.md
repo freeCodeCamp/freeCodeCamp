@@ -18,7 +18,6 @@ The next few video lessons will reference [this Colab notebook](https://colab.re
 
 ## --text--
 
-
 A densely connected neural network is one in which...:
 
 ## --answers--
