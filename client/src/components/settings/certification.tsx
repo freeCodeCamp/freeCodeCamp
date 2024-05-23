@@ -401,7 +401,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
               variant='primary'
               href={certLocation}
               data-cy={`btn-for-${certSlug}`}
-              data-playwright-test-label={`btn-for-${certSlug}`}
               // This floating promise is acceptable
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={clickHandler}
