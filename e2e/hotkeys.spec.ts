@@ -7,6 +7,21 @@ import { getEditors } from './utils/editor';
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
 
+const links = {
+  frontEnd1:
+    '/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine',
+  frontEnd2:
+    '/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer',
+  backEnd1:
+    '/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice',
+  backEnd2:
+    'learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice',
+  video1:
+    '/learn/python-for-everybody/python-for-everybody/introduction-why-program',
+  video2:
+    '/learn/python-for-everybody/python-for-everybody/introduction-hardware-architecture'
+};
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeAll(async ({ request }) => {
@@ -18,6 +33,16 @@ test.beforeAll(async ({ request }) => {
       keyboardShortcuts: false
     }
   });
+});
+
+test.beforeEach(async ({ page }) => {
+  await page.goto('/settings');
+  const keyboardShortcutGroup = page.getByRole('group', {
+    name: translations.settings.labels['keyboard-shortcuts']
+  });
+  await keyboardShortcutGroup
+    .getByRole('button', { name: translations.buttons.on, exact: true })
+    .click();
 });
 
 test.afterEach(
@@ -32,15 +57,7 @@ test.afterEach(
     })
 );
 
-test('User can interact with the app using the keyboard', async ({ page }) => {
-  // Enable keyboard shortcuts
-  await page.goto('/settings');
-  const keyboardShortcutGroup = page.getByRole('group', {
-    name: translations.settings.labels['keyboard-shortcuts']
-  });
-  await keyboardShortcutGroup
-    .getByRole('button', { name: translations.buttons.on, exact: true })
-    .click();
+test('User can use shortcuts in and around the editor', async ({ page }) => {
   // TODO: getByRole('alert', name:
   // translations.flash['keyboard-shortcut-updated']) did not find the alert.
   // Should it a) be an alert and b) have a name?
@@ -73,8 +90,50 @@ test('User can interact with the app using the keyboard', async ({ page }) => {
   await page.keyboard.press('e');
   await expect(getEditors(page)).toBeFocused();
 
-  await page.keyboard.press('Control+Enter');
-  await expect(page.getByText('running test')).toBeVisible();
+  await getEditors(page).press('Escape');
+  await page.keyboard.press('r');
+  await expect(page.locator('.instructions-panel')).toBeFocused();
+});
 
-  // Show shortcuts (shift+/) is covered by the shortcuts-modal tests
+test('User can use shortcuts to navigate between projects', async ({
+  page
+}) => {
+  await page.goto(links.frontEnd1);
+  await expect(page.locator('#editor-layout')).toBeFocused();
+  await page.keyboard.press('Escape');
+  await page.keyboard.press('n');
+
+  await page.waitForURL(links.frontEnd2);
+  await expect(page.locator('#editor-layout')).toBeFocused();
+  await page.keyboard.press('p');
+  await page.keyboard.press('Escape');
+  await page.waitForURL(links.frontEnd1);
+});
+
+test('User can use shortcuts to navigate backend projects', async ({
+  page
+}) => {
+  await page.goto(links.backEnd1);
+  await expect(page.locator('#editor-layout')).toBeFocused();
+  await page.keyboard.press('Escape');
+  await page.keyboard.press('n');
+
+  await page.waitForURL(links.backEnd2);
+  await expect(page.locator('#editor-layout')).toBeFocused();
+  await page.keyboard.press('p');
+  await page.keyboard.press('Escape');
+  await page.waitForURL(links.backEnd1);
+});
+
+test('User can use shortcuts to navigate videos', async ({ page }) => {
+  await page.goto(links.video1);
+  await expect(page.locator('#editor-layout')).toBeFocused();
+  await page.keyboard.press('Escape');
+  await page.keyboard.press('n');
+
+  await page.waitForURL(links.video2);
+  await expect(page.locator('#editor-layout')).toBeFocused();
+  await page.keyboard.press('p');
+  await page.keyboard.press('Escape');
+  await page.waitForURL(links.video1);
 });
