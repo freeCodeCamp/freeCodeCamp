@@ -33,13 +33,13 @@ You should assign your `#score-options span` elements to `scoreSpans`.
 assert.deepEqual(scoreSpans, document.querySelectorAll("#score-options span"));
 ```
 
-You should assign your `#current-round` element to `currentRoundText`.
+You should assign your `#current-round` element to `currentRound`.
 
 ```js
 assert.deepInclude([document.getElementById("current-round"), document.querySelector("#current-round")], currentRound);
 ```
 
-You should assign your `#current-round-rolls` element to `currentRoundRollsText`.
+You should assign your `#current-round-rolls` element to `currentRoundRolls`.
 
 ```js
 assert.deepInclude([document.getElementById("current-round-rolls"), document.querySelector("#current-round-rolls")], currentRoundRolls);
