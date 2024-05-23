@@ -41,7 +41,7 @@ export const XtermTerminal = ({
       if (termContainerRef.current) term.open(termContainerRef.current);
       fitAddon.fit();
 
-      const print = (text?: string) => term?.writeln(`>>> ${text ?? ''}`);
+      const print = (text?: string) => term?.writeln(`${text ?? ''}`);
 
       // TODO: prevent user from moving cursor outside the current input line and
       // handle insertion and deletion properly. While backspace and delete don't

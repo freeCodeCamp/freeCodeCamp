@@ -25,6 +25,7 @@ const sophie = `${characters}/sophie`;
 const tom = `${characters}/tom`;
 const mark = `${characters}/npc`;
 const amy = `${characters}/npc`;
+const deliveryMan = `${characters}/npc`;
 
 export const characterAssets = {
   Alice: {
@@ -89,6 +90,15 @@ export const characterAssets = {
     glasses: null,
     mouthClosed: `${david}/mouth-smile.png`,
     mouthOpen: `${david}/mouth-laugh.png`
+  },
+  'Delivery Man': {
+    base: `${deliveryMan}/man-base.png`,
+    brows: `${deliveryMan}/man-base.png`,
+    eyesClosed: `${deliveryMan}/man-eyes-closed.png`,
+    eyesOpen: `${deliveryMan}/man-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${deliveryMan}/man-mouth-smile.png`,
+    mouthOpen: `${deliveryMan}/man-mouth-laugh.png`
   },
   Expert: {
     base: `${expert}/man-base.png`,

@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-37
 ---
 
-<!--
-AUDIO REFERENCE:
-Brian: Yeah. Wow. You know what? This was really a motivating talk. Thanks for sharing your thoughts.
--->
+<!-- (Audio) Brian: Yeah, wow. You know what? This was really a motivating talk. Thanks for sharing your thoughts. -->
 
 # --description--
 
@@ -18,7 +15,7 @@ In this part of the conversation, Brian talks about how the talk made him feel a
 
 ## --sentence--
 
-`Yeah. Wow. You know what? This was really a _ talk. Thanks for _ your thoughts.`
+`Yeah, wow. You know what? This was really a _ talk. Thanks for _ your thoughts.`
 
 ## --blanks--
 
@@ -35,3 +32,47 @@ This word means something that gives you energy or a reason to do something. It'
 ### --feedback--
 
 This word means giving something that you have to others. It's like when you tell someone your ideas or feelings.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "cafe.png",
+    "characters": [
+      {
+        "character": "Brian",
+        "position": {"x":50,"y":15,"z":1.2},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "4.1-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 70.38,
+      "finishTimestamp": 76.10
+    }
+  },
+  "commands": [
+    {
+      "character": "Brian",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Brian",
+      "startTime": 1,
+      "finishTime": 6.72,
+      "dialogue": {
+        "text": "Yeah, wow. You know what? This was a really motivating talk. Thanks for sharing your thoughts.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Brian",
+      "opacity": 0,
+      "startTime": 7.22
+    }
+  ]
+}
+```

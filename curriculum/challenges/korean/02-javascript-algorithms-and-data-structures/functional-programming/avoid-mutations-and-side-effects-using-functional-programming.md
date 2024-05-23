@@ -1,6 +1,6 @@
 ---
 id: 587d7b8e367417b2b2512b5e
-title: Avoid Mutations and Side Effects Using Functional Programming
+title: 함수형 프로그래밍으로 변형과 부수 효과 피하기
 challengeType: 1
 forumTopicId: 301228
 dashedName: avoid-mutations-and-side-effects-using-functional-programming
@@ -8,39 +8,39 @@ dashedName: avoid-mutations-and-side-effects-using-functional-programming
 
 # --description--
 
-If you haven't already figured it out, the issue in the previous challenge was with the `splice` call in the `tabClose()` function. Unfortunately, `splice` changes the original array it is called on, so the second call to it used a modified array, and gave unexpected results.
+아직 알아채지 못하셨을 수도 있겠지만 이전 과제에서 문제는 `tabClose()` 함수 안에 `splice`에 있었습니다. `splice`는 이 메소드를 호출하는 본래의 배열을 변형시킵니다. 그래서 두 번째 호출은 변형된 배열을 사용하여 예상치 못한 결과를 줬습니다.
 
-This is a small example of a much larger pattern - you call a function on a variable, array, or an object, and the function changes the variable or something in the object.
+이는 더 큰 유형의 일부 예시입니다. 변수, 배열 혹은 객체에 함수를 호출하고 그 함수가 객체 안에 있는 변수 등을 변형시킵니다.
 
-One of the core principles of functional programming is to not change things. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
+함수형 프로그래밍의 주요 원칙 중 하나는 어느 것도 변형시키지 않는 것입니다. 변형은 버그를 만들 수 있습니다. 함수들이 함수 인자 혹은 전역 변수 등 어떤 것도 변형시키지 않는 다는 것을 안다면 버그를 예방하는 것은 쉬워집니다.
 
-The previous example didn't have any complicated operations but the `splice` method changed the original array, and resulted in a bug.
+이전 예시에서는 복잡한 연산이 동반되지 않았음에도 `splice` 메소드는 본래 배열을 변형시켰고 버그를 만들었습니다.
 
-Recall that in functional programming, changing or altering things is called <dfn>mutation</dfn>, and the outcome is called a <dfn>side effect</dfn>. A function, ideally, should be a <dfn>pure function</dfn>, meaning that it does not cause any side effects.
+함수형 프로그래밍에서 변형시킨다는 것은 <dfn>변형(mutation)</dfn>이라고 불리고 그 결과는 <dfn>부수 효과(side effect)</dfn>라고 불린다는 것을 기억하실 겁니다. 함수는 이상적으로 <dfn>순수 함수(pure function)</dfn>이어야 합니다. 이 말은 이 함수는 어떤 부수 효과도 일으키지 않는다는 의미입니다.
 
-Let's try to master this discipline and not alter any variable or object in our code.
+이 규칙을 체득하고 코드에서 변수나 객체를 변형시키지 않으려는 노력을 해야합니다.
 
 # --instructions--
 
-Fill in the code for the function `incrementer` so it returns the value of the global variable `fixedValue` increased by one.
+전역 변수인 `fixedValue`에 1이 증가된 값을 반환할 수 있도록 `incrementer` 함수를 위한 코드를 작성하시오.
 
 # --hints--
 
-Your function `incrementer` should not change the value of `fixedValue` (which is `4`).
+`incrementer` 함수는 `fixedValue`의 값(`4`)을 변형시키지 않아야 합니다.
 
 ```js
 incrementer();
 assert(fixedValue === 4);
 ```
 
-Your `incrementer` function should return a value that is one larger than the `fixedValue` value.
+`incrementer` 함수는 `fixedValue` 값보다 1이 큰 값을 반환해야 합니다.
 
 ```js
 const __newValue = incrementer();
 assert(__newValue === 5);
 ```
 
-Your `incrementer` function should return a value based on the global `fixedValue` variable value.
+`incrementer` 함수는 전역 변수 `fixedValue` 값에 기반한 값을 반환해야 합니다.
 
 ```js
 (function () {

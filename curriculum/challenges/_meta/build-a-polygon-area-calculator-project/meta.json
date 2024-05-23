@@ -1,0 +1,18 @@
+{
+  "name": "Build a Polygon Area Calculator Project",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "build-a-polygon-area-calculator-project",
+  "order": 14,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e444147903586ffb414c94f",
+      "title": "Build a Polygon Area Calculator Project"
+    }
+  ],
+  "helpCategory": "Python"
+}

@@ -1,25 +1,34 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { authedPut } from './utils/request';
+import { authedRequest } from './utils/request';
+import { getEditors } from './utils/editor';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
-const editorPaneLabel =
-  'Editor content;Press Alt+F1 for Accessibility Options.';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeAll(async ({ request }) => {
-  await authedPut(request, 'update-my-keyboard-shortcuts', {
-    keyboardShortcuts: false
+  await authedRequest({
+    request,
+    endpoint: 'update-my-keyboard-shortcuts',
+    method: 'put',
+    data: {
+      keyboardShortcuts: false
+    }
   });
 });
 
 test.afterEach(
   async ({ request }) =>
-    await authedPut(request, 'update-my-keyboard-shortcuts', {
-      keyboardShortcuts: false
+    await authedRequest({
+      request,
+      method: 'put',
+      endpoint: 'update-my-keyboard-shortcuts',
+      data: {
+        keyboardShortcuts: false
+      }
     })
 );
 
@@ -41,9 +50,9 @@ test('User can interact with the app using the keyboard', async ({ page }) => {
 
   await page.goto(course);
 
-  await expect(page.getByLabel(editorPaneLabel)).toBeFocused();
-  await page.getByLabel(editorPaneLabel).press('Escape');
-  await expect(page.getByLabel(editorPaneLabel)).not.toBeFocused();
+  await expect(getEditors(page)).toBeFocused();
+  await getEditors(page).press('Escape');
+  await expect(getEditors(page)).not.toBeFocused();
 
   await page.keyboard.press('n');
   const nextCourse = '**/declare-javascript-variables';
@@ -62,7 +71,7 @@ test('User can interact with the app using the keyboard', async ({ page }) => {
   ).toBeVisible();
 
   await page.keyboard.press('e');
-  await expect(page.getByLabel(editorPaneLabel)).toBeFocused();
+  await expect(getEditors(page)).toBeFocused();
 
   await page.keyboard.press('Control+Enter');
   await expect(page.getByText('running test')).toBeVisible();
