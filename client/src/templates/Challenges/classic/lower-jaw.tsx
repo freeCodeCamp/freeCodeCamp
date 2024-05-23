@@ -221,6 +221,8 @@ const LowerJaw = ({
     challengeIsCompleted && completedPercent === isBlockCompleted;
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+
     // prevent unnecessary updates:
     if (attempts === currentAttempts) return;
     // Attempts should only be zero when the step is reset, so we should reset
@@ -242,14 +244,18 @@ const LowerJaw = ({
       hintRef.current = hint;
 
       //display the test feedback contents.
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setRunningTests(false);
         setIsFeedbackHidden(false);
       }, 300);
     }
+
+    return () => clearTimeout(timeoutId);
   }, [attempts, hint, currentAttempts]);
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+
     if (challengeIsCompleted) {
       // If Ctrl + Enter was used then we don't need to worry about setting
       // focus, just leave it where it is. In NVDA, Ctrl + Enter will trigger
@@ -262,11 +268,13 @@ const LowerJaw = ({
       // Delay focusing Submit button so that screen reader will announce
       // it after the test results.
       setQuote(randomCompliment());
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         submitButtonRef.current?.focus();
         setFocusManagementCompleted(true);
       }, 500);
     }
+
+    return () => clearTimeout(timeoutId);
   }, [challengeIsCompleted]);
 
   // ToDo: turn it into a grid to remove the need for useEffect.
