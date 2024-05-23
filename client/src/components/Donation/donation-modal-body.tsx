@@ -124,16 +124,20 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
 };
 
 const AnimationContainer = ({
-  setIsAnimationVisible
+  secondsRemaining
 }: {
-  setIsAnimationVisible: (arg: boolean) => void;
+  secondsRemaining: number;
 }) => {
   const { t } = useTranslation();
   return (
     <>
-      <p style={{ opacity: 0, position: 'absolute' }}>
-        {t('donate.animation-description')}{' '}
-      </p>
+      <div style={{ opacity: 0, position: 'absolute' }}>
+        <p>{t('donate.animation-description')}</p>
+        <span aria-live='polite'>
+          {t('donate.animation-countdown', { secondsRemaining })}
+        </span>
+      </div>
+
       <div className='donation-animation-container' aria-hidden='true'>
         <div className='donation-animation-bullet-points'>
           <p className='donation-animation-bullet-1'>
@@ -150,19 +154,13 @@ const AnimationContainer = ({
           </p>
         </div>
         <img
+          key={Date.now()}
           alt=''
           src={donationAnimation}
           id={'donation-animation'}
           data-playwright-test-label='not-found-image'
         />
       </div>
-      <button
-        style={{ opacity: 0, position: 'absolute' }}
-        className={'sr-only'}
-        onClick={() => setIsAnimationVisible(false)}
-      >
-        {t('buttons.skip-advertisement')}
-      </button>
     </>
   );
 };
@@ -226,24 +224,33 @@ function DonationModalBody({
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
   const [isAnimationVisible, setIsAnimationVisible] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const [secondsRemaining, setSecondsRemaining] = useState(20);
+
   const handleProcessing = () => {
     setDonationAttempted(true);
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimationVisible(false);
-    }, 20000); // 20000 milliseconds = 20 seconds
+    const interval = setInterval(() => {
+      setSecondsRemaining(prevSeconds => {
+        if (prevSeconds > 0) {
+          return prevSeconds - 1;
+        } else {
+          setIsAnimationVisible(false);
+          clearInterval(interval);
+          return 0;
+        }
+      });
+    }, 1000);
 
-    // Clear the timer if the component unmounts
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <Modal.Body borderless alignment='start'>
       <div aria-live='polite' className='donation-modal'>
         {isAnimationVisible ? (
-          <AnimationContainer setIsAnimationVisible={setIsAnimationVisible} />
+          <AnimationContainer secondsRemaining={secondsRemaining} />
         ) : (
           <BecomeASupporterConfirmation
             recentlyClaimedBlock={recentlyClaimedBlock}

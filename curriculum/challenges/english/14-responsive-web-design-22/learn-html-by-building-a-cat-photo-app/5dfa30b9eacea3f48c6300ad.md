@@ -21,7 +21,7 @@ Turn the image into a link by surrounding it with necessary element tags. Use `h
 
 # --hints--
 
-You should have an `img` element with an `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. You may have accidentally deleted it.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. You may have accidentally deleted it.
 
 ```js
 assert(
