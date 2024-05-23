@@ -633,13 +633,40 @@ describe('userRoutes', () => {
           joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
           // the following properties are defaults provided if the field is
           // missing in the user document.
+          currentChallengeId: '',
           completedChallenges: [],
           completedExams: [],
           completedSurveys: [],
           partiallyCompletedChallenges: [],
           portfolio: [],
           savedChallenges: [],
-          yearsTopContributor: []
+          yearsTopContributor: [],
+          is2018DataVisCert: false,
+          is2018FullStackCert: false,
+          isApisMicroservicesCert: false,
+          isBackEndCert: false,
+          isCheater: false,
+          isCollegeAlgebraPyCertV8: false,
+          isDataAnalysisPyCertV7: false,
+          isDataVisCert: false,
+          isFoundationalCSharpCertV8: false,
+          isFrontEndCert: false,
+          isFrontEndLibsCert: false,
+          isFullStackCert: false,
+          isHonest: false,
+          isInfosecCertV7: false,
+          isInfosecQaCert: false,
+          isJsAlgoDataStructCert: false,
+          isJsAlgoDataStructCertV8: false,
+          isMachineLearningPyCertV7: false,
+          isQaCertV7: false,
+          isRelationalDatabaseCertV8: false,
+          isRespWebDesignCert: false,
+          isSciCompPyCertV7: false,
+          keyboardShortcuts: false,
+          location: '',
+          name: '',
+          theme: 'default'
         };
 
         const response = await superRequest('/user/get-session-user', {

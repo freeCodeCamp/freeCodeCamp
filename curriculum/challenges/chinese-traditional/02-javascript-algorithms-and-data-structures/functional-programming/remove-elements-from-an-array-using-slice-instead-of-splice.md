@@ -39,7 +39,7 @@ assert(__helpers.removeJSComments(code).match(/\.slice/g));
 assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 ```
 
-You should not mutate the original array passed to the function.
+你不應該改變傳遞給函數的原始數組。
 
 ```js
 assert.deepEqual(_inputCities, ["Chicago", "Delhi", "Islamabad", "London", "Berlin"]);

@@ -16,7 +16,7 @@ import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
-import { Link, FullWidthRow } from '../../helpers';
+import { Link, FullWidthRow, Spacer } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import TimelinePagination from './timeline-pagination';
@@ -176,7 +176,8 @@ function TimelineInner({
 
   return (
     <FullWidthRow>
-      <h2 className='text-center'>{t('profile.timeline')}</h2>
+      <h2>{t('profile.timeline')}</h2>
+      <Spacer size='small' />
       {completedMap.length === 0 ? (
         <p className='text-center'>
           {t('profile.none-completed')}&nbsp;

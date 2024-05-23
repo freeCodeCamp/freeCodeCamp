@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { authedPut } from './utils/request';
+import { authedRequest } from './utils/request';
 import { getEditors } from './utils/editor';
 
 const course =
@@ -10,15 +10,25 @@ const course =
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeAll(async ({ request }) => {
-  await authedPut(request, 'update-my-keyboard-shortcuts', {
-    keyboardShortcuts: false
+  await authedRequest({
+    request,
+    endpoint: 'update-my-keyboard-shortcuts',
+    method: 'put',
+    data: {
+      keyboardShortcuts: false
+    }
   });
 });
 
 test.afterEach(
   async ({ request }) =>
-    await authedPut(request, 'update-my-keyboard-shortcuts', {
-      keyboardShortcuts: false
+    await authedRequest({
+      request,
+      method: 'put',
+      endpoint: 'update-my-keyboard-shortcuts',
+      data: {
+        keyboardShortcuts: false
+      }
     })
 );
 

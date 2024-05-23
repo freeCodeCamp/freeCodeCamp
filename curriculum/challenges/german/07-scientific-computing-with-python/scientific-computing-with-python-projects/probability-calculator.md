@@ -48,7 +48,7 @@ probability = experiment(hat=hat,
 The output would be something like this:
 
 ```bash
->>> 0.356
+0.356
 ```
 
 Da dies auf zufälligen Ziehungen basiert, wird die Wahrscheinlichkeit jedes Mal, wenn der Code ausgeführt wird, etwas anders sein.
@@ -92,7 +92,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -137,7 +137,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -180,7 +180,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });
@@ -227,7 +227,7 @@ reload(test_module)
 t = main(module='test_module', exit=False)
 t.result.wasSuccessful()
 `;
-    const out = __pyodide.runPython(testCode);
+    const out = runPython(testCode);
     assert(out);
   },
 });

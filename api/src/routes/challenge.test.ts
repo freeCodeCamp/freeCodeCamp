@@ -4,6 +4,7 @@ const mockVerifyTrophyWithMicrosoft = jest.fn();
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
+import { Static } from '@fastify/type-provider-typebox';
 
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import {
@@ -13,24 +14,26 @@ import {
   superRequest,
   seedExam,
   defaultUserEmail,
-  createSuperRequest
+  createSuperRequest,
+  defaultUsername
 } from '../../jest.utils';
 import {
-  completedExamChallenge2,
-  completedExamChallenge3,
-  completedExamChallenge4,
+  completedExamChallengeOneCorrect,
+  completedExamChallengeTwoCorrect,
+  completedExamChallengeAllCorrect,
   completedTrophyChallenges,
   examChallengeId,
-  mockResults1,
-  mockResults2,
-  mockResults3,
-  mockResults4,
-  userExam1,
-  userExam2,
-  userExam3,
-  userExam4
+  mockResultsZeroCorrect,
+  mockResultsTwoCorrect,
+  mockResultsAllCorrect,
+  examWithZeroCorrect,
+  examWithOneCorrect,
+  examWithTwoCorrect,
+  examWithAllCorrect,
+  type ExamSubmission
 } from '../../__mocks__/exam';
 import { Answer } from '../utils/exam-types';
+import type { getSessionUser } from '../schemas/user/get-session-user';
 
 jest.mock('./helpers/challenge-helpers', () => {
   const originalModule = jest.requireActual<
@@ -1493,173 +1496,184 @@ describe('challengeRoutes', () => {
           });
         });
 
-        test('POST handles submitting a failing exam', async () => {
-          const now = Date.now();
-
-          // Submit exam with 0 correct answers
-          const response = await superRequest('/exam-challenge-completed', {
+        const submitExam = async (exam: ExamSubmission) => {
+          return superRequest('/exam-challenge-completed', {
             method: 'POST',
             setCookies
           }).send({
             id: examChallengeId,
             challengeType: 17,
-            userCompletedExam: userExam1
+            userCompletedExam: exam
           });
+        };
 
-          const {
-            completedChallenges = [],
-            completedExams = [],
-            progressTimestamps = []
-          } = (await fastifyTestInstance.prisma.user.findFirst({
-            where: { email: 'foo@bar.com' }
-          })) || {};
+        test('POST handles submitting a failing exam', async () => {
+          const now = Date.now();
+
+          // Submit exam with 0 correct answers
+          const response = await submitExam(examWithZeroCorrect);
+
+          type GetSessionUserResponseBody = Static<
+            (typeof getSessionUser)['response']['200']
+          >['user'];
+
+          const res = (await superGet('/user/get-session-user')).body as {
+            user: GetSessionUserResponseBody;
+          };
+
+          const { completedChallenges, completedExams, calendar } =
+            res.user[defaultUsername]!;
 
           // should have the 1 prerequisite challenge
           expect(completedChallenges).toHaveLength(1);
           expect(completedExams).toHaveLength(1);
-          expect(progressTimestamps).toHaveLength(0);
-          expect(completedChallenges).toMatchObject(completedTrophyChallenges);
-          expect(completedExams[0]).toMatchObject({
+          expect(calendar).toStrictEqual({});
+          expect(completedChallenges).toEqual(completedTrophyChallenges);
+          expect(completedExams[0]).toEqual({
             id: '647e22d18acb466c97ccbef8',
             challengeType: 17,
-            examResults: mockResults1
+            completedDate: expect.any(Number),
+            examResults: mockResultsZeroCorrect
           });
 
           expect(completedExams[0]?.completedDate).toBeGreaterThan(now);
           expect(response.body).toMatchObject({
             points: 0,
             alreadyCompleted: false,
-            examResults: mockResults1
+            examResults: mockResultsZeroCorrect
           });
           expect(response.statusCode).toBe(200);
         });
 
-        test('POST handles submitting multiple passing exams', async () => {
-          // Submit exam with 2/3 correct answers
-          const nowA = Date.now();
-          const responseA = await superRequest('/exam-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            id: examChallengeId,
-            challengeType: 17,
-            userCompletedExam: userExam3
-          });
+        test("POST always adds to the user's completedExams", async () => {
+          let now = Date.now();
+          // The first exam should be stored in the user's completedExams
+          await submitExam(examWithAllCorrect);
 
-          const userA = await fastifyTestInstance.prisma.user.findFirst({
+          let { completedExams } =
+            await fastifyTestInstance.prisma.user.findFirstOrThrow({
+              where: { id: defaultUserId }
+            });
+
+          expect(completedExams).toHaveLength(1);
+          expect(completedExams[0]).toEqual(completedExamChallengeAllCorrect);
+          expect(completedExams[0]?.completedDate).toBeGreaterThan(now);
+          expect(completedExams[0]?.completedDate).toBeLessThan(Date.now());
+
+          now = Date.now();
+          // the second exam should be added to the exams, not replace the first
+          await submitExam(examWithOneCorrect);
+
+          completedExams = (
+            await fastifyTestInstance.prisma.user.findFirstOrThrow({
+              where: { id: defaultUserId }
+            })
+          ).completedExams;
+
+          expect(completedExams).toHaveLength(2);
+          expect(completedExams).toEqual(
+            expect.arrayContaining([
+              completedExamChallengeAllCorrect,
+              completedExamChallengeOneCorrect
+            ])
+          );
+          expect(completedExams[1]?.completedDate).toBeGreaterThan(now);
+          expect(completedExams[1]?.completedDate).toBeLessThan(Date.now());
+        });
+
+        test('POST updates user progress if they have not completed the exam before', async () => {
+          // Submit exam with 2/3 correct answers
+          const now = Date.now();
+          const res = await submitExam(examWithTwoCorrect);
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { id: defaultUserId }
           });
-
-          const completedChallengesA = userA?.completedChallenges || [];
-          const completedExamsA = userA?.completedExams || [];
-          const progressTimestampsA = userA?.progressTimestamps || [];
 
           // should add to completedChallenges
-          expect(completedChallengesA).toHaveLength(2);
-          expect(completedChallengesA).toMatchObject([
+          expect(user.completedChallenges).toHaveLength(2);
+          expect(user.completedChallenges).toMatchObject([
             ...completedTrophyChallenges,
-            completedExamChallenge3
+            completedExamChallengeTwoCorrect
           ]);
-          expect(completedChallengesA[1]?.completedDate).toBeGreaterThan(nowA);
-
-          // should add to completedExams
-          expect(completedExamsA).toHaveLength(1);
-          expect(completedExamsA[0]).toMatchObject(completedExamChallenge3);
-          expect(completedExamsA[0]?.completedDate).toBeGreaterThan(nowA);
+          expect(user.completedChallenges[1]?.completedDate).toBeGreaterThan(
+            now
+          );
 
           // should add to progressTimestamps
-          expect(progressTimestampsA).toHaveLength(1);
+          expect(user.progressTimestamps).toHaveLength(1);
 
-          expect(responseA.body).toMatchObject({
+          expect(res.body).toMatchObject({
             points: 1,
             alreadyCompleted: false,
-            examResults: mockResults3
+            examResults: mockResultsTwoCorrect
           });
-          expect(responseA.statusCode).toBe(200);
+          expect(res.statusCode).toBe(200);
+        });
 
-          // Submit exam with 1/3 correct answers (worse exam than already submitted)
-          const now2 = Date.now();
-          const response2 = await superRequest('/exam-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            id: examChallengeId,
-            challengeType: 17,
-            userCompletedExam: userExam2
-          });
+        test('POST does not update user progress if new exam is not an improvement', async () => {
+          // Submit exam with 2/3 correct answers
+          await submitExam(examWithTwoCorrect);
 
-          const user2 = await fastifyTestInstance.prisma.user.findFirst({
+          const user1 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { id: defaultUserId }
           });
 
-          const completedChallenges2 = user2?.completedChallenges || [];
-          const completedExams2 = user2?.completedExams || [];
-          const progressTimestamps2 = user2?.progressTimestamps || [];
+          // Submit exam with 2/3 correct answers (no improvement)
+          const res2 = await submitExam(examWithTwoCorrect);
 
-          // should not add to or update completedChallenges
-          expect(completedChallenges2).toHaveLength(2);
-          expect(completedChallenges2).toMatchObject([
-            ...completedTrophyChallenges,
-            // should still have old completed challenge (should not update)
-            completedExamChallenge3
-          ]);
-          expect(completedChallenges2[1]?.completedDate).toBeLessThan(now2);
+          const user2 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { id: defaultUserId }
+          });
 
-          // should add to completedExams
-          expect(completedExams2).toHaveLength(2);
-          expect(completedExams2[1]).toMatchObject(completedExamChallenge2);
-          expect(completedExams2[1]?.completedDate).toBeGreaterThan(nowA);
+          // should not update user progress
+          expect(user2.completedChallenges).toEqual(user1.completedChallenges);
+          expect(user2.progressTimestamps).toEqual(user1.progressTimestamps);
 
-          // should not add to progressTimestamps
-          expect(progressTimestamps2).toHaveLength(1);
-
-          expect(response2.body).toMatchObject({
+          expect(res2.body).toMatchObject({
             points: 1,
             alreadyCompleted: true,
-            examResults: mockResults2
+            examResults: mockResultsTwoCorrect
           });
-          expect(response2.statusCode).toBe(200);
+          expect(res2.statusCode).toBe(200);
+        });
 
-          // Submit exam with 3/3 correct answers (better exam than already submitted)
-          const now3 = Date.now();
-          const response3 = await superRequest('/exam-challenge-completed', {
-            method: 'POST',
-            setCookies
-          }).send({
-            id: examChallengeId,
-            challengeType: 17,
-            userCompletedExam: userExam4
-          });
+        test('POST updates user progress if exam is an improvement', async () => {
+          // Submit exam with 2/3 correct answers
+          await submitExam(examWithTwoCorrect);
+          const user1 = await fastifyTestInstance.prisma.user.findUniqueOrThrow(
+            {
+              where: { id: defaultUserId }
+            }
+          );
 
-          const user3 = await fastifyTestInstance.prisma.user.findFirst({
+          // Submit improved exam
+          const res = await submitExam(examWithAllCorrect);
+
+          const user2 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          const completedChallenges3 = user3?.completedChallenges || [];
-          const completedExams3 = user3?.completedExams || [];
-          const progressTimestamps3 = user3?.progressTimestamps || [];
-
           // should update existing completedChallenge
-          expect(completedChallenges3).toHaveLength(2);
-          expect(completedChallenges3).toMatchObject([
+          expect(user2.completedChallenges).toHaveLength(2);
+          expect(user2.completedChallenges).toMatchObject([
             ...completedTrophyChallenges,
-            completedExamChallenge4
+            completedExamChallengeAllCorrect
           ]);
-          expect(completedChallenges3[1]?.completedDate).toBeLessThan(now3);
+          expect(user2.completedChallenges[1]?.completedDate).toEqual(
+            user1.completedChallenges[1]?.completedDate
+          );
 
-          // should add to completedExams
-          expect(completedExams3).toHaveLength(3);
-          expect(completedExams3[2]).toMatchObject(completedExamChallenge4);
-          expect(completedExams3[2]?.completedDate).toBeGreaterThan(now3);
+          // they have not completed anything new, so progressTimestamps should
+          // remain the same
+          expect(user2.progressTimestamps).toEqual(user1.progressTimestamps);
 
-          expect(progressTimestamps3).toHaveLength(1);
-
-          expect(response3.body).toMatchObject({
+          expect(res.body).toMatchObject({
             points: 1,
             alreadyCompleted: true,
-            examResults: mockResults4
+            examResults: mockResultsAllCorrect
           });
-          expect(response3.statusCode).toBe(200);
+          expect(res.statusCode).toBe(200);
         });
       });
     });

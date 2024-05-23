@@ -87,10 +87,12 @@ test.describe('Profile component', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/certifieduser');
 
-      // The following line is required if you're running the test in local development
-      // await page
-      //   .getByRole('button', { name: 'Preview custom 404 page' })
-      //   .click();
+      // If you build the client locally, delete the button click below.
+      if (!process.env.CI) {
+        await page
+          .getByRole('button', { name: 'Preview custom 404 page' })
+          .click();
+      }
     });
 
     test('renders the camper profile correctly', async ({ page }) => {
@@ -112,9 +114,11 @@ test.describe('Profile component', () => {
       await expect(page.getByText('Full Stack User')).toBeVisible();
       await expect(page.getByText('Joined November 2020')).toBeVisible();
       await expect(
-        page.getByRole('link', { name: 'Top Contributor' })
+        page.getByText(translations.profile.contributor)
       ).toBeVisible();
-      await expect(page.getByText('2019')).toBeVisible();
+      expect(
+        await page.locator('.badge-card-description').textContent()
+      ).toContain('Among most prolific volunteers');
     });
 
     test('renders total points correctly', async ({ page }) => {
@@ -174,6 +178,7 @@ test.describe('Profile component', () => {
     test('should not show portfolio when empty', async ({ page }) => {
       // @certifieduser doesn't have portfolio information
       await expect(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         page.getByText(translations.profile.projects)
       ).not.toBeVisible();
     });
@@ -193,10 +198,12 @@ test.describe('Profile component', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/publicUser');
 
-      // The following line is required if you're running the test in local development
-      // await page
-      //   .getByRole('button', { name: 'Preview custom 404 page' })
-      //   .click();
+      // If you build the client locally, delete the button click below.
+      if (!process.env.CI) {
+        await page
+          .getByRole('button', { name: 'Preview custom 404 page' })
+          .click();
+      }
     });
 
     test.describe('while logged in', () => {
