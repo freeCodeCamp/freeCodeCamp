@@ -14,7 +14,7 @@ No arquivo `script.js`, você tem as variáveis `price` e `cid`. A variável `pr
 
 A outra variável que você precisará adicionar é a variável `cash`, que é a quantidade de dinheiro dada pelo cliente pelo 'item', providenciado por um elemento `input` na página.
 
-If you'd like to test your application with different values for `price` and `cid`, make sure to declare them with the `let` keyword so they can be reassigned by our tests.
+Se quiser testar sua aplicação com valores diferentes para `price` e `cid`, declare-os com a palavra-chave `let` para que possam ser reatribuídos em nossos testes.
 
 Your application should show different messages depending on the price of the item, the amount of cash provided by the customer, and the amount of cash in the drawer:
 
