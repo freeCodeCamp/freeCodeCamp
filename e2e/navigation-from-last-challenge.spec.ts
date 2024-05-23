@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import solution from './fixtures/build-a-personal-portfolio-webpage.json';
-import { focusEditor } from './utils/editor';
+import { clearEditor, focusEditor } from './utils/editor';
 import { isMacOS } from './utils/user-agent';
 
 // middle of block
@@ -66,7 +66,8 @@ test.describe('Should take you to the next superblock (with editor solution)', (
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await page.goto(rwdChallenge.url);
-    await focusEditor({ page, isMobile, browserName });
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
 
     await page.evaluate(
       async solution => await navigator.clipboard.writeText(solution.content),
@@ -79,8 +80,7 @@ test.describe('Should take you to the next superblock (with editor solution)', (
       await page.keyboard.press('Control+v');
     }
 
-    await page.keyboard.down('Control');
-    await page.keyboard.press('Enter');
+    await page.keyboard.press('Control+Enter');
 
     await page
       .getByRole('button', { name: 'Submit and go to next challenge' })
