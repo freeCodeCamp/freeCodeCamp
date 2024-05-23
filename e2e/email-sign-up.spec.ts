@@ -137,12 +137,12 @@ test.describe('Email sign-up page when user is signed in', () => {
       )
     ).toBeVisible();
 
-    const signupButton = page.getByRole('button', {
+    const noThanksButton = page.getByRole('button', {
       name: translations.buttons['no-thanks']
     });
 
-    await expect(signupButton).toBeVisible();
-    await signupButton.click();
+    await expect(noThanksButton).toBeVisible();
+    await noThanksButton.click();
 
     // The user is signed in and automatically redirected to /learn after clicking the button.
     // We wait for the navigation to complete.
