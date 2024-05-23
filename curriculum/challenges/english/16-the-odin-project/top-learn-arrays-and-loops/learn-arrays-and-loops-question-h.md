@@ -32,6 +32,7 @@ const newStrings = strings.filter((string) => {
   return string.length > 5;
 });
 
+console.log(newStrings);
 ```
 
 ## --answers--

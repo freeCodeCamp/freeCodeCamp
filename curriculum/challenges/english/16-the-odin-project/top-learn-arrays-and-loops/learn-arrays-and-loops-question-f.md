@@ -46,19 +46,35 @@ for (let i = 1; i < items.length; i++) {
 
 ## --answers--
 
-`['apple', 'banana', 'cherry', 'date']`
+```
+apple
+banana
+cherry
+date
+```
 
 ---
 
-`['banana', 'cherry']`
+```
+banana
+cherry
+```
 
 ---
 
-`['apple', 'banana', 'cherry']`
+```
+apple
+banana
+cherry
+```
 
 ---
 
-`['banana', 'cherry', 'date']`
+```
+banana
+cherry
+date
+```
 
 ## --video-solution--
 

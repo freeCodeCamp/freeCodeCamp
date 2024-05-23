@@ -23,7 +23,7 @@ If the index is out of range, JavaScript will return `undefined`. Meaning that i
 
 ## --text--
 
-What is the index number of the fourth element in the `fruits` array?
+What is the element at the fourth index of the `fruits` array?
 
 ## --answers--
 
