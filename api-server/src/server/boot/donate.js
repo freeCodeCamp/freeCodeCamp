@@ -62,7 +62,7 @@ export default function donateBoot(app, done) {
       if (isSubscriptionActive && isProductIdValid && isSubscribedInMinutes) {
         const donatingUser = user
           ? user
-          : User.findOrCreate({ where: { email } });
+          : await User.findOrCreate({ where: { email } }, { email });
 
         let donation = {
           email,
