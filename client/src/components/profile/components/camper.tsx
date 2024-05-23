@@ -82,7 +82,7 @@ function Camper({
                   <h3>{t('profile.contributor')}</h3>
                   <p>
                     {t('profile.contributor-prolific', {
-                      year: yearsTopContributor
+                      year: yearsTopContributor.join(', ')
                     })}
                   </p>
                 </div>

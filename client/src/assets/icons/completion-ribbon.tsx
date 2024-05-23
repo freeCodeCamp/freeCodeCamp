@@ -7,18 +7,6 @@ interface RibbonProps {
   showNumbers?: boolean;
 }
 
-export const Arrow = () => (
-  <svg
-    width='14'
-    height='35'
-    viewBox='0 0 14 35'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path d='M7 0V30' stroke='var(--secondary-color)' strokeWidth='2' />
-  </svg>
-);
-
 export const RibbonIcon = ({
   value,
   isCompleted: completed,
