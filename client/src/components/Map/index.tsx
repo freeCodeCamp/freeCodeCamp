@@ -83,6 +83,11 @@ function MapLi({
   showNumbers?: boolean;
   index: number;
 }) {
+  const isLegacy = [
+    SuperBlocks.RespWebDesign,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.JsAlgoDataStruct
+  ].includes(superBlock);
   return (
     <>
       <li
@@ -93,12 +98,14 @@ function MapLi({
           <div
             className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
           >
-            <RibbonIcon
-              value={index + 1}
-              showNumbers={showNumbers}
-              isCompleted={completed}
-              isClaimed={claimed}
-            />
+            {!isLegacy && (
+              <RibbonIcon
+                value={index + 1}
+                showNumbers={showNumbers}
+                isCompleted={completed}
+                isClaimed={claimed}
+              />
+            )}
           </div>
         </div>
 
