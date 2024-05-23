@@ -799,37 +799,37 @@ Happy coding!
         expect(user?.isClassroomAccount).toEqual(false);
       });
     });
+  });
 
-    describe('Unauthenticated User', () => {
-      let setCookies: string[];
+  describe('Unauthenticated User', () => {
+    let setCookies: string[];
 
-      // Get the CSRF cookies from an unprotected route
-      beforeAll(async () => {
-        const res = await superRequest('/status/ping', { method: 'GET' });
-        setCookies = res.get('Set-Cookie');
-      });
+    // Get the CSRF cookies from an unprotected route
+    beforeAll(async () => {
+      const res = await superRequest('/status/ping', { method: 'GET' });
+      setCookies = res.get('Set-Cookie');
+    });
 
-      const endpoints: { path: string; method: 'PUT' }[] = [
-        { path: '/update-my-profileui', method: 'PUT' },
-        { path: '/update-my-theme', method: 'PUT' },
-        { path: '/update-my-username', method: 'PUT' },
-        { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
-        { path: '/update-my-socials', method: 'PUT' },
-        { path: '/update-my-quincy-email', method: 'PUT' },
-        { path: '/update-my-about', method: 'PUT' },
-        { path: '/update-my-honesty', method: 'PUT' },
-        { path: '/update-privacy-terms', method: 'PUT' },
-        { path: '/update-my-portfolio', method: 'PUT' }
-      ];
+    const endpoints: { path: string; method: 'PUT' }[] = [
+      { path: '/update-my-profileui', method: 'PUT' },
+      { path: '/update-my-theme', method: 'PUT' },
+      { path: '/update-my-username', method: 'PUT' },
+      { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
+      { path: '/update-my-socials', method: 'PUT' },
+      { path: '/update-my-quincy-email', method: 'PUT' },
+      { path: '/update-my-about', method: 'PUT' },
+      { path: '/update-my-honesty', method: 'PUT' },
+      { path: '/update-privacy-terms', method: 'PUT' },
+      { path: '/update-my-portfolio', method: 'PUT' }
+    ];
 
-      endpoints.forEach(({ path, method }) => {
-        test(`${method} ${path} returns 401 status code with error message`, async () => {
-          const response = await superRequest(path, {
-            method,
-            setCookies
-          });
-          expect(response.statusCode).toBe(401);
+    endpoints.forEach(({ path, method }) => {
+      test(`${method} ${path} returns 401 status code with error message`, async () => {
+        const response = await superRequest(path, {
+          method,
+          setCookies
         });
+        expect(response.statusCode).toBe(401);
       });
     });
   });
