@@ -21,7 +21,7 @@ import {
   currentCertsSelector
 } from '../../redux/selectors';
 
-import { RibbonIcon, Arrow } from '../../assets/icons/completion-ribbon';
+import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
 import {
   CurrentCert,
@@ -69,19 +69,17 @@ const mapStateToProps = createSelector(
 function MapLi({
   superBlock,
   landing = false,
-  last = false,
   completed,
   claimed,
-  showArrows = false,
+  showProgressionLines = false,
   showNumbers = false,
   index
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
-  last?: boolean;
   completed: boolean;
   claimed: boolean;
-  showArrows?: boolean;
+  showProgressionLines?: boolean;
   showNumbers?: boolean;
   index: number;
 }) {
@@ -92,16 +90,15 @@ function MapLi({
         data-playwright-test-label='curriculum-map-button'
       >
         <div className='progress-icon-wrapper'>
-          <div className='progress-icon'>
+          <div
+            className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
+          >
             <RibbonIcon
               value={index + 1}
               showNumbers={showNumbers}
               isCompleted={completed}
               isClaimed={claimed}
             />
-          </div>
-          <div className='progression-arrow'>
-            {!last && showArrows && <Arrow />}
           </div>
         </div>
 
@@ -182,10 +179,9 @@ function Map({
             landing={forLanding}
             index={i}
             claimed={isClaimed(superBlock)}
-            showArrows={true}
+            showProgressionLines={true}
             showNumbers={true}
             completed={allSuperblockChallengesCompleted(superBlock)}
-            last={i + 1 == coreCurriculum.length}
           />
         ))}
       </ul>
@@ -202,7 +198,6 @@ function Map({
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
-            last={i + 1 == superBlockOrder[SuperBlockStages.English].length}
           />
         ))}
       </ul>
@@ -219,9 +214,6 @@ function Map({
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
-            last={
-              i + 1 == superBlockOrder[SuperBlockStages.Professional].length
-            }
           />
         ))}
       </ul>
@@ -238,7 +230,6 @@ function Map({
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
-            last={i + 1 == superBlockOrder[SuperBlockStages.Extra].length}
           />
         ))}
       </ul>
@@ -255,7 +246,6 @@ function Map({
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
-            last={i + 1 == superBlockOrder[SuperBlockStages.Legacy].length}
           />
         ))}
       </ul>
@@ -274,9 +264,6 @@ function Map({
                 completed={allSuperblockChallengesCompleted(superBlock)}
                 index={i}
                 claimed={isClaimed(superBlock)}
-                last={
-                  i + 1 == superBlockOrder[SuperBlockStages.Upcoming].length
-                }
               />
             ))}
           </ul>

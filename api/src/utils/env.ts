@@ -104,6 +104,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
+export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
