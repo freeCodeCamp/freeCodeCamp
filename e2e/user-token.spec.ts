@@ -3,8 +3,13 @@ import { test, expect } from '@playwright/test';
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeEach(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --donor');
+  execSync('node ./tools/scripts/seed/seed-demo-user');
 });
+
+test.afterAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+});
+
 test.describe('Initially', () => {
   test('should not render', async ({ page }) => {
     await page.goto('/settings');
