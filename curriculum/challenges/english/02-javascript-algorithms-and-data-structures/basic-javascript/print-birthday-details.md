@@ -58,7 +58,7 @@ Teen variables `birthDate`,`birthMonth` aur `birthYear` create karein janam din,
 
 **Hints**
 
-Click on this <a=href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
+Click on this <a href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
 
 1. Prompt 1:  How can I set up the variables to hold the birth information?"
 2. Prompt 2:  I have the birth details stored, but how do I display them in the right order with labels?

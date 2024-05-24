@@ -35,7 +35,7 @@ Swap the values of `a` and `b` without using a third variable.
 
 **Hints** 
 
-Click on this <a=href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompt.
+Click on this <a href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompt.
 
 1. Prompt: Can you manipulate the variables with math to achieve the swap without a temporary one? 
 

@@ -36,7 +36,7 @@ Ek program likho jo temperature ko Celsius se Fahrenheit mein convert kare, form
 
 **Hints** 
 
-Click on this <a=href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
+Click on this <a href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
 
 1. Prompt 1: How can we translate it into JavaScript using variables and operators?
 2. Prompt 2: How can we use them in code to calculate the Fahrenheit temperature?

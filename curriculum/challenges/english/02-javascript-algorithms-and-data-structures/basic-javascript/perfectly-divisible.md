@@ -50,7 +50,7 @@ Create a variable named `largestNumber` that stores the value.
 
 **Hints** 
 
-Click on this <a=href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompts.
+Click on this <a href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompts.
 
 1. Prompt: How can we adjust division to ensure a whole number in the result? 
 

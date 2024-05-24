@@ -20,7 +20,7 @@ Ek program likhiye jo user se do numbers poochhe aur phir unki values ko swap ka
 
 **Hints** 
 
-Click on this <a=href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
+Click on this <a href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
 
 1. Prompt 1:  How can we store the two user-entered numbers in variables? 
 2. Prompt 2:  How can the helper put the first number in its new place?

@@ -26,7 +26,7 @@ Create a variable named `result` to store the value.
 
 **Hints**
 
-Click on this <a=href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompt.
+Click on this <a href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompt.
 
 1. Prompt: What mathematical operation can help us identify even or odd?
 

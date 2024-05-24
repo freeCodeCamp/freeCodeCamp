@@ -25,7 +25,7 @@ Create a variable named `lastDigit`.
 
 **Hints**
 
-Click on this <a=href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompt.
+Click on this <a href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompt.
 
 1. Prompt:  How can we use that special symbol (%) to grab the last digit of a number we get from the user?
 
