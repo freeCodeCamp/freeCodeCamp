@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import { expect, test } from '@playwright/test';
 
 test.describe('Public profile certifications', () => {
@@ -37,5 +38,9 @@ test.describe('Public profile certifications', () => {
 
     await page.waitForURL('/certifiedboozer');
     await expect(page.getByTestId('claimed-certification')).toHaveCount(19);
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 });
