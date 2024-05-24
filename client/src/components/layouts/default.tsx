@@ -255,9 +255,10 @@ function DefaultLayout({
           !examInProgress &&
           (!isMobileLayout ||
             (isMobileLayout &&
-              ((superBlock != SuperBlocks.RespWebDesignNew &&
-                superBlock != SuperBlocks.JsAlgoDataStructNew &&
-                superBlock != SuperBlocks.SciCompPy) ||
+              (/project$/.test(block as string) ||
+                (superBlock != SuperBlocks.RespWebDesignNew &&
+                  superBlock != SuperBlocks.JsAlgoDataStructNew &&
+                  superBlock != SuperBlocks.SciCompPy) ||
                 !isMobileHeight))) ? (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
