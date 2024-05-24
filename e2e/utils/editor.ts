@@ -1,17 +1,12 @@
 import { type Page } from '@playwright/test';
 
-/**
- * Retrieves any editor elements on the page.
- * @param page - The Playwright page object.
- * @returns The editor elements.
- */
-export function getEditors(page: Page) {
+export const getEditors = (page: Page) => {
   return page.getByLabel(
     'Editor content;Press Alt+F1 for Accessibility Options'
   );
-}
+};
 
-export async function focusEditor({
+export const focusEditor = async ({
   page,
   isMobile,
   browserName
@@ -19,7 +14,15 @@ export async function focusEditor({
   page: Page;
   isMobile: boolean;
   browserName: string;
-}) {
+}) => {
+  if (isMobile) {
+    const codeBtn = page.getByRole('tab', { name: 'Code' });
+    // The outer div intercepts the click action of its children,
+    // preventing Playwright from verifying if the children actually receive the click.
+    // In reality, the children do receive the click, so we bypass that check here.
+    await codeBtn.click({ force: true });
+  }
+
   // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
   // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
   // in place of `.click()` to focus on the editor.
@@ -29,7 +32,7 @@ export async function focusEditor({
   } else {
     await getEditors(page).click();
   }
-}
+};
 
 export async function clearEditor({
   page,

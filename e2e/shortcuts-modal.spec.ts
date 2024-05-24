@@ -1,7 +1,7 @@
 import { APIRequestContext, Page, expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { authedPut } from './utils/request';
+import { authedRequest } from './utils/request';
 import { getEditors } from './utils/editor';
 
 const course =
@@ -10,8 +10,13 @@ const course =
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 const enableKeyboardShortcuts = async (request: APIRequestContext) => {
-  const res = await authedPut(request, '/update-my-keyboard-shortcuts', {
-    keyboardShortcuts: true
+  const res = await authedRequest({
+    request,
+    endpoint: '/update-my-keyboard-shortcuts',
+    method: 'put',
+    data: {
+      keyboardShortcuts: true
+    }
   });
   expect(await res.json()).toEqual({
     message: 'flash.keyboard-shortcut-updated',

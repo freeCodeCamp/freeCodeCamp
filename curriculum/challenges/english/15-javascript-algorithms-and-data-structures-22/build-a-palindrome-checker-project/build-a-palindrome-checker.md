@@ -241,6 +241,68 @@ checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'five|\_/|four is not a palindrome');
 ```
 
+When the `#text-input` element contains an alphanumeric palindrome, the `#result` element should correctly identify it as a palindrome. 
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+const charactersLength = characters.length;
+
+const firstLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const secondLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const thirdLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const fourthLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+
+const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter + fourthLetter + thirdLetter + secondLetter + firstLetter;
+
+inputEl.value = phrase;
+checkBtn.click();
+
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is a palindrome');
+```
+
+When the `#text-input` element contains a random sequence of alphanumeric characters that is not a palindrome, the `#result` element should say it is not a palindrome. 
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+let characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+let charactersLength = characters.length;
+
+const firstIndex = Math.floor(Math.random() * charactersLength);
+const firstLetter = characters.charAt(firstIndex);
+characters = characters.slice(0,firstIndex) + characters.slice(firstIndex + 1);
+charactersLength--; 
+
+
+const secondIndex = Math.floor(Math.random() * charactersLength); 
+const secondLetter = characters.charAt(secondIndex);
+characters = characters.slice(0,secondIndex) + characters.slice(secondIndex + 1);
+charactersLength--; 
+
+const thirdIndex = Math.floor(Math.random() * charactersLength); 
+const thirdLetter = characters.charAt(thirdIndex);
+characters = characters.slice(0,thirdIndex) + characters.slice(thirdIndex + 1);
+charactersLength--; 
+
+const fourthIndex = Math.floor(Math.random() * charactersLength); 
+const fourthLetter = characters.charAt(fourthIndex);
+characters = characters.slice(0,fourthIndex) + characters.slice(fourthIndex + 1);
+charactersLength--; 
+
+const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter;
+
+inputEl.value = phrase;
+checkBtn.click();
+
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is not a palindrome');
+```
+
 # --seed--
 
 ## --seed-contents--
