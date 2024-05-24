@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { expect, test } from '@playwright/test';
 
-test.describe('When the user HAS NOT claimed their cert they should see "Go to settings to claim your certification"', () => {
+test.describe('When the user HAS NOT claimed their cert', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeAll(() => {
@@ -12,14 +12,17 @@ test.describe('When the user HAS NOT claimed their cert they should see "Go to s
     await page.goto('/learn/front-end-development-libraries');
   });
 
-  test('should navigate to "/settings#cert-front-end-development-libraries" when clicking the "Go to settings to claim your certification" anchor', async ({
+  test('should see a "Go to settings to claim your certification" pointing to "/settings#cert-front-end-development-libraries"', async ({
     page
   }) => {
-    await page
-      .getByRole('link', { name: 'Go to settings to claim your certification' })
-      .click();
-    expect(page.url()).toContain(
-      '/settings/#cert-front-end-development-libraries'
+    const link = page.getByRole('link', {
+      name: 'Go to settings to claim your certification'
+    });
+
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute(
+      'href',
+      '/settings#cert-front-end-development-libraries'
     );
   });
 
@@ -28,18 +31,23 @@ test.describe('When the user HAS NOT claimed their cert they should see "Go to s
   });
 });
 
-test.describe('When the user HAS claimed their cert they should see "Show Certification"', () => {
+test.describe('When the user HAS claimed their cert', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn/front-end-development-libraries');
   });
 
-  test('should navigate to "/certification/certifieduser/front-end-development-libraries" when clicking the "Show Certification" anchor', async ({
+  test('should see a "Show Certification" link pointing to "/certification/certifieduser/front-end-development-libraries"', async ({
     page
   }) => {
-    await page.getByRole('link', { name: 'Show Certification' }).click();
-    expect(page.url()).toContain(
+    const link = page.getByRole('link', {
+      name: 'Show Certification'
+    });
+
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute(
+      'href',
       '/certification/certifieduser/front-end-development-libraries'
     );
   });
