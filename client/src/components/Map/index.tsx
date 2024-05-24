@@ -73,6 +73,7 @@ function MapLi({
   claimed,
   showProgressionLines = false,
   showNumbers = false,
+  showRibbonIcon = true,
   index
 }: {
   superBlock: SuperBlocks;
@@ -81,13 +82,15 @@ function MapLi({
   claimed: boolean;
   showProgressionLines?: boolean;
   showNumbers?: boolean;
+  showRibbonIcon?: boolean;
   index: number;
 }) {
-  const isLegacy = [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.JsAlgoDataStruct
-  ].includes(superBlock);
+  console.log(
+    'Rendering SuperBlock:',
+    superBlock,
+    'Show Ribbon:',
+    showRibbonIcon
+  );
   return (
     <>
       <li
@@ -98,7 +101,7 @@ function MapLi({
           <div
             className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
           >
-            {!isLegacy && (
+            {showRibbonIcon && (
               <RibbonIcon
                 value={index + 1}
                 showNumbers={showNumbers}
@@ -253,6 +256,7 @@ function Map({
             completed={allSuperblockChallengesCompleted(superBlock)}
             claimed={isClaimed(superBlock)}
             index={i}
+            showRibbonIcon={false}
           />
         ))}
       </ul>
