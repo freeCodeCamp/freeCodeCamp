@@ -76,6 +76,8 @@ export interface EditorProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef?: React.RefObject<HTMLElement>;
+  block: string;
+  superBlock: string;
   description: string;
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
@@ -85,6 +87,7 @@ export interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isMobileLayout: boolean;
+  isMobileHeight: boolean;
   isResetting: boolean;
   isSignedIn: boolean;
   isUsingKeyboardInTablist: boolean;
@@ -776,7 +779,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
-    const { description, title, isChallengeCompleted } = props;
+    const { description, title, isChallengeCompleted, isMobileHeight } = props;
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
@@ -803,6 +806,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.classList.add('description-container');
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
+    if (isMobileHeight) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
@@ -893,6 +897,27 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
+
+  function createBreadcrumb(): HTMLOListElement {
+    const { block, superBlock } = props;
+    const breadcrumb = document.createElement('ol');
+    const breadcrumbLeft = document.createElement('li'),
+      breadcrumbLeftLink = document.createElement('a'),
+      breadcrumbRight = document.createElement('li'),
+      breadcrumbRightLink = document.createElement('a');
+    breadcrumbLeftLink.innerHTML = t(`intro:${superBlock}.title`);
+    breadcrumbRightLink.innerHTML = t(
+      `intro:${superBlock}.blocks.${block}.title`
+    );
+    breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
+    breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
+    breadcrumbLeft.appendChild(breadcrumbLeftLink);
+    breadcrumbRight.appendChild(breadcrumbRightLink);
+    breadcrumb.appendChild(breadcrumbLeft);
+    breadcrumb.appendChild(breadcrumbRight);
+
+    return breadcrumb;
+  }
 
   // TODO: DRY this and the update function
   function initializeEditableRegion(
@@ -1260,6 +1285,19 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
+
+  useEffect(() => {
+    const description = document.getElementsByClassName(
+      'description-container'
+    )?.[0];
+    if (description && props.isMobileHeight)
+      description.prepend(createBreadcrumb());
+    else {
+      if (document.getElementsByTagName('ol')[1])
+        document.getElementsByTagName('ol')[1].remove();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.isMobileHeight]);
 
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;

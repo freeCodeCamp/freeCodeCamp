@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -43,7 +44,9 @@ import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
-import { Loader } from '../helpers';
+import { Loader, Spacer } from '../helpers';
+import { SuperBlocks } from '../../../../shared/config/superblocks';
+import { MAX_MOBILE_WIDTH, MAX_MOBILE_HEIGHT } from '../../../config/misc';
 import envData from '../../../config/env.json';
 
 // preload common fonts
@@ -134,6 +137,12 @@ function DefaultLayout({
   updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
+  const isMobileLayout = useMediaQuery({
+    query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
+  });
+  const isMobileHeight = useMediaQuery({
+    query: `(max-height: ${MAX_MOBILE_HEIGHT}px)`
+  });
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
@@ -242,13 +251,22 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && !examInProgress && (
+          {isChallenge &&
+          !examInProgress &&
+          (!isMobileLayout ||
+            (isMobileLayout &&
+              ((superBlock != SuperBlocks.RespWebDesignNew &&
+                superBlock != SuperBlocks.JsAlgoDataStructNew &&
+                superBlock != SuperBlocks.SciCompPy) ||
+                !isMobileHeight))) ? (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}
                 superBlock={superBlock as string}
               />
             </div>
+          ) : (
+            <Spacer size='small' />
           )}
           {fetchState.complete && children}
         </div>

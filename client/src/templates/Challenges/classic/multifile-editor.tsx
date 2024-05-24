@@ -32,9 +32,12 @@ type MultifileEditorProps = Pick<
   | 'resizeProps'
   | 'isUsingKeyboardInTablist'
   | 'isMobileLayout'
+  | 'isMobileHeight'
   | 'initialTests'
   | 'editorRef'
   | 'containerRef'
+  | 'block'
+  | 'superBlock'
   | 'challengeFiles'
   | 'description'
   // We use dimensions to trigger a re-render of the editor
@@ -65,12 +68,15 @@ const mapStateToProps = createSelector(
 
 const MultifileEditor = (props: MultifileEditorProps) => {
   const {
+    block,
+    superBlock,
     challengeFiles,
     containerRef,
     description,
     editorRef,
     initialTests,
     isMobileLayout,
+    isMobileHeight,
     isUsingKeyboardInTablist,
     resizeProps,
     title,
@@ -134,6 +140,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                 >
                   <Editor
                     canFocusOnMountRef={canFocusOnMountRef}
+                    block={block}
+                    superBlock={superBlock}
                     challengeFiles={challengeFiles}
                     containerRef={containerRef}
                     description={targetEditor === key ? description : ''}
@@ -141,6 +149,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     fileKey={key as FileKey}
                     initialTests={initialTests}
                     isMobileLayout={isMobileLayout}
+                    isMobileHeight={isMobileHeight}
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
                     dimensions={props.dimensions ?? { height: 0, width: 0 }}

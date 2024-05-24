@@ -190,10 +190,14 @@
 
 #mobile-layout .portal-button-wrap {
   position: absolute;
-  top: calc(var(--header-height) + var(--breadcrumbs-height));
+  top: auto;
   right: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
+}
+
+#mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
+  transform: translateY(-36px);
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
@@ -213,6 +217,10 @@
 #mobile-layout .monaco-editor-tabs {
   padding: 10px;
   width: 100%;
+}
+
+#mobile-layout .monaco-editor-tabs:empty {
+  padding: 0;
 }
 
 #mobile-layout .monaco-editor-tabs button {

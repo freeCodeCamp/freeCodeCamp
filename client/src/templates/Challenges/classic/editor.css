@@ -64,6 +64,51 @@ textarea.inputarea {
   margin: 0.1em 0 0.6rem;
 }
 
+.description-container ol {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  list-style-type: none;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  padding-inline-start: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.description-container ol li:first-child {
+  position: relative;
+  max-width: 35%;
+}
+
+.description-container ol li:first-child:after {
+  content: ' >';
+  font-size: 17px;
+  position: absolute;
+  top: 0;
+  right: -0.7rem;
+}
+
+.description-container ol li:nth-child(2) {
+  min-width: 0;
+}
+
+.description-container ol a {
+  width: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  color: var(--foreground-quaternary);
+  border-bottom: 1px solid var(--foreground-quaternary);
+}
+
+.description-container ol a:focus {
+  background-color: inherit;
+}
+
 .description-container h1 {
   color: var(--secondary-color);
   font-size: 1.1rem;
