@@ -85,12 +85,6 @@ function MapLi({
   showRibbonIcon?: boolean;
   index: number;
 }) {
-  console.log(
-    'Rendering SuperBlock:',
-    superBlock,
-    'Show Ribbon:',
-    showRibbonIcon
-  );
   return (
     <>
       <li
