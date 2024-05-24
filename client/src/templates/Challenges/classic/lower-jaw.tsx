@@ -96,27 +96,27 @@ const LowerButtonsPanel = ({
     <>
       <hr />
       <div className='utility-bar'>
-        <button
+        <Button
           data-playwright-test-label='lowerJaw-reset-button'
-          className='btn fade-in'
+          className='fade-in'
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
         >
           <Reset />
           {resetButtonText}
-        </button>
+        </Button>
         {showShareButton && <Share superBlock={superBlock} block={block} />}
 
         {hideHelpButton && (
-          <button
-            className='btn fade-in'
+          <Button
+            className='fade-in'
             id='get-help-button'
             data-cy='get-help-button'
             onClick={helpButtonEvent}
           >
             <Help />
             {helpButtonText}
-          </button>
+          </Button>
         )}
       </div>
     </>
@@ -322,9 +322,9 @@ const LowerJaw = ({
       >
         {t('buttons.submit-and-go')}
       </Button>
-      <button
+      <Button
         data-playwright-test-label='lowerJaw-check-button'
-        className='btn-block btn'
+        block
         data-cy='check-lowerJaw-button'
         onClick={tryToExecuteChallenge}
         {...(challengeIsCompleted &&
@@ -334,7 +334,7 @@ const LowerJaw = ({
         ref={checkYourCodeButtonRef}
       >
         {checkButtonText}
-      </button>
+      </Button>
       {/* Using aria-live=polite instead of assertive works better with ORCA */}
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
