@@ -28,14 +28,14 @@ test.describe('When the user HAS NOT claimed their cert they should see "Go to s
   });
 });
 
-test.describe('When the user HAS claimed their cert they should see "Go to settings to claim your certification"', () => {
+test.describe('When the user HAS claimed their cert they should see "Show Certification"', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn/front-end-development-libraries');
   });
 
-  test('should navigate to "/settings#cert-front-end-development-libraries" when clicking the "Go to settings to claim your certification" anchor', async ({
+  test('should navigate to "/certification/certifieduser/front-end-development-libraries" when clicking the "Show Certification" anchor', async ({
     page
   }) => {
     await page.getByRole('link', { name: 'Show Certification' }).click();
