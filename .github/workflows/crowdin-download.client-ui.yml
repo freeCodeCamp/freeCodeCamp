@@ -331,9 +331,10 @@ jobs:
       ###### Lowercase directory names #####
 
       - name: Lowercase Directories
-        run: |
-          find client/i18n/locales -depth -type d -exec bash -c 'mv "$1" "${1%/*}/$(basename "$1" | tr "[:upper:]" "[:lower:]")"' _ {} \;
-
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'lowercase-directories'
+          FILE_PATH: 'client/i18n/locales'
       # Crowdin translators might have the directories
       # Create Commit
       - name: Commit Changes

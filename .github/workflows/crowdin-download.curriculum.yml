@@ -365,8 +365,10 @@ jobs:
       ###### Lowercase directory names #####
 
       - name: Lowercase Directories
-        run: |
-          find curriculum/challenges -depth -type d -exec bash -c 'mv "$1" "${1%/*}/$(basename "$1" | tr "[:upper:]" "[:lower:]")"' _ {} \;
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'lowercase-directories'
+          FILE_PATH: 'curriculum/challenges'
 
       - name: Overwrite Execute-Brain.md
         run: sudo tools/scripts/move-bf.sh
