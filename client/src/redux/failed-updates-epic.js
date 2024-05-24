@@ -7,7 +7,8 @@ import {
   map,
   switchMap,
   tap,
-  concatMap
+  concatMap,
+  delay
 } from 'rxjs/operators';
 import store from 'store';
 import { v4 as uuid } from 'uuid';
@@ -68,33 +69,28 @@ function failedUpdateEpic(action$, state$) {
     ofType(actionTypes.fetchUserComplete, actionTypes.updateComplete),
     filter(() => isSignedInSelector(state$.value)),
     filter(() => isServerOnlineSelector(state$.value)),
-    filter(() => store.get(key)), // Filter only when there are updates in store
+    filter(() => store.get(key)), // filter only when there are updates in store
     tap(() => {
       const failures = store.get(key) || [];
-      const submitableFailures = failures.filter(isSubmitable); // Filter submitable failures
+      const submitableFailures = failures.filter(isSubmitable); // filter submitable failures
 
-      store.set(key, submitableFailures); // Update store with submitable failures
+      store.set(key, submitableFailures); // update store with submitable failures
 
       const batch$ = from(submitableFailures).pipe(
-        concatMap(update =>
-          processUpdate(update)
-            .pipe
-            // Add delay here if needed
-            ()
-        )
+        concatMap((update, i) => processUpdate(update).pipe(delay(1000 * i)))
       );
 
       batch$.subscribe({
         complete: () =>
-          console.info('progress updates processed where possible'), // Log completion
+          console.info('progress updates processed where possible'),
         error: err =>
-          console.warn('unable to process progress updates', err.message) // Log error if any
+          console.warn('unable to process progress updates', err.message)
       });
     }),
-    ignoreElements() // Ignore non-observable output
+    ignoreElements() // ignore non-observable output
   );
 
-  return merge(storeUpdates, flushUpdates); // Merge both epics
+  return merge(storeUpdates, flushUpdates); // merge both epics
 }
 
 export default failedUpdateEpic;
