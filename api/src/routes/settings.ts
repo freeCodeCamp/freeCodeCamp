@@ -439,6 +439,7 @@ ${isLinkSentWithinLimitTTL}`
       }
     }
   );
+
   fastify.put(
     '/update-my-about',
     {
@@ -658,6 +659,14 @@ ${isLinkSentWithinLimitTTL}`
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
+  );
+
+  fastify.get(
+    '/confirm-email',
+    {
+      schema: schemas.confirmEmail
+    },
+    async (_req, _reply) => {}
   );
 
   done();

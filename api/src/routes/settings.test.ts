@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
   devLogin,
   setupServer,
@@ -6,6 +7,7 @@ import {
   createSuperRequest,
   defaultUserId
 } from '../../jest.utils';
+import { formatMessage } from '../plugins/redirect-with-message';
 import { createUserInput } from '../utils/create-user';
 import { API_LOCATION } from '../utils/env';
 import { isPictureWithProtocol, getWaitMessage } from './settings';
@@ -120,6 +122,247 @@ describe('settingRoutes', () => {
           data: createUserInput(otherDeveloperUserEmail)
         });
       }
+    });
+
+    describe('/confirm-email', () => {
+      const defaultErrorMessage = {
+        type: 'danger',
+        content:
+          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+      } as const;
+
+      const successMessage = {
+        type: 'success',
+        content: 'flash.email-valid'
+      } as const;
+
+      const validToken =
+        '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGy';
+      const validButMissingToken =
+        '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGY';
+      const tokenWithMissingUser =
+        '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGH';
+      const expiredToken =
+        '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGE';
+
+      const tokens = [validToken, tokenWithMissingUser, expiredToken];
+      const newEmail = 'anything@goes.com';
+      const encodedEmail = Buffer.from(newEmail).toString('base64');
+      const notEmail = Buffer.from('foobar.com').toString('base64');
+
+      beforeEach(async () => {
+        await fastifyTestInstance.prisma.authToken.create({
+          data: {
+            created: new Date(),
+            id: validToken,
+            ttl: 1000,
+            userId: defaultUserId
+          }
+        });
+
+        await fastifyTestInstance.prisma.authToken.create({
+          data: {
+            created: new Date(),
+            id: tokenWithMissingUser,
+            ttl: 1000,
+            // Random ObjectId
+            userId: '6650ac23ccc46c0349a86dee'
+          }
+        });
+
+        await fastifyTestInstance.prisma.authToken.create({
+          data: {
+            created: new Date(Date.now() - 1000),
+            id: expiredToken,
+            ttl: 1000,
+            userId: defaultUserId
+          }
+        });
+
+        // We expect these properties to be changed by the endpoint, so they
+        // need to be set so that change can be confirmed.
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date(),
+            emailAuthLinkTTL: new Date()
+          }
+        });
+      });
+
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.authToken.deleteMany({
+          where: { id: { in: tokens } }
+        });
+
+        // TODO: remove any other changes to the dev user.
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { newEmail: null }
+        });
+      });
+
+      // I think all requests, including bad ones, should be sent back to the origin. Can we check multiple origins or is it enough to check
+      // that the standard redirect logic is used?
+
+      // TODO(mention) The old api cannot handle this.
+      // TODO(mention) Old api redirects to /signin on the LEARN client (which doesn't exist), new
+      // TODO(mention) informative error messages or just 'contact support'?
+      // api just redirects to the homepage.
+      it('should reject requests without params', async () => {
+        const resNoParams = await superRequest('/confirm-email', {
+          method: 'GET'
+        });
+
+        expect(resNoParams.headers.location).toBe(
+          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+        );
+        expect(resNoParams.status).toBe(400);
+      });
+
+      it('should reject requests which have an invalid token param', async () => {
+        const res = await superRequest(
+          // token should be 64 characters long
+          `/confirm-email?email=${encodedEmail}&token=tooshort`,
+          { method: 'GET' }
+        );
+
+        expect(res.headers.location).toBe(
+          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+        );
+        expect(res.status).toBe(400);
+      });
+
+      it('should reject requests which have an invalid email param', async () => {
+        const res = await superRequest(
+          `/confirm-email?email=${notEmail}&token=${validToken}`,
+          { method: 'GET' }
+        );
+
+        expect(res.headers.location).toBe(
+          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+        );
+        expect(res.status).toBe(400);
+      });
+
+      it('should reject requests when the auth token is not in the database', async () => {
+        const res = await superRequest(
+          `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`,
+          { method: 'GET' }
+        );
+
+        expect(res.headers.location).toBe(
+          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+        );
+        // It's not a bad request, but they're not allowed because the token is
+        // missing. They are authenticated, but it's still forbidden. Hence,
+        // 403.
+        expect(res.status).toBe(403);
+      });
+
+      it('should reject requests when the auth token exists, but the user does not', async () => {
+        const res = await superRequest(
+          `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`,
+          { method: 'GET' }
+        );
+
+        expect(res.headers.location).toBe(
+          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+        );
+        // It's not a bad request, but they're not allowed because the token is
+        // missing. They are authenticated, but it's still forbidden. Hence,
+        // 403.
+        expect(res.status).toBe(403);
+      });
+
+      // TODO(Post-MVP): there's no need to keep the auth token around if,
+      // somehow, the user is missing
+      it.todo(
+        'should delete the auth token if there is no user associated with it'
+      );
+
+      it('should reject requests when the email param is different from user.newEmail', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { newEmail: 'an@oth.er' }
+        });
+
+        const res = await superRequest(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
+          { method: 'GET' }
+        );
+
+        expect(res.headers.location).toBe(
+          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+        );
+        expect(res.status).toBe(403);
+      });
+
+      it('should reject requests if the auth token has expired', async () => {
+        const res = await superRequest(
+          `/confirm-email?email=${encodedEmail}&token=${expiredToken}`,
+          { method: 'GET' }
+        );
+
+        expect(res.headers.location).toBe(
+          'https://www.freecodecamp.org?' +
+            formatMessage({
+              content:
+                'The link to confirm your new email address has expired. Please try again.',
+              type: 'info'
+            })
+        );
+        expect(res.status).toBe(403);
+      });
+
+      it('should update the user email', async () => {
+        const res = await superRequest(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
+          { method: 'GET' }
+        );
+        const user = await fastifyTestInstance.prisma.user.findUniqueOrThrow({
+          where: { id: defaultUserId }
+        });
+
+        expect(res.headers.location).toBe(
+          'https://www.freecodecamp.org?' + formatMessage(successMessage)
+        );
+        expect(user.email).toBe(newEmail);
+      });
+
+      it('should clean up the user record', async () => {
+        await superRequest(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
+          { method: 'GET' }
+        );
+
+        const user = await fastifyTestInstance.prisma.user.findUniqueOrThrow({
+          where: { id: defaultUserId }
+        });
+
+        expect(user.newEmail).toBeNull();
+        expect(user.newEmail).toBeNull();
+        expect(user.emailVerified).toBe(true);
+        expect(user.emailVerifyTTL).toBeNull();
+        expect(user.emailAuthLinkTTL).toBeNull();
+      });
+
+      it('should remove the auth token on success', async () => {
+        await superRequest(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
+          { method: 'GET' }
+        );
+
+        const authToken = await fastifyTestInstance.prisma.authToken.findUnique(
+          {
+            where: { id: validToken }
+          }
+        );
+
+        expect(authToken).toBeNull();
+      });
     });
 
     describe('/update-my-profileui', () => {
@@ -808,6 +1051,22 @@ Happy coding!
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
+    });
+
+    describe('/confirm-email', () => {
+      it('redirects to the HOME_LOCATION with flash message', async () => {
+        const res = await superRequest('/confirm-email', {
+          method: 'GET',
+          setCookies,
+          headers: { referer: 'https://who.knows/' }
+        });
+
+        expect(res.status).toBe(302);
+        expect(res.headers).toMatchObject({
+          // TODO: add the expected flash message
+          location: 'https://www.freecodecamp.org'
+        });
+      });
     });
 
     const endpoints: { path: string; method: 'PUT' }[] = [
