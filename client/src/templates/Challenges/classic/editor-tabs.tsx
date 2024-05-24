@@ -38,8 +38,9 @@ class EditorTabs extends Component<EditorTabsProps> {
     const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
     return (
       <div className='monaco-editor-tabs'>
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */}
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
         {sortChallengeFiles(challengeFiles).length > 1 &&
+          /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
           sortChallengeFiles(challengeFiles).map(
             (challengeFile: ChallengeFile) => (
               <button
