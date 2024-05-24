@@ -143,6 +143,7 @@ async () => {
     let alertMessage;
     window.alert = (message) => alertMessage = message; // Override alert and store message
     searchInput.value = 'Red';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/red'); // Fetch from proxy to simulate network delay
@@ -166,6 +167,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = 'Pikachu';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
@@ -209,6 +211,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = 'Pikachu';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
@@ -233,6 +236,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = 'Pikachu';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
@@ -259,6 +263,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = '94';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
@@ -302,6 +307,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = '94';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
@@ -326,6 +332,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = '94';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay

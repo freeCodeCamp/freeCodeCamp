@@ -1,6 +1,6 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
-title: Falsy Bouncer
+title: 거짓값 바운서
 challengeType: 1
 forumTopicId: 16014
 dashedName: falsy-bouncer
@@ -8,39 +8,39 @@ dashedName: falsy-bouncer
 
 # --description--
 
-Remove all falsy values from an array. Return a new array; do not mutate the original array.
+배열로부터 모든 거짓값들을 제거하시오. 기존 배열을 변형하지 않으면서 새로운 배열을 반환하시오.
 
-Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
+자바스크립트에서 거짓값들은 `false`, `null`, `0`, `""`, `undefined`, 그리고 `NaN`입니다.
 
-Hint: Try converting each value to a Boolean.
+힌트: 모든 값들을 불리언으로 변환해보세요.
 
 # --hints--
 
-`bouncer([7, "ate", "", false, 9])` should return `[7, "ate", 9]`.
+`bouncer([7, "ate", "", false, 9])`는 `[7, "ate", 9]`을 반환해야 합니다.
 
 ```js
 assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9]);
 ```
 
-`bouncer(["a", "b", "c"])` should return `["a", "b", "c"]`.
+`bouncer(["a", "b", "c"])`는 `["a", "b", "c"]`을 반환해야 합니다.
 
 ```js
 assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c']);
 ```
 
-`bouncer([false, null, 0, NaN, undefined, ""])` should return `[]`.
+`bouncer([false, null, 0, NaN, undefined, ""])`는 `[]`을 반환해야 합니다.
 
 ```js
 assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
 ```
 
-`bouncer([null, NaN, 1, 2, undefined])` should return `[1, 2]`.
+`bouncer([null, NaN, 1, 2, undefined])`는 `[1, 2]`을 반환해야 합니다.
 
 ```js
 assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 ```
 
-You should not mutate `arr`.
+`arr`을 변형시키지 말아야 합니다.
 
 ```js
 const arr = ['a', false, 0, 'Naomi'];

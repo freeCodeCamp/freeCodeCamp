@@ -9,9 +9,9 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-An easy way to append data to the end of an array is via the `push()` method.
+一个将数据添加到数组末尾的简单方式是使用 `push()` 方法。
 
-The `push()` method takes one or more <dfn>arguments</dfn> and appends them to the end of the array, in the order in which they appear. It returns the new length of the array.
+`push()` 方法需要一个或多个 <dfn>参数</dfn> 并将它们根据出现顺序追加到数组的末尾。 它返回数组的新长度。
 
 示例：
 
@@ -23,7 +23,7 @@ const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-`arr1` now has the value `[1, 2, 3, 4, 5]` and `arr2` has the value `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+`arr1` 现在值为 `[1, 2, 3, 4, 5]`，`arr2` 的值为 `["Stimpson", "J", "cat", ["happy", "joy"]]`。
 
 # --instructions--
 

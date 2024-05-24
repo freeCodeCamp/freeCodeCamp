@@ -13,8 +13,8 @@ Calcule todas as três do <a href="https://en.wikipedia.org/wiki/Pythagorean_mea
 Exiba $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ para este conjunto de inteiros positivos.
 
 <ul>
-  <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
-  <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
+  <li>A mais comum entre as três médias, a <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>média aritmética</a>, é a soma da lista dividida por seu comprimento:<br>
+  <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + X_n}{n}$</big></li>
   <li>A <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>média geométrica</a> é a $n$-ésima raiz do produto da lista:<br>
   <big>$ G(x_1, \ldots, x_n) = \sqrt[n]{x_1 \cdots x_n} $</big></li>
   <li>A <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>média harmônica</a> é $n$ dividido pela soma dos recíprocos de cada item da lista:<br>

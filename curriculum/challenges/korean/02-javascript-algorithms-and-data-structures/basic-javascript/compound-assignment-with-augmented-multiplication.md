@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244b1
-title: Compound Assignment With Augmented Multiplication
+title: 곱셈를 추가해서 복합적으로 할당하기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
@@ -9,13 +9,13 @@ dashedName: compound-assignment-with-augmented-multiplication
 
 # --description--
 
-The `*=` operator multiplies a variable by a number.
+`*=` 연산자는 변수에 숫자를 곱합니다.
 
 ```js
 myVar = myVar * 5;
 ```
 
-will multiply `myVar` by `5`. This can be rewritten as:
+위의 내용은 `myVar`에 `5`를 곱합니다. 이 내용은 다음과 같이 변환될 수 있습니다.
 
 ```js
 myVar *= 5;
@@ -23,35 +23,35 @@ myVar *= 5;
 
 # --instructions--
 
-Convert the assignments for `a`, `b`, and `c` to use the `*=` operator.
+`a`, `b`, `c`에 각각 할당을 `*=` 연산자를 사용하도록 변경해 주세요.
 
 # --hints--
 
-`a` should equal `25`.
+`a`는 `25`와 같아야 합니다.
 
 ```js
 assert(a === 25);
 ```
 
-`b` should equal `36`.
+`b`는 `36`과 같아야 합니다.
 
 ```js
 assert(b === 36);
 ```
 
-`c` should equal `46`.
+`c`는 `46`과 같아야 합니다.
 
 ```js
 assert(c === 46);
 ```
 
-You should use the `*=` operator for each variable.
+각 변수에서 `*=` 연산자를 사용해야 합니다.
 
 ```js
 assert(__helpers.removeJSComments(code).match(/\*=/g).length === 3);
 ```
 
-You should not modify the code above the specified comment.
+지정된 코멘트 위의 코드를 변경하면 안됩니다.
 
 ```js
 assert(

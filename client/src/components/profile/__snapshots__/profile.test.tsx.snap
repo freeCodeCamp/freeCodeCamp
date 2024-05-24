@@ -290,7 +290,6 @@ exports[`<Profile/> renders correctly 1`] = `
           <hr />
         </div>
       </div>
-      <br />
     </div>
     <div
       class="spacer"

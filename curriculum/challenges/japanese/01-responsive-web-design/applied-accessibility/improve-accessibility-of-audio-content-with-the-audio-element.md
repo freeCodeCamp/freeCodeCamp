@@ -26,7 +26,7 @@ HTML5 の `audio` 要素は、サウンドやオーディオストリームコ�
 
 # --instructions--
 
-Camper Cat から少し離れる時間を取って、アクセシビリティの達人でありスクリーンリーダーのユーザーでもあるキャンパー仲間、Zersiax (@zersiax) をご紹介します。 彼のスクリーンリーダーが動作する様子の音声を聴くには、`p` 要素の後ろに `audio` 要素を追加します。 `controls` 属性を含めましょう。 次に `audio` タグの中に、`src` 属性に `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` を、`type` 属性に `"audio/mpeg"` を設定した `source` 要素を配置します。
+Camper Cat から少し離れる時間を取って、アクセシビリティの達人でありスクリーンリーダーのユーザーでもあるキャンパー仲間、Zersiax (@zersiax) をご紹介します。 彼のスクリーンリーダーが動作する様子の音声を聴くには、`p` 要素の後ろに `audio` 要素を追加します。 `controls` 属性を含めましょう。 Then place a `source` element inside the `audio` tags with the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
 
 **注:** 音声が高速に聞こえて理解しにくいかもしれませんが、これはスクリーンリーダーのユーザーにとっては通常の速度です。
 
@@ -70,7 +70,7 @@ assert($('audio').children('source').length === 1);
 ```js
 assert(
   $('source').attr('src') ===
-    'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3'
+    'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
 );
 ```
 
@@ -108,7 +108,7 @@ assert($('source').attr('type') === 'audio/mpeg');
   <main>
     <p>A sound clip of Zersiax's screen reader in action.</p>
     <audio controls>
-      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+      <source src="https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3" type="audio/mpeg"/>
     </audio>
   </main>
 </body>

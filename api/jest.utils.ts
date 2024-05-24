@@ -175,6 +175,7 @@ If you are seeing this error, the root cause is likely an error thrown in the be
 
 export const defaultUserId = '64c7810107dd4782d32baee7';
 export const defaultUserEmail = 'foo@bar.com';
+export const defaultUsername = 'fcc-test-user';
 
 export async function devLogin(): Promise<string[]> {
   await fastifyTestInstance.prisma.user.deleteMany({
@@ -184,7 +185,8 @@ export async function devLogin(): Promise<string[]> {
   await fastifyTestInstance.prisma.user.create({
     data: {
       ...createUserInput(defaultUserEmail),
-      id: defaultUserId
+      id: defaultUserId,
+      username: defaultUsername
     }
   });
   const res = await superRequest('/signin', { method: 'GET' });
