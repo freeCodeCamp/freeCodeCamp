@@ -44,6 +44,8 @@ add_time('6:30 PM', '205:12')
 
 Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
 
+Note: open the browser console with F12 to see a more verbose output of the tests.
+
 # --hints--
 Calling `add_time('3:30 PM', '2:12')` should return `'5:42 PM'`.
 

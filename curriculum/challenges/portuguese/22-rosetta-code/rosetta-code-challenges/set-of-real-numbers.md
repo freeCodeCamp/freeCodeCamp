@@ -8,7 +8,7 @@ dashedName: set-of-real-numbers
 
 # --description--
 
-Todos os números reais formam o conjunto incontável ℝ. Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers *a* and *b* where *a* ≤ *b*. Na verdade, há quatro casos para o significado de "entre", dependendo dos limites abertos ou fechados:
+Todos os números reais formam o conjunto incontável ℝ. Entre seus subconjuntos, são conjuntos relativamente simples os conjuntos convexos, cada um deles expressando um intervalo entre dois números reais *a* e *b*, onde *a* ≤ *b*. Na verdade, há quatro casos para o significado de "entre", dependendo dos limites abertos ou fechados:
 
 <ul>
   <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> e <i>x</i> ≤ <i>b</i> }</li>

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e0
-title: Replacing If Else Chains with Switch
+title: If Else를 Switch로 대체하기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JE8fy'
 forumTopicId: 18266
@@ -9,7 +9,7 @@ dashedName: replacing-if-else-chains-with-switch
 
 # --description--
 
-If you have many options to choose from, a `switch` statement can be easier to write than many chained `if`/`else if` statements. The following:
+선택할 옵션이 많을 경우 `switch`문은 연쇄 `if`/`else if`문보다 쓰기 쉬울 수 있습니다. 다음은
 
 ```js
 if (val === 1) {
@@ -21,7 +21,7 @@ if (val === 1) {
 }
 ```
 
-can be replaced with:
+아래와 같이 대체될 수 있습니다.
 
 ```js
 switch (val) {
@@ -38,65 +38,65 @@ switch (val) {
 
 # --instructions--
 
-Change the chained `if`/`else if` statements into a `switch` statement.
+연쇄 `if`/`else if`문을 `switch`문으로 변환하시오.
 
 # --hints--
 
-You should not use any `else` statements anywhere in the editor
+편집기 어디에도 `else`문이 사용되지 않아야 합니다.
 
 ```js
 assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
-You should not use any `if` statements anywhere in the editor
+편집기 어디에도 `if`문이 사용되지 않아야 합니다.
 
 ```js
 assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
-You should have at least four `break` statements
+적어도 네 개의 `break`문이 있어야 합니다.
 
 ```js
 assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` should return the string `Marley`
+`chainToSwitch("bob")`은 문자열 `Marley`를 반환해야 합니다.
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` should return the string `The Answer`
+`chainToSwitch(42)`는 문자열 `The Answer`를 반환해야 합니다.
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` should return the string `There is no #1`
+`chainToSwitch(1)`은 문자열 `There is no #1`을 반환해야 합니다.
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` should return the string `Missed me by this much!`
+`chainToSwitch(99)`은 문자열 `Missed me by this much!`을 반환해야 합니다.
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` should return the string `Ate Nine`
+`chainToSwitch(7)`은 문자열 `Ate Nine`을 반환해야 합니다.
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` should return `""` (empty string)
+`chainToSwitch("John")`은 `""` (빈 문자열)을 반환해야 합니다.
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` should return `""` (empty string)
+`chainToSwitch(156)`은 `""` (빈 문자열)을 반환해야 합니다.
 
 ```js
 assert(chainToSwitch(156) === '');

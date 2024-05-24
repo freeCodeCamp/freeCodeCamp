@@ -100,7 +100,6 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement",
     "play-scene": "Press Play"
   },
   "landing": {
@@ -645,7 +644,8 @@
     "help-millions-learn": "Help millions of people learn",
     "reach-goals-faster": "Reach your goals faster",
     "remove-distractions": "Remove distractions",
-    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",

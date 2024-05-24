@@ -297,7 +297,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} hat sein Portfolio nicht öffentlich zugänglich gemacht.",
     "you-change-privacy": "Du musst deine Privatsphäre-Einstellung ändern, damit dein Portfolio von anderen gesehen wird. Dies ist eine Vorschau wie dein Portfolio aussehen wird, wenn es veröffentlicht wird.",
     "username-change-privacy": "{{username}} muss seine Privatsphäre-Einstellung ändern, damit du sein Portfolio ansehen kannst.",
     "supporter": "Unterstützer",

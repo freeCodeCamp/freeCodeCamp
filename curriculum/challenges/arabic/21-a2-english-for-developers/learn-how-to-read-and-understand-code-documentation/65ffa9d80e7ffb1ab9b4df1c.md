@@ -10,7 +10,7 @@ AUDIO REFERENCE:
 Sarah: Once you've found the section you need, you should start by reading the introductory paragraphs to get an overview of what the documentation covers.
 -->
 
-# --description–
+# --description--
 
 Fill in the blanks in the dialogue below.
 
