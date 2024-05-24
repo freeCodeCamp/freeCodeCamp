@@ -212,7 +212,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               name='username-settings'
               onChange={this.handleChange}
               value={formValue}
-              data-cy='username-input'
+              data-playwright-test-label='username-input'
               id='username-settings'
             />
           </FormGroup>
