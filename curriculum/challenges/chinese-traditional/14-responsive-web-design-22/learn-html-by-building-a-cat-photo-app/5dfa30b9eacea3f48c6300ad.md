@@ -9,7 +9,7 @@ dashedName: step-15
 
 在之前的步驟中，你使用了錨元素將文本轉換爲鏈接。 也可以把其他類型的內容放在錨標籤中，將其轉換成一個鏈接。
 
-Here is an example of turning an image into a link:
+這是一個將圖像轉換爲鏈接的示例：
 
 ```html
 <a href="example-link">

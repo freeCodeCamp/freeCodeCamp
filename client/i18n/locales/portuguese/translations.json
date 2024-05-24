@@ -37,7 +37,7 @@
     "news": "Notícias",
     "donate": "Doar",
     "supporters": "Supporters",
-    "go-to-supporters": "Go to Supporters Page",
+    "go-to-supporters": "Vá para a página de apoiadores",
     "update-settings": "Atualizar as configurações da minha conta",
     "sign-me-out": "Sair do freeCodeCamp",
     "flag-user": "Denunciar a conta deste usuário por abuso",
@@ -297,7 +297,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} não tornou seu portfólio público.",
     "you-change-privacy": "Você precisa alterar sua configuração de privacidade para que seu portfólio seja visto por outros. Esta é uma prévia de como será seu portfólio quando se tornar público.",
     "username-change-privacy": "{{username}} precisa alterar suas configurações de privacidade para que você possa visualizar o portfólio.",
     "supporter": "Apoiador",

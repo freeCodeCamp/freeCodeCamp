@@ -70,17 +70,6 @@
 }
 
 @media screen and (max-width: 991px) {
-  .challenge-success-modal .btn-lg {
-    font-size: 1rem;
-  }
-  .challenge-success-modal .btn-cta-big {
-    max-width: 100%;
-    font-size: 1rem;
-  }
-  .completion-modal-body {
-    min-height: 340px;
-  }
-
   .progress-bar-wrap,
   .progress-bar-background {
     height: 10px;
@@ -96,7 +85,6 @@
     font-size: 1.2rem;
   }
 
-  .completion-challenge-name,
   .completion-block-name {
     font-size: 1rem;
   }

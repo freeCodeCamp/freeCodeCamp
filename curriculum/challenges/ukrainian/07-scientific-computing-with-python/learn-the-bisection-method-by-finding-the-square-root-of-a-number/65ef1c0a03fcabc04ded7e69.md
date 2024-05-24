@@ -27,7 +27,7 @@ You should remove the `pass` keyword.
 
 ```
 
-You should declare a variable `mid` and assign it `(low + high) / 2` inside the body of the `for` loop.
+Оголосіть змінну `mid` та призначте до неї `(low + high) / 2` в межах тіла циклу `for`.
 
 ```js
 ({
@@ -44,7 +44,7 @@ You should declare a variable `mid` and assign it `(low + high) / 2` inside the 
 })
 ```
 
-You should declare a variable `square_mid` and assign it `mid**2` inside the body of the for loop.
+Оголосіть змінну `square_mid` та призначте до неї `mid**2` в межах тіла циклу `for`.
 
 ```js
 ({ test: () => assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_for_loops()[0].find_bodies()[0].find_variable("square_mid").is_equivalent("square_mid = mid**2")`)) })

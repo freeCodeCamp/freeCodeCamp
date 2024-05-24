@@ -80,6 +80,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'A';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'a is a palindrome');
 ```
@@ -92,6 +93,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'eye';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'eye is a palindrome');
 ```
@@ -104,6 +106,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = '_eye';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '_eye is a palindrome');
 ```
@@ -116,6 +119,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'race car';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'race car is a palindrome');
 ```
@@ -128,6 +132,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'not a palindrome';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'not a palindrome is not a palindrome');
 ```
@@ -140,6 +145,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'A man, a plan, a canal. Panama';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'a man, a plan, a canal. panama is a palindrome');
 ```
@@ -152,6 +158,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'never odd or even';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'never odd or even is a palindrome');
 ```
@@ -164,6 +171,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'nope';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'nope is not a palindrome');
 ```
@@ -176,6 +184,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'almostomla';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'almostomla is not a palindrome');
 ```
@@ -188,6 +197,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'My age is 0, 0 si ega ym.';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'my age is 0, 0 si ega ym. is a palindrome');
 ```
@@ -200,6 +210,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = '1 eye for of 1 eye.';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '1 eye for of 1 eye. is not a palindrome');
 ```
@@ -212,6 +223,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = '0_0 (: /-\ :) 0-0';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '0_0 (: /-\ :) 0-0 is a palindrome');
 ```
@@ -224,8 +236,71 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'five|\_/|four';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'five|\_/|four is not a palindrome');
+```
+
+When the `#text-input` element contains an alphanumeric palindrome, the `#result` element should correctly identify it as a palindrome.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+const charactersLength = characters.length;
+
+const firstLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const secondLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const thirdLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+const fourthLetter = characters.charAt(Math.floor(Math.random() * charactersLength));
+
+const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter + fourthLetter + thirdLetter + secondLetter + firstLetter;
+
+inputEl.value = phrase;
+checkBtn.click();
+
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is a palindrome');
+```
+
+When the `#text-input` element contains a random sequence of alphanumeric characters that is not a palindrome, the `#result` element should say it is not a palindrome.
+
+```js
+const inputEl = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const resultEl = document.getElementById('result');
+
+let characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+let charactersLength = characters.length;
+
+const firstIndex = Math.floor(Math.random() * charactersLength);
+const firstLetter = characters.charAt(firstIndex);
+characters = characters.slice(0,firstIndex) + characters.slice(firstIndex + 1);
+charactersLength--; 
+
+
+const secondIndex = Math.floor(Math.random() * charactersLength); 
+const secondLetter = characters.charAt(secondIndex);
+characters = characters.slice(0,secondIndex) + characters.slice(secondIndex + 1);
+charactersLength--; 
+
+const thirdIndex = Math.floor(Math.random() * charactersLength); 
+const thirdLetter = characters.charAt(thirdIndex);
+characters = characters.slice(0,thirdIndex) + characters.slice(thirdIndex + 1);
+charactersLength--; 
+
+const fourthIndex = Math.floor(Math.random() * charactersLength); 
+const fourthLetter = characters.charAt(fourthIndex);
+characters = characters.slice(0,fourthIndex) + characters.slice(fourthIndex + 1);
+charactersLength--; 
+
+const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter;
+
+inputEl.value = phrase;
+checkBtn.click();
+
+assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is not a palindrome');
 ```
 
 # --seed--

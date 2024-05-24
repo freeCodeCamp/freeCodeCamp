@@ -847,10 +847,41 @@
           "在本项目中，你将通过创建一个费用跟踪器来探索 Lambda 函数的强大功能。你创建的应用程序将展示如何使用 Lambda 函数实现高效、简化的操作。"
         ]
       },
-      "scientific-computing-with-python-projects": {
-        "title": "Python 科学计算项目",
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
         "intro": [
-          "是时候测试一下你的 Python 技能了。通过完成这些项目，你可以展示自己已经掌握了扎实的 Python 基础知识。你还将有资格获得 freeCodeCamp 的 Python 科学计算认证。"
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-budget-app-project": {
+        "title": "Build a Budget App Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
         ]
       }
     }
@@ -1387,15 +1418,21 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "学习如何就偏好和动机进行对话",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "学习如何讨论流行的技术趋势",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "学习如何在不同的互动中阐明信息",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "学习如何在对话中使用基本编程词汇",

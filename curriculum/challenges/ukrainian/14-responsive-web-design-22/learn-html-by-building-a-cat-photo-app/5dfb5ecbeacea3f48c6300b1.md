@@ -24,13 +24,13 @@ Within the `ul` element nest three list items to display three things cats love:
 
 # --hints--
 
-You should have three `li` elements. Each `li` element should have its own opening and closing tag.
+Ви повинні мати три елементи `li`. Each `li` element should have its own opening and closing tag.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+У вас мають бути три елементи `li` з текстом `cat nip`, `laser pointers` та `lasagna` у будь-якому порядку. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
