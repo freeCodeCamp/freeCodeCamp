@@ -75,6 +75,7 @@ textarea.inputarea {
   padding-inline-start: 0;
   width: 100%;
   min-width: 0;
+  color: var(--foreground-quaternary);
 }
 
 .description-container ol li:first-child {
@@ -101,7 +102,6 @@ textarea.inputarea {
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
-  color: var(--foreground-quaternary);
   border-bottom: 1px solid var(--foreground-quaternary);
 }
 
