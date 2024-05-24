@@ -1,7 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import { omit, pick } from 'lodash';
+import _ from 'lodash';
 
 import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
@@ -553,8 +553,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           ? encodeUserToken(userToken.id)
           : undefined;
 
-        const flags = pick<typeof user, NullableFlag>(user, nullableFlags);
-        const rest = omit<typeof user, NullableFlag>(user, nullableFlags);
+        const flags = _.pick<typeof user, NullableFlag>(user, nullableFlags);
+        const rest = _.omit<typeof user, NullableFlag>(user, nullableFlags);
 
         const {
           username,
@@ -708,10 +708,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         return reply.send({});
       }
 
-      const flags = pick<typeof user, NullableFlag>(user, nullableFlags);
-      const rest = omit<typeof user, NullableFlag>(user, nullableFlags);
+      const flags = _.pick<typeof user, NullableFlag>(user, nullableFlags);
+      const rest = _.omit<typeof user, NullableFlag>(user, nullableFlags);
 
-      const publicUser = omit(rest, [
+      const publicUser = _.omit(rest, [
         'currentChallengeId',
         'email',
         'emailVerified',
