@@ -56,6 +56,13 @@ Teen variables `birthDate`,`birthMonth` aur `birthYear` create karein janam din,
 `month`, 
 `year`.
 
+**Hints**
+
+Click on this <a=href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
+
+1. Prompt 1:  How can I set up the variables to hold the birth information?"
+2. Prompt 2:  I have the birth details stored, but how do I display them in the right order with labels?
+3. Prompt 3: Thinking ahead... are there any birth dates or months that might cause issues with the program?
 
 
 # --hints--

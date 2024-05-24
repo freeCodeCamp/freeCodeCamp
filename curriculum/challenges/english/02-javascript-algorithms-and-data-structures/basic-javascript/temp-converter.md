@@ -32,17 +32,23 @@ Write a program to convert the temperature from Celsius to Fahrenheit using the 
 
 Ek program likho jo temperature ko Celsius se Fahrenheit mein convert kare, formula istemal karke C/5 = (F-32)/9.
 
-
 `C` means Celsius and `F` means Fahrenheit.
 
-# --hints--
+**Hints** 
+
+Click on this <a=href = "https://cs50.ai/chat">Link</a> -  to Go to CS50 AI. And use these prompts.
+
+1. Prompt 1: How can we translate it into JavaScript using variables and operators?
+2. Prompt 2: How can we use them in code to calculate the Fahrenheit temperature?
 
 # --hints--
-Variable `fahrenheit` should return `86`
+Variable `fahrenheit` should return `86`.
 
 ```js
 assert(fahrenheit===86)
 ```
+
+
 
 # --seed--
 ## --seed-contents--

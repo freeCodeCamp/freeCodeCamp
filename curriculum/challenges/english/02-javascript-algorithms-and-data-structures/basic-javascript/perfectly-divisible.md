@@ -48,6 +48,12 @@ Create a variable named `largestNumber` that stores the value.
 
 `largestNumber` naam se ek variable banayein jo is value ko store kare.
 
+**Hints** 
+
+Click on this <a=href = "https://cs50.ai/chat">Link</a> - to Go to CS50 AI. And use this prompts.
+
+1. Prompt: How can we adjust division to ensure a whole number in the result? 
+
 
 # --hints--
 
