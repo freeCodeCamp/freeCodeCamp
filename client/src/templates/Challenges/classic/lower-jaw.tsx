@@ -314,7 +314,7 @@ const LowerJaw = ({
       )}
       <Button
         data-playwright-test-label='lowerJaw-submit-button'
-        className='btn-block btn'
+        block
         data-cy='submit-lowerJaw-button'
         onClick={tryToSubmitChallenge}
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
