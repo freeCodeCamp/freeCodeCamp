@@ -30,7 +30,7 @@ export const RibbonIcon = ({
       {isClaimed && (
         <>
           <path
-            d='M24.8 36.318L35.3 29L44.3 42L35.5 41L33.4 49.3L24.8 36.3Z'
+            d='M24.8 36.3L35.3 29L44.3 42L35.5 41L33.4 49.3L24.8 36.3Z'
             fill='var(--secondary-color)'
           />
           <path
