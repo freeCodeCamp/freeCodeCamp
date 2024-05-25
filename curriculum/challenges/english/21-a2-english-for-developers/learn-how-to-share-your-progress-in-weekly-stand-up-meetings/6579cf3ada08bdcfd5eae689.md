@@ -5,10 +5,7 @@ challengeType: 19
 dashedName: task-5
 ---
 
-<!--
-AUDIO REFERENCE: 
-Sophie: "Sure, Bob. I could use some help with a coding problem."
--->
+<!-- (Audio) Sophie: Sure, Bob. I could use some help with a coding problem. -->
 
 # --description--
 
@@ -22,11 +19,11 @@ What is Sophie asking for in her conversation with Bob?
 
 ## --answers--
 
-`She's asking for help with a coding problem`
+She's asking for help with a coding problem
 
 ---
 
-`She wants Bob to solve the problem for her`
+She wants Bob to solve the problem for her
 
 ### --feedback--
 
@@ -34,7 +31,7 @@ Sophie is asking for help, not necessarily for Bob to solve it entirely on his o
 
 ---
 
-`She is offering to help Bob with a problem`
+She is offering to help Bob with a problem
 
 ### --feedback--
 
@@ -42,7 +39,7 @@ Sophie is the one requesting assistance, not offering it.
 
 ---
 
-`She's discussing a future project`
+She's discussing a future project
 
 ### --feedback--
 
@@ -72,7 +69,7 @@ Sophie's request is about a current coding issue she's facing, not a future proj
     "audio": {
       "filename": "6.2-1.mp3",
       "startTime": 1,
-      "startTimestamp": 5.1,
+      "startTimestamp": 4.9,
       "finishTimestamp": 7.58
     }
   },
@@ -85,7 +82,7 @@ Sophie's request is about a current coding issue she's facing, not a future proj
     {
       "character": "Sophie",
       "startTime": 1,
-      "finishTime": 3.48,
+      "finishTime": 3.68,
       "dialogue": {
         "text": "Sure, Bob. I could use some help with the coding problem.",
         "align": "center"
@@ -94,7 +91,7 @@ Sophie's request is about a current coding issue she's facing, not a future proj
     {
       "character": "Sophie",
       "opacity": 0,
-      "startTime": 3.98
+      "startTime": 4.18
     }
   ]
 }
