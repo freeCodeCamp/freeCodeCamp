@@ -137,12 +137,8 @@ function DefaultLayout({
   updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
-  const isMobileLayout = useMediaQuery({
-    query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
-  });
-  const isMobileHeight = useMediaQuery({
-    query: `(max-height: ${MAX_MOBILE_HEIGHT}px)`
-  });
+  const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
+  const isMobileHeight = useMediaQuery({ maxHeight: MAX_MOBILE_HEIGHT });
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
