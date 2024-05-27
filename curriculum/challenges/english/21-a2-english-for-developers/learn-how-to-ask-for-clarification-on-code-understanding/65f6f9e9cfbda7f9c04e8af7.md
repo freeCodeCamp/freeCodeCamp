@@ -1,14 +1,11 @@
 ---
 id: 65f6f9e9cfbda7f9c04e8af7
-title: Task 42
+title: Task 41
 challengeType: 19
-dashedName: task-42
+dashedName: task-41
 ---
 
-<!--
-AUDIO REFERENCE:
-Brian: Understood. We can investigate this together, and by the end of it, we should have a clearer picture of what's happening.
--->
+<!-- (Audio) Brian: Understood. We can investigate this together, and by the end of it, we should have a clearer picture of what's happening. -->
 
 # --description--
 
@@ -46,7 +43,7 @@ The phrase focuses on reaching an understanding at the end of the process, not t
 
 ---
 
-They will have a clearer understanding of the situation at the end.
+They will have a clearer understanding of the situation after the investigation.
 
 ## --video-solution--
 
@@ -72,7 +69,7 @@ They will have a clearer understanding of the situation at the end.
     "audio": {
       "filename": "6.3-3.mp3",
       "startTime": 1,
-      "startTimestamp": 20.94,
+      "startTimestamp": 20.74,
       "finishTimestamp": 26.28
     }
   },
@@ -85,7 +82,7 @@ They will have a clearer understanding of the situation at the end.
     {
       "character": "Brian",
       "startTime": 1,
-      "finishTime": 6.34,
+      "finishTime": 6.54,
       "dialogue": {
         "text": "Understood. We can investigate this together, and by the end of it, we should have a clearer picture of what's happening.",
         "align": "center"
@@ -94,7 +91,7 @@ They will have a clearer understanding of the situation at the end.
     {
       "character": "Brian",
       "opacity": 0,
-      "startTime": 6.84
+      "startTime": 7.04
     }
   ]
 }
