@@ -255,6 +255,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           {loading.stripe && loading.paypal && <PaymentButtonsLoader />}
           <WalletsWrapper
             amount={donationAmount}
+            duration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             label={walletlabel}
             onDonationStateChange={this.onDonationStateChange}

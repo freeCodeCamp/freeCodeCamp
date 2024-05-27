@@ -47,9 +47,8 @@ export default function donateBoot(app, done) {
   }
 
   async function createStripeDonation(req, res) {
-    const { user, body } = req;
+    const { body } = req;
     const { amount, duration, email, subscriptionId } = body;
-
     try {
       const subscription = await stripe.subscriptions.retrieve(subscriptionId);
       const isSubscriptionActive = subscription.status === 'active';
@@ -57,27 +56,23 @@ export default function donateBoot(app, done) {
       const isSubscribedInMinutes = isWithinFiveMinutes(
         subscription.current_period_start
       );
-
       const isProductIdValid = allStripeProductIdsArray.includes(productId);
-      if (isSubscriptionActive && isProductIdValid && isSubscribedInMinutes) {
-        const donatingUser = user
-          ? user
-          : await User.findOrCreate({ where: { email } }, { email });
 
-        let donation = {
+      if (isSubscriptionActive && isProductIdValid && isSubscribedInMinutes) {
+        const [donatingUser] = await User.findOrCreate(
+          { where: { email } },
+          { email }
+        );
+        const donation = {
           email,
           amount,
           duration,
           provider: 'stripe',
+          subscriptionId,
+          customerId: subscription.customer,
           startDate: new Date(Date.now()).toISOString()
         };
-
-        await donatingUser
-          .createDonation(donation)
-          .toPromise()
-          .catch(err => {
-            throw new Error(err);
-          });
+        await donatingUser.createDonation(donation);
         return res.status(200).send({ isDonating: true });
       } else {
         throw new Error('Payment intent not succeeded');

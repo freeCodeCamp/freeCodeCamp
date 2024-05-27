@@ -11,6 +11,7 @@ import type {
   SurveyResults,
   User
 } from '../redux/prop-types';
+import { DonationDuration } from '../../../shared/config/donation-settings';
 
 const { apiLocation } = envData;
 
@@ -258,8 +259,10 @@ export function postChargeStripeCard(
 }
 
 export function createStripePaymentIntent(body: {
-  payerEmail: string | undefined;
-  payerName: string | undefined;
+  email: string | undefined;
+  name: string | undefined;
+  amount: number;
+  duration: DonationDuration;
 }): Promise<
   ResponseWithData<{ clientSecret: string; subscriptionId: string }>
 > {

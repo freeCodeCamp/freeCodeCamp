@@ -7,7 +7,10 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Themes } from '../settings/theme';
-import { PaymentProvider } from '../../../../shared/config/donation-settings';
+import {
+  PaymentProvider,
+  DonationDuration
+} from '../../../../shared/config/donation-settings';
 import { createStripePaymentIntent } from '../../utils/ajax';
 import { DonationApprovalData, PostPayment } from './types';
 
@@ -15,6 +18,7 @@ interface WrapperProps {
   label: string;
   amount: number;
   theme: Themes;
+  duration: DonationDuration;
   postPayment: (arg0: PostPayment) => void;
   onDonationStateChange: (donationState: DonationApprovalData) => void;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
@@ -28,6 +32,7 @@ const WalletsButton = ({
   label,
   amount,
   theme,
+  duration,
   postPayment,
   onDonationStateChange,
   handlePaymentButtonLoad
@@ -65,9 +70,15 @@ const WalletsButton = ({
       const {
         data: { clientSecret, subscriptionId }
       } = await createStripePaymentIntent({
-        payerEmail,
-        payerName
+        email: payerEmail,
+        name: payerName,
+        amount,
+        duration
       });
+
+      // if(error){
+      //   displayError(t('donate.try-another-method'));
+      // }
 
       //confirm payment intent
       const { paymentIntent, error: confirmError } =
@@ -77,6 +88,8 @@ const WalletsButton = ({
           { handleActions: false }
         );
 
+      console.log(payerEmail);
+
       if (confirmError) {
         event.complete('fail');
         displayError(t('donate.try-another-method'));
@@ -85,6 +98,7 @@ const WalletsButton = ({
         if (paymentIntent.status === 'requires_action') {
           const { error } = await stripe.confirmCardPayment(clientSecret);
           if (error) {
+            console.log('confirmationError');
             displayError(t('donate.try-another-method'));
           } else {
             postPayment({

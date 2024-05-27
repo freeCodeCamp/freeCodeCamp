@@ -41,7 +41,7 @@ export const donationSubscriptionConfig = {
     month: 'Monthly'
   },
   plans: {
-    month: [25000, 3500, 500]
+    month: subscriptionAmounts
   }
 };
 
