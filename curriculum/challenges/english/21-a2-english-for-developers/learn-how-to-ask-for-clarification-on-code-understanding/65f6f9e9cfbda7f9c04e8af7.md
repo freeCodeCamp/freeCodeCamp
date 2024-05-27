@@ -51,3 +51,51 @@ They will have a clearer understanding of the situation at the end.
 ## --video-solution--
 
 4
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-breakroom.png",
+    "characters": [
+      {
+        "character": "Brian",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "6.3-3.mp3",
+      "startTime": 1,
+      "startTimestamp": 20.94,
+      "finishTimestamp": 26.28
+    }
+  },
+  "commands": [
+    {
+      "character": "Brian",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Brian",
+      "startTime": 1,
+      "finishTime": 6.34,
+      "dialogue": {
+        "text": "Understood. We can investigate this together, and by the end of it, we should have a clearer picture of what's happening.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Brian",
+      "opacity": 0,
+      "startTime": 6.84
+    }
+  ]
+}
+```
