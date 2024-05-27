@@ -18,7 +18,7 @@ Font Awesome は便利なアイコンライブラリです。 アイコンはウ
 
 Font Awesome を使用して、info ボタンに `info-circle` アイコンを追加し、delete ボタンに `trash` アイコンを追加してください。
 
-**Note:** You can use either `i` or `span` elements to complete this challenge.
+**注:** このチャレンジでは、`i` または `span` 要素のどちらを使っても構いません。
 
 # --hints--
 

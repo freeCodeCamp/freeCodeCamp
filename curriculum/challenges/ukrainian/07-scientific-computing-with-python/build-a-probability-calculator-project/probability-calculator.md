@@ -55,7 +55,7 @@ probability = experiment(hat=hat,
 
 _Підказка: спробуйте використати вже імпортовані модулі зверху. Не ініціалізуйте випадкове початкове значення у файлі._
 
-Note: open the browser console with F12 to see a more verbose output of the tests.
+Примітка: відкрийте консоль браузера, натиснувши на F12, щоб побачити детальніший результат тестів.
 
 # --hints--
 

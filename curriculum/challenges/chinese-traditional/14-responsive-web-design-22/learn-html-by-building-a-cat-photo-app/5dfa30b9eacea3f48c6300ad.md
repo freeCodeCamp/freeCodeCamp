@@ -21,7 +21,7 @@ dashedName: step-15
 
 # --hints--
 
-`img` 元素的 `src` 屬性值應爲 `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`。 你可能不小心刪除了它。
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. 你可能不小心刪除了它。
 
 ```js
 assert(

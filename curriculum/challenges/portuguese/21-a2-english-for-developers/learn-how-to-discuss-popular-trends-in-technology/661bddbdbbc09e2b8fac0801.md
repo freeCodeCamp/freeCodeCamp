@@ -1,6 +1,6 @@
 ---
 id: 661bddbdbbc09e2b8fac0801
-title: Task 73
+title: Tarefa 73
 challengeType: 22
 dashedName: task-73
 ---
@@ -11,7 +11,7 @@ dashedName: task-73
 
 The preposition `at` indicates a point on a map. It tells you a specific location or position. It helps you understand where something is happening or where someone is.
 
-Examples:
+Exemplos:
 
 `We'll meet at the coffee shop.` (in this sentence, `at` is used to specify the location where the meeting will take place - the coffee shop).
 
