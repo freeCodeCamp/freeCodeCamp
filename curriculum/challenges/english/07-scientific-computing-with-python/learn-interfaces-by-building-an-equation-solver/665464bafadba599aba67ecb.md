@@ -1,36 +1,26 @@
 ---
-id: 6650e88cc500673ec881c9ca
-title: Step 44
+id: 665464bafadba599aba67ecb
+title: Step 48
 challengeType: 20
-dashedName: step-44
+dashedName: step-48
 ---
 
 # --description--
 
-In this case, the discriminant is zero and the two roots are coincidents.
+To complete the `analyze` method, append to the `details` attribute a string in the form of `concavity = {}\n{} = {}`, where the three placeholders should be filled with the value of `concavity`, either `min` or `max` and the value of the vertex coordinates, respectively.
 
-Create an `if` statement to check if the discriminant is zero. This time, append a single string in the form `x = <root>` to the `results` attribute. As before, round the root to the third decimal digit. Then, return a list containing the root.
+Pay attention to give the vertex coordinates as a tuple `(x, y)`, where `x` and `y` are rounded to the third decimal digit.
 
 # --hints--
 
-You should create an `if` statement to check if the `delta` attribute is equal to zero.
+Test 1
 
 ```js
-({ test: () => assert(runPython(`_Node(_code).find_class("QuadraticEquation").find_function("solve").find_ifs()[1].find_conditions()[0].is_equivalent("self.delta == 0")`)) })
-```
-
-You should append the string `x = <root>`, where the root is rounded to the third decimal digit, to the `results` attribute within your new `if` statement.
-
-```js
-({ test: () => assert(runPython(`_Node(_code).find_class("QuadraticEquation").find_function("solve").find_ifs()[1].find_bodies()[0].has_stmt("self.results.append(f'x = {round(x1, 3)}')")`)) })
-```
-
-You should return a list containing the root within your new `if` statement.
-
-```js
-({ test: () => assert(runPython(`
-node = _Node(_code).find_class("QuadraticEquation").find_function("solve").find_ifs()[1].find_bodies()[0]
-node.is_ordered("self.results.append(f'x = {round(x1, 3)}')", "return [x1]") or node.is_ordered("self.results.append(f'x = {round(x1, 3)}')", "return [x2]")`)) })
+({ test: () => runPython(`
+eq = QuadraticEquation(16, 2, 1)
+eq.analyze()
+assert eq.details == ['concavity = upwards\\nmin = (-0.062, 0.938)']
+`) })
 ```
 
 # --seed--
@@ -88,7 +78,7 @@ class LinearEquation(Equation):
     def solve(self):
         x = -self.coefficients[0] / self.coefficients[1]
         self.results.append(f"x = {round(x, 3)}")
-        return x
+        return [x]
 
     def analyze(self):
         self.details.append(
@@ -113,14 +103,31 @@ class QuadraticEquation(Equation):
             
         x1 = (-self.coefficients[1] + (self.delta) ** 0.5) / (2 * self.coefficients[2])
         x2 = (-self.coefficients[1] - (self.delta) ** 0.5) / (2 * self.coefficients[2])
---fcc-editable-region--
-        
---fcc-editable-region--
+        if self.delta == 0:
+            self.results.append(f'x = {round(x1, 3)}')
+            return [x1]
+
         self.results.extend([f'x1 = {round(x1, 3)}', f'x2 = {round(x2, 3)}'])
         return [x1, x2]
 
     def analyze(self):
-        pass
+        x = -self.coefficients[1] / (2 * self.coefficients[2])
+        y = (
+            self.coefficients[2] * x**2
+            + self.coefficients[1] * x
+            + self.coefficients[0]
+        )
+        vertex = {'x': x, 'y': y}
+        if self.coefficients[2] > 0:
+            concavity = 'upwards'
+            vertex['m'] = 'min'
+        else:
+            concavity = "downwards"
+            vertex['m'] = 'max'
+--fcc-editable-region--
+        
+--fcc-editable-region--
+        return {'vertex': vertex, 'concavity': concavity}
 
 lin_eq = LinearEquation(2, 3)
 print(lin_eq)
