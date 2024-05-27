@@ -190,7 +190,6 @@
 
 #mobile-layout .portal-button-wrap {
   position: absolute;
-  top: calc(var(--header-height) + var(--breadcrumbs-height));
   right: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
