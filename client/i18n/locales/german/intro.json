@@ -473,6 +473,13 @@
           "This will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
         "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
         "intro": [
@@ -959,7 +966,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow ist ein Open-Source-Framework, das maschinelles Lernen und neuronale Netzwerke leichter nutzbar macht.",
           "Der folgende Videokurs wurde von Tim Ruscica, auch bekannt als \"Tech With Tim\", erstellt. Es wird dir helfen, TensorFlow und einige seiner mächtigen Fähigkeiten zu verstehen."
@@ -1483,7 +1490,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
