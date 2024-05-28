@@ -68,7 +68,7 @@ const WalletsButton = ({
       } = event;
       //create payment intent
       const {
-        data: { clientSecret, subscriptionId }
+        data: { clientSecret, subscriptionId, error }
       } = await createStripePaymentIntent({
         email: payerEmail,
         name: payerName,
@@ -76,46 +76,45 @@ const WalletsButton = ({
         duration
       });
 
-      // if(error){
-      //   displayError(t('donate.try-another-method'));
-      // }
-
-      //confirm payment intent
-      const { paymentIntent, error: confirmError } =
-        await stripe.confirmCardPayment(
-          clientSecret,
-          { payment_method: event.paymentMethod.id },
-          { handleActions: false }
-        );
-
-      console.log(payerEmail);
-
-      if (confirmError) {
+      if (error) {
         event.complete('fail');
         displayError(t('donate.try-another-method'));
-      } else {
-        event.complete('success');
-        if (paymentIntent.status === 'requires_action') {
-          const { error } = await stripe.confirmCardPayment(clientSecret);
-          if (error) {
-            console.log('confirmationError');
-            displayError(t('donate.try-another-method'));
+      } else if (clientSecret) {
+        // confirm payment intent
+        const { paymentIntent, error: confirmError } =
+          await stripe.confirmCardPayment(
+            clientSecret,
+            { payment_method: event.paymentMethod.id },
+            { handleActions: false }
+          );
+
+        if (confirmError) {
+          event.complete('fail');
+          displayError(t('donate.try-another-method'));
+        } else {
+          event.complete('success');
+          if (paymentIntent.status === 'requires_action') {
+            const { error } = await stripe.confirmCardPayment(clientSecret);
+            if (error) {
+              console.log('confirmationError');
+              displayError(t('donate.try-another-method'));
+            } else {
+              postPayment({
+                paymentProvider: PaymentProvider.Stripe,
+                paymentMethodId,
+                payerEmail,
+                payerName,
+                subscriptionId
+              });
+            }
           } else {
             postPayment({
               paymentProvider: PaymentProvider.Stripe,
               paymentMethodId,
               payerEmail,
-              payerName,
               subscriptionId
             });
           }
-        } else {
-          postPayment({
-            paymentProvider: PaymentProvider.Stripe,
-            paymentMethodId,
-            payerEmail,
-            subscriptionId
-          });
         }
       }
     });

@@ -258,14 +258,27 @@ export function postChargeStripeCard(
   return post('/donate/charge-stripe-card', body);
 }
 
+type PaymentIntentResponse = Promise<
+  ResponseWithData<
+    | {
+        clientSecret?: never;
+        subscriptionId?: never;
+        error: string;
+      }
+    | {
+        clientSecret: string;
+        subscriptionId: string;
+        error?: never;
+      }
+  >
+>;
+
 export function createStripePaymentIntent(body: {
   email: string | undefined;
   name: string | undefined;
   amount: number;
   duration: DonationDuration;
-}): Promise<
-  ResponseWithData<{ clientSecret: string; subscriptionId: string }>
-> {
+}): PaymentIntentResponse {
   return post('/donate/create-stripe-payment-intent', body);
 }
 
