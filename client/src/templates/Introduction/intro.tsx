@@ -71,12 +71,6 @@ function IntroductionPage({
           <Spacer size='small' />
           <hr />
         </FullWidthRow>
-        <FullWidthRow>
-          <h2 className='intro-toc-title'>{t('learn.upcoming-lessons')}</h2>
-          {allChallengeNode ? (
-            <Challenges challengeNodes={allChallengeNode} />
-          ) : null}
-        </FullWidthRow>
       </Container>
     </LearnLayout>
   );
@@ -87,34 +81,13 @@ IntroductionPage.displayName = 'IntroductionPage';
 export default IntroductionPage;
 
 export const query = graphql`
-  query IntroPageBySlug($slug: String!, $block: String!) {
+  query IntroPageBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         block
         superBlock
       }
       html
-    }
-    allChallengeNode(
-      filter: { challenge: { block: { eq: $block } } }
-      sort: {
-        fields: [
-          challenge___superOrder
-          challenge___order
-          challenge___challengeOrder
-        ]
-      }
-    ) {
-      edges {
-        node {
-          challenge {
-            fields {
-              slug
-            }
-            title
-          }
-        }
-      }
     }
   }
 `;
