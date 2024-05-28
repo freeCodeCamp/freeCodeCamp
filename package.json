@@ -93,7 +93,8 @@
     "postinstall": "cypress cache prune",
     "prepare": "husky",
     "playwright:run": "playwright test",
-    "playwright:watch": "playwright test --ui"
+    "playwright:watch": "playwright test --ui",
+    "find-bs-cls": "ts-node tools/scripts/find-bootstrap-classes.ts"
   },
   "dependencies": {
     "dotenv": "16.4.5"
@@ -133,6 +134,7 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "6.2.0",
+    "glob": "^10.4.1",
     "husky": "9.0.11",
     "jest": "29.7.0",
     "js-yaml": "3.14.1",
