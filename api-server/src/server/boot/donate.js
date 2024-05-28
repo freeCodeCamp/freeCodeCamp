@@ -75,7 +75,7 @@ export default function donateBoot(app, done) {
         await donatingUser.createDonation(donation);
         return res.status(200).send({ isDonating: true });
       } else {
-        throw new Error('Payment intent not succeeded');
+        throw new Error('Donation failed due to a server error.');
       }
     } catch (err) {
       return res
