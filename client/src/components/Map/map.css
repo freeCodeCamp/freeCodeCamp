@@ -52,7 +52,7 @@
   height: 39%;
   background-color: var(--secondary-color);
   position: absolute;
-  left: calc(37%);
+  left: calc(36.5%);
 }
 
 .map-ui ul li:not(:first-child) .progress-icon.show-progression-lines:before {
