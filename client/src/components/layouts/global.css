@@ -228,6 +228,7 @@ input[type='submit'],
 button:hover,
 input[type='submit']:hover,
 .btn:hover,
+.btn:focus:hover,
 .btn-default.active:hover,
 .btn-default.active,
 .btn-primary:hover {
