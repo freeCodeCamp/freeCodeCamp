@@ -2,7 +2,6 @@
 id: 587d781b367417b2b2512aba
 title: 使用 s 標籤給文本添加刪除線
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301079
 dashedName: use-the-s-tag-to-strikethrough-text
 ---

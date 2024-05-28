@@ -1,6 +1,6 @@
 ---
 id: 62aa20e9cf1be9358f5aceae
-title: Step 152
+title: Passo 152
 challengeType: 0
 dashedName: step-152
 ---
@@ -14,13 +14,13 @@ Adicione uma instrução `else` à primeira instrução `if` dentro da função 
 Você deve adicionar um bloco `else` após o seu bloco `if (isMonsterHit())`.
 
 ```js
-assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeapon\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1\s*;?\s*\}\s*else/)
+assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeaponIndex\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1\s*;?\s*\}\s*else/)
 ```
 
 You should add the text `" You miss."` to the end of `text.innerText`. Lembre-se de usar a atribuição composta e certifique-se de que haja um espaço antes da palavra `You`.
 
 ```js
-assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeapon\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1\s*;?\s*\}\s*else\s*\{\s*text\.innerText\s*\+=\s*('|")\sYou miss\.\1/)
+assert.match(attack.toString(), /if\s*\(\s*isMonsterHit\(\s*\)\s*\)\s*\{\s*monsterHealth\s*-=\s*weapons\s*\[\s*currentWeaponIndex\s*\]\s*\.power\s*\+\s*Math\.floor\(\s*Math\.random\(\s*\)\s*\*\s*xp\s*\)\s*\+\s*1\s*;?\s*\}\s*else\s*\{\s*text\.innerText\s*\+=\s*('|")\sYou miss\.\1/)
 ```
 
 # --seed--
@@ -112,7 +112,7 @@ button {
 let xp = 0;
 let health = 100;
 let gold = 50;
-let currentWeapon = 0;
+let currentWeaponIndex = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];
@@ -235,12 +235,12 @@ function buyHealth() {
 }
 
 function buyWeapon() {
-  if (currentWeapon < weapons.length - 1) {
+  if (currentWeaponIndex < weapons.length - 1) {
     if (gold >= 30) {
       gold -= 30;
-      currentWeapon++;
+      currentWeaponIndex++;
       goldText.innerText = gold;
-      let newWeapon = weapons[currentWeapon].name;
+      let newWeapon = weapons[currentWeaponIndex].name;
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
       text.innerText += " In your inventory you have: " + inventory;
@@ -292,10 +292,10 @@ function goFight() {
 --fcc-editable-region--
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
-  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  text.innerText += " You attack it with your " + weapons[currentWeaponIndex].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;    
   }
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
@@ -341,7 +341,7 @@ function restart() {
   xp = 0;
   health = 100;
   gold = 50;
-  currentWeapon = 0;
+  currentWeaponIndex = 0;
   inventory = ["stick"];
   goldText.innerText = gold;
   healthText.innerText = health;
