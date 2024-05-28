@@ -213,7 +213,14 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
             <div className='fcc_search_wrapper'>
               <ObserveKeys except={['Space']}>
                 <div onFocus={this.handleFocus} role='textbox'>
+                  <label
+                    className='sr-only'
+                    htmlFor='unoptimized-SearchBox-input'
+                  >
+                    {t('search.label')}
+                  </label>
                   <SearchBox
+                    id='unoptimized-SearchBox-input'
                     data-playwright-test-label='header-search'
                     focusShortcuts={['83', '191']}
                     onChange={this.handleChange}
