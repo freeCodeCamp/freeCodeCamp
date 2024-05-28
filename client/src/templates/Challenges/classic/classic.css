@@ -220,3 +220,9 @@
 .nav-lists [role='tab']:focus {
   outline-offset: -3px;
 }
+
+@media screen and (max-height: 768px) {
+  #mobile-layout .monaco-editor-tabs button {
+    display: none;
+  }
+}
