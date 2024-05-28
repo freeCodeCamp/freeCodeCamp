@@ -1,8 +1,8 @@
 ---
 id: 665464bafadba599aba67ecb
-title: Step 48
+title: Step 49
 challengeType: 20
-dashedName: step-48
+dashedName: step-49
 ---
 
 # --description--
@@ -13,13 +13,16 @@ Pay attention to give the vertex coordinates as a tuple `(x, y)`, where `x` and 
 
 # --hints--
 
-Test 1
+You should append the correct string to the `details` attribute.
 
 ```js
 ({ test: () => runPython(`
-eq = QuadraticEquation(16, 2, 1)
-eq.analyze()
-assert eq.details == ['concavity = upwards\\nmin = (-0.062, 0.938)']
+eq1 = QuadraticEquation(16, 2, 1)
+eq1.analyze()
+eq2 = QuadraticEquation(-16, 2, 1)
+eq2.analyze()
+assert eq1.details == ['concavity = upwards\\nmin = (-0.062, 0.938)']
+assert eq2.details == ['concavity = downwards\\nmax = (0.062, 1.062)']
 `) })
 ```
 
@@ -33,9 +36,9 @@ import re
 
 class Equation(ABC):   
     def __init__(self, *args):
-        if (self.grade + 1) != len(args):
+        if (self.degree + 1) != len(args):
             raise TypeError(
-                f"'Equation' object takes {self.grade + 1} positional arguments but {len(args)} were given"
+                f"'Equation' object takes {self.degree + 1} positional arguments but {len(args)} were given"
             )
         for arg in args:
             if not isinstance(arg, (int, float)):
@@ -62,7 +65,7 @@ class Equation(ABC):
 
     @property
     @abstractmethod
-    def grade(self): pass    
+    def degree(self): pass    
     
     @abstractmethod
     def solve(self): pass
@@ -72,12 +75,12 @@ class Equation(ABC):
         
 class LinearEquation(Equation):
     @property
-    def grade(self):
+    def degree(self):
         return 1
     
     def solve(self):
         x = -self.coefficients[0] / self.coefficients[1]
-        self.results.append(f"x = {round(x, 3)}")
+        self.results.append(f'x = {x:.3f}')
         return [x]
 
     def analyze(self):
@@ -93,7 +96,7 @@ class QuadraticEquation(Equation):
             self.coefficients[1] ** 2 - 4 * self.coefficients[2] * self.coefficients[0]
         )
     @property
-    def grade(self):
+    def degree(self):
         return 2
 
     def solve(self):
@@ -104,10 +107,10 @@ class QuadraticEquation(Equation):
         x1 = (-self.coefficients[1] + (self.delta) ** 0.5) / (2 * self.coefficients[2])
         x2 = (-self.coefficients[1] - (self.delta) ** 0.5) / (2 * self.coefficients[2])
         if self.delta == 0:
-            self.results.append(f'x = {round(x1, 3)}')
+            self.results.append(f'x = {x1:.3f}')
             return [x1]
 
-        self.results.extend([f'x1 = {round(x1, 3)}', f'x2 = {round(x2, 3)}'])
+        self.results.extend([f'x1 = {x1:.3f}', f'x2 = {x2:.3f}'])
         return [x1, x2]
 
     def analyze(self):
