@@ -139,14 +139,14 @@ function DefaultLayout({
   const { t } = useTranslation();
   const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
   const isMobileHeight = useMediaQuery({ maxHeight: MAX_MOBILE_HEIGHT });
-  const isMultifileEditorChallenges =
+  const isMultifileEditorChallenge =
     superBlock === SuperBlocks.RespWebDesignNew ||
     superBlock === SuperBlocks.JsAlgoDataStructNew ||
     superBlock === SuperBlocks.SciCompPy;
   const isProject = /project$/.test(block as string);
   const isRenderBreadcrumbOnMobile =
     isMobileLayout &&
-    (isProject || !isMultifileEditorChallenges || !isMobileHeight);
+    (isProject || !isMultifileEditorChallenge || !isMobileHeight);
   const isRenderBreadcrumb = !isMobileLayout || isRenderBreadcrumbOnMobile;
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
