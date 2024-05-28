@@ -203,4 +203,131 @@ describe('auth', () => {
       expect(res.json()).toEqual({ ok: true });
     });
   });
+
+  describe('authorizeOrRedirect', () => {
+    beforeEach(() => {
+      fastify.addHook('onRequest', fastify.authorizeOrRedirect);
+      fastify.get('/test', () => {
+        return { message: 'ok' };
+      });
+    });
+    it('should redirect to the origin if the access token is missing', async () => {
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test'
+      });
+
+      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should reject if the access token is missing', async () => {
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test'
+      });
+
+      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should reject if the access token is not signed', async () => {
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: token
+        }
+      });
+
+      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should reject if the access token is invalid', async () => {
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        'invalid-secret'
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should reject if the access token has expired', async () => {
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123', -1) },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should reject if the user is not found', async () => {
+      // @ts-expect-error prisma isn't defined, since we're not building the
+      // full application here.
+      fastify.prisma = { user: { findUnique: () => null } };
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should populate the request with the user if the token is valid', async () => {
+      const fakeUser = { id: '123', username: 'test-user' };
+      // @ts-expect-error prisma isn't defined, since we're not building the
+      // full application here.
+      fastify.prisma = { user: { findUnique: () => fakeUser } };
+      fastify.get('/test-user', req => {
+        expect(req.user).toEqual(fakeUser);
+        return { ok: true };
+      });
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test-user',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({ ok: true });
+    });
+  });
 });

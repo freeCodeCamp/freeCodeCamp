@@ -6,6 +6,7 @@ import { type user } from '@prisma/client';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
 import { type Token } from '../utils/tokens';
+import { getRedirectParams } from '../utils/redirection';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -19,6 +20,7 @@ declare module 'fastify' {
 
   interface FastifyInstance {
     authorize: (req: FastifyRequest, reply: FastifyReply) => void;
+    authorizeOrRedirect: (req: FastifyRequest, reply: FastifyReply) => void;
   }
 }
 
@@ -40,39 +42,64 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
   const TOKEN_INVALID = 'Your access token is invalid';
   const TOKEN_EXPIRED = 'Access token is no longer valid';
 
-  const send401 = (reply: FastifyReply, message: string) =>
-    reply.status(401).send({ type: 'info', message });
+  const send401 = (
+    _req: FastifyRequest,
+    reply: FastifyReply,
+    message: string
+  ): void => {
+    void reply.status(401).send({ type: 'info', message });
+  };
 
-  fastify.decorate(
-    'authorize',
-    async function (req: FastifyRequest, reply: FastifyReply) {
+  const redirectHome = (
+    req: FastifyRequest,
+    reply: FastifyReply,
+    _ignored: string
+  ) => {
+    const { origin } = getRedirectParams(req);
+    // TODO: (Post-MVP) redirect with a message telling the user that they need
+    // to logsin to use the route.
+    void reply.status(302).redirect(origin);
+  };
+
+  const handleAuth =
+    (
+      redirectStrategy: (
+        req: FastifyRequest,
+        reply: FastifyReply,
+        message: string
+      ) => void
+    ) =>
+    async (req: FastifyRequest, reply: FastifyReply) => {
       const tokenCookie = req.cookies.jwt_access_token;
-      if (!tokenCookie) return send401(reply, TOKEN_REQUIRED);
+      if (!tokenCookie) return redirectStrategy(req, reply, TOKEN_REQUIRED);
 
       const unsignedToken = req.unsignCookie(tokenCookie);
-      if (!unsignedToken.valid) return send401(reply, TOKEN_REQUIRED);
+      if (!unsignedToken.valid)
+        return redirectStrategy(req, reply, TOKEN_REQUIRED);
 
       const jwtAccessToken = unsignedToken.value;
 
       try {
         jwt.verify(jwtAccessToken!, JWT_SECRET);
       } catch {
-        return send401(reply, TOKEN_INVALID);
+        return redirectStrategy(req, reply, TOKEN_INVALID);
       }
 
       const {
         accessToken: { created, ttl, userId }
       } = jwt.decode(jwtAccessToken!) as { accessToken: Token };
       const valid = isBefore(Date.now(), Date.parse(created) + ttl);
-      if (!valid) return send401(reply, TOKEN_EXPIRED);
+      if (!valid) return redirectStrategy(req, reply, TOKEN_EXPIRED);
 
       const user = await fastify.prisma.user.findUnique({
         where: { id: userId }
       });
-      if (!user) return send401(reply, TOKEN_INVALID);
+      if (!user) return redirectStrategy(req, reply, TOKEN_INVALID);
       req.user = user;
-    }
-  );
+    };
+
+  fastify.decorate('authorize', handleAuth(send401));
+  fastify.decorate('authorizeOrRedirect', handleAuth(redirectHome));
 
   done();
 };
