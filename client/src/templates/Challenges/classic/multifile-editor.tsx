@@ -32,7 +32,6 @@ type MultifileEditorProps = Pick<
   | 'resizeProps'
   | 'isUsingKeyboardInTablist'
   | 'isMobileLayout'
-  | 'isMobileHeight'
   | 'initialTests'
   | 'editorRef'
   | 'containerRef'
@@ -76,7 +75,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     editorRef,
     initialTests,
     isMobileLayout,
-    isMobileHeight,
     isUsingKeyboardInTablist,
     resizeProps,
     title,
@@ -149,7 +147,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     fileKey={key as FileKey}
                     initialTests={initialTests}
                     isMobileLayout={isMobileLayout}
-                    isMobileHeight={isMobileHeight}
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}
                     resizeProps={resizeProps}
                     dimensions={props.dimensions ?? { height: 0, width: 0 }}

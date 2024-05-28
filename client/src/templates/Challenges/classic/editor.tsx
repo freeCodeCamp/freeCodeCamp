@@ -12,6 +12,7 @@ import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect, useStore } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
 import store from 'store';
 
@@ -65,6 +66,7 @@ import {
 import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
+import { MAX_MOBILE_HEIGHT } from '../../../../config/misc';
 import LowerJaw from './lower-jaw';
 import './editor.css';
 
@@ -87,7 +89,6 @@ export interface EditorProps {
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
   isMobileLayout: boolean;
-  isMobileHeight: boolean;
   isResetting: boolean;
   isSignedIn: boolean;
   isUsingKeyboardInTablist: boolean;
@@ -245,7 +246,11 @@ const initialData: EditorProperties = {
 const Editor = (props: EditorProps): JSX.Element => {
   const reduxStore = useStore();
   const { t } = useTranslation();
-  const { editorRef, initTests, resetAttempts } = props;
+  const isMobileHeight = useMediaQuery({
+    query: `(max-height: ${MAX_MOBILE_HEIGHT}px)`
+  });
+  const { editorRef, initTests, resetAttempts, isMobileLayout } = props;
+  const isRenderBreadcrumb = isMobileLayout && isMobileHeight;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -779,7 +784,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
-    const { description, title, isChallengeCompleted, isMobileHeight } = props;
+    const { description, title, isChallengeCompleted } = props;
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
@@ -806,7 +811,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.classList.add('description-container');
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
-    if (isMobileHeight) descContainer.appendChild(createBreadcrumb());
+    if (isRenderBreadcrumb) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
@@ -1290,14 +1295,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     const description = document.getElementsByClassName(
       'description-container'
     )?.[0];
-    if (description && props.isMobileHeight)
+    if (description && isRenderBreadcrumb)
       description.prepend(createBreadcrumb());
     else {
       if (document.getElementsByTagName('ol')[1])
         document.getElementsByTagName('ol')[1].remove();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.isMobileHeight]);
+  }, [isMobileHeight]);
 
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;

@@ -139,6 +139,15 @@ function DefaultLayout({
   const { t } = useTranslation();
   const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
   const isMobileHeight = useMediaQuery({ maxHeight: MAX_MOBILE_HEIGHT });
+  const isMultifileEditorChallenges =
+    superBlock === SuperBlocks.RespWebDesignNew ||
+    superBlock === SuperBlocks.JsAlgoDataStructNew ||
+    superBlock === SuperBlocks.SciCompPy;
+  const isProject = /project$/.test(block as string);
+  const isRenderBreadcrumbOnMobile =
+    isMobileLayout &&
+    (isProject || !isMultifileEditorChallenges || !isMobileHeight);
+  const isRenderBreadcrumb = !isMobileLayout || isRenderBreadcrumbOnMobile;
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
@@ -247,15 +256,7 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge &&
-          !examInProgress &&
-          (!isMobileLayout ||
-            (isMobileLayout &&
-              (/project$/.test(block as string) ||
-                (superBlock != SuperBlocks.RespWebDesignNew &&
-                  superBlock != SuperBlocks.JsAlgoDataStructNew &&
-                  superBlock != SuperBlocks.SciCompPy) ||
-                !isMobileHeight))) ? (
+          {isChallenge && !examInProgress && isRenderBreadcrumb ? (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}

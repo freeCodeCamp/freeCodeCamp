@@ -13,7 +13,7 @@ import type { FitAddon } from 'xterm-addon-fit';
 
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
-import { MAX_MOBILE_WIDTH, MAX_MOBILE_HEIGHT } from '../../../../config/misc';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import {
   ChallengeFiles,
@@ -127,7 +127,6 @@ interface ReflexLayout {
 
 interface RenderEditorArgs {
   isMobileLayout: boolean;
-  isMobileHeight: boolean;
   isUsingKeyboardInTablist: boolean;
 }
 
@@ -228,9 +227,6 @@ function ShowClassic({
   const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
-  });
-  const isMobileHeight = useMediaQuery({
-    query: `(max-height: ${MAX_MOBILE_HEIGHT}px)`
   });
 
   const blockNameTitle = `${t(
@@ -408,7 +404,6 @@ function ShowClassic({
 
   const renderEditor = ({
     isMobileLayout,
-    isMobileHeight,
     isUsingKeyboardInTablist
   }: RenderEditorArgs) => {
     return (
@@ -422,7 +417,6 @@ function ShowClassic({
           editorRef={editorRef}
           initialTests={tests}
           isMobileLayout={isMobileLayout}
-          isMobileHeight={isMobileHeight}
           isUsingKeyboardInTablist={isUsingKeyboardInTablist}
           resizeProps={resizeProps}
           title={title}
@@ -450,7 +444,6 @@ function ShowClassic({
           <MobileLayout
             editor={renderEditor({
               isMobileLayout: true,
-              isMobileHeight: isMobileHeight,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             guideUrl={getGuideUrl({ forumTopicId, title })}
@@ -485,7 +478,6 @@ function ShowClassic({
             challengeType={challengeType}
             editor={renderEditor({
               isMobileLayout: false,
-              isMobileHeight: false,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
