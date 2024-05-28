@@ -7,8 +7,10 @@ dashedName: step-58
 
 # --description--
 
+***Description:***<br>
 With a `display` of `block` the submit button sits flush against the left edge of its parent.
 
+***To Do:***<br>
 Use the same technique used to center the `form` to center the submit button.
 
 # --hints--

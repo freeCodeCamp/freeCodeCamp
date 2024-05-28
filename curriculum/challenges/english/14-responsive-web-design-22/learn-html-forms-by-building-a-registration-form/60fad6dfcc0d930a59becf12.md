@@ -6,9 +6,10 @@ dashedName: step-43
 ---
 
 # --description--
-
+***Description:***<br>
 The HTML for the registration form is finished. Now, you can spruce it up a bit.
 
+***To Do:***<br>
 Start by changing the font to `Tahoma`, and the font size to `16px` in the `body`.
 
 # --hints--
