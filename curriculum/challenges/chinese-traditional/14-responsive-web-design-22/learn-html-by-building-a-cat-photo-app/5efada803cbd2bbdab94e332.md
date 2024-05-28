@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-第三張圖像應該有一個 `src` 屬性設置爲 `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`。
+The third image should have a `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
