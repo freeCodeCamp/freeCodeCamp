@@ -2,7 +2,6 @@
 id: 587d781b367417b2b2512aba
 title: Використання тегу s щоб закреслити текст
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301079
 dashedName: use-the-s-tag-to-strikethrough-text
 ---

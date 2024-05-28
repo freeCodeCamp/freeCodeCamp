@@ -2,7 +2,6 @@
 id: 5ee127a03c3b35dd45426493
 title: تعيين قيمة متغير إلى متغير آخر
 challengeType: 1
-videoUrl: ''
 forumTopicId: 418265
 dashedName: assigning-the-value-of-one-variable-to-another
 ---
