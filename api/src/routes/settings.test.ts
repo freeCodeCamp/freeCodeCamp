@@ -343,7 +343,6 @@ describe('settingRoutes', () => {
         });
 
         expect(user.newEmail).toBeNull();
-        expect(user.newEmail).toBeNull();
         expect(user.emailVerified).toBe(true);
         expect(user.emailVerifyTTL).toBeNull();
         expect(user.emailAuthLinkTTL).toBeNull();
