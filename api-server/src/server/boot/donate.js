@@ -70,7 +70,7 @@ export default function donateBoot(app, done) {
           provider: 'stripe',
           subscriptionId,
           customerId: subscription.customer,
-          startDate: new Date(Date.now()).toISOString()
+          startDate: new Date().toISOString()
         };
         await donatingUser.createDonation(donation);
         return res.status(200).send({ isDonating: true });
