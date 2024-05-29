@@ -95,7 +95,7 @@ test('User can use shortcuts in and around the editor', async ({ page }) => {
   await expect(page.locator('.instructions-panel')).toBeFocused();
 });
 
-test('User can use shortcuts to navigate between projects', async ({
+test('User can use shortcuts to navigate between frontend projects', async ({
   page
 }) => {
   await page.goto(links.frontEnd1);
