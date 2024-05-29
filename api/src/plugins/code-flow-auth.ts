@@ -56,9 +56,12 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
     _ignored: string
   ) => {
     const { origin } = getRedirectParams(req);
-    // TODO: (Post-MVP) redirect with a message telling the user that they need
-    // to logsin to use the route.
-    void reply.status(302).redirect(origin);
+
+    void reply.redirectWithMessage(origin, {
+      type: 'info',
+      content:
+        'Only authenticated users can access this route. Please sign in and try again.'
+    });
   };
 
   const handleAuth =
@@ -104,4 +107,4 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(codeFlowAuth);
+export default fp(codeFlowAuth, { dependencies: ['redirect-with-message'] });

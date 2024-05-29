@@ -1042,7 +1042,6 @@ Happy coding!
       it('redirects to the HOME_LOCATION with flash message', async () => {
         const res = await superRequest('/confirm-email', {
           method: 'GET',
-          setCookies,
           headers: { referer: 'https://who.knows/' }
         });
 

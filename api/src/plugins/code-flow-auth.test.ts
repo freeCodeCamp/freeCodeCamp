@@ -5,6 +5,7 @@ import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
 import { type Token, createAccessToken } from '../utils/tokens';
 import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies';
 import codeFlowAuth from './code-flow-auth';
+import redirectWithMessage, { formatMessage } from './redirect-with-message';
 
 describe('auth', () => {
   let fastify: FastifyInstance;
@@ -12,6 +13,7 @@ describe('auth', () => {
   beforeEach(async () => {
     fastify = Fastify();
     await fastify.register(cookies);
+    await fastify.register(redirectWithMessage);
     await fastify.register(codeFlowAuth);
   });
 
@@ -205,33 +207,26 @@ describe('auth', () => {
   });
 
   describe('authorizeOrRedirect', () => {
+    const redirectLocation = `http://localhost:8000?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
+
     beforeEach(() => {
       fastify.addHook('onRequest', fastify.authorizeOrRedirect);
       fastify.get('/test', () => {
         return { message: 'ok' };
       });
     });
+
     it('should redirect to the origin if the access token is missing', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/test'
       });
 
-      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.headers.location).toBe(redirectLocation);
       expect(res.statusCode).toBe(302);
     });
 
-    it('should reject if the access token is missing', async () => {
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/test'
-      });
-
-      expect(res.headers.location).toBe('http://localhost:8000');
-      expect(res.statusCode).toBe(302);
-    });
-
-    it('should reject if the access token is not signed', async () => {
+    it('should redirect to the origin if the access token is not signed', async () => {
       const token = jwt.sign(
         { accessToken: createAccessToken('123') },
         JWT_SECRET
@@ -244,11 +239,11 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.headers.location).toBe(redirectLocation);
       expect(res.statusCode).toBe(302);
     });
 
-    it('should reject if the access token is invalid', async () => {
+    it('should redirect to the origin if the access token is invalid', async () => {
       const token = jwt.sign(
         { accessToken: createAccessToken('123') },
         'invalid-secret'
@@ -262,11 +257,11 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.headers.location).toBe(redirectLocation);
       expect(res.statusCode).toBe(302);
     });
 
-    it('should reject if the access token has expired', async () => {
+    it('should redirect to the origin if the access token has expired', async () => {
       const token = jwt.sign(
         { accessToken: createAccessToken('123', -1) },
         JWT_SECRET
@@ -280,11 +275,11 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.headers.location).toBe(redirectLocation);
       expect(res.statusCode).toBe(302);
     });
 
-    it('should reject if the user is not found', async () => {
+    it('should redirect to the origin if the user is not found', async () => {
       // @ts-expect-error prisma isn't defined, since we're not building the
       // full application here.
       fastify.prisma = { user: { findUnique: () => null } };
@@ -301,7 +296,7 @@ describe('auth', () => {
         }
       });
 
-      expect(res.headers.location).toBe('http://localhost:8000');
+      expect(res.headers.location).toBe(redirectLocation);
       expect(res.statusCode).toBe(302);
     });
 

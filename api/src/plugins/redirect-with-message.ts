@@ -57,4 +57,4 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(plugin);
+export default fp(plugin, { name: 'redirect-with-message' });

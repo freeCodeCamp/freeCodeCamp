@@ -180,6 +180,8 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
+  // redirectWithMessage must be registered before codeFlowAuth
+  void fastify.register(redirectWithMessage);
   void fastify.register(codeFlowAuth);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
@@ -199,7 +201,6 @@ export const build = async (
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
-  void fastify.register(redirectWithMessage);
 
   return fastify;
 };
