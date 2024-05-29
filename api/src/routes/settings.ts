@@ -5,6 +5,7 @@ import {
 import type {
   ContextConfigDefault,
   FastifyError,
+  FastifyInstance,
   FastifyReply,
   FastifyRequest,
   RawReplyDefaultExpression,
@@ -699,6 +700,31 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
     content: 'flash.email-valid'
   } as const;
 
+  async function updateEmail(
+    fastify: FastifyInstance,
+    { id, email }: { id: string; email: string }
+  ) {
+    await fastify.prisma.user.update({
+      where: { id },
+      data: {
+        email,
+        emailAuthLinkTTL: null,
+        emailVerified: true,
+        emailVerifyTTL: null,
+        newEmail: null
+      }
+    });
+  }
+
+  async function deleteAuthToken(
+    fastify: FastifyInstance,
+    { id }: { id: string }
+  ) {
+    await fastify.prisma.authToken.delete({
+      where: { id }
+    });
+  }
+
   fastify.get(
     '/confirm-email',
     {
@@ -706,7 +732,6 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, request, reply) {
         if (error.validation) {
           const { origin } = getRedirectParams(request);
-
           void reply.redirectWithMessage(origin, redirectMessage);
         } else {
           fastify.errorHandler(error, request, reply);
@@ -743,20 +768,10 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
-      await fastify.prisma.user.update({
-        where: { id: targetUser.id },
-        data: {
-          email,
-          emailAuthLinkTTL: null,
-          emailVerified: true,
-          emailVerifyTTL: null,
-          newEmail: null
-        }
-      });
-
-      await fastify.prisma.authToken.delete({
-        where: { id: authToken.id }
-      });
+      await Promise.all([
+        updateEmail(fastify, { id: targetUser.id, email }),
+        deleteAuthToken(fastify, { id: authToken.id })
+      ]);
 
       return reply.redirectWithMessage(origin, successMessage);
     }
