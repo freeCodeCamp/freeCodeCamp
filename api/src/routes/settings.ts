@@ -13,13 +13,17 @@ import type {
   RouteGenericInterface
 } from 'fastify';
 import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
-import { differenceInMinutes } from 'date-fns';
+import { differenceInMinutes, addMilliseconds, isAfter } from 'date-fns';
+import validator from 'validator';
 
 import { isValidUsername } from '../../../shared/utils/validate';
 import * as schemas from '../schemas';
 import { createAuthToken } from '../utils/tokens';
 import { API_LOCATION } from '../utils/env';
+import { getRedirectParams } from '../utils/redirection';
 import { isRestricted } from './helpers/is-restricted';
+
+const { isEmail } = validator;
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -661,12 +665,109 @@ ${isLinkSentWithinLimitTTL}`
     }
   );
 
+  done();
+};
+
+/**
+ * Plugin for endpoints that redirect if the user is not authenticated.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options for the plugin.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.addHook('onRequest', fastify.authorizeOrRedirect);
+
+  const redirectMessage = {
+    type: 'danger',
+    content:
+      'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+  } as const;
+
+  const expirationMessage = {
+    type: 'info',
+    content:
+      'The link to confirm your new email address has expired. Please try again.'
+  } as const;
+
+  const successMessage = {
+    type: 'success',
+    content: 'flash.email-valid'
+  } as const;
+
   fastify.get(
     '/confirm-email',
     {
-      schema: schemas.confirmEmail
+      schema: schemas.confirmEmail,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          const { origin } = getRedirectParams(request);
+
+          void reply.redirectWithMessage(origin, redirectMessage);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
     },
-    async (_req, _reply) => {}
+    async (req, reply) => {
+      const email = Buffer.from(req.query.email, 'base64').toString();
+
+      const { origin } = getRedirectParams(req);
+      if (!isEmail(email)) {
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
+
+      const authToken = await fastify.prisma.authToken.findUnique({
+        where: { id: req.query.token }
+      });
+
+      if (!authToken) {
+        // TODO
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
+
+      const tokenExpirationDate = addMilliseconds(
+        authToken.created,
+        authToken.ttl
+      );
+
+      // TODO: refactor token validation to a helper function in tokens.ts and use it in
+      // code-flow-auth
+      if (isAfter(new Date(), tokenExpirationDate)) {
+        return reply.redirectWithMessage(origin, expirationMessage);
+      }
+
+      // TODO(Post-MVP): should this fail if it's not the currently signed in
+      // user?
+      const targetUser = await fastify.prisma.user.findUnique({
+        where: { id: authToken.userId }
+      });
+
+      if (targetUser?.newEmail !== email) {
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
+
+      await fastify.prisma.user.update({
+        where: { id: targetUser.id },
+        data: {
+          email,
+          emailAuthLinkTTL: null,
+          emailVerified: true,
+          emailVerifyTTL: null,
+          newEmail: null
+        }
+      });
+
+      await fastify.prisma.authToken.delete({
+        where: { id: authToken.id }
+      });
+
+      return reply.redirectWithMessage(origin, successMessage);
+    }
   );
 
   done();

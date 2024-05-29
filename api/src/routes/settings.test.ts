@@ -5,7 +5,8 @@ import {
   setupServer,
   superRequest,
   createSuperRequest,
-  defaultUserId
+  defaultUserId,
+  defaultUserEmail
 } from '../../jest.utils';
 import { formatMessage } from '../plugins/redirect-with-message';
 import { createUserInput } from '../utils/create-user';
@@ -100,11 +101,13 @@ describe('settingRoutes', () => {
 
   describe('Authenticated user', () => {
     let superPut: ReturnType<typeof createSuperRequest>;
+    let superGet: ReturnType<typeof createSuperRequest>;
 
     // Authenticate user
     beforeAll(async () => {
       const setCookies = await devLogin();
       superPut = createSuperRequest({ method: 'PUT', setCookies });
+      superGet = createSuperRequest({ method: 'GET', setCookies });
       // This is not strictly necessary, since the defaultUser has this
       // profileUI, but we're interested in how the profileUI is updated. As
       // such, setting this explicitly isolates these tests.
@@ -200,7 +203,7 @@ describe('settingRoutes', () => {
         // TODO: remove any other changes to the dev user.
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
-          data: { newEmail: null }
+          data: { newEmail: null, email: defaultUserEmail, emailVerified: true }
         });
       });
 
@@ -212,69 +215,57 @@ describe('settingRoutes', () => {
       // TODO(mention) informative error messages or just 'contact support'?
       // api just redirects to the homepage.
       it('should reject requests without params', async () => {
-        const resNoParams = await superRequest('/confirm-email', {
-          method: 'GET'
-        });
+        const resNoParams = await superGet('/confirm-email');
 
         expect(resNoParams.headers.location).toBe(
-          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
         );
-        expect(resNoParams.status).toBe(400);
+        expect(resNoParams.status).toBe(302);
       });
 
       it('should reject requests which have an invalid token param', async () => {
-        const res = await superRequest(
+        const res = await superGet(
           // token should be 64 characters long
-          `/confirm-email?email=${encodedEmail}&token=tooshort`,
-          { method: 'GET' }
+          `/confirm-email?email=${encodedEmail}&token=tooshort`
         );
 
         expect(res.headers.location).toBe(
-          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
         );
-        expect(res.status).toBe(400);
+        expect(res.status).toBe(302);
       });
 
       it('should reject requests which have an invalid email param', async () => {
-        const res = await superRequest(
-          `/confirm-email?email=${notEmail}&token=${validToken}`,
-          { method: 'GET' }
+        const res = await superGet(
+          `/confirm-email?email=${notEmail}&token=${validToken}`
         );
 
         expect(res.headers.location).toBe(
-          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
         );
-        expect(res.status).toBe(400);
+        expect(res.status).toBe(302);
       });
 
       it('should reject requests when the auth token is not in the database', async () => {
-        const res = await superRequest(
-          `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`,
-          { method: 'GET' }
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
         );
 
         expect(res.headers.location).toBe(
-          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
         );
-        // It's not a bad request, but they're not allowed because the token is
-        // missing. They are authenticated, but it's still forbidden. Hence,
-        // 403.
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(302);
       });
 
       it('should reject requests when the auth token exists, but the user does not', async () => {
-        const res = await superRequest(
-          `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`,
-          { method: 'GET' }
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
         );
 
         expect(res.headers.location).toBe(
-          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
         );
-        // It's not a bad request, but they're not allowed because the token is
-        // missing. They are authenticated, but it's still forbidden. Hence,
-        // 403.
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(302);
       });
 
       // TODO(Post-MVP): there's no need to keep the auth token around if,
@@ -289,53 +280,49 @@ describe('settingRoutes', () => {
           data: { newEmail: 'an@oth.er' }
         });
 
-        const res = await superRequest(
-          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
-          { method: 'GET' }
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
 
         expect(res.headers.location).toBe(
-          'https://www.freecodecamp.org?' + formatMessage(defaultErrorMessage)
+          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
         );
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(302);
       });
 
       it('should reject requests if the auth token has expired', async () => {
-        const res = await superRequest(
-          `/confirm-email?email=${encodedEmail}&token=${expiredToken}`,
-          { method: 'GET' }
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${expiredToken}`
         );
 
         expect(res.headers.location).toBe(
-          'https://www.freecodecamp.org?' +
+          'http://localhost:8000?' +
             formatMessage({
               content:
                 'The link to confirm your new email address has expired. Please try again.',
               type: 'info'
             })
         );
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(302);
       });
 
       it('should update the user email', async () => {
-        const res = await superRequest(
-          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
-          { method: 'GET' }
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
         const user = await fastifyTestInstance.prisma.user.findUniqueOrThrow({
           where: { id: defaultUserId }
         });
 
         expect(res.headers.location).toBe(
-          'https://www.freecodecamp.org?' + formatMessage(successMessage)
+          'http://localhost:8000?' + formatMessage(successMessage)
         );
         expect(user.email).toBe(newEmail);
       });
 
       it('should clean up the user record', async () => {
-        await superRequest(
-          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
-          { method: 'GET' }
+        await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
 
         const user = await fastifyTestInstance.prisma.user.findUniqueOrThrow({
@@ -349,9 +336,8 @@ describe('settingRoutes', () => {
       });
 
       it('should remove the auth token on success', async () => {
-        await superRequest(
-          `/confirm-email?email=${encodedEmail}&token=${validToken}`,
-          { method: 'GET' }
+        await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
 
         const authToken = await fastifyTestInstance.prisma.authToken.findUnique(
@@ -1062,8 +1048,9 @@ Happy coding!
 
         expect(res.status).toBe(302);
         expect(res.headers).toMatchObject({
-          // TODO: add the expected flash message
-          location: 'https://www.freecodecamp.org'
+          // TODO(mention): this is a fix. The old api doesn't send a message.
+          location:
+            'http://localhost:8000?messages=info%5B0%5D%3DOnly%2520authenticated%2520users%2520can%2520access%2520this%2520route.%2520Please%2520sign%2520in%2520and%2520try%2520again.'
         });
       });
     });
