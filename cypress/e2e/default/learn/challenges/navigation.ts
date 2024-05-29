@@ -15,7 +15,7 @@ const challenge2 = {
 const rwdChallenge = {
   url: '/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage',
   nextUrl:
-    'http://localhost:8000/learn/2022/responsive-web-design/#build-a-personal-portfolio-webpage-project'
+    '/learn/2022/responsive-web-design/#build-a-personal-portfolio-webpage-project'
 };
 
 const rwdChallengeSolution = `<head>

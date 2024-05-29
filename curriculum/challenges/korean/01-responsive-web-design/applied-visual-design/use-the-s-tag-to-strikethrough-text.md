@@ -2,7 +2,6 @@
 id: 587d781b367417b2b2512aba
 title: s 태그로 취소선이 적용된 텍스트 만들기
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301079
 dashedName: use-the-s-tag-to-strikethrough-text
 ---

@@ -315,7 +315,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
-        dataCy={projectTitle}
         projectTitle={projectTitle}
         showExamResults={showExamResults}
         showUserCode={showUserCode}
@@ -400,7 +399,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
               block={true}
               variant='primary'
               href={certLocation}
-              data-cy={`btn-for-${certSlug}`}
               // This floating promise is acceptable
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={clickHandler}

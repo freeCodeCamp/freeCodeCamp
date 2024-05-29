@@ -22,11 +22,11 @@ dashedName: pass-an-array-as-props
 const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
 ```
 
-This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
+これは `colors` 配列のアイテムすべてをコンマ区切りの文字列に連結し、 `<p>green, blue, red</p>` という文字列を生成します。 後ほど、React で配列データをレンダーする一般的な方法を他にもいくつか学習します。
 
 # --instructions--
 
-コードエディターに `List` コンポーネントと `ToDo` コンポーネントがあります。 `ToDo` コンポーネントから各 `List` をレンダーするときに、to-do タスクの配列 (たとえば `["walk dog", "workout"]` など) が割り当てられた `tasks` プロパティを渡してください。 次に、`List` コンポーネントにあるこの `tasks` 配列にアクセスして、`p` 要素の中に値を表示してください。 Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. 今日のリストには少なくとも 2 つのタスクを含め、明日のリストには少なくとも 3 つのタスクを含めてください。
+コードエディターに `List` コンポーネントと `ToDo` コンポーネントがあります。 `ToDo` コンポーネントから各 `List` をレンダーするときに、to-do タスクの配列 (たとえば `["walk dog", "workout"]` など) が割り当てられた `tasks` プロパティを渡してください。 次に、`List` コンポーネントにあるこの `tasks` 配列にアクセスして、`p` 要素の中に値を表示してください。 `join(", ")` を使用し、`props.tasks` 配列をコンマ区切りリストとして `p` 要素に表示してください。 今日のリストには少なくとも 2 つのタスクを含め、明日のリストには少なくとも 3 つのタスクを含めてください。
 
 # --hints--
 

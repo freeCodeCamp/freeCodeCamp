@@ -21,7 +21,7 @@ Geuza picha kuwa kiungo kwa kuizunguka na tagi za vipengele zinazofaa. Tumia `ht
 
 # --hints--
 
-Unapaswa kuwa na kipengele cha `img` chenye thamani ya `src` ya `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Huenda umeifuta kwa bahati mbaya.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Huenda umeifuta kwa bahati mbaya.
 
 ```js
 assert(

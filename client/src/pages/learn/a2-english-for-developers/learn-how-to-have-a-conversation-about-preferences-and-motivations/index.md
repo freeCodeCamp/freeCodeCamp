@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Have a Conversation About Preferences and Motivations
 
-This is a test for the new project-based curriculum.
+In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences.

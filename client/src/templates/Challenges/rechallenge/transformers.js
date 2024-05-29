@@ -1,10 +1,8 @@
 import protect from '@freecodecamp/loop-protect';
 import {
-  attempt,
   cond,
   flow,
   identity,
-  isError,
   matchesProperty,
   overSome,
   partial,
@@ -109,20 +107,6 @@ const replaceNBSP = cond([
   [stubTrue, identity]
 ]);
 
-function tryTransform(wrap = identity) {
-  return function transformWrappedPoly(source) {
-    const result = attempt(wrap, source);
-    if (isError(result)) {
-      // note(Bouncey): Error thrown here to collapse the build pipeline
-      // At the minute, it will not bubble up
-      // We collapse the pipeline so the app doesn't fall over trying
-      // parse bad code (syntax/type errors etc...)
-      throw result;
-    }
-    return result;
-  };
-}
-
 const babelTransformer = loopProtectOptions => {
   return cond([
     [
@@ -131,10 +115,10 @@ const babelTransformer = loopProtectOptions => {
         await loadBabel();
         await loadPresetEnv();
         const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-        return partial(
-          transformHeadTailAndContents,
-          tryTransform(babelTransformCode(babelOptions))
-        )(code);
+        return transformHeadTailAndContents(
+          babelTransformCode(babelOptions),
+          code
+        );
       }
     ],
     [
@@ -146,7 +130,7 @@ const babelTransformer = loopProtectOptions => {
         return flow(
           partial(
             transformHeadTailAndContents,
-            tryTransform(babelTransformCode(babelOptions))
+            babelTransformCode(babelOptions)
           ),
           partial(setExt, 'js')
         )(code);
@@ -195,9 +179,9 @@ async function transformScript(documentElement) {
   await loadPresetEnv();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
-    script.innerHTML = tryTransform(
-      babelTransformCode(getBabelOptions(presetsJS))
-    )(script.innerHTML);
+    script.innerHTML = babelTransformCode(getBabelOptions(presetsJS))(
+      script.innerHTML
+    );
   });
 }
 

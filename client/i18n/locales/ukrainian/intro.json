@@ -473,6 +473,13 @@
           "Це дозволить розв’язувати невеликі проблеми та краще розуміти базові поняття."
         ]
       },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
         "title": "Повторіть маніпуляцію DOM, створивши гру «Камінь, ножиці, папір»",
         "intro": [
@@ -949,7 +956,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "Tensorflow — це фреймворк з відкритим вихідним кодом, що полегшує використання машинного навчання та нейронних мереж.",
           "Наступний відеокурс був створений Тімом Рущіцею, також відомим як «Tech With Tim». Він допоможе зрозуміти TensorFlow і деякі з його потужних можливостей."
@@ -1418,15 +1425,21 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Дізнайтесь, як говорити про вподобання та вмотивованість",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як запитувати про мотивацію в особистому і професійному житті, як відповідати на такі запитання та як обговорювати вподобання."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "Дізнайтесь, як обговорювати технологічні тренди",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитеся обговорювати технології, про які зараз всі говорять."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "Дізнайтесь, як уточнити інформацію в різних ситуаціях",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитеся перевіряти інформацію та правильно просити уточнення, якщо щось не зрозуміло."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Дізнайтесь, як використовувати базові слова з програмування",
@@ -1469,7 +1482,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Дізнайтесь, як говорити про оновлення та плани щодо завдань і проєктів",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
