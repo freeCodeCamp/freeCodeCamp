@@ -13,12 +13,12 @@ import type {
   RouteGenericInterface
 } from 'fastify';
 import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
-import { differenceInMinutes, addMilliseconds, isAfter } from 'date-fns';
+import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
 import { isValidUsername } from '../../../shared/utils/validate';
 import * as schemas from '../schemas';
-import { createAuthToken } from '../utils/tokens';
+import { createAuthToken, isExpired } from '../utils/tokens';
 import { API_LOCATION } from '../utils/env';
 import { getRedirectParams } from '../utils/redirection';
 import { isRestricted } from './helpers/is-restricted';
@@ -726,18 +726,10 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!authToken) {
-        // TODO
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
-      const tokenExpirationDate = addMilliseconds(
-        authToken.created,
-        authToken.ttl
-      );
-
-      // TODO: refactor token validation to a helper function in tokens.ts and use it in
-      // code-flow-auth
-      if (isAfter(new Date(), tokenExpirationDate)) {
+      if (isExpired(authToken)) {
         return reply.redirectWithMessage(origin, expirationMessage);
       }
 

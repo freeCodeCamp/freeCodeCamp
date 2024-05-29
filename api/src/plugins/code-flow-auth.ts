@@ -1,11 +1,10 @@
 import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
-import { isBefore } from 'date-fns';
 import { type user } from '@prisma/client';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
-import { type Token } from '../utils/tokens';
+import { type Token, isExpired } from '../utils/tokens';
 import { getRedirectParams } from '../utils/redirection';
 
 declare module 'fastify' {
@@ -88,14 +87,15 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
         return rejectStrategy(req, reply, TOKEN_INVALID);
       }
 
-      const {
-        accessToken: { created, ttl, userId }
-      } = jwt.decode(jwtAccessToken!) as { accessToken: Token };
-      const valid = isBefore(Date.now(), Date.parse(created) + ttl);
-      if (!valid) return rejectStrategy(req, reply, TOKEN_EXPIRED);
+      const { accessToken } = jwt.decode(jwtAccessToken!) as {
+        accessToken: Token;
+      };
+
+      if (isExpired(accessToken))
+        return rejectStrategy(req, reply, TOKEN_EXPIRED);
 
       const user = await fastify.prisma.user.findUnique({
-        where: { id: userId }
+        where: { id: accessToken.userId }
       });
       if (!user) return rejectStrategy(req, reply, TOKEN_INVALID);
       req.user = user;
