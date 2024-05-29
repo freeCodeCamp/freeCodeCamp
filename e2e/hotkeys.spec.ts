@@ -110,7 +110,7 @@ test('User can use shortcuts to navigate between frontend projects', async ({
   await page.waitForURL(links.frontEnd1);
 });
 
-test('User can use shortcuts to navigate backend projects', async ({
+test('User can use shortcuts to navigate between backend projects', async ({
   page
 }) => {
   await page.goto(links.backEnd1);
@@ -125,7 +125,7 @@ test('User can use shortcuts to navigate backend projects', async ({
   await page.waitForURL(links.backEnd1);
 });
 
-test('User can use shortcuts to navigate videos', async ({ page }) => {
+test('User can use shortcuts to navigate between video-based challenges', async ({ page }) => {
   await page.goto(links.video1);
   await expect(page.locator('#editor-layout')).toBeFocused();
   await page.keyboard.press('Escape');
