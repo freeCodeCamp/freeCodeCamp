@@ -199,21 +199,12 @@ describe('settingRoutes', () => {
         await fastifyTestInstance.prisma.authToken.deleteMany({
           where: { id: { in: tokens } }
         });
-
-        // TODO: remove any other changes to the dev user.
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: { newEmail: null, email: defaultUserEmail, emailVerified: true }
         });
       });
 
-      // I think all requests, including bad ones, should be sent back to the origin. Can we check multiple origins or is it enough to check
-      // that the standard redirect logic is used?
-
-      // TODO(mention) The old api cannot handle this.
-      // TODO(mention) Old api redirects to /signin on the LEARN client (which doesn't exist), new
-      // TODO(mention) informative error messages or just 'contact support'?
-      // api just redirects to the homepage.
       it('should reject requests without params', async () => {
         const resNoParams = await superGet('/confirm-email');
 
@@ -1047,9 +1038,7 @@ Happy coding!
 
         expect(res.status).toBe(302);
         expect(res.headers).toMatchObject({
-          // TODO(mention): this is a fix. The old api doesn't send a message.
-          location:
-            'http://localhost:8000?messages=info%5B0%5D%3DOnly%2520authenticated%2520users%2520can%2520access%2520this%2520route.%2520Please%2520sign%2520in%2520and%2520try%2520again.'
+          location: `http://localhost:8000?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`
         });
       });
     });
