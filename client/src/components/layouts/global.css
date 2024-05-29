@@ -295,6 +295,18 @@ fieldset[disabled] .btn {
   color: inherit;
 }
 
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Equivalent to the `large` size of `@freecodecamp/ui` Button component */
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+
 .link-btn {
   margin-bottom: 10px;
   display: flex;
@@ -554,9 +566,4 @@ blockquote .small {
 
 .text-justify {
   text-align: justify;
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
 }
