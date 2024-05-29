@@ -484,11 +484,6 @@ blockquote .small {
   color: var(--gray-45);
 }
 
-.alert {
-  border-radius: 0;
-  overflow-wrap: break-word;
-}
-
 .alert .btn,
 [role='alert'] .btn {
   background-color: transparent;
@@ -503,10 +498,6 @@ blockquote .small {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
-}
-
-.alert-dismissable .close {
-  top: 0;
 }
 
 .annual-donation-alert {
@@ -552,4 +543,17 @@ blockquote .small {
 }
 #headlessui-portal-root .text-background-danger h2 {
   color: var(--background-danger);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }
