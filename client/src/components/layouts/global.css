@@ -229,35 +229,24 @@ button:hover,
 input[type='submit']:hover,
 .btn:hover,
 .btn-default.active:hover,
-.btn-default.active,
-.btn-primary:hover {
+.btn-default.active {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
   cursor: pointer;
 }
 
-.btn:active,
-.btn-primary:active {
+.btn:active {
   background-color: var(--secondary-background);
 }
 
-.btn:focus,
-.btn-primary:focus,
-.btn-primary.focus {
+.btn:focus {
   background-color: var(--quaternary-background);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
 }
 
-.btn:active:hover,
-.btn-primary:hover,
-.btn-primary:active:hover,
-.btn-primary.active:hover,
-.btn-primary:active:focus,
-.btn-primary.active:focus,
-.btn-primary:active.focus,
-.btn-primary.active.focus {
+.btn:active:hover {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
 }
@@ -266,16 +255,7 @@ button[aria-disabled='true'],
 button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
-fieldset[disabled] .btn,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled.focus,
-.btn-primary[disabled].focus,
-fieldset[disabled] .btn-primary.focus {
+fieldset[disabled] .btn {
   cursor: not-allowed;
   background-color: var(--quaternary-background);
   border-color: var(--quaternary-color);
@@ -471,12 +451,6 @@ code {
 
 hr {
   border-top: 1px solid var(--quaternary-background);
-}
-
-.btn-primary:active,
-.btn-primary.active {
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
 }
 
 .challenge-output span {
