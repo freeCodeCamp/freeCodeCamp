@@ -10,7 +10,9 @@ test.describe('Editor Shortcuts', () => {
 
     await page.keyboard.press('Alt+Enter');
     await expect(
-      page.getByTestId('editor-container-indexhtml').getByText('<h1>Hello</h1>\n')
+      page
+        .getByTestId('editor-container-indexhtml')
+        .getByText('<h1>Hello</h1>\n')
     ).toBeVisible();
   });
 
