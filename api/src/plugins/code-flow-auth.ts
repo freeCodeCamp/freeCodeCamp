@@ -66,7 +66,7 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
 
   const handleAuth =
     (
-      redirectStrategy: (
+      rejectStrategy: (
         req: FastifyRequest,
         reply: FastifyReply,
         message: string
@@ -74,30 +74,30 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
     ) =>
     async (req: FastifyRequest, reply: FastifyReply) => {
       const tokenCookie = req.cookies.jwt_access_token;
-      if (!tokenCookie) return redirectStrategy(req, reply, TOKEN_REQUIRED);
+      if (!tokenCookie) return rejectStrategy(req, reply, TOKEN_REQUIRED);
 
       const unsignedToken = req.unsignCookie(tokenCookie);
       if (!unsignedToken.valid)
-        return redirectStrategy(req, reply, TOKEN_REQUIRED);
+        return rejectStrategy(req, reply, TOKEN_REQUIRED);
 
       const jwtAccessToken = unsignedToken.value;
 
       try {
         jwt.verify(jwtAccessToken!, JWT_SECRET);
       } catch {
-        return redirectStrategy(req, reply, TOKEN_INVALID);
+        return rejectStrategy(req, reply, TOKEN_INVALID);
       }
 
       const {
         accessToken: { created, ttl, userId }
       } = jwt.decode(jwtAccessToken!) as { accessToken: Token };
       const valid = isBefore(Date.now(), Date.parse(created) + ttl);
-      if (!valid) return redirectStrategy(req, reply, TOKEN_EXPIRED);
+      if (!valid) return rejectStrategy(req, reply, TOKEN_EXPIRED);
 
       const user = await fastify.prisma.user.findUnique({
         where: { id: userId }
       });
-      if (!user) return redirectStrategy(req, reply, TOKEN_INVALID);
+      if (!user) return rejectStrategy(req, reply, TOKEN_INVALID);
       req.user = user;
     };
 
