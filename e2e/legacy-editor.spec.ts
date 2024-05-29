@@ -8,9 +8,9 @@ test.describe('Editor Shortcuts', () => {
     );
     await focusEditor({ page, isMobile });
 
-    await page.keyboard.press('Control+Enter');
+    await page.keyboard.press('Alt+Enter');
     await expect(
-      page.getByTestId('editor-container-indexhtml').getByText('<h1>Hello</h1>')
+      page.getByTestId('editor-container-indexhtml').getByText('<h1>Hello</h1>\n')
     ).toBeVisible();
   });
 
