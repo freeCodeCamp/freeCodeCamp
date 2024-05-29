@@ -27,7 +27,7 @@ test.describe('multifileCertProjects', () => {
     await page.getByRole('button', { name: 'Save your Code' }).click();
 
     await expect(page.getByTestId('flash-message')).toContainText(
-      /Your code was saved to the database. It will be here when you return./
+      /Your code was saved to the database\. It will be here when you return\./
     );
 
     await page.reload();
@@ -54,7 +54,7 @@ test.describe('multifileCertProjects', () => {
     await page.keyboard.press('KeyS');
 
     await expect(page.getByTestId('flash-message')).toContainText(
-      /Your code was saved to the database. It will be here when you return./
+      /Your code was saved to the database\. It will be here when you return\./
     );
 
     await page.getByRole('button', { name: 'Close' }).click();
@@ -71,7 +71,7 @@ test.describe('multifileCertProjects', () => {
     await page.keyboard.press('KeyS');
 
     await expect(page.getByTestId('flash-message')).toContainText(
-      /Slow Down! Your code was not saved. Try again in a few seconds./
+      /Slow Down! Your code was not saved\. Try again in a few seconds\./
     );
   });
 });
