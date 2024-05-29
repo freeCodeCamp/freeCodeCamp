@@ -9,8 +9,6 @@
   "template": "",
   "required": [],
   "superBlock": "scientific-computing-with-python",
-  "superOrder": 10,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "662a6bc12cde72c32fb526f0",
