@@ -11,20 +11,6 @@ import type { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';
 
-function Challenges({ challengeNodes }: { challengeNodes: AllChallengeNode }) {
-  return (
-    <ul className='intro-toc'>
-      {challengeNodes.edges
-        .map(({ node: { challenge } }) => challenge)
-        .map(({ title, fields: { slug } }) => (
-          <li key={'intro-' + slug}>
-            <Link to={slug}>{title}</Link>
-          </li>
-        ))}
-    </ul>
-  );
-}
-
 function IntroductionPage({
   data: { markdownRemark, allChallengeNode }
 }: {
