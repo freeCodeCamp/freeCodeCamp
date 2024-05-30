@@ -44,7 +44,7 @@ test.describe('Python Terminal', () => {
       'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
     );
 
-    await focusEditor({ page, isMobile, browserName });
+    await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
     // Then enter invalid code
     await page.keyboard.insertText('def');

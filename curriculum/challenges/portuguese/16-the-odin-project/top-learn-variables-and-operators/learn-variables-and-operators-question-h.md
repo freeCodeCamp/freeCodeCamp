@@ -17,16 +17,16 @@ There are many operators in JavaScript. Every operator has a corresponding prece
 
 Here’s an extract from the precedence table (you don’t need to remember this, but note that unary operators are higher than corresponding binary ones):
 
-| Precedence | Name           | Sign |
+| Precedence | Nome           | Sign |
 | ---------- | -------------- | ---- |
 | ...        | ...            | ...  |
 | 14         | unary plus     | +    |
 | 14         | unary negation | -    |
-| 13         | exponentiation | **   |
-| 12         | multiplication | *    |
-| 12         | division       | /    |
-| 11         | addition       | +    |
-| 11         | subtraction    | -    |
+| 13         | exponenciação  | **   |
+| 12         | multiplicação  | *    |
+| 12         | divisão        | /    |
+| 11         | adição         | +    |
+| 11         | subtração      | -    |
 | ...        | ...            | ...  |
 | 2          | assignment     | =    |
 | ...        | ...            | ...  |

@@ -473,6 +473,13 @@
           "你将通过这个机会练习解决小问题，更好地理解基础知识。"
         ]
       },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
         "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
         "intro": [
@@ -959,7 +966,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow 是一个开源框架，使机器学习和神经网络更易于使用。",
           "以下视频课程是由 Tim Ruscica 创建的，也叫作 “Tech With Tim”。这个课程将帮助你了解 TensorFlow 及它的一些强大功能。"
@@ -1475,7 +1482,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "学习如何谈论任务和项目的更新和计划",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {

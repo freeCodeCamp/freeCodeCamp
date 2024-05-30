@@ -94,7 +94,7 @@ describe('dev login', () => {
           showPortfolio: false,
           showTimeLine: false
         },
-        progressTimestamps: [],
+        progressTimestamps: [expect.any(Number)],
         sendQuincyEmail: false,
         theme: 'default',
         username: expect.stringMatching(fccUuidRe),

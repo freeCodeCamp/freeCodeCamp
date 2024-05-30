@@ -366,7 +366,7 @@
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
-        "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
+        "title": "現代的な JavaScript メソッドの学習: サッカーチームカードを作成する",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
           "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
@@ -388,7 +388,7 @@
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "Learn Fetch and Promises by Building an fCC Authors Page",
+        "title": "フェッチとプロミスの学習: freeCodeCamp 著者ページを作成する",
         "intro": [
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
@@ -460,21 +460,28 @@
         ]
       },
       "learn-introductory-javascript-by-building-a-pyramid-generator": {
-        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "title": "JavaScript 入門: ピラミッド表示プログラムを作成する",
         "intro": [
           "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
           "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
         ]
       },
       "review-js-fundamentals-by-building-a-gradebook-app": {
-        "title": "Review JavaScript Fundamentals by Building a Gradebook App",
+        "title": "JavaScript 基礎の復習: 成績簿アプリを作成する",
         "intro": [
           "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
           "This will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "デバッグの基礎の学習: 背景色ランダム変更プログラムを作成する",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
-        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "title": "DOM 操作の復習: じゃんけんゲームを作成する",
         "intro": [
           "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
           "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
@@ -1483,7 +1490,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
