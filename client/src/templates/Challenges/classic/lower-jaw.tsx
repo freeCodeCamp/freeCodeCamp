@@ -22,6 +22,7 @@ import {
   completedPercentageSelector
 } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
+import { Spacer } from '../../../components/helpers';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -299,42 +300,49 @@ const LowerJaw = ({
   return (
     <div className='action-row-container'>
       {showSignInButton && (
-        <a
-          data-cy='sign-in-button'
-          href={`${apiLocation}/signin`}
-          className='btn-cta btn btn-block'
-          onClick={() => {
-            callGA({
-              event: 'sign_in'
-            });
-          }}
-        >
-          {t('learn.sign-in-save')}
-        </a>
+        <>
+          <a
+            data-cy='sign-in-button'
+            href={`${apiLocation}/signin`}
+            className='btn-cta btn btn-block'
+            onClick={() => {
+              callGA({
+                event: 'sign_in'
+              });
+            }}
+          >
+            {t('learn.sign-in-save')}
+          </a>
+          <Spacer size='xxSmall' />
+        </>
       )}
       <Button
         data-playwright-test-label='lowerJaw-submit-button'
         block
-        data-cy='submit-lowerJaw-button'
         onClick={tryToSubmitChallenge}
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
         ref={submitButtonRef}
       >
         {t('buttons.submit-and-go')}
       </Button>
-      <Button
-        data-playwright-test-label='lowerJaw-check-button'
-        block
-        data-cy='check-lowerJaw-button'
-        onClick={tryToExecuteChallenge}
-        {...(challengeIsCompleted &&
-          !focusManagementCompleted && { tabIndex: -1, className: 'sr-only' })}
-        {...(challengeIsCompleted &&
-          focusManagementCompleted && { 'aria-hidden': true })}
-        ref={checkYourCodeButtonRef}
+      <div
+        className={
+          challengeIsCompleted && !focusManagementCompleted ? 'sr-only' : ''
+        }
       >
-        {checkButtonText}
-      </Button>
+        <Button
+          data-playwright-test-label='lowerJaw-check-button'
+          block
+          onClick={tryToExecuteChallenge}
+          {...(challengeIsCompleted &&
+            !focusManagementCompleted && { tabIndex: -1 })}
+          {...(challengeIsCompleted &&
+            focusManagementCompleted && { 'aria-hidden': true })}
+          ref={checkYourCodeButtonRef}
+        >
+          {checkButtonText}
+        </Button>
+      </div>
       {/* Using aria-live=polite instead of assertive works better with ORCA */}
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
