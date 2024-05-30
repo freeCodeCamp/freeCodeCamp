@@ -9,7 +9,7 @@ import keys from '../../../config/secrets';
 import {
   createStripeCardDonation,
   handleStripeCardUpdateSession,
-  isWithinFiveMinutes
+  inLastFiveMinutes
 } from '../utils/donation';
 import { validStripeForm } from '../utils/stripeHelpers';
 
@@ -53,7 +53,7 @@ export default function donateBoot(app, done) {
       const subscription = await stripe.subscriptions.retrieve(subscriptionId);
       const isSubscriptionActive = subscription.status === 'active';
       const productId = subscription.items.data[0].plan.product;
-      const isSubscribedInMinutes = isWithinFiveMinutes(
+      const isSubscribedInMinutes = inLastFiveMinutes(
         subscription.current_period_start
       );
       const isProductIdValid = allStripeProductIdsArray.includes(productId);
@@ -104,9 +104,7 @@ export default function donateBoot(app, done) {
         customer: stripeCustomer.id,
         items: [
           {
-            plan: `${donationSubscriptionConfig.duration[
-              duration
-            ].toLowerCase()}-donation-${amount}`
+            plan: `${donationSubscriptionConfig.duration[duration]}-donation-${amount}`
           }
         ],
         payment_behavior: 'default_incomplete',

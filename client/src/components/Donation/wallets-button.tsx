@@ -37,7 +37,7 @@ const WalletsButton = ({
   onDonationStateChange,
   handlePaymentButtonLoad
 }: WalletsButtonProps) => {
-  const [paymentMethod, setpaymentMethod] = useState<PaymentMethod | null>(
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod | null>(
     null
   );
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
@@ -60,7 +60,7 @@ const WalletsButton = ({
     });
 
     pr.on('paymentmethod', async event => {
-      setpaymentMethod(event.paymentMethod);
+      setPaymentMethod(event.paymentMethod);
       const {
         payerEmail,
         payerName,
@@ -96,7 +96,6 @@ const WalletsButton = ({
           if (paymentIntent.status === 'requires_action') {
             const { error } = await stripe.confirmCardPayment(clientSecret);
             if (error) {
-              console.log('confirmationError');
               displayError(t('donate.try-another-method'));
             } else {
               postPayment({

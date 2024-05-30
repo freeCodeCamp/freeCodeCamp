@@ -124,7 +124,7 @@ export enum PaymentProvider {
   StripeCard = 'stripe card'
 }
 
-export const stripeProductIds = {
+const stripeProductIds = {
   live: {
     month: {
       500: 'prod_Cc9bIxB2NvjpLy',
@@ -143,6 +143,7 @@ export const stripeProductIds = {
   }
 };
 
-export const allStripeProductIdsArray = Object.values(stripeProductIds)
-  .flatMap(env => Object.values(env))
-  .flatMap(duration => Object.values(duration));
+export const allStripeProductIdsArray = [
+  ...Object.values(stripeProductIds['live']['month']),
+  ...Object.values(stripeProductIds['staging']['month'])
+];
