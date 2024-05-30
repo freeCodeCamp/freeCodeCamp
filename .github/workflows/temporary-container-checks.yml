@@ -159,11 +159,11 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
+      - name: Start Services with Docker Compose
+        run: docker-compose up -d
+
       - name: Run playwright tests
-        run: |
-          pnpm run start-ci &
-          sleep 10
-          npx playwright test header.spec.ts --project=${{ matrix.browsers }}
+        run: npx playwright test header.spec.ts --project=${{ matrix.browsers }}
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
