@@ -118,9 +118,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Move serve.json to Public Folder
-        run: cp client-config/serve.json client/public/serve.json
-
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
 
