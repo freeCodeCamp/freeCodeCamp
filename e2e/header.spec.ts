@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { availableLangs, hiddenLangs, LangNames } from '../shared/config/i18n';
@@ -20,7 +21,15 @@ const headerComponentElements = {
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
+test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+test.beforeAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user');
+});
+
+test.afterAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+});
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -132,6 +141,7 @@ test('The menu should contain links to: donate, curriculum, forum, news, radio, 
   await expect(menu).toBeVisible();
 
   const menuLinks = [
+    { name: translations.buttons.profile, href: '/developmentuser' },
     {
       name: translations.buttons.donate,
       href: '/donate'
@@ -197,10 +207,18 @@ test('The menu should be able to change the theme', async ({ page }) => {
 test('The header should contain an avatar', async ({ page }) => {
   const avatarLink = page.locator('.avatar-nav-link');
   await expect(avatarLink).toBeVisible();
-  await expect(avatarLink).toHaveAttribute('href', '/certifieduser');
+  await expect(avatarLink).toHaveAttribute('href', '/developmentuser');
 
   const avatarContainer = page.locator('.avatar-container');
-  await expect(avatarContainer).toHaveClass('avatar-container blue-border');
+  await expect(avatarContainer).toHaveClass('avatar-container default-border');
+});
+
+test('The Avatar should be less or equal to 26px', async ({ page }) => {
+  const avatar = page.locator('.avatar');
+  await expect(avatar).toBeVisible();
+  const avatarSize = await avatar.boundingBox();
+  expect(avatarSize?.width).toBeLessThanOrEqual(26);
+  expect(avatarSize?.height).toBeLessThanOrEqual(26);
 });
 
 test('Renders exam nav for Foundational C# with Microsoft exam', async ({
