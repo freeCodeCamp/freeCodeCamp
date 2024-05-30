@@ -1,0 +1,57 @@
+{
+    "name": "Learn to Solve Problems and Understand Errors",
+    "isUpcomingChange": false,
+    "dashedName": "top-learn-to-solve-problems-and-understand-errors",
+    "helpCategory": "Odin",
+    "order": 15,
+    "time": "",
+    "template": "",
+    "required": [],
+    "superBlock": "the-odin-project",
+    "challengeOrder":[
+      {
+        "id": "66581a78b1eb2281159492fa",
+        "title": "Learn to Solve Problems and Understand Errors Question A"
+      },
+      {
+        "id": "66581a7ab1eb2281159492fb",
+        "title": "Learn to Solve Problems and Understand Errors Question B"
+      },
+      {
+        "id": "66581a7bb1eb2281159492fc",
+        "title": "Learn to Solve Problems and Understand Errors Question C"
+      },
+      {
+        "id": "66581a7bb1eb2281159492fd",
+        "title": "Learn to Solve Problems and Understand Errors Question D"
+      },
+      {
+        "id": "66581a7cb1eb2281159492fe",
+        "title": "Learn to Solve Problems and Understand Errors Question E"
+      },
+      {
+        "id": "66581a7db1eb2281159492ff",
+        "title": "Learn to Solve Problems and Understand Errors Question F"
+      },
+      {
+        "id": "66581a7eb1eb228115949300",
+        "title": "Learn to Solve Problems and Understand Errors Question G"
+      },
+      {
+        "id": "66581a7fb1eb228115949301",
+        "title": "Learn to Solve Problems and Understand Errors Question H"
+      },
+      {
+        "id": "66581a80b1eb228115949302",
+        "title": "Learn to Solve Problems and Understand Errors Question I"
+      },
+      {
+        "id": "66581a81b1eb228115949303",
+        "title": "Learn to Solve Problems and Understand Errors Question J"
+      },
+      {
+        "id": "66581b2bb1eb228115949304",
+        "title": "Learn to Solve Problems and Understand Errors Question K"
+      }
+    ]
+}
