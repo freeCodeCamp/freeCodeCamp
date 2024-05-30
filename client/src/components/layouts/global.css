@@ -21,6 +21,21 @@ body {
   background: var(--secondary-background);
 }
 
+/* This is to override Tailwind as it sets the font-weight to `bolder`.
+   TODO: Move this rule to @freecodecamp/ui. */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
 #___gatsby {
   height: 100%;
 }
