@@ -9,3 +9,10 @@
 .modal {
   overflow-y: auto;
 }
+
+.legacy-full-stack-cert-list {
+  margin-top: 0;
+  margin-bottom: 12.5px;
+  padding-inline-start: 40px;
+  list-style-type: disc;
+}
