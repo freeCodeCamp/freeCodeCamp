@@ -112,11 +112,6 @@ jobs:
       matrix:
         browsers: [chromium]
         node-version: [20.x]
-    services:
-      mongodb:
-        image: mongo:4.4
-        ports:
-          - 27017:27017
 
     steps:
       - name: Set Action Environment Variables
