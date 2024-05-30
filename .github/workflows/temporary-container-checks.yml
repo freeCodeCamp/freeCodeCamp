@@ -103,30 +103,33 @@ jobs:
           docker build \
             -t fcc-new-api \
             -f docker/new-api/Dockerfile .
-
-  cypress-run:
-    name: Test
+  playwright-run:
+    name: E2E Test
     runs-on: ubuntu-22.04
-    needs: [build-client, build-api]
+    needs: build-client
     strategy:
       fail-fast: false
       matrix:
-        # To avoid wasting resources we're only using chrome for now.
-        browsers: [chrome]
+        browsers: [chromium]
         node-version: [20.x]
 
     steps:
       - name: Set Action Environment Variables
         run: |
-          echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
+        with:
+          name: client-artifact
 
-      # Cypress calls some pnpm scripts, so we need to install pnpm.
+      - name: Unpack Client Artifact
+        run: |
+          tar -xf client-artifact.tar
+          rm client-artifact.tar
+
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
@@ -137,25 +140,35 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Dependencies
-        run: pnpm install
-
-      - name: Load Images
-        run: |
-          docker load < client-artifact/client-artifact.tar
-          docker load < api-artifact/api-artifact.tar
-
-      - name: Set freeCodeCamp Environment Variables (needed by api)
+      - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm run create:shared
+          pnpm run build:curriculum
+          pnpm run build:server
+
+      - name: Seed Database with Certified User
+        run: pnpm run seed:certified-user
+
+      # start-ci uses pm2, so it needs to be installed globally
+      - name: Install pm2
+        run: npm i -g pm2
+
+      - name: Install playwright dependencies
+        run: npx playwright install --with-deps
+
+      - name: Run playwright tests
+        run: |
+          pnpm run start-ci &
+          sleep 10
+          npx playwright test header.spec.ts --project=${{ matrix.browsers }}
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
         with:
-          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
-          start: docker compose up -d
-          wait-on: http://localhost:8000, http://localhost:3000
-          wait-on-timeout: 1200
-          config: baseUrl=http://localhost:8000
-          browser: ${{ matrix.browsers }}
-          # Only run one test to keep the run time down.
-          spec: 'cypress/e2e/default/learn/redirects/es6-to-basic-javascript.ts'
+          name: playwright-report-${{ matrix.browsers }}
+          path: playwright/reporter
+          retention-days: 30
