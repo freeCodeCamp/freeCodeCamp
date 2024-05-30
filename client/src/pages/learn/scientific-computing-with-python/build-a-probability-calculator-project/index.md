@@ -7,4 +7,4 @@ isBeta: true
 
 ## Introduction to the Build a Probability Calculator Project
 
-This is a test for the new project-based curriculum.
+Build a Probability Calculator Project

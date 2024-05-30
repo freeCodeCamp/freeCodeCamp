@@ -7,4 +7,4 @@ isBeta: true
 
 ## Introduction to the Build a Time Calculator Project
 
-This is a test for the new project-based curriculum.
+Build a Time Calculator Project

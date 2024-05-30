@@ -7,4 +7,4 @@ isBeta: true
 
 ## Introduction to the Build a Polygon Area Calculator Project
 
-This is a test for the new project-based curriculum.
+Build a Polygon Area Calculator Project

@@ -7,4 +7,4 @@ isBeta: true
 
 ## Introduction to the Learn the Bisection Method by Finding the Square Root of a Number
 
-This is a test for the new project-based curriculum.
+Learn the Bisection Method by Finding the Square Root of a Number
