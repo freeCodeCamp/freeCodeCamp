@@ -2,7 +2,7 @@ import {
   PaymentRequestButtonElement,
   ElementsConsumer
 } from '@stripe/react-stripe-js';
-import type { PaymentMethod, PaymentRequest, Stripe } from '@stripe/stripe-js';
+import type { PaymentRequest, Stripe } from '@stripe/stripe-js';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -37,9 +37,6 @@ const WalletsButton = ({
   onDonationStateChange,
   handlePaymentButtonLoad
 }: WalletsButtonProps) => {
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod | null>(
-    null
-  );
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest | null>(
     null
   );
@@ -60,7 +57,6 @@ const WalletsButton = ({
     });
 
     pr.on('paymentmethod', async event => {
-      setPaymentMethod(event.paymentMethod);
       const {
         payerEmail,
         payerName,
@@ -141,11 +137,6 @@ const WalletsButton = ({
     <form className='wallets-form'>
       {paymentRequest && (
         <PaymentRequestButtonElement
-          onClick={() => {
-            if (paymentMethod) {
-              displayError(t('donate.refresh-needed'));
-            }
-          }}
           onReady={() => handlePaymentButtonLoad('stripe')}
           options={{
             style: {

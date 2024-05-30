@@ -38,7 +38,7 @@ export const durationKeysConfig = ['month', 'one-time'];
 export const donationOneTimeConfig = [100000, 25000, 6000];
 export const donationSubscriptionConfig = {
   duration: {
-    month: 'Monthly'
+    month: 'monthly'
   },
   plans: {
     month: subscriptionAmounts
