@@ -383,12 +383,12 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <>
         {certsToProjects[certName].map(({ link, title, id }) => (
           <tr className='project-row' key={id}>
-            <td className='project-title col-sm-8 col-xs-8'>
+            <td className='project-title col-xs-8'>
               <Link to={link}>
                 {t(`certification.project.title.${title}`, title)}
               </Link>
             </td>
-            <td className='project-solution col-sm-4 col-xs-4'>
+            <td className='project-solution col-xs-4'>
               {getProjectSolution(id, title)}
             </td>
           </tr>
