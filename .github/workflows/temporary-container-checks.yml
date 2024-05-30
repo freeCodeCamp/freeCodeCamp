@@ -126,15 +126,6 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
-      - uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
-        with:
-          name: client-artifact
-
-      - name: Unpack Client Artifact
-        run: |
-          tar -xf client-artifact.tar
-          rm client-artifact.tar
-
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
@@ -145,15 +136,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Load Images
+        run: |
+          docker load < client-artifact/client-artifact.tar
+          docker load < api-artifact/api-artifact.tar
+
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
-
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm run create:shared
-          pnpm run build:curriculum
-          pnpm run build:server
 
       - name: Seed Database with Certified User
         run: pnpm run seed:certified-user
