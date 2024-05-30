@@ -6,6 +6,10 @@ import { test, expect } from '@playwright/test';
 const pathsToTest = [
   { input: '/challenges', expected: '/learn' },
   {
+    input: '/learn/front-end-libraries',
+    expected: 'learn/front-end-development-libraries'
+  },
+  {
     input: '/learn/front-end-libraries/bootstrap',
     expected: 'learn/front-end-development-libraries/bootstrap'
   },
