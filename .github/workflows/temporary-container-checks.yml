@@ -144,18 +144,14 @@ jobs:
       - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
 
-      - name: Seed Database with Certified User
-        run: pnpm run seed:certified-user
-
-      # start-ci uses pm2, so it needs to be installed globally
-      - name: Install pm2
-        run: npm i -g pm2
-
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
       - name: Start Services with Docker Compose
         run: docker-compose up -d
+
+      - name: Seed Database with Certified User
+        run: pnpm run seed:certified-user
 
       - name: Run playwright tests
         run: npx playwright test header.spec.ts --project=${{ matrix.browsers }}
