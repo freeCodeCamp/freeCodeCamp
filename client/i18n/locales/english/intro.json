@@ -473,6 +473,13 @@
           "This will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
         "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
         "intro": [

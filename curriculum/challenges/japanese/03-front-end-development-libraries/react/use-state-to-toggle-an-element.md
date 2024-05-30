@@ -65,7 +65,7 @@ assert.strictEqual(
 );
 ```
 
-Clicking the button element should toggle the `visibility` property in state between `true` and `false` and conditionally render the `h1` element.
+ボタン要素をクリックすると、state の `visibility` プロパティが `true` と `false` で交互に切り替わり、その条件に従って `h1` 要素がレンダーされるようにします。
 
 ```js
 (() => {

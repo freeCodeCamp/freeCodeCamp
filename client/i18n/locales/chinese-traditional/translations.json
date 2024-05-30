@@ -100,7 +100,6 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "確認金額",
-    "skip-advertisement": "跳過廣告",
     "play-scene": "點擊播放"
   },
   "landing": {
@@ -645,7 +644,8 @@
     "help-millions-learn": "幫助數百萬人學習",
     "reach-goals-faster": "更快地實現你的目標",
     "remove-distractions": "消除干擾",
-    "animation-description": "這是一個 20 秒的動畫廣告，旨在鼓勵學員成爲 freeCodeCamp 的支持者。動畫開頭是一隻泰迪熊成爲支持者。最後，彈窗消失了，泰迪熊完成了所有目標。它畢業了，成爲了幫助全世界人們的教育超級英雄。"
+    "animation-description": "這是一個 20 秒的動畫廣告，旨在鼓勵學員成爲 freeCodeCamp 的支持者。動畫開頭是一隻泰迪熊成爲支持者。最後，彈窗消失了，泰迪熊完成了所有目標。它畢業了，成爲了幫助全世界人們的教育超級英雄。",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "你需要先登錄才能舉報用戶",

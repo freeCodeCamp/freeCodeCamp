@@ -70,7 +70,7 @@ function ToolPanel({
   const { t } = useTranslation();
   return (
     <div
-      className={`tool-panel-group button-group ${
+      className={`tool-panel-group ${
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >

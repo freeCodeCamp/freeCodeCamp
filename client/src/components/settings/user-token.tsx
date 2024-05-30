@@ -27,7 +27,10 @@ class UserToken extends Component<UserTokenProps> {
     const { t } = this.props;
 
     return (
-      <div data-cy='user-token' className='user-token text-center'>
+      <div
+        data-playwright-test-label='user-token'
+        className='user-token text-center'
+      >
         <FullWidthRow>
           <Panel variant='info'>
             <Panel.Heading>{t('user-token.title')}</Panel.Heading>
@@ -39,7 +42,6 @@ class UserToken extends Component<UserTokenProps> {
                 block={true}
                 size='large'
                 variant='info'
-                data-cy='delete-user-token'
                 onClick={this.deleteToken}
                 type='button'
               >
