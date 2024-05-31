@@ -1,12 +1,3 @@
-*,
-::before,
-::after {
-  /* Override the browser default border width in order to style individual border sides
-   * Ref: https://stackoverflow.com/a/76961084
-   */
-  border-width: 0;
-}
-
 html {
   height: 100%;
   font-size: 18px;
@@ -250,6 +241,8 @@ input[type='submit'],
   border-radius: 0;
   text-decoration: none;
   white-space: pre-line;
+  padding: 6px 12px;
+  line-height: 1.42857143;
 }
 
 button:hover,
