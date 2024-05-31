@@ -64,6 +64,13 @@ blockquote .small:before {
   content: '\2014 \00A0';
 }
 
+ul {
+  margin-top: 0;
+  margin-bottom: 12.5px;
+  padding-inline-start: 40px;
+  list-style-type: disc;
+}
+
 #___gatsby {
   height: 100%;
 }

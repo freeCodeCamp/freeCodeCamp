@@ -202,7 +202,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             cert: t('certification.title.Legacy Full Stack Certification')
           })}
         </p>
-        <ul className='legacy-full-stack-cert-list'>
+        <ul>
           <li>{t('certification.title.Responsive Web Design')}</li>
           <li>
             {t('certification.title.JavaScript Algorithms and Data Structures')}
