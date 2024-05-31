@@ -7,7 +7,7 @@ import {
   defaultUserId
 } from '../../jest.utils';
 import { createUserInput } from '../utils/create-user';
-
+import { API_LOCATION } from '../utils/env';
 import { isPictureWithProtocol, getWaitMessage } from './settings';
 
 const baseProfileUI = {
@@ -344,7 +344,7 @@ Please wait 5 minutes to resend an authentication link.`
           email: unusedEmailOne
         });
 
-        const expectedLink = `http://localhost:3000/confirm-email?email=${Buffer.from(unusedEmailOne).toString('base64')}&token=123&emailChange=true`;
+        const expectedLink = `${API_LOCATION}/confirm-email?email=${Buffer.from(unusedEmailOne).toString('base64')}&token=123&emailChange=true`;
         expect(sendEmailSpy).toHaveBeenCalledWith({
           from: 'team@freecodecamp.org',
           to: unusedEmailOne,
