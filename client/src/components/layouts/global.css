@@ -64,11 +64,20 @@ blockquote .small:before {
   content: '\2014 \00A0';
 }
 
+/* TODO: Move this rule to @freecodecamp/ui. */
 ul {
   margin-top: 0;
   margin-bottom: 12.5px;
   padding-inline-start: 40px;
   list-style-type: disc;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+ol {
+  margin-top: 0;
+  margin-bottom: 12.5px;
+  padding-inline-start: 40px;
+  list-style-type: decimal;
 }
 
 #___gatsby {
