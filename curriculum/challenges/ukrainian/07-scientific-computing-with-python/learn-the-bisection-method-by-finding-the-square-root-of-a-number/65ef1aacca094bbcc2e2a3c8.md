@@ -1,25 +1,25 @@
 ---
 id: 65ef1aacca094bbcc2e2a3c8
-title: Step 9
+title: Крок 9
 challengeType: 20
 dashedName: step-9
 ---
 
 # --description--
 
-In Python, the `max()` function returns the largest of the input values.
+Функція `max()` у Python повертає найбільше вхідне значення.
 
 ```python
 max(1, 2, 3) # Output: 3
 ```
 
-The variables `low` and `high` will be used to define the initial interval where the square root lies.
+Змінні `low` та `high` будуть використовуватися для визначення початкового інтервалу, де знаходиться квадратний корінь.
 
-Inside the `else` clause, initialize the `low` variable to `0` and the `high` variable to be the maximum of either `1` or `square_target` as the square root of a number is always less than or equal to the number itself.
+В межах умови `else` ініціалізуйте змінну `low` як `0`, а змінну `high` — як максимум `1` або `square_target`, оскільки квадратний корінь числа завжди менший або дорівнює самому числу.
 
 # --hints--
 
-You should remove the `pass` keyword.
+Видаліть ключове слово `pass`.
 
 ```js
 ({
@@ -41,7 +41,7 @@ You should remove the `pass` keyword.
 
 ```
 
-You should declare a variable `high` and use the `max()` function to assign it the maximum value between `1` and `square_target`.
+Оголосіть змінну `high` і використайте функцію `max()`, щоб призначити до неї максимальне значення між `1` та `square_target`.
 
 ```js
 

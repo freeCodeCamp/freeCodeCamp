@@ -2,7 +2,6 @@
 id: 5b7d72c338cd7e35b63f3e14
 title: ブラウザのフォールバックで互換性を向上させる
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301087
 dashedName: improve-compatibility-with-browser-fallbacks
 ---

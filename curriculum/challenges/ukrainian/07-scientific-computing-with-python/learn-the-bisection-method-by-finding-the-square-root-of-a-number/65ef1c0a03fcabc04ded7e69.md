@@ -1,19 +1,19 @@
 ---
 id: 65ef1c0a03fcabc04ded7e69
-title: Step 12
+title: Крок 12
 challengeType: 20
 dashedName: step-12
 ---
 
 # --description--
 
-Inside the for loop, calculate the midpoint of the interval ranging from `low` to `high`. Assign this value to a variable `mid`.
+В межах циклу `for` розрахуйте середину інтервалу від `low` до `high`. Надайте це значення змінній `mid`.
 
-Also, calculate the square of the midpoint (`mid`) and store it in the variable `square_mid`.
+Також розрахуйте квадрат середини (`mid`) та збережіть його в змінній `square_mid`.
 
 # --hints--
 
-You should remove the `pass` keyword.
+Видаліть ключове слово `pass`.
 
 ```js
 ({
