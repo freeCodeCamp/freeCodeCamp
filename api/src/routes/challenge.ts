@@ -31,8 +31,6 @@ import {
 import { generateRandomExam, createExamResults } from '../utils/exam';
 import {
   canSubmitCodeRoadCertProject,
-  createProject,
-  updateProject,
   verifyTrophyWithMicrosoft
 } from './helpers/challenge-helpers';
 
@@ -217,12 +215,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: userId },
-        select: {
-          completedChallenges: true,
-          partiallyCompletedChallenges: true,
-          progressTimestamps: true
-        }
+        where: { id: userId }
+        // TODO: update updateUserChallengeData to handle the subset of user
+        // fields we want to select, rather than having to select all fields
       });
 
       if (
@@ -237,33 +232,22 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       }
 
-      const completedDate = Date.now();
-      const oldChallenge = user.completedChallenges?.find(
-        ({ id }) => id === projectId
-      );
-
-      const updatedChallenge = {
+      const challenge = {
         challengeType,
         solution,
-        githubLink
-      };
-      const newChallenge = {
-        ...updatedChallenge,
+        githubLink,
         id: projectId,
-        completedDate
+        completedDate: Date.now()
       };
-      const alreadyCompleted = !!oldChallenge;
       const progressTimestamps = user.progressTimestamps as ProgressTimestamp[];
       const points = getPoints(progressTimestamps);
 
-      const data = alreadyCompleted
-        ? updateProject(projectId, updatedChallenge)
-        : createProject(projectId, newChallenge, progressTimestamps);
-
-      await fastify.prisma.user.update({
-        where: { id: userId },
-        data
-      });
+      const { alreadyCompleted, completedDate } = await updateUserChallengeData(
+        fastify,
+        user,
+        projectId,
+        challenge
+      );
 
       return {
         alreadyCompleted,
