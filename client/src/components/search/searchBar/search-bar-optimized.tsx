@@ -44,6 +44,7 @@ const SearchBarOptimized = ({
               {t('search.label')}
             </label>
             <input
+              aria-label="search"
               autoCapitalize='off'
               autoComplete='off'
               autoCorrect='off'
