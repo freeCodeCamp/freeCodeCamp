@@ -163,7 +163,7 @@ export async function updateUserChallengeData(
 
   const userCompletedChallenges: CompletedChallenge[] = completedChallenges;
   const userSavedChallenges: SavedChallenge[] = savedChallenges;
-  const userProgressTimestamps = progressTimestamps;
+  let userProgressTimestamps = progressTimestamps;
   const userPartiallyCompletedChallenges = partiallyCompletedChallenges;
 
   const oldIndex = userCompletedChallenges.findIndex(
@@ -187,7 +187,10 @@ export async function updateUserChallengeData(
       ...completedChallenge
     };
     if (userProgressTimestamps && Array.isArray(userProgressTimestamps)) {
-      userProgressTimestamps.push(newProgressTimeStamp);
+      userProgressTimestamps = [
+        ...userProgressTimestamps,
+        newProgressTimeStamp
+      ];
     }
     userCompletedChallenges.push(finalChallenge);
   }
