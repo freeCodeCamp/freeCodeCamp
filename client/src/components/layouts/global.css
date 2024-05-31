@@ -241,8 +241,6 @@ input[type='submit'],
   border-radius: 0;
   text-decoration: none;
   white-space: pre-line;
-  padding: 6px 12px;
-  line-height: 1.42857143;
 }
 
 button:hover,
@@ -325,6 +323,13 @@ fieldset[disabled] .btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
+}
+
+/* Equivalent to the `medium` size of `@freecodecamp/ui` Button component */
+.btn {
+  padding: 6px 12px;
+  font-size: 18px;
+  line-height: 1.42857143;
 }
 
 .link-btn {
