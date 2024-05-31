@@ -97,5 +97,20 @@ test.describe('third-party donation tests', () => {
     await cardExpiryIframe
       .locator('input[data-elements-stable-field-name="cardExpiry"]')
       .fill('1025');
+
+    await page.getByRole('button', { name: 'Donate', exact: true }).click();
+
+    await expect(page.getByRole('alert')).toBeVisible({ timeout: 10000 });
+
+    await expect(page.getByRole('alert')).toContainText(
+      'Your donations will support free technology education for people all over the world.'
+    );
+    await expect(page.getByRole('alert')).toContainText(
+      'Visit supporters page to learn about your supporter benefits.'
+    );
+
+    await expect(
+      page.getByRole('link', { name: 'Go to Supporters Page' })
+    ).toBeVisible();
   });
 });
