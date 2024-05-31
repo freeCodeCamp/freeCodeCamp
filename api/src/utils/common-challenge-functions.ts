@@ -149,7 +149,6 @@ export async function updateUserChallengeData(
   } else {
     completedChallenge = omit(_completedChallenge, ['files']);
   }
-  let finalChallenge = {} as CompletedChallenge;
 
   // Since these values are destuctured for easier updating, collectively update before returning
   const {
@@ -161,39 +160,26 @@ export async function updateUserChallengeData(
     partiallyCompletedChallenges = []
   } = user;
 
-  const userCompletedChallenges: CompletedChallenge[] = completedChallenges;
-  const userSavedChallenges: SavedChallenge[] = savedChallenges;
-  let userProgressTimestamps = progressTimestamps;
-  const userPartiallyCompletedChallenges = partiallyCompletedChallenges;
+  let userSavedChallenges = savedChallenges;
 
-  const oldIndex = userCompletedChallenges.findIndex(
-    ({ id }) => challengeId === id
-  );
+  const oldChallenge = completedChallenges.find(({ id }) => challengeId === id);
+  const alreadyCompleted = !!oldChallenge;
 
-  const alreadyCompleted = oldIndex !== -1;
-  const oldChallenge = alreadyCompleted
-    ? userCompletedChallenges[oldIndex]
-    : null;
+  const finalChallenge = alreadyCompleted
+    ? {
+        ...completedChallenge,
+        completedDate: oldChallenge.completedDate
+      }
+    : completedChallenge;
 
-  if (alreadyCompleted && oldChallenge) {
-    finalChallenge = {
-      ...completedChallenge,
-      completedDate: oldChallenge.completedDate
-    };
+  const userCompletedChallenges = alreadyCompleted
+    ? completedChallenges.map(x => (x.id === challengeId ? finalChallenge : x))
+    : [...completedChallenges, finalChallenge];
 
-    userCompletedChallenges[oldIndex] = finalChallenge;
-  } else {
-    finalChallenge = {
-      ...completedChallenge
-    };
-    if (userProgressTimestamps && Array.isArray(userProgressTimestamps)) {
-      userProgressTimestamps = [
-        ...userProgressTimestamps,
-        newProgressTimeStamp
-      ];
-    }
-    userCompletedChallenges.push(finalChallenge);
-  }
+  const userProgressTimestamps =
+    !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
+      ? [...progressTimestamps, newProgressTimeStamp]
+      : progressTimestamps;
 
   if (
     multifileCertProjectIds.includes(challengeId) ||
@@ -207,22 +193,19 @@ export async function updateUserChallengeData(
       ) as SavedChallengeFile[]
     };
 
-    const savedIndex = userSavedChallenges.findIndex(
-      ({ id }) => challengeId === id
-    );
+    const isSaved = userSavedChallenges.some(({ id }) => challengeId === id);
 
-    if (savedIndex >= 0) {
-      userSavedChallenges[savedIndex] = challengeToSave;
-    } else {
-      userSavedChallenges.push(challengeToSave);
-    }
+    userSavedChallenges = isSaved
+      ? userSavedChallenges.map(x =>
+          x.id === challengeId ? challengeToSave : x
+        )
+      : [...userSavedChallenges, challengeToSave];
   }
 
   // remove from partiallyCompleted on submit
-  const updatedPartiallyCompletedChallenges =
-    userPartiallyCompletedChallenges.filter(
-      challenge => challenge.id !== challengeId
-    );
+  const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
+    challenge => challenge.id !== challengeId
+  );
 
   if (
     timezone &&
@@ -230,11 +213,10 @@ export async function updateUserChallengeData(
     !userTimezone &&
     userTimezone === 'UTC'
   ) {
-    timezone = userTimezone;
     await fastify.prisma.user.update({
       where: { id: user.id },
       data: {
-        timezone
+        timezone: userTimezone
       }
     });
   }
@@ -255,7 +237,7 @@ export async function updateUserChallengeData(
       needsModeration,
       savedChallenges: userSavedChallenges,
       progressTimestamps: userProgressTimestamps,
-      partiallyCompletedChallenges: updatedPartiallyCompletedChallenges
+      partiallyCompletedChallenges: userPartiallyCompletedChallenges
     }
   });
 
