@@ -1,6 +1,6 @@
 ---
 id: 64a6702e7a7d00f97013ed0e
-title: The Box Model Question G
+title: The Box Model Lesson G
 challengeType: 15
 dashedName: the-box-model-lesson-g
 --- 

@@ -1,7 +1,7 @@
 ---
 id: 63ee35240d8d4841c3a7091b
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question B
+title: CSS Foundations Lesson B
 challengeType: 15
 dashedName: css-foundations-lesson-b
 ---

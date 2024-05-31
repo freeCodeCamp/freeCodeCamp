@@ -1,7 +1,7 @@
 ---
 id: 64a6749a7a7d00f97013ed10
 videoId: rIO5326FgPE
-title: The Box Model Question I
+title: The Box Model Lesson I
 challengeType: 15
 dashedName: the-box-model-lesson-i
 --- 

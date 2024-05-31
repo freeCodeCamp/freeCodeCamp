@@ -1,6 +1,6 @@
 ---
 id: 637f4e5172c65bc8e73dfe26
-title: Working With Text Question J
+title: Working With Text Lesson J
 challengeType: 15
 dashedName: working-with-text-lesson-j
 ---

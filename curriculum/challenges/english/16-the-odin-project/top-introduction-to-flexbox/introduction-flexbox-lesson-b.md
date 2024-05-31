@@ -1,6 +1,6 @@
 ---
 id: 6571b2fecc1de61d7b4dd380
-title: Introduction to Flexbox Question B
+title: Introduction to Flexbox Lesson B
 challengeType: 15
 dashedName: introduction-flexbox-lesson-b
 ---

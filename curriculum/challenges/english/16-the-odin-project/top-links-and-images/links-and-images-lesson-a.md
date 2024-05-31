@@ -1,7 +1,7 @@
 ---
 id: 637f704072c65bc8e73dfe36
 videoId: tsEQgGjSmkM
-title: Links and Images Question A
+title: Links and Images Lesson A
 challengeType: 15
 dashedName: links-and-images-lesson-a
 ---

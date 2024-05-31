@@ -1,6 +1,6 @@
 ---
 id: 65e1a2ea500d930ce8ed90a9
-title: Learn Variables and Operators Question F
+title: Learn Variables and Operators Lesson F
 challengeType: 15
 dashedName: learn-variables-and-operators-lesson-f
 ---

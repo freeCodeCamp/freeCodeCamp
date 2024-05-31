@@ -1,6 +1,6 @@
 ---
 id: 637f4e1c72c65bc8e73dfe20
-title: HTML Foundations Question C
+title: HTML Foundations Lesson C
 challengeType: 15
 dashedName: html-foundations-lesson-c
 ---

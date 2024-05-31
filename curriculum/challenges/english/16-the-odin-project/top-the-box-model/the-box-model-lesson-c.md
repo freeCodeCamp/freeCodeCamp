@@ -1,6 +1,6 @@
 ---
 id: 64a5551d02815a7d323aab8a
-title: The Box Model Question C
+title: The Box Model Lesson C
 challengeType: 15
 dashedName: the-box-model-lesson-c
 --- 

@@ -1,7 +1,7 @@
 ---
 id: 63ee35300d8d4841c3a7091d
 videoId: LGQuIIv2RVA
-title: CSS Foundations Question D
+title: CSS Foundations Lesson D
 challengeType: 15
 dashedName: css-foundations-lesson-d
 ---

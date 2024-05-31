@@ -1,6 +1,6 @@
 ---
 id: 65e9726d484dd50f720e6fec
-title: Learn Data Types and Conditionals Question G
+title: Learn Data Types and Conditionals Lesson G
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-lesson-g
 ---

@@ -1,6 +1,6 @@
 ---
 id: 637f4e8772c65bc8e73dfe2d
-title: Working With Text Question G
+title: Working With Text Lesson G
 challengeType: 15
 dashedName: working-with-text-lesson-g
 ---

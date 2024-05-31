@@ -1,6 +1,6 @@
 ---
 id: 65704485e7b02272663824e8
-title: Learn Block and Inline Question J
+title: Learn Block and Inline Lesson J
 challengeType: 15
 dashedName: learn-block-and-inline-lesson-j
 ---

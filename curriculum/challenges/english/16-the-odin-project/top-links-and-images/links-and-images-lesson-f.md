@@ -1,6 +1,6 @@
 ---
 id: 637f701c72c65bc8e73dfe31
-title: Links and Images Question F
+title: Links and Images Lesson F
 challengeType: 15
 dashedName: links-and-images-lesson-f
 ---

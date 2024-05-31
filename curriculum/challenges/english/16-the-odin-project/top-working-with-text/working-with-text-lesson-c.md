@@ -1,7 +1,7 @@
 ---
 id: 637f4e6672c65bc8e73dfe29
 videoId: gW6cBZLUk6M
-title: Working With Text Question C
+title: Working With Text Lesson C
 challengeType: 15
 dashedName: working-with-text-lesson-c
 ---

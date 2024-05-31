@@ -1,12 +1,12 @@
 ---
 id: 6571b2ffcc1de61d7b4dd382
-title: Introduction to Flexbox Question D
+title: Introduction to Flexbox Lesson D
 challengeType: 15
 dashedName: introduction-flexbox-lesson-d
 ---
 # --description--
 
-Now that you have a basic understanding of how flexbox works, what is the primairy role of a flex item in a `flexbox` layout? Try and answer the question below.
+Now that you have a basic understanding of how flexbox works, what is the primairy role of a flex item in a `flexbox` layout? Try and answer the lesson below.
 
 # --question--
 

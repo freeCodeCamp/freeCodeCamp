@@ -1,6 +1,6 @@
 ---
 id: 6617aee05b87c334e7ae8014
-title: Learn Function Basics Question C
+title: Learn Function Basics Lesson C
 challengeType: 15
 dashedName: learn-function-basics-lesson-c
 ---

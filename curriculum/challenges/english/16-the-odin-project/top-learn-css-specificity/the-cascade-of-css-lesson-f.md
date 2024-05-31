@@ -1,6 +1,6 @@
 ---
 id: 6489cf6782cf2e4f86f03ae7
-title: The Cascade of CSS Question F
+title: The Cascade of CSS Lesson F
 challengeType: 15
 dashedName: the-cascade-of-css-lesson-f
 ---

@@ -1,6 +1,6 @@
 ---
 id: 6570447ee7b02272663824e1
-title: Learn Block and Inline Question C
+title: Learn Block and Inline Lesson C
 challengeType: 15
 dashedName: learn-block-and-inline-lesson-c
 ---
