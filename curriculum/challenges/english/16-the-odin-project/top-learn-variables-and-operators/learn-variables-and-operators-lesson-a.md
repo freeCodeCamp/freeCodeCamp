@@ -2,7 +2,7 @@
 id: 65e185b1500d930ce8ed909b
 title: Learn Variables and Operators Question A
 challengeType: 15
-dashedName: learn-variables-and-operators-question-a
+dashedName: learn-variables-and-operators-lesson-a
 ---
 # --description--
 The simplest way to get started is to create an HTML file with the JavaScript code inside of it. Type the basic HTML skeleton into a file on your computer somewhere:

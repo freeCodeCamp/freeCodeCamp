@@ -2,7 +2,7 @@
 id: 6617aef85b87c334e7ae8017
 title: Learn Function Basics Question F
 challengeType: 15
-dashedName: learn-function-basics-question-f
+dashedName: learn-function-basics-lesson-f
 ---
 
 # --description--

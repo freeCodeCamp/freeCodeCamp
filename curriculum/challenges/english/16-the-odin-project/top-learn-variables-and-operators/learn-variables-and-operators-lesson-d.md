@@ -2,7 +2,7 @@
 id: 65e1985e500d930ce8ed90a7
 title: Learn Variables and Operators Question D
 challengeType: 15
-dashedName: learn-variables-and-operators-question-d
+dashedName: learn-variables-and-operators-lesson-d
 ---
 # --description--
 

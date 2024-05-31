@@ -2,7 +2,7 @@
 id: 637f701572c65bc8e73dfe30
 title: Links and Images Question G
 challengeType: 15
-dashedName: links-and-images-question-g
+dashedName: links-and-images-lesson-g
 ---
 # --description--
 

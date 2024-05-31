@@ -3,7 +3,7 @@ id: 63ee35240d8d4841c3a7091b
 videoId: LGQuIIv2RVA
 title: CSS Foundations Question B
 challengeType: 15
-dashedName: css-foundations-question-b
+dashedName: css-foundations-lesson-b
 ---
 # --description--
 

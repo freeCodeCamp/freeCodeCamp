@@ -3,7 +3,7 @@ id: 64a674a47a7d00f97013ed11
 videoId: rIO5326FgPE
 title: The Box Model Question J
 challengeType: 15
-dashedName: the-box-model-question-j
+dashedName: the-box-model-lesson-j
 --- 
 # --description--
 

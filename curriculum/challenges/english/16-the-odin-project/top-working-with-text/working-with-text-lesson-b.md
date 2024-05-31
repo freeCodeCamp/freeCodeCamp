@@ -2,7 +2,7 @@
 id: 637f4e5f72c65bc8e73dfe28
 title: Working With Text Question B
 challengeType: 15
-dashedName: working-with-text-question-b
+dashedName: working-with-text-lesson-b
 ---
 # --description--
 

@@ -3,7 +3,7 @@ id: 637f704072c65bc8e73dfe36
 videoId: tsEQgGjSmkM
 title: Links and Images Question A
 challengeType: 15
-dashedName: links-and-images-question-a
+dashedName: links-and-images-lesson-a
 ---
 # --description--
 

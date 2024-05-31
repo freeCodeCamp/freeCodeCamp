@@ -2,7 +2,7 @@
 id: 65704482e7b02272663824e5
 title: Learn Block and Inline Question G
 challengeType: 15
-dashedName: learn-block-and-inline-question-g
+dashedName: learn-block-and-inline-lesson-g
 ---
 # --description--
 

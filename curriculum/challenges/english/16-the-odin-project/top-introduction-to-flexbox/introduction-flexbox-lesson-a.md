@@ -1,8 +1,8 @@
 ---
 id: 6571b2fccc1de61d7b4dd37f
-title: Introduction to Flexbox Question A
+title: Introduction to Flexbox Lesson A
 challengeType: 15
-dashedName: introduction-flexbox-question-a
+dashedName: introduction-flexbox-lesson-a
 ---
 # --description--
 

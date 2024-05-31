@@ -2,7 +2,7 @@
 id: 637f701c72c65bc8e73dfe31
 title: Links and Images Question F
 challengeType: 15
-dashedName: links-and-images-question-f
+dashedName: links-and-images-lesson-f
 ---
 # --description--
 

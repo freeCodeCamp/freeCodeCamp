@@ -2,7 +2,7 @@
 id: 65e9727a484dd50f720e6fed
 title: Learn Data Types and Conditionals Question H
 challengeType: 15
-dashedName: learn-data-types-and-conditionals-question-h
+dashedName: learn-data-types-and-conditionals-lesson-h
 ---
 # --description--
 

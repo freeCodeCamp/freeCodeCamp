@@ -2,7 +2,7 @@
 id: 6571c34868e4b3b17d3957fb
 title: Introduction to Flexbox Question J
 challengeType: 15
-dashedName: introduction-flexbox-question-j
+dashedName: introduction-flexbox-lesson-j
 ---
 # --description--
 

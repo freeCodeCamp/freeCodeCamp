@@ -2,7 +2,7 @@
 id: 637f4e1c72c65bc8e73dfe20
 title: HTML Foundations Question C
 challengeType: 15
-dashedName: html-foundations-question-c
+dashedName: html-foundations-lesson-c
 ---
 
 # --description--

@@ -2,7 +2,7 @@
 id: 64a553ed02815a7d323aab89
 title: The Box Model Question B
 challengeType: 15
-dashedName: the-box-model-question-b
+dashedName: the-box-model-lesson-b
 ---
 # --description--
 
