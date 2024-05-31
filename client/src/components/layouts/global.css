@@ -39,6 +39,31 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eeeeee;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote footer,
+blockquote small,
+blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.42857143;
+  color: #777777;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote footer:before,
+blockquote small:before,
+blockquote .small:before {
+  content: '\2014 \00A0';
+}
+
 #___gatsby {
   height: 100%;
 }
