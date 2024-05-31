@@ -287,6 +287,7 @@ fieldset[disabled] .btn-primary.focus {
   background-image: linear-gradient(#fecc4c, #ffac33);
   border: 3px solid #feac32;
   color: #0a0a23 !important;
+  text-align: center;
 }
 .btn-cta:hover,
 .btn-cta:focus,
