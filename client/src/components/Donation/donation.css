@@ -275,11 +275,14 @@ li.disabled > a {
 
 .donation-modal ul {
   padding: 0;
+  margin-bottom: 12.5px;
 }
 
 .donation-modal li {
   list-style-type: none;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
 }
 .donation-modal li svg {
   margin: 0 5px;
