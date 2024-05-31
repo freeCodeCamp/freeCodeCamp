@@ -2,7 +2,6 @@
 id: 5fa323cdaf6a73463d590659
 title: Build an SQL Reference Object
 challengeType: 12
-helpCategory: Backend Development
 url: freeCodeCamp/learn-git-by-building-an-sql-reference-object
 dashedName: build-an-sql-reference-object
 ---
