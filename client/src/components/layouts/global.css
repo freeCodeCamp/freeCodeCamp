@@ -470,6 +470,7 @@ code {
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
+  font-size: 90%;
 }
 
 :not(pre) > code {
