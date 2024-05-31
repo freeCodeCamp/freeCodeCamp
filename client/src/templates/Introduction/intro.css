@@ -473,6 +473,12 @@ a.map-grid-item.challenge-completed {
   border-top-color: var(--blue10);
 }
 
+.annual-donation-alert .btn-container {
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
 .university-alert {
   background-repeat: repeat;
   animation: slideBackground 10s linear infinite;

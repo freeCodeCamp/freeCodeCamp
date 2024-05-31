@@ -30,7 +30,7 @@ export const ConditionalDonationAlert = ({
       <Alert variant='info' className='annual-donation-alert'>
         <p>{t('donate.beta-certification')}</p>
         <hr />
-        <p className={'text-center'}>
+        <p className='btn-container'>
           <Link
             className='btn'
             key='donate'

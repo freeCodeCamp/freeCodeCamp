@@ -57,7 +57,7 @@ const LearnAlert = ({
       </p>
       <p>{t('learn.if-getting-value')}</p>
       <hr />
-      <p className={'text-center'}>
+      <p className='btn-container'>
         <Link
           className='btn'
           key='donate'
