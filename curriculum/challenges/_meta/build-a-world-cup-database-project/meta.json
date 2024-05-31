@@ -5,8 +5,6 @@
   "helpCategory": "Backend Development",
   "order": 6,
   "time": "30 hours",
-  "template": "",
-  "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
     {
