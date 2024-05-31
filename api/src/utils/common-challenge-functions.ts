@@ -112,15 +112,21 @@ export function saveUserChallengeData(
  * @param user The existing user record.
  * @param challengeId The id of the submitted challenge.
  * @param _completedChallenge The challenge submission.
- * @param timezone The user's timezone.
  * @returns Information about the update.
  */
 export async function updateUserChallengeData(
   fastify: FastifyInstance,
-  user: user,
+  user: Pick<
+    user,
+    | 'id'
+    | 'completedChallenges'
+    | 'needsModeration'
+    | 'savedChallenges'
+    | 'progressTimestamps'
+    | 'partiallyCompletedChallenges'
+  >,
   challengeId: string,
-  _completedChallenge: CompletedChallenge,
-  timezone?: string // TODO: is this required as its not given as a arg anywhere
+  _completedChallenge: CompletedChallenge
 ) {
   const { files, completedDate: newProgressTimeStamp = Date.now() } =
     _completedChallenge;
@@ -150,7 +156,6 @@ export async function updateUserChallengeData(
   }
 
   const {
-    timezone: userTimezone,
     completedChallenges = [],
     needsModeration = false,
     savedChallenges = [],
@@ -204,20 +209,6 @@ export async function updateUserChallengeData(
   const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
     challenge => challenge.id !== challengeId
   );
-
-  if (
-    timezone &&
-    timezone !== 'UTC' &&
-    !userTimezone &&
-    userTimezone === 'UTC'
-  ) {
-    await fastify.prisma.user.update({
-      where: { id: user.id },
-      data: {
-        timezone: userTimezone
-      }
-    });
-  }
 
   if (needsModeration) {
     await fastify.prisma.user.update({

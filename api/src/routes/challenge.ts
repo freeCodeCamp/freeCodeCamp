@@ -38,6 +38,17 @@ interface JwtPayload {
   userToken: string;
 }
 
+// TODO(Post-MVP): This could be narrowed down to only the fields needed by
+// specific endpoints, but that means complicating the update helper.
+const userChallengeSelect = {
+  id: true,
+  completedChallenges: true,
+  partiallyCompletedChallenges: true,
+  progressTimestamps: true,
+  needsModeration: true,
+  savedChallenges: true
+};
+
 /**
  * Plugin for the challenge submission endpoints.
  *
@@ -215,9 +226,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: userId }
-        // TODO: update updateUserChallengeData to handle the subset of user
-        // fields we want to select, rather than having to select all fields
+        where: { id: userId },
+        select: userChallengeSelect
       });
 
       if (
@@ -274,7 +284,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async req => {
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.user?.id }
+        where: { id: req.user?.id },
+
+        select: userChallengeSelect
       });
       const progressTimestamps = user.progressTimestamps as
         | ProgressTimestamp[]
@@ -318,7 +330,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const { id, files, challengeType } = req.body;
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.user?.id }
+        where: { id: req.user?.id },
+        select: userChallengeSelect
       });
       const RawProgressTimestamp = user.progressTimestamps as
         | ProgressTimestamp[]
@@ -532,8 +545,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.user?.id }
-          // TODO: select only the fields we need
+          where: { id: req.user?.id },
+          select: userChallengeSelect
         });
 
         const progressTimestamps =
