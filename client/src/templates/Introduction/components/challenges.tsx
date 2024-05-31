@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 
+import { Button } from '@freecodecamp/ui';
+
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
@@ -66,15 +68,12 @@ function Challenges({
     <>
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>
-          <Link
-            className='btn btn-primary'
-            to={firstIncompleteChallenge.fields.slug}
-          >
+          <Button size='small' href={firstIncompleteChallenge.fields.slug}>
             {!isChallengeStarted
               ? t('buttons.start-project')
               : t('buttons.resume-project')}{' '}
             {blockTitle && <span className='sr-only'>{blockTitle}</span>}
-          </Link>
+          </Button>
         </div>
       )}
       <nav
