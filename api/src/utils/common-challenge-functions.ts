@@ -107,8 +107,7 @@ export function saveUserChallengeData(
 /**
  * Helper function to update a user's challenge data. Used in challenge
  * submission endpoints.
- *
- * @deprecated Create specific functions for each submission endpoint.
+ * TODO: Keep refactoring. This function does too much.
  * @param fastify The Fastify instance.
  * @param user The existing user record.
  * @param challengeId The id of the submitted challenge.
@@ -150,7 +149,6 @@ export async function updateUserChallengeData(
     completedChallenge = omit(_completedChallenge, ['files']);
   }
 
-  // Since these values are destuctured for easier updating, collectively update before returning
   const {
     timezone: userTimezone,
     completedChallenges = [],
