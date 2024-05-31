@@ -532,37 +532,26 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.user?.id },
-          select: { completedChallenges: true, progressTimestamps: true }
+          where: { id: req.user?.id }
+          // TODO: select only the fields we need
         });
 
-        const { completedChallenges } = user;
         const progressTimestamps =
           user.progressTimestamps as ProgressTimestamp[];
-        const oldChallenge = completedChallenges.find(
-          ({ id }) => id === challengeId
-        );
-        const alreadyCompleted = !!oldChallenge;
-        const completedDate = alreadyCompleted
-          ? oldChallenge.completedDate
-          : Date.now();
 
-        if (!alreadyCompleted) {
-          const newChallenge = {
-            id: challengeId,
-            completedDate,
-            solution: msTrophyStatus.msUserAchievementsApiUrl
-          };
-          await fastify.prisma.user.update({
-            where: { id: req.user?.id },
-            data: {
-              completedChallenges: {
-                push: newChallenge
-              },
-              progressTimestamps: [...progressTimestamps, completedDate]
-            }
-          });
-        }
+        const completedChallenge = {
+          id: challengeId,
+          solution: msTrophyStatus.msUserAchievementsApiUrl,
+          completedDate: Date.now()
+        };
+
+        const { alreadyCompleted, completedDate } =
+          await updateUserChallengeData(
+            fastify,
+            user,
+            challengeId,
+            completedChallenge
+          );
 
         return {
           alreadyCompleted,
@@ -714,6 +703,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
               newCompletedChallenges[alreadyCompletedIndex] = updatedChallege;
 
+              // TODO(Post-MVP): Try to DRY the updates.
+              // updateUserChallengeData, for all its faults, handles the
+              // update/insert logic well.
               await fastify.prisma.user.update({
                 where: { id: userId },
                 data: {

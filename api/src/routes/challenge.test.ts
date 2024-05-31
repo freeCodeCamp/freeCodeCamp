@@ -1201,7 +1201,6 @@ describe('challengeRoutes', () => {
               completedDate
             });
 
-            // TODO: use a custom matcher for thisu
             expect(completedDate).toBeGreaterThan(now);
             expect(completedDate).toBeLessThan(now + 1000);
             expect(res.statusCode).toBe(200);
