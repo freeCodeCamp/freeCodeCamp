@@ -174,9 +174,6 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
 
     const validateMeta = metaSchemaValidator(blockMeta);
     if (validateMeta.error) {
-      console.log(
-        `A validation error occurred in the meta.json for block '${blockName}'`
-      );
       throw Error(
         `${validateMeta.error} in meta.json for block '${blockName}'`
       );
