@@ -39,7 +39,6 @@ $RECYCLE.BIN/
 ### Linux ###
 
 # General
-*~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
@@ -63,9 +62,7 @@ $RECYCLE.BIN/
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
-._*
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
