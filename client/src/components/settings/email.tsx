@@ -188,7 +188,6 @@ function EmailSettings({
       <FullWidthRow>
         <form
           id='form-update-email'
-          data-cy='form-update-email'
           {...(!isDisabled
             ? { onSubmit: handleSubmit }
             : { onSubmit: e => e.preventDefault() })}
@@ -206,16 +205,13 @@ function EmailSettings({
                 {t('settings.email.new')}
               </ControlLabel>
               <FormControl
-                data-cy='email-input'
                 onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
                 id='new-email-input'
               />
               {newEmailValidationMessage ? (
-                <HelpBlock data-cy='validation-message'>
-                  {newEmailValidationMessage}
-                </HelpBlock>
+                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
               ) : null}
             </FormGroup>
             <FormGroup
@@ -226,16 +222,13 @@ function EmailSettings({
                 {t('settings.email.confirm')}
               </ControlLabel>
               <FormControl
-                data-cy='confirm-email'
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
                 id='confirm-email-input'
               />
               {confirmEmailValidationMessage ? (
-                <HelpBlock data-cy='validation-message'>
-                  {confirmEmailValidationMessage}
-                </HelpBlock>
+                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
               ) : null}
             </FormGroup>
           </div>
