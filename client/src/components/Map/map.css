@@ -49,7 +49,7 @@
   content: '';
   display: block;
   width: 2px;
-  height: 39%;
+  height: calc(50% - 26px);
   background-color: var(--secondary-color);
   position: absolute;
   left: calc(36.5%);
