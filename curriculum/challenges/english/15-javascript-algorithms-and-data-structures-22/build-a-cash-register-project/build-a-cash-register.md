@@ -464,29 +464,26 @@ const formatResults = (status, change) => {
 };
 
 const checkCashRegister = () => {
-  if (Number(cash.value) < price) {
+  const cashInCents = Math.round(Number(cash.value) * 100);
+  const priceInCents = Math.round(price * 100);
+  if (cashInCents < priceInCents) {
     alert("Customer does not have enough money to purchase the item");
     cash.value = "";
     return;
   }
 
-  if (Number(cash.value) === price) {
+  if (cashInCents === priceInCents) {
     displayChangeDue.innerHTML =
       "<p>No change due - customer paid with exact cash</p>";
     cash.value = "";
     return;
   }
 
-  let changeDue = Number(cash.value) - price;
-  let reversedCid = [...cid].reverse();
-  let denominations = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
+  let changeDue = cashInCents - priceInCents;
+  let reversedCid = [...cid].reverse().map(([currency, value]) => [currency, Math.round(value * 100)]);
+  let denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
   let result = { status: "OPEN", change: [] };
-  let totalCID = parseFloat(
-    cid
-      .map((total) => total[1])
-      .reduce((prev, curr) => prev + curr)
-      .toFixed(2),
-  );
+  let totalCID = reversedCid.reduce((prev, [_, value]) => prev + value, 0);
 
   if (totalCID < changeDue) {
     return (displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>");
@@ -497,16 +494,14 @@ const checkCashRegister = () => {
   }
 
   for (let i = 0; i <= reversedCid.length; i++) {
-    if (changeDue > denominations[i] && changeDue > 0) {
-      let count = 0;
-      let total = reversedCid[i][1];
-      while (total > 0 && changeDue >= denominations[i]) {
-        total -= denominations[i];
-        changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
-        count++;
-      }
+    if (changeDue >= denominations[i] && changeDue > 0) {
+      const total = reversedCid[i][1];
+      const possibleChange = Math.min(total, changeDue);
+      const count = Math.floor(possibleChange / denominations[i]);
+      changeDue -= count * denominations[i];
+
       if (count > 0) {
-        result.change.push([reversedCid[i][0], count * denominations[i]]);
+        result.change.push([reversedCid[i][0], (count * denominations[i]) / 100]);
       }
     }
   }
@@ -541,7 +536,7 @@ const updateUI = (change) => {
   if (change) {
     change.forEach((changeArr) => {
       const targetArr = cid.find((cidArr) => cidArr[0] === changeArr[0]);
-      targetArr[1] = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+      targetArr[1] = (Math.round(targetArr[1] * 100) - Math.round(changeArr[1] * 100)) / 100;
     });
   }
 
