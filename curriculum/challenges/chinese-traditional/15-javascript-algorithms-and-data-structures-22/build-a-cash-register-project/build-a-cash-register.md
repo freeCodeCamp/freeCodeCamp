@@ -25,7 +25,7 @@ Your application should show different messages depending on the price of the it
 |        貨幣單位         |         面值          |
 |:-------------------:|:-------------------:|
 |        Penny        |   0.01 美元（PENNY）    |
-|       Nickle        |   0.05 美元（NICKEL）   |
+|       Nickel        |   0.05 美元（NICKEL）   |
 |        Dime         |    0.1 美元（DIME）     |
 |       Quarter       |  0.25 美元（QUARTER）   |
 |       Dollar        |      1 美元（ONE）      |
