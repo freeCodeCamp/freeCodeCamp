@@ -31,4 +31,4 @@ jobs:
           cd ../
           git clone https://github.com/Asad-Rahim/FreeCodeCampCopy.git
           echo "${PWD}"
-          echo "bash ${PWD}/freeCodeCamp/git_synch.sh"
+          bash ${PWD}/freeCodeCamp/git_synch.sh
