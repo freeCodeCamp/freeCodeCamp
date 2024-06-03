@@ -23,9 +23,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}`}
           >
-            <span className='ellipsis'>
-              {i18next.t(`intro:${superBlock}.title`)}
-            </span>
+            <span>{i18next.t(`intro:${superBlock}.title`)}</span>
           </Link>
         </li>
         <li className='breadcrumb-right'>
