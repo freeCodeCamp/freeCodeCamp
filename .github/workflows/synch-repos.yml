@@ -15,10 +15,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  detect-changes:
+  synch-changes:
     runs-on: ubuntu-20.04
-    outputs:
-      services: ${{ steps.detect-step.outputs.services }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -32,5 +30,5 @@ jobs:
         run: |
           cd ../
           git clone https://github.com/Asad-Rahim/FreeCodeCampCopy.git
-          ls
+          echo "${PWD}"
           echo "$(${PWD}/freeCodeCamp/git_synch.sh"
