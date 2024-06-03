@@ -72,7 +72,6 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm run create:shared
           npm i --prefix=curriculum-server
-          npm i --prefix=web
           pnpm run build:curriculum
           pnpm run lint
 
