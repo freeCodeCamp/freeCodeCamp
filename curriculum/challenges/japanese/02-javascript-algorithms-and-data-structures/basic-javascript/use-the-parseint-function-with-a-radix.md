@@ -34,7 +34,7 @@ radix 変数により、基数が 2 であり、`11` が 2 進数であること
 `convertToInteger` では `parseInt()` 関数を使用する必要があります。
 
 ```js
-assert(/parseInt/g.test(code));
+assert(/parseInt/g.test(__helpers.removeJSComments(code)));
 ```
 
 `convertToInteger("10011")` は数値を返す必要があります。

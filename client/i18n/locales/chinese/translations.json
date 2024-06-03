@@ -57,7 +57,7 @@
     "run-test": "运行测试（Ctrl + Enter）",
     "check-code": "检查你的代码（Ctrl + Enter）",
     "check-code-2": "检查你的代码",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code-3": "检查你的代码（Command + Enter）",
     "reset": "重置",
     "reset-step": "重置此步骤",
     "help": "帮助",
@@ -72,7 +72,11 @@
     "update-email": "更新我的邮箱",
     "verify-email": "确认邮箱",
     "submit-and-go": "提交并访问下一个挑战",
+    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "访问下一个挑战",
+    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-3": "Go to next challenge (Command + Enter)",
     "ask-later": "稍后问我",
     "start-coding": "开始编码！",
     "go-to-settings": "转到设置以领取你的认证",
@@ -96,7 +100,7 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "确认金额",
-    "skip-advertisement": "跳过广告"
+    "play-scene": "点击播放"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -262,8 +266,12 @@
       "nevermind": "我不想删除我的账户",
       "certain": "我完全确定要删除与此账户相关的所有信息",
       "reset-heading": "重置我的进度",
-      "reset-p1": "这将删除你的所有进度、分数、已完成的挑战、我们对你的项目的记录，以及你获得的所有认证等所有内容。",
-      "reset-p2": "即使你之后改变主意，我们也无法为你恢复任何信息。",
+      "reset-p1": "这将永久删除和重置所有下列内容：",
+      "reset-item-1": "你在每个步骤/挑战中的进度（所有已完成的挑战都将丢失）",
+      "reset-item-2": "任何保存的代码，包括部分完成的挑战和认证项目代码",
+      "reset-item-3": "所有已完成和申请的认证",
+      "reset-p2": "一切将被恢复到你注册的第一天。",
+      "reset-p3": "即使你之后改变主意，我们也无法为你恢复任何信息。",
       "nevermind-2": "我不想删除我的所有进度",
       "reset-confirm": "重置所有内容，我想重新开始。"
     },
@@ -288,17 +296,20 @@
     }
   },
   "profile": {
-    "you-not-public": "你尚未把你的作品集设置为公开。",
-    "username-not-public": "{{username}} 未把作品集设置为公开",
     "you-change-privacy": "你需要更改你的隐私设置，才能让他人看到你的作品集。这是你的作品集公开时候的预览。",
     "username-change-privacy": "{{username}} 需要修改隐私设置，你才能看到其作品集。",
     "supporter": "支持者",
     "contributor": "突出贡献者",
+    "contributor-prolific": "Among most prolific volunteers in {{year}}",
     "no-certs": "未获得关于当前课程的认证",
     "fcc-certs": "freeCodeCamp 认证",
     "longest-streak": "最长连续提交记录：",
     "current-streak": "当前连续提交记录：",
-    "portfolio": "作品集",
+    "portfolio": "Portfolio",
+    "badges": "Badges",
+    "donated": "Donated to the community",
+    "projects": "项目",
+    "stats": "Stats",
     "timeline": "时间线",
     "none-completed": "尚未完成任何挑战。",
     "get-started": "从这里开始。",
@@ -309,7 +320,8 @@
     "tweet": "我获得了 {{certTitle}} 认证 @freeCodeCamp！在这里查看：{{certURL}}",
     "avatar": "{{username}} 的头像",
     "joined": "于 {{date}} 加入",
-    "total-points": "点数： {{count}}",
+    "from": "来自 {{location}}",
+    "total-points": "总分：",
     "points": "{{date}} 获得 {{count}} 分",
     "points_plural": "{{date}} 获得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 页，共 {{totalPages}} 页"
@@ -386,8 +398,8 @@
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "read-search-ask-checkbox": "我已经尝试了 <0>Read-Search-Ask</0> 方法",
     "similar-questions-checkbox": "我已经<0>在论坛上搜索了类似的问题和相应的答案</0>",
-    "minimum-characters": "添加最少 {{characters}} 字符",
-    "characters-left": "{{characters}} 剩余字符",
+    "minimum-characters": "请至少再用 {{characters}} 个字符进行描述",
+    "characters-left": "你可以在查询中再添加 {{characters}} 个字符",
     "must-confirm-statements": "在向论坛提交帖子之前，你必须确认以下事项。",
     "min-50-max-500": "最少 50 个字符，最多 500 个字符",
     "rsa": "阅读，搜索，提问",
@@ -398,6 +410,7 @@
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "donation-record-not-found": "未找到你的捐款记录。",
+    "donation-heading": "捐赠目标进展情况",
     "sign-in-card-update": "登录以更新你的卡片",
     "sign-in-see-benefits": "登录以查看你的支持者权益",
     "card-has-been-updated": "你的卡片已经更新成功。",
@@ -631,7 +644,8 @@
     "help-millions-learn": "帮助数百万人学习",
     "reach-goals-faster": "更快地实现你的目标",
     "remove-distractions": "消除干扰",
-    "animation-description": "这是一个 20 秒的动画广告，旨在鼓励学员成为 freeCodeCamp 的支持者。动画开头是一只泰迪熊成为支持者。最后，弹窗消失了，泰迪熊完成了所有目标。它毕业了，成为了帮助全世界人们的教育超级英雄。"
+    "animation-description": "这是一个 20 秒的动画广告，旨在鼓励学员成为 freeCodeCamp 的支持者。动画开头是一只泰迪熊成为支持者。最后，弹窗消失了，泰迪熊完成了所有目标。它毕业了，成为了帮助全世界人们的教育超级英雄。",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "你需要先登录才能举报用户",
@@ -729,8 +743,8 @@
     "dialogues-and-tasks-for": "{{blockTitle}} 的对话和任务",
     "code-example": "{{codeName}} 代码示例",
     "opens-new-window": "在新窗口打开",
-    "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读-搜索-提问）方法",
+    "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案"
   },
   "flash": {
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",
@@ -804,6 +818,7 @@
     "challenge-submit-too-big": "抱歉，你无法提交代码。你的代码是 {{user-size}} 字节。我们最多允许 {{max-size}} 个字节。请减少你的代码并重试，或在 https://forum.freecodecamp.org 上请求帮助。",
     "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。",
     "generate-exam-error": "生成考试时发生错误。",
+    "cert-not-found": "认证 {{certSlug}} 不存在。",
     "ms": {
       "transcript": {
         "link-err-1": "请在请求中包含一个 Microsoft 成绩单的 URL。",
@@ -865,6 +880,7 @@
     "fulltextNoHours": "<0>特证明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>开发者认证课程，日期为 {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作为旧版全栈认证的一部分，{{user}} 完成了以下认证：",
+      "heading-exam": "作为认证的一部分，{{user}} 通过了以下考试： ",
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
       "solution": "解决方案",
       "no-solution": "显示解决方案出错时，发送电子邮件到 support@freeCodeCamp.org 获得帮助。",
@@ -1005,7 +1021,7 @@
     "user-agent": "用户代理是： <code>{{userAgent}}</code>",
     "challenge": "挑战信息：",
     "whats-happening": "告诉我们发生了什么：",
-    "describe": "在此详细描述你的问题。",
+    "describe": "在此详细描述你的问题。例如：\n我的 h1 元素缺少一个开始标签。需要帮助检查我的代码。\n或者\n我的 for 循环无限运行。如何避免？",
     "camper-project": "你的项目链接",
     "camper-code": "到目前为止你的代码",
     "warning": "警告",
@@ -1037,9 +1053,9 @@
     "execute-challenge": "开始挑战",
     "focus-editor": "聚焦编辑器",
     "focus-instructions-panel": "聚焦指示面板",
-    "navigate-previous": "Navigate To Previous Exercise",
-    "navigate-next": "Navigate To Next Exercise",
-    "play-scene": "Play Scene"
+    "navigate-previous": "跳转至上一个练习",
+    "navigate-next": "跳转至下一个练习",
+    "play-scene": "播放场景"
   },
   "signout": {
     "heading": "注销你的账户",

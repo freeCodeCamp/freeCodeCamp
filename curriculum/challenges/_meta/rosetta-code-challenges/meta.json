@@ -4,9 +4,6 @@
   "dashedName": "rosetta-code-challenges",
   "helpCategory": "Rosetta",
   "order": 0,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "rosetta-code",
   "disableLoopProtectTests": true,
   "challengeOrder": [

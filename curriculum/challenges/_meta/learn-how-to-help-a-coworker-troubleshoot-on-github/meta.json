@@ -4,10 +4,7 @@
   "dashedName": "learn-how-to-help-a-coworker-troubleshoot-on-github",
   "order": 15,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "a2-english-for-developers",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "655c131291cbcb8febf21e64",
@@ -34,7 +31,7 @@
       "title": "Task 5"
     },
     {
-      "id": "656bbcc8333087117b4d9153",
+      "id": "656bbfaf6cbc3f1418acca3c",
       "title": "Task 6"
     },
     {
@@ -54,23 +51,23 @@
       "title": "Task 10"
     },
     {
-      "id": "656bbf3a1b344e13bc7fa12c",
+      "id": "656bbfedb30479145d464e37",
       "title": "Task 11"
     },
     {
-      "id": "656bbfaf6cbc3f1418acca3c",
+      "id": "656bbf3a1b344e13bc7fa12c",
       "title": "Task 12"
     },
     {
-      "id": "656bbfedb30479145d464e37",
+      "id": "656bc028a62f3a149ed36971",
       "title": "Task 13"
     },
     {
-      "id": "656bc028a62f3a149ed36971",
+      "id": "656bc05be141d914dcc812c3",
       "title": "Task 14"
     },
     {
-      "id": "656bc05be141d914dcc812c3",
+      "id": "656bbcc8333087117b4d9153",
       "title": "Task 15"
     },
     {
@@ -127,7 +124,7 @@
     },
     {
       "id": "656bd6dde3a62c205cb41b2d",
-      "title": "Dialogue 2: Talking About Pull Requests"
+      "title": "Dialogue 2: Talking about Pull Requests"
     },
     {
       "id": "656bd701970c6c20a9c89b0f",
@@ -215,7 +212,7 @@
     },
     {
       "id": "65b2b0e08ec66535fa8542eb",
-      "title": "Dialogue 3: Talking About Debugging"
+      "title": "Dialogue 3: Talking about Debugging"
     },
     {
       "id": "65b2b181cb9b2136e833a17a",

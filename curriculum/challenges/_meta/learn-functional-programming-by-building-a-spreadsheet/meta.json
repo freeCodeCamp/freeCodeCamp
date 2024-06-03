@@ -5,13 +5,9 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-functional-programming-by-building-a-spreadsheet",
   "helpCategory": "JavaScript",
-  "order": 12,
+  "order": 16,
   "time": "2 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures-v8",
-  "superOrder": 4,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "642db8c409d9991d0b3b2f0d",
@@ -310,120 +306,128 @@
       "title": "Step 74"
     },
     {
-      "id": "646d40c543943ec250039682",
+      "id": "661f48f412d7631a1d9c30e6",
       "title": "Step 75"
     },
     {
-      "id": "646d40fe4b7b50c30c2b4cd8",
+      "id": "661f49650572031c6ebdb8e3",
       "title": "Step 76"
     },
     {
-      "id": "646d41e23b583fc3b8cc4579",
+      "id": "646d40c543943ec250039682",
       "title": "Step 77"
     },
     {
-      "id": "646d423fade4a9c4636acd13",
+      "id": "646d40fe4b7b50c30c2b4cd8",
       "title": "Step 78"
     },
     {
-      "id": "646d42f58deb2fc52adc6611",
+      "id": "646d41e23b583fc3b8cc4579",
       "title": "Step 79"
     },
     {
-      "id": "646d43587d926bc5b6cb2e50",
+      "id": "646d423fade4a9c4636acd13",
       "title": "Step 80"
     },
     {
-      "id": "646d448479c8fdc8dcec868c",
+      "id": "646d42f58deb2fc52adc6611",
       "title": "Step 81"
     },
     {
-      "id": "646d44da986f2bc9b72f5fe2",
+      "id": "646d43587d926bc5b6cb2e50",
       "title": "Step 82"
     },
     {
-      "id": "646d451c2e44afca71b67818",
+      "id": "646d448479c8fdc8dcec868c",
       "title": "Step 83"
     },
     {
-      "id": "646d4554721d43cb19a68bc4",
+      "id": "646d44da986f2bc9b72f5fe2",
       "title": "Step 84"
     },
     {
-      "id": "646d45b739da5ecbf830c108",
+      "id": "646d451c2e44afca71b67818",
       "title": "Step 85"
     },
     {
-      "id": "646d45ee725632cca2555146",
+      "id": "646d4554721d43cb19a68bc4",
       "title": "Step 86"
     },
     {
-      "id": "646d4626420eeecd51f241c2",
+      "id": "646d45b739da5ecbf830c108",
       "title": "Step 87"
     },
     {
-      "id": "646d467c6994f4ce0dc416a4",
+      "id": "646d45ee725632cca2555146",
       "title": "Step 88"
     },
     {
-      "id": "646d46c03e7d02cecb30f021",
+      "id": "646d4626420eeecd51f241c2",
       "title": "Step 89"
     },
     {
-      "id": "646d4717a689e1cfa232e357",
+      "id": "646d467c6994f4ce0dc416a4",
       "title": "Step 90"
     },
     {
-      "id": "646d4769ba65f1d05ef6b634",
+      "id": "646d46c03e7d02cecb30f021",
       "title": "Step 91"
     },
     {
-      "id": "646d47c8f58107d10f1e5106",
+      "id": "646d4717a689e1cfa232e357",
       "title": "Step 92"
     },
     {
-      "id": "646d4813c17b37d1e261a566",
+      "id": "646d4769ba65f1d05ef6b634",
       "title": "Step 93"
     },
     {
-      "id": "646d486aec20f7d2a581cc36",
+      "id": "646d47c8f58107d10f1e5106",
       "title": "Step 94"
     },
     {
-      "id": "646d48b936802fd34c3f05af",
+      "id": "646d4813c17b37d1e261a566",
       "title": "Step 95"
     },
     {
-      "id": "646d498c8ebc31d3f753b22e",
+      "id": "646d486aec20f7d2a581cc36",
       "title": "Step 96"
     },
     {
-      "id": "646d49bfff9079d4b38df115",
+      "id": "646d48b936802fd34c3f05af",
       "title": "Step 97"
     },
     {
-      "id": "646d4a07a8fb14d55cd70e09",
+      "id": "646d498c8ebc31d3f753b22e",
       "title": "Step 98"
     },
     {
-      "id": "6491d38f5b09a021c4b5d5fe",
+      "id": "646d49bfff9079d4b38df115",
       "title": "Step 99"
     },
     {
-      "id": "646d4a5b32a1cad6165df286",
+      "id": "646d4a07a8fb14d55cd70e09",
       "title": "Step 100"
     },
     {
-      "id": "646d4a8dbc04c6d6bb0001f8",
+      "id": "6491d38f5b09a021c4b5d5fe",
       "title": "Step 101"
     },
     {
-      "id": "646d4ab9b3b4c5d74fdd2154",
+      "id": "646d4a5b32a1cad6165df286",
       "title": "Step 102"
     },
     {
-      "id": "646d4b3d80ea98d824c8a4f9",
+      "id": "646d4a8dbc04c6d6bb0001f8",
       "title": "Step 103"
+    },
+    {
+      "id": "646d4ab9b3b4c5d74fdd2154",
+      "title": "Step 104"
+    },
+    {
+      "id": "646d4b3d80ea98d824c8a4f9",
+      "title": "Step 105"
     }
   ]
 }

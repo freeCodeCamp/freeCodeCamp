@@ -26,7 +26,7 @@ Exemplo:
 
 # --instructions--
 
-É hora de fazer uma pausa com o Camper Cat e conhecer o colega Zersiax (@zersiax), um campeão de acessibilidade e também usuário de leitor de tela. Para ouvir um clipe de seu leitor de tela em ação, adicione o elemento `audio` após o elemento `p`. Inclua o atributo `controls`. Em seguida, coloque um elemento `source` dentro da tag `audio` com o atributo `src` definido como `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` e o atributo `type` definido como `"audio/mpeg"`.
+É hora de fazer uma pausa com o Camper Cat e conhecer o colega Zersiax (@zersiax), um campeão de acessibilidade e também usuário de leitor de tela. Para ouvir um clipe de seu leitor de tela em ação, adicione o elemento `audio` após o elemento `p`. Inclua o atributo `controls`. Em seguida, coloque o elemento `source` dentro do campo `audio` com o atributo `src` definido como `https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3` e o atributo `type` definido como `"audio/mpeg"`.
 
 **Observação:** o clipe de áudio pode parecer rápido e difícil de entender, mas é uma velocidade normal para usuários de leitores de tela.
 
@@ -70,7 +70,7 @@ O valor do atributo `src` na tag `source` deve ser exatamente igual ao link nas 
 ```js
 assert(
   $('source').attr('src') ===
-    'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3'
+    'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
 );
 ```
 
@@ -108,7 +108,7 @@ assert($('source').attr('type') === 'audio/mpeg');
   <main>
     <p>A sound clip of Zersiax's screen reader in action.</p>
     <audio controls>
-      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+      <source src="https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3" type="audio/mpeg"/>
     </audio>
   </main>
 </body>

@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d4
-title: Comparison with the Greater Than Operator
+title: 이상 연산자로 비교하기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp6GbH4'
 forumTopicId: 16786
@@ -9,11 +9,11 @@ dashedName: comparison-with-the-greater-than-operator
 
 # --description--
 
-The greater than operator (`>`) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns `true`. Otherwise, it returns `false`.
+이상 연산자 (`>`)는 두 숫자의 값을 비교합니다. 왼쪽에 있는 숫자가 오른쪽에 있는 숫자보다 크다면 `true`를 반환합니다. 그렇지 않으면 `false`를 반환합니다.
 
-Like the equality operator, the greater than operator will convert data types of values while comparing.
+등호 연산자와 같이 이상 연산자는 비교하면서 값의 데이터 유형을 변환할 것입니다.
 
-**Examples**
+**예시**
 
 ```js
 5   >  3  // true
@@ -24,56 +24,56 @@ Like the equality operator, the greater than operator will convert data types of
 
 # --instructions--
 
-Add the greater than operator to the indicated lines so that the return statements make sense.
+반환문이 맞도록 지시된 줄에 이상 연산자를 추가하시오.
 
 # --hints--
 
-`testGreaterThan(0)` should return the string `10 or Under`
+`testGreaterThan(0)`는 문자열 `10 or Under`를 반환해야 합니다.
 
 ```js
 assert(testGreaterThan(0) === '10 or Under');
 ```
 
-`testGreaterThan(10)` should return the string `10 or Under`
+`testGreaterThan(10)`는 문자열 `10 or Under`을 반환해야 합니다.
 
 ```js
 assert(testGreaterThan(10) === '10 or Under');
 ```
 
-`testGreaterThan(11)` should return the string `Over 10`
+`testGreaterThan(11)`는 문자열 `Over 10`을 반환해야 합니다.
 
 ```js
 assert(testGreaterThan(11) === 'Over 10');
 ```
 
-`testGreaterThan(99)` should return the string `Over 10`
+`testGreaterThan(99)`는 문자열 `Over 10`을 반환해야 합니다.
 
 ```js
 assert(testGreaterThan(99) === 'Over 10');
 ```
 
-`testGreaterThan(100)` should return the string `Over 10`
+`testGreaterThan(100)`는 문자열 `Over 10`을 반환해야 합니다.
 
 ```js
 assert(testGreaterThan(100) === 'Over 10');
 ```
 
-`testGreaterThan(101)` should return the string `Over 100`
+`testGreaterThan(101)`는 문자열 `Over 100`을 반환해야 합니다.
 
 ```js
 assert(testGreaterThan(101) === 'Over 100');
 ```
 
-`testGreaterThan(150)` should return the string `Over 100`
+`testGreaterThan(150)`는 문자열 `Over 100`을 반환해야 합니다.
 
 ```js
 assert(testGreaterThan(150) === 'Over 100');
 ```
 
-You should use the `>` operator at least twice
+`>` 연산자를 적어도 두 번 사용해야 합니다.
 
 ```js
-assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
 ```
 
 # --seed--

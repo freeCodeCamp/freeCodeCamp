@@ -25,14 +25,14 @@ Aggiungi al documento HTML uno script di tipo `module` e dagli `index.js` come f
 Dovresti creare un tag `script`.
 
 ```js
-assert(code.match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
+assert(__helpers.removeJSComments(code).match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
 ```
 
 Il tuo tag `script` dovrebbe avere l'attributo `type` con un valore di `module`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^t]*type\s*=\s*('|")module\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );
@@ -42,7 +42,7 @@ Il tuo tag `script` dovrebbe avere una `src` impostata su `index.js`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^s]*src\s*=\s*('|")index\.js\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );

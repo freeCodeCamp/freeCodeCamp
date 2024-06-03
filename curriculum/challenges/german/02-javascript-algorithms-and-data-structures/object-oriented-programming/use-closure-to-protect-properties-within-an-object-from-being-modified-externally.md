@@ -43,7 +43,7 @@ Hier ist `getHatchedEggCount` eine privilegierte Methode, weil sie Zugriff auf d
 Die Eigenschaft `weight` sollte eine private Variable sein und den Wert `15` zugewiesen bekommen.
 
 ```js
-assert(code.match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
+assert(__helpers.removeJSComments(code).match(/(var|let|const)\s+weight\s*\=\s*15\;?/g));
 ```
 
 Dein Code sollte eine Methode in `Bird` namens `getWeight` erstellen, die den Wert der privaten Variable `weight` zurückgibt.
@@ -55,7 +55,7 @@ assert(new Bird().getWeight() === 15);
 Deine Funktion `getWeight` sollte die private Variable `weight` zurückgeben.
 
 ```js
-assert(code.match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
+assert(__helpers.removeJSComments(code).match(/((return\s+)|(\(\s*\)\s*\=\>\s*))weight\;?/g));
 ```
 
 # --seed--

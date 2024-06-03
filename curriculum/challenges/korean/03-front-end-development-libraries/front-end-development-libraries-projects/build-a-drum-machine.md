@@ -31,15 +31,15 @@ dashedName: build-a-drum-machine
 
 다음은 드럼 머신에 사용할 수 있는 일부 오디오 샘플입니다.
 
-- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
-- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
-- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
-- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
-- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
-- [Open-HH](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
-- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
-- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
-- [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
+- [Heater 1](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-1.mp3)
+- [Heater 2](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3)
+- [Heater 3](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3)
+- [Heater 4](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3)
+- [Clap](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3)
+- [Open-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3)
+- [Kick](https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3)
+- [Closed-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3)
 
 프로젝트를 구성하려면 <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">이 CodePen 템플릿</a>을 사용하고 `Save`를 클릭하여 나만의 펜을 만들 수 있습니다. 또는 원하는 환경에서 테스트를 실행하기 위해 이 CDN 링크를 사용할 수 있습니다.`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 

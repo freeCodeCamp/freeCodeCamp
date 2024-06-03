@@ -31,7 +31,7 @@ Use the `every` method inside the `checkPositive` function to check if every ele
 Your code should use the `every` method.
 
 ```js
-assert(code.match(/\.every/g));
+assert(__helpers.removeJSComments(code).match(/\.every/g));
 ```
 
 `checkPositive([1, 2, 3, -4, 5])` should return `false`.

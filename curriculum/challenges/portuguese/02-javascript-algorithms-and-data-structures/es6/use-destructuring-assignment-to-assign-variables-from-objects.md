@@ -34,8 +34,8 @@ Você deve remover a sintaxe da atribuição ES5.
 
 ```js
 assert(
-  !code.match(/highToday = HIGH_TEMPERATURES\.today/g) &&
-    !code.match(/highTomorrow = HIGH_TEMPERATURES\.tomorrow/g)
+  !__helpers.removeJSComments(code).match(/highToday = HIGH_TEMPERATURES\.today/g) &&
+    !__helpers.removeJSComments(code).match(/highTomorrow = HIGH_TEMPERATURES\.tomorrow/g)
 );
 ```
 
@@ -43,7 +43,7 @@ Você deve usar desestruturação para criar a variável `highToday`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /(var|const|let)\s*{\s*(today\s*:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
   )
 );
@@ -53,7 +53,7 @@ Você deve usar desestruturação para criar a variável `highTomorrow`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /(var|const|let)\s*{\s*(tomorrow\s*:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
   )
 );

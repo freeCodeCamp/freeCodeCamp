@@ -56,19 +56,19 @@ assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
 `studlyCapVar` は宣言部分と割り当て部分の両方でキャメルケースを使用する必要があります。
 
 ```js
-assert(code.match(/studlyCapVar/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/studlyCapVar/g).length === 2);
 ```
 
 `properCamelCase` は宣言部分と割り当て部分の両方でキャメルケースを使用する必要があります。
 
 ```js
-assert(code.match(/properCamelCase/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/properCamelCase/g).length === 2);
 ```
 
 `titleCaseOver` は宣言部分と割り当て部分の両方でキャメルケースを使用する必要があります。
 
 ```js
-assert(code.match(/titleCaseOver/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/titleCaseOver/g).length === 2);
 ```
 
 # --seed--

@@ -53,7 +53,7 @@ assert(typeof myHouse.numBedrooms === 'number');
 You should verify that `myHouse` is an instance of `House` using the `instanceof` operator.
 
 ```js
-assert(/myHouse\s*instanceof\s*House/.test(code));
+assert(/myHouse\s*instanceof\s*House/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

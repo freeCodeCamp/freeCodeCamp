@@ -52,7 +52,7 @@ Debes usar el índice correcto para modificar el valor en `myArray`.
 ```js
 assert(
   (function () {
-    if (code.match(/myArray\[0\]\s*=\s*/g)) {
+    if (__helpers.removeJSComments(code).match(/myArray\[0\]\s*=\s*/g)) {
       return true;
     } else {
       return false;

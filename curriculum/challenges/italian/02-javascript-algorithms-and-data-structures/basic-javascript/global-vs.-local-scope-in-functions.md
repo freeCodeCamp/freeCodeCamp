@@ -45,7 +45,7 @@ assert(myOutfit() === 'sweater');
 Non dovresti cambiare l'istruzione return.
 
 ```js
-assert(/return outerWear/.test(code));
+assert(/return outerWear/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

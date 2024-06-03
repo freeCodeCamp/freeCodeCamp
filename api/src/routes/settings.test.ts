@@ -409,10 +409,10 @@ Please wait 5 minutes to resend an authentication link.`
           username: 'TwaHa1'
         });
 
-        expect(response.body).toEqual({
+        expect(response.body).toStrictEqual({
           message: 'flash.username-updated',
           type: 'success',
-          username: 'TwaHa1'
+          variables: { username: 'TwaHa1' }
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
@@ -470,10 +470,10 @@ Please wait 5 minutes to resend an authentication link.`
           username: 'TWaha3'
         });
 
-        expect(response.body).toEqual({
+        expect(response.body).toStrictEqual({
           message: 'flash.username-updated',
           type: 'success',
-          username: 'TWaha3'
+          variables: { username: 'TWaha3' }
         });
         expect(response.statusCode).toEqual(200);
       });
@@ -530,11 +530,26 @@ Please wait 5 minutes to resend an authentication link.`
         expect(response.statusCode).toEqual(200);
       });
 
+      test('PUT accepts empty strings for socials', async () => {
+        const response = await superPut('/update-my-socials').send({
+          website: 'https://www.freecodecamp.org/',
+          twitter: '',
+          linkedin: '',
+          githubProfile: ''
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-socials',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+
       test('PUT returns 400 status code with invalid socials setting', async () => {
         const response = await superPut('/update-my-socials').send({
           website: 'invalid',
-          twitter: 'invalid',
-          linkedin: 'invalid',
+          twitter: '',
+          linkedin: '',
           githubProfile: 'invalid'
         });
 

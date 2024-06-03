@@ -1,19 +1,15 @@
 {
-  "name": "learn-intermediate-oop-by-building-a-platformer-game",
+  "name": "Learn Intermediate OOP by Building a Platformer Game",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-oop-by-building-a-platformer-game",
   "helpCategory": "JavaScript",
-  "order": 15,
+  "order": 19,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "disableLoopProtectTests": true,
   "disableLoopProtectPreview": true,
-  "superOrder": 4,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "6461815bc48998eb15d55349",

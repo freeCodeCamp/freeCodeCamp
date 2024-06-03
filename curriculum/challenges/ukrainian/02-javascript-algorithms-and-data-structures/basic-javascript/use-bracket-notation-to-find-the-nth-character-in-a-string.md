@@ -39,7 +39,7 @@ assert(thirdLetterOfLastName === 'v');
 Ви повинні використати дужкову нотацію.
 
 ```js
-assert(code.match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
+assert(__helpers.removeJSComments(code).match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
 ```
 
 # --seed--

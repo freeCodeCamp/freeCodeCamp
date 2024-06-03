@@ -34,13 +34,13 @@ for (let i = 10; i > 0; i -= 2) {
 يجب أن تستخدم الحلقة التكرارية `for`.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب أن تستخدم طريقة للقائمة (array method) باسم `push`.
 
 ```js
-assert(code.match(/myArray.push/));
+assert(__helpers.removeJSComments(code).match(/myArray.push/));
 ```
 
 يجب أن تساوي `myArray` قيمة `[9, 7, 5, 3, 1]`.

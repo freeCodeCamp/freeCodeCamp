@@ -104,6 +104,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
+export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
@@ -126,7 +127,7 @@ export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
     : process.env.SENTRY_DSN;
-export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN || 'localhost';
+export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
 export const SES_ID = process.env.SES_ID;

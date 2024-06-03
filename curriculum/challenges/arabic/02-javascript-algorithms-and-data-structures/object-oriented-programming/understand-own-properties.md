@@ -51,7 +51,7 @@ assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 يجب عليك حل هذا التحدي دون استخدام الدالة المدمجة في `Object.keys()`.
 
 ```js
-assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
+assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(__helpers.removeJSComments(code)));
 ```
 
 يجب عليك حل هذا التحدي بدون إدخال قيم مثبتة (hard-coding) في قائمة `ownProps`.
@@ -59,7 +59,7 @@ assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
 ```js
 assert(
   !/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```

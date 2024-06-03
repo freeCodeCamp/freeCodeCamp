@@ -7,12 +7,6 @@
   padding-bottom: 10px;
 }
 
-.help-modal-heading {
-  line-height: 1.5;
-  font-weight: 400;
-  word-spacing: -0.4ch;
-}
-
 .help-form-legend {
   color: var(--secondary-color);
   border: 0;
@@ -25,8 +19,6 @@
   text-align: left;
 }
 
-@media screen and (max-width: 767px) {
-  .help-modal .btn-lg {
-    font-size: 16px;
-  }
+.help-text-warning {
+  text-align: left;
 }

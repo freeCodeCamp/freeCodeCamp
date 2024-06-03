@@ -66,7 +66,7 @@ assert(
 La palabra clave `class` debe ser utilizada.
 
 ```js
-assert(code.match(/class/g));
+assert(__helpers.removeJSComments(code).match(/class/g));
 ```
 
 `Vegetable` debe ser capaz de ser instanciada.

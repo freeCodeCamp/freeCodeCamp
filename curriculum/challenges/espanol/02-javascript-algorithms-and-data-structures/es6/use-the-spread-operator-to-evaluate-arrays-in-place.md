@@ -55,7 +55,7 @@ assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 El operador de propagación `...` debe ser usado para duplicar `arr1`.
 
 ```js
-assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
+assert(__helpers.removeJSComments(code).match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
 `arr2` debe permanecer sin cambios cuando `arr1` cambie.

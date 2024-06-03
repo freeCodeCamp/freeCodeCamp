@@ -1,13 +1,10 @@
 {
   "name": "Learn How to Have a Conversation About Preferences and Motivations",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-have-a-conversation-about-preferences-and-motivations",
   "order": 9,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "a2-english-for-developers",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "658111239f39a01c8f095c44",
@@ -287,7 +284,7 @@
     },
     {
       "id": "65a351bd69b0b72d7ed24eb5",
-      "title": "Dialogue 3: Talking About Motivations to Pursue a career"
+      "title": "Dialogue 3: Talking about Motivations to Pursue a Career"
     },
     {
       "id": "65a3524b7cfbc82f51667b0a",

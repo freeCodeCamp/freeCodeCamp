@@ -439,10 +439,10 @@
         ]
       },
       "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard": {
-        "title": "通过建立fCC论坛排行榜学习异步编程。",
+        "title": "通过创建 fCC 论坛排行榜学习异步编程",
         "intro": [
-          "JavaScript 是一种异步编程语言。这个项目将帮助您掌握异步概念。您将编译自己的免费CodeCamp论坛排行榜。",
-          "该项目将包括Fetch API、promises、Async/Await 和try..catch 声明。"
+          "JavaScript 是一种异步编程语言。这个项目将帮助你掌握异步概念。你将编写自己的 freeCodeCamp 论坛排行榜。",
+          "该项目将包括 Fetch API、promises、Async/Await 和 try..catch 语句。"
         ]
       },
       "learn-basic-string-and-array-methods-by-building-a-music-player": {
@@ -457,6 +457,34 @@
         "intro": [
           "递归是一种编程概念，即函数调用自身。这可以将复杂的问题简化为更简单的子问题，直到它们变得简单易解。",
           "在这个项目中，你将使用 JavaScript 创建一个十进制到二进制的转换器。你将学习递归的基本概念，探索调用栈，并通过动画直观地展示递归过程。"
+        ]
+      },
+      "learn-introductory-javascript-by-building-a-pyramid-generator": {
+        "title": "通过创建金字塔生成器学习 JavaScript 基础知识",
+        "intro": [
+          "JavaScript 是一种功能强大的脚本语言，可用于使网页具有交互性。它和 HTML 和 CSS 都是 Web 核心技术。所有现代浏览器都支持 JavaScript。",
+          "在这个练习项目中，你将会通过编写你自己的金字塔生成器来学习 JavaScript 的基本编程概念。你将学到如何使用数组、字符串、函数、循环、<code>if/else</code> 语句以及更多。"
+        ]
+      },
+      "review-js-fundamentals-by-building-a-gradebook-app": {
+        "title": "通过创建成绩统计册应用来回顾 JavaScript 基础知识",
+        "intro": [
+          "在这个小项目中，你将会通过创建成绩统计册应用回顾 JavaScript 基础知识，如函数、变量、条件以及更多内容。",
+          "你将通过这个机会练习解决小问题，更好地理解基础知识。"
+        ]
+      },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       }
     }
@@ -826,10 +854,41 @@
           "在本项目中，你将通过创建一个费用跟踪器来探索 Lambda 函数的强大功能。你创建的应用程序将展示如何使用 Lambda 函数实现高效、简化的操作。"
         ]
       },
-      "scientific-computing-with-python-projects": {
-        "title": "Python 科学计算项目",
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
         "intro": [
-          "是时候测试一下你的 Python 技能了。通过完成这些项目，你可以展示自己已经掌握了扎实的 Python 基础知识。你还将有资格获得 freeCodeCamp 的 Python 科学计算认证。"
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-budget-app-project": {
+        "title": "Build a Budget App Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
         ]
       }
     }
@@ -907,7 +966,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow 是一个开源框架，使机器学习和神经网络更易于使用。",
           "以下视频课程是由 Tim Ruscica 创建的，也叫作 “Tech With Tim”。这个课程将帮助你了解 TensorFlow 及它的一些强大功能。"
@@ -1185,6 +1244,14 @@
       "top-learn-data-types-and-conditionals": {
         "title": "学习数据类型和条件",
         "intro": ["在 JavaScript 中学习数据类型和条件"]
+      },
+      "top-learn-function-basics": {
+        "title": "学习函数基础",
+        "intro": ["学习 JavaScript 中的函数。"]
+      },
+      "top-basic-function-projects": {
+        "title": "基础函数项目",
+        "intro": ["通过构建基本函数来测试你的 JavaScript 技能。"]
       }
     }
   },
@@ -1294,6 +1361,7 @@
   },
   "a2-english-for-developers": {
     "title": "面向开发者的 A2 英语（Beta）",
+    "note": "该认证目前正在积极开发中。虽然目前还没有可申请的认证，但很快就会有。在此期间，欢迎你探索我们在下面创建的课程。",
     "intro": [
       "在开发者英语课程中，你将学习英语交流的基本要素。课程遵循欧洲共同语言参考标准（CEFR）的 A2 级，侧重于对开发者有用的词汇。",
       "课程的前半部分将帮助你熟悉英语语法和用法。你将通过大量的实践练习学习自我介绍、聊天和讨论工作等基础知识。",
@@ -1357,15 +1425,21 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "学习如何就偏好和动机进行对话",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "学习如何讨论流行的技术趋势",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "学习如何在不同的互动中阐明信息",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "学习如何在对话中使用基本编程词汇",
@@ -1403,16 +1477,12 @@
         "title": "学习如何分析代码文档",
         "intro": ["", ""]
       },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "学习如何遵循基本的电子邮件规范",
-        "intro": ["", ""]
-      },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "学习如何分享进度和成就",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "学习如何谈论任务和项目的更新和计划",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {

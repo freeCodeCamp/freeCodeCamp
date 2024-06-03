@@ -1,21 +1,19 @@
 ---
 id: 62aa264d23cdaa45a20efada
-title: Step 166
+title: Step 164
 challengeType: 0
-dashedName: step-166
+dashedName: step-164
 ---
 
 # --description--
 
-Після масиву `numbers` створіть цикл `while`. Цикл <dfn>while</dfn> приймає умову та виконує код до того моменту, як умова перестане бути істинною.
+After your `numbers` array, create a `while` loop that runs as long as `numbers.length` is less than `10`.
 
-Ваш цикл `while` повинен виконуватись, поки `numbers.length` менше за `10`.
-
-Ось приклад циклу `while`, який виконується, поки `i` менше ніж п'ять.
+In the previous project, you learned how to work with `while` loops like this:
 
 ```js
-while (i < 5) {
-
+while (condition) {
+  // code to run
 }
 ```
 
@@ -122,7 +120,7 @@ button {
 let xp = 0;
 let health = 100;
 let gold = 50;
-let currentWeapon = 0;
+let currentWeaponIndex = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];
@@ -251,12 +249,12 @@ function buyHealth() {
 }
 
 function buyWeapon() {
-  if (currentWeapon < weapons.length - 1) {
+  if (currentWeaponIndex < weapons.length - 1) {
     if (gold >= 30) {
       gold -= 30;
-      currentWeapon++;
+      currentWeaponIndex++;
       goldText.innerText = gold;
-      let newWeapon = weapons[currentWeapon].name;
+      let newWeapon = weapons[currentWeaponIndex].name;
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
       text.innerText += " In your inventory you have: " + inventory;
@@ -307,10 +305,10 @@ function goFight() {
 
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
-  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  text.innerText += " You attack it with your " + weapons[currentWeaponIndex].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;    
   } else {
     text.innerText += " You miss.";
   }
@@ -327,7 +325,7 @@ function attack() {
   }
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";
-    currentWeapon--;
+    currentWeaponIndex--;
   }
 }
 
@@ -365,7 +363,7 @@ function restart() {
   xp = 0;
   health = 100;
   gold = 50;
-  currentWeapon = 0;
+  currentWeaponIndex = 0;
   inventory = ["stick"];
   goldText.innerText = gold;
   healthText.innerText = health;

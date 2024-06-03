@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=20",
-    "pnpm": "8"
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -91,7 +91,9 @@
     "test-tools": "jest tools",
     "test-utils": "jest utils",
     "postinstall": "cypress cache prune",
-    "prepare": "husky"
+    "prepare": "husky",
+    "playwright:run": "playwright test",
+    "playwright:watch": "playwright test --ui"
   },
   "dependencies": {
     "dotenv": "16.4.5"
@@ -102,14 +104,14 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
-    "@playwright/test": "^1.41.2",
+    "@playwright/test": "^1.43.1",
     "@testing-library/cypress": "10.0.1",
     "@testing-library/dom": "9.3.4",
     "@testing-library/jest-dom": "6.4.2",
     "@testing-library/user-event": "14.5.2",
     "@types/jest": "29.5.12",
     "@types/lodash": "4.14.202",
-    "@types/node": "18.19.18",
+    "@types/node": "20.12.8",
     "@types/store": "2.0.5",
     "@typescript-eslint/eslint-plugin": "7.1.1",
     "@typescript-eslint/parser": "7.1.1",
@@ -144,7 +146,7 @@
     "start-server-and-test": "2.0.3",
     "store": "2.0.12",
     "ts-node": "10.9.2",
-    "typescript": "5.2.2",
+    "typescript": "5.4.5",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   }

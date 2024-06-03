@@ -4,10 +4,8 @@
   "dashedName": "build-a-telephone-number-validator-project",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
-  "order": 13,
+  "order": 17,
   "time": "30 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

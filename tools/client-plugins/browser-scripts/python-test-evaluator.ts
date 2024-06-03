@@ -18,7 +18,6 @@ interface PythonRunEvent extends MessageEvent {
       editableContents: string;
       original: { [id: string]: string };
     };
-    removeComments: boolean;
     firstTest: unknown;
     testString: string;
     build: string;
@@ -64,7 +63,6 @@ void setupPyodide();
 
 ctx.onmessage = async (e: PythonRunEvent) => {
   const pyodide = await setupPyodide();
-  // TODO: Use removeComments when we have it
   /* eslint-disable @typescript-eslint/no-unused-vars */
   const code = (e.data.code.contents || '').slice();
   const editableContents = (e.data.code.editableContents || '').slice();
@@ -121,10 +119,6 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // custom globals.
     const runPython = (pyCode: string) =>
       pyodide.runPython(pyCode, { globals: __userGlobals }) as unknown;
-    // TODO: remove __pyodide once all the test use runPython.
-    const __pyodide = {
-      runPython
-    };
 
     runPython(`
 def __inputGen(xs):
@@ -174,9 +168,7 @@ with open("/user_code.py", "r") as f:
         }
       });
     }
-    // TODO: remove the next line, creating __locals, once all the tests access
-    // variables directly.
-    runPython('__locals = globals()');
+
     await test();
 
     ctx.postMessage({ pass: true });

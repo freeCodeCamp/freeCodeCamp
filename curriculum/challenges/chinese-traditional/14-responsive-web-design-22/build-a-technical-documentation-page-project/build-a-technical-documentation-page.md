@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>. **Do not copy this demo project**.
+**目標：** 構建一個應用，它在功能上類似於 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>。 **不要複製這個演示項目**。
 
 **需求：**
 
@@ -148,7 +148,7 @@ const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-你所有的 `.nav-link` 元素都應該是錨點（`a`）元素。
+你所有的 `.nav-link` 元素都應該是錨元素（`a`）。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -241,7 +241,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

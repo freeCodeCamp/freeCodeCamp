@@ -28,7 +28,7 @@ const newArray = arr.slice(1, 3);
 يجب أن يستخدم الكود الخاص بك دالة `slice`.
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 متغير `inputAnim` يجب ألا يتغير.

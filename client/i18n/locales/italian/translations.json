@@ -72,7 +72,11 @@
     "update-email": "Aggiorna la mia Email",
     "verify-email": "Verifica Email",
     "submit-and-go": "Invia e vai alla prossima sfida",
+    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Vai alla prossima sfida",
+    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-3": "Go to next challenge (Command + Enter)",
     "ask-later": "Chiedimelo più tardi",
     "start-coding": "Inizia a programmare!",
     "go-to-settings": "Vai alle impostazioni per richiedere la tua certificazione",
@@ -96,7 +100,7 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement"
+    "play-scene": "Press Play"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -262,8 +266,12 @@
       "nevermind": "Non importa, non voglio cancellare il mio account",
       "certain": "Sono sicuro al 100%. Elimina tutto ciò che riguarda questo account",
       "reset-heading": "Resetta i miei progressi",
-      "reset-p1": "Questo cancellerà davvero tutti i tuoi progressi, punti, sfide completate, le nostre registrazioni dei tuoi progetti, tutte le certificazioni che hai, tutto.",
-      "reset-p2": "Non saremo in grado di recuperare alcun tuo dato, più tardi, anche se cambierai idea.",
+      "reset-p1": "This will permanently delete and reset all of the following:",
+      "reset-item-1": "Your progress through each step/challenge (all completed challenges will be lost)",
+      "reset-item-2": "Any saved code, including partially completed challenges, and certification project code",
+      "reset-item-3": "All completed and claimed certifications",
+      "reset-p2": "You will effectively be set back to the very first day you signed up.",
+      "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Non importa, non voglio cancellare il mio account",
       "reset-confirm": "Azzera tutto. Voglio ricominciare dall'inizio"
     },
@@ -288,17 +296,20 @@
     }
   },
   "profile": {
-    "you-not-public": "Non hai reso pubblico il tuo portfolio.",
-    "username-not-public": "{{username}} non ha reso pubblico il suo portfolio.",
     "you-change-privacy": "Se desideri rendere visibile il tuo portfolio a tutti dovrai prima modificare le tue impostazioni sulla privacy. Questa è un'anteprima di come il tuo portfolio apparirà quando sarà reso pubblico.",
     "username-change-privacy": "{{username}} devono modificare la loro impostazione di privacy affinché tu possa visualizzare il loro portfolio.",
     "supporter": "Sostenitore",
     "contributor": "Miglior Contributore",
+    "contributor-prolific": "Among most prolific volunteers in {{year}}",
     "no-certs": "Non hai ottenuto certificazioni nell'ambito del curriculum attuale",
     "fcc-certs": "Certificazioni freeCodeCamp",
     "longest-streak": "Serie Più Lunga:",
     "current-streak": "Serie Attuale:",
     "portfolio": "Portfolio",
+    "badges": "Badges",
+    "donated": "Donated to the community",
+    "projects": "Projects",
+    "stats": "Stats",
     "timeline": "Timeline",
     "none-completed": "Nessuna sfida è stata ancora completata.",
     "get-started": "Inizia qui.",
@@ -309,7 +320,8 @@
     "tweet": "Ho appena ottenuto la {{certTitle}} @freeCodeCamp! Guarda qui: {{certURL}}",
     "avatar": "avatar di {{username}}",
     "joined": "Iscritto da {{date}}",
-    "total-points": "Numero di punti: {{count}}",
+    "from": "From {{location}}",
+    "total-points": "Total Points:",
     "points": "{{count}} punto il {{date}}",
     "points_plural": "{{count}} punti il {{date}}",
     "page-number": "{{pageNumber}} di {{totalPages}}"
@@ -386,8 +398,8 @@
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "Ho cercato <0>domande simili che hanno già ricevuto risposta sul forum</0>",
-    "minimum-characters": "Aggiungi un minimo di {{characters}} caratteri",
-    "characters-left": "{{characters}} caratteri rimanenti",
+    "minimum-characters": "Please describe in at least {{characters}} more characters",
+    "characters-left": "You can add {{characters}} more characters to your query",
     "must-confirm-statements": "Devi confermare le seguenti dichiarazioni prima di poter inviare il tuo post al forum.",
     "min-50-max-500": "minimo 50 caratteri, massimo 500 caratteri",
     "rsa": "Leggi, cerca, chiedi",
@@ -398,6 +410,7 @@
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
     "chal-preview": "Anteprima della sfida",
     "donation-record-not-found": "Your donation record has not been found.",
+    "donation-heading": "Progress towards donation goal",
     "sign-in-card-update": "Sign in to update your card",
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
@@ -631,7 +644,8 @@
     "help-millions-learn": "Help millions of people learn",
     "reach-goals-faster": "Reach your goals faster",
     "remove-distractions": "Remove distractions",
-    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "Devi essere loggato per segnalare un utente",
@@ -804,6 +818,7 @@
     "challenge-submit-too-big": "Ci dispiace, non puoi consegnare il tuo codice. Il tuo codice è {{user-size}} byte. Il massimo è di {{max-size}} byte. Per cortesia rendi il tuo codice più piccolo o richiedi assistenza a https://forum.freecodecamp.org",
     "invalid-update-flag": "Stai cercando di accedere a risorse proibite. Per favore richiedi assistenza su https://forum.freecodecamp.org se questa è una richiesta valida.",
     "generate-exam-error": "An error occurred trying to generate your exam.",
+    "cert-not-found": "The certification {{certSlug}} does not exist.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -865,6 +880,7 @@
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "Come parte di questa vecchia certificazione Full Stack, {{user}} ha completato le seguenti certificazioni:",
+      "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "Come parte di questa certificazione, {{user}} ha costruito i seguenti progetti e ha superato tutte le suite di test automatizzate per superare:",
       "solution": "soluzione",
       "no-solution": "errore nel mostrare la soluzione, manda una email a support@freecodecamp.org per ottenere aiuto.",
@@ -1005,7 +1021,7 @@
     "user-agent": "Lo user agent è: <code>{{userAgent}}</code>",
     "challenge": "Challenge Information:",
     "whats-happening": "Tell us what's happening:",
-    "describe": "Descrivi qui il tuo problema in dettaglio.",
+    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
     "camper-project": "Your project link(s)",
     "camper-code": "Your code so far",
     "warning": "ATTENZIONE",

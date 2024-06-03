@@ -1,5 +1,5 @@
 {
-  "name": "Learn Python By Building a Blackjack Game",
+  "name": "Learn Python by Building a Blackjack Game",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
@@ -7,10 +7,7 @@
   "helpCategory": "Python",
   "order": 0,
   "time": "2 hours",
-  "template": "",
-  "required": [],
   "superBlock": "upcoming-python",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "5daa813381b9e3db6c126b43",

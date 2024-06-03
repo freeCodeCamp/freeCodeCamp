@@ -5,13 +5,9 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-modern-javascript-methods-by-building-football-team-cards",
   "helpCategory": "JavaScript",
-  "order": 5,
+  "order": 9,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures-v8",
-  "superOrder": 4,
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "63c620161fc2b49ac340ffc4",

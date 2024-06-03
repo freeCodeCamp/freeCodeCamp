@@ -36,19 +36,19 @@ console.log(s);
 لا ينبغي أن تستبدل كلمة `const`.
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `s` يجب أن يكون متغير ثابت (باستخدام `const`).
 
 ```js
-assert(code.match(/const\s+s/g));
+assert(__helpers.removeJSComments(code).match(/const\s+s/g));
 ```
 
 لا يجب عليك تغيير إعلان القائمة (array) الأصلي.
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
 /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
 ));
 ```

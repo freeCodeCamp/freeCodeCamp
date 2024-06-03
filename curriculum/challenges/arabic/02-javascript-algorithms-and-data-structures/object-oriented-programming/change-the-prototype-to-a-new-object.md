@@ -49,7 +49,7 @@ Bird.prototype = {
 `Dog.prototype` يجب أن يتم تعيينه إلى object جديد.
 
 ```js
-assert(/Dog\.prototype\s*?=\s*?{/.test(code));
+assert(/Dog\.prototype\s*?=\s*?{/.test(__helpers.removeJSComments(code)));
 ```
 
 `Dog.prototype` يجب أن تحتوي على الخاصية `numLegs`.

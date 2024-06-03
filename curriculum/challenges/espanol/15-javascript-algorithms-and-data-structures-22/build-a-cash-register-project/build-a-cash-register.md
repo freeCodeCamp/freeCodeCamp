@@ -12,7 +12,7 @@ Aquí construirás una aplicación de caja registradora que devolverá el cambio
 
 En el archivo `script.js`, se te han proporcionado las variables `price` y `cid`. La variable `price` es el precio del artículo, y la variable `cid` es el cambio que hay caja, que es un arreglo 2D que enumera la moneda disponible en la caja registradora.
 
-The other variable you will need add is the `cash` variable, which is the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
+The other variable you will need to add is the `cash` variable, which is the amount of cash provided by the customer for the item, which is provided via an `input` element on the page.
 
 If you'd like to test your application with different values for `price` and `cid`, make sure to declare them with the `let` keyword so they can be reassigned by our tests.
 
@@ -85,6 +85,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 price = 20;
 cashInput.value = '10';
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'customer does not have enough money to purchase the item');
 ```
@@ -99,6 +100,7 @@ const changeDueDiv = document.getElementById('change-due');
 price = 11.95;
 cashInput.value = '11.95';
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'no change due - customer paid with exact cash');
 ```
@@ -115,6 +117,7 @@ cashInput.value = 20;
 cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 const expected = ['Status: OPEN', 'QUARTER: $0.5'];
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
@@ -131,6 +134,7 @@ cashInput.value = 100;
 cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 const expected = ['Status: OPEN', 'TWENTY: $60', 'TEN: $20', 'FIVE: $15', 'ONE: $1', 'QUARTER: $0.5', 'DIME: $0.2', 'PENNY: $0.04'];
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
@@ -146,6 +150,7 @@ price = 19.5;
 cashInput.value = 20;
 cid = [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
 ```
@@ -161,6 +166,7 @@ price = 19.5;
 cashInput.value = 20;
 cid = [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 1], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
 ```
@@ -177,6 +183,7 @@ cashInput.value = 20;
 cid = [['PENNY', 0.5], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
 const expected = ['Status: CLOSED', 'PENNY: $0.5'];
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```

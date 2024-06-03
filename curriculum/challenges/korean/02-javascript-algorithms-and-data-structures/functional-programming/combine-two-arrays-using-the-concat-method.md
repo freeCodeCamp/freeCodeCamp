@@ -25,7 +25,7 @@ Use the `concat` method in the `nonMutatingConcat` function to concatenate `atta
 Your code should use the `concat` method.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 The `first` array should not change.

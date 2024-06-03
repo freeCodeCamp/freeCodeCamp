@@ -57,7 +57,7 @@
     "run-test": "テスト実行 (Ctrl + Enter)",
     "check-code": "コードをチェック (Ctrl + Enter)",
     "check-code-2": "コードをチェック",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code-3": "コードをチェック (Command + Enter)",
     "reset": "リセット",
     "reset-step": "ステップをリセット",
     "help": "ヘルプ",
@@ -72,7 +72,11 @@
     "update-email": "メールアドレスを更新",
     "verify-email": "メールアドレスの確認",
     "submit-and-go": "提出して次のチャレンジに進む",
+    "submit-and-go-2": "提出して次のチャレンジに進む (Ctrl + Enter)",
+    "submit-and-go-3": "提出して次のチャレンジに進む (Command + Enter)",
     "go-to-next": "次のチャレンジに進む",
+    "go-to-next-2": "次のチャレンジに進む (Ctrl + Enter)",
+    "go-to-next-3": "次のチャレンジに進む (Command + Enter)",
     "ask-later": "後で",
     "start-coding": "コーディングを始めましょう！",
     "go-to-settings": "設定へ移動して認定証を取得",
@@ -96,7 +100,7 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "skip-advertisement": "広告をスキップ"
+    "play-scene": "再生"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -262,8 +266,12 @@
       "nevermind": "やめておきます。アカウントを削除しません。",
       "certain": "確認しました。このアカウントに関連するすべてのデータを削除します。",
       "reset-heading": "進行状況をリセット",
-      "reset-p1": "これにより、あなたの進行状況、ポイント、完了したチャレンジ、プロジェクトの記録、取得した認定証、すべてが削除されます。",
-      "reset-p2": "削除後にお問い合わせいただいても、一切のデータを復旧できかねます。",
+      "reset-p1": "この操作により、以下のデータがすべて削除・リセットされます:",
+      "reset-item-1": "各ステップ・チャレンジの進捗状況 (完了したチャレンジがすべてリセットされます)",
+      "reset-item-2": "保存したコードすべて (作業途中のチャレンジおよび認定プロジェクトを含む)",
+      "reset-item-3": "修了・取得した認定証すべて",
+      "reset-p2": "実質的に、サインアップ直後の状態に戻ります。",
+      "reset-p3": "削除後にお問い合わせいただいても、一切のデータを復旧できかねます。",
       "nevermind-2": "やめておきます。進行状況を削除しません。",
       "reset-confirm": "すべてをリセットして最初から始めます。"
     },
@@ -288,17 +296,20 @@
     }
   },
   "profile": {
-    "you-not-public": "ポートフォリオを公開していません。",
-    "username-not-public": "{{username}} さんはポートフォリオを公開していません。",
     "you-change-privacy": "他の人がポートフォリオを見られるようにするには、プライバシー設定を変更する必要があります。これはポートフォリオが公開されたときにどのように見えるかのプレビューです。",
     "username-change-privacy": "ポートフォリオを表示するには、{{username}} さんがプライバシー設定を変更する必要があります。",
     "supporter": "サポーター",
     "contributor": "トップコントリビューター",
+    "contributor-prolific": "その年最も貢献したボランティアの一人 ({{year}})",
     "no-certs": "現在のカリキュラムでは認定証は取得されていません",
     "fcc-certs": "freeCodeCamp 認定証",
-    "longest-streak": "最長連続日数:",
-    "current-streak": "現在の連続日数:",
+    "longest-streak": "最長継続日数:",
+    "current-streak": "現在の継続日数:",
     "portfolio": "ポートフォリオ",
+    "badges": "バッジ",
+    "donated": "freeCodeCamp コミュニティに寄付した",
+    "projects": "プロジェクト",
+    "stats": "統計",
     "timeline": "タイムライン",
     "none-completed": "完了したチャレンジがありません。",
     "get-started": "ここから始めましょう。",
@@ -308,8 +319,9 @@
     "add-twitter": "この認定証を Twitter で共有",
     "tweet": "{{certTitle}} の認定証を @freeCodeCamp で取得しました！確認はこちら: {{certURL}}",
     "avatar": "{{username}} のアバター",
-    "joined": "{{date}}に加入",
-    "total-points": "ポイント数: {{count}}",
+    "joined": "加入: {{date}}",
+    "from": "場所: {{location}}",
+    "total-points": "合計ポイント:",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}"
@@ -386,10 +398,10 @@
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
     "read-search-ask-checkbox": "<0>Read-Search-Ask (読む - 検索する - 質問する)</0>メソッドを試しました",
     "similar-questions-checkbox": "<0>フォーラムで解決済みの類似質問</0>を探しました",
-    "minimum-characters": "最低 {{characters}} 文字追加してください",
-    "characters-left": "残り {{characters}} 文字",
+    "minimum-characters": "あと {{characters}} 文字以上説明を記入してください",
+    "characters-left": "残り {{characters}} 文字追加できます",
     "must-confirm-statements": "フォーラムに投稿する前に、以下を実行したことを確認してください。",
-    "min-50-max-500": "50 文字以上、500 文字以下",
+    "min-50-max-500": "50 文字以上、500 文字以下で記入してください",
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
@@ -398,6 +410,7 @@
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
     "donation-record-not-found": "寄付の履歴が見つかりませんでした。",
+    "donation-heading": "寄付目標の進捗状況",
     "sign-in-card-update": "サインインしてカード情報を更新",
     "sign-in-see-benefits": "サポーター特典を見るにはサインインしてください。",
     "card-has-been-updated": "カード情報が更新されました。",
@@ -631,7 +644,8 @@
     "help-millions-learn": "世界中の人々の学びをサポートできます。",
     "reach-goals-faster": "さらにスピーディーにゴールへと近づけます。",
     "remove-distractions": "気が散る要素を減らせます。",
-    "animation-description": "これは、キャンパーに freeCodeCamp サポーターとなることを促す 20 秒間のアニメーション広告です。アニメーションの内容は、とあるテディベアがサポーターになるところから始まります。サポーターになることで、余計なポップアップ画面が表示されなくなり、テディベアは目標をスムーズに達成します。そしてついに卒業し、学問のスーパーヒーローとなって世界中の人々を助ける様子が描かれています。"
+    "animation-description": "これは、キャンパーに freeCodeCamp サポーターとなることを促す 20 秒間のアニメーション広告です。アニメーションの内容は、とあるテディベアがサポーターになるところから始まります。サポーターになることで、余計なポップアップ画面が表示されなくなり、テディベアは目標をスムーズに達成します。そしてついに卒業し、学問のスーパーヒーローとなって世界中の人々を助ける様子が描かれています。",
+    "animation-countdown": "このアニメーションは {{secondsRemaining}} 秒後に終了します。"
   },
   "report": {
     "sign-in": "ユーザーを報告するためにはサインインする必要があります",
@@ -729,8 +743,8 @@
     "dialogues-and-tasks-for": "「{{blockTitle}}」のダイアログとタスク",
     "code-example": "{{codeName}} のコード例",
     "opens-new-window": "新しいウィンドウで開く",
-    "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "rsa-checkbox": "Read-Search-Ask (読む - 検索する - 質問する) メソッドを試しました",
+    "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました"
   },
   "flash": {
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -804,6 +818,7 @@
     "challenge-submit-too-big": "コードを提出できませんでした。あなたのコードは {{user-size}} バイトですが、提出可能なコードは最大 {{max-size}} バイトです。コードを削減してもう一度お試しいただくか、https://forum.freecodecamp.org にてサポートを依頼してください。",
     "invalid-update-flag": "禁止されたリソースにアクセスしようとしています。正当なリクエストの場合、https://forum.freecodecamp.org でサポートを依頼してください。",
     "generate-exam-error": "試験の準備中にエラーが発生しました。",
+    "cert-not-found": "この認定証は存在しません。({{certSlug}})",
     "ms": {
       "transcript": {
         "link-err-1": "リクエストに Microsoft の成績証明書の URL を含めてください。",
@@ -865,6 +880,7 @@
     "fulltextNoHours": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
     "project": {
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
+      "heading-exam": "この認定講座の一環として、{{user}} は以下の試験に合格しました: ",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
       "solution": "解答",
       "no-solution": "解答の表示中にエラーが発生しました。 support@freeCodeCamp.org までメールにてお問い合わせください。",
@@ -1005,7 +1021,7 @@
     "user-agent": "ユーザーエージェント: <code>{{userAgent}}</code>",
     "challenge": "チャレンジの情報:",
     "whats-happening": "状況を説明しましょう:",
-    "describe": "質問内容をここに詳しく記入してください。",
+    "describe": "質問内容を詳しく記入してください。例: \n「h1 要素に開始タグが必要と表示されますが、どこを間違えているのかわかりません。」\n「無限ループになってしまいます。どのように修正したらいいでしょうか？」\nなど",
     "camper-project": "プロジェクトのリンク",
     "camper-code": "現状のコード",
     "warning": "注意",
@@ -1037,9 +1053,9 @@
     "execute-challenge": "チャレンジを実行",
     "focus-editor": "エディターにフォーカス",
     "focus-instructions-panel": "手順書パネルにフォーカス",
-    "navigate-previous": "Navigate To Previous Exercise",
-    "navigate-next": "Navigate To Next Exercise",
-    "play-scene": "Play Scene"
+    "navigate-previous": "前の課題へ移動",
+    "navigate-next": "次の課題へ移動",
+    "play-scene": "シーンを再生"
   },
   "signout": {
     "heading": "アカウントからサインアウト",

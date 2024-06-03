@@ -227,37 +227,24 @@ input[type='submit'],
 
 button:hover,
 input[type='submit']:hover,
-.btn:hover,
-.btn-default.active:hover,
-.btn-default.active,
-.btn-primary:hover {
+.btn:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
   cursor: pointer;
 }
 
-.btn:active,
-.btn-primary:active {
+.btn:active {
   background-color: var(--secondary-background);
 }
 
-.btn:focus,
-.btn-primary:focus,
-.btn-primary.focus {
+.btn:focus {
   background-color: var(--quaternary-background);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
 }
 
-.btn:active:hover,
-.btn-primary:hover,
-.btn-primary:active:hover,
-.btn-primary.active:hover,
-.btn-primary:active:focus,
-.btn-primary.active:focus,
-.btn-primary:active.focus,
-.btn-primary.active.focus {
+.btn:active:hover {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
 }
@@ -266,16 +253,7 @@ button[aria-disabled='true'],
 button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
-fieldset[disabled] .btn,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled.focus,
-.btn-primary[disabled].focus,
-fieldset[disabled] .btn-primary.focus {
+fieldset[disabled] .btn {
   cursor: not-allowed;
   background-color: var(--quaternary-background);
   border-color: var(--quaternary-color);
@@ -287,6 +265,7 @@ fieldset[disabled] .btn-primary.focus {
   background-image: linear-gradient(#fecc4c, #ffac33);
   border: 3px solid #feac32;
   color: #0a0a23 !important;
+  text-align: center;
 }
 .btn-cta:hover,
 .btn-cta:focus,
@@ -372,7 +351,8 @@ fieldset[disabled] .btn-primary.focus {
   fill: var(--quaternary-background);
 }
 
-.link-btn.btn-lg:hover .map-icon .inverted-color {
+.link-btn.btn-lg:hover .map-icon .inverted-color,
+.map-arrow-icon {
   fill: var(--secondary-color);
 }
 
@@ -380,6 +360,10 @@ fieldset[disabled] .btn-primary.focus {
   width: 35px;
   max-height: 45px;
   margin-inline: 5px;
+}
+
+.map-arrow-icon {
+  stroke: var(--secondary-color);
 }
 
 .cert-header-icon {
@@ -413,9 +397,6 @@ fieldset[disabled] .btn-primary.focus {
   }
 }
 
-.button-group .btn:not(:last-child) {
-  margin-bottom: 10px;
-}
 strong {
   color: var(--secondary-color);
 }
@@ -469,12 +450,6 @@ code {
 
 hr {
   border-top: 1px solid var(--quaternary-background);
-}
-
-.btn-primary:active,
-.btn-primary.active {
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
 }
 
 .challenge-output span {
@@ -568,7 +543,7 @@ blockquote .small {
   background-color: black;
 }
 
-/* 
+/*
  * /learn sets some default styles to all `h2`s.
  * These rules are to override the defaults and apply danger styles to `danger` modal.
  */

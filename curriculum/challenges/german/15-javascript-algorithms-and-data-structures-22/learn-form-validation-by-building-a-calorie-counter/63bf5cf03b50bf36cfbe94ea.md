@@ -1,8 +1,8 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Schritt 36
+title: Step 38
 challengeType: 0
-dashedName: step-36
+dashedName: step-38
 ---
 
 # --description--
@@ -11,13 +11,7 @@ Dein nächster Schritt besteht darin, den Nutzern die Möglichkeit zu geben, Ein
 
 # --hints--
 
-Du solltest eine `addEntry`-Variable deklarieren.
-
-```js
-assert.isDefined(addEntry);
-```
-
-Deine `addEntry`-Variable sollte eine Funktion sein.
+You should declare an `addEntry` function.
 
 ```js
 assert.isFunction(addEntry);

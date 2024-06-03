@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 コード内の変数にスペルミスがあってはいけません。
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 `receivables` 変数をコードで正しく宣言して使用する必要があります。
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 コード内の変数にスペルミスがあってはいけません。
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 `payables` 変数をコードで正しく宣言して使用する必要があります。
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

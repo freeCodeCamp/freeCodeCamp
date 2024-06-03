@@ -458,6 +458,34 @@
           "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
           "In this project, you’ll build a decimal-to-binary converter using JavaScript. You’ll learn the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
         ]
+      },
+      "learn-introductory-javascript-by-building-a-pyramid-generator": {
+        "title": "Learn Introductory JavaScript by Building a Pyramid Generator",
+        "intro": [
+          "JavaScript is a powerful scripting language that you can use to make web pages interactive. It's one of the core technologies of the web, along with HTML and CSS. All modern browsers support JavaScript.",
+          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+        ]
+      },
+      "review-js-fundamentals-by-building-a-gradebook-app": {
+        "title": "Review JavaScript Fundamentals by Building a Gradebook App",
+        "intro": [
+          "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
+          "This will give you an opportunity to solve small problems and get a better understanding of the basics."
+        ]
+      },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
+        ]
       }
     }
   },
@@ -826,10 +854,41 @@
           "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
         ]
       },
-      "scientific-computing-with-python-projects": {
-        "title": "Projekte Wissenschaftliches Rechnen mit Python",
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
         "intro": [
-          "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-budget-app-project": {
+        "title": "Build a Budget App Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
         ]
       }
     }
@@ -907,7 +966,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow ist ein Open-Source-Framework, das maschinelles Lernen und neuronale Netzwerke leichter nutzbar macht.",
           "Der folgende Videokurs wurde von Tim Ruscica, auch bekannt als \"Tech With Tim\", erstellt. Es wird dir helfen, TensorFlow und einige seiner mächtigen Fähigkeiten zu verstehen."
@@ -1189,6 +1248,16 @@
       "top-learn-data-types-and-conditionals": {
         "title": "Learn Data Types and Conditionals",
         "intro": ["Learn about data types and conditionals in JavaScript."]
+      },
+      "top-learn-function-basics": {
+        "title": "Learn Function Basics",
+        "intro": ["Learn about functions in JavaScript."]
+      },
+      "top-basic-function-projects": {
+        "title": "Basic Function Projects",
+        "intro": [
+          "Put your JavaScript skills to the test by building basic functions."
+        ]
       }
     }
   },
@@ -1300,6 +1369,7 @@
   },
   "a2-english-for-developers": {
     "title": "A2 English for Developers (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -1363,15 +1433,21 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Learn How to Have a Conversation About Preferences and Motivations",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "Learn How to Discuss Popular Trends in Technology",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "Learn How to Clarify Information in Different Interactions",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
@@ -1409,16 +1485,12 @@
         "title": "Learn How to Analyze Code Documentation",
         "intro": ["", ""]
       },
-      "learn-how-to-follow-basic-email-convention": {
-        "title": "Learn How to Follow Basic Email Convention",
-        "intro": ["", ""]
-      },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Learn How to Share Progress and Accomplishments",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {

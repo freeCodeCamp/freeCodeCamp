@@ -2,7 +2,6 @@
 title: Introduction to the Learn Basic OOP by Building a Shopping Cart
 block: learn-basic-oop-by-building-a-shopping-cart
 superBlock: JavaScript Algorithms and Data Structures
-isBeta: true
 ---
 
 ## Introduction to the Learn Basic OOP By Building A Shopping Cart

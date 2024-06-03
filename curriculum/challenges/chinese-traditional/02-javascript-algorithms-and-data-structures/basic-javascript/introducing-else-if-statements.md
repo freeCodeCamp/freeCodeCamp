@@ -30,20 +30,20 @@ if (num > 15) {
 你應該至少有兩個 `else` 表達式。
 
 ```js
-assert(code.match(/else/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 1);
 ```
 
 你應該至少有兩個 `if` 表達式。
 
 ```js
-assert(code.match(/if/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 1);
 ```
 
 應該關閉每一個 `if else` 代碼塊。
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s+if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/
   )
 );

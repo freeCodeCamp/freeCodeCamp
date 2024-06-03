@@ -45,19 +45,19 @@ switch (val) {
 Ви не повинні використовувати інструкцію `else` в редакторі
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 Ви не повинні використовувати інструкцію `if` в редакторі
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Ви повинні мати принаймні чотири інструкції `break`
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
 `chainToSwitch("bob")` має повертати рядок `Marley`

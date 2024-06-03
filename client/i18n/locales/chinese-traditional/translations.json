@@ -57,7 +57,7 @@
     "run-test": "運行測試（Ctrl + Enter）",
     "check-code": "檢查你的代碼（Ctrl + Enter）",
     "check-code-2": "檢查你的代碼",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code-3": "檢查你的代碼（Command + Enter）",
     "reset": "重置",
     "reset-step": "重置此步驟",
     "help": "幫助",
@@ -72,7 +72,11 @@
     "update-email": "更新我的郵箱",
     "verify-email": "確認郵箱",
     "submit-and-go": "提交併訪問下一個挑戰",
+    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "訪問下一個挑戰",
+    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-3": "Go to next challenge (Command + Enter)",
     "ask-later": "稍後問我",
     "start-coding": "開始編碼！",
     "go-to-settings": "轉到設置以領取你的認證",
@@ -96,7 +100,7 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "確認金額",
-    "skip-advertisement": "跳過廣告"
+    "play-scene": "點擊播放"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -262,8 +266,12 @@
       "nevermind": "我不想刪除我的賬戶",
       "certain": "我完全確定要刪除與此賬戶相關的所有信息",
       "reset-heading": "重置我的進度",
-      "reset-p1": "這將刪除你的所有進度、分數、已完成的挑戰、我們對你的項目的記錄，以及你獲得的所有認證等所有內容。",
-      "reset-p2": "即使你之後改變主意，我們也無法爲你恢復任何信息。",
+      "reset-p1": "這將永久刪除和重置所有下列內容：",
+      "reset-item-1": "你在每個步驟/挑戰中的進度（所有已完成的挑戰都將丟失）",
+      "reset-item-2": "任何保存的代碼，包括部分完成的挑戰和認證項目代碼",
+      "reset-item-3": "所有已完成和申請的認證",
+      "reset-p2": "一切將被恢復到你註冊的第一天。",
+      "reset-p3": "即使你之後改變主意，我們也無法爲你恢復任何信息。",
       "nevermind-2": "我不想刪除我的所有進度",
       "reset-confirm": "重置所有內容，我想重新開始。"
     },
@@ -288,17 +296,20 @@
     }
   },
   "profile": {
-    "you-not-public": "你尚未把你的作品集設置爲公開。",
-    "username-not-public": "{{username}} 未把作品集設置爲公開",
     "you-change-privacy": "你需要更改你的隱私設置，才能讓他人看到你的作品集。這是你的作品集公開時候的預覽。",
     "username-change-privacy": "{{username}} 需要修改隱私設置，你才能看到其作品集。",
     "supporter": "支持者",
     "contributor": "突出貢獻者",
+    "contributor-prolific": "Among most prolific volunteers in {{year}}",
     "no-certs": "未獲得關於當前課程的認證",
     "fcc-certs": "freeCodeCamp 認證",
     "longest-streak": "最長連續提交記錄：",
     "current-streak": "當前連續提交記錄：",
-    "portfolio": "作品集",
+    "portfolio": "Portfolio",
+    "badges": "Badges",
+    "donated": "Donated to the community",
+    "projects": "項目",
+    "stats": "Stats",
     "timeline": "時間線",
     "none-completed": "尚未完成任何挑戰。",
     "get-started": "從這裏開始。",
@@ -309,7 +320,8 @@
     "tweet": "我獲得了 {{certTitle}} 認證 @freeCodeCamp！在這裏查看：{{certURL}}",
     "avatar": "{{username}} 的頭像",
     "joined": "於 {{date}} 加入",
-    "total-points": "點數： {{count}}",
+    "from": "來自 {{location}}",
+    "total-points": "總分：",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
@@ -386,8 +398,8 @@
     "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
     "read-search-ask-checkbox": "我已經嘗試了 <0>Read-Search-Ask</0> 方法",
     "similar-questions-checkbox": "我已經<0>在論壇上搜索了類似的問題和相應的答案</0>",
-    "minimum-characters": "添加最少 {{characters}} 字符",
-    "characters-left": "{{characters}} 剩餘字符",
+    "minimum-characters": "請至少再用 {{characters}} 個字符進行描述",
+    "characters-left": "你可以在查詢中再添加 {{characters}} 個字符",
     "must-confirm-statements": "在向論壇提交帖子之前，你必須確認以下事項。",
     "min-50-max-500": "最少 50 個字符，最多 500 個字符",
     "rsa": "閱讀，搜索，提問",
@@ -398,6 +410,7 @@
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
     "chal-preview": "挑戰預覽",
     "donation-record-not-found": "未找到你的捐款記錄。",
+    "donation-heading": "捐贈目標進展情況",
     "sign-in-card-update": "登錄以更新你的卡片",
     "sign-in-see-benefits": "登錄以查看你的支持者權益",
     "card-has-been-updated": "你的卡片已經更新成功。",
@@ -631,7 +644,8 @@
     "help-millions-learn": "幫助數百萬人學習",
     "reach-goals-faster": "更快地實現你的目標",
     "remove-distractions": "消除干擾",
-    "animation-description": "這是一個 20 秒的動畫廣告，旨在鼓勵學員成爲 freeCodeCamp 的支持者。動畫開頭是一隻泰迪熊成爲支持者。最後，彈窗消失了，泰迪熊完成了所有目標。它畢業了，成爲了幫助全世界人們的教育超級英雄。"
+    "animation-description": "這是一個 20 秒的動畫廣告，旨在鼓勵學員成爲 freeCodeCamp 的支持者。動畫開頭是一隻泰迪熊成爲支持者。最後，彈窗消失了，泰迪熊完成了所有目標。它畢業了，成爲了幫助全世界人們的教育超級英雄。",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "你需要先登錄才能舉報用戶",
@@ -729,8 +743,8 @@
     "dialogues-and-tasks-for": "{{blockTitle}} 的對話和任務",
     "code-example": "{{codeName}} 代碼示例",
     "opens-new-window": "在新窗口打開",
-    "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
+    "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案"
   },
   "flash": {
     "honest-first": "在申請認證前，你必須先同意我們的《學術誠信條例》",
@@ -804,6 +818,7 @@
     "challenge-submit-too-big": "抱歉，你無法提交代碼。你的代碼是 {{user-size}} 字節。我們最多允許 {{max-size}} 個字節。請減少你的代碼並重試，或在 https://forum.freecodecamp.org 上請求幫助。",
     "invalid-update-flag": "你正在嘗試訪問禁止的資源。如果這是一個有效的請求，請在 https://forum.freecodecamp.org 上請求幫助。",
     "generate-exam-error": "生成考試時發生錯誤。",
+    "cert-not-found": "認證 {{certSlug}} 不存在。",
     "ms": {
       "transcript": {
         "link-err-1": "請在請求中包含一個 Microsoft 成績單的 URL。",
@@ -865,6 +880,7 @@
     "fulltextNoHours": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>",
     "project": {
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
+      "heading-exam": "作爲認證的一部分，{{user}} 通過了以下考試： ",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
       "solution": "解決方案",
       "no-solution": "顯示解決方案出錯時，發送電子郵件到 support@freeCodeCamp.org 獲得幫助。",
@@ -1005,7 +1021,7 @@
     "user-agent": "用戶代理是： <code>{{userAgent}}</code>",
     "challenge": "挑戰信息：",
     "whats-happening": "告訴我們發生了什麼：",
-    "describe": "在此詳細描述你的問題。",
+    "describe": "在此詳細描述你的問題。例如：\n我的 h1 元素缺少一個開始標籤。需要幫助檢查我的代碼。\n或者\n我的 for 循環無限運行。如何避免？",
     "camper-project": "你的項目鏈接",
     "camper-code": "到目前爲止你的代碼",
     "warning": "警告",
@@ -1037,9 +1053,9 @@
     "execute-challenge": "開始挑戰",
     "focus-editor": "聚焦編輯器",
     "focus-instructions-panel": "聚焦指示面板",
-    "navigate-previous": "Navigate To Previous Exercise",
-    "navigate-next": "Navigate To Next Exercise",
-    "play-scene": "Play Scene"
+    "navigate-previous": "跳轉至上一個練習",
+    "navigate-next": "跳轉至下一個練習",
+    "play-scene": "播放場景"
   },
   "signout": {
     "heading": "註銷你的賬戶",

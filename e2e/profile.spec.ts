@@ -81,106 +81,147 @@ const legacyCerts = [
   { name: 'Legacy Full Stack', url: '/certification/certifieduser/full-stack' }
 ];
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
-test.beforeEach(async ({ page }) => {
-  await page.goto('/certifieduser');
-
-  // The following line is required if you're running the test in local development
-  // await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-});
-
 test.describe('Profile component', () => {
-  test('renders the camper profile correctly', async ({ page }) => {
-    // There are multiple avatars on the page, one is in the navbar, one is in the page body.
-    // The avatar we are interested in is the last one in the list
-    const avatar = page
-      .getByRole('img', {
-        name: translations.icons.avatar,
-        includeHidden: true // the svg has `aria-hidden` set to true
-      })
-      .last();
+  test.describe('when viewing my own profile', () => {
+    test.use({ storageState: 'playwright/.auth/certified-user.json' });
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/certifieduser');
 
-    // "visible" as in the element is in the DOM, but it is hidden from non-sighted users
-    await expect(avatar).toBeVisible();
-
-    await expect(
-      page.getByRole('heading', { name: '@certifieduser' })
-    ).toBeVisible();
-    await expect(page.getByText('Full Stack User')).toBeVisible();
-    await expect(page.getByText('Joined November 2020')).toBeVisible();
-    await expect(
-      page.getByRole('link', { name: 'Top Contributor' })
-    ).toBeVisible();
-    await expect(page.getByText('2019')).toBeVisible();
-  });
-
-  test('renders total points correctly', async ({ page }) => {
-    await expect(page.getByText('Number of points: 1')).toBeVisible();
-  });
-
-  // The date range computation in this test doesn't match the implementation code,
-  // and causes the test to fail in some cases.
-  // We would want to mock system time to keep the test stable,
-  // but Playwright currently doesn't offer a built-in mechanism for this.
-  // Ref: https://github.com/microsoft/playwright/issues/6347
-  test.skip('renders the heat map correctly', async ({ page }) => {
-    const today = new Date();
-    const currentMonth = today.toLocaleString('en-US', { month: 'short' });
-    const sixMonthsAgo = new Date(today.setMonth(today.getMonth() - 6));
-    const sixMonthsAgoMonth = sixMonthsAgo.toLocaleString('en-US', {
-      month: 'short'
+      // If you build the client locally, delete the button click below.
+      if (!process.env.CI) {
+        await page
+          .getByRole('button', { name: 'Preview custom 404 page' })
+          .click();
+      }
     });
-    const dateRange = `${sixMonthsAgoMonth} ${sixMonthsAgo.getFullYear()} - ${currentMonth} ${today.getFullYear()}`;
 
-    await expect(page.getByText(dateRange)).toBeVisible();
-    await expect(page.locator('.react-calendar-heatmap')).toBeVisible();
-    // Streak should be a non-negative integer
-    await expect(page.getByText(/Longest Streak: [0-9]\d*$/)).toBeVisible();
-    await expect(page.getByText(/Current Streak: [0-9]\d*$/)).toBeVisible();
-  });
-
-  test('displays certifications correctly', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', { name: 'freeCodeCamp Certifications' })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('heading', { name: 'Legacy Certifications' })
-    ).toBeVisible();
-
-    for (const cert of certs) {
-      const link = page
-        .getByRole('link', {
-          name: `View ${cert.name} Certification`
-        })
-        .first();
-      await expect(link).toBeVisible();
-      await expect(link).toHaveAttribute('href', cert.url);
-    }
-
-    for (const cert of legacyCerts) {
-      const link = page
-        .getByRole('link', {
-          name: `View ${cert.name} Certification`
+    test('renders the camper profile correctly', async ({ page }) => {
+      // There are multiple avatars on the page, one is in the navbar, one is in the page body.
+      // The avatar we are interested in is the last one in the list
+      const avatar = page
+        .getByRole('img', {
+          name: translations.icons.avatar,
+          includeHidden: true // the svg has `aria-hidden` set to true
         })
         .last();
-      await expect(link).toBeVisible();
-      await expect(link).toHaveAttribute('href', cert.url);
-    }
+
+      // "visible" as in the element is in the DOM, but it is hidden from non-sighted users
+      await expect(avatar).toBeVisible();
+
+      await expect(
+        page.getByRole('heading', { name: '@certifieduser' })
+      ).toBeVisible();
+      await expect(page.getByText('Full Stack User')).toBeVisible();
+      await expect(page.getByText('Joined November 2020')).toBeVisible();
+      await expect(
+        page.getByText(translations.profile.contributor)
+      ).toBeVisible();
+      expect(
+        await page.locator('.badge-card-description').textContent()
+      ).toContain('Among most prolific volunteers');
+    });
+
+    test('renders total points correctly', async ({ page }) => {
+      await expect(page.getByText('Total Points:')).toBeVisible();
+    });
+
+    // The date range computation in this test doesn't match the implementation code,
+    // and causes the test to fail in some cases.
+    // We would want to mock system time to keep the test stable,
+    // but Playwright currently doesn't offer a built-in mechanism for this.
+    // Ref: https://github.com/microsoft/playwright/issues/6347
+    test.skip('renders the heat map correctly', async ({ page }) => {
+      const today = new Date();
+      const currentMonth = today.toLocaleString('en-US', { month: 'short' });
+      const sixMonthsAgo = new Date(today.setMonth(today.getMonth() - 6));
+      const sixMonthsAgoMonth = sixMonthsAgo.toLocaleString('en-US', {
+        month: 'short'
+      });
+      const dateRange = `${sixMonthsAgoMonth} ${sixMonthsAgo.getFullYear()} - ${currentMonth} ${today.getFullYear()}`;
+
+      await expect(page.getByText(dateRange)).toBeVisible();
+      await expect(page.locator('.react-calendar-heatmap')).toBeVisible();
+      // Streak should be a non-negative integer
+      await expect(page.getByText(/Longest Streak: [0-9]\d*$/)).toBeVisible();
+      await expect(page.getByText(/Current Streak: [0-9]\d*$/)).toBeVisible();
+    });
+
+    test('displays certifications correctly', async ({ page }) => {
+      await expect(
+        page.getByRole('heading', { name: 'freeCodeCamp Certifications' })
+      ).toBeVisible();
+      await expect(
+        page.getByRole('heading', { name: 'Legacy Certifications' })
+      ).toBeVisible();
+
+      for (const cert of certs) {
+        const link = page
+          .getByRole('link', {
+            name: `View ${cert.name} Certification`
+          })
+          .first();
+        await expect(link).toBeVisible();
+        await expect(link).toHaveAttribute('href', cert.url);
+      }
+
+      for (const cert of legacyCerts) {
+        const link = page
+          .getByRole('link', {
+            name: `View ${cert.name} Certification`
+          })
+          .last();
+        await expect(link).toBeVisible();
+        await expect(link).toHaveAttribute('href', cert.url);
+      }
+    });
+
+    test('should not show portfolio when empty', async ({ page }) => {
+      // @certifieduser doesn't have portfolio information
+      await expect(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        page.getByText(translations.profile.projects)
+      ).not.toBeVisible();
+    });
+
+    test('displays the timeline correctly', async ({ page }) => {
+      await expect(
+        page.getByRole('heading', { name: 'Timeline' })
+      ).toBeVisible();
+      await expect(page.getByRole('table')).toBeVisible();
+      await expect(
+        page.getByRole('navigation', { name: 'Timeline Pagination' })
+      ).toBeVisible();
+    });
   });
 
-  test('should not show portfolio when empty', async ({ page }) => {
-    // @certifieduser doesn't have portfolio information
-    await expect(
-      page.getByText(translations.profile.portfolio)
-    ).not.toBeVisible();
-  });
+  test.describe("when viewing someone else's profile", () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/publicUser');
 
-  test('displays the timeline correctly', async ({ page }) => {
-    await expect(page.getByRole('heading', { name: 'Timeline' })).toBeVisible();
-    await expect(page.getByRole('table')).toBeVisible();
-    await expect(
-      page.getByRole('navigation', { name: 'Timeline Pagination' })
-    ).toBeVisible();
+      // If you build the client locally, delete the button click below.
+      if (!process.env.CI) {
+        await page
+          .getByRole('button', { name: 'Preview custom 404 page' })
+          .click();
+      }
+    });
+
+    test.describe('while logged in', () => {
+      test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+      test('displays the public username', async ({ page }) => {
+        await expect(
+          page.getByRole('heading', { name: '@publicuser' })
+        ).toBeVisible();
+      });
+    });
+
+    test.describe('logged out', () => {
+      test('displays the public username', async ({ page }) => {
+        await expect(
+          page.getByRole('heading', { name: '@publicuser' })
+        ).toBeVisible();
+      });
+    });
   });
 });

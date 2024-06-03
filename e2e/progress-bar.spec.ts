@@ -1,38 +1,25 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
+import { clearEditor, focusEditor } from './utils/editor';
 
-let page: Page;
-
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-  await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
-  );
-});
+test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.describe('Progress bar component', () => {
   test('Should appear with the correct content after the user has submitted their code', async ({
+    page,
     isMobile,
     browserName
   }) => {
-    const monacoEditor = page.getByLabel('Editor content');
-
-    // The editor has an overlay div, which prevents the click event from bubbling up in iOS Safari.
-    // This is a quirk in this browser-OS combination, and the workaround here is to use `.focus()`
-    // in place of `.click()` to focus on the editor.
-    // Ref: https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-    if (isMobile && browserName === 'webkit') {
-      await monacoEditor.focus();
-    } else {
-      await monacoEditor.click();
-    }
-
-    await page.keyboard.press('Control+A');
-    //Meta + A works in webkit
-    await page.keyboard.press('Meta+A');
-    await page.keyboard.press('Backspace');
+    await page.goto(
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+    );
+    // If focusEditor fails, typically it's because the instructions are too
+    // large. There's a bug that means `scrollIntoView` does not work in the
+    // editor and so we have to pick less verbose challenges until that's fixed.
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
 
     await page.keyboard.insertText(
-      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2></body></html>'
+      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>See more cat photos in our gallery.</p></body></html>'
     );
 
     await page.getByRole('button', { name: 'Check Your Code' }).click();
@@ -42,6 +29,32 @@ test.describe('Progress bar component', () => {
       'Learn HTML by Building a Cat Photo App'
     );
     await expect(progressBarContainer).toContainText('0% complete');
+    await page
+      .getByRole('button', { name: 'Submit and go to next challenge' })
+      .click();
+  });
+
+  test('should appear in the completion modal after user has submitted their code', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
+    );
+    await focusEditor({ page, isMobile, browserName });
+    await clearEditor({ page, browserName });
+
+    await page.keyboard.insertText('var myName;');
+
+    await page
+      .getByRole('button', { name: 'Run the Tests (Ctrl + Enter)' })
+      .click();
+
+    await expect(page.locator('.completion-block-meta')).toContainText(
+      '99% complete'
+    );
+
     await page
       .getByRole('button', { name: 'Submit and go to next challenge' })
       .click();

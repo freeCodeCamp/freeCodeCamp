@@ -30,10 +30,15 @@ import sessionAuth from './plugins/session-auth';
 import codeFlowAuth from './plugins/code-flow-auth';
 import { mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
+import {
+  protectedCertificateRoutes,
+  unprotectedCertificateRoutes
+} from './routes/certificate';
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 import { donateRoutes } from './routes/donate';
+import { emailSubscribtionRoutes } from './routes/email-subscription';
 import { settingRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes } from './routes/user';
@@ -49,7 +54,6 @@ import {
   SESSION_SECRET
 } from './utils/env';
 import { isObjectID } from './utils/validation';
-import { certificateRoutes } from './routes/certificate';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -199,11 +203,13 @@ export const build = async (
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devAuthRoutes);
   }
-  void fastify.register(certificateRoutes);
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
+  void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userRoutes);
+  void fastify.register(protectedCertificateRoutes);
+  void fastify.register(unprotectedCertificateRoutes);
   void fastify.register(userGetRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);

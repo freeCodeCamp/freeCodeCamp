@@ -6,10 +6,7 @@
   "dashedName": "learn-list-comprehension-by-building-a-case-converter-program",
   "order": 3,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "scientific-computing-with-python",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "657e928716b77b2277980276",

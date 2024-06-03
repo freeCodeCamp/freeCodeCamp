@@ -4,14 +4,11 @@
   "dashedName": "learn-how-to-discuss-your-morning-or-evening-routine",
   "order": 4,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "a2-english-for-developers",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "655699a46134fa74acaf6204",
-      "title": "Dialogue 1: Learn How to Discuss Your Morning or Evening Routine"
+      "title": "Dialogue 1: Learn How to Discuss your Morning or Evening Routine"
     },
     {
       "id": "65569ebbc9ef9f7b5b99827b",
@@ -59,7 +56,7 @@
     },
     {
       "id": "65578ed1a4ae65a8fbc341f5",
-      "title": "task 12"
+      "title": "Task 12"
     },
     {
       "id": "655792631f21afaa40c611e1",
@@ -263,7 +260,7 @@
     },
     {
       "id": "655a591ad34faa18c8338f9b",
-      "title": "Dialogue 3: Evening Routine With Kids"
+      "title": "Dialogue 3: Evening Routine with Kids"
     },
     {
       "id": "655a5bfadf47e1199f9b65eb",
@@ -331,7 +328,7 @@
     },
     {
       "id": "655a9f8d6d3af8538a178166",
-      "title": "Dialogue 4: Brian and Maria talk about eventful evenings"
+      "title": "Dialogue 4: Brian and Maria Talk about Eventful Evenings"
     },
     {
       "id": "655aa098bb38a05474a3f5b4",
@@ -387,7 +384,7 @@
     },
     {
       "id": "655b34a4b45a76689cb429c6",
-      "title": "Dialogue 5: Sophie and Brian Talk About The Weekend"
+      "title": "Dialogue 5: Sophie and Brian Talk about the Weekend"
     },
     {
       "id": "655b34e53bf2cb6908042c98",

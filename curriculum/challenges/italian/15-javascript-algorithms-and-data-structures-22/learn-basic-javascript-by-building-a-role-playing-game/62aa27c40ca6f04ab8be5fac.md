@@ -1,26 +1,43 @@
 ---
 id: 62aa27c40ca6f04ab8be5fac
-title: Step 170
+title: Step 168
 challengeType: 0
-dashedName: step-170
+dashedName: step-168
 ---
 
 # --description--
 
-Un loop `for` viene eseguito per un numero specifico di volte. Nei prossimi step, analizzeremo l'esecuzione di un loop `for`. Per ora, copia il loop qui sotto e incollalo alla fine della funzione `pick`.
+In the previous project, you learned how to work with `for` loops like this:
 
 ```js
-for (let x = 1; x < 5; x++) {
-
+for (let i = 0; i < 5; i++) {
+  // code to run
 }
 ```
 
+`for` loops are declared with three expressions separated by semicolons: `for (a; b; c)`, where `a` is the initialization expression, `b` is the condition, and `c` is the final expression.
+
+In this step, create a `for` loop where `i` is initialized to `0`, the loop runs as long as `i` is less than `10`, and `i` is incremented by `1` after each iteration using the increment operator `++`.
+
+
 # --hints--
 
-Dovresti copiare il loop qui sopra nella funzione `pick`.
+Your `for` loop initialization should have `i` initialized to `0`.
 
 ```js
-assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+x\s*=\s*1\s*;\s*x\s*<\s*5\s*;\s*x\s*\+\+\s*\)/);
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;/)
+```
+
+Your loop condition should run as long as `i` is less than `10`.
+
+```js
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*10\s*;/)
+```
+
+Your loop should increment `i` by `1` after each iteration. Remember to use the increment operator `++`.
+
+```js
+assert.match(pick.toString(), /for\s*\(\s*(let|var)\s+i\s*=\s*0\s*;\s*i\s*<\s*10\s*;\s*i\+\+\s*\)/)
 ```
 
 # --seed--
@@ -112,7 +129,7 @@ button {
 let xp = 0;
 let health = 100;
 let gold = 50;
-let currentWeapon = 0;
+let currentWeaponIndex = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];
@@ -241,12 +258,12 @@ function buyHealth() {
 }
 
 function buyWeapon() {
-  if (currentWeapon < weapons.length - 1) {
+  if (currentWeaponIndex < weapons.length - 1) {
     if (gold >= 30) {
       gold -= 30;
-      currentWeapon++;
+      currentWeaponIndex++;
       goldText.innerText = gold;
-      let newWeapon = weapons[currentWeapon].name;
+      let newWeapon = weapons[currentWeaponIndex].name;
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
       text.innerText += " In your inventory you have: " + inventory;
@@ -297,10 +314,10 @@ function goFight() {
 
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
-  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  text.innerText += " You attack it with your " + weapons[currentWeaponIndex].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;    
   } else {
     text.innerText += " You miss.";
   }
@@ -317,7 +334,7 @@ function attack() {
   }
   if (Math.random() <= .1 && inventory.length !== 1) {
     text.innerText += " Your " + inventory.pop() + " breaks.";
-    currentWeapon--;
+    currentWeaponIndex--;
   }
 }
 
@@ -355,7 +372,7 @@ function restart() {
   xp = 0;
   health = 100;
   gold = 50;
-  currentWeapon = 0;
+  currentWeaponIndex = 0;
   inventory = ["stick"];
   goldText.innerText = gold;
   healthText.innerText = health;

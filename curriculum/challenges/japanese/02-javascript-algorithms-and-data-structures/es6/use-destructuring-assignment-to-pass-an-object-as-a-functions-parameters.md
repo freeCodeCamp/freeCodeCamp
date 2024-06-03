@@ -50,13 +50,13 @@ assert(half(stats) === 28.015);
 分割を使用する必要があります。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/half=\({\w+,\w+}\)/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/half=\({\w+,\w+}\)/));
 ```
 
 分割されたパラメーターを使用する必要があります。
 
 ```js
-assert(!code.match(/stats\.max|stats\.min/));
+assert(!__helpers.removeJSComments(code).match(/stats\.max|stats\.min/));
 ```
 
 # --seed--

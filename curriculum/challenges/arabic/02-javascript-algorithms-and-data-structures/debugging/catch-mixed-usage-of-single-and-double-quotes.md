@@ -37,13 +37,13 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 يجب أن يصلح الكود الخاص بك علامات التنصيص حول قيمة `href` وهي `#Home` إما بتغييرها أو معالجتها برمز التخريج (\).
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 يجب أن يحافظ الكود الخاص بك على علامات التنصيص المزدوجة حول المقطع كُلََّه.
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

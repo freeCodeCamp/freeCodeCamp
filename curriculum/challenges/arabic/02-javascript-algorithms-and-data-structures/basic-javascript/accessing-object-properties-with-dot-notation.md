@@ -60,7 +60,7 @@ assert(shirtValue === 'jersey');
 يجب عليك استخدام النقطة التأشير مرتين
 
 ```js
-assert(code.match(/testObj\.\w+/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\.\w+/g).length > 1);
 ```
 
 # --seed--

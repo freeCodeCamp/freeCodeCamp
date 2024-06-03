@@ -44,7 +44,7 @@ Use o laço `for` para adicionar os valores de 1 até 5 dentro de `myArray`.
 Você deve usar um laço `for` para isso.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(code));
+assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
 ```
 
 `myArray` deve ser igual a `[1, 2, 3, 4, 5]`.

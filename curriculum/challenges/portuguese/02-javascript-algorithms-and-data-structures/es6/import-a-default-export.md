@@ -25,7 +25,7 @@ No código a seguir, importe a exportação padrão do arquivo `math_functions.j
 A única coisa que você precisa fazer é importar `subtract` do arquivo `math_functions.js`.
 
 ```js
-assert(code.match(/import\s+subtract\s+from\s+('|")\.\/math_functions\.js\1/g));
+assert(__helpers.removeJSComments(code).match(/import\s+subtract\s+from\s+('|")\.\/math_functions\.js\1/g));
 ```
 
 # --seed--

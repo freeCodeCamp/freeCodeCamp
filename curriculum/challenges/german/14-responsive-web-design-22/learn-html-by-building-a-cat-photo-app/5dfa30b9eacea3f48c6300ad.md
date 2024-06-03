@@ -9,11 +9,19 @@ dashedName: step-15
 
 In den vorherigen Schritten hast du ein Ankerelement verwendet, um Text in einen Link zu umwandeln. Auch andere Arten von Inhalten können in einen Link umgewandelt werden, indem sie mit Anker-Tags umschlossen werden.
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 Umwandle das Bild in einen Link, indem du es mit den notwendigen Tags der Elemente umgibst. Verwende `https://freecatphotoapp.com` als den `href`-Attributwert des Ankers.
 
 # --hints--
 
-Du solltest ein `img`-Element mit einem `src`-Wert von `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg` haben. Möglicherweise hast du es versehentlich gelöscht.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Möglicherweise hast du es versehentlich gelöscht.
 
 ```js
 assert(

@@ -9,6 +9,14 @@ dashedName: step-15
 
 以前のステップでは、アンカー要素を使用してテキストをリンクに変換しました。 他の種類のコンテンツも、アンカータグで囲むことでリンクにすることができます。
 
+下記は画像をリンクに変換する例です:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 画像を適切な要素のタグで囲んで、リンクに変換してください。 アンカーの `href` 属性値には `https://freecatphotoapp.com` を使用してください。
 
 # --hints--

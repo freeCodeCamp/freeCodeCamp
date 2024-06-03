@@ -6,10 +6,7 @@
   "dashedName": "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm",
   "order": 1,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "scientific-computing-with-python",
-  "isBeta": true,
   "challengeOrder": [
     {
       "id": "6565a536ba1f9f25bd30e88b",

@@ -39,14 +39,14 @@ const person = {
 وينبغي عدم استخدام الـ function expression التقليدي.
 
 ```js
-assert(!code.match(/function/));
+assert(!__helpers.removeJSComments(code).match(/function/));
 ```
 
 يجب أن تكون `setGear` وظيفة معلنا (declarative function).
 
 ```js
 assert(
-  typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/)
+  typeof bicycle.setGear === 'function' && __helpers.removeJSComments(code).match(/setGear\s*\(.+\)\s*\{/)
 );
 ```
 

@@ -98,7 +98,7 @@ assert(typeof topRankPerGroup(-1, []) === 'undefined');
 assert.deepEqual(res1[0][0], { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050'});
 ```
 
-`topRankPerGroup(10, testData1, 'dept', 'salary')` について、最後のグループの最期の結果は `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }` でなければなりません。
+`topRankPerGroup(10, testData1, 'dept', 'salary')` について、最後のグループの最後の結果は `{ name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' }` でなければなりません。
 
 ```js
 assert.deepEqual(res1[3][3], { name: 'Adam Smith', id: 'E63535', salary: 18000, dept: 'D202' });
