@@ -54,7 +54,7 @@ blockquote .small {
   display: block;
   font-size: 80%;
   line-height: 1.42857143;
-  color: #777777;
+  color: var(--gray-45);
 }
 
 /* TODO: Move this rule to @freecodecamp/ui. */
@@ -578,12 +578,6 @@ pre code {
   margin-bottom: 0;
 }
 
-blockquote footer,
-blockquote small,
-blockquote .small {
-  color: var(--gray-45);
-}
-
 .alert {
   padding: 15px;
   margin-bottom: 20px;
@@ -660,10 +654,6 @@ blockquote .small {
 
 .text-left {
   text-align: left;
-}
-
-.text-center {
-  text-align: center;
 }
 
 .text-justify {

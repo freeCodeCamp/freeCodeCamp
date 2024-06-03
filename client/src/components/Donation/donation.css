@@ -447,7 +447,6 @@ button.confirm-donation-btn {
   align-content: center;
   border-radius: 5px;
   background-color: var(--yellow-light);
-  border-color: var(--yellow-light);
   color: black;
   font-weight: bold;
   width: 100%;
