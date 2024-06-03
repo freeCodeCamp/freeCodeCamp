@@ -42,7 +42,7 @@ export function SolutionDisplayWidget({
   );
   const ShowProjectAndGithubLinkForCertification = (
     <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-      <Dropdown.Toggle className='btn-invert'>
+      <Dropdown.Toggle>
         {viewText}{' '}
         <span className='sr-only'>
           {t('settings.labels.solution-for', { projectTitle })}
@@ -107,7 +107,7 @@ export function SolutionDisplayWidget({
   const ShowMultifileProjectSolution = (
     <div className='solutions-dropdown'>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle className='btn-invert'>
+        <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
@@ -128,7 +128,7 @@ export function SolutionDisplayWidget({
   const ShowProjectAndGithubLinks = (
     <div className='solutions-dropdown'>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle className='btn-invert'>
+        <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
