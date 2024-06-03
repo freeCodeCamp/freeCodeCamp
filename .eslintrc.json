@@ -70,7 +70,6 @@
           "./api/tsconfig.json",
           "./shared/tsconfig.json",
           "./tools/client-plugins/browser-scripts/tsconfig.json",
-          "./curriculum-server/tsconfig.json",
           "./cypress/tsconfig.json",
           "./e2e/tsconfig.json"
         ]

@@ -6,7 +6,6 @@ client/**/trending.json
 client/config/*.json
 client/config/browser-scripts/*.json
 client/static
-curriculum-server/data/curriculum.json
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 docs/**/*.md
