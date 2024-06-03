@@ -22,7 +22,7 @@ test.describe('Public profile certifications', () => {
     page
   }) => {
     await page.goto('/settings');
-    await page.getByTestId('username-input').fill('CertifiedBoozer');
+    await page.getByLabel('Username').fill('CertifiedBoozer');
     await page.getByRole('button', { name: 'Save' }).nth(0).click();
     await expect(page.getByTestId('flash-message')).toContainText(
       /We have updated your username to/
