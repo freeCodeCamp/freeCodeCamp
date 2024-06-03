@@ -6,8 +6,6 @@
   "dashedName": "learn-encapsulation-by-building-a-projectile-trajectory-calculator",
   "order": 15,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
@@ -75,24 +73,28 @@
       "title": "Step 16"
     },
     {
-      "id": "66475e40f3891c645d50135e",
+      "id": "665d949e628d9f3fe305b6e8",
       "title": "Step 17"
     },
     {
-      "id": "66475f7b91d7c6681987739d",
+      "id": "66475e40f3891c645d50135e",
       "title": "Step 18"
     },
     {
-      "id": "6633bdc3ca38c068c3735984",
+      "id": "66475f7b91d7c6681987739d",
       "title": "Step 19"
     },
     {
-      "id": "6633bfcef57e1d70cc3142c6",
+      "id": "6633bdc3ca38c068c3735984",
       "title": "Step 20"
     },
     {
-      "id": "6633c06601c081735063b528",
+      "id": "6633bfcef57e1d70cc3142c6",
       "title": "Step 21"
+    },
+    {
+      "id": "6633c06601c081735063b528",
+      "title": "Step 22"
     }
   ],
   "helpCategory": "Python"
