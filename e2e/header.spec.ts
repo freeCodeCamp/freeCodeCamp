@@ -208,18 +208,25 @@ test.describe('Header', () => {
   });
 
   test('The header should contain an avatar', async ({ page }) => {
-    const avatarLink = page.locator('.avatar-nav-link');
+    const avatarLink = page.getByRole('link', { name: 'Profile' });
     await expect(avatarLink).toBeVisible();
     await expect(avatarLink).toHaveAttribute('href', '/developmentuser');
 
-    const avatarContainer = page.locator('.avatar-container');
-    await expect(avatarContainer).toHaveClass(
-      'avatar-container default-border'
-    );
+    const avatar = avatarLink.getByRole('img', {
+      name: 'Default Avatar',
+      includeHidden: true // the svg is aria-hidden
+    });
+    await expect(avatar).toBeVisible();
   });
 
   test('The Avatar should be less or equal to 26px', async ({ page }) => {
-    const avatar = page.locator('.avatar');
+    const avatar = page
+      .getByRole('link', { name: 'Profile' })
+      .getByRole('img', {
+        name: 'Default Avatar',
+        includeHidden: true // the svg is aria-hidden
+      });
+
     await expect(avatar).toBeVisible();
     const avatarSize = await avatar.boundingBox();
     expect(avatarSize?.width).toBeLessThanOrEqual(26);
@@ -257,8 +264,14 @@ test.describe('Header', () => {
       .getByTestId(headerComponentElements.signInButton)
       .nth(0);
     await expect(signInButton).toBeVisible();
-    await expect(page.locator('.avatar-nav-link')).toBeHidden();
-    await expect(page.locator('.avatar-container')).toBeHidden();
+
+    const avatar = page
+      .getByRole('link', { name: 'Profile' })
+      .getByRole('img', {
+        name: 'Default Avatar',
+        includeHidden: true // the svg is aria-hidden
+      });
+    await expect(avatar).toBeHidden();
   });
 });
 
