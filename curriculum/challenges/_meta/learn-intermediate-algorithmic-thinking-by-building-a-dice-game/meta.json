@@ -5,7 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-intermediate-algorithmic-thinking-by-building-a-dice-game",
   "order": 20,
-  "time": "5 hours",
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

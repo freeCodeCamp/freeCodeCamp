@@ -5,7 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-the-bisection-method-by-finding-the-square-root-of-a-number",
   "order": 4,
-  "time": "5 hours",
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
