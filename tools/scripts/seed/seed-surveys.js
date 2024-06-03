@@ -81,11 +81,7 @@ const run = async () => {
   const db = client.db('freecodecamp');
   const survey = db.collection('Survey');
 
-  await survey.deleteMany({
-    _id: {
-      $in: surveyIds
-    }
-  });
+  await survey.deleteMany({});
   log('Survey info deleted');
 
   if (!args.includes('delete-only')) {
