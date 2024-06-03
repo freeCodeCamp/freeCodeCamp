@@ -1344,6 +1344,9 @@ importers:
       '@total-typescript/ts-reset':
         specifier: ^0.5.0
         version: 0.5.1
+      '@types/chai':
+        specifier: ^4.3.16
+        version: 4.3.16
       chai:
         specifier: 4.4.1
         version: 4.4.1
@@ -3972,6 +3975,9 @@ packages:
 
   '@types/chai@4.3.12':
     resolution: {integrity: sha512-zNKDHG/1yxm8Il6uCCVsm+dRdEsJlFoDu73X17y09bId6UwoYww+vFBsAcRzl8knM1sab3Dp1VRikFQwDOtDDw==}
+
+  '@types/chai@4.3.16':
+    resolution: {integrity: sha512-PatH4iOdyh3MyWtmHVFXLWCCIhUbopaltqddG9BzB+gMIzee2MJrvd+jouii9Z3wzQJruGWAm7WOMjgfG8hQlQ==}
 
   '@types/cheerio@0.22.35':
     resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
@@ -18251,6 +18257,8 @@ snapshots:
   '@types/canvas-confetti@1.6.0': {}
 
   '@types/chai@4.3.12': {}
+
+  '@types/chai@4.3.16': {}
 
   '@types/cheerio@0.22.35':
     dependencies:
