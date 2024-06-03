@@ -121,7 +121,6 @@ export default function StripeCardForm({
     paymentMethod: string
   ) => {
     if (stripe) {
-      console.log(stripe);
       return stripe.confirmCardPayment(clientSecret, {
         payment_method: paymentMethod
       });
