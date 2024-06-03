@@ -256,8 +256,9 @@ button[aria-disabled='true']:hover,
 fieldset[disabled] .btn {
   cursor: not-allowed;
   background-color: var(--quaternary-background);
-  border-color: var(--quaternary-color);
-  color: var(--quaternary-color);
+  border-color: var(--gray-45);
+  color: var(--secondary-color);
+  opacity: 0.8;
 }
 
 .btn-cta {
