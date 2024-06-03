@@ -5,8 +5,6 @@
   "helpCategory": "JavaScript",
   "order": 5,
   "time": "50 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {

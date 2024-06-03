@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
@@ -21,6 +22,7 @@ import {
   completedPercentageSelector
 } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
+import { Spacer } from '../../../components/helpers';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -95,27 +97,27 @@ const LowerButtonsPanel = ({
     <>
       <hr />
       <div className='utility-bar'>
-        <button
+        <Button
           data-playwright-test-label='lowerJaw-reset-button'
-          className='btn fade-in'
+          className='fade-in'
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
         >
           <Reset />
           {resetButtonText}
-        </button>
+        </Button>
         {showShareButton && <Share superBlock={superBlock} block={block} />}
 
         {hideHelpButton && (
-          <button
-            className='btn fade-in'
+          <Button
+            className='fade-in'
             id='get-help-button'
             data-cy='get-help-button'
             onClick={helpButtonEvent}
           >
             <Help />
             {helpButtonText}
-          </button>
+          </Button>
         )}
       </div>
     </>
@@ -298,42 +300,49 @@ const LowerJaw = ({
   return (
     <div className='action-row-container'>
       {showSignInButton && (
-        <a
-          data-cy='sign-in-button'
-          href={`${apiLocation}/signin`}
-          className='btn-cta btn btn-block'
-          onClick={() => {
-            callGA({
-              event: 'sign_in'
-            });
-          }}
-        >
-          {t('learn.sign-in-save')}
-        </a>
+        <>
+          <a
+            data-cy='sign-in-button'
+            href={`${apiLocation}/signin`}
+            className='btn-cta btn btn-block'
+            onClick={() => {
+              callGA({
+                event: 'sign_in'
+              });
+            }}
+          >
+            {t('learn.sign-in-save')}
+          </a>
+          <Spacer size='xxSmall' />
+        </>
       )}
-      <button
+      <Button
         data-playwright-test-label='lowerJaw-submit-button'
-        className='btn-block btn'
-        data-cy='submit-lowerJaw-button'
+        block
         onClick={tryToSubmitChallenge}
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
         ref={submitButtonRef}
       >
         {t('buttons.submit-and-go')}
-      </button>
-      <button
-        data-playwright-test-label='lowerJaw-check-button'
-        className='btn-block btn'
-        data-cy='check-lowerJaw-button'
-        onClick={tryToExecuteChallenge}
-        {...(challengeIsCompleted &&
-          !focusManagementCompleted && { tabIndex: -1, className: 'sr-only' })}
-        {...(challengeIsCompleted &&
-          focusManagementCompleted && { 'aria-hidden': true })}
-        ref={checkYourCodeButtonRef}
+      </Button>
+      <div
+        className={
+          challengeIsCompleted && !focusManagementCompleted ? 'sr-only' : ''
+        }
       >
-        {checkButtonText}
-      </button>
+        <Button
+          data-playwright-test-label='lowerJaw-check-button'
+          block
+          onClick={tryToExecuteChallenge}
+          {...(challengeIsCompleted &&
+            !focusManagementCompleted && { tabIndex: -1 })}
+          {...(challengeIsCompleted &&
+            focusManagementCompleted && { 'aria-hidden': true })}
+          ref={checkYourCodeButtonRef}
+        >
+          {checkButtonText}
+        </Button>
+      </div>
       {/* Using aria-live=polite instead of assertive works better with ORCA */}
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
