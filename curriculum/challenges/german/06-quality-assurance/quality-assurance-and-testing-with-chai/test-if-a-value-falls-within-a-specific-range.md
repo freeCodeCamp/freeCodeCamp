@@ -8,7 +8,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 ```javascript
 .approximately(actual, expected, delta, [message])
@@ -18,13 +18,13 @@ Asserts that the `actual` is equal to `expected`, to within a +/- `delta` range.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
+Within `tests/1_unit-tests.js` under the test labeled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
 Wählen den Minimalbereich (3. Parameter) aus, damit der Test immer bestanden wird. Es sollte weniger als 1 sein.
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>

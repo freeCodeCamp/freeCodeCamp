@@ -11,16 +11,8 @@ dashedName: install-and-set-up-mongoose
 チャレンジに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
 - <a href="https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でプロジェクトを完了させる。
-- <a href="https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、チャレンジを完了させる。
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mongomongoose/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - 使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
-
-Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。
 
 このチャレンジでは、MongoDB の Atlas データベースを設定し、それに接続するために必要なパッケージをインポートします。
 
@@ -29,8 +21,6 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 # --instructions--
 
 `mongoose@^5.11.15` をプロジェクトの `package.json` ファイルに追加してあります。 まず、`myApp.js` で `mongoose` を require してください。 次に、`.env` ファイルを作成し、`MONGO_URI` 変数を追加してください。 変数の値は、あなたの MongoDB Atlas データベースの URI である必要があります。 URI は一重引用符または二重引用符で囲んでください。また、環境変数では `=` の前後に空白を使用できないことに注意してください。 たとえば、`MONGO_URI='VALUE'` などとします。
-
-** 注: **Replit を使用している場合は、`.env` ファイルを作成することはできません。 代わりに、組み込みの <dfn>SECRETS</dfn> タブを使用して変数を追加してください。 <em>SECRETS</em> タブを使用する場合は、値を引用符で<em>囲まないで</em>ください。
 
 When you are done, connect to the database by calling the `connect` method within your `myApp.js` file by using the following syntax:
 

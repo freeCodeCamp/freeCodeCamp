@@ -1,6 +1,6 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Construye una página portafolio personal
+title: Construye una Página Web Personal
 challengeType: 14
 forumTopicId: 301143
 dashedName: build-a-personal-portfolio-webpage
@@ -8,7 +8,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a>
+**Objetivo:** construye una aplicación que sea funcionalmente similar a <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a>. **No copies este proyecto de demostración**.
+
 
 **Historias de usuario:**
 
@@ -165,7 +166,7 @@ Tu elemento `#navbar` siempre debe estar en la parte superior del viewport.
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

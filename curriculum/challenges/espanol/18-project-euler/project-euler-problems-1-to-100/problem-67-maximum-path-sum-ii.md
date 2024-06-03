@@ -17,7 +17,7 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </div>
 
-That is, 3 + 7 + 4 + 9 = 23.
+Es decir, 3 + 7 + 4 + 9 = 23.
 
 Find the maximum total from top to bottom in `numTriangle`, a 2D array defined in the background containing a triangle with one-hundred rows.
 

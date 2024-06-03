@@ -63,7 +63,7 @@ assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
 assert($('label > input[type="radio"]:only-child').length > 1);
 ```
 
-Кожен з ваших елементів `label` повинен мати тег, що закривається.
+Кожен елемент `label` повинен мати кінцевий тег.
 
 ```js
 assert(
@@ -112,7 +112,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -140,7 +140,7 @@ assert($('label').parent().get(0).tagName.match('FORM'));
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

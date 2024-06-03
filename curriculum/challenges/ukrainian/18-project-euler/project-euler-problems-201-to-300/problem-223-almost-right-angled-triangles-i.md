@@ -1,6 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5e
-title: 'Problem 223: Almost right-angled triangles I'
+title: 'Завдання 223: майже прямокутні трикутники I'
 challengeType: 1
 forumTopicId: 301866
 dashedName: problem-223-almost-right-angled-triangles-i
@@ -8,9 +8,9 @@ dashedName: problem-223-almost-right-angled-triangles-i
 
 # --description--
 
-Let us call an integer sided triangle with sides $a ≤ b ≤ c$ barely acute if the sides satisfy $a^2 + b^2 = c^2 + 1$.
+Назвемо трикутник з цілими сторонами $a ≤ b ≤ c$ ледь гострим, якщо сторони задовільняють рівність $a^2 + b^2 = c^2 + 1$.
 
-How many barely acute triangles are there with perimeter $≤ 25\\,000\\,000$?
+Скільки ледь гострих трикутників мають периметр $≤ 25\\,000\\,000$?
 
 # --hints--
 

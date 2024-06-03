@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 I metodi `console.log()` e `typeof` sono i due modi principali per controllare i valori intermedi e i tipi degli output del programma. Ora è il momento di approfondire le forme più comuni di bug. Un problema di sintassi di cui si rammaricano i digitatori veloci è il semplice errore di ortografia.
 
-Caratteri spostati, mancanti, o con maiuscole errate nel nome di una variabile o di una funzione costringeranno il browser a cercare un oggetto che non esiste - e a lamentarsi tramite un errore di riferimento. In JavaScript, le variabili e i nomi di funzione sono sensibili alle maiuscole.
+Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. In JavaScript, le variabili e i nomi di funzione sono sensibili alle maiuscole.
 
 # --instructions--
 
@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 Non ci dovrebbero essere casi di variabili scritte male nel codice.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 La variabile `receivables` dovrebbe essere dichiarata e utilizzata correttamente nel codice.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 Non ci dovrebbero essere casi di variabili scritte male nel codice.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 La variabile `payables` dovrebbe essere dichiarata e utilizzata correttamente nel codice.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

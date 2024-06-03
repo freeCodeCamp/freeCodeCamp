@@ -8,16 +8,11 @@ dashedName: sea-level-predictor
 
 # --description--
 
-Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-sea-level-predictor" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
-
--   Почніть з імпорту проєкту на Replit.
--   Потім ви побачите вікно `.replit`.
--   Оберіть `Use run command` та натисніть кнопку `Done`.
-
+Ви будете <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-sea-level-predictor/" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Gitpod</a>.
 
 Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a>(14 годин)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 годин)
 
 - <a href="https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/" target="_blank" rel="noopener noreferrer nofollow">How to Analyze Data with Python Pandas</a> (10 годин)
 
@@ -28,22 +23,20 @@ dashedName: sea-level-predictor
 Використайте дані для виконання наступних завдань:
 
 - Використайте Pandas для імпорту даних з `epa-sea-level.csv`.
-- Використайте matplotlib, щоб створити діаграму розсіювання, використовуючи стовпчик `Year` як вісь x та стовпчик `CSIRO Adjusted Sea Level` як вісь y.
+- Використайте matplotlib, щоб створити діаграму розсіювання, використовуючи стовпчик `Year` як вісь X та стовпчик `CSIRO Adjusted Sea Level` як вісь Y.
 - Використайте функцію `linregress` із `scipy.stats`, щоб отримати нахил та Y-перехоплення лінії, яка найкраще підходить. Нанесіть лінію, яка найкраще підходить, поверх діаграми розсіювання. Проведіть лінію через 2050 рік, щоб передбачити підвищення рівня моря в 2050 році.
 - Побудуйте нову лінію, яка найкраще підходить, просто використовуючи дані з 2000 року до найновішого року в наборі даних. Зробіть так, щоб лінія також проходила через 2050 рік, щоб передбачити підвищення рівня моря в 2050 році, якщо темпи підвищення триватимуть, як це було з 2000 року.
-- Міткою x повинна бути `Year`, міткою y повинна бути `Sea Level (inches)`, а назва повинна бути `Rise in Sea Level`.
-
-Для вас складені модульні тести у `test_module.py`.
+- Міткою X повинна бути `Year`, міткою Y повинна бути `Sea Level (inches)`, а назвою повинна бути `Rise in Sea Level`.
 
 Шаблон також містить команди для збереження та повернення зображення.
 
 ## Розробка
 
-Для розробки ви можете використати `main.py`, щоб протестувати свої функції. Натисніть кнопку «run» і `main.py` запуститься.
+Напишіть свій код в `sea_level_predictor.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код.
 
 ## Тестування
 
-Ми перенесли тести з `test_module.py` в `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми перенесли тести з `test_module.py` в `main.py` для вашої зручності.
 
 ## Надсилання
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4151000cf542c50ff27
-title: 'Problem 168: Number Rotations'
+title: '問題168：數字輪換'
 challengeType: 1
 forumTopicId: 301802
 dashedName: problem-168-number-rotations
@@ -10,15 +10,15 @@ dashedName: problem-168-number-rotations
 
 Consider the number 142857. We can right-rotate this number by moving the last digit (7) to the front of it, giving us 714285.
 
-It can be verified that $714285 = 5 × 142857$.
+它可以驗證714285美元=5 × 142857美元。
 
-This demonstrates an unusual property of 142857: it is a divisor of its right-rotation.
+這證明了142857的一個不尋常的屬性：它是右旋的除數
 
-For integer number of digits $a$ and $b$, find the last 5 digits of the sum of all integers $n$, $10^a &lt; n &lt; 10^b$, that have this property.
+對於數字$a$和$b$的整數，都有這個屬性 找到所有整數$n$的最後5位數，$10^a &lt; n &lt; 10^b$, 都有這個屬性
 
 # --hints--
 
-`numberRotations(2, 10)` should return `98311`.
+`數字輪轉(2, 10)`應該返回`98311`.
 
 ```js
 assert.strictEqual(numberRotations(2, 10), 98311);

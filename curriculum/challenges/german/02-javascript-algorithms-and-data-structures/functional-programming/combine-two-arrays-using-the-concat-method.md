@@ -25,7 +25,7 @@ Verwende die `concat` Methode in der `nonMutatingConcat` Funktion, um `attach` a
 Dein Code sollte die `concat` Methode verwenden.
 
 ```js
-assert(code.match(/\.concat/g));
+assert(__helpers.removeJSComments(code).match(/\.concat/g));
 ```
 
 Das `first` Array sollte sich nicht ändern.

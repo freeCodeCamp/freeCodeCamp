@@ -1,10 +1,8 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import { Spacer } from '../helpers';
-
-import './danger-zone.css';
 
 type DeleteModalProps = {
   delete: () => void;
@@ -17,19 +15,9 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
   const email = 'support@freecodecamp.org';
   const { t } = useTranslation();
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      backdrop={true}
-      bsSize='lg'
-      className='text-center'
-      keyboard={true}
-      onHide={onHide}
-      show={show}
-    >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>
-          {t('settings.danger.delete-title')}
-        </Modal.Title>
+    <Modal onClose={onHide} open={show} variant='danger' size='large'>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+        {t('settings.danger.delete-title')}
       </Modal.Header>
       <Modal.Body>
         <p>{t('settings.danger.delete-p1')}</p>
@@ -41,12 +29,12 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
             </a>
           </Trans>
         </p>
-        <hr />
+      </Modal.Body>
+      <Modal.Footer>
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
-          className='btn-invert'
+          size='large'
+          variant='primary'
           onClick={props.onHide}
           type='button'
         >
@@ -55,17 +43,13 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         <Spacer size='small' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='danger'
-          className='btn-danger'
+          size='large'
+          variant='danger'
           onClick={props.delete}
           type='button'
         >
           {t('settings.danger.certain')}
         </Button>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );

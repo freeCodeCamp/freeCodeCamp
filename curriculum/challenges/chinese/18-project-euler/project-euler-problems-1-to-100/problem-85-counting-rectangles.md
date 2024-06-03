@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed4
-title: 'Problem 85: Counting rectangles'
+title: '问题85：计算矩形'
 challengeType: 1
 forumTopicId: 302199
 dashedName: problem-85-counting-rectangles

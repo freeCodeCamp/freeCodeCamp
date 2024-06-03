@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff68
-title: 'Problem 233: Lattice points on a circle'
+title: '问题233：圆上的格点'
 challengeType: 1
 forumTopicId: 301877
 dashedName: problem-233-lattice-points-on-a-circle

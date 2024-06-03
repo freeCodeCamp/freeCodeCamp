@@ -8,13 +8,13 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --description--
 
-请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `#typeOf` 断言一个值的类型符合给定的类型，这个类型与 `Object.prototype.toString` 一致。
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Objects` 套件里标有 `#17` 的测试下，将每个 `assert` 改成 `assert.typeOf` 或 `assert.notTypeOf` 方法，通过测试（结果应该返回 `true`）。 不要修改传给断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#17` in the `Objects` suite, change each `assert` to either `assert.typeOf` or `assert.notTypeOf` to make the test pass (should evaluate to `true`). 不要修改传给断言的参数。
 
 # --hints--
 

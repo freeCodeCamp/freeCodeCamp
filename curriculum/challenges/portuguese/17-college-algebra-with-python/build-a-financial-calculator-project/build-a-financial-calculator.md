@@ -13,7 +13,7 @@ Depois de acessar o link, crie uma cópia do notebook em sua conta pessoal ou lo
 
 # --instructions--
 
-Para este desafio, você precisará criar uma calculadora multifuncional usando Python que receberá entradas e fará o seguinte:
+Para este desafio, você precisará criar uma calculadora financeira usando Python que receberá entradas e fará o seguinte:
 
 - Calcular a anuidade com crescimento mensal ou contínuo
 - Calcular o pagamento mensal de hipoteca

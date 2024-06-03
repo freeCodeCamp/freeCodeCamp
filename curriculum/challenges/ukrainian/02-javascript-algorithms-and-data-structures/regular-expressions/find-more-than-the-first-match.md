@@ -48,7 +48,7 @@ assert(starRegex.flags.match(/g/).length == 1);
 assert(starRegex.flags.match(/i/).length == 1);
 ```
 
-Ваш збіг має збігатися з двома випадками слова `Twinkle`
+Ваш збіг має збігатися з двома словами `Twinkle`
 
 ```js
 assert(

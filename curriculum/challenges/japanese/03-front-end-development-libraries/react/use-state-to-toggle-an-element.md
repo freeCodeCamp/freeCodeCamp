@@ -65,7 +65,7 @@ assert.strictEqual(
 );
 ```
 
-ボタン要素をクリックしたときに、state の `visibility` プロパティを `true` と `false` の間で切り替えます。
+ボタン要素をクリックすると、state の `visibility` プロパティが `true` と `false` で交互に切り替わり、その条件に従って `h1` 要素がレンダーされるようにします。
 
 ```js
 (() => {
@@ -76,11 +76,11 @@ assert.strictEqual(
   };
   const second = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const third = () => {
     mockedComponent.find('button').simulate('click');
-    return mockedComponent.state('visibility');
+    return mockedComponent.state('visibility') && mockedComponent.find('h1').exists();
   };
   const firstValue = first();
   const secondValue = second();

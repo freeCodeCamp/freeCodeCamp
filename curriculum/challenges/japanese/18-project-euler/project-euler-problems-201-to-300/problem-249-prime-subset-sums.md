@@ -1,6 +1,6 @@
 ---
 id: 5900f4671000cf542c50ff79
-title: 'Problem 249: Prime Subset Sums'
+title: '問題 249: 部分集合の和が素数'
 challengeType: 1
 forumTopicId: 301896
 dashedName: problem-249-prime-subset-sums
@@ -8,15 +8,15 @@ dashedName: problem-249-prime-subset-sums
 
 # --description--
 
-Let $S = \\{2, 3, 5, \ldots, 4999\\}$ be the set of prime numbers less than 5000.
+5000 未満の素数の集合を $S = \\{2, 3, 5, \ldots, 4999\\}$ とします。
 
-Find the number of subsets of $S$, the sum of whose elements is a prime number.
+$S$ の部分集合のうち、要素の和が素数であるものはいくつありますか。
 
-Enter the rightmost 16 digits as your answer.
+回答として下位 16 桁を入力すること。
 
 # --hints--
 
-`primeSubsetSums()` should return `9275262564250418`.
+`primeSubsetSums()` は `9275262564250418` を返す必要があります。
 
 ```js
 assert.strictEqual(primeSubsetSums(), 9275262564250418);

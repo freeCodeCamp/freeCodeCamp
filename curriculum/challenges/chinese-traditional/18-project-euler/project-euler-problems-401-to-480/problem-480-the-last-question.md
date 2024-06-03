@@ -1,6 +1,6 @@
 ---
 id: 5900f54c1000cf542c51005f
-title: 'Problem 480: The Last Question'
+title: '問題480：最後一個問題'
 challengeType: 1
 forumTopicId: 302158
 dashedName: problem-480-the-last-question
@@ -38,7 +38,7 @@ Define $W(p)$ as the word in position $p$.
 
 We can see that $P(w)$ and $W(p)$ are inverses: $P(W(p)) = p$ and $W(P(w)) = w$.
 
-Examples:
+示例：
 
 $$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
   & P(\text{aaaaaacdee}) = 10 \\\\   & W(115246685191495243) = \text{ euler} \\\\
@@ -46,7 +46,7 @@ $$\begin{align}   & W(10) = \text{ aaaaaacdee} \\\\
 
 Find $$W(P(\text{legionary}) + P(\text{calorimeters}) - P(\text{annihilate}) + P(\text{orchestrated}) - P(\text{fluttering})).$$
 
-Give your answer using lowercase characters (no punctuation or space).
+使用小寫字符（沒有標點符號或空格）給出答案。
 
 # --hints--
 

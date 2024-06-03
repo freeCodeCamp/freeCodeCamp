@@ -73,7 +73,7 @@ assert(testGreaterThan(150) === 'Over 100');
 Debes usar el operador `>` por lo menos dos veces
 
 ```js
-assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
 ```
 
 # --seed--

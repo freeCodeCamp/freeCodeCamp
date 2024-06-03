@@ -38,13 +38,14 @@ Envie sua página quando você achar que ela está certa. Se estiver encontrando
 
 # --hints--
 
-O evento `'user'` deve ser emitido com `name`, `currentUsers` e `connected`.
+O evento `'user'` deve ser emitido com `username`, `currentUsers` e `connected`.
 
 ```js
 async (getUserInput) => {
   const url = new URL("/_api/server.js", getUserInput("url"));
   const res = await fetch(url);
   const data = await res.text();
+  // Regex is lenient to match both `username` and `name` as the key on purpose.
   assert.match(
     data,
     /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,

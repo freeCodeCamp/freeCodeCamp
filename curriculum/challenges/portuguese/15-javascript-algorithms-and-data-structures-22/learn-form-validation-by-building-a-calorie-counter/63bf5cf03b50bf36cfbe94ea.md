@@ -1,8 +1,8 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Passo 36
+title: Passo 38
 challengeType: 0
-dashedName: step-36
+dashedName: step-38
 ---
 
 # --description--
@@ -11,13 +11,7 @@ O próximo passo é permitir que os usuários adicionem entradas ao contador de 
 
 # --hints--
 
-Você deve declarar uma variável `addEntry`.
-
-```js
-assert.isDefined(addEntry);
-```
-
-A variável `addEntry` deve ser uma função.
+You should declare an `addEntry` function.
 
 ```js
 assert.isFunction(addEntry);
@@ -89,7 +83,7 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
             </span>
           </div>
           <div>
-            <button type="submit" id="calculate-calories">
+            <button type="submit">
               Calculate Remaining Calories
             </button>
             <button type="button" id="clear">Clear</button>
@@ -104,8 +98,22 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
 ```
 
 ```css
+:root {
+  --light-grey: #f5f6f7;
+  --dark-blue: #0a0a23;
+  --fcc-blue: #1b1b32;
+  --light-yellow: #fecc4c;
+  --dark-yellow: #feac32;
+  --light-pink: #ffadad;
+  --dark-red: #850000;
+  --light-green: #acd157;
+}
+
 body {
-  font-family: "Lato", Arial;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--fcc-blue);
+  color: var(--light-grey);
 }
 
 h1 {
@@ -133,8 +141,18 @@ legend {
   flex-direction: column;
 }
 
-button:hover {
+button {
   cursor: pointer;
+  text-decoration: none;
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-yellow);
+}
+
+button,
+input,
+select {
+  min-height: 24px;
+  color: var(--dark-blue);
 }
 
 fieldset,
@@ -146,7 +164,7 @@ select {
 }
 
 .output {
-  border: 2px solid black;
+  border: 2px solid var(--light-grey);
   padding: 10px;
   text-align: center;
 }
@@ -161,11 +179,11 @@ select {
 }
 
 .surplus {
-  color: #006627;
+  color: var(--light-pink);
 }
 
 .deficit {
-  color: #B30000;
+  color: var(--light-green);
 }
 ```
 

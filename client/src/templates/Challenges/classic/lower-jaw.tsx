@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/react-bootstrap';
 
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
@@ -10,19 +10,19 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { randomCompliment } from '../../../../src/utils/get-words';
 import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
-import { apiLocation } from '../../../../../config/env.json';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
+import { apiLocation } from '../../../../config/env.json';
 import { ChallengeMeta } from '../../../redux/prop-types';
 import { Share } from '../../../components/share';
 import { ShareProps } from '../../../components/share/types';
-import ProgressBar from '../../../components/ProgressBar';
+import Progress from '../../../components/Progress';
 import Quote from '../../../assets/icons/quote';
 import {
   challengeMetaSelector,
   completedPercentageSelector
 } from '../redux/selectors';
-
-const lowerJawButtonStyle = 'btn-block btn';
+import callGA from '../../../analytics/call-ga';
+import { Spacer } from '../../../components/helpers';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -97,26 +97,27 @@ const LowerButtonsPanel = ({
     <>
       <hr />
       <div className='utility-bar'>
-        <button
-          className='btn fade-in'
+        <Button
+          data-playwright-test-label='lowerJaw-reset-button'
+          className='fade-in'
           data-cy='reset-code-button'
           onClick={resetButtonEvent}
         >
           <Reset />
           {resetButtonText}
-        </button>
+        </Button>
         {showShareButton && <Share superBlock={superBlock} block={block} />}
 
         {hideHelpButton && (
-          <button
-            className='btn fade-in'
+          <Button
+            className='fade-in'
             id='get-help-button'
             data-cy='get-help-button'
             onClick={helpButtonEvent}
           >
             <Help />
             {helpButtonText}
-          </button>
+          </Button>
         )}
       </div>
     </>
@@ -131,6 +132,7 @@ const LowerJawTips = ({
   return (
     <>
       <div
+        data-playwright-test-label='lowerJaw-failing-test-feedback'
         data-cy='failing-test-feedback'
         className='test-status fade-in'
         aria-hidden={showFeedback}
@@ -138,7 +140,11 @@ const LowerJawTips = ({
         <Fail aria-hidden='true' />
         <p>{learnEncouragementText}</p>
       </div>
-      <div className='hint-status fade-in' aria-hidden={showFeedback}>
+      <div
+        data-playwright-test-label='lowerJaw-failing-hint'
+        className='hint-status fade-in'
+        aria-hidden={showFeedback}
+      >
         <LightBulb aria-hidden='true' />
         <div
           className='hint-description'
@@ -281,46 +287,62 @@ const LowerJaw = ({
     testsLength &&
     (currentAttempts >= testsLength || currentAttempts >= 3);
 
-  const showDesktopButton = window.innerWidth > MAX_MOBILE_WIDTH;
+  const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+  const isMacOS = navigator.userAgent.includes('Mac OS');
 
-  const checkButtonText = showDesktopButton
-    ? t('buttons.check-code')
+  const checkButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.check-code-3')
+      : t('buttons.check-code')
     : t('buttons.check-code-2');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
   return (
     <div className='action-row-container'>
       {showSignInButton && (
-        <Button
-          data-cy='sign-in-button'
-          block={true}
-          href={`${apiLocation}/signin`}
-          className='btn-cta'
-        >
-          {t('learn.sign-in-save')}
-        </Button>
+        <>
+          <a
+            data-cy='sign-in-button'
+            href={`${apiLocation}/signin`}
+            className='btn-cta btn btn-block'
+            onClick={() => {
+              callGA({
+                event: 'sign_in'
+              });
+            }}
+          >
+            {t('learn.sign-in-save')}
+          </a>
+          <Spacer size='xxSmall' />
+        </>
       )}
-      <button
-        className={lowerJawButtonStyle}
-        data-cy='submit-lowerJaw-button'
+      <Button
+        data-playwright-test-label='lowerJaw-submit-button'
+        block
         onClick={tryToSubmitChallenge}
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
         ref={submitButtonRef}
       >
         {t('buttons.submit-and-go')}
-      </button>
-      <button
-        className={lowerJawButtonStyle}
-        data-cy='check-lowerJaw-button'
-        onClick={tryToExecuteChallenge}
-        {...(challengeIsCompleted &&
-          !focusManagementCompleted && { tabIndex: -1, className: 'sr-only' })}
-        {...(challengeIsCompleted &&
-          focusManagementCompleted && { 'aria-hidden': true })}
-        ref={checkYourCodeButtonRef}
+      </Button>
+      <div
+        className={
+          challengeIsCompleted && !focusManagementCompleted ? 'sr-only' : ''
+        }
       >
-        {checkButtonText}
-      </button>
+        <Button
+          data-playwright-test-label='lowerJaw-check-button'
+          block
+          onClick={tryToExecuteChallenge}
+          {...(challengeIsCompleted &&
+            !focusManagementCompleted && { tabIndex: -1 })}
+          {...(challengeIsCompleted &&
+            focusManagementCompleted && { 'aria-hidden': true })}
+          ref={checkYourCodeButtonRef}
+        >
+          {checkButtonText}
+        </Button>
+      </div>
       {/* Using aria-live=polite instead of assertive works better with ORCA */}
       <div
         style={runningTests ? { height: `${testFeedbackHeight}px` } : {}}
@@ -350,6 +372,7 @@ const LowerJaw = ({
         )}
         {hintRef.current && !challengeIsCompleted && (
           <LowerJawTips
+            data-testid='lowerJaw-tips'
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
             htmlDescription={`${hintRef.current}`}
@@ -361,7 +384,7 @@ const LowerJaw = ({
         <>
           <hr></hr>
           <div className='progress-bar-container'>
-            <ProgressBar />
+            <Progress />
           </div>
         </>
       )}

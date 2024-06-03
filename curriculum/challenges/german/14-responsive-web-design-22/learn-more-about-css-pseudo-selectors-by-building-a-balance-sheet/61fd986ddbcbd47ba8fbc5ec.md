@@ -7,7 +7,7 @@ dashedName: step-23
 
 # --description--
 
-Füge innerhalb des dritten `tr` ein `th`-Element mit dem Text `Credit The outstanding balance on our credit card.` hinzu. Wrap that text, except for `Credit`, within a `span` element with the `class` set to `description`.
+Füge innerhalb des dritten `tr` ein `th`-Element mit dem Text `Credit The outstanding balance on our credit card.` hinzu. Bette den Text, außer `Credit`, in einem `span`-Element mit der `class` auf `description` gesetzt ein.
 
 Füge drei `td`-Elemente unter diesem hinzu und weise ihnen den folgenden Text in Reihenfolge zu: `$50`, `$50` und `$75`. Weise dem dritten `td`-Element eine `class` zu, die auf `current` gesetzt ist.
 
@@ -25,7 +25,7 @@ Dein `th`-Element sollte den Text `Credit The outstanding balance on our credit 
 assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th')?.innerText === 'Credit The outstanding balance on our credit card.');
 ```
 
-You should wrap the text `The outstanding balance on our credit card.` in a `span` element.
+Du solltest den Text `The outstanding balance on our credit card.` mit einem `span`-Element umschließen.
 
 ```js
 assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th > span')?.textContent === 'The outstanding balance on our credit card.');

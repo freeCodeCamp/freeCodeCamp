@@ -1,6 +1,6 @@
 ---
 id: 5900f3d91000cf542c50feea
-title: 'Problem 107: Minimal network'
+title: '問題 107: 最小ネットワーク'
 challengeType: 1
 forumTopicId: 301731
 dashedName: problem-107-minimal-network
@@ -8,11 +8,11 @@ dashedName: problem-107-minimal-network
 
 # --description--
 
-The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
+下の無向ネットワークは 7 つの頂点と 12 本の辺からなり、辺の重みは計 243 です。
 
-<img class="img-responsive center-block" alt="Network with seven vertices and twelve edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="7 頂点と 12 辺で構成されるネットワーク" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
 
-The same network can be represented by the matrix below.
+このネットワークを次のような行列で表すことができます。
 
 |   | A  | B  | C  | D  | E  | F  | G  |
 | - | -- | -- | -- | -- | -- | -- | -- |
@@ -25,15 +25,15 @@ The same network can be represented by the matrix below.
 | G | -  | -  | -  | 23 | 11 | 27 | -  |
 
 
-However, it is possible to optimise the network by removing some edges and still ensure that all points on the network remain connected. The network which achieves the maximum saving is shown below. It has a weight of 93, representing a saving of 243 − 93 = 150 from the original network.
+しかし、ネットワーク上のすべての頂点がつながっている状態を保ちながら一部の辺を取り除くことにより、このネットワークを最適化することができます。 最大限の節約を実現するネットワークを下に示します。 このネットワークの重みは 93 で、元のネットワークからの節約量は 243 - 93 = 150 となります。
 
-<img class="img-responsive center-block" alt="Network with seven vertices and left six edges: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="7 頂点と残された 6 辺 (AB, BD, CA, DE, DF, EG) で構成されるネットワーク" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
 
-Using `network`, an 2D array representing network in matrix form, find the maximum saving which can be achieved by removing redundant edges whilst ensuring that the network remains connected. Vertices not having connection will be represented with `-1`.
+ネットワークを行列形式で表す二次元配列 `network` を使用して、ネットワークの連結を保ちながら余分な辺を取り除くことで実現できる最大節約量を求めなさい。 連結されていない頂点は `-1` で表されます。
 
 # --hints--
 
-`minimalNetwork(testNetwork)` should return `259679`.
+`minimalNetwork(testNetwork)` は `259679` を返す必要があります。
 
 ```js
 assert.strictEqual(minimalNetwork(_testNetwork), 259679);

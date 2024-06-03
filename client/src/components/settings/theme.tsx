@@ -21,20 +21,18 @@ export default function ThemeSettings({
   const { t } = useTranslation();
 
   return (
-    <form onSubmit={(e: React.FormEvent): void => e.preventDefault()}>
-      <ToggleButtonSetting
-        action={t('settings.labels.night-mode')}
-        flag={currentTheme === Themes.Night}
-        flagName='currentTheme'
-        offLabel={t('buttons.off')}
-        onLabel={t('buttons.on')}
-        toggleFlag={() => {
-          toggleNightMode(
-            currentTheme === Themes.Night ? Themes.Default : Themes.Night
-          );
-        }}
-      />
-    </form>
+    <ToggleButtonSetting
+      action={t('settings.labels.night-mode')}
+      flag={currentTheme === Themes.Night}
+      flagName='currentTheme'
+      offLabel={t('buttons.off')}
+      onLabel={t('buttons.on')}
+      toggleFlag={() => {
+        toggleNightMode(
+          currentTheme === Themes.Night ? Themes.Default : Themes.Night
+        );
+      }}
+    />
   );
 }
 

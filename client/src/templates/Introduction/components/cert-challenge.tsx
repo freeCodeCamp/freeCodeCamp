@@ -1,14 +1,15 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import { navigate } from 'gatsby-link';
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button } from '@freecodecamp/ui';
+
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
-} from '../../../../../config/certification-settings';
-import { SuperBlocks } from '../../../../../config/superblocks';
+} from '../../../../../shared/config/certification-settings';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
@@ -19,7 +20,10 @@ import {
 } from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
 import { verifyCert } from '../../../redux/settings/actions';
-import { fullCertMap } from '../../../resources/cert-and-project-map';
+import {
+  type CertTitle,
+  liveCerts
+} from '../../../../config/cert-and-project-map';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
@@ -34,7 +38,7 @@ interface CertChallengeProps {
   isSignedIn: boolean;
   currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
-  title: (typeof fullCertMap)[number]['title'];
+  title: CertTitle;
   user: User;
   verifyCert: typeof verifyCert;
 }
@@ -80,7 +84,7 @@ const CertChallenge = ({
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
-  const cert = fullCertMap.find(x => x.title === title);
+  const cert = liveCerts.find(x => x.title === title);
   if (!cert) throw Error(`Certification ${title} not found`);
   const certSlug = cert.certSlug;
 
@@ -120,13 +124,12 @@ const CertChallenge = ({
         : createFlashMessage(honestyInfoMessage);
     };
   return (
-    <div className='block'>
+    <div>
       {isSignedIn && (
         <Button
           block={true}
-          bsStyle='primary'
-          className='cert-btn'
-          href={isCertified ? certLocation : `/settings#certification-settings`}
+          variant='primary'
+          href={isCertified ? certLocation : `/settings#cert-${certSlug}`}
           onClick={() => (isCertified ? createClickHandler(certSlug) : false)}
         >
           {isCertified && userLoaded

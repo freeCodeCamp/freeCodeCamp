@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash-es';
 import { handleActions } from 'redux-actions';
 
-import { getLines } from '../../../../../utils/get-lines';
+import { getLines } from '../../../../../shared/utils/get-lines';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
 import codeStorageEpic from './code-storage-epic';
@@ -29,12 +29,10 @@ const initialState = {
   },
   challengeTests: [],
   consoleOut: [],
-  examResults: {
-    timeInSeconds: 0,
-    results: []
-  },
+  userCompletedExam: null,
   hasCompletedBlock: false,
   isBuildEnabled: true,
+  isExecuting: false,
   isResetting: false,
   logsOut: [],
   modal: {
@@ -42,7 +40,10 @@ const initialState = {
     help: false,
     video: false,
     reset: false,
+    exitExam: false,
     finishExam: false,
+    examResults: false,
+    survey: false,
     projectPreview: false,
     shortcuts: false
   },
@@ -52,7 +53,8 @@ const initialState = {
   projectFormValues: {},
   successMessage: 'Happy Coding!',
   isAdvancing: false,
-  chapterSlug: ''
+  chapterSlug: '',
+  isSubmitting: false
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
@@ -64,6 +66,18 @@ export const sagas = [
 
 export const reducer = handleActions(
   {
+    [actionTypes.submitChallenge]: state => ({
+      ...state,
+      isSubmitting: true
+    }),
+    [actionTypes.submitChallengeComplete]: state => ({
+      ...state,
+      isSubmitting: false
+    }),
+    [actionTypes.submitChallengeError]: state => ({
+      ...state,
+      isSubmitting: false
+    }),
     [actionTypes.createFiles]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload,
@@ -201,9 +215,9 @@ export const reducer = handleActions(
       ...state,
       chapterSlug: payload
     }),
-    [actionTypes.setExamResults]: (state, { payload }) => ({
+    [actionTypes.setUserCompletedExam]: (state, { payload }) => ({
       ...state,
-      examResults: payload
+      userCompletedExam: payload
     }),
     [actionTypes.closeModal]: (state, { payload }) => ({
       ...state,
@@ -222,7 +236,12 @@ export const reducer = handleActions(
     [actionTypes.executeChallenge]: state => ({
       ...state,
       currentTab: 3,
-      attempts: state.attempts + 1
+      attempts: state.attempts + 1,
+      isExecuting: true
+    }),
+    [actionTypes.executeChallengeComplete]: state => ({
+      ...state,
+      isExecuting: false
     }),
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,
@@ -236,7 +255,11 @@ export const reducer = handleActions(
           [payload]: !state.visibleEditors[payload]
         }
       };
-    }
+    },
+    [actionTypes.createQuestion]: (state, { payload }) => ({
+      ...state,
+      description: payload
+    })
   },
   initialState
 );

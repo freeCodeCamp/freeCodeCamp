@@ -18,7 +18,7 @@ Thereafter, each player may remove at most twice the number of stones his oppone
 
 The player who removes the last stone wins.
 
-E.g. $n = 5$
+Ejemplo. $n = 5$
 
 If the first player takes anything more than one stone the next player will be able to take all remaining stones.
 

@@ -8,7 +8,7 @@ dashedName: how-to-use-passport-strategies
 
 # --description--
 
-In the `index.pug` file supplied, there is a login form. Es wird durch das Inline-JavaScript `if showLogin` ausgeblendet, wobei das Formular hinten eingerückt wird.
+In der bereitgestellten Datei `index.pug` befindet sich ein Anmeldeformular. Es wird durch das Inline-JavaScript `if showLogin` ausgeblendet, wobei das Formular hinten eingerückt wird.
 
 Füge innerhalb des `res.render` dieser Seite dem Objekt eine neue Variable hinzu, `showLogin: true`. Wenn du deine Seite aktualisierst, solltest du das Formular sehen! Das Formular übermittelt **POST**-Anfragen an `/login`. Hier solltest du also die POST-Anfrage annehmen und den Nutzer authentifizieren.
 
@@ -24,7 +24,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. 
 
 # --hints--
 
-All steps should be correctly implemented in `server.js`.
+Alle Schritte sollten in `server.js` korrekt implementiert sein.
 
 ```js
 async (getUserInput) => {

@@ -9,11 +9,11 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-請注意，本項目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化項目的基礎上進行開發，你也可以從 <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 跨站腳本（XSS）是一種常見的攻擊類型，惡意腳本被注入到易受攻擊的頁面，目的是竊取敏感數據，如會話 cookies 或密碼。
 
-降低 XSS 攻擊風險的基本規則很簡單："永遠不要相信用戶的輸入"。 作爲一個開發者，你應該始終對所有來自外部的輸入進行消毒。 這包括來自表單、GET 查詢URL，甚至來自 POST 請求體的數據。 淨化意味着你應該找到並編碼可能有危險的字符，例如 &lt;, >。
+The basic rule to lower the risk of an XSS attack is simple: "Never trust user's input". 作爲一個開發者，你應該始終對所有來自外部的輸入進行消毒。 這包括來自表單、GET 查詢URL，甚至來自 POST 請求體的數據。 淨化意味着你應該找到並編碼可能有危險的字符，例如 &lt;, >。
 
 現代瀏覽器通過採用更好的軟件策略來幫助降低風險。 通常情況下，這些都是可以通過 http 頭文件來配置的。
 

@@ -8,7 +8,8 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**目標:** <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a> と似た機能を持つアプリを作成します
+**目標:** <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a> と似た機能を持つアプリを作成してください。 **このデモプロジェクトをコピーしないでください**。
+
 
 **ユーザーストーリー:**
 
@@ -197,7 +198,7 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

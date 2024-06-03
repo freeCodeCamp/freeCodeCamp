@@ -1,6 +1,6 @@
 ---
 id: 587d7fb4367417b2b2512bfd
-title: Додайте ключові слова до свого package.json
+title: Додайте ключові слова до package.json
 challengeType: 2
 forumTopicId: 301526
 dashedName: add-keywords-to-your-package-json
@@ -14,7 +14,7 @@ dashedName: add-keywords-to-your-package-json
 "keywords": [ "descriptive", "related", "words" ],
 ```
 
-Як бачите, це поле структуровано як масив подвійних цитованих рядків.
+Як бачите, це поле структуровано як масив рядків у подвійних лапках.
 
 # --instructions--
 
@@ -39,7 +39,7 @@ package.json повинен мати дійсний ключ «keywords»
   );
 ```
 
-Поле «keywords» повинне бути масивом
+Поле «keywords» має бути масивом
 
 ```js
 (getUserInput) =>
@@ -54,7 +54,7 @@ package.json повинен мати дійсний ключ «keywords»
   );
 ```
 
-«keywords» повинні містити «freecodecamp»
+«keywords» має містити «freecodecamp»
 
 ```js
 (getUserInput) =>

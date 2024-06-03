@@ -30,5 +30,5 @@ scan through the entire input a little at a time and learn local patterns.
 
 ## --video-solution--
 
-3
+الثالث
 

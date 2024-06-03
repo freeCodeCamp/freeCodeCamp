@@ -1,6 +1,6 @@
 ---
 id: 5900f47c1000cf542c50ff8e
-title: 'Problem 270: Cutting Squares'
+title: 'Завдання 270: розрізання квадратів'
 challengeType: 1
 forumTopicId: 301920
 dashedName: problem-270-cutting-squares
@@ -8,15 +8,15 @@ dashedName: problem-270-cutting-squares
 
 # --description--
 
-A square piece of paper with integer dimensions $N×N$ is placed with a corner at the origin and two of its sides along the $x$- and $y$-axes. Then, we cut it up respecting the following rules:
+Квадратний шматок паперу з цілими розмірами $N×N$ розміщений на початку координат, а його сторони розміщені вздовж осей $x$ та $y$. Цей шматок розрізають відповідно до таких правил:
 
-- We only make straight cuts between two points lying on different sides of the square, and having integer coordinates.
-- Two cuts cannot cross, but several cuts can meet at the same border point.
-- Proceed until no more legal cuts can be made.
+- Між двома точками на різних сторонах квадрата можна робити лише прямі розрізи, а координати точок мають бути цілими числами.
+- Два розрізи не можуть перетинатись, але вони можуть мати спільну точку на краю.
+- Продовжуйте різати квадрат, поки є можливість.
 
-Counting any reflections or rotations as distinct, we call $C(N)$ the number of ways to cut an $N×N$ square. For example, $C(1) = 2$ and $C(2) = 30$ (shown below).
+Вважаючи будь-які віддзеркалення або обертання різними, назвемо $C(N)$ кількістю способів розрізати квадрат $N×N$. Наприклад, $C(1) = 2$ та $C(2) = 30$ (показано нижче).
 
-<img class="img-responsive center-block" alt="ways to cut 2x2 square, counting reflections and rotations as distinct" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="способи розрізати квадрат 2x2, вважаючи віддзеркалення та обертання різними" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;" />
 
 Чому дорівнює $C(30)\bmod {10}^8$ ?
 

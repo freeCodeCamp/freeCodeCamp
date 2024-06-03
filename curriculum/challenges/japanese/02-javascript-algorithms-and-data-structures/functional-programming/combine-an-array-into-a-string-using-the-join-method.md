@@ -27,13 +27,13 @@ const str = arr.join(" ");
 コードでは `join` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.join/g));
+assert(__helpers.removeJSComments(code).match(/\.join/g));
 ```
 
 `replace` メソッドを使用しないでください。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `sentensify("May-the-force-be-with-you")` は文字列を返す必要があります。

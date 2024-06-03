@@ -27,7 +27,7 @@ body
       p Get on it!
 ```
 
-The above yields the following HTML:
+Daraus ergibt sich der folgende HTML-Code:
 
 ```html
 <head>
@@ -40,7 +40,7 @@ The above yields the following HTML:
 </body>
 ```
 
-Your `index.pug` file included in your project, uses the variables `title` and `message`.
+Die in deinem Projekt enthaltene `index.pug`-Datei verwendet die Variablen `title` und `message`.
 
 Pass those from your server to the Pug file by adding an object as a second argument to your `res.render` call with the variables and their values. Give the `title` a value of `Hello` and `message` a value of `Please log in`.
 

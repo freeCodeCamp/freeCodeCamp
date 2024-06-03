@@ -1,6 +1,6 @@
 ---
 id: 5900f4481000cf542c50ff5a
-title: 'Problem 219: Skew-cost coding'
+title: 'Завдання 219: розрахунок асиметричної ціни'
 challengeType: 1
 forumTopicId: 301861
 dashedName: problem-219-skew-cost-coding
@@ -8,17 +8,17 @@ dashedName: problem-219-skew-cost-coding
 
 # --description--
 
-Let $A$ and $B$ be bit strings (sequences of 0's and 1's).
+Нехай $A$ та $B$ будуть бітовими рядками (послідовності з 0 та 1).
 
-If $A$ is equal to the <u>left</u>most length($A$) bits of $B$, then $A$ is said to be a prefix of $B$.
+Якщо $A$ дорівнює бітам <u>найлівішої</u> частини $B$, то $A$ називають префіксом $B$.
 
-For example, 00110 is a prefix of <u>00110</u>1001, but not of 00111 or 100110.
+Наприклад, 00110 є префіксом <u>00110</u>1001, а не 00111 або 100110.
 
-A prefix-free code of size $n$ is a collection of $n$ distinct bit strings such that no string is a prefix of any other. For example, this is a prefix-free code of size 6:
+Код без префіксу розміру $n$ — це набір $n$ окремих бітових рядків, де жоден рядок не є префіксом іншого. Наприклад, ось код без префіксу розміру 6:
 
 $$0000, 0001, 001, 01, 10, 11$$
 
-Now suppose that it costs one penny to transmit a '0' bit, but four pence to transmit a '1'. Then the total cost of the prefix-free code shown above is 35 pence, which happens to be the cheapest possible for the skewed pricing scheme in question. In short, we write $Cost(6) = 35$.
+Припустимо, за 1 копійку можна передати 0, а за 4 копійки — 1. Тоді загальна вартість даного коду без префіксів становитиме 35 копійок, що є найдешевшою можливою ціною при асиметричній ціновій політиці. Скорочено запишемо $Cost(6) = 35$.
 
 Чому дорівнює $Cost(10^9)$?
 

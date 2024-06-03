@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed308826
-title: Позначення батьківського елемента, використовуючи jQuery
+title: Націльте батьківські елементи за допомогою jQuiery
 challengeType: 6
 forumTopicId: 18321
 dashedName: target-the-parent-of-an-element-using-jquery
@@ -8,23 +8,23 @@ dashedName: target-the-parent-of-an-element-using-jquery
 
 # --description--
 
-Кожен HTML елемент має елемент `parent`, із якого він (успадковує) властивості `inherits`.
+Кожен елемент HTML має батьківський елемент, від якого успадковує властивості.
 
-For example, the `h3` element in your `jQuery Playground` has the parent element of `<div class="container-fluid">`, which itself has the parent element of `body`.
+Наприклад, елемент `h3` в `jQuery Playground` має батьківський елемент `<div class="container-fluid">`, який теж має батьківський елемент `body`.
 
-jQuery має функцію, що називається `parent()`, яка надає доступ до батьківського елементу будь-якого вибраного елементу.
+jQuery має функцію `parent()`, яка надає доступ до батьківських елементів будь-якого обраного елемента.
 
-Нижче наведено приклад, як можна використовувати функцію `parent()`, якщо необхідно зафарбувати фон батьківського елементу `left-well` у синій колір:
+Ось приклад, як використати функцію `parent()`, щоб надати батьківському елементу елемента `left-well` синій фон:
 
 ```js
 $("#left-well").parent().css("background-color", "blue")
 ```
 
-Зафарбуйте фон батьківського елемента `#target1` у червоний колір.
+Надайте батьківському елементу елемента `#target1` червоний фон.
 
 # --hints--
 
-Елемент `left-well` повинен мати червоний колір.
+Елемент `left-well` повинен мати червоний фон.
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-Використовуйте функцію `.parent()` для того, щоб змінити цей елемент.
+Використайте функцію `.parent()`, щоб змінити цей елемент.
 
 ```js
 assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
 ```
 
-Необхідно викликати метод `.parent()` для елемента `#target1`.
+Викличте метод `.parent()` до елемента `#target1`.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-Щоб додавати ці класи до елемента, використовуйте лише jQuery.
+Для додавання цих класів використовуйте лише jQuery.
 
 ```js
 assert(code.match(/<div class="well" id="left-well">/g));

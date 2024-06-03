@@ -15,7 +15,7 @@ dashedName: use-rgb-to-mix-colors
 
 Замініть шістнадцяткові коди на наш елемент `style` з правильними значеннями моделі RGB.
 
-<table class='table table-striped'><tbody><tr><th>Колір</th><th>RGB модель</th></tr><tr><td>Синій</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Червоний</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Рожевий</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Коричневий</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
+<table><tbody><tr><th>Колір</th><th>RGB модель</th></tr><tr><td>Синій</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Червоний</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Рожевий</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Коричневий</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
 # --hints--
 

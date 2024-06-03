@@ -1,4 +1,4 @@
-name: CI - Node.js Test Current
+name: CI - Node.js
 env:
   NODE_OPTIONS: '--max_old_space_size=6144'
 
@@ -23,15 +23,15 @@ permissions:
 jobs:
   lint:
     name: Lint
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
       fail-fast: false
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Check number of lockfiles
         run: |
@@ -42,12 +42,12 @@ jobs:
           fi
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -57,40 +57,79 @@ jobs:
           cp sample.env .env
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
+
+      - name: Install node_modules
+        run: pnpm install
+
+      - name: Check formatting
+        run: |
+          pnpm prettier --check . || [ $? -eq 1 ] && printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
 
       # The two prefixed installs are for the client update which are not,
       # currently, built as workspaces.
       - name: Lint Source Files
         run: |
           echo pnpm version $(pnpm -v)
-          pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           npm i --prefix=curriculum-server
           npm i --prefix=web
           pnpm run build:curriculum
           pnpm run lint
 
+  # DONT REMOVE THIS JOB.
+  # TODO: Refactor and use re-usable workflow and shared artifacts
+  build:
+    name: Build
+    needs: lint
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
+        with:
+          version: 9
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Set freeCodeCamp Environment Variables
+        run: cp sample.env .env
+
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm run build
+
   test:
     name: Test
-    needs: lint
-    runs-on: ubuntu-20.04
+    needs: build
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -101,7 +140,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
@@ -111,81 +150,33 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
 
       - name: Run Tests
         run: pnpm test
 
   test-upcoming:
-    name: Test Upcoming Changes
-    needs: lint
-    runs-on: ubuntu-20.04
+    name: Test - Upcoming Changes
+    needs: build
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
-
-      - name: Set Environment variables
-        run: |
-          cp sample.env .env
-          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          cat .env
-
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
-        with:
-          mongodb-version: 6.0
-          mongodb-replica-set: test-rs
-          mongodb-port: 27017
-
-      - name: Install Dependencies
-        run: |
-          echo pnpm version $(pnpm -v)
-          pnpm install
-          pnpm run create:config
-          pnpm run build:curriculum
-
-      - name: Run Tests
-        run: pnpm test
-
-  test-new:
-    name: Test New Curriculum
-    needs: lint
-    runs-on: ubuntu-20.04
-
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [18.x]
-
-    steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -198,7 +189,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
@@ -208,34 +199,34 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
 
       - name: Run Tests
         run: pnpm test
 
   test-localization:
-    name: Localize
-    needs: lint
-    runs-on: ubuntu-20.04
+    name: Test - i18n
+    needs: build
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18.x]
-        locale: [chinese, espanol]
+        node-version: [20.x]
+        locale: [portuguese, italian]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -246,7 +237,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@d26215f71b2ce60420a2a3776a25893d11a65f85 # 1.9.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
           mongodb-version: 6.0
           mongodb-replica-set: test-rs
@@ -259,37 +250,19 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:config
-          pnpm run build:curriculum
+          pnpm run create:shared
+
+      # DONT REMOVE THIS STEP.
+      # TODO: Refactor and use re-usable workflow and shared artifacts
+      - name: Build Client in ${{ matrix.locale }}
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: |
+          pnpm run build
 
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: pnpm test
-
-  failure-comment:
-    name: Comment on i18n Failure
-    needs: ['test', 'test-localization']
-    runs-on: ubuntu-20.04
-    if: ${{ always() && needs.test.result == 'success' && needs.test-localization.result == 'failure' }}
-    steps:
-      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
-        with:
-          github-token: ${{ secrets.CAMPERBOT_NO_TRANSLATE }}
-          script: |
-            const isDev = await github.rest.teams.getMembershipForUserInOrg({
-              org: "freeCodeCamp",
-              team_slug: "dev-team",
-              username: context.payload.pull_request.user.login
-            }).catch(() => ({status: 404}));
-            if (context.payload.pull_request.user.login !== "camperbot" && isDev.status !== 200) {
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: "Hi,\n\nIt looks like the localization tests have failed. This is expected when there are significant curriculum changes in the English version.\n\nThis could mean a Crowdin sync is required to address the scenario. Please check with our staff developer team, either on [Discord](https://discord.gg/KVUmVXA) or our [forums](https://forum.freecodecamp.org). They will confirm and take over helping you through the PR.\n\nThanks for your understanding and contribution."
-              })
-            } else if (isDev.status === 200) {
-              core.setFailed('This PR appears to touch translated curriculum files, but since you are on the dev team there is no message.');
-            }

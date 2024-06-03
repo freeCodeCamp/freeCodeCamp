@@ -8,7 +8,8 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**目标:** 构建一个功能类似于 <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个应用，它在功能上类似于 <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>。 **不要复制这个演示项目**。
+
 
 **用户需求:**
 
@@ -197,7 +198,7 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

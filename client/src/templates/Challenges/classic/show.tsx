@@ -9,9 +9,11 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
-import { challengeTypes } from '../../../../../config/challenge-types';
+import type { FitAddon } from 'xterm-addon-fit';
+
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import {
   ChallengeFiles,
@@ -56,6 +58,7 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
+import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
@@ -148,9 +151,17 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 
 const StepPreview = ({
   disableIframe,
-  previewMounted
-}: Pick<PreviewProps, 'disableIframe' | 'previewMounted'>) => {
-  return (
+  previewMounted,
+  challengeType,
+  xtermFitRef
+}: Pick<PreviewProps, 'disableIframe' | 'previewMounted'> & {
+  challengeType: number;
+  xtermFitRef: React.MutableRefObject<FitAddon | null>;
+}) => {
+  return challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ? (
+    <XtermTerminal xtermFitRef={xtermFitRef} />
+  ) : (
     <Preview
       className='full-height'
       disableIframe={disableIframe}
@@ -177,7 +188,6 @@ function ShowClassic({
         instructions,
         fields: { tests, blockName },
         challengeType,
-        removeComments,
         hasEditableBoundaries,
         superBlock,
         helpCategory,
@@ -211,9 +221,10 @@ function ShowClassic({
   const { t } = useTranslation();
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
-  const containerRef = useRef<HTMLElement>();
+  const containerRef = useRef<HTMLElement>(null);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
+  const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
@@ -222,15 +233,17 @@ function ShowClassic({
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  const showConsole = challengeType === challengeTypes.js;
   // TODO: show preview should NOT be computed like this. That determination is
   // made during the build (at least twice!). It should be either a prop or
   // computed from challengeType
-  const showPreview =
-    challengeType === challengeTypes.html ||
-    challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.python;
-
+  const showPreview = [
+    challengeTypes.html,
+    challengeTypes.modern,
+    challengeTypes.multifileCertProject,
+    challengeTypes.multifilePythonCertProject,
+    challengeTypes.python
+  ].includes(challengeType);
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
 
@@ -247,6 +260,8 @@ function ShowClassic({
 
     return isValidLayout ? reflexLayout : BASE_LAYOUT;
   };
+
+  const onPreviewResize = () => xtermFitRef.current?.fit();
 
   // layout: Holds the information of the panes sizes for desktop view
   const [layout, setLayout] = useState(getLayoutState());
@@ -333,11 +348,6 @@ function ShowClassic({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    initializeComponent(title);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tests, title]);
-
   const initializeComponent = (title: string): void => {
     initConsole('');
 
@@ -352,7 +362,6 @@ function ShowClassic({
     updateChallengeMeta({
       ...challengeMeta,
       title,
-      removeComments: removeComments !== false,
       challengeType,
       helpCategory
     });
@@ -420,12 +429,12 @@ function ShowClassic({
     <Hotkeys
       challengeType={challengeType}
       executeChallenge={executeChallenge}
-      innerRef={containerRef}
+      containerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
       usesMultifileEditor={usesMultifileEditor}
-      {...(editorRef && { editorRef: editorRef })}
+      editorRef={editorRef}
     >
       <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
         <Helmet title={windowTitle} />
@@ -443,10 +452,13 @@ function ShowClassic({
               showToolPanel: false
             })}
             notes={<Notes notes={notes} />}
+            onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
+                challengeType={challengeType}
                 disableIframe={resizing}
                 previewMounted={previewMounted}
+                xtermFitRef={xtermFitRef}
               />
             }
             windowTitle={windowTitle}
@@ -475,10 +487,13 @@ function ShowClassic({
             isFirstStep={isFirstStep}
             layoutState={layout}
             notes={<Notes notes={notes} />}
+            onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
+                challengeType={challengeType}
                 disableIframe={resizing}
                 previewMounted={previewMounted}
+                xtermFitRef={xtermFitRef}
               />
             }
             resizeProps={resizeProps}
@@ -486,6 +501,7 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             windowTitle={windowTitle}
+            startWithConsoleShown={showConsole}
           />
         )}
         <CompletionModal />
@@ -519,7 +535,6 @@ export const query = graphql`
         hasEditableBoundaries
         instructions
         notes
-        removeComments
         challengeType
         helpCategory
         videoUrl

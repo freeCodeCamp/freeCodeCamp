@@ -1,17 +1,15 @@
-import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import { Panel, Button } from '@freecodecamp/ui';
 
 import { deleteAccount, resetProgress } from '../../redux/settings/actions';
 import { FullWidthRow, Spacer } from '../helpers';
 import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
-
-import './danger-zone.css';
 
 interface DangerZoneProps {
   deleteAccount: () => void;
@@ -44,16 +42,15 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
 
   return (
     <FullWidthRow className='danger-zone text-center'>
-      <Panel bsStyle='danger' id='danger-zone'>
+      <Panel variant='danger' id='danger-zone'>
         <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
         <Spacer size='medium' />
         <p>{t('settings.danger.be-careful')}</p>
         <FullWidthRow>
           <Button
             block={true}
-            bsSize='lg'
-            bsStyle='danger'
-            className='btn-danger'
+            size='large'
+            variant='danger'
             onClick={toggleResetModal}
             type='button'
           >
@@ -62,9 +59,8 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           <Spacer size='small' />
           <Button
             block={true}
-            bsSize='lg'
-            bsStyle='danger'
-            className='btn-danger'
+            size='large'
+            variant='danger'
             onClick={toggleDeleteModal}
             type='button'
           >

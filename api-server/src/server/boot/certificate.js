@@ -12,8 +12,12 @@ import {
   certTypeTitleMap,
   certTypeIdMap,
   certIds,
-  oldDataVizId
-} from '../../../../config/certification-settings';
+  oldDataVizId,
+  currentCertifications,
+  upcomingCertifications,
+  legacyCertifications,
+  legacyFullStackCertification
+} from '../../../../shared/config/certification-settings';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { deprecatedEndpoint } from '../utils/disabled-endpoints';
@@ -38,7 +42,9 @@ const {
   dataAnalysisPyV7Id,
   machineLearningPyV7Id,
   relationalDatabaseV8Id,
-  collegeAlgebraPyV8Id
+  collegeAlgebraPyV8Id,
+  foundationalCSharpV8Id,
+  jsAlgoDataStructV8Id
 } = certIds;
 
 const log = debug('fcc:certification');
@@ -51,7 +57,7 @@ export default function bootCertificate(app) {
   const showCert = createShowCert(app);
   const verifyCert = createVerifyCert(certTypeIds, app);
 
-  api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
+  api.put('/certificate/verify', ifNoUser401, ifNoCertification404, verifyCert);
   api.get('/certificate/showCert/:username/:certSlug', showCert);
   api.get('/certificate/verify-can-claim-cert', deprecatedEndpoint);
   app.use(api);
@@ -59,12 +65,12 @@ export default function bootCertificate(app) {
 
 export function getFallbackFullStackDate(completedChallenges, completedDate) {
   var chalIds = [
-    certTypeIdMap[certTypes.respWebDesign],
-    certTypeIdMap[certTypes.jsAlgoDataStruct],
-    certTypeIdMap[certTypes.frontEndDevLibsId],
-    certTypeIdMap[certTypes.dataVis2018],
-    certTypeIdMap[certTypes.apisMicroservicesId],
-    certTypeIdMap[certTypes.legacyInfosecQaId]
+    respWebDesignId,
+    jsAlgoDataStructId,
+    frontEndDevLibsId,
+    dataVis2018Id,
+    apisMicroservicesId,
+    legacyInfosecQaId
   ];
 
   const latestCertDate = completedChallenges
@@ -74,14 +80,22 @@ export function getFallbackFullStackDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
-const certSlugs = Object.keys(certSlugTypeMap);
-
-function ifNoSuperBlock404(req, res, next) {
+export function ifNoCertification404(req, res, next) {
   const { certSlug } = req.body;
-  if (certSlug && certSlugs.includes(certSlug)) {
+  if (!certSlug) return res.status(404).end();
+  if (
+    currentCertifications.includes(certSlug) ||
+    legacyCertifications.includes(certSlug) ||
+    legacyFullStackCertification.includes(certSlug)
+  )
+    return next();
+  if (
+    process.env.SHOW_UPCOMING_CHANGES === 'true' &&
+    upcomingCertifications.includes(certSlug)
+  ) {
     return next();
   }
-  return res.status(404).end();
+  res.status(404).end();
 }
 
 const renderCertifiedEmail = loopback.template(
@@ -92,6 +106,10 @@ function createCertTypeIds(allChallenges) {
   return {
     // legacy
     [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, allChallenges),
+    [certTypes.jsAlgoDataStruct]: getCertById(
+      jsAlgoDataStructId,
+      allChallenges
+    ),
     [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, allChallenges),
     [certTypes.dataVis]: getCertById(legacyDataVisId, allChallenges),
     [certTypes.infosecQa]: getCertById(legacyInfosecQaId, allChallenges),
@@ -99,12 +117,12 @@ function createCertTypeIds(allChallenges) {
 
     // modern
     [certTypes.respWebDesign]: getCertById(respWebDesignId, allChallenges),
-    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
-    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
-    [certTypes.jsAlgoDataStruct]: getCertById(
-      jsAlgoDataStructId,
+    [certTypes.jsAlgoDataStructV8]: getCertById(
+      jsAlgoDataStructV8Id,
       allChallenges
     ),
+    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, allChallenges),
+    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
     [certTypes.apisMicroservices]: getCertById(
       apisMicroservicesId,
       allChallenges
@@ -127,11 +145,15 @@ function createCertTypeIds(allChallenges) {
     [certTypes.collegeAlgebraPyV8]: getCertById(
       collegeAlgebraPyV8Id,
       allChallenges
+    ),
+    [certTypes.foundationalCSharpV8]: getCertById(
+      foundationalCSharpV8Id,
+      allChallenges
     )
   };
 }
 
-function canClaim(ids, completedChallenges = []) {
+function hasCompletedTests(ids, completedChallenges = []) {
   return _.every(ids, ({ id }) =>
     _.find(completedChallenges, ({ id: completedId }) => completedId === id)
   );
@@ -154,8 +176,8 @@ function sendCertifiedEmail(
     name,
     username,
     isRespWebDesignCert,
+    isJsAlgoDataStructCertV8,
     isFrontEndLibsCert,
-    isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
     isQaCertV7,
@@ -164,15 +186,16 @@ function sendCertifiedEmail(
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8
   },
   send$
 ) {
   if (
     !isEmail(email) ||
     !isRespWebDesignCert ||
+    !isJsAlgoDataStructCertV8 ||
     !isFrontEndLibsCert ||
-    !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
     !isQaCertV7 ||
@@ -181,7 +204,8 @@ function sendCertifiedEmail(
     !isDataAnalysisPyCertV7 ||
     !isMachineLearningPyCertV7 ||
     !isRelationalDatabaseCertV8 ||
-    !isCollegeAlgebraPyCertV8
+    !isCollegeAlgebraPyCertV8 ||
+    !isFoundationalCSharpCertV8
   ) {
     return Observable.just(false);
   }
@@ -205,6 +229,7 @@ function getUserIsCertMap(user) {
   const {
     isRespWebDesignCert = false,
     isJsAlgoDataStructCert = false,
+    isJsAlgoDataStructCertV8 = false,
     isFrontEndLibsCert = false,
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
@@ -219,12 +244,14 @@ function getUserIsCertMap(user) {
     isDataAnalysisPyCertV7 = false,
     isMachineLearningPyCertV7 = false,
     isRelationalDatabaseCertV8 = false,
-    isCollegeAlgebraPyCertV8 = false
+    isCollegeAlgebraPyCertV8 = false,
+    isFoundationalCSharpCertV8 = false
   } = user;
 
   return {
     isRespWebDesignCert,
     isJsAlgoDataStructCert,
+    isJsAlgoDataStructCertV8,
     isFrontEndLibsCert,
     is2018DataVisCert,
     isApisMicroservicesCert,
@@ -239,7 +266,8 @@ function getUserIsCertMap(user) {
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8
   };
 }
 
@@ -276,7 +304,7 @@ function createVerifyCert(certTypeIds, app) {
         }
 
         const { id, tests, challengeType } = challenge;
-        if (!canClaim(tests, user.completedChallenges)) {
+        if (!hasCompletedTests(tests, user.completedChallenges)) {
           return Observable.just({
             type: 'info',
             message: 'flash.incomplete-steps',
@@ -374,6 +402,7 @@ function createShowCert(app) {
       isRespWebDesignCert: true,
       isFrontEndLibsCert: true,
       isJsAlgoDataStructCert: true,
+      isJsAlgoDataStructCertV8: true,
       isDataVisCert: true,
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
@@ -385,6 +414,7 @@ function createShowCert(app) {
       isMachineLearningPyCertV7: true,
       isRelationalDatabaseCertV8: true,
       isCollegeAlgebraPyCertV8: true,
+      isFoundationalCSharpCertV8: true,
       isHonest: true,
       username: true,
       name: true,
@@ -439,7 +469,9 @@ function createShowCert(app) {
         });
       }
 
-      if (!user.name) {
+      // If the user does not have a name, and have set their name to public,
+      // warn them. Otherwise, fallback to username
+      if (!user.name && user.showName) {
         return res.json({
           messages: [
             {
@@ -506,6 +538,7 @@ function createShowCert(app) {
 
         if (!showName) {
           return res.json({
+            certSlug,
             certTitle,
             username,
             date: completedDate,
@@ -514,6 +547,7 @@ function createShowCert(app) {
         }
 
         return res.json({
+          certSlug,
           certTitle,
           username,
           name,

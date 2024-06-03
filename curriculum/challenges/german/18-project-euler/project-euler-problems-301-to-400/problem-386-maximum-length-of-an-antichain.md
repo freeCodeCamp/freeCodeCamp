@@ -1,6 +1,6 @@
 ---
 id: 5900f4ef1000cf542c510001
-title: 'Problem 386: Maximum length of an antichain'
+title: 'Problem 386: Maximale Länge einer Antikette'
 challengeType: 1
 forumTopicId: 302050
 dashedName: problem-386-maximum-length-of-an-antichain
@@ -10,15 +10,15 @@ dashedName: problem-386-maximum-length-of-an-antichain
 
 Let $n$ be an integer and $S(n)$ be the set of factors of $n$.
 
-A subset $A$ of $S(n)$ is called an antichain of $S(n)$ if $A$ contains only one element or if none of the elements of $A$ divides any of the other elements of $A$.
+Eine Teilmenge $A$ von $S(n)$ heißt eine Antikette von $S(n)$, wenn $A$ nur ein Element enthält oder wenn keines der Elemente von $A$ eines der anderen Elemente von $A$ teilt.
 
 For example: $S(30) = \\{1, 2, 3, 5, 6, 10, 15, 30\\}$
 
-$\\{2, 5, 6\\}$ is not an antichain of $S(30)$.
+$\\{2, 5, 6\\}$ ist keine Antikette von $S(30)$.
 
-$\\{2, 3, 5\\}$ is an antichain of $S(30)$.
+$\\{2, 3, 5\\}$ ist eine Antikette von $S(30)$.
 
-Let $N(n)$ be the maximum length of an antichain of $S(n)$.
+Lasse $N(n)$ die maximale Länge einer Antikette von $S(n)$.
 
 Find $\sum N(n)$ for $1 ≤ n ≤ {10}^8$
 

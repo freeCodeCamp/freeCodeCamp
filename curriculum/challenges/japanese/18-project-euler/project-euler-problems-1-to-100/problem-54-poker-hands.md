@@ -1,6 +1,6 @@
 ---
 id: 5900f3a21000cf542c50feb5
-title: 'Problem 54: Poker hands'
+title: '問題 54: ポーカーハンド'
 challengeType: 1
 forumTopicId: 302165
 dashedName: problem-54-poker-hands
@@ -8,54 +8,54 @@ dashedName: problem-54-poker-hands
 
 # --description--
 
-In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+カードゲームのポーカーでは、ハンドは 5 枚のカードからなり、次のように役が最下位から最上位までランク付けされています。
 
 <ul>
-  <li>High Card: Highest value card.</li>
-  <li>One Pair: Two cards of the same value.</li>
-  <li>Two Pairs: Two different pairs.</li>
-  <li>Three of a Kind: Three cards of the same value.</li>
-  <li>Straight: All cards are consecutive values.</li>
-  <li>Flush: All cards of the same suit.</li>
-  <li>Full House: Three of a kind and a pair.</li>
-  <li>Four of a Kind: Four cards of the same value.</li>
-  <li>Straight Flush: All cards are consecutive values of same suit.</li>
-  <li>Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.</li>
+  <li>ハイカード: (手の中で) 最も値が高いカード。</li>
+  <li>ワンペア: 同じ値の 2 枚のカード。</li>
+  <li>ツーペア: 2 組の異なるペア。</li>
+  <li>スリーカード: 同じ値の 3 枚のカード。</li>
+  <li>ストレート: すべてのカードの値が連続している。</li>
+  <li>フラッシュ: すべてのカードが同じスート (マーク)。</li>
+  <li>フルハウス: スリーカードとワンペア。</li>
+  <li>フォーカード: 同じ値の 4 枚のカード。</li>
+  <li>ストレートフラッシュ: すべてのカードが同じスートで、値が連続している。</li>
+  <li>ロイヤルフラッシュ: 同じスートの 10, J, Q, K, A</li>
 </ul>
 
-The cards are valued in the order: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+カードの値は、小さい方から順に 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A です。
 
-If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+2 人のプレイヤーが同じランクのハンドを持っている場合、最も高い値を持つランクが勝ちます。例えば、8 のペアは 5 のペアに勝ちます (下の例 1を参照)。 しかし、2 つのランクが同じ値を持つ場合、例えば 2 人とも Q のペアを持っている場合、各ハンド内の最高値のカードが比較されます (下の例 4 を参照)。最高値のカードが同じであれば、2 番目に値の大きいカードが比較されます。
 
-Consider the following five hands dealt to two players:
+2 人のプレイヤーに配られた次の 5 つのハンドについて考えます。
 
-| Hand                      | Player 1                                                              | Player 2                                                               | Winner   |
-| ------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------- |
-| <strong>1</strong> | 5H 5C 6S 7S KD <br> Pair of Fives                               | 2C 3S 8S 8D TD <br> Pair of Eights                               | Player 2 |
-| <strong>2</strong> | 5D 8C 9S JS AC <br> Highest card Ace                            | 2C 5C 7D 8S QH <br> Highest card Queen                           | Player 1 |
-| <strong>3</strong> | 2D 9C AS AH AC <br> Three Aces                                  | 3D 6D 7D TD QD <br> Flush with Diamonds                          | Player 2 |
-| <strong>4</strong> | 4D 6S 9H QH QC <br> Pair of Queens <br> Highest card Nine | 3D 6D 7H QD QS <br> Pair of Queens <br> Highest card Seven | Player 1 |
-| <strong>5</strong> | 2H 2D 4C 4D 4S <br> Full House <br> with Three Fours      | 3C 3D 3S 9S 9D <br> Full House <br> with Three Threes      | Player 1 |
+| ハンド                       | プレイヤー 1                                               | プレイヤー 2                                               | 勝者      |
+| ------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ------- |
+| <strong>1</strong> | 5H 5C 6S 7S KD <br> 5 のペア                       | 2C 3S 8S 8D TD <br> 8 のペア                       | プレイヤー 2 |
+| <strong>2</strong> | 5D 8C 9S JS AC <br> 最高カード A                     | 2C 5C 7D 8S QH <br> 最高カード Q                     | プレイヤー 1 |
+| <strong>3</strong> | 2D 9C AS AH AC <br> A のスリーカード                   | 3D 6D 7D TD QD <br> ダイヤのフラッシュ                   | プレイヤー 2 |
+| <strong>4</strong> | 4D 6S 9H QH QC <br> Qのペア <br> 最高カード 9     | 3D 6D 7H QD QS <br> Qのペア <br> 最高カード 7     | プレイヤー 1 |
+| <strong>5</strong> | 2H 2D 4C 4D 4S <br> 4 のスリーカードがある<br>フルハウス | 3C 3D 3S 9S 9D <br> 3 のスリーカードがある<br>フルハウス | プレイヤー 1 |
 
-The global array (`handsArr`) passed to the function, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+関数に渡されるグローバル配列 (`handsArr`) には、2 人のプレイヤーに配られる 1,000 種類の無作為なハンドが含まれています。 ファイルの各行には 10 枚のカードが含まれています (1 つのスペースで区切られている)。最初の 5 枚はプレイヤー 1 のカード、最後の 5 枚はプレイヤー 2 のカードです。 仮定として、すべてのハンドは有効であり (無効な文字や重複カードはない)、各プレイヤーのハンドに特定の順序はなく、また、それぞれのハンドに明確な勝者がいます。
 
-How many hands does Player 1 win?
+プレイヤー 1 は何回勝ちますか。
 
 # --hints--
 
-`pokerHands(testArr)` should return a number.
+`pokerHands(testArr)` は数値を返す必要があります。
 
 ```js
 assert(typeof pokerHands(testArr) === 'number');
 ```
 
-`pokerHands(testArr)` should return 2.
+`pokerHands(testArr)` は 2 を返す必要があります。
 
 ```js
 assert.strictEqual(pokerHands(testArr), 2);
 ```
 
-`pokerHands(handsArr)` should return 376.
+`pokerHands(handsArr)` は 376 を返す必要があります。
 
 ```js
 assert.strictEqual(pokerHands(handsArr), 376);

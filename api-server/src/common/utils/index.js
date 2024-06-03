@@ -18,7 +18,8 @@ export const fixCompletedChallengeItem = obj =>
     'githubLink',
     'challengeType',
     'files',
-    'isManuallyApproved'
+    'isManuallyApproved',
+    'examResults'
   ]);
 
 export const fixSavedChallengeItem = obj =>
@@ -26,3 +27,8 @@ export const fixSavedChallengeItem = obj =>
 
 export const fixPartiallyCompletedChallengeItem = obj =>
   pick(obj, ['id', 'completedDate']);
+
+export const fixCompletedExamItem = obj =>
+  pick(obj, ['id', 'completedDate', 'challengeType', 'examResults']);
+
+export const fixCompletedSurveyItem = obj => pick(obj, ['title', 'responses']);

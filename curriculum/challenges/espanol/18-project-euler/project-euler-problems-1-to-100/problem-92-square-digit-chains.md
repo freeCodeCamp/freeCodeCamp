@@ -10,7 +10,7 @@ dashedName: problem-92-square-digit-chains
 
 A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
 
-For example,
+Por ejemplo,
 
 $$\begin{align}   & 44 → 32 → 13 → 10 → \boldsymbol{1} → \boldsymbol{1}\\\\
   & 85 → \boldsymbol{89} → 145 → 42 → 20 → 4 → 16 → 37 → 58 → \boldsymbol{89}\\\\ \end{align}$$

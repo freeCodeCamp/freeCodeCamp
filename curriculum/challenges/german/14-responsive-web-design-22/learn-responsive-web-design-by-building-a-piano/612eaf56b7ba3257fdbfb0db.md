@@ -7,19 +7,19 @@ dashedName: step-21
 
 # --description--
 
-The piano needs the freeCodeCamp logo to make it official.
+Das Klavier benötigt das freeCodeCamp-Logo, um es offiziell aussehen zu lassen.
 
-Add an `img` element before your `.keys` element. Give the `img` a `class` of `logo`, and set the `src` to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`. Give it an `alt` text of `freeCodeCamp Logo`.
+Füge ein `img`-Element vor deinem `.keys`-Element ein. Weise dem `img` eine `class` von `logo` zu und setze die `src` auf `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`. Weise ihm den `alt`-Text `freeCodeCamp Logo` zu.
 
 # --hints--
 
-You should add a new `img` element.
+Du solltest ein neues `img`-Element hinzufügen.
 
 ```js
 assert(document.querySelectorAll('img')?.length === 1);
 ```
 
-Your `img` element should come before your first `.keys` element.
+Dein `img`-Element sollte vor deinem ersten `.keys`-Element stehen.
 
 ```js
 const img = document.querySelector('img');
@@ -27,27 +27,27 @@ assert(img?.nextElementSibling?.className === 'keys');
 assert(img?.previousElementSibling === null);
 ```
 
-Your `img` element should have a `class` set to `logo`.
+Dein `img`-Element sollte eine `class` auf `logo` gesetzt haben.
 
 ```js
 const img = document.querySelector('img');
 assert(img?.className === 'logo');
 ```
 
-Your `img` element should have a `src` set to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`.
+Dein `img`-Element sollte einen `src` auf `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg` gesetzt haben.
 
 ```js
 const img = document.querySelector('img');
 assert(img?.getAttribute('src') === 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
 ```
 
-Your `img` element should have an `alt` attribute set to `freeCodeCamp Logo`.
+Dein `img`-Element sollte ein `alt`-Attribut auf `freeCodeCamp Logo` gesetzt haben.
 
 ```js
 assert(document.querySelector('img')?.getAttribute('alt')?.toLowerCase() === 'freecodecamp logo');
 ```
 
-Remember that casing and spelling matter.
+Denke daran, dass Groß- und Kleinschreibung sowie Rechtschreibung wichtig sind.
 
 ```js
 assert(document.querySelector('img')?.getAttribute('alt') === 'freeCodeCamp Logo');

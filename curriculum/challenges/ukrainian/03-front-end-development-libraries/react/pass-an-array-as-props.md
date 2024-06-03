@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d403616a
-title: Передача масиву в якості пропсів
+title: Передайте масив як пропси
 challengeType: 6
 forumTopicId: 301401
 dashedName: pass-an-array-as-props
@@ -8,7 +8,7 @@ dashedName: pass-an-array-as-props
 
 # --description--
 
-В останньому завданні було показано як передавати інформацію від батьківського компонента до дочірнього у якості `props` або властивостей. Це завдання демонструє як масиви можуть бути передані у якості `props`. Щоб передати масив елементу JSX, його слід обробляти як JavaScript і ставити у фігурні дужки.
+В попередньому завданні ви дізнались, як передати інформацію з батьківського компонента до дочірнього у вигляді пропсів (`props`) або властивостей. У цьому завданні дізнаємось, як передати масиви у вигляді пропсів. Щоб передати масив до елемента JSX, його потрібно розглядати як JavaScript та написати у фігурних дужках.
 
 ```jsx
 <ParentComponent>
@@ -22,15 +22,15 @@ dashedName: pass-an-array-as-props
 const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
 ```
 
-This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
+Це об’єднає всі елементи масиву `colors` у рядок, розділений комами, і створить `<p>green, blue, red</p>`. Пізніше ми дізнаємось про інші поширені методи відтворення масивів даних у React.
 
 # --instructions--
 
-There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
+У редакторі коду є компоненти `List` та `ToDo`. При відтворенні кожного `List` з компонента `ToDo`, передайте властивість `tasks`, призначену до масиву завдань (наприклад, `["walk dog", "workout"]`). Потім отримайте доступ до масиву `tasks` в компоненті `List`, показавши значення в межах елемента `p`. Використайте `join(", ")`, щоб показати масив `props.tasks` в елементі `p` як список, розділений комами. У сьогоднішньому списку має бути щонайменше 2 завдання, а у завтрашньому — щонайменше 3 завдання.
 
 # --hints--
 
-The `ToDo` component should return a single outer `div`.
+Компонент `ToDo` має повернути єдиний зовнішній `div`.
 
 ```js
 assert(
@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-The third child of the `ToDo` component should be an instance of the `List` component.
+Третій дочірній компонент компонента `ToDo` має бути екземпляром компонента `List`.
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-The fifth child of the `ToDo` component should be an instance of the `List` component.
+П’ятий дочірній компонент компонента `ToDo` має бути екземпляром компонента `List`.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
+Обидва екземпляри компонента `List` повинні мати властивість `tasks`, яка є типом масиву.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-The first `List` component representing the tasks for today should have 2 or more items.
+Перший компонент `List`, що представляє завдання на сьогодні, повинен містити 2 або більше елементів.
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The second `List` component representing the tasks for tomorrow should have 3 or more items.
+Другий компонент `List`, що представляє завдання на завтра, повинен містити 3 або більше елементів.
 
 ```js
 assert(
@@ -99,7 +99,7 @@ assert(
 );
 ```
 
-The `List` component should render the value from the `tasks` prop in the `p` tag.
+Компонент `List` має відтворити значення пропсу `tasks` в тегу `p`.
 
 ```js
 assert(

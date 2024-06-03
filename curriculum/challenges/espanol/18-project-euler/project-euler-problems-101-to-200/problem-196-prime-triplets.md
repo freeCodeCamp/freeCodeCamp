@@ -1,6 +1,6 @@
 ---
 id: 5900f4301000cf542c50ff42
-title: 'Problem 196: Prime triplets'
+title: 'Problema 196: Triplete de números primos'
 challengeType: 1
 forumTopicId: 301834
 dashedName: problem-196-prime-triplets
@@ -18,23 +18,23 @@ $$\begin{array}{rrr}   &  1 \\\\
   & 46 & \color{red}{47} & 48 & 49 & 50 & 51 & 52 & \color{red}{53} & 54 & 55 \\\\   & 56 & 57 & 58 & \color{red}{59} & 60 & \color{red}{61} & 62 & 63 & 64 & 65 & 66 \\\\
   & \cdots \end{array}$$
 
-Each positive integer has up to eight neighbours in the triangle.
+Cada entero positivo tiene hasta ocho vecinos en el triángulo.
 
-A set of three primes is called a prime triplet if one of the three primes has the other two as neighbours in the triangle.
+Un conjunto de tres primos se llama triplete si uno de los tres primos tiene los otros dos como vecinos en el triángulo.
 
-For example, in the second row, the prime numbers 2 and 3 are elements of some prime triplet.
+Por ejemplo, en la segunda fila, los números primos 2 y 3 son elementos de algún triplete primo.
 
-If row 8 is considered, it contains two primes which are elements of some prime triplet, i.e. 29 and 31. If row 9 is considered, it contains only one prime which is an element of some prime triplet: 37.
+Si se considera la fila 8, contiene dos primos que son elementos de algún triplete primo, es decir, 29 y 31. Si se considera la fila 9, sólo contiene un número primo que es uno de los elementos de algún triplete primo: 37.
 
-Define $S(n)$ as the sum of the primes in row $n$ which are elements of any prime triplet. Then $S(8) = 60$ and $S(9) = 37$.
+Define $S(n)$ como la suma de los primos en la fila $n$ que son elementos de cualquier triplete primo. Entonces $S(8) = 60$ y $S(9) = 37$.
 
-You are given that $S(10000) = 950007619$.
+Tienes que $S(10000) = 950007619$.
 
-Find $S(5678027) + S(7208785)$.
+Calcula $S(5678027) + S(7208785)$.
 
 # --hints--
 
-`primeTriplets()` should return `322303240771079940`.
+`primeTriplets()` debería devolver `322303240771079940`.
 
 ```js
 assert.strictEqual(primeTriplets(), 322303240771079940);

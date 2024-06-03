@@ -9,11 +9,19 @@ dashedName: step-15
 
 Katika hatua za awali ulitumia kipengele cha nanga kugeuza maandishi kuwa kiungo. Aina zingine za maudhui pia zinaweza kugeuzwa kuwa kiunga kwa kuifunga kwa tagi za nanga.
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 Geuza picha kuwa kiungo kwa kuizunguka na tagi za vipengele zinazofaa. Tumia `https://freecatphotoapp.com` kama thamani ya sifa `href`.
 
 # --hints--
 
-Unapaswa kuwa na kipengele cha `img` chenye thamani ya `src` ya `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Huenda umeifuta kwa bahati mbaya.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Huenda umeifuta kwa bahati mbaya.
 
 ```js
 assert(
@@ -29,7 +37,7 @@ Kipengele chako cha nanga (`a`) kinapaswa kuwa na tagi ya ufunguzi. Tagi za ufun
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You are missing a closing (`a`) tag after the image.
+Unakosa tagi ya kufunga ya (`a`) baada ya picha.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);

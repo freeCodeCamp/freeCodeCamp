@@ -1,22 +1,26 @@
 ---
 id: 647e23508acb466c97ccbeff
-title: 'Perform Operations on Arrays Using Helper Methods in C#'
+title: 'C# でヘルパー メソッドを使用して配列の操作を実行する'
 challengeType: 19
 dashedName: perform-operations-on-arrays-using-helpers-methods-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+このチャレンジには Microsoft Learn プラットフォームで実行するパートがあります。 下記の手順に従ってチャレンジを完了させてください:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-arrays-operations/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-arrays-operations/</a> and complete all the tasks for the "Perform Operations on Arrays Using Helper Methods in C#" module. This is required to earn the "Work with Variable Data in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. <a href="https://learn.microsoft.com/training/modules/csharp-arrays-operations/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-arrays-operations/</a> へ移動し、「C# でヘルパー メソッドを使用して配列の操作を実行する (Perform Operations on Arrays Using Helper Methods in C#)」モジュール内のすべてのタスクを完了してください。 これは、Microsoft Learn のトロフィー「C# コンソール アプリケーションで変数データを操作する」を獲得し、認定試験の受験資格を得るために**必須**となります。
+1. 完了後、このページに戻り、下記の質問に正しく回答してください。
+
+# --assignment--
+
+Microsoft Learn で「<a href="https://learn.microsoft.com/training/modules/csharp-arrays-operations/" target="_blank" rel="noreferrer">C# でヘルパー メソッドを使用して配列の操作を実行する</a>」モジュールを完了してください。 次に、下記の質問に回答してください。
 
 # --question--
 
 ## --text--
 
-Which method changes the order of items in an `string` array?
+`string` 配列の項目の順序を変更するメソッドはどれですか？
 
 ## --answers--
 

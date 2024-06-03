@@ -9,11 +9,19 @@ dashedName: step-15
 
 У попередніх кроках ви використовували елемент прив’язки, щоб перетворити текст на посилання. Інші типи вмісту також можна перетворити на посилання, загорнувши їх в теги прив’язки.
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 Перетворіть зображення на посилання, оточивши його необхідними теґами елементів. Використайте `https://freecatphotoapp.com` як значення атрибута `href` елемента прив'язки.
 
 # --hints--
 
-Ви повинні мати елемент `img` з `src` зі значенням `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Можливо, ви випадково видалили його.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Можливо, ви випадково видалили його.
 
 ```js
 assert(

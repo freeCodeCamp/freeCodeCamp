@@ -2,35 +2,34 @@
   margin: 1em 0 2em;
   width: 100%;
   height: 25px;
-  background: var(--gray-45);
+  background: var(--quaternary-background);
 }
 
 input[type='range'] {
-  -webkit-appearance: none;
+  appearance: none;
   overflow: hidden;
+  border: 2px solid var(--secondary-color);
 }
 
-input[type='range']:focus {
-  outline-color: transparent;
-}
 /* Special styling for WebKit/Blink */
 input[type='range']::-webkit-slider-thumb {
-  box-shadow: -2000px 0 0 2000px var(--gray-90);
+  box-shadow: -2000px 0 0 2000px var(--gray-45);
   -webkit-appearance: none;
-  border: 2px solid var(--secondary-color);
+  border: 2px solid var(--primary-color);
   height: 25px;
   width: 16px;
-  background: var(--quaternary-background);
+  background: var(--primary-background);
   cursor: pointer;
 }
 
 /* All the same stuff for Firefox */
 input[type='range']::-moz-range-thumb {
-  border: 2px solid var(--secondary-color);
+  box-shadow: -2000px 0 0 2000px var(--gray-45);
+  border: 2px solid var(--primary-color);
   border-radius: 0;
   height: 25px;
   width: 16px;
-  background: var(--quaternary-background);
+  background: var(--primary-background);
   cursor: pointer;
 }
 

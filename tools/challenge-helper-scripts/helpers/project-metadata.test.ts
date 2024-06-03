@@ -1,167 +1,202 @@
-import path from 'path';
-import mock from 'mock-fs';
+import fs from 'fs';
+import { join } from 'path';
 import {
   getMetaData,
   getProjectMetaPath,
   validateMetaData
 } from './project-metadata';
 
-describe('getProjectMetaPath helper', () => {
-  it('should return the meta path', () => {
-    const expected = path.join(
-      'curriculum',
-      'challenges',
-      `_meta/mock-project/meta.json`
-    );
+const basePath = join(
+  process.cwd(),
+  '__fixtures__' + process.env.JEST_WORKER_ID
+);
+const commonPath = join(basePath, 'curriculum', 'challenges');
 
-    process.env.CALLING_DIR =
-      'curriculum/challenges/english/superblock/mock-project';
+const block = 'project-project-metadata';
+const metaPath = join(commonPath, '_meta', block);
+const superBlockPath = join(
+  commonPath,
+  'english',
+  'superblock-project-metadata'
+);
+const projectPath = join(superBlockPath, block);
 
-    expect(getProjectMetaPath()).toEqual(expected);
-  });
-
-  afterEach(() => {
-    delete process.env.CALLING_DIR;
-  });
-});
-
-describe('getMetaData helper', () => {
+describe('project-metadata helper', () => {
   beforeEach(() => {
-    mock({
-      curriculum: {
-        challenges: {
-          english: {
-            superblock: {
-              'mock-project': {
-                'step-001.md': 'Lorem ipsum...',
-                'step-002.md': 'Lorem ipsum...',
-                'step-003.md': 'Lorem ipsum...'
-              }
-            }
-          },
-          _meta: {
-            'mock-project': {
-              'meta.json': `{
-      "id": "mock-id",
-      "challengeOrder": [{"id": "1", "title": "Step 1"}, {"id": "2", "title": "Step 2"}, {"id": "1", "title": "Step 3"}]}
-      `
-            }
-          }
-        }
-      }
+    fs.mkdirSync(superBlockPath, { recursive: true });
+    fs.mkdirSync(projectPath, { recursive: true });
+    fs.mkdirSync(metaPath, { recursive: true });
+  });
+  describe('getProjectMetaPath helper', () => {
+    it('should return the meta path', () => {
+      const expected = join(metaPath, 'meta.json');
+
+      process.env.CALLING_DIR = projectPath;
+
+      expect(getProjectMetaPath()).toEqual(expected);
     });
   });
 
-  it('should process requested file', () => {
-    const expected = {
-      id: 'mock-id',
-      challengeOrder: [
-        { id: '1', title: 'Step 1' },
-        { id: '2', title: 'Step 2' },
-        { id: '1', title: 'Step 3' }
-      ]
-    };
-    process.env.CALLING_DIR =
-      'curriculum/challenges/english/superblock/mock-project';
-    expect(getMetaData()).toEqual(expected);
+  describe('getMetaData helper', () => {
+    beforeEach(() => {
+      fs.writeFileSync(
+        join(projectPath, 'step-001.md'),
+        'Lorem ipsum...',
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, 'step-002.md'),
+        'Lorem ipsum...',
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, 'step-003.md'),
+        'Lorem ipsum...',
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(metaPath, 'meta.json'),
+        `{
+      "id": "mock-id",
+      "challengeOrder": [{"id": "1", "title": "Step 1"}, {"id": "2", "title": "Step 2"}, {"id": "1", "title": "Step 3"}]}`,
+        'utf-8'
+      );
+    });
+
+    it('should process requested file', () => {
+      const expected = {
+        id: 'mock-id',
+        challengeOrder: [
+          { id: '1', title: 'Step 1' },
+          { id: '2', title: 'Step 2' },
+          { id: '1', title: 'Step 3' }
+        ]
+      };
+      process.env.CALLING_DIR = projectPath;
+      expect(getMetaData()).toEqual(expected);
+    });
+
+    it('should throw if file is not found', () => {
+      process.env.CALLING_DIR =
+        'curriculum/challenges/english/superblock/mick-priject';
+
+      const errorPath = join(
+        'curriculum',
+        'challenges',
+        '_meta',
+        'mick-priject',
+        'meta.json'
+      );
+      expect(() => {
+        getMetaData();
+      }).toThrowError(
+        new Error(`ENOENT: no such file or directory, open '${errorPath}'`)
+      );
+    });
   });
 
-  it('should throw if file is not found', () => {
-    process.env.CALLING_DIR =
-      'curriculum/challenges/english/superblock/mick-priject';
-
-    const errorPath = path.join(
-      'curriculum',
-      'challenges',
-      '_meta',
-      'mick-priject',
-      'meta.json'
-    );
-    expect(() => {
-      getMetaData();
-    }).toThrowError(
-      new Error(`ENOENT: no such file or directory, open '${errorPath}'`)
-    );
-  });
-
-  afterEach(() => {
-    mock.restore();
-    delete process.env.CALLING_DIR;
-  });
-});
-
-describe('validateMetaData helper', () => {
-  it('should throw if a stepfile is missing', () => {
-    mock({
-      '_meta/project/': {
-        'meta.json':
-          '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-2", "title": "Step 2"}, {"id": "id-3", "title": "Step 3"}]}'
-      },
-      'english/superblock/project/': {
-        'id-1.md': `---
+  describe('validateMetaData helper', () => {
+    it('should throw if a stepfile is missing', () => {
+      fs.writeFileSync(
+        join(projectPath, 'step-001.md'),
+        `---
 id: id-1
 title: Step 2
 challengeType: a
 dashedName: step-2
 ---
 `,
-        'id-3.md': `---
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, 'step-003.md'),
+        `---
 id: id-3
 title: Step 3
 challengeType: c
 dashedName: step-3
 ---
+`,
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(metaPath, 'meta.json'),
+        `{
+      "id": "mock-id",
+      "challengeOrder": [{"id": "1", "title": "Step 1"}, {"id": "2", "title": "Step 2"}, {"id": "1", "title": "Step 3"}]}`,
+        'utf-8'
+      );
+
+      process.env.CALLING_DIR = projectPath;
+
+      expect(() => validateMetaData()).toThrow(
+        `The file
+${projectPath}/1.md
+does not exist, but is required by the challengeOrder of
+${metaPath}/meta.json
+
+To fix this, you can rename the file containing id: 1 to 1.md
+If there is no file for this id, then either the challengeOrder needs to be updated, or the file needs to be created.
 `
-      }
+      );
     });
 
-    process.env.CALLING_DIR = 'english/superblock/project';
-
-    expect(() => validateMetaData()).toThrow(
-      "ENOENT: no such file or directory, access 'english/superblock/project/id-2.md'"
-    );
-  });
-
-  it('should throw if a step is present in the project, but not the meta', () => {
-    mock({
-      '_meta/project/': {
-        'meta.json':
-          '{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-2", "title": "Step 2"}]}'
-      },
-      'english/superblock/project/': {
-        'id-1.md': `---
+    it('should throw if a step is present in the project, but not the meta', () => {
+      fs.writeFileSync(
+        join(projectPath, '1.md'),
+        `---
 id: id-1
 title: Step 2
 challengeType: a
 dashedName: step-2
 ---
 `,
-        'id-2.md': `---
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, '2.md'),
+        `---
 id: id-2
 title: Step 1
 challengeType: b
 dashedName: step-1
 ---
 `,
-        'id-3.md': `---
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(projectPath, '3.md'),
+        `---
 id: id-3
 title: Step 3
 challengeType: c
 dashedName: step-3
 ---
-`
-      }
+`,
+        'utf-8'
+      );
+      fs.writeFileSync(
+        join(metaPath, 'meta.json'),
+        `{
+      "id": "mock-id",
+      "challengeOrder": [{"id": "1", "title": "Step 1"}, {"id": "2", "title": "Step 2"}, {"id": "1", "title": "Step 3"}]}`,
+        'utf-8'
+      );
+
+      process.env.CALLING_DIR = projectPath;
+
+      expect(() => validateMetaData()).toThrow(
+        `File ${projectPath}/3.md should be in the meta.json's challengeOrder`
+      );
     });
-
-    process.env.CALLING_DIR = 'english/superblock/project';
-
-    expect(() => validateMetaData()).toThrow(
-      "File english/superblock/project/id-3.md should be in the meta.json's challengeOrder"
-    );
   });
-
   afterEach(() => {
-    mock.restore();
     delete process.env.CALLING_DIR;
+    try {
+      fs.rmSync(basePath, { recursive: true });
+    } catch (err) {
+      console.log(err);
+      console.log('Could not remove fixtures folder.');
+    }
   });
 });

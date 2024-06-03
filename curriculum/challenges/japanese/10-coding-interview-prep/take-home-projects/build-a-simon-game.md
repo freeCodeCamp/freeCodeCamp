@@ -8,7 +8,7 @@ dashedName: build-a-simon-game
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/obYBjE" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/obYBjE</a>.
+**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://codepen.io/freeCodeCamp/full/obYBjE" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/obYBjE</a>
 
 以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のアレンジを加えましょう。
 
@@ -28,11 +28,11 @@ dashedName: build-a-simon-game
 
 **ユーザーストーリー:** 連続で 20 のステップを正しく入力できれば、ゲームに勝利できます。 私がゲームに勝利したことが通知され、ゲームをもう一度やり直します。
 
-**ヒント:** 各ボタンに対して使用できる mp3 はこちらです: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`
+**Hint:** Here are mp3s you can use for each button: `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound1.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound2.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound3.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound4.mp3`.
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+<a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp フォーラム</a>でプロジェクトを共有することにより、フィードバックを得ることができます。
 
 # --solutions--
 

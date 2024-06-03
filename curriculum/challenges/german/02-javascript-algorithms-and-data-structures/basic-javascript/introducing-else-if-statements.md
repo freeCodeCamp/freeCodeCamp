@@ -30,20 +30,20 @@ if (num > 15) {
 Du solltest mindestens zwei `else`-Anweisungen verwenden
 
 ```js
-assert(code.match(/else/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/else/g).length > 1);
 ```
 
 Du solltest mindestens zwei `if`-Anweisungen verwenden
 
 ```js
-assert(code.match(/if/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length > 1);
 ```
 
 Du solltest für jeden `if else`-Codeblock öffnende und schließende geschweifte Klammern verwenden.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s+if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/
   )
 );

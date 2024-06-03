@@ -1,6 +1,6 @@
 ---
 id: 5900f3951000cf542c50fea8
-title: 'Problem 41: Pandigital prime'
+title: '問題 41: パンデジタル素数'
 challengeType: 1
 forumTopicId: 302078
 dashedName: problem-41-pandigital-prime
@@ -8,25 +8,25 @@ dashedName: problem-41-pandigital-prime
 
 # --description--
 
-We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+1 から `n` までのすべての数字がちょうど 1 回ずつ使われている `n` 桁の数を、「パンデジタルである」と表現することにします。 例えば、2143 という 4 桁の数は 1 から 4 のパンデジタル数であり、素数でもあります。
 
-What is the largest `n`-length digit pandigital prime that exists?
+存在する `n` 桁のパンデジタル素数のうち、最大のものを求めなさい。
 
 # --hints--
 
-`pandigitalPrime(4)` should return a number.
+`pandigitalPrime(4)` は数値を返す必要があります。
 
 ```js
 assert(typeof pandigitalPrime(4) === 'number');
 ```
 
-`pandigitalPrime(4)` should return 4231.
+`pandigitalPrime(4)` は4231を返す必要があります。
 
 ```js
 assert(pandigitalPrime(4) == 4231);
 ```
 
-`pandigitalPrime(7)` should return 7652413.
+`pandigitalPrime(7)` は 7652413 を返す必要があります。
 
 ```js
 assert(pandigitalPrime(7) == 7652413);

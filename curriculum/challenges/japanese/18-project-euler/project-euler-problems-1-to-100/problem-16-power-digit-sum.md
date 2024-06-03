@@ -1,6 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe8f
-title: 'Problem 16: Power digit sum'
+title: '問題 16: 累乗の各位の和'
 challengeType: 1
 forumTopicId: 301791
 dashedName: problem-16-power-digit-sum
@@ -8,31 +8,31 @@ dashedName: problem-16-power-digit-sum
 
 # --description--
 
-2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+2<sup>15</sup> = 32768 であり、各位の和は 3 + 2 + 7 + 6 + 8 = 26 となります。
 
-What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
+数字 2<sup><code>exponent</code></sup> の各位の和を求めなさい。
 
 # --hints--
 
-`powerDigitSum(15)` should return a number.
+`powerDigitSum(15)` は数値を返す必要があります。
 
 ```js
 assert(typeof powerDigitSum(15) === 'number');
 ```
 
-`powerDigitSum(15)` should return 26.
+`powerDigitSum(15)` は 26を返す必要があります。
 
 ```js
 assert.strictEqual(powerDigitSum(15), 26);
 ```
 
-`powerDigitSum(128)` should return 166.
+`powerDigitSum(128)` は 166 を返す必要があります。
 
 ```js
 assert.strictEqual(powerDigitSum(128), 166);
 ```
 
-`powerDigitSum(1000)` should return 1366.
+`powerDigitSum(1000)` は 1366 を返す必要があります。
 
 ```js
 assert.strictEqual(powerDigitSum(1000), 1366);

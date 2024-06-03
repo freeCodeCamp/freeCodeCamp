@@ -7,10 +7,14 @@ dashedName: write-your-first-c-sharp-method
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/" target="_blank">https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/</a> e complete todas as tarefas do módulo "Escreva seu primeiro método em C#". Isto é necessário para adquirir o troféu "Crie métodos em aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/write-first-c-sharp-method/</a> e complete todas as tarefas do módulo "Escreva seu primeiro método em C#". Isso é **necessário** para conquistar o troféu "Crie métodos em aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
+
+# --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/write-first-c-sharp-method/" target="_blank" rel="noreferrer">Escreva seu primeiro método em C#</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
 
 # --question--
 

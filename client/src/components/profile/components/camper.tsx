@@ -1,26 +1,11 @@
-import {
-  faAward,
-  faCalendar,
-  faHeart
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
 import React from 'react';
-import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import type { User } from '../../../redux/prop-types';
-
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
-import { AvatarRenderer } from '../../helpers';
-import Link from '../../helpers/link';
-import SocialIcons from './social-icons';
-
+import { FullWidthRow } from '../../helpers';
 import './camper.css';
-
-const { clientLocale } = envData;
-
-const localeCode = getLangCode(clientLocale);
+import SupporterBadgeEmblem from '../../../assets/icons/supporter-badge-emblem';
+import TopContibutorBadgeEmblem from '../../../assets/icons/top-contributor-badge-emblem';
+import Bio from './bio';
 
 export type CamperProps = Pick<
   User,
@@ -36,31 +21,7 @@ export type CamperProps = Pick<
   | 'picture'
   | 'name'
   | 'joinDate'
-  | 'twitter'
 >;
-
-function joinArray(array: string[], t: TFunction): string {
-  return array.reduce((string, item, index, array) => {
-    if (string.length > 0) {
-      if (index === array.length - 1) {
-        return `${string} ${t('misc.and')} ${item}`;
-      } else {
-        return `${string}, ${item}`;
-      }
-    } else {
-      return item;
-    }
-  });
-}
-
-function parseDate(joinDate: string, t: TFunction): string {
-  const convertedJoinDate = new Date(joinDate);
-  const date = convertedJoinDate.toLocaleString([localeCode, 'en-US'], {
-    year: 'numeric',
-    month: 'long'
-  });
-  return t('profile.joined', { date: date });
-}
 
 function Camper({
   name,
@@ -77,55 +38,61 @@ function Camper({
   website
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
+  const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
 
   return (
-    <div>
-      <Row>
-        <Col className='avatar-camper' xs={12}>
-          <AvatarRenderer
-            isDonating={isDonating}
-            isTopContributor={yearsTopContributor.length > 0}
-            picture={picture}
-            userName={username}
-          />
-        </Col>
-      </Row>
-      <SocialIcons
-        githubProfile={githubProfile}
-        linkedin={linkedin}
-        twitter={twitter}
-        username={username}
-        website={website}
-      />
-      <br />
-      <h2 className='text-center username'>@{username}</h2>
-      {name && <p className='text-center name'>{name}</p>}
-      {location && <p className='text-center location'>{location}</p>}
-      {isDonating && (
-        <p className='text-center supporter'>
-          <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
-        </p>
+    <>
+      <div className='bio-container'>
+        <Bio
+          joinDate={joinDate}
+          location={location}
+          username={username}
+          name={name}
+          about={about}
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          website={website}
+          isDonating={isDonating}
+          yearsTopContributor={yearsTopContributor}
+          picture={picture}
+        />
+      </div>
+      {(isDonating || isTopContributor) && (
+        <FullWidthRow>
+          <h2>{t('profile.badges')}</h2>
+          <div className='badge-card-container'>
+            {isDonating && (
+              <div className='badge-card'>
+                <div className='badge'>
+                  <SupporterBadgeEmblem />
+                </div>
+                <div className='badge-card-description'>
+                  <h3>{t('profile.supporter')}</h3>
+                  <p>{t('profile.donated')}</p>
+                </div>
+              </div>
+            )}
+            {isTopContributor && (
+              <div className='badge-card'>
+                <div className='badge'>
+                  <TopContibutorBadgeEmblem />
+                </div>
+                <div className='badge-card-description'>
+                  <h3>{t('profile.contributor')}</h3>
+                  <p>
+                    {t('profile.contributor-prolific', {
+                      year: yearsTopContributor.join(', ')
+                    })}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+          <hr />
+        </FullWidthRow>
       )}
-      {about && <p className='bio text-center'>{about}</p>}
-      {joinDate && (
-        <p className='bio text-center'>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
-        </p>
-      )}
-      {yearsTopContributor.filter(Boolean).length > 0 && (
-        <div>
-          <br />
-          <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} />{' '}
-            <Link to={t('links:top-contributors')}>
-              {t('profile.contributor')}
-            </Link>
-          </p>
-          <p className='text-center'>{joinArray(yearsTopContributor, t)}</p>
-        </div>
-      )}
-      <br />
-    </div>
+    </>
   );
 }
 

@@ -34,19 +34,19 @@ console.log(obj);
 `const` キーワードを置き換えないでください。
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `MATH_CONSTANTS` は (`const` を使用して宣言した) 定数変数である必要があります。
 
 ```js
-assert(code.match(/const\s+MATH_CONSTANTS/g));
+assert(__helpers.removeJSComments(code).match(/const\s+MATH_CONSTANTS/g));
 ```
 
 `MATH_CONSTANTS` の元の宣言を変更しないでください。
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
    /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
 ));
 ```

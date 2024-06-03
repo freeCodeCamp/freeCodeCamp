@@ -1,6 +1,6 @@
 ---
 id: 5900f5151000cf542c510028
-title: 'Problem 425: Prime connection'
+title: 'Завдання 425: з’єднання простих чисел'
 challengeType: 1
 forumTopicId: 302095
 dashedName: problem-425-prime-connection
@@ -8,20 +8,20 @@ dashedName: problem-425-prime-connection
 
 # --description--
 
-Two positive numbers $A$ and $B$ are said to be connected (denoted by "$A ↔ B$") if one of these conditions holds:
+Два додатних числа $A$ та $B$ вважаються з’єднаними (позначається як $A ↔ B$), якщо виконується одна з цих умов:
 
-1. $A$ and $B$ have the same length and differ in exactly one digit; for example, $123 ↔ 173$.
-2. Adding one digit to the left of $A$ (or $B$) makes $B$ (or $A$); for example, $23 ↔ 223$ and $123 ↔ 23$.
+1. $A$ та $B$ мають однакову довжину і відрізняються тільки однією цифрою. Наприклад, $123 ↔ 173$.
+2. Додавання однієї цифри зліва від $A$ (або $B$) утворює $B$ (або $A$). Наприклад, $23 ↔ 223$ та $123 ↔ 23$.
 
-We call a prime $P$ a 2's relative if there exists a chain of connected primes between 2 and $P$ and no prime in the chain exceeds $P$.
+Просте число $P$ називають родичем 2, якщо між 2 та $P$ існує ланцюжок з’єднаних простих чисел, жодне з яких не перевищує $P$.
 
-For example, 127 is a 2's relative. One of the possible chains is shown below:
+Наприклад, 127 є родичем 2. Один з можливих ланцюжків показаний нижче:
 
 $$2 ↔ 3 ↔ 13 ↔ 113 ↔ 103 ↔ 107 ↔ 127$$
 
-However, 11 and 103 are not 2's relatives.
+Однак 11 та 103 не є родичами 2.
 
-Let $F(N)$ be the sum of the primes $≤ N$ which are not 2's relatives. We can verify that $F({10}^3) = 431$ and $F({10}^4) = 78\\,728$.
+Нехай $F(N)$ буде сумою простих чисел $≤ N$, які не є родичами 2. Можна довести, що $F({10}^3) = 431$ та $F({10}^4) = 78\\,728$.
 
 Знайдіть $F({10}^7)$.
 

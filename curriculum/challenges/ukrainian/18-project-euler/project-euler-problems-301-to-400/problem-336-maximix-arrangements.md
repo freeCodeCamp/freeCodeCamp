@@ -1,6 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffcf
-title: 'Завдання 336: послідовність максімікс (maximix arrangements)'
+title: 'Завдання 336: впорядкування максімікс'
 challengeType: 1
 forumTopicId: 301994
 dashedName: problem-336-maximix-arrangements
@@ -8,21 +8,21 @@ dashedName: problem-336-maximix-arrangements
 
 # --description--
 
-A train is used to transport four carriages in the order: $ABCD$. However, sometimes when the train arrives to collect the carriages they are not in the correct order.
+До локомотива причіпляють чотири вагони в порядку $ABCD$. Однак іноді, коли локомотив прибуває по вагони, вони стоять у неправильному порядку.
 
-To rearrange the carriages, they are all shunted onto a large rotating turntable. After the carriages are uncoupled at a specific point, the train moves off the turntable pulling the carriages still attached with it. The remaining carriages are rotated 180°. All of the carriages are then rejoined and this process is repeated as often as necessary in order to obtain the least number of uses of the turntable.
+Щоб змінити порядок вагонів, їх ставлять на велику платформу, яка обертається. Після того, як вагони відчіпляються у певній точці, локомотив покидає платформу разом з приєднаними вагонами. Вагони, що залишилися, розвертаються на 180°. Потім всі вагони знову причіпляються, а сам процес повторюється стільки разів, скільки потрібно (важливо використовувати платформу мінімальну кількість разів).
 
-Some arrangements, such as $ADCB$, can be solved easily: the carriages are separated between $A$ and $D$, and after $DCB$ are rotated the correct order has been achieved.
+Деякі впорядкування, як $ADCB$, можна легко вирішити: вагони відчіпляються між $A$ та $D$, а після оберту $DCB$ досягнуто правильного порядку.
 
-However, Simple Simon, the train driver, is not known for his efficiency, so he always solves the problem by initially getting carriage $A$ in the correct place, then carriage $B$, and so on.
+Однак Простачок Саймон (машиніст) не надто відомий своєю кмітливістю, тому завжди розв’язує цю проблему, спочатку ставлячи вагон $A$ на правильне місце, потім вагон $B$, і так далі.
 
-Using four carriages, the worst possible arrangements for Simon, which we shall call maximix arrangements, are $DACB$ and $DBAC$; each requiring him five rotations (although, using the most efficient approach, they could be solved using just three rotations). The process he uses for $DACB$ is shown below.
+Використовуючи чотири вагони, найгіршими можливими впорядкуваннями для Саймона (які назвемо впорядкуваннями максімікс) будуть $DACB$ та $DBAC$, кожне з яких вимагає п’ять обертів (хоча, якщо використати кращий підхід, знадобиться лише три оберти). Нижче наведено те, як він вирішуватиме $DACB$.
 
-<img class="img-responsive center-block" alt="five rotations for maximix arrangement DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="п’ять обертів для впорядкування максімікс DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
 
-It can be verified that there are 24 maximix arrangements for six carriages, of which the tenth lexicographic maximix arrangement is $DFAECB$.
+Можна довести, що існує 24 впорядкування максімікс для шести вагонів, для яких десятим лексикографічним впорядкуванням максімікс є $DFAECB$.
 
-Find the ${2011}^{\text{th}}$ lexicographic maximix arrangement for eleven carriages.
+Знайдіть ${2011}^{\text{-те}}$ лексикографічне впорядкування максімікс для одинадцяти вагонів.
 
 # --hints--
 

@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../config/superblocks';
+import { SuperBlocks } from '../../shared/config/superblocks';
 
 export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
   const pathMap = {
@@ -23,6 +23,9 @@ export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
     [SuperBlocks.ProjectEuler]: '18-project-euler',
     [SuperBlocks.FoundationalCSharp]: '19-foundational-c-sharp-with-microsoft',
     [SuperBlocks.UpcomingPython]: '20-upcoming-python',
+    [SuperBlocks.A2English]: '21-a2-english-for-developers',
+    [SuperBlocks.RosettaCode]: '22-rosetta-code',
+    [SuperBlocks.PythonForEverybody]: '23-python-for-everybody',
     [SuperBlocks.ExampleCertification]: '99-example-certification'
   };
   return pathMap[superBlock];

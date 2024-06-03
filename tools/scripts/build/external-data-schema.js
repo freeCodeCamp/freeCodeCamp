@@ -7,13 +7,17 @@ const blockSchema = Joi.object({}).keys({
     isUpcomingChange: Joi.bool(),
     usesMultifileEditor: Joi.bool().optional(),
     hasEditableBoundaries: Joi.bool().optional(),
-    isBeta: Joi.bool().optional(),
     dashedName: Joi.string(),
     helpCategory: Joi.valid(
       'JavaScript',
       'HTML-CSS',
       'Python',
-      'Backend Development'
+      'Backend Development',
+      'C-Sharp',
+      'English',
+      'Odin',
+      'Euler',
+      'Rosetta'
     ),
     order: Joi.number(),
     time: Joi.string().allow(''),
@@ -25,7 +29,10 @@ const blockSchema = Joi.object({}).keys({
         id: Joi.string(),
         title: Joi.string()
       })
-    )
+    ),
+    disableLoopProtectTests: Joi.boolean(),
+    disableLoopProtectPreview: Joi.boolean(),
+    superOrder: Joi.number()
   })
 });
 

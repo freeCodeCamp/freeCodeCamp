@@ -1,6 +1,6 @@
 ---
 id: 5900f4761000cf542c50ff88
-title: 'Problem 265: Binary Circles'
+title: 'Завдання 265: бінарні кола'
 challengeType: 1
 forumTopicId: 301914
 dashedName: problem-265-binary-circles
@@ -8,20 +8,20 @@ dashedName: problem-265-binary-circles
 
 # --description--
 
-$2^N$ binary digits can be placed in a circle so that all the $N$-digit clockwise subsequences are distinct.
+$2^N$ бінарні цифри можна розмістити в колі так, щоб всі $N$-значні підпослідовності за годинниковою стрілкою відрізнялись.
 
-For $N = 3$, two such circular arrangements are possible, ignoring rotations:
+За умови $N = 3$ можливі два таких кругових розміщення, ігноруючи обертання:
 
-<img class="img-responsive center-block" alt="two circular arrangements for N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="два кругових розміщення за умови N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px;" />
 
-For the first arrangement, the 3-digit subsequences, in clockwise order, are: 000, 001, 010, 101, 011, 111, 110 and 100.
+Тризначними підпослідовностями за годинниковою стрілкою для першого розміщення є: 000, 001, 010, 101, 011, 111, 110 та 100.
 
-Each circular arrangement can be encoded as a number by concatenating the binary digits starting with the subsequence of all zeros as the most significant bits and proceeding clockwise. The two arrangements for $N = 3$ are thus represented as 23 and 29:
+Кожне кругове розміщення може бути зашифроване як число, об’єднавши всі бінарні цифри, починаючи з підпослідовності нулів як найбільш значущих бітів і продовжуючи за годинниковою стрілкою. Таким чином, два варіанти розміщення за умови $N = 3$ представлені як 23 та 29:
 
 $${00010111}_2 = 23\\\\
 {00011101}_2 = 29$$
 
-Calling $S(N)$ the sum of the unique numeric representations, we can see that $S(3) = 23 + 29 = 52$.
+Називаючи $S(N)$ сумою унікальних числових представлень, ми можемо побачити, що $S(3) = 23 + 29 = 52$.
 
 Знайдіть $S(5)$.
 

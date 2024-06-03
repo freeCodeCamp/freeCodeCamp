@@ -45,7 +45,7 @@ assert(myData === 8);
 ブラケット記法を使用して、`myArray` から正しい値を読み取る必要があります。
 
 ```js
-assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));
+assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

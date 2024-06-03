@@ -15,16 +15,16 @@ Il sito web sarà composto da una pagina index principale che avrà dei link ad 
 1. La pagina di ricette dovrebbe includere un elemento `html` con degli elementi `head` e `body` come figli.
 1. Dovresti avere un elemento `title` all'interno dell'elemento `head` con il testo `The Odin Recipes`.
 1. Dovresti vedere un elemento `h1` con il testo `Creamy Chocolate Fudge`.
-1. Dovresti vedere un'immagine con l'url `*placeholder-fcc-cdn*` con un testo `alt` adatto.
+1. You should see a related image with an `alt` attribute.
 1. Dovrebbe esserci un elemento `h2` con il testo `Description` sotto l'immagine.
 1. Dovresti vedere un paio di paragrafi che descrivono la ricetta sotto `Description`.
-1. Dovrebbe esserci un elemento `h2` con il testo `Ingredients`
+1. There should be an `h2` element with the text `Ingredients`.
 1. Sotto l'intestazione `Ingredients` dovrebbe esserci una lista non ordinata con gli ingredienti necessari per la ricetta.
 1. Sotto l'elenco degli ingredienti aggiungi un'altra intestazione chiamata `Steps`.
 1. Dovresti vedere una lista ordinata con un paio di passaggi necessari per completare la ricetta.
-1. Sotto gli step dovrebbe esserci un elemento `h2` con il testo `More Recipes`
+1. Under the steps there should be an `h2` element with the text `More Recipes`.
 1. Dovresti vedere un paio di link ad altre ricette all'interno di una lista non ordinata che ha un paio di elementi di lista con elementi di ancoraggio al suo interno.
-1. Questi elementi di ancoraggio dovrebbero avere un attributo `href` con il valore `#`
+1. These anchor elements should have an `href` attribute with the value set to `#`.
 
 # --hints--
 
@@ -34,7 +34,7 @@ Dovresti avere un tag `DOCTYPE`.
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-Dovresti avere un elemento `html` con un elemento `head` e un elemento `body`.
+You should have an `html` element with `head` and `body` element.
 
 ```js
 const html = document.querySelectorAll('html')[0];
@@ -56,12 +56,12 @@ Dovresti avere un elemento `h1` all'interno dell'elemento `body` che contiene il
 assert(document.querySelectorAll('BODY > H1')[0].innerText == 'Creamy Chocolate Fudge');
 ```
 
-Dovresti avere un'immagine con l'url `*placeholder-fcc-cdn*` con un attributo `alt` con un testo adatto.
+You should have an image with an `alt` attribute.
 
 ```js
 const img = document.querySelectorAll('IMG')[0];
 
-assert(img && img.alt !='' && img.src === 'https://i.imgur.com/p0J5baJ.jpg')
+assert(img && img.alt !='' && img.src != '')
 ```
 
 Dovresti avere un elemento `h2` con il testo `Description`.
@@ -105,7 +105,7 @@ const h2 = document.querySelectorAll('H2')[2];
 assert(h2.innerText == 'Steps');
 ```
 
-Dovresti avere un `<ol>` con i passaggi come elementi della lista `<li>`.
+You should have an `<ol>` with the steps as the list items `<li>`.
 
 ```js
 const orderedList = document.querySelectorAll('OL')[0];
@@ -137,7 +137,7 @@ const containsAnchors =  [...listItems].every(function(listItem) {
 assert(unorderedList && allAreListItems && containsAnchors && listItems.length > 1);
 ```
 
-I tag di ancoraggio che linkano ad altre ricette dovrebbero avere un attributo `href` con il valore `#`
+Your anchor tags linking to the recipes should have an `href` attribute with the value set to `#`.
 
 ```js
 const anchorTags = document.querySelectorAll("a");
@@ -161,7 +161,7 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -171,7 +171,7 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
   </head>
   <body>
     <h1>Creamy Chocolate Fudge</h1>
-    <img src="https://i.imgur.com/p0J5baJ.jpg" alt="A delicious chocolate fudge dessert">
+    <img src="https://cdn.freecodecamp.org/curriculum/odin-project/build-a-recipe-page/build-a-recipe-page-01.jpg" alt="A delicious chocolate fudge dessert">
     <h2>Description</h2>
     <p>This recipe is for a rich and creamy chocolate fudge that is sure to satisfy your sweet tooth. It's perfect for a special occasion or as a tasty treat for any time of the year.</p>
     <p>This recipe is easy to follow and only requires a few simple ingredients. With just a few steps, you'll be able to create a delicious dessert that everyone will love.</p>
@@ -201,4 +201,8 @@ assert(allAnchorsHaveHrefHash && anchorTags.length > 0);
     </ul>
   </body>
 </html>
+```
+
+```css
+
 ```

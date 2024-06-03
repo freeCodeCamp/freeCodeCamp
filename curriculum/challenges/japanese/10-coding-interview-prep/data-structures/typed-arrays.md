@@ -20,7 +20,7 @@ var complexArr = [1, 5, "2", "Word", {"name": "James"}];
 
 それを可能にするのが<dfn>型付き配列</dfn> です。 これで、配列に与えるメモリの量を指定できるようになります。 利用可能な配列型の基本概要と、その配列に含まれる各要素のサイズ (バイト数) は次の通りです。
 
-<table class='table table-striped'><tbody><tr><th>型</th><th>各要素のサイズ (バイト数)</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
+<table><tbody><tr><th>型</th><th>各要素のサイズ (バイト数)</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
 
 これらのような配列を作る方法は 2 つあります。 方法の一つは、配列を直接作成することです。 長さ 3 の `Int16Array` を作成するには、次のようにします。
 

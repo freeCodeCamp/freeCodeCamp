@@ -11,16 +11,8 @@ dashedName: american-british-translator
 <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a> と同じような機能を持つ、フルスタック JavaScript アプリを構築してください。 プロジェクトに取り組むにあたり、以下の方法のうち 1 つを用いてコードを記述します。
 
 -   <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">GitHub リポジトリ</a>をクローンし、ローカル環境でチャレンジを完了させる。
--   <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">Replit スタータープロジェクト</a>を使用して、プロジェクトを完了させる。
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   使い慣れたサイトビルダーを使用してプロジェクトを完了させる。 必ず GitHub リポジトリのすべてのファイルを取り込む。
-
-Replit を使用する場合は、下記の手順でプロジェクトをセットアップしてください。
-
--   まず、Replit でプロジェクトをインポートします。
--   すると、`.replit` ファイルのウィンドウが表示されます。
--   `Use run command` を選択して `Done` ボタンをクリックします。
-
-完了したら、プロジェクトの動作デモをどこか公開の場にホストしてください。 そして「回答のリンク」欄に、デモの URL を提出してください。 必要に応じて、プロジェクトのソースコードへのリンクも「GitHub のリンク」欄に提出してください。
 
 # --instructions--
 
@@ -28,8 +20,8 @@ Replit を使用する場合は、下記の手順でプロジェクトをセッ�
 -   `/routes/api.js` で `/api/translate` ルートを完成させてください。
 -   `tests/1_unit-tests.js` および `tests/2_functional-tests.js` に、すべてのユニットテスト/機能テストを作成してください。
 -   アプリで変換すべきスペルと用語については、`/components` にある JavaScript ファイルを参照してください。
--   Replit でテストを実行するには、`.env` ファイル内で `NODE_ENV` を `test` (引用符は付けない) に設定してください。
--   コンソールでテストを実行するには、コマンド `npm run test` を使用してください。 Replit コンソールを開くには、Ctrl+Shift+P (Macの場合はCmd) を押して「open shell」と入力してください。
+-   To run the tests automatically, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   コンソールでテストを実行するには、コマンド `npm run test` を使用してください。
 
 `tests/1_unit-tests.js` に以下のテストを記述してください。
 

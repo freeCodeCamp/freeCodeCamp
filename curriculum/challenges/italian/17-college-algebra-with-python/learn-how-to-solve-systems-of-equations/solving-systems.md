@@ -12,11 +12,11 @@ Il primo video ti mostrerà la matematica necessaria per risolvere un sistema di
 
 Ecco il <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab usato in questo video.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi al tuo notebook del codice per risolvere e graficare sistemi di equazioni
+
+# --question--
 
 ## --text--
 

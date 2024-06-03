@@ -1,6 +1,6 @@
 ---
 id: 5900f4291000cf542c50ff3b
-title: 'Problem 188: The hyperexponentiation of a number'
+title: '問題 188: 数の超累乗'
 challengeType: 1
 forumTopicId: 301824
 dashedName: problem-188-the-hyperexponentiation-of-a-number
@@ -8,17 +8,17 @@ dashedName: problem-188-the-hyperexponentiation-of-a-number
 
 # --description--
 
-The hyperexponentiation or tetration of a number $a$ by a positive integer $b$, denoted by $a↑↑b$ or ${}^ba$, is recursively defined by:
+数 $a$ を正の整数 $b$ によって超累乗またはテトレーション (tetration) することを $a↑↑b$ または ${}^ba$ と表記し、次のように再帰的に定義します。
 
-$a↑↑1 = a$,
+$a↑↑1 = a$
 
-$a↑↑(k+1) = a^{(a↑↑k)}$.
+$a↑↑(k+1) = a^{(a↑↑k)}$
 
-Thus we have e.g. $3↑↑2 = 3^3 = 27$, hence $3↑↑3 = 3^{27} = 7625597484987$ and $3↑↑4$ is roughly ${10}^{3.6383346400240996 \times {10}^{12}}$. Find the last 8 digits of $1777↑↑1855$.
+したがって、例えば、$3↑↑2 = 3^3 = 27$, $3↑↑3 = 3^{27} = 7625597484987$ であり、$3↑↑4$ は大まかに ${10}^{3.6383346400240996 \times {10}^{12}}$ です。 $1777↑↑1855$ の下位 8 桁を求めなさい。
 
 # --hints--
 
-`hyperexponentation()` should return `95962097`.
+`hyperexponentation()` は `95962097` を返す必要があります。
 
 ```js
 assert.strictEqual(hyperexponentation(), 95962097);

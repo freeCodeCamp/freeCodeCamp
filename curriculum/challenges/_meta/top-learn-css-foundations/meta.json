@@ -1,12 +1,9 @@
 {
-  "name": "TOP Learn CSS Foundations",
-  "isUpcomingChange": true,
+  "name": "Learn CSS Foundations",
+  "isUpcomingChange": false,
   "dashedName": "top-learn-css-foundations",
-  "helpCategory": "HTML-CSS",
-  "order": 2,
-  "time": "",
-  "template": "",
-  "required": [],
+  "helpCategory": "Odin",
+  "order": 4,
   "superBlock": "the-odin-project",
   "challengeOrder": [
     {

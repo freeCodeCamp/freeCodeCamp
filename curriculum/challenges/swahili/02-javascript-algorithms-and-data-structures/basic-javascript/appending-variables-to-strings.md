@@ -11,7 +11,7 @@ dashedName: appending-variables-to-strings
 
 Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (`+=`) operator.
 
-Example:
+Mfano:
 
 ```js
 const anAdjective = "awesome!";
@@ -36,7 +36,7 @@ assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
 You should append `someAdjective` to `myStr` using the `+=` operator.
 
 ```js
-assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
+assert(__helpers.removeJSComments(code).match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 ```
 
 # --seed--

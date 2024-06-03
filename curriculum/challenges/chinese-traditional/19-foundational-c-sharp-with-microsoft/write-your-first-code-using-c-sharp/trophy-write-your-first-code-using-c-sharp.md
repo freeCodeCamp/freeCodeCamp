@@ -1,21 +1,13 @@
 ---
 id: 647f85d407d29547b3bee1bb
-title: 'Trophy - Write Your First Code Using C#'
+title: '獎盃 - 使用 C# 編寫第一個代碼'
 challengeType: 18
 dashedName: trophy-write-your-first-code-using-c-sharp
+msTrophyId: learn.wwl.get-started-c-sharp-part-1.trophy
 ---
 
 # --description--
 
-Now that you've completed all of the "Write Your First Code Using C#" modules on Microsoft's learn platform, submit the URL to your trophy below.
+現在你已經完成了所有"使用 C# 編寫第一個代碼"的挑戰。你應該已經在 Microsoft Learn 平臺上獲得了獎盃。 如果你在查看 <a href="https://learn.microsoft.com/users/me/achievements#trophies-section" target="_blank" rel="noreferrer">你的成就</a> 頁面時沒有看到該獎盃，那你尚未完成所有任務，獎盃也無法被認證。
 
-Follow these instructions to find your trophy URL:
-
-1. Go to <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> using a browser you are logged into Microsoft with
-1. Find the trophy for "Write Your First Code Using C#" and click the "share" icon next to it
-1. Click the "Copy URL" button
-1. Paste the URL into the input below
-
-The URL should look similar to this: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=your-username&sharingId=your-sharing-id`
-
-This trophy is required to qualify to take the certification exam.
+將你的 Microsoft 用戶名鏈接到你的 freeCodeCamp 賬戶，然後點擊下面的“驗證獎盃”按鈕來完成挑戰。 這個獎盃是參加認證考試所**必需**的。

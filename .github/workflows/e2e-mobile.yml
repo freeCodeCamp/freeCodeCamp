@@ -1,55 +1,43 @@
 name: CI - E2E - Mobile (webview) Browser
 on:
   workflow_dispatch:
-  # push:
-  #   paths-ignore:
-  #     - 'docs/**'
-  #   branches:
-  #     - 'main'
-  # pull_request:
-  #   paths-ignore:
-  #     - 'docs/**'
-  #   branches:
-  #     - 'main'
-  #     - 'next-**'
 
 jobs:
   mobile-test:
     name: Test curriculum for mobile app
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Checkout mobile
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           repository: freeCodeCamp/mobile
           path: mobile
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
-          # cypress-io/github-action caches the store, so we should not cache it
-          # here.
+          cache: pnpm
 
-      - name: Setup Flutter 3.3.x
-        uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa # v2
+      - name: Setup Flutter 3.19.x
+        uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225 # v2
         with:
-          flutter-version: '3.3.x'
+          flutter-version: '3.19.x'
           channel: 'stable'
           cache: true
-          cache-key: flutter-3.3.x
+          cache-key: flutter-3.19.x
           cache-path: ${{ runner.tool_cache }}/flutter
 
       - name: Set freeCodeCamp Environment Variables
@@ -58,7 +46,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run create:config
+          pnpm run create:shared
           pnpm run build:curriculum
 
       - name: Generate mobile test files
@@ -69,27 +57,18 @@ jobs:
           flutter pub get
           flutter test test/widget_test.dart
 
-        # This is a workaround for the fact that Cypress does not support
-        # running in a sub-directory.
-        #
-        # In our cypress config, we default to the cypress/e2e/default directory.
-        # We need to change this to cypress/e2e/ for the specific tests we are running
-        # in this workflow.
-        #
-      - name: Adjust the Cypress Config
-        run: |
-          sed -i 's#cypress/e2e/default/#cypress/e2e/#g' cypress.config.js
+      - name: Install playwright dependencies
+        run: npx playwright install --with-deps
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+      - name: Install serve
+        run: npm install -g serve
+
+      - name: Run playwright tests
+        run: npx playwright test --config=playwright-mobile.config.ts
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
         with:
-          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
-          start: npx serve
-          wait-on: http://localhost:3000
-          wait-on-timeout: 1200
-          config: retries=1,screenshotOnRunFailure=false,video=false,baseUrl=http://localhost:3000/mobile/mobile-app/generated-tests/
-          browser: chrome
-          spec: cypress/e2e/mobile-learn/test-challenges.js
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: playwright-report-mobile
+          path: playwright/reporter
+          retention-days: 30

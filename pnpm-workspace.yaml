@@ -3,6 +3,7 @@ packages:
   - 'api-server'
   - 'client'
   - 'curriculum'
+  - 'shared'
   - 'tools/challenge-editor/api'
   - 'tools/challenge-editor/client'
   - 'tools/challenge-helper-scripts'
@@ -12,4 +13,3 @@ packages:
   - 'tools/scripts/build'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'
-  - 'tools/ui-components'

@@ -1,6 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6b
-title: 'Problem 236: Luxury Hampers'
+title: '問題236：豪華禮籃'
 challengeType: 1
 forumTopicId: 301881
 dashedName: problem-236-luxury-hampers

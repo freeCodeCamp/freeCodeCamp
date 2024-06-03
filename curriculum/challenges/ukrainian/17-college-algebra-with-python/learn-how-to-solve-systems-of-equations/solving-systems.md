@@ -12,11 +12,11 @@ dashedName: solving-systems
 
 Ось <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">блокнот Colab для цього відео.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Додайте код для розв’язку та побудови графіка систем рівнянь до свого блокнота.
+
+# --question--
 
 ## --text--
 

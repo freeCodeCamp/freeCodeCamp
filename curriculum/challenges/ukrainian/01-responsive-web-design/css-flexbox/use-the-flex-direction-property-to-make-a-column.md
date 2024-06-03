@@ -17,7 +17,7 @@ dashedName: use-the-flex-direction-property-to-make-a-column
 
 # --hints--
 
-Елемент `#box-container` повинен мати властивість `flex-direction`, встановлену як `column`.
+Елемент `#box-container` повинен мати властивість `flex-direction` зі значенням `column`.
 
 ```js
 assert($('#box-container').css('flex-direction') == 'column');

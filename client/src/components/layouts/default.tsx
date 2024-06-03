@@ -26,7 +26,6 @@ import {
   userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
-  showCodeAllySelector,
   userFetchStateSelector
 } from '../../redux/selectors';
 
@@ -40,17 +39,18 @@ import BreadCrumb from '../../templates/Challenges/components/bread-crumb';
 import Flash from '../Flash';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 import SignoutModal from '../signout-modal';
+import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 import { Loader } from '../helpers';
+import envData from '../../../config/env.json';
 
 // preload common fonts
 import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
-import { Themes } from '../settings/theme';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -59,7 +59,6 @@ const mapStateToProps = createSelector(
   isOnlineSelector,
   isServerOnlineSelector,
   userFetchStateSelector,
-  showCodeAllySelector,
   userSelector,
   (
     isSignedIn,
@@ -68,7 +67,6 @@ const mapStateToProps = createSelector(
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
-    showCodeAlly: boolean,
     user: User
   ) => ({
     isSignedIn,
@@ -79,7 +77,6 @@ const mapStateToProps = createSelector(
     isServerOnline,
     fetchState,
     theme: user.theme,
-    showCodeAlly,
     user
   })
 );
@@ -107,7 +104,6 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   isChallenge?: boolean;
   block?: string;
   examInProgress: boolean;
-  showCodeAlly: boolean;
   superBlock?: string;
 }
 
@@ -132,8 +128,7 @@ function DefaultLayout({
   isChallenge = false,
   block,
   superBlock,
-  theme = Themes.Default,
-  showCodeAlly,
+  theme,
   user,
   fetchUser,
   updateAllChallengesInfo
@@ -170,11 +165,13 @@ function DefaultLayout({
   } else {
     return (
       <div className='page-wrapper'>
+        {envData.deploymentEnv === 'staging' &&
+          envData.environment === 'production' && <StagingWarningModal />}
         <Helmet
           bodyAttributes={{
             class: useSystemTheme
               ? getSystemTheme()
-              : `${theme === 'night' ? 'dark' : 'light'}-palette`
+              : `${String(theme) === 'night' ? 'dark' : 'light'}-palette`
           }}
           meta={[
             {
@@ -245,7 +242,7 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && !showCodeAlly && !examInProgress && (
+          {isChallenge && !examInProgress && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}

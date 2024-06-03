@@ -1,6 +1,6 @@
 ---
 id: 5900f3f21000cf542c50ff04
-title: 'Problem 133: Repunit nonfactors'
+title: '問題 133: レピュニット数の非因数'
 challengeType: 1
 forumTopicId: 301761
 dashedName: problem-133-repunit-nonfactors
@@ -8,17 +8,17 @@ dashedName: problem-133-repunit-nonfactors
 
 # --description--
 
-A number consisting entirely of ones is called a repunit. We shall define $R(k)$ to be a repunit of length $k$; for example, $R(6) = 111111$.
+1 のみで構成される数はレピュニット数と呼ばれます。 ここでは、長さ $k$ のレピュニット数を $R(k)$ と定義します。例えば、$R(6) = 111111$ です。
 
-Let us consider repunits of the form $R({10}^n)$.
+$R({10}^n)$ で表されるレピュニット数について考えます。
 
-Although $R(10)$, $R(100)$, or $R(1000)$ are not divisible by 17, $R(10000)$ is divisible by 17. Yet there is no value of n for which $R({10}^n)$ will divide by 19. Remarkably, 11, 17, 41, and 73 are the only four primes below one-hundred that can be a factor of $R({10}^n)$.
+$R(10)$, $R(100)$, $R(1000)$ はいずれも 17 で割り切れませんが、$R(10000)$ は 17 で割り切れます。 しかし、$R({10}^n)$ が 19 で割り切れるような n の値は存在しません。 意外にも、$R({10}^n)$ の因数になり得る 100 未満の素数は 11, 17, 41, 73 の 4 つだけです。
 
-Find the sum of all the primes below one-hundred thousand that will never be a factor of $R({10}^n)$.
+$R({10}^n)$ の因数になり得ない 10 万未満の素数の総和を求めなさい。
 
 # --hints--
 
-`repunitNonfactors()` should return `453647705`.
+`repunitNonfactors()` は `453647705` を返す必要があります。
 
 ```js
 assert.strictEqual(repunitNonfactors(), 453647705);

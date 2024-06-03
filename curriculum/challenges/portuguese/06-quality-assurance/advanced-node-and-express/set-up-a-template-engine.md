@@ -11,16 +11,8 @@ dashedName: set-up-a-template-engine
 Trabalhar nesses desafios vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete esses desafios localmente.
-- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-advancednode" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar esses desafios.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow"> nosso projeto incial no Gitpod </a> para completar esses desafios.
 - Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
-
-Se você usa o Replit, siga estas etapas para configurar o projeto:
-
--   Comece importando o projeto no Replit.
--   Em seguida, você verá uma janela `.replit`.
--   Selecione `Use run command` e clique no botão `Done`.
-
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link.
 
 Um mecanismo de templates (template engine) permite o uso de arquivos de modelo estáticos (como aqueles escritos no *Pug*) na aplicação. Em tempo de execução, o mecanismo de modelos substitui variáveis em um arquivo de modelo por valores reais que podem ser fornecidos pelo servidor. Em seguida, ele transforma o modelo em um arquivo HTML estático, que é enviado ao client. Esta abordagem torna mais fácil projetar uma página HTML e permite exibir variáveis na página sem precisar fazer uma chamada de API do client.
 

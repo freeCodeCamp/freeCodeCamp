@@ -13,7 +13,7 @@ dashedName: build-a-data-graph-explorer
 
 # --instructions--
 
-在这项挑战中，使用 Python 创建一个多功能计算器，计算器可以接受输入并实现以下功能：
+For this challenge, you need to create a data graph explorer using Python that take input and do the following:
 
 - 以三种方式获取 .csv 文件
   - 从计算机本地上传

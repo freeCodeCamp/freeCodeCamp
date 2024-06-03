@@ -1,6 +1,6 @@
 ---
 id: 5900f4d91000cf542c50ffea
-title: 'Problem 364: Comfortable distance'
+title: 'Завдання 364: комфортна відстань'
 challengeType: 1
 forumTopicId: 302025
 dashedName: problem-364-comfortable-distance
@@ -8,17 +8,17 @@ dashedName: problem-364-comfortable-distance
 
 # --description--
 
-There are $N$ seats in a row. $N$ people come after each other to fill the seats according to the following rules:
+Ряд складається з $N$ місць. Приходить $N$ людей та вони починають займати місця згідно з такими правилами:
 
-1. If there is any seat whose adjacent seat(s) are not occupied take such a seat.
-2. If there is no such seat and there is any seat for which only one adjacent seat is occupied take such a seat.
-3. Otherwise take one of the remaining available seats.
+1. Якщо є будь-яке місце, сусідні місця якого не зайняті, це місце займають.
+2. Якщо такого місця немає, але є місце, для якого зайнято лише одне сусіднє, це місце займають.
+3. В іншому випадку займають одне з доступних місць.
 
-Let $T(N)$ be the number of possibilities that $N$ seats are occupied by $N$ people with the given rules. The following figure shows $T(4) = 8$.
+Нехай $T(N)$ буде кількістю можливостей для $N$ людей зайняти $N$ місць за даними правилами. Наступний малюнок показує $T(4) = 8$.
 
-<img class="img-responsive center-block" alt="eight ways for N seats to be occupied by N people" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="вісім способів зайняти N місць N людьми" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
 
-We can verify that $T(10) = 61\\,632$ and $T(1\\,000)\bmod 100\\,000\\,007 = 47\\,255\\,094$.
+Можна довести, що $T(10) = 61\\,632$ та $T(1\\,000)\bmod 100\\,000\\,007 = 47\\,255\\,094$.
 
 Знайдіть $T(1\\,000\\,000)\bmod 100\\,000\\,007$.
 

@@ -12,7 +12,7 @@ So far, you have only been checking if a pattern exists or not within a string. 
 
 To use the `.match()` method, apply the method on a string and pass in the regex inside the parentheses.
 
-Here's an example:
+Hapa kuna mfano:
 
 ```js
 "Hello, World!".match(/Hello/);
@@ -51,7 +51,7 @@ assert(codingRegex.source === 'coding');
 You should use the `.match()` method.
 
 ```js
-assert(code.match(/\.match\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.match\(.*\)/));
 ```
 
 # --seed--

@@ -9,8 +9,11 @@ const AlibabaLogo = (
     viewBox='0 0 604 341'
     xmlns='http://www.w3.org/2000/svg'
     xmlnsXlink='http://www.w3.org/1999/xlink'
+    role='img'
+    aria-labelledby='alibaba-logo-label'
     {...props}
   >
+    <title id='alibaba-logo-label'>Alibaba</title>
     <g fill='none'>
       <g fill='var(--quaternary-color)'>
         <g transform='translate(302 170.5) scale(-1 1) rotate(180) translate(-302 -170.5)'>

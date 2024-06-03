@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
+**Objetivo:** Construa um aplicativo que seja funcionalmente igual a  <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>. **Não copie este projeto de demonstração**.
 
 **Histórias de usuário:**
 
@@ -373,7 +373,7 @@ assert(!!el)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

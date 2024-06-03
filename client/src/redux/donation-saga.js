@@ -8,14 +8,16 @@ import {
   takeEvery,
   takeLeading
 } from 'redux-saga/effects';
-
+import callGA from '../analytics/call-ga';
 import {
   addDonation,
   postChargeStripe,
-  postChargeStripeCard
+  postChargeStripeCard,
+  updateStripeCard
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
-import { PaymentProvider } from '../../../config/donation-settings';
+import { stripe } from '../utils/stripe';
+import { PaymentProvider } from '../../../shared/config/donation-settings';
 import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,
@@ -24,23 +26,32 @@ import {
   postChargeError,
   preventBlockDonationRequests,
   setCompletionCountWhenShownProgressModal,
-  executeGA
+  updateCardError,
+  updateCardRedirecting
 } from './actions';
 import {
   isDonatingSelector,
   recentlyClaimedBlockSelector,
   shouldRequestDonationSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  completionCountSelector,
+  completedChallengesSelector
 } from './selectors';
 
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
+const updateCardErrorMessage = i18next.t('donate.error-3');
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
-  if (shouldRequestDonation) {
+  const MODAL_SHOWN_KEY = 'modalShownTimestamp';
+  const modalShownTimestamp = sessionStorage.getItem(MODAL_SHOWN_KEY);
+  const isModalRecentlyShown = Date.now() - modalShownTimestamp < 20000;
+
+  if (shouldRequestDonation || isModalRecentlyShown) {
     yield delay(200);
     const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
     yield put(openDonationModal());
+    sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
     yield take(appTypes.closeDonationModal);
     if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());
@@ -62,12 +73,17 @@ export function* postChargeSaga({
   }
 }) {
   try {
+    const isSignedIn = yield select(isSignedInSelector);
     if (paymentProvider !== PaymentProvider.Patreon) {
       yield put(postChargeProcessing());
     }
 
     if (paymentProvider === PaymentProvider.Stripe) {
-      yield call(postChargeStripe, payload);
+      const response = yield call(postChargeStripe, payload);
+      const error = response?.data?.error;
+      if (error) {
+        throw error;
+      }
     } else if (paymentProvider === PaymentProvider.StripeCard) {
       const optimizedPayload = { paymentMethodId, amount, duration };
       const response = yield call(postChargeStripeCard, optimizedPayload);
@@ -86,9 +102,9 @@ export function* postChargeSaga({
       }
     } else if (paymentProvider === PaymentProvider.Paypal) {
       // If the user is signed in and the payment goes through call api
-      let isSignedIn = yield select(isSignedInSelector);
       // look into skip add donation
-      // what to do with "data" that comes throug
+      // what to do with "data" that comes through
+
       if (isSignedIn) yield call(addDonation, { amount, duration });
     }
     if (
@@ -101,17 +117,26 @@ export function* postChargeSaga({
       yield put(postChargeComplete());
       yield call(setDonationCookie);
     }
-    yield put(
-      executeGA({
-        event:
-          paymentProvider === PaymentProvider.Patreon
-            ? 'donation_related'
-            : 'donation',
+    if (paymentProvider === PaymentProvider.Patreon) {
+      yield call(callGA, {
+        event: 'donation_related',
+        action: stringifyDonationEvents(paymentContext, paymentProvider)
+      });
+    } else {
+      const completedChallenges = yield select(completedChallengesSelector);
+      const completedChallengesInSession = yield select(
+        completionCountSelector
+      );
+      yield call(callGA, {
+        event: 'donation',
         action: stringifyDonationEvents(paymentContext, paymentProvider),
         duration,
-        amount
-      })
-    );
+        amount,
+        completed_challenges: completedChallenges.length,
+        completed_challenges_session: completedChallengesInSession,
+        isSignedIn
+      });
+    }
   } catch (error) {
     const err =
       error.response && error.response.data
@@ -155,10 +180,25 @@ export function* setDonationCookie() {
   }
 }
 
+export function* updateCardSaga() {
+  yield put(updateCardRedirecting());
+  try {
+    const {
+      data: { sessionId }
+    } = yield call(updateStripeCard);
+
+    if (!sessionId) throw new Error('No sessionId');
+    (yield stripe).redirectToCheckout({ sessionId });
+  } catch (error) {
+    yield put(updateCardError(updateCardErrorMessage));
+  }
+}
+
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeLeading(types.postCharge, postChargeSaga),
-    takeEvery(types.fetchUserComplete, setDonationCookie)
+    takeEvery(types.fetchUserComplete, setDonationCookie),
+    takeLeading(types.updateCard, updateCardSaga)
   ];
 }

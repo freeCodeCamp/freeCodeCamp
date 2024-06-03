@@ -1,6 +1,6 @@
 ---
 id: 5900f4481000cf542c50ff5a
-title: 'Problem 219: Skew-cost coding'
+title: '問題 219: 不均一な料金で符号を送信する'
 challengeType: 1
 forumTopicId: 301861
 dashedName: problem-219-skew-cost-coding
@@ -8,23 +8,23 @@ dashedName: problem-219-skew-cost-coding
 
 # --description--
 
-Let $A$ and $B$ be bit strings (sequences of 0's and 1's).
+$A$ と $B$ をビット列 (0 と 1 の数列) とします。
 
-If $A$ is equal to the <u>left</u>most length($A$) bits of $B$, then $A$ is said to be a prefix of $B$.
+$B$ の<u>左</u>端から $A$ の長さ分のビットが $A$ に等しい場合、$A$ は $B$ の接頭辞と呼ばれます。
 
-For example, 00110 is a prefix of <u>00110</u>1001, but not of 00111 or 100110.
+例えば、00110 は <u>00110</u>1001 の接頭辞ですが、00111 や 100110 の接頭辞ではありません。
 
-A prefix-free code of size $n$ is a collection of $n$ distinct bit strings such that no string is a prefix of any other. For example, this is a prefix-free code of size 6:
+サイズ $n$ の接頭符号は、いずれのビット列も他のビット列の接頭辞ではない、$n$ 個の相異なるビット列の集合です。 サイズ 6 の接頭符号の例を下に示します。
 
 $$0000, 0001, 001, 01, 10, 11$$
 
-Now suppose that it costs one penny to transmit a '0' bit, but four pence to transmit a '1'. Then the total cost of the prefix-free code shown above is 35 pence, which happens to be the cheapest possible for the skewed pricing scheme in question. In short, we write $Cost(6) = 35$.
+ここで、"0" のビットを 1 つ送信するのに 1 ペンス、"1" のビットを 1 つ送信するのに 4 ペンスかかるとします。 上の例にある接頭符号の総費用は 35 ペンスです。これは偶然にも、今の焦点である不均一な料金体系において最も安い符号です。 これを $Cost(6) = 35$ と簡潔に表します。
 
-What is $Cost(10^9)$?
+$Cost(10^9)$ を求めなさい。
 
 # --hints--
 
-`skewCostCoding()` should return `64564225042`.
+`skewCostCoding()` は `64564225042` を返す必要があります。
 
 ```js
 assert.strictEqual(skewCostCoding(), 64564225042);

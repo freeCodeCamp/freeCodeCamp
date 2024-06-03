@@ -13,7 +13,7 @@ En el juego de Golf, cada agujero tiene un `par`, que significa, el número prom
 
 Tu función recibirá los argumentos `par` y `strokes`. Devuelve la cadena correcta según esta tabla que muestra los golpes en orden de prioridad; superior (más alto) a inferior (más bajo):
 
-<table class='table table-striped'><thead><tr><th>Strokes (golpes)</th><th>Devuelve</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
+<table><thead><tr><th>Strokes (golpes)</th><th>Devuelve</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
 `par` y `strokes` siempre serán numéricos y positivos. Hemos añadido un arreglo de todos los nombres para tu conveniencia.
 

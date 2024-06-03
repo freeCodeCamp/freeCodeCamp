@@ -1,6 +1,6 @@
 ---
 id: 5900f4991000cf542c50ffab
-title: 'Problem 301: Nim'
+title: 'Завдання 301: нім'
 challengeType: 1
 forumTopicId: 301955
 dashedName: problem-301-nim
@@ -8,27 +8,27 @@ dashedName: problem-301-nim
 
 # --description--
 
-Nim is a game played with heaps of stones, where two players take it in turn to remove any number of stones from any heap until no stones remain.
+Нім — це гра з купами каміння, у якій два гравці по черзі беруть будь-яку кількість каменів з будь-якої купи, поки їх зовсім не залишиться.
 
-We'll consider the three-heap normal-play version of Nim, which works as follows:
+Розглянемо звичайну версію гри з трьома купами каменів:
 
-- At the start of the game there are three heaps of stones.
-- On his turn the player removes any positive number of stones from any single heap.
-- The first player unable to move (because no stones remain) loses.
+- На початку гри є три купи каменів.
+- Під час свого ходу гравець забирає будь-яку додатну кількість каменів з будь-якої обраної купи.
+- Той, хто першим не зможе зробити хід (тому що не залишилося каменів), програє.
 
-If ($n_1$, $n_2$, $n_3$) indicates a Nim position consisting of heaps of size $n_1$, $n_2$ and $n_3$ then there is a simple function $X(n_1,n_2,n_3)$ — that you may look up or attempt to deduce for yourself — that returns:
+Якщо ($n_1$, $n_2$, $n_3$) вказує позицію в грі з купок розміром $n_1$, $n_2$ та $n_3$, то існує проста функція $X(n_1,n_2,n_3)$ (яку можна знайти або вивести самостійно), яка повертає:
 
-- zero if, with perfect strategy, the player about to move will eventually lose; or
-- non-zero if, with perfect strategy, the player about to move will eventually win.
+- нуль, якщо за ідеальної стратегії гравець, який збирається зробити хід, програє; або
+- не нуль, якщо за ідеальної стратегії гравець, який збирається зробити хід, виграє.
 
-For example $X(1, 2, 3) = 0$ because, no matter what the current player does, his opponent can respond with a move that leaves two heaps of equal size, at which point every move by the current player can be mirrored by his opponent until no stones remain; so the current player loses. To illustrate:
+Наприклад, $X(1, 2, 3) = 0$, оскільки незалежно від дій поточного гравця, його опонент може зробити хід, після якого залишаться дві купки однакового розміру, і тоді кожен хід поточного гравця буде повторювати його опонент, поки не закінчаться камені. Тому поточний гравець програє. Для унаочнення:
 
-- current player moves to (1,2,1)
-- opponent moves to (1,0,1)
-- current player moves to (0,0,1)
-- opponent moves to (0,0,0), and so wins.
+- поточний гравець ходить на (1,2,1)
+- опонент ходить на (1,0,1)
+- поточний гравець ходить на (0,0,1)
+- опонент ходить на (0,0,0) і виграє.
 
-For how many positive integers $n ≤ 2^{30}$ does $X(n, 2n, 3n) = 0$?
+Скільки натуральних чисел $n ≤ 2^{30}$ задовільняють умову $X(n, 2n, 3n) = 0$?
 
 # --hints--
 

@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> aufweist
+**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>. **Do not copy this demo project**.
 
 **User Stories:**
 
@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 Jede `.nav-link` sollte über ein `href`-Attribut verfügen, das auf die zugehörige `.main-section` verweist (klickst du bspw. auf ein `.nav-link`-Element, das den Text „Hello world“ enthält, navigiert die Seite zu dem `section`-Element mit eben jener ID).
@@ -241,7 +241,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

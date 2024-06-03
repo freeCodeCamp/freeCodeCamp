@@ -1,6 +1,6 @@
 ---
 id: 5900f5081000cf542c51001a
-title: 'Problem 412: Gnomon numbering'
+title: '问题412：Gnomon编号'
 challengeType: 1
 forumTopicId: 302081
 dashedName: problem-412-gnomon-numbering

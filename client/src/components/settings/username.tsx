@@ -1,10 +1,5 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import {
-  ControlLabel,
-  FormControl,
-  Alert,
-  FormGroup
-} from '@freecodecamp/react-bootstrap';
+import { FormControl, Alert, FormGroup, ControlLabel } from '@freecodecamp/ui';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -13,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { isValidUsername } from '../../../../utils/validate';
+import { isValidUsername } from '../../../../shared/utils/validate';
 import { usernameValidationSelector } from '../../redux/settings/selectors';
 import {
   validateUsername,
@@ -153,7 +148,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     if (!validating && error) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger' closeLabel={t('buttons.close')}>
+          <Alert variant='danger'>
             {t(`settings.username.${error}`, {
               username: this.state.formValue
             })}
@@ -164,38 +159,28 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning' closeLabel={t('buttons.close')}>
-            {t('settings.username.unavailable')}
-          </Alert>
+          <Alert variant='warning'>{t('settings.username.unavailable')}</Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
-            {t('settings.username.validating')}
-          </Alert>
+          <Alert variant='info'>{t('settings.username.validating')}</Alert>
         </FullWidthRow>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success' closeLabel={t('buttons.close')}>
-            {t('settings.username.available')}
-          </Alert>
+          <Alert variant='success'>{t('settings.username.available')}</Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success' closeLabel={t('buttons.close')}>
-            {t('settings.username.available')}
-          </Alert>
-          <Alert bsStyle='info' closeLabel={t('buttons.close')}>
-            {t('settings.username.change')}
-          </Alert>
+          <Alert variant='success'>{t('settings.username.available')}</Alert>
+          <Alert variant='info'>{t('settings.username.change')}</Alert>
         </FullWidthRow>
       );
     }
@@ -236,8 +221,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
           this.renderAlerts(validating, error, isValidUsername)}
         <FullWidthRow>
           <BlockSaveButton
-            aria-disabled={isDisabled}
-            bgSize='lg'
+            disabled={isDisabled}
+            bgSize='large'
             {...(isDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}

@@ -12,7 +12,7 @@ The <dfn>arity</dfn> of a function is the number of arguments it requires. <dfn>
 
 In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
 
-Here's an example:
+Hapa kuna mfano:
 
 ```js
 function unCurried(x, y) {
@@ -77,7 +77,7 @@ assert(add(11)(22)(33) === 66);
 Your code should include a final statement that returns `x + y + z`.
 
 ```js
-assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
+assert(__helpers.removeJSComments(code).match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
 ```
 
 # --seed--

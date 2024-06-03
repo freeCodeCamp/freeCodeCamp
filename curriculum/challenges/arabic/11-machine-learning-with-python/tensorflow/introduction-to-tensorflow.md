@@ -38,5 +38,5 @@ Constant
 
 ## --video-solution--
 
-2
+٢
 

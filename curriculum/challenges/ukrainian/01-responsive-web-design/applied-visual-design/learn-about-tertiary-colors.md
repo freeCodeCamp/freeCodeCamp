@@ -16,7 +16,7 @@ dashedName: learn-about-tertiary-colors
 
 Три кольори утворені за допомогою комплементарної схеми:
 
-<table class='table table-striped'><thead><tr><th>Колір</th><th>Шістнадцятковий код кольору</th></tr></thead><thead></thead><tbody><tr><td>оранжевий</td><td>#FF7F00</td></tr><tr><td>бірюзовий</td><td>#00FFFF</td></tr><tr><td>малиновий</td><td>#FF007F</td></tr></tbody></table>
+<table><thead><tr><th>Колір</th><th>Шістнадцятковий код кольору</th></tr></thead><thead></thead><tbody><tr><td>оранжевий</td><td>#FF7F00</td></tr><tr><td>бірюзовий</td><td>#00FFFF</td></tr><tr><td>малиновий</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 

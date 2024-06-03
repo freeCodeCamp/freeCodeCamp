@@ -11,16 +11,8 @@ dashedName: sudoku-solver
 构建一个 JavaScript 全栈应用，在功能上与 <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a> 类似。 可以采用下面的任意一种方式完成这个挑战：
 
 -   克隆<a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
--   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   使用一个你喜欢的站点生成器来完成项目。 需要确定包含了我们 GitHub 仓库的所有文件。
-
-如果你使用 Replit，请按照以下步骤设置项目：
-
--   首先在 Replit 中导入项目。
--   接着，你将看到一个 `.replit` 窗口。
--   选择 `Use run command` 并点击 `Done` 按钮。
-
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。 也可以将项目的源码链接提交到 GitHub Link 字段中。
 
 # --instructions--
 
@@ -31,7 +23,7 @@ dashedName: sudoku-solver
 - 所有路由逻辑都可以进入 `/routes/api.js`
 - 阅读 `/controllers` 中的 `puzzle-strings.js` 文件来了解一些应用程序应该解决的示例谜题
 - 在 `.env` 文件中将 `NODE_ENV` 设置为 `test` （没有引号），运行这个页面的挑战测试。
-- 使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入 “open shell”，打开 Replit 控制台
+- 使用 `npm run test` 命令在 console 中运行测试。
 
 在 `tests/1_unit-tests.js` 中写下以下测试：
 

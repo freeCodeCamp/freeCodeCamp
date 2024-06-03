@@ -8,7 +8,7 @@ dashedName: avoid-inferring-the-response-mime-type-with-helmet-nosniff
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Os navegadores podem usar detecção de conteúdo ou de MIME para substituir o cabeçalho `Content-Type` de uma resposta de modo a adivinhar e processar os dados usando um tipo de conteúdo implícito. Embora isso possa ser conveniente em alguns cenários, também pode levar a alguns ataques perigosos. Este middleware define o cabeçalho `X-Content-Type-Options` para `nosniff`, instruindo o navegador a não ignorar o `Content-Type` fornecido.
+Lembre-se: este projeto está sendo criado conforme o seguinte projeto inicial em <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado de <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Os navegadores podem usar detecção de conteúdo ou de MIME para substituir o cabeçalho `Content-Type` de uma resposta de modo a adivinhar e processar os dados usando um tipo de conteúdo implícito. Embora isso possa ser conveniente em alguns cenários, também pode levar a alguns ataques perigosos. Este middleware define o cabeçalho `X-Content-Type-Options` para `nosniff`, instruindo o navegador a não ignorar o `Content-Type` fornecido.
 
 # --instructions--
 

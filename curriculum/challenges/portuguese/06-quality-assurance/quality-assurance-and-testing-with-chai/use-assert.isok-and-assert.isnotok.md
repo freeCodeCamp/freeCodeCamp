@@ -8,7 +8,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Lembre-se: este projeto está sendo criado conforme o seguinte projeto inicial em <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isOk()` testará se um valor é verdadeiro e `isNotOk()` testará se um valor é falso.
 
@@ -16,7 +16,7 @@ Para saber mais sobre valores verdadeiros e falsos, experimente nosso <a href="h
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#3` e na suíte `Basic Assertions`, modifique cada `assert` para `assert.isOk()` ou para `assert.isNotOk()`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#3`, no grupo de testes `Basic Assertions`, modifique cada `assert` para `assert.isOk()` ou para `assert.isNotOk()`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

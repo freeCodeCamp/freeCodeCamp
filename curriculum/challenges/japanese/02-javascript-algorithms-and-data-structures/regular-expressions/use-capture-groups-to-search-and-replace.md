@@ -37,7 +37,7 @@ wrongText.replace(silverRegex, "blue");
 検索と置換に `.replace()` を使用してください。
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 正規表現で、文字列 `one two three` を文字列 `three two one` に変更する必要があります。
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 最後の行を変更しないでください。
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` では少なくとも 3 つのキャプチャグループを使用する必要があります。

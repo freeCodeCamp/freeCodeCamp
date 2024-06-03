@@ -30,5 +30,5 @@ Sigmoid
 
 ## --video-solution--
 
-2
+الثاني
 

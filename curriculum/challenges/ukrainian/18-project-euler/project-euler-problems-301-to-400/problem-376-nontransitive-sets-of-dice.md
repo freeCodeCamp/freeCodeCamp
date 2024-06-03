@@ -1,6 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff7
-title: 'Problem 376: Nontransitive sets of dice'
+title: 'Завдання 376: нетранзитивні множини кубиків'
 challengeType: 1
 forumTopicId: 302038
 dashedName: problem-376-nontransitive-sets-of-dice
@@ -8,38 +8,38 @@ dashedName: problem-376-nontransitive-sets-of-dice
 
 # --description--
 
-Consider the following set of dice with nonstandard pips:
+Розглянемо таку множину кубиків з нетиповою розміткою:
 
-$$\begin{array}{}   \text{Die A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
-  \text{Die B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Die C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
+$$\begin{array}{}   \text{Кубик A: } & 1 & 4 & 4 & 4 & 4 & 4 \\\\
+  \text{Кубик B: } & 2 & 2 & 2 & 5 & 5 & 5 \\\\   \text{Кубик C: } & 3 & 3 & 3 & 3 & 3 & 6 \\\\
 \end{array}$$
 
-A game is played by two players picking a die in turn and rolling it. The player who rolls the highest value wins.
+За правилами гри, двоє гравців по черзі підкидують гральний кубик. Виграє той, чий кубик випав на найбільше значення.
 
-If the first player picks die $A$ and the second player picks die $B$ we get
+Якщо перший гравець обере кубик $A$, а другий обере кубик $B$, то ми отримаємо
 
-$P(\text{second player wins}) = \frac{7}{12} > \frac{1}{2}$
+$P(\text{виграє другий гравець}) = \frac{7}{12} > \frac{1}{2}$
 
-If the first player picks die $B$ and the second player picks die $C$ we get
+Якщо перший гравець обере кубик $B$, а другий обере кубик $C$, то ми отримаємо
 
-$P(\text{second player wins}) = \frac{7}{12} > \frac{1}{2}$
+$P(\text{виграє другий гравець}) = \frac{7}{12} > \frac{1}{2}$
 
-If the first player picks die $C$ and the second player picks die $A$ we get
+Якщо перший гравець обере кубик $C$, а другий обере кубик $A$, то ми отримаємо
 
-$P(\text{second player wins}) = \frac{25}{36} > \frac{1}{2}$
+$P(\text{виграє другий гравець}) = \frac{25}{36} > \frac{1}{2}$
 
-So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning. A set of dice having this property is called a nontransitive set of dice.
+Отже, який би кубик не обрав перший гравець, другий може обрати інший кубик і його шанс перемогти становитиме більше ніж 50%. Множина кубиків з такою властивістю називається нетранзитивною множиною кубиків.
 
-We wish to investigate how many sets of nontransitive dice exist. We will assume the following conditions:
+Нам потрібно дізнатись загальну кількість нетранзитивних множин кубиків. Візьмемо до уваги такі умови:
 
-- There are three six-sided dice with each side having between 1 and $N$ pips, inclusive.
-- Dice with the same set of pips are equal, regardless of which side on the die the pips are located.
-- The same pip value may appear on multiple dice; if both players roll the same value neither player wins.
-- The sets of dice $\\{A, B, C\\}$, $\\{B, C, A\\}$ and $\\{C, A, B\\}$ are the same set.
+- Існує 3 шестигранні кубики, на кожній грані якого розташовано від 1 до $N$ точок включно.
+- Кубики з однаковими множинами точок є ідентичними, незалежно від того, на якій стороні розташовані ці точки.
+- Однакове значення точок може з’являтись на декількох кубиках; якщо обом гравцям випаде однакове значення точок, жоден з гравців не переміг.
+- Множини кубиків $\\{A, B, C\\}$, $\\{B, C, A\\}$ та $\\{C, A, B\\}$ є однаковими.
 
-For $N = 7$ we find there are 9780 such sets.
+За умови $N = 7$ існує 9780 таких множин.
 
-How many are there for $N = 30$?
+Скільки існує таких множин за умови $N = 30$?
 
 # --hints--
 

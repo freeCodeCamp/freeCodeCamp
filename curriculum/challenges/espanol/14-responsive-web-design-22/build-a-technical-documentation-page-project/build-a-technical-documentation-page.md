@@ -1,6 +1,6 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: Construye una página de documentación técnica
+title: Construye una Página de Documentación Técnica
 challengeType: 14
 forumTopicId: 301146
 dashedName: build-a-technical-documentation-page
@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>. **Do not copy this demo project**.
 
 **Historias de Usuario:**
 
@@ -18,13 +18,13 @@ dashedName: build-a-technical-documentation-page
 1. Cada elemento `section` con la clase `main-section` debería tener también un `id` que corresponda al texto de cada `header` contenido dentro de él. Cualquier espacio debe ser reemplazado por guiones bajos ( Ejemplo: La sección que contiene el encabezado "JavaScript and Java" debe tener un `id="JavaScript_and_Java"`)
 1. Los elementos `.main-section` deberán tener al menos diez elementos `p` en total (no cada uno)
 1. Los elementos `.main-section` deberán tener al menos cinco elementos `code` en total (no cada uno)
-1. Los elementos `.main-section` deberán tener al menos cinco items `li` en total (no cada uno)
+1. Los elementos `.main-section` deben tener al menos cinco items `li` en total (no cada uno)
 1. Puedes ver un elemento `nav` con su correspondiente `id="navbar"`
-1. La barra de navegación deberá contener un elemento `header`, el cual contendrá texto que describa el tema de la documentación técnica
-1. Además, la barra de navegación deberá contener elementos de enlace (`a`) con la clase `nav-link`. Debe haber uno para cada elemento con la clase `main-section`
-1. El elemento `header` dentro de la `#navbar` debería ir antes que los elementos (`a`) de la barra de navegación
-1. Cada elemento con la clase `nav-link` debería tener texto que corresponda al texto del `header` de cada `section` (Ejemplo: Si tienes una seccion/encabezado "Hello world", tu barra de navegación debería tener un elemento que contenga el texto "Hello world")
-1. Al hacer click en un elemento de tu barra de navegación, la página debería dirigirse a la sección correspondiente del elemento `#main-doc` (Ejemplo: Si haces click en el elemento `.nav-link` que contiene el texto "Hello world", la página debería dirigirse al elemento `section` que tenga ese id y contenga el encabezado correspondiente)
+1. La barra de navegación debe contener un elemento `header`, el cual contendrá texto que describa el tema de la documentación técnica
+1. Además, la barra de navegación debe contener elementos de enlace (`a`) con la clase `nav-link`. Debe haber uno para cada elemento con la clase `main-section`
+1. El elemento `header` dentro de la `#navbar` debe ir antes que los elementos (`a`) de la barra de navegación
+1. Cada elemento con la clase `nav-link` debe tener texto que corresponda al texto del `header` de cada `section` (Ejemplo: Si tienes una sección/encabezado "Hello world", tu barra de navegación debe tener un elemento que contenga el texto "Hello world")
+1. Al hacer clic en un elemento de tu barra de navegación, la página debe dirigirse a la sección correspondiente del elemento `#main-doc` (Ejemplo: Si haces clic en el elemento `.nav-link` que contiene el texto "Hello world", la página debe dirigirse al elemento `section` que tenga ese id y contenga el encabezado correspondiente)
 1. En dispositivos de tamaño normal (portatiles, computadoras de escritorio), el elemento con `id="navbar"` debe mostrarse en el lado izquierdo de la pantalla y siempre ser visible para el usuario
 1. Tu documentación técnica debe usar al menos una media query
 
@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 Cada `.nav-link` debe tener un atributo `href` que enlace a su correspondiente `.main-section` (por ejemplo, si haces clic en un elemento `.nav-link` que contenga el texto "Hello world", la pagina navega al elemento `section` con ese id).
@@ -241,7 +241,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

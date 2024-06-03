@@ -1,4 +1,3 @@
-import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
 import Loadable from '@loadable/component';
 import { graphql, useStaticQuery } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
@@ -6,17 +5,20 @@ import React, { useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { Table, Button, Modal } from '@freecodecamp/ui';
 
-import envData from '../../../../../config/env.json';
-import { getLangCode } from '../../../../../config/i18n';
-import { getCertIds, getPathFromID } from '../../../../../utils';
-import { regeneratePathAndHistory } from '../../../../../utils/polyvinyl';
+import envData from '../../../../config/env.json';
+import { getLangCode } from '../../../../../shared/config/i18n';
+import { getCertIds, getPathFromID } from '../../../../utils';
+import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
+import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
-import { Link, FullWidthRow } from '../../helpers';
+import { Link, FullWidthRow, Spacer } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
+import { SuperBlocks } from '../../../../../shared/config/superblocks';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -49,6 +51,7 @@ interface TimelineInnerProps extends TimelineProps {
 interface NameMap {
   challengeTitle: string;
   challengePath: string;
+  certPath: string;
 }
 
 function TimelineInner({
@@ -77,6 +80,14 @@ function TimelineInner({
       idToNameMap.get(completedChallenge.id)?.challengeTitle ?? ''
     );
     openModal('projectPreview');
+  }
+
+  function viewExamResults(completedChallenge: CompletedChallenge): void {
+    setCompletedChallenge(completedChallenge);
+    setProjectTitle(
+      idToNameMap.get(completedChallenge.id)?.challengeTitle ?? ''
+    );
+    openModal('examResults');
   }
 
   function closeSolution(): void {
@@ -108,29 +119,31 @@ function TimelineInner({
         projectTitle={projectTitle}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
+        showExamResults={() => viewExamResults(completedChallenge)}
         displayContext='timeline'
       ></SolutionDisplayWidget>
     );
   }
 
-  function renderCompletion(completed: CompletedChallenge): JSX.Element {
+  function renderCompletion(completed: CompletedChallenge) {
     const { id } = completed;
+    const challenge = idToNameMap.get(id);
+    if (!challenge) return;
+    const { challengeTitle, challengePath, certPath } = challenge;
     const completedDate = new Date(completed.completedDate);
-    // @ts-expect-error idToNameMap is not a <string, string> Map...
-    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
         <td>
           {certPath ? (
             <Link
               className='timeline-cert-link'
-              to={`/certification/${username}/${certPath as string}`}
+              to={`/certification/${username}/${certPath}`}
             >
               {challengeTitle}
               <CertificationIcon />
             </Link>
           ) : (
-            <Link to={challengePath as string}>{challengeTitle}</Link>
+            <Link to={challengePath}>{challengeTitle}</Link>
           )}
         </td>
         <td>{renderViewButton(completed)}</td>
@@ -163,7 +176,8 @@ function TimelineInner({
 
   return (
     <FullWidthRow>
-      <h2 className='text-center'>{t('profile.timeline')}</h2>
+      <h2>{t('profile.timeline')}</h2>
+      <Spacer size='small' />
       {completedMap.length === 0 ? (
         <p className='text-center'>
           {t('profile.none-completed')}&nbsp;
@@ -184,17 +198,11 @@ function TimelineInner({
         </Table>
       )}
       {id && (
-        <Modal
-          aria-labelledby='contained-modal-title'
-          onHide={closeSolution}
-          show={solutionOpen}
-        >
-          <Modal.Header closeButton={true}>
-            <Modal.Title id='contained-modal-title' className='text-center'>
-              {`${username}'s Solution to ${
-                idToNameMap.get(id)?.challengeTitle ?? ''
-              }`}
-            </Modal.Title>
+        <Modal onClose={closeSolution} open={solutionOpen}>
+          <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+            {`${username}'s Solution to ${
+              idToNameMap.get(id)?.challengeTitle ?? ''
+            }`}
           </Modal.Header>
           <Modal.Body>
             <SolutionViewer
@@ -222,6 +230,10 @@ function TimelineInner({
         closeText={t('buttons.close')}
         previewTitle={projectTitle}
         showProjectPreview={true}
+      />
+      <ExamResultsModal
+        projectTitle={projectTitle}
+        examResults={completedChallenge?.examResults}
       />
     </FullWidthRow>
   );
@@ -278,9 +290,11 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const shouldAppendBlockNameToTitle =
+        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {
         challengeTitle: `${
-          hasEditableBoundaries ? blockNameTitle + ' - ' : ''
+          shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
         }${title}`,
         challengePath: slug
       });

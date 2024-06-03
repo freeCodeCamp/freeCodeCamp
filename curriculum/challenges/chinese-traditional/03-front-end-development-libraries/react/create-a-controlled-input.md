@@ -16,7 +16,7 @@ dashedName: create-a-controlled-input
 
 首先，創建一個名爲 `handleChange()` 的方法，該方法具有一個名爲 `event` 的參數。 方法被調用時，它接收一個 `event` 對象，該對象包含一個來自 `input` 元素的字符串文本。 可以使用方法內的 `event.target.value` 來訪問這個字符串。 用這個新字符串更新組件的`state`的`input`屬性。
 
-在 `render` 方法中的 `h4` 標籤之上創建 `input` 元素。 添加一個 `value` 屬性，使其等於組件 `state` 的 `input` 屬性。 然後將 `onChange()` 事件處理程序設置到 `handleChange()` 方法中。
+在 `render` 方法中的 `h4` 標籤之上創建 `input` 元素。 添加一個 `value` 屬性，使其等於組件 `state` 的 `input` 屬性。 Then add an `onChange` property set to the `handleChange()` event handler method.
 
 在輸入框中鍵入時，文本由 `handleChange()` 方法處理，文本被設置爲本地 `state` 中的 `input` 屬性，並渲染在頁面上的 `input` 框中。 組件 `state` 是輸入數據的唯一真實來源。
 

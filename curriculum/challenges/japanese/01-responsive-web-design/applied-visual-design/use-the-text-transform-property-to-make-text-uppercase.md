@@ -13,7 +13,7 @@ CSS の `text-transform` プロパティはテキストの外観を変更する�
 
 以下の表は、異なる `text-transform` の値がどのように "Transform me" の例文を変化させるかを示しています。
 
-<table class='table table-striped'><thead><tr><th>値</th><th>結果</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>デフォルト値が使用される</td></tr><tr><td><code>inherit</code></td><td>親要素の <code>text-transform</code> の値が使用される</td></tr><tr><td><code>none</code></td><td><strong>デフォルト:</strong> 元のテキストを使用する</td></tr></tbody></table>
+<table><thead><tr><th>値</th><th>結果</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>デフォルト値が使用される</td></tr><tr><td><code>inherit</code></td><td>親要素の <code>text-transform</code> の値が使用される</td></tr><tr><td><code>none</code></td><td><strong>デフォルト:</strong> 元のテキストを使用する</td></tr></tbody></table>
 
 # --instructions--
 

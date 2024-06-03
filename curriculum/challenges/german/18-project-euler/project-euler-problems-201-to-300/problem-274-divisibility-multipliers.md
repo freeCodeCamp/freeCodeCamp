@@ -22,7 +22,7 @@ $f(76275) = 7627 + 5 \times 34 = 7797$: 76275 and 7797 are both divisible by 113
 
 $f(12345) = 1234 + 5 \times 34 = 1404$: 12345 and 1404 are both not divisible by 113
 
-The sum of the divisibility multipliers for the primes that are coprime to 10 and less than 1000 is 39517. What is the sum of the divisibility multipliers for the primes that are coprime to 10 and less than ${10}^7$?
+The sum of the divisibility multipliers for the primes that are coprime to 10 and less than 1000 is 39517. Wie lautet die Summe der Teilbarkeitsmultiplikatoren für die Primzahlen, die zu 10 koprimal und kleiner als ${10}^7$ sind?
 
 # --hints--
 

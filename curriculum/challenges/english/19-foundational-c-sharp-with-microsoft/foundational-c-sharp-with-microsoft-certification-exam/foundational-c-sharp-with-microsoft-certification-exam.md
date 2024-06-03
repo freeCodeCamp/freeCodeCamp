@@ -24,9 +24,9 @@ Pass this exam to earn your Foundational C# with Microsoft Certification. Before
 
 - You must complete the entire exam in one session.
 - Exiting the exam at any point before you are finished, will result in the loss of your progress.
-- The exam consists of multiple-choice questions.
 - There is no time limit, but your total time taken will be recorded.
-- Complete the exam and answer a sufficent number of question correctly to earn your certification.
+- The exam consists of 80 multiple-choice questions.
+- Complete the exam and correctly answer at least 70% of the questions to earn your certification.
 
 # --instructions--
 

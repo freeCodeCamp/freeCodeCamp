@@ -4,18 +4,16 @@ const save2text = 'save 2';
 const editorElements = {
   container: '.vertical .reflex-container',
   editor: '.react-monaco-editor-container',
-  saveCodeBtn: '[data-cy="save-code-to-database-btn"]',
-  closeFlash: '.close'
+  saveCodeBtn: '[data-cy="save-code-to-database-btn"]'
 };
 
 describe('multifileCertProjects', function () {
   before(() => {
     cy.task('seed');
-    cy.login();
   });
 
   beforeEach(() => {
-    cy.preserveSession();
+    cy.login();
     cy.visit(
       'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
@@ -40,13 +38,12 @@ describe('multifileCertProjects', function () {
     // since rapid clicks will cause the save requests to be ignored, we have to
     // purge the db:
     cy.task('seed');
-    // and the redux store:
-    cy.reload();
     cy.get(editorElements.container).find(editorElements.editor).click();
     cy.focused().clear().click().type(`${save2text}{ctrl+s}`);
     cy.get(editorElements.editor).contains(save2text);
     cy.contains('Your code was saved to the database.');
-    cy.get(editorElements.closeFlash).click();
+    // close flash message
+    cy.get('button:contains("Close")').click();
     // load saved code when navigating site (no hard refresh)'
     cy.contains('Tribute Page').click();
     cy.get(editorElements.container)

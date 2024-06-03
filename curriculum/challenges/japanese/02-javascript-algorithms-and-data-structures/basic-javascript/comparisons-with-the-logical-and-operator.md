@@ -40,13 +40,13 @@ return "No";
 `&&` 演算子を 1 回使用してください。
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 `if` ステートメントを 1 つだけにする必要があります。
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalAnd(0)` は文字列 `No` を返す必要があります。

@@ -42,7 +42,7 @@ function findGreater(a, b) {
 `checkEqual` 應該使用條件運算符。
 
 ```js
-assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(__helpers.removeJSComments(code)));
 ```
 
 `checkEqual(1, 2)` 應該返回字符串 `Not Equal`

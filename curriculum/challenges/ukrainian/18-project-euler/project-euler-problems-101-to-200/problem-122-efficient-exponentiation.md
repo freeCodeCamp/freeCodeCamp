@@ -25,16 +25,16 @@ $$\begin{align}   & n × n = n^2\\\\
   & n^2 × n = n^3\\\\   & n^3 × n^3 = n^6\\\\
   & n^6 × n^6 = n^{12}\\\\ & n^{12} × n^3 = n^{15} \end{align}$$
 
-Визначаємо $m(k)$ як мінімальну кількість множень для обчислення $n^k$. Наприклад, $m(15) = 5$.
+Визначимо $m(k)$ як мінімальну кількість множень для обчислення $n^k$. Наприклад, $m(15) = 5$.
 
 Знайдіть $\sum{m(k)}$ за умови $1 ≤ k ≤ 200$.
 
 # --hints--
 
-`efficientExponentation()` має повернути `1582`.
+`efficientExponentiation()` має повернути `1582`.
 
 ```js
-assert.strictEqual(efficientExponentation(), 1582);
+assert.strictEqual(efficientExponentiation(), 1582);
 ```
 
 # --seed--
@@ -42,12 +42,12 @@ assert.strictEqual(efficientExponentation(), 1582);
 ## --seed-contents--
 
 ```js
-function efficientExponentation() {
+function efficientExponentiation() {
 
   return true;
 }
 
-efficientExponentation();
+efficientExponentiation();
 ```
 
 # --solutions--

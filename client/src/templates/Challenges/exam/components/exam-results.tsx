@@ -1,103 +1,119 @@
-import { Button } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
-import GreenPass from '../../../../assets/icons/green-pass';
-import Fail from '../../../../assets/icons/fail';
+import { Button } from '@freecodecamp/ui';
+
 import Spacer from '../../../../components/helpers/spacer';
-import { submitChallenge } from '../../redux/actions';
-import { examResultsSelector } from '../../redux/selectors';
-
-interface ExamResultQuestion {
-  question: string;
-  answer: string;
-  correct: boolean;
-}
-
-interface ExamResults {
-  timeInSeconds: number;
-  results: ExamResultQuestion[];
-}
+import { formatSecondsToTime } from '../../../../utils/format-seconds';
+import { GeneratedExamResults } from '../../../../redux/prop-types';
 
 interface ExamResultsProps {
-  examResults: ExamResults;
-  submitExamResults: () => void;
+  dashedName: string;
+  examResults: GeneratedExamResults;
+  exitExam: () => void;
   title: string;
-  submitChallenge: () => void;
 }
 
-const mapStateToProps = createSelector(
-  examResultsSelector,
-  (examResults: ExamResults) => ({
-    examResults
-  })
-);
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      submitChallenge
-    },
-    dispatch
-  );
-
 function ExamResults({
-  examResults: { timeInSeconds, results },
-  title,
-  submitExamResults
+  dashedName,
+  examResults,
+  exitExam,
+  title
 }: ExamResultsProps): JSX.Element {
   const { t } = useTranslation();
 
-  const correctAnswers = results.filter(r => r.correct);
-  const correctPercent = (correctAnswers.length / results.length) * 100;
+  const {
+    numberOfCorrectAnswers,
+    examTimeInSeconds,
+    numberOfQuestionsInExam,
+    passed,
+    percentCorrect
+  } = examResults;
 
+  // keep this formatting
+  const downloadContent = `${title}: ${
+    passed ? t('learn.exam.passed') : t('learn.exam.not-passed')
+  }
+
+${t('learn.exam.number-of-questions', { n: numberOfQuestionsInExam })}
+${t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
+${t('learn.exam.percent-correct', { n: percentCorrect })}
+${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
+`;
+
+  const blob = new Blob([downloadContent], {
+    type: 'text/plain'
+  });
+  const downloadURL = URL.createObjectURL(blob);
+
+  useEffect(() => {
+    return () => {
+      URL.revokeObjectURL(downloadURL);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const examResultsMessage = passed
+    ? t('learn.exam.passed-message')
+    : t('learn.exam.not-passed-message');
+
+  // TODO: Add share button
   return (
-    <div className='exam-wrapper'>
-      <div className='exam-header'>
-        <div>{title} Results</div>
+    <div className='exam-results-wrapper'>
+      <div
+        className='exam-results-header'
+        data-playwright-test-label='exam-results-header'
+      >
+        {t('learn.exam.results-header', { title })}
       </div>
       <hr />
       <Spacer size='medium' />
 
-      <div className='exam-results'>
-        <div>Time: {timeInSeconds}</div>
-        <div>
-          {correctAnswers.length} of {results.length} correct answers |{' '}
-          {correctPercent}%
-        </div>
-        <Spacer size='medium' />
-        {results.map((result, index) => (
-          <>
-            <div className='exam-result' key={index}>
-              <div className='exam-result-icon'>
-                {result.correct ? <GreenPass /> : <Fail />}
-              </div>
-
-              <div className='exam-result-questions'>
-                <div className='exam-result-question-label'>
-                  Question {index + 1}
-                </div>
-                <div className='exam-result-question'>{result.question}</div>
-                <div className='exam-result-answer-label'>Your Answer:</div>
-                <div className='exam-result-answer'>{result.answer}</div>
-              </div>
-            </div>
-            <Spacer size='medium' />
-          </>
-        ))}
+      <div
+        className='exam-results-message'
+        data-playwright-test-label='exam-results-message'
+      >
+        {examResultsMessage}
       </div>
       <Spacer size='medium' />
-      <div className='exam-buttons'>
+      <div className='exam-results'>
+        <div data-playwright-test-label='exam-results-question-results'>
+          {t('learn.exam.question-results', {
+            n: numberOfCorrectAnswers,
+            q: numberOfQuestionsInExam
+          })}
+        </div>
+        <div>|</div>
+        <div data-playwright-test-label='exam-results-percent-results'>
+          {t('learn.exam.percent-results', {
+            p: percentCorrect
+          })}
+        </div>
+        <div>|</div>
+        <div data-playwright-test-label='exam-time'>
+          {t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
+        </div>
+      </div>
+      <Spacer size='medium' />
+      <Spacer size='medium' />
+      <div className='exam-results-buttons'>
         <Button
           block={true}
-          className='exam-button'
-          bsStyle='primary'
-          data-cy='submit-exam-results'
-          onClick={submitExamResults}
+          variant='primary'
+          data-playwright-test-label='download-exam-results'
+          download={`${dashedName}.txt`}
+          href={downloadURL}
         >
-          {t('buttons.submit-exam-results')}
+          {t('learn.download-results')}
+        </Button>
+        <Spacer size='xxSmall' />
+        <Button
+          block={true}
+          variant='primary'
+          data-cy='exit-exam'
+          data-playwright-test-label='exit-exam'
+          onClick={exitExam}
+        >
+          {t('buttons.exit')}
         </Button>
       </div>
     </div>
@@ -106,4 +122,4 @@ function ExamResults({
 
 ExamResults.displayName = 'ExamResults';
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExamResults);
+export default ExamResults;

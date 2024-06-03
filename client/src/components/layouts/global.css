@@ -1,5 +1,10 @@
-:root {
-  --header-height: 38px;
+*,
+::before,
+::after {
+  /* Override the browser default border width in order to style individual border sides
+   * Ref: https://stackoverflow.com/a/76961084
+   */
+  border-width: 0;
 }
 
 html {
@@ -31,11 +36,8 @@ body {
   height: 100%;
 }
 
-.codeally-frame {
-  display: block;
-  height: calc(100vh - var(--header-height));
-  width: 100%;
-  border: 0;
+.page-wrapper-80 {
+  min-height: 80vh;
 }
 
 .btn-cta-big {
@@ -49,7 +51,7 @@ body {
 }
 
 /*
-  Row from @freecodecamp/react-bootstrap adds some negative margin which causes
+  Row from @freecodecamp/ui adds some negative margin which causes
   a little bit of horizontal overflow on certain pages. This eliminates that
   for those pages.
 */
@@ -73,34 +75,24 @@ h1 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.25rem;
-  font-family: var(--font-family-monospace);
   margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
-  font-family: var(--font-family-monospace);
   margin: 0 0 0.6rem;
 }
 
 h4,
 h5,
-h6 {
-  font-family: var(--font-family-monospace);
-}
-
-h4,
-h5,
 h6,
-p,
 td,
 th {
   color: var(--secondary-color);
@@ -111,6 +103,9 @@ th {
 
 p {
   line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0 0 1.2rem;
 }
 
 .big-heading {
@@ -158,6 +153,7 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
+  /* This is required in order to improve text readability in Arabic */
   text-underline-position: under;
 }
 
@@ -222,8 +218,7 @@ button,
 input[type='submit'],
 .btn {
   background-color: var(--quaternary-background);
-  border-width: 3px;
-  border-color: var(--secondary-color);
+  border: 3px solid var(--secondary-color);
   color: var(--secondary-color);
   border-radius: 0;
   text-decoration: none;
@@ -232,56 +227,33 @@ input[type='submit'],
 
 button:hover,
 input[type='submit']:hover,
-.btn:hover,
-.btn-default.active:hover,
-.btn-default.active,
-.btn-primary:hover {
+.btn:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
   cursor: pointer;
 }
 
-.btn:active,
-.btn-primary:active {
+.btn:active {
   background-color: var(--secondary-background);
 }
 
-.btn:focus,
-.btn-primary:focus,
-.btn-primary.focus {
+.btn:focus {
   background-color: var(--quaternary-background);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
 }
 
-.btn:active:hover,
-.btn-primary:hover,
-.btn-primary:active:hover,
-.btn-primary.active:hover,
-.open > .dropdown-toggle.btn-primary:hover,
-.btn-primary:active:focus,
-.btn-primary.active:focus,
-.open > .dropdown-toggle.btn-primary:focus,
-.btn-primary:active.focus,
-.btn-primary.active.focus,
-.open > .dropdown-toggle.btn-primary.focus {
+.btn:active:hover {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
 }
 
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
 .btn.disabled,
 .btn[disabled],
-fieldset[disabled] .btn,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled.focus,
-.btn-primary[disabled].focus,
-fieldset[disabled] .btn-primary.focus {
+fieldset[disabled] .btn {
   cursor: not-allowed;
   background-color: var(--quaternary-background);
   border-color: var(--quaternary-color);
@@ -291,16 +263,15 @@ fieldset[disabled] .btn-primary.focus {
 .btn-cta {
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
-  border-width: 3px;
-  border-color: #feac32;
+  border: 3px solid #feac32;
   color: #0a0a23 !important;
+  text-align: center;
 }
 .btn-cta:hover,
 .btn-cta:focus,
 .btn-cta:active:hover {
   background-color: #fecc4c !important;
-  border-width: 3px;
-  border-color: #f1a02a;
+  border: 3px solid #f1a02a;
   background-image: none;
   color: #0a0a23 !important;
 }
@@ -316,7 +287,6 @@ fieldset[disabled] .btn-primary.focus {
   text-decoration: underline;
   background: transparent;
   padding: 0;
-  outline-color: transparent;
 }
 .btn-link:hover,
 .btn-link:focus:active {
@@ -381,7 +351,8 @@ fieldset[disabled] .btn-primary.focus {
   fill: var(--quaternary-background);
 }
 
-.link-btn.btn-lg:hover .map-icon .inverted-color {
+.link-btn.btn-lg:hover .map-icon .inverted-color,
+.map-arrow-icon {
   fill: var(--secondary-color);
 }
 
@@ -389,6 +360,10 @@ fieldset[disabled] .btn-primary.focus {
   width: 35px;
   max-height: 45px;
   margin-inline: 5px;
+}
+
+.map-arrow-icon {
+  stroke: var(--secondary-color);
 }
 
 .cert-header-icon {
@@ -422,9 +397,6 @@ fieldset[disabled] .btn-primary.focus {
   }
 }
 
-.button-group .btn:not(:last-child) {
-  margin-bottom: 10px;
-}
 strong {
   color: var(--secondary-color);
 }
@@ -461,7 +433,7 @@ input:focus {
 }
 code {
   padding: 1px 4px;
-  background-color: var(--quaternary-background);
+  background-color: var(--tertiary-background);
   color: var(--tertiary-color);
   border-radius: 0;
   font-family: var(--font-family-monospace);
@@ -469,90 +441,15 @@ code {
 }
 
 :not(pre) > code {
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--gray-45);
 }
 
 .challenge-instructions code {
   white-space: break-spaces;
 }
 
-.panel {
-  border-radius: 0;
-  background-color: transparent;
-}
-
-.help-block em {
-  font-size: 0.8rem;
-}
-
 hr {
   border-top: 1px solid var(--quaternary-background);
-}
-
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary,
-.open > .dropdown-toggle.btn-primary:hover {
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
-}
-
-.open > .dropdown-menu {
-  border-radius: 0;
-}
-
-.dropdown-menu {
-  background-color: var(--secondary-color);
-}
-
-.dropdown,
-.dropdown > .dropdown-menu {
-  width: 100%;
-}
-
-.dropdown-menu > li > a {
-  color: var(--secondary-background);
-}
-
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-  color: var(--secondary-color);
-  background-color: var(--secondary-background);
-}
-
-.table-striped > tbody > tr:nth-child(2n + 1) > td,
-.table-striped > tbody > tr:nth-child(2n + 1) > th {
-  background-color: var(--tertiary-background);
-}
-
-.challenge-instructions table {
-  display: inline-block;
-  overflow: auto;
-}
-
-.challenge-instructions table thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-.challenge-instructions table th {
-  font-weight: 700;
-}
-
-.challenge-instructions table th,
-.challenge-instructions table td {
-  padding: 6px 13px;
-  border: 1px solid var(--secondary-color);
-  text-align: center;
-}
-
-.help-block {
-  color: var(--quaternary-color);
-}
-
-.panel-default > .panel-heading {
-  background-color: transparent;
 }
 
 .challenge-output span {
@@ -576,78 +473,9 @@ pre {
   border-radius: 0;
 }
 
-.list-group-item {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-}
-
-.intro-toc .list-group-item:hover {
-  background-color: var(--tertiary-background) !important;
-  border-radius: 0;
-}
-
-.panel-primary > .panel-heading {
-  background-color: transparent;
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
 .solution-viewer,
 .solution-viewer pre {
   margin-bottom: 0;
-}
-
-.has-success .help-block,
-.has-success .control-label,
-.has-success .radio,
-.has-success .checkbox,
-.has-success .radio-inline,
-.has-success .checkbox-inline,
-.has-success.radio label,
-.has-success.checkbox label,
-.has-success.radio-inline label,
-.has-success.checkbox-inline label {
-  color: var(--highlight-color);
-}
-
-.has-error .help-block,
-.has-error .control-label,
-.has-error .radio,
-.has-error .checkbox,
-.has-error .radio-inline,
-.has-error .checkbox-inline,
-.has-error.radio label,
-.has-error.checkbox label,
-.has-error.radio-inline label,
-.has-error.checkbox-inline label {
-  color: var(--danger-color);
-}
-
-.has-error .form-control,
-.has-warning .form-control,
-.has-success .form-control {
-  border-color: var(--quaternary-background);
-}
-
-.has-error .form-control:focus,
-.has-warning .form-control:focus,
-.has-success .form-control:focus {
-  border-color: var(--tertiary-color);
-}
-
-.panel-primary {
-  border-color: var(--primary-color);
-}
-
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  color: var(--secondary-background);
-}
-
-.nav-tabs > li > a {
-  border-radius: 0;
 }
 
 blockquote footer,
@@ -661,15 +489,17 @@ blockquote .small {
   overflow-wrap: break-word;
 }
 
-.alert .btn {
-  background-color: #d9edf7;
-  color: #31708f;
-  border-color: #31708f;
+.alert .btn,
+[role='alert'] .btn {
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
 }
 .alert .btn:hover,
 .alert .btn:focus,
 .alert a:hover,
-.alert a:focus {
+.alert a:focus,
+[role='alert'] :is(a, .btn):is(:hover, :focus) {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
@@ -711,4 +541,15 @@ blockquote .small {
 .sr-only {
   color: white;
   background-color: black;
+}
+
+/*
+ * /learn sets some default styles to all `h2`s.
+ * These rules are to override the defaults and apply danger styles to `danger` modal.
+ */
+#headlessui-portal-root h2 {
+  font-weight: normal;
+}
+#headlessui-portal-root .text-background-danger h2 {
+  color: var(--background-danger);
 }

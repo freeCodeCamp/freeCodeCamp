@@ -11,16 +11,8 @@ dashedName: sudoku-solver
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://sudoku-solver.freecodecamp.rocks/</a>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 -   Clone <a href="https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
+-   Recorra ao <a href="https://gitpod.io/?autostart=true#https://github.com/freecodecamp/boilerplate-project-sudoku-solver" target="_blank" rel="noopener noreferrer nofollow"> nosso projeto inicial no Gitpod </a> para completar o seu projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
-
-Se você usa o Replit, siga estas etapas para configurar o projeto:
-
--   Comece importando o projeto no Replit.
--   Em seguida, você verá uma janela `.replit`.
--   Selecione `Use run command` e clique no botão `Done`.
-
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link. Como opção, envie também um link para o código-fonte do projeto no campo GitHub Link.
 
 # --instructions--
 
@@ -31,7 +23,7 @@ Quando terminar, certifique-se de que uma demonstração funcional do seu projet
 - Toda a lógica de roteamento pode ir em `/routes/api.js`
 - Veja o arquivo `puzzle-strings.js` em `/controllers` para algumas amostras de quebra-cabeças que sua aplicação deve resolver
 - Para executar os testes do desafio nesta página, defina `NODE_ENV` como `test` sem aspas no arquivo `.env`
-- Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open shell"
+- Para executar os testes no console, use o comando `npm run test`.
 
 Escreva os testes a seguir em `tests/1_unit-tests.js`:
 

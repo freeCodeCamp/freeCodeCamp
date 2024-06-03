@@ -19,7 +19,7 @@ Questo riduce il numero totale di colori possibili a circa 4.000. Ma i browser i
 
 Vai avanti, prova a usare i codici esadecimali abbreviati per colorare gli elementi corretti.
 
-<table class='table table-striped'><tbody><tr><th>Colore</th><th>Codice Hex breve</th></tr><tr><td>Ciano</td><td><code>#0FF</code></td></tr><tr><td>Verde</td><td><code>#0F0</code></td></tr><tr><td>Rosso</td><td><code>#F00</code></td></tr><tr><td>Fucsia</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>Colore</th><th>Codice Hex breve</th></tr><tr><td>Ciano</td><td><code>#0FF</code></td></tr><tr><td>Verde</td><td><code>#0F0</code></td></tr><tr><td>Rosso</td><td><code>#F00</code></td></tr><tr><td>Fucsia</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 

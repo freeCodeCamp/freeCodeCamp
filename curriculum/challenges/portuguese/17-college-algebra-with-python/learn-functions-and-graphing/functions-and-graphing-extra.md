@@ -12,11 +12,11 @@ Este próximo vídeo mostrará a você a conexão entre funções e gráficos. O
 
 Aqui está o <a href="https://colab.research.google.com/drive/1UYorWd9-Btf_ZQyA9YdUzxzKR8rnVrSV" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione código ao seu notebook do Colaboratory de álgebra para funções e gráficos.
+
+# --question--
 
 ## --text--
 

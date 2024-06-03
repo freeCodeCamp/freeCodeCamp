@@ -1,4 +1,3 @@
-declare module '@freecodecamp/react-bootstrap';
 declare module '@freecodecamp/loop-protect';
 declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';
@@ -26,7 +25,6 @@ declare module 'sha-1' {
 // eslint-disable-next-line no-var
 declare var MathJax: {
   Hub: {
-    /* eslint-disable @typescript-eslint/naming-convention*/
     Config: (attributes: {
       tex2jax: {
         inlineMath: Array<string[]>;

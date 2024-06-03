@@ -11,16 +11,8 @@ dashedName: file-metadata-microservice
 Crea una aplicación full stack de JavaScript que sea funcionalmente similar a esta: <a href="https://file-metadata-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://file-metadata-microservice.freecodecamp.rocks/</a>. Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
 -   Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
--   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-filemetadata" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-filemetadata/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio de GitHub.
-
-Si usas Replit, sigue estos pasos para configurar el proyecto:
-
--   Empieza importando el proyecto en Replit.
--   Siguiente, verás una ventana `.replit`.
--   Selecciona `Use run command` y haz clic en el botón `Done`.
-
-Cuando hayas acabado, asegúrate de que un demo funcional de tu proyecto, este alojado en algún sitio público. A continuación, introduce la URL en el campo enlace a la solución. Si lo deseas, también puedes enviar un enlace al código fuente de tu proyecto en el campo enlace GitHub.
 
 # --instructions--
 

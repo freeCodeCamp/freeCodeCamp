@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 `console.log()` 和 `typeof` 方法是检查中间值和程序输出类型的两种主要方法。 现在是时候了解一下 bug 出现的常见的情形。 一个语法级别的问题是打字太快带来的低级拼写错误。
 
-变量或函数名的错写、漏写或大小写弄混都会让浏览器尝试查找并不存在的东西，并报出“引用错误”。 JavaScript 变量和函数名称区分大小写。
+Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript 变量和函数名称区分大小写。
 
 # --instructions--
 
@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 代码中不应该有拼写错误的变量实例。
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 应在代码中声明并正确使用 `receivables` 变量。
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 代码中不应该有拼写错误的变量实例。
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 应在代码中声明并正确使用 `payables` 变量。
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

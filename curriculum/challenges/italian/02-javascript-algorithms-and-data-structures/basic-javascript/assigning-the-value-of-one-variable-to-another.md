@@ -2,7 +2,6 @@
 id: 5ee127a03c3b35dd45426493
 title: Assegnare il valore di una variabile ad un'altra
 challengeType: 1
-videoUrl: ''
 forumTopicId: 418265
 dashedName: assigning-the-value-of-one-variable-to-another
 ---
@@ -29,7 +28,7 @@ Assegna il contenuto di `a` alla variabile `b`.
 Non dovresti modificare il codice sopra il commento specificato.
 
 ```js
-assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
 ```
 
 `b` dovrebbe avere un valore di `7`.
@@ -41,7 +40,7 @@ assert(typeof b === 'number' && b === 7);
 `a` dovrebbe essere assegnato a `b` con `=`.
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(code));
+assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

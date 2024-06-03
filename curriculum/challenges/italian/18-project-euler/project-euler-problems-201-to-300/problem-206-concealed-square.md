@@ -35,7 +35,7 @@ concealedSquare();
 
 ```js
 // Check if n**2 matches the pattern
-function squareMatchs(n) {
+function squareMatches(n) {
   // Need BigInt due to size of values
   let nSquared = (BigInt(n) * BigInt(n)).toString();
 
@@ -55,8 +55,8 @@ function concealedSquare() {
   for (let x = maxSquareRoot; x >= minSquareRoot; x -= 10) {
     // Note: 3*3 = 9 and 7*7 = 49 are only trailing digits
     //       that can produce 9 as trailing digit in square
-    if (squareMatchs(x + 3)) return (x + 3)*10;
-    if (squareMatchs(x + 7)) return (x + 7)*10;
+    if (squareMatches(x + 3)) return (x + 3)*10;
+    if (squareMatches(x + 7)) return (x + 7)*10;
   }
   return -1;
 }

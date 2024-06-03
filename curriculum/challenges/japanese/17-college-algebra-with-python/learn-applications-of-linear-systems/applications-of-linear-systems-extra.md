@@ -1,6 +1,6 @@
 ---
 id: 6363d23a9078df117ce4c3ff
-title: "Applications of Linear Systems: Extra"
+title: "連立一次方程式の応用: おまけ"
 challengeType: 15
 videoId: ZtypoUnNdAY
 dashedName: applications-of-linear-systems-extra
@@ -8,29 +8,29 @@ dashedName: applications-of-linear-systems-extra
 
 # --description--
 
-The next video contains more examples of how to set up equations and use your Colab notebook to solve them.
+次の動画では、方程式を立てて Colab ノートブックを使用して解く、その他の例を紹介します。
 
 # --question--
 
 ## --text--
 
-How can you make use of a Colab notebook to solve practical business problems?
+実用的なビジネスの問題を解決する Colab ノートブックの活用例はどれですか？
 
 ## --answers--
 
-Modify the equations in the code you already wrote
+記述済みのコードの方程式を変更する
 
 ---
 
-Copy your existing code and then modify it as necessary
+既存のコードをコピーして必要に応じて変更する
 
 ---
 
-Write new code based on the functions you already know
+既知の関数を基に新しいコードを記述する
 
 ---
 
-All of the above
+上記のすべて
 
 ## --video-solution--
 

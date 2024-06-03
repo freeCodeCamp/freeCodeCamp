@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08812
-title: Створення кнопки блок-елементу Bootstrap
+title: Створіть кнопку на рівні блоку Bootstrap
 challengeType: 0
 forumTopicId: 16810
 dashedName: create-a-block-element-bootstrap-button
@@ -8,17 +8,17 @@ dashedName: create-a-block-element-bootstrap-button
 
 # --description--
 
-Здебільшого елементи `button` з класами `btn` та `btn-default` за шириною є такими ж, як і текст, що вони містять. Наприклад:
+Зазвичай елементи `button` з класами `btn` та `btn-default` мають таку ж ширину, як їхній текст. Наприклад:
 
 ```html
 <button class="btn btn-default">Submit</button>
 ```
 
-Ця кнопка має бути такої ж ширини, як і слово `Submit`.
+Ця кнопка матиме таку ж ширину, що й слово `Submit`.
 
 <button class='btn btn-default'>Submit</button>
 
-Зміна кнопки на блок-елемент із додатковим класом `btn-block` розтягне її так, щоб заповнити весь горизонтальний простір сторінки, а всі наступні елементи посунуться на "нову лінію" під блоком.
+Якщо зробити цей елемент на рівні блоку з додатковим класом `btn-block`, то кнопка буде заповнювати сторінку горизонтально, а будь-який новий елемент посунеться на «новий рядок» під блок.
 
 ```html
 <button class="btn btn-default btn-block">Submit</button>
@@ -28,13 +28,13 @@ dashedName: create-a-block-element-bootstrap-button
 
 <button class='btn btn-default btn-block'>Submit</button>
 
-Зверніть увагу, що цим кнопкам все ще необхідний клас `btn`.
+Зверніть увагу, що цим кнопкам досі необхідний клас `btn`.
 
-Додайте клас Bootstrap `btn-block` до кнопки Bootstrap.
+Додайте клас `btn-block` до кнопки Bootstrap.
 
 # --hints--
 
-Кнопка все ще повинна мати класи `btn` та `btn-default`.
+Кнопка досі повинна мати класи `btn` та `btn-default`.
 
 ```js
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
@@ -46,7 +46,7 @@ assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 assert($('button').hasClass('btn-block'));
 ```
 
-Усі елементи `button` повинні містити кінцеві теґи.
+Усі елементи `button` повинні мати кінцеві теги.
 
 ```js
 assert(

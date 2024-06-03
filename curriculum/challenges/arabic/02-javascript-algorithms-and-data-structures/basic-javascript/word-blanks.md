@@ -17,7 +17,7 @@ Consider this sentence:
 It was really ____, and we ____ ourselves ____.
 ```
 
-This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:
+تحتوي هذه الجملة على ثلاث قطع مفقودة - صفة وفعل وظرف ، ويمكننا إضافة كلمات من اختيارنا لإكمالها. يمكننا بعد ذلك إسناد الجملة المكتملة إلى متغير على النحو التالي:
 
 ```js
 const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
@@ -25,21 +25,21 @@ const sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselve
 
 # --instructions--
 
-In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
+في هذا التحدي، نقدم لكم اسماً وفعلاً ووصفاً وظرفاً. تحتاج إلى تكوين جملة كاملة باستخدام الكلمات التي تختارها، إلى جانب الكلمات التي نقدمها.
 
-You will need to use the string concatenation operator `+` to build a new string, using the provided variables: `myNoun`, `myAdjective`, `myVerb`, and `myAdverb`. You will then assign the formed string to the `wordBlanks` variable. You should not change the words assigned to the variables.
+سوف تحتاج إلى استخدام مشغل الـ string concatenation الآتي `+` لبناء string جديد، باستخدام المتغيرات المتاحة: `myNoun` و `myAdjective` و `myVerb` و `myAdverb`. ستقوم بعد ذلك بتعيين الـ string الذي تم تشكيله إلى متغير `wordBlanks`. لا يجب عليك تغيير الكلمات المسندة إلى المتغيرات.
 
-You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
+سوف تحتاج أيضا إلى حساب المسافات الموجودة في سلسلتك، بحيث تحتوي الجملة الأخيرة على مسافات بين جميع الكلمات. وينبغي أن تكون النتيجة جملة كاملة.
 
 # --hints--
 
-`wordBlanks` should be a string.
+`wordBlanks` يجب أن تكون string.
 
 ```js
 assert(typeof wordBlanks === 'string');
 ```
 
-You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
+لا يجب عليك تغيير القيم المعينة إلى `myNoun` او `myVerb` او `myAdjective` أو `myAdverb`.
 
 ```js
 assert(
@@ -50,10 +50,10 @@ assert(
 );
 ```
 
-You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
+يجب ألا تستخدم القيم `dog` او `ran` او `big` او `quickly` لإنشاء `wordBlanks`.
 
 ```js
-const newCode = removeAssignments(code);
+const newCode = removeAssignments(__helpers.removeJSComments(code));
 assert(
   !/dog/.test(newCode) &&
     !/ran/.test(newCode) &&

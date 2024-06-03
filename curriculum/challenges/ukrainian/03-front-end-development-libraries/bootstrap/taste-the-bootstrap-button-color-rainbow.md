@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acef08811
-title: Спробуйте кольорову кнопку Bootsrap
+title: Спробуйте веселку кольорів кнопок Bootstrap
 challengeType: 0
 forumTopicId: 18323
 dashedName: taste-the-bootstrap-button-color-rainbow
@@ -8,11 +8,11 @@ dashedName: taste-the-bootstrap-button-color-rainbow
 
 # --description--
 
-`btn-primary` - це базовий клас, який ви будете використовувати у вашому додатку. Це допомагає виділити дії, необхідні для вашого користувача.
+Клас `btn-primary` — це головний колір, який ви використовуватимете у застосунку. Він допомагає виділити дії, які має виконати користувач.
 
-Замініть клас Bootstrap `btn-default` за допомогою `btn-primary` на вашій кнопці.
+Замініть клас своєї кнопки `btn-default` на `btn-primary`.
 
-Зверніть увагу, що для цієї кнопки також будуть необхідні класи `btn` та `btn-block`.
+Зверніть увагу, що кнопці досі потрібні класи `btn` та `btn-block`.
 
 # --hints--
 
@@ -22,13 +22,13 @@ dashedName: taste-the-bootstrap-button-color-rainbow
 assert($('button').hasClass('btn-primary'));
 ```
 
-Кнопка, як і раніше, повинна мати класи `btn` та `btn-block`.
+Кнопка досі повинна мати класи `btn` та `btn-block`.
 
 ```js
 assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
 ```
 
-Усі елементи `button` потребують кінцевих тегів.
+Усі елементи `button` повинні мати кінцеві теги.
 
 ```js
 assert(

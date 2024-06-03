@@ -37,7 +37,7 @@ Scrivi un'espressione regolare `fixRegex` utilizzando tre gruppi di cattura che 
 Dovresti usare `.replace()` per cercare e sostituire.
 
 ```js
-assert(code.match(/\.replace\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.replace\(.*\)/));
 ```
 
 La tua espressione regolare dovrebbe sostituire la stringa `one two three` con la stringa `three two one`
@@ -49,7 +49,7 @@ assert(result === 'three two one');
 Non dovresti cambiare l'ultima riga.
 
 ```js
-assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+assert(__helpers.removeJSComments(code).match(/result\s*=\s*str\.replace\(.*?\)/));
 ```
 
 `fixRegex` dovrebbe usare almeno tre gruppi di cattura.

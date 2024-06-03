@@ -1,6 +1,6 @@
 ---
 id: 5900f5071000cf542c510018
-title: 'Problem 410: Circle and tangent line'
+title: '問題410：圓和切線'
 challengeType: 1
 forumTopicId: 302079
 dashedName: problem-410-circle-and-tangent-line

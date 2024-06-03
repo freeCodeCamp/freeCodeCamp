@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908849
-title: Додавання елементів у Bootstrap Wells
+title: Додайте елементи до стіни Bootstrap
 challengeType: 0
 forumTopicId: 16636
 dashedName: add-elements-within-your-bootstrap-wells
@@ -8,13 +8,13 @@ dashedName: add-elements-within-your-bootstrap-wells
 
 # --description--
 
-Наразі є декілька елементів `div` у кожному стовпчику рядка. Саме така кількість елементів є необхідною для наступного кроку. Тепер додаємо елементи `button`.
+Зараз у кожному стовпці ряду є декілька елементів `div`. Саме те, що треба для наступної дії. Тепер можемо додати елементи `button`.
 
-Три елементи `button` мають бути вкладені у кожен елемент `div` класу `well`.
+Вкладіть три елементи `button` в межах кожного елемента `div` з класом `well`.
 
 # --hints--
 
-Три елементи `button` мають бути вкладені у кожен елемент `div` класу `well`.
+Три елементи `button` мають бути вкладеними у кожному елементі `div` з класом `well`.
 
 ```js
 assert(
@@ -29,7 +29,7 @@ assert(
 assert($('button') && $('button').length > 5);
 ```
 
-Усі елементи `button` повинні містити кінцеві теґи.
+Усі елементи `button` повинні мати кінцеві теги.
 
 ```js
 assert(

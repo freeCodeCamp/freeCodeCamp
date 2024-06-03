@@ -1,6 +1,6 @@
 ---
 id: 5900f44e1000cf542c50ff60
-title: 'Problem 225: Tribonacci non-divisors'
+title: '问题225：Tribonacci非除数'
 challengeType: 1
 forumTopicId: 301868
 dashedName: problem-225-tribonacci-non-divisors

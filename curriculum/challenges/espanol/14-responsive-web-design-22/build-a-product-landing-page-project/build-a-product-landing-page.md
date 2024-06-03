@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>
+**Objetivo:** construye una aplicación que sea funcionalmente similar a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>. **No copies este proyecto de demostración**.
 
 **Historias de usuario:**
 
@@ -25,7 +25,7 @@ dashedName: build-a-product-landing-page
 1. Dentro del formulario, hay un `input` de tipo submit (enviar) con su correspondiente `id="submit"`
 1. Cuendo haces click en el elemento `#submit`, el email es enviado a una página web (Utiliza esta URL de pruebas: `https://www.freecodecamp.com/email-submit`)
 1. La barra de navegación siempre debe estar en la parte superior de la vista
-1. La página de inicio de tu producto debe tener al menos una consulta de medios
+1. Tu página de inicio de tu producto debe tener al menos una consulta de medios
 1. Tu página de inicio del producto debe utillizar el flexbox CSS al menos una vez
 
 Completa las instrucciones y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo estilo personal. ¡Feliz día programando!
@@ -243,7 +243,7 @@ Tu `#nav-bar` siempre debe estar en la parte superior de la ventana gráfica.
 })();
 ```
 
-Tu página de aterrizaje de un producto debe usar por lo menos una consulta de medios.
+Tu página de inicio de un producto debe usar por lo menos una consulta de medios.
 
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
@@ -251,7 +251,7 @@ const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
 assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
-Tu página de aterrizaje de un producto debe usar CSS Flexbox por lo menos una vez.
+Tu página de inicio de un producto debe usar CSS Flexbox por lo menos una vez.
 
 ```js
 const hasFlex = (rule) => ["flex", "inline-flex"].includes(rule.style?.display)
@@ -277,7 +277,7 @@ assert(usesFlex || usesFlexMedia)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

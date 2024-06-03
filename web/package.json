@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "8"
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "prepare": "npm --prefix ../ run build:curriculum && npm --prefix ../curriculum-server/ run source-curriculum"
   },
   "dependencies": {
-    "@monaco-editor/react": "4.5.1",
+    "@monaco-editor/react": "4.6.0",
     "next": "12.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"

@@ -1,6 +1,6 @@
 ---
 id: 5900f4801000cf542c50ff93
-title: 'Problem 276: Primitive Triangles'
+title: '問題276：幾何三角形'
 challengeType: 1
 forumTopicId: 301926
 dashedName: problem-276-primitive-triangles
@@ -10,13 +10,13 @@ dashedName: problem-276-primitive-triangles
 
 Consider the triangles with integer sides $a$, $b$ and $c$ with $a ≤ b ≤ c$.
 
-An integer sided triangle $(a,b,c)$ is called primitive if $gcd(a,b,c) = 1$.
+如果$gcd(a,b,c) = 1$，則整數邊三角形$(a,b,c)$稱爲基元。
 
-How many primitive integer sided triangles exist with a perimeter not exceeding $10\\,000\\,000$?
+存在多少個原始整數邊三角形，其周長不超過10 00,0 000？
 
 # --hints--
 
-`primitiveTriangles()` should return `5777137137739633000`.
+`sumTorricelliTriangles()` 應該返回 `5777137137739633000`。
 
 ```js
 assert.strictEqual(primitiveTriangles(), 5777137137739633000);

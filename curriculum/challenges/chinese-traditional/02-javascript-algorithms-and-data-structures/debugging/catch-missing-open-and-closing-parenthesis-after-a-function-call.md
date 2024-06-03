@@ -37,7 +37,7 @@ assert(result == 9);
 你應該調用 `getNine` 函數。
 
 ```js
-assert(code.match(/getNine\(\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/getNine\(\)/g).length == 2);
 ```
 
 # --seed--

@@ -51,7 +51,7 @@ assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 在不使用內置方法 `Object.keys()` 的前提下完成這個挑戰。
 
 ```js
-assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
+assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(__helpers.removeJSComments(code)));
 ```
 
 你應該解決這個挑戰，而不是硬編碼 `ownProps` 數組。
@@ -59,7 +59,7 @@ assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
 ```js
 assert(
   !/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```

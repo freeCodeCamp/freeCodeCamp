@@ -8,13 +8,13 @@ dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-infosec" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 HTTP Strict Transport Security (HSTS) es una política de seguridad web que ayuda a proteger a los sitios web contra ataques de degradación de protocolo y secuestro de cookies. Si se puede acceder a tu sitio web a través de HTTPS, puedes pedirle a los navegadores de los usuarios que eviten el uso de HTTP inseguro. Al configurar el encabezado Strict-Transport-Security, le dices a los navegadores que usen HTTPS para las solicitudes futuras en un período de tiempo específico. Esto funcionará para las solicitudes que vengan después de la solicitud inicial.
 
 # --instructions--
 
-Configura `helmet.hsts()` para usar HTTPS durante los próximos 90 días. Pasa el objeto de configuración `{maxAge: timeInSeconds, force: true}`. Puedes crear una variable `ninetyDaysInSeconds = 90*24*60*60;` para usar con `timeInSeconds`. Replit ya tiene hsts habilitados. Para anular su configuración, debes establecer el campo "force" a true en el objeto config. Interceptaremos y restauraremos el encabezado Replit, después de inspeccionarlo para probarlo.
+Configura `helmet.hsts()` para usar HTTPS durante los próximos 90 días. Pasa el objeto de configuración `{maxAge: timeInSeconds, force: true}`. Puedes crear una variable `ninetyDaysInSeconds = 90*24*60*60;` para usar con `timeInSeconds`. Gitpod already has hsts enabled. Para anular su configuración, debes establecer el campo "force" a true en el objeto config. We will intercept and restore the Gitpod header, after inspecting it for testing.
 
 Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and an SSL/TLS Certificate.
 

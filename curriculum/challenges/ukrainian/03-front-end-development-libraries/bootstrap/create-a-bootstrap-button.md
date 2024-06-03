@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348cd8acdf08812
-title: Створення кнопки Bootstrap
+title: Створіть кнопку Bootstrap
 challengeType: 0
 forumTopicId: 16811
 dashedName: create-a-bootstrap-button
@@ -8,9 +8,9 @@ dashedName: create-a-bootstrap-button
 
 # --description--
 
-Bootstrap має власні стилі для елементів `button`, які мають набагато кращий вигляд, ніж прості стилі HTML.
+Bootstrap має власні стилі для елементів `button`, які виглядають набагато краще, ніж прості стилі HTML.
 
-Створіть новий елемент `button` під великим фото кошеняти. Надайте йому класи `btn` та `btn-default` разом із текстом `Like`.
+Створіть новий елемент `button` під великим фото кошеня. Надайте йому класи `btn` та `btn-default`, а також текст `Like`.
 
 # --hints--
 
@@ -29,7 +29,7 @@ assert(
 assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-Усі елементи `button` повинні містити кінцеві теґи.
+Усі елементи `button` повинні мати кінцеві теги.
 
 ```js
 assert(

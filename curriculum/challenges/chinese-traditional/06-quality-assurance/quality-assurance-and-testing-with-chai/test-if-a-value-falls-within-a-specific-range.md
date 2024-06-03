@@ -8,7 +8,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --description--
 
-請注意，本項目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化項目的基礎上進行開發，你也可以從 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 ```javascript
 .approximately(actual, expected, delta, [message])
@@ -18,7 +18,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在 `Comparisons` 套件裏標有 `#10` 的測試中，將每個 `assert` 改成 `assert.approximately`，讓測試通過（結果應該返回 `true`）。
+Within `tests/1_unit-tests.js` under the test labeled `#10` in the `Comparisons` suite, change each `assert` to `assert.approximately` to make the test pass (should evaluate to `true`).
 
 選擇最小範圍（第三個參數）來通過所有測試。 它應該小於 1。
 

@@ -1,13 +1,13 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Step 27
+title: Step 26
 challengeType: 0
-dashedName: step-27
+dashedName: step-26
 ---
 
 # --description--
 
-`arr` contiene una serie di oggetti, ognuno con delle proprietà `name`, `position`, `number`, `isCaptain` e `nickname`. Per accedere a ognuna di queste proprietà nella funzione callback, dovrai usare la destrutturazione degli oggetti estraendole in variabili.
+`arr` contains a series of objects that each contains a `name`, `position`, `number`, `isCaptain` and `nickname` property. Per accedere a ognuna di queste proprietà nella funzione callback, dovrai usare la destrutturazione degli oggetti estraendole in variabili.
 
 Ecco un esempio:
 
@@ -25,7 +25,7 @@ Dovresti estrarre tutte le 5 proprietà dagli oggetti in `arr` usando la destrut
 
 ```js
 
-assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname)\s*\,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
 
 
 ```
@@ -452,10 +452,10 @@ Object.freeze(myFavoriteFootballTeam);
 const { sport, team, year, players } = myFavoriteFootballTeam;
 const { coachName } = myFavoriteFootballTeam.headCoach;
 
-typeOfSport.innerHTML = sport;
-teamName.innerHTML = team;
-worldCupYear.innerHTML = year;
-headCoach.innerHTML = coachName;
+typeOfSport.textContent = sport;
+teamName.textContent = team;
+worldCupYear.textContent = year;
+headCoach.textContent = coachName;
 
 const setPlayerCards = (arr = players) => {
 

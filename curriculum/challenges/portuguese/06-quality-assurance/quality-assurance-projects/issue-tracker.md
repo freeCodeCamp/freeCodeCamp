@@ -11,24 +11,16 @@ dashedName: issue-tracker
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
--   Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-issuetracker" target="_blank" rel="noopener noreferrer nofollow">nosso projeto inicial do Replit</a> para completar o projeto.
+-   Recorra ao <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow"> nosso projeto inicial no Gitpod </a> para completar o seu projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
-
-Se você usa o Replit, siga estas etapas para configurar o projeto:
-
--   Comece importando o projeto no Replit.
--   Em seguida, você verá uma janela `.replit`.
--   Selecione `Use run command` e clique no botão `Done`.
-
-Quando terminar, certifique-se de que uma demonstração funcional do seu projeto está hospedada em algum lugar público. Em seguida, envie o URL para a solução no campo Solution Link. Como opção, envie também um link para o código-fonte do projeto no campo GitHub Link.
 
 # --instructions--
 
 -   Complete a rota /api/translate em `/routes/api.js`
 -   Crie todos os testes funcionais em `tests/2_functional-tests.js`
 -   Copie o arquivo `sample.env` para `.env` e defina as variáveis adequadamente
--   Para executar os testes, remova `NODE_ENV=test` dos comentários no seu arquivo `.env`
--   Para executar os testes no console, use o comando `npm run test`. Para abrir o console do Replit, pressione Ctrl+Shift+P (cmd, se estiver em um Mac) e digite "open shell"
+-   Para executar os testes, adicione `NODE_ENV=test` no seu arquivo `.env`
+-   Para executar os testes no console, use o comando `npm run test`
 
 Escreva os testes a seguir em `tests/2_functional-tests.js`:
 
@@ -231,13 +223,13 @@ async (getUserInput) => {
     };
     const url = getUserInput('url') + '/api/issues/fcc-project';
     const itemToUpdate = await $.post(url, initialData);
-    const updateSucccess = await $.ajax({
+    const updateSuccess = await $.ajax({
       url: url,
       type: 'PUT',
       data: { _id: itemToUpdate._id, issue_text: 'New Issue Text' }
     });
-    assert.isObject(updateSucccess);
-    assert.deepEqual(updateSucccess, {
+    assert.isObject(updateSuccess);
+    assert.deepEqual(updateSuccess, {
       result: 'successfully updated',
       _id: itemToUpdate._id
     });

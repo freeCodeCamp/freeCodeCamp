@@ -8,13 +8,13 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --description--
 
-Come promemoria, questo progetto verrà costruito a partire dalla seguente bozza su <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, o clonato da <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `#typeOf` asserisce che il tipo del valore è la stringa data, come determinato da `Object.prototype.toString`.
 
 # --instructions--
 
-All'interno di `tests/1_unit-tests.js`, sotto il test etichettato con `#17`, nella suite `Objects`, cambia ogni asserzione `assert` in `assert.typeOf` o `assert.notTypeOf` per far passare il test (dovrebbe risultare `true`). Non alterare gli argomenti passati alle asserzioni.
+Within `tests/1_unit-tests.js` under the test labeled `#17` in the `Objects` suite, change each `assert` to either `assert.typeOf` or `assert.notTypeOf` to make the test pass (should evaluate to `true`). Non alterare gli argomenti passati alle asserzioni.
 
 # --hints--
 

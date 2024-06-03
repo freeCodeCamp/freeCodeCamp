@@ -3,12 +3,21 @@
 }
 
 .challenge-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-size: 16px;
   height: fit-content;
+  min-width: 25px;
   margin: 20px 0px 15px;
+  padding: 0px 3px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: fit-content;
+  white-space: pre-line;
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-size: 16px;
 }
 
 .challenge-title-breadcrumbs {
@@ -81,23 +90,7 @@
   margin: 5px -10px;
 }
 
-.title-text {
-  text-decoration: none;
-  min-width: 25px;
-  display: flex;
-  gap: 7px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: fit-content;
-  white-space: pre-line;
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: 0px 3px;
-}
-
-.title-text h1 {
+.challenge-title h1 {
   font-size: inherit;
   line-height: 1.42857143;
   margin: 0;

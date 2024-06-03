@@ -7,12 +7,13 @@ dashedName: build-a-drum-machine
 ---
 
 # --description--
+**Observação:** **o React 18 tem incompatibilidades conhecidas com os testes deste projeto (ver [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
 **Objetivo:** criar uma aplicação que funcione de modo semelhante ao que vemos em: <a href="https://drum-machine.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://drum-machine.freecodecamp.rocks/</a>.
 
 Atenda às histórias de usuário abaixo e faça com que todos os testes passem. Use quaisquer bibliotecas ou APIs de que você precisar. Dê ao projeto o seu próprio estilo pessoal.
 
-Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e JQuery para completar este projeto. Você deve usar um framework de front-end (como React por exemplo) porque essa seção trata de aprender frameworks de front-end. Tecnologias adicionais não listadas acima não são recomendadas e usá-las é por sua conta e risco. Estamos buscando apoiar outros frameworks de front-end, como Angular e Vue, mas eles não são atualmente suportados. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem o conjunto de tecnologias sugeridas para esse projeto. Boa programação!
+Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux e JQuery para completar este projeto. Você deve usar um framework de front-end (como React por exemplo) porque essa seção trata de aprender frameworks de front-end. Tecnologias adicionais não listadas acima não são recomendadas e usá-las é por sua conta e risco. Estamos buscando apoiar outros frameworks de front-end, como Angular e Vue, mas eles não são atualmente suportados. Vamos aceitar e tentar corrigir todos os relatórios de problemas que usem o conjunto de tecnologias sugeridas para esse projeto. Boa programação para você!
 
 **História de usuário nº 1:** eu devo ser capaz de ver um contêiner externo com um `id="drum-machine"` correspondente que contém todos os outros elementos.
 
@@ -30,15 +31,15 @@ Você pode usar qualquer mistura de HTML, JavaScript, CSS, Bootstrap, SASS, Reac
 
 Aqui estão algumas amostras de áudio que você pode usar para sua bateria eletrônica:
 
-- [Heater 1](https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3)
-- [Heater 2](https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3)
-- [Heater 3](https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3)
-- [Heater 4](https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3)
-- [Clap](https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3)
-- [Open-HH](https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3)
-- [Kick-n'-Hat](https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3)
-- [Kick](https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3)
-- [Closed-HH](https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3)
+- [Heater 1](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-1.mp3)
+- [Heater 2](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3)
+- [Heater 3](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3)
+- [Heater 4](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3)
+- [Clap](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3)
+- [Open-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3)
+- [Kick](https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3)
+- [Closed-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3)
 
 Você pode fazer o seu projeto <a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">usando este modelo da CodePen</a> e clicando em `Save` para criar seu próprio pen. Ou você pode usar esse link CDN para rodar os testes em qualquer ambiente que você goste:`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 

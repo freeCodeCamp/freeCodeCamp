@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 import _ from 'lodash';
 import isURL from 'validator/lib/isURL';
 
-import { isValidUsername } from '../../../../utils/validate';
+import { isValidUsername } from '../../../../shared/utils/validate';
 import { alertTypes } from '../../common/utils/flash.js';
 import {
   deprecatedEndpoint,
@@ -44,7 +44,6 @@ export default function settingsController(app) {
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
   api.put('/update-my-socials', ifNoUser401, updateMySocials);
-  api.put('/update-my-sound', ifNoUser401, updateMySound);
   api.put(
     '/update-my-keyboard-shortcuts',
     ifNoUser401,
@@ -52,6 +51,7 @@ export default function settingsController(app) {
   );
   api.put('/update-my-honesty', ifNoUser401, updateMyHonesty);
   api.put('/update-my-quincy-email', ifNoUser401, updateMyQuincyEmail);
+  api.put('/update-my-classroom-mode', ifNoUser401, updateMyClassroomMode);
 
   app.use(api);
 }
@@ -95,7 +95,10 @@ function updateMyEmail(req, res, next) {
   } = req;
   return user
     .requestUpdateEmail(email)
-    .subscribe(message => res.json({ message }), next);
+    .subscribe(
+      message => res.json({ type: message.type, message: message.message }),
+      next
+    );
 }
 
 // Re-enable once we can handle the traffic
@@ -140,15 +143,29 @@ function updateMyPortfolio(...args) {
   )(...args);
 }
 
-// This API is reponsible for what campers decide to make public in their porfoile, and what is private.
+// This API is responsible for what campers decide to make public in their profile, and what is private.
 function updateMyProfileUI(req, res, next) {
   const {
     user,
     body: { profileUI }
   } = req;
+
+  const update = {
+    isLocked: !!profileUI.isLocked,
+    showAbout: !!profileUI.showAbout,
+    showCerts: !!profileUI.showCerts,
+    showDonation: !!profileUI.showDonation,
+    showHeatMap: !!profileUI.showHeatMap,
+    showLocation: !!profileUI.showLocation,
+    showName: !!profileUI.showName,
+    showPoints: !!profileUI.showPoints,
+    showPortfolio: !!profileUI.showPortfolio,
+    showTimeLine: !!profileUI.showTimeLine
+  };
+
   user.updateAttribute(
     'profileUI',
-    profileUI,
+    update,
     createStandardHandler(req, res, next, 'flash.privacy-updated')
   );
 }
@@ -288,16 +305,6 @@ function updateMyTheme(...args) {
   )(...args);
 }
 
-function updateMySound(...args) {
-  const buildUpdate = body => _.pick(body, 'sound');
-  const validate = ({ sound }) => typeof sound === 'boolean';
-  createUpdateUserProperties(
-    buildUpdate,
-    validate,
-    'flash.updated-sound'
-  )(...args);
-}
-
 function updateMyKeyboardShortcuts(...args) {
   const buildUpdate = body => _.pick(body, 'keyboardShortcuts');
   const validate = ({ keyboardShortcuts }) =>
@@ -327,6 +334,17 @@ function updateMyQuincyEmail(...args) {
     buildUpdate,
     validate,
     'flash.subscribe-to-quincy-updated'
+  )(...args);
+}
+
+export function updateMyClassroomMode(...args) {
+  const buildUpdate = body => _.pick(body, 'isClassroomAccount');
+  const validate = ({ isClassroomAccount }) =>
+    typeof isClassroomAccount === 'boolean';
+  createUpdateUserProperties(
+    buildUpdate,
+    validate,
+    'flash.classroom-mode-updated'
   )(...args);
 }
 

@@ -9,6 +9,10 @@ const keyToSection = {
   tail: 'after-user-code'
 };
 const supportedLanguages = ['js', 'css', 'html', 'jsx', 'py'];
+const longToShortLanguages = {
+  javascript: 'js',
+  python: 'py'
+};
 
 function defaultFile(lang, id) {
   return {
@@ -25,8 +29,7 @@ function getFilenames(lang) {
   const langToFilename = {
     js: 'script',
     css: 'styles',
-    py: 'main',
-    python: 'main'
+    py: 'main'
   };
   return langToFilename[lang] ?? 'index';
 }
@@ -45,19 +48,20 @@ function getFileVisitor(seeds, seedKey, validate) {
 function codeToData(node, seeds, seedKey, validate) {
   if (validate) validate(node);
   const lang = node.lang;
-  if (!supportedLanguages.includes(lang))
+  const shortLang = longToShortLanguages[lang] ?? lang;
+  if (!supportedLanguages.includes(shortLang))
     throw Error(`On line ${
       position.start(node).line
-    } '${lang}' is not a supported language.
+    } '${shortLang}' is not a supported language.
  Please use one of js, css, html, jsx or py
 `);
 
-  const fileId = `index${lang}`;
+  const fileId = `index${shortLang}`;
   const id = seeds[fileId] ? seeds[fileId].id : '';
   // the contents will be missing if there is an id preceding this code
   // block.
   if (!seeds[fileId]) {
-    seeds[fileId] = defaultFile(lang, id);
+    seeds[fileId] = defaultFile(shortLang, id);
   }
   if (isEmpty(node.value) && seedKey !== 'contents') {
     const section = keyToSection[seedKey];
@@ -82,9 +86,10 @@ function idToData(node, index, parent, seeds) {
   }
   const codeNode = parent.children[index + 1];
   if (codeNode && is(codeNode, 'code')) {
-    const fileKey = `index${codeNode.lang}`;
+    const shortLang = longToShortLanguages[codeNode.lang] ?? codeNode.lang;
+    const fileKey = `index${shortLang}`;
     if (seeds[fileKey]) throw Error('::id{#id}s must come before code blocks');
-    seeds[fileKey] = defaultFile(codeNode.lang, id);
+    seeds[fileKey] = defaultFile(shortLang, id);
   } else {
     throw Error('::id{#id}s must come before code blocks');
   }

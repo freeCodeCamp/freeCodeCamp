@@ -1,6 +1,6 @@
 ---
 id: 5900f3bf1000cf542c50fed2
-title: 'Problem 83: Path sum: four ways'
+title: '問題 83: 経路の和: 4 方向'
 challengeType: 1
 forumTopicId: 302197
 dashedName: problem-83-path-sum-four-ways
@@ -8,31 +8,31 @@ dashedName: problem-83-path-sum-four-ways
 
 # --description--
 
-**Note:** This problem is a significantly more challenging version of Problem 81.
+**注:** これは、問題 81 をかなり難しくした問題です。
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by moving left, right, up, and down, is indicated in bold red and is equal to `2297`.
+下の 5 x 5 行列において、上下左右に移動して左上から右下へ移動するものとします。和が最小になる経路が赤い太字で示され、その和は `2297` になります。
 
   $$\begin{pmatrix}   \color{red}{131} & 673 & \color{red}{234} & \color{red}{103} & \color{red}{18}\\\\
   \color{red}{201} & \color{red}{96} & \color{red}{342} & 965 & \color{red}{150}\\\\   630 & 803 & 746 & \color{red}{422} & \color{red}{111}\\\\
   537 & 699 & 497 & \color{red}{121} & 956\\\\ 805 & 732 & 524 & \color{red}{37} & \color{red}{331} \end{pmatrix}$$
 
-Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in `matrix`, a 2D array representing a matrix. The maximum matrix size used in tests will be 80 by 80.
+行列を表す二次元配列 `matrix` において、上下左右への移動により左上から右下へ到達する経路の最小和を求めなさい。 このテストで使用される行列の大きさは最大 80 x 80 です。
 
 # --hints--
 
-`pathSumFourWays(testMatrix1)` should return a number.
+`pathSumFourWays(testMatrix1)` は数値を返す必要があります。
 
 ```js
 assert(typeof pathSumFourWays(_testMatrix1) === 'number');
 ```
 
-`pathSumFourWays(testMatrix1)` should return `2297`.
+`pathSumFourWays(testMatrix1)` は `2297` を返す必要があります。
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix1), 2297);
 ```
 
-`pathSumFourWays(testMatrix2)` should return `425185`.
+`pathSumFourWays(testMatrix2)` は `425185` を返す必要があります。
 
 ```js
 assert.strictEqual(pathSumFourWays(_testMatrix2), 425185);

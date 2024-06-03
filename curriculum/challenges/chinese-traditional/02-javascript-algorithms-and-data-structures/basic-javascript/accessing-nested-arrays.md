@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-使用點和方括號，將變量 `secondTree` 的值設置爲 `myPlants` 對象中 `trees` 列表的第二個項目。
+使用點和方括號，將變量 `secondTree` 的值設置爲 `myPlants` 數組的第二個對象元素的 `list` 數組的第二個元素。
 
 # --hints--
 
@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 你的代碼應該使用點號和方括號訪問 `myPlants`。
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -1,6 +1,6 @@
 ---
 id: 5900f3961000cf542c50fea9
-title: 'Problem 42: Coded triangle numbers'
+title: 'Problem 42: Codierte Dreieckszahlen'
 challengeType: 1
 forumTopicId: 302089
 dashedName: problem-42-coded-triangle-numbers
@@ -8,41 +8,41 @@ dashedName: problem-42-coded-triangle-numbers
 
 # --description--
 
-The `n`<sup>th</sup> term of the sequence of triangle numbers is given by, `tn` = ½`n`(`n`+1); so the first ten triangle numbers are:
+Der Term `n`<sup>th</sup> der Dreieckszahlenfolge ist gegeben durch `tn` = ½`n`(`n`+1); die ersten zehn Dreieckszahlen sind also:
 
 <div style='margin-left: 4em;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>
 
-By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = `t`<sub>10</sub>. If the word value is a triangle number then we shall call the word a triangle word.
+By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. Zum Beispiel ist der Wortwert für SKY 19 + 11 + 25 = 55 = `t`<sub>10</sub>. Wenn der Wortwert eine Dreieckszahl ist, nennen wir das Wort ein Dreieckswort.
 
 Using words array of `n`-length, how many are triangle words?
 
 # --hints--
 
-`codedTriangleNumbers(1400)` should return a number.
+`codedTriangleNumbers(1400)` sollte eine Zahl zurückgeben.
 
 ```js
 assert(typeof codedTriangleNumbers(1400) === 'number');
 ```
 
-`codedTriangleNumbers(1400)` should return 129.
+`codedTriangleNumbers(1400)` sollte 129 zurückgeben.
 
 ```js
 assert(codedTriangleNumbers(1400) == 129);
 ```
 
-`codedTriangleNumbers(1500)` should return 137.
+`codedTriangleNumbers(1500)` sollte 137 zurückgeben.
 
 ```js
 assert(codedTriangleNumbers(1500) == 137);
 ```
 
-`codedTriangleNumbers(1600)` should return 141.
+`codedTriangleNumbers(1600)` sollte 141 zurückgeben.
 
 ```js
 assert(codedTriangleNumbers(1600) == 141);
 ```
 
-`codedTriangleNumbers(1786)` should return 162.
+`codedTriangleNumbers(1786)` sollte 162 zurückgeben.
 
 ```js
 assert(codedTriangleNumbers(1786) == 162);

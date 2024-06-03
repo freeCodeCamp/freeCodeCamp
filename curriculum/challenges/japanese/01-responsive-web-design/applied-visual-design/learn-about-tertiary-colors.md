@@ -16,7 +16,7 @@ dashedName: learn-about-tertiary-colors
 
 こちらが分裂補色配色を使用して作成した三色です。
 
-<table class='table table-striped'><thead><tr><th>色</th><th>16 進数カラーコード</th></tr></thead><thead></thead><tbody><tr><td>オレンジ</td><td>#FF7F00</td></tr><tr><td>シアン</td><td>#00FFFF</td></tr><tr><td>ラズベリー</td><td>#FF007F</td></tr></tbody></table>
+<table><thead><tr><th>色</th><th>16 進数カラーコード</th></tr></thead><thead></thead><tbody><tr><td>オレンジ</td><td>#FF7F00</td></tr><tr><td>シアン</td><td>#00FFFF</td></tr><tr><td>ラズベリー</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 

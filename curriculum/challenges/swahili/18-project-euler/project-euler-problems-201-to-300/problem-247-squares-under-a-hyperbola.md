@@ -18,7 +18,7 @@ Let the index of $S_n$ be the pair (left, below) indicating the number of square
 
 <img class="img-responsive center-block" alt="diagram with squares under the hyperbola" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
 
-The diagram shows some such squares labelled by number.
+The diagram shows some such squares labeled by number.
 
 $S_2$ has one square to its left and none below, so the index of $S_2$ is (1, 0).
 

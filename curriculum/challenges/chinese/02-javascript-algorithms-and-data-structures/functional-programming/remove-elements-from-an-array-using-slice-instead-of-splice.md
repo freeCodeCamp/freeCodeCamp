@@ -30,16 +30,16 @@ cities.splice(3, 1);
 你的代码中应使用 `slice` 方法。
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 不能使用 `splice` 方法。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?splice/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 ```
 
-You should not mutate the original array passed to the function.
+你不应该改变传递给函数的原始数组。
 
 ```js
 assert.deepEqual(_inputCities, ["Chicago", "Delhi", "Islamabad", "London", "Berlin"]);

@@ -1,10 +1,11 @@
-import { SuperBlocks } from '../../../config/superblocks';
+import { Certification } from '../../../shared/config/certification-settings';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
   userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const userIdSelector = state => userSelector(state).id;
 export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
 export const currentChallengeIdSelector = state =>
@@ -28,6 +29,7 @@ export const recentlyClaimedBlockSelector = state =>
   state[MainApp].recentlyClaimedBlock;
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
+export const updateCardStateSelector = state => state[MainApp].updateCardState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[MainApp].showCert;
@@ -41,7 +43,6 @@ export const shouldRequestDonationSelector = state => {
   const progressDonationModalShown = progressDonationModalShownSelector(state);
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -49,16 +50,10 @@ export const shouldRequestDonationSelector = state => {
   // a block has been completed
   if (recentlyClaimedBlock) return true;
 
-  /* 
-  When AB testing for showing multiple progress modals is active,
-  show a donation modal every 30 challenges after the first 50
+  /*
+    Different intervals need to be tested for optimization.
    */
-  if (
-    showMultipleProgressModals &&
-    progressDonationModalShown &&
-    completedChallengesLength > 50 &&
-    completionCount - lastCompletionCount >= 30
-  )
+  if (progressDonationModalShown && completionCount - lastCompletionCount >= 20)
     return true;
 
   // a donation has already been requested
@@ -77,18 +72,27 @@ export const userTokenSelector = state => {
   return userSelector(state).userToken;
 };
 
-export const showCodeAllySelector = state => {
-  return state[MainApp].showCodeAlly;
-};
-
 export const examInProgressSelector = state => {
   return state[MainApp].examInProgress;
+};
+
+export const examResultsSelector = state => userSelector(state).examResults;
+
+export const msUsernameSelector = state => {
+  return userSelector(state).msUsername;
+};
+
+export const completedSurveysSelector = state =>
+  userSelector(state).completedSurveys || [];
+
+export const isProcessingSelector = state => {
+  return state[MainApp].isProcessing;
 };
 
 export const userByNameSelector = username => state => {
   const { user } = state[MainApp];
   // return initial state empty user empty object instead of empty
-  // object litteral to prevent components from re-rendering unnecessarily
+  // object literal to prevent components from re-rendering unnecessarily
   // TODO: confirm if "initialState" can be moved here or action-types.js
   return user[username] ?? {};
 };
@@ -114,14 +118,15 @@ export const certificatesByNameSelector = username => state => {
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8,
+    isJsAlgoDataStructCertV8
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
       isRespWebDesignCert ||
       is2018DataVisCert ||
       isFrontEndLibsCert ||
-      isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
       isQaCertV7 ||
       isInfosecCertV7 ||
@@ -130,99 +135,115 @@ export const certificatesByNameSelector = username => state => {
       isDataAnalysisPyCertV7 ||
       isMachineLearningPyCertV7 ||
       isRelationalDatabaseCertV8 ||
-      isCollegeAlgebraPyCertV8,
+      isCollegeAlgebraPyCertV8 ||
+      isFoundationalCSharpCertV8 ||
+      isJsAlgoDataStructCertV8,
     hasLegacyCert:
-      isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
+      isFrontEndCert ||
+      isJsAlgoDataStructCert ||
+      isBackEndCert ||
+      isDataVisCert ||
+      isInfosecQaCert,
     isFullStackCert,
     currentCerts: [
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
-        certSlug: SuperBlocks.RespWebDesign
+        certSlug: Certification.RespWebDesign
       },
       {
-        show: isJsAlgoDataStructCert,
-        title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: SuperBlocks.JsAlgoDataStruct
+        show: isJsAlgoDataStructCertV8,
+        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
+        certSlug: Certification.JsAlgoDataStructNew
       },
       {
         show: isFrontEndLibsCert,
         title: 'Front End Development Libraries Certification',
-        certSlug: SuperBlocks.FrontEndDevLibs
+        certSlug: Certification.FrontEndDevLibs
       },
       {
         show: is2018DataVisCert,
         title: 'Data Visualization Certification',
-        certSlug: SuperBlocks.DataVis
-      },
-      {
-        show: isApisMicroservicesCert,
-        title: 'Back End Development and APIs Certification',
-        certSlug: SuperBlocks.BackEndDevApis
-      },
-      {
-        show: isQaCertV7,
-        title: ' Quality Assurance Certification',
-        certSlug: 'quality-assurance-v7'
-      },
-      {
-        show: isInfosecCertV7,
-        title: 'Information Security Certification',
-        certSlug: 'information-security-v7'
-      },
-      {
-        show: isSciCompPyCertV7,
-        title: 'Scientific Computing with Python Certification',
-        certSlug: 'scientific-computing-with-python-v7'
-      },
-      {
-        show: isDataAnalysisPyCertV7,
-        title: 'Data Analysis with Python Certification',
-        certSlug: 'data-analysis-with-python-v7'
-      },
-      {
-        show: isMachineLearningPyCertV7,
-        title: 'Machine Learning with Python Certification',
-        certSlug: 'machine-learning-with-python-v7'
+        certSlug: Certification.DataVis
       },
       {
         show: isRelationalDatabaseCertV8,
         title: 'Relational Database Certification',
-        certSlug: 'relational-database-v8'
+        certSlug: Certification.RelationalDb
+      },
+      {
+        show: isApisMicroservicesCert,
+        title: 'Back End Development and APIs Certification',
+        certSlug: Certification.BackEndDevApis
+      },
+      {
+        show: isQaCertV7,
+        title: 'Quality Assurance Certification',
+        certSlug: Certification.QualityAssurance
+      },
+      {
+        show: isSciCompPyCertV7,
+        title: 'Scientific Computing with Python Certification',
+        certSlug: Certification.SciCompPy
+      },
+      {
+        show: isDataAnalysisPyCertV7,
+        title: 'Data Analysis with Python Certification',
+        certSlug: Certification.DataAnalysisPy
+      },
+      {
+        show: isInfosecCertV7,
+        title: 'Information Security Certification',
+        certSlug: Certification.InfoSec
+      },
+      {
+        show: isMachineLearningPyCertV7,
+        title: 'Machine Learning with Python Certification',
+        certSlug: Certification.MachineLearningPy
       },
       {
         show: isCollegeAlgebraPyCertV8,
         title: 'College Algebra with Python Certification',
-        certSlug: 'college-algebra-with-python-v8'
+        certSlug: Certification.CollegeAlgebraPy
+      },
+      {
+        show: isFoundationalCSharpCertV8,
+        title: 'Foundational C# with Microsoft Certification',
+        certSlug: Certification.FoundationalCSharp
       }
     ],
     legacyCerts: [
       {
         show: isFrontEndCert,
         title: 'Front End Certification',
-        certSlug: 'legacy-front-end'
+        certSlug: Certification.LegacyFrontEnd
+      },
+      {
+        show: isJsAlgoDataStructCert,
+        title: 'Legacy JavaScript Algorithms and Data Structures Certification',
+        certSlug: Certification.JsAlgoDataStruct
       },
       {
         show: isBackEndCert,
         title: 'Back End Certification',
-        certSlug: 'legacy-back-end'
+        certSlug: Certification.LegacyBackEnd
       },
       {
         show: isDataVisCert,
         title: 'Data Visualization Certification',
-        certSlug: 'legacy-data-visualization'
+        certSlug: Certification.LegacyDataVis
       },
       {
         show: isInfosecQaCert,
         title: 'Information Security and Quality Assurance Certification',
         // Keep the current public profile cert slug
-        certSlug: 'information-security-and-quality-assurance'
+        certSlug: Certification.LegacyInfoSecQa
       },
       {
         show: isFullStackCert,
         title: 'Full Stack Certification',
         // Keep the current public profile cert slug
-        certSlug: 'full-stack'
+        certSlug: Certification.LegacyFullStack
       }
     ]
   };

@@ -13,31 +13,31 @@ dashedName: nest-css-with-sass
 وعادة ما يكون كل عنصر مستهدفاً على خط مختلف لتصميمه، مثل:
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
 }
 
-nav ul {
-  list-style: none;
+article p {
+  color: white;
 }
 
-nav ul li {
-  display: inline-block;
+article ul {
+  color: blue;
 }
 ```
 
 بالنسبة لمشروع كبير، سيكون مِلَفّ CSS يحتوي على العديد من الأسطر والقواعد. هنا حيث يمكن للتداخل أن يساعد في تنظيم التعليمات البرمجية الخاصة بك عن طريق وضع قواعد تصميم فرعي ضمن العناصر الرئيسية لكل منهما:
 
 ```scss
-nav {
-  background-color: red;
+article {
+  height: 200px;
+
+  p {
+    color: white;
+  }
 
   ul {
-    list-style: none;
-
-    li {
-      display: inline-block;
-    }
+    color: blue;
   }
 }
 

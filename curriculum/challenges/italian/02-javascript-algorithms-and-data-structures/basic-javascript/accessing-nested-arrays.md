@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Usando la notazione a punto e a parentesi, imposta la variabile `secondTree` al secondo elemento nella lista `trees` dall'oggetto `myPlants`.
+Using dot and bracket notation, set the variable `secondTree` to the second element in the `list` array from the second object in the `myPlants` array.
 
 # --hints--
 
@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 Il tuo codice dovrebbe utilizzare la notazione a punti e parentesi per accedere a `myPlants`.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

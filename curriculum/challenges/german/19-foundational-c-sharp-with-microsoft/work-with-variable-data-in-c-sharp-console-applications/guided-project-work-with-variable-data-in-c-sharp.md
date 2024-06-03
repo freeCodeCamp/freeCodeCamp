@@ -7,28 +7,34 @@ dashedName: guided-project-work-with-variable-data-in-c-sharp
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-work-variable-data-c-sharp/</a> and complete all the tasks for the "Guided Project - Work with Variable Data in C#" module. This is required to earn the "Work with Variable Data in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/</a> und löse alle Aufgaben für das Modul "Geführtes Projekt - Arbeiten mit variablen Daten in C#". Dies ist **erforderlich**, um die Trophäe "Work with Variable Data in C# Console Applications" auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
+
+# --assignment--
+
+Schließe das geführte Projekt <a href="https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/" target="_blank" rel="noreferrer">Arbeiten mit variablen Daten in C#</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String. Which best describes the value type for `myConvert` when the `TryParse()` is successful?
+For the code `decimal.TryParse(numberString, out myConvert))` when the type of `numberString` is a String.
+
+Which best describes the value type for `myConvert` when the `TryParse()` is successful?
 
 ## --answers--
 
-A string representing numeric digits.
+Eine Zeichenfolge für numerische Ziffern.
 
 ---
 
-A Boolean value.
+Ein boolescher Wert.
 
 ---
 
-A decimal
+Eine Dezimalzahl
 
 ## --video-solution--
 

@@ -62,7 +62,7 @@ const readComponentCode = (filePath: string): string => {
     if (!filePath.endsWith('.js') || filePath.endsWith('.test.js')) {
       return '';
     }
-    code += fs.readFileSync(filePath);
+    code += fs.readFileSync(filePath).toString();
   }
   return code;
 };

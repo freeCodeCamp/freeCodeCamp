@@ -17,7 +17,7 @@ dashedName: change-the-position-of-overlapping-elements-with-the-z-index-propert
 
 # --hints--
 
-Елемент з класом `first` повинен мати значення `z-index`, із значенням 2.
+Елемент з класом `first` повинен мати `z-index` зі значенням 2.
 
 ```js
 assert($('.first').css('z-index') == '2');

@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**Objetivo:** Crea una aplicación que sea funcionalmente similar a <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>
+**Objetivo:** Construye una aplicación que sea funcionalmente similar a <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>. **No copies este proyecto de demostración**.
 
 **Historias de usuario:**
 
@@ -20,7 +20,7 @@ dashedName: build-a-survey-form
 1. Si ingresas un email que no tenga el formato correcto, verás un error de validación HTML5
 1. Dentro del formulario, puedes ingresar un número en un campo de `input` que tenga un `id` de `number`
 1. La entrada de números no debe aceptar caracteres no numéricos, ya sea impidiendo que los escribas o mostrando un error de validación HTML5 (dependiendo del navegador).
-1. Si ingrisas un número que esté fuera del rango de números permitido, que es definido por los atributos `min` y `max`, verás un error de validación de HTML5
+1. Si ingresas un número que esté fuera del rango de números permitido, que es definido por los atributos `min` y `max`, verás un error de validación de HTML5
 1. Para los campos de entrada de nombre, email y número, puedes ver los correspondientes elementos `label` en el formulario, que describen el propósito de cada campo con los siguientes id: `id="name-label"`, `id="email-label"` y `id="number-label"`
 1. Para los campos de entrada de nombre, email y número, podrás ver un texto provisional que da una descripción o instrucciones para cada campo
 1. Dentro del elemento form, debes tener un elemento desplegable `select` con un `id` de `dropdown` con al menos dos opciones para elegir
@@ -373,7 +373,7 @@ assert(!!el)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 ---
 id: 587d7fad367417b2b2512be1
-title: Обробка кліків за допомогою JavaScript функцією onclick
+title: Обробіть події натискання з JavaScript, використовуючи властивість onclick
 challengeType: 6
 forumTopicId: 301503
 dashedName: handle-click-events-with-javascript-using-the-onclick-property
@@ -8,7 +8,7 @@ dashedName: handle-click-events-with-javascript-using-the-onclick-property
 
 # --description--
 
-Вам потрібно, щоб код виконувався лише після завантаження сторінки. Для цього прикріпіть event JavaScript до `DOMContentLoaded` документу. Ось приклад такого коду:
+Код має виконуватись лише тоді, коли сторінка повністю завантажиться. Для цього можна прикріпити подію JavaScript до документа під назвою `DOMContentLoaded`. Ось приклад такого коду:
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-Ви можете вставити обробники подій у функцію `DOMContentLoaded`. You can implement an `onclick` event handler which triggers when the user clicks on the `#getMessage` element, by adding the following code:
+Ви можете імплементувати обробники подій, які будуть всередині функції `DOMContentLoaded`. Ви можете імплементувати обробник подій `onclick`, який запускається, коли користувач натискає на елемент `#getMessage`, за допомогою цього коду:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -24,17 +24,17 @@ document.getElementById('getMessage').onclick = function(){};
 
 # --instructions--
 
-Додайте обробник подій кліку до функції `DOMContentLoaded` для елементу з id `getMessage`.
+Додайте обробник натискання всередині функції `DOMContentLoaded` для елемента з id зі значенням `getMessage`.
 
 # --hints--
 
-Your code should use the `document.getElementById` method to select the element whose id is `getMessage`.
+Код має використати метод `document.getElementById`, щоб вибрати елемент з id зі значенням `getMessage`.
 
 ```js
 assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
 ```
 
-Додайте до коду обробник подій `onclick`.
+Код має додати обробник подій `onclick`.
 
 ```js
 assert(typeof document.getElementById('getMessage').onclick === 'function');

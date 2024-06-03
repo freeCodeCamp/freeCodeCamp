@@ -1,6 +1,6 @@
 ---
 id: 5900f43f1000cf542c50ff51
-title: 'Problem 208: Robot Walks'
+title: '問題208：機器人走路'
 challengeType: 1
 forumTopicId: 301849
 dashedName: problem-208-robot-walks
@@ -10,7 +10,7 @@ dashedName: problem-208-robot-walks
 
 A robot moves in a series of one-fifth circular arcs (72°), with a free choice of a clockwise or an anticlockwise arc for each step, but no turning on the spot.
 
-One of 70932 possible closed paths of 25 arcs starting northward is
+從北向南開始的70932條可能的閉合路徑之一是
 
 <img class="img-responsive center-block" alt="closed path of 25 arcs, starting northward" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
 

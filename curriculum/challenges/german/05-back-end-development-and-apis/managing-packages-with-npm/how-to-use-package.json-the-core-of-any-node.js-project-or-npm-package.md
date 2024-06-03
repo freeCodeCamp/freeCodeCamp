@@ -11,18 +11,12 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 Bei der Arbeit an diesen Aufgaben wirst du deinen Code mithilfe folgender Methoden schreiben:
 
 - Klone <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">diese GitHub-Repo</a> und schließe dein Projekt lokal ab.
-- Benutze <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">unser Replit-Starterprojekt</a>, um diese Aufgabe fertigzustellen.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - Verwende einen Site-Builder deiner Wahl, um das Projekt abzuschließen. Achte darauf, alle Dateien von unserem GitHub-Repo zu integrieren.
 
-Wenn du Replit verwendest, folge diesen Schritten, um das Projekt einzurichten:
+Die `package.json`-Datei stellt das Zentrum eines Node.js-Projekts oder npm-Pakets dar. It stores information about your project. Es besteht aus einem einzigen JSON-Objekt, in dem Informationen in Schlüssel-Wert-Paaren gespeichert sind. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
 
--   Beginne, indem du das Projekt in Replit importierst.
--   Als nächstes wird ein `.replit`-Fenster angezeigt.
--   Wähle `Use run command` aus und klicke die `Done`-Schaltfläche.
-
-Wenn du fertig bist, stelle sicher, dass eine funktionierende Demo deines Projekts irgendwo öffentlich gehostet wird. Gib anschließend die URL in das Solution Link-Feld ein.
-
-Die `package.json`-Datei stellt das Zentrum eines Node.js-Projekts oder npm-Pakets dar. Es speichert Informationen über dein Projekt, ähnlich wie der `head`-Abschnitt eines HTML-Dokuments den Inhalt einer Webseite beschreibt. Es besteht aus einem einzigen JSON-Objekt, in dem Informationen in Schlüssel-Wert-Paaren gespeichert sind. Es gibt dort nur zwei Pflichtfelder: `name` und `version`. Es ist jedoch empfehlenswert, zusätzliche Informationen über dein Projekt anzugeben, die für zukünfige Benutzer oder Maintainer nützlich sein könnten.
+You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
 
 Wenn du dir den Dateibaum deines Projekts ansiehst, wirst du die `package.json`-Datei auf der obersten Ebene des Baums finden. Das ist die Datei, die du in den nächsten paar Aufgaben verbessern wirst.
 
@@ -37,6 +31,8 @@ Eine der häufigsten Angaben in dieser Datei stellt das `author`-Feld dar. Es gi
 Trage in der `package.json`-Datei deinen Namen als `author` des Projekts ein.
 
 **Hinweis:** Denk daran, dass du JSON schreibst, daher müssen alle Feldnamen in doppelten Anführungszeichen (") gesetzt und durch ein Komma (,) getrennt werden.
+
+If you are using Gitpod, make sure the app is running and the preview window is open. Copy the preview window's URL and paste it into the Solution Link input below.
 
 # --hints--
 

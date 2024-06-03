@@ -1,6 +1,6 @@
 ---
 id: 5900f43f1000cf542c50ff52
-title: 'Problem 211: Divisor Square Sum'
+title: '问题211：除数平方和'
 challengeType: 1
 forumTopicId: 301853
 dashedName: problem-211-divisor-square-sum

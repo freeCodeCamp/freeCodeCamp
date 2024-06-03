@@ -46,7 +46,7 @@ Beachte die Syntax, mit der die Getter und Setter aufgerufen werden. Sie sehen n
 
 Verwende das Schlüsselwort `class`, um eine Klasse `Thermostat` zu erstellen. Der `constructor` akzeptiert eine Fahrenheit-Temperatur.
 
-Erstelle in der Klasse einen `getter`, um die Temperatur in Celsius zu erhalten und einen `setter`, um die Temperatur in Celsius zu setzen.
+In the class, create a `getter` to obtain the temperature in Celsius and a `setter` that accepts a temperature in Celsius.
 
 Denke daran, dass `C = 5/9 * (F - 32)` und `F = C * 9.0 / 5 + 32`, wobei `F` der Wert der Temperatur in Fahrenheit und `C` der Wert der gleichen Temperatur in Celsius ist.
 

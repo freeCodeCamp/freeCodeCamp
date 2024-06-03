@@ -1,6 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff4
-title: 'Problem 373: Circumscribed Circles'
+title: 'Завдання 373: описані кола'
 challengeType: 1
 forumTopicId: 302035
 dashedName: problem-373-circumscribed-circles
@@ -8,11 +8,11 @@ dashedName: problem-373-circumscribed-circles
 
 # --description--
 
-Every triangle has a circumscribed circle that goes through the three vertices. Consider all integer sided triangles for which the radius of the circumscribed circle is integral as well.
+Кожен трикутник має описане коло, яке проходить через три вершини. Розглянемо всі трикутники з цілими сторонами, для яких радіус описаного кола також є цілим числом.
 
-Let $S(n)$ be the sum of the radii of the circumscribed circles of all such triangles for which the radius does not exceed $n$.
+Нехай $S(n)$ буде сумою радіусів описаних кіл всіх трикутників, радіус яких не перевищує $n$.
 
-$S(100) = 4\\,950$ and $S(1\\,200) = 1\\,653\\,605$.
+$S(100) = 4\\,950$ та $S(1\\,200) = 1\\,653\\,605$.
 
 Знайдіть $S({10}^7)$.
 

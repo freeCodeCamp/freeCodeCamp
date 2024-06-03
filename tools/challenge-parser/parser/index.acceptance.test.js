@@ -58,4 +58,11 @@ describe('challenge parser', () => {
     );
     expect(parsed).toMatchSnapshot();
   });
+
+  it('it should parse md with a scene', async () => {
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/scene.md')
+    );
+    expect(parsed).toMatchSnapshot();
+  });
 });

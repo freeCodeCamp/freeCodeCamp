@@ -13,7 +13,7 @@ HTML offers the `accesskey` attribute to specify a shortcut key to activate or b
 
 HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.
 
-Here's an example:
+Hapa kuna mfano:
 
 ```html
 <button accesskey="b">Important Button</button>

@@ -1,6 +1,6 @@
 ---
 id: 5900f51b1000cf542c51002e
-title: 'Problem 431: Square Space Silo'
+title: '問題431：方形筒倉'
 challengeType: 1
 forumTopicId: 302102
 dashedName: problem-431-square-space-silo
@@ -10,7 +10,7 @@ dashedName: problem-431-square-space-silo
 
 Fred the farmer arranges to have a new storage silo installed on his farm and having an obsession for all things square he is absolutely devastated when he discovers that it is circular. Quentin, the representative from the company that installed the silo, explains that they only manufacture cylindrical silos, but he points out that it is resting on a square base. Fred is not amused and insists that it is removed from his property.
 
-Quick thinking Quentin explains that when granular materials are delivered from above a conical slope is formed and the natural angle made with the horizontal is called the angle of repose. For example if the angle of repose, $\alpha = 30°$, and grain is delivered at the centre of the silo then a perfect cone will form towards the top of the cylinder. In the case of this silo, which has a diameter of 6m, the amount of space wasted would be approximately 32.648388556 m<sup>3</sup>. However, if grain is delivered at a point on the top which has a horizontal distance of $x$ metres from the centre then a cone with a strangely curved and sloping base is formed. He shows Fred a picture.
+快速思考Quentin解釋說，當從上方輸送粒狀材料時，形成錐形斜面，與水平面形成的自然角度稱爲休止角。 For example if the angle of repose, $\alpha = 30°$, and grain is delivered at the centre of the silo then a perfect cone will form towards the top of the cylinder. In the case of this silo, which has a diameter of 6m, the amount of space wasted would be approximately 32.648388556 m<sup>3</sup>. 然而，如果穀物在頂部的一個點處被輸送，該點與中心的水平距離爲$ x $ m，則形成具有奇怪彎曲和傾斜的基部的錐體。 他向弗雷德展示了一張照片
 
 <img class="img-responsive center-block" alt="image presenting forming of the perfect cone towards the top of the cylinder" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px;" />
 

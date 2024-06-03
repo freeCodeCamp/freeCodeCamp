@@ -7,7 +7,7 @@ import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
-import { algoliaAppId, algoliaAPIKey } from '../../../../config/env.json';
+import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
 import { newsIndex } from '../../utils/algolia-locale-setup';
 
 import {

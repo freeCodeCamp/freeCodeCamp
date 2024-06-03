@@ -1,6 +1,6 @@
 ---
 id: 5900f3f51000cf542c50ff07
-title: 'Problem 136: Singleton difference'
+title: '問題 136: 単体の差違'
 challengeType: 1
 forumTopicId: 301764
 dashedName: problem-136-singleton-difference
@@ -8,17 +8,17 @@ dashedName: problem-136-singleton-difference
 
 # --description--
 
-The positive integers, $x$, $y$, and $z$, are consecutive terms of an arithmetic progression. Given that $n$ is a positive integer, the equation, $x^2 − y^2 − z^2 = n$, has exactly one solution when $n = 20$:
+正の整数 $x$, $y$, $z$ は等差数列の連続項です。 $n$ を正の整数とすると、式 $x^2 − y^2 − z^2 = n$ は、$n = 20$ のときちょうど 1 つの解を持ちます。
 
 $$13^2 − 10^2 − 7^2 = 20$$
 
-In fact, there are twenty-five values of $n$ below one hundred for which the equation has a unique solution.
+実は、この式の解が 1 つのみになるような $n$ の値は 100 未満で 25 個あります。
 
-How many values of $n$ less than fifty million have exactly one solution?
+この等式の解がちょうど 1 つになるような、5000 万未満 の $n$ の値はいくつありますか。
 
 # --hints--
 
-`singletonDifference()` should return `2544559`.
+`singletonDifference()` は `2544559` を返す必要があります。
 
 ```js
 assert.strictEqual(singletonDifference(), 2544559);

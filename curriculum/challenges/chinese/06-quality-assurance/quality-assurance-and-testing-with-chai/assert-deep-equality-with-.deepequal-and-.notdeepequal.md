@@ -8,13 +8,13 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>  or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `deepEqual()` 断言两个对象是否深度相等。
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，在标有 `#7` 的 `Equality` 套件里，将每个 `assert` 替换成 `assert.deepEqual` 或 `assert.notDeepEqual`，让测试通过（应该返回 `true`）。 不要改变传入断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#7` in the `Equality` suite, change each `assert` to either `assert.deepEqual` or `assert.notDeepEqual` to make the test pass (should evaluate to `true`). 不要改变传入断言的参数。
 
 # --hints--
 

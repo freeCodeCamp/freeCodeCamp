@@ -72,7 +72,14 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   }
 
   componentDidMount(): void {
+    const { t } = this.props;
+
     document.addEventListener('click', this.handleFocus);
+
+    const searchInput = document.querySelector('.ais-SearchBox-input');
+    if (searchInput) {
+      searchInput.setAttribute('aria-label', t('search.label'));
+    }
   }
 
   componentWillUnmount(): void {
@@ -122,6 +129,12 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
       query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
     }
     updateSearchQuery(query);
+
+    //clear input value
+    const searchInput = e.currentTarget?.children?.[0] as HTMLInputElement;
+    if (searchInput) {
+      searchInput.value = '';
+    }
 
     // For Learn search results page
     // return navigate('/search');
@@ -198,12 +211,10 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
         >
           <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
             <div className='fcc_search_wrapper'>
-              <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
-                {t('search.label')}
-              </label>
               <ObserveKeys except={['Space']}>
                 <div onFocus={this.handleFocus} role='textbox'>
                   <SearchBox
+                    data-playwright-test-label='header-search'
                     focusShortcuts={['83', '191']}
                     onChange={this.handleChange}
                     onSubmit={e => {

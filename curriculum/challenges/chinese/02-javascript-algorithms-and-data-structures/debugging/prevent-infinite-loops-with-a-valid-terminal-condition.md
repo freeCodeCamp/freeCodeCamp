@@ -31,13 +31,13 @@ function loopy() {
 你应该在`for`循环的终止条件（中间部分）中更改比较运算符。
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 你应该修改比较运算符来避免出现死循环。
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

@@ -16,11 +16,11 @@ Este primeiro vídeo inclui uma introdução ao curso, como ele vai funcionar e 
 
 \- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry, de Jay Abramson</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Crie um <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory de álgebra no seu Google Drive</a> para que você possa acompanhar os vídeos.
+
+# --question--
 
 ## --text--
 

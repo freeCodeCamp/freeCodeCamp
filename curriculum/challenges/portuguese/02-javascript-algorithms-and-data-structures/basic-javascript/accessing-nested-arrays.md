@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Usando a notação de ponto e de colchetes, defina a variável `secondTree` para o segundo item na lista de `trees` do objeto `myPlants`.
+Usando a notação de ponto e a de colchetes, defina a variável `secondTree` como o segundo item no array `list` do segundo objeto no array `myPlants`.
 
 # --hints--
 
@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 O código deve usar notação de ponto e colchetes para acessar `myPlants`.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

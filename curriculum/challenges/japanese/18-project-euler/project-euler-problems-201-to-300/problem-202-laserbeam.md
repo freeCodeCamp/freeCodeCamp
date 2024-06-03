@@ -1,6 +1,6 @@
 ---
 id: 5900f4371000cf542c50ff49
-title: 'Problem 202: Laserbeam'
+title: '問題 202: レーザー光線'
 challengeType: 1
 forumTopicId: 301843
 dashedName: problem-202-laserbeam
@@ -8,19 +8,19 @@ dashedName: problem-202-laserbeam
 
 # --description--
 
-Three mirrors are arranged in the shape of an equilateral triangle, with their reflective surfaces pointing inwards. There is an infinitesimal gap at each vertex of the triangle through which a laser beam may pass.
+3 枚の鏡が、鏡面を内側に向けて正三角形を形作るように置かれています。 三角形の各頂点には、レーザー光線が通れる非常に小さな穴があります。
 
-Label the vertices $A$, $B$ and $C$. There are 2 ways in which a laser beam may enter vertex $C$, bounce off 11 surfaces, then exit through the same vertex: one way is shown below; the other is the reverse of that.
+頂点を $A$, $B$, $C$ とします。 レーザー光線が頂点 $C$ から入り、11 回反射して同じ頂点から出るには、2 通りの経路があります。その一つは下図、もう一つはその逆です。
 
-<img class="img-responsive center-block" alt="one way in which laser beam may enter vertex C, bounce off 11 surfaces and exit through the same vertex" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="レーザー光線が頂点 C から入り、11 回反射して同じ頂点から出る経路の一つ" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
 
-There are 80840 ways in which a laser beam may enter vertex $C$, bounce off 1000001 surfaces, then exit through the same vertex.
+レーザー光線が頂点 $C$ から入り、1000001 回反射して同じ頂点から出るには、80840 通りの経路があります。
 
-In how many ways can a laser beam enter at vertex $C$, bounce off 12017639147 surfaces, then exit through the same vertex?
+レーザー光線が頂点 $C$ から入り、12017639147 回反射して同じ頂点から出るには、何通りの経路がありますか。
 
 # --hints--
 
-`laserbeam()` should return `1209002624`.
+`laserbeam()` は `1209002624` を返す必要があります。
 
 ```js
 assert.strictEqual(laserbeam(), 1209002624);

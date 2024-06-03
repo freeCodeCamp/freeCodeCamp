@@ -44,12 +44,13 @@ assert(everyPHasClass);
 ```js
 const p = Array.from(document.querySelectorAll('P'));
 
-const everyPhasBackgroundColor = p?.every((paragraph) => {
-
+const everyPHasBackgroundColor = p?.every((paragraph) => {
   const style = getComputedStyle(paragraph);
 
   return style?.backgroundColor === 'rgb(255, 255, 0)';
 })
+
+assert.equal(everyPHasBackgroundColor, true);
 ```
 
 Другий елемент повинен мати текст зі значенням `blue` та `font-size` зі значенням `36px`.
@@ -59,7 +60,7 @@ const secondElementId = document.querySelectorAll('div')?.[0]?.id;
 
 const style = new __helpers.CSSHelp(document).getStyle(`#${secondElementId}`);
 
-assert.equal(style?.color, 'rgb(0, 0, 255)')
+assert.equal(style?.color, 'blue');
 assert.equal(style?.fontSize, '36px');
 ```
 
@@ -164,7 +165,7 @@ assert(style?.fontWeight === 'bold');
 
 ```css
 .odd {
-  background-color: rgb(255, 167, 167);
+  background-color: yellow;
   font-family: Verdana, "DejaVu Sans", sans-serif;
 }
 
@@ -173,7 +174,7 @@ assert(style?.fontWeight === 'bold');
 }
 
 #two {
-  color: #0000ff;
+  color: blue;
   font-size: 36px;
 }
 

@@ -20,7 +20,7 @@ dashedName: create-a-doubly-linked-list
 
 # --hints--
 
-The `DoublyLinkedList` data structure should exist.
+`DoublyLinkedList` データ構造を用意する必要があります。
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-The `DoublyLinkedList` should have a method called `add`.
+`DoublyLinkedList` には `add` というメソッドが必要です。
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-The `DoublyLinkedList` should have a method called `remove`.
+`DoublyLinkedList` には `remove` というメソッドが必要です。
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-Removing an item from an empty list should return `null`.
+空のリストから要素を削除すると、`null` が返される必要があります。
 
 ```js
 assert(
@@ -82,7 +82,7 @@ assert(
 );
 ```
 
-The `add` method should add items to the list.
+`add` メソッドはリストに要素を追加する必要があります。
 
 ```js
 assert(

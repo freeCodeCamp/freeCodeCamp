@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908847
-title: Розділіть рядки у Bootstrap
+title: Розділіть ряд Bootstrap
 challengeType: 0
 forumTopicId: 18306
 dashedName: split-your-bootstrap-row
@@ -8,19 +8,19 @@ dashedName: split-your-bootstrap-row
 
 # --description--
 
-Тепер, коли ми маємо рядок Bootstrap, давайте розділимо його на дві колонки для того, шоб розмістити елементи.
+Ми маємо ряд Bootstrap. Розділимо його на два стовпці, щоб розмістити елементи.
 
-Створіть два елементи у рядку `div`, обидва з класом `col-xs-6`.
+Створіть два елементи `div` в межах ряду, обидва з класами `col-xs-6`.
 
 # --hints--
 
-Два елементи `div class="col-xs-6"` мають бути встановлені всередині вашого елементу `div class="row"`.
+Два елементи `div class="col-xs-6"` мають бути вкладеними в межах елемента `div class="row"`.
 
 ```js
 assert($('div.row > div.col-xs-6').length > 1);
 ```
 
-Всі елементи `div` повинні містити кінцеві теґи.
+Усі елементи `div` повинні мати кінцеві теги.
 
 ```js
 assert(

@@ -1,6 +1,6 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
-title: 'Problem 349: Langton''s ant'
+title: 'Problem 349: Langton''s Ameise'
 challengeType: 1
 forumTopicId: 302008
 dashedName: problem-349-langtons-ant
@@ -10,12 +10,12 @@ dashedName: problem-349-langtons-ant
 
 An ant moves on a regular grid of squares that are coloured either black or white.
 
-The ant is always oriented in one of the cardinal directions (left, right, up or down) and moves from square to adjacent square according to the following rules:
+Die Ameise ist immer in eine der Kardinalrichtungen (links, rechts, oben oder unten) ausgerichtet und bewegt sich nach den folgenden Regeln von Feld zu Feld:
 
 - if it is on a black square, it flips the color of the square to white, rotates 90° counterclockwise and moves forward one square.
-- if it is on a white square, it flips the color of the square to black, rotates 90° clockwise and moves forward one square.
+- befindet sie sich auf einem schwarzen Feld, ändert sie die Farbe des Feldes in weiß, dreht sich um 90° gegen den Uhrzeigersinn und rückt ein Feld vor.
 
-Starting with a grid that is entirely white, how many squares are black after ${10}^{18}$ moves of the ant?
+Wie viele Quadrate sind nach ${10}^{18}$ Zügen der Ameise schwarz, wenn man von einem komplett weißen Gitter ausgeht?
 
 # --hints--
 

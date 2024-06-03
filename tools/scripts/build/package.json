@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "8"
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -19,14 +19,9 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
-    "@types/js-yaml": "4.0.5",
-    "@types/node-fetch": "2.6.4",
-    "chai": "4.3.7",
-    "debug": "4.3.4",
-    "dotenv": "16.3.1",
-    "joi": "17.9.2",
-    "js-yaml": "4.1.0",
-    "node-fetch": "2.6.12",
+    "@total-typescript/ts-reset": "^0.5.0",
+    "chai": "4.4.1",
+    "joi": "17.12.2",
     "readdirp": "3.6.0"
   }
 }

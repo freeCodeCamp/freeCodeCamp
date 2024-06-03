@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SpotifyLogo = (
+const AmazonLogo = (
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element => (
   <svg
@@ -8,9 +8,12 @@ const SpotifyLogo = (
     viewBox='93.907 250 1350 472'
     xmlns='http://www.w3.org/2000/svg'
     xmlnsXlink='http://www.w3.org/1999/xlink'
-    {...props}
     fill='var(--quaternary-color)'
+    role='img'
+    aria-labelledby='amazon-logo-label'
+    {...props}
   >
+    <title id='amazon-logo-label'>Amazon</title>
     <g>
       <path
         d=' M 627.609 633.492 C 577.617 670.34 505.156 690 442.768 690 C 355.291 690 276.539 657.645 216.96 603.833 C 212.279 599.602 216.473 593.835 222.09 597.13 C 286.387 634.54 365.888 657.046 448.011 657.046 C 503.396 657.046 564.323 645.587 620.344 621.808 C 628.808 618.213 635.885 627.35 627.609 633.492'
@@ -64,6 +67,6 @@ const SpotifyLogo = (
   </svg>
 );
 
-SpotifyLogo.displayName = 'SpotifyLogo';
+AmazonLogo.displayName = 'AmazonLogo';
 
-export default SpotifyLogo;
+export default AmazonLogo;

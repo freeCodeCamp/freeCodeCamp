@@ -16,11 +16,11 @@ dashedName: introduction-to-college-algebra-with-python
 
 \- <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">《代数与三角学》，作者 Jay Abramson</a>
 
-# --question--
-
-## --任务--
+# --任务--
 
 <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">在你的 Google Drive 上创建一个 Colab 笔记本</a>，这样你可以跟着视频一起学习。
+
+# --question--
 
 ## --text--
 

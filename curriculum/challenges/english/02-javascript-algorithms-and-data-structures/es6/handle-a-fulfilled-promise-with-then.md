@@ -8,7 +8,13 @@ dashedName: handle-a-fulfilled-promise-with-then
 
 # --description--
 
-Promises are most useful when you have a process that takes an unknown amount of time in your code (i.e. something asynchronous), often a server request. When you make a server request it takes some amount of time, and after it completes you usually want to do something with the response from the server. This can be achieved by using the `then` method. The `then` method is executed immediately after your promise is fulfilled with `resolve`. Here’s an example:
+Promises are most useful when you have a process that takes an unknown amount of time in your code (i.e. something asynchronous), often a server request. When you make a server request it takes some amount of time, and after it completes you usually want to do something with the response from the server. This can be achieved by using the `then` method.
+
+```js
+Promise.prototype.then(onFulfilled, onRejected)
+```
+
+The `then` method schedules callback functions for the eventual completion of a Promise - either fulfillment or rejection. One of the `onFulfilled` and `onRejected` handlers will be executed to handle the current promise's fulfillment or rejection. When the promise is fulfilled with `resolve` the `onFulfilled` handler is called.
 
 ```js
 myPromise.then(result => {
@@ -28,7 +34,7 @@ You should call the `then` method on the promise.
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.then\(/g)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/(makeServerRequest|\))\.then\(/g)
 );
 ```
 
@@ -44,7 +50,7 @@ You should log `result` to the console.
 assert(
   resultIsParameter &&
     __helpers
-      .removeWhiteSpace(code)
+      .removeWhiteSpace(__helpers.removeJSComments(code))
       .match(/\.then\(.*?result.*?console.log\(result\).*?\)/)
 );
 ```
@@ -54,7 +60,7 @@ assert(
 ## --after-user-code--
 
 ```js
-const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(code));
+const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)));
 ```
 
 ## --seed-contents--

@@ -8,17 +8,17 @@ dashedName: use-regular-expressions-to-test-a-string
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
-`match()` asserts that the actual value matches the second argument regular expression.
+`match()` gibt an, dass der tatsächliche Wert mit dem zweiten Argument übereinstimmt.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
+Within `tests/1_unit-tests.js` under the test labeled `#15` in the `Strings` suite, change each `assert` to either `assert.match` or `assert.notMatch` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 
-All tests should pass.
+Alle Tests sollten bestanden werden.
 
 ```js
 (getUserInput) =>
@@ -50,7 +50,7 @@ Du solltest die richtige Methode für die erste Behauptung wählen - `match` vs.
   );
 ```
 
-You should choose the correct method for the second assertion - `match` vs. `notMatch`.
+Du solltest die richtige Methode für die zweite Assertion auswählen - `match` vs. `notMatch`.
 
 ```js
 (getUserInput) =>

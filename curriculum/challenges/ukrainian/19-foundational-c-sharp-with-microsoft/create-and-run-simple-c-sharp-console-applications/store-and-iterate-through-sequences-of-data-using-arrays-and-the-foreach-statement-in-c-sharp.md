@@ -1,22 +1,26 @@
 ---
 id: 647e22058acb466c97ccbeec
-title: 'Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#'
+title: 'Збережіть та переберіть послідовність даних, використовуючи масиви та інструкцію foreach в C#'
 challengeType: 19
 dashedName: store-and-iterate-through-sequences-of-data-using-arrays-and-the-foreach-statement-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на платформі Microsoft Learn. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-arrays/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-arrays/</a> and complete all the tasks for the "Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-arrays/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-arrays/</a> та виконайте всі завдання модуля «Збережіть та переберіть послідовність даних, використовуючи масиви та інструкцію foreach в C#». Це **обов’язково**, щоб отримати трофей зі «Створення та запуск простих консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
+
+# --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-arrays/" target="_blank" rel="noreferrer">«Збережіть та переберіть послідовність даних, використовуючи масиви та інструкцію foreach в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which of the following foreach statements is syntactically correct?
+Яка з перелічених інструкцій foreach синтаксично правильна?
 
 ## --answers--
 

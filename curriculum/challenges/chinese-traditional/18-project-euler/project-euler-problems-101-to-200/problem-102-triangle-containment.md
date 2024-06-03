@@ -1,6 +1,6 @@
 ---
 id: 5900f3d21000cf542c50fee5
-title: 'Problem 102: Triangle containment'
+title: '問題102：三角圍堵'
 challengeType: 1
 forumTopicId: 301726
 dashedName: problem-102-triangle-containment
@@ -10,7 +10,7 @@ dashedName: problem-102-triangle-containment
 
 Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
 
-Consider the following two triangles:
+考慮以下兩個三角形：
 
 ```js
 const exampleTriangles = [
@@ -19,31 +19,31 @@ const exampleTriangles = [
 ];
 ```
 
-It can be verified that first triangle contains the origin, whereas second triangle does not.
+可以驗證第一個三角形包含原點，而第二個三角形不包含。
 
-Using the `triangles` array containing coordinates of triangles, find the number of triangles for which the interior contains the origin.
+使用包含三角形座標的 `triangles` 數組，找到內部包含原點的三角形的數量。
 
 # --hints--
 
-`triangleContainment(exampleTriangles)` should return a number.
+`triangleContainment(exampleTriangles)` 應該返回一個數字。
 
 ```js
 assert(typeof triangleContainment(_exampleTriangles) === 'number');
 ```
 
-`triangleContainment(exampleTriangles)` should return `1`.
+`triangleContainment(exampleTriangles)` 應該返回 `1`。
 
 ```js
 assert.strictEqual(triangleContainment(_exampleTriangles), 1);
 ```
 
-`triangleContainment(testTriangles1)` should return `19`.
+`triangleContainment(testTriangles1)` 應該返回 `19`。
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles1), 19);
 ```
 
-`triangleContainment(testTriangles2)` should return `228`.
+`triangleContainment(testTriangles2)` 應該返回 `228`。
 
 ```js
 assert.strictEqual(triangleContainment(_testTriangles2), 228);

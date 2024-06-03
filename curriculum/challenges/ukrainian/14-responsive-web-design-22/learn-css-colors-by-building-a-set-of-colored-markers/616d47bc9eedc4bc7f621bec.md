@@ -17,7 +17,7 @@ dashedName: step-10
 assert([...code.matchAll(/<div.*?>/gi)][1]);
 ```
 
-Ваш новий елемент `div` повинен мати кінцевий теґ.
+Новий елемент `div` повинен мати кінцевий тег.
 
 ```js
 assert([...code.matchAll(/<\/div\s*>/gi)][1]);

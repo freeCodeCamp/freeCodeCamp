@@ -8,13 +8,13 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --description--
 
-Recuerda, este proyecto se está construyendo partir de una plantilla en <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> o clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `#instanceOf` verifica que un objeto es una instancia de un constructor.
 
 # --instructions--
 
-Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#18` en `Objects` suite, cambia cada `assert` a `assert.instanceOf` o `assert.notInstanceOf` para pasar la prueba (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
+Within `tests/1_unit-tests.js` under the test labeled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 

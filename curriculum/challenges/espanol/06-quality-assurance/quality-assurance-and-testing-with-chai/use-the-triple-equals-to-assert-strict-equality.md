@@ -8,13 +8,13 @@ dashedName: use-the-triple-equals-to-assert-strict-equality
 
 # --description--
 
-Recuerda, este proyecto se está construyendo partir de una plantilla en <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> o clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `strictEqual()` compara objetos usando `===`.
 
 # --instructions--
 
-Dentro de `tests/1_unit-tests.js` bajo la prueba etiquetada `#6` en `Equality` suite, cambia cada `assert` a `assert.strictEqual` o `assert.notStrictEqual`, para que la prueba sea pasada (debe evaluarse como `true`). No modifiques los argumentos pasados ​​a los verificadores.
+Within `tests/1_unit-tests.js` under the test labeled `#6` in the `Equality` suite, change each `assert` to either `assert.strictEqual` or `assert.notStrictEqual` to make the test pass (should evaluate to `true`). No modifiques los argumentos pasados ​​a los verificadores.
 
 # --hints--
 

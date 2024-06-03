@@ -1,12 +1,9 @@
 {
-  "name": "TOP build a recipe project",
-  "isUpcomingChange": true,
+  "name": "Learn HTML Foundations by Building a Recipe Page",
+  "isUpcomingChange": false,
   "dashedName": "top-build-a-recipe-project",
-  "helpCategory": "HTML-CSS",
-  "order": 1,
-  "time": "",
-  "template": "",
-  "required": [],
+  "helpCategory": "Odin",
+  "order": 3,
   "superBlock": "the-odin-project",
   "challengeOrder": [
     {

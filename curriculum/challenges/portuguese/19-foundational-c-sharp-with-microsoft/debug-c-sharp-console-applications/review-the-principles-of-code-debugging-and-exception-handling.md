@@ -7,10 +7,14 @@ dashedName: review-the-principles-of-code-debugging-and-exception-handling
 
 # --description--
 
-Este desafio será parcialmente concluído na plataforma de aprendizagem da Microsoft. Siga estas instruções para concluir o desafio:
+Este desafio será parcialmente concluído na plataforma Microsoft Learn. Siga estas instruções para concluir o desafio:
 
-1. Acesse <a href="https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> e complete todas as tarefas do módulo "Revise os princípios de depuração de código e tratamento de exceções". Isto é necessário para adquirir o troféu "Depure aplicações de console em C#".
+1. Acesse <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> e complete todas as tarefas do módulo "Revise os princípios de depuração de código e tratamento de exceções". Isso é **necessário** para conquistar o troféu "Depure aplicações de console do C#" da Microsoft Learn e para se qualificar para o exame de certificação.
 1. Quando terminar, volte e responda corretamente à pergunta abaixo.
+
+# --assignment--
+
+Complete o módulo <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Revise os princípios de depuração de código e tratamento de exceções</a> no Microsoft Learn. Em seguida, responda a pergunta abaixo.
 
 # --question--
 

@@ -16,7 +16,7 @@ Es gibt verschiedene Methoden zur Auswahl von Farbkombinationen, die zu stimmige
 
 Hier sind drei Farben, die mit dem Split-Komplementär-Schema erstellt wurden:
 
-<table class='table table-striped'><thead><tr><th>Farbe</th><th>Hex-Code</th></tr></thead><thead></thead><tbody><tr><td>orange</td><td>#FF7F00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>himbeerfarben</td><td>#FF007F</td></tr></tbody></table>
+<table><thead><tr><th>Farbe</th><th>Hex-Code</th></tr></thead><thead></thead><tbody><tr><td>orange</td><td>#FF7F00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>himbeerfarben</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 

@@ -9,12 +9,7 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-Ви будете <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Replit</a>.
-
--   Почніть з імпорту проєкту на Replit.
--   Потім ви побачите вікно `.replit`.
--   Оберіть `Use run command` та натисніть кнопку `Done`.
-
+Ви будете <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">працювати над цим проєктом з нашим стартовим кодом Gitpod</a>.
 
 Ми досі розробляємо інтерактивну частину навчальної програми з Python. Наразі є декілька відео на ютуб-каналі freeCodeCamp.org, які навчать всього необхідного для виконання цього проєкту:
 
@@ -38,25 +33,25 @@ dashedName: sha-1-password-cracker
 
 Ось кілька хешованих паролів для перевірки функції:
 
-- `b305921a3723cd5d70a375cd21a61e60aabb84ec` повинен повернути «sammy123»
-- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` повинен повернути «abacab»
-- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` повинен повернути «password»
+- `b305921a3723cd5d70a375cd21a61e60aabb84ec` має повернути «sammy123»
+- `c7ab388a5ebefbf4d550652f1eb4d833e5316e3e` має повернути «abacab»
+- `5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8` має повернути «password»
 
 Ось кілька хешованих паролів для тестування функції, якщо `use_salts` встановлено на `True`:
 
-- `53d8b3dc9d39f0184144674e310185e41a87ffd5` повинен повернути «superman»
-- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` повинен повернути «q1w2e3r4t5»
-- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` повинен повернути «bubbles1»
+- `53d8b3dc9d39f0184144674e310185e41a87ffd5` має повернути «superman»
+- `da5a4e8cf89539e66097acd2f8af128acae2f8ae` має повернути «q1w2e3r4t5»
+- `ea3f62d498e3b98557f9f9cd0d905028b3b019e1` має повернути «bubbles1»
 
 Для вас було імпортовано бібліотеку `hashlib`. Подумайте над її використанням у своєму коді. <a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer nofollow">Дізнайтеся більше про «hashlib» тут</a>.
 
 ## Розробка
 
-Запишіть свій код у `password_cracker.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код. Натисніть кнопку «run» і `main.py` запуститься.
+Запишіть свій код у `password_cracker.py`. Для розробки ви можете використати `main.py`, щоб протестувати свій код.
 
 ## Тестування
 
-Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності. Тести запустяться автоматично, коли ви натиснете на кнопку «run».
+Модульні тести для цього проєкту знаходяться в `test_module.py`. Ми імпортували тести з `test_module.py` до `main.py` для вашої зручності.
 
 ## Надсилання
 

@@ -45,16 +45,33 @@ ourStorage.desk.drawer;
 assert(gloveBoxContents === 'maps');
 ```
 
-你的代碼應該使用點號和方括號來訪問 `myStorage`。
+你的代碼應該儘可能使用點號來訪問 `myStorage`。
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert.match(code, /myStorage\.car\.inside/);
 ```
 
 應該用 `const` 聲明 `gloveBoxContents`。
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=/)
+assert.match(code, /const\s+gloveBoxContents\s*=/);
+```
+
+你不應該更改 `myStorage` 對象。
+
+```js
+const expectedMyStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
 # --seed--

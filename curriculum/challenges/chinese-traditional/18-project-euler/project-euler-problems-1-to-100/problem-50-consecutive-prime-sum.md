@@ -67,8 +67,8 @@ class PrimeSeive {
         const prime = 2 * i + 3;
         primes.push(prime);
         // Mark all multiples of this number as false (not prime)
-        const primeSqaredIndex = 2 * i ** 2 + 6 * i + 3;
-        for (let j = primeSqaredIndex; j < upper; j += prime) {
+        const primeSquaredIndex = 2 * i ** 2 + 6 * i + 3;
+        for (let j = primeSquaredIndex; j < upper; j += prime) {
           seive[j] = false;
         }
       }
@@ -101,10 +101,10 @@ class PrimeSeive {
 };
 
 function consecutivePrimeSum(limit) {
-  // Initalize seive
+  // Initialize seive
   const primeSeive = new PrimeSeive(limit);
 
-  // Initalize for longest sum < 100
+  // Initialize for longest sum < 100
   let bestPrime = 41;
   let bestI = 0;
   let bestJ = 5;

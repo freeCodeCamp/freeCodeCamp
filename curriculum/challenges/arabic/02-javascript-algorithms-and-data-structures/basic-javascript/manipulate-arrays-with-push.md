@@ -9,21 +9,21 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-يوجد طريقة سهلة لإضافة البيانات إلى نهاية القائمة و هي عن طريق وظيفة `push()`.
+An easy way to append data to the end of an array is via the `push()` method.
 
-تأخذ `.push()` واحد أو أكثر من <dfn>الوسائط</dfn> و "تدفعها" إلى نهاية القائمة.
+The `push()` method takes one or more <dfn>arguments</dfn> and appends them to the end of the array, in the order in which they appear. It returns the new length of the array.
 
 على سبيل المثال:
 
 ```js
 const arr1 = [1, 2, 3];
-arr1.push(4);
+arr1.push(4, 5);
 
 const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-ألأن `arr1` لديه قيمة `[1, 2, 3, 4]` ولدي `arr2` قيمة `["Stimpson", "J", "cat", ["happy", "joy"]]`.
+`arr1` now has the value `[1, 2, 3, 4, 5]` and `arr2` has the value `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 

@@ -7,9 +7,9 @@ function plugin() {
   return transformer;
 
   function transformer(tree, file) {
-    const assigmentNodes = getAllBetween(tree, '--assignment--');
+    const assignmentNodes = getAllBetween(tree, '--assignment--');
 
-    const assignment = getAssignments(assigmentNodes).filter(a => a != '');
+    const assignment = getAssignments(assignmentNodes).filter(a => a != '');
 
     file.data.assignments = assignment;
   }

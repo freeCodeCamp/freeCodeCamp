@@ -1,6 +1,6 @@
 ---
 id: 5900f5101000cf542c510022
-title: 'Problem 419: Look and say sequence'
+title: '问题419：先说顺序'
 challengeType: 1
 forumTopicId: 302088
 dashedName: problem-419-look-and-say-sequence
@@ -10,9 +10,9 @@ dashedName: problem-419-look-and-say-sequence
 
 The look and say sequence goes 1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, ...
 
-The sequence starts with 1 and all other members are obtained by describing the previous member in terms of consecutive digits.
+该序列以 1 开头，并且所有其他成员都是通过用连续数字描述前一个成员而获得的。
 
-It helps to do this out loud:
+大声地这样做有助于：
 
 1 is 'one one' $→ 11$
 

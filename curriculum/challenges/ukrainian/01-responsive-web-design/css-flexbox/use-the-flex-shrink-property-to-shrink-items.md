@@ -21,13 +21,13 @@ dashedName: use-the-flex-shrink-property-to-shrink-items
 
 # --hints--
 
-Елемент `#box-1` повинен мати властивість `flex-shrink` налаштованою до значення `1`.
+Елемент `#box-1` повинен мати властивість `flex-shrink` зі значенням `1`.
 
 ```js
 assert($('#box-1').css('flex-shrink') == '1');
 ```
 
-Елемент `#box-2` повинен мати властивість `flex-shrink` налаштованою до значення `2`.
+Елемент `#box-2` повинен мати властивість `flex-shrink` зі значенням `2`.
 
 ```js
 assert($('#box-2').css('flex-shrink') == '2');

@@ -35,7 +35,7 @@ assert(difference === 12);
 Solo debes restar un número de `45`.
 
 ```js
-assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
+assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

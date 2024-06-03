@@ -11,26 +11,20 @@ dashedName: metric-imperial-converter
 構建一個 JavaScript 全棧應用，在功能上與 <a href="https://metric-imperial-converter.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://metric-imperial-converter.freecodecamp.rocks/</a> 類似。 可以採用下面的任意一種方式完成這個挑戰：
 
 - 克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">這個 GitHub 倉庫</a>，並在本地完成你的項目。
-- 使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-metricimpconverter" target="_blank" rel="noopener noreferrer nofollow">我們在 Replit 上的初始化項目</a>來完成你的項目。
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 - 使用一個你喜歡的站點生成器來完成項目。 需要確定包含了我們 GitHub 倉庫的所有文件。
 
-如果你使用 Replit，請按照以下步驟設置項目：
-
--   首先在 Replit 中導入項目。
--   接着，你將看到一個 `.replit` 窗口。
--   選擇 `Use run command` 並點擊 `Done` 按鈕。
-
-當你完成後，請將一個確保正常運行的 demo（項目演示）託管在可以公開訪問的平臺上。 然後將 demo 的 URL 提交到 Solution Link 字段中。 也可以將項目的源碼鏈接提交到 GitHub Link 字段中。
+**Note:** This project's tests do not work when using `glitch.com`.
 
 # --instructions--
 
 - 在 `/controllers/convertHandler.js` 中完成必要的轉換邏輯
 - 在 `/routes/api.js` 中完成必要的路由
 - 複製 `sample.env` 文件到 `.env` 並按需設置變量
-- 在 `.env` 文件中取消註釋 `NODE_ENV=test` 來運行測試
-- 使用 `npm run test` 命令在 console 中運行測試。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），並輸入“open shell”，打開 Replit 控制檯
+- To run the tests automatically, add `NODE_ENV=test` in your `.env` file
+- 使用 `npm run test` 命令在 console 中運行測試。
 
-在 `tests/1_unit-tests.js` 中寫下以下測試：
+Write the following tests in `tests/1_unit-tests.js`:
 
 - `convertHandler` 應該正確地讀取整個數字輸入。
 - `convertHandler` 應該正確地讀取一個十進制數字輸入。
@@ -49,7 +43,7 @@ dashedName: metric-imperial-converter
 - `convertHandler` 應該正確地將 `lbs` 轉換爲 `kg`。
 - `convertHandler` 應該正確地將 `kg` 轉換爲 `lbs`。
 
-在 `tests/2_functional-tests.js` 中編寫下以下測試：
+在 `tests/2_functional-tests.js` 中編寫以下測試：
 
 - 轉換一個有效的輸入例如 `10L`：`GET` 請求到 `/api/convert`。
 - 轉換一個無效的輸入例如 `32g`：`GET` 請求到 `/api/convert`。
@@ -59,7 +53,7 @@ dashedName: metric-imperial-converter
 
 # --hints--
 
-你可以提交你自己的項目，而不是示例的 URL。
+你應該提交你自己的項目，而不是示例 URL
 
 ```js
 getUserInput => {
@@ -71,13 +65,13 @@ getUserInput => {
 };
 ```
 
-通過 `GET` 請求 `/api/convert`，傳入數字和單位的單個參數，可以將其轉換。 （提示：通過尋找第一個字符的索引來分割輸入，這將標記單位的開始）
+You can `GET` `/api/convert` with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
 
 ```js
 
 ```
 
-你可以將 `'gal'` 轉換爲 `'L'`，反之亦然。 （1 gal 轉換爲 3.78541 L）
+You can convert `'gal'` to `'L'` and vice versa. (1 gal to 3.78541 L)
 
 ```js
 async getUserInput => {
@@ -100,7 +94,7 @@ async getUserInput => {
 };
 ```
 
-你可以將 `'lbs'` 轉換爲 `'kg'`，反之亦然。 （1 lbs 轉換爲 0.453592 kg）
+You can convert `'lbs'` to `'kg'` and vice versa. (1 lbs to 0.453592 kg)
 
 ```js
 async getUserInput => {
@@ -123,7 +117,7 @@ async getUserInput => {
 };
 ```
 
-你可以將 `'mi'` 轉換爲 `'km'` 反之亦然。 （1 mi 轉換爲 1.60934 km）
+You can convert `'mi'` to `'km'` and vice versa. (1 mi to 1.60934 km)
 
 ```js
 async getUserInput => {
@@ -146,7 +140,7 @@ async getUserInput => {
 };
 ```
 
-所有輸入單位以大寫和小寫形式都應該被接受，但在 `initUnit` 和 `returnUnit` 中應以小寫形式返回，升除外，應將其表示爲大寫的 `'L'`。
+All incoming units should be accepted in both upper and lower case, but should be returned in both the `initUnit` and `returnUnit` in lower case, except for liter, which should be represented as an uppercase `'L'`.
 
 ```js
 async getUserInput => {
@@ -169,7 +163,7 @@ async getUserInput => {
 };
 ```
 
-如果測量單位無效，返回將爲 `'invalid unit'`。
+If the unit of measurement is invalid, returned will be `'invalid unit'`.
 
 ```js
 async getUserInput => {
@@ -182,7 +176,7 @@ async getUserInput => {
 };
 ```
 
-如果數字無效，返回將爲 `'invalid number'`。
+If the number is invalid, returned will be `'invalid number'`.
 
 ```js
 async getUserInput => {
@@ -197,7 +191,7 @@ async getUserInput => {
 };
 ```
 
-如果單位和數字都無效，返回將爲 `'invalid number and unit'`。
+If both the unit and number are invalid, returned will be `'invalid number and unit'`.
 
 ```js
 async getUserInput => {
@@ -215,7 +209,7 @@ async getUserInput => {
 };
 ```
 
-你可以在參數中使用分數、小數或小數分數（例如 5、1/2、2.5/6），如果沒有提供任何內容，則默認值爲 1。
+You can use fractions, decimals or both in the parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
 
 ```js
 async getUserInput => {
@@ -246,7 +240,7 @@ async getUserInput => {
 };
 ```
 
-你的返回將包含 `initNum`、`initUnit`、`returnNum`、`returnUnit` 和 `string` 拼寫單位格式 `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'`，結果四捨五入爲 5 位小數。
+Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
 
 ```js
 async getUserInput => {
@@ -263,7 +257,7 @@ async getUserInput => {
 };
 ```
 
-所有 16 項單元測試都已完成並通過。
+All 16 unit tests are complete and passing.
 
 ```js
 async getUserInput => {
@@ -288,7 +282,7 @@ async getUserInput => {
 };
 ```
 
-所有 5 項功能測試都已完成並通過。
+All 5 functional tests are complete and passing.
 
 ```js
 async getUserInput => {

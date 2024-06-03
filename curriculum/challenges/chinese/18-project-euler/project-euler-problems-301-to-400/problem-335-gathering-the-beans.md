@@ -1,6 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffce
-title: 'Problem 335: Gathering the beans'
+title: '问题335：收集豆子'
 challengeType: 1
 forumTopicId: 301993
 dashedName: problem-335-gathering-the-beans

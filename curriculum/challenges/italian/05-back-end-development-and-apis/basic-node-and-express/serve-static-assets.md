@@ -40,6 +40,28 @@ La tua app dovrebbe servire i file di risorsa dalla directory `/public` al perco
   );
 ```
 
+Your app should not serve files from any other folders except from `/public` directory
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/server.js').then(
+    (data) => {
+       assert.equal(
+        data?.status + '',
+        404 + '',
+        'Your app must serve files only from "public" directory'
+      );
+    },
+    (xhr) => {
+      assert.equal(
+        xhr?.status + '',
+        404 + '',
+        'Your app must serve files only from "public" directory'
+      );
+    }
+  );
+```
+
 # --solutions--
 
 ```js

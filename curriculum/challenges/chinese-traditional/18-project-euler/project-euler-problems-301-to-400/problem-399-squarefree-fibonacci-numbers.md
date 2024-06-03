@@ -1,6 +1,6 @@
 ---
 id: 5900f4fc1000cf542c51000e
-title: 'Problem 399: Squarefree Fibonacci Numbers'
+title: '問題 399：Squarefree 斐波那契數列'
 challengeType: 1
 forumTopicId: 302064
 dashedName: problem-399-squarefree-fibonacci-numbers

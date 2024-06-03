@@ -8,7 +8,13 @@ dashedName: handle-a-fulfilled-promise-with-then
 
 # --description--
 
-プロミスは、サーバーリクエストなど、処理にどの程度の時間がかかるかわからないプロセス (たとえば、非同期的なもの) がコードにある場合に最も役立ちます。 サーバーリクエストを行う場合、処理には時間がかかり、通常は処理の完了後にサーバーからの応答を受けて何らかの処理を行う必要があります。 `then` メソッドを使用するとこうした処理を実現できます。 `then` メソッドは、`resolve` によってプロミスが成功した直後に実行されます。 例を次に示します。
+プロミスは、サーバーリクエストなど、処理にどの程度の時間がかかるかわからないプロセス (たとえば、非同期的なもの) がコードにある場合に最も役立ちます。 サーバーリクエストを行う場合、処理には時間がかかり、通常は処理の完了後にサーバーからの応答を受けて何らかの処理を行う必要があります。 `then` メソッドを使用するとこうした処理を実現できます。
+
+```js
+Promise.prototype.then(onFulfilled, onRejected)
+```
+
+The `then` method schedules callback functions for the eventual completion of a Promise - either fulfillment or rejection. One of the `onFulfilled` and `onRejected` handlers will be executed to handle the current promise's fulfillment or rejection. When the promise is fulfilled with `resolve` the `onFulfilled` handler is called.
 
 ```js
 myPromise.then(result => {
@@ -28,7 +34,7 @@ myPromise.then(result => {
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.then\(/g)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/(makeServerRequest|\))\.then\(/g)
 );
 ```
 
@@ -44,7 +50,7 @@ assert(resultIsParameter);
 assert(
   resultIsParameter &&
     __helpers
-      .removeWhiteSpace(code)
+      .removeWhiteSpace(__helpers.removeJSComments(code))
       .match(/\.then\(.*?result.*?console.log\(result\).*?\)/)
 );
 ```
@@ -54,7 +60,7 @@ assert(
 ## --after-user-code--
 
 ```js
-const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(code));
+const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)));
 ```
 
 ## --seed-contents--

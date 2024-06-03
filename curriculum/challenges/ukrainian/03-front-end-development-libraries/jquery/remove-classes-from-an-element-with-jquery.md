@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aed918626
-title: Видалити класи з елементу за допомогою jQuery
+title: Видаліть класи з елементу за допомогою jQuery
 challengeType: 6
 forumTopicId: 18264
 required:
@@ -11,9 +11,9 @@ dashedName: remove-classes-from-an-element-with-jquery
 
 # --description--
 
-Видаляти класи за допомогою функції jQuery `removeClass()` можна так само, як додавати класи до елементу, скориставшись функцією `addClass()`.
+Видаляти класи за допомогою функції `removeClass()` можна так само, як і додавати класи до елементу за допомогою функції `addClass()`.
 
-Для певної кнопки ви можете зробити це таким чином:
+Ось приклад для певної кнопки:
 
 ```js
 $("#target2").removeClass("btn-default");
@@ -23,19 +23,19 @@ $("#target2").removeClass("btn-default");
 
 # --hints--
 
-Клас `btn-default` варто видалити з усіх елементів `button`.
+Клас `btn-default` має бути видаленим з усіх елементів `button`.
 
 ```js
 assert($('.btn-default').length === 0);
 ```
 
-Використовуйте тільки jQuery, щоб видалити цей клас з елементу.
+Для видалення цього класу з елемента використовуйте лише jQuery.
 
 ```js
 assert(code.match(/btn btn-default/g));
 ```
 
-Ви маєте лише видалити клас `btn-default`.
+Видаліть лише клас `btn-default`.
 
 ```js
 assert(

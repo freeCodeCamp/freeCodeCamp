@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Мета:** Створити застосунок, функціонально схожий до <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
+**Мета:** створити застосунок, функціонально схожий до <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>. **Не копіюйте цей демонстраційний проєкт**.
 
 **Історія користувача:**
 
@@ -30,7 +30,7 @@ dashedName: build-a-technical-documentation-page
 
 Виконайте історію користувача та пройдіть тести, наведені нижче, щоб завершити цей проєкт. Оформте за власним стилем. Щасливого програмування!
 
-**Примітка:** Переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив'язки з аркушем стилів та застосували CSS
+**Примітка:** переконайтеся, що додали `<link rel="stylesheet" href="styles.css">` до HTML для прив’язки з аркушем стилів та застосували CSS
 
 # --hints--
 
@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 Кожен `.nav-link` повинен мати атрибут `href`, що посилає на відповідний `.main-section` (наприклад, якщо натиснути на елемент `.nav-link`, що містить текст «Hello world», сторінка скерує на елемент `section` з таким ідентифікатором).
@@ -241,7 +241,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

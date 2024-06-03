@@ -1,0 +1,161 @@
+# TODO: remove this workflow once we use containers in the other workflows. This
+# workflow is intended to prevent regressions until that has been achieved.
+name: CI - E2E - Containers
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['CI - Node.js']
+    types:
+      - completed
+  # TODO: refactor with a workflow_call
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+    branches:
+      - 'main'
+      - 'next-**'
+      - 'e2e-**'
+
+jobs:
+  build-client:
+    name: Build Client (Container)
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Create Image
+        run: |
+          docker build \
+            --build-arg HOME_LOCATION=http://localhost:8000 \
+            --build-arg API_LOCATION=http://localhost:3000 \
+            --build-arg FORUM_LOCATION=https://forum.freecodecamp.org \
+            --build-arg NEWS_LOCATION=https://www.freecodecamp.org/news \
+            --build-arg RADIO_LOCATION=https://coderadio.freecodecamp.org \
+            --build-arg CLIENT_LOCALE=english \
+            --build-arg CURRICULUM_LOCALE=english \
+            --build-arg SHOW_LOCALE_DROPDOWN_MENU=false \
+            --build-arg ALGOLIA_APP_ID=app_id_from_algolia_dashboard \
+            --build-arg ALGOLIA_API_KEY=api_key_from_algolia_dashboard \
+            --build-arg STRIPE_PUBLIC_KEY=pk_from_stripe_dashboard \
+            --build-arg PAYPAL_CLIENT_ID=id_from_paypal_dashboard \
+            --build-arg PATREON_CLIENT_ID=id_from_patreon_dashboard \
+            --build-arg DEPLOYMENT_ENV=staging \
+            --build-arg SHOW_UPCOMING_CHANGES=false \
+            --build-arg SHOW_NEW_CURRICULUM=true \
+            --build-arg GROWTHBOOK_URI=api_URI_from_Growthbook_dashboard \
+            --build-arg FREECODECAMP_NODE_ENV=development \
+            -t fcc-client \
+            -f docker/web/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-client > client-artifact.tar
+
+      - name: Upload Client Artifact
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
+        with:
+          name: client-artifact
+          path: client-artifact.tar
+
+  build-api:
+    name: Build Api (Container)
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-api \
+            -f docker/api/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-api > api-artifact.tar
+
+      - name: Upload Api Artifact
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
+        with:
+          name: api-artifact
+          path: api-artifact.tar
+
+  build-new-api:
+    name: Build New Api (Container)
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-new-api \
+            -f docker/new-api/Dockerfile .
+
+  cypress-run:
+    name: Test
+    runs-on: ubuntu-22.04
+    needs: [build-client, build-api]
+    strategy:
+      fail-fast: false
+      matrix:
+        # To avoid wasting resources we're only using chrome for now.
+        browsers: [chrome]
+        node-version: [20.x]
+
+    steps:
+      - name: Set Action Environment Variables
+        run: |
+          echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
+
+      # Cypress calls some pnpm scripts, so we need to install pnpm.
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
+        with:
+          version: 9
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Load Images
+        run: |
+          docker load < client-artifact/client-artifact.tar
+          docker load < api-artifact/api-artifact.tar
+
+      - name: Set freeCodeCamp Environment Variables (needed by api)
+        run: cp sample.env .env
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          start: docker compose up -d
+          wait-on: http://localhost:8000, http://localhost:3000
+          wait-on-timeout: 1200
+          config: baseUrl=http://localhost:8000
+          browser: ${{ matrix.browsers }}
+          # Only run one test to keep the run time down.
+          spec: 'cypress/e2e/default/learn/redirects/es6-to-basic-javascript.ts'

@@ -66,7 +66,7 @@ Tu código no debe depender de ningún tipo de bluces (`for` o `while`) o funcio
 
 ```js
 assert(
-  !code.match(/for|while|forEach|map|filter|reduce/g)
+  !__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g)
 );
 ```
 

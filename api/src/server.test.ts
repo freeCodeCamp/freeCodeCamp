@@ -5,8 +5,7 @@ jest.mock('./utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual('./utils/env'),
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    COOKIE_DOMAIN: '.freecodecamp.org'
+    COOKIE_DOMAIN: 'freecodecamp.org'
   };
 });
 
@@ -15,7 +14,7 @@ describe('server', () => {
 
   describe('CSRF protection', () => {
     it('should receive a new CSRF token with the expected properties', async () => {
-      const response = await superRequest('/', { method: 'GET' });
+      const response = await superRequest('/status/ping', { method: 'GET' });
       const newCookies = response.get('Set-Cookie');
       const csrfTokenCookie = newCookies.find(cookie =>
         cookie.includes('csrf_token')
@@ -89,12 +88,13 @@ describe('server', () => {
       });
     });
 
-    test('should have Access-Control-Allow-(Headers+Credentials) headers', async () => {
+    test('should have CORS headers', async () => {
       const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'access-control-allow-headers':
-          'Origin, X-Requested-With, Content-Type, Accept',
-        'access-control-allow-credentials': 'true'
+          'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token',
+        'access-control-allow-credentials': 'true',
+        'access-control-allow-methods': 'GET, PUT, POST, DELETE'
       });
     });
   });

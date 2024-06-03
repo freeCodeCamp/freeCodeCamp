@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-استخدم dot و علامات الأقواس, لتعيّن المتغير `secondTree` إلى العنصر الثاني في قائمة `trees` من object باسم `myPlants`.
+Using dot and bracket notation, set the variable `secondTree` to the second element in the `list` array from the second object in the `myPlants` array.
 
 # --hints--
 
@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 التعليمات البرميجة الخاص بك يجب أن يستخدم dot و bracket notation للوصول إلى `myPlants`.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

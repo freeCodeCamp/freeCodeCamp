@@ -1,6 +1,6 @@
 ---
 id: 5900f3801000cf542c50fe93
-title: 'Problem 20: Factorial digit sum'
+title: '問題20：因子數字和'
 challengeType: 1
 forumTopicId: 301839
 dashedName: problem-20-factorial-digit-sum
@@ -10,32 +10,32 @@ dashedName: problem-20-factorial-digit-sum
 
 `n`! means `n` × (`n` − 1) × ... × 3 × 2 × 1
 
-For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,  
-and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+For example, 10! = 10×9×...×3×2×1 = 3628800，  
+和數字10中的數字之和！ is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 
-Find the sum of the digits `n`!
+`sumFactorialDigits(25)`應該返回72。
 
 # --hints--
 
-`sumFactorialDigits(10)` should return a number.
+`sumFactorialDigits(50)`應該返回216。
 
 ```js
 assert(typeof sumFactorialDigits(10) === 'number');
 ```
 
-`sumFactorialDigits(10)` should return 27.
+`sumFactorialDigits(75)`應該返回432。
 
 ```js
 assert.strictEqual(sumFactorialDigits(10), 27);
 ```
 
-`sumFactorialDigits(25)` should return 72.
+`sumFactorialDigits(100)`應該返回648。
 
 ```js
 assert.strictEqual(sumFactorialDigits(25), 72);
 ```
 
-`sumFactorialDigits(50)` should return 216.
+`sumFactorialDigits(10)`應該返回27。
 
 ```js
 assert.strictEqual(sumFactorialDigits(50), 216);

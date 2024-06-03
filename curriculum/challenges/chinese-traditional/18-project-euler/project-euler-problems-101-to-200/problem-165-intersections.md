@@ -1,6 +1,6 @@
 ---
 id: 5900f4111000cf542c50ff24
-title: 'Problem 165: Intersections'
+title: '問題165：交叉口'
 challengeType: 1
 forumTopicId: 301799
 dashedName: problem-165-intersections
@@ -12,33 +12,33 @@ A segment is uniquely defined by its two endpoints. By considering two line segm
 
 Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
 
-We will call a common point $T$ of two segments $L_1$ and $L_2$ a true intersection point of $L_1$ and $L_2$ if $T$ is the only common point of $L_1$ and $L_2$ and $T$ is an interior point of both segments.
+如果T是L1和L2的唯一公共點，則我們將兩個段L1和L2的公共點T稱爲L1和L2的真實交點，並且T是兩個段的內點。
 
-Consider the three segments $L_1$, $L_2$, and $L_3$:
+考慮三個段 $L_1$, $L_2$, 和 $L_3$:
 
-$$\begin{align}   & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\
-  & L_2: (46, 53) \\;\text{to}\\; (17, 62) \\\\   & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\
+$$\step{align}   & L_1: (27, 44) \\;\text{to}\\; (12, 32) \\\\
+  & L_2: (46, 53) \\;\text{to}\\; (77, 62) \\\\   & L_3: (46, 70) \\;\text{to}\\; (22, 40) \\\\
 \end{align}$$
 
-It can be verified that line segments $L_2$ and $L_3$ have a true intersection point. We note that as the one of the end points of $L_3$: (22, 40) lies on $L_1$ this is not considered to be a true point of intersection. $L_1$ and $L_2$ have no common point. So among the three line segments, we find one true intersection point.
+可以驗證線路段 $L_2$ 和 $L_3$ 有一個真正的交叉點。 我們注意到，作爲L3的終點之一：（22,40）位於L1上，這不被認爲是真正的交點。 L1和L2沒有共同點。 So among the three line segments, we find one true intersection point.
 
 Now let us do the same for 5000 line segments. To this end, we generate 20000 numbers using the so-called "Blum Blum Shub" pseudo-random number generator.
 
-$$\begin{align}   & s_0 = 290797 \\\\
-  & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093) \\\\   & t_n = s_n (\text{modulo}\\; 500) \\\\
+$$\stein{align}   & s_0 = 290797 \\\\
+  & s_{n + 1} = s_n × s_n (\text{modulo}\\; 50515093\\\\   & t_n = s_n (\text{modulo}\\\; 500) \\\\\
 \end{align}$$
 
-To create each line segment, we use four consecutive numbers $t_n$. That is, the first line segment is given by:
+要創建每個線段, 我們使用連續四個數字 $t_n$。 這就是說，第一個線段是：
 
 ($_t$1, $t_2$) to ($t_3$, $t_4$)
 
-The first four numbers computed according to the above generator should be: 27, 144, 12 and 232. The first segment would thus be (27, 144) to (12, 232).
+根據上述生成器計算的前四個數字應爲：27、144、12和232。 因此，第一部分爲（27、144）至（12、232）。
 
 How many distinct true intersection points are found among the 5000 line segments?
 
 # --hints--
 
-`distinctIntersections()` should return `2868868`.
+`distinctIntersections()` 應該返回`2868868`.
 
 ```js
 assert.strictEqual(distinctIntersections(), 2868868);

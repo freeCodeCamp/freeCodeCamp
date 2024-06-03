@@ -9,32 +9,36 @@ dashedName: step-20
 
 Kipengele cha `div` hutumiwa hasa kwa madhumuni ya muundo, tofauti na vipengele vingine vya maudhui ambavyo umetumia kufikia sasa. Ongeza kipengele cha `div` ndani ya kipengele cha `body` kisha usogeze vipengele vingine vyote ndani ya `div` mpya.
 
+Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
+
 # --hints--
 
-Unapaswa kuwa na tagi ya kufungua ya `<div>`.
+Your opening `<div>` tag should have an `id` attribute set to `menu`.
 
 ```js
-assert(code.match(/<div>/i));
+const div = $('div')[0];
+assert(div.id === 'menu');
 ```
 
-Unapaswa kuwa na tagi ya kufunga ya `</div>`.
+You should have a closing `</div>` tag.
 
 ```js
 assert(code.match(/<\/div>/i));
 ```
 
-Hupaswi kubadilisha kipengele chako cha `body` kilichopo. Hakikisha kuwa hukufuta tagi ya kufunga.
+You should not change your existing `body` element. Make sure you did not delete the closing tag.
 
 ```js
 assert($('body').length === 1);
 ```
 
-Tagi yako ya `div` inapaswa kuwa ndani ya `body`.
+Your `div` tag should be nested in the `body`.
 
 ```js
 const div = $('div')[0];
 assert(div.parentElement.tagName === 'BODY');
 ```
+
 
 # --seed--
 

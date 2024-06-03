@@ -2,11 +2,12 @@ import {
   bothLinks,
   invalidGithubLink,
   legacySolution,
+  multifilePythonSolution,
   multifileSolution,
   onlyGithubLink,
   onlySolution,
   withChallenges
-} from './__fixtures/completed-challenges';
+} from './__fixtures__/completed-challenges';
 import { getSolutionDisplayType } from './solution-display-type';
 
 describe('getSolutionDisplayType', () => {
@@ -17,14 +18,15 @@ describe('getSolutionDisplayType', () => {
     expect(getSolutionDisplayType(legacySolution)).toBe('showUserCode');
   });
   it('should handle solutions with files', () => {
-    expect.assertions(2);
     expect(getSolutionDisplayType(withChallenges)).toBe('showUserCode');
     expect(getSolutionDisplayType(multifileSolution)).toBe(
       'showMultifileProjectSolution'
     );
+    expect(getSolutionDisplayType(multifilePythonSolution)).toBe(
+      'showUserCode'
+    );
   });
   it('should handle solutions with a single valid url', () => {
-    expect.assertions(2);
     expect(getSolutionDisplayType(onlySolution)).toBe('showProjectLink');
     expect(getSolutionDisplayType(invalidGithubLink)).toBe('showProjectLink');
   });

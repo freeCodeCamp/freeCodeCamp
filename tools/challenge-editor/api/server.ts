@@ -20,7 +20,6 @@ app.use(
 
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded());
 
 app.post('/:superblock/:block/_tools/:command', (req, res, next) => {
   toolsRoute(req, res).catch(next);

@@ -1,6 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffec
-title: 'Problem 365: A huge binomial coefficient'
+title: 'Завдання 365: величезний біноміальний коефіцієнт'
 challengeType: 1
 forumTopicId: 302026
 dashedName: problem-365-a-huge-binomial-coefficient
@@ -8,11 +8,11 @@ dashedName: problem-365-a-huge-binomial-coefficient
 
 # --description--
 
-The binomial coefficient $\displaystyle\binom{{10}^{18}}{{10}^9}$ is a number with more than 9 billion ($9 × {10}^9$) digits.
+Біномінальний коефіцієнт $\displaystyle\binom{{10}^{18}}{{10}^9}$ є числом з більш ніж 9 мільярдами ($9 × {10}^9$) цифр.
 
-Let $M(n, k, m)$ denote the binomial coefficient $\displaystyle\binom{n}{k}$ modulo $m$.
+Нехай $M(n, k, m)$ позначає біномінальний коефіцієнт $\displaystyle\binom{n}{k}$ mod $m$.
 
-Calculate $\sum M({10}^{18}, {10}^9, p \times q \times r)$ for $1000 &lt; p &lt; q &lt; r &lt; 5000$ and $p$, $q$, $r$ prime.
+Знайдіть $\sum M({10}^{18}, {10}^9, p \times q \times r)$ за умови $1000 &lt; p &lt; q &lt; r &lt; 5000$, де $p$, $q$, $r$ є простими числами.
 
 # --hints--
 

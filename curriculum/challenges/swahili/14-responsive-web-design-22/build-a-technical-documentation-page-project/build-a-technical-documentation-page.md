@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**Lengo:** Unda programu ambayo inafanya kazi sawa na <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>. **Do not copy this demo project**.
 
 **Maelekezo:**
 
@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 Kila `.nav-link` inapaswa kuwa na sifa ya `href` inayounganishwa na `.main-section` inayolingana (k.m. Ukibofya kipengele cha `.nav-link` ambacho kina maandishi "Hello world", ukurasa husogea hadi kwenye kipengele cha `section` chenye kitambulisho hicho).
@@ -241,7 +241,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

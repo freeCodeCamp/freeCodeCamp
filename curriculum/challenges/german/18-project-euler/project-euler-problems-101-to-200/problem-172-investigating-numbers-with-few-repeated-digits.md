@@ -1,6 +1,6 @@
 ---
 id: 5900f4181000cf542c50ff2b
-title: 'Problem 172: Investigating numbers with few repeated digits'
+title: 'Problem 172: Untersuchen von Zahlen mit wenigen Wiederholungsziffern'
 challengeType: 1
 forumTopicId: 301807
 dashedName: problem-172-investigating-numbers-with-few-repeated-digits
@@ -8,11 +8,11 @@ dashedName: problem-172-investigating-numbers-with-few-repeated-digits
 
 # --description--
 
-How many 18-digit numbers $n$ (without leading zeros) are there such that no digit occurs more than three times in $n$?
+Wie viele 18-stellige Zahlen $n$ (ohne führende Nullen) gibt es, bei denen keine Ziffer mehr als drei Mal in $n$ vorkommt?
 
 # --hints--
 
-`numbersWithRepeatedDigits()` should return `227485267000992000`.
+`numbersWithRepeatedDigits()` sollte `227485267000992000` zurückgeben.
 
 ```js
 assert.strictEqual(numbersWithRepeatedDigits(), 227485267000992000);

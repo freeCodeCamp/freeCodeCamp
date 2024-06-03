@@ -1,6 +1,6 @@
 ---
 id: 5900f4451000cf542c50ff57
-title: 'Problem 216: Investigating the primality of numbers of the form 2n2-1'
+title: 'Завдання 216: визначення простих чисел вигляду 2n2-1'
 challengeType: 1
 forumTopicId: 301858
 dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
@@ -8,15 +8,15 @@ dashedName: problem-216-investigating-the-primality-of-numbers-of-the-form-2n2-1
 
 # --description--
 
-Consider numbers $t(n)$ of the form $t(n) = 2n^2 - 1$ with $n > 1$.
+Розглянемо числа $t(n)$ вигляду $t(n) = 2n^2 - 1$ за умови $n > 1$.
 
-The first such numbers are 7, 17, 31, 49, 71, 97, 127 and 161.
+Такі перші числа: 7, 17, 31, 49, 71, 97, 127 та 161.
 
-It turns out that only $49 = 7 \times 7$ and $161 = 7 \times 23$ are not prime.
+Виявляється, що лише $49 = 7 \times 7$ та $161 = 7 \times 23$ не є простими числами.
 
-For $n ≤ 10000$ there are 2202 numbers $t(n)$ that are prime.
+За умови $n ≤ 10000$ існує 2202 числа $t(n)$, які є простими.
 
-How many numbers $t(n)$ are prime for $n ≤ 50\\,000\\,000$?
+Скільки чисел $t(n)$ є простими за умови $n ≤ 50\\,000\\,000$?
 
 # --hints--
 

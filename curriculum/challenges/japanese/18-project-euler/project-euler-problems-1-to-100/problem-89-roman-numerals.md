@@ -1,6 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed7
-title: 'Problem 89: Roman numerals'
+title: '問題 89: ローマ数字'
 challengeType: 1
 forumTopicId: 302204
 dashedName: problem-89-roman-numerals
@@ -8,20 +8,20 @@ dashedName: problem-89-roman-numerals
 
 # --description--
 
-For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a *best* way of writing a particular number.
+ローマ数字で書かれた数字が有効とみなされるには、従うべき基本ルールがあります。 ルール上、複数の方法で表現できる数がいくつかありますが、特定の数字を書く*最良*の方法が必ず存在します。
 
-- Numerals must be arranged in descending order of size.
-- M, C, and X cannot be equaled or exceeded by smaller denominations.
-- D, L, and V can each only appear once.
+- 数字は大きさの降順に並べなければならない。
+- M, C, X は、それよりも小さい単位と等しくなったりそれに超えられたりしてはならない。
+- D, L, V はそれぞれ一度のみ使用できる。
 
-In addition to the three rules given above, if subtractive combinations are used then the following four rules must be followed.
+減算の組み合わせを用いる場合には、上の 3 つのルールに加えて次の 4 つのルールに従う必要があります。
 
-- Only one I, X, and C can be used as the leading numeral in part of a subtractive pair.
-- I can only be placed before V and X.
-- X can only be placed before L and C.
-- C can only be placed before D and M.
+- 減算ペア部分の先頭には、I, X, C をそれぞれ 1 つのみ使用できる
+- I は V と X の前にしか置けない。
+- X は L と C の前にしか置けない。
+- C は D と M の前にしか置けない。
 
-For example, it would appear that there are at least six ways of writing the number sixteen:
+例えば、16 という数の書き方は少なくとも 6 通りあるように思えるでしょう。
 
 <div style="margin-left: 4em; font-family: 'courier new', monospace;">
   IIIIIIIIIIIIIIII<br>
@@ -32,29 +32,29 @@ For example, it would appear that there are at least six ways of writing the num
   XVI<br><br>
 </div>
 
-However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
+しかしルールによれば、XIIIIII と XVI のみが有効です。最後の例は、使う数字が最も少ないので、最も効率が良いといえます。
 
-The array, `roman`, will contain numbers written with valid, but not necessarily minimal, Roman numerals.
+配列 `roman` には、有効ではあるが必ずしも最小形式ではないローマ数字が含まれています。
 
-Find the number of characters saved by writing each of these in their minimal form.
+それらの各数字を最小形式で書くことで文字をいくつ減らせるか答えなさい。
 
-**Note:** You can assume that all the Roman numerals in the array contain no more than four consecutive identical units.
+**注:** 配列内のすべてのローマ数字について、同じ単位が 4 つより多く連続することはないと仮定できます。
 
 # --hints--
 
-`romanNumerals(testNumerals1)` should return a number.
+`romanNumerals(testNumerals1)` は数値を返す必要があります。
 
 ```js
 assert(typeof romanNumerals(_testNumerals1) === 'number');
 ```
 
-`romanNumerals(testNumerals1)` should return `19`.
+`romanNumerals(testNumerals1)` は `19` を返す必要があります。
 
 ```js
 assert.strictEqual(romanNumerals(_testNumerals1), 19);
 ```
 
-`romanNumerals(testNumerals2)` should return `743`.
+`romanNumerals(testNumerals2)` は `743` を返す必要があります。
 
 ```js
 assert.strictEqual(romanNumerals(_testNumerals2), 743);

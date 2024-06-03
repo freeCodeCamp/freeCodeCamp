@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { SuperBlocks } from '../../../config/superblocks';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 
 // these are keys from i18n translations.json files
 enum SuperBlockI18nKeys {
@@ -13,7 +13,9 @@ const superBlocksWithoutLastWord = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.CodingInterviewPrep,
   SuperBlocks.TheOdinProject,
-  SuperBlocks.ProjectEuler
+  SuperBlocks.ProjectEuler,
+  SuperBlocks.PythonForEverybody,
+  SuperBlocks.RosettaCode
 ];
 
 export function getSuperBlockTitleForMap(superBlock: SuperBlocks): string {

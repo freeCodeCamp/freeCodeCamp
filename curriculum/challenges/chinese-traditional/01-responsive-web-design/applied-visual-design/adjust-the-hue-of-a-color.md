@@ -19,7 +19,7 @@ dashedName: adjust-the-hue-of-a-color
 
 下面是一些使用 `hsl()` 描述顏色的例子，顏色都爲滿飽和度，中等亮度:
 
-<table class='table table-striped'><thead><tr><th>顏色</th><th>HSL</th></tr></thead><tbody><tr><td>紅</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>黃</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>綠</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>藍綠</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>藍</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>品紅</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
+<table><thead><tr><th>顏色</th><th>HSL</th></tr></thead><tbody><tr><td>紅</td><td>hsl(0, 100%, 50%)</td></tr><tr><td>黃</td><td>hsl(60, 100%, 50%)</td></tr><tr><td>綠</td><td>hsl(120, 100%, 50%)</td></tr><tr><td>藍綠</td><td>hsl(180, 100%, 50%)</td></tr><tr><td>藍</td><td>hsl(240, 100%, 50%)</td></tr><tr><td>品紅</td><td>hsl(300, 100%, 50%)</td></tr></tbody></table>
 
 # --instructions--
 

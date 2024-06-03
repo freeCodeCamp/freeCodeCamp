@@ -9,12 +9,15 @@ dashedName: step-20
 
 `div` 元素主要用於設計佈局，這與你迄今爲止使用的其他內容元素不同。 在 `body` 元素內添加一個 `div` 元素，然後將所有其他元素移到新的 `div` 內。
 
+在 `div` 開始標籤中，添加一個值爲 `menu` 的 `id` 屬性。
+
 # --hints--
 
-你應該有一個 `<div>` 開始標籤。
+你的 `div` 開始標籤的 `id` 屬性值應爲 `menu`。
 
 ```js
-assert(code.match(/<div>/i));
+const div = $('div')[0];
+assert(div.id === 'menu');
 ```
 
 你應該有一個 `</div>` 結束標籤。
@@ -23,7 +26,7 @@ assert(code.match(/<div>/i));
 assert(code.match(/<\/div>/i));
 ```
 
-你不應該改變你現有的 `body` 元素。 確認你沒有刪除結束標籤。
+你不應該改變你現有的 `body`元素。 確保你沒有刪除結束標籤。
 
 ```js
 assert($('body').length === 1);
@@ -35,6 +38,7 @@ assert($('body').length === 1);
 const div = $('div')[0];
 assert(div.parentElement.tagName === 'BODY');
 ```
+
 
 # --seed--
 

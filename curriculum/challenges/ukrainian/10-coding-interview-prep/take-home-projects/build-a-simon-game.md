@@ -16,7 +16,7 @@ dashedName: build-a-simon-game
 
 **Історія користувача:** кожного разу, коли я натискаю на кнопки у правильній послідовності, то бачу ту ж саму послідовність кнопок, але на одну більше.
 
-**Історія користувача:** я чую звуки кожної кнопки, коли у грі працює певна їхня послідовність і тоді, коли я натискаю на них власноруч.
+**Історія користувача:** Я чую звуки кожної кнопки, коли у грі працює певна їхня послідовність і тоді, коли я сам натискаю на кнопку.
 
 **Історія користувача: ** якщо я натискаю на неправильну кнопку, мене повідомляють і дана послідовність повторюється, щоб спробувати знову.
 
@@ -28,7 +28,7 @@ dashedName: build-a-simon-game
 
 **Історія користувача:** я можу виграти гру, набравши 20 правильних послідовних кроків. Мене повідомляють про мою перемогу і тоді гра починається спочатку.
 
-**Підказка:** ось mp3, які ви можете використати для кожної кнопки: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
+**Hint:** Here are mp3s you can use for each button: `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound1.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound2.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound3.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound4.mp3`.
 
 Коли закінчите, надайте посилання на свій проєкт на CodePen та натисніть кнопку «Я виконав(-ла) це завдання».
 

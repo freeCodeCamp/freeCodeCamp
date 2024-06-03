@@ -48,14 +48,14 @@ assert(c === 2);
 各変数で `-=` 演算子を使用してください。
 
 ```js
-assert(code.match(/-=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/-=/g).length === 3);
 ```
 
 指定のコメントより上にあるコードを変更しないでください。
 
 ```js
 assert(
-  /let a = 11;/.test(code) && /let b = 9;/.test(code) && /let c = 3;/.test(code)
+  /let a = 11;/.test(__helpers.removeJSComments(code)) && /let b = 9;/.test(__helpers.removeJSComments(code)) && /let c = 3;/.test(__helpers.removeJSComments(code))
 );
 ```
 

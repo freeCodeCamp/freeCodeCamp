@@ -21,7 +21,7 @@ dashedName: catch-unclosed-parentheses-brackets-braces-and-quotes
 配列で欠けているペアを修正する必要があります。
 
 ```js
-assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
+assert(__helpers.removeJSComments(code).match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
 ```
 
 `.reduce()` メソッドで欠けている部分を修正する必要があります。 コンソール出力に `Sum of array values is: 6` と表示する必要があります。

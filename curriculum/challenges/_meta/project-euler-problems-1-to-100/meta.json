@@ -1,17 +1,15 @@
 {
-  "name": "project euler problems 1 to 100",
+  "name": "Project Euler Problems 1 to 100",
   "isUpcomingChange": false,
   "dashedName": "project-euler-problems-1-to-100",
-  "helpCategory": "JavaScript",
+  "helpCategory": "Euler",
   "order": 0,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "project-euler",
+  "disableLoopProtectTests": true,
   "challengeOrder": [
     {
       "id": "5900f36e1000cf542c50fe80",
-      "title": "Problem 1: Multiples of 3 and 5"
+      "title": "Problem 1: Multiples of 3 or 5"
     },
     {
       "id": "5900f36e1000cf542c50fe81",

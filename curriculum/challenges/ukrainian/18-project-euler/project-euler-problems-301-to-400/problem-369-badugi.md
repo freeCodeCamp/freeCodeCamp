@@ -1,6 +1,6 @@
 ---
 id: 5900f4de1000cf542c50fff0
-title: 'Problem 369: Badugi'
+title: 'Завдання 369: бадугі'
 challengeType: 1
 forumTopicId: 302030
 dashedName: problem-369-badugi
@@ -8,9 +8,9 @@ dashedName: problem-369-badugi
 
 # --description--
 
-In a standard 52 card deck of playing cards, a set of 4 cards is a Badugi if it contains 4 cards with no pairs and no two cards of the same suit.
+Набір з 4 карт в стандартній колоді з 52 гральних карт називається «бадугі», якщо він не містить пар і всі карти різної масті.
 
-Let $f(n)$ be the number of ways to choose $n$ cards with a 4 card subset that is a Badugi. For example, there are $2\\,598\\,960$ ways to choose five cards from a standard 52 card deck, of which $514\\,800$ contain a 4 card subset that is a Badugi, so $f(5) = 514800$.
+Нехай $f(n)$ буде кількістю способів вибрати $n$ карти з чотирьох карт бадугі. Наприклад, існує $2\\,598\\,960$ способів вибрати п’ять карт зі стандартної колоди з 52 гральних карт, з яких $514\\,800$ містять підмножину бадугі, тому $f(5) = 514800$.
 
 Знайдіть $\sum f(n)$ за умови $4 ≤ n ≤ 13$.
 

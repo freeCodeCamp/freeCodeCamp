@@ -34,10 +34,7 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import {
-  challengeTypes,
-  isFinalProject
-} from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -61,10 +58,14 @@ import {
   isChallengeCompletedSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
-import { enhancePrismAccessibility } from '../utils/index';
+import {
+  enhancePrismAccessibility,
+  setScrollbarArrowStyles
+} from '../utils/index';
+import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 import LowerJaw from './lower-jaw';
-
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
@@ -74,7 +75,7 @@ export interface EditorProps {
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
-  containerRef: MutableRefObject<HTMLElement | undefined>;
+  containerRef?: React.RefObject<HTMLElement>;
   description: string;
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
@@ -149,7 +150,7 @@ const mapStateToProps = createSelector(
     previewOpen: boolean,
     isResetting: boolean,
     isSignedIn: boolean,
-    { theme = Themes.Default }: { theme: Themes },
+    { theme }: { theme: Themes },
     tests: [{ text: string; testString: string }],
     isChallengeCompleted: boolean
   ) => ({
@@ -247,7 +248,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // editorDidMount are called, we cannot use useState.  Reason being that will
   // only take effect during the next render, which is too late. We could use
   // plain objects here, but useRef is shared between instances, so avoids
-  // unecessary object creation.
+  // unnecessary object creation.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorProperties>({ ...initialData });
@@ -282,7 +283,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides: false,
+    renderIndentGuides:
+      props.challengeType === challengeTypes.python ||
+      props.challengeType === challengeTypes.multifilePythonCertProject,
     minimap: {
       enabled: false
     },
@@ -291,14 +294,21 @@ const Editor = (props: EditorProps): JSX.Element => {
     scrollbar: {
       horizontal: 'hidden',
       vertical: 'visible',
-      verticalHasArrows: false,
+      verticalHasArrows: true,
       useShadows: false,
-      verticalScrollbarSize: getScrollbarWidth()
+      verticalScrollbarSize: getScrollbarWidth(),
+      // this helps the scroll bar fit properly between the arrows,
+      // but doesn't do anything for the arrows themselves
+      arrowSize: getScrollbarWidth()
     },
     parameterHints: {
       enabled: false
     },
-    tabSize: 2,
+    tabSize:
+      props.challengeType !== challengeTypes.python &&
+      props.challengeType !== challengeTypes.multifilePythonCertProject
+        ? 2
+        : 4,
     dragAndDrop: true,
     lightbulb: {
       enabled: false
@@ -392,6 +402,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
+      initializeMathJax();
     }
 
     const storedAccessibilityMode = () => {
@@ -505,7 +516,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (props.usesMultifileEditor && !isFinalProject(props.challengeType)) {
+        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {
@@ -533,7 +544,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
       ],
       run:
-        props.challengeType === challengeTypes.multifileCertProject &&
+        (props.challengeType === challengeTypes.multifileCertProject ||
+          props.challengeType === challengeTypes.multifilePythonCertProject) &&
         props.isSignedIn
           ? // save to database
             props.saveChallenge
@@ -567,6 +579,24 @@ const Editor = (props: EditorProps): JSX.Element => {
       ],
       run: toggleAriaRoledescription
     });
+    editor.addAction({
+      id: 'select-all-and-copy',
+      label: 'Select All and Copy',
+      contextMenuGroupId: '9_cutcopypaste',
+      contextMenuOrder: 3,
+      run: () => {
+        const fullSelection = editor.getModel()?.getFullModelRange();
+        if (fullSelection) {
+          editor.setSelection(fullSelection);
+          const data = editor.getModel()?.getValueInRange(fullSelection);
+          if (data) {
+            navigator.clipboard
+              .writeText(data)
+              .catch(err => console.error(err));
+          }
+        }
+      }
+    });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
 
     // aria-roledescription is on (true) by default, check if it needs
@@ -584,6 +614,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       scrollGutterNode
     );
     editor.addContentWidget(scrollGutterWidget);
+
+    // update scrollbar arrows
+    setScrollbarArrowStyles(getScrollbarWidth());
   };
 
   const toggleAriaRoledescription = () => {
@@ -747,6 +780,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
+    jawHeading.setAttribute('id', 'content-start');
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
@@ -824,14 +858,15 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function focusOnHotkeys() {
-    const currContainerRef = props.containerRef.current;
+    const currContainerRef = props.containerRef?.current;
     if (currContainerRef) {
       currContainerRef.focus();
     }
   }
 
   const onChange = (editorValue: string) => {
-    const { updateFile, fileKey } = props;
+    const { updateFile, fileKey, isResetting } = props;
+    if (isResetting) return;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height
@@ -1234,13 +1269,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  const { isSignedIn, theme } = props;
+  const { theme } = props;
+
   const preferDarkScheme = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches;
-  const isDarkTheme =
-    theme === Themes.Night || (preferDarkScheme && !isSignedIn);
-  const editorTheme = isDarkTheme ? 'vs-dark-custom' : 'vs-custom';
+  const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
+  const editorTheme =
+    theme === Themes.Night
+      ? 'vs-dark-custom'
+      : theme === Themes.Default
+        ? 'vs-custom'
+        : editorSystemTheme;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>

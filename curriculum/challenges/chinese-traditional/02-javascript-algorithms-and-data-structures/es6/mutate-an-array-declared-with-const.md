@@ -36,19 +36,19 @@ console.log(s);
 不要替換 `const` 關鍵字。
 
 ```js
-assert(code.match(/const/g));
+assert(__helpers.removeJSComments(code).match(/const/g));
 ```
 
 `s` 應該是一個常量變量（通過使用 `const`）。
 
 ```js
-assert(code.match(/const\s+s/g));
+assert(__helpers.removeJSComments(code).match(/const\s+s/g));
 ```
 
 不要改變原數組的聲明。
 
 ```js
-assert(code.match(
+assert(__helpers.removeJSComments(code).match(
 /const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g
 ));
 ```

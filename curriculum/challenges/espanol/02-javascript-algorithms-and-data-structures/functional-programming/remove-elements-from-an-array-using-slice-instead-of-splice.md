@@ -30,16 +30,16 @@ No modifiques el arreglo original proporcionado en la función.
 Tu código debe usar el método `slice`.
 
 ```js
-assert(code.match(/\.slice/g));
+assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
 Tu código no debe usar el método `splice`.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?splice/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 ```
 
-You should not mutate the original array passed to the function.
+No debes mutar el array original pasado a la función.
 
 ```js
 assert.deepEqual(_inputCities, ["Chicago", "Delhi", "Islamabad", "London", "Berlin"]);

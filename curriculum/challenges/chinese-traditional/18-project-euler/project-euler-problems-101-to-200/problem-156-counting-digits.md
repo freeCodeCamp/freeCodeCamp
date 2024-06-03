@@ -1,6 +1,6 @@
 ---
 id: 5900f4091000cf542c50ff1b
-title: 'Problem 156: Counting Digits'
+title: '問題156：計數數字'
 challengeType: 1
 forumTopicId: 301787
 dashedName: problem-156-counting-digits
@@ -12,7 +12,7 @@ Starting from zero the natural numbers are written down in base 10 like this:
 
 0 1 2 3 4 5 6 7 8 9 10 11 12....
 
-Consider the digit $d = 1$. After we write down each number n, we will update the number of ones that have occurred and call this number $f(n, 1)$. The first values for $f(n, 1)$, then, are as follows:
+請考慮數字 $d = 1美元。 在我們寫下每個數字n後，我們將更新出現的數字，並調用這個數字 $f(n, 1)$。 那麼， $f(n, 1)$) 的第一個值如下：
 
 | $n$ | $f(n, 1)$ |
 | --- | --------- |
@@ -30,19 +30,19 @@ Consider the digit $d = 1$. After we write down each number n, we will update th
 | 11  | 4         |
 | 12  | 5         |
 
-Note that $f(n, 1)$ never equals 3.
+請注意， $f(n, 1)$永遠不等於 3。
 
-So the first two solutions of the equation $f(n, 1) = n$ are $n = 0$ and $n = 1$. The next solution is $n = 199981$. In the same manner the function $f(n, d)$ gives the total number of digits d that have been written down after the number $n$ has been written.
+因此，等式$f（n，1）= n$ 的前兩個解是 $n = 0$ 和 $n = 1$。 下一個解決方案是 $n = 199981$。 以相同的方式，函數 $f(n，d)$ 給出在寫入數字 $n$ 之後已經寫下的總位數d。
 
-In fact, for every digit $d ≠ 0$, 0 is the first solution of the equation $f(n, d) = n$. Let $s(d)$ be the sum of all the solutions for which $f(n, d) = n$.
+實際上，對於每個數字 $d≠0$, 0是方程 $f（n，d）= n$ 的第一個解。 讓 $s(d)$ 是 $f(n, d) = n$ 的所有解決方案的總和。
 
-You are given that $s(1) = 22786974071$. Find $\sum{s(d)}$ for $1 ≤ d ≤ 9$.
+給出 $s(1)= 22786974071$。 尋找$\總數{s(d)}$ for $1 ≤ d ≤ 9$。
 
-Note: if, for some $n$, $f(n, d) = n$ for more than one value of $d$ this value of $n$ is counted again for every value of $d$ for which $f(n, d) = n$.
+注意：如果對於某些 $n$，對於多於一個 $d$ 的值，$f(n, d) = n$，對於 $d$ 的每個值，再次計算 $n$ 當$f(n, d) = n$。
 
 # --hints--
 
-`countingDigits()` should return `21295121502550`.
+`countingDigits()` should return`21295121502550`。
 
 ```js
 assert.strictEqual(countingDigits(), 21295121502550);

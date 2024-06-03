@@ -1,6 +1,6 @@
 ---
 id: 5900f46e1000cf542c50ff80
-title: 'Problem 257: Angular Bisectors'
+title: 'Завдання 257: бісектриси кутів'
 challengeType: 1
 forumTopicId: 301905
 dashedName: problem-257-angular-bisectors
@@ -8,15 +8,15 @@ dashedName: problem-257-angular-bisectors
 
 # --description--
 
-Given is an integer sided triangle $ABC$ with sides $a ≤ b ≤ c$ ($AB = c$, $BC = a$ and $AC = b$).
+Дано трикутник $ABC$ з цілими сторонами $a ≤ b ≤ c$ ($AB = c$, $BC = a$ та $AC = b$).
 
-The angular bisectors of the triangle intersect the sides at points $E$, $F$ and $G$ (see picture below).
+Бісектриси кутів трикутника перетинають сторони в точках $E$, $F$ та $G$ (див. рисунок нижче).
 
-<img class="img-responsive center-block" alt="triangle ABC, with angular bisectors intersecting sides at the points E, F and G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="трикутник ABC з бісектрисами, що перетинають сторони в точках E, F та G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
 
-The segments $EF$, $EG$ and $FG$ partition the triangle $ABC$ into four smaller triangles: $AEG$, $BFE$, $CGF$ and $EFG$. It can be proven that for each of these four triangles the ratio $\frac{\text{area}(ABC)}{\text{area}(\text{subtriangle})}$ is rational. However, there exist triangles for which some or all of these ratios are integral.
+Відрізки $EF$, $EG$ та $FG$ ділять трикутник $ABC$ на чотири менші трикутники: $AEG$, $BFE$, $CGF$ та $EFG$. Можна довести, що для кожного з цих чотирьох трикутників співвідношення $\frac{\text{площа}(ABC)}{\text{площа}(\text{меншого трикутника})}$ є раціональним числом. Однак існують трикутники, за яких деякі або всі такі співвідношення є цілими числами.
 
-How many triangles $ABC$ with perimeter $≤ 100\\,000\\,000$ exist so that the ratio $\frac{\text{area}(ABC)}{\text{area}(AEG)}$ is integral?
+Скільки існує трикутників $ABC$ з периметром $≤ 100\\,000\\,000$, для яких співвідношення $\frac{\text{площа}(ABC)}{\text{площа}(AEG)}$ є цілим числом?
 
 # --hints--
 

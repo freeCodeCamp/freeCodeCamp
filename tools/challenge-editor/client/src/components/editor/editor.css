@@ -7,7 +7,7 @@ textarea {
 }
 
 .CodeMirror {
-  /* need to add important to overwrite the specifity of the classes in the dependecy */
+  /* need to add important to overwrite the specificity of the classes in the dependency */
   height: 70vh !important;
   max-width: 80vw;
   margin: auto;

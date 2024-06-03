@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=18",
-    "pnpm": "8"
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -25,36 +25,36 @@
   "keywords": [],
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/plugin-transform-runtime": "7.19.6",
-    "@babel/preset-env": "7.22.5",
-    "@babel/preset-typescript": "7.22.5",
-    "@freecodecamp/curriculum-helpers": "1.1.0",
-    "@types/chai": "4.3.4",
+    "@babel/plugin-transform-runtime": "7.23.7",
+    "@babel/preset-env": "7.23.7",
+    "@babel/preset-typescript": "7.23.3",
+    "@freecodecamp/curriculum-helpers": "3.4.0",
+    "@types/chai": "4.3.12",
     "@types/copy-webpack-plugin": "^8.0.1",
-    "@types/enzyme": "3.10.12",
-    "@types/enzyme-adapter-react-16": "1.0.6",
-    "@types/jquery": "3.5.16",
-    "@types/lodash-es": "4.17.6",
+    "@types/enzyme": "3.10.16",
+    "@types/enzyme-adapter-react-16": "1.0.9",
+    "@types/jquery": "3.5.29",
+    "@types/lodash-es": "4.17.12",
     "babel-loader": "8.3.0",
     "buffer": "6.0.3",
-    "chai": "4.3.7",
+    "chai": "4.4.1",
     "copy-webpack-plugin": "9.1.0",
     "css-loader": "^6.8.1",
     "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.7",
-    "jquery": "3.6.4",
+    "enzyme-adapter-react-16": "1.15.8",
+    "jquery": "3.7.1",
     "lodash-es": "4.17.21",
     "process": "0.11.10",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1",
     "style-loader": "^3.3.3",
     "util": "0.12.5",
-    "webpack": "5.76.2",
+    "webpack": "5.90.3",
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
     "xterm": "^5.2.1",
-    "xterm-addon-fit": "^0.7.0"
+    "xterm-addon-fit": "^0.8.0"
   }
 }

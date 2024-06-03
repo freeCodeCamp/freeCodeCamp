@@ -9,11 +9,19 @@ dashedName: step-15
 
 In den vorherigen Schritten hast du ein Ankerelement verwendet, um Text in einen Link zu umwandeln. Auch andere Arten von Inhalten können in einen Link umgewandelt werden, indem sie mit Anker-Tags umschlossen werden.
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 Umwandle das Bild in einen Link, indem du es mit den notwendigen Tags der Elemente umgibst. Verwende `https://freecatphotoapp.com` als den `href`-Attributwert des Ankers.
 
 # --hints--
 
-Du solltest ein `img`-Element mit einem `src`-Wert von `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg` haben. Möglicherweise hast du es versehentlich gelöscht.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Möglicherweise hast du es versehentlich gelöscht.
 
 ```js
 assert(
@@ -29,13 +37,13 @@ Dein (`a`)-Ankerelement sollte ein öffnendes Tag haben. Öffnende Tags haben fo
 assert(document.querySelectorAll('a').length >= 2);
 ```
 
-You are missing a closing (`a`) tag after the image.
+Dir fehlt ein abschließendes (`a`)-Tag nach dem Bild.
 
 ```js
 assert(document.querySelectorAll('a').length === 2);
 ```
 
-Dein (`a`)-Ankerelement sollte ein schließendes Tag haben. Closing tags have a `/` just after the `<` character.
+Dein (`a`)-Ankerelement sollte ein schließendes Tag haben. Abschließende Tags haben ein `/` genau nach dem `<`-Zeichen.
 
 ```js
 assert(code.match(/<\/a>/g).length >= 2);

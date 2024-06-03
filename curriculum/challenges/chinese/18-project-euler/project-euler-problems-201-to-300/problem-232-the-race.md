@@ -1,6 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff67
-title: 'Problem 232: The Race'
+title: '问题232：比赛'
 challengeType: 1
 forumTopicId: 301876
 dashedName: problem-232-the-race

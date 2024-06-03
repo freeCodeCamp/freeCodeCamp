@@ -8,13 +8,13 @@ dashedName: test-if-a-string-contains-a-substring
 
 # --description--
 
-請注意，本項目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化項目的基礎上進行開發，你也可以從 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `include()` 和 `notInclude()` 同樣可以用於字符串。 `include()` 用於斷言字符串中包含某個子字符串。
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Strings` 套件裏標有 `#14` 的測試下，將每個 `assert` 改成 `assert.include` 或 `assert.notInclude` 方法，通過測試（結果應該返回 `true`）。 不要修改傳給斷言的參數。
+Within `tests/1_unit-tests.js` under the test labeled `#14` in the `Strings` suite, change each `assert` to either `assert.include` or `assert.notInclude` to make the test pass (should evaluate to `true`). 不要修改傳給斷言的參數。
 
 # --hints--
 

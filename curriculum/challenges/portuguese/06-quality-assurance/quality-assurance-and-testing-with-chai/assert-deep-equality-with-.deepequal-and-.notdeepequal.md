@@ -8,13 +8,13 @@ dashedName: assert-deep-equality-with--deepequal-and--notdeepequal
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do projeto inicial no <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Como lembrete, este projeto está sendo desenvolvido com base no seguinte projeto inicial no <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `deepEqual()` assegura que dois objetos são profundamente iguais.
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#7` e na suíte `Equality`, modifique cada `assert` para `assert.deepEqual` ou para `assert.notDeepEqual`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#7`, no grupo de testes `Equality`, modifique cada `assert` para `assert.deepEqual` ou para `assert.notDeepEqual`, de maneira que cada teste passe (seja avaliado como `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

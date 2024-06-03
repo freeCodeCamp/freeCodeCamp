@@ -1,6 +1,6 @@
 ---
 id: 5900f4c71000cf542c50ffd8
-title: 'Problem 346: Strong Repunits'
+title: 'Problem 346: Starke Repunits'
 challengeType: 1
 forumTopicId: 302005
 dashedName: problem-346-strong-repunits
@@ -10,9 +10,9 @@ dashedName: problem-346-strong-repunits
 
 The number 7 is special, because 7 is 111 written in base 2, and 11 written in base 6 (i.e. $7_{10} = {11}_6 = {111}_2$). In other words, 7 is a repunit in at least two bases $b > 1$.
 
-We shall call a positive integer with this property a strong repunit. It can be verified that there are 8 strong repunits below 50: {1, 7, 13, 15, 21, 31, 40, 43}. Furthermore, the sum of all strong repunits below 1000 equals 15864.
+Wir werden eine positive ganze Zahl mit dieser Eigenschaft eine starke Wiederholungseinheit nennen. Es kann überprüft werden, dass es 8 starke Wiederholungen unter 50 gibt: {1, 7, 13, 15, 21, 31, 40, 43}. Außerdem ist die Summe aller starken Wiederholungen unter 1000 gleich 15864.
 
-Find the sum of all strong repunits below ${10}^{12}$.
+Finde die Summe aller starken Repunits unter ${10}^{12}$.
 
 # --hints--
 

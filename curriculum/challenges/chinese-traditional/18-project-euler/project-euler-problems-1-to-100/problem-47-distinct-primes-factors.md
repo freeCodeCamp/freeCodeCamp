@@ -15,7 +15,7 @@ The first two consecutive numbers to have two distinct prime factors are:
   15 = 3 × 5
 </div>
 
-The first three consecutive numbers to have three distinct prime factors are:
+14 = 2×7
 
 <div style='padding-left: 4em;'>
   644 = 2<sup>2</sup> × 7 × 23<br>
@@ -23,7 +23,7 @@ The first three consecutive numbers to have three distinct prime factors are:
   646 = 2 × 17 × 19
 </div>
 
-Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?
+找到前四個連續的整數，每個整數有四個不同的素數因子。 這些數字中的第一個是什麼？
 
 # --hints--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f38d1000cf542c50fea0
-title: 'Problem 33: Digit cancelling fractions'
+title: '問題 33: 分数の数字を消す'
 challengeType: 1
 forumTopicId: 301987
 dashedName: problem-33-digit-cancelling-fractions
@@ -8,23 +8,23 @@ dashedName: problem-33-digit-cancelling-fractions
 
 # --description--
 
-The fraction <sup>49</sup>/<sub>98</sub> is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>, which is correct, is obtained by cancelling the 9s.
+<sup>49</sup>/<sub>98</sub>は不思議な分数です。経験の浅い数学者がこの分数を単純化しようとしたとき、<sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub> (これ自体は正しい) は 9 を消して得られるものと勘違いする可能性があるからです。
 
-We shall consider fractions like, <sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub>, to be trivial examples.
+<sup>30</sup>/<sub>50</sub> = <sup>3</sup>/<sub>5</sub> のような分数を、自明な例と考えることにします。
 
-There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+この種の分数には、値が 1 未満で分子と分母が 2 桁である非自明な例が、ちょうど 4 つあります。
 
-If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+これらの 4 つの分数の積が約分されて与えられている場合に、分母の値を求めなさい。
 
 # --hints--
 
-`digitCancellingFractions()` should return a number.
+`digitCancellingFractions()` は数値を返す必要があります。
 
 ```js
 assert(typeof digitCancellingFractions() === 'number');
 ```
 
-`digitCancellingFractions()` should return 100.
+`digitCancellingFractions()` は 100 を返す必要があります。
 
 ```js
 assert.strictEqual(digitCancellingFractions(), 100);

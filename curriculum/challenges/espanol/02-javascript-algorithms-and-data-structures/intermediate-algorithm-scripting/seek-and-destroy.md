@@ -8,9 +8,9 @@ dashedName: seek-and-destroy
 
 # --description--
 
-Se proporcionará un arreglo inicial (el primer argumento en la función `destroyer`), seguido de uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que estos argumentos.
+Se te proporcionará un arreglo inicial como primer argumento de la función `destroyer`, seguido de uno o más argumentos. Elimina todos los elementos del arreglo inicial que tengan el mismo valor que estos argumentos.
 
-**Nota:** Tienes que utilizar el objeto `arguments`.
+La function debe aceptar un número indeterminado de argumentos, también conocida como función variádica. Puedes acceder a los argumentos adicionales añadiendo un parámetro restante a la definición de la función o utilizando el objeto `arguments`.
 
 # --hints--
 

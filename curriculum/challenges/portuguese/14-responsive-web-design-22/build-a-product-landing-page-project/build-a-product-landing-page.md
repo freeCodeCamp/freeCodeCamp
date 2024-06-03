@@ -8,7 +8,7 @@ dashedName: build-a-product-landing-page
 
 # --description--
 
-**Objetivo:** criar uma aplicação que funcione de modo semelhante a <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>
+**Objetivo:** Construa um aplicativo que é funcionalmente igual a  <a href="https://product-landing-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://product-landing-page.freecodecamp.rocks</a>. **Não copie este projeto de demonstração**.
 
 **Histórias de usuário:**
 
@@ -277,7 +277,7 @@ assert(usesFlex || usesFlexMedia)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

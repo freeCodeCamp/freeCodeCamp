@@ -1,6 +1,6 @@
 ---
 id: 5900f43f1000cf542c50ff51
-title: 'Problem 208: Robot Walks'
+title: 'Завдання 208: ходячий робот'
 challengeType: 1
 forumTopicId: 301849
 dashedName: problem-208-robot-walks
@@ -8,15 +8,15 @@ dashedName: problem-208-robot-walks
 
 # --description--
 
-A robot moves in a series of one-fifth circular arcs (72°), with a free choice of a clockwise or an anticlockwise arc for each step, but no turning on the spot.
+Робот рухається по траєкторії однієї з п’яти дуг (72°), з можливістю вибору наступного кроку (за або проти годинникової стрілки), але без можливості обернутись.
 
-One of 70932 possible closed paths of 25 arcs starting northward is
+Один з 70932 можливих закритих шляхів з 25 дуг, починаючи рух із позиції на північ, виглядає так:
 
-<img class="img-responsive center-block" alt="closed path of 25 arcs, starting northward" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="закритий шлях з 25 дуг, починаючи рух із позиції на північ" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
 
-Given that the robot starts facing North, how many journeys of 70 arcs in length can it take that return it, after the final arc, to its starting position?
+Робот починає рухатися на північ. Скільки подорожей довжиною в 70 дуг він зможе виконати, повернувшись на початкову позицію після останньої дуги?
 
-**Note:** Any arc may be traversed multiple times.
+**Примітка:** будь-яку дугу можна перетинати декілька разів.
 
 # --hints--
 

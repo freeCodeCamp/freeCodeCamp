@@ -8,23 +8,15 @@ dashedName: learn-how-javascript-assertions-work
 
 # --description--
 
-Working on these challenges will involve you writing your code using one of the following methods:
+العمل على هذه التحديات سوف ينطوي على كتابة كودك باستخدام إحدى الطرق التالية:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">our Replit starter project</a> to complete these challenges.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
-
-If you use Replit, follow these steps to set up the project:
-
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
+- استخدم أي منشئ موقع لإكمال المشروع. تحقق انك أضفت جميع الملفات من مستودعنا في GitHub في مشروعك.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
+Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Assertions` suite, change each `assert` to either `assert.isNull` or `assert.isNotNull` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 # --hints--
 

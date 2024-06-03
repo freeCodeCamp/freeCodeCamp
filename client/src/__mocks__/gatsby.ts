@@ -2,7 +2,7 @@ import React from 'react';
 import { GatsbyLinkProps } from 'gatsby';
 const gatsby: NodeModule = jest.requireActual('gatsby');
 
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 
 const { clientLocale } = envData;
 

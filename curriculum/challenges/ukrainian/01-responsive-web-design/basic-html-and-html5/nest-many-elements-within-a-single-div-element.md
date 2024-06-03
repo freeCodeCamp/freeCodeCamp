@@ -41,7 +41,7 @@ assert($('div').children('ul').length > 0);
 assert($('div').children('ol').length > 0);
 ```
 
-Елемент `div` повинен містити кінцевий тег.
+Елемент `div` повинен мати кінцевий тег.
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -97,7 +97,7 @@ assert(
   <div>
     <p>Things cats love:</p>
     <ul>
-      <li>cat nip</li>
+      <li>catnip</li>
       <li>laser pointers</li>
       <li>lasagna</li>
     </ul>

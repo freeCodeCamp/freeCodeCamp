@@ -60,7 +60,7 @@ assert(shirtValue === 'jersey');
 你應該使用兩個點號
 
 ```js
-assert(code.match(/testObj\.\w+/g).length > 1);
+assert(__helpers.removeJSComments(code).match(/testObj\.\w+/g).length > 1);
 ```
 
 # --seed--
@@ -76,9 +76,9 @@ assert(code.match(/testObj\.\w+/g).length > 1);
 ```js
 // Setup
 const testObj = {
-  "hat": "ballcap",
-  "shirt": "jersey",
-  "shoes": "cleats"
+  hat: "ballcap",
+  shirt: "jersey",
+  shoes: "cleats"
 };
 
 // Only change code below this line
@@ -90,9 +90,9 @@ const shirtValue = testObj;    // Change this line
 
 ```js
 const testObj = {
-  "hat": "ballcap",
-  "shirt": "jersey",
-  "shoes": "cleats"
+  hat: "ballcap",
+  shirt: "jersey",
+  shoes: "cleats"
 };
 
 const hatValue = testObj.hat;

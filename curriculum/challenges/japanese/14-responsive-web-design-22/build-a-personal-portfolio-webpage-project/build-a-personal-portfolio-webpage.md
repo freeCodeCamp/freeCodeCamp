@@ -8,7 +8,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**目標:** <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a> と似た機能を持つアプリを作成します
+**目標:** <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a> と似た機能を持つアプリを作成してください。 **このデモプロジェクトをコピーしないでください**。
+
 
 **ユーザーストーリー:**
 
@@ -165,7 +166,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

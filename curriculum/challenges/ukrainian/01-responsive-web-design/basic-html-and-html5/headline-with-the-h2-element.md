@@ -27,7 +27,7 @@ dashedName: headline-with-the-h2-element
 assert($('h2').length > 0);
 ```
 
-Елемент `h2` повинен мати кінцевий теґ.
+Елемент `h2` повинен мати кінцевий тег.
 
 ```js
 assert(

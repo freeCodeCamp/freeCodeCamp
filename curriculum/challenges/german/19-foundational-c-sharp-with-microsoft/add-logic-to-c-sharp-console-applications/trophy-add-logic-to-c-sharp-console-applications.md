@@ -1,21 +1,13 @@
 ---
 id: 647f882207d29547b3bee1c0
-title: 'Trophy - Add Logic to C# Console Applications'
+title: 'Trophäe - Logik zu C#-Konsolenanwendungen hinzufügen'
 challengeType: 18
 dashedName: trophy-add-logic-to-c-sharp-console-applications
+msTrophyId: learn.wwl.get-started-c-sharp-part-3.trophy
 ---
 
 # --description--
 
-Now that you've completed all of the "Add Logic to C# Console Applications" modules on Microsoft's learn platform, submit the URL to your trophy below.
+Nachdem du nun alle Aufgaben zum "Hinzufügen von Logik zu C#-Konsolenanwendungen" gelöst hast, solltest du dir die Trophäe dafür auf der Microsoft Learn-Plattform verdient haben. If you don't see this trophy when viewing <a href="https://learn.microsoft.com/users/me/achievements#trophies-section" target="_blank" rel="noreferrer">your achievements page</a>, you have not completed all the tasks and your trophy cannot be verified.
 
-Follow these instructions to find your trophy URL:
-
-1. Go to <a href="https://learn.microsoft.com/en-us/users/me/achievements#badges-section" target="_blank">https://learn.microsoft.com/en-us/users/me/achievements#badges-section</a> using a browser you are logged into Microsoft with
-1. Find the trophy for "Add Logic to C# Console Applications" and click the "share" icon next to it
-1. Click the "Copy URL" button
-1. Paste the URL into the input below
-
-The URL should look similar to this: `https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-3.trophy?username=your-username&sharingId=your-sharing-id`
-
-This trophy is required to qualify to take the certification exam.
+Verknüpfe deinen Microsoft-Benutzernamen mit deine freeCodeCamp-Konto und klicke auf den "Trophäe verifizieren"-Button unten, um die Aufgabe zu vervollständigen. Diese Trophäe ist **erforderlich**, um sich für die Zertifizierungsprüfung zu qualifizieren.

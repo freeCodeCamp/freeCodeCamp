@@ -1,6 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcc
-title: 'Problem 333: Special partitions'
+title: '問題 333：特殊分區'
 challengeType: 1
 forumTopicId: 301991
 dashedName: problem-333-special-partitions
@@ -10,7 +10,7 @@ dashedName: problem-333-special-partitions
 
 All positive integers can be partitioned in such a way that each and every term of the partition can be expressed as $2^i \times 3^j$, where $i, j ≥ 0$.
 
-Let's consider only those such partitions where none of the terms can divide any of the other terms. For example, the partition of $17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ would not be valid since 2 can divide 6. Neither would the partition $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ since 1 can divide 16. The only valid partition of 17 would be $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$.
+我們只考慮那些沒有任何術語可以劃分任何其他術語的分區。 For example, the partition of $17 = 2 + 6 + 9 = (2^1 \times 3^0 + 2^1 \times 3^1 + 2^0 \times 3^2)$ would not be valid since 2 can divide 6. Neither would the partition $17 = 16 + 1 = (2^4 \times 3^0 + 2^0 \times 3^0)$ since 1 can divide 16. The only valid partition of 17 would be $8 + 9 = (2^3 \times 3^0 + 2^0 \times 3^2)$.
 
 Many integers have more than one valid partition, the first being 11 having the following two partitions.
 

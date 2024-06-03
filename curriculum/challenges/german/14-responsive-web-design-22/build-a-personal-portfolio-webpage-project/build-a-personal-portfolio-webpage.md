@@ -8,7 +8,8 @@ dashedName: build-a-personal-portfolio-webpage
 
 # --description--
 
-**Aufgabe:** Erstelle eine Anwendung, die eine ähnliche Funktionalität wie <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a> aufweist.
+**Objective:** Build an app that is functionally similar to <a href="https://personal-portfolio.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://personal-portfolio.freecodecamp.rocks</a>. **Do not copy this demo project**.
+
 
 **User Stories:**
 
@@ -165,7 +166,7 @@ Dein `#navbar`-Element sollte immer oben im Viewport liegen.
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

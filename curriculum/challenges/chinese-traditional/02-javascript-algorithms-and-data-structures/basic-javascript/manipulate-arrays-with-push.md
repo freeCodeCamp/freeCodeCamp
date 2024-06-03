@@ -9,21 +9,21 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-一個將數據添加到數組末尾的簡單方法是 `push()` 函數。
+一個將數據添加到數組末尾的簡單方式是使用 `push()` 方法。
 
-`.push()` 接受一個或多個參數（<dfn>parameters</dfn>），並把它壓入到數組的末尾。
+`push()` 方法需要一個或多個 <dfn>參數</dfn> 並將它們根據出現順序追加到數組的末尾。 它返回數組的新長度。
 
 示例：
 
 ```js
 const arr1 = [1, 2, 3];
-arr1.push(4);
+arr1.push(4, 5);
 
 const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-`arr1` 現在值爲 `[1, 2, 3, 4]`，`arr2` 值爲 `["Stimpson", "J", "cat", ["happy", "joy"]]`。
+`arr1` 現在值爲 `[1, 2, 3, 4, 5]`，`arr2` 的值爲 `["Stimpson", "J", "cat", ["happy", "joy"]]`。
 
 # --instructions--
 

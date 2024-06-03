@@ -8,7 +8,7 @@ dashedName: show-the-local-weather
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/bELRjV" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bELRjV</a>.
+**目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://codepen.io/freeCodeCamp/full/bELRjV" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/bELRjV</a>
 
 **ルール #1:** 模範プロジェクトのコードを見ないようにしてください。 自分の力で解いてみてください。
 
@@ -20,11 +20,11 @@ dashedName: show-the-local-weather
 
 **ユーザーストーリー:** ボタンを押して華氏と摂氏の間を切り替えることができます。
 
-**注:** 多くのインターネットブラウザーは現在、HTML5 Geolocation 経由でユーザーのロケールを取得するために、HTTP セキュア (`https://`) 接続を必要とするようになっています。 For this reason, we recommend using HTML5 Geolocation to get user location and then use the freeCodeCamp Weather API <a href="https://weather-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://weather-proxy.freecodecamp.rocks/</a> which uses an HTTP Secure connection for the weather. Also, be sure to connect to <a href="https://codepen.io" target="_blank" rel="noopener noreferrer nofollow">CodePen.io</a> via `https://`.
+**注:** 多くのインターネットブラウザーは現在、HTML5 Geolocation 経由でユーザーのロケールを取得するために、HTTP セキュア (`https://`) 接続を必要とするようになっています。 このため、HTML5 Geolocation を使用してユーザーの場所を取得し、それから HTTP セキュア接続を使用して天気情報を取得する freeCodeCamp の Weather API <a href="https://weather-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://weather-proxy.freecodecamp.rocks/</a> を使用することをお勧めします。 また、必ず `https://` 経由で <a href="https://codepen.io" target="_blank" rel="noopener noreferrer nofollow">CodePen.io</a> に接続してください。
 
 完了したら、CodePen のプロジェクトへのリンクを入れて、「このチャレンジを完了しました」ボタンをクリックしてください。
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+<a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp フォーラム</a>でプロジェクトを共有することにより、フィードバックを得ることができます。
 
 # --solutions--
 

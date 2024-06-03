@@ -21,27 +21,3 @@ export function scriptRemover(id: string): void {
     script.remove();
   }
 }
-
-export function mathJaxScriptLoader(): void {
-  scriptLoader(
-    'mathjax',
-    false,
-    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
-      '2.7.4/MathJax.js?config=TeX-AMS_HTML',
-    null,
-    `MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-        processEscapes: true,
-        processClass: 'rosetta-code|project-euler|intermediate-algorithm-scripting'
-      }
-    });
-    MathJax.Hub.Queue([
-      'Typeset',
-      MathJax.Hub,
-      document.querySelector('intermediate-algorithm-scripting'),
-      document.querySelector('.rosetta-code'),
-      document.querySelector('.project-euler')
-    ]);`
-  );
-}

@@ -12,11 +12,11 @@ E ora passiamo alla matematica. Questo video ti mostrerà come impostare e risol
 
 Ecco il <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_nQ-X1JuLpUmtRD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per seguire questo video.</a> Se non lo hai ancora fatto, crea un notebook Colab come spiegato nello scorso video. Poi, aggiungigli il codice da questo video.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi il codice del video al notebook Colab che hai creato nel primo step.
+
+# --question--
 
 ## --text--
 

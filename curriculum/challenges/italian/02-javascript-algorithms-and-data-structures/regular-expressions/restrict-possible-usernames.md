@@ -12,7 +12,7 @@ I nomi utente sono utilizzati ovunque su Internet. Sono ciò che danno agli uten
 
 È necessario controllare tutti i nomi utente in un database. Ecco alcune semplici regole che gli utenti devono seguire durante la creazione del loro nome utente.
 
-1) I nomi utente possono usare solo caratteri alfanumerici.
+1) Usernames can only use alphanumeric characters.
 
 2) Gli unici numeri nel nome utente devono essere alla fine. Ce ne possono essere zero o più alla fine. Il nome utente non può iniziare con un numero.
 

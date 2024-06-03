@@ -1,6 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3e
-title: 'Problem 191: Prize Strings'
+title: '問題 191: 賞付きの文字列'
 challengeType: 1
 forumTopicId: 301829
 dashedName: problem-191-prize-strings
@@ -8,11 +8,11 @@ dashedName: problem-191-prize-strings
 
 # --description--
 
-A particular school offers cash rewards to children with good attendance and punctuality. If they are absent for three consecutive days or late on more than one occasion then they forfeit their prize.
+ある学校では、出席率と遅刻率が優れている生徒に賞金を与えます。 3 日連続で欠席するか、2 回以上遅刻すると、賞金獲得の権利を失います。
 
-During an n-day period a trinary string is formed for each child consisting of L's (late), O's (on time), and A's (absent).
+n 日間、生徒ごとに、L (遅刻), O (出席), A (欠席) を使用して 3 進文字列を記録します。
 
-Although there are eighty-one trinary strings for a 4-day period that can be formed, exactly forty-three strings would lead to a prize:
+4 日間では 81 通りの 3 進文字列が考えられ、受賞する文字列は次の 43 通りです。
 
 ```markup
 OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
@@ -22,11 +22,11 @@ AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
 LAOO LAOA LAAO
 ```
 
-How many "prize" strings exist over a 30-day period?
+30 日間では、受賞する文字列が何通りありますか。
 
 # --hints--
 
-`prizeStrings()` should return `1918080160`.
+`prizeStrings()` は `1918080160` を返す必要があります。
 
 ```js
 assert.strictEqual(prizeStrings(), 1918080160);

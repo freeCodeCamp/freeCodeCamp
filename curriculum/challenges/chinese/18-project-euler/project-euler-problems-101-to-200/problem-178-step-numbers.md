@@ -1,6 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff31
-title: 'Problem 178: Step Numbers'
+title: '问题178：步骤编号'
 challengeType: 1
 forumTopicId: 301813
 dashedName: problem-178-step-numbers
@@ -10,7 +10,7 @@ dashedName: problem-178-step-numbers
 
 Consider the number 45656.
 
-It can be seen that each pair of consecutive digits of 45656 has a difference of one.
+有多少pandigital步数小于1040？
 
 A number for which every pair of consecutive digits has a difference of one is called a step number.
 

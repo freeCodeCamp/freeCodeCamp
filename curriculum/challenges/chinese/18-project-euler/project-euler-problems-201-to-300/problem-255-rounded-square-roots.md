@@ -1,6 +1,6 @@
 ---
 id: 5900f46d1000cf542c50ff7f
-title: 'Problem 255: Rounded Square Roots'
+title: '问题255：圆角平方根'
 challengeType: 1
 forumTopicId: 301903
 dashedName: problem-255-rounded-square-roots
@@ -18,7 +18,7 @@ If $d$ is odd, set $x_0 = 2 × {10}^{\frac{d - 1}{2}}$.
 
 If $d$ is even, set $x_0 = 7 × {10}^{\frac{d - 2}{2}}$.
 
-Repeat:
+重复：
 
 $$x_{k + 1} = \left\lfloor\frac{x_k + \left\lceil\frac{n}{x_k}\right\rceil}{2}\right\rfloor$$
 

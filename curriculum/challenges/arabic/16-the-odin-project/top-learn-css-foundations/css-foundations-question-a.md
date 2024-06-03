@@ -50,4 +50,4 @@ The code applies a `white` color to all `p` elements in the HTML file.
 
 ## --video-solution--
 
-2
+٢

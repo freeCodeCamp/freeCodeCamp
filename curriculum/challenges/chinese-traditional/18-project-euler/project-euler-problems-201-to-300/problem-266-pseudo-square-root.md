@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff89
-title: 'Problem 266: Pseudo Square Root'
+title: '問題266：僞平方根'
 challengeType: 1
 forumTopicId: 301915
 dashedName: problem-266-pseudo-square-root

@@ -1,15 +1,3 @@
-.streak-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 18px;
-  color: var(--primary-color);
-}
-
-.heatmap-nav {
-  text-align: center;
-}
-
 .heatmap-nav-btn {
   margin: 0 20px;
 }

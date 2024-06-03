@@ -81,13 +81,13 @@ assert(foods.grapes === 35);
 assert(foods.strawberries === 27);
 ```
 
-キーと値のペアはドット記法またはブラケット記法を使用して、設定する必要があります。
+The definition of the `foods` object should not be changed.
 
 ```js
 assert(
-  code.search(/bananas:/) === -1 &&
-    code.search(/grapes:/) === -1 &&
-    code.search(/strawberries:/) === -1
+  __helpers.removeJSComments(code).search(/let foods/) === -1 &&
+  __helpers.removeJSComments(code).search(/const\s+foods\s*=\s*{\s*apples:\s*25,\s*oranges:\s*32,\s*plums:\s*28\s*};/
+) !== -1
 );
 ```
 
@@ -96,7 +96,7 @@ assert(
 ## --seed-contents--
 
 ```js
-let foods = {
+const foods = {
   apples: 25,
   oranges: 32,
   plums: 28
@@ -112,7 +112,7 @@ console.log(foods);
 # --solutions--
 
 ```js
-let foods = {
+const foods = {
   apples: 25,
   oranges: 32,
   plums: 28

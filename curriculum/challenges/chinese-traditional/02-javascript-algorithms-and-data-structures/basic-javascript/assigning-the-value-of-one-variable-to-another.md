@@ -2,7 +2,6 @@
 id: 5ee127a03c3b35dd45426493
 title: 將一個變量的值賦給另一個
 challengeType: 1
-videoUrl: ''
 forumTopicId: 418265
 dashedName: assigning-the-value-of-one-variable-to-another
 ---
@@ -29,7 +28,7 @@ myNum = myVar;
 你不應該修改註釋上面的代碼。
 
 ```js
-assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
 ```
 
 `b` 的值應該爲 `7`。
@@ -41,7 +40,7 @@ assert(typeof b === 'number' && b === 7);
 應該使用 `=` 將 `a` 賦給 `b`。
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(code));
+assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

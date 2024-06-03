@@ -1,6 +1,6 @@
 ---
 id: 5900f4a31000cf542c50ffb6
-title: 'Problem 311: Biclinic Integral Quadrilaterals'
+title: 'Завдання 311: біклінічні чотирикутники з цілими сторонами'
 challengeType: 1
 forumTopicId: 301967
 dashedName: problem-311-biclinic-integral-quadrilaterals
@@ -8,17 +8,17 @@ dashedName: problem-311-biclinic-integral-quadrilaterals
 
 # --description--
 
-$ABCD$ is a convex, integer sided quadrilateral with $1 ≤ AB &lt; BC &lt; CD &lt; AD$.
+$ABCD$ є опуклим трикутником з цілими сторонами за умови $1 ≤ AB &lt; BC &lt; CD &lt; AD$.
 
-$BD$ has integer length. $O$ is the midpoint of $BD$. $AO$ has integer length.
+Довжиною $BD$ є ціле число. $O$ є серединною точкою $BD$. Довжиною $AO$ є ціле число.
 
-We'll call $ABCD$ a biclinic integral quadrilateral if $AO = CO ≤ BO = DO$.
+Назвемо $ABCD$ біклінічним чотирикутником з цілими сторонами, якщо $AO = CO ≤ BO = DO$.
 
-For example, the following quadrilateral is a biclinic integral quadrilateral: $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$ and $AO = CO = 23$.
+Наприклад, наведений нижче чотирикутник є біклінічним чотирикутником з цілими сторонами: $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$ та $AO = CO = 23$.
 
-<img class="img-responsive center-block" alt="quadrilateral ABCD, with point O, an midpoint of BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="чотирикутник ABCD з точкою O, яка є серединною точкою BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
 
-Let $B(N)$ be the number of distinct biclinic integral quadrilaterals $ABCD$ that satisfy ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. We can verify that $B(10\\,000) = 49$ and $B(1\\,000\\,000) = 38239$.
+Нехай $B(N)$ буде кількістю різних біклінічних чотирикутників $ABCD$, які задовільняють умову ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. Можна довести, що $B(10\\,000) = 49$ та $B(1\\,000\\,000) = 38239$.
 
 Знайдіть $B(10\\,000\\,000\\,000)$.
 

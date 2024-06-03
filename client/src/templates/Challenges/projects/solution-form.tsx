@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
-import { challengeTypes } from '../../../../../config/challenge-types';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   StrictSolutionForm,
   ValidatedValues
@@ -51,9 +51,8 @@ export class SolutionForm extends Component<SolutionFormProps> {
     ];
     const backEndProjectFields = [
       { name: 'solution', label: t('learn.solution-link') },
-      { name: 'githubLink', label: t('learn.github-link') }
+      { name: 'githubLink', label: t('learn.source-code-link') }
     ];
-    const msTrophyField = [{ name: 'solution', label: t('learn.ms-link') }];
 
     const buttonCopy = t('learn.i-completed');
 
@@ -64,8 +63,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
       },
       required: ['solution'],
       isEditorLinkAllowed: false,
-      isLocalLinkAllowed: false,
-      isMicrosoftLearnLink: false
+      isLocalLinkAllowed: false
     };
 
     let formFields = solutionField;
@@ -82,12 +80,14 @@ export class SolutionForm extends Component<SolutionFormProps> {
       case challengeTypes.backend:
         formFields = solutionField;
         options.isLocalLinkAllowed = true;
-        solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
+        solutionLink = solutionLink + 'https://3000-project-url.gitpod.io/';
         break;
 
       case challengeTypes.backEndProject:
         formFields = backEndProjectFields;
-        solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
+        options.required.push('githubLink');
+        options.isLocalLinkAllowed = true;
+        solutionLink = solutionLink + 'https://3000-project-url.gitpod.io/';
         solutionFormID = 'back-end-form';
         break;
 
@@ -108,14 +108,6 @@ export class SolutionForm extends Component<SolutionFormProps> {
         solutionLink = solutionLink + 'https://your-git-repo.url/files';
         break;
 
-      case challengeTypes.msTrophyUrl:
-        formFields = msTrophyField;
-        options.isMicrosoftLearnLink = true;
-        solutionLink =
-          solutionLink +
-          'https://learn.microsoft.com/en-us/training/achievements/learn.wwl.get-started-c-sharp-part-1.trophy?username=you';
-        break;
-
       default:
         formFields = solutionField;
         solutionLink =
@@ -131,7 +123,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
           ...options,
           placeholders: {
             solution: solutionLink,
-            githubLink: 'ex: https://github.com/camperbot/hello'
+            githubLink: 'ex: https://your-git-repo.url/files'
           }
         }}
         submit={this.handleSubmit}

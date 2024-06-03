@@ -1,6 +1,6 @@
 ---
 id: 5900f4481000cf542c50ff5b
-title: 'Problem 220: Heighway Dragon'
+title: '问题220：高速公路龙'
 challengeType: 1
 forumTopicId: 301863
 dashedName: problem-220-heighway-dragon

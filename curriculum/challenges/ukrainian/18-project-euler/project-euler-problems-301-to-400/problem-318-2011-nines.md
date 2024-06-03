@@ -1,6 +1,6 @@
 ---
 id: 5900f4ab1000cf542c50ffbd
-title: 'Problem 318: 2011 nines'
+title: 'Завдання 318: 2011 дев’яток'
 challengeType: 1
 forumTopicId: 301974
 dashedName: problem-318-2011-nines
@@ -8,9 +8,9 @@ dashedName: problem-318-2011-nines
 
 # --description--
 
-Consider the real number $\sqrt{2} + \sqrt{3}$.
+Розглянемо дійсне число $\sqrt{2} + \sqrt{3}$.
 
-When we calculate the even powers of $\sqrt{2} + \sqrt{3}$ we get:
+Коли ми обчислимо парні степені $\sqrt{2} + \sqrt{3}$, то отримаємо:
 
 $$\begin{align}   & {(\sqrt{2} + \sqrt{3})}^2 = 9.898979485566356\ldots \\\\
   & {(\sqrt{2} + \sqrt{3})}^4 = 97.98979485566356\ldots \\\\   & {(\sqrt{2} + \sqrt{3})}^6 = 969.998969071069263\ldots \\\\
@@ -18,13 +18,13 @@ $$\begin{align}   & {(\sqrt{2} + \sqrt{3})}^2 = 9.898979485566356\ldots \\\\
   & {(\sqrt{2} + \sqrt{3})}^{12} = 940897.9999989371855\ldots \\\\   & {(\sqrt{2} + \sqrt{3})}^{14} = 9313929.99999989263\ldots \\\\
   & {(\sqrt{2} + \sqrt{3})}^{16} = 92198401.99999998915\ldots \\\\ \end{align}$$
 
-It looks like that the number of consecutive nines at the beginning of the fractional part of these powers is non-decreasing. In fact it can be proven that the fractional part of ${(\sqrt{2} + \sqrt{3})}^{2n}$ approaches 1 for large $n$.
+Схоже, що кількість послідовних дев’яток на початку дробової частини цих ступенів не зменшується. Насправді можна довести, що дробова частина ${(\sqrt{2} + \sqrt{3})}^{2n}$ наближається до 1 за великого значення $n$.
 
-Consider all real numbers of the form $\sqrt{p} + \sqrt{q}$ with $p$ and $q$ positive integers and $p &lt; q$, such that the fractional part of ${(\sqrt{p} + \sqrt{q})}^{2n}$ approaches 1 for large $n$.
+Розглянемо всі дійсні числа вигляду $\sqrt{p} + \sqrt{q}$, де $p$ та $q$ є натуральними числами за умови $p &lt; q$, за яких дробова частина ${(\sqrt{p} + \sqrt{q})}^{2n}$ наближається до 1 за великого значення $n$.
 
-Let $C(p,q,n)$ be the number of consecutive nines at the beginning of the fractional part of ${(\sqrt{p} + \sqrt{q})}^{2n}$.
+Нехай $C(p,q,n)$ буде кількістю послідовних дев’яток на початку дробової частини ${(\sqrt{p} + \sqrt{q})}^{2n}$.
 
-Let $N(p,q)$ be the minimal value of $n$ such that $C(p,q,n) ≥ 2011$.
+Нехай $N(p,q)$ буде мінімальним значенням $n$, за якого $C(p,q,n) ≥ 2011$.
 
 Знайдіть $\sum N(p,q)$ за умови $p + q ≤ 2011$.
 

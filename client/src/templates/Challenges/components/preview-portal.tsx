@@ -18,7 +18,7 @@ import {
   isAdvancingToChallengeSelector,
   chapterSlugSelector
 } from '../redux/selectors';
-import { MAX_MOBILE_WIDTH } from '../../../../../config/misc';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 interface PreviewPortalProps {
   children: ReactElement | null;
@@ -34,6 +34,7 @@ interface PreviewPortalProps {
   isAdvancing: boolean;
   setChapterSlug: (arg: string) => void;
   chapterSlug: string;
+  onResize: () => void;
 }
 
 const mapDispatchToProps = {
@@ -134,6 +135,10 @@ class PreviewPortal extends Component<PreviewPortalProps> {
         this.props.setShowPreviewPane(true);
       }
       this.props.removePortalWindow();
+    });
+
+    this.externalWindow?.addEventListener('resize', () => {
+      this.props.onResize();
     });
 
     this.props.storePortalWindow(this.externalWindow);

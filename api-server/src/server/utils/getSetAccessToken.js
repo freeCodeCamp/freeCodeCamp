@@ -1,14 +1,14 @@
 import { isBefore } from 'date-fns';
 import jwt from 'jsonwebtoken';
 
-import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
+import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 export const jwtCookieNS = 'jwt_access_token';
 
 export function createCookieConfig(req) {
   return {
     signed: !!req.signedCookies,
-    domain: process.env.COOKIE_DOMAIN || 'localhost'
+    domain: process.env.COOKIE_DOMAIN
   };
 }
 

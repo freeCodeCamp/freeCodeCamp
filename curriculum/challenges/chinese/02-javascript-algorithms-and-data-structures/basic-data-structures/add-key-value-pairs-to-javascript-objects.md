@@ -81,13 +81,13 @@ assert(foods.grapes === 35);
 assert(foods.strawberries === 27);
 ```
 
-应使用点号表示法或方括号表示法来设置对象的属性。
+`foods` 对象的定义不应更改。
 
 ```js
 assert(
-  code.search(/bananas:/) === -1 &&
-    code.search(/grapes:/) === -1 &&
-    code.search(/strawberries:/) === -1
+  __helpers.removeJSComments(code).search(/let foods/) === -1 &&
+  __helpers.removeJSComments(code).search(/const\s+foods\s*=\s*{\s*apples:\s*25,\s*oranges:\s*32,\s*plums:\s*28\s*};/
+) !== -1
 );
 ```
 
@@ -96,7 +96,7 @@ assert(
 ## --seed-contents--
 
 ```js
-let foods = {
+const foods = {
   apples: 25,
   oranges: 32,
   plums: 28
@@ -112,7 +112,7 @@ console.log(foods);
 # --solutions--
 
 ```js
-let foods = {
+const foods = {
   apples: 25,
   oranges: 32,
   plums: 28

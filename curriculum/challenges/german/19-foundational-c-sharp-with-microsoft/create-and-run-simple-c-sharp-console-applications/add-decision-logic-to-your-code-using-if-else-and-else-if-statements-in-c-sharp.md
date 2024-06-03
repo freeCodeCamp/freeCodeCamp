@@ -1,22 +1,26 @@
 ---
 id: 647e21ba8acb466c97ccbee6
-title: 'Add Decision Logic to Your Code Using if, else, and else if statements in C#'
+title: 'Hinzufügen von Entscheidungslogik zu deinem Code mit if-, else- und else if-Anweisungen in C#'
 challengeType: 19
 dashedName: add-decision-logic-to-your-code-using-if-else-and-else-if-statements-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-if-elseif-else/</a> and complete all the tasks for the "Add Decision Logic to Your Code Using if, else, and else if statements in C#" module. This is required to earn the "Create and Run Simple C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-if-elseif-else/</a> und löse alle Aufgaben für das Modul "Hinzufügen von Entscheidungslogik zu deinem Code mit if-, else- und else if-Anweisungen in C#". Dies ist **erforderlich**, um die "Create und Run Simple C# Console Applicaions"-Trophäe auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
+
+# --assignment--
+
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/csharp-if-elseif-else/" target="_blank" rel="noreferrer">Hinzufügen von Entscheidungslogik zu deinem Code mit if-, else- und else if-Anweisungen in C#</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-Which of the choices below is not a valid operator in C#?
+Welche der folgenden Optionen ist kein gültiger Operator in C#?
 
 ## --answers--
 

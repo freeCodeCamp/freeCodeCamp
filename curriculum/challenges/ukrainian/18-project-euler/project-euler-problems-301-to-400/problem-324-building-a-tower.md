@@ -1,6 +1,6 @@
 ---
 id: 5900f4b11000cf542c50ffc3
-title: 'Problem 324: Building a tower'
+title: 'Завдання 324: побудова вежі'
 challengeType: 1
 forumTopicId: 301981
 dashedName: problem-324-building-a-tower
@@ -8,9 +8,9 @@ dashedName: problem-324-building-a-tower
 
 # --description--
 
-Let $f(n)$ represent the number of ways one can fill a $3×3×n$ tower with blocks of $2×1×1$. You're allowed to rotate the blocks in any way you like; however, rotations, reflections etc of the tower itself are counted as distinct.
+Нехай $f(n)$ представляє кількість способів, якими можна заповнити вежу $3×3×n$ блоками $2×1×1$. Блоки можна обертати будь-яким чином, але повороти, віддзеркалення і т. д. самої вежі вважаються різними.
 
-For example (with $q = 100\\,000\\,007$):
+Наприклад (за умови $q = 100\\,000\\,007$):
 
 $$\begin{align}   & f(2) = 229, \\\\
   & f(4) = 117\\,805, \\\\   & f(10)\bmod q = 96\\,149\\,360, \\\\

@@ -2,8 +2,8 @@ name: i18n - Download Client UI
 on:
   workflow_dispatch:
   schedule:
-    # runs every weekday at 12:15 PM UTC
-    - cron: '15 12 * * 1-5'
+    # runs Monday and Wednesday at 12:15 PM UTC
+    - cron: '15 12 * * 1,3'
 
 env:
   GITHUB_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
@@ -14,11 +14,11 @@ env:
 jobs:
   i18n-download-client-ui-translations:
     name: Client
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
@@ -276,6 +276,35 @@ jobs:
           # downloads
           download_translations: true
           download_language: sw
+          skip_untranslated_files: false
+          export_only_approved: true
+
+          push_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './crowdin-config.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+      ##### Download Korean #####
+      - name: Crowdin Download Korean Translations
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: false
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: true
+          download_language: ko
           skip_untranslated_files: false
           export_only_approved: true
 

@@ -110,6 +110,10 @@
       "type": "boolean",
       "default": false
     },
+    "isClassroomAccount": {
+      "type": "boolean",
+      "default": false
+    },
     "currentChallengeId": {
       "type": "string",
       "description": "The challenge last visited by the user",
@@ -221,6 +225,16 @@
       "description": "Camper is college algebra with Python certified",
       "default": false
     },
+    "isFoundationalCSharpCertV8": {
+      "type": "boolean",
+      "description": "Camper is foundational C# certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCertV8": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified (2023)",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {
@@ -299,6 +313,26 @@
       ],
       "default": []
     },
+    "completedExams": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string",
+          "challengeType": "number",
+          "examResults": {
+            "type": {
+              "numberOfCorrectAnswers": "number",
+              "numberOfQuestionsInExam": "number",
+              "percentCorrect": "number",
+              "passingPercent": "number",
+              "passed": "boolean",
+              "examTimeInSeconds": "number"
+            }
+          }
+        }
+      ],
+      "default": []
+    },
     "portfolio": {
       "type": "array",
       "default": []
@@ -317,10 +351,6 @@
     "theme": {
       "type": "string",
       "default": "default"
-    },
-    "sound": {
-      "type": "boolean",
-      "default": false
     },
     "keyboardShortcuts": {
       "type": "boolean",
@@ -397,6 +427,16 @@
     "userTokens": {
       "type": "hasMany",
       "model": "UserToken",
+      "foreignKey": "userId"
+    },
+    "msUsernames": {
+      "type": "hasMany",
+      "model": "MsUsername",
+      "foreignKey": "userId"
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "Survey",
       "foreignKey": "userId"
     }
   },

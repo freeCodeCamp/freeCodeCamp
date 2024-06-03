@@ -3,9 +3,9 @@ import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-
 import ObjectID from 'bson-objectid';
-import { SuperBlocks } from '../../config/superblocks';
+
+import { SuperBlocks } from '../../shared/config/superblocks';
 import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
@@ -14,7 +14,11 @@ const helpCategories = [
   'HTML-CSS',
   'JavaScript',
   'Backend Development',
-  'Python'
+  'Python',
+  'English',
+  'Odin',
+  'Euler',
+  'Rosetta'
 ] as const;
 
 type BlockInfo = {
@@ -78,7 +82,7 @@ async function updateIntroJson(
   void withTrace(
     fs.writeFile,
     introJsonPath,
-    format(JSON.stringify(newIntro), { parser: 'json' })
+    await format(JSON.stringify(newIntro), { parser: 'json' })
   );
 }
 
@@ -98,6 +102,7 @@ async function createMetaJson(
   newMeta.order = order;
   newMeta.superOrder = Object.values(SuperBlocks).indexOf(superBlock) + 1;
   newMeta.superBlock = superBlock;
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
@@ -107,7 +112,7 @@ async function createMetaJson(
   void withTrace(
     fs.writeFile,
     path.resolve(metaDir, `${block}/meta.json`),
-    format(JSON.stringify(newMeta), { parser: 'json' })
+    await format(JSON.stringify(newMeta), { parser: 'json' })
   );
 }
 
@@ -116,7 +121,6 @@ async function createIntroMD(superBlock: string, block: string, title: string) {
 title: Introduction to the ${title}
 block: ${block}
 superBlock: ${superBlock}
-isBeta: true
 ---
 
 ## Introduction to the ${title}
@@ -159,6 +163,7 @@ async function createFirstChallenge(
   return createStepFile({
     projectPath: newChallengeDir + '/',
     stepNum: 1,
+    challengeType: 0,
     challengeSeeds
   });
 }
@@ -193,10 +198,10 @@ void prompt([
   },
   {
     name: 'block',
-    message: 'What is the short name (in kebab-case) for this project?',
+    message: 'What is the dashed name (in kebab-case) for this project?',
     validate: (block: string) => {
       if (!block.length) {
-        return 'please enter a short name';
+        return 'please enter a dashed name';
       }
       if (/[^a-z0-9-]/.test(block)) {
         return 'please use alphanumerical characters and kebab case';

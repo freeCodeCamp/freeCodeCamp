@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import React, { ReactNode, useEffect } from 'react';
-import sha1 from 'sha-1';
+import React, { ReactNode, useEffect, useMemo } from 'react';
 import {
   FeatureDefinition,
   GrowthBook,
@@ -8,9 +6,15 @@ import {
 } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { isSignedInSelector, userSelector } from '../../redux/selectors';
-import envData from '../../../../config/env.json';
-import { User } from '../../redux/prop-types';
+import {
+  isSignedInSelector,
+  userSelector,
+  userFetchStateSelector
+} from '../../redux/selectors';
+import envData from '../../../config/env.json';
+import { User, UserFetchState } from '../../redux/prop-types';
+import { getUUID } from '../../utils/growthbook-cookie';
+import callGA from '../../analytics/call-ga';
 import GrowthBookReduxConnector from './growth-book-redux-connector';
 
 const { clientLocale, growthbookUri } = envData as {
@@ -24,23 +28,14 @@ declare global {
   }
 }
 
-const growthbook = new GrowthBook({
-  trackingCallback: (experiment, result) => {
-    window?.dataLayer.push({
-      event: 'experiment_viewed',
-      event_category: 'experiment',
-      experiment_id: experiment.key,
-      variation_id: result.variationId
-    });
-  }
-});
-
 const mapStateToProps = createSelector(
   isSignedInSelector,
   userSelector,
-  (isSignedIn, user: User) => ({
+  userFetchStateSelector,
+  (isSignedIn, user: User, userFetchState: UserFetchState) => ({
     isSignedIn,
-    user
+    user,
+    userFetchState
   })
 );
 
@@ -49,11 +44,37 @@ interface GrowthBookWrapper extends StateProps {
   children: ReactNode;
 }
 
+interface UserAttributes {
+  id: string;
+  clientLocal: string;
+  staff?: boolean;
+  joinDateUnix?: number;
+  completedChallengesLength?: number;
+  signedIn?: true;
+}
+
 const GrowthBookWrapper = ({
   children,
   isSignedIn,
-  user
+  user,
+  userFetchState
 }: GrowthBookWrapper) => {
+  const growthbook = useMemo(
+    () =>
+      new GrowthBook({
+        trackingCallback: (experiment, result) => {
+          callGA({
+            event: 'experiment_viewed',
+            event_category: 'experiment',
+            experiment_id: experiment.key,
+            variation_id: result.variationId
+          });
+        }
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   useEffect(() => {
     async function setGrowthBookFeatures() {
       if (!growthbookUri) return;
@@ -71,19 +92,27 @@ const GrowthBookWrapper = ({
     }
 
     void setGrowthBookFeatures();
-  }, []);
+  }, [growthbook]);
 
   useEffect(() => {
-    if (isSignedIn) {
-      growthbook.setAttributes({
-        id: sha1(user.email),
-        staff: user.email.includes('@freecodecamp'),
-        clientLocal: clientLocale,
-        joinDateUnix: Date.parse(user.joinDate),
-        completedChallengesLength: user.completedChallenges.length
-      });
+    if (userFetchState.complete) {
+      let userAttributes: UserAttributes = {
+        id: getUUID() as string,
+        clientLocal: clientLocale
+      };
+
+      if (isSignedIn) {
+        userAttributes = {
+          ...userAttributes,
+          staff: user.email.includes('@freecodecamp'),
+          joinDateUnix: Date.parse(user.joinDate),
+          completedChallengesLength: user.completedChallenges.length,
+          signedIn: true
+        };
+      }
+      growthbook.setAttributes(userAttributes);
     }
-  }, [isSignedIn, user.email, user.joinDate, user.completedChallenges]);
+  }, [isSignedIn, user, userFetchState, growthbook]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>

@@ -8,7 +8,7 @@ dashedName: build-a-survey-form
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个应用，它在功能上类似于 <a href="https://survey-form.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://survey-form.freecodecamp.rocks</a>。 **不要复制这个演示项目**。
 
 **需求：**
 
@@ -373,7 +373,7 @@ assert(!!el)
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

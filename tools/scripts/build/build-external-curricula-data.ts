@@ -1,8 +1,8 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
-import { submitTypes } from '../../../config/challenge-types';
+import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import { SuperBlocks } from '../../../config/superblocks';
+import { SuperBlocks } from '../../../shared/config/superblocks';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
 export type Curriculum<T> = {
@@ -35,19 +35,26 @@ interface Block<T> {
 
 export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
-  { dashedName: SuperBlocks.SciCompPy, public: true },
   { dashedName: SuperBlocks.DataAnalysisPy, public: true },
   { dashedName: SuperBlocks.MachineLearningPy, public: true },
   { dashedName: SuperBlocks.RespWebDesign, public: true },
-  { dashedName: SuperBlocks.JsAlgoDataStruct, public: false },
+  { dashedName: SuperBlocks.PythonForEverybody, public: true },
+  { dashedName: SuperBlocks.TheOdinProject, public: false },
+  { dashedName: SuperBlocks.JsAlgoDataStructNew, public: false },
   { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
   { dashedName: SuperBlocks.DataVis, public: false },
+  { dashedName: SuperBlocks.RelationalDb, public: false },
   { dashedName: SuperBlocks.BackEndDevApis, public: false },
   { dashedName: SuperBlocks.QualityAssurance, public: false },
+  { dashedName: SuperBlocks.SciCompPy, public: false },
   { dashedName: SuperBlocks.InfoSec, public: false },
+  { dashedName: SuperBlocks.CollegeAlgebraPy, public: false },
+  { dashedName: SuperBlocks.A2English, public: false },
+  { dashedName: SuperBlocks.FoundationalCSharp, public: false },
   { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
   { dashedName: SuperBlocks.ProjectEuler, public: false },
-  { dashedName: SuperBlocks.RelationalDb, public: false }
+  { dashedName: SuperBlocks.RosettaCode, public: false },
+  { dashedName: SuperBlocks.JsAlgoDataStruct, public: false }
 ];
 
 const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);

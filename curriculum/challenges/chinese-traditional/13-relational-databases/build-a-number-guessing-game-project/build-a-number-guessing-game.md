@@ -3,7 +3,7 @@ id: 602da04c22201c65d2a019f4
 title: 構建一個猜數字遊戲
 challengeType: 13
 helpCategory: Backend Development
-url: https://github.com/freeCodeCamp/learn-number-guessing-game
+url: freeCodeCamp/learn-number-guessing-game
 dashedName: build-a-number-guessing-game
 ---
 

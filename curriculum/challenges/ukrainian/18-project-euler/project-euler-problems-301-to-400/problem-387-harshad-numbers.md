@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510003
-title: 'Problem 387: Harshad Numbers'
+title: 'Завдання 387: числа харшад'
 challengeType: 1
 forumTopicId: 302051
 dashedName: problem-387-harshad-numbers
@@ -8,27 +8,27 @@ dashedName: problem-387-harshad-numbers
 
 # --description--
 
-A Harshad or Niven number is a number that is divisible by the sum of its digits.
+Число харшад (або число Нівена) — це число, яке ділиться на суму своїх цифр.
 
-201 is a Harshad number because it is divisible by 3 (the sum of its digits.)
+201 є числом харшад, тому що воно ділиться на 3 (суму своїх цифр.)
 
-When we truncate the last digit from 201, we get 20, which is a Harshad number.
+Якщо скоротити 201 на останню цифру, то отримаємо 20, яке є числом харшад.
 
-When we truncate the last digit from 20, we get 2, which is also a Harshad number.
+Якщо скоротити 20 на останню цифру, то отримаємо 2, що також є числом харшад.
 
-Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.
+Назвемо число харшад, яке завжди залишається числом харшад при рекурсивному скороченні останньої цифри, скорочуваним справа числом харшад.
 
-Also:
+Також:
 
-$\frac{201}{3} = 67$ which is prime.
+$\frac{201}{3} = 67$, яке є простим числом.
 
-Let's call a Harshad number that, when divided by the sum of its digits, results in a prime a strong Harshad number.
+Назвемо число харшад, яке при діленні на суму всіх своїх цифр дає просте число, сильним числом харшад.
 
-Now take the number 2011 which is prime. When we truncate the last digit from it we get 201, a strong Harshad number that is also right truncatable. Let's call such primes strong, right truncatable Harshad primes.
+Візьмемо просте число 2011. Якщо скоротити його на останню цифру, то отримаємо 201 — сильне число харшад, яке також скорочуване справа. Назвемо такі прості числа сильними скорочуваними справа простими числами харшад.
 
-You are given that the sum of the strong, right truncatable Harshad primes less than 10000 is 90619.
+Дано, що сума сильних скорочуваних справа простих чисел харшад (менших за 10000) становить 90619.
 
-Find the sum of the strong, right truncatable Harshad primes less than ${10}^{14}$.
+Знайдіть суму сильних скорочуваних справа простих чисел харшад менших за ${10}^{14}$.
 
 # --hints--
 

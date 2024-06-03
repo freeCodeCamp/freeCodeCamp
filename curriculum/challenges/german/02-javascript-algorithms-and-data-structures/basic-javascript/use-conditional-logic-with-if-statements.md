@@ -20,7 +20,7 @@ Wenn die Bedingung als `true` ausgewertet wird, führt das Programm die Anweisun
 **Beispiel**
 
 ```js
-function test (myCondition) {
+function test(myCondition) {
   if (myCondition) {
     return "It was true";
   }

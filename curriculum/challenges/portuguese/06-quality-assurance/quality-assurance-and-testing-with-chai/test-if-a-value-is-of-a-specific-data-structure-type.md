@@ -8,13 +8,13 @@ dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Lembrete, esse projeto está sendo construido conforme o seguinte projeto inicial em <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `#typeOf` afirma que o tipo do valor é a string fornecida, conforme determinado pelo `Object.prototype.toString`.
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#17` no grupo de testes `Objects`, modifique cada `assert` para `assert.typeOf` ou para `assert.notTypeOf`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#17`, no grupo de testes `Objects`, modifique cada `assert` para `assert.typeOf` ou para `assert.notTypeOf`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

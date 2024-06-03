@@ -1,6 +1,6 @@
 ---
 id: 5900f5001000cf542c510013
-title: 'Problem 403: Lattice points enclosed by parabola and line'
+title: '問題403：由拋物線和直線包圍的格點'
 challengeType: 1
 forumTopicId: 302071
 dashedName: problem-403-lattice-points-enclosed-by-parabola-and-line

@@ -1,30 +1,39 @@
 ---
 id: 647e235a8acb466c97ccbf00
-title: Guided Project - Calculate and Print Student Grades
+title: Geführtes Projekt - Berechnen und Drucken von Schülernoten
 challengeType: 19
 dashedName: guided-project-calculate-and-print-student-grades
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-print-student-grades/" target="_blank">https://learn.microsoft.com/en-us/training/modules/guided-project-calculate-print-student-grades/</a> and complete all the tasks for the "Guided Project - Calculate and Print Student Grades" module. This is required to earn the "Write Your First Code Using C#" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/</a> und löse alle Aufgaben für das Modul "Geführtes Projekt - Berechnen und Drucken von Schülernoten". This is **required** to earn the "Write Your First Code Using C#" trophy on Microsoft Learn, and qualify for the certification exam.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
+
+# --assignment--
+
+Schließe das geführte Projekt zum <a href="https://learn.microsoft.com/training/modules/guided-project-calculate-print-student-grades/" target="_blank" rel="noreferrer">Berechnen und Drucken von Schülernoten</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 
 ## --text--
 
-What is wrong with the following code? `int sophiaSum; Console.WriteLine("Sophia: " + sophiaSum);`
+Was ist an dem folgenden Code falsch?
+
+```clike
+int sophiaSum;
+Console.WriteLine("Sophia: " + sophiaSum);
+```
 
 ## --answers--
 
-`sophiaSum` is not initialized before use
+`sophiaSum` wird vor der Verwendung nicht initialisiert
 
 ---
 
-`sophiaSum` is not implicitly typed to a string
+`sophiaSum` ist nicht implizit in einen String eingegeben
 
 ---
 

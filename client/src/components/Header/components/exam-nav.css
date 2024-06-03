@@ -1,37 +1,18 @@
 .exam-nav {
-  display: flex;
-  justify-content: space-around;
-  height: 80px;
-  background: var(--theme-color);
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
-  top: 0;
-}
-
-.exam-nav .logo {
-  display: flex;
-  width: 50%;
   align-items: center;
-  justify-content: center;
-  height: 80px;
+  background-color: var(--theme-color);
+  display: flex;
+  height: var(--header-height);
+  justify-content: space-between;
+  padding: 0 5px;
 }
 
-.exam-nav .freecodecamp-logo svg {
-  height: 80%;
-  width: 80%;
-  max-width: 360px;
-}
-
-.exam-nav .partner-logo svg {
-  height: 80%;
-  width: 80%;
-  max-width: 450px;
-}
-
-@media (max-width: 600px) {
-  .exam-nav .freecodecamp-logo svg {
-    height: 90%;
-    width: 90%;
+@media (min-width: 401px) {
+  .exam-nav {
+    padding: 0 15px;
   }
+}
+
+.exam-nav svg {
+  height: 32px;
 }

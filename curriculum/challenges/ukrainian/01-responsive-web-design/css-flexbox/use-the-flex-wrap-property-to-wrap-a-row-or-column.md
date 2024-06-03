@@ -23,7 +23,7 @@ CSS також має варіанти напрямку обгортки:
 
 # --hints--
 
-Елемент `#box-container` повинен мати властивість `flex-wrap`, налаштовану до значення `wrap`.
+Елемент `#box-container` повинен мати властивість `flex-wrap` зі значенням `wrap`.
 
 ```js
 assert($('#box-container').css('flex-wrap') == 'wrap');

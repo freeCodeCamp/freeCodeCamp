@@ -8,7 +8,7 @@ dashedName: problem-128-hexagonal-tile-differences
 
 # --description--
 
-Шестикутна плитка з числом 1 оточена кільцем із шести шестикутних плиток, які, починаючи із «12-ї години», пронумеровані від 2 до 7 у напрямку проти годинникової стрілки.
+Шестикутна плитка з числом 1 оточена кільцем із шести шестикутних плиток, які, починаючи із «12-ої години», пронумеровані від 2 до 7 у напрямку проти годинникової стрілки.
 
 Нові кільця додані так само, і пронумеровані від 8 до 19, від 20 до 37, від 38 до 61 і так далі. На малюнку нижче зображено перші три кільця.
 
@@ -67,8 +67,8 @@ class PrimeSeive {
         // Mark value in seive array
         const prime = 2 * i + 3;
         // Mark all multiples of this number as false (not prime)
-        const primeSqaredIndex = 2 * i ** 2 + 6 * i + 3;
-        for (let j = primeSqaredIndex; j < upper; j += prime) {
+        const primeSquaredIndex = 2 * i ** 2 + 6 * i + 3;
+        for (let j = primeSquaredIndex; j < upper; j += prime) {
           seive[j] = false;
         }
       }

@@ -9,20 +9,15 @@ dashedName: sha-1-password-cracker
 
 # --description--
 
-Para este proyecto, trabajarás con nuestra <a href="https://replit.com/github/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">plantilla en Replit</a>.
-
--   Start by importing the project on Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
+You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-SHA-1-password-cracker" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
 
 Estamos desarrollando las instrucciones interactivas del currículo de Python. Aunque puedes encontrar los siguientes videos en el canal de YouTube de freeCodeCamp.org que te enseñaran lo necesario para realizar este proyecto:
 
-- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Python for Everybody Video Course</a> (14 hours)
+- <a href="https://www.freecodecamp.org/news/python-for-everybody/" target="_blank" rel="noopener noreferrer nofollow">Curso en Vídeo de Python para Todos</a> (Duración: 14 horas)
 
-- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Learn Python Basics in Depth</a> (4 hours)
+- <a href="https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/" target="_blank" rel="noopener noreferrer nofollow">Aprende las bases de Python en profundidad.</a> (4 horas)
 
-- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Intermediate Python Course</a> (6 hours)
+- <a href="https://www.freecodecamp.org/news/intermediate-python-course/" target="_blank" rel="noopener noreferrer nofollow">Curso Intermedio de Python</a> (6 horas)
 
 # --instructions--
 
@@ -52,11 +47,11 @@ La librería `hashlib` ya viene importada. Deberías considerar usarla en tu có
 
 ## Desarrollo
 
-Escribe tu código en `password_cracker.py`. Para el desarrollo, puedes usar `main.py` para probar tu código. Haz clic en el botón "ejecutar" para ejecutar tu código en `main.py`.
+Escribe tu código en `password_cracker.py`. Para el desarrollo, puedes usar `main.py` para probar tu código.
 
 ## Pruebas
 
-Las pruebas unitarias para este proyecto están en `test_module.py`. Por defecto las pruebas del archivo `test_module.py` ya están importadas en el archivo `main.py` para su comodidad. Las pruebas se ejecutarán automaticamente cada vez que presione el botón de "Ejecutar".
+Las pruebas unitarias para este proyecto están en `test_module.py`. Por defecto las pruebas del archivo `test_module.py` ya están importadas en el archivo `main.py` para su comodidad.
 
 ## Enviar
 

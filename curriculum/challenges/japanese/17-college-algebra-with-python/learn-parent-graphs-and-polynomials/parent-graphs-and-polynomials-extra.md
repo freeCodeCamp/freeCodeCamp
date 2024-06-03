@@ -1,6 +1,6 @@
 ---
 id: 6363d25c9078df117ce4c403
-title: "Parent Graphs and Polynomials: Extra"
+title: "親関数と多項式: おまけ"
 challengeType: 15
 videoId: YDlXmmRgQJI
 dashedName: parent-graphs-and-polynomials-extra
@@ -8,15 +8,15 @@ dashedName: parent-graphs-and-polynomials-extra
 
 # --description--
 
-This next video will show you how to add sliders to your graphs, to see them change in real time. You will also see ways to use loops to find the roots of a graph, and how this method is different from factoring.
+次の動画では、グラフにスライダーを追加してリアルタイムでグラフを変化させる方法を紹介します。 ループを使用してグラフの根を見つける方法を説明し、この方法が因数分解とは異なることを示します。
 
-Here is the <a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb0Mwl0GUGbqMpka?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
+この動画と合わせて<a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb0Mwl0GUGbqMpka?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">こちらの Colab ノートブック</a>も利用してください。
 
 # --question--
 
 ## --text--
 
-How many sliders would you add to change the coefficients in a quadratic graph?
+二次関数のグラフの係数を変化させるために追加するスライダーの数はいくつですか？
 
 ## --answers--
 

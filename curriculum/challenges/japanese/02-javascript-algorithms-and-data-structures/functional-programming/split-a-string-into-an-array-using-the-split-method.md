@@ -33,7 +33,7 @@ const byDigits = otherString.split(/\d/);
 コードで `split` メソッドを使用する必要があります。
 
 ```js
-assert(code.match(/\.split/g));
+assert(__helpers.removeJSComments(code).match(/\.split/g));
 ```
 
 `splitify("Hello World,I-am code")` は `["Hello", "World", "I", "am", "code"]` を返す必要があります。

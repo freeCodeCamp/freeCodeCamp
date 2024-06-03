@@ -1,6 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50feef
-title: 'Problem 112: Bouncy numbers'
+title: '問題 112: 弾み数'
 challengeType: 1
 forumTopicId: 301738
 dashedName: problem-112-bouncy-numbers
@@ -8,21 +8,21 @@ dashedName: problem-112-bouncy-numbers
 
 # --description--
 
-Working from left-to-right if no digit is exceeded by the digit to its left it is called an increasing number; for example, 134468.
+ある数を左から右へ見ていき、すべての数字がその左側の数字を下回らない場合、その数は増加数と呼ばれます。例えば 134468 です。
 
-Similarly if no digit is exceeded by the digit to its right it is called a decreasing number; for example, 66420.
+同様に、すべての数字がその右側の数字を下回らない場合、その数は減少数と呼ばれます。例えば 66420 です。
 
-We shall call a positive integer that is neither increasing nor decreasing a "bouncy" number; for example, 155349.
+増加数、減少数のどちらでもない正の整数を「弾み」数と呼ぶことにします。例えば 155349 です。
 
-Clearly there cannot be any bouncy numbers below one-hundred, but just over half of the numbers below one-thousand (525) are bouncy. In fact, the least number for which the proportion of bouncy numbers first reaches 50% is 538.
+当然、100 未満には弾み数がありませんが、1000 未満の数の半数強 (525 個) が弾み数です。 実際、弾み数の割合が最初に 50% に達する最小の数は 538 です。
 
-Surprisingly, bouncy numbers become more and more common and by the time we reach 21780 the proportion of bouncy numbers is equal to 90%.
+意外にも弾み数の割合は次第に増え、21780 に達する時点で弾み数の割合は 90% に達します。
 
-Find the least number for which the proportion of bouncy numbers is exactly 99%.
+弾み数の割合がちょうど 99% になる最小の数を求めなさい。
 
 # --hints--
 
-`bouncyNumbers()` should return `1587000`.
+`bouncyNumbers()` は `1587000` を返す必要があります。
 
 ```js
 assert.strictEqual(bouncyNumbers(), 1587000);

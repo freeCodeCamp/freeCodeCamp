@@ -3,46 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "5.17.0",
-    "@testing-library/react": "12.1.5",
-    "@testing-library/user-event": "13.5.0",
-    "codemirror": "5.65.13",
+    "@vitejs/plugin-react": "4.2.1",
+    "codemirror": "5.65.16",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-router-dom": "6.14.2",
-    "react-scripts": "5.0.1",
-    "typescript": "4.9.5"
+    "react-router-dom": "6.18.0",
+    "typescript": "5.2.2",
+    "vite": "4.5.2",
+    "vite-tsconfig-paths": "4.2.1"
   },
   "scripts": {
-    "start": "cross-env PORT=3300 react-scripts start",
+    "start": "cross-env PORT=3300 vite",
     "lint": "eslint src",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "tsc && vite build",
+    "test": "echo \"no tests here yet\"",
     "postinstall": "shx cp ./sample.env ./.env"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "devDependencies": {
-    "@types/codemirror": "5.60.8",
-    "@types/react": "16.14.43",
-    "@types/react-dom": "^16.9.17",
+    "@types/codemirror": "5.60.15",
+    "@types/react": "16.14.56",
+    "@types/react-dom": "16.9.24",
     "@uiw/react-codemirror": "3.2.10",
     "cross-env": "7.0.3",
     "eslint-plugin-react-hooks": "4.6.0",

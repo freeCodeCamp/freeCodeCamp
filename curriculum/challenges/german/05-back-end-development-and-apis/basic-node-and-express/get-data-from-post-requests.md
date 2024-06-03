@@ -22,7 +22,7 @@ GET - Auslesen vorhandener Ressource, ohne diese zu verändern
 
 PUT oder PATCH (manchmal auch POST) - Aktualisieren einer Ressource anhand übermittelter Daten,
 
-DELETE => Löschen einer Ressource.
+DELETE - Delete a resource.
 
 Es gibt noch eine Reihe anderer Methoden, um eine Verbindung mit dem Server auszuhandeln. Mit Ausnahme von GET können alle anderen oben aufgeführten Methoden eine Payload haben (d.h. die Daten im Anfrage-Körper). Die Body-Parser-Middleware funktioniert mit diesen Methoden ebenfalls.
 

@@ -12,15 +12,15 @@ dashedName: fractions-and-decimals-extra
 
 这是<a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">这个视频中用到的 Colab 笔记本</a>，你可以把它作为一个模型。
 
-# --question--
-
-## --任务--
+# --任务--
 
 在你的代数 Colab 笔记本上添加因数和求解变量的代码。
 
 ---
 
 在下面的笔记本中运行代码以<a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">练习转换分数和小数</a>。作为奖励，看看用来产生练习问题的代码。
+
+# --question--
 
 ## --text--
 

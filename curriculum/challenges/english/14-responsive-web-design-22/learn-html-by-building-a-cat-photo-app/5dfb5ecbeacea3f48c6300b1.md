@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-Use list item (`li`) elements to create items in a list. Here is an example of list items in an unordered list:
+The `li` element is used to create a list item in an ordered or unordered list.
+
+Here is an example of list items in an unordered list:
 
 ```html
 <ul>

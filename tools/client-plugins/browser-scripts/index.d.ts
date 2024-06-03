@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import { PyodideInterface } from 'pyodide';
 
 export interface FrameDocument extends Document {
@@ -24,7 +22,6 @@ export interface InitTestFrameArg {
   };
   getUserInput?: (fileName: string) => string;
   loadEnzyme?: () => void;
-  transformedPython?: string;
 }
 
 export type FrameWindow = Window &

@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 يكونا `console.log()` و `typeof` الطرقتان الرئيستان للتحقق من القيم وأنواعها في الكود. الآن حان الوقت للدخول في الأشكال الشائعة التي تأخذها الأخطاء (bugs). أحد المشاكل ويقع فيه بالذات الكتبة السريعين هو الخطأ الإملائي المتواضع (humble spelling error).
 
-الأحرف المبدلة، المفقودة، أو الأحرف كبيرة بالخطأ (mis-capitalized) في اسم متغير أو وظيفة سيجعل المتصفح يبحث عن شيء غير موجود - ويبلغ عن خطأ مرجعي (reference error). في لغة JavaScript أسماء المتغير والوظائف هي حساسة لحالة الأحرف (case-sensitive).
+Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. في لغة JavaScript أسماء المتغير والوظائف هي حساسة لحالة الأحرف (case-sensitive).
 
 # --instructions--
 
@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 لا ينبغي أن تكون هناك استخدامات للمتغيرات تملى بشكل خاطئ في الكود.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 يجب إعلان متغير باسم `receivables` واستخدامه بشكل صحيح في الكود.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 لا ينبغي أن تكون هناك استخدامات للمتغيرات تملى بشكل خاطئ في الكود.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 يجب إعلان متغير باسم `payables` واستخدامه بشكل صحيح في الكود.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

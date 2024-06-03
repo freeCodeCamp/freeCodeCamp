@@ -47,7 +47,7 @@ assert(
 对 `myArray` 使用 `pop()` 函数。
 
 ```js
-assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
+assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(__helpers.removeJSComments(code)));
 ```
 
 `removedFromMyArray` 应该只包含 `["cat", 2]`。

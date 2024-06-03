@@ -16,7 +16,7 @@ dashedName: learn-about-tertiary-colors
 
 下面是使用分裂補色搭配法創建的三個顏色：
 
-<table class='table table-striped'><thead><tr><th>顏色</th><th>HEX 顏色碼</th></tr></thead><thead></thead><tbody><tr><td>橙色</td><td>#FF7F00</td></tr><tr><td>藍綠色</td><td>#00FFFF</td></tr><tr><td>樹莓紅</td><td>#FF007F</td></tr></tbody></table>
+<table><thead><tr><th>顏色</th><th>HEX 顏色碼</th></tr></thead><thead></thead><tbody><tr><td>橙色</td><td>#FF7F00</td></tr><tr><td>藍綠色</td><td>#00FFFF</td></tr><tr><td>樹莓紅</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 

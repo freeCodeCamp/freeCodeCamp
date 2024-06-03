@@ -18,7 +18,7 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
 
-It can be verified that the sum of the numbers on the diagonals is 101.
+21 22 23 24 25
 
 What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
 

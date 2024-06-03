@@ -12,11 +12,11 @@ The first video will show you the math behind solving a system of two equations 
 
 Here is the <a href="https://colab.research.google.com/drive/1UfyQiXCedAAv5kcqgi_pGYV-HkSgN8YD?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Add code to your notebook to solve and graph systems of equations
+
+# --question--
 
 ## --text--
 

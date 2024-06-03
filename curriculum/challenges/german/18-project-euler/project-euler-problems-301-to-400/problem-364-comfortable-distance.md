@@ -1,6 +1,6 @@
 ---
 id: 5900f4d91000cf542c50ffea
-title: 'Problem 364: Comfortable distance'
+title: 'Problem 364: Bequemer Abstand'
 challengeType: 1
 forumTopicId: 302025
 dashedName: problem-364-comfortable-distance
@@ -11,8 +11,8 @@ dashedName: problem-364-comfortable-distance
 There are $N$ seats in a row. $N$ people come after each other to fill the seats according to the following rules:
 
 1. If there is any seat whose adjacent seat(s) are not occupied take such a seat.
-2. If there is no such seat and there is any seat for which only one adjacent seat is occupied take such a seat.
-3. Otherwise take one of the remaining available seats.
+2. Wenn es keinen solchen Platz gibt und ein Platz vorhanden ist, für den nur ein benachbarter Platz besetzt ist, nimm diesen Platz ein.
+3. Andernfalls nimmst du einen der noch freien Plätze.
 
 Let $T(N)$ be the number of possibilities that $N$ seats are occupied by $N$ people with the given rules. The following figure shows $T(4) = 8$.
 

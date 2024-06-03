@@ -8,12 +8,7 @@ dashedName: medical-data-visualizer
 
 # --description--
 
-Você <a href="https://replit.com/github/freeCodeCamp/boilerplate-medical-data-visualizer" target="_blank" rel="noopener noreferrer nofollow">trabalhará neste projeto com nosso código inicial do Replit</a>.
-
--   Comece importando o projeto no Replit.
--   Em seguida, você verá uma janela `.replit`.
--   Selecione `Use run command` e clique no botão `Done`.
-
+Você <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-medical-data-visualizer/" target="_blank" rel="noopener noreferrer nofollow">trabalhará nesse projeto com o nosso código inicial do Gitpod </a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
@@ -23,7 +18,7 @@ Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python
 
 # --instructions--
 
-Neste projeto, você vai visualizar e fazer cálculos a partir de dados dos exames médicos usando o matplotlib, o seaborn e o pandas. Os valores do dataset foram coletados durante exames médicos.
+Neste projeto, você vai visualizar e fazer cálculos a partir de dados dos exames médicos usando o `matplotlib`, o `seaborn` e o `pandas`. Os valores do dataset foram coletados durante exames médicos.
 
 ## Descrição dos dados
 
@@ -48,32 +43,56 @@ Nome do arquivo: medical_examination.csv
 
 ## Tarefas
 
-Crie um gráfico semelhante a `examples/Figure_1.png`, onde mostramos a contagem de resultados bons e ruins para as variáveis `cholesterol`, `gluc`, `alco`, `active` e `smoke` para pacientes com cardio=1 e cardio=0 em painéis diferentes.
+Crie um gráfico semelhante a `examples/Figure_1.png`, onde mostramos a contagem de resultados bons e ruins para as variáveis `cholesterol`, `gluc`, `alco`, `active` e `smoke` para pacientes com `cardio=1` e `cardio=0` em painéis diferentes.
 
 Use os dados para completar as seguintes tarefas em `medical_data_visualizer.py`:
 
-- Adicione uma coluna de `overweight` (excesso de peso) aos dados. Para determinar se uma pessoa tem excesso de peso, primeiro calcule sua IMC dividindo seu peso em quilogramas pelo quadrado de sua altura em metros. Se esse valor é > 25, a pessoa está com excesso de peso. Use o valor 0 para NÃO ter excesso de peso e o valor 1 para tê-lo.
-- Normalize os dados, tornando 0 sempre bom e 1 sempre ruim. Se o valor de `cholesterol` ou de `gluc` for 1, torne o valor 0. Se o valor for maior que 1, torne o valor 1.
-- Converta os dados em um formato long e crie uma tabela que mostra as contagens de valor dos recursos categóricas usando o `catplot()` do Seaborn. O dataset deve ser dividido por 'Cardio', de modo que haja uma tabela para cada valor de `cardio`. O gráfico deve parecer com `examples/Figure_1.png`.
+- Adicione uma coluna de `overweight` (excesso de peso) aos dados. Para determinar se uma pessoa tem excesso de peso, primeiro calcule sua IMC dividindo seu peso em quilogramas pelo quadrado de sua altura em metros. Se esse valor é > 25, a pessoa está com excesso de peso. Use o valor `0` para NÃO ter excesso de peso e o valor `1` para tê-lo.
+- Normalize os dados, tornando `0` sempre bom e `1` sempre ruim. Se o valor de `cholesterol` ou de `gluc` for `1`, torne o valor `0`. Se o valor for maior que `1`, torne o valor `1`.
+- Converta os dados em um formato long e crie uma tabela que mostra as contagens de valor dos recursos categóricas usando o `catplot()` do `seaborn`. O dataset deve ser dividido por `Cardio`, de modo que haja uma tabela para cada valor de `cardio`. O gráfico deve parecer com `examples/Figure_1.png`.
 - Limpe os dados. Filtrar os seguintes segmentos de pacientes que representam dados incorretos:
   - pressão diastólica é maior do que a sistólica (Manter os dados corretos com `(df['ap_lo'] <= df['ap_hi'])`)
   - a altura é menor que o percentil 2,5 (Manter os dados corretos com `(df['height'] >= df['height'].quantile(0.025))`)
   - a altura é maior que o percentil 97,5
   - o peso é menor que o percentil 2,5
   - o peso é maior que o percentil 97,5
-- Crie uma matriz de correlação usando o dataset. Faça o gráfico da matriz de correlação usando o `heatmap()` do seaborn. Mascare o triângulo superior. O gráfico deve parecer com `examples/Figure_2.png`.
+- Crie uma matriz de correlação usando o dataset. Faça o gráfico da matriz de correlação usando o `heatmap()` do `seaborn`. Mascare o triângulo superior. O gráfico deve parecer com `examples/Figure_2.png`.
 
 Quando uma variável for definida como `None`, certifique-se de configurá-la com o código correto.
 
 Os testes unitários foram escritos para você no `test_module.py`.
 
+## Instruções
+Para cada número do arquivo `medical_data_visualizer.py`, adicione o código do número de instrução associado abaixo.
+
+1. Importe os dados de `medical_examination.csv` e atribua-os à variável `df`
+2. Crie a coluna `overweight` na variável `df`
+3. Normalize os dados, tornando `0` sempre bom e `1` sempre ruim. Se o valor de `cholesterol` ou de `gluc` for 1, defina o valor como `0`. Se o valor for maior que `1`, defina o valor como `1`.
+4. Desenhe o gráfico categórico na função `draw_cat_plot`
+5. Crie um DataFrame para o gráfico de categorias usando `pd.melt` com valores de `cholesterol`, `gluc`, `smoke`, `alco`, `active` e `overweight` na variável `df_cat`.
+6. Agrupe e reformate os dados em `df_cat` para dividi-los por `cardio`. Mostre as contagens de cada recurso. Você terá que renomear uma das colunas para que o `catplot` funcione corretamente.
+7. Converta os dados para um formato `long` e crie um gráfico que mostre os valores dos recursos categóricos, usando o seguinte método fornecido pela importação de biblioteca seaborn: `sns.catplot()`
+8. Obtenha o valor para a saída e armazene-o na variável `fig`
+9. Não modifique as próximas duas linhas
+10. Desenhe o mapa de calor na função `draw_heat_map`
+11. Limpe os dados na variável `df_heat` filtrando os seguintes segmentos de pacientes que representam dados incorretos:
+    - a altura é menor que o percentil 2,5 (Manter os dados corretos com `(df['height'] >= df['height'].quantile(0.025))`)
+    - a altura é maior que o percentil 97,5
+    - o peso é menor que o percentil 2,5
+    - o peso é maior que o percentil 97,5
+12. Calcule a matriz de correlação e armazene-a na variável `corr`
+13. Gere uma máscara para o triângulo superior e armazene-a na variável `mask`
+14. Configure o valor de `matplotlib`
+15. Faça o gráfico da matriz de correlação usando o método fornecido pela biblioteca `seaborn` importando: `sns.heatmap()`
+16. Não modifique as próximas duas linhas
+
 ## Desenvolvimento
 
-Para o desenvolvimento, você pode usar `main.py` para testar suas funções. Clique no botão "Run" e `main.py` será executado.
+Escreva o seu código em `medical_data_visualizer.py`. Para o desenvolvimento, você pode usar `main.py` para testar seu código.
 
 ## Testes
 
-Importamos os testes de `test_module.py` em `main.py` para a sua conveniência. Os testes serão executados automaticamente sempre que você clicar no botão "Run".
+Os testes unitários para este projeto estão em `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência.
 
 ## Envio
 

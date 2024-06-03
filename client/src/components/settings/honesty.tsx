@@ -1,6 +1,6 @@
-import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Panel, Button } from '@freecodecamp/ui';
 
 import { FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';
@@ -38,8 +38,8 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
         </Panel>
         <Button
           block={true}
-          bsStyle='primary'
-          aria-disabled={isHonest}
+          variant='primary'
+          disabled={isHonest}
           onClick={() => !isHonest && updateIsHonest({ isHonest: true })}
         >
           {buttonText}

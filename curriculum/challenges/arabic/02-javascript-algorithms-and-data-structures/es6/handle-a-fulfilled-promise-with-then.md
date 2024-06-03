@@ -8,7 +8,13 @@ dashedName: handle-a-fulfilled-promise-with-then
 
 # --description--
 
-الـ Promises مفيدة للغاية عندما تكون لديك عملية تستغرق قدرا غير معروف من الوقت في الكود الخاص بك (شيء غير متزامن)، غالبا ما يكون server request. عندما تقوم بـ server request يستغرق ذلك بعض الوقت، وبعد اكتمالها تريد عادة أن تفعل شيئا بالـ response المعادة من الـ server. يمكن تحقيق ذلك باستخدام method الـ `then`. يتم تنفيذ method الـ `then` مباشرة بعد الوفاء بالـ promise باستخدام `resolve`. إليك مثال:
+الـ Promises مفيدة للغاية عندما تكون لديك عملية تستغرق قدرا غير معروف من الوقت في الكود الخاص بك (شيء غير متزامن)، غالبا ما يكون server request. عندما تقوم بـ server request يستغرق ذلك بعض الوقت، وبعد اكتمالها تريد عادة أن تفعل شيئا بالـ response المعادة من الـ server. يمكن تحقيق ذلك باستخدام method الـ `then`.
+
+```js
+Promise.prototype.then(onFulfilled, onRejected)
+```
+
+The `then` method schedules callback functions for the eventual completion of a Promise - either fulfillment or rejection. One of the `onFulfilled` and `onRejected` handlers will be executed to handle the current promise's fulfillment or rejection. When the promise is fulfilled with `resolve` the `onFulfilled` handler is called.
 
 ```js
 myPromise.then(result => {
@@ -28,7 +34,7 @@ myPromise.then(result => {
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.then\(/g)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/(makeServerRequest|\))\.then\(/g)
 );
 ```
 
@@ -44,7 +50,7 @@ assert(resultIsParameter);
 assert(
   resultIsParameter &&
     __helpers
-      .removeWhiteSpace(code)
+      .removeWhiteSpace(__helpers.removeJSComments(code))
       .match(/\.then\(.*?result.*?console.log\(result\).*?\)/)
 );
 ```
@@ -54,7 +60,7 @@ assert(
 ## --after-user-code--
 
 ```js
-const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(code));
+const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)));
 ```
 
 ## --seed-contents--

@@ -589,6 +589,8 @@ a[class^='ais-'] {
 .ais-SearchBox-form {
   display: block;
   position: relative;
+  width: 100%;
+  height: var(--header-element-size);
 }
 .ais-SearchBox-input {
   -webkit-appearance: none;
@@ -618,8 +620,6 @@ a[class^='ais-'] {
   -moz-appearance: none;
   appearance: none;
   z-index: 100;
-  width: 20px;
-  height: 20px;
 }
 .ais-SearchBox-reset {
   margin-inline-start: 10px;
@@ -640,12 +640,10 @@ a[class^='ais-'] {
   width: 16px;
   height: 16px;
 }
-.ais-SearchBox-submitIcon > path {
-  fill: var(--gray-15);
-}
 .ais-Hits {
   position: absolute;
-  width: 90%;
+  left: 0;
+  right: 0;
   background-color: #fff;
 }
 .ais-Hits-item {

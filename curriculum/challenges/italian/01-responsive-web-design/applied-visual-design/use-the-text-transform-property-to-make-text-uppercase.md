@@ -13,7 +13,7 @@ La proprietà `text-transform` è usata in CSS per cambiare l'aspetto del testo.
 
 La seguente tabella mostra come i diversi valori `text-transform`cambiano il testo di esempio "Transform me".
 
-<table class='table table-striped'><thead><tr><th>Valore</th><th>Risultato</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Usa il valore predefinito</td></tr><tr><td><code>inherit</code></td><td>Usa il valore <code>text-transform</code> dell'elemento genitore</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong> Usa il testo originale</td></tr></tbody></table>
+<table><thead><tr><th>Valore</th><th>Risultato</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Usa il valore predefinito</td></tr><tr><td><code>inherit</code></td><td>Usa il valore <code>text-transform</code> dell'elemento genitore</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong> Usa il testo originale</td></tr></tbody></table>
 
 # --instructions--
 

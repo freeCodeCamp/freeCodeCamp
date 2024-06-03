@@ -1,7 +1,8 @@
 import {
   normalizeTwitter,
   normalizeProfileUI,
-  normalizeChallenges
+  normalizeChallenges,
+  normalizeFlags
 } from './normalize';
 
 describe('normalize', () => {
@@ -95,6 +96,7 @@ describe('normalize', () => {
           solution: null,
           githubLink: null,
           isManuallyApproved: null,
+          examResults: null,
           files: [
             {
               contents: 'test',
@@ -135,6 +137,23 @@ describe('normalize', () => {
           ]
         }
       ]);
+    });
+  });
+
+  describe('normalizeFlags', () => {
+    it('should replace nulls with false', () => {
+      const flags = {
+        isLocked: null,
+        showAbout: false,
+        showCerts: true,
+        showDonation: null
+      };
+      expect(normalizeFlags(flags)).toEqual({
+        isLocked: false,
+        showAbout: false,
+        showCerts: true,
+        showDonation: false
+      });
     });
   });
 });

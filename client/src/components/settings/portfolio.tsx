@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-import {
-  Button,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  HelpBlock
-} from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
+import {
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  HelpBlock,
+  FormGroupProps,
+  Button
+} from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { PortfolioProjectData } from '../../redux/prop-types';
@@ -32,6 +32,11 @@ type PortfolioState = {
   portfolio: PortfolioProjectData[];
   unsavedItemId: string | null;
 };
+
+interface ProfileValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
 
 function createEmptyPortfolioItem(): PortfolioProjectData {
   return {
@@ -62,9 +67,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   createOnChangeHandler =
     (id: string, key: 'description' | 'image' | 'title' | 'url') =>
-    (e: React.FormEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
-      const userInput = (e.target as HTMLInputElement).value.slice();
+      const userInput = e.target.value.slice();
       return this.setState(state => {
         const { portfolio: currentPortfolio } = state;
         const mutablePortfolio = currentPortfolio.slice(0);
@@ -115,7 +120,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return isEqual(original, edited);
   };
 
-  getDescriptionValidation(description: string) {
+  getDescriptionValidation(description: string): ProfileValidation {
     const { t } = this.props;
     const len = description.length;
     const charsLeft = 288 - len;
@@ -137,10 +142,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return { state: 'success', message: '' };
   }
 
-  getTitleValidation(title: string) {
+  getTitleValidation(title: string): ProfileValidation {
     const { t } = this.props;
     if (!title) {
-      return { state: 'error', message: t('validation.title-required') };
+      return {
+        state: 'error',
+        message: t('validation.title-required')
+      };
     }
     const len = title.length;
     if (len < 2) {
@@ -156,7 +164,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { t } = this.props;
     const len = maybeUrl.length;
     if (len >= 4 && !hasProtocolRE.test(maybeUrl)) {
-      return { state: 'error', message: t('validation.invalid-protocol') };
+      return {
+        state: 'error',
+        message: t('validation.invalid-protocol')
+      };
     }
     if (isImage && !maybeUrl) {
       return { state: null, message: '' };
@@ -243,67 +254,101 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       if (isButtonDisabled) return null;
       return this.updateItem(id);
     };
-
     return (
       <FullWidthRow key={id}>
-        <form onSubmit={e => handleSubmit(e, id)} id='portfolio-items'>
+        <form
+          onSubmit={e => handleSubmit(e, id)}
+          id='portfolio-items'
+          data-playwright-test-label='portfolio-items'
+        >
           <FormGroup
             controlId={`${id}-title`}
             validationState={
               pristine || (!pristine && !title) ? null : titleState
             }
           >
-            <ControlLabel>{t('settings.labels.title')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-title-input`}>
+              {t('settings.labels.title')}
+            </ControlLabel>
             <FormControl
               onChange={this.createOnChangeHandler(id, 'title')}
               required={true}
               type='text'
               value={title}
+              name='portfolio-title'
+              id={`${id}-title-input`}
             />
-            {titleMessage ? <HelpBlock>{titleMessage}</HelpBlock> : null}
+            {titleMessage ? (
+              <HelpBlock data-playwright-test-label='title-validation'>
+                {titleMessage}
+              </HelpBlock>
+            ) : null}
           </FormGroup>
           <FormGroup
             controlId={`${id}-url`}
             validationState={pristine || (!pristine && !url) ? null : urlState}
           >
-            <ControlLabel>{t('settings.labels.url')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-url-input`}>
+              {t('settings.labels.url')}
+            </ControlLabel>
             <FormControl
               onChange={this.createOnChangeHandler(id, 'url')}
               required={true}
               type='url'
               value={url}
+              name='portfolio-url'
+              id={`${id}-url-input`}
             />
-            {urlMessage ? <HelpBlock>{urlMessage}</HelpBlock> : null}
+            {urlMessage ? (
+              <HelpBlock data-playwright-test-label='url-validation'>
+                {urlMessage}
+              </HelpBlock>
+            ) : null}
           </FormGroup>
           <FormGroup
             controlId={`${id}-image`}
             validationState={pristine ? null : imageState}
           >
-            <ControlLabel>{t('settings.labels.image')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-image-input`}>
+              {t('settings.labels.image')}
+            </ControlLabel>
             <FormControl
               onChange={this.createOnChangeHandler(id, 'image')}
               type='url'
               value={image}
+              name='portfolio-image'
+              id={`${id}-image-input`}
             />
-            {imageMessage ? <HelpBlock>{imageMessage}</HelpBlock> : null}
+            {imageMessage ? (
+              <HelpBlock data-playwright-test-label='image-validation'>
+                {imageMessage}
+              </HelpBlock>
+            ) : null}
           </FormGroup>
           <FormGroup
             controlId={`${id}-description`}
             validationState={pristine ? null : descriptionState}
           >
-            <ControlLabel>{t('settings.labels.description')}</ControlLabel>
+            <ControlLabel htmlFor={`${id}-description-input`}>
+              {t('settings.labels.description')}
+            </ControlLabel>
             <FormControl
               componentClass='textarea'
               onChange={this.createOnChangeHandler(id, 'description')}
               value={description}
+              name='portfolio-description'
+              id={`${id}-description-input`}
             />
             {descriptionMessage ? (
-              <HelpBlock>{descriptionMessage}</HelpBlock>
+              <HelpBlock data-playwright-test-label='description-validation'>
+                {descriptionMessage}
+              </HelpBlock>
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            aria-disabled={isButtonDisabled}
-            bgSize='lg'
+            disabled={isButtonDisabled}
+            bgSize='large'
+            data-playwright-test-label='save-portfolio'
             {...(isButtonDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
@@ -311,8 +356,8 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <Spacer size='small' />
           <Button
             block={true}
-            bsSize='lg'
-            bsStyle='danger'
+            size='large'
+            variant='danger'
             onClick={() => this.handleRemoveItem(id)}
             type='button'
           >
@@ -340,9 +385,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <p>{t('settings.share-projects')}</p>
           <Spacer size='small' />
           <Button
+            data-cy='add-portfolio'
             block={true}
-            bsSize='lg'
-            bsStyle='primary'
+            size='large'
+            variant='primary'
             disabled={unsavedItemId !== null}
             onClick={this.handleAdd}
             type='button'

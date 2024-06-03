@@ -14,12 +14,11 @@ export type Meta = {
   required: string[];
   superBlock: string;
   superOrder: number;
-  isBeta: boolean;
   challengeOrder: { id: string; title: string }[];
 };
 
 function getMetaData(): Meta {
-  const metaData = fs.readFileSync(getProjectMetaPath(), 'utf8');
+  const metaData = fs.readFileSync(getProjectMetaPath(), 'utf-8');
   return JSON.parse(metaData) as Meta;
 }
 
@@ -44,7 +43,21 @@ function validateMetaData(): void {
 
   // each step in the challengeOrder should correspond to a file
   challengeOrder.forEach(({ id }) => {
-    fs.accessSync(`${getProjectPath()}${id}.md`);
+    const filePath = `${getProjectPath()}${id}.md`;
+    try {
+      fs.accessSync(filePath);
+    } catch (e) {
+      throw new Error(
+        `The file
+${filePath}
+does not exist, but is required by the challengeOrder of
+${getProjectMetaPath()}
+
+To fix this, you can rename the file containing id: ${id} to ${id}.md
+If there is no file for this id, then either the challengeOrder needs to be updated, or the file needs to be created.
+`
+      );
+    }
   });
 
   // each file should have a corresponding step in the challengeOrder

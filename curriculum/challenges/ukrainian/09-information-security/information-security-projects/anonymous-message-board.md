@@ -1,6 +1,6 @@
 ---
 id: 587d824a367417b2b2512c45
-title: Анонімна дошка повідомлень
+title: Дошка анонімних повідомлень
 challengeType: 4
 forumTopicId: 301568
 dashedName: anonymous-message-board
@@ -8,25 +8,17 @@ dashedName: anonymous-message-board
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://anonymous-message-board.freecodecamp.rocks/</a>.
 
 Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
--   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-messageboard" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
+-   Використайте <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-messageboard/" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Gitpod</a>, щоб виконати свій проєкт.
 -   Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
-
-Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
-
--   Почніть з імпорту проєкту на Replit.
--   Потім ви побачите вікно `.replit`.
--   Оберіть `Use run command` та натисніть кнопку `Done`.
-
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на рішення». За бажанням введіть посилання на початковий код проєкту в полі «Посилання на GitHub».
 
 # --instructions--
 
-1.  Встановіть `NODE_ENV` на тест без лапок по готовності написання тестів та бази даних для рядка з'єднання (у `.env`)
+1.  Встановіть `NODE_ENV`, щоб провести тест без лапок по готовності написання тестів та бази даних для рядка з’єднання (в `.env`)
 2.  Рекомендовано створити контролери/обробники і обробляти маршрут у `routes/api.js`
 3.  Ви додаватимете будь-які функції безпеки до `server.js`
 
@@ -119,7 +111,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит POST до `/api/replies/{board}` з даними форми, включно з `text`, `delete_password` та `thread_id`. Це оновить дату `bumped_on` до дати коментаря. У треді масиву `replies` об'єкт буде збережений принаймні з властивостями `_id`, `text`, `created_on`, `delete_password` та `reported`.
+Ви можете надіслати запит POST до `/api/replies/{board}` з даними форми, включно з `text`, `delete_password` та `thread_id`. Це оновить дату `bumped_on` до дати коментаря. У треді масиву `replies` об’єкт буде збережений принаймні з властивостями `_id`, `text`, `created_on`, `delete_password` та `reported`.
 
 ```js
 async (getUserInput) => {
@@ -311,7 +303,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит PUT до `/api/threads/{board}` та передати `thread_id`. Поверненим буде рядок `reported`. Значення `reported` об'єкта `thread_id` буде змінено на `true`.
+Ви можете надіслати запит PUT до `/api/threads/{board}` та передати `thread_id`. Поверненим буде рядок `reported`. Значення `reported` об’єкта `thread_id` буде змінено на `true`.
 
 ```js
 async (getUserInput) => {
@@ -342,7 +334,7 @@ async (getUserInput) => {
 };
 ```
 
-Ви можете надіслати запит PUT до `/api/replies/{board}` і передати `thread_id` та `reply_id`. Поверненим буде рядок `reported`. Значення `reported` об'єкта `reply_id` буде змінено на `true`.
+Ви можете надіслати запит PUT до `/api/replies/{board}` і передати `thread_id` та `reply_id`. Поверненим буде рядок `reported`. Значення `reported` об’єкта `reply_id` буде змінено на `true`.
 
 ```js
 async (getUserInput) => {

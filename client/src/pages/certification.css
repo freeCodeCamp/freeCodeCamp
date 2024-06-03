@@ -50,10 +50,6 @@
   margin: 0;
 }
 
-.certification-namespace .col-sm-12 {
-  padding: 0;
-}
-
 /* center the certificate vertically */
 .certificate-outer-wrapper {
   display: flex;
@@ -125,14 +121,15 @@
 
 .certification-namespace .dual-logo svg {
   max-width: 70%;
+  height: auto;
 }
 
 .certification-namespace .fcc-logo svg {
-  max-width: 350px;
+  width: 350px;
 }
 
 .certification-namespace .ms-logo svg {
-  max-width: 300px;
+  width: 220px;
 }
 
 .certification-namespace .information {

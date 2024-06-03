@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "8"
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "gatsby-node.js",
   "devDependencies": {
-    "chokidar": "3.5.3",
+    "chokidar": "3.6.0",
     "readdirp": "3.6.0"
   }
 }

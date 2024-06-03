@@ -8,7 +8,7 @@ dashedName: test-if-a-value-falls-within-a-specific-range
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Lembrete, esse projeto está sendo construido conforme o seguinte projeto inicial em <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 ```javascript
 .approximately(actual, expected, delta, [message])
@@ -18,7 +18,7 @@ Afirma que o `actual` é igual a `expected`, para dentro de um intervalo de +/- 
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste classificado como `#10` e na suíte `Comparisons`, modifique cada `assert` para `assert.approximately`, de maneira que cada teste passe (seja avaliado como `true`).
+Em `tests/1_unit-tests.js`, no teste de número `#10`, no grupo de testes `Comparisons`, modifique cada `assert` para `assert.approximately`, de maneira que cada teste passe (seja avaliado como `true`).
 
 Escolha o intervalo mínimo (terceiro parâmetro) para fazer com que o teste sempre passe. Deve ser inferior a 1.
 

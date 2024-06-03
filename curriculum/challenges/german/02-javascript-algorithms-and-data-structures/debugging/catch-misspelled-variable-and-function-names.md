@@ -10,7 +10,7 @@ dashedName: catch-misspelled-variable-and-function-names
 
 Die Methoden `console.log()` und `typeof` sind die beiden wichtigsten Methoden, um Zwischenwerte und Typen von Programmausgaben zu überprüfen. Jetzt ist es an der Zeit, sich mit den häufigsten Formen von Bugs zu beschäftigen. Ein Problem auf der Ebene der Syntax, mit dem schnelle Tipper mitfühlen können, ist der einfache Rechtschreibfehler.
 
-Vertauschte, fehlende oder falsch großgeschriebene Zeichen in einem Variablen- oder Funktionsnamen führen dazu, dass der Browser nach einem Objekt sucht, das nicht existiert – und sich in Form eines Referenzfehlers beschwert. Bei JavaScript-Variablen- und Funktionsnamen wird zwischen Groß- und Kleinschreibung unterschieden.
+Transposed, missing, or miscapitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. Bei JavaScript-Variablen- und Funktionsnamen wird zwischen Groß- und Kleinschreibung unterschieden.
 
 # --instructions--
 
@@ -27,25 +27,25 @@ assert(netWorkingCapital === 2);
 Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
-assert(!code.match(/recievables/g));
+assert(!__helpers.removeJSComments(code).match(/recievables/g));
 ```
 
 Die Variable `receivables` sollte im Code richtig deklariert und verwendet werden.
 
 ```js
-assert(code.match(/receivables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/receivables/g).length == 2);
 ```
 
 Es sollten keine falsch geschriebenen Variablen im Code vorkommen.
 
 ```js
-assert(!code.match(/payable;/g));
+assert(!__helpers.removeJSComments(code).match(/payable;/g));
 ```
 
 Die Variable `payables` sollte im Code richtig deklariert und verwendet werden.
 
 ```js
-assert(code.match(/payables/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/payables/g).length == 2);
 ```
 
 # --seed--

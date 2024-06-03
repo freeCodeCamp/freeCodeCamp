@@ -1,5 +1,4 @@
 // Package Utilities
-import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
@@ -10,6 +9,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
@@ -19,7 +20,11 @@ import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
+import HelpModal from '../components/help-modal';
+import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
+import ChallengeTitle from '../components/challenge-title';
+import ChallengeHeading from '../components/challenge-heading';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -45,7 +50,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
+      openCompletionModal: () => openModal('completion'),
+      openHelpModal: () => openModal('help')
     },
     dispatch
   );
@@ -57,6 +63,7 @@ interface ShowOdinProps {
   description: string;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
+  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -74,12 +81,13 @@ interface ShowOdinState {
   assignmentsCompleted: number;
   allAssignmentsCompleted: boolean;
   videoIsLoaded: boolean;
+  isScenePlaying: boolean;
 }
 
 // Component
 class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
   static displayName: string;
-  private _container: HTMLElement | null | undefined;
+  private container: React.RefObject<HTMLElement> = React.createRef();
 
   constructor(props: ShowOdinProps) {
     super(props);
@@ -91,7 +99,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       isWrongAnswer: false,
       assignmentsCompleted: 0,
       allAssignmentsCompleted: false,
-      videoIsLoaded: false
+      videoIsLoaded: false,
+      isScenePlaying: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -115,7 +124,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this._container?.focus();
+    this.container.current?.focus();
   }
 
   componentDidUpdate(prevProps: ShowOdinProps): void {
@@ -198,6 +207,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     });
   };
 
+  setIsScenePlaying = (shouldPlay: boolean) => {
+    this.setState({
+      isScenePlaying: shouldPlay
+    });
+  };
+
   render() {
     const {
       data: {
@@ -210,36 +225,48 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             videoId,
             videoLocaleIds,
             bilibiliIds,
+            fields: { blockName },
             question: { text, answers, solution },
-            assignments
+            assignments,
+            audioPath,
+            translationPending,
+            scene
           }
         }
       },
       openCompletionModal,
+      openHelpModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
       },
-      t
+      t,
+      isChallengeCompleted
     } = this.props;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-    const ariaLabel = t('aria.answer');
+
+    const feedback =
+      this.state.selectedOption !== null
+        ? answers[this.state.selectedOption].feedback
+        : undefined;
+
     return (
       <Hotkeys
         executeChallenge={() => {
           this.handleSubmit(solution, openCompletionModal, assignments);
         }}
-        innerRef={(c: HTMLElement | null) => (this._container = c)}
+        containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsScenePlaying(true)}
       >
         <LearnLayout>
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Grid>
+          <Container>
             <Row>
               {videoId && (
                 <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
@@ -263,13 +290,45 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
-                <h2>{title}</h2>
+                <ChallengeTitle
+                  isCompleted={isChallengeCompleted}
+                  translationPending={translationPending}
+                >
+                  {title}
+                </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer size='medium' />
+                {audioPath && (
+                  <>
+                    {/* TODO: Add tracks for audio elements */}
+                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
+                    <audio className='audio' controls>
+                      <source
+                        src={`https://cdn.freecodecamp.org/${audioPath}`}
+                        type='audio/mp3'
+                      />
+                    </audio>
+                    <Spacer size='medium' />
+                  </>
+                )}
+              </Col>
+
+              {scene && (
+                <>
+                  <Scene
+                    scene={scene}
+                    isPlaying={this.state.isScenePlaying}
+                    setIsPlaying={this.setIsScenePlaying}
+                  />{' '}
+                  <Spacer size='medium' />
+                </>
+              )}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <>
-                      <h2>{t('learn.assignments')}</h2>
+                      <ChallengeHeading heading={t('learn.assignments')} />
                       <div className='video-quiz-options'>
                         {assignments.map((assignment, index) => (
                           <label
@@ -299,15 +358,15 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     </>
                   )}
 
-                  <h2>{t('learn.question')}</h2>
+                  <ChallengeHeading heading={t('learn.question')} />
                   <PrismFormatted className={'line-numbers'} text={text} />
                   <div className='video-quiz-options'>
-                    {answers.map((option, index) => (
+                    {answers.map(({ answer }, index) => (
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label={ariaLabel}
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
+                          className='sr-only'
                           name='quiz'
                           onChange={this.handleOptionChange}
                           type='radio'
@@ -320,7 +379,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                         </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
-                          text={option}
+                          text={answer}
                         />
                       </label>
                     ))}
@@ -333,7 +392,16 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   }}
                 >
                   {this.state.isWrongAnswer && (
-                    <span>{t('learn.wrong-answer')}</span>
+                    <span>
+                      {feedback ? (
+                        <PrismFormatted
+                          className={'multiple-choice-feedback'}
+                          text={feedback}
+                        />
+                      ) : (
+                        t('learn.wrong-answer')
+                      )}
+                    </span>
                   )}
                   {!this.state.allAssignmentsCompleted &&
                     assignments.length > 0 && (
@@ -346,8 +414,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 <Spacer size='medium' />
                 <Button
                   block={true}
-                  bsSize='large'
-                  bsStyle='primary'
+                  size='medium'
+                  variant='primary'
                   onClick={() =>
                     this.handleSubmit(
                       solution,
@@ -358,11 +426,22 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
+                <Spacer size='xxSmall' />
+                <Button
+                  block={true}
+                  size='medium'
+                  variant='primary'
+                  onClick={openHelpModal}
+                >
+                  {t('buttons.ask-for-help')}
+                </Button>
                 <Spacer size='large' />
               </Col>
               <CompletionModal />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
-          </Grid>
+          </Container>
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );
@@ -399,14 +478,56 @@ export const query = graphql`
         block
         fields {
           slug
+          blockName
         }
         question {
           text
-          answers
+          answers {
+            answer
+            feedback
+          }
           solution
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
+          }
         }
         translationPending
         assignments
+        audioPath
       }
     }
   }

@@ -1,6 +1,6 @@
 ---
 id: 5900f37e1000cf542c50fe91
-title: 'Problem 18: Maximum path sum I'
+title: 'Problema 18: Ruta con la máxima suma I'
 challengeType: 1
 forumTopicId: 301815
 dashedName: problem-18-maximum-path-sum-i
@@ -17,9 +17,9 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
   8 5 <strong style='color: red;'>9</strong> 3
 </span>
 
-That is, 3 + 7 + 4 + 9 = 23.
+Es decir, 3 + 7 + 4 + 9 = 23.
 
-Find the maximum total from top to bottom of the triangle below:
+Encuentra la máxima suma desde la punta hasta el fondo del siguiente triángulo:
 
 75  
 95 64  
@@ -37,7 +37,7 @@ Find the maximum total from top to bottom of the triangle below:
 63 66 04 68 89 53 67 30 73 16 69 87 40 31  
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 
-**NOTE:** As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
+**NOTA:** como solo hay 16384 rutas, es posible resolver el problema probando todas las rutas. Sin embargo, el Problema 67 es el mismo reto pero con un triángulo de cien filas; no puede ser resuelto por fuerza bruta, ¡tendrás que afilar el ingenio! ;o)
 
 # --hints--
 

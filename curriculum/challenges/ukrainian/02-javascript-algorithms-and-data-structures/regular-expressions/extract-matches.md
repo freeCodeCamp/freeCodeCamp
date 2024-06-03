@@ -21,7 +21,7 @@ let ourRegex = /expressions/;
 ourStr.match(ourRegex);
 ```
 
-У цьому випадку перший збіг (`match`) поверне `["Hello"]`, а другий — `["expressions"]`.
+У цьому випадку перший `match` поверне `["Hello"]`, а другий — `["expressions"]`.
 
 Зверніть увагу, що синтаксис `.match` є протилежним до методу `.test`, яким ви користувались дотепер:
 
@@ -51,7 +51,7 @@ assert(codingRegex.source === 'coding');
 Використайте метод `.match()`.
 
 ```js
-assert(code.match(/\.match\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.match\(.*\)/));
 ```
 
 # --seed--

@@ -12,11 +12,11 @@ Questo primo video ti mostrerà l'essenza dell'algebra e poi come il codice Pyth
 
 Ecco il <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa2HtTENiWZyQAO2?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per seguire questo video.</a> Aggiungi il codice del video al tuo notebook Colab per vedere come risolvere per X usando Python. Poi cambia il codice se vuoi, testalo e confrontalo con la soluzione ottenuta con carta e penna. Ricorda che l'input dell'equazione deve rispettare la sintassi di Python.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi il codice per risolvere per x dal video al tuo notebook Colab.
+
+# --question--
 
 ## --text--
 

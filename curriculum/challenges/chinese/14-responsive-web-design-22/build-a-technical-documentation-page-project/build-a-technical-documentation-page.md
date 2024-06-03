@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**目标：** 构建一个功能类似于 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> 的应用程序
+**目标：** 构建一个应用，它在功能上类似于 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>。 **不要复制这个演示项目**。
 
 **需求：**
 
@@ -148,7 +148,7 @@ const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-你所有的 `.nav-link` 元素都应该是锚点（`a`）元素。
+你所有的 `.nav-link` 元素都应该是锚元素（`a`）。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 每个 `.nav-link` 都应该有一个 `href` 属性，该属性链接到其对应的 `.main-section`（例如，如果你单击包含文本 “Hello world” 的 `.nav-link` 元素，页面导航到具有该 id 的 `section` 元素）。
@@ -241,7 +241,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

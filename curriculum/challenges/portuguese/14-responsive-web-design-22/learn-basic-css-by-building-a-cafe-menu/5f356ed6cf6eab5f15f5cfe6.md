@@ -9,12 +9,15 @@ dashedName: step-20
 
 Ao contrário dos outros elementos de conteúdo que você usou até agora, o elemento `div` é usado principalmente para fins de layout de design. Adicione um elemento `div` dentro do elemento `body` e, em seguida, mova todos os outros elementos dentro do novo `div`.
 
+Dentro da tag de abertura da `div`, adicione o atributo `id` com o valor de `menu`.
+
 # --hints--
 
-Você deve acrescentar uma tag de abertura `<div>`.
+A tag de abertura da `<div>` deve ter o atributo `id` definido como `menu`.
 
 ```js
-assert(code.match(/<div>/i));
+const div = $('div')[0];
+assert(div.id === 'menu');
 ```
 
 Você deve acrescentar uma tag de fechamento `</div>`.
@@ -23,7 +26,7 @@ Você deve acrescentar uma tag de fechamento `</div>`.
 assert(code.match(/<\/div>/i));
 ```
 
-Você deve manter o elemento `body` preexistente. Verifique se você não excluiu a tag de fechamento.
+Você não dever alterar o elemento `body` existente. Certifique-se de que você não excluiu a tag de fechamento.
 
 ```js
 assert($('body').length === 1);
@@ -35,6 +38,7 @@ O elemento `div` deve estar dentro do elemento `body`.
 const div = $('div')[0];
 assert(div.parentElement.tagName === 'BODY');
 ```
+
 
 # --seed--
 

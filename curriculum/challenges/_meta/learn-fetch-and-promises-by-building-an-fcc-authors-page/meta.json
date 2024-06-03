@@ -1,17 +1,13 @@
 {
-  "name": "Learn Fetch and Promises By Building an fCC Authors Page",
-  "isUpcomingChange": true,
+  "name": "Learn Fetch and Promises by Building an fCC Authors Page",
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-fetch-and-promises-by-building-an-fcc-authors-page",
   "helpCategory": "JavaScript",
-  "order": 42,
+  "order": 22,
   "time": "5 hours",
-  "template": "",
-  "required": [],
-  "superBlock": "2022/javascript-algorithms-and-data-structures",
-  "superOrder": 4,
-  "isBeta": true,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {
       "id": "641d9a19bff38d34d5a5edb8",

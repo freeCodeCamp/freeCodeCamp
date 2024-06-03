@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aec908746
-title: Розміщення сторінки всередині елементу Bootstrap container-fluid div
+title: Розмістіть нашу сторінку всередині container-fluid div
 challengeType: 0
 forumTopicId: 18198
 dashedName: house-our-page-within-a-bootstrap-container-fluid-div
@@ -10,7 +10,7 @@ dashedName: house-our-page-within-a-bootstrap-container-fluid-div
 
 Тепер переконайтеся, що весь вміст сторінки адаптований до мобільних пристроїв.
 
-Вкладіть елемент `h3` у елемент `div` із класом `container-fluid`.
+Вкладіть елемент `h3` в межах елемента `div` з класом `container-fluid`.
 
 # --hints--
 
@@ -20,7 +20,7 @@ dashedName: house-our-page-within-a-bootstrap-container-fluid-div
 assert($('div').hasClass('container-fluid'));
 ```
 
-Кожен із елементів `div` повинен містити кінцевий теґ.
+Кожен елемент `div` повинен мати кінцевий тег.
 
 ```js
 assert(
@@ -30,7 +30,7 @@ assert(
 );
 ```
 
-Елемент `h3` повинен бути вкладений у елемент `div`.
+Елемент `h3` має бути вкладеним в елементі `div`.
 
 ```js
 assert($('div').children('h3').length > 0);

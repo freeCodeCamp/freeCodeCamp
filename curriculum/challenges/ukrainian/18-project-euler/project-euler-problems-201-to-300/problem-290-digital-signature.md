@@ -1,6 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa1
-title: 'Problem 290: Digital Signature'
+title: 'Завдання 290: цифровий підпис'
 challengeType: 1
 forumTopicId: 301942
 dashedName: problem-290-digital-signature
@@ -8,7 +8,7 @@ dashedName: problem-290-digital-signature
 
 # --description--
 
-How many integers $0 ≤ n &lt; {10}^{18}$ have the property that the sum of the digits of $n$ equals the sum of digits of $137n$?
+Скільки цілих чисел $0 ≤ n &lt; {10}^{18}$ мають таку властивість: сума цифр числа $n$ дорівнює сумі цифр числа $137n$?
 
 # --hints--
 

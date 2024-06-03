@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa5
-title: 'Problem 294: Sum of digits - experience #23'
+title: 'Завдання 294: сума цифр, випадок №23'
 challengeType: 1
 forumTopicId: 301946
 dashedName: problem-294-sum-of-digits---experience-23
@@ -8,16 +8,16 @@ dashedName: problem-294-sum-of-digits---experience-23
 
 # --description--
 
-For a positive integer $k$, define $d(k)$ as the sum of the digits of $k$ in its usual decimal representation. Thus $d(42) = 4 + 2 = 6$.
+Визначимо $d(k)$, де $k$ є натуральним числом, як суму цифр числа $k$ звичайного десяткового запису. Отже, $d(42) = 4 + 2 = 6$.
 
-For a positive integer $n$, define $S(n)$ as the number of positive integers $k &lt; {10}^n$ with the following properties:
+Визначимо $S(n)$, де $n$ є натуральним числом, як кількість натуральних чисел $k &lt; {10}^n$ з такими властивостями:
 
-- $k$ is divisible by 23 and,
+- $k$ ділиться на 23 без остачі,
 - $d(k) = 23$.
 
 Дано, що $S(9) = 263\\,626$ та $S(42) = 6\\,377\\,168\\,878\\,570\\,056$.
 
-Find $S({11}^{12})$ and give your answer $\bmod {10}^9$.
+Знайдіть $S({11}^{12})$ та надайте відповідь за $\bmod {10}^9$.
 
 # --hints--
 

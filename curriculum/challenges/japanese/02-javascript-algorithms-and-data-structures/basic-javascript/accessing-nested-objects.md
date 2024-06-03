@@ -45,16 +45,33 @@ ourStorage.desk.drawer;
 assert(gloveBoxContents === 'maps');
 ```
 
-ドット記法とブラケット記法を使用して `myStorage` にアクセスする必要があります。
+Your code should use dot notation, where possible, to access `myStorage`.
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert.match(code, /myStorage\.car\.inside/);
 ```
 
 `gloveBoxContents` should still be declared with `const`.
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=/)
+assert.match(code, /const\s+gloveBoxContents\s*=/);
+```
+
+You should not change the `myStorage` object.
+
+```js
+const expectedMyStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
 # --seed--

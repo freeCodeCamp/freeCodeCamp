@@ -1,6 +1,6 @@
 ---
 id: 5900f3e21000cf542c50fef4
-title: 'Problem 117: Red, green, and blue tiles'
+title: '問題 117: 赤タイル・緑タイル・青タイルの組み合わせ'
 challengeType: 1
 forumTopicId: 301743
 dashedName: problem-117-red-green-and-blue-tiles
@@ -8,17 +8,17 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 # --description--
 
-Using a combination of black square tiles and oblong tiles chosen from: red tiles measuring two units, green tiles measuring three units, and blue tiles measuring four units, it is possible to tile a row measuring five units in length in exactly fifteen different ways.
+正方形の黒のタイルと、赤 (長さ 2)、緑 (長さ 3)、または青 (長さ 4) の長方形タイルを組み合わせて、長さ 5 単位の 1 列にタイルを敷く方法はちょうど 15 通りあります。
 
-<img class="img-responsive center-block" alt="Possible ways of placing red, green and blue oblongs on a row with length of five units" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="長さ 5 単位の列に赤、緑、青のタイルを置く場合に考えられる方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
 
-How many ways can a row measuring fifty units in length be tiled?
+長さ 50 単位の 1 列にタイルを敷く方法は何通りありますか。
 
-**Note**: This is related to Problem 116.
+**注**: この問題は、問題 116と関連しています。
 
 # --hints--
 
-`redGreenBlueTilesTwo()` should return `100808458960497`.
+`redGreenBlueTilesTwo()` は `100808458960497` を返す必要があります 。
 
 ```js
 assert.strictEqual(redGreenBlueTilesTwo(), 100808458960497);

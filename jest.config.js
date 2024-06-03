@@ -1,5 +1,5 @@
 module.exports = {
-  testPathIgnorePatterns: ['/node_modules/', 'api/'],
+  testPathIgnorePatterns: ['/node_modules/', 'api/', 'e2e/'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
       '<rootDir>/client/src/__mocks__/file-mock.ts',
@@ -21,5 +21,6 @@ module.exports = {
   roots: ['.', './client', './api-server'],
   transformIgnorePatterns: ['node_modules/.pnpm/(?!(nanoid|uuid)@)'],
   setupFilesAfterEnv: ['./jest.setup.js'],
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  watchPathIgnorePatterns: ['<rootDir>/__fixtures__.*']
 };

@@ -19,13 +19,13 @@ dashedName: use-the-align-self-property
 
 # --hints--
 
-Елемент `#box-1` повинен мати властивість `align-self`, налаштовану до значення `center`.
+Елемент `#box-1` повинен мати властивість `align-self` зі значенням `center`.
 
 ```js
 assert($('#box-1').css('align-self') == 'center');
 ```
 
-Елемент `#box-2` повинен мати властивість `align-self`, налаштовану до значення `flex-end`.
+Елемент `#box-2` повинен мати властивість `align-self` зі значенням `flex-end`.
 
 ```js
 assert($('#box-2').css('align-self') == 'flex-end');

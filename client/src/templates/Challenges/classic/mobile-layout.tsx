@@ -1,10 +1,11 @@
-import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import i18next from 'i18next';
 import React, { Component, ReactElement } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+
 import {
   removePortalWindow,
   setShowPreviewPortal,
@@ -15,7 +16,7 @@ import {
   showPreviewPortalSelector,
   showPreviewPaneSelector
 } from '../redux/selectors';
-import { TOOL_PANEL_HEIGHT } from '../../../../../config/misc';
+import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import PreviewPortal from '../components/preview-portal';
 import EditorTabs from './editor-tabs';
@@ -29,6 +30,7 @@ interface MobileLayoutProps {
   instructions: JSX.Element;
   notes: ReactElement;
   preview: JSX.Element;
+  onPreviewResize: () => void;
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
@@ -42,13 +44,15 @@ interface MobileLayoutProps {
   usesMultifileEditor: boolean;
 }
 
-enum Tab {
-  Editor = 'editor',
-  Preview = 'preview',
-  Console = 'console',
-  Notes = 'notes',
-  Instructions = 'instructions'
-}
+const tabs = {
+  editor: 'editor',
+  preview: 'preview',
+  console: 'console',
+  notes: 'notes',
+  instructions: 'instructions'
+} as const;
+
+type Tab = keyof typeof tabs;
 
 interface MobileLayoutState {
   currentTab: Tab;
@@ -82,36 +86,40 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   #toolPanelGroup!: HTMLElement;
 
   state: MobileLayoutState = {
-    currentTab: this.props.hasEditableBoundaries ? Tab.Editor : Tab.Instructions
+    currentTab: this.props.hasEditableBoundaries
+      ? tabs.editor
+      : tabs.instructions
   };
 
-  switchTab = (tab: Tab): void => {
+  switchTab = (tab: string): void => {
     this.setState({
-      currentTab: tab
+      currentTab: tab as Tab
     });
   };
 
   // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
   setToolPanelPosition = (): void => {
-    if (!this.#toolPanelGroup) return;
     // Detect the appearance of the mobile virtual keyboard.
     if (visualViewport?.height && window.innerHeight > visualViewport.height) {
       setTimeout(() => {
-        if (visualViewport?.height !== undefined) {
+        if (visualViewport?.height !== undefined && this.#toolPanelGroup) {
           this.#toolPanelGroup.style.top =
             String(visualViewport.height - TOOL_PANEL_HEIGHT) + 'px';
         }
       }, 200);
     } else {
       if (visualViewport?.height !== undefined) {
-        this.#toolPanelGroup.style.top =
-          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
+        // restore the height of html element on Firefox.
+        document.documentElement.style.height = '100%';
+        if (this.#toolPanelGroup)
+          this.#toolPanelGroup.style.top =
+            String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
       }
     }
   };
 
-  isMobileDeviceWithToolPanel = (): RegExpExecArray | null =>
-    this.#toolPanelGroup && /iPhone|Android.+Mobile/.exec(navigator.userAgent);
+  isMobileDevice = (): RegExpExecArray | null =>
+    /iPhone|Android.+Mobile/.exec(navigator.userAgent);
 
   componentDidMount(): void {
     this.#toolPanelGroup = (
@@ -120,15 +128,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       ) as HTMLCollectionOf<HTMLElement>
     )[0];
 
-    if (this.isMobileDeviceWithToolPanel()) {
+    if (this.isMobileDevice()) {
       visualViewport?.addEventListener('resize', this.setToolPanelPosition);
-      this.#toolPanelGroup.style.top =
-        String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
+      if (this.#toolPanelGroup)
+        this.#toolPanelGroup.style.top =
+          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
     }
   }
 
   componentWillUnmount(): void {
-    if (this.isMobileDeviceWithToolPanel()) {
+    if (this.isMobileDevice()) {
       visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
       document.documentElement.style.height = '100%';
     }
@@ -149,6 +158,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       hasPreview,
       notes,
       preview,
+      onPreviewResize,
       showPreviewPane,
       showPreviewPortal,
       removePortalWindow,
@@ -160,11 +170,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       videoUrl,
       usesMultifileEditor
     } = this.props;
-
-    const editorTabPaneProps = {
-      mountOnEnter: true,
-      unmountOnExit: true
-    };
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -211,68 +216,98 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     return (
       <>
         <Tabs
-          activeKey={currentTab}
-          animation={false}
-          defaultActiveKey={currentTab}
           id='mobile-layout'
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
-          onSelect={this.switchTab}
           onTouchStart={this.handleClick}
+          defaultValue={currentTab}
+          onValueChange={this.switchTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
-          {!hasEditableBoundaries && (
-            <TabPane
-              eventKey={Tab.Instructions}
-              title={i18next.t('learn.editor-tabs.instructions')}
-              tabIndex={0}
-            >
-              {instructions}
-            </TabPane>
-          )}
-          <TabPane
-            eventKey={Tab.Editor}
-            title={i18next.t('learn.editor-tabs.code')}
-            {...editorTabPaneProps}
+          <TabsList className='nav-lists'>
+            {!hasEditableBoundaries && (
+              <TabsTrigger value={tabs.instructions}>
+                {i18next.t('learn.editor-tabs.instructions')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={tabs.editor}>
+              {i18next.t('learn.editor-tabs.code')}
+            </TabsTrigger>
+            {hasNotes && usesMultifileEditor && (
+              <TabsTrigger value={tabs.notes}>
+                {i18next.t('learn.editor-tabs.notes')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={tabs.console}>
+              {i18next.t('learn.editor-tabs.console')}
+            </TabsTrigger>
+            {hasPreview && (
+              <TabsTrigger value={tabs.preview}>
+                {i18next.t('learn.editor-tabs.preview')}
+              </TabsTrigger>
+            )}
+          </TabsList>
+
+          <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={tabs.editor}
           >
             {usesMultifileEditor && <EditorTabs />}
             {editor}
-          </TabPane>
-          <TabPane
-            eventKey={Tab.Console}
-            title={i18next.t('learn.editor-tabs.console')}
-            {...editorTabPaneProps}
+          </TabsContent>
+          {!hasEditableBoundaries && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.instructions}
+            >
+              {instructions}
+            </TabsContent>
+          )}
+          <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={tabs.console}
           >
             {testOutput}
-          </TabPane>
+          </TabsContent>
           {hasNotes && usesMultifileEditor && (
-            <TabPane
-              eventKey={Tab.Notes}
-              title={i18next.t('learn.editor-tabs.notes')}
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.notes}
             >
               {notes}
-            </TabPane>
+            </TabsContent>
           )}
           {hasPreview && (
-            <TabPane
-              eventKey={Tab.Preview}
-              title={i18next.t('learn.editor-tabs.preview')}
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.preview}
+              forceMount
+              // forceMount causes the preview tabpanel to never be hidden,
+              // so we need to manually add it when preview is not active.
+              {...(this.state.currentTab === 'preview' ? {} : { hidden: true })}
             >
-              <button
-                className='portal-button'
-                aria-expanded={!!showPreviewPortal}
-                onClick={() => togglePane('showPreviewPortal')}
-              >
-                <span className='sr-only'>{getPortalBtnSrText()}</span>
-                <FontAwesomeIcon icon={faWindowRestore} />
-              </button>
+              <div className='portal-button-wrap'>
+                <button
+                  className='portal-button'
+                  aria-expanded={!!showPreviewPortal}
+                  onClick={() => togglePane('showPreviewPortal')}
+                >
+                  <span className='sr-only'>{getPortalBtnSrText()}</span>
+                  <FontAwesomeIcon icon={faWindowRestore} />
+                </button>
+              </div>
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
                   {i18next.t('learn.preview-external-window')}
                 </p>
               )}
-            </TabPane>
+            </TabsContent>
           )}
           {!hasEditableBoundaries && (
             <ToolPanel
@@ -282,18 +317,22 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             />
           )}
           {hasPreview && this.state.currentTab !== 'preview' && (
-            <button
-              className='portal-button'
-              aria-expanded={!!showPreviewPortal}
-              onClick={() => togglePane('showPreviewPortal')}
-            >
-              <span className='sr-only'>{getPortalBtnSrText()}</span>
-              <FontAwesomeIcon icon={faWindowRestore} />
-            </button>
+            <div className='portal-button-wrap'>
+              <button
+                className='portal-button'
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+            </div>
           )}
         </Tabs>
         {displayPreviewPortal && (
-          <PreviewPortal windowTitle={windowTitle}>{preview}</PreviewPortal>
+          <PreviewPortal onResize={onPreviewResize} windowTitle={windowTitle}>
+            {preview}
+          </PreviewPortal>
         )}
       </>
     );

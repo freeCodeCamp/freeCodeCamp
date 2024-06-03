@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-base-to-string */
 import ObjectID from 'bson-objectid';
 import { insertErms } from './insert-erms';
 
@@ -23,6 +24,7 @@ type StepOptions = {
   challengeId: ObjectID;
   challengeSeeds: Record<string, ChallengeSeed>;
   stepNum: number;
+  challengeType: number;
 };
 
 export interface ChallengeSeed {
@@ -37,7 +39,8 @@ export interface ChallengeSeed {
 function getStepTemplate({
   challengeId,
   challengeSeeds,
-  stepNum
+  stepNum,
+  challengeType
 }: StepOptions): string {
   const seedTexts = Object.values(challengeSeeds)
     .map(({ contents, ext, editableRegionBoundaries }: ChallengeSeed) => {
@@ -68,7 +71,7 @@ function getStepTemplate({
     `---
 id: ${challengeId.toString()}
 title: Step ${stepNum}
-challengeType: 0
+challengeType: ${challengeType}
 dashedName: step-${stepNum}
 ---
 

@@ -1,11 +1,11 @@
-import {
-  FastifyInstance,
-  FastifyPluginCallback,
-  FastifyRequest
-} from 'fastify';
+import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 
-import { AUTH0_DOMAIN } from '../utils/env';
-import { defaultUser } from '../utils/default-user';
+import rateLimit from 'express-rate-limit';
+// @ts-expect-error - no types
+import MongoStoreRL from 'rate-limit-mongo';
+
+import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
+import { findOrCreateUser } from './helpers/auth-helpers';
 
 declare module 'fastify' {
   interface Session {
@@ -31,43 +31,39 @@ const getEmailFromAuth0 = async (req: FastifyRequest) => {
   return email;
 };
 
-const findOrCreateUser = async (fastify: FastifyInstance, email: string) => {
-  // TODO: handle the case where there are multiple users with the same email.
-  // e.g. use findMany and throw an error if more than one is found.
-  const existingUser = await fastify.prisma.user.findFirst({
-    where: { email },
-    select: { id: true }
-  });
-  return (
-    existingUser ??
-    (await fastify.prisma.user.create({
-      data: { ...defaultUser, email },
-      select: { id: true }
-    }))
-  );
-};
-
-export const devLoginCallback: FastifyPluginCallback = (
+/**
+ * Route handler for Mobile authentication.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const mobileAuth0Routes: FastifyPluginCallback = (
   fastify,
   _options,
   done
 ) => {
-  fastify.get('/dev-callback', async req => {
-    const email = 'foo@bar.com';
+  // Rate limit for mobile login
+  // 10 requests per 15 minute windows
+  void fastify.use(
+    rateLimit({
+      windowMs: 15 * 60 * 1000,
+      max: 10,
+      standardHeaders: true,
+      legacyHeaders: false,
+      keyGenerator: req => {
+        return (req.headers['x-forwarded-for'] as string) || 'localhost';
+      },
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+      store: new MongoStoreRL({
+        collectionName: 'UserRateLimit',
+        uri: MONGOHQ_URL,
+        expireTimeMs: 15 * 60 * 1000
+      })
+    })
+  );
 
-    const { id } = await findOrCreateUser(fastify, email);
-    req.session.user = { id };
-    await req.session.save();
-    return { statusCode: 200 };
-  });
-
-  done();
-};
-
-export const auth0Routes: FastifyPluginCallback = (fastify, _options, done) => {
-  fastify.addHook('onRequest', fastify.authenticate);
-
-  fastify.get('/callback', async req => {
+  fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);
 
     const { id } = await findOrCreateUser(fastify, email);

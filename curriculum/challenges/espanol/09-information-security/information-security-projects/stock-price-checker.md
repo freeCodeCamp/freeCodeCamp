@@ -15,16 +15,8 @@ Como todas las API de precios de acciones fiables requieren una clave de API, he
 Trabajar en este proyecto implicará escribir tu código utilizando uno de los siguientes métodos:
 
 -   Clone este repositorio de <a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow"> GitHub</a> y complete estos desafíos localmente.
--   Usa este <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-stockchecker" target="_blank" rel="noopener noreferrer nofollow"> proyecto inicial de Replit</a> para completar tu proyecto.
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   Utiliza un constructor de sitios de tu elección para completar el proyecto. Asegúrate de incorporar todos los archivos de nuestro repositorio GitHub.
-
-Si usas Replit, sigue estos pasos para configurar el proyecto:
-
--   Empieza importando el proyecto en Replit.
--   Next, you will see a `.replit` window.
--   Select `Use run command` and click the `Done` button.
-
-When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the Solution Link field. Optionally, also submit a link to your project's source code in the GitHub Link field.
 
 # --instructions--
 
@@ -45,7 +37,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-You can provide your own project, not the example URL.
+Puedes proporcionar tu propio proyecto, no la URL de ejemplo.
 
 ```js
 (getUserInput) => {

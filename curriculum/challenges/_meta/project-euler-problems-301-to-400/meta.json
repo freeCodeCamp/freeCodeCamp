@@ -1,13 +1,11 @@
 {
-  "name": "project euler problems 301 to 400",
+  "name": "Project Euler Problems 301 to 400",
   "isUpcomingChange": false,
   "dashedName": "project-euler-problems-301-to-400",
-  "helpCategory": "JavaScript",
+  "helpCategory": "Euler",
   "order": 3,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "project-euler",
+  "disableLoopProtectTests": true,
   "challengeOrder": [
     {
       "id": "5900f4991000cf542c50ffab",

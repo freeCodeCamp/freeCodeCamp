@@ -10,7 +10,7 @@ dashedName: build-a-simon-game
 
 **Objective:** Build an app that is functionally similar to this: <a href="https://codepen.io/freeCodeCamp/full/obYBjE" target="_blank" rel="noopener noreferrer nofollow">https://codepen.io/freeCodeCamp/full/obYBjE</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Utiliza las librerías o APIs que necesites. Dale tu propio estilo personal.
+Completa las historias de los usuarios que están aquí abajo y haz que pasen todas las pruebas. Utiliza las librerías o APIs que necesites. Dale tu propio estilo personal.
 
 **User Story:** I am presented with a random series of button presses.
 
@@ -28,11 +28,11 @@ Fulfill the below user stories and get all of the tests to pass. Utiliza las lib
 
 **User Story:** I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 
-**Hint:** Here are mp3s you can use for each button: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
+**Hint:** Here are mp3s you can use for each button: `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound1.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound2.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound3.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound4.mp3`.
 
 Cuando hayas terminado, incluye un enlace a tu proyecto en CodePen y haz clic en el botón "He completado este desafío".
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+Puedes obtener opiniones de tu proyecto compartiéndolo en el <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">foro freeCodeCamp</a>.
 
 # --solutions--
 

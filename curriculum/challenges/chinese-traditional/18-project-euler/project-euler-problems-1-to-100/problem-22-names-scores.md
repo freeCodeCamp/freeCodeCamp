@@ -1,6 +1,6 @@
 ---
 id: 5a51eabcad78bf416f316e2a
-title: 'Problem 22: Names scores'
+title: '問題22：命名分數'
 challengeType: 1
 forumTopicId: 301862
 dashedName: problem-22-names-scores
@@ -10,7 +10,7 @@ dashedName: problem-22-names-scores
 
 Using `names`, an array defined in the background containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
 
-For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
+例如，當列表按字母順序排序時，值爲3 + 15 + 12 + 9 + 14 = 53的COLIN是列表中的第938個名稱。 因此，COLIN將獲得938×53 = 49714的分數。
 
 What is the total of all the name scores in the array?
 
@@ -22,7 +22,7 @@ What is the total of all the name scores in the array?
 assert(typeof namesScores(test1) === 'number');
 ```
 
-`namesScores(test1)` should return 791.
+`namesScores(test1)`應該返回791。
 
 ```js
 assert.strictEqual(namesScores(test1), 791);

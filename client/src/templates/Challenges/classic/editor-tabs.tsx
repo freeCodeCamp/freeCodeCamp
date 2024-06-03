@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import i18next from 'i18next';
-import { sortChallengeFiles } from '../../../../../utils/sort-challengefiles';
+import { sortChallengeFiles } from '../../../../utils/sort-challengefiles';
 import { ChallengeFile, ChallengeFiles } from '../../../redux/prop-types';
 import { toggleVisibleEditor } from '../redux/actions';
 import {

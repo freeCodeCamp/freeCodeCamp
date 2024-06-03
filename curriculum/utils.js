@@ -2,11 +2,11 @@ const path = require('path');
 const {
   createFlatSuperBlockMap,
   SuperBlocks
-} = require('../config/superblocks');
+} = require('../shared/config/superblocks');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const { availableLangs } = require('../config/i18n');
+const { availableLangs } = require('../shared/config/i18n');
 const curriculumLangs = availableLangs.curriculum;
 
 // checks that the CURRICULUM_LOCALE exists and is an available language
@@ -43,8 +43,8 @@ function createSuperOrder(superBlocks) {
 }
 
 const flatSuperBlockMap = createFlatSuperBlockMap({
-  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
 });
 const superOrder = createSuperOrder(flatSuperBlockMap);
 
@@ -75,13 +75,16 @@ const directoryToSuperblock = {
   '13-relational-databases': 'relational-database',
   '14-responsive-web-design-22': '2022/responsive-web-design',
   '15-javascript-algorithms-and-data-structures-22':
-    '2022/javascript-algorithms-and-data-structures',
+    'javascript-algorithms-and-data-structures-v8',
   '16-the-odin-project': 'the-odin-project',
   '17-college-algebra-with-python': 'college-algebra-with-python',
   '18-project-euler': 'project-euler',
   '19-foundational-c-sharp-with-microsoft':
     'foundational-c-sharp-with-microsoft',
   '20-upcoming-python': 'upcoming-python',
+  '21-a2-english-for-developers': 'a2-english-for-developers',
+  '22-rosetta-code': 'rosetta-code',
+  '23-python-for-everybody': 'python-for-everybody',
   '99-example-certification': 'example-certification'
 };
 

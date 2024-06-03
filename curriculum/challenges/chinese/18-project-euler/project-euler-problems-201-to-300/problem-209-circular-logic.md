@@ -1,6 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff4f
-title: 'Problem 209: Circular Logic'
+title: '问题209：循环逻辑'
 challengeType: 1
 forumTopicId: 301850
 dashedName: problem-209-circular-logic

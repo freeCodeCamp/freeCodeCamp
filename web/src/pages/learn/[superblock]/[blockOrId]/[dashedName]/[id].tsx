@@ -45,7 +45,7 @@ const getProps = (
   challengeData: getChallengeData(curriculum, pathSegments)
 });
 // DRY this with [blockOrId]'s version
-const fourOhFour = () => ({ notFound: true, revalidate: 10 } as const);
+const fourOhFour = () => ({ notFound: true, revalidate: 10 }) as const;
 
 // DRY this with [blockOrId]'s version
 const pathExists = (

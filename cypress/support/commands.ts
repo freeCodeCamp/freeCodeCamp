@@ -1,15 +1,20 @@
-const login = () => {
-  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-  cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
-  cy.contains('Welcome back');
-};
-
-const preserveSession = () => {
-  Cypress.Cookies.preserveOnce(
-    'jwt_access_token',
-    'csrf_token',
-    '_csrf',
-    'connect.sid'
+const login = (user?: string) => {
+  cy.session(
+    user ?? 'new-user',
+    () => {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      cy.visit(`${Cypress.env('API_LOCATION')}/signin`);
+      cy.url().should('include', '/learn');
+      cy.contains('Welcome back');
+    },
+    {
+      validate() {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        cy.request(`${Cypress.env('API_LOCATION')}/user/get-session-user`)
+          .its('status')
+          .should('eq', 200);
+      }
+    }
   );
 };
 
@@ -53,8 +58,6 @@ const resetUsername = () => {
 
 Cypress.Commands.add('login', login);
 
-Cypress.Commands.add('preserveSession', preserveSession);
-
 Cypress.Commands.add('setPrivacyTogglesToPublic', setPrivacyTogglesToPublic);
 
 Cypress.Commands.add('goToSettings', goToSettings);
@@ -67,7 +70,6 @@ Cypress.Commands.add('resetUsername', resetUsername);
 declare namespace Cypress {
   interface Chainable {
     login: typeof login;
-    preserveSession: typeof preserveSession;
     setPrivacyTogglesToPublic: typeof setPrivacyTogglesToPublic;
     goToSettings: typeof goToSettings;
     typeUsername(username: string): Chainable<JQuery<HTMLElement>>;

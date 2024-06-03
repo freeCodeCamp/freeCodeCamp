@@ -22,15 +22,15 @@ dashedName: pass-an-array-as-props
 const ChildComponent = (props) => <p>{props.colors.join(', ')}</p>
 ```
 
-This will join all `colors` array items into a comma separated string and produce: `<p>green, blue, red</p>`. Later, we will learn about other common methods to render arrays of data in React.
+これは `colors` 配列のアイテムすべてをコンマ区切りの文字列に連結し、 `<p>green, blue, red</p>` という文字列を生成します。 後ほど、React で配列データをレンダーする一般的な方法を他にもいくつか学習します。
 
 # --instructions--
 
-There are `List` and `ToDo` components in the code editor. When rendering each `List` from the `ToDo` component, pass in a `tasks` property assigned to an array of to-do tasks, for example `["walk dog", "workout"]`. Then access this `tasks` array in the `List` component, showing its value within the `p` element. Use `join(", ")` to display the `props.tasks` array in the `p` element as a comma-separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
+コードエディターに `List` コンポーネントと `ToDo` コンポーネントがあります。 `ToDo` コンポーネントから各 `List` をレンダーするときに、to-do タスクの配列 (たとえば `["walk dog", "workout"]` など) が割り当てられた `tasks` プロパティを渡してください。 次に、`List` コンポーネントにあるこの `tasks` 配列にアクセスして、`p` 要素の中に値を表示してください。 `join(", ")` を使用し、`props.tasks` 配列をコンマ区切りリストとして `p` 要素に表示してください。 今日のリストには少なくとも 2 つのタスクを含め、明日のリストには少なくとも 3 つのタスクを含めてください。
 
 # --hints--
 
-The `ToDo` component should return a single outer `div`.
+`ToDo` コンポーネントから単一の外側の `div` 要素を返します。
 
 ```js
 assert(
@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-The third child of the `ToDo` component should be an instance of the `List` component.
+`ToDo` コンポーネントの 3 つ目の子要素を、`List` コンポーネントのインスタンスにします。
 
 ```js
 assert(
@@ -52,7 +52,7 @@ assert(
 );
 ```
 
-The fifth child of the `ToDo` component should be an instance of the `List` component.
+`ToDo` コンポーネントの 5 つ目の子要素を、`List` コンポーネントのインスタンスにします。
 
 ```js
 assert(
@@ -63,7 +63,7 @@ assert(
 );
 ```
 
-Both instances of the `List` component should have a property called `tasks` and `tasks` should be of type array.
+`List` コンポーネントの両方のインスタンスに、`tasks` というプロパティを持たせ、`tasks` を配列型にします。
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-The first `List` component representing the tasks for today should have 2 or more items.
+今日のタスクを表す 1 つ目の `List` コンポーネントに、2 つ以上のアイテムを持たせます。
 
 ```js
 assert(
@@ -88,7 +88,7 @@ assert(
 );
 ```
 
-The second `List` component representing the tasks for tomorrow should have 3 or more items.
+明日のタスクを表す 2 つ目の `List` コンポーネントに、3 つ以上のアイテムを持たせます。
 
 ```js
 assert(
@@ -99,7 +99,7 @@ assert(
 );
 ```
 
-The `List` component should render the value from the `tasks` prop in the `p` tag.
+`List` コンポーネントで、`tasks` prop からの値を `p` タグにレンダーします。
 
 ```js
 assert(

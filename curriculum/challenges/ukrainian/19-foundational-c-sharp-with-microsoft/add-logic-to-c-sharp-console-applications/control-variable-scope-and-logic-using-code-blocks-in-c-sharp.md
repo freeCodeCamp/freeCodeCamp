@@ -1,34 +1,38 @@
 ---
 id: 647e21658acb466c97ccbee2
-title: 'Control Variable Scope and Logic Using Code Blocks in C#'
+title: 'Керуйте областю та логікою змінної, використовуючи блоки коду в C#'
 challengeType: 19
 dashedName: control-variable-scope-and-logic-using-code-blocks-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Це завдання буде частково виконано на платформі Microsoft Learn. Дотримуйтесь цих інструкцій, щоб виконати завдання:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-code-blocks/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-code-blocks/</a> and complete all the tasks for the "Control Variable Scope and Logic Using Code Blocks in C#" module. This is required to earn the "Add Logic to C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Перейдіть до <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-code-blocks/</a> та виконайте всі завдання модуля «Керуйте областю та логікою змінної, використовуючи блоки коду в C#». Це **обов’язково**, щоб отримати трофей з «Додавання логіки до консольних застосунків C#» на Microsoft Learn та мати змогу скласти сертифікаційний екзамен.
+1. Як тільки завершите, поверніться та дайте правильну відповідь на запитання нижче.
+
+# --assignment--
+
+Виконайте модуль <a href="https://learn.microsoft.com/training/modules/csharp-code-blocks/" target="_blank" rel="noreferrer">«Керуйте областю та логікою змінної, використовуючи блоки коду в C#»</a> на Microsoft Learn. Потім дайте відповідь на запитання нижче.
 
 # --question--
 
 ## --text--
 
-Which of the following describes the affect of a `using` statement?
+Яке з перелічених тверджень правильне щодо показу/видалення фігурних дужок в блоках коду, пов’язаних інструкцією `if`?
 
 ## --answers--
 
-Affects only the first code block in the code file.
+Фігурні дужки не можна видалити з блоків коду інструкцій `else if` та `else`.
 
 ---
 
-Affects only the current code block in the code file.
+Якщо видалити фігурні дужки з блоків коду `if-elseif-else`, також потрібно видалити пробіл.
 
 ---
 
-Affects all of the code in the code file.
+Завжди потрібно вибирати стиль, який покращує читабельність.
 
 ## --video-solution--
 

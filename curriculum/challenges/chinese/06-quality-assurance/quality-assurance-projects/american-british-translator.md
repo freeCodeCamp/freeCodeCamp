@@ -11,16 +11,8 @@ dashedName: american-british-translator
 构建一个 JavaScript 全栈应用，在功能上与 <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a> 类似。 可以采用下面的任意一种方式完成这个挑战：
 
 -   克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">这个 GitHub 仓库</a>，并在本地完成你的项目。
--   使用<a href="https://replit.com/github/freeCodeCamp/boilerplate-project-american-british-english-translator" target="_blank" rel="noopener noreferrer nofollow">我们在 Replit 上的初始化项目</a>来完成你的项目。
+-   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
 -   使用您选择的站点生成器来完成项目。 并确保包含了我们 GitHub 仓库的所有文件。
-
-如果你使用 Replit，请按照以下步骤设置项目：
-
--   首先在 Replit 中导入项目。
--   接着，你将看到一个 `.replit` 窗口。
--   选择 `Use run command` 并点击 `Done` 按钮。
-
-当你完成后，请将一个确保正常运行的 demo（项目演示）托管在可以公开访问的平台上。 然后将 demo 的 URL 提交到 Solution Link 字段中。 也可以将项目的源码链接提交到 GitHub Link 字段中。
 
 # --instructions--
 
@@ -28,8 +20,8 @@ dashedName: american-british-translator
 -   在 `/routes/api.js` 中完成 `/api/translate` 路由
 -   在 `tests/1_unit-tests.js` 和 `tests/2_functional-tests.js` 中创建所有单元/功能测试
 -   查看 `/components` 中的 JavaScript 文件以获取应用程序应该翻译的条款以及不同的拼写
--   在 `.env` 文件中将 `NODE_ENV` 设置为 `test`（没有引号），在 Replit 上运行测试
--   使用 `npm run test` 命令在 console 中运行测试。 按 Ctrl+Shift+P（在 Mac 上是 Cmd+Shift+P），并输入“open shell”，打开 Replit 控制台
+-   To run the tests automatically, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   使用 `npm run test` 命令在 console 中运行测试。
 
 在 `tests/1_unit-tests.js` 中写下以下测试：
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff89
-title: 'Problem 266: Pseudo Square Root'
+title: 'Завдання 266: псевдоквадратні корені'
 challengeType: 1
 forumTopicId: 301915
 dashedName: problem-266-pseudo-square-root
@@ -8,15 +8,15 @@ dashedName: problem-266-pseudo-square-root
 
 # --description--
 
-The divisors of 12 are: 1,2,3,4,6 and 12.
+Дільниками числа 12 є 1, 2, 3, 4, 6 та 12.
 
-The largest divisor of 12 that does not exceed the square root of 12 is 3.
+Найбільшим дільником 12, який не перевищує квадратний корінь з 12, є 3.
 
-We shall call the largest divisor of an integer $n$ that does not exceed the square root of $n$ the pseudo square root ($PSR$) of $n$.
+Назвемо найбільший дільник цілого числа $n$, який не перевищує квадратний корінь з $n$, псевдоквадратним коренем ($PSR$) числа $n$.
 
-It can be seen that $PSR(3102) = 47$.
+Можна побачити, що $PSR(3102) = 47$.
 
-Let $p$ be the product of the primes below 190. Знайдіть $PSR(p)\bmod {10}^{16}$.
+Нехай $p$ буде добутком простих чисел, менших за 190. Знайдіть $PSR(p)\bmod {10}^{16}$.
 
 # --hints--
 

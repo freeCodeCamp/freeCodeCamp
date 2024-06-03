@@ -51,7 +51,7 @@ external fontawesome link icon
 
 /* 
 universal-nav-bar
-and menu secion
+and menu section
 */
 
 [dir='rtl'] .nav-lang-list-option[aria-current='true'] {
@@ -88,25 +88,11 @@ and menu secion
 }
 
 /* 
-dropdown links 
-*/
-
-[dir='rtl'] .dropdown-menu {
-  text-decoration-skip-ink: all;
-}
-
-/* 
 New RWD project challenge
 */
 
 [dir='rtl'] .tabs-row {
   gap: 10px;
-}
-
-/* Align the the Arabic head with the corresponding English word */
-
-[dir='rtl'] .table thead:first-child tr:first-child th {
-  text-align: right;
 }
 
 /* 
@@ -153,7 +139,7 @@ sections that need to stay left to right
   flex-direction: row-reverse;
 }
 
-/* new Font Family because 'Hack-ZeroSlash' add letter spacing in Arabic letter which is extermely bad */
+/* new Font Family because 'Hack-ZeroSlash' add letter spacing in Arabic letter which is extremely bad */
 
 [dir='rtl'] body,
 [dir='rtl'] .signup-btn,
@@ -172,10 +158,4 @@ sections that need to stay left to right
 [dir='rtl'] .donate-page-wrapper p,
 [dir='rtl'] [name='payment-method'] {
   font-family: 'NotoSansArabic';
-}
-
-@media (min-width: 980px) {
-  [dir='rtl'] .donate-page-wrapper > .row {
-    display: flex;
-  }
 }

@@ -1,9 +1,9 @@
 import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
+import { composeWithDevTools } from '@redux-devtools/extension';
 import { createEpicMiddleware } from 'redux-observable';
 import createSagaMiddleware from 'redux-saga';
 
-import envData from '../../../config/env.json';
+import envData from '../../config/env.json';
 import { isBrowser } from '../../utils';
 import rootEpic from './root-epic';
 import rootReducer from './root-reducer';
@@ -30,16 +30,18 @@ const composeEnhancers = composeWithDevTools({
   // options like actionSanitizer, stateSanitizer
 });
 
-export const createStore = () => {
+export const createStore = (preloadedState = {}) => {
   let store;
   if (environment === 'production') {
     store = reduxCreateStore(
       rootReducer,
+      preloadedState,
       applyMiddleware(sagaMiddleware, epicMiddleware)
     );
   } else {
     store = reduxCreateStore(
       rootReducer,
+      preloadedState,
       composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
     );
   }

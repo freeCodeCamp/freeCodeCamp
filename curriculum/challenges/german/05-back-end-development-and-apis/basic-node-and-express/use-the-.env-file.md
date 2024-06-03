@@ -20,8 +20,6 @@ Erstelle eine `.env`-Datei im Hauptverzeichnis deines Projekts, speichere in die
 
 Greife nun in dem `/json`-GET-Route-Handler, den du in der letzten Aufgabe erstellt hast, auf`process.env.MESSAGE_STYLE` zu und verwandle das Antwort-Objekt der `message` in Großbuchstaben, wenn die Variable `uppercase` entspricht. Das Antwortobjekt sollte entweder `{"message": "Hello json"}` oder `{"message": "HELLO JSON"}` sein, je nachdem welchen Wert du für `MESSAGE_STYLE` gesetzt hast. Beachte, dass du den Wert von `process.env.MESSAGE_STYLE` **innerhalb** des Route-Handlers lesen musst, und nicht außerhalb. Aufgrund der Art und Weise wie unsere Tests laufen.
 
-**Hinweis:** Nutzt du Replit, kannst du keine `.env`-Datei erstellen. Benutze stattdessen den eingebauten <dfn>SECRETS</dfn>-Tab, um eine Variabel hinzuzufügen.
-
 Wenn du lokal arbeitest, benötigst du das `dotenv`-Paket. Dieses lädt Umgebungsvariablen deiner `.env`-Datei in `process.env`. Das `dotenv`-Paket wurde bereits installiert und befindet sich in deiner `package.json`-Projektdatei. Füge am Anfang deiner `myApp.js`-Datei `require('dotenv').config()` hinzu, um die Umgebungsvariablen zu laden.
 
 # --hints--

@@ -12,15 +12,15 @@ Questo video sarà più approfondito, con ulteriori esempi di come utilizzare Sy
 
 Ecco il <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">notebook Colab per seguire questo video.</a> Usalo per aggiungere altri contenuti al notebook Colab di algebra che stai costruendo.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Aggiungi il codice per altri modi per risolvere per x dal video al tuo notebook Colab.
 
 ---
 
 Apri il seguente notebook Colab, esegui la cella e <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">fai pratica a risolvere problemi di algebra in due passaggi.</a> Inoltre, guarda anche il codice che genera i problemi di pratica.
+
+# --question--
 
 ## --text--
 

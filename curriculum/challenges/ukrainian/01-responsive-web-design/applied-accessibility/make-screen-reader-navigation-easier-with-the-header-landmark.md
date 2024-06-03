@@ -39,7 +39,7 @@ assert($('header').children('h1').length == 1);
 assert($('div').length == 0);
 ```
 
-Ваш елемент `header` повинен містити кінцевий теґ.
+Елемент `header` повинен мати кінцевий тег.
 
 ```js
 assert(

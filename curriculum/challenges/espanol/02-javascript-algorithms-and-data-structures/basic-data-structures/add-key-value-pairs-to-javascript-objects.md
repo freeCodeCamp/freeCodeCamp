@@ -81,13 +81,13 @@ El objeto `foods` debe tener una clave `strawberries` con el valor de `27`.
 assert(foods.strawberries === 27);
 ```
 
-Los pares clave-valor deben establecerse usando notación de puntos o de corchetes.
+La definición del objeto `foods` no debe modificarse.
 
 ```js
 assert(
-  code.search(/bananas:/) === -1 &&
-    code.search(/grapes:/) === -1 &&
-    code.search(/strawberries:/) === -1
+  __helpers.removeJSComments(code).search(/let foods/) === -1 &&
+  __helpers.removeJSComments(code).search(/const\s+foods\s*=\s*{\s*apples:\s*25,\s*oranges:\s*32,\s*plums:\s*28\s*};/
+) !== -1
 );
 ```
 
@@ -96,7 +96,7 @@ assert(
 ## --seed-contents--
 
 ```js
-let foods = {
+const foods = {
   apples: 25,
   oranges: 32,
   plums: 28
@@ -112,7 +112,7 @@ console.log(foods);
 # --solutions--
 
 ```js
-let foods = {
+const foods = {
   apples: 25,
   oranges: 32,
   plums: 28

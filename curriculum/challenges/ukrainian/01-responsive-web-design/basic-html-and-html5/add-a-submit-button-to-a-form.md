@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-Елемент `button` повинен мати кінцевий теґ.
+Елемент `button` повинен мати кінцевий тег.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -95,7 +95,7 @@ assert(
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

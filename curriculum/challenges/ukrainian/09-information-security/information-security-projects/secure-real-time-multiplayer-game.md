@@ -11,16 +11,8 @@ dashedName: secure-real-time-multiplayer-game
 Розробіть багатокористувацьку 2D-гру в реальному часі, використовуючи HTML Canvas API та Socket.io, яка функціонально схожа до цього: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
--   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
+-   Використайте <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/" target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Gitpod</a>, щоб виконати свій проєкт.
 -   Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
-
-Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
-
--   Почніть з імпорту проєкту на Replit.
--   Потім ви побачите вікно `.replit`.
--   Оберіть `Use run command` та натисніть кнопку `Done`.
-
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на рішення». За бажанням введіть посилання на початковий код проєкту в полі «Посилання на GitHub».
 
 # --instructions--
 
@@ -63,13 +55,13 @@ dashedName: secure-real-time-multiplayer-game
 
 ```
 
-Кожен гравець представлений об'єктом, створеним класом `Player` у `Player.mjs`.
+Кожен гравець представлений об’єктом, створеним класом `Player` у `Player.mjs`.
 
 ```js
 
 ```
 
-Як мінімум, кожен об'єкт-гравець повинен містити унікальний `id`, `score` і координати `x` та `y`, які показують поточну позицію гравця.
+Як мінімум, кожен об’єкт-гравець повинен містити унікальний `id`, `score` і координати `x` та `y`, які показують поточну позицію гравця.
 
 ```js
 
@@ -81,7 +73,7 @@ dashedName: secure-real-time-multiplayer-game
 
 ```
 
-Як мінімум, кожен об'єкт-предмет, створений класом `Collectible`, повинен містити унікальний `id`, `value` і координати `x` та `y`, які показують поточну позицію предмета.
+Як мінімум, кожен об’єкт-предмет, створений класом `Collectible`, повинен містити унікальний `id`, `value` і координати `x` та `y`, які показують поточну позицію предмета.
 
 ```js
 
@@ -93,7 +85,7 @@ dashedName: secure-real-time-multiplayer-game
 
 ```
 
-Метод `movePlayer` повинен приймати два аргументи: рядок «up», «down», «left» або «right», а також кількість пікселів, на яку має змінюватися позиція гравця. `movePlayer` повинен адаптовуватися до координат (`x` та `y`) об'єкта-гравця, який його викликав.
+Метод `movePlayer` повинен приймати два аргументи: рядок «up», «down», «left» або «right», а також кількість пікселів, на яку має змінюватися позиція гравця. `movePlayer` повинен адаптовуватися до координат (`x` та `y`) об’єкта-гравця, який його викликав.
 
 ```js
 
@@ -105,7 +97,7 @@ dashedName: secure-real-time-multiplayer-game
 
 ```
 
-Метод `calculateRank` повинен приймати масив об'єктів, представляючи усіх підключених гравців і повернути рядок `Rank: currentRanking/totalPlayers`. Наприклад, в грі з двома гравцями, якщо гравець А має рахунок 3 і гравець В має рахунок 5, `calculateRank` для гравця A повинен повернути `Rank: 2/2`.
+Метод `calculateRank` повинен приймати масив об’єктів, представляючи усіх підключених гравців і повернути рядок `Rank: currentRanking/totalPlayers`. Наприклад, в грі з двома гравцями, якщо гравець А має рахунок 3 і гравець В має рахунок 5, `calculateRank` для гравця A повинен повернути `Rank: 2/2`.
 
 ```js
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4491000cf542c50ff5c
-title: 'Problem 221: Alexandrian Integers'
+title: 'Завдання 221: александрійські цілі числа'
 challengeType: 1
 forumTopicId: 301864
 dashedName: problem-221-alexandrian-integers
@@ -8,18 +8,18 @@ dashedName: problem-221-alexandrian-integers
 
 # --description--
 
-We shall call a positive integer $A$ an "Alexandrian integer", if there exist integers $p$, $q$, $r$ such that:
+Натуральне число $A$ називають александрійським, якщо існують цілі числа $p$, $q$, $r$, за яких:
 
 $$A = p \times q \times r$$
 
-and
+та
 
 $$\frac{1}{A} = \frac{1}{p} + \frac{1}{q} + \frac{1}{r}$$
 
 
-For example, 630 is an Alexandrian integer ($p = 5$, $q = −7$, $r = −18$). In fact, 630 is the 6th Alexandrian integer, the first 6 Alexandrian integers being: 6, 42, 120, 156, 420 and 630.
+Наприклад, 630 є александрійським цілим числом ($p = 5$, $q = −7$, $r = −18$). Взагалі, 630 є шостим александрійським цілим числом. Першими шістьма александрійськими числами є: 6, 42, 120, 156, 420 та 630.
 
-Find the 150000th Alexandrian integer.
+Знайдіть 150000-не александрійське ціле число.
 
 # --hints--
 

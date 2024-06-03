@@ -3,6 +3,7 @@ const frontmatter = require('remark-frontmatter');
 const remark = require('remark-parse');
 const { readSync } = require('to-vfile');
 const unified = require('unified');
+const addFillInTheBlank = require('./plugins/add-fill-in-the-blank');
 const addFrontmatter = require('./plugins/add-frontmatter');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
@@ -13,6 +14,7 @@ const addAssignment = require('./plugins/add-assignment');
 const replaceImports = require('./plugins/replace-imports');
 const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
+const addScene = require('./plugins/add-scene');
 
 // by convention, anything that adds to file.data has the name add<name>.
 const processor = unified()
@@ -44,8 +46,10 @@ const processor = unified()
   // 'directives' will be from text like the css selector :root. These should be
   // converted back to text before they're added to the challenge object.
   .use(restoreDirectives)
+  .use(addFillInTheBlank)
   .use(addVideoQuestion)
   .use(addAssignment)
+  .use(addScene)
   .use(addTests)
   .use(addText, ['description', 'instructions', 'notes']);
 

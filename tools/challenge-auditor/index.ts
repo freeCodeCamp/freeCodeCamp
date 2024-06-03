@@ -7,9 +7,12 @@ import { config } from 'dotenv';
 const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
-import { availableLangs } from '../../config/i18n';
+import { availableLangs } from '../../shared/config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
-import { SuperBlocks, getAuditedSuperBlocks } from '../../config/superblocks';
+import {
+  SuperBlocks,
+  getAuditedSuperBlocks
+} from '../../shared/config/superblocks';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
@@ -40,7 +43,7 @@ const superBlockFolderMap = {
   'coding-interview-prep': '11-coding-interview-prep',
   'relational-database': '13-relational-database',
   '2022/responsive-web-design': '14-responsive-web-design-22',
-  '2022/javascript-algorithms-and-data-structures':
+  'javascript-algorithms-and-data-structures-v8':
     '15-javascript-algorithms-and-data-structures-22',
   'the-odin-project': '16-the-odin-project',
   'college-algebra-with-python': '17-college-algebra-with-python',
@@ -48,6 +51,9 @@ const superBlockFolderMap = {
   'foundational-c-sharp-with-microsoft':
     '19-foundational-c-sharp-with-microsoft',
   'upcoming-python': '20-upcoming-python',
+  'a2-english-for-developers': '21-a2-english-for-developers',
+  'rosetta-code': '22-rosetta-code',
+  'python-for-everybody': '23-python-for-everybody',
   'example-certification': '99-example-certification'
 };
 
@@ -94,6 +100,9 @@ void (async () => {
       join(englishCurriculumDirectory, englishSuperblock)
     );
     for (const englishBlock of englishBlocks) {
+      if (englishBlock.endsWith('.txt')) {
+        continue;
+      }
       const englishChallenges = await readdir(
         join(englishCurriculumDirectory, englishSuperblock, englishBlock)
       );
@@ -105,14 +114,14 @@ void (async () => {
     }
   }
   const langsToCheck = availableLangs.curriculum.filter(
-    lang => lang !== 'english'
+    lang => String(lang) !== 'english'
   );
   for (const lang of langsToCheck) {
     console.log(`\n=== ${lang} ===`);
     const certs = getAuditedSuperBlocks({
       language: lang,
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
     });
     const langCurriculumDirectory = join(
       process.cwd(),

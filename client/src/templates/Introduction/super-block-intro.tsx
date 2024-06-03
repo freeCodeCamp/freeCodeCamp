@@ -1,4 +1,3 @@
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
@@ -9,13 +8,15 @@ import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
-import { SuperBlocks } from '../../../../config/superblocks';
+import { SuperBlocks } from '../../../../shared/config/superblocks';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
 import { Spacer } from '../../components/helpers';
+import callGA from '../../analytics/call-ga';
 import { tryToShowDonationModal } from '../../redux/actions';
 import {
   isSignedInSelector,
@@ -28,6 +29,7 @@ import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
+import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
 import { resetExpansion, toggleBlock } from './redux';
 
@@ -184,21 +186,38 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.RespWebDesign,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.ProjectEuler
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.A2English,
+    SuperBlocks.RosettaCode,
+    SuperBlocks.PythonForEverybody
   ];
+
+  const onCertificationDonationAlertClick = () => {
+    callGA({
+      event: 'donation_related',
+      action: `Certification Donation Alert Click`
+    });
+  };
 
   return (
     <>
       <Helmet>
         <title>{i18nTitle} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='large' />
               <LegacyLinks superBlock={superBlock} />
-              <SuperBlockIntro superBlock={superBlock} />
+              <SuperBlockIntro
+                superBlock={superBlock}
+                onCertificationDonationAlertClick={
+                  onCertificationDonationAlertClick
+                }
+                isDonating={user.isDonating}
+              />
+              <HelpTranslate superBlock={superBlock} />
               <Spacer size='large' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
@@ -206,32 +225,29 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <Spacer size='medium' />
               <div className='block-ui'>
                 {defaultCurriculumNames.map(blockDashedName => (
-                  <Fragment key={blockDashedName}>
-                    <Block
-                      blockDashedName={blockDashedName}
-                      challenges={nodesForSuperBlock.filter(
-                        node => node.challenge.block === blockDashedName
-                      )}
-                      superBlock={superBlock}
-                    />
-                  </Fragment>
+                  <Block
+                    key={blockDashedName}
+                    blockDashedName={blockDashedName}
+                    challenges={nodesForSuperBlock.filter(
+                      node => node.challenge.block === blockDashedName
+                    )}
+                    superBlock={superBlock}
+                  />
                 ))}
                 {!superblockWithoutCert.includes(superBlock) && (
-                  <div>
-                    <CertChallenge
-                      certification={certification}
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  </div>
+                  <CertChallenge
+                    certification={certification}
+                    superBlock={superBlock}
+                    title={title}
+                    user={user}
+                  />
                 )}
               </div>
               {!isSignedIn && !signInLoading && (
-                <div>
+                <>
                   <Spacer size='large' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-                </div>
+                </>
               )}
               <Spacer size='large' />
               <h3
@@ -241,12 +257,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='medium' />
-              <Map currentSuperBlock={superBlock} />
+              <Map />
               <Spacer size='large' />
             </Col>
           </Row>
         </main>
-      </Grid>
+      </Container>
       <DonateModal location={props.location} />
     </>
   );

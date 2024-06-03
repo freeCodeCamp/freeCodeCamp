@@ -1,6 +1,6 @@
 ---
 id: 5900f45c1000cf542c50ff6e
-title: 'Problem 239: Twenty-two Foolish Primes'
+title: 'Завдання 239: 22 безглуздих простих числа'
 challengeType: 1
 forumTopicId: 301884
 dashedName: problem-239-twenty-two-foolish-primes
@@ -8,11 +8,11 @@ dashedName: problem-239-twenty-two-foolish-primes
 
 # --description--
 
-A set of disks numbered 1 through 100 are placed in a line in random order.
+В ряді розміщено множину фішок з номерами від 1 до 100 у довільному порядку.
 
-What is the probability that we have a partial derangement such that exactly 22 prime number discs are found away from their natural positions? (Any number of non-prime disks may also be found in or out of their natural positions.)
+Яка ймовірність того, що ми зіткнемося з частковою перестановкою, у якій 22 фішки з простими числами виявляться не на своїх місцях? (Будь-яка кількість фішок з непростими числами може перебувати на своєму або чужому місці.)
 
-Give your answer rounded to 12 places behind the decimal point in the form 0.abcdefghijkl.
+Дайте відповідь, заокруглену до дванадцяти знаків після коми у форматі 0.abcdefghijkl.
 
 # --hints--
 

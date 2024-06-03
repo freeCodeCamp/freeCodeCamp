@@ -12,15 +12,15 @@ Este vídeo entrará em mais detalhes, dando exemplos de como usar a solução d
 
 Aqui está o <a href="https://colab.research.google.com/drive/1Jv6WxW93J_1GZao8DkNb4X0D93oVibbs" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory que acompanha este vídeo.</a> Adicione-o ao notebook do Colaboratory de álgebra que você está criando.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione o código para outras formas de resolver para x do vídeo ao seu notebook do Colaboratory de álgebra.
 
 ---
 
 Abra o notebook do Colaboratory a seguir, execute a célula e <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">pratique a resolução de problemas de álgebra de uma e de duas etapas.</a> Como bônus, veja o código que gera os problemas da prática.
+
+# --question--
 
 ## --text--
 

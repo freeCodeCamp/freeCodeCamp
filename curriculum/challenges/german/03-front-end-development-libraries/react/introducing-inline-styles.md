@@ -30,7 +30,7 @@ Hast du bemerkt, dass wir die Eigenschaft `fontSize` in CamelCase schreiben? Das
 
 Füge im Code-Editor ein `style`-Attribut zum `div` hinzu, um dem Text eine rote Farbe und eine Schriftgröße von `72px` zu geben.
 
-Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
+Beachte, dass du die Schriftgröße optional als Zahl angeben kannst, indem du die Einheiten `px` weglässt, oder sie als `"72px"` schreibst.
 # --hints--
 
 Die Komponente sollte ein `div`-Element darstellen.

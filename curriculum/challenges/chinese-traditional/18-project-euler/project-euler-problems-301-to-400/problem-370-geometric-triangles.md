@@ -1,6 +1,6 @@
 ---
 id: 5900f4de1000cf542c50fff1
-title: 'Problem 370: Geometric triangles'
+title: '問題370：幾何三角形'
 challengeType: 1
 forumTopicId: 302032
 dashedName: problem-370-geometric-triangles

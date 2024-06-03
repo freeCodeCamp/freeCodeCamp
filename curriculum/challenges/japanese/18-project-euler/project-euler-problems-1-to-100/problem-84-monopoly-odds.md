@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed3
-title: 'Problem 84: Monopoly odds'
+title: '問題 84: モノポリーの確率'
 challengeType: 1
 forumTopicId: 302198
 dashedName: problem-84-monopoly-odds
@@ -8,7 +8,7 @@ dashedName: problem-84-monopoly-odds
 
 # --description--
 
-In the game, *Monopoly*, the standard board is set up in the following way:
+*モノポリー*というゲームでは、標準のボードが次のように設定されています。
 
 <div style="text-align: center;">
   <table cellspacing="1" cellpadding="5" border="0" style="background-color: black; color: black;" align="center">
@@ -88,69 +88,69 @@ In the game, *Monopoly*, the standard board is set up in the following way:
   </table>
 </div><br>
 
-A player starts on the GO square and adds the scores on two 6-sided dice to determine the number of squares they advance in a clockwise direction. Without any further rules we would expect to visit each square with equal probability: 2.5%. However, landing on G2J (Go To Jail), CC (community chest), and CH (chance) changes this distribution.
+プレイヤーは GO のマスから始め、2 つの 6 面サイコロの目を足した数だけマスを時計回りに進みます。 他にルールがなければ、各マスに止まる確率は一律に 2.5% のはずです。 しかし、G2J (刑務所へ行く)、CC (コミュニティチェスト)、CH (チャンス) に止まると確率の分布が変わります。
 
-In addition to G2J, and one card from each of CC and CH, that orders the player to go directly to jail, if a player rolls three consecutive doubles, they do not advance the result of their 3rd roll. Instead they proceed directly to jail.
+G2J に止まった場合と、CC または CH に止まって引いたカードに指示された場合、プレイヤーは JAIL へ直行します。それに加え、3 回連続でゾロ目を出したプレイヤーは 3 投目の分を進むことができません。 代わりに JAIL へ直行します。
 
-At the beginning of the game, the CC and CH cards are shuffled. When a player lands on CC or CH they take a card from the top of the respective pile and, after following the instructions, it is returned to the bottom of the pile. There are sixteen cards in each pile, but for the purpose of this problem we are only concerned with cards that order a movement; any instruction not concerned with movement will be ignored and the player will remain on the CC/CH square.
+ゲームの開始時に、CC と CH カードはシャッフルされます。 CC または CH に止まると、プレイヤーは各カードの束の一番上にあるカードを取り、その指示に従った後に束の一番下に戻します。 それぞれの束には 16 枚のカードがありますが、この問題では移動を指示するカードのみを扱います。移動と関係のない指示は無視され、プレイヤーは CC/CH のマスにとどまります。
 
 <ul>
-  <li>Community Chest (2/16 cards):</li>
+  <li>コミュニティチェスト (2/16 枚):</li>
   <ol>
-    <li>Advance to GO</li>
-    <li>Go to JAIL</li>
+    <li>GO へ進む</li>
+    <li>JAIL へ行く</li>
   </ol>
 
-  <li>Chance (10/16 cards):</li>
+  <li>チャンス (10/16 枚):</li>
   <ol>
-    <li>Advance to GO</li>
-    <li>Go to JAIL</li>
-    <li>Go to C1</li>
-    <li>Go to E3</li>
-    <li>Go to H2</li>
-    <li>Go to R1</li>
-    <li>Go to next R (railway company)</li>
-    <li>Go to next R</li>
-    <li>Go to next U (utility company)</li>
-    <li>Go back 3 squares.</li>
+    <li>GO へ進む</li>
+    <li>JAIL へ行く</li>
+    <li>C1 へ行く</li>
+    <li>E3 へ行く</li>
+    <li>H2 へ行く</li>
+    <li>R1 へ行く</li>
+    <li>次の R (鉄道会社) へ行く</li>
+    <li>次の R へ行く</li>
+    <li>次の U (電力会社と水道会社) へ行く</li>
+    <li>3 マス戻る</li>
   </ol>
 </ul>
 
-The heart of this problem concerns the likelihood of visiting a particular square. That is, the probability of finishing at that square after a roll. For this reason it should be clear that, with the exception of G2J for which the probability of finishing on it is zero, the CH squares will have the lowest probabilities, as 5/8 request a movement to another square, and it is the final square that the player finishes at on each roll that we are interested in. We shall make no distinction between "Just Visiting" and being sent to JAIL, and we shall also ignore the rule about requiring a double to "get out of jail", assuming that they pay to get out on their next turn.
+この問題では、特定のマスを訪れる確率に着目します。 つまり、サイコロを 1 回振った後、最終的にそのマスにいる確率です。 そのため、G2J (そこで終わる確率が 0) を除けば、CH マスで終わる確率が最も低いことは明らかです。なぜなら、カード全体の 5/8 が別のマスへの移動を指示するからです。ここでの焦点は、プレイヤーがサイコロを振った後に自分のターンが終わる時点で、どのマスにいるかです。 ここでは、JAILを「たまたま訪れた」ことと、他のマスから JAIL に飛ばされることを区別しません。ゾロ目を出して「刑務所から出る」というルールも無視します。次のターンで保釈金を払って刑務所から出ることを前提とします。
 
-By starting at GO and numbering the squares sequentially from 00 to 39 we can concatenate these two-digit numbers to produce strings that correspond with sets of squares.
+GO から順に各マスに 00 から 39 までの番号を付けると、これらの 2 桁の番号を連結することで、マスの組に対応する文字列を生成することができます。
 
-Statistically it can be shown that the three most popular squares, in order, are JAIL (6.24%) = Square 10, E3 (3.18%) = Square 24, and GO (3.09%) = Square 00. So these three most popular squares can be listed with the six-digit modal string `102400`.
+統計的には、プレイヤーが 1 回のターンを終えるときにいる上位 3 マスは、JAIL (6. 4%) = マス 10、E3 (3.18%) = マス 24、GO (3.09%) = マス 00 です。 したがって、訪問確率が最も高いこれらの 3 マスは、6 桁のモーダルストリング `102400` で表すことができます。
 
-If, instead of using two 6-sided dice, two `n`-sided dice are used, find the six-digit modal string.
+2 つの 6 面サイコロの代わりに 2 つの `n` 面サイコロを使った場合の、6 桁のモーダルストリングを求めなさい。
 
 # --hints--
 
-`monopolyOdds(8)` should return a string.
+`monopolyOdds(8)` は文字列を返す必要があります。
 
 ```js
 assert(typeof monopolyOdds(8) === 'string');
 ```
 
-`monopolyOdds(8)` should return string `102400`.
+`monopolyOdds(8)` は文字列 `102400` を返す必要があります。
 
 ```js
 assert.strictEqual(monopolyOdds(8), '102400');
 ```
 
-`monopolyOdds(10)` should return string `100024`.
+`monopolyOdds(10)` は文字列 `100024` を返す必要があります。
 
 ```js
 assert.strictEqual(monopolyOdds(10), '100024');
 ```
 
-`monopolyOdds(20)` should return string `100005`.
+`monopolyOdds(20)` は文字列 `100005` を返す必要があります。
 
 ```js
 assert.strictEqual(monopolyOdds(20), '100005');
 ```
 
-`monopolyOdds(4)` should return string `101524`.
+`monopolyOdds(4)` は文字列 `101524` を返す必要があります。
 
 ```js
 assert.strictEqual(monopolyOdds(4), '101524');
@@ -172,97 +172,145 @@ monopolyOdds(8);
 # --solutions--
 
 ```js
-function monopolyOdds(n) {
-  function chanceCard(position, chanceCardPosition) {
-    chanceCardPosition = (chanceCardPosition + 1) % 16;
-    if (chanceCardPosition < 6) {
-      position = chanceCardsMoves[chanceCardPosition];
-    } else if (chanceCardPosition === 6 || chanceCardPosition === 7) {
-      position = nextMovesFromR[position];
-    } else if (chanceCardPosition === 8) {
-      position = nextMovesFromU[position];
-    } else if (chanceCardPosition === 9) {
-      position -= 3;
+const GO = 0;
+const JAIL = 10;
+const GO_TO_JAIL = 30;
+
+const C1 = 11;
+const E3 = 24;
+const H2 = 39;
+
+const R1 = 5;
+const R2 = 15;
+const R3 = 25;
+
+const U1 = 12;
+const U2 = 28;
+
+const SPECIAL_CARDS = 16;
+const GAME_SQUARES = 40;
+
+const CC1 = 2;
+const CC2 = 17;
+const CC3 = 33;
+const CHESTS = [CC1, CC2, CC3];
+const chestCardsMoves = [GO, JAIL];
+
+const CH1 = 7;
+const CH2 = 22;
+const CH3 = 36;
+const CHANCES = [CH1, CH2, CH3];
+const chanceCardsMoves = [GO, JAIL, C1, E3, H2, R1];
+const chanceToRailroad = { [CH1]: R2, [CH2]: R3, [CH3]: R1 };
+const chanceToUtility = { [CH1]: U1, [CH2]: U2, [CH3]: U1 };
+
+function multiplyMatrix(matrix1, matrix2) {
+  const multiplied = [];
+
+  for (let row = 0; row < matrix1.length; row++) {
+    const newRow = [];
+    for (let col = 0; col < matrix1[row].length; col++) {
+      let newCell = 0;
+      for (let i = 0; i < matrix1[row].length; i++) {
+        const value1 = matrix1[row][i];
+        const value2 = matrix2[i][col];
+        newCell += value1 * value2;
+      }
+      newRow.push(newCell);
     }
-    return [position, chanceCardPosition];
+    multiplied.push(newRow);
   }
+  return multiplied;
+}
 
-  function chestCard(position, chestPosition) {
-    chestPosition = (chestPosition + 1) % 16;
-    if (chestPosition < 2) {
-      position = chestCardsMoves[chestPosition];
+function normalizeRow(row) {
+  const sum = row.reduce((total, value) => total + value, 0);
+  if (sum > 0) {
+    for (let j = 0; j < row.length; j++) {
+      const value = row[j];
+      row[j] = value / sum;
     }
-    return [position, chestPosition];
   }
+}
 
-  function isChest(position) {
-    return position === 2 || position === 17 || position === 33;
-  }
+function sortByProbability(board) {
+  return board
+    .map((probability, squareNo) => [squareNo, probability])
+    .sort((a, b) => a[1] - b[1])
+}
 
-  function isChance(position) {
-    return position === 7 || position === 22 || position === 36;
-  }
+function getTopThree(board) {
+  return sortByProbability(board)
+    .slice(-3)
+    .reverse()
+    .map(([squareNo, _]) => squareNo.toString().padStart(2, '0')
+    )
+    .join('');
+}
 
-  function isJail(position) {
-    return position === 30;
-  }
+function didConverge(matrix1, matrix2, precision) {
+  return matrix1.every((row, rowNo) => row.every((value1, colNo) => Math.abs(value1 - matrix2[rowNo][colNo]) <= precision))
+}
 
-  function roll(dice) {
-    return Math.floor(Math.random() * dice) + 1;
-  }
+function monopolyOdds(diceSides) {
+  // Based on https://github.com/ByteThisCoding/project-euler/blob/master/problems/0084/0084.ts
 
-  function getTopThree(board) {
-    return sortByVisits(board)
-      .slice(0, 3)
-      .map(elem => elem[0].toString().padStart(2, '0'))
-      .join('');
-  }
-
-  function sortByVisits(board) {
-    return board
-      .map((element, index) => [index, element])
-      .sort((a, b) => a[1] - b[1])
-      .reverse();
-  }
-
-  const rounds = 2000000;
-  const chestCardsMoves = [0, 10];
-  const chanceCardsMoves = [0, 10, 11, 24, 39, 5];
-  const nextMovesFromR = { 7: 15, 22: 25, 36: 5 };
-  const nextMovesFromU = { 7: 12, 36: 12, 22: 28 };
-
-  const board = new Array(40).fill(0);
-  let doubleCount = 0;
-  let curPosition = 0;
-  let curChestCard = 0;
-  let curChanceCard = 0;
-
-  for (let i = 0; i < rounds; i++) {
-    const dice1 = roll(n);
-    const dice2 = roll(n);
-
-    if (dice1 === dice2) {
-      doubleCount++;
-    } else {
-      doubleCount = 0;
+  const timesRolled = new Array(diceSides * 2 + 1).fill(0);
+  for (let dice1 = 1; dice1 <= diceSides; dice1++) {
+    for (let dice2 = 1; dice2 <= diceSides; dice2++) {
+      timesRolled[dice1 + dice2]++;
     }
+  }
 
-    if (doubleCount > 2) {
-      curPosition = 10;
-      doubleCount = 0;
-    } else {
-      curPosition = (curPosition + dice1 + dice2) % 40;
+  // Transitions matrix contain probabilities of reaching each square (row values)
+  // from each starting square (row no.).
+  let transitions = [];
+  for (let startSquare = 0; startSquare < GAME_SQUARES; startSquare++) {
+    const row = new Array(GAME_SQUARES).fill(0);
+    for (let rollResult = 2; rollResult <= diceSides * 2; rollResult++) {
+      const rollChance = timesRolled[rollResult]
+      const position = (startSquare + rollResult) % GAME_SQUARES;
 
-      if (isChance(curPosition)) {
-        [curPosition, curChanceCard] = chanceCard(curPosition, curChanceCard);
-      } else if (isChest(curPosition)) {
-        [curPosition, curChestCard] = chestCard(curPosition, curChestCard);
-      } else if (isJail(curPosition)) {
-        curPosition = 10;
+      if (CHANCES.includes(position)) {
+        // Chance cards ordering movement.
+        for (let i = 0; i < chanceCardsMoves.length; i++) {
+          const nextSquare = chanceCardsMoves[i];
+          row[nextSquare] += rollChance / SPECIAL_CARDS;
+        }
+        row[chanceToRailroad[position]] += 2 * rollChance / SPECIAL_CARDS;
+        row[chanceToUtility[position]] += rollChance / SPECIAL_CARDS;
+        row[position - 3] += rollChance / SPECIAL_CARDS;
+
+        // Rest non-moving Chance cards.
+        row[position] += (SPECIAL_CARDS - chanceCardsMoves.length) * rollChance / SPECIAL_CARDS;
+      } else if (CHESTS.includes(position)) {
+        // Community Chest cards ordering movement.
+        for (let i = 0; i < chestCardsMoves.length; i++) {
+          const nextSquare = chestCardsMoves[i];
+          row[nextSquare] += rollChance / SPECIAL_CARDS;
+        }
+        // Rest non-moving Community Chest cards.
+        row[position] += (SPECIAL_CARDS - chestCardsMoves.length) * rollChance / SPECIAL_CARDS
+      } else if (position === GO_TO_JAIL) {
+        row[JAIL] += rollChance;
+      } else {
+        row[position] += rollChance;
       }
     }
-    board[curPosition]++;
+    normalizeRow(row)
+    transitions.push(row);
   }
-  return getTopThree(board);
+
+  const precision = 0.000001;
+  for (let i = 0; i < GAME_SQUARES; i++) {
+    const next = multiplyMatrix(transitions, transitions);
+    if (didConverge(transitions, next, precision)) {
+      break;
+    }
+    transitions = next;
+  }
+
+  // All rows converge to the same values.
+  return getTopThree(transitions[0]);
 }
 ```

@@ -8,13 +8,13 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --description--
 
-请注意，本项目是在 <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> 上的初始化项目的基础上进行开发，你也可以从 <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> 上克隆。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `#instanceOf` 断言一个对象是一个构造器的实例。
 
 # --instructions--
 
-在 `tests/1_unit-tests.js` 中，`Objects` 套件里标有 `#18` 的测试下，将每个 `assert` 改成 `assert.instanceOf` 或 `assert.notInstanceOf` 方法，通过测试（结果应该返回 `true`）。 不要修改传给断言的参数。
+Within `tests/1_unit-tests.js` under the test labeled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). 不要修改传给断言的参数。
 
 # --hints--
 

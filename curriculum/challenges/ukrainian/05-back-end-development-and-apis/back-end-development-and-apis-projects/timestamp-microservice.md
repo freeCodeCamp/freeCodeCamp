@@ -8,19 +8,11 @@ dashedName: timestamp-microservice
 
 # --description--
 
-Створіть повний пакет додатку JavaScript, який функціонально схожий до <a href="https://timestamp-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://timestamp-microservice.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
+Створіть повний пакет застосунку JavaScript, який функціонально схожий до <a href="https://timestamp-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://timestamp-microservice.freecodecamp.rocks</a>. Робота над цим проєктом передбачає написання коду за допомогою одного з наступних методів:
 
 -   Клонуйте <a href="https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">цей репозиторій GitHub</a> та виконайте свій проєкт локально.
--   Використайте <a href="https://replit.com/github/freeCodeCamp/boilerplate-project-timestamp"  target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Replit</a> для виконання свого проєкту.
+-   Використайте <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-timestamp/"  target="_blank" rel="noopener noreferrer nofollow">наш стартовий проєкт Gitpod</a>, щоб виконати свій проєкт.
 -   Для виконання проєкту використайте конструктор сайту на власний вибір. Переконайтеся, що приєднали усі файли з нашого репозиторію GitHub.
-
-Якщо ви використовуєте Replit, виконайте наступні кроки для налаштування проєкту:
-
--   Почніть з імпорту проєкту на Replit.
--   Потім ви побачите вікно `.replit`.
--   Оберіть `Use run command` та натисніть кнопку `Done`.
-
-Після завершення переконайтеся, що демоверсія проєкту розміщена у відкритому доступі. Потім введіть URL-адресу проєкту в полі «Посилання на рішення». За бажанням введіть посилання на початковий код проєкту в полі «Посилання на GitHub».
 
 **Примітка:** конвертація часових зон не є головною метою проєкту, тому вважайте, що всі надіслані дійсні дати будуть проаналізовані за допомогою `new Date()` як дати GMT.
 
@@ -54,7 +46,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-Запит до `/api/:date?` з дійсною датою повинен повернути об'єкт JSON з ключем `utc`, який є рядком введеної дати у форматі `Thu, 01 Jan 1970 00:00:00 GMT`
+Запит до `/api/:date?` з дійсною датою повинен повернути об’єкт JSON з ключем `utc`, який є рядком введеної дати у форматі `Thu, 01 Jan 1970 00:00:00 GMT`
 
 ```js
 (getUserInput) =>
@@ -106,7 +98,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-Якщо введений рядок дати недійсний, API повертає об'єкт зі структурою `{ error : "Invalid Date" }`
+Якщо введений рядок дати недійсний, API повертає об’єкт зі структурою `{ error : "Invalid Date" }`
 
 ```js
 (getUserInput) =>
@@ -120,7 +112,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-Порожній параметр дати має повернути поточний час в об'єкті JSON з ключем `unix`
+Порожній параметр дати має повернути поточний час в об’єкті JSON з ключем `unix`
 
 ```js
 (getUserInput) =>
@@ -135,7 +127,7 @@ dashedName: timestamp-microservice
   );
 ```
 
-Порожній параметр дати має повернути поточний час в об'єкті JSON з ключем `utc`
+Порожній параметр дати має повернути поточний час в об’єкті JSON з ключем `utc`
 
 ```js
 (getUserInput) =>

@@ -8,11 +8,13 @@ dashedName: build-a-25--5-clock
 
 # --description--
 
+**注:** **React 18 はこのプロジェクトのテストとの互換性がありません。 (詳細は[こちらの Issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922) を参照してください。)**
+
 **目標:** こちらと似た機能を持つアプリを構築してください: <a href="https://25--5-clock.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://25--5-clock.freecodecamp.rocks</a>
 
 以下のユーザーストーリーを満たし、すべてのテストが成功するようにしてください。 必要に応じて、どのようなライブラリあるいは API を使用してもかまいません。 あなた独自のアレンジを加えましょう。
 
-このプロジェクトを完了するために、HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、および jQuery を自在に組み合わせて利用することができます。 このセクションはフロントエンドフレームワークの学習を目的としていますので、React などのフロントエンドフレームワークを使用してください。 上記以外の他のテクノロジーは推奨されません。使用する場合は自己責任で行ってください。 Angular や Vue などの他のフロントエンドフレームワークのサポートを検討していますが、現時点ではサポートされていません。 このプロジェクトで推奨される一連のテクノロジーを使用している場合の不具合報告については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 コーディングの成功を祈ります！
+このプロジェクトを完了するために、HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、および jQuery を自在に組み合わせて利用することができます。 このセクションはフロントエンドフレームワークの学習を目的としていますので、React などのフロントエンドフレームワークを使用してください。 上記以外の他のテクノロジーは推奨されません。使用する場合は自己責任で行ってください。 Angular や Vue などの他のフロントエンドフレームワークのサポートを検討していますが、現時点ではサポートされていません。 このプロジェクトで推奨されている一連のテクノロジーを使用した状況で生じる不具合については、freeCodeCamp にて報告を受け入れ、修正するよう努めます。 コーディングを楽しみましょう！Happy coding!
 
 **ユーザーストーリー 1:** 文字列 ("Break Length" など) が含まれている `id="break-label"` を持つ要素を表示できます。
 
@@ -70,7 +72,7 @@ dashedName: build-a-25--5-clock
 
 **ユーザーストーリー 28:** ID が `reset` の要素がクリックされたとき、ID が `beep` の audio 要素の再生を停止して、最初まで巻き戻す必要があります。
 
-<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">この CodePen テンプレートを使用して</a> あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen を作成することができます。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+<a href='https://codepen.io/pen?template=MJjpwO' target='_blank' rel="noopener noreferrer nofollow">この CodePen テンプレートを使用して</a>あなたのプロジェクトを構築することができます。`Save` をクリックすると、あなた用の pen (CodePen 上の作品) を作成することができます。 または、下記の CDN リンクを使用して、使い慣れている環境でテストを実行することもできます:`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
 完了したら、すべてのテストが成功する状態の作業プロジェクトの URL を送信してください。
 

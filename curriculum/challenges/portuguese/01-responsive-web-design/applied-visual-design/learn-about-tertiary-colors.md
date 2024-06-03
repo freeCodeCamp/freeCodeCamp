@@ -16,7 +16,7 @@ Existem vários métodos de seleção de cores diferentes que resultam em uma co
 
 Aqui estão três cores criadas usando o esquema de cores complementares divididas:
 
-<table class='table table-striped'><thead><tr><th>Cor</th><th>Código hexadecimal</th></tr></thead><thead></thead><tbody><tr><td>laranja</td><td>#FF7F00</td></tr><tr><td>ciano</td><td>#00FFFF</td></tr><tr><td>framboesa</td><td>#FF007F</td></tr></tbody></table>
+<table><thead><tr><th>Cor</th><th>Código hexadecimal</th></tr></thead><thead></thead><tbody><tr><td>laranja</td><td>#FF7F00</td></tr><tr><td>ciano</td><td>#00FFFF</td></tr><tr><td>framboesa</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 

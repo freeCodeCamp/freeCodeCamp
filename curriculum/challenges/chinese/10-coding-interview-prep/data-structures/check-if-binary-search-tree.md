@@ -18,7 +18,7 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 
 # --hints--
 
-Your Binary Search Tree should return true when checked with `isBinarySearchTree()`.
+你的二叉搜索树如果使用 `isBinarySearchTree()` 进行检查，应该返回 true。
 
 ```js
 assert(

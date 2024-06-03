@@ -1,11 +1,9 @@
 import helmet from 'helmet';
 
-import { homeLocation } from '../../../../config/env.json';
-
 let trusted = [
   "'self'",
   'https://search.freecodecamp.org',
-  homeLocation,
+  process.env.HOME_LOCATION,
   'https://' + process.env.AUTH0_DOMAIN
 ];
 

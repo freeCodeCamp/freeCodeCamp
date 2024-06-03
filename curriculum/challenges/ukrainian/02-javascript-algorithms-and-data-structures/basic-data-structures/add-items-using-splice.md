@@ -53,19 +53,19 @@ assert.deepEqual(
 Функція `htmlColorNames` повинна використовувати метод `splice()`
 
 ```js
-assert(/.splice/.test(code));
+assert(/.splice/.test(__helpers.removeJSComments(code)));
 ```
 
 Не використовуйте `shift()` або `unshift()`.
 
 ```js
-assert(!/shift|unshift/.test(code));
+assert(!/shift|unshift/.test(__helpers.removeJSComments(code)));
 ```
 
 Не використовуйте дужкову нотацію масиву.
 
 ```js
-assert(!/\[\d\]\s*=/.test(code));
+assert(!/\[\d\]\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

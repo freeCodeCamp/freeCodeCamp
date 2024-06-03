@@ -8,7 +8,7 @@ dashedName: understand-bcrypt-hashes
 
 # --description--
 
-Para os próximos desafios, você estará trabalhando com um novo projeto inicial diferente do anterior. Você pode encontrar o novo projeto inicial em <a href="https://replit.com/github/freeCodeCamp/boilerplate-bcrypt" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou cloná-lo no <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Para os próximos desafios, você estará trabalhando com um novo projeto inicial diferente do anterior. Você pode encontrar o novo projeto inicial no <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a> ou cloná-lo do <a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Os hashes do BCrypt são muito seguros. Um hash é basicamente uma impressão digital do dado original, sempre exclusivo. Isso é realizado alimentando os dados originais em um algoritmo e retornando um resultado de comprimento fixo. Para complicar ainda mais esse processo e torná-lo mais seguro, você também pode usar *salt* seu hash. O salting do seu hash envolve a adição de dados aleatórios aos dados originais antes do processo de hashing, o que torna ainda mais difícil quebrar o hash.
 

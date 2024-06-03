@@ -10,7 +10,7 @@ dashedName: manage-a-book-trading-club
 
 **Objective:** Build an app that is functionally similar to this: <a href="https://manage-a-book-trading-club.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://manage-a-book-trading-club.freecodecamp.rocks/</a>.
 
-Fulfill the below user stories and get all of the tests to pass. Utiliza las librerías o APIs que necesites. Dale su propio estilo personal.
+Completa las historias de los usuarios que están aquí abajo y haz que pasen todas las pruebas. Utiliza las librerías o APIs que necesites. Dale su propio estilo personal.
 
 **User Story:** I can view all books posted by every user.
 
@@ -22,7 +22,7 @@ Fulfill the below user stories and get all of the tests to pass. Utiliza las lib
 
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
 
-You can get feedback on your project by sharing it on the <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
+Puedes obtener opiniones de tu proyecto compartiéndolo en la <a href="https://forum.freecodecamp.org/c/project-feedback/409" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --solutions--
 

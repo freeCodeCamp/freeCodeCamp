@@ -10,7 +10,7 @@ dashedName: remove-items-using-splice
 
 Ok, so we've learned how to remove elements from the beginning and end of arrays using `shift()` and `pop()`, but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where `splice()` comes in. `splice()` allows us to do just that: **remove any number of consecutive elements** from anywhere in an array.
 
-`splice()` can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of `splice()` are integers which represent indexes, or positions, of items in the array that `splice()` is being called upon. And remember, arrays are *zero-indexed*, so to indicate the first element of an array, we would use `0`. `splice()`'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. For example:
+`splice()` can take up to 3 parameters, but for now, we'll focus on just the first 2. The first two parameters of `splice()` are integers which represent indexes, or positions, of items in the array that `splice()` is being called upon. And remember, arrays are *zero-indexed*, so to indicate the first element of an array, we would use `0`. `splice()`'s first parameter represents the index on the array from which to begin removing elements, while the second parameter indicates the number of elements to delete. Kwa mfano:
 
 ```js
 let array = ['today', 'was', 'not', 'so', 'great'];
@@ -40,7 +40,7 @@ You should not change the original line of `const arr = [2, 4, 5, 1, 7, 5, 2, 1]
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/constarr=\[2,4,5,1,7,5,2,1\];?/)
 );
 ```
 
@@ -56,14 +56,14 @@ assert.strictEqual(
 Your code should utilize the `splice()` method on `arr`.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(/));
 ```
 
 The splice should only remove elements from `arr` and not add any additional elements to `arr`.
 
 ```js
 assert(
-  !__helpers.removeWhiteSpace(code).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
+  !__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/arr\.splice\(\d+,\d+,\d+.*\)/g)
 );
 ```
 

@@ -23,7 +23,7 @@ dashedName: use-the-align-items-property-in-the-tweet-embed
 assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
-Елемент `.follow-btn` повинен мати налаштовану властивість `align-items` до значення `center`.
+Елемент `.follow-btn` повинен мати властивість `align-items` зі значенням `center`.
 
 ```js
 assert($('.follow-btn').css('align-items') == 'center');
@@ -95,7 +95,7 @@ assert($('.follow-btn').css('align-items') == 'center');
   }
 </style>
 <header>
-  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -190,7 +190,7 @@ assert($('.follow-btn').css('align-items') == 'center');
   }
 </style>
 <header>
-  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>

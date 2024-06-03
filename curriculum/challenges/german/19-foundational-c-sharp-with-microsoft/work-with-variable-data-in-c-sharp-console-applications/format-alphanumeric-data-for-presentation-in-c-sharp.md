@@ -1,16 +1,20 @@
 ---
 id: 647e232c8acb466c97ccbefc
-title: 'Format Alphanumeric Data for Presentation in C#'
+title: 'Formatiere alphanumerische Daten für die Präsentation in C#'
 challengeType: 19
 dashedName: format-alphanumeric-data-for-presentation-in-c-sharp
 ---
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/csharp-format-strings/" target="_blank">https://learn.microsoft.com/en-us/training/modules/csharp-format-strings/</a> and complete all the tasks for the "Format Alphanumeric Data for Presentation in C#" module. This is required to earn the "Work with Variable Data in C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/csharp-format-strings/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/csharp-format-strings/</a> und löse alle Aufgaben für das Modul "Alphanumerische Daten für die Präsentation in C# formatieren". This is **required** to earn the "Work with Variable Data in C# Console Applications" trophy on Microsoft Learn, and qualify for the certification exam.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
+
+# --assignment--
+
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/csharp-format-strings/" target="_blank" rel="noreferrer">Alphanumerische Daten für die Präsentation in C# formatieren</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 

@@ -13,7 +13,7 @@ dashedName: golf-code
 
 Вашій функції буде передано аргументи `par` та `strokes`. Поверніть правильний рядок відповідно до цієї таблиці, в якій перелічено удари за пріоритетом зверху (найвищий) донизу (найнижчий):
 
-<table class='table table-striped'><thead><tr><th>Удари</th><th>Повернений рядок</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
+<table><thead><tr><th>Удари</th><th>Повернений рядок</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
 `par` та `strokes` завжди будуть додатними числами. Ми додали масив усіх імен для вашої зручності.
 

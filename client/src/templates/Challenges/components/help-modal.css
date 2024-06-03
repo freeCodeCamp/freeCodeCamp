@@ -7,8 +7,18 @@
   padding-bottom: 10px;
 }
 
-@media screen and (max-width: 767px) {
-  .help-modal .btn-lg {
-    font-size: 16px;
-  }
+.help-form-legend {
+  color: var(--secondary-color);
+  border: 0;
+  font-size: 18px;
+}
+
+.checkbox-container {
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+
+.help-text-warning {
+  text-align: left;
 }

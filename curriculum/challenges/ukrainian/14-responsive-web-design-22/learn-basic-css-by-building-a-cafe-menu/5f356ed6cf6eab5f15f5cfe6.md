@@ -9,32 +9,36 @@ dashedName: step-20
 
 Переважно елемент `div` використовують для дизайну розкладки, на відміну від вже використаних вами елементів. Додайте елемент `div` всередині елемента `body`, а потім перемістіть всі інші елементи всередину нового `div`.
 
+Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
+
 # --hints--
 
-Ви повинні мати початковий теґ `<div>`.
+Your opening `<div>` tag should have an `id` attribute set to `menu`.
 
 ```js
-assert(code.match(/<div>/i));
+const div = $('div')[0];
+assert(div.id === 'menu');
 ```
 
-Ви повинні мати кінцевий теґ `</div>`.
+You should have a closing `</div>` tag.
 
 ```js
 assert(code.match(/<\/div>/i));
 ```
 
-Ви не повинні змінювати наявний елемент `body`. Переконайтеся, що не видалили кінцевий теґ.
+You should not change your existing `body` element. Make sure you did not delete the closing tag.
 
 ```js
 assert($('body').length === 1);
 ```
 
-Ваш теґ `div` повинен бути вкладеним в `body`.
+Your `div` tag should be nested in the `body`.
 
 ```js
 const div = $('div')[0];
 assert(div.parentElement.tagName === 'BODY');
 ```
+
 
 # --seed--
 

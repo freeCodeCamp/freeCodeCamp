@@ -1,6 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa6
-title: 'Problem 295: Lenticular holes'
+title: '問題295：透鏡孔'
 challengeType: 1
 forumTopicId: 301947
 dashedName: problem-295-lenticular-holes
@@ -11,8 +11,8 @@ dashedName: problem-295-lenticular-holes
 We call the convex area enclosed by two circles a lenticular hole if:
 
 - The centres of both circles are on lattice points.
-- The two circles intersect at two distinct lattice points.
-- The interior of the convex area enclosed by both circles does not contain any lattice points.
+- 兩個圓在兩個不同的晶格點處相交。
+- 被兩個圓包圍的凸區域的內部不包含任何晶格點。
 
 Consider the circles:
 

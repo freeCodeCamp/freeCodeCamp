@@ -7,7 +7,7 @@ dashedName: step-25
 
 # --description--
 
-ユーザーが `Personal Account` または `Business Account` のいずれかを選択できるようにします。
+ユーザーが `Personal` または `Business` のいずれかを選択できるようにします。
 
 そのためには、最初の 2 つの `label` 要素内にそれぞれ 1 つずつ、`type="radio"` を持つ `input` 要素を追加してください。
 
@@ -56,7 +56,6 @@ assert.equal(document.querySelectorAll('fieldset:nth-child(2) input[type="radio"
       </fieldset>
 --fcc-editable-region--
       <fieldset>
-        <label></label>
         <label></label>
         <label></label>
       </fieldset>

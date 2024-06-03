@@ -47,19 +47,19 @@ assert(myStr === 'This is the start. This is the end.');
 应该使用 `+` 运算符来构建 `myStr`。
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
 `myStr` 应该使用 `const` 关键字创建。
 
 ```js
-assert(/const\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 应该将结果分配给 `myStr` 变量。
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -45,16 +45,33 @@ Acesse o objeto `myStorage` e atribua o conteúdo da propriedade `glove box` par
 assert(gloveBoxContents === 'maps');
 ```
 
-O código deve usar notação de ponto e de colchetes para acessar `myStorage`.
+O código deve usar notação de ponto, onde for possível, para acessar `myStorage`.
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert.match(code, /myStorage\.car\.inside/);
 ```
 
 `gloveBoxContents` ainda deve ser declarada com `const`.
 
 ```js
-assert.match(code, /const\s+gloveBoxContents\s*=/)
+assert.match(code, /const\s+gloveBoxContents\s*=/);
+```
+
+Você não deve alterar o objeto `myStorage`.
+
+```js
+const expectedMyStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
 # --seed--

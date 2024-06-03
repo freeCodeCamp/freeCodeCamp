@@ -1,16 +1,6 @@
-import {
-  FormGroup,
-  FormControl,
-  ControlLabel,
-  Grid,
-  Row,
-  Col,
-  Button
-} from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
-import React, { useState } from 'react';
-import type { FormEvent, ChangeEvent } from 'react';
+import React, { useState, type FormEvent, type ChangeEvent } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -19,6 +9,15 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
+import {
+  Container,
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  Col,
+  Row,
+  Button
+} from '@freecodecamp/ui';
 
 import { Spacer } from '../components/helpers';
 import './update-email.css';
@@ -50,12 +49,12 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
     updateMyEmail(emailValue);
   }
 
-  function onChange(event: ChangeEvent) {
-    const change = (event.target as HTMLInputElement).value;
-    if (!isString(change)) {
+  function onChange(event: ChangeEvent<HTMLInputElement>) {
+    const newEmailValue = event.target.value;
+    if (!isString(newEmailValue)) {
       return null;
     }
-    setEmailValue(change);
+    setEmailValue(newEmailValue);
     return null;
   }
 
@@ -71,38 +70,40 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
       <Helmet>
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         <Spacer size='medium' />
-        <h2 className='text-center'>{t('misc.update-email-2')}</h2>
+        <h2
+          className='text-center'
+          data-playwright-test-label='update-email-heading'
+        >
+          {t('misc.update-email-2')}
+        </h2>
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
-              <form onSubmit={handleSubmit}>
+              <form
+                onSubmit={handleSubmit}
+                data-playwright-test-label='update-email-form'
+              >
                 <FormGroup
-                  controlId='emailInput'
+                  className='update-email-field'
                   validationState={getEmailValidationState()}
                 >
-                  <Col
-                    className='email-label'
-                    // TODO
-                    componentClass={ControlLabel as unknown}
-                    sm={2}
-                  >
+                  <ControlLabel htmlFor='emailInput'>
                     {t('misc.email')}
-                  </Col>
-                  <Col sm={10}>
-                    <FormControl
-                      onChange={onChange}
-                      placeholder='camperbot@example.com'
-                      required={true}
-                      type='email'
-                    />
-                  </Col>
+                  </ControlLabel>
+                  <FormControl
+                    id='emailInput'
+                    onChange={onChange}
+                    placeholder='camperbot@example.com'
+                    required={true}
+                    type='email'
+                  />
                 </FormGroup>
                 <Button
                   block={true}
-                  bsSize='lg'
-                  bsStyle='primary'
+                  size='large'
+                  variant='primary'
                   disabled={getEmailValidationState() !== 'success'}
                   type='submit'
                 >
@@ -117,7 +118,7 @@ function UpdateEmail({ isNewEmail, t, updateMyEmail }: UpdateEmailProps) {
             </Row>
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </>
   );
 }

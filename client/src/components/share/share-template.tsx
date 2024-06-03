@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ShareRedirectProps } from './types';
 
@@ -17,7 +17,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
       rel='noreferrer'
     >
       <FontAwesomeIcon
-        icon={faTwitter}
+        icon={faXTwitter}
         size='1x'
         aria-label='twitterIcon'
         aria-hidden='true'

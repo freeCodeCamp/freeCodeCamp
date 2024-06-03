@@ -53,7 +53,7 @@ assert(
 Du solltest die Werte `dog`, `ran`, `big` oder `quickly` nicht direkt verwenden, um `wordBlanks` zu erstellen.
 
 ```js
-const newCode = removeAssignments(code);
+const newCode = removeAssignments(__helpers.removeJSComments(code));
 assert(
   !/dog/.test(newCode) &&
     !/ran/.test(newCode) &&
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
+`wordBlanks` sollte alle Wörter enthalten, die den Variablen `myNoun`, `myVerb`, `myAdjective` und `myAdverb` zugeordnet sind, getrennt durch Nicht-Wort-Zeichen (und zusätzliche Wörter deiner Wahl).
 
 ```js
 assert(

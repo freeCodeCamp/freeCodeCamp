@@ -1,6 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed3
-title: 'Problem 84: Monopoly odds'
+title: '问题 84：垄断赔率'
 challengeType: 1
 forumTopicId: 302198
 dashedName: problem-84-monopoly-odds
@@ -172,97 +172,145 @@ monopolyOdds(8);
 # --solutions--
 
 ```js
-function monopolyOdds(n) {
-  function chanceCard(position, chanceCardPosition) {
-    chanceCardPosition = (chanceCardPosition + 1) % 16;
-    if (chanceCardPosition < 6) {
-      position = chanceCardsMoves[chanceCardPosition];
-    } else if (chanceCardPosition === 6 || chanceCardPosition === 7) {
-      position = nextMovesFromR[position];
-    } else if (chanceCardPosition === 8) {
-      position = nextMovesFromU[position];
-    } else if (chanceCardPosition === 9) {
-      position -= 3;
+const GO = 0;
+const JAIL = 10;
+const GO_TO_JAIL = 30;
+
+const C1 = 11;
+const E3 = 24;
+const H2 = 39;
+
+const R1 = 5;
+const R2 = 15;
+const R3 = 25;
+
+const U1 = 12;
+const U2 = 28;
+
+const SPECIAL_CARDS = 16;
+const GAME_SQUARES = 40;
+
+const CC1 = 2;
+const CC2 = 17;
+const CC3 = 33;
+const CHESTS = [CC1, CC2, CC3];
+const chestCardsMoves = [GO, JAIL];
+
+const CH1 = 7;
+const CH2 = 22;
+const CH3 = 36;
+const CHANCES = [CH1, CH2, CH3];
+const chanceCardsMoves = [GO, JAIL, C1, E3, H2, R1];
+const chanceToRailroad = { [CH1]: R2, [CH2]: R3, [CH3]: R1 };
+const chanceToUtility = { [CH1]: U1, [CH2]: U2, [CH3]: U1 };
+
+function multiplyMatrix(matrix1, matrix2) {
+  const multiplied = [];
+
+  for (let row = 0; row < matrix1.length; row++) {
+    const newRow = [];
+    for (let col = 0; col < matrix1[row].length; col++) {
+      let newCell = 0;
+      for (let i = 0; i < matrix1[row].length; i++) {
+        const value1 = matrix1[row][i];
+        const value2 = matrix2[i][col];
+        newCell += value1 * value2;
+      }
+      newRow.push(newCell);
     }
-    return [position, chanceCardPosition];
+    multiplied.push(newRow);
   }
+  return multiplied;
+}
 
-  function chestCard(position, chestPosition) {
-    chestPosition = (chestPosition + 1) % 16;
-    if (chestPosition < 2) {
-      position = chestCardsMoves[chestPosition];
+function normalizeRow(row) {
+  const sum = row.reduce((total, value) => total + value, 0);
+  if (sum > 0) {
+    for (let j = 0; j < row.length; j++) {
+      const value = row[j];
+      row[j] = value / sum;
     }
-    return [position, chestPosition];
   }
+}
 
-  function isChest(position) {
-    return position === 2 || position === 17 || position === 33;
-  }
+function sortByProbability(board) {
+  return board
+    .map((probability, squareNo) => [squareNo, probability])
+    .sort((a, b) => a[1] - b[1])
+}
 
-  function isChance(position) {
-    return position === 7 || position === 22 || position === 36;
-  }
+function getTopThree(board) {
+  return sortByProbability(board)
+    .slice(-3)
+    .reverse()
+    .map(([squareNo, _]) => squareNo.toString().padStart(2, '0')
+    )
+    .join('');
+}
 
-  function isJail(position) {
-    return position === 30;
-  }
+function didConverge(matrix1, matrix2, precision) {
+  return matrix1.every((row, rowNo) => row.every((value1, colNo) => Math.abs(value1 - matrix2[rowNo][colNo]) <= precision))
+}
 
-  function roll(dice) {
-    return Math.floor(Math.random() * dice) + 1;
-  }
+function monopolyOdds(diceSides) {
+  // Based on https://github.com/ByteThisCoding/project-euler/blob/master/problems/0084/0084.ts
 
-  function getTopThree(board) {
-    return sortByVisits(board)
-      .slice(0, 3)
-      .map(elem => elem[0].toString().padStart(2, '0'))
-      .join('');
-  }
-
-  function sortByVisits(board) {
-    return board
-      .map((element, index) => [index, element])
-      .sort((a, b) => a[1] - b[1])
-      .reverse();
-  }
-
-  const rounds = 2000000;
-  const chestCardsMoves = [0, 10];
-  const chanceCardsMoves = [0, 10, 11, 24, 39, 5];
-  const nextMovesFromR = { 7: 15, 22: 25, 36: 5 };
-  const nextMovesFromU = { 7: 12, 36: 12, 22: 28 };
-
-  const board = new Array(40).fill(0);
-  let doubleCount = 0;
-  let curPosition = 0;
-  let curChestCard = 0;
-  let curChanceCard = 0;
-
-  for (let i = 0; i < rounds; i++) {
-    const dice1 = roll(n);
-    const dice2 = roll(n);
-
-    if (dice1 === dice2) {
-      doubleCount++;
-    } else {
-      doubleCount = 0;
+  const timesRolled = new Array(diceSides * 2 + 1).fill(0);
+  for (let dice1 = 1; dice1 <= diceSides; dice1++) {
+    for (let dice2 = 1; dice2 <= diceSides; dice2++) {
+      timesRolled[dice1 + dice2]++;
     }
+  }
 
-    if (doubleCount > 2) {
-      curPosition = 10;
-      doubleCount = 0;
-    } else {
-      curPosition = (curPosition + dice1 + dice2) % 40;
+  // Transitions matrix contain probabilities of reaching each square (row values)
+  // from each starting square (row no.).
+  let transitions = [];
+  for (let startSquare = 0; startSquare < GAME_SQUARES; startSquare++) {
+    const row = new Array(GAME_SQUARES).fill(0);
+    for (let rollResult = 2; rollResult <= diceSides * 2; rollResult++) {
+      const rollChance = timesRolled[rollResult]
+      const position = (startSquare + rollResult) % GAME_SQUARES;
 
-      if (isChance(curPosition)) {
-        [curPosition, curChanceCard] = chanceCard(curPosition, curChanceCard);
-      } else if (isChest(curPosition)) {
-        [curPosition, curChestCard] = chestCard(curPosition, curChestCard);
-      } else if (isJail(curPosition)) {
-        curPosition = 10;
+      if (CHANCES.includes(position)) {
+        // Chance cards ordering movement.
+        for (let i = 0; i < chanceCardsMoves.length; i++) {
+          const nextSquare = chanceCardsMoves[i];
+          row[nextSquare] += rollChance / SPECIAL_CARDS;
+        }
+        row[chanceToRailroad[position]] += 2 * rollChance / SPECIAL_CARDS;
+        row[chanceToUtility[position]] += rollChance / SPECIAL_CARDS;
+        row[position - 3] += rollChance / SPECIAL_CARDS;
+
+        // Rest non-moving Chance cards.
+        row[position] += (SPECIAL_CARDS - chanceCardsMoves.length) * rollChance / SPECIAL_CARDS;
+      } else if (CHESTS.includes(position)) {
+        // Community Chest cards ordering movement.
+        for (let i = 0; i < chestCardsMoves.length; i++) {
+          const nextSquare = chestCardsMoves[i];
+          row[nextSquare] += rollChance / SPECIAL_CARDS;
+        }
+        // Rest non-moving Community Chest cards.
+        row[position] += (SPECIAL_CARDS - chestCardsMoves.length) * rollChance / SPECIAL_CARDS
+      } else if (position === GO_TO_JAIL) {
+        row[JAIL] += rollChance;
+      } else {
+        row[position] += rollChance;
       }
     }
-    board[curPosition]++;
+    normalizeRow(row)
+    transitions.push(row);
   }
-  return getTopThree(board);
+
+  const precision = 0.000001;
+  for (let i = 0; i < GAME_SQUARES; i++) {
+    const next = multiplyMatrix(transitions, transitions);
+    if (didConverge(transitions, next, precision)) {
+      break;
+    }
+    transitions = next;
+  }
+
+  // All rows converge to the same values.
+  return getTopThree(transitions[0]);
 }
 ```

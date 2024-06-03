@@ -42,6 +42,7 @@ type MultifileEditorProps = Pick<
 > & {
   visibleEditors: VisibleEditors;
 };
+
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
@@ -53,7 +54,7 @@ const mapStateToProps = createSelector(
     canFocus: boolean,
     output: string[],
     open,
-    { theme = Themes.Default }: { theme: Themes }
+    { theme }: { theme: Themes }
   ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
@@ -87,7 +88,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   const targetEditor = getTargetEditor(challengeFiles);
 
   // Only one editor should be focused and that should happen once, after it has
-  // been mounted. This ref allows the editors to co-ordinate, without having to
+  // been mounted. This ref allows the editors to coordinate, without having to
   // resort to redux.
   const canFocusOnMountRef = useRef(true);
 
@@ -126,6 +127,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
               return (
                 <ReflexElement
                   data-cy={`editor-container-${key}`}
+                  data-playwright-test-label={`editor-container-${key}`}
                   {...reflexProps}
                   {...resizeProps}
                   key={key}

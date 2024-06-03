@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash';
 
-import { jwtSecret as _jwtSecret } from '../../../../config/secrets';
+import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
 import {
@@ -22,7 +22,6 @@ const signinRE = /^\/signin/;
 const statusRE = /^\/status\/ping$/;
 const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
-const updateHooksRE = /^\/hooks\/update-paypal$/;
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
 const submitCoderoadChallengeRE = /^\/coderoad-challenge-completed$/;
@@ -40,7 +39,6 @@ const _pathsAllowedREs = [
   statusRE,
   unsubscribedRE,
   unsubscribeRE,
-  updateHooksRE,
   donateRE,
   submitCoderoadChallengeRE,
   mobileLoginRE

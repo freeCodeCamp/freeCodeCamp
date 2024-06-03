@@ -75,7 +75,7 @@ assert(!myRegex.test('EleanorRoosevelt'));
 Dovresti usare `.test()` per testare l'espressione regolare.
 
 ```js
-assert(code.match(/myRegex.test\(\s*myString\s*\)/));
+assert(__helpers.removeJSComments(code).match(/myRegex.test\(\s*myString\s*\)/));
 ```
 
 Il tuo risultato dovrebbe restituire `true`.

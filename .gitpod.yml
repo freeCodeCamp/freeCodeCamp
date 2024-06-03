@@ -27,7 +27,7 @@ tasks:
       export HOME_LOCATION=$(gp url 8000)
       export API_LOCATION=$(gp url 3000)
       export CYPRESS_BASE_URL=$(gp url 8000)
-      export REACT_APP_CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
+      export CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
       export CHALLENGE_EDITOR_CLIENT_LOCATION=$(gp url 3300)
       ' >> ~/.bashrc;
       exit;
@@ -46,10 +46,9 @@ tasks:
       cp sample.env .env &&
       pnpm install &&
       gp sync-done pnpm-install &&
+      pnpm run build:curriculum &&
       gp ports await 27017
     command: >
-      pnpm run create:config &&
-      pnpm run build:curriculum &&
       pnpm run seed &&
       mongosh --eval "db.fsyncLock(); db.fsyncUnlock()" &&
       gp ports await 27017 &&
@@ -60,32 +59,11 @@ tasks:
     init: >
       cd ./client &&
       gp sync-await pnpm-install &&
-      pnpm run predevelop &&
       cd ..
     command: >
       gp ports await 3000 &&
-      cd ./client &&
-      pnpm run develop -- -H '0.0.0.0'
+      pnpm run develop:client -- -H '0.0.0.0'
     openMode: split-right
-
-github:
-  prebuilds:
-    # enable for the master/default branch (defaults to true)
-    master: true
-    # enable for all branches in this repo (defaults to false)
-    branches: true
-    # enable for pull requests coming from this repo (defaults to true)
-    pullRequests: true
-    # enable for pull requests coming from forks (defaults to false)
-    pullRequestsFromForks: true
-    # add a check to pull requests (defaults to true)
-    addCheck: false
-    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
-    addComment: true
-    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
-    addBadge: false
-    # add a label once the prebuild is ready to pull requests (defaults to false)
-    addLabel: false
 
 vscode:
   extensions:

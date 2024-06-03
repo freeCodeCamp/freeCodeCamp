@@ -1,6 +1,6 @@
 name: New Feature - Request a new feature for our Platforms
 description: Suggest an idea for freeCodeCamp.org's /learn, /news, Community Forum, Code Radio, or other platforms.
-labels: ['type: feature request']
+labels: ['type: feature request', 'status: waiting triage']
 body:
   - type: textarea
     attributes:

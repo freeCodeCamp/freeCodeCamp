@@ -7,10 +7,14 @@ dashedName: review-the-principles-of-code-debugging-and-exception-handling
 
 # --description--
 
-This challenge will be partially completed on Microsoft's learn platform. Follow these instructions to complete the challenge:
+Diese Aufgabe wird teilweise auf der Microsoft Learn-Plattform gelöst. Folge diesen Anweisungen, um die Aufgabe zu lösen:
 
-1. Go to <a href="https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank">https://learn.microsoft.com/en-us/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> and complete all the tasks for the "Review the Principles of Code Debugging and Exception Handling" module. This is required to earn the "Debug C# Console Applications" trophy.
-1. When you are finished, come back and correctly answer the question below.
+1. Gehe auf <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/</a> und löse alle Aufgaben für das Modul "Überprüfung der Grundsätze der Code-Fehlersuche und der Behandlung von Ausnahmen". Dies ist **erforderlich**, um die "Debuggen von C#-Konsolenanwendungen"-Trophäe auf Microsoft Learn zu erwerben und sich für die Zertifizierungsprüfung zu qualifizieren.
+1. Wenn du damit fertig bist, komme zurück und beantworte die folgende Frage richtig.
+
+# --assignment--
+
+Schließe das Modul <a href="https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Überprüfung der Grundsätze der Code-Fehlersuche und der Behandlung von Ausnahmen</a> auf Microsoft Learn ab. Beantworte dann die Frage unten.
 
 # --question--
 

@@ -1,6 +1,6 @@
 ---
 id: 5900f4f21000cf542c510004
-title: 'Problem 389: Platonic Dice'
+title: 'Завдання 389: платонічний кубик'
 challengeType: 1
 forumTopicId: 302053
 dashedName: problem-389-platonic-dice
@@ -8,17 +8,17 @@ dashedName: problem-389-platonic-dice
 
 # --description--
 
-An unbiased single 4-sided die is thrown and its value, $T$, is noted.
+Спочатку кидають симетричний 4-гранний кубик та записують його значення $T$.
 
-$T$ unbiased 6-sided dice are thrown and their scores are added together. The sum, $C$, is noted.
+Потім кидають $T$ симетричних 6-гранних кубиків та додають всі значення. Записують їх суму $C$.
 
-$C$ unbiased 8-sided dice are thrown and their scores are added together. The sum, $O$, is noted.
+Потім кидають $C$ симетричних 8-гранних кубиків та додають всі значення. Записують їх суму $O$.
 
-$O$ unbiased 12-sided dice are thrown and their scores are added together. The sum, $D$, is noted.
+Потім кидають $O$ симетричних 12-гранних кубиків та додають всі значення. Записують їх суму $D$.
 
-$D$ unbiased 20-sided dice are thrown and their scores are added together. The sum, $I$, is noted.
+Потім кидають $D$ симетричних 20-гранних кубиків та додають всі значення. Записують їх суму $I$.
 
-Find the variance of $I$, and give your answer rounded to 4 decimal places.
+Знайдіть дисперсію $I$ та надайте відповідь, заокруглену до чотирьох знаків після коми.
 
 # --hints--
 

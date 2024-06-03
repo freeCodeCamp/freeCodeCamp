@@ -15,7 +15,7 @@ dashedName: use-rgb-to-mix-colors
 
 `style` 要素の中の 16 進数カラーコードを正しい RGB 値で置き換えてください。
 
-<table class='table table-striped'><tbody><tr><th>色</th><th>RGB</th></tr><tr><td>青</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>赤</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>オーキッド</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>シエナ</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
+<table><tbody><tr><th>色</th><th>RGB</th></tr><tr><td>青</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>赤</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>オーキッド</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>シエナ</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
 # --hints--
 

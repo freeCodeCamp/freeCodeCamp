@@ -8,13 +8,13 @@ dashedName: test-if-a-value-is-a-string
 
 # --description--
 
-Lembrando que este projeto está sendo construído a partir do <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, ou pode ser clonado no <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Lembrete, esse projeto está sendo construido conforme o seguinte projeto inicial em <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isString` ou `isNotString` afirma que o valor atual é uma string.
 
 # --instructions--
 
-Em `tests/1_unit-tests.js`, no teste de número `#13` no grupo de testes `Strings`, modifique cada `assert` para `assert.isString` ou para `assert.isNotString`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
+Em `tests/1_unit-tests.js`, no teste de número `#13`, no grupo de testes `Strings`, modifique cada `assert` para `assert.isString` ou para `assert.isNotString`, de maneira que cada teste passe (seja `true`). Não altere os argumentos passados às afirmações.
 
 # --hints--
 

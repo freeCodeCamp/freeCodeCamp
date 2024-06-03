@@ -11,18 +11,12 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 العمل على هذه التحديات سوف ينطوي على كتابة كودك باستخدام إحدى الطرق التالية:
 
 - انسخ <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow"> هذا المستودع من GitHub</a> واكمل مشروعك محلياً.
-- استخدم <a href="https://replit.com/github/freeCodeCamp/boilerplate-npm" target="_blank" rel="noopener noreferrer nofollow">مشروعنا المبدئي على Replit</a> لإكمال هذه التحديات.
+- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges.
 - استخدم أي منشئ موقع لإكمال المشروع. تحقق انك أضفت جميع الملفات من مستودعنا في GitHub في مشروعك.
 
-إذا استخدمت Replit، اتبع هذه الخطوات لإعداد المشروع:
+إن ملف `package.json` مركز أي مشروع Node.js أو حزمة npm. It stores information about your project. ويتكون من كائن JSON واحد حيث يتم تخزين المعلومات في أزواج key-value. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
 
--   ابدأ باستيراد (import) المشروع إلى Replit.
--   بعد ذلك، سترى نافذة `.replit`.
--   اختار `Use run command` وانقر على زر `Done`.
-
-عند الانتهاء، تأكد من استضافة ديمو لمشروعك في مكان عام. ثم أرسل عنوانه (URL) في خانة "رابط الحل".
-
-إن ملف `package.json` مركز أي مشروع Node.js أو حزمة npm. It stores information about your project, similar to how the `head` section of an HTML document describes the content of a webpage. ويتكون من كائن JSON واحد حيث يتم تخزين المعلومات في أزواج key-value. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+You can create the `package.json` file from the terminal using the `npm init` command. This will run a guided setup. Using `npm init` with the `-y` flag will generate the file without having it ask any questions, `npm init -y`.
 
 If you look at the file tree of your project, you will find the `package.json` file on the top level of the tree. هذا هو الملف الذي سوف تحسنه في التحديات القادمة.
 
@@ -37,6 +31,8 @@ If you look at the file tree of your project, you will find the `package.json` f
 Add your name as the `author` of the project in the `package.json` file.
 
 **ملاحظة:** تذكر أنك تكتب JSON، لذلك يجب أن تستخدم جميع أسماء الخانات علامات اقتباس مزدوجة (") وأن تكون مفصولة بفاصلة (,).
+
+If you are using Gitpod, make sure the app is running and the preview window is open. Copy the preview window's URL and paste it into the Solution Link input below.
 
 # --hints--
 

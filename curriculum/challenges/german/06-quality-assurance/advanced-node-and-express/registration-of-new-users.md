@@ -18,7 +18,7 @@ The logic of the registration route should be as follows:
 
 Die Logik von Schritt 1 sollte wie folgt lauten:
 
-1. Query database with `findOne`
+1. Frage die Datenbank mit `findOne` ab
 2. Wenn ein Fehler auftritt, rufe `next` mit dem Fehler auf
 3. If a user is returned, redirect back to home
 4. Wird der Nutzer nicht gefunden und tritt kein Fehler auf, so füge den Nutzernamen sowie das Passwort der Datenbank mithilfe von `insertOne` hinzu. Tritt auch hier kein Fehler auf, so rufe `next` auf, um zu Schritt 2 überzugehen – der Authentifizierung des neuen Nutzers. Die Logik hierfür hast du bereits in deiner `POST /login`-Route geschrieben.
@@ -177,7 +177,7 @@ Logout sollte funktionieren.
   );
 ```
 
-Profile should no longer work after logout.
+Das Profil sollte nach dem Logout nicht mehr funktionieren.
 
 ```js
 (getUserInput) =>

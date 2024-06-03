@@ -1,6 +1,6 @@
 ---
 id: 5900f4ea1000cf542c50fffc
-title: 'Problem 381: (prime-k) factorial'
+title: 'Problem 381: (Prim-k)-Fakultät'
 challengeType: 1
 forumTopicId: 302045
 dashedName: problem-381-prime-k-factorial

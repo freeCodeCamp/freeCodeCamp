@@ -1,6 +1,6 @@
 ---
 id: 5900f4831000cf542c50ff95
-title: 'Problem 278: Linear Combinations of Semiprimes'
+title: '問題278：半素數的線性組合'
 challengeType: 1
 forumTopicId: 301928
 dashedName: problem-278-linear-combinations-of-semiprimes
@@ -18,7 +18,7 @@ Find $\sum f(pq,pr,qr)$, where $p$, $q$ and $r$ are prime numbers and $p &lt; q 
 
 # --hints--
 
-`linearCombinationOfSemiprimes()` should return `1228215747273908500`.
+`linearCombinationOfSemipriles()` 應該返回 `1228215747273908500`。
 
 ```js
 assert.strictEqual(linearCombinationOfSemiprimes(), 1228215747273908500);

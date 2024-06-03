@@ -10,7 +10,7 @@ dashedName: post-data-with-the-javascript-xmlhttprequest-method
 
 In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.
 
-JavaScript's `XMLHttpRequest` method is also used to post data to a server. Here's an example:
+JavaScript's `XMLHttpRequest` method is also used to post data to a server. Hapa kuna mfano:
 
 ```js
 const xhr = new XMLHttpRequest();

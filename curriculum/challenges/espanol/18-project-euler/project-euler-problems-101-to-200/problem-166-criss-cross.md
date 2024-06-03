@@ -1,6 +1,6 @@
 ---
 id: 5900f4131000cf542c50ff25
-title: 'Problem 166: Criss Cross'
+title: 'Problema 166: Entrecruzado'
 challengeType: 1
 forumTopicId: 301800
 dashedName: problem-166-criss-cross
@@ -10,19 +10,19 @@ dashedName: problem-166-criss-cross
 
 A 4x4 grid is filled with digits $d$, $0 ≤ d ≤ 9$.
 
-It can be seen that in the grid
+Se puede ver que en la cuadrícula
 
 $$\begin{array}{}   6 & 3 & 3 & 0 \\\\
   5 & 0 & 4 & 3 \\\\   0 & 7 & 1 & 4 \\\\
   1 & 2 & 4 & 5 \end{array}$$
 
-the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
+la sumatoria de cada fila y cada columna tiene el valor de 12. Además la suma de cada diagonal es también 12.
 
-In how many ways can you fill a 4x4 grid with the digits $d$, $0 ≤ d ≤ 9$ so that each row, each column, and both diagonals have the same sum?
+¿De cuántas maneras puedes llenar una cuadrícula de 4x4 con los dígitos $d$, $0 ≤ d ≤ 9$ de modo que cada fila, cada columna, y ambas diagonales tengan la misma suma?
 
 # --hints--
 
-`crissCross()` should return `7130034`.
+`crissCross()` debería devolver `7130034`.
 
 ```js
 assert.strictEqual(crissCross(), 7130034);

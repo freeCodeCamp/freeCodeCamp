@@ -5,7 +5,6 @@
  *
  */
 
-import badwordFilter from 'bad-words';
 import debugFactory from 'debug';
 import dedent from 'dedent';
 import _ from 'lodash';
@@ -15,8 +14,8 @@ import { Observable } from 'rx';
 import uuid from 'uuid/v4';
 import { isEmail } from 'validator';
 
-import { blocklistedUsernames } from '../../../../config/constants';
-import { apiLocation } from '../../../../config/env.json';
+import { isProfane } from 'no-profanity';
+import { blocklistedUsernames } from '../../../../shared/config/constants';
 
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 import {
@@ -202,7 +201,7 @@ export default function initializeUser(User) {
           exists => {
             if (exists) {
               throw wrapHandledError(new Error('user already exists'), {
-                redirectTo: `${apiLocation}/signin`,
+                redirectTo: `${process.env.API_LOCATION}/signin`,
                 message: dedent`
         The ${user.email} email address is already associated with an account.
         Try signing in with it here instead.
@@ -369,11 +368,10 @@ export default function initializeUser(User) {
     }
     log('check if username is available');
     // check to see if username is on blocklist
-    const usernameFilter = new badwordFilter();
+
     if (
       username &&
-      (blocklistedUsernames.includes(username) ||
-        usernameFilter.isProfane(username))
+      (blocklistedUsernames.includes(username) || isProfane(username))
     ) {
       return Promise.resolve(true);
     }
@@ -502,7 +500,7 @@ export default function initializeUser(User) {
         }
         const { id: loginToken, created: emailAuthLinkTTL } = token;
         const loginEmail = getEncodedEmail(newEmail ? newEmail : null);
-        const host = apiLocation;
+        const host = process.env.API_LOCATION;
         const mailOptions = {
           type: 'email',
           to: newEmail ? newEmail : this.email,
@@ -528,15 +526,17 @@ export default function initializeUser(User) {
           Observable.fromPromise(userUpdate)
         );
       })
-      .map(
-        () =>
-          'Check your email and click the link we sent you to confirm' +
-          ' your new email address.'
-      );
+      .map({
+        type: 'info',
+        message: dedent`Check your email and click the link we sent you to confirm your new email address.`
+      });
   }
 
   User.prototype.requestAuthEmail = requestAuthEmail;
 
+  /**
+   * @param {String} requestedEmail
+   */
   function requestUpdateEmail(requestedEmail) {
     const newEmail = ensureLowerCaseString(requestedEmail);
     const currentEmail = ensureLowerCaseString(this.email);
@@ -1037,6 +1037,21 @@ export default function initializeUser(User) {
         return user.partiallyCompletedChallenges;
       });
     };
+
+  User.prototype.getCompletedExams$ = function getCompletedExams$() {
+    if (Array.isArray(this.completedExams) && this.completedExams.length) {
+      return Observable.of(this.completedExams);
+    }
+    const id = this.getId();
+    const filter = {
+      where: { id },
+      fields: { completedExams: true }
+    };
+    return this.constructor.findOne$(filter).map(user => {
+      this.completedExams = user.completedExams;
+      return user.completedExams;
+    });
+  };
 
   User.getMessages = messages => Promise.resolve(messages);
 

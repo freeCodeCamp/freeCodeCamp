@@ -7,21 +7,21 @@ import ToggleButtonSetting from './toggle-button-setting';
 type KeyboardShortcutsProps = {
   keyboardShortcuts: boolean;
   toggleKeyboardShortcuts: (sound: boolean) => void;
+  explain?: string;
 };
 
 export default function KeyboardShortcutsSettings({
   keyboardShortcuts,
-  toggleKeyboardShortcuts
+  toggleKeyboardShortcuts,
+  explain
 }: KeyboardShortcutsProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <form
-      onSubmit={(e: React.FormEvent) => e.preventDefault()}
-      data-testid='fcc-enable-shortcuts-setting'
-    >
+    <>
       <ToggleButtonSetting
         action={t('settings.labels.keyboard-shortcuts')}
+        explain={explain}
         flag={keyboardShortcuts}
         flagName='keyboard-shortcuts'
         offLabel={t('buttons.off')}
@@ -31,7 +31,7 @@ export default function KeyboardShortcutsSettings({
         }}
       />
       <Spacer size='medium'></Spacer>
-    </form>
+    </>
   );
 }
 

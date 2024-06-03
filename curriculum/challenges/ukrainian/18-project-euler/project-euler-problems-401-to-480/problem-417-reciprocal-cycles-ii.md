@@ -1,6 +1,6 @@
 ---
 id: 5900f50d1000cf542c51001f
-title: 'Problem 417: Reciprocal cycles II'
+title: 'Завдання 417: зворотні цикли II'
 challengeType: 1
 forumTopicId: 302086
 dashedName: problem-417-reciprocal-cycles-ii
@@ -8,7 +8,7 @@ dashedName: problem-417-reciprocal-cycles-ii
 
 # --description--
 
-A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
+Аліквотний дріб містить 1 у чисельнику. Десяткове представлення дробів зі знаменниками від 2 до 10:
 
 $$\begin{align}   & \frac{1}{2}  = 0.5 \\\\
   & \frac{1}{3}  = 0.(3) \\\\   & \frac{1}{4}  = 0.25 \\\\
@@ -17,11 +17,11 @@ $$\begin{align}   & \frac{1}{2}  = 0.5 \\\\
   & \frac{1}{9}  = 0.(1) \\\\   & \frac{1}{10} = 0.1 \\\\
 \end{align}$$
 
-Where $0.1(6)$ means $0.166666\ldots$, and has a 1-digit recurring cycle. It can be seen that $\frac{1}{7}$ has a 6-digit recurring cycle.
+Де $0.1(6)$ означає $0.166666\ldots$ та має періодичну послідовність з одної цифри. Можна побачити, що $\frac{1}{7}$ має періодичну послідовність із шести.
 
-Unit fractions whose denominator has no other prime factors than 2 and/or 5 are not considered to have a recurring cycle. We define the length of the recurring cycle of those unit fractions as 0.
+Вважається, що аліквотні дроби, знаменник яких не має інших простих чисел, окрім 2 та/або 5, не можуть мати періодичну послідовність. Довжину періодичної послідовності таких аліквотних дробів визначають як 0.
 
-Let $L(n)$ denote the length of the recurring cycle of $\frac{1}{n}$. Дано, що $\sum L(n)$ за умови $3 ≤ n ≤ 1\\,000\\,000$ дорівнює $55\\,535\\,191\\,115$.
+Нехай $L(n)$ позначає довжину періодичної послідовності $\frac{1}{n}$. Дано, що $\sum L(n)$ за умови $3 ≤ n ≤ 1\\,000\\,000$ дорівнює $55\\,535\\,191\\,115$.
 
 Знайдіть $\sum L(n)$ за умови $3 ≤ n ≤ 100\\,000\\,000$.
 

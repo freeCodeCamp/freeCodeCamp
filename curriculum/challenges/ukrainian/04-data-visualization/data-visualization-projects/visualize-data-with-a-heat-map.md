@@ -8,7 +8,7 @@ dashedName: visualize-data-with-a-heat-map
 
 # --description--
 
-**Мета:** створити застосунок, функціонально схожий до цього: <a href="https://heat-map.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://heat-map.freecodecamp.rocks</a>.
+**Мета:** створити застосунок, функціонально схожий до <a href="https://heat-map.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://heat-map.freecodecamp.rocks</a>.
 
 Виконайте історію користувача та пройдіть тести. Використовуйте необхідні вам бібліотеки або API. Оформте за власним стилем.
 
@@ -44,9 +44,9 @@ dashedName: visualize-data-with-a-heat-map
 
 **Історія користувача №15:** потрібно використати принаймні 4 різних кольори заливки для елементів `rect`.
 
-**Історія користувача №16:** я можу навести курсор на певну ділянку та побачу словесну бульбашку з відповідним `id="tooltip"`, що показує більше інформації про ділянку.
+**Історія користувача №16:** я можу навести курсор на певну ділянку та побачу спливаючу підказку з відповідним `id="tooltip"`, що показує більше інформації про ділянку.
 
-**Історія користувача №17:** словесна бульбашка повинна мати властивість `data-year`, яка відповідає `data-year` наведеної ділянки.
+**Історія користувача №17:** спливаюча підказка повинна мати властивість `data-year`, яка відповідає `data-year` наведеної ділянки.
 
 Ось набір даних, необхідних для виконання цього проєкту: `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json`
 

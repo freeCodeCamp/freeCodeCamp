@@ -18,7 +18,7 @@ dashedName: implementation-of-social-authentication
 
 在 OAuth 验证策略中，我们至少需要提供 *Client ID* 和 *Client Secret*，这样第三方平台就会获悉验证请求的来源，以及这个来源是否有效。 为此，需要去我们使用的第三方验证平台（比如 GitHub）获取这两个字段的值。 注意，我们获取到的这个值是唯一的，仅对我们的当前 app 有效——**因此，千万不要分享给别人**，更不要上传到公共仓库或者直接写在代码里。 通常，我们会把它们放在 `.env` 文件里，并通过 `process.env.GITHUB_CLIENT_ID` 获取。 在这个挑战中，你要使用 GitHub 策略。
 
-按照<a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">这些说明</a>从 GitHub 获取你的 *客户端 ID 和密钥*。 将主页 URL 设置为你的 Replit 主页（**而不是项目代码的 URL**），并将回调 URL 设置为相同的主页 URL，并在末尾添加 `/auth/github/callback`。 将客户端 ID 和你的客户端密码保存到你的项目的 `.env`，作为 `GITHUB_CLIENT_ID` 和 `GITHUB_CLIENT_SECRET`。
+按照<a href="https://www.freecodecamp.org/news/how-to-set-up-a-github-oauth-application/" target="_blank" rel="noopener noreferrer nofollow">这些说明</a>从 GitHub 获取你的 *客户端 ID 和密钥*。 Set the homepage URL to your homepage (**not the project code's URL**), and set the callback URL to the same homepage URL with `/auth/github/callback` appended to the end. 将客户端 ID 和你的客户端密码保存到你的项目的 `.env`，作为 `GITHUB_CLIENT_ID` 和 `GITHUB_CLIENT_SECRET`。
 
 在你的 `routes.js` 文件中，添加 `showSocialAuth: true` 到主页路由，在 `showRegistration: true` 的后面。 现在，创建两个接收 GET 请求的路由：`/auth/github` 和 `/auth/github/callback`。 第一个应该只调用 passport 来验证 `'github'`。 第二个应该调用 passport 来验证 `'github'`，失败后重定向到 `/`，然后如果成功则重定向到 `/profile`（与你的上一个项目类似）。
 

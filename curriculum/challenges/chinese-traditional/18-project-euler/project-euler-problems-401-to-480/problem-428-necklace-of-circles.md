@@ -1,6 +1,6 @@
 ---
 id: 5900f5191000cf542c51002b
-title: 'Problem 428: Necklace of Circles'
+title: '問題 428：圓圈項鍊'
 challengeType: 1
 forumTopicId: 302098
 dashedName: problem-428-necklace-of-circles
@@ -10,30 +10,30 @@ dashedName: problem-428-necklace-of-circles
 
 Let $a$, $b$ and $c$ be positive numbers.
 
-Let $W$, $X$, $Y$, $Z$ be four collinear points where $|WX| = a$, $|XY| = b$, $|YZ| = c$ and $|WZ| = a + b + c$.
+令 $W$, $X$, $Y$, $Z$ 爲在一條直線上的四個點，其中 $|WX| = a$, $|XY| = b$, $|YZ| = c$ 且 $|WZ| = a + b + c$。
 
-Let $C_{\text{in}}$ be the circle having the diameter $XY$.
+令 $C_{\text{in}}$ 是直徑爲 $XY$ 的圓。
 
-Let $C_{\text{out}}$ be the circle having the diameter $WZ$.
+令 $C_{\text{out}}$ 是直徑爲 $WZ$ 的圓。
 
-The triplet ($a$, $b$, $c$) is called a *necklace triplet* if you can place $k ≥ 3$ distinct circles $C_1, C_2, \ldots, C_k$ such that:
+定義三元組（$a$, $b$, $c$），如果可以同時放置 $k ≥ 3$ 個不同的圓 $C_1, C_2, \ldots, C_k$，且這些圓之間滿足以下條件，則這個三元組被稱爲*項鍊三元組*：
 
 - $C_i$ has no common interior points with any $C_j$ for $1 ≤ i$, $j ≤ k$ and $i ≠ j$,
-- $C_i$ is tangent to both $C_{\text{in}}$ and $C_{\text{out}}$ for $1 ≤ i ≤ k$,
-- $C_i$ is tangent to $C_{i + 1}$ for $1 ≤ i &lt; k$, and
-- $C_k$ is tangent to $C_1$.
+- 對於任意的 $1 ≤ i ≤ k$，$C_i$ 同時與 $C_{\text{in}}$ 和 $C_{\text{out}}$ 相切，
+- 對於任意的 $1 ≤ i &lt; k$，$C_i$ 與 $C_{i + 1}$ 相切。
+- $C_k$ 與 $C_1$ 相切。
 
-For example, (5, 5, 5) and (4, 3, 21) are necklace triplets, while it can be shown that (2, 2, 5) is not.
+例如，(5, 5, 5) 與 (4, 3, 21) 是項鍊三元組，而 (2, 2, 5) 不是。
 
-<img class="img-responsive center-block" alt="a visual representation of a necklace triplet" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+<img class="img-responsive center-block" alt="項鍊三元組的視覺表現。" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
 
-Let $T(n)$ be the number of necklace triplets $(a, b, c)$ such that $a$, $b$ and $c$ are positive integers, and $b ≤ n$. For example, $T(1) = 9$, $T(20) = 732$ and $T(3\\,000) = 438\\,106$.
+定義 $T(n)$ 爲項鍊三元組 $(a, b, c)$ 的數量，其中 $a$，$b$ 和 $c$ 爲正整數，且 $b ≤ n$。 例如，$T(1) = 9$，$T(20) = 732$，$T(3\\,000) = 438\\,106$。
 
-Find $T(1\\,000\\,000\\,000)$.
+請計算 $T(1\\,000\\,000\\,000)$。
 
 # --hints--
 
-`necklace(1000000000)` should return `747215561862`.
+`necklace(1000000000)` 應該返回 `747215561862`。
 
 ```js
 assert.strictEqual(necklace(1000000000), 747215561862);

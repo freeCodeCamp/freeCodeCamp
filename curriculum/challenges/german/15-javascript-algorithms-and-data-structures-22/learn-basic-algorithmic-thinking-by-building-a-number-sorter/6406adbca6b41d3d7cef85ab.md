@@ -9,11 +9,11 @@ dashedName: step-5
 
 Zurück in deiner `sortInputArray`-Funktion musst du die Werte aus deinen `select`-Elementen abrufen. Da sie alle die Klasse `values-dropdown` verwenden, kannst du sie alle gleichzeitig abfragen.
 
-Verwende `document.getElementsByClassName()`, um alle Elemente mit der Klasse `values-dropdown` abzurufen. Weise diese einer `inputValues`-Variable zu.
+Use `document.getElementsByClassName()` to get all the elements with this class by passing in the argument `"values-dropdown"`. Assign that to an `inputValues` variable with `const`.
 
 # --hints--
 
-Du solltest `document.getElementsByClassName()` verwenden, um alle Elemente mit der Klasse `values-dropdown` abzurufen.
+You should use `document.getElementsByClassName()` to get all the elements with the class `"values-dropdown"`.
 
 ```js
 assert.match(sortInputArray.toString(), /document\.getElementsByClassName\(\s*('|"|`)values-dropdown\1\s*\)/);
@@ -189,6 +189,7 @@ assert.match(code, /const\s+inputValues\s*=\s*document\.getElementsByClassName\(
   --gray-75: #3b3b4f;
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
+  --blue-50: #198eee;
   --error: #a94442;
   --danger-color: #850000;
   --danger-background: #ffadad;
@@ -216,7 +217,6 @@ main {
 }
 
 h1 {
-  text-align: center;
   margin: 30px auto;
 }
 
@@ -226,7 +226,6 @@ h2 {
 
 form {
   width: 100%;
-  padding: 15px auto;
   text-align: center;
   padding: 15px;
 }
@@ -259,13 +258,12 @@ select {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  min-height: 38px;
+  height: 38px;
   width: 50px;
   text-align: center;
 }
 
 button {
-  outline: none;
   cursor: pointer;
   margin-top: 15px;
   text-decoration: none;
@@ -274,6 +272,11 @@ button {
   padding: 10px 16px;
   font-size: 23px;
   width: 100%;
+}
+
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue-50);
 }
 
 .output-container {

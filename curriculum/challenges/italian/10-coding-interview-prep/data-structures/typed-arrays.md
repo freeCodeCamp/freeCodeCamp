@@ -20,7 +20,7 @@ Tuttavia, nel mondo delle alte prestazioni e dei diversi tipi di elementi, a vol
 
 <dfn>Gli array digitati</dfn> sono la risposta a questo problema. Ora sei in grado di dire quanta memoria vuoi allocare per un dato array. Di seguito una panoramica di base dei diversi tipi di array disponibili e la dimensione in byte per ogni elemento in quell'array.
 
-<table class='table table-striped'><tbody><tr><th>Tipo</th><th>La dimensione di ogni elemento in byte</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
+<table><tbody><tr><th>Tipo</th><th>La dimensione di ogni elemento in byte</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></tbody></table>
 
 Ci sono due modi per creare questi tipi di array. Un modo è di crearli direttamente. Di seguito è riportato come creare un `Int16Array` di lunghezza 3.
 

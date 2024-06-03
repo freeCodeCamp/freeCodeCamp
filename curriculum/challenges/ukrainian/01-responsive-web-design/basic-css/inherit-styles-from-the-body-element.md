@@ -50,13 +50,13 @@ assert(
 );
 ```
 
-Елемент `body` повинен мати властивість `color` встановленою з `green`.
+Елемент `body` повинен мати властивість `color` зі значенням `green`.
 
 ```js
 assert($('body').css('color') === 'rgb(0, 128, 0)');
 ```
 
-Елемент `body` повинен мати властивість `font-family` встановленою з `monospace`.
+Елемент `body` повинен мати властивість `font-family` зі значенням `monospace`.
 
 ```js
 assert(

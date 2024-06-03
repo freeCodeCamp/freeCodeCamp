@@ -1,6 +1,6 @@
 ---
 id: 5900f4f11000cf542c510003
-title: 'Problem 387: Harshad Numbers'
+title: '问题387：Harshad数字'
 challengeType: 1
 forumTopicId: 302051
 dashedName: problem-387-harshad-numbers
@@ -10,13 +10,13 @@ dashedName: problem-387-harshad-numbers
 
 A Harshad or Niven number is a number that is divisible by the sum of its digits.
 
-201 is a Harshad number because it is divisible by 3 (the sum of its digits.)
+201是一个Harshad数，因为它可以被3整数（它的数字之和）。
 
-When we truncate the last digit from 201, we get 20, which is a Harshad number.
+当我们截断201的最后一个数字时，我们得到20，这是一个Harshad数。
 
-When we truncate the last digit from 20, we get 2, which is also a Harshad number.
+你得到的是，强度小，可截断的Harshad素数小于10000的总和是90619。
 
-Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.
+找到小于1014的强可，可截断的Harshad素数的总和。
 
 Also:
 

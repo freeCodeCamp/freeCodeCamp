@@ -1,4 +1,3 @@
-import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, Trans } from 'react-i18next';
@@ -6,10 +5,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
+
 import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
 import { Spacer, Loader, Link } from '../components/helpers';
-import { apiLocation } from '../../../config/env.json';
+import { apiLocation } from '../../config/env.json';
 
 import { acceptTerms } from '../redux/actions';
 import {
@@ -59,32 +60,32 @@ function EmailListOptIn({
   const { t } = useTranslation();
   if (isSignedIn) {
     return (
-      <Row>
-        <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            onClick={() => acceptTerms(true)}
-          >
-            {t('buttons.yes-please')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-        <Col md={4} sm={5} xs={12}>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='big-cta-btn'
-            onClick={() => acceptTerms(false)}
-          >
-            {t('buttons.no-thanks')}
-          </Button>
-          <Spacer size='small' />
-        </Col>
-      </Row>
+      <Container>
+        <Row className='email-list-opt'>
+          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+            <Button
+              block={true}
+              size='large'
+              variant='primary'
+              onClick={() => acceptTerms(true)}
+            >
+              {t('buttons.yes-please')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+          <Col md={4} sm={5} xs={12}>
+            <Button
+              block={true}
+              size='large'
+              variant='primary'
+              onClick={() => acceptTerms(false)}
+            >
+              {t('buttons.no-thanks')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+        </Row>
+      </Container>
     );
   } else {
     return (
@@ -92,9 +93,8 @@ function EmailListOptIn({
         <Spacer size='small' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
-          className='big-cta-btn'
+          size='large'
+          variant='primary'
           href={`${apiLocation}/signin`}
         >
           {t('buttons.sign-up-email-list')}
@@ -129,7 +129,7 @@ function AcceptPrivacyTerms({
       <Helmet>
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid>
+      <Container>
         {isSignedIn && completedChallengeCount < 1 ? (
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -168,7 +168,7 @@ function AcceptPrivacyTerms({
             <Spacer size='medium' />
           </Col>
         </Row>
-      </Grid>
+      </Container>
     </>
   );
 }

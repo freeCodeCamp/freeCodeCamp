@@ -1,6 +1,6 @@
 ---
 id: 5900f3ca1000cf542c50fedc
-title: 'Problem 93: Arithmetic expressions'
+title: '問題 93: 算術式'
 challengeType: 1
 forumTopicId: 302210
 dashedName: problem-93-arithmetic-expressions
@@ -8,9 +8,9 @@ dashedName: problem-93-arithmetic-expressions
 
 # --description--
 
-By using each of the digits from the set, {1, 2, 3, 4}, exactly once, and making use of the four arithmetic operations (+, −, \*, /) and brackets/parentheses, it is possible to form different positive integer targets.
+集合 {1, 2, 3, 4} の数字をそれぞれちょうど 1 回ずつ使用し、また四則演算 (+、 -、\*、/) と括弧を使用して、それぞれ異なる正の整数を作ることができます。
 
-For example,
+例えば次のようになります。
 
 <div style='margin-left: 4em;'>
   8 = (4 * (1 + 3)) / 2<br>
@@ -19,21 +19,21 @@ For example,
   36 = 3 * 4 * (2 + 1)
 </div>
 
-Note that concatenations of the digits, like 12 + 34, are not allowed.
+12 + 34 のように数字を連結することは許可されないので注意してください。
 
-Using the set, {1, 2, 3, 4}, it is possible to obtain thirty-one different target numbers of which 36 is the maximum, and each of the numbers 1 to 28 can be obtained before encountering the first non-expressible number.
+集合 {1, 2, 3, 4} を使用すると、31 個の異なる数が得られ (そのうち最大の数は 36)、表現不能な数に初めて遭遇するまでに 1 から 28 までのそれぞれの数が得られます。
 
-Find the set of four distinct digits, `a` &lt; `b` &lt; `c` &lt; `d`, for which the longest set of consecutive positive integers, 1 to `n`, can be obtained, giving your answer as a string: `abcd`.
+1 から `n` までの連続した正の整数の最長の集合が得られるような、4 つの相異なる数字の集合 `a` &lt; `b` &lt; `c` &lt; `d` を求め、文字列 `abcd` として答えなさい。
 
 # --hints--
 
-`arithmeticExpressions()` should return a number.
+`arithmeticExpressions()` は数値を返す必要があります。
 
 ```js
 assert(typeof arithmeticExpressions() === 'number');
 ```
 
-`arithmeticExpressions()` should return 1258.
+`arithmeticExpressions()` は 1258 を返す必要があります。
 
 ```js
 assert.strictEqual(arithmeticExpressions(), 1258);

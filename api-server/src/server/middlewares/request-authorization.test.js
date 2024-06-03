@@ -1,10 +1,13 @@
+import path from 'path';
 import jwt from 'jsonwebtoken';
+import { config } from 'dotenv';
 
-import { homeLocation } from '../../../../config/env.json';
 import { mockReq as mockRequest, mockRes } from '../boot_tests/challenge.test';
 import createRequestAuthorization, {
   isAllowedPath
 } from './request-authorization';
+
+config({ path: path.resolve(__dirname, '../../../../.env') });
 
 const validJWTSecret = 'this is a super secret string';
 const invalidJWTSecret = 'This is not correct secret';
@@ -27,7 +30,7 @@ const mockGetUserById = id =>
 
 const mockReq = args => {
   const mock = mockRequest(args);
-  mock.header = () => homeLocation;
+  mock.header = () => process.env.HOME_LOCATION;
   return mock;
 };
 
@@ -45,7 +48,6 @@ describe('request-authorization', () => {
     const statusRE = /^\/status\/ping$/;
     const unsubscribedRE = /^\/unsubscribed\//;
     const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
-    const updateHooksRE = /^\/hooks\/update-paypal$/;
 
     const allowedPathsList = [
       authRE,
@@ -58,8 +60,7 @@ describe('request-authorization', () => {
       signinRE,
       statusRE,
       unsubscribedRE,
-      unsubscribeRE,
-      updateHooksRE
+      unsubscribeRE
     ];
 
     it('returns a boolean', () => {
@@ -76,10 +77,8 @@ describe('request-authorization', () => {
         '/ue/WmjInLerysPrcon6fMb/',
         allowedPathsList
       );
-      const resultC = isAllowedPath('/hooks/update-paypal', allowedPathsList);
       expect(resultA).toBe(true);
       expect(resultB).toBe(true);
-      expect(resultC).toBe(true);
     });
 
     it('returns false for a non-white-listed path', () => {

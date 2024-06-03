@@ -8,7 +8,13 @@ dashedName: handle-a-fulfilled-promise-with-then
 
 # --description--
 
-Проміси найкорисніші, якщо у вашому коді відбувається процес, який займає невизначений проміжок часу (тобто асинхронний процес). Наприклад, запит до сервера. Створення запиту до сервера займає певний час, а після його завершення, зазвичай, передбачаються подальші дії з відповіддю сервера. Цього можна досягти за допомогою методу `then`. Метод `then` виконується одразу після того, як проміс успішно підтвердив свій параметр `resolve`. Ось приклад:
+Проміси найкорисніші, якщо у вашому коді відбувається процес, який займає невизначений проміжок часу (тобто асинхронний процес). Наприклад, запит до сервера. Створення запиту до сервера займає певний час, а після його завершення, зазвичай, передбачаються подальші дії з відповіддю сервера. Цього можна досягти за допомогою методу `then`.
+
+```js
+Promise.prototype.then(onFulfilled, onRejected)
+```
+
+Метод `then` планує функції зворотного виклику для остаточного завершення промісу: виконання або відхилення. Один з обробників (`onFulfilled` або `onRejected`) буде виконано, щоб обробити виконання або відхилення поточного промісу. Якщо проміс виконано з використанням `resolve`, то викликається обробник `onFulfilled`.
 
 ```js
 myPromise.then(result => {
@@ -28,7 +34,7 @@ myPromise.then(result => {
 
 ```js
 assert(
-  __helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.then\(/g)
+  __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/(makeServerRequest|\))\.then\(/g)
 );
 ```
 
@@ -44,7 +50,7 @@ assert(resultIsParameter);
 assert(
   resultIsParameter &&
     __helpers
-      .removeWhiteSpace(code)
+      .removeWhiteSpace(__helpers.removeJSComments(code))
       .match(/\.then\(.*?result.*?console.log\(result\).*?\)/)
 );
 ```
@@ -54,7 +60,7 @@ assert(
 ## --after-user-code--
 
 ```js
-const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(code));
+const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)));
 ```
 
 ## --seed-contents--

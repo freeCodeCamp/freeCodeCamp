@@ -41,7 +41,7 @@ ourPets[1].names[0];
 
 # --instructions--
 
-Використовуючи точкову і дужкову нотацію, встановіть змінну `secondTree` на другий елемент в списку `trees` з об’єкта `myPlants`.
+Використовуючи точкову і дужкову нотацію, встановіть змінну `secondTree` на другий елемент в списку `list` з другого об’єкту в масиві `myPlants`.
 
 # --hints--
 
@@ -54,7 +54,7 @@ assert(secondTree === 'pine');
 Щоб отримати доступ до `myPlants`, використайте точкову та дужкову нотацію.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

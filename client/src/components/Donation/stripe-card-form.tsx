@@ -1,24 +1,18 @@
-import { Button } from '@freecodecamp/react-bootstrap';
 import {
   CardNumberElement,
   CardExpiryElement,
   useStripe,
-  useElements,
-  Elements
+  useElements
 } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 import type {
   StripeCardNumberElementChangeEvent,
   StripeCardExpiryElementChangeEvent
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 
-import { PaymentProvider } from '../../../../config/donation-settings';
-import envData from '../../../../config/env.json';
+import { PaymentProvider } from '../../../../shared/config/donation-settings';
 import { Themes } from '../settings/theme';
 import { DonationApprovalData, PostPayment } from './types';
-
-const { stripePublicKey }: { stripePublicKey: string | null } = envData;
 
 interface FormPropTypes {
   onDonationStateChange: (donationState: DonationApprovalData) => void;
@@ -36,13 +30,13 @@ interface Element {
 
 type PaymentInfoValidation = Element[];
 
-const StripeCardForm = ({
+export default function StripeCardForm({
   theme,
   t,
   onDonationStateChange,
   postPayment,
   processing
-}: FormPropTypes): JSX.Element => {
+}: FormPropTypes): JSX.Element {
   const [isSubmissionValid, setSubmissionValidity] = useState(true);
   const [isTokenizing, setTokenizing] = useState(false);
   const [paymentInfoValidation, setPaymentValidity] =
@@ -128,7 +122,6 @@ const StripeCardForm = ({
   ) => {
     if (stripe) {
       return stripe.confirmCardPayment(clientSecret, {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         payment_method: paymentMethod
       });
     }
@@ -142,7 +135,7 @@ const StripeCardForm = ({
     >
       <div
         className={`donation-elements${
-          !isSubmissionValid ? ' failed-submition' : ''
+          !isSubmissionValid ? ' failed-submission' : ''
         }`}
       >
         <CardNumberElement
@@ -159,29 +152,14 @@ const StripeCardForm = ({
       <div className={'form-status'}>
         {!isSubmissionValid && <p>{t('donate.valid-card')}</p>}
       </div>
-      <Button
-        block={true}
-        bsStyle='primary'
+      <button
         className='confirm-donation-btn'
         disabled={!stripe || !elements || isSubmitting}
+        data-cy='donation-confirmation-button'
         type='submit'
       >
         {t('buttons.donate')}
-      </Button>
+      </button>
     </form>
   );
-};
-
-const CardFormWrapper = (props: FormPropTypes): JSX.Element | null => {
-  if (!stripePublicKey) {
-    return null;
-  } else {
-    return (
-      <Elements stripe={loadStripe(stripePublicKey)}>
-        <StripeCardForm {...props} />
-      </Elements>
-    );
-  }
-};
-
-export default CardFormWrapper;
+}

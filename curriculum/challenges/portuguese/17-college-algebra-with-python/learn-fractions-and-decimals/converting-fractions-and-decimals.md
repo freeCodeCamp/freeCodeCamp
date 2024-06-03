@@ -12,11 +12,11 @@ O primeiro vídeo mostrará a você como converter entre frações, números dec
 
 Aqui está o <a href="https://colab.research.google.com/drive/1dgeEEODP7cwm_96_JqbjxxJhVpZcFfGe?usp=sharing#scrollTo=NkMTAVF0BlqE" target="_blank" rel="noopener noreferrer nofollow">notebook do Colaboratory usado no vídeo.</a> Use esse código como um modelo e escreva seu código para converter frações e números decimais.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Adicione o código para converter frações e números decimais ao seu notebook do Colaboratory de álgebra.
+
+# --question--
 
 ## --text--
 

@@ -20,8 +20,6 @@ Crea un archivo `.env` en la raíz del directorio de tu proyecto y almacena la v
 
 Luego, en el manejador `/json` GET route que creaste en el último ejercicio accede a `process.env.MESSAGE_STYLE` y transformar el `message` del objeto de respuesta a mayúsculas si la variable es igual a `uppercase`. El objeto de respuesta debe ser `{"message": "Hello json"}` o `{"message": "HELLO JSON"}`, dependiendo del valor `MESSAGE_STYLE`. Ten en cuenta que debes leer el valor de `process.env.MESSAGE_STYLE` **dentro de** el manejador de rutas, no fuera de él, debido a la forma en que se ejecutan nuestras pruebas.
 
-**Nota:** Si estás usando Replit, no puedes crear un archivo `.env`. En su lugar, utiliza la pestaña integrada <dfn>SECRETS</dfn> para añadir la variable.
-
 Si estás trabajando localmente, necesitarás el paquete `dotenv`. Carga variables de entorno desde tu archivo `.env` en `process.env`. El paquete `dotenv` se a instalado, y se aguardado en tu archivo `package.json` dentro del proyecto. En la parte superior de tu archivo `myApp.js`, agrega `require('dotenv').config()` para cargar las variables de entorno.
 
 # --hints--

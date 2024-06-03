@@ -4,9 +4,9 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
-const { showUpcomingChanges } = require('../config/env.json');
+
 const { curriculum: curriculumLangs } =
-  require('../config/i18n').availableLangs;
+  require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
 /* eslint-disable max-len */
 const {
@@ -14,9 +14,10 @@ const {
 } = require('../tools/challenge-parser/translation-parser');
 /* eslint-enable max-len*/
 
-const { isAuditedCert } = require('../utils/is-audited');
-const { createPoly } = require('../utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared/utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
+const { metaSchemaValidator } = require('./schema/meta-schema');
 
 const access = util.promisify(fs.access);
 
@@ -43,17 +44,13 @@ function createCommentMap(dictionariesDir) {
   );
 
   // get the english dicts
-  const COMMENTS_TO_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments.json'
-  ));
+  const COMMENTS_TO_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments.json')
+  );
 
-  const COMMENTS_TO_NOT_TRANSLATE = require(path.resolve(
-    dictionariesDir,
-    'english',
-    'comments-to-not-translate'
-  ));
+  const COMMENTS_TO_NOT_TRANSLATE = require(
+    path.resolve(dictionariesDir, 'english', 'comments-to-not-translate')
+  );
 
   // map from english comment text to translations
   const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
@@ -137,6 +134,10 @@ const walk = (root, target, options, cb) => {
 };
 
 exports.getChallengesForLang = async function getChallengesForLang(lang) {
+  const invalidLang = !curriculumLangs.includes(lang);
+  if (invalidLang)
+    throw Error(`${lang} is not a accepted language.
+Accepted languages are ${curriculumLangs.join(', ')}`);
   // english determines the shape of the curriculum, all other languages mirror
   // it.
   const root = getChallengesDirForLang('english');
@@ -171,19 +172,16 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
   } else {
     const blockMeta = JSON.parse(fs.readFileSync(metaPath));
 
-    const { isUpcomingChange, helpCategory } = blockMeta;
-
-    if (typeof isUpcomingChange !== 'boolean') {
+    const validateMeta = metaSchemaValidator(blockMeta);
+    if (validateMeta.error) {
       throw Error(
-        `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
+        `${validateMeta.error} in meta.json for block '${blockName}'`
       );
     }
 
-    if (!helpCategory) {
-      throw Error(`meta file at ${metaPath} is missing 'helpCategory'`);
-    }
+    const { isUpcomingChange } = blockMeta;
 
-    if (!isUpcomingChange || showUpcomingChanges) {
+    if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
       // add the block to the superBlock
       const blockInfo = { meta: blockMeta, challenges: [] };
       curriculum[superBlock].blocks[blockName] = blockInfo;
@@ -221,81 +219,31 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   }
   const { meta } = challengeBlock;
   const isCert = path.extname(filePath) === '.yml';
-  const createChallenge = generateChallengeCreator(CHALLENGES_DIR, lang);
+  const englishPath = path.resolve(
+    __dirname,
+    CHALLENGES_DIR,
+    'english',
+    filePath
+  );
+  const i18nPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
+  const createChallenge = generateChallengeCreator(lang, englishPath, i18nPath);
+
+  await assertHasEnglishSource(filePath, lang, englishPath);
   const challenge = isCert
-    ? await createCertification(CHALLENGES_DIR, filePath, lang)
+    ? await parseCert(englishPath)
     : await createChallenge(filePath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(transPath, dict, lang, parse = parseMD) {
-  const translatedChal = await parse(transPath);
-
-  const { challengeType } = translatedChal;
-  // challengeType 11 is for video challenges and 3 is for front-end projects
-  // neither of which have seeds.
-  return challengeType !== 11 && challengeType !== 3
-    ? translateCommentsInChallenge(translatedChal, lang, dict)
-    : translatedChal;
-}
-
-async function createCertification(basePath, filePath) {
-  function getFullPath(pathLang) {
-    return path.resolve(__dirname, basePath, pathLang, filePath);
-  }
-  // TODO: restart using isAudited() once we can determine a) the superBlocks
-  // (plural) a certification belongs to and b) get that info from the parsed
-  // certification, rather than the path. ASSUMING that this is used by the
-  // client.  If not, delete this comment and the lang param.
-  return parseCert(getFullPath('english'));
-}
-
 // This is a slightly weird abstraction, but it lets us define helper functions
 // without passing around a ton of arguments.
-function generateChallengeCreator(basePath, lang) {
-  function getFullPath(pathLang, filePath) {
-    return path.resolve(__dirname, basePath, pathLang, filePath);
-  }
-
-  async function validate(filePath, superBlock) {
-    const invalidLang = !curriculumLangs.includes(lang);
-    if (invalidLang)
-      throw Error(`${lang} is not a accepted language.
-Trying to parse ${filePath}`);
-
-    const missingEnglish =
-      lang !== 'english' && !(await hasEnglishSource(basePath, filePath));
-    if (missingEnglish)
-      throw Error(`Missing English challenge for
-${filePath}
-It should be in
-${getFullPath('english', filePath)}
-`);
-
-    const missingAuditedChallenge =
-      isAuditedCert(lang, superBlock) &&
-      !fs.existsSync(getFullPath(lang, filePath));
-    if (missingAuditedChallenge)
-      throw Error(`Missing ${lang} audited challenge for
-${filePath}
-
-Explanation:
-
-Challenges that have been already audited cannot fall back to their English versions. If you are seeing this, please update, and approve these Challenges on Crowdin first, followed by downloading them to the main branch using the GitHub workflows.
-    `);
-  }
-
+function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
     const challengeOrder = findIndex(
       meta.challengeOrder,
       ({ id }) => id === challenge.id
     );
-
-    if (!meta.dashedName)
-      throw Error(
-        `The 'meta.json' file for the block with challenge '${challenge.title}' has no 'dashedName' property`
-      );
 
     challenge.block = meta.dashedName;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
@@ -314,10 +262,6 @@ Challenges that have been already audited cannot fall back to their English vers
       {
         certification: 'responsive-web-design',
         dupe: '2022/responsive-web-design'
-      },
-      {
-        certification: 'javascript-algorithms-and-data-structures',
-        dupe: '2022/javascript-algorithms-and-data-structures'
       }
     ];
     const hasDupe = dupeCertifications.find(
@@ -331,9 +275,9 @@ Challenges that have been already audited cannot fall back to their English vers
     challenge.template = meta.template;
     challenge.time = meta.time;
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
-    challenge.translationPending =
-      lang !== 'english' && !isAuditedCert(lang, meta.superBlock);
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
+    challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
+    challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
   }
 
   function fixChallengeProperties(challenge) {
@@ -348,35 +292,29 @@ Challenges that have been already audited cannot fall back to their English vers
       // can sort them correctly.
       challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
     }
-    // if removeComments is not explicitly set, default to true
-    if (typeof challenge.removeComments === 'undefined') {
-      challenge.removeComments = true;
-    }
   }
 
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
-      : require(path.resolve(
-          META_DIR,
-          `${getBlockNameFromPath(filePath)}/meta.json`
-        ));
+      : require(
+          path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
+        );
 
-    await validate(filePath, meta.superBlock);
+    const isAudited = isAuditedSuperBlock(lang, meta.superBlock, {
+      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
+      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
+    });
 
-    // We always try to translate comments (even English ones) to confirm that translations exist.
-    const translateComments =
-      isAuditedCert(lang, meta.superBlock) &&
-      fs.existsSync(getFullPath(lang, filePath));
+    // If we can use the language, do so. Otherwise, default to english.
+    const langUsed = isAudited && fs.existsSync(i18nPath) ? lang : 'english';
 
-    const challenge = await (translateComments
-      ? parseTranslation(
-          getFullPath(lang, filePath),
-          COMMENT_TRANSLATIONS,
-          lang
-        )
-      : parseMD(getFullPath('english', filePath)));
-
+    const challenge = translateCommentsInChallenge(
+      await parseMD(langUsed === 'english' ? englishPath : i18nPath),
+      langUsed,
+      COMMENT_TRANSLATIONS
+    );
+    challenge.translationPending = lang !== 'english' && !isAudited;
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
 
@@ -395,6 +333,17 @@ function challengeFilesToPolys(files) {
       }
     ];
   }, []);
+}
+
+async function assertHasEnglishSource(filePath, lang, englishPath) {
+  const missingEnglish =
+    lang !== 'english' && !(await hasEnglishSource(CHALLENGES_DIR, filePath));
+  if (missingEnglish)
+    throw Error(`Missing English challenge for
+${filePath}
+It should be in
+${englishPath}
+`);
 }
 
 async function hasEnglishSource(basePath, translationPath) {
@@ -418,5 +367,4 @@ function getBlockNameFromPath(filePath) {
 }
 
 exports.hasEnglishSource = hasEnglishSource;
-exports.parseTranslation = parseTranslation;
 exports.generateChallengeCreator = generateChallengeCreator;

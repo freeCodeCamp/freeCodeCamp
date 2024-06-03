@@ -23,7 +23,7 @@ dashedName: reading-data-csv-and-txt
 
 ## --text--
 
-Як за допомогою модуля Pandas можна імпортувати і зберегти у таблиці даних CSV файл `data.csv`?
+Як за допомогою модуля Pandas можна імпортувати і зберегти CSV файл `data.csv` у таблиці даних?
 
 ## --answers--
 

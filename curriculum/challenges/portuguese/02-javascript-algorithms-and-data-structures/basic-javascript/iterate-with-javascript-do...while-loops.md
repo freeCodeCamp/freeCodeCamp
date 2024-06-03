@@ -56,7 +56,7 @@ Altere o laço `while` no código para um laço `do...while` para que o laço ad
 Você deve usar um laço `do...while` nesse exercício.
 
 ```js
-assert(code.match(/do/g));
+assert(__helpers.removeJSComments(code).match(/do/g));
 ```
 
 `myArray` deve ser igual a `[10]`.

@@ -37,25 +37,25 @@ Corrige los dos errores de indexación en la siguiente función para que todos l
 Tu código debe establecer la condición inicial del bucle para que comience en el primer índice.
 
 ```js
-assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?=\s*?0\s*?;/g).length == 1);
 ```
 
 Tu código debe corregir la condición inicial del bucle para que el índice comience en 0.
 
 ```js
-assert(!code.match(/i\s?=\s*?1\s*?;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s?=\s*?1\s*?;/g));
 ```
 
 Tu código debe establecer la condición terminal del bucle para que se detenga en el último índice.
 
 ```js
-assert(code.match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*<\s*len\s*;|i\s*<=\s*len\s*-\s*1\s*;/g).length == 1);
 ```
 
 Tu código debe corregir la condición terminal del bucle para que se detenga en 1 antes de la longitud.
 
 ```js
-assert(!code.match(/i\s*?<=\s*?len;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?<=\s*?len;/g));
 ```
 
 # --seed--

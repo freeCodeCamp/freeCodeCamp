@@ -9,21 +9,21 @@ dashedName: manipulate-arrays-with-push
 
 # --description--
 
-`push()` 関数を使用して、配列の末尾に簡単にデータを追加することができます。
+An easy way to append data to the end of an array is via the `push()` method.
 
-`.push()` は 1 つ以上の<dfn>パラメーター</dfn>を受け取り、それらを配列の末尾に「プッシュ (押し込み)」します。
+The `push()` method takes one or more <dfn>arguments</dfn> and appends them to the end of the array, in the order in which they appear. It returns the new length of the array.
 
 例:
 
 ```js
 const arr1 = [1, 2, 3];
-arr1.push(4);
+arr1.push(4, 5);
 
 const arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-`arr1` の値は `[1, 2, 3, 4]` になり、`arr2` の値は `["Stimpson", "J", "cat", ["happy", "joy"]]` になります。
+`arr1` now has the value `[1, 2, 3, 4, 5]` and `arr2` has the value `["Stimpson", "J", "cat", ["happy", "joy"]]`.
 
 # --instructions--
 

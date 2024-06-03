@@ -21,12 +21,14 @@
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/chinese/index",
     "forum": "https://forum.freecodecamp.org/c/chinese/533",
-    "news": "https://chinese.freecodecamp.org/news/"
+    "news": "https://chinese.freecodecamp.org/news/",
+    "podcast": "https://freecodecamp-in-chinese.transistor.fm/"
   },
   "help": {
     "HTML-CSS": "chinese/html-css",
     "JavaScript": "chinese/javascript",
     "Python": "chinese/python",
-    "Backend Development": "chinese/programming-help"
+    "Backend Development": "chinese/programming-help",
+    "English": "English"
   }
 }

@@ -8,7 +8,7 @@ dashedName: build-a-technical-documentation-page
 
 # --description--
 
-**目標：** 構建一個功能類似於 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a> 的應用程序
+**目標：** 構建一個應用，它在功能上類似於 <a href="https://technical-documentation-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://technical-documentation-page.freecodecamp.rocks</a>。 **不要複製這個演示項目**。
 
 **需求：**
 
@@ -148,7 +148,7 @@ const els = document.querySelectorAll('a.nav-link')
 assert(els.length >= 1)
 ```
 
-你所有的 `.nav-link` 元素都應該是錨點（`a`）元素。
+你所有的 `.nav-link` 元素都應該是錨元素（`a`）。
 
 ```js
 const els = document.querySelectorAll('.nav-link')
@@ -200,7 +200,7 @@ const linkText = Array.from(document.querySelectorAll('.nav-link')).map(el =>
   el.innerText?.trim().toUpperCase()
 )
 const remainder = headerText.filter(str => linkText.indexOf(str) === -1)
-assert(headerText.length > 0 && headerText.length > 0 && remainder.length === 0)
+assert(headerText.length > 0 && linkText.length > 0 && remainder.length === 0)
 ```
 
 每個 `.nav-link` 都應該有一個 `href` 屬性，該屬性鏈接到其對應的 `.main-section`（例如，如果你單擊包含文本 “Hello world” 的 `.nav-link` 元素，頁面導航到具有該 id 的 `section` 元素）。
@@ -241,7 +241,7 @@ assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```html
 <!DOCTYPE html>

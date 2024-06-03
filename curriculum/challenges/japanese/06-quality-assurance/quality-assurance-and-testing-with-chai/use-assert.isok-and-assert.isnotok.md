@@ -8,7 +8,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-注意点として、このプロジェクトは <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a> にあるスタータープロジェクトをベースに構築されているか、または <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a> からクローンされています。
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isOk()` は真値かどうかをテストし、 `isNotOk()` は偽値かどうかをテストします。
 
@@ -16,7 +16,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --instructions--
 
-`tests/1_unit-tests.js` の中の、`Basic Assertions` スイート内の `#3` に分類されたテストにおいて、テストを成功させる (`true` と評価する必要があります) ために、それぞれの `assert` を `assert.isOk()` または `assert.isNotOk()` に変更してください。 アサートに渡された引数を変更しないでください。
+Within `tests/1_unit-tests.js` under the test labeled `#3` in the `Basic Assertions` suite, change each `assert` to either `assert.isOk()` or `assert.isNotOk()` to make the test pass (should evaluate to `true`). アサートに渡された引数を変更しないでください。
 
 # --hints--
 

@@ -8,13 +8,13 @@ dashedName: test-if-an-object-is-an-instance-of-a-constructor
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://replit.com/github/freeCodeCamp/boilerplate-mochachai" target="_blank" rel="noopener noreferrer nofollow">Replit</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `#instanceOf` asserts that an object is an instance of a constructor.
 
 # --instructions--
 
-Within `tests/1_unit-tests.js` under the test labelled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
+Within `tests/1_unit-tests.js` under the test labeled `#18` in the `Objects` suite, change each `assert` to either `assert.instanceOf` or `assert.notInstanceOf` to make the test pass (should evaluate to `true`). Die an die Asserts übergebenen Argumente dürfen nicht verändert werden.
 
 # --hints--
 
@@ -32,7 +32,7 @@ All tests should pass.
   );
 ```
 
-You should choose the correct method for the first assertion - `instanceOf` vs. `notInstanceOf`.
+Du solltest die richtige Methode für die erste Behauptung wählen - `instanceOf` vs. `notInstanceOf`.
 
 ```js
 (getUserInput) =>
@@ -68,7 +68,7 @@ Du solltest die richtige Methode für die zweite Behauptung wählen - `instanceO
   );
 ```
 
-You should choose the correct method for the third assertion - `instanceOf` vs. `notInstanceOf`.
+Du solltest die richtige Methode für die dritte Behauptung wählen - `instanceOf` vs. `notInstanceOf`.
 
 ```js
 (getUserInput) =>
