@@ -1,6 +1,6 @@
 ---
 id: 5e44412c903586ffb414c94c
-title: Build an Arithmetic Formatter Project
+title: Projeto de criar um formatador aritmético
 challengeType: 23
 forumTopicId: 462359
 dashedName: build-an-arithmetic-formatter-project
@@ -8,7 +8,7 @@ dashedName: build-an-arithmetic-formatter-project
 
 # --description--
 
-Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
+Os alunos da escola primária geralmente organizam problemas aritméticos de modo vertical para facilitar a sua resolução. Por exemplo, "235 + 52" se torna:
 
 ```py
   235
@@ -16,17 +16,17 @@ Students in primary school often arrange arithmetic problems vertically to make 
 -----
 ```
 
-Finish the `arithmetic_arranger` function that receives a list of strings which are arithmetic problems, and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
+Finish the `arithmetic_arranger` function that receives a list of strings which are arithmetic problems, and returns the problems arranged vertically and side-by-side. A função deve, como opção, receber um segundo argumento. Quando o segundo argumento for definido como `True`, as respostas devem ser exibidas.
 
-## Example
+## Exemplo
 
-Function Call:
+Chamada da função:
 
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Output:
+Resultado:
 
 ```py
    32      3801      45      123
@@ -34,13 +34,13 @@ Output:
 -----    ------    ----    -----
 ```
 
-Function Call:
+Chamada da função:
 
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Output:
+Resultado:
 
 ```py
   32         1      9999      523
@@ -49,20 +49,20 @@ Output:
   40     -3800     19998      474
 ```
 
-## Rules
+## Regras
 
-The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.
+A função retornará a conversão correta se os problemas fornecidos forem formatados corretamente. Caso contrário, ela **retornará** uma **string** que descreve um erro significativo para o usuário.
 
-- Situations that will return an error:
-  - If there are **too many problems** supplied to the function. The limit is **five**, anything more will return: `'Error: Too many problems.'`
-  - The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be: `"Error: Operator must be '+' or '-'."`
-  - Each number (operand) should only contain digits. Otherwise, the function will return: `'Error: Numbers must only contain digits.'`
-  - Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be: `'Error: Numbers cannot be more than four digits.'`
-- If the user supplied the correct format of problems, the conversion you return will follow these rules:
-  - There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom).
-  - Numbers should be right-aligned.
-  - There should be four spaces between each problem.
-  - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
+- Situações que retornarão um erro:
+  - Se **houver muitos problemas** fornecidos para a função. The limit is **five**, anything more will return: `'Error: Too many problems.'`
+  - Os operadores apropriados que a função aceitará são **adição** e **subtração**. A multiplicação e a divisão retornarão um erro. Outros operadores não mencionados aqui não precisarão ser testados. The error returned will be: `"Error: Operator must be '+' or '-'."`
+  - Cada número (operando) deve conter apenas algarismos. Otherwise, the function will return: `'Error: Numbers must only contain digits.'`
+  - Cada operando (ou seja, o número de cada lado do operador) tem, no máximo, quatro algarismos. Otherwise, the error string returned will be: `'Error: Numbers cannot be more than four digits.'`
+- Se o usuário forneceu o formato correto dos problemas, a conversão retornada seguirá estas regras:
+  - Deve haver um único espaço entre o operador e o maior entre os dois operandos. O operador estará na mesma linha do segundo operando. Ambos os operadores estarão na mesma ordem fornecida – o primeiro será o de cima e o segundo será o de baixo.
+  - Os números devem estar alinhados à direita.
+  - Deve haver quatro espaços entre cada problema.
+  - Deve haver travessões abaixo de cada problema. Os travessões devem compreender todo o tamanho de cada problema individualmente. (O exemplo acima mostra como deve ser a aparência do resultado.)
 
 Note: open the browser console with F12 to see a more verbose output of the tests.
 

@@ -7,10 +7,7 @@
   "helpCategory": "JavaScript",
   "order": 14,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures-v8",
-  "superOrder": 4,
   "challengeOrder": [
     {
       "id": "64061a98f704a014b44afdb2",

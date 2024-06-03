@@ -1,25 +1,25 @@
 ---
 id: 65823bbbdb4eaa4f9d20a0fb
-title: Step 17
+title: Крок 17
 challengeType: 20
 dashedName: step-17
 ---
 
 # --description--
 
-In the `total_expenses` function, you'll now integrate a lambda function. Replace `pass` with a lambda function that has `expense` as its parameter.
+Зараз ви інтегруєте лямбда-функцію в межах функції `total_expenses`. Замініть `pass` на лямбда-функцію, яка має параметр `expense`.
 
-`expense` is expected to be a dictionary, and your lambda function should return the value of the `'amount'` key in the `expense` dictionary.
+Очікується, що `expense` буде словником, а лямбда-функція має повернути значення ключа `'amount'` зі словника `expense`.
 
 # --hints--
 
-You should create a `lambda` function that uses the parameter `expense` and returns `expense['amount']` in your `total_expenses` function.
+В межах функції `total_expenses` створіть функцію `lambda`, яка використовує параметр `expense` та повертає `expense['amount']`.
 
 ```js
 ({ test: () => assert(runPython(`_Node(_code).find_function("total_expenses").has_stmt("lambda expense: expense['amount']")`)) })
 ```
 
-You should not have `pass` in your `total_expenses` function.
+Функція `total_expenses` не повинна містити `pass`.
 
 ```js
 ({ test: () => assert.isFalse(runPython(`_Node(_code).find_function("total_expenses").has_pass()`)) })
