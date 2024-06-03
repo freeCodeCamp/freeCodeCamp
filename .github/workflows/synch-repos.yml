@@ -30,6 +30,7 @@ jobs:
           fetch-depth: 3
       - name: Run Git synch
         run: |
+          cd ../
+          git clone https://github.com/Asad-Rahim/FreeCodeCampCopy.git
           ls
-          # git clone https://github.com/Asad-Rahim/FreeCodeCampCopy.git
-          echo "$(${PWD}/git_synch.sh"
+          echo "$(${PWD}/freeCodeCamp/git_synch.sh"
