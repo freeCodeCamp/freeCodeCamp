@@ -70,7 +70,6 @@
           "./api/tsconfig.json",
           "./shared/tsconfig.json",
           "./tools/client-plugins/browser-scripts/tsconfig.json",
-          "./web/tsconfig.json",
           "./curriculum-server/tsconfig.json",
           "./cypress/tsconfig.json",
           "./e2e/tsconfig.json"
@@ -110,10 +109,6 @@
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-assignment": "off"
       }
-    },
-    {
-      "files": ["web/**/*.tsx"],
-      "extends": ["plugin:react/jsx-runtime"]
     },
     {
       "files": ["**/api-server/**/*", "**/404.*"],
