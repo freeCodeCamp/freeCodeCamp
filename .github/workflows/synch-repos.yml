@@ -26,6 +26,10 @@ jobs:
             shared
             curriculum
           fetch-depth: 3
+      - name: Setup Github
+        run: |
+          git config --global user.name 'Asad Rahim'
+          git config --global user.email 'Asad-Rahim@users.noreply.github.com'
       - name: Run Git synch
         run: |
           cd ../
