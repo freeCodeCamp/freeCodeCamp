@@ -206,10 +206,10 @@ class CompletionModal extends Component<
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <>
+            <div className='completion-modal-login-btn'>
               <Login block={true}>{t('learn.sign-in-save')}</Login>
               <Spacer size='xxSmall' />
-            </>
+            </div>
           )}
           <Button
             block={true}
