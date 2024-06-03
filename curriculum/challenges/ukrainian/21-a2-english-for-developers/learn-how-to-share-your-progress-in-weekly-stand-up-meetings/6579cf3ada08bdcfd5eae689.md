@@ -3,13 +3,9 @@ id: 6579cf3ada08bdcfd5eae689
 title: Завдання 5
 challengeType: 19
 dashedName: task-5
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
-<!--
-AUDIO REFERENCE: 
-Sophie: "Sure, Bob. I could use some help with a coding problem."
--->
+<!-- (Audio) Sophie: Sure, Bob. I could use some help with a coding problem. -->
 
 # --description--
 
@@ -23,11 +19,11 @@ What is Sophie asking for in her conversation with Bob?
 
 ## --answers--
 
-`She's asking for help with a coding problem`
+She's asking for help with a coding problem
 
 ---
 
-`She wants Bob to solve the problem for her`
+She wants Bob to solve the problem for her
 
 ### --feedback--
 
@@ -35,7 +31,7 @@ Sophie is asking for help, not necessarily for Bob to solve it entirely on his o
 
 ---
 
-`She is offering to help Bob with a problem`
+She is offering to help Bob with a problem
 
 ### --feedback--
 
@@ -43,7 +39,7 @@ Sophie is the one requesting assistance, not offering it.
 
 ---
 
-`She's discussing a future project`
+She's discussing a future project
 
 ### --feedback--
 
@@ -52,3 +48,51 @@ Sophie's request is about a current coding issue she's facing, not a future proj
 ## --video-solution--
 
 1
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company1-boardroom.png",
+    "characters": [
+      {
+        "character": "Sophie",
+        "position": {
+          "x": 50,
+          "y": 0,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "6.2-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 4.9,
+      "finishTimestamp": 7.58
+    }
+  },
+  "commands": [
+    {
+      "character": "Sophie",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sophie",
+      "startTime": 1,
+      "finishTime": 3.68,
+      "dialogue": {
+        "text": "Sure, Bob. I could use some help with the coding problem.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sophie",
+      "opacity": 0,
+      "startTime": 4.18
+    }
+  ]
+}
+```

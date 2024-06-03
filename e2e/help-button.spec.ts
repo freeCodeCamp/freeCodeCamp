@@ -40,3 +40,32 @@ test.describe('help-button tests for a page with two links when video is not ava
     await expect(page.getByTestId('watch-a-video')).toBeHidden();
   });
 });
+
+test.describe('help-button tests for a page with a reset and help button', () => {
+  test('should not be present before the user checks their code three times', async ({
+    page
+  }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
+    );
+    await expect(page.getByRole('button', { name: 'Help' })).toBeHidden();
+  });
+
+  test('should be present after the user checks their code three times', async ({
+    page
+  }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
+    );
+    const checkButton = page.getByTestId('lowerJaw-check-button');
+    await checkButton.click();
+    await checkButton.click();
+    await checkButton.click();
+    const helpButton = page.getByRole('button', { name: 'Help' });
+    await expect(helpButton).toBeVisible();
+    const helpIconGroup = helpButton.getByRole('group', {
+      includeHidden: false
+    });
+    await expect(helpIconGroup).toBeHidden();
+  });
+});

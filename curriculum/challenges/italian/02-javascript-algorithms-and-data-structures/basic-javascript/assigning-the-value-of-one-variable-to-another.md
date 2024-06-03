@@ -2,7 +2,6 @@
 id: 5ee127a03c3b35dd45426493
 title: Assegnare il valore di una variabile ad un'altra
 challengeType: 1
-videoUrl: ''
 forumTopicId: 418265
 dashedName: assigning-the-value-of-one-variable-to-another
 ---

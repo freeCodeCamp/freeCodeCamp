@@ -1,6 +1,6 @@
 ---
 id: 62a3bb9aeefe4b3fc43c6d7b
-title: Step 17
+title: Passo 17
 challengeType: 0
 dashedName: step-17
 ---
@@ -61,7 +61,7 @@ assert.deepEqual(button1, document.querySelector("#button1"));
 let xp = 0;
 let health = 100;
 let gold = 50;
-let currentWeapon = 0;
+let currentWeaponIndex = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];

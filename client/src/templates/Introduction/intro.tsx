@@ -3,7 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import { Container } from '@freecodecamp/ui';
+import { Container, Button } from '@freecodecamp/ui';
 import Spacer from '../../components/helpers/spacer';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
@@ -58,16 +58,13 @@ function IntroductionPage({
           />
         </FullWidthRow>
         <FullWidthRow>
-          <Link
-            className='btn btn-lg btn-primary btn-block'
-            to={firstLessonPath}
-          >
+          <Button block size='large' href={firstLessonPath}>
             {t('buttons.first-lesson')}
-          </Link>
+          </Button>
           <Spacer size='small' />
-          <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
+          <Button block size='large' href='/learn'>
             {t('buttons.view-curriculum')}
-          </Link>
+          </Button>
           <Spacer size='small' />
           <hr />
         </FullWidthRow>

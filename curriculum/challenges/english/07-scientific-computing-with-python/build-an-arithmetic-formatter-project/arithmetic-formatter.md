@@ -68,6 +68,8 @@ The function will return the correct conversion if the supplied problems are pro
   - There should be four spaces between each problem.
   - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
+Note: open the browser console with F12 to see a more verbose output of the tests.
+
 # --hints--
 
 `arithmetic_arranger(["3801 - 2", "123 + 49"])` should return `  3801      123\n-    2    +  49\n------    -----`.

@@ -13,7 +13,7 @@ O número internacional de conta bancária (IBAN) é um meio acordado internacio
 O <abbr title="International Bank Account Number">IBAN</abbr> consiste em até 34 caracteres alfanuméricos:
 
 <ul>
-  <li>first the two-letter <abbr title="International Organization for Standardization">ISO</abbr> 3166-1 alpha-2 country code</li>
+  <li>primeiro, o código de país <abbr title="International Organization for Standardization">ISO</abbr> 3166-1, de 2 letras</li>
   <li>depois dois dígitos de verificação, e</li>
   <li>finalmente, um número de conta bancária básica específico do país (BBAN).</li>
 </ul>

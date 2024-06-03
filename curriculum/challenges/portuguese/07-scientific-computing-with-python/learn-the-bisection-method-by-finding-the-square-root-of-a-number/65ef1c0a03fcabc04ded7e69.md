@@ -1,6 +1,6 @@
 ---
 id: 65ef1c0a03fcabc04ded7e69
-title: Step 12
+title: Passo 12
 challengeType: 20
 dashedName: step-12
 ---

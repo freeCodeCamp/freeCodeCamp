@@ -111,5 +111,12 @@ test.describe('Delete Modal component', () => {
     ).not.toBeVisible();
 
     await expect(page).toHaveURL(/.*\/learn\/?/);
+    await expect(
+      page
+        .getByRole('alert')
+        .filter({ hasText: 'Your account has been successfully deleted' })
+    ).toBeVisible();
+    // The user is signed out after their account is deleted
+    await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(2);
   });
 });

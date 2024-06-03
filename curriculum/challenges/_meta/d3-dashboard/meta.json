@@ -2,12 +2,10 @@
   "name": "D3 Dashboard",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "d3-dashboard",
   "helpCategory": "JavaScript",
   "order": 3,
   "time": "5 hours",
-  "template": "",
   "required": [
     {
       "src": "https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"

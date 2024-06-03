@@ -8,7 +8,7 @@ dashedName: moving-forward-from-here
 
 # --description--
 
-おめでとうございます ！ React と Redux のレッスンが終了しました。 次に進む前に、最後に重要なことを一つ説明しておきましょう。 通常はこのようなコードエディターで React アプリケーションを記述することはありません。 This challenge gives you a glimpse of what the syntax looks like if you're working with a file system on your own machine. コードは、`import` ステートメントを使用している部分を除いて似たものになります (これらの import はチャレンジで提供したすべての依存関係を抽出します)。
+おめでとうございます ！ React と Redux のレッスンが終了しました。 次に進む前に、最後に重要なことを一つ説明しておきましょう。 通常はこのようなコードエディターで React アプリケーションを記述することはありません。 このチャレンジでは、皆さん自身のマシンのファイルシステムを使用する場合にどのような構文になるかを少しだけ紹介します。 コードは、`import` ステートメントを使用している部分を除いて似たものになります (これらの import はチャレンジで提供したすべての依存関係を抽出します)。
 
 最後に、React と Redux のコードを記述する際、通常はいくつかの設定が必要になります。 この設定はすぐに複雑になる可能性があります。 自分のマシンで試してみたい方は、<a href="https://www.freecodecamp.org/news/install-react-with-create-react-app/" target="_blank" rel="noopener noreferrer nofollow">Create React App</a> というツールを利用すると簡単に設定を完了できます。
 

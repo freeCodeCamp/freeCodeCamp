@@ -57,7 +57,7 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
 
   // Modify the text in the editor pane, clearing first, otherwise the existing
   // text will be selected before typing
-  await focusEditor({ page, isMobile, browserName });
+  await focusEditor({ page, isMobile });
   await clearEditor({ page, browserName });
   await getEditors(page).fill(updatedText);
   await expect(updatedFrame).toBeVisible({ timeout: 10000 });

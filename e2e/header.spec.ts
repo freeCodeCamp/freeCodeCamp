@@ -44,22 +44,6 @@ test('Renders universal nav by default', async ({ page }) => {
   await expect(universalNavigationLogo).toHaveAttribute('href', '/learn');
 });
 
-test('Renders exam nav for Foundational C# with Microsoft exam', async ({
-  page
-}) => {
-  await page.goto(examUrl);
-  await page
-    .getByRole('button', {
-      name: translations.buttons['click-start-exam']
-    })
-    .click();
-  await expect(page).toHaveURL(examUrl);
-  await expect(page.getByTestId(headerComponentElements.examNav)).toBeVisible();
-  await expect(
-    page.getByTestId(headerComponentElements.examNavLogo)
-  ).toBeVisible();
-});
-
 test('Should display search in header on desktop and in menu on mobile', async ({
   page,
   isMobile
@@ -120,6 +104,24 @@ test('Clicking the menu button should open the menu', async ({ page }) => {
   await expect(menu).toBeVisible();
 });
 
+test('Focusing on a menu item, and pressing Esc should close the menu and focus on the menu button', async ({
+  page
+}) => {
+  const menuButton = page.getByTestId(headerComponentElements.menuButton);
+  const menu = page.getByTestId(headerComponentElements.menu);
+
+  await expect(menuButton).toBeVisible();
+  await menuButton.click();
+
+  const link = menu.getByRole('link', { name: translations.buttons.donate });
+  await link.focus();
+
+  await page.keyboard.press('Escape');
+  await expect(menu).toBeHidden();
+
+  await expect(menuButton).toBeFocused();
+});
+
 test('The menu should contain links to: donate, curriculum, forum, news, radio, contribute, and podcast', async ({
   page
 }) => {
@@ -167,6 +169,56 @@ test('The menu should contain links to: donate, curriculum, forum, news, radio, 
   }
 });
 
+test('The menu should be able to change the theme', async ({ page }) => {
+  const menuButton = page.getByTestId(headerComponentElements.menuButton);
+  const menu = page.getByTestId(headerComponentElements.menu);
+  await menuButton.click();
+  await expect(menu).toBeVisible();
+
+  const themeButton = menu.getByRole('button', {
+    name: 'Night Mode'
+  });
+  await themeButton.click();
+
+  await expect(page.locator('body')).toHaveClass('dark-palette');
+
+  await expect(page.getByTestId('flash-message')).toContainText(
+    /We have updated your theme/
+  );
+  await expect(menu).toBeHidden();
+
+  await menuButton.click();
+  await expect(menu).toBeVisible();
+
+  await themeButton.click();
+  await expect(page.locator('body')).toHaveClass('light-palette');
+});
+
+test('The header should contain an avatar', async ({ page }) => {
+  const avatarLink = page.locator('.avatar-nav-link');
+  await expect(avatarLink).toBeVisible();
+  await expect(avatarLink).toHaveAttribute('href', '/certifieduser');
+
+  const avatarContainer = page.locator('.avatar-container');
+  await expect(avatarContainer).toHaveClass('avatar-container blue-border');
+});
+
+test('Renders exam nav for Foundational C# with Microsoft exam', async ({
+  page
+}) => {
+  await page.goto(examUrl);
+  await page
+    .getByRole('button', {
+      name: translations.buttons['click-start-exam']
+    })
+    .click();
+  await expect(page).toHaveURL(examUrl);
+  await expect(page.getByTestId(headerComponentElements.examNav)).toBeVisible();
+  await expect(
+    page.getByTestId(headerComponentElements.examNavLogo)
+  ).toBeVisible();
+});
+
 test('The Sign In button should redirect to api/signin', async ({
   browser
 }) => {
@@ -184,4 +236,20 @@ test('The Sign In button should redirect to api/signin', async ({
   const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 
   await expect(signInButton).toHaveAttribute('href', `${apiLocation}/signin`);
+});
+
+test('When the user is signed out, only certain elements should be visible', async ({
+  browser
+}) => {
+  const context = await browser.newContext({
+    storageState: { cookies: [], origins: [] }
+  });
+  const page = await context.newPage();
+  await page.goto('/');
+  const signInButton = page
+    .getByTestId(headerComponentElements.signInButton)
+    .nth(0);
+  await expect(signInButton).toBeVisible();
+  await expect(page.locator('.avatar-nav-link')).toBeHidden();
+  await expect(page.locator('.avatar-container')).toBeHidden();
 });

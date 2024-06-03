@@ -1,12 +1,9 @@
 {
-  "name": "TOP Learn Block and Inline",
+  "name": "Learn the difference between Block and Inline",
   "isUpcomingChange": false,
   "dashedName": "top-learn-block-and-inline",
   "helpCategory": "Odin",
   "order": 8,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "the-odin-project",
   "challengeOrder": [
     {

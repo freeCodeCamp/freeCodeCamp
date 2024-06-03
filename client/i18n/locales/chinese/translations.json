@@ -100,7 +100,6 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "确认金额",
-    "skip-advertisement": "跳过广告",
     "play-scene": "点击播放"
   },
   "landing": {
@@ -297,7 +296,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} 未把作品集设置为公开",
     "you-change-privacy": "你需要更改你的隐私设置，才能让他人看到你的作品集。这是你的作品集公开时候的预览。",
     "username-change-privacy": "{{username}} 需要修改隐私设置，你才能看到其作品集。",
     "supporter": "支持者",
@@ -646,7 +644,8 @@
     "help-millions-learn": "帮助数百万人学习",
     "reach-goals-faster": "更快地实现你的目标",
     "remove-distractions": "消除干扰",
-    "animation-description": "这是一个 20 秒的动画广告，旨在鼓励学员成为 freeCodeCamp 的支持者。动画开头是一只泰迪熊成为支持者。最后，弹窗消失了，泰迪熊完成了所有目标。它毕业了，成为了帮助全世界人们的教育超级英雄。"
+    "animation-description": "这是一个 20 秒的动画广告，旨在鼓励学员成为 freeCodeCamp 的支持者。动画开头是一只泰迪熊成为支持者。最后，弹窗消失了，泰迪熊完成了所有目标。它毕业了，成为了帮助全世界人们的教育超级英雄。",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "你需要先登录才能举报用户",

@@ -100,7 +100,6 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement",
     "play-scene": "Press Play"
   },
   "landing": {
@@ -297,7 +296,6 @@
     }
   },
   "profile": {
-    "username-not-public": "{{username}} no ha hecho público su portafolio.",
     "you-change-privacy": "Debes cambiar tus ajustes de privacidad para que otros puedan ver tu portafolio. Esta es una vista previa de cómo se verá tu portafolio cuando se haga público.",
     "username-change-privacy": "{{username}} necesita cambiar sus ajustes de privacidad para que puedas ver su portafolio.",
     "supporter": "Contribuyente",
@@ -646,7 +644,8 @@
     "help-millions-learn": "Help millions of people learn",
     "reach-goals-faster": "Reach your goals faster",
     "remove-distractions": "Remove distractions",
-    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "Necesitas iniciar sesión para reportar a un usuario",
