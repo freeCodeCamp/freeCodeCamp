@@ -7,7 +7,7 @@ dashedName: learn-to-solve-problems-and-understand-errors-question-e
 
 # --description--
 
-Let’s assume we have written the following code:
+Let’s assume you have written the following code:
 
 ```javascript
 const a = "Hello";
@@ -16,7 +16,7 @@ const b = "World";
 console.log(c);
 ```
 
-This code will run, but it will generate an error. In technical terms, this is called "throwing" an error. The first part of an error displays the type of error. This provides the first clue as to what you're dealing with. You'll learn more about the different error types later in the lesson. In this example, we have a `ReferenceError`.
+This code will run, but it will generate an error. In technical terms, this is called "throwing" an error. The first part of an error displays the type of error. This provides the first clue as to what you're dealing with. You'll learn more about the different error types later in the lesson. In this example, you have a `ReferenceError`.
 
 <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/175b5ef2a1b4758a7b75f4ef43d7e27203e5707b/foundations/javascript_basics/understanding_errors/imgs/00.png" width="130%" alt="An error being displayed in the developer console"/>
 

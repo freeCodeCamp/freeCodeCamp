@@ -7,7 +7,7 @@ dashedName: learn-to-solve-problems-and-understand-errors-question-g
 
 # --description--
 
-Say we have two strings that you would like to combine to create one message, such as below:
+Say you have two strings that you would like to combine to create one message, such as below:
 
 ```js
 const str1 = "Hello";
@@ -19,7 +19,7 @@ const message = str1.push(str2);
 
 Here, you'll get a `TypeError` with a message stating that `str1.push is not a function`. This is a common error message that confuses learners because you might know that `.push()` is certainly a function (for example, if you have used it to add items to arrays before).
 
-But that's the key - `.push()` is not a String method, it's an Array method. Hence, it is “not a function” that you can find as a String method. If we change`.push()` to `.concat()`, a proper String method, our code runs as intended!
+But that's the key - `.push()` is not a String method, it's an Array method. Hence, it is “not a function” that you can find as a String method. If you change`.push()` to `.concat()`, a proper String method, our code runs as intended!
 
 A good note to keep in mind when faced with a `TypeError` is to consider the data type you are trying to run a method or operation against. You'll likely find that it is not what you think, or the operation or method is not compatible with that type.
 

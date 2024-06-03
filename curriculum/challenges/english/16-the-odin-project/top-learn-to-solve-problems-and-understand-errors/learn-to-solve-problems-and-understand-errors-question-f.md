@@ -7,7 +7,7 @@ dashedName: learn-to-solve-problems-and-understand-errors-question-f
 
 # --description--
 
-Another important part of an error is the stack trace. This helps you understand when the error was thrown in your application, and what functions were called that led up to the error. So, for example, if we have the following code:
+Another important part of an error is the stack trace. This helps you understand when the error was thrown in your application, and what functions were called that led up to the error. So, for example, if you have the following code:
 
 ```javascript
 const a = 5;

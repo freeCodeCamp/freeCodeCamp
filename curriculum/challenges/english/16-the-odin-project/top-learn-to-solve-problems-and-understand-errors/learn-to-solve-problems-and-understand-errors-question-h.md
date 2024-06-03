@@ -7,7 +7,7 @@ dashedName: learn-to-solve-problems-and-understand-errors-question-h
 
 # --description--
 
-At this point, you might be wondering how we can resolve these errors.
+At this point, you might be wondering how you can resolve these errors.
 
 1. You can start by understanding that the error message is your friend - not your enemy. Error messages tell you exactly what is wrong with your code, and which lines to examine to find the source of the error. Without error messages it would be a nightmare to debug our code - because it would still not work, you just wouldn’t know why!
 

@@ -7,7 +7,7 @@ dashedName: learn-to-solve-problems-and-understand-errors-question-a
 
 # --description--
 
-Before we start digging into some pretty nifty JavaScript, we need to begin talking about problem solving: the most important skill a developer needs.
+Before you start digging into some pretty nifty JavaScript, you need to begin talking about problem solving: the most important skill a developer needs.
 
 Problem solving is the core thing software developers do. The programming languages and tools they use are secondary to this fundamental skill.
 
