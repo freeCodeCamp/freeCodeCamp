@@ -15,7 +15,7 @@ test.describe('Progress bar component', () => {
     // If focusEditor fails, typically it's because the instructions are too
     // large. There's a bug that means `scrollIntoView` does not work in the
     // editor and so we have to pick less verbose challenges until that's fixed.
-    await focusEditor({ page, isMobile, browserName });
+    await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
 
     await page.keyboard.insertText(

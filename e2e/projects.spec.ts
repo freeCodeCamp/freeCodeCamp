@@ -148,7 +148,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       '/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker'
     );
 
-    await focusEditor({ page, browserName, isMobile });
+    await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
 
     await page.evaluate(

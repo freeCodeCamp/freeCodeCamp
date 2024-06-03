@@ -1,6 +1,6 @@
 ---
 id: 65d6bc21bbb3fb20d47cd7ed
-title: Task 42
+title: Tarefa 42
 challengeType: 22
 dashedName: task-42
 ---

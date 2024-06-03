@@ -1,6 +1,6 @@
 ---
 id: 5e44413e903586ffb414c94e
-title: Build a Budget App Project
+title: Projeto de criar uma aplicação de orçamento
 challengeType: 23
 forumTopicId: 462361
 dashedName: build-a-budget-app-project
@@ -8,19 +8,19 @@ dashedName: build-a-budget-app-project
 
 # --description--
 
-Complete the `Category` class. It should be able to instantiate objects based on different budget categories like *food*, *clothing*, and *entertainment*. When objects are created, they are passed in the name of the category. The class should have an instance variable called `ledger` that is a list. The class should also contain the following methods:
+Complete the `Category` class. Ela deve ser capaz de instanciar objetos com base em diferentes categorias de orçamento, como *alimentos* (food), *vestuário* (clothing) e *entretenimento* (entertainment). Quando os objetos são criados, eles são passados com o nome da categoria. A classe deve ter uma variável de instância chamada `ledger` que seja uma lista. A classe também deve conter os seguintes métodos:
 
-- A `deposit` method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of `{"amount": amount, "description": description}`.
-- A `withdraw` method that is similar to the `deposit` method, but the amount passed in should be stored in the ledger as a negative number. If there are not enough funds, nothing should be added to the ledger. This method should return `True` if the withdrawal took place, and `False` otherwise.
-- A `get_balance` method that returns the current balance of the budget category based on the deposits and withdrawals that have occurred.
-- A `transfer` method that accepts an amount and another budget category as arguments. The method should add a withdrawal with the amount and the description "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category with the amount and the description "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either ledgers. This method should return `True` if the transfer took place, and `False` otherwise.
-- A `check_funds` method that accepts an amount as an argument. It returns `False` if the amount is greater than the balance of the budget category and returns `True` otherwise. This method should be used by both the `withdraw` method and `transfer` method.
+- Um método `deposit`, que aceita um valor e uma descrição. Se nenhuma descrição for dada, o padrão deverá ser uma string vazia. O método deve acrescentar um objeto à lista ledger na forma de `{"amount": amount, "description": description}`.
+- Um método `withdraw`, semelhante ao método `deposit`, mas a quantia passada deve ser armazenada no ledger como um número negativo. Se não houver fundos suficientes, nada deve ser adicionado ao ledger. Este método deve retornar `True` se a retirada acontecer e, caso contrário, `False`.
+- Um método `get_balance`, que retorna o saldo atual da categoria de orçamento com base nos depósitos e retiradas que ocorreram.
+- Um método `transfer`, que aceita um valor e outra categoria de orçamento como argumentos. O método deverá adicionar uma retirada com o valor e a descrição "Transfer to [categoria de destino no orçamento]". O método deve, então, adicionar um depósito à outra categoria do orçamento, com o valor e a descrição "Transfer from [categoria de origem no orçamento]". Se não houver fundos suficientes, nada deve ser adicionado ao ledger. Este método deve retornar `True` se a transferência acontecer e, caso contrário, `False`.
+- Um método `check_funds` que aceita um valor como um argumento. Ele retorna `False` se o valor for maior que o saldo da categoria do orçamento e, caso contrário, retorna `True`. Este método deve ser usado tanto pelo método `withdraw` como pelo método `transfer`.
 
-When the budget object is printed it should display:
+Quando o objeto de orçamento for impresso, ele deve mostrar:
 
-- A title line of 30 characters where the name of the category is centered in a line of `*` characters.
-- A list of the items in the ledger. Each line should show the description and amount. The first 23 characters of the description should be displayed, then the amount. The amount should be right aligned, contain two decimal places, and display a maximum of 7 characters.
-- A line displaying the category total.
+- Uma linha com título de 30 caracteres em que o nome da categoria é centralizado em uma linha com `*` caracteres.
+- Uma lista dos itens no ledger. Cada linha deve mostrar a descrição e o valor. Os primeiros 23 caracteres da descrição devem ser exibidos e, depois, o valor. O valor deve estar alinhado corretamente, conter duas casas decimais e exibir um máximo de 7 caracteres.
+- Uma linha que exibe o total da categoria.
 
 Here is an example usage:
 
@@ -45,13 +45,13 @@ Transfer to Clothing    -50.00
 Total: 923.96
 ```
 
-Besides the `Category` class, create a function (outside of the class) called `create_spend_chart` that takes a list of categories as an argument. It should return a string that is a bar chart.
+Além da classe `Category`, crie uma função (fora da classe) chamada `create_spend_chart`, que recebe uma lista de categorias como um argumento. Ela deve retornar uma string, que é um gráfico de barras.
 
-The chart should show the percentage spent in each category passed in to the function. The percentage spent should be calculated only with withdrawals and not with deposits. Down the left side of the chart should be labels 0 - 100. The "bars" in the bar chart should be made out of the "o" character. The height of each bar should be rounded down to the nearest 10. The horizontal line below the bars should go two spaces past the final bar. Each category name should be written vertically below the bar. There should be a title at the top that says "Percentage spent by category".
+O gráfico deve mostrar a porcentagem gasta em cada categoria passada para a função. A porcentagem gasta deve ser calculada apenas com retiradas, não com depósitos. No lado esquerdo do gráfico, deve haver rótulos de 0 a 100. As "barras" no gráfico de barras devem ser feitas com o caractere "o". A altura de cada barra deve ser arredondada para baixo para o 10 mais próximo. A linha horizontal abaixo das barras deve ir dois espaços além da barra final. O nome de cada categoria deve ser escrito verticalmente abaixo da barra. Deve haver um título no topo que diz "Percentage spent by category" (Porcentagem gasta por categoria).
 
-This function will be tested with up to four categories.
+Esta função será testada com até quatro categorias.
 
-Look at the example output below very closely and make sure the spacing of the output matches the example exactly.
+Olhe atentamente para o exemplo de resultado abaixo e certifique-se de que o espaçamento do resultado corresponde exatamente ao exemplo.
 
 ```bash
 Percentage spent by category
@@ -76,6 +76,8 @@ Percentage spent by category
         n     
         g     
 ```
+
+Note: open the browser console with F12 to see a more verbose output of the tests.
 
 # --hints--
 

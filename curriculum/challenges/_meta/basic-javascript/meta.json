@@ -5,8 +5,6 @@
   "helpCategory": "JavaScript",
   "order": 0,
   "time": "10 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {
@@ -183,19 +181,19 @@
     },
     {
       "id": "56bbb991ad1ed5201cd392cb",
-      "title": "Manipulate Arrays With push()"
+      "title": "Manipulate Arrays With push Method"
     },
     {
       "id": "56bbb991ad1ed5201cd392cc",
-      "title": "Manipulate Arrays With pop()"
+      "title": "Manipulate Arrays With pop Method"
     },
     {
       "id": "56bbb991ad1ed5201cd392cd",
-      "title": "Manipulate Arrays With shift()"
+      "title": "Manipulate Arrays With shift Method"
     },
     {
       "id": "56bbb991ad1ed5201cd392ce",
-      "title": "Manipulate Arrays With unshift()"
+      "title": "Manipulate Arrays With unshift Method"
     },
     {
       "id": "56533eb9ac21ba0edf2244bc",

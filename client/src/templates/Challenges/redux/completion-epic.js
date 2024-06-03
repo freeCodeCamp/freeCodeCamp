@@ -49,14 +49,14 @@ import {
   isBlockNewlyCompletedSelector
 } from './selectors';
 
-function postChallenge(update, username) {
+function postChallenge(update) {
   const {
     payload: { challengeType }
   } = update;
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points, message, examResults } = data;
+      const { savedChallenges, message, examResults } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -71,11 +71,7 @@ function postChallenge(update, username) {
 
       let actions = [
         submitComplete({
-          submittedChallenge: {
-            username,
-            points,
-            ...payloadWithClientProperties
-          },
+          submittedChallenge: payloadWithClientProperties,
           savedChallenges: mapFilesToChallengeFiles(savedChallenges),
           examResults
         }),
@@ -107,7 +103,6 @@ function submitModern(type, state) {
     if (type === actionTypes.submitChallenge) {
       const { id, block } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
-      const { username } = userSelector(state);
 
       let body;
       if (
@@ -127,7 +122,7 @@ function submitModern(type, state) {
         endpoint: '/modern-challenge-completed',
         payload: body
       };
-      return postChallenge(update, username);
+      return postChallenge(update);
     }
   }
   return empty();
@@ -160,7 +155,6 @@ function submitBackendChallenge(type, state) {
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === actionTypes.submitChallenge) {
       const { id } = challengeMetaSelector(state);
-      const { username } = userSelector(state);
       const {
         solution: { value: solution }
       } = projectFormValuesSelector(state);
@@ -170,7 +164,7 @@ function submitBackendChallenge(type, state) {
         endpoint: '/backend-challenge-completed',
         payload: challengeInfo
       };
-      return postChallenge(update, username);
+      return postChallenge(update);
     }
   }
   return empty();
@@ -207,14 +201,13 @@ function submitMsTrophy(type, state) {
   if (type === actionTypes.submitChallenge) {
     const { id, challengeType } = challengeMetaSelector(state);
 
-    const { username } = userSelector(state);
     const challengeInfo = { id, challengeType };
 
     const update = {
       endpoint: '/ms-trophy-challenge-completed',
       payload: challengeInfo
     };
-    return postChallenge(update, username);
+    return postChallenge(update);
   }
   return empty();
 }

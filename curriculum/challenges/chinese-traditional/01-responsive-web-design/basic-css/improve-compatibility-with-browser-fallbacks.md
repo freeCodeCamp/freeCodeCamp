@@ -2,7 +2,6 @@
 id: 5b7d72c338cd7e35b63f3e14
 title: 通過瀏覽器降級提高兼容性
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301087
 dashedName: improve-compatibility-with-browser-fallbacks
 ---
