@@ -33,6 +33,6 @@ jobs:
       - name: Run Git synch
         run: |
           cd ../
-          git clone git@github.com:Asad-Rahim/freeCodeCamp.git
+          git clone git@github.com:Asad-Rahim/FreeCodeCamp.git
           echo "${PWD}"
           bash ${PWD}/freeCodeCamp/git_synch.sh
