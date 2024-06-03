@@ -5,8 +5,6 @@
   "dashedName": "build-a-time-calculator-project",
   "order": 10,
   "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

@@ -30,7 +30,7 @@ JSX 要素では `style` 属性を使用しますが、JSX のトランスパイ
 
 コードエディターで、`div` に `style` 属性を追加し、テキストに赤色を付けて、フォントサイズを `72px` にしてください。
 
-Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
+フォントサイズは単位 `px` を省略することで数値でも設定できます。または `"72px"` と記述してください。
 # --hints--
 
 コンポーネントで `div` 要素をレンダーします。

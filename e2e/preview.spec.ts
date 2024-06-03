@@ -28,10 +28,9 @@ test.describe('Challenge Preview Component', () => {
 
   test('should render correct output of changed code', async ({
     page,
-    browserName,
     isMobile
   }) => {
-    await focusEditor({ page, isMobile, browserName });
+    await focusEditor({ page, isMobile });
 
     await page.keyboard.insertText('<h1>FreeCodeCamp</h1>');
     if (isMobile) {

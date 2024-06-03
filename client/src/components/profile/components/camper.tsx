@@ -64,7 +64,7 @@ function Camper({
           <div className='badge-card-container'>
             {isDonating && (
               <div className='badge-card'>
-                <div className='badge'>
+                <div className='camper-badge'>
                   <SupporterBadgeEmblem />
                 </div>
                 <div className='badge-card-description'>
@@ -75,7 +75,7 @@ function Camper({
             )}
             {isTopContributor && (
               <div className='badge-card'>
-                <div className='badge'>
+                <div className='camper-badge'>
                   <TopContibutorBadgeEmblem />
                 </div>
                 <div className='badge-card-description'>

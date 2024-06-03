@@ -362,6 +362,13 @@ jobs:
           pnpm run build:server
 
       # We do not need to run tests because they are run after the PR is created.
+      ###### Lowercase directory names #####
+
+      - name: Lowercase Directories
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'lowercase-directories'
+          FILE_PATH: 'curriculum/challenges'
 
       - name: Overwrite Execute-Brain.md
         run: sudo tools/scripts/move-bf.sh

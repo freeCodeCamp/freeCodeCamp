@@ -352,6 +352,83 @@ async () => {
 };
 ```
 
+When the `#search-input` element contains an invalid Pokemon name and the `#search-button` element is clicked, an alert should appear with the text `"Pokémon not found"`.
+
+```js
+async () => {
+  try {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    let alertMessage;
+    window.alert = (message) => alertMessage = message; // Override alert and store message
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    const numbers = '0123456789';
+    const charactersLength = letters.length;
+    const numbersLength = numbers.length; 
+
+
+    const firstLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
+    const secondLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
+    const thirdLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
+    const fourthLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
+    const randomNumber1 = numbers.charAt(Math.floor(Math.random() * numbersLength));
+    const randomNumber2 = numbers.charAt(Math.floor(Math.random() * numbersLength));
+
+    const badName = firstLetter + secondLetter + thirdLetter + fourthLetter + randomNumber1 + randomNumber2; 
+
+    const randomInvalidPokeId = badName; 
+    searchInput.value = randomInvalidPokeId;
+    searchButton.click();
+
+    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' + randomInvalidPokeId.toString()); // Fetch from proxy to simulate network delay
+
+    if (!res.ok) {
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow the alert to trigger
+
+      assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+```
+
+
+When the `#search-input` element contains a valid Pokemon id and the `#search-button` element is clicked, the UI should be filled with the correct data.
+
+```js
+async () => {
+  try {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    let alertMessage;
+    window.alert = (message) => alertMessage = message; // Override alert and store message
+
+    const randomValidPokeId = Math.floor(Math.random() * 1025) + 1; 
+    searchInput.value = randomValidPokeId;
+    searchButton.click();
+
+    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' +  randomValidPokeId.toString()); // Fetch from proxy to simulate network delay
+
+    if (res.ok) {
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
+
+      const data = await res.json(); 
+
+      const typesEl = document.getElementById('types');      
+
+      const actualTypes = data.types.map(typeSlot => typeSlot.type.name); 
+
+      assert.lengthOf(typesEl.children, actualTypes.length);
+
+      assert.sameMembers(actualTypes, [...typesEl.children].map(el => el.innerText.trim().toLowerCase()));
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+```
+
 # --seed--
 
 ## --seed-contents--

@@ -11,13 +11,7 @@ Il prossimo passo è consentire agli utenti di aggiungere delle voci al contator
 
 # --hints--
 
-Dovresti dichiarare una variabile `addEntry`.
-
-```js
-assert.isDefined(addEntry);
-```
-
-La variabile `addEntry` dovrebbe essere una funzione.
+You should declare an `addEntry` function.
 
 ```js
 assert.isFunction(addEntry);

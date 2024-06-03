@@ -173,7 +173,7 @@ figcaption.caption {
 .as-seen-in,
 .certification-section,
 .testimonials {
-  padding-block: 4vw;
+  padding: 4vw 15px;
 }
 
 .certification-section {

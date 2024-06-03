@@ -331,9 +331,6 @@ export const reducer = handleActions(
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
-      if (submittedChallenge.challArray) {
-        submittedchallenges = submittedChallenge.challArray;
-      }
       const { appUsername } = state;
 
       return examResults && !examResults.passed

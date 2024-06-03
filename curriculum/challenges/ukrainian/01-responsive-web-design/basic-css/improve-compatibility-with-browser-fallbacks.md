@@ -2,7 +2,6 @@
 id: 5b7d72c338cd7e35b63f3e14
 title: Покращення сумісності із застосуванням резервних значень для браузера
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301087
 dashedName: improve-compatibility-with-browser-fallbacks
 ---
