@@ -658,6 +658,10 @@ blockquote .small {
   color: var(--background-danger);
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
