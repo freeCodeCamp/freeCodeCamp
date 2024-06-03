@@ -9,13 +9,13 @@ TMP_REPO_DIR=/tmp/temp_repo
 rm -rf "${TMP_REPO_DIR}" 
 
 # Cloning source repo with depth 3 so that git-filter-repo doesn't take too long
-git clone "${SOURCE_REPO_DIR}" "${TMP_REPO_DIR}" --no-local --depth 3
+# git clone "${SOURCE_REPO_DIR}" "${TMP_REPO_DIR}" --no-local --depth 3
 
 
-cd "${TMP_REPO_DIR}"
+cd "${SOURCE_REPO_DIR}"
 
 
-git-filter-repo --path README.md --path curriculum/ --path shared --path .github --force --source "${TMP_REPO_DIR}" --target "${DST_REPO_DIR}"
+git-filter-repo --path README.md --path curriculum/ --path shared --path .github --force --source "${SOURCE_REPO_DIR}" --target "${DST_REPO_DIR}"
 
 
 cd "${DST_REPO_DIR}"
