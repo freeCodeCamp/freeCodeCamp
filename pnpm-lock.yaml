@@ -28,7 +28,7 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.7)
       '@playwright/test':
-        specifier: ^1.43.1
+        specifier: 1.44.0
         version: 1.44.0
       '@testing-library/cypress':
         specifier: 10.0.1
