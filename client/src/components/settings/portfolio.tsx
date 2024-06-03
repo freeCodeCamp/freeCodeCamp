@@ -275,11 +275,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               required={true}
               type='text'
               value={title}
-              data-cy='portfolio-title'
+              name='portfolio-title'
               id={`${id}-title-input`}
             />
             {titleMessage ? (
-              <HelpBlock data-cy='validation-message'>{titleMessage}</HelpBlock>
+              <HelpBlock data-playwright-test-label='title-validation'>
+                {titleMessage}
+              </HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup
@@ -294,11 +296,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               required={true}
               type='url'
               value={url}
-              data-cy='portfolio-url'
+              name='portfolio-url'
               id={`${id}-url-input`}
             />
             {urlMessage ? (
-              <HelpBlock data-cy='validation-message'>{urlMessage}</HelpBlock>
+              <HelpBlock data-playwright-test-label='url-validation'>
+                {urlMessage}
+              </HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup
@@ -312,11 +316,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               onChange={this.createOnChangeHandler(id, 'image')}
               type='url'
               value={image}
-              data-cy='portfolio-image'
+              name='portfolio-image'
               id={`${id}-image-input`}
             />
             {imageMessage ? (
-              <HelpBlock data-cy='validation-message'>{imageMessage}</HelpBlock>
+              <HelpBlock data-playwright-test-label='image-validation'>
+                {imageMessage}
+              </HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup
@@ -330,11 +336,11 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               componentClass='textarea'
               onChange={this.createOnChangeHandler(id, 'description')}
               value={description}
-              data-cy='portfolio-description'
+              name='portfolio-description'
               id={`${id}-description-input`}
             />
             {descriptionMessage ? (
-              <HelpBlock data-cy='validation-message'>
+              <HelpBlock data-playwright-test-label='description-validation'>
                 {descriptionMessage}
               </HelpBlock>
             ) : null}
@@ -342,6 +348,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <BlockSaveButton
             disabled={isButtonDisabled}
             bgSize='large'
+            data-playwright-test-label='save-portfolio'
             {...(isButtonDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}

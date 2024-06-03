@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-128
 ---
 
-<!--
-AUDIO REFERENCE:
-"For me, I like the idea of practicing my skills and getting recognition for my contributions."
--->
+<!-- (Audio) Tom: For me, I like the idea of practicing my skills and getting recognition for my contributions. -->
 
 # --description--
 
@@ -37,3 +34,51 @@ This verb means to perform an activity or exercise repeatedly or regularly in or
 ### --feedback--
 
 This noun refers to the action or process of acknowledging someone's efforts, achievements, or qualities.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Tom",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "4.1-5.mp3",
+      "startTime": 1,
+      "startTimestamp": 41.5,
+      "finishTimestamp": 47.12
+    }
+  },
+  "commands": [
+    {
+      "character": "Tom",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Tom",
+      "startTime": 1,
+      "finishTime": 6.62,
+      "dialogue": {
+        "text": "For me, I like the idea of practicing my skills and getting recognition for my contributions.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Tom",
+      "opacity": 0,
+      "startTime": 7.12
+    }
+  ]
+}
+```

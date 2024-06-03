@@ -8,67 +8,67 @@ dashedName: boo-who
 
 # --description--
 
-Check if a value is classified as a boolean primitive. Return `true` or `false`.
+값이 불리언(boolean) 원시 값으로 분류되는지 확인해보세요. `true` 또는 `false`를 반환합니다.
 
-Boolean primitives are `true` and `false`.
+불리언 원시 값의 종류로는 `true`와 `false`가 있습니다.
 
 # --hints--
 
-`booWho(true)` should return `true`.
+`booWho(true)`는 `true`를 반환해야 합니다.
 
 ```js
 assert.strictEqual(booWho(true), true);
 ```
 
-`booWho(false)` should return `true`.
+`booWho(false)`는 `true`를 반환해야 합니다.
 
 ```js
 assert.strictEqual(booWho(false), true);
 ```
 
-`booWho([1, 2, 3])` should return `false`.
+`booWho([1, 2, 3])`은 `false`를 반환해야 합니다.
 
 ```js
 assert.strictEqual(booWho([1, 2, 3]), false);
 ```
 
-`booWho([].slice)` should return `false`.
+`booWho([].slice)`은 `false`를 반환합니다.
 
 ```js
 assert.strictEqual(booWho([].slice), false);
 ```
 
-`booWho({ "a": 1 })` should return `false`.
+`booWho({ "a": 1 })`는 `false`를 반환합니다.
 
 ```js
 assert.strictEqual(booWho({ a: 1 }), false);
 ```
 
-`booWho(1)` should return `false`.
+`booWho(1)`는 `false`를 반환해야 합니다.
 
 ```js
 assert.strictEqual(booWho(1), false);
 ```
 
-`booWho(NaN)` should return `false`.
+`booWho(NaN)`는 `false`를 반환합니다.
 
 ```js
 assert.strictEqual(booWho(NaN), false);
 ```
 
-`booWho("a")` should return `false`.
+`booWho("a")`는 `false`를 반환해야 합니다.
 
 ```js
 assert.strictEqual(booWho('a'), false);
 ```
 
-`booWho("true")` should return `false`.
+`booWho("true")`는 `false`를 반환해야 합니다.
 
 ```js
 assert.strictEqual(booWho('true'), false);
 ```
 
-`booWho("false")` should return `false`.
+`booWho("false")`는 `false`를 반환해야 합니다.
 
 ```js
 assert.strictEqual(booWho('false'), false);

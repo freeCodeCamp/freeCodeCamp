@@ -9,7 +9,7 @@ dashedName: step-15
 
 Nos passos anteriores, você usou um elemento de âncora para transformar texto em um link. Outros tipos de conteúdo também podem ser transformados em link, colocando-os dentro de tags de elementos de âncora.
 
-Here is an example of turning an image into a link:
+Aqui está um exemplo de como transformar uma imagem em um link:
 
 ```html
 <a href="example-link">

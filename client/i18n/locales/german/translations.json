@@ -72,7 +72,11 @@
     "update-email": "Meine E-Mail-Adresse aktualisieren",
     "verify-email": "E-Mail-Adresse bestätigen",
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
+    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Gehe zur nächsten Herausforderung",
+    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-3": "Go to next challenge (Command + Enter)",
     "ask-later": "Frag später",
     "start-coding": "Beginne zu programmieren!",
     "go-to-settings": "Gehe zu den Einstellungen, um dein Zertifikat zu beantragen",
@@ -96,7 +100,6 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement",
     "play-scene": "Press Play"
   },
   "landing": {
@@ -293,17 +296,20 @@
     }
   },
   "profile": {
-    "you-not-public": "Du hast dein Portfolio nicht öffentlich zugänglich gemacht.",
-    "username-not-public": "{{username}} hat sein Portfolio nicht öffentlich zugänglich gemacht.",
     "you-change-privacy": "Du musst deine Privatsphäre-Einstellung ändern, damit dein Portfolio von anderen gesehen wird. Dies ist eine Vorschau wie dein Portfolio aussehen wird, wenn es veröffentlicht wird.",
     "username-change-privacy": "{{username}} muss seine Privatsphäre-Einstellung ändern, damit du sein Portfolio ansehen kannst.",
     "supporter": "Unterstützer",
     "contributor": "Top Mitwirkender",
+    "contributor-prolific": "Among most prolific volunteers in {{year}}",
     "no-certs": "Es wurden keine Zertifizierungen nach dem aktuellen Lehrplan erworben",
     "fcc-certs": "freeCodeCamp Zertifikate",
     "longest-streak": "Längste Serie:",
     "current-streak": "Aktuelle Serie:",
+    "portfolio": "Portfolio",
+    "badges": "Badges",
+    "donated": "Donated to the community",
     "projects": "Projects",
+    "stats": "Stats",
     "timeline": "Zeitleiste",
     "none-completed": "Es wurden noch keine Herausforderungen abgeschlossen.",
     "get-started": "Hier geht es los.",
@@ -638,7 +644,8 @@
     "help-millions-learn": "Help millions of people learn",
     "reach-goals-faster": "Reach your goals faster",
     "remove-distractions": "Remove distractions",
-    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "Du musst angemeldet sein, um einen Benutzer zu melden",

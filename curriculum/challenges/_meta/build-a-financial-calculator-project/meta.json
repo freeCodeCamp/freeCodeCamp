@@ -1,12 +1,10 @@
 {
-  "name": "Build a Financial Calculator Project",
+  "name": "Financial Calculator",
   "isUpcomingChange": false,
   "dashedName": "build-a-financial-calculator-project",
   "order": 17,
   "helpCategory": "Python",
   "time": "30 hours",
-  "template": "",
-  "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
     {

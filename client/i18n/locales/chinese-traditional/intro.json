@@ -472,6 +472,20 @@
           "在這個小項目中，你將會通過創建成績統計冊應用回顧 JavaScript 基礎知識，如函數、變量、條件以及更多內容。",
           "你將通過這個機會練習解決小問題，更好地理解基礎知識。"
         ]
+      },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
+        ]
       }
     }
   },
@@ -840,10 +854,41 @@
           "在本項目中，你將通過創建一個費用跟蹤器來探索 Lambda 函數的強大功能。你創建的應用程序將展示如何使用 Lambda 函數實現高效、簡化的操作。"
         ]
       },
-      "scientific-computing-with-python-projects": {
-        "title": "Python 科學計算項目",
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
         "intro": [
-          "是時候測試一下你的 Python 技能了。通過完成這些項目，你可以展示自己已經掌握了紮實的 Python 基礎知識。你還將有資格獲得 freeCodeCamp 的 Python 科學計算認證。"
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-budget-app-project": {
+        "title": "Build a Budget App Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
         ]
       }
     }
@@ -921,7 +966,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow 是一個開源框架，使機器學習和神經網絡更易於使用。",
           "以下視頻課程是由 Tim Ruscica 創建的，也叫作 “Tech With Tim”。這個課程將幫助你瞭解 TensorFlow 及它的一些強大功能。"
@@ -1380,15 +1425,21 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "學習如何就偏好和動機進行對話",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "學習如何討論流行的技術趨勢",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "學習如何在不同的互動中闡明信息",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "學習如何在對話中使用基本編程詞彙",
@@ -1431,7 +1482,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "學習如何談論任務和項目的更新和計劃",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {

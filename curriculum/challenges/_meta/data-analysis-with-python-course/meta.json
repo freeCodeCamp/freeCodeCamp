@@ -1,12 +1,10 @@
 {
-  "name": "Data Analysis with Python Course",
+  "name": "Data Analysis with Python",
   "isUpcomingChange": false,
   "dashedName": "data-analysis-with-python-course",
   "helpCategory": "Python",
   "order": 0,
   "time": "15 hours",
-  "template": "",
-  "required": [],
   "superBlock": "data-analysis-with-python",
   "challengeOrder": [
     {

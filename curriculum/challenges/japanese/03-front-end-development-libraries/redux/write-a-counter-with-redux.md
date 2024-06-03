@@ -28,7 +28,7 @@ assert(incAction().type === INCREMENT);
 assert(decAction().type === DECREMENT);
 ```
 
-Running `store.getState()` should return a number
+`store.getState()` を実行すると数値が返ります。
 
 ```js
 assert(typeof store.getState() === 'number');

@@ -11,7 +11,7 @@ You know that JavaScript has a variety of data types, including strings, numbers
 
 The following comparison operators are available in JavaScript:
 
-| Operator | Description              | Example |
+| Operator | Descrição                | Exemplo |
 | -------- | ------------------------ | ------- |
 | ==       | Equal (value comparison) | x == y  |
 | !=       | Not equal                | x != y  |
@@ -20,7 +20,7 @@ The following comparison operators are available in JavaScript:
 | >=       | Greater than or equal to | x >= y  |
 | <=       | Less than or equal to    | x <= y  |
 
-To use a comparison in a variable assignment, you can use the `==` operator. For example:
+To use a comparison in a variable assignment, you can use the `==` operator. Por exemplo:
 
 ```javascript
 let x = 5;

@@ -7,18 +7,6 @@ interface RibbonProps {
   showNumbers?: boolean;
 }
 
-export const Arrow = () => (
-  <svg
-    width='14'
-    height='35'
-    viewBox='0 0 14 35'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path d='M7 0V30' stroke='var(--secondary-color)' strokeWidth='2' />
-  </svg>
-);
-
 export const RibbonIcon = ({
   value,
   isCompleted: completed,
@@ -42,11 +30,11 @@ export const RibbonIcon = ({
       {isClaimed && (
         <>
           <path
-            d='M25 35.3418L35.4851 28L44.5957 41.0113L36.2658 39.7151L34.1106 48.353L25 35.3418Z'
+            d='M24.8 36.3L35.3 29L44.3 42L35.5 41L33.4 49.3L24.8 36.3Z'
             fill='var(--secondary-color)'
           />
           <path
-            d='M9.11059 29L19.5957 36.3418L10.4851 49.353L8.85418 41.0821L-4.67677e-07 42.0113L9.11059 29Z'
+            d='M9.1 29L19.6 36.3L11 49.3L8.9 41L0.1 42L9.1 29Z'
             fill='var(--secondary-color)'
           />
         </>
