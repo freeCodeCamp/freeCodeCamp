@@ -5,7 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-encapsulation-by-building-a-projectile-trajectory-calculator",
   "order": 15,
-  "time": "5 hours",
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
