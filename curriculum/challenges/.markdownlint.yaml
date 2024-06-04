@@ -10,3 +10,4 @@ MD040: true    # fenced code blocks should have a language specified
 MD034: false   # allow bare-URLs
 MD036: false   # TODO: **Example** is the main offender, should that be a heading?
 whitespace: false  # extra whitespace is ignored, so we don't enforce it.
+####
