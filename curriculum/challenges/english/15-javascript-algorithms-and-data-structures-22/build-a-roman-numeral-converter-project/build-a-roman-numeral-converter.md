@@ -60,7 +60,7 @@ const el = document.getElementById('convert-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `"output"`.
+You should have a `div`, `span`, or `p` element with an `id` of `"output"`.
 
 ```js
 const el = document.getElementById('output');

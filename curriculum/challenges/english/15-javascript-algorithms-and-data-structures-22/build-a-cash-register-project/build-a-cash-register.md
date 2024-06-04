@@ -60,7 +60,7 @@ const el = document.getElementById('cash');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'input');
 ```
 
-You should have a `div` element with an `id` of `"change-due"`.
+You should have a `div`, `span`, or `p` element with an `id` of `"change-due"`.
 
 ```js
 const el = document.getElementById('change-due');

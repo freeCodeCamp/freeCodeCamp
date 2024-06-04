@@ -52,7 +52,7 @@ const el = document.getElementById('check-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `result`.
+You should have a `div`, `span`, or `p` element with an `id` of `result`.
 
 ```js
 const el = document.getElementById('result');

@@ -86,7 +86,7 @@ const el = document.getElementById('clear-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `"results-div"`.
+You should have a `div`, `span`, or `p` element with an `id` of `"results-div"`.
 
 ```js
 const el = document.getElementById('results-div');
