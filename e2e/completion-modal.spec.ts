@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { isMacOS } from './utils/user-agent';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -98,8 +99,7 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
 
   test('should display the text of go to next challenge button accordingly based on device type', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     if (isMobile) {
       await expect(
@@ -108,7 +108,7 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
           exact: true
         })
       ).toBeVisible();
-    } else if (browserName === 'webkit') {
+    } else if (isMacOS) {
       await expect(
         page.getByRole('button', {
           name: 'Submit and go to next challenge (Command + Enter)'
@@ -135,6 +135,8 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   test('should submit and go to the next challenge when the user presses Ctrl + Enter', async ({
     page
   }) => {
+    test.skip(isMacOS, 'the test is only relevant to non-MacOS devices');
+
     await page.keyboard.press('Control+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
@@ -142,6 +144,8 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   test('should submit and go to the next challenge when the user presses Command + Enter', async ({
     page
   }) => {
+    test.skip(!isMacOS, 'the test is only relevant to MacOS devices');
+
     await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
