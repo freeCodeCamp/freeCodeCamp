@@ -664,11 +664,9 @@ const cashDrawerDisplay = document.getElementById("cash-drawer-display");
 
 const formatResults = (status, change) => {
   displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
-  change.map(
-    (money) =>
-      (displayChangeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`),
-  );
-  return;
+  displayChangeDue.innerHTML += change
+    .map(([currency, amount]) => `<p>${currency}: $${amount}</p>`)
+    .join("");
 };
 
 const checkCashRegister = () => {
@@ -688,13 +686,14 @@ const checkCashRegister = () => {
   }
 
   let changeDue = cashInCents - priceInCents;
-  let reversedCid = [...cid].reverse().map(([currency, value]) => [currency, Math.round(value * 100)]);
-  let denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
-  let result = { status: "OPEN", change: [] };
-  let totalCID = reversedCid.reduce((prev, [_, value]) => prev + value, 0);
+  const reversedCid = [...cid].reverse().map(([denominationName, amount]) => [denominationName, Math.round(amount * 100)]);
+  const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
+  const result = { status: "OPEN", change: [] };
+  const totalCID = reversedCid.reduce((prev, [_, amount]) => prev + amount, 0);
 
   if (totalCID < changeDue) {
-    return (displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>");
+    displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>";
+    return;
   }
 
   if (totalCID === changeDue) {
@@ -703,18 +702,20 @@ const checkCashRegister = () => {
 
   for (let i = 0; i <= reversedCid.length; i++) {
     if (changeDue >= denominations[i] && changeDue > 0) {
-      const total = reversedCid[i][1];
+      const [denominationName, total] = reversedCid[i];
       const possibleChange = Math.min(total, changeDue);
       const count = Math.floor(possibleChange / denominations[i]);
-      changeDue -= count * denominations[i];
+      const amountInChange = count * denominations[i];
+      changeDue -= amountInChange;
 
       if (count > 0) {
-        result.change.push([reversedCid[i][0], (count * denominations[i]) / 100]);
+        result.change.push([denominationName, amountInChange / 100]);
       }
     }
   }
   if (changeDue > 0) {
-    return (displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>");
+    displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>";
+    return;
   }
 
   formatResults(result.status, result.change);
@@ -742,9 +743,9 @@ const updateUI = (change) => {
   };
   // Update cid if change is passed in
   if (change) {
-    change.forEach((changeArr) => {
-      const targetArr = cid.find((cidArr) => cidArr[0] === changeArr[0]);
-      targetArr[1] = (Math.round(targetArr[1] * 100) - Math.round(changeArr[1] * 100)) / 100;
+    change.forEach(([changeDenomination, changeAmount]) => {
+      const targetArr = cid.find(([denominationName, amount]) => denominationName === changeDenomination);
+      targetArr[1] = (Math.round(amount * 100) - Math.round(changeAmount * 100)) / 100;
     });
   }
 
@@ -752,8 +753,8 @@ const updateUI = (change) => {
   priceScreen.textContent = `Total: $${price}`;
   cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
     ${cid
-      .map((money) => `<p>${currencyNameMap[money[0]]}: $${money[1]}</p>`)
-      .join("")}  
+      .map(([currency, amount]) => `<p>${currencyNameMap[currency]}: $${amount}</p>`)
+      .join("")}
   `;
 };
 
