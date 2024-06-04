@@ -98,10 +98,10 @@ const purchaseBtn = document.getElementById('purchase-btn');
 let alertMessage;
 window.alert = (message) => alertMessage = message;
 
-// min $5.00, max $100.00, changes by 0.01, in cents
-const randomPrice = Math.floor(Math.random() * 9500) + 500;
-// min $1.00, max price - 1, changes by 0.01, in cents
-const randomCash = Math.floor(Math.random() * (price - 200)) + 100;
+// Min $5.00, max $100.00, changes by $0.01, in cents.
+const randomPrice = _randomNumber(9500) + 500;
+// Min $1.00, max price - $1, changes by $0.01, in cents.
+const randomCash = _randomNumber(randomPrice - 200) + 100;
 price = randomPrice / 100;
 cashInput.value = `${randomCash / 100}`;
 
@@ -132,8 +132,8 @@ const cashInput = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 const changeDueDiv = document.getElementById('change-due');
 
-// min $1.00, max $50.00, changes by 0.01, in cents
-const randomPrice = Math.floor(Math.random() * 4901) + 100;
+// Min $1.00, max $50.00, changes by $0.01, in cents.
+const randomPrice = _randomNumber(4900) + 100;
 price = randomPrice / 100;
 cashInput.value = `${price}`;
 
@@ -176,45 +176,44 @@ purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
 
-When `price` is less than the value in the `#cash` element, `cid` cash in drawer allows returning change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN"` with change due in coins and bills sorted in highest to lowest order.
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than the change due, individual denomination amounts allows for returning change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN"` with required change due in coins and bills sorted in highest to lowest order.
 
 ```js
 const cashInput = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 const changeDueDiv = document.getElementById('change-due');
 
-// min $50, max $100, changes by $10, in cents
-const randomCash = Math.floor(Math.random() * 5001) + 5000;
-// min $5.00, max $30.00, changes by $0.01, in cents
-const randomChange = Math.floor(Math.random() * 2501) + 500;
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
 price = (randomCash - randomChange) / 100;
 cashInput.value = `${randomCash / 100}`;
 
-const _money = [['ONE HUNDRED', 10000], ['TWENTY', 2000], ['TEN', 1000], ['FIVE', 500], ['ONE', 100], ['QUARTER', 25], ['DIME', 10], ['NICKEL', 5]];
 let changeLeft = randomChange;
 const _expectedChangeDue = [];
 const _cashInDrawer = [];
-for (const [currency, denomination] of _money) {
-  const count = Math.floor(Math.random() * 16); // min 0, max 15
-  _cashInDrawer.push([currency, (denomination * count) / 100]);
+for (const [denominationName, denomination] of _money) {
+  const count = _randomNumber(15);
+  _cashInDrawer.push([denominationName, (denomination * count) / 100]);
   if (denomination <= changeLeft && count > 0) {
     const maxCountInChange = Math.floor(changeLeft / denomination);
     const actualChange = Math.min(count, maxCountInChange);
-    const valueInChange = actualChange * denomination;
-    _expectedChangeDue.push([currency, valueInChange / 100]);
-    changeLeft -= valueInChange;
+    const amountInChange = actualChange * denomination;
+    _expectedChangeDue.push([denominationName, amountInChange / 100]);
+    changeLeft -= amountInChange;
   }
 }
 
-// min changeLeft, max changeLeft + 100
-const count = Math.floor(Math.random() * 101) + changeLeft;
+// At least changeLeft is needed in pennies, to make returning change due possible.
+const count = _randomNumber(100) + changeLeft;
 _cashInDrawer.push(['PENNY', count / 100]);
 if (changeLeft > 0) {
   _expectedChangeDue.push(['PENNY', changeLeft / 100]);
 }
 
 cid = _cashInDrawer.reverse();
-const expected = ['Status: OPEN', ..._expectedChangeDue.reverse().map(([currency, value]) => `${currency}: $${value}`)];
+const expected = ['Status: OPEN', ..._expectedChangeDue.reverse().map(([denominationName, amount]) => `${denominationName}: $${amount}`)];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -237,45 +236,40 @@ purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
 ```
 
-When `price` is less than the value in the `#cash` element, change due is less than the cash in drawer, but `cid` doesn't allow returning exact change, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than change due, individual denomination amounts make impossible to return needed change, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
 
 ```js
 const cashInput = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 const changeDueDiv = document.getElementById('change-due');
 
-// min $50, max $100, changes by $10, in cents
-const randomCash = Math.floor(Math.random() * 6) * 1000 + 5000;
-// min $5.00, max $30.00, changes by $0.01, in cents
-const randomChange = Math.floor(Math.random() * 2501) + 500;
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
 price = (randomCash - randomChange) / 100;
 cashInput.value = `${randomCash / 100}`;
 
-const _money = [['ONE HUNDRED', 10000], ['TWENTY', 2000], ['TEN', 1000], ['FIVE', 500], ['ONE', 100], ['QUARTER', 25], ['DIME', 10], ['NICKEL', 5]];
 let changeLeft = randomChange;
 const _expectedChangeDue = [];
 const _cashInDrawer = [];
-for (const [currency, denomination] of _money) {
+for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
-  // Currency can complete required changeLeft, available amount in drawer needs to be less.
-  const count = Math.floor(Math.random() * (changeLeft % denomination === 0 ? Math.min(16, maxCountInChange) : 16));
-  _cashInDrawer.push([currency, (denomination * count) / 100]);
+  // If denomination can complete required changeLeft, available amount in drawer cannot
+  // equal the maximum. Otherwise count can be greater than maximum count in change.
+  const count = _randomNumber(changeLeft % denomination === 0 ? Math.min(15, maxCountInChange - 1) : 15);
+  const amountInChange = count * denomination;
+  _cashInDrawer.push([denominationName, amountInChange / 100]);
   if (denomination <= changeLeft && count > 0) {
-    const possibleChange = Math.min(count, maxCountInChange);
-    const amountInChange = possibleChange * denomination;
-    // _expectedChangeDue.push([currency, amountInChange / 100]);
     changeLeft -= amountInChange;
   }
 }
 
-// min 0, max changeLeft - 1
-const count = Math.floor(Math.random() * changeLeft);
+// Less pennies than changeLeft makes impossible to return change due.
+const count = _randomNumber(Math.min(15, changeLeft - 1));
 _cashInDrawer.push(['PENNY', count / 100]);
-// _expectedChangeDue.push(['PENNY', count / 100]);
 
 cid = _cashInDrawer.reverse();
-// const expected = [..._expectedChangeDue.reverse().map(([currency, value]) => `${currency}: $${value}`)];
-
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -298,39 +292,39 @@ purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
 ```
 
-When `price` is less than the value in the `#cash` element, total cash in drawer is less than the change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is less than the change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
 
 ```js
 const cashInput = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 const changeDueDiv = document.getElementById('change-due');
 
-// min $50, max $100, changes by $10, in cents
-const randomCash = Math.floor(Math.random() * 6) * 1000 + 5000;
-// min $5.00, max $30.00, changes by $0.01, in cents
-const randomChange = Math.floor(Math.random() * 2501) + 500;
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
 price = (randomCash - randomChange) / 100;
 cashInput.value = `${randomCash / 100}`;
 
-const _money = [['ONE HUNDRED', 10000], ['TWENTY', 2000], ['TEN', 1000], ['FIVE', 500], ['ONE', 100], ['QUARTER', 25], ['DIME', 10], ['NICKEL', 5]];
 let changeLeft = randomChange;
 const _cashInDrawer = [];
-for (const [currency, denomination] of _money) {
+for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
-  const count = Math.floor(Math.random() * Math.max(0, Math.min(15, maxCountInChange - 1)));
+  // Amount lower than maximum (adjusted to changeLeft) will ensure total in drawer
+  // will be lower than needed change.
+  const count = _randomNumber(Math.max(0, Math.min(15, maxCountInChange - 1)));
   const amountInChange = count * denomination;
-  _cashInDrawer.push([currency, amountInChange / 100]);
+  _cashInDrawer.push([denominationName, amountInChange / 100]);
   if (denomination <= changeLeft && count > 0) {
     changeLeft -= amountInChange;
   }
 }
 
-// min 0, max changeLeft - 1
-const count = Math.floor(Math.random() * Math.min(changeLeft, 15));
+// Less pennies than changeLeft makes sure total cash in drawer is less than change due.
+const count = _randomNumber(Math.min(15, changeLeft - 1));
 _cashInDrawer.push(['PENNY', count / 100]);
 
 cid = _cashInDrawer.reverse();
-// const expected = [..._cashInDrawer.reverse().map(([currency, value]) => `${currency}: $${value}`)];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -354,42 +348,42 @@ purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
 
-When `price` is less than the value in the `#cash` element, cash in drawer `cid` is equal to change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED"` with change due in coins and bills sorted in highest to lowest order.
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is equal to change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED"` with change due in coins and bills sorted in highest to lowest order.
 
 ```js
 const cashInput = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 const changeDueDiv = document.getElementById('change-due');
 
-// min $50, max $100, changes by $10, in cents
-const randomCash = Math.floor(Math.random() * 6) * 1000 + 5000;
-// min $5.00, max $30.00, changes by $0.01, in cents
-const randomChange = Math.floor(Math.random() * 2501) + 500;
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
 price = (randomCash - randomChange) / 100;
 cashInput.value = `${randomCash / 100}`;
 
-const _money = [['ONE HUNDRED', 10000], ['TWENTY', 2000], ['TEN', 1000], ['FIVE', 500], ['ONE', 100], ['QUARTER', 25], ['DIME', 10], ['NICKEL', 5]];
 let changeLeft = randomChange;
 const _expectedChangeDue = [];
 const _cashInDrawer = [];
-for (const [currency, denomination] of _money) {
+for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
-  const count = Math.floor(Math.random() * maxCountInChange); // min 0, max maxCountInChange
-  _cashInDrawer.push([currency, (denomination * count) / 100]);
+  const count = _randomNumber(maxCountInChange);
+  const amountInChange = count * denomination;
+  _cashInDrawer.push([denominationName, amountInChange / 100]);
   if (denomination <= changeLeft && count > 0) {
-    const valueInChange = count * denomination;
-    _expectedChangeDue.push([currency, valueInChange / 100]);
-    changeLeft -= valueInChange;
+    _expectedChangeDue.push([denominationName, amountInChange / 100]);
+    changeLeft -= amountInChange;
   }
 }
 
+// Pennies equal to changeLeft makes sure total cash in drawer is equal to change due.
 _cashInDrawer.push(['PENNY', changeLeft / 100]);
 if (changeLeft > 0) {
   _expectedChangeDue.push(['PENNY', changeLeft / 100]);
 }
 
 cid = _cashInDrawer.reverse();
-const expected = ['Status: CLOSED', ..._expectedChangeDue.reverse().map(([currency, value]) => `${currency}: $${value}`)];
+const expected = ['Status: CLOSED', ..._expectedChangeDue.reverse().map(([denominationName, amount]) => `${denominationName}: $${amount}`)];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -397,6 +391,16 @@ assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().
 ```
 
 # --seed--
+
+
+## --after-user-code--
+
+```js
+const _money = [['ONE HUNDRED', 10000], ['TWENTY', 2000], ['TEN', 1000], ['FIVE', 500], ['ONE', 100], ['QUARTER', 25], ['DIME', 10], ['NICKEL', 5]];
+function _randomNumber(max, min=0) {
+  return Math.floor(Math.random() * (max +1));
+}
+```
 
 ## --seed-contents--
 
