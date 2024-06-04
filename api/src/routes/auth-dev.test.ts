@@ -7,6 +7,7 @@ import {
   superRequest
 } from '../../jest.utils';
 import { HOME_LOCATION } from '../utils/env';
+import { nanoidCharSet } from '../utils/create-user';
 
 describe('dev login', () => {
   setupServer();
@@ -39,6 +40,7 @@ describe('dev login', () => {
     it('should populate the user with the correct data', async () => {
       const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
       const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
+      const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
 
       await superRequest('/signin', { method: 'GET' });
       const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -78,7 +80,7 @@ describe('dev login', () => {
         keyboardShortcuts: false,
         location: '',
         name: '',
-        unsubscribeId: '',
+        unsubscribeId: expect.stringMatching(unsubscribeIdRe),
         picture: '',
         profileUI: {
           isLocked: false,
@@ -92,7 +94,7 @@ describe('dev login', () => {
           showPortfolio: false,
           showTimeLine: false
         },
-        progressTimestamps: [],
+        progressTimestamps: [expect.any(Number)],
         sendQuincyEmail: false,
         theme: 'default',
         username: expect.stringMatching(fccUuidRe),

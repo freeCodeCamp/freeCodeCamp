@@ -24,7 +24,7 @@ O servidor deve ser reiniciado após serem feitas alterações em seus arquivos.
 
 Você pode interromper o servidor pelo terminal usando `ctrl + c` e iniciá-lo usando o Node diretamente (`node mainEntryFile.js`) ou usando um script de execução no arquivo `package.json` com `npm run`.
 
-For example, the `"start": "node server.js"` script would be run from the terminal using `npm run start`.
+Por exemplo, o script `"start": "node server.js"` seria executado pelo terminal usando `npm run start`.
 
 Para implementar a reinicialização automática do servidor ao salvar arquivos, o Node fornece a flag `--watch`, que você pode adicionar ao começo do script `"start": "node --watch server.js"` — ou você pode instalar um pacote do npm como o `nodemon`. Deixamos isso para você fazer como exercício.
 

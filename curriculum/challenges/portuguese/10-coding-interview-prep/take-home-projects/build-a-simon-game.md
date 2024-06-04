@@ -28,7 +28,7 @@ Atenda às histórias de usuário abaixo e faça com que todos os testes passem.
 
 **História de usuário:** posso vencer o jogo obtendo uma série de 20 etapas corretas. Eu fui notificado da minha vitória e, então, o jogo recomeça.
 
-**Dica:** aqui estão os mp3s que você pode usar para cada botão: `https://s3.amazonaws.com/freecodecamp/simonSound1.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound2.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound3.mp3`, `https://s3.amazonaws.com/freecodecamp/simonSound4.mp3`.
+**Dica:** aqui estão os mp3s que você pode usar para cada botão: `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound1.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound2.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound3.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound4.mp3`.
 
 Quando terminar, inclua um link para o seu projeto no CodePen e clique no botão "Eu completei esse desafio".
 

@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-Use elementos de item de lista (`li`) para criar itens em uma lista. Aqui está um exemplo de itens de lista em uma lista não ordenada:
+O elemento `li` é usado para criar um item em uma lista ordenada ou não ordenada.
+
+Aqui está um exemplo de itens em uma lista não ordenada:
 
 ```html
 <ul>
@@ -16,19 +18,19 @@ Use elementos de item de lista (`li`) para criar itens em uma lista. Aqui está 
 </ul>
 ```
 
-Dentro do elemento `ul`, aninhe três itens de lista para exibir três coisas que os gatos amam:
+Aninhe no elemento `ul` uma lista de três coisas que gatos adoram:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-Você deve ter três elementos `li`. Cada elemento `li` deve ter sua própria tag de abertura e de fechamento.
+Você deve usar três elementos `li`. Cada elemento `li` deve ter sua própria tag de abertura e de fechamento.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-Você deve ter os três elementos `li` com os textos `cat nip`, `laser pointers` e `lasagna`, não importando a ordem. Você omitiu algum dos textos ou tem um erro de digitação.
+Use três elementos `li` com os textos `cat nip`, `laser pointers` e `lasagna`, em qualquer ordem. Você esqueceu algum dos textos ou cometeu um erro de digitação.
 
 ```js
 assert.deepStrictEqual(
@@ -39,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-Os três elementos `li` devem estar localizados entre as tags de abertura e fechamento do elemento `ul`.
+Os três elementos `li` devem estar entre as tags de abertura e fechamento do elemento `ul`.
 
 ```js
 assert(

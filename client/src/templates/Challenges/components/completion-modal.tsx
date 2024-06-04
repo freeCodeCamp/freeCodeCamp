@@ -25,7 +25,7 @@ import {
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Spacer } from '../../../components/helpers';
-
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
 
@@ -164,6 +164,27 @@ class CompletionModal extends Component<
       submitChallenge
     } = this.props;
 
+    const isMacOS = navigator.userAgent.includes('Mac OS');
+
+    const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+
+    let buttonText;
+    if (isDesktop) {
+      if (isMacOS) {
+        buttonText = isSignedIn
+          ? t('buttons.submit-and-go-3')
+          : t('buttons.go-to-next-3');
+      } else {
+        buttonText = isSignedIn
+          ? t('buttons.submit-and-go-2')
+          : t('buttons.go-to-next-2');
+      }
+    } else {
+      buttonText = isSignedIn
+        ? t('buttons.submit-and-go')
+        : t('buttons.go-to-next');
+    }
+
     return (
       <Modal
         onClose={close}
@@ -185,10 +206,10 @@ class CompletionModal extends Component<
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <>
+            <div className='completion-modal-login-btn'>
               <Login block={true}>{t('learn.sign-in-save')}</Login>
               <Spacer size='xxSmall' />
-            </>
+            </div>
           )}
           <Button
             block={true}
@@ -198,8 +219,7 @@ class CompletionModal extends Component<
             data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
-            {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
-            <span className='hidden-xs'> (Ctrl + Enter)</span>
+            {buttonText}
           </Button>
           <Spacer size='xxSmall' />
           {this.state.downloadURL ? (

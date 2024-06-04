@@ -5,8 +5,6 @@
   "helpCategory": "Python",
   "order": 1,
   "time": "10 hours",
-  "template": "",
-  "required": [],
   "superBlock": "machine-learning-with-python",
   "challengeOrder": [
     {

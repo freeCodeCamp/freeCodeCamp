@@ -130,7 +130,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
@@ -158,4 +158,4 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           # Only run one test to keep the run time down.
-          spec: 'cypress/e2e/default/learn/challenges/backend.ts'
+          spec: 'cypress/e2e/default/learn/redirects/es6-to-basic-javascript.ts'

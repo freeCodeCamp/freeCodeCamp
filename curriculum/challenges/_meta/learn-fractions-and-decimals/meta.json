@@ -4,9 +4,6 @@
   "dashedName": "learn-fractions-and-decimals",
   "helpCategory": "Python",
   "order": 2,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
     {

@@ -7,7 +7,9 @@ dashedName: step-21
 
 # --description--
 
-Використовуйте елементи (`li`) предметів списку, щоб створити предмети в списку. Ось приклад предметів списку в невпорядкованому списку:
+The `li` element is used to create a list item in an ordered or unordered list.
+
+Here is an example of list items in an unordered list:
 
 ```html
 <ul>
@@ -16,19 +18,19 @@ dashedName: step-21
 </ul>
 ```
 
-Всередині елемента `ul` вкладіть три предмети списку, щоб зобразити три речі, які люблять коти:
+Within the `ul` element nest three list items to display three things cats love:
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-Ви повинні мати три елементи `li`. Кожен елемент `li` повинен мати власні початковий та кінцевий теґи.
+Ви повинні мати три елементи `li`. Each `li` element should have its own opening and closing tag.
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-Ви повинні мати три елементи `li` з текстом `cat nip`, `laser pointers` та `lasagna` в будь-якому порядку. Ви або не написали текст, або маєте друкарську помилку.
+У вас мають бути три елементи `li` з текстом `cat nip`, `laser pointers` та `lasagna` у будь-якому порядку. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
@@ -39,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-Три елементи `li` повинні бути розташовані між початковим та кінцевим теґами елемента `ul`.
+The three `li` elements should be located between the `ul` element's opening and closing tags.
 
 ```js
 assert(

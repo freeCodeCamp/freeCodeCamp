@@ -2,7 +2,6 @@
 id: 5ee127a03c3b35dd45426493
 title: 将一个变量的值赋给另一个
 challengeType: 1
-videoUrl: ''
 forumTopicId: 418265
 dashedName: assigning-the-value-of-one-variable-to-another
 ---

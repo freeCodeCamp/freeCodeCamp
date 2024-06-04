@@ -26,7 +26,7 @@ dashedName: improve-accessibility-of-audio-content-with-the-audio-element
 
 # --instructions--
 
-Давайте відпочинемо від Camper Cat та зустрінемося з його приятелем Зерсіаксом (@zersiax), чемпіоном з доступності та користувачем програми для читання з екрану. To hear a clip of his screen reader in action, add an `audio` element after the `p` element. Додайте атрибут `controls`. Then place a `source` element inside the `audio` tags with the `src` attribute set to `https://s3.amazonaws.com/freecodecamp/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
+Давайте відпочинемо від Camper Cat та зустрінемося з його приятелем Зерсіаксом (@zersiax), чемпіоном з доступності та користувачем програми для читання з екрану. To hear a clip of his screen reader in action, add an `audio` element after the `p` element. Додайте атрибут `controls`. Then place a `source` element inside the `audio` tags with the `src` attribute set to `https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3` and `type` attribute set to `"audio/mpeg"`.
 
 **Примітка:** Запис може здатися занадто швидким і малозрозумілим, але це звичайна швидкість для користувачів зчитувачів з екрану.
 
@@ -70,7 +70,7 @@ assert($('audio').children('source').length === 1);
 ```js
 assert(
   $('source').attr('src') ===
-    'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3'
+    'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
 );
 ```
 
@@ -108,7 +108,7 @@ assert($('source').attr('type') === 'audio/mpeg');
   <main>
     <p>A sound clip of Zersiax's screen reader in action.</p>
     <audio controls>
-      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+      <source src="https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3" type="audio/mpeg"/>
     </audio>
   </main>
 </body>
