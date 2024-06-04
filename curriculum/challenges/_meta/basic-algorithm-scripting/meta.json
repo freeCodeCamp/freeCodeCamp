@@ -4,7 +4,6 @@
   "dashedName": "basic-algorithm-scripting",
   "helpCategory": "JavaScript",
   "order": 5,
-  "time": "50 hours",
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {

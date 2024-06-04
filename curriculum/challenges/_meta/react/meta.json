@@ -4,7 +4,6 @@
   "dashedName": "react",
   "helpCategory": "JavaScript",
   "order": 3,
-  "time": "5 hours",
   "template": "<body><div id='root'></div><div id='challenge-node'></div>${ source || '' }</body>",
   "required": [
     {

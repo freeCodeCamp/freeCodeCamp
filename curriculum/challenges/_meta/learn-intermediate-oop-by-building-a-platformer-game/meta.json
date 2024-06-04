@@ -6,7 +6,6 @@
   "dashedName": "learn-intermediate-oop-by-building-a-platformer-game",
   "helpCategory": "JavaScript",
   "order": 19,
-  "time": "5 hours",
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "disableLoopProtectTests": true,
   "disableLoopProtectPreview": true,
