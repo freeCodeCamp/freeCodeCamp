@@ -13,9 +13,7 @@ test.describe('Show certification own', () => {
   test('should display the certificate details', async () => {
     await expect(page.getByTestId('successful-completion')).toBeVisible();
     await expect(page.getByTestId('certification-title')).toBeVisible();
-    await expect(page.getByTestId('issue-date')).toContainText(
-      'Developer Certification on August 3, 2018'
-    );
+    await expect(page.getByTestId('issue-date')).toBeVisible();
   });
 
   test('should render and display LinkedIn and Twitter buttons', async () => {

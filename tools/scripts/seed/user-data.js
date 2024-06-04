@@ -245,6 +245,12 @@ module.exports = {
           passed: true,
           examTimeInSeconds: 2195
         }
+      },
+      {
+        completedDate: 1695065177436,
+        id: '647f7da207d29547b3bee1ba',
+        challengeType: 7,
+        files: []
       }
     ],
     completedExams: [

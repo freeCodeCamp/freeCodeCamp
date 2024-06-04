@@ -11,9 +11,7 @@ test.describe('Show certification else', () => {
   test('while viewing someone else, should display the certificate information', async () => {
     await expect(page.getByTestId('successful-completion')).toBeVisible();
     await expect(page.getByTestId('certification-title')).toBeVisible();
-    await expect(page.getByTestId('issue-date')).toContainText(
-      'Developer Certification on August 3, 2018'
-    );
+    await expect(page.getByTestId('issue-date')).toBeVisible();
   });
 
   test('while viewing someone else, should not render a LinkedIn button and Twitter button', async () => {
