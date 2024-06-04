@@ -748,8 +748,8 @@ const updateUI = (change) => {
   // Update cid if change is passed in
   if (change) {
     change.forEach(([changeDenomination, changeAmount]) => {
-      const targetArr = cid.find(([denominationName, amount]) => denominationName === changeDenomination);
-      targetArr[1] = (Math.round(amount * 100) - Math.round(changeAmount * 100)) / 100;
+      const targetArr = cid.find(([denominationName, _]) => denominationName === changeDenomination);
+      targetArr[1] = (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
     });
   }
 
