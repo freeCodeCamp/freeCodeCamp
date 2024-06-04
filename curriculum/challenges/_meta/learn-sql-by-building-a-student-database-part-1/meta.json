@@ -4,9 +4,6 @@
   "dashedName": "learn-sql-by-building-a-student-database-part-1",
   "helpCategory": "Backend Development",
   "order": 4,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
     {

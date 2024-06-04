@@ -9,7 +9,7 @@ dashedName: dialogue-meeting-a-client
 
 Assista ao vídeo para entender o contexto das próximas lições.
 
-# --atividade--
+# --assignment--
 
 Assista ao vídeo
 

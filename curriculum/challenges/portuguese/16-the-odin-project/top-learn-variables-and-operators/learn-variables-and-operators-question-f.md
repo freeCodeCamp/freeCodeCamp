@@ -20,7 +20,7 @@ console.log(s); // mystring
 
 Note that if any of the operands is a string, then the other one is converted to a string too.
 
-For example:
+Por exemplo:
 
 ```js
 console.log(1 + '2'); // '12'
