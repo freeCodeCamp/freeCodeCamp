@@ -1,17 +1,17 @@
 ---
 id: 65ef1afca9a8f6be0d4150ba
-title: Step 10
+title: Крок 10
 challengeType: 20
 dashedName: step-10
 ---
 
 # --description--
 
-Set the value of `root` to `None` as at this point, you don't have an approximate value yet.
+Встановіть значення `root` на `None`, оскільки наразі ви не знаєте приблизного значення.
 
 # --hints--
 
-The value of `root` should be `None`.
+Значенням `root` має бути `None`.
 
 ```js
 ({

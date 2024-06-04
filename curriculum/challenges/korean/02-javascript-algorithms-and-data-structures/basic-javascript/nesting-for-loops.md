@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244e1
-title: Nesting For Loops
+title: For 루프 중첩하기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
@@ -9,7 +9,7 @@ dashedName: nesting-for-loops
 
 # --description--
 
-If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. 여기 예시가 있습니다.
+다차원 배열이 있을 때, 이전에 언급된 것과 같은 논리를 사용하여 배열과 모든 하위 배열을 순환할 수 있습니다. 여기 예시가 있습니다.
 
 ```js
 const arr = [
@@ -23,21 +23,21 @@ for (let i = 0; i < arr.length; i++) {
 }
 ```
 
-This outputs each sub-element in `arr` one at a time. Note that for the inner loop, we are checking the `.length` of `arr[i]`, since `arr[i]` is itself an array.
+이는 `arr`의 각 하위 요소를 한 번에 하나씩 출력합니다. 내부 루프에서는 `arr[i]`의 `.length`를 확인합니다. `arr[i]` 자체가 배열이기 때문입니다.
 
 # --instructions--
 
-Modify function `multiplyAll` so that it returns the product of all the numbers in the sub-arrays of `arr`.
+`multiplyAll` 함수를 수정해 `arr`의 하위 배열에 있는 모든 숫자의 곱을 반환하도록 하세요.
 
 # --hints--
 
-`multiplyAll([[1], [2], [3]])` should return `6`
+`multiplyAll([[1], [2], [3]])`은 `6`을 반환해야 합니다.
 
 ```js
 assert(multiplyAll([[1], [2], [3]]) === 6);
 ```
 
-`multiplyAll([[1, 2], [3, 4], [5, 6, 7]])` should return `5040`
+`multiplyAll([[1, 2], [3, 4], [5, 6, 7]])`은 `5040`을 반환해야 합니다.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-`multiplyAll([[5, 1], [0.2, 4, 0.5], [3, 9]])` should return `54`
+`multiplyAll([[5, 1], [0.2, 4, 0.5], [3, 9]])`은 `54`를 반환해야 합니다.
 
 ```js
 assert(

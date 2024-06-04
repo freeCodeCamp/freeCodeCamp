@@ -4,9 +4,6 @@
   "dashedName": "learn-quadratic-equations",
   "helpCategory": "Python",
   "order": 10,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "college-algebra-with-python",
   "challengeOrder": [
     {

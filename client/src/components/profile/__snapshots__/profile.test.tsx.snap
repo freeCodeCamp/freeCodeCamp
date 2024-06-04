@@ -35,7 +35,7 @@ exports[`<Profile/> renders correctly 1`] = `
               </span>
               <svg
                 aria-hidden="true"
-                class="avatar default-avatar"
+                class="avatar"
                 height="500px"
                 version="1.1"
                 viewBox="0 0 500 500"

@@ -35,7 +35,8 @@ import {
   closeModal,
   submitChallenge,
   setUserCompletedExam,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../redux/actions';
 import { getGenerateExam } from '../../../utils/ajax';
 import { isChallengeCompletedSelector } from '../redux/selectors';
@@ -49,7 +50,8 @@ import {
   GeneratedExamResults,
   GeneratedExamQuestion,
   PrerequisiteChallenge,
-  SurveyResults
+  SurveyResults,
+  Test
 } from '../../../redux/prop-types';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
@@ -100,6 +102,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       setUserCompletedExam,
       clearExamResults,
       submitChallenge,
+      initTests,
       updateChallengeMeta,
       updateSolutionFormValues
     },
@@ -116,6 +119,7 @@ interface ShowExamProps {
   data: { challengeNode: ChallengeNode };
   examInProgress: boolean;
   examResults: GeneratedExamResults | null;
+  initTests: (arg0: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openExitExamModal: () => void;
@@ -174,12 +178,19 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, title }
+          challenge: {
+            fields: { tests },
+            challengeType,
+            helpCategory,
+            title
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -603,6 +614,10 @@ export const query = graphql`
         fields {
           blockHashSlug
           blockName
+          tests {
+            text
+            testString
+          }
         }
         helpCategory
         id

@@ -4,9 +4,6 @@
   "dashedName": "build-a-salon-appointment-scheduler-project",
   "order": 9,
   "helpCategory": "Backend Development",
-  "time": "30 hours",
-  "template": "",
-  "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
     {

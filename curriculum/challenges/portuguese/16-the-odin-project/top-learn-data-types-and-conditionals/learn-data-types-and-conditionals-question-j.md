@@ -9,7 +9,7 @@ dashedName: learn-data-types-and-conditionals-question-j
 
 More complex conditional statements might include multiple conditions. That is why logical operators are used to combine multiple conditions. The logical operators are `&&`, `||` and `!` which are used to represent `and`, `or` and `not` respectively.
 
-The logical operator `||` is used to combine two boolean conditions. It returns `true` if at least one of the conditions is `true`. Otherwise, it returns `false`:
+The logical operator `||` is used to combine two boolean conditions. It returns `true` if at least one of the conditions is `true`. Caso contrário, retorna `false`:
 
 ```javascript
 let a = 5;
@@ -23,7 +23,7 @@ if (a > b || a > c) {
 }
 ```
 
-The logical operator `&&` is used to combine two boolean conditions. It returns `true` only if both of the conditions are `true`. Otherwise, it returns `false`:
+The logical operator `&&` is used to combine two boolean conditions. It returns `true` only if both of the conditions are `true`. Caso contrário, retorna `false`:
 
 ```javascript
 let a = 5;
@@ -37,7 +37,7 @@ if (a < b && a < c) {
 }
 ```
 
-The logical operator `!` is used to negate a boolean condition. It returns `true` if the condition is `false`. Otherwise, it returns `false`:
+The logical operator `!` is used to negate a boolean condition. It returns `true` if the condition is `false`. Caso contrário, retorna `false`:
 
 ```javascript
 let a = 5;
