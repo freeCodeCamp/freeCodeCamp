@@ -669,7 +669,7 @@ const cashDrawerDisplay = document.getElementById("cash-drawer-display");
 const formatResults = (status, change) => {
   displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
   displayChangeDue.innerHTML += change
-    .map(([currency, amount]) => `<p>${currency}: $${amount}</p>`)
+    .map(([denominationName, amount]) => `<p>${denominationName}: $${amount}</p>`)
     .join("");
 };
 
@@ -757,7 +757,7 @@ const updateUI = (change) => {
   priceScreen.textContent = `Total: $${price}`;
   cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
     ${cid
-      .map(([currency, amount]) => `<p>${currencyNameMap[currency]}: $${amount}</p>`)
+      .map(([denominationName, amount]) => `<p>${currencyNameMap[denominationName]}: $${amount}</p>`)
       .join("")}
   `;
 };
