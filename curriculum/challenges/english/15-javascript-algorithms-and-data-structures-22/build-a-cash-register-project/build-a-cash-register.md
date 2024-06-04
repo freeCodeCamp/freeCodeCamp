@@ -217,7 +217,7 @@ const expected = ['Status: OPEN', ..._expectedChangeDue.reverse().map(([denomina
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())), `price: ${price}\ncash: ${cash.value}cid: ${cid}\nexpected: ${expected}\nchangeDue:${changeDueDiv.innerText}`);
+assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
 
 When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
@@ -387,7 +387,7 @@ const expected = ['Status: CLOSED', ..._expectedChangeDue.reverse().map(([denomi
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())), `price: ${price}\ncash: ${cash.value}cid: ${cid}\nexpected: ${expected}\nchangeDue:${changeDueDiv.innerText}`);
+assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
 
 # --seed--
