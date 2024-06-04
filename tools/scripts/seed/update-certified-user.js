@@ -7,7 +7,6 @@ const updateCertUser = async () => {
   const curriculum = await getChallengesForLang('english');
 
   const excluded = [
-    'foundational-c-sharp-with-microsoft',
     'certifications',
     'a2-english-for-developers',
     'example-certification'
