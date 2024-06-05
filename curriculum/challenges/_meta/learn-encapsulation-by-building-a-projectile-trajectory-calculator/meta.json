@@ -88,12 +88,16 @@
       "title": "Step 20"
     },
     {
-      "id": "6633bfcef57e1d70cc3142c6",
+      "id": "66601c3c460ee12fbd669d6a",
       "title": "Step 21"
     },
     {
-      "id": "6633c06601c081735063b528",
+      "id": "6633bfcef57e1d70cc3142c6",
       "title": "Step 22"
+    },
+    {
+      "id": "6633c06601c081735063b528",
+      "title": "Step 23"
     }
   ],
   "helpCategory": "Python"
