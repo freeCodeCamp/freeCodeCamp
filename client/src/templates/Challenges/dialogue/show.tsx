@@ -15,7 +15,7 @@ import ShortcutsModal from '../components/shortcuts-modal';
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import CompletionModal from '../components/completion-modal';
 import ChallengeTitle from '../components/challenge-title';
@@ -25,7 +25,8 @@ import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
   updateChallengeMeta,
-  openModal
+  openModal,
+  initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import Scene from '../components/scene/scene';
@@ -45,6 +46,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       openCompletionModal: () => openModal('completion'),
@@ -58,6 +60,7 @@ interface ShowDialogueProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
   description: string;
+  initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
   openHelpModal: () => void;
@@ -101,12 +104,19 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: {
+            fields: { tests },
+            title,
+            challengeType,
+            helpCategory
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -332,6 +342,10 @@ export const query = graphql`
         fields {
           slug
           blockName
+          tests {
+            text
+            testString
+          }
         }
         translationPending
         assignments

@@ -4,7 +4,6 @@
   "dashedName": "bootstrap",
   "helpCategory": "HTML-CSS",
   "order": 0,
-  "time": "5 hours",
   "required": [
     {
       "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"

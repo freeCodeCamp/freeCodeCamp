@@ -11,7 +11,7 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
@@ -22,7 +22,8 @@ import {
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues,
-  submitChallenge
+  submitChallenge,
+  initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { setIsProcessing } from '../../../redux/actions';
@@ -51,6 +52,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
@@ -66,6 +68,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface MsTrophyProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
+  initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   isProcessing: boolean;
   setIsProcessing: (arg0: boolean) => void;
@@ -94,12 +97,19 @@ class MsTrophy extends Component<MsTrophyProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: {
+            fields: { tests },
+            title,
+            challengeType,
+            helpCategory
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -253,6 +263,10 @@ export const query = graphql`
         translationPending
         fields {
           blockName
+          tests {
+            text
+            testString
+          }
         }
       }
     }
