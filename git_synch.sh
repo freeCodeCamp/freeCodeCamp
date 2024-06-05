@@ -3,7 +3,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 SOURCE_REPO=freeCodeCamp
 DST_REPO=FreeCodeCampCopy
 SOURCE_REPO_DIR=/home/runner/work/freeCodeCamp/${SOURCE_REPO}
-DST_REPO_DIR=/home/runner/work/FreeCodeCampCopy/${DST_REPO}
+DST_REPO_DIR=/home/runner/work/freeCodeCamp/${DST_REPO}
 TMP_REPO_DIR=/tmp/temp_repo
 
 rm -rf "${TMP_REPO_DIR}" 
