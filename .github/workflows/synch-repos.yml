@@ -53,7 +53,7 @@ jobs:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
           cd ../
-          git clone git@github.com:Asad-Rahim/FreeCodeCamp.git
+          git clone git@github.com:Asad-Rahim/FreeCodeCampCopy.git
           echo "${PWD}"
           ls
           bash ${PWD}/freeCodeCamp/git_synch.sh
