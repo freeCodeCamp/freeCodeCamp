@@ -18,7 +18,7 @@ jobs:
   synch-changes:
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout Code
+      - name: Checkout Source Repo
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
@@ -26,13 +26,15 @@ jobs:
             shared
             curriculum
           fetch-depth: 3
+      - name : Checkout Destination Repo
+        uses: actions/checkout@v4
+        with: 
+          repository: Asad-Rahim/FreeCodeCamp
+          token: ${{ secrets.OTHER_REPO_SSH_TOKEN }}
       - name: Setup Github
         run: |
           git config --global user.name 'Asad Rahim'
           git config --global user.email 'Asad-Rahim@users.noreply.github.com'
       - name: Run Git synch
         run: |
-          cd ../
-          git clone git@github.com:Asad-Rahim/FreeCodeCamp.git
-          echo "${PWD}"
           bash ${PWD}/freeCodeCamp/git_synch.sh
