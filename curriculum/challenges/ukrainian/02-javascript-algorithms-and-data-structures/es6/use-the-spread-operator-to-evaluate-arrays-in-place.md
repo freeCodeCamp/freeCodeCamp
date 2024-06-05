@@ -55,7 +55,7 @@ assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 Для дублювання `arr1` потрібно використати оператор розширення (`...`).
 
 ```js
-assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
+assert(__helpers.removeJSComments(code).match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
 `arr2` повинен залишатись без змін, а `arr1` повинен бути зміненим.

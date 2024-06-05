@@ -39,7 +39,7 @@ dashedName: finding-a-remainder-in-javascript
 Змінна `remainder` повинна бути ініціалізованою
 
 ```js
-assert(/(const|let|var)\s+?remainder/.test(code));
+assert(/(const|let|var)\s+?remainder/.test(__helpers.removeJSComments(code)));
 ```
 
 Значенням `remainder` повинне бути `2`
@@ -51,7 +51,7 @@ assert(remainder === 2);
 Ви повинні використати оператор `%`
 
 ```js
-assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

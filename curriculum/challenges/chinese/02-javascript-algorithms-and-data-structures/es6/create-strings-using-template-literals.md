@@ -75,7 +75,7 @@ assert.match(code, /(`.*\${.*}.*`)/);
 应该使用遍历。
 
 ```js
-assert(code.match(/for|map|reduce|forEach|while/));
+assert(__helpers.removeJSComments(code).match(/for|map|reduce|forEach|while/));
 ```
 
 # --seed--

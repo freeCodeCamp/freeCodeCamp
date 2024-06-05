@@ -1,13 +1,13 @@
 ---
 id: 65e9726d484dd50f720e6fec
-title: Learn Data Types and Conditionals Question G
+title: Вивчіть типи даних та умови. Запитання G
 challengeType: 15
 dashedName: learn-data-types-and-conditionals-question-g
 ---
 
 # --description--
 
-JavaScript also has the ability to compare types and values using the strict equality operator `===`. This operator checks if the two values are equal and of the same type. For example:
+JavaScript дозволяє порівняти типи та значення за допомогою оператора строгої рівності `===`. Цей оператор перевіряє, чи два значення рівні та мають однаковий тип. Наприклад:
 
 ```javascript
 let x = 5;
@@ -18,35 +18,35 @@ let result = x === y;
 console.log(result); // false
 ```
 
-In this example, the `result` variable will contain `false` because `x` is a number and `y` is a string. But if you use the `==` operator, the result will be `true` because JavaScript will convert the string to a number and compare the values.
+Змінна `result` з прикладу міститиме `false`, оскільки `x` є числом, а `y` — рядком. Але, якщо ви використаєте оператор `==`, то результатом буде `true`, оскільки JavaScript перетворить рядок в число та порівняє значення.
 
-This operator is called the strict equality operator because it checks for both value and type equality. It is often recommended to use the `===` operator to avoid unexpected results when comparing values.
+Цей оператор називають оператором строгої рівності, оскільки він перевіряє рівність і значення, і типу. Оператор `===` часто рекомендують використовувати, щоб уникнути неочікуваних результатів, порівнюючи значення.
 
-There is also a strict inequality operator `!==` that checks if the two values are not equal and of the same type.
+Існує й оператор строгої нерівності `!==`, який перевіряє, чи два значення не рівні та мають однаковий тип.
 
-There are a lot of ways to use the strict equality operator, and it's important to understand how it works.
+Оператор строгої рівності можна багато де використовувати, тому важливо розуміти, як він працює.
 
 # --assignment--
 
-Read <a href="https://javascript.info/comparison" target="_blank" rel="noopener noreferrer nofollow">this article on JavaScript.info</a> to learn more about the strict equality operator.
+Прочитайте <a href="https://uk.javascript.info/comparison" target="_blank" rel="noopener noreferrer nofollow">цю статтю на JavaScript.info</a>, щоб дізнатись більше про оператори строгої рівності.
 
 # --question--
 
 ## --text--
 
-What happens when you use the strict equality operator `===` to compare a number of the value `0` and a boolean of the value `false`?
+Що відбудеться, якщо використати оператор строгої рівності `===`, щоб порівняти число `0` та булеве значення `false`?
 
 ## --answers--
 
-The output would be `true`.
+Результатом буде `true`.
 
 ---
 
-The output would be `false`.
+Результатом буде `false`.
 
 ---
 
-You cannot compare a number and a boolean using the strict equality operator.
+Числа та булеві значення не можна порівнювати за допомогою оператора строгої рівності.
 
 
 ## --video-solution--

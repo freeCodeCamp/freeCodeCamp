@@ -37,7 +37,7 @@ Olhe o exemplo acima de `ourName` se você ficar travado.
 Você deve declarar `myName` com a palavra-chave `var`, terminando com ponto e vírgula
 
 ```js
-assert(/var\s+myName\s*;/.test(code));
+assert(/var\s+myName\s*;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

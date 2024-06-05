@@ -1,6 +1,6 @@
 ---
 id: 657e4ec6dd27af9cc16addea
-title: Task 78
+title: Завдання 78
 challengeType: 19
 dashedName: task-78
 ---
@@ -9,7 +9,7 @@ dashedName: task-78
 
 `Regulations` are official rules made by a government or authority. They are designed to control how something works or how people act, especially in businesses.
 
-Example: `Health and safety regulations ensure a safe workplace.`
+Наприклад, `Health and safety regulations ensure a safe workplace`.
 
 
 # --question--

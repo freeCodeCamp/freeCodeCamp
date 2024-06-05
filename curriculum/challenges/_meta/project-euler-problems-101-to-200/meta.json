@@ -1,12 +1,9 @@
 {
-  "name": "project euler problems 101 to 200",
+  "name": "Project Euler Problems 101 to 200",
   "isUpcomingChange": false,
   "dashedName": "project-euler-problems-101-to-200",
   "helpCategory": "Euler",
   "order": 1,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "project-euler",
   "disableLoopProtectTests": true,
   "challengeOrder": [

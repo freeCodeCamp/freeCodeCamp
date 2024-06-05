@@ -10,12 +10,13 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import VideoPlayer from '../components/video-player';
 import CompletionModal from '../components/completion-modal';
@@ -28,7 +29,8 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 
@@ -46,6 +48,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
@@ -60,6 +63,7 @@ interface ShowOdinProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
   description: string;
+  initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
   openHelpModal: () => void;
@@ -80,6 +84,7 @@ interface ShowOdinState {
   assignmentsCompleted: number;
   allAssignmentsCompleted: boolean;
   videoIsLoaded: boolean;
+  isScenePlaying: boolean;
 }
 
 // Component
@@ -97,7 +102,8 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       isWrongAnswer: false,
       assignmentsCompleted: 0,
       allAssignmentsCompleted: false,
-      videoIsLoaded: false
+      videoIsLoaded: false,
+      isScenePlaying: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -108,12 +114,19 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: {
+            fields: { tests },
+            title,
+            challengeType,
+            helpCategory
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -204,6 +217,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     });
   };
 
+  setIsScenePlaying = (shouldPlay: boolean) => {
+    this.setState({
+      isScenePlaying: shouldPlay
+    });
+  };
+
   render() {
     const {
       data: {
@@ -251,6 +270,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsScenePlaying(true)}
       >
         <LearnLayout>
           <Helmet
@@ -305,7 +325,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
 
               {scene && (
                 <>
-                  <Scene scene={scene} /> <Spacer size='medium' />
+                  <Scene
+                    scene={scene}
+                    isPlaying={this.state.isScenePlaying}
+                    setIsPlaying={this.setIsScenePlaying}
+                  />{' '}
+                  <Spacer size='medium' />
                 </>
               )}
 
@@ -426,6 +451,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );
@@ -463,6 +489,10 @@ export const query = graphql`
         fields {
           slug
           blockName
+          tests {
+            text
+            testString
+          }
         }
         question {
           text

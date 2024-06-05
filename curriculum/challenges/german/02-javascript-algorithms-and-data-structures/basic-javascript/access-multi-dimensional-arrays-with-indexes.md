@@ -45,7 +45,7 @@ assert(myData === 8);
 Du solltest die Klammernotation verwenden, um den richtigen Wert aus `myArray` zu lesen.
 
 ```js
-assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(code)));
+assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--

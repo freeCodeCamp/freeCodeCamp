@@ -9,11 +9,19 @@ dashedName: step-15
 
 Nei passaggi precedenti hai usato un elemento di ancoraggio per trasformare il testo in un link. Anche altri tipi di contenuto possono essere trasformati in un link racchiudendoli in tag di ancoraggio.
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 Trasforma l'immagine in un link circondandola con i tag necessari. Usa `https://freecatphotoapp.com` come valore dell'attributo dell'elemento di ancoraggio `href`.
 
 # --hints--
 
-Dovresti avere un elemento `img` con un valore `src` di `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Potresti averlo eliminato accidentalmente.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Potresti averlo eliminato accidentalmente.
 
 ```js
 assert(

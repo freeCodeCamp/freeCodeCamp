@@ -46,13 +46,13 @@ assert(
 应使用 `filter` 方法。
 
 ```js
-assert(code.match(/\s*\.\s*filter/g));
+assert(__helpers.removeJSComments(code).match(/\s*\.\s*filter/g));
 ```
 
 不能使用 `for` 循环。
 
 ```js
-assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/g));
 ```
 
 `filteredList` 应该等于 `[{"title": "Inception", "rating": "8.8"}, {"title": "Interstellar", "rating": "8.6"}, {"title": "The Dark Knight", "rating": "9.0"}, {"title": "Batman Begins", "rating": "8.3"}]`。

@@ -1,8 +1,8 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Step 36
+title: Step 38
 challengeType: 0
-dashedName: step-36
+dashedName: step-38
 ---
 
 # --description--
@@ -11,13 +11,7 @@ Il prossimo passo è consentire agli utenti di aggiungere delle voci al contator
 
 # --hints--
 
-Dovresti dichiarare una variabile `addEntry`.
-
-```js
-assert.isDefined(addEntry);
-```
-
-La variabile `addEntry` dovrebbe essere una funzione.
+You should declare an `addEntry` function.
 
 ```js
 assert.isFunction(addEntry);

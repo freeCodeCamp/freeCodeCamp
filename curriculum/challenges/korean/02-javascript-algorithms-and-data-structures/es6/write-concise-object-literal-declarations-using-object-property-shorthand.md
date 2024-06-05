@@ -43,7 +43,7 @@ assert.deepEqual(
 Your code should not use `key:value`.
 
 ```js
-assert(!code.match(/:/g))
+assert(!__helpers.removeJSComments(code).match(/:/g))
 ```
 
 # --seed--

@@ -7,8 +7,5 @@ shared/config/i18n.js
 shared/config/certification-settings.js
 shared/config/donation-settings.js
 shared/config/superblocks.js
-web/**
 docs/**/*.md
-tools/ui-components/dist/**
-tools/ui-components/types/**
-playwright.config.ts
+playwright*.config.ts

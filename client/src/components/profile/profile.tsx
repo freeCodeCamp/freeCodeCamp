@@ -3,12 +3,13 @@ import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
-import { Container, Row } from '@freecodecamp/ui';
+import { Alert, Container, Row } from '@freecodecamp/ui';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
 import Certifications from './components/certifications';
+import Stats from './components/stats';
 import HeatMap from './components/heat-map';
 import { PortfolioProjects } from './components/portfolio-projects';
 
@@ -25,8 +26,7 @@ interface MessageProps {
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
-      <h2 className='text-center'>{t('profile.you-not-public')}</h2>
-      <p className='alert alert-info'>{t('profile.you-change-privacy')}</p>
+      <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
       <Spacer size='medium' />
     </FullWidthRow>
   );
@@ -38,12 +38,9 @@ const VisitorMessage = ({
 }: Omit<MessageProps, 'isSessionUser'>) => {
   return (
     <FullWidthRow>
-      <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
-        {t('profile.username-not-public', { username: username })}
-      </h2>
-      <p className='alert alert-info'>
-        {t('profile.username-change-privacy', { username: username })}
-      </p>
+      <Alert variant='info'>
+        {t('profile.username-change-privacy', { username })}
+      </Alert>
       <Spacer size='medium' />
     </FullWidthRow>
   );
@@ -56,13 +53,7 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({
-  user,
-  t
-}: {
-  user: ProfileProps['user'];
-  t: TFunction;
-}): JSX.Element {
+function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
   const {
     profileUI: {
       showAbout,
@@ -92,6 +83,7 @@ function UserProfile({
     yearsTopContributor,
     isDonating
   } = user;
+
   return (
     <>
       <Camper
@@ -108,11 +100,7 @@ function UserProfile({
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {showPoints && (
-        <p className='text-center points'>
-          {t('profile.total-points', { count: points })}
-        </p>
-      )}
+      {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? (
@@ -146,7 +134,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         {isLocked && (
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
-        {showUserProfile && <UserProfile user={user} t={t} />}
+        {showUserProfile && <UserProfile user={user} />}
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>

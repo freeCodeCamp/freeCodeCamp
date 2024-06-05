@@ -26,7 +26,7 @@ var myVar = 0;
 应该初始化 `a` 的值为 `9`。
 
 ```js
-assert(/var\s+a\s*=\s*9(\s*;?\s*)$/.test(code));
+assert(/var\s+a\s*=\s*9(\s*;?\s*)$/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

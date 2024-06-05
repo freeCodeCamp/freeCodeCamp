@@ -1,29 +1,29 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: ステップ 24
+title: ステップ 23
 challengeType: 0
-dashedName: step-24
+dashedName: step-23
 ---
 
 # --description--
 
-Move the left ear into position by setting a position of `absolute`, a `top` of `-26px`, and a `left` of `-31px`.
+position を `absolute` に、`top` を `-26px` に、`left` を `-31px` に設定して、向かって左の耳を適切な位置に動かしましょう。
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+`.cat-left-ear` セレクターの `position` プロパティを `absolute` に設定してください。 セミコロンを忘れないようにしましょう。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.cat-left-ear` selector should have a `top` property set to `-26px`
+`.cat-left-ear` セレクターの `top` プロパティを `-26px` に設定してください。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.cat-left-ear` selector should have a `left` property set to `-31px`
+`.cat-left-ear` セレクターの `left` プロパティを `-31px` に設定してください。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')
@@ -81,12 +81,12 @@ body {
   border-radius: 46%;
 }
 
+--fcc-editable-region--
 .cat-left-ear {
---fcc-editable-region--
 
---fcc-editable-region--
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-bottom: 70px solid #5e5e5e;
 }
+--fcc-editable-region--
 ```

@@ -31,13 +31,13 @@ function loopy() {
 Ваш код повинен змінити оператора порівняння у кінцевій умові (середня частина) циклу `for`.
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 Ваш код повинен виправити оператора порівняння у кінцевій умові циклу.
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

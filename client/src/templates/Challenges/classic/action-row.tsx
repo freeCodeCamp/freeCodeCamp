@@ -6,6 +6,7 @@ import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
   hasNotes: boolean;
+  hasPreview: boolean;
   isProjectBasedChallenge: boolean;
   showConsole: boolean;
   showNotes: boolean;
@@ -16,6 +17,7 @@ interface ActionRowProps {
 }
 
 const ActionRow = ({
+  hasPreview,
   hasNotes,
   togglePane,
   showNotes,
@@ -77,21 +79,25 @@ const ActionRow = ({
               {t('learn.editor-tabs.notes')}
             </button>
           )}
-          <button
-            data-playwright-test-label='preview-pane-button'
-            aria-expanded={!!showPreviewPane}
-            onClick={() => togglePane('showPreviewPane')}
-          >
-            <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-            <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
-          </button>
-          <button
-            aria-expanded={!!showPreviewPortal}
-            onClick={() => togglePane('showPreviewPortal')}
-          >
-            <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
-            <FontAwesomeIcon icon={faWindowRestore} />
-          </button>
+          {hasPreview && (
+            <>
+              <button
+                data-playwright-test-label='preview-pane-button'
+                aria-expanded={!!showPreviewPane}
+                onClick={() => togglePane('showPreviewPane')}
+              >
+                <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
+                <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+              </button>
+              <button
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

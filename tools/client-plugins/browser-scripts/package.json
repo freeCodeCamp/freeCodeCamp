@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=18",
-    "pnpm": "8"
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "@babel/plugin-transform-runtime": "7.23.7",
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
-    "@freecodecamp/curriculum-helpers": "3.2.0",
+    "@freecodecamp/curriculum-helpers": "3.4.0",
     "@types/chai": "4.3.12",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/enzyme": "3.10.16",

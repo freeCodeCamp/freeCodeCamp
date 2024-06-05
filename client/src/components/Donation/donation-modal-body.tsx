@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFeature } from '@growthbook/growthbook-react';
 import { Col, Row, Modal } from '@freecodecamp/ui';
-
-import BearProgressModal from '../../assets/images/components/bear-progress-modal';
-import BearBlockCompletion from '../../assets/images/components/bear-block-completion-modal';
 import { closeDonationModal } from '../../redux/actions';
 import { Spacer } from '../helpers';
 import { PaymentContext } from '../../../../shared/config/donation-settings'; //
@@ -22,71 +18,50 @@ type DonationModalBodyProps = {
   recentlyClaimedBlock: RecentlyClaimedBlock;
 };
 
-const Illustration = ({
-  recentlyClaimedBlock,
-  showAnimation
-}: {
-  recentlyClaimedBlock: RecentlyClaimedBlock;
-  showAnimation?: boolean;
-}) => {
+const Illustration = () => {
   const { t } = useTranslation();
-  if (showAnimation) {
-    return (
-      <img
-        alt={t('donate.flying-bear')}
-        id={'supporter-bear'}
-        src={supporterBear}
-        data-playwright-test-label='not-found-image'
-      />
-    );
-  } else
-    return recentlyClaimedBlock ? (
-      <BearBlockCompletion className='donation-icon' />
-    ) : (
-      <BearProgressModal className='donation-icon' />
-    );
+  return (
+    <img
+      alt={t('donate.flying-bear')}
+      id={'supporter-bear'}
+      src={supporterBear}
+      data-playwright-test-label='not-found-image'
+    />
+  );
 };
 
 function ModalHeader({
   recentlyClaimedBlock,
   showHeaderAndFooter,
   donationAttempted,
-  showForm,
-  donationAnimationFlag
+  showForm
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
   showHeaderAndFooter: boolean;
   donationAttempted: boolean;
   showForm: boolean;
-  donationAnimationFlag: boolean;
 }) {
   const { t } = useTranslation();
 
   if (!showHeaderAndFooter || donationAttempted) {
     return null;
-  } else if (!donationAnimationFlag) {
-    return (
-      <Row className='text-center block-modal-text'>
-        <Col sm={10} smOffset={1} xs={12}>
-          {recentlyClaimedBlock !== null && (
-            <b>
-              {t('donate.nicely-done', {
-                block: t(
-                  `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                )
-              })}
-            </b>
-          )}
-          <Modal.Header showCloseButton={false} borderless>
-            {t('donate.help-us-develop')}
-          </Modal.Header>
-        </Col>
-      </Row>
-    );
   } else if (!showForm) {
     return (
       <Row className='text-center block-modal-text'>
         <Col sm={10} smOffset={1} xs={12}>
+          {recentlyClaimedBlock !== null && (
+            <>
+              <b>
+                {t('donate.nicely-done', {
+                  block: t(
+                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
+                  )
+                })}
+              </b>
+              <Spacer size='small' />
+            </>
+          )}
+
           <Modal.Header showCloseButton={false} borderless>
             {t('donate.modal-benefits-title')}
           </Modal.Header>
@@ -149,16 +124,20 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
 };
 
 const AnimationContainer = ({
-  setIsAnimationVisible
+  secondsRemaining
 }: {
-  setIsAnimationVisible: (arg: boolean) => void;
+  secondsRemaining: number;
 }) => {
   const { t } = useTranslation();
   return (
     <>
-      <p style={{ opacity: 0, position: 'absolute' }}>
-        {t('donate.animation-description')}{' '}
-      </p>
+      <div style={{ opacity: 0, position: 'absolute' }}>
+        <p>{t('donate.animation-description')}</p>
+        <span aria-live='polite'>
+          {t('donate.animation-countdown', { secondsRemaining })}
+        </span>
+      </div>
+
       <div className='donation-animation-container' aria-hidden='true'>
         <div className='donation-animation-bullet-points'>
           <p className='donation-animation-bullet-1'>
@@ -175,25 +154,18 @@ const AnimationContainer = ({
           </p>
         </div>
         <img
+          key={Date.now()}
           alt=''
           src={donationAnimation}
           id={'donation-animation'}
           data-playwright-test-label='not-found-image'
         />
       </div>
-      <button
-        style={{ opacity: 0, position: 'absolute' }}
-        className={'sr-only'}
-        onClick={() => setIsAnimationVisible(false)}
-      >
-        {t('buttons.skip-advertisement')}
-      </button>
     </>
   );
 };
 
 const BecomeASupporterConfirmation = ({
-  donationAnimationFlag,
   recentlyClaimedBlock,
   showHeaderAndFooter,
   closeDonationModal,
@@ -203,7 +175,6 @@ const BecomeASupporterConfirmation = ({
   handleProcessing,
   setShowForm
 }: {
-  donationAnimationFlag: boolean;
   recentlyClaimedBlock: RecentlyClaimedBlock;
   showHeaderAndFooter: boolean;
   closeDonationModal: () => void;
@@ -216,26 +187,21 @@ const BecomeASupporterConfirmation = ({
   return (
     <div className='no-delay-fade-in'>
       <div className='donation-icon-container'>
-        <Illustration
-          showAnimation={donationAnimationFlag}
-          recentlyClaimedBlock={recentlyClaimedBlock}
-        />
+        <Illustration />
       </div>
       <ModalHeader
         recentlyClaimedBlock={recentlyClaimedBlock}
         showHeaderAndFooter={showHeaderAndFooter}
         donationAttempted={donationAttempted}
         showForm={showForm}
-        donationAnimationFlag={donationAnimationFlag}
       />
       <Spacer size='small' />
-      {showForm || !donationAnimationFlag ? (
+      {showForm ? (
         <MultiTierDonationForm
           setShowHeaderAndFooter={setShowHeaderAndFooter}
           handleProcessing={handleProcessing}
           paymentContext={PaymentContext.Modal}
           isMinimalForm={true}
-          isAnimationEnabled={donationAnimationFlag}
         />
       ) : (
         <Benefits setShowForm={setShowForm} />
@@ -256,30 +222,37 @@ function DonationModalBody({
 }: DonationModalBodyProps): JSX.Element {
   const [donationAttempted, setDonationAttempted] = useState(false);
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
-  const donationAnimationFlag = useFeature('donation-animation').on;
   const [isAnimationVisible, setIsAnimationVisible] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const [secondsRemaining, setSecondsRemaining] = useState(20);
+
   const handleProcessing = () => {
     setDonationAttempted(true);
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimationVisible(false);
-    }, 20000); // 20000 milliseconds = 20 seconds
+    const interval = setInterval(() => {
+      setSecondsRemaining(prevSeconds => {
+        if (prevSeconds > 0) {
+          return prevSeconds - 1;
+        } else {
+          setIsAnimationVisible(false);
+          clearInterval(interval);
+          return 0;
+        }
+      });
+    }, 1000);
 
-    // Clear the timer if the component unmounts
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <Modal.Body borderless alignment='start'>
       <div aria-live='polite' className='donation-modal'>
-        {donationAnimationFlag && isAnimationVisible ? (
-          <AnimationContainer setIsAnimationVisible={setIsAnimationVisible} />
+        {isAnimationVisible ? (
+          <AnimationContainer secondsRemaining={secondsRemaining} />
         ) : (
           <BecomeASupporterConfirmation
-            donationAnimationFlag={donationAnimationFlag}
             recentlyClaimedBlock={recentlyClaimedBlock}
             showHeaderAndFooter={showHeaderAndFooter}
             closeDonationModal={closeDonationModal}

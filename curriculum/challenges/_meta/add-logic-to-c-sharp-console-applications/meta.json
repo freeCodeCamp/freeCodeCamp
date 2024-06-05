@@ -4,9 +4,6 @@
   "dashedName": "add-logic-to-c-sharp-console-applications",
   "helpCategory": "C-Sharp",
   "order": 2,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
     {

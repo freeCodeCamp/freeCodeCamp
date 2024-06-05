@@ -1,8 +1,8 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Passo 36
+title: Passo 38
 challengeType: 0
-dashedName: step-36
+dashedName: step-38
 ---
 
 # --description--
@@ -11,13 +11,7 @@ O próximo passo é permitir que os usuários adicionem entradas ao contador de 
 
 # --hints--
 
-Você deve declarar uma variável `addEntry`.
-
-```js
-assert.isDefined(addEntry);
-```
-
-A variável `addEntry` deve ser uma função.
+You should declare an `addEntry` function.
 
 ```js
 assert.isFunction(addEntry);

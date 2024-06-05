@@ -36,7 +36,7 @@ I am a "double quoted" string inside "double quotes".
 你的代碼中應該包含兩個雙引號（`"`）以及四個轉義的雙引號（`\"`）。
 
 ```js
-assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
+assert(__helpers.removeJSComments(code).match(/\\"/g).length === 4 && __helpers.removeJSComments(code).match(/[^\\]"/g).length === 2);
 ```
 
 變量 `myStr` 應該包含字符串 `I am a "double quoted" string inside "double quotes".`

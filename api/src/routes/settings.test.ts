@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   devLogin,
   setupServer,
   superRequest,
-  createSuperRequest
+  createSuperRequest,
+  defaultUserId
 } from '../../jest.utils';
 import { createUserInput } from '../utils/create-user';
-
+import { API_LOCATION } from '../utils/env';
 import { isPictureWithProtocol, getWaitMessage } from './settings';
 
 const baseProfileUI = {
@@ -171,6 +173,7 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-email', () => {
+      let sendEmailSpy: jest.SpyInstance;
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: developerUserEmail },
@@ -181,47 +184,56 @@ describe('settingRoutes', () => {
             emailAuthLinkTTL: null
           }
         });
+
+        sendEmailSpy = jest
+          .spyOn(fastifyTestInstance, 'sendEmail')
+          .mockImplementationOnce(jest.fn());
       });
-      test('PUT returns 200 status code with "success" message', async () => {
+
+      afterEach(async () => {
+        jest.clearAllMocks();
+        await fastifyTestInstance.prisma.authToken.deleteMany({
+          where: { userId: defaultUserId }
+        });
+      });
+      test('PUT returns 200 status code with "info" message', async () => {
         const response = await superPut('/update-my-email').send({
           email: 'foo@foo.com'
         });
 
-        expect(response?.body).toEqual({
-          message: 'flash.email-valid',
-          type: 'success'
+        expect(response.body).toEqual({
+          message:
+            'Check your email and click the link we sent you to confirm your new email address.',
+          type: 'info'
         });
-        expect(response?.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(200);
       });
 
       test("PUT updates the user's record in preparation for receiving auth email", async () => {
+        const timeBefore = Date.now();
         const response = await superPut('/update-my-email').send({
           email: unusedEmailOne
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
           where: { email: developerUserEmail },
-          select: { emailVerifyTTL: true, emailVerified: true, newEmail: true }
+          select: {
+            emailAuthLinkTTL: true,
+            emailVerifyTTL: true,
+            emailVerified: true,
+            newEmail: true
+          }
         });
-        const emailVerifyTTL = user?.emailVerifyTTL;
-        expect(emailVerifyTTL).toBeTruthy();
-        // This throw is to mollify TS (if this is necessary a lot, create a
-        // helper)
-        if (!emailVerifyTTL) {
-          throw new Error('emailVerifyTTL is not defined');
-        }
 
-        expect(response?.statusCode).toEqual(200);
+        // expect the emailVerifyTTL and emailAuthLinkTTL to be set to the current time
+        expect(user.emailVerifyTTL!.getTime()).toBeGreaterThan(timeBefore);
+        expect(user.emailVerifyTTL!.getTime()).toBeLessThan(Date.now());
+        expect(user.emailAuthLinkTTL!.getTime()).toBeGreaterThan(timeBefore);
+        expect(user.emailAuthLinkTTL!.getTime()).toBeLessThan(Date.now());
 
-        // expect the emailVerifyTTL to be within 10 seconds of the current time
-        const tenSeconds = 10 * 1000;
-        expect(emailVerifyTTL.getTime()).toBeGreaterThan(
-          Date.now() - tenSeconds
-        );
-        expect(emailVerifyTTL.getTime()).toBeLessThan(Date.now() + tenSeconds);
-
-        expect(user?.emailVerified).toEqual(false);
-        expect(user?.newEmail).toEqual(unusedEmailOne);
+        expect(user.emailVerified).toEqual(false);
+        expect(user.newEmail).toEqual(unusedEmailOne);
+        expect(response.statusCode).toEqual(200);
       });
 
       test('PUT rejects invalid email addresses', async () => {
@@ -231,11 +243,11 @@ describe('settingRoutes', () => {
 
         // We cannot use fastify's default validation failure response here
         // because the client consumes the response and displays it to the user.
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           type: 'danger',
           message: 'Email format is invalid'
         });
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT accepts requests to update to the current email address (ignoring case) if it is not verified', async () => {
@@ -247,10 +259,11 @@ describe('settingRoutes', () => {
           email: developerUserEmail.toUpperCase()
         });
 
-        expect(response?.statusCode).toEqual(200);
-        expect(response?.body).toEqual({
-          message: 'flash.email-valid',
-          type: 'success'
+        expect(response.statusCode).toEqual(200);
+        expect(response.body).toEqual({
+          message:
+            'Check your email and click the link we sent you to confirm your new email address.',
+          type: 'info'
         });
       });
 
@@ -259,12 +272,12 @@ describe('settingRoutes', () => {
           email: developerUserEmail.toUpperCase()
         });
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           type: 'info',
           message: `${developerUserEmail} is already associated with this account.
 You can update a new email address instead.`
         });
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT rejects a request to update to the same email (ignoring case) twice', async () => {
@@ -272,7 +285,7 @@ You can update a new email address instead.`
           email: unusedEmailOne
         });
 
-        expect(successResponse?.statusCode).toEqual(200);
+        expect(successResponse.statusCode).toEqual(200);
 
         const failResponse = await superPut('/update-my-email').send({
           email: unusedEmailOne.toUpperCase()
@@ -291,11 +304,11 @@ Please wait 5 minutes to resend an authentication link.`
           email: otherDeveloperUserEmail
         });
 
-        expect(response?.body).toEqual({
+        expect(response.body).toEqual({
           type: 'info',
           message: `${otherDeveloperUserEmail} is already associated with another account.`
         });
-        expect(response?.statusCode).toEqual(400);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT rejects the second request if is immediately after the first', async () => {
@@ -303,7 +316,7 @@ Please wait 5 minutes to resend an authentication link.`
           email: unusedEmailOne
         });
 
-        expect(successResponse?.statusCode).toEqual(200);
+        expect(successResponse.statusCode).toEqual(200);
 
         const failResponse = await superPut('/update-my-email').send({
           email: unusedEmailTwo
@@ -317,7 +330,60 @@ Please wait 5 minutes to resend an authentication link.`
         });
       });
 
-      // TODO: test that the correct email gets sent
+      test('PUT sends an email to the new email address', async () => {
+        jest
+          .spyOn(fastifyTestInstance.prisma.authToken, 'create')
+          .mockImplementationOnce(() =>
+            // @ts-expect-error This is a mock implementation, all we're
+            // interested in is the id.
+            Promise.resolve({
+              id: '123'
+            })
+          );
+        await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        const expectedLink = `${API_LOCATION}/confirm-email?email=${Buffer.from(unusedEmailOne).toString('base64')}&token=123&emailChange=true`;
+        expect(sendEmailSpy).toHaveBeenCalledWith({
+          from: 'team@freecodecamp.org',
+          to: unusedEmailOne,
+          subject:
+            'Please confirm your updated email address for freeCodeCamp.org',
+          text: `Please confirm this email address for freeCodeCamp.org:
+
+${expectedLink}
+
+Happy coding!
+
+- The freeCodeCamp.org Team
+`
+        });
+      });
+
+      test('PUT creates an auth token record for the requesting user', async () => {
+        const noToken = await fastifyTestInstance.prisma.authToken.findFirst({
+          where: { userId: defaultUserId }
+        });
+        expect(noToken).toBeNull();
+
+        await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        const token = await fastifyTestInstance.prisma.authToken.findFirst({
+          where: { userId: defaultUserId }
+        });
+
+        expect(token).toEqual({
+          ttl: 15 * 60 * 1000,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          created: expect.any(Date),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          id: expect.any(String),
+          userId: defaultUserId
+        });
+      });
     });
 
     describe('/update-my-theme', () => {
@@ -409,10 +475,10 @@ Please wait 5 minutes to resend an authentication link.`
           username: 'TwaHa1'
         });
 
-        expect(response.body).toEqual({
+        expect(response.body).toStrictEqual({
           message: 'flash.username-updated',
           type: 'success',
-          username: 'TwaHa1'
+          variables: { username: 'TwaHa1' }
         });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
@@ -470,10 +536,10 @@ Please wait 5 minutes to resend an authentication link.`
           username: 'TWaha3'
         });
 
-        expect(response.body).toEqual({
+        expect(response.body).toStrictEqual({
           message: 'flash.username-updated',
           type: 'success',
-          username: 'TWaha3'
+          variables: { username: 'TWaha3' }
         });
         expect(response.statusCode).toEqual(200);
       });
@@ -530,11 +596,26 @@ Please wait 5 minutes to resend an authentication link.`
         expect(response.statusCode).toEqual(200);
       });
 
+      test('PUT accepts empty strings for socials', async () => {
+        const response = await superPut('/update-my-socials').send({
+          website: 'https://www.freecodecamp.org/',
+          twitter: '',
+          linkedin: '',
+          githubProfile: ''
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-socials',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+
       test('PUT returns 400 status code with invalid socials setting', async () => {
         const response = await superPut('/update-my-socials').send({
           website: 'invalid',
-          twitter: 'invalid',
-          linkedin: 'invalid',
+          twitter: '',
+          linkedin: '',
           githubProfile: 'invalid'
         });
 

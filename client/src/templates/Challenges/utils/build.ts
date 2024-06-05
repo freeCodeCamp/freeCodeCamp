@@ -31,11 +31,9 @@ interface ChallengeFile extends PropTypesChallengeFile {
   editableContents: string;
 }
 
-type ChallengeFiles = ChallengeFile[];
-
 interface BuildChallengeData extends Context {
   challengeType: number;
-  challengeFiles: ChallengeFiles;
+  challengeFiles?: ChallengeFile[];
   required: { src: string }[];
   template: string;
   url: string;
@@ -84,7 +82,7 @@ const composeFunctions = (...fns: ApplyFunctionProps[]) =>
 
 // TODO: split this into at least two functions. One to create 'original' i.e.
 // the source and another to create the contents.
-function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
+function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
@@ -101,16 +99,6 @@ function buildSourceMap(challengeFiles: ChallengeFiles): Source | undefined {
     } as Source
   );
   return source;
-}
-
-function checkFilesErrors(challengeFiles: ChallengeFiles): ChallengeFiles {
-  const errors = challengeFiles
-    .filter(({ error }) => error)
-    .map(({ error }) => error);
-  if (errors.length) {
-    throw errors;
-  }
-  return challengeFiles;
 }
 
 const buildFunctions = {
@@ -172,29 +160,29 @@ export function getTestRunner(
 
 function getJSTestRunner(
   { build, sources }: BuildChallengeData,
-  { proxyLogger, removeComments }: TestRunnerConfig
+  { proxyLogger }: TestRunnerConfig
 ) {
   return getWorkerTestRunner(
     { build, sources },
-    { proxyLogger, removeComments },
+    { proxyLogger },
     jsWorkerExecutor
   );
 }
 
 function getPyTestRunner(
   { build, sources }: BuildChallengeData,
-  { proxyLogger, removeComments }: TestRunnerConfig
+  { proxyLogger }: TestRunnerConfig
 ) {
   return getWorkerTestRunner(
     { build, sources },
-    { proxyLogger, removeComments },
+    { proxyLogger },
     pythonWorkerExecutor
   );
 }
 
 function getWorkerTestRunner(
   { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
-  { proxyLogger, removeComments }: TestRunnerConfig,
+  { proxyLogger }: TestRunnerConfig,
   workerExecutor: WorkerExecutor
 ) {
   const code = {
@@ -210,7 +198,7 @@ function getWorkerTestRunner(
 
   return (testString: string, testTimeout: number, firstTest = true) => {
     const result = workerExecutor.execute(
-      { build, testString, code, sources, firstTest, removeComments },
+      { build, testString, code, sources, firstTest },
       testTimeout
     ) as TestWorkerExecutor;
 
@@ -235,73 +223,82 @@ type BuildResult = {
   challengeType: number;
   build?: string;
   sources: Source | undefined;
+  loadEnzyme?: boolean;
+  error?: unknown;
 };
 
 // TODO: All the buildXChallenge files have a similar structure, so make that
 // abstraction (function, class, whatever) and then create the various functions
 // out of it.
-export function buildDOMChallenge(
+export async function buildDOMChallenge(
   { challengeFiles, required = [], template = '' }: BuildChallengeData,
   options?: BuildOptions
-): Promise<BuildResult> | undefined {
-  const loadEnzyme = challengeFiles?.some(
+): Promise<BuildResult> {
+  // TODO: make this required in the schema.
+  if (!challengeFiles) throw Error('No challenge files provided');
+  const loadEnzyme = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
 
   const pipeLine = composeFunctions(...getTransformers(options));
-  const finalFiles = challengeFiles?.map(pipeLine);
   const usesTestRunner = options?.usesTestRunner ?? false;
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const error = finalFiles.find(({ error }) => error)?.error;
+  const [embeddedFiles, contents] = (await embedFilesInHtml(finalFiles)) as [
+    ChallengeFile[],
+    string
+  ];
 
-  if (finalFiles) {
-    return Promise.all(finalFiles)
-      .then(checkFilesErrors)
-      .then(
-        embedFilesInHtml as (
-          x: ChallengeFiles
-        ) => Promise<[ChallengeFiles, string]>
-      )
-      .then(([challengeFiles, contents]) => ({
-        // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
-        // necessary at the moment.
-        challengeType: challengeTypes.html,
-        build: concatHtml({
-          required,
-          template,
-          contents,
-          ...(usesTestRunner && { testRunner: frameRunnerSrc })
-        }),
-        sources: buildSourceMap(challengeFiles),
-        loadEnzyme
-      }));
-  }
+  // if there is an error, we just build the test runner so that it can be
+  // used to run tests against the code without actually running the code.
+  const toBuild = error
+    ? { ...(usesTestRunner && { testRunner: frameRunnerSrc }) }
+    : {
+        required,
+        template,
+        contents,
+        ...(usesTestRunner && { testRunner: frameRunnerSrc })
+      };
+
+  return {
+    // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
+    // necessary at the moment.
+    challengeType: challengeTypes.html,
+    build: concatHtml(toBuild),
+    sources: buildSourceMap(embeddedFiles),
+    loadEnzyme,
+    error
+  };
 }
 
-export function buildJSChallenge(
-  { challengeFiles }: { challengeFiles: ChallengeFiles },
+export async function buildJSChallenge(
+  { challengeFiles }: { challengeFiles?: ChallengeFile[] },
   options: BuildOptions
-): Promise<BuildResult> | undefined {
+): Promise<BuildResult> {
+  if (!challengeFiles) throw Error('No challenge files provided');
   const pipeLine = composeFunctions(...getTransformers(options));
 
-  const finalFiles = challengeFiles?.map(pipeLine);
-  if (finalFiles) {
-    return Promise.all(finalFiles)
-      .then(checkFilesErrors)
-      .then(challengeFiles => ({
-        challengeType: challengeTypes.js,
-        build: challengeFiles
-          .reduce(
-            (body, challengeFile) => [
-              ...body,
-              challengeFile.head,
-              challengeFile.contents,
-              challengeFile.tail
-            ],
-            [] as string[]
-          )
-          .join('\n'),
-        sources: buildSourceMap(challengeFiles)
-      }));
-  }
+  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
+  const error = finalFiles.find(({ error }) => error)?.error;
+
+  const toBuild = error ? [] : finalFiles;
+
+  return {
+    challengeType: challengeTypes.js,
+    build: toBuild
+      .reduce(
+        (body, challengeFile) => [
+          ...body,
+          challengeFile.head,
+          challengeFile.contents,
+          challengeFile.tail
+        ],
+        [] as string[]
+      )
+      .join('\n'),
+    sources: buildSourceMap(finalFiles),
+    error
+  };
 }
 
 function buildBackendChallenge({ url }: BuildChallengeData) {
@@ -312,26 +309,22 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   };
 }
 
-export function buildPythonChallenge({
+export async function buildPythonChallenge({
   challengeFiles
-}: BuildChallengeData): Promise<BuildResult> | undefined {
+}: BuildChallengeData): Promise<BuildResult> {
+  if (!challengeFiles) throw new Error('No challenge files provided');
   const pipeLine = composeFunctions(...getPythonTransformers());
-  const finalFiles = challengeFiles.map(pipeLine);
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const error = finalFiles.find(({ error }) => error)?.error;
 
-  if (finalFiles) {
-    return (
-      Promise.all(finalFiles)
-        .then(checkFilesErrors)
-        // Unlike the DOM challenges, there's no need to embed the files in HTML
-        .then(challengeFiles => ({
-          challengeType:
-            challengeFiles[0].editableRegionBoundaries?.length === 0
-              ? challengeTypes.multifilePythonCertProject
-              : challengeTypes.python,
-          sources: buildSourceMap(challengeFiles)
-        }))
-    );
-  }
+  return {
+    challengeType:
+      challengeFiles[0].editableRegionBoundaries?.length === 0
+        ? challengeTypes.multifilePythonCertProject
+        : challengeTypes.python,
+    sources: buildSourceMap(finalFiles),
+    error
+  };
 }
 
 export function updatePreview(

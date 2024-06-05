@@ -31,13 +31,13 @@ Die Funktion `myFunc()` enthält eine Endlosschleife, weil die Abschlussbedingun
 Dein Code sollte den Vergleichsoperator in der Abschlussbedingung (dem mittleren Teil) der `for`-Schleife ändern.
 
 ```js
-assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+assert(__helpers.removeJSComments(code).match(/i\s*?<=\s*?4;/g).length == 1);
 ```
 
 Dein Code sollte den Vergleichsoperator in der Abschlussbedingung der Schleife korrigieren.
 
 ```js
-assert(!code.match(/i\s*?!=\s*?4;/g));
+assert(!__helpers.removeJSComments(code).match(/i\s*?!=\s*?4;/g));
 ```
 
 # --seed--

@@ -2,7 +2,6 @@
 id: 5ee127a03c3b35dd45426493
 title: تعيين قيمة متغير إلى متغير آخر
 challengeType: 1
-videoUrl: ''
 forumTopicId: 418265
 dashedName: assigning-the-value-of-one-variable-to-another
 ---
@@ -29,7 +28,7 @@ myNum = myVar;
 لا يجب عليك تعديل التعليمات البرمجية فوق التعليق المحدد.
 
 ```js
-assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
+assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
 ```
 
 المتغير `b` يجب أن يساوي `7`.
@@ -41,7 +40,7 @@ assert(typeof b === 'number' && b === 7);
 قيمة المتغير `a` يجب أن يتم تعيينها إلى المتغير `b` باستخدام `=`.
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(code));
+assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

@@ -42,7 +42,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
@@ -57,7 +57,6 @@ jobs:
           echo 'STRIPE_PUBLIC_KEY=${{ secrets.STRIPE_PUBLIC_KEY }}' >> .env
           echo 'STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}' >> .env
           echo 'PAYPAL_CLIENT_ID=${{ secrets.PAYPAL_CLIENT_ID }}' >> .env
-          echo 'PAYPAL_SECRET=${{ secrets.PAYPAL_SECRET }}' >> .env
 
       - name: Install and Build
         run: |

@@ -25,14 +25,14 @@ Agrega un script de tipo `module` al documento HTML y asígnale el archivo fuent
 Debes crear una etiqueta `script`.
 
 ```js
-assert(code.match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
+assert(__helpers.removeJSComments(code).match(/<\s*script[^>]*>\s*<\/\s*script\s*>/g));
 ```
 
 Tu etiqueta `script` debe tener un atributo `type` con un valor de `module`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^t]*type\s*=\s*('|")module\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );
@@ -42,7 +42,7 @@ Tu etiqueta `script` debe tener un `src` con el valor `index.js`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /<\s*script\s+[^s]*src\s*=\s*('|")index\.js\1[^>]*>\s*<\/\s*script\s*>/g
   )
 );

@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { noop } from 'lodash-es';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Modal } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
 import {
@@ -27,7 +25,7 @@ import {
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
 import { Spacer } from '../../../components/helpers';
-
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
 
@@ -166,42 +164,52 @@ class CompletionModal extends Component<
       submitChallenge
     } = this.props;
 
+    const isMacOS = navigator.userAgent.includes('Mac OS');
+
+    const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+
+    let buttonText;
+    if (isDesktop) {
+      if (isMacOS) {
+        buttonText = isSignedIn
+          ? t('buttons.submit-and-go-3')
+          : t('buttons.go-to-next-3');
+      } else {
+        buttonText = isSignedIn
+          ? t('buttons.submit-and-go-2')
+          : t('buttons.go-to-next-2');
+      }
+    } else {
+      buttonText = isSignedIn
+        ? t('buttons.submit-and-go')
+        : t('buttons.go-to-next');
+    }
+
     return (
       <Modal
-        data-cy='completion-modal'
-        animation={false}
-        bsSize='lg'
-        dialogClassName='challenge-success-modal'
-        keyboard={true}
-        onHide={close}
+        onClose={close}
+        open={!!isOpen}
+        size='large'
         // eslint-disable-next-line @typescript-eslint/unbound-method
-        onKeyDown={isOpen ? this.handleKeypress : noop}
-        show={isOpen}
+        onKeyDown={isOpen ? this.handleKeypress : undefined}
       >
-        <Modal.Header
-          className='challenge-list-header fcc-modal'
-          closeButton={true}
-        >
-          <Modal.Title className='completion-message'>{message}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='completion-modal-body'>
-          <div className='completion-challenge-details'>
-            <GreenPass
-              className='completion-success-icon'
-              data-testid='fcc-completion-success-icon'
-              data-playwright-test-label='completion-success-icon'
-            />
-          </div>
+        <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
+        <Modal.Body>
+          <GreenPass
+            className='completion-success-icon'
+            data-testid='fcc-completion-success-icon'
+            data-playwright-test-label='completion-success-icon'
+          />
           <div className='completion-block-details'>
             <Progress />
           </div>
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <>
+            <div className='completion-modal-login-btn'>
               <Login block={true}>{t('learn.sign-in-save')}</Login>
               <Spacer size='xxSmall' />
-            </>
+            </div>
           )}
           <Button
             block={true}
@@ -211,8 +219,7 @@ class CompletionModal extends Component<
             data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
-            {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
-            <span className='hidden-xs'> (Ctrl + Enter)</span>
+            {buttonText}
           </Button>
           <Spacer size='xxSmall' />
           {this.state.downloadURL ? (

@@ -53,19 +53,19 @@ assert.deepEqual(
 `htmlColorNames` 函数中应调用 `splice()` 方法。
 
 ```js
-assert(/.splice/.test(code));
+assert(/.splice/.test(__helpers.removeJSComments(code)));
 ```
 
 不应使用 `shift()` 或 `unshift()`。
 
 ```js
-assert(!/shift|unshift/.test(code));
+assert(!/shift|unshift/.test(__helpers.removeJSComments(code)));
 ```
 
 不应使用数组的方括号表示法。
 
 ```js
-assert(!/\[\d\]\s*=/.test(code));
+assert(!/\[\d\]\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

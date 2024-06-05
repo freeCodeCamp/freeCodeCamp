@@ -43,7 +43,7 @@ assert(dog.sayLegs() === 'This dog has 4 legs.');
 Dein Code sollte das Schlüsselwort `this` verwenden, um auf die Eigenschaft `numLegs` von `dog` zuzugreifen.
 
 ```js
-assert(code.match(/this\.numLegs/g));
+assert(__helpers.removeJSComments(code).match(/this\.numLegs/g));
 ```
 
 # --seed--

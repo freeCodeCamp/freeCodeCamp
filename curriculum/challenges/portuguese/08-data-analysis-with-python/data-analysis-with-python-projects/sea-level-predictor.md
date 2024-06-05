@@ -8,7 +8,7 @@ dashedName: sea-level-predictor
 
 # --description--
 
-You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-sea-level-predictor/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
+Você <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-sea-level-predictor/" target="_blank" rel="noopener noreferrer nofollow">trabalhará nesse projeto com o nosso código inicial do Gitpod </a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
@@ -32,11 +32,11 @@ O boilerplate também inclui comandos para salvar e retornar a imagem.
 
 ## Desenvolvimento
 
-Write your code in `sea_level_predictor.py`. For development, you can use `main.py` to test your code.
+Escreva seu código em `sea_level_predictor.py`. Para o desenvolvimento, você pode usar `main.py` para testar o seu código.
 
 ## Testes
 
-The unit tests for this project are in `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência.
+Os testes unitários para esse projeto estão em `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência.
 
 ## Envio
 

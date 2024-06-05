@@ -9,11 +9,19 @@ dashedName: step-15
 
 في الخطوات السابقة كنت تستخدم عنصر الرابط لتحويل النص إلى رابط. ويمكن أيضا تحويل أنواع أخرى من المحتوى إلى رابط عن طريق وضعه بداخل عنصر الرابط.
 
+Here is an example of turning an image into a link:
+
+```html
+<a href="example-link">
+  <img src="image-link.jpg" alt="A photo of a cat.">
+</a>
+```
+
 حول الصورة إلى رابط عن طريق إحاطتها بعلامات العنصر المناسب. استخدم `https://freecatphotoapp.com` كقيمة السمة `href`.
 
 # --hints--
 
-يجب أن يكون لديك عنصر `img` بقيمة `src` من `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. ربما حذفتها عن طريق الخطأ.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. ربما حذفتها عن طريق الخطأ.
 
 ```js
 assert(

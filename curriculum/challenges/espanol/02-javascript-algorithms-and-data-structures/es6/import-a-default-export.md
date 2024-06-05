@@ -25,7 +25,7 @@ El siguiente código, importa como exportación por defecto, desde el archivo `m
 Debes importar correctamente `subtract` de `math_functions.js`.
 
 ```js
-assert(code.match(/import\s+subtract\s+from\s+('|")\.\/math_functions\.js\1/g));
+assert(__helpers.removeJSComments(code).match(/import\s+subtract\s+from\s+('|")\.\/math_functions\.js\1/g));
 ```
 
 # --seed--

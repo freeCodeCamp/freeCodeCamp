@@ -10,7 +10,6 @@ import './solution-display-widget.css';
 import '@freecodecamp/ui/dist/base.css';
 interface Props {
   completedChallenge: CompletedChallenge;
-  dataCy?: string;
   projectTitle: string;
   showUserCode: () => void;
   showProjectPreview?: () => void;
@@ -20,7 +19,6 @@ interface Props {
 
 export function SolutionDisplayWidget({
   completedChallenge,
-  dataCy,
   projectTitle,
   showUserCode,
   showProjectPreview,
@@ -36,7 +34,7 @@ export function SolutionDisplayWidget({
   // two dropdowns for the same project on the page.
   const randomIdSuffix = Math.floor(Math.random() * 1_000_000);
   const ShowFilesSolutionForCertification = (
-    <Button block={true} data-cy={dataCy} onClick={showUserCode}>
+    <Button block={true} onClick={showUserCode}>
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.solution-for', { projectTitle })}
@@ -100,12 +98,7 @@ export function SolutionDisplayWidget({
     <>{t('certification.project.no-solution')}</>
   );
   const ShowUserCode = (
-    <Button
-      block={true}
-      variant='primary'
-      data-cy={dataCy}
-      onClick={showUserCode}
-    >
+    <Button block={true} variant='primary' onClick={showUserCode}>
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.solution-for', { projectTitle })}
@@ -114,10 +107,7 @@ export function SolutionDisplayWidget({
   );
   const ShowMultifileProjectSolution = (
     <div className='solutions-dropdown'>
-      <Dropdown
-        id={`dropdown-for-${id}-${randomIdSuffix}`}
-        data-playwright-test-label='multifile-dropdown'
-      >
+      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle className='btn-invert'>
           {viewText}{' '}
           <span className='sr-only'>
@@ -125,18 +115,10 @@ export function SolutionDisplayWidget({
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <MenuItem
-            data-playwright-test-label='multifile-dropdown-code'
-            variant='primary'
-            onClick={showUserCode}
-          >
+          <MenuItem variant='primary' onClick={showUserCode}>
             {viewCode}
           </MenuItem>
-          <MenuItem
-            data-playwright-test-label='multifile-dropdown-project'
-            variant='primary'
-            onClick={showProjectPreview}
-          >
+          <MenuItem variant='primary' onClick={showProjectPreview}>
             {viewProject}
           </MenuItem>
         </Dropdown.Menu>
@@ -201,12 +183,7 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowExamResults = (
-    <Button
-      block={true}
-      variant='primary'
-      data-cy={dataCy}
-      onClick={showExamResults}
-    >
+    <Button block={true} variant='primary' onClick={showExamResults}>
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.results-for', { projectTitle })}

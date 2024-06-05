@@ -1,8 +1,8 @@
 ---
 id: 62a8ae85fcaedc0fddc7ca4f
-title: Schritt 58
+title: Step 59
 challengeType: 0
-dashedName: step-58
+dashedName: step-59
 ---
 
 # --description--
@@ -171,7 +171,7 @@ button {
 let xp = 0;
 let health = 100;
 let gold = 50;
-let currentWeapon = 0;
+let currentWeaponIndex = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];

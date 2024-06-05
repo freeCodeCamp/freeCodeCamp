@@ -2,7 +2,6 @@
 id: 5b7d72c338cd7e35b63f3e14
 title: Migliorare la compatibilità con i fallback del browser
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301087
 dashedName: improve-compatibility-with-browser-fallbacks
 ---

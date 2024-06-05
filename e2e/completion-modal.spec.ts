@@ -33,6 +33,33 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
+  test('should display the text of go to next challenge button accordingly based on device type', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    if (isMobile) {
+      await expect(
+        page.getByRole('button', {
+          name: 'Go to next challenge',
+          exact: true
+        })
+      ).toBeVisible();
+    } else if (browserName === 'webkit') {
+      await expect(
+        page.getByRole('button', {
+          name: 'Go to next challenge (Command + Enter)'
+        })
+      ).toBeVisible();
+    } else {
+      await expect(
+        page.getByRole('button', {
+          name: 'Go to next challenge (Ctrl + Enter)'
+        })
+      ).toBeVisible();
+    }
+  });
+
   test('should redirect to /learn after sign in', async ({ page }) => {
     await page
       .getByRole('link', { name: translations.learn['sign-in-save'] })
@@ -69,10 +96,53 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should redirect to next challenge', async ({ page }) => {
+  test('should display the text of go to next challenge button accordingly based on device type', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    if (isMobile) {
+      await expect(
+        page.getByRole('button', {
+          name: 'Submit and go to next challenge',
+          exact: true
+        })
+      ).toBeVisible();
+    } else if (browserName === 'webkit') {
+      await expect(
+        page.getByRole('button', {
+          name: 'Submit and go to next challenge (Command + Enter)'
+        })
+      ).toBeVisible();
+    } else {
+      await expect(
+        page.getByRole('button', {
+          name: 'Submit and go to next challenge (Ctrl + Enter)'
+        })
+      ).toBeVisible();
+    }
+  });
+
+  test('should submit and go to the next challenge when the user clicks the submit button', async ({
+    page
+  }) => {
     await page
       .getByRole('button', { name: translations.buttons['submit-and-go'] })
       .click();
+    await expect(page).toHaveURL(nextChallengeURL);
+  });
+
+  test('should submit and go to the next challenge when the user presses Ctrl + Enter', async ({
+    page
+  }) => {
+    await page.keyboard.press('Control+Enter');
+    await expect(page).toHaveURL(nextChallengeURL);
+  });
+
+  test('should submit and go to the next challenge when the user presses Command + Enter', async ({
+    page
+  }) => {
+    await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
 });

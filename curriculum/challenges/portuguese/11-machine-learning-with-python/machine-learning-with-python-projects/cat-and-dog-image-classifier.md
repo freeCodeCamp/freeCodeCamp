@@ -45,7 +45,7 @@ Agora é a sua vez! Defina cada uma das variáveis nessa célula corretamente (e
 
 Crie geradores de imagem para cada um dos três conjuntos de dados de imagens (treinamento, validação, teste). Use `ImageDataGenerator` para ler/decodificar as imagens e convertê-las em tensores de ponto flutuante. Use o argumento `rescale` (e não há outros argumentos por enquanto) para redimensionar os tensores dos valores entre 0 e 255 para valores entre 0 e 1.
 
-Para as variáveis `*_data_gen`, use o método `flow_from_directory`. Passe o tamanho do lote, diretório, tamanho do destino (`(IMG_HEIGHT, IMG_WIDTH)`), modo de classe e tudo o mais que for necessário. `test_data_gen` será o mais complicado. Para `test_data_gen`, certifique-se de passar `shuffle=False` para o método `flow_from_directory`. Isto garantirá que as previsões finais permaneçam na ordem que o nosso teste espera. Para `test_data_gen` será útil observar a estrutura de diretório.
+Para as variáveis `*_data_gen`, use o método `flow_from_directory`. Passe o tamanho do lote, diretório, tamanho do destino (`(IMG_HEIGHT, IMG_WIDTH)`), modo de classe e tudo o mais que for necessário. `test_data_gen` será o mais complicado. Para `test_data_gen`, certifique-se de passar `shuffle=False` para o método `flow_from_directory`. Isso garantirá que as previsões finais permaneçam na ordem que o nosso teste espera. Para `test_data_gen` será útil observar a estrutura de diretório.
 
 
 Após executar o código, a saída deverá ficar assim:

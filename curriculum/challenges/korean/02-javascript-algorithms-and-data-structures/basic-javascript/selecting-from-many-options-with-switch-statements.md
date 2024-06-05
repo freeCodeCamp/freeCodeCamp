@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244dd
-title: Selecting from Many Options with Switch Statements
+title: Switch 문으로 여러 옵션에서 선택하기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c4mv4fm'
 forumTopicId: 18277
@@ -9,9 +9,9 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. A `switch` statement compares the value to the <dfn>case</dfn> statements which define various possible values. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
+만약 한 가지 값과 여러 옵션을 대조해야 한다면, <dfn>switch</dfn> 문을 사용할 수 있습니다. `switch`문은 값을 여러 가능성이 있는 값들을 정의하는 <dfn>case</dfn>문과 비교합니다. 어떤 유효한 자바스크립트 문이라도 <dfn>case</dfn> 블록 안에서 실행될 수 있으며, 첫 번째 일치하는 `case` 값부터 `break`가 나타날 때까지 실행됩니다.
 
-Here is an example of a `switch` statement:
+여기 `switch`문 예시가 있습니다.
 
 ```js
 switch (fruit) {
@@ -24,11 +24,11 @@ switch (fruit) {
 }
 ```
 
-`case` values are tested with strict equality (`===`). The `break` tells JavaScript to stop executing statements. If the `break` is omitted, the next statement will be executed.
+`case` 값들은 엄격한 동등성(`===`)으로 테스트 됩니다. `break`는 문장들이 실행되는 것을 멈추게 합니다. `break`이 없다면 다음 문장이 실행될 것입니다.
 
 # --instructions--
 
-Write a switch statement which tests `val` and sets `answer` for the following conditions:  
+`val`를 테스트하고 `answer`를 다음 조건 중 하나로 설정하는 switch 문을 작성하시오.  
 `1` - `alpha`  
 `2` - `beta`  
 `3` - `gamma`  
@@ -36,40 +36,40 @@ Write a switch statement which tests `val` and sets `answer` for the following c
 
 # --hints--
 
-`caseInSwitch(1)` should have a value of the string `alpha`
+`caseInSwitch(1)`는 문자열 `alpha`을 가져야 합니다.
 
 ```js
 assert(caseInSwitch(1) === 'alpha');
 ```
 
-`caseInSwitch(2)` should have a value of the string `beta`
+`caseInSwitch(2)`는 문자열 `beta`을 가져야 합니다.
 
 ```js
 assert(caseInSwitch(2) === 'beta');
 ```
 
-`caseInSwitch(3)` should have a value of the string `gamma`
+`caseInSwitch(3)`는 문자열 `gamma`을 가져야 합니다.
 
 ```js
 assert(caseInSwitch(3) === 'gamma');
 ```
 
-`caseInSwitch(4)` should have a value of the string `delta`
+`caseInSwitch(4)`는 문자열 `delta`을 가져야 합니다.
 
 ```js
 assert(caseInSwitch(4) === 'delta');
 ```
 
-You should not use any `if` or `else` statements
+`if` 나 `else`문을 사용하지 않아야 합니다.
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
-You should have at least 3 `break` statements
+적어도 3개의 `break`문이 있어야 합니다.
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--

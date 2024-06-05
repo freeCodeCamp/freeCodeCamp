@@ -40,13 +40,13 @@ Ersetze die beiden if-Anweisungen durch eine Anweisung mit dem `&&`-Operator, di
 Du solltest den `&&`-Operator einmal verwenden
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 Du solltest nur eine `if`-Anweisung verwenden
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalAnd(0)` sollte den String `No` zurückgeben

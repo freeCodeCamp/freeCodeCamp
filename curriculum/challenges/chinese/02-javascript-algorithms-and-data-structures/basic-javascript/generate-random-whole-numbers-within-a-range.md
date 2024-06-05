@@ -49,10 +49,10 @@ assert(randomRange(0, 1) % 1 === 0);
 assert(
   (function () {
     if (
-      code.match(/myMax/g).length > 1 &&
-      code.match(/myMin/g).length > 2 &&
-      code.match(/Math.floor/g) &&
-      code.match(/Math.random/g)
+      __helpers.removeJSComments(code).match(/myMax/g).length > 1 &&
+      __helpers.removeJSComments(code).match(/myMin/g).length > 2 &&
+      __helpers.removeJSComments(code).match(/Math.floor/g) &&
+      __helpers.removeJSComments(code).match(/Math.random/g)
     ) {
       return true;
     } else {

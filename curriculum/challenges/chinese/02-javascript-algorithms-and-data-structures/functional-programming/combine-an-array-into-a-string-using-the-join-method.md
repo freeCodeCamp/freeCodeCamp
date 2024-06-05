@@ -27,13 +27,13 @@ const str = arr.join(" ");
 应使用 `join` 方法。
 
 ```js
-assert(code.match(/\.join/g));
+assert(__helpers.removeJSComments(code).match(/\.join/g));
 ```
 
 不能使用 `replace` 方法。
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `sentensify("May-the-force-be-with-you")` 应返回一个字符串。

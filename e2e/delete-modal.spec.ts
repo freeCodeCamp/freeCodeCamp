@@ -1,11 +1,26 @@
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
 import { test, expect } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
+
+const execP = promisify(exec);
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
+
+test.afterAll(
+  async () =>
+    await Promise.all([
+      await execP('node ./tools/scripts/seed/seed-demo-user certified-user'),
+      await execP('node ./tools/scripts/seed/seed-surveys'),
+      await execP('node ./tools/scripts/seed/seed-ms-username')
+    ])
+);
 
 test.describe('Delete Modal component', () => {
   test('should render the modal correctly', async ({ page }) => {
@@ -75,13 +90,6 @@ test.describe('Delete Modal component', () => {
   test('should close the modal and redirect to /learn after the user clicks delete', async ({
     page
   }) => {
-    await page.route('*/**/account/delete', async route => {
-      // intercept the endpoint to prevent user account from being deleted
-      // as the deletion will cause subsequent tests to fail
-      const json = {};
-      await route.fulfill({ json });
-    });
-
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
@@ -103,5 +111,12 @@ test.describe('Delete Modal component', () => {
     ).not.toBeVisible();
 
     await expect(page).toHaveURL(/.*\/learn\/?/);
+    await expect(
+      page
+        .getByRole('alert')
+        .filter({ hasText: 'Your account has been successfully deleted' })
+    ).toBeVisible();
+    // The user is signed out after their account is deleted
+    await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(2);
   });
 });

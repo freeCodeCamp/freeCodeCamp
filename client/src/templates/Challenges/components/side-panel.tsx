@@ -42,7 +42,7 @@ export function SidePanel({
 }: SidePanelProps): JSX.Element {
   useEffect(() => {
     const mathJaxChallenge =
-      block === 'rosetta-code' ||
+      superBlock === SuperBlocks.RosettaCode ||
       superBlock === SuperBlocks.ProjectEuler ||
       block === 'intermediate-algorithm-scripting';
     initializeMathJax(mathJaxChallenge);

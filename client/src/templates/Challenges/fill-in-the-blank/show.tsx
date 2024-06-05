@@ -10,11 +10,12 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import ChallengeHeading from '../components/challenge-heading';
@@ -25,7 +26,8 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../redux/actions';
 import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
@@ -45,6 +47,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
@@ -60,6 +63,7 @@ interface ShowFillInTheBlankProps {
   data: { challengeNode: ChallengeNode };
   description: string;
   isChallengeCompleted: boolean;
+  initTests: (xs: Test[]) => void;
   openCompletionModal: () => void;
   openHelpModal: () => void;
   pageContext: {
@@ -77,6 +81,7 @@ interface ShowFillInTheBlankState {
   allBlanksFilled: boolean;
   feedback: string | null;
   showFeedback: boolean;
+  isScenePlaying: boolean;
 }
 
 // Component
@@ -108,7 +113,8 @@ class ShowFillInTheBlank extends Component<
       answersCorrect: emptyArray,
       allBlanksFilled: false,
       feedback: null,
-      showFeedback: false
+      showFeedback: false,
+      isScenePlaying: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -119,10 +125,16 @@ class ShowFillInTheBlank extends Component<
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: {
+            fields: { tests },
+            title,
+            challengeType,
+            helpCategory
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
     updateChallengeMeta({
@@ -131,6 +143,7 @@ class ShowFillInTheBlank extends Component<
       challengeType,
       helpCategory
     });
+    initTests(tests);
     challengeMounted(challengeMeta.id);
     this.container.current?.focus();
   }
@@ -243,6 +256,12 @@ class ShowFillInTheBlank extends Component<
     return '';
   }
 
+  setIsScenePlaying = (shouldPlay: boolean) => {
+    this.setState({
+      isScenePlaying: shouldPlay
+    });
+  };
+
   render() {
     const {
       data: {
@@ -284,6 +303,7 @@ class ShowFillInTheBlank extends Component<
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        playScene={() => this.setIsScenePlaying(true)}
       >
         <LearnLayout>
           <Helmet
@@ -319,7 +339,11 @@ class ShowFillInTheBlank extends Component<
 
               {scene && (
                 <>
-                  <Scene scene={scene} />
+                  <Scene
+                    scene={scene}
+                    isPlaying={this.state.isScenePlaying}
+                    setIsPlaying={this.setIsScenePlaying}
+                  />
                   <Spacer size='medium' />
                 </>
               )}
@@ -408,6 +432,7 @@ class ShowFillInTheBlank extends Component<
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
+          <ShortcutsModal />
         </LearnLayout>
       </Hotkeys>
     );
@@ -435,6 +460,10 @@ export const query = graphql`
         fields {
           blockName
           slug
+          tests {
+            text
+            testString
+          }
         }
         fillInTheBlank {
           sentence

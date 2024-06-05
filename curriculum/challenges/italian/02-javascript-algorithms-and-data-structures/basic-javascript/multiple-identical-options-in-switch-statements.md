@@ -94,13 +94,13 @@ assert(sequentialSizes(9) === 'High');
 Non dovresti usare alcuna dichiarazione `if` o `else`
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 Dovresti avere nove dichiarazioni `case`
 
 ```js
-assert(code.match(/case/g).length === 9);
+assert(__helpers.removeJSComments(code).match(/case/g).length === 9);
 ```
 
 # --seed--

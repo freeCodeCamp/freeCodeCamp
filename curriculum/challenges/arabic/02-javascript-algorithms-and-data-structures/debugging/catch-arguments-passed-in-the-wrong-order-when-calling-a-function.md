@@ -25,7 +25,7 @@ assert(power == 8);
 يجب أن يستخدم كودك الترتيب الصحيح لمعطيات (arguments) لتفعيل الوظيفة (funciton) المسمى `raiseToPower`.
 
 ```js
-assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
+assert(__helpers.removeJSComments(code).match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 ```
 
 # --seed--

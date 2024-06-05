@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Крок 24
+title: Step 23
 challengeType: 0
-dashedName: step-24
+dashedName: step-23
 ---
 
 # --description--
@@ -81,12 +81,12 @@ body {
   border-radius: 46%;
 }
 
+--fcc-editable-region--
 .cat-left-ear {
---fcc-editable-region--
 
---fcc-editable-region--
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-bottom: 70px solid #5e5e5e;
 }
+--fcc-editable-region--
 ```

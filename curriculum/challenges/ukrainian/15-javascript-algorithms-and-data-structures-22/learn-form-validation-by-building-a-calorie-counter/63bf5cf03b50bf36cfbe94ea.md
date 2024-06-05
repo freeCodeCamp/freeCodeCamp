@@ -1,8 +1,8 @@
 ---
 id: 63bf5cf03b50bf36cfbe94ea
-title: Крок 36
+title: Step 38
 challengeType: 0
-dashedName: step-36
+dashedName: step-38
 ---
 
 # --description--
@@ -11,13 +11,7 @@ Your next step is to allow users to add entries to the calorie counter. Declare 
 
 # --hints--
 
-Оголосіть змінну `addEntry`.
-
-```js
-assert.isDefined(addEntry);
-```
-
-Змінна `addEntry` повинна бути функцією.
+You should declare an `addEntry` function.
 
 ```js
 assert.isFunction(addEntry);
