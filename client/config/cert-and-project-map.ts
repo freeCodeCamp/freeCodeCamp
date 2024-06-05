@@ -23,9 +23,7 @@ const apiMicroBase =
   '/learn/back-end-development-and-apis/back-end-development-and-apis-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
-const sciCompPyBase =
-  '/learn/scientific-computing-with-python/' +
-  'scientific-computing-with-python-projects';
+const sciCompPyBase = '/learn/scientific-computing-with-python/';
 const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
 const machineLearningPyBase =
@@ -328,31 +326,31 @@ const allStandardCerts = [
       {
         id: '5e44412c903586ffb414c94c',
         title: 'Arithmetic Formatter',
-        link: `${sciCompPyBase}/arithmetic-formatter`,
+        link: `${sciCompPyBase}/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e444136903586ffb414c94d',
         title: 'Time Calculator',
-        link: `${sciCompPyBase}/time-calculator`,
+        link: `${sciCompPyBase}/build-a-time-calculator-project/build-a-time-calculator-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e44413e903586ffb414c94e',
         title: 'Budget App',
-        link: `${sciCompPyBase}/budget-app`,
+        link: `${sciCompPyBase}/build-a-budget-app-project/build-a-budget-app-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e444147903586ffb414c94f',
         title: 'Polygon Area Calculator',
-        link: `${sciCompPyBase}/polygon-area-calculator`,
+        link: `${sciCompPyBase}/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e44414f903586ffb414c950',
         title: 'Probability Calculator',
-        link: `${sciCompPyBase}/probability-calculator`,
+        link: `${sciCompPyBase}/build-a-probability-calculator-project/build-a-probability-calculator-project`,
         certSlug: Certification.SciCompPy
       }
     ]
