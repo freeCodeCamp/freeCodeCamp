@@ -27,6 +27,7 @@ label {
   font-weight: bold;
 }
 
+/* TODO: Move this rule to @freecodecamp/ui. (Though some styles might need to be dropped). */
 legend {
   display: block;
   width: 100%;
@@ -653,8 +654,8 @@ pre code {
   color: var(--background-danger);
 }
 
-.text-left {
-  text-align: left;
+.text-start {
+  text-align: start;
 }
 
 .text-justify {
