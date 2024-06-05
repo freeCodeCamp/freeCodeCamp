@@ -29,7 +29,7 @@ jobs:
             .github
             shared
             curriculum
-          fetch-depth: 3
+          fetch-depth: 2
       - name: Setup Github
         run: |
           git config --global user.email "actions@github.com"
@@ -61,5 +61,6 @@ jobs:
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          cd FreeCodeCampCopy
+          ls
+          cd ../FreeCodeCampCopy
           gh pr create -B sample -H main --title 'Merge main into sample' --body 'Created by Github action'
