@@ -25,6 +25,6 @@ git pull
 #Normally we'd have to run differnet commands but the source branch of SOURCE_REPO_DIR is the sample branch, not main(I messed up :P)
 git checkout main #This branch get's the changes from git-filter-repo
 
-git rebase sample
+git rebase sample -X theirs
 
 git push --set-upstream origin main
