@@ -29,7 +29,7 @@ jobs:
             .github
             shared
             curriculum
-          fetch-depth: 2
+          fetch-depth: 5
       - name: Setup Github
         run: |
           git config --global user.email "actions@github.com"
