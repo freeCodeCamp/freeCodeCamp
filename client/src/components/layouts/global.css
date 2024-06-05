@@ -68,7 +68,7 @@ blockquote .small:before {
 /* TODO: Move this rule to @freecodecamp/ui. */
 ul {
   margin-top: 0;
-  margin-bottom: 12.5px;
+  margin-bottom: 10px;
   padding-inline-start: 40px;
   list-style-type: disc;
 }
@@ -76,9 +76,17 @@ ul {
 /* TODO: Move this rule to @freecodecamp/ui. */
 ol {
   margin-top: 0;
-  margin-bottom: 12.5px;
+  margin-bottom: 10px;
   padding-inline-start: 40px;
   list-style-type: decimal;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid var(--quaternary-background);
 }
 
 #___gatsby {
@@ -527,13 +535,6 @@ code {
 
 .challenge-instructions code {
   white-space: break-spaces;
-}
-
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid var(--quaternary-background);
 }
 
 .challenge-output span {
