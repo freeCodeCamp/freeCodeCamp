@@ -9,7 +9,7 @@ dashedName: dialogue-1-a-job-interview
 
 Assista ao vídeo para entender o contexto das próximas lições.
 
-# --atividade--
+# --assignment--
 
 Assista ao vídeo
 

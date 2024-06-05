@@ -25,7 +25,7 @@ Your application should show different messages depending on the price of the it
 |    Currency Unit    |       Amount       |
 |:-------------------:|:------------------:|
 |        Penny        |    $0.01 (PENNY)   |
-|        Nickle       |   $0.05 (NICKEL)   |
+|        Nickel       |   $0.05 (NICKEL)   |
 |         Dime        |     $0.1 (DIME)    |
 |       Quarter       |   $0.25 (QUARTER)  |
 |        Dollar       |      $1 (ONE)      |

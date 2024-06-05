@@ -4,9 +4,6 @@
   "usesMultifileEditor": true,  
   "dashedName": "build-a-budget-app-project",
   "order": 13,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

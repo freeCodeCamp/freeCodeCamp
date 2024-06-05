@@ -4,9 +4,6 @@
   "dashedName": "advanced-node-and-express",
   "helpCategory": "JavaScript",
   "order": 1,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "quality-assurance",
   "challengeOrder": [
     {

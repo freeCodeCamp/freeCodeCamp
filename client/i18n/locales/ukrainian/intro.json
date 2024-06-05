@@ -474,10 +474,10 @@
         ]
       },
       "learn-basic-debugging-by-building-a-random-background-color-changer": {
-        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "title": "Вивчіть базове налагодження, створивши перемикач фонового кольору",
         "intro": [
-          "Debugging is the process of going through your code, finding any issues, and fixing them.",
-          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+          "Налагодження програм — це процес перевірки коду на наявність помилок та їх виправлення.",
+          "У цьому проєкті ви допоможете CamperBot побудувати перемикач фонового кольору, а також допоможете йому знаходити та налагоджувати помилки."
         ]
       },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
@@ -1482,7 +1482,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
+        "title": "Дізнайтесь, як говорити про оновлення та плани щодо завдань і проєктів",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
