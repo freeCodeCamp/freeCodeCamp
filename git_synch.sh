@@ -15,9 +15,9 @@ rm -rf "${TMP_REPO_DIR}"
 cd "${SOURCE_REPO_DIR}"
 
 
-
+echo "${SCRIPT_DIR}"
 python3 "${SCRIPT_DIR}/git-filter-repo" --path README.md --path curriculum/ --path shared --path .github --force --source "${SOURCE_REPO_DIR}" --target "${DST_REPO_DIR}"
-
+echo "done filtering"
 
 cd "${DST_REPO_DIR}"
 git pull
