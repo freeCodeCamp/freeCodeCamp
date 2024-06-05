@@ -27,4 +27,4 @@ git checkout main #This branch get's the changes from git-filter-repo
 
 git rebase sample -X theirs
 
-git push --set-upstream origin main
+git push --set-upstream origin main --force
