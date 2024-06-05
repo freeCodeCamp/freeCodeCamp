@@ -23,7 +23,7 @@ const apiMicroBase =
   '/learn/back-end-development-and-apis/back-end-development-and-apis-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
-const sciCompPyBase = '/learn/scientific-computing-with-python/';
+const sciCompPyBase = '/learn/scientific-computing-with-python';
 const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
 const machineLearningPyBase =
