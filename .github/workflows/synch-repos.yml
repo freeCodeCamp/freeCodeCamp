@@ -60,6 +60,7 @@ jobs:
       - name: Create PR
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+          GH_TOKEN: ${{ secrets.OTHER_REPO_SSH_TOKEN }}
         run: |
           ls
           cd ../FreeCodeCampCopy
