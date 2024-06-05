@@ -1,5 +1,5 @@
 #!/bin/bash
-
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 SOURCE_REPO=freeCodeCamp
 DST_REPO=FreeCodeCampCopy
 SOURCE_REPO_DIR=/home/runner/work/freeCodeCamp/${SOURCE_REPO}
@@ -15,7 +15,8 @@ rm -rf "${TMP_REPO_DIR}"
 cd "${SOURCE_REPO_DIR}"
 
 
-git-filter-repo --path README.md --path curriculum/ --path shared --path .github --force --source "${SOURCE_REPO_DIR}" --target "${DST_REPO_DIR}"
+
+python3 "${SCRIPT_DIR}/git-filter-repo" --path README.md --path curriculum/ --path shared --path .github --force --source "${SOURCE_REPO_DIR}" --target "${DST_REPO_DIR}"
 
 
 cd "${DST_REPO_DIR}"

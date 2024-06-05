@@ -50,4 +50,5 @@ jobs:
           cd ../
           git clone git@github.com:Asad-Rahim/FreeCodeCamp.git
           echo "${PWD}"
+          ls
           bash ${PWD}/freeCodeCamp/git_synch.sh
