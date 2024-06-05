@@ -1511,7 +1511,7 @@
   "b1-english-for-developers": {
     "title": "B1 English for Developers (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": [""],
+    "intro": ["Placeholder intro"],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Learn How to Describe Places and Events",
