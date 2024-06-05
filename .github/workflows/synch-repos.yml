@@ -18,6 +18,10 @@ jobs:
   synch-changes:
     runs-on: ubuntu-20.04
     steps:
+      - name: Set Up Machine
+        uses: actions/setup-python@v4
+        with:          
+          python-version: 3.9 
       - name: Checkout Source Repo
         uses: actions/checkout@v4
         with:
