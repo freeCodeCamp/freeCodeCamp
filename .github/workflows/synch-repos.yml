@@ -30,6 +30,7 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub actions"
+          git config --global http.version HTTP/1.1
       - name: Add SSH key
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
