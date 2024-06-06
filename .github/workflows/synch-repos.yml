@@ -63,5 +63,6 @@ jobs:
           GH_TOKEN: ${{ secrets.OTHER_REPO_SSH_TOKEN }}
         run: |
           ls
+          
           cd ../FreeCodeCampCopy
           gh pr create -B sample -H main --title 'Merge main into sample' --body 'Created by Github action'
