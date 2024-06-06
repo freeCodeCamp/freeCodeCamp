@@ -176,6 +176,6 @@ export async function handleStripeCardUpdateSession(req, app, stripe) {
 
 export function inLastFiveMinutes(unixTimestamp) {
   const currentTimestamp = Math.floor(Date.now() / 1000);
-  const timeDifference = Math.abs(currentTimestamp - unixTimestamp);
+  const timeDifference = currentTimestamp - unixTimestamp;
   return timeDifference <= 300; // 300 seconds is 5 minutes
 }
