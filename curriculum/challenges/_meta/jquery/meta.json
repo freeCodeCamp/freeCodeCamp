@@ -4,7 +4,6 @@
   "dashedName": "jquery",
   "helpCategory": "JavaScript",
   "order": 1,
-  "time": "3 hours",
   "required": [
     {
       "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"

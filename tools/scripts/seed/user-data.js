@@ -1,9 +1,16 @@
 /* eslint-disable max-len */
 const { ObjectId } = require('mongodb');
 
+const blankUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
+const publicUserId = new ObjectId('663b839b24a8b29f57728b13');
+const demoUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb5');
+const fullyCertifiedUserId = new ObjectId('5fa2db00a25c1c1fa49ce067');
+
+const userIds = [blankUserId, publicUserId, demoUserId, fullyCertifiedUserId];
+
 module.exports = {
   blankUser: {
-    _id: new ObjectId('5bd30e0f1caf6ac3ddddddb9'),
+    _id: blankUserId,
     email: 'bar@bar.com',
     emailVerified: true,
     progressTimestamps: [],
@@ -64,7 +71,7 @@ module.exports = {
     unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
   },
   publicUser: {
-    _id: new ObjectId('663b839b24a8b29f57728b13'),
+    _id: publicUserId,
     email: 'bar@bars.com',
     emailVerified: true,
     progressTimestamps: [],
@@ -125,7 +132,7 @@ module.exports = {
     unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
   },
   demoUser: {
-    _id: new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+    _id: demoUserId,
     email: 'foo@bar.com',
     emailVerified: true,
     progressTimestamps: [],
@@ -187,9 +194,8 @@ module.exports = {
     externalId: '',
     unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
   },
-
   fullyCertifiedUser: {
-    _id: new ObjectId('5fa2db00a25c1c1fa49ce067'),
+    _id: fullyCertifiedUserId,
     email: 'foo@bar.com',
     emailVerified: true,
     progressTimestamps: [],
@@ -12253,5 +12259,6 @@ module.exports = {
     emailVerifyTTL: null,
     externalId: '',
     unsubscribeId: 'tBX8stC5jiustPBteF2mV'
-  }
+  },
+  userIds
 };

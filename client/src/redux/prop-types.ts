@@ -224,7 +224,6 @@ export type ChallengeNode = {
     tail: string[];
     template: string;
     tests: Test[];
-    time: string;
     title: string;
     translationPending: boolean;
     url: string;

@@ -328,6 +328,14 @@ jobs:
           sudo chown -R $(whoami): client/i18n/locales
           npx --yes prettier --write client/i18n/locales/**/*.json
 
+      ###### Lowercase directory names #####
+
+      - name: Lowercase Directories
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'lowercase-directories'
+          FILE_PATH: 'client/i18n/locales'
+      # Crowdin translators might have the directories
       # Create Commit
       - name: Commit Changes
         uses: freecodecamp/crowdin-action@main

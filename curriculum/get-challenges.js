@@ -273,7 +273,6 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
     challenge.required = (meta.required || []).concat(challenge.required || []);
     challenge.template = meta.template;
-    challenge.time = meta.time;
     challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
