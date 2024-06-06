@@ -239,4 +239,42 @@ test.describe('Signed in user', () => {
     await expect(page.getByText(updatedText)).not.toBeVisible();
     await expect(page.getByText(savedText)).toBeVisible();
   });
+
+  test('User can reset on a multi-file project without reloading', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    test.setTimeout(60000);
+    const savedText = 'function palindrome() { return true; }';
+    const updatedText = 'function palindrome() { return false; }';
+
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
+    );
+
+    // This first edit should reappear after the reset
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
+    await getEditors(page).fill(savedText);
+    await page.keyboard.press('Control+S');
+
+    // This second edit should be reset
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
+    await getEditors(page).fill(updatedText);
+
+    await page
+      .getByRole('button', { name: translations.buttons.reset })
+      .click();
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons['reset-lesson']
+      })
+      .click();
+
+    await expect(page.getByText(updatedText)).not.toBeVisible();
+    await expect(page.getByText(savedText)).toBeVisible();
+  });
 });
