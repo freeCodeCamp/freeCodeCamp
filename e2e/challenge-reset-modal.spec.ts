@@ -1,3 +1,5 @@
+import { execSync } from 'child_process';
+
 import { test, expect, Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
@@ -185,4 +187,56 @@ test('User can reset on a multi-file project', async ({
     .click();
 
   await expect(page.getByText(sampleText)).not.toBeVisible();
+});
+
+test.describe('Signed in user', () => {
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+  test.beforeEach(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user');
+  });
+
+  test.afterEach(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  });
+
+  test('User can reset on a multi-file project after reloading and saving', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    test.setTimeout(60000);
+    const savedText = 'function palindrome() { return true; }';
+    const updatedText = 'function palindrome() { return false; }';
+
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
+    );
+
+    // This first edit should reappear after the reset
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
+    await getEditors(page).fill(savedText);
+    await page.keyboard.press('Control+S');
+
+    await page.reload();
+
+    // This second edit should be reset
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
+    await getEditors(page).fill(updatedText);
+
+    await page
+      .getByRole('button', { name: translations.buttons.reset })
+      .click();
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons['reset-lesson']
+      })
+      .click();
+
+    await expect(page.getByText(updatedText)).not.toBeVisible();
+    await expect(page.getByText(savedText)).toBeVisible();
+  });
 });
