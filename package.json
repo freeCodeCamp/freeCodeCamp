@@ -35,7 +35,7 @@
     "clean:api": "cd api && pnpm clean",
     "clean:client": "cd ./client && pnpm run clean",
     "clean:curriculum": "rm -rf ./shared/config/curriculum.json",
-    "clean:packages": "rm -rf ./node_modules ./**/node_modules",
+    "clean:packages": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "clean:server": "rm -rf ./api-server/lib",
     "create:shared": "tsc -p shared",
     "precypress": "node ./cypress-install.js",
