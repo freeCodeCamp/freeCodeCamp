@@ -158,10 +158,22 @@ test('should close when the user clicks the close button', async ({ page }) => {
   ).toBeHidden();
 });
 
-test('User can reset on a multi-file project', async ({ page }) => {
+test('User can reset on a multi-file project', async ({
+  page,
+  isMobile,
+  browserName
+}) => {
+  const sampleText = 'function palindrome() { return true; }';
+
   await page.goto(
     '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
   );
+
+  await focusEditor({ page, isMobile });
+  await clearEditor({ page, browserName });
+  await getEditors(page).fill(sampleText);
+  await expect(page.getByText(sampleText)).toBeVisible();
+
   await page.getByRole('button', { name: translations.buttons.reset }).click();
 
   await expectToRenderResetModal(page);
@@ -171,4 +183,6 @@ test('User can reset on a multi-file project', async ({ page }) => {
       name: translations.buttons['reset-lesson']
     })
     .click();
+
+  await expect(page.getByText(sampleText)).not.toBeVisible();
 });
