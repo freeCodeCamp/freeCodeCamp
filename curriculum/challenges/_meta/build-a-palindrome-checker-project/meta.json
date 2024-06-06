@@ -4,10 +4,7 @@
   "dashedName": "build-a-palindrome-checker-project",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
-  "order": 6,
-  "time": "30 hours",
-  "template": "",
-  "required": [],
+  "order": 8,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

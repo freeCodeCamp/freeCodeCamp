@@ -67,12 +67,25 @@ export const completedTrophyChallenges = [
   {
     id: '647f85d407d29547b3bee1bb',
     solution: 'challenge-solution',
-    completedDate: 1695064765244
+    completedDate: 1695064765244,
+    files: []
   }
 ];
 
+export type ExamSubmission = {
+  userExamQuestions: {
+    id: string;
+    question: string;
+    answer: {
+      id: string;
+      answer: string;
+    };
+  }[];
+  examTimeInSeconds: number;
+};
+
 // failed: 0 correct
-export const userExam1 = {
+export const examWithZeroCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -94,7 +107,7 @@ export const userExam1 = {
 };
 
 // passed: 1 correct
-export const userExam2 = {
+export const examWithOneCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -116,7 +129,7 @@ export const userExam2 = {
 };
 
 // passed: 2 correct
-export const userExam3 = {
+export const examWithTwoCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -138,7 +151,7 @@ export const userExam3 = {
 };
 
 // passed: 3 correct
-export const userExam4 = {
+export const examWithAllCorrect: ExamSubmission = {
   userExamQuestions: [
     {
       id: '3bbl2mx2mq',
@@ -159,7 +172,7 @@ export const userExam4 = {
   examTimeInSeconds: 20
 };
 
-export const mockResults1 = {
+export const mockResultsZeroCorrect = {
   numberOfCorrectAnswers: 0,
   numberOfQuestionsInExam: 3,
   percentCorrect: 0,
@@ -168,7 +181,7 @@ export const mockResults1 = {
   examTimeInSeconds: 20
 };
 
-export const mockResults2 = {
+export const mockResultsOneCorrect = {
   numberOfCorrectAnswers: 1,
   numberOfQuestionsInExam: 3,
   percentCorrect: 33.3,
@@ -177,7 +190,7 @@ export const mockResults2 = {
   examTimeInSeconds: 20
 };
 
-export const mockResults3 = {
+export const mockResultsTwoCorrect = {
   numberOfCorrectAnswers: 2,
   numberOfQuestionsInExam: 3,
   percentCorrect: 66.7,
@@ -186,7 +199,7 @@ export const mockResults3 = {
   examTimeInSeconds: 20
 };
 
-export const mockResults4 = {
+export const mockResultsAllCorrect = {
   numberOfCorrectAnswers: 3,
   numberOfQuestionsInExam: 3,
   percentCorrect: 100,
@@ -197,25 +210,27 @@ export const mockResults4 = {
 
 const completedExamChallenge = {
   id: examChallengeId,
-  challengeType: 17
+  challengeType: 17,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  completedDate: expect.any(Number)
 };
 
-export const completedExamChallenge1 = {
+export const completedExamChallengeZeroCorrect = {
   ...completedExamChallenge,
-  examResults: mockResults1
+  examResults: mockResultsZeroCorrect
 };
 
-export const completedExamChallenge2 = {
+export const completedExamChallengeOneCorrect = {
   ...completedExamChallenge,
-  examResults: mockResults2
+  examResults: mockResultsOneCorrect
 };
 
-export const completedExamChallenge3 = {
+export const completedExamChallengeTwoCorrect = {
   ...completedExamChallenge,
-  examResults: mockResults3
+  examResults: mockResultsTwoCorrect
 };
 
-export const completedExamChallenge4 = {
+export const completedExamChallengeAllCorrect = {
   ...completedExamChallenge,
-  examResults: mockResults4
+  examResults: mockResultsAllCorrect
 };

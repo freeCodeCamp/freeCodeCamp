@@ -1,12 +1,14 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
+import _ from 'lodash';
 
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
 // nanoid to do the same.  Any unique key _should_ be fine, though.
 import { customNanoid } from '../utils/ids';
 import {
   normalizeChallenges,
+  normalizeFlags,
   normalizeProfileUI,
   normalizeTwitter,
   removeNulls,
@@ -20,6 +22,43 @@ import {
 import { encodeUserToken } from '../utils/tokens';
 import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
+import { createResetProperties } from '../utils/create-user';
+
+// user flags that the api-server returns as false if they're missing in the
+// user document. Since Prisma returns null for missing fields, we need to
+// normalize them to false.
+// TODO(Post-MVP): remove this when the database is normalized.
+const nullableFlags = [
+  'is2018DataVisCert',
+  'is2018FullStackCert',
+  'isApisMicroservicesCert',
+  'isBackEndCert',
+  'isCheater',
+  'isCollegeAlgebraPyCertV8',
+  'isDataAnalysisPyCertV7',
+  'isDataVisCert',
+  // isDonating doesn't need fixing because it's not nullable
+  'isFoundationalCSharpCertV8',
+  'isFrontEndCert',
+  'isFullStackCert',
+  'isFrontEndLibsCert',
+  'isHonest',
+  'isInfosecCertV7',
+  'isInfosecQaCert',
+  'isJsAlgoDataStructCert',
+  'isJsAlgoDataStructCertV8',
+  'isMachineLearningPyCertV7',
+  'isQaCertV7',
+  'isRelationalDatabaseCertV8',
+  'isRespWebDesignCert',
+  'isSciCompPyCertV7',
+  'isDataAnalysisPyCertV7',
+  // isUpcomingPythonCertV8 exists in the db, but is not returned by the api-server
+  // TODO(Post-MVP): delete it from the db?
+  'keyboardShortcuts'
+] as const;
+
+type NullableFlag = (typeof nullableFlags)[number];
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -110,33 +149,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         });
         await fastify.prisma.user.update({
           where: { id: req.user!.id },
-          data: {
-            progressTimestamps: [Date.now()],
-            currentChallengeId: '',
-            isRespWebDesignCert: false,
-            is2018DataVisCert: false,
-            isFrontEndLibsCert: false,
-            isJsAlgoDataStructCert: false,
-            isApisMicroservicesCert: false,
-            isInfosecQaCert: false,
-            isQaCertV7: false,
-            isInfosecCertV7: false,
-            is2018FullStackCert: false,
-            isFrontEndCert: false,
-            isBackEndCert: false,
-            isDataVisCert: false,
-            isFullStackCert: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
-            isMachineLearningPyCertV7: false,
-            isRelationalDatabaseCertV8: false,
-            isCollegeAlgebraPyCertV8: false,
-            completedChallenges: [],
-            completedExams: [],
-            savedChallenges: [],
-            partiallyCompletedChallenges: [],
-            needsModeration: false
-          }
+          data: createResetProperties()
         });
 
         return {};
@@ -467,6 +480,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             githubProfile: true,
             id: true,
             is2018DataVisCert: true,
+            is2018FullStackCert: true,
             isApisMicroservicesCert: true,
             isBackEndCert: true,
             isCheater: true,
@@ -474,6 +488,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isDataAnalysisPyCertV7: true,
             isDataVisCert: true,
             isDonating: true,
+            isFoundationalCSharpCertV8: true,
             isFrontEndCert: true,
             isFrontEndLibsCert: true,
             isFullStackCert: true,
@@ -481,6 +496,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isInfosecCertV7: true,
             isInfosecQaCert: true,
             isJsAlgoDataStructCert: true,
+            isJsAlgoDataStructCertV8: true,
             isMachineLearningPyCertV7: true,
             isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
@@ -531,6 +547,9 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           ? encodeUserToken(userToken.id)
           : undefined;
 
+        const flags = _.pick<typeof user, NullableFlag>(user, nullableFlags);
+        const rest = _.omit<typeof user, NullableFlag>(user, nullableFlags);
+
         const {
           username,
           usernameDisplay,
@@ -538,13 +557,19 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           progressTimestamps,
           twitter,
           profileUI,
+          currentChallengeId,
+          location,
+          name,
+          theme,
           ...publicUser
-        } = user;
+        } = rest;
 
-        return {
+        await res.send({
           user: {
             [username]: {
               ...removeNulls(publicUser),
+              ...normalizeFlags(flags),
+              currentChallengeId: currentChallengeId ?? '',
               completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
@@ -559,6 +584,9 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               // TODO(Post-MVP) remove this and just use emailVerified
               isEmailVerified: user.emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+              location: location ?? '',
+              name: name ?? '',
+              theme: theme ?? 'default',
               twitter: normalizeTwitter(twitter),
               username: usernameDisplay || username,
               userToken: encodedToken,
@@ -567,7 +595,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             }
           },
           result: user.username
-        };
+        });
       } catch (err) {
         fastify.log.error(err);
         void res.code(500);

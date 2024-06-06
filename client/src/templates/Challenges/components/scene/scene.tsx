@@ -9,6 +9,14 @@ import Character from './character';
 
 import './scene.css';
 
+const sToMs = (n: number) => {
+  return n * 1000;
+};
+
+const loadImage = (src: string | null) => {
+  if (src) new Image().src = src;
+};
+
 export function Scene({
   scene,
   isPlaying,
@@ -21,24 +29,24 @@ export function Scene({
   const { t } = useTranslation();
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
+  const { startTimestamp = null, finishTimestamp = null } = audio;
 
-  const audioTimestamp =
-    audio.startTimestamp !== null && audio.finishTimestamp !== null
-      ? `#t=${audio.startTimestamp},${audio.finishTimestamp}`
-      : '';
+  const hasTimestamps = startTimestamp !== null && finishTimestamp !== null;
+  const audioTimestamp = hasTimestamps ? `#t=${startTimestamp}` : '';
 
   const audioRef = useRef<HTMLAudioElement>(
     new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
   );
 
-  const loadImage = (src: string | null) => {
-    if (src) new Image().src = src;
-  };
+  // if there are timestamps, we use the difference between them as the duration
+  // if not, we assume we're playing the whole audio file.
+  const duration = hasTimestamps
+    ? sToMs(finishTimestamp - startTimestamp)
+    : Infinity;
 
   // on mount
   useEffect(() => {
-    const { current } = audioRef;
-    current.addEventListener('canplaythrough', audioLoaded);
+    audioRef.current.addEventListener('canplaythrough', audioLoaded);
 
     // preload images
     loadImage(`${backgrounds}/${setup.background}`);
@@ -64,10 +72,6 @@ export function Scene({
     };
   }, [audioRef, setup.background, setup.characters, commands]);
 
-  const audioLoaded = () => {
-    setSceneIsReady(true);
-  };
-
   const initBackground = setup.background;
   const initDialogue = { label: '', text: '', align: 'left' };
   const initCharacters = setup.characters.map(character => {
@@ -78,7 +82,7 @@ export function Scene({
     };
   });
 
-  const [sceneIsReady, setSceneIsReady] = useState(true);
+  const [sceneIsReady, setSceneIsReady] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
   const [characters, setCharacters] = useState(initCharacters);
@@ -94,15 +98,41 @@ export function Scene({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying]);
 
+  const audioLoaded = () => {
+    setSceneIsReady(true);
+  };
+
+  let start = 0;
+  let stopAudio = false;
+
+  // this function exists because we couldn't reliably stop the audio when
+  // playing only part of the audio file. So it would get cut off
+  function maybeStopAudio() {
+    const runningTime = Date.now() - start;
+
+    if (runningTime >= duration) {
+      stopAudio = true;
+      audioRef.current.pause();
+    }
+
+    if (!stopAudio) {
+      window.requestAnimationFrame(maybeStopAudio);
+    }
+  }
+
   const playScene = () => {
     setShowDialogue(true);
 
-    commands.forEach((command, commandIndex) => {
-      // Start audio timeout
-      setTimeout(function () {
+    setTimeout(() => {
+      if (audioRef.current.paused) {
+        start = Date.now();
         void audioRef.current.play();
-      }, audio.startTime * 1000);
+      }
+      // if there are no timestamps, we can let the audio play to the end
+      if (hasTimestamps) maybeStopAudio();
+    }, sToMs(audio.startTime));
 
+    commands.forEach((command, commandIndex) => {
       // Start command timeout
       setTimeout(() => {
         if (command.background) setBackground(command.background);
@@ -127,7 +157,7 @@ export function Scene({
           });
           return newCharacters;
         });
-      }, command.startTime * 1000);
+      }, sToMs(command.startTime));
 
       // Finish command timeout, only used when there's a dialogue
       if (command.dialogue) {
@@ -146,7 +176,7 @@ export function Scene({
               return newCharacters;
             });
           },
-          (command.finishTime as number) * 1000
+          sToMs(command.finishTime as number)
         );
       }
 
@@ -156,9 +186,10 @@ export function Scene({
           () => {
             setIsPlaying(false);
           },
+          // an extra 500ms at the end to let the characters fade out (CSS transition)
           command.finishTime
-            ? command.finishTime * 1000 + 500
-            : command.startTime * 1000 + 500
+            ? sToMs(command.finishTime) + 500
+            : sToMs(command.startTime) + 500
         );
       }
     });

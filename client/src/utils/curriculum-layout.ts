@@ -18,11 +18,7 @@ export const isGridBased = (
   // as a list of projects. Otherwise, if we do not do this the project will be
   // shown as a single certification project.
 
-  if (
-    challengeType === challengeTypes.pythonProject ||
-    challengeType === challengeTypes.multifilePythonCertProject
-  )
-    return false;
+  if (challengeType === challengeTypes.pythonProject) return false;
   return gridBasedSuperBlocks.includes(superBlock);
 };
 

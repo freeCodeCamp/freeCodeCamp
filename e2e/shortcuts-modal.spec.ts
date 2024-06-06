@@ -1,32 +1,23 @@
 import { APIRequestContext, Page, expect, test } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { authedRequest } from './utils/request';
+import { getEditors } from './utils/editor';
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
-const editorPaneLabel =
-  'Editor content;Press Alt+F1 for Accessibility Options.';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-const enableKeyboardShortcuts = async (
-  page: Page,
-  request: APIRequestContext
-) => {
-  const csrfToken = (await request.storageState()).cookies.find(
-    c => c.name === 'csrf_token'
-  )?.value;
-
-  expect(csrfToken).toBeTruthy();
-
-  const res = await request.put(
-    process.env.API_LOCATION + '/update-my-keyboard-shortcuts',
-    {
-      data: { keyboardShortcuts: true },
-      headers: { 'csrf-token': csrfToken! }
+const enableKeyboardShortcuts = async (request: APIRequestContext) => {
+  const res = await authedRequest({
+    request,
+    endpoint: '/update-my-keyboard-shortcuts',
+    method: 'put',
+    data: {
+      keyboardShortcuts: true
     }
-  );
-  expect(res.status()).toBe(200);
+  });
   expect(await res.json()).toEqual({
     message: 'flash.keyboard-shortcut-updated',
     type: 'success'
@@ -36,7 +27,7 @@ const enableKeyboardShortcuts = async (
 const openModal = async (page: Page) => {
   // The editor pane is focused by default, so we need to escape or it will
   // capture the keyboard shortcuts
-  await page.getByLabel(editorPaneLabel).press('Escape');
+  await getEditors(page).press('Escape');
   await page.keyboard.press('Shift+?');
 };
 
@@ -46,7 +37,7 @@ test.beforeEach(async ({ page, isMobile, request }) => {
     'Skipping on mobile as it does not have a physical keyboard'
   );
 
-  await enableKeyboardShortcuts(page, request);
+  await enableKeyboardShortcuts(request);
   await page.goto(course);
 });
 

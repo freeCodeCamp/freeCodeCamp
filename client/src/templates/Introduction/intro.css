@@ -423,12 +423,6 @@ a.map-grid-item.challenge-completed {
   padding: 25px;
 }
 
-/* this margin is used to center the element.
-ToDo: find out why, and remove the need for it */
-.block-grid .map-title > svg {
-  margin-bottom: 4px;
-}
-
 .title-wrapper {
   display: flex;
   flex-direction: row;
@@ -465,7 +459,8 @@ ToDo: find out why, and remove the need for it */
   border: 1px solid var(--blue70);
 }
 
-.annual-donation-alert h3 {
+.annual-donation-alert h3,
+.annual-donation-alert h2 {
   color: var(--blue70);
 }
 
@@ -497,29 +492,8 @@ ToDo: find out why, and remove the need for it */
 .annual-donation-alert .progress-bar-percent {
   border-right: 1px solid var(--blue70);
   background-color: var(--blue-mid);
+  background-image: linear-gradient(to right, #31708f, #198eee);
   box-shadow: none;
-  animation: progress-bar-stripes 3s linear infinite;
-  background-image: linear-gradient(
-    -45deg,
-    rgba(225, 225, 225, 0.3) 0%,
-    rgba(225, 225, 225, 0.3) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(225, 225, 225, 0.3) 51%,
-    rgba(225, 225, 225, 0.3) 75%,
-    transparent 75%,
-    transparent 100%
-  );
-  background-size: 100px 100px;
-}
-
-@keyframes progress-bar-stripes {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 100px 0;
-  }
 }
 
 .tags-wrapper {

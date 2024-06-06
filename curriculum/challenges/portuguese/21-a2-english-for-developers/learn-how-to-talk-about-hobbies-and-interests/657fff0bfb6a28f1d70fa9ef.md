@@ -1,6 +1,6 @@
 ---
 id: 657fff0bfb6a28f1d70fa9ef
-title: Task 78
+title: Tarefa 78
 challengeType: 22
 dashedName: task-78
 ---

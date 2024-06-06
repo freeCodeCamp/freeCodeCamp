@@ -1,8 +1,15 @@
 const path = require('path');
 const debug = require('debug');
+const { MongoClient } = require('mongodb');
+
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
-const { MongoClient, ObjectId } = require('mongodb');
-const { demoUser, blankUser, fullyCertifiedUser } = require('./user-data');
+const {
+  demoUser,
+  blankUser,
+  publicUser,
+  fullyCertifiedUser,
+  userIds
+} = require('./user-data');
 
 const args = process.argv.slice(2);
 
@@ -99,12 +106,6 @@ const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 const db = client.db('freecodecamp');
 const user = db.collection('user');
 
-const userIds = [
-  new ObjectId('5fa2db00a25c1c1fa49ce067'),
-  new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-  new ObjectId('5bd30e0f1caf6ac3ddddddb9')
-];
-
 const dropUserTokens = async function () {
   await db.collection('UserToken').deleteMany({
     userId: {
@@ -130,9 +131,11 @@ const run = async () => {
   if (args.includes('certified-user')) {
     await user.insertOne(fullyCertifiedUser);
     await user.insertOne(blankUser);
+    await user.insertOne(publicUser);
   } else {
     await user.insertOne(demoUser);
     await user.insertOne(blankUser);
+    await user.insertOne(publicUser);
   }
   log('local auth user seed complete');
 };

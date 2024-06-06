@@ -9,7 +9,7 @@ dashedName: introduction-flexbox-question-k
 
 <iframe allowfullscreen="true" allowpaymentrequest="true"
 style="width: 100%; overflow:hidden; display:block;"
-allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/MWoyBzR?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=MWoyBzR&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" title="CodePen Embed" loading="lazy" id="cp_embed_MWoyBzR"></iframe>
+allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="400" width="100%" name="cp_embed_1" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/MWoyBzR?height=400&amp;default-tab=html%2Cresult&amp;slug-hash=MWoyBzR&amp;editable=true&amp;user=TheOdinProjectExamples&amp;name=cp_embed_1" title="CodePen incorporado" loading="lazy" id="cp_embed_MWoyBzR"></iframe>
 
 To change the placement of items along the cross axis use `align-items`. Try getting the boxes to the center of the container by adding `align-items: center` to `.container`. The desired result looks like this:
 

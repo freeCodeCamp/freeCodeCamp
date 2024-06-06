@@ -8,7 +8,7 @@ dashedName: mean-variance-standard-deviation-calculator
 
 # --description--
 
-You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
+Você <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mean-variance-standard-deviation-calculator/" target="_blank" rel="noopener noreferrer nofollow">trabalhará nesse projeto com o nosso código inicial do Gitpod </a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
@@ -52,7 +52,7 @@ Por exemplo, `calculate([0,1,2,3,4,5,6,7,8])` deve retornar:
 
 ## Desenvolvimento
 
-Write your code in `mean_var_std.py`. For development, you can use `main.py` to test your code.
+Escreva seu código em `mean_var_std.py`. Para o desenvolvimento, você pode usar `main.py` para testar seu código.
 
 ## Testes
 

@@ -9,7 +9,7 @@ dashedName: task-78
 
 `Regulations` are official rules made by a government or authority. They are designed to control how something works or how people act, especially in businesses.
 
-Example: `Health and safety regulations ensure a safe workplace.`
+Наприклад, `Health and safety regulations ensure a safe workplace`.
 
 
 # --question--

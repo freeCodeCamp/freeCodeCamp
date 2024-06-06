@@ -1,14 +1,11 @@
 {
-  "name": "Learn Basic JavaScript By Building a Role Playing Game",
+  "name": "Learn Basic JavaScript by Building a Role Playing Game",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-basic-javascript-by-building-a-role-playing-game",
   "helpCategory": "JavaScript",
   "order": 2,
-  "time": "2 hours",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

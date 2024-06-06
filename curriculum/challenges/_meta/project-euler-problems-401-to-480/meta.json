@@ -1,12 +1,9 @@
 {
-  "name": "project euler problems 401 to 480",
+  "name": "Project Euler Problems 401 to 480",
   "isUpcomingChange": false,
   "dashedName": "project-euler-problems-401-to-480",
   "helpCategory": "Euler",
   "order": 4,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "project-euler",
   "disableLoopProtectTests": true,
   "challengeOrder": [
@@ -92,7 +89,7 @@
     },
     {
       "id": "5900f5131000cf542c510024",
-      "title": "Problem 421: Prime factors of n15+1"
+      "title": "Problem 421: Prime factors of n^15+1"
     },
     {
       "id": "5900f5131000cf542c510025",

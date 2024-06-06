@@ -9,7 +9,7 @@ dashedName: learn-data-types-and-conditionals-question-e
 
 Strings defined using backticks are called template literals. They are a new way to define strings in JavaScript. They allow you to embed expressions within the string. This is done by wrapping the expression in `${}`.
 
-For example, the following code:
+Por exemplo, o código a seguir:
 
 ```javascript
 let name = "John";

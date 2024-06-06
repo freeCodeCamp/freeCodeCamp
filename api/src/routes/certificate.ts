@@ -2,7 +2,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import isEmail from 'validator/lib/isEmail';
 import { find } from 'lodash';
 import { CompletedChallenge } from '@prisma/client';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 import { getChallenges } from '../utils/get-challenges';
 import {
   certIds,

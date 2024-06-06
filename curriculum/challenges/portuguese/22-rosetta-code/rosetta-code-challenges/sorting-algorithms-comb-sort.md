@@ -30,20 +30,20 @@ Pseudocódigo:
 <pre><b>function</b> combsort(<b>array</b> input)
   gap := input<b>.size</b> <i>//inicialize o tamanho da diferença</i>
   <b>loop until</b> gap = 1 <b>and</b> swaps = 0
-    <i>//atualize o valor da diferença para o próximo pente. Below is an example</i>
+    <i>//atualize o valor da diferença para o próximo pente. Abaixo vemos um exemplo</i>
     gap := int(gap / 1.25)
     <b>if</b> gap &#x3C; 1 
-      <i>//minimum gap is 1</i>
+      <i>//a diferença mínima é de 1</i>
       gap := 1
     <b>end if</b>
     i := 0
-    swaps := 0 <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort' target='_blank'>Bubble Sort</a> for an explanation</i>
-    <i>//a single "comb" over the input list</i>
-    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort' target='_blank'>Shell sort</a> for similar idea</i>
+    swaps := 0 <i>//consulte <a href='https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort' target='_blank'>Bubble Sort</a> para ver uma explicação</i>
+    <i>//uma única ordenação de "pente" pela lista de entrada</i>
+    <b>loop until</b> i + gap >= input<b>.size</b> <i>//consulte <a href='https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort' target='_blank'>Shell sort</a> para ver uma ideia semelhante</i>
       <b>if</b> input[i] > input[i+gap]
         <b>swap</b>(input[i], input[i+gap])
-        swaps := 1 <i>// Flag a swap has occurred, so the</i>
-            <i>// list is not guaranteed sorted</i>
+        swaps := 1 <i>//Sinaliza que uma troca ocorreu, de modo que a</i>
+            <i>// lista não esteja ordenada com certeza</i>
       <b>end if</b>
       i := i + 1
     <b>end loop</b>
