@@ -89,7 +89,10 @@
 }
 
 .donate-input-element {
-  padding-top: 8px;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
 }
 
 .donation-form .form-control::placeholder {
