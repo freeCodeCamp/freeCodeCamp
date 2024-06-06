@@ -1,15 +1,9 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
-test('should render the modal content correctly', async ({ page }) => {
-  await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
-  );
-
-  await page.getByRole('button', { name: translations.buttons.reset }).click();
-
+const expectToRenderResetModal = async (page: Page) => {
   await expect(
     page.getByRole('dialog', { name: translations.learn.reset })
   ).toBeVisible();
@@ -35,6 +29,16 @@ test('should render the modal content correctly', async ({ page }) => {
       name: translations.buttons['reset-lesson']
     })
   ).toBeVisible();
+};
+
+test('should render the modal content correctly', async ({ page }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
+
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
+
+  await expectToRenderResetModal(page);
 });
 
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {
@@ -155,40 +159,16 @@ test('should close when the user clicks the close button', async ({ page }) => {
 });
 
 test('User can reset on a multi-file project', async ({ page }) => {
-  {
-    await page.goto(
-      '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
-    );
-    await page
-      .getByRole('button', { name: translations.buttons.reset })
-      .click();
+  await page.goto(
+    '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
+  );
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
 
-    await expect(
-      page.getByRole('dialog', { name: translations.learn.reset })
-    ).toBeVisible();
+  await expectToRenderResetModal(page);
 
-    await expect(
-      page.getByRole('button', {
-        name: translations.buttons.close
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('heading', {
-        name: translations.learn.reset
-      })
-    ).toBeVisible();
-
-    await expect(
-      page.getByText(translations.learn['reset-warn'])
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.learn['reset-warn-2'])
-    ).toBeVisible();
-
-    await expect(
-      page.getByRole('button', {
-        name: translations.buttons['reset-lesson']
-      })
-    ).toBeVisible();
-  }
+  await page
+    .getByRole('button', {
+      name: translations.buttons['reset-lesson']
+    })
+    .click();
 });
