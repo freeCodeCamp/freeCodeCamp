@@ -94,7 +94,7 @@ const WalletsButton = ({
             if (error) {
               return displayError(t('donate.try-another-method'));
             }
-            }
+          }
           postPayment({
             paymentProvider: PaymentProvider.Stripe,
             paymentMethodId,
