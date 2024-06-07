@@ -53,12 +53,12 @@ export default function donateBoot(app, done) {
       const subscription = await stripe.subscriptions.retrieve(subscriptionId);
       const isSubscriptionActive = subscription.status === 'active';
       const productId = subscription.items.data[0].plan.product;
-      const isSubscribedInMinutes = inLastFiveMinutes(
+      const isStartedRecently = inLastFiveMinutes(
         subscription.current_period_start
       );
       const isProductIdValid = allStripeProductIdsArray.includes(productId);
 
-      if (isSubscriptionActive && isProductIdValid && isSubscribedInMinutes) {
+      if (isSubscriptionActive && isProductIdValid && isStartedRecently) {
         const [donatingUser] = await User.findOrCreate(
           { where: { email } },
           { email }
@@ -89,7 +89,7 @@ export default function donateBoot(app, done) {
     const { amount, duration, email, name } = body;
 
     if (!validStripeForm(amount, duration, email)) {
-      return res.status(500).send({
+      return res.status(400).send({
         error: 'The donation form had invalid values for this submission.'
       });
     }

@@ -92,24 +92,16 @@ const WalletsButton = ({
           if (paymentIntent.status === 'requires_action') {
             const { error } = await stripe.confirmCardPayment(clientSecret);
             if (error) {
-              displayError(t('donate.try-another-method'));
-            } else {
-              postPayment({
-                paymentProvider: PaymentProvider.Stripe,
-                paymentMethodId,
-                payerEmail,
-                payerName,
-                subscriptionId
-              });
+              return displayError(t('donate.try-another-method'));
             }
-          } else {
-            postPayment({
-              paymentProvider: PaymentProvider.Stripe,
-              paymentMethodId,
-              payerEmail,
-              subscriptionId
-            });
-          }
+            }
+          postPayment({
+            paymentProvider: PaymentProvider.Stripe,
+            paymentMethodId,
+            payerEmail,
+            payerName,
+            subscriptionId
+          });
         }
       }
     });
