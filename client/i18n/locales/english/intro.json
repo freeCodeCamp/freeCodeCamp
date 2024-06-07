@@ -1262,6 +1262,10 @@
         "intro": [
           "Put your JavaScript skills to the test by building basic functions."
         ]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Learn Arrays and Loops",
+        "intro": ["Learn about arrays and loops in JavaScript."]
       }
     }
   },
