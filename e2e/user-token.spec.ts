@@ -13,7 +13,9 @@ test.afterAll(() => {
 test.describe('Initially', () => {
   test('should not render', async ({ page }) => {
     await page.goto('/settings');
-    await expect(page.getByTestId('user-token')).not.toBeVisible();
+    await expect(
+      page.getByText('User Token', { exact: true })
+    ).not.toBeVisible();
   });
 });
 
@@ -25,11 +27,20 @@ test.describe('After creating token', () => {
     await page.getByRole('button', { name: 'Start the course' }).click();
 
     await page.goto('/settings');
-    await expect(page.getByTestId('user-token')).toBeVisible();
+    // Set `exact` to `true` to only match the panel heading
+    await expect(page.getByText('User Token', { exact: true })).toBeVisible();
+    await expect(
+      page.getByText(
+        'Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.'
+      )
+    ).toBeVisible();
     await page.getByRole('button', { name: 'Delete my user token' }).click();
-    await expect(page.getByTestId('flash-message')).toContainText(
+
+    await expect(page.getByRole('alert')).toContainText(
       /Your user token has been deleted./
     );
-    await expect(page.getByTestId('user-token')).not.toBeVisible();
+    await expect(
+      page.getByText('User Token', { exact: true })
+    ).not.toBeVisible();
   });
 });

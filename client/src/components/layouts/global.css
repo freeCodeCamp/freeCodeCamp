@@ -227,7 +227,8 @@ input[type='submit'],
 
 button:hover,
 input[type='submit']:hover,
-.btn:hover {
+.btn:hover,
+.btn:focus:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);

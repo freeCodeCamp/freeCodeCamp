@@ -27,14 +27,11 @@ class UserToken extends Component<UserTokenProps> {
     const { t } = this.props;
 
     return (
-      <div
-        data-playwright-test-label='user-token'
-        className='user-token text-center'
-      >
-        <FullWidthRow>
-          <Panel variant='info'>
-            <Panel.Heading>{t('user-token.title')}</Panel.Heading>
-            <Spacer size='medium' />
+      <FullWidthRow>
+        <Panel variant='info' className='text-center'>
+          <Panel.Heading>{t('user-token.title')}</Panel.Heading>
+          <Spacer size='medium' />
+          <Panel.Body>
             <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
               <Spacer size='small' />
@@ -49,9 +46,9 @@ class UserToken extends Component<UserTokenProps> {
               </Button>
               <Spacer size='medium' />
             </FullWidthRow>
-          </Panel>
-        </FullWidthRow>
-      </div>
+          </Panel.Body>
+        </Panel>
+      </FullWidthRow>
     );
   }
 }
