@@ -19,7 +19,7 @@ const getSearchInput = async ({
   return page.getByLabel('Search');
 };
 
-test.describe('Search', () => {
+test.describe('Search bar optimized', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
