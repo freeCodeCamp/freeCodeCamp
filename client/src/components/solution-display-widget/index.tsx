@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-import './solution-display-widget.css';
+
 interface Props {
   completedChallenge: CompletedChallenge;
   projectTitle: string;
@@ -105,7 +105,7 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowMultifileProjectSolution = (
-    <div className='solutions-dropdown'>
+    <div>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle>
           {viewText}{' '}
@@ -126,7 +126,7 @@ export function SolutionDisplayWidget({
   );
 
   const ShowProjectAndGithubLinks = (
-    <div className='solutions-dropdown'>
+    <div>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle>
           {viewText}{' '}
