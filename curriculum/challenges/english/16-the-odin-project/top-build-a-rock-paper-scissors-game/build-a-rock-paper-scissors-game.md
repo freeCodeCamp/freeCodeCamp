@@ -52,19 +52,17 @@ Your game will be played round by round. You will write a function that takes th
 
 1. Increment the `humanScore` or `computerScore` variable based on the round winner.
 
-1. Create two new variables named `humanSelection` and `computerSelection` in the global scope. Assign them the value of `getHumanChoice()` and `getComputerChoice()` respectively.
-
-1. Call the `playRound` function with the `humanSelection` and `computerSelection` variables as arguments.
-
-Your game will play 5 rounds. You will write a function named `playGame` that calls `playRound` to play 5 rounds, keeps track of the scores and declares a winner at the end.
+Your game will play 3 rounds. You will write a function named `playGame` that calls `playRound` to play 3 rounds, keeps track of the scores and declares a winner at the end.
 
 1. Create a new function named `playGame`.
 
-1. Write the code to play 5 rounds of the game.
-
-1. Write the code to keep track of the winner’s score.
+1. Create a loop that plays 3 rounds and calls the `playRound` function each time with the human's choice and the computer's choice functions as arguments.
 
 1. At the end of the game, log the winner of the game based on who won the most rounds.
+
+- If the human player wins more rounds than the computer player, log a message that says `"You win the game!"`.
+
+- If the computer player wins more rounds than the human player, log a message that says `"You lose the game!"`.
 
 
 # --hints--
@@ -137,6 +135,24 @@ humanScore = 0;
 computerScore = 0;
 playRound("rock", "scissors");
 assert.equal(humanScore, 1);
+```
+
+You should have a function called `playGame`.
+
+```js
+assert.isFunction(playGame);
+```
+
+You should use a loop to play 3 rounds.
+
+```js
+assert.match(playGame.toString(), /\bfor\s*\(/);
+```
+
+You should log the winner of the game based on who won the most rounds.
+
+```js
+assert.match(playGame(), /You (win|lose) the game!/);
 ```
 
 # --seed--
@@ -218,6 +234,15 @@ const playRound = (humanChoice, computerChoice) => {
     }
   }
 }
+
+const playGame = () => {
+  for(let i = 0; i < 3; i++){
+    playRound(getHumanChoice(), getComputerChoice())
+  }
+
+  return humanScore > computerScore ? "You win the game!" : "You lose the game!"
+}
+
 ```
 
 ```html
