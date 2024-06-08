@@ -25,7 +25,7 @@ function FoundationalCSharpSurveyAlert({
   const { t } = useTranslation();
 
   return (
-    <Panel variant='info' data-cy='c-sharp-survey-alert'>
+    <Panel variant='info' data-playwright-test-label='c-sharp-survey-alert'>
       <Panel.Heading>{t('survey.foundational-c-sharp.title')}</Panel.Heading>
       <Panel.Body className='text-center'>
         <p>{t('survey.misc.two-questions')}</p>

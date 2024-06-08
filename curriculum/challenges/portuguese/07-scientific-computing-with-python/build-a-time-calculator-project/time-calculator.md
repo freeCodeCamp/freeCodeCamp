@@ -1,6 +1,6 @@
 ---
 id: 5e444136903586ffb414c94d
-title: Build a Time Calculator Project
+title: Projeto de criar uma calculadora de tempo
 challengeType: 23
 forumTopicId: 462360
 dashedName: build-a-time-calculator-project
@@ -8,19 +8,19 @@ dashedName: build-a-time-calculator-project
 
 # --description--
 
-Write a function named `add_time` that takes in two required parameters and one optional parameter:
+Escreva uma função chamada `add_time`, que recebe dois parâmetros necessários e um parâmetro opcional:
 
-- a start time in the 12-hour clock format (ending in AM or PM)
-- a duration time that indicates the number of hours and minutes
-- (optional) a starting day of the week, case insensitive
+- uma hora de início no formato de relógio de 12 horas (terminando em AM ou PM)
+- um tempo de duração que indica o número de horas e minutos
+- (opcional) um dia de início na semana, sem distinção de maiúsculas ou minúsculas
 
-The function should add the duration time to the start time and return the result.
+A função deve adicionar o tempo de duração ao horário inicial e retornar o resultado.
 
-If the result will be the next day, it should show `(next day)` after the time. If the result will be more than one day later, it should show `(n days later)` after the time, where "n" is the number of days later.
+Se o resultado for no dia seguinte, ele deve mostrar `(next day)` (dia seguinte) após o tempo. Se o resultado for mais de um dia depois, ele deve mostrar `(n days later)` (n dias depois) após o tempo, onde "n" é o número de dias depois.
 
-If the function is given the optional starting day of the week parameter, then the output should display the day of the week of the result. The day of the week in the output should appear after the time and before the number of days later.
+Se a função receber o parâmetro opcional do dia de início na semana, então o resultado deve exibir o dia da semana do resultado. O dia da semana no resultado deve aparecer após o tempo e antes do número de dias depois.
 
-Below are some examples of different cases the function should handle. Pay close attention to the spacing and punctuation of the results.
+Abaixo vemos alguns exemplos dos diferentes casos que a função deve tratar. Preste muita atenção ao espaçamento e à pontuação dos resultados.
 
 ```py
 add_time('3:00 PM', '3:10')
@@ -42,7 +42,9 @@ add_time('6:30 PM', '205:12')
 # Returns: 7:42 AM (9 days later)
 ```
 
-Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.
+Não importe nenhuma biblioteca do Python. Suponha que os horários de início são tempos válidos. Os minutos no tempo de duração serão um número inteiro menor que 60, mas a hora pode ser qualquer número inteiro.
+
+Note: open the browser console with F12 to see a more verbose output of the tests.
 
 # --hints--
 Calling `add_time('3:30 PM', '2:12')` should return `'5:42 PM'`.

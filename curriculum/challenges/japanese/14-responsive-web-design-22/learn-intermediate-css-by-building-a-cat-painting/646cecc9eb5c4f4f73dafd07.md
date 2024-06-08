@@ -1,13 +1,13 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: ステップ 24
+title: ステップ 23
 challengeType: 0
-dashedName: step-24
+dashedName: step-23
 ---
 
 # --description--
 
-position を `absolute` に、`top` を `-26px` に、`left` を `-31px` に設定して、向かって左の耳をちょうど良い位置に動かしましょう。
+position を `absolute` に、`top` を `-26px` に、`left` を `-31px` に設定して、向かって左の耳を適切な位置に動かしましょう。
 
 # --hints--
 

@@ -5,9 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-data-structures-by-building-the-merge-sort-algorithm",
   "order": 9,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
@@ -141,10 +138,6 @@
     {
       "id": "6569c2cbf6c993ea8cd85682",
       "title": "Step 33"
-    },
-    {
-      "id": "65817fcc829d9d176878c54a",
-      "title": "Step 34"
     }
   ],
   "helpCategory": "Python"

@@ -4,12 +4,8 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-the-date-object-by-building-a-date-formatter",
-  "order": 6,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
+  "order": 7,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
-  "superOrder": 4,
   "challengeOrder": [
     {
       "id": "65386e889dd615940cb3e042",

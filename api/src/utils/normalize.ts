@@ -134,3 +134,19 @@ export const normalizeSurveys = (
     return { title, responses };
   });
 };
+
+/**
+ * Replace null flags with false.
+ * @param flags Object with nullable boolean flags.
+ * @returns Same object with boolean flags, defaulting to false.
+ */
+export const normalizeFlags = <T extends Record<string, boolean | null>>(
+  flags: T
+): { [K in keyof T]: boolean } => {
+  const out = {} as { [K in keyof T]: boolean };
+  for (const key in flags) {
+    const v = flags[key];
+    out[key] = typeof v === 'boolean' ? v : false;
+  }
+  return out;
+};

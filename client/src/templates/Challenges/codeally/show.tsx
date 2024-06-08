@@ -31,14 +31,16 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   ChallengeNode,
   ChallengeMeta,
-  CompletedChallenge
+  CompletedChallenge,
+  Test
 } from '../../../redux/prop-types';
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
@@ -78,6 +80,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       challengeMounted,
       createFlashMessage,
       openCompletionModal: () => openModal('completion'),
+      initTests,
       updateUserToken,
       updateChallengeMeta,
       updateSolutionFormValues
@@ -91,6 +94,7 @@ interface ShowCodeAllyProps {
   completedChallenges: CompletedChallenge[];
   createFlashMessage: typeof createFlashMessage;
   data: { challengeNode: ChallengeNode };
+  initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openCompletionModal: () => void;
@@ -114,12 +118,19 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, title }
+          challenge: {
+            fields: { tests },
+            challengeType,
+            helpCategory,
+            title
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -419,6 +430,12 @@ export const query = graphql`
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
         block
+        fields {
+          tests {
+            text
+            testString
+          }
+        }
         challengeType
         description
         helpCategory

@@ -9,7 +9,7 @@ dashedName: learn-variables-and-operators-question-e
 
 Numbers are the building blocks of programming logic! In fact, it’s hard to think of any useful programming task that doesn’t involve at least a little basic math… so knowing how numbers work is obviously quite important. Luckily, it’s also fairly straightforward.
 
-| Operator | Description    | Example      |
+| Operator | Descrição      | Exemplo      |
 | -------- | -------------- | ------------ |
 | +        | Addition       | 5 + 3 = 8    |
 | -        | Subtraction    | 5 - 3 = 2    |

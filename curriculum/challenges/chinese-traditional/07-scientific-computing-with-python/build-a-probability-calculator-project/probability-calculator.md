@@ -55,6 +55,7 @@ Since this is based on random draws, the probability will be slightly different 
 
 _Hint: Consider using the modules that are already imported at the top. Do not initialize random seed within the file._
 
+Note: open the browser console with F12 to see a more verbose output of the tests.
 
 # --hints--
 

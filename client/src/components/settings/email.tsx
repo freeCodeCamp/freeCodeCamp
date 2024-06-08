@@ -213,7 +213,7 @@ function EmailSettings({
                 id='new-email-input'
               />
               {newEmailValidationMessage ? (
-                <HelpBlock data-cy='validation-message'>
+                <HelpBlock data-playwright-test-label='new-email-validation'>
                   {newEmailValidationMessage}
                 </HelpBlock>
               ) : null}
@@ -233,7 +233,7 @@ function EmailSettings({
                 id='confirm-email-input'
               />
               {confirmEmailValidationMessage ? (
-                <HelpBlock data-cy='validation-message'>
+                <HelpBlock data-playwright-test-label='confirm-email-validation'>
                   {confirmEmailValidationMessage}
                 </HelpBlock>
               ) : null}

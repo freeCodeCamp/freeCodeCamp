@@ -8,7 +8,7 @@ export const updateMyUsername = {
     200: Type.Object({
       message: Type.String(),
       type: Type.Literal('success'),
-      username: Type.String()
+      variables: Type.Object({ username: Type.String() })
     }),
     400: Type.Object({
       message: Type.Optional(Type.String()),

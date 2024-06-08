@@ -1,6 +1,6 @@
 ---
 id: 5e444147903586ffb414c94f
-title: Build a Polygon Area Calculator Project
+title: Projeto de criar uma calculadora de área de polígonos
 challengeType: 23
 forumTopicId: 462363
 dashedName: build-a-polygon-area-calculator-project
@@ -10,21 +10,21 @@ dashedName: build-a-polygon-area-calculator-project
 
 In this project you will use object oriented programming to create a `Rectangle` class and a `Square` class. The `Square` class should be a subclass of `Rectangle`, and inherit its methods and attributes.
 
-## Rectangle class
+## Classe do retângulo
 
-When a Rectangle object is created, it should be initialized with `width` and `height` attributes. The class should also contain the following methods:
+Quando um objeto de retângulo é criado, ele deve ser inicializado com atributos `width` (largura) e `height` (altura). A classe também deve conter os seguintes métodos:
 
 - `set_width`
 - `set_height`
-- `get_area`: Returns area (`width * height`)
-- `get_perimeter`: Returns perimeter (`2 * width + 2 * height`)
-- `get_diagonal`: Returns diagonal (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: Returns a string that represents the shape using lines of "\*". The number of lines should be equal to the height and the number of "\*" in each line should be equal to the width. There should be a new line (`\n`) at the end of each line. If the width or height is larger than 50, this should return the string: "Too big for picture.".
-- `get_amount_inside`: Takes another shape (square or rectangle) as an argument. Returns the number of times the passed in shape could fit inside the shape (with no rotations). For instance, a rectangle with a width of 4 and a height of 8 could fit in two squares with sides of 4.
+- `get_area`: retorna a área (`width * height`)
+- `get_perimeter`: retorna o perímetro (`2 * width + 2 * height`)
+- `get_diagonal`: retorna a diagonal (`(width ** 2 + height ** 2) ** .5`)
+- `get_picture`: retorna uma string que representa a forma usando as linhas de "\*". O número de linhas deve ser igual à altura e o número de "\*" em cada linha deve ser igual à largura. Deve haver uma nova linha (`\n`) no final de cada linha. Se a largura ou altura for maior do que 50, é preciso retornar a string: "Too big for picture." (Muito grande para a imagem).
+- `get_amount_inside`: Pega outra forma (quadrado ou retângulo) como um argumento. Retorna o número de vezes que a forma passada como argumento poderia caber dentro da forma (sem rotações). Por exemplo, um retângulo com uma largura de 4 e uma altura de 8 poderia caber em dois quadrados com lados de 4.
 
 Additionally, if an instance of a `Rectangle` is represented as a string, it should look like: `Rectangle(width=5, height=10)`
 
-## Square class
+## Classe do quadrado
 
 The `Square` class should be a subclass of `Rectangle`. When a `Square` object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the `Rectangle` class.
 
@@ -32,7 +32,7 @@ The `Square` class should be able to access the `Rectangle` class methods but sh
 
 Additionally, the `set_width` and `set_height` methods on the `Square` class should set both the width and height.
 
-## Usage example
+## Exemplo de uso
 
 ```py
 rect = Rectangle(10, 5)
@@ -54,7 +54,7 @@ rect.set_width(16)
 print(rect.get_amount_inside(sq))
 ```
 
-That code should return:
+Esse código deve retornar:
 
 ```bash
 50
@@ -74,6 +74,8 @@ Square(side=4)
 
 8
 ```
+
+Note: open the browser console with F12 to see a more verbose output of the tests.
 
 # --hints--
 

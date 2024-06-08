@@ -1,12 +1,9 @@
 {
-  "name": "TOP Learn Data Types and Conditionals",
+  "name": "Learn Data Types and Conditionals",
   "isUpcomingChange": true,
   "dashedName": "top-learn-data-types-and-conditionals",
   "helpCategory": "Odin",
   "order": 11,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "the-odin-project",
   "challengeOrder": [
     {

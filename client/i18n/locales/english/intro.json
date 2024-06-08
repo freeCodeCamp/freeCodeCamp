@@ -473,6 +473,13 @@
           "This will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
         "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
         "intro": [
@@ -956,7 +963,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow is an open source framework that makes machine learning and neural networking easier to use.",
           "The following video course was created by Tim Ruscica, also known as “Tech With Tim”. It will help you to understand TensorFlow and some of its powerful capabilities."
@@ -1248,6 +1255,10 @@
         "intro": [
           "Put your JavaScript skills to the test by building basic functions."
         ]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Learn Arrays and Loops",
+        "intro": ["Learn about arrays and loops in JavaScript."]
       }
     }
   },
@@ -1480,7 +1491,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {

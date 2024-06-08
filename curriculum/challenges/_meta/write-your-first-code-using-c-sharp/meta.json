@@ -4,9 +4,6 @@
   "dashedName": "write-your-first-code-using-c-sharp",
   "helpCategory": "C-Sharp",
   "order": 0,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
     {

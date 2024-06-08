@@ -20,4 +20,8 @@ test.describe('Show certification else', () => {
     await expect(page.getByTestId('linkedin-share-btn')).toBeHidden();
     await expect(page.getByTestId('twitter-share-btn')).toBeHidden();
   });
+
+  test('while viewing someone else, it should not show the donation section', async () => {
+    await expect(page.getByRole('button', { name: 'Donate' })).toBeHidden();
+  });
 });
