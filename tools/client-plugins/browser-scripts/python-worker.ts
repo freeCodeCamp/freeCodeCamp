@@ -8,7 +8,7 @@ import * as helpers from '@freecodecamp/curriculum-helpers';
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
 
-let pyodide: PyodideInterface;
+let pyodide: PyodideInterface | null = null;
 
 interface PythonRunEvent extends MessageEvent {
   data: {
@@ -67,9 +67,15 @@ async function setupPyodide() {
   postMessage({ type: 'stopped' });
 }
 
+function resetPyodide() {
+  if (pyodide) pyodide = null;
+  void setupPyodide();
+}
+
 void setupPyodide();
 
 function initRunPython() {
+  if (!pyodide) throw new Error('pyodide not loaded');
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const str = pyodide.globals.get('str') as (x: unknown) => string;
 
@@ -115,7 +121,7 @@ function initRunPython() {
   // The runPython helper is a shortcut for running python code with our
   // custom globals.
   const runPython = (pyCode: string) =>
-    pyodide.runPython(pyCode, { globals }) as unknown;
+    pyodide!.runPython(pyCode, { globals }) as unknown;
   runPython(`
   import jscustom
   from jscustom import print
@@ -180,36 +186,43 @@ function handleListenRequest() {
 }
 
 function handleRunRequest(data: PythonRunEvent['data']) {
-  if (ignoreRunMessages) return;
-  const code = (data.code.contents || '').slice();
-  // TODO: use reset-terminal for clarity?
-  postMessage({ type: 'reset' });
-
-  const { runPython, getResetId, globals, printException } = initRunPython();
-  // use pyodide.runPythonAsync if we want top-level await
   try {
-    runPython(code);
-  } catch (e) {
-    const err = e as PythonError;
-    // the formatted exception is printed to the terminal
-    printException();
-    // but the full error is logged to the console for debugging
-    console.error(err);
-    const resetId = getResetId();
-    // TODO: if a user raises a KeyboardInterrupt with a custom message this
-    // will be treated as a reset, the client will resend their code and this
-    // will loop. Can we fix that? Perhaps by using a custom exception?
-    if (err.type === 'KeyboardInterrupt' && resetId) {
-      // If the client sends a lot of run messages, it's easy for them to build
-      // up while the worker is busy. As such, we both ignore any queued run
-      // messages...
-      ignoreRunMessages = true;
-      // ...and tell the client that we're ignoring them.
-      postMessage({ type: 'stopped', text: getResetId() });
+    if (ignoreRunMessages) return;
+    const code = (data.code.contents || '').slice();
+    // TODO: use reset-terminal for clarity?
+    postMessage({ type: 'reset' });
+
+    const { runPython, getResetId, globals, printException } = initRunPython();
+    // use pyodide.runPythonAsync if we want top-level await
+    try {
+      runPython(code);
+    } catch (e) {
+      const err = e as PythonError;
+      // the formatted exception is printed to the terminal
+      printException();
+      // but the full error is logged to the console for debugging
+      console.error(err);
+      const resetId = getResetId();
+      // TODO: if a user raises a KeyboardInterrupt with a custom message this
+      // will be treated as a reset, the client will resend their code and this
+      // will loop. Can we fix that? Perhaps by using a custom exception?
+      if (err.type === 'KeyboardInterrupt' && resetId) {
+        // If the client sends a lot of run messages, it's easy for them to build
+        // up while the worker is busy. As such, we both ignore any queued run
+        // messages...
+        ignoreRunMessages = true;
+        // ...and tell the client that we're ignoring them.
+        postMessage({ type: 'stopped', text: getResetId() });
+      }
+    } finally {
+      getResetId.destroy();
+      printException.destroy();
+      globals.destroy();
     }
-  } finally {
-    getResetId.destroy();
-    printException.destroy();
-    globals.destroy();
+  } catch (e) {
+    // This should only be reach if pyodide crashes, but it's helpful to log
+    // the error in case it's something else.
+    console.error(e);
+    void resetPyodide();
   }
 }
