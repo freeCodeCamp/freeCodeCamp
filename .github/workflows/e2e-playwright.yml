@@ -124,7 +124,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run create:shared
+          pnpm run create:
           pnpm run build:curriculum
           pnpm run build:server
 
@@ -145,7 +145,7 @@ jobs:
           npx playwright test --project=${{ matrix.browsers }}
 
       - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+        if: ${{ () }}
         with:
           name: playwright-report-${{ matrix.browsers }}
           path: playwright/reporter
