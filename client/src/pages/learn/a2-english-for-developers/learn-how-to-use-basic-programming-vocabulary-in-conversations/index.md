@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Use Basic Programming Vocabulary in Conversations
 
-This is a test for the new project-based curriculum.
+This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts.

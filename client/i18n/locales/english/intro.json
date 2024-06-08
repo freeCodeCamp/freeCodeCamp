@@ -1452,27 +1452,39 @@
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
-        "intro": ["", ""]
+        "intro": [
+          "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
+        ]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Learn How to Use Code-related Concepts and Terms",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
+        ]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Learn How to Discuss Tech Trends and Updates",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
+        ]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
+        ]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
+        ]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Learn How to Ask for Clarification on Code Understanding",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
+        ]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Learn How to Document Code for a Project",
