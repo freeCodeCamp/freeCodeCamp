@@ -1512,6 +1512,109 @@
       }
     }
   },
+  "b1-english-for-developers": {
+    "title": "B1 English for Developers (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-how-to-describe-places-and-events": {
+        "title": "Learn How to Describe Places and Events",
+        "intro": [""]
+      },
+      "learn-how-to-talk-about-past-experiences": {
+        "title": "Learn How to Talk About Past Experiences",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-past-activities": {
+        "title": "Learn How to Talk About Past Activities",
+        "intro": ["", ""]
+      },
+      "learn-present-perfect-while-talking-about-accessibility": {
+        "title": "Learn Present Perfect while Talking About Accessibility",
+        "intro": ["", ""]
+      },
+      "learn-how-to-plan-future-events": {
+        "title": "Learn How to Plan Future Events",
+        "intro": ["", ""]
+      },
+      "learn-future-continuous-while-describing-actions": {
+        "title": "Learn Future Continuous while Describing Actions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-conditionals": {
+        "title": "Learn How to Use Conditionals",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-feedback": {
+        "title": "Learn How to Share Feedback",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-opinion": {
+        "title": "Learn How to Share Your Opinion",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement": {
+        "title": "Learn How to Express Agreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-disagreement": {
+        "title": "Learn How to Express Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-concerns": {
+        "title": "Learn How to Express Concerns",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-decisions-based-on-comparisons": {
+        "title": "Learn How to Express Decisions Based on Comparisons",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-modal-verbs": {
+        "title": "Learn How to Use Modal Verbs",
+        "intro": ["", ""]
+      },
+      "learn-how-to-manage-a-conversation": {
+        "title": "Learn How to Manage a Conversation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-misunderstandings": {
+        "title": "Learn How to Clarify Misunderstandings",
+        "intro": ["", ""]
+      },
+      "learn-about-speculation-and-requests": {
+        "title": "Learn About Speculation and Requests",
+        "intro": ["", ""]
+      },
+      "learn-about-adverbial-phrases": {
+        "title": "Learn About Adverbial Phrases",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-adjectives-in-conversations": {
+        "title": "Learn How to Use Adjectives in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-determiners-and-advanced-use-of-articles": {
+        "title": "Learn Determiners and Advanced Use of Articles",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-reported-speech": {
+        "title": "Learn How to Use Reported Speech",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-prepositions-according-to-context": {
+        "title": "Learn How to Use Prepositions According to Context",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-numbers-with-a-coworker": {
+        "title": "Learn How to Talk About Numbers with a Coworker",
+        "intro": ["", ""]
+      },
+      "learn-common-phrasal-verbs-and-idioms": {
+        "title": "Learn Common Phrasal Verbs and Idioms",
+        "intro": ["", ""]
+      }
+    }
+  },
   "rosetta-code": {
     "title": "Rosetta Code",
     "intro": [
