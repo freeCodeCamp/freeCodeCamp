@@ -15,10 +15,10 @@ on:
       - 'next-**'
   # Run on Merge Queue
   merge_group:
-    types: [checks_requested]
+    types: []
 
 permissions:
-  contents: read
+  contents: Write
 
 jobs:
   lint:
