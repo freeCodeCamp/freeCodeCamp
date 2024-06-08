@@ -12,7 +12,7 @@ Sarah: Once you've found the section you need, you should start by reading the i
 
 # --description--
 
-Fill in the blanks in the dialogue below.
+Listen to the audio and complete the sentence.
 
 # --fillInTheBlank--
 
@@ -51,3 +51,51 @@ This word refers to the beginning paragraphs that provide a basic understanding 
 ### --feedback--
 
 It means what the documentation includes or addresses in terms of content.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-breakroom.png",
+    "characters": [
+      {
+        "character": "Sarah",
+        "position": {
+          "x": 50,
+          "y": 0,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "7.2-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 20.88,
+      "finishTimestamp": 27.62
+    }
+  },
+  "commands": [
+    {
+      "character": "Sarah",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sarah",
+      "startTime": 1,
+      "finishTime": 7.74,
+      "dialogue": {
+        "text": "Once you've found the section you need, you should start by reading the introductory paragraphs to get an overview of what the documentation covers.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sarah",
+      "opacity": 0,
+      "startTime": 8.24
+    }
+  ]
+}
+```
