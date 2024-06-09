@@ -261,17 +261,6 @@
 
   #mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
     height: 1.52rem;
-  }
-
-  #mobile-layout .portal-button-wrap button {
-    font-size: initial;
-  }
-
-  #mobile-layout .portal-button-wrap button svg {
-    scale: 0.8;
-  }
-
-  #mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
     transform: translateY(-1.5rem);
   }
 
@@ -280,6 +269,11 @@
     justify-content: center;
     align-items: center;
     height: 1.43rem;
+    font-size: initial;
+  }
+
+  #mobile-layout .portal-button-wrap button svg {
+    scale: 0.8;
   }
 
   #mobile-layout .monaco-editor-tabs {
