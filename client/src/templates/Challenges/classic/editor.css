@@ -38,6 +38,13 @@ textarea.inputarea {
   height: var(--breadcrumbs-height);
 }
 
+@media screen and (max-height: 300px) {
+  .default-layout:has(#mobile-layout) .breadcrumbs-demo {
+    height: auto;
+    padding-block: 2px;
+  }
+}
+
 .editor-upper-jaw,
 .editor-lower-jaw {
   padding-inline: 0 15px;

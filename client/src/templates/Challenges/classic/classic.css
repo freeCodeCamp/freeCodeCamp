@@ -240,11 +240,6 @@
 }
 
 @media screen and (max-height: 300px) {
-  .breadcrumbs-demo {
-    height: auto;
-    padding-block: 2px;
-  }
-
   #mobile-layout .nav-lists {
     height: 1.5rem;
   }
