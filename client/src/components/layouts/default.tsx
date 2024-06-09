@@ -153,7 +153,7 @@ function DefaultLayout({
     (isProject || !isMultifileEditorChallenge || !isMobileHeight);
   const isRenderBreadcrumb = !isMobileLayout || isRenderBreadcrumbOnMobile;
   const isExSmallViewportHeight = useMediaQuery({
-    minHeight: EX_SMALL_VIEWPORT_HEIGHT
+    maxHeight: EX_SMALL_VIEWPORT_HEIGHT
   });
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
@@ -271,9 +271,9 @@ function DefaultLayout({
               />
             </div>
           ) : isExSmallViewportHeight ? (
-            <Spacer size='small' />
-          ) : (
             <Spacer size='xxSmall' />
+          ) : (
+            <Spacer size='small' />
           )}
           {fetchState.complete && children}
         </div>
