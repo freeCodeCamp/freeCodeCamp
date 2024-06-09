@@ -46,7 +46,11 @@ import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 import { Loader, Spacer } from '../helpers';
 import { SuperBlocks } from '../../../../shared/config/superblocks';
-import { MAX_MOBILE_WIDTH, MAX_MOBILE_HEIGHT } from '../../../config/misc';
+import {
+  MAX_MOBILE_WIDTH,
+  MAX_MOBILE_HEIGHT,
+  EX_SMALL_VIEWPORT_HEIGHT
+} from '../../../config/misc';
 import envData from '../../../config/env.json';
 
 // preload common fonts
@@ -148,6 +152,9 @@ function DefaultLayout({
     isMobileLayout &&
     (isProject || !isMultifileEditorChallenge || !isMobileHeight);
   const isRenderBreadcrumb = !isMobileLayout || isRenderBreadcrumbOnMobile;
+  const isExSmallViewportHeight = useMediaQuery({
+    minHeight: EX_SMALL_VIEWPORT_HEIGHT
+  });
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
@@ -263,8 +270,10 @@ function DefaultLayout({
                 superBlock={superBlock as string}
               />
             </div>
-          ) : (
+          ) : isExSmallViewportHeight ? (
             <Spacer size='small' />
+          ) : (
+            <Spacer size='xxSmall' />
           )}
           {fetchState.complete && children}
         </div>
