@@ -362,7 +362,7 @@
         "intro": [
           "Functional Programming is a popular approach to software development. In Functional Programming, developers organize code into smaller functions, then combine those functions to build complex programs.",
           "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
-          "This project will cover concepts like the <code>map()</code> method, <code>find()</code> method, <code>parseInt()</code>, the <code>includes()</code> method."
+          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, <code>parseInt()</code>, and <code>includes()</code> methods."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -585,7 +585,13 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": [
+          "",
+          ""
+        ]
+      }
     }
   },
   "relational-database": {
@@ -1013,7 +1019,9 @@
       },
       "learn-functions-and-graphing": {
         "title": "Learn Functions and Graphing",
-        "intro": ["This unit will teach you about math functions."]
+        "intro": [
+          "This unit will teach you about math functions."
+        ]
       },
       "learn-linear-functions": {
         "title": "Learn Linear Functions",
@@ -1244,11 +1252,15 @@
       },
       "top-learn-data-types-and-conditionals": {
         "title": "Learn Data Types and Conditionals",
-        "intro": ["Learn about data types and conditionals in JavaScript."]
+        "intro": [
+          "Learn about data types and conditionals in JavaScript."
+        ]
       },
       "top-learn-function-basics": {
         "title": "Learn Function Basics",
-        "intro": ["Learn about functions in JavaScript."]
+        "intro": [
+          "Learn about functions in JavaScript."
+        ]
       },
       "top-basic-function-projects": {
         "title": "Basic Function Projects",
@@ -1258,7 +1270,9 @@
       },
       "top-learn-arrays-and-loops": {
         "title": "Learn Arrays and Loops",
-        "intro": ["Learn about arrays and loops in JavaScript."]
+        "intro": [
+          "Learn about arrays and loops in JavaScript."
+        ]
       }
     }
   },
@@ -1356,15 +1370,22 @@
   },
   "upcoming-python": {
     "title": "Upcoming Python",
-    "intro": ["placeholder"],
+    "intro": [
+      "placeholder"
+    ],
     "blocks": {
       "learn-python-by-building-a-blackjack-game": {
         "title": "Learn Python by Building a Blackjack Game",
-        "intro": ["Learn Python.", ""]
+        "intro": [
+          "Learn Python.",
+          ""
+        ]
       },
       "upcoming-python-project": {
         "title": "Upcoming Python Project",
-        "intro": ["placeholder"]
+        "intro": [
+          "placeholder"
+        ]
       }
     }
   },
@@ -1488,142 +1509,242 @@
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Learn How to Document Code for a Project",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Learn How to Read and Understand Code Documentation",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Learn How to Analyze Code Documentation",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Learn How to Share Progress and Accomplishments",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Learn How to Express Agreement or Disagreement",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Learn How to Offer Technical Support and Guidance",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Learn How to Request and Receive Guidance",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Learn How to Provide Explanations When Helping Others",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
   "b1-english-for-developers": {
     "title": "B1 English for Developers (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "intro": [
+      "Placeholder intro"
+    ],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Learn How to Describe Places and Events",
-        "intro": [""]
+        "intro": [
+          ""
+        ]
       },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Learn How to Talk About Past Experiences",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Learn How to Talk About Past Activities",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Learn Present Perfect while Talking About Accessibility",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-plan-future-events": {
         "title": "Learn How to Plan Future Events",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-future-continuous-while-describing-actions": {
         "title": "Learn Future Continuous while Describing Actions",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-use-conditionals": {
         "title": "Learn How to Use Conditionals",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-share-feedback": {
         "title": "Learn How to Share Feedback",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Learn How to Share Your Opinion",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-express-agreement": {
         "title": "Learn How to Express Agreement",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-express-disagreement": {
         "title": "Learn How to Express Disagreement",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-manage-a-conversation": {
         "title": "Learn How to Manage a Conversation",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Learn How to Clarify Misunderstandings",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-about-speculation-and-requests": {
         "title": "Learn About Speculation and Requests",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-about-adverbial-phrases": {
         "title": "Learn About Adverbial Phrases",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Learn How to Use Adjectives in Conversations",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Learn Determiners and Advanced Use of Articles",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-use-reported-speech": {
         "title": "Learn How to Use Reported Speech",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Learn How to Use Prepositions According to Context",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Learn How to Talk About Numbers with a Coworker",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Learn Common Phrasal Verbs and Idioms",
-        "intro": ["", ""]
+        "intro": [
+          "",
+          ""
+        ]
       }
     }
   },
@@ -1637,17 +1758,23 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "intro": [
+          "These are the challenges for Rosetta Code."
+        ]
       }
     }
   },
   "example-certification": {
     "title": "Example Certification",
-    "intro": ["placeholder"],
+    "intro": [
+      "placeholder"
+    ],
     "blocks": {
       "example-certification-exam": {
         "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+        "intro": [
+          "placeholder"
+        ]
       }
     }
   },
