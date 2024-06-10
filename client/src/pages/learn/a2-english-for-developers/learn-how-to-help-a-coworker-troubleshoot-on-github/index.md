@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Help a Coworker Troubleshoot on GitHub
 
-This is a test for the new project-based curriculum.
+In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance.
