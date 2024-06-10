@@ -38,7 +38,7 @@ const LearnAlert = ({
       <Spacer size='medium' />
       <div className={'text-center'}>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
@@ -59,7 +59,7 @@ const LearnAlert = ({
       <hr />
       <p className='btn-container'>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
@@ -85,7 +85,7 @@ const LearnAlert = ({
       <Spacer size='medium' />
       <p className={'text-center'}>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'

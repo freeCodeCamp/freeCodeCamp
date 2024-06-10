@@ -32,7 +32,7 @@ export const ConditionalDonationAlert = ({
         <hr />
         <p className='btn-container'>
           <Link
-            className='btn'
+            className='btn donate-button'
             key='donate'
             sameTab={false}
             to='/donate'

@@ -74,6 +74,10 @@
   align-items: center;
 }
 
+.donation-completion-body .complete-button {
+  border-color: var(--green70);
+}
+
 .donation-email-container label {
   display: flex;
   flex-direction: column;

@@ -474,9 +474,13 @@ a.map-grid-item.challenge-completed {
 }
 
 .annual-donation-alert .btn-container {
-  border: none;
   display: flex;
   justify-content: center;
+}
+
+.annual-donation-alert .donate-button,
+.university-alert .donate-button {
+  border-color: #31708f;
 }
 
 .university-alert {
