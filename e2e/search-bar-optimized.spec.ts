@@ -30,7 +30,7 @@ test.describe('Search bar optimized', () => {
     await expect(searchInput).toBeVisible();
     await expect(searchInput).toHaveAttribute(
       'placeholder',
-      'Search 10,700+ tutorials'
+      translations.search.placeholder
     );
   });
 
