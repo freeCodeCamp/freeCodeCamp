@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
-import { focusEditor } from './utils/editor';
+import { focusEditor, clearEditor } from './utils/editor';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('multifileCertProjects', () => {
@@ -13,12 +13,11 @@ test.describe('multifileCertProjects', () => {
 
   test('should save the code when the user clicks the save button', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     await focusEditor({ page, isMobile });
-
-    await page.keyboard.press('ControlOrMeta+A');
-    await page.keyboard.press('Backspace');
+    await clearEditor({ page, browserName });
 
     await page.keyboard.type('save1text');
     await expect(page.getByText('save1text')).toBeVisible();
@@ -39,13 +38,14 @@ test.describe('multifileCertProjects', () => {
 
   test('should save using ctrl+s hotkey and persist through navigation', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     test.setTimeout(20000);
 
     await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
 
-    await page.keyboard.press('ControlOrMeta+A');
     await page.keyboard.type('save2text');
     await expect(page.getByText('save2text')).toBeVisible();
 
@@ -65,12 +65,13 @@ test.describe('multifileCertProjects', () => {
 
   test('should prevent the user from saving code too quickly', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
 
     await page.keyboard.type('some code');
-
     await page.keyboard.press('ControlOrMeta+S');
 
     await expect(
