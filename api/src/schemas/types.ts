@@ -36,13 +36,13 @@ export const file = Type.Object({
   history: Type.Array(Type.String())
 });
 
-export const saveChallengeBody = Type.Object({
-  id: Type.String({
-    format: 'objectid',
-    maxLength: 24,
-    minLength: 24
-  }),
-  files: Type.Array(file)
+// This is only used for serialization, so should not use format. Reason being,
+// the serializer's job is simply to create JSON strings, not to validate the
+// data.
+export const savedChallenge = Type.Object({
+  id: Type.String(),
+  files: Type.Array(file),
+  lastSavedDate: Type.Number()
 });
 
 export const examResults = Type.Object({
@@ -57,3 +57,16 @@ export const examResults = Type.Object({
 export const surveyTitles = Type.Union([
   Type.Literal('Foundational C# with Microsoft Survey')
 ]);
+
+export const profileUI = Type.Object({
+  isLocked: Type.Optional(Type.Boolean()),
+  showAbout: Type.Optional(Type.Boolean()),
+  showCerts: Type.Optional(Type.Boolean()),
+  showDonation: Type.Optional(Type.Boolean()),
+  showHeatMap: Type.Optional(Type.Boolean()),
+  showLocation: Type.Optional(Type.Boolean()),
+  showName: Type.Optional(Type.Boolean()),
+  showPoints: Type.Optional(Type.Boolean()),
+  showPortfolio: Type.Optional(Type.Boolean()),
+  showTimeLine: Type.Optional(Type.Boolean())
+});
