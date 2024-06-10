@@ -332,21 +332,6 @@ function handleDocumentNotFound(err: string) {
 
 const initPreviewFrame = () => (frameContext: Context) => frameContext;
 
-// TODO: reimplement when ready to preview python challenges
-// const initPreviewFrame = () => (frameContext: Context) => {
-//   waitForFrame(frameContext)
-//     .then(() => {
-//       if (
-//         frameContext.document &&
-//         '__initPythonFrame' in frameContext.document
-//       ) {
-//         void frameContext.document?.__initPythonFrame();
-//       }
-//     })
-//     .catch(handleDocumentNotFound);
-//   return frameContext;
-// };
-
 const waitForFrame = (frameContext: Context) => {
   return new Promise((resolve, reject) => {
     if (!frameContext.document) {
