@@ -208,6 +208,20 @@ const mountFrame =
     };
   };
 
+// Tests should not use functions that directly interact with the user, so
+// they're overridden. If tests need to spy on these functions, they can supply
+// the spy themselves.
+const overrideUserInteractions = (frameContext: Context) => {
+  if (frameContext.window) {
+    frameContext.window.prompt = () => null;
+    frameContext.window.alert = () => {};
+    frameContext.window.confirm = () => false;
+  }
+  return frameContext;
+};
+
+const noop = <T>(x: T) => x;
+
 const actRE = new RegExp(/act\(\.\.\.\) is not supported in production builds/);
 
 const updateProxyConsole =
@@ -404,7 +418,8 @@ export const createTestFramer = (
     id: testId,
     init: initTestFrame,
     proxyLogger,
-    frameReady
+    frameReady,
+    updateWindowFunctions: overrideUserInteractions
   });
 
 const createFramer = ({
@@ -413,7 +428,8 @@ const createFramer = ({
   init,
   proxyLogger,
   frameReady,
-  frameTitle
+  frameTitle,
+  updateWindowFunctions
 }: {
   document: Document;
   id: string;
@@ -421,10 +437,12 @@ const createFramer = ({
   proxyLogger?: ProxyLogger;
   frameReady?: () => void;
   frameTitle?: string;
+  updateWindowFunctions?: (frameContext: Context) => Context;
 }) =>
   flow(
     createFrame(document, id, frameTitle),
     mountFrame(document, id),
+    updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
     writeContentToFrame,
