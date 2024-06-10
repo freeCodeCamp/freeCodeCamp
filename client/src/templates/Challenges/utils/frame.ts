@@ -259,7 +259,7 @@ const updateProxyConsole =
     return frameContext;
   };
 
-const updateWindowI18next = () => (frameContext: Context) => {
+const updateWindowI18next = (frameContext: Context) => {
   // window does not exist if the preview is hidden, so we have to check.
   if (frameContext?.window) {
     frameContext.window.i18nContent = i18next;
@@ -441,7 +441,7 @@ const createFramer = ({
     createFrame(document, id, frameTitle),
     mountFrame(document, id),
     updateProxyConsole(proxyLogger),
-    updateWindowI18next(),
+    updateWindowI18next,
     writeContentToFrame,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;
