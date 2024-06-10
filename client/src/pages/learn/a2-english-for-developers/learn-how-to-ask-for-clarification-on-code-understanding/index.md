@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Ask for Clarification on Code Understanding
 
-This is a test for the new project-based curriculum.
+In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code.
