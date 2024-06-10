@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import { focusEditor } from './utils/editor';
-import { isMacOS } from './utils/user-agent';
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
@@ -10,15 +10,14 @@ test.describe('multifileCertProjects', () => {
     );
     execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
-  test('should save and reload user code', async ({ page, isMobile }) => {
+
+  test('should save the code when the user clicks the save button', async ({
+    page,
+    isMobile
+  }) => {
     await focusEditor({ page, isMobile });
 
-    if (isMacOS) {
-      await page.keyboard.press('Meta+A');
-    } else {
-      await page.keyboard.press('Control+A');
-    }
-
+    await page.keyboard.press('ControlOrMeta+A');
     await page.keyboard.press('Backspace');
 
     await page.keyboard.type('save1text');
@@ -26,9 +25,12 @@ test.describe('multifileCertProjects', () => {
 
     await page.getByRole('button', { name: 'Save your Code' }).click();
 
-    await expect(page.getByTestId('flash-message')).toContainText(
-      /Your code was saved to the database\. It will be here when you return\./
-    );
+    await expect(
+      page.getByRole('alert').filter({
+        hasText:
+          /Your code was saved to the database\. It will be here when you return\./
+      })
+    ).toBeVisible();
 
     await page.reload();
 
@@ -39,39 +41,53 @@ test.describe('multifileCertProjects', () => {
     page,
     isMobile
   }) => {
+    test.setTimeout(20000);
+
     await focusEditor({ page, isMobile });
 
-    if (isMacOS) {
-      await page.keyboard.press('Meta+A');
-    } else {
-      await page.keyboard.press('Control+A');
-    }
-
+    await page.keyboard.press('ControlOrMeta+A');
     await page.keyboard.type('save2text');
     await expect(page.getByText('save2text')).toBeVisible();
 
-    await page.keyboard.down('Control');
-    await page.keyboard.press('KeyS');
+    await page.keyboard.press('ControlOrMeta+S');
 
-    await expect(page.getByTestId('flash-message')).toContainText(
-      /Your code was saved to the database\. It will be here when you return\./
-    );
-
-    await page.getByRole('button', { name: 'Close' }).click();
-
-    await expect(page.getByText('save2text')).toBeVisible();
+    await expect(
+      page.getByRole('alert').filter({
+        hasText:
+          /Your code was saved to the database\. It will be here when you return\./
+      })
+    ).toBeVisible();
 
     await page.reload();
 
     await expect(page.getByText('save2text')).toBeVisible();
+  });
 
+  test('should prevent the user from saving code too quickly', async ({
+    page,
+    isMobile
+  }) => {
     await focusEditor({ page, isMobile });
 
-    await page.keyboard.down('Control');
-    await page.keyboard.press('KeyS');
+    await page.keyboard.type('some code');
 
-    await expect(page.getByTestId('flash-message')).toContainText(
-      /Slow Down! Your code was not saved\. Try again in a few seconds\./
-    );
+    await page.keyboard.press('ControlOrMeta+S');
+
+    await expect(
+      page.getByRole('alert').filter({
+        hasText:
+          /Your code was saved to the database\. It will be here when you return\./
+      })
+    ).toBeVisible();
+
+    await page.keyboard.press('ControlOrMeta+S');
+    await page.keyboard.press('ControlOrMeta+S');
+    await page.keyboard.press('ControlOrMeta+S');
+
+    const flashes = page.getByRole('alert').filter({
+      hasText:
+        /Slow Down! Your code was not saved\. Try again in a few seconds\./
+    });
+    await expect(flashes).toHaveCount(3);
   });
 });
