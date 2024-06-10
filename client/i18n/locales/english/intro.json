@@ -885,7 +885,7 @@
         "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
         "intro": [
           "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
-          "In this project, you'll discover new concepts related to the encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learn to create a program that calculates a projectile trajectory."
+          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
         ]
       },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
