@@ -1,7 +1,7 @@
-import { test, expect, type Page } from '@playwright/test';
-
+import { test, expect, type Page, BrowserContext } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import { clearEditor, getEditors } from './utils/editor';
+import { isMacOS } from './utils/user-agent';
+import { clearEditor, focusEditor } from './utils/editor';
 
 const outputTexts = {
   default: `
@@ -23,11 +23,13 @@ interface InsertTextParameters {
   page: Page;
   isMobile: boolean;
   text: string;
+  context: BrowserContext;
 }
 
 const insertTextInCodeEditor = async ({
   page,
   isMobile,
+  context,
   text
 }: InsertTextParameters) => {
   if (isMobile) {
@@ -35,7 +37,20 @@ const insertTextInCodeEditor = async ({
       .getByRole('tab', { name: translations.learn['editor-tabs'].code })
       .click();
   }
-  await getEditors(page).fill(text);
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.evaluate(
+    async contents => await navigator.clipboard.writeText(contents),
+    text
+  );
+
+  await focusEditor({ page, isMobile });
+
+  if (isMacOS) {
+    await page.keyboard.press('Meta+v');
+  } else {
+    await page.keyboard.press('Control+v');
+  }
+
   if (isMobile) {
     await page
       .getByRole('tab', { name: translations.learn['editor-tabs'].console })
@@ -60,6 +75,11 @@ test.describe('For classic challenges', () => {
     );
   });
 
+  test.skip(
+    ({ browserName }) => browserName !== 'chromium',
+    'Only chromium allows us to use the clipboard API.'
+  );
+
   test('it renders the default output', async ({ page }) => {
     await expect(
       page.getByRole('region', {
@@ -71,7 +91,8 @@ test.describe('For classic challenges', () => {
   test('shows test output when the tests are run', async ({
     page,
     isMobile,
-    browserName
+    browserName,
+    context
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
     await expect(page).toHaveTitle(
@@ -82,7 +103,8 @@ test.describe('For classic challenges', () => {
     await insertTextInCodeEditor({
       page,
       isMobile,
-      text: '<h1>Hello World</h1>'
+      text: '<h1>Hello World</h1>',
+      context
     });
     await runChallengeTest(page, isMobile);
     await closeButton.click();
@@ -96,14 +118,16 @@ test.describe('For classic challenges', () => {
   test('shows test output when the tests are triggered by the keyboard', async ({
     page,
     isMobile,
-    browserName
+    browserName,
+    context
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
     await clearEditor({ browserName, page });
     await insertTextInCodeEditor({
       page,
       isMobile,
-      text: '<h1>Hello World</h1>'
+      text: '<h1>Hello World</h1>',
+      context
     });
     await page.keyboard.press('Control+Enter');
     await closeButton.click();
@@ -122,6 +146,11 @@ test.describe('Challenge Output Component Tests', () => {
     );
   });
 
+  test.skip(
+    ({ browserName }) => browserName !== 'chromium',
+    'Only chromium allows us to use the clipboard API.'
+  );
+
   test('should render with default output', async ({ page, isMobile }) => {
     if (isMobile) {
       await page.getByRole('tab', { name: 'Console' }).click();
@@ -135,9 +164,10 @@ test.describe('Challenge Output Component Tests', () => {
 
   test('should contain syntax error output when var is entered in editor', async ({
     page,
-    isMobile
+    isMobile,
+    context
   }) => {
-    await insertTextInCodeEditor({ page, isMobile, text: 'var' });
+    await insertTextInCodeEditor({ page, isMobile, text: 'var', context });
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
@@ -147,11 +177,12 @@ test.describe('Challenge Output Component Tests', () => {
 
   test('should contain reference error output when var is entered in editor', async ({
     page,
-    isMobile
+    isMobile,
+    context
   }) => {
     const referenceErrorRegex =
       /ReferenceError: (myName is not defined|Can't find variable: myName)/;
-    await insertTextInCodeEditor({ page, isMobile, text: 'myName' });
+    await insertTextInCodeEditor({ page, isMobile, text: 'myName', context });
     await expect(
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
@@ -173,11 +204,17 @@ test.describe('Challenge Output Component Tests', () => {
 
   test('should contain final output after test pass', async ({
     page,
-    isMobile
+    isMobile,
+    context
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
 
-    await insertTextInCodeEditor({ page, isMobile, text: 'var myName;' });
+    await insertTextInCodeEditor({
+      page,
+      isMobile,
+      text: 'var myName;',
+      context
+    });
     await runChallengeTest(page, isMobile);
     await closeButton.click();
     await expect(
@@ -210,10 +247,15 @@ test.describe('Jquery challenges', () => {
 });
 
 test.describe('Custom output for Set and Map', () => {
+  test.skip(
+    ({ browserName }) => browserName !== 'chromium',
+    'Only chromium allows us to use the clipboard API.'
+  );
   test('Custom output for JavaScript Objects Set and Map', async ({
     page,
     isMobile,
-    browserName
+    browserName,
+    context
   }) => {
     await page.goto(
       '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
@@ -221,7 +263,8 @@ test.describe('Custom output for Set and Map', () => {
     await insertTextInCodeEditor({
       page,
       isMobile,
-      text: 'const set = new Set(); set.add(1); set.add("set"); set.add(10); console.log(set);'
+      text: 'const set = new Set(); set.add(1); set.add("set"); set.add(10); console.log(set);',
+      context
     });
     await expect(
       page.getByRole('region', {
@@ -234,7 +277,8 @@ test.describe('Custom output for Set and Map', () => {
     await insertTextInCodeEditor({
       page,
       isMobile,
-      text: 'const map = new Map(); map.set(1, "one"); map.set("two", 2); console.log(map);'
+      text: 'const map = new Map(); map.set(1, "one"); map.set("two", 2); console.log(map);',
+      context
     });
 
     await expect(
