@@ -389,43 +389,54 @@ export const createMainPreviewFramer = (
   frameTitle: string,
   frameReady?: () => void
 ): ((args: Context) => void) =>
-  createFramer(
+  createFramer({
     document,
-    mainPreviewId,
-    initMainFrame,
+    id: mainPreviewId,
+    init: initMainFrame,
     proxyLogger,
     frameReady,
     frameTitle
-  );
+  });
 
 export const createProjectPreviewFramer = (
   document: Document,
   frameTitle: string
 ): ((args: Context) => void) =>
-  createFramer(
+  createFramer({
     document,
-    projectPreviewId,
-    initPreviewFrame,
-    undefined,
-    undefined,
+    id: projectPreviewId,
+    init: initPreviewFrame,
     frameTitle
-  );
+  });
 
 export const createTestFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameReady: () => void
 ): ((args: Context) => void) =>
-  createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+  createFramer({
+    document,
+    id: testId,
+    init: initTestFrame,
+    proxyLogger,
+    frameReady
+  });
 
-const createFramer = (
-  document: Document,
-  id: string,
-  init: InitFrame,
-  proxyLogger?: ProxyLogger,
-  frameReady?: () => void,
-  frameTitle?: string
-) =>
+const createFramer = ({
+  document,
+  id,
+  init,
+  proxyLogger,
+  frameReady,
+  frameTitle
+}: {
+  document: Document;
+  id: string;
+  init: InitFrame;
+  proxyLogger?: ProxyLogger;
+  frameReady?: () => void;
+  frameTitle?: string;
+}) =>
   flow(
     createFrame(document, id, frameTitle),
     mountFrame(document, id),
