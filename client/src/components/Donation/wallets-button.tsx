@@ -3,7 +3,7 @@ import {
   ElementsConsumer
 } from '@stripe/react-stripe-js';
 import type { PaymentRequest, Stripe } from '@stripe/stripe-js';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Themes } from '../settings/theme';
@@ -41,6 +41,18 @@ const WalletsButton = ({
     null
   );
   const { t } = useTranslation();
+
+  const displayError = useCallback(
+    (errorMessage: string): void => {
+      onDonationStateChange({
+        redirecting: false,
+        processing: false,
+        success: false,
+        error: errorMessage
+      });
+    },
+    [onDonationStateChange]
+  );
 
   useEffect(() => {
     if (!stripe) {
@@ -113,17 +125,16 @@ const WalletsButton = ({
     return () => {
       setPaymentRequest(null);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [label, amount, stripe, postPayment, handlePaymentButtonLoad]);
-
-  const displayError = (errorMessage: string): void => {
-    onDonationStateChange({
-      redirecting: false,
-      processing: false,
-      success: false,
-      error: errorMessage
-    });
-  };
+  }, [
+    label,
+    amount,
+    stripe,
+    postPayment,
+    handlePaymentButtonLoad,
+    duration,
+    displayError,
+    t
+  ]);
 
   return (
     <form className='wallets-form'>
