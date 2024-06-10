@@ -25,7 +25,7 @@ The best way to improve your problem solving ability is by building experience b
 
 ## --assignment--
 
-Read How to <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/" target="_blank">Think Like a Programmer - Lessons in Problem Solving</a> by Richard Reis.
+Read <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/" target="_blank">How to Think Like a Programmer - Lessons in Problem Solving</a> by Richard Reis.
 
 ## --text--
 

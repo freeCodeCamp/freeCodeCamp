@@ -13,9 +13,10 @@ At this point, you might be wondering how you can resolve these errors.
 
 1. You shoud search your error on the web, most of the time you will be able to find a fix or explanation on StackOverflow or in the documentation. If nothing else, you will receive more clarity as to why you are receiving this error.
 
-1. Another way is to use `console.log()` it is a popular choice for quick debugging. For more involved troubleshooting, using the debugger might be more appropriate, but using `console.log()` is great for getting immediate feedback without needing to step through your functions. There are also other useful methods such as `console.table()`, `console.trace()`, and more!
+1. Another way is to use `console.log()` — it is a popular choice for quick debugging. For more involved troubleshooting, using the debugger might be more appropriate, but using `console.log()` is great for getting immediate feedback without needing to step through your functions. There are also other useful methods such as `console.table()`, `console.trace()`, and more!
 
-# --question-- 
+# --question--
+
 ## --text--
 
 When encountering an error in your code, which of the following is NOT a recommended step for identifying and resolving the issue?

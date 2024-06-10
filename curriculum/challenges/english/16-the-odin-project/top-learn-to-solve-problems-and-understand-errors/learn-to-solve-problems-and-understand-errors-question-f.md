@@ -36,7 +36,8 @@ The stack trace tells us that:
 
 Thus the stack trace lets you trace the evolution of an error back to its origin, which here is the declaration of `add()`.
 
-# --question-- 
+# --question--
+
 ## --text--
 
 How does the stack trace help in debugging the error in the provided JavaScript code?
@@ -47,7 +48,7 @@ The stack trace shows that the function `add()` correctly returns the value of `
 
 ---
 
-he stack trace indicates which line in the code needs to be edited to correct a syntax error.
+The stack trace indicates which line in the code needs to be edited to correct a syntax error.
 
 ---
 
