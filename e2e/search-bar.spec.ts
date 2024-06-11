@@ -54,6 +54,11 @@ test.describe('Search bar', () => {
     page,
     isMobile
   }) => {
+    test.skip(
+      !process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY,
+      'This test requires Algolia API keys'
+    );
+
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -77,6 +82,11 @@ test.describe('Search bar', () => {
     page,
     isMobile
   }) => {
+    test.skip(
+      !process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY,
+      'This test requires Algolia API keys'
+    );
+
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -136,6 +146,11 @@ test.describe('Search results when viewport when height is greater than 768px', 
   });
 
   test('should display 8 items', async ({ page, isMobile }) => {
+    test.skip(
+      !process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY,
+      'This test requires Algolia API keys'
+    );
+
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -154,6 +169,11 @@ test.describe('Search results when viewport when height is equal to 768px', () =
   });
 
   test('should display 8 items', async ({ page, isMobile }) => {
+    test.skip(
+      !process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY,
+      'This test requires Algolia API keys'
+    );
+
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -172,6 +192,11 @@ test.describe('Search results when viewport when height is less than 768px', () 
   });
 
   test('should display 5 items', async ({ page, isMobile }) => {
+    test.skip(
+      !process.env.ALGOLIA_APP_ID || !process.env.ALGOLIA_API_KEY,
+      'This test requires Algolia API keys'
+    );
+
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up

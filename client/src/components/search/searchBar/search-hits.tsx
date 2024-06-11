@@ -33,7 +33,6 @@ const CustomHits = connectHits(
     selectedIndex,
     handleHits
   }: CustomHitsProps) => {
-    console.log('🚀 ~ hits:', hits);
     const { t } = useTranslation();
     const noHits = isEmpty(hits);
     const noHitsTitle = t('search.no-tutorials');
@@ -104,7 +103,6 @@ const SearchHits = connectStateResults(
     selectedIndex,
     handleHits
   }: SearchHitsProps) => {
-    console.log('🚀 ~ selectedIndex:', selectedIndex);
     return isEmpty(searchState) || !searchState.query ? null : (
       <CustomHits
         handleHits={handleHits}
