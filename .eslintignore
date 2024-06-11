@@ -9,3 +9,4 @@ shared/config/donation-settings.js
 shared/config/superblocks.js
 docs/**/*.md
 playwright*.config.ts
+playwright/**

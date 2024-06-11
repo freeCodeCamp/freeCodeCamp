@@ -14,7 +14,7 @@ dashedName: regular-expressions-practical-applications
 
 ## --text--
 
-What will search for a "$" in a regular expression?
+Що шукатиме символ «$» у регулярному виразі?
 
 ## --answers--
 
