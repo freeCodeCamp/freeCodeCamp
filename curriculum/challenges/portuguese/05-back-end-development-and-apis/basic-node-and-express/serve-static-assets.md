@@ -62,12 +62,3 @@ A aplicação não deve servir arquivos de outras pastas além do diretório `/p
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Desafios de back-end não precisam de soluções, 
-  pois precisariam ser testados com relação a um projeto funcional completo. 
-  Confira nossas diretrizes de contribuição para saber mais.
-*/
-```

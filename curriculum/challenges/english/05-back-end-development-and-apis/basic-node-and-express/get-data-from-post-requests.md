@@ -67,12 +67,3 @@ Test 2 : Your API endpoint should respond with the correct name
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```
