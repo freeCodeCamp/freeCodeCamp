@@ -29,6 +29,12 @@ A good note to keep in mind when faced with a `TypeError` is to consider the dat
 
 Why does the following JavaScript code result in a `TypeError`?
 
+```js
+const str1 = "Hello";
+const str2 = "World!";
+const message = str1.push(str2);
+```
+
 ## --answers--
 
 The `.push()` method can only be used on objects, not strings.
