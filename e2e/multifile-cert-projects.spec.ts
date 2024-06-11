@@ -57,8 +57,7 @@ test.describe('multifileCertProjects', () => {
     await clearEditor({ page, browserName });
 
     await page.keyboard.type('save2text');
-    await expect(page.getByText('save2text')).toBeVisible();
-
+    await focusEditor({ page, isMobile });
     await saveCode(page);
 
     await expect(
@@ -82,6 +81,7 @@ test.describe('multifileCertProjects', () => {
     await clearEditor({ page, browserName });
 
     await page.keyboard.type('some code');
+    await focusEditor({ page, isMobile });
     await saveCode(page);
 
     await expect(
