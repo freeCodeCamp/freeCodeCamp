@@ -14,7 +14,7 @@ dashedName: using-web-services
 
 ## --text--
 
-What are the two most common ways to send data over the internet?
+Які два найпоширеніші способи надсилання даних через інтернет?
 
 ## --answers--
 

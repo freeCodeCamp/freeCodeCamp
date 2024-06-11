@@ -66,12 +66,3 @@ Add version `1.1.0` of the `@freecodecamp/example` package to the `dependencies`
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

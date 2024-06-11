@@ -1,29 +1,29 @@
 ---
 id: 661e17c6068359c3ccf2f4d8
-title: Basic Functions Exercise D
+title: Exercício Básico de Funções D
 challengeType: 1
 dashedName: top-basic-functions-exercise-d
 ---
 
 # --description--
 
-Write a function, named `lastLetter`, that takes a string as a parameter and returns the last letter of the string.
+Escreva uma função, chamada `lastLetter`, que recebe uma string como parâmetro e retorna a última letra da string.
 
 # --hints--
 
-You should have a function named `lastLetter`.
+Você deve ter uma função chamada `lastLetter`.
 
 ```js
 assert.isFunction(lastLetter);
 ```
 
-Your function should take in a string as a parameter.
+A função deve receber uma string como parâmetro.
 
 ```js
 assert.match(lastLetter.toString(), /\s*lastLetter\(\s*\w+\s*\)/);
 ```
 
-You should return the last letter of the string.
+Você deve retornar a última letra da string.
 
 ```js
 assert.strictEqual(lastLetter('Sem'), 'm');
