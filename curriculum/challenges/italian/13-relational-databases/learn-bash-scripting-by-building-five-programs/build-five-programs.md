@@ -2,7 +2,6 @@
 id: 5f5904ac738bc2fa9efecf5a
 title: Costruisci Cinque Programmi
 challengeType: 12
-helpCategory: Backend Development
 url: freeCodeCamp/learn-bash-scripting-by-building-five-programs
 dashedName: build-five-programs
 ---

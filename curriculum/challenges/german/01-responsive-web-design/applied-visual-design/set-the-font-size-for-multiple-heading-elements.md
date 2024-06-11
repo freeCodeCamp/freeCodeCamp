@@ -13,16 +13,14 @@ Die `font-size`-Eigenschaft wird verwendet, um die Schriftgröße eines Elements
 
 # --instructions--
 
-  <p>Lege innerhalb der <code>style</code>-Tags folgende <code>font-size</code> fest:</p>
+Lege innerhalb der `style`-Tags folgende `font-size` fest:
 
-  <ul>
-    <li><code>h1</code>-Tag auf 68px.</li>
-    <li><code>h2</code>-Tag auf 52px.</li>
-    <li><code>h3</code>-Tag auf 40px.</li>
-    <li><code>h4</code>-Tag auf 32px.</li>
-    <li><code>h5</code>-Tag auf 21px.</li>
-    <li><code>h6</code>-Tag auf 14px.</li>
-  </ul>
+- `h1`-Tag auf 68px.
+- `h2`-Tag auf 52px.
+- `h3`-Tag auf 40px.
+- `h4`-Tag auf 32px.
+- `h5`-Tag auf 21px.
+- `h6`-Tag auf 14px.
 
 # --hints--
 

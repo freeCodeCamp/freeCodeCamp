@@ -35,6 +35,7 @@ const foundationalCSharpBase =
 const upcomingPythonBase = '/learn/upcoming-python';
 const exampleCertBase = '/learn/example-certification';
 const a2EnglishBase = '/learn/a2-english-for-developers';
+const b1EnglishBase = '/learn/b1-english-for-developers';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -833,6 +834,19 @@ const allStandardCerts = [
         title: 'Challenge 1',
         link: `${a2EnglishBase}/learn-greetings-in-your-first-day-at-the-office/challenge-1`,
         certSlug: Certification.A2English
+      }
+    ]
+  },
+  {
+    id: '66607e53317411dd5e8aae21',
+    title: 'B1 English for Developers',
+    certSlug: Certification.B1English,
+    projects: [
+      {
+        id: '66607e5b317411dd5e8aae22',
+        title: "Dialogue 1: I'm Tom",
+        link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
+        certSlug: Certification.B1English
       }
     ]
   }

@@ -172,13 +172,3 @@ async (getUserInput) => {
   assert.equal(parsed.headers['x-powered-by'], 'PHP 7.4.3');
 };
 ```
-
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
-```
