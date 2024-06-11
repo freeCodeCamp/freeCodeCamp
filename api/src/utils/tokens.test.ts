@@ -2,7 +2,6 @@ jest.useFakeTimers();
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { createAccessToken, createAuthToken, isExpired } from './tokens';
 
-
 describe('createAccessToken', () => {
   it('creates an object with id, ttl, created and userId', () => {
     const userId = 'abc';
@@ -52,7 +51,7 @@ describe('createAuthToken', () => {
 
     expect(actual.ttl).toBe(ttl);
     expect(createAuthToken(userId).ttl).toBe(900000);
-  })
+  });
 });
 
 describe('isExpired', () => {
