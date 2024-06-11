@@ -227,7 +227,8 @@ input[type='submit'],
 
 button:hover,
 input[type='submit']:hover,
-.btn:hover {
+.btn:hover,
+.btn:focus:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
@@ -256,8 +257,9 @@ button[aria-disabled='true']:hover,
 fieldset[disabled] .btn {
   cursor: not-allowed;
   background-color: var(--quaternary-background);
-  border-color: var(--quaternary-color);
-  color: var(--quaternary-color);
+  border-color: var(--gray-45);
+  color: var(--secondary-color);
+  opacity: 0.8;
 }
 
 .btn-cta {

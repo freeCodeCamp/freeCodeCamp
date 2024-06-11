@@ -70,7 +70,6 @@ const defaultProps = {
         tail: ['mockTail'],
         template: 'mockTemplate',
         tests: [] as Test[],
-        time: 'mockTime',
         title: 'mockTitle',
         translationPending: false,
         url: 'https://mockurl.com',

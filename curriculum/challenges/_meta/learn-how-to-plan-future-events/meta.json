@@ -1,0 +1,14 @@
+{
+  "name": "Learn How to Plan Future Events",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-plan-future-events",
+  "order": 4,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "66609f86c2500e597c8cb52f",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English"
+}

@@ -135,6 +135,7 @@ const isCertMapSelector = createSelector(
     'Example Certification': false,
     'Upcoming Python Certification': false,
     'A2 English for Developers': false,
+    'B1 English for Developers': false,
     'JavaScript Algorithms and Data Structures (Beta)': isJsAlgoDataStructCertV8
   })
 );
@@ -399,6 +400,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
               block={true}
               variant='primary'
               href={certLocation}
+              data-playwright-test-label={`btn-for-${certSlug}`}
               // This floating promise is acceptable
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={clickHandler}

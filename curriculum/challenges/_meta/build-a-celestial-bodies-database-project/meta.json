@@ -4,7 +4,6 @@
   "dashedName": "build-a-celestial-bodies-database-project",
   "order": 2,
   "helpCategory": "Backend Development",
-  "time": "30 hours",
   "superBlock": "relational-database",
   "challengeOrder": [
     {
