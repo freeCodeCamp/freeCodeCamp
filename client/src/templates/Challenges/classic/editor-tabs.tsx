@@ -11,6 +11,7 @@ import {
   challengeFilesSelector
 } from '../redux/selectors';
 
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import type { VisibleEditors } from './multifile-editor';
 
 interface EditorTabsProps {
@@ -34,12 +35,16 @@ const mapDispatchToProps = {
 
 class EditorTabs extends Component<EditorTabsProps> {
   static displayName: string;
+  isMobile = window.innerWidth < MAX_MOBILE_WIDTH;
   render() {
     const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
+    const isMobile = window.innerWidth < MAX_MOBILE_WIDTH;
+    /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
+    const isRenderChallengeFiles =
+      !isMobile || sortChallengeFiles(challengeFiles).length > 1;
     return (
       <div className='monaco-editor-tabs'>
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
-        {sortChallengeFiles(challengeFiles).length > 1 &&
+        {isRenderChallengeFiles &&
           /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
           sortChallengeFiles(challengeFiles).map(
             (challengeFile: ChallengeFile) => (
