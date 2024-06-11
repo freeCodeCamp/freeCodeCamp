@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-11
 ---
 
-<!--
-AUDIO REFERENCE:
-Sarah: Once you've found the section you need, you should start by reading the introductory paragraphs to get an overview of what the documentation covers.
--->
+<!-- (Audio) Sarah: Once you've found the section you need, you should start by reading the introductory paragraphs to get an overview of what the documentation covers. -->
 
 # --description--
 
@@ -72,8 +69,8 @@ It means what the documentation includes or addresses in terms of content.
     "audio": {
       "filename": "7.2-1.mp3",
       "startTime": 1,
-      "startTimestamp": 20.88,
-      "finishTimestamp": 27.62
+      "startTimestamp": 20.68,
+      "finishTimestamp": 27.82
     }
   },
   "commands": [
@@ -85,7 +82,7 @@ It means what the documentation includes or addresses in terms of content.
     {
       "character": "Sarah",
       "startTime": 1,
-      "finishTime": 7.74,
+      "finishTime": 8.14,
       "dialogue": {
         "text": "Once you've found the section you need, you should start by reading the introductory paragraphs to get an overview of what the documentation covers.",
         "align": "center"
@@ -94,7 +91,7 @@ It means what the documentation includes or addresses in terms of content.
     {
       "character": "Sarah",
       "opacity": 0,
-      "startTime": 8.24
+      "startTime": 8.64
     }
   ]
 }
