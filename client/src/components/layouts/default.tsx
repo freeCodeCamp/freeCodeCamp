@@ -48,7 +48,6 @@ import { Loader, Spacer } from '../helpers';
 import { SuperBlocks } from '../../../../shared/config/superblocks';
 import {
   MAX_MOBILE_WIDTH,
-  MAX_MOBILE_HEIGHT,
   EX_SMALL_VIEWPORT_HEIGHT
 } from '../../../config/misc';
 import envData from '../../../config/env.json';
@@ -142,15 +141,13 @@ function DefaultLayout({
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
   const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
-  const isMobileHeight = useMediaQuery({ maxHeight: MAX_MOBILE_HEIGHT });
   const isMultifileEditorChallenge =
     superBlock === SuperBlocks.RespWebDesignNew ||
     superBlock === SuperBlocks.JsAlgoDataStructNew ||
     superBlock === SuperBlocks.SciCompPy;
   const isProject = /project$/.test(block as string);
   const isRenderBreadcrumbOnMobile =
-    isMobileLayout &&
-    (isProject || !isMultifileEditorChallenge || !isMobileHeight);
+    isMobileLayout && (isProject || !isMultifileEditorChallenge);
   const isRenderBreadcrumb = !isMobileLayout || isRenderBreadcrumbOnMobile;
   const isExSmallViewportHeight = useMediaQuery({
     maxHeight: EX_SMALL_VIEWPORT_HEIGHT

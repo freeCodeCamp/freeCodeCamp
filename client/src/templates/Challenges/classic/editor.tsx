@@ -12,7 +12,6 @@ import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect, useStore } from 'react-redux';
-import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
 import store from 'store';
 
@@ -66,7 +65,6 @@ import {
 import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
-import { MAX_MOBILE_HEIGHT } from '../../../../config/misc';
 import LowerJaw from './lower-jaw';
 import './editor.css';
 
@@ -246,11 +244,7 @@ const initialData: EditorProperties = {
 const Editor = (props: EditorProps): JSX.Element => {
   const reduxStore = useStore();
   const { t } = useTranslation();
-  const isMobileHeight = useMediaQuery({
-    query: `(max-height: ${MAX_MOBILE_HEIGHT}px)`
-  });
   const { editorRef, initTests, resetAttempts, isMobileLayout } = props;
-  const isRenderBreadcrumb = isMobileLayout && isMobileHeight;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -811,7 +805,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.classList.add('description-container');
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
-    if (isRenderBreadcrumb) descContainer.appendChild(createBreadcrumb());
+    if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
@@ -1290,19 +1284,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
-
-  useEffect(() => {
-    const description = document.getElementsByClassName(
-      'description-container'
-    )?.[0];
-    if (description && isRenderBreadcrumb)
-      description.prepend(createBreadcrumb());
-    else {
-      if (document.getElementsByTagName('ol')[1])
-        document.getElementsByTagName('ol')[1].remove();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMobileHeight]);
 
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;
