@@ -2,7 +2,6 @@
 id: 5ea8adfab628f68d805bfc5e
 title: Build a Boilerplate
 challengeType: 12
-helpCategory: Backend Development
 url: freeCodeCamp/learn-bash-by-building-a-boilerplate
 dashedName: build-a-boilerplate
 ---

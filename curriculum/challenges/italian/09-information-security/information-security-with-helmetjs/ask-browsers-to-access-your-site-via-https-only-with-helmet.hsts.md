@@ -52,12 +52,3 @@ maxAge deve essere uguale a 7776000 s (90 giorni)
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```
