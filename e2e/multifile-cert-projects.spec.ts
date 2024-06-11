@@ -1,8 +1,18 @@
 import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import { focusEditor, clearEditor } from './utils/editor';
+import { isMacOS } from './utils/user-agent';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+const saveCode = async (page: Page) => {
+  if (isMacOS) {
+    await page.keyboard.press('Meta+S');
+  } else {
+    await page.keyboard.press('Control+S');
+  }
+};
+
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
@@ -49,7 +59,7 @@ test.describe('multifileCertProjects', () => {
     await page.keyboard.type('save2text');
     await expect(page.getByText('save2text')).toBeVisible();
 
-    await page.keyboard.press('ControlOrMeta+S');
+    await saveCode(page);
 
     await expect(
       page.getByRole('alert').filter({
@@ -72,7 +82,7 @@ test.describe('multifileCertProjects', () => {
     await clearEditor({ page, browserName });
 
     await page.keyboard.type('some code');
-    await page.keyboard.press('ControlOrMeta+S');
+    await saveCode(page);
 
     await expect(
       page.getByRole('alert').filter({
@@ -81,9 +91,9 @@ test.describe('multifileCertProjects', () => {
       })
     ).toBeVisible();
 
-    await page.keyboard.press('ControlOrMeta+S');
-    await page.keyboard.press('ControlOrMeta+S');
-    await page.keyboard.press('ControlOrMeta+S');
+    await saveCode(page);
+    await saveCode(page);
+    await saveCode(page);
 
     const flashes = page.getByRole('alert').filter({
       hasText:
