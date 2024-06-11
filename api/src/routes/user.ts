@@ -65,8 +65,6 @@ const nullableFlags = [
 
 type NullableFlag = (typeof nullableFlags)[number];
 
-
-
 /**
  * Helper function to get the api url from the shared transcript link.
  *
@@ -798,6 +796,8 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       if (req.validationError) {
         void reply.code(400);
+        // TODO(Post-MVP): return a message telling the requester that their
+        // request was malformed.
         return await reply.send({ exists: true });
       }
 
