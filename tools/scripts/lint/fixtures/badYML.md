@@ -16,14 +16,12 @@ videoUrl: ''
 ## Tests
 <section id='tests'>
 
-```yml
 tests:
-  - text: text
-      testString: testString
-
-```
+- text: text
+  testString: testString
 
 </section>
+
 
 ## Challenge Seed
 <section id='challengeSeed'>
