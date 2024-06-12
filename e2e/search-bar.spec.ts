@@ -65,7 +65,7 @@ test.describe('Search bar', () => {
     await page.goto('/learn');
 
     // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
-    // Comment out this block if you want to test against the real server.
+    // Comment out this line if you want to test against the real server.
     await mockAlgolia({ page, hitsPerPage: 8 });
   });
 
@@ -172,7 +172,7 @@ test.describe('Search results when viewport height is greater than 768px', () =>
     await page.goto('/learn');
 
     // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
-    // Comment out this block if you want to test against the real server.
+    // Comment out this line if you want to test against the real server.
     await mockAlgolia({ page, hitsPerPage: 8 });
   });
 
@@ -196,7 +196,7 @@ test.describe('Search results when viewport height is equal to 768px', () => {
     await page.goto('/learn');
 
     // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
-    // Comment out this block if you want to test against the real server.
+    // Comment out this line if you want to test against the real server.
     await mockAlgolia({ page, hitsPerPage: 8 });
   });
 
@@ -220,7 +220,7 @@ test.describe('Search results when viewport height is less than 768px', () => {
     await page.goto('/learn');
 
     // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
-    // Comment out this block if you want to test against the real server.
+    // Comment out this line if you want to test against the real server.
     await mockAlgolia({ page, hitsPerPage: 5 });
   });
 
