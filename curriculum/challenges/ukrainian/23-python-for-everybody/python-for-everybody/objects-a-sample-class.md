@@ -14,7 +14,7 @@ dashedName: objects-a-sample-class
 
 ## --text--
 
-What will the following program print?:
+Що надрукує на екрані дана програма?
 
 ```python
 class PartyAnimal:

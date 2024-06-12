@@ -13,16 +13,14 @@ dashedName: set-the-font-size-for-multiple-heading-elements
 
 # --instructions--
 
-  <p>У тегах <code>style</code>, встановіть <code>font-size</code> у:</p>
+У тегах `style`, встановіть `font-size` у:
 
-  <ul>
-    <li>Тег <code>h1</code> до 68px.</li>
-    <li>Тег <code>h2</code> до 52px.</li>
-    <li>Тег <code>h3</code> до 40px.</li>
-    <li>Тег <code>h4</code> до 32px.</li>
-    <li>Тег <code>h5</code> до 21px.</li>
-    <li>Тег <code>h6</code> до 14px.</li>
-  </ul>
+- Тег `h1` до 68px.
+- Тег `h2` до 52px.
+- Тег `h3` до 40px.
+- Тег `h4` до 32px.
+- Тег `h5` до 21px.
+- Тег `h6` до 14px.
 
 # --hints--
 

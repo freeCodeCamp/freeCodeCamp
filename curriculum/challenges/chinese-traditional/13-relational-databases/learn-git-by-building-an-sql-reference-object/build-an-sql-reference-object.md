@@ -2,7 +2,6 @@
 id: 5fa323cdaf6a73463d590659
 title: 構建 SQL 引用對象
 challengeType: 12
-helpCategory: Backend Development
 url: freeCodeCamp/learn-git-by-building-an-sql-reference-object
 dashedName: build-an-sql-reference-object
 ---

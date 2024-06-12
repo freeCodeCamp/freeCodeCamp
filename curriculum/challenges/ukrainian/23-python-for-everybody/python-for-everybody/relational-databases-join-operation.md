@@ -14,7 +14,7 @@ dashedName: relational-databases-join-operation
 
 ## --text--
 
-When using a JOIN clause in an SQL statement, what does ON do?
+Що робить ON під час використання умови JOIN в інструкції SQL?
 
 ## --answers--
 

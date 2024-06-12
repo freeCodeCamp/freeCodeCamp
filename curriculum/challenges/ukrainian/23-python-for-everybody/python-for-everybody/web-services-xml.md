@@ -14,7 +14,7 @@ dashedName: web-services-xml
 
 ## --text--
 
-What is wrong with the following XML?:
+Що не так з даним XML?
 
 ```xml
 <person>

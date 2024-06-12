@@ -41,12 +41,3 @@ A resposta do endpoint `/json` deve ser alterada de acordo com a variável de am
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

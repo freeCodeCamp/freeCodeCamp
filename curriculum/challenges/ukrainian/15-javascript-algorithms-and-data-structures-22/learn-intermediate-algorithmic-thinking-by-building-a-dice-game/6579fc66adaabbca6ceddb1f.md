@@ -15,7 +15,7 @@ When you are ready, use the `querySelectorAll()` method to target all elements w
 
 # --hints--
 
-You should have a `const` variable called `listOfAllDice`.
+Ви повинні мати змінну `const` під назвою `listOfAllDice`.
 
 ```js
 assert.match(code, /const\s+listOfAllDice\s*/);

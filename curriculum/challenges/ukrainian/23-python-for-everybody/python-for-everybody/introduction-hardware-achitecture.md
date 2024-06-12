@@ -14,7 +14,7 @@ dashedName: introduction-hardware-architecture
 
 ## --text--
 
-Where are your programs stored when they are running?
+Де зберігаються програми під час виконання?
 
 ## --answers--
 

@@ -56,12 +56,3 @@ Test 2: Dein API-Endpunkt sollte mit `{ "name": "Keith Richards" }` anworten, we
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```
