@@ -30,7 +30,7 @@ Within the `ul` element nest three list items to display three things cats love:
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-У вас мають бути три елементи `li` з текстом `cat nip`, `laser pointers` та `lasagna` у будь-якому порядку. You have either omitted some text or have a typo.
+У вас мають бути три елементи `li` з текстом `cat nip`, `laser pointers` та `lasagna` у будь-якому порядку. Ви або не написали текст, або маєте друкарську помилку.
 
 ```js
 assert.deepStrictEqual(
