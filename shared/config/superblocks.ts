@@ -155,12 +155,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Ukrainian]: [
-    SuperBlocks.CodingInterviewPrep,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.B1English
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
