@@ -6,8 +6,10 @@ type AllEmails = {
   items: Email[];
 };
 
+const host = process.env.MAILHOG_HOST || 'localhost';
+
 export const getAllEmails = async (): Promise<AllEmails> => {
-  const res = await fetch('http://localhost:8025/api/v2/messages');
+  const res = await fetch(`http://${host}:8025/api/v2/messages`);
   return res.json() as Promise<AllEmails>;
 };
 
@@ -22,7 +24,7 @@ export const getSubject = (email: {
 };
 
 export const deleteAllEmails = async () => {
-  await fetch('http://localhost:8025/api/v1/messages', {
+  await fetch(`http://${host}:8025/api/v1/messages`, {
     method: 'DELETE'
   });
 };
