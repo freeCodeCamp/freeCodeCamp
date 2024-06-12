@@ -249,7 +249,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: user.email,
-          subject: `Abuse Report: Reporting ${username}'s profile`,
+          subject: `Abuse Report : Reporting ${username}'s profile.`,
           text: generateReportEmail(user, username, report)
         });
 

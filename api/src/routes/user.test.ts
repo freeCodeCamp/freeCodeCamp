@@ -769,7 +769,7 @@ describe('userRoutes', () => {
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: 'foo@bar.com',
-          subject: "Abuse Report: Reporting darth-vader's profile",
+          subject: "Abuse Report : Reporting darth-vader's profile.",
           text: `
 Hello Team,
 
