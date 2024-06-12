@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-8
 ---
 
-<!--
-AUDIO REFERENCE:
-Sophie: Thanks. I'll give it a shot.
--->
+<!-- (Audio) Sophie: Thanks, I'll give it a shot. -->
 
 # --description--
 
@@ -20,7 +17,7 @@ For example, if your friend is hesitant about joining a coding class because the
 
 ## --sentence--
 
-`Thanks. _ give it a _.`
+`Thanks, _ give it a _.`
 
 ## --blanks--
 
@@ -58,7 +55,7 @@ In this context, it means an attempt or try at doing something. Sophie is saying
     "audio": {
       "filename": "7.3-1.mp3",
       "startTime": 1,
-      "startTimestamp": 25.06,
+      "startTimestamp": 24.86,
       "finishTimestamp": 26.28
     }
   },
@@ -71,7 +68,7 @@ In this context, it means an attempt or try at doing something. Sophie is saying
     {
       "character": "Sophie",
       "startTime": 1,
-      "finishTime": 2.22,
+      "finishTime": 2.42,
       "dialogue": {
         "text": "Thanks, I'll give it a shot.",
         "align": "center"
@@ -80,7 +77,7 @@ In this context, it means an attempt or try at doing something. Sophie is saying
     {
       "character": "Sophie",
       "opacity": 0,
-      "startTime": 2.72
+      "startTime": 2.92
     }
   ]
 }
