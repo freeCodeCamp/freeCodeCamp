@@ -41,7 +41,7 @@ test.describe('Search bar', () => {
     await page.goto('/learn');
   });
 
-  test('should display search bar correctly', async ({ page, isMobile }) => {
+  test('should display correctly', async ({ page, isMobile }) => {
     const searchInput = await getSearchInput({ page, isMobile });
 
     await expect(searchInput).toBeVisible();
@@ -117,7 +117,7 @@ test.describe('Search bar', () => {
     );
   });
 
-  test('should clear the search input when the user clicks the clear button', async ({
+  test('should clear the input and hide the result dropdown when the user clicks the clear button', async ({
     page,
     isMobile
   }) => {
@@ -134,7 +134,7 @@ test.describe('Search bar', () => {
   });
 });
 
-test.describe('Search results when viewport when height is greater than 768px', () => {
+test.describe('Search results when viewport height is greater than 768px', () => {
   test.use({
     viewport: { width: 1600, height: 1200 }
   });
@@ -151,7 +151,7 @@ test.describe('Search results when viewport when height is greater than 768px', 
   });
 });
 
-test.describe('Search results when viewport when height is equal to 768px', () => {
+test.describe('Search results when viewport height is equal to 768px', () => {
   test.use({
     viewport: { width: 1600, height: 768 }
   });
@@ -172,7 +172,7 @@ test.describe('Search results when viewport when height is equal to 768px', () =
   });
 });
 
-test.describe('Search results when viewport when height is less than 768px', () => {
+test.describe('Search results when viewport height is less than 768px', () => {
   test.use({
     viewport: { width: 1600, height: 500 }
   });
