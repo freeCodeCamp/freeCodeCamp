@@ -14,7 +14,7 @@ dashedName: web-services-json
 
 ## --text--
 
-What will the following code print?:
+Що надрукує наведений код?
 
 ```python
 import json

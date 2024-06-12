@@ -17,11 +17,17 @@ const urlEncodedSuccessMessage2 =
 
 const unsubscribeId1 = 'abcde';
 const unsubscribeId2 = 'abcdef';
+const unsubscribeId3 = 'abcdefg';
 
 const testUserData1: Prisma.userCreateInput[] = [
   {
     ...createUserInput('user1@freecodecamp.org'),
     unsubscribeId: unsubscribeId1,
+    sendQuincyEmail: true
+  },
+  {
+    ...createUserInput('user1@freecodecamp.org'),
+    unsubscribeId: unsubscribeId2,
     sendQuincyEmail: true
   },
   {
@@ -31,7 +37,7 @@ const testUserData1: Prisma.userCreateInput[] = [
   },
   {
     ...createUserInput('user3@freecodecamp.org'),
-    unsubscribeId: unsubscribeId2,
+    unsubscribeId: unsubscribeId3,
     sendQuincyEmail: true
   }
 ];
@@ -57,7 +63,7 @@ const testUserData2: Prisma.userCreateInput[] = [
 describe('Email Subscription endpoints', () => {
   setupServer();
 
-  describe('GET /ue/unsubscribe/:unsubscribeId', () => {
+  describe('GET /ue/:unsubscribeId', () => {
     test('should 302 redirect with info message if no ID', async () => {
       const response = await superRequest('/ue/', { method: 'GET' });
       expect(response.headers.location).toStrictEqual(
@@ -74,7 +80,7 @@ describe('Email Subscription endpoints', () => {
       expect(response.status).toBe(302);
     });
 
-    test("should set 'sendQuincyEmail' to 'false' for user with matching ID and 302 redirect with success message", async () => {
+    test("1: should set 'sendQuincyEmail' to 'false' for users with matching email and 302 redirect with success message", async () => {
       await fastifyTestInstance.prisma.user.createMany({
         data: testUserData1
       });
@@ -87,14 +93,15 @@ describe('Email Subscription endpoints', () => {
         where: {
           OR: [
             { unsubscribeId: unsubscribeId1 },
-            { unsubscribeId: unsubscribeId2 }
+            { unsubscribeId: unsubscribeId2 },
+            { unsubscribeId: unsubscribeId3 }
           ]
         }
       });
 
-      expect(users).toHaveLength(3);
+      expect(users).toHaveLength(4);
       users.forEach(user => {
-        if (user.unsubscribeId === unsubscribeId1) {
+        if (['user1@freecodecamp.org'].includes(user.email)) {
           expect(user.sendQuincyEmail).toBe(false);
         } else {
           expect(user.sendQuincyEmail).toBe(true);
@@ -106,17 +113,19 @@ describe('Email Subscription endpoints', () => {
       );
 
       expect(response.status).toBe(302);
+      // TODO: If any assertions fail before this call, other tests will fail for no actual reason.
       await fastifyTestInstance.prisma.user.deleteMany({
         where: {
           OR: [
             { unsubscribeId: unsubscribeId1 },
-            { unsubscribeId: unsubscribeId2 }
+            { unsubscribeId: unsubscribeId2 },
+            { unsubscribeId: unsubscribeId3 }
           ]
         }
       });
     });
 
-    test("should set 'sendQuincyEmail' to 'false' for all users with matching ID and 302 redirect with success message", async () => {
+    test("2: should set 'sendQuincyEmail' to 'false' for all users with matching email and 302 redirect with success message", async () => {
       await fastifyTestInstance.prisma.user.createMany({
         data: testUserData1
       });
@@ -129,14 +138,19 @@ describe('Email Subscription endpoints', () => {
         where: {
           OR: [
             { unsubscribeId: unsubscribeId1 },
-            { unsubscribeId: unsubscribeId2 }
+            { unsubscribeId: unsubscribeId2 },
+            { unsubscribeId: unsubscribeId3 }
           ]
         }
       });
 
-      expect(users).toHaveLength(3);
+      expect(users).toHaveLength(4);
       users.forEach(user => {
-        if (user.unsubscribeId === unsubscribeId2) {
+        if (
+          ['user1@freecodecamp.org', 'user2@freecodecamp.org'].includes(
+            user.email
+          )
+        ) {
           expect(user.sendQuincyEmail).toBe(false);
         } else {
           expect(user.sendQuincyEmail).toBe(true);
@@ -148,11 +162,13 @@ describe('Email Subscription endpoints', () => {
       );
 
       expect(response.status).toBe(302);
+      // TODO: If any assertions fail before this call, other tests will fail for no actual reason.
       await fastifyTestInstance.prisma.user.deleteMany({
         where: {
           OR: [
             { unsubscribeId: unsubscribeId1 },
-            { unsubscribeId: unsubscribeId2 }
+            { unsubscribeId: unsubscribeId2 },
+            { unsubscribeId: unsubscribeId3 }
           ]
         }
       });

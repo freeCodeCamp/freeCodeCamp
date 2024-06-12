@@ -10,6 +10,10 @@ bilibiliIds:
 dashedName: introduction-to-tensorflow
 ---
 
+# --description--
+
+Декілька наступних відеоуроків посилатимуться на [цей блокнот Colab](https://colab.research.google.com/drive/1F_EWVKa8rbMXi3_fG0w7AtcscFq7Hi7B#forceEdit=true&sandboxMode=true).
+
 # --question--
 
 ## --text--

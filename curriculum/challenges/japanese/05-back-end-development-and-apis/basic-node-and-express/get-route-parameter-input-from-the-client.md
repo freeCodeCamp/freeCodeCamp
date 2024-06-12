@@ -54,12 +54,3 @@ API を構築する際は、私たちが作成するサービスから何を得�
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

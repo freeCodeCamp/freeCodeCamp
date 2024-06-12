@@ -1,3 +1,4 @@
+export { getPublicProfile } from './schemas/api/users/get-public-profile';
 export { certSlug } from './schemas/certificate/cert-slug';
 export { certificateVerify } from './schemas/certificate/certificate-verify';
 export { backendChallengeCompleted } from './schemas/challenge/backend-challenge-completed';
