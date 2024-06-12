@@ -53,6 +53,13 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 # --hints--
 
+You should have the html file link to the Javascript
+
+```js
+const script = document.querySelector('script[data-src$="script.js"]');
+assert.isNotNull(script); 
+```
+
 You should have a variable called `price`. 
 
 ```js
