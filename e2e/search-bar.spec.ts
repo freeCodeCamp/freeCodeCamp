@@ -1,5 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import algoliaEightHits from './fixtures/algolia-eight-hits.json';
+import algoliaFiveHits from './fixtures/algolia-five-hits.json';
 
 const haveApiKeys =
   process.env.ALGOLIA_APP_ID !== 'app_id_from_algolia_dashboard' &&
@@ -36,9 +38,35 @@ const search = async ({
   await searchInput.fill(query);
 };
 
+const mockAlgolia = async ({
+  page,
+  hitsPerPage
+}: {
+  page: Page;
+  hitsPerPage: number;
+}) => {
+  if (hitsPerPage === 8) {
+    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+      await route.fulfill({ json: algoliaEightHits });
+    });
+  } else if (hitsPerPage === 5) {
+    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+      await route.fulfill({ json: algoliaFiveHits });
+    });
+  } else if (hitsPerPage === 0) {
+    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+      await route.fulfill({ json: {} });
+    });
+  }
+};
+
 test.describe('Search bar', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn');
+
+    // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
+    // Comment out this block if you want to test against the real server.
+    await mockAlgolia({ page, hitsPerPage: 8 });
   });
 
   test('should display correctly', async ({ page, isMobile }) => {
@@ -108,6 +136,7 @@ test.describe('Search bar', () => {
     page,
     isMobile
   }) => {
+    await mockAlgolia({ page, hitsPerPage: 0 });
     await search({ page, isMobile, query: '!@#$%^' });
 
     const resultList = page.getByRole('list', { name: 'Search results' });
@@ -139,10 +168,17 @@ test.describe('Search results when viewport height is greater than 768px', () =>
     viewport: { width: 1600, height: 1200 }
   });
 
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/learn');
+
+    // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
+    // Comment out this block if you want to test against the real server.
+    await mockAlgolia({ page, hitsPerPage: 8 });
+  });
+
   test('should display 8 items', async ({ page, isMobile }) => {
     test.skip(!haveApiKeys, 'This test requires Algolia API keys');
 
-    await page.goto('/learn');
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -158,12 +194,15 @@ test.describe('Search results when viewport height is equal to 768px', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn');
+
+    // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
+    // Comment out this block if you want to test against the real server.
+    await mockAlgolia({ page, hitsPerPage: 8 });
   });
 
   test('should display 8 items', async ({ page, isMobile }) => {
     test.skip(!haveApiKeys, 'This test requires Algolia API keys');
 
-    await page.goto('/learn');
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -177,10 +216,17 @@ test.describe('Search results when viewport height is less than 768px', () => {
     viewport: { width: 1600, height: 500 }
   });
 
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/learn');
+
+    // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
+    // Comment out this block if you want to test against the real server.
+    await mockAlgolia({ page, hitsPerPage: 5 });
+  });
+
   test('should display 5 items', async ({ page, isMobile }) => {
     test.skip(!haveApiKeys, 'This test requires Algolia API keys');
 
-    await page.goto('/learn');
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
