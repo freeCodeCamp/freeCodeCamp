@@ -51,12 +51,3 @@ If you are using Gitpod, make sure the app is running and the preview window is 
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

@@ -2,7 +2,6 @@
 id: 5f87ac112ae598023a42df1a
 title: 創建一個沙龍預約安排程序
 challengeType: 13
-helpCategory: Backend Development
 url: freeCodeCamp/learn-salon-appointment-scheduler
 dashedName: build-a-salon-appointment-scheduler
 ---

@@ -1,6 +1,6 @@
 ---
 id: 5cdafbc32913098997531680
-title: Complete a Promise with resolve and reject
+title: resolve와 reject로 프로미스 완료하기
 challengeType: 1
 forumTopicId: 301196
 dashedName: complete-a-promise-with-resolve-and-reject
@@ -8,7 +8,7 @@ dashedName: complete-a-promise-with-resolve-and-reject
 
 # --description--
 
-A promise has three states: `pending`, `fulfilled`, and `rejected`. The promise you created in the last challenge is forever stuck in the `pending` state because you did not add a way to complete the promise. The `resolve` and `reject` parameters given to the promise argument are used to do this. `resolve` is used when you want your promise to succeed, and `reject` is used when you want it to fail. These are methods that take an argument, as seen below.
+한 프로미스는 세 가지 상태를 가집니다: `pending`, `fulfilled` 그리고 `rejected`. 이전 과제에서 생성한 프로미스는 프로미스를 완료시키는 법을 추가하지 않았기 때문에 `pending`에서 영원히 머무르게 됩니다. 프로미스에 인자로 주어진 `resolve`와 `reject` 파라미터는 이를 위해 사용됩니다. `resolve`는 프로미스가 성공할 때 사용되고 `reject`는 실패할 때 사용됩니다. 이 메소드는 아래 보이는 것처럼 인자를 취합니다.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -20,15 +20,15 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-The example above uses strings for the argument of these functions, but it can really be anything. Often, it might be an object, that you would use data from, to put on your website or elsewhere.
+위 예시는 이 함수들의 인자로 문자열을 사용하지만 인자는 어떤 것이든 상관없습니다. 많은 경우에 웹사이트나 다른 곳에 사용할 데이터는 객체일 수 있습니다.
 
 # --instructions--
 
-Make the promise handle success and failure. If `responseFromServer` is `true`, call the `resolve` method to successfully complete the promise. Pass `resolve` a string with the value `We got the data`. If `responseFromServer` is `false`, use the `reject` method instead and pass it the string: `Data not received`.
+성공과 실패를 처리하는 프로미스를 생성하시오. `responseFromServer`가 `true`라면 프로미스를 성공적으로 완료시키기 위해 `resolve` 메소드를 호출하시오. `We got the data` 라는 문자열을 `resolve`에 전달하시오. `responseFromServer`가 `false`라면 `reject` 메소드를 사용하고 문자열 `Data not received`를 해당 메소드에 전달하시오.
 
 # --hints--
 
-`resolve` should be called with the expected string when the `if` condition is `true`.
+`resolve`는 `if` 조건이 `true`일 때 예상 문자열 값과 함께 호출되어야 합니다.
 
 ```js
 assert(
@@ -36,7 +36,7 @@ assert(
 );
 ```
 
-`reject` should be called with the expected string when the `if` condition is `false`.
+`reject`는 `if` 조건이 `false`일 때 예상 문자열 값과 함께 호출되어야 합니다.
 
 ```js
 assert(

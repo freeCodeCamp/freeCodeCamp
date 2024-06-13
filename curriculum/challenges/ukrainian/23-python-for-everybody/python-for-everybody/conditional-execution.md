@@ -14,7 +14,7 @@ dashedName: conditional-execution
 
 ## --text--
 
-Which code is indented correctly to print "Yes" if x = 0 and y = 10?
+Який код правильно відформатовано, щоб при його виконанні було надруковано "Yes" за умови, що x = 0 та y = 10?
 
 ## --answers--
 

@@ -362,7 +362,7 @@
         "intro": [
           "Функційне програмування — це популярний підхід до розробки програмного забезпечення. У функційному програмуванні код впорядкований у менші функції, які можна об’єднати для створення складних програм.",
           "У цьому проєкті зі створення застосунку з таблицями ви дізнаєтесь про парсинг та обчислення математичних виразів, реалізацію функцій таблиць, обробку посилань на комірки та створення інтерактивних вебінтерфейсів. Ви дізнаєтесь, як динамічно оновити сторінку на основі введення користувача.",
-          "Цей проєкт охопить методи <code>map()</code>, <code>find()</code>, <code>parseInt()</code> та <code>includes()</code>."
+          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, and <code>includes()</code> methods and the <code>parseInt()</code> function."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -874,6 +874,13 @@
         "title": "Проєкт «Створіть калькулятор вірогідностей»",
         "intro": ["Цей проєкт потрібно виконати, щоб отримати сертифікацію."]
       },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+        "intro": [
+          "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
+          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
+        ]
+      },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
         "title": "Вивчіть метод бісекції, знайшовши квадратний корінь числа",
         "intro": [
@@ -1250,6 +1257,10 @@
         "intro": [
           "Випробуйте свої навички по JavaScript, побудувавши базові функції."
         ]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Вивчіть масиви та цикли",
+        "intro": ["Дізнайтесь про масиви та цикли в JavaScript."]
       }
     }
   },
@@ -1443,27 +1454,39 @@
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Дізнайтесь, як використовувати базові слова з програмування",
-        "intro": ["", ""]
+        "intro": [
+          "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
+        ]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Дізнайтесь, як використовувати поняття та терміни з програмування",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
+        ]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Дізнайтесь, як обговорювати технологічні тренди та оновлення",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
+        ]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "Дізнайтесь, як допомогти співпрацівнику розв’язати проблему на GitHub",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
+        ]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "Дізнайтесь, як ділитись своїм прогресом на щотижневій зустрічі",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
+        ]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Дізнайтесь, як просити роз’яснення коду",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
+        ]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Дізнайтесь, як документувати код проєкту",
@@ -1499,6 +1522,109 @@
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Дізнайтесь, як надавати пояснення при допомозі іншим",
+        "intro": ["", ""]
+      }
+    }
+  },
+  "b1-english-for-developers": {
+    "title": "B1 English for Developers (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-how-to-describe-places-and-events": {
+        "title": "Learn How to Describe Places and Events",
+        "intro": [""]
+      },
+      "learn-how-to-talk-about-past-experiences": {
+        "title": "Learn How to Talk About Past Experiences",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-past-activities": {
+        "title": "Learn How to Talk About Past Activities",
+        "intro": ["", ""]
+      },
+      "learn-present-perfect-while-talking-about-accessibility": {
+        "title": "Learn Present Perfect while Talking About Accessibility",
+        "intro": ["", ""]
+      },
+      "learn-how-to-plan-future-events": {
+        "title": "Learn How to Plan Future Events",
+        "intro": ["", ""]
+      },
+      "learn-future-continuous-while-describing-actions": {
+        "title": "Learn Future Continuous while Describing Actions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-conditionals": {
+        "title": "Learn How to Use Conditionals",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-feedback": {
+        "title": "Learn How to Share Feedback",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-opinion": {
+        "title": "Learn How to Share Your Opinion",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement": {
+        "title": "Learn How to Express Agreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-disagreement": {
+        "title": "Learn How to Express Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-concerns": {
+        "title": "Learn How to Express Concerns",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-decisions-based-on-comparisons": {
+        "title": "Learn How to Express Decisions Based on Comparisons",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-modal-verbs": {
+        "title": "Learn How to Use Modal Verbs",
+        "intro": ["", ""]
+      },
+      "learn-how-to-manage-a-conversation": {
+        "title": "Learn How to Manage a Conversation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-misunderstandings": {
+        "title": "Learn How to Clarify Misunderstandings",
+        "intro": ["", ""]
+      },
+      "learn-about-speculation-and-requests": {
+        "title": "Learn About Speculation and Requests",
+        "intro": ["", ""]
+      },
+      "learn-about-adverbial-phrases": {
+        "title": "Learn About Adverbial Phrases",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-adjectives-in-conversations": {
+        "title": "Learn How to Use Adjectives in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-determiners-and-advanced-use-of-articles": {
+        "title": "Learn Determiners and Advanced Use of Articles",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-reported-speech": {
+        "title": "Learn How to Use Reported Speech",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-prepositions-according-to-context": {
+        "title": "Learn How to Use Prepositions According to Context",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-numbers-with-a-coworker": {
+        "title": "Learn How to Talk About Numbers with a Coworker",
+        "intro": ["", ""]
+      },
+      "learn-common-phrasal-verbs-and-idioms": {
+        "title": "Learn Common Phrasal Verbs and Idioms",
         "intro": ["", ""]
       }
     }

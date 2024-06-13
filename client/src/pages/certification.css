@@ -135,13 +135,9 @@
 .certification-namespace .information {
   height: 380px;
   text-align: center;
-}
-
-.certification-namespace .information-container {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .certification-namespace p {
@@ -151,6 +147,7 @@
 .certification-namespace h3 {
   font-size: 25px;
   font-weight: normal;
+  line-height: 1.1;
 }
 
 .certification-namespace h4 {
@@ -160,6 +157,7 @@
 .certification-namespace h1 {
   font-size: 45px;
   color: var(--theme-color);
+  line-height: 1.1;
 }
 
 .certification-namespace .signatures {
