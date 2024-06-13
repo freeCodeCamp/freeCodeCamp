@@ -53,21 +53,21 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 # --hints--
 
-You should have the html file link to the Javascript
+You should have the HTML file link to the JavaScript file.
 
 ```js
 const script = document.querySelector('script[data-src$="script.js"]');
 assert.isNotNull(script); 
 ```
 
-You should have a variable called `price`. 
+You should have a global variable called `price`. 
 
 ```js
 price = 10;
 assert.strictEqual(price, 10);
 ```
 
-You should have a variable called `cid`. 
+You should have a global variable called `cid`. 
 
 ```js
 cid = []; 
