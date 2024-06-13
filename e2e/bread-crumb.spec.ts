@@ -34,12 +34,17 @@ test.describe('Challenge Breadcrumb Tests', () => {
       );
     };
 
-    if (isMobile) {
-      await expect(page.getByTestId('breadcrumb-desktop')).toBeHidden();
-      await breadcrumbTest('breadcrumb-mobile');
-    } else {
+    if (!isMobile) {
       await expect(page.getByTestId('breadcrumb-mobile')).toBeHidden();
       await breadcrumbTest('breadcrumb-desktop');
+
+      await page.setViewportSize({
+        width: 766,
+        height: 1080
+      });
     }
+
+    await expect(page.getByTestId('breadcrumb-desktop')).toBeHidden();
+    await breadcrumbTest('breadcrumb-mobile');
   });
 });
