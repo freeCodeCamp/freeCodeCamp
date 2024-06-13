@@ -29,7 +29,7 @@ Note that the area code is required. Також, якщо надано теле�
 1. You should have an `input` element with an `id` of `"user-input"`
 1. You should have a `button` element with an `id` of `"check-btn`
 1. You should have a `button` element with an `id` of `"clear-btn"`
-1. You should have a `div` element with an `id` of `"results-div"`
+1. You should have a `div`, `span` or `p` element with an `id` of `"results-div"`
 1. When you click on the `#check-btn` element without entering a value into the `#user-input` element, an alert should appear with the text `"Please provide a phone number"`
 1. Якщо натиснути на елемент `#clear-btn`, то вміст елемента `#results-div` буде видалено
 1. When the `#user-input` element contains `1 555-555-5555` and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Valid US number: 1 555-555-5555"`
@@ -86,11 +86,11 @@ const el = document.getElementById('clear-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `"results-div"`.
+You should have a `div`, `span`, or `p` element with an `id` of `"results-div"`.
 
 ```js
 const el = document.getElementById('results-div');
-assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
+assert(['div', 'span', 'p'].includes(el?.nodeName?.toLowerCase()));
 ```
 
 When you click on the `#check-btn` element without entering a value into the `#user-input` element, an alert should appear with the text `"Please provide a phone number"`.
@@ -127,6 +127,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '1 555-555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: 1 555-555-5555');
 ```
@@ -140,6 +141,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '1 (555) 555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: 1 (555) 555-5555');
 ```
@@ -153,6 +155,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '5555555555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: 5555555555');
 ```
@@ -166,6 +169,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '555-555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: 555-555-5555');
 ```
@@ -179,6 +183,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '(555)555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: (555)555-5555');
 ```
@@ -192,6 +197,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '1(555)555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: 1(555)555-5555');
 ```
@@ -205,6 +211,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 555-5555');
 ```
@@ -218,6 +225,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '5555555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 5555555');
 ```
@@ -231,6 +239,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '1 555)555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 1 555)555-5555');
 ```
@@ -244,6 +253,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '1 555 555 5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: 1 555 555 5555');
 ```
@@ -257,6 +267,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '1 456 789 4444';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'valid us number: 1 456 789 4444');
 ```
@@ -270,6 +281,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '123**&!!asdf#';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 123**&!!asdf#');
 ```
@@ -283,6 +295,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '55555555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 55555555');
 ```
@@ -296,6 +309,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '(6054756961)';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: (6054756961)');
 ```
@@ -309,6 +323,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '2 (757) 622-7382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 2 (757) 622-7382');
 ```
@@ -322,6 +337,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '0 (757) 622-7382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 0 (757) 622-7382');
 ```
@@ -335,6 +351,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '-1 (757) 622-7382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: -1 (757) 622-7382');
 ```
@@ -348,6 +365,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '2 757 622-7382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 2 757 622-7382');
 ```
@@ -361,6 +379,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '10 (757) 622-7382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 10 (757) 622-7382');
 ```
@@ -374,6 +393,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '27576227382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 27576227382');
 ```
@@ -387,6 +407,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '(275)76227382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: (275)76227382');
 ```
@@ -400,6 +421,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '2(757)6227382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 2(757)6227382');
 ```
@@ -413,6 +435,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '2(757)622-7382';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 2(757)622-7382');
 ```
@@ -426,6 +449,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '555)-555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 555)-555-5555');
 ```
@@ -439,6 +463,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '(555-555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: (555-555-5555');
 ```
@@ -452,6 +477,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '(555)5(55?)-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: (555)5(55?)-5555');
 ```
@@ -465,6 +491,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '55 55-55-555-5';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 55 55-55-555-5');
 ```
@@ -478,6 +505,7 @@ const resultsDiv = document.getElementById('results-div');
 
 resultsDiv.innerHTML = '';
 userInput.value = '11 555-555-5555';
+userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 11 555-555-5555');
 ```

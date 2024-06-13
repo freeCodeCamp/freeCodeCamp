@@ -1,7 +1,7 @@
 FROM node:20-bookworm AS builder
 # global installs need root permissions, so have to happen before we switch to
 # the node user
-RUN npm i -g pnpm@8
+RUN npm i -g pnpm@9
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
@@ -40,7 +40,7 @@ COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node api-server/package.json api-server/package.json
 COPY --chown=node:node shared/package.json shared/package.json
 
-RUN npm i -g pnpm@8
+RUN npm i -g pnpm@9
 # Prevent pnpm installing unnecessary packages (see above)
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm -F=api-server -F=shared install --prod --ignore-scripts

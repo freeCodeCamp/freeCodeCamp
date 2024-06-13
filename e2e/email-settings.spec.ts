@@ -1,15 +1,24 @@
+import { execSync } from 'child_process';
+
 import { test, expect } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
 
 const settingsPageElement = {
   emailVerificationAlert: 'email-verification-alert',
   emailVerificationLink: 'email-verification-link',
-  flashMessageAlert: 'flash-message'
+  flashMessageAlert: 'flash-message',
+  newEmailValidation: 'new-email-validation',
+  confirmEmailValidation: 'confirm-email-validation'
 } as const;
+
+const originalEmail = 'foo@bar.com';
+const newEmail = 'foo-update@bar.com';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
+  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   await page.goto('/settings');
 });
 
@@ -19,7 +28,7 @@ test.describe('Email Settings', () => {
       page.getByRole('heading', { name: translations.settings.email.heading })
     ).toBeVisible();
 
-    await expect(page.getByText('foo@bar.com')).toBeVisible();
+    await expect(page.getByText(originalEmail)).toBeVisible();
 
     await expect(
       page.getByRole('button', {
@@ -49,16 +58,15 @@ test.describe('Email Settings', () => {
   test('should display email verification alert after email update', async ({
     page
   }) => {
-    const newEmailAddress = 'foo-update@bar.com';
-
+    const flashMessageAlert = page.getByTestId(
+      settingsPageElement.flashMessageAlert
+    );
     // Need exact match as there are "New email" and "Confirm new email" labels
     await page
       .getByLabel(translations.settings.email.new, { exact: true })
-      .fill(newEmailAddress);
+      .fill(newEmail);
 
-    await page
-      .getByLabel(translations.settings.email.confirm)
-      .fill(newEmailAddress);
+    await page.getByLabel(translations.settings.email.confirm).fill(newEmail);
 
     await page
       .getByRole('button', {
@@ -66,9 +74,10 @@ test.describe('Email Settings', () => {
       })
       .click();
 
-    await expect(
-      page.getByTestId(settingsPageElement.flashMessageAlert)
-    ).toBeVisible();
+    await expect(flashMessageAlert).toBeVisible();
+    await expect(flashMessageAlert).toContainText(
+      'Check your email and click the link we sent you to confirm your new email address.'
+    );
 
     await page.reload();
     await expect(
@@ -81,6 +90,38 @@ test.describe('Email Settings', () => {
     await expect(emailVerificationLink).toHaveAttribute(
       'href',
       '/update-email'
+    );
+  });
+
+  test('should show the user error messages if the input is invalid', async ({
+    page
+  }) => {
+    const newEmailInput = page.getByLabel(translations.settings.email.new, {
+      exact: true
+    });
+    const confirmEmailInput = page.getByLabel(
+      translations.settings.email.confirm
+    );
+    const confirmValidation = page.getByTestId(
+      settingsPageElement.confirmEmailValidation
+    );
+    const newEmailValidation = page.getByTestId(
+      settingsPageElement.newEmailValidation
+    );
+
+    await newEmailInput.fill(newEmail);
+    await confirmEmailInput.fill(originalEmail);
+
+    await expect(confirmValidation).toBeVisible();
+    await expect(confirmValidation).toContainText(
+      translations.validation['email-mismatch']
+    );
+
+    await newEmailInput.fill(originalEmail);
+
+    await expect(newEmailValidation).toBeVisible();
+    await expect(newEmailValidation).toContainText(
+      translations.validation['same-email']
     );
   });
 

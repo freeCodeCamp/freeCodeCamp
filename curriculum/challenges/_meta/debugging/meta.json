@@ -4,9 +4,6 @@
   "dashedName": "debugging",
   "helpCategory": "JavaScript",
   "order": 3,
-  "time": "1 hour",
-  "template": "",
-  "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {

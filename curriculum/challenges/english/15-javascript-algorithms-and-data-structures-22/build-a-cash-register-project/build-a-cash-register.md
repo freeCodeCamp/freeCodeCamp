@@ -25,7 +25,7 @@ Your application should show different messages depending on the price of the it
 |    Currency Unit    |       Amount       |
 |:-------------------:|:------------------:|
 |        Penny        |    $0.01 (PENNY)   |
-|        Nickle       |   $0.05 (NICKEL)   |
+|        Nickel       |   $0.05 (NICKEL)   |
 |         Dime        |     $0.1 (DIME)    |
 |       Quarter       |   $0.25 (QUARTER)  |
 |        Dollar       |      $1 (ONE)      |
@@ -39,7 +39,7 @@ Your application should show different messages depending on the price of the it
 **User Stories:**
 
 1. You should have an `input` element with an `id` of `"cash"`
-1. You should have a `div` element with an `id` of `"change-due"`
+1. You should have a `div`, `span` or `p` element with an `id` of `"change-due"`
 1. You should have a `button` element with an `id` of `"purchase-btn"`
 1. When the value in the `#cash` element is less than `price`, an alert should appear with the text `"Customer does not have enough money to purchase the item"`
 1. When the value in the `#cash` element is equal to `price`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`
@@ -81,11 +81,11 @@ const el = document.getElementById('cash');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'input');
 ```
 
-You should have a `div` element with an `id` of `"change-due"`.
+You should have a `div`, `span`, or `p` element with an `id` of `"change-due"`.
 
 ```js
 const el = document.getElementById('change-due');
-assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
+assert(['div', 'span', 'p'].includes(el?.nodeName?.toLowerCase()));
 ```
 
 You should have a `button` element with an `id` of `"purchase-btn"`.
@@ -106,6 +106,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 price = 20;
 cashInput.value = '10';
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'customer does not have enough money to purchase the item');
 ```
@@ -120,6 +121,7 @@ const changeDueDiv = document.getElementById('change-due');
 price = 11.95;
 cashInput.value = '11.95';
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'no change due - customer paid with exact cash');
 ```
@@ -136,6 +138,7 @@ cashInput.value = 20;
 cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 const expected = ['Status: OPEN', 'QUARTER: $0.5'];
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
@@ -152,6 +155,7 @@ cashInput.value = 100;
 cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 const expected = ['Status: OPEN', 'TWENTY: $60', 'TEN: $20', 'FIVE: $15', 'ONE: $1', 'QUARTER: $0.5', 'DIME: $0.2', 'PENNY: $0.04'];
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```
@@ -167,6 +171,7 @@ price = 19.5;
 cashInput.value = 20;
 cid = [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
 ```
@@ -182,6 +187,7 @@ price = 19.5;
 cashInput.value = 20;
 cid = [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 1], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
 ```
@@ -198,6 +204,7 @@ cashInput.value = 20;
 cid = [['PENNY', 0.5], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
 
 const expected = ['Status: CLOSED', 'PENNY: $0.5'];
+cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
 ```

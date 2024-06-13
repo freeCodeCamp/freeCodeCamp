@@ -2,7 +2,6 @@
 id: 5b7d72c338cd7e35b63f3e14
 title: Mejora la compatibilidad con navegadores por medio de configuraciones de respaldo o "browser fallbacks"
 challengeType: 0
-videoUrl: ''
 forumTopicId: 301087
 dashedName: improve-compatibility-with-browser-fallbacks
 ---

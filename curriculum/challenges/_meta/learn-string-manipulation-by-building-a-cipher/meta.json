@@ -5,9 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-string-manipulation-by-building-a-cipher",
   "order": 0,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
@@ -107,111 +104,111 @@
       "title": "Step 24"
     },
     {
-      "id": "656883980318048fb11a6e3b",
+      "id": "656886ec4e4d9b96ded3c565",
       "title": "Step 25"
     },
     {
-      "id": "656884439d4d7d929d58669d",
+      "id": "65521fc818947e800bffe48a",
       "title": "Step 26"
     },
     {
-      "id": "656886ec4e4d9b96ded3c565",
+      "id": "655220953ba90d80514d7ee2",
       "title": "Step 27"
     },
     {
-      "id": "65521fc818947e800bffe48a",
+      "id": "65524d2a1a253b8bb5197ae2",
       "title": "Step 28"
     },
     {
-      "id": "655220953ba90d80514d7ee2",
+      "id": "65522255d5b9cd80f335c6f2",
       "title": "Step 29"
     },
     {
-      "id": "65524d2a1a253b8bb5197ae2",
+      "id": "65688a50e6c998a21d8e41d3",
       "title": "Step 30"
     },
     {
-      "id": "65522255d5b9cd80f335c6f2",
+      "id": "65688b5a1655a7a6caede847",
       "title": "Step 31"
     },
     {
-      "id": "65688a50e6c998a21d8e41d3",
+      "id": "6568b7a40c7ba0ccbc4b4425",
       "title": "Step 32"
     },
     {
-      "id": "65688b5a1655a7a6caede847",
+      "id": "6552487e689f6e895f658717",
       "title": "Step 33"
     },
     {
-      "id": "6568b7a40c7ba0ccbc4b4425",
+      "id": "65524b3aa6a1938a069a91ab",
       "title": "Step 34"
     },
     {
-      "id": "6552487e689f6e895f658717",
+      "id": "65524b790ba8558a2f1c9fe5",
       "title": "Step 35"
     },
     {
-      "id": "65524b3aa6a1938a069a91ab",
+      "id": "655251308f31958d06cdf267",
       "title": "Step 36"
     },
     {
-      "id": "65524b790ba8558a2f1c9fe5",
+      "id": "6568cc9301a0c41058ed95c5",
       "title": "Step 37"
     },
     {
-      "id": "655251308f31958d06cdf267",
+      "id": "6568c86dc9193000d11ca5e0",
       "title": "Step 38"
     },
     {
-      "id": "6568cc9301a0c41058ed95c5",
+      "id": "65525e359ca28d938baa82c5",
       "title": "Step 39"
     },
     {
-      "id": "6568c86dc9193000d11ca5e0",
+      "id": "655a2a7210094920069b117c",
       "title": "Step 40"
     },
     {
-      "id": "65525e359ca28d938baa82c5",
+      "id": "655261b2e1f2c197093f3993",
       "title": "Step 41"
     },
     {
-      "id": "655a2a7210094920069b117c",
+      "id": "6553980e0527fa115c705646",
       "title": "Step 42"
     },
     {
-      "id": "655261b2e1f2c197093f3993",
+      "id": "6553995f412dd8122ed38e4a",
       "title": "Step 43"
     },
     {
-      "id": "6553980e0527fa115c705646",
+      "id": "6553a755879b131a445e664c",
       "title": "Step 44"
     },
     {
-      "id": "6553995f412dd8122ed38e4a",
+      "id": "6553a7d8d05cbb1ae335a665",
       "title": "Step 45"
     },
     {
-      "id": "6553a755879b131a445e664c",
+      "id": "655619327c7b364166f8dd6f",
       "title": "Step 46"
     },
     {
-      "id": "6553a7d8d05cbb1ae335a665",
+      "id": "6553a44b1801991847d8cc69",
       "title": "Step 47"
     },
     {
-      "id": "655619327c7b364166f8dd6f",
+      "id": "6553f6b4ec51112d44d737c8",
       "title": "Step 48"
     },
     {
-      "id": "6553a44b1801991847d8cc69",
+      "id": "6553a572f7a65718f1e42e18",
       "title": "Step 49"
     },
     {
-      "id": "6553f6b4ec51112d44d737c8",
+      "id": "66605a64a9822f01ec5ae8ce",
       "title": "Step 50"
     },
     {
-      "id": "6553a572f7a65718f1e42e18",
+      "id": "666064e915eba7aa1de03f6b",
       "title": "Step 51"
     },
     {

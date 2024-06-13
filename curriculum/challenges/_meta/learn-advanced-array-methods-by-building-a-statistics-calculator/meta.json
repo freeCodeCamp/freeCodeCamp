@@ -5,12 +5,8 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-advanced-array-methods-by-building-a-statistics-calculator",
   "helpCategory": "JavaScript",
-  "order": 13,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
+  "order": 15,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
-  "superOrder": 4,
   "challengeOrder": [
     {
       "id": "635060a5c03c950f46174cb5",

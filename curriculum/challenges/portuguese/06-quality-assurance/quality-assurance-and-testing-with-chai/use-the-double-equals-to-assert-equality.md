@@ -8,7 +8,7 @@ dashedName: use-the-double-equals-to-assert-equality
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
+Lembrete, esse projeto está sendo construido conforme o seguinte projeto inicial em <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, ou clonado de <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `equal()` compara objetos usando `==`.
 
@@ -100,12 +100,3 @@ Você deve escolher o método correto para a quarta afirmação - `equal` ou `no
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

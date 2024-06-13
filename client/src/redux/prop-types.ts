@@ -116,6 +116,7 @@ export type Characters =
   | 'Brian'
   | 'Candidate'
   | 'David'
+  | 'Delivery Man'
   | 'Expert'
   | 'Jake'
   | 'James'
@@ -223,7 +224,6 @@ export type ChallengeNode = {
     tail: string[];
     template: string;
     tests: Test[];
-    time: string;
     title: string;
     translationPending: boolean;
     url: string;
@@ -422,7 +422,7 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries?: number[];
   usesMultifileEditor?: boolean;
-  error: null | string;
+  error?: unknown;
   head: string;
   tail: string;
   seed: string;

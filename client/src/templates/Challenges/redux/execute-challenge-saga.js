@@ -117,6 +117,8 @@ export function* executeChallengeSaga({ payload }) {
 
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
+    // The buildData is used even if there are build errors, so that lessons
+    // with syntax errors can be tested.
     const buildData = yield buildChallengeData(challengeData, {
       preview: false,
       disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
@@ -270,6 +272,10 @@ export function* previewChallengeSaga(action) {
         disableLoopProtectTests: challengeMeta.disableLoopProtectTests,
         disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview
       });
+      // If there's an error building the challenge then throwing it here will
+      // let the user know there's a problem.
+      if (buildData.error) throw buildData.error;
+
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');

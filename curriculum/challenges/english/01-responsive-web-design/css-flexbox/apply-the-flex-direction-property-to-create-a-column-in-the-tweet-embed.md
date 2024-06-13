@@ -93,7 +93,7 @@ assert($('.profile-name').css('flex-direction') == 'column');
   }
 </style>
 <header>
-  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -186,7 +186,7 @@ assert($('.profile-name').css('flex-direction') == 'column');
   }
 </style>
 <header>
-  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>

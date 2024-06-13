@@ -14,7 +14,7 @@ dashedName: regular-expressions-matching-and-extracting-data
 
 ## --text--
 
-What will the following program print?:
+Що надрукує на екрані дана програма?
 
 ```python
 import re

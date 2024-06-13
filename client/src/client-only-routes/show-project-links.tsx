@@ -92,7 +92,6 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     return (
       <SolutionDisplayWidget
         completedChallenge={completedProject}
-        dataCy={`${projectTitle} solution`}
         projectTitle={projectTitle}
         displayContext='certification'
         showUserCode={showUserCode}
@@ -138,12 +137,12 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <>
         {projects.map(({ link, title, id }) => (
           <tr key={id}>
-            <td>
+            <td className='col-xs-8'>
               <Link to={link}>
                 {t(`certification.projects.title.${title}`, title)}
               </Link>
             </td>
-            <td colSpan={2}>{getProjectSolution(id, title)}</td>
+            <td className='col-xs-4'>{getProjectSolution(id, title)}</td>
           </tr>
         ))}
       </>

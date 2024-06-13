@@ -362,66 +362,66 @@
         "intro": [
           "La programmazione funzionale è un approccio popolare allo sviluppo del software. Nella programmazione funzionale, gli sviluppatori organizzano il codice in funzioni semplici che combinano per costruire programmi complessi.",
           "In this spreadsheet application project, you'll learn about parsing and evaluating mathematical expressions, implementing spreadsheet functions, handling cell references, and creating interactive web interfaces. You'll learn how to dynamically update the page based on user input.",
-          "Questo progetto tratterà concetti come l metodi <code>map()</code>, <code>find()</code>, <code>parseInt()</code> e <code>includes()</code>."
+          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, and <code>includes()</code> methods and the <code>parseInt()</code> function."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
-          "This project will cover concepts like switch statements, default parameters, <code>Object.freeze()</code>, the <code>map()</code> method, and more."
+          "Questo progetto tratterà concetti come istruzioni switch, parametri predefiniti, <code>Object.freeze()</code>, il metodo <code>map()</code> e altro."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
         "title": "Learn Advanced Array Methods by Building a Statistics Calculator",
         "intro": [
-          "As you expand your JavaScript skills, you'll want to get comfortable with array manipulation methods, such as <code>map()</code>, <code>reduce()</code>, and <code>filter()</code>.",
-          "In this statistics calculator project, you'll gain experience with handling user input, DOM manipulation, and method chaining. You'll get practice by performing statistical calculations like mean, median, mode, variance, and standard deviation."
+          "Man mano che accresci le tua abilità con JavaScript, è bene che tu sia a tuo agio con metodi di manipolazione degli array come <code>map()</code>, <code>reduce()</code> e <code>filter()</code>.",
+          "In questo progetto di una calcolatrice statistica, acquisirai esperienza con la gestione degli input utente, la manipolazione del DOM e il concatenamento dei metodi. Farai pratica eseguendo calcoli statistici come media, mediana, moda, varianza e deviazione standard."
         ]
       },
       "learn-basic-oop-by-building-a-shopping-cart": {
-        "title": "Learn Basic OOP by Building a Shopping Cart",
+        "title": "Impara OOP di Base Costruendo un Carrello degli Acquisti",
         "intro": [
-          "OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, developers use objects and classes to structure their code.",
-          "In this shopping cart project, you'll learn how to define classes and use them. You'll create class instances and implement methods for data manipulation.",
-          "This project will cover concepts like the ternary operator, the spread operator, the <code>this</code> keyword, and more."
+          "La Programmazione Orientata agli Oggetti (Object Oriented Programming, OOP), è uno dei principali approcci al processo di sviluppo del software. In OOP, gli sviluppatori utilizzano oggetti e classi per strutturare il proprio codice.",
+          "In questo progetto di un carrello degli acquisti, imparerai come definire le classi e usarle. Creerai istanze di una classe e implementerai metodi per la manipolazione dei dati.",
+          "Questo progetto tratterà concetti come l'operatore ternario, l'operatore spread, la parola chiave <code>this</code> e altro ancora."
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
         "title": "Learn Fetch and Promises by Building an fCC Authors Page",
         "intro": [
-          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
-          "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
-          "This project will also teach you how to paginate your data so you can load results in batches."
+          "Un aspetto comune dello sviluppo web è imparare a recuperare i dati da un'API esterna, quindi lavorare con JavaScript asincrono.",
+          "Questo progetto della pagina degli autori freeCodeCamp ti mostrerà come usare il metodo fetch, per poi aggiornare dinamicamente il DOM per visualizzare i dati recuperati.",
+          "Questo progetto ti insegnerà anche come impaginare i tuoi dati in modo da poter caricare i risultati in gruppi."
         ]
       },
       "learn-regular-expressions-by-building-a-spam-filter": {
         "title": "Learn Regular Expressions by Building a Spam Filter",
         "intro": [
           "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
-          "In this spam filter project, you'll learn about capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+          "In questo progetto di un filtro anti-spam, conoscerai gruppi di acquisizione, lookahead positivi, lookahead negativi e altre tecniche per trovare qualsiasi testo desideri."
         ]
       },
       "learn-basic-algorithmic-thinking-by-building-a-number-sorter": {
-        "title": "Learn Basic Algorithmic Thinking by Building a Number Sorter",
+        "title": "Impara il Pensiero Algoritmico di Base Costruendo un Ordinatore di Numeri",
         "intro": [
-          "In computer science, there are fundamental sorting algorithms that all developers should learn. In this number sorter project, you'll learn how to implement and visualize different sorting algorithms like bubble sort, selection sort, and insertion sort – all with JavaScript.",
-          "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
+          "In informatica, ci sono algoritmi di ordinamento fondamentali che tutti gli sviluppatori dovrebbero imparare. In questo progetto di un ordinatore di numeri, imparerai come implementare e visualizzare diversi algoritmi di ordinamento come bubble sort, selection sort e insertion sort – tutto con JavaScript.",
+          "Questo progetto ti aiuterà a capire i concetti fondamentali alla base di questi algoritmi e come applicarli per ordinare dati numerici in applicazioni web."
         ]
       },
       "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "title": "Impara il Pensiero Algoritmico Intermedio Costruendo un Gioco di Dadi",
         "intro": [
-          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
-          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
-          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+          "Il pensiero algoritmico comporta la capacità di suddividere i problemi complessi in una serie di istruzioni sequenziali ben definite.",
+          "In questo progetto di un gioco di dadi, imparerai come gestire lo stato del gioco, implementare la logica di gioco per il lancio dei dadi, segnare il punteggio e applicare le regole per varie combinazioni.",
+          "Questo progetto tratta concetti come gestione di eventi, manipolazione di array, logica condizionale e aggiornamento dinamico dell'interfaccia utente in base allo stato del gioco."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
-        "title": "Learn Intermediate OOP by Building a Platformer Game",
+        "title": "Impara OOP Intermedia Costruendo un Videogioco a Piattaforme",
         "intro": [
-          "Coding a game is a great way to grasp fundamental programming principles, while also creating an interactive gaming experience.",
-          "In this platformer game project, you'll continue to learn about classes, objects, inheritance, and encapsulation. You'll also learn how to design and organize game elements efficiently and gain insights into problem-solving and code reusability."
+          "Programmare un gioco è un ottimo modo per cogliere i principi fondamentali della programmazione, creando al contempo un'esperienza di gioco interattiva.",
+          "In questo progetto di un videogioco a piattaforme continuerai a conoscere classi, oggetti, ereditarietà e incapsulamento. Imparerai anche come progettare e organizzare gli elementi di gioco in modo efficiente e acquisire conoscenze su problem solving e riutilizzabilità del codice."
         ]
       },
       "learn-localstorage-by-building-a-todo-app": {
@@ -471,6 +471,20 @@
         "intro": [
           "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
           "This will give you an opportunity to solve small problems and get a better understanding of the basics."
+        ]
+      },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       }
     }
@@ -840,10 +854,48 @@
           "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
         ]
       },
-      "scientific-computing-with-python-projects": {
-        "title": "Progetti di Calcolo scientifico con Python",
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
         "intro": [
-          "It's time to put your Python skills to the test. By completing these projects, you'll demonstrate that you have a strong foundational knowledge of Python. And you'll qualify for freeCodeCamp's Scientific Computing with Python Certification."
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-budget-app-project": {
+        "title": "Build a Budget App Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+        "intro": [
+          "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
+          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
         ]
       }
     }
@@ -921,7 +973,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow è un framework open source che rende l'apprendimento automatico e le reti neurali più facile da usare.",
           "Il seguente video corso è stato creato da Tim Ruscica, noto anche come “Tech With Tim”. Ti aiuterà a capire TensorFlow e alcune delle sue potenti capacità."
@@ -1213,6 +1265,10 @@
         "intro": [
           "Put your JavaScript skills to the test by building basic functions."
         ]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Learn Arrays and Loops",
+        "intro": ["Learn about arrays and loops in JavaScript."]
       }
     }
   },
@@ -1388,39 +1444,57 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Learn How to Have a Conversation About Preferences and Motivations",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "Learn How to Discuss Popular Trends in Technology",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "Learn How to Clarify Information in Different Interactions",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
-        "intro": ["", ""]
+        "intro": [
+          "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
+        ]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Learn How to Use Code-related Concepts and Terms",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
+        ]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Learn How to Discuss Tech Trends and Updates",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
+        ]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
+        ]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
+        ]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Learn How to Ask for Clarification on Code Understanding",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
+        ]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Learn How to Document Code for a Project",
@@ -1439,7 +1513,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk About Updates and Plans for Tasks and Projects",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
@@ -1456,6 +1530,109 @@
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Learn How to Provide Explanations When Helping Others",
+        "intro": ["", ""]
+      }
+    }
+  },
+  "b1-english-for-developers": {
+    "title": "B1 English for Developers (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-how-to-describe-places-and-events": {
+        "title": "Learn How to Describe Places and Events",
+        "intro": [""]
+      },
+      "learn-how-to-talk-about-past-experiences": {
+        "title": "Learn How to Talk About Past Experiences",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-past-activities": {
+        "title": "Learn How to Talk About Past Activities",
+        "intro": ["", ""]
+      },
+      "learn-present-perfect-while-talking-about-accessibility": {
+        "title": "Learn Present Perfect while Talking About Accessibility",
+        "intro": ["", ""]
+      },
+      "learn-how-to-plan-future-events": {
+        "title": "Learn How to Plan Future Events",
+        "intro": ["", ""]
+      },
+      "learn-future-continuous-while-describing-actions": {
+        "title": "Learn Future Continuous while Describing Actions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-conditionals": {
+        "title": "Learn How to Use Conditionals",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-feedback": {
+        "title": "Learn How to Share Feedback",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-opinion": {
+        "title": "Learn How to Share Your Opinion",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement": {
+        "title": "Learn How to Express Agreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-disagreement": {
+        "title": "Learn How to Express Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-concerns": {
+        "title": "Learn How to Express Concerns",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-decisions-based-on-comparisons": {
+        "title": "Learn How to Express Decisions Based on Comparisons",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-modal-verbs": {
+        "title": "Learn How to Use Modal Verbs",
+        "intro": ["", ""]
+      },
+      "learn-how-to-manage-a-conversation": {
+        "title": "Learn How to Manage a Conversation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-misunderstandings": {
+        "title": "Learn How to Clarify Misunderstandings",
+        "intro": ["", ""]
+      },
+      "learn-about-speculation-and-requests": {
+        "title": "Learn About Speculation and Requests",
+        "intro": ["", ""]
+      },
+      "learn-about-adverbial-phrases": {
+        "title": "Learn About Adverbial Phrases",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-adjectives-in-conversations": {
+        "title": "Learn How to Use Adjectives in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-determiners-and-advanced-use-of-articles": {
+        "title": "Learn Determiners and Advanced Use of Articles",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-reported-speech": {
+        "title": "Learn How to Use Reported Speech",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-prepositions-according-to-context": {
+        "title": "Learn How to Use Prepositions According to Context",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-numbers-with-a-coworker": {
+        "title": "Learn How to Talk About Numbers with a Coworker",
+        "intro": ["", ""]
+      },
+      "learn-common-phrasal-verbs-and-idioms": {
+        "title": "Learn Common Phrasal Verbs and Idioms",
         "intro": ["", ""]
       }
     }

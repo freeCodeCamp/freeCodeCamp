@@ -1,6 +1,6 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Step 26
+title: Etapa 26
 challengeType: 0
 dashedName: step-26
 ---

@@ -75,9 +75,11 @@ export default function StripeCardForm({
   }
 
   const options = {
+    // Ref: https://docs.stripe.com/js/appendix/style
     style: {
       base: {
         fontSize: '18px',
+        fontFamily: 'Lato, sans-serif',
         color: `${theme === Themes.Night ? '#fff' : '#0a0a23'}`,
         '::placeholder': {
           color: `#858591`
