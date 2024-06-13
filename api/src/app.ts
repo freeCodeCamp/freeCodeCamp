@@ -106,7 +106,18 @@ export const build = async (
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(express);
   if (SENTRY_DSN) {
-    await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
+    await fastify.register(fastifySentry, {
+      dsn: SENTRY_DSN,
+      errorResponse: (_error, _request, reply) => {
+        void reply.code(500).send({
+          // TODO: use flash message: 'flash.went-wrong' after checking the
+          // client always understands it.
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        });
+      }
+    });
   }
 
   await fastify.register(cors);
