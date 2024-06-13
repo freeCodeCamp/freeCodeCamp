@@ -34,7 +34,7 @@ A(8, 1), B(1, -8), C(-4, 7)<br>
 A(2, 9), B(9, -2), C(-6, -7)<br>
 A(9, 2), B(2, -9), C(-6, 7)<br>
       </td>
-      <td><img alt="nine triangles ABC with perimeter ≤ 50" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-centres.gif" style="background-color: white; padding: 10px; display: block; margin-right:auto; margin-left: auto;"></td>
+      <td><img alt="nine triangles ABC with perimeter ≤ 50" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-centres.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;"></td>
     </tr>
   </tbody>
 </table>
