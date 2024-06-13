@@ -64,7 +64,7 @@ assert.equal(divBGColor, 'red');
 assert.equal(divColor, 'white');
 ```
 
-Your `div` element should have, `font-weight` set to `bold`, `font-size` set to `32px`, and `text-align` set to `center`.
+Your `div` element should have `font-weight` set to `bold`, `font-size` set to `32px`, and `text-align` set to `center`.
 
 ```js
 const divStyle = new __helpers.CSSHelp(document).getStyle('div');
