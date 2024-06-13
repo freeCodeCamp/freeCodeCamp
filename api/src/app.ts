@@ -111,14 +111,18 @@ export const build = async (
     // No need to initialize if DSN is not provided (e.g. in development and
     // test environments)
     skipInit: !!SENTRY_DSN,
-    errorResponse: (_error, _request, reply) => {
-      void reply.code(500).send({
-        // TODO: use flash message: 'flash.went-wrong' after checking the
-        // client always understands it.
-        message:
-          'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
-        type: 'danger'
-      });
+    errorResponse: (error, _request, reply) => {
+      if (reply.statusCode === 500) {
+        void reply.send({
+          // TODO: use flash message: 'flash.went-wrong' after checking the
+          // client always understands it.
+          message:
+            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          type: 'danger'
+        });
+      } else {
+        void reply.send(error);
+      }
     }
   });
 
