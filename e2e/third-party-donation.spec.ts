@@ -6,25 +6,23 @@ test.describe('third-party donation tests', () => {
     await page.goto('/donate');
   });
 
-  test('Should have a donation button', async ({ page }) => {
+  test('The donation widget should have four donation options and donation button', async ({
+    page
+  }) => {
     await expect(
       page.getByRole('button', { name: 'Donate', exact: true })
     ).toBeVisible();
-  });
 
-  test('The donation widget should have four donation options', async ({
-    page
-  }) => {
-    await expect(page.locator('#radix-4-trigger-500')).toBeVisible();
-    await expect(page.locator('#radix-4-trigger-1000')).toBeVisible();
-    await expect(page.locator('#radix-4-trigger-2000')).toBeVisible();
-    await expect(page.locator('#radix-4-trigger-4000')).toBeVisible();
+    await expect(page.getByRole('tab', { name: '$5' })).toBeVisible();
+    await expect(page.getByRole('tab', { name: '$10' })).toBeVisible();
+    await expect(page.getByRole('tab', { name: '$20' })).toBeVisible();
+    await expect(page.getByRole('tab', { name: '$40' })).toBeVisible();
   });
 
   test('The donation widget should let you know what you"ll support per donation value', async ({
     page
   }) => {
-    await page.locator('#radix-4-trigger-500').click();
+    await page.getByRole('tab', { name: '$5' }).click();
     await expect(page.getByTestId('donation-tier-selector')).toContainText(
       'Confirm your donation of $5 / month:'
     );
@@ -32,7 +30,7 @@ test.describe('third-party donation tests', () => {
       'Your $5 donation will provide 250 hours of learning to people around the world each month.'
     );
 
-    await page.locator('#radix-4-trigger-1000').click();
+    await page.getByRole('tab', { name: '$10' }).click();
     await expect(page.getByTestId('donation-tier-selector')).toContainText(
       'Confirm your donation of $10 / month:'
     );
@@ -40,7 +38,7 @@ test.describe('third-party donation tests', () => {
       'Your $10 donation will provide 500 hours of learning to people around the world each month.'
     );
 
-    await page.locator('#radix-4-trigger-2000').click();
+    await page.getByRole('tab', { name: '$20' }).click();
     await expect(page.getByTestId('donation-tier-selector')).toContainText(
       'Confirm your donation of $20 / month:'
     );
@@ -48,7 +46,7 @@ test.describe('third-party donation tests', () => {
       'Your $20 donation will provide 1,000 hours of learning to people around the world each month.'
     );
 
-    await page.locator('#radix-4-trigger-4000').click();
+    await page.getByRole('tab', { name: '$40' }).click();
     await expect(page.getByTestId('donation-tier-selector')).toContainText(
       'Confirm your donation of $40 / month:'
     );
@@ -62,7 +60,7 @@ test.describe('third-party donation tests', () => {
   }) => {
     await page.getByRole('button', { name: 'Donate', exact: true }).click();
 
-    await expect(page.getByText(' Secure donation')).toBeVisible();
+    await expect(page.getByText('Secure donation')).toBeVisible();
   });
 
   // We do NOT want to test the implementation of the third-party services
