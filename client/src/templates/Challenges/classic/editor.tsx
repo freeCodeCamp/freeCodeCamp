@@ -897,10 +897,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
 
-  function createBreadcrumb(): HTMLOListElement {
+  function createBreadcrumb(): HTMLElement {
     const { block, superBlock } = props;
-    const breadcrumb = document.createElement('ol');
-    const breadcrumbLeft = document.createElement('li'),
+    const breadcrumb = document.createElement('nav');
+    breadcrumb.setAttribute('aria-label', `${t('aria.breadcrumb-nav')}`);
+    const breadcrumbList = document.createElement('ol'),
+      breadcrumbLeft = document.createElement('li'),
       breadcrumbLeftLink = document.createElement('a'),
       breadcrumbRight = document.createElement('li'),
       breadcrumbRightLink = document.createElement('a');
@@ -912,8 +914,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
     breadcrumbLeft.appendChild(breadcrumbLeftLink);
     breadcrumbRight.appendChild(breadcrumbRightLink);
-    breadcrumb.appendChild(breadcrumbLeft);
-    breadcrumb.appendChild(breadcrumbRight);
+    breadcrumbList.appendChild(breadcrumbLeft);
+    breadcrumbList.appendChild(breadcrumbRight);
+    breadcrumb.appendChild(breadcrumbList);
 
     return breadcrumb;
   }
