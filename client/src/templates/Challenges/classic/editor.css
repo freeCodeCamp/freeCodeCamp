@@ -60,6 +60,7 @@ textarea.inputarea {
 
 .challenge-description-header {
   display: flex;
+  align-items: center;
   gap: 7px;
   margin: 0.1em 0 0.6rem;
 }

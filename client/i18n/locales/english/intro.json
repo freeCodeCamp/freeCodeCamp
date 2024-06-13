@@ -881,6 +881,13 @@
           "This is one of the required projects to claim your certification."
         ]
       },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+        "intro": [
+          "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
+          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
+        ]
+      },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
         "title": "Learn the Bisection Method by Finding the Square Root of a Number",
         "intro": [
