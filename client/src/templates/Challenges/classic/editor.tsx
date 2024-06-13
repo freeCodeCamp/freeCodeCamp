@@ -914,6 +914,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
     breadcrumbLeft.appendChild(breadcrumbLeftLink);
     breadcrumbRight.appendChild(breadcrumbRightLink);
+    breadcrumbList.setAttribute(
+      'data-playwright-test-label',
+      'breadcrumb-mobile'
+    );
     breadcrumbList.appendChild(breadcrumbLeft);
     breadcrumbList.appendChild(breadcrumbRight);
     breadcrumb.appendChild(breadcrumbList);

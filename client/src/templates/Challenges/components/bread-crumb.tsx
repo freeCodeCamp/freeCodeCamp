@@ -17,7 +17,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
       className='challenge-title-breadcrumbs'
       aria-label={t('aria.breadcrumb-nav')}
     >
-      <ol>
+      <ol data-playwright-test-label='breadcrumb-desktop'>
         <li className='breadcrumb-left'>
           <Link
             state={{ breadcrumbBlockClick: block }}
