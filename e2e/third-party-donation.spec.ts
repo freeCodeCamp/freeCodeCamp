@@ -1,8 +1,5 @@
 import { expect, test } from '@playwright/test';
 
-// In order to run this test you will need a couple of keys
-// Meaning, Paypal, Stripe and Patreon.
-
 test.describe('third-party donation tests', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(async ({ page }) => {
@@ -68,49 +65,54 @@ test.describe('third-party donation tests', () => {
     await expect(page.getByText(' Secure donation')).toBeVisible();
   });
 
-  test('It should have a Paypal and Patreon button', async ({ page }) => {
-    await page.getByRole('button', { name: 'Donate', exact: true }).click();
-    await expect(
-      page.locator('[data-paypal-smart-button-version="5.0.440"]')
-    ).toBeVisible();
-    await expect(
-      page.locator('[data-patreon-widget-type="become-patron-button"]')
-    ).toBeVisible();
-  });
+  // We do NOT want to test the implementation of the third-party services
+  // We only want to test that the buttons are there (our buttons ^) and that they are visible
+  // and that the donation widget works as expected if we do decide on testing the implementation
+  // of the third-party services this will be a good starting point
 
-  test('It is possible to donate with a card', async ({ page }) => {
-    await page.getByRole('button', { name: 'Donate', exact: true }).click();
-    await expect(page.getByText('Or donate with card')).toBeVisible();
+  // test('It should have a Paypal and Patreon button', async ({ page }) => {
+  //   await page.getByRole('button', { name: 'Donate', exact: true }).click();
+  //   await expect(
+  //     page.locator('[data-paypal-smart-button-version="5.0.440"]')
+  //   ).toBeVisible();
+  //   await expect(
+  //     page.locator('[data-patreon-widget-type="become-patron-button"]')
+  //   ).toBeVisible();
+  // });
 
-    const cardNumberIframe = page
-      .frameLocator('iframe[src*="elements-inner-card"]')
-      .nth(0);
+  // test('It is possible to donate with a card', async ({ page }) => {
+  //   await page.getByRole('button', { name: 'Donate', exact: true }).click();
+  //   await expect(page.getByText('Or donate with card')).toBeVisible();
 
-    const cardExpiryIframe = page
-      .frameLocator('iframe[src*="elements-inner-card"]')
-      .nth(1);
+  //   const cardNumberIframe = page
+  //     .frameLocator('iframe[src*="elements-inner-card"]')
+  //     .nth(0);
 
-    await cardNumberIframe
-      .locator('input[data-elements-stable-field-name="cardNumber"]')
-      .fill('4242424242424242');
+  //   const cardExpiryIframe = page
+  //     .frameLocator('iframe[src*="elements-inner-card"]')
+  //     .nth(1);
 
-    await cardExpiryIframe
-      .locator('input[data-elements-stable-field-name="cardExpiry"]')
-      .fill('1025');
+  //   await cardNumberIframe
+  //     .locator('input[data-elements-stable-field-name="cardNumber"]')
+  //     .fill('4242424242424242');
 
-    await page.getByRole('button', { name: 'Donate', exact: true }).click();
+  //   await cardExpiryIframe
+  //     .locator('input[data-elements-stable-field-name="cardExpiry"]')
+  //     .fill('1025');
 
-    await expect(page.getByRole('alert')).toBeVisible({ timeout: 10000 });
+  //   await page.getByRole('button', { name: 'Donate', exact: true }).click();
 
-    await expect(page.getByRole('alert')).toContainText(
-      'Your donations will support free technology education for people all over the world.'
-    );
-    await expect(page.getByRole('alert')).toContainText(
-      'Visit supporters page to learn about your supporter benefits.'
-    );
+  //   await expect(page.getByRole('alert')).toBeVisible({ timeout: 10000 });
 
-    await expect(
-      page.getByRole('link', { name: 'Go to Supporters Page' })
-    ).toBeVisible();
-  });
+  //   await expect(page.getByRole('alert')).toContainText(
+  //     'Your donations will support free technology education for people all over the world.'
+  //   );
+  //   await expect(page.getByRole('alert')).toContainText(
+  //     'Visit supporters page to learn about your supporter benefits.'
+  //   );
+
+  //   await expect(
+  //     page.getByRole('link', { name: 'Go to Supporters Page' })
+  //   ).toBeVisible();
+  // });
 });
