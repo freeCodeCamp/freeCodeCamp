@@ -45,7 +45,6 @@ import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
 import { Loader, Spacer } from '../helpers';
-import { SuperBlocks } from '../../../../shared/config/superblocks';
 import {
   MAX_MOBILE_WIDTH,
   EX_SMALL_VIEWPORT_HEIGHT
@@ -108,6 +107,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   pathname: string;
   showFooter?: boolean;
   isChallenge?: boolean;
+  usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
   superBlock?: string;
@@ -132,6 +132,7 @@ function DefaultLayout({
   removeFlashMessage,
   showFooter = true,
   isChallenge = false,
+  usesMultifileEditor,
   block,
   superBlock,
   theme,
@@ -141,13 +142,9 @@ function DefaultLayout({
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
   const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
-  const isMultifileEditorChallenge =
-    superBlock === SuperBlocks.RespWebDesignNew ||
-    superBlock === SuperBlocks.JsAlgoDataStructNew ||
-    superBlock === SuperBlocks.SciCompPy;
   const isProject = /project$/.test(block as string);
   const isRenderBreadcrumbOnMobile =
-    isMobileLayout && (isProject || !isMultifileEditorChallenge);
+    isMobileLayout && (isProject || !usesMultifileEditor);
   const isRenderBreadcrumb = !isMobileLayout || isRenderBreadcrumbOnMobile;
   const isExSmallViewportHeight = useMediaQuery({
     maxHeight: EX_SMALL_VIEWPORT_HEIGHT
