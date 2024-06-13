@@ -37,6 +37,9 @@ figcaption.caption {
   background-color: var(--gray-75);
   color: var(--gray-15);
   padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .as-seen-in .big-heading {
@@ -154,6 +157,8 @@ figcaption.caption {
 .testimonial-image {
   height: var(--image-size);
   width: var(--image-size);
+  /* Override the default max-width (100%) set by Tailwind */
+  max-width: var(--image-size);
 }
 
 .testimonials-footer {
