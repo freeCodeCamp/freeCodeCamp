@@ -749,7 +749,7 @@
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Something went wrong, please check and try again",
     "account-deleted": "Your account has been successfully deleted",
     "progress-reset": "Your progress has been reset",

@@ -114,10 +114,7 @@ export const build = async (
     errorResponse: (error, _request, reply) => {
       if (reply.statusCode === 500) {
         void reply.send({
-          // TODO: use flash message: 'flash.went-wrong' after checking the
-          // client always understands it.
-          message:
-            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
+          message: 'flash.generic-error',
           type: 'danger'
         });
       } else {
