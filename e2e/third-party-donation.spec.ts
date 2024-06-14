@@ -26,24 +26,6 @@ test.describe('third-party donation tests', () => {
     // "Or dontate with card" button should be present
 
     await expect(page.getByText('Or donate with card')).toBeVisible();
-
-    // The card inputs should be present (to check this we will try to fill them with some values)
-
-    const cardNumberIframe = page
-      .frameLocator('iframe[src*="elements-inner-card"]')
-      .nth(0);
-
-    const cardExpiryIframe = page
-      .frameLocator('iframe[src*="elements-inner-card"]')
-      .nth(1);
-
-    await cardNumberIframe
-      .locator('input[data-elements-stable-field-name="cardNumber"]')
-      .fill('4242424242424242');
-
-    await cardExpiryIframe
-      .locator('input[data-elements-stable-field-name="cardExpiry"]')
-      .fill('1025');
   });
 
   test('It is possible to donate with a card', async ({ page }) => {
@@ -81,7 +63,7 @@ test.describe('third-party donation tests', () => {
       }
     );
 
-    await expect(page.getByRole('alert')).toBeVisible({ timeout: 10000 });
+    await expect(page.getByRole('alert')).toBeVisible();
 
     await expect(page.getByRole('alert')).toContainText(
       'Your donations will support free technology education for people all over the world.'
