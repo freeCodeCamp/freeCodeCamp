@@ -4,6 +4,7 @@ import { AUTH0_DOMAIN } from '../utils/env';
 import prismaPlugin from '../db/prisma';
 // import cookies from './cookies';
 import { auth0Client } from './auth0';
+import redirectWithMessage from './redirect-with-message';
 
 describe('auth0 plugin', () => {
   let fastify: FastifyInstance;
@@ -12,6 +13,7 @@ describe('auth0 plugin', () => {
     fastify = Fastify();
     // TODO: Uncomment when a test fails because of the lack of it.
     // await fastify.register(cookies);
+    await fastify.register(redirectWithMessage);
     await fastify.register(auth0Client);
     await fastify.register(prismaPlugin);
   });
