@@ -9,7 +9,7 @@ import redirectWithMessage, { formatMessage } from './redirect-with-message';
 describe('auth0 plugin', () => {
   let fastify: FastifyInstance;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     fastify = Fastify();
     // TODO: Uncomment when a test fails because of the lack of it.
     // await fastify.register(cookies);
@@ -18,7 +18,7 @@ describe('auth0 plugin', () => {
     await fastify.register(prismaPlugin);
   });
 
-  afterEach(async () => {
+  afterAll(async () => {
     await fastify.close();
   });
 
