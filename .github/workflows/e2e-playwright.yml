@@ -119,12 +119,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Set freeCodeCamp Environment Variables
-        run: |
-          sed '/STRIPE/d; /PAYPAL/d; /PATREON/d;' sample.env > .env
-          echo 'STRIPE_PUBLIC_KEY=${{ secrets.STRIPE_PUBLIC_KEY }}' >> .env
-          echo 'STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}' >> .env
-          echo 'PAYPAL_CLIENT_ID=${{ secrets.PAYPAL_CLIENT_ID }}' >> .env
-          echo 'PATREON_CLIENT_ID=${{ secrets.PATREON_CLIENT_ID }}' >> .env
+        run: cp sample.env .env
 
       - name: Install and Build
         run: |
