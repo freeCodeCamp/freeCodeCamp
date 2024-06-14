@@ -6,7 +6,8 @@ import {
   API_LOCATION,
   AUTH0_CLIENT_ID,
   AUTH0_CLIENT_SECRET,
-  AUTH0_DOMAIN
+  AUTH0_DOMAIN,
+  HOME_LOCATION
 } from '../utils/env';
 
 /**
@@ -37,7 +38,26 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       callbackUri: `${API_LOCATION}/auth/auth0/callback`
     });
 
+    // TODO: use a schema to validate the query params.
     fastify.get('/auth/auth0/callback', async function (request, reply) {
+      const { error, error_description } = request.query as Record<
+        string,
+        string
+      >;
+      if (error === 'access_denied') {
+        const blockedByLaw =
+          error_description === 'Access denied from your location';
+
+        if (blockedByLaw) {
+          return reply.redirect(302, `${HOME_LOCATION}/blocked`);
+        } else {
+          return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
+            type: 'info',
+            content: error_description ?? 'Authentication failed'
+          });
+        }
+      }
+
       let token;
       try {
         token = (

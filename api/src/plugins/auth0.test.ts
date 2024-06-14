@@ -1,6 +1,6 @@
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { AUTH0_DOMAIN } from '../utils/env';
+import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 import prismaPlugin from '../db/prisma';
 // import cookies from './cookies';
 import { auth0Client } from './auth0';
@@ -111,5 +111,28 @@ describe('auth0 plugin', () => {
 
       expect(await fastify.prisma.user.count()).toBe(0);
     });
+
+    it('should block requests with "access_denied" error', async () => {
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?error=access_denied&error_description=Access denied from your location'
+      });
+
+      expect(res.statusCode).toBe(302);
+      expect(res.headers.location).toMatch(`${HOME_LOCATION}/blocked`);
+
+      const resWithoutDescription = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?error=access_denied'
+      });
+
+      expect(resWithoutDescription.statusCode).toBe(302);
+      expect(resWithoutDescription.headers.location).toMatch(
+        `${HOME_LOCATION}/learn?messages=`
+      );
+    });
+
+    // TODO: Test redirection for i18n clients. The must be a nice way to do
+    // this without duplicating all the tests.
   });
 });
