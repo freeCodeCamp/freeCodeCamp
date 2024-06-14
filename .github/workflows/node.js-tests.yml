@@ -148,8 +148,6 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:shared
-          pnpm run build:curriculum
 
       - name: Run Tests
         run: pnpm test
@@ -197,8 +195,6 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:shared
-          pnpm run build:curriculum
 
       - name: Run Tests
         run: pnpm test
@@ -248,7 +244,6 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:shared
 
       # DONT REMOVE THIS STEP.
       # TODO: Refactor and use re-usable workflow and shared artifacts

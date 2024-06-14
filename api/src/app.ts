@@ -105,9 +105,23 @@ export const build = async (
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(express);
-  if (SENTRY_DSN) {
-    await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
-  }
+
+  await fastify.register(fastifySentry, {
+    dsn: SENTRY_DSN,
+    // No need to initialize if DSN is not provided (e.g. in development and
+    // test environments)
+    skipInit: !!SENTRY_DSN,
+    errorResponse: (error, _request, reply) => {
+      if (reply.statusCode === 500) {
+        void reply.send({
+          message: 'flash.generic-error',
+          type: 'danger'
+        });
+      } else {
+        void reply.send(error);
+      }
+    }
+  });
 
   await fastify.register(cors);
   await fastify.register(cookies);
