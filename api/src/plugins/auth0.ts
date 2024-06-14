@@ -1,16 +1,13 @@
 import fastifyOauth2 from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import jwt from 'jsonwebtoken';
 import fp from 'fastify-plugin';
 
 import {
   API_LOCATION,
   AUTH0_CLIENT_ID,
   AUTH0_CLIENT_SECRET,
-  AUTH0_DOMAIN,
-  JWT_SECRET
+  AUTH0_DOMAIN
 } from '../utils/env';
-import { getRedirectParams } from '../utils/redirection';
 
 /**
  * Fastify plugin for Auth0 authentication. This uses fastify-plugin to expose
@@ -37,13 +34,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       },
       startRedirectPath: '/signin',
       discovery: { issuer: `https://${AUTH0_DOMAIN}` },
-      callbackUri: `${API_LOCATION}/auth/auth0/callback`,
-      generateStateFunction: request => {
-        return jwt.sign(getRedirectParams(request), JWT_SECRET);
-      },
-      checkStateFunction: (_state, callback) => {
-        return callback(new Error('Not implemented'));
-      }
+      callbackUri: `${API_LOCATION}/auth/auth0/callback`
     });
 
     fastify.get('/auth/auth0/callback', async function (request, reply) {
@@ -53,11 +44,13 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           await this.auth0OAuth.getAccessTokenFromAuthorizationCodeFlow(request)
         ).token;
       } catch (error) {
-        const uri = await fastify.auth0OAuth.generateAuthorizationUri(
-          request,
-          reply
-        );
-        return reply.redirect(302, uri);
+        // This is the plugin's error message. If it changes, we will either
+        // have to update the test or write custom state create/verify
+        // functions.
+        if (error instanceof Error && error.message === 'Invalid state') {
+          fastify.log.error('Auth failed: invalid state');
+        }
+        return reply.redirect(302, '/signin');
       }
 
       // TODO: use userinfo.email to find or create a user

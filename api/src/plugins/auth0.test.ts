@@ -1,7 +1,6 @@
 import Fastify, { FastifyInstance } from 'fastify';
-import jwt from 'jsonwebtoken';
 
-import { AUTH0_DOMAIN, JWT_SECRET } from '../utils/env';
+import { AUTH0_DOMAIN } from '../utils/env';
 // import cookies from './cookies';
 import { auth0Client } from './auth0';
 
@@ -31,28 +30,6 @@ describe('auth0 plugin', () => {
       expect(redirectUrl.pathname).toBe('/authorize');
       expect(res.statusCode).toBe(302);
     });
-
-    it('should add the returnTo, origin and pathPrefix to the state', async () => {
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/signin',
-        headers: {
-          Referer: 'https://www.freecodecamp.org/espanol/settings'
-        }
-      });
-
-      const redirectUrl = new URL(res.headers.location!);
-      const stateParam = redirectUrl.searchParams.get('state');
-      const state = jwt.verify(stateParam as string, JWT_SECRET) as Record<
-        string,
-        string
-      >;
-      expect(state.returnTo).toBe(
-        'https://www.freecodecamp.org/espanol/settings'
-      );
-      expect(state.origin).toBe('https://www.freecodecamp.org');
-      expect(state.pathPrefix).toBe('espanol');
-    });
   });
 
   describe('GET /auth/auth0/callback', () => {
@@ -65,7 +42,11 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('should redirect to auth0 if authentication fails', async () => {
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
+    it('should redirect to /signin if authentication fails', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
         'any error'
       );
@@ -75,11 +56,47 @@ describe('auth0 plugin', () => {
         url: '/auth/auth0/callback'
       });
 
-      const redirectUrl = new URL(res.headers.location!);
-      expect(redirectUrl.host).toMatch(AUTH0_DOMAIN);
+      expect(res.headers.location).toMatch('/signin');
       expect(res.statusCode).toBe(302);
     });
 
-    it('should log an error if the state is invalid', async () => {});
+    it('should redirect to the /signin if the state is invalid', async () => {
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(res.headers.location).toMatch('/signin');
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should log an error if the state is invalid', async () => {
+      jest.spyOn(fastify.log, 'error');
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        'Auth failed: invalid state'
+      );
+      expect(res.statusCode).toBe(302);
+    });
+
+    // TODO(Post-MVP): Expand the logging.
+    it('should not log errors if the state is valid', async () => {
+      jest.spyOn(fastify.log, 'error');
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        'any other error'
+      );
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=doesnt-matter' // state is not checked
+        // because the spy is mocking the method
+      });
+
+      expect(fastify.log.error).not.toHaveBeenCalled();
+      expect(res.statusCode).toBe(302);
+    });
   });
 });
