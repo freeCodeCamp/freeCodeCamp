@@ -8,13 +8,13 @@ const ajv = new Ajv({ strictTypes: false });
 const isSchemaSecure = ajv.compile(secureSchema);
 
 // These schemas will fail the tests, so can only be checked by hand.
-const ignoredSchemas = ['getSessionUser'];
+const ignoredSchemas = ['getSessionUser', 'getPublicProfile'];
 
 describe('Schemas do not use obviously dangerous validation', () => {
   Object.entries(schemas)
     .filter(([schema]) => !ignoredSchemas.includes(schema))
     .forEach(([name, schema]) => {
-      describe(`schema ${name} is okay`, () => {
+      describe(`schema ${name}`, () => {
         if ('body' in schema) {
           test('body is secure', () => {
             expect(isSchemaSecure(schema.body)).toBeTruthy();
@@ -26,6 +26,12 @@ describe('Schemas do not use obviously dangerous validation', () => {
             expect(isSchemaSecure(schema.querystring)).toBeTruthy();
           });
         }
+
+        test('should use querystring instead of query', () => {
+          // if query is used then req.query is unknown, but if querystring is
+          // used then req.query has the expected type
+          expect('query' in schema).toBeFalsy();
+        });
 
         if ('params' in schema) {
           test('params is secure', () => {

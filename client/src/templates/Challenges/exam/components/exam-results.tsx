@@ -95,7 +95,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
       </div>
       <Spacer size='medium' />
       <Spacer size='medium' />
-      <div className='exam-results-buttons'>
+      <div>
         <Button
           block={true}
           variant='primary'

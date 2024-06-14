@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-import '@freecodecamp/ui/dist/base.css';
+
 interface Props {
   completedChallenge: CompletedChallenge;
   projectTitle: string;
@@ -42,7 +42,7 @@ export function SolutionDisplayWidget({
   );
   const ShowProjectAndGithubLinkForCertification = (
     <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-      <Dropdown.Toggle className='btn-invert'>
+      <Dropdown.Toggle>
         {viewText}{' '}
         <span className='sr-only'>
           {t('settings.labels.solution-for', { projectTitle })}
@@ -107,7 +107,7 @@ export function SolutionDisplayWidget({
   const ShowMultifileProjectSolution = (
     <div>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle className='btn-invert'>
+        <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
@@ -128,7 +128,7 @@ export function SolutionDisplayWidget({
   const ShowProjectAndGithubLinks = (
     <div>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle className='btn-invert'>
+        <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}

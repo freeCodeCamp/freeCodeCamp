@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Share Your Progress in Weekly Stand-up Meetings
 
-This is a test for the new project-based curriculum.
+This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them.

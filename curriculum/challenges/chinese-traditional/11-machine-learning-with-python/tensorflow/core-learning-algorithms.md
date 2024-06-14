@@ -10,6 +10,10 @@ bilibiliIds:
 dashedName: core-learning-algorithms
 ---
 
+# --description--
+
+The next few video lessons will reference [this Colab notebook](https://colab.research.google.com/drive/15Cyy2H7nT40sGR7TBN5wBvgTd57mVKay#forceEdit=true&sandboxMode=true).
+
 # --question--
 
 ## --text--

@@ -41,6 +41,7 @@ const iconMap = {
   [SuperBlocks.ExampleCertification]: ResponsiveDesign,
   [SuperBlocks.UpcomingPython]: PythonIcon,
   [SuperBlocks.A2English]: A2EnglishIcon,
+  [SuperBlocks.B1English]: A2EnglishIcon,
   [SuperBlocks.RosettaCode]: RosettaCodeIcon,
   [SuperBlocks.PythonForEverybody]: PythonIcon
 };

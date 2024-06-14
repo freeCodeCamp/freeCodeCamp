@@ -384,6 +384,7 @@
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
     "i-completed": "I've completed this challenge",
+    "example-code": "Example Code",
     "test-output": "Your test output will go here",
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
@@ -668,7 +669,8 @@
     "see-results": "See all results for {{searchQuery}}",
     "no-tutorials": "No tutorials found",
     "try": "Looking for something? Try the search bar on this page.",
-    "no-results": "We could not find anything relating to <0>{{query}}</0>"
+    "no-results": "We could not find anything relating to <0>{{query}}</0>",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "You appear to be offline, your progress may not be saved",
@@ -749,7 +751,7 @@
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Something went wrong, please check and try again",
     "account-deleted": "Your account has been successfully deleted",
     "progress-reset": "Your progress has been reset",
@@ -993,6 +995,8 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
+      "B1 English for Developers": "B1 English for Developers",
+      "b1-english-for-developers": "B1 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",

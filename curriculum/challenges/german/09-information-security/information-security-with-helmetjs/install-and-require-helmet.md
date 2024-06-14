@@ -40,12 +40,3 @@ Helmet version `3.21.3` has already been installed, so require it as `helmet` in
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

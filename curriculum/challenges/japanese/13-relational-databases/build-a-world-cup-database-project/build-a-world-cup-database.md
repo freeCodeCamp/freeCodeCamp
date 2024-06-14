@@ -2,7 +2,6 @@
 id: 5f9771307d4d22b9d2b75a94
 title: ワールドカップデータベースを構築する
 challengeType: 13
-helpCategory: Backend Development
 url: freeCodeCamp/learn-world-cup-database
 dashedName: build-a-world-cup-database
 ---

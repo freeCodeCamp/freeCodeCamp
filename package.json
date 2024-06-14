@@ -68,7 +68,7 @@
     "start": "npm-run-all create:shared -p develop:server serve:client",
     "start-ci": "npm-run-all create:shared -p start:server serve:client-ci",
     "start:server": "pm2 start api-server/ecosystem.config.js",
-    "test": "run-s create:shared build:curriculum build-workers test:*",
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' run-s create:shared build:curriculum build-workers test:*",
     "test:source": "jest",
     "test:api": "cd api && jest --force-exit",
     "test:curriculum": "cd ./curriculum && pnpm test",
