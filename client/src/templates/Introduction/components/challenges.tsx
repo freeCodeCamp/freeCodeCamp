@@ -32,7 +32,7 @@ const Challenge = ({
   challenge: ChallengeWithCompletedNode;
 }) => (
   <Link to={challenge.fields.slug}>
-    <span className='badge map-badge'>
+    <span className='map-badge'>
       <CheckMark isCompleted={challenge.isCompleted} />
     </span>
     {challenge.title}
@@ -42,7 +42,7 @@ const Challenge = ({
 const Project = ({ challenge }: { challenge: ChallengeWithCompletedNode }) => (
   <Link to={challenge.fields.slug}>
     {challenge.title}
-    <span className=' badge map-badge map-project-checkmark'>
+    <span className='map-badge map-project-checkmark'>
       <CheckMark isCompleted={challenge.isCompleted} />
     </span>
   </Link>

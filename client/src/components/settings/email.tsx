@@ -211,7 +211,9 @@ function EmailSettings({
                 id='new-email-input'
               />
               {newEmailValidationMessage ? (
-                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-playwright-test-label='new-email-validation'>
+                  {newEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
             <FormGroup
@@ -228,7 +230,9 @@ function EmailSettings({
                 id='confirm-email-input'
               />
               {confirmEmailValidationMessage ? (
-                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-playwright-test-label='confirm-email-validation'>
+                  {confirmEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
           </div>

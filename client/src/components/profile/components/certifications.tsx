@@ -51,6 +51,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
         block
         size='large'
         href={`/certification/${username}/${cert.certSlug}`}
+        data-playwright-test-label='claimed-certification'
       >
         {t('buttons.view-cert-title', {
           certTitle: t(`certification.title.${cert.certSlug}`)

@@ -199,6 +199,16 @@ textarea.inputarea {
   margin-bottom: 18px;
 }
 
+.code-details {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.code-details-summary {
+  display: list-item;
+  cursor: pointer;
+}
+
 /* overwriting default arrow styles for accessibility */
 :root {
   --monaco-scrollbar-arrow-box-size: 0;
