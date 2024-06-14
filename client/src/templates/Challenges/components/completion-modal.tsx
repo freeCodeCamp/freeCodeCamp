@@ -216,7 +216,6 @@ class CompletionModal extends Component<
             size='large'
             variant='primary'
             disabled={isSubmitting}
-            data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
             {buttonText}

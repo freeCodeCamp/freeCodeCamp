@@ -157,7 +157,6 @@ export default function StripeCardForm({
       <button
         className='confirm-donation-btn'
         disabled={!stripe || !elements || isSubmitting}
-        data-cy='donation-confirmation-button'
         type='submit'
       >
         {t('buttons.donate')}

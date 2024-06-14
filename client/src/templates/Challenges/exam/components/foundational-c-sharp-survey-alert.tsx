@@ -33,7 +33,6 @@ function FoundationalCSharpSurveyAlert({
         <Button
           block={true}
           variant='info'
-          data-cy='start-csharp-survey-btn'
           onClick={openSurveyModal}
           type='button'
         >

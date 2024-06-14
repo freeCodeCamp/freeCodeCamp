@@ -168,7 +168,6 @@ function FoundationalCSharpSurvey({
           block={true}
           size='medium'
           variant='primary'
-          data-cy='submit-csharp-survey-btn'
           disabled={cantSubmitSurvey || isProcessing}
           onClick={createSurveyResults}
         >

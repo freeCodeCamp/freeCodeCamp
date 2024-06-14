@@ -32,11 +32,10 @@ const SearchBarOptimized = ({
   return (
     <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
       <div className='fcc_search_wrapper'>
-        <div className='ais-SearchBox' data-cy='ais-SearchBox'>
+        <div className='ais-SearchBox'>
           <form
             action=''
             className='ais-SearchBox-form'
-            data-cy='ais-SearchBox-form'
             onSubmit={onSubmit}
             role='search'
           >

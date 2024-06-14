@@ -109,7 +109,6 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         <Button
           block={true}
           variant='primary'
-          data-cy='exit-exam'
           data-playwright-test-label='exit-exam'
           onClick={exitExam}
         >
