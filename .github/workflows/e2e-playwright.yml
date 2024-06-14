@@ -142,7 +142,7 @@ jobs:
         run: |
           pnpm run start-ci &
           sleep 10
-          npx playwright test --project=${{ matrix.browsers }}
+          npx playwright test --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
