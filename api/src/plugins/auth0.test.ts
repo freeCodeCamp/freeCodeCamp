@@ -2,9 +2,10 @@ import Fastify, { FastifyInstance } from 'fastify';
 
 import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 import prismaPlugin from '../db/prisma';
-// import cookies from './cookies';
+import cookies from './cookies';
 import { auth0Client } from './auth0';
 import redirectWithMessage, { formatMessage } from './redirect-with-message';
+import codeFlowAuth from './code-flow-auth';
 
 describe('auth0 plugin', () => {
   let fastify: FastifyInstance;
@@ -12,8 +13,9 @@ describe('auth0 plugin', () => {
   beforeAll(async () => {
     fastify = Fastify();
     // TODO: Uncomment when a test fails because of the lack of it.
-    // await fastify.register(cookies);
+    await fastify.register(cookies);
     await fastify.register(redirectWithMessage);
+    await fastify.register(codeFlowAuth);
     await fastify.register(auth0Client);
     await fastify.register(prismaPlugin);
   });
@@ -197,6 +199,22 @@ describe('auth0 plugin', () => {
         `?${formatMessage({ type: 'success', content: 'flash.signin-success' })}`
       );
       expect(res.statusCode).toBe(302);
+    });
+
+    it('should set the jwt_access_token cookie', async () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockResolvedValueOnce(Promise.resolve({ email }));
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid'
+      });
+
+      expect(res.headers['set-cookie']).toEqual(
+        expect.stringMatching(/jwt_access_token=/)
+      );
     });
 
     // TODO: Test redirection for i18n clients. The must be a nice way to do
