@@ -9,6 +9,7 @@ import {
   AUTH0_DOMAIN,
   HOME_LOCATION
 } from '../utils/env';
+import { findOrCreateUser } from '../routes/helpers/auth-helpers';
 
 /**
  * Fastify plugin for Auth0 authentication. This uses fastify-plugin to expose
@@ -73,12 +74,26 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         return reply.redirect(302, '/signin');
       }
 
-      // TODO: use userinfo.email to find or create a user
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const userinfo = await fastify.auth0OAuth.userinfo(token);
+      let email;
+      try {
+        const userinfo = (await fastify.auth0OAuth.userinfo(token)) as {
+          email: string;
+        };
+        email = userinfo.email;
+      } catch (error) {
+        // TODO: send to Sentry
+        fastify.log.error('Auth failed', error);
+        return reply.redirect(302, '/signin');
+      }
 
-      // TODO: implement whatever redirects and set-cookieing the api-server does
-      void reply.send({ msg: 'success' });
+      await findOrCreateUser(fastify, email);
+
+      // TODO: implement whatever set-cookieing the api-server does as well as
+      // handling i18n clients.
+      void reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
+        type: 'success',
+        content: 'flash.signin-success'
+      });
     });
 
     done();

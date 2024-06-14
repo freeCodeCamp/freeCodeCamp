@@ -4,7 +4,7 @@ import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 import prismaPlugin from '../db/prisma';
 // import cookies from './cookies';
 import { auth0Client } from './auth0';
-import redirectWithMessage from './redirect-with-message';
+import redirectWithMessage, { formatMessage } from './redirect-with-message';
 
 describe('auth0 plugin', () => {
   let fastify: FastifyInstance;
@@ -37,17 +37,21 @@ describe('auth0 plugin', () => {
   });
 
   describe('GET /auth/auth0/callback', () => {
+    const email = 'new@user.com';
     let getAccessTokenFromAuthorizationCodeFlowSpy: jest.SpyInstance;
+    let userinfoSpy: jest.SpyInstance;
 
     beforeEach(() => {
       getAccessTokenFromAuthorizationCodeFlowSpy = jest.spyOn(
         fastify.auth0OAuth,
         'getAccessTokenFromAuthorizationCodeFlow'
       );
+      userinfoSpy = jest.spyOn(fastify.auth0OAuth, 'userinfo');
     });
 
-    afterEach(() => {
+    afterEach(async () => {
       jest.restoreAllMocks();
+      await fastify.prisma.user.deleteMany({ where: { email } });
     });
 
     it('should redirect to /signin if authentication fails', async () => {
@@ -130,6 +134,53 @@ describe('auth0 plugin', () => {
       expect(resWithoutDescription.headers.location).toMatch(
         `${HOME_LOCATION}/learn?messages=`
       );
+    });
+
+    it('creates a user if the state is valid', async () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockResolvedValueOnce(Promise.resolve({ email }));
+
+      await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid'
+      });
+
+      expect(await fastify.prisma.user.count()).toBe(1);
+    });
+
+    it('handles userinfo errors', async () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockResolvedValueOnce(Promise.reject('any error'));
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid'
+      });
+
+      expect(res.headers.location).toMatch('/signin');
+      expect(res.statusCode).toBe(302);
+      expect(await fastify.prisma.user.count()).toBe(0);
+    });
+
+    it('redirects the signin-success message on success', async () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockResolvedValueOnce(Promise.resolve({ email }));
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid'
+      });
+
+      expect(res.headers.location).toMatch(
+        `?${formatMessage({ type: 'success', content: 'flash.signin-success' })}`
+      );
+      expect(res.statusCode).toBe(302);
     });
 
     // TODO: Test redirection for i18n clients. The must be a nice way to do
