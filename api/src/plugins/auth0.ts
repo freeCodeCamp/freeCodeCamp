@@ -80,6 +80,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           email: string;
         };
         email = userinfo.email;
+        if (typeof email !== 'string') throw Error('Invalid userinfo response');
       } catch (error) {
         // TODO: send to Sentry
         fastify.log.error('Auth failed', error);

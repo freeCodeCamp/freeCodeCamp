@@ -166,6 +166,22 @@ describe('auth0 plugin', () => {
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
+    it('handles invalid userinfo responses', async () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockResolvedValueOnce(Promise.resolve({}));
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid'
+      });
+
+      expect(res.headers.location).toMatch('/signin');
+      expect(res.statusCode).toBe(302);
+      expect(await fastify.prisma.user.count()).toBe(0);
+    });
+
     it('redirects the signin-success message on success', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
         token: 'any token'
