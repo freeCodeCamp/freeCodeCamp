@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance } from 'fastify';
 
 import { AUTH0_DOMAIN } from '../utils/env';
+import prismaPlugin from '../db/prisma';
 // import cookies from './cookies';
 import { auth0Client } from './auth0';
 
@@ -12,6 +13,7 @@ describe('auth0 plugin', () => {
     // TODO: Uncomment when a test fails because of the lack of it.
     // await fastify.register(cookies);
     await fastify.register(auth0Client);
+    await fastify.register(prismaPlugin);
   });
 
   afterEach(async () => {
@@ -97,6 +99,15 @@ describe('auth0 plugin', () => {
 
       expect(fastify.log.error).not.toHaveBeenCalled();
       expect(res.statusCode).toBe(302);
+    });
+
+    it('should not create a user if the state is invalid', async () => {
+      await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(await fastify.prisma.user.count()).toBe(0);
     });
   });
 });
