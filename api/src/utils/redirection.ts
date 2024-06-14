@@ -39,6 +39,12 @@ export function getReturnTo(
   return normalizeParams(params, _homeLocation);
 }
 
+type RedirectParams = {
+  returnTo: string;
+  origin: string;
+  pathPrefix: string;
+};
+
 /**
  * Normalize the parameters, making they're valid.
  *
@@ -50,13 +56,9 @@ export function getReturnTo(
  * @returns The normalized parameters.
  */
 export function normalizeParams(
-  {
-    returnTo,
-    origin,
-    pathPrefix
-  }: { returnTo?: string; origin?: string; pathPrefix?: string },
+  { returnTo, origin, pathPrefix }: Partial<RedirectParams>,
   _homeLocation = HOME_LOCATION
-) {
+): RedirectParams {
   // coerce to strings, just in case something weird and nefarious is happening
   // TODO: validate, don't coerce
   returnTo = '' + returnTo;
@@ -103,7 +105,7 @@ export function getPrefixedLandingPath(origin: string, pathPrefix?: string) {
 export function getRedirectParams(
   req: FastifyRequest,
   _normalizeParams = normalizeParams
-) {
+): RedirectParams {
   const url = req.headers['referer'];
   // since we do not always redirect the user back to the page they were on
   // we need client locale and origin to construct the redirect url.
