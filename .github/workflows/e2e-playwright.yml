@@ -89,7 +89,8 @@ jobs:
       mailhog:
         image: mailhog/mailhog
         ports:
-          - 1025:1025
+          - 1025:1025 # SMTP server (listens for emails)
+          - 8025:8025 # HTTP server (so we can make requests to the api)
 
     steps:
       - name: Set Action Environment Variables
