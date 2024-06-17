@@ -131,12 +131,22 @@ Here are our twelve core certifications:
   <br />
   **Projects**: [Metric-Imperial Converter](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter), [Issue Tracker](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker), [Personal Library](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library), [Sudoku Solver](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver), [American British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
 
-#### 8. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
+### 8. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
 
 - [Introduction to Python for Everybody](https://www.freecodecamp.org/learn/scientific-computing-with-python/#python-for-everybody)
   <br />
   <br />
-  **Projects**: [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/arithmetic-formatter), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/budget-app), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/polygon-area-calculator), [Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/probability-calculator)
+  **Projects**:
+
+  - [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/#build-an-arithmetic-formatter-project)
+
+  - [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/#build-a-time-calculator-project)
+
+  - [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/#build-a-budget-app-project)
+
+  - [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/#build-a-polygon-area-calculator-project)
+
+  - [Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/#build-a-probability-calculator-project)
 
 #### 9. [Data Analysis with Python Certification](https://www.freecodecamp.org/learn/data-analysis-with-python/)
 
