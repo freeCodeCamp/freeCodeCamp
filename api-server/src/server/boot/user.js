@@ -16,6 +16,7 @@ import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
 import {
   getProgress,
   normaliseUserFields,
+  publicUserProps,
   userPropsForSession
 } from '../utils/publicUserProps';
 import { getRedirectParams } from '../utils/redirection';
@@ -43,6 +44,7 @@ function bootUser(app) {
   const deleteMsUsername = createDeleteMsUsername(app);
   const postSubmitSurvey = createPostSubmitSurvey(app);
   const deleteUserSurveys = createDeleteUserSurveys(app);
+  const getPublicProfile = createGetPublicProfile(app);
 
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
@@ -92,6 +94,8 @@ function bootUser(app) {
     validateSurvey,
     postSubmitSurvey
   );
+
+  api.get('/user/get-public-profile', blockUserAgent, getPublicProfile);
 
   app.use(api);
 }
@@ -532,4 +536,117 @@ function createPostReportUserProfile(app) {
     );
   };
 }
+
+function blockUserAgent(req, res, next) {
+  const userAgent = req.headers['user-agent'];
+  console.log('USER AGENT:');
+  console.log(userAgent);
+  console.log('------------');
+
+  if (!userAgent || userAgent.toLowerCase().includes('python')) {
+    return res.status(403).send('Forbidden');
+  }
+
+  return next();
+}
+
+function createGetPublicProfile(app) {
+  return async (req, res) => {
+    const { username } = req.query;
+    if (!username) {
+      return res.status(400).json({ error: 'No username provided' });
+    }
+
+    const { User } = app.models;
+
+    const user = await User.findOne({ where: { username } });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const { completedChallenges, progressTimestamps, profileUI } = user;
+    const allUser = {
+      ...pick(user, publicUserProps),
+      points: progressTimestamps.length,
+      completedChallenges,
+      ...getProgress(progressTimestamps),
+      ...normaliseUserFields(user),
+      joinDate: user.id.getTimestamp()
+    };
+
+    const publicUser = prepUserForPublish(allUser, profileUI);
+
+    return {
+      entities: {
+        user: {
+          [user.username]: {
+            ...publicUser
+          }
+        }
+      },
+      result: user.username
+    };
+  };
+}
+
+function prepUserForPublish(user, profileUI) {
+  const {
+    about,
+    calendar,
+    completedChallenges,
+    isDonating,
+    joinDate,
+    location,
+    name,
+    points,
+    portfolio,
+    username,
+    yearsTopContributor
+  } = user;
+  const {
+    isLocked = true,
+    showAbout = false,
+    showCerts = false,
+    showDonation = false,
+    showHeatMap = false,
+    showLocation = false,
+    showName = false,
+    showPoints = false,
+    showPortfolio = false,
+    showTimeLine = false
+  } = profileUI;
+
+  if (isLocked) {
+    return {
+      isLocked,
+      profileUI,
+      username
+    };
+  }
+  return {
+    ...user,
+    about: showAbout ? about : '',
+    calendar: showHeatMap ? calendar : {},
+    completedChallenges: (function () {
+      if (showTimeLine) {
+        return showCerts
+          ? completedChallenges
+          : completedChallenges.filter(
+              ({ challengeType }) => challengeType !== 7
+            );
+      } else {
+        return [];
+      }
+    })(),
+    isDonating: showDonation ? isDonating : null,
+    joinDate: showAbout ? joinDate : '',
+    location: showLocation ? location : '',
+    name: showName ? name : '',
+    points: showPoints ? points : null,
+    portfolio: showPortfolio ? portfolio : [],
+    yearsTopContributor: yearsTopContributor
+  };
+}
+
 export default bootUser;
