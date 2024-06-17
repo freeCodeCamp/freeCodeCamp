@@ -166,6 +166,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           });
         }
       } catch {
+        // TODO(Post-MVP): don't catch, just let Sentry handle this.
         void reply.code(400);
         return {
           type: 'error',
@@ -483,7 +484,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         numberOfQuestionsInExam
       );
 
-      if ('error' in validGeneratedExamSchema) {
+      if (validGeneratedExamSchema.error) {
+        fastify.log.error(validGeneratedExamSchema.error);
+        fastify.Sentry.captureException(validGeneratedExamSchema.error);
         void reply.code(500);
         return { error: 'An error occurred trying to randomize the exam.' };
       }
@@ -584,6 +587,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         };
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
           type: 'error',
@@ -780,6 +784,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         };
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
           error: 'An error occurred trying to submit your exam.'
