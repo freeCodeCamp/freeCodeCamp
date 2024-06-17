@@ -409,13 +409,8 @@
           "Questo progetto ti aiuterà a capire i concetti fondamentali alla base di questi algoritmi e come applicarli per ordinare dati numerici in applicazioni web."
         ]
       },
-<<<<<<< HEAD
       "review-algorithmic-thinking-by-building-a-dice-game": {
         "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
-=======
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Impara il Pensiero Algoritmico Intermedio Costruendo un Gioco di Dadi",
->>>>>>> upstream/main
         "intro": [
           "Il pensiero algoritmico comporta la capacità di suddividere i problemi complessi in una serie di istruzioni sequenziali ben definite.",
           "In questo progetto di un gioco di dadi, imparerai come gestire lo stato del gioco, implementare la logica di gioco per il lancio dei dadi, segnare il punteggio e applicare le regole per varie combinazioni.",
