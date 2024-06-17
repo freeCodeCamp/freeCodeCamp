@@ -107,32 +107,22 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteMyAccount
     },
     async (req, reply) => {
-      try {
-        await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.user!.id }
-        });
-        await fastify.prisma.msUsername.deleteMany({
-          where: { userId: req.user!.id }
-        });
-        await fastify.prisma.survey.deleteMany({
-          where: { userId: req.user!.id }
-        });
-        await fastify.prisma.user.delete({
-          where: { id: req.user!.id }
-        });
-        await req.session.destroy();
-        void reply.clearCookie('sessionId');
+      await fastify.prisma.userToken.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.msUsername.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.survey.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.user.delete({
+        where: { id: req.user!.id }
+      });
+      await req.session.destroy();
+      void reply.clearCookie('sessionId');
 
-        return {};
-      } catch (err) {
-        fastify.log.error(err);
-        void reply.code(500);
-        return {
-          message:
-            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
-          type: 'danger'
-        };
-      }
+      return {};
     }
   );
 
@@ -141,32 +131,22 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.resetMyProgress
     },
-    async (req, reply) => {
-      try {
-        await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.user!.id }
-        });
-        await fastify.prisma.msUsername.deleteMany({
-          where: { userId: req.user!.id }
-        });
-        await fastify.prisma.survey.deleteMany({
-          where: { userId: req.user!.id }
-        });
-        await fastify.prisma.user.update({
-          where: { id: req.user!.id },
-          data: createResetProperties()
-        });
+    async req => {
+      await fastify.prisma.userToken.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.msUsername.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.survey.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.user.update({
+        where: { id: req.user!.id },
+        data: createResetProperties()
+      });
 
-        return {};
-      } catch (err) {
-        fastify.log.error(err);
-        void reply.code(500);
-        return {
-          message:
-            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
-          type: 'danger'
-        };
-      }
+      return {};
     }
   );
   // TODO(Post-MVP): POST -> PUT
@@ -196,28 +176,18 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteUserToken
     },
     async (req, reply) => {
-      try {
-        const { count } = await fastify.prisma.userToken.deleteMany({
-          where: { userId: req.user?.id }
-        });
+      const { count } = await fastify.prisma.userToken.deleteMany({
+        where: { userId: req.user?.id }
+      });
 
-        if (count === 0) {
-          void reply.code(404);
-          return {
-            message: 'userToken not found',
-            type: 'info'
-          } as const;
-        }
-        return { userToken: null };
-      } catch (err) {
-        fastify.log.error(err);
-        void reply.code(500);
+      if (count === 0) {
+        void reply.code(404);
         return {
-          type: 'danger',
-          message:
-            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+          message: 'userToken not found',
+          type: 'info'
         } as const;
       }
+      return { userToken: null };
     }
   );
 
@@ -231,44 +201,33 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      try {
-        const user = await fastify.prisma.user.findUniqueOrThrow({
-          where: { id: req.user?.id }
-        });
-        const { username, reportDescription: report } = req.body;
+      const user = await fastify.prisma.user.findUniqueOrThrow({
+        where: { id: req.user?.id }
+      });
+      const { username, reportDescription: report } = req.body;
 
-        if (!username || !report || report === '') {
-          // NOTE: Do we want to log these instances?
-          void reply.code(400);
-          return {
-            type: 'danger',
-            message: 'flash.provide-username'
-          } as const;
-        }
-
-        await fastify.sendEmail({
-          from: 'team@freecodecamp.org',
-          to: 'support@freecodecamp.org',
-          cc: user.email,
-          subject: `Abuse Report : Reporting ${username}'s profile.`,
-          text: generateReportEmail(user, username, report)
-        });
-
-        return {
-          type: 'info',
-          message: 'flash.report-sent',
-          variables: { email: user.email }
-        } as const;
-      } catch (err) {
-        fastify.log.error(err);
-        // TODO: redirect to the reported user's profile if there's an error
-        void reply.code(500);
+      if (!username || !report || report === '') {
+        // NOTE: Do we want to log these instances?
+        void reply.code(400);
         return {
           type: 'danger',
-          message:
-            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+          message: 'flash.provide-username'
         } as const;
       }
+
+      await fastify.sendEmail({
+        from: 'team@freecodecamp.org',
+        to: 'support@freecodecamp.org',
+        cc: user.email,
+        subject: `Abuse Report : Reporting ${username}'s profile.`,
+        text: generateReportEmail(user, username, report)
+      });
+
+      return {
+        type: 'info',
+        message: 'flash.report-sent',
+        variables: { email: user.email }
+      } as const;
     }
   );
 
