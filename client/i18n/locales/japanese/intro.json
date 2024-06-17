@@ -388,7 +388,7 @@
         ]
       },
       "learn-fetch-and-promises-by-building-an-fcc-authors-page": {
-        "title": "フェッチとプロミスの学習: freeCodeCamp 著者ページを作成する",
+        "title": "フェッチとプロミスの学習: freeCodeCamp 著者一覧ページを作成する",
         "intro": [
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "This freeCodeCamp authors page project will show you how to use the fetch method, then dynamically update the DOM to display the fetched data.",
@@ -882,6 +882,13 @@
         "title": "Build a Probability Calculator Project",
         "intro": [
           "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Learn Special Methods by Building a Vector Space",
+        "intro": [
+          "Python special methods are called in response to specific operations and enable you to customize the behaviour of your objects in a detailed and effective way.",
+          "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
         ]
       },
       "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {

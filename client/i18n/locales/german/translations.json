@@ -384,6 +384,7 @@
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
     "congratulations": "Glückwunsch, dein Code hat bestanden. Sende deinen Code ein, um fortzufahren.",
     "i-completed": "Ich habe diese Herausforderung abgeschlossen",
+    "example-code": "Example Code",
     "test-output": "Deine Testergebnisse werden hier erscheinen",
     "running-tests": "// Tests werden durchgeführt",
     "tests-completed": "// Tests abgeschlossen",
@@ -574,6 +575,7 @@
     "other-ways": "Here are many <0>other ways you can support our charity's mission</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "Oh - oh. Es sieht so aus, als ob deine Transaktion nicht durchgeführt werden konnte. Kannst du es bitte noch einmal versuchen?",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "Bitte versuche es erneut.",
     "card-number": "Deine Kartennummer:",
     "expiration": "Ablaufdatum:",
@@ -668,7 +670,8 @@
     "see-results": "Alle Ergebnisse für {{searchQuery}} ansehen",
     "no-tutorials": "Keine Tutorials gefunden",
     "try": "Suchst du nach etwas? Versuche es mit der Suchleiste auf dieser Seite.",
-    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden"
+    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "Du scheinst offline zu sein, dein Fortschritt wird möglicherweise nicht gespeichert",
@@ -749,7 +752,7 @@
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Etwas wirklich Seltsames ist passiert. Wenn es wieder passiert, erwäge bitte, einen Fehler auf https://github.com/freeCodeCamp/freeCodeCamp/issues/new zu melden.",
-    "not-right": "Irgendetwas ist nicht in Ordnung. Es wurde ein Bericht erstellt und das freeCodeCamp.org Team wurde benachrichtigt",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Etwas ist schief gelaufen, bitte überprüfe und versuche es erneut",
     "account-deleted": "Dein Konto wurde erfolgreich gelöscht",
     "progress-reset": "Dein Fortschritt wurde zurückgesetzt",
@@ -785,7 +788,6 @@
     "cert-claim-success": "@{{username}}, du hast erfolgreich die {{name}} Zertifizierung bestanden! Herzlichen Glückwunsch im Namen des freeCodeCamp.org Teams!",
     "wrong-name": "Bei der Überprüfung von {{name}} ist etwas schief gelaufen, bitte versuche es erneut. Wenn du weiterhin diesen Fehler erhältst, kannst du eine Nachricht an support@freeCodeCamp.org senden, um Hilfe zu erhalten.",
     "error-claiming": "Fehler beim Anfordern von {{certName}}",
-    "refresh-needed": "Du kannst den Button Zahlungsanforderung nur einmal verwenden. Aktualisiere die Seite, um neu zu beginnen.",
     "username-not-found": "Wir konnten keinen Benutzer mit dem Benutzernamen \"{{username}}\" finden",
     "add-name": "Dieser Nutzer muss seinen Namen zu seinem Konto hinzufügen, damit andere seine Zertifizierungen sehen können.",
     "not-eligible": "Dieser Benutzer ist zu diesem Zeitpunkt nicht für freeCodeCamp.org-Zertifizierungen berechtigt.",
