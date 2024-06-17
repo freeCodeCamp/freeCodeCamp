@@ -4,8 +4,6 @@
   "dashedName": "json-apis-and-ajax",
   "helpCategory": "JavaScript",
   "order": 1,
-  "time": "2 hours",
-  "template": "",
   "required": [
     {
       "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"

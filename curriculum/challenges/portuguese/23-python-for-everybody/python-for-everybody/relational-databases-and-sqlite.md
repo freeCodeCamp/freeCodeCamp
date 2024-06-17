@@ -12,9 +12,13 @@ dashedName: relational-databases-and-sqlite
 
 # --description--
 
-<a href="https://www.sqlite.org/download.html" target="_blank" rel="noopener noreferrer nofollow">Download do SQLite</a>
-<a href="https://sqlitebrowser.org/dl/" target="_blank" rel="noopener noreferrer nofollow">Download do DB Browser for SQLite</a>
-<a href="https://www.sqlite.org/famous.html" target="_blank" rel="noopener noreferrer nofollow">Uso do SQLite</a>
+Mais recursos:
+
+\- <a href="https://www.sqlite.org/download.html" target="_blank" rel="noopener noreferrer nofollow">Baixar o SQLite</a>
+
+\- <a href="https://sqlitebrowser.org/dl/" target="_blank" rel="noopener noreferrer nofollow">Baixar o DB Browser para o SQLite</a>
+
+\- <a href="https://www.sqlite.org/famous.html" target="_blank" rel="noopener noreferrer nofollow">Uso do SQLite</a>
 
 # --question--
 

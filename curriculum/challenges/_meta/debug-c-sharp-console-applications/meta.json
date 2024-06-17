@@ -4,9 +4,6 @@
   "dashedName": "debug-c-sharp-console-applications",
   "helpCategory": "C-Sharp",
   "order": 5,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
     {

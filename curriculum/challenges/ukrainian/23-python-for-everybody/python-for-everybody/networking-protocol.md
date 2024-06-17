@@ -14,7 +14,7 @@ dashedName: networking-protocol
 
 ## --text--
 
-What type of HTTP request is usually used to access a website?
+Який тип запиту HTTP зазвичай використовується для доступу до вебсайту?
 
 ## --answers--
 

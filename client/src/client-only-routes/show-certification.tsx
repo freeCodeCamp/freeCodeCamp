@@ -392,10 +392,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     }}
                   </strong>
                 </h1>
-                <h4
-                  data-cy={'issue-date'}
-                  data-playwright-test-label='issue-date'
-                >
+                <h4 data-playwright-test-label='issue-date'>
                   {{
                     time: certDate.toLocaleString([localeCode, 'en-US'], {
                       year: 'numeric',
@@ -414,7 +411,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <>
                   <div>
                     <Image
-                      data-cy='quincy-signature'
                       data-playwright-test-label='quincy-signature'
                       alt="Quincy Larson's Signature"
                       src={
@@ -431,7 +427,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   </div>
                   <div className='microsoft-signature'>
                     <Image
-                      data-cy='microsoft-signature'
                       data-playwright-test-label='microsoft-signature'
                       alt="Julia Liusons's Signature"
                       src={
@@ -451,7 +446,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               ) : (
                 <div>
                   <Image
-                    data-cy='quincy-signature'
                     data-playwright-test-label='quincy-signature'
                     alt="Quincy Larson's Signature"
                     src={

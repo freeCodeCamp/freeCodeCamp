@@ -100,7 +100,6 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "skip-advertisement": "Skip Advertisement",
     "play-scene": "Press Play"
   },
   "landing": {
@@ -385,6 +384,7 @@
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
     "congratulations": "Felicidades, tu código ha sido aprobado. Envía tu código para continuar.",
     "i-completed": "He completado este desafío",
+    "example-code": "Example Code",
     "test-output": "El resultado de tu prueba irá aquí",
     "running-tests": "// ejecutando pruebas",
     "tests-completed": "// pruebas completadas",
@@ -575,6 +575,7 @@
     "other-ways": "Aquí hay muchas <0>otras formas de apoyar la misión de nuestra organización benéfica</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "Oh no. Parece que tu transacción no se realizó. ¿Podrías intentarlo de nuevo?",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "Por favor, intenta de nuevo.",
     "card-number": "Tu número de tarjeta:",
     "expiration": "Fecha de vencimiento:",
@@ -611,7 +612,7 @@
     "welcome-stock": "Agradeceríamos tus donaciones de acciones. Por favor envía un correo electrónico a Quincy directamente y él puede ayudarte con esto, y compartir los detalles de nuestra cuenta de corretaje sin fines de lucro: quincy@freecodecamp.org.",
     "how-receipt": "¿Puedo obtener un recibo de donación para que pueda deducir mi donación de mis impuestos?",
     "just-forward": "Claro que sí. Solo reenvía el recibo de tu transacción a donors@freecodecamp.org, menciónanos que deseas un recibo y cualquier otra instrucción especial que puedas tener, y te contestaremos con un recibo por ti.",
-    "how-update": "He configurado una donación mensual, pero necesito actualizar o pausar la recurrencia mensual. ¿Cómo puedo hacerlo?",
+    "how-update": "I set up a monthly donation, but I need to update or stop the monthly recurrence. How can I do this?",
     "take-care-of-this": "Manda uno de tus recibos mensuales de donación a donors@freecodecamp.org y dinos lo que te gustaría que hiciéramos. Nos ocuparemos de esto y te enviaremos confirmación.",
     "anything-else": "¿Hay algo más que pueda aprender sobre cómo hacer una donación a freeCodeCamp.org?",
     "other-support": "Si hay alguna otra forma en la que te gustaría apoyar a nuestra organización sin fines de lucro y su misión que no aparece aquí, o si tienes alguna pregunta, envía un correo electrónico a Quincy a quincy@freecodecamp.org.",
@@ -645,7 +646,8 @@
     "help-millions-learn": "Help millions of people learn",
     "reach-goals-faster": "Reach your goals faster",
     "remove-distractions": "Remove distractions",
-    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world."
+    "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "Necesitas iniciar sesión para reportar a un usuario",
@@ -668,7 +670,8 @@
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
-    "no-results": "No pudimos encontrar nada relacionado con <0>{{query}}</0>"
+    "no-results": "No pudimos encontrar nada relacionado con <0>{{query}}</0>",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
@@ -749,7 +752,7 @@
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Sucedió algo realmente extraño. Si vuelve a ocurrir, considera hacer un reporte del problema en https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "Algo no está bien. Se ha generado un informe y se ha notificado al equipo de freeCodeCamp.org",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Algo salió mal, verifica e intenta nuevamente",
     "account-deleted": "Tu cuenta ha sido eliminada con éxito",
     "progress-reset": "Tu progreso se ha restablecido",
@@ -785,7 +788,6 @@
     "cert-claim-success": "¡@{{username}}, has reclamado con éxito la certificación {{name}}! ¡Felicitaciones en nombre del equipo de freeCodeCamp.org!",
     "wrong-name": "Se produjo un error con la verificación de {{name}}. Por favor, inténtalo de nuevo. Si continúas recibiendo este error, puedes enviar un mensaje a support@freeCodeCamp.org para obtener ayuda.",
     "error-claiming": "Error al reclamar {{certName}}",
-    "refresh-needed": "Solamente puedes utilizar el botón de Pago una vez. Actualiza la página para empezar de nuevo.",
     "username-not-found": "No pudimos encontrar un usuario con el nombre de usuario \"{{username}}\"",
     "add-name": "Este usuario debe agregar su nombre a su cuenta para que otros puedan ver su certificación.",
     "not-eligible": "Este usuario no es elegible para las certificaciones de freeCodeCamp.org en este momento.",
@@ -993,6 +995,8 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
+      "B1 English for Developers": "B1 English for Developers",
+      "b1-english-for-developers": "B1 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",

@@ -1,6 +1,6 @@
 ---
 id: 5e44414f903586ffb414c950
-title: Build a Probability Calculator Project
+title: Projeto de criar uma calculadora de probabilidades
 challengeType: 23
 forumTopicId: 462364
 dashedName: build-a-probability-calculator-project
@@ -8,11 +8,11 @@ dashedName: build-a-probability-calculator-project
 
 # --description--
 
-Suppose there is a hat containing 5 blue balls, 4 red balls, and 2 green balls. What is the probability that a random draw of 4 balls will contain at least 1 red ball and 2 green balls? While it would be possible to calculate the probability using advanced mathematics, an easier way is to write a program to perform a large number of experiments to estimate an approximate probability.
+Suponha que haja um chapéu contendo 5 bolas azuis, 4 bolas vermelhas e 2 bolas verdes. Qual é a probabilidade de um sorteio aleatório de 4 bolas conter pelo menos 1 bola vermelha e 2 bolas verdes? Embora seja possível calcular a probabilidade usando matemática avançada, uma maneira mais fácil é escrever um programa para realizar um grande número de experimentos para estimar uma probabilidade aproximada.
 
-For this project, you will write a program to determine the approximate probability of drawing certain balls randomly from a hat.
+Para este projeto, escreva um programa para determinar a probabilidade aproximada de retirar certas bolas aleatoriamente de um chapéu.
 
-First, create a `Hat` class in `main.py`. The class should take a variable number of arguments that specify the number of balls of each color that are in the hat. For example, a class object could be created in any of these ways:
+First, create a `Hat` class in `main.py`. A classe deve ter um número variável de argumentos que especificam o número de bolas de cada cor que estão no chapéu. Por exemplo, um objeto da classe poderia ser criado de qualquer uma dessas maneiras:
 
 ```py
 hat1 = Hat(yellow=3, blue=2, green=6)
@@ -20,22 +20,22 @@ hat2 = Hat(red=5, orange=4)
 hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 ```
 
-A hat will always be created with at least one ball. The arguments passed into the hat object upon creation should be converted to a `contents` instance variable. `contents` should be a list of strings containing one item for each ball in the hat. Each item in the list should be a color name representing a single ball of that color. For example, if your hat is `{"red": 2, "blue": 1}`, `contents` should be `["red", "red", "blue"]`.
+Um chapéu será sempre criado com pelo menos uma bola. Os argumentos passados para o objeto de chapéu após a criação devem ser convertidos em uma variável de instância `contents`. `contents` deve ser uma lista de strings contendo um item para cada bola no chapéu. Cada item da lista deve ser um nome de cor que representa uma única bola dessa cor. Por exemplo, se sua instância de Hat for `{"red": 2, "blue": 1}`, `contents` deve ser `["red", "red", "blue"]`.
 
-The `Hat` class should have a `draw` method that accepts an argument indicating the number of balls to draw from the hat. This method should remove balls at random from `contents` and return those balls as a list of strings. The balls should not go back into the hat during the draw, similar to an urn experiment without replacement. If the number of balls to draw exceeds the available quantity, return all the balls.
+A classe `Hat` deve ter um método `draw` que aceita um argumento indicando o número de bolas a serem retiradas do chapéu. Este método deve remover bolas aleatoriamente de `contents` e retornar essas bolas como uma lista de strings. As bolas não devem voltar ao chapéu durante a retirada, à semelhança de uma experiência sem substituição. Se o número de bolas a serem retiradas exceder a quantidade disponível, retorne todas as bolas.
 
-Next, create an `experiment` function in `main.py` (not inside the `Hat` class). This function should accept the following arguments:
+Next, create an `experiment` function in `main.py` (not inside the `Hat` class). Esta função deve aceitar os seguintes argumentos:
 
-- `hat`: A hat object containing balls that should be copied inside the function.
-- `expected_balls`: An object indicating the exact group of balls to attempt to draw from the hat for the experiment. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{"blue":2, "red":1}`.
-- `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
-- `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
+- `hat`: Um objeto de chapéu contendo bolas que devem ser copiadas dentro da função.
+- `expected_balls`: Um objeto indicando o grupo exato de bolas que se tentará retirar do chapéu para o experimento. Por exemplo, para determinar a probabilidade de retirar 2 bolas azuis e 1 bola vermelha do chapéu, defina `expected_balls` como `{"blue":2, "red":1}`.
+- `num_balls_drawn`: O número de bolas a serem retiradas do chapéu em cada experimento.
+- `num_experiments`: O número de experimentos a serem realizados. Quanto mais experimentos realizados, mais precisa será a probabilidade aproximada.
 
-The `experiment` function should return a probability.
+A função `experiment` deve retornar uma probabilidade.
 
-For example, if you want to determine the probability of getting at least two red balls and one green ball when you draw five balls from a hat containing six black, four red, and three green. To do this, you will perform `N` experiments, count how many times `M` you get at least two red balls and one green ball, and estimate the probability as `M/N`. Each experiment consists of starting with a hat containing the specified balls, drawing several balls, and checking if you got the balls you were attempting to draw.
+Por exemplo, se você quer determinar a probabilidade de obter pelo menos duas bolas vermelhas e uma bola verde ao retirar cinco bolas de um chapéu contendo seis bolas pretas, quatro vermelhas e três verdes. Para fazer isso, você realiza `N` experimentos, conta quantas vezes `M` você obtém pelo menos duas bolas vermelhas e uma bola verde e estima a probabilidade como `M/N`. Cada experimento consiste em começar com um chapéu contendo as bolas especificadas, retirar várias bolas e verificar se retirou as bolas que estava tentando retirar.
 
-Here is how you would call the `experiment` function based on the example above with 2000 experiments:
+Veja como você chamaria a função `experiment` com base no exemplo acima de 2.000 experimentos:
 
 ```py
 hat = Hat(black=6, red=4, green=3)
@@ -51,7 +51,7 @@ The output would be something like this:
 0.356
 ```
 
-Since this is based on random draws, the probability will be slightly different each time the code is run.
+Como isto é baseado em sorteios aleatórios, a probabilidade será ligeiramente diferente cada vez que o código for executado.
 
 _Hint: Consider using the modules that are already imported at the top. Do not initialize random seed within the file._
 

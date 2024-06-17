@@ -35,7 +35,8 @@ import {
   closeModal,
   submitChallenge,
   setUserCompletedExam,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../redux/actions';
 import { getGenerateExam } from '../../../utils/ajax';
 import { isChallengeCompletedSelector } from '../redux/selectors';
@@ -49,7 +50,8 @@ import {
   GeneratedExamResults,
   GeneratedExamQuestion,
   PrerequisiteChallenge,
-  SurveyResults
+  SurveyResults,
+  Test
 } from '../../../redux/prop-types';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
@@ -100,6 +102,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       setUserCompletedExam,
       clearExamResults,
       submitChallenge,
+      initTests,
       updateChallengeMeta,
       updateSolutionFormValues
     },
@@ -116,6 +119,7 @@ interface ShowExamProps {
   data: { challengeNode: ChallengeNode };
   examInProgress: boolean;
   examResults: GeneratedExamResults | null;
+  initTests: (arg0: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openExitExamModal: () => void;
@@ -174,12 +178,19 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, title }
+          challenge: {
+            fields: { tests },
+            challengeType,
+            helpCategory,
+            title
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -400,10 +411,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     {title}
                   </div>
                   <span>|</span>
-                  <div
-                    data-cy='exam-time'
-                    data-playwright-test-label='exam-show-question-time'
-                  >
+                  <div data-playwright-test-label='exam-show-question-time'>
                     {t('learn.exam.time', {
                       t: formatSecondsToTime(examTimeInSeconds)
                     })}
@@ -468,7 +476,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     className='exam-button'
                     disabled={currentQuestionIndex <= 0}
                     variant='primary'
-                    data-cy='previous-exam-question-btn'
                     onClick={this.goToPreviousQuestion}
                   >
                     {t('buttons.previous-question')}
@@ -483,7 +490,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       variant='primary'
-                      data-cy='finish-exam-btn'
                       onClick={openFinishExamModal}
                     >
                       {t('buttons.finish-exam')}
@@ -496,7 +502,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       variant='primary'
-                      data-cy='next-exam-question-btn'
                       onClick={this.goToNextQuestion}
                     >
                       {t('buttons.next-question')}
@@ -511,7 +516,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     block={true}
                     className='exam-button'
                     variant='primary'
-                    data-cy='exit-exam-btn'
                     onClick={openExitExamModal}
                   >
                     {t('buttons.exit-exam')}
@@ -544,7 +548,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Spacer size='medium' />
 
                 {qualifiedForExam ? (
-                  <Alert data-cy='qualified-for-exam-alert' variant='info'>
+                  <Alert variant='info'>
                     <p>{t('learn.exam.qualified')}</p>
                   </Alert>
                 ) : (
@@ -565,7 +569,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Button
                   block={true}
                   variant='primary'
-                  data-cy='start-exam-btn'
                   disabled={!qualifiedForExam}
                   // `this.runExam` being an async callback is acceptable
                   //eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -603,6 +606,10 @@ export const query = graphql`
         fields {
           blockHashSlug
           blockName
+          tests {
+            text
+            testString
+          }
         }
         helpCategory
         id

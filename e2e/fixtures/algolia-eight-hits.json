@@ -1,0 +1,88 @@
+{
+  "results": [
+    {
+      "hits": [
+        {
+          "title": "Article 1",
+          "objectID": "Article 1",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 1",
+              "matchLevel": "full"
+            }
+          }
+        },
+        {
+          "title": "Article 2",
+          "objectID": "Article 2",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 2",
+              "matchLevel": "full"
+            }
+          }
+        },
+        {
+          "title": "Article 3",
+          "objectID": "Article 3",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 3",
+              "matchLevel": "full"
+            }
+          }
+        },
+        {
+          "title": "Article 4",
+          "objectID": "Article 4",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 4",
+              "matchLevel": "full"
+            }
+          }
+        },
+        {
+          "title": "Article 5",
+          "objectID": "Article 5",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 5",
+              "matchLevel": "full"
+            }
+          }
+        },
+        {
+          "title": "Article 6",
+          "objectID": "Article 6",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 6",
+              "matchLevel": "full"
+            }
+          }
+        },
+        {
+          "title": "Article 7",
+          "objectID": "Article 7",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 7",
+              "matchLevel": "full"
+            }
+          }
+        },
+        {
+          "title": "Article 8",
+          "objectID": "Article 8",
+          "_highlightResult": {
+            "title": {
+              "value": "<ais-highlight-0000000000>Article</ais-highlight-0000000000> 8",
+              "matchLevel": "full"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -43,15 +43,11 @@ export const ThankYouMessage = ({
   const { t } = useTranslation();
   return (
     <>
-      <h1 data-playwright-test-label='main-head' data-cy='donate.thank-you'>
-        {t('donate.thank-you')}
-      </h1>
+      <h1 data-playwright-test-label='main-head'>{t('donate.thank-you')}</h1>
       {(askForDonation || thankContributon) && (
         <>
           <Spacer size='medium' />
-          <p data-cy='donate.crucial-contribution'>
-            {t('donate.crucial-contribution')}
-          </p>
+          <p>{t('donate.crucial-contribution')}</p>
         </>
       )}
       {askForDonation && <OtherWaysToSupport />}
@@ -63,13 +59,11 @@ export const OtherWaysToSupport = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <p data-cy='donate.if-support-further'>
+      <p>
         <Trans i18nKey='donate.if-support-further'>
           <a href={t('links:donate.one-time-external-url')}>placeholder</a>
           <a href={t('links:donate.mail-check-url')}>placeholder</a>
-          <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
-            placeholder
-          </a>
+          <a href={t('links:donate.other-ways-url')}>placeholder</a>
         </Trans>
       </p>
     </>
