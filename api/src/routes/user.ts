@@ -246,6 +246,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         return { msUsername: null };
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         void reply.send({
           message: 'flash.ms.transcript.unlink-err',
@@ -333,6 +334,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         return { msUsername: userName };
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         return reply.code(500).send({
           type: 'error',
           message: 'flash.ms.transcript.link-err-6'
@@ -393,6 +395,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return {
           type: 'error',
@@ -564,6 +567,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void res.code(500);
         return { user: {}, result: '' };
       }
