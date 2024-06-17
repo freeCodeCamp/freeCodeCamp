@@ -23,8 +23,6 @@ const challengeId = new ObjectID().toString();
  * NOTE: if the body of the challenge is not correctly formatted, see below for
  * examples of the correct format.
  *
- * Finally dialogs have different frontmatter. After running the script, replace
- * the audioPath with the videoId. Again, there is an example below.
  */
 
 const num = 1;
@@ -36,7 +34,6 @@ id: ${challengeId}
 title: ${title}
 challengeType: ${challengeType}
 dashedName: ${dashedName}
-audioPath: curriculum/js-music-player/We-Are-Going-to-Make-it.mp3
 ---
 
 `;
@@ -127,7 +124,6 @@ The term `an issue` relates to the solution, not to the expression of understand
 id: 651dd3e06ffb500e3f2ce478
 title: "Dialogue 1: Maria Introduces Herself to Tom"
 challengeType: 21
-videoId: nLDychdBwUg
 dashedName: dialogue-1-maria-introduces-herself-to-tom
 ---
 
