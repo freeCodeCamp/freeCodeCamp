@@ -121,14 +121,12 @@ export const certificateVerify = {
         )
       })
     ]),
-    500: Type.Union(
-      [
-        Type.Object({
-          type: Type.Literal('danger'),
-          message: Type.Literal('flash.went-wrong')
-        })
-      ],
+    500: Type.Union([
+      Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal('flash.went-wrong')
+      }),
       generic500
-    )
+    ])
   }
 };
