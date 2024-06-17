@@ -107,6 +107,8 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       if (!user) {
         void reply.code(500);
+        fastify.log.error('User not found');
+        fastify.Sentry.captureException(Error('User not found'));
         return {
           type: 'danger',
           // message: 'User not found'
