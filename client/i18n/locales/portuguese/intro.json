@@ -362,7 +362,7 @@
         "intro": [
           "A programação funcional é uma abordagem popular para desenvolvimento de software. Na programação funcional, os desenvolvedores organizam o código em funções menores, então combinam essas funções para criar programas complexos.",
           "Nesse projeto de aplicação de planilha, você aprenderá sobre análise e avaliação de expressões matemáticas, implementando funções de planilha, manipulando referências de células e criando interfaces da web interativas. Você aprenderá como atualizar dinamicamente a página baseada na entrada do usuário.",
-          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, and <code>includes()</code> methods and the <code>parseInt()</code> function."
+          "Este projeto abrangerá conceitos como os métodos <code>map()</code>, <code>find()</code> e <code>includes()</code> e a função <code>parseInt()</code>."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -884,11 +884,18 @@
           "Este é um dos projetos necessários para obter a certificação."
         ]
       },
-      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
-        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Aprenda métodos especiais criando um espaço vetorial",
         "intro": [
-          "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
-          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
+          "Os métodos especiais do Python são chamados em resposta a operações específicas e permitem que você personalize o comportamento dos objetos de modo detalhado e eficaz.",
+          "Neste projeto, você vai explorar alguns dos métodos especiais mais comuns enquanto aprende sobre vetores criando um espaço vetorial."
+        ]
+      },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Aprenda encapsulamento criando uma calculadora de trajetória de projéteis",
+        "intro": [
+          "Encapsulamento é um princípio fundamental da OOP baseado na escrita de código que limita o acesso direto aos dados.",
+          "Neste projeto, você descobrirá novos conceitos relacionados ao encapsulamento, como getters, setters e name mangling. Você usará esses conceitos junto com o que você já aprendeu para criar um programa que calcula uma trajetória de projéteis."
         ]
       },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
