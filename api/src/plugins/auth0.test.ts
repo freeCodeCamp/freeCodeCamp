@@ -12,7 +12,7 @@ describe('auth0 plugin', () => {
 
   beforeAll(async () => {
     fastify = Fastify();
-    // TODO: Uncomment when a test fails because of the lack of it.
+
     await fastify.register(cookies);
     await fastify.register(redirectWithMessage);
     await fastify.register(codeFlowAuth);
@@ -42,6 +42,13 @@ describe('auth0 plugin', () => {
     const email = 'new@user.com';
     let getAccessTokenFromAuthorizationCodeFlowSpy: jest.SpyInstance;
     let userinfoSpy: jest.SpyInstance;
+
+    const mockAuthSuccess = () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockResolvedValueOnce(Promise.resolve({ email }));
+    };
 
     beforeEach(() => {
       getAccessTokenFromAuthorizationCodeFlowSpy = jest.spyOn(
@@ -139,11 +146,7 @@ describe('auth0 plugin', () => {
     });
 
     it('creates a user if the state is valid', async () => {
-      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
-        token: 'any token'
-      });
-      userinfoSpy.mockResolvedValueOnce(Promise.resolve({ email }));
-
+      mockAuthSuccess();
       await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=valid'
@@ -185,10 +188,7 @@ describe('auth0 plugin', () => {
     });
 
     it('redirects the signin-success message on success', async () => {
-      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
-        token: 'any token'
-      });
-      userinfoSpy.mockResolvedValueOnce(Promise.resolve({ email }));
+      mockAuthSuccess();
 
       const res = await fastify.inject({
         method: 'GET',
@@ -202,10 +202,7 @@ describe('auth0 plugin', () => {
     });
 
     it('should set the jwt_access_token cookie', async () => {
-      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
-        token: 'any token'
-      });
-      userinfoSpy.mockResolvedValueOnce(Promise.resolve({ email }));
+      mockAuthSuccess();
 
       const res = await fastify.inject({
         method: 'GET',
