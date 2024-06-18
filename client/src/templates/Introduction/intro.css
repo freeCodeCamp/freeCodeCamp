@@ -277,7 +277,7 @@ button.map-title {
 .map-dialogue-wrap a {
   align-items: center;
   min-height: 50px;
-  padding: 0;
+  padding: 10px 15px;
 }
 
 .block-description {
