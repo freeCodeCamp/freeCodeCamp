@@ -1,4 +1,3 @@
-import { FastifyRequest } from 'fastify';
 import jwt from 'jsonwebtoken';
 
 import { availableLangs } from '../../../shared/config/i18n';
@@ -95,18 +94,10 @@ export function getPrefixedLandingPath(origin: string, pathPrefix?: string) {
   return `${origin}${redirectPathSegment}`;
 }
 
-/**
- * Get the redirect parameters.
- *
- * @param req - A fastify Request.
- * @param _normalizeParams - The function to normalize the parameters.
- * @returns The redirect parameters.
- */
-export function getRedirectParams(
-  req: FastifyRequest,
-  _normalizeParams = normalizeParams
-): RedirectParams {
-  const url = req.headers['referer'];
+function getParamsFromUrl(
+  url: string | undefined | null,
+  normalize: typeof normalizeParams
+) {
   // since we do not always redirect the user back to the page they were on
   // we need client locale and origin to construct the redirect url.
   let returnUrl;
@@ -120,7 +111,44 @@ export function getRedirectParams(
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.
   const pathPrefix = returnUrl.pathname.split('/')[1] ?? '';
-  return _normalizeParams({ returnTo: returnUrl.href, origin, pathPrefix });
+  return normalize({ returnTo: returnUrl.href, origin, pathPrefix });
+}
+
+/**
+ * Get the redirect parameters.
+ *
+ * @param req - A fastify Request.
+ * @param req.headers - The request headers.
+ * @param _normalizeParams - The function to normalize the parameters.
+ * @returns The redirect parameters.
+ */
+export function getRedirectParams(
+  req: { headers: Record<string, string | undefined> },
+  _normalizeParams = normalizeParams
+): RedirectParams {
+  const url = req.headers['referer'];
+  return getParamsFromUrl(url, _normalizeParams);
+}
+
+/**
+ * Get the redirect parameters after sign in flow.
+ *
+ * @param req - A fastify Request.
+ * @param req.cookies - The request cookies.
+ * @param req.unsignCookie - The function to unsign the cookie.
+ * @param _normalizeParams - The function to normalize the parameters.
+ * @returns The redirect parameters.
+ */
+export function getLoginRedirectParams(
+  req: {
+    cookies: Record<string, string | undefined>;
+    unsignCookie: (rawValue: string) => { value: string | null };
+  },
+  _normalizeParams = normalizeParams
+): RedirectParams {
+  const signedUrl = req.cookies['login-returnto'];
+  const url = signedUrl ? req.unsignCookie(signedUrl).value : null;
+  return getParamsFromUrl(url, _normalizeParams);
 }
 
 /**
