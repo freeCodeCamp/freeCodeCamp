@@ -918,6 +918,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       'data-playwright-test-label',
       'breadcrumb-mobile'
     );
+    breadcrumbList.className = 'breadcrumbs';
     breadcrumbList.appendChild(breadcrumbLeft);
     breadcrumbList.appendChild(breadcrumbRight);
     breadcrumb.appendChild(breadcrumbList);
