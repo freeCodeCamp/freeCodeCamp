@@ -43,31 +43,34 @@ class EditorTabs extends Component<EditorTabsProps> {
       /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
       !isMobile || sortChallengeFiles(challengeFiles).length > 1;
     return (
-      <div className='monaco-editor-tabs'>
-        {isRenderChallengeFiles &&
-          /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
-          sortChallengeFiles(challengeFiles).map(
-            (challengeFile: ChallengeFile) => (
-              <button
-                aria-expanded={
-                  // @ts-expect-error TODO: validate challengeFile on io-boundary,
-                  // then we won't need to ignore this error and we can drop the
-                  // nullish handling.
-                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                  visibleEditors[challengeFile.fileKey] ?? 'false'
-                }
-                key={challengeFile.fileKey}
-                data-cy={`editor-tab-${challengeFile.fileKey}`}
-                onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
-              >
-                {`${challengeFile.name}.${challengeFile.ext}`}{' '}
-                <span className='sr-only'>
-                  {i18next.t('learn.editor-tabs.editor')}
-                </span>
-              </button>
+      isRenderChallengeFiles && (
+        <div className='monaco-editor-tabs'>
+          {
+            /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */
+            sortChallengeFiles(challengeFiles).map(
+              (challengeFile: ChallengeFile) => (
+                <button
+                  aria-expanded={
+                    // @ts-expect-error TODO: validate challengeFile on io-boundary,
+                    // then we won't need to ignore this error and we can drop the
+                    // nullish handling.
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                    visibleEditors[challengeFile.fileKey] ?? 'false'
+                  }
+                  key={challengeFile.fileKey}
+                  data-cy={`editor-tab-${challengeFile.fileKey}`}
+                  onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
+                >
+                  {`${challengeFile.name}.${challengeFile.ext}`}{' '}
+                  <span className='sr-only'>
+                    {i18next.t('learn.editor-tabs.editor')}
+                  </span>
+                </button>
+              )
             )
-          )}
-      </div>
+          }
+        </div>
+      )
     );
   }
 }

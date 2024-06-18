@@ -219,10 +219,6 @@
   width: 100%;
 }
 
-#mobile-layout .monaco-editor-tabs:empty {
-  padding: 0;
-}
-
 #mobile-layout .monaco-editor-tabs button {
   flex: 1;
   max-width: 50%;
