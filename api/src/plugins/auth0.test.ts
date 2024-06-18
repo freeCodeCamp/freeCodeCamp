@@ -1,11 +1,18 @@
+const COOKIE_DOMAIN = 'test.com';
 import Fastify, { FastifyInstance } from 'fastify';
 
 import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 import prismaPlugin from '../db/prisma';
-import cookies from './cookies';
+import cookies, { unsign } from './cookies';
 import { auth0Client } from './auth0';
 import redirectWithMessage, { formatMessage } from './redirect-with-message';
 import codeFlowAuth from './code-flow-auth';
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+jest.mock('../utils/env', () => ({
+  ...jest.requireActual('../utils/env'),
+  COOKIE_DOMAIN
+}));
 
 describe('auth0 plugin', () => {
   let fastify: FastifyInstance;
@@ -35,6 +42,26 @@ describe('auth0 plugin', () => {
       expect(redirectUrl.host).toMatch(AUTH0_DOMAIN);
       expect(redirectUrl.pathname).toBe('/authorize');
       expect(res.statusCode).toBe(302);
+    });
+
+    it('sets a login-returnto cookie', async () => {
+      const returnTo = 'http://localhost:3000/learn';
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/signin',
+        headers: {
+          referer: returnTo
+        }
+      });
+
+      const cookie = res.cookies.find(c => c.name === 'login-returnto');
+      expect(unsign(cookie!.value).value).toBe(returnTo);
+      expect(cookie).toMatchObject({
+        domain: COOKIE_DOMAIN,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'Lax'
+      });
     });
   });
 
