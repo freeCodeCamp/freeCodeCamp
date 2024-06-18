@@ -241,7 +241,50 @@ describe('auth0 plugin', () => {
       );
     });
 
-    // TODO: Test redirection for i18n clients. The must be a nice way to do
-    // this without duplicating all the tests.
+    it('should use the login-returnto cookie if present and valid', async () => {
+      mockAuthSuccess();
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
+      // /signin sets the cookie
+      const req = await fastify.inject({
+        method: 'GET',
+        url: '/signin',
+        headers: {
+          referer: returnTo
+        }
+      });
+      const returnToCookie = req.cookies.find(c => c.name === 'login-returnto');
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': returnToCookie!.value }
+      });
+
+      expect(res.headers.location).toBe(
+        `${returnTo}?${formatMessage({ type: 'success', content: 'flash.signin-success' })}`
+      );
+    });
+
+    it('should redirect home if the login-returnto cookie is invalid', async () => {
+      mockAuthSuccess();
+      const returnTo = 'https://www.evilcodecamp.org/espanol/learn';
+      // /signin sets the cookie
+      const req = await fastify.inject({
+        method: 'GET',
+        url: '/signin',
+        headers: {
+          referer: returnTo
+        }
+      });
+      const returnToCookie = req.cookies.find(c => c.name === 'login-returnto');
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': returnToCookie!.value }
+      });
+
+      expect(res.headers.location).toMatch(HOME_LOCATION);
+    });
   });
 });

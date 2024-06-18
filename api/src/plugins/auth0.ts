@@ -12,6 +12,7 @@ import {
 } from '../utils/env';
 import { findOrCreateUser } from '../routes/helpers/auth-helpers';
 import { createAccessToken } from '../utils/tokens';
+import { getLoginRedirectParams } from '../utils/redirection';
 
 /**
  * Fastify plugin for Auth0 authentication. This uses fastify-plugin to expose
@@ -77,6 +78,8 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       }
 
+      const { returnTo } = getLoginRedirectParams(request);
+
       let token;
       try {
         token = (
@@ -109,7 +112,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       reply.setAccessTokenCookie(createAccessToken(id));
       // TODO: implement whatever set-cookieing the api-server does as well as
       // handling i18n clients.
-      void reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
+      void reply.redirectWithMessage(returnTo, {
         type: 'success',
         content: 'flash.signin-success'
       });
