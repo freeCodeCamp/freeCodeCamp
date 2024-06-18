@@ -99,6 +99,9 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         // functions.
         if (error instanceof Error && error.message === 'Invalid state') {
           fastify.log.error('Auth failed: invalid state');
+        } else {
+          fastify.log.error('Auth failed', error);
+          fastify.Sentry.captureException(error);
         }
         return reply.redirect(302, '/signin');
       }
@@ -111,8 +114,8 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         email = userinfo.email;
         if (typeof email !== 'string') throw Error('Invalid userinfo response');
       } catch (error) {
-        // TODO: send to Sentry
         fastify.log.error('Auth failed', error);
+        fastify.Sentry.captureException(error);
         return reply.redirect(302, '/signin');
       }
 
