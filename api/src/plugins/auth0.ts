@@ -12,7 +12,10 @@ import {
 } from '../utils/env';
 import { findOrCreateUser } from '../routes/helpers/auth-helpers';
 import { createAccessToken } from '../utils/tokens';
-import { getLoginRedirectParams } from '../utils/redirection';
+import {
+  getLoginRedirectParams,
+  getPrefixedLandingPath
+} from '../utils/redirection';
 
 /**
  * Fastify plugin for Auth0 authentication. This uses fastify-plugin to expose
@@ -78,7 +81,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       }
 
-      const { returnTo } = getLoginRedirectParams(request);
+      const { returnTo, pathPrefix, origin } = getLoginRedirectParams(request);
 
       let token;
       try {
@@ -108,14 +111,25 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         return reply.redirect(302, '/signin');
       }
 
-      const { id } = await findOrCreateUser(fastify, email);
+      const { id, acceptedPrivacyTerms } = await findOrCreateUser(
+        fastify,
+        email
+      );
+
       reply.setAccessTokenCookie(createAccessToken(id));
-      // TODO: implement whatever set-cookieing the api-server does as well as
-      // handling i18n clients.
-      void reply.redirectWithMessage(returnTo, {
-        type: 'success',
-        content: 'flash.signin-success'
-      });
+
+      if (acceptedPrivacyTerms) {
+        void reply.redirectWithMessage(returnTo, {
+          type: 'success',
+          content: 'flash.signin-success'
+        });
+      } else {
+        const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
+        void reply.redirectWithMessage(`${redirectBase}/email-sign-up`, {
+          type: 'success',
+          content: 'flash.signin-success'
+        });
+      }
     });
 
     done();

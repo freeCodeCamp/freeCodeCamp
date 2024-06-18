@@ -1,9 +1,10 @@
 const COOKIE_DOMAIN = 'test.com';
 import Fastify, { FastifyInstance } from 'fastify';
 
+import { createUserInput } from '../utils/create-user';
 import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 import prismaPlugin from '../db/prisma';
-import cookies, { unsign } from './cookies';
+import cookies, { sign, unsign } from './cookies';
 import { auth0Client } from './auth0';
 import redirectWithMessage, { formatMessage } from './redirect-with-message';
 import codeFlowAuth from './code-flow-auth';
@@ -214,7 +215,7 @@ describe('auth0 plugin', () => {
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
-    it('redirects the signin-success message on success', async () => {
+    it('redirects with the signin-success message on success', async () => {
       mockAuthSuccess();
 
       const res = await fastify.inject({
@@ -243,6 +244,9 @@ describe('auth0 plugin', () => {
 
     it('should use the login-returnto cookie if present and valid', async () => {
       mockAuthSuccess();
+      await fastify.prisma.user.create({
+        data: { ...createUserInput(email), acceptedPrivacyTerms: true }
+      });
       const returnTo = 'https://www.freecodecamp.org/espanol/learn';
       // /signin sets the cookie
       const req = await fastify.inject({
@@ -285,6 +289,26 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(HOME_LOCATION);
+    });
+
+    it('should redirect to email-sign-up if the user has not acceptedPrivacyTerms', async () => {
+      mockAuthSuccess();
+      // Using an italian path to make sure redirection works.
+      const italianReturnTo = 'https://www.freecodecamp.org/italian/settings';
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: {
+          'login-returnto': sign(italianReturnTo)
+        }
+      });
+
+      expect(res.headers.location).toEqual(
+        expect.stringContaining(
+          'https://www.freecodecamp.org/italian/email-sign-up?'
+        )
+      );
     });
   });
 });
