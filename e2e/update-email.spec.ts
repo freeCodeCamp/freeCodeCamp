@@ -13,14 +13,12 @@ test.describe('The update-email page when the user is signed in', () => {
       'Update your email address | freeCodeCamp.org'
     );
     await expect(
-      page.getByRole('heading', { name: translations.misc['update-email-2'] })
+      page.getByRole('heading', { name: 'Update your email address here' })
     ).toBeVisible();
 
     const form = page.getByTestId('update-email-form');
-    const emailInput = page.getByLabel(translations.misc.email);
-    const submitButton = page.getByRole('button', {
-      name: translations.buttons['update-email']
-    });
+    const emailInput = page.getByLabel('Email');
+    const submitButton = page.getByRole('button', { name: 'Update my Email' });
 
     await expect(form).toBeVisible();
     await expect(emailInput).toBeVisible();
@@ -32,9 +30,7 @@ test.describe('The update-email page when the user is signed in', () => {
     await expect(submitButton).toBeVisible();
     await expect(submitButton).toHaveAttribute('type', 'submit');
 
-    const signOutButton = page.getByRole('link', {
-      name: translations.buttons['sign-out']
-    });
+    const signOutButton = page.getByRole('link', { name: 'Sign out' });
 
     await expect(signOutButton).toBeVisible();
     await expect(signOutButton).toHaveAttribute('href', '/signout');
@@ -44,9 +40,8 @@ test.describe('The update-email page when the user is signed in', () => {
     page
   }) => {
     const emailInput = page.getByLabel(translations.misc.email);
-    const submitButton = page.getByRole('button', {
-      name: translations.buttons['update-email']
-    });
+    const submitButton = page.getByRole('button', { name: 'Update my Email' });
+
     await expect(submitButton).toBeDisabled();
     await emailInput.fill('123');
     await expect(submitButton).toBeDisabled();
@@ -63,7 +58,11 @@ test.describe('The update-email page when the user is not signed in', () => {
   });
 
   test('should redirect to the signin page', async ({ page }) => {
-    await page.waitForURL('**/learn');
+    if (process.env.CI) {
+      await page.waitForURL('**/learn/');
+    } else {
+      await page.waitForURL('**/learn');
+    }
 
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
