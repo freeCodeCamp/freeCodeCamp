@@ -41,7 +41,12 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       },
       discovery: { issuer: `https://${AUTH0_DOMAIN}` },
-      callbackUri: `${API_LOCATION}/auth/auth0/callback`
+      callbackUri: `${API_LOCATION}/auth/auth0/callback`,
+      cookie: {
+        // It's important not to sign the cookie, since the OAuth2 plugin will
+        // not unsign it.
+        signed: false
+      }
     });
 
     fastify.get('/signin', async function (request, reply) {
