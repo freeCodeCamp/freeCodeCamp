@@ -84,6 +84,8 @@ describe('auth0 plugin', () => {
         'getAccessTokenFromAuthorizationCodeFlow'
       );
       userinfoSpy = jest.spyOn(fastify.auth0OAuth, 'userinfo');
+      // @ts-expect-error - Only mocks part of the Sentry object.
+      fastify.Sentry = { captureException: () => '' };
     });
 
     afterEach(async () => {
@@ -125,22 +127,6 @@ describe('auth0 plugin', () => {
       expect(fastify.log.error).toHaveBeenCalledWith(
         'Auth failed: invalid state'
       );
-      expect(res.statusCode).toBe(302);
-    });
-
-    // TODO(Post-MVP): Expand the logging.
-    it('should not log errors if the state is valid', async () => {
-      jest.spyOn(fastify.log, 'error');
-      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
-        'any other error'
-      );
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/auth/auth0/callback?state=doesnt-matter' // state is not checked
-        // because the spy is mocking the method
-      });
-
-      expect(fastify.log.error).not.toHaveBeenCalled();
       expect(res.statusCode).toBe(302);
     });
 
