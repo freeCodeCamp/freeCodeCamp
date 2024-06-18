@@ -110,7 +110,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
   const loginButton = page.getByRole('link', {
     name: 'Sign in to save your progress'
   });
-  await focusEditor({ page, browserName, isMobile });
+  await focusEditor({ page, isMobile });
   await clearEditor({ page, browserName });
 
   await editor.fill(

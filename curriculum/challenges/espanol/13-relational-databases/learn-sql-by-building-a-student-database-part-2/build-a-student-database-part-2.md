@@ -2,7 +2,6 @@
 id: 618590adb0730ca724e37672
 title: "Construir una base de datos de estudiantes: Parte 2"
 challengeType: 12
-helpCategory: Backend Development
 url: freeCodeCamp/learn-sql-by-building-a-student-database-part-2
 dashedName: build-a-student-database-part-2
 ---

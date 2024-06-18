@@ -17,7 +17,10 @@ describe('completionEpic', () => {
       const state$ = {
         value: {
           challenge: { challengeMeta: { challengeType: 0 } },
-          app: { user: { username: 'test' } }
+          app: {
+            user: { username: 'test' },
+            allChallengesInfo: { challengeEdges: [], certificateNodes: [] }
+          }
         }
       };
 

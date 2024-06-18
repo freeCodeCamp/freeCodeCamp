@@ -67,6 +67,7 @@ textarea.inputarea {
 
 .challenge-description-header {
   display: flex;
+  align-items: center;
   gap: 7px;
   margin: 0.1em 0 0.6rem;
 }
@@ -249,6 +250,16 @@ textarea.inputarea {
 
 .hint-status {
   margin-bottom: 18px;
+}
+
+.code-details {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.code-details-summary {
+  display: list-item;
+  cursor: pointer;
 }
 
 /* overwriting default arrow styles for accessibility */

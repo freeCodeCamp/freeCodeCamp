@@ -4,9 +4,6 @@
   "dashedName": "example-certification-exam",
   "helpCategory": "HTML-CSS",
   "order": 0,
-  "time": "2 hours",
-  "template": "",
-  "required": [],
   "superBlock": "example-certification",
   "challengeOrder": [
     {

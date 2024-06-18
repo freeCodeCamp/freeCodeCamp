@@ -84,12 +84,3 @@ Within `tests/1_unit-tests.js` under the test labeled `#2` in the `Basic Asserti
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

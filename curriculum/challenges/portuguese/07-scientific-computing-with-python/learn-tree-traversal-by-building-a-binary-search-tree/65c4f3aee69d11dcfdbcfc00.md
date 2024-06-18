@@ -1,6 +1,6 @@
 ---
 id: 65c4f3aee69d11dcfdbcfc00
-title: Step 18
+title: Passo 18
 challengeType: 20
 dashedName: step-18
 ---
@@ -11,7 +11,7 @@ Now, inside the `insert` method, you need to call the helper method `_insert()` 
 
 Delete `pass` and assign `self._insert(self.root, key)` to `self.root`.
 
-Note that:
+Observe que:
 
 - `self.root` passes the root node of the tree as the first argument. This is the starting point for the insertion process.
 - `key`: passes the `key` value you want to insert as the second argument.

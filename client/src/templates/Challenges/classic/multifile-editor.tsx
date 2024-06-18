@@ -130,7 +130,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
             } else {
               return (
                 <ReflexElement
-                  data-cy={`editor-container-${key}`}
                   data-playwright-test-label={`editor-container-${key}`}
                   {...reflexProps}
                   {...resizeProps}

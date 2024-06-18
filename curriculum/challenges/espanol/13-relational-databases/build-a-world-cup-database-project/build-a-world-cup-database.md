@@ -2,7 +2,6 @@
 id: 5f9771307d4d22b9d2b75a94
 title: Construir una base de datos de la Copa Mundial
 challengeType: 13
-helpCategory: Backend Development
 url: freeCodeCamp/learn-world-cup-database
 dashedName: build-a-world-cup-database
 ---

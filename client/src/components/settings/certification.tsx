@@ -135,6 +135,7 @@ const isCertMapSelector = createSelector(
     'Example Certification': false,
     'Upcoming Python Certification': false,
     'A2 English for Developers': false,
+    'B1 English for Developers': false,
     'JavaScript Algorithms and Data Structures (Beta)': isJsAlgoDataStructCertV8
   })
 );
@@ -383,12 +384,12 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <>
         {certsToProjects[certName].map(({ link, title, id }) => (
           <tr className='project-row' key={id}>
-            <td className='project-title col-sm-8 col-xs-8'>
+            <td className='project-title col-xs-8'>
               <Link to={link}>
                 {t(`certification.project.title.${title}`, title)}
               </Link>
             </td>
-            <td className='project-solution col-sm-4 col-xs-4'>
+            <td className='project-solution col-xs-4'>
               {getProjectSolution(id, title)}
             </td>
           </tr>
@@ -399,6 +400,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
               block={true}
               variant='primary'
               href={certLocation}
+              data-playwright-test-label={`btn-for-${certSlug}`}
               // This floating promise is acceptable
               // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onClick={clickHandler}

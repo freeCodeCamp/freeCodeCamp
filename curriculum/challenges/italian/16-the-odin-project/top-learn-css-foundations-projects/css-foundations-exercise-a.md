@@ -11,132 +11,135 @@ dashedName: css-foundations-exercise-a
 
 ## User story
 
-1. Dovresti vedere un elemento `div` con uno sfondo `red`, testo `white`, dimensione del testo di `32px`, centrato e `bold`.
-
-1. Il CSS dell'elemento `div` dovrebbe essere aggiunto esternamente utilizzando un selettore di tipo.
-
-1. Dovresti vedere un elemento `p` con sfondo `green`, testo `white` e dimensione del testo di `18px`.
-
-1. Il CSS dell'elemento `p` dovrebbe essere aggiunto internamente utilizzando un selettore di tipo.
-
-1. Dovresti vedere un elemento `button` con uno sfondo `orange` e una dimensione del carattere di `18px`.
-
-1. Il CSS dell'elemento `button` dovrebbe avere uno stile in linea.
+- You should see a `div` element with some text.
+  - It should have a `red` background, `white` text, a font size of `32px`, text center aligned and `bold`.
+  - The CSS for the `div` element should be added externally, and using a type selector.
+- You should see a `p` element with some text.
+  - It should have a `green` background, `white` text, and a font size of `18px`.
+  - The CSS for the `p` element should be added internally, and using a type selector.
+- You should see a `button` element with some text.
+  - The `button` element should have an `orange` background and a font size of `18px`.
+  - The CSS for the `button` element should be added using inline styles.
 
 # --hints--
 
-Dovrebbe esserci un elemento `div`. Dovrebbe contenere del testo ed essere allineato al centro.
+You should have one `div` element containing some text.
 
 ```js
-const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
+const divElement = document.querySelector('div');
 
-assert(aligned === 'center');
-assert(document.getElementsByTagName('DIV')?.length == 1);
-assert(document.getElementsByTagName('DIV')?.[0]?.innerText.length > 0)
+assert.isNotNull(divElement);
+assert.isAtLeast(divElement?.innerText.length, 1);
 ```
 
-L'elemento `div` dovrebbe avere un `background-color` con il valore `red` e il testo di colore `white`.
+You should have an external stylesheet containing the `div` element styles.
 
 ```js
+const styleSheet = new __helpers.CSSHelp(document).getStyleSheet();
+const isExternal = styleSheet?.ownerNode.classList.contains('fcc-injected-styles');
+const divStyle = new __helpers.CSSHelp(document).getStyle('div');
 
-const bgc = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('background-color');
-
-const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('color');
-
-assert(bgc === 'red');
-assert(color === 'white');
+assert.isTrue(isExternal);
+assert.isNotNull(divStyle);
 ```
 
-L'elemento `div` dovrebbe avere `font-weight` con il valore `bold` e `font-size` con il valore `32px`.
+Your `div` element should not have its CSS added using internal or inline styles.
 
 ```js
-const fontSize = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-size');
-const fontWeight = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-weight');
+const styleElement = document.querySelector('style:not([class])');
 
-assert(fontSize === '32px');
-assert(fontWeight === 'bold');
+assert.isNotTrue(styleElement?.innerText.includes('div'));
+assert.isNotTrue(document.querySelector('div')?.hasAttribute('style'));
 ```
 
-L'elemento `div` dovrebbe avere il CSS aggiunto esternamente.
+Your `div` element should have a `background-color` of `red` and a `color` of `white`.
 
 ```js
-assert(!document.getElementsByTagName('style')?.[0]?.innerText.includes('div'));
-assert(!document.getElementsByTagName('div')?.[0]?.hasAttribute('style'));
+const divStyle = new __helpers.CSSHelp(document).getStyle('div');
+const divBGColor = divStyle?.getPropertyValue('background-color');
+const divColor = divStyle?.getPropertyValue('color');
+
+assert.equal(divBGColor, 'red');
+assert.equal(divColor, 'white');
 ```
 
-Dovrebbe esserci un elemento `p` e dovrebbe contenere del testo.
+Your `div` element should have `font-weight` set to `bold`, `font-size` set to `32px`, and `text-align` set to `center`.
 
 ```js
-assert(document.getElementsByTagName('P')?.length == 1);
-assert(document.getElementsByTagName('P')?.[0]?.innerText.length > 0)
+const divStyle = new __helpers.CSSHelp(document).getStyle('div');
+const textAlign = divStyle?.getPropertyValue('text-align');
+const fontSize = divStyle?.getPropertyValue('font-size');
+const fontWeight = divStyle?.getPropertyValue('font-weight');
+
+assert.equal(textAlign, 'center');
+assert.equal(fontSize, '32px');
+assert.equal(fontWeight,'bold');
 ```
 
-L'elemento `p` dovrebbe avere `color` impostato su `white`.
+You should have one `p` element and it should contain some text.
 
 ```js
-const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('color');
+const pElement = document.querySelector('p');
 
-assert(color == 'white');
+assert.isNotNull(pElement);
+assert.isAtLeast(pElement?.innerText.length, 1)
 ```
 
-L'elemento `p` dovrebbe avere `font-size` con il valore `18px`.
+Your `p` element should have its styles added internally using a `style` element.
 
 ```js
-const styleTag = document.getElementsByTagName('style')?.[0];
-let pHasFontSize18 = false;
+const styleElement = document.querySelector('style:not([class])');
+const rules = styleElement?.sheet?.cssRules?.[0] || styleElement?.sheet?.rules?.[0];
+let isStyled = false;
 
-const rules = styleTag?.sheet?.cssRules || styleTag?.sheet?.rules;
-if (rules) {
-  for (let j = 0; j < rules.length; j++) {
-    const rule = rules[j];
-    if (rule.selectorText === 'p' && rule.style.fontSize === '18px') {
-      pHasFontSize18 = true;
-      break;
-    }
-  }
+if (rules && rules.selectorText === 'p') {
+  isStyled = true;
 }
 
-assert(pHasFontSize18);
+assert.isTrue(isStyled);
 ```
 
-L'elemento `p` dovrebbe avere lo stile aggiunto internamente.
+Your `p` element should have a `font-size` of `18px` and have `color` set to `white`.
 
 ```js
+const styleElement = document.querySelector('style:not([class])');
+const rules = styleElement?.sheet?.cssRules?.[0] || styleElement?.sheet?.rules?.[0];
+let fontSize, color;
 
-const styleTag = document.getElementsByTagName('style')?.[0];
-let pIsStyled = false;
-
-
-const rules = styleTag?.sheet?.cssRules || styleTag?.sheet?.rules;
-if (rules) {
-  for (let j = 0; j < rules.length; j++) {
-    const rule = rules[j];
-    if (rule.selectorText === 'p') {
-      pIsStyled = true;
-      break;
-    }
-  }
+if (rules && rules.selectorText === 'p') {
+  fontSize = rules.style.fontSize;
+  color = rules.style.color;
 }
 
-assert(pIsStyled);
+assert.equal(fontSize, "18px");
+assert.equal(color, 'white');
 ```
 
-L'elemento `button` dovrebbe avere `background-color` impostato su `orange`.
+You should have one `button` element containing some text.
 
 ```js
-assert(document.getElementsByTagName('button')?.[0]?.style.backgroundColor === 'orange')
+const btnElement = document.querySelector('button');
+
+assert.isNotNull(btnElement);
+assert.isAtLeast(btnElement?.innerText.length, 1);
 ```
 
-L'elemento `button` dovrebbe avere `font-size` con il valore `18px`.
+Your `button` element should have an inline style.
 
 ```js
-assert(document.getElementsByTagName('button')?.[0]?.style.fontSize === '18px')
+assert.isTrue(document.querySelector('button')?.hasAttribute('style'));
 ```
 
-L'elemento `button` dovrebbe avere uno stile in linea.
+Your `button` element should have its `background-color` set to `orange`.
 
 ```js
-assert(document.getElementsByTagName('button')?.[0]?.hasAttribute('style'));
+assert.equal(document.querySelector('button')?.style.backgroundColor, 'orange')
+```
+
+Your `button` element should have its `font-size` set to `18px`.
+
+```js
+assert.equal(document.querySelector('button')?.style.fontSize, '18px')
 ```
 
 # --seed--

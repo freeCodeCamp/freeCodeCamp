@@ -1,6 +1,6 @@
 ---
 id: 657e1fd7b5ffaebc0ff4bd9f
-title: Task 26
+title: Tarefa 26
 challengeType: 19
 dashedName: task-26
 ---

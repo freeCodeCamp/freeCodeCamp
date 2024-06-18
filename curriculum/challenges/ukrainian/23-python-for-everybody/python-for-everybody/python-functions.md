@@ -14,7 +14,7 @@ dashedName: python-functions
 
 ## --text--
 
-What is the purpose of the "def" keyword in Python?
+Яке призначення має ключове слово «def» у Python?
 
 ## --answers--
 

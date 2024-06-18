@@ -362,7 +362,7 @@
         "intro": [
           "A programação funcional é uma abordagem popular para desenvolvimento de software. Na programação funcional, os desenvolvedores organizam o código em funções menores, então combinam essas funções para criar programas complexos.",
           "Nesse projeto de aplicação de planilha, você aprenderá sobre análise e avaliação de expressões matemáticas, implementando funções de planilha, manipulando referências de células e criando interfaces da web interativas. Você aprenderá como atualizar dinamicamente a página baseada na entrada do usuário.",
-          "Esse projeto abrangerá conceitos como o método <code>map()</code>, o método <code>find()</code>, <code>parseInt()</code> e o método <code>includes()</code>."
+          "Este projeto abrangerá conceitos como os métodos <code>map()</code>, <code>find()</code> e <code>includes()</code> e a função <code>parseInt()</code>."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -463,21 +463,28 @@
         "title": "Aprenda JavaScript introdutório criando um gerador de pirâmide",
         "intro": [
           "O JavaScript é uma linguagem de script poderosa que você pode usar para fazer sites interativos. É uma das tecnologias essenciais da web, junto do HTML e do CSS. Todos os navegadores modernos suportam JavaScript.",
-          "In this practice project, you'll learn fundamental programming concepts in JavaScript by coding your own Pyramid Generator. You'll learn how to work with arrays, strings, functions, loops, <code>if/else</code> statements, and more."
+          "Nesse projeto prático, você aprenderá conceitos fundamentais de programação em JavaScript programando um gerador de pirâmide. Você aprenderá a trabalhar com arrays, strings, objetos, funções, laços, instruções <code>if/else</code> e mais."
         ]
       },
       "review-js-fundamentals-by-building-a-gradebook-app": {
-        "title": "Review JavaScript Fundamentals by Building a Gradebook App",
+        "title": "Revise os fundamentos de JavaScript criando uma aplicação de quadro de notas",
         "intro": [
-          "In this mini project, you will get to review JavaScript fundamentals like functions, variables, conditionals and more by building a gradebook app.",
-          "This will give you an opportunity to solve small problems and get a better understanding of the basics."
+          "Neste miniprojeto, você poderá revisar alguns fundamentos de JavaScript, como funções, variáveis, condicionais e muito mais, ao criar uma aplicação de quadro de notas.",
+          "Isso dará a você a oportunidade de resolver pequenos problemas e de compreender entender os fundamentos."
+        ]
+      },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Aprenda depuração básica criando um alterador aleatório de cor de fundo",
+        "intro": [
+          "A depuração é o processo de revisão de código, procurando qualquer problema e corrigindo-o.",
+          "Neste projeto, você ajudará o CamperBot a criar um alterador aleatório de cores e vai ajudá-lo a encontrar e corrigir erros."
         ]
       },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
-        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "title": "Revise a manipulação do DOM criando um jogo de pedra, papel e tesoura",
         "intro": [
-          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
-          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
+          "Nos projetos anteriores, você aprendeu a trabalhar com a manipulação básica do DOM. Agora, é hora de rever o que você aprendeu criando um jogo de pedra, papel e tesoura.",
+          "Neste miniprojeto, você vai rever condicionais, funções, <code>getElementById</code> e mais. Esse projeto dará a você a oportunidade de resolver pequenos problemas e de compreender melhor os fundamentos."
         ]
       }
     }
@@ -848,40 +855,54 @@
         ]
       },
       "build-an-arithmetic-formatter-project": {
-        "title": "Build an Arithmetic Formatter Project",
+        "title": "Projeto de criar um formatador aritmético",
         "intro": [
-          "This is one of the required projects to claim your certification."
+          "Este é um dos projetos necessários para obter a certificação."
         ]
       },
       "build-a-time-calculator-project": {
-        "title": "Build a Time Calculator Project",
+        "title": "Projeto de criar uma calculadora de tempo",
         "intro": [
-          "This is one of the required projects to claim your certification."
+          "Este é um dos projetos necessários para obter a certificação."
         ]
       },
       "build-a-budget-app-project": {
-        "title": "Build a Budget App Project",
+        "title": "Projeto de criar uma aplicação de orçamento",
         "intro": [
-          "This is one of the required projects to claim your certification."
+          "Este é um dos projetos necessários para obter a certificação."
         ]
       },
       "build-a-polygon-area-calculator-project": {
-        "title": "Build a Polygon Area Calculator Project",
+        "title": "Projeto de criar uma calculadora de área de polígonos",
         "intro": [
-          "This is one of the required projects to claim your certification."
+          "Este é um dos projetos necessários para obter a certificação."
         ]
       },
       "build-a-probability-calculator-project": {
-        "title": "Build a Probability Calculator Project",
+        "title": "Projeto de criar uma calculadora de probabilidades",
         "intro": [
-          "This is one of the required projects to claim your certification."
+          "Este é um dos projetos necessários para obter a certificação."
+        ]
+      },
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Aprenda métodos especiais criando um espaço vetorial",
+        "intro": [
+          "Os métodos especiais do Python são chamados em resposta a operações específicas e permitem que você personalize o comportamento dos objetos de modo detalhado e eficaz.",
+          "Neste projeto, você vai explorar alguns dos métodos especiais mais comuns enquanto aprende sobre vetores criando um espaço vetorial."
+        ]
+      },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Aprenda encapsulamento criando uma calculadora de trajetória de projéteis",
+        "intro": [
+          "Encapsulamento é um princípio fundamental da OOP baseado na escrita de código que limita o acesso direto aos dados.",
+          "Neste projeto, você descobrirá novos conceitos relacionados ao encapsulamento, como getters, setters e name mangling. Você usará esses conceitos junto com o que você já aprendeu para criar um programa que calcula uma trajetória de projéteis."
         ]
       },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
-        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "title": "Aprenda o método de bissecção encontrando a raiz quadrada de um número",
         "intro": [
-          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
-          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
+          "Os métodos numéricos são usados para aproximar soluções para problemas matemáticos que são difíceis ou impossíveis de resolver analiticamente.",
+          "Neste projeto, você explorará o método numérico de bisseção para encontrar a raiz quadrada de um número reduzindo iterativamente a variedade possível de valores que contêm a raiz quadrada."
         ]
       }
     }
@@ -1169,7 +1190,7 @@
       "Se você quiser a experiência original de configurar todo o Odin Project para ser executado no seu computador local, você pode conferir o Odin Project original no <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>site do projeto</a>. Agradecemos imensamente à comunidade do Odin Project por continuar a manter esse valioso recurso de aprendizagem para desenvolvedores de todo o mundo.",
       "Este curso não é oficial e não endossado pelo Odin Project. Foram feitas alterações no conteúdo curricular do Odin Project e todo o material instrucional do curso está licenciado sob a <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
-      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "Este curso inclui conteúdo de <a href='javascript.info'>JavaScript.info</a>, que está sob a licença<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1217,25 +1238,25 @@
       "top-the-box-model": {
         "title": "Aprenda sobre o modelo de caixas",
         "intro": [
-          "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
+          "Aprenda o modelo de caixas do CSS com este curso. Entenda como elementos são renderizados na web e aprenda a manipular espaçamento, bordas e preenchimento para atingir o layout e o design desejado."
         ]
       },
       "top-introduction-to-flexbox": {
         "title": "Introdução ao Flexbox",
         "intro": [
-          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
+          "Descubra o poder do Flexbox, um modelo de layout que simplifica o design de layouts flexíveis e responsivos da web. Aprenda a criar estruturas de páginas dinâmicas e adaptáveis com facilidade."
         ]
       },
       "top-learn-block-and-inline": {
-        "title": "Learn the difference between Block and Inline",
+        "title": "Aprenda a diferença entre bloco e em linha",
         "intro": [
-          "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+          "Explore as distinções entre elementos de bloco e elementos em linha no HTML e CSS. Este curso fornece informações sobre como esses tipos de exibição afetam o layout e o comportamento, permitindo que você tome decisões informadas de design."
         ]
       },
       "top-learn-variables-and-operators": {
         "title": "Aprenda variáveis e operadores",
         "intro": [
-          "Get started with JavaScript by learning about variables and operators. This course covers the fundamentals of JavaScript programming, including data types, operators, and variable declarations."
+          "Comece a usar o JavaScript aprendendo sobre variáveis e operadores. Este curso abrange os fundamentos da programação em JavaScript, incluindo tipos de dados, operadores e declarações de variáveis."
         ]
       },
       "top-learn-data-types-and-conditionals": {
@@ -1247,10 +1268,14 @@
         "intro": ["Aprenda funções em JavaScript."]
       },
       "top-basic-function-projects": {
-        "title": "Basic Function Projects",
+        "title": "Projetos de funções básicas",
         "intro": [
-          "Put your JavaScript skills to the test by building basic functions."
+          "Teste suas habilidades de JavaScript criando funções básicas."
         ]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Aprenda arrays e laços",
+        "intro": ["Aprenda sobre arrays e laços de repetição em JavaScript."]
       }
     }
   },
@@ -1362,109 +1387,121 @@
   },
   "a2-english-for-developers": {
     "title": "A2 Inglês para Desenvolvedores (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível para esta seção no momento, teremos uma disponível em breve. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
     "intro": [
-      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
-      "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
-      "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
-      "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+      "Neste currículo de inglês para desenvolvedores, você aprenderá o essencial da comunicação em inglês. O currículo seguirá o nível A2 do Quadro de Referência Comum Europeu (CEFR). Nosso foco é no vocabulário, particularmente útil para desenvolvedores.",
+      "A primeira metade do currículo ajudará você a se sentir confortável com a gramática e o uso do inglês. Isso dará a você diversas oportunidades de praticar. Você aprenderá o básico como se apresentar, ter conversas mais simples e discutir seu trabalho.",
+      "Na segunda metade, você praticará vocabulário específico para o desenvolvimento de software. Você aprenderá como descrever código, como discutir tendências em tecnologia e como participar de reuniões de equipe.",
+      "O currículo inteiro do nível A2 inclui 105 diálogos diferentes. Cada um é projetado para construir seu vocabulário e aumentar sua confiança ao falar em um ambiente profissional da área de tecnologia."
     ],
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Aprenda saudações em seu primeiro dia no escritório",
         "intro": [
-          "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
+          "Neste primeiro curso, você aprenderá expressões comuns para situações que você pode encontrar no seu primeiro dia no trabalho. Você vai aprender sobre apresentações, conhecer pessoas, pedir recomendações para almoço e obter um cartão de acesso com o pessoal da segurança."
         ]
       },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Aprenda apresentações em uma reunião on-line com a equipe",
         "intro": [
-          "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
+          "Neste curso, você aprenderá a fazer uma apresentação pessoal. Você também aprenderá a declarar sua profissão e a compartilhar seus objetivos nas reuniões em grupo."
         ]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Aprenda a começar uma conversa na sala de descanso",
         "intro": [
-          "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
+          "Neste curso, você aprenderá a iniciar uma conversa em ambientes casuais. Você também aprenderá a falar sobre seus passatempos e características de sua personalidade. Você também aprenderá a perguntar sobre lugares na cidade."
         ]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Aprenda a falar sobre um dia típico e tarefas",
         "intro": [
-          "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
+          "Neste curso, você aprenderá a falar sobre seu dia de trabalho e sobre as tarefas que você executa no local de trabalho, além de como compartilhar isso com os outros. O foco principal está nas estruturas usadas para descrever suas atividades e no vocabulário relacionado a tarefas."
         ]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Aprenda a discutir sobre sua rotina diária ou noturna",
         "intro": [
-          "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
+          "Neste curso, você aprenderá a falar sobre detalhes de sua rotina e a compartilhá-los com alguém. O foco principal está nas estruturas utilizadas para declarar ações de rotina e no vocabulário relacionado."
         ]
       },
       "learn-how-to-describe-your-current-project": {
         "title": "Aprenda a descrever seu projeto atual",
         "intro": [
-          "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
+          "Neste curso, você aprenderá a falar sobre os projetos nos quais você está envolvido e a informar aos outros sobre o que você está fazendo nesses projetos. O foco principal está nas estruturas utilizadas para dar essas informações e no vocabulário relacionado."
         ]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Aprenda a pedir informações sobre histórico educacional e profissional e como compartilhá-las",
         "intro": [
-          "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
+          "Neste curso, você aprenderá a perguntar sobre o histórico educacional e profissional de outra pessoa e a compartilhar informações sobre seu próprio histórico."
         ]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Aprenda a falar sobre passatempos e interesses",
         "intro": [
-          "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
+          "Neste curso, você aprenderá diferentes maneiras de falar sobre passatempos e coisas que interessam a você. Você também aprenderá a perguntar sobre os passatempos de outras pessoas e a convidá-los a se juntar a você nessas atividades."
         ]
       },
       "learn-how-to-discuss-roles-and-responsibilies": {
         "title": "Aprenda a discutir funções e responsabilidades",
         "intro": [
-          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+          "Neste curso, você vai discutir os papéis e as responsabilidades das pessoas em uma empresa e fora dela. Você descobrirá como perguntar sobre essas funções e responsabilidades e como compartilhar informações sobre você relacionadas ao tópico."
         ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Aprenda a ter uma conversa sobre preferências e motivações",
         "intro": [
-          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+          "Neste curso, você aprenderá a perguntar sobre o que motiva as pessoas em suas vidas pessoais e profissionais, a responder perguntas relacionadas às suas motivações, e a conversar sobre as preferências das pessoas."
         ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "Aprenda a discutir tendências populares em tecnologia",
         "intro": [
-          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+          "Neste curso, você aprenderá a conversar sobre assuntos em tecnologia a respeito dos quais todos estão falando nos dias de hoje."
         ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "Aprenda a esclarecer as informações em diferentes interações",
         "intro": [
-          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+          "Neste curso, você aprenderá a verificar se as informações que você tinha estão corretas e a pedir esclarecimentos quando algo não estiver claro para você."
         ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Aprenda a usar o vocabulário básico de programação em conversas",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso apresentará um vocabulário básico relacionado à programação. Você aprenderá a fazer perguntas relacionadas aos conceitos básicos de programação."
+        ]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Aprenda a usar conceitos e termos relacionados à programação",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você verá termos relacionados à programação e aprenderá a usá-los em uma conversa."
+        ]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Aprenda a debater tendências em tecnologia e atualizações",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você verá algumas tendências recentes no mundo da tecnologia e aprenderá a discuti-las em inglês."
+        ]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "Aprenda a ajudar um colega de trabalho a resolver problemas no GitHub",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você verá expressões relacionadas a como pedir ajuda a um colega e a como oferecer ajuda a eles."
+        ]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "Aprenda a compartilhar seu progresso em reuniões semanais de equipe",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará como falar sobre seus projetos em termos do que você já fez e do que está fazendo neles neste momento."
+        ]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Aprenda a pedir esclarecimento na compreensão do código",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você verá como pode fazer perguntas para esclarecer coisas que não estão muito claras para você em um código."
+        ]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Aprenda a documentar o código para um projeto",
@@ -1504,6 +1541,109 @@
       }
     }
   },
+  "b1-english-for-developers": {
+    "title": "B1 Inglês para Desenvolvedores (Beta)",
+    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível para esta seção no momento, teremos uma disponível em breve. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
+    "intro": ["Modelo de introdução"],
+    "blocks": {
+      "learn-how-to-describe-places-and-events": {
+        "title": "Aprenda a descrever locais e eventos",
+        "intro": [""]
+      },
+      "learn-how-to-talk-about-past-experiences": {
+        "title": "Aprenda a falar sobre experiências passadas",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-past-activities": {
+        "title": "Aprenda a falar sobre atividades passadas",
+        "intro": ["", ""]
+      },
+      "learn-present-perfect-while-talking-about-accessibility": {
+        "title": "Aprenda o Present Perfect ao falar sobre acessibilidade",
+        "intro": ["", ""]
+      },
+      "learn-how-to-plan-future-events": {
+        "title": "Aprenda a planejar eventos futuros",
+        "intro": ["", ""]
+      },
+      "learn-future-continuous-while-describing-actions": {
+        "title": "Aprenda o Future Continuous ao descrever ações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-conditionals": {
+        "title": "Aprenda a usar condicionais",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-feedback": {
+        "title": "Aprenda a compartilhar feedback",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-opinion": {
+        "title": "Aprenda como compartilhar suas opiniões",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement": {
+        "title": "Aprenda a expressar concordância",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-disagreement": {
+        "title": "Aprenda a expressar discordância",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-concerns": {
+        "title": "Aprenda a expressar preocupações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-decisions-based-on-comparisons": {
+        "title": "Aprenda a expressar decisões com base em comparações",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-modal-verbs": {
+        "title": "Aprenda a usar os verbos modais",
+        "intro": ["", ""]
+      },
+      "learn-how-to-manage-a-conversation": {
+        "title": "Aprenda a gerenciar uma conversa",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-misunderstandings": {
+        "title": "Aprenda a esclarecer mal-entendidos",
+        "intro": ["", ""]
+      },
+      "learn-about-speculation-and-requests": {
+        "title": "Aprenda sobre especulação e solicitações",
+        "intro": ["", ""]
+      },
+      "learn-about-adverbial-phrases": {
+        "title": "Aprenda sobre os expressões adverbiais",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-adjectives-in-conversations": {
+        "title": "Aprenda a usar adjetivos em conversas",
+        "intro": ["", ""]
+      },
+      "learn-determiners-and-advanced-use-of-articles": {
+        "title": "Aprenda determinantes e o uso avançado de artigos",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-reported-speech": {
+        "title": "Aprenda a usar o discurso indireto",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-prepositions-according-to-context": {
+        "title": "Aprenda a usar pré-posições de acordo com o contexto",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-numbers-with-a-coworker": {
+        "title": "Aprenda a falar sobre números com um colega de trabalho",
+        "intro": ["", ""]
+      },
+      "learn-common-phrasal-verbs-and-idioms": {
+        "title": "Aprenda expressões verbais e expressões idiomáticas comuns",
+        "intro": ["", ""]
+      }
+    }
+  },
   "rosetta-code": {
     "title": "Rosetta Code",
     "intro": [
@@ -1539,14 +1679,14 @@
     "legacy-desc": "Estes cursos não fazem mais parte do caminho de certificação, mas ainda estão disponíveis para você continuar aprendendo.",
     "legacy-go-back": "Vá para a versão atual do currículo.",
     "course-maintenance": "Estes cursos estão passando por manutenção. Se eles não estiverem funcionando, você pode aprender como executá-los localmente em <0>https://www.freecodecamp.org/portuguese/news/curso-de-bancos-de-dados-relacionais-como-aprender-sql-no-vscode-usando-o-docker-e-o-freecodecamp/</0>.",
-    "course-disabling-soon": "The browser version of these courses will be temporarily disabled soon and your virtual machines will be deleted. Any progress in your virtual machines will be lost. If you have any files you want from them, you should save them to your computer. We apologize for any inconvenience. We hope to have an improved browser version of these courses available again in the next few weeks.",
-    "course-disabled": "These courses are temporarily unavailable to run in the browser. We apologize for any inconvenience. You can learn how to run them locally at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. We hope to have an improved browser version available again soon.",
-    "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
+    "course-disabling-soon": "A versão para o navegador desses cursos será temporariamente desativada em breve e suas máquinas virtuais serão excluídas. Qualquer progresso em suas máquinas virtuais será perdido. Se você tiver quaisquer arquivos que quiser neles, deve salvá-los no seu computador. Pedimos desculpas por qualquer inconveniente. Esperamos ter uma versão melhorada desses cursos para o navegador novamente nas próximas semanas.",
+    "course-disabled": "Estes cursos estão temporariamente indisponíveis para serem executados no navegador. Pedimos desculpas por qualquer inconveniência. Você pode aprender a executá-los localmente em <0>https://www.freecodecamp. rg/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>. Esperamos ter uma versão para o navegador melhorada disponível novamente em breve.",
+    "run-locally": "Por enquanto, recomendamos rodar os cursos localmente em seu computador. Você pode aprender a fazer isso em <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
     "progress-wont-save": "O progresso não será salvo em sua conta do freeCodeCamp quando executá-los localmente.",
     "go-back-to-learn": "Voltar à versão estável do currículo.",
     "read-database-cert-article": "Leia esta publicação no fórum antes de prosseguir.",
     "enable-cookies": "Você deve habilitar cookies de terceiros antes de iniciar.",
     "english-only": "Os cursos desta seção estão disponíveis apenas em inglês. Neste momento, só podemos traduzir os títulos e as introduções, não as próprias lições.",
-    "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
+    "exam-english-only": "Observe que o exame de certificação está atualmente disponível apenas em inglês. O restante dos cursos está disponível em alguns idiomas."
   }
 }

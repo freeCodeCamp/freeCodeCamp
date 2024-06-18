@@ -55,7 +55,6 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
       </Modal.Body>
       <Modal.Footer>
         <Button
-          data-cy='reset-modal-confirm'
           block={true}
           size='large'
           variant='danger'

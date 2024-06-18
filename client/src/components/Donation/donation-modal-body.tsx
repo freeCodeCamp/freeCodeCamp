@@ -47,7 +47,7 @@ function ModalHeader({
     return null;
   } else if (!showForm) {
     return (
-      <Row className='text-center block-modal-text'>
+      <Row className='text-center'>
         <Col sm={10} smOffset={1} xs={12}>
           {recentlyClaimedBlock !== null && (
             <>

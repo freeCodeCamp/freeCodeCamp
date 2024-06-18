@@ -51,6 +51,7 @@ import {
 } from '../../../config/misc';
 import envData from '../../../config/env.json';
 
+import '@freecodecamp/ui/dist/base.css';
 // preload common fonts
 import './fonts.css';
 import './global.css';

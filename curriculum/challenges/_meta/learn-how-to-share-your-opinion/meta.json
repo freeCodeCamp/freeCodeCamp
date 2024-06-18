@@ -1,0 +1,14 @@
+{
+  "name": "Learn How to Share Your Opinion",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-share-your-opinion",
+  "order": 8,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a03636891e5d6c1d75a8",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English"
+}

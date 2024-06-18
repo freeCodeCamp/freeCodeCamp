@@ -4,12 +4,8 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "review-dom-manipulation-by-building-a-rock-paper-scissors-game",
-  "order": 4,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
+  "order": 5,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
-  "superOrder": 4,
   "challengeOrder": [
     {
       "id": "663d0ab797cb716189ffcc0a",

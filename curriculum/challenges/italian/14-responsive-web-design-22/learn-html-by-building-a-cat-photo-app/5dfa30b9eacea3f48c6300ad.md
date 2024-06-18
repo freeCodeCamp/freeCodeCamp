@@ -21,7 +21,7 @@ Trasforma l'immagine in un link circondandola con i tag necessari. Usa `https://
 
 # --hints--
 
-Dovresti avere un elemento `img` con un valore `src` di `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Potresti averlo eliminato accidentalmente.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. Potresti averlo eliminato accidentalmente.
 
 ```js
 assert(
