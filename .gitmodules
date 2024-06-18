@@ -1,0 +1,3 @@
+[submodule "i18n-curriculum"]
+	path = i18n-curriculum
+	url = https://github.com/moT01/i18n-curriculum.git
