@@ -119,11 +119,12 @@ function getParamsFromUrl(
  *
  * @param req - A fastify Request.
  * @param req.headers - The request headers.
+ * @param req.headers.referer - The referer header.
  * @param _normalizeParams - The function to normalize the parameters.
  * @returns The redirect parameters.
  */
 export function getRedirectParams(
-  req: { headers: Record<string, string | undefined> },
+  req: { headers: { referer?: string } },
   _normalizeParams = normalizeParams
 ): RedirectParams {
   const url = req.headers['referer'];
