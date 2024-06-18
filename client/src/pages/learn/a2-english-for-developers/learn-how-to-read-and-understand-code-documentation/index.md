@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Read and Understand Code Documentation
 
-This is a test for the new project-based curriculum.
+This course will present more expressions related to code documentation and bring tips on how to understand it.

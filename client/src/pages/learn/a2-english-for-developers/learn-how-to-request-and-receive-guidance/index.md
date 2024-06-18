@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Request and Receive Guidance
 
-This is a test for the new project-based curriculum.
+This course will show you how to ask for assistance from a coworker when you need it.
