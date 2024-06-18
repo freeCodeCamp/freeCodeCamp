@@ -206,7 +206,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       });
       const { username, reportDescription: report } = req.body;
 
-      if (!username || !report || report === '') {
+      if (!username || !report) {
         // NOTE: Do we want to log these instances?
         void reply.code(400);
         return {
