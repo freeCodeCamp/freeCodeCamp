@@ -5,7 +5,6 @@
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
   "order": 12,
-  "time": "30 hours",
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

@@ -4,7 +4,6 @@
   "dashedName": "python-for-penetration-testing",
   "helpCategory": "Python",
   "order": 1,
-  "time": "5 hours",
   "superBlock": "information-security",
   "challengeOrder": [
     {

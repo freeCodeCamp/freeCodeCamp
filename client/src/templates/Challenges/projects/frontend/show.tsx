@@ -11,7 +11,11 @@ import { Container, Col, Row } from '@freecodecamp/ui';
 
 import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
+import {
+  ChallengeNode,
+  ChallengeMeta,
+  Test
+} from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/challenge-description';
 import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
@@ -21,7 +25,8 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../../redux/actions';
 import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
@@ -39,6 +44,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
@@ -51,6 +57,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ProjectProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
+  initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
   pageContext: {
@@ -75,12 +82,19 @@ class Project extends Component<ProjectProps> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: {
+            fields: { tests },
+            title,
+            challengeType,
+            helpCategory
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -229,6 +243,10 @@ export const query = graphql`
         fields {
           blockName
           slug
+          tests {
+            text
+            testString
+          }
         }
       }
     }

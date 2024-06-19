@@ -13,16 +13,14 @@ dashedName: set-the-font-size-for-multiple-heading-elements
 
 # --instructions--
 
-  <p><code>style</code> 태그 안에서 다음의 <code>font-size</code>를 설정합니다.</p>
+`style` 태그 안에서 다음의 `font-size`를 설정합니다.
 
-  <ul>
-    <li><code>h1</code> 태그는 68px로 설정합니다.</li>
-    <li><code>h2</code> 태그는 52px로 설정합니다.</li>
-    <li><code>h3</code> 태그는 40px로 설정합니다.</li>
-    <li><code>h4</code> 태그는 32px로 설정합니다.</li>
-    <li><code>h5</code> 태그는 21px로 설정합니다.</li>
-    <li><code>h6</code> 태그는 14px로 설정합니다.</li>
-  </ul>
+- `h1` 태그는 68px로 설정합니다.
+- `h2` 태그는 52px로 설정합니다.
+- `h3` 태그는 40px로 설정합니다.
+- `h4` 태그는 32px로 설정합니다.
+- `h5` 태그는 21px로 설정합니다.
+- `h6` 태그는 14px로 설정합니다.
 
 # --hints--
 

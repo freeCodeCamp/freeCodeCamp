@@ -1,9 +1,8 @@
 {
   "name": "Learn How to Read and Understand Code Documentation",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-read-and-understand-code-documentation",
   "order": 19,
-  "time": "5 hours",
   "superBlock": "a2-english-for-developers",
   "challengeOrder": [
     {

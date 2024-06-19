@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { examResults, saveChallengeBody } from '../types';
+import { examResults, profileUI, savedChallenge } from '../types';
 
 export const getSessionUser = {
   response: {
@@ -87,18 +87,7 @@ export const getSessionUser = {
               url: Type.String()
             })
           ),
-          profileUI: Type.Object({
-            isLocked: Type.Optional(Type.Boolean()),
-            showAbout: Type.Optional(Type.Boolean()),
-            showCerts: Type.Optional(Type.Boolean()),
-            showDonation: Type.Optional(Type.Boolean()),
-            showHeatMap: Type.Optional(Type.Boolean()),
-            showLocation: Type.Optional(Type.Boolean()),
-            showName: Type.Optional(Type.Boolean()),
-            showPoints: Type.Optional(Type.Boolean()),
-            showPortfolio: Type.Optional(Type.Boolean()),
-            showTimeLine: Type.Optional(Type.Boolean())
-          }),
+          profileUI: Type.Optional(profileUI),
           sendQuincyEmail: Type.Boolean(),
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
@@ -106,12 +95,7 @@ export const getSessionUser = {
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),
           joinDate: Type.String(),
-          savedChallenges: Type.Array(
-            Type.Intersect([
-              saveChallengeBody,
-              Type.Object({ lastSavedDate: Type.Number() })
-            ])
-          ),
+          savedChallenges: Type.Optional(Type.Array(savedChallenge)),
           username: Type.String(),
           userToken: Type.Optional(Type.String()),
           completedSurveys: Type.Array(

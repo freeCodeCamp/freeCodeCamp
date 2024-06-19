@@ -1,15 +1,15 @@
 ---
 id: 63e94dae6dcedbad73f2f6ee
-title: Step 26
+title: 步骤 26
 challengeType: 0
 dashedName: step-26
 ---
 
 # --description--
 
-`arr` contains a series of objects that each contains a `name`, `position`, `number`, `isCaptain` and `nickname` property. In order to access each of those properties inside the callback function, you will need to use object destructuring to unpack them into variables.
+`arr` 包含一系列对象，每个对象包含一个 `name`、`position`、`number`、`isCaptain` 和 `nickname` 属性。 为了访问回调函数内的每个属性，你需要使用对象解构将它们解包为变量。
 
-Here is an example:
+以下是一个例子：
 
 ```js
 function myExampleFunction({ name, age, job, city }) {
@@ -17,11 +17,11 @@ function myExampleFunction({ name, age, job, city }) {
 }
 ```
 
-Inside the parameter list in the callback function for the `map` method, unpack all 5 object properties from objects in `arr` using object destructuring.
+在 `map` 方法的回调函数中的参数列表中，使用对象解构从 `arr` 中的对象中解包所有 5 个对象属性。
 
 # --hints--
 
-You should unpack all 5 object properties from objects in `arr` using object destructuring.
+你应该使用对象解构从 `arr` 中的对象中解压所有 5 个对象属性。
 
 ```js
 

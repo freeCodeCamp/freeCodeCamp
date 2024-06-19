@@ -6,7 +6,6 @@ client/**/trending.json
 client/config/*.json
 client/config/browser-scripts/*.json
 client/static
-curriculum-server/data/curriculum.json
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 docs/**/*.md
@@ -19,4 +18,3 @@ shared/utils/get-lines.test.js
 shared/utils/is-audited.js
 shared/utils/validate.js
 shared/utils/validate.test.js
-web/.next

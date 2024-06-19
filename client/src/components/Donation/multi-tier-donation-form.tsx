@@ -97,7 +97,6 @@ function SelectionTabs({
         <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
-          data-cy='donation-tier-selection-button'
           onClick={() => setShowDonateForm(true)}
         >
           {isAnimationEnabled

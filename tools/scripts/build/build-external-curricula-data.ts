@@ -39,7 +39,7 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.MachineLearningPy, public: true },
   { dashedName: SuperBlocks.RespWebDesign, public: true },
   { dashedName: SuperBlocks.PythonForEverybody, public: true },
-  { dashedName: SuperBlocks.TheOdinProject, public: false },
+  { dashedName: SuperBlocks.TheOdinProject, public: true },
   { dashedName: SuperBlocks.JsAlgoDataStructNew, public: false },
   { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
   { dashedName: SuperBlocks.DataVis, public: false },

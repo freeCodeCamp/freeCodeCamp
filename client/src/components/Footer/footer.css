@@ -51,6 +51,10 @@
   margin-bottom: 0;
 }
 
+.site-footer h2 {
+  line-height: 1.1;
+}
+
 .trending-guides-articles {
   list-style-type: none;
   padding: 0;
@@ -120,6 +124,12 @@ p.footer-donation a:hover {
   justify-content: center;
   align-items: center;
   gap: 16px;
+}
+
+/* This rule to is ensure the li element doesn't take more space than it needs */
+.mobile-app-container li {
+  display: flex;
+  flex: initial;
 }
 
 .mobile-app-container img {

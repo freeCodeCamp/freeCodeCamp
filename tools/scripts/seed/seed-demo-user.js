@@ -1,12 +1,14 @@
 const path = require('path');
 const debug = require('debug');
+const { MongoClient } = require('mongodb');
+
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
-const { MongoClient, ObjectId } = require('mongodb');
 const {
   demoUser,
   blankUser,
   publicUser,
-  fullyCertifiedUser
+  fullyCertifiedUser,
+  userIds
 } = require('./user-data');
 
 const args = process.argv.slice(2);
@@ -103,13 +105,6 @@ const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
 const db = client.db('freecodecamp');
 const user = db.collection('user');
-
-const userIds = [
-  new ObjectId('5fa2db00a25c1c1fa49ce067'),
-  new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-  new ObjectId('5bd30e0f1caf6ac3ddddddb9'),
-  new ObjectId('663b839b24a8b29f57728b13')
-];
 
 const dropUserTokens = async function () {
   await db.collection('UserToken').deleteMany({

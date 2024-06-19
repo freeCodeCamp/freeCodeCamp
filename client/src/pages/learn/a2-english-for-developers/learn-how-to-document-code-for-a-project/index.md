@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Document Code for a Project
 
-This is a test for the new project-based curriculum.
+This course will show you expressions related to what to do when documenting code.

@@ -14,7 +14,6 @@ const schema = Joi.object()
     hasEditableBoundaries: Joi.boolean(),
     disableLoopProtectTests: Joi.boolean(),
     disableLoopProtectPreview: Joi.boolean(),
-    time: Joi.string(),
     template: Joi.string(),
     required: Joi.array()
       .items(

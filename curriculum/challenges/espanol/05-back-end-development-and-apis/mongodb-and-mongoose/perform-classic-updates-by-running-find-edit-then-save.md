@@ -43,12 +43,3 @@ Modifica la función `findEditThenSave` para encontrar a una persona por `_id` (
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

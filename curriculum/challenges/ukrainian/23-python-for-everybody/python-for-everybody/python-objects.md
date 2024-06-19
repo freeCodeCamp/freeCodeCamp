@@ -14,7 +14,7 @@ dashedName: python-objects
 
 ## --text--
 
-Which is NOT true about objects in Python?
+Яке з наведених тверджень НЕ є правильним для об’єктів у Python?
 
 ## --answers--
 

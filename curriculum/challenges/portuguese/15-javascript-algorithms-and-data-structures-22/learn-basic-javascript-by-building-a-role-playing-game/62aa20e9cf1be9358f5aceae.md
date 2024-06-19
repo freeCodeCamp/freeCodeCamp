@@ -1,8 +1,8 @@
 ---
 id: 62aa20e9cf1be9358f5aceae
-title: Passo 152
+title: Step 151
 challengeType: 0
-dashedName: step-152
+dashedName: step-151
 ---
 
 # --description--

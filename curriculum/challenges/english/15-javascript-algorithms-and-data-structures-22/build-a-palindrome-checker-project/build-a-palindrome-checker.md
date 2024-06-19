@@ -18,7 +18,7 @@ A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwar
 
 1. You should have an `input` element with an `id` of `"text-input"`
 1. You should have a `button` element with an `id` of `"check-btn"`
-1. You should have a `div` element with an `id` of `"result"`
+1. You should have a `div`, `span` or `p` element with an `id` of `"result"`
 1. When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `"Please input a value"`
 1. When the `#text-input` element only contains the letter `A` and the `#check-btn` element is clicked, the `#result` element should contain the text `"A is a palindrome"`
 1. When the `#text-input` element contains the text `eye` and the `#check-btn` element is clicked, the `#result` element should contain the text `"eye is a palindrome"`
@@ -52,11 +52,11 @@ const el = document.getElementById('check-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `result`.
+You should have a `div`, `span`, or `p` element with an `id` of `result`.
 
 ```js
 const el = document.getElementById('result');
-assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
+assert(['div', 'span', 'p'].includes(el?.nodeName?.toLowerCase()));
 ```
 
 When you click on the `#check-btn` element without entering a value into the `#text-input` element, an alert should appear with the text `"Please input a value"`.
@@ -68,6 +68,7 @@ let alertMessage;
 window.alert = (message) => alertMessage = message; // Override alert and store message
 
 inputEl.value = '';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please input a value');
 ```
@@ -259,6 +260,7 @@ const fourthLetter = characters.charAt(Math.floor(Math.random() * charactersLeng
 const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter + fourthLetter + thirdLetter + secondLetter + firstLetter;
 
 inputEl.value = phrase;
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is a palindrome');
@@ -298,6 +300,7 @@ charactersLength--;
 const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter;
 
 inputEl.value = phrase;
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is not a palindrome');
