@@ -142,7 +142,7 @@ Here are our twelve core certifications:
 - [Learn Algorithm Design by Building a Shortest Path Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-algorithm-design-by-building-a-shortest-path-algorithm)
 - [Learn Recursion by Solving the Tower of Hanoi Puzzle](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-recursion-by-solving-the-tower-of-hanoi-puzzle)
 - [Learn Data Structures by Building the Merge Sort Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-data-structures-by-building-the-merge-sort-algorithm)
-- [Learn Classes and Objects by Building a Sudoku Solver](https://www.freecodecamp.org/learn/scientific-computing-with-python/ #learn-classes-and-objects-by-building-a-sudoku-solver)
+- [Learn Classes and Objects by Building a Sudoku Solver](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-classes-and-objects-by-building-a-sudoku-solver)
 - [Learn Tree Traversal by Building a Binary Search Tree](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-tree-traversal-by-building-a-binary-search-tree)
 - [Learn Special Methods by Building a Vector Space](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-special-methods-by-building-a-vector-space)
   <br />
