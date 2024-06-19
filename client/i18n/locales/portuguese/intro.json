@@ -1505,39 +1505,57 @@
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Aprenda a documentar o código para um projeto",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará expressões relacionadas ao que fazer ao documentar o código."
+        ]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Aprenda a ler e entender a documentação do código",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso apresentará mais expressões relacionadas à documentação de código e dará dicas sobre como entendê-la."
+        ]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Aprenda a analisar a documentação de código",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você verá algumas ideias para ajudá-lo a lidar com a documentação e a analisá-la em termos simples."
+        ]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Aprenda a compartilhar progresso e realizações",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você aprenderá a compartilhar seu progresso com os colegas de trabalho e a falar sobre os sucessos que teve em seus projetos."
+        ]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Aprenda a falar sobre atualizações e planos para tarefas e projetos",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará como falar sobre os avanços mais recentes em seus projetos e sobre seus planos."
+        ]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Aprenda a expressar concordância e desacordo",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso introduzirá maneiras de dizer que concordamos com o que uma outra pessoa diz e de dizer a elas educadamente que não estamos de acordo com elas."
+        ]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Aprenda a oferecer suporte técnico e orientação",
-        "intro": ["", ""]
+        "intro": [
+          "Nesse curso, você verá maneiras de oferecer alguma ajuda em termos de especificações técnicas a outra pessoa."
+        ]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Aprenda a solicitar e receber orientação",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará como pedir ajuda a um colega de trabalho quando você precisar."
+        ]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Aprenda a fornecer explicações quando estiver ajudando outros",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará maneiras de explicar algo a outras pessoas enquanto as ajuda."
+        ]
       }
     }
   },
