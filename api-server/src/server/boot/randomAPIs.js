@@ -113,7 +113,7 @@ module.exports = function (app) {
     });
   }
 
-  const blockedUserAgentParts = ['python', 'google-apps-script'];
+  const blockedUserAgentParts = ['python', 'google-apps-script', 'curl'];
 
   function blockUserAgent(req, res, next) {
     const userAgent = req.headers['user-agent'];
@@ -122,7 +122,11 @@ module.exports = function (app) {
       !userAgent ||
       blockedUserAgentParts.some(ua => userAgent.toLowerCase().includes(ua))
     ) {
-      return res.status(403).send('Forbidden');
+      return res
+        .status(400)
+        .send(
+          'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+        );
     }
 
     return next();
