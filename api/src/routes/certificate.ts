@@ -40,7 +40,7 @@ const {
   relationalDatabaseV8Id,
   collegeAlgebraPyV8Id,
   foundationalCSharpV8Id,
-  upcomingPythonV8Id
+  upcomingFrontendCertV8Id
 } = certIds;
 
 /**
@@ -582,7 +582,10 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
     ),
 
     // upcoming
-    [certTypes.upcomingPythonV8]: getCertById(upcomingPythonV8Id, challenges)
+    [certTypes.upcomingFrontendCert]: getCertById(
+      upcomingFrontendCertV8Id,
+      challenges
+    )
   };
 }
 

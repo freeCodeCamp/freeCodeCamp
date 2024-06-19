@@ -81,7 +81,7 @@ const directoryToSuperblock = {
   '18-project-euler': 'project-euler',
   '19-foundational-c-sharp-with-microsoft':
     'foundational-c-sharp-with-microsoft',
-  '20-upcoming-python': 'upcoming-python',
+  '20-frontend-certification': 'frontend-certification',
   '21-a2-english-for-developers': 'a2-english-for-developers',
   '22-rosetta-code': 'rosetta-code',
   '23-python-for-everybody': 'python-for-everybody',

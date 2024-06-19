@@ -133,7 +133,7 @@ const isCertMapSelector = createSelector(
     // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
     'Example Certification': false,
-    'Upcoming Python Certification': false,
+    'Frontend Certification': false,
     'A2 English for Developers': false,
     'B1 English for Developers': false,
     'JavaScript Algorithms and Data Structures (Beta)': isJsAlgoDataStructCertV8

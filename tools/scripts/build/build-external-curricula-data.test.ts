@@ -88,7 +88,7 @@ describe('external curriculum data build', () => {
 
     const isUpcoming = [
       'b1-english-for-developers',
-      'upcoming-python',
+      'frontend-certification',
       'example-certification'
     ];
 

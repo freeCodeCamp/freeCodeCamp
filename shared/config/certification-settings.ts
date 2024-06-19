@@ -26,7 +26,7 @@ export enum Certification {
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   // Upcoming certifications
-  UpcomingPython = 'upcoming-python-v8',
+  FrontendCert = 'frontend-cert-v8',
   A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
   // Legacy certifications
@@ -75,7 +75,7 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
-  Certification.UpcomingPython,
+  Certification.FrontendCert,
   Certification.A2English,
   Certification.B1English
 ] as const;
@@ -99,7 +99,7 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  upcomingPythonV8: 'isUpcomingPythonCertV8',
+  upcomingFrontendCert: 'isUpcomingFrontendCertV8',
   jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
 } as const;
 
@@ -122,7 +122,7 @@ export const certIds = {
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
   foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
-  upcomingPythonV8Id: '64afc4e8f3b37856e035b85f',
+  upcomingFrontendCertV8Id: '64afc4e8f3b37856e035b85f',
   jsAlgoDataStructV8Id: '658180220947283cdc0689ce'
 };
 
@@ -145,7 +145,7 @@ export const completionHours = {
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
   [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.upcomingPythonV8]: 300,
+  [certTypes.upcomingFrontendCert]: 300,
   [certTypes.jsAlgoDataStructV8]: 300
 };
 
@@ -174,7 +174,7 @@ export const certSlugTypeMap = {
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
-  [Certification.UpcomingPython]: certTypes.upcomingPythonV8
+  [Certification.FrontendCert]: certTypes.upcomingFrontendCert
 };
 
 export const superBlockCertTypeMap = {
@@ -206,7 +206,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
 
   // upcoming
-  [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
+  [SuperBlocks.FrontendCert]: certTypes.upcomingFrontendCert
 };
 
 export const certTypeIdMap = {
@@ -228,7 +228,7 @@ export const certTypeIdMap = {
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id,
+  [certTypes.upcomingFrontendCert]: certIds.upcomingFrontendCertV8Id,
   [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id
 };
 
@@ -252,7 +252,7 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.upcomingPythonV8]: 'Upcoming Python',
+  [certTypes.upcomingFrontendCert]: 'Upcoming Python',
   [certTypes.jsAlgoDataStructV8]:
     'JavaScript Algorithms and Data Structures (Beta)'
 };
@@ -278,7 +278,7 @@ export const linkedInCredentialIds = {
   [Certification.RelationalDb]: 'rd',
   [Certification.CollegeAlgebraPy]: 'cawp',
   [Certification.FoundationalCSharp]: 'fcswm',
-  [Certification.UpcomingPython]: 'up',
+  [Certification.FrontendCert]: 'up',
   [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd',
   [Certification.B1English]: 'b1efd'

@@ -41,10 +41,9 @@ function insertStep(stepNum: number): void {
     throw `Step not inserted. New step number must be less than ${
       challengeOrder.length + 2
     }.`;
-  const challengeType = [
-    SuperBlocks.SciCompPy,
-    SuperBlocks.UpcomingPython
-  ].includes(getMetaData().superBlock)
+  const challengeType = [SuperBlocks.SciCompPy].includes(
+    getMetaData().superBlock
+  )
     ? challengeTypes.python
     : challengeTypes.html;
 
@@ -72,10 +71,9 @@ function createEmptySteps(num: number): void {
   }
 
   const nextStepNum = getMetaData().challengeOrder.length + 1;
-  const challengeType = [
-    SuperBlocks.SciCompPy,
-    SuperBlocks.UpcomingPython
-  ].includes(getMetaData().superBlock)
+  const challengeType = [SuperBlocks.SciCompPy].includes(
+    getMetaData().superBlock
+  )
     ? challengeTypes.python
     : challengeTypes.html;
 

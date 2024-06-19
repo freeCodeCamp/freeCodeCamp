@@ -72,8 +72,8 @@ export const superBlockList = [
     path: '19-foundational-c-sharp-with-microsoft'
   },
   {
-    name: 'Upcoming Python',
-    path: '20-upcoming-python'
+    name: 'Frontend Certification',
+    path: '20-frontend-certification'
   },
   {
     name: 'A2 English for Developers (Beta)',

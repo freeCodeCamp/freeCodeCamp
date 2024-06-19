@@ -21,7 +21,7 @@ export enum SuperBlocks {
   CollegeAlgebraPy = 'college-algebra-with-python',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   ExampleCertification = 'example-certification',
-  UpcomingPython = 'upcoming-python',
+  FrontendCert = 'frontend-certification',
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
   RosettaCode = 'rosetta-code',
@@ -89,7 +89,7 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.Upcoming]: [
     SuperBlocks.B1English,
     SuperBlocks.ExampleCertification,
-    SuperBlocks.UpcomingPython
+    SuperBlocks.FrontendCert
   ]
 };
 
@@ -112,7 +112,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -122,7 +122,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -133,7 +133,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -142,28 +142,28 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -179,7 +179,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -199,7 +199,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -222,7 +222,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -243,7 +243,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody,

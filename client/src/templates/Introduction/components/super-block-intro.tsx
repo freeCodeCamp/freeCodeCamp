@@ -21,7 +21,7 @@ export const ConditionalDonationAlert = ({
   const betaCertifications = [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.A2English,
-    SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontendCert,
     SuperBlocks.SciCompPy
   ];
 

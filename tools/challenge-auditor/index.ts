@@ -50,7 +50,7 @@ const superBlockFolderMap = {
   'project-euler': '18-project-euler',
   'foundational-c-sharp-with-microsoft':
     '19-foundational-c-sharp-with-microsoft',
-  'upcoming-python': '20-upcoming-python',
+  'frontend-certification': '20-frontend-certification',
   'a2-english-for-developers': '21-a2-english-for-developers',
   'rosetta-code': '22-rosetta-code',
   'python-for-everybody': '23-python-for-everybody',

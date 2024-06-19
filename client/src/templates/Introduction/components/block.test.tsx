@@ -66,7 +66,7 @@ const defaultProps = {
         },
         sourceInstanceName: 'mockSourceInstanceName',
         superOrder: 1,
-        superBlock: SuperBlocks.UpcomingPython,
+        superBlock: SuperBlocks.FrontendCert,
         tail: ['mockTail'],
         template: 'mockTemplate',
         tests: [] as Test[],

@@ -396,9 +396,9 @@ describe('certificate routes', () => {
         const unclaimableCerts = ['fake-slug'];
 
         if (SHOW_UPCOMING_CHANGES) {
-          claimableCerts.push(Certification.UpcomingPython);
+          claimableCerts.push(Certification.FrontendCert);
         } else {
-          unclaimableCerts.push(Certification.UpcomingPython);
+          unclaimableCerts.push(Certification.FrontendCert);
         }
 
         for (const certSlug of claimableCerts) {
