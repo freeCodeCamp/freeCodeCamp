@@ -2,7 +2,7 @@ import fastifyCookie from '@fastify/cookie';
 import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { COOKIE_SECRET } from '../utils/env';
+import { COOKIE_DOMAIN, COOKIE_SECRET } from '../utils/env';
 
 /**
  * Signs a cookie value by prefixing it with "s:" and using the COOKIE_SECRET.
@@ -41,6 +41,14 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
     secret: {
       sign,
       unsign
+    },
+    parseOptions: {
+      domain: COOKIE_DOMAIN,
+      httpOnly: true,
+      path: '/',
+      sameSite: 'lax',
+      secure: true,
+      signed: true
     }
   });
 

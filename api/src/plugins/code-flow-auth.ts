@@ -3,7 +3,7 @@ import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { type user } from '@prisma/client';
 
-import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
+import { JWT_SECRET } from '../utils/env';
 import { type Token, isExpired } from '../utils/tokens';
 import { getRedirectParams } from '../utils/redirection';
 
@@ -27,12 +27,8 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.decorateReply('setAccessTokenCookie', function (accessToken: Token) {
     const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
     void this.setCookie('jwt_access_token', signedToken, {
-      path: '/',
       httpOnly: false,
       secure: false,
-      sameSite: 'lax',
-      domain: COOKIE_DOMAIN,
-      signed: true,
       maxAge: accessToken.ttl
     });
   });
