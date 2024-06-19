@@ -12,6 +12,7 @@
 .fill-in-the-blank-wrap > p {
   margin: 0;
   font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .fill-in-the-blank-input {
