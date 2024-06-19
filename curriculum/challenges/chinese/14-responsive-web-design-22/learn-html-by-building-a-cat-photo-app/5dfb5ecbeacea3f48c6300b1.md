@@ -7,9 +7,9 @@ dashedName: step-21
 
 # --description--
 
-The `li` element is used to create a list item in an ordered or unordered list.
+`li` 元素用于在有序或无序列表中创建一个列表项。
 
-Here is an example of list items in an unordered list:
+这是一个无序列表中列表项的示例：
 
 ```html
 <ul>
@@ -18,19 +18,19 @@ Here is an example of list items in an unordered list:
 </ul>
 ```
 
-Within the `ul` element nest three list items to display three things cats love:
+在 `ul` 元素中嵌套三个列表项以显示猫喜欢的三件事：
 
 `cat nip` `laser pointers` `lasagna`
 
 # --hints--
 
-You should have three `li` elements. Each `li` element should have its own opening and closing tag.
+你应该有三个 `li` 元素。 每个 `li` 元素都应该有自己的开始和结束标签。
 
 ```js
 assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+你应该有三个 `li` 元素，其中包含任意顺序的文本 `cat nip`、`laser pointers` 和 `lasagna`。 你可能忽略了文本或有拼写错误。
 
 ```js
 assert.deepStrictEqual(
@@ -41,7 +41,7 @@ assert.deepStrictEqual(
 );
 ```
 
-The three `li` elements should be located between the `ul` element's opening and closing tags.
+三个 `li` 元素应位于 `ul` 元素的开始和结束标签之间。
 
 ```js
 assert(

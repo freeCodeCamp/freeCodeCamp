@@ -9,9 +9,9 @@ dashedName: task-49
 
 # --description--
 
-When you like doing something very much, you can say you `enjoy` it. It's a simple way to express that something makes you happy.
+Якщо вам дуже подобається щось робити, ви можете використати слово `enjoy`. Таким простим способом можна сказати, що щось робить вас щасливими.
 
-For example, you can say, `I enjoy playing video games` if playing video games is fun for you. In the dialogue, Sophie tells us something that Maria enjoys in her job.
+Наприклад, ви можете сказати `I enjoy playing video games`, якщо ви насолоджуєтесь відеоіграми. У діалозі Софі розповідає, що подобається Марії в її роботі.
 
 # --fillInTheBlank--
 
@@ -25,7 +25,7 @@ For example, you can say, `I enjoy playing video games` if playing video games i
 
 ### --feedback--
 
-What word would you use to say that Maria finds happiness in guiding the team? It's the same word used when you have fun or like doing an activity.
+Як би ви сказали, що Марії дуже подобається керувати командою? Таким же самим словом ви описуєте, що вам дуже подобається щось робити.
 
 # --scene--
 

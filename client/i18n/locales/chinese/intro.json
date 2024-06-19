@@ -362,7 +362,7 @@
         "intro": [
           "函数式编程是一种流行的软件开发方法。在函数式编程中，开发人员将代码组织成更小的函数，然后将这些函数组合起来构建复杂的程序。",
           "在这个电子表格应用程序项目中，你将学习如何解析和计算数学表达式、实现电子表格功能、处理单元格引用以及创建交互式 Web 界面。你将学习如何根据用户输入动态更新页面。",
-          "这个项目将涵盖各种概念，如 <code>map()</code> 方法、 <code>find()</code> method、<code>parseInt()</code>、<code>includes()</code> 方法。"
+          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, and <code>includes()</code> methods and the <code>parseInt()</code> function."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -471,6 +471,20 @@
         "intro": [
           "在这个小项目中，你将会通过创建成绩统计册应用回顾 JavaScript 基础知识，如函数、变量、条件以及更多内容。",
           "你将通过这个机会练习解决小问题，更好地理解基础知识。"
+        ]
+      },
+      "learn-basic-debugging-by-building-a-random-background-color-changer": {
+        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "intro": [
+          "Debugging is the process of going through your code, finding any issues, and fixing them.",
+          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+        ]
+      },
+      "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
+        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "intro": [
+          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
+          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
         ]
       }
     }
@@ -840,10 +854,55 @@
           "在本项目中，你将通过创建一个费用跟踪器来探索 Lambda 函数的强大功能。你创建的应用程序将展示如何使用 Lambda 函数实现高效、简化的操作。"
         ]
       },
-      "scientific-computing-with-python-projects": {
-        "title": "Python 科学计算项目",
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
         "intro": [
-          "是时候测试一下你的 Python 技能了。通过完成这些项目，你可以展示自己已经掌握了扎实的 Python 基础知识。你还将有资格获得 freeCodeCamp 的 Python 科学计算认证。"
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-budget-app-project": {
+        "title": "Build a Budget App Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Learn Special Methods by Building a Vector Space",
+        "intro": [
+          "Python special methods are called in response to specific operations and enable you to customize the behaviour of your objects in a detailed and effective way.",
+          "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
+        ]
+      },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+        "intro": [
+          "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
+          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
         ]
       }
     }
@@ -921,7 +980,7 @@
     "note": "",
     "blocks": {
       "tensorflow": {
-        "title": "Tensorflow",
+        "title": "TensorFlow",
         "intro": [
           "TensorFlow 是一个开源框架，使机器学习和神经网络更易于使用。",
           "以下视频课程是由 Tim Ruscica 创建的，也叫作 “Tech With Tim”。这个课程将帮助你了解 TensorFlow 及它的一些强大功能。"
@@ -1207,6 +1266,10 @@
       "top-basic-function-projects": {
         "title": "基础函数项目",
         "intro": ["通过构建基本函数来测试你的 JavaScript 技能。"]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Learn Arrays and Loops",
+        "intro": ["Learn about arrays and loops in JavaScript."]
       }
     }
   },
@@ -1380,39 +1443,57 @@
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "学习如何就偏好和动机进行对话",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+        ]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "学习如何讨论流行的技术趋势",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+        ]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "学习如何在不同的互动中阐明信息",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+        ]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "学习如何在对话中使用基本编程词汇",
-        "intro": ["", ""]
+        "intro": [
+          "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
+        ]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "学习如何使用代码相关的概念和术语",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
+        ]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "学习如何谈论技术趋势和更新",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
+        ]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "学习如何在 GitHub 上帮助同事解决问题",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
+        ]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "学习如何在每周站立会议上分享你的进展",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
+        ]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "学习如何要求澄清对代码的理解",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
+        ]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "学习如何为项目写代码文档",
@@ -1431,7 +1512,7 @@
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "学习如何谈论任务和项目的更新和计划",
+        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
@@ -1448,6 +1529,109 @@
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "学习如何在帮助别人时提供解释",
+        "intro": ["", ""]
+      }
+    }
+  },
+  "b1-english-for-developers": {
+    "title": "B1 English for Developers (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-how-to-describe-places-and-events": {
+        "title": "Learn How to Describe Places and Events",
+        "intro": [""]
+      },
+      "learn-how-to-talk-about-past-experiences": {
+        "title": "Learn How to Talk About Past Experiences",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-past-activities": {
+        "title": "Learn How to Talk About Past Activities",
+        "intro": ["", ""]
+      },
+      "learn-present-perfect-while-talking-about-accessibility": {
+        "title": "Learn Present Perfect while Talking About Accessibility",
+        "intro": ["", ""]
+      },
+      "learn-how-to-plan-future-events": {
+        "title": "Learn How to Plan Future Events",
+        "intro": ["", ""]
+      },
+      "learn-future-continuous-while-describing-actions": {
+        "title": "Learn Future Continuous while Describing Actions",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-conditionals": {
+        "title": "Learn How to Use Conditionals",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-feedback": {
+        "title": "Learn How to Share Feedback",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-opinion": {
+        "title": "Learn How to Share Your Opinion",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement": {
+        "title": "Learn How to Express Agreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-disagreement": {
+        "title": "Learn How to Express Disagreement",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-concerns": {
+        "title": "Learn How to Express Concerns",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-decisions-based-on-comparisons": {
+        "title": "Learn How to Express Decisions Based on Comparisons",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-modal-verbs": {
+        "title": "Learn How to Use Modal Verbs",
+        "intro": ["", ""]
+      },
+      "learn-how-to-manage-a-conversation": {
+        "title": "Learn How to Manage a Conversation",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-misunderstandings": {
+        "title": "Learn How to Clarify Misunderstandings",
+        "intro": ["", ""]
+      },
+      "learn-about-speculation-and-requests": {
+        "title": "Learn About Speculation and Requests",
+        "intro": ["", ""]
+      },
+      "learn-about-adverbial-phrases": {
+        "title": "Learn About Adverbial Phrases",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-adjectives-in-conversations": {
+        "title": "Learn How to Use Adjectives in Conversations",
+        "intro": ["", ""]
+      },
+      "learn-determiners-and-advanced-use-of-articles": {
+        "title": "Learn Determiners and Advanced Use of Articles",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-reported-speech": {
+        "title": "Learn How to Use Reported Speech",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-prepositions-according-to-context": {
+        "title": "Learn How to Use Prepositions According to Context",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-numbers-with-a-coworker": {
+        "title": "Learn How to Talk About Numbers with a Coworker",
+        "intro": ["", ""]
+      },
+      "learn-common-phrasal-verbs-and-idioms": {
+        "title": "Learn Common Phrasal Verbs and Idioms",
         "intro": ["", ""]
       }
     }

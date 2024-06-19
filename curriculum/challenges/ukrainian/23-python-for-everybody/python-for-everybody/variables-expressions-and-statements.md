@@ -14,7 +14,7 @@ dashedName: variables-expressions-and-statements
 
 ## --text--
 
-What is the symbol used in an assignment statement?
+Який символ використовується в інструкції присвоєння?
 
 ## --answers--
 

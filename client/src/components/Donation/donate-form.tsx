@@ -56,6 +56,7 @@ type PostCharge = (data: {
   name?: string | undefined;
   paymentMethodId?: string;
   handleAuthentication?: HandleAuthentication;
+  subscriptionId?: string;
 }) => void;
 
 type DonateFormProps = {
@@ -162,9 +163,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     data,
     payerEmail,
     payerName,
-    token,
     paymentMethodId,
-    handleAuthentication
+    handleAuthentication,
+    subscriptionId
   }: PostPayment): void => {
     const { donationAmount, donationDuration: duration } = this.state;
     const { paymentContext, email, selectedDonationAmount } = this.props;
@@ -176,11 +177,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       amount,
       duration,
       data,
-      token,
       email: email || payerEmail,
       name: payerName,
       paymentMethodId,
-      handleAuthentication
+      handleAuthentication,
+      subscriptionId
     });
     if (this.props.handleProcessing) this.props.handleProcessing();
   };
@@ -254,11 +255,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           {loading.stripe && loading.paypal && <PaymentButtonsLoader />}
           <WalletsWrapper
             amount={donationAmount}
+            duration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             label={walletlabel}
             onDonationStateChange={this.onDonationStateChange}
             postPayment={this.postPayment}
-            refreshErrorMessage={t('donate.refresh-needed')}
             theme={priorityTheme}
           />
           <PaypalButton

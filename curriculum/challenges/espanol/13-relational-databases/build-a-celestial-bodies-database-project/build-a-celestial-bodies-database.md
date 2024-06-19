@@ -2,7 +2,6 @@
 id: 5f1a4ef5d5d6b5ab580fc6ae
 title: Construye una base de datos de cuerpos celestes
 challengeType: 13
-helpCategory: Backend Development
 url: freeCodeCamp/learn-celestial-bodies-database
 dashedName: build-a-celestial-bodies-database
 ---

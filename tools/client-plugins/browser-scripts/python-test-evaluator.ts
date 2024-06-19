@@ -119,10 +119,6 @@ ctx.onmessage = async (e: PythonRunEvent) => {
     // custom globals.
     const runPython = (pyCode: string) =>
       pyodide.runPython(pyCode, { globals: __userGlobals }) as unknown;
-    // TODO: remove __pyodide once all the test use runPython.
-    const __pyodide = {
-      runPython
-    };
 
     runPython(`
 def __inputGen(xs):
@@ -172,9 +168,7 @@ with open("/user_code.py", "r") as f:
         }
       });
     }
-    // TODO: remove the next line, creating __locals, once all the tests access
-    // variables directly.
-    runPython('__locals = globals()');
+
     await test();
 
     ctx.postMessage({ pass: true });

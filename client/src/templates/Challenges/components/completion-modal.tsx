@@ -194,7 +194,7 @@ class CompletionModal extends Component<
         onKeyDown={isOpen ? this.handleKeypress : undefined}
       >
         <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='completion-modal-body'>
           <GreenPass
             className='completion-success-icon'
             data-testid='fcc-completion-success-icon'
@@ -206,17 +206,16 @@ class CompletionModal extends Component<
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <>
+            <div className='completion-modal-login-btn'>
               <Login block={true}>{t('learn.sign-in-save')}</Login>
               <Spacer size='xxSmall' />
-            </>
+            </div>
           )}
           <Button
             block={true}
             size='large'
             variant='primary'
             disabled={isSubmitting}
-            data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
             {buttonText}

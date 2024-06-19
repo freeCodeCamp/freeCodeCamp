@@ -1,27 +1,28 @@
 ---
 id: 65823bbbdb4eaa4f9d20a0fb
-title: Крок 16
+title: Крок 17
 challengeType: 20
-dashedName: step-16
+dashedName: step-17
 ---
 
 # --description--
 
-Замініть `pass` на функцію `lambda` в межах функції `total_expenses`. Використайте `expense` як параметр та поверніть значення ключа `'amount'` в словнику `expense`.
+Зараз ви інтегруєте лямбда-функцію в межах функції `total_expenses`. Замініть `pass` на лямбда-функцію, яка має параметр `expense`.
+
+Очікується, що `expense` буде словником, а лямбда-функція має повернути значення ключа `'amount'` зі словника `expense`.
 
 # --hints--
 
-Функція `total_expenses` повинна містити `lambda expense: expense['amount']`.
+В межах функції `total_expenses` створіть функцію `lambda`, яка використовує параметр `expense` та повертає `expense['amount']`.
 
 ```js
-({ test: () =>
-  {
-    const transformedCode = code.replace(/\r/g, "");        
-    const foo = __helpers.python.getDef("\n"+transformedCode, "total_expenses");
-    const {function_body} = foo;    
-    assert(function_body.match(/^\s+lambda\s+expense\s*:\s*expense\s*\[\s*("|')amount\1\s*\]/m));
-  }
-})
+({ test: () => assert(runPython(`_Node(_code).find_function("total_expenses").has_stmt("lambda expense: expense['amount']")`)) })
+```
+
+Функція `total_expenses` не повинна містити `pass`.
+
+```js
+({ test: () => assert.isFalse(runPython(`_Node(_code).find_function("total_expenses").has_pass()`)) })
 ```
 
 # --seed--

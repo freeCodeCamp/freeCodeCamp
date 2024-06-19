@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Offer Technical Support and Guidance
 
-This is a test for the new project-based curriculum.
+In this course, you will see ways of offering some help in terms of technical specifics to another person.

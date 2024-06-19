@@ -8,9 +8,7 @@ dashedName: problem-194-coloured-configurations
 
 # --description--
 
-Considere gráficos construídos com as unidades A:
-<img class="img-responsive" alt="gráfico da unidade A" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-1.png" style="display: inline-block; background-color: white; padding: 10px;" />
- e B: <img class="img-responsive" alt="gráfico da unidade B" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-2.png" style="display: inline-block; background-color: white; padding: 10px;" />, onde as unidades são grudadas ao longo das arestas verticais, como no desenho <img class="img-responsive" alt="gráfico com quatro unidades grudadas ao longo das arestas verticais" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-3.png" style="display: inline-block; background-color: white; padding: 10px;" />.
+Considere os grafos criados com as unidades A: <img class="img-responsive" alt="graph unit A" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-1.png" style="display: inline-block; background-color: white; padding: 10px;" /> e B: <img class="img-responsive" alt="graph unit B" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-2.png" style="display: inline-block; background-color: white; padding: 10px;" />, onde as unidades estão coladas uma à outra pelas arestas verticais no grafo <img class="img-responsive" alt="graph with four units glued along the vertical edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-3.png" style="display: inline-block; background-color: white; padding: 10px;" />.
 
 Uma configuração do tipo $(a,b,c)$ é um gráfico que faz parte de $a$ unidades A e $b$ unidades B, onde os vértices do gráfico são colorizados usando até $c$ cores, de modo que nenhum dois vértices adjacentes tenham a mesma cor. O gráfico composto acima é um exemplo de configuração do tipo $(2,2,6)$. De fato, é do tipo $(2,2,c)$ para todos os $c ≥ 4$
 

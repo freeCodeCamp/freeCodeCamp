@@ -6,11 +6,9 @@ import { useTranslation } from 'react-i18next';
 
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
-import './solution-display-widget.css';
-import '@freecodecamp/ui/dist/base.css';
+
 interface Props {
   completedChallenge: CompletedChallenge;
-  dataCy?: string;
   projectTitle: string;
   showUserCode: () => void;
   showProjectPreview?: () => void;
@@ -20,7 +18,6 @@ interface Props {
 
 export function SolutionDisplayWidget({
   completedChallenge,
-  dataCy,
   projectTitle,
   showUserCode,
   showProjectPreview,
@@ -36,7 +33,7 @@ export function SolutionDisplayWidget({
   // two dropdowns for the same project on the page.
   const randomIdSuffix = Math.floor(Math.random() * 1_000_000);
   const ShowFilesSolutionForCertification = (
-    <Button block={true} data-cy={dataCy} onClick={showUserCode}>
+    <Button block={true} onClick={showUserCode}>
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.solution-for', { projectTitle })}
@@ -45,7 +42,7 @@ export function SolutionDisplayWidget({
   );
   const ShowProjectAndGithubLinkForCertification = (
     <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-      <Dropdown.Toggle className='btn-invert'>
+      <Dropdown.Toggle>
         {viewText}{' '}
         <span className='sr-only'>
           {t('settings.labels.solution-for', { projectTitle })}
@@ -100,12 +97,7 @@ export function SolutionDisplayWidget({
     <>{t('certification.project.no-solution')}</>
   );
   const ShowUserCode = (
-    <Button
-      block={true}
-      variant='primary'
-      data-cy={dataCy}
-      onClick={showUserCode}
-    >
+    <Button block={true} variant='primary' onClick={showUserCode}>
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.solution-for', { projectTitle })}
@@ -113,9 +105,9 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowMultifileProjectSolution = (
-    <div className='solutions-dropdown'>
+    <div>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle className='btn-invert'>
+        <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
@@ -134,9 +126,9 @@ export function SolutionDisplayWidget({
   );
 
   const ShowProjectAndGithubLinks = (
-    <div className='solutions-dropdown'>
+    <div>
       <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
-        <Dropdown.Toggle className='btn-invert'>
+        <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
             {t('settings.labels.solution-for', { projectTitle })}
@@ -190,12 +182,7 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowExamResults = (
-    <Button
-      block={true}
-      variant='primary'
-      data-cy={dataCy}
-      onClick={showExamResults}
-    >
+    <Button block={true} variant='primary' onClick={showExamResults}>
       {viewText}{' '}
       <span className='sr-only'>
         {t('settings.labels.results-for', { projectTitle })}

@@ -4,9 +4,6 @@
   "dashedName": "create-and-run-simple-c-sharp-console-applications",
   "helpCategory": "C-Sharp",
   "order": 1,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
     {

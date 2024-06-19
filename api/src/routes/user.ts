@@ -1,5 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
+import _ from 'lodash';
 
 import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
@@ -7,12 +9,15 @@ import * as schemas from '../schemas';
 import { customNanoid } from '../utils/ids';
 import {
   normalizeChallenges,
+  normalizeFlags,
   normalizeProfileUI,
   normalizeTwitter,
   removeNulls,
-  normalizeSurveys
+  normalizeSurveys,
+  NormalizedChallenge
 } from '../utils/normalize';
 import {
+  Calendar,
   getCalendar,
   getPoints,
   type ProgressTimestamp
@@ -20,6 +25,45 @@ import {
 import { encodeUserToken } from '../utils/tokens';
 import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
+import { createResetProperties } from '../utils/create-user';
+import { challengeTypes } from '../../../shared/config/challenge-types';
+import { isRestricted } from './helpers/is-restricted';
+
+// user flags that the api-server returns as false if they're missing in the
+// user document. Since Prisma returns null for missing fields, we need to
+// normalize them to false.
+// TODO(Post-MVP): remove this when the database is normalized.
+const nullableFlags = [
+  'is2018DataVisCert',
+  'is2018FullStackCert',
+  'isApisMicroservicesCert',
+  'isBackEndCert',
+  'isCheater',
+  'isCollegeAlgebraPyCertV8',
+  'isDataAnalysisPyCertV7',
+  'isDataVisCert',
+  // isDonating doesn't need fixing because it's not nullable
+  'isFoundationalCSharpCertV8',
+  'isFrontEndCert',
+  'isFullStackCert',
+  'isFrontEndLibsCert',
+  'isHonest',
+  'isInfosecCertV7',
+  'isInfosecQaCert',
+  'isJsAlgoDataStructCert',
+  'isJsAlgoDataStructCertV8',
+  'isMachineLearningPyCertV7',
+  'isQaCertV7',
+  'isRelationalDatabaseCertV8',
+  'isRespWebDesignCert',
+  'isSciCompPyCertV7',
+  'isDataAnalysisPyCertV7',
+  // isUpcomingPythonCertV8 exists in the db, but is not returned by the api-server
+  // TODO(Post-MVP): delete it from the db?
+  'keyboardShortcuts'
+] as const;
+
+type NullableFlag = (typeof nullableFlags)[number];
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -110,33 +154,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         });
         await fastify.prisma.user.update({
           where: { id: req.user!.id },
-          data: {
-            progressTimestamps: [Date.now()],
-            currentChallengeId: '',
-            isRespWebDesignCert: false,
-            is2018DataVisCert: false,
-            isFrontEndLibsCert: false,
-            isJsAlgoDataStructCert: false,
-            isApisMicroservicesCert: false,
-            isInfosecQaCert: false,
-            isQaCertV7: false,
-            isInfosecCertV7: false,
-            is2018FullStackCert: false,
-            isFrontEndCert: false,
-            isBackEndCert: false,
-            isDataVisCert: false,
-            isFullStackCert: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
-            isMachineLearningPyCertV7: false,
-            isRelationalDatabaseCertV8: false,
-            isCollegeAlgebraPyCertV8: false,
-            completedChallenges: [],
-            completedExams: [],
-            savedChallenges: [],
-            partiallyCompletedChallenges: [],
-            needsModeration: false
-          }
+          data: createResetProperties()
         });
 
         return {};
@@ -232,7 +250,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           from: 'team@freecodecamp.org',
           to: 'support@freecodecamp.org',
           cc: user.email,
-          subject: `Abuse Report: Reporting ${username}'s profile`,
+          subject: `Abuse Report : Reporting ${username}'s profile.`,
           text: generateReportEmail(user, username, report)
         });
 
@@ -529,10 +547,15 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           void res.code(500);
           return { user: {}, result: '' };
         }
+        // TODO: DRY this (the creation of the response body) and
+        // get-public-profile's response body creation.
 
         const encodedToken = userToken
           ? encodeUserToken(userToken.id)
           : undefined;
+
+        const flags = _.pick<typeof user, NullableFlag>(user, nullableFlags);
+        const rest = _.omit<typeof user, NullableFlag>(user, nullableFlags);
 
         const {
           username,
@@ -541,13 +564,19 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           progressTimestamps,
           twitter,
           profileUI,
+          currentChallengeId,
+          location,
+          name,
+          theme,
           ...publicUser
-        } = user;
+        } = rest;
 
-        return {
+        await res.send({
           user: {
             [username]: {
               ...removeNulls(publicUser),
+              ...normalizeFlags(flags),
+              currentChallengeId: currentChallengeId ?? '',
               completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
@@ -562,6 +591,9 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               // TODO(Post-MVP) remove this and just use emailVerified
               isEmailVerified: user.emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+              location: location ?? '',
+              name: name ?? '',
+              theme: theme ?? 'default',
               twitter: normalizeTwitter(twitter),
               username: usernameDisplay || username,
               userToken: encodedToken,
@@ -570,12 +602,215 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             }
           },
           result: user.username
-        };
+        });
       } catch (err) {
         fastify.log.error(err);
         void res.code(500);
         return { user: {}, result: '' };
       }
+    }
+  );
+
+  done();
+};
+
+type ProfileUI = Partial<{
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showTimeLine: boolean;
+}>;
+
+type RawUser = {
+  about: string;
+  completedChallenges: NormalizedChallenge[];
+  calendar: Calendar;
+  id: string;
+  isDonating: boolean;
+  joinDate: string;
+  location: string;
+  name: string;
+  points: number;
+  portfolio: Portfolio[];
+  profileUI: ProfileUI;
+};
+
+/**
+ * Creates an object with the properties that are shared with the public.
+ * @param user The raw user object.
+ * @returns The shared user object.
+ */
+export const replacePrivateData = (user: RawUser) => {
+  const {
+    showAbout,
+    showHeatMap,
+    showCerts,
+    showDonation,
+    showLocation,
+    showName,
+    showPoints,
+    showPortfolio,
+    showTimeLine
+  } = user.profileUI;
+
+  return {
+    about: showAbout ? user.about : '',
+    calendar: showHeatMap ? user.calendar : {},
+    completedChallenges: showTimeLine
+      ? showCerts
+        ? user.completedChallenges
+        : user.completedChallenges.filter(
+            c => c.challengeType !== challengeTypes.step
+          )
+      : [],
+    isDonating: showDonation ? user.isDonating : null,
+    joinDate: showAbout ? user.joinDate : '',
+    location: showLocation ? user.location : '',
+    name: showName ? user.name : '',
+    points: showPoints ? user.points : null,
+    portfolio: showPortfolio ? user.portfolio : []
+  };
+};
+
+/**
+ * Plugin containing public GET routes for user account management. They are kept
+ * separate because they do not require CSRF protection or authorization.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.get(
+    '/api/users/get-public-profile',
+    {
+      schema: schemas.getPublicProfile
+    },
+    async (req, reply) => {
+      // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
+      const user = await fastify.prisma.user.findFirst({
+        where: { username: req.query.username }
+        // TODO: only select desired fields, then stop 'omit'ing the undesired
+        // ones.
+      });
+
+      if (!user) {
+        void reply.code(404);
+        return reply.send({});
+      }
+
+      const flags = _.pick<typeof user, NullableFlag>(user, nullableFlags);
+      const rest = _.omit<typeof user, NullableFlag>(user, nullableFlags);
+
+      const publicUser = _.omit(rest, [
+        'currentChallengeId',
+        'email',
+        'emailVerified',
+        'sendQuincyEmail',
+        'theme',
+        // keyboardShortcuts is included in flags.
+        // 'keyboardShortcuts',
+        'acceptedPrivacyTerms',
+        'progressTimestamps',
+        'unsubscribeId',
+        'donationEmails',
+        'externalId',
+        'usernameDisplay',
+        'isBanned'
+      ]);
+
+      const normalizedProfileUI = normalizeProfileUI(user.profileUI);
+
+      void reply.code(200);
+      if (normalizedProfileUI.isLocked) {
+        // TODO(Post-MVP): just return isLocked: true and either a null user
+        // or no user at all. (see other TODO in the else branch below)
+        return reply.send({
+          entities: {
+            user: {
+              [user.username]: {
+                isLocked: true,
+                profileUI: normalizedProfileUI,
+                username: user.username
+              }
+            }
+          },
+          result: user.username
+        });
+      } else {
+        const progressTimestamps = user.progressTimestamps as
+          | ProgressTimestamp[]
+          | null;
+        const sharedUser = replacePrivateData({
+          ...user,
+          calendar: getCalendar(progressTimestamps),
+          completedChallenges: normalizeChallenges(user.completedChallenges),
+          location: user.location ?? '',
+          joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+          name: user.name ?? '',
+          points: getPoints(progressTimestamps),
+          profileUI: normalizedProfileUI
+        });
+
+        const returnedUser = {
+          ...removeNulls(publicUser),
+          ...normalizeFlags(flags),
+          ...sharedUser,
+          profileUI: normalizedProfileUI,
+          // TODO: should this always be returned? Shouldn't some privacy
+          // setting control it? Same applies to website, githubProfile,
+          // and linkedin.
+          twitter: normalizeTwitter(user.twitter),
+          yearsTopContributor: user.yearsTopContributor
+        };
+        return reply.send({
+          // TODO(Post-MVP): just return a user object (i.e. returnedUser) and
+          // isLocked: false. The there should be no need for Type.Union in the
+          // schema. Alternatively, have the user object be nullable and don't
+          // bother with isLocked.
+          entities: {
+            user: { [user.username]: returnedUser }
+          },
+          result: user.username
+        });
+      }
+    }
+  );
+
+  fastify.get(
+    '/api/users/exists',
+    {
+      schema: schemas.userExists,
+      attachValidation: true
+    },
+    async (req, reply) => {
+      if (req.validationError) {
+        void reply.code(400);
+        // TODO(Post-MVP): return a message telling the requester that their
+        // request was malformed.
+        return await reply.send({ exists: true });
+      }
+
+      const username = req.query.username.toLowerCase();
+
+      if (isRestricted(username)) return await reply.send({ exists: true });
+
+      const exists =
+        (await fastify.prisma.user.count({
+          where: { username }
+        })) > 0;
+
+      await reply.send({ exists });
     }
   );
 

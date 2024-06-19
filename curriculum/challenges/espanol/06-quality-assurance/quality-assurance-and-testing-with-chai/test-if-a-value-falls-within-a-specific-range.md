@@ -76,12 +76,3 @@ Debe elegir el rango correcto para la segunda aserción - `approximately(actual,
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

@@ -72,7 +72,11 @@
     "update-email": "更新我的邮箱",
     "verify-email": "确认邮箱",
     "submit-and-go": "提交并访问下一个挑战",
+    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "访问下一个挑战",
+    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-3": "Go to next challenge (Command + Enter)",
     "ask-later": "稍后问我",
     "start-coding": "开始编码！",
     "go-to-settings": "转到设置以领取你的认证",
@@ -96,7 +100,6 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "确认金额",
-    "skip-advertisement": "跳过广告",
     "play-scene": "点击播放"
   },
   "landing": {
@@ -293,17 +296,20 @@
     }
   },
   "profile": {
-    "you-not-public": "你尚未把你的作品集设置为公开。",
-    "username-not-public": "{{username}} 未把作品集设置为公开",
     "you-change-privacy": "你需要更改你的隐私设置，才能让他人看到你的作品集。这是你的作品集公开时候的预览。",
     "username-change-privacy": "{{username}} 需要修改隐私设置，你才能看到其作品集。",
     "supporter": "支持者",
     "contributor": "突出贡献者",
+    "contributor-prolific": "Among most prolific volunteers in {{year}}",
     "no-certs": "未获得关于当前课程的认证",
     "fcc-certs": "freeCodeCamp 认证",
     "longest-streak": "最长连续提交记录：",
     "current-streak": "当前连续提交记录：",
+    "portfolio": "Portfolio",
+    "badges": "Badges",
+    "donated": "Donated to the community",
     "projects": "项目",
+    "stats": "Stats",
     "timeline": "时间线",
     "none-completed": "尚未完成任何挑战。",
     "get-started": "从这里开始。",
@@ -378,6 +384,7 @@
     "submit-and-go": "提交并访问下一个挑战",
     "congratulations": "恭喜，你的代码已通过。请提交你的代码以继续。",
     "i-completed": "我已经完成这个挑战",
+    "example-code": "Example Code",
     "test-output": "你的测试输出将在这里显示",
     "running-tests": "// 运行测试",
     "tests-completed": "// 测试完成",
@@ -568,6 +575,7 @@
     "other-ways": "有许多<0>其他方式可以支持我们的慈善组织践行使命</0>.",
     "if-support-further": "如果你想进一步支持我们的慈善组织，可以考虑<0>一次性捐款</0>、<1>向我们发送支票</1>或<2>了解支持我们慈善组织的其他方式。</2>",
     "failed-pay": "呃，你的转账似乎没有成功，再试一次好吗？",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "请重试。",
     "card-number": "你的卡号：",
     "expiration": "到期日：",
@@ -604,7 +612,7 @@
     "welcome-stock": "我们欢迎你的股票捐赠。请直接给 Quincy 发送电子邮件到 quincy@freecodecamp.org，他可以帮助你，并分享我们的慈善组织的经纪账户的详细信息。",
     "how-receipt": "我能够收到捐赠收据以从我的税款中扣除我的捐赠吗？",
     "just-forward": "可以，只需将你交易的收据转发到 donors@freecodecamp.org，告诉我们你想要一个收据以及你的使用场景，我们将发给你一个收据。",
-    "how-update": "我设置了每月捐款，但我需要更新或暂停每月的重复。我如何做？",
+    "how-update": "I set up a monthly donation, but I need to update or stop the monthly recurrence. How can I do this?",
     "take-care-of-this": "只需转发你的每月捐款记录中的一个记录给 donors@freecodecamp.org， 并告诉我们你要做什么。我们会为你处理这个问题，并向你发送确认。",
     "anything-else": "还有什么关于为 freeCodeCamp.org 捐赠可以了解的吗？",
     "other-support": "如果你想要通过此处未列出的其他方式支持我们的慈善组织和它的使命，或者如果你有任何问题，请给 Quincy 发送电子邮件到 quincy@freecodecamp.org。",
@@ -638,7 +646,8 @@
     "help-millions-learn": "帮助数百万人学习",
     "reach-goals-faster": "更快地实现你的目标",
     "remove-distractions": "消除干扰",
-    "animation-description": "这是一个 20 秒的动画广告，旨在鼓励学员成为 freeCodeCamp 的支持者。动画开头是一只泰迪熊成为支持者。最后，弹窗消失了，泰迪熊完成了所有目标。它毕业了，成为了帮助全世界人们的教育超级英雄。"
+    "animation-description": "这是一个 20 秒的动画广告，旨在鼓励学员成为 freeCodeCamp 的支持者。动画开头是一只泰迪熊成为支持者。最后，弹窗消失了，泰迪熊完成了所有目标。它毕业了，成为了帮助全世界人们的教育超级英雄。",
+    "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
   "report": {
     "sign-in": "你需要先登录才能举报用户",
@@ -661,7 +670,8 @@
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
-    "no-results": "我们未找到关于 <0>{{query}}</0> 的任何信息"
+    "no-results": "我们未找到关于 <0>{{query}}</0> 的任何信息",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "你已离线，学习进度可能不会被保存",
@@ -742,7 +752,7 @@
   "flash": {
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",
     "really-weird": "出现了一些奇怪的情况。如果再出现这种情况，请考虑在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
-    "not-right": "有些不对劲。已生成报告，通知 freeCodeCamp.org 团队。",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "出了点问题，请检查并重试。",
     "account-deleted": "你的账户已被成功删除",
     "progress-reset": "你的进度已被重置",
@@ -778,7 +788,6 @@
     "cert-claim-success": "@{{username}}，你已成功申请 {{name}} 认证！代表 freeCodeCamp.org 团队恭喜你！",
     "wrong-name": "{{name}} 验证有点问题，请重试。如果你继续收到这个错误提示，你可以发邮件至 support@freeCodeCamp.org，获得帮助",
     "error-claiming": "申请 {{certName}} 认证出错",
-    "refresh-needed": "你只能点击一次付款请求按钮。如需重来请刷新页面。",
     "username-not-found": "我们未找到用户名为 \"{{username}}\" 的用户",
     "add-name": "这个用户需要在账户中添加名字，以便其他人查看该用户的认证。",
     "not-eligible": "这个用户目前不符合 freeCodeCamp.org 认证的条件。",
@@ -986,6 +995,8 @@
       "foundational-c-sharp-with-microsoft": "微软基础 C# 认证",
       "A2 English for Developers": "面向开发者的 A2 英语",
       "a2-english-for-developers": "面向开发者的 A2 英语认证",
+      "B1 English for Developers": "B1 English for Developers",
+      "b1-english-for-developers": "B1 English for Developers Certification",
       "Legacy Front End": "旧版前端",
       "legacy-front-end": "旧版前端认证",
       "Legacy Back End": "旧版后端",

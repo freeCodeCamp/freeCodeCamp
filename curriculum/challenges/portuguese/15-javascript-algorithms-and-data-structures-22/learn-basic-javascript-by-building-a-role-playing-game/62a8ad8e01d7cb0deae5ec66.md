@@ -1,6 +1,6 @@
 ---
 id: 62a8ad8e01d7cb0deae5ec66
-title: Step 57
+title: Passo 57
 challengeType: 0
 dashedName: step-57
 ---
@@ -136,7 +136,7 @@ button {
 let xp = 0;
 let health = 100;
 let gold = 50;
-let currentWeapon = 0;
+let currentWeaponIndex = 0;
 let fighting;
 let monsterHealth;
 let inventory = ["stick"];

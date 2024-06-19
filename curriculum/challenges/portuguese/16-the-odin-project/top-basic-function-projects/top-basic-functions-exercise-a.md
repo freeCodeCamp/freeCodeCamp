@@ -1,37 +1,37 @@
 ---
 id: 6619240f46cec8e04d77e03a
-title: Basic Functions Exercise A
+title: Exercício básico de funções A
 challengeType: 1
 dashedName: top-basic-functions-exercise-a
 ---
 
 # --description--
 
-Create a function that takes in an integer. This function should return the given `integer + 7` if the integer is less than `10`. If the integer is greater than or equal to `10`, it should return the given `integer - 3`.
+Crie uma função que recebe um inteiro. Essa função deve retornar o número inteiro `integer + 7` dado, se o inteiro for menor que `10`. Se o inteiro for maior ou igual a `10`, ela deve retornar o número inteiro `integer - 3` dado.
 
-The name of the function should be `addOrSubtract`.
+O nome da função deve ser `addOrSubtract`.
 
 # --hints--
 
-You should have a function called `addOrSubtract`.
+Você deve ter uma função chamada `addOrSubtract`.
 
 ```js
 assert.isFunction(addOrSubtract);
 ```
 
-Your function should take in an integer as an argument.
+A função deve receber um inteiro como um argumento.
 
 ```js
 assert.match(addOrSubtract.toString(), /\s*addOrSubtract\(\s*\w+\s*\)/);
 ```
 
-You should return the given integer + 7 if the integer is less than 10.
+Você deve devolver o número inteiro dado + 7 se o inteiro for menor que 10.
 
 ```js
 assert.strictEqual(addOrSubtract(5), 12);
 ```
 
-You should return the given integer - 3 if the integer is greater than or equal to 10.
+Você deve devolver o número inteiro dado - 3 se o inteiro for maior ou igual a 10.
 
 ```js
 assert.strictEqual(addOrSubtract(10), 7);

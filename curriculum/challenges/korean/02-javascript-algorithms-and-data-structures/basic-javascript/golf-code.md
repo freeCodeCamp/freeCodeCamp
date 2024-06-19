@@ -1,6 +1,6 @@
 ---
 id: 5664820f61c48e80c9fa476c
-title: Golf Code
+title: 골프 코드
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195
@@ -9,77 +9,77 @@ dashedName: golf-code
 
 # --description--
 
-In the game of Golf, each hole has a `par`, meaning, the average number of `strokes` a golfer is expected to make in order to sink the ball in the hole to complete the play. Depending on how far above or below `par` your `strokes` are, there is a different nickname.
+골프 게임에는 골프 선수가 홀에 공을 넣어 플레이를 완성하기 위해 할 것으로 기대되는 `strokes`의 평균 수를 의미하는 `par`가 각 홀마다 있습니다. `par`에서 `strokes`를 얼마나 더 쳤는지, 덜 쳤는지에 대한 별칭이 있습니다.
 
-Your function will be passed `par` and `strokes` arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):
+함수는 `par`와 `strokes` 매개변수를 받습니다. 친 횟수를 우선순위(가장 높음에서 가장 낮음) 에 따라 나열한 아래 표에 대해 정확한 문자열을 반환하세요.
 
-<table><thead><tr><th>Strokes</th><th>Return</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
+<table><thead><tr><th>친 횟수</th><th>반환 값</th></tr></thead><tbody><tr><td>1</td><td>"Hole-in-one!"</td></tr><tr><td>&#x3C;= par - 2</td><td>"Eagle"</td></tr><tr><td>par - 1</td><td>"Birdie"</td></tr><tr><td>par</td><td>"Par"</td></tr><tr><td>par + 1</td><td>"Bogey"</td></tr><tr><td>par + 2</td><td>"Double Bogey"</td></tr><tr><td>>= par + 3</td><td>"Go Home!"</td></tr></tbody></table>
 
-`par` and `strokes` will always be numeric and positive. We have added an array of all the names for your convenience.
+`par`와 `strokes`는 항상 양수의 숫자입니다. 당신의 편의를 위해 모든 이름 배열을 추가했습니다.
 
 # --hints--
 
-`golfScore(4, 1)` should return the string `Hole-in-one!`
+`golfScore(4, 1)`은 `Hole-in-one!` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(4, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(4, 2)` should return the string `Eagle`
+`golfScore(4, 2)`은 `Eagle` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(4, 2) === 'Eagle');
 ```
 
-`golfScore(5, 2)` should return the string `Eagle`
+`golfScore(5, 2)`은 `Eagle` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(5, 2) === 'Eagle');
 ```
 
-`golfScore(4, 3)` should return the string `Birdie`
+`golfScore(4, 3)`은 `Birdie` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(4, 3) === 'Birdie');
 ```
 
-`golfScore(4, 4)` should return the string `Par`
+`golfScore(4, 4)`은 `Par` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(4, 4) === 'Par');
 ```
 
-`golfScore(1, 1)` should return the string `Hole-in-one!`
+`golfScore(1, 1)`은 `Hole-in-one!` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(1, 1) === 'Hole-in-one!');
 ```
 
-`golfScore(5, 5)` should return the string `Par`
+`golfScore(5, 5)`은 `Par` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(5, 5) === 'Par');
 ```
 
-`golfScore(4, 5)` should return the string `Bogey`
+`golfScore(4, 5)`은 `Bogey` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(4, 5) === 'Bogey');
 ```
 
-`golfScore(4, 6)` should return the string `Double Bogey`
+`golfScore(4, 6)`은 `Double Bogey` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(4, 6) === 'Double Bogey');
 ```
 
-`golfScore(4, 7)` should return the string `Go Home!`
+`golfScore(4, 7)`은 `Go Home!` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(4, 7) === 'Go Home!');
 ```
 
-`golfScore(5, 9)` should return the string `Go Home!`
+`golfScore(5, 9)`은 `Go Home!` 문자열을 반환해야합니다.
 
 ```js
 assert(golfScore(5, 9) === 'Go Home!');

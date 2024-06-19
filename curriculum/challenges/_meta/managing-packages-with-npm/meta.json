@@ -1,10 +1,9 @@
 {
-  "name": "Managing Packages with npm",
+  "name": "Managing Packages with NPM",
   "isUpcomingChange": false,
   "dashedName": "managing-packages-with-npm",
   "helpCategory": "JavaScript",
   "order": 0,
-  "time": "5 hours",
   "superBlock": "back-end-development-and-apis",
   "challengeOrder": [
     {
