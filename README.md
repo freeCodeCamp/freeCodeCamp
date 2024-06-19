@@ -133,8 +133,6 @@ Here are our twelve core certifications:
 
 #### 8. [Scientific Computing with Python Certification](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
 
-**Practice Projects for Scientific Computing with Python**:-
-
 - [Learn String Manipulation by Building a Cipher](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-string-manipulation-by-building-a-cipher)
 - [Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm)
 - [Learn Lambda Functions by Building an Expense Tracker](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-lambda-functions-by-building-an-expense-tracker)
@@ -144,14 +142,14 @@ Here are our twelve core certifications:
 - [Learn Algorithm Design by Building a Shortest Path Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-algorithm-design-by-building-a-shortest-path-algorithm)
 - [Learn Recursion by Solving the Tower of Hanoi Puzzle](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-recursion-by-solving-the-tower-of-hanoi-puzzle)
 - [Learn Data Structures by Building the Merge Sort Algorithm](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-data-structures-by-building-the-merge-sort-algorithm)
-- [Learn Classes and Objects by Building a Sudoku Solver](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-classes-and-objects-by-building-a-sudoku-solver)
+- [Learn Classes and Objects by Building a Sudoku Solver](https://www.freecodecamp.org/learn/scientific-computing-with-python/ #learn-classes-and-objects-by-building-a-sudoku-solver)
 - [Learn Tree Traversal by Building a Binary Search Tree](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-tree-traversal-by-building-a-binary-search-tree)
 - [Learn Special Methods by Building a Vector Space](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-special-methods-by-building-a-vector-space)
 
 <br />
 <br />
 
-**Projects**:[Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-time-calculator-project/build-a-time-calculator-project), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project)[Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-probability-calculator-project/build-a-probability-calculator-project)
+**Projects**: [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-time-calculator-project/build-a-time-calculator-project), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project)[Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-probability-calculator-project/build-a-probability-calculator-project)
 
 #### 9. [Data Analysis with Python Certification](https://www.freecodecamp.org/learn/data-analysis-with-python/)
 
