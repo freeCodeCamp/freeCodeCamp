@@ -145,11 +145,9 @@ Here are our twelve core certifications:
 - [Learn Classes and Objects by Building a Sudoku Solver](https://www.freecodecamp.org/learn/scientific-computing-with-python/ #learn-classes-and-objects-by-building-a-sudoku-solver)
 - [Learn Tree Traversal by Building a Binary Search Tree](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-tree-traversal-by-building-a-binary-search-tree)
 - [Learn Special Methods by Building a Vector Space](https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-special-methods-by-building-a-vector-space)
-
-<br />
-<br />
-
-**Projects**: [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-time-calculator-project/build-a-time-calculator-project), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project),[Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-probability-calculator-project/build-a-probability-calculator-project)
+  <br />
+  <br />
+  **Projects**: [Arithmetic Formatter](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project), [Time Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-time-calculator-project/build-a-time-calculator-project), [Budget App](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project), [Polygon Area Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project),[Probability Calculator](https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-probability-calculator-project/build-a-probability-calculator-project)
 
 #### 9. [Data Analysis with Python Certification](https://www.freecodecamp.org/learn/data-analysis-with-python/)
 
