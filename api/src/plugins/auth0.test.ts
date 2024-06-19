@@ -302,6 +302,7 @@ describe('auth0 plugin', () => {
       const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
       const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
       const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
+      const mongodbIdRe = /^[a-f0-9]{24}$/;
 
       await fastify.inject({
         method: 'GET',
@@ -312,24 +313,33 @@ describe('auth0 plugin', () => {
         where: { email }
       });
 
-      expect(user).toMatchObject({
+      expect(user).toEqual({
         about: '',
         acceptedPrivacyTerms: false,
         completedChallenges: [],
+        completedExams: [],
         currentChallengeId: '',
+        donationEmails: [],
         email,
+        emailAuthLinkTTL: null,
         emailVerified: true,
+        emailVerifyTTL: null,
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         externalId: expect.stringMatching(uuidRe),
+        githubProfile: null,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        id: expect.stringMatching(mongodbIdRe),
         is2018DataVisCert: false,
         is2018FullStackCert: false,
         isApisMicroservicesCert: false,
         isBackEndCert: false,
         isBanned: false,
         isCheater: false,
+        isClassroomAccount: null,
         isDataAnalysisPyCertV7: false,
         isDataVisCert: false,
         isDonating: false,
+        isFoundationalCSharpCertV8: false,
         isFrontEndCert: false,
         isFrontEndLibsCert: false,
         isFullStackCert: false,
@@ -337,18 +347,26 @@ describe('auth0 plugin', () => {
         isInfosecCertV7: false,
         isInfosecQaCert: false,
         isJsAlgoDataStructCert: false,
+        isJsAlgoDataStructCertV8: false,
         isMachineLearningPyCertV7: false,
         isQaCertV7: false,
         isRelationalDatabaseCertV8: false,
         isCollegeAlgebraPyCertV8: false,
         isRespWebDesignCert: false,
         isSciCompPyCertV7: false,
+        isUpcomingPythonCertV8: null,
         keyboardShortcuts: false,
+        linkedin: null,
         location: '',
         name: '',
+        needsModeration: false,
+        newEmail: null,
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         unsubscribeId: expect.stringMatching(unsubscribeIdRe),
+        partiallyCompletedChallenges: [],
+        password: null,
         picture: '',
+        portfolio: [],
         profileUI: {
           isLocked: false,
           showAbout: false,
@@ -362,12 +380,18 @@ describe('auth0 plugin', () => {
           showTimeLine: false
         },
         progressTimestamps: [expect.any(Number)],
+        savedChallenges: [],
         sendQuincyEmail: false,
         theme: 'default',
+        timezone: null,
+        twitter: null,
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         username: expect.stringMatching(fccUuidRe),
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        usernameDisplay: expect.stringMatching(fccUuidRe)
+        usernameDisplay: expect.stringMatching(fccUuidRe),
+        verificationToken: null,
+        website: null,
+        yearsTopContributor: []
       });
       expect(user.username).toBe(user.usernameDisplay);
     });
