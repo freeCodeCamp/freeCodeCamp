@@ -110,7 +110,7 @@ export const build = async (
     dsn: SENTRY_DSN,
     // No need to initialize if DSN is not provided (e.g. in development and
     // test environments)
-    skipInit: !!SENTRY_DSN,
+    skipInit: !SENTRY_DSN,
     errorResponse: (error, _request, reply) => {
       if (reply.statusCode === 500) {
         void reply.send({
