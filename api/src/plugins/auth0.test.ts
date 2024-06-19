@@ -1,7 +1,7 @@
 const COOKIE_DOMAIN = 'test.com';
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { createUserInput } from '../utils/create-user';
+import { createUserInput, nanoidCharSet } from '../utils/create-user';
 import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
 import prismaPlugin from '../db/prisma';
 import cookies, { sign, unsign } from './cookies';
@@ -295,6 +295,81 @@ describe('auth0 plugin', () => {
           'https://www.freecodecamp.org/italian/email-sign-up?'
         )
       );
+    });
+
+    it('should populate the user with the correct data', async () => {
+      mockAuthSuccess();
+      const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
+      const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
+      const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
+
+      await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid'
+      });
+
+      const user = await fastify.prisma.user.findFirstOrThrow({
+        where: { email }
+      });
+
+      expect(user).toMatchObject({
+        about: '',
+        acceptedPrivacyTerms: false,
+        completedChallenges: [],
+        currentChallengeId: '',
+        email,
+        emailVerified: true,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        externalId: expect.stringMatching(uuidRe),
+        is2018DataVisCert: false,
+        is2018FullStackCert: false,
+        isApisMicroservicesCert: false,
+        isBackEndCert: false,
+        isBanned: false,
+        isCheater: false,
+        isDataAnalysisPyCertV7: false,
+        isDataVisCert: false,
+        isDonating: false,
+        isFrontEndCert: false,
+        isFrontEndLibsCert: false,
+        isFullStackCert: false,
+        isHonest: false,
+        isInfosecCertV7: false,
+        isInfosecQaCert: false,
+        isJsAlgoDataStructCert: false,
+        isMachineLearningPyCertV7: false,
+        isQaCertV7: false,
+        isRelationalDatabaseCertV8: false,
+        isCollegeAlgebraPyCertV8: false,
+        isRespWebDesignCert: false,
+        isSciCompPyCertV7: false,
+        keyboardShortcuts: false,
+        location: '',
+        name: '',
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        unsubscribeId: expect.stringMatching(unsubscribeIdRe),
+        picture: '',
+        profileUI: {
+          isLocked: false,
+          showAbout: false,
+          showCerts: false,
+          showDonation: false,
+          showHeatMap: false,
+          showLocation: false,
+          showName: false,
+          showPoints: false,
+          showPortfolio: false,
+          showTimeLine: false
+        },
+        progressTimestamps: [expect.any(Number)],
+        sendQuincyEmail: false,
+        theme: 'default',
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        username: expect.stringMatching(fccUuidRe),
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        usernameDisplay: expect.stringMatching(fccUuidRe)
+      });
+      expect(user.username).toBe(user.usernameDisplay);
     });
   });
 });
