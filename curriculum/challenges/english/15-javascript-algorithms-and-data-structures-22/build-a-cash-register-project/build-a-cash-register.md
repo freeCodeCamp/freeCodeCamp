@@ -241,10 +241,13 @@ if (changeLeft > 0) {
 
 cid = _cashInDrawer.reverse();
 const expected = ['Status: OPEN', ..._expectedChangeDue.reverse().map(([denominationName, amount]) => `${denominationName}: $${amount}`)];
+const notExpected = _denomRegexes.filter(regex => !expected.some(change => change.match(new RegExp(regex, 'i'))));
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
+const result = changeDueDiv.innerText.trim().toLowerCase();
+assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
+assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))), notExpected)
 ```
 
 When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
@@ -414,10 +417,13 @@ if (changeLeft > 0) {
 
 cid = _cashInDrawer.reverse();
 const expected = ['Status: CLOSED', ..._expectedChangeDue.reverse().map(([denominationName, amount]) => `${denominationName}: $${amount}`)];
+const notExpected = _denomRegexes.filter(regex => !expected.some(change => change.match(new RegExp(regex, 'i'))));
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
+const result = changeDueDiv.innerText.trim().toLowerCase();
+assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
+assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))), notExpected)
 ```
 
 # --seed--
@@ -427,7 +433,8 @@ assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().
 
 ```js
 const _money = [['ONE HUNDRED', 10000], ['TWENTY', 2000], ['TEN', 1000], ['FIVE', 500], ['ONE', 100], ['QUARTER', 25], ['DIME', 10], ['NICKEL', 5]];
-function _randomNumber(max, min=0) {
+const _denomRegexes = [/PENNY/, /NICKEL/, /DIME/, /QUARTER/, /ONE [^H]/, /FIVE/, /TEN/, /TWENTY/, /ONE HUNDRED/];
+function _randomNumber(max) {
   return Math.floor(Math.random() * (max +1));
 }
 ```
