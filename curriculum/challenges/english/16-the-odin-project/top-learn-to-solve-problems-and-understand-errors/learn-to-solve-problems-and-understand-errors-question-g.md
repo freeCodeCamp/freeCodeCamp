@@ -15,7 +15,7 @@ const str2 = "World!";
 const message = str1.push(str2);
 ```
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/4ed59981b4ce2c60b5b83bf7415d3127b61821f5/foundations/javascript_basics/understanding_errors/imgs/03.png" style="width:95%" alt="an example of a type error in the Chrome developer console">
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/4ed59981b4ce2c60b5b83bf7415d3127b61821f5/foundations/javascript_basics/understanding_errors/imgs/03.png" style="width:100%" alt="an example of a type error in the Chrome developer console">
 
 Here, you'll get a `TypeError` with a message stating that `str1.push is not a function`. This is a common error message that confuses learners because you might know that `.push()` is certainly a function (for example, if you have used it to add items to arrays before).
 

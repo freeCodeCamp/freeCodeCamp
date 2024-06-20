@@ -26,12 +26,12 @@ print();
 
 Our function `print()` should call on `add()`, which returns a variable named `c`, which currently has not been declared. The corresponding error is as follows:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/284f0cdc998be7e4751e29e8458323ad5d320303/foundations/javascript_basics/understanding_errors/imgs/01.png" width="110%" alt="An error showing with a stacktrace in the developer console">
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/284f0cdc998be7e4751e29e8458323ad5d320303/foundations/javascript_basics/understanding_errors/imgs/01.png" width="100%" alt="An error showing with a stacktrace in the developer console">
 
 The stack trace tells us that:
 
 1. `c is not defined` in scope of `add()`, which is declared on line 5.
-1. `add() `was called by `print()`, which was declared on line 9.
+1. `add()` was called by `print()`, which was declared on line 9.
 1. `print()` itself was called on line 12.
 
 Thus the stack trace lets you trace the evolution of an error back to its origin, which here is the declaration of `add()`.

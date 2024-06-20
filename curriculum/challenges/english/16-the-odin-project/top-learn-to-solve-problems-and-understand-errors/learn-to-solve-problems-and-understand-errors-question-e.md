@@ -18,7 +18,7 @@ console.log(c);
 
 This code will run, but it will generate an error. In technical terms, this is called <dfn>throwing</dfn> an error. The first part of an error displays the type of error. This provides the first clue as to what you're dealing with. You'll learn more about the different error types later in the lesson. In this example, you have a `ReferenceError`.
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/175b5ef2a1b4758a7b75f4ef43d7e27203e5707b/foundations/javascript_basics/understanding_errors/imgs/00.png" width="130%" alt="An error being displayed in the developer console"/>
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/175b5ef2a1b4758a7b75f4ef43d7e27203e5707b/foundations/javascript_basics/understanding_errors/imgs/00.png" width="100%" alt="An error being displayed in the developer console"/>
 
 A `ReferenceError` is thrown when one refers to a variable that is not declared and/or initialized within the current scope. In our case, the error message explains that the error has occurred because `c is not defined`.
 
