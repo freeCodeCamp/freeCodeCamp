@@ -8,11 +8,8 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test('Check the initial states of submit button and "check your code" button', async ({
-  page
-}) => {
+test('Check the initial states of submit button and "check your code" button', async ({ page }) => {
   const checkButton = page.getByTestId('lowerJaw-check-button');
-
   const submitButton = page.getByTestId('lowerJaw-submit-button');
   const checkButtonState = await checkButton.getAttribute('aria-hidden');
   const submitButtonState = await submitButton.getAttribute('aria-hidden');
@@ -79,7 +76,6 @@ test('Checks hotkeys when instruction is focused', async ({
 
 test('Focuses on the submit button after tests passed', async ({
   page,
-  browserName,
   isMobile
 }) => {
   const editor = getEditors(page);
@@ -87,8 +83,8 @@ test('Focuses on the submit button after tests passed', async ({
   const submitButton = page.getByRole('button', {
     name: 'Submit and go to next challenge'
   });
-  await focusEditor({ page, browserName, isMobile });
-  await clearEditor({ page, browserName });
+  await focusEditor({ page, isMobile });
+  await clearEditor({ page });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
@@ -100,7 +96,6 @@ test('Focuses on the submit button after tests passed', async ({
 
 test('Prompts unauthenticated user to sign in to save progress', async ({
   page,
-  browserName,
   isMobile
 }) => {
   await signout(page);
@@ -111,7 +106,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
     name: 'Sign in to save your progress'
   });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
