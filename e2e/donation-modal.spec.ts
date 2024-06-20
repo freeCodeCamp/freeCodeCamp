@@ -6,6 +6,10 @@ import { clearEditor, focusEditor, getEditors } from './utils/editor';
 const slowExpect = expect.configure({ timeout: 25000 });
 
 const completeFrontEndCert = async (page: Page) => {
+  await page.goto(
+    `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine`
+  );
+
   const projects = [
     'random-quote-machine',
     'markdown-previewer',
@@ -15,7 +19,7 @@ const completeFrontEndCert = async (page: Page) => {
   ];
 
   for (const project of projects) {
-    await page.goto(
+    await page.waitForURL(
       `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${project}`
     );
 
