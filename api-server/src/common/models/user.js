@@ -22,11 +22,6 @@ import {
   setAccessTokenToResponse,
   removeCookies
 } from '../../server/utils/getSetAccessToken';
-import {
-  normaliseUserFields,
-  getProgress,
-  publicUserProps
-} from '../../server/utils/publicUserProps';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { getEmailSender } from '../../server/utils/url-utils';
 import {
@@ -743,116 +738,6 @@ export default function initializeUser(User) {
       `
     );
   };
-
-  function prepUserForPublish(user, profileUI) {
-    const {
-      about,
-      calendar,
-      completedChallenges,
-      isDonating,
-      joinDate,
-      location,
-      name,
-      points,
-      portfolio,
-      username,
-      yearsTopContributor
-    } = user;
-    const {
-      isLocked = true,
-      showAbout = false,
-      showCerts = false,
-      showDonation = false,
-      showHeatMap = false,
-      showLocation = false,
-      showName = false,
-      showPoints = false,
-      showPortfolio = false,
-      showTimeLine = false
-    } = profileUI;
-
-    if (isLocked) {
-      return {
-        isLocked,
-        profileUI,
-        username
-      };
-    }
-    return {
-      ...user,
-      about: showAbout ? about : '',
-      calendar: showHeatMap ? calendar : {},
-      completedChallenges: (function () {
-        if (showTimeLine) {
-          return showCerts
-            ? completedChallenges
-            : completedChallenges.filter(
-                ({ challengeType }) => challengeType !== 7
-              );
-        } else {
-          return [];
-        }
-      })(),
-      isDonating: showDonation ? isDonating : null,
-      joinDate: showAbout ? joinDate : '',
-      location: showLocation ? location : '',
-      name: showName ? name : '',
-      points: showPoints ? points : null,
-      portfolio: showPortfolio ? portfolio : [],
-      yearsTopContributor: yearsTopContributor
-    };
-  }
-
-  User.getPublicProfile = function getPublicProfile(username, cb) {
-    return User.findOne$({ where: { username } })
-      .flatMap(user => {
-        if (!user) {
-          return Observable.of({});
-        }
-        const { completedChallenges, progressTimestamps, profileUI } = user;
-        const allUser = {
-          ..._.pick(user, publicUserProps),
-          points: progressTimestamps.length,
-          completedChallenges,
-          ...getProgress(progressTimestamps),
-          ...normaliseUserFields(user),
-          joinDate: user.id.getTimestamp()
-        };
-
-        const publicUser = prepUserForPublish(allUser, profileUI);
-
-        return Observable.of({
-          entities: {
-            user: {
-              [user.username]: {
-                ...publicUser
-              }
-            }
-          },
-          result: user.username
-        });
-      })
-      .subscribe(user => cb(null, user), cb);
-  };
-
-  User.remoteMethod('getPublicProfile', {
-    accepts: {
-      arg: 'username',
-      type: 'string',
-      required: true
-    },
-    returns: [
-      {
-        arg: 'user',
-        type: 'object',
-        root: true
-      }
-    ],
-    http: {
-      path: '/get-public-profile',
-      verb: 'GET'
-    }
-  });
 
   User.giveBrowniePoints = function giveBrowniePoints(
     receiver,
