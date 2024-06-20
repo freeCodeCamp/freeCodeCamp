@@ -4,9 +4,6 @@
   "dashedName": "learn-advanced-bash-by-building-a-kitty-ipsum-translator",
   "helpCategory": "Backend Development",
   "order": 7,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "relational-database",
   "challengeOrder": [
     {

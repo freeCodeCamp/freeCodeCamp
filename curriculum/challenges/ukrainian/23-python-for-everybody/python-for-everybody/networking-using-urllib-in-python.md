@@ -14,7 +14,7 @@ dashedName: networking-using-urllib-in-python
 
 ## --text--
 
-What will the output of the following code be like?:
+Як буде виглядати результат виконання даного коду?
 
 ```python
 import urllib.request

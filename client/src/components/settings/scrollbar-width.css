@@ -9,6 +9,7 @@ input.scrollbar-width[type='range'] {
   background: transparent;
   position: relative;
   height: calc(1rem + 6px);
+  width: 100%;
 }
 
 input.scrollbar-width[type='range']::-webkit-slider-runnable-track {

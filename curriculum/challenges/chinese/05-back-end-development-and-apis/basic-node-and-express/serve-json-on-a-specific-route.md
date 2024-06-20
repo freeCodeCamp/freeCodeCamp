@@ -36,12 +36,3 @@ HTML 服务器提供 HTML 服务，而 API 提供数据服务。 <dfn>REST</dfn>
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

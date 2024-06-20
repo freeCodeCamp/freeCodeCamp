@@ -8,7 +8,6 @@ function DefaultAvatar(
 
   return (
     <svg
-      className='default-avatar'
       height='500px'
       version='1.1'
       viewBox='0 0 500 500'

@@ -32,7 +32,7 @@ Roman numerals are based on seven symbols and can be written using various combi
 
 1. You should have an `input` element with an `id` of `"number"`
 1. You should have a `button` element with an `id` of `"convert-btn"`
-1. You should have a `div` element with an `id` of `output`
+1. You should have a `div`, `span` or `p` element with an `id` of `output`
 1. When you click on the `#convert-btn` element without entering a value into the `#number` element, the `#output` element should contain the text `"Please enter a valid number"`
 1. When the `#number` element contains the number `-1` and the `#convert-btn` element is clicked, the `#output` element should contain the text `"Please enter a number greater than or equal to 1"`
 1. When the `#number` element contains the number `4000` or greater and the `#convert-btn` element is clicked, the `#output` element should contain the text `"Please enter a number less than or equal to 3999"`
@@ -60,11 +60,11 @@ const el = document.getElementById('convert-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `"output"`.
+You should have a `div`, `span`, or `p` element with an `id` of `"output"`.
 
 ```js
 const el = document.getElementById('output');
-assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
+assert(['div', 'span', 'p'].includes(el?.nodeName?.toLowerCase()));
 ```
 
 When you click on the `#convert-btn` element without entering a value into the `#number` element, the `#output` element should contain the text `"Please enter a valid number"`.
@@ -168,6 +168,36 @@ numberInputEl.value = '3999';
 numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim(), 'MMMCMXCIX');
+```
+
+When the `#number` element contains a random negative number and the `#convert-btn` element is clicked, the `#output` element should contain the text `"Please enter a number greater than or equal to 1"`.
+
+```js
+const numberInputEl = document.getElementById('number');
+const convertBtnEl = document.getElementById('convert-btn');
+const outputEl = document.getElementById('output');
+
+const randomNegativeNumber = Math.floor(Math.random() * -4000) - 2; 
+
+numberInputEl.value = randomNegativeNumber;
+numberInputEl.dispatchEvent(new Event('change'));
+convertBtnEl.click();
+assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a number greater than or equal to 1');
+```
+
+When the `#number` element contains a number greater than 4000 and the `#convert-btn` element is clicked, the `#output` element should contain the text `"Please enter a number less than or equal to 3999"`.
+
+```js
+const numberInputEl = document.getElementById('number');
+const convertBtnEl = document.getElementById('convert-btn');
+const outputEl = document.getElementById('output');
+
+const randomBigNumber = Math.floor(Math.random() * (1000000)) + 4000; 
+
+numberInputEl.value =  randomBigNumber;
+numberInputEl.dispatchEvent(new Event('change'));
+convertBtnEl.click();
+assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a number less than or equal to 3999');
 ```
 
 # --seed--

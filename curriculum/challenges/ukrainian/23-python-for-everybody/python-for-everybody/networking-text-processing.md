@@ -14,7 +14,7 @@ dashedName: networking-text-processing
 
 ## --text--
 
-Which type of encoding do most websites use?
+Який тип кодування символів використовує більшість сайтів?
 
 ## --answers--
 

@@ -378,6 +378,7 @@ async () => {
 
     const randomInvalidPokeId = badName; 
     searchInput.value = randomInvalidPokeId;
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' + randomInvalidPokeId.toString()); // Fetch from proxy to simulate network delay
@@ -406,6 +407,7 @@ async () => {
 
     const randomValidPokeId = Math.floor(Math.random() * 1025) + 1; 
     searchInput.value = randomValidPokeId;
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' +  randomValidPokeId.toString()); // Fetch from proxy to simulate network delay

@@ -1,15 +1,10 @@
 import { isEmail, isNumeric } from 'validator';
-import {
-  durationKeysConfig,
-  donationOneTimeConfig,
-  donationSubscriptionConfig
-} from '../../../../shared/config/donation-settings';
+import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
 
 export function validStripeForm(amount, duration, email) {
-  return isEmail('' + email) &&
+  return (
+    isEmail('' + email) &&
     isNumeric('' + amount) &&
-    durationKeysConfig.includes(duration) &&
-    duration === 'one-time'
-    ? donationOneTimeConfig.includes(amount)
-    : donationSubscriptionConfig.plans[duration];
+    donationSubscriptionConfig.plans[duration].includes(amount)
+  );
 }
