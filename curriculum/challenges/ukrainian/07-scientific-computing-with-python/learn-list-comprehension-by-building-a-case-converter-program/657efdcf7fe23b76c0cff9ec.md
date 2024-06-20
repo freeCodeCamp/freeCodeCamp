@@ -7,13 +7,13 @@ dashedName: step-7
 
 # --description--
 
-You need to handle the characters that are already in lowercase by adding them to the list of converted characters.
+Вам потрібно обробити символи, які вже в нижньому регістрі, додавши їх до списку перетворених символів.
 
-Right after the `if` statement within the `for` loop, add an `else` clause and use the `.append()` method to add `char` to the `snake_cased_char_list` variable.
+Додайте умову `else` одразу після інструкції `if` в межах циклу `for` та використайте метод `.append()`, щоб додати `char` до змінної `snake_cased_char_list`.
 
 # --hints--
 
-You should add an `else` clause inside the `for` loop. Don't forget the colon at the end.
+Додайте умову `else` в межах циклу `for`. Не забудьте двокрапку вкінці.
 
 ```js
 ({
@@ -27,7 +27,7 @@ You should add an `else` clause inside the `for` loop. Don't forget the colon at
 })
 ```
 
-You should use the `.append()` method to add `char` to the `snake_cased_char_list` variable.
+Використайте метод `.append()`, щоб додати `char` до змінної `snake_cased_char_list`.
 
 ```js
 ({

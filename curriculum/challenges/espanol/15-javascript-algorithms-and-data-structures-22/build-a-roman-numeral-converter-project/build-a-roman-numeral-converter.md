@@ -180,6 +180,7 @@ const outputEl = document.getElementById('output');
 const randomNegativeNumber = Math.floor(Math.random() * -4000) - 2; 
 
 numberInputEl.value = randomNegativeNumber;
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a number greater than or equal to 1');
 ```
@@ -194,6 +195,7 @@ const outputEl = document.getElementById('output');
 const randomBigNumber = Math.floor(Math.random() * (1000000)) + 4000; 
 
 numberInputEl.value =  randomBigNumber;
+numberInputEl.dispatchEvent(new Event('change'));
 convertBtnEl.click();
 assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please enter a number less than or equal to 3999');
 ```
