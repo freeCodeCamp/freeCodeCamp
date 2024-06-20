@@ -89,7 +89,7 @@ describe('external curriculum data build', () => {
     const isUpcoming = [
       'b1-english-for-developers',
       'upcoming-python',
-      'example-certification'
+      'front-end-development',
     ];
 
     // TODO: this is a hack, we should have a single source of truth for the

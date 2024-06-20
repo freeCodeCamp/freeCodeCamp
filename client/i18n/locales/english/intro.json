@@ -1673,13 +1673,17 @@
       }
     }
   },
-  "example-certification": {
-    "title": "Example Certification",
+  "front-end-development": {
+    "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Learn Basic HTML by Building a Recipe Page",
+        "intro": ["", ""]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Front End Development Certification Exam",
+        "intro": ["", ""]
       }
     }
   },
