@@ -11,9 +11,13 @@ export const updateMyEmail = {
       ),
       type: Type.Literal('info')
     }),
-    '4xx': Type.Object({
+    400: Type.Object({
       message: Type.String(),
       type: Type.Union([Type.Literal('danger'), Type.Literal('info')])
+    }),
+    429: Type.Object({
+      message: Type.String(),
+      type: Type.Literal('info')
     }),
     500: Type.Object({
       message: Type.Literal('flash.wrong-updating'),
