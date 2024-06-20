@@ -4,9 +4,6 @@
   "dashedName": "basic-css",
   "helpCategory": "HTML-CSS",
   "order": 1,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "responsive-web-design",
   "challengeOrder": [
     {

@@ -40,12 +40,3 @@ A versão do `helmet` `3.21.3` deve estar no `package.json`
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

@@ -69,6 +69,18 @@
   transition: width 0ms linear;
 }
 
+/* The maximum width of login button is 500px, which is set in global.css.
+   An override is needed as 500px is not enough to allow the button to span the modal width. */
+.completion-modal-login-btn .signup-btn {
+  max-width: 100%;
+}
+
+.completion-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media screen and (max-width: 991px) {
   .progress-bar-wrap,
   .progress-bar-background {

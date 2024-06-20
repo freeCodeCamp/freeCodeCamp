@@ -1,11 +1,8 @@
 {
   "name": "Learn How to Provide Explanations When Helping Others",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-provide-explanations-when-helping-others",
   "order": 26,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "a2-english-for-developers",
   "challengeOrder": [
     {

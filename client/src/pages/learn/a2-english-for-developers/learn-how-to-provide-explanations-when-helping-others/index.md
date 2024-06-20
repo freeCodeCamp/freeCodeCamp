@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Provide Explanations When Helping Others
 
-This is a test for the new project-based curriculum.
+This course will provide you with ways to explain things to other people while assisting them.

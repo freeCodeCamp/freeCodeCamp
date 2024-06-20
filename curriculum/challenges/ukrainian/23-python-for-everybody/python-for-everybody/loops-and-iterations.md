@@ -14,7 +14,7 @@ dashedName: loops-and-iterations
 
 ## --text--
 
-What will the following code print out?:
+Що надрукує наведений код?
 
 ```python
 n = 0

@@ -1,6 +1,4 @@
 name: CI - Node.js - i18n
-env:
-  NODE_OPTIONS: '--max_old_space_size=6144'
 
 on:
   # Run on push events, but only for the below branches

@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Discuss Tech Trends and Updates
 
-This is a test for the new project-based curriculum.
+In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English.

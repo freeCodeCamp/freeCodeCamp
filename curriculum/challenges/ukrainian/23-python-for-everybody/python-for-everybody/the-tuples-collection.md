@@ -14,7 +14,7 @@ dashedName: the-tuples-collection
 
 ## --text--
 
-What will the following code print?:
+Що надрукує наведений код?
 
 ```python
 d = dict()

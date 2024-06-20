@@ -8,9 +8,7 @@ dashedName: problem-194-coloured-configurations
 
 # --description--
 
-Betrachte die Grafik, die mit den Einheiten A gebildet wurde:
-<img class="img-responsive" alt="Grafik Einheit A" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-1.png" style="display: inline-block; background-color: white; padding: 10px;" />
- und B: <img class="img-responsive" alt="graph unit B" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-2.png" style="display: inline-block; background-color: white; padding: 10px;" />, wo die Einheiten wie im Graphen <img class="img-responsive" alt="graph with four units glued along the vertical edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-3.png" style="display: inline-block; background-color: white; padding: 10px;" /> an den vertikalen Kanten befestigt sind.
+Consider graphs built with the units A: <img class="img-responsive" alt="graph unit A" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-1.png" style="display: inline-block; background-color: white; padding: 10px;" /> and B: <img class="img-responsive" alt="graph unit B" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-2.png" style="display: inline-block; background-color: white; padding: 10px;" />, where the units are glued along the vertical edges as in the graph <img class="img-responsive" alt="graph with four units glued along the vertical edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-3.png" style="display: inline-block; background-color: white; padding: 10px;" />.
 
 Eine Konfiguration des Typs $(a,b,c)$ ist eine Grafik, die aus $a$ Einheiten A und $b$ Einheiten B gebildet wurde, und wo die Scheitelpunkte der Grafik mit bis zu $c$ Farben gefärbt werden, so dass keine zwei benachbarten Scheitelpunkte die gleiche Farbe haben. Die zusammengesetzte Grafik oben ist ein Beispiel einer Konfiguration des Typs $(2,2,6)$, eigentlich des Typs $(2,2,c)$ für alle $c ≥ 4$
 

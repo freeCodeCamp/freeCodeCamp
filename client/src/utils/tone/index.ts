@@ -54,7 +54,7 @@ const toneUrls = {
   // [FlashMessages.None]: '',
   [FlashMessages.NotEligible]: TRY_AGAIN,
   [FlashMessages.NotHonest]: TRY_AGAIN,
-  [FlashMessages.NotRight]: TRY_AGAIN,
+  [FlashMessages.GenericError]: TRY_AGAIN,
   [FlashMessages.ProfilePrivate]: TRY_AGAIN,
   [FlashMessages.ProgressReset]: TRY_AGAIN,
   [FlashMessages.ProvideUsername]: TRY_AGAIN,

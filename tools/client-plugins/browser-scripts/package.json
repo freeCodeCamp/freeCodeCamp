@@ -20,7 +20,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.js"
+    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.js"
   },
   "keywords": [],
   "devDependencies": {

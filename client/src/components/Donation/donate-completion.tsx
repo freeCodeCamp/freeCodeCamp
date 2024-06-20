@@ -48,14 +48,14 @@ function DonateCompletion({
           />
         )}
         {success && (
-          <div>
+          <>
             <p>{t('donate.free-tech')}</p>
             {isSignedIn && (
               <>
                 <p>{t('donate.visit-supporters')}</p>
 
                 <Link
-                  className='btn'
+                  className='btn complete-button'
                   key='supporters'
                   sameTab={false}
                   to='/supporters'
@@ -64,7 +64,7 @@ function DonateCompletion({
                 </Link>
               </>
             )}
-          </div>
+          </>
         )}
         {error && <p>{error}</p>}
       </div>
