@@ -44,39 +44,35 @@ const completeThreeChallenges = async ({
   browserName: string;
   isMobile: boolean;
 }) => {
-  // First challenge
   await page.goto(
     '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
   );
 
-  await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
-  await getEditors(page).fill(`// some comment\n/* some comment */`);
-  await page.getByRole('button', { name: 'Run' }).click();
-  await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
-  await page.getByRole('button', { name: 'Submit' }).click();
+  const challenges = [
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
+      solution: `// some comment\n/* some comment */`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables',
+      solution: 'var myName;'
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator',
+      solution: `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
+    }
+  ];
 
-  // Second challenge
-  await page.waitForURL(
-    '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
-  );
-  await clearEditor({ page, browserName });
-  await getEditors(page).fill('var myName;');
-  await page.getByRole('button', { name: 'Run' }).click();
-  await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
-  await page.getByRole('button', { name: 'Submit' }).click();
+  for (const challenge of challenges) {
+    await page.waitForURL(challenge.url);
 
-  // Third challenge
-  await page.waitForURL(
-    '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator'
-  );
-  await clearEditor({ page, browserName });
-  await getEditors(page).fill(
-    `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
-  );
-  await page.getByRole('button', { name: 'Run' }).click();
-  await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
-  await page.getByRole('button', { name: 'Submit' }).click();
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
+    await getEditors(page).fill(challenge.solution);
+    await page.getByRole('button', { name: 'Run' }).click();
+    await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
+    await page.getByRole('button', { name: 'Submit' }).click();
+  }
 };
 
 test.describe('Donation modal - New user', () => {
@@ -90,7 +86,7 @@ test.describe('Donation modal - New user', () => {
     execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 
-  test('should not appear when the user has completed 3 challenges and has less than 10 completed challenges in total', async ({
+  test('should not appear if the user has completed 3 challenges and has less than 10 completed challenges in total', async ({
     page,
     browserName,
     isMobile
@@ -106,10 +102,10 @@ test.describe('Donation modal - New user', () => {
     await expect(donationModal).toBeHidden();
   });
 
-  test('should appear when the user has completed a new block', async ({
+  test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
     page
   }) => {
-    test.setTimeout(40000);
+    test.setTimeout(50000);
 
     await completeFrontEndCert(page);
 
@@ -130,13 +126,18 @@ test.describe('Donation modal - New user', () => {
         'Nicely done. You just completed Front End Development Libraries Projects.'
       )
     ).toBeVisible();
+    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
+    await expect(donationModal).toBeHidden();
+
+    await completeFrontEndCert(page);
+    await expect(donationModal).toBeHidden();
   });
 });
 
 test.describe('Donation modal - Certified user', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test('should appear when the user has completed 3 challenges and has more than 10 completed challenges in total', async ({
+  test('should appear if the user has completed 3 challenges and has more than 10 completed challenges in total', async ({
     page,
     browserName,
     isMobile
@@ -156,20 +157,6 @@ test.describe('Donation modal - Certified user', () => {
         'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
       )
     ).toBeVisible();
-  });
-
-  test('should not appear when the user has completed an already claimed block', async ({
-    page
-  }) => {
-    test.setTimeout(40000);
-
-    // Certified user already has this cert claimed, we are just re-submitting the projects.
-    await completeFrontEndCert(page);
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeHidden();
   });
 
   test('should display the content correctly and disable close when the animation is not complete', async ({
