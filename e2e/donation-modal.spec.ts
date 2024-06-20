@@ -233,3 +233,26 @@ test.describe('Donation modal - Certified user', () => {
     ).toBeVisible();
   });
 });
+
+test.describe('Donation modal - Donor user', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+  test.beforeAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user --donor');
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  });
+
+  test('should not appear', async ({ page, browserName, isMobile }) => {
+    test.setTimeout(30000);
+
+    await completeThreeChallenges({ page, browserName, isMobile });
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeHidden();
+  });
+});
