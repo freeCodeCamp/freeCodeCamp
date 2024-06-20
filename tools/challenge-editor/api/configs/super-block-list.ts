@@ -94,5 +94,5 @@ export const superBlockList = [
   {
     name: 'Front End Development',
     path: '25-front-end-development'
-  },
+  }
 ];

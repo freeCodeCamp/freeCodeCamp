@@ -28,7 +28,7 @@ const mockSuperBlocks = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStruct,
   SuperBlocks.TheOdinProject,
-  SuperBlocks.ExampleCertification
+  SuperBlocks.FrontEndDevelopment
 ];
 
 const fullSuperOrder = {
@@ -50,7 +50,7 @@ const fullSuperOrder = {
   [SuperBlocks.RespWebDesign]: 15,
   [SuperBlocks.JsAlgoDataStruct]: 16,
   [SuperBlocks.TheOdinProject]: 17,
-  [SuperBlocks.ExampleCertification]: 18
+  [SuperBlocks.FrontEndDevelopment]: 18
 };
 
 describe('createSuperOrder', () => {
@@ -125,12 +125,12 @@ describe('getSuperOrder', () => {
       process.env.SHOW_UPCOMING_CHANGES === 'true'
     ) {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
+      expect(getSuperOrder(SuperBlocks.FrontEndDevelopment)).toBe(18);
     } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
       return;
     } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
+      expect(getSuperOrder(SuperBlocks.FrontEndDevelopment)).toBe(18);
     }
   });
 });
@@ -141,7 +141,7 @@ describe('getSuperBlockFromPath', () => {
   );
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(25);
+    expect.assertions(26);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -149,7 +149,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(25);
+    expect.assertions(26);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 

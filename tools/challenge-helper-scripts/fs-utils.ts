@@ -27,7 +27,7 @@ export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
     [SuperBlocks.RosettaCode]: '22-rosetta-code',
     [SuperBlocks.PythonForEverybody]: '23-python-for-everybody',
     [SuperBlocks.B1English]: '24-b1-english-for-developers',
-    [SuperBlocks.FrontEndDevelopment]: '25-front-end-development',
+    [SuperBlocks.FrontEndDevelopment]: '25-front-end-development'
   };
   return pathMap[superBlock];
 }

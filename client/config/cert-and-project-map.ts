@@ -806,7 +806,7 @@ const allStandardCerts = [
       {
         id: '645147516c245de4d11eb7ba',
         title: 'Front End Development Certification Exam',
-        link: `${frontEndDevelopmentBase}/front-end-development-certification-exam`,
+        link: `${frontEndDevelopmentBase}/front-end-development-certification-exam/front-end-development-certification-exam`,
         certSlug: Certification.FrontEndDevelopment
       }
     ]

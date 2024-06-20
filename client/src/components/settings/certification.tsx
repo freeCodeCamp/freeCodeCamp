@@ -131,7 +131,7 @@ const isCertMapSelector = createSelector(
     'Legacy Back End': isBackEndCert,
     'Legacy Information Security and Quality Assurance': isInfosecQaCert,
     // Certification.
-    'Front End Development Certification': false,
+    'Front End Development': false,
     'Upcoming Python Certification': false,
     'A2 English for Developers': false,
     'B1 English for Developers': false,

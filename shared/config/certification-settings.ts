@@ -101,7 +101,6 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  frontEndDevelopmentV9: 'isFrontEndDevelopmnetCertV9',
   upcomingPythonV8: 'isUpcomingPythonCertV8',
   jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
 } as const;
@@ -125,7 +124,6 @@ export const certIds = {
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
   foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
-  frontEndDevelopmentV9Id: '64514fda6c245de4d11eb7bb',
   upcomingPythonV8Id: '64afc4e8f3b37856e035b85f',
   jsAlgoDataStructV8Id: '658180220947283cdc0689ce'
 };
@@ -149,7 +147,6 @@ export const completionHours = {
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
   [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.frontEndDevelopmentV9]: 300,
   [certTypes.upcomingPythonV8]: 300,
   [certTypes.jsAlgoDataStructV8]: 300
 };
@@ -179,8 +176,7 @@ export const certSlugTypeMap = {
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
-  [Certification.UpcomingPython]: certTypes.upcomingPythonV8,
-  [Certification.FrontEndDevelopment]: certTypes.frontEndDevelopmentV9
+  [Certification.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
 export const superBlockCertTypeMap = {
@@ -212,7 +208,6 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
 
   // upcoming
-  [SuperBlocks.FrontEndDevelopment]: certTypes.frontEndDevelopmentV9,
   [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
@@ -235,7 +230,6 @@ export const certTypeIdMap = {
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.frontEndDevelopmentV9]: certIds.frontEndDevelopmentV9Id,
   [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id,
   [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id
 };
@@ -260,7 +254,6 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.frontEndDevelopmentV9]: 'Front End Development',
   [certTypes.upcomingPythonV8]: 'Upcoming Python',
   [certTypes.jsAlgoDataStructV8]:
     'JavaScript Algorithms and Data Structures (Beta)'
