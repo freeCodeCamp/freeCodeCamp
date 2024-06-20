@@ -1,5 +1,4 @@
 import { APIRequestContext, expect, test } from '@playwright/test';
-
 import { clearEditor, focusEditor } from './utils/editor';
 import { authedRequest } from './utils/request';
 
@@ -22,12 +21,11 @@ const testPage =
 test.describe('Editor Component', () => {
   test('should allow the user to insert text', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     await page.goto(testPage);
 
-    await focusEditor({ page, isMobile, browserName });
+    await focusEditor({ page, isMobile });
     await page.keyboard.insertText('<h2>FreeCodeCamp</h2>');
     const text = page.getByText('<h2>FreeCodeCamp</h2>');
     await expect(text).toBeVisible();
@@ -37,15 +35,14 @@ test.describe('Editor Component', () => {
 test.describe('Python Terminal', () => {
   test('should display error message when the user enters invalid code', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     await page.goto(
       'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
     );
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
     // Then enter invalid code
     await page.keyboard.insertText('def');
     const preview = page.getByTestId('preview-pane');
