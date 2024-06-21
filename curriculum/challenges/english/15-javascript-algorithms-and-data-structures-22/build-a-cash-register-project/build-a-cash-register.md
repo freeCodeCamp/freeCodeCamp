@@ -305,20 +305,20 @@ let changeLeft = randomChange;
 const _expectedChangeDue = [];
 const _cashInDrawer = [];
 for (const [denominationName, denomination] of _money) {
-  const count = _randomNumber(15);
-  _cashInDrawer.push([denominationName, (denomination * count) / 100]);
-  if (denomination <= changeLeft && count > 0) {
+  const drawerCount = _randomNumber(15);
+  _cashInDrawer.push([denominationName, (denomination * drawerCount) / 100]);
+  if (denomination <= changeLeft && drawerCount > 0) {
     const maxCountInChange = Math.floor(changeLeft / denomination);
-    const actualChange = Math.min(count, maxCountInChange);
-    const amountInChange = actualChange * denomination;
+    const actualCount = Math.min(drawerCount, maxCountInChange);
+    const amountInChange = actualCount * denomination;
     _expectedChangeDue.push([denominationName, amountInChange / 100]);
     changeLeft -= amountInChange;
   }
 }
 
 // At least changeLeft is needed in pennies, to make returning change due possible.
-const count = _randomNumber(100) + changeLeft;
-_cashInDrawer.push(['PENNY', count / 100]);
+const drawerCount = _randomNumber(100) + changeLeft;
+_cashInDrawer.push(['PENNY', drawerCount / 100]);
 if (changeLeft > 0) {
   _expectedChangeDue.push(['PENNY', changeLeft / 100]);
 }
@@ -465,11 +465,11 @@ for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
   // Amount lower than maximum (adjusted to changeLeft) will ensure total in drawer
   // will be lower than needed change.
-  const count = _randomNumber(Math.max(0, Math.min(15, maxCountInChange - 1)));
-  const amountInChange = count * denomination;
-  _cashInDrawer.push([denominationName, amountInChange / 100]);
-  if (denomination <= changeLeft && count > 0) {
-    changeLeft -= amountInChange;
+  const drawerCount = _randomNumber(Math.max(0, Math.min(15, maxCountInChange - 1)));
+  const amountInDrawer = drawerCount * denomination;
+  _cashInDrawer.push([denominationName, amountInDrawer / 100]);
+  if (denomination <= changeLeft && drawerCount > 0) {
+    changeLeft -= amountInDrawer;
   }
 }
 
@@ -545,12 +545,12 @@ const _expectedChangeDue = [];
 const _cashInDrawer = [];
 for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
-  const count = _randomNumber(maxCountInChange);
-  const amountInChange = count * denomination;
-  _cashInDrawer.push([denominationName, amountInChange / 100]);
-  if (denomination <= changeLeft && count > 0) {
-    _expectedChangeDue.push([denominationName, amountInChange / 100]);
-    changeLeft -= amountInChange;
+  const drawerCount = _randomNumber(maxCountInChange);
+  const amountInDrawer = drawerCount * denomination;
+  _cashInDrawer.push([denominationName, amountInDrawer / 100]);
+  if (denomination <= changeLeft && drawerCount > 0) {
+    _expectedChangeDue.push([denominationName, amountInDrawer / 100]);
+    changeLeft -= amountInDrawer;
   }
 }
 
