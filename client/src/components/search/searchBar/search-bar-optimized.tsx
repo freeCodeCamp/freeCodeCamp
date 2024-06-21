@@ -22,7 +22,7 @@ const SearchBarOptimized = ({
     if (value && value.length > 1) {
       window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
       setValue('');
-      // Blur the input to remove the selection
+
       inputElementRef.current?.blur();
     }
   };
@@ -40,7 +40,7 @@ const SearchBarOptimized = ({
             action=''
             className='ais-SearchBox-form'
             onSubmit={onSubmit}
-            role='search' // Changed from role='textbox' to role='search'
+            role='search'
           >
             <label className='sr-only' htmlFor='ais-SearchBox-input'>
               {t('search.label')}
@@ -58,7 +58,7 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
-              aria-label={t('search.ariaLabel')}
+              aria-label='Search 10,700+ tutorials' // Add aria-label here
             />
             <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
