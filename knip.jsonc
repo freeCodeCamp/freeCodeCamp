@@ -7,16 +7,7 @@
   "workspaces": {
     ".": {
       // No custom entry/project files in root workspace to not interfere with workspaces that are not set up yet
-      "entry": [],
-      "cypress": {
-        // Override all Cypress entry patterns as (only) spec paths don't match the default
-        "entry": [
-          "cypress.config.js",
-          "cypress/e2e/**/*.{js,ts}",
-          "cypress/support/*.ts",
-          "cypress/plugins/index.js"
-        ]
-      }
+      "entry": []
     },
     "client": {
       "webpack": "webpack-workers.js",

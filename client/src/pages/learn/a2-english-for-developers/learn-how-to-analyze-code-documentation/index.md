@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Analyze Code Documentation
 
-This is a test for the new project-based curriculum.
+In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms.

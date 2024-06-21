@@ -12,7 +12,7 @@ export const reallyWeirdErrorMessage = {
 
 export const reportedErrorMessage = {
   type: 'danger',
-  message: FlashMessages.NotRight
+  message: FlashMessages.GenericError
 };
 
 export const certificateMissingErrorMessage = {
