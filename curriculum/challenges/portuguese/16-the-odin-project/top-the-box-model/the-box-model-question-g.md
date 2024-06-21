@@ -6,7 +6,7 @@ dashedName: the-box-model-question-g
 --- 
 # --description--
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/box-model-lines.png" alt="an image showing the odin project website surrounded by red borders indicating that the site is build out of multiple components" style="width: 95%; height: 95%;" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/box-model-lines.png" alt="Uma imagem mostrando o site do The Odin Project rodeado por bordas vermelhas, indicando que o site é feito a partir de vários componentes" style="width: 95%; height: 95%;" />
 
 Certo... pode haver alguns círculos na imagem acima… mas, quando se trata de layout, eles se encaixam como caixas retangulares e não como círculos. No final, criar uma página da web e posicionar todos os elementos é decidir como você vai aninhar e empilhar essas caixas.
 
@@ -18,7 +18,7 @@ A única complicação real aqui é que há muitas maneiras de manipular o taman
 
 Lembre-se de estudar os diagramas cuidadosamente.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="Visual representation of CSS box model with text, surrounded by 'padding' in pink, a purple 'border', and 'margin' indicated by blue arrows, explaining space between text, box edge, and window edge." />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="Representação visual do modelo da caixas do CSS com texto, rodeado por 'preenchimento' em rosa, uma 'borda' roxa e &quot;margem&quot; indicada por setas azuis, explicando o espaço entre texto, arestas da caixa e borda da janela." />
 
 # --assignment--
 

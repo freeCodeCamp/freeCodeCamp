@@ -411,10 +411,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     {title}
                   </div>
                   <span>|</span>
-                  <div
-                    data-cy='exam-time'
-                    data-playwright-test-label='exam-show-question-time'
-                  >
+                  <div data-playwright-test-label='exam-show-question-time'>
                     {t('learn.exam.time', {
                       t: formatSecondsToTime(examTimeInSeconds)
                     })}
@@ -479,7 +476,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     className='exam-button'
                     disabled={currentQuestionIndex <= 0}
                     variant='primary'
-                    data-cy='previous-exam-question-btn'
                     onClick={this.goToPreviousQuestion}
                   >
                     {t('buttons.previous-question')}
@@ -494,7 +490,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       variant='primary'
-                      data-cy='finish-exam-btn'
                       onClick={openFinishExamModal}
                     >
                       {t('buttons.finish-exam')}
@@ -507,7 +502,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                       }
                       className='exam-button'
                       variant='primary'
-                      data-cy='next-exam-question-btn'
                       onClick={this.goToNextQuestion}
                     >
                       {t('buttons.next-question')}
@@ -522,7 +516,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     block={true}
                     className='exam-button'
                     variant='primary'
-                    data-cy='exit-exam-btn'
                     onClick={openExitExamModal}
                   >
                     {t('buttons.exit-exam')}
@@ -555,7 +548,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Spacer size='medium' />
 
                 {qualifiedForExam ? (
-                  <Alert data-cy='qualified-for-exam-alert' variant='info'>
+                  <Alert variant='info'>
                     <p>{t('learn.exam.qualified')}</p>
                   </Alert>
                 ) : (
@@ -576,7 +569,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 <Button
                   block={true}
                   variant='primary'
-                  data-cy='start-exam-btn'
                   disabled={!qualifiedForExam}
                   // `this.runExam` being an async callback is acceptable
                   //eslint-disable-next-line @typescript-eslint/no-misused-promises

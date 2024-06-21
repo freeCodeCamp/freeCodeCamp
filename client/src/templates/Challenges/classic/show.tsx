@@ -162,11 +162,7 @@ const StepPreview = ({
     challengeType === challengeTypes.multifilePythonCertProject ? (
     <XtermTerminal xtermFitRef={xtermFitRef} />
   ) : (
-    <Preview
-      className='full-height'
-      disableIframe={disableIframe}
-      previewMounted={previewMounted}
-    />
+    <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
   );
 };
 

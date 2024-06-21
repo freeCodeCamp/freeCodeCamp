@@ -70,7 +70,6 @@
           "./api/tsconfig.json",
           "./shared/tsconfig.json",
           "./tools/client-plugins/browser-scripts/tsconfig.json",
-          "./cypress/tsconfig.json",
           "./e2e/tsconfig.json"
         ]
       },
@@ -93,13 +92,6 @@
         "plugin:jest-dom/recommended"
       ],
       "rules": { "import/named": 2 }
-    },
-    {
-      "files": ["cypress/**/*.js"],
-      "globals": {
-        "cy": true,
-        "Cypress": true
-      }
     },
     {
       "files": ["e2e/*.ts"],

@@ -42,6 +42,7 @@
 
 .toggle-button-group button > span {
   position: relative;
+  display: flex;
 }
 
 .toggle-button-group button > span > svg {

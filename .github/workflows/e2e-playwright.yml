@@ -89,7 +89,8 @@ jobs:
       mailhog:
         image: mailhog/mailhog
         ports:
-          - 1025:1025
+          - 1025:1025 # SMTP server (listens for emails)
+          - 8025:8025 # HTTP server (so we can make requests to the api)
 
     steps:
       - name: Set Action Environment Variables
@@ -142,7 +143,7 @@ jobs:
         run: |
           pnpm run start-ci &
           sleep 10
-          npx playwright test --project=${{ matrix.browsers }}
+          npx playwright test --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

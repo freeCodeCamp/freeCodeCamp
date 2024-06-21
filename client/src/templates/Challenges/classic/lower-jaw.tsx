@@ -100,7 +100,6 @@ const LowerButtonsPanel = ({
         <Button
           data-playwright-test-label='lowerJaw-reset-button'
           className='fade-in'
-          data-cy='reset-code-button'
           onClick={resetButtonEvent}
         >
           <Reset />
@@ -112,7 +111,6 @@ const LowerButtonsPanel = ({
           <Button
             className='fade-in'
             id='get-help-button'
-            data-cy='get-help-button'
             onClick={helpButtonEvent}
           >
             <Help />
@@ -133,7 +131,6 @@ const LowerJawTips = ({
     <>
       <div
         data-playwright-test-label='lowerJaw-failing-test-feedback'
-        data-cy='failing-test-feedback'
         className='test-status fade-in'
         aria-hidden={showFeedback}
       >
@@ -302,7 +299,6 @@ const LowerJaw = ({
       {showSignInButton && (
         <>
           <a
-            data-cy='sign-in-button'
             href={`${apiLocation}/signin`}
             className='btn-cta btn btn-block'
             onClick={() => {

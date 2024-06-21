@@ -2,7 +2,6 @@
 id: 5f32db63eb37f7e17323f459
 title: Build a Castle
 challengeType: 12
-helpCategory: Backend Development
 url: freeCodeCamp/learn-nano-by-building-a-castle
 dashedName: build-a-castle
 ---

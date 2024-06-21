@@ -74,7 +74,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             edges {
               node {
                 challenge {
-                  audioPath
                   block
                   certification
                   challengeType
@@ -321,7 +320,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
-      audioPath: String
       challengeFiles: [FileContents]
       notes: String
       url: String

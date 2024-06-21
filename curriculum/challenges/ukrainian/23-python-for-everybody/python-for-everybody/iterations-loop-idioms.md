@@ -14,7 +14,7 @@ dashedName: iterations-loop-idioms
 
 ## --text--
 
-Below is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?:
+Нижче наведено код, який знаходить найменше значення у списку значень. Один з рядків містить помилку, яка не дозволяє коду працювати правильно. Який це рядок?
 
 ```python
 smallest = None
