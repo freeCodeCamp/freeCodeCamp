@@ -59,10 +59,8 @@ describe('settingRoutes', () => {
       });
 
       expect(response.body).toEqual({
-        code: 'FST_CSRF_MISSING_SECRET',
-        error: 'Forbidden',
-        message: 'Missing csrf secret',
-        statusCode: 403
+        message: 'flash.generic-error',
+        type: 'danger'
       });
       expect(response.statusCode).toEqual(403);
     });
@@ -73,10 +71,8 @@ describe('settingRoutes', () => {
       }).set('Cookie', ['_csrf=foo', 'csrf-token=bar']);
 
       expect(response.body).toEqual({
-        code: 'FST_CSRF_INVALID_TOKEN',
-        error: 'Forbidden',
-        message: 'Invalid csrf token',
-        statusCode: 403
+        message: 'flash.generic-error',
+        type: 'danger'
       });
       expect(response.statusCode).toEqual(403);
     });
