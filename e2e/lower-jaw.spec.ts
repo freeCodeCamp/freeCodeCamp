@@ -54,7 +54,10 @@ test('Resets the lower jaw when prompted', async ({ page }) => {
   await expect(checkButton).toBeVisible();
 });
 
-test('Checks hotkeys when instruction is focused', async ({ page }) => {
+test('Checks hotkeys when instruction is focused', async ({
+  page,
+  browserName
+}) => {
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
   const description = page.locator('#description');
@@ -65,11 +68,18 @@ test('Checks hotkeys when instruction is focused', async ({ page }) => {
 
   await description.click();
 
+  if (browserName === 'webkit') {
+    await page.keyboard.press('Meta+Enter');
+  } else {
+    await page.keyboard.press('Control+Enter');
+  }
+
   await expect(checkButton).not.toBeFocused();
 });
 
 test('Focuses on the submit button after tests passed', async ({
   page,
+  browserName,
   isMobile
 }) => {
   const editor = getEditors(page);
@@ -78,7 +88,7 @@ test('Focuses on the submit button after tests passed', async ({
     name: 'Submit and go to next challenge'
   });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page });
+  await clearEditor({ page, browserName });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
@@ -90,6 +100,7 @@ test('Focuses on the submit button after tests passed', async ({
 
 test('Prompts unauthenticated user to sign in to save progress', async ({
   page,
+  browserName,
   isMobile
 }) => {
   await signout(page);
@@ -100,7 +111,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
     name: 'Sign in to save your progress'
   });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page });
+  await clearEditor({ page, browserName });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
@@ -128,11 +139,16 @@ test('Should render UI correctly', async ({ page }) => {
 
 test('Should display the text of the check code button accordingly based on device type and screen size', async ({
   page,
-  isMobile
+  isMobile,
+  browserName
 }) => {
   if (isMobile) {
     await expect(
       page.getByRole('button', { name: 'Check Your Code', exact: true })
+    ).toBeVisible();
+  } else if (browserName === 'webkit') {
+    await expect(
+      page.getByRole('button', { name: 'Check Your Code (Command + Enter)' })
     ).toBeVisible();
   } else {
     await expect(

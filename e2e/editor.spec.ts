@@ -40,7 +40,7 @@ test.describe('Python Terminal', () => {
     );
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page });
+    await clearEditor({ page, browserName });
     // Then enter invalid code
     await page.keyboard.insertText('def');
     const preview = page.getByTestId('preview-pane');
