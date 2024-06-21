@@ -105,6 +105,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 // set price and customer cash
 price = 20;
 cashInput.value = '10';
+cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -120,6 +121,7 @@ const changeDueDiv = document.getElementById('change-due');
 // set price and customer cash
 price = 11.95;
 cashInput.value = '11.95';
+cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
