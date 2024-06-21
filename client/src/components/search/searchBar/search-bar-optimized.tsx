@@ -58,7 +58,7 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
-              aria-label='Search 10,700+ tutorials' // Add aria-label here
+              aria-label={t('search.ariaLabel')}
             />
             <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
