@@ -28,15 +28,20 @@ export const projectCompleted = {
         )
       ])
     }),
-    403: Type.Object({
-      type: Type.Literal('error'),
-      message: Type.Union([
-        Type.Literal(
-          'You have to complete the project before you can submit a URL.'
-        ),
-        Type.Literal('That does not appear to be a valid challenge submission.')
-      ])
-    }),
+    403: Type.Union([
+      Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Union([
+          Type.Literal(
+            'You have to complete the project before you can submit a URL.'
+          ),
+          Type.Literal(
+            'That does not appear to be a valid challenge submission.'
+          )
+        ])
+      }),
+      genericError
+    ]),
     default: genericError
   }
 };
