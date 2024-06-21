@@ -13,8 +13,10 @@ const SearchBarOptimized = ({
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
   const inputElementRef = useRef<HTMLInputElement>(null);
+
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);
+
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (value && value.length > 1) {
@@ -24,6 +26,7 @@ const SearchBarOptimized = ({
       inputElementRef.current?.blur();
     }
   };
+
   const onClick = () => {
     setValue('');
     inputElementRef.current?.focus();
@@ -55,6 +58,7 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
+              aria-label='Search 10,700+ tutorials' // Add aria-label here
             />
             <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
