@@ -232,6 +232,9 @@ test.describe('Donation modal display', () => {
     await expect(
       donationModal.getByRole('button', { name: 'Become a Supporter' })
     ).toBeVisible();
+    await expect(
+      donationModal.getByRole('button', { name: 'Become a Supporter' })
+    ).toBeFocused();
 
     await expect(
       donationModal.getByRole('button', { name: 'Ask me later' })

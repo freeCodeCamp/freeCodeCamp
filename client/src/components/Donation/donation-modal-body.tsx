@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Modal } from '@freecodecamp/ui';
 import { closeDonationModal } from '../../redux/actions';
@@ -96,8 +96,12 @@ function CloseButtonRow({
   );
 }
 
-const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
+const Benefits = forwardRef<
+  HTMLButtonElement,
+  { setShowForm: (arg: boolean) => void }
+>(({ setShowForm }, ref) => {
   const { t } = useTranslation();
+
   const handleBecomeSupporterClick = () => {
     callGA({
       event: 'donation_related',
@@ -114,6 +118,7 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
           onClick={handleBecomeSupporterClick}
+          ref={ref}
         >
           {t('donate.become-supporter')}
         </button>
@@ -121,7 +126,7 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
       </Col>
     </Row>
   );
-};
+});
 
 const AnimationContainer = ({
   secondsRemaining
@@ -184,6 +189,12 @@ const BecomeASupporterConfirmation = ({
   handleProcessing: () => void;
   setShowForm: (arg: boolean) => void;
 }) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    buttonRef.current?.focus();
+  }, []);
+
   return (
     <div className='no-delay-fade-in'>
       <div className='donation-icon-container'>
@@ -204,7 +215,7 @@ const BecomeASupporterConfirmation = ({
           isMinimalForm={true}
         />
       ) : (
-        <Benefits setShowForm={setShowForm} />
+        <Benefits setShowForm={setShowForm} ref={buttonRef} />
       )}
       {(showHeaderAndFooter || donationAttempted) && (
         <CloseButtonRow
@@ -271,5 +282,6 @@ function DonationModalBody({
 }
 
 DonationModalBody.displayName = 'DonationModalBody';
+Benefits.displayName = 'DonationModalBenefits';
 
 export default DonationModalBody;
