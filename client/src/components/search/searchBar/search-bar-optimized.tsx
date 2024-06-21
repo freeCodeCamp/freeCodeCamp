@@ -40,7 +40,7 @@ const SearchBarOptimized = ({
             action=''
             className='ais-SearchBox-form'
             onSubmit={onSubmit}
-            role='search'
+            role='search' // Changed from role='textbox' to role='search'
           >
             <label className='sr-only' htmlFor='ais-SearchBox-input'>
               {t('search.label')}
