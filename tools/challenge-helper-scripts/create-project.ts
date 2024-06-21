@@ -200,7 +200,7 @@ void prompt([
     message: 'What is the dashed name (in kebab-case) for this project?',
     validate: validateBlockName,
     filter: (block: string) => {
-      return block.toLowerCase();
+      return block.toLowerCase().trim();
     }
   },
   {
