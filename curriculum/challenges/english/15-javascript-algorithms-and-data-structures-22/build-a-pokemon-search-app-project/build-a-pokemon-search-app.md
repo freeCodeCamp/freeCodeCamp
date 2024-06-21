@@ -228,7 +228,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. Make sure the `#type` element content is cleared between searches.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. Make sure the `#types` element content is cleared between searches.
 
 ```js
 async () => {
@@ -324,7 +324,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. Make sure the `#type` element content is cleared between searches.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. Make sure the `#types` element content is cleared between searches.
 
 ```js
 async () => {
