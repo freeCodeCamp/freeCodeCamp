@@ -16,6 +16,7 @@ type DonationModalBodyProps = {
   activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
   recentlyClaimedBlock: RecentlyClaimedBlock;
+  setCanClose: (canClose: boolean) => void;
 };
 
 const Illustration = () => {
@@ -217,7 +218,8 @@ const BecomeASupporterConfirmation = ({
 
 function DonationModalBody({
   closeDonationModal,
-  recentlyClaimedBlock
+  recentlyClaimedBlock,
+  setCanClose
 }: DonationModalBodyProps): JSX.Element {
   const [donationAttempted, setDonationAttempted] = useState(false);
   const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
@@ -236,6 +238,7 @@ function DonationModalBody({
           return prevSeconds - 1;
         } else {
           setIsAnimationVisible(false);
+          setCanClose(true);
           clearInterval(interval);
           return 0;
         }
@@ -243,7 +246,7 @@ function DonationModalBody({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [setCanClose]);
 
   return (
     <Modal.Body borderless alignment='start'>

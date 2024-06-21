@@ -236,6 +236,10 @@ test.describe('Donation modal display', () => {
     await expect(
       donationModal.getByRole('button', { name: 'Ask me later' })
     ).toBeVisible();
+
+    // The Escape key press is now registered
+    await page.keyboard.press('Escape');
+    await expect(donationModal).toBeHidden();
   });
 });
 
