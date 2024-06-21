@@ -27,7 +27,7 @@ test.describe('Editor Component', () => {
   }) => {
     await page.goto(testPage);
 
-    await focusEditor({ page, isMobile, browserName });
+    await focusEditor({ page, isMobile });
     await page.keyboard.insertText('<h2>FreeCodeCamp</h2>');
     const text = page.getByText('<h2>FreeCodeCamp</h2>');
     await expect(text).toBeVisible();
