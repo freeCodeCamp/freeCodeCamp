@@ -1,5 +1,5 @@
 ---
-title: "The Odin Project: Learn CSS Specificity"
+title: 'The Odin Project: Learn CSS Specificity'
 block: top-learn-css-specificity
 superBlock: the-odin-project
 ---

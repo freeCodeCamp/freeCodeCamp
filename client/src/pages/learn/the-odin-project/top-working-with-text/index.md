@@ -1,5 +1,5 @@
 ---
-title: "The Odin Project: Working with Text"
+title: 'The Odin Project: Working with Text'
 block: top-working-with-text
 superBlock: the-odin-project
 ---

@@ -1,4 +1,4 @@
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';

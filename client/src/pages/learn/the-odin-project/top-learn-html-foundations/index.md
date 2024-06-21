@@ -1,5 +1,5 @@
 ---
-title: "The Odin Project: Learn HTML Foundations"
+title: 'The Odin Project: Learn HTML Foundations'
 block: top-learn-html-foundations
 superBlock: the-odin-project
 ---

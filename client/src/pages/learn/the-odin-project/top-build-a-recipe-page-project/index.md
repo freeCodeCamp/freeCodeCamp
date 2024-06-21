@@ -1,5 +1,5 @@
 ---
-title: "The Odin Project: Build a Recipe Page"
+title: 'The Odin Project: Build a Recipe Page'
 block: top-build-a-recipe-project
 superBlock: the-odin-project
 ---

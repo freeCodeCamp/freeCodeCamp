@@ -1,5 +1,5 @@
 ---
-title: "The Odin Project: Links and Images"
+title: 'The Odin Project: Links and Images'
 block: top-links-and-images
 superBlock: the-odin-project
 ---
