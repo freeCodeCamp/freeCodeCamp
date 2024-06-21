@@ -4,6 +4,6 @@ import { genericError } from '../types';
 export const resetMyProgress = {
   response: {
     200: Type.Object({}),
-    500: genericError
+    default: genericError
   }
 };

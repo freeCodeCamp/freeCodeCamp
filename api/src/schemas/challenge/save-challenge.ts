@@ -15,6 +15,6 @@ export const saveChallenge = {
       savedChallenges: Type.Array(savedChallenge)
     }),
     403: Type.Literal('That challenge type is not saveable.'),
-    500: genericError
+    default: genericError
   }
 };

@@ -37,6 +37,6 @@ export const projectCompleted = {
         Type.Literal('That does not appear to be a valid challenge submission.')
       ])
     }),
-    500: genericError
+    default: genericError
   }
 };

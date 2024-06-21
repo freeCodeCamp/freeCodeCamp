@@ -15,6 +15,6 @@ export const coderoadChallengeCompleted = {
       type: Type.Literal('error'),
       msg: Type.String()
     }),
-    500: genericError
+    default: genericError
   }
 };

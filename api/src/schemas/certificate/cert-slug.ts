@@ -120,6 +120,6 @@ export const certSlug = {
         })
       )
     }),
-    500: genericError
+    default: genericError
   }
 };

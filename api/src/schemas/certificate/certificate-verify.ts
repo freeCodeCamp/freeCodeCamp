@@ -127,6 +127,7 @@ export const certificateVerify = {
         message: Type.Literal('flash.went-wrong')
       }),
       genericError
-    ])
+    ]),
+    default: genericError
   }
 };

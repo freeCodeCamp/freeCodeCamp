@@ -10,6 +10,6 @@ export const deleteUserToken = {
       message: Type.Literal('userToken not found'),
       type: Type.Literal('info')
     }),
-    500: genericError
+    default: genericError
   }
 };
