@@ -390,20 +390,21 @@ const _cashInDrawer = [];
 for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
   // If denomination can complete required changeLeft, available amount in drawer cannot
-  // equal the maximum. Otherwise count can be greater than maximum count in change.
-  const count = _randomNumber(
+  // equal the maximum. Otherwise count in drawer can be greater than maximum count in change.
+  const drawerCount = _randomNumber(
     changeLeft % denomination === 0 ? Math.min(15, maxCountInChange - 1) : 15
   );
-  const amountInChange = count * denomination;
-  _cashInDrawer.push([denominationName, amountInChange / 100]);
-  if (denomination <= changeLeft && count > 0) {
-    changeLeft -= amountInChange;
+  const amountInDrawer = drawerCount * denomination;
+  _cashInDrawer.push([denominationName, amountInDrawer / 100]);
+  const changeCount = Math.min(drawerCount, maxCountInChange);
+  if (denomination <= changeLeft && changeCount > 0) {
+    changeLeft -= changeCount * denomination;
   }
 }
 
 // Less pennies than changeLeft makes impossible to return change due.
-const count = _randomNumber(Math.min(15, changeLeft - 1));
-_cashInDrawer.push(['PENNY', count / 100]);
+const drawerCount = _randomNumber(Math.min(15, changeLeft - 1));
+_cashInDrawer.push(['PENNY', drawerCount / 100]);
 
 cid = _cashInDrawer.reverse();
 
