@@ -64,12 +64,3 @@ La dipendenza "mongoose version ^5.11.15" dovrebbe essere in package.json
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

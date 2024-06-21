@@ -12,7 +12,6 @@
   - api/**/*
 
 'scope: tools/scripts':
-  - cypress/**/*
   - tools/**/*
   - .github/**/*
   - utils/**/*

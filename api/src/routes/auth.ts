@@ -7,14 +7,6 @@ import MongoStoreRL from 'rate-limit-mongo';
 import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
 import { findOrCreateUser } from './helpers/auth-helpers';
 
-declare module 'fastify' {
-  interface Session {
-    user: {
-      id: string;
-    };
-  }
-}
-
 const getEmailFromAuth0 = async (req: FastifyRequest) => {
   const auth0Res = await fetch(`https://${AUTH0_DOMAIN}/userinfo`, {
     headers: {
@@ -66,9 +58,7 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
   fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);
 
-    const { id } = await findOrCreateUser(fastify, email);
-    req.session.user = { id };
-    await req.session.save();
+    await findOrCreateUser(fastify, email);
   });
 
   done();

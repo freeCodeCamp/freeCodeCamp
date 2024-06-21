@@ -2,7 +2,6 @@
 id: 5f2c289f164c29556da632fd
 title: Створіть базу даних «Mario»
 challengeType: 12
-helpCategory: Backend Development
 url: freeCodeCamp/learn-relational-databases-by-building-a-mario-database
 dashedName: build-a-mario-database
 ---

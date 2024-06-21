@@ -1,6 +1,6 @@
 ---
 id: 637f4e5172c65bc8e73dfe26
-title: Working With Text Question J
+title: Questão J de Trabalhando com textos
 challengeType: 15
 dashedName: working-with-text-question-j
 ---

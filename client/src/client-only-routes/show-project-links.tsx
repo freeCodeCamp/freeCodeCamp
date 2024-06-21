@@ -137,12 +137,12 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       <>
         {projects.map(({ link, title, id }) => (
           <tr key={id}>
-            <td>
+            <td className='col-xs-8'>
               <Link to={link}>
                 {t(`certification.projects.title.${title}`, title)}
               </Link>
             </td>
-            <td colSpan={2}>{getProjectSolution(id, title)}</td>
+            <td className='col-xs-4'>{getProjectSolution(id, title)}</td>
           </tr>
         ))}
       </>
@@ -184,7 +184,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   if (!isCertName(certName)) return <div> Unknown Certification</div>;
 
   return (
-    <div data-cy='solution-widget' data-playwright-test-label='project-links'>
+    <div data-playwright-test-label='project-links'>
       {t(getCertHeading(certName), { user: name })}
       <Spacer size='medium' />
       <Table striped>

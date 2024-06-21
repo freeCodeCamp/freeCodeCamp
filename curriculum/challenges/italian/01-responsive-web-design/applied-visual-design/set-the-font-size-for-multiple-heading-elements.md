@@ -13,16 +13,14 @@ La proprietà `font-size` è usata per specificare quanto grande è il testo in 
 
 # --instructions--
 
-  <p>Nel tag <code>style</code>, imposta la dimensione del font (<code>font-size</code>) per:</p>
+Nel tag `style`, imposta la dimensione del font (`font-size`) per:
 
-  <ul>
-    <li>Il tag <code>h1</code> a 68px.</li>
-    <li>Il tag <code>h2</code> a 52px.</li>
-    <li>Il tag <code>h3</code> a 40px.</li>
-    <li>Il tag <code>h4</code> a 32px.</li>
-    <li>Il tag <code>h5</code> a 21px.</li>
-    <li>Il tag <code>h6</code> a 14px.</li>
-  </ul>
+- Il tag `h1` a 68px.
+- Il tag `h2` a 52px.
+- Il tag `h3` a 40px.
+- Il tag `h4` a 32px.
+- Il tag `h5` a 21px.
+- Il tag `h6` a 14px.
 
 # --hints--
 

@@ -31,13 +31,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - name: Setup Flutter 3.19.x
+      - name: Setup Flutter 3.22.x
         uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225 # v2
         with:
-          flutter-version: '3.19.x'
+          flutter-version: '3.22.x'
           channel: 'stable'
           cache: true
-          cache-key: flutter-3.19.x
+          cache-key: flutter-3.22.x
           cache-path: ${{ runner.tool_cache }}/flutter
 
       - name: Set freeCodeCamp Environment Variables

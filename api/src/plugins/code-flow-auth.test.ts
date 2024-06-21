@@ -2,7 +2,7 @@ import Fastify, { FastifyInstance } from 'fastify';
 import jwt from 'jsonwebtoken';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
-import { AccessToken, createAccessToken } from '../utils/tokens';
+import { type Token, createAccessToken } from '../utils/tokens';
 import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies';
 import codeFlowAuth from './code-flow-auth';
 
@@ -38,7 +38,7 @@ describe('auth', () => {
       const { value, ...rest } = res.cookies[0]!;
       const unsignedOnce = unsignCookie(value);
       const unsignedTwice = jwt.verify(unsignedOnce.value!, JWT_SECRET) as {
-        accessToken: AccessToken;
+        accessToken: Token;
       };
       expect(unsignedTwice.accessToken).toEqual(token);
       expect(rest).toEqual({

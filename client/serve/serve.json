@@ -29,7 +29,7 @@
       ]
     },
     {
-      "source": "{js/sass.sync.js,css/bootstrap.min.css}",
+      "source": "{js/sass.sync.js}",
       "headers": [
         {
           "key": "Cache-Control",

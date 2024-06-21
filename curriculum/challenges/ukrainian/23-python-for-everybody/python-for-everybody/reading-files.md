@@ -14,7 +14,7 @@ dashedName: reading-files
 
 ## --text--
 
-What is used to indicate a new line in a string?
+Що використовується для того, щоб позначити новий рядок у рядку?
 
 ## --answers--
 

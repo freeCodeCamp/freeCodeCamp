@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Express Agreement or Disagreement
 
-This is a test for the new project-based curriculum.
+This course will introduce how to say that you agree with what another person says and to tell them politely that you do not agree with them.

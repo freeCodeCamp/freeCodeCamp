@@ -14,7 +14,7 @@ dashedName: relational-database-design
 
 ## --text--
 
-What is the best practice for how many times a piece of string data should be stored in a database?
+Скільки разів можна зберегти рядкові дані у базі даних в найкращому випадку?
 
 ## --answers--
 
