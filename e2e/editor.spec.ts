@@ -33,7 +33,8 @@ test.describe('Editor Component', () => {
 test.describe('Python Terminal', () => {
   test('should display error message when the user enters invalid code', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     await page.goto(
       'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
