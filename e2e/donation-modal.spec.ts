@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { test, expect, type Page } from '@playwright/test';
 
-import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { clearEditor, focusEditor } from './utils/editor';
 
 const slowExpect = expect.configure({ timeout: 25000 });
 
@@ -22,7 +22,6 @@ const completeFrontEndCert = async (page: Page) => {
     await page.waitForURL(
       `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${project}`
     );
-
     await page
       .getByRole('textbox', { name: 'solution' })
       .fill('https://codepen.io/camperbot/full/oNvPqqo');
@@ -68,103 +67,109 @@ const completeThreeChallenges = async ({
 
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
-    await getEditors(page).fill(challenge.solution);
+
+    await page.evaluate(
+      async contents => await navigator.clipboard.writeText(contents),
+      challenge.solution
+    );
+    await page.keyboard.press('ControlOrMeta+V');
+
     await page.getByRole('button', { name: 'Run' }).click();
     await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
     await page.getByRole('button', { name: 'Submit' }).click();
   }
 };
 
-test.describe('Donation modal - New user', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
+const completeTenChallenges = async ({
+  page,
+  browserName,
+  isMobile
+}: {
+  page: Page;
+  browserName: string;
+  isMobile: boolean;
+}) => {
+  await page.goto(
+    '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
+  );
 
-  test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
-  });
+  const challenges = [
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
+      solution: `// some comment\n/* some comment */`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables',
+      solution: 'var myName;'
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator',
+      solution: `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another',
+      solution: `// Setup\nvar a;\na = 7;\nvar b;\n\n// Only change code below this line\nb = a;`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator',
+      solution: 'var a = 9;'
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables',
+      solution: `var myFirstName = 'foo';\nvar myLastName = 'bar';`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables',
+      solution: `// Only change code below this line\nvar a = 5;\nvar b = 10;\nvar c = 'I am a';\n// Only change code above this line\n\na = a + 1;\nb = b + 5;\nc = c + " String!";`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables',
+      solution: `// Variable declarations\nvar studlyCapVar;\nvar properCamelCase;\nvar titleCaseOver;\n\n// Variable assignments\nstudlyCapVar = 10;\nproperCamelCase = "A String";\ntitleCaseOver = 9000;`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords',
+      solution: `let catName = "Oliver";\nlet catSound = "Meow!";`
+    },
+    {
+      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword',
+      solution: `const FCC = "freeCodeCamp";\n// Change this line\nlet fact = "is cool!";\n// Change this line\nfact = "is awesome!";\nconsole.log(FCC, fact);\n// Change this line`
+    }
+  ];
 
-  test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
-  });
+  for (const challenge of challenges) {
+    await page.waitForURL(challenge.url);
 
-  test('should not appear if the user has completed 3 challenges and has less than 10 completed challenges in total', async ({
-    page,
-    browserName,
-    isMobile
-  }) => {
-    test.setTimeout(30000);
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
 
-    // Development user doesn't have any completed challenges, we are completing the first 3.
-    await completeThreeChallenges({ page, browserName, isMobile });
+    await page.evaluate(
+      async contents => await navigator.clipboard.writeText(contents),
+      challenge.solution
+    );
+    await page.keyboard.press('ControlOrMeta+V');
 
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeHidden();
-  });
+    await page.getByRole('button', { name: 'Run' }).click();
+    await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
+    await page.getByRole('button', { name: 'Submit' }).click();
+  }
+};
 
-  test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
-    page
-  }) => {
-    test.setTimeout(50000);
+test.skip(
+  ({ browserName }) => browserName !== 'chromium',
+  'Only chromium allows us to use the clipboard API.'
+);
 
-    await completeFrontEndCert(page);
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeVisible();
-    await expect(
-      donationModal.getByText(
-        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
-      )
-    ).toBeVisible();
-
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
-      donationModal.getByText(
-        'Nicely done. You just completed Front End Development Libraries Projects.'
-      )
-    ).toBeVisible();
-    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
-    await expect(donationModal).toBeHidden();
-
-    await completeFrontEndCert(page);
-    await expect(donationModal).toBeHidden();
-  });
-});
-
-test.describe('Donation modal - Certified user', () => {
+test.describe('Donation modal display', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
-  test('should appear if the user has completed 3 challenges and has more than 10 completed challenges in total', async ({
-    page,
-    browserName,
-    isMobile
-  }) => {
-    test.setTimeout(30000);
-
-    // Certified user already has more than 10 completed challenges, we are just completing 3 more.
-    await completeThreeChallenges({ page, browserName, isMobile });
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeVisible();
-
-    await expect(
-      donationModal.getByText(
-        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
-      )
-    ).toBeVisible();
-  });
 
   test('should display the content correctly and disable close when the animation is not complete', async ({
     page,
     browserName,
-    isMobile
+    isMobile,
+    context
   }) => {
-    test.setTimeout(50000);
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    test.setTimeout(40000);
 
     await completeThreeChallenges({ page, browserName, isMobile });
 
@@ -234,7 +239,137 @@ test.describe('Donation modal - Certified user', () => {
   });
 });
 
-test.describe('Donation modal - Donor user', () => {
+test.describe('Donation modal appearance logic - New user', () => {
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+  test.beforeEach(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user');
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  });
+
+  test('should not appear if the user has less than 10 completed challenges in total and has just completed 3 challenges', async ({
+    page,
+    browserName,
+    isMobile,
+    context
+  }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+
+    // Development user doesn't have any completed challenges, we are completing the first 3.
+    await completeThreeChallenges({ page, browserName, isMobile });
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeHidden();
+  });
+
+  test('should appear if the user has less than 10 completed challenges in total and has just completed 10 challenges', async ({
+    page,
+    isMobile,
+    browserName,
+    context
+  }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    test.setTimeout(50000);
+
+    await completeTenChallenges({ page, isMobile, browserName });
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeVisible();
+    await expect(
+      donationModal.getByText(
+        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
+      )
+    ).toBeVisible();
+
+    // Second part of the modal.
+    // Use `slowExpect` as we need to wait 20s for this part to show up.
+    await slowExpect(
+      donationModal.getByRole('heading', { name: 'Support us' })
+    ).toBeVisible();
+    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
+    // Ensure that the close state has been registered before ending the test.
+    // The modal will show up on another page/test otherwise.
+    await expect(donationModal).toBeHidden();
+  });
+
+  test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
+    page
+  }) => {
+    test.setTimeout(40000);
+
+    await completeFrontEndCert(page);
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeVisible();
+    await expect(
+      donationModal.getByText(
+        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
+      )
+    ).toBeVisible();
+
+    // Second part of the modal.
+    // Use `slowExpect` as we need to wait 20s for this part to show up.
+    await slowExpect(
+      donationModal.getByText(
+        'Nicely done. You just completed Front End Development Libraries Projects.'
+      )
+    ).toBeVisible();
+    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
+    await expect(donationModal).toBeHidden();
+
+    await completeFrontEndCert(page);
+    await expect(donationModal).toBeHidden();
+  });
+});
+
+test.describe('Donation modal appearance logic - Certified user', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+  test('should appear if the user has completed 3 challenges and has more than 10 completed challenges in total', async ({
+    page,
+    browserName,
+    isMobile,
+    context
+  }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    test.setTimeout(40000);
+
+    // Certified user already has more than 10 completed challenges, we are just completing 3 more.
+    await completeThreeChallenges({ page, browserName, isMobile });
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeVisible();
+
+    await expect(
+      donationModal.getByText(
+        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
+      )
+    ).toBeVisible();
+
+    // Second part of the modal.
+    // Use `slowExpect` as we need to wait 20s for this part to show up.
+    await slowExpect(
+      donationModal.getByRole('heading', { name: 'Support us' })
+    ).toBeVisible();
+    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
+    // Ensure that the close state has been registered before ending the test.
+    // The modal will show up on another page/test otherwise.
+    await expect(donationModal).toBeHidden();
+  });
+});
+
+test.describe('Donation modal appearance logic - Donor user', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test.beforeAll(() => {
@@ -245,8 +380,13 @@ test.describe('Donation modal - Donor user', () => {
     execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 
-  test('should not appear', async ({ page, browserName, isMobile }) => {
-    test.setTimeout(30000);
+  test('should not appear', async ({
+    page,
+    browserName,
+    isMobile,
+    context
+  }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     await completeThreeChallenges({ page, browserName, isMobile });
 
