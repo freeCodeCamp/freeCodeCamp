@@ -131,6 +131,17 @@ const randomPrice = _randomNumber(9500) + 500;
 const randomCash = _randomNumber(randomPrice - 200) + 100;
 price = randomPrice / 100;
 cashInput.value = `${randomCash / 100}`;
+cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
+];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -175,6 +186,17 @@ const changeDueDiv = document.getElementById('change-due');
 const randomPrice = _randomNumber(4900) + 100;
 price = randomPrice / 100;
 cashInput.value = `${price}`;
+cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
+];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
