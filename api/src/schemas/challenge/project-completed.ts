@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { generic500 } from '../types';
+import { genericError } from '../types';
 
 export const projectCompleted = {
   body: Type.Object({
@@ -37,6 +37,6 @@ export const projectCompleted = {
         Type.Literal('That does not appear to be a valid challenge submission.')
       ])
     }),
-    500: generic500
+    500: genericError
   }
 };

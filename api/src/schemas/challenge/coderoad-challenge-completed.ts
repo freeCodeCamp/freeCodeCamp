@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { generic500 } from '../types';
+import { genericError } from '../types';
 
 export const coderoadChallengeCompleted = {
   body: Type.Object({
@@ -15,6 +15,6 @@ export const coderoadChallengeCompleted = {
       type: Type.Literal('error'),
       msg: Type.String()
     }),
-    500: generic500
+    500: genericError
   }
 };

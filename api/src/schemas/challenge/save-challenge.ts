@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { file, generic500, savedChallenge } from '../types';
+import { file, genericError, savedChallenge } from '../types';
 
 export const saveChallenge = {
   body: Type.Object({
@@ -15,6 +15,6 @@ export const saveChallenge = {
       savedChallenges: Type.Array(savedChallenge)
     }),
     403: Type.Literal('That challenge type is not saveable.'),
-    500: generic500
+    500: genericError
   }
 };
