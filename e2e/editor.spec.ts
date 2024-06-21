@@ -20,7 +20,11 @@ const testPage =
   '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3';
 
 test.describe('Editor Component', () => {
-  test('should allow the user to insert text', async ({ page, isMobile }) => {
+  test('should allow the user to insert text', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
     await page.goto(testPage);
 
     await focusEditor({ page, isMobile });
@@ -33,14 +37,15 @@ test.describe('Editor Component', () => {
 test.describe('Python Terminal', () => {
   test('should display error message when the user enters invalid code', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     await page.goto(
       'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
     );
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page });
+    await clearEditor({ page, browserName });
     // Then enter invalid code
     await page.keyboard.insertText('def');
     const preview = page.getByTestId('preview-pane');
