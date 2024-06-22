@@ -4,7 +4,6 @@ import Magnifier from '../../../assets/icons/magnifier';
 import InputReset from '../../../assets/icons/input-reset';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 import type { SearchBarProps } from './search-bar';
-
 const SearchBarOptimized = ({
   innerRef
 }: Pick<SearchBarProps, 'innerRef'>): JSX.Element => {
@@ -13,10 +12,8 @@ const SearchBarOptimized = ({
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
   const inputElementRef = useRef<HTMLInputElement>(null);
-
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);
-
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (value && value.length > 1) {
@@ -26,12 +23,10 @@ const SearchBarOptimized = ({
       inputElementRef.current?.blur();
     }
   };
-
   const onClick = () => {
     setValue('');
     inputElementRef.current?.focus();
   };
-
   return (
     <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
       <div className='fcc_search_wrapper'>
@@ -58,7 +53,6 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
-              aria-label={t('search.ariaLabel')}
             />
             <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
@@ -78,6 +72,5 @@ const SearchBarOptimized = ({
     </div>
   );
 };
-
 SearchBarOptimized.displayName = 'SearchBarOptimized';
 export default SearchBarOptimized;
