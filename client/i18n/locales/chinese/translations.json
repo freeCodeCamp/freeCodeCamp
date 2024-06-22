@@ -384,6 +384,7 @@
     "submit-and-go": "提交并访问下一个挑战",
     "congratulations": "恭喜，你的代码已通过。请提交你的代码以继续。",
     "i-completed": "我已经完成这个挑战",
+    "example-code": "Example Code",
     "test-output": "你的测试输出将在这里显示",
     "running-tests": "// 运行测试",
     "tests-completed": "// 测试完成",
@@ -574,6 +575,7 @@
     "other-ways": "有许多<0>其他方式可以支持我们的慈善组织践行使命</0>.",
     "if-support-further": "如果你想进一步支持我们的慈善组织，可以考虑<0>一次性捐款</0>、<1>向我们发送支票</1>或<2>了解支持我们慈善组织的其他方式。</2>",
     "failed-pay": "呃，你的转账似乎没有成功，再试一次好吗？",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "请重试。",
     "card-number": "你的卡号：",
     "expiration": "到期日：",
@@ -668,7 +670,8 @@
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
-    "no-results": "我们未找到关于 <0>{{query}}</0> 的任何信息"
+    "no-results": "我们未找到关于 <0>{{query}}</0> 的任何信息",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "你已离线，学习进度可能不会被保存",
@@ -749,7 +752,7 @@
   "flash": {
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",
     "really-weird": "出现了一些奇怪的情况。如果再出现这种情况，请考虑在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
-    "not-right": "有些不对劲。已生成报告，通知 freeCodeCamp.org 团队。",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "出了点问题，请检查并重试。",
     "account-deleted": "你的账户已被成功删除",
     "progress-reset": "你的进度已被重置",
@@ -785,7 +788,6 @@
     "cert-claim-success": "@{{username}}，你已成功申请 {{name}} 认证！代表 freeCodeCamp.org 团队恭喜你！",
     "wrong-name": "{{name}} 验证有点问题，请重试。如果你继续收到这个错误提示，你可以发邮件至 support@freeCodeCamp.org，获得帮助",
     "error-claiming": "申请 {{certName}} 认证出错",
-    "refresh-needed": "你只能点击一次付款请求按钮。如需重来请刷新页面。",
     "username-not-found": "我们未找到用户名为 \"{{username}}\" 的用户",
     "add-name": "这个用户需要在账户中添加名字，以便其他人查看该用户的认证。",
     "not-eligible": "这个用户目前不符合 freeCodeCamp.org 认证的条件。",

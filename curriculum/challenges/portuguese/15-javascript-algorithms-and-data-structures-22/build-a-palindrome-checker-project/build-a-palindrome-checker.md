@@ -8,13 +8,13 @@ dashedName: build-a-palindrome-checker
 
 # --description--
 
-A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwards and backwards, ignoring punctuation, case, and spacing.
+Um <dfn>palíndromo</dfn> é uma palavra ou frase que pode ser lida da mesma maneira de frente para trás e de trás para frente, ignorando pontuação, maiúsculas e minúsculas, e espaços.
 
-**Note:** You'll need to remove **all non-alphanumeric characters** (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
+**Observação:** você precisará remover **todos os caracteres não alfanuméricos** (pontuação, espaços e símbolos) e transforme tudo na mesma capitalização (letra em minúsculo ou maiúsculo) para verificar se determinada palavra ou frase é um palíndromo.
 
-**Objective:** Build an app that is functionally similar to <a href="https://palindrome-checker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://palindrome-checker.freecodecamp.rocks</a>
+**Objetivo:** construa uma aplicação que seja funcionalmente igual a <a href="https://palindrome-checker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://palindrome-checker.freecodecamp.rocks</a>
 
-**User Stories:**
+**Histórias de usuário:**
 
 1. You should have an `input` element with an `id` of `"text-input"`
 1. You should have a `button` element with an `id` of `"check-btn"`
@@ -68,6 +68,7 @@ let alertMessage;
 window.alert = (message) => alertMessage = message; // Override alert and store message
 
 inputEl.value = '';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please input a value');
 ```
@@ -259,6 +260,7 @@ const fourthLetter = characters.charAt(Math.floor(Math.random() * charactersLeng
 const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter + fourthLetter + thirdLetter + secondLetter + firstLetter;
 
 inputEl.value = phrase;
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is a palindrome');
@@ -298,6 +300,7 @@ charactersLength--;
 const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter;
 
 inputEl.value = phrase;
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is not a palindrome');

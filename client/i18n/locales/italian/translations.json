@@ -384,6 +384,7 @@
     "submit-and-go": "Invia e vai alla prossima sfida",
     "congratulations": "Congratulazioni, hai superato i test. Invia in tuo codice per continuare.",
     "i-completed": "Ho completato questa sfida",
+    "example-code": "Example Code",
     "test-output": "Il risultato del tuo test andrà qui",
     "running-tests": "// test in corso",
     "tests-completed": "// test completati",
@@ -574,6 +575,7 @@
     "other-ways": "Qui ci sono molti <0>altri modi per supportare la missione del nostro ente di beneficenza</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "Uh - oh. Sembra che la tua transazione non sia passata. Potresti riprovare?",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "Per favore riprova.",
     "card-number": "Numero della tua Carta:",
     "expiration": "Data di scadenza:",
@@ -668,7 +670,8 @@
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
-    "no-results": "Non è stato possibile trovare nulla relativo a <0>{{query}}</0>"
+    "no-results": "Non è stato possibile trovare nulla relativo a <0>{{query}}</0>",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
@@ -749,7 +752,7 @@
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
     "really-weird": "È successo qualcosa di veramente strano, se succede di nuovo, ti preghiamo di considerare di sollevare un problema su https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "Qualcosa non è del tutto giusto. Un rapporto è stato generato e il team freeCodeCamp.org è stato avvisato",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Qualcosa è andato storto, controlla e riprova",
     "account-deleted": "Il tuo account è stato eliminato correttamente",
     "progress-reset": "I tuoi progressi sono stati resettati",
@@ -785,7 +788,6 @@
     "cert-claim-success": "@{{username}}, hai richiesto con successo la Certificazione {{name}} ! Congratulazioni per conto del team freeCodeCamp.org!",
     "wrong-name": "Qualcosa è andato storto con la verifica di {{name}}, per favore riprova. Se continui a ricevere questo errore, puoi inviare un messaggio a support@freeCodeCamp.org per ricevere aiuto.",
     "error-claiming": "Errore nel richiedere {{certName}}",
-    "refresh-needed": "Puoi usare il pulsante PaymentRequest solo una volta. Ricarica la pagina per reiniziare.",
     "username-not-found": "Non siamo riusciti a trovare un utente con il nome utente \"{{username}}\"",
     "add-name": "Questo utente deve aggiungere il proprio nome al proprio account affinché gli altri possano visualizzare la sua certificazione.",
     "not-eligible": "Questo utente non è idoneo per le certificazioni freeCodeCamp.org al momento.",

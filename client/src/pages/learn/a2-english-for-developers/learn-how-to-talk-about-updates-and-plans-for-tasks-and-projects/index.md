@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Talk About Updates and Plans for Tasks and Projects
 
-This is a test for the new project-based curriculum.
+This course will show you how to speak about the most recent advancements in your projects and about your plans.
