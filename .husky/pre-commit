@@ -1,1 +1,1 @@
-npx lint-staged
+NODE_OPTIONS=\"--max-old-space-size=7168\" npx lint-staged

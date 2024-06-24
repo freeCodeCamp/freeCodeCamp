@@ -14,7 +14,7 @@ dashedName: objects-inheritance
 
 ## --text--
 
-What is inheritance in object-oriented programming?
+Що таке успадкування в об’єктноорієнтованому програмуванні?
 
 ## --answers--
 

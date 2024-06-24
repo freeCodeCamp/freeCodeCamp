@@ -14,13 +14,12 @@ import type {
 } from 'fastify';
 import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
 import { differenceInMinutes } from 'date-fns';
-import { isProfane } from 'no-profanity';
 
-import { blocklistedUsernames } from '../../../shared/config/constants';
 import { isValidUsername } from '../../../shared/utils/validate';
 import * as schemas from '../schemas';
 import { createAuthToken } from '../utils/tokens';
 import { API_LOCATION } from '../utils/env';
+import { isRestricted } from './helpers/is-restricted';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -148,8 +147,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           type: 'success'
         } as const;
       } catch (err) {
-        // TODO: send to Sentry
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -289,6 +288,7 @@ ${isLinkSentWithinLimitTTL}`
         });
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
@@ -316,6 +316,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -346,6 +347,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -401,9 +403,6 @@ ${isLinkSentWithinLimitTTL}`
           });
         }
 
-        const isUserNameProfane = isProfane(newUsername);
-        const onBlocklist = blocklistedUsernames.includes(newUsername);
-
         const usernameTaken =
           newUsername === oldUsername
             ? false
@@ -411,7 +410,7 @@ ${isLinkSentWithinLimitTTL}`
                 where: { username: newUsername }
               });
 
-        if (usernameTaken || isUserNameProfane || onBlocklist) {
+        if (usernameTaken || isRestricted(newUsername)) {
           void reply.code(400);
           return reply.send({
             message: 'flash.username-taken',
@@ -434,6 +433,7 @@ ${isLinkSentWithinLimitTTL}`
         });
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
@@ -464,6 +464,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -491,6 +492,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -518,6 +520,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -545,6 +548,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -573,6 +577,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -611,6 +616,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -647,6 +653,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(403);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }

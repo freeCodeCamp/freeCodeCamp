@@ -162,11 +162,7 @@ const StepPreview = ({
     challengeType === challengeTypes.multifilePythonCertProject ? (
     <XtermTerminal xtermFitRef={xtermFitRef} />
   ) : (
-    <Preview
-      className='full-height'
-      disableIframe={disableIframe}
-      previewMounted={previewMounted}
-    />
+    <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
   );
 };
 
@@ -410,6 +406,8 @@ function ShowClassic({
       reduxChallengeFiles && (
         <MultifileEditor
           challengeFiles={reduxChallengeFiles}
+          block={block}
+          superBlock={superBlock}
           containerRef={containerRef}
           description={description}
           editorRef={editorRef}

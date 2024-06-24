@@ -17,15 +17,13 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
       className='challenge-title-breadcrumbs'
       aria-label={t('aria.breadcrumb-nav')}
     >
-      <ol>
+      <ol data-playwright-test-label='breadcrumb-desktop'>
         <li className='breadcrumb-left'>
           <Link
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}`}
           >
-            <span className='ellipsis'>
-              {i18next.t(`intro:${superBlock}.title`)}
-            </span>
+            <span>{i18next.t(`intro:${superBlock}.title`)}</span>
           </Link>
         </li>
         <li className='breadcrumb-right'>

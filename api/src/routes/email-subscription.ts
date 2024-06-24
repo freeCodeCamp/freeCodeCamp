@@ -36,11 +36,11 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       try {
         const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
-        const users = await fastify.prisma.user.findMany({
+        const unsubUsers = await fastify.prisma.user.findMany({
           where: { unsubscribeId }
         });
 
-        if (!users.length) {
+        if (!unsubUsers.length) {
           void reply.code(302);
           return reply.redirectWithMessage(origin, {
             type: 'info',
@@ -48,9 +48,9 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        const userUpdatePromises = users.map(user =>
-          fastify.prisma.user.update({
-            where: { id: user.id },
+        const userUpdatePromises = unsubUsers.map(user =>
+          fastify.prisma.user.updateMany({
+            where: { email: user.email },
             data: {
               sendQuincyEmail: false
             }
@@ -68,6 +68,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         );
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
           type: 'danger',
@@ -125,6 +126,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
           type: 'danger',

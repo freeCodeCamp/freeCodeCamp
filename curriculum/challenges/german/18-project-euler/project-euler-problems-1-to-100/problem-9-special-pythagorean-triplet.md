@@ -59,16 +59,17 @@ specialPythagoreanTriplet(1000);
 # --solutions--
 
 ```js
-const specialPythagoreanTriplet = (n)=>{
- let sumOfabc = n;
- let a,b,c;
- for(a = 1; a<=sumOfabc/3; a++){
- for(b = a+1; b<=sumOfabc/2; b++){
- c = Math.sqrt(a*a+b*b);
- if((a+b+c) == sumOfabc){
- return a*b*c;
- }
- }
- }
+function specialPythagoreanTriplet(n) {
+  for (let a = 1; a <= n / 2; a++) {
+    for (let b = a + 1; b <= n / 2; b++) {
+      const c = Math.sqrt(a * a + b * b);
+
+      if ((a + b + c) % n == 0) {
+        const factor = n / (a + b + c);
+
+        return (a * b * c) * (factor ** 3);
+      }
+    }
+  }
 }
 ```

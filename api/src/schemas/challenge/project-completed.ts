@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { generic500 } from '../types';
 
 export const projectCompleted = {
   body: Type.Object({
@@ -36,11 +37,6 @@ export const projectCompleted = {
         Type.Literal('That does not appear to be a valid challenge submission.')
       ])
     }),
-    500: Type.Object({
-      message: Type.Literal(
-        'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-      ),
-      type: Type.Literal('danger')
-    })
+    500: generic500
   }
 };

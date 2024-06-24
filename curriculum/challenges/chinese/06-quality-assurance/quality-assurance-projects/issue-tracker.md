@@ -205,6 +205,11 @@ async (getUserInput) => {
     const getMultiple = await $.get(url + '?created_by=Alice&assigned_to=Bob');
     assert.isArray(getMultiple);
     assert.lengthOf(getMultiple, 2);
+    const copyId = getMultiple[0]._id;
+    const getById = await $.get(url + `?_id=${copyId}`);
+    assert.isArray(getById);
+    assert.lengthOf(getById, 1);
+    assert.equal(getById[0]._id, copyId, 'should be able to query a document by _id')
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
@@ -356,12 +361,3 @@ async (getUserInput) => {
 };
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

@@ -40,12 +40,3 @@ Helmet `3.21.3` 版已經安裝完畢，所以在 `myApp.js` 中請求它作爲 
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

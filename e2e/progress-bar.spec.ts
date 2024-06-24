@@ -42,7 +42,7 @@ test.describe('Progress bar component', () => {
     await page.goto(
       '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
     );
-    await focusEditor({ page, isMobile, browserName });
+    await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
 
     await page.keyboard.insertText('var myName;');

@@ -10,6 +10,10 @@ bilibiliIds:
 dashedName: reinforcement-learning-with-q-learning
 ---
 
+# --description--
+
+Декілька наступних відеоуроків посилатимуться на [цей блокнот Colab](https://colab.research.google.com/drive/1IlrlS3bB8t1Gd5Pogol4MIwUxlAjhWOQ#forceEdit=true&sandboxMode=true).
+
 # --question--
 
 ## --text--

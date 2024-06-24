@@ -14,7 +14,7 @@ dashedName: introduction-elements-of-python
 
 ## --text--
 
-What will the following program print out:
+Що надрукує на екрані дана програма?
 
 ```python
 x = 43

@@ -16,11 +16,11 @@ As tags de fechamento dizem ao navegador onde um elemento termina. Quase sempre,
 
 Um elemento de parágrafo completo terá esta aparência:
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='An opening p tag, followed by the content string "some text content", followed by a closing p tag.' />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/html-foundations/html-foundations-01.png" alt='Uma tag de abertura, seguida do conteúdo "some text content", seguida de uma tag p de fechamento.' />
 
 # --assignment--
 
-Watch Kevin Powell’s <a href="https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-" target="_blank">Introduction to HTML video</a>
+Assista ao <a href="https://www.youtube.com/watch?v=LGQuIIv2RVA&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-" target="_blank">vídeo de introdução ao HTML</a> de Kevin Powell
 
 # --question--
 
