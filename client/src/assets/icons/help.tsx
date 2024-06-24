@@ -18,7 +18,7 @@ function Help(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
-    <div style={wrapper}>
+    <div style={wrapper} aria-hidden='true'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 512 512'

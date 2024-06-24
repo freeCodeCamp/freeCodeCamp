@@ -13,16 +13,14 @@ dashedName: set-the-font-size-for-multiple-heading-elements
 
 # --instructions--
 
-  <p>在 <code>style</code> 标签中, 对各元素的 <code>font-size</code> 进行如下设置：</p>
+在 `style` 标签中, 对各元素的 `font-size` 进行如下设置：
 
-  <ul>
-    <li>将 <code>h1</code> 标签的文字大小设为 68px。</li>
-    <li>将 <code>h2</code> 标签的文字大小设为 52px。</li>
-    <li>将 <code>h3</code> 标签的文字大小设为 40px</li>
-    <li>将 <code>h4</code> 标签的文字大小设为 32px</li>
-    <li>将 <code>h5</code> 标签的文字大小设为 21px</li>
-    <li>将 <code>h6</code> 标签的文字大小设为 14px</li>
-  </ul>
+- 将 `h1` 标签的文字大小设为 68px。
+- 将 `h2` 标签的文字大小设为 52px。
+- 将 `h3` 标签的文字大小设为 40px
+- 将 `h4` 标签的文字大小设为 32px
+- 将 `h5` 标签的文字大小设为 21px
+- 将 `h6` 标签的文字大小设为 14px
 
 # --hints--
 

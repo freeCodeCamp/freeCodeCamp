@@ -2,7 +2,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import Stripe from 'stripe';
 import isEmail from 'validator/lib/isEmail';
 import { donationSubscriptionConfig } from '../../../shared/config/donation-settings';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
 import { STRIPE_SECRET_KEY } from '../utils/env';
 import { findOrCreateUser } from './helpers/auth-helpers';
 

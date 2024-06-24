@@ -14,11 +14,12 @@ import type {
 } from 'fastify';
 import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
 import { differenceInMinutes } from 'date-fns';
-import { isProfane } from 'no-profanity';
 
-import { blocklistedUsernames } from '../../../shared/config/constants';
 import { isValidUsername } from '../../../shared/utils/validate';
-import { schemas } from '../schemas';
+import * as schemas from '../schemas';
+import { createAuthToken } from '../utils/tokens';
+import { API_LOCATION } from '../utils/env';
+import { isRestricted } from './helpers/is-restricted';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -154,6 +155,18 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  function createUpdateEmailText({ email, id }: { email: string; id: string }) {
+    const encodedEmail = Buffer.from(email).toString('base64');
+    return `Please confirm this email address for freeCodeCamp.org:
+
+${API_LOCATION}/confirm-email?email=${encodedEmail}&token=${id}&emailChange=true
+
+Happy coding!
+
+- The freeCodeCamp.org Team
+`;
+  }
+
   fastify.put(
     '/update-my-email',
     {
@@ -170,6 +183,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id },
         select: {
+          id: true,
           email: true,
           emailVerifyTTL: true,
           newEmail: true,
@@ -183,11 +197,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       const isOwnEmail = newEmail === currentEmailFormatted;
       if (isOwnEmail && isVerifiedEmail) {
         void reply.code(400);
-        return {
+        return reply.send({
           type: 'info',
           message: `${newEmail} is already associated with this account.
 You can update a new email address instead.`
-        } as const;
+        });
       }
 
       const isResendUpdateToSameEmail =
@@ -198,11 +212,11 @@ You can update a new email address instead.`
 
       if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
         void reply.code(429);
-        return {
+        return reply.send({
           type: 'info',
           message: `We have already sent an email confirmation request to ${newEmail}.
 ${isLinkSentWithinLimitTTL}`
-        } as const;
+        });
       }
 
       const isEmailAlreadyTaken =
@@ -210,16 +224,16 @@ ${isLinkSentWithinLimitTTL}`
 
       if (isEmailAlreadyTaken && !isOwnEmail) {
         void reply.code(400);
-        return {
+        return reply.send({
           type: 'info',
           message: `${newEmail} is already associated with another account.`
-        } as const;
+        });
       }
 
       // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
       try {
         await fastify.prisma.user.update({
-          where: { id: req.user?.id },
+          where: { id: user.id },
           data: {
             newEmail,
             emailVerified: false,
@@ -237,24 +251,45 @@ ${isLinkSentWithinLimitTTL}`
 
         if (tooManyRequestsMessage) {
           void reply.code(429);
-          return {
+          return reply.send({
             type: 'info',
             message: tooManyRequestsMessage
-          } as const;
+          });
         }
 
+        // Update the emailAuthLinkTTL to ensure we don't send too many emails.
         await fastify.prisma.user.update({
-          where: { id: req.user?.id },
+          where: { id: user.id },
           data: {
             emailAuthLinkTTL: new Date()
           }
         });
 
-        return { message: 'flash.email-valid', type: 'success' } as const;
+        // The auth token is used to confirm that the user owns the email. If
+        // the user provides the correct id (by following the link we send
+        // them), then we can update the email.
+        const { id } = await fastify.prisma.authToken.create({
+          data: createAuthToken(user.id),
+          select: { id: true }
+        });
+
+        await fastify.sendEmail({
+          from: 'team@freecodecamp.org',
+          to: newEmail,
+          subject:
+            'Please confirm your updated email address for freeCodeCamp.org',
+          text: createUpdateEmailText({ email: newEmail, id })
+        });
+
+        await reply.send({
+          message:
+            'Check your email and click the link we sent you to confirm your new email address.',
+          type: 'info'
+        });
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
-        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+        await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
     }
   );
@@ -358,15 +393,12 @@ ${isLinkSentWithinLimitTTL}`
 
         if (!validation.valid) {
           void reply.code(400);
-          return {
+          return reply.send({
             // TODO(Post-MVP): custom validation errors.
             message: `Username ${newUsername} ${validation.error}`,
             type: 'info'
-          } as const;
+          });
         }
-
-        const isUserNameProfane = isProfane(newUsername);
-        const onBlocklist = blocklistedUsernames.includes(newUsername);
 
         const usernameTaken =
           newUsername === oldUsername
@@ -375,12 +407,12 @@ ${isLinkSentWithinLimitTTL}`
                 where: { username: newUsername }
               });
 
-        if (usernameTaken || isUserNameProfane || onBlocklist) {
+        if (usernameTaken || isRestricted(newUsername)) {
           void reply.code(400);
-          return {
+          return reply.send({
             message: 'flash.username-taken',
             type: 'info'
-          } as const;
+          });
         }
 
         await fastify.prisma.user.update({
@@ -391,15 +423,15 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
-        return {
+        return reply.send({
           message: 'flash.username-updated',
           type: 'success',
-          username: newUsernameDisplay
-        } as const;
+          variables: { username: newUsernameDisplay }
+        });
       } catch (err) {
         fastify.log.error(err);
         void reply.code(500);
-        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+        await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
     }
   );

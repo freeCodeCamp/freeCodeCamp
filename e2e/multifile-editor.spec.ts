@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+import { getEditors } from './utils/editor';
+
 test.beforeEach(async ({ page }) => {
   await page.goto(
     '/learn/2022/responsive-web-design/learn-basic-css-by-building-a-cafe-menu/step-15'
@@ -21,7 +23,7 @@ test.describe('MultifileEditor Component', () => {
     // before moving onto other assertions.
     // Note that using the `.all()` locator here would result a flaky test.
     // Ref: https://github.com/freeCodeCamp/freeCodeCamp/pull/53031/files#r1500316812
-    const editors = page.getByLabel('Editor content');
+    const editors = getEditors(page);
     await expect(editors).toHaveCount(2);
 
     const test_string = 'TestString';

@@ -9,9 +9,14 @@ import {
 import _ from 'lodash';
 
 type NullToUndefined<T> = T extends null ? undefined : T;
+type NullToFalse<T> = T extends null ? false : T;
 
 type NoNullProperties<T> = {
   [P in keyof T]: NullToUndefined<T[P]>;
+};
+
+type DefaultToFalse<T> = {
+  [P in keyof T]: NullToFalse<T[P]>;
 };
 
 /**
@@ -78,7 +83,7 @@ type NormalizedFile = {
   path?: string;
 };
 
-type NormalizedChallenge = {
+export type NormalizedChallenge = {
   challengeType?: number;
   completedDate: number;
   files: NormalizedFile[];
@@ -134,3 +139,13 @@ export const normalizeSurveys = (
     return { title, responses };
   });
 };
+
+/**
+ * Replace null flags with false.
+ * @param flags Object with nullable boolean flags.
+ * @returns Same object with boolean flags, defaulting to false.
+ */
+export const normalizeFlags = <T extends Record<string, boolean | null>>(
+  flags: T
+): DefaultToFalse<T> =>
+  _.mapValues(flags, flag => flag ?? false) as DefaultToFalse<T>;

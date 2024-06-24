@@ -21,7 +21,7 @@ Here is an example of turning an image into a link:
 
 # --hints--
 
-يجب أن يكون لديك عنصر `img` بقيمة `src` من `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. ربما حذفتها عن طريق الخطأ.
+You should have an `img` element with a `src` value of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg`. ربما حذفتها عن طريق الخطأ.
 
 ```js
 assert(

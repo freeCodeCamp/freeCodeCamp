@@ -5,11 +5,7 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-recursion-by-building-a-decimal-to-binary-converter",
   "helpCategory": "JavaScript",
-  "order": 9,
-  "superOrder": 6,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
+  "order": 11,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

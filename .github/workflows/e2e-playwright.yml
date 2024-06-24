@@ -35,7 +35,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
@@ -89,7 +89,8 @@ jobs:
       mailhog:
         image: mailhog/mailhog
         ports:
-          - 1025:1025
+          - 1025:1025 # SMTP server (listens for emails)
+          - 8025:8025 # HTTP server (so we can make requests to the api)
 
     steps:
       - name: Set Action Environment Variables
@@ -111,7 +112,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
         with:
-          version: 8
+          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
@@ -142,7 +143,7 @@ jobs:
         run: |
           pnpm run start-ci &
           sleep 10
-          npx playwright test --project=${{ matrix.browsers }}
+          npx playwright test --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

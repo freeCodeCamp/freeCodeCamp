@@ -8,7 +8,7 @@ dashedName: demographic-data-analyzer
 
 # --description--
 
-You will be <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-demographic-data-analyzer/" target="_blank" rel="noopener noreferrer nofollow">working on this project with our Gitpod starter code</a>.
+Você <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-demographic-data-analyzer/" target="_blank" rel="noopener noreferrer nofollow">trabalhará nesse projeto com o nosso código inicial do Gitpod </a>.
 
 Ainda estamos desenvolvendo a parte instrucional interativa do currículo Python. Por enquanto, aqui estão alguns vídeos no canal do freeCodeCamp.org do YouTube que ensinarão tudo o que você precisa saber para completar este projeto:
 
@@ -42,15 +42,15 @@ Você deve usar o Pandas para responder as seguintes questões:
 - Qual país tem a maior porcentagem de pessoas que ganham > 50mil e qual é essa porcentagem?
 - Identifique a ocupação mais popular entre aqueles que ganham > 50 mil na Índia.
 
-Use the starter code in the file `demographic_data_analyzer.py`. Update the code so all variables set to `None` are set to the appropriate calculation or code. Arredonde todos os números decimais para o décimo mais próximo.
+Use o código inicial do arquivo `demographic_data_analyzer.py`. Atualize o código para que todas as variáveis definidas como `None` sejam definidas com o cálculo ou código apropriado. Arredonde todos os números decimais para o décimo mais próximo.
 
 ## Desenvolvimento
 
-Write your code in `demographic_data_analyzer.py`. For development, you can use `main.py` to test your code.
+Escreva seu código em `demographic_data_analyzer.py`. Para o desenvolvimento, você pode usar `main.py` para testar o seu código.
 
 ## Testes
 
-The unit tests for this project are in `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência.
+Os testes unitários para esse projeto estão em `test_module.py`. Importamos os testes de `test_module.py` em `main.py` para a sua conveniência.
 
 ## Envio
 

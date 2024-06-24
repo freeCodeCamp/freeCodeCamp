@@ -7,7 +7,9 @@ dashedName: step-7
 
 # --description--
 
-Add an `else` clause on the same level as the existing `if` statement, inside the `for` loop. Add characters that are already in lowercase to the list of converted characters inside the body of the `else` clause.
+You need to handle the characters that are already in lowercase by adding them to the list of converted characters.
+
+Right after the `if` statement within the `for` loop, add an `else` clause and use the `.append()` method to add `char` to the `snake_cased_char_list` variable.
 
 # --hints--
 

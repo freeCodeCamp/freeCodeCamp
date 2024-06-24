@@ -38,9 +38,10 @@ import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 import { donateRoutes, chargeStripeRoute } from './routes/donate';
+import { emailSubscribtionRoutes } from './routes/email-subscription';
 import { settingRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
-import { userGetRoutes, userRoutes } from './routes/user';
+import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
 import {
   API_LOCATION,
   COOKIE_DOMAIN,
@@ -104,9 +105,23 @@ export const build = async (
   });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(express);
-  if (SENTRY_DSN) {
-    await fastify.register(fastifySentry, { dsn: SENTRY_DSN });
-  }
+
+  await fastify.register(fastifySentry, {
+    dsn: SENTRY_DSN,
+    // No need to initialize if DSN is not provided (e.g. in development and
+    // test environments)
+    skipInit: !!SENTRY_DSN,
+    errorResponse: (error, _request, reply) => {
+      if (reply.statusCode === 500) {
+        void reply.send({
+          message: 'flash.generic-error',
+          type: 'danger'
+        });
+      } else {
+        void reply.send(error);
+      }
+    }
+  });
 
   await fastify.register(cors);
   await fastify.register(cookies);
@@ -206,7 +221,9 @@ export const build = async (
   void fastify.register(settingRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(chargeStripeRoute);
+  void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userRoutes);
+  void fastify.register(userPublicGetRoutes);
   void fastify.register(protectedCertificateRoutes);
   void fastify.register(unprotectedCertificateRoutes);
   void fastify.register(userGetRoutes);

@@ -14,7 +14,7 @@ dashedName: visualizing-data-with-python
 
 ## --text--
 
-A maior parte dos dados precisa ser \_\_\_\_\_\_ antes de ser usada.
+A maior parte dos dados precisa ser ______ antes de ser usada.
 
 ## --answers--
 

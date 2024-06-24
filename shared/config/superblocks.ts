@@ -23,6 +23,7 @@ export enum SuperBlocks {
   ExampleCertification = 'example-certification',
   UpcomingPython = 'upcoming-python',
   A2English = 'a2-english-for-developers',
+  B1English = 'b1-english-for-developers',
   RosettaCode = 'rosetta-code',
   PythonForEverybody = 'python-for-everybody'
 }
@@ -86,6 +87,7 @@ export const superBlockOrder: SuperBlockOrder = {
   ],
   [SuperBlockStages.New]: [],
   [SuperBlockStages.Upcoming]: [
+    SuperBlocks.B1English,
     SuperBlocks.ExampleCertification,
     SuperBlocks.UpcomingPython
   ]
@@ -112,6 +114,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Chinese]: [
@@ -121,6 +124,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.ChineseTraditional]: [
@@ -131,6 +135,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Italian]: [
@@ -139,26 +144,28 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Ukrainian]: [
-    SuperBlocks.CodingInterviewPrep,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.B1English
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.German]: [
@@ -174,6 +181,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Arabic]: [
@@ -193,6 +201,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Swahili]: [
@@ -215,6 +224,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
   [Languages.Korean]: [
@@ -235,6 +245,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
+    SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,

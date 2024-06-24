@@ -22,19 +22,23 @@ const LearnAlert = ({
     <Alert variant='info' className='annual-donation-alert'>
       {value && (
         <>
+          <div className='text-center'>
+            <h2>{t('learn.donation-heading')}</h2>
+            <Spacer size='small' />
+            <b className='m-0 progress-percent-value'>{`${value}%`}</b>
+          </div>
           <div aria-hidden='true' className='progress-wrapper'>
             <div>
               <ProgressBar now={value} />
             </div>
           </div>
-          <h3 className='text-center'>{`${value}%`}</h3>
         </>
       )}
       <p>{text}</p>
-      <hr />
-      <p className={'text-center'}>
+      <Spacer size='medium' />
+      <div className={'text-center'}>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
@@ -42,7 +46,7 @@ const LearnAlert = ({
         >
           {t('buttons.donate')}
         </Link>
-      </p>
+      </div>
     </Alert>
   );
 
@@ -53,9 +57,9 @@ const LearnAlert = ({
       </p>
       <p>{t('learn.if-getting-value')}</p>
       <hr />
-      <p className={'text-center'}>
+      <p className='btn-container'>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
@@ -81,7 +85,7 @@ const LearnAlert = ({
       <Spacer size='medium' />
       <p className={'text-center'}>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'

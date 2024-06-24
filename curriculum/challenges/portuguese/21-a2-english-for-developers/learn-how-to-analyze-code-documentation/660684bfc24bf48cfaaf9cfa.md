@@ -1,6 +1,6 @@
 ---
 id: 660684bfc24bf48cfaaf9cfa
-title: Task 8
+title: Tarefa 8
 challengeType: 22
 dashedName: task-8
 ---

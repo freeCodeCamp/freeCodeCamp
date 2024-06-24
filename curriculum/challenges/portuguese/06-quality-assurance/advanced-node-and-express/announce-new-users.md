@@ -38,7 +38,7 @@ Envie sua página quando você achar que ela está certa. Se estiver encontrando
 
 # --hints--
 
-Event `'user'` should be emitted with `username`, `currentUsers`, and `connected`.
+O evento `'user'` deve ser emitido com `username`, `currentUsers` e `connected`.
 
 ```js
 async (getUserInput) => {
@@ -74,12 +74,3 @@ async (getUserInput) => {
 }
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

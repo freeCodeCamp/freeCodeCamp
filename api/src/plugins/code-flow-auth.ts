@@ -5,14 +5,11 @@ import { isBefore } from 'date-fns';
 import { type user } from '@prisma/client';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
-import { AccessToken } from '../utils/tokens';
+import { type Token } from '../utils/tokens';
 
 declare module 'fastify' {
   interface FastifyReply {
-    setAccessTokenCookie: (
-      this: FastifyReply,
-      accessToken: AccessToken
-    ) => void;
+    setAccessTokenCookie: (this: FastifyReply, accessToken: Token) => void;
   }
 
   interface FastifyRequest {
@@ -30,21 +27,18 @@ declare module 'fastify' {
 }
 
 const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
-  fastify.decorateReply(
-    'setAccessTokenCookie',
-    function (accessToken: AccessToken) {
-      const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
-      void this.setCookie('jwt_access_token', signedToken, {
-        path: '/',
-        httpOnly: false,
-        secure: false,
-        sameSite: 'lax',
-        domain: COOKIE_DOMAIN,
-        signed: true,
-        maxAge: accessToken.ttl
-      });
-    }
-  );
+  fastify.decorateReply('setAccessTokenCookie', function (accessToken: Token) {
+    const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
+    void this.setCookie('jwt_access_token', signedToken, {
+      path: '/',
+      httpOnly: false,
+      secure: false,
+      sameSite: 'lax',
+      domain: COOKIE_DOMAIN,
+      signed: true,
+      maxAge: accessToken.ttl
+    });
+  });
 
   const TOKEN_REQUIRED = 'Access token is required for this request';
   const TOKEN_INVALID = 'Your access token is invalid';
@@ -72,7 +66,7 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
 
       const {
         accessToken: { created, ttl, userId }
-      } = jwt.decode(jwtAccessToken!) as { accessToken: AccessToken };
+      } = jwt.decode(jwtAccessToken!) as { accessToken: Token };
       const valid = isBefore(Date.now(), Date.parse(created) + ttl);
       if (!valid) return send401(reply, TOKEN_EXPIRED);
 

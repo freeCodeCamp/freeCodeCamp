@@ -60,6 +60,7 @@ import {
 import GreenPass from '../../../assets/icons/green-pass';
 import {
   enhancePrismAccessibility,
+  makePrismCollapsible,
   setScrollbarArrowStyles
 } from '../utils/index';
 import { initializeMathJax } from '../../../utils/math-jax';
@@ -807,6 +808,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     Prism.hooks.add('complete', enhancePrismAccessibility);
+    Prism.hooks.add('complete', makePrismCollapsible);
     Prism.highlightAllUnder(desc);
 
     domNode.style.userSelect = 'text';

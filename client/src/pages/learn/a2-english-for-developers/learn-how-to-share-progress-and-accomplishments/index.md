@@ -6,4 +6,4 @@ superBlock: a2-english-for-developers
 
 ## Introduction to the Learn How to Share Progress and Accomplishments
 
-This is a test for the new project-based curriculum.
+In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects.
