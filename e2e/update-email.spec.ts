@@ -57,7 +57,15 @@ test.describe('The update-email page when the user is not signed in', () => {
     await page.goto('/update-email');
   });
 
-  test('should redirect to the signin page', async ({ page }) => {
+  test('should sign the user in and redirect them to /learn', async ({
+    page,
+    browserName
+  }) => {
+    // The signin step involves multiple navigations, which results a network error in Firefox.
+    // The error is harmless but Playwright doesn't suppress it, causing the test to fail.
+    // Ref: https://github.com/microsoft/playwright/issues/20749
+    test.skip(browserName === 'firefox');
+
     await page.waitForURL(/\/learn\/?/);
 
     await expect(
