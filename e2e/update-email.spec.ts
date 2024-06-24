@@ -58,11 +58,7 @@ test.describe('The update-email page when the user is not signed in', () => {
   });
 
   test('should redirect to the signin page', async ({ page }) => {
-    if (process.env.CI) {
-      await page.waitForURL('**/learn/');
-    } else {
-      await page.waitForURL('**/learn');
-    }
+    await page.waitForURL(/\/learn\/?/);
 
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })

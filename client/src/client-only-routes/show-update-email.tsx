@@ -1,10 +1,14 @@
 import { Link } from 'gatsby';
 import { isString } from 'lodash-es';
-import React, { useState, type FormEvent, type ChangeEvent } from 'react';
+import React, {
+  useState,
+  useEffect,
+  type FormEvent,
+  type ChangeEvent
+} from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
@@ -48,8 +52,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ updateMyEmail, navigate }, dispatch);
+const mapDispatchToProps = { updateMyEmail, navigate };
 
 function ShowUpdateEmail({
   isNewEmail,
@@ -60,10 +63,10 @@ function ShowUpdateEmail({
   const { t } = useTranslation();
   const [emailValue, setEmailValue] = useState('');
 
-  if (!isSignedIn) {
-    navigate(`${apiLocation}/signin`);
-    return <Loader fullScreen={true} />;
-  }
+  useEffect(() => {
+    if (!isSignedIn) navigate(`${apiLocation}/signin`);
+  }, [isSignedIn, navigate]);
+  if (!isSignedIn) return <Loader fullScreen={true} />;
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -71,20 +74,15 @@ function ShowUpdateEmail({
   }
 
   function onChange(event: ChangeEvent<HTMLInputElement>) {
-    const newEmailValue = event.target.value;
-    if (!isString(newEmailValue)) {
-      return null;
-    }
-    setEmailValue(newEmailValue);
+    setEmailValue(event.target.value);
     return null;
   }
 
-  function getEmailValidationState() {
-    if (maybeEmailRE.test(emailValue)) {
-      return isEmail(emailValue) ? 'success' : 'error';
-    }
-    return null;
-  }
+  const emailValidationState = maybeEmailRE.test(emailValue)
+    ? isEmail(emailValue)
+      ? 'success'
+      : 'error'
+    : null;
 
   return (
     <>
@@ -103,7 +101,7 @@ function ShowUpdateEmail({
               >
                 <FormGroup
                   className='update-email-field'
-                  validationState={getEmailValidationState()}
+                  validationState={emailValidationState}
                 >
                   <ControlLabel htmlFor='emailInput'>
                     {t('misc.email')}
@@ -120,7 +118,7 @@ function ShowUpdateEmail({
                   block={true}
                   size='large'
                   variant='primary'
-                  disabled={getEmailValidationState() !== 'success'}
+                  disabled={emailValidationState !== 'success'}
                   type='submit'
                 >
                   {isNewEmail
