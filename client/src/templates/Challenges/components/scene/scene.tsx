@@ -267,7 +267,7 @@ export function Scene({
                 {!alwaysShowDialogue && (
                   <button
                     className='scene-start-btn scene-a11y-btn'
-                    aria-label='closed captions'
+                    aria-label={t('buttons.closed-caption')}
                     aria-pressed={accessibilityOn}
                     onClick={() => setAccessibilityOn(!accessibilityOn)}
                   >
