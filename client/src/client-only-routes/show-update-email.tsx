@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import { isString } from 'lodash-es';
 import React, {
   useState,
   useEffect,
@@ -9,7 +8,6 @@ import React, {
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
 import {
