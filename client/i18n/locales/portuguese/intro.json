@@ -1276,6 +1276,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Aprenda arrays e laços",
         "intro": ["Aprenda sobre arrays e laços de repetição em JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Aprenda a resolver problemas e a entender erros",
+        "intro": [
+          "Aprenda a resolver problemas e a entender os erros em JavaScript."
+        ]
       }
     }
   },
