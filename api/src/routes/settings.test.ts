@@ -10,7 +10,7 @@ import {
 } from '../../jest.utils';
 import { formatMessage } from '../plugins/redirect-with-message';
 import { createUserInput } from '../utils/create-user';
-import { API_LOCATION } from '../utils/env';
+import { API_LOCATION, HOME_LOCATION } from '../utils/env';
 import { isPictureWithProtocol, getWaitMessage } from './settings';
 
 const baseProfileUI = {
@@ -209,7 +209,7 @@ describe('settingRoutes', () => {
         const resNoParams = await superGet('/confirm-email');
 
         expect(resNoParams.headers.location).toBe(
-          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(resNoParams.status).toBe(302);
       });
@@ -221,7 +221,7 @@ describe('settingRoutes', () => {
         );
 
         expect(res.headers.location).toBe(
-          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
       });
@@ -232,7 +232,7 @@ describe('settingRoutes', () => {
         );
 
         expect(res.headers.location).toBe(
-          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
       });
@@ -243,7 +243,7 @@ describe('settingRoutes', () => {
         );
 
         expect(res.headers.location).toBe(
-          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
       });
@@ -254,7 +254,7 @@ describe('settingRoutes', () => {
         );
 
         expect(res.headers.location).toBe(
-          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
       });
@@ -276,7 +276,7 @@ describe('settingRoutes', () => {
         );
 
         expect(res.headers.location).toBe(
-          'http://localhost:8000?' + formatMessage(defaultErrorMessage)
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
       });
@@ -287,7 +287,7 @@ describe('settingRoutes', () => {
         );
 
         expect(res.headers.location).toBe(
-          'http://localhost:8000?' +
+          `${HOME_LOCATION}?` +
             formatMessage({
               content:
                 'The link to confirm your new email address has expired. Please try again.',
@@ -306,7 +306,7 @@ describe('settingRoutes', () => {
         });
 
         expect(res.headers.location).toBe(
-          'http://localhost:8000?' + formatMessage(successMessage)
+          `${HOME_LOCATION}?` + formatMessage(successMessage)
         );
         expect(user.email).toBe(newEmail);
       });
