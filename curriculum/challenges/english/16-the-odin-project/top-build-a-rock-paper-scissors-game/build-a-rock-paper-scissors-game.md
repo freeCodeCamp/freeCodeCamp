@@ -12,58 +12,55 @@ You do not need to worry about the front-end part of the game. You will only wri
 
 **User stories:**
 
-1. You should have a function named `getComputerChoice` function.
+1. You should have a function named `getComputerChoice`.
 
 1. Your `getComputerChoice` function should return "rock", "paper", or "scissors" at random.
 
-**Hint:** The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" target="_blank">Math.random</a> method returns a random number that’s greater than or equal to 0 and less than 1. Think about how you can use this to conditionally return one of the multiple choices.
+**Hint:** The [Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) method returns a random number that’s greater than or equal to 0 and less than 1. Think about how you can use this to conditionally return one of the multiple choices.
 
-Your game will be played by a human player. You will write a function that takes the user choice and returns it.
+Your game will be played by a human player. You will write a function that takes the user's choice and returns it.
 
 1. Create a function named `getHumanChoice`.
 
 1. Write the code so that `getHumanChoice` will return one of the valid choices depending on what the user inputs.
 
-**Hint:** Use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt" target="_blank">prompt</a> method to get the user’s input.
+**Hint:** Use the [prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) method to get the user’s input.
 
-Your game will keep track of the players score. You will write variables to keep track of the players score.
+Your game will keep track of the player's score. You will write variables to keep track of the player's score.
 
 1. Create two new variables named `humanScore` and `computerScore` in the global scope.
 
 1. Initialize those variables with the value of `0`.
 
-
 Your game will be played round by round. You will write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
 
 1. Create a new function named `playRound`.
 
-1. Define two parameters for playRound. parameter one `humanChoice` and parameter two `computerChoice`. Use these two parameters to take the human and computer choices as arguments.
+1. Define two parameters for `playRound`. Parameter one `humanChoice` and parameter two `computerChoice`. Use these two parameters to take the human and computer choices as arguments.
 
 1. Make your function’s `humanChoice` parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
 
 1. Write the code for your `playRound` function that returns a string value representing the round winner.
 
-- If it is a tie it should return `"It's a tie!"`
+- If it is a tie, it should return `"It's a tie!"`.
 
-- If the player wins it should return `"You win! [player choice] beats [computer choice]"`.
+- If the player wins, it should return `"You win! [player choice] beats [computer choice]"`.
 
-- If the computer wins it should return `"You lose! [computer choice] beats [player choice]"`.
-
+- If the computer wins, it should return `"You lose! [computer choice] beats [player choice]"`.
 
 1. Increment the `humanScore` or `computerScore` variable based on the round winner.
 
-Your game will play 3 rounds. You will write a function named `playGame` that calls `playRound` to play 3 rounds, keeps track of the scores and declares a winner at the end.
+Your game will play 3 rounds. You will write a function named `playGame` that calls `playRound` to play 3 rounds, keeps track of the scores, and declares a winner at the end.
 
 1. Create a new function named `playGame`.
 
 1. Create a loop that plays 3 rounds and calls the `playRound` function each time with the human's choice and the computer's choice functions as arguments.
 
-1. At the end of the game, log the winner of the game based on who won the most rounds.
+1. At the end of the game, return the winner of the game based on who won the most rounds.
 
-- If the human player wins more rounds than the computer player, log a message that says `"You win the game!"`.
+- If the human player wins more rounds than the computer player, return a message that says `"You win the game!"`.
 
-- If the computer player wins more rounds than the human player, log a message that says `"You lose the game!"`.
-
+- If the computer player wins more rounds than the human player, return a message that says `"You lose the game!"`.
 
 # --hints--
 
@@ -149,9 +146,10 @@ You should use a loop to play 3 rounds.
 assert.match(playGame.toString(), /\bfor\s*\(/);
 ```
 
-You should log the winner of the game based on who won the most rounds.
+You should return the winner of the game based on who won the most rounds.
 
 ```js
+window.prompt = () => "rock";
 assert.match(playGame(), /You (win|lose) the game!/);
 ```
 
