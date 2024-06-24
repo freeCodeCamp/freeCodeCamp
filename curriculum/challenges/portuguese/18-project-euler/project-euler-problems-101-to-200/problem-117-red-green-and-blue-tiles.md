@@ -10,7 +10,7 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 Usando uma combinação de blocos quadrados pretos e blocos oblongos selecionados entre: blocos vermelhos medindo duas unidades, blocos verdes medindo três unidades e blocos azuis medindo quatro unidades, é possível fazer fileiras de cinco unidades de comprimento exatamente de quinze formas diferentes.
 
-<img class="img-responsive center-block" alt="Formas possíveis de colocar oblongos vermelhos, verdes e azuis em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="Formas possíveis de colocar oblongos vermelhos, verdes e azuis em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 De quantas maneiras uma fileira de cinquenta unidades de comprimento pode ser preenchida?
 

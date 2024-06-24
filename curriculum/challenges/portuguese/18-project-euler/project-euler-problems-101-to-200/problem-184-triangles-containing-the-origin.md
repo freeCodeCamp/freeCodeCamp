@@ -12,7 +12,7 @@ Considere o conjunto $I_r$ de pontos $(x,y)$ com coordenadas inteiras no interio
 
 Para um raio de 2, $I_2$ contém os nove pontos (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) e (1,-1). Há oito triângulos com todos os três vértices em $I_2$ que contêm a origem no interior. Dois deles são mostrados abaixo. Os outros são obtidos por rotação.
 
-<img class="img-responsive center-block" alt="círculo com raio 2, centralizado na origem, com nove pontos marcados e dois triângulos - (-1,0), (0,1), (1,-1) e (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
+<img alt="círculo com raio 2, centralizado na origem, com nove pontos marcados e dois triângulos - (-1,0), (0,1), (1,-1) e (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Para um raio de 3, há 360 triângulos contendo a origem no interior e tendo todos os vértices em $I_3$. Para $I_5$, o número é 10600.
 

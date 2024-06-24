@@ -10,7 +10,7 @@ dashedName: problem-86-cuboid-route
 
 Павук S сидить в одному кутку кімнати у формі паралелепіпеда 6×5×3, а муха F сидить в протилежному кутку. Подорожуючи поверхнями кімнати, найкоротша відстань від S до F становить 10, як показано на малюнку нижче.
 
-<img class="img-responsive center-block" alt="шлях павука та мухи з одного кута кімнати у протилежний" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img alt="шлях павука та мухи з одного кута кімнати у протилежний" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Однак для будь-якого прямокутного паралелепіпеда існує до трьох можливих «найкоротших» шляхів, а найкоротший не завжди має цілу довжину.
 

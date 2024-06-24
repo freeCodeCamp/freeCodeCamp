@@ -10,7 +10,7 @@ dashedName: problem-109-darts
 
 У грі «Дартс» гравець кидає три дротики у мішень, розділену на двадцять рівних секторів, пронумерованих від одного до двадцяти.
 
-<img class="img-responsive center-block" alt="Мішень для дартс" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;" />
+<img alt="Мішень для дартс" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Кількість очок визначається номером сектору, у який потрапив дротик. Влучання дротика за межами червоного/зеленого зовнішнього кільця не приносить очок. Кожному чорному та білому сектору всередині цього кільця привласнене окреме число. Червоне/зелене зовнішнє та середнє кільця подвоюють чи потроюють числа сектора відповідно.
 

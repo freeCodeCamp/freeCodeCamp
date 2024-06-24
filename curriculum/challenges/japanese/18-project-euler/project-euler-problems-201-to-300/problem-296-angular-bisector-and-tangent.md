@@ -12,7 +12,7 @@ dashedName: problem-296-angular-bisector-and-tangent
 
 $n$ と $k$ の交点を $E$ とします。
 
-<img class="img-responsive center-block" alt="三角形 ABC において、k は角 ACB の二等分線、m は点 C での接線、n は B を通り m に平行な線、点 E は k と n の交点を示す" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+<img alt="三角形 ABC において、k は角 ACB の二等分線、m は点 C での接線、n は B を通り m に平行な線、点 E は k と n の交点を示す" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $BE$ の長さが整数であり周長が $100\\,000$ を超えない三角形 $ABC$ はいくつありますか。
 

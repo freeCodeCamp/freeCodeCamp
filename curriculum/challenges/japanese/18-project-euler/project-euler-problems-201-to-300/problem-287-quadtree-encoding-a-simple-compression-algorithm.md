@@ -19,7 +19,7 @@ dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 
 次の 4×4 の画像について考えます (色付きのマークは分割可能な場所を示します)。
 
-<img class="img-responsive center-block" alt="分割可能な場所が色付きマークで示されている 4x4 の画像" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;" />
+<img alt="分割可能な場所が色付きマークで示されている 4x4 の画像" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 この画像は、例えば次のようにいくつかの数列で表すことができます。"<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010" (長さ 30)、または "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110" (長さ 16、この画像での最小数列)
 

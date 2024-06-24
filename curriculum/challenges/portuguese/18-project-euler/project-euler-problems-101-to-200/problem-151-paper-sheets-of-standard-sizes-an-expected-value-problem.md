@@ -16,7 +16,7 @@ Ele, então, prossegue reduzindo-a ao meio e obtendo, assim, duas folhas de tama
 
 Todas as folhas não utilizadas são colocadas de volta no envelope.
 
-<img class="img-responsive center-block" alt="Folha de tamanho A1 dividida em: A2, A3, A4 e duas folhas A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+<img alt="Folha de tamanho A1 dividida em: A2, A3, A4 e duas folhas A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 No início de cada lote subsequente, ele tira uma folha de papel do envelope aleatoriamente. Se ela for de tamanho A5, ele a usa. Se for maior, ele repete o procedimento de "cortar pela metade" até ter o que precisa. Todas as folhas restantes são sempre colocadas de volta no envelope.
 

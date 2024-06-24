@@ -14,7 +14,7 @@ Quando tagliamo il foglio lungo le linee della griglia in due pezzi e riordiniam
 
 Ad esempio, da un foglio con dimensioni 9 × 4, possiamo realizzare rettangoli con dimensioni 18 × 2, 12 × 3 e 6 × 6 mediante taglio e riarrangiamento come segue:
 
-<img class="img-responsive center-block" alt="foglio con 9 x 4 dimensioni tagliato in tre modi diversi per realizzare rettangoli con dimensioni 18 x 2, 12 x 3 e 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img alt="foglio con 9 x 4 dimensioni tagliato in tre modi diversi per realizzare rettangoli con dimensioni 18 x 2, 12 x 3 e 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Allo stesso modo, da un foglio con dimensioni 9 × 8, possiamo realizzare rettangoli con dimensioni 18 × 4 e 12 × 6.
 

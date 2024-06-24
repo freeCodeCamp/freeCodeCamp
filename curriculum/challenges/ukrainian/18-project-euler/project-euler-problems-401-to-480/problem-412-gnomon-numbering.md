@@ -12,13 +12,13 @@ dashedName: problem-412-gnomon-numbering
 
 Наприклад, $L(5, 3)$ виглядає так:
 
-<img class="img-responsive center-block" alt="сітка 5x5 без верхньої правої частини розміром 3x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-1.png" style="background-color: white; padding: 10px;" />
+<img alt="сітка 5x5 без верхньої правої частини розміром 3x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 У кожну клітинку $L(m, n)$ потрібно ввести послідовні цілі числа (1, 2, 3, ...) так, щоб число в кожній клітинці було меншим ніж те, яке знаходиться внизу та зліва.
 
 Наприклад, ось два варіанти нумерації для $L(5, 3)$:
 
-<img class="img-responsive center-block" alt="дві можливі нумерації L(5, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px;" />
+<img alt="дві можливі нумерації L(5, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $LC(m, n)$ буде кількістю можливих варіантів нумерації $L(m, n)$. Можна довести, що $LC(3, 0) = 42$, $LC(5, 3) = 250\\,250$, $LC(6, 3) = 406\\,029\\,023\\,400$ та $LC(10, 5)\bmod 76\\,543\\,217 = 61\\,251\\,715$.
 

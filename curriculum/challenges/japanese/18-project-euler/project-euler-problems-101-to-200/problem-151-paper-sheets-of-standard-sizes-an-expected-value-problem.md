@@ -16,7 +16,7 @@ dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 
 使われなかった用紙はすべて封筒に戻されます。
 
-<img class="img-responsive center-block" alt="各 1 枚の A2, A3, A4 と 2 枚の A5 に分割された A1 サイズの用紙" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+<img alt="各 1 枚の A2, A3, A4 と 2 枚の A5 に分割された A1 サイズの用紙" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 印刷を始めるときは毎回、班長が封筒から無作為に紙を 1 枚取り出します。 それが A5 サイズであればそれを使用します。 A5 より大きければ、半分に切る作業を繰り返して A5 用紙を 1 枚使用し、残りを封筒に戻します。
 

@@ -14,7 +14,7 @@ dashedName: problem-453-lattice-quadrilaterals
 
 Наприклад, $Q(2, 2) = 94$, як можна побачити нижче:
 
-<img class="img-responsive center-block" alt="94 чотирикутники, вершинами яких є точки сітки з координатами (x, y), задовільняючи умову 0 &le; x &le; m та 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
+<img alt="94 чотирикутники, вершинами яких є точки сітки з координатами (x, y), задовільняючи умову 0 &le; x &le; m та 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Можна довести, що $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$ та $Q(123, 45) = 70\\,542\\,215\\,894\\,646$.
 

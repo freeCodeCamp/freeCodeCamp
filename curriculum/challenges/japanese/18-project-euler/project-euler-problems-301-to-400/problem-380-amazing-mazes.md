@@ -10,7 +10,7 @@ dashedName: problem-380-amazing-mazes
 
 $m×n$ の長方形格子で作られた $m×n$ 迷路があります。格子の各マスの間に壁があり、左上のマスからスタートし、他のいずれのマスへ行くにも経路は 1 つしかありません。 下図は、9×12 迷路と15×20 迷路の例です。
 
-<img class="img-responsive center-block" alt="9x12 迷路と15x20 迷路" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img alt="9x12 迷路と15x20 迷路" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 相異なる $m×n$ 迷路の数を $C(m, n)$ とします。 別の迷路の回転や反転によって形成される迷路は、相異なる迷路とみなされます。
 

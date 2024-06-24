@@ -12,13 +12,13 @@ dashedName: problem-412-gnomon-numbering
 
 例えば、$L(5, 3)$ は下図のようになります。
 
-<img class="img-responsive center-block" alt="5x5 格子の右上から 3x3 格子を取り除いたもの" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-1.png" style="background-color: white; padding: 10px;" />
+<img alt="5x5 格子の右上から 3x3 格子を取り除いたもの" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 すべてのマスの数字が下のマスと左のマスにある数字よりも小さくなるように、$L(m, n)$ の各マスに連続整数 1, 2, 3, ... を付けるとします。
 
 下図は、$L(5, 3)$ に対する有効な番号付けの 2 例です。
 
-<img class="img-responsive center-block" alt="L(5, 3) の有効な番号付け 2 例" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px;" />
+<img alt="L(5, 3) の有効な番号付け 2 例" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $L(m, n)$ の有効な番号付けの個数を $LC(m, n)$ とします。 $LC(3, 0) = 42$, $LC(5, 3) = 250\\,250$, $LC(6, 3) = 406\\,029\\,023\\,400$, $LC(10, 5)\bmod 76\\,543\\,217 = 61\\,251\\,715$ であることを確認できます。
 

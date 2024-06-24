@@ -10,7 +10,7 @@ dashedName: problem-199-iterative-circle-packing
 
 Три кола з однаковим радіусом розміщені всередині більшого кола так, що кожна пара кіл дотична одна до одної, а внутрішні кола не перетинаються. Залишається чотири непокритих «прогалини», які потрібно інтерактивно заповнити дотичними колами.
 
-<img class="img-responsive center-block" alt="зображення кіл, які не перетинаються" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="зображення кіл, які не перетинаються" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 При кожній ітерації у прогалині розміщують максимально велике коло, що створює ще більше прогалин для наступної ітерації. Після трьох ітерацій (на малюнку) залишилось 108 прогалин, а частка непокритої площі становить 0.06790342, заокругливши до восьми знаків після коми.
 

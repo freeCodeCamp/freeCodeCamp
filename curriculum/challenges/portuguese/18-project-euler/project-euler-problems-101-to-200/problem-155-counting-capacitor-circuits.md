@@ -14,7 +14,7 @@ Os capacitores podem ser conectados em série ou em paralelo para formar subunid
 
 Utilizando este procedimento simples e com n capacitores idênticos, podemos fazer circuitos que tenham um intervalo de capacitâncias total diferentes. Por exemplo, usando até $n = 3$ capacitores de $60 μF$ cada, podemos obter os seguintes 7 valores distintos de capacitância total:
 
-<img class="img-responsive center-block" alt="circuitos de exemplo com até três capacitores, cada um com 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img alt="circuitos de exemplo com até três capacitores, cada um com 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Se considerarmos $D(n)$ o número de valores de capacitância total distintos que podemos obter ao usar até $n$ capacitores de valor igual e o procedimento simples descrito acima, temos: $D(1) = 1, D(2) = 3, D(3)=7, \ldots$
 

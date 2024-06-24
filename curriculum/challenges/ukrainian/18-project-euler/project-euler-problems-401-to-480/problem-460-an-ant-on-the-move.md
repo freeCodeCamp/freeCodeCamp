@@ -23,7 +23,7 @@ dashedName: problem-460-an-ant-on-the-move
 
 Зображення праворуч демонструє інший шлях. Загальний необхідний час вираховується як $0.98026 + 1 + 0.98026 = 2.96052$. Як бачимо, це найшвидший шлях за умови $d = 4$.
 
-<img class="img-responsive center-block" alt="два можливих шляхи за умови d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
+<img alt="два можливих шляхи за умови d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $F(d)$ буде загальним необхідним часом, якщо мураха обирає найшвидший шлях. Наприклад, $F(4) ≈ 2.960\\,516\\,287$. Можна довести, що $F(10) ≈ 4.668\\,187\\,834$ та $F(100) ≈ 9.217\\,221\\,972$.
 

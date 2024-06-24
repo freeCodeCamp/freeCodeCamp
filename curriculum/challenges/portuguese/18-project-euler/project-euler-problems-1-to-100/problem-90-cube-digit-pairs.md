@@ -12,7 +12,7 @@ Cada uma das seis faces em um cubo tem um algarismo diferente (de 0 a 9) escrito
 
 Por exemplo, o número quadrado 64 poderia ser formado assim:
 
-<img class="img-responsive center-block" alt="dois cubos, um com o número 6 e o outro com o número 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
+<img alt="dois cubos, um com o número 6 e o outro com o número 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 De fato, se escolhermos cuidadosamente os algarismos em ambos os cubos, é possível exibir todos os números quadrados abaixo de cem: 01, 04, 09, 16, 25, 36, 49, 64 e 81.
 

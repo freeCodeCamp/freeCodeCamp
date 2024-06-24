@@ -1,13 +1,13 @@
 ---
 id: 66581a7db1eb2281159492ff
-title: Learn to Solve Problems and Understand Errors Question F
+title: Навчіться розв’язувати задачі та розуміти помилки. Запитання F
 challengeType: 15
 dashedName: learn-to-solve-problems-and-understand-errors-question-f
 ---
 
 # --description--
 
-Another important part of an error is the stack trace. This helps you understand when the error was thrown in your application, and what functions were called that led up to the error. So, for example, if you have the following code:
+Ще одна важлива частина помилки — траса стеку. Вона допомагає зрозуміти, коли помилка була викликана у програмі і які функції були викликані, що призвело до помилки. Наприклад, у вас такий код:
 
 ```javascript
 const a = 5;
@@ -24,39 +24,39 @@ function print() {
 print();
 ```
 
-Our function `print()` should call on `add()`, which returns a variable named `c`, which currently has not been declared. The corresponding error is as follows:
+Функція `print()` має викликати `add()`, що повертає змінну під назвою `c`, яку поки не оголошено. Виникає відповідна помилка:
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/284f0cdc998be7e4751e29e8458323ad5d320303/foundations/javascript_basics/understanding_errors/imgs/01.png" width="100%" alt="An error showing with a stacktrace in the developer console" />
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/284f0cdc998be7e4751e29e8458323ad5d320303/foundations/javascript_basics/understanding_errors/imgs/01.png" width="100%" alt="Відтворення помилки з трасою стеку на консолі розробника" />
 
-The stack trace tells us that:
+Траса стеку повідомляє, що:
 
-1. `c is not defined` in scope of `add()`, which is declared on line 5.
-1. `add()` was called by `print()`, which was declared on line 9.
-1. `print()` itself was called on line 12.
+1. `c is not defined` в області `add()`, що оголошено в рядку 5.
+1. `add()` було викликано `print()`, що оголошено в рядку 9.
+1. `print()` було викликано в рядку 12.
 
-Thus the stack trace lets you trace the evolution of an error back to its origin, which here is the declaration of `add()`.
+Отже, траса стеку дозволяє відстежувати походження помилки до її джерела, яким є оголошення `add()`.
 
 # --question--
 
 ## --text--
 
-How does the stack trace help in debugging the error in the provided JavaScript code?
+Як траса стеку допомагає з налагодженням помилок в наданому коді JavaScript?
 
 ## --answers--
 
-The stack trace shows that the function `add()` correctly returns the value of `c`.
+Траса стеку показує, що функція `add()` правильно повертає значення `c`.
 
 ---
 
-The stack trace indicates which line in the code needs to be edited to correct a syntax error.
+Траса стеку вказує, який рядок коду потрібно відредагувати, щоб виправити помилку синтаксису.
 
 ---
 
-The stack trace provides a detailed path of function calls leading to the error, helping identify where `c` is incorrectly referenced.
+Траса стеку надає детальний шлях викликів функцій, які призвели до помилки, що допомагає визначити, де неправильно використовується `c`.
 
 ---
 
-The stack trace only indicates that `print()` was called, but does not provide details about the error in `add()`.
+Траса стеку лише показує, що було викликано `print()`, але не надає деталей щодо помилки в `add()`.
 
 ## --video-solution--
 

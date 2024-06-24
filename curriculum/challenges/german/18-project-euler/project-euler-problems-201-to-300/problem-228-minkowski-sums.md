@@ -19,7 +19,7 @@ Die Minkowski-Summe $S + T$ zweier Formen $S$ und $T$ ist das Ergebnis der Addit
 
 Zum Beispiel ist die Summe von $S_3$ und $S_4$ die unten rosa dargestellte sechsseitige Form:
 
-<img class="img-responsive center-block" alt="das Bild zeigt S_3, S_4 und S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
+<img alt="das Bild zeigt S_3, S_4 und S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Wie viele Seiten hat $S_{1864} + S_{1865} + \ldots + S_{1909}$?
 

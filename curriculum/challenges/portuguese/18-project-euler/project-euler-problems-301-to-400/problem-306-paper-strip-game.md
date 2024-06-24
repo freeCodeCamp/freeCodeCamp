@@ -18,7 +18,7 @@ Dois jogadores começam com uma tira de papel com $n$ quadrados brancos e eles r
 - $n = 4$: Há três movimentos válidos para o primeiro jogador; ele é capaz de vencer o jogo pintando os dois quadrados do meio.
 - $n = 5$: Quatro movimentos válidos para o primeiro jogador (mostrado abaixo em vermelho); mas não importa o que o jogador faça, o segundo jogador (azul) ganha.
 
-<img class="img-responsive center-block" alt="movimentos iniciais válidos para uma tira com 5 quadrados" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="movimentos iniciais válidos para uma tira com 5 quadrados" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Então, para $1 ≤ n ≤ 5$, há 3 valores de $n$ para os quais o primeiro jogador pode forçar uma vitória.
 

@@ -18,7 +18,7 @@ dashedName: problem-306-paper-strip-game
 - $n = 4$: три дійсні ходи для першого гравця, який може виграти гру, замалювавши два середніх квадрати.
 - $n = 5$: чотири дійсні ходи для першого гравця (показано нижче червоним кольором), але незважаючи на його дії, виграє другий гравець (синій колір).
 
-<img class="img-responsive center-block" alt="дійсні початкові ходи на смужці з 5 квадратів" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="дійсні початкові ходи на смужці з 5 квадратів" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Тому за умови $1 ≤ n ≤ 5$ існує три значення $n$, за яких може виграти перший гравець.
 

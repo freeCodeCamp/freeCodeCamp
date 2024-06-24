@@ -10,7 +10,7 @@ dashedName: problem-85-counting-rectangles
 
 Contando con attenzione si può vedere che una griglia rettangolare che misura 3 per 2 contiene 18 rettangoli:
 
-<img class="img-responsive center-block" alt="un diagramma dei differenti rettangoli trovati dentro una griglia rettangolare 3 per 2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img alt="un diagramma dei differenti rettangoli trovati dentro una griglia rettangolare 3 per 2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Anche se potrebbe esistere una griglia rettangolare che contiene esattamente `n` rettangoli, trova l'area della griglia con la soluzione più vicina.
 

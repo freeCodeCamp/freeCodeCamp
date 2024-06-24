@@ -12,7 +12,7 @@ Lasse (a, b, c) die drei Seiten eines rechtwinkligen Dreiecks mit ganzzahligen S
 
 For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5 square can be tiled with twenty-five 1 by 1 squares.
 
-<img class="img-responsive center-block" alt="zwei 5 x 5-Quadrate: eines mit vier 3x4x5-Dreiecken, die so angeordnet sind, dass in der Mitte ein 1x1-Loch entsteht; das zweite mit fünfundzwanzig 1x1-Quadraten" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="zwei 5 x 5-Quadrate: eines mit vier 3x4x5-Dreiecken, die so angeordnet sind, dass in der Mitte ein 1x1-Loch entsteht; das zweite mit fünfundzwanzig 1x1-Quadraten" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Würde man jedoch (5, 12, 13) Dreiecke verwenden, wäre das Loch 7 mal 7 groß. Diese 7 mal 7 Quadrate können nicht für das 13 mal 13 Quadrat verwendet werden.
 

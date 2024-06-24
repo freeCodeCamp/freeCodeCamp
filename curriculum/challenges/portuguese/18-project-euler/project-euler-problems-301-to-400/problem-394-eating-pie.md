@@ -19,7 +19,7 @@ Enquanto houver ao menos uma fração $F$ determinada da torta restando, ele rea
 
 Quando menos que uma fração $F$ da torta restar, ele para de repetir esse procedimento. Em vez disso, ele come toda a torta que resta.
 
-<img class="img-responsive center-block" alt="animação do procedimento do corte da torta em fatias" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação do procedimento do corte da torta em fatias" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Para $x ≥ 1$, considere $E(x)$ como o número esperado de vezes que Jeff repetirá o procedimento acima com $F = \frac{1}{x}$. Pode-se verificar que $E(1) = 1$, $E(2) ≈ 1,2676536759$, e $E(7,5) ≈ 2,1215732071$.
 

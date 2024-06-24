@@ -18,7 +18,7 @@ Em uma árvore desse tipo, dois jogadores jogam um jogo de remoção de nós. Em
 
 Aqui estão os movimentos vencedores para o primeiro jogador no primeiro movimento para $T(k)$ de $k = 1$ a $k = 6$.
 
-<img class="img-responsive center-block" alt="movimentos vencedores do primeiro jogador, no primeiro movimento, para k = 1 a k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img alt="movimentos vencedores do primeiro jogador, no primeiro movimento, para k = 1 a k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $f(k)$ como o número de movimentos vencedores do primeiro jogador (ou seja, movimentos para os quais o segundo jogador não pode ter uma estratégia vencedora) no primeiro movimento desse jogo quando ele é jogado em $T(k)$.
 

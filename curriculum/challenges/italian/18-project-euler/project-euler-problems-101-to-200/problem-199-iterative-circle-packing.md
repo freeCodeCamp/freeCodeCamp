@@ -10,7 +10,7 @@ dashedName: problem-199-iterative-circle-packing
 
 Tre cerchi di raggio uguale sono posizionati all'interno di un cerchio più grande in modo che in ogni coppia i cerchi siano tangenti l'uno all'altro e i cerchi interni non si sovrappongono. Ci sono quattro "lacune" scoperte che devono essere riempite iterativamente con più cerchi tangenti.
 
-<img class="img-responsive center-block" alt="un diagramma con cerchi non sovrapposti" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="un diagramma con cerchi non sovrapposti" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 A ogni iterazione, un cerchio di dimensioni massime viene posto in ogni lacuna, creando ulteriori vuoti per l'iterazione successiva. Dopo 3 iterazioni (foto), ci sono 108 vuoti e la frazione della zona che non è coperta da cerchi è 0.06790342, arrotondata all’ottavo decimale.
 

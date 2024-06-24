@@ -18,7 +18,7 @@ dashedName: problem-422-sequence-of-points-on-a-hyperbola
 - $P_2 = (\frac{-43}{6}, -4)$.
 - За умови $i > 2$, $P_i$ є унікальною точкою гіперболи $H$, яка відрізняється від $P_{i - 1}$, та за якої пряма $P_iP_{i - 1}$ паралельна прямій $P_{i - 2}X$. Можна довести, що $P_i$ однозначно визначена, а її координати завжди раціональні.
 
-<img class="img-responsive center-block" alt="анімація з визначеними точками від P_1 до P_6" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація з визначеними точками від P_1 до P_6" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Дано, що $P_3 = (\frac{-19}{2}, \frac{-229}{24})$, $P_4 = (\frac{1267}{144}, \frac{-37}{12})$ та $P_7 = (\frac{17\\,194\\,218\\,091}{143\\,327\\,232}, \frac{274\\,748\\,766\\,781}{1\\,719\\,926\\,784})$.
 

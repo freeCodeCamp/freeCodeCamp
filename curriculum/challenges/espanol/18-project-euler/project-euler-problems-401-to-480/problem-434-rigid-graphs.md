@@ -20,11 +20,11 @@ Informalmente, un gráfico es rígido si reemplazando los vértices con bisagras
 
 Los gráficos de cuadrícula embebidos en el plano Euclideano no son rígidos, como lo demuestra la siguiente animación:
 
-<img class="img-responsive center-block" alt="la animación muestra que los gráficos de cuadrícula no son rígidos en el plano Euclideano" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="la animación muestra que los gráficos de cuadrícula no son rígidos en el plano Euclideano" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sin embargo, uno puede hacerlos rígidos agregando esquinas diagonales a las celdas. Por ejemplo, para un gráfico de cuadrícula de 2x3, hay 19 maneras para hacer el gráfico rígido:
 
-<img class="img-responsive center-block" alt="19 maneras para hacer rígido el gráfico de cuadrícula de 2x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+<img alt="19 maneras para hacer rígido el gráfico de cuadrícula de 2x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Tenga en cuenta que para propósitos de este problema, no consideramos la orientación de un borde diagonal o agregar ambos bordes diagonales a la celda como diferente manera de hacer rígida una gráfica de cuadrícula.
 

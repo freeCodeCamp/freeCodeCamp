@@ -19,7 +19,7 @@ A soma de Minkowski, $S + T$, de duas formas $S$ e $T$ é o resultado de adicion
 
 Por exemplo, a soma de $S_3$ e $S_4$ é a forma de seis lados mostrada em rosa abaixo:
 
-<img class="img-responsive center-block" alt="imagem mostrando S_3, S_4 e S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
+<img alt="imagem mostrando S_3, S_4 e S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quantos lados tem $S_{1864} + S_{1865} + \ldots + S_{1909}$?
 

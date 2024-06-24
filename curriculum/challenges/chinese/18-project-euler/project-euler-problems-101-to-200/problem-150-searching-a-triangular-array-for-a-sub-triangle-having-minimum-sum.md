@@ -13,7 +13,7 @@ In a triangular array of positive and negative integers, we wish to find a sub-t
 
 在下面的示例中，可以很容易地验证标记的三角形满足具有 -42 的总和的条件。
 
-<img class="img-responsive center-block" alt="三角形数组，带有标记的子三角形，总和 -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
+<img alt="三角形数组，带有标记的子三角形，总和 -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 我们希望制作一个包含一千行的三角形数组，因此我们使用一种随机数生成器（称为线性同余生成器）生成 500500 个伪随机数 $s_k$ ，范围为 $±2^{19}$，如下所示：
 

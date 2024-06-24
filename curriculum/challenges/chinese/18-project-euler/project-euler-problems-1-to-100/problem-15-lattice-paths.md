@@ -10,7 +10,7 @@ dashedName: problem-15-lattice-paths
 
 Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
 
-<img class="img-responsive center-block" alt="图片展示了到达 2 × 2 网格右下角的所有 6 条路径" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img alt="图片展示了到达 2 × 2 网格右下角的所有 6 条路径" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 给定网格大小为 `gridSize`，请求出这样的路径有多少条?
 

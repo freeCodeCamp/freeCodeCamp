@@ -21,7 +21,7 @@ $$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
 
 円 $C_0$, $C_1$, $C_2$ を下図に示します。
 
-<img class="img-responsive center-block" alt="円 C_0, C_1, C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="円 C_0, C_1, C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $C_0$ と $C_1$ はレンズ状の穴を形成し、$C_0$ と $C_2$ も同様です。
 

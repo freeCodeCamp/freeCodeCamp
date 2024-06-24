@@ -12,7 +12,7 @@ dashedName: problem-215-crack-free-walls
 
 Наприклад, ця стіна 9×3 неправильна через тріщину, виділену червоним кольором:
 
-<img class="img-responsive center-block" alt="Стіна 9x3 з проміжками, що утворили лінію між горизонтально-прилеглими цеглинами" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
+<img alt="Стіна 9x3 з проміжками, що утворили лінію між горизонтально-прилеглими цеглинами" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Існує вісім способів утворити стіну 9×3 без тріщин. Запишемо як $W(9,3) = 8$.
 

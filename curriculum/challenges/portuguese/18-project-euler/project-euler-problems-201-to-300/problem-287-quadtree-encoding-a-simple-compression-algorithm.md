@@ -19,7 +19,7 @@ A codificação quadtree nos permite descrever uma imagem $2^N×2^N$ preta e bra
 
 Considere a seguinte imagem 4×4 (pontos coloridos denotam lugares onde uma divisão pode ocorrer):
 
-<img class="img-responsive center-block" alt="imagem 4x4 com marcas coloridas denotam lugares onde a divisão pode ocorrer" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;" />
+<img alt="imagem 4x4 com marcas coloridas denotam lugares onde a divisão pode ocorrer" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Essa imagem pode ser descrita por várias sequências, por exemplo: "<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010", de comprimento 30, ou "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110", de comprimento 16, que é a sequência mínima para essa imagem.
 

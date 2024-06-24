@@ -12,7 +12,7 @@ The blancmange curve is the set of points ($x$,$y$) such that $0 ≤ x ≤ 1$ an
 
 El área bajo la curva de manjar blanco es igual a $\frac{1}{2}$, mostrada en rosa en el siguiente diagrama.
 
-<img class="img-responsive center-block" alt="diagrama de curva de manjar blanco, con círculo C mostrado en el diagrama" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img alt="diagrama de curva de manjar blanco, con círculo C mostrado en el diagrama" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sea $C$ el círculo con centro ($\frac{1}{4}$,$\frac{1}{2}$) y radio $\frac{1}{4}$, mostrado en negro en el diagrama.
 

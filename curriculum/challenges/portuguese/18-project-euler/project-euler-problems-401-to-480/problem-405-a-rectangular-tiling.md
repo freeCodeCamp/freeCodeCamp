@@ -14,11 +14,11 @@ Considere $T(0)$ como a área a ser ladrilhada, consistindo em um único retâng
 
 Para $n > 0$, considere $T(n)$ como tendo sido obtido a partir de $T( n- 1)$ substituindo todos os ladrilhos da seguinte maneira:
 
-<img class="img-responsive center-block" alt="obtendo T(n) a partir de T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img alt="obtendo T(n) a partir de T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 A animação a seguir demonstra o preenchimento com ladrilhos de $T(n)$ para $n$ de 0 a 5:
 
-<img class="img-responsive center-block" alt="animação do ladrilhamento de T(n) para n de 0 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação do ladrilhamento de T(n) para n de 0 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $f(n)$ como o número de pontos em que quatro ladrilhos se encontram em $T(n)$. Por exemplo, $f(1) = 0$, $f(4) = 82$ e $f({10}^9)\bmod {17}^7 = 126.897.180$.
 

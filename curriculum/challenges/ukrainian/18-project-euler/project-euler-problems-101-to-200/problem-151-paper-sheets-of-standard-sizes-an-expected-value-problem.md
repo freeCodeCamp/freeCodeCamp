@@ -16,7 +16,7 @@ dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 
 Усі невикористані аркуші кладуть назад у конверт.
 
-<img class="img-responsive center-block" alt="аркуш A1 можна поділити на A2, A3, A4 та два A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+<img alt="аркуш A1 можна поділити на A2, A3, A4 та два A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 На початку кожної наступної партії він навмання бере один аркуш паперу з конверта. Якщо це А5, то майстер використовує його. Якщо ж більший, то він повторює процедуру «розрізання навпіл», поки не отримає те, що йому потрібно, а решту аркушів повертає назад до конверта.
 

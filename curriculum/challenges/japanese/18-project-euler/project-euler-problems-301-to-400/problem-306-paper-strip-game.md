@@ -18,7 +18,7 @@ dashedName: problem-306-paper-strip-game
 - $n = 4$: 先手には 3 通りの有効な塗り方があります。中央の 2 マスを塗れば勝てます。
 - $n = 5$: 先手には有効な塗り方が 4 通りありますが (下図の赤色)、いずれでも後手 (青) が勝ちます。
 
-<img class="img-responsive center-block" alt="5 マスの短冊において有効な最初の塗り方" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="5 マスの短冊において有効な最初の塗り方" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 したがって、$1 ≤ n ≤ 5$ のとき、先手が必ず勝てるような $n$ の値は 3 つあります。
 

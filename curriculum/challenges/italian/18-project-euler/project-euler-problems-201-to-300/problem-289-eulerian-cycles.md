@@ -16,7 +16,7 @@ Un ciclo euleriano su $E(m,n)$ è un percorso chiuso che passa attraverso ogni a
 
 L'immagine qui sotto mostra $E(3,3)$ e un esempio di un percorso euleriano senza incroci.
 
-<img class="img-responsive center-block" alt="Ciclo euleriano E(3, 3) e percorso euleriano senza incroci" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;" />
+<img alt="Ciclo euleriano E(3, 3) e percorso euleriano senza incroci" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $L(m,n)$ il numero di percorsi euleriani senza incroci su $E(m,n)$. Per esempio, $L(1,2) = 2$, $L(2,2) = 37$ e $L(3,3) = 104290$.
 

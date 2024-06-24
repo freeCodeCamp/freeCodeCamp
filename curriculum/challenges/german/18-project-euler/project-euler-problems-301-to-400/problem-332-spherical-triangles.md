@@ -10,7 +10,7 @@ dashedName: problem-332-spherical-triangles
 
 A spherical triangle is a figure formed on the surface of a sphere by three great circular arcs intersecting pairwise in three vertices.
 
-<img class="img-responsive center-block" alt="sphärisches Dreieck, das auf der Oberfläche einer Kugel gebildet wird" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
+<img alt="sphärisches Dreieck, das auf der Oberfläche einer Kugel gebildet wird" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Lasse $C(r)$ die Kugel mit dem Mittelpunkt (0,0,0) und dem Radius $r$ sein.
 
