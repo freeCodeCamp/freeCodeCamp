@@ -8,7 +8,7 @@ dashedName: problem-424-kakuro
 
 # --description--
 
-<img class="img-responsive center-block" alt="exemplo de kakuro" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
+<img alt="exemplo de kakuro" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Acima, vemos um exemplo de um quebra-cabeças kakuro críptico (também conhecido como somas cruzadas, ou mesmo um cruzamento de somas), com a sua solução final à direita. As regras comuns dos quebra-cabeças kakuro podem ser encontradas facilmente em vários sites da Internet. Outras informações relacionadas também podem ser encontradas atualmente em krazydad.com, cujo autor forneceu os dados do quebra-cabeça para este desafio.
 

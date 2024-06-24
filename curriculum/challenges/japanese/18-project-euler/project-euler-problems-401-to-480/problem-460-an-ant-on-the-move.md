@@ -23,7 +23,7 @@ $P_1(1, 3)$ から $P_2(3, 3)$ までは速度 3 で移動するので、所要�
 
 右側の図は別の経路です。 合計所要時間は $0.98026 + 1 + 0.98026 = 2.96052$ となります。 これが $d = 4$ に対する最速経路であることが分かっています。
 
-<img class="img-responsive center-block" alt="d = 4 に対して考えられる経路" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
+<img alt="d = 4 に対して考えられる経路" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 アリが最速経路を選んだ場合の合計所要時間を $F(d)$ とします。 例えば、$F(4) ≈ 2.960\\,516\\,287$ です。 $F(10) ≈ 4.668\\,187\\,834$, $F(100) ≈ 9.217\\,221\\,972$ であることを確認できます。
 

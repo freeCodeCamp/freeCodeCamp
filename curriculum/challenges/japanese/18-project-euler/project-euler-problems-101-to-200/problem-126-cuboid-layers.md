@@ -10,7 +10,7 @@ dashedName: problem-126-cuboid-layers
 
 寸法が 3 x 2 x 1 の直方体の表面をすべて覆うには、少なくとも 22 個の立方体が必要です。
 
-<img class="img-responsive center-block" alt="1 x 1 x 1 の立方体 22 個 で覆われた 3 x 2 x 1 の直方体" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+<img alt="1 x 1 x 1 の立方体 22 個 で覆われた 3 x 2 x 1 の直方体" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 この立体に 2 層目を加える場合、表面をすべて覆うには 46 個の立方体が必要になります。さらに 3 層目では 78 個、4 層目では 118 個の立方体が必要です。
 

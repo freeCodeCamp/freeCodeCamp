@@ -16,7 +16,7 @@ There are $N$ seats in a row. $N$ people come after each other to fill the seats
 
 Let $T(N)$ be the number of possibilities that $N$ seats are occupied by $N$ people with the given rules. The following figure shows $T(4) = 8$.
 
-<img class="img-responsive center-block" alt="eight ways for N seats to be occupied by N people" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;">
+<img alt="eight ways for N seats to be occupied by N people" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 We can verify that $T(10) = 61\\,632$ and $T(1\\,000)\bmod 100\\,000\\,007 = 47\\,255\\,094$.
 

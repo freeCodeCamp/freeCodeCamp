@@ -12,7 +12,7 @@ La curva di blancmange è l'insieme di punti ($x$,$y$) tale che $0 ≤ x ≤ 1$ 
 
 L'area sotto la curva di blancmange è uguale a $\frac{1}{2}$, mostrato in rosa nel diagramma sottostante.
 
-<img class="img-responsive center-block" alt="diagramma della curva di blancmange, con il cerchio C mostrato sul diagramma" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img alt="diagramma della curva di blancmange, con il cerchio C mostrato sul diagramma" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $C$ il cerchio con centro ($\frac{1}{4}$, \frac{1}{2}$) e raggio $\frac{1}{4}$, mostrato in nero nel diagramma.
 

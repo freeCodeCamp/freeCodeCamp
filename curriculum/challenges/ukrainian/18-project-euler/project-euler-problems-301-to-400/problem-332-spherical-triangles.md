@@ -10,7 +10,7 @@ dashedName: problem-332-spherical-triangles
 
 Сферичний трикутник — це фігура, утворена на поверхні сфери трьома великими круговими дугами, що попарно перетинаються у трьох вершинах.
 
-<img class="img-responsive center-block" alt="сферичний трикутник, утворений на поверхні сфери" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
+<img alt="сферичний трикутник, утворений на поверхні сфери" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $C(r)$ буде сферою з центром в точці (0,0,0) та радіусом $r$.
 

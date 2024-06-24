@@ -14,11 +14,11 @@ dashedName: problem-405-a-rectangular-tiling
 
 Нехай $T(n)$ буде отримано з $T( n- 1)$ за умови $n > 0$, якщо розкласти плитки ось так:
 
-<img class="img-responsive center-block" alt="отримання T(n) з T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img alt="отримання T(n) з T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ця анімація демонструє плитки $T(n)$ для $n$ від 0 до 5:
 
-<img class="img-responsive center-block" alt="анімація з плитками T(n) для n від 0 до 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація з плитками T(n) для n від 0 до 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $f(n)$ буде кількістю точок, у яких перетинаються чотири плитки з $T(n)$. Наприклад, $f(1) = 0$, $f(4) = 82$ та $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
 

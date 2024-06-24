@@ -10,7 +10,7 @@ dashedName: problem-309-integer-ladders
 
 Nel classico problema delle "scale incrociate", ci sono date le lunghezze $x$ e $y$ di due scale che poggiano sulle pareti opposte di una strada stretta e livellata. Ci viene anche data l'altezza $h$ sopra la strada dove le due scale si incrociano e ci viene chiesto di trovare la larghezza della strada ($w$).
 
-<img class="img-responsive center-block" alt="scale x e y, che si incrociano all'altezza h e poggiano su pareti opposte della strada di larghezza w" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px;" />
+<img alt="scale x e y, che si incrociano all'altezza h e poggiano su pareti opposte della strada di larghezza w" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Qui ci occupiamo solo di casi in cui tutte e quattro le variabili sono intere positive. Ad esempio, se $x = 70$, $y = 119$ e $h = 30$, possiamo calcolare che $w = 56$.
 

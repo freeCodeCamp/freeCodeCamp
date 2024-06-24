@@ -10,7 +10,7 @@ dashedName: problem-85-counting-rectangles
 
 Якщо уважно порахувати, можна побачити, що прямокутна сітка 3×2 містить вісімнадцять прямокутників:
 
-<img class="img-responsive center-block" alt="діаграма різних прямокутників, знайдених у прямокутній сітці 3х2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img alt="діаграма різних прямокутників, знайдених у прямокутній сітці 3х2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Хоча не існує такої прямокутної сітки, яка містить `n` прямокутників, знайдіть площу сітки з приблизним розв’язком.
 

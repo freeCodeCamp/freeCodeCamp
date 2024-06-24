@@ -14,7 +14,7 @@ Wenn wir das Blatt entlang der Rasterlinien in zwei Teile schneiden und diese Te
 
 Zum Beispiel, aus einem Blatt mit den Dimensionen 9 × 4 können wir Rechtecke mit den Dimensionen 18 × 2, 12 × 3 und 6 × 6 erstellen, indem wir wie folgend schneiden und umordnen:
 
-<img class="img-responsive center-block" alt="Ein Blatt mit den Dimensionen 9 x 4 geschnitten in drei verschiedenen Weisen um Rechtecke mit den Dimensionen 18 x 2, 12 x 3 und 6 x 6 zu erstellen" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img alt="Ein Blatt mit den Dimensionen 9 x 4 geschnitten in drei verschiedenen Weisen um Rechtecke mit den Dimensionen 18 x 2, 12 x 3 und 6 x 6 zu erstellen" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ebenso können wir aus einem Blatt mit den Dimensionen 9 × 8 Rechtecke mit den Dimensionen 18 × 4 und 12 × 6 bilden.
 

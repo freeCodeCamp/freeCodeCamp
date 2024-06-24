@@ -20,7 +20,7 @@ dashedName: problem-459-flipping-game
 - 長方形の幅が完全正方数 (1, 4, 9, 16, ...) である
 - 長方形の高さが三角数 (1, 3, 6, 10, ...) である
 
-<img class="img-responsive center-block" alt="5x5 盤上の 4x3 の長方形の範囲内にあるすべての円盤を裏返す" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
+<img alt="5x5 盤上の 4x3 の長方形の範囲内にあるすべての円盤を裏返す" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 プレイヤーは交互に手を打ちます。 すべてのマスを黒にしたプレイヤーの勝ちです。
 
@@ -30,7 +30,7 @@ $W(1) = 1$, $W(2) = 0$, $W(5) = 8$, $W({10}^2) = 31\\,395$ となります。
 
 $N = 5$ のとき、先手必勝の第 1 手は次の 8 つです。
 
-<img class="img-responsive center-block" alt="先手必勝の第 1 手は 8 つ (N = 5)" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
+<img alt="先手必勝の第 1 手は 8 つ (N = 5)" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $W({10}^6)$ を求めなさい。
 

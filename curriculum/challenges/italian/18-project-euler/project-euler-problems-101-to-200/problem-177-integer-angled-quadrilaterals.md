@@ -10,7 +10,7 @@ dashedName: problem-177-integer-angled-quadrilaterals
 
 Sia ABCD un quadrilatero convesso, con diagonali AC e BD. A ogni vertice la diagonale fa un angolo con ciascuno dei due lati, creando otto angoli.
 
-<img class="img-responsive center-block" alt="quadrilatero convesso ABCD, con diagonali AC e BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="quadrilatero convesso ABCD, con diagonali AC e BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ad esempio, nel vertice A, i due angoli sono CAD, CAB.
 

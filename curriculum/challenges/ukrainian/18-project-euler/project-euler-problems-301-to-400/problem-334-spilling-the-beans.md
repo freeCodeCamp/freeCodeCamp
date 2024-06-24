@@ -12,7 +12,7 @@ dashedName: problem-334-spilling-the-beans
 
 Наприклад, у двох сусідніх мисках лежать 2 і 3 боби відповідно, а всі інші миски — пусті. Наступні 8 кроків завершать гру:
 
-<img class="img-responsive center-block" alt="анімація гри, де у двох сусідніх мисках є 2 і 3 боби відповідно" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація гри, де у двох сусідніх мисках є 2 і 3 боби відповідно" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Дано такі послідовності:
 

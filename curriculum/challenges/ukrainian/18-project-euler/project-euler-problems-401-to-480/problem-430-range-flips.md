@@ -16,7 +16,7 @@ $N$ дисків розміщені в ряд та пронумеровані з
 
 Наведений приклад показує випадок, де $N = 8$. При першому перевертанні $A = 5$, а $B = 2$, при другому перевертанні $A = 4$, а $B = 6$.
 
-<img class="img-responsive center-block" alt="приклад, де N = 8, після першого перевертання A = 5, а B = 2, після другого A = 4, а B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="приклад, де N = 8, після першого перевертання A = 5, а B = 2, після другого A = 4, а B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $E(N, M)$ буде очікуваною кількістю дисків, які будуть перевернуті білою стороною вгору після $M$ перевертань. Можна довести, що $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ та $E(100, 10) ≈ 51.893$.
 

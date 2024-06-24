@@ -10,7 +10,7 @@ dashedName: problem-126-cuboid-layers
 
 Die Mindestanzahl von Würfeln, die jede sichtbare Fläche eines Quaders mit den Maßen 3 x 2 x 1 einnimmt, beträgt zweiundzwanzig.
 
-<img class="img-responsive center-block" alt="3x2x1-Quader, abgedeckt von zweiundzwanzig 1x1x1-Würfeln" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+<img alt="3x2x1-Quader, abgedeckt von zweiundzwanzig 1x1x1-Würfeln" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Fügen wir diesem Körper eine zweite Schicht hinzu, wären sechsundvierzig Würfel erforderlich, um jede sichtbare Fläche zu bedecken, für die dritte Schicht wären achtundsiebzig Würfel erforderlich, und für die vierte Schicht wären einhundertachtzehn Würfel erforderlich, um jede sichtbare Fläche zu bedecken.
 

@@ -19,7 +19,7 @@ dashedName: problem-394-eating-pie
 
 Коли залишається менше частки пирога $F$, він не повторює цю процедуру. Натомість він з’їдає все, що залишилось.
 
-<img class="img-responsive center-block" alt="анімація процедури нарізання пирога" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація процедури нарізання пирога" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $E(x)$, де $x ≥ 1$, буде очікуваною кількістю разів, коли Джефф повторює процедуру вище за умови $F = \frac{1}{x}$. Можна довести, що $E(1) = 1$, $E(2) ≈ 1.2676536759$ та $E(7.5) ≈ 2.1215732071$.
 

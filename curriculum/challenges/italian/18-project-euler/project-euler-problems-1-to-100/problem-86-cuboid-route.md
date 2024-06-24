@@ -10,7 +10,7 @@ dashedName: problem-86-cuboid-route
 
 Un ragno, S, si trova in un angolo di una stanza cuboide, che misura 6 x 5 x 3, e una mosca, F, si trova nell'angolo opposto. Muovendosi sulla superficie della stanza, la distanza più corta in "linea retta" da S a F è 10 e il percorso è mostrato nel diagramma.
 
-<img class="img-responsive center-block" alt="un diagramma del percorso di un ragno e una mosca da un vertice di una stanza cuboidale al vertice opposto" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img alt="un diagramma del percorso di un ragno e una mosca da un vertice di una stanza cuboidale al vertice opposto" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Invece, ci sono fino a tre candidati come percorso "più corto" per ogni dato cuboide e il percorso non ha sempre una lunghezza intera.
 

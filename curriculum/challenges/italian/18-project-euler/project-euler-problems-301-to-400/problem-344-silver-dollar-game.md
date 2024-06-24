@@ -18,7 +18,7 @@ In alternativa, il giocatore può scegliere di fare la mossa speciale di intasca
 
 Il vincitore è il giocatore che intasca il dollaro d'argento.
 
-<img class="img-responsive center-block" alt="gioco del dollaro argento" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="gioco del dollaro argento" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Una configurazione vincente è una disposizione di monete sulla striscia dove il primo giocatore può forzare una vittoria indipendentemente da cosa fa il secondo giocatore.
 

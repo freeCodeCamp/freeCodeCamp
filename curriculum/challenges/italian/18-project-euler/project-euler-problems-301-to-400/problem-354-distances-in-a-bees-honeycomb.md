@@ -10,7 +10,7 @@ dashedName: problem-354-distances-in-a-bees-honeycomb
 
 Considera un favo dove ogni cella è un perfetto esagono regolare con lati di lunghezza 1.
 
-<img class="img-responsive center-block" alt="favo con esagoni con lunghezza dei lati di 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
+<img alt="favo con esagoni con lunghezza dei lati di 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Una particolare cella è occupata dall'ape regina. Per un numero reale positivo $L$, sia $B(L)$ il conteggio delle celle con distanza $L$ dalla cella dell'ape regina (tutte le distanze sono misurate da centro a centro); puoi assumere che il favo sia abbastanza grande per ogni distanza che vogliamo considerare.
 

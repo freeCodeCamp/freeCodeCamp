@@ -16,7 +16,7 @@ Prosegue tagliandolo a metà, ottenendo così due fogli di formato A2. Poi tagli
 
 Tutti i fogli inutilizzati sono riposizionati nella busta.
 
-<img class="img-responsive center-block" alt="Foglio formato A1 diviso in: A2, A3, A4 e due fogli A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+<img alt="Foglio formato A1 diviso in: A2, A3, A4 e due fogli A5" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 All'inizio di ogni lotto successivo, prende un foglio di carta dalla busta a caso. Se è di dimensioni A5, lo usa. Se è più grande, ripete la procedura "taglia a metà" fino a quando non ha quello di cui ha bisogno, e tutti i fogli rimanenti sono sempre riposti nella busta.
 

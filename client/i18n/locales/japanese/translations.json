@@ -575,7 +575,7 @@
     "other-ways": "<0>当団体の使命を支援する方法</0> は他にも多数ございます。",
     "if-support-further": "当チャリティーに更なるご支援をいただけるのであれば、<0>1 回ごとの寄付</0>、<1>小切手の送付</1>、<2>その他さまざまな支援方法</2>がございますのでご検討ください。",
     "failed-pay": "処理が完了しませんでした。再度お試しください。",
-    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
+    "try-another-method": "処理が完了しませんでした。他の決済方法をお試しください。",
     "try-again": "再試行してください。",
     "card-number": "カード番号:",
     "expiration": "有効期限:",

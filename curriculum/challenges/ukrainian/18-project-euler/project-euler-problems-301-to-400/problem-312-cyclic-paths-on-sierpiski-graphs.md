@@ -11,11 +11,11 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 - Граф Серпінського 1-го порядку ($S_1$) є рівностороннім трикутником.
 - $S_{n + 1}$ можна отримати від $S_n$, розташувавши три копії $S_n$ так, щоб кожна пара копій мала один спільний кут.
 
-<img class="img-responsive center-block" alt="графи Серпінського від 1-го порядку до 5-го порядку" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="графи Серпінського від 1-го порядку до 5-го порядку" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $C(n)$ буде кількістю циклів, які проходять через всі вершини $S_n$ лише один раз. Наприклад, $C(3) = 8$, оскільки вісім таких циклів можна намалювати на $S_3$, як показано нижче:
 
-<img class="img-responsive center-block" alt="вісім циклів, що проходять через усі вершини S_3 лише один раз" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="вісім циклів, що проходять через усі вершини S_3 лише один раз" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Також можна довести, що:
 

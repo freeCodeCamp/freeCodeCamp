@@ -10,7 +10,7 @@ dashedName: problem-85-counting-rectangles
 
 3 x 2 の長方形格子をよく見ながら数えると、18 個の長方形が見つかります。
 
-<img class="img-responsive center-block" alt="3 x 2 の長方形格子に含まれるさまざまな長方形の図" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img alt="3 x 2 の長方形格子に含まれるさまざまな長方形の図" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ちょうど `n` 個の長方形が含まれる長方形格子は存在しないかもしれませんが、最も近い解を持つ格子の面積を求めなさい。
 

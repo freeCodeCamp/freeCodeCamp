@@ -12,7 +12,7 @@ Um bloco hexagonal com o número 1 é cercado por um anel de seis blocos hexagon
 
 Novos anéis são adicionados da mesma forma, com os próximos anéis sendo numerados de 8 a 19, 20 a 37, 38 a 61, e assim por diante. O diagrama abaixo mostra os três primeiros anéis.
 
-<img class="img-responsive center-block" alt="três primeiros anéis de blocos hexagonais dispostos com números de 1 a 37 e com os blocos 8 e 17 destacados" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px;" />
+<img alt="três primeiros anéis de blocos hexagonais dispostos com números de 1 a 37 e com os blocos 8 e 17 destacados" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ao calcular a diferença entre o bloco $n$ e cada um de seus seis vizinhos, definiremos $PD(n)$ como o número dessas diferenças primas, que são primos.
 

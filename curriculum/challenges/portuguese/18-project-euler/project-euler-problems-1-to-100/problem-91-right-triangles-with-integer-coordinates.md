@@ -10,11 +10,11 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 Os pontos ${P}(x_1, y_1)$ e ${Q}(x_2, y_2)$ são desenhados em coordenadas de números inteiros e ligadas à origem, ${O}(0, 0)$, para formar ${\Delta}OPQ$.
 
-<img class="img-responsive center-block" alt="um gráfico mostrando os pontos P (x_1, y_1) e Q(x_2, y_2) em coordenadas inteiras ligadas à origem O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
+<img alt="um gráfico mostrando os pontos P (x_1, y_1) e Q(x_2, y_2) em coordenadas inteiras ligadas à origem O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Há exatamente catorze triângulos contendo um ângulo reto que podem ser formados quando cada coordenada se encontra entre 0 e 2, ou seja, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
 
-<img class="img-responsive center-block" alt="um diagrama mostrando os 14 triângulos contendo um ângulo reto que podem ser formadas quando cada coordenada está entre 0 e 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
+<img alt="um diagrama mostrando os 14 triângulos contendo um ângulo reto que podem ser formadas quando cada coordenada está entre 0 e 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considerando $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, quantos triângulos retângulos podem ser formados?
 

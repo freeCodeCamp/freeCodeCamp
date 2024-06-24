@@ -10,7 +10,7 @@ dashedName: problem-380-amazing-mazes
 
 An $m×n$ maze is an $m×n$ rectangular grid with walls placed between grid cells such that there is exactly one path from the top-left square to any other square. The following are examples of a 9×12 maze and a 15×20 maze:
 
-<img class="img-responsive center-block" alt="Labyrinth 9x12 und Labyrinth 15x20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img alt="Labyrinth 9x12 und Labyrinth 15x20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Lasse $C(m, n)$ die Anzahl der verschiedenen $m×n$ Labyrinthe sein. Labyrinthe, die durch Drehung und Spiegelung aus einem anderen Labyrinth gebildet werden können, gelten als eindeutig.
 

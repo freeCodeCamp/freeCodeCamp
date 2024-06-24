@@ -16,7 +16,7 @@ Considere $S(n)$ como o número máximo de estações pelas quais um caminho pod
 
 Por exemplo, se $n = 22$, existem 11 estações distintas. Um caminho válido pode passar por, no máximo, 5 estações. Portanto, $S(22) = 5$. O caso é ilustrado abaixo, com um exemplo de caminho ideal:
 
-<img class="img-responsive center-block" alt="caminho válido passando por 5 estações, para n = 22, com 11 estações distintas" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+<img alt="caminho válido passando por 5 estações, para n = 22, com 11 estações distintas" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Também pode ser verificado que $S(123) = 14$ e $S(10.000) = 48$.
 

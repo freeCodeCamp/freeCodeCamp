@@ -12,7 +12,7 @@ Given a set of points on a plane, we define a convex hole to be a convex polygon
 
 作爲示例，下面的圖像示出了一組二十個點和一些這樣的凸孔。 顯示爲紅色七邊形的凸孔具有等於1049694.5平方單位的面積，這是給定點集上的凸孔的最高可能區域。
 
-<img class="img-responsive center-block" alt="set of twenty points and convex holes on plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="set of twenty points and convex holes on plane" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 For our example, we used the first 20 points ($T_{2k − 1}$, $T_{2k}$), for $k = 1, 2, \ldots, 20$, produced with the pseudo-random number generator:
 

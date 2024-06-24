@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 The following undirected network consists of seven vertices and twelve edges with a total weight of 243.
 
-<img class="img-responsive center-block" alt="具有七個頂點和十二條邊的網絡" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img alt="具有七個頂點和十二條邊的網絡" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 The same network can be represented by the matrix below.
 
@@ -27,7 +27,7 @@ The same network can be represented by the matrix below.
 
 但是，可以通過刪除一些邊來優化網絡，並仍然確保網絡上的所有點保持連接。 The network which achieves the maximum saving is shown below. 它的權重爲 93，代表從原始網絡節省了 243 − 93 = 150。
 
-<img class="img-responsive center-block" alt="網絡有七個頂點和左六條邊: AB，BD，CA，DE，DF，EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img alt="網絡有七個頂點和左六條邊: AB，BD，CA，DE，DF，EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 使用 `network`，一個以矩陣形式表示網絡的二維數組，找到通過去除冗餘邊同時確保網絡保持連接可以實現的最大節省。 沒有連接的頂點將用 `-1` 表示。
 

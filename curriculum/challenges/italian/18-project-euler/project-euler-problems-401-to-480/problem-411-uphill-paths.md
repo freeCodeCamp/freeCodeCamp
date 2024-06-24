@@ -16,7 +16,7 @@ Sia $S(n)$ il numero massimo di stazioni che un percorso può attraversare.
 
 Ad esempio, se $n = 22$, ci sono 11 stazioni distinte, e un percorso valido può passare al massimo attraverso 5 stazioni. Pertanto, $S(22) = 5$. Il caso è illustrato di seguito, con un esempio di percorso ottimale:
 
-<img class="img-responsive center-block" alt="percorso valido che attraversa 5 stazioni, per n = 22, con 11 stazioni distinte" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+<img alt="percorso valido che attraversa 5 stazioni, per n = 22, con 11 stazioni distinte" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Può anche essere verificato che $S(123) = 14$ e $S(10\\,000) = 48$.
 

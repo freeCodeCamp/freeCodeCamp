@@ -10,7 +10,7 @@ dashedName: problem-385-ellipses-inside-triangles
 
 Для будь-якого якого трикутника $T$ на площині можна показати, що існує унікальний еліпс з найбільшою площею, розташований повністю в $T$.
 
-<img class="img-responsive center-block" alt="еліпс повністю всередині трикутника" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
+<img alt="еліпс повністю всередині трикутника" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Для даного $n$ розглянемо такі трикутники $T$:
 

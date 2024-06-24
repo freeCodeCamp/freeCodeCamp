@@ -14,7 +14,7 @@ Para este problema, um polígono pode ter vértices consecutivos colineares. No 
 
 Por exemplo, apenas o primeiro dos polígonos a seguir é um polígono polar (os núcleos do segundo, terceiro e quarto não contêm estritamente a origem e o quinto nem sequer tem um núcleo):
 
-<img class="img-responsive center-block" alt="cinco exemplos de polígonos" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
+<img alt="cinco exemplos de polígonos" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Observe que o primeiro polígono tem três vértices colineares consecutivos.
 

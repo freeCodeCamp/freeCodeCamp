@@ -12,7 +12,7 @@ dashedName: problem-252-convex-holes
 
 Наприклад, на зображенні нижче маємо множину з 20 точок та декілька опуклих отворів. Опуклий отвір позначено червоним семикутником із площею 1049694.5 квадратних одиниць, що є найбільшою можливою площею опуклого отвору для даної множини точок.
 
-<img class="img-responsive center-block" alt="множина з 20 точок та опуклі отвори на площині" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="множина з 20 точок та опуклі отвори на площині" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Для прикладу ми використали перші 20 точок ($T_{2k − 1}$, $T_{2k}$), за умови $k = 1, 2, \ldots, 20$, отриманих за допомогою генератора псевдовипадкових чисел:
 

@@ -10,13 +10,13 @@ dashedName: problem-189-tri-colouring-a-triangular-grid
 
 Considere a seguinte configuração de 64 triângulos:
 
-<img class="img-responsive center-block" alt="64 triângulos arranjados de modo a criar um triângulo maior com comprimento de lado de 8 triângulos" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="64 triângulos arranjados de modo a criar um triângulo maior com comprimento de lado de 8 triângulos" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Queremos colorir o interior de cada triângulo com uma de três cores: vermelho, verde ou azul, para que nenhum de dois triângulos vizinhos tenha a mesma cor. Essa colorização será considerada válida. Aqui, diz-se que dois triângulos são vizinhos se eles compartilharem uma aresta. Observação: se eles apenas compartilharem um vértice, então não são vizinhos.
 
 Por exemplo, aqui está uma colorização válida para a grade acima:
 
-<img class="img-responsive center-block" alt="grade colorida de 64 triângulos" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="grade colorida de 64 triângulos" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Uma colorização C', que é obtida a partir de uma colorização C por rotação ou reflexão, é considerada diferente de C, a menos que ambas sejam idênticas.
 

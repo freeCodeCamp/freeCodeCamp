@@ -25,7 +25,7 @@ dashedName: problem-428-necklace-of-circles
 
 Наприклад, (5, 5, 5) та (4, 3, 21) є трійками намиста, а (2, 2, 5) — ні.
 
-<img class="img-responsive center-block" alt="візуальний приклад трійки намиста" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+<img alt="візуальний приклад трійки намиста" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $T(n)$ буде кількістю трійок намиста $(a, b, c)$, де $a$, $b$ та $c$ є натуральними числами і $b ≤ n$. Наприклад, $T(1) = 9$, $T(20) = 732$ та $T(3\\,000) = 438\\,106$.
 

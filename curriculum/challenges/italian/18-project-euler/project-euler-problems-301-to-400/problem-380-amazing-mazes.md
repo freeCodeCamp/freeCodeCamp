@@ -10,7 +10,7 @@ dashedName: problem-380-amazing-mazes
 
 Un labirinto $m×n$ è una griglia rettangolare $m×n$ con muri piazzati tra celle della griglia in modo tale che c'è un unico percorso dal quadrato in alto a sinistra a qualsiasi altro quadrato. I seguenti sono esempi di labirinti 9×12 e 15×20:
 
-<img class="img-responsive center-block" alt="labirinto 9×12 e labirinto 15×20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img alt="labirinto 9×12 e labirinto 15×20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $C(m, n)$ il numero di labirinti distinti $m×n$. I labirinti che possono essere formati per rotazione e riflessione da un altro labirinto sono considerati distinti.
 

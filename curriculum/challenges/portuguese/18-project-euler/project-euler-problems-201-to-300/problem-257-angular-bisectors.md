@@ -12,7 +12,7 @@ dashedName: problem-257-angular-bisectors
 
 Os bissetores angulares do triângulo cruzam os lados nos pontos $E$, $F$ e $G$ (veja a imagem abaixo).
 
-<img class="img-responsive center-block" alt="triângulo ABC, com bissetores angulares que se cruzam com os lados nos pontos E, F e G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
+<img alt="triângulo ABC, com bissetores angulares que se cruzam com os lados nos pontos E, F e G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Os segmentos $EF$, $EG$ e $FG$ particionam o triângulo $ABC$ em quatro triângulos menores: $AEG$, $BFE$, $CGF$ e $EFG$. Pode ser provado que, para cada um desses quatro triângulos, a razão $\frac{\text{área}(ABC)}{\text{área}(\text{subtriângulo})}$ é racional. No entanto, existem triângulos para os quais algumas ou todas essas razões são inteiras.
 

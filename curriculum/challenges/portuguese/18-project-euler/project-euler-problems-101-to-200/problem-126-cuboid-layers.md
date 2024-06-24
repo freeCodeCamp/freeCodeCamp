@@ -10,7 +10,7 @@ dashedName: problem-126-cuboid-layers
 
 A número mínimo de cubos para cobrir todas as faces visíveis de um cuboide medindo 3 x 2 x 1 é 22.
 
-<img class="img-responsive center-block" alt="Cuboide 3 x 2 x 1 coberto por 22 cubos 1 x 1 x 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+<img alt="Cuboide 3 x 2 x 1 coberto por 22 cubos 1 x 1 x 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Se adicionarmos uma segunda camada a este sólido, precisaremos de 46 cubos para cobrir todas as faces visíveis, a terceira camada precisará de 78 cubos e a quarta camada precisará de 118 cubos para cobrir todas as faces visíveis.
 

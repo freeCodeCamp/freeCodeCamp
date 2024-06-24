@@ -18,7 +18,7 @@ Beginne mit einem Einheitsquadrat. Dann nennt man eine der Seiten die Basis (in 
 
 Nach einer unendlichen Anzahl von Iterationen ergibt sich der Pythagoras-Baum.
 
-<img class="img-responsive center-block" alt="Animation mit 8 Iterationen des Verfahrens" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px;" />
+<img alt="Animation mit 8 Iterationen des Verfahrens" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Es lässt sich zeigen, dass es mindestens ein Rechteck gibt, dessen Seiten parallel zum größten Quadrat des Pythagoras-Baums verlaufen und das den Pythagoras-Baum vollständig umschließt.
 

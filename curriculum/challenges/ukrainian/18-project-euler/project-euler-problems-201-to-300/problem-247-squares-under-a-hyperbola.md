@@ -16,7 +16,7 @@ dashedName: problem-247-squares-under-a-hyperbola
 
 Нехай індексом $S_n$ буде пара чисел (зліва, знизу), що вказує на кількість квадратів зліва від $S_n$ та кількість квадратів знизу від $S_n$.
 
-<img class="img-responsive center-block" alt="рисунок з квадратами під гіперболою" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+<img alt="рисунок з квадратами під гіперболою" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 На рисунку зображено декілька таких квадратів, позначених числами.
 

@@ -12,7 +12,7 @@ dashedName: problem-265-binary-circles
 
 $N = 3$のとき、回転を無視すればこのような円形の配置は 2 通りあります。
 
-<img class="img-responsive center-block" alt="2 通りの円形配置 (N = 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="2 通りの円形配置 (N = 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 1 つ目の配置では、3 桁の部分列は時計回りに 000, 001, 010, 101, 011, 111, 110, 100 です。
 

@@ -14,7 +14,7 @@ The capacitors can be connected in series or in parallel to form sub-units, whic
 
 Using this simple procedure and up to n identical capacitors, we can make circuits having a range of different total capacitances. For example, using up to $n = 3$ capacitors of $60 μF$ each, we can obtain the following 7 distinct total capacitance values:
 
-<img class="img-responsive center-block" alt="example circuits having up to three capacitors, each of 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;">
+<img alt="example circuits having up to three capacitors, each of 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 If we denote by $D(n)$ the number of distinct total capacitance values we can obtain when using up to $n$ equal-valued capacitors and the simple procedure described above, we have: $D(1) = 1, D(2) = 3, D(3)=7, \ldots$
 

@@ -14,7 +14,7 @@ dashedName: problem-338-cutting-rectangular-grid-paper
 
 Наприклад, розрізавши та переставивши частини листка розміром 9 × 4 так, як показано нижче, можна зробити прямокутник зі сторонами 18 × 2, 12 × 3 та 6 × 6:
 
-<img class="img-responsive center-block" alt="листок розміром 9 x 4, який розділили на три частини, щоб зробити прямокутники зі сторонами 18 x 2, 12 x 3 та 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img alt="листок розміром 9 x 4, який розділили на три частини, щоб зробити прямокутники зі сторонами 18 x 2, 12 x 3 та 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Схожим чином з листка 9 × 8 вийдуть прямокутники розмірами 18 × 4 та 12 × 6.
 

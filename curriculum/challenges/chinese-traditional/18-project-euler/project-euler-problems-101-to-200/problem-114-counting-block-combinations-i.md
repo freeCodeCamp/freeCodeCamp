@@ -10,7 +10,7 @@ dashedName: problem-114-counting-block-combinations-i
 
 A row measuring seven units in length has red blocks with a minimum length of three units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square. There are exactly seventeen ways of doing this.
 
-<img class="img-responsive center-block" alt="將最小長度爲三個單位的塊放置在長度爲七個單位的行上的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
+<img alt="將最小長度爲三個單位的塊放置在長度爲七個單位的行上的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 有多少種方法可以填充長度爲 50 個單位的行？
 

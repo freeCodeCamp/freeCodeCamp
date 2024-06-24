@@ -12,7 +12,7 @@ dashedName: problem-244-sliders
 
 Ходи позначаються першою буквою напрямку англійською мовою (вліво — L, вправо — R, вверх — U, вниз — D). Наприклад, починаючи з конфігурації $S$ та виконавши послідовність ходів $LULUR$, отримаємо конфігурацію $E$:
 
-($S$) <img class="img-responsive" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-1.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($E$) <img class="img-responsive" alt="конфігурація E" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-2.gif" style="display: inline-block; background-color: white; padding: 10px;" />
+($S$) <img alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-1.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($E$) <img alt="конфігурація E" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-2.gif" style="display: inline-block; background-color: white; padding: 10px;" />
 
 Контрольна сума кожного шляху обчислюється так (псевдокод):
 
@@ -26,7 +26,7 @@ $$\begin{array}{|c|c|} \hline L & 76 \\\\ \hline R & 82 \\\\ \hline U & 85 \\\\ 
 
 Для послідовності $LULUR$, зазначеної вище, контрольна сума становить 19761398. Тепер, починаючи з конфігурації $S$, знайдіть усі найкоротші шляхи, щоб досягти конфігурації $T$.
 
-($S$) <img class="img-responsive center-block" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-3.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($T$) <img class="img-responsive center-block" alt="конфігурація T" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-4.gif" style="display: inline-block; background-color: white; padding: 10px;" />
+($S$) <img alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-3.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($T$) <img alt="конфігурація T" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-4.gif" style="display: inline-block; background-color: white; padding: 10px;" />
 
 Якою буде загальна сума всіх контрольних сум найкоротших шляхів?
 

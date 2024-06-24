@@ -14,7 +14,7 @@ dashedName: problem-338-cutting-rectangular-grid-paper
 
 例えば下図のように、寸法 9 × 4 の紙を切り並べ替えると 18 × 2, 12 × 3, 6 × 6 の寸法の長方形を作ることができます。
 
-<img class="img-responsive center-block" alt="寸法 9 × 4 の紙を切って作られる 3 種類の長方形 (寸法 18 × 2, 12 × 3, 6 × 6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img alt="寸法 9 × 4 の紙を切って作られる 3 種類の長方形 (寸法 18 × 2, 12 × 3, 6 × 6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 同様に、寸法 9 × 8 の紙から、寸法 18 × 4 と 12 × 6 の長方形を作ることができます。
 
