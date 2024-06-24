@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
