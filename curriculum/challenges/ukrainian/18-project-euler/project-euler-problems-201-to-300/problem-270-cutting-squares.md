@@ -16,7 +16,7 @@ dashedName: problem-270-cutting-squares
 
 Вважаючи будь-які віддзеркалення або обертання різними, назвемо $C(N)$ кількістю способів розрізати квадрат $N×N$. Наприклад, $C(1) = 2$ та $C(2) = 30$ (показано нижче).
 
-<img class="img-responsive center-block" alt="способи розрізати квадрат 2x2, вважаючи віддзеркалення та обертання різними" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;" />
+<img alt="способи розрізати квадрат 2x2, вважаючи віддзеркалення та обертання різними" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Чому дорівнює $C(30)\bmod {10}^8$ ?
 

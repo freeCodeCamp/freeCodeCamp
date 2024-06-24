@@ -10,7 +10,7 @@ dashedName: problem-114-counting-block-combinations-i
 
 Uma linha de sete unidades de comprimento tem blocos vermelhos com um comprimento mínimo de três unidades colocados nela, de tal forma que dois blocos vermelhos (que podem ter comprimentos diferentes) são separados por pelo menos um quadrado preto. Há exatamente dezessete maneiras de se fazer isso.
 
-<img class="img-responsive center-block" alt="Formas possíveis de se colocar um bloco, com um comprimento mínimo de três unidades, em uma fileira com comprimento de sete unidades" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
+<img alt="Formas possíveis de se colocar um bloco, com um comprimento mínimo de três unidades, em uma fileira com comprimento de sete unidades" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 De quantas maneiras uma fileira de cinquenta unidades de comprimento pode ser preenchida?
 

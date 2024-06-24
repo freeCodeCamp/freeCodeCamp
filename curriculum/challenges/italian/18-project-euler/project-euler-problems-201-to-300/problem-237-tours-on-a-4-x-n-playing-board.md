@@ -17,7 +17,7 @@ Sia $T(n)$ il numero di percorsi su un tabellone da gioco 4 × $n$ tale che:
 
 Il diagramma mostra un percorso su un tabellone 4 × 10:
 
-<img class="img-responsive center-block" alt="un percorso su un tabellone 4 x 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
+<img alt="un percorso su un tabellone 4 x 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $T(10)$ è 2329. Quanto vale $T({10}^{12})$ modulo ${10}^8$?
 

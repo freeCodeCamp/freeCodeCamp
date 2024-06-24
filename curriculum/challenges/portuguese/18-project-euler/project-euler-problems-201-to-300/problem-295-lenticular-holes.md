@@ -21,7 +21,7 @@ $$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
 
 Os círculos $C_0$, $C_1$ e $C_2$ estão desenhados na imagem abaixo.
 
-<img class="img-responsive center-block" alt="círculos C_0, C_1 e C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="círculos C_0, C_1 e C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $C_0$ e $C_1$ formam um orifício lenticular, assim como $C_0$ e $C_2$.
 

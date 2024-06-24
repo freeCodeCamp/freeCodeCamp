@@ -14,11 +14,11 @@ Sia $T(0)$ la piastrellatura composta da un singolo rettangolo.
 
 Per $n > 0$, sia $T(n)$ ottenuto da $T( n- 1)$ sostituendo tutte le piastrelle nel modo seguente:
 
-<img class="img-responsive center-block" alt="ottenere T(n) da T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img alt="ottenere T(n) da T(n - 1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 La seguente animazione mostra la piastrellatura $T(n)$ per $n$ da 0 a 5:
 
-<img class="img-responsive center-block" alt="animazione con piastrelle T(n) per n da 0 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione con piastrelle T(n) per n da 0 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $f(n)$ il numero di punti in cui quattro piastrelle si incontrano in $T(n)$. Per esempio, $f(1) = 0$, $f(4) = 82$ e $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$.
 

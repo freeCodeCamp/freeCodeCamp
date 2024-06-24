@@ -12,7 +12,7 @@ Dato un triangolo intero $ABC$ con $BC ≤ AC ≤ AB$. $k$ è la bisettrice ango
 
 L'intersezione di $n$ e $k$ viene chiamata $E$.
 
-<img class="img-responsive center-block" alt="triangolo ABC, con k - bisettrice angolare dell'angolo ACB, m - tangente nel punto C, n - linea parallela a m attraverso B, e punto E - intersezione di k e n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+<img alt="triangolo ABC, con k - bisettrice angolare dell'angolo ACB, m - tangente nel punto C, n - linea parallela a m attraverso B, e punto E - intersezione di k e n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quanti triangoli $ABC$ con un perimetro non superiore a $100\\,000$ esistono tali che $BE$ ha lunghezza intera?
 

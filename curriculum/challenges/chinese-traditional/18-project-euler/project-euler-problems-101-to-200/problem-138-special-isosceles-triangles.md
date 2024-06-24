@@ -10,7 +10,7 @@ dashedName: problem-138-special-isosceles-triangles
 
 Consider the isosceles triangle with base length, $b = 16$, and legs, $L = 17$.
 
-<img class="img-responsive center-block" alt="等腰三角形有兩條長度相等記爲 L 的腰，和一條記爲 b 底；則該三角形的高 h 爲從底邊作高至兩條腰的夾角。" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img alt="等腰三角形有兩條長度相等記爲 L 的腰，和一條記爲 b 底；則該三角形的高 h 爲從底邊作高至兩條腰的夾角。" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 使用畢達哥拉斯定理，可以求出三角形的高爲 $h = \sqrt{{17}^2 − 8^2} = 15$，恰好比底邊長度小 1。
 

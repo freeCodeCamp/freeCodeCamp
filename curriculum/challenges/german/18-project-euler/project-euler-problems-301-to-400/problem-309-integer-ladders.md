@@ -10,7 +10,7 @@ dashedName: problem-309-integer-ladders
 
 In the classic "Crossing Ladders" problem, we are given the lengths $x$ and $y$ of two ladders resting on the opposite walls of a narrow, level street. We are also given the height $h$ above the street where the two ladders cross and we are asked to find the width of the street ($w$).
 
-<img class="img-responsive center-block" alt="Leitern x und y, die sich in der Höhe h kreuzen und auf gegenüberliegenden Wänden der Straße mit der Breite w aufliegen" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px;" />
+<img alt="Leitern x und y, die sich in der Höhe h kreuzen und auf gegenüberliegenden Wänden der Straße mit der Breite w aufliegen" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Wir befassen uns hier nur mit Fällen, in denen alle vier Variablen positive Integer sind. For example, if $x = 70$, $y = 119$ and $h = 30$, we can calculate that $w = 56$.
 

@@ -14,7 +14,7 @@ dashedName: problem-155-counting-capacitor-circuits
 
 Завдяки цій простій процедурі та n однаковим конденсаторам ми можемо створити схеми з різною загальною місткістю. Наприклад, використовуючи до $n = 3$ конденсаторів, кожен з яких $60 μF$, ми можемо отримати сім різних значень місткості:
 
-<img class="img-responsive center-block" alt="приклади схем, які мають до трьох конденсаторів, кожен 60 мкФ" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img alt="приклади схем, які мають до трьох конденсаторів, кожен 60 мкФ" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Якщо ми використаємо $D(n)$ для позначення кількості різних значень місткості, які можна отримати при використанні до $n$ однакових конденсаторів за описаною вище процедурою, то отримаємо $D(1) = 1, D(2) = 3, D(3)=7, \ldots$
 

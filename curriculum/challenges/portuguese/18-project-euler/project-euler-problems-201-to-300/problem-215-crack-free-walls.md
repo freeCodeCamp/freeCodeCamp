@@ -12,7 +12,7 @@ Considere o problema da construção de uma parede de 2×1 e 3×1 tijolos (dimen
 
 Por exemplo, a parede 9×3 a seguir não é aceitável devido à rachadura da execução mostrada em vermelho:
 
-<img class="img-responsive center-block" alt="parede 9x3 com uma lacuna alinhada entre blocos horizontalmente adjacentes" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
+<img alt="parede 9x3 com uma lacuna alinhada entre blocos horizontalmente adjacentes" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Existem oito maneiras de formar uma parede 9×3 sem rachaduras, as quais descrevemos como $W(9,3) = 8$.
 

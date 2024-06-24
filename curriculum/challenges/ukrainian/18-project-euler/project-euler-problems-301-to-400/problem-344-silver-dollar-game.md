@@ -18,7 +18,7 @@ dashedName: problem-344-silver-dollar-game
 
 Перемагає той гравець, який забирає срібний долар.
 
-<img class="img-responsive center-block" alt="гра в срібний долар" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="гра в срібний долар" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Виграшна конфігурація полягає у розташуванні монет в ряд таким чином, щоб перший гравець переміг незалежно від дій другого гравця.
 

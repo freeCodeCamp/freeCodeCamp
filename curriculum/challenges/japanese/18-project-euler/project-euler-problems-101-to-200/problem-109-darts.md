@@ -10,7 +10,7 @@ dashedName: problem-109-darts
 
 ダーツゲームのターゲットボードは 20 等分され、それぞれのエリアに 1 から 20 までの番号が割り振られています。プレイヤーはそれに向けてダーツを 3 本投げます。
 
-<img class="img-responsive center-block" alt="ダーツボード" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;" />
+<img alt="ダーツボード" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ダーツのスコアは、ダーツが刺さったエリアの番号によって決まります。 外側にある赤と緑の輪よりも外に刺さったダーツは 0 点です。 この輪の内側にある黒と白の領域は、シングルスコアを表しています。 ただし、赤と緑の輪のうち、外側の輪はダブルスコア、中間の輪はトリプルスコアを表しています。
 

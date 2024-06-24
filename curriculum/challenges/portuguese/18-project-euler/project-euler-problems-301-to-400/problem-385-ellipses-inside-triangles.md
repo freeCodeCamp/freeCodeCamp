@@ -10,7 +10,7 @@ dashedName: problem-385-ellipses-inside-triangles
 
 Para qualquer triângulo $T$ no plano, pode-se mostrar que há uma elipse única com a maior área completamente dentro de $T$.
 
-<img class="img-responsive center-block" alt="elipse totalmente interna ao triângulo" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px;" />
+<img alt="elipse totalmente interna ao triângulo" src="https://cdn.freecodecamp.org/curriculum/project-euler/ellipses-inside-triangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Para um $n$ dado, considere os triângulos $T$, tal que:
 

@@ -18,7 +18,7 @@ $ADCB$ などの配置は簡単に直せます。貨物を $A$ と $D$ の間で
 
 貨物が 4 つある場合、サイモンにとって起こり得る最悪の配置 (「最も不ぞろいな配置」と呼ぶことにします) は $DACB$ と $DBAC$ で、それぞれ 5 回の回転が必要です (最も効率的な方法なら 3 回の回転で済むのですが)。 サイモンが $DACB$ に使用した手順を下に示します。
 
-<img class="img-responsive center-block" alt="最も不ぞろいな配置 DACB で行われる 5 回の回転" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
+<img alt="最も不ぞろいな配置 DACB で行われる 5 回の回転" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 貨物が 6 つある場合、最も不ぞろいな配置は最大 24 個あり、そのうち辞書順で 10 番目の最も不ぞろいな配置が $DFAECB$ であることを確認できます。
 

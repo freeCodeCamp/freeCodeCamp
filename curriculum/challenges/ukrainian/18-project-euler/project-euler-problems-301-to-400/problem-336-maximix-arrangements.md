@@ -18,7 +18,7 @@ dashedName: problem-336-maximix-arrangements
 
 Використовуючи чотири вагони, найгіршими можливими впорядкуваннями для Саймона (які назвемо впорядкуваннями максімікс) будуть $DACB$ та $DBAC$, кожне з яких вимагає п’ять обертів (хоча, якщо використати кращий підхід, знадобиться лише три оберти). Нижче наведено те, як він вирішуватиме $DACB$.
 
-<img class="img-responsive center-block" alt="п’ять обертів для впорядкування максімікс DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
+<img alt="п’ять обертів для впорядкування максімікс DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Можна довести, що існує 24 впорядкування максімікс для шести вагонів, для яких десятим лексикографічним впорядкуванням максімікс є $DFAECB$.
 

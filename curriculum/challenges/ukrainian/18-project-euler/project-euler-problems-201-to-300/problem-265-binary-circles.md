@@ -12,7 +12,7 @@ $2^N$ бінарні цифри можна розмістити в колі та
 
 За умови $N = 3$ можливі два таких кругових розміщення, ігноруючи обертання:
 
-<img class="img-responsive center-block" alt="два кругових розміщення за умови N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="два кругових розміщення за умови N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Тризначними підпослідовностями за годинниковою стрілкою для першого розміщення є: 000, 001, 010, 101, 011, 111, 110 та 100.
 

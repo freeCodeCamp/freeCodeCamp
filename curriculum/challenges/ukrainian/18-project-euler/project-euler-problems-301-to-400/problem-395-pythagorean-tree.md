@@ -18,7 +18,7 @@ dashedName: problem-395-pythagorean-tree
 
 Отримана фігура, після нескінченної кількості повторень, є деревом Піфагора.
 
-<img class="img-responsive center-block" alt="анімація з 8 повторень процедури" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація з 8 повторень процедури" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Можна довести, що існує принаймні один прямокутник, сторони якого паралельні сторонам найбільшого квадрата дерева Піфагора, та який повністю охоплює дерево Піфагора.
 

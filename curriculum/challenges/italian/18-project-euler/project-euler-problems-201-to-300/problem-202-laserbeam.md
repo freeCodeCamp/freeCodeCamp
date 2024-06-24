@@ -12,7 +12,7 @@ Tre specchi sono disposti a forma di triangolo equilatero, con le loro superfici
 
 Etichetta i vertici $A$, $B$ e $C$. Ci sono due modi in cui un raggio laser può entrare nel vertice $C$, rimbalzare su 11 superfici, e quindi uscire attraverso lo stesso vertice: uno di questi è mostrato qua sotto; l'altro è l'inverso di quello mostrato.
 
-<img class="img-responsive center-block" alt="un modo in cui il raggio laser può entrare nel vertice C, rimbalzare su 11 superfici e uscire attraverso lo stesso vertice" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img alt="un modo in cui il raggio laser può entrare nel vertice C, rimbalzare su 11 superfici e uscire attraverso lo stesso vertice" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ci sono 80840 modi in cui un raggio laser può entrare attraverso il vertice $C$, rimbalzare su 100000 superfici, e uscire attraverso lo stesso vertice.
 

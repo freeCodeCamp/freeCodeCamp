@@ -12,7 +12,7 @@ dashedName: problem-184-triangles-containing-the-origin
 
 Якщо радіус дорівнює 2, то $I_2$ має дев’ять точок: (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) та (1,-1). Існує вісім трикутників, чиї вершини розташовані в $I_2$ та які містять початок координат. Два з них наведено нижче, а решту можна отримати шляхом обертання.
 
-<img class="img-responsive center-block" alt="круг з радіусом 2 з центром в початку координат, з дев’ятьма позначеними точками й двома трикутниками: (-1,0), (0,1), (1,-1) та (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
+<img alt="круг з радіусом 2 з центром в початку координат, з дев’ятьма позначеними точками й двома трикутниками: (-1,0), (0,1), (1,-1) та (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Якщо радіус дорівнює 3, то існує 360 трикутників, які містять початок координат та чиї вершини розташовані в $I_3$, а для $I_5$ це число становить 10600.
 

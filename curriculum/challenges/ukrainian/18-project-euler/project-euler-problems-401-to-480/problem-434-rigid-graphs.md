@@ -20,11 +20,11 @@ dashedName: problem-434-rigid-graphs
 
 Сітчасті графи, вбудовані в Евклідовому просторі, не є жорсткими, як зображено на анімації:
 
-<img class="img-responsive center-block" alt="анімація з сітчастими графами в Евклідовому просторі, які не є жорсткими" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація з сітчастими графами в Евклідовому просторі, які не є жорсткими" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Однак їх можна зробити жорсткими, додавши діагональні ребра до сіток. Наприклад, для сітчастого графа 2×3 існує 19 способів зробити граф жорстким:
 
-<img class="img-responsive center-block" alt="19 способів зробити сітчастий граф 2х3 жорстким" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+<img alt="19 способів зробити сітчастий граф 2х3 жорстким" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Зверніть увагу, що у цьому завданні ми не розглядаємо зміну напряму діагонального ребра або додавання обох діагональних ребер до сітки як інший спосіб зробити сітчастий граф жорстким.
 

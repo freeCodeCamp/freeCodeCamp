@@ -12,7 +12,7 @@ dashedName: problem-90-cube-digit-pairs
 
 例えば、次のように平方数 64 を作れます。
 
-<img class="img-responsive center-block" alt="一方が 6、他方が 4 を示している 2 つの立方体" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
+<img alt="一方が 6、他方が 4 を示している 2 つの立方体" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 事実、両方の立方体の数字を慎重に選ぶことによって、100 未満の平方数 (01, 04, 09, 16, 25, 36, 49, 64, 81) をすべて作ることができます。
 

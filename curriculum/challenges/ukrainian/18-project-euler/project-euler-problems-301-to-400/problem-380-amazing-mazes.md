@@ -10,7 +10,7 @@ dashedName: problem-380-amazing-mazes
 
 Лабіринт $m×n$ — це прямокутна сітка $m×n$ зі стінками, розміщеними між клітинками сітки таким чином, що існує лише один шлях від верхнього лівого квадрата до будь-якого іншого квадрата. Нижче наведено приклади лабіринту 9×12 та лабіринту 15×20:
 
-<img class="img-responsive center-block" alt="Лабіринт 9х12 і лабіринт 15х20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img alt="Лабіринт 9х12 і лабіринт 15х20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $C(m, n)$ буде кількістю різних лабіринтів $m×n$. Лабіринти, які можна утворити шляхом обертання та відбиття від іншого лабіринту, вважаються різними.
 

@@ -10,7 +10,7 @@ dashedName: problem-199-iterative-circle-packing
 
 Three circles of equal radius are placed inside a larger circle such that each pair of circles is tangent to one another and the inner circles do not overlap. There are four uncovered "gaps" which are to be filled iteratively with more tangent circles.
 
-<img class="img-responsive center-block" alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="a diagram of non-overlapping circles" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 在每次迭代中，在每个间隙中放置最大尺寸的圆，这为下一次迭代创建了更多的间隙。 经过3次迭代（如图）后，有108个间隙，未被圆圈覆盖的区域部分为0.06790342，四舍五入到小数点后8位。
 

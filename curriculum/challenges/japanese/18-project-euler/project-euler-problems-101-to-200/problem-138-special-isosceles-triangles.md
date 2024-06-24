@@ -10,7 +10,7 @@ dashedName: problem-138-special-isosceles-triangles
 
 底辺の長さが $b = 16$、2 本の等辺の長さが $L = 17$ の二等辺三角形を考えます。
 
-<img class="img-responsive center-block" alt="辺 L (2 本の等辺)、底辺 b、および、三角形の底辺から 2 本の辺 L の間の角までの長さ h を持つ二等辺三角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img alt="辺 L (2 本の等辺)、底辺 b、および、三角形の底辺から 2 本の辺 L の間の角までの長さ h を持つ二等辺三角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ピタゴラスの定理を使えば、三角形の高さは $h = \sqrt{{17}^2 − 8^2} = 15$ で、底辺の長さより 1 短いことが分かります。
 

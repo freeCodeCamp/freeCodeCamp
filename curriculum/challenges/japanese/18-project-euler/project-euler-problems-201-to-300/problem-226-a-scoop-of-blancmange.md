@@ -12,7 +12,7 @@ dashedName: problem-226-a-scoop-of-blancmange
 
 ブラマンジェ曲線より下の部分 (下図のピンク色の部分) の面積は $\frac{1}{2}$ に等しくなります。
 
-<img class="img-responsive center-block" alt="円 C が示されたブラマンジェ曲線の図" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img alt="円 C が示されたブラマンジェ曲線の図" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ($\frac{1}{4}$,$\frac{1}{2}$) を円心とする半径 $\frac{1}{4}$ の円 (図の黒い線) を $C$ とします。
 

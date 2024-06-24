@@ -10,7 +10,7 @@ dashedName: problem-147-rectangles-in-cross-hatched-grids
 
 Em uma grade cruzada de 3x2, um total de 37 retângulos diferentes podem ser situados dentro dela, conforme indicado no esboço.
 
-<img class="img-responsive center-block" alt="formas de situar diferentes retângulos dentro da grade cruzada de 3x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
+<img alt="formas de situar diferentes retângulos dentro da grade cruzada de 3x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Há 5 grades menores que 3x2, com dimensões vertical e horizontal importantes. São eles: 1x1, 2x1, 3x1, 1x2 e 2x2. Se cada uma delas for cruzada, o número de retângulos diferentes a seguir poderia estar situado dentro dessas grades menores:
 

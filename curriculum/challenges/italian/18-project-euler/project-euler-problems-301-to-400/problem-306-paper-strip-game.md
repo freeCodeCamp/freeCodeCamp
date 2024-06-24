@@ -18,7 +18,7 @@ Due giocatori iniziano con una striscia di $n$ quadrati bianchi e giocano a turn
 - $n = 4$: ci sono tre mosse valide per il primo giocatore; il quale può vincere colorando i due quadrati centrali.
 - $n = 5$: quattro mosse valide per il primo giocatore (mostrate sotto in rosso); ma qualsiasi mossa sceglie, il secondo giocatore (blu) vince.
 
-<img class="img-responsive center-block" alt="mosse iniziali valide per una striscia con 5 quadrati" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="mosse iniziali valide per una striscia con 5 quadrati" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quindi, per $1 ≤ n ≤ 5$, ci sono 3 valori di $n$ per cui il primo giocatore può forzare una vittoria.
 

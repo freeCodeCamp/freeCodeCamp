@@ -16,7 +16,7 @@ A printing shop runs 16 batches (jobs) every week and each batch requires a shee
 
 All the unused sheets are placed back in the envelope.
 
-<img class="img-responsive center-block" alt="A1 尺寸纸可以拆分为：A2、A3、A4 和两张 A5 纸" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+<img alt="A1 尺寸纸可以拆分为：A2、A3、A4 和两张 A5 纸" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 随后每批开始时，他随机从信封中拿走一张纸张。 If it is of size A5, he uses it. 如果它更大，他会重复“切成两半”的程序，直到他有他需要的东西，任何剩余的纸张总是放回信封里。
 

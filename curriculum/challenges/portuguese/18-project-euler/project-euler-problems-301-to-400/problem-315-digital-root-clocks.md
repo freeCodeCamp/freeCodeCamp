@@ -8,7 +8,7 @@ dashedName: problem-315-digital-root-clocks
 
 # --description--
 
-<img class="img-responsive center-block" alt="animação dos relógios de Sam e de Max, calculando raízes dos algarismos a partir de 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação dos relógios de Sam e de Max, calculando raízes dos algarismos a partir de 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sam e Max são convidados a transformar dois relógios digitais em dois relógios "de raízes digitais".
 

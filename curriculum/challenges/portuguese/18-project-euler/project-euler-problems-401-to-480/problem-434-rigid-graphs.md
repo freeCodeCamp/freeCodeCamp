@@ -20,11 +20,11 @@ Informalmente, um grafo é rígido se, ao substituir os vértices por dobradiça
 
 Os grafos de grade incorporados no plano euclideano não são rígidos, como demonstra a animação a seguir:
 
-<img class="img-responsive center-block" alt="animação mostrando que os grafos de grade não são rígidos no plano euclideano" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação mostrando que os grafos de grade não são rígidos no plano euclideano" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 No entanto, é possível torná-los rígidos adicionando arestas diagonais às células. Por exemplo, para o grafo de grade 2x3, há 19 maneiras de tornar o grafo rígido:
 
-<img class="img-responsive center-block" alt="19 maneiras de tornar o grafo de grade 2x3 rígido" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+<img alt="19 maneiras de tornar o grafo de grade 2x3 rígido" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Observe que, para fins deste problema, não consideramos a troca da orientação de uma aresta diagonal nem adicionar arestas diagonais a uma célula como uma forma diferente de fazer um grafo de grade rígido.
 

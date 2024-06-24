@@ -16,7 +16,7 @@ $x$, $y$ 座標の値が減少することのない経路を、(0, 0) から ($n
 
 例えば、$n = 22$ のとき、11 の相異なる駅があり、1 本の有効な経路がたかだか 5 駅を通ることができます。 したがって、$S(22) = 5$ となります。 下図に、このケースを最適な経路の例と共に示します。
 
-<img class="img-responsive center-block" alt="5 駅を通る有効な経路 (n = 22 であり、11 の相異なる駅がある場合)" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+<img alt="5 駅を通る有効な経路 (n = 22 であり、11 の相異なる駅がある場合)" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $S(123) = 14$, $S(10\\,000) = 48$ であることも確認できます。
 

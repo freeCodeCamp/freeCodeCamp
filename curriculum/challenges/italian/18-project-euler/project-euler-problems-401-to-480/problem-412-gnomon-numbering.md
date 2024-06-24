@@ -12,13 +12,13 @@ Per i numeri interi $m$, $n$ ($0 ≤ n &lt; m$), sia $L(m, n)$ una griglia $m×m
 
 Per esempio, $L(5, 3)$ è così:
 
-<img class="img-responsive center-block" alt="una griglia 5x5, con la griglia 3x3 in alto a destra rimossa" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-1.png" style="background-color: white; padding: 10px;" />
+<img alt="una griglia 5x5, con la griglia 3x3 in alto a destra rimossa" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Vogliamo numerare ogni cella di $L(m, n)$ con i numeri consecutivi 1, 2, 3, ... cosicché il numero in ogni cella sia più piccolo del numero sotto di esso e del numero alla sua sinistra.
 
 Per esempio, ecco due modi validi di numerare $L(5, 3)$:
 
-<img class="img-responsive center-block" alt="due modi validi di numerare L(5, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px;" />
+<img alt="due modi validi di numerare L(5, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/gnomon-numbering-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $LC(m, n$) il numero di modi validi di numerare $L(m, n)$. Si può verificare che $LC(3, 0) = 42$, $LC(5, 3) = 250\\,250$, $LC(6, 3) = 406\\,029\\,023\\,400$ e che $LC(10, 5)\bmod 76\\,543\\,217 = 61\\,251\\,715$.
 

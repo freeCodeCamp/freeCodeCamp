@@ -18,7 +18,7 @@ $N$ 個の席が連続して並んでいます。 $N$ 人の人が次々とや�
 
 $N = 15$ のとき、考えられる座席配置は次のとおりです。
 
-<img class="img-responsive center-block" alt="N = 15 の場合の着席配置" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
+<img alt="N = 15 の場合の着席配置" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 最初の人が席を正しく選択すると、15 席に最大 7 人が座れることが分かります。 また、最初の人が持つ選択肢のうち、座れる人数が最大になる選択肢が 9 つであることも分かります。
 

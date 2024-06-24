@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 La seguente rete non orientata è costituita da sette vertici e dodici archi con un peso totale di 243.
 
-<img class="img-responsive center-block" alt="Rete con sette vertici e dodici archi" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img alt="Rete con sette vertici e dodici archi" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 La stessa rete può essere rappresentata dalla matrice sottostante.
 
@@ -27,7 +27,7 @@ La stessa rete può essere rappresentata dalla matrice sottostante.
 
 Tuttavia, è possibile ottimizzare la rete rimuovendo alcuni archi, garantendo ancora che tutti i punti della rete rimangano connessi. La rete per cui il risparmio è massimo è mostrata di seguito. Ha un peso di 93, che rappresenta un risparmio di 243 − 93 = 150 rispetto alla rete originale.
 
-<img class="img-responsive center-block" alt="Rete con sette vertici e sei archi rimanenti: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img alt="Rete con sette vertici e sei archi rimanenti: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Utilizzando `network`, un array 2D che rappresenta la rete in forma di matrice, trova il massimo risparmio che può essere ottenuto rimuovendo gli archi ridondanti, garantendo al contempo che la rete rimanga connessa. I vertici che non hanno connessione saranno rappresentati con `-1`.
 

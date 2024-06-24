@@ -10,7 +10,7 @@ dashedName: problem-15-lattice-paths
 
 Começando no canto superior esquerdo de uma grade 2×2, e sendo capaz de se mover para a direita e para baixo, existem exatamente 6 caminhos até o canto inferior direito.
 
-<img class="img-responsive center-block" alt="um diagrama de 6 grades de 2x2 mostrando todas as rotas para o canto inferior direito" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img alt="um diagrama de 6 grades de 2x2 mostrando todas as rotas para o canto inferior direito" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quantas rotas existem que cruzam uma grade de tamanho `gridSize`?
 
