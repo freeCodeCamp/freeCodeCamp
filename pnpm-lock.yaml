@@ -100,7 +100,7 @@ importers:
         specifier: 6.2.0
         version: 6.2.0(eslint@8.57.0)(typescript@5.4.5)
       husky:
-        specifier: 9.0.11
+        specifier: ^9.0.11
         version: 9.0.11
       jest:
         specifier: 29.7.0

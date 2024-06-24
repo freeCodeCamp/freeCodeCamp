@@ -9,25 +9,25 @@ const SearchBarOptimized = ({
   innerRef
 }: Pick<SearchBarProps, 'innerRef'>): JSX.Element => {
   const { t } = useTranslation();
-  const placeholder: string = t('search.placeholder');
-  const searchUrl: string = searchPageUrl;
+  const placeholder = t('search.placeholder');
+  const searchUrl = searchPageUrl;
   const [value, setValue] = useState<string>('');
-
   const inputElementRef = useRef<HTMLInputElement>(null);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setValue(event.target.value);
+  };
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     if (value && value.length > 1) {
-      const encodedValue = encodeURIComponent(value);
-      window.open(`${searchUrl}?query=${encodedValue}`, '_blank');
+      window.open(`${searchUrl}?query=${encodeURIComponent(value)}`, '_blank');
       setValue('');
       inputElementRef.current?.blur();
     }
   };
-  const onClick = () => {
+
+  const onClick = (): void => {
     setValue('');
     inputElementRef.current?.focus();
   };
@@ -79,5 +79,7 @@ const SearchBarOptimized = ({
     </div>
   );
 };
+
 SearchBarOptimized.displayName = 'SearchBarOptimized';
 export default SearchBarOptimized;
+

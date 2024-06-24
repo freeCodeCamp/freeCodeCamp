@@ -39,6 +39,7 @@
       "node": true
     }
   },
+  "ignorePatterns": ["**/temp.js", "config/**"],
   "rules": {
     "import/no-unresolved": [2, { "commonjs": true }],
     "import/named": "error",
@@ -49,6 +50,8 @@
     "react/prop-types": "off",
     "no-only-tests/no-only-tests": "error",
     "no-unused-vars": "off",
+    "semi": "error",
+    "quotes": ["error", "double"],
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
@@ -59,11 +62,13 @@
     ],
     "filenames-simple/naming-convention": ["warn"]
   },
+
   "overrides": [
     {
       "files": ["**/*.ts?(x)"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
+        "ecmaVersion": 2023,
         "project": [
           "./client/tsconfig.json",
           "./tsconfig.json",
