@@ -57,11 +57,11 @@ test.describe('The update-email page when the user is not signed in', () => {
     await page.goto('/update-email');
   });
 
-  test('should sign the user in and redirect to /learn', async ({ page }) => {
+  test('should redirect to the signin page', async ({ page }) => {
+    await page.waitForURL(/\/learn\/?/);
+
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
     ).toBeVisible();
-
-    await expect(page).toHaveURL(/\/learn\/?/);
   });
 });
