@@ -141,6 +141,7 @@ describe('settingRoutes', () => {
 
       const validToken =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGy';
+      // This is a valid id for a token, but it doesn't exist in the database
       const validButMissingToken =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGY';
       const tokenWithMissingUser =
