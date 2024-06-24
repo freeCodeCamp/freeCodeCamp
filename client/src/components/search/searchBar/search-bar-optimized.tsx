@@ -15,8 +15,9 @@ const SearchBarOptimized = ({
 
   const inputElementRef = useRef<HTMLInputElement>(null);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
+  };
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -27,6 +28,7 @@ const SearchBarOptimized = ({
       inputElementRef.current?.blur();
     }
   };
+
   const onClick = () => {
     setValue('');
     inputElementRef.current?.focus();
@@ -60,7 +62,11 @@ const SearchBarOptimized = ({
               value={value}
               ref={inputElementRef}
             />
-            <button className='ais-SearchBox-submit' type='submit'>
+            <button
+              className='ais-SearchBox-submit'
+              type='submit'
+              aria-label={t('search.submit')}
+            >
               <Magnifier />
             </button>
             {value && (
@@ -68,6 +74,7 @@ const SearchBarOptimized = ({
                 className='ais-SearchBox-reset'
                 onClick={onClick}
                 type='button'
+                aria-label={t('search.reset')}
               >
                 <InputReset />
               </button>
@@ -78,5 +85,6 @@ const SearchBarOptimized = ({
     </div>
   );
 };
+
 SearchBarOptimized.displayName = 'SearchBarOptimized';
 export default SearchBarOptimized;
