@@ -171,6 +171,14 @@ const hand = ['rock', 'paper', 'scissor'];
 
 # --solutions--
 
+```html
+<html lang="en">
+<head>
+  <script src="script.js"></script>
+</head>
+</html>
+```
+
 ```js
 const hand = ['rock', 'paper', 'scissors'];
 
@@ -243,6 +251,3 @@ const playGame = () => {
 
 ```
 
-```html
-
-```
