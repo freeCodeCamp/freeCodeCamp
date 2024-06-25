@@ -28,8 +28,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.7)
       '@playwright/test':
-        specifier: ^1.43.1
-        version: 1.44.0
+        specifier: ^1.45.0
+        version: 1.45.0
       '@testing-library/dom':
         specifier: 9.3.4
         version: 9.3.4
@@ -3415,9 +3415,9 @@ packages:
     resolution: {integrity: sha512-POgTXhjrTfbTV63DiFXav4lBHiICLKKwDeaKn9Nphwj7WH6m0hMMCaJkMyRWjgtPFyRKRVoMXXjczsTQRDEhYw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@playwright/test@1.44.0':
-    resolution: {integrity: sha512-rNX5lbNidamSUorBhB4XZ9SQTjAqfe5M+p37Z8ic0jPFBMo5iCtQz1kRWkEMg+rYOKSlVycpQmpqjSFq7LXOfg==}
-    engines: {node: '>=16'}
+  '@playwright/test@1.45.0':
+    resolution: {integrity: sha512-TVYsfMlGAaxeUllNkywbwek67Ncf8FRGn8ZlRdO291OL3NjG9oMbfVhyP82HQF0CZLMrYsvesqoUekxdWuF9Qw==}
+    engines: {node: '>=18'}
     hasBin: true
 
   '@pmmmwh/react-refresh-webpack-plugin@0.4.3':
@@ -10869,14 +10869,14 @@ packages:
   platform@1.3.6:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
 
-  playwright-core@1.44.0:
-    resolution: {integrity: sha512-ZTbkNpFfYcGWohvTTl+xewITm7EOuqIqex0c7dNZ+aXsbrLj0qI8XlGKfPpipjm0Wny/4Lt4CJsWJk1stVS5qQ==}
-    engines: {node: '>=16'}
+  playwright-core@1.45.0:
+    resolution: {integrity: sha512-lZmHlFQ0VYSpAs43dRq1/nJ9G/6SiTI7VPqidld9TDefL9tX87bTKExWZZUF5PeRyqtXqd8fQi2qmfIedkwsNQ==}
+    engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.44.0:
-    resolution: {integrity: sha512-F9b3GUCLQ3Nffrfb6dunPOkE5Mh68tR7zN32L4jCk4FjQamgesGay7/dAAe1WaMEGV04DkdJfcJzjoCKygUaRQ==}
-    engines: {node: '>=16'}
+  playwright@1.45.0:
+    resolution: {integrity: sha512-4z3ac3plDfYzGB6r0Q3LF8POPR20Z8D0aXcxbJvmfMgSSq1hkcgvFRXJk9rUq5H/MJ0Ktal869hhOdI/zUTeLA==}
+    engines: {node: '>=18'}
     hasBin: true
 
   pluralize@8.0.0:
@@ -17576,9 +17576,9 @@ snapshots:
       picocolors: 1.0.0
       tslib: 2.6.2
 
-  '@playwright/test@1.44.0':
+  '@playwright/test@1.45.0':
     dependencies:
-      playwright: 1.44.0
+      playwright: 1.45.0
 
   '@pmmmwh/react-refresh-webpack-plugin@0.4.3(react-refresh@0.9.0)(webpack@5.90.3(webpack-cli@4.10.0))':
     dependencies:
@@ -27786,11 +27786,11 @@ snapshots:
 
   platform@1.3.6: {}
 
-  playwright-core@1.44.0: {}
+  playwright-core@1.45.0: {}
 
-  playwright@1.44.0:
+  playwright@1.45.0:
     dependencies:
-      playwright-core: 1.44.0
+      playwright-core: 1.45.0
     optionalDependencies:
       fsevents: 2.3.2
 
