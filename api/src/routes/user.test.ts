@@ -369,9 +369,9 @@ describe('userRoutes', () => {
         const setCookie = res.headers['set-cookie'];
         expect(setCookie).toEqual(
           expect.arrayContaining([
-            'jwt_access_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
-            '_csrf=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
-            'csrf_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT'
+            'jwt_access_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Lax',
+            '_csrf=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Lax',
+            'csrf_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Lax'
           ])
         );
         expect(setCookie).toHaveLength(3);
