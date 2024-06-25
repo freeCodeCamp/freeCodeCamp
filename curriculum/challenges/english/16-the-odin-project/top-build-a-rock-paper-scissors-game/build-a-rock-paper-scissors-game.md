@@ -6,7 +6,7 @@ dashedName: top-build-a-rock-paper-scissors-game
 ---
 
 # --description--
-Your game will be played against the computer. You will write a function that randomly returns “rock”, “paper” or “scissors”.
+Your game will be played against the computer. You will write a function that randomly returns `"rock"`, `"paper"` or `"scissors"`.
 
 You do not need to worry about the front-end part of the game. You will only write the logic for the game. Open the `script.js` and start following the instructions.
 
@@ -14,7 +14,7 @@ You do not need to worry about the front-end part of the game. You will only wri
 
 1. You should have a function named `getComputerChoice`.
 
-1. Your `getComputerChoice` function should return "rock", "paper", or "scissors" at random.
+1. Your `getComputerChoice` function should return `"rock"`, `"paper"`, or `"scissors"` at random.
 
 **Hint:** The [Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) method returns a random number that’s greater than or equal to 0 and less than 1. Think about how you can use this to conditionally return one of the multiple choices.
 
@@ -38,7 +38,7 @@ Your game will be played round by round. You will write a function that takes th
 
 1. Define two parameters for `playRound`. Parameter one `humanChoice` and parameter two `computerChoice`. Use these two parameters to take the human and computer choices as arguments.
 
-1. Make your function’s `humanChoice` parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
+1. Make your function’s `humanChoice` parameter case-insensitive so that players can input `"rock"`, `"ROCK"`, `"RocK"`, or other variations.
 
 1. Write the code for your `playRound` function that returns a string value representing the round winner.
 
@@ -70,10 +70,18 @@ You should have a function called `getComputerChoice`
 assert.isFunction(getComputerChoice);
 ```
 
-Your `getComputerChoice` function should return “rock”, “paper”, or “scissors” at random.
+Your `getComputerChoice` function should return `"rock"`, `"paper"`, or `"scissors"` at random.
 
 ```js
-assert.oneOf(getComputerChoice(), ["rock", "paper", "scissors"]);
+const counts = {}
+for (let i = 0; i < 10000; i++) {
+  const result = getComputerChoice();
+  counts[result] = (counts[result] ?? 0) + 1;
+}
+assert.lengthOf(counts, 3);
+assert.include(Object.keys(counts), "rock");
+assert.include(Object.keys(counts), "paper");
+assert.include(Object.keys(counts), "scissors");
 ```
 
 You should have a function called `getHumanChoice`
