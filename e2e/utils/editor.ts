@@ -24,18 +24,8 @@ export const focusEditor = async ({
   await getEditors(page).focus();
 };
 
-export async function clearEditor({
-  page,
-  browserName
-}: {
-  page: Page;
-  browserName: string;
-}) {
+export async function clearEditor({ page }: { page: Page }) {
   // TODO: replace with ControlOrMeta when it's supported
-  if (browserName === 'webkit') {
-    await page.keyboard.press('Meta+a');
-  } else {
-    await page.keyboard.press('Control+a');
-  }
+  await page.keyboard.press('ControlOrMeta+a');
   await page.keyboard.press('Backspace');
 }
