@@ -14,9 +14,8 @@ const SearchBarOptimized = ({
   const [value, setValue] = useState('');
   const inputElementRef = useRef<HTMLInputElement>(null);
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);
-  };
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
