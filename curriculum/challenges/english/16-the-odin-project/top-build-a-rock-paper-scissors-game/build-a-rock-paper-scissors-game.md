@@ -78,9 +78,9 @@ for (let i = 0; i < 10000; i++) {
   const result = getComputerChoice();
   counts[result] = (counts[result] ?? 0) + 1;
 }
-assert.lengthOf(counts, 3);
+assert.lengthOf(Object.keys(counts).length, 3);
 assert.include(Object.keys(counts), "rock");
-assert.include(Object.keys(counts), "paper");
+assert.include(Object.keys(counts), "paper"); 
 assert.include(Object.keys(counts), "scissors");
 ```
 
@@ -109,7 +109,7 @@ Your `playRound` function should take the human and computer player choices as a
 assert.match(playRound.toString(), /\s*(?:\bhumanChoice\b\s*,\s*\bcomputerChoice\b)/);
 ```
 
-Your `playRound` function should be case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
+Your `playRound` function should be case-insensitive so that players can input `"rock"`, `"ROCK"`, `"RocK"`, or other variations.
 
 ```js
 assert.match(playRound.toString(), /\bhumanChoice\s*\.toLowerCase\(\)/);
