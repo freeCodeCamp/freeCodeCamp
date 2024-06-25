@@ -44,7 +44,6 @@ import {
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FREECODECAMP_NODE_ENV,
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
