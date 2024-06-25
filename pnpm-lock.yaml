@@ -162,6 +162,9 @@ importers:
       '@fastify/express':
         specifier: ^2.3.0
         version: 2.3.0
+      '@fastify/session':
+        specifier: 10.7.0
+        version: 10.7.0
       '@fastify/swagger':
         specifier: 8.14.0
         version: 8.14.0
@@ -183,6 +186,9 @@ importers:
       ajv-formats:
         specifier: 2.1.1
         version: 2.1.1(ajv@8.12.0)
+      connect-mongo:
+        specifier: 4.6.0
+        version: 4.6.0(express-session@1.17.3)(mongodb@4.17.2)
       date-fns:
         specifier: 2.30.0
         version: 2.30.0
@@ -244,9 +250,9 @@ importers:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
-      '@types/express':
-        specifier: 4.17.21
-        version: 4.17.21
+      '@types/express-session':
+        specifier: 1.17.10
+        version: 1.17.10
       '@types/jsonwebtoken':
         specifier: 9.0.5
         version: 9.0.5
@@ -1235,8 +1241,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.7)
       '@freecodecamp/curriculum-helpers':
-        specifier: 3.5.0
-        version: 3.5.0
+        specifier: 3.4.0
+        version: 3.4.0
       '@types/chai':
         specifier: 4.3.12
         version: 4.3.12
@@ -2989,6 +2995,9 @@ packages:
   '@fastify/send@2.1.0':
     resolution: {integrity: sha512-yNYiY6sDkexoJR0D8IDy3aRP3+L4wdqCpvx5WP+VtEU58sn7USmKynBzDQex5X42Zzvw2gNzzYgP90UfWShLFA==}
 
+  '@fastify/session@10.7.0':
+    resolution: {integrity: sha512-ECA75gnyaxcyIukgyO2NGT3XdbLReNl/pTKrrkRfDc6pVqNtdptwwfx9KXrIMOfsO4B3m84eF3wZ9GgnebiZ4w==}
+
   '@fastify/static@6.11.2':
     resolution: {integrity: sha512-EH7mh7q4MfNdT7N07ZVlwsX/ObngMvQ7KBP0FXAuPov99Fjn80KSJMdxQhhYKAKWW1jXiFdrk8X7d6uGWdZFxg==}
 
@@ -3039,8 +3048,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@freecodecamp/curriculum-helpers@3.5.0':
-    resolution: {integrity: sha512-6Cil7sXY6B8fQDv1XoxBUFIOUfhZ+KtnMZwi+Sfs7gDLEkkfUwxbvg77U/ZPz1buq93k8f2EzIMJEafNiv+aqg==}
+  '@freecodecamp/curriculum-helpers@3.4.0':
+    resolution: {integrity: sha512-lJgimBW4MQqnVH9r1mugto+tffnb1GeoHU+QwPqhZJJCDL1fDKy7JA9O7o3x4J2XmvnNDwGT2W2jTuUqMKZNpg==}
     engines: {npm: '>= 4.0.0'}
 
   '@freecodecamp/loop-protect@3.0.0':
@@ -4098,6 +4107,9 @@ packages:
 
   '@types/express-serve-static-core@4.17.37':
     resolution: {integrity: sha512-ZohaCYTgGFcOP7u6aJOhY9uIZQgZ2vxC2yWoArY+FeDXlqeH66ZVBjgvg+RLVAS/DWNq4Ap9ZXu1+SUQiiWYMg==}
+
+  '@types/express-session@1.17.10':
+    resolution: {integrity: sha512-U32bC/s0ejXijw5MAzyaV4tuZopCh/K7fPoUDyNbsRXHvPSeymygYD1RFL99YOLhF5PNOkzswvOTRaVHdL1zMw==}
 
   '@types/express@4.17.18':
     resolution: {integrity: sha512-Sxv8BSLLgsBYmcnGdGjjEjqET2U+AKAdCRODmMiq02FgjwuV75Ut85DRpvFjyw/Mk0vgUOliGRU0UUmuuZHByQ==}
@@ -6077,6 +6089,13 @@ packages:
     resolution: {integrity: sha512-0Mx88079Z20CG909wCFlR3UxhMYGg6Ibn1hkIje1hwsqOLWtL9HJV+XD0DAjUvQScK6WqY/FA8tSVQM9rR64Rw==}
     peerDependencies:
       express-session: ^1.17.1
+
+  connect-mongo@4.6.0:
+    resolution: {integrity: sha512-8new4Z7NLP3CGP65Aw6ls3xDBeKVvHRSh39CXuDZTQsvpeeU9oNMzfFgvqmHqZ6gWpxIl663RyoVEmCAGf1yOg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      express-session: ^1.17.1
+      mongodb: ^4.1.0
 
   connect@3.7.0:
     resolution: {integrity: sha512-ZqRXc+tZukToSNmh5C2iWMSoV3X1YUcPbqEM4DkEG5tNQXrQUZCNVGGv3IuicnkMtPfGf3Xtp8WCXs295iQ1pQ==}
@@ -9259,6 +9278,10 @@ packages:
   klona@2.0.6:
     resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
     engines: {node: '>= 8'}
+
+  kruptein@3.0.6:
+    resolution: {integrity: sha512-EQJjTwAJfQkC4NfdQdo3HXM2a9pmBm8oidzH270cYu1MbgXPNPMJuldN7OPX+qdhPO5rw4X3/iKz0BFBfkXGKA==}
+    engines: {node: '>8'}
 
   labeled-stream-splicer@2.0.2:
     resolution: {integrity: sha512-Ca4LSXFFZUjPScRaqOcFxneA0VpKZr4MMYCljyQr4LIewTLb3Y0IUTIsnBBsVubIeEfxeSZpSjSsRM8APEQaAw==}
@@ -16969,6 +16992,11 @@ snapshots:
       http-errors: 2.0.0
       mime: 3.0.0
 
+  '@fastify/session@10.7.0':
+    dependencies:
+      fastify-plugin: 4.5.1
+      safe-stable-stringify: 2.4.3
+
   '@fastify/static@6.11.2':
     dependencies:
       '@fastify/accept-negotiator': 1.1.0
@@ -17032,7 +17060,7 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
 
-  '@freecodecamp/curriculum-helpers@3.5.0':
+  '@freecodecamp/curriculum-helpers@3.4.0':
     dependencies:
       browserify: 17.0.0
 
@@ -18417,6 +18445,10 @@ snapshots:
       '@types/qs': 6.9.8
       '@types/range-parser': 1.2.5
       '@types/send': 0.17.2
+
+  '@types/express-session@1.17.10':
+    dependencies:
+      '@types/express': 4.17.21
 
   '@types/express@4.17.18':
     dependencies:
@@ -21169,6 +21201,15 @@ snapshots:
       - mongodb-client-encryption
       - mongodb-extjson
       - snappy
+
+  connect-mongo@4.6.0(express-session@1.17.3)(mongodb@4.17.2):
+    dependencies:
+      debug: 4.3.4(supports-color@8.1.1)
+      express-session: 1.17.3
+      kruptein: 3.0.6
+      mongodb: 4.17.2
+    transitivePeerDependencies:
+      - supports-color
 
   connect@3.7.0:
     dependencies:
@@ -25664,6 +25705,10 @@ snapshots:
   kleur@4.1.5: {}
 
   klona@2.0.6: {}
+
+  kruptein@3.0.6:
+    dependencies:
+      asn1.js: 5.4.1
 
   labeled-stream-splicer@2.0.2:
     dependencies:
@@ -30194,7 +30239,7 @@ snapshots:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 20.12.8
-      acorn: 8.11.3
+      acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
       create-require: 1.1.1
@@ -30212,7 +30257,7 @@ snapshots:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 20.12.8
-      acorn: 8.11.3
+      acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
       create-require: 1.1.1

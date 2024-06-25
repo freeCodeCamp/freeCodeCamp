@@ -20,10 +20,14 @@ const testPage =
   '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3';
 
 test.describe('Editor Component', () => {
-  test('should allow the user to insert text', async ({ page, isMobile }) => {
+  test('should allow the user to insert text', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
     await page.goto(testPage);
 
-    await focusEditor({ page, isMobile });
+    await focusEditor({ page, isMobile, browserName });
     await page.keyboard.insertText('<h2>FreeCodeCamp</h2>');
     const text = page.getByText('<h2>FreeCodeCamp</h2>');
     await expect(text).toBeVisible();

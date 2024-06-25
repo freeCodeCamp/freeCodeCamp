@@ -11,19 +11,19 @@ dashedName: css-foundations-exercise-a
 
 ## Histórias de usuário
 
-- Você deve ver um elemento `div` com algum texto.
-  - Ele deve ter um fundo `red`, um texto `white`, tamanho de fonte de `32px`, texto alinhado ao centro e `bold`.
-  - O CSS para o elemento `div` deve ser adicionado externamente e usando um seletor de tipos.
-- Você deve ver um elemento `p` com algum texto.
-  - Ele deve ter um fundo `green`, texto `white` e tamanho de fonte `18px`.
-  - O CSS para o elemento `p` deve ser adicionado internamente e usando um seletor de tipos.
-- Você deve ver um elemento `button` com algum texto.
-  - O elemento `button` deve ter um fundo `orange` e um tamanho de fonte de `18px`.
-  - O CSS para o elemento `button` deve ser adicionado usando estilos inline.
+- You should see a `div` element with some text.
+  - It should have a `red` background, `white` text, a font size of `32px`, text center aligned and `bold`.
+  - The CSS for the `div` element should be added externally, and using a type selector.
+- You should see a `p` element with some text.
+  - It should have a `green` background, `white` text, and a font size of `18px`.
+  - The CSS for the `p` element should be added internally, and using a type selector.
+- You should see a `button` element with some text.
+  - The `button` element should have an `orange` background and a font size of `18px`.
+  - The CSS for the `button` element should be added using inline styles.
 
 # --hints--
 
-Você deve ter um elemento `div` contendo algum texto.
+You should have one `div` element containing some text.
 
 ```js
 const divElement = document.querySelector('div');
@@ -32,7 +32,7 @@ assert.isNotNull(divElement);
 assert.isAtLeast(divElement?.innerText.length, 1);
 ```
 
-Você deve ter uma folha de estilos externa contendo o estilo dos elementos `div`.
+You should have an external stylesheet containing the `div` element styles.
 
 ```js
 const styleSheet = new __helpers.CSSHelp(document).getStyleSheet();
@@ -43,7 +43,7 @@ assert.isTrue(isExternal);
 assert.isNotNull(divStyle);
 ```
 
-O elemento `div` não deve ter seu CSS adicionado usando estilos internos ou inline.
+Your `div` element should not have its CSS added using internal or inline styles.
 
 ```js
 const styleElement = document.querySelector('style:not([class])');
@@ -52,7 +52,7 @@ assert.isNotTrue(styleElement?.innerText.includes('div'));
 assert.isNotTrue(document.querySelector('div')?.hasAttribute('style'));
 ```
 
-O elemento `div` deve ter uma `background-color` com o valor `red` e uma `color` com o valor `white`.
+Your `div` element should have a `background-color` of `red` and a `color` of `white`.
 
 ```js
 const divStyle = new __helpers.CSSHelp(document).getStyle('div');
@@ -63,7 +63,7 @@ assert.equal(divBGColor, 'red');
 assert.equal(divColor, 'white');
 ```
 
-O elemento `div` deve ter `font-weight` definido como `bold`, `font-size` definido como `32px` e `text-align` definido como `center`.
+Your `div` element should have `font-weight` set to `bold`, `font-size` set to `32px`, and `text-align` set to `center`.
 
 ```js
 const divStyle = new __helpers.CSSHelp(document).getStyle('div');
@@ -76,7 +76,7 @@ assert.equal(fontSize, '32px');
 assert.equal(fontWeight,'bold');
 ```
 
-Você deve ter um elemento `p` e ele deve conter algum texto.
+You should have one `p` element and it should contain some text.
 
 ```js
 const pElement = document.querySelector('p');
@@ -85,7 +85,7 @@ assert.isNotNull(pElement);
 assert.isAtLeast(pElement?.innerText.length, 1)
 ```
 
-O elemento `p` deve ter seus estilos adicionados internamente usando um elemento `style`.
+Your `p` element should have its styles added internally using a `style` element.
 
 ```js
 const styleElement = document.querySelector('style:not([class])');
@@ -99,7 +99,7 @@ if (rules && rules.selectorText === 'p') {
 assert.isTrue(isStyled);
 ```
 
-O elemento `p` deve ter um `font-size` de `18px` e ter `color` definida como `white`.
+Your `p` element should have a `font-size` of `18px` and have `color` set to `white`.
 
 ```js
 const styleElement = document.querySelector('style:not([class])');
@@ -115,7 +115,7 @@ assert.equal(fontSize, "18px");
 assert.equal(color, 'white');
 ```
 
-Você deve ter um elemento `button` contendo algum texto.
+You should have one `button` element containing some text.
 
 ```js
 const btnElement = document.querySelector('button');
@@ -124,19 +124,19 @@ assert.isNotNull(btnElement);
 assert.isAtLeast(btnElement?.innerText.length, 1);
 ```
 
-O elemento `button` deve ter um estilo inline.
+Your `button` element should have an inline style.
 
 ```js
 assert.isTrue(document.querySelector('button')?.hasAttribute('style'));
 ```
 
-O elemento `button` deve ter a `background-color` definida como `orange`.
+Your `button` element should have its `background-color` set to `orange`.
 
 ```js
 assert.equal(document.querySelector('button')?.style.backgroundColor, 'orange')
 ```
 
-O elemento `button` deve ter `font-size` definido como `18px`.
+Your `button` element should have its `font-size` set to `18px`.
 
 ```js
 assert.equal(document.querySelector('button')?.style.fontSize, '18px')

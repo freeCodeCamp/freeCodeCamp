@@ -1,7 +1,6 @@
 import React, { ReactNode, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
-import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -44,11 +43,7 @@ import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
-import { Loader, Spacer } from '../helpers';
-import {
-  MAX_MOBILE_WIDTH,
-  EX_SMALL_VIEWPORT_HEIGHT
-} from '../../../config/misc';
+import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 
 import '@freecodecamp/ui/dist/base.css';
@@ -108,7 +103,6 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   pathname: string;
   showFooter?: boolean;
   isChallenge?: boolean;
-  usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
   superBlock?: string;
@@ -133,7 +127,6 @@ function DefaultLayout({
   removeFlashMessage,
   showFooter = true,
   isChallenge = false,
-  usesMultifileEditor,
   block,
   superBlock,
   theme,
@@ -142,14 +135,6 @@ function DefaultLayout({
   updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
-  const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
-  const isProject = /project$/.test(block as string);
-  const isRenderBreadcrumbOnMobile =
-    isMobileLayout && (isProject || !usesMultifileEditor);
-  const isRenderBreadcrumb = !isMobileLayout || isRenderBreadcrumbOnMobile;
-  const isExSmallViewportHeight = useMediaQuery({
-    maxHeight: EX_SMALL_VIEWPORT_HEIGHT
-  });
   const { challengeEdges, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
     // componentDidMount
@@ -258,17 +243,13 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && !examInProgress && isRenderBreadcrumb ? (
+          {isChallenge && !examInProgress && (
             <div className='breadcrumbs-demo'>
               <BreadCrumb
                 block={block as string}
                 superBlock={superBlock as string}
               />
             </div>
-          ) : isExSmallViewportHeight ? (
-            <Spacer size='xxSmall' />
-          ) : (
-            <Spacer size='small' />
           )}
           {fetchState.complete && children}
         </div>

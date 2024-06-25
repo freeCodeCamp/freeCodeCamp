@@ -8,7 +8,7 @@ dashedName: problem-315-digital-root-clocks
 
 # --description--
 
-<img alt="animazione degli orologi di Sam e Max che calcolano le radici digitali a partire da 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
+<img class="img-responsive center-block" alt="animazione degli orologi di Sam e Max che calcolano le radici digitali a partire da 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
 
 Sam e Max sono incaricati di trasformare due orologi digitali in due orologi a "radici digitali".
 

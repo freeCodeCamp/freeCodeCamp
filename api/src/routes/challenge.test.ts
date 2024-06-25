@@ -550,7 +550,7 @@ describe('challengeRoutes', () => {
 
           // If a challenge has already been completed, it should return the
           // original completedDate
-          expect(resUpdate.body.completedDate).toBe(
+          expect(resUpdate.body.completedDate).not.toBe(
             resOriginal.body.completedDate
           );
           expect(resUpdate.statusCode).toBe(200);
@@ -1201,6 +1201,7 @@ describe('challengeRoutes', () => {
               completedDate
             });
 
+            // TODO: use a custom matcher for thisu
             expect(completedDate).toBeGreaterThan(now);
             expect(completedDate).toBeLessThan(now + 1000);
             expect(res.statusCode).toBe(200);

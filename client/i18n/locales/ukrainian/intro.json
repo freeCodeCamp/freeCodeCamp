@@ -1268,12 +1268,6 @@
       "top-learn-arrays-and-loops": {
         "title": "Вивчіть масиви та цикли",
         "intro": ["Дізнайтесь про масиви та цикли в JavaScript."]
-      },
-      "top-learn-to-solve-problems-and-understand-errors": {
-        "title": "Learn to Solve Problems and Understand Errors",
-        "intro": [
-          "Learn how to solve problems and understand errors in JavaScript."
-        ]
       }
     }
   },

@@ -6,7 +6,7 @@ import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
 import { SuperBlocks } from '../../shared/config/superblocks';
-import { createStepFile, validateBlockName } from './utils';
+import { createStepFile } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
@@ -198,9 +198,17 @@ void prompt([
   {
     name: 'block',
     message: 'What is the dashed name (in kebab-case) for this project?',
-    validate: validateBlockName,
+    validate: (block: string) => {
+      if (!block.length) {
+        return 'please enter a dashed name';
+      }
+      if (/[^a-z0-9-]/.test(block)) {
+        return 'please use alphanumerical characters and kebab case';
+      }
+      return true;
+    },
     filter: (block: string) => {
-      return block.toLowerCase().trim();
+      return block.toLowerCase();
     }
   },
   {

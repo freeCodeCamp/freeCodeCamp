@@ -119,9 +119,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       await fastify.prisma.user.delete({
         where: { id: req.user!.id }
       });
-      void reply.clearCookie('jwt_access_token');
-      void reply.clearCookie('_csrf');
-      void reply.clearCookie('csrf_token');
+      await req.session.destroy();
+      void reply.clearCookie('sessionId');
 
       return {};
     }

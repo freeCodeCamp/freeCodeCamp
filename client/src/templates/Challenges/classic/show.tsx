@@ -406,8 +406,6 @@ function ShowClassic({
       reduxChallengeFiles && (
         <MultifileEditor
           challengeFiles={reduxChallengeFiles}
-          block={block}
-          superBlock={superBlock}
           containerRef={containerRef}
           description={description}
           editorRef={editorRef}

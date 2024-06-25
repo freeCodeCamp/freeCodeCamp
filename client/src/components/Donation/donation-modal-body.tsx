@@ -25,6 +25,7 @@ const Illustration = () => {
       alt={t('donate.flying-bear')}
       id={'supporter-bear'}
       src={supporterBear}
+      data-playwright-test-label='not-found-image'
     />
   );
 };
@@ -157,7 +158,7 @@ const AnimationContainer = ({
           alt=''
           src={donationAnimation}
           id={'donation-animation'}
-          data-playwright-test-label='donation-animation'
+          data-playwright-test-label='not-found-image'
         />
       </div>
     </>

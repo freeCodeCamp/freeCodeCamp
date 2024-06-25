@@ -19,19 +19,19 @@ O uso de elementos corretos para o conteúdo é chamado HTML semântico. Você e
 
 ## --text--
 
-Por que as tags de fechamento automático, como `<br/>` ou `<img>`, são essenciais em HTML?
+Why are self-closing tags like `<br/>` or `<img>` essential in HTML?
 
 ## --answers--
 
-Elas impedem problemas de formatação em documentos HTML.
+They prevent formatting issues in HTML documents.
 
 ---
 
-Elas indicam elementos vazios e não exigem fechamento de tag.
+They indicate empty elements and require no closing tag.
 
 ---
 
-Elas melhoram o desempenho do site, reduzindo a complexidade do código.
+They improve website performance by reducing code complexity.
 
 
 ## --video-solution--

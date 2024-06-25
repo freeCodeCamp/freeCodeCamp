@@ -13,19 +13,19 @@ Muitos recursos úteis seguem se referindo ao HTML e ao CSS como linguagens de p
 
 ## --text--
 
-Por que HTML e CSS não são tipicamente classificados como linguagens de programação?
+Why are HTML and CSS not typically classified as programming languages?
 
 ## --answers--
 
-Eles não têm a capacidade para criar páginas da web.
+They lack the ability to create webpages.
 
 ---
 
-Eles se concentram em apresentar informação e não na lógica da programação.
+They focus on presenting information rather than programming logic.
 
 ---
 
-Eles são tecnologias ultrapassadas.
+They are outdated technologies.
 
 ## --video-solution--
 

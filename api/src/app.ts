@@ -1,11 +1,13 @@
 import fastifyCsrfProtection from '@fastify/csrf-protection';
 import express from '@fastify/express';
+import fastifySession from '@fastify/session';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import MongoStore from 'connect-mongo';
 import uriResolver from 'fast-uri';
 import Fastify, {
   FastifyBaseLogger,
@@ -24,6 +26,7 @@ import { SESProvider } from './plugins/mail-providers/ses';
 import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
+import sessionAuth from './plugins/session-auth';
 import codeFlowAuth from './plugins/code-flow-auth';
 import { mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
@@ -46,7 +49,9 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FREECODECAMP_NODE_ENV,
-  SENTRY_DSN
+  MONGOHQ_URL,
+  SENTRY_DSN,
+  SESSION_SECRET
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 
@@ -148,6 +153,21 @@ export const build = async (
     done();
   });
 
+  // @ts-expect-error - @fastify/session's types are not, yet, compatible with
+  // express-session's types
+  await fastify.register(fastifySession, {
+    secret: SESSION_SECRET,
+    rolling: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60, // 1 hour
+      secure: FREECODECAMP_NODE_ENV !== 'development'
+    },
+    store: MongoStore.create({
+      mongoUrl: MONGOHQ_URL
+    })
+  });
+
   const provider =
     EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
   void fastify.register(mailer, { provider });
@@ -159,7 +179,17 @@ export const build = async (
         info: {
           title: 'freeCodeCamp API',
           version: '1.0.0' // API version
-        }
+        },
+        components: {
+          securitySchemes: {
+            session: {
+              type: 'apiKey',
+              name: 'sessionId',
+              in: 'cookie'
+            }
+          }
+        },
+        security: [{ session: [] }]
       }
     });
     void fastify.register(fastifySwaggerUI, {
@@ -180,6 +210,7 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
+  void fastify.register(sessionAuth);
   void fastify.register(codeFlowAuth);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);

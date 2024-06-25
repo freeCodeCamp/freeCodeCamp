@@ -35,7 +35,7 @@ Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degl
 
 # --hints--
 
-`passport-github` dependency should be added.
+passport-github deve essere aggiunto come dipendenza.
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-`passport-github` should be required.
+passaport-github deve essere richiesto.
 
 ```js
 async (getUserInput) => {

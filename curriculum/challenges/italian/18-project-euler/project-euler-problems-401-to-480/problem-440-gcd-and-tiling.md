@@ -10,11 +10,11 @@ dashedName: problem-440-gcd-and-tiling
 
 Vogliamo ricoprire completamente una tavola di lunghezza $n$ e altezza 1, con blocchi 1 × 2 o 1 × 1 con una singola cifra decimale in alto:
 
-<img alt="dieci blocchi 1x1 con una cifra decimale in alto, e blocco 1x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
+<img class="img-responsive center-block" alt="dieci blocchi 1x1 con una cifra decimale in alto, e blocco 1x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
 
 Per esempio, ecco alcuni dei modi per piastrellare una tavola di lunghezza $n = 8$:
 
-<img alt="esempi di modi per piastrellare una tavola di lunghezza n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
+<img class="img-responsive center-block" alt="esempi di modi per piastrellare una tavola di lunghezza n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
 
 Sia $T(n)$ il numero di modi per piastrellare una tavola di lunghezza $n$ come descritto sopra.
 

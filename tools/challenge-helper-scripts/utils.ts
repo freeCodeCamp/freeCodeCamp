@@ -201,16 +201,6 @@ const getChallengeSeeds = (
   return parseMDSync(challengeFilePath).challengeFiles;
 };
 
-const validateBlockName = (block: string): boolean | string => {
-  if (!block.trim().length) {
-    return 'please enter a dashed name';
-  }
-  if (/[^a-z0-9-]/.test(block.trim())) {
-    return 'please use alphanumerical characters and kebab case';
-  }
-  return true;
-};
-
 export {
   createStepFile,
   createChallengeFile,
@@ -221,6 +211,5 @@ export {
   insertChallengeIntoMeta,
   insertStepIntoMeta,
   deleteChallengeFromMeta,
-  deleteStepFromMeta,
-  validateBlockName
+  deleteStepFromMeta
 };

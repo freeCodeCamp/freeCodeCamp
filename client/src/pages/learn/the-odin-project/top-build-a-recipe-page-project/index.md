@@ -1,9 +1,9 @@
 ---
-title: 'The Odin Project: Build a Recipe Page'
-block: top-build-a-recipe-project
+title: The Odin Project
 superBlock: the-odin-project
+certification: the-odin-project
 ---
 
-## Introduction to The Odin Project: Build a Recipe Page
+## The Odin project
 
 Description is to be determined

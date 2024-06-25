@@ -35,7 +35,7 @@ passport.use(new GitHubStrategy({
 
 # --hints--
 
-`passport-github` dependency should be added.
+passport-github 依存関係を追加する必要があります。
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-`passport-github` should be required.
+passport-github を require する必要があります。
 
 ```js
 async (getUserInput) => {

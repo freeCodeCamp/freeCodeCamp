@@ -21,8 +21,7 @@ import {
   createChallengeFile,
   createStepFile,
   insertStepIntoMeta,
-  updateStepTitles,
-  validateBlockName
+  updateStepTitles
 } from './utils';
 
 const basePath = join(
@@ -76,30 +75,6 @@ describe('Challenge utils helper scripts', () => {
         `${projectPath}/step-001.md`,
         `${projectPath}/step-002.md`
       ]);
-    });
-  });
-
-  describe('createProject util', () => {
-    it('should allow alphanumerical names with trailing whitespace', () => {
-      expect(
-        validateBlockName('learn-callbacks-by-creating-a-bookshelf ')
-      ).toBe(true);
-    });
-    it('should allow alphanumerical names with no trailing whitespace', () => {
-      expect(validateBlockName('learn-callbacks-by-creating-a-bookshelf')).toBe(
-        true
-      );
-    });
-    it('should not allow non-kebab case names', () => {
-      expect(validateBlockName('learnCallbacksBetter')).toBe(
-        'please use alphanumerical characters and kebab case'
-      );
-    });
-    it('should not allow white space names', () => {
-      expect(validateBlockName(' ')).toBe('please enter a dashed name');
-    });
-    it('should not allow empty names', () => {
-      expect(validateBlockName('')).toBe('please enter a dashed name');
     });
   });
 

@@ -35,7 +35,7 @@ passport.use(new GitHubStrategy({
 
 # --hints--
 
-`passport-github` dependency should be added.
+應正確添加依賴 passport-github。
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-`passport-github` should be required.
+應正確請求依賴 passport-github。
 
 ```js
 async (getUserInput) => {

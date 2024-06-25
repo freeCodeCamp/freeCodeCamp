@@ -7,7 +7,6 @@ import {
   challengeDataSelector,
   challengeMetaSelector
 } from '../templates/Challenges/redux/selectors';
-import { createFiles } from '../templates/Challenges/redux/actions';
 import { mapFilesToChallengeFiles, postSaveChallenge } from '../utils/ajax';
 import {
   bodySizeFits,
@@ -57,7 +56,6 @@ function* saveChallengeSaga() {
         if (data?.message) {
           yield put(createFlashMessage(data));
         } else if (data?.savedChallenges) {
-          yield put(createFiles(challengeFiles));
           yield put(
             saveChallengeComplete(
               mapFilesToChallengeFiles(data.savedChallenges)
