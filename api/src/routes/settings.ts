@@ -754,6 +754,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
+      // TODO(Post-MVP): clean up expired auth tokens.
       if (isExpired(authToken)) {
         return reply.redirectWithMessage(origin, expirationMessage);
       }
@@ -768,6 +769,8 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
+      // TODO(Post-MVP): clean up any other auth tokens for this user once
+      // the email is confirmed.
       await Promise.all([
         updateEmail(fastify, { id: targetUser.id, email }),
         deleteAuthToken(fastify, { id: authToken.id })
