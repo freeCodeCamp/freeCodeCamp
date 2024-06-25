@@ -110,6 +110,7 @@ test('User can use shortcuts to navigate between frontend projects', async ({
 
   await page.keyboard.press('n');
   await page.waitForURL(links.frontEnd2);
+  await waitUntilListening(page);
   await page.keyboard.press('p');
   await page.waitForURL(links.frontEnd1);
 });
@@ -123,6 +124,7 @@ test('User can use shortcuts to navigate between backend projects', async ({
 
   await page.keyboard.press('n');
   await page.waitForURL(links.backEnd2);
+  await waitUntilListening(page);
   await page.keyboard.press('p');
   await page.waitForURL(links.backEnd1);
 });
@@ -136,6 +138,7 @@ test('User can use shortcuts to navigate between video-based challenges', async 
 
   await page.keyboard.press('n');
   await page.waitForURL(links.video2);
+  await waitUntilListening(page);
   await page.keyboard.press('p');
   await page.waitForURL(links.video1);
 });
