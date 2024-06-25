@@ -25,7 +25,6 @@ export const focusEditor = async ({
 };
 
 export async function clearEditor({ page }: { page: Page }) {
-  // TODO: replace with ControlOrMeta when it's supported
   await page.keyboard.press('ControlOrMeta+a');
   await page.keyboard.press('Backspace');
 }
