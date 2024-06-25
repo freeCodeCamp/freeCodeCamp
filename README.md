@@ -73,7 +73,7 @@ Here are our twelve core certifications:
 - [Learn Regular Expressions by Building a Spam Filter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-regular-expressions-by-building-a-spam-filter)
 - [Learn Basic OOP by Building a Shopping Cart](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-oop-by-building-a-shopping-cart)
 - [Learn Intermediate OOP by Building a Platformer Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-intermediate-oop-by-building-a-platformer-game)
-- [Learn Intermediate Algorithmic Thinking by Building a Dice Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-intermediate-algorithmic-thinking-by-building-a-dice-game)
+- [Learn Intermediate Algorithmic Thinking by Building a Dice Game](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#review-algorithmic-thinking-by-building-a-dice-game)
 - [Learn Fetch and Promises By Building an fCC Authors Page](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-fetch-and-promises-by-building-an-fcc-authors-page)
 - [Learn Asynchronous Programming by Building an fCC Forum Leaderboard](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard)
   <br />

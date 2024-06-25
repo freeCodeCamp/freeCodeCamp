@@ -409,8 +409,8 @@
           "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
           "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
           "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
