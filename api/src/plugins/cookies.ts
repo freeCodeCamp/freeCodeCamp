@@ -45,6 +45,8 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
     parseOptions: {
       domain: COOKIE_DOMAIN,
       httpOnly: true,
+      // Path is necessary to ensure that only one cookie is set and it is valid
+      // for all routes.
       path: '/',
       sameSite: 'lax',
       secure: true,

@@ -136,8 +136,6 @@ export const build = async (
 
     if (!isSignout) {
       const token = reply.generateCsrf();
-      // Path is necessary to ensure that only one cookie is set and it is valid
-      // for all routes.
       void reply.setCookie('csrf_token', token, {
         sameSite: 'strict',
         signed: false
