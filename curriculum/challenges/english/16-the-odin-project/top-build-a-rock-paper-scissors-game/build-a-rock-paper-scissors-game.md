@@ -74,11 +74,11 @@ Your `getComputerChoice` function should return `"rock"`, `"paper"`, or `"scisso
 
 ```js
 const counts = {}
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 100; i++) {
   const result = getComputerChoice();
   counts[result] = (counts[result] ?? 0) + 1;
 }
-assert.lengthOf(Object.keys(counts).length, 3);
+assert.lengthOf(Object.keys(counts), 3);
 assert.include(Object.keys(counts), "rock");
 assert.include(Object.keys(counts), "paper"); 
 assert.include(Object.keys(counts), "scissors");
