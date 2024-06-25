@@ -1,6 +1,6 @@
 ---
 id: 66581a7fb1eb228115949301
-title: Навчіться розв’язувати задачі та розуміти помилки. Запитання H
+title: Навчіться розв’язувати проблеми та розуміти помилки. Запитання H
 challengeType: 15
 dashedName: learn-to-solve-problems-and-understand-errors-question-h
 ---

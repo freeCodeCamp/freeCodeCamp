@@ -1,6 +1,6 @@
 ---
 id: 5a24c314108439a4d4036183
-title: Use Advanced JavaScript in React Render Method
+title: 리액트 렌더 메서드에 자바스크립트 사용하기
 challengeType: 6
 forumTopicId: 301415
 dashedName: use-advanced-javascript-in-react-render-method
@@ -8,17 +8,17 @@ dashedName: use-advanced-javascript-in-react-render-method
 
 # --description--
 
-In previous challenges, you learned how to inject JavaScript code into JSX code using curly braces, `{ }`, for tasks like accessing props, passing props, accessing state, inserting comments into your code, and most recently, styling your components. These are all common use cases to put JavaScript in JSX, but they aren't the only way that you can utilize JavaScript code in your React components.
+이전 과제들에서, props에 접근하거나 props를 전달하고, state에 접근하며, 코드에 주석을 삽입하고, 가장 최근에는 컴포넌트를 스타일링하는 등의 작업을 위해 중괄호 `{ }`를 사용하여 JSX 코드에 자바스크립트 코드를 주입하는 방법을 배웠습니다. 모두 JSX에 자바스크립트를 넣는 일반적인 사용 방법이지만, 리액트 컴포넌트에 자바스크립트 코드를 사용할 수 있는 유일한 방법은 아닙니다.
 
-You can also write JavaScript directly in your `render` methods, before the `return` statement, ***without*** inserting it inside of curly braces. This is because it is not yet within the JSX code. When you want to use a variable later in the JSX code *inside* the `return` statement, you place the variable name inside curly braces.
+중괄호를 ***사용하지 않고*** `return`문 앞에 있는, `render` 메서드에 자바스크립트를 넣을 수 있습니다. 왜냐하면 아직 JSX 코드 안에 있지 않기 때문입니다. `return`문 *안에서* 변수를 사용하고 싶을 때는, 중괄호에 변수 이름을 넣어주면 됩니다.
 
 # --instructions--
 
-In the code provided, the `render` method has an array that contains 20 phrases to represent the answers found in the classic 1980's Magic Eight Ball toy. The button click event is bound to the `ask` method, so each time the button is clicked a random number will be generated and stored as the `randomIndex` in state. On line 52, delete the string `change me!` and reassign the `answer` const so your code randomly accesses a different index of the `possibleAnswers` array each time the component updates. Finally, insert the `answer` const inside the `p` tags.
+코드 편집기의 렌더(`render`) 메서드에는 1980년대 장난감인 'Magic Eight Ball'의 대답 20개를 포함한 배열이 있습니다. 버튼 클릭 이벤트는 `ask` 메서드에 연결되어 있어서, 버튼을 클릭할 때마다 무작위 숫자가 생성되고, state의 `randomIndex`에 저장됩니다. 52번째 줄에서 문자열 `change me!`를 삭제하고 `answer` const를 재할당하여, 컴포넌트가 업데이트될 때마다 코드가 `possibleAnswers` 배열의 다른 인덱스에 무작위로 접근하도록 하세요. 마지막으로 `answer` const를 `p` 태그에 넣어주세요.
 
 # --hints--
 
-The `MagicEightBall` component should exist and should render to the page.
+`MagicEightBall` 컴포넌트는 존재하고, 페이지에 렌더링되어야 합니다.
 
 ```js
 assert.strictEqual(
@@ -28,7 +28,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s first child should be an `input` element.
+`MagicEightBall`의 첫 번째 자식은 `input` 요소여야 합니다.
 
 ```js
 assert.strictEqual(
@@ -40,7 +40,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s third child should be a `button` element.
+`MagicEightBall`의 세 번째 자식은 `button`요소여야 합니다.
 
 ```js
 assert.strictEqual(
@@ -52,7 +52,7 @@ assert.strictEqual(
 );
 ```
 
-`MagicEightBall`'s state should be initialized with a property of `userInput` and a property of `randomIndex` both set to a value of an empty string.
+`MagicEightBall`의 state는 `userInput` 속성과 `randomIndex` 속성이 모두 빈 문자열 값으로 설정되어 초기화되어야 합니다.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-When `MagicEightBall` is first mounted to the DOM, it should return an empty `p` element.
+`MagicEightBall`이 처음 DOM에 마운트될 때는 빈 `p` 요소를 반환해야 합니다.
 
 ```js
 assert(
@@ -71,7 +71,7 @@ assert(
 );
 ```
 
-When text is entered into the `input` element and the button is clicked, the `MagicEightBall` component should return a `p` element that contains a random element from the `possibleAnswers` array.
+`input` 요소에 텍스트를 입력하고 버튼을 클릭하면, `MagicEightBall` 컴포넌트는 `possibleAnswers` 배열에서 무작위 요소를 포함한 `p` 요소를 반환해야 합니다.
 
 ```js
 (() => {

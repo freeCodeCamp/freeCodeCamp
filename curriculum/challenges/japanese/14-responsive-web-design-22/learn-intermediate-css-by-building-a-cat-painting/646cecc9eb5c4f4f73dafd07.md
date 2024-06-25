@@ -11,7 +11,7 @@ position を `absolute` に、`top` を `-26px` に、`left` を `-31px` に設�
 
 # --hints--
 
-`.cat-left-ear` セレクターの `position` プロパティを `absolute` に設定してください。 セミコロンを忘れないようにしましょう。
+`.cat-left-ear` セレクターの `position` プロパティを `absolute` に設定してください。 Don't forget to add a semicolon.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
