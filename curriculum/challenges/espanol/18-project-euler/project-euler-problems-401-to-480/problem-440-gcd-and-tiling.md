@@ -10,11 +10,11 @@ dashedName: problem-440-gcd-and-tiling
 
 We want to tile a board of length $n$ and height 1 completely, with either 1 × 2 blocks or 1 × 1 blocks with a single decimal digit on top:
 
-<img class="img-responsive center-block" alt="diez bloques de 1x1 con un dígito decimal en la parte superior, y un bloque 1x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img alt="diez bloques de 1x1 con un dígito decimal en la parte superior, y un bloque 1x2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Por ejemplo, aqui hay algunas maneras de embaldosar un tablero de longitud $n = 8$:
 
-<img class="img-responsive center-block" alt="ejemplos de formas para embaldosar un tablero de longitud n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
+<img alt="ejemplos de formas para embaldosar un tablero de longitud n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sea el número $T(n)$ número de formas para embaldosar un tablero de longitud $n$ como se describió anteriormente.
 

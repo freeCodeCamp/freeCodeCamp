@@ -18,7 +18,7 @@ Comece com um quadrado unitário. Em seguida, chamando um dos lados de sua base 
 
 A figura resultante, após um número infinito de iterações, é a árvore de Pitágoras.
 
-<img class="img-responsive center-block" alt="animação mostrando 8 iterações do procedimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação mostrando 8 iterações do procedimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 É possível mostrar que existe pelo menos um retângulo, cujos lados são paralelos ao quadrado maior da árvore de Pitágoras, e que envolve a árvore completamente.
 

@@ -19,7 +19,7 @@ Solange noch mindestens ein bestimmter Bruchteil $F$ an Kuchen übrig ist, führ
 
 Wenn weniger als ein Bruchteil $F$ des Kuchens übrig bleibt, wiederholt er diesen Vorgang nicht. Stattdessen isst er den ganzen restlichen Kuchen auf.
 
-<img class="img-responsive center-block" alt="Animation des Schneidevorgangs für Kuchen" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
+<img alt="Animation des Schneidevorgangs für Kuchen" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Für $x ≥ 1$ sei $E(x)$ die erwartete Anzahl von Wiederholungen des obigen Verfahrens durch Jeff mit $F = \frac{1}{x}$. It can be verified that $E(1) = 1$, $E(2) ≈ 1.2676536759$, and $E(7.5) ≈ 2.1215732071$.
 

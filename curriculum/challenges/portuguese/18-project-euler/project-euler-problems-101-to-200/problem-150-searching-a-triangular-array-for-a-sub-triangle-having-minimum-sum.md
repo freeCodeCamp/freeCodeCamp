@@ -13,7 +13,7 @@ Em uma matriz triangular de números inteiros positivos e negativos, queremos en
 
 No exemplo abaixo, pode ser facilmente verificado que o triângulo marcado satisfaz esta condição tendo uma soma de -42.
 
-<img class="img-responsive center-block" alt="matriz triangular, com subtriângulo marcado, somando -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
+<img alt="matriz triangular, com subtriângulo marcado, somando -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Queremos fazer uma matriz triangular desse tipo com mil fileiras. Então, geramos 500500 números pseudoaleatórios $s_k$ no intervalo $±2^{19}$, usando um tipo de gerador de número aleatório (conhecido como gerador congruente linear), da seguinte forma:
 

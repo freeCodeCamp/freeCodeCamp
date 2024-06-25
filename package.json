@@ -19,6 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "audit-challenges": "pnpm run create:shared && ts-node tools/challenge-auditor/index.ts",
     "analyze-bundle": "webpack-bundle-analyzer",
     "prebuild": "npm-run-all create:shared",
@@ -49,7 +50,7 @@
     "knip": "npx -y knip@1 --include files",
     "knip:all": "npx -y knip@1",
     "prelint": "pnpm run -F=client predevelop",
-    "lint": "npm-run-all create:shared -p lint:*",
+    "lint": "NODE_OPTIONS=\"--max-old-space-size=7168\" npm-run-all create:shared -p lint:*",
     "lint:challenges": "cd ./curriculum && pnpm run lint",
     "lint:js": "eslint --cache --max-warnings 0 .",
     "lint:ts": "tsc && tsc -p shared && tsc -p api",

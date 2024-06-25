@@ -14,11 +14,11 @@ dashedName: problem-405-a-rectangular-tiling
 
 $n > 0$ のとき、$T(n-1)$ のすべてのタイルを下図のように置き換えることで $T(n)$ を得ます。
 
-<img class="img-responsive center-block" alt="t(n - 1) から T(n) を得る方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img alt="t(n - 1) から T(n) を得る方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 次のアニメーションは、$n$ が 0 から 5 のときのタイルの敷き詰め方 $T(n)$ を示しています。
 
-<img class="img-responsive center-block" alt="n が 0 から 5 のときのタイルの敷き詰め方を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="n が 0 から 5 のときのタイルの敷き詰め方を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-rectangular-tiling-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $T(n)$ で 4 枚のタイルが集まる点の個数を $f(n)$ とします。 例えば、$f(1) = 0$, $f(4) = 82$, $f({10}^9)\bmod {17}^7 = 126\\,897\\,180$ です。
 

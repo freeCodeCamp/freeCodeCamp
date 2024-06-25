@@ -10,7 +10,7 @@ dashedName: problem-351-hexagonal-orchards
 
 A hexagonal orchard of order $n$ is a triangular lattice made up of points within a regular hexagon with side $n$. The following is an example of a hexagonal orchard of order 5:
 
-<img class="img-responsive center-block" alt="huerta hexágonal de orden 5, con puntos resaltados en verde, que se ocultan del centro por un punto más cercano a este" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px;" />
+<img alt="huerta hexágonal de orden 5, con puntos resaltados en verde, que se ocultan del centro por un punto más cercano a este" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Resaltados en verde son los puntos que se esconden desde el centro por un punto más cercano a el. Se puede ver que para una huerta hexagonal de orden 5, 30 puntos se ocultan desde el centro.
 

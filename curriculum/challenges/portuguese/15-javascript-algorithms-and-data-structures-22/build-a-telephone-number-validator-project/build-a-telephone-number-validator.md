@@ -27,7 +27,7 @@ Note that the area code is required. Also, if the country code is provided, you 
 **User Stories:**
 
 1. You should have an `input` element with an `id` of `"user-input"`
-1. You should have a `button` element with an `id` of `"check-btn`
+1. You should have a `button` element with an `id` of `"check-btn"`
 1. You should have a `button` element with an `id` of `"clear-btn"`
 1. You should have a `div`, `span` or `p` element with an `id` of `"results-div"`
 1. When you click on the `#check-btn` element without entering a value into the `#user-input` element, an alert should appear with the text `"Please provide a phone number"`

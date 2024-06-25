@@ -12,7 +12,7 @@ dashedName: problem-128-hexagonal-tile-differences
 
 同様に、8 番から 19 番、20 番から 37 番、38 番から 61 番、… という具合に新しい輪が追加されていきます。 下図は、最初の 3 個の輪を示しています。
 
-<img class="img-responsive center-block" alt="1 ～ 37 番の六角形タイルを並べて作られた最初の 3 つの輪。タイル 8 番と 17 番は色付き" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px;" />
+<img alt="1 ～ 37 番の六角形タイルを並べて作られた最初の 3 つの輪。タイル 8 番と 17 番は色付き" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 タイル $n$ 番と、それに隣接する 6 枚の各タイルとの差を求め、差が素数となるタイルの枚数を $PD(n) とします。
 

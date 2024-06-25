@@ -10,7 +10,7 @@ dashedName: problem-126-cuboid-layers
 
 Мінімальна кількість кубів, необхідних для того, щоб охопити кожну видиму грань прямокутного паралелепіпеда розміром 3×2×1, становить двадцять два.
 
-<img class="img-responsive center-block" alt="Паралелепіпед 3x2x1, покритий двадцятьма двома кубами 1x1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+<img alt="Паралелепіпед 3x2x1, покритий двадцятьма двома кубами 1x1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Якщо ми додамо другий шар до цього тіла, то для покриття кожної видимої грані знадобиться сорок шість кубів, для третього шару знадобиться сімдесят вісім кубів, а для четвертого шару знадобиться сто вісімнадцять кубів.
 

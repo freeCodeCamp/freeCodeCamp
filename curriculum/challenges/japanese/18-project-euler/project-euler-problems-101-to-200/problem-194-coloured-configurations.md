@@ -8,7 +8,7 @@ dashedName: problem-194-coloured-configurations
 
 # --description--
 
-Consider graphs built with the units A: <img class="img-responsive" alt="graph unit A" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-1.png" style="display: inline-block; background-color: white; padding: 10px;" /> and B: <img class="img-responsive" alt="graph unit B" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-2.png" style="display: inline-block; background-color: white; padding: 10px;" />, where the units are glued along the vertical edges as in the graph <img class="img-responsive" alt="graph with four units glued along the vertical edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-3.png" style="display: inline-block; background-color: white; padding: 10px;" />.
+Consider graphs built with the units A: <img alt="graph unit A" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-1.png" style="display: inline-block; background-color: white; padding: 10px;" /> and B: <img  alt="graph unit B" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-2.png" style="display: inline-block; background-color: white; padding: 10px;" />, where the units are glued along the vertical edges as in the graph <img alt="graph with four units glued along the vertical edges" src="https://cdn.freecodecamp.org/curriculum/project-euler/coloured-configurations-3.png" style="display: inline-block; background-color: white; padding: 10px;" />.
 
 $(a,b,c)$ 型の構成は、$a$ 個のユニット A と $b$ 個のユニット B からなり、図の頂点は、隣接する 2 つの頂点が同色にならない形で最大 $c$ 種類の色が付けられています。 上図の連結ユニットは (2,2,6) 型の構成の例です。実は、これはすべての $c ≥ 4 に対する (2,2,c) 型の構成です。
 

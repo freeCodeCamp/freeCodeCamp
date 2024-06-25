@@ -18,7 +18,7 @@ Su un tale albero due giocatori fanno un gioco take-away. A ogni giro, un giocat
 
 Ecco le mosse vincenti del primo giocatore al primo turno per $T(k)$ da $k = 1$ a $k = 6$.
 
-<img class="img-responsive center-block" alt="le mosse vincenti del primo giocatore, al primo turno per k = 1 a k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img alt="le mosse vincenti del primo giocatore, al primo turno per k = 1 a k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia$f(k)$ il numero di mosse vincenti del primo giocatore (es. le mosse per le quali il secondo giocatore non ha alcuna strategia vincente) al primo turno del gioco quando questo gioco è giocato su $T(k)$.
 

@@ -19,7 +19,7 @@ La somma di Minkowski, $S + T$, di due figure $S$ e $T$ è il risultato della so
 
 Per esempio, la somma di $S_3$ e $S_4$ è la forma a 6 lati mostrata in rosa qui sotto:
 
-<img class="img-responsive center-block" alt="immagine che mostra S_3, S_4 e S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
+<img alt="immagine che mostra S_3, S_4 e S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quanti lati ha $S_{1864} + S_{1865} + \ldots + S_{1909}$?
 

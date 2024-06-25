@@ -14,9 +14,9 @@ Let $r(a, b)$ be the radius of the incircle of $ΔABC$ when the incircle has cen
 
 For example, $r(3, 1) = \frac{1}{2}, r(6, 2) = 1, r(12, 3) = 2$.
 
-<img class="img-responsive center-block" alt="triangle ΔABC inscribed in an ellipse, radius of the incircle of ΔABC r(6, 2) = 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-inscribed-in-ellipse-1.png" style="background-color: white; padding: 10px;">
+<img alt="triangle ΔABC inscribed in an ellipse, radius of the incircle of ΔABC r(6, 2) = 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-inscribed-in-ellipse-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
-<img class="img-responsive center-block" alt="triangle ΔABC inscribed in an ellipse, radius of the incircle of ΔABC r(12, 3) = 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-inscribed-in-ellipse-2.png" style="background-color: white; padding: 10px;">
+<img alt="triangle ΔABC inscribed in an ellipse, radius of the incircle of ΔABC r(12, 3) = 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangle-inscribed-in-ellipse-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Let $G(n) = \sum_{a = 3}^n \sum_{b = 1}^{\left\lfloor\frac{a - 1}{2} \right\rfloor} r(a, b)$
 

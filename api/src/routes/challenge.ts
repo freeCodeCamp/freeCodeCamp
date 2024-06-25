@@ -31,14 +31,23 @@ import {
 import { generateRandomExam, createExamResults } from '../utils/exam';
 import {
   canSubmitCodeRoadCertProject,
-  createProject,
-  updateProject,
   verifyTrophyWithMicrosoft
 } from './helpers/challenge-helpers';
 
 interface JwtPayload {
   userToken: string;
 }
+
+// TODO(Post-MVP): This could be narrowed down to only the fields needed by
+// specific endpoints, but that means complicating the update helper.
+const userChallengeSelect = {
+  id: true,
+  completedChallenges: true,
+  partiallyCompletedChallenges: true,
+  progressTimestamps: true,
+  needsModeration: true,
+  savedChallenges: true
+};
 
 /**
  * Plugin for the challenge submission endpoints.
@@ -218,11 +227,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: userId },
-        select: {
-          completedChallenges: true,
-          partiallyCompletedChallenges: true,
-          progressTimestamps: true
-        }
+        select: userChallengeSelect
       });
 
       if (
@@ -237,33 +242,22 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       }
 
-      const completedDate = Date.now();
-      const oldChallenge = user.completedChallenges?.find(
-        ({ id }) => id === projectId
-      );
-
-      const updatedChallenge = {
+      const challenge = {
         challengeType,
         solution,
-        githubLink
-      };
-      const newChallenge = {
-        ...updatedChallenge,
+        githubLink,
         id: projectId,
-        completedDate
+        completedDate: Date.now()
       };
-      const alreadyCompleted = !!oldChallenge;
       const progressTimestamps = user.progressTimestamps as ProgressTimestamp[];
       const points = getPoints(progressTimestamps);
 
-      const data = alreadyCompleted
-        ? updateProject(projectId, updatedChallenge)
-        : createProject(projectId, newChallenge, progressTimestamps);
-
-      await fastify.prisma.user.update({
-        where: { id: userId },
-        data
-      });
+      const { alreadyCompleted, completedDate } = await updateUserChallengeData(
+        fastify,
+        user,
+        projectId,
+        challenge
+      );
 
       return {
         alreadyCompleted,
@@ -290,7 +284,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async req => {
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.user?.id }
+        where: { id: req.user?.id },
+
+        select: userChallengeSelect
       });
       const progressTimestamps = user.progressTimestamps as
         | ProgressTimestamp[]
@@ -334,7 +330,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const { id, files, challengeType } = req.body;
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.user?.id }
+        where: { id: req.user?.id },
+        select: userChallengeSelect
       });
       const RawProgressTimestamp = user.progressTimestamps as
         | ProgressTimestamp[]
@@ -549,36 +546,25 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.user?.id },
-          select: { completedChallenges: true, progressTimestamps: true }
+          select: userChallengeSelect
         });
 
-        const { completedChallenges } = user;
         const progressTimestamps =
           user.progressTimestamps as ProgressTimestamp[];
-        const oldChallenge = completedChallenges.find(
-          ({ id }) => id === challengeId
-        );
-        const alreadyCompleted = !!oldChallenge;
-        const completedDate = alreadyCompleted
-          ? oldChallenge.completedDate
-          : Date.now();
 
-        if (!alreadyCompleted) {
-          const newChallenge = {
-            id: challengeId,
-            completedDate,
-            solution: msTrophyStatus.msUserAchievementsApiUrl
-          };
-          await fastify.prisma.user.update({
-            where: { id: req.user?.id },
-            data: {
-              completedChallenges: {
-                push: newChallenge
-              },
-              progressTimestamps: [...progressTimestamps, completedDate]
-            }
-          });
-        }
+        const completedChallenge = {
+          id: challengeId,
+          solution: msTrophyStatus.msUserAchievementsApiUrl,
+          completedDate: Date.now()
+        };
+
+        const { alreadyCompleted, completedDate } =
+          await updateUserChallengeData(
+            fastify,
+            user,
+            challengeId,
+            completedChallenge
+          );
 
         return {
           alreadyCompleted,
@@ -730,6 +716,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
               newCompletedChallenges[alreadyCompletedIndex] = updatedChallege;
 
+              // TODO(Post-MVP): Try to DRY the updates.
+              // updateUserChallengeData, for all its faults, handles the
+              // update/insert logic well.
               await fastify.prisma.user.update({
                 where: { id: userId },
                 data: {

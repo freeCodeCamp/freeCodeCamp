@@ -10,11 +10,11 @@ dashedName: problem-321-swapping-counters
 
 Una riga orizzontale composta da $2n + 1$ quadrati ha $n$ pedine rosse posizionate a un'estremità e $n$ pedine blu all'altra estremità, che sono separate da un unico quadrato vuoto nel centro. Per esempio, quando $n = 3$.
 
-<img class="img-responsive center-block" alt="tre quadrati con pedine rosse e blu poste sulle estremità opposte della fila, separate da un quadrato vuoto" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="tre quadrati con pedine rosse e blu poste sulle estremità opposte della fila, separate da un quadrato vuoto" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Una pedina può spostarsi da un quadrato al successivo (slide) o può saltare sopra un'altra pedina (hop) finché il quadrato accanto a quella pedina non è occupato.
 
-<img class="img-responsive center-block" alt="mosse consentite della pedina" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="mosse consentite della pedina" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $M(n)$ il numero minimo di mosse/azioni per invertire completamente le posizioni dei contatori colorati; cioè, spostare tutti i contatori rossi a destra e tutti i contatori blu a sinistra.
 

@@ -17,7 +17,7 @@ dashedName: problem-275-balanced-sculptures
 
 彫像を数えるとき、単に $y$ 軸で反転させた配置は区別<u>されません</u>。 例えば、位数 6 の平衡な彫像 18 個を下に示します。($y$ 軸で反転して) 鏡像となる各ペアが 1 つの彫像としてカウントされることに注意してください。
 
-<img class="img-responsive center-block" alt="位数 6 に対する 18 個の平衡な彫像" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
+<img alt="位数 6 に対する 18 個の平衡な彫像" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 位数 10 の平衡な彫像は 964 個、位数 15 の平衡な彫像は 360505 個あります。
 

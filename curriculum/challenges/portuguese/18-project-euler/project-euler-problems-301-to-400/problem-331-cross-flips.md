@@ -12,7 +12,7 @@ Discos NxN são colocados em um tabuleiro de jogo quadrado. Cada disco tem um la
 
 A cada turno, você pode escolher um disco e virar todos os discos na mesma linha e na mesma coluna que este disco: portanto, $2 × N - 1$ discos são virados. O jogo termina quando todos os discos mostrarem o lado branco. O exemplo a seguir mostra um jogo em um tabuleiro 5×5.
 
-<img class="img-responsive center-block" alt="animação mostrando o jogo no tabuleiro 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação mostrando o jogo no tabuleiro 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Pode-se provar que 3 é o número mínimo de turnos para terminar este jogo.
 

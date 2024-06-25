@@ -10,7 +10,7 @@ dashedName: problem-138-special-isosceles-triangles
 
 Considera il triangolo isoscele con lunghezza di base $b = 16$, e lati $L = 17$.
 
-<img class="img-responsive center-block" alt="Un triangolo isoscele con lati denominati L - due lati con la stessa lunghezza e base del triangolo b; e altezza del triangolo - h dalla base del triangolo al vertice tra i lati L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img alt="Un triangolo isoscele con lati denominati L - due lati con la stessa lunghezza e base del triangolo b; e altezza del triangolo - h dalla base del triangolo al vertice tra i lati L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Utilizzando il teorema di Pitagora, si può vedere che l'altezza del triangolo è $h = \sqrt{{17}^2 − 8^2} = 15$, che è di una lunghezza inferiore alla base.
 

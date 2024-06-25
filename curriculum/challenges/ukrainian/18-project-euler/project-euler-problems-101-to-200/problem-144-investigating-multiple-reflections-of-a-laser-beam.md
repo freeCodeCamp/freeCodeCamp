@@ -15,8 +15,8 @@ dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 Світло може проникнути та вийти завдяки тому, що видалено верхню ділянку $−0.01 ≤ x ≤ +0.01$.
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="світловий промінь починається в точці (0,0; 10,1) і падає на дзеркало в точці (1,4; -9,6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="анімація з першими 10 віддзеркаленнями променя" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="світловий промінь починається в точці (0,0; 10,1) і падає на дзеркало в точці (1,4; -9,6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="анімація з першими 10 віддзеркаленнями променя" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 Світловий промінь у цій задачі починається за межами білої камери в точці (0,0; 10,1), а вперше стикається з дзеркалом в точці (1,4; -9,6).

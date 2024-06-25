@@ -10,7 +10,7 @@ dashedName: problem-147-rectangles-in-cross-hatched-grids
 
 In einem 3x2 kreuzschraffierten Raster könnten insgesamt 37 verschiedene Rechtecke innerhalb dieses Gitters platziert werden, wie in der Skizze angegeben.
 
-<img class="img-responsive center-block" alt="Möglichkeiten, verschiedene Rechtecke in einem schraffierten 3x2-Gitter zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
+<img alt="Möglichkeiten, verschiedene Rechtecke in einem schraffierten 3x2-Gitter zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Es gibt 5 Gitter, die kleiner als 3x2 sind, dabei sind vertikale und horizontale Dimensionen wichtig, z.B. 1x1, 2x1, 3x1, 1x2 und 2x2. Wenn jedes von denen kreuzschraffiert ist, könnte die folgende Anzahl an Rechtecken innerhalb der kleinen Gitter platziert werden:
 

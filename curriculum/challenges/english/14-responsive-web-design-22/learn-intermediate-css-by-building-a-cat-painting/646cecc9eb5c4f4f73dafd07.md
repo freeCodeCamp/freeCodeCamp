@@ -11,7 +11,7 @@ Move the left ear into position by setting a position of `absolute`, a `top` of 
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semicolon.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

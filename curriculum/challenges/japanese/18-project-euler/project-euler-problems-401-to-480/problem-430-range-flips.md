@@ -16,7 +16,7 @@ $N$ 枚の円盤が一列に並べられ、左から右に 1 から $N$ まで�
 
 下図は $N = 8$ の場合の例です。 最初のターンでは $A = 5$ と $B = 2$、2 回目のターンでは $A = 4$ と $B = 6$ が選ばれます。
 
-<img class="img-responsive center-block" alt="n = 8 の例。最初のターンでは A = 5 と B = 2、2 回目のターンでは A = 4 と B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="n = 8 の例。最初のターンでは A = 5 と B = 2、2 回目のターンでは A = 4 と B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $M$ 回のターンの後に白い面が見えている円盤の枚数の期待値を $E(N, M)$ とします。 $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$, $E(100, 10) ≈ 51.893$ であることを確認できます。
 

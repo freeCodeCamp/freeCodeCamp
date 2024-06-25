@@ -10,7 +10,7 @@ dashedName: problem-351-hexagonal-orchards
 
 Um pomar hexagonal de ordem $n$ é uma rede triangular, composta de pontos dentro de um hexágono regular com o lado $n$. Abaixo, vemos um exemplo de pomar hexagonal da ordem 5:
 
-<img class="img-responsive center-block" alt="pomar hexagonal de ordem 5, com pontos verdes em destaque, que são escondidos do centro por um ponto mais próximo dele" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px;" />
+<img alt="pomar hexagonal de ordem 5, com pontos verdes em destaque, que são escondidos do centro por um ponto mais próximo dele" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 O destaque em verde são os pontos que ficam ocultados do centro por um ponto mais próximo dele. Pode-se ver que, para um pomar hexagonal da ordem 5, 30 pontos estão escondidos do centro.
 

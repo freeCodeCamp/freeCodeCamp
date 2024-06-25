@@ -12,7 +12,7 @@ dashedName: problem-363-bzier-curves
 
 この曲線は次のように形成されます。
 
-<img class="img-responsive center-block" alt="ベジェ曲線の形成" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px;" />
+<img alt="ベジェ曲線の形成" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 線分 $P_0P_1$, $P_1P_2$, $P_2P_3$ 上に点 $Q_0$,$Q_1$, $Q_2$ が、区間 [0,1] 内の $t$ について $\frac{P_0Q_0}{P_0P_1} = \frac{P_1Q_1}{P_1P_2} = \frac{P_2Q_2}{P_2P_3} = t$ となるように描かれます。
 

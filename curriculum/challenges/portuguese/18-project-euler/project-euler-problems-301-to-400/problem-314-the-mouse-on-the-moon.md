@@ -18,7 +18,7 @@ Embora não seja permitido, mas para ter uma ideia se isto era melhor: se você 
 
 No entanto, se você cortar do quadrado quatro triângulos com lados 75 m, 75 m e $75\sqrt{2}$ m, a área total se torna 238750 $\text{m}^2$ e o perímetro se torna $1400 + 300\sqrt{2}$ m. Então, isso dá uma proporção de $\frac{\text{área cercada}}{\text{comprimento do muro}}$ de 130,87, o que é significativamente melhor.
 
-<img class="img-responsive center-block" alt="imagem mostrando a diferença na área cercada entre círculo e o quadrado com o corte de quatro triângulos" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+<img alt="imagem mostrando a diferença na área cercada entre círculo e o quadrado com o corte de quatro triângulos" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Encontre a proporção máxima de $\frac{\text{área cercada}}{\text{comprimento do muro}}$. Arredonde sua resposta para até 8 casas decimais usando o formato abc.defghijk.
 

@@ -16,7 +16,7 @@ $S_2$ を、残りの領域に収まる最大の正方形とします。以降�
 
 $S_n$ のインデックスを (左、下) の対で表します。「左」は $S_n$ の左にある正方形の数、「下」は $S_n$の下にある正方形の数を示します。
 
-<img class="img-responsive center-block" alt="双曲線の下に配置した正方形の図" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+<img alt="双曲線の下に配置した正方形の図" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 図では、配置した正方形に番号を付けてあります。
 

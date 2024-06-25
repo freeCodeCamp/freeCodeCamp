@@ -12,7 +12,7 @@ dashedName: >-
 
 Definiremos um lâmina quadrada como um esboço quadrado com um "buraco", de modo que a forma possua simetria vertical e horizontal. Por exemplo, usando exatamente trinta e dois blocos quadrados, podemos formar duas lâminas quadradas diferentes:
 
-<img class="img-responsive center-block" alt="duas lâminas quadradas com buracos 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
+<img alt="duas lâminas quadradas com buracos 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Com cem blocos, e não necessariamente usando todos eles de uma só vez, é possível formar quarenta e uma lâminas quadradas diferentes. Usando até um milhão de blocos, quantas lâminas quadradas diferentes podem ser formadas?
 

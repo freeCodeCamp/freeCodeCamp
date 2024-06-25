@@ -10,7 +10,7 @@ dashedName: problem-86-cuboid-route
 
 Eine Spinne, S, sitzt in einer Ecke eines quaderförmigen Raums mit den Maßen 6 x 5 x 3, und eine Fliege, F, sitzt in der gegenüberliegenden Ecke. Wenn man auf den Oberflächen des Raumes reist, ist die kürzeste "gerade" Entfernung von S nach F 10 und der Weg ist auf dem Diagramm dargestellt.
 
-<img class="img-responsive center-block" alt="ein Diagramm des Weges einer Spinne und einer Fliege von einer Ecke eines quaderförmigen Raumes zur gegenüberliegenden Ecke" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img alt="ein Diagramm des Weges einer Spinne und einer Fliege von einer Ecke eines quaderförmigen Raumes zur gegenüberliegenden Ecke" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 However, there are up to three "shortest" path candidates for any given cuboid and the shortest route doesn't always have integer length.
 

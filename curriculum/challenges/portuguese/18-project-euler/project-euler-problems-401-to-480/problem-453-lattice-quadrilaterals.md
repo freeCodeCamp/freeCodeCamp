@@ -14,7 +14,7 @@ Considere $Q(m, n)$ como o número de quadriláteros simples cujos vértices sã
 
 Por exemplo, $Q(2, 2) = 94$ pode ser visto abaixo:
 
-<img class="img-responsive center-block" alt="94 quadriláteros cujos vértices são pontos da rede com coordenadas (x, y) satisfazendo 0 &le; x &le; m e 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
+<img alt="94 quadriláteros cujos vértices são pontos da rede com coordenadas (x, y) satisfazendo 0 &le; x &le; m e 0 &le; y &le; n" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Também é possível verificar que $Q(3, 7) = 39.590$, $Q(12, 3) = 309.000$ e $Q(123, 45) = 70.542.215.894.646$.
 

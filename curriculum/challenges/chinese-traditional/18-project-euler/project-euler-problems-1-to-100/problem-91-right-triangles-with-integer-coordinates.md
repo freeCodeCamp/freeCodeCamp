@@ -10,11 +10,11 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 The points ${P}(x_1, y_1)$ and ${Q}(x_2, y_2)$ are plotted at integer coordinates and are joined to the origin, ${O}(0, 0)$, to form ${\Delta}OPQ$.
 
-<img class="img-responsive center-block" alt="在連接到原點 O (0, 0) 的整數座標處繪製點 P (x_1, y_1) 和 Q(x_2, y_2) 的圖形" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
+<img alt="在連接到原點 O (0, 0) 的整數座標處繪製點 P (x_1, y_1) 和 Q(x_2, y_2) 的圖形" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 There are exactly fourteen triangles containing a right angle that can be formed when each coordinate lies between 0 and 2 inclusive; that is, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
 
-<img class="img-responsive center-block" alt="一張圖顯示了 14 個包含直角的三角形，當每個座標在 0 和 2 之間時可以形成該直角" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
+<img alt="一張圖顯示了 14 個包含直角的三角形，當每個座標在 0 和 2 之間時可以形成該直角" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 給定 $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$，可以形成多少個直角三角形？
 

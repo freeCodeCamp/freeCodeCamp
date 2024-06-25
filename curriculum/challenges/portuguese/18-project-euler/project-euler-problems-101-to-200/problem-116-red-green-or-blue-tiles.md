@@ -12,15 +12,15 @@ Uma fileira de cinco blocos quadrados pretos deve ser substituída por blocos ob
 
 Se forem escolhidos os blocos vermelhos, haverá exatamente sete maneiras de fazer isso.
 
-<img class="img-responsive center-block" alt="Formas possíveis de colocar um oblongo vermelho em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px;" />
+<img alt="Formas possíveis de colocar um oblongo vermelho em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Se escolhermos os blocos verdes, há três maneiras de fazer isso.
 
-<img class="img-responsive center-block" alt="Formas possíveis de colocar um oblongo verde em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px;" />
+<img alt="Formas possíveis de colocar um oblongo verde em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 E se os blocos azuis forem escolhidos, há duas maneiras de fazer isso.
 
-<img class="img-responsive center-block" alt="Formas possíveis de colocar um oblongo azul em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;" />
+<img alt="Formas possíveis de colocar um oblongo azul em uma linha com cinco unidades de comprimento" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Assumindo que as cores não podem ser misturadas, há 7 + 3 + 2 = 12 maneiras de substituir os blocos pretos em sequência, medindo cinco unidades de comprimento. De quantas maneiras diferentes os blocos pretos em uma fileira medindo cinquenta unidades de comprimento podem ser substituídos, se as cores não podem ser misturadas e pelo menos um bloco colorido deve ser usado?
 

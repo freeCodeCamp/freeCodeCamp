@@ -10,7 +10,7 @@ dashedName: problem-327-rooms-of-doom
 
 A series of three rooms are connected to each other by automatic doors.
 
-<img class="img-responsive center-block" alt="eine Reihe von drei Räumen, die durch automatische Türen miteinander verbunden sind" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img alt="eine Reihe von drei Räumen, die durch automatische Türen miteinander verbunden sind" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Each door is operated by a security card. Once you enter a room, the door automatically closes, and that security card cannot be used again. A machine will dispense an unlimited number of cards at the start, but each room (including the starting room) contains scanners. Wenn sie feststellen, dass du mehr als drei Sicherheitskarten bei dir hast, oder wenn sie eine unbeaufsichtigte Sicherheitskarte auf dem Boden entdecken, werden alle Türen dauerhaft verschlossen. Jeder Raum enthält jedoch ein Fach, in dem du eine beliebige Anzahl von Sicherheitskarten sicher aufbewahren kannst, um sie zu einem späteren Zeitpunkt zu verwenden.
 

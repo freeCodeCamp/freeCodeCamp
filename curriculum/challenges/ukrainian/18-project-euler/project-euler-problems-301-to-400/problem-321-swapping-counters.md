@@ -10,11 +10,11 @@ dashedName: problem-321-swapping-counters
 
 Горизонтальний ряд з $2n + 1$ квадратів має $n$ червоних фішок з одного боку та $n$ синіх фішок з іншого, які розділені порожнім квадратом посередині. Наприклад, якщо $n = 3$.
 
-<img class="img-responsive center-block" alt="три квадрати з червоними та синіми фішками розміщені у протилежних кінцях ряду й розділені порожнім квадратом" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="три квадрати з червоними та синіми фішками розміщені у протилежних кінцях ряду й розділені порожнім квадратом" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Фішка може перейти з одного квадрата на інший, або перестрибнути через іншу фішку, якщо квадрат біля тої фішки не зайнятий.
 
-<img class="img-responsive center-block" alt="дозволені рухи фішок" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="дозволені рухи фішок" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $M(n)$ представляє мінімальну кількість рухів, потрібних для повної заміни позицій кольорових фішок, тобто потрібно перемістити червоні фішки праворуч та сині ліворуч.
 

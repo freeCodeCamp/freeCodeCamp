@@ -10,7 +10,7 @@ dashedName: problem-109-darts
 
 Nel gioco delle freccette un giocatore lancia tre freccette a un bersaglio che è diviso in venti sezioni di dimensioni uguali, numerate da uno a venti.
 
-<img class="img-responsive center-block" alt="Bersaglio da freccette" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;" />
+<img alt="Bersaglio da freccette" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Il punteggio di un lancio è determinato dal numero della regione colpita dalla freccetta. Un tiro fuori dall'anello rosso/verde esterno vale zero. Le regioni nere e color crema all'interno di questo anello rappresentano punteggi singoli. Tuttavia, gli anelli rosso/verde all'esterno e nel mezzo contano rispettivamente come punteggio doppio e triplo.
 

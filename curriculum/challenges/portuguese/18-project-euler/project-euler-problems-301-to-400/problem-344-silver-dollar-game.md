@@ -18,7 +18,7 @@ Como alternativa, o jogador pode escolher fazer o movimento especial de guardar 
 
 O vencedor é o jogador que guarda o dólar de prata.
 
-<img class="img-responsive center-block" alt="jogo do dólar de prata" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="jogo do dólar de prata" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Uma configuração vencedora é um arranjo de moedas na faixa onde o primeiro jogador pode forçar uma vitória, não importa o que o segundo jogador fizer.
 
