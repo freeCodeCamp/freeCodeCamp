@@ -1,4 +1,4 @@
 [submodule "i18n-curriculum"]
   path = i18n-curriculum
   url = https://github.com/freeCodeCamp/i18n-curriculum.git
-  ignore = all
+  ignore = dirty
