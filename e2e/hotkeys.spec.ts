@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
@@ -22,6 +22,11 @@ const links = {
     '/learn/python-for-everybody/python-for-everybody/introduction-hardware-architecture'
 };
 
+// The hotkeys are attached to specific elements, so we need to wait for the
+// wrapper to be focused before we can test the hotkeys.
+const waitUntilListening = async (page: Page) =>
+  await expect(page.locator('#editor-layout')).toBeFocused();
+
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeAll(async ({ request }) => {
@@ -43,6 +48,10 @@ test.beforeEach(async ({ page }) => {
   await keyboardShortcutGroup
     .getByRole('button', { name: translations.buttons.on, exact: true })
     .click();
+  // wait for the client to register the change:
+  await expect(
+    page.getByText(translations.flash['keyboard-shortcut-updated'])
+  ).toBeVisible();
 });
 
 test.afterEach(
@@ -61,9 +70,6 @@ test('User can use shortcuts in and around the editor', async ({ page }) => {
   // TODO: getByRole('alert', name:
   // translations.flash['keyboard-shortcut-updated']) did not find the alert.
   // Should it a) be an alert and b) have a name?
-  await expect(
-    page.getByText(translations.flash['keyboard-shortcut-updated'])
-  ).toBeVisible();
 
   await page.goto(course);
 
@@ -99,14 +105,12 @@ test('User can use shortcuts to navigate between frontend projects', async ({
   page
 }) => {
   await page.goto(links.frontEnd1);
-  await expect(page.locator('#editor-layout')).toBeFocused();
+  await waitUntilListening(page);
   await page.keyboard.press('Escape');
-  await page.keyboard.press('n');
 
+  await page.keyboard.press('n');
   await page.waitForURL(links.frontEnd2);
-  await expect(page.locator('#editor-layout')).toBeFocused();
   await page.keyboard.press('p');
-  await page.keyboard.press('Escape');
   await page.waitForURL(links.frontEnd1);
 });
 
@@ -114,14 +118,12 @@ test('User can use shortcuts to navigate between backend projects', async ({
   page
 }) => {
   await page.goto(links.backEnd1);
-  await expect(page.locator('#editor-layout')).toBeFocused();
+  await waitUntilListening(page);
   await page.keyboard.press('Escape');
-  await page.keyboard.press('n');
 
+  await page.keyboard.press('n');
   await page.waitForURL(links.backEnd2);
-  await expect(page.locator('#editor-layout')).toBeFocused();
   await page.keyboard.press('p');
-  await page.keyboard.press('Escape');
   await page.waitForURL(links.backEnd1);
 });
 
@@ -129,13 +131,11 @@ test('User can use shortcuts to navigate between video-based challenges', async 
   page
 }) => {
   await page.goto(links.video1);
-  await expect(page.locator('#editor-layout')).toBeFocused();
+  await waitUntilListening(page);
   await page.keyboard.press('Escape');
-  await page.keyboard.press('n');
 
+  await page.keyboard.press('n');
   await page.waitForURL(links.video2);
-  await expect(page.locator('#editor-layout')).toBeFocused();
   await page.keyboard.press('p');
-  await page.keyboard.press('Escape');
   await page.waitForURL(links.video1);
 });
