@@ -49,7 +49,8 @@ function validateFormValues(
   };
 
   const formFields = Object.entries(formValues);
-
+  // We don't always get a githubLink field in formValues, so we can't simply
+  // validate that field like the others. We have to handle it separately.
   if (isSourceCodeLinkRequired) {
     const githubLink = formValues['githubLink'];
     if (!githubLink) {
