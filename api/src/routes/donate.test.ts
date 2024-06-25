@@ -271,6 +271,7 @@ describe('Donate', () => {
         });
         expect(response.status).toBe(500);
       });
+
       it('should return 500 if amount is incorrect', async () => {
         const response = await superPost('/donate/charge-stripe').send({
           ...chargeStripeReqBody,
@@ -302,10 +303,12 @@ describe('Donate', () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
+
     const endpoints: { path: string; method: 'POST' }[] = [
       { path: '/donate/add-donation', method: 'POST' },
       { path: '/donate/charge-stripe-card', method: 'POST' }
     ];
+
     endpoints.forEach(({ path, method }) => {
       test(`${method} ${path} returns 401 status code with error message`, async () => {
         const response = await superRequest(path, {
