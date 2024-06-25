@@ -16,7 +16,7 @@ A cada movimento, dois, não necessariamente distintos, números inteiros $A$ e 
 
 O exemplo a seguir mostra o caso de $N = 8$. No primeiro movimento, $A = 5$ e $B = 2$. No segundo movimento, $A = 4$ e $B = 6$.
 
-<img class="img-responsive center-block" alt="exemplo para N = 8, com o primeiro movimento A = 5 e B = 2 e o segundo movimento A = 4 e B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="exemplo para N = 8, com o primeiro movimento A = 5 e B = 2 e o segundo movimento A = 4 e B = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/range-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $E(N, M)$ como o número de discos esperado mostrando seu lado branco após $M$ movimentos. Podemos verificar que $E(3, 1) = \frac{10}{9}$, $E(3, 2) = \frac{5}{3}$, $E(10, 4) ≈ 5.157$ e $E(100, 10) ≈ 51.893$.
 

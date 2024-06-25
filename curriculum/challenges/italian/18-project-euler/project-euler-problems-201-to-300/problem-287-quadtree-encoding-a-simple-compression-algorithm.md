@@ -19,7 +19,7 @@ La codifica Quadtree ci permette di descrivere un'immagine $2^N×2^N$ in bianco 
 
 Considera la seguente immagine 4×4 (i segni colorati indicano i luoghi in cui può verificarsi una divisione):
 
-<img class="img-responsive center-block" alt="Immagine 4x4 con segni colorati che indicano il luogo in cui può verificarsi la divisione" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;" />
+<img alt="Immagine 4x4 con segni colorati che indicano il luogo in cui può verificarsi la divisione" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Questa immagine può essere descritta da diverse sequenze, ad esempio: "<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010", di lunghezza 30, o "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110", di lunghezza 16, che è la sequenza minima per questa immagine.
 

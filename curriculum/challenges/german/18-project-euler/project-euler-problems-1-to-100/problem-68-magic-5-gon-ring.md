@@ -10,7 +10,7 @@ dashedName: problem-68-magic-5-gon-ring
 
 Betrachte den folgenden "magischen" 3er-Ring, der mit den Zahlen 1 bis 6 gefüllt ist, wobei jede Zeile die Zahl neun ergibt.
 
-<img class="img-responsive center-block" alt="ein fertiges Beispiel eines 3er-Rings" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="ein fertiges Beispiel eines 3er-Rings" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Wenn man **im Uhrzeigersinn** arbeitet und von der Dreiergruppe mit dem numerisch niedrigsten externen Knoten (4,3,2 in diesem Beispiel) ausgeht, kann jede Lösung eindeutig beschrieben werden. Die obige Lösung kann zum Beispiel durch die Menge beschrieben werden: 4,3,2; 6,2,1; 5,1,3.
 
@@ -35,7 +35,7 @@ Durch Verkettung der einzelnen Gruppen können 9-stellige Zahlenfolgen gebildet 
 
 Mit den Zahlen 1 bis 10 lassen sich je nach Anordnung 16- und 17-stellige Zahlenfolgen bilden. Was ist die maximale **16-stellige** Zahlenfolge für einen "magischen" 5er-Ring?
 
-<img class="img-responsive center-block" alt="ein leeres Diagramm eines 5er-Rings" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="ein leeres Diagramm eines 5er-Rings" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 # --hints--
 

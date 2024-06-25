@@ -8,7 +8,7 @@ dashedName: problem-315-digital-root-clocks
 
 # --description--
 
-<img class="img-responsive center-block" alt="animation of Sam's and Max's clocks calculating digital roots starting from 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;">
+<img alt="animation of Sam's and Max's clocks calculating digital roots starting from 137" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Sam and Max are asked to transform two digital clocks into two "digital root" clocks.
 

@@ -13,7 +13,7 @@ dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-m
 
 下図の例では、赤で示された三角形がこの条件を -42 で満たしていることを簡単に確認できます。
 
-<img class="img-responsive center-block" alt="三角配列の中に部分三角形 (和が -42) が赤で示されている" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
+<img alt="三角配列の中に部分三角形 (和が -42) が赤で示されている" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ここでは 1000 段のそのような三角配列を作りたいので、次のように無作為数生成法 (線形合同法と呼ばれます) によって、値の範囲が $±2^{19}$ の擬似乱数 $s_k$ を 500500 個生成します。
 

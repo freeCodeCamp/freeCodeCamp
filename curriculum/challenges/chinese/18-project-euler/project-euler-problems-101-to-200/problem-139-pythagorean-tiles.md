@@ -12,7 +12,7 @@ Let (a, b, c) represent the three sides of a right angle triangle with integral 
 
 例如，边长为（3，4，5）的三角形可以放在一起形成一个 5 乘 5 的正方形，中间有一个 1 乘 1 的小正方形，并且可以用 25 个 1 乘 1 的小正方形平埔填充 5 乘 5 的正方形。
 
-<img class="img-responsive center-block" alt="两个 5 x 5 的正方形：第一个通过 4 个 3 x 4 x 5 的三角形组成，中心有个 1 x 1 小正方形；第二个通过 25 个 1 x 1 的小正方形平铺填充。" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="两个 5 x 5 的正方形：第一个通过 4 个 3 x 4 x 5 的三角形组成，中心有个 1 x 1 小正方形；第二个通过 25 个 1 x 1 的小正方形平铺填充。" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 但是，如果使用（5，12，13）的三角形组成正方形，中间的小正方形是 7 乘 7 的。 而这些 7 x 7 的正方形将无法平铺填充 13 x 13 的正方形。
 

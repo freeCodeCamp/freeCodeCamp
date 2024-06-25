@@ -12,7 +12,7 @@ dashedName: problem-252-convex-holes
 
 一例として、20 個の点の集合と、上で定義した凸状の穴を下図にいくつか示します。 赤の多角形で示されている凸状の穴は、面積が 1049694.5 平方単位であり、これらの点の集合で作られる最大の凸状の穴です。
 
-<img class="img-responsive center-block" alt="平面上にある 20 個の点の集合と凸状の穴" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="平面上にある 20 個の点の集合と凸状の穴" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 この例では、次の擬似乱数法によって生成された最初の 20 個の点 ($T_{2k − 1}$, $T_{2k}$) (ここで $k = 1, 2, \ldots, 20$) を使用しました。
 

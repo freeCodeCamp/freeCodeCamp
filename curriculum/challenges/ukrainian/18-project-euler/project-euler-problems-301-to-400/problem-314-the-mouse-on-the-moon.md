@@ -18,7 +18,7 @@ dashedName: problem-314-the-mouse-on-the-moon
 
 Однак, якщо обрізати з квадрата чотири трикутники зі сторонами 75 м, 75 м та $75\sqrt{2}$ м, загальна площа дорівнюватиме 238750 $\text{м}^2$, а периметр — $1400 + 300\sqrt{2}$ м. Тому співвідношенням $\frac{\text{площа}}{\text{протяжність стін}}$ буде 130.87, що значно краще.
 
-<img class="img-responsive center-block" alt="рисунок з різницею площі між колом та квадратом з чотирма вирізаними трикутниками" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+<img alt="рисунок з різницею площі між колом та квадратом з чотирма вирізаними трикутниками" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Знайдіть максимальне співвідношення $\frac{\text{площа}}{\text{протяжність стін}}$. Дайте відповідь, заокруглену до восьми знаків після коми у форматі abc.defghijk.
 

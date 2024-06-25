@@ -17,7 +17,7 @@ Let $T(n)$ be the number of tours over a 4 × $n$ playing board such that:
 
 The diagram shows one tour over a 4 × 10 board:
 
-<img class="img-responsive center-block" alt="one tour over 4 x 10 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;">
+<img alt="one tour over 4 x 10 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 $T(10)$ is 2329. What is $T({10}^{12})$ modulo ${10}^8$?
 

@@ -25,7 +25,7 @@
     "common-setup": "pnpm -w run create:shared",
     "predevelop": "pnpm common-setup",
     "develop": "node src/development-start.js",
-    "start": "cross-env DEBUG=fcc* node lib/production-start.js"
+    "start": "DEBUG=fcc* node lib/production-start.js"
   },
   "dependencies": {
     "@freecodecamp/loopback-component-passport": "1.2.0",
@@ -37,7 +37,6 @@
     "connect-mongo": "3.2.0",
     "cookie-parser": "1.4.6",
     "cors": "2.8.5",
-    "cross-env": "7.0.3",
     "csurf": "1.11.0",
     "date-fns": "1.30.1",
     "debug": "2.2.0",

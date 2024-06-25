@@ -10,7 +10,7 @@ dashedName: problem-85-counting-rectangles
 
 Durch sorgfältiges Zählen kann man feststellen, dass ein rechteckiges Gitter von 3 x 2 achtzehn Rechtecke enthält:
 
-<img class="img-responsive center-block" alt="ein Diagramm der verschiedenen Rechtecke innerhalb eines 3 x 2-Rechteckgitters" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img alt="ein Diagramm der verschiedenen Rechtecke innerhalb eines 3 x 2-Rechteckgitters" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Auch wenn es kein rechtwinkliges Gitter gibt, das genau `n` Rechtecke enthält, finde die Fläche des Gitters mit der nächstliegenden Lösung.
 

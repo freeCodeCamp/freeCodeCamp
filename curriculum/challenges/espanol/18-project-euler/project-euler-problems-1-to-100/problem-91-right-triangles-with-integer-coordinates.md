@@ -10,11 +10,11 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 The points ${P}(x_1, y_1)$ and ${Q}(x_2, y_2)$ are plotted at integer coordinates and are joined to the origin, ${O}(0, 0)$, to form ${\Delta}OPQ$.
 
-<img class="img-responsive center-block" alt="un gráfico de puntos P (x_1, y_1) and Q(x_2, y_2) en coordenadas enteras que se unen al origen O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
+<img alt="un gráfico de puntos P (x_1, y_1) and Q(x_2, y_2) en coordenadas enteras que se unen al origen O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 There are exactly fourteen triangles containing a right angle that can be formed when each coordinate lies between 0 and 2 inclusive; that is, $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
 
-<img class="img-responsive center-block" alt="un diagrama muestra los 14 triángulos conteniendo un ángulo recto que puede ser formado cuando cada coordenada esta entre 0 y 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
+<img alt="un diagrama muestra los 14 triángulos conteniendo un ángulo recto que puede ser formado cuando cada coordenada esta entre 0 y 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Dado que $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$, cuántos triángulos rectos pueden formarse?
 

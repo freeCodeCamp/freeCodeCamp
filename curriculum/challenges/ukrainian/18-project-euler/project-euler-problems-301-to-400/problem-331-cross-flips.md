@@ -12,7 +12,7 @@ dashedName: problem-331-cross-flips
 
 На кожному ході ви можете обрати фішку та перевернути всі фішки в тих же рядах, тобто перевернуться $2 × N - 1$ фішок. Гра закінчується, коли всі диски перевернуті білою стороною догори. У прикладі продемонстровано гру на дошці 5×5.
 
-<img class="img-responsive center-block" alt="анімація гри на дошці 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація гри на дошці 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Можна довести, що для завершення гри потрібно зробити мінімум 3 ходи.
 

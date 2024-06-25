@@ -12,7 +12,7 @@ $E_a$ é uma elipse com a equação na forma $x^2 + 4y^2 = 4a^2$.
 
 $E_a'$ é a imagem rodada de $E_a$ por $θ$ graus no sentido anti-horário ao redor da origem $O(0, 0)$ para $0° &lt; θ &lt; 90°$.
 
-<img class="img-responsive center-block" alt="elipse E_a e elipse rodada por θ graus E_a'" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px;" />
+<img alt="elipse E_a e elipse rodada por θ graus E_a'" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $b$ é a distância da origem dos dois pontos de interseção mais próximos da origem e $c$ é a distância dos outros dois pontos de interseção.
 

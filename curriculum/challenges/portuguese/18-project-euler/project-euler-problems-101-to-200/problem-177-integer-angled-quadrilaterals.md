@@ -10,7 +10,7 @@ dashedName: problem-177-integer-angled-quadrilaterals
 
 Considere ABCD um quadrilátero convexo, com suas diagonais AC e BD. Em cada vértice, a diagonal faz um ângulo com cada um dos dois lados, criando oito ângulos de canto.
 
-<img class="img-responsive center-block" alt="quadrilátero convexo ABCD com diagonais AC e BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="quadrilátero convexo ABCD com diagonais AC e BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Por exemplo, no vértice A, os dois ângulos são CAD e CAB.
 

@@ -16,7 +16,7 @@ Para esse problema, consideramos apenas cômodos retangulares com dimensões int
 
 Há uma regra a seguir quando se monta o tatami: não pode haver pontos onde se encontrem cantos de quatro tapetes diferentes. Por exemplo, considere as duas disposições abaixo para um cômodo de 4×4:
 
-<img class="img-responsive center-block" alt="dois arranjos de tapetes em um cômodo de 4x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
+<img alt="dois arranjos de tapetes em um cômodo de 4x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 O arranjo da esquerda é aceitável, enquanto o da direita não é: um "<strong><span style="color: red;">X</span></strong>" vermelho no meio, marca o ponto onde quatro tatamis se encontram.
 

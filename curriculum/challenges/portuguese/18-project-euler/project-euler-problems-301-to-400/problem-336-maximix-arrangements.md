@@ -18,7 +18,7 @@ No entanto, Simon Simples, o motorista do trem, não é conhecido pela sua efici
 
 Usando quatro vagões, o pior arranjo possível para Simon, que chamaremos de arranjo máximo, é $DACB$ e $DBAC$; cada um deles exigindo cinco rotações (embora, usando a abordagem mais eficiente, eles possam ser reagrupados usando apenas três rotações). O processo que ele usa para $DACB$ é mostrado abaixo.
 
-<img class="img-responsive center-block" alt="cinco rotações para o arranjo maximix DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
+<img alt="cinco rotações para o arranjo maximix DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 É possível verificar que há 24 arranjos maximix para seis vagões, dos quais $DFAECB$ é o décimo arranjo maximix lexicográfico.
 

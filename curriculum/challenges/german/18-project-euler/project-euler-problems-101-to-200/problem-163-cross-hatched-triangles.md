@@ -10,7 +10,7 @@ dashedName: problem-163-cross-hatched-triangles
 
 Betrachte ein gleichseitiges Dreieck, in dem gerade Linien von jedem Scheitelpunkt zur Mitte der gegenüberliegenden Seite gezogen werden, wie in dem Dreieck der Größe 1 in der Skizze unten.
 
-<img class="img-responsive center-block" alt="Dreiecke mit Größe 1 und Größe 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="Dreiecke mit Größe 1 und Größe 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sixteen triangles of either different shape or size or orientation or location can now be observed in that triangle. Wenn Dreiecke der Größe 1 als Bausteine verwendet werden, können größere Dreiecke gebildet werden, wie das Dreieck der Größe 2 in der obigen Skizze. In diesem Dreieck der Größe 2 können nun einhundertundvier Dreiecke in unterschiedlicher Form, Größe oder Ausrichtung oder Position beobachtet werden.
 

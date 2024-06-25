@@ -12,7 +12,7 @@ dashedName: problem-257-angular-bisectors
 
 Бісектриси кутів трикутника перетинають сторони в точках $E$, $F$ та $G$ (див. рисунок нижче).
 
-<img class="img-responsive center-block" alt="трикутник ABC з бісектрисами, що перетинають сторони в точках E, F та G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
+<img alt="трикутник ABC з бісектрисами, що перетинають сторони в точках E, F та G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Відрізки $EF$, $EG$ та $FG$ ділять трикутник $ABC$ на чотири менші трикутники: $AEG$, $BFE$, $CGF$ та $EFG$. Можна довести, що для кожного з цих чотирьох трикутників співвідношення $\frac{\text{площа}(ABC)}{\text{площа}(\text{меншого трикутника})}$ є раціональним числом. Однак існують трикутники, за яких деякі або всі такі співвідношення є цілими числами.
 

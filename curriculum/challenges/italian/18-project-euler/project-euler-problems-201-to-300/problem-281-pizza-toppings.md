@@ -14,7 +14,7 @@ Sia $f(m, n)$ il numero di modi in cui puoi avere condimenti sulla pizza con $m$
 
 Così, per esempio, $f(2,1) = 1$, $f(2,2) = f(3,1) = 2$ e $f(3,2) = 16$. $f(3,2)$ è mostrato sotto:
 
-<img class="img-responsive center-block" alt="animazione con 16 modi per avere 3 condimenti diversi, ciascuno su 2 pezzi" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione con 16 modi per avere 3 condimenti diversi, ciascuno su 2 pezzi" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Trova la somma di tutte le $f(m,n)$ in modo tale che $f(m,n) ≤ {10}^{15}$.
 

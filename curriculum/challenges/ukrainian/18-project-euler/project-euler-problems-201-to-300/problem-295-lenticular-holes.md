@@ -21,7 +21,7 @@ $$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
 
 Кола $C_0$, $C_1$ та $C_2$ намальовані на рисунку нижче.
 
-<img class="img-responsive center-block" alt="кола C_0, C_1 та C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="кола C_0, C_1 та C_2" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Лінзоподібний отвір утворюють як $C_0$ та $C_1$, так і $C_0$ та $C_2$.
 

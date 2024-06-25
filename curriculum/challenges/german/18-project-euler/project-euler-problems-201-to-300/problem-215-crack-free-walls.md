@@ -12,7 +12,7 @@ Betrachte das Problem, eine Mauer aus 2×1 und 3×1 Ziegeln (horizontale×vertik
 
 Zum Beispiel ist die folgende 9×3 Wand aufgrund des rot dargestellten Risses nicht akzeptabel:
 
-<img class="img-responsive center-block" alt="9x3-Wand mit einer aufgereihten Lücke zwischen horizontal angrenzenden Ziegelsteinen" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
+<img alt="9x3-Wand mit einer aufgereihten Lücke zwischen horizontal angrenzenden Ziegelsteinen" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Es gibt acht Möglichkeiten, eine rissfreie 9×3-Wand zu bilden, geschrieben $W(9,3) = 8$.
 

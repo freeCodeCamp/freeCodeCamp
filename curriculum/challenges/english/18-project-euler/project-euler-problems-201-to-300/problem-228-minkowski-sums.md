@@ -21,7 +21,7 @@ The Minkowski sum, $S + T$, of two shapes $S$ and $T$ is the result of adding ev
 
 For example, the sum of $S_3$ and $S_4$ is the six-sided shape shown in pink below:
 
-<img class="img-responsive center-block" alt="image showing S_3, S_4 and S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;">
+<img alt="image showing S_3, S_4 and S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 How many sides does $S_{1864} + S_{1865} + \ldots + S_{1909}$ have?
 

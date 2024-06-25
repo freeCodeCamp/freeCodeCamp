@@ -10,7 +10,7 @@ dashedName: problem-114-counting-block-combinations-i
 
 長さ 7 単位の 1 列に、長さ 3 単位以上の赤ブロックが置かれています。2 つの赤ブロック (長さが異なっていても良い) がある場合、それらは少なくとも 1 つの黒マスで区切られています。 このようにブロックを置く方法はちょうど 17 通りあります。
 
-<img class="img-responsive center-block" alt="長さ 7 単位の列に長さ 3 単位以上のブロックを置く方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
+<img alt="長さ 7 単位の列に長さ 3 単位以上のブロックを置く方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 長さ 50 単位の 1 列にブロックを置く方法は何通りありますか。
 

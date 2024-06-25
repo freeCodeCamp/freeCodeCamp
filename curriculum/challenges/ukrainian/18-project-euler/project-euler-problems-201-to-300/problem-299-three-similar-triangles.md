@@ -14,7 +14,7 @@ $A(a, 0)$, $B(b, 0)$, $C(0, c)$ та $D(0, d)$, за умови $0 &lt; a &lt; b
 
 Точка $P$, також з цілими координатами, знаходиться на прямій $AC$ так, що всі три трикутники ($ABP$, $CDP$ та $BDP$) подібні.
 
-<img class="img-responsive center-block" alt="точки A, B, C, D та P утворюють три трикутники: ABP, CDP та BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="точки A, B, C, D та P утворюють три трикутники: ABP, CDP та BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Те, що трикутними є подібними, легко довести лише за умови $a = c$.
 

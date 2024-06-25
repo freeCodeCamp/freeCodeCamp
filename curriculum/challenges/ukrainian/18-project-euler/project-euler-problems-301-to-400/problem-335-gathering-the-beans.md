@@ -10,7 +10,7 @@ dashedName: problem-335-gathering-the-beans
 
 Кожен раз, коли Пітеру стає нудно, він розставляє по колу декілька мисок, в кожній з яких знаходиться по одній квасолі. Після цього він дістає всю квасолю з певної миски та кладе по одній квасолі в кожну миску, рухаючись за годинниковою стрілкою. Він повторює ці рухи, починаючи з миски, в яку поклав останню квасолю, поки не виникне початкова позиція. Наприклад, з 5 мисками він взаємодіє таким чином:
 
-<img class="img-responsive center-block" alt="анімація переміщення квасолі в п’яти мисках" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація переміщення квасолі в п’яти мисках" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Тому, якщо Пітер взяв 5 мисок, йому знадобиться 15 ходів, щоб повернутись до початкової позиції.
 

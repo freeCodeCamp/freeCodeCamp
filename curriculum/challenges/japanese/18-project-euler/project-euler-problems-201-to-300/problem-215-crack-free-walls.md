@@ -12,7 +12,7 @@ dashedName: problem-215-crack-free-walls
 
 例えば、下図の 9 × 3 の壁は、赤で示されている伝播亀裂があるため許容されません。
 
-<img class="img-responsive center-block" alt="9 x 3 の壁において、横方向に隣接するレンガ間の隙間が上段の隙間とつながっている" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px;" />
+<img alt="9 x 3 の壁において、横方向に隣接するレンガ間の隙間が上段の隙間とつながっている" src="https://cdn.freecodecamp.org/curriculum/project-euler/crack-free-walls.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 伝播亀裂が生じない 9 × 3 の壁を作る方法は 8 通りあります。これを $W(9,3) = 8$ と表すことにします。
 

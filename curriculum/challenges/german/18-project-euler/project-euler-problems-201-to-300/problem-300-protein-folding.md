@@ -20,7 +20,7 @@ Natürliche Proteine werden natürlich in drei Dimensionen gefaltet, aber wir we
 
 Die folgende Abbildung zeigt zwei mögliche Wege, auf denen unser Beispielprotein gefaltet werden könnte (H-H-Kontaktpunkte sind mit roten Punkten dargestellt).
 
-<img class="img-responsive center-block" alt="zwei mögliche Arten der Faltung des Beispielproteins" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+<img alt="zwei mögliche Arten der Faltung des Beispielproteins" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Die Faltung auf der linken Seite hat nur sechs H-H-Kontaktpunkte, sodass sie auf natürliche Weise niemals auftreten würde. Die Faltung auf der rechten Seite hat dagegen neun H-H-Kontaktpunkte, was für diese Zeichenkette optimal ist.
 

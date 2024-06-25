@@ -8,7 +8,7 @@ dashedName: problem-315-digital-root-clocks
 
 # --description--
 
-<img class="img-responsive center-block" alt="137 から始まり数字根を計算する、サムとマックスの時計のアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px;" />
+<img alt="137 から始まり数字根を計算する、サムとマックスの時計のアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/digital-root-clocks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 サムとマックスは、2 台のデジタル時計を数字根時計に作り変えるよう頼まれました。
 

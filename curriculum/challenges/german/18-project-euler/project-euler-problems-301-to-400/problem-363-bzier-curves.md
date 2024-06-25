@@ -12,7 +12,7 @@ A cubic Bézier curve is defined by four points: $P_0$, $P_1$, $P_2$ and $P_3$.
 
 Die Kurve ist wie folgt aufgebaut:
 
-<img class="img-responsive center-block" alt="Konstruktion der Bézier-Kurve" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px;" />
+<img alt="Konstruktion der Bézier-Kurve" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 In den Segmenten $P_0P_1$, $P_1P_2$ und $P_2P_3$ werden die Punkte $Q_0$,$Q_1$ und $Q_2$ so gezeichnet, dass $\frac{P_0Q_0}{P_0P_1} = \frac{P_1Q_1}{P_1P_2} = \frac{P_2Q_2}{P_2P_3} = t$, mit $t$ in [0,1].
 

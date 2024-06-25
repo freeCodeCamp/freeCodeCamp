@@ -10,7 +10,7 @@ dashedName: problem-351-hexagonal-orchards
 
 Шестикутний сад порядку $n$ — це трикутна решітка, яку утворюють крапки у звичайному шестикутнику зі стороною $n$. Наступна схема є прикладом шестикутного саду порядку 5:
 
-<img class="img-responsive center-block" alt="шестикутний сад порядку 5 з виділеними зеленим кольором точками, які приховані від центру точкою поблизу неї" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px;" />
+<img alt="шестикутний сад порядку 5 з виділеними зеленим кольором точками, які приховані від центру точкою поблизу неї" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Зеленим виділені точки, шлях яких закривають інші точки, ближчі до центру. Як бачимо, в шестикутному саду порядку 5 виділено 30 прихованих точок.
 

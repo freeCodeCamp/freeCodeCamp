@@ -10,7 +10,7 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 正方形の黒のタイルと、赤 (長さ 2)、緑 (長さ 3)、または青 (長さ 4) の長方形タイルを組み合わせて、長さ 5 単位の 1 列にタイルを敷く方法はちょうど 15 通りあります。
 
-<img class="img-responsive center-block" alt="長さ 5 単位の列に赤、緑、青のタイルを置く場合に考えられる方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="長さ 5 単位の列に赤、緑、青のタイルを置く場合に考えられる方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 長さ 50 単位の 1 列にタイルを敷く方法は何通りありますか。
 

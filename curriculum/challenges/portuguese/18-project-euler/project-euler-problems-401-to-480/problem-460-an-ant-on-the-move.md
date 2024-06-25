@@ -23,7 +23,7 @@ Desse modo, o tempo total necessário é de $1.2283 + 0.6667 + 1.2283 = 3.1233$.
 
 A imagem à direita é outro caminho. O tempo total necessário é calculado por $0.98026 + 1 + 0.98026 = 2.96052$. Isso mostra que esse é o caminho mais rápido para $d = 4$.
 
-<img class="img-responsive center-block" alt="dois caminhos possíveis para d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
+<img alt="dois caminhos possíveis para d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $F(d)$ como o tempo total necessário se a formiga escolher o caminho mais rápido. Por exemplo, $F(4) ≈ 2.960.516.287$. Podemos verificar que $F(10) ≈ 4.668.187.834$ e que $F(100) ≈ 9.217.221.972$.
 

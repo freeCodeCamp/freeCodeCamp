@@ -12,7 +12,7 @@ Un robot si muove in una serie di archi di un quinto di cerchio (72°), con la s
 
 Uno dei possibili 70932 percorsi chiusi di 25 archi iniziando verso nord è
 
-<img class="img-responsive center-block" alt="percorso chiuso di 25 archi, iniziando verso nord" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
+<img alt="percorso chiuso di 25 archi, iniziando verso nord" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Dato che il robot inizia guardando verso nord, quanti viaggi di 70 archi di lunghezza può fare per tornare, dopo l'arco finale, alla sua posizione di partenza?
 

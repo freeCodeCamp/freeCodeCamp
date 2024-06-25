@@ -18,7 +18,7 @@ dashedName: problem-344-silver-dollar-game
 
 銀貨を手に入れたプレイヤーが勝者です。
 
-<img class="img-responsive center-block" alt="銀貨ゲーム" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="銀貨ゲーム" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 後手が何をしようが先手が必ず勝てるような硬貨の配列を、「勝利構成」と呼びます。
 

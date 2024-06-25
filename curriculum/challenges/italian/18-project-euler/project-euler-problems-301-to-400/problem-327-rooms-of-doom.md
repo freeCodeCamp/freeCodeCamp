@@ -10,7 +10,7 @@ dashedName: problem-327-rooms-of-doom
 
 Tre stanze sono collegate tra loro da porte automatiche.
 
-<img class="img-responsive center-block" alt="serie di tre stanze collegate tra loro da porte automatiche" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img alt="serie di tre stanze collegate tra loro da porte automatiche" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ogni porta è azionata da una scheda di sicurezza. Una volta che si entra in una stanza, la porta si chiude automaticamente, e quella scheda di sicurezza non può essere utilizzata di nuovo. Una macchina distribuirà un numero illimitato di carte all'inizio, ma ogni stanza (compresa la stanza di partenza) contiene degli scanner. Se rilevano che si stanno tenendo più di tre carte di sicurezza o se rilevano una carta di sicurezza incustodita sul pavimento, poi tutte le porte diventeranno permanentemente bloccate. Tuttavia, ogni stanza contiene una scatola in cui è possibile conservare in modo sicuro qualsiasi numero di carte di sicurezza da utilizzare in una fase successiva.
 

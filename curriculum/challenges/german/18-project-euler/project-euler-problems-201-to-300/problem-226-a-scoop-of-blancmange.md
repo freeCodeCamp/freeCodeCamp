@@ -12,7 +12,7 @@ The blancmange curve is the set of points ($x$,$y$) such that $0 ≤ x ≤ 1$ an
 
 The area under the blancmange curve is equal to $\frac{1}{2}$, shown in pink in the diagram below.
 
-<img class="img-responsive center-block" alt="diagram of blancmange curve, with circle C shown on diagram" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img alt="diagram of blancmange curve, with circle C shown on diagram" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Lass $C$ den Kreis mit dem Mittelpunkt ($\frac{1}{4}$,$\frac{1}{2}$) und dem Radius $\frac{1}{4}$ sein, der im Diagramm in schwarz dargestellt ist.
 

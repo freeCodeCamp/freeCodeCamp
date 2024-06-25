@@ -10,7 +10,7 @@ dashedName: problem-68-magic-5-gon-ring
 
 Розглянемо наступне «магічне» трикутне кільце, заповнене цифрами від 1 до 6, а сума цифр на кожній лінії дорівнює 9.
 
-<img class="img-responsive center-block" alt="завершений приклад трикутного кільця" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="завершений приклад трикутного кільця" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Працюючи **за годинниковою стрілкою** і почавши з групи з найменшим зовнішнім вузлом (4,3,2 у цьому прикладі), кожен розв’язок можна записати одним способом. Наприклад, вищенаведений розв’язок можна описати множиною: 4,3,2; 6,2,1; 5,1,3.
 
@@ -35,7 +35,7 @@ dashedName: problem-68-magic-5-gon-ring
 
 Використовуючи числа від 1 до 10, залежно від розташування, можна утворити 16- та 17-значні рядки. Яким є максимальне значення **16-значного** рядка для «магічного» п’ятикутного кільця?
 
-<img class="img-responsive center-block" alt="пуста діаграма п’ятикутного кільця" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="пуста діаграма п’ятикутного кільця" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 # --hints--
 

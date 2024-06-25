@@ -10,7 +10,7 @@ dashedName: problem-68-magic-5-gon-ring
 
 Considera il seguente anello trigonale "magico", riempito con i numeri da 1 a 6, e con ogni riga che somma a nove.
 
-<img class="img-responsive center-block" alt="un esempio completo di un anello trigonale" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="un esempio completo di un anello trigonale" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Lavorando in **senso orario** e iniziando dal gruppo di tre con il nodo esterno numericamente più piccolo (4, 3, 2 in questo esempio), ogni soluzione può essere descritta in modo univoco. Per esempio, la soluzione sopra può essere descritta dal set: 4,3,2; 6,2,1; 5,1,3.
 
@@ -35,7 +35,7 @@ Concatenando ogni gruppo è possibile formare stringhe a 9 cifre; la stringa pi�
 
 Usando i numeri da 1 a 10, a seconda dell'arrangiamento, è possibile formare stringhe a 16 e 17 cifre. Qual è la stringa più grande a **16 cifre** per un anello pentagonale "magico"?
 
-<img class="img-responsive center-block" alt="un diagramma vuoto di un anello pentagonale" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="un diagramma vuoto di un anello pentagonale" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 # --hints--
 

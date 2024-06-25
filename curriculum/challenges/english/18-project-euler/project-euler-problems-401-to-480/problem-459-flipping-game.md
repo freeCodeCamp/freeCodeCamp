@@ -20,7 +20,7 @@ A turn consists of flipping all disks in a rectangle with the following properti
 - the rectangle width is a perfect square (1, 4, 9, 16, ...)
 - the rectangle height is a triangular number (1, 3, 6, 10, ...)
 
-<img class="img-responsive center-block" alt="flipping all disks in a 4x3 rectangle on a 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;">
+<img alt="flipping all disks in a 4x3 rectangle on a 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Players alternate turns. A player wins by turning the grid all black.
 
@@ -30,7 +30,7 @@ $W(1) = 1$, $W(2) = 0$, $W(5) = 8$ and $W({10}^2) = 31\\,395$.
 
 For $N = 5$, the first player's eight winning first moves are:
 
-<img class="img-responsive center-block" alt="eight winning first moves for N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;">
+<img alt="eight winning first moves for N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Find $W({10}^6)$.
 

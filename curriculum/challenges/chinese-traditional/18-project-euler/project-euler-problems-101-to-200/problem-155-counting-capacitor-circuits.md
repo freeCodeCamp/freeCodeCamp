@@ -14,7 +14,7 @@ An electric circuit uses exclusively identical capacitors of the same value C.
 
 使用這個簡單的程序和最多 n 個相同的電容器，我們可以製作具有不同總電容範圍的電路。 例如，最多使用 $n = 3$ 個 $60 μF$ 的電容器， 我們可以獲得以下 7 個不同的總電容值：
 
-<img class="img-responsive center-block" alt="示例電路最多有三個電容器，每個 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img alt="示例電路最多有三個電容器，每個 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 如果我們用 $D(n)$ 表示當使用最多 $n$ 個等值電容器時，我們採用上述簡單程序可以獲得的不同總電容值的數量，我們得到：$D(1) = 1, D(2) = 3, D(3)=7, \ldots$。
 

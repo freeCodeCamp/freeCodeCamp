@@ -10,7 +10,7 @@ dashedName: problem-354-distances-in-a-bees-honeycomb
 
 それぞれの部屋が辺長１の完全な正六角形であるような蜂の巣について考えます。
 
-<img class="img-responsive center-block" alt="辺長 1 の六角形の部屋がある蜂の巣" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
+<img alt="辺長 1 の六角形の部屋がある蜂の巣" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ある特定の部屋は女王蜂が占有しています。 正の実数 $L$ を用いて、女王蜂の部屋から $L$ の距離にある部屋 $B(L)$ を数えます (常に、ある部屋の中心から別の部屋の中心までを測ります)。蜂の巣の大きさは、ここで考えるあらゆる距離に対して十分な大きさであると仮定します。
 

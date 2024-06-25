@@ -10,7 +10,7 @@ dashedName: problem-15-lattice-paths
 
 2×2 格子の左上隅から始まり、右下にのみ移動できる場合、右下隅への経路はちょうど 6 つあります。
 
-<img class="img-responsive center-block" alt="右下隅へのすべての経路を示す 6×2 格子の図" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img alt="右下隅へのすべての経路を示す 6×2 格子の図" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 与えられた `gridSize` にそのような経路はいくつありますか。
 

@@ -8,7 +8,7 @@ dashedName: problem-424-kakuro
 
 # --description--
 
-<img class="img-responsive center-block" alt="カックロの例" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
+<img alt="カックロの例" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 上図は暗号カックロ (別名: クロスサム、サムクロス) というパズルの例であり、右側はその最終解です。 (カックロパズルの一般ルールは、数多くのインターネットサイトで簡単に見つかります。 その他の関連情報は現在、このチャレンジにパズルデータを提供した方が運営する krazydad.com でも見つかります。)
 

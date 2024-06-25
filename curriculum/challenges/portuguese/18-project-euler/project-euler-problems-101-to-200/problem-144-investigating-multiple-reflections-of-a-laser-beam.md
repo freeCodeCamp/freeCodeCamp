@@ -15,8 +15,8 @@ A célula branca específica que consideraremos é uma elipse com a equação $4
 A seção correspondente a $-0,01 ≤ x ≤ + 0,01$ na parte superior está ausente, permitindo que a luz entre e saia pelo buraco.
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="raio de luz começando no ponto (0,0, 10,1) e colidindo com o espelho no ponto (1,4, -9,6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="animação com as primeiras 10 reflexões do raio" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="raio de luz começando no ponto (0,0, 10,1) e colidindo com o espelho no ponto (1,4, -9,6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="animação com as primeiras 10 reflexões do raio" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 O raio de luz neste problema começa no ponto (0,0, 10,1) no exterior da célula branca e o raio colide no espelho primeiramente em (1,4, -9,6).

@@ -14,13 +14,13 @@ Um turno consiste em mover cada esfera exatamente uma vez, de acordo com a segui
 
 Depois de um movimento, a sequência (2, 2, 2, 1, 2) torna-se (2, 2, 1, 2, 3) como pode ser visto abaixo. Note-se que começamos a nova sequência a partir da primeira caixa ocupada.
 
-<img class="img-responsive center-block" alt="animação mostrando um movimento completo de (2, 2, 2, 1, 2) para (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação mostrando um movimento completo de (2, 2, 2, 1, 2) para (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Um sistema como esse se chama um sistema de esfera e caixa ou BBS (Box-Ball System) para abreviação.
 
 Pode-se mostrar que após um número suficiente de movimentos, o sistema evolui para um estado onde o número consecutivo de caixas ocupadas é invariável. No exemplo abaixo, os números consecutivos de caixas ocupadas evoluem para [1, 2, 3]; chamaremos isso de estado final.
 
-<img class="img-responsive center-block" alt="quatro movimentos de caixas ocupadas [2, 2, 2] para o estado final [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="quatro movimentos de caixas ocupadas [2, 2, 2] para o estado final [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Definimos a sequência $\\{t_i\\}$:
 
