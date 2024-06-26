@@ -5,10 +5,10 @@ import { isMacOS } from './utils/user-agent';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
     await page.goto(
       'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
   test('should save and reload user code', async ({ page, isMobile }) => {
     await focusEditor({ page, isMobile });
