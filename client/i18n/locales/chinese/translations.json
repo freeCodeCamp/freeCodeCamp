@@ -100,7 +100,8 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "确认金额",
-    "play-scene": "点击播放"
+    "play-scene": "点击播放",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -871,7 +872,8 @@
     "own-work-url": "记住要提交你自己的作业",
     "publicly-visible-url": "记得要提交一个公开可见的app URL",
     "ms-learn-link": "请使用有效的 Microsoft Learn 奖杯链接。",
-    "path-url": "你可能想要提交根路径，即 https://example.com，而不是 https://example.com/path。"
+    "path-url": "你可能想要提交根路径，即 https://example.com，而不是 https://example.com/path。",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
