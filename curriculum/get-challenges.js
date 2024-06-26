@@ -4,6 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
@@ -21,23 +22,23 @@ const { metaSchemaValidator } = require('./schema/meta-schema');
 
 const access = util.promisify(fs.access);
 
-const buildWithSubmodule = true;
-
 const CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
 const DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
 
-const I18N_CURRICULUM_DIR = buildWithSubmodule
-  ? path.resolve(__dirname, '../i18n-curriculum/curriculum')
-  : path.resolve(__dirname);
+const I18N_CURRICULUM_DIR =
+  process.env.BUILD_WITH_SUBMODULE === 'true'
+    ? path.resolve(__dirname, '../i18n-curriculum/curriculum')
+    : path.resolve(__dirname);
 const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
-const I18N_DICTIONARIES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'dictionaries');
 
 exports.CHALLENGES_DIR = CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
 exports.I18N_CHALLENGES_DIR = I18N_CHALLENGES_DIR;
 
-const COMMENT_TRANSLATIONS = createCommentMap(I18N_DICTIONARIES_DIR);
+const COMMENT_TRANSLATIONS = createCommentMap(
+  path.resolve(I18N_CURRICULUM_DIR, 'dictionaries')
+);
 
 function createCommentMap(dictionariesDir) {
   // get all the languages for which there are dictionaries.
