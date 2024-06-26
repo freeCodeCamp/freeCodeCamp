@@ -13,10 +13,8 @@ const SearchBarOptimized = ({
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
   const inputElementRef = useRef<HTMLInputElement>(null);
-
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setValue(event.target.value);
-
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (value && value.length > 1) {
@@ -26,7 +24,6 @@ const SearchBarOptimized = ({
       inputElementRef.current?.blur();
     }
   };
-
   const onClick = () => {
     setValue('');
     inputElementRef.current?.focus();
@@ -41,7 +38,6 @@ const SearchBarOptimized = ({
             className='ais-SearchBox-form'
             onSubmit={onSubmit}
             role='search'
-            aria-label={t('search.ariaLabel')}
           >
             <label className='sr-only' htmlFor='ais-SearchBox-input'>
               {t('search.label')}
@@ -59,17 +55,8 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
-              aria-label={t('search.ariaLabel')} {/* Added aria-label */}
-              aria-describedby='search-instructions'
             />
-            <span id='search-instructions' className='sr-only'>
-              {t('search.instructions')}
-            </span>
-            <button
-              className='ais-SearchBox-submit'
-              type='submit'
-              aria-label={t('search.submit')}
-            >
+            <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />
             </button>
             {value && (
@@ -77,7 +64,6 @@ const SearchBarOptimized = ({
                 className='ais-SearchBox-reset'
                 onClick={onClick}
                 type='button'
-                aria-label={t('search.reset')}
               >
                 <InputReset />
               </button>
