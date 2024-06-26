@@ -50,7 +50,9 @@ test.beforeEach(async ({ page }) => {
     .click();
   // wait for the client to register the change:
   await expect(
-    page.getByText(translations.flash['keyboard-shortcut-updated'])
+    page
+      .getByRole('alert')
+      .filter({ hasText: translations.flash['keyboard-shortcut-updated'] })
   ).toBeVisible();
 });
 
@@ -67,10 +69,6 @@ test.afterEach(
 );
 
 test('User can use shortcuts in and around the editor', async ({ page }) => {
-  // TODO: getByRole('alert', name:
-  // translations.flash['keyboard-shortcut-updated']) did not find the alert.
-  // Should it a) be an alert and b) have a name?
-
   await page.goto(course);
 
   await expect(getEditors(page)).toBeFocused();
