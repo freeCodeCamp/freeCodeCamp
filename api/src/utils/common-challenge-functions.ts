@@ -230,11 +230,8 @@ export async function updateUserChallengeData(
     }
   });
 
-  const updateData = {};
-
   return {
     alreadyCompleted,
-    updateData, // Might need to remove this variable as we're updating user object in this function now instead of in the endpoint handler
     completedDate: finalChallenge.completedDate,
     userSavedChallenges
   };
