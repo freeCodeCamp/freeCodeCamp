@@ -78,18 +78,12 @@ test('User can use shortcuts in and around the editor', async ({ page }) => {
   await page.keyboard.press('n');
   const nextCourse = '**/declare-javascript-variables';
   await page.waitForURL(nextCourse);
-  // Ensure that the page content is loaded before simulating user interactions.
-  await expect(
-    page.getByRole('heading', { name: 'Declare JavaScript Variables' })
-  ).toBeVisible();
+  await waitUntilListening(page);
 
   await page.keyboard.press('p');
   const previousCourse = '**/comment-your-javascript-code';
   await page.waitForURL(previousCourse);
-  // Ensure that the page content is loaded before simulating user interactions.
-  await expect(
-    page.getByRole('heading', { name: 'Comment Your JavaScript Code' })
-  ).toBeVisible();
+  await waitUntilListening(page);
 
   await page.keyboard.press('e');
   await expect(getEditors(page)).toBeFocused();
