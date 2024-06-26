@@ -25,6 +25,6 @@ export const focusEditor = async ({
 };
 
 export async function clearEditor({ page }: { page: Page }) {
-  await page.keyboard.press('Control+a');
+  await page.keyboard.press('ControlOrMeta+a');
   await page.keyboard.press('Backspace');
 }
