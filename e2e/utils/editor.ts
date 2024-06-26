@@ -23,12 +23,7 @@ export const focusEditor = async ({
 
   await getEditors(page).focus();
 };
-export async function clearEditor({
-  page
-}: {
-  page: Page;
-}) {
+export async function clearEditor({ page }: { page: Page }) {
   await page.keyboard.press('ControlOrMeta+a');
   await page.keyboard.press('Backspace');
 }
-
