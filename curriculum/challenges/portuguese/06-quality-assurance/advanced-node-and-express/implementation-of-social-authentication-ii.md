@@ -35,7 +35,7 @@ Envie sua página quando você achar que ela está certa. Se você estiver encon
 
 # --hints--
 
-`passport-github` dependency should be added.
+A dependência do `passport-github` deve ser adicionada.
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-`passport-github` should be required.
+O `passport-github` deve ser solicitado.
 
 ```js
 async (getUserInput) => {

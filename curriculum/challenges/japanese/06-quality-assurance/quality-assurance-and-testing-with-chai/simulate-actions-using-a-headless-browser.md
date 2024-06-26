@@ -28,7 +28,7 @@ Mocha では、実際のテストが実行される前にコードを実行で�
 `tests/2_functional-tests.js` の中の `Browser` 宣言の直後で、変数の `site` プロパティにプロジェクトの URL を追加してください。
 
 ```js
-Browser.site = 'http://localhost:3000'; // Your URL here
+Browser.site = 'http://0.0.0.0:3000'; // Your URL here
 ```
 
 次に、`'Functional Tests with Zombie.js'` スイートのルートレベルで、次のコードを使用して `Browser` オブジェクトの新しいインスタンスを生成してください。
@@ -37,7 +37,7 @@ Browser.site = 'http://localhost:3000'; // Your URL here
 const browser = new Browser();
 ```
 
-そして、次のコードを使用して、`suiteSetup`フックで `browser` を `/` ルートに移動させてください。
+And use the `suiteSetup` hook to direct the `browser` to the `/` route with the following code. **Note**: `done` is passed as a callback to `browser.visit`, you should not invoke it.
 
 ```js
 suiteSetup(function(done) {
