@@ -70,15 +70,14 @@ test.describe('For classic challenges', () => {
 
   test('shows test output when the tests are run', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
     await expect(page).toHaveTitle(
       'Basic HTML and HTML5: Say Hello to HTML Elements |' + ' freeCodeCamp.org'
     );
 
-    await clearEditor({ browserName, page });
+    await clearEditor({ page });
     await insertTextInCodeEditor({
       page,
       isMobile,
@@ -95,11 +94,10 @@ test.describe('For classic challenges', () => {
 
   test('shows test output when the tests are triggered by the keyboard', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
-    await clearEditor({ browserName, page });
+    await clearEditor({ page });
     await insertTextInCodeEditor({
       page,
       isMobile,
@@ -212,8 +210,7 @@ test.describe('Jquery challenges', () => {
 test.describe('Custom output for Set and Map', () => {
   test('Custom output for JavaScript Objects Set and Map', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     await page.goto(
       '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
@@ -229,7 +226,7 @@ test.describe('Custom output for Set and Map', () => {
       })
     ).toContainText('Set(3) {1, set, 10}');
 
-    await clearEditor({ browserName, page });
+    await clearEditor({ page });
 
     await insertTextInCodeEditor({
       page,

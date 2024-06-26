@@ -66,7 +66,7 @@ const completeThreeChallenges = async ({
     await page.waitForURL(challenge.url);
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),
@@ -140,7 +140,7 @@ const completeTenChallenges = async ({
     await page.waitForURL(challenge.url);
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),

@@ -25,17 +25,10 @@ export const focusEditor = async ({
 };
 
 export async function clearEditor({
-  page,
-  browserName
+  page
 }: {
   page: Page;
-  browserName: string;
 }) {
-  // TODO: replace with ControlOrMeta when it's supported
-  if (browserName === 'webkit') {
-    await page.keyboard.press('Meta+a');
-  } else {
-    await page.keyboard.press('Control+a');
-  }
+  await page.keyboard.press('Control+a');
   await page.keyboard.press('Backspace');
 }

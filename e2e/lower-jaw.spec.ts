@@ -79,7 +79,6 @@ test('Checks hotkeys when instruction is focused', async ({
 
 test('Focuses on the submit button after tests passed', async ({
   page,
-  browserName,
   isMobile
 }) => {
   const editor = getEditors(page);
@@ -88,7 +87,7 @@ test('Focuses on the submit button after tests passed', async ({
     name: 'Submit and go to next challenge'
   });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
@@ -100,7 +99,6 @@ test('Focuses on the submit button after tests passed', async ({
 
 test('Prompts unauthenticated user to sign in to save progress', async ({
   page,
-  browserName,
   isMobile
 }) => {
   await signout(page);
@@ -111,7 +109,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
     name: 'Sign in to save your progress'
   });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
