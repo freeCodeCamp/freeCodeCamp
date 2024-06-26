@@ -20,7 +20,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
 ) => {
   // Stripe plugin
   const stripe = new Stripe(STRIPE_SECRET_KEY, {
-    apiVersion: '2020-08-27',
+    apiVersion: '2024-06-20',
     typescript: true
   });
 
@@ -212,13 +212,67 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
 ) => {
   // Stripe plugin
   const stripe = new Stripe(STRIPE_SECRET_KEY, {
-    apiVersion: '2020-08-27',
+    apiVersion: '2024-06-20',
     typescript: true
   });
 
   // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
+
+  fastify.post(
+    '/donate/create-stripe-payment-intent',
+    {
+      schema: schemas.createStripePaymentIntent
+    },
+    async (req, reply) => {
+      const { email, name, amount, duration } = req.body;
+
+      try {
+        const stripeCustomer = await stripe.customers.create({
+          email,
+          name
+        });
+
+        const stripeSubscription = await stripe.subscriptions.create({
+          customer: stripeCustomer.id,
+          items: [
+            {
+              plan: `${donationSubscriptionConfig.duration[duration]}-donation-${amount}`
+            }
+          ],
+          payment_behavior: 'default_incomplete',
+          payment_settings: { save_default_payment_method: 'on_subscription' },
+          expand: ['latest_invoice.payment_intent']
+        });
+
+        if (
+          stripeSubscription.latest_invoice &&
+          typeof stripeSubscription.latest_invoice !== 'string' &&
+          stripeSubscription.latest_invoice.payment_intent &&
+          typeof stripeSubscription.latest_invoice.payment_intent !==
+            'string' &&
+          stripeSubscription.latest_invoice.payment_intent.client_secret !==
+            null
+        ) {
+          const clientSecret =
+            stripeSubscription.latest_invoice.payment_intent.client_secret;
+          return reply.send({
+            subscriptionId: stripeSubscription.id,
+            clientSecret
+          });
+        } else {
+          throw new Error('Stripe payment intent client secret is missing');
+        }
+      } catch (error) {
+        fastify.log.error(error);
+        void reply.code(500);
+        return reply.send({
+          error: 'Donation failed due to a server error.'
+        });
+      }
+    }
+  );
 
   fastify.post(
     '/donate/charge-stripe',

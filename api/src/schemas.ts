@@ -14,6 +14,7 @@ export { deprecatedEndpoints } from './schemas/deprecated';
 export { chargeStripeCard } from './schemas/donate/charge-stripe-card';
 export { addDonation } from './schemas/donate/add-donation';
 export { chargeStripe } from './schemas/donate/charge-stripe';
+export { createStripePaymentIntent } from './schemas/donate/create-stripe-payment-intent';
 export { resubscribe } from './schemas/email-subscription/resubscribe';
 export { unsubscribe } from './schemas/email-subscription/unsubscribe';
 export { updateMyAbout } from './schemas/settings/update-my-about';
