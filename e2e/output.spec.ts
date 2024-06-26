@@ -70,14 +70,15 @@ test.describe('For classic challenges', () => {
 
   test('shows test output when the tests are run', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
     await expect(page).toHaveTitle(
       'Basic HTML and HTML5: Say Hello to HTML Elements |' + ' freeCodeCamp.org'
     );
 
-    await clearEditor({ page });
+    await clearEditor({ browserName, page });
     await insertTextInCodeEditor({
       page,
       isMobile,
@@ -94,10 +95,11 @@ test.describe('For classic challenges', () => {
 
   test('shows test output when the tests are triggered by the keyboard', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
-    await clearEditor({ page });
+    await clearEditor({ browserName, page });
     await insertTextInCodeEditor({
       page,
       isMobile,
