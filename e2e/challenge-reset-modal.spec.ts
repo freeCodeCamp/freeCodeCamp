@@ -160,10 +160,7 @@ test('should close when the user clicks the close button', async ({ page }) => {
   ).toBeHidden();
 });
 
-test('User can reset on a multi-file project', async ({
-  page,
-  isMobile
-}) => {
+test('User can reset on a multi-file project', async ({ page, isMobile }) => {
   const sampleText = 'function palindrome() { return true; }';
 
   await page.goto(
