@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
@@ -871,7 +872,8 @@
     "own-work-url": "Kumbuka kuwasilisha kazi yako mwenyewe.",
     "publicly-visible-url": "Kumbuka kuwasilisha URL ya programu inayoonekana hadharani.",
     "ms-learn-link": "Tafadhali tumia kiungo halali cha kombe la Microsoft Learn.",
-    "path-url": "Labda unataka kuwasilisha njia ya mizizi yaani https://example.com, sio https://example.com/path"
+    "path-url": "Labda unataka kuwasilisha njia ya mizizi yaani https://example.com, sio https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Mkurugenzi Mtendaji, freeCodeCamp.org",

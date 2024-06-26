@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
@@ -871,7 +872,8 @@
     "own-work-url": "تذكر أن تقدم عملك الخاص.",
     "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
-    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",

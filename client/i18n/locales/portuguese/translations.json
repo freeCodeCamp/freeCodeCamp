@@ -100,7 +100,8 @@
     "update-card": "Atualize seu cartão",
     "donate-now": "Doe agora",
     "confirm-amount": "Confirmar o valor",
-    "play-scene": "Pressione Play"
+    "play-scene": "Pressione Play",
+    "closed-caption": "Versão legendada"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -871,7 +872,8 @@
     "own-work-url": "Lembre-se de enviar o seu próprio trabalho.",
     "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
     "ms-learn-link": "Use um link de troféu válido do Microsoft Learn.",
-    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path"
+    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",
