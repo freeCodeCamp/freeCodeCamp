@@ -33,15 +33,14 @@ test.describe('Editor Component', () => {
 test.describe('Python Terminal', () => {
   test('should display error message when the user enters invalid code', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     await page.goto(
       'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
     );
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
     // Then enter invalid code
     await page.keyboard.insertText('def');
     const preview = page.getByTestId('preview-pane');
