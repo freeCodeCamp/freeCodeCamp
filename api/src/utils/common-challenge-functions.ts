@@ -175,10 +175,18 @@ export async function updateUserChallengeData(
       }
     : completedChallenge;
 
+  // TODO(Post-MVP): prevent concurrent completions of the same challenge by
+  // using optimistic concurrency control. i.e. the update should simultaneously
+  // check and update some property of the user record such that the same update
+  // can't be applied twice.
   const userCompletedChallenges = alreadyCompleted
     ? completedChallenges.map(x => (x.id === challengeId ? finalChallenge : x))
-    : [...completedChallenges, finalChallenge];
+    : { push: finalChallenge };
 
+  // We can't use push, because progressTimestamps is a JSON blob and, until
+  // we convert it to an array, push is not available. Since this could result
+  // in the completedChallenges and progressTimestamps arrays being out of sync,
+  // we should prioritize normalizing the data structure.
   const userProgressTimestamps =
     !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
       ? [...progressTimestamps, newProgressTimeStamp]
