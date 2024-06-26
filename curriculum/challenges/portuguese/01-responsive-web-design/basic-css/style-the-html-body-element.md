@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-A declaração do estilo CSS deve terminar com um ponto e vírgula.
+A declaração da regra do CSS deve terminar com um ponto-e-vírgula.
 
 ```js
 assert(
