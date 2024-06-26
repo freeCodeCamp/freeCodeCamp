@@ -36,11 +36,9 @@ const completeFrontEndCert = async (page: Page) => {
 
 const completeThreeChallenges = async ({
   page,
-  browserName,
   isMobile
 }: {
   page: Page;
-  browserName: string;
   isMobile: boolean;
 }) => {
   await page.goto(
@@ -82,11 +80,9 @@ const completeThreeChallenges = async ({
 
 const completeTenChallenges = async ({
   page,
-  browserName,
   isMobile
 }: {
   page: Page;
-  browserName: string;
   isMobile: boolean;
 }) => {
   await page.goto(
