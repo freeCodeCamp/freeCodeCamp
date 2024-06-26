@@ -235,6 +235,60 @@ describe('Donate', () => {
       });
     });
 
+    describe('POST /donate/create-stripe-payment-intent', () => {
+      it('should return 200 and call stripe api properly', async () => {
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('no-errors')
+        );
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send(chargeStripeReqBody);
+
+        expect(mockCustomerCreate).toHaveBeenCalledWith({
+          email: 'lololemon@gmail.com',
+          name: 'Lolo Lemon'
+        });
+        expect(response.status).toBe(200);
+      });
+
+      it('should return 400 when email format is wrong', async () => {
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send({
+          ...chargeStripeReqBody,
+          email: '12raqdcev'
+        });
+        expect(response.body).toEqual({
+          error: 'The donation form had invalid values for this submission.'
+        });
+        expect(response.status).toBe(400);
+      });
+
+      it('should return 400 if amount is incorrect', async () => {
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send({
+          ...chargeStripeReqBody,
+          amount: '350'
+        });
+        expect(response.body).toEqual({
+          error: 'The donation form had invalid values for this submission.'
+        });
+        expect(response.status).toBe(400);
+      });
+
+      it('should return 500 if Stripe encounters an error', async () => {
+        mockSubCreate.mockImplementationOnce(defaultError);
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send(chargeStripeReqBody);
+        expect(response.body).toEqual({
+          error: 'Donation failed due to a server error.'
+        });
+        expect(response.status).toBe(500);
+      });
+    });
+
     describe('POST /donate/charge-stripe', () => {
       it('should return 200 and call stripe api properly', async () => {
         mockSubCreate.mockImplementationOnce(
@@ -325,6 +379,18 @@ describe('Donate', () => {
         method: 'POST',
         setCookies
       }).send(chargeStripeReqBody);
+      expect(response.status).toBe(200);
+    });
+
+    test('POST /donate/create-stripe-payment-intent should return 200', async () => {
+      mockSubCreate.mockImplementationOnce(generateMockSubCreate('no-errors'));
+      const response = await superRequest(
+        '/donate/create-stripe-payment-intent',
+        {
+          method: 'POST',
+          setCookies
+        }
+      ).send(chargeStripeReqBody);
       expect(response.status).toBe(200);
     });
   });

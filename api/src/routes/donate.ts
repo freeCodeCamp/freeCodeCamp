@@ -228,6 +228,16 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { email, name, amount, duration } = req.body;
 
+      if (
+        !isEmail(email) ||
+        !donationSubscriptionConfig.plans[duration].includes(amount)
+      ) {
+        void reply.code(400);
+        return {
+          error: 'The donation form had invalid values for this submission.'
+        } as const;
+      }
+
       try {
         const stripeCustomer = await stripe.customers.create({
           email,
