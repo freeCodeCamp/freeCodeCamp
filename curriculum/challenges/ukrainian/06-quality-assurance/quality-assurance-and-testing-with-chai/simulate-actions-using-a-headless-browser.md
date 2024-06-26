@@ -37,7 +37,7 @@ Browser.site = 'http://0.0.0.0:3000'; // Your URL here
 const browser = new Browser();
 ```
 
-And use the `suiteSetup` hook to direct the `browser` to the `/` route with the following code. **Note**: `done` is passed as a callback to `browser.visit`, you should not invoke it.
+І використайте хук `suiteSetup`, щоб направити `browser` до маршруту `/` за допомогою коду нижче. **Примітка**: `done` передається як зворотний виклик до `browser.visit`, тому не викликайте його.
 
 ```js
 suiteSetup(function(done) {
