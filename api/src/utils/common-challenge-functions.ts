@@ -1,4 +1,4 @@
-import { ExamResults, user } from '@prisma/client';
+import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
@@ -163,7 +163,7 @@ export async function updateUserChallengeData(
     partiallyCompletedChallenges = []
   } = user;
 
-  let userSavedChallenges = savedChallenges;
+  let savedChallengesUpdate: Prisma.userUpdateInput['savedChallenges'];
 
   const oldChallenge = completedChallenges.find(({ id }) => challengeId === id);
   const alreadyCompleted = !!oldChallenge;
@@ -204,13 +204,11 @@ export async function updateUserChallengeData(
       ) as SavedChallengeFile[]
     };
 
-    const isSaved = userSavedChallenges.some(({ id }) => challengeId === id);
+    const isSaved = savedChallenges.some(({ id }) => challengeId === id);
 
-    userSavedChallenges = isSaved
-      ? userSavedChallenges.map(x =>
-          x.id === challengeId ? challengeToSave : x
-        )
-      : [...userSavedChallenges, challengeToSave];
+    savedChallengesUpdate = isSaved
+      ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
+      : { push: challengeToSave };
   }
 
   // remove from partiallyCompleted on submit
@@ -227,16 +225,20 @@ export async function updateUserChallengeData(
     });
   }
 
-  await fastify.prisma.user.update({
-    where: { id: user.id },
-    data: {
-      completedChallenges: userCompletedChallenges,
-      needsModeration,
-      savedChallenges: userSavedChallenges,
-      progressTimestamps: userProgressTimestamps,
-      partiallyCompletedChallenges: userPartiallyCompletedChallenges
-    }
-  });
+  const { savedChallenges: userSavedChallenges } =
+    await fastify.prisma.user.update({
+      where: { id: user.id },
+      data: {
+        completedChallenges: userCompletedChallenges,
+        needsModeration,
+        savedChallenges: savedChallengesUpdate,
+        progressTimestamps: userProgressTimestamps,
+        partiallyCompletedChallenges: userPartiallyCompletedChallenges
+      },
+      select: {
+        savedChallenges: true
+      }
+    });
 
   return {
     alreadyCompleted,
