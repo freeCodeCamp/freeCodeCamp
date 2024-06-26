@@ -21,19 +21,23 @@ const { metaSchemaValidator } = require('./schema/meta-schema');
 
 const access = util.promisify(fs.access);
 
+const buildWithSubmodule = true;
+
 const CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
+const DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
-const I18N_CHALLENGES_DIR = path.resolve(
-  __dirname,
-  '../i18n-curriculum/curriculum/challenges'
-);
+
+const I18N_CURRICULUM_DIR = buildWithSubmodule
+  ? path.resolve(__dirname, '../i18n-curriculum/curriculum')
+  : path.resolve(__dirname);
+const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
+const I18N_DICTIONARIES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'dictionaries');
+
 exports.CHALLENGES_DIR = CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
 exports.I18N_CHALLENGES_DIR = I18N_CHALLENGES_DIR;
 
-const COMMENT_TRANSLATIONS = createCommentMap(
-  path.resolve(__dirname, '../i18n-curriculum/curriculum/dictionaries')
-);
+const COMMENT_TRANSLATIONS = createCommentMap(I18N_DICTIONARIES_DIR);
 
 function createCommentMap(dictionariesDir) {
   // get all the languages for which there are dictionaries.
@@ -50,16 +54,11 @@ function createCommentMap(dictionariesDir) {
 
   // get the english dicts
   const COMMENTS_TO_TRANSLATE = require(
-    path.resolve(__dirname, 'dictionaries', 'english', 'comments.json')
+    path.resolve(DICTIONARIES_DIR, 'english', 'comments.json')
   );
 
   const COMMENTS_TO_NOT_TRANSLATE = require(
-    path.resolve(
-      __dirname,
-      'dictionaries',
-      'english',
-      'comments-to-not-translate'
-    )
+    path.resolve(DICTIONARIES_DIR, 'english', 'comments-to-not-translate')
   );
 
   // map from english comment text to translations
