@@ -43,7 +43,7 @@ test('should render the modal content correctly', async ({ page }) => {
   await expectToRenderResetModal(page);
 });
 
-test('User can reset challenge', async ({ page, isMobile, browserName }) => {
+test('User can reset challenge', async ({ page, isMobile }) => {
   const initialText = 'CatPhotoApp';
   const initialFrame = page
     .frameLocator('iframe[title="challenge preview"]')
@@ -64,7 +64,7 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
   // Modify the text in the editor pane, clearing first, otherwise the existing
   // text will be selected before typing
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page });
   await getEditors(page).fill(updatedText);
   await expect(updatedFrame).toBeVisible({ timeout: 10000 });
 
@@ -160,11 +160,7 @@ test('should close when the user clicks the close button', async ({ page }) => {
   ).toBeHidden();
 });
 
-test('User can reset on a multi-file project', async ({
-  page,
-  isMobile,
-  browserName
-}) => {
+test('User can reset on a multi-file project', async ({ page, isMobile }) => {
   const sampleText = 'function palindrome() { return true; }';
 
   await page.goto(
@@ -172,7 +168,7 @@ test('User can reset on a multi-file project', async ({
   );
 
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page });
   await getEditors(page).fill(sampleText);
   await expect(page.getByText(sampleText)).toBeVisible();
 
@@ -202,8 +198,7 @@ test.describe('Signed in user', () => {
 
   test('User can reset on a multi-file project after reloading and saving', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     test.setTimeout(60000);
     const savedText = 'function palindrome() { return true; }';
@@ -215,7 +210,7 @@ test.describe('Signed in user', () => {
 
     // This first edit should reappear after the reset
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
     await getEditors(page).fill(savedText);
     await page.keyboard.press('Control+S');
 
@@ -223,7 +218,7 @@ test.describe('Signed in user', () => {
 
     // This second edit should be reset
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
     await getEditors(page).fill(updatedText);
 
     await page
@@ -242,8 +237,7 @@ test.describe('Signed in user', () => {
 
   test('User can reset on a multi-file project without reloading', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     test.setTimeout(60000);
     const savedText = 'function palindrome() { return true; }';
@@ -255,13 +249,13 @@ test.describe('Signed in user', () => {
 
     // This first edit should reappear after the reset
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
     await getEditors(page).fill(savedText);
     await page.keyboard.press('Control+S');
 
     // This second edit should be reset
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
     await getEditors(page).fill(updatedText);
 
     await page
