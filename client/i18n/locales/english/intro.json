@@ -585,7 +585,10 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": ["", ""]
+      }
     }
   },
   "relational-database": {
@@ -1278,6 +1281,12 @@
         "title": "Learn to Solve Problems and Understand Errors",
         "intro": [
           "Learn how to solve problems and understand errors in JavaScript."
+        ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Build a Rock Paper Scissor Game",
+        "intro": [
+          "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
         ]
       }
     }
