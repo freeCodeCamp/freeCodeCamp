@@ -36,7 +36,7 @@ import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 import { donateRoutes } from './routes/donate';
 import { emailSubscribtionRoutes } from './routes/email-subscription';
-import { settingRoutes } from './routes/settings';
+import { settingRoutes, settingRedirectRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
 import {
@@ -180,6 +180,8 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
+  // redirectWithMessage must be registered before codeFlowAuth
+  void fastify.register(redirectWithMessage);
   void fastify.register(codeFlowAuth);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
@@ -188,6 +190,7 @@ export const build = async (
   }
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
+  void fastify.register(settingRedirectRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userRoutes);
@@ -198,7 +201,6 @@ export const build = async (
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
-  void fastify.register(redirectWithMessage);
 
   return fastify;
 };
