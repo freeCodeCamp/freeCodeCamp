@@ -41,11 +41,9 @@ import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
 import {
   API_LOCATION,
-  COOKIE_DOMAIN,
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FREECODECAMP_NODE_ENV,
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
@@ -127,7 +125,8 @@ export const build = async (
 
     ///Ignore all other possible sources of CSRF
     // tokens since we know we can provide this one
-    getToken: req => req.headers['csrf-token'] as string
+    getToken: req => req.headers['csrf-token'] as string,
+    cookieOpts: { signed: false, sameSite: 'strict' }
   });
 
   // All routes except signout should add a CSRF token to the response
@@ -136,13 +135,9 @@ export const build = async (
 
     if (!isSignout) {
       const token = reply.generateCsrf();
-      // Path is necessary to ensure that only one cookie is set and it is valid
-      // for all routes.
       void reply.setCookie('csrf_token', token, {
-        path: '/',
         sameSite: 'strict',
-        domain: COOKIE_DOMAIN,
-        secure: FREECODECAMP_NODE_ENV === 'production'
+        signed: false
       });
     }
     done();
