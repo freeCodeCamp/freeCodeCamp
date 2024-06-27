@@ -77,7 +77,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [chromium, firefox, webkit]
+        browsers: [chromium, firefox, webkit, Mobile Chrome, Mobile Safari]
         node-version: [20.x]
 
     services:
