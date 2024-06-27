@@ -2,7 +2,11 @@ import fastifyCookie from '@fastify/cookie';
 import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { COOKIE_DOMAIN, COOKIE_SECRET } from '../utils/env';
+import {
+  COOKIE_DOMAIN,
+  COOKIE_SECRET,
+  FREECODECAMP_NODE_ENV
+} from '../utils/env';
 
 /**
  * Signs a cookie value by prefixing it with "s:" and using the COOKIE_SECRET.
@@ -44,12 +48,12 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
     },
     parseOptions: {
       domain: COOKIE_DOMAIN,
-      httpOnly: true,
+      httpOnly: FREECODECAMP_NODE_ENV !== 'development',
       // Path is necessary to ensure that only one cookie is set and it is valid
       // for all routes.
       path: '/',
       sameSite: 'lax',
-      secure: true,
+      secure: FREECODECAMP_NODE_ENV !== 'development',
       signed: true
     }
   });
