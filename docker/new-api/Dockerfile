@@ -51,7 +51,7 @@ RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
 RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
-FROM node:20-alpine
+FROM node:20-bookworm
 RUN npm i -g pm2@4
 USER node
 WORKDIR /home/node/fcc
