@@ -105,7 +105,10 @@ export const build = async (
     // test environments)
     skipInit: !SENTRY_DSN,
     errorResponse: (error, _request, reply) => {
-      if (reply.statusCode === 500) {
+      const isCSRFError =
+        error.code === 'FST_CSRF_INVALID_TOKEN' ||
+        error.code === 'FST_CSRF_MISSING_SECRET';
+      if (reply.statusCode === 500 || isCSRFError) {
         void reply.send({
           message: 'flash.generic-error',
           type: 'danger'
