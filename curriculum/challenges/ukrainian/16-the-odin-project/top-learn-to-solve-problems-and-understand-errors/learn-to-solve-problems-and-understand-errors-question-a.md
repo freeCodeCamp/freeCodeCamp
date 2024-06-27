@@ -1,51 +1,51 @@
 ---
 id: 66581a78b1eb2281159492fa
-title: Learn to Solve Problems and Understand Errors Question A
+title: Навчіться розв’язувати проблеми та розуміти помилки. Запитання A
 challengeType: 15
 dashedName: learn-to-solve-problems-and-understand-errors-question-a
 ---
 
 # --description--
 
-Before you start digging into some pretty nifty JavaScript, you need to begin talking about problem solving: the most important skill a developer needs.
+Перш ніж зануритись у досить цікавий JavaScript, потрібно поговорити про розв’язання проблем — найважливішу навичку, яку повинен мати розробник.
 
-Problem solving is the core thing software developers do. The programming languages and tools they use are secondary to this fundamental skill.
+Розв’язання проблем — основне, що роблять розробники програмного забезпечення. Використані мови програмування та інструменти є вторинними у порівнянні з цією фундаментальною навичкою.
 
-From his book, "Think Like a Programmer", V. Anton Spraul defines problem solving in programming as:
+У своїй книзі «Думай як програміст», В. Антон Спраул визначає розв’язання проблем у програмуванні як:
 
-> Problem solving is writing an original program that performs a particular set of tasks and meets all stated constraints.
+> Розв’язання проблем — це написання оригінальної програми, яка виконує певний набір завдань і відповідає всім визначеним обмеженням.
 
-The set of tasks can range from solving small coding exercises all the way up to building a social network site like Facebook or a search engine like Google. Each problem has its own set of constraints, for example, high performance and scalability may not matter too much in a coding exercise but it will be vital in apps like Google that need to service billions of search queries each day.
+Набір завдань може варіюватися від виконання невеликих вправ з програмування до побудови соціальної мережі (наприклад, Facebook) або пошукової системи (наприклад, Google). Кожна проблема має свій набір обмежень. Наприклад, висока продуктивність та масштабованість можуть бути не так важливими для вправи з програмування, але вони будуть життєво важливими для програм, які мають обслуговувати мільярди пошукових запитів щодня.
 
-New programmers often find problem solving the hardest skill to build. It's not uncommon for budding programmers to breeze through learning syntax and programming concepts, yet when trying to code something on their own, they find themselves staring blankly at their text editor not knowing where to start.
+Новачки часто вважають, що навичку розв’язання проблем важко отримати. Вони досить часто легко освоюють синтаксис і різні поняття, проте, коли намагаються щось написати самостійно, то просто дивляться на текстовий редактор та не знають, з чого почати.
 
-The best way to improve your problem solving ability is by building experience by making lots and lots of programs. The more practice you have the better you'll be prepared to solve real world problems.
+Найкращий спосіб покращити цю навичку — набувати досвід, створюючи багато програм. Чим більше практики, тим краще ви будете розв’язувати реальні проблеми.
 
 # --question--
 
 ## --assignment--
 
-Read <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/" target="_blank">How to Think Like a Programmer - Lessons in Problem Solving</a> by Richard Reis.
+Прочитайте статтю <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/" target="_blank">«Думай як програміст: уроки розв’язання проблем»</a> Річарда Рейса (англійською мовою).
 
 ## --text--
 
-According to V. Anton Spraul in "Think Like a Programmer," what is problem solving in programming?
+Що таке «розв’язання проблем» у програмуванні відповідно до книги «Думай як програміст» В. Антона Спраула?
 
 ## --answers--
 
-Learning the syntax and concepts of different programming languages.
+Вивчення синтаксису та понять різних мов програмування.
 
 ---
 
-Building applications with high performance and scalability as the key features.
+Побудова застосунків, ключовими функціями яких є висока продуктивність та масштабованість.
 
 ---
 
-Writing an original program that performs a specific set of tasks and meets all stated constraints.
+Написання оригінальної програми, яка виконує конкретний набір завдань і відповідає всім визначеним обмеженням.
 
 ---
 
-Solving coding exercises to improve programming skills.
+Розв’язання вправ з програмування для покращення навичок.
 
 
 ## --video-solution--

@@ -20,7 +20,7 @@ Um movimento consiste em virar todos os discos em um retângulo com as seguintes
 - a largura do retângulo é um quadrado perfeito (1, 4, 9, 16, ...)
 - a altura do retângulo é um número triangular (1, 3, 6, 10, ...)
 
-<img class="img-responsive center-block" alt="virando todos os discos em um retângulo de 4x3 em um tabuleiro de 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
+<img alt="virando todos os discos em um retângulo de 4x3 em um tabuleiro de 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Os jogadores alternam a vez. Um jogador ganha ao tornar a grade toda preta.
 
@@ -30,7 +30,7 @@ $W(1) = 1$, $W(2) = 0$, $W(5) = 8$ e $W({10}^2) = 31.395$.
 
 Para $N = 5$, os oito primeiros movimentos vencedores do primeiro jogador são:
 
-<img class="img-responsive center-block" alt="oito primeiros movimentos vencedores para N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
+<img alt="oito primeiros movimentos vencedores para N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Encontre $W({10}^6)$.
 

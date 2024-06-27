@@ -14,7 +14,7 @@ Dado um círculo $c$ com centro $M$ e raio $r$, além de um ponto $G$ tal que $d
 
 A construção dos pontos da elipse é mostrada abaixo.
 
-<img class="img-responsive center-block" alt="animação de construção da elipse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação de construção da elipse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 São dados os pontos $M(-2000, 1500)$ e $G(8000, 1500)$.
 
@@ -26,7 +26,7 @@ De um ponto $P$ fora de $e$, as duas tangentes $t_1$ e $t_2$ da elipse são dese
 
 Considere os pontos em que $t_1$ e $t_2$ tocam a elipse como $R$ e $S$.
 
-<img class="img-responsive center-block" alt="círculo c com o centro M, raio 15000 e ponto P fora da elipse; do ponto P, duas tangentes t_1 e t_2 são desenhadas para a elipse, com pontos que a tocam chamados R e S" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="círculo c com o centro M, raio 15000 e ponto P fora da elipse; do ponto P, duas tangentes t_1 e t_2 são desenhadas para a elipse, com pontos que a tocam chamados R e S" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Para quantos pontos da rede $P$ é um ângulo $RPS$ maior que 45°?
 

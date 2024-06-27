@@ -12,7 +12,7 @@ Um robô se move em uma série arco circular de um quinto de volta (72°), com u
 
 Um dos 70932 caminhos fechados possíveis de 25 arcos iniciando para o norte é
 
-<img class="img-responsive center-block" alt="caminho fechado de 25 arcos, iniciando voltado para o norte" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
+<img alt="caminho fechado de 25 arcos, iniciando voltado para o norte" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Dado que o robô começa virado para o norte, quantas jornadas de 70 arcos de comprimento ele pode fazer que o retornem, após o arco final, para sua posição inicial?
 

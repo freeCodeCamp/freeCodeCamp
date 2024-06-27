@@ -12,7 +12,7 @@ A robot moves in a series of one-fifth circular arcs (72°), with a free choice 
 
 Einer von 70932 möglichen geschlossenen Pfaden mit 25 Bögen, die in Richtung Norden beginnen, ist
 
-<img class="img-responsive center-block" alt="geschlossene Bahn von 25 Bögen, beginnend in Richtung Norden" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
+<img alt="geschlossene Bahn von 25 Bögen, beginnend in Richtung Norden" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Wie viele Fahrten mit einer Länge von 70 Bögen kann der Roboter nach dem letzten Bogen in seine Ausgangsposition zurückkehren, wenn er in Richtung Norden startet?
 

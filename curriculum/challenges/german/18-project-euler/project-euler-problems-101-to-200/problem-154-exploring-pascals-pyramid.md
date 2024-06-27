@@ -10,7 +10,7 @@ dashedName: problem-154-exploring-pascals-pyramid
 
 A triangular pyramid is constructed using spherical balls so that each ball rests on exactly three balls of the next lower level.
 
-<img class="img-responsive center-block" alt="dreieckige Pyramide konstruiert mit kugelförmige Kugeln mit vier Ebenen" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px;" />
+<img alt="dreieckige Pyramide konstruiert mit kugelförmige Kugeln mit vier Ebenen" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Dann berechnen wir die Anzahl der Pfade, die vom Scheitelpunkt zu jeder Position führen: Ein Pfad beginnt am Scheitelpunkt und verläuft nach unten zu einer der drei Kugeln direkt unter der aktuellen Position. Folglich ist die Anzahl der Wege, um eine bestimmte Position zu erreichen, die Summe der Zahlen direkt darüber (je nach Position gibt es bis zu drei Zahlen darüber).
 

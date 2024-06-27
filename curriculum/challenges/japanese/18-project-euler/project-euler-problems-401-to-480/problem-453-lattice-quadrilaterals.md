@@ -14,7 +14,7 @@ $0 ≤ x ≤ m$, $0 ≤ y ≤ m$ を満たす座標 ($x$, $y$) の格子点を�
 
 例えば、下図のとおり $Q(2, 2) = 94$ です。
 
-<img class="img-responsive center-block" alt="0 &le; x &le; m, 0 &le; y &le; n を満たす座標 ($x$, $y$) の格子点を頂点とする 94 個の四角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px;" />
+<img alt="0 &le; x &le; m, 0 &le; y &le; n を満たす座標 ($x$, $y$) の格子点を頂点とする 94 個の四角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/lattice-quadrilaterals.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $Q(3, 7) = 39\\,590$, $Q(12, 3) = 309\\,000$, $Q(123, 45) = 70\\,542\\,215\\,894\\,646$ であることも確認できます。
 

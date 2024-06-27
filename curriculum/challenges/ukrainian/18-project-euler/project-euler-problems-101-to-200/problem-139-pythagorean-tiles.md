@@ -12,7 +12,7 @@ dashedName: problem-139-pythagorean-tiles
 
 Наприклад, трикутники (3, 4, 5) можна об’єднати, утворивши квадрат 5×5 з прорізом 1×1 всередині. Як бачимо, квадрат можна покрити двадцятьма п’ятьма квадратними плитками 1×1.
 
-<img class="img-responsive center-block" alt="два квадрати 5x5: один складається з чотирьох трикутників 3x4x5, розташованих так, що посередині утворюється проріз 1x1; другий — з двадцяти п’яти квадратів 1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="два квадрати 5x5: один складається з чотирьох трикутників 3x4x5, розташованих так, що посередині утворюється проріз 1x1; другий — з двадцяти п’яти квадратів 1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Однак, якщо використати трикутники (5, 12, 13), проріз становитиме 7×7. Квадрат 13×13 неможливо заповнити квадратами 7×7.
 

@@ -16,7 +16,7 @@ dashedName: problem-364-comfortable-distance
 
 Нехай $T(N)$ буде кількістю можливостей для $N$ людей зайняти $N$ місць за даними правилами. Наступний малюнок показує $T(4) = 8$.
 
-<img class="img-responsive center-block" alt="вісім способів зайняти N місць N людьми" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
+<img alt="вісім способів зайняти N місць N людьми" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Можна довести, що $T(10) = 61\\,632$ та $T(1\\,000)\bmod 100\\,000\\,007 = 47\\,255\\,094$.
 

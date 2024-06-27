@@ -16,7 +16,7 @@ Un pezzo quadrato di carta con dimensioni intere $N×N$ è posizionato con un an
 
 Contando qualsiasi riflessione o rotazione come distinta, chiamiamo $C(N)$ il numero di modi di tagliare un quadrato $N×N$. Per esempio, $C(1) = 2$ e $C(2) = 30$ (mostrato di seguito).
 
-<img class="img-responsive center-block" alt="modi di tagliare un quadrato 2x2, contando riflessioni e rotazioni come distinte" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;" />
+<img alt="modi di tagliare un quadrato 2x2, contando riflessioni e rotazioni come distinte" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quanto vale $C(30)\bmod {10}^8$ ?
 

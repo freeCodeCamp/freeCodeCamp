@@ -20,7 +20,7 @@ Le proteine naturali sono piegate in tre dimensioni, ma considereremo solo la pi
 
 La figura seguente mostra due possibili modi in cui la nostra proteina di esempio potrebbe essere ripiegata (i punti di contatto H-H sono mostrati con punti rossi).
 
-<img class="img-responsive center-block" alt="due possibili modi di piegare la proteina di esempio" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+<img alt="due possibili modi di piegare la proteina di esempio" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 La piegatura a sinistra ha solo sei punti di contatto H-H, quindi non si verificherebbe mai naturalmente. D'altra parte, la piegatura a destra ha nove punti di contatto H-H, che è ottimale per questa stringa.
 

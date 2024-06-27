@@ -12,7 +12,7 @@ A curva de manjar branco é um conjunto de pontos ($x$,$y$), tal que $0 ≤ x �
 
 A área abaixo da curva de manjar branco é igual a$\frac{1}{2}$, que aparece em rosa no diagrama abaixo.
 
-<img class="img-responsive center-block" alt="diagrama da curva de manjar branco, com o círculo C mostrado no diagrama" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img alt="diagrama da curva de manjar branco, com o círculo C mostrado no diagrama" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $C$ como sendo o círculo com o centro ($\frac{1}{4}$,$\frac{1}{2}$) e raio $\frac{1}{4}$, que aparece em preto no diagrama.
 

@@ -15,7 +15,7 @@ A `smile` is what happens when you turn up the corners of your mouth to show hap
 
 `A friendly smile` is a smile that shows you are being kind and welcoming. It makes others feel good and shows you want to be friends.
 
-Listen to the dialogue and fill in the blanks.
+Послухайте діалог та доповніть речення.
 
 # --fillInTheBlank--
 

@@ -14,7 +14,7 @@ Per questo problema, un poligono può avere vertici collineari consecutivi. Inol
 
 Per esempio, solo il primo dei seguenti è un poligono polare (i nuclei del secondo, terzo, e quarto non contengono rigorosamente l'origine, e il quinto non ha affatto un nucleo):
 
-<img class="img-responsive center-block" alt="cinque poligoni di esempio" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
+<img alt="cinque poligoni di esempio" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Nota che il primo poligono ha tre vertici collineari consecutivi.
 

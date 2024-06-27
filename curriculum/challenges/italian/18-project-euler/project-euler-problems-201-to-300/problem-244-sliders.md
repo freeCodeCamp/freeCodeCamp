@@ -12,7 +12,7 @@ Probabilmente conosci il gioco Fifteen Puzzle. Qui, invece di piastrelle numerat
 
 Una mossa è indicata dall'iniziale maiuscola della direzione in inglese (L per sinistra, R per destra, U per su, D per giù) in cui la piastrella è fatta scorrere, ad esempio, partendo dalla configurazione ($S$), con la sequenza $LULUR$ raggiungiamo la configurazione ($E$):
 
-($S$) <img class="img-responsive" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-1.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($E$) <img class="img-responsive" alt="configurazione E" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-2.gif" style="display: inline-block; background-color: white; padding: 10px;" />
+($S$) <img alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-1.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($E$) <img alt="configurazione E" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-2.gif" style="display: inline-block; background-color: white; padding: 10px;" />
 
 Per ogni percorso, il checksum è calcolato con (pseudocodice):
 
@@ -26,7 +26,7 @@ $$\begin{array}{|c|c|} \hline L & 76 \\\\ \hline R & 82 \\\\ \hline U & 85 \\\\ 
 
 Per la sequenza $LULUR$ riportata sopra, il checksum sarebbe 19761398. Ora, partendo dalla configurazione ($S$), trova tutti i modi più brevi per raggiungere la configurazione ($T$).
 
-($S$) <img class="img-responsive center-block" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-3.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($T$) <img class="img-responsive center-block" alt="configurazione T" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-4.gif" style="display: inline-block; background-color: white; padding: 10px;" />
+($S$) <img alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-3.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($T$) <img alt="configurazione T" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-4.gif" style="display: inline-block; background-color: white; padding: 10px;" />
 
 Qual è la somma di tutti i checksum per i percorsi che hanno la lunghezza minima?
 

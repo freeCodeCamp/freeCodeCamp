@@ -10,7 +10,7 @@ dashedName: problem-332-spherical-triangles
 
 Un triangolo sferico è una figura formata sulla superficie di una sfera da tre grandi archi circolari che si intersecano a coppie in tre vertici.
 
-<img class="img-responsive center-block" alt="triangolo sferico formato sulla superficie di una sfera" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
+<img alt="triangolo sferico formato sulla superficie di una sfera" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $C(r)$ la sfera di centro (0,0,0) e raggio $r$.
 

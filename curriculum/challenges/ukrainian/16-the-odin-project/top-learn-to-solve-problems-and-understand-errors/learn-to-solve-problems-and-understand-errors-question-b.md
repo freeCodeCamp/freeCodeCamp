@@ -1,54 +1,54 @@
 ---
 id: 66581a7ab1eb2281159492fb
-title: Learn to Solve Problems and Understand Errors Question B
+title: Навчіться розв’язувати проблеми та розуміти помилки. Запитання B
 challengeType: 15
 dashedName: learn-to-solve-problems-and-understand-errors-question-b
 ---
 
 # --description--
 
-## Understand the problem
-The first step to solving a problem is understanding exactly what the problem is. If you don’t understand the problem, you won’t know when you’ve successfully solved it and may waste a lot of time on a wrong solution.
+## Розуміння проблеми
+Перший крок розв’язання проблеми — її точне розуміння. Якщо ви не розумієте проблему, ви не знатимете, чи успішно розв’язали її та витратите багато часу на неправильний розв’язок.
 
-To gain clarity and understanding of the problem, write it down on paper, reword it in plain English until it makes sense to you, and draw diagrams if that helps. When you can explain the problem to someone else in plain English, you understand it.
+Щоб зрозуміти проблему, напишіть її на листку, перефразуйте простими словами та накресліть діаграми, якщо це допомагає. Якщо ви можете пояснити проблему комусь іншому простими словами, значить ви її розумієте.
 
-### Plan
-Now that you know what you’re aiming to solve, don’t jump into coding just yet. It’s time to plan out how you’re going to solve it first. Some of the questions you should answer at this stage of the process:
+### План
+Тепер ви знаєте, яку проблему будете розв’язувати, але не переходьте одразу до програмування. Спочатку потрібно скласти план розв’язання. Ось декілька запитань, на які ви повинні мати відповідь:
 
-- Does your program have a user interface? What will it look like? What functionality will the interface have? Sketch this out on paper.
+- У програмі є інтерфейс користувача? Як він виглядає? Які функції він виконує? Відтворіть це на листку.
 
-- What inputs will your program have? Will the user enter data or will you get input from somewhere else?
+- Які вхідні дані матиме програма? Звідки ви будете отримувати вхідні дані: через введення користувача чи десь інше?
 
-- What’s the desired output?
+- Які бажані вихідні дані?
 
-- Given your inputs, what are the steps necessary to return the desired output?
+- Як отримати бажані вихідні дані, враховуючи вхідні дані?
 
-The last question is where you will write out an algorithm to solve the problem. You can think of an algorithm as a recipe for solving a particular problem. It defines the steps that need to be taken by the computer to solve a problem in pseudocode.
+Для останнього запитання ви писатимете алгоритм розв’язання проблеми. Алгоритм можна вважати «рецептом» розв’язання проблеми. Він визначає кроки в псевдокоді, які має зробити комп’ютер, щоб розв’язати проблему.
 
 # --question--
 
 ## --assignment--
-Watch <a href="https://www.youtube.com/watch?v=azcrPFhaY9k" target="_blank">How to Begin Thinking Like a Programmer</a> by Coding Tech. It’s an hour long but packed full of information and definitely worth your time watching.
+Перегляньте відео <a href="https://www.youtube.com/watch?v=azcrPFhaY9k" target="_blank">«Як розпочати мислити, як програміст»</a> від Coding Tech (англійською мовою). Воно триває годину, але містить важливу інформацію та вартує перегляду.
 
 ## --text--
 
-What should you do before starting to code according to the provided text?
+Що потрібно зробити перед тим, як розпочати програмувати, відповідно до даного тексту?
 
 ## --answers--
 
-Immediately start coding to see what problems arise.
+Одразу ж розпочати програмувати, щоб побачити, які проблеми виникають.
 
 ---
 
-Write out the problem in plain English and make sure you can explain it to someone else.
+Розписати проблему простими словами та переконатись, що ви можете пояснити її комусь.
 
 ---
 
-Sketch the user interface and start coding the most complex functions first.
+Накреслити інтерфейс користувача та розпочати програмувати з найскладнішого.
 
 ---
 
-Collect all possible inputs from users and other sources.
+Зібрати всі можливі вхідні дані від користувачів та інших джерел.
 
 
 ## --video-solution--

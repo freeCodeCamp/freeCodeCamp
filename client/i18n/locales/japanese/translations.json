@@ -100,7 +100,8 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "play-scene": "再生"
+    "play-scene": "再生",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -871,7 +872,8 @@
     "own-work-url": "あなた自身の作品を提出してください。",
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
-    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。"
+    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",

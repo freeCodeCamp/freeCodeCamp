@@ -10,11 +10,11 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 点 ${P}(x_1, y_1)$ と ${Q}(x_2, y_2)$ は整数座標上にあり、原点 ${O}(0, 0)$ と共に ${\Delta}OPQ$ を作ります。
 
-<img class="img-responsive center-block" alt="原点 O (0, 0) と結ばれている整数座標上の点 $P(x_1, y_1)$ と $Q(x_2, y_2)$ を示すグラフ" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
+<img alt="原点 O (0, 0) と結ばれている整数座標上の点 $P(x_1, y_1)$ と $Q(x_2, y_2)$ を示すグラフ" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 各座標が 0 から 2 (0 と 2 を含む) の間にあるとき、すなわち $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$ のときは、ちょうど 14 個の直角三角形が含まれます。
 
-<img class="img-responsive center-block" alt="各座標が 0 から 2 の間にあるときに 14 個の直角三角形が含まれることを示す図" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
+<img alt="各座標が 0 から 2 の間にあるときに 14 個の直角三角形が含まれることを示す図" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$ のとき、直角三角形をいくつ作れますか。
 

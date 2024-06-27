@@ -18,7 +18,7 @@ Es ist zwar nicht erlaubt, aber um eine Vorstellung davon zu bekommen, ob diese 
 
 Schneidet man jedoch aus dem Quadrat vier Dreiecke mit den Seiten 75 m, 75 m und $75\sqrt{2}$ m ab, so ergibt sich eine Gesamtfläche von 238750 $\text{m}^2$ und ein Umfang von $1400 + 300\sqrt{2}$ m. So this gives an $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio of 130.87, which is significantly better.
 
-<img class="img-responsive center-block" alt="Bild, das den Unterschied im eingeschlossenen Bereich zwischen Kreis und Quadrat mit abgeschnittenen vier Dreiecken zeigt" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px;" />
+<img alt="Bild, das den Unterschied im eingeschlossenen Bereich zwischen Kreis und Quadrat mit abgeschnittenen vier Dreiecken zeigt" src="https://cdn.freecodecamp.org/curriculum/project-euler/the-mouse-on-the-moon.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Find the maximum $\frac{\text{enclosed-area}}{\text{wall-length}}$ ratio. Gib deine Antwort auf 8 Stellen hinter dem Komma gerundet in der Form abc.defghijk an.
 

@@ -12,7 +12,7 @@ dashedName: problem-202-laserbeam
 
 Позначимо вершини $A$, $B$ і $C$. Лазерний промінь може ввійти через вершину $C$, відбитись від 11 поверхонь і вийти через ту саму вершину двома способами: перший спосіб наведено нижче, а другий є протилежним до нього.
 
-<img class="img-responsive center-block" alt="спосіб, в якому лазерний промінь може увійти через вершину С, відскочити від 11 поверхонь та вийти через ту ж вершину" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img alt="спосіб, в якому лазерний промінь може увійти через вершину С, відскочити від 11 поверхонь та вийти через ту ж вершину" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Лазерний промінь може ввійти через вершину $C$, відбитись від 1000001 поверхні та вийти через ту саму вершину 80840 способами.
 

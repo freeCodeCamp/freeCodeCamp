@@ -10,7 +10,7 @@ dashedName: problem-177-integer-angled-quadrilaterals
 
 ABCD sei ein konvexes Viereck mit den Diagonalen AC und BD. An jedem Scheitelpunkt bildet die Diagonale einen Winkel mit jeder der beiden Seiten, so dass acht Eckwinkel entstehen.
 
-<img class="img-responsive center-block" alt="konvexes Viereck ABCD, mit den Diagonalen AC und BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="konvexes Viereck ABCD, mit den Diagonalen AC und BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Am Scheitelpunkt A beispielsweise sind die beiden Winkel CAD, CAB.
 

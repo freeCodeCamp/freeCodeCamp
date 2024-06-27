@@ -12,7 +12,7 @@ dashedName: >-
 
 Definiremo una lamina quadrata come un contorno quadrato con un "foro" quadrato in modo che la forma possieda simmetria verticale e orizzontale. Ad esempio, utilizzando esattamente trentadue piastrelle quadrate possiamo formare due lamine quadrate differenti:
 
-<img class="img-responsive center-block" alt="due lamine quadrate con fori 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
+<img alt="due lamine quadrate con fori 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Con cento piastrelle, e non necessariamente utilizzando tutte le piastrelle in una sola volta, è possibile formare quarantuno diverse lamine. Utilizzando fino a un milione di piastrelle quante diverse lamine quadrate possono essere formate?
 

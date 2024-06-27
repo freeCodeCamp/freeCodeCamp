@@ -12,7 +12,7 @@ N×N disks are placed on a square game board. Each disk has a black side and whi
 
 In jedem Zug darf man sich eine Scheibe aussuchen und alle Scheiben umdrehen, die sich in der gleichen Zeile und Spalte wie diese Scheibe befinden: Es werden also $2 × N - 1$ Scheiben umgedreht. Das Spiel endet, wenn von allen Scheiben die weisse Seite zu sehen ist. Das folgende Beispiel zeigt ein Spiel auf einem 5×5-Brett.
 
-<img class="img-responsive center-block" alt="Animation eines Spiels auf einem 5x5-Brett" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="Animation eines Spiels auf einem 5x5-Brett" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Es kann bewiesen werden, dass 3 die minimale Anzahl von Zügen ist, um dieses Spiel zu beenden.
 

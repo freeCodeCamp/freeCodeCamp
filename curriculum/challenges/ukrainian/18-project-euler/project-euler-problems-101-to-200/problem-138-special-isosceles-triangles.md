@@ -10,7 +10,7 @@ dashedName: problem-138-special-isosceles-triangles
 
 Розглянемо рівнобедрений трикутник з довжиною основи $b = 16$ та катетами $L = 17$.
 
-<img class="img-responsive center-block" alt="рівнобедрений трикутник з ребрами: два ребра з однаковою довжиною L і основою трикутника b, та висотою трикутника h від основи трикутника до кута між ребрами L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img alt="рівнобедрений трикутник з ребрами: два ребра з однаковою довжиною L і основою трикутника b, та висотою трикутника h від основи трикутника до кута між ребрами L" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 За теоремою Піфагора бачимо, що висота трикутника $h = \sqrt{{17}^2 − 8^2} = 15$, що менше на один від довжини основи.
 

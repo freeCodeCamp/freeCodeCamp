@@ -10,7 +10,7 @@ dashedName: problem-354-distances-in-a-bees-honeycomb
 
 Consider a honey bee's honeycomb where each cell is a perfect regular hexagon with side length 1.
 
-<img class="img-responsive center-block" alt="Bienenwabe mit sechseckigen Seiten der Länge 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
+<img alt="Bienenwabe mit sechseckigen Seiten der Länge 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Eine bestimmte Zelle wird von der Bienenkönigin bewohnt. Für eine positive reelle Zahl $L$ zähle $B(L)$ die Zellen, die $L$ von der Bienenkönigin entfernt sind (alle Abstände werden von Mitte zu Mitte gemessen); man kann davon ausgehen, dass die Wabe groß genug ist, um jeden beliebigen Abstand zu berücksichtigen.
 

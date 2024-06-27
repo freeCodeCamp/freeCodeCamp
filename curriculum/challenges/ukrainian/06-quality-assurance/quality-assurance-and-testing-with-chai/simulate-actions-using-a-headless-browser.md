@@ -28,7 +28,7 @@ Mocha дозволяє вам запустити певний код перед 
 У межах `test/2_functional-tests.js` одразу після оголошення `Browser` додайте URL-адресу свого проєкту до властивості `site` змінної:
 
 ```js
-Browser.site = 'http://localhost:3000'; // Your URL here
+Browser.site = 'http://0.0.0.0:3000'; // Your URL here
 ```
 
 Потім на кореневому рівні набору `'Functional Tests with Zombie.js'` створіть новий екземпляр об’єкта `Browser` з наступним кодом:
@@ -37,7 +37,7 @@ Browser.site = 'http://localhost:3000'; // Your URL here
 const browser = new Browser();
 ```
 
-І використайте хук `suiteSetup`, щоб направити `browser` до маршруту `/` з наступним кодом:
+І використайте хук `suiteSetup`, щоб направити `browser` до маршруту `/` за допомогою коду нижче. **Примітка**: `done` передається як зворотний виклик до `browser.visit`, тому не викликайте його.
 
 ```js
 suiteSetup(function(done) {

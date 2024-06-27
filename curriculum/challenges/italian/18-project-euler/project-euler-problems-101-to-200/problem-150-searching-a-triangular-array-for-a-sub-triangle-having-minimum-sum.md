@@ -13,7 +13,7 @@ In una serie triangolare di numeri interi positivi e negativi, desideriamo trova
 
 Nell'esempio sottostante si può facilmente verificare che il triangolo marcato soddisfa questa condizione con una somma di −42.
 
-<img class="img-responsive center-block" alt="array triangolare, con sotto-triangolo marcato, avente una somma di -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
+<img alt="array triangolare, con sotto-triangolo marcato, avente una somma di -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Vogliamo creare una tale matrice triangolare con mille righe, in modo da generare 500500 numeri pseudo-casuali $s_k$ nel range $±2^{19}$, utilizzando un tipo di generatore di numeri casuali (noto come generatore di elementi costitutivi lineari) come segue:
 

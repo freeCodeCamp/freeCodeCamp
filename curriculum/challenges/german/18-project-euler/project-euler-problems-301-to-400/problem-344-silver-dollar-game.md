@@ -18,7 +18,7 @@ Alternativ kann der Spieler auch den Sonderzug wählen, bei dem er die linke Mü
 
 Der Gewinner ist der Spieler, der den Silberdollar einsteckt.
 
-<img class="img-responsive center-block" alt="Silberdollar-Spiel" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="Silberdollar-Spiel" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Eine Gewinnkonfiguration ist eine Anordnung von Münzen auf dem Streifen, bei der der erste Spieler einen Gewinn erzwingen kann, egal was der zweite Spieler tut.
 

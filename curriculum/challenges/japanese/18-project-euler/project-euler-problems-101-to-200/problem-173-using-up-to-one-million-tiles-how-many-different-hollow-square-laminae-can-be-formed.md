@@ -12,7 +12,7 @@ dashedName: >-
 
 輪郭が正方形であり、正方形の「穴」があり、上下対称かつ左右対称であるものを「正方層」と呼ぶことにします。 例えば、ちょうど 32 枚の正方形タイルを使用して、下図のような 2 通りの正方層を作ることができます。
 
-<img class="img-responsive center-block" alt="それぞれ 2 x 2 と 7 x 7 の穴がある 2 つの正方層" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
+<img alt="それぞれ 2 x 2 と 7 x 7 の穴がある 2 つの正方層" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 必ずしも一度にすべてのタイルを使用する必要がないとすると、100 枚のタイルで 41 通りの正方層を作成できます。 最大 100 万枚のタイルを使って正方層を何通り作れますか。
 

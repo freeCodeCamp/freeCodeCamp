@@ -19,7 +19,7 @@ $$\begin{align}   & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\
 
 例えば、$S_3$ と $S_4$ の和は、下図でピンク色で示されている 6 辺の図形です。
 
-<img class="img-responsive center-block" alt="S_3, S_4, S_3 + S_4 を示している画像" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
+<img alt="S_3, S_4, S_3 + S_4 を示している画像" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $S_{1864} + S_{1865} + \ldots + S_{1909}$ には辺が何本ありますか。
 

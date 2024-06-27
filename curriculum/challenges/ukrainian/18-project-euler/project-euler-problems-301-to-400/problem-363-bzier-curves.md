@@ -12,7 +12,7 @@ dashedName: problem-363-bzier-curves
 
 Крива будується наступним чином:
 
-<img class="img-responsive center-block" alt="побудова кривої Безьє" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px;" />
+<img alt="побудова кривої Безьє" src="https://cdn.freecodecamp.org/curriculum/project-euler/bzier-curves.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 На відрізках $P_0P_1$, $P_1P_2$ та $P_2P_3$ точки $Q_0$,$Q_1$ та $Q_2$ намальовані так, що $\frac{P_0Q_0}{P_0P_1} = \frac{P_1Q_1}{P_1P_2} = \frac{P_2Q_2}{P_2P_3} = t$ ($t$ знаходиться на [0,1]).
 

@@ -18,7 +18,7 @@ An einem solchen Baum spielen zwei Spieler ein Mitnahmespiel. In jedem Zug wähl
 
 Hier sind die Gewinnzüge des ersten Spielers im ersten Zug für $T(k)$ von $k = 1$ bis $k = 6$.
 
-<img class="img-responsive center-block" alt="gewinnende Züge des ersten Spielers, im ersten Zug für k = 1 bis k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img alt="gewinnende Züge des ersten Spielers, im ersten Zug für k = 1 bis k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Lasse $f(k)$ die Anzahl der Gewinnzüge des ersten Spielers (d.h. der Züge, für die der zweite Spieler keine Gewinnstrategie hat) im ersten Zug des Spiels sein, wenn dieses Spiel auf $T(k)$ gespielt wird.
 

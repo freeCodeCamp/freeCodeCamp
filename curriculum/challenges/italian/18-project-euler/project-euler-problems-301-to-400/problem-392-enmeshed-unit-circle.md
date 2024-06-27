@@ -24,7 +24,7 @@ Per questo problema vorremmo che tu trovi le posizioni delle rimanenti $N$ linee
 
 Ad es. ecco una immagine della soluzione per $N = 10$:
 
-<img class="img-responsive center-block" alt="soluzione per N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img alt="soluzione per N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 L'area occupata dalle celle rosse per $N = 10$ arrotondata a 10 cifre dopo il punto decimale è 3.3469640797.
 

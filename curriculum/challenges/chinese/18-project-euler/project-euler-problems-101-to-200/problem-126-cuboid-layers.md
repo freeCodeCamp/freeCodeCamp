@@ -10,7 +10,7 @@ dashedName: problem-126-cuboid-layers
 
 The minimum number of cubes to cover every visible face on a cuboid measuring 3 x 2 x 1 is twenty-two.
 
-<img class="img-responsive center-block" alt="3x2x1 的长方体被 22 个 1x1x1 的立方体覆盖" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+<img alt="3x2x1 的长方体被 22 个 1x1x1 的立方体覆盖" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 如果我们再添加第二层来覆盖现在这个体的每一个可见面，则需要 64 个立方体，第三层需要 78 个立方体，第四层需要 118 个。
 

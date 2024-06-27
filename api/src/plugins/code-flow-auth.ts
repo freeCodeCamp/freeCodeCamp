@@ -1,11 +1,11 @@
 import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
-import { isBefore } from 'date-fns';
 import { type user } from '@prisma/client';
 
-import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
-import { type Token } from '../utils/tokens';
+import { JWT_SECRET } from '../utils/env';
+import { type Token, isExpired } from '../utils/tokens';
+import { getRedirectParams } from '../utils/redirection';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -19,6 +19,7 @@ declare module 'fastify' {
 
   interface FastifyInstance {
     authorize: (req: FastifyRequest, reply: FastifyReply) => void;
+    authorizeOrRedirect: (req: FastifyRequest, reply: FastifyReply) => void;
   }
 }
 
@@ -26,12 +27,8 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.decorateReply('setAccessTokenCookie', function (accessToken: Token) {
     const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
     void this.setCookie('jwt_access_token', signedToken, {
-      path: '/',
       httpOnly: false,
       secure: false,
-      sameSite: 'lax',
-      domain: COOKIE_DOMAIN,
-      signed: true,
       maxAge: accessToken.ttl
     });
   });
@@ -40,41 +37,70 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
   const TOKEN_INVALID = 'Your access token is invalid';
   const TOKEN_EXPIRED = 'Access token is no longer valid';
 
-  const send401 = (reply: FastifyReply, message: string) =>
-    reply.status(401).send({ type: 'info', message });
+  const send401 = (
+    _req: FastifyRequest,
+    reply: FastifyReply,
+    message: string
+  ): void => {
+    void reply.status(401).send({ type: 'info', message });
+  };
 
-  fastify.decorate(
-    'authorize',
-    async function (req: FastifyRequest, reply: FastifyReply) {
+  const redirectHome = (
+    req: FastifyRequest,
+    reply: FastifyReply,
+    _ignored: string
+  ) => {
+    const { origin } = getRedirectParams(req);
+
+    void reply.redirectWithMessage(origin, {
+      type: 'info',
+      content:
+        'Only authenticated users can access this route. Please sign in and try again.'
+    });
+  };
+
+  const handleAuth =
+    (
+      rejectStrategy: (
+        req: FastifyRequest,
+        reply: FastifyReply,
+        message: string
+      ) => void
+    ) =>
+    async (req: FastifyRequest, reply: FastifyReply) => {
       const tokenCookie = req.cookies.jwt_access_token;
-      if (!tokenCookie) return send401(reply, TOKEN_REQUIRED);
+      if (!tokenCookie) return rejectStrategy(req, reply, TOKEN_REQUIRED);
 
       const unsignedToken = req.unsignCookie(tokenCookie);
-      if (!unsignedToken.valid) return send401(reply, TOKEN_REQUIRED);
+      if (!unsignedToken.valid)
+        return rejectStrategy(req, reply, TOKEN_REQUIRED);
 
       const jwtAccessToken = unsignedToken.value;
 
       try {
         jwt.verify(jwtAccessToken!, JWT_SECRET);
       } catch {
-        return send401(reply, TOKEN_INVALID);
+        return rejectStrategy(req, reply, TOKEN_INVALID);
       }
 
-      const {
-        accessToken: { created, ttl, userId }
-      } = jwt.decode(jwtAccessToken!) as { accessToken: Token };
-      const valid = isBefore(Date.now(), Date.parse(created) + ttl);
-      if (!valid) return send401(reply, TOKEN_EXPIRED);
+      const { accessToken } = jwt.decode(jwtAccessToken!) as {
+        accessToken: Token;
+      };
+
+      if (isExpired(accessToken))
+        return rejectStrategy(req, reply, TOKEN_EXPIRED);
 
       const user = await fastify.prisma.user.findUnique({
-        where: { id: userId }
+        where: { id: accessToken.userId }
       });
-      if (!user) return send401(reply, TOKEN_INVALID);
+      if (!user) return rejectStrategy(req, reply, TOKEN_INVALID);
       req.user = user;
-    }
-  );
+    };
+
+  fastify.decorate('authorize', handleAuth(send401));
+  fastify.decorate('authorizeOrRedirect', handleAuth(redirectHome));
 
   done();
 };
 
-export default fp(codeFlowAuth);
+export default fp(codeFlowAuth, { dependencies: ['redirect-with-message'] });

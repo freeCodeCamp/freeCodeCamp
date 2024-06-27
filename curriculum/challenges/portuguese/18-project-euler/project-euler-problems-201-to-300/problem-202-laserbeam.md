@@ -12,7 +12,7 @@ Três espelhos são organizados na forma de um triângulo equilátero, com suas 
 
 Rotule os vértices $A$, $B$ e $C$. Existem 2 maneiras pelas quais um raio laser pode entrar no vértice $C$, ricochetear 11 vezes nas superfícies e depois sair pelo mesmo vértice: uma maneira é mostrada abaixo; a outra é fazendo o caminho inverso.
 
-<img class="img-responsive center-block" alt="uma forma pela qual um raio laser pode entrar em um vértice, ricochetear 11 vezes nas superfícies e depois sair pelo mesmo vértice" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img alt="uma forma pela qual um raio laser pode entrar em um vértice, ricochetear 11 vezes nas superfícies e depois sair pelo mesmo vértice" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Há 80.840 maneiras pelas quais um raio laser pode entrar em um vértice $C$, ricochetear 1.000.001 vezes nas superfícies e depois sair pelo mesmo vértice.
 

@@ -77,6 +77,8 @@ export interface EditorProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef?: React.RefObject<HTMLElement>;
+  block: string;
+  superBlock: string;
   description: string;
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
@@ -243,7 +245,7 @@ const initialData: EditorProperties = {
 const Editor = (props: EditorProps): JSX.Element => {
   const reduxStore = useStore();
   const { t } = useTranslation();
-  const { editorRef, initTests, resetAttempts } = props;
+  const { editorRef, initTests, resetAttempts, isMobileLayout } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -804,6 +806,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.classList.add('description-container');
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
+    if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
@@ -895,6 +898,35 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     updateFile({ fileKey, editorValue, editableRegionBoundaries });
   };
+
+  function createBreadcrumb(): HTMLElement {
+    const { block, superBlock } = props;
+    const breadcrumb = document.createElement('nav');
+    breadcrumb.setAttribute('aria-label', `${t('aria.breadcrumb-nav')}`);
+    const breadcrumbList = document.createElement('ol'),
+      breadcrumbLeft = document.createElement('li'),
+      breadcrumbLeftLink = document.createElement('a'),
+      breadcrumbRight = document.createElement('li'),
+      breadcrumbRightLink = document.createElement('a');
+    breadcrumbLeftLink.innerHTML = t(`intro:${superBlock}.title`);
+    breadcrumbRightLink.innerHTML = t(
+      `intro:${superBlock}.blocks.${block}.title`
+    );
+    breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
+    breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
+    breadcrumbLeft.appendChild(breadcrumbLeftLink);
+    breadcrumbRight.appendChild(breadcrumbRightLink);
+    breadcrumbList.setAttribute(
+      'data-playwright-test-label',
+      'breadcrumb-mobile'
+    );
+    breadcrumbList.className = 'breadcrumbs';
+    breadcrumbList.appendChild(breadcrumbLeft);
+    breadcrumbList.appendChild(breadcrumbRight);
+    breadcrumb.appendChild(breadcrumbList);
+
+    return breadcrumb;
+  }
 
   // TODO: DRY this and the update function
   function initializeEditableRegion(

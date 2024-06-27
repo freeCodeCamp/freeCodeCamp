@@ -10,11 +10,11 @@ dashedName: problem-440-gcd-and-tiling
 
 Нам потрібно обкласти панель довжиною $n$ і висотою 1 за допомогою блоків 1×2 або 1×1, позначених цифрою:
 
-<img class="img-responsive center-block" alt="десять блоків 1x1, позначених цифрою зверху, і блок 1х2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img alt="десять блоків 1x1, позначених цифрою зверху, і блок 1х2" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Наприклад, ось декілька способів обкласти панель довжиною $n = 8$:
 
-<img class="img-responsive center-block" alt="декілька способів обкласти панель довжиною n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
+<img alt="декілька способів обкласти панель довжиною n = 8" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $T(n)$ буде кількістю способів обкласти панелі довжиною $n$, як описано вище.
 

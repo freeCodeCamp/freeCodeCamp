@@ -19,7 +19,7 @@ dashedName: problem-394-eating-pie
 
 パイの残りの割合が $F$ 未満になったら、もうこの手順を繰り返しません。 代わりに、残ったパイを全部食べます。
 
-<img class="img-responsive center-block" alt="パイを切る手順のアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
+<img alt="パイを切る手順のアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $x ≥ 1$, $F = frac{1}{x}$ のとき、ジェフが上の手順を繰り返す回数の期待値を $E(x)$ とします。 $E(1) = 1$, $E(2) ≈ 1.2676536759$, $E(7.5) ≈ 2.1215732071$ であることを確認できます。
 

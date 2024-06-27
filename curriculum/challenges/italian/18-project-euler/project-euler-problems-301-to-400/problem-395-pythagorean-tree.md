@@ -18,7 +18,7 @@ Inizia con un'unità quadrata. Poi, chiamando base uno dei suoi lati (nell'anima
 
 La figura risultante, dopo un numero infinito di iterazioni, è l'albero pitagorico.
 
-<img class="img-responsive center-block" alt="animazione che mostra 8 iterazioni della procedura" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione che mostra 8 iterazioni della procedura" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Si può dimostrare che esiste almeno un rettangolo, i cui lati sono paralleli al più grande quadrato dell'albero pitagorico, che racchiude completamente l'albero pitagorico.
 
