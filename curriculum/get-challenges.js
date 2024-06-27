@@ -26,10 +26,13 @@ const CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
 const DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
 
-const I18N_CURRICULUM_DIR =
+const I18N_CURRICULUM_DIR = path.resolve(
+  __dirname,
   process.env.BUILD_WITH_SUBMODULE === 'true'
-    ? path.resolve(__dirname, '../i18n-curriculum/curriculum')
-    : path.resolve(__dirname);
+    ? 'i18n-curriculum/curriculum'
+    : '.'
+);
+
 const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
 
 exports.CHALLENGES_DIR = CHALLENGES_DIR;
@@ -53,13 +56,22 @@ function createCommentMap(dictionariesDir) {
     {}
   );
 
+  const englishDictionaryDir =
+    process.env.BUILD_WITH_SUBMODULE === 'true'
+      ? path.resolve(DICTIONARIES_DIR)
+      : path.resolve(dictionariesDir);
+
   // get the english dicts
   const COMMENTS_TO_TRANSLATE = require(
-    path.resolve(DICTIONARIES_DIR, 'english', 'comments.json')
+    path.resolve(englishDictionaryDir, 'english', 'comments.json')
   );
 
   const COMMENTS_TO_NOT_TRANSLATE = require(
-    path.resolve(DICTIONARIES_DIR, 'english', 'comments-to-not-translate')
+    path.resolve(
+      englishDictionaryDir,
+      'english',
+      'comments-to-not-translate.json'
+    )
   );
 
   // map from english comment text to translations
