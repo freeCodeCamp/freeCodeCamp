@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 Дана неспрямована мережа складається із семи вершин та дванадцяти ребер, що мають загальну вагу 243.
 
-<img class="img-responsive center-block" alt="Мережа з сімома вершинами та дванадцятьма ребрами" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img alt="Мережа з сімома вершинами та дванадцятьма ребрами" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Цю саму мережу можна представити у вигляді матриці.
 
@@ -27,7 +27,7 @@ dashedName: problem-107-minimal-network
 
 Однак можна оптимізувати мережу, видаливши деякі ребра так, щоб точки мережі залишились з’єднаними. Нижче показана максимально оптимізована мережа. Її вага дорівнює 93, а оптимізація менша на 243 − 93 = 150 у порівнянні з вихідною мережею.
 
-<img class="img-responsive center-block" alt="Мережа з сімома вершинами та шістьма ребрами, що залишились: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img alt="Мережа з сімома вершинами та шістьма ребрами, що залишились: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Використовуючи 2D-масив `network`, який представляє мережу у формі матриці, знайдіть максимальний рівень оптимізації, якого можна досягти, усунувши зайві ребра, щоб при цьому мережа залишалась з’єднаною. Вершини без з’єднання представлені у вигляді `-1`.
 

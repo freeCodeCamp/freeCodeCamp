@@ -18,7 +18,7 @@ Definiremos uma sequência de pontos em $H, \\{P_i : i ≥ 1\\}$, como:
 - $P_2 = (\frac{-43}{6}, -4)$.
 - Para $i > 2$, $P_i$ é o único ponto $H$ que é diferente de $P_{i - 1}$ e tal que a linha $P_iP_{i - 1}$ é paralela à linha $P_{i - 2}X$. Pode-se ver que $P_i$ está corretamente definido e que suas coordenadas são sempre racionais.
 
-<img class="img-responsive center-block" alt="animação mostrando os pontos de definição de P_1 a P_6" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+<img alt="animação mostrando os pontos de definição de P_1 a P_6" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Você é informado de que $P_3 = (\frac{-19}{2}, \frac{-229}{24})$, $P_4 = (\frac{1267}{144}, \frac{-37}{12})$ and $P_7 = (\frac{17.194.218.091}{143.327.232}, \frac{274.748.766.781}{1.719.926.784})$.
 

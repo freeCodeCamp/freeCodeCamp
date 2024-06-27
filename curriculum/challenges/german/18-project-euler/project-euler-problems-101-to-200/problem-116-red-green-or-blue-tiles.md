@@ -12,15 +12,15 @@ Bei einer Reihe von fünf schwarzen quadratischen Steinen wird eine bestimmte An
 
 Wenn rote Steine gewählt werden, gibt es genau sieben Möglichkeiten, dies zu tun.
 
-<img class="img-responsive center-block" alt="Mögliche Wege, um ein rotes Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px;" />
+<img alt="Mögliche Wege, um ein rotes Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Wenn grüne Steine gewählt werden, gibt es drei Möglichkeiten.
 
-<img class="img-responsive center-block" alt="Möglichkeiten, das grüne Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px;" />
+<img alt="Möglichkeiten, das grüne Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Und wenn blaue Steine gewählt werden, gibt es zwei Möglichkeiten.
 
-<img class="img-responsive center-block" alt="Möglichkeiten, das blaue Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;" />
+<img alt="Möglichkeiten, das blaue Rechteck in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Unter der Annahme, dass Farben nicht gemischt werden können, gibt es 7 + 3 + 2 = 12 Möglichkeiten, die schwarzen Steine in einer Reihe von fünf Einheiten Länge zu ersetzen. Auf wie viele verschiedene Arten können die schwarzen Steine in einer Reihe von fünfzig Einheiten Länge ersetzt werden, wenn die Farben nicht gemischt werden können und mindestens ein farbiger Stein verwendet werden muss?
 

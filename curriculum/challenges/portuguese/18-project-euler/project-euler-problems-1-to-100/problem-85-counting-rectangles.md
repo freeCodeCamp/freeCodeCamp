@@ -10,7 +10,7 @@ dashedName: problem-85-counting-rectangles
 
 Se contarmos com cuidado, poderemos ver que uma grade retangular que mede 3 por 2 contém dezoito retângulos:
 
-<img class="img-responsive center-block" alt="um diagrama de retângulos diferentes encontrados dentro de uma grade retangular de 3 por 2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;" />
+<img alt="um diagrama de retângulos diferentes encontrados dentro de uma grade retangular de 3 por 2" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Embora possa não existir uma grade retangular que contenha exatamente `n` retângulos, calcule a área da grade com a solução mais próxima.
 

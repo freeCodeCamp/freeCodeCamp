@@ -87,7 +87,7 @@ test('Focuses on the submit button after tests passed', async ({
   const submitButton = page.getByRole('button', {
     name: 'Submit and go to next challenge'
   });
-  await focusEditor({ page, browserName, isMobile });
+  await focusEditor({ page, isMobile });
   await clearEditor({ page, browserName });
 
   await editor.fill(

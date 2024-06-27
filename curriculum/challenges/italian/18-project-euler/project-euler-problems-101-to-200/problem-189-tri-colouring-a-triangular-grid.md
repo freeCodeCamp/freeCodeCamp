@@ -10,13 +10,13 @@ dashedName: problem-189-tri-colouring-a-triangular-grid
 
 Considera la seguente configurazione di 64 triangoli:
 
-<img class="img-responsive center-block" alt="64 triangoli disposti in modo da creare un triangolo più grande con lunghezza del lato di 8 triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="64 triangoli disposti in modo da creare un triangolo più grande con lunghezza del lato di 8 triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Desideriamo colorare l'interno di ogni triangolo con uno dei tre colori: rosso, verde o blu, in modo che due triangoli vicini non abbiano lo stesso colore. Tale colorazione è detta valida. Definiamo vicini due triangoli che condividono un bordo. Nota: se condividono solo un vertice, allora non sono vicini.
 
 Per esempio, ecco una colorazione valida della griglia di cui sopra:
 
-<img class="img-responsive center-block" alt="griglia colorata di 64 triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="griglia colorata di 64 triangoli" src="https://cdn.freecodecamp.org/curriculum/project-euler/tri-colouring-a-triangular-grid-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Una colorazione C' ottenuta da una colorazione C per rotazione o riflessione è considerata distinta da C a meno che le due non siano identiche.
 

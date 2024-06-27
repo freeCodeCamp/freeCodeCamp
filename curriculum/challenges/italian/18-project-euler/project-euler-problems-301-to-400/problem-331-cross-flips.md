@@ -12,7 +12,7 @@ N×N dischi sono posizionati su un tabellone da gioco quadrato. Ogni disco ha un
 
 A ogni turno, si può scegliere un disco e capovolgere tutti i dischi nella stessa riga e la stessa colonna di questo disco: così $2 × N - 1$ dischi vengono capovolti. Il gioco termina quando tutti i dischi mostrano il loro lato bianco. L'esempio seguente mostra una partita su una griglia 5×5.
 
-<img class="img-responsive center-block" alt="animazione che mostra il gioco su un tabellone 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione che mostra il gioco su un tabellone 5x5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Si può dimostrare che 3 è il numero minimo di turni per finire questo gioco.
 

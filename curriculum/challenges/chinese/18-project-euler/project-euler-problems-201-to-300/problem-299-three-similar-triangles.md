@@ -14,7 +14,7 @@ $A(a, 0)$, $B(b, 0)$, $C(0, c)$和 $D(0, d)$, 满足$0 &lt; a &lt; b$ 和 $0 &lt
 
 点 $P$，也有整数坐标， 被选择在行 $AC$ 上，这样三个三角形 $ABP$， $CDP$ 和 $BDP$ 都是相似的。
 
-<img class="img-responsive center-block" alt="A、B、C、D和P点创建了三个三角形：ABP、CDP和BDP。" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="A、B、C、D和P点创建了三个三角形：ABP、CDP和BDP。" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 在 $a = c$的情况下很容易证明这三个三角形相似。
 

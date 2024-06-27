@@ -14,7 +14,7 @@ dashedName: problem-281-pizza-toppings
 
 例えば、$f(2,1) = 1$, $f(2,2) = f(3,1) = 2$, $f(3,2) = 16$ です。 $f(3,2)$ を下に示します。
 
-<img class="img-responsive center-block" alt="3 種類のトッピングを各 2 枚のスライスに載せる 16 通りの方法を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
+<img alt="3 種類のトッピングを各 2 枚のスライスに載せる 16 通りの方法を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $f(m,n) ≤ {10}^{15}$ となる $f(m,n)$ の総和を求めなさい。
 

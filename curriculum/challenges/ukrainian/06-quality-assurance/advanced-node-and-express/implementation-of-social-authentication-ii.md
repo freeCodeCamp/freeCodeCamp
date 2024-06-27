@@ -35,7 +35,7 @@ passport.use(new GitHubStrategy({
 
 # --hints--
 
-Потрібно додати залежність passport-github.
+Потрібно додати залежність `passport-github`.
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-passport-github повинен бути правильно заданий.
+`passport-github` повинен бути обов’язковим.
 
 ```js
 async (getUserInput) => {

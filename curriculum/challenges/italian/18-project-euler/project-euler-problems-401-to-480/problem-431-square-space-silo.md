@@ -12,7 +12,7 @@ Fred il fattore fa installare un nuovo silo nella sua fattoria, e avendo un'osse
 
 Pensando in fretta Quentin spiega che quando del materiale granulare è fatto cadere dall'alto si forma una curva conica e l'angolo naturale che si forma con l'orizzontale è chiamato angolo di riposo. Per esempio, se l'angolo di riposo, $\alpha = 30°$, e il grano è fatto cadere al centro del silo, allora un cono perfetto si forma verso la cima del cilindro. Nel caso del silo, che ha un diametro di 6m, l'ammontare di spazio sprecato è circa 32.648388556 m<sup>3</sup>. Eppure, se il grano è fatto cadere da un punto in cima che ha una distanza orizzontale di $x$ metri dal centro allora si forma un cono con una base stranamente curva. Mostra una immagine a Fred.
 
-<img class="img-responsive center-block" alt="immagine che presenta il formarsi del cono perfetto verso la cima del cilindro" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px;" />
+<img alt="immagine che presenta il formarsi del cono perfetto verso la cima del cilindro" src="https://cdn.freecodecamp.org/curriculum/project-euler/square-space-silo.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 L'ammontare dello spazio sprecato in metri cubi è dato da $V(x)$. Se $x = 1.114\\,785\\,284$, che ha tre al quadrato cifre decimali, allora l'ammontare di spazio sprecato, $V(1.114\\,785\\,284) \approx 36$. Dato il range di possibili soluzioni per questo problema c'è un'unica altra opzione: $V(2.511\\,167\\,869) \approx 49$. Sarebbe come sapere che il quadrato è il re del silo, in tutta la sua gloria sopra il tuo grano.
 

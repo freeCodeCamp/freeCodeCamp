@@ -14,7 +14,7 @@ Dato un cerchio $c$ con centro $M$ e raggio $r$ e un punto $G$ tali che $d(G, m)
 
 La costruzione dei punti dell'ellisse è mostrata di seguito.
 
-<img class="img-responsive center-block" alt="animazione della costruzione di un'ellisse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione della costruzione di un'ellisse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Dati i punti $M(-2000, 1500)$ e $G(800, 1500)$.
 
@@ -26,7 +26,7 @@ Da un punto $P$ al di fuori di $e$ sono tracciate le due tangenti all'ellisse $$
 
 Siano $R$ e $S$ i punti dove $t_1$ e $t_2$ toccano l'ellisse.
 
-<img class="img-responsive center-block" alt="cerchio c con centro M, raggio 15000 e un punto P al di fuori dell'ellisse e; dal punto P due tangenti t_1 e t_2 sono disegnate sull'ellisse, con i punti R e S che toccano l'ellisse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="cerchio c con centro M, raggio 15000 e un punto P al di fuori dell'ellisse e; dal punto P due tangenti t_1 e t_2 sono disegnate sull'ellisse, con i punti R e S che toccano l'ellisse" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Per quanti punti $P$ del reticolo l'angolo $RPS$ è maggiore di 45°?
 

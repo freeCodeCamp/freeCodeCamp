@@ -1,13 +1,11 @@
 import fastifyCsrfProtection from '@fastify/csrf-protection';
 import express from '@fastify/express';
-import fastifySession from '@fastify/session';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
-import MongoStore from 'connect-mongo';
 import uriResolver from 'fast-uri';
 import Fastify, {
   FastifyBaseLogger,
@@ -26,7 +24,6 @@ import { SESProvider } from './plugins/mail-providers/ses';
 import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
-import sessionAuth from './plugins/session-auth';
 import codeFlowAuth from './plugins/code-flow-auth';
 import { mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
@@ -39,19 +36,15 @@ import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 import { donateRoutes, chargeStripeRoute } from './routes/donate';
 import { emailSubscribtionRoutes } from './routes/email-subscription';
-import { settingRoutes } from './routes/settings';
+import { settingRoutes, settingRedirectRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
 import {
   API_LOCATION,
-  COOKIE_DOMAIN,
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FREECODECAMP_NODE_ENV,
-  MONGOHQ_URL,
-  SENTRY_DSN,
-  SESSION_SECRET
+  SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 
@@ -110,9 +103,12 @@ export const build = async (
     dsn: SENTRY_DSN,
     // No need to initialize if DSN is not provided (e.g. in development and
     // test environments)
-    skipInit: !!SENTRY_DSN,
+    skipInit: !SENTRY_DSN,
     errorResponse: (error, _request, reply) => {
-      if (reply.statusCode === 500) {
+      const isCSRFError =
+        error.code === 'FST_CSRF_INVALID_TOKEN' ||
+        error.code === 'FST_CSRF_MISSING_SECRET';
+      if (reply.statusCode === 500 || isCSRFError) {
         void reply.send({
           message: 'flash.generic-error',
           type: 'danger'
@@ -132,7 +128,8 @@ export const build = async (
 
     ///Ignore all other possible sources of CSRF
     // tokens since we know we can provide this one
-    getToken: req => req.headers['csrf-token'] as string
+    getToken: req => req.headers['csrf-token'] as string,
+    cookieOpts: { signed: false, sameSite: 'strict' }
   });
 
   // All routes except signout should add a CSRF token to the response
@@ -141,31 +138,12 @@ export const build = async (
 
     if (!isSignout) {
       const token = reply.generateCsrf();
-      // Path is necessary to ensure that only one cookie is set and it is valid
-      // for all routes.
       void reply.setCookie('csrf_token', token, {
-        path: '/',
         sameSite: 'strict',
-        domain: COOKIE_DOMAIN,
-        secure: FREECODECAMP_NODE_ENV === 'production'
+        signed: false
       });
     }
     done();
-  });
-
-  // @ts-expect-error - @fastify/session's types are not, yet, compatible with
-  // express-session's types
-  await fastify.register(fastifySession, {
-    secret: SESSION_SECRET,
-    rolling: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60, // 1 hour
-      secure: FREECODECAMP_NODE_ENV !== 'development'
-    },
-    store: MongoStore.create({
-      mongoUrl: MONGOHQ_URL
-    })
   });
 
   const provider =
@@ -179,17 +157,7 @@ export const build = async (
         info: {
           title: 'freeCodeCamp API',
           version: '1.0.0' // API version
-        },
-        components: {
-          securitySchemes: {
-            session: {
-              type: 'apiKey',
-              name: 'sessionId',
-              in: 'cookie'
-            }
-          }
-        },
-        security: [{ session: [] }]
+        }
       }
     });
     void fastify.register(fastifySwaggerUI, {
@@ -210,7 +178,8 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  void fastify.register(sessionAuth);
+  // redirectWithMessage must be registered before codeFlowAuth
+  void fastify.register(redirectWithMessage);
   void fastify.register(codeFlowAuth);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
@@ -219,6 +188,7 @@ export const build = async (
   }
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
+  void fastify.register(settingRedirectRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(chargeStripeRoute);
   void fastify.register(emailSubscribtionRoutes);
@@ -230,7 +200,6 @@ export const build = async (
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
-  void fastify.register(redirectWithMessage);
 
   return fastify;
 };

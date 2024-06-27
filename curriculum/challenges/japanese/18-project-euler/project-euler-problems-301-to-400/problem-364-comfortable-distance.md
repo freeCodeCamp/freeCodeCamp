@@ -16,7 +16,7 @@ $N$ 個の席が連続して並んでいます。 ここに $N$ 人が次々と�
 
 与えられたルールに従い $N$ 人が $N$ 個の席を取る方法の数を、$T(N)$ とします。 次の図は $T(4) = 8$ を示しています。
 
-<img class="img-responsive center-block" alt="N 人で N 個の席を取る 8 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
+<img alt="N 人で N 個の席を取る 8 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $T(10) = 61\\,632$, $T(1\\,000)\bmod 100\\,007 = 47\\,255\\,094$ であることを確認できます。
 

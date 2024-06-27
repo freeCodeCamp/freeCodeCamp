@@ -14,7 +14,7 @@ dashedName: problem-143-investigating-the-torricelli-point-of-a-triangle
 
 Торрічеллі зміг довести, що якщо рівносторонні трикутники AOB, BNC та AMC будуються з кожної сторони трикутника ABC, то описані навколо AOB, BNC та AMC кола будуть перетинатися в одній точці T, всередині трикутника. Крім того, він довів, що точка Т, названа точкою Торрічеллі / Ферма, мінімізує $p + q + r$. Також можна помітити, що при мінімізації суми, $AN = BM = CO = p + q + r $ і AN, BM і CO також перетинаються в точці T.
 
-<img class="img-responsive center-block" alt="рівносторонні трикутники AOB, BNC та AMC будуються з кожної сторони трикутника ABC; з описаними навколо AOB, BNC та AMC колами, які будуть перетинатися в одній точці T, всередині трикутника" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px;" />
+<img alt="рівносторонні трикутники AOB, BNC та AMC будуються з кожної сторони трикутника ABC; з описаними навколо AOB, BNC та AMC колами, які будуть перетинатися в одній точці T, всередині трикутника" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Якщо сума зведена до мінімуму і a, b, c, p, q та r є натуральними числами, ми називатимемо трикутник ABC трикутником Торрічеллі. Наприклад, $a = 399$, $b = 455$, $c = 511$ є прикладом трикутника Торрічеллі, у якого $p + q + r = 784$. Знайдіть суму всіх різних значень $p + q + r + r ≤ 120000$ для трикутників Торрічеллі.
 

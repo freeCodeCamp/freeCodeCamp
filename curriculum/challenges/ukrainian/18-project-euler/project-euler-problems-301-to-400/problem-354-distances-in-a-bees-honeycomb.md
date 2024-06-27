@@ -10,7 +10,7 @@ dashedName: problem-354-distances-in-a-bees-honeycomb
 
 Розглянемо стільники медоносних бджіл, де кожна сота є ідеальним правильним шестикутником із довжиною сторони 1.
 
-<img class="img-responsive center-block" alt="стільник зі сторонами шестикутника довжиною 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px;" />
+<img alt="стільник зі сторонами шестикутника довжиною 1" src="https://cdn.freecodecamp.org/curriculum/project-euler/distances-in-a-bees-honeycomb.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Одну конкретну соту займає бджоломатка. Нехай $B(L)$, де $L$ є натуральним числом, буде кількістю сотів, віддалених від соти бджоломатки на відстані $L$ (відстані виміряні від центру до центру). Можна припустити, що стільники достатньо великі, щоб вмістити будь-яку відстань, яку хочемо розглянути.
 

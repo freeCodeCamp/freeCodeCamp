@@ -8,7 +8,7 @@ dashedName: problem-424-kakuro
 
 # --description--
 
-<img class="img-responsive center-block" alt="приклад какуро" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
+<img alt="приклад какуро" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Вище наведено приклад зашифрованого какуро (також відомого як перехресне додавання) з розв’язком праворуч. (Загальні правила какуро легко можна знайти на численних сайтах. Іншу інформацію можна знайти на krazydad.com, автор якого надав дані для цього завдання.)
 

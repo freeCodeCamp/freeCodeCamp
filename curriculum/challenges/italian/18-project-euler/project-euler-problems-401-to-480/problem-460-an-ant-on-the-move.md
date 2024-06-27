@@ -23,7 +23,7 @@ Così il tempo totale richiesto è $1.2283 + 0.6667 + 1.2283 = 3.1233$.
 
 L'immagine a destra è un altro percorso. Il tempo totale richiesto è calcolato come $0.98026 + 1 + 0.98026 = 2.96052$. Può essere dimostrato che questo è il percorso più veloce per $d = 4$.
 
-<img class="img-responsive center-block" alt="due possibili percorsi per d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px;" />
+<img alt="due possibili percorsi per d = 4" src="https://cdn.freecodecamp.org/curriculum/project-euler/an-ant-on-the-move.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $F(d)$ il tempo totale richiesto se la formica sceglie il percorso più veloce. Ad esempio, $F(4) ≈ 2.960\\,516\\,287$. Siamo in grado di verificare che $F(10) ≈ 4.668\\,187\\,834$ e $F(100) ≈ 9.217\\,221\\,972$.
 

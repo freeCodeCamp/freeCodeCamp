@@ -12,7 +12,7 @@ Dado um conjunto de pontos em um plano, definimos um orifício convexo como um p
 
 Como exemplo, a imagem abaixo apresenta um conjunto de vinte pontos e alguns desses orifícios convexos. O orifício convexo mostrado como um heptágono vermelho tem uma área igual a 1049694,5 unidades quadradas, que é a maior área possível para um orifício convexo no conjunto de pontos fornecido.
 
-<img class="img-responsive center-block" alt="conjunto de vinte pontos e orifícios convexos no plano" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="conjunto de vinte pontos e orifícios convexos no plano" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Para nosso exemplo, usamos os primeiros 20 pontos ($T_{2k − 1}$, $T_{2k}$), para $k = 1, 2, \ldots, 20$, produzidos com o gerador de números pseudoaleatório:
 

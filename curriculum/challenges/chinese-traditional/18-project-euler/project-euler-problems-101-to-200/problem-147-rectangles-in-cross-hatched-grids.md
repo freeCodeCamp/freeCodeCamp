@@ -10,7 +10,7 @@ dashedName: problem-147-rectangles-in-cross-hatched-grids
 
 In a 3x2 cross-hatched grid, a total of 37 different rectangles could be situated within that grid as indicated in the sketch.
 
-<img class="img-responsive center-block" alt="3 x 2 交叉網格中放置不同矩形的方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px;" />
+<img alt="3 x 2 交叉網格中放置不同矩形的方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/rectangles-in-cross-hatched-grids.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 從長和寬的角度考慮，有 5 種小於 3 x 2 網格的矩形，即 1 x 1、2 x 1、3 x 1、1 x 2 和 2 x 2。 若畫出上述矩形的交叉對角線，則有不同的矩形可以位於這些更小的網格中，對應數量如下：
 

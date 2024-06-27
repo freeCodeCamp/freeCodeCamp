@@ -14,7 +14,7 @@ dashedName: problem-281-pizza-toppings
 
 Таким чином, наприклад, $f(2,1) = 1$, $f(2,2) = f(3,1) = 2$ та $f(3,2) = 16$. $f(3,2)$ показано нижче:
 
-<img class="img-responsive center-block" alt="анімація з 16-ма способами для 3 різних начинок, кожна на 2 шматочках" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація з 16-ма способами для 3 різних начинок, кожна на 2 шматочках" src="https://cdn.freecodecamp.org/curriculum/project-euler/pizza-toppings.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Знайдіть суму всіх $f(m,n)$, за яких $f(m,n) ≤ {10}^{15}$.
 

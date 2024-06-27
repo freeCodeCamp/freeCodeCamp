@@ -19,7 +19,7 @@ Queste stringhe possono essere interpretate come istruzioni da un programma di g
 
 Allora $D_n$ è un disegno esotico conosciuto col nome di Heighway Dragon di ordine $n$. Per esempio, $D_{10}$ è mostrato qua sotto; contando ogni "F" come uno step, il punto evidenziato a (18,16) è la posizione raggiunta dopo 500 step.
 
-<img class="img-responsive center-block" alt="disegno del Heighway Dragon dopo 500 step" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;" />
+<img alt="disegno del Heighway Dragon dopo 500 step" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Qual è la posizione del cursore dopo ${10}^{12}$ passi in $D_{50}$? Dai la tua risposta come una stringa nella forma `x,y` senza spazi.
 

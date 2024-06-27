@@ -18,7 +18,7 @@ Two players start with a strip of $n$ white squares and they take alternate turn
 - $n = 4$: There are three valid moves for the first player; who is able to win the game by painting the two middle squares.
 - $n = 5$: Four valid moves for the first player (shown below in red); but no matter what the player does, the second player (blue) wins.
 
-<img class="img-responsive center-block" alt="valid starting moves for strip with 5 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;">
+<img alt="valid starting moves for strip with 5 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 So, for $1 ≤ n ≤ 5$, there are 3 values of $n$ for which the first player can force a win.
 

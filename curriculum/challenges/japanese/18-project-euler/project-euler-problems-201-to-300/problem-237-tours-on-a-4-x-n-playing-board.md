@@ -17,7 +17,7 @@ dashedName: problem-237-tours-on-a-4-x-n-playing-board
 
 下図は、4 × 10 の盤上での経路の一例です。
 
-<img class="img-responsive center-block" alt="4 × 10 の盤上の経路の一例" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
+<img alt="4 × 10 の盤上の経路の一例" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $T(10)$ は 2329 です。 $T({10}^{12})$ mod ${10}^8$ を求めなさい。
 

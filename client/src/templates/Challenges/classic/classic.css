@@ -190,10 +190,14 @@
 
 #mobile-layout .portal-button-wrap {
   position: absolute;
-  top: calc(var(--header-height) + var(--breadcrumbs-height));
+  top: auto;
   right: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
+}
+
+#mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
+  transform: translateY(-2rem);
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
@@ -223,4 +227,51 @@
 /* Focus indicator for tab panel */
 .nav-lists [role='tab']:focus {
   outline-offset: -3px;
+}
+
+@media screen and (max-width: 480px) {
+  #mobile-layout .monaco-editor-tabs {
+    padding: 10px 5px;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  #mobile-layout .nav-lists {
+    height: 1.5rem;
+  }
+
+  #mobile-layout .nav-lists > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mobile-layout .portal-button-wrap {
+    height: 1.5rem;
+  }
+
+  #mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
+    height: 1.52rem;
+    transform: translateY(-1.5rem);
+  }
+
+  #mobile-layout .portal-button-wrap button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.43rem;
+    font-size: initial;
+  }
+
+  #mobile-layout .portal-button-wrap button svg {
+    scale: 0.8;
+  }
+
+  #mobile-layout .monaco-editor-tabs {
+    padding: 5px;
+  }
+
+  .monaco-editor-tabs button {
+    padding: 2px 12px;
+  }
 }

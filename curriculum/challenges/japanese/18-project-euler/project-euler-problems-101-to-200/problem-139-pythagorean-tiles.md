@@ -12,7 +12,7 @@ dashedName: problem-139-pythagorean-tiles
 
 例えば、(3, 4, 5) の三角形を並べると 5 × 5 の正方形ができ、中央に 1 × 1 の穴があります。この 5 × 5 の正方形は、1 × 1 の正方形 25 個で埋めることができます。
 
-<img class="img-responsive center-block" alt="2 つの 5 × 5 の正方形: 1 つ目は、3 × 4 × 5 の三角形を 4 つ配置し中央に 1 x 1 の穴ができたもの。2 つ目は、1 x 1 の正方形を 25 個配置したもの" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="2 つの 5 × 5 の正方形: 1 つ目は、3 × 4 × 5 の三角形を 4 つ配置し中央に 1 x 1 の穴ができたもの。2 つ目は、1 x 1 の正方形を 25 個配置したもの" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 しかし、(5, 12, 13) の三角形を使うと、穴は 7 × 7 の大きさになります。 これらの 7 x 7 の正方形では、13 x 13 の正方形を埋めることが使用できません。
 

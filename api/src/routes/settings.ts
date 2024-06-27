@@ -5,6 +5,7 @@ import {
 import type {
   ContextConfigDefault,
   FastifyError,
+  FastifyInstance,
   FastifyReply,
   FastifyRequest,
   RawReplyDefaultExpression,
@@ -14,12 +15,16 @@ import type {
 } from 'fastify';
 import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
 import { differenceInMinutes } from 'date-fns';
+import validator from 'validator';
 
 import { isValidUsername } from '../../../shared/utils/validate';
 import * as schemas from '../schemas';
-import { createAuthToken } from '../utils/tokens';
+import { createAuthToken, isExpired } from '../utils/tokens';
 import { API_LOCATION } from '../utils/env';
+import { getRedirectParams } from '../utils/redirection';
 import { isRestricted } from './helpers/is-restricted';
+
+const { isEmail } = validator;
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -147,8 +152,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           type: 'success'
         } as const;
       } catch (err) {
-        // TODO: send to Sentry
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -288,6 +293,7 @@ ${isLinkSentWithinLimitTTL}`
         });
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
@@ -315,6 +321,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -345,6 +352,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -430,11 +438,13 @@ ${isLinkSentWithinLimitTTL}`
         });
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
     }
   );
+
   fastify.put(
     '/update-my-about',
     {
@@ -460,6 +470,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -487,6 +498,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -514,6 +526,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -541,6 +554,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -569,6 +583,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -607,6 +622,7 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -643,9 +659,124 @@ ${isLinkSentWithinLimitTTL}`
         } as const;
       } catch (err) {
         fastify.log.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(403);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
+    }
+  );
+
+  done();
+};
+
+/**
+ * Plugin for endpoints that redirect if the user is not authenticated.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options for the plugin.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.addHook('onRequest', fastify.authorizeOrRedirect);
+
+  const redirectMessage = {
+    type: 'danger',
+    content:
+      'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
+  } as const;
+
+  const expirationMessage = {
+    type: 'info',
+    content:
+      'The link to confirm your new email address has expired. Please try again.'
+  } as const;
+
+  const successMessage = {
+    type: 'success',
+    content: 'flash.email-valid'
+  } as const;
+
+  async function updateEmail(
+    fastify: FastifyInstance,
+    { id, email }: { id: string; email: string }
+  ) {
+    await fastify.prisma.user.update({
+      where: { id },
+      data: {
+        email,
+        emailAuthLinkTTL: null,
+        emailVerified: true,
+        emailVerifyTTL: null,
+        newEmail: null
+      }
+    });
+  }
+
+  async function deleteAuthToken(
+    fastify: FastifyInstance,
+    { id }: { id: string }
+  ) {
+    await fastify.prisma.authToken.delete({
+      where: { id }
+    });
+  }
+
+  fastify.get(
+    '/confirm-email',
+    {
+      schema: schemas.confirmEmail,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          const { origin } = getRedirectParams(request);
+          void reply.redirectWithMessage(origin, redirectMessage);
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      const email = Buffer.from(req.query.email, 'base64').toString();
+
+      const { origin } = getRedirectParams(req);
+      if (!isEmail(email)) {
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
+
+      const authToken = await fastify.prisma.authToken.findUnique({
+        where: { id: req.query.token }
+      });
+
+      if (!authToken) {
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
+
+      // TODO(Post-MVP): clean up expired auth tokens.
+      if (isExpired(authToken)) {
+        return reply.redirectWithMessage(origin, expirationMessage);
+      }
+
+      // TODO(Post-MVP): should this fail if it's not the currently signed in
+      // user?
+      const targetUser = await fastify.prisma.user.findUnique({
+        where: { id: authToken.userId }
+      });
+
+      if (targetUser?.newEmail !== email) {
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
+
+      // TODO(Post-MVP): clean up any other auth tokens for this user once
+      // the email is confirmed.
+      await Promise.all([
+        updateEmail(fastify, { id: targetUser.id, email }),
+        deleteAuthToken(fastify, { id: authToken.id })
+      ]);
+
+      return reply.redirectWithMessage(origin, successMessage);
     }
   );
 

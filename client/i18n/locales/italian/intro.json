@@ -409,12 +409,12 @@
           "Questo progetto ti aiuterà a capire i concetti fondamentali alla base di questi algoritmi e come applicarli per ordinare dati numerici in applicazioni web."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Impara il Pensiero Algoritmico Intermedio Costruendo un Gioco di Dadi",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "Il pensiero algoritmico comporta la capacità di suddividere i problemi complessi in una serie di istruzioni sequenziali ben definite.",
-          "In questo progetto di un gioco di dadi, imparerai come gestire lo stato del gioco, implementare la logica di gioco per il lancio dei dadi, segnare il punteggio e applicare le regole per varie combinazioni.",
-          "Questo progetto tratta concetti come gestione di eventi, manipolazione di array, logica condizionale e aggiornamento dinamico dell'interfaccia utente in base allo stato del gioco."
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1276,6 +1276,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Learn Arrays and Loops",
         "intro": ["Learn about arrays and loops in JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Learn to Solve Problems and Understand Errors",
+        "intro": [
+          "Learn how to solve problems and understand errors in JavaScript."
+        ]
       }
     }
   },
@@ -1505,39 +1511,57 @@
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Learn How to Document Code for a Project",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you expressions related to what to do when documenting code."
+        ]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Learn How to Read and Understand Code Documentation",
-        "intro": ["", ""]
+        "intro": [
+          "This course will present more expressions related to code documentation and bring tips on how to understand it."
+        ]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Learn How to Analyze Code Documentation",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
+        ]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Learn How to Share Progress and Accomplishments",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
+        ]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to speak about the most recent advancements in your projects and about your plans."
+        ]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Learn How to Express Agreement or Disagreement",
-        "intro": ["", ""]
+        "intro": [
+          "This course will introduce how to say that you agree with what another person says and to tell them politely that you do not agree with them."
+        ]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Learn How to Offer Technical Support and Guidance",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see ways of offering some help in terms of technical specifics to another person."
+        ]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Learn How to Request and Receive Guidance",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to ask for assistance from a coworker when you need it."
+        ]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Learn How to Provide Explanations When Helping Others",
-        "intro": ["", ""]
+        "intro": [
+          "This course will provide you with ways to explain things to other people while assisting them."
+        ]
       }
     }
   },

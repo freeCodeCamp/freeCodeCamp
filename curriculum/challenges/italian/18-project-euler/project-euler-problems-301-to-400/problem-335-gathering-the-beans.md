@@ -10,7 +10,7 @@ dashedName: problem-335-gathering-the-beans
 
 Ogni volta che Peter si sente annoiato, mette alcune ciotole, contenenti un fagiolo ciascuno, in un cerchio. Dopo di che, prende tutti i fagioli da una certa ciotola e li sposta uno a uno nelle ciotole andando in senso orario. Ripete il tutto, a partire dalla ciotola in cui ha lasciato cadere l'ultimo fagiolo, fino a quando si torna di nuovo alla situazione iniziale. Ad esempio con 5 ciotole agisce come segue:
 
-<img class="img-responsive center-block" alt="animazione di fagioli che si muovono in 5 ciotole" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione di fagioli che si muovono in 5 ciotole" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quindi con 5 ciotole a Peter servono 15 mosse per tornare alla situazione iniziale.
 

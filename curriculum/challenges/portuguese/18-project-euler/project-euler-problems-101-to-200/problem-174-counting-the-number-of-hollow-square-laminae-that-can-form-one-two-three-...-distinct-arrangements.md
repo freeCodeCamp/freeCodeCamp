@@ -14,7 +14,7 @@ Definiremos um lâmina quadrada como um esboço quadrado com um "buraco", de mod
 
 Com oito blocos, é possível formar uma lâmina de uma só forma: um quadrado de 3x3 com um buraco de 1x1 no meio. No entanto, com trinta e dois blocos, é possível formar duas lâminas distintas.
 
-<img class="img-responsive center-block" alt="duas lâminas quadradas com buracos 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
+<img alt="duas lâminas quadradas com buracos 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Se $t$ representa o número de blocos utilizados, diremos que $t = 8$ é do tipo $L(1)$ e $t = 32$ é do tipo $L(2)$.
 

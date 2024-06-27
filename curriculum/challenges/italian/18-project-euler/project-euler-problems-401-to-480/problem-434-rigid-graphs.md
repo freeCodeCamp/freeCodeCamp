@@ -20,11 +20,11 @@ Informalmente, un grafo è rigido se sostituendo i vertici con cerniere completa
 
 I grafi della griglia incorporati nel piano euclideo non sono rigidi, come dimostra la seguente animazione:
 
-<img class="img-responsive center-block" alt="animazione che mostra che i grafi della griglia non sono rigidi nel piano Euclideo" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione che mostra che i grafi della griglia non sono rigidi nel piano Euclideo" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Tuttavia, essi possono essere resi rigidi aggiungendo archi diagonali alle celle. Ad esempio, per il grafo della griglia 2x3, ci sono 19 modi per rendere rigido il grafo:
 
-<img class="img-responsive center-block" alt="19 modi per rendere rigido il grafo a griglia 2x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+<img alt="19 modi per rendere rigido il grafo a griglia 2x3" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Nota che ai fini di questo problema, non consideriamo di cambiare l'orientamento di un arco diagonale o di aggiungere entrambi gli archi diagonali a una cella come un modo diverso per rendere rigido un grafo a griglia.
 

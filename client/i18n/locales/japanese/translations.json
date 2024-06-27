@@ -100,7 +100,8 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "play-scene": "再生"
+    "play-scene": "再生",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -575,7 +576,7 @@
     "other-ways": "<0>当団体の使命を支援する方法</0> は他にも多数ございます。",
     "if-support-further": "当チャリティーに更なるご支援をいただけるのであれば、<0>1 回ごとの寄付</0>、<1>小切手の送付</1>、<2>その他さまざまな支援方法</2>がございますのでご検討ください。",
     "failed-pay": "処理が完了しませんでした。再度お試しください。",
-    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
+    "try-another-method": "処理が完了しませんでした。他の決済方法をお試しください。",
     "try-again": "再試行してください。",
     "card-number": "カード番号:",
     "expiration": "有効期限:",
@@ -871,7 +872,8 @@
     "own-work-url": "あなた自身の作品を提出してください。",
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
-    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。"
+    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",

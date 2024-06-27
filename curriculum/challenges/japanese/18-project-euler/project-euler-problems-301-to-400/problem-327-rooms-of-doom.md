@@ -10,7 +10,7 @@ dashedName: problem-327-rooms-of-doom
 
 連続する 3 つの部屋が自動ドアでつながっています。
 
-<img class="img-responsive center-block" alt="自動ドアでつながった連続する 3 部屋" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img alt="自動ドアでつながった連続する 3 部屋" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 各ドアを開けるにはセキュリティカードを使います。 部屋に入るとドアが自動的に閉まり、そのセキュリティカードは二度と使えません。 開始時、カード発行機から何枚でもカードを入手できますが、各部屋 (開始点となる部屋を含む) には検出器が設置されています。 あなたが 3 枚以上のセキュリティカードを持っていることや、セキュリティカードが床に放置されていることが検出されると、すべてのドアが永久にロックされます。 ただし、各部屋には箱があり、後で使うための任意の枚数のセキュリティカードをその箱に安全に保管できます。
 

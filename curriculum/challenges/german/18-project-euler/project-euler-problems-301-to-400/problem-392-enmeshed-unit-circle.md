@@ -24,7 +24,7 @@ Für dieses Problem möchten wir, dass du die Positionen der verbleibenden $N$ i
 
 E.g. hier ist ein Bild der Lösung für $N = 10$:
 
-<img class="img-responsive center-block" alt="die Lösung für N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img alt="die Lösung für N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Die von den roten Zellen eingenommene Fläche beträgt für $N = 10$ gerundet auf 10 Nachkommastellen 3,3469640797.
 

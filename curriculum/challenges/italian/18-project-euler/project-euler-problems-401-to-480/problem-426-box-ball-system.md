@@ -14,13 +14,13 @@ Un turno consiste nel muovere ogni palla esattamente una volta secondo la seguen
 
 Dopo un turno la sequenza (2, 2, 2, 1, 2) diventa (2, 2, 1, 2, 3) come può essere visto di seguito; nota che iniziamo la nuova sequenza iniziando dalla prima scatola occupata.
 
-<img class="img-responsive center-block" alt="animazione che mostra un turno completo da (2, 2, 2, 1, 2) a (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione che mostra un turno completo da (2, 2, 2, 1, 2) a (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Un sistema come questo è chiamato sistema scatola-palla o BBS (dall'inglese Box-Ball System) per brevità.
 
 Può essere mostrato che il sistema dopo un numero sufficiente di turni evolve a uno stato dove i numeri di scatole occupate consecutivamente non cambiano. Nell'esempio sotto, i numeri di scatole occupate consecutivamente evolve a [1, 2, 3], che chiamiamo stato finale.
 
-<img class="img-responsive center-block" alt="quattro turni da scatole occupate [2, 2, 2] a stato finale [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="quattro turni da scatole occupate [2, 2, 2] a stato finale [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Definiamo la sequenza $\\{t_i\\}$:
 

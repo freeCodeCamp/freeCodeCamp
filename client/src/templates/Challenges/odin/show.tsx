@@ -238,7 +238,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             fields: { blockName },
             question: { text, answers, solution },
             assignments,
-            audioPath,
             translationPending,
             scene
           }
@@ -308,19 +307,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                 </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
                 <Spacer size='medium' />
-                {audioPath && (
-                  <>
-                    {/* TODO: Add tracks for audio elements */}
-                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
-                    <audio className='audio' controls>
-                      <source
-                        src={`https://cdn.freecodecamp.org/${audioPath}`}
-                        type='audio/mp3'
-                      />
-                    </audio>
-                    <Spacer size='medium' />
-                  </>
-                )}
               </Col>
 
               {scene && (
@@ -541,7 +527,6 @@ export const query = graphql`
         }
         translationPending
         assignments
-        audioPath
       }
     }
   }

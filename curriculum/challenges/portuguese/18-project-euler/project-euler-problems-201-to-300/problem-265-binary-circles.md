@@ -12,7 +12,7 @@ Os algarismos binários $2^N$ podem ser colocados em um círculo de modo que tod
 
 Para $N = 3$, dois arranjos circulares são possíveis, ignorando rotações:
 
-<img class="img-responsive center-block" alt="dois arranjos circulares para N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="dois arranjos circulares para N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Para o primeiro arranjo, as subsequências de 3 algarismos, no sentido horário, são: 000, 001, 010, 101, 011, 111, 110 e 100.
 

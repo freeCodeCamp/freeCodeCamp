@@ -10,7 +10,7 @@ dashedName: problem-309-integer-ladders
 
 No problema clássico das "escadas cruzadas", temos os comprimentos $x$ e $y$ de duas escadas colocadas contra paredes opostas de uma rua nivelada e estreita. Também somos informados da altura $h$ acima da rua onde as duas escadas se cruzam e nos é pedido para encontrar a largura da rua ($w$).
 
-<img class="img-responsive center-block" alt="escadas x e y, se cruzando na altura h, colocadas contra as paredes opostas da rua de largura w" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px;" />
+<img alt="escadas x e y, se cruzando na altura h, colocadas contra as paredes opostas da rua de largura w" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Aqui, estamos preocupados apenas com instâncias em que as quatro variáveis são números inteiros positivos. Por exemplo, se $x = 70$, $y = 119$ e $h = 30$, podemos calcular que $w = 56$.
 

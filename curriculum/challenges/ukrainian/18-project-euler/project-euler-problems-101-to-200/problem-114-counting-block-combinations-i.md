@@ -10,7 +10,7 @@ dashedName: problem-114-counting-block-combinations-i
 
 Рядок завдовжки сім одиниць містить червоні блоки, мінімальна довжина яких становить три одиниці, тому будь-які два червоні блоки (які можуть бути будь-якої довжини) розділені принаймні одним чорним квадратом. Для цього існує 17 способів.
 
-<img class="img-responsive center-block" alt="Можливі способи розміщення квадратів з мінімальною довжиною у три одиниці у рядку довжиною сім одиниць" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
+<img alt="Можливі способи розміщення квадратів з мінімальною довжиною у три одиниці у рядку довжиною сім одиниць" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Скількома способами можна заповнити ряд довжиною 50 одиниць?
 

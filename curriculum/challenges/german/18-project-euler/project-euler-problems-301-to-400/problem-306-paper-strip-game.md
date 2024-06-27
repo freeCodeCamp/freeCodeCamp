@@ -18,7 +18,7 @@ Zwei Spieler beginnen mit einem Streifen aus $n$ weißen Feldern und wechseln si
 - $n = 4$: There are three valid moves for the first player; who is able to win the game by painting the two middle squares.
 - $n = 5$: Four valid moves for the first player (shown below in red); but no matter what the player does, the second player (blue) wins.
 
-<img class="img-responsive center-block" alt="gültige Startzüge für Streifen mit 5 Feldern" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px;" />
+<img alt="gültige Startzüge für Streifen mit 5 Feldern" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-strip-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Für $1 ≤ n ≤ 5$ gibt es also 3 Werte von $n$, für die der erste Spieler einen Sieg erzwingen kann.
 

@@ -10,7 +10,7 @@ dashedName: problem-309-integer-ladders
 
 У класичній задачі Фараона (також відома як задача про схрещені драбини) дано довжини $x$ та $y$ двох драбин, що лежать на протилежних стінах вузької вулиці. Також дано висоту $h$, проведену від точки перетину двох драбин над вулицею, і нам потрібно знайти ширину вулиці ($w$).
 
-<img class="img-responsive center-block" alt="драбини х та y перетинаються на висоті h, і опираються на протилежні стіни вулиці з шириною w" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px;" />
+<img alt="драбини х та y перетинаються на висоті h, і опираються на протилежні стіни вулиці з шириною w" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 У цьому завданні ми розглядаємо лише ті випадки, де всі чотири змінні є натуральними числами. Наприклад, якщо $x = 70$, $y = 119$ та $h = 30$, можемо визначити, що $w = 56$.
 

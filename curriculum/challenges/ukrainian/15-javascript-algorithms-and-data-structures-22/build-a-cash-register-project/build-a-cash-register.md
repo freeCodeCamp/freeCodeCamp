@@ -53,6 +53,27 @@ Your application should show different messages depending on the price of the it
 
 # --hints--
 
+You should have the HTML file link to the JavaScript file.
+
+```js
+const script = document.querySelector('script[data-src$="script.js"]');
+assert.isNotNull(script); 
+```
+
+You should have a global variable called `price`.
+
+```js
+price = 10;
+assert.strictEqual(price, 10);
+```
+
+You should have a global variable called `cid`.
+
+```js
+cid = []; 
+assert.isDefined(cid); 
+```
+
 You should have an `input` element with an `id` of `"cash"`.
 
 ```js
@@ -74,23 +95,67 @@ const el = document.getElementById('purchase-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
+When `price` is `20` and the value in the `#cash` element is `10`, an alert should appear with the text `"Customer does not have enough money to purchase the item"`.
+
+```js
+const cashInput = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+let alertMessage;
+window.alert = message => (alertMessage = message); // Override alert and store message
+// set price and customer cash
+price = 20;
+cashInput.value = '10';
+cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
+
+cashInput.dispatchEvent(new Event('change'));
+purchaseBtn.click();
+assert.strictEqual(
+  alertMessage
+    .trim()
+    .replace(/[.,?!]+$/g, '')
+    .toLowerCase(),
+  'customer does not have enough money to purchase the item'
+);
+```
+
 When the value in the `#cash` element is less than `price`, an alert should appear with the text `"Customer does not have enough money to purchase the item"`.
 
 ```js
 const cashInput = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 let alertMessage;
-window.alert = (message) => alertMessage = message; // Override alert and store message
-// set price and customer cash
-price = 20;
-cashInput.value = '10';
+window.alert = message => (alertMessage = message);
+
+// Min $5.00, max $100.00, changes by $0.01, in cents.
+const randomPrice = _randomNumber(9500) + 500;
+// Min $1.00, max price - $1, changes by $0.01, in cents.
+const randomCash = _randomNumber(randomPrice - 200) + 100;
+price = randomPrice / 100;
+cashInput.value = `${randomCash / 100}`;
+cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
+];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'customer does not have enough money to purchase the item');
+assert.strictEqual(
+  alertMessage
+    .trim()
+    .replace(/[.,?!]+$/g, '')
+    .toLowerCase(),
+  'customer does not have enough money to purchase the item'
+);
 ```
 
-When the value in the `#cash` element is equal to `price`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`.
+When `price` is `11.95` and the value in the `#cash` element is `11.95`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -99,10 +164,51 @@ const changeDueDiv = document.getElementById('change-due');
 // set price and customer cash
 price = 11.95;
 cashInput.value = '11.95';
+cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.strictEqual(changeDueDiv.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'no change due - customer paid with exact cash');
+assert.strictEqual(
+  changeDueDiv.innerText
+    .trim()
+    .replace(/[.,?!]+$/g, '')
+    .toLowerCase(),
+  'no change due - customer paid with exact cash'
+);
+```
+
+When the value in the `#cash` element is equal to `price`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`.
+
+```js
+const cashInput = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+const changeDueDiv = document.getElementById('change-due');
+
+// Min $1.00, max $50.00, changes by $0.01, in cents.
+const randomPrice = _randomNumber(4900) + 100;
+price = randomPrice / 100;
+cashInput.value = `${price}`;
+cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
+];
+
+cashInput.dispatchEvent(new Event('change'));
+purchaseBtn.click();
+assert.strictEqual(
+  changeDueDiv.innerText
+    .trim()
+    .replace(/[.,?!]+$/g, '')
+    .toLowerCase(),
+  'no change due - customer paid with exact cash'
+);
 ```
 
 When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN QUARTER: $0.5"`.
@@ -114,12 +220,34 @@ const changeDueDiv = document.getElementById('change-due');
 // set price, customer cash, and cid
 price = 19.5;
 cashInput.value = 20;
-cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
+cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
+];
 
 const expected = ['Status: OPEN', 'QUARTER: $0.5'];
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
+const result = changeDueDiv.innerText.trim().toLowerCase();
+assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
+const notExpected = [
+  /PENNY/,
+  /NICKEL/,
+  /DIME/,
+  /ONE [^H]/,
+  /FIVE/,
+  /TEN/,
+  /TWENTY/,
+  /ONE HUNDRED/
+];
+assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
 ```
 
 When `price` is `3.26`, the value in the `#cash` element is `100`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04"`.
@@ -131,12 +259,88 @@ const changeDueDiv = document.getElementById('change-due');
 // set price, customer cash, and cid
 price = 3.26;
 cashInput.value = 100;
-cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
+cid = [
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
+];
 
-const expected = ['Status: OPEN', 'TWENTY: $60', 'TEN: $20', 'FIVE: $15', 'ONE: $1', 'QUARTER: $0.5', 'DIME: $0.2', 'PENNY: $0.04'];
+const expected = [
+  'Status: OPEN',
+  'TWENTY: $60',
+  'TEN: $20',
+  'FIVE: $15',
+  'ONE: $1',
+  'QUARTER: $0.5',
+  'DIME: $0.2',
+  'PENNY: $0.04'
+];
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
+const result = changeDueDiv.innerText.trim().toLowerCase();
+assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
+const notExpected = [/NICKEL/];
+assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
+```
+
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than the change due, individual denomination amounts allows for returning change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN"` with required change due in coins and bills sorted in highest to lowest order.
+
+```js
+const cashInput = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+const changeDueDiv = document.getElementById('change-due');
+
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
+price = (randomCash - randomChange) / 100;
+cashInput.value = `${randomCash / 100}`;
+
+let changeLeft = randomChange;
+const _expectedChangeDue = [];
+const _cashInDrawer = [];
+for (const [denominationName, denomination] of _money) {
+  const drawerCount = _randomNumber(15);
+  _cashInDrawer.push([denominationName, (denomination * drawerCount) / 100]);
+  if (denomination <= changeLeft && drawerCount > 0) {
+    const maxCountInChange = Math.floor(changeLeft / denomination);
+    const actualCount = Math.min(drawerCount, maxCountInChange);
+    const amountInChange = actualCount * denomination;
+    _expectedChangeDue.push([denominationName, amountInChange / 100]);
+    changeLeft -= amountInChange;
+  }
+}
+
+// At least changeLeft is needed in pennies, to make returning change due possible.
+const drawerCount = _randomNumber(100) + changeLeft;
+_cashInDrawer.push(['PENNY', drawerCount / 100]);
+if (changeLeft > 0) {
+  _expectedChangeDue.push(['PENNY', changeLeft / 100]);
+}
+
+cid = _cashInDrawer.reverse();
+const expected = [
+  'Status: OPEN',
+  ..._expectedChangeDue
+    .reverse()
+    .map(([denominationName, amount]) => `${denominationName}: $${amount}`)
+];
+const notExpected = _denomRegexes.filter(
+  regex => !expected.some(change => change.match(new RegExp(regex, 'i')))
+);
+
+cashInput.dispatchEvent(new Event('change'));
+purchaseBtn.click();
+const result = changeDueDiv.innerText.trim().toLowerCase();
+assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
+assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
 ```
 
 When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
@@ -148,11 +352,70 @@ const changeDueDiv = document.getElementById('change-due');
 // set price, customer cash, and cid
 price = 19.5;
 cashInput.value = 20;
-cid = [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
+cid = [
+  ['PENNY', 0.01],
+  ['NICKEL', 0],
+  ['DIME', 0],
+  ['QUARTER', 0],
+  ['ONE', 0],
+  ['FIVE', 0],
+  ['TEN', 0],
+  ['TWENTY', 0],
+  ['ONE HUNDRED', 0]
+];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
+assert.strictEqual(
+  changeDueDiv.innerText.trim().toLowerCase(),
+  'status: insufficient_funds'
+);
+```
+
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than change due, individual denomination amounts make impossible to return needed change, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
+
+```js
+const cashInput = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+const changeDueDiv = document.getElementById('change-due');
+
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
+price = (randomCash - randomChange) / 100;
+cashInput.value = `${randomCash / 100}`;
+
+let changeLeft = randomChange;
+const _expectedChangeDue = [];
+const _cashInDrawer = [];
+for (const [denominationName, denomination] of _money) {
+  const maxCountInChange = Math.floor(changeLeft / denomination);
+  // If denomination can complete required changeLeft, available amount in drawer cannot
+  // equal the maximum. Otherwise count in drawer can be greater than maximum count in change.
+  const drawerCount = _randomNumber(
+    changeLeft % denomination === 0 ? Math.min(15, maxCountInChange - 1) : 15
+  );
+  const amountInDrawer = drawerCount * denomination;
+  _cashInDrawer.push([denominationName, amountInDrawer / 100]);
+  const changeCount = Math.min(drawerCount, maxCountInChange);
+  if (denomination <= changeLeft && changeCount > 0) {
+    changeLeft -= changeCount * denomination;
+  }
+}
+
+// Less pennies than changeLeft makes impossible to return change due.
+const drawerCount = _randomNumber(Math.min(15, changeLeft - 1));
+_cashInDrawer.push(['PENNY', drawerCount / 100]);
+
+cid = _cashInDrawer.reverse();
+
+cashInput.dispatchEvent(new Event('change'));
+purchaseBtn.click();
+assert.strictEqual(
+  changeDueDiv.innerText.trim().toLowerCase(),
+  'status: insufficient_funds'
+);
 ```
 
 When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
@@ -164,11 +427,66 @@ const changeDueDiv = document.getElementById('change-due');
 // set price, customer cash, and cid
 price = 19.5;
 cashInput.value = 20;
-cid = [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 1], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
+cid = [
+  ['PENNY', 0.01],
+  ['NICKEL', 0],
+  ['DIME', 0],
+  ['QUARTER', 0],
+  ['ONE', 1],
+  ['FIVE', 0],
+  ['TEN', 0],
+  ['TWENTY', 0],
+  ['ONE HUNDRED', 0]
+];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.strictEqual(changeDueDiv.innerText.trim().toLowerCase(), 'status: insufficient_funds');
+assert.strictEqual(
+  changeDueDiv.innerText.trim().toLowerCase(),
+  'status: insufficient_funds'
+);
+```
+
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is less than the change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
+
+```js
+const cashInput = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+const changeDueDiv = document.getElementById('change-due');
+
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
+price = (randomCash - randomChange) / 100;
+cashInput.value = `${randomCash / 100}`;
+
+let changeLeft = randomChange;
+const _cashInDrawer = [];
+for (const [denominationName, denomination] of _money) {
+  const maxCountInChange = Math.floor(changeLeft / denomination);
+  // Amount lower than maximum (adjusted to changeLeft) will ensure total in drawer
+  // will be lower than needed change.
+  const drawerCount = _randomNumber(Math.max(0, Math.min(15, maxCountInChange - 1)));
+  const amountInDrawer = drawerCount * denomination;
+  _cashInDrawer.push([denominationName, amountInDrawer / 100]);
+  if (denomination <= changeLeft && drawerCount > 0) {
+    changeLeft -= amountInDrawer;
+  }
+}
+
+// Less pennies than changeLeft makes sure total cash in drawer is less than change due.
+const count = _randomNumber(Math.min(15, changeLeft - 1));
+_cashInDrawer.push(['PENNY', count / 100]);
+
+cid = _cashInDrawer.reverse();
+
+cashInput.dispatchEvent(new Event('change'));
+purchaseBtn.click();
+assert.strictEqual(
+  changeDueDiv.innerText.trim().toLowerCase(),
+  'status: insufficient_funds'
+);
 ```
 
 When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED PENNY: $0.5"`.
@@ -180,15 +498,118 @@ const changeDueDiv = document.getElementById('change-due');
 // set price, customer cash, and cid
 price = 19.5;
 cashInput.value = 20;
-cid = [['PENNY', 0.5], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]];
+cid = [
+  ['PENNY', 0.5],
+  ['NICKEL', 0],
+  ['DIME', 0],
+  ['QUARTER', 0],
+  ['ONE', 0],
+  ['FIVE', 0],
+  ['TEN', 0],
+  ['TWENTY', 0],
+  ['ONE HUNDRED', 0]
+];
 
 const expected = ['Status: CLOSED', 'PENNY: $0.5'];
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
-assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().includes(str.toLowerCase())));
+const result = changeDueDiv.innerText.trim().toLowerCase();
+assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
+const notExpected = [
+  /NICKEL/,
+  /DIME/,
+  /QUARTER/,
+  /ONE [^H]/,
+  /FIVE/,
+  /TEN/,
+  /TWENTY/,
+  /ONE HUNDRED/
+];
+assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
+```
+
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is equal to change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED"` with change due in coins and bills sorted in highest to lowest order.
+
+```js
+const cashInput = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+const changeDueDiv = document.getElementById('change-due');
+
+// Min $50, max $100, changes by $10, in cents.
+const randomCash = _randomNumber(5) * 1000 + 5000;
+// Min $5.00, max $30.00, changes by $0.01, in cents.
+const randomChange = _randomNumber(2500) + 500;
+price = (randomCash - randomChange) / 100;
+cashInput.value = `${randomCash / 100}`;
+
+let changeLeft = randomChange;
+const _expectedChangeDue = [];
+const _cashInDrawer = [];
+for (const [denominationName, denomination] of _money) {
+  const maxCountInChange = Math.floor(changeLeft / denomination);
+  const drawerCount = _randomNumber(maxCountInChange);
+  const amountInDrawer = drawerCount * denomination;
+  _cashInDrawer.push([denominationName, amountInDrawer / 100]);
+  if (denomination <= changeLeft && drawerCount > 0) {
+    _expectedChangeDue.push([denominationName, amountInDrawer / 100]);
+    changeLeft -= amountInDrawer;
+  }
+}
+
+// Pennies equal to changeLeft makes sure total cash in drawer is equal to change due.
+_cashInDrawer.push(['PENNY', changeLeft / 100]);
+if (changeLeft > 0) {
+  _expectedChangeDue.push(['PENNY', changeLeft / 100]);
+}
+
+cid = _cashInDrawer.reverse();
+const expected = [
+  'Status: CLOSED',
+  ..._expectedChangeDue
+    .reverse()
+    .map(([denominationName, amount]) => `${denominationName}: $${amount}`)
+];
+const notExpected = _denomRegexes.filter(
+  regex => !expected.some(change => change.match(new RegExp(regex, 'i')))
+);
+
+cashInput.dispatchEvent(new Event('change'));
+purchaseBtn.click();
+const result = changeDueDiv.innerText.trim().toLowerCase();
+assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
+assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
 ```
 
 # --seed--
+
+## --after-user-code--
+
+```js
+const _money = [
+  ['ONE HUNDRED', 10000],
+  ['TWENTY', 2000],
+  ['TEN', 1000],
+  ['FIVE', 500],
+  ['ONE', 100],
+  ['QUARTER', 25],
+  ['DIME', 10],
+  ['NICKEL', 5]
+];
+const _denomRegexes = [
+  /PENNY/,
+  /NICKEL/,
+  /DIME/,
+  /QUARTER/,
+  /ONE [^H]/,
+  /FIVE/,
+  /TEN/,
+  /TWENTY/,
+  /ONE HUNDRED/
+];
+function _randomNumber(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+```
 
 ## --seed-contents--
 
@@ -203,15 +624,15 @@ assert.isTrue(expected.every(str => changeDueDiv.innerText.trim().toLowerCase().
 ```js
 let price = 1.87;
 let cid = [
-  ["PENNY", 1.01],
-  ["NICKEL", 2.05],
-  ["DIME", 3.1],
-  ["QUARTER", 4.25],
-  ["ONE", 90],
-  ["FIVE", 55],
-  ["TEN", 20],
-  ["TWENTY", 60],
-  ["ONE HUNDRED", 100]
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
 ];
 
 ```
@@ -437,81 +858,84 @@ label {
 ```js
 let price = 3.26;
 let cid = [
-  ["PENNY", 1.01],
-  ["NICKEL", 2.05],
-  ["DIME", 3.1],
-  ["QUARTER", 4.25],
-  ["ONE", 90],
-  ["FIVE", 55],
-  ["TEN", 20],
-  ["TWENTY", 60],
-  ["ONE HUNDRED", 100],
+  ['PENNY', 1.01],
+  ['NICKEL', 2.05],
+  ['DIME', 3.1],
+  ['QUARTER', 4.25],
+  ['ONE', 90],
+  ['FIVE', 55],
+  ['TEN', 20],
+  ['TWENTY', 60],
+  ['ONE HUNDRED', 100]
 ];
 
-const displayChangeDue = document.getElementById("change-due");
-const cash = document.getElementById("cash");
-const purchaseBtn = document.getElementById("purchase-btn");
-const priceScreen = document.getElementById("price-screen");
-const cashDrawerDisplay = document.getElementById("cash-drawer-display");
+const displayChangeDue = document.getElementById('change-due');
+const cash = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+const priceScreen = document.getElementById('price-screen');
+const cashDrawerDisplay = document.getElementById('cash-drawer-display');
 
 const formatResults = (status, change) => {
   displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
-  change.map(
-    (money) =>
-      (displayChangeDue.innerHTML += `<p>${money[0]}: $${money[1]}</p>`),
-  );
-  return;
+  displayChangeDue.innerHTML += change
+    .map(
+      ([denominationName, amount]) => `<p>${denominationName}: $${amount}</p>`
+    )
+    .join('');
 };
 
 const checkCashRegister = () => {
-  if (Number(cash.value) < price) {
-    alert("Customer does not have enough money to purchase the item");
-    cash.value = "";
+  const cashInCents = Math.round(Number(cash.value) * 100);
+  const priceInCents = Math.round(price * 100);
+  if (cashInCents < priceInCents) {
+    alert('Customer does not have enough money to purchase the item');
+    cash.value = '';
     return;
   }
 
-  if (Number(cash.value) === price) {
+  if (cashInCents === priceInCents) {
     displayChangeDue.innerHTML =
-      "<p>No change due - customer paid with exact cash</p>";
-    cash.value = "";
+      '<p>No change due - customer paid with exact cash</p>';
+    cash.value = '';
     return;
   }
 
-  let changeDue = Number(cash.value) - price;
-  let reversedCid = [...cid].reverse();
-  let denominations = [100, 20, 10, 5, 1, 0.25, 0.1, 0.05, 0.01];
-  let result = { status: "OPEN", change: [] };
-  let totalCID = parseFloat(
-    cid
-      .map((total) => total[1])
-      .reduce((prev, curr) => prev + curr)
-      .toFixed(2),
-  );
+  let changeDue = cashInCents - priceInCents;
+  const reversedCid = [...cid]
+    .reverse()
+    .map(([denominationName, amount]) => [
+      denominationName,
+      Math.round(amount * 100)
+    ]);
+  const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
+  const result = { status: 'OPEN', change: [] };
+  const totalCID = reversedCid.reduce((prev, [_, amount]) => prev + amount, 0);
 
   if (totalCID < changeDue) {
-    return (displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>");
+    displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
+    return;
   }
 
   if (totalCID === changeDue) {
-    result.status = "CLOSED";
+    result.status = 'CLOSED';
   }
 
   for (let i = 0; i <= reversedCid.length; i++) {
-    if (changeDue > denominations[i] && changeDue > 0) {
-      let count = 0;
-      let total = reversedCid[i][1];
-      while (total > 0 && changeDue >= denominations[i]) {
-        total -= denominations[i];
-        changeDue = parseFloat((changeDue -= denominations[i]).toFixed(2));
-        count++;
-      }
+    if (changeDue >= denominations[i] && changeDue > 0) {
+      const [denominationName, total] = reversedCid[i];
+      const possibleChange = Math.min(total, changeDue);
+      const count = Math.floor(possibleChange / denominations[i]);
+      const amountInChange = count * denominations[i];
+      changeDue -= amountInChange;
+
       if (count > 0) {
-        result.change.push([reversedCid[i][0], count * denominations[i]]);
+        result.change.push([denominationName, amountInChange / 100]);
       }
     }
   }
   if (changeDue > 0) {
-    return (displayChangeDue.innerHTML = "<p>Status: INSUFFICIENT_FUNDS</p>");
+    displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
+    return;
   }
 
   formatResults(result.status, result.change);
@@ -525,39 +949,45 @@ const checkResults = () => {
   checkCashRegister();
 };
 
-const updateUI = (change) => {
+const updateUI = change => {
   const currencyNameMap = {
-    PENNY: "Pennies",
-    NICKEL: "Nickels",
-    DIME: "Dimes",
-    QUARTER: "Quarters",
-    ONE: "Ones",
-    FIVE: "Fives",
-    TEN: "Tens",
-    TWENTY: "Twenties",
-    "ONE HUNDRED": "Hundreds",
+    PENNY: 'Pennies',
+    NICKEL: 'Nickels',
+    DIME: 'Dimes',
+    QUARTER: 'Quarters',
+    ONE: 'Ones',
+    FIVE: 'Fives',
+    TEN: 'Tens',
+    TWENTY: 'Twenties',
+    'ONE HUNDRED': 'Hundreds'
   };
   // Update cid if change is passed in
   if (change) {
-    change.forEach((changeArr) => {
-      const targetArr = cid.find((cidArr) => cidArr[0] === changeArr[0]);
-      targetArr[1] = parseFloat((targetArr[1] - changeArr[1]).toFixed(2));
+    change.forEach(([changeDenomination, changeAmount]) => {
+      const targetArr = cid.find(
+        ([denominationName, _]) => denominationName === changeDenomination
+      );
+      targetArr[1] =
+        (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
     });
   }
 
-  cash.value = "";
+  cash.value = '';
   priceScreen.textContent = `Total: $${price}`;
   cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
     ${cid
-      .map((money) => `<p>${currencyNameMap[money[0]]}: $${money[1]}</p>`)
-      .join("")}  
+      .map(
+        ([denominationName, amount]) =>
+          `<p>${currencyNameMap[denominationName]}: $${amount}</p>`
+      )
+      .join('')}
   `;
 };
 
-purchaseBtn.addEventListener("click", checkResults);
+purchaseBtn.addEventListener('click', checkResults);
 
-cash.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
+cash.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
     checkResults();
   }
 });

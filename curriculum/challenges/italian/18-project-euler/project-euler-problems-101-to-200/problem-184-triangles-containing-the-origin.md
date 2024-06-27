@@ -12,7 +12,7 @@ Considera il set $I_r$ di punti $(x, y)$ con coordinate intere all'interno del c
 
 Per un raggio di 2, $I_2$ contiene i nove punti (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) e (1,-1). Ci sono otto triangoli con tutti e tre i vertici in $I_2$ che contengono l'origine all'interno. Due di loro sono mostrati di seguito, gli altri sono ottenuti da questi per rotazione.
 
-<img class="img-responsive center-block" alt="cerchio con raggio 2, centrato all'origine, con nove punti contrassegnati e due triangoli - (-1,0), (0,1), (1,-1) e (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
+<img alt="cerchio con raggio 2, centrato all'origine, con nove punti contrassegnati e due triangoli - (-1,0), (0,1), (1,-1) e (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Per un raggio di 3, ci sono 360 triangoli contenenti l'origine e aventi tutti i vertici in $I_3$ e per $I_5$ il numero è 10600.
 

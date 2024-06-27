@@ -16,7 +16,7 @@ dashedName: problem-411-uphill-paths
 
 Наприклад, якщо $n = 22$, то існує 11 окремих станцій, а дійсний шлях може пройти максимум через 5 станцій. Отже, $S(22) = 5$. Так виглядає приклад оптимального шляху даного випадку:
 
-<img class="img-responsive center-block" alt="дійсний шлях, який проходить через 5 точок з 11 окремими точками за умови n = 22" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+<img alt="дійсний шлях, який проходить через 5 точок з 11 окремими точками за умови n = 22" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Також можна довести, що $S(123) = 14$ та $S(10\\,000) = 48$.
 

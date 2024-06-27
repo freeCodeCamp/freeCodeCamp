@@ -10,7 +10,7 @@ dashedName: problem-109-darts
 
 No jogo de dardos, um jogador joga três dardos em um alvo que é dividido em vinte seções de tamanho igual, numeradas de um a vinte.
 
-<img class="img-responsive center-block" alt="Alvo dos dardos" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;" />
+<img alt="Alvo dos dardos" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 A pontuação de um dardo é determinada pelo número da região que o dardo atinge. Um dardo aterrissando fora do anel externo vermelho/verde, marca zero. As regiões preta e creme dentro deste anel representam pontuações únicas. No entanto, o anel externo vermelho/verde e o anel do meio têm pontuações duplas e triplas, respectivamente.
 

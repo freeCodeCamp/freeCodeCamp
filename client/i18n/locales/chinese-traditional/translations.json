@@ -100,7 +100,8 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "確認金額",
-    "play-scene": "點擊播放"
+    "play-scene": "點擊播放",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -871,7 +872,8 @@
     "own-work-url": "記住要提交你自己的作業",
     "publicly-visible-url": "記得要提交一個公開可見的app URL",
     "ms-learn-link": "請使用有效的 Microsoft Learn 獎盃鏈接。",
-    "path-url": "你可能想要提交根路徑，即 https://example.com，而不是 https://example.com/path。"
+    "path-url": "你可能想要提交根路徑，即 https://example.com，而不是 https://example.com/path。",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "執行董事，freeCodeCamp.org",

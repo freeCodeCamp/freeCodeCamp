@@ -12,7 +12,7 @@ Man betrachte die Menge $I_r$ von Punkten $(x,y)$ mit Integer Koordinaten im Inn
 
 Für einen Radius von 2 enthält $I_2$ die neun Punkte (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) und (1,-1). Es gibt acht Dreiecke, bei denen alle drei Eckpunkte in $I_2$ liegen und die den Ursprung im Inneren enthalten. Two of them are shown below, the others are obtained from these by rotation.
 
-<img class="img-responsive center-block" alt="Kreis mit Radius 2, zentriert im Ursprung, mit neun markierten Punkten und zwei Dreiecken - (-1,0), (0,1), (1,-1) und (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px;" />
+<img alt="Kreis mit Radius 2, zentriert im Ursprung, mit neun markierten Punkten und zwei Dreiecken - (-1,0), (0,1), (1,-1) und (-1,1), (0,-1), (1,1)" src="https://cdn.freecodecamp.org/curriculum/project-euler/triangles-containing-the-origin.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Für einen Radius von 3 gibt es 360 Dreiecke, die den Ursprung im Inneren enthalten und alle Scheitelpunkte in $I_3$ haben, und für $I_5$ sind es 10600.
 

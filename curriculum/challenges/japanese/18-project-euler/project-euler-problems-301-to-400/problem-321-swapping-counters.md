@@ -10,11 +10,11 @@ dashedName: problem-321-swapping-counters
 
 $2n + 1$ 個のマスが横方向に一列に並べられ、一方の端に $n$ 個の赤のカウンターが置かれ、もう一方の端に $n$ 個の青のカウンターが置かれ、その間の 1 マスは空いています。 例えば、$n = 3$ のときは下図のようになります。
 
-<img class="img-responsive center-block" alt="列の両側の 3 マスに赤と青のカウンターが置かれ、間の 1 マスは空いている" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="列の両側の 3 マスに赤と青のカウンターが置かれ、間の 1 マスは空いている" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 カウンターは、あるマスから次のマスに移動したり (スライド)、別のカウンターの隣のマスが空いていればそのカウンターを飛び越えたり (ホップ) できます。
 
-<img class="img-responsive center-block" alt="許容されるカウンターの動き方" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="許容されるカウンターの動き方" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 色付きカウンターの位置を完全に入れ替える (すなわち赤のカウンターをすべて右へ、青のカウンターをすべて左へ移動する) ための移動やアクションの最小回数を、$M(n)$ とします。
 

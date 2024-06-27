@@ -17,7 +17,7 @@ dashedName: problem-275-balanced-sculptures
 
 Під час підрахунку скульптур будь-які композиції, які є просто відбиттям навколо осі $y$, <u>не</u> зараховуються як окремі. Наприклад, знизу наведено 18 збалансованих скульптур 6-го порядку. Зауважте, що кожна пара дзеркальних зображень (на осі $y$) зараховується як одна скульптура:
 
-<img class="img-responsive center-block" alt="18 збалансованих скульптур шостого порядку" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
+<img alt="18 збалансованих скульптур шостого порядку" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Існує 964 збалансованих скульптур 10-го порядку та 360505 15-го порядку.
 

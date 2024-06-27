@@ -12,7 +12,7 @@ Você recebe um triângulo com o comprimento dos lados de números inteiros $ABC
 
 A interseção entre $n$ e $k$ é chamada de $E$.
 
-<img class="img-responsive center-block" alt="triângulo ABC, com k - bissetor angular do ângulo ACB, m - tangente no ponto C, n - linha paralela a m através do ponto B e do ponto E - interseção entre k e n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+<img alt="triângulo ABC, com k - bissetor angular do ângulo ACB, m - tangente no ponto C, n - linha paralela a m através do ponto B e do ponto E - interseção entre k e n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quantos triângulos $ABC$ com um perímetro não excedendo $100.000$ existem de tal forma que $BE$ tem como comprimento um número inteiro?
 

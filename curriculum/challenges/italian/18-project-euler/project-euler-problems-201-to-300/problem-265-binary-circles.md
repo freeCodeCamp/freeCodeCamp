@@ -12,7 +12,7 @@ $2^N$ cifre binarie possono essere posizionate in un cerchio in modo che tutte l
 
 Per $N = 3$, sono possibili due di queste disposizioni circolari, ignorando le rotazioni:
 
-<img class="img-responsive center-block" alt="due disposizioni circolari per N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="due disposizioni circolari per N = 3" src="https://cdn.freecodecamp.org/curriculum/project-euler/binary-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Per la prima disposizione, le successioni a tre cifre, in ordine orario, sono: 000, 001, 010, 101, 011, 111, 110 e 100.
 

@@ -12,7 +12,7 @@ $a ≤ b ≤ c$ ($AB = c$、$BC = a$、$AC = b$) の辺を持つ整数辺の三�
 
 三角形の角の二等分線は、点 $E$, $F$, $G$ で辺と交わります (下図参照)。
 
-<img class="img-responsive center-block" alt="三角形 ABC の角の二等分線が点 E, F, G で辺と交わる" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
+<img alt="三角形 ABC の角の二等分線が点 E, F, G で辺と交わる" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 線分 $EF$, $EG$, $FG$ は、$ABC$ を 4 つの小さな三角形 $AEG$, $BFE$, $CGF$, $EFG$ に分割します。 この 4 つの三角形のそれぞれについて、比率 $\frac{\text{面積}(ABC)}{\text{面積}(\text{部分三角形})}$ が有理数であることを証明できます。 しかし、これらの比率の一部またはすべてが整数である三角形が存在します。
 

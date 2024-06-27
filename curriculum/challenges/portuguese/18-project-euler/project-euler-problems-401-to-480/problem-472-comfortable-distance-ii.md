@@ -18,7 +18,7 @@ Observe que, devido à regra 1, alguns lugares certamente ficarão sem ocupaçã
 
 Aqui estão os possíveis arranjos para $N = 15$:
 
-<img class="img-responsive center-block" alt="arranjo de assentos para N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
+<img alt="arranjo de assentos para N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Vemos que, se a primeira pessoa escolher corretamente, os 15 assentos podem acomodar até 7 pessoas. Vemos também que a primeira pessoa tem 9 opções para maximizar o número de pessoas que podem se sentar.
 

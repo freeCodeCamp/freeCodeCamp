@@ -409,12 +409,12 @@
           "Цей проєкт допоможе зрозуміти основні поняття за цими алгоритмами та як їх можна застосувати для сортування числових даних у вебзастосунках."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Вивчіть проміжне алгоритмічне мислення, створивши гру з кубиками",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "Алгоритмічне мислення передбачає здатність розбивати складні завдання на чітко визначені кроки.",
-          "У проєкті зі створення гри з кубиками ви дізнаєтесь, як керувати станом гри, реалізувати логіку гри для кидання кубиків, зберігати бали та застосовувати правила для різних комбінацій.",
-          "Цей проєкт охоплює обробку подій, маніпулювання масивами, умовну логіку та динамічне оновлення інтерфейсу користувача на основі стану гри."
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1268,6 +1268,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Вивчіть масиви та цикли",
         "intro": ["Дізнайтесь про масиви та цикли в JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Навчіться розв’язувати проблеми та розуміти помилки",
+        "intro": [
+          "Дізнайтесь, як розв’язувати проблеми та розуміти помилки в JavaScript."
+        ]
       }
     }
   },
@@ -1497,39 +1503,57 @@
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Дізнайтесь, як документувати код проєкту",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс ознайомить вас з виразами, пов’язаними із документацією коду."
+        ]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Дізнайтесь, як читати та розуміти документацію",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ще більше виразів, пов’язаних із документацією коду, а також декілька порад, як розуміти його."
+        ]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Дізнайтесь, як аналізувати документацію",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як правильно читати документацію та аналізувати її."
+        ]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Дізнайтесь, як ділитись прогресом та досягненнями",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитесь ділитись прогресом та досягненнями зі своїми колегами."
+        ]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Дізнайтесь, як говорити про оновлення та плани щодо завдань і проєктів",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як говорити про останні досягнення проєктів та про свої плани."
+        ]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Дізнайтесь, як погоджуватись та не погоджуватись",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс навчить, як погоджуватись та не погоджуватись з твердженнями інших."
+        ]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Дізнайтесь, як надавати технічну підтримку та супровід",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як пропонувати свою допомогу по технічних питаннях."
+        ]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Дізнайтесь, як запитувати та отримувати супровід",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс роз’яснить, як просити допомоги від колеги, коли це потрібно."
+        ]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Дізнайтесь, як надавати пояснення при допомозі іншим",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс ознайомить з тим, як правильно надавати пояснення іншим людям."
+        ]
       }
     }
   },

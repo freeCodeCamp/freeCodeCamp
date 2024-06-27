@@ -177,7 +177,6 @@ export type ChallengeWithCompletedNode = {
 
 export type ChallengeNode = {
   challenge: {
-    audioPath: string;
     block: string;
     certification: string;
     challengeOrder: number;

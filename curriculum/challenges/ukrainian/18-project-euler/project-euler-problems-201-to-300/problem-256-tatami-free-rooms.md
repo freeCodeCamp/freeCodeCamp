@@ -16,7 +16,7 @@ dashedName: problem-256-tatami-free-rooms
 
 При укладанні татамі є одне правило, якого необхідно дотримуватися: не повинно бути жодної такої точки, де стикаються кути чотирьох різних матів. Наприклад, розглянемо два варіанти покриття підлоги кімнати 4×4:
 
-<img class="img-responsive center-block" alt="два покриття матів в кімнаті 4x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px;" />
+<img alt="два покриття матів в кімнаті 4x4" src="https://cdn.freecodecamp.org/curriculum/project-euler/tatami-free-rooms.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Покриття ліворуч прийнятне, а покриття праворуч — ні: червоний знак <strong><span style="color: red;">X</span></strong> посередині позначає точку стикання чотирьох татамі.
 

@@ -14,7 +14,7 @@ In a triangular array of positive and negative integers, we wish to find a sub-t
 
 In the example below, it can be easily verified that the marked triangle satisfies this condition having a sum of −42.
 
-<img class="img-responsive center-block" alt="triangular array, with marked sub-triangle, having sum of -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;">
+<img alt="triangular array, with marked sub-triangle, having sum of -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 We wish to make such a triangular array with one thousand rows, so we generate 500500 pseudo-random numbers $s_k$ in the range $±2^{19}$, using a type of random number generator (known as a Linear Congruential Generator) as follows:
 

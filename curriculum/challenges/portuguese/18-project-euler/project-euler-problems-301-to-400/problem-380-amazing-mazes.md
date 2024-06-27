@@ -10,7 +10,7 @@ dashedName: problem-380-amazing-mazes
 
 Um labirinto $m×n$ é uma grade retangular $m×n$ com paredes colocadas entre as células da malha de forma que haja exatamente um caminho do quadrado superior esquerdo para qualquer outro quadrado. Os exemplos a seguir são de um labirinto 9×12 e de um labirinto 15×20:
 
-<img class="img-responsive center-block" alt="labirinto 9x12 e labirinto 15x20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px;" />
+<img alt="labirinto 9x12 e labirinto 15x20" src="https://cdn.freecodecamp.org/curriculum/project-euler/amazing-mazes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $C(m, n)$ como o número de labirintos distintos $m×n$. Os labirintos que podem ser criados por rotação e reflexão de outro labirinto são considerados distintos.
 

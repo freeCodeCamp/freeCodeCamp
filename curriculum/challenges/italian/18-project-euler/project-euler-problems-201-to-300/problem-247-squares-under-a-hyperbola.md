@@ -16,7 +16,7 @@ Sia $S_2$ il quadrato più grande che si adatta all'area rimanente, e così via.
 
 Sia l'indice di $S_n$ la coppia (sinistra, sotto) indicante il numero di quadrati a sinistra di $S_n$ e il numero di quadrati sotto $S_n$.
 
-<img class="img-responsive center-block" alt="diagramma con quadrati sotto un'iperbole" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+<img alt="diagramma con quadrati sotto un'iperbole" src="https://cdn.freecodecamp.org/curriculum/project-euler/squares-under-a-hyperbola.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 The diagram shows some such squares labeled by number.
 

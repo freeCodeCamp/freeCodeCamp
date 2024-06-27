@@ -10,7 +10,7 @@ dashedName: problem-199-iterative-circle-packing
 
 半径が等しい 3 つの円が大きな円の中に置かれ、いずれの対の円も互いに接しており、内側の円は重なっていません。 円で埋められていない隙間が 4 つあります。互いに接する円を置く作業を繰り返すことで、その隙間を埋めていきます。
 
-<img class="img-responsive center-block" alt="重ならないように置かれた円の図" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="重ならないように置かれた円の図" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 それぞれの隙間に、そこに収まる最大の円を置きます。これを繰り返すたびに隙間の数が増えていきます。 3 回繰り返すと上図のように 108 個の隙間ができ、円で埋められていない面積の割合を小数第 8 位に四捨五入すると 0.06790342 となります 。
 

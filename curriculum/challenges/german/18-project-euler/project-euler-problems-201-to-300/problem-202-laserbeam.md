@@ -12,7 +12,7 @@ Drei Spiegel sind in Form eines gleichseitigen Dreiecks angeordnet, wobei die sp
 
 Beschrifte die Scheitelpunkte $A$, $B$ und $C$. Es gibt zwei Möglichkeiten, wie ein Laserstrahl in den Scheitelpunkt $C$ eintreten, an 11 Flächen abprallen und dann durch denselben Scheitelpunkt wieder austreten kann: die eine Möglichkeit ist unten dargestellt, die andere ist die umgekehrte.
 
-<img class="img-responsive center-block" alt="eine Möglichkeit, bei der der Laserstrahl in den Scheitelpunkt C eintritt, an 11 Oberflächen abprallt und durch denselben Scheitelpunkt wieder austritt" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img alt="eine Möglichkeit, bei der der Laserstrahl in den Scheitelpunkt C eintritt, an 11 Oberflächen abprallt und durch denselben Scheitelpunkt wieder austritt" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Es gibt 80840 Möglichkeiten, wie ein Laserstrahl in den Scheitelpunkt $C$ eintritt, an 1000001 Oberflächen abprallt und dann durch denselben Scheitelpunkt wieder austreten kann.
 

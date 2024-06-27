@@ -100,7 +100,8 @@
     "update-card": "Atualize seu cartão",
     "donate-now": "Doe agora",
     "confirm-amount": "Confirmar o valor",
-    "play-scene": "Pressione Play"
+    "play-scene": "Pressione Play",
+    "closed-caption": "Versão legendada"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -575,7 +576,7 @@
     "other-ways": "Aqui estão muitas <0>outras maneiras para ajudar a nossa missão beneficente</0>.",
     "if-support-further": "Se você quiser continuar apoiando nossa instituição de caridade, considere <0>fazer uma doação única</0>, <1>nos enviar um cheque</1> ou <2>aprender sobre outras formas através das quais você poderia apoiar nossa caridade.</2>",
     "failed-pay": "Opa. Parece que a sua transação não funcionou. Você poderia tentar de novo?",
-    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
+    "try-another-method": "Opa. Parece que a sua transação não funcionou. Você poderia tentar um outro método de pagamento?",
     "try-again": "Tente novamente.",
     "card-number": "Número do seu cartão:",
     "expiration": "Data de validade:",
@@ -871,7 +872,8 @@
     "own-work-url": "Lembre-se de enviar o seu próprio trabalho.",
     "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
     "ms-learn-link": "Use um link de troféu válido do Microsoft Learn.",
-    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path"
+    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",

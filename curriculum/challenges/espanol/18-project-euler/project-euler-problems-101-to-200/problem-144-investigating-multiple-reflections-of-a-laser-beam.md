@@ -15,8 +15,8 @@ La celda blanca específica a ser considerada es una elipse con la ecuación $4{
 La sección correspondiente a $−0.01 ≤ x ≤ +0.01$ en lo alto está ausente, permitiendo a la luz entrar y salir a través del agujero.
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="animación con los primeros 10 reflexiones de el haz" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="light beam starting at point (0.0, 10.1), and impacting the mirror at point (1.4, -9.6)" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="animación con los primeros 10 reflexiones de el haz" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 El haz de luz en este problema inicia en el punto (0.0, 10.1) justo por fuera de la celda blanca, y el haz primero impacta al espejo en (1.4, -9.6).

@@ -12,7 +12,7 @@ dashedName: problem-208-robot-walks
 
 Один з 70932 можливих закритих шляхів з 25 дуг, починаючи рух із позиції на північ, виглядає так:
 
-<img class="img-responsive center-block" alt="закритий шлях з 25 дуг, починаючи рух із позиції на північ" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
+<img alt="закритий шлях з 25 дуг, починаючи рух із позиції на північ" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Робот починає рухатися на північ. Скільки подорожей довжиною в 70 дуг він зможе виконати, повернувшись на початкову позицію після останньої дуги?
 

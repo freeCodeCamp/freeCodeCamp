@@ -24,7 +24,7 @@ dashedName: problem-392-enmeshed-unit-circle
 
 Наприклад, ось рисунок розв’язку за умови $N = 10$:
 
-<img class="img-responsive center-block" alt="розв’язок для N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img alt="розв’язок для N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Площа, зайнята червоними клітинками, за умови $N = 10$, округлена до 10 знаків після коми, дорівнює 3.3469640797.
 

@@ -12,7 +12,7 @@ Auf jede der sechs Seiten eines Würfels wird eine andere Ziffer (0 bis 9) gesch
 
 Zum Beispiel könnte die Quadratzahl 64 gebildet werden:
 
-<img class="img-responsive center-block" alt="zwei Würfel, einer mit der Zahl 6 und der andere mit der Zahl 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
+<img alt="zwei Würfel, einer mit der Zahl 6 und der andere mit der Zahl 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Durch sorgfältige Auswahl der Ziffern auf beiden Würfeln ist es möglich, alle Quadratzahlen unter Hundert anzuzeigen: 01, 04, 09, 16, 25, 36, 49, 64 und 81.
 
