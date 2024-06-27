@@ -4,7 +4,6 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
