@@ -216,21 +216,14 @@ export async function updateUserChallengeData(
     challenge => challenge.id !== challengeId
   );
 
-  if (needsModeration) {
-    await fastify.prisma.user.update({
-      where: { id: user.id },
-      data: {
-        needsModeration: true
-      }
-    });
-  }
-
   const { savedChallenges: userSavedChallenges } =
     await fastify.prisma.user.update({
       where: { id: user.id },
       data: {
         completedChallenges: userCompletedChallenges,
-        needsModeration,
+        // TODO: `needsModeration` should be handled closer to source, because it exists in 3 states: true, false, undefined/null
+        //       `undefined` in Prisma is a no-op
+        needsModeration: needsModeration || undefined,
         savedChallenges: savedChallengesUpdate,
         progressTimestamps: userProgressTimestamps,
         partiallyCompletedChallenges: userPartiallyCompletedChallenges
