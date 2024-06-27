@@ -1,9 +1,13 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 import isEmail from 'validator/lib/isEmail';
-import { donationSubscriptionConfig } from '../../../shared/config/donation-settings';
+import {
+  donationSubscriptionConfig,
+  allStripeProductIdsArray
+} from '../../../shared/config/donation-settings';
 import * as schemas from '../schemas';
 import { STRIPE_SECRET_KEY } from '../utils/env';
+import { inLastFiveMinutes } from '../utils/validate-donation';
 import { findOrCreateUser } from './helpers/auth-helpers';
 
 /**
@@ -291,80 +295,61 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       try {
-        const id = req.user?.id;
-        const { email, name, token, amount, duration } = req.body;
+        const { email, amount, duration, subscriptionId } = req.body;
 
-        // verify the parameters
+        const subscription =
+          await stripe.subscriptions.retrieve(subscriptionId);
+        const isSubscriptionActive = subscription.status === 'active';
+        const productId =
+          subscription.items?.data[0]?.plan?.product?.toString();
+        const isStartedRecently = inLastFiveMinutes(
+          subscription.current_period_start
+        );
+        const isProductIdValid =
+          typeof productId == 'string' &&
+          allStripeProductIdsArray.includes(productId);
+
+        const isValidCustomer = typeof subscription.customer === 'string';
         if (
-          !isEmail(email) ||
-          !donationSubscriptionConfig.plans[duration].includes(amount)
+          isSubscriptionActive &&
+          isProductIdValid &&
+          isStartedRecently &&
+          isValidCustomer
         ) {
-          void reply.code(500);
-          return {
-            error: 'The donation form had invalid values for this submission.'
-          } as const;
-        }
+          // TODO(Post-MVP) new users should not be created if user is not found
+          const user = await findOrCreateUser(fastify, email);
+          const donation = {
+            userId: user.id,
+            email,
+            amount,
+            duration,
+            provider: 'stripe',
+            subscriptionId,
+            customerId: subscription.customer as string,
+            // TODO(Post-MVP) migrate to startDate: new Date()
+            startDate: {
+              date: new Date().toISOString(),
+              when: new Date().toISOString().replace(/.$/, '+00:00')
+            }
+          };
 
-        // TODO(Post-MVP) new users should not be created if user is not found
-        const user = id
-          ? await fastify.prisma.user.findUniqueOrThrow({ where: { id } })
-          : await findOrCreateUser(fastify, email);
+          await fastify.prisma.donation.create({
+            data: donation
+          });
 
-        const { id: customerId } = await stripe.customers.create({
-          email,
-          name
-        });
-
-        // TODO(Post-MVP) stripe has moved to a paymentintent flow, the create call should be updated to reflect this
-        const paymentMethod = await stripe.paymentMethods.attach(token.id, {
-          customer: customerId
-        });
-
-        await stripe.customers.update(customerId, {
-          invoice_settings: {
-            default_payment_method: paymentMethod.id
-          }
-        });
-
-        const plan = `${donationSubscriptionConfig.duration[
-          duration
-        ].toLowerCase()}-donation-${amount}`;
-
-        const { id: subscriptionId } = await stripe.subscriptions.create({
-          customer: customerId,
-          items: [{ plan }]
-        });
-
-        const donation = {
-          userId: user.id,
-          email,
-          amount,
-          duration,
-          provider: 'stripe',
-          subscriptionId,
-          customerId,
-          // TODO(Post-MVP) migrate to startDate: new Date()
-          startDate: {
-            date: new Date().toISOString(),
-            when: new Date().toISOString().replace(/.$/, '+00:00')
-          }
-        };
-
-        await fastify.prisma.donation.create({
-          data: donation
-        });
-
-        await fastify.prisma.user.update({
-          where: { id: user.id },
-          data: {
+          await fastify.prisma.user.update({
+            where: { id: user.id },
+            data: {
+              isDonating: true
+            }
+          });
+          return reply.send({
+            type: 'success',
             isDonating: true
-          }
-        });
-
-        return reply.send({
-          type: 'success',
-          isDonating: true
-        });
+          });
+        } else {
+          throw new Error('Stripe subscription information is invalid.');
+        }
       } catch (error) {
         fastify.log.error(error);
         void reply.code(500);

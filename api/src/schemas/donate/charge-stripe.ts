@@ -5,10 +5,7 @@ export const chargeStripe = {
     amount: Type.Number(),
     duration: Type.Literal('month'),
     email: Type.String(),
-    name: Type.String(),
-    token: Type.Object({
-      id: Type.String()
-    })
+    subscriptionId: Type.String()
   }),
   response: {
     200: Type.Object({
@@ -16,12 +13,7 @@ export const chargeStripe = {
       type: Type.Literal('success')
     }),
     500: Type.Object({
-      error: Type.Union([
-        Type.Literal('Donation failed due to a server error.'),
-        Type.Literal(
-          'The donation form had invalid values for this submission.'
-        )
-      ])
+      error: Type.Literal('Donation failed due to a server error.')
     })
   }
 };
