@@ -280,6 +280,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         }
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'
@@ -300,14 +301,12 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         const subscription =
           await stripe.subscriptions.retrieve(subscriptionId);
         const isSubscriptionActive = subscription.status === 'active';
-        const productId =
-          subscription.items?.data[0]?.plan?.product?.toString();
+        const productId = subscription.items.data[0]?.plan.product?.toString();
         const isStartedRecently = inLastFiveMinutes(
           subscription.current_period_start
         );
         const isProductIdValid =
-          typeof productId == 'string' &&
-          allStripeProductIdsArray.includes(productId);
+          productId && allStripeProductIdsArray.includes(productId);
 
         const isValidCustomer = typeof subscription.customer === 'string';
         if (
@@ -344,7 +343,6 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             }
           });
           return reply.send({
-            type: 'success',
             isDonating: true
           });
         } else {
@@ -352,6 +350,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         }
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return {
           error: 'Donation failed due to a server error.'

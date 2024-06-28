@@ -10,7 +10,6 @@ export const chargeStripe = {
   response: {
     200: Type.Object({
       isDonating: Type.Boolean(),
-      type: Type.Literal('success')
     }),
     500: Type.Object({
       error: Type.Literal('Donation failed due to a server error.')
