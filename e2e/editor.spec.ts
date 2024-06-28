@@ -1,6 +1,6 @@
 import { APIRequestContext, expect, test } from '@playwright/test';
 
-import { clearEditor, focusEditor } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { authedRequest } from './utils/request';
 
 const setTheme = async (
@@ -41,15 +41,22 @@ test.describe('Python Terminal', () => {
     );
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page, browserName, isMobile });
     // Then enter invalid code
-    await page.keyboard.insertText('def');
+    await getEditors(page).fill('def');
+
+    if (isMobile) {
+      await page.getByRole('tab', { name: 'Preview' }).click();
+    }
+
     const preview = page.getByTestId('preview-pane');
 
     // While it's displayed on multiple lines, the string itself has no newlines, hence:
     const error = `Traceback (most recent call last):  File "main.py", line 1    def       ^SyntaxError: invalid syntax`;
     // It shouldn't take this long, but the Python worker can be slow to respond.
-    await expect(preview).toContainText(error, { timeout: 15000 });
+    await expect(preview.getByText(error)).toContainText(error, {
+      timeout: 15000
+    });
   });
 });
 
