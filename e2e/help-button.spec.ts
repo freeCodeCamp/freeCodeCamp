@@ -55,7 +55,7 @@ test.describe('help-button tests for a page with a reset and help button', () =>
     page
   }) => {
     await page.goto(
-      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
     );
     const checkButton = page.getByTestId('lowerJaw-check-button');
     await checkButton.click();
