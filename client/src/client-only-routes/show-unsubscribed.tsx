@@ -2,11 +2,10 @@ import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Container, Panel, Button } from '@freecodecamp/ui';
+import { Container, Panel } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { Spacer } from '../components/helpers';
-import FullWidthRow from '../components/helpers/full-width-row';
+import { ButtonLink, Spacer, FullWidthRow } from '../components/helpers';
 
 const { apiLocation } = envData;
 
@@ -39,14 +38,13 @@ function ShowUnsubscribed({
           </FullWidthRow>
           {unsubscribeId ? (
             <FullWidthRow>
-              <Button
+              <ButtonLink
                 block={true}
                 size='large'
-                variant='primary'
                 href={`${apiLocation}/resubscribe/${unsubscribeId}`}
               >
                 {t('buttons.resubscribe')}
-              </Button>
+              </ButtonLink>
             </FullWidthRow>
           ) : null}
           <Spacer size='large' />

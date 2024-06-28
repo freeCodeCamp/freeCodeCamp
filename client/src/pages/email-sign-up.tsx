@@ -9,7 +9,7 @@ import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
-import { Spacer, Loader, Link } from '../components/helpers';
+import { Spacer, Loader, Link, ButtonLink } from '../components/helpers';
 import { apiLocation } from '../../config/env.json';
 
 import { acceptTerms } from '../redux/actions';
@@ -91,14 +91,9 @@ function EmailListOptIn({
     return (
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <Spacer size='small' />
-        <Button
-          block={true}
-          size='large'
-          variant='primary'
-          href={`${apiLocation}/signin`}
-        >
+        <ButtonLink block={true} size='large' href={`${apiLocation}/signin`}>
           {t('buttons.sign-up-email-list')}
-        </Button>
+        </ButtonLink>
         <Spacer size='small' />
       </Col>
     );

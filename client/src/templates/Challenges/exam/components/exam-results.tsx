@@ -5,6 +5,7 @@ import { Button } from '@freecodecamp/ui';
 import Spacer from '../../../../components/helpers/spacer';
 import { formatSecondsToTime } from '../../../../utils/format-seconds';
 import { GeneratedExamResults } from '../../../../redux/prop-types';
+import { ButtonLink } from '../../../../components/helpers';
 
 interface ExamResultsProps {
   dashedName: string;
@@ -96,15 +97,14 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
       <Spacer size='medium' />
       <Spacer size='medium' />
       <div>
-        <Button
+        <ButtonLink
           block={true}
-          variant='primary'
           data-playwright-test-label='download-exam-results'
           download={`${dashedName}.txt`}
           href={downloadURL}
         >
           {t('learn.download-results')}
-        </Button>
+        </ButtonLink>
         <Spacer size='xxSmall' />
         <Button
           block={true}

@@ -24,7 +24,7 @@ import {
 } from '../redux/selectors';
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
-import { Spacer } from '../../../components/helpers';
+import { ButtonLink, Spacer } from '../../../components/helpers';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
@@ -222,15 +222,14 @@ class CompletionModal extends Component<
           </Button>
           <Spacer size='xxSmall' />
           {this.state.downloadURL ? (
-            <Button
+            <ButtonLink
               block={true}
               size='large'
-              variant='primary'
               download={`${dashedName}.txt`}
               href={this.state.downloadURL}
             >
               {t('learn.download-solution')}
-            </Button>
+            </ButtonLink>
           ) : null}
         </Modal.Footer>
       </Modal>

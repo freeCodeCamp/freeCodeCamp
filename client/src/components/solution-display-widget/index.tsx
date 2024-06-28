@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
+import { ButtonLink } from '../helpers';
 
 interface Props {
   completedChallenge: CompletedChallenge;
@@ -76,12 +77,12 @@ export function SolutionDisplayWidget({
     </Dropdown>
   );
   const ShowProjectLinkForCertification = (
-    <Button
+    <ButtonLink
       block={true}
       // This expression is only to resolve TypeScript error.
       // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
-      href={solution ?? undefined}
+      href={solution ?? ''}
       rel='noopener noreferrer'
       target='_blank'
     >
@@ -91,7 +92,7 @@ export function SolutionDisplayWidget({
         {t('aria.opens-new-window')})
       </span>
       <FontAwesomeIcon icon={faExternalLinkAlt} />
-    </Button>
+    </ButtonLink>
   );
   const MissingSolutionComponentForCertification = (
     <>{t('certification.project.no-solution')}</>
@@ -163,13 +164,12 @@ export function SolutionDisplayWidget({
     </div>
   );
   const ShowProjectLink = (
-    <Button
+    <ButtonLink
       block={true}
-      variant='primary'
       // This expression is only to resolve TypeScript error.
       // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
-      href={solution ?? undefined}
+      href={solution ?? ''}
       rel='noopener noreferrer'
       target='_blank'
     >
@@ -179,7 +179,7 @@ export function SolutionDisplayWidget({
         {t('aria.opens-new-window')})
       </span>
       <FontAwesomeIcon icon={faExternalLinkAlt} />
-    </Button>
+    </ButtonLink>
   );
   const ShowExamResults = (
     <Button block={true} variant='primary' onClick={showExamResults}>

@@ -4,8 +4,7 @@ import {
   FormGroup,
   FormGroupProps,
   FormControl,
-  ControlLabel,
-  Button
+  ControlLabel
 } from '@freecodecamp/ui';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
@@ -20,8 +19,7 @@ import { updateMyEmail } from '../../redux/settings/actions';
 import { maybeEmailRE } from '../../utils';
 
 import BlockSaveButton from '../helpers/form/block-save-button';
-import FullWidthRow from '../helpers/full-width-row';
-import Spacer from '../helpers/spacer';
+import { ButtonLink, Spacer, FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';
 import ToggleButtonSetting from './toggle-button-setting';
 
@@ -150,14 +148,9 @@ function EmailSettings({
           <p className='large-p text-center'>{t('settings.email.missing')}</p>
         </FullWidthRow>
         <FullWidthRow>
-          <Button
-            block={true}
-            size='large'
-            variant='primary'
-            href='/update-email'
-          >
+          <ButtonLink block={true} size='large' href='/update-email'>
             {t('buttons.edit')}
-          </Button>
+          </ButtonLink>
         </FullWidthRow>
       </div>
     );

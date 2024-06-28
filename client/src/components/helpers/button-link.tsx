@@ -15,6 +15,7 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   download?: string;
   target?: React.HTMLAttributeAnchorTarget;
   disabled?: boolean;
+  'data-playwright-test-label'?: string;
 }
 
 /**
@@ -35,7 +36,8 @@ export const ButtonLink = ({
   onClick,
   size = 'medium',
   block,
-  disabled
+  disabled,
+  'data-playwright-test-label': testLabel
 }: Props) => {
   // We only need to compute the styles of `size` and `block` for Gatsby Link.
   // freecodecamp/ui's Button already has the logic implemented.
@@ -70,6 +72,7 @@ export const ButtonLink = ({
         size={size}
         block={block}
         disabled
+        data-playwright-test-label={testLabel}
       >
         {children}
       </Button>
@@ -87,6 +90,7 @@ export const ButtonLink = ({
         download={download}
         size={size}
         block={block}
+        data-playwright-test-label={testLabel}
       >
         {children}
       </Button>
@@ -99,6 +103,7 @@ export const ButtonLink = ({
       to={href}
       target={target}
       onClick={onClick}
+      data-playwright-test-label={testLabel}
     >
       {children}
     </GatsbyLink>

@@ -10,8 +10,7 @@ import { userSelector } from '../../redux/selectors';
 import type { ProfileUI } from '../../redux/prop-types';
 import { submitProfileUI } from '../../redux/settings/actions';
 
-import FullWidthRow from '../helpers/full-width-row';
-import Spacer from '../helpers/spacer';
+import { ButtonLink, Spacer, FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';
 import ToggleRadioSetting from './toggle-radio-setting';
 
@@ -159,17 +158,16 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
       <FullWidthRow>
         <Spacer size='medium' />
         <p>{t('settings.data')}</p>
-        <Button
+        <ButtonLink
           block={true}
           size='large'
-          variant='primary'
           download={`${user.username}.json`}
           href={`data:text/json;charset=utf-8,${encodeURIComponent(
             JSON.stringify(user)
           )}`}
         >
           {t('buttons.download-data')}
-        </Button>
+        </ButtonLink>
       </FullWidthRow>
     </div>
   );

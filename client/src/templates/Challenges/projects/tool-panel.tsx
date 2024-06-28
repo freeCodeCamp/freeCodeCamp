@@ -6,7 +6,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { Button } from '@freecodecamp/ui';
 
 import { openModal } from '../redux/actions';
-import { Spacer } from '../../../components/helpers';
+import { ButtonLink, Spacer } from '../../../components/helpers';
 
 const mapStateToProps = () => ({});
 
@@ -33,14 +33,9 @@ function ToolPanel({
     <div>
       {guideUrl && (
         <>
-          <Button
-            block={true}
-            variant='primary'
-            href={guideUrl}
-            target='_blank'
-          >
+          <ButtonLink block={true} href={guideUrl} target='_blank'>
             {t('buttons.get-hint')}
-          </Button>
+          </ButtonLink>
           <Spacer size='xxSmall' />
         </>
       )}

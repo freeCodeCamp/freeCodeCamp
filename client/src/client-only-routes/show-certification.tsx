@@ -12,7 +12,7 @@ import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader, Spacer } from '../components/helpers';
+import { ButtonLink, Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
 import { showCert, fetchProfileForUser } from '../redux/actions';
@@ -296,10 +296,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const shareCertBtns = (
     <Row className='text-center'>
       <Col xs={12}>
-        <Button
+        <ButtonLink
           block={true}
           size='large'
-          variant='primary'
           href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
             certMonth + 1
           }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
@@ -307,12 +306,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           data-playwright-test-label='linkedin-share-btn'
         >
           {t('profile.add-linkedin')}
-        </Button>
+        </ButtonLink>
         <Spacer size='medium' />
-        <Button
+        <ButtonLink
           block={true}
           size='large'
-          variant='primary'
           href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
             certTitle: urlFriendlyCertTitle,
             certURL: certURL
@@ -321,7 +319,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           data-playwright-test-label='twitter-share-btn'
         >
           {t('profile.add-twitter')}
-        </Button>
+        </ButtonLink>
       </Col>
       <Spacer size='large' />
     </Row>
