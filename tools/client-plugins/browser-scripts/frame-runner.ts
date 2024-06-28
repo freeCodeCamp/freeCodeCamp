@@ -109,7 +109,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         const err = e as Error;
         console.error(e);
         // We are going to provide the standard error message to the camper
-        const errorType = 'other';
+        const errorType = 'js-syntax-error';
         return {
           err: {
             message: err.message,

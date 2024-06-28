@@ -221,10 +221,21 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
       } else if (errorType) {
-        const msgKey =
-          errorType === 'indentation'
-            ? 'learn.indentation-error'
-            : 'learn.syntax-error';
+        let msgKey;
+        switch (errorType) {
+          case 'indentation':
+            // Python indent error
+            msgKey = 'learn.indentation-error';
+            break;
+          case 'js-syntax-error':
+            // Javascript Syntax Error
+            msgKey = 'learn.js-syntax-error';
+            break;
+          default:
+            // Python syntax error
+            msgKey = 'learn.syntax-error';
+            break;
+        }
         newTest.message = `<p>${i18next.t(msgKey)}</p>`;
       } else {
         const { message, stack } = err;
