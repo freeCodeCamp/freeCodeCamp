@@ -1,3 +1,5 @@
+export { getPublicProfile } from './schemas/api/users/get-public-profile';
+export { userExists } from './schemas/api/users/exists';
 export { certSlug } from './schemas/certificate/cert-slug';
 export { certificateVerify } from './schemas/certificate/certificate-verify';
 export { backendChallengeCompleted } from './schemas/challenge/backend-challenge-completed';
@@ -13,6 +15,7 @@ export { chargeStripeCard } from './schemas/donate/charge-stripe-card';
 export { resubscribe } from './schemas/email-subscription/resubscribe';
 export { unsubscribe } from './schemas/email-subscription/unsubscribe';
 export { updateMyAbout } from './schemas/settings/update-my-about';
+export { confirmEmail } from './schemas/settings/confirm-email';
 export { updateMyClassroomMode } from './schemas/settings/update-my-classroom-mode';
 export { updateMyEmail } from './schemas/settings/update-my-email';
 export { updateMyHonesty } from './schemas/settings/update-my-honesty';

@@ -19,7 +19,7 @@ Finché c'è almeno una data frazione $F$ di torta sinistra, esegue la seguente 
 
 Quando rimane meno di una frazione $F$ di torta, non ripete questa procedura. Invece mangia tutta la torta rimanente.
 
-<img class="img-responsive center-block" alt="animazione della procedura di taglio della torta" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;" />
+<img alt="animazione della procedura di taglio della torta" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Per $x ≥ 1$, sia $E(x)$ il numero previsto di volte in cui Jeff ripete la procedura vista sopra con $F = \frac{1}{x}$. Si può verificare che $E(1) = 1$, $E(2) ≈ 1.2676536759$, e $E(7.5) ≈ 2.1215732071$.
 

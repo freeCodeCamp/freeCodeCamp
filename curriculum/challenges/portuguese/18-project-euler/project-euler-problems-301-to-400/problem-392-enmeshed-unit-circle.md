@@ -24,7 +24,7 @@ Para esse problema, gostaríamos que você encontrasse as posições das $N$ lin
 
 Ex: aqui vemos uma imagem da solução para $N = 10$:
 
-<img class="img-responsive center-block" alt="solução para N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img alt="solução para N = 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 A área ocupada pelas células vermelhas para $N = 10$, arredondada para 10 casas depois da vírgula, é de 3,3469640797.
 

@@ -31,7 +31,7 @@ Open up the console to see the result.
 
 # --hints--
 
-You should have an `isEven` variable.
+Ви повинні мати змінну `isEven`.
 
 ```js
 assert.isDefined(isEven);

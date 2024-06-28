@@ -20,7 +20,7 @@ As proteínas naturais são enoveladas em três dimensões, é claro, mas só va
 
 A figura abaixo mostra duas maneiras possíveis de o nosso exemplo de proteína poder ser enovelado (pontos de contato H-H são mostrados como pontos vermelhos).
 
-<img class="img-responsive center-block" alt="duas maneiras possíveis de exemplo de enovelamento de proteínas" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+<img alt="duas maneiras possíveis de exemplo de enovelamento de proteínas" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 O enovelamento da esquerda tem apenas seis pontos de contato H-H e, por isso, nunca ocorreria naturalmente. Por outro lado, o enovelamento à direita tem nove pontos de contato H-H, o que é ideal para esta string.
 

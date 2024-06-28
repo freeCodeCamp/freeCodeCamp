@@ -277,7 +277,7 @@ button.map-title {
 .map-dialogue-wrap a {
   align-items: center;
   min-height: 50px;
-  padding: 0;
+  padding: 10px 15px;
 }
 
 .block-description {
@@ -471,6 +471,16 @@ a.map-grid-item.challenge-completed {
 
 .annual-donation-alert hr {
   border-top-color: var(--blue10);
+}
+
+.annual-donation-alert .btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.annual-donation-alert .donate-button,
+.university-alert .donate-button {
+  border-color: #31708f;
 }
 
 .university-alert {

@@ -13,7 +13,7 @@ In a triangular array of positive and negative integers, we wish to find a sub-t
 
 En el ejemplo siguiente, este puede ser fácilmente verificado que el triángulo marcado satisface esta condición teniendo una suma de −42.
 
-<img class="img-responsive center-block" alt="arreglo triangular, con sub-triángulo marcado, teniendo una suma de -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
+<img alt="arreglo triangular, con sub-triángulo marcado, teniendo una suma de -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Deseamos hacer tal arreglo triangular con mil filas, así que generamos 500500 números pseudo-aleatorios $s_k$ en el rango $±2^{19}$, usando un tipo de generador de números aleatorios (conocido como un Generador Congruencial Lineal) de la siguiente manera:
 

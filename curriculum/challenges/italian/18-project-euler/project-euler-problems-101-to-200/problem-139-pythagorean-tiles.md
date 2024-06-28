@@ -12,7 +12,7 @@ Siano (a, b, c) i tre lati di un triangolo rettangolo con lunghezze dei lati int
 
 Per esempio, triangoli (3, 4, 5) possono essere messi assieme per formare un quadrato 5 x 5 con un buco 1 per 1 nel centro e si può vedere che il quadrato 5 x 5 può essere riempito con venticinque quadrati 1 x 1.
 
-<img class="img-responsive center-block" alt="due quadrati 5 x 5: uno con quattro triangoli 3x4x5 posizionati per creare un buco 1x1 al centro; un secondo con venticinque quadrati 1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="due quadrati 5 x 5: uno con quattro triangoli 3x4x5 posizionati per creare un buco 1x1 al centro; un secondo con venticinque quadrati 1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Invece, usando triangoli (5, 12, 16) il buco al centro misura 7 x 7. Questi quadrati 7 x 7 non potrebbero essere usati per riempire il quadrato 13 x 13.
 

@@ -14,7 +14,7 @@ dashedName: working-with-lists
 
 ## --text--
 
-Which method is used to add an item at the end of a list?
+Який метод використовують, щоб додати елемент в кінець списку?
 
 ## --answers--
 

@@ -22,6 +22,7 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.A2English,
     SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.SciCompPy
   ];
 
@@ -30,9 +31,9 @@ export const ConditionalDonationAlert = ({
       <Alert variant='info' className='annual-donation-alert'>
         <p>{t('donate.beta-certification')}</p>
         <hr />
-        <p className={'text-center'}>
+        <p className='btn-container'>
           <Link
-            className='btn'
+            className='btn donate-button'
             key='donate'
             sameTab={false}
             to='/donate'

@@ -14,7 +14,7 @@ dashedName: problem-465-polar-polygons
 
 Наприклад, тільки перший з наведених багатокутників є полярним (ядра другого, третього та четвертого не містять початок повністю, а п’ятий взагалі не має ядра):
 
-<img class="img-responsive center-block" alt="п’ять прикладів багатокутників" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
+<img alt="п’ять прикладів багатокутників" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Зверніть увагу, що перший багатокутник має три послідовні колінеарні вершини.
 

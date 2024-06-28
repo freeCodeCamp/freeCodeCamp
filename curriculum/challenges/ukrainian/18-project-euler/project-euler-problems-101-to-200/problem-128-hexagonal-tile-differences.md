@@ -12,7 +12,7 @@ dashedName: problem-128-hexagonal-tile-differences
 
 Нові кільця додані так само, і пронумеровані від 8 до 19, від 20 до 37, від 38 до 61 і так далі. На малюнку нижче зображено перші три кільця.
 
-<img class="img-responsive center-block" alt="перші три кільця упорядкованих шестикутних плиток з числами від 1 до 37 і з виділеними плитками 8 та 17" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px;" />
+<img alt="перші три кільця упорядкованих шестикутних плиток з числами від 1 до 37 і з виділеними плитками 8 та 17" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Знайшовши різницю між плиткою $n$ та кожним із її шести сусідів, визначимо $PD(n)$ як кількість різниць, які є простими числами.
 

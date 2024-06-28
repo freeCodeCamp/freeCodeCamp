@@ -18,7 +18,7 @@ dashedName: problem-422-sequence-of-points-on-a-hyperbola
 - $P_2 = (\frac{-43}{6}, -4)$
 - $i > 2$ のとき、$P_i$ は、線 $P_iP_{i - 1}$ が線 $P_{i - 2}X$ と平行になるような点のうち $P_{i - 1}$ ではない方の、$H$ 上の一意の点である。 $P_i$ を明確に定義できること、および、それらの座標が常に有理数であることを示せる。
 
-<img class="img-responsive center-block" alt="点 $P_1$ から点 $P_6$ までの決め方を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px;" />
+<img alt="点 $P_1$ から点 $P_6$ までの決め方を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/sequence-of-points-on-a-hyperbola.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $P_3 = (\frac{-19}{2}, \frac{-229}{24})$, $P_4 = (\frac{1267}{144}, \frac{-37}{12})$, $P_7 = (\frac{17\\,194\\,218\\,091}{143\\,327\\,232}, \frac{274\\,748\\,766\\,781}{1\\,719\\,926\\,784})$ が与えられます。
 

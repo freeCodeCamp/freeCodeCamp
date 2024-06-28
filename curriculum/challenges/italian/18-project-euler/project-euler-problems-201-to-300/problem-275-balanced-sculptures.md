@@ -17,7 +17,7 @@ Definiamo una scultura bilanciata di ordine $n$ come segue:
 
 Quando si contano le strutture, qualsiasi arrangiamento che è una semplice riflessione lungo l'asse $y$, <u>non</u> viene contato come distinto. Per esempio, le 18 sculture bilanciate di ordine 6 sono mostrate di seguito; nota che ogni coppia d'immagini specchiate (intorno all'asse $y$) è contata come una sola scultura:
 
-<img class="img-responsive center-block" alt="18 sculture bilanciate di ordine 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
+<img alt="18 sculture bilanciate di ordine 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ci sono 964 sculture bilanciate di ordine 10 e 360505 di ordine 15.
 

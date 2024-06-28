@@ -35,7 +35,7 @@ Submit your page when you think you've got it right. If you're running into erro
 
 # --hints--
 
-passport-github dependency should be added.
+`passport-github` dependency should be added.
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-passport-github should be required.
+`passport-github` should be required.
 
 ```js
 async (getUserInput) => {
@@ -93,14 +93,4 @@ async (getUserInput) => {
     'You should use process.env.GITHUB_CLIENT_ID'
   );
 }
-```
-
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
 ```

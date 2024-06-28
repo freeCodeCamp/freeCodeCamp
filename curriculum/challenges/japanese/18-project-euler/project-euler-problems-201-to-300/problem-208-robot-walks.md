@@ -12,7 +12,7 @@ dashedName: problem-208-robot-walks
 
 北向きで歩き始め、25 個の円弧に沿って歩いて元の位置に戻る方法は 70932 通りあり、その一つが下図です。
 
-<img class="img-responsive center-block" alt="北向きで始まり、25 個の円弧により閉じられた経路" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px;" />
+<img alt="北向きで始まり、25 個の円弧により閉じられた経路" src="https://cdn.freecodecamp.org/curriculum/project-euler/robot-walks.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 北向きで歩き始め、70 個の円弧に沿って歩き、最後の円弧で元の位置に戻る方法は何通りありますか。
 

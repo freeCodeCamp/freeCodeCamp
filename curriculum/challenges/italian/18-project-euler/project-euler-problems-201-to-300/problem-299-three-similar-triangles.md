@@ -14,7 +14,7 @@ $A(a, 0)$, $B(b, 0)$, $C(0, c)$ e $D(0, d)$, con $0 &lt; a &lt; b$ e $0 &lt; c &
 
 Il punto $P$, anch'esso con coordinate intere, è scelto sulla linea $AC$ in modo che i tre triangoli $ABP$, $CDP$ e $BDP$ siano tutti simili.
 
-<img class="img-responsive center-block" alt="i punti A, B, C, D e P che creano tre triangoli: ABP, CDP e BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="i punti A, B, C, D e P che creano tre triangoli: ABP, CDP e BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 È facile dimostrare che i tre triangoli possono essere simili, solo se $a = c$.
 

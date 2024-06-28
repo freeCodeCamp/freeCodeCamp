@@ -16,7 +16,7 @@ Sea $S(n)$ el número máximo de estaciones por las que pueda pasar un camino.
 
 Por ejemplo, si $n = 22$, hay 11 distintas estaciones, y una ruta válida puede pasar como máximo 5 estaciones. Por lo tanto, $S(22) = 5$. El caso está ilustrado a continuación, con un ejemplo de una ruta óptima:
 
-<img class="img-responsive center-block" alt="ruta válida que pasa por 5 estaciones, para n = 22, con 11 estaciones distintas" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;" />
+<img alt="ruta válida que pasa por 5 estaciones, para n = 22, con 11 estaciones distintas" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 También puede ser verificado que $S(123) = 14$ y $S(10\\,000) = 48$.
 

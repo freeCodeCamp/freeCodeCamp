@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { saveChallengeBody } from '../types';
+import { genericError, savedChallenge } from '../types';
 
 export const modernChallengeCompleted = {
   body: Type.Object({
@@ -22,12 +22,7 @@ export const modernChallengeCompleted = {
       completedDate: Type.Number(),
       points: Type.Number(),
       alreadyCompleted: Type.Boolean(),
-      savedChallenges: Type.Array(
-        Type.Intersect([
-          saveChallengeBody,
-          Type.Object({ lastSavedDate: Type.Number() })
-        ])
-      )
+      savedChallenges: Type.Array(savedChallenge)
     }),
     400: Type.Object({
       type: Type.Literal('error'),
@@ -35,11 +30,6 @@ export const modernChallengeCompleted = {
         'That does not appear to be a valid challenge submission.'
       )
     }),
-    500: Type.Object({
-      type: Type.Literal('danger'),
-      message: Type.Literal(
-        'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-      )
-    })
+    default: genericError
   }
 };

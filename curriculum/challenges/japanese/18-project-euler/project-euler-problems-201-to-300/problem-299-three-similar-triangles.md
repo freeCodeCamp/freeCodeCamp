@@ -14,7 +14,7 @@ $A(a, 0)$, $B(b, 0)$, $C(0, c)$, $D(0, d)$ ($0 &lt; a &lt; b$ かつ $0 &lt; c &
 
 3 つの三角形 $ABP$, $CDP$, $BDP$ がすべて相似形になるように、同じく整数座標を持つ点 $P$ を線 $AC$ 上で選びます。
 
-<img class="img-responsive center-block" alt="点 A, B, C, D, P で作られる 3 つの三角形 ABP, CDP, BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="点 A, B, C, D, P で作られる 3 つの三角形 ABP, CDP, BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $a = c$ のときのみ 3 つの三角形が相似形になり得るということは、容易に証明できます。
 

@@ -26,8 +26,10 @@ export enum Certification {
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   // Upcoming certifications
+  FrontEndDevelopment = 'front-end-development-v9',
   UpcomingPython = 'upcoming-python-v8',
   A2English = 'a2-english-for-developers-v8',
+  B1English = 'b1-english-for-developers-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
@@ -74,8 +76,10 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
+  Certification.FrontEndDevelopment,
   Certification.UpcomingPython,
-  Certification.A2English
+  Certification.A2English,
+  Certification.B1English
 ] as const;
 
 export const certTypes = {
@@ -276,9 +280,11 @@ export const linkedInCredentialIds = {
   [Certification.RelationalDb]: 'rd',
   [Certification.CollegeAlgebraPy]: 'cawp',
   [Certification.FoundationalCSharp]: 'fcswm',
+  [Certification.FrontEndDevelopment]: 'fed',
   [Certification.UpcomingPython]: 'up',
   [Certification.JsAlgoDataStructNew]: 'jaads',
-  [Certification.A2English]: 'a2efd'
+  [Certification.A2English]: 'a2efd',
+  [Certification.B1English]: 'b1efd'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

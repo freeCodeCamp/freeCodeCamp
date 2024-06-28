@@ -27,9 +27,9 @@ Note that the area code is required. Також, якщо надано теле�
 **Історія користувача:**
 
 1. You should have an `input` element with an `id` of `"user-input"`
-1. You should have a `button` element with an `id` of `"check-btn`
+1. You should have a `button` element with an `id` of `"check-btn"`
 1. You should have a `button` element with an `id` of `"clear-btn"`
-1. You should have a `div` element with an `id` of `"results-div"`
+1. You should have a `div`, `span` or `p` element with an `id` of `"results-div"`
 1. When you click on the `#check-btn` element without entering a value into the `#user-input` element, an alert should appear with the text `"Please provide a phone number"`
 1. Якщо натиснути на елемент `#clear-btn`, то вміст елемента `#results-div` буде видалено
 1. When the `#user-input` element contains `1 555-555-5555` and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Valid US number: 1 555-555-5555"`
@@ -86,11 +86,11 @@ const el = document.getElementById('clear-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-You should have a `div` element with an `id` of `"results-div"`.
+You should have a `div`, `span`, or `p` element with an `id` of `"results-div"`.
 
 ```js
 const el = document.getElementById('results-div');
-assert.strictEqual(el?.nodeName?.toLowerCase(), 'div');
+assert(['div', 'span', 'p'].includes(el?.nodeName?.toLowerCase()));
 ```
 
 When you click on the `#check-btn` element without entering a value into the `#user-input` element, an alert should appear with the text `"Please provide a phone number"`.

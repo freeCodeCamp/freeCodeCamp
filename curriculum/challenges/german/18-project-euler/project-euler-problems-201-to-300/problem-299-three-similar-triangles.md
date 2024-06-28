@@ -14,7 +14,7 @@ $A(a, 0)$, $B(b, 0)$, $C(0, c)$ and $D(0, d)$, with $0 &lt; a &lt; b$ and $0 &lt
 
 Der Punkt $P$, ebenfalls mit ganzzahligen Koordinaten, wird auf der Geraden $AC$ so gewählt, dass die drei Dreiecke $ABP$, $CDP$ und $BDP$ alle ähnlich sind.
 
-<img class="img-responsive center-block" alt="die Punkte A, B, C, D und P bilden drei Dreiecke: ABP, CDP und BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="die Punkte A, B, C, D und P bilden drei Dreiecke: ABP, CDP und BDP" src="https://cdn.freecodecamp.org/curriculum/project-euler/three-similar-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Es ist leicht zu beweisen, dass die drei Dreiecke nur ähnlich sein können, wenn $a = c$.
 

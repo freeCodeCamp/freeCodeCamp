@@ -12,7 +12,7 @@ $E_a$ は 式 $x^2 + 4y^2 = 4a^2$ で表される楕円です。
 
 $E_a'$ は、原点 $O(0, 0)$ を中心に、$0° &lt; θ &lt; 90°$ の範囲内で、$E_a$ を反時計回りに $θ$ 度回転させた像です。
 
-<img class="img-responsive center-block" alt="楕円 E_a と、θ 度回転させた楕円 E_a'" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px;" />
+<img alt="楕円 E_a と、θ 度回転させた楕円 E_a'" src="https://cdn.freecodecamp.org/curriculum/project-euler/crisscross-ellipses.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 原点に最も近い 2 つの交点から原点までの距離を $b$、それ以外の 2 つの交点から原点までの距離を $c$ とします。
 

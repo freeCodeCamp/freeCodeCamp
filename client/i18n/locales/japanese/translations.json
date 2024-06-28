@@ -100,7 +100,8 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "play-scene": "再生"
+    "play-scene": "再生",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -384,6 +385,7 @@
     "submit-and-go": "提出して次のチャレンジに進む",
     "congratulations": "おめでとうございます、合格です。次に進むにはコードを提出してください。",
     "i-completed": "このチャレンジを完了しました",
+    "example-code": "コード例",
     "test-output": "テストの結果はこちらに表示されます",
     "running-tests": "// テストを実行中です",
     "tests-completed": "// テストが完了しました",
@@ -574,6 +576,7 @@
     "other-ways": "<0>当団体の使命を支援する方法</0> は他にも多数ございます。",
     "if-support-further": "当チャリティーに更なるご支援をいただけるのであれば、<0>1 回ごとの寄付</0>、<1>小切手の送付</1>、<2>その他さまざまな支援方法</2>がございますのでご検討ください。",
     "failed-pay": "処理が完了しませんでした。再度お試しください。",
+    "try-another-method": "処理が完了しませんでした。他の決済方法をお試しください。",
     "try-again": "再試行してください。",
     "card-number": "カード番号:",
     "expiration": "有効期限:",
@@ -668,11 +671,12 @@
     "see-results": "{{searchQuery}} のすべての結果を見る",
     "no-tutorials": "投稿が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
-    "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした"
+    "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした",
+    "result-list": "検索結果"
   },
   "misc": {
     "offline": "オフラインのようです。進捗が保存されない可能性があります。",
-    "server-offline": "サーバーに接続できないため、進捗が保存されない可能性があります。このメッセージが引き続き表示される場合は <0>support</0> までご連絡ください。",
+    "server-offline": "サーバーに接続できませんでした。進捗状況が保存されなかった可能性があります。このメッセージが引き続き表示される場合は<0>サポート</0>までご連絡ください。",
     "unsubscribed": "購読解除が完了しました",
     "keep-coding": "どこへ行っても、コーディングを続けてください！",
     "email-signup": "E メールでサインアップ",
@@ -749,7 +753,7 @@
   "flash": {
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
-    "not-right": "問題が発生しました。レポートが生成され、freeCodeCamp.org チームへ通知されました。",
+    "generic-error": "問題が発生しました。お手数ですが、時間をおいて再度お試しください。エラーが解消されない場合には support@freecodecamp.org までお問い合わせください。",
     "went-wrong": "問題が発生しました。ご確認の上もう一度お試しください。",
     "account-deleted": "アカウントが正常に削除されました",
     "progress-reset": "進行状況がリセットされました",
@@ -785,7 +789,6 @@
     "cert-claim-success": "@{{username}} さん、あなたは無事に {{name}} 認定証を獲得しました！freeCodeCamp.org チームを代表してお祝い申し上げます！",
     "wrong-name": "{{name}} の認証に問題が発生しました。もう一度やり直してください。このエラーが引き続き表示される場合は、support@freeCodeCamp.org までお問い合わせください。",
     "error-claiming": "{{certName}} の請求エラー",
-    "refresh-needed": "支払いリクエストボタンは一度しか使用できません。ページを更新してやり直してください。",
     "username-not-found": "ユーザー名 \"{{username}}\" のユーザーが見つかりませんでした",
     "add-name": "他のユーザーが認定証を閲覧できるようにするには、このユーザーは自分の名前を自分のアカウントに追加する必要があります。",
     "not-eligible": "現在、このユーザーは freeCodeCamp.org 認定証に不適格となっています。",
@@ -869,7 +872,8 @@
     "own-work-url": "あなた自身の作品を提出してください。",
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
-    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。"
+    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
@@ -993,6 +997,8 @@
       "foundational-c-sharp-with-microsoft": "Microsoft 連携・基礎 C# 認定証",
       "A2 English for Developers": "開発者のための A2 レベル英語",
       "a2-english-for-developers": "開発者のための A2 レベル英語認定証",
+      "B1 English for Developers": "開発者のための B1 レベル英語",
+      "b1-english-for-developers": "開発者のための B1 レベル英語認定証",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "(レガシー) フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",

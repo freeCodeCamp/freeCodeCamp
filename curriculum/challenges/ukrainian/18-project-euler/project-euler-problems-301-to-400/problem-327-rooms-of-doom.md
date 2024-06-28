@@ -10,7 +10,7 @@ dashedName: problem-327-rooms-of-doom
 
 Три кімнати з’єднані між собою автоматичними дверима.
 
-<img class="img-responsive center-block" alt="три кімнати, з’єднані між собою автоматичними дверима" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img alt="три кімнати, з’єднані між собою автоматичними дверима" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Кожні двері керуються карткою доступу. Щойно ви заходите в кімнату, двері автоматично зачиняються, і картка доступу не може бути використана знову. На старті автомат видає необмежену кількість карток, але в кожній кімнаті (включно зі стартовою кімнатою) є сканери. Якщо вони виявляють, що ви маєте більше ніж три картки, або якщо сканери помітять картку доступу на підлозі, всі двері зачиняться назавжди. Проте в кожній кімнаті містяться ящики, в яких можна безпечно зберігати будь-яку кількість карток, які можуть бути використані пізніше.
 

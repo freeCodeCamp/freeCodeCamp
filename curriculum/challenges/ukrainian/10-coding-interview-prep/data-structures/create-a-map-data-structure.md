@@ -1,6 +1,6 @@
 ---
 id: 8d5823c8c441eddfaeb5bdef
-title: Створення структури даних Map (карта)
+title: Створіть структуру даних map
 challengeType: 1
 forumTopicId: 301629
 dashedName: create-a-map-data-structure
@@ -8,25 +8,25 @@ dashedName: create-a-map-data-structure
 
 # --description--
 
-Наступні кілька завдань будуть присвячені картам та геш-таблицям. Карти - це структури даних, в яких зберігаються пари ключ-значення. В JavaScript вони доступні нам у вигляді об'єктів. Карти забезпечують швидкий пошук збережених елементів на основі ключових значень та є дуже поширеними й корисними структурами даних.
+Наступні декілька завдань присвячені структурі map та хеш-таблицям. Структура map — це структура даних, яка зберігає пари ключ-значення. В JavaScript вони доступні у вигляді об’єктів. Структури map є дуже поширеними й корисними, а також забезпечують швидкий пошук збережених елементів на основі ключових значень.
 
 # --instructions--
 
-Попрактикуймося ж трохи у створенні нашої власної карти. Оскільки об'єкти JavaScript забезпечують ефективнішу структуру карт, ніж будь-що, що ми могли б написати тут, ця вправа насамперед є навчальною. Однак об'єкти JavaScript лише надають нам доступ до певних операцій. А якщо ж ми захочемо визначити власні операції для користувачів? Використовуйте наданий тут об'єкт `Map` як обгортку навколо `object` у JavaScript. Створіть такі методи та операції для об'єкта Map:
+Трішки попрактикуємось, створивши власну структуру map. Оскільки об’єкти JavaScript забезпечують ефективнішу структуру map, ніж будь-що інше, що ми могли б написати тут, ця вправа насамперед є навчальною. Однак об’єкти JavaScript надають лише певні операції. А якщо ми захочемо визначити власні операції? Використайте наданий об’єкт `Map` як обгортку навколо об’єкту JavaScript. Створіть такі методи та операції для об’єкта Map:
 
 <ul>
-<li><code>add</code> приймає пару <code>key, value</code> і додає до карти.</li>
-<li><code>remove</code> приймає ключ та видаляє пов'язану з ним пару <code>key, value</code></li>
-<li><code>get</code> приймає ключ <code>key</code> та повертає збережене значення <code>value</code></li>
-<li><code>has</code> приймає ключ <code>key</code> та повертає <dfn>true</dfn>, якщо ключ існує, або <dfn>false</dfn>, якщо його не існує.</li>
-<li><code>values</code> повертається як масив усіх значень на карті</li>
-<li><code>size</code> повертається як кількість елементів на карті</li>
-<li><code>clear</code> очищає карту</li>
+<li><code>add</code> приймає пару ключ-значення, яку додає до структури map</li>
+<li><code>remove</code> приймає ключ та видаляє пов’язану пару ключ-значення</li>
+<li><code>get</code> приймає ключ та повертає збережене значення</li>
+<li><code>has</code> приймає ключ та повертає <dfn>true</dfn>, якщо ключ існує, а в іншому випадку — <dfn>false</dfn></li>
+<li><code>values</code> повертає масив усіх значень в структурі map</li>
+<li><code>size</code> повертає кількість елементів в структурі map</li>
+<li><code>clear</code> очищає структуру map</li>
 </ul>
 
 # --hints--
 
-The `Map` data structure should exist.
+Має існувати структура даних `Map`.
 
 ```js
 assert(
@@ -40,7 +40,7 @@ assert(
 );
 ```
 
-The `Map` object should have the following methods: `add`, `remove`, `get`, `has`, `values`, `clear`, and `size`.
+Об’єкт `Map` повинен мати такі методи: `add`, `remove`, `get`, `has`, `values`, `clear` та `size`.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-The `add` method should add items to the map.
+Метод `add` має додавати елементи до структури map.
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-The `has` method should return `true` for added items and `false` for absent items.
+Метод `has` має повернути `true` для доданих елементів, а `false` — для відсутніх.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The `get` method should accept keys as input and should return the associated values.
+Метод `get` має приймати ключі як вхідні дані та повернути пов’язані значення.
 
 ```js
 assert(
@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-The `values` method should return all the values stored in the map as strings in an array.
+Метод `values` має повернути всі значення, збережені в структурі map, у вигляді рядків в масиві.
 
 ```js
 assert(
@@ -131,7 +131,7 @@ assert(
 );
 ```
 
-The `clear` method should empty the map and the `size` method should return the number of items present in the map.
+Метод `clear` має очистити структуру map, а метод `size` має повернути кількість елементів в структурі map.
 
 ```js
 assert(

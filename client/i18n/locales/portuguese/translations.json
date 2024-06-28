@@ -100,7 +100,8 @@
     "update-card": "Atualize seu cartão",
     "donate-now": "Doe agora",
     "confirm-amount": "Confirmar o valor",
-    "play-scene": "Pressione Play"
+    "play-scene": "Pressione Play",
+    "closed-caption": "Versão legendada"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -384,6 +385,7 @@
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
     "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
     "i-completed": "Já completei este desafio",
+    "example-code": "Exemplo de código",
     "test-output": "O resultado do seu código vai aparecer aqui",
     "running-tests": "// executando testes",
     "tests-completed": "// testes concluídos",
@@ -574,6 +576,7 @@
     "other-ways": "Aqui estão muitas <0>outras maneiras para ajudar a nossa missão beneficente</0>.",
     "if-support-further": "Se você quiser continuar apoiando nossa instituição de caridade, considere <0>fazer uma doação única</0>, <1>nos enviar um cheque</1> ou <2>aprender sobre outras formas através das quais você poderia apoiar nossa caridade.</2>",
     "failed-pay": "Opa. Parece que a sua transação não funcionou. Você poderia tentar de novo?",
+    "try-another-method": "Opa. Parece que a sua transação não funcionou. Você poderia tentar um outro método de pagamento?",
     "try-again": "Tente novamente.",
     "card-number": "Número do seu cartão:",
     "expiration": "Data de validade:",
@@ -610,7 +613,7 @@
     "welcome-stock": "Receberemos suas doações em ações com satisfação. Envie um e-mail para o Quincy diretamente e ele pode ajudá-lo com isso e compartilhar os detalhes da conta de corretora de nossa organização beneficente: quincy@freecodecamp.org.",
     "how-receipt": "Posso obter um recibo de doação para deduzi-la dos meus impostos?",
     "just-forward": "Claro. Basta encaminhar o recibo de sua transação para donors@freecodecamp.org, dizer que você gostaria de um recibo e quaisquer instruções especiais que você possa ter, e nós responderemos com um recibo para você.",
-    "how-update": "Criei uma doação mensal, mas preciso atualizar ou pausar a recorrência mensal. Como posso fazer isso?",
+    "how-update": "Criei uma doação mensal, mas preciso atualizar ou parar a recorrência mensal. Como posso fazer isso?",
     "take-care-of-this": "Apenas encaminhe um de seus recibos mensais para donors@freecodecamp.org e diga-nos o que você gostaria que fizéssemos. Cuidaremos disso para você e enviaremos sua confirmação.",
     "anything-else": "Há mais alguma coisa que eu possa aprender sobre doações para freeCodeCamp.org?",
     "other-support": "Se você quiser apoiar a nossa organização beneficente e a sua missão de alguma outra forma que não estiver listada aqui, ou se você tiver alguma dúvida, envie um e-mail para quincy@freecodecamp.org.",
@@ -668,7 +671,8 @@
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
-    "no-results": "Não conseguimos encontrar nada relacionado a <0>{{query}}</0>"
+    "no-results": "Não conseguimos encontrar nada relacionado a <0>{{query}}</0>",
+    "result-list": "Resultados da pesquisa"
   },
   "misc": {
     "offline": "Você parece estar off-line, seu progresso pode não ser salvo",
@@ -749,7 +753,7 @@
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
     "really-weird": "Algo realmente estranho aconteceu. Se acontecer novamente, considere apresentar um problema pelo endereço https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "Algo não está certo. Um relatório foi gerado e a equipe do freeCodeCamp.org foi notificada",
+    "generic-error": "Algo deu errado. Tente novamente em instantes ou entre em contato com support@freecodecamp.org, se o erro persistir.",
     "went-wrong": "Algo deu errado. Verifique e tente novamente",
     "account-deleted": "Sua conta foi excluída com sucesso",
     "progress-reset": "Seu progresso foi reiniciado",
@@ -785,7 +789,6 @@
     "cert-claim-success": "@{{username}}, você solicitou a certificação {{name}} com sucesso! Parabéns em nome da equipe do freeCodeCamp.org!",
     "wrong-name": "Algo deu errado com a verificação de {{name}}. Tente novamente. Se continuar a receber este erro, envie uma mensagem para support@freeCodeCamp.org para obter ajuda.",
     "error-claiming": "Erro ao solicitar {{certName}}",
-    "refresh-needed": "Você só pode usar o botão PaymentRequest uma vez. Atualize a página para começar de novo.",
     "username-not-found": "Não foi possível encontrar um usuário com o nome de usuário \"{{username}}\"",
     "add-name": "Este usuário precisa adicionar seu nome à sua conta para que outros possam visualizar sua certificação.",
     "not-eligible": "Este usuário não é elegível para certificações do freeCodeCamp.org no momento.",
@@ -869,7 +872,8 @@
     "own-work-url": "Lembre-se de enviar o seu próprio trabalho.",
     "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
     "ms-learn-link": "Use um link de troféu válido do Microsoft Learn.",
-    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path"
+    "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",
@@ -993,6 +997,8 @@
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com certificação da Microsoft",
       "A2 English for Developers": "A2 Inglês para Desenvolvedores",
       "a2-english-for-developers": "Certificação A2 Inglês para Desenvolvedores",
+      "B1 English for Developers": "B1 Inglês para Desenvolvedores",
+      "b1-english-for-developers": "Certificação B1 Inglês para Desenvolvedores",
       "Legacy Front End": "Front-end legado",
       "legacy-front-end": "Certificação de front-end legada",
       "Legacy Back End": "Back-end legado",

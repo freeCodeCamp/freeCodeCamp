@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "Lerne zu programmieren — kostenlos.",
@@ -384,6 +385,7 @@
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
     "congratulations": "Glückwunsch, dein Code hat bestanden. Sende deinen Code ein, um fortzufahren.",
     "i-completed": "Ich habe diese Herausforderung abgeschlossen",
+    "example-code": "Example Code",
     "test-output": "Deine Testergebnisse werden hier erscheinen",
     "running-tests": "// Tests werden durchgeführt",
     "tests-completed": "// Tests abgeschlossen",
@@ -574,6 +576,7 @@
     "other-ways": "Here are many <0>other ways you can support our charity's mission</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "Oh - oh. Es sieht so aus, als ob deine Transaktion nicht durchgeführt werden konnte. Kannst du es bitte noch einmal versuchen?",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "Bitte versuche es erneut.",
     "card-number": "Deine Kartennummer:",
     "expiration": "Ablaufdatum:",
@@ -610,7 +613,7 @@
     "welcome-stock": "We would welcome your stock donations. Please email Quincy directly and he can help you with this, and share our charity's brokerage account details: quincy@freecodecamp.org.",
     "how-receipt": "Kann ich eine Spendenbescheinigung bekommen, damit ich meine Spende von der Steuer absetzen kann?",
     "just-forward": "Ja, natürlich. Schicke einfach die Quittung deiner Transaktion an donors@freecodecamp.org, sag uns, dass du eine Quittung möchtest und welche besonderen Anweisungen du hast, und wir schicken dir eine Quittung zu.",
-    "how-update": "Ich habe eine monatliche Spende eingerichtet, aber ich muss die monatliche Zahlung aktualisieren oder aussetzen. Wie kann ich das tun?",
+    "how-update": "I set up a monthly donation, but I need to update or stop the monthly recurrence. How can I do this?",
     "take-care-of-this": "Schicke einfach eine deiner monatlichen Spendenquittungen an donors@freecodecamp.org und sag uns, was wir für dich tun sollen. Wir erledigen das für dich und schicken dir eine Bestätigung.",
     "anything-else": "Gibt es noch etwas, was ich über das Spenden an freeCodeCamp.org erfahren kann?",
     "other-support": "If there is some other way you'd like to support our charity and its mission that isn't listed here, or if you have any questions at all, please email Quincy at quincy@freecodecamp.org.",
@@ -668,7 +671,8 @@
     "see-results": "Alle Ergebnisse für {{searchQuery}} ansehen",
     "no-tutorials": "Keine Tutorials gefunden",
     "try": "Suchst du nach etwas? Versuche es mit der Suchleiste auf dieser Seite.",
-    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden"
+    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "Du scheinst offline zu sein, dein Fortschritt wird möglicherweise nicht gespeichert",
@@ -749,7 +753,7 @@
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Etwas wirklich Seltsames ist passiert. Wenn es wieder passiert, erwäge bitte, einen Fehler auf https://github.com/freeCodeCamp/freeCodeCamp/issues/new zu melden.",
-    "not-right": "Irgendetwas ist nicht in Ordnung. Es wurde ein Bericht erstellt und das freeCodeCamp.org Team wurde benachrichtigt",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Etwas ist schief gelaufen, bitte überprüfe und versuche es erneut",
     "account-deleted": "Dein Konto wurde erfolgreich gelöscht",
     "progress-reset": "Dein Fortschritt wurde zurückgesetzt",
@@ -785,7 +789,6 @@
     "cert-claim-success": "@{{username}}, du hast erfolgreich die {{name}} Zertifizierung bestanden! Herzlichen Glückwunsch im Namen des freeCodeCamp.org Teams!",
     "wrong-name": "Bei der Überprüfung von {{name}} ist etwas schief gelaufen, bitte versuche es erneut. Wenn du weiterhin diesen Fehler erhältst, kannst du eine Nachricht an support@freeCodeCamp.org senden, um Hilfe zu erhalten.",
     "error-claiming": "Fehler beim Anfordern von {{certName}}",
-    "refresh-needed": "Du kannst den Button Zahlungsanforderung nur einmal verwenden. Aktualisiere die Seite, um neu zu beginnen.",
     "username-not-found": "Wir konnten keinen Benutzer mit dem Benutzernamen \"{{username}}\" finden",
     "add-name": "Dieser Nutzer muss seinen Namen zu seinem Konto hinzufügen, damit andere seine Zertifizierungen sehen können.",
     "not-eligible": "Dieser Benutzer ist zu diesem Zeitpunkt nicht für freeCodeCamp.org-Zertifizierungen berechtigt.",
@@ -869,7 +872,8 @@
     "own-work-url": "Denke daran, deine eigene Arbeit einzureichen.",
     "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
-    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",
@@ -993,6 +997,8 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
+      "B1 English for Developers": "B1 English for Developers",
+      "b1-english-for-developers": "B1 English for Developers Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",

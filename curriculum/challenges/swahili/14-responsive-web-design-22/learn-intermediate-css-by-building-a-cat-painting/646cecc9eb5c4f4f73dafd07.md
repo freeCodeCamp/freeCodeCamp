@@ -11,7 +11,7 @@ Sogeza sikio la kushoto hadi mahali kwa kuweka position kuwa `absolute`, `top` y
 
 # --hints--
 
-Kichaguzi chako cha `.cat-left-ear` kinafaa kuwa na sifa ya `position` iliyowekwa kuwa `absolute`. Usisahau kuongeza nusu koloni.
+Kichaguzi chako cha `.cat-left-ear` kinafaa kuwa na sifa ya `position` iliyowekwa kuwa `absolute`. Don't forget to add a semicolon.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

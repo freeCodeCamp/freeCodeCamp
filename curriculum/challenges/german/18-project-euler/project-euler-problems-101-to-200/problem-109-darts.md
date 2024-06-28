@@ -10,7 +10,7 @@ dashedName: problem-109-darts
 
 Beim Dartspiel wirft ein Spieler drei Dartpfeile auf eine Zielscheibe, die in zwanzig gleich große Abschnitte mit den Nummern eins bis zwanzig unterteilt ist.
 
-<img class="img-responsive center-block" alt="Dartscheibe" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;" />
+<img alt="Dartscheibe" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 The score of a dart is determined by the number of the region that the dart lands in. Eine Dart-Landung außerhalb des rot-grünen äußeren Rings wird mit Null bewertet. Die schwarzen und cremefarbenen Bereiche in diesem Ring stellen einfache Punkte dar. Der rot-grüne äußere und mittlere Ring erzielen jedoch doppelte bzw. dreifache Punkte.
 

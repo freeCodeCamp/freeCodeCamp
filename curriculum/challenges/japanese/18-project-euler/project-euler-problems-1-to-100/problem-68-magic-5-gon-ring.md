@@ -10,7 +10,7 @@ dashedName: problem-68-magic-5-gon-ring
 
 下図は 1 から 6 までの数字が埋められた「魔法」の三角リングで、それぞれの線に沿って数字を足していくと 9 になります。
 
-<img class="img-responsive center-block" alt="三角リングの完成例" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="三角リングの完成例" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 外側のノードのうち値が最も低いノードから伸びる線上にある 3 つのノードのグループ (この例では 4, 3, 2) から始めて、**時計回り** に進むと、それぞれの解を一意に記述できます。 例えば、上の解は 4,3,2; 6,2,1; 5,1,3 という集合で表すことができます。
 
@@ -35,7 +35,7 @@ dashedName: problem-68-magic-5-gon-ring
 
 1 から 10 の数字を使用した場合、それらの配置に応じて 16 桁および 17 桁の文字列が得られます。 「魔法」の五角リングで得られる **16 桁** の文字列のうち最大のものを求めなさい。
 
-<img class="img-responsive center-block" alt="数字のない五角リングの図" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="数字のない五角リングの図" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 # --hints--
 

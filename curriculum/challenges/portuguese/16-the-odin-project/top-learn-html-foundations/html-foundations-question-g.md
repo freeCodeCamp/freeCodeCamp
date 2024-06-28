@@ -13,19 +13,19 @@ O HTML e o CSS são duas linguagens que trabalham em conjunto para criar tudo o 
 
 ## --text--
 
-What are the primary responsibilities of HTML and CSS in creating a webpage?
+Quais são as responsabilidades primárias do HTML e do CSS na criação de uma página para a web?
 
 ## --answers--
 
-HTML structures the content, while CSS styles the elements.
+O HTML estrutura o conteúdo, enquanto o CSS estiliza os elementos.
 
 ---
 
-HTML creates the visual design, while CSS organizes the content.
+O HTML cria o projeto visual, enquanto o CSS organiza o conteúdo.
 
 ---
 
-CSS manages the functionality, while HTML controls the layout.
+O CSS gerencia a funcionalidade, enquanto o HTML controla o layout.
 
 
 ## --video-solution--

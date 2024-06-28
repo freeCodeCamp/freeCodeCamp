@@ -10,7 +10,7 @@ dashedName: problem-154-exploring-pascals-pyramid
 
 それぞれの球がすぐ下の層の 3 つの球の上に乗っているような構造を繰り返し、三角錐を作ります。
 
-<img class="img-responsive center-block" alt="球が 4 段に積まれた三角錐" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px;" />
+<img alt="球が 4 段に積まれた三角錐" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 次に、頂点から各位置への経路の数を計算します。経路は頂点から始まり、現在の位置のすぐ下にある 3 つの球のいずれかに下がっていきます。 したがって、ある位置に到達する経路の数は、その位置の上にある数字の和です (位置によって異なりますが、1 つの位置の上に最大 3 つの数字があります)。
 

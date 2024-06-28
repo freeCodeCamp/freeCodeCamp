@@ -18,7 +18,7 @@ Tuttavia, Simple Simon, il macchinista del treno, non è noto per la sua efficie
 
 Usando quattro carrozze, i peggiori arrangiamenti possibili per Simon, che chiamiamo maximix, sono $DACB$ e $DBAC$; ognuno richiede quattro rotazioni (anche se usando l'approccio più efficiente potrebbero essere risolti usando solo tre rotazioni). Il processo che usa per $DACB$ è mostrato sotto.
 
-<img class="img-responsive center-block" alt="cinque rotazioni per arrangiamento maximix DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;" />
+<img alt="cinque rotazioni per arrangiamento maximix DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Possiamo verificare che ci sono 24 arrangiamenti maximix per sei carrozze, di cui il decimo arrangiamento lessicografico maximix è $DFAECB$.
 

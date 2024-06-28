@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 Das folgende ungekreuzte Netz besteht aus sieben Knoten und zwölf Kanten mit einem Gesamtgewicht von 243.
 
-<img class="img-responsive center-block" alt="Netzwerk mit sieben Knoten und zwölf Kanten" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img alt="Netzwerk mit sieben Knoten und zwölf Kanten" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Das gleiche Netzwerk kann durch die folgende Matrix dargestellt werden.
 
@@ -27,7 +27,7 @@ Das gleiche Netzwerk kann durch die folgende Matrix dargestellt werden.
 
 Es ist jedoch möglich, das Netz zu optimieren, indem man einige Kanten entfernt und trotzdem sicherstellt, dass alle Punkte des Netzes verbunden bleiben. Das Netz, das die maximale Reduzierung erreicht, ist unten dargestellt. Es hat ein Gewicht von 93, was eine Einsparung von 243 - 93 = 150 gegenüber dem ursprünglichen Netz bedeutet.
 
-<img class="img-responsive center-block" alt="Netzwerk mit sieben Knoten und sechs linken Kanten: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img alt="Netzwerk mit sieben Knoten und sechs linken Kanten: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Finde mit Hilfe von `network`, einer 2D-Anordnung, das das Netz in Form einer Matrix darstellt, die maximale Einsparung, die durch das Entfernen überflüssiger Kanten erreicht werden kann, während das Netz verbunden bleibt. Eckpunkte, die keine Verbindung haben, werden mit `-1` dargestellt.
 

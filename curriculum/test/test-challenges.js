@@ -417,7 +417,9 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
             const timePerTest =
               challengeType === challengeTypes.python ? 10000 : 5000;
             it('Test suite must fail on the initial contents', async function () {
-              this.timeout(timePerTest * tests.length + 1000);
+              // TODO: some tests take a surprisingly long time to setup the
+              // test runner, so this timeout is large while we investigate.
+              this.timeout(timePerTest * tests.length + 20000);
               // suppress errors in the console.
               const oldConsoleError = console.error;
               console.error = () => {};

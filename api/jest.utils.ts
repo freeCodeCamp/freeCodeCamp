@@ -34,21 +34,33 @@ export const getCsrfToken = (setCookies: string[]): string | undefined => {
 
 export const ORIGIN = 'https://www.freecodecamp.org';
 
+export const getCookies = (setCookies: string[]): string => {
+  for (const cookie of setCookies) {
+    expect(cookie).toMatch(/.*=.*/);
+  }
+  return setCookies.map(cookie => cookie.split(';')[0]).join('; ');
+};
+
 export function superRequest(
   resource: string,
   config: {
     method: 'GET' | 'POST' | 'PUT' | 'DELETE';
     setCookies?: string[];
+    headers?: { referer: string };
   },
   options?: Options
 ): request.Test {
-  const { method, setCookies } = config;
+  const { method, setCookies, headers } = config;
   const { sendCSRFToken = true } = options ?? {};
 
   const req = requests[method](resource).set('Origin', ORIGIN);
 
   if (setCookies) {
-    void req.set('Cookie', setCookies);
+    void req.set('Cookie', getCookies(setCookies));
+  }
+
+  if (headers) {
+    void req.set('Referer', headers.referer);
   }
 
   const csrfToken = (setCookies && getCsrfToken(setCookies)) ?? '';

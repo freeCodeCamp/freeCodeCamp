@@ -4,9 +4,6 @@
   "dashedName": "project-euler-problems-101-to-200",
   "helpCategory": "Euler",
   "order": 1,
-  "time": "",
-  "template": "",
-  "required": [],
   "superBlock": "project-euler",
   "disableLoopProtectTests": true,
   "challengeOrder": [

@@ -8,7 +8,8 @@ import {
   editorValidator,
   composeValidators,
   fCCValidator,
-  httpValidator
+  httpValidator,
+  sourceCodeLinkExistsValidator
 } from './form-validators';
 import FormFields, { FormOptions } from './form-fields';
 
@@ -35,43 +36,59 @@ function validateFormValues(
   formValues: FormValues,
   options: FormOptions
 ): ValidatedValues {
-  const { isEditorLinkAllowed, isLocalLinkAllowed, types } = options;
+  const {
+    isEditorLinkAllowed,
+    isLocalLinkAllowed,
+    isSourceCodeLinkRequired,
+    types
+  } = options;
   const validatedValues: ValidatedValues = {
     values: {},
     errors: [],
     invalidValues: []
   };
-  const urlValues = Object.entries(formValues).reduce(
-    (result, [key, value]) => {
-      // NOTE: pathValidator is not used here, because it is only used as a
-      // suggestion - should not prevent form submission
-      const validators = [fCCValidator, httpValidator];
-      const isSolutionLink = key !== 'githubLink';
-      if (isSolutionLink && !isEditorLinkAllowed) {
-        validators.push(editorValidator);
-      }
-      if (!isLocalLinkAllowed) {
-        validators.push(localhostValidator);
-      }
 
-      const nullOrWarning = composeValidators(...validators)(value);
-      if (nullOrWarning) {
-        validatedValues.invalidValues.push(nullOrWarning);
+  const formFields = Object.entries(formValues);
+  // We don't always get a githubLink field in formValues, so we can't simply
+  // validate that field like the others. We have to handle it separately.
+  if (isSourceCodeLinkRequired) {
+    const githubLink = formValues['githubLink'];
+    if (!githubLink) {
+      validatedValues.invalidValues.push(sourceCodeLinkExistsValidator(''));
+    }
+  }
+
+  const urlValues = formFields.reduce((result, [key, value]) => {
+    // NOTE: pathValidator is not used here, because it is only used as a
+    // suggestion - should not prevent form submission
+    const validators = [fCCValidator, httpValidator];
+    const isSolutionLink = key !== 'githubLink';
+    if (isSolutionLink && !isEditorLinkAllowed) {
+      validators.push(editorValidator);
+    }
+    if (!isLocalLinkAllowed) {
+      validators.push(localhostValidator);
+    }
+    if (isSourceCodeLinkRequired) {
+      validators.push(sourceCodeLinkExistsValidator);
+    }
+
+    const nullOrWarning = composeValidators(...validators)(value);
+    if (nullOrWarning) {
+      validatedValues.invalidValues.push(nullOrWarning);
+    }
+    if (value && types && types[key] === 'url') {
+      try {
+        value = normalizeUrl(value, normalizeOptions);
+      } catch (err: unknown) {
+        validatedValues.errors.push({
+          error: err as { message?: string },
+          value
+        });
       }
-      if (value && types && types[key] === 'url') {
-        try {
-          value = normalizeUrl(value, normalizeOptions);
-        } catch (err: unknown) {
-          validatedValues.errors.push({
-            error: err as { message?: string },
-            value
-          });
-        }
-      }
-      return { ...result, [key]: value };
-    },
-    {}
-  );
+    }
+    return { ...result, [key]: value };
+  }, {});
   validatedValues.values = urlValues;
   return validatedValues;
 }

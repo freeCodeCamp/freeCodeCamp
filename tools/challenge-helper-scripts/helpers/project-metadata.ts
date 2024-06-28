@@ -13,7 +13,6 @@ export type Meta = {
   template: string;
   required: string[];
   superBlock: string;
-  superOrder: number;
   challengeOrder: { id: string; title: string }[];
 };
 

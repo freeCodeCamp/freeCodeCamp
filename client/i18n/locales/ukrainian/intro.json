@@ -362,7 +362,7 @@
         "intro": [
           "Функційне програмування — це популярний підхід до розробки програмного забезпечення. У функційному програмуванні код впорядкований у менші функції, які можна об’єднати для створення складних програм.",
           "У цьому проєкті зі створення застосунку з таблицями ви дізнаєтесь про парсинг та обчислення математичних виразів, реалізацію функцій таблиць, обробку посилань на комірки та створення інтерактивних вебінтерфейсів. Ви дізнаєтесь, як динамічно оновити сторінку на основі введення користувача.",
-          "Цей проєкт охопить методи <code>map()</code>, <code>find()</code>, <code>parseInt()</code> та <code>includes()</code>."
+          "У цьому проєкті охоплено різні поняття, серед яких методи <code>map()</code>, <code>find()</code> й <code>includes()</code> та функція <code>parseInt()</code>."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -409,12 +409,12 @@
           "Цей проєкт допоможе зрозуміти основні поняття за цими алгоритмами та як їх можна застосувати для сортування числових даних у вебзастосунках."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Вивчіть проміжне алгоритмічне мислення, створивши гру з кубиками",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "Алгоритмічне мислення передбачає здатність розбивати складні завдання на чітко визначені кроки.",
-          "У проєкті зі створення гри з кубиками ви дізнаєтесь, як керувати станом гри, реалізувати логіку гри для кидання кубиків, зберігати бали та застосовувати правила для різних комбінацій.",
-          "Цей проєкт охоплює обробку подій, маніпулювання масивами, умовну логіку та динамічне оновлення інтерфейсу користувача на основі стану гри."
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -874,6 +874,20 @@
         "title": "Проєкт «Створіть калькулятор вірогідностей»",
         "intro": ["Цей проєкт потрібно виконати, щоб отримати сертифікацію."]
       },
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Вивчіть спеціальні методи, створивши векторний простір",
+        "intro": [
+          "Спеціальні методи в Python викликаються у відповідь на конкретні операції та дозволяють налаштувати поведінку об’єктів у деталізований й ефективний спосіб.",
+          "У цьому проєкті ви дослідите деякі з найпоширеніших спеціальних методів, вивчаючи вектори через створення векторного простору."
+        ]
+      },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Вивчіть інкапсуляцію, створивши калькулятор траєкторії налітної частинки",
+        "intro": [
+          "Інкапсуляція — це основний принцип ООП, що базується на написанні коду, який обмежує прямий доступ до даних.",
+          "У цьому проєкті ви відкриєте нові поняття, пов’язані з інкапсуляцією, серед яких гетери, сетери та спотворення імен, і використовуватимете їх разом з тим, що вже вивчили, щоб створити програму, яка обчислює траєкторію налітної частинки."
+        ]
+      },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
         "title": "Вивчіть метод бісекції, знайшовши квадратний корінь числа",
         "intro": [
@@ -1250,6 +1264,16 @@
         "intro": [
           "Випробуйте свої навички по JavaScript, побудувавши базові функції."
         ]
+      },
+      "top-learn-arrays-and-loops": {
+        "title": "Вивчіть масиви та цикли",
+        "intro": ["Дізнайтесь про масиви та цикли в JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Навчіться розв’язувати проблеми та розуміти помилки",
+        "intro": [
+          "Дізнайтесь, як розв’язувати проблеми та розуміти помилки в JavaScript."
+        ]
       }
     }
   },
@@ -1443,62 +1467,195 @@
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Дізнайтесь, як використовувати базові слова з програмування",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс ознайомить вас з основною термінологією, пов’язаною з програмуванням. Ви навчитесь ставити запитання щодо основних понять програмування."
+        ]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Дізнайтесь, як використовувати поняття та терміни з програмування",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви ознайомитесь з термінами, пов’язаними з програмуванням, і навчитесь використовувати їх у розмові."
+        ]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Дізнайтесь, як обговорювати технологічні тренди та оновлення",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви ознайомитесь з деякими останніми трендами у світі технологій і навчитесь обговорювати їх англійською мовою."
+        ]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "Дізнайтесь, як допомогти співпрацівнику розв’язати проблему на GitHub",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви вивчите вирази, пов’язані із проханням про допомогу у колеги, а також тим, як запропонувати свою допомогу."
+        ]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "Дізнайтесь, як ділитись своїм прогресом на щотижневій зустрічі",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс покаже, як говорити про свої проєкти в контексті того, що ви вже зробили та що виконуєте зараз."
+        ]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Дізнайтесь, як просити роз’яснення коду",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як ставити запитання, щоб уточнити те, що не зовсім зрозуміле у коді."
+        ]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Дізнайтесь, як документувати код проєкту",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс ознайомить вас з виразами, пов’язаними із документацією коду."
+        ]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Дізнайтесь, як читати та розуміти документацію",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ще більше виразів, пов’язаних із документацією коду, а також декілька порад, як розуміти його."
+        ]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Дізнайтесь, як аналізувати документацію",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як правильно читати документацію та аналізувати її."
+        ]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Дізнайтесь, як ділитись прогресом та досягненнями",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитесь ділитись прогресом та досягненнями зі своїми колегами."
+        ]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Дізнайтесь, як говорити про оновлення та плани щодо завдань і проєктів",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як говорити про останні досягнення проєктів та про свої плани."
+        ]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Дізнайтесь, як погоджуватись та не погоджуватись",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс навчить, як погоджуватись та не погоджуватись з твердженнями інших."
+        ]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Дізнайтесь, як надавати технічну підтримку та супровід",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви дізнаєтесь, як пропонувати свою допомогу по технічних питаннях."
+        ]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Дізнайтесь, як запитувати та отримувати супровід",
-        "intro": ["", ""]
+        "intro": [
+          "Цей курс роз’яснить, як просити допомоги від колеги, коли це потрібно."
+        ]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Дізнайтесь, як надавати пояснення при допомозі іншим",
+        "intro": [
+          "Цей курс ознайомить з тим, як правильно надавати пояснення іншим людям."
+        ]
+      }
+    }
+  },
+  "b1-english-for-developers": {
+    "title": "Англійська мова рівня B1 для розробників (бета-версія)",
+    "note": "Сертифікація знаходиться в стані активної розробки. Наразі для цього розділу немає сертифіката, але він буде доступний найближчим часом. Тим часом ви можете дослідити курси, які ми вже створили.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-how-to-describe-places-and-events": {
+        "title": "Дізнайтесь, як описувати місця і події",
+        "intro": [""]
+      },
+      "learn-how-to-talk-about-past-experiences": {
+        "title": "Дізнайтесь, як говорити про досвід",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-past-activities": {
+        "title": "Дізнайтесь, як говорити про дії з минулого",
+        "intro": ["", ""]
+      },
+      "learn-present-perfect-while-talking-about-accessibility": {
+        "title": "Дізнайтесь про теперішній доконаний час, говорячи про доступність",
+        "intro": ["", ""]
+      },
+      "learn-how-to-plan-future-events": {
+        "title": "Дізнайтесь, як планувати майбутні події",
+        "intro": ["", ""]
+      },
+      "learn-future-continuous-while-describing-actions": {
+        "title": "Дізнайтесь про майбутній тривалий час, описуючи дії",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-conditionals": {
+        "title": "Дізнайтесь, як використовувати умовні речення",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-feedback": {
+        "title": "Дізнайтесь, як ділитись фідбеком",
+        "intro": ["", ""]
+      },
+      "learn-how-to-share-your-opinion": {
+        "title": "Дізнайтесь, як ділитись своєю думкою",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-agreement": {
+        "title": "Дізнайтесь, як виражати згоду",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-disagreement": {
+        "title": "Дізнайтесь, як виражати незгоду",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-concerns": {
+        "title": "Дізнайтесь, як виражати занепокоєння",
+        "intro": ["", ""]
+      },
+      "learn-how-to-express-decisions-based-on-comparisons": {
+        "title": "Дізнайтесь, як виражати вибір на основі порівняння",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-modal-verbs": {
+        "title": "Дізнайтесь, як використовувати модальні дієслова",
+        "intro": ["", ""]
+      },
+      "learn-how-to-manage-a-conversation": {
+        "title": "Дізнайтесь, як керувати бесідою",
+        "intro": ["", ""]
+      },
+      "learn-how-to-clarify-misunderstandings": {
+        "title": "Дізнайтесь, як уточнити непорозуміння",
+        "intro": ["", ""]
+      },
+      "learn-about-speculation-and-requests": {
+        "title": "Дізнайтесь про припущення та запити",
+        "intro": ["", ""]
+      },
+      "learn-about-adverbial-phrases": {
+        "title": "Дізнайтесь про прислівникові звороти",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-adjectives-in-conversations": {
+        "title": "Дізнайтесь, як використовувати прикметники",
+        "intro": ["", ""]
+      },
+      "learn-determiners-and-advanced-use-of-articles": {
+        "title": "Дізнайтесь про означальні слова та поглиблене використання артиклів",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-reported-speech": {
+        "title": "Дізнайтесь, як використовувати непряму мову",
+        "intro": ["", ""]
+      },
+      "learn-how-to-use-prepositions-according-to-context": {
+        "title": "Дізнайтесь, як використовувати прийменники відповідно до контексту",
+        "intro": ["", ""]
+      },
+      "learn-how-to-talk-about-numbers-with-a-coworker": {
+        "title": "Дізнайтесь, як говорити про числа з колегою",
+        "intro": ["", ""]
+      },
+      "learn-common-phrasal-verbs-and-idioms": {
+        "title": "Дізнайтесь про найпоширеніші фразові дієслова та ідіоми",
         "intro": ["", ""]
       }
     }

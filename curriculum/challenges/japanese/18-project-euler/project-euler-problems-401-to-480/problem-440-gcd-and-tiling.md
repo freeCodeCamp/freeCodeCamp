@@ -10,11 +10,11 @@ dashedName: problem-440-gcd-and-tiling
 
 1 × 2 のタイル、または下図のように 1 桁の 10 進数が書かれた 1 × 1 のタイルを、長さ$n$、高さ 1 の板全体に貼ります。
 
-<img class="img-responsive center-block" alt="1 桁の 10 進数が書かれた 1 × 1 のブロック と、1 x 2 のブロック" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px;" />
+<img alt="1 桁の 10 進数が書かれた 1 × 1 のブロック と、1 x 2 のブロック" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 例えば、$n = 8$ のときに板にタイルを貼る方法をいくつか示します。
 
-<img class="img-responsive center-block" alt="長さ n = 8 の板にタイルを貼る方法の例" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px;" />
+<img alt="長さ n = 8 の板にタイルを貼る方法の例" src="https://cdn.freecodecamp.org/curriculum/project-euler/gcd-and-tiling-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 上述の長さ $n$ の板にタイルを貼る方法の数を $T(n)$ とします。
 

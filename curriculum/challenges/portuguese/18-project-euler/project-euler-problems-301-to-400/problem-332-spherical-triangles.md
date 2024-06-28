@@ -10,7 +10,7 @@ dashedName: problem-332-spherical-triangles
 
 Um triângulo esférico é uma figura formada na superfície de uma esfera por três grandes arcos circulares que se cruzam entre pares em três vértices.
 
-<img class="img-responsive center-block" alt="triângulo esférico formado na superfície de uma esfera" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
+<img alt="triângulo esférico formado na superfície de uma esfera" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $C(r)$ como a esfera com o centro (0,0,0) e raio $r$.
 

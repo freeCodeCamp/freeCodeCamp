@@ -12,7 +12,7 @@ dashedName: problem-226-a-scoop-of-blancmange
 
 Площа під кривою бланманже дорівнює $\frac{1}{2}$, як показано на рисунку нижче рожевим.
 
-<img class="img-responsive center-block" alt="рисунок кривої бланманже з колом С" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px;" />
+<img alt="рисунок кривої бланманже з колом С" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $C$ буде колом з центром ($\frac{1}{4}$,$\frac{1}{2}$) та радіусом $\frac{1}{4}$, як показано на рисунку чорним.
 

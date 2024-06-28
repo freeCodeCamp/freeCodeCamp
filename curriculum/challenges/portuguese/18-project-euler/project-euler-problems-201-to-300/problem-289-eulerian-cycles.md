@@ -16,7 +16,7 @@ Um ciclo euleriano em $E(m,n)$ é um caminho fechado que passa por cada arco exa
 
 A imagem abaixo mostra $E(3,3)$ e um exemplo de um caminho que euleriano sem cruzamentos.
 
-<img class="img-responsive center-block" alt="ciclo Euleriano (3, 3) e caminho euleriano sem cruzamento" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;" />
+<img alt="ciclo Euleriano (3, 3) e caminho euleriano sem cruzamento" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $L(m,n)$ como o número de caminhos eulerianos sem cruzamento em $E(m,n)$. Por exemplo, $L(1,2) = 2$, $L(2,2) = 37$ e $L(3,3) = 104290$.
 

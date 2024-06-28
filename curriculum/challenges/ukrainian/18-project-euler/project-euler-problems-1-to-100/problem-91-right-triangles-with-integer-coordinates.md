@@ -10,11 +10,11 @@ dashedName: problem-91-right-triangles-with-integer-coordinates
 
 Точки ${P}(x_1, y_1)$ та ${Q}(x_2, y_2)$ нанесені на координатах та з’єднані з координатами ${O}(0, 0)$, утворюючи ${\Delta}OPQ$.
 
-<img class="img-responsive center-block" alt="графік, що зображує точки P (x_1, y_1) і Q(x_2, y_2) у цілих координатах, які приєднуються до координат O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;" />
+<img alt="графік, що зображує точки P (x_1, y_1) і Q(x_2, y_2) у цілих координатах, які приєднуються до координат O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Існує чотирнадцять трикутників з прямим кутом, який можна утворити, коли кожна координата знаходиться між 0 та 2 включно; тобто $0 ≤ x_1, y_1, x_2, y_2 ≤ 2$.
 
-<img class="img-responsive center-block" alt="діаграма, що показує 14 трикутників, які містять прямий кут, що може бути утворений, якщо кожна координата знаходиться між 0 та 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;" />
+<img alt="діаграма, що показує 14 трикутників, які містять прямий кут, що може бути утворений, якщо кожна координата знаходиться між 0 та 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Скільки прямокутних трикутників можна утворити за умови $0 ≤ x_1, y_1, x_2, y_2 ≤ limit$?
 

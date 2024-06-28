@@ -10,7 +10,7 @@ dashedName: problem-138-special-isosceles-triangles
 
 Betrachte das gleichschenklige Dreieck mit der Basislänge, $b = 16$, und Schenkel, $L = 17$.
 
-<img class="img-responsive center-block" alt="gleichschenkliges Dreieck mit Kanten, die als L bezeichnet werden - zwei Kanten mit der gleichen Länge und der Basis des Dreiecks wie b; und Höhe des Dreiecks - h von der Basis des Dreiecks bis zum Winkel zwischen den L-Kanten" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px;" />
+<img alt="gleichschenkliges Dreieck mit Kanten, die als L bezeichnet werden - zwei Kanten mit der gleichen Länge und der Basis des Dreiecks wie b; und Höhe des Dreiecks - h von der Basis des Dreiecks bis zum Winkel zwischen den L-Kanten" src="https://cdn.freecodecamp.org/curriculum/project-euler/special-isosceles-triangles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Mit Hilfe des Satzes des Pythagoras kannst du feststellen, dass die Höhe des Dreiecks $h = \sqrt{{17}^2 - 8^2} = 15$ ist, also um eins kleiner als die Basislänge.
 

@@ -1,13 +1,13 @@
 ---
 id: 6571b2fecc1de61d7b4dd381
-title: Introduction to Flexbox Question C
+title: Questão C de Introdução ao Flexbox
 challengeType: 15
 dashedName: introduction-flexbox-question-c
 ---
 
 # --description--
 
-Somewhat confusingly, any element can be both a flex container and a flex item. Said another way, you can also put `display: flex` on a flex item and then use flexbox to arrange its children.
+Um pouco confuso, qualquer elemento pode ser tanto um contentor flexível como um item flexível. Said another way, you can also put `display: flex` on a flex item and then use flexbox to arrange its children.
 
 <img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-03.png" style="width: 95%; height: 95%;" alt="a flex container that has multiple flex items, within those flex items are nested flex items as well. Making the parent of those nested flex items also a flex container." />
 

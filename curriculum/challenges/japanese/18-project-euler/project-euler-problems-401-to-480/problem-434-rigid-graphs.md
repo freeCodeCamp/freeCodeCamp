@@ -20,11 +20,11 @@ dashedName: problem-434-rigid-graphs
 
 ユークリッド平面に埋め込まれた格子グラフは、下のアニメーションが示すように剛なグラフではありません。
 
-<img class="img-responsive center-block" alt="ユークリッド平面に埋め込まれた格子グラフが剛でないことを示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="ユークリッド平面に埋め込まれた格子グラフが剛でないことを示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ただし、マスに対角線の辺を追加すれば剛なグラフになります。 例えば、2x3 の格子グラフの場合、剛なグラフにする方法は次のように 19 通りあります。
 
-<img class="img-responsive center-block" alt="2x3 の格子グラフを剛なグラフにする 19 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px;" />
+<img alt="2x3 の格子グラフを剛なグラフにする 19 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/rigid-graphs-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 なお、この問題の目的上、格子グラフに剛性を持たせる別の方法として、対角線の向きを変えたり 1 つのセルに対角線を 2 本追加したりすることは考えないものとします。
 

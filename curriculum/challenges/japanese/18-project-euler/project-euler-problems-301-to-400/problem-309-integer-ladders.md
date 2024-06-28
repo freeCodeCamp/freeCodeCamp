@@ -10,7 +10,7 @@ dashedName: problem-309-integer-ladders
 
 古典的な「交差するはしご」問題では、それぞれの長さが $x$ と $y$ のはしご 2 本が、狭く平らな道の両壁に 1 本ずつ立て掛けられています。 また、2 本のはしごが交差する個所の、路面からの高さ $h$ が与えられ、道幅 ($w$) を導くよう求められます。
 
-<img class="img-responsive center-block" alt="はしご x と y が高さ h で交差し、幅 w の道の両壁に立て掛けられている" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px;" />
+<img alt="はしご x と y が高さ h で交差し、幅 w の道の両壁に立て掛けられている" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-ladders.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ここでは、4 つの変数がすべて正の整数であるケースのみを扱います。 例えば、$x = 70$, $y = 119$, $h = 30$ の場合、$w = 56$ と計算できます。
 

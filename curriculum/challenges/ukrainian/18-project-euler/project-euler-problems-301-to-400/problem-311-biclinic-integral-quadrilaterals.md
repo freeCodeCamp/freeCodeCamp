@@ -16,7 +16,7 @@ $ABCD$ є опуклим трикутником з цілими сторонам
 
 Наприклад, наведений нижче чотирикутник є біклінічним чотирикутником з цілими сторонами: $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$ та $AO = CO = 23$.
 
-<img class="img-responsive center-block" alt="чотирикутник ABCD з точкою O, яка є серединною точкою BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="чотирикутник ABCD з точкою O, яка є серединною точкою BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $B(N)$ буде кількістю різних біклінічних чотирикутників $ABCD$, які задовільняють умову ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. Можна довести, що $B(10\\,000) = 49$ та $B(1\\,000\\,000) = 38239$.
 

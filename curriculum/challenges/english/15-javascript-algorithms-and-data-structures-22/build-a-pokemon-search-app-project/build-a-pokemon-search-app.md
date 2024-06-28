@@ -15,7 +15,7 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 **User Stories:**
 
 1. You should have an `input` element with an `id` of `"search-input"`
-1. You should have a `button` element with an `id` of `"search-button`
+1. You should have a `button` element with an `id` of `"search-button"`
 1. You should have an element with an `id` of `"pokemon-name"`
 1. You should have an element with an `id` of `"pokemon-id"`
 1. You should have an element with an `id` of `"weight"`
@@ -228,7 +228,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. Make sure the `#type` element content is cleared between searches.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. Make sure the `#types` element content is cleared between searches.
 
 ```js
 async () => {
@@ -324,7 +324,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. Make sure the `#type` element content is cleared between searches.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. Make sure the `#types` element content is cleared between searches.
 
 ```js
 async () => {
@@ -361,29 +361,17 @@ async () => {
     const searchButton = document.getElementById('search-button');
     let alertMessage;
     window.alert = (message) => alertMessage = message; // Override alert and store message
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-    const numbers = '0123456789';
-    const charactersLength = letters.length;
-    const numbersLength = numbers.length; 
 
+    const randomInvalidPokeId = crypto.randomUUID().substring(0, 6);
 
-    const firstLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
-    const secondLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
-    const thirdLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
-    const fourthLetter = letters.charAt(Math.floor(Math.random() * charactersLength));
-    const randomNumber1 = numbers.charAt(Math.floor(Math.random() * numbersLength));
-    const randomNumber2 = numbers.charAt(Math.floor(Math.random() * numbersLength));
-    
-    const badName = firstLetter + secondLetter + thirdLetter + fourthLetter + randomNumber1 + randomNumber2; 
-
-    const randomInvalidPokeId = badName; 
     searchInput.value = randomInvalidPokeId;
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
-    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' + randomInvalidPokeId.toString()); // Fetch from proxy to simulate network delay
+    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' + randomInvalidPokeId); // Fetch from proxy to simulate network delay
 
     if (!res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow the alert to trigger
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Additional delay to allow the alert to trigger
 
       assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
     }
@@ -404,23 +392,22 @@ async () => {
     let alertMessage;
     window.alert = (message) => alertMessage = message; // Override alert and store message
 
-    const randomValidPokeId = Math.floor(Math.random() * 1025) + 1; 
+    const randomValidPokeId = String(Math.floor(Math.random() * 1025) + 1);
+
     searchInput.value = randomValidPokeId;
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
-    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' +  randomValidPokeId.toString()); // Fetch from proxy to simulate network delay
+    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' +  randomValidPokeId); // Fetch from proxy to simulate network delay
 
     if (res.ok) {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow UI to update
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Additional delay to allow UI to update
      
-      const data = await res.json(); 
-
-      const typesEl = document.getElementById('types');      
-      
-      const actualTypes = data.types.map(typeSlot => typeSlot.type.name); 
+      const data = await res.json();
+      const typesEl = document.getElementById('types');
+      const actualTypes = data.types.map(typeSlot => typeSlot.type.name);
 
       assert.lengthOf(typesEl.children, actualTypes.length);
-
       assert.sameMembers(actualTypes, [...typesEl.children].map(el => el.innerText.trim().toLowerCase()));
     }
   } catch (err) {

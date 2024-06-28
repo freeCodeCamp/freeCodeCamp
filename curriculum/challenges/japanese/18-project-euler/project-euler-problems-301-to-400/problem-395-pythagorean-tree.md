@@ -18,7 +18,7 @@ dashedName: problem-395-pythagorean-tree
 
 この作業を無限に繰り返して得られる図形がピタゴラスの木です。
 
-<img class="img-responsive center-block" alt="手順が 8 回繰り返される様子を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px;" />
+<img alt="手順が 8 回繰り返される様子を示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tree.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ピタゴラスの木の最大の正方形に対して平行な辺を持ち、ピタゴラスの木を完全に囲むような長方形が、少なくとも 1 つ存在することを証明できます。
 

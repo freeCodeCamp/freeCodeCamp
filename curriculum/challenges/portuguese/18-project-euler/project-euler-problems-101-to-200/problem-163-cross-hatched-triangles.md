@@ -10,7 +10,7 @@ dashedName: problem-163-cross-hatched-triangles
 
 Considere um triângulo equilátero em que linhas retas são desenhadas a partir de cada vértice até o meio do lado oposto, como no triângulo de tamanho 1 no esboço abaixo.
 
-<img class="img-responsive center-block" alt="triângulos de tamanho 1 e tamanho 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="triângulos de tamanho 1 e tamanho 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Agora, nesse triângulo, podem ser observados dezesseis triângulos de forma, tamanho, orientação ou localização diferentes. Usando os triângulos de tamanho 1 como blocos de construção, triângulos maiores podem ser formados, como o de tamanho 2 no esboço acima. Agora, nesse triângulo de lado 2, podem ser observados 104 triângulos de forma, tamanho, orientação ou localização diferentes.
 

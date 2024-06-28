@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-Tu regla CSS debe terminar con un punto y coma.
+Your CSS rule should end with a semicolon.
 
 ```js
 assert(

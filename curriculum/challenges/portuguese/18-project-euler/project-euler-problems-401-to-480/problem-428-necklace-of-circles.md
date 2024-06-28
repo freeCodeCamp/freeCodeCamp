@@ -25,7 +25,7 @@ O trio ($a$, $b$, $c$) é chamado de *trio do colar* se você puder dispor $k �
 
 Por exemplo, (5, 5, 5) e (4, 3, 21) são trios do colar, enquanto é possível mostrar que (2, 2, 5) não é.
 
-<img class="img-responsive center-block" alt="uma representação visual de um trio de colar" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+<img alt="uma representação visual de um trio de colar" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $T(n)$ como o número de trios de colar $(a, b, c)$, tal que $a$, $b$ e $c$ sejam inteiros positivos e $b ≤ n$. Por exemplo, $T(1) = 9$, $T(20) = 732$ e $T(3.000) = 438.106$.
 

@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -384,6 +385,7 @@
     "submit-and-go": "Invia e vai alla prossima sfida",
     "congratulations": "Congratulazioni, hai superato i test. Invia in tuo codice per continuare.",
     "i-completed": "Ho completato questa sfida",
+    "example-code": "Example Code",
     "test-output": "Il risultato del tuo test andrà qui",
     "running-tests": "// test in corso",
     "tests-completed": "// test completati",
@@ -398,8 +400,8 @@
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "Ho cercato <0>domande simili che hanno già ricevuto risposta sul forum</0>",
-    "minimum-characters": "Please describe in at least {{characters}} more characters",
-    "characters-left": "You can add {{characters}} more characters to your query",
+    "minimum-characters": "Per favore descrivi in almeno altri {{characters}} caratteri",
+    "characters-left": "Puoi aggiungere altri {{characters}} caratteri alla tua richiesta",
     "must-confirm-statements": "Devi confermare le seguenti dichiarazioni prima di poter inviare il tuo post al forum.",
     "min-50-max-500": "minimo 50 caratteri, massimo 500 caratteri",
     "rsa": "Leggi, cerca, chiedi",
@@ -499,7 +501,7 @@
     },
     "ms": {
       "link-header": "Collega il tuo account Microsoft",
-      "link-signin": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account. Sign in to link your Microsoft username.",
+      "link-signin": "Per completare questa sfida, devi prima collegare il tuo nome utente Microsoft al tuo account freeCodeCamp. Accedi per collegare il tuo nome utente Microsoft.",
       "linked": "L'account Microsoft con nome utente \"{{ msUsername }}\" è attualmente collegato al tuo account freeCodeCamp. Se questo non è il tuo nome utente Microsoft, rimuovi il link.",
       "unlinked": "To complete this challenge, you must first link your Microsoft username to your freeCodeCamp account by following these instructions:",
       "link-li-1": "Using a browser where you are logged into your Microsoft account, go to <0>https://learn.microsoft.com/users/me/transcript</0>",
@@ -507,7 +509,7 @@
       "link-li-3": "If you do not have a transcript link, click the \"Create link\" button to create one.",
       "link-li-4": "Click the \"Copy link\" button to copy the transcript URL.",
       "link-li-5": "Paste the URL into the input below, it should look similar to this: <0>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</0>",
-      "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
+      "link-li-6": "Clicca su \"Collega Account\" per collegare il tuo nome utente Microsoft.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     }
@@ -520,7 +522,7 @@
     "thank-you": "Thank You for Being a Supporter",
     "success-card-update": "Your card has been updated successfully.",
     "additional": "Puoi effettuare una donazione una tantum aggiuntiva di qualsiasi importo utilizzando questo link: <0>{{url}}</0>",
-    "help-more": "Help Our Charity Do More",
+    "help-more": "Aiuta la nostra charity a fare di più",
     "error": "Qualcosa è andato storto con la tua donazione.",
     "error-card-update": "Something went wrong with updating your card.",
     "error-2": "C'è qualcosa che non va. Per favore scrivi a donors@freecodecamp.org",
@@ -574,6 +576,7 @@
     "other-ways": "Qui ci sono molti <0>altri modi per supportare la missione del nostro ente di beneficenza</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "Uh - oh. Sembra che la tua transazione non sia passata. Potresti riprovare?",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "Per favore riprova.",
     "card-number": "Numero della tua Carta:",
     "expiration": "Data di scadenza:",
@@ -610,7 +613,7 @@
     "welcome-stock": "Saremmo grati per la tua donazione in azioni. Per favore scrivi direttamente a Quincy, che potrà aiutarti e condividere con te i dettagli del nostro account di brokerage: quincy@freecodecamp.org.",
     "how-receipt": "Posso avere una ricevuta della mia donazione così da dedurla dalle mie tasse?",
     "just-forward": "Certo. Basta che inoltri la ricevuta della transazione a donors@freecodecamp.org, dicci che vorresti una ricevuta e qualsiasi istruzione speciale tu abbia, e ti risponderemo con una ricevuta.",
-    "how-update": "Ho impostato una donazione mensile, ma ho bisogno di aggiornarla o metterla in pausa. Come posso fare?",
+    "how-update": "I set up a monthly donation, but I need to update or stop the monthly recurrence. How can I do this?",
     "take-care-of-this": "Inoltra una delle tue ricevute a donors@freecodecamp.org e dicci cosa vorresti fare. Ce ne occuperemo e ti risponderemo con una conferma.",
     "anything-else": "C'è altro da sapere su donare a freeCodeCamp.org?",
     "other-support": "Se ci sono altri modi in cui vorresti supportare il nostro ente benefico e la sua missione che non sono elencati in questa pagina, o se hai qualsiasi domanda, per favore scrivi a Quincy a quincy@freecodecamp.org.",
@@ -668,7 +671,8 @@
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
-    "no-results": "Non è stato possibile trovare nulla relativo a <0>{{query}}</0>"
+    "no-results": "Non è stato possibile trovare nulla relativo a <0>{{query}}</0>",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
@@ -749,7 +753,7 @@
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
     "really-weird": "È successo qualcosa di veramente strano, se succede di nuovo, ti preghiamo di considerare di sollevare un problema su https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "Qualcosa non è del tutto giusto. Un rapporto è stato generato e il team freeCodeCamp.org è stato avvisato",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Qualcosa è andato storto, controlla e riprova",
     "account-deleted": "Il tuo account è stato eliminato correttamente",
     "progress-reset": "I tuoi progressi sono stati resettati",
@@ -785,7 +789,6 @@
     "cert-claim-success": "@{{username}}, hai richiesto con successo la Certificazione {{name}} ! Congratulazioni per conto del team freeCodeCamp.org!",
     "wrong-name": "Qualcosa è andato storto con la verifica di {{name}}, per favore riprova. Se continui a ricevere questo errore, puoi inviare un messaggio a support@freeCodeCamp.org per ricevere aiuto.",
     "error-claiming": "Errore nel richiedere {{certName}}",
-    "refresh-needed": "Puoi usare il pulsante PaymentRequest solo una volta. Ricarica la pagina per reiniziare.",
     "username-not-found": "Non siamo riusciti a trovare un utente con il nome utente \"{{username}}\"",
     "add-name": "Questo utente deve aggiungere il proprio nome al proprio account affinché gli altri possano visualizzare la sua certificazione.",
     "not-eligible": "Questo utente non è idoneo per le certificazioni freeCodeCamp.org al momento.",
@@ -869,7 +872,8 @@
     "own-work-url": "Ricordati di inviare il tuo lavoro.",
     "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
-    "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso"
+    "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
@@ -993,6 +997,8 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft Certification",
       "A2 English for Developers": "A2 English for Developers",
       "a2-english-for-developers": "A2 English for Developers Certification",
+      "B1 English for Developers": "B1 English for Developers",
+      "b1-english-for-developers": "B1 English for Developers Certification",
       "Legacy Front End": "Front End Legacy",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Back End Legacy",
