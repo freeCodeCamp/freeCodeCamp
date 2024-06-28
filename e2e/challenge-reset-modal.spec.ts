@@ -52,7 +52,7 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
   const updatedText = 'Only Dogs';
   const updatedEditorText = page
     .getByTestId('editor-container-indexhtml')
-    .getByText(initialText);
+    .getByText(updatedText);
 
   await page.goto(
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
