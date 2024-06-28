@@ -26,8 +26,6 @@ const defaultOptions: RequestInit = {
 function getCSRFToken() {
   const token =
     typeof window !== 'undefined' ? cookies.get('csrf_token') : null;
-
-  console.log(token);
   return token ?? '';
 }
 
