@@ -70,7 +70,7 @@ nav a {
 
 Write a mixin named `shape` and give it 3 parameters: `$w`, `$h`, and `$bg-color`.
 
-Use the `shape` mixin to give the `#square` element a width and height of `50px`, and the color `red`. For the `#rect-a` element a width of `100px`, a height of `50px`, and the color `blue`. Finally, for the `#rect-b` element add a width of `50px`, a height of `100px`, and the color `orange`.
+Use the `shape` mixin to give the `#square` element a width and height of `50px`, and the color `red`. For the `#rect-a` element add a width of `100px`, a height of `50px`, and the color `blue`. Finally, for the `#rect-b` element add a width of `50px`, a height of `100px`, and the color `orange`.
 
 # --hints--
 
