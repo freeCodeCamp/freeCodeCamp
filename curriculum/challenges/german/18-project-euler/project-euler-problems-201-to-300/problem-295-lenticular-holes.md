@@ -21,7 +21,7 @@ $$\begin{align}   & C_0: x^2 + y^2 = 25 \\\\
 
 Die Kreise $C_0$, $C_1$ und $C_2$ werden im Bild unten gezeichnet.
 
-<img class="img-responsive center-block" alt="C_0, C_1 and C_2 circles" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="C_0, C_1 and C_2 circles" src="https://cdn.freecodecamp.org/curriculum/project-euler/lenticular-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $C_0$ und $C_1$ bilden ein lentikularförmiges Loch, sowie $C_0$ und $C_2$.
 

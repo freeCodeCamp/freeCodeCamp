@@ -130,9 +130,8 @@ const isCertMapSelector = createSelector(
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
     'Legacy Information Security and Quality Assurance': isInfosecQaCert,
-    // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
-    'Example Certification': false,
+    'Front End Development': false,
     'Upcoming Python Certification': false,
     'A2 English for Developers': false,
     'B1 English for Developers': false,

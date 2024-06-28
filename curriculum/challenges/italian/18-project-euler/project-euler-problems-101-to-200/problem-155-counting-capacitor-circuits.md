@@ -14,7 +14,7 @@ I condensatori possono essere collegati in serie o in parallelo per formare subu
 
 Usando questa semplice procedura e fino a n condensatori identici, possiamo creare circuiti che hanno un range di diverse capacitanze totali. Per esempio, usando fino a $n = 3$ condensatori di $60 μF$ ognuno, possiamo ottenere sette valori totali di capacitanza distinti:
 
-<img class="img-responsive center-block" alt="circuito di esempio avente fino a tre condensatori, ognuno di 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img alt="circuito di esempio avente fino a tre condensatori, ognuno di 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $D(n)$ il numero di valori di capacitanza distinti totali che si possono ottenere con $n$ condensatori di uguale capacitanza e la semplice procedura descritta sopra, abbiamo: $D(1) = 1, D(2) = 3, D(3) = 7, \ldots$
 

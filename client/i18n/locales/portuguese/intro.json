@@ -409,12 +409,12 @@
           "Este projeto ajudará você a entender os conceitos fundamentais por trás desses algoritmos, e como você pode aplicá-los para classificar dados numéricos em aplicações para a web."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Aprenda raciocínio algorítmico intermediário criando um jogo de dados",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "Raciocínio algorítmico implica a capacidade de dividir problemas complexos em uma sequência de instruções passo a passo e bem definidas.",
-          "Neste projeto de jogo de dados, você aprenderá como gerenciar o estado do jogo, implementar a lógica do jogo para rolar os dados, manter a pontuação e aplicar as regras para várias combinações.",
-          "O projeto aborda conceitos como manipulação de eventos, manipulação de arrays, lógica condicional e atualização dinâmica da interface de usuário baseada no estado do jogo."
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1276,6 +1276,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Aprenda arrays e laços",
         "intro": ["Aprenda sobre arrays e laços de repetição em JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Aprenda a resolver problemas e a entender erros",
+        "intro": [
+          "Aprenda a resolver problemas e a entender os erros em JavaScript."
+        ]
       }
     }
   },

@@ -16,7 +16,7 @@ He proceeds to cut it in half, thus getting two sheets of size A2. Then he cuts 
 
 All the unused sheets are placed back in the envelope.
 
-<img class="img-responsive center-block" alt="A1-size sheet split into: A2, A3, A4 and two A5 sheets" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;">
+<img alt="A1-size sheet split into: A2, A3, A4 and two A5 sheets" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 At the beginning of each subsequent batch, he takes one sheet of paper from the envelope at random. If it is of size A5, he uses it. If it is larger, he repeats the 'cut-in-half' procedure until he has what he needs, and any remaining sheets are always placed back in the envelope.
 

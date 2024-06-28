@@ -409,12 +409,12 @@
           "本項目將幫助你理解這些算法背後的基本概念，以及如何在 web 應用程序中應用這些算法對數字數據進行排序。"
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "通過創建骰子游戲學習中級算法思維",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "算法思維包括將複雜問題分解爲一連串定義明確、循序漸進的指令的能力。",
-          "在這個骰子游戲項目中，你將學習如何管理遊戲狀態、實現擲骰子的遊戲邏輯、記分以及應用各種組合的規則。",
-          "這個項目涵蓋事件處理、數組操作、條件邏輯以及根據遊戲狀態動態更新用戶界面等概念。"
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1270,6 +1270,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Learn Arrays and Loops",
         "intro": ["Learn about arrays and loops in JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Learn to Solve Problems and Understand Errors",
+        "intro": [
+          "Learn how to solve problems and understand errors in JavaScript."
+        ]
       }
     }
   },

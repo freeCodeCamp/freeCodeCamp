@@ -12,7 +12,7 @@ Ognuno delle sei facce di un cubo ha scritta una diversa cifra (da 0 a 9); la st
 
 Per esempio, possiamo formare il numero quadrato 64:
 
-<img class="img-responsive center-block" alt="due cubi, uno con il numero 6 e uno con il numero 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;" />
+<img alt="due cubi, uno con il numero 6 e uno con il numero 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Infatti, scegliendo con attenzione le cifre sui due cubi, possiamo mostrare tutti i numeri quadrati al di sotto di 100: 01, 04, 09, 16, 25, 36, 49, 64, 81.
 

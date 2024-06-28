@@ -13,7 +13,7 @@ dashedName: problem-150-searching-a-triangular-array-for-a-sub-triangle-having-m
 
 У наведеному нижче прикладі можна легко довести, що виділений трикутник відповідає умові, оскільки його сума дорівнює −42.
 
-<img class="img-responsive center-block" alt="трикутний масив з виділеним трикутником із сумою -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px;" />
+<img alt="трикутний масив з виділеним трикутником із сумою -42" src="https://cdn.freecodecamp.org/curriculum/project-euler/searching-a-triangular-array-for-a-sub-triangle-having-minimum-sum.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нам потрібно створити трикутний масив з однією тисячею рядків, тому ми генеруємо 500500 псевдовипадкових чисел $s_k$ у діапазоні $±2^{19}$, використовуючи генератор випадкових чисел (відомий як лінійний конгруентний метод):
 

@@ -20,7 +20,7 @@ dashedName: problem-459-flipping-game
 - шириною прямокутника є повний квадрат (1, 4, 9, 16, ...)
 - висотою прямокутника є трикутне число (1, 3, 6, 10, ...)
 
-<img class="img-responsive center-block" alt="перевертання всіх дисків у прямокутнику 4х3 на дошці 5х5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px;" />
+<img alt="перевертання всіх дисків у прямокутнику 4х3 на дошці 5х5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Гравці ходять по черзі. Гравець перемагає, якщо після його ходу всі диски перевернуті чорною стороною.
 
@@ -30,7 +30,7 @@ $W(1) = 1$, $W(2) = 0$, $W(5) = 8$ та $W({10}^2) = 31\\,395$.
 
 За умови $N = 5$, першими вісьмома виграшними ходами першого гравця є:
 
-<img class="img-responsive center-block" alt="перші вісім виграшних ходів за умови N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px;" />
+<img alt="перші вісім виграшних ходів за умови N = 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/flipping-game-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Знайдіть $W({10}^6)$.
 

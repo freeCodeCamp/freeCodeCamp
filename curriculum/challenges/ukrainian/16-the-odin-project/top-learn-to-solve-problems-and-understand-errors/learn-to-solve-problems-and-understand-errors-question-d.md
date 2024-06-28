@@ -1,37 +1,37 @@
 ---
 id: 66581a7bb1eb2281159492fd
-title: Learn to Solve Problems and Understand Errors Question D
+title: Навчіться розв’язувати проблеми та розуміти помилки. Запитання D
 challengeType: 15
 dashedName: learn-to-solve-problems-and-understand-errors-question-d
 ---
 
 # --description--
 
-Reading and understanding error messages is a requirement as a developer. At first glance, many beginners shrink away from error messages as they appear to be “scary” and difficult to understand because they include terms one may not be familiar with.
+Розробнику необхідно читати та розуміти повідомлення про помилки. На перший погляд, багато початківців лякаються повідомлень про помилки, оскільки ті здаються «страшними» і важкими для розуміння через використання термінів, з якими вони можуть бути незнайомі.
 
-However, error messages provide developers with a treasure trove of knowledge, and tell you everything you need to know about how to resolve them! Being able to parse error messages and warnings without fear will enable you to effectively debug your applications, receive meaningful help from others, and empower yourself to push forward when faced with an error.
+Однак повідомлення про помилки надають розробникам скарбницю знань і розповідають все, що потрібно знати про те, як їх виправити! Вміння розбиратися у повідомленнях та попередженнях про помилки без страху дозволить ефективно налагоджувати програми, отримувати значущу допомогу від інших і надасть впевненості просуватися вперед, стикаючись з помилками.
 
 # --question--
 
 ## --text--
 
-According to the text, why should developers not shy away from error messages?
+Чому розробникам не потрібно боятись повідомлень про помилки відповідно до тексту?
 
 ## --answers--
 
-Error messages are only for advanced programmers and can be ignored by beginners until they gain more experience.
+Повідомлення про помилки призначені лише для досвідчених програмістів і можуть бути проігноровані початківцями до тих пір, поки вони не набудуть більше досвіду.
 
 ---
 
-Error messages need to be memorized completely to be effective in programming.
+Повідомлення про помилки потрібно повністю запам’ятовувати, щоб бути ефективним у програмуванні.
 
 ---
 
-Error messages provide crucial information that helps developers understand and fix problems in their code.
+Повідомлення про помилки надають важливу інформацію, яка допомагає розробникам зрозуміти і виправити проблеми в коді.
 
 ---
 
-Error messages are meant to be handled by automated debugging tools and do not require human interpretation.
+Повідомлення про помилки призначені для обробки автоматизованими засобами налагодження і не потребують людського тлумачення.
 
 
 ## --video-solution--

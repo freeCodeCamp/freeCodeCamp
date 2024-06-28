@@ -18,7 +18,7 @@ dashedName: problem-400-fibonacci-tree-game
 
 $k = 1$ から $k = 6$ までの $T(k)$ において、最初のターンで先手必勝となる手は次のとおりです。
 
-<img class="img-responsive center-block" alt="k = 1 から k = 6 の木における、最初のターンでの先手必勝の手" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img alt="k = 1 から k = 6 の木における、最初のターンでの先手必勝の手" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $T(k)$ の木構造でゲームをするとき、最初のターンにおける先手必勝の手 (すなわち、後手がどのような戦略でも勝てなくなるような手) の数を $f(k)$ とします。
 

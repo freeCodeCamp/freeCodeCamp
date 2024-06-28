@@ -28,7 +28,7 @@ Há vários outros tipos de hook que podem ser executados antes de cada teste, a
 Dentro de `tests/2_functional-tests.js`, imediatamente após a declaração de `Browser`, adicione o URL do seu projeto à propriedade `site` da variável:
 
 ```js
-Browser.site = 'http://localhost:3000'; // Your URL here
+Browser.site = 'http://0.0.0.0:3000'; // Your URL here
 ```
 
 Então, no nível de root da suite `'Functional Tests with Zombie.js'`, instancie uma nova instância do objeto `Browser` com o seguinte código:
@@ -37,7 +37,7 @@ Então, no nível de root da suite `'Functional Tests with Zombie.js'`, instanci
 const browser = new Browser();
 ```
 
-Depois, use o hook `suiteSetup` para direcionar o `browser` para a rota `/` com o seguinte código:
+Depois, use o hook `suiteSetup` para direcionar o `browser` para a rota `/` com o seguinte código. **Observação**: `done` é passado como uma função de callback para `browser.visit`. Você não deve invocá-lo.
 
 ```js
 suiteSetup(function(done) {

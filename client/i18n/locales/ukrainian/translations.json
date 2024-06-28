@@ -100,7 +100,8 @@
     "update-card": "Оновити картку",
     "donate-now": "Задонатити",
     "confirm-amount": "Підтвердити суму",
-    "play-scene": "Натисніть «Відтворити»"
+    "play-scene": "Натисніть «Відтворити»",
+    "closed-caption": "Приховані субтитри"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
@@ -871,7 +872,8 @@
     "own-work-url": "Не забудьте відправити власну роботу.",
     "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу застосунку.",
     "ms-learn-link": "Використайте дійсне трофейне посилання Microsoft Learn.",
-    "path-url": "Можливо, ви хочете надіслати кореневий шлях, тобто https://example.com, а не https://example.com/path"
+    "path-url": "Можливо, ви хочете надіслати кореневий шлях, тобто https://example.com, а не https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",

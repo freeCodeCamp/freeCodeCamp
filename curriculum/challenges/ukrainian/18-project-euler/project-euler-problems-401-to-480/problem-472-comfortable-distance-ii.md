@@ -18,7 +18,7 @@ dashedName: problem-472-comfortable-distance-ii
 
 Ось можливі розсадження за умови $N = 15$:
 
-<img class="img-responsive center-block" alt="розсадження за умови N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
+<img alt="розсадження за умови N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Як бачимо, якщо перша людина обирає правильне місце, то на 15 місцях можуть сісти не більше 7 людей. Ми також можемо бачити, що перша людина має 9 варіантів, щоб максимізувати кількість осіб, яких можна розмістити.
 

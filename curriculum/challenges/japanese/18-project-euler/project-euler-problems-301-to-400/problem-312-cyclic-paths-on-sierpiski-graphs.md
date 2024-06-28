@@ -11,11 +11,11 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 - 位数 1 のシェルピンスキーグラフ ($S_1$) は正三角形です。
 - $S_{n + 1}$ は $S_n$ から作られます。3 つの $S_n$ を、それぞれの対が角の 1 つの頂点を共有するように配置したものです。
 
-<img class="img-responsive center-block" alt="位数1 から 位数 5 のシェルピンスキーグラフ" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="位数1 から 位数 5 のシェルピンスキーグラフ" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $S_n$ のすべての頂点をちょうど 1 回ずつ通る循環路の数を、$C(n)$ とします。 例えば、下図のとおり、$S_3$ にそのような循環路を 8 つ描くことができるので、$C(3) = 8$ です。
 
-<img class="img-responsive center-block" alt="S_3 の全頂点を通る 8 つの循環路" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="S_3 の全頂点を通る 8 つの循環路" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 次のことも確認できます。
 

@@ -10,7 +10,7 @@ dashedName: problem-335-gathering-the-beans
 
 ピーターは退屈に感じるたびに、ボウルをいくつか置き、それぞれに 1 つ豆を入れて円形に並べます。 この後、ある 1 つのボウルからすべての豆を取り出し、右回りに 1つずつボウルに落としていきます。 最後の豆を落としたボウルから再び同じことをします。これを、最初の状態に戻るまで繰り返します。 例えば 5 つのボウルでは次のようにします。
 
-<img class="img-responsive center-block" alt="5 つのボウルに豆を動かすアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img alt="5 つのボウルに豆を動かすアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/gathering-the-beans.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 したがって、ボウルが 5 つの場合、最初の状況に戻るまでに豆を 15 回動かします。
 

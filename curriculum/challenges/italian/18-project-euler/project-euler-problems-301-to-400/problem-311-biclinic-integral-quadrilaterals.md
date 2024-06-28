@@ -16,7 +16,7 @@ Chiamiamo $ABCD$ un quadrilatero intero biclinico se $AO = CO ≤ BO = DO$.
 
 Per esempio, il seguente quadrilatero è un quadrilatero intero biclinico: $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$ e $AO = CO = 23$.
 
-<img class="img-responsive center-block" alt="quadrilatero ABCD, con il punto O, punto a metà di BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="quadrilateral ABCD, with point O, a midpoint of BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $B(N)$ il numero di quadrilateri interi biclinici $ABCD$ distinti che soddisfano ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. Possiamo verificare che $B(10\\,000) = 49$ e che $B(1\\,000\\,000) = 38239$.
 

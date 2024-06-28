@@ -409,8 +409,8 @@
           "This project will help you understand the fundamental concepts behind these algorithms, and how you can apply them to sort numerical data in web applications."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "中級アルゴリズム的思考の学習: ダイスゲームを作成する",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
           "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
           "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
@@ -1276,6 +1276,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Learn Arrays and Loops",
         "intro": ["Learn about arrays and loops in JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Learn to Solve Problems and Understand Errors",
+        "intro": [
+          "Learn how to solve problems and understand errors in JavaScript."
+        ]
       }
     }
   },

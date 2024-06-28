@@ -20,7 +20,7 @@ dashedName: problem-300-protein-folding
 
 На зображенні нижче показні два можливих способи, як можуть згортатися білки (точки дотику Н-Н виділені червоним).
 
-<img class="img-responsive center-block" alt="два можливих приклади згортання білків" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+<img alt="два можливих приклади згортання білків" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Приклад зліва має лише шість точок дотику, тому ніколи б не відбувся натуральним шляхом. З іншого боку, згортання праворуч має дев’ять точок дотику H-H, що оптимально для цього ланцюжка.
 

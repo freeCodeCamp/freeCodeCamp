@@ -12,7 +12,7 @@ N×N 個の円盤が正方形のゲーム盤上に置かれています。 円�
 
 ターンごとに円盤を 1 枚選び、それと同じ横列および同じ縦列にある円盤をすべて裏返します。したがって、$2 × N - 1$ 枚の円盤が裏返されます。 すべての円盤が白い面になるとゲームは終了です。 次の例は、5×5 の盤を使用したゲームです。
 
-<img class="img-responsive center-block" alt="5x5 の盤でのゲームを示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="5x5 の盤でのゲームを示すアニメーション" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 このゲームを終了するための最小ターン数が 3 であることが分かります。
 

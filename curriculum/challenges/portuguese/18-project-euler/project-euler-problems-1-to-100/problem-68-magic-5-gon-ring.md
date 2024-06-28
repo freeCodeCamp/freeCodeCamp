@@ -10,7 +10,7 @@ dashedName: problem-68-magic-5-gon-ring
 
 Considere o seguinte anel de 3 linhas "mágicas" com números de 1 a 6. Note que ao somar os números de cada linha, o resultado é nove.
 
-<img class="img-responsive center-block" alt="um exemplo completo de um anel de 3 linhas" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="um exemplo completo de um anel de 3 linhas" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Trabalhando **no sentido horário** e começando pelo grupo onde o nó externo é numericamente menor (4, 3, 2 neste exemplo), cada solução pode ser descrita de forma única. Por exemplo, a solução acima pode ser descrita pelo conjunto: 4,3,2; 6,2,1; 5,1,3.
 
@@ -35,7 +35,7 @@ Ao concatenar cada grupo, é possível formar números de 9 algarismos; o maior 
 
 Usando os números de 1 a 10 e dependendo dos arranjos, é possível formar números de 16 e 17 algarismos. Qual é o maior número de **16 algarismos** em um anel de 5 linhas?
 
-<img class="img-responsive center-block" alt="um diagrama em branco de um anel de 5 linhas" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;" />
+<img alt="um diagrama em branco de um anel de 5 linhas" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 # --hints--
 

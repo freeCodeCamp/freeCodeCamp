@@ -17,7 +17,7 @@ dashedName: problem-237-tours-on-a-4-x-n-playing-board
 
 На малюнку зображено один із маршрутів на дошці 4 × 10:
 
-<img class="img-responsive center-block" alt="один із маршрутів на дошці 4 х 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px;" />
+<img alt="один із маршрутів на дошці 4 х 10" src="https://cdn.freecodecamp.org/curriculum/project-euler/tours-on-a-4-x-n-playing-board.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $T(10)$ дорівнює 2329. Чому дорівнює $T({10}^{12})$ modulo ${10}^8$?
 

@@ -1,13 +1,13 @@
 ---
 id: 66581a7cb1eb2281159492fe
-title: Learn to Solve Problems and Understand Errors Question E
+title: Навчіться розв’язувати проблеми та розуміти помилки. Запитання E
 challengeType: 15
 dashedName: learn-to-solve-problems-and-understand-errors-question-e
 ---
 
 # --description--
 
-Let’s assume you have written the following code:
+Припустимо, що ви написали такий код:
 
 ```javascript
 const a = "Hello";
@@ -16,41 +16,41 @@ const b = "World";
 console.log(c);
 ```
 
-This code will run, but it will generate an error. In technical terms, this is called <dfn>throwing</dfn> an error. The first part of an error displays the type of error. This provides the first clue as to what you're dealing with. You'll learn more about the different error types later in the lesson. In this example, you have a `ReferenceError`.
+Цей код буде виконуватися, але він призведе до помилки. Якщо говорити технічними термінами, це називають <dfn>викидом</dfn> помилки. Перша частина помилки вказує тип помилки. Це перша підказка щодо того, з чим ви маєте справу. Пізніше у цьому уроці ви дізнаєтеся про різні типи помилок. У прикладі помилка `ReferenceError`.
 
-<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/175b5ef2a1b4758a7b75f4ef43d7e27203e5707b/foundations/javascript_basics/understanding_errors/imgs/00.png" width="100%" alt="An error being displayed in the developer console" />
+<img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/175b5ef2a1b4758a7b75f4ef43d7e27203e5707b/foundations/javascript_basics/understanding_errors/imgs/00.png" width="100%" alt="Відтворення помилки на консолі розробника" />
 
-A `ReferenceError` is thrown when one refers to a variable that is not declared and/or initialized within the current scope. In our case, the error message explains that the error has occurred because `c is not defined`.
+Помилка `ReferenceError` викидається, якщо ви посилаєтесь на змінну, яка не оголошена і/або не ініціалізована в межах поточної області. У цьому випадку повідомлення про помилку пояснює, що вона виникла, бо `c is not defined`.
 
-Different errors of this type have different messages based on what is causing the `ReferenceError`. For example, another message you may run into is `ReferenceError: can't access lexical declaration 'X' before initialization`.
+Різні помилки цього типу мають різні повідомлення в залежності від того, що викликає `ReferenceError`. Ось ще одне повідомлення, з яким ви можете зіткнутись: `ReferenceError: can't access lexical declaration 'X' before initialization`.
 
-The next part of an error gives us the name of the file in which you can find the error (in this case, our `script.js`), and also the line number.
+Наступна частина помилки надає назву файлу, де можна знайти помилку (у цьому випадку — `script.js`), а також номер рядка.
 
-This allows you to easily navigate to the problematic line in your code. Here, the error originates from the fourth line of `script.js`, which is displayed as a link under the error message with the text at `script.js:4`. If you click this link, most browsers will navigate to the exact line of code and the rest of your script in the Sources tab of the Developer Tools.
+Це дозволяє легко перейти до проблемного рядка в коді. У прикладі помилка походить з четвертого рядка `script.js`, що виглядає як посилання під повідомленням про помилку з текстом `script.js:4`. Якщо натиснути на це посилання, то більшість браузерів перейдуть до точного рядка коду та решти скрипту з вкладки «Джерела».
 
-Sometimes your browser’s console will also display the column (or character) in the line at which the error is occurring. In our example, this would be at `script.js:4:13`.
+Іноді консоль браузера також показує стовпчик (або символ), на якому відбувається помилка. У нашому прикладі це б було `script.js:4:13`.
 
 # --question--
 
 ## --text--
 
-What does the `ReferenceError` in the provided JavaScript code indicate?
+Що означає `ReferenceError` в наданому коді JavaScript?
 
 ## --answers--
 
-The variable used has been declared but used incorrectly in its type.
+Змінна, яка використовується, була оголошена, але використовується неправильно у своєму типі.
 
 ---
 
-The variable called in the code has not been declared within the current scope.
+Змінна, яка викликається в коді, не була оголошена в поточній області видимості.
 
 ---
 
-The code has an issue with its syntax that prevents it from being parsed correctly.
+У коді проблема з синтаксисом, що перешкоджає правильному аналізу.
 
 ---
 
-The variable used has been declared but not initialized within the current scope.
+Змінна, яка використовується, була оголошена, але не ініціалізована в поточній області видимості.
 
 
 ## --video-solution--

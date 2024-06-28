@@ -16,7 +16,7 @@ Er schneidet es in zwei Hälften und erhält so zwei Blätter der Größe A2. Da
 
 Alle unbenutzten Blätter werden in den Umschlag zurückgelegt.
 
-<img class="img-responsive center-block" alt="Blatt im Format A1, aufgeteilt in: A2, A3, A4 und zwei A5-Blätter" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px;" />
+<img alt="Blatt im Format A1, aufgeteilt in: A2, A3, A4 und zwei A5-Blätter" src="https://cdn.freecodecamp.org/curriculum/project-euler/paper-sheets-of-standard-sizes-an-expected-value-problem.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Zu Beginn jedes weiteren Stapels nimmt er ein Blatt Papier nach dem Zufallsprinzip aus dem Umschlag. Wenn es die Größe A5 hat, verwendet er es. Ist sie größer, wiederholt er die Prozedur des "Halbierens", bis er hat, was er braucht, und legt die restlichen Blätter danach immer zurück in den Umschlag.
 

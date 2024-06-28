@@ -1,17 +1,17 @@
 ---
 id: 66581a7bb1eb2281159492fc
-title: Learn to Solve Problems and Understand Errors Question C
+title: Навчіться розв’язувати проблеми та розуміти помилки. Запитання C
 challengeType: 15
 dashedName: learn-to-solve-problems-and-understand-errors-question-c
 ---
 
 # --description--
 
-## Psuedocode
+## Псевдокод
 
-Pseudocode is writing out the logic for your program in natural language instead of code. It helps you slow down and think through the steps your program will have to go through to solve the problem.
+Псевдокод — це запис логіки програми природною мовою, а не кодом. Він допомагає проаналізувати, які кроки має виконати програма, щоб розв’язати проблему.
 
-Here’s an example of what the pseudocode for a program that prints all numbers up to an inputted number might look like:
+Ось приклад псевдокоду програми, яка друкує всі числа, що йдуть перед введеним числом:
 
 ```bash
 When the user inputs a number
@@ -20,33 +20,33 @@ While counter is smaller than user inputted number increment the counter by one
 Print the value of the counter variable
 ```
 
-This is a basic program to demonstrate how pseudocode looks. There will be more examples of pseudocode included in the assignments.
+Це базова програма, щоб продемонструвати псевдокод. У завданнях буде ще більше прикладів псевдокоду.
 
 
 # --question--
 
 ## --assignment--
-Read this <a href="https://builtin.com/data-science/pseudocode" target="_blank"> Pseudocode: What It Is and How to Write It</a> article from Built In.
+Прочитайте статтю <a href="https://builtin.com/data-science/pseudocode" target="_blank"> «Псевдокод: що це та як його написати»</a> від Built In (англійською мовою).
 
 ## --text--
 
-What are the benefits of using pseudocode according to the linked article?
+Які переваги використання псевдокоду відповідно до наданої статті?
 
 ## --answers--
 
-Pseudocode is primarily beneficial for beginners as it helps them learn programming languages faster by skipping complex syntax.
+Псевдокод є переважно корисним для початківців, оскільки допомагає швидше вивчати мови програмування, пропускаючи складний синтаксис.
 
 ---
 
-Pseudocode simplifies communication with non-programmers, aids in code construction, provides a good basis for documentation, and helps in bug detection.
+Псевдокод спрощує спілкування з непрофесіоналами, допомагає в написанні коду, забезпечує хорошу основу для документації та допомагає у виявленні помилок.
 
 ---
 
-Pseudocode entirely eliminates the need for programmers to understand or use programming languages, making it the primary tool for professional coders.
+Псевдокод повністю усуває необхідність програмістам розуміти або використовувати мови програмування, роблячи його основним інструментом для професійних програмістів.
 
 ---
 
-Pseudocode is used exclusively for creating detailed flowcharts that replace traditional coding in complex software development environments.
+Псевдокод використовується виключно для створення детальних блок-схем, які замінюють традиційне програмування в складних середовищах розробки програмного забезпечення.
 
 ## --video-solution--
 

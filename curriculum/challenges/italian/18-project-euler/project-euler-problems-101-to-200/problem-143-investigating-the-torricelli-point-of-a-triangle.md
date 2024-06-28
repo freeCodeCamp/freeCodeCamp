@@ -14,7 +14,7 @@ Fermat sfidò Torricelli a trovare la posizione di X per cui p + q + r è minimi
 
 Torricelli fu in grado di provare che se i triangoli equilateri AOB, BNC e AMC sono costruiti su ogni lato del triangolo ABC, i cerchi circoscritti AOB, BNC e AMC si intersecano in un singolo punto, T, dentro il triangolo. In più ha provato che T, chiamato il punto Torricelli/Fermat, minimizza $p + q + r$. Ancora più notevole, si può provare che quando la somma è minimizzata, $AN = BM = CM = p + q + r$ e quindi anche AN, BM e CO si intersecano in T.
 
-<img class="img-responsive center-block" alt="triangoli equilateri AOB, BNC e AMC costruiti su ogni lato del triangolo ABC; con i cerchi circoscritti a AOB, BNC e AMC intersecantisi in un singolo punto T, dentro il triangolo" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px;" />
+<img alt="triangoli equilateri AOB, BNC e AMC costruiti su ogni lato del triangolo ABC; con i cerchi circoscritti a AOB, BNC e AMC intersecantisi in un singolo punto T, dentro il triangolo" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Se la somma è minimizzata e a, b, c, p, q e r sono tutti numeri interi positivi, chiamiamo il triangolo ABC triangolo di Torricelli. Per esempio, $a = 399$, $b = 455$, $c = 511$ è un esempio di un Triangolo di Torricelli, con $p + q + r = 784$. Trova la somma di tutti i distinti valori di $p + q + r ≤ 120000$ per i triangoli di Torricelli.
 

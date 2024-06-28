@@ -10,7 +10,7 @@ dashedName: problem-163-cross-hatched-triangles
 
 Considera un triangolo equilatero in cui delle linee sono disegnate da ogni vertice alla metà del lato opposto, come nel triangolo di dimensione 1 nel disegno qui sotto.
 
-<img class="img-responsive center-block" alt="triangoli di dimensione 1 e di dimensione 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="triangoli di dimensione 1 e di dimensione 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Si possono vedere sedici triangoli di diversa forma o orientazione o posizione dentro quel triangolo. Usando i triangoli di dimensione 1 come unità base, si possono formare triangoli più grandi come il triangolo di dimensione due nel disegno sopra. Nel triangolo di dimensione due si possono osservare centoquattro triangoli di diversa dimensione o forma o orientazione o posizione.
 

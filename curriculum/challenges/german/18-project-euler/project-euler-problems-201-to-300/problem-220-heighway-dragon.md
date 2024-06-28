@@ -19,7 +19,7 @@ Diese Strings können als Anweisungen an ein Computergrafikprogramm interpretier
 
 Dann ist $D_n$ eine exotische Zeichnung, bekannt als der Heighway-Drache der Ordnung $n$. Zum Beispiel ist $D_{10}$ unten dargestellt; jedes "F" wird als ein Schritt gezählt, die hervorgehobene Stelle bei (18,16) ist die Position, die nach 500 Schritten erreicht wurde.
 
-<img class="img-responsive center-block" alt="Zeichnung des Heighway Dragon nach 500 Schritten" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;" />
+<img alt="Zeichnung des Heighway Dragon nach 500 Schritten" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Wie ist die Position des Cursors nach ${10}^{12}$ Schritten in $D_{50}$? Gib deine Antwort als String in der Form `x,y` ohne Leerzeichen an.
 

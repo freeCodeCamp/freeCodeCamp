@@ -16,7 +16,7 @@ Vamos chamar $ABCD$ de um quadrilátero integral biclínico se $AO = CO ≤ BO =
 
 Por exemplo, o quadrilátero a seguir é um quadrilátero integral biclínico: $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$ e $AO = CO = 23$.
 
-<img class="img-responsive center-block" alt="quadrilátero ABCD, com ponto O, um ponto médio de BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="quadrilátero ABCD, com ponto O, um ponto médio de BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Considere $B(N)$ como o número de quadriláteros integrais biclínicos distintos $ABCD$ que satisfazem ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. Podemos verificar que $B(10.000) = 49$ e $B(1.000.000) = 38239$.
 

@@ -19,7 +19,7 @@ $$\begin{align}   & x_k = cos(\frac{2k - 1}{n} × 180°) \\\\
 
 Наприклад, сума $S_3$ та $S_4$ є рожевим шестикутником:
 
-<img class="img-responsive center-block" alt="зображення S_3, S_4 та S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px;" />
+<img alt="зображення S_3, S_4 та S_3 + S_4" src="https://cdn.freecodecamp.org/curriculum/project-euler/minkowski-sums.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Скільки сторін має $S_{1864} + S_{1865} + \ldots + S_{1909}$?
 

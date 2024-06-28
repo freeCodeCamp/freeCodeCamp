@@ -10,7 +10,7 @@ dashedName: problem-351-hexagonal-orchards
 
 位数 $n$ の六角形果樹園は、辺長 $n$ の正六角形の中の点で構成された三角格子です。 下図は、位数 5 の六角形果樹園の例です。
 
-<img class="img-responsive center-block" alt="位数 5 の六角形果樹園において、中心から見た場合に、より手前の点に隠れるために見えない点が緑色で強調表示されている" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px;" />
+<img alt="位数 5 の六角形果樹園において、中心から見た場合に、より手前の点に隠れるために見えない点が緑色で強調表示されている" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 緑色で強調表示されているのは、中心から見た場合に、より手前の点に隠れるために見えない点です。 位数 5 の六角形果樹園では、30 個の点が中心から見えないことが分かります。
 

@@ -15,8 +15,8 @@ Die spezielle weiße Zelle, die wir betrachten wollen, ist eine Ellipse mit der 
 Der Abschnitt, der $-0,01 ≤ x ≤ +0,01$ entspricht, fehlt an der Spitze, so dass das Licht durch das Loch ein- und austreten kann.
 
 <div style="text-align: center">
-  <img class="img-responsive center-block" alt="Lichtstrahl, der im Punkt (0,0, 10,1) beginnt und im Punkt (1,4, -9,6) auf den Spiegel trifft" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
-  <img class="img-responsive center-block" alt="Animation mit den ersten 10 Reflektionen des Strahls" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="Lichtstrahl, der im Punkt (0,0, 10,1) beginnt und im Punkt (1,4, -9,6) auf den Spiegel trifft" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-1.png" style="display: inline-block; background-color: white; padding: 10px;">
+  <img alt="Animation mit den ersten 10 Reflektionen des Strahls" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-multiple-reflections-of-a-laser-beam-2.gif" style="display: inline-block; background-color: white; padding: 10px;">
 </div><br>
 
 Der Lichtstrahl in diesem Problem beginnt am Punkt (0,0, 10,1) direkt außerhalb der weißen Zelle, und der Strahl trifft zuerst auf den Spiegel bei (1,4, -9,6).

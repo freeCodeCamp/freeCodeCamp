@@ -409,12 +409,12 @@
           "Цей проєкт допоможе зрозуміти основні поняття за цими алгоритмами та як їх можна застосувати для сортування числових даних у вебзастосунках."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Вивчіть проміжне алгоритмічне мислення, створивши гру з кубиками",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "Алгоритмічне мислення передбачає здатність розбивати складні завдання на чітко визначені кроки.",
-          "У проєкті зі створення гри з кубиками ви дізнаєтесь, як керувати станом гри, реалізувати логіку гри для кидання кубиків, зберігати бали та застосовувати правила для різних комбінацій.",
-          "Цей проєкт охоплює обробку подій, маніпулювання масивами, умовну логіку та динамічне оновлення інтерфейсу користувача на основі стану гри."
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1268,6 +1268,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Вивчіть масиви та цикли",
         "intro": ["Дізнайтесь про масиви та цикли в JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Навчіться розв’язувати проблеми та розуміти помилки",
+        "intro": [
+          "Дізнайтесь, як розв’язувати проблеми та розуміти помилки в JavaScript."
+        ]
       }
     }
   },

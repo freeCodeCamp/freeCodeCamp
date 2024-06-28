@@ -17,7 +17,7 @@ Vamos definir uma escultura balanceada de ordem $n$ da seguinte forma:
 
 Ao contar as esculturas, todos os arranjos que são simplesmente reflexões sobre o eixo $y$, <u>não</u> são contados como distintos. Por exemplo, as 18 esculturas equilibradas de ordem 6 são mostradas abaixo. Observe que cada par de imagens espelhadas (sobre o eixo $y$) é contado como uma escultura:
 
-<img class="img-responsive center-block" alt="18 esculturas balanceadas da ordem de 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px;" />
+<img alt="18 esculturas balanceadas da ordem de 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/balanced-sculptures.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Existem 964 esculturas equilibradas da ordem de 10 e 360505 da ordem de 15.
 

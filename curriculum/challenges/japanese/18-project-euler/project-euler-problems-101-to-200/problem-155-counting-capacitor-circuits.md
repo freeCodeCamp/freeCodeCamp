@@ -14,7 +14,7 @@ dashedName: problem-155-counting-capacitor-circuits
 
 この簡単な手順と、最大 n 個の同一キャパシタを使用して、さまざまな総容量の回路を作ることができます。 例えば、それぞれ $60 μF$ のキャパシタを最大 $n = 3$ 個使用すると、次に示す 7 種類の総容量値が得られます。
 
-<img class="img-responsive center-block" alt="各 60 μF のキャパシタを最大 3 個持つ回路の例" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img alt="各 60 μF のキャパシタを最大 3 個持つ回路の例" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 最大 $n$ 個の同一値のキャパシタと、上述の簡単な手順とを使って得られる総容量値の種類の数を $D(n)$ とすると、$D(1) = 1, D(2) = 3, D(3)=7, \ldots$ となります。
 

@@ -18,7 +18,7 @@ Si noti che a causa della regola 1, alcuni posti saranno sicuramente lasciati in
 
 Ecco i possibili posti a sedere per $N = 15$:
 
-<img class="img-responsive center-block" alt="posti a sedere per N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px;" />
+<img alt="posti a sedere per N = 15" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance-ii.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Vediamo che se la prima persona sceglie correttamente, i 15 posti possono ospitare fino a 7 persone. Possiamo anche vedere che la prima persona ha 9 scelte per massimizzare il numero di persone che possono essere sedute.
 

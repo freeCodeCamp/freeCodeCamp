@@ -14,7 +14,7 @@ dashedName: >-
 
 8 枚のタイルを使って作れる正方層は 1 通り (1 x 1 の穴を持つ 3 x 3) のみです。 しかし、32 枚のタイルを使うと 2 通りの正方層を作成できます。
 
-<img class="img-responsive center-block" alt="それぞれ 2 x 2 と 7 x 7 の穴がある 2 つの正方層" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
+<img alt="それぞれ 2 x 2 と 7 x 7 の穴がある 2 つの正方層" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 使用するタイルの枚数を $t$ で表し、$t = 8$ は $L(1)$ 型、$t = 32$ は $L(2)$ 型であると表現することにします。
 

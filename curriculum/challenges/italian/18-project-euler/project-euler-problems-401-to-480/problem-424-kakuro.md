@@ -8,7 +8,7 @@ dashedName: problem-424-kakuro
 
 # --description--
 
-<img class="img-responsive center-block" alt="esempio di kakuro" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px;" />
+<img alt="esempio di kakuro" src="https://cdn.freecodecamp.org/curriculum/project-euler/kakuro.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Quanto sopra è un esempio di un puzzle criptico kakuro (noto anche come somme incrociate, o anche croce di somme), con la sua soluzione finale sulla destra. (Le regole comuni dei puzzle di kakuro possono essere trovate facilmente su numerosi siti internet. Altre informazioni correlate possono essere trovate attualmente su krazydad.com il cui autore ha fornito i dati del puzzle per questa sfida.)
 

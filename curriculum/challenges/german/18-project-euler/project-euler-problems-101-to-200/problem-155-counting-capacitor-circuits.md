@@ -14,7 +14,7 @@ Die Kondensatoren können in Reihe oder parallel geschaltet werden, um Untereinh
 
 Mit diesem einfachen Verfahren und bis zu n identischen Kondensatoren können wir Schaltungen mit einer Reihe unterschiedlicher Gesamtkapazitäten herstellen. Bei Verwendung von bis zu $n = 3$ Kondensatoren mit je $60 μF$ ergeben sich beispielsweise die folgenden 7 unterschiedlichen Gesamtkapazitätswerte:
 
-<img class="img-responsive center-block" alt="beispielhafte Schaltkreise mit bis zu drei Kondensatoren, jeweils 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px;" />
+<img alt="beispielhafte Schaltkreise mit bis zu drei Kondensatoren, jeweils 60 μF" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-capacitor-circuits.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Wenn wir mit $D(n)$ die Anzahl der unterschiedlichen Gesamtkapazitätswerte angeben, die wir erhalten können, wenn wir bis zu $n$ gleichwertige Kondensatoren und das oben beschriebene einfache Verfahren verwenden, haben wir: $D(1) = 1, D(2) = 3, D(3)=7, ldots$
 

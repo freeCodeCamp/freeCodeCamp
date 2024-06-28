@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 A rede não direcionada a seguir consiste em sete vértices e doze arestas com um peso total de 243.
 
-<img class="img-responsive center-block" alt="Rede com sete vértices e doze arestas" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img alt="Rede com sete vértices e doze arestas" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 A mesma rede pode ser representada pela matriz abaixo.
 
@@ -27,7 +27,7 @@ A mesma rede pode ser representada pela matriz abaixo.
 
 No entanto, é possível otimizar a rede removendo algumas arestas e ainda garantindo que todos os pontos na rede permaneçam ligados. A rede que alcança o máximo de economia é mostrada abaixo. Tem um peso de 93, representando uma economia de 243 - 93 = 150 da rede original.
 
-<img class="img-responsive center-block" alt="A rede possui sete vértices e seis arestas: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img alt="A rede possui sete vértices e seis arestas: AB, BD, CA, DE, DF, EG" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Usando `network` (rede), um array 2D representando a rede em forma de matriz, encontre a economia máxima que pode ser alcançada removendo as arestas redundantes, assegurando simultaneamente que a rede permaneça ligada. Vértices que não tiverem conexão serão representados com `-1`.
 

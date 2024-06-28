@@ -35,7 +35,7 @@ Reiche deine Seite ein, wenn du davon ausgehst, alles richtig gemacht zu haben. 
 
 # --hints--
 
-passport-github dependency should be added.
+`passport-github` dependency should be added.
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-passport-github sollte erforderlich sein.
+`passport-github` should be required.
 
 ```js
 async (getUserInput) => {

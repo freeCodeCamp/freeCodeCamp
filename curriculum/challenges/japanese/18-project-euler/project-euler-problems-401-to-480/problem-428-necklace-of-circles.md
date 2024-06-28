@@ -25,7 +25,7 @@ $k (≥ 3)$ 個の相異なる円 $C_1, C_2, \ldots, C_k$ を、以下の条件�
 
 例えば、(5, 5, 5) と (4, 3, 21) はネックレス三つ組数です。しかし、(2, 2, 5) はそうではないことが分かっています。
 
-<img class="img-responsive center-block" alt="ネックレス三つ組数の視覚的表現" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+<img alt="ネックレス三つ組数の視覚的表現" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $a$, $b$, $c$ が正の整数で、かつ $b ≤ n$ のときのネックレス三つ組数の個数を $T(n)$ とします。 例えば、$T(1) = 9$, $T(20) = 732$, $T(3\\,000) = 438\\,106$ です。
 

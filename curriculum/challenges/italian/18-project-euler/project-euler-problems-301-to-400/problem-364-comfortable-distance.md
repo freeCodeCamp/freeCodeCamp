@@ -16,7 +16,7 @@ Ci sono $N$ posti in fila. $N$ persone vengono una dopo l'altra per riempire i p
 
 Sia $T(N)$ il numero di possibilità che $N$ posti siano occupati da $N$ persone con le regole date. La seguente figura mostra $T(4) = 8$.
 
-<img class="img-responsive center-block" alt="otto modi per occupare N posti con N persone" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px;" />
+<img alt="otto modi per occupare N posti con N persone" src="https://cdn.freecodecamp.org/curriculum/project-euler/comfortable-distance.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Possiamo verificare che $T(10) = 61\\,632$ e $T(1\\,000)\bmod 100\\,000\\,007 = 47\\,255\\,094$.
 

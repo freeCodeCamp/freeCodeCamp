@@ -19,7 +19,7 @@ dashedName: problem-287-quadtree-encoding-a-simple-compression-algorithm
 
 Розглянемо зображення 4×4 (кольорові позначки означають місце, де може бути розділення):
 
-<img class="img-responsive center-block" alt="зображення 4х4 з кольоровими позначками, що позначають можливе розділення" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;" />
+<img alt="зображення 4х4 з кольоровими позначками, що позначають можливе розділення" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Це зображення можна описати декількома послідовностями, наприклад: "<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010" (довжиною 30) або "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110" (довжиною 16, що є мінімальною можливою довжиною послідовності цього зображення).
 

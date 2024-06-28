@@ -10,7 +10,7 @@ dashedName: problem-327-rooms-of-doom
 
 Uma série de três salas está interligada por portas automáticas.
 
-<img class="img-responsive center-block" alt="série de três salas interligada por portas automáticas" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px;" />
+<img alt="série de três salas interligada por portas automáticas" src="https://cdn.freecodecamp.org/curriculum/project-euler/rooms-of-doom.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Cada porta é operada por um cartão de segurança. Ao entrar em uma sala, a porta fecha automaticamente e esse cartão de segurança não poderá ser usado novamente. Uma máquina vai dispensar um número ilimitado de cartões no início, mas cada sala (incluindo a sala inicial) contém scanners. Caso eles detectem que você está segurando mais de três cartões de segurança ou caso eles detectem um cartão de segurança solto no chão, todas as portas ficarão permanentemente trancadas. No entanto, cada sala contém uma caixa onde você pode armazenar com segurança qualquer número de cartões de segurança para uso em uma fase posterior.
 

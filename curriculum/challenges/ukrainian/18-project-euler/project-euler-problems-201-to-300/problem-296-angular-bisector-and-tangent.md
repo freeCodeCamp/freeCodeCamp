@@ -12,7 +12,7 @@ dashedName: problem-296-angular-bisector-and-tangent
 
 Точкою перетину $n$ та $k$ є $E$.
 
-<img class="img-responsive center-block" alt="трикутник ABC, в якому k — це бісектриса кута ACB, m — дотична в точці C, n — пряма, паралельна до m, яка проходить через B, і точка E — перетин k та n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;" />
+<img alt="трикутник ABC, в якому k — це бісектриса кута ACB, m — дотична в точці C, n — пряма, паралельна до m, яка проходить через B, і точка E — перетин k та n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Скільки існує трикутників $ABC$ з периметром не більше $100\\,000$, в яких довжина $BE$ є цілим числом?
 

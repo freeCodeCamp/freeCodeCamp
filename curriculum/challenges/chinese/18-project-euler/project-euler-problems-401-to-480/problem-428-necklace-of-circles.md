@@ -25,7 +25,7 @@ Let $a$, $b$ and $c$ be positive numbers.
 
 例如，(5, 5, 5) 与 (4, 3, 21) 是项链三元组，而 (2, 2, 5) 不是。
 
-<img class="img-responsive center-block" alt="项链三元组的视觉表现。" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px;" />
+<img alt="项链三元组的视觉表现。" src="https://cdn.freecodecamp.org/curriculum/project-euler/necklace-of-circles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 定义 $T(n)$ 为项链三元组 $(a, b, c)$ 的数量，其中 $a$，$b$ 和 $c$ 为正整数，且 $b ≤ n$。 例如，$T(1) = 9$，$T(20) = 732$，$T(3\\,000) = 438\\,106$。
 

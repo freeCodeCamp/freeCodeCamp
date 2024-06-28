@@ -10,7 +10,7 @@ dashedName: problem-15-lattice-paths
 
 Починаючи з верхнього лівого кутка сітки 2×2 та маючи право рухатися лише вправо чи вниз, дійти до нижнього правого кутка можна 6 шляхами.
 
-<img class="img-responsive center-block" alt="зображення з шістьма сітками 2 на 2, що показує усі шляхи до нижнього правого кутка" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;" />
+<img alt="зображення з шістьма сітками 2 на 2, що показує усі шляхи до нижнього правого кутка" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Скільки таких шляхів можна прокласти для наданої `gridSize`?
 

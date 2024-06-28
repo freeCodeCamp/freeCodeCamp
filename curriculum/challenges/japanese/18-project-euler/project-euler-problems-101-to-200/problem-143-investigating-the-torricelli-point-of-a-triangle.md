@@ -14,7 +14,7 @@ dashedName: problem-143-investigating-the-torricelli-point-of-a-triangle
 
 トリチェリは、三角形 ABC の各辺に正三角形 AOB, BNC, AMC を作ると、AOB, BNC, AMC の 3 つの外接円が ABC 内の 1 点 T で交わることを証明しました。 さらに、T (トリチェリ-フェルマー点と呼ばれます) が $p + q + r$ を最小化することも証明しました。 さらに驚くべきことに、その和が最小のとき、$AN = BM = CO = p + q + r$ であり、AN, BM, CO も T で交わるということも証明できます。
 
-<img class="img-responsive center-block" alt="三角形 ABC の各辺に作られた正三角形 AOB, BNC, AMC。AOB, BNC, AMC の 3 つの外接円が ABC 内の 1 点 T で交差する" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px;" />
+<img alt="三角形 ABC の各辺に作られた正三角形 AOB, BNC, AMC。AOB, BNC, AMC の 3 つの外接円が ABC 内の 1 点 T で交差する" src="https://cdn.freecodecamp.org/curriculum/project-euler/investigating-the-torricelli-point-of-a-triangle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 和が最小化され、a, b, c, p, q, r がすべて正の整数である場合、三角形 ABC を「トリチェリ三角形」と呼ぶことにします。 例えば、$a = 399$, $b = 455$, $c = 511$ はトリチェリ三角形の一例であり、$p + q + r = 784$ です。 トリチェリ三角形について、$p + q + r ≤ 120000$ の相異なる値の総和を求めなさい。
 

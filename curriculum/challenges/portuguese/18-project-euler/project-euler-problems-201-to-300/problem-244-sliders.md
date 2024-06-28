@@ -12,7 +12,7 @@ Você provavelmente conhece o Jogo do Quinze. Aqui, em vez de blocos numerados, 
 
 Um movimento é indicado pela primeira letra maiúscula da direção (Left - Esquerda, Right - Direita, Up - Acima e Down - Abaixo) na qual o bloco é deslizado, ou seja, a partir da configuração ($S$), pela sequência $LULUR$ que chegamos à configuração ($E$):
 
-($S$) <img class="img-responsive" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-1.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($E$) <img class="img-responsive" alt="configuração E" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-2.gif" style="display: inline-block; background-color: white; padding: 10px;" />
+($S$) <img alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-1.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($E$) <img alt="configuração E" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-2.gif" style="display: inline-block; background-color: white; padding: 10px;" />
 
 Para cada caminho, seu valor de verificação é calculado por (pseudocódigo):
 
@@ -26,7 +26,7 @@ $$\begin{array}{|c|c|} \hline L & 76 \\\\ \hline R & 82 \\\\ \hline U & 85 \\\\ 
 
 Para a sequência $LULUR$ dada acima, o checksum seria 19761398. Agora, começando pela configuração ($S$), encontre todas as formas mais curtas para chegar à configuração ($T$).
 
-($S$) <img class="img-responsive center-block" alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-3.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($T$) <img class="img-responsive center-block" alt="configuração T" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-4.gif" style="display: inline-block; background-color: white; padding: 10px;" />
+($S$) <img alt="configuration S" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-3.gif" style="display: inline-block; background-color: white; padding: 10px;" />, ($T$) <img alt="configuração T" src="https://cdn.freecodecamp.org/curriculum/project-euler/sliders-4.gif" style="display: inline-block; background-color: white; padding: 10px;" />
 
 Qual é a soma de todas as somas de checksums para os percursos de menor comprimento?
 

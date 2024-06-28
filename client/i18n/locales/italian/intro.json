@@ -409,12 +409,12 @@
           "Questo progetto ti aiuterà a capire i concetti fondamentali alla base di questi algoritmi e come applicarli per ordinare dati numerici in applicazioni web."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Impara il Pensiero Algoritmico Intermedio Costruendo un Gioco di Dadi",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "Il pensiero algoritmico comporta la capacità di suddividere i problemi complessi in una serie di istruzioni sequenziali ben definite.",
-          "In questo progetto di un gioco di dadi, imparerai come gestire lo stato del gioco, implementare la logica di gioco per il lancio dei dadi, segnare il punteggio e applicare le regole per varie combinazioni.",
-          "Questo progetto tratta concetti come gestione di eventi, manipolazione di array, logica condizionale e aggiornamento dinamico dell'interfaccia utente in base allo stato del gioco."
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1276,6 +1276,12 @@
       "top-learn-arrays-and-loops": {
         "title": "Learn Arrays and Loops",
         "intro": ["Learn about arrays and loops in JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Learn to Solve Problems and Understand Errors",
+        "intro": [
+          "Learn how to solve problems and understand errors in JavaScript."
+        ]
       }
     }
   },
