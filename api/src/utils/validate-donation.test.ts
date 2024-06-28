@@ -1,21 +1,32 @@
 import { inLastFiveMinutes } from './validate-donation';
 
 describe('inLastFiveMinutes', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   it('should return true if the timestamp is within the last five minutes', () => {
     const currentTimestamp = Math.floor(Date.now() / 1000);
-    const recentTimestamp = currentTimestamp - 100; // 100 seconds ago
+    const recentTimestamp = currentTimestamp - 100;
+    jest.setSystemTime(new Date(currentTimestamp * 1000));
     expect(inLastFiveMinutes(recentTimestamp)).toBe(true);
   });
 
   it('should return false if the timestamp is more than five minutes ago', () => {
     const currentTimestamp = Math.floor(Date.now() / 1000);
-    const oldTimestamp = currentTimestamp - 400; // 400 seconds ago
+    const oldTimestamp = currentTimestamp - 400;
+    jest.setSystemTime(new Date(currentTimestamp * 1000));
     expect(inLastFiveMinutes(oldTimestamp)).toBe(false);
   });
 
   it('should return true if the timestamp is exactly five minutes ago', () => {
     const currentTimestamp = Math.floor(Date.now() / 1000);
-    const exactTimestamp = currentTimestamp - 300; // 300 seconds ago
+    const exactTimestamp = currentTimestamp - 300;
+    jest.setSystemTime(new Date(currentTimestamp * 1000));
     expect(inLastFiveMinutes(exactTimestamp)).toBe(true);
   });
 });

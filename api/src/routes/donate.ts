@@ -68,7 +68,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         void reply.code(500);
         return {
           type: 'danger',
-          message: 'Something went wrong.'
+          message: 'flash.generic-error'
         } as const;
       }
     }
@@ -350,7 +350,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         }
       } catch (error) {
         fastify.log.error(error);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
           error: 'Donation failed due to a server error.'
