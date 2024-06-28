@@ -886,7 +886,10 @@
       },
       "learn-interfaces-by-building-an-equation-solver": {
         "title": "Learn Interfaces by Building an Equation Solver",
-        "intro": ["", ""]
+        "intro": [
+          "Abstract classes enables you to define formal interfaces - objects acting as blueprints for classes.",
+          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
+        ]
       },
 
       "learn-special-methods-by-building-a-vector-space": {
