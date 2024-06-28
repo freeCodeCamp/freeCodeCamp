@@ -9,6 +9,10 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
     execSync('node ./tools/scripts/seed/seed-demo-user');
   });
 
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  });
+
   test('they should be able to accept it', async ({ page }) => {
     await page.goto('/settings');
     await expect(
@@ -48,7 +52,11 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
 
   test('Should show an error message', async ({ page }) => {
     await page.goto('/settings#cert-responsive-web-design');
-    await page.getByTestId('btn-for-responsive-web-design').click();
+    await page
+      .getByRole('button', {
+        name: 'Claim Certification Responsive Web Design'
+      })
+      .click();
 
     await expect(page.getByTestId('flash-message')).toContainText(
       translations.flash['honest-first']
@@ -61,14 +69,14 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
 
     await page.reload();
 
-    await page.getByTestId('btn-for-responsive-web-design').click();
+    await page
+      .getByRole('button', {
+        name: 'Claim Certification Responsive Web Design'
+      })
+      .click();
 
     await expect(page.getByTestId('flash-message')).toContainText(
       /It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification./
     );
-  });
-
-  test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 });

@@ -1,4 +1,3 @@
-import { navigate } from 'gatsby-link';
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -24,6 +23,7 @@ import {
   type CertTitle,
   liveCerts
 } from '../../../../config/cert-and-project-map';
+import { ButtonLink } from '../../../components/helpers';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
@@ -79,7 +79,7 @@ const CertChallenge = ({
   fetchState,
   isSignedIn,
   user: { isHonest, username }
-}: CertChallengeProps): JSX.Element => {
+}: CertChallengeProps) => {
   const { t } = useTranslation();
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
@@ -113,29 +113,33 @@ const CertChallenge = ({
 
   const certLocation = `/certification/${username}/${certSlug}`;
 
-  const createClickHandler =
+  const claimCertHandler =
     (certSlug: string | undefined) => (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
-      if (isCertified) {
-        return navigate(certLocation);
-      }
+
       return isHonest
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
+
+  if (!isSignedIn) {
+    return null;
+  }
+
   return (
     <div>
-      {isSignedIn && (
+      {isCertified ? (
+        <ButtonLink block={true} href={certLocation}>
+          {userLoaded ? t('buttons.show-cert') : t('buttons.go-to-settings')}{' '}
+          <span className='sr-only'>{title}</span>
+        </ButtonLink>
+      ) : (
         <Button
           block={true}
           variant='primary'
-          href={isCertified ? certLocation : `/settings#cert-${certSlug}`}
-          onClick={() => (isCertified ? createClickHandler(certSlug) : false)}
+          onClick={claimCertHandler(certSlug)}
         >
-          {isCertified && userLoaded
-            ? t('buttons.show-cert')
-            : t('buttons.go-to-settings')}{' '}
-          <span className='sr-only'>{title}</span>
+          {t('buttons.go-to-settings')} <span className='sr-only'>{title}</span>
         </Button>
       )}
     </div>
