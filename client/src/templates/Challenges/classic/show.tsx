@@ -62,6 +62,7 @@ import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
+import { mergeChallengeFiles } from './saved-challenges';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -351,7 +352,9 @@ function ShowClassic({
       return challenge.id === challengeMeta.id;
     });
 
-    createFiles(savedChallenge?.challengeFiles || challengeFiles || []);
+    createFiles(
+      mergeChallengeFiles(challengeFiles, savedChallenge?.challengeFiles)
+    );
 
     initTests(tests);
     if (showProjectPreview) openModal('projectPreview');
