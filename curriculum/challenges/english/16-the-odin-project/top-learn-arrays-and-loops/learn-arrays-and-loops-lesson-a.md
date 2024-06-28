@@ -1,8 +1,8 @@
 ---
 id: 661e27508602567c118451d1
-title: Learn Arrays and Loops Question A
+title: Learn Arrays and Loops Lesson A
 challengeType: 15
-dashedName: learn-arrays-and-loops-question-a
+dashedName: learn-arrays-and-loops-lesson-a
 ---
 # --description--
 

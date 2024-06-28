@@ -1,8 +1,8 @@
 ---
 id: 66581a7bb1eb2281159492fc
-title: Learn to Solve Problems and Understand Errors Question C
+title: Learn to Solve Problems and Understand Errors Lesson C
 challengeType: 15
-dashedName: learn-to-solve-problems-and-understand-errors-question-c
+dashedName: learn-to-solve-problems-and-understand-errors-lesson-c
 ---
 
 # --description--
