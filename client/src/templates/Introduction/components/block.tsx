@@ -150,15 +150,14 @@ class Block extends Component<BlockProps> {
 
     const Block = (
       <>
-        {' '}
         <ScrollableAnchor id={blockDashedName}>
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
-              {!isAudited && (
-                <div className='block-cta-wrapper'>
+              {isAudited && (
+                <div className='tags-wrapper'>
                   <Link
-                    className='block-title-translation-cta'
+                    className='cert-tag'
                     to={t('links:help-translate-link-url')}
                   >
                     {t('misc.translation-pending')}
@@ -211,10 +210,10 @@ class Block extends Component<BlockProps> {
           <div className='block'>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
-              {!isAudited && (
-                <div className='block-cta-wrapper'>
+              {isAudited && (
+                <div className='tags-wrapper'>
                   <Link
-                    className='block-title-translation-cta'
+                    className='cert-tag'
                     to={t('links:help-translate-link-url')}
                   >
                     {t('misc.translation-pending')}
@@ -244,7 +243,6 @@ class Block extends Component<BlockProps> {
 
     const GridBlock = (
       <>
-        {' '}
         <ScrollableAnchor id={blockDashedName}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
             <h3 className='block-grid-title'>
@@ -298,22 +296,6 @@ class Block extends Component<BlockProps> {
     const GridProjectBlock = (
       <ScrollableAnchor id={blockDashedName}>
         <div className='block block-grid grid-project-block'>
-          <div className='tags-wrapper'>
-            <span className='cert-tag' aria-hidden='true'>
-              {t('misc.certification-project')}
-            </span>
-            {!isAudited && (
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}{' '}
-                <span className='sr-only'>
-                  {blockTitle} {t('misc.certification-project')}
-                </span>
-              </Link>
-            )}
-          </div>
           <div className='title-wrapper map-title'>
             <h3 className='block-grid-title'>
               <Link
@@ -331,6 +313,19 @@ class Block extends Component<BlockProps> {
               </Link>
             </h3>
           </div>
+          {isAudited && (
+            <div className='tags-wrapper'>
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')} 
+                <span className='sr-only'>
+                  {blockTitle} {t('misc.certification-project')}
+                </span>
+              </Link>
+            </div>
+          )}
           <BlockIntros intros={blockIntroArr} />
         </div>
       </ScrollableAnchor>
