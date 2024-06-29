@@ -7,12 +7,20 @@ import { MONGOHQ_URL } from '../utils/env';
 
 declare module 'fastify' {
   interface FastifyInstance {
-    prisma: ReturnType<typeof getExtendedClient>;
+    prisma: ReturnType<typeof extendClient>;
   }
 }
 
 const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
-  const prisma = getExtendedClient();
+  const prisma = extendClient(
+    new PrismaClient({
+      datasources: {
+        db: {
+          url: MONGOHQ_URL
+        }
+      }
+    })
+  );
 
   await prisma.$connect();
 
@@ -27,14 +35,8 @@ const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
 //       but the types are a pain.
 // TODO: Multiple extended clients can be used for different restrictions (e.g. session vs non-session users)
 // TODO: Could be used to add other _easily forgotten_ fields like `progressTimestamp`
-function getExtendedClient() {
-  const prisma = new PrismaClient({
-    datasources: {
-      db: {
-        url: MONGOHQ_URL
-      }
-    }
-  }).$extends({
+function extendClient(prisma: PrismaClient) {
+  return prisma.$extends({
     query: {
       user: {
         async update({ args, query }) {
@@ -72,8 +74,6 @@ function getExtendedClient() {
       }
     }
   });
-
-  return prisma;
 }
 
 export default prismaPlugin;
