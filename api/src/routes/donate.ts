@@ -1,4 +1,7 @@
-import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import {
+  Type,
+  type FastifyPluginCallbackTypebox
+} from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 import isEmail from 'validator/lib/isEmail';
 import {
@@ -37,7 +40,22 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/donate/add-donation',
     {
-      schema: schemas.addDonation
+      schema: {
+        body: Type.Object({}),
+        response: {
+          200: Type.Object({
+            isDonating: Type.Boolean()
+          }),
+          400: Type.Object({
+            message: Type.Literal('User is already donating.'),
+            type: Type.Literal('info')
+          }),
+          500: Type.Object({
+            message: Type.Literal('Something went wrong.'),
+            type: Type.Literal('danger')
+          })
+        }
+      }
     },
     async (req, reply) => {
       try {
@@ -68,7 +86,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         void reply.code(500);
         return {
           type: 'danger',
-          message: 'flash.generic-error'
+          message: 'Something went wrong.'
         } as const;
       }
     }
