@@ -4,7 +4,7 @@ export const createStripePaymentIntent = {
   body: Type.Object({
     amount: Type.Number(),
     duration: Type.Literal('month'),
-    email: Type.String(),
+    email: Type.String({ format: 'email', maxLength: 1024 }),
     name: Type.String()
   }),
   response: {
