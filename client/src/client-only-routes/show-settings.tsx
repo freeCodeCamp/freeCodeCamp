@@ -94,7 +94,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const {
     createFlashMessage,
     isSignedIn,
-    submitNewAbout,
     toggleNightMode,
     toggleSoundMode,
     toggleKeyboardShortcuts,
@@ -124,12 +123,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
-      about,
-      picture,
       theme,
       keyboardShortcuts,
-      location,
-      name,
       githubProfile,
       linkedin,
       twitter,
@@ -171,18 +166,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             {t('settings.for', { username: username })}
           </h1>
           <About
-            about={about}
             currentTheme={theme}
-            location={location}
-            name={name}
-            picture={picture}
             sound={sound}
             keyboardShortcuts={keyboardShortcuts}
-            submitNewAbout={submitNewAbout}
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            username={username}
           />
           <Spacer size='medium' />
           <Privacy />
