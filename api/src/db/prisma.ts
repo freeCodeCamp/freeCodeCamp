@@ -38,32 +38,30 @@ function getExtendedClient() {
     query: {
       user: {
         async update({ args, query }) {
-          args.data.lastUpdated = Date.now();
+          args.data.updateCount = { increment: 1 };
           return query(args);
         },
         async updateMany({ args, query }) {
-          args.data.lastUpdated = Date.now();
+          args.data.updateCount = { increment: 1 };
           return query(args);
         },
         async upsert({ args, query }) {
-          const lastUpdated = Date.now();
-          args.update.lastUpdated = lastUpdated;
-          args.create.lastUpdated = lastUpdated;
+          args.update.updateCount = { increment: 1 };
+          args.create.updateCount = 0;
           return query(args);
         },
         async create({ args, query }) {
-          args.data.lastUpdated = Date.now();
+          args.data.updateCount = 0;
           return query(args);
         },
         async createMany({ args, query }) {
           const data = args.data;
-          const lastUpdated = Date.now();
           if (Array.isArray(data)) {
             data.forEach(data => {
-              data.lastUpdated = lastUpdated;
+              data.updateCount = 0;
             });
           } else {
-            data.lastUpdated = lastUpdated;
+            data.updateCount = 0;
           }
 
           return query(args);

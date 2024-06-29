@@ -110,10 +110,6 @@ model user {
   isCollegeAlgebraPyCertV8     Boolean? // Undefined
   isUpcomingPythonCertV8       Boolean? // Undefined
   keyboardShortcuts            Boolean? // Undefined
-  /// `lastUpdated` is used to track the last time the user's record was written to.
-  ///
-  /// This has the main benefit of allowing concurrent ops to check for race conditions.
-  lastUpdated                  Int                           @default(0)
   linkedin                     String? // Null | Undefined
   location                     String? // Null
   name                         String? // Null
@@ -135,6 +131,10 @@ model user {
   timezone                     String? // Undefined
   twitter                      String? // Null | Undefined
   unsubscribeId                String
+  /// Used to track the number of times the user's record was written to.
+  ///
+  /// This has the main benefit of allowing concurrent ops to check for race conditions.
+  updateCount                  Int                           @default(0)
   username                     String // TODO(Post-MVP): make this unique
   usernameDisplay              String? // Undefined
   verificationToken            String? // Undefined
