@@ -1276,6 +1276,12 @@
         "intro": [
           "Learn how to solve problems and understand errors in JavaScript."
         ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Build a Rock Paper Scissor Game",
+        "intro": [
+          "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
+        ]
       }
     }
   },
@@ -1674,13 +1680,17 @@
       }
     }
   },
-  "example-certification": {
-    "title": "示例认证",
-    "intro": ["占位符"],
+  "front-end-development": {
+    "title": "Front End Development",
+    "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "示例认证测验",
-        "intro": ["占位符"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Learn Basic HTML by Building a Recipe Page",
+        "intro": ["", ""]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Front End Development Certification Exam",
+        "intro": ["", ""]
       }
     }
   },
