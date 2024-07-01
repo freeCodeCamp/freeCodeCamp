@@ -873,7 +873,7 @@
     "publicly-visible-url": "Не забудьте відправити загальнодоступну URL-адресу застосунку.",
     "ms-learn-link": "Використайте дійсне трофейне посилання Microsoft Learn.",
     "path-url": "Можливо, ви хочете надіслати кореневий шлях, тобто https://example.com, а не https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Не забудьте надіслати посилання на свій вихідний код."
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",
@@ -999,6 +999,8 @@
       "a2-english-for-developers": "Сертифікація «Англійська мова A2 для розробників»",
       "B1 English for Developers": "Англійська мова B1 для розробників",
       "b1-english-for-developers": "Сертифікація «Англійська мова B1 для розробників»",
+      "Front End Development": "Front End розробка",
+      "front-end-development-v9": "Сертифікація «Front End розробка»",
       "Legacy Front End": "Застарілий Front End",
       "legacy-front-end": "Застаріла сертифікація «Front End»",
       "Legacy Back End": "Застарілий Back End",

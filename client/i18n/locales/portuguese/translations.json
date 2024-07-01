@@ -873,7 +873,7 @@
     "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
     "ms-learn-link": "Use um link de troféu válido do Microsoft Learn.",
     "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Lembre-se de enviar o link do seu código-fonte."
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",
@@ -999,6 +999,8 @@
       "a2-english-for-developers": "Certificação A2 Inglês para Desenvolvedores",
       "B1 English for Developers": "B1 Inglês para Desenvolvedores",
       "b1-english-for-developers": "Certificação B1 Inglês para Desenvolvedores",
+      "Front End Development": "Desenvolvimento de front-end",
+      "front-end-development-v9": "Certificação de desenvolvimento de front-end",
       "Legacy Front End": "Front-end legado",
       "legacy-front-end": "Certificação de front-end legada",
       "Legacy Back End": "Back-end legado",
