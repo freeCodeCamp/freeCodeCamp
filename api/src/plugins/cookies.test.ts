@@ -7,7 +7,8 @@ import cookies from './cookies';
 // eslint-disable-next-line @typescript-eslint/no-unsafe-return
 jest.mock('../utils/env', () => ({
   ...jest.requireActual('../utils/env'),
-  COOKIE_DOMAIN: 'www.example.com'
+  COOKIE_DOMAIN: 'www.example.com',
+  FREECODECAMP_NODE_ENV: 'not-development'
 }));
 
 describe('cookies', () => {
