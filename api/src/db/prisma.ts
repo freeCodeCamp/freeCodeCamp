@@ -50,7 +50,7 @@ function extendClient(prisma: PrismaClient) {
         async upsert({ args, query }) {
           args.update.updateCount = { increment: 1 };
           return query(args);
-        },
+        }
         // NOTE: raw ops are untouched, as it is meant to be a direct passthrough to mongodb
         // async findRaw({ model, operation, args, query }) {}
         // async aggregateRaw({ model, operation, args, query }) {}
