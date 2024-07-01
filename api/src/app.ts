@@ -140,7 +140,10 @@ export const build = async (
       const token = reply.generateCsrf();
       void reply.setCookie('csrf_token', token, {
         sameSite: 'strict',
-        signed: false
+        signed: false,
+        // it needs to be read by the client, so that it can be sent in the
+        // header of the next request:
+        httpOnly: false
       });
     }
     done();
