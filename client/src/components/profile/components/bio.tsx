@@ -4,8 +4,8 @@ import { faCalendar, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
 import { AvatarRenderer, FullWidthRow, Spacer } from '../../helpers';
-import EditAboutModal from '../../settings/edit-about-modal';
 import { submitNewAbout } from '../../../redux/settings/actions';
+import EditAboutModal from '../../settings/edit-about-modal';
 import { parseDate } from './utils';
 import SocialIcons from './social-icons';
 import { type CamperProps } from './camper';
@@ -85,6 +85,10 @@ const Bio = ({
         username={username}
         show={showModal}
         onHide={() => setShowModal(false)}
+        githubProfile={githubProfile}
+        linkedin={linkedin}
+        twitter={twitter}
+        website={website}
       />
     </>
   );

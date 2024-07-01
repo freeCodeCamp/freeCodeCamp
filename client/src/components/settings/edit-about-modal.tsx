@@ -13,8 +13,10 @@ import isURL from 'validator/lib/isURL';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import { FullWidthRow, Spacer } from '../helpers';
 import { type CamperProps } from '../profile/components/camper';
+import { updateMySocials } from '../../redux/settings/actions';
 import UsernameSettings from './username';
 import SectionHeader from './section-header';
+import Internet from './internet';
 
 type EditAboutProps = Omit<
   CamperProps,
@@ -30,6 +32,10 @@ type EditAboutProps = Omit<
   t: TFunction;
   onHide: () => void;
   show: boolean;
+  githubProfile: string;
+  linkedin: string;
+  twitter: string;
+  website: string;
 };
 
 type FormValues = Pick<
@@ -190,12 +196,21 @@ class EditAboutModal extends Component<EditAboutProps, EditAboutState> {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    const { username, t, onHide, show } = this.props;
+    const {
+      username,
+      t,
+      onHide,
+      show,
+      githubProfile,
+      linkedin,
+      twitter,
+      website
+    } = this.props;
 
     return (
-      <Modal size='large' onClose={onHide} variant='danger' open={show}>
+      <Modal size='large' onClose={onHide} open={show}>
         <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
-          {t('settings.danger.reset-heading')}
+          {t('settings.headings.edit-my-profile')}
         </Modal.Header>
         <Modal.Body alignment='start'>
           <UsernameSettings username={username} />
@@ -274,6 +289,13 @@ class EditAboutModal extends Component<EditAboutProps, EditAboutState> {
             </form>
           </FullWidthRow>
           <Spacer size='medium' />
+          <Internet
+            githubProfile={githubProfile}
+            linkedin={linkedin}
+            twitter={twitter}
+            updateSocials={updateMySocials}
+            website={website}
+          />
         </Modal.Body>
         {/* <Modal.Footer></Modal.Footer> */}
       </Modal>
