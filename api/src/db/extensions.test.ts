@@ -42,12 +42,11 @@ describe('prisma client extensions', () => {
         updateCount: 1
       });
 
-      const _updateManyResult =
-        await fastifyTestInstance.prisma.user.updateMany({
-          where: { id: user.id },
-          // Even no change to values updates the updateCount
-          data: { username: 'any-change' }
-        });
+      await fastifyTestInstance.prisma.user.updateMany({
+        where: { id: user.id },
+        // Even no change to values updates the updateCount
+        data: { username: 'any-change' }
+      });
 
       const updateManyUser = await fastifyTestInstance.prisma.user.findUnique({
         where: { id: user.id }

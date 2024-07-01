@@ -49,25 +49,8 @@ function extendClient(prisma: PrismaClient) {
         },
         async upsert({ args, query }) {
           args.update.updateCount = { increment: 1 };
-          args.create.updateCount = 0;
           return query(args);
         },
-        async create({ args, query }) {
-          args.data.updateCount = 0;
-          return query(args);
-        },
-        async createMany({ args, query }) {
-          const data = args.data;
-          if (Array.isArray(data)) {
-            data.forEach(data => {
-              data.updateCount = 0;
-            });
-          } else {
-            data.updateCount = 0;
-          }
-
-          return query(args);
-        }
         // NOTE: raw ops are untouched, as it is meant to be a direct passthrough to mongodb
         // async findRaw({ model, operation, args, query }) {}
         // async aggregateRaw({ model, operation, args, query }) {}

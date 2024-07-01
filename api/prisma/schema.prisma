@@ -134,7 +134,7 @@ model user {
   /// Used to track the number of times the user's record was written to.
   ///
   /// This has the main benefit of allowing concurrent ops to check for race conditions.
-  updateCount                  Int                           @default(0)
+  updateCount                  Int?                          @default(0)
   username                     String // TODO(Post-MVP): make this unique
   usernameDisplay              String? // Undefined
   verificationToken            String? // Undefined
