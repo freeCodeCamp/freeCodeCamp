@@ -29,8 +29,6 @@ import {
  */
 export const auth0Client: FastifyPluginCallbackTypebox = fp(
   (fastify, _options, done) => {
-    // @ts-expect-error - when using discovery, client.auth is not allowed by the
-    // code, but required by the types.
     void fastify.register(fastifyOauth2, {
       name: 'auth0OAuth',
       scope: ['openid', 'email', 'profile'], // TODO: check what scopes the api-server uses
