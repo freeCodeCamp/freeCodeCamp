@@ -84,7 +84,7 @@ const Bio = ({
         submitNewAbout={submitNewAbout}
         username={username}
         show={showModal}
-        onHide={() => {}}
+        onHide={() => setShowModal(false)}
       />
     </>
   );
