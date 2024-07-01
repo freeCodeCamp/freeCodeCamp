@@ -380,11 +380,13 @@ describe('auth0 plugin', () => {
           showTimeLine: false
         },
         progressTimestamps: [expect.any(Number)],
+        rand: null,
         savedChallenges: [],
         sendQuincyEmail: false,
         theme: 'default',
         timezone: null,
         twitter: null,
+        updateCount: 0,
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         username: expect.stringMatching(fccUuidRe),
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
