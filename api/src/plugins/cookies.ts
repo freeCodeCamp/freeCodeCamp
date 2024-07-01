@@ -8,6 +8,8 @@ import {
   FREECODECAMP_NODE_ENV
 } from '../utils/env';
 
+export { type CookieSerializeOptions } from '@fastify/cookie';
+
 /**
  * Signs a cookie value by prefixing it with "s:" and using the COOKIE_SECRET.
  *
