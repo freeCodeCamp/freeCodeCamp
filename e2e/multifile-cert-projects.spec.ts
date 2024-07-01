@@ -64,6 +64,7 @@ test.describe('multifileCertProjects', () => {
     await page.reload();
 
     await expect(page.getByText('save2text')).toBeVisible();
+    await focusEditor({ page, isMobile });
 
     await page.keyboard.down('Control');
     await page.keyboard.press('KeyS');
