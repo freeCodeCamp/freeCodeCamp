@@ -31,7 +31,26 @@ const publicSB = orderedSuperBlockInfo
   .filter(sb => sb.public === true && !nonEditorSB.includes(sb.dashedName))
   .map(sb => sb.dashedName);
 
-const typedCurriculum = currData as Curriculum;
+const incompatible = [
+  'certifications',
+  'a2-english-for-developers',
+  'b1-english-for-developers'
+];
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const removeNonCompatibleSuperblocks = (currData: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const copy = currData;
+
+  for (const superBlock of incompatible) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    delete copy[superBlock];
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return copy;
+};
+
+const typedCurriculum = removeNonCompatibleSuperblocks(currData) as Curriculum;
 
 test.describe('Test challenges in mobile', () => {
   for (const superBlock of publicSB) {
