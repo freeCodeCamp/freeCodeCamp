@@ -76,7 +76,7 @@ export const ButtonLink = ({
     );
   }
 
-  if (external) {
+  if (external || download) {
     return (
       <Button
         variant='primary'
@@ -99,7 +99,6 @@ export const ButtonLink = ({
       to={href}
       target={target}
       onClick={onClick}
-      download={download}
     >
       {children}
     </GatsbyLink>
