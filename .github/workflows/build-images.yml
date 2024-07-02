@@ -36,7 +36,6 @@ jobs:
             --build-arg API_LOCATION=${{ vars.API_LOCATION }} \
             --build-arg FORUM_LOCATION=${{ vars.FORUM_LOCATION }} \
             --build-arg NEWS_LOCATION=${{ vars.NEWS_LOCATION }} \
-            --build-arg RADIO_LOCATION=${{ vars.RADIO_LOCATION }} \
             --build-arg CLIENT_LOCALE=${{ vars.CLIENT_LOCALE }} \
             --build-arg CURRICULUM_LOCALE=${{ vars.CURRICULUM_LOCALE }} \
             --build-arg SHOW_LOCALE_DROPDOWN_MENU=${{ vars.SHOW_LOCALE_DROPDOWN_MENU }} \
