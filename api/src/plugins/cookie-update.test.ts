@@ -99,9 +99,15 @@ describe('Cookie updates', () => {
       }
     });
 
-    const updatedCookie = res.headers['set-cookie'] as string;
-    expect(updatedCookie).toEqual(
-      expect.stringContaining('HttpOnly; Secure; SameSite=Lax')
-    );
+    expect(res.cookies[0]).toStrictEqual({
+      domain: 'www.example.com',
+      httpOnly: true,
+      name: 'cookie_name',
+      path: '/',
+      sameSite: 'Lax',
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      value: expect.any(String),
+      secure: true
+    });
   });
 });
