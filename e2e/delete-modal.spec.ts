@@ -13,14 +13,18 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
 
-test.afterAll(
-  async () =>
+test.afterAll(async () => {
+  try {
     await Promise.all([
       await execP('node ./tools/scripts/seed/seed-demo-user certified-user'),
       await execP('node ./tools/scripts/seed/seed-surveys'),
       await execP('node ./tools/scripts/seed/seed-ms-username')
-    ])
-);
+    ]);
+  } catch (e) {
+    console.error('Error seeding in delete-modal.spec.ts');
+    console.error(e);
+  }
+});
 
 test.describe('Delete Modal component', () => {
   test('should render the modal correctly', async ({ page }) => {

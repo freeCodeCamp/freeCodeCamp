@@ -98,9 +98,14 @@ test.describe('Email sign-up page when user is signed in', () => {
     // It's necessary to seed with a user that has not accepted the privacy
     // terms, otherwise the user will be redirected away from the email sign-up
     // page.
-    execSync(
-      'node ./tools/scripts/seed/seed-demo-user certified-user --unset-privacy-terms'
-    );
+    try {
+      execSync(
+        'node ./tools/scripts/seed/seed-demo-user certified-user --unset-privacy-terms'
+      );
+    } catch (e) {
+      console.error('Error seeding in email-sign-up.spec.ts');
+      console.error(e);
+    }
 
     await page.goto('/email-sign-up');
   });
