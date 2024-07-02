@@ -118,7 +118,7 @@ function tokenize(str, sep, esc) {
 
 ```js
 // tokenize :: String -> Character -> Character -> [String]
-function tokenize(str, charDelim, charEsc) {
+function tokenize(str, sep, esc) {
   let result = [];
   let token = '';
   let escaping = false;
@@ -128,9 +128,9 @@ function tokenize(str, charDelim, charEsc) {
     if (escaping) {
       token += char;
       escaping = false;
-    } else if (char === charEsc) {
+    } else if (char === esc) {
       escaping = true;
-    } else if (char === charDelim) {
+    } else if (char === sep) {
       result.push(token);
       token = '';
     } else {
