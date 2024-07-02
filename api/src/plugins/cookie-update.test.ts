@@ -2,6 +2,13 @@ import Fastify, { FastifyInstance } from 'fastify';
 import cookies, { type CookieSerializeOptions, sign } from './cookies';
 import { cookieUpdate } from './cookie-update';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+jest.mock('../utils/env', () => ({
+  ...jest.requireActual('../utils/env'),
+  COOKIE_DOMAIN: 'www.example.com',
+  FREECODECAMP_NODE_ENV: 'not-development'
+}));
+
 describe('Cookie updates', () => {
   let fastify: FastifyInstance;
 
