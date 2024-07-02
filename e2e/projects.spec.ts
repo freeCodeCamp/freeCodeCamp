@@ -215,7 +215,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       .click();
 
     await page
-      .getByRole('link', {
+      .getByRole('button', {
         name: 'Claim Certification Legacy JavaScript Algorithms and Data Structures'
       })
       .click();
