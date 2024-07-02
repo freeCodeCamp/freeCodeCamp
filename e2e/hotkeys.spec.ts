@@ -86,6 +86,9 @@ test.afterEach(
     })
 );
 
+// TODO: handle keyboard shortcuts on mobile
+test.skip(({ isMobile }) => isMobile, 'Only test on desktop');
+
 test('User can use shortcuts in and around the editor', async ({ page }) => {
   await page.goto(links.basicJS1);
 

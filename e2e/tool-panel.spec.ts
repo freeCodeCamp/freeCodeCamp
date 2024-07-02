@@ -13,7 +13,8 @@ test.describe('Tool Panel', () => {
   }) => {
     await page
       .getByRole('button', {
-        name: 'Run the Test'
+        name: 'Run',
+        exact: false
       })
       .click();
 

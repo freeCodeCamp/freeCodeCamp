@@ -285,6 +285,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             <TabsContent
               tabIndex={-1}
               className='tab-content'
+              data-playwright-test-label='preview-pane'
               value={tabs.preview}
               forceMount
               // forceMount causes the preview tabpanel to never be hidden,
