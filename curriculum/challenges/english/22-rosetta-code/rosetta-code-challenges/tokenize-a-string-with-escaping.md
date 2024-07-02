@@ -64,6 +64,9 @@ assert(typeof tokenize('a', 'b', 'c') === 'object');
 
 ```js
 assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
+assert.deepEqual(tokenize(testStr3, '|', '^'), res3);
+assert.deepEqual(tokenize(testStr4, '|', '^'), res4);
+assert.deepEqual(tokenize(testStr5, '|', '^'), res5);
 ```
 
 `tokenize('a@&bcd&ef&&@@hi', '&', '@')` should return `['a&bcd', 'ef', '', '@hi']`
@@ -83,6 +86,15 @@ const res1 = ['one|uno', '', 'three^^', 'four^|cuatro', ''];
 // TODO add more tests
 const testStr2 = 'a@&bcd&ef&&@@hi';
 const res2 = ['a&bcd', 'ef', '', '@hi'];
+
+const testStr3 = 'hello^|world^|how^are^you^|';
+const res3 = ['hello|world', 'how^are^you|'];
+
+const testStr4 = '^|^|^^^|^|^^';
+const res4 = ['', '', '^|', '', '^'];
+
+const testStr5 = 'one|two|three|four|';
+const res5 = ['one', 'two', 'three', 'four', ''];
 ```
 
 ## --seed-contents--
