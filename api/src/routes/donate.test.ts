@@ -14,6 +14,38 @@ const chargeStripeCardReqBody = {
   duration: 'month'
 };
 const mockSubCreate = jest.fn();
+const mockAttachPaymentMethod = jest.fn(() =>
+  Promise.resolve({
+    id: 'pm_1MqLiJLkdIwHu7ixUEgbFdYF',
+    object: 'payment_method'
+  })
+);
+const mockCustomerCreate = jest.fn(() =>
+  Promise.resolve({
+    id: 'cust_111',
+    name: 'Jest_User',
+    currency: 'sgd',
+    description: 'Jest User Account created'
+  })
+);
+const mockSubRetrieveObj = {
+  id: 'sub_test_id',
+  items: {
+    data: [
+      {
+        plan: {
+          product: 'prod_GD1GGbJsqQaupl'
+        }
+      }
+    ]
+  },
+  // 1 Jan 2040
+  current_period_start: Math.floor(Date.now() / 1000),
+  customer: 'cust_111',
+  status: 'active'
+};
+const mockSubRetrieve = jest.fn(() => Promise.resolve(mockSubRetrieveObj));
+const mockCustomerUpdate = jest.fn();
 const generateMockSubCreate = (status: string) => () =>
   Promise.resolve({
     id: 'cust_111',
@@ -31,17 +63,15 @@ jest.mock('stripe', () => {
   return jest.fn().mockImplementation(() => {
     return {
       customers: {
-        create: jest.fn(() =>
-          Promise.resolve({
-            id: 'cust_111',
-            name: 'Jest_User',
-            currency: 'sgd',
-            description: 'Jest User Account created'
-          })
-        )
+        create: mockCustomerCreate,
+        update: mockCustomerUpdate
+      },
+      paymentMethods: {
+        attach: mockAttachPaymentMethod
       },
       subscriptions: {
-        create: mockSubCreate
+        create: mockSubCreate,
+        retrieve: mockSubRetrieve
       }
     };
   });
@@ -78,6 +108,21 @@ const userWithProgress: Prisma.userCreateInput = {
       challengeType: 5
     }
   ]
+};
+
+const chargeStripeReqBody = {
+  email: 'lololemon@gmail.com',
+  subscriptionId: 'sub_test_id',
+  amount: 500,
+  duration: 'month'
+};
+
+const createStripePaymentIntentReqBody = {
+  email: 'lololemon@gmail.com',
+  name: 'Lolo Lemon',
+  token: { id: 'tok_123' },
+  amount: 500,
+  duration: 'month'
 };
 
 describe('Donate', () => {
@@ -214,6 +259,131 @@ describe('Donate', () => {
         expect(failResponse.status).toBe(400);
       });
     });
+
+    describe('POST /donate/create-stripe-payment-intent', () => {
+      it('should return 200 and call stripe api properly', async () => {
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('no-errors')
+        );
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send(createStripePaymentIntentReqBody);
+
+        expect(mockCustomerCreate).toHaveBeenCalledWith({
+          email: 'lololemon@gmail.com',
+          name: 'Lolo Lemon'
+        });
+        expect(response.status).toBe(200);
+      });
+
+      it('should return 400 when email format is wrong', async () => {
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send({
+          ...createStripePaymentIntentReqBody,
+          email: '12raqdcev'
+        });
+        expect(response.body).toEqual({
+          error: 'The donation form had invalid values for this submission.'
+        });
+        expect(response.status).toBe(400);
+      });
+
+      it('should return 400 if amount is incorrect', async () => {
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send({
+          ...createStripePaymentIntentReqBody,
+          amount: '350'
+        });
+        expect(response.body).toEqual({
+          error: 'The donation form had invalid values for this submission.'
+        });
+        expect(response.status).toBe(400);
+      });
+
+      it('should return 500 if Stripe encounters an error', async () => {
+        mockSubCreate.mockImplementationOnce(defaultError);
+        const response = await superPost(
+          '/donate/create-stripe-payment-intent'
+        ).send(createStripePaymentIntentReqBody);
+        expect(response.body).toEqual({
+          error: 'Donation failed due to a server error.'
+        });
+        expect(response.status).toBe(500);
+      });
+    });
+
+    describe('POST /donate/charge-stripe', () => {
+      it('should return 200 and call stripe api properly', async () => {
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('no-errors')
+        );
+        const response = await superPost('/donate/charge-stripe').send(
+          chargeStripeReqBody
+        );
+        expect(mockSubRetrieve).toHaveBeenCalledWith('sub_test_id');
+        expect(response.status).toBe(200);
+      });
+
+      it('should return 500 when if product id is wrong', async () => {
+        mockSubRetrieve.mockImplementationOnce(() =>
+          Promise.resolve({
+            ...mockSubRetrieveObj,
+            items: {
+              ...mockSubRetrieveObj.items,
+              data: [
+                {
+                  ...mockSubRetrieveObj.items.data[0],
+                  plan: {
+                    product: 'wrong_product_id'
+                  }
+                }
+              ]
+            }
+          })
+        );
+        const response = await superPost('/donate/charge-stripe').send(
+          chargeStripeReqBody
+        );
+        expect(response.body).toEqual({
+          error: 'Donation failed due to a server error.'
+        });
+        expect(response.status).toBe(500);
+      });
+
+      it('should return 500 if subsciption is not active', async () => {
+        mockSubRetrieve.mockImplementationOnce(() =>
+          Promise.resolve({
+            ...mockSubRetrieveObj,
+            status: 'canceled'
+          })
+        );
+        const response = await superPost('/donate/charge-stripe').send(
+          chargeStripeReqBody
+        );
+        expect(response.body).toEqual({
+          error: 'Donation failed due to a server error.'
+        });
+        expect(response.status).toBe(500);
+      });
+
+      it('should return 500 if timestamp is old', async () => {
+        mockSubRetrieve.mockImplementationOnce(() =>
+          Promise.resolve({
+            ...mockSubRetrieveObj,
+            current_period_start: Math.floor(Date.now() / 1000) - 500
+          })
+        );
+        const response = await superPost('/donate/charge-stripe').send(
+          chargeStripeReqBody
+        );
+        expect(response.body).toEqual({
+          error: 'Donation failed due to a server error.'
+        });
+        expect(response.status).toBe(500);
+      });
+    });
   });
 
   describe('Unauthenticated User', () => {
@@ -223,10 +393,12 @@ describe('Donate', () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
+
     const endpoints: { path: string; method: 'POST' }[] = [
       { path: '/donate/add-donation', method: 'POST' },
       { path: '/donate/charge-stripe-card', method: 'POST' }
     ];
+
     endpoints.forEach(({ path, method }) => {
       test(`${method} ${path} returns 401 status code with error message`, async () => {
         const response = await superRequest(path, {
@@ -235,6 +407,27 @@ describe('Donate', () => {
         });
         expect(response.statusCode).toBe(401);
       });
+    });
+
+    test('POST /donate/create-stripe-payment-intent should return 200', async () => {
+      mockSubCreate.mockImplementationOnce(generateMockSubCreate('no-errors'));
+      const response = await superRequest(
+        '/donate/create-stripe-payment-intent',
+        {
+          method: 'POST',
+          setCookies
+        }
+      ).send(createStripePaymentIntentReqBody);
+      expect(response.status).toBe(200);
+    });
+
+    test('POST /donate/charge-stripe should return 200', async () => {
+      mockSubCreate.mockImplementationOnce(generateMockSubCreate('no-errors'));
+      const response = await superRequest('/donate/charge-stripe', {
+        method: 'POST',
+        setCookies
+      }).send(chargeStripeReqBody);
+      expect(response.status).toBe(200);
     });
   });
 });
