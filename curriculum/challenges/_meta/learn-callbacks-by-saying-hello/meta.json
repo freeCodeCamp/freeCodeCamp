@@ -1,0 +1,52 @@
+{
+  "name": "learn-callbacks-by-saying-hello",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-callbacks-by-saying-hello",
+  "order": 4,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "6675b238e128702f011e5395",
+      "title": "Step 1"
+    },
+    {
+      "id": "6675df027b8c9574fa7bbffa",
+      "title": "Step 2"
+    },
+    {
+      "id": "6675df027b8c9574fa7bbffb",
+      "title": "Step 3"
+    },
+    {
+      "id": "6675df027b8c9574fa7bbffc",
+      "title": "Step 4"
+    },
+    {
+      "id": "6675df027b8c9574fa7bbffd",
+      "title": "Step 5"
+    },
+    {
+      "id": "6675df027b8c9574fa7bbffe",
+      "title": "Step 6"
+    },
+    {
+      "id": "6675df027b8c9574fa7bbfff",
+      "title": "Step 7"
+    },
+    {
+      "id": "6675df027b8c9574fa7bc000",
+      "title": "Step 8"
+    },
+    {
+      "id": "6675df027b8c9574fa7bc001",
+      "title": "Step 9"
+    },
+    {
+      "id": "6675df027b8c9574fa7bc002",
+      "title": "Step 10"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
