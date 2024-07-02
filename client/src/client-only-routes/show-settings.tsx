@@ -15,7 +15,7 @@ import About from '../components/settings/about';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
-import Internet, { Socials } from '../components/settings/internet';
+import { Socials } from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
@@ -50,7 +50,6 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   submitNewAbout: () => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  updateSocials: (formValues: Socials) => void;
   updateIsHonest: () => void;
   updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
@@ -94,7 +93,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const {
     createFlashMessage,
     isSignedIn,
-    submitNewAbout,
     toggleNightMode,
     toggleSoundMode,
     toggleKeyboardShortcuts,
@@ -124,22 +122,13 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
-      about,
-      picture,
       theme,
       keyboardShortcuts,
-      location,
-      name,
-      githubProfile,
-      linkedin,
-      twitter,
-      website,
       portfolio
     },
     navigate,
     showLoading,
     updateQuincyEmail,
-    updateSocials,
     updatePortfolio,
     updateIsHonest,
     verifyCert,
@@ -171,18 +160,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             {t('settings.for', { username: username })}
           </h1>
           <About
-            about={about}
             currentTheme={theme}
-            location={location}
-            name={name}
-            picture={picture}
             sound={sound}
             keyboardShortcuts={keyboardShortcuts}
-            submitNewAbout={submitNewAbout}
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            username={username}
           />
           <Spacer size='medium' />
           <Privacy />
@@ -192,14 +175,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isEmailVerified={isEmailVerified}
             sendQuincyEmail={sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
-          />
-          <Spacer size='medium' />
-          <Internet
-            githubProfile={githubProfile}
-            linkedin={linkedin}
-            twitter={twitter}
-            updateSocials={updateSocials}
-            website={website}
           />
           <Spacer size='medium' />
           <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />

@@ -253,7 +253,8 @@
       "internet": "Your Internet Presence",
       "portfolio": "Portfolio Settings",
       "privacy": "Privacy Settings",
-      "personal-info": "Personal Information"
+      "personal-info": "Personal Information",
+      "edit-my-profile": "Edit My Profile"
     },
     "danger": {
       "heading": "Danger Zone",
