@@ -1,5 +1,5 @@
 import { WindowLocation } from '@reach/router';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
@@ -44,6 +44,8 @@ function DonateModal({
   location,
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
+  const [canClose, setCanClose] = useState(false);
+
   useEffect(() => {
     if (show) {
       void playTone('donation');
@@ -58,10 +60,16 @@ function DonateModal({
   }, [show, recentlyClaimedBlock]);
 
   const handleModalHide = () => {
+    if (!canClose) {
+      return;
+    }
+
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
       goToAnchor('claim-cert-block');
     }
+
+    closeDonationModal();
   };
 
   return (
@@ -69,6 +77,7 @@ function DonateModal({
       <DonationModalBody
         closeDonationModal={closeDonationModal}
         recentlyClaimedBlock={recentlyClaimedBlock}
+        setCanClose={setCanClose}
       />
     </Modal>
   );
