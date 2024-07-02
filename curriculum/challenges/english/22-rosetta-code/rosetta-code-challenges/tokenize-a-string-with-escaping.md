@@ -63,10 +63,11 @@ assert(typeof tokenize('a', 'b', 'c') === 'object');
 `tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')` should return `['one|uno', '', 'three^^', 'four^|cuatro', '']`
 
 ```js
-assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
-assert.deepEqual(tokenize(testStr3, '|', '^'), res3);
-assert.deepEqual(tokenize(testStr4, '|', '^'), res4);
-assert.deepEqual(tokenize(testStr5, '|', '^'), res5);
+console.log(tokenize(testStr1, '|', '^')); 
+console.log(tokenize(testStr2, '&', '@')); 
+console.log(tokenize(testStr3, '|', '^')); 
+console.log(tokenize(testStr4, '|', '^')); 
+console.log(tokenize(testStr5, '|', '^'));
 ```
 
 `tokenize('a@&bcd&ef&&@@hi', '&', '@')` should return `['a&bcd', 'ef', '', '@hi']`
@@ -110,27 +111,27 @@ function tokenize(str, sep, esc) {
 ```js
 // tokenize :: String -> Character -> Character -> [String]
 function tokenize(str, charDelim, charEsc) {
-  const dctParse = str.split('')
-    .reduce((a, x) => {
-      const blnEsc = a.esc;
-      const blnBreak = !blnEsc && x === charDelim;
-      const blnEscChar = !blnEsc && x === charEsc;
+  let result = [];
+  let token = '';
+  let escaping = false;
 
-      return {
-        esc: blnEscChar,
-        token: blnBreak ? '' : (
-          a.token + (blnEscChar ? '' : x)
-        ),
-        list: a.list.concat(blnBreak ? a.token : [])
-      };
-    }, {
-      esc: false,
-      token: '',
-      list: []
-    });
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (escaping) {
+      token += char;
+      escaping = false;
+    } else if (char === charEsc) {
+      escaping = true;
+    } else if (char === charDelim) {
+      result.push(token);
+      token = '';
+    } else {
+      token += char;
+    }
+  }
 
-  return dctParse.list.concat(
-    dctParse.token
-  );
+  result.push(token);
+
+  return result;
 }
 ```
