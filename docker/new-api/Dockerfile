@@ -51,12 +51,13 @@ RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
 RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
-FROM node:20-alpine
+FROM node:20-bookworm
 RUN npm i -g pm2@4
 USER node
 WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
 COPY --from=builder --chown=node:node /home/node/build/api/package.json api/
+COPY --from=builder --chown=node:node /home/node/build/shared/config/curriculum.json shared/config/
 
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/shared/node_modules/ shared/node_modules/

@@ -410,11 +410,11 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "通过创建骰子游戏学习中级算法思维",
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "算法思维包括将复杂问题分解为一连串定义明确、循序渐进的指令的能力。",
-          "在这个骰子游戏项目中，你将学习如何管理游戏状态、实现掷骰子的游戏逻辑、记分以及应用各种组合的规则。",
-          "这个项目涵盖事件处理、数组操作、条件逻辑以及根据游戏状态动态更新用户界面等概念。"
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1276,6 +1276,12 @@
         "intro": [
           "Learn how to solve problems and understand errors in JavaScript."
         ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Build a Rock Paper Scissor Game",
+        "intro": [
+          "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
+        ]
       }
     }
   },
@@ -1674,13 +1680,17 @@
       }
     }
   },
-  "example-certification": {
-    "title": "示例认证",
-    "intro": ["占位符"],
+  "front-end-development": {
+    "title": "Front End Development",
+    "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "示例认证测验",
-        "intro": ["占位符"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Learn Basic HTML by Building a Recipe Page",
+        "intro": ["", ""]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Front End Development Certification Exam",
+        "intro": ["", ""]
       }
     }
   },

@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-La tua regola CSS dovrebbe terminare con un punto e virgola.
+Your CSS rule should end with a semicolon.
 
 ```js
 assert(

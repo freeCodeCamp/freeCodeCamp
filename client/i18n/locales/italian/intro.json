@@ -410,11 +410,11 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Learn Intermediate Algorithmic Thinking by Building a Dice Game",
+        "title": "Review Algorithmic Thinking by Building a Dice Game",
         "intro": [
-          "Il pensiero algoritmico comporta la capacità di suddividere i problemi complessi in una serie di istruzioni sequenziali ben definite.",
-          "In questo progetto di un gioco di dadi, imparerai come gestire lo stato del gioco, implementare la logica di gioco per il lancio dei dadi, segnare il punteggio e applicare le regole per varie combinazioni.",
-          "Questo progetto tratta concetti come gestione di eventi, manipolazione di array, logica condizionale e aggiornamento dinamico dell'interfaccia utente in base allo stato del gioco."
+          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
+          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
+          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1282,6 +1282,12 @@
         "intro": [
           "Learn how to solve problems and understand errors in JavaScript."
         ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Build a Rock Paper Scissor Game",
+        "intro": [
+          "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
+        ]
       }
     }
   },
@@ -1682,13 +1688,17 @@
       }
     }
   },
-  "example-certification": {
-    "title": "Example Certification",
+  "front-end-development": {
+    "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Learn Basic HTML by Building a Recipe Page",
+        "intro": ["", ""]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Front End Development Certification Exam",
+        "intro": ["", ""]
       }
     }
   },

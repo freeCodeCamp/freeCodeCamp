@@ -28,7 +28,7 @@ Mocha 允许你在任何实际测试运行之前运行一些代码。 这对做�
 在 `tests/2_functional-tests.js` 中，紧跟在 `Browser` 声明之后，将你的项目 URL 添加到变量的 `site` 属性：
 
 ```js
-Browser.site = 'http://localhost:3000'; // Your URL here
+Browser.site = 'http://0.0.0.0:3000'; // Your URL here
 ```
 
 然后在 `'Functional Tests with Zombie.js'` 套件的根级别，使用以下代码实例化 `Browser` 对象的新实例：
@@ -37,7 +37,7 @@ Browser.site = 'http://localhost:3000'; // Your URL here
 const browser = new Browser();
 ```
 
-并使用 `suiteSetup` 钩子将 `browser` 定向到带有以下代码的 `/` 路由：
+And use the `suiteSetup` hook to direct the `browser` to the `/` route with the following code. **Note**: `done` is passed as a callback to `browser.visit`, you should not invoke it.
 
 ```js
 suiteSetup(function(done) {

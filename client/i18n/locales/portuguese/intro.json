@@ -410,7 +410,7 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Aprenda raciocínio algorítmico intermediário criando um jogo de dados",
+        "title": "Revise o raciocínio algorítmico criando um jogo de dados",
         "intro": [
           "Raciocínio algorítmico implica a capacidade de dividir problemas complexos em uma sequência de instruções passo a passo e bem definidas.",
           "Neste projeto de jogo de dados, você aprenderá como gerenciar o estado do jogo, implementar a lógica do jogo para rolar os dados, manter a pontuação e aplicar as regras para várias combinações.",
@@ -1282,6 +1282,12 @@
         "intro": [
           "Aprenda a resolver problemas e a entender os erros em JavaScript."
         ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Crie um jogo de pedra, papel e tesoura",
+        "intro": [
+          "Teste suas habilidades em JavaScript criando um jogo de pedra, papel e tesoura."
+        ]
       }
     }
   },
@@ -1682,13 +1688,17 @@
       }
     }
   },
-  "example-certification": {
-    "title": "Certificação de exemplo",
+  "front-end-development": {
+    "title": "Desenvolvimento de front-end",
     "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "Exame da certificação de exemplo",
-        "intro": ["placeholder"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Aprenda HTML básico criando uma página de receitas",
+        "intro": ["", ""]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Exame de certificação de desenvolvimento de front-end",
+        "intro": ["", ""]
       }
     }
   },

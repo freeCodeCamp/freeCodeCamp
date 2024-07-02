@@ -28,7 +28,7 @@ const mockSuperBlocks = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStruct,
   SuperBlocks.TheOdinProject,
-  SuperBlocks.ExampleCertification
+  SuperBlocks.FrontEndDevelopment
 ];
 
 const fullSuperOrder = {
@@ -50,7 +50,7 @@ const fullSuperOrder = {
   [SuperBlocks.RespWebDesign]: 15,
   [SuperBlocks.JsAlgoDataStruct]: 16,
   [SuperBlocks.TheOdinProject]: 17,
-  [SuperBlocks.ExampleCertification]: 18
+  [SuperBlocks.FrontEndDevelopment]: 18
 };
 
 describe('createSuperOrder', () => {
@@ -125,12 +125,12 @@ describe('getSuperOrder', () => {
       process.env.SHOW_UPCOMING_CHANGES === 'true'
     ) {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
+      expect(getSuperOrder(SuperBlocks.FrontEndDevelopment)).toBe(18);
     } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
       return;
     } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
+      expect(getSuperOrder(SuperBlocks.FrontEndDevelopment)).toBe(18);
     }
   });
 });

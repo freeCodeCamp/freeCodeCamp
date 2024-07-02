@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-确保 CSS 规则以分号结尾。
+Your CSS rule should end with a semicolon.
 
 ```js
 assert(

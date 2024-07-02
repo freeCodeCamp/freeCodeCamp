@@ -271,16 +271,16 @@ class Block extends Component<BlockProps> {
                   progressBarRender}
               </button>
             </h3>
-            <div className='tags-wrapper'>
-              {!isAudited && (
+            {!isAudited && (
+              <div className='tags-wrapper'>
                 <Link
                   className='cert-tag'
                   to={t('links:help-translate-link-url')}
                 >
                   {t('misc.translation-pending')}
                 </Link>
-              )}
-            </div>
+              </div>
+            )}
             {isExpanded && <BlockIntros intros={blockIntroArr} />}
             {isExpanded && (
               <Challenges

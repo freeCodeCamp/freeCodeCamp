@@ -100,7 +100,8 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "play-scene": "再生"
+    "play-scene": "再生",
+    "closed-caption": "クローズドキャプション"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -871,7 +872,8 @@
     "own-work-url": "あなた自身の作品を提出してください。",
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
-    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。"
+    "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
+    "source-code-link-required": "ソースコードのリンクを提出してください。"
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
@@ -997,6 +999,8 @@
       "a2-english-for-developers": "開発者のための A2 レベル英語認定証",
       "B1 English for Developers": "開発者のための B1 レベル英語",
       "b1-english-for-developers": "開発者のための B1 レベル英語認定証",
+      "Front End Development": "Front End Development",
+      "front-end-development-v9": "Front End Development Certification",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "(レガシー) フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",

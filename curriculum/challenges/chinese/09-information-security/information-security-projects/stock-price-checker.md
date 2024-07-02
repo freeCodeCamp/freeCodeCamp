@@ -20,7 +20,7 @@ dashedName: stock-price-checker
 
 # --instructions--
 
-1.  将 `NODE_ENV` 设置为 `test`，不带引号，并将 `DB` 设为你的 MongoDB 连接字符串。
+1.  Set the `NODE_ENV` environment variable to `test`, without quotes
 2.  在 `routes/api.js` 中完成项目，或者通过创建一个处理程序/控制器来完成项目
 3.  添加安全功能到 `server.js`。
 4.  在 `tests/2_functional-tests.js` 中创建所有的功能测试
