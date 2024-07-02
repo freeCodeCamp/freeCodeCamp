@@ -10,7 +10,7 @@ import {
 } from '../../../../shared/config/superblocks';
 import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
-import { Link, Spacer } from '../helpers';
+import { Spacer, ButtonLink } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import { showUpcomingChanges } from '../../../config/env.json';
 
@@ -102,13 +102,18 @@ function MapLi({
           </div>
         </div>
 
-        <Link className='btn link-btn btn-lg' to={`/learn/${superBlock}/`}>
+        <ButtonLink
+          block
+          size='large'
+          className='map-superblock-link'
+          href={`/learn/${superBlock}/`}
+        >
           <div style={linkSpacingStyle}>
             <SuperBlockIcon className='map-icon' superBlock={superBlock} />
             {getSuperBlockTitleForMap(superBlock)}
           </div>
           {landing && <LinkButton />}
-        </Link>
+        </ButtonLink>
       </li>
     </>
   );
