@@ -884,6 +884,14 @@
           "This is one of the required projects to claim your certification."
         ]
       },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Learn Interfaces by Building an Equation Solver",
+        "intro": [
+          "Abstract classes enables you to define formal interfaces - objects acting as blueprints for classes.",
+          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
+        ]
+      },
+
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Learn Special Methods by Building a Vector Space",
         "intro": [
