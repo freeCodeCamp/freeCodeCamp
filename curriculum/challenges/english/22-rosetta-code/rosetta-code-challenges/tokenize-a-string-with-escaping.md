@@ -83,6 +83,27 @@ const res1 = ['one|uno', '', 'three^^', 'four^|cuatro', ''];
 // TODO add more tests
 const testStr2 = 'a@&bcd&ef&&@@hi';
 const res2 = ['a&bcd', 'ef', '', '@hi'];
+
+const testStr3 = 'hello^|world^|how^are^you^|';
+const res3 = ['hello|world', 'how^are^you|'];
+
+const testStr4 = '^|^|^^^|^|^^';
+const res4 = ['', '', '^|', '', '^'];
+
+const testStr5 = 'one|two|three|four|';
+const res5 = ['one', 'two', 'three', 'four', ''];
+
+assert.deepEqual(tokenize(testStr1, '|', '^'), res1, "tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^') should return ['one|uno', '', 'three^^', 'four^|cuatro', '']");
+
+assert.deepEqual(tokenize(testStr2, '&', '@'), res2, "tokenize('a@&bcd&ef&&@@hi', '&', '@') should return ['a&bcd', 'ef', '', '@hi']");
+
+assert.deepEqual(tokenize(testStr3, '|', '^'), res3, "tokenize('hello^|world^|how^are^you^|', '|', '^') should return ['hello|world', 'how^are^you|']");
+
+assert.deepEqual(tokenize(testStr4, '|', '^'), res4, "tokenize('^|^|^^^|^|^^', '|', '^') should return ['', '', '^|', '', '^']");
+
+assert.deepEqual(tokenize(testStr5, '|', '^'), res5, "tokenize('one|two|three|four|', '|', '^') should return ['one', 'two', 'three', 'four', '']");
+
+
 ```
 
 ## --seed-contents--
@@ -97,28 +118,29 @@ function tokenize(str, sep, esc) {
 
 ```js
 // tokenize :: String -> Character -> Character -> [String]
-function tokenize(str, charDelim, charEsc) {
-  const dctParse = str.split('')
-    .reduce((a, x) => {
-      const blnEsc = a.esc;
-      const blnBreak = !blnEsc && x === charDelim;
-      const blnEscChar = !blnEsc && x === charEsc;
+function tokenize(str, sep, esc) {
+  let result = [];
+  let token = '';
+  let escaping = false;
 
-      return {
-        esc: blnEscChar,
-        token: blnBreak ? '' : (
-          a.token + (blnEscChar ? '' : x)
-        ),
-        list: a.list.concat(blnBreak ? a.token : [])
-      };
-    }, {
-      esc: false,
-      token: '',
-      list: []
-    });
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (escaping) {
+      token += char;
+      escaping = false;
+    } else if (char === esc) {
+      escaping = true;
+    } else if (char === sep) {
+      result.push(token);
+      token = '';
+    } else {
+      token += char;
+    }
+  }
 
-  return dctParse.list.concat(
-    dctParse.token
-  );
+  result.push(token);
+
+  return result;
 }
+
 ```
