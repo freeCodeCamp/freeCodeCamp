@@ -8,6 +8,7 @@ const {
   generateChallengeCreator,
   CHALLENGES_DIR,
   META_DIR,
+  I18N_CHALLENGES_DIR,
   getChallengesDirForLang
 } = require('../../curriculum/get-challenges');
 
@@ -25,7 +26,11 @@ exports.replaceChallengeNode = () => {
     delete require.cache[require.resolve(metaPath)];
     const meta = require(metaPath);
     const englishPath = path.resolve(CHALLENGES_DIR, 'english', filePath);
-    const i18nPath = path.resolve(CHALLENGES_DIR, curriculumLocale, filePath);
+    const i18nPath = path.resolve(
+      I18N_CHALLENGES_DIR,
+      curriculumLocale,
+      filePath
+    );
     // TODO: reimplement hot-reloading of certifications
     const createChallenge = generateChallengeCreator(
       curriculumLocale,

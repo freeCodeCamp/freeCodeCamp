@@ -22,12 +22,24 @@ const { metaSchemaValidator } = require('./schema/meta-schema');
 const access = util.promisify(fs.access);
 
 const CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
+const DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
+
+const I18N_CURRICULUM_DIR = path.resolve(
+  __dirname,
+  process.env.BUILD_WITH_SUBMODULE === 'true'
+    ? 'i18n-curriculum/curriculum'
+    : '.'
+);
+
+const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
+
 exports.CHALLENGES_DIR = CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
+exports.I18N_CHALLENGES_DIR = I18N_CHALLENGES_DIR;
 
 const COMMENT_TRANSLATIONS = createCommentMap(
-  path.resolve(__dirname, 'dictionaries')
+  path.resolve(I18N_CURRICULUM_DIR, 'dictionaries')
 );
 
 function createCommentMap(dictionariesDir) {
@@ -43,13 +55,22 @@ function createCommentMap(dictionariesDir) {
     {}
   );
 
+  const englishDictionaryDir =
+    process.env.BUILD_WITH_SUBMODULE === 'true'
+      ? path.resolve(DICTIONARIES_DIR)
+      : path.resolve(dictionariesDir);
+
   // get the english dicts
   const COMMENTS_TO_TRANSLATE = require(
-    path.resolve(dictionariesDir, 'english', 'comments.json')
+    path.resolve(englishDictionaryDir, 'english', 'comments.json')
   );
 
   const COMMENTS_TO_NOT_TRANSLATE = require(
-    path.resolve(dictionariesDir, 'english', 'comments-to-not-translate')
+    path.resolve(
+      englishDictionaryDir,
+      'english',
+      'comments-to-not-translate.json'
+    )
   );
 
   // map from english comment text to translations
@@ -98,7 +119,11 @@ function getTranslationEntry(dicts, { engId, text }) {
 }
 
 function getChallengesDirForLang(lang) {
-  return path.resolve(CHALLENGES_DIR, `${lang}`);
+  if (lang === 'english') {
+    return path.resolve(CHALLENGES_DIR, `${lang}`);
+  } else {
+    return path.resolve(I18N_CHALLENGES_DIR, `${lang}`);
+  }
 }
 
 function getMetaForBlock(block) {
@@ -225,7 +250,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
     'english',
     filePath
   );
-  const i18nPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
+  const i18nPath = path.resolve(__dirname, I18N_CHALLENGES_DIR, lang, filePath);
   const createChallenge = generateChallengeCreator(lang, englishPath, i18nPath);
 
   await assertHasEnglishSource(filePath, lang, englishPath);
