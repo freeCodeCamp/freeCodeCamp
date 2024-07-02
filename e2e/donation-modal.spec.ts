@@ -36,11 +36,9 @@ const completeFrontEndCert = async (page: Page) => {
 
 const completeThreeChallenges = async ({
   page,
-  browserName,
   isMobile
 }: {
   page: Page;
-  browserName: string;
   isMobile: boolean;
 }) => {
   await page.goto(
@@ -66,7 +64,7 @@ const completeThreeChallenges = async ({
     await page.waitForURL(challenge.url);
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),
@@ -82,11 +80,9 @@ const completeThreeChallenges = async ({
 
 const completeTenChallenges = async ({
   page,
-  browserName,
   isMobile
 }: {
   page: Page;
-  browserName: string;
   isMobile: boolean;
 }) => {
   await page.goto(
@@ -140,7 +136,7 @@ const completeTenChallenges = async ({
     await page.waitForURL(challenge.url);
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),

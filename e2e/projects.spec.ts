@@ -110,7 +110,6 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
   test('projects are submitted and viewed correctly', async ({
     page,
-    browserName,
     isMobile,
     request,
     context
@@ -149,7 +148,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
     );
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),

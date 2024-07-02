@@ -6,8 +6,7 @@ test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('Progress bar component', () => {
   test('Should appear with the correct content after the user has submitted their code', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     await page.goto(
       '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
@@ -16,7 +15,7 @@ test.describe('Progress bar component', () => {
     // large. There's a bug that means `scrollIntoView` does not work in the
     // editor and so we have to pick less verbose challenges until that's fixed.
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.keyboard.insertText(
       '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>See more cat photos in our gallery.</p></body></html>'
@@ -36,14 +35,13 @@ test.describe('Progress bar component', () => {
 
   test('should appear in the completion modal after user has submitted their code', async ({
     page,
-    isMobile,
-    browserName
+    isMobile
   }) => {
     await page.goto(
       '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables'
     );
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.keyboard.insertText('var myName;');
 

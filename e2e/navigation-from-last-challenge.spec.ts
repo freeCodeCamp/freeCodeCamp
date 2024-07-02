@@ -61,13 +61,12 @@ test.describe('Should take you to the next superblock (with editor solution)', (
   test('at the end of a superblock should take you to the superblock page with the current block hash', async ({
     page,
     isMobile,
-    browserName,
     context
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await page.goto(rwdChallenge.url);
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page });
 
     await page.evaluate(
       async solution => await navigator.clipboard.writeText(solution.content),
