@@ -104,19 +104,29 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         await test(e.getUserInput);
       }
       return { pass: true };
-    } catch (err) {
-      if (!(err instanceof chai.AssertionError)) {
-        console.error(err);
+    } catch (e) {
+      if (!(e instanceof chai.AssertionError)) {
+        const err = e as Error;
+        console.error(e);
+        // We are going to provide the standard error message to the camper
+        const errorType = 'js-syntax-error';
+        return {
+          err: {
+            message: err.message,
+            stack: err.stack,
+            errorType
+          }
+        };
       }
       // to provide useful debugging information when debugging the tests, we
       // have to extract the message, stack and, if they exist, expected and
       // actual before returning
       return {
         err: {
-          message: (err as Error).message,
-          stack: (err as Error).stack,
-          expected: (err as { expected?: string }).expected,
-          actual: (err as { actual?: string }).actual
+          message: (e as Error).message,
+          stack: (e as Error).stack,
+          expected: (e as { expected?: string }).expected,
+          actual: (e as { actual?: string }).actual
         }
       };
     }
