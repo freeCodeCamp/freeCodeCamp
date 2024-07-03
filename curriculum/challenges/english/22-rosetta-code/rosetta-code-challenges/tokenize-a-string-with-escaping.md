@@ -126,14 +126,14 @@ function tokenize(str, charDelim, charEsc) {
       const blnEscChar = !blnEsc && x === charEsc;
       return {
         esc: blnEscChar,
-        token: blnBreak ? '' : (
-          a.token + (blnEscChar ? '' : x)
+        token: blnBreak ? [] : (
+          a.token.concat(blnEscChar ? '' : x)
         ),
         list: a.list.concat(blnBreak ? a.token : [])
       };
     }, {
       esc: false,
-      token: '',
+      token: [], 
       list: []
     });
   return dctParse.list.concat(dctParse.token);
