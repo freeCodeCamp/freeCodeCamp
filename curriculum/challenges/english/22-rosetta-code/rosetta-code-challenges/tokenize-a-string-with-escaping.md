@@ -90,8 +90,6 @@ assert.deepEqual(tokenize(testStr4, '|', '^'), res4);
 assert.deepEqual(tokenize(testStr5, '|', '^'), res5);
 ```
 
-`tokenize('one|two|three|four|', '|', '^')` should return `['one', 'two', 'three', 'four', '']`
-
 # --seed--
 
 ## --after-user-code--
