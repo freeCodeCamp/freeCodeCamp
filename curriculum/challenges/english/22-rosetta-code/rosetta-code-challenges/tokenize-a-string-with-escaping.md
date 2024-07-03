@@ -72,25 +72,25 @@ assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
 assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
 ```
 
-`tokenize('hello^|world^|how^are^you^|', '|', '^')` should return ` ['hello|world', 'how^are^you|']`
+`tokenize('hello^|world^|how^are^you^|', '|', '^')` should return `['hello|world', 'how^are^you|']`
 
 ```js
 assert.deepEqual(tokenize(testStr3, '|', '^'), res3);
 ```
 
-`tokenize('^|^|^^^|^|^^', '|', '^') ` should return `['', '', '^|', '', '^']`
+`tokenize('^|^|^^^|^|^^', '|', '^')` should return `['', '', '^|', '', '^']`
 
 ```js
 assert.deepEqual(tokenize(testStr4, '|', '^'), res4);
 ```
 
-`tokenize('one|two|three|four|', '|', '^') ` should return ` ['one', 'two', 'three', 'four', '']`
+`tokenize('one|two|three|four|', '|', '^')` should return `['one', 'two', 'three', 'four', '']`
 
 ```js
 assert.deepEqual(tokenize(testStr5, '|', '^'), res5);
 ```
 
-` tokenize('one|two|three|four|', '|', '^') ` should return `['one', 'two', 'three', 'four', '']`
+`tokenize('one|two|three|four|', '|', '^')` should return `['one', 'two', 'three', 'four', '']`
 
 # --seed--
 
