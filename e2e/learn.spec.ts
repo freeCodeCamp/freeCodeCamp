@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
 import words from '../client/i18n/locales/english/motivation.json';
 
 const superBlocks = [
@@ -36,9 +35,12 @@ test.describe('Learn - Unauthenticated user', () => {
       'Learn to Code — For Free — Coding Courses for Busy People'
     );
 
-    const header = page.getByTestId('learn-heading');
-    await expect(header).toBeVisible();
-    await expect(header).toContainText(translations.learn.heading);
+    await expect(
+      page.getByRole('heading', {
+        level: 1,
+        name: "Welcome to freeCodeCamp's curriculum."
+      })
+    ).toBeVisible();
 
     // Advice for new learners
     const learnReadThisSection = page.getByTestId('learn-read-this-section');
@@ -64,16 +66,30 @@ test.describe('Learn - Unauthenticated user', () => {
       const btn = curriculumBtns.nth(i);
       await expect(btn).toContainText(superBlocks[i]);
     }
+
+    await expect(
+      page.getByRole('link', { name: 'Sign in to save your progress' })
+    ).toBeVisible();
   });
 });
 
 test.describe('Learn - Authenticated user)', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-  test('the page shows a random quote for an authenticated user', async ({
-    page
-  }) => {
+  test('the page should render correctly', async ({ page }) => {
     await page.goto('/learn');
+
+    await expect(page).toHaveTitle(
+      'Learn to Code — For Free — Coding Courses for Busy People'
+    );
+
+    await expect(
+      page.getByRole('heading', {
+        level: 1,
+        name: 'Welcome back, Full Stack User.'
+      })
+    ).toBeVisible();
+
     const shownQuote = await page.getByTestId('random-quote').textContent();
 
     const shownAuthorText = await page
@@ -87,5 +103,13 @@ test.describe('Learn - Authenticated user)', () => {
 
     expect(allMotivationalQuotes).toContain(shownQuote);
     expect(allAuthors).toContain(shownAuthor);
+
+    // certifications
+    const curriculumBtns = page.getByTestId('curriculum-map-button');
+    await expect(curriculumBtns).toHaveCount(superBlocks.length);
+    for (let i = 0; i < superBlocks.length; i++) {
+      const btn = curriculumBtns.nth(i);
+      await expect(btn).toContainText(superBlocks[i]);
+    }
   });
 });
