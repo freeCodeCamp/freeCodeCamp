@@ -1,6 +1,6 @@
 import { FastifyPluginCallback } from 'fastify';
 
-import { unsign, type CookieSerializeOptions } from './cookies';
+import type { CookieSerializeOptions } from './cookies';
 
 type Options = { cookies: string[]; attributes: CookieSerializeOptions };
 
@@ -21,12 +21,12 @@ export const cookieUpdate: FastifyPluginCallback<Options> = (
   options,
   done
 ) => {
-  fastify.addHook('onSend', (request, reply, payload, next) => {
+  fastify.addHook('onSend', (request, reply, _payload, next) => {
     for (const cookie of options.cookies) {
       const oldCookie = request.cookies[cookie];
       if (!oldCookie) continue;
 
-      const unsigned = unsign(oldCookie);
+      const unsigned = reply.unsignCookie(oldCookie);
       const raw = unsigned.valid ? (unsigned.value as string) : oldCookie;
       void reply.setCookie(cookie, raw, options.attributes);
     }
