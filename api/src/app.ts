@@ -40,6 +40,7 @@ import { emailSubscribtionRoutes } from './routes/email-subscription';
 import { settingRoutes, settingRedirectRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
+import { signoutRoute } from './routes/signout';
 import {
   API_LOCATION,
   EMAIL_PROVIDER,
@@ -227,6 +228,7 @@ export const build = async (
     void fastify.register(authRoutes);
   }
   void fastify.register(chargeStripeRoute);
+  void fastify.register(signoutRoute);
   void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userPublicGetRoutes);
   void fastify.register(unprotectedCertificateRoutes);
