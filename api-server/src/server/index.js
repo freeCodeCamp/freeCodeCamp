@@ -83,7 +83,7 @@ app.start = _.once(function () {
   });
 });
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.FREECODECAMP_NODE_ENV === 'development') {
   app.get('/', (req, res) => {
     log('Mounting dev root redirect...');
     const { origin } = getRedirectParams(req);
