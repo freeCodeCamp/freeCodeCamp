@@ -38,7 +38,6 @@ jobs:
             --build-arg RADIO_LOCATION=https://coderadio.freecodecamp.org \
             --build-arg CLIENT_LOCALE=english \
             --build-arg CURRICULUM_LOCALE=english \
-            --build-arg SHOW_LOCALE_DROPDOWN_MENU=false \
             --build-arg ALGOLIA_APP_ID=app_id_from_algolia_dashboard \
             --build-arg ALGOLIA_API_KEY=api_key_from_algolia_dashboard \
             --build-arg STRIPE_PUBLIC_KEY=pk_from_stripe_dashboard \

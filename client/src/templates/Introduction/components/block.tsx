@@ -250,6 +250,7 @@ class Block extends Component<BlockProps> {
             <h3 className='block-grid-title'>
               <button
                 aria-expanded={isExpanded ? 'true' : 'false'}
+                aria-controls={`${blockDashedName}-panel`}
                 className='block-header'
                 onClick={() => {
                   this.handleBlockClick();
@@ -281,14 +282,16 @@ class Block extends Component<BlockProps> {
                 </Link>
               </div>
             )}
-            {isExpanded && <BlockIntros intros={blockIntroArr} />}
             {isExpanded && (
-              <Challenges
-                challengesWithCompleted={challengesWithCompleted}
-                isProjectBlock={isProjectBlock}
-                isGridMap={true}
-                blockTitle={blockTitle}
-              />
+              <div id={`${blockDashedName}-panel`}>
+                <BlockIntros intros={blockIntroArr} />
+                <Challenges
+                  challengesWithCompleted={challengesWithCompleted}
+                  isProjectBlock={isProjectBlock}
+                  isGridMap={true}
+                  blockTitle={blockTitle}
+                />
+              </div>
             )}
           </div>
         </ScrollableAnchor>
