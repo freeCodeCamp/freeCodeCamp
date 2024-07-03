@@ -45,13 +45,14 @@ const COMMENT_TRANSLATIONS = createCommentMap(
 );
 
 function createCommentMap(dictionariesDir, englishDictionariesDir) {
-  // get all the languages for which there are translated dictionaries.
-  const otherLanguages = fs
-    .readdirSync(dictionariesDir)
-    .filter(lang => lang !== 'english');
+  // get all the languages for which there are dictionaries. Note: this has to
+  // include the english dictionaries since translateCommentsInChallenge treats
+  // all languages equally and will simply remove comments if there is no entry
+  // in the comment map.
+  const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
-  const dictionaries = otherLanguages.reduce(
+  const dictionaries = languages.reduce(
     (acc, lang) => ({
       ...acc,
       [lang]: require(path.resolve(dictionariesDir, lang, 'comments.json'))
@@ -87,7 +88,7 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
   const untranslatableCommentMap = Object.values(
     COMMENTS_TO_NOT_TRANSLATE
   ).reduce((acc, text) => {
-    const englishEntry = otherLanguages.reduce(
+    const englishEntry = languages.reduce(
       (acc, lang) => ({
         ...acc,
         [lang]: text
