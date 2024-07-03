@@ -39,31 +39,34 @@ exports.ENGLISH_CHALLENGES_DIR = ENGLISH_CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
 exports.CHALLENGES_DIR = CHALLENGES_DIR;
 
-const COMMENT_TRANSLATIONS = createCommentMap();
+const COMMENT_TRANSLATIONS = createCommentMap(
+  DICTIONARIES_DIR,
+  ENGLISH_DICTIONARIES_DIR
+);
 
-function createCommentMap() {
+function createCommentMap(dictionariesDir, englishDictionariesDir) {
   // get all the languages for which there are translated dictionaries.
   const otherLanguages = fs
-    .readdirSync(DICTIONARIES_DIR)
+    .readdirSync(dictionariesDir)
     .filter(lang => lang !== 'english');
 
   // get all their dictionaries
   const dictionaries = otherLanguages.reduce(
     (acc, lang) => ({
       ...acc,
-      [lang]: require(path.resolve(DICTIONARIES_DIR, lang, 'comments.json'))
+      [lang]: require(path.resolve(dictionariesDir, lang, 'comments.json'))
     }),
     {}
   );
 
   // get the english dicts
   const COMMENTS_TO_TRANSLATE = require(
-    path.resolve(ENGLISH_DICTIONARIES_DIR, 'english', 'comments.json')
+    path.resolve(englishDictionariesDir, 'english', 'comments.json')
   );
 
   const COMMENTS_TO_NOT_TRANSLATE = require(
     path.resolve(
-      ENGLISH_DICTIONARIES_DIR,
+      englishDictionariesDir,
       'english',
       'comments-to-not-translate.json'
     )
