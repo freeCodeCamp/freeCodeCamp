@@ -17,7 +17,7 @@ export const createStripePaymentIntent = {
         'The donation form had invalid values for this submission.'
       )
     }),
-    500: Type.Object({
+    default: Type.Object({
       error: Type.Literal('Donation failed due to a server error.')
     })
   }
