@@ -63,6 +63,8 @@ export function normalizeParams(
   returnTo = '' + returnTo;
   origin = '' + origin;
   pathPrefix = '' + pathPrefix;
+  // TODO(Post-MVP): consider adding HOME_LOCATION in allowedOrigins to allow
+  // redirection to work in development.
   // we add the '/' to prevent returns to
   // www.freecodecamp.org.somewhere.else.com
   if (
