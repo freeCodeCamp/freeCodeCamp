@@ -118,29 +118,25 @@ function tokenize(str, sep, esc) {
 
 ```js
 // tokenize :: String -> Character -> Character -> [String]
-function tokenize(str, sep, esc) {
-  let result = [];
-  let token = '';
-  let escaping = false;
-
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    if (escaping) {
-      token += char;
-      escaping = false;
-    } else if (char === esc) {
-      escaping = true;
-    } else if (char === sep) {
-      result.push(token);
-      token = '';
-    } else {
-      token += char;
-    }
-  }
-
-  result.push(token);
-
-  return result;
+function tokenize(str, charDelim, charEsc) {
+  const dctParse = str.split('')
+    .reduce((a, x) => {
+      const blnEsc = a.esc;
+      const blnBreak = !blnEsc && x === charDelim;
+      const blnEscChar = !blnEsc && x === charEsc;
+      return {
+        esc: blnEscChar,
+        token: blnBreak ? '' : (
+          a.token + (blnEscChar ? '' : x)
+        ),
+        list: a.list.concat(blnBreak ? a.token : [])
+      };
+    }, {
+      esc: false,
+      token: '',
+      list: []
+    });
+  return dctParse.list.concat(dctParse.token);
 }
 
 ```
