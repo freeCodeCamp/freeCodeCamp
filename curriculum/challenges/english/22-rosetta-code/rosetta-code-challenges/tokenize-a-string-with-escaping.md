@@ -72,6 +72,30 @@ assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
 assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
 ```
 
+`tokenize('a@&bcd&ef&&@@hi', '&', '@')` should return `['a&bcd', 'ef', '', '@hi']`
+
+```js
+assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
+```
+
+`tokenize('hello^|world^|how^are^you^|', '|', '^') should return ['hello|world', 'how^are^you|']`
+
+```js
+assert.deepEqual(tokenize(testStr3, '|', '^'), res3);
+```
+
+`tokenize('^|^|^^^|^|^^', '|', '^') should return ['', '', '^|', '', '^']`
+
+```js
+assert.deepEqual(tokenize(testStr4, '|', '^'), res4);
+```
+
+`tokenize('one|two|three|four|', '|', '^') should return ['one', 'two', 'three', 'four', '']`
+
+```js
+assert.deepEqual(tokenize(testStr5, '|', '^'), res5);
+```
+
 # --seed--
 
 ## --after-user-code--
@@ -93,17 +117,35 @@ const res4 = ['', '', '^|', '', '^'];
 const testStr5 = 'one|two|three|four|';
 const res5 = ['one', 'two', 'three', 'four', ''];
 
-assert.deepEqual(tokenize(testStr1, '|', '^'), res1, "tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^') should return ['one|uno', '', 'three^^', 'four^|cuatro', '']");
+assert.deepEqual(
+  tokenize(testStr1, '|', '^'),
+  res1,
+  "tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^') should return ['one|uno', '', 'three^^', 'four^|cuatro', '']"
+);
 
-assert.deepEqual(tokenize(testStr2, '&', '@'), res2, "tokenize('a@&bcd&ef&&@@hi', '&', '@') should return ['a&bcd', 'ef', '', '@hi']");
+assert.deepEqual(
+  tokenize(testStr2, '&', '@'),
+  res2,
+  "tokenize('a@&bcd&ef&&@@hi', '&', '@') should return ['a&bcd', 'ef', '', '@hi']"
+);
 
-assert.deepEqual(tokenize(testStr3, '|', '^'), res3, "tokenize('hello^|world^|how^are^you^|', '|', '^') should return ['hello|world', 'how^are^you|']");
+assert.deepEqual(
+  tokenize(testStr3, '|', '^'),
+  res3,
+  "tokenize('hello^|world^|how^are^you^|', '|', '^') should return ['hello|world', 'how^are^you|']"
+);
 
-assert.deepEqual(tokenize(testStr4, '|', '^'), res4, "tokenize('^|^|^^^|^|^^', '|', '^') should return ['', '', '^|', '', '^']");
+assert.deepEqual(
+  tokenize(testStr4, '|', '^'),
+  res4,
+  "tokenize('^|^|^^^|^|^^', '|', '^') should return ['', '', '^|', '', '^']"
+);
 
-assert.deepEqual(tokenize(testStr5, '|', '^'), res5, "tokenize('one|two|three|four|', '|', '^') should return ['one', 'two', 'three', 'four', '']");
-
-
+assert.deepEqual(
+  tokenize(testStr5, '|', '^'),
+  res5,
+  "tokenize('one|two|three|four|', '|', '^') should return ['one', 'two', 'three', 'four', '']"
+);
 ```
 
 ## --seed-contents--
@@ -119,24 +161,28 @@ function tokenize(str, sep, esc) {
 ```js
 // tokenize :: String -> Character -> Character -> [String]
 function tokenize(str, charDelim, charEsc) {
-  const dctParse = str.split('')
-    .reduce((a, x) => {
-      const blnEsc = a.esc;
-      const blnBreak = !blnEsc && x === charDelim;
-      const blnEscChar = !blnEsc && x === charEsc;
-      return {
-        esc: blnEscChar,
-        token: blnBreak ? [] : (
-          a.token.concat(blnEscChar ? '' : x)
-        ),
-        list: a.list.concat(blnBreak ? a.token : [])
-      };
-    }, {
-      esc: false,
-      token: [], 
-      list: []
-    });
-  return dctParse.list.concat(dctParse.token);
-}
+  let result = [];
+  let currentToken = '';
+  let escaped = false;
 
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+
+    if (escaped) {
+      currentToken += char;
+      escaped = false;
+    } else if (char === charEsc) {
+      escaped = true;
+    } else if (char === charDelim) {
+      result.push(currentToken);
+      currentToken = '';
+    } else {
+      currentToken += char;
+    }
+  }
+
+  result.push(currentToken);
+
+  return result;
+}
 ```
