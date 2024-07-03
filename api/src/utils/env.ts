@@ -57,8 +57,6 @@ assert.ok(process.env.STRIPE_SECRET_KEY);
 assert.ok(process.env.SHOW_UPCOMING_CHANGES);
 assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
-assert.ok(process.env.SHOW_UPCOMING_CHANGES);
-assert.ok(process.env.MONGOHQ_URL);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.SES_ID);
@@ -100,13 +98,11 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'The Stripe secret should be changed from the default value.'
   );
   assert.notEqual(process.env.NODE_ENV, 'test');
-  assert.ok(process.env.AUTH0_CLIENT_SECRET);
   assert.notEqual(
     process.env.AUTH0_CLIENT_SECRET,
     'client_secret_from_auth0_dashboard',
     'The Auth0 client secret should be changed from the default value.'
   );
-  assert.notEqual(process.env.NODE_ENV, 'test');
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
