@@ -1,4 +1,4 @@
-import fastifyOauth2 from '@fastify/oauth2';
+import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import fp from 'fastify-plugin';
 
@@ -16,6 +16,12 @@ import {
   getLoginRedirectParams,
   getPrefixedLandingPath
 } from '../utils/redirection';
+
+declare module 'fastify' {
+  interface FastifyInstance {
+    auth0OAuth: OAuth2Namespace;
+  }
+}
 
 /**
  * Fastify plugin for Auth0 authentication. This uses fastify-plugin to expose

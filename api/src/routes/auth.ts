@@ -1,5 +1,4 @@
 import { FastifyPluginCallback, FastifyRequest } from 'fastify';
-import { OAuth2Namespace } from '@fastify/oauth2';
 import rateLimit from 'express-rate-limit';
 // @ts-expect-error - no types
 import MongoStoreRL from 'rate-limit-mongo';
@@ -7,12 +6,6 @@ import MongoStoreRL from 'rate-limit-mongo';
 import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
 import { auth0Client } from '../plugins/auth0';
 import { findOrCreateUser } from './helpers/auth-helpers';
-
-declare module 'fastify' {
-  interface FastifyInstance {
-    auth0OAuth: OAuth2Namespace;
-  }
-}
 
 const getEmailFromAuth0 = async (req: FastifyRequest) => {
   const auth0Res = await fetch(`https://${AUTH0_DOMAIN}/userinfo`, {
