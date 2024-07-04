@@ -123,28 +123,29 @@ function tokenize(str, sep, esc) {
 
 ```js
 // tokenize :: String -> Character -> Character -> [String]
-function tokenize(str, charDelim, charEsc) {
-  const dctParse = str.split('')
-    .reduce((a, x) => {
-      const blnEsc = a.esc;
-      const blnBreak = !blnEsc && x === charDelim;
-      const blnEscChar = !blnEsc && x === charEsc;
+function tokenize(str, sep, esc) {
+  const result = [];
+  let currentToken = '';
+  let escaping = false;
 
-      return {
-        esc: blnEscChar,
-        token: blnBreak ? '' : (
-          a.token + (blnEscChar ? '' : x)
-        ),
-        list: a.list.concat(blnBreak ? a.token : [])
-      };
-    }, {
-      esc: false,
-      token: '',
-      list: []
-    });
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
 
-  return dctParse.list.concat(
-    dctParse.token
-  );
+    if (escaping) {
+      currentToken += char;
+      escaping = false;
+    } else if (char === esc) {
+      escaping = true;
+    } else if (char === sep) {
+      result.push(currentToken);
+      currentToken = '';
+    } else {
+      currentToken += char;
+    }
+  }
+
+  result.push(currentToken);
+
+  return result;
 }
 ```
