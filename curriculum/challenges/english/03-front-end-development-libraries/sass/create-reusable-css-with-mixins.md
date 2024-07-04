@@ -101,19 +101,19 @@ assert.match(__helpers.removeWhiteSpace(code), /background-color:\$bg\-color;/gi
 You should replace the styles inside the `#square` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width and height of `50px`, and the color `red`.
 
 ```js
-assert.match(code, /#square\s*{\s*@include\s+shape\(\s*50px,\s*50px,\s*red\s*\)\s*;\s*}/gi);
+assert.match(code, /#square\s*{\s*@include\s+shape\s*\(\s*50px,\s*50px,\s*red\s*\)\s*;\s*}/gi);
 ```
 
 You should replace the styles inside the `#rect-a` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `100px`, a height of `50px`, and the color `blue`.
 
 ```js
-assert.match(code, /#rect-a\s*{\s*@include\s+shape\(\s*100px,\s*50px,\s*blue\s*\)\s*;\s*}/gi);
+assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px,\s*50px,\s*blue\s*\)\s*;\s*}/gi);
 ```
 
 You should replace the styles inside the `#rect-b` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `50px`, a height of `100px`, and the color `orange`.
 
 ```js
-assert.match(code, /#rect-b\s*{\s*@include\s+shape\(\s*50px,\s*100px,\s*orange\s*\)\s*;\s*}/gi);
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px,\s*100px,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--
