@@ -48,7 +48,10 @@ test.describe('Progress bar component', () => {
     await page.keyboard.insertText('var myName;');
 
     await page
-      .getByRole('button', { name: 'Run the Tests (Ctrl + Enter)' })
+      .getByRole('button', {
+        name: 'Run',
+        exact: false
+      })
       .click();
 
     await expect(page.locator('.completion-block-meta')).toContainText(
