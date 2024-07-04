@@ -46,7 +46,7 @@ const removeNonCompatibleSuperblocks = (currData: Curriculum): Curriculum => {
   return copy;
 };
 
-const typedCurriculum = removeNonCompatibleSuperblocks(currData as Curriculum);
+const typedCurriculum = removeNonCompatibleSuperblocks(currData as never);
 
 test.describe('Test challenges in mobile', () => {
   for (const superBlock of publicSB) {
