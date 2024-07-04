@@ -113,7 +113,7 @@ assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px\s*,\s*50px\s*,\s
 You should replace the styles inside the `#rect-b` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `50px`, a height of `100px`, and the color `orange`.
 
 ```js
-assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px,\s*100px,\s*orange\s*\)\s*;\s*}/gi);
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*100px\s*,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--
