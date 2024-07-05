@@ -13,7 +13,7 @@ import { inLastFiveMinutes } from '../utils/validate-donation';
 import { findOrCreateUser } from './helpers/auth-helpers';
 
 /**
- * Plugin for the donation endpoints.
+ * Plugin for the donation endpoints requiring auth.
  *
  * @param fastify The Fastify instance.
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
@@ -220,7 +220,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
 };
 
 /**
- * Plugin for the donation endpoints.
+ * Plugin for public donation endpoints.
  *
  * @param fastify The Fastify instance.
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
