@@ -237,10 +237,6 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     typescript: true
   });
 
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-
   fastify.post(
     '/donate/create-stripe-payment-intent',
     {
