@@ -27,7 +27,7 @@ export const cookieUpdate: FastifyPluginCallback<Options> = (
       if (!oldCookie) continue;
 
       const unsigned = reply.unsignCookie(oldCookie);
-      const raw = unsigned.valid ? (unsigned.value as string) : oldCookie;
+      const raw = unsigned.valid ? unsigned.value : oldCookie;
       void reply.setCookie(cookie, raw, options.attributes);
     }
     next();
