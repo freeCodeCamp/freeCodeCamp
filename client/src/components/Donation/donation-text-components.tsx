@@ -20,7 +20,9 @@ export const CtaText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <h1 data-playwright-test-label='main-head'>{t('donate.help-more')}</h1>
+      <h1 data-playwright-test-label='main-head' id='content-start'>
+        {t('donate.help-more')}
+      </h1>
       <Spacer size='medium' />
       <p data-playwright-test-label='donate-text-1'>{t('donate.efficiency')}</p>
       <p data-playwright-test-label='donate-text-2'>
@@ -82,14 +84,15 @@ const FaqItem = (
         className='map-title'
         onClick={() => setExpanded(!isExpanded)}
         aria-expanded={isExpanded}
+        aria-controls={`donate-faq-content-${key}`}
       >
         <Caret />
         <h3>{title}</h3>
       </button>
       {isExpanded && (
-        <>
-          <div className='map-challenges-ul'>{text}</div>
-        </>
+        <div className='map-challenges-ul' id={`donate-faq-content-${key}`}>
+          {text}
+        </div>
       )}
     </div>
   );
