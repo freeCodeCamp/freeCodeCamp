@@ -103,7 +103,7 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
 
   test('should close the modal after user presses Escape', async ({ page }) => {
     await page.keyboard.press('Escape');
-    await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
+    await expect(page.getByRole('dialog')).not.toBeVisible();
   });
 
   test('should display the text of go to next challenge button accordingly based on device type', async ({
