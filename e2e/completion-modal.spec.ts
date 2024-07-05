@@ -33,6 +33,13 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
+  test('should close the modal when user presses Escape key', async ({
+    page
+  }) => {
+    await page.keyboard.press('Escape');
+    await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
+  });
+
   test('should display the text of go to next challenge button accordingly based on device type', async ({
     page,
     isMobile,
@@ -93,6 +100,13 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
 
   test('should close the modal after user click on close', async ({ page }) => {
     await page.getByRole('button', { name: 'close' }).click();
+    await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
+  });
+
+  test('should close the modal when user presses Escape key', async ({
+    page
+  }) => {
+    await page.keyboard.press('Escape');
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
