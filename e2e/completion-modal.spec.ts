@@ -5,8 +5,6 @@ import { authedRequest } from './utils/request';
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   await page.goto(
     '/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator'
@@ -39,22 +37,6 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
   test('should close the modal after user presses escape if the user is signed in', async ({
     page
   }) => {
-    await page.keyboard.press('Escape');
-    await expect(page.getByRole('dialog')).not.toBeVisible();
-  });
-
-  test('should close the modal after user presses escape if the user is not signed in', async ({
-    page,
-    request
-  }) => {
-    await authedRequest({
-      request,
-      endpoint: 'update-my-keyboard-shortcuts',
-      method: 'put',
-      data: {
-        keyboardShortcuts: false
-      }
-    });
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).not.toBeVisible();
   });
@@ -120,6 +102,22 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   test('should close the modal after user click on close', async ({ page }) => {
     await page.getByRole('button', { name: 'close' }).click();
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
+  });
+
+  test('should close the modal after user presses escape if the user is not signed in', async ({
+    page,
+    request
+  }) => {
+    await authedRequest({
+      request,
+      endpoint: 'update-my-keyboard-shortcuts',
+      method: 'put',
+      data: {
+        keyboardShortcuts: false
+      }
+    });
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('dialog')).not.toBeVisible();
   });
 
   test('should display the text of go to next challenge button accordingly based on device type', async ({
