@@ -92,6 +92,9 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         // frameDocument ready:
         $(() => {
           try {
+            if (__file('script.js') != null) {
+              eval(__file('script.js'));
+            }
             const test: unknown = eval(testString);
             resolve(test);
           } catch (err) {
@@ -107,8 +110,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     } catch (e) {
       if (!(e instanceof chai.AssertionError)) {
         const err = e as Error;
-        console.error(e);
-        // We are going to provide the standard error message to the camper
+        console.error(err);
         const errorType = 'js-syntax-error';
         return {
           err: {
