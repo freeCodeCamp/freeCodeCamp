@@ -19,7 +19,7 @@ For example, `My new fitness tracker gadget helps me keep track of my steps and 
 
 ## --sentence--
 
-`Hey, Sarah, do you know what really _ me excited about tech? It's all _ amazing _!`
+`Hey, Sarah, do you know what really BLANK me excited about tech? It's all BLANK amazing BLANK!`
 
 ## --blanks--
 
