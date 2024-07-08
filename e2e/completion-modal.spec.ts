@@ -34,7 +34,7 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should close the modal after user presses escape if the user is signed in', async ({
+  test('should close the modal after user presses escape if user is not signed in', async ({
     page
   }) => {
     await page.keyboard.press('Escape');
@@ -104,7 +104,7 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should close the modal after user presses escape if the user is not signed in', async ({
+  test('should close the modal after user presses escape if user is signed in', async ({
     page,
     request
   }) => {
