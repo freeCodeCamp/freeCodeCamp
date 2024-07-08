@@ -158,7 +158,9 @@ jobs:
         run: pnpm install
 
       - name: Set freeCodeCamp Environment Variables (needed by api)
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'HOST=0.0.0.0' >> .env
 
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
