@@ -201,9 +201,6 @@ importers:
       fastify-plugin:
         specifier: 4.5.1
         version: 4.5.1
-      is-docker:
-        specifier: 2.2.1
-        version: 2.2.1
       joi:
         specifier: 17.12.2
         version: 17.12.2
