@@ -15,7 +15,7 @@ dashedName: give-links-meaning-by-using-descriptive-link-text
 
 # --instructions--
 
-Camper Cat 在链接中使用的文本在脱离上下文的情况下，描述性不是很好。 请修改锚点标签（`a`），将其包含的文本从 `Click here` 改为 `information about batteries`。
+Camper Cat 在链接中使用的文本在脱离上下文的情况下，描述性不是很好。 Move the anchor (`a`) tags so they wrap around the text `information about batteries` instead of `Click here`.
 
 # --hints--
 

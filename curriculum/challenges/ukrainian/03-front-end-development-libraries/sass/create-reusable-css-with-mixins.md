@@ -70,7 +70,7 @@ nav a {
 
 Write a mixin named `shape` and give it 3 parameters: `$w`, `$h`, and `$bg-color`.
 
-Use the `shape` mixin to give the `#square` element a width and height of `50px`, and the color `red`. For the `#rect-a` element add a width of `100px`, a height of `50px`, and the color `blue`. Finally, for the `#rect-b` element add a width of `50px`, a height of `100px`, and the color `orange`.
+Use the `shape` mixin to give the `#square` element a width and height of `50px`, and the background color `red`. For the `#rect-a` element add a width of `100px`, a height of `50px`, and the background color `blue`. Finally, for the `#rect-b` element add a width of `50px`, a height of `100px`, and the background color `orange`.
 
 # --hints--
 
@@ -98,22 +98,22 @@ Your mixin should include a `background-color` property that uses the `$bg-color
 assert.match(__helpers.removeWhiteSpace(code), /background-color:\$bg\-color;/gi);
 ```
 
-You should replace the styles inside the `#square` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width and height of `50px`, and the color `red`.
+You should replace the styles inside the `#square` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width and height of `50px`, and the background color `red`.
 
 ```js
-assert.match(code, /#square\s*{\s*@include\s+shape\(\s*50px,\s*50px,\s*red\s*\)\s*;\s*}/gi);
+assert.match(code, /#square\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*50px\s*,\s*red\s*\)\s*;\s*}/gi);
 ```
 
-You should replace the styles inside the `#rect-a` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `100px`, a height of `50px`, and the color `blue`.
+You should replace the styles inside the `#rect-a` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `100px`, a height of `50px`, and the background color `blue`.
 
 ```js
-assert.match(code, /#rect-a\s*{\s*@include\s+shape\(\s*100px,\s*50px,\s*blue\s*\)\s*;\s*}/gi);
+assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px\s*,\s*50px\s*,\s*blue\s*\)\s*;\s*}/gi);
 ```
 
-You should replace the styles inside the `#rect-b` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `50px`, a height of `100px`, and the color `orange`.
+You should replace the styles inside the `#rect-b` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `50px`, a height of `100px`, and the background color `orange`.
 
 ```js
-assert.match(code, /#rect-b\s*{\s*@include\s+shape\(\s*50px,\s*100px,\s*orange\s*\)\s*;\s*}/gi);
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*100px\s*,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--
