@@ -93,9 +93,6 @@ export const build = async (
 
   void fastify.register(security);
 
-  fastify.get('/', async (_request, _reply) => {
-    return { hello: 'world' };
-  });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(express);
 

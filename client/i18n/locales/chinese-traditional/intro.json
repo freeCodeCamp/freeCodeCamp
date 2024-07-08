@@ -362,7 +362,7 @@
         "intro": [
           "函數式編程是一種流行的軟件開發方法。在函數式編程中，開發人員將代碼組織成更小的函數，然後將這些函數組合起來構建複雜的程序。",
           "在這個電子表格應用程序項目中，你將學習如何解析和計算數學表達式、實現電子表格功能、處理單元格引用以及創建交互式 Web 界面。你將學習如何根據用戶輸入動態更新頁面。",
-          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, and <code>includes()</code> methods and the <code>parseInt()</code> function."
+          "這個項目將涵蓋 <code>map()</code>、<code>find()</code> 和 <code>includes()</code> 方法以及 <code>parseInt()</code> 函數等概念。"
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
@@ -410,11 +410,11 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Review Algorithmic Thinking by Building a Dice Game",
+        "title": "通過創建骰子游戲回顧中級算法思維",
         "intro": [
-          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
-          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
-          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+          "算法思維包括將複雜問題分解爲一連串定義明確、循序漸進的指令的能力。",
+          "在這個骰子游戲項目中，你將學習如何管理遊戲狀態、實現擲骰子的遊戲邏輯、記分以及應用各種組合的規則。",
+          "這個項目涵蓋事件處理、數組操作、條件邏輯以及根據遊戲狀態動態更新用戶界面等概念。"
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -474,17 +474,17 @@
         ]
       },
       "learn-basic-debugging-by-building-a-random-background-color-changer": {
-        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "title": "通過創建隨機背景變色程序學習基本調試方法",
         "intro": [
-          "Debugging is the process of going through your code, finding any issues, and fixing them.",
-          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+          "調試是檢查代碼、發現並修復問題的過程。",
+          "在這個項目中，你將幫助 CamperBot 創建一個隨機背景變色程序，並幫助其找到和修復錯誤。"
         ]
       },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
-        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "title": "通過創建石頭剪刀布遊戲回顧 DOM 操作",
         "intro": [
-          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
-          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
+          "在前面的項目中，你學習瞭如何使用基本的 DOM 操作。現在是時候通過創建石頭剪刀布遊戲來複習一下所學知識了。",
+          "在這個迷你項目中，你將複習條件、函數、<code>getElementById</code> 等內容。本項目將爲你提供一個解決小問題的機會，讓你更好地理解基礎知識。"
         ]
       }
     }
@@ -855,22 +855,16 @@
         ]
       },
       "build-an-arithmetic-formatter-project": {
-        "title": "Build an Arithmetic Formatter Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "創建算術格式化器項目",
+        "intro": ["這是你要獲得認證必須做的項目之一。"]
       },
       "build-a-time-calculator-project": {
-        "title": "Build a Time Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "創建時間計算器項目",
+        "intro": ["這是你要獲得認證必須做的項目之一。"]
       },
       "build-a-budget-app-project": {
-        "title": "Build a Budget App Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "創建預算應用程序項目",
+        "intro": ["這是你要獲得認證必須做的項目之一。"]
       },
       "build-a-polygon-area-calculator-project": {
         "title": "Build a Polygon Area Calculator Project",
