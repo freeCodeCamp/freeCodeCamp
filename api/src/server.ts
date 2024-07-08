@@ -3,6 +3,8 @@
 // is not included in the build (it's a dev dependency).
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./reset.d.ts" />
+import isDocker from 'is-docker';
+
 import { build } from './app';
 import { FREECODECAMP_NODE_ENV, PORT } from './utils/env';
 
@@ -27,7 +29,7 @@ const start = async () => {
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);
-    await fastify.listen({ port });
+    await fastify.listen({ port, host: isDocker() ? '0.0.0.0' : 'localhost' });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
