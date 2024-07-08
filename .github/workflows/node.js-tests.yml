@@ -128,6 +128,7 @@ jobs:
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
@@ -145,6 +146,9 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm dlx puppeteer browsers install chrome
 
       - name: Run Tests
         run: pnpm test
@@ -172,6 +176,7 @@ jobs:
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
@@ -191,6 +196,9 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm dlx puppeteer browsers install chrome
 
       - name: Run Tests
         run: pnpm test
@@ -219,6 +227,7 @@ jobs:
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
       - name: Set Environment variables
         run: |
@@ -248,6 +257,9 @@ jobs:
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           pnpm run build
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm dlx puppeteer browsers install chrome
 
       - name: Run Tests
         env:
