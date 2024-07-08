@@ -153,6 +153,9 @@ importers:
       '@aws-sdk/client-ses':
         specifier: 3.521.0
         version: 3.521.0
+      '@fastify/accepts':
+        specifier: 4.3.0
+        version: 4.3.0
       '@fastify/cookie':
         specifier: 9.3.1
         version: 9.3.1
@@ -2961,6 +2964,9 @@ packages:
   '@fastify/accept-negotiator@1.1.0':
     resolution: {integrity: sha512-OIHZrb2ImZ7XG85HXOONLcJWGosv7sIvM2ifAPQVhg9Lv7qdmMBNVaai4QTdyuaqbKM5eO6sLSQOYI7wEQeCJQ==}
     engines: {node: '>=14'}
+
+  '@fastify/accepts@4.3.0':
+    resolution: {integrity: sha512-QK4FoqXdwwPmaPOLL6NrxsyaXVvdviYVoS6ltHyOLdFlUyREIaMykHQIp+x0aJz9hB3B3n/Ht6QRdvBeGkptGQ==}
 
   '@fastify/ajv-compiler@3.5.0':
     resolution: {integrity: sha512-ebbEtlI7dxXF5ziNdr05mOY8NnDiPB1XvAlLHctRt/Rc+C3LCOVW5imUVX+mhvUhnNzmPBHewUkOFgGlCxgdAA==}
@@ -17077,6 +17083,11 @@ snapshots:
   '@eslint/js@8.57.0': {}
 
   '@fastify/accept-negotiator@1.1.0': {}
+
+  '@fastify/accepts@4.3.0':
+    dependencies:
+      accepts: 1.3.8
+      fastify-plugin: 4.5.1
 
   '@fastify/ajv-compiler@3.5.0':
     dependencies:

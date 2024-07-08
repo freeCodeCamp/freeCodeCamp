@@ -25,6 +25,7 @@ import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import codeFlowAuth from './plugins/code-flow-auth';
+import notFound from './plugins/not-found';
 import { mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
 import {
@@ -181,6 +182,7 @@ export const build = async (
   // redirectWithMessage must be registered before codeFlowAuth
   void fastify.register(redirectWithMessage);
   void fastify.register(codeFlowAuth);
+  void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
