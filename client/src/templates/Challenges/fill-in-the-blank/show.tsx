@@ -367,11 +367,7 @@ class ShowFillInTheBlank extends Component<
                                   )}`}
                                   onChange={this.handleInputChange}
                                   data-index={node.value}
-                                  style={{
-                                    width: `${
-                                      blankAnswers[node.value].length * 11 + 11
-                                    }px`
-                                  }}
+                                  size={blankAnswers[node.value].length}
                                   aria-label={t('learn.blank')}
                                 />
                               );
