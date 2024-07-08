@@ -732,6 +732,7 @@
     "last-page": "访问最后一页",
     "primary-nav": "主要的",
     "breadcrumb-nav": "面包屑导航",
+    "timeline-pagination-nav": "Timeline Pagination",
     "submit": "按下 Ctrl + Enter 键提交。",
     "running-tests": "正在运行测试",
     "hide-preview": "隐藏预览",
