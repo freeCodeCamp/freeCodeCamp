@@ -1,4 +1,4 @@
-import fastifyCookie from '@fastify/cookie';
+import fastifyCookie, { type UnsignResult } from '@fastify/cookie';
 import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
@@ -23,7 +23,7 @@ export const sign = (value: string) =>
  * @param rawValue The signed cookie value.
  * @returns The unsigned cookie value.
  */
-export const unsign = (rawValue: string) => {
+export const unsign = (rawValue: string): UnsignResult => {
   const prefix = rawValue.slice(0, 2);
   if (prefix !== 's:') return { valid: false, renew: false, value: null };
 
