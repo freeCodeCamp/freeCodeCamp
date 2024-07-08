@@ -732,6 +732,7 @@
     "last-page": "最後のページへ移動",
     "primary-nav": "プライマリー",
     "breadcrumb-nav": "パンくずリスト",
+    "timeline-pagination-nav": "タイムラインのページネーション",
     "submit": "提出するには Ctrl + Enter を押してください。",
     "running-tests": "テスト実行中",
     "hide-preview": "プレビューを非表示",

@@ -732,6 +732,7 @@
     "last-page": "Перейти на останню сторінку",
     "primary-nav": "первинний",
     "breadcrumb-nav": "навігаційна стежка",
+    "timeline-pagination-nav": "Пагінація хронології",
     "submit": "Використайте Ctrl + Enter, щоб відправити.",
     "running-tests": "Запущені тести",
     "hide-preview": "Приховати попередній перегляд",
