@@ -34,9 +34,8 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should close the modal after user presses escape if user is not signed in', async ({
-    page
-  }) => {
+  test('should close the modal after user presses escape', async ({ page }) => {
+    await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).not.toBeVisible();
   });
@@ -104,7 +103,7 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should close the modal after user presses escape if user is signed in', async ({
+  test('should close the modal after user presses escape while having keyboard shortcuts disabled', async ({
     page,
     request
   }) => {
@@ -116,6 +115,7 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
         keyboardShortcuts: false
       }
     });
+    await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).not.toBeVisible();
   });
