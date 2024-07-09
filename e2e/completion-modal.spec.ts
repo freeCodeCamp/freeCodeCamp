@@ -120,6 +120,23 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page.getByRole('dialog')).not.toBeVisible();
   });
 
+  test('should close the modal after user presses escape while having keyboard shortcuts enabled', async ({
+    page,
+    request
+  }) => {
+    await authedRequest({
+      request,
+      endpoint: 'update-my-keyboard-shortcuts',
+      method: 'put',
+      data: {
+        keyboardShortcuts: true
+      }
+    });
+    await expect(page.getByRole('dialog')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('dialog')).toBeVisible();
+  });
+
   test('should display the text of go to next challenge button accordingly based on device type', async ({
     page,
     isMobile,
