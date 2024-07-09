@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { authedRequest } from './utils/request';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -101,7 +102,25 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page.getByTestId('completion-success-icon')).not.toBeVisible();
   });
 
-  test('should close the modal after user presses Escape', async ({ page }) => {
+  test('should close the modal after user presses Escape with keyboard shortcuts enabled', async ({
+    page
+  }) => {
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('dialog')).not.toBeVisible();
+  });
+
+  test('should close the modal after user presses Escape with keyboard shortcuts disabled', async ({
+    page,
+    request
+  }) => {
+    await authedRequest({
+      request,
+      endpoint: 'update-my-keyboard-shortcuts',
+      method: 'put',
+      data: {
+        keyboardShortcuts: false
+      }
+    });
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).not.toBeVisible();
   });
