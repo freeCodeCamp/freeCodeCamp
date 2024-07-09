@@ -35,7 +35,8 @@ export const getPublicProfile = {
                       path: Type.Optional(Type.String())
                     })
                   ),
-                  isManuallyApproved: Type.Optional(Type.Boolean())
+                  isManuallyApproved: Type.Optional(Type.Boolean()),
+                  examResults: Type.Optional(examResults)
                 })
               ),
               completedExams: Type.Array(
