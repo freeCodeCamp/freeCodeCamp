@@ -20,7 +20,7 @@ export enum SuperBlocks {
   ProjectEuler = 'project-euler',
   CollegeAlgebraPy = 'college-algebra-with-python',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
-  ExampleCertification = 'example-certification',
+  FrontEndDevelopment = 'front-end-development',
   UpcomingPython = 'upcoming-python',
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
@@ -88,7 +88,7 @@ export const superBlockOrder: SuperBlockOrder = {
   [SuperBlockStages.New]: [],
   [SuperBlockStages.Upcoming]: [
     SuperBlocks.B1English,
-    SuperBlocks.ExampleCertification,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython
   ]
 };
@@ -112,6 +112,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -122,6 +123,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -133,6 +135,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -142,6 +145,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -149,6 +153,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -156,6 +161,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English
@@ -163,6 +169,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -179,6 +186,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -199,6 +207,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -222,6 +231,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.JsAlgoDataStruct,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
@@ -243,13 +253,13 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
-    SuperBlocks.ExampleCertification,
     SuperBlocks.RosettaCode
   ]
 };

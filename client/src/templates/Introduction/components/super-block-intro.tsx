@@ -22,6 +22,7 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.A2English,
     SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.SciCompPy
   ];
 

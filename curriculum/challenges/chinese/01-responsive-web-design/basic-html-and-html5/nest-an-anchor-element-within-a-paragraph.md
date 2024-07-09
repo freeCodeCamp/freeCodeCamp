@@ -22,13 +22,13 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 <p> Here's a ... for you to follow. </p>
 ```
 
-接下来是*锚点*元素 `<a>`（它需要结束标签 `</a>`）：
+接下来是*锚*元素 `<a>`（它需要结束标签 `</a>`）：
 
 ```html
 <a> ... </a>
 ```
 
-`target` 是锚点元素的一个属性，它用来指定链接的打开方式。 属性值 `_blank` 表示链接会在新标签页打开。 `href` 是锚点元素的另一个属性，它用来指定链接的 URL：
+`target` 是锚元素的一个属性，它用来指定链接的打开方式。 属性值 `_blank` 表示链接会在新标签页打开。 `href` 是锚元素的另一个属性，它用来指定链接的 URL：
 
 ```html
 <a href="https://www.freecodecamp.org" target="_blank"> ... </a>
@@ -46,7 +46,7 @@ Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.free
 
 # --instructions--
 
-创建一个新的段落 `p` 元素来包裹 `a` 元素。 不要创建一个新的锚点标签。 新段落应有文本 `View more cat photos`，其中 `cat photos` 是一个链接，其余是纯文本。
+创建一个新的段落 `p` 元素来包裹 `a` 元素。 不要创建一个新的锚标签。 新段落应有文本 `View more cat photos`，其中 `cat photos` 是一个链接，其余是纯文本。
 
 # --hints--
 

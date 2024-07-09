@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { Certification } from '../../../../shared/config/certification-settings';
-import { generic500 } from '../types';
+import { genericError } from '../types';
 
 export const certSlug = {
   params: Type.Object({
@@ -120,6 +120,6 @@ export const certSlug = {
         })
       )
     }),
-    500: generic500
+    default: genericError
   }
 };

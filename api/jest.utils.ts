@@ -46,16 +46,21 @@ export function superRequest(
   config: {
     method: 'GET' | 'POST' | 'PUT' | 'DELETE';
     setCookies?: string[];
+    headers?: { referer: string };
   },
   options?: Options
 ): request.Test {
-  const { method, setCookies } = config;
+  const { method, setCookies, headers } = config;
   const { sendCSRFToken = true } = options ?? {};
 
   const req = requests[method](resource).set('Origin', ORIGIN);
 
   if (setCookies) {
     void req.set('Cookie', getCookies(setCookies));
+  }
+
+  if (headers) {
+    void req.set('Referer', headers.referer);
   }
 
   const csrfToken = (setCookies && getCsrfToken(setCookies)) ?? '';
