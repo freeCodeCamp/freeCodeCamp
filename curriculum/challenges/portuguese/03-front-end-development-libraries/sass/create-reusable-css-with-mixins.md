@@ -70,7 +70,7 @@ nav a {
 
 Escreva um mixin chamado `shape` e dê a ele 3 parâmetros: `$w`, `$h` e `$bg-color`.
 
-Use o mixin `shape` para dar ao elemento `#square` uma largura (w) e uma altura (h) de `50px`, e a cor de fundo `red` (vermelha). Para o elemento `#rect-a`, adicione uma largura (w) de `100px`, uma altura (h) de `50px` e a cor de fundo `blue` (azul). Finalmente, para o elemento `#rect-b`, adicione uma largura (w) de `50px`, uma altura (h) de `100px` e a cor de fundo `orange` (laranja).
+Use o mixin `shape` para dar ao elemento `#square` uma largura (w) e uma altura (h) de `50px` e a cor de fundo `red` (vermelha). Para o elemento `#rect-a`, adicione uma largura (w) de `100px`, uma altura (h) de `50px` e a cor de fundo `blue` (azul). Finalmente, para o elemento `#rect-b`, adicione uma largura (w) de `50px`, uma altura (h) de `100px` e a cor de fundo `orange` (laranja).
 
 # --hints--
 
@@ -101,19 +101,19 @@ assert.match(__helpers.removeWhiteSpace(code), /background-color:\$bg\-color;/gi
 Você deve substituir os estilos dentro do seletor `#square` por uma chamada ao mixin `shape` usando a palavra-chave `@include`. Definindo uma largura e altura de `50px` e a cor de fundo `red`.
 
 ```js
-assert.match(code, /#square\s*{\s*@include\s+shape\(\s*50px,\s*50px,\s*red\s*\)\s*;\s*}/gi);
+assert.match(code, /#square\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*50px\s*,\s*red\s*\)\s*;\s*}/gi);
 ```
 
 Você deve substituir os estilos dentro do seletor `#rect-a` por uma chamada ao mixin `shape` mixin usando a palavra-chave `@include`. Definindo uma largura de `100px`, uma altura de `50px` e a cor de fundo `blue`.
 
 ```js
-assert.match(code, /#rect-a\s*{\s*@include\s+shape\(\s*100px,\s*50px,\s*blue\s*\)\s*;\s*}/gi);
+assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px\s*,\s*50px\s*,\s*blue\s*\)\s*;\s*}/gi);
 ```
 
 Você deve substituir os estilos dentro do seletor `#rect-b` por uma chamada ao mixin `shape` usando a palavra-chave `@include`. Definindo uma largura de `50px`, uma altura de `100px` e a cor de fundo `orange`.
 
 ```js
-assert.match(code, /#rect-b\s*{\s*@include\s+shape\(\s*50px,\s*100px,\s*orange\s*\)\s*;\s*}/gi);
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*100px\s*,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--

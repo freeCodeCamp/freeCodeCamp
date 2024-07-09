@@ -22,13 +22,13 @@ dashedName: nest-an-anchor-element-within-a-paragraph
 <p> Here's a ... for you to follow. </p>
 ```
 
-接下來是*錨點*元素 `<a>`（它需要結束標籤 `</a>`）：
+接下來是*錨*元素 `<a>`（它需要結束標籤 `</a>`）：
 
 ```html
 <a> ... </a>
 ```
 
-`target` 是錨點元素的一個屬性，它用來指定鏈接的打開方式。 屬性值 `_blank` 表示鏈接會在新標籤頁打開。 `href` 是錨點元素的另一個屬性，它用來指定鏈接的 URL：
+`target` 是錨元素的一個屬性，它用來指定鏈接的打開方式。 屬性值 `_blank` 表示鏈接會在新標籤頁打開。 `href` 是錨元素的另一個屬性，它用來指定鏈接的 URL：
 
 ```html
 <a href="https://www.freecodecamp.org" target="_blank"> ... </a>
@@ -46,7 +46,7 @@ Here's a <a href="https://www.freecodecamp.org" target="_blank">link to www.free
 
 # --instructions--
 
-創建一個新的段落 `p` 元素來包裹 `a` 元素。 不要創建一個新的錨點標籤。 新段落應有文本 `View more cat photos`，其中 `cat photos` 是一個鏈接，其餘是純文本。
+創建一個新的段落 `p` 元素來包裹 `a` 元素。 不要創建一個新的錨標籤。 新段落應有文本 `View more cat photos`，其中 `cat photos` 是一個鏈接，其餘是純文本。
 
 # --hints--
 

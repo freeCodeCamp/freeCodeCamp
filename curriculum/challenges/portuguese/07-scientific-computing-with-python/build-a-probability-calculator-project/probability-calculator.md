@@ -20,14 +20,14 @@ hat2 = Hat(red=5, orange=4)
 hat3 = Hat(red=5, orange=4, black=1, blue=0, pink=2, striped=9)
 ```
 
-Um chapéu será sempre criado com pelo menos uma bola. Os argumentos passados para o objeto de chapéu após a criação devem ser convertidos em uma variável de instância `contents`. `contents` deve ser uma lista de strings contendo um item para cada bola no chapéu. Cada item da lista deve ser um nome de cor que representa uma única bola dessa cor. Por exemplo, se sua instância de Hat for `{"red": 2, "blue": 1}`, `contents` deve ser `["red", "red", "blue"]`.
+Um chapéu será sempre criado com pelo menos uma bola. Os argumentos passados para o objeto de chapéu após a criação devem ser convertidos em uma variável de instância `contents`. `contents` deve ser uma lista de strings contendo um item para cada bola no chapéu. Cada item da lista deve ser um nome de cor que representa uma única bola dessa cor. For example, if your hat is `{'red': 2, 'blue': 1}`, `contents` should be `['red', 'red', 'blue']`.
 
 A classe `Hat` deve ter um método `draw` que aceita um argumento indicando o número de bolas a serem retiradas do chapéu. Este método deve remover bolas aleatoriamente de `contents` e retornar essas bolas como uma lista de strings. As bolas não devem voltar ao chapéu durante a retirada, à semelhança de uma experiência sem substituição. Se o número de bolas a serem retiradas exceder a quantidade disponível, retorne todas as bolas.
 
 Next, create an `experiment` function in `main.py` (not inside the `Hat` class). Esta função deve aceitar os seguintes argumentos:
 
 - `hat`: Um objeto de chapéu contendo bolas que devem ser copiadas dentro da função.
-- `expected_balls`: Um objeto indicando o grupo exato de bolas que se tentará retirar do chapéu para o experimento. Por exemplo, para determinar a probabilidade de retirar 2 bolas azuis e 1 bola vermelha do chapéu, defina `expected_balls` como `{"blue":2, "red":1}`.
+- `expected_balls`: Um objeto indicando o grupo exato de bolas que se tentará retirar do chapéu para o experimento. For example, to determine the probability of drawing 2 blue balls and 1 red ball from the hat, set `expected_balls` to `{'blue':2, 'red':1}`.
 - `num_balls_drawn`: O número de bolas a serem retiradas do chapéu em cada experimento.
 - `num_experiments`: O número de experimentos a serem realizados. Quanto mais experimentos realizados, mais precisa será a probabilidade aproximada.
 
@@ -40,7 +40,7 @@ Veja como você chamaria a função `experiment` com base no exemplo acima de 2.
 ```py
 hat = Hat(black=6, red=4, green=3)
 probability = experiment(hat=hat,
-                  expected_balls={"red":2,"green":1},
+                  expected_balls={'red':2,'green':1},
                   num_balls_drawn=5,
                   num_experiments=2000)
 ```
