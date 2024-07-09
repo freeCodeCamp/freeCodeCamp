@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { Button } from '@freecodecamp/ui';
 
@@ -37,27 +37,14 @@ export const ButtonLink = ({
 }: Props) => {
   // We only need to compute the styles of `size` and `block` for Gatsby Link.
   // freecodecamp/ui's Button already has the logic implemented.
-  const gatsbyLinkCls = useMemo(() => {
-    const cls = ['btn'];
-
-    if (block) {
-      cls.push('btn-block');
-    }
-
-    // The 'btn' class contains the base button styles as well as the `medium` variant styles.
-    // So we only need to handle `large` and `small`.
-    if (size === 'large') {
-      cls.push('btn-lg');
-    } else if (size === 'small') {
-      cls.push('btn-sm');
-    }
-
-    if (className) {
-      cls.push(className);
-    }
-
-    return cls.join(' ');
-  }, [size, block, className]);
+  const cls = ['btn'];
+  if (block) cls.push('btn-block');
+  // The 'btn' class contains the base button styles as well as the `medium` variant styles.
+  // So we only need to handle `large` and `small`.
+  if (size === 'large') cls.push('btn-lg');
+  if (size === 'small') cls.push('btn-sm');
+  if (className) cls.push(className);
+  const gatsbyLinkCls = cls.join(' ');
 
   // Links cannot be disabled. So if `disabled` is true, we render a `<button>` instead.
   if (disabled) {
