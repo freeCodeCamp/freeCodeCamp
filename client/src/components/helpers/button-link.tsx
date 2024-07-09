@@ -46,22 +46,9 @@ export const ButtonLink = ({
   if (className) cls.push(className);
   const gatsbyLinkCls = cls.join(' ');
 
-  // Links cannot be disabled. So if `disabled` is true, we render a `<button>` instead.
-  if (disabled) {
-    return (
-      <Button
-        variant='primary'
-        className={className}
-        size={size}
-        block={block}
-        disabled
-      >
-        {children}
-      </Button>
-    );
-  }
-
-  if (target === '_blank' || download) {
+  // Links cannot be disabled. So if `disabled` is true,
+  // we pass the prop to `Button` in order to render a `<button>` instead of an `<a>`.
+  if (disabled || target === '_blank' || download) {
     return (
       <Button
         variant='primary'
@@ -72,6 +59,7 @@ export const ButtonLink = ({
         download={download}
         size={size}
         block={block}
+        disabled={disabled}
       >
         {children}
       </Button>
