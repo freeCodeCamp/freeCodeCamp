@@ -447,6 +447,7 @@ function ShowClassic({
             })}
             guideUrl={getGuideUrl({ forumTopicId, title })}
             hasEditableBoundaries={hasEditableBoundaries}
+            challengeFiles={challengeFiles ?? []}
             hasNotes={!!notes}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({

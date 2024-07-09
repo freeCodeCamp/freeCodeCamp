@@ -39,11 +39,8 @@ class EditorTabs extends Component<EditorTabsProps> {
   render() {
     const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
     const isMobile = window.innerWidth < MAX_MOBILE_WIDTH;
-    const isRenderChallengeFiles =
-      /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
-      !isMobile || sortChallengeFiles(challengeFiles).length > 1;
     return (
-      isRenderChallengeFiles && (
+      !isMobile && (
         <div className='monaco-editor-tabs'>
           {
             /* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */

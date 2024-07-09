@@ -19,12 +19,14 @@ import {
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import PreviewPortal from '../components/preview-portal';
+import { ChallengeFile } from '../../../redux/prop-types';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
   guideUrl: string;
   hasEditableBoundaries: boolean;
+  challengeFiles: ChallengeFile[];
   hasNotes: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
@@ -56,6 +58,7 @@ type Tab = keyof typeof tabs;
 
 interface MobileLayoutState {
   currentTab: Tab;
+  currentFile: string;
 }
 
 const mapDispatchToProps = {
@@ -88,7 +91,11 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   state: MobileLayoutState = {
     currentTab: this.props.hasEditableBoundaries
       ? tabs.editor
-      : tabs.instructions
+      : tabs.instructions,
+    currentFile:
+      this.props.challengeFiles.find(
+        file => (file.editableRegionBoundaries ?? []).length > 0
+      )?.name || this.props.challengeFiles[0].name
   };
 
   switchTab = (tab: string): void => {
@@ -148,9 +155,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
 
   render(): JSX.Element {
-    const { currentTab } = this.state;
+    const { currentTab, currentFile } = this.state;
     const {
       hasEditableBoundaries,
+      challengeFiles,
       instructions,
       editor,
       testOutput,
@@ -230,9 +238,25 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 {i18next.t('learn.editor-tabs.instructions')}
               </TabsTrigger>
             )}
-            <TabsTrigger value={tabs.editor}>
-              {i18next.t('learn.editor-tabs.code')}
-            </TabsTrigger>
+            {challengeFiles.length <= 1 ? (
+              <TabsTrigger value={tabs.editor}>
+                {i18next.t('learn.editor-tabs.editor')}
+              </TabsTrigger>
+            ) : (
+              <select
+                value={currentFile}
+                onChange={e =>
+                  this.setState({ currentFile: e.currentTarget.value })
+                }
+                className='file-selector'
+              >
+                {challengeFiles.map(file => (
+                  <option key={file.name} value={file.name}>
+                    {file.name}
+                  </option>
+                ))}
+              </select>
+            )}
             {hasNotes && usesMultifileEditor && (
               <TabsTrigger value={tabs.notes}>
                 {i18next.t('learn.editor-tabs.notes')}

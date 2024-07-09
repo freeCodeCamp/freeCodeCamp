@@ -200,6 +200,12 @@
   transform: translateY(-2rem);
 }
 
+#mobile-layout .file-selector {
+  background: var(--secondary-background);
+  font-size: 16px;
+  padding: 0 1rem 0.2rem 1rem;
+}
+
 #mobile-layout #mobile-layout-pane-instructions {
   overflow-y: auto;
 }
