@@ -58,6 +58,7 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
+import { lowPriorityPreload } from '../../../../utils/gatsby/page-loading';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -315,6 +316,8 @@ function ShowClassic({
 
     window.addEventListener('resize', setHtmlHeight);
     setHtmlHeight();
+
+    lowPriorityPreload(nextChallengePath);
 
     return () => {
       createFiles([]);
