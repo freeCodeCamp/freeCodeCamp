@@ -1,8 +1,8 @@
 ---
 id: 5dfa30b9eacea3f48c6300ad
-title: Step 15
+title: Step 16
 challengeType: 0
-dashedName: step-15
+dashedName: step-16
 ---
 
 # --description--
@@ -34,13 +34,13 @@ assert(
 Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
 ```js
-assert(document.querySelectorAll('a').length >= 2);
+assert(document.querySelectorAll('a').length >= 3);
 ```
 
 You are missing a closing (`a`) tag after the image.
 
 ```js
-assert(document.querySelectorAll('a').length === 2);
+assert(document.querySelectorAll('a').length === 3);
 ```
 
 Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
@@ -52,7 +52,7 @@ assert(code.match(/<\/a>/g).length >= 2);
 You should only add one closing anchor (`a`) tag. Please remove any extras.
 
 ```js
-assert(code.match(/<\/a>/g).length === 2);
+assert(code.match(/<\/a>/g).length === 3);
 ```
 
 Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
@@ -65,7 +65,7 @@ Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have
 
 ```js
 assert(
-  document.querySelectorAll('a')[1].getAttribute('href') ===
+  document.querySelectorAll('a')[2].getAttribute('href') ===
     'https://freecatphotoapp.com'
 );
 ```
@@ -87,6 +87,7 @@ assert(document.querySelector('img').parentNode.nodeName === 'A');
       <h1>CatPhotoApp</h1>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
+      <p>Everyone loves <a href="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg">cute cats</a> online!</p>
       <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
 --fcc-editable-region--
       <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back.">

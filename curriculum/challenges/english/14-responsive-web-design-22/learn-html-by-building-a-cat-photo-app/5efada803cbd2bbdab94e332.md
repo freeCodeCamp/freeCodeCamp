@@ -1,8 +1,8 @@
 ---
 id: 5efada803cbd2bbdab94e332
-title: Step 29
+title: Step 30
 challengeType: 0
-dashedName: step-29
+dashedName: step-30
 ---
 
 # --description--
@@ -66,6 +66,7 @@ assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/ca
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
+        <p>Everyone loves <a href="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg">cute cats</a> online!</p>
         <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
         <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
