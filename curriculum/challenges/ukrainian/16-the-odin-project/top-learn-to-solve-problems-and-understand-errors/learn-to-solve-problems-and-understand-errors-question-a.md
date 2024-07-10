@@ -25,7 +25,7 @@ dashedName: learn-to-solve-problems-and-understand-errors-question-a
 
 ## --assignment--
 
-Прочитайте статтю <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/" target="_blank">«Думай як програміст: уроки розв’язання проблем»</a> Річарда Рейса (англійською мовою).
+Прочитайте статтю <a href="https://www.freecodecamp.org/ukrainian/news/dumay-yak-prohramist-uroky-rozv-yazannya-problem/" target="_blank">«Думай як програміст: уроки розв’язання проблем»</a> Річарда Рейса.
 
 ## --text--
 

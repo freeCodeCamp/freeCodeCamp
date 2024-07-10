@@ -68,9 +68,17 @@ function createPseudoWorker(context) {
       }
       try {
         await this.worker.then(worker =>
-          worker
-            .executionContext()
-            .evaluate((worker, msg) => worker.postMessage(msg), worker, msg)
+          // realm is a puppeteer internal that we're abusing. Fortunately, if
+          // it they change it, our tests should catch it. Reason being, we have
+          // tests that expect evaluate to raise errors and tests that expect it
+          // not to, so any change should be detected.
+          // The change was introduced in puppeteer 21.2.0 and you can see the
+          // changes in https://github.com/puppeteer/puppeteer/compare/puppeteer-core-v21.1.1...puppeteer-core-v21.2.0
+          worker.realm.evaluate(
+            (worker, msg) => worker.postMessage(msg),
+            worker,
+            msg
+          )
         );
       } catch (e) {
         if (this.onerror) {

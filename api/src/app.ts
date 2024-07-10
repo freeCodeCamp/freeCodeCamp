@@ -25,6 +25,7 @@ import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import codeFlowAuth from './plugins/code-flow-auth';
+import notFound from './plugins/not-found';
 import { mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
 import {
@@ -93,9 +94,6 @@ export const build = async (
 
   void fastify.register(security);
 
-  fastify.get('/', async (_request, _reply) => {
-    return { hello: 'world' };
-  });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(express);
 
@@ -140,7 +138,10 @@ export const build = async (
       const token = reply.generateCsrf();
       void reply.setCookie('csrf_token', token, {
         sameSite: 'strict',
-        signed: false
+        signed: false,
+        // it needs to be read by the client, so that it can be sent in the
+        // header of the next request:
+        httpOnly: false
       });
     }
     done();
@@ -181,6 +182,7 @@ export const build = async (
   // redirectWithMessage must be registered before codeFlowAuth
   void fastify.register(redirectWithMessage);
   void fastify.register(codeFlowAuth);
+  void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {

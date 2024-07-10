@@ -20,7 +20,7 @@ Lavorare su questo progetto ti porterà a scrivere il tuo codice utilizzando uno
 
 # --instructions--
 
-1.  Imposta `NODE_ENV` a `test` senza virgolette e imposta `DB` alla tua stringa di connessione a MongoDB
+1.  Set the `NODE_ENV` environment variable to `test`, without quotes
 2.  Completa il progetto in `routes/api.js` o creando un handler/controller
 3.  Aggiungerai tutte le funzionalità di sicurezza a `server.js`
 4.  Creerai tutti i test funzionali in `tests/2_functional-tests.js`

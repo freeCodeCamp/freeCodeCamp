@@ -144,7 +144,8 @@ async function setup() {
       // because Docker’s default for /dev/shm is 64MB
       '--disable-dev-shm-usage'
       // dumpio: true
-    ]
+    ],
+    headless: 'new'
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
 

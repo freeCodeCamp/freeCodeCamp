@@ -15,7 +15,8 @@ test.beforeEach(async () => {
 });
 
 test('should be possible to report a user from their profile page', async ({
-  page
+  page,
+  isMobile
 }) => {
   await page.goto('/twaha');
 
@@ -30,7 +31,11 @@ test('should be possible to report a user from their profile page', async ({
     page.getByText("Do you want to report twaha's portfolio for abuse?")
   ).toBeVisible();
 
-  await page.getByRole('textbox').nth(1).fill('Some details');
+  // On mobile, the texarea is the first element due to the searchbox not being present
+  await page
+    .getByRole('textbox')
+    .nth(isMobile ? 0 : 1)
+    .fill('Some details');
   await page.getByRole('button', { name: 'Submit the report' }).click();
   await expect(page).toHaveURL('/learn');
 
