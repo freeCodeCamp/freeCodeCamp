@@ -3,6 +3,11 @@ generator client {
   binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
+generator typescript {
+  provider = "prisma-generator-schema"
+  outfile  = "../../shared/config/prisma/version-1.d.ts"
+}
+
 datasource db {
   provider = "mongodb"
   url      = env("MONGOHQ_URL")
@@ -141,6 +146,12 @@ model user {
   website                      String? // Undefined
   yearsTopContributor          String[] // Undefined | String[]
   isClassroomAccount           Boolean? // Undefined
+  /// The record's last migrated version.
+  ///
+  /// A version of `0` indicates that the record has never been migrated/normalized.
+  schemaVersion                Int                           @default(0)
+  /// The last time in milliseconds since epoch that the record was updated.
+  lastUpdatedAtInMS            Int?
 }
 
 // -----------------------------------
@@ -178,7 +189,7 @@ model Donation {
 }
 
 model UserRateLimit {
-  id             String  @id @map("_id")
+  id             String   @id @map("_id")
   counter        Int
   expirationDate DateTime @db.Date
 

@@ -19,5 +19,9 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
     "invariant": "2.2.4"
+  },
+  "devDependencies": {
+    "mongodb": "5.9.2",
+    "@prisma/client": "5.18.0"
   }
 }

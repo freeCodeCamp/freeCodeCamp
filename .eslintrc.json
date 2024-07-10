@@ -70,6 +70,7 @@
           "./api/tsconfig.json",
           "./shared/tsconfig.json",
           "./tools/client-plugins/browser-scripts/tsconfig.json",
+          "./tools/prisma-generator-schema/tsconfig.json",
           "./e2e/tsconfig.json"
         ]
       },
@@ -102,7 +103,11 @@
       }
     },
     {
-      "files": ["**/api-server/**/*", "**/404.*"],
+      "files": [
+        "**/api-server/**/*",
+        "**/404.*",
+        "shared/migrations/versions/**/*"
+      ],
       "rules": {
         "filenames-simple/naming-convention": "off"
       }

@@ -48,6 +48,7 @@
     "dotenv-cli": "7.3.0",
     "jest": "29.7.0",
     "prisma": "5.5.2",
+    "prisma-generator-schema": "../tools/prisma-generator-schema",
     "supertest": "6.3.3",
     "ts-jest": "29.1.2"
   },
