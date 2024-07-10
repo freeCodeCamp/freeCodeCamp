@@ -35,8 +35,8 @@
     "reorder-tasks": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
-    "test": "ts-node ./node_modules/mocha/bin/mocha.js --delay --exit --reporter progress --bail",
-    "test:full-output": "FULL_OUTPUT=true ts-node ./node_modules/mocha/bin/mocha.js --delay --reporter progress"
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' ts-node ./node_modules/mocha/bin/mocha.js --delay --exit --reporter progress --bail",
+    "test:full-output": "NODE_OPTIONS='--max-old-space-size=7168' FULL_OUTPUT=true ts-node ./node_modules/mocha/bin/mocha.js --delay --reporter progress"
   },
   "devDependencies": {
     "@babel/core": "7.23.7",
