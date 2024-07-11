@@ -81,13 +81,6 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  // The order matters here, since we want to reject invalid cross site requests
-  // before checking if the user is authenticated.
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authorize);
-
   type CommonResponseSchema = {
     response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
   };
@@ -681,8 +674,6 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.addHook('onRequest', fastify.authorizeOrRedirect);
-
   const redirectMessage = {
     type: 'danger',
     content:
