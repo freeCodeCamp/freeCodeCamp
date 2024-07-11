@@ -30,20 +30,38 @@ type Props = PropsFromRedux & {
   skipButtonText: string;
 };
 
-class Header extends React.Component<Props, { displayMenu: boolean }> {
+class Header extends React.Component<Props, { displayMenu: boolean; scrolled: boolean }> {
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;
   constructor(props: Props) {
     super(props);
     this.state = {
-      displayMenu: false
+      displayMenu: false,
+      scrolled: false,
     };
     this.menuButtonRef = React.createRef();
     this.searchBarRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.showMenu = this.showMenu.bind(this);
     this.hideMenu = this.hideMenu.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount(){
+    document.addEventListener('scroll', this.handleScroll);
+  }
+  
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(): void{
+    if(window.scrollY > 50){
+      this.setState({ scrolled: true });
+    }else{
+      this.setState({ scrolled: false });
+    }
   }
 
   handleClickOutside(event: globalThis.MouseEvent): void {
@@ -78,10 +96,10 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
   }
 
   render(): JSX.Element {
-    const { displayMenu } = this.state;
+    const { displayMenu, scrolled } = this.state;
     const { examInProgress, fetchState, user, skipButtonText } = this.props;
     return (
-      <header className='site-header'>
+      <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <a
           href='#content-start'
           className='skip-to-content-button'
