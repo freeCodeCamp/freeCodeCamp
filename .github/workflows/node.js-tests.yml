@@ -147,6 +147,9 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm install
 
+      - name: Install Chrome for Puppeteer
+        run: pnpm dlx puppeteer browsers install chrome
+
       - name: Run Tests
         run: pnpm test
 
@@ -193,6 +196,9 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm dlx puppeteer browsers install chrome
 
       - name: Run Tests
         run: pnpm test
@@ -251,6 +257,9 @@ jobs:
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           pnpm run build
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm dlx puppeteer browsers install chrome
 
       - name: Run Tests
         env:

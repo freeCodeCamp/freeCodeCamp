@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { generic500 } from '../types';
+import { genericError } from '../types';
 
 export const projectCompleted = {
   body: Type.Object({
@@ -28,15 +28,20 @@ export const projectCompleted = {
         )
       ])
     }),
-    403: Type.Object({
-      type: Type.Literal('error'),
-      message: Type.Union([
-        Type.Literal(
-          'You have to complete the project before you can submit a URL.'
-        ),
-        Type.Literal('That does not appear to be a valid challenge submission.')
-      ])
-    }),
-    500: generic500
+    403: Type.Union([
+      Type.Object({
+        type: Type.Literal('error'),
+        message: Type.Union([
+          Type.Literal(
+            'You have to complete the project before you can submit a URL.'
+          ),
+          Type.Literal(
+            'That does not appear to be a valid challenge submission.'
+          )
+        ])
+      }),
+      genericError
+    ]),
+    default: genericError
   }
 };

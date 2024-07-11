@@ -410,11 +410,11 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Review Algorithmic Thinking by Building a Dice Game",
+        "title": "Повторіть алгоритмічне мислення, створивши гру з кубиками",
         "intro": [
-          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
-          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
-          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+          "Алгоритмічне мислення передбачає здатність розбивати складні завдання на чітко визначені кроки.",
+          "У проєкті зі створення гри з кубиками ви дізнаєтесь, як керувати станом гри та реалізуєте логіку гри, щоб викидати кубики, зберігати бали й застосовувати правила для різних комбінацій.",
+          "Цей проєкт охоплює обробку подій, маніпулювання масивами, умовну логіку та динамічне оновлення інтерфейсу користувача на основі стану гри."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -1274,6 +1274,12 @@
         "intro": [
           "Дізнайтесь, як розв’язувати проблеми та розуміти помилки в JavaScript."
         ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Побудуйте гру «Камінь-ножиці-папір»",
+        "intro": [
+          "Випробуйте свої навички по JavaScript, побудувавши гру «Камінь-ножиці-папір»."
+        ]
       }
     }
   },
@@ -1484,7 +1490,7 @@
         ]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
-        "title": "Дізнайтесь, як допомогти співпрацівнику розв’язати проблему на GitHub",
+        "title": "Дізнайтесь, як допомогти колезі розв’язати проблему на GitHub",
         "intro": [
           "У цьому курсі ви вивчите вирази, пов’язані із проханням про допомогу у колеги, а також тим, як запропонувати свою допомогу."
         ]
@@ -1674,13 +1680,17 @@
       }
     }
   },
-  "example-certification": {
-    "title": "Зразкова сертифікація",
-    "intro": ["заповнювач"],
+  "front-end-development": {
+    "title": "Front End розробка",
+    "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "Екзамен зі зразкової сертифікації",
-        "intro": ["заповнювач"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Вивчіть основи HTML, створивши сторінку з рецептами",
+        "intro": ["", ""]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Екзамен з сертифікації «Front End розробка»",
+        "intro": ["", ""]
       }
     }
   },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -10,15 +10,12 @@ import {
 } from '../../../../../shared/config/certification-settings';
 import { SuperBlocks } from '../../../../../shared/config/superblocks';
 
-import { createFlashMessage } from '../../../components/Flash/redux';
-import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
   isSignedInSelector,
   userFetchStateSelector,
   currentCertsSelector
 } from '../../../redux/selectors';
 import { User, Steps } from '../../../redux/prop-types';
-import { verifyCert } from '../../../redux/settings/actions';
 import {
   type CertTitle,
   liveCerts
@@ -28,7 +25,6 @@ import { ButtonLink } from '../../../components/helpers';
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
   certification: string;
-  createFlashMessage: typeof createFlashMessage;
   fetchState: {
     pending: boolean;
     complete: boolean;
@@ -40,13 +36,7 @@ interface CertChallengeProps {
   superBlock: SuperBlocks;
   title: CertTitle;
   user: User;
-  verifyCert: typeof verifyCert;
 }
-
-const honestyInfoMessage = {
-  type: 'info',
-  message: FlashMessages.HonestFirst
-};
 
 const mapStateToProps = (state: unknown) => {
   return createSelector(
@@ -65,21 +55,14 @@ const mapStateToProps = (state: unknown) => {
   )(state as Record<string, unknown>);
 };
 
-const mapDispatchToProps = {
-  createFlashMessage,
-  verifyCert
-};
-
 const CertChallenge = ({
-  createFlashMessage,
   currentCerts,
   superBlock,
-  verifyCert,
   title,
   fetchState,
   isSignedIn,
-  user: { isHonest, username }
-}: CertChallengeProps) => {
+  user: { username }
+}: CertChallengeProps): JSX.Element => {
   const { t } = useTranslation();
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
@@ -113,34 +96,18 @@ const CertChallenge = ({
 
   const certLocation = `/certification/${username}/${certSlug}`;
 
-  const claimCertHandler =
-    (certSlug: string | undefined) => (e: MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-
-      return isHonest
-        ? verifyCert(certSlug)
-        : createFlashMessage(honestyInfoMessage);
-    };
-
-  if (!isSignedIn) {
-    return null;
-  }
-
   return (
     <div>
-      {isCertified ? (
-        <ButtonLink block={true} href={certLocation}>
-          {userLoaded ? t('buttons.show-cert') : t('buttons.go-to-settings')}{' '}
+      {isSignedIn && (
+        <ButtonLink
+          block={true}
+          href={isCertified ? certLocation : `/settings#cert-${certSlug}`}
+        >
+          {isCertified && userLoaded
+            ? t('buttons.show-cert')
+            : t('buttons.go-to-settings')}{' '}
           <span className='sr-only'>{title}</span>
         </ButtonLink>
-      ) : (
-        <Button
-          block={true}
-          variant='primary'
-          onClick={claimCertHandler(certSlug)}
-        >
-          {t('buttons.go-to-settings')} <span className='sr-only'>{title}</span>
-        </Button>
       )}
     </div>
   );
@@ -148,7 +115,4 @@ const CertChallenge = ({
 
 CertChallenge.displayName = 'CertChallenge';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(CertChallenge));
+export default connect(mapStateToProps)(withTranslation()(CertChallenge));

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import { Button } from '@freecodecamp/ui';
 
@@ -7,7 +7,6 @@ export type ButtonSize = 'small' | 'medium' | 'large';
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   href: string;
-  external?: boolean;
   className?: string;
   size?: ButtonSize;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
@@ -28,7 +27,6 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
  */
 export const ButtonLink = ({
   className,
-  external,
   children,
   href,
   target,
@@ -41,45 +39,18 @@ export const ButtonLink = ({
 }: Props) => {
   // We only need to compute the styles of `size` and `block` for Gatsby Link.
   // freecodecamp/ui's Button already has the logic implemented.
-  const gatsbyLinkCls = useMemo(() => {
-    const cls = ['btn'];
+  const cls = ['btn'];
+  if (block) cls.push('btn-block');
+  // The 'btn' class contains the base button styles as well as the `medium` variant styles.
+  // So we only need to handle `large` and `small`.
+  if (size === 'large') cls.push('btn-lg');
+  if (size === 'small') cls.push('btn-sm');
+  if (className) cls.push(className);
+  const gatsbyLinkCls = cls.join(' ');
 
-    if (block) {
-      cls.push('btn-block');
-    }
-
-    // The 'btn' class contains the base button styles as well as the `medium` variant styles.
-    // So we only need to handle `large` and `small`.
-    if (size === 'large') {
-      cls.push('btn-lg');
-    } else if (size === 'small') {
-      cls.push('btn-sm');
-    }
-
-    if (className) {
-      cls.push(className);
-    }
-
-    return cls.join(' ');
-  }, [size, block, className]);
-
-  // Links cannot be disabled. So if `disabled` is true, we render a `<button>` instead.
-  if (disabled) {
-    return (
-      <Button
-        variant='primary'
-        className={className}
-        size={size}
-        block={block}
-        disabled
-        data-playwright-test-label={testLabel}
-      >
-        {children}
-      </Button>
-    );
-  }
-
-  if (external || download) {
+  // Links cannot be disabled. So if `disabled` is true,
+  // we pass the prop to `Button` in order to render a `<button>` instead of an `<a>`.
+  if (disabled || target === '_blank' || download) {
     return (
       <Button
         variant='primary'

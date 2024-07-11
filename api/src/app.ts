@@ -25,6 +25,7 @@ import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import codeFlowAuth from './plugins/code-flow-auth';
+import notFound from './plugins/not-found';
 import { mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
 import {
@@ -36,16 +37,14 @@ import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
 import { donateRoutes } from './routes/donate';
 import { emailSubscribtionRoutes } from './routes/email-subscription';
-import { settingRoutes } from './routes/settings';
+import { settingRoutes, settingRedirectRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
 import {
   API_LOCATION,
-  COOKIE_DOMAIN,
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FREECODECAMP_NODE_ENV,
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
@@ -95,9 +94,6 @@ export const build = async (
 
   void fastify.register(security);
 
-  fastify.get('/', async (_request, _reply) => {
-    return { hello: 'world' };
-  });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(express);
 
@@ -107,7 +103,10 @@ export const build = async (
     // test environments)
     skipInit: !SENTRY_DSN,
     errorResponse: (error, _request, reply) => {
-      if (reply.statusCode === 500) {
+      const isCSRFError =
+        error.code === 'FST_CSRF_INVALID_TOKEN' ||
+        error.code === 'FST_CSRF_MISSING_SECRET';
+      if (reply.statusCode === 500 || isCSRFError) {
         void reply.send({
           message: 'flash.generic-error',
           type: 'danger'
@@ -127,7 +126,8 @@ export const build = async (
 
     ///Ignore all other possible sources of CSRF
     // tokens since we know we can provide this one
-    getToken: req => req.headers['csrf-token'] as string
+    getToken: req => req.headers['csrf-token'] as string,
+    cookieOpts: { signed: false, sameSite: 'strict' }
   });
 
   // All routes except signout should add a CSRF token to the response
@@ -136,13 +136,12 @@ export const build = async (
 
     if (!isSignout) {
       const token = reply.generateCsrf();
-      // Path is necessary to ensure that only one cookie is set and it is valid
-      // for all routes.
       void reply.setCookie('csrf_token', token, {
-        path: '/',
         sameSite: 'strict',
-        domain: COOKIE_DOMAIN,
-        secure: FREECODECAMP_NODE_ENV === 'production'
+        signed: false,
+        // it needs to be read by the client, so that it can be sent in the
+        // header of the next request:
+        httpOnly: false
       });
     }
     done();
@@ -180,7 +179,10 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
+  // redirectWithMessage must be registered before codeFlowAuth
+  void fastify.register(redirectWithMessage);
   void fastify.register(codeFlowAuth);
+  void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(mobileAuth0Routes);
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
@@ -188,6 +190,7 @@ export const build = async (
   }
   void fastify.register(challengeRoutes);
   void fastify.register(settingRoutes);
+  void fastify.register(settingRedirectRoutes);
   void fastify.register(donateRoutes);
   void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userRoutes);
@@ -198,7 +201,6 @@ export const build = async (
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
-  void fastify.register(redirectWithMessage);
 
   return fastify;
 };

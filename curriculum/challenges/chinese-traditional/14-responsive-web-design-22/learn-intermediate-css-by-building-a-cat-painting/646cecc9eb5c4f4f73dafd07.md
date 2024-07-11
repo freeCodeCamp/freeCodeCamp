@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: 步驟 23
+title: 步驟 25
 challengeType: 0
-dashedName: step-23
+dashedName: step-25
 ---
 
 # --description--
@@ -11,7 +11,7 @@ dashedName: step-23
 
 # --hints--
 
-你的 `.cat-left-ear` 選擇器應該具有一個 `position` 屬性並設置爲 `absolute`。 Don't forget to add a semicolon.
+你的 `.cat-left-ear` 選擇器應該具有一個 `position` 屬性並設置爲 `absolute`。 不要忘記加上分號。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

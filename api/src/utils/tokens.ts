@@ -20,6 +20,13 @@ export type Token = {
   created: string;
 };
 
+type DbToken = {
+  userId: string;
+  id: string;
+  ttl: number;
+  created: Date;
+};
+
 /**
  * Creates an access token.
  * @param userId The user ID as a string (yes, it's an ObjectID, but it will be serialized to a string anyway).
@@ -48,4 +55,14 @@ export const createAuthToken = (userId: string, ttl?: number): Token => {
     ttl: ttl ?? 900000,
     created: new Date().toISOString()
   };
+};
+
+/**
+ * Check if an access token has expired.
+ * @param token The access token to check.
+ * @returns True if the token has expired, false otherwise.
+ */
+export const isExpired = (token: Token | DbToken): boolean => {
+  const created = new Date(token.created);
+  return Date.now() > created.getTime() + token.ttl;
 };

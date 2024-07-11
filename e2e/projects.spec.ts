@@ -239,8 +239,10 @@ test.describe('Completion modal should be shown after submitting a project', () 
 
   test('Ctrl + enter triggers the completion modal on multifile projects', async ({
     page,
-    context
+    context,
+    isMobile
   }) => {
+    test.skip(isMobile);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const tributeContent = [
