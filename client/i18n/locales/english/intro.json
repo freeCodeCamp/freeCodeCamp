@@ -1700,9 +1700,12 @@
     "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Learn Basic HTML by Building a Recipe Page",
-        "intro": ["", ""]
+      "learn-basic-html-by-building-a-cat-photo-app": {
+        "title": "Learn Basic HTML by Building a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements like images, links, lists and more."
+        ]
       },
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",

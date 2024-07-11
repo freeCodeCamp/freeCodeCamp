@@ -1,10 +1,10 @@
 {
-  "name": "Learn Basic HTML by Building a Recipe Page",
+  "name": "Learn Basic HTML by Building a Cat Photo App",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "learn-basic-html-by-building-a-recipe-page",
-  "order": 0,
+  "dashedName": "learn-basic-html-by-building-a-cat-photo-app",
+  "order": 2,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {
