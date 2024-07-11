@@ -63,6 +63,8 @@ const nullableFlags = [
   'keyboardShortcuts'
 ] as const;
 
+const blockedUserAgentParts = ['python', 'google-apps-script', 'curl'];
+
 type NullableFlag = (typeof nullableFlags)[number];
 
 /**
@@ -661,6 +663,19 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.getPublicProfile
     },
     async (req, reply) => {
+      const userAgent = req.headers['user-agent'];
+      console.log('useragent', userAgent);
+
+      if (
+        !userAgent ||
+        blockedUserAgentParts.some(ua => userAgent.toLowerCase().includes(ua))
+      ) {
+        void reply.code(400);
+        return reply.send(
+          'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+        );
+      }
+
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
         where: { username: req.query.username }
