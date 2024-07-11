@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
 
 import {
   certSlugTypeMap,
