@@ -664,10 +664,9 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const userAgent = req.headers['user-agent'];
-      console.log('useragent', userAgent);
 
       if (
-        !userAgent ||
+        userAgent &&
         blockedUserAgentParts.some(ua => userAgent.toLowerCase().includes(ua))
       ) {
         void reply.code(400);
