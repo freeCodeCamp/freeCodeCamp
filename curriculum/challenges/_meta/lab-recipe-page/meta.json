@@ -2,7 +2,7 @@
   "name": "Recipe Page",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "dashedName": "recipe-page-lab",
+  "dashedName": "lab-recipe-page",
   "order": 2,
   "superBlock": "front-end-development",
   "challengeOrder": [

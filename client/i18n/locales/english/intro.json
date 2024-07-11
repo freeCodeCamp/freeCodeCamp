@@ -1704,7 +1704,7 @@
         "title": "Learn Basic HTML by Building a Recipe Page",
         "intro": ["", ""]
       },
-      "recipe-page-lab": {
+      "lab-recipe-page": {
         "title": "Build a Recipe Page",
         "intro": [
           "For this lab, you will create a web page of your favorite recipe."

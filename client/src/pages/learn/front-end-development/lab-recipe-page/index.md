@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Recipe Page Lab
-block: recipe-page-lab
+block: lab-recipe-page
 superBlock: front-end-development
 ---
 
