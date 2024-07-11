@@ -96,32 +96,24 @@
       "title": "Step 22"
     },
     {
-      "id": "65389211a8d86bbd876a2a74",
+      "id": "6538935e2ab721beedb137c4",
       "title": "Step 23"
     },
     {
-      "id": "65389306578c34be5c93bc35",
+      "id": "653898fa7eee37c57b960e35",
       "title": "Step 24"
     },
     {
-      "id": "6538935e2ab721beedb137c4",
+      "id": "65389a63d3b1d6c764c0e10e",
       "title": "Step 25"
     },
     {
-      "id": "653898fa7eee37c57b960e35",
+      "id": "65389de504d0f2ca10e92a57",
       "title": "Step 26"
     },
     {
-      "id": "65389a63d3b1d6c764c0e10e",
-      "title": "Step 27"
-    },
-    {
-      "id": "65389de504d0f2ca10e92a57",
-      "title": "Step 28"
-    },
-    {
       "id": "65389eff4893facbbe6eae67",
-      "title": "Step 29"
+      "title": "Step 27"
     }
   ],
   "helpCategory": "JavaScript"
