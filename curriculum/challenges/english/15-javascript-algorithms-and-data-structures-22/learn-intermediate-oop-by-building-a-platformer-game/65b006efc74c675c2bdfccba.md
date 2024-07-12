@@ -22,7 +22,7 @@ assert.match(code, /if\s*\(\s*.*\s*\)\s*{/g);
 Your `if` statement should check if `this.position.x >= canvas.width - this.width * 2`.
 
 ```js
-assert.match(code, /if\s*\(\s*this\.position\.x\s*>=\s*canvas\.width\s*-\s*this\.width\s*\*\s*2\)\s*{/gi);
+assert.match(code, /if\s*\(\s*this\.position\.x\s*>=\s*canvas\.width\s*-\s*this\.width\s*\*\s*2\s*\)\s*{/gi);
 ```
 
 # --seed--
