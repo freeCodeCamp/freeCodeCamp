@@ -250,9 +250,6 @@ export const reducer = handleActions(
     [actionTypes.toggleVisibleEditor]: (state, { payload }) => {
       // will be called if mobile view is active
       if (typeof payload == 'object') {
-        console.log('payload', payload);
-        console.log('state', state);
-
         const visibleEditors = {
           ...state.visibleEditors,
           [payload.editor]: true

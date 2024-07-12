@@ -107,12 +107,8 @@
   flex-shrink: 0;
 }
 
-/* Need to narrow width of tabs to make room for preview toggle button */
-#mobile-layout[data-haspreview='true'] [role='tablist'] {
-  width: calc(100% - 2rem);
-}
-
-#mobile-layout .nav-lists > button {
+#mobile-layout .nav-lists > button,
+#mobile-layout .nav-lists > select {
   height: 100%;
   font-size: 0.8em;
   /* Need to override radix-ui defaults on side padding to allow room for
@@ -188,22 +184,15 @@
   flex-direction: column;
 }
 
-#mobile-layout .portal-button-wrap {
-  position: absolute;
-  top: auto;
-  right: 0;
-  height: 2rem;
-  border-bottom: 1px solid var(--quaternary-color);
-}
-
-#mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
-  transform: translateY(-2rem);
-}
-
-#mobile-layout .file-selector {
+.file-selector {
   background: var(--secondary-background);
-  font-size: 16px;
-  padding: 0 1rem 0.2rem 1rem;
+  padding-left: 3em !important;
+  padding-right: 0;
+}
+
+.file-selector-active {
+  background-color: var(--quaternary-background) !important;
+  font-weight: bold;
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
@@ -225,7 +214,8 @@
   width: 100%;
 }
 
-#mobile-layout .monaco-editor-tabs button {
+#mobile-layout .monaco-editor-tabs button,
+#mobile-layout select {
   flex: 1;
   max-width: 50%;
 }
@@ -250,27 +240,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  #mobile-layout .portal-button-wrap {
-    height: 1.5rem;
-  }
-
-  #mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
-    height: 1.52rem;
-    transform: translateY(-1.5rem);
-  }
-
-  #mobile-layout .portal-button-wrap button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.43rem;
-    font-size: initial;
-  }
-
-  #mobile-layout .portal-button-wrap button svg {
-    scale: 0.8;
   }
 
   #mobile-layout .monaco-editor-tabs {
