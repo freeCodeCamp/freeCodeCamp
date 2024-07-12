@@ -9,18 +9,21 @@ import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
 import {
   removePortalWindow,
   setShowPreviewPortal,
-  setShowPreviewPane
+  setShowPreviewPane,
+  toggleVisibleEditor
 } from '../redux/actions';
 import {
   portalWindowSelector,
   showPreviewPortalSelector,
-  showPreviewPaneSelector
+  showPreviewPaneSelector,
+  visibleEditorsSelector
 } from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import PreviewPortal from '../components/preview-portal';
 import { ChallengeFile } from '../../../redux/prop-types';
 import EditorTabs from './editor-tabs';
+import { VisibleEditors } from './multifile-editor';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
@@ -39,11 +42,13 @@ interface MobileLayoutProps {
   removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
+  toggleVisibleEditor: (arg: unknown) => void;
   portalWindow: null | Window;
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   videoUrl: string;
   usesMultifileEditor: boolean;
+  visibleEditors: VisibleEditors;
 }
 
 const tabs = {
@@ -64,22 +69,25 @@ interface MobileLayoutState {
 const mapDispatchToProps = {
   removePortalWindow,
   setShowPreviewPortal,
-  setShowPreviewPane
+  setShowPreviewPane,
+  toggleVisibleEditor
 };
 
 const mapStateToProps = createSelector(
   showPreviewPortalSelector,
   showPreviewPaneSelector,
   portalWindowSelector,
-
+  visibleEditorsSelector,
   (
     showPreviewPortal: boolean,
     showPreviewPane: boolean,
-    portalWindow: null | Window
+    portalWindow: null | Window,
+    visibleEditors: VisibleEditors
   ) => ({
     showPreviewPortal,
     showPreviewPane,
-    portalWindow
+    portalWindow,
+    visibleEditors
   })
 );
 
@@ -95,7 +103,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     currentFile:
       this.props.challengeFiles.find(
         file => (file.editableRegionBoundaries ?? []).length > 0
-      )?.name || this.props.challengeFiles[0].name
+      )?.fileKey || this.props.challengeFiles[0].fileKey
   };
 
   switchTab = (tab: string): void => {
@@ -171,6 +179,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       showPreviewPortal,
       removePortalWindow,
       setShowPreviewPane,
+      toggleVisibleEditor,
       setShowPreviewPortal,
       portalWindow,
       windowTitle,
@@ -203,6 +212,11 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
         setShowPreviewPane(true);
         setShowPreviewPortal(false);
       }
+    };
+
+    const setCurrentViewedFile = (file: string): void => {
+      this.setState({ currentFile: file });
+      toggleVisibleEditor({ editor: file });
     };
 
     // sets screen reader text for the portal button
@@ -245,13 +259,11 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             ) : (
               <select
                 value={currentFile}
-                onChange={e =>
-                  this.setState({ currentFile: e.currentTarget.value })
-                }
+                onChange={e => setCurrentViewedFile(e.target.value)}
                 className='file-selector'
               >
                 {challengeFiles.map(file => (
-                  <option key={file.name} value={file.name}>
+                  <option key={file.name} value={file.fileKey}>
                     {file.name}
                   </option>
                 ))}
