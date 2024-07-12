@@ -18,7 +18,6 @@ import {
 } from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
-import PreviewPortal from '../components/preview-portal';
 import { ChallengeFile } from '../../../redux/prop-types';
 import EditorTabs from './editor-tabs';
 import { VisibleEditors } from './multifile-editor';
@@ -35,7 +34,6 @@ interface MobileLayoutProps {
   preview: JSX.Element;
   onPreviewResize: () => void;
   windowTitle: string;
-  showPreviewPortal: boolean;
   showPreviewPane: boolean;
   removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
@@ -172,18 +170,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       hasPreview,
       notes,
       preview,
-      onPreviewResize,
       showPreviewPane,
-      showPreviewPortal,
       toggleVisibleEditor,
-      windowTitle,
       guideUrl,
       videoUrl,
       usesMultifileEditor
     } = this.props;
 
     const displayPreviewPane = hasPreview && showPreviewPane;
-    const displayPreviewPortal = hasPreview && showPreviewPortal;
 
     const setCurrentViewedFile = (file: string): void => {
       this.setState({ currentFile: file });
@@ -221,6 +215,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 <select
                   value={currentFile}
                   onChange={e => setCurrentViewedFile(e.target.value)}
+                  onClick={() => this.switchTab(tabs.editor)}
                   className='file-selector'
                 >
                   {challengeFiles.map(file => (
@@ -291,11 +286,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {...(this.state.currentTab === 'preview' ? {} : { hidden: true })}
             >
               {displayPreviewPane && preview}
-              {showPreviewPortal && (
-                <p className='preview-external-window'>
-                  {i18next.t('learn.preview-external-window')}
-                </p>
-              )}
             </TabsContent>
           )}
           {!hasEditableBoundaries && (
@@ -306,11 +296,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             />
           )}
         </Tabs>
-        {displayPreviewPortal && (
-          <PreviewPortal onResize={onPreviewResize} windowTitle={windowTitle}>
-            {preview}
-          </PreviewPortal>
-        )}
       </>
     );
   }
