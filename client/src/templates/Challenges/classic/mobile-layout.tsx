@@ -215,18 +215,21 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 {i18next.t('learn.editor-tabs.editor')}
               </TabsTrigger>
             ) : (
-              <select
-                value={currentFile}
-                onChange={e => setCurrentViewedFile(e.target.value)}
-                onClick={() => this.switchTab(tabs.editor)}
-                className={`${currentTab === 'editor' ? 'file-selector-active' : ''} file-selector`}
+              <div
+                className={`${currentTab == tabs.editor ? 'file-tab-active' : ''} file-tab`}
               >
-                {challengeFiles.map(file => (
-                  <option key={file.name} value={file.fileKey}>
-                    {file.name + '.' + file.ext}
-                  </option>
-                ))}
-              </select>
+                <select
+                  value={currentFile}
+                  onChange={e => setCurrentViewedFile(e.target.value)}
+                  className='file-selector'
+                >
+                  {challengeFiles.map(file => (
+                    <option key={file.name} value={file.fileKey}>
+                      {file.name + '.' + file.ext}
+                    </option>
+                  ))}
+                </select>
+              </div>
             )}
             {hasNotes && usesMultifileEditor && (
               <TabsTrigger value={tabs.notes}>

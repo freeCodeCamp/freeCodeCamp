@@ -108,7 +108,7 @@
 }
 
 #mobile-layout .nav-lists > button,
-#mobile-layout .nav-lists > select {
+#mobile-layout .nav-lists > .file-tab {
   height: 100%;
   font-size: 0.8em;
   /* Need to override radix-ui defaults on side padding to allow room for
@@ -186,11 +186,10 @@
 
 .file-selector {
   background: var(--secondary-background);
-  padding-left: 3em !important;
   padding-right: 0;
 }
 
-.file-selector-active {
+.file-tab-active {
   background-color: var(--quaternary-background) !important;
   font-weight: bold;
 }
@@ -215,9 +214,21 @@
 }
 
 #mobile-layout .monaco-editor-tabs button,
-#mobile-layout select {
+#mobile-layout .file-tab {
   flex: 1;
   max-width: 50%;
+}
+
+#mobile-layout .file-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mobile-layout select {
+  border: none;
+  background-color: transparent;
+  height: 100%;
 }
 
 /* Focus indicator for tab panel */
