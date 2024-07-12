@@ -29,21 +29,25 @@ You should pass a callback function to the `.forEach()` method.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(/);
+const functionRe = __helpers.functionRegex(null);
+assert.match(cart.addItem.toString(), __helpers.concatRegex(/this\.items\.forEach\(\s*/, functionRe));
 ```
 
 Your callback function should take a single parameter.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(\s*dessert\s*\)/);
+const functionRe = __helpers.functionRegex(null, ["dessert"], { includeBody: false });
+assert.match(cart.addItem.toString(), __helpers.concatRegex(/this\.items\.forEach\(\s*/, functionRe));
 ```
 
 Your callback function should be empty.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /this\.items\.forEach\(\s*function\s*\(\s*dessert\s*\)\s*\{\s*\}/);
+const functionRe = __helpers.functionRegex(null, ["dessert"], { capture: true });
+const match = cart.addItem.toString().match(__helpers.concatRegex(/this\.items\.forEach\(\s*/, functionRe));
+assert.match(__helpers.removeWhiteSpace(match[1]), /\(?dessert\)?=>{}|function\(dessert\){}/);
 ```
 
 # --seed--
