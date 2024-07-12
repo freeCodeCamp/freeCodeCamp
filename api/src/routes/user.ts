@@ -653,21 +653,23 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   fastify.get(
     '/api/users/get-public-profile',
     {
-      schema: schemas.getPublicProfile
+      schema: schemas.getPublicProfile,
+      onRequest: (req, reply, done) => {
+        const userAgent = req.headers['user-agent'];
+
+        if (
+          userAgent &&
+          blockedUserAgentParts.some(ua => userAgent.toLowerCase().includes(ua))
+        ) {
+          void reply.code(400);
+          void reply.send(
+            'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+          );
+        }
+        done();
+      }
     },
     async (req, reply) => {
-      const userAgent = req.headers['user-agent'];
-
-      if (
-        userAgent &&
-        blockedUserAgentParts.some(ua => userAgent.toLowerCase().includes(ua))
-      ) {
-        void reply.code(400);
-        return reply.send(
-          'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
-        );
-      }
-
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
         where: { username: req.query.username }
