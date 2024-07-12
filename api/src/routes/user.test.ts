@@ -1227,6 +1227,17 @@ Thanks and regards,
       });
 
       describe('GET', () => {
+        test('returns 400 status code if the user agent is blocked', async () => {
+          const response = await superGet(
+            '/api/users/get-public-profile?username=public-user'
+          ).set('User-Agent', 'curl');
+
+          expect(response.text).toBe(
+            'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
         test('returns 400 status code if the username param is missing', async () => {
           const res = await superGet('/api/users/get-public-profile');
           // TODO(Post-MVP): return something more informative
