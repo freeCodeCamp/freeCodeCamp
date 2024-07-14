@@ -446,7 +446,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                 }
               }
               console.error = oldConsoleError;
-              assert(fails, 'Test suit does not fail on the initial contents');
+              assert(fails, 'Test suite does not fail on the initial contents');
             });
 
             let { solutions = [] } = challenge;
