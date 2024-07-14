@@ -68,6 +68,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
   assert.ok(process.env.PORT);
+  assert.ok(process.env.HOST);
   assert.ok(process.env.SENTRY_DSN);
   // The following values can exist in development, but production-like
   // environments need to override the defaults.
@@ -111,6 +112,7 @@ export const FREECODECAMP_NODE_ENV = process.env.FREECODECAMP_NODE_ENV;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE;
 export const PORT = process.env.PORT || '3000';
+export const HOST = process.env.HOST || 'localhost';
 export const API_LOCATION = process.env.API_LOCATION;
 export const FCC_ENABLE_SWAGGER_UI =
   process.env.FCC_ENABLE_SWAGGER_UI === 'true';

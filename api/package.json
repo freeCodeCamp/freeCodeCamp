@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-ses": "3.521.0",
-    "@fastify/cookie": "9.3.1",
+    "@fastify/accepts": "4.3.0",
+    "@fastify/cookie": "9.4.0",
     "@fastify/csrf-protection": "6.4.1",
     "@fastify/express": "^2.3.0",
     "@fastify/swagger": "8.14.0",

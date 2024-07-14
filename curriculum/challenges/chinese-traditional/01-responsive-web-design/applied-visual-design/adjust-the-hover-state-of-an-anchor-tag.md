@@ -1,6 +1,6 @@
 ---
 id: 587d781d367417b2b2512ac8
-title: 調整錨點的懸停狀態
+title: 調整錨標籤的懸停狀態
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
@@ -11,7 +11,7 @@ dashedName: adjust-the-hover-state-of-an-anchor-tag
 
 本挑戰將要涉及到僞類。 僞類是可以添加到選擇器上的關鍵字，用來選擇特定狀態的元素。
 
-比如，可以使用 `:hover` 僞類選擇器來選取超鏈接的懸停狀態。 下面的代碼可以在鼠標懸停在超鏈接上時將其 `color` 變成紅色：
+比如，可以使用 `:hover` 僞類選擇器來選取錨標籤的懸停狀態。 下面的代碼可以在鼠標懸停在錨標籤上時將其 `color` 變成紅色：
 
 ```css
 a:hover {
@@ -25,13 +25,13 @@ a:hover {
 
 # --hints--
 
-超鏈接的 `color` 應該保持黑色，應只添加 `:hover` CSS 規則。
+The anchor tag `color` should remain black, only add CSS rules for the `:hover` state.
 
 ```js
 assert($('a').css('color') == 'rgb(0, 0, 0)');
 ```
 
-懸停超鏈接時超鏈接的 `color` 應該變成藍色。
+懸停錨標籤時它的 `color` 應該變成藍色。
 
 ```js
 assert(

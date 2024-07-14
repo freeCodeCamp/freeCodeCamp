@@ -78,12 +78,12 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
       const jwtAccessToken = unsignedToken.value;
 
       try {
-        jwt.verify(jwtAccessToken!, JWT_SECRET);
+        jwt.verify(jwtAccessToken, JWT_SECRET);
       } catch {
         return rejectStrategy(req, reply, TOKEN_INVALID);
       }
 
-      const { accessToken } = jwt.decode(jwtAccessToken!) as {
+      const { accessToken } = jwt.decode(jwtAccessToken) as {
         accessToken: Token;
       };
 

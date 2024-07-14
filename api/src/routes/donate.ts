@@ -30,12 +30,6 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     typescript: true
   });
 
-  // The order matters here, since we want to reject invalid cross site requests
-  // before checking if the user is authenticated.
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authorize);
   fastify.post(
     '/donate/add-donation',
     {

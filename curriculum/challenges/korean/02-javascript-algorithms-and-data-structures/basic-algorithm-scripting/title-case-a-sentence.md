@@ -1,6 +1,6 @@
 ---
 id: ab6137d4e35944e21037b769
-title: Title Case a Sentence
+title: '제목 케이스(Title Case: 주요 단어의 첫글자를 대문자로 쓰는 것)로 변환하기'
 challengeType: 1
 forumTopicId: 16088
 dashedName: title-case-a-sentence
@@ -8,31 +8,31 @@ dashedName: title-case-a-sentence
 
 # --description--
 
-Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+주어진 문자열을 반환하되, 각 단어의 첫 글자를 대문자로 만듭니다. 나머지 부분은 모두 소문자여야 합니다.
 
-For the purpose of this exercise, you should also capitalize connecting words like `the` and `of`.
+이 연습의 목적을 위해 `the`와 `of`와 같은 연결 단어도 대문자여야 합니다.
 
 # --hints--
 
-`titleCase("I'm a little tea pot")` should return a string.
+`titleCase("I'm a little tea pot")`은(는) 문자열을 반환해야 합니다.
 
 ```js
 assert(typeof titleCase("I'm a little tea pot") === 'string');
 ```
 
-`titleCase("I'm a little tea pot")` should return the string `I'm A Little Tea Pot`.
+`titleCase("I'm a little tea pot")`은(는) 문자열 `I'm A Little Tea Pot`을 반환해야 합니다.
 
 ```js
 assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
 ```
 
-`titleCase("sHoRt AnD sToUt")` should return the string `Short And Stout`.
+`titleCase("sHoRt AnD sToUt")`는 문자열 `Short And Stout`를 반환해야 합니다.
 
 ```js
 assert(titleCase('sHoRt AnD sToUt') === 'Short And Stout');
 ```
 
-`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` should return the string `Here Is My Handle Here Is My Spout`.
+`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")`는 문자열 `Here Is My Handle Here Is My Spout`를 반환해야 합니다.
 
 ```js
 assert(

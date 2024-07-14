@@ -1,6 +1,6 @@
 ---
 id: 65ffa9d80e7ffb1ab9b4df1c
-title: Task 11
+title: Завдання 11
 challengeType: 22
 dashedName: task-11
 ---
@@ -23,7 +23,7 @@ dashedName: task-11
 
 ### --feedback--
 
-It indicates that the action to follow happens as soon as the section is found. Capitalize this word.
+Це слово вказує, що дія відбудеться, як тільки розділ буде знайдено. Напишіть його з великої літери.
 
 ---
 
@@ -31,7 +31,7 @@ It indicates that the action to follow happens as soon as the section is found. 
 
 ### --feedback--
 
-It's used here to mean locating or discovering the needed section in the documentation.
+Тут йдеться про пошук потрібного розділу в документації.
 
 ---
 
@@ -39,7 +39,7 @@ It's used here to mean locating or discovering the needed section in the documen
 
 ### --feedback--
 
-This word refers to the beginning paragraphs that provide a basic understanding of the section.
+Це слово стосується початкових абзаців, які надають базове розуміння розділу.
 
 ---
 
@@ -47,7 +47,7 @@ This word refers to the beginning paragraphs that provide a basic understanding 
 
 ### --feedback--
 
-It means what the documentation includes or addresses in terms of content.
+Це слово означає, що документація розглядає певний зміст.
 
 # --scene--
 
