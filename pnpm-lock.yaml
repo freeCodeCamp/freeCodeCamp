@@ -238,8 +238,8 @@ importers:
         specifier: ^2.3.2
         version: 2.3.2
       stripe:
-        specifier: 8.222.0
-        version: 8.222.0
+        specifier: 16.0.0
+        version: 16.0.0
       validator:
         specifier: 13.11.0
         version: 13.11.0
@@ -12669,12 +12669,12 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
+  stripe@16.0.0:
+    resolution: {integrity: sha512-HNPTzXrSompUxeGqDpbNmPvH/UEzziIxGWvTDTZwIBLlL6CFqR+3YLpV+g4HXOsPKbQRguauptQwVWO7Y/yEGg==}
+    engines: {node: '>=12.*'}
+
   stripe@8.205.0:
     resolution: {integrity: sha512-hmYnc7je6j0n9GlkUpc8USsUquLzSxmWj78g9NKFokCtSybNy7y9fYS+VB5AuZUwmIkzhTczgf+TaSmI4kbk9A==}
-    engines: {node: ^8.1 || >=10.*}
-
-  stripe@8.222.0:
-    resolution: {integrity: sha512-hrA79fjmN2Eb6K3kxkDzU4ODeVGGjXQsuVaAPSUro6I9MM3X+BvIsVqdphm3BXWfimAGFvUqWtPtHy25mICY1w==}
     engines: {node: ^8.1 || >=10.*}
 
   strnum@1.0.5:
@@ -30088,14 +30088,14 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
+  stripe@16.0.0:
+    dependencies:
+      '@types/node': 20.12.8
+      qs: 6.11.2
+
   stripe@8.205.0:
     dependencies:
       '@types/node': 20.8.0
-      qs: 6.11.2
-
-  stripe@8.222.0:
-    dependencies:
-      '@types/node': 20.8.2
       qs: 6.11.2
 
   strnum@1.0.5: {}

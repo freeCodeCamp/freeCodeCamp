@@ -33,7 +33,7 @@
     "pino-pretty": "10.2.3",
     "query-string": "7.1.3",
     "rate-limit-mongo": "^2.3.2",
-    "stripe": "8.222.0",
+    "stripe": "16.0.0",
     "validator": "13.11.0"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
