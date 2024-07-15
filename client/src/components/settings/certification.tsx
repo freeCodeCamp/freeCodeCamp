@@ -231,7 +231,21 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             onClick={createClickHandler(certSlug)}
             target='_blank'
           >
-            {isFullStackCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+            {isFullStackCert ? (
+              <>
+                {t('buttons.show-cert')}{' '}
+                <span className='sr-only'>
+                  {t('certification.title.Legacy Full Stack')}
+                </span>
+              </>
+            ) : (
+              <>
+                {t('buttons.claim-cert')}{' '}
+                <span className='sr-only'>
+                  {t('certification.title.Legacy Full Stack')}
+                </span>
+              </>
+            )}
           </Button>
         ) : (
           <Button
@@ -241,7 +255,10 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             disabled={true}
             id={'button-' + certSlug}
           >
-            {t('buttons.claim-cert')}
+            {t('buttons.claim-cert')}{' '}
+            <span className='sr-only'>
+              {t('certification.title.Legacy Full Stack')}
+            </span>
           </Button>
         )}
       </div>

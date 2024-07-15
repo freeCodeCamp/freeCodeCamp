@@ -1,6 +1,7 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
@@ -46,7 +47,9 @@ const legacyCertifications = [
   ]
 ];
 
-test.describe('Settings', () => {
+test.describe('Settings - Certified User', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
   });
@@ -299,5 +302,74 @@ test.describe('Settings', () => {
         name: 'Delete my account'
       })
     ).toBeVisible();
+  });
+});
+
+// In order to claim the Full Stack cert, the user needs to complete 6 certs.
+// Instead of simulating 6 cert claim flows,
+// we use the data of Certified User but remove the Full Stack cert.
+test.describe('Settings - Certified User without Full Stack Certification', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+  test.beforeEach(async ({ page }) => {
+    execSync(
+      'node ./tools/scripts/seed/seed-demo-user certified-user --unset-full-stack-cert'
+    );
+    await page.goto('/settings');
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  });
+
+  test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
+    page
+  }) => {
+    test.setTimeout(20000);
+
+    const claimButton = page.getByRole('link', {
+      name: 'Claim Certification Legacy Full Stack'
+    });
+    const showButton = page.getByRole('link', {
+      name: 'Show Certification Legacy Full Stack'
+    });
+
+    await expect(claimButton).toBeVisible();
+    await expect(claimButton).toBeEnabled();
+    await claimButton.click();
+
+    // For some reason, clicking the claim button results a server error,
+    // but the request does seem to be successful
+    // as the claim button is replaced by the show button after a page refresh.
+    await page.reload();
+    await expect(claimButton).toBeHidden();
+    await expect(showButton).toBeVisible();
+    await expect(showButton).toHaveAttribute(
+      'href',
+      '/certification/certifieduser/full-stack'
+    );
+  });
+});
+
+test.describe('Settings - New User', () => {
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+  test.beforeEach(async ({ page }) => {
+    execSync('node ./tools/scripts/seed/seed-demo-user');
+    await page.goto('/settings');
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  });
+
+  test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
+    page
+  }) => {
+    const claimButton = page.getByRole('button', {
+      name: 'Claim Certification Legacy Full Stack'
+    });
+    await expect(claimButton).toBeVisible();
+    await expect(claimButton).toBeDisabled();
   });
 });

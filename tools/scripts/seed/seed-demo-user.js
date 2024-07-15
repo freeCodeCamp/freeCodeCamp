@@ -18,6 +18,7 @@ const allowedArgs = [
   '--top-contributor',
   '--unset-privacy-terms',
   '--seed-trophy-challenges',
+  '--unset-full-stack-cert',
   'certified-user'
 ];
 
@@ -98,6 +99,9 @@ const trophyChallenges = [
   }
   if (args.includes('--seed-trophy-challenges')) {
     user.completedChallenges = trophyChallenges;
+  }
+  if (args.includes('--unset-full-stack-cert')) {
+    user.isFullStackCert = false;
   }
 });
 
