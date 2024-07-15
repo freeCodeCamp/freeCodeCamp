@@ -8,78 +8,11 @@ import {
 } from '../../jest.utils';
 import { createUserInput } from '../utils/create-user';
 
-const chargeStripeCardReqBody = {
-  paymentMethodId: 'UID',
-  amount: 500,
-  duration: 'month'
-};
-const mockSubCreate = jest.fn();
-const mockAttachPaymentMethod = jest.fn(() =>
-  Promise.resolve({
-    id: 'pm_1MqLiJLkdIwHu7ixUEgbFdYF',
-    object: 'payment_method'
-  })
-);
-const mockCustomerCreate = jest.fn(() =>
-  Promise.resolve({
-    id: 'cust_111',
-    name: 'Jest_User',
-    currency: 'sgd',
-    description: 'Jest User Account created'
-  })
-);
-const mockSubRetrieveObj = {
-  id: 'sub_test_id',
-  items: {
-    data: [
-      {
-        plan: {
-          product: 'prod_GD1GGbJsqQaupl'
-        }
-      }
-    ]
-  },
-  // 1 Jan 2040
-  current_period_start: Math.floor(Date.now() / 1000),
-  customer: 'cust_111',
-  status: 'active'
-};
-const mockSubRetrieve = jest.fn(() => Promise.resolve(mockSubRetrieveObj));
-const mockCustomerUpdate = jest.fn();
-const generateMockSubCreate = (status: string) => () =>
-  Promise.resolve({
-    id: 'cust_111',
-    latest_invoice: {
-      payment_intent: {
-        client_secret: 'superSecret',
-        status
-      }
-    }
-  });
-const defaultError = () =>
-  Promise.reject(new Error('Stripe encountered an error'));
-
-jest.mock('stripe', () => {
-  return jest.fn().mockImplementation(() => {
-    return {
-      customers: {
-        create: mockCustomerCreate,
-        update: mockCustomerUpdate
-      },
-      paymentMethods: {
-        attach: mockAttachPaymentMethod
-      },
-      subscriptions: {
-        create: mockSubCreate,
-        retrieve: mockSubRetrieve
-      }
-    };
-  });
-});
-
+const testEWalletEmail = 'baz@bar.com';
+const testSubscriptionId = 'sub_test_id';
+const testCustomerId = 'cust_test_id';
 const userWithoutProgress: Prisma.userCreateInput =
   createUserInput(defaultUserEmail);
-
 const userWithProgress: Prisma.userCreateInput = {
   ...createUserInput(defaultUserEmail),
   completedChallenges: [
@@ -109,27 +42,124 @@ const userWithProgress: Prisma.userCreateInput = {
     }
   ]
 };
-
+const sharedDonationReqBody = {
+  amount: 500,
+  duration: 'month'
+};
 const chargeStripeReqBody = {
-  email: 'lololemon@gmail.com',
+  email: testEWalletEmail,
   subscriptionId: 'sub_test_id',
-  amount: 500,
-  duration: 'month'
+  ...sharedDonationReqBody
 };
-
+const chargeStripeCardReqBody = {
+  paymentMethodId: 'UID',
+  ...sharedDonationReqBody
+};
 const createStripePaymentIntentReqBody = {
-  email: 'lololemon@gmail.com',
-  name: 'Lolo Lemon',
+  email: testEWalletEmail,
+  name: 'Baz Bar',
   token: { id: 'tok_123' },
-  amount: 500,
-  duration: 'month'
+  ...sharedDonationReqBody
 };
+const mockSubCreate = jest.fn();
+const mockAttachPaymentMethod = jest.fn(() =>
+  Promise.resolve({
+    id: 'pm_1MqLiJLkdIwHu7ixUEgbFdYF',
+    object: 'payment_method'
+  })
+);
+const mockCustomerCreate = jest.fn(() =>
+  Promise.resolve({
+    id: testCustomerId,
+    name: 'Jest_User',
+    currency: 'sgd',
+    description: 'Jest User Account created'
+  })
+);
+const mockSubRetrieveObj = {
+  id: testSubscriptionId,
+  items: {
+    data: [
+      {
+        plan: {
+          product: 'prod_GD1GGbJsqQaupl'
+        }
+      }
+    ]
+  },
+  // 1 Jan 2040
+  current_period_start: Math.floor(Date.now() / 1000),
+  customer: testCustomerId,
+  status: 'active'
+};
+const mockSubRetrieve = jest.fn(() => Promise.resolve(mockSubRetrieveObj));
+const mockCustomerUpdate = jest.fn();
+const generateMockSubCreate = (status: string) => () =>
+  Promise.resolve({
+    id: testSubscriptionId,
+    latest_invoice: {
+      payment_intent: {
+        client_secret: 'superSecret',
+        status
+      }
+    }
+  });
+const defaultError = () =>
+  Promise.reject(new Error('Stripe encountered an error'));
+
+jest.mock('stripe', () => {
+  return jest.fn().mockImplementation(() => {
+    return {
+      customers: {
+        create: mockCustomerCreate,
+        update: mockCustomerUpdate
+      },
+      paymentMethods: {
+        attach: mockAttachPaymentMethod
+      },
+      subscriptions: {
+        create: mockSubCreate,
+        retrieve: mockSubRetrieve
+      }
+    };
+  });
+});
 
 describe('Donate', () => {
   setupServer();
-
   describe('Authenticated User', () => {
     let superPost: ReturnType<typeof createSuperRequest>;
+    const verifyUpdatedUserAndNewDonation = async (email: string) => {
+      const user = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email }
+      });
+      const donations = await fastifyTestInstance.prisma.donation.findMany({
+        where: { userId: user?.id }
+      });
+      const donation = donations[0];
+      expect(donations.length).toBe(1);
+      expect(donation?.amount).toBe(sharedDonationReqBody.amount);
+      expect(donation?.duration).toBe(sharedDonationReqBody.duration);
+      expect(typeof donation?.subscriptionId).toBe('string');
+      expect(donation?.customerId).toBe(testCustomerId);
+      expect(donation?.provider).toBe('stripe');
+    };
+    const verifyNoUpdatedUserAndNoNewDonation = async (email: string) => {
+      const user = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email }
+      });
+      const donations = await fastifyTestInstance.prisma.donation.findMany({});
+      expect(user?.isDonating).toBe(false);
+      expect(donations.length).toBe(0);
+    };
+    const verifyNoNewUserAndNoNewDonation = async () => {
+      const user = await fastifyTestInstance.prisma.user.findFirst({
+        where: { email: testEWalletEmail }
+      });
+      const donations = await fastifyTestInstance.prisma.donation.findMany({});
+      expect(user).toBe(null);
+      expect(donations.length).toBe(0);
+    };
 
     beforeEach(async () => {
       const setCookies = await devLogin();
@@ -138,6 +168,10 @@ describe('Donate', () => {
         where: { email: userWithProgress.email },
         data: userWithProgress
       });
+      await fastifyTestInstance.prisma.user.deleteMany({
+        where: { email: testEWalletEmail }
+      });
+      await fastifyTestInstance.prisma.donation.deleteMany({});
     });
 
     describe('POST /donate/charge-stripe-card', () => {
@@ -148,6 +182,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
+        await verifyUpdatedUserAndNewDonation(userWithProgress.email);
         expect(response.body).toEqual({ isDonating: true, type: 'success' });
         expect(response.status).toBe(200);
       });
@@ -159,7 +194,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
-
+        await verifyNoUpdatedUserAndNoNewDonation(userWithProgress.email);
         expect(response.body).toEqual({
           error: {
             type: 'UserActionRequired',
@@ -177,7 +212,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
-
+        await verifyNoUpdatedUserAndNoNewDonation(userWithProgress.email);
         expect(response.body).toEqual({
           error: {
             type: 'PaymentMethodRequired',
@@ -194,11 +229,13 @@ describe('Donate', () => {
         const successResponse = await superPost(
           '/donate/charge-stripe-card'
         ).send(chargeStripeCardReqBody);
-
-        expect(successResponse.status).toBe(200);
         const failResponse = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
+
+        //Verify that only the first call changed the DB
+        await verifyUpdatedUserAndNewDonation(userWithProgress.email);
+        expect(successResponse.status).toBe(200);
         expect(failResponse.body).toEqual({
           error: {
             type: 'AlreadyDonatingError',
@@ -213,6 +250,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
+        await verifyNoUpdatedUserAndNoNewDonation(userWithProgress.email);
         expect(response.status).toBe(500);
         expect(response.body).toEqual({
           error: 'Donation failed due to a server error.'
@@ -227,6 +265,7 @@ describe('Donate', () => {
         const failResponse = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
         );
+        await verifyNoUpdatedUserAndNoNewDonation(userWithProgress.email);
         expect(failResponse.body).toEqual({
           error: {
             type: 'MethodRestrictionError',
@@ -243,7 +282,10 @@ describe('Donate', () => {
           anything: true,
           itIs: 'ignored'
         });
-
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: userWithProgress.email }
+        });
+        expect(user?.isDonating).toBe(true);
         expect(response.body).toEqual({
           isDonating: true
         });
@@ -268,10 +310,9 @@ describe('Donate', () => {
         const response = await superPost(
           '/donate/create-stripe-payment-intent'
         ).send(createStripePaymentIntentReqBody);
-
         expect(mockCustomerCreate).toHaveBeenCalledWith({
-          email: 'lololemon@gmail.com',
-          name: 'Lolo Lemon'
+          email: testEWalletEmail,
+          name: 'Baz Bar'
         });
         expect(response.status).toBe(200);
       });
@@ -322,6 +363,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe').send(
           chargeStripeReqBody
         );
+        await verifyUpdatedUserAndNewDonation(testEWalletEmail);
         expect(mockSubRetrieve).toHaveBeenCalledWith('sub_test_id');
         expect(response.status).toBe(200);
       });
@@ -346,6 +388,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe').send(
           chargeStripeReqBody
         );
+        await verifyNoNewUserAndNoNewDonation();
         expect(response.body).toEqual({
           error: 'Donation failed due to a server error.'
         });
@@ -362,6 +405,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe').send(
           chargeStripeReqBody
         );
+        await verifyNoNewUserAndNoNewDonation();
         expect(response.body).toEqual({
           error: 'Donation failed due to a server error.'
         });
@@ -378,6 +422,7 @@ describe('Donate', () => {
         const response = await superPost('/donate/charge-stripe').send(
           chargeStripeReqBody
         );
+        await verifyNoNewUserAndNoNewDonation();
         expect(response.body).toEqual({
           error: 'Donation failed due to a server error.'
         });
