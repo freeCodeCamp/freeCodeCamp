@@ -67,7 +67,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         request,
         reply
       );
-      void reply.redirect(302, redirectUrl);
+      void reply.redirect(redirectUrl);
     });
 
     // TODO: use a schema to validate the query params.
@@ -81,7 +81,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           error_description === 'Access denied from your location';
 
         if (blockedByLaw) {
-          return reply.redirect(302, `${HOME_LOCATION}/blocked`);
+          return reply.redirect(`${HOME_LOCATION}/blocked`);
         } else {
           return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
             type: 'info',
@@ -126,7 +126,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       } catch (error) {
         fastify.log.error('Auth failed', error);
         fastify.Sentry.captureException(error);
-        return reply.redirect(302, '/signin');
+        return reply.redirect('/signin');
       }
 
       const { id, acceptedPrivacyTerms } = await findOrCreateUser(
