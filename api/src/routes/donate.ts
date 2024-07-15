@@ -177,7 +177,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           duration,
           provider: 'stripe',
           subscriptionId,
-          customerId: id,
+          customerId: customerId,
           // TODO(Post-MVP) migrate to startDate: new Date()
           startDate: {
             date: new Date().toISOString(),
@@ -311,14 +311,19 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         );
         const isProductIdValid =
           productId && allStripeProductIdsArray.includes(productId);
-
         const isValidCustomer = typeof subscription.customer === 'string';
-        if (
-          isSubscriptionActive &&
-          isProductIdValid &&
-          isStartedRecently &&
-          isValidCustomer
-        ) {
+
+        if (!isSubscriptionActive)
+          throw new Error(
+            `Stripe subscription information is invalid: ${subscriptionId}`
+          );
+        if (!isProductIdValid)
+          throw new Error(`Product ID is invalid: ${subscriptionId}`);
+        if (!isStartedRecently)
+          throw new Error(`Subscription is not recent: ${subscriptionId}`);
+        if (!isValidCustomer)
+          throw new Error(`Customer ID is invalid: ${subscriptionId}`);
+        else {
           // TODO(Post-MVP) new users should not be created if user is not found
           const user = await findOrCreateUser(fastify, email);
           const donation = {
@@ -349,8 +354,6 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           return reply.send({
             isDonating: true
           });
-        } else {
-          throw new Error('Stripe subscription information is invalid.');
         }
       } catch (error) {
         fastify.log.error(error);
