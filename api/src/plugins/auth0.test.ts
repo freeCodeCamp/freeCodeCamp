@@ -93,7 +93,7 @@ describe('auth0 plugin', () => {
       await fastify.prisma.user.deleteMany({ where: { email } });
     });
 
-    it('should redirect to /signin if authentication fails', async () => {
+    it('should redirect to the client if authentication fails', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
         'any error'
       );
@@ -103,17 +103,21 @@ describe('auth0 plugin', () => {
         url: '/auth/auth0/callback'
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+      );
       expect(res.statusCode).toBe(302);
     });
 
-    it('should redirect to the /signin if the state is invalid', async () => {
+    it('should redirect to the client if the state is invalid', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+      );
       expect(res.statusCode).toBe(302);
     });
 

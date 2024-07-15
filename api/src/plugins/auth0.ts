@@ -91,6 +91,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       }
 
       const { returnTo, pathPrefix, origin } = getLoginRedirectParams(request);
+      const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
 
       let token;
       try {
@@ -107,7 +108,12 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           fastify.log.error('Auth failed', error);
           fastify.Sentry.captureException(error);
         }
-        return reply.redirect(302, '/signin');
+        // It's important _not_ to redirect to /signin here, as that could
+        // create an infinite loop.
+        return reply.redirectWithMessage(returnTo, {
+          type: 'danger',
+          content: 'flash.generic-error'
+        });
       }
 
       let email;
@@ -136,7 +142,6 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           content: 'flash.signin-success'
         });
       } else {
-        const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
         void reply.redirectWithMessage(`${redirectBase}/email-sign-up`, {
           type: 'success',
           content: 'flash.signin-success'
