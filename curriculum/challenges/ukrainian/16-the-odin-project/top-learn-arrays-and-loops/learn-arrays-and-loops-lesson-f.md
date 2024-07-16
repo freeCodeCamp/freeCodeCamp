@@ -7,7 +7,7 @@ dashedName: learn-arrays-and-loops-lesson-f
 
 # --description--
 
-The `for` loop is another type of loop that is used to execute a block of code multiple times. The `for` loop is used when the number of iterations is known. The syntax of the `for` loop is as follows:
+The `for` loop is another type of loop that is used to execute a block of code multiple times. The `for` loop is used when the number of iterations is known. Синтаксис циклу `for` такий:
 
 ```javascript
 for (initialization; condition; increment/decrement) {

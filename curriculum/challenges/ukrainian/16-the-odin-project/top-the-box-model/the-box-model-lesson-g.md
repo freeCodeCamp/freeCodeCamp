@@ -1,50 +1,50 @@
 ---
 id: 64a6702e7a7d00f97013ed0e
-title: The Box Model Lesson G
+title: Блокова модель. Урок №7
 challengeType: 15
 dashedName: the-box-model-lesson-g
 --- 
 # --description--
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/box-model-lines.png" alt="an image showing the odin project website surrounded by red borders indicating that the site is build out of multiple components" style="width: 95%; height: 95%;" />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/box-model-lines.png" alt="Зображення, на якому показано вебсайт проєкту Odin, оточений червоними рамками, що вказує на те, що сайт складається з декількох компонентів" style="width: 95%; height: 95%;" />
 
-OK, so there might be some circles in the above image… but when it comes to layout, they fit together like rectangular boxes and not circles. In the end, laying out a webpage and positioning all its elements is deciding how you are going to nest and stack these boxes.
+На зображені вище є пару кружечків… Але коли мова йде про макети, все сходиться як прямокутні блоки, а не кружечки. Зрештою, розміщення всіх елементів на вебсторінці вирішує, як ви вкладатимете та складатимете ці блоки.
 
-The only real complication here is that there are many ways to manipulate the size of these boxes, and the space between them, using padding, margin, and border. But to sum it up briefly:
+Єдине ускладнення в тому, що існує багато способів маніпулювати розмірами блоків та простором між ними за допомогою відступів, полів і кордонів. Якщо коротко підсумувати:
 
-- `padding` increases the space between the border of a box and the content of the box.
-- `margin` increases the space between the borders of a box and the borders of adjacent boxes.
-- `border` adds space (even if it’s only a pixel or two) between the margin and the padding.
+- `padding` (відступ) збільшує простір між кордоном та вмістом блоку;
+- `margin` (поле) збільшує простір між кордонами суміжних блоків;
+- `border` (кордон) додає простір між відступом та полем, навіть якщо це лише один піксель.
 
-Be sure to study the diagrams carefully.
+Обов’язково розглядайте схеми.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="Visual representation of CSS box model with text, surrounded by 'padding' in pink, a purple 'border', and 'margin' indicated by blue arrows, explaining space between text, box edge, and window edge." />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/the-box-model.png" alt="Візуальне представлення блокової моделі CSS з текстом, оточеним рожевим відступом (padding), фіолетовим кордоном (border) та полем (margin), позначеним стрілками, що пояснює відстань між текстом, краєм блоку та краєм вікна." />
 
 # --assignment--
 
-Add a border to every element on the page and see how the boxes are laid out.
+Додайте кордон до кожного елемента на сторінці та подивіться, як розміщені блоки.
 
 # --question--
 
 ## --text--
 
-From inside to outside, what is the order of box-model properties?
+Який порядок властивостей блокової моделі від середини до зовні?
 
 ## --answers--
 
-Content, Margin, Padding, Border
+Вміст, поле, відступ, кордон
 
 ---
 
-Margin, Padding, Content, Border
+Поле, відступ, вміст, кордон
 
 ---
 
-Content, Padding, Border, Margin
+Вміст, відступ, кордон, поле
 
 ---
 
-Padding, Content, Border, Margin
+Відступ, вміст, кордон, поле
 
 
 ## --video-solution--

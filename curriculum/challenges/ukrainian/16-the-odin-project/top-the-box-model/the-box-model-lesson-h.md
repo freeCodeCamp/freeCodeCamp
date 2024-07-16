@@ -1,35 +1,35 @@
 ---
 id: 64a674937a7d00f97013ed0f
 videoId: rIO5326FgPE
-title: The Box Model Lesson H
+title: Блокова модель. Урок №8
 challengeType: 15
 dashedName: the-box-model-lesson-h
 --- 
 # --description--
 
-Because the box model concept is so incredibly fundamental, let’s dig a bit deeper with <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model" target="_blank">this lesson from MDN</a>. It covers the same material as the video above and will introduce you to inline boxes that we will explore in the next lesson. Pay close attention to the examples and take the time to experiment with their in-browser editor!
+Оскільки поняття блокової моделі є основним, розглянемо його детальніше <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#what_is_the_css_box_model" target="_blank">у цьому уроці від MDN</a> (англійською мовою). Він охоплює той самий матеріал, що й відео вище та ознайомить вас з вбудованими блоками, які ми розглянемо в наступному уроці. Зверніть увагу на приклади та приділіть деякий час, щоб поекспериментувати з редактором у браузері!
 
 # --question--
 
 ## --text--
 
-What does the box-sizing CSS property do?
+Що робить властивість box-sizing у CSS?
 
 ## --answers--
 
-It determines the order of the box-model properties.
+Визначає порядок властивостей блокової моделі.
 
 ---
 
-It specifies the position of an element on the webpage.
+Вказує розташування елемента на вебсторінці.
 
 ---
 
-It controls how the total width and height of an element are calculated.
+Контролює обчислення ширини та висоти елемента.
 
 ---
 
-It sets the background color of an element.
+Налаштовує колір фону елемента.
 
 
 ## --video-solution--

@@ -1,55 +1,55 @@
 ---
 id: 637f704072c65bc8e73dfe36
 videoId: tsEQgGjSmkM
-title: Links and Images Lesson A
+title: Посилання та зображення. Урок №1
 challengeType: 15
 dashedName: links-and-images-lesson-a
 ---
 
 # --description--
 
-To get some practice using links and images throughout this lesson you need an HTML project to work with.
+Щоб попрактикуватись з посиланнями та зображеннями, вам потрібний проєкт HTML.
 
-- Create a new directory named `odin-links-and-images`.
+- Створіть новий каталог під назвою `odin-links-and-images`.
 
-- Within that directory, create a new file named `index.html`.
+- У цьому каталозі створіть новий файл під назвою `index.html`.
 
-- Fill in the usual HTML boilerplate.
+- Заповніть звичайний шаблонний код HTML.
 
-- Finally, add the following `h1` to the `body`: `<h1>Homepage</h1>`
+- Вкінці додайте такий `h1` до `body`: `<h1>Homepage</h1>`
 
-## Anchor Elements
-To create a link in HTML, you use the anchor element. An anchor element is defined by wrapping the text or another HTML element you want to be a link with an `<a>` tag.
+## Елементи посилання
+Щоб створити посилання в HTML, використовують елемент посилання. Щоб визначити елемент посилання, потрібно обгорнути текст або інший елемент HTML, який має бути посиланням, тегом `<a>`.
 
-Add the following to the `body` of the `index.html` page you created and open it in the browser:
+Додайте такий елемент до тіла створеної сторінки `index.html` та відкрийте сторінку у браузері:
 
 ```html
 <a>click me</a>
 ```
 
-You may have noticed that clicking this link doesn’t do anything. This is because an anchor tag on its own won’t know where you want to link to. You have to tell it a destination to go to. You do this by using an HTML attribute.
+Можливо, ви помітили, що при натисканні на посилання нічого не відбувається. Тег посилання не знає куди переходити. Ви повинні сказати йому місце призначення. Для цього використовують атрибут HTML.
 
-An HTML attribute gives additional information to an HTML element and always goes in the element’s opening tag. An attribute is usually made up of two parts: a name, and a value; however, not all attributes require a value. In your case, you need to add an `href` (hyperlink reference) attribute to the opening anchor tag. The value of the `href` attribute is the destination you want your link to go to.
+Атрибут HTML надає додаткову інформацію елементу HTML та завжди розміщений всередині початкового тегу елемента. Зазвичай атрибут складається з двох частин: назви та значення, однак не всі атрибути вимагають значення. У нашому випадку потрібно додати атрибут `href` (hyperlink reference) до початкового тегу посилання. Значенням атрибута `href` є місце призначення, на яке потрібно направляти користувачів.
 
-Add the following `href` attribute to the anchor element you created previously and try clicking it again, don’t forget to refresh the browser so the new changes can be applied.
+Додайте даний атрибут `href` до створеного елемента посилання та спробуйте натиснути на нього знову. Не забудьте оновити браузер, щоб застосувати нові зміни.
 
 ```html
 <a href="https://www.theodinproject.com/about">click me</a>
 ```
 
-By default, any text wrapped with an anchor tag without an `href` attribute will look like plain text. If the `href` attribute is present, the browser will give the text a blue color and underline it to signify it is a link.
+Будь-який текст з тегом посилання без атрибута `href` буде звичайним текстом. Якщо атрибут `href` наявний, браузер надасть тексту синього кольору та підкреслення, щоб вказати, що це посилання.
 
-It’s worth noting you can use anchor tags to link to any kind of resource on the internet, not just other HTML documents. You can link to videos, pdf files, images, and so on, but for the most part, you will be linking to other HTML documents.
+Важливо зазначити, що теги посилання можна використовувати для будь-яких ресурсів в інтернеті, а не лише документів HTML. Ви можете направляти на відео, файли pdf, зображення та інше, але здебільшого ви направлятимете на інші документи HTML.
 
 # --assignment--
 
-Watch Kevin Powell’s HTML Links video above.
+Перегляньте відео Кевіна Павелла про посилання у HTML (розміщене вище).
 
 # --question--
 
 ## --text--
 
-What HTML tag is used to create a link?
+Який тег потрібно використати, щоб створити посилання у HTML?
 
 ## --answers--
 
