@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import { find } from 'lodash-es';
-import React, { MouseEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
@@ -179,15 +179,11 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
   const certSlug = Certification.LegacyFullStack;
   const certLocation = `/certification/${username}/${certSlug}`;
 
-  const claimCertHandler =
-    (certSlug: keyof typeof certSlugTypeMap) =>
-    (e: MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-
-      return isHonest
-        ? verifyCert(certSlug)
-        : createFlashMessage(honestyInfoMessage);
-    };
+  const claimCertHandler = (certSlug: keyof typeof certSlugTypeMap) => () => {
+    return isHonest
+      ? verifyCert(certSlug)
+      : createFlashMessage(honestyInfoMessage);
+  };
   return (
     <FullWidthRow key={certSlug}>
       <Spacer size='medium' />
@@ -232,10 +228,8 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             variant='primary'
             block={true}
             id={'button-' + certSlug}
-            // This floating promise is acceptable
-            // eslint-disable-next-line @typescript-eslint/no-misused-promises
             onClick={claimCertHandler(certSlug)}
-            disabled={fullStackClaimable}
+            disabled={!fullStackClaimable}
           >
             {t('buttons.claim-cert')}
           </Button>
@@ -366,9 +360,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
     const { certSlug } = certsToProjects[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
-    const claimCertHandler = (e: MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-
+    const claimCertHandler = () => {
       return isHonest
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
@@ -395,13 +387,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
                 <span className='sr-only'>{certName}</span>
               </ButtonLink>
             ) : (
-              <Button
-                block={true}
-                variant='primary'
-                // This floating promise is acceptable
-                // eslint-disable-next-line @typescript-eslint/no-misused-promises
-                onClick={claimCertHandler}
-              >
+              <Button block={true} variant='primary' onClick={claimCertHandler}>
                 {t('buttons.claim-cert')}{' '}
                 <span className='sr-only'>{certName}</span>
               </Button>
