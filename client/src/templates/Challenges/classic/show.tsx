@@ -11,6 +11,7 @@ import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
+import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
@@ -58,7 +59,8 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
-import { lowPriorityPreload } from '../../../../utils/gatsby/page-loading';
+import { highPriorityPreload } from '../../../../utils/gatsby/page-loading';
+import envData from '../../../../config/env.json';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -218,6 +220,7 @@ function ShowClassic({
 }: ShowClassicProps) {
   const { t } = useTranslation();
   const [resizing, setResizing] = useState(false);
+  const [prefetched, setPrefetched] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
@@ -304,6 +307,19 @@ function ShowClassic({
     setUsingKeyboardInTablist(usingKeyboardInTablist);
   };
 
+  // AB testing Pre-fetch in the Spanish locale
+  const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
+  useEffect(() => {
+    if (
+      isPreFetchEnabled &&
+      !prefetched &&
+      envData.clientLocale === 'espanol'
+    ) {
+      setPrefetched(true);
+      highPriorityPreload(nextChallengePath);
+    }
+  }, [isPreFetchEnabled, nextChallengePath, prefetched]);
+
   useEffect(() => {
     initializeComponent(title);
     // Bug fix for the monaco content widget and touch devices/right mouse
@@ -316,8 +332,6 @@ function ShowClassic({
 
     window.addEventListener('resize', setHtmlHeight);
     setHtmlHeight();
-
-    lowPriorityPreload(nextChallengePath);
 
     return () => {
       createFiles([]);
