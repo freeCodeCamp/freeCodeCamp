@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { alertToBeVisible } from './utils/alerts';
 
 const locations = {
   index: '/learn/responsive-web-design/#basic-css'
@@ -58,9 +59,7 @@ test.describe('Responsive Web Design Projects - Basic CSS', () => {
   test('renders', async ({ page }) => {
     await page.goto(locations.index);
 
-    await expect(page.locator('.alert.alert-info')).toContainText(
-      warningMessage
-    );
+    await alertToBeVisible(page, warningMessage);
 
     for (const lessonName of lessonNames) {
       await expect(
