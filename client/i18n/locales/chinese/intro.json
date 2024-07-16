@@ -319,7 +319,7 @@
         "title": "创建收银机项目",
         "intro": [
           "这是你要获得认证必须做的项目之一。",
-          "在这个项目中，你将创建一个收银机 web 应用程序。"
+          "在这个项目中，你将创建一个收银机 Web 应用程序。"
         ]
       },
       "build-a-palindrome-checker-project": {
@@ -369,7 +369,7 @@
         "title": "通过创建足球队卡学习现代 JavaScript 方法",
         "intro": [
           "构建 Web 应用程序的一个常见方面是：处理数据集，然后将信息输出到屏幕上。在这个运动队卡片项目中，你将学习如何使用 DOM 操作、对象解构、事件处理和数据过滤。",
-          "这个项目将涵盖 switch 语句、默认参数、 <code>Object.freeze()</code>、 <code>map()</code> 方法等概念。"
+          "This project will cover concepts like, default parameters, <code>Object.freeze()</code>, and reinforce your knowledge of the <code>switch</code> statement and <code>map()</code> method."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -876,6 +876,13 @@
         "title": "Build a Probability Calculator Project",
         "intro": [
           "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Learn Interfaces by Building an Equation Solver",
+        "intro": [
+          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
+          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
         ]
       },
       "learn-special-methods-by-building-a-vector-space": {

@@ -369,7 +369,7 @@
         "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
         "intro": [
           "Um aspecto comum da criação de aplicações web é trabalhar com o processamento de conjuntos de dados e, em seguida, enviar informações para a tela. Nesse projeto de cartões da equipe de futebol, você aprenderá como trabalhar com a manipulação do DOM, desestruturação de objetos, manipulação de eventos, e filtragem de dados.",
-          "Esse projeto abrangerá conceitos como instruções switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
+          "Este projeto abrangerá conceitos como parâmetros padrão, <code>Object.freeze()</code> e reforçará seu conhecimento sobre a instrução <code>switch</code> e sobre o método <code>map()</code>."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -882,6 +882,13 @@
         "title": "Projeto de criar uma calculadora de probabilidades",
         "intro": [
           "Este é um dos projetos necessários para obter a certificação."
+        ]
+      },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Aprenda Interfaces criando um solucionador de equações",
+        "intro": [
+          "Classes abstratas permitem definir interfaces formais – objetos que agem como diagramas para as classes.",
+          "Neste projeto, você descobrirá como implementar uma interface em Python ao criar um programa simples de resolução de equações."
         ]
       },
       "learn-special-methods-by-building-a-vector-space": {
