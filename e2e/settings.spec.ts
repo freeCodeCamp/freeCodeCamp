@@ -2,6 +2,7 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
@@ -322,11 +323,11 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
     execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
   });
 
+  // To run this test you will need to run the email server.
+  // See https://contribute.freecodecamp.org/#/how-to-catch-outgoing-emails-locally?id=using-mailhog
   test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
     page
   }) => {
-    test.setTimeout(20000);
-
     const claimButton = page.getByRole('link', {
       name: 'Claim Certification Legacy Full Stack'
     });
@@ -338,10 +339,10 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
     await expect(claimButton).toBeEnabled();
     await claimButton.click();
 
-    // For some reason, clicking the claim button results a server error,
-    // but the request does seem to be successful
-    // as the claim button is replaced by the show button after a page refresh.
-    await page.reload();
+    await alertToBeVisible(
+      page,
+      '@certifieduser, you have successfully claimed the Legacy Full Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+    );
     await expect(claimButton).toBeHidden();
     await expect(showButton).toBeVisible();
     await expect(showButton).toHaveAttribute(
