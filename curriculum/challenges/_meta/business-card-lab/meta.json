@@ -2,7 +2,6 @@
   "name": "Design a Business Card",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "business-card-lab",
   "order": 2,
   "superBlock": "front-end-development",
