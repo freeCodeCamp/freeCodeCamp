@@ -81,7 +81,11 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
       {superBlockNoteText && (
-        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
+        <div
+          role='alert'
+          className='alert alert-info'
+          style={{ marginTop: '2rem' }}
+        >
           {superBlockNoteText}
         </div>
       )}
