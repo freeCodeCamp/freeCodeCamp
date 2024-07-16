@@ -51,6 +51,11 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
   // in the comment map.
   const languages = fs.readdirSync(dictionariesDir);
 
+  // TODO: Remove this after migrating to i18n-curriculum
+  if (languages.includes('english')) {
+    languages.splice(languages.indexOf('english'), 1);
+  }
+
   // get all their dictionaries
   const dictionaries = languages.reduce(
     (acc, lang) => ({
@@ -101,7 +106,13 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
     };
   }, {});
 
-  return { ...translatedCommentMap, ...untranslatableCommentMap };
+  const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
+
+  Object.keys(allComments).forEach(comment => {
+    allComments[comment].english = comment;
+  });
+
+  return allComments;
 }
 
 exports.createCommentMap = createCommentMap;
