@@ -1700,9 +1700,11 @@
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
       },
-      "business-card-lab": { 
-        "title": "Design a Business Card", 
-        "intro": ["In this lab, you'll build a business card and style it using CSS", ""] 
+      "business-card-lab": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS"
+        ]
       }
     }
   },

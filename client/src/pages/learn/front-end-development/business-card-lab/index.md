@@ -4,6 +4,6 @@ block: business-card-lab
 superBlock: front-end-development
 ---
 
-## Introduction to the Learn CSS by Designing a Business Card
+## Learn CSS by Designing a Business Card
 
-This is a test for the new project-based curriculum.
+In this lab, you'll create a business card and style it using CSS
