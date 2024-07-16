@@ -86,7 +86,6 @@ assert.deepEqual(tokenize(testStr3, '|', '^'), res3);
 const testStr1 = 'one^|uno||three^^^^|four^^^|^cuatro|';
 const res1 = ['one|uno', '', 'three^^', 'four^|cuatro', ''];
 
-// TODO add more tests
 const testStr2 = 'a@&bcd&ef&&@@hi';
 const res2 = ['a&bcd', 'ef', '', '@hi'];
 
