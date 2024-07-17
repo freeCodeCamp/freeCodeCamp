@@ -315,8 +315,8 @@ function ShowClassic({
       !prefetched &&
       envData.clientLocale === 'espanol'
     ) {
-      setPrefetched(true);
       highPriorityPreload(nextChallengePath);
+      setPrefetched(true);
     }
   }, [isPreFetchEnabled, nextChallengePath, prefetched]);
 
