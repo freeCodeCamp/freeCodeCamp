@@ -2,6 +2,7 @@ import { execSync } from 'child_process';
 
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { alertToBeVisible } from './utils/alerts';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -67,11 +68,7 @@ test.describe('Link MS user component (signed-in user)', () => {
     await expect(unlinkButton).toBeVisible();
     await unlinkButton.click();
 
-    await expect(
-      page
-        .getByRole('alert')
-        .filter({ hasText: translations.flash.ms.transcript.unlinked })
-    ).toBeVisible();
+    await alertToBeVisible(page, translations.flash.ms.transcript.unlinked);
 
     await expect(
       page.getByRole('heading', {
