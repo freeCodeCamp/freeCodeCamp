@@ -4,7 +4,8 @@ import {
   devLogin,
   setupServer,
   superRequest,
-  defaultUserEmail
+  defaultUserEmail,
+  defaultUserId
 } from '../../jest.utils';
 import { createUserInput } from '../utils/create-user';
 
@@ -41,6 +42,21 @@ const userWithProgress: Prisma.userCreateInput = {
       challengeType: 5
     }
   ]
+};
+const donationMock = {
+  endDate: null,
+  startDate: {
+    date: '2024-07-17T10:20:56.076Z',
+    when: '2024-07-17T10:20:56.076+00:00'
+  },
+  id: '66979a414748aa2f3ba36d41',
+  amount: 500,
+  customerId: 'cust_test_id',
+  duration: 'month',
+  email: 'foo@bar.com',
+  provider: 'stripe',
+  subscriptionId: 'sub_test_id',
+  userId: defaultUserId
 };
 const sharedDonationReqBody = {
   amount: 500,
@@ -93,6 +109,9 @@ const mockSubRetrieveObj = {
   status: 'active'
 };
 const mockSubRetrieve = jest.fn(() => Promise.resolve(mockSubRetrieveObj));
+const mockCheckoutSessionCreate = jest.fn(() =>
+  Promise.resolve({ id: 'checkout_session_id' })
+);
 const mockCustomerUpdate = jest.fn();
 const generateMockSubCreate = (status: string) => () =>
   Promise.resolve({
@@ -120,15 +139,22 @@ jest.mock('stripe', () => {
       subscriptions: {
         create: mockSubCreate,
         retrieve: mockSubRetrieve
+      },
+      checkout: {
+        sessions: {
+          create: mockCheckoutSessionCreate
+        }
       }
     };
   });
 });
 
 describe('Donate', () => {
+  let setCookies: string[];
   setupServer();
   describe('Authenticated User', () => {
     let superPost: ReturnType<typeof createSuperRequest>;
+    let superPut: ReturnType<typeof createSuperRequest>;
     const verifyUpdatedUserAndNewDonation = async (email: string) => {
       const user = await fastifyTestInstance.prisma.user.findFirst({
         where: { email }
@@ -162,8 +188,9 @@ describe('Donate', () => {
     };
 
     beforeEach(async () => {
-      const setCookies = await devLogin();
+      setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
+      superPut = createSuperRequest({ method: 'PUT', setCookies });
       await fastifyTestInstance.prisma.user.updateMany({
         where: { email: userWithProgress.email },
         data: userWithProgress
@@ -302,6 +329,41 @@ describe('Donate', () => {
       });
     });
 
+    describe('PUT /donate/update-stripe-card', () => {
+      it('should return 200 and return session id', async () => {
+        await fastifyTestInstance.prisma.donation.create({
+          data: donationMock
+        });
+        const response = await superPut('/donate/update-stripe-card');
+        expect(mockCheckoutSessionCreate).toHaveBeenCalledWith({
+          cancel_url: 'http://localhost:8000/update-stripe-card',
+          customer: 'cust_test_id',
+          mode: 'setup',
+          payment_method_types: ['card'],
+          setup_intent_data: {
+            metadata: {
+              customer_id: 'cust_test_id',
+              subscription_id: 'sub_test_id'
+            }
+          },
+          success_url:
+            'http://localhost:8000/update-stripe-card?session_id={CHECKOUT_SESSION_ID}'
+        });
+        expect(response.body).toEqual({ sessionId: 'checkout_session_id' });
+        expect(response.status).toBe(200);
+
+        expect(true).toBe(true);
+      });
+      it('should return 500 if there is no donation record', async () => {
+        const response = await superPut('/donate/update-stripe-card');
+        expect(response.body).toEqual({
+          message: 'Something went wrong.',
+          type: 'danger'
+        });
+        expect(response.status).toBe(500);
+      });
+    });
+
     describe('POST /donate/create-stripe-payment-intent', () => {
       it('should return 200 and call stripe api properly', async () => {
         mockSubCreate.mockImplementationOnce(
@@ -432,16 +494,16 @@ describe('Donate', () => {
   });
 
   describe('Unauthenticated User', () => {
-    let setCookies: string[];
     // Get the CSRF cookies from an unprotected route
     beforeAll(async () => {
       const res = await superRequest('/status/ping', { method: 'GET' });
       setCookies = res.get('Set-Cookie');
     });
 
-    const endpoints: { path: string; method: 'POST' }[] = [
+    const endpoints: { path: string; method: 'POST' | 'PUT' }[] = [
       { path: '/donate/add-donation', method: 'POST' },
-      { path: '/donate/charge-stripe-card', method: 'POST' }
+      { path: '/donate/charge-stripe-card', method: 'POST' },
+      { path: '/donate/update-stripe-card', method: 'PUT' }
     ];
 
     endpoints.forEach(({ path, method }) => {
