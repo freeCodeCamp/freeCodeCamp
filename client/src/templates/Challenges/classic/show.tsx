@@ -59,7 +59,7 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
-import { highPriorityPreload } from '../../../../utils/gatsby/page-loading';
+import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
@@ -315,7 +315,7 @@ function ShowClassic({
       !prefetched &&
       envData.clientLocale === 'espanol'
     ) {
-      highPriorityPreload(nextChallengePath);
+      preloadPage(nextChallengePath);
       setPrefetched(true);
     }
   }, [isPreFetchEnabled, nextChallengePath, prefetched]);
