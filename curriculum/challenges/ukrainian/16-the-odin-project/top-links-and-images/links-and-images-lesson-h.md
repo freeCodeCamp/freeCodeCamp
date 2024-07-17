@@ -72,7 +72,7 @@ dashedName: links-and-images-lesson-h
 
 # --assignment--
 
-Прочитайте про <a href="https://www.freecodecamp.org/news/image-file-types-picture-format-extensions-jpeg-gif-png-svg-tiff/" target="_blank">чотири основні формати зображень</a>, які можна використовувати у вебмережі (англійською мовою).
+Прочитайте про <a href="https://www.freecodecamp.org/ukrainian/news/typy-zobrazhen-rozshyrennya-jpeg-svg-ta-png/" target="_blank">чотири основні формати зображень</a>, які можна використовувати у вебмережі.
 
 # --question--
 
