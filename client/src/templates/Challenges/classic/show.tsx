@@ -220,7 +220,6 @@ function ShowClassic({
 }: ShowClassicProps) {
   const { t } = useTranslation();
   const [resizing, setResizing] = useState(false);
-  const [prefetched, setPrefetched] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
@@ -310,15 +309,10 @@ function ShowClassic({
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
   useEffect(() => {
-    if (
-      isPreFetchEnabled &&
-      !prefetched &&
-      envData.clientLocale === 'espanol'
-    ) {
+    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
       preloadPage(nextChallengePath);
-      setPrefetched(true);
     }
-  }, [isPreFetchEnabled, nextChallengePath, prefetched]);
+  }, [nextChallengePath, isPreFetchEnabled]);
 
   useEffect(() => {
     initializeComponent(title);
