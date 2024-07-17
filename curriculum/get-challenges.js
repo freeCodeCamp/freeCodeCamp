@@ -45,16 +45,11 @@ const COMMENT_TRANSLATIONS = createCommentMap(
 );
 
 function createCommentMap(dictionariesDir, englishDictionariesDir) {
-  // get all the languages for which there are dictionaries. Note: this has to
-  // include the english dictionaries since translateCommentsInChallenge treats
-  // all languages equally and will simply remove comments if there is no entry
-  // in the comment map.
-  const languages = fs.readdirSync(dictionariesDir);
-
-  // TODO: Remove this after migrating to i18n-curriculum
-  if (languages.includes('english')) {
-    languages.splice(languages.indexOf('english'), 1);
-  }
+  // get all the languages for which there are dictionaries. Note: the english
+  // entries are created separately, so we remove it from languages.
+  const languages = fs
+    .readdirSync(dictionariesDir)
+    .filter(lang => lang !== 'english'); // TODO: Remove the filter after migrating to i18n-curriculum
 
   // get all their dictionaries
   const dictionaries = languages.reduce(
@@ -108,6 +103,8 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
 
   const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
 
+  // the english entries need to be added here, because english is not in
+  // languages
   Object.keys(allComments).forEach(comment => {
     allComments[comment].english = comment;
   });
