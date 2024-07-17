@@ -1,0 +1,44 @@
+
+{
+  "name": "Learn Intermediate OOP by Building a Platformer Game",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-intermediate-oop-by-building-a-platformer-game",
+  "helpCategory": "JavaScript",
+  "order": 19,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "disableLoopProtectTests": true,
+  "disableLoopProtectPreview": true,
+  "challengeOrder": [
+    {
+      "id": "6461815bc48998eb15d55349",
+      "title": "Step 1"
+    },
+    // (Include all other steps here)
+    {
+      "id": "64c71f7e1eb36b7a9c0ef2a3",
+      "title": "Step 64"
+    },
+    {
+      "id": "647c3a7f4b3d5f08cbe33f0b",
+      "title": "Ensure Empty if Statement for Player Position Check"
+    }
+  ],
+  "challenges": {
+    "647c3a7f4b3d5f08cbe33f0b": {
+      "name": "Ensure Empty `if` Statement for Player Position Check",
+      "id": "647c3a7f4b3d5f08cbe33f0b",
+      "tests": [
+        {
+          "name": "Check if Statement Body is Empty",
+          "test": {
+            "type": "unit",
+            "test": "assert(checkIfStatement(playerCode) === true, 'The if statement body should be empty');",
+            "description": "Ensure the if statement for player position check is empty"
+          }
+        }
+      ]
+    }
+  }
+}
