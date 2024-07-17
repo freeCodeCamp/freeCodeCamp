@@ -247,7 +247,7 @@ test.describe('Donation modal appearance logic - New user', () => {
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear if the user has less than 10 completed challenges in total and has just completed 3 challenges', async ({
@@ -373,11 +373,13 @@ test.describe('Donation modal appearance logic - Donor user', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user --donor');
+    execSync(
+      'node ./tools/scripts/seed/seed-demo-user --certified-user --donor'
+    );
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear', async ({

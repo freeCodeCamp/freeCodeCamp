@@ -26,7 +26,7 @@ test.describe('After completing the project', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should allow you to submit a URL', async ({ page }) => {
