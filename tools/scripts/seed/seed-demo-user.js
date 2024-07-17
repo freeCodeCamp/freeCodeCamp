@@ -14,9 +14,9 @@ const {
 } = require('./user-data');
 
 const options = {
-  donor: { type: 'boolean' },
+  'set-true': { type: 'string', multiple: true },
   'top-contributor': { type: 'boolean' },
-  'unset-privacy-terms': { type: 'boolean' },
+  'set-false': { type: 'string', multiple: true },
   'seed-trophy-challenges': { type: 'boolean' },
   'certified-user': { type: 'boolean' }
 };
@@ -81,14 +81,14 @@ const trophyChallenges = [
 ];
 
 [demoUser, blankUser, fullyCertifiedUser].forEach(user => {
-  if (argValues.donor) {
-    user.isDonating = true;
-  }
   if (argValues['top-contributor']) {
     user.yearsTopContributor = ['2017', '2018', '2019'];
   }
-  if (argValues['--unset-privacy-terms']) {
-    user.acceptedPrivacyTerms = false;
+  for (const key of argValues['set-false'] || []) {
+    user[key] = false;
+  }
+  for (const key of argValues['set-true'] || []) {
+    user[key] = true;
   }
   if (argValues['--seed-trophy-challenges']) {
     user.completedChallenges = trophyChallenges;

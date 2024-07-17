@@ -374,7 +374,7 @@ test.describe('Donation modal appearance logic - Donor user', () => {
 
   test.beforeAll(() => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --donor'
+      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'
     );
   });
 
