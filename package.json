@@ -85,8 +85,7 @@
     "playwright:watch": "playwright test --ui"
   },
   "dependencies": {
-    "dotenv": "16.4.5",
-    "pnpm": "^9.5.0"
+    "dotenv": "16.4.5"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.23.3",
@@ -131,7 +130,7 @@
     "puppeteer": "^22.13.1",
     "start-server-and-test": "2.0.3",
     "store": "2.0.12",
-    "ts-node": "^10.9.2",
+    "ts-node": "10.9.2",
     "typescript": "5.4.5",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
