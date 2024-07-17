@@ -240,8 +240,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   return testResults;
 }
 
-// updates preview frame and the fcc console.
-export function* previewChallengeSaga(action) {
+function* preparePreview(action) {
   const flushLogs = action?.type !== actionTypes.previewMounted;
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
@@ -255,16 +254,22 @@ export function* previewChallengeSaga(action) {
     yield put(initLogs());
     yield put(initConsole(''));
   }
-  // long enough so that holding down a key will only send one request, but not
-  // so long that it feels unresponsive
-  yield delay(30);
 
   const logProxy = yield channel();
-  const proxyLogger = args => logProxy.put(args);
 
+  yield fork(takeEveryConsole, logProxy);
+
+  return logProxy;
+}
+
+// updates preview frame and the fcc console.
+export function* updateHtmlPreview(logProxy) {
   try {
-    yield fork(takeEveryConsole, logProxy);
+    // long enough so that holding down a key will only send one request, but not
+    // so long that it feels unresponsive
+    yield delay(30);
 
+    const proxyLogger = args => logProxy.put(args);
     const challengeData = yield select(challengeDataSelector);
 
     if (canBuildChallenge(challengeData)) {
@@ -317,19 +322,16 @@ export function* previewChallengeSaga(action) {
   }
 }
 
-// TODO: refactor this so that we can use a single saga for all challenge
-// updates (then they can all go in the same `takeLatest` call and be cancelled
-// appropriately)
-function* updatePreviewSaga(action) {
+export function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
+  const logProxy = yield* preparePreview(action);
   if (
     challengeData.challengeType === challengeTypes.python ||
     challengeData.challengeType === challengeTypes.multifilePythonCertProject
   ) {
     yield updatePython(challengeData);
   } else {
-    // all other challenges have to recreate the preview
-    yield previewChallengeSaga(action);
+    yield updateHtmlPreview(logProxy);
   }
 }
 
@@ -370,10 +372,14 @@ function* previewProjectSolutionSaga({ payload }) {
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
-    takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge, types.previewMounted],
-      previewChallengeSaga
+      [
+        types.challengeMounted,
+        types.resetChallenge,
+        types.previewMounted,
+        types.updateFile
+      ],
+      updatePreviewSaga
     ),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];

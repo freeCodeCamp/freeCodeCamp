@@ -14,7 +14,7 @@ function reducer(state = initialState, _action) {
   return state;
 }
 
-import { previewChallengeSaga } from './execute-challenge-saga';
+import { updatePreviewSaga } from './execute-challenge-saga';
 
 const challengeMounted = { type: 'challenge.challengeMounted' };
 const previewMounted = { type: 'challenge.previewMounted' };
@@ -22,7 +22,7 @@ const resetChallenge = { type: 'challenge.resetChallenge' };
 
 describe('execute-challenge-saga', () => {
   it('flushes logs on challengeMounted', () => {
-    return expectSaga(previewChallengeSaga, challengeMounted)
+    return expectSaga(updatePreviewSaga, challengeMounted)
       .withReducer(reducer)
       .put({ type: 'challenge.initLogs' })
       .silentRun();
@@ -30,13 +30,13 @@ describe('execute-challenge-saga', () => {
     // warnings. Increasing the timeout just makes the tests take longer.
   });
   it('flushes logs on reset', () => {
-    return expectSaga(previewChallengeSaga, resetChallenge)
+    return expectSaga(updatePreviewSaga, resetChallenge)
       .withReducer(reducer)
       .put({ type: 'challenge.initLogs' })
       .silentRun();
   });
   it('does not flush logs on previewMounted', () => {
-    return expectSaga(previewChallengeSaga, previewMounted)
+    return expectSaga(updatePreviewSaga, previewMounted)
       .withReducer(reducer)
       .not.put({ type: 'challenge.initLogs' })
       .silentRun();
