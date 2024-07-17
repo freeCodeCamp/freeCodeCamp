@@ -1,66 +1,93 @@
+# Use node:20-bookworm image as the base for the builder stage
 FROM node:20-bookworm AS builder
+
+# Update package list and install jq
 RUN apt-get update && apt-get install -y jq
-# global installs need root permissions, so have to happen before we switch to
-# the node user
+
+# Install pnpm globally
 RUN npm i -g pnpm@9
-# node images create a non-root user that we can use
+
+# Switch to the non-root user provided by the node image
 USER node
+
+# Set the working directory
 WORKDIR /home/node/build
 
+# Copy all files to the working directory with the correct ownership
 COPY --chown=node:node *.* .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
 COPY --chown=node:node tools/ tools/
 COPY --chown=node:node curriculum/ curriculum/
-# TODO: AFAIK it's just the intro translations. Those should be folded into the
-# curriculum and then we can remove this.
 COPY --chown=node:node client/ client/
 
+# Configure pnpm to not dedupe peer dependencies
 RUN pnpm config set dedupe-peer-dependents false
-# While we want to ignore scripts generally, we do need to generate the prisma
-# client. Note: npx is the simplest way to generate the client without us having
-# to have prisma as a prod dependency. The jq tricks are to ensure we're using
-# the right version of prisma.
+
+# Install necessary dependencies and ignore scripts
 RUN pnpm install -F=api -F=curriculum -F tools/scripts/build -F challenge-parser \
   --frozen-lockfile --ignore-scripts
+
+# Generate the Prisma client
 RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
-# The api needs to source curriculum.json and build:curriculum relies on the
-# following env vars.
+# Set environment variables for the build process
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 ARG SHOW_NEW_CURRICULUM=true
 ENV SHOW_NEW_CURRICULUM=$SHOW_NEW_CURRICULUM
 
+# Build the curriculum and the API
 RUN pnpm build:curriculum
 RUN pnpm -F=api build
 
+# Use node:20-bookworm image as the base for the deps stage
 FROM node:20-bookworm AS deps
+
+# Update package list and install jq
 RUN apt-get update && apt-get install -y jq
 
+# Set the working directory
 WORKDIR /home/node/build
+
+# Copy pnpm configuration files
 COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
+
+# Install pnpm globally
 RUN npm i -g pnpm@9
 
-# Weirdly this config does not seem necessary for the new api (the same number
-# of deps are installed in both cases), but I'm including it just for
-# consistency.
+# Configure pnpm to not dedupe peer dependencies
 RUN pnpm config set dedupe-peer-dependents false
+
+# Install production dependencies and ignore scripts
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
+
+# Generate the Prisma client
 RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
+# Use node:20-bookworm image as the base for the final stage
 FROM node:20-bookworm
+
+# Install pm2 globally
 RUN npm i -g pm2@4
+
+# Switch to the non-root user provided by the node image
 USER node
+
+# Set the working directory
 WORKDIR /home/node/fcc
+
+# Copy the build artifacts from the builder stage
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
 COPY --from=builder --chown=node:node /home/node/build/api/package.json api/
 COPY --from=builder --chown=node:node /home/node/build/shared/config/curriculum.json shared/config/
 
+# Copy the node_modules from the deps stage
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/shared/node_modules/ shared/node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api/node_modules/ api/node_modules/
 
-CMD ["pm2-runtime", "start", "-i", "0","api/src/server.js"]
+# Define the command to run the application
+CMD ["pm2-runtime", "start", "-i", "0", "api/src/server.js"]
