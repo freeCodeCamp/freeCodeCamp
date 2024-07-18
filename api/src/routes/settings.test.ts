@@ -1029,9 +1029,8 @@ Happy coding!
     describe('/confirm-email', () => {
       it('redirects to the HOME_LOCATION with flash message', async () => {
         const res = await superRequest('/confirm-email', {
-          method: 'GET',
-          headers: { referer: 'https://who.knows/' }
-        });
+          method: 'GET'
+        }).set('Referer', 'https://who.knows/');
 
         expect(res.status).toBe(302);
         expect(res.headers).toMatchObject({

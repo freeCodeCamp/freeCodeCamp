@@ -128,6 +128,10 @@ class CompletionModal extends Component<
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      this.props.close();
+    }
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       // Since Hotkeys also listens to Ctrl + Enter we have to stop this event

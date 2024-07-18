@@ -63,6 +63,8 @@ const nullableFlags = [
   'keyboardShortcuts'
 ] as const;
 
+const blockedUserAgentParts = ['python', 'google-apps-script', 'curl'];
+
 type NullableFlag = (typeof nullableFlags)[number];
 
 /**
@@ -96,11 +98,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authorize);
-
   fastify.post(
     '/account/delete',
     {
@@ -119,9 +116,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       await fastify.prisma.user.delete({
         where: { id: req.user!.id }
       });
-      void reply.clearCookie('jwt_access_token');
-      void reply.clearCookie('_csrf');
-      void reply.clearCookie('csrf_token');
+      reply.clearOurCookies();
 
       return {};
     }
@@ -422,8 +417,6 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.addHook('onRequest', fastify.authorize);
-
   fastify.get(
     '/user/get-session-user',
     {
@@ -658,7 +651,21 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   fastify.get(
     '/api/users/get-public-profile',
     {
-      schema: schemas.getPublicProfile
+      schema: schemas.getPublicProfile,
+      onRequest: (req, reply, done) => {
+        const userAgent = req.headers['user-agent'];
+
+        if (
+          userAgent &&
+          blockedUserAgentParts.some(ua => userAgent.toLowerCase().includes(ua))
+        ) {
+          void reply.code(400);
+          void reply.send(
+            'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+          );
+        }
+        done();
+      }
     },
     async (req, reply) => {
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
