@@ -242,10 +242,6 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 
 function* preparePreview(action) {
   const flushLogs = action?.type !== actionTypes.previewMounted;
-  const isBuildEnabled = yield select(isBuildEnabledSelector);
-  if (!isBuildEnabled) {
-    return;
-  }
 
   const isExecuting = yield select(isExecutingSelector);
   // executeChallengeSaga flushes the logs, so there's no need to if that's
@@ -312,8 +308,13 @@ export function* updateHtmlPreview(logProxy) {
 }
 
 export function* updatePreviewSaga(action) {
-  const challengeData = yield select(challengeDataSelector);
+  const isBuildEnabled = yield select(isBuildEnabledSelector);
+  if (!isBuildEnabled) {
+    return;
+  }
+
   const logProxy = yield* preparePreview(action);
+  const challengeData = yield select(challengeDataSelector);
   if (
     challengeData.challengeType === challengeTypes.python ||
     challengeData.challengeType === challengeTypes.multifilePythonCertProject
