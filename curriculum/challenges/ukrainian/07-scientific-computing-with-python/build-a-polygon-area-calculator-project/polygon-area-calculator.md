@@ -19,16 +19,16 @@ dashedName: build-a-polygon-area-calculator-project
 - `get_area`: повертає площу (`width * height`)
 - `get_perimeter`: повертає периметр (`2 * width + 2 * height`)
 - `get_diagonal`: повертає діагональ (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: повертає рядок, який представляє фігуру лініями «\*». Кількість ліній повинна дорівнювати висоті, а кількість «\*» у кожному рядку повинна дорівнювати ширині. Наприкінці кожного рядка має бути новий рядок (`\n`). Якщо ширина або висота більші за 50, то має повернутись рядок «Too big for picture.».
+- `get_picture`: Returns a string that represents the shape using lines of '\*'. The number of lines should be equal to the height and the number of '\*' in each line should be equal to the width. Наприкінці кожного рядка має бути новий рядок (`\n`). If the width or height is larger than 50, this should return the string: `'Too big for picture.'`.
 - `get_amount_inside`: приймає іншу фігуру (квадрат чи трикутник) як аргумент. Повертає ту кількість разів, скільки передана фігура може поміститися у фігурі (без обертання). Наприклад, прямокутник з шириною 4 і висотою 8 може вмістити два квадрати зі сторонами 4.
 
-Додатково, якщо екземпляр класу `Rectangle` представлений як рядок, то він має виглядати так: `Rectangle(width=5, height=10)`.
+Additionally, if an instance of a `Rectangle` is represented as a string, it should look like: `'Rectangle(width=5, height=10)'`.
 
 ## Клас Square
 
 Клас `Square` має бути підкласом класу `Rectangle`. Коли ви створюєте об’єкт `Square`, передається довжина однієї сторони. Метод `__init__` має зберігати довжину сторони в атрибутах `width` та `height` з класу `Rectangle`.
 
-Клас `Square` повинен мати доступ до методів класу `Rectangle`, але також повинен містити метод `set_side`. Якщо екземпляр класу `Square` представлений у вигляді рядка, то він має виглядати так: `Square(side=9)`.
+Клас `Square` повинен мати доступ до методів класу `Rectangle`, але також повинен містити метод `set_side`. If an instance of a `Square` is represented as a string, it should look like: `'Square(side=9)'`.
 
 Додатково, методи `set_width` та `set_height` на класі `Square` мають встановити як ширину, так і висоту.
 
@@ -180,7 +180,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Рядковим представленням `Rectangle(3, 6)` має бути `Rectangle(width=3, height=6)`.
+The string representation of `Rectangle(3, 6)` should be `'Rectangle(width=3, height=6)'`.
 
 ```js
 ({
@@ -215,7 +215,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Рядковим представленням `Square(5)` має бути `Square(side=5)`.
+The string representation of `Square(5)` should be `'Square(side=5)'`.
 
 ```js
 ({
@@ -646,7 +646,7 @@ t.result.wasSuccessful()
 })
 ```
 
-Метод `.get_picture()` має повернути рядок `Too big for picture.`, якщо атрибути `width` або `height` більші за `50`.
+The `.get_picture()` method should return the string `'Too big for picture.'` if the `width` or `height` attributes are larger than `50`.
 
 ```js
 ({

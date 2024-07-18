@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Passo 23
+title: Passo 25
 challengeType: 0
-dashedName: step-23
+dashedName: step-25
 ---
 
 # --description--

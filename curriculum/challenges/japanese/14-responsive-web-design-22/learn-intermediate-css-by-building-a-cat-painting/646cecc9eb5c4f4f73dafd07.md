@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: ステップ 23
+title: ステップ 25
 challengeType: 0
-dashedName: step-23
+dashedName: step-25
 ---
 
 # --description--
@@ -11,7 +11,7 @@ position を `absolute` に、`top` を `-26px` に、`left` を `-31px` に設�
 
 # --hints--
 
-`.cat-left-ear` セレクターの `position` プロパティを `absolute` に設定してください。 Don't forget to add a semicolon.
+`.cat-left-ear` セレクターの `position` プロパティを `absolute` に設定してください。 セミコロンを忘れないようにしましょう。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

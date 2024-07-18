@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244d5
-title: Comparison with the Greater Than Or Equal To Operator
+title: 크거나 같음 비교 연산자 사용하기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KBqtV'
 forumTopicId: 16785
@@ -9,11 +9,11 @@ dashedName: comparison-with-the-greater-than-or-equal-to-operator
 
 # --description--
 
-The greater than or equal to operator (`>=`) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns `true`. Otherwise, it returns `false`.
+크거나 같음 비교 연산자(`>=`)는 두 숫자의 값을 비교합니다. 왼쪽 숫자가 오른쪽 숫자보다 크거나 같다면 `true`를 반환합니다. 그렇지 않으면 `false`를 반환합니다.
 
-Like the equality operator, the greater than or equal to operator will convert data types while comparing.
+등호 연산자와 같이 크거나 같음 비교 연산자는 비교하면서 데이터 유형을 변환할 것입니다.
 
-**Examples**
+**예시**
 
 ```js
 6   >=  6  // true
@@ -24,53 +24,53 @@ Like the equality operator, the greater than or equal to operator will convert d
 
 # --instructions--
 
-Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
+반환문이 맞도록 지시된 줄에 이상 연산자를 추가하시오.
 
 # --hints--
 
-`testGreaterOrEqual(0)` should return the string `Less than 10`
+`testGreaterOrEqual(0)`는 문자열 `Less than 10`을 반환해야 합니다.
 
 ```js
 assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(9)` should return the string `Less than 10`
+`testGreaterOrEqual(9)`는 문자열 `Less than 10`을 반환해야 합니다.
 
 ```js
 assert(testGreaterOrEqual(9) === 'Less than 10');
 ```
 
-`testGreaterOrEqual(10)` should return the string `10 or Over`
+`testGreaterOrEqual(10)`는 문자열 `10 or Over`을 반환해야 합니다.
 
 ```js
 assert(testGreaterOrEqual(10) === '10 or Over');
 ```
 
-`testGreaterOrEqual(11)` should return the string `10 or Over`
+`testGreaterOrEqual(11)`는 문자열 `10 or Over`을 반환해야 합니다.
 
 ```js
 assert(testGreaterOrEqual(11) === '10 or Over');
 ```
 
-`testGreaterOrEqual(19)` should return the string `10 or Over`
+`testGreaterOrEqual(19)`는 문자열 `10 or Over`을 반환해야 합니다.
 
 ```js
 assert(testGreaterOrEqual(19) === '10 or Over');
 ```
 
-`testGreaterOrEqual(100)` should return the string `20 or Over`
+`testGreaterOrEqual(100)`는 문자열 `20 or Over`을 반환해야 합니다.
 
 ```js
 assert(testGreaterOrEqual(100) === '20 or Over');
 ```
 
-`testGreaterOrEqual(21)` should return the string `20 or Over`
+`testGreaterOrEqual(21)`는 문자열 `20 or Over`을 반환해야 합니다.
 
 ```js
 assert(testGreaterOrEqual(21) === '20 or Over');
 ```
 
-You should use the `>=` operator at least twice
+`>=` 연산자를 적어도 두번 사용해야 합니다.
 
 ```js
 assert(__helpers.removeJSComments(code).match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);

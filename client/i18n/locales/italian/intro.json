@@ -369,7 +369,7 @@
         "title": "Learn Modern JavaScript Methods by Building Football Team Cards",
         "intro": [
           "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll learn how to work with DOM manipulation, object destructuring, event handling, and data filtering.",
-          "Questo progetto tratterà concetti come istruzioni switch, parametri predefiniti, <code>Object.freeze()</code>, il metodo <code>map()</code> e altro."
+          "This project will cover concepts like, default parameters, <code>Object.freeze()</code>, and reinforce your knowledge of the <code>switch</code> statement and <code>map()</code> method."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -884,6 +884,13 @@
           "This is one of the required projects to claim your certification."
         ]
       },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Learn Interfaces by Building an Equation Solver",
+        "intro": [
+          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
+          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
+        ]
+      },
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Learn Special Methods by Building a Vector Space",
         "intro": [
@@ -1281,6 +1288,12 @@
         "title": "Learn to Solve Problems and Understand Errors",
         "intro": [
           "Learn how to solve problems and understand errors in JavaScript."
+        ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Build a Rock Paper Scissor Game",
+        "intro": [
+          "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
         ]
       }
     }
@@ -1682,13 +1695,17 @@
       }
     }
   },
-  "example-certification": {
-    "title": "Example Certification",
+  "front-end-development": {
+    "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "Example Certification Exam",
-        "intro": ["placeholder"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Learn Basic HTML by Building a Recipe Page",
+        "intro": ["", ""]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Front End Development Certification Exam",
+        "intro": ["", ""]
       }
     }
   },

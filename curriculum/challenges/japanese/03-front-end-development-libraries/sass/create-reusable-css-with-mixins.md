@@ -8,85 +8,112 @@ dashedName: create-reusable-css-with-mixins
 
 # --description--
 
-Sass の<dfn>ミックスイン</dfn>は、スタイルシート全体で再利用できる CSS 宣言のグループです。
-
-新しい CSS 機能ほど、完全に採用されてすべてのブラウザーで使用できるようになるまでに時間がかかります。 機能がブラウザーに追加されるまでの間、それらの機能を使用している CSS ルールではベンダープレフィックスが必要になる場合があります。 たとえば `box-shadow` を考えてみましょう。
+Sass の<dfn>ミックスイン</dfn>は、スタイルシート全体で再利用できる CSS 宣言のグループです。 定義は `@mixin` というアットルールで始め、その後にカスタム名を付けます。 ミックスインを適用するには `@include` というアットルールを使います。
 
 ```scss
-div {
-  -webkit-box-shadow: 0px 0px 4px #fff;
-  -moz-box-shadow: 0px 0px 4px #fff;
-  -ms-box-shadow: 0px 0px 4px #fff;
-  box-shadow: 0px 0px 4px #fff;
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul {
+  @include reset-list;
 }
 ```
 
-`box-shadow` のあるすべての要素でこのルールを書き直したり、それぞれの値を変えてさまざまな効果をテストしたりするには、たくさんの入力が必要になります。 ミックスインは CSS 版の関数のようなもので、 次のように記述します。
+上記は次のようにコンパイルされます:
 
-```scss
-@mixin box-shadow($x, $y, $blur, $c){ 
-  -webkit-box-shadow: $x $y $blur $c;
-  -moz-box-shadow: $x $y $blur $c;
-  -ms-box-shadow: $x $y $blur $c;
-  box-shadow: $x $y $blur $c;
+```css
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 ```
 
-定義は `@mixin` で始まり、その後にカスタム名を付けます。 パラメーター (前の例では `$x`、`$y`、`$blur`、`$c`) は任意です。 これで、`box-shadow` ルールが必要になったときはいつでも、ミックスインを呼び出す 1 行だけで済み、すべてのベンダープレフィックスを入力する必要がなくなります。 ミックスインは `@include` ディレクティブを使用して呼び出します。
+ミックスインは引数を取ることもでき、これにより動作をカスタマイズすることができます。 下記の引数は、ミックスインを使用する際必須となります。
 
 ```scss
-div {
-  @include box-shadow(0px, 0px, 4px, #fff);
+@mixin prose($font-size, $spacing) {
+  font-size: $font-size;
+  margin: 0;
+  margin-block-end: $spacing;
+}
+
+p {
+  @include prose(1.25rem, 1rem);
+}
+
+h2 {
+  @include prose(2.4rem, 1.5rem);
+}
+```
+
+仮引数にデフォルト値を指定することで、引数を省略可能にできます。
+
+```scss
+@mixin text-color($color: black) {
+  color: $color;
+}
+
+p {
+  @include text-color(); /* color: black */
+}
+
+nav a {
+  @include text-color(orange);
 }
 ```
 
 # --instructions--
 
-`border-radius` のミックスインを記述して、`$radius` パラメーターを設定してください。 前述の例にあるすべてのベンダープレフィックスを使用してください。 そして、`border-radius` ミックスインを使用して、`#awesome` 要素に `15px` の境界線半径を設定してください。
+`shape` という名前のミックスインを記述し、`$w`、`$h`、`$bg-color` という 3 つの仮引数を指定してください。
+
+ミックスイン `shape` を使用して、`#square` の要素の幅と高さを `50px`、背景色を `red` にしてください。 `#rect-a` の要素は、幅 `100px`、高さ `50px`、背景色を `blue` にしてください。 そして `#rect-b` の要素は、幅 `50px`、高さ `100px`、背景色を `orange` にしてください。
 
 # --hints--
 
-`$radius` というパラメーターを持つ `border-radius` というミックスインをコードで宣言します。
+`shape` という名前で、`$w`、`$h`、`$bg-color` という 3 つの仮引数を持つミックスインを定義してください。
 
 ```js
-assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
+assert.match(code, /@mixin\s+shape\s*\(\s*\$w,\s*\$h,\s*\$bg-color\s*\)\s*{/gi);
 ```
 
-`$radius` パラメーターを使用する `-webkit-border-radius` ベンダープレフィックスをコードに含めます。
+ミックスインには、仮引数 `$w` を使用する `width` プロパティが含まれている必要があります。
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-webkit-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /width:\$w;/gi);
 ```
 
-`$radius` パラメーターを使用する `-moz-border-radius` ベンダープレフィックスをコードに含めます。
+ミックスインには、仮引数 `$h` を使用する `height` プロパティが含まれている必要があります。
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-moz-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /height:\$h;/gi);
 ```
 
-`$radius` パラメーターを使用する `-ms-border-radius` ベンダープレフィックスをコードに含めます。
+ミックスインには、仮引数 `$bg-color` を使用する `background-color` プロパティが含まれている必要があります。
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
+assert.match(__helpers.removeWhiteSpace(code), /background-color:\$bg\-color;/gi);
 ```
 
-`$radius` パラメーターを使用する汎用の `border-radius` ルールをコードに含めます。
+`@include` キーワードを使用して、`#square` セレクター内のスタイルを `shape` ミックスインの呼び出しに置き換えてください。 幅と高さは `50px`、背景色は `red` に設定してください。
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/border-radius:\$radius;/gi).length ==
-    4
-);
+assert.match(code, /#square\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*50px\s*,\s*red\s*\)\s*;\s*}/gi);
 ```
 
-`@include` キーワードを使用して `border-radius mixin` を呼び出し、`15px` に設定します。
+`@include` キーワードを使用して、`#rect-a` セレクター内のスタイルを `shape` ミックスインの呼び出しに置き換えてください。 幅 `100px`、高さ `50px`、背景色を `blue` にしてください。
 
 ```js
-assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
+assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px\s*,\s*50px\s*,\s*blue\s*\)\s*;\s*}/gi);
+```
+
+`@include` キーワードを使用して、`#rect-b` セレクター内のスタイルを `shape` ミックスインの呼び出しに置き換えてください。 幅 `50px`、高さ `100px`、背景色を `orange` にしてください。
+
+```js
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*100px\s*,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--
@@ -95,38 +122,54 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
 ```html
 <style type='text/scss'>
+#square {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
 
+#rect-a {
+  width: 100px;
+  height: 50px;
+  background-color: blue;
+}
 
-
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-
-  }
+#rect-b {
+  width: 50px;
+  height: 100px;
+  background-color: orange;
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```
 
 # --solutions--
 
 ```html
 <style type='text/scss'>
-  @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;
-  }
+@mixin shape($w, $h, $bg-color) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+}
 
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-    @include border-radius(15px);
-  }
+#square {
+  @include shape(50px, 50px, red);
+}
+
+#rect-a {
+  @include shape(100px, 50px, blue);
+}
+
+#rect-b {
+  @include shape(50px, 100px, orange);
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```

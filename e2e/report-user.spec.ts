@@ -30,7 +30,9 @@ test('should be possible to report a user from their profile page', async ({
     page.getByText("Do you want to report twaha's portfolio for abuse?")
   ).toBeVisible();
 
-  await page.getByRole('textbox').nth(1).fill('Some details');
+  await page
+    .getByRole('textbox', { name: 'What would you like to report?' })
+    .fill('Some details');
   await page.getByRole('button', { name: 'Submit the report' }).click();
   await expect(page).toHaveURL('/learn');
 

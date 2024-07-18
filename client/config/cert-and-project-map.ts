@@ -33,7 +33,7 @@ const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const upcomingPythonBase = '/learn/upcoming-python';
-const exampleCertBase = '/learn/example-certification';
+const frontEndDevelopmentBase = '/learn/front-end-development';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const legacyFrontEndBase = feLibsBase;
@@ -800,14 +800,14 @@ const allStandardCerts = [
   // Upcoming Certifications
   {
     id: '64514fda6c245de4d11eb7bb',
-    title: 'Example Certification',
-    certSlug: 'example-certification-v8',
+    title: 'Front End Development',
+    certSlug: Certification.FrontEndDevelopment,
     projects: [
       {
         id: '645147516c245de4d11eb7ba',
-        title: 'Certification Exam',
-        link: `${exampleCertBase}/example-certification-exam`,
-        certSlug: 'example-certification-v8'
+        title: 'Front End Development Certification Exam',
+        link: `${frontEndDevelopmentBase}/front-end-development-certification-exam/front-end-development-certification-exam`,
+        certSlug: Certification.FrontEndDevelopment
       }
     ]
   },

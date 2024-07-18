@@ -1,7 +1,7 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import jwt from 'jsonwebtoken';
 
-import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
+import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
 import { type Token, createAccessToken } from '../utils/tokens';
 import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies';
 import codeFlowAuth from './code-flow-auth';
@@ -207,7 +207,7 @@ describe('auth', () => {
   });
 
   describe('authorizeOrRedirect', () => {
-    const redirectLocation = `http://localhost:8000?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
+    const redirectLocation = `${HOME_LOCATION}?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
 
     beforeEach(() => {
       fastify.addHook('onRequest', fastify.authorizeOrRedirect);

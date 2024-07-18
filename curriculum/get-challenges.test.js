@@ -56,12 +56,14 @@ describe('create non-English challenge', () => {
     );
 
     it('returns an object', () => {
-      expect(typeof createCommentMap(dictionaryDir)).toBe('object');
+      expect(typeof createCommentMap(dictionaryDir, dictionaryDir)).toBe(
+        'object'
+      );
     });
 
     it('fallback to the untranslated string', () => {
       expect.assertions(2);
-      const commentMap = createCommentMap(incompleteDictDir);
+      const commentMap = createCommentMap(incompleteDictDir, incompleteDictDir);
       expect(commentMap['To be translated one'].spanish).toEqual(
         'Spanish translation one'
       );
@@ -78,7 +80,7 @@ describe('create non-English challenge', () => {
         'Not translated one',
         'Not translated two'
       ];
-      const map = createCommentMap(dictionaryDir);
+      const map = createCommentMap(dictionaryDir, dictionaryDir);
       expect(Object.keys(map)).toEqual(expect.arrayContaining(expectedIds));
 
       const mapValue = map['To be translated one'];
@@ -98,7 +100,7 @@ describe('create non-English challenge', () => {
         'Not translated one',
         'Not translated two'
       ];
-      const map = createCommentMap(dictionaryDir);
+      const map = createCommentMap(dictionaryDir, dictionaryDir);
       expect(Object.keys(map)).toEqual(expect.arrayContaining(expectedIds));
 
       const translatedOne = map['To be translated one'];
