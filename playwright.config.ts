@@ -89,8 +89,9 @@ export default defineConfig({
 
   /* Some tests make the api send emails, so we need mailhog to catch them */
   webServer: {
-    command: 'docker run -d --network host mailhog/mailhog',
+    command: 'docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog',
     port: 1025,
-    reuseExistingServer: true
+    reuseExistingServer: true,
+    timeout: 180000
   }
 });
