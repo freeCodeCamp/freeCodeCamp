@@ -289,18 +289,7 @@ export function* updateHtmlPreview(logProxy) {
         const portalDocument = yield select(portalDocumentSelector);
         const finalDocument = portalDocument || document;
 
-        // Python challenges do not use the preview frame, they use a web worker
-        // to run the code. The UI is handled by the xterm component, so there
-        // is no need to update the preview frame.
-        if (
-          challengeData.challengeType === challengeTypes.python ||
-          challengeData.challengeType ===
-            challengeTypes.multifilePythonCertProject
-        ) {
-          yield updatePython(challengeData);
-        } else {
-          yield call(updatePreview, buildData, finalDocument, proxyLogger);
-        }
+        yield call(updatePreview, buildData, finalDocument, proxyLogger);
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, {
           proxyLogger
