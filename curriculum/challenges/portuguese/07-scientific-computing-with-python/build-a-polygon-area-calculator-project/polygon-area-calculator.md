@@ -19,16 +19,16 @@ Quando um objeto de retângulo é criado, ele deve ser inicializado com atributo
 - `get_area`: retorna a área (`width * height`)
 - `get_perimeter`: retorna o perímetro (`2 * width + 2 * height`)
 - `get_diagonal`: retorna a diagonal (`(width ** 2 + height ** 2) ** .5`)
-- `get_picture`: retorna uma string que representa a forma usando as linhas de "\*". O número de linhas deve ser igual à altura e o número de "\*" em cada linha deve ser igual à largura. Deve haver uma nova linha (`\n`) no final de cada linha. Se a largura ou altura for maior do que 50, é preciso retornar a string: "Too big for picture." (Muito grande para a imagem).
+- `get_picture`: Returns a string that represents the shape using lines of '\*'. The number of lines should be equal to the height and the number of '\*' in each line should be equal to the width. Deve haver uma nova linha (`\n`) no final de cada linha. If the width or height is larger than 50, this should return the string: `'Too big for picture.'`.
 - `get_amount_inside`: Pega outra forma (quadrado ou retângulo) como um argumento. Retorna o número de vezes que a forma passada como argumento poderia caber dentro da forma (sem rotações). Por exemplo, um retângulo com uma largura de 4 e uma altura de 8 poderia caber em dois quadrados com lados de 4.
 
-Additionally, if an instance of a `Rectangle` is represented as a string, it should look like: `Rectangle(width=5, height=10)`
+Additionally, if an instance of a `Rectangle` is represented as a string, it should look like: `'Rectangle(width=5, height=10)'`.
 
 ## Classe do quadrado
 
 The `Square` class should be a subclass of `Rectangle`. When a `Square` object is created, a single side length is passed in. The `__init__` method should store the side length in both the `width` and `height` attributes from the `Rectangle` class.
 
-The `Square` class should be able to access the `Rectangle` class methods but should also contain a `set_side` method. If an instance of a `Square` is represented as a string, it should look like: `Square(side=9)`
+The `Square` class should be able to access the `Rectangle` class methods but should also contain a `set_side` method. If an instance of a `Square` is represented as a string, it should look like: `'Square(side=9)'`.
 
 Additionally, the `set_width` and `set_height` methods on the `Square` class should set both the width and height.
 
@@ -180,7 +180,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The string representation of `Rectangle(3, 6)` should be `Rectangle(width=3, height=6)`.
+The string representation of `Rectangle(3, 6)` should be `'Rectangle(width=3, height=6)'`.
 
 ```js
 ({
@@ -215,7 +215,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The string representation of `Square(5)` should be `Square(side=5)`.
+The string representation of `Square(5)` should be `'Square(side=5)'`.
 
 ```js
 ({
@@ -646,7 +646,7 @@ t.result.wasSuccessful()
 })
 ```
 
-The `.get_picture()` method should return the string `Too big for picture.` if the `width` or `height` attributes are larger than `50`.
+The `.get_picture()` method should return the string `'Too big for picture.'` if the `width` or `height` attributes are larger than `50`.
 
 ```js
 ({
