@@ -1,6 +1,6 @@
 ---
 title: Introduction to Designing a Business Card
-block: business-card-lab
+block: lab-business-card
 superBlock: front-end-development
 ---
 
