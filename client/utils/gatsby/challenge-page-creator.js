@@ -165,7 +165,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   }));
 
   return {
-    showProjectPreview: demoType === 'finished-project' || demoType === 'lab',
+    showProjectPreview: demoType === 'workshop' || demoType === 'lab',
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles
