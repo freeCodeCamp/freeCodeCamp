@@ -22,7 +22,7 @@ dashedName: task-8
 
 ## Frases
 
-`That's important work. I'm _ our team learn how to _ safe online.`
+`That's important work. I'm BLANK our team learn how to BLANK safe online.`
 
 ## Palabra correcta
 

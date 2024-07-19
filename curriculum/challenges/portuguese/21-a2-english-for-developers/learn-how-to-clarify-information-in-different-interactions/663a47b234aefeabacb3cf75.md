@@ -15,7 +15,7 @@ Another distinctive characteristic someone has is their height. You can say, for
 
 ## --sentence--
 
-`Sure. Tom is a _ guy with a friendly smile.`
+`Sure. Tom is a BLANK guy with a friendly smile.`
 
 ## --blanks--
 
