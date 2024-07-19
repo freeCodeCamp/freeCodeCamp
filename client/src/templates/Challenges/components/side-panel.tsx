@@ -7,6 +7,7 @@ import { Test } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { initializeMathJax } from '../../../utils/math-jax';
 import { challengeTestsSelector } from '../redux/selectors';
+import { openModal } from '../redux/actions';
 import TestSuite from './test-suite';
 
 import './side-panel.css';
@@ -17,7 +18,17 @@ const mapStateToProps = createSelector(
     tests
   })
 );
-interface SidePanelProps {
+
+const mapDispatchToProps: {
+  openModal: (modal: string) => void;
+} = {
+  openModal
+};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+interface SidePanelProps extends DispatchProps, StateProps {
   block: string;
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
@@ -36,7 +47,8 @@ export function SidePanel({
   hasDemo,
   toolPanel,
   superBlock,
-  tests
+  tests,
+  openModal
 }: SidePanelProps): JSX.Element {
   const { t } = useTranslation();
   useEffect(() => {
@@ -57,11 +69,7 @@ export function SidePanel({
       {challengeDescription}
       {hasDemo && (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-        <div
-          onClick={() => {
-            console.log('show demo');
-          }}
-        >
+        <div onClick={() => openModal('projectPreview')}>
           {t('buttons.show-demo')}
         </div>
       )}
@@ -74,4 +82,4 @@ export function SidePanel({
 
 SidePanel.displayName = 'SidePanel';
 
-export default connect(mapStateToProps)(SidePanel);
+export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);
