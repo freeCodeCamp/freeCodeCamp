@@ -161,7 +161,7 @@ jobs:
           pnpm install
 
       - name: Install Chrome for Puppeteer
-        run: pnpm dlx puppeteer browsers install chrome
+        run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         run: pnpm test
@@ -215,7 +215,7 @@ jobs:
           pnpm install
 
       - name: Install Chrome for Puppeteer
-        run: pnpm dlx puppeteer browsers install chrome
+        run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         run: pnpm test
@@ -280,7 +280,7 @@ jobs:
           pnpm run build
 
       - name: Install Chrome for Puppeteer
-        run: pnpm dlx puppeteer browsers install chrome
+        run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         env:
