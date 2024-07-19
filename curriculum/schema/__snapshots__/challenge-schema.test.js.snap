@@ -88,6 +88,7 @@ const schema = Joi.object()
   .keys({
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
+    blockType: Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam'),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
     challengeType: Joi.number().min(0).max(23).required(),
