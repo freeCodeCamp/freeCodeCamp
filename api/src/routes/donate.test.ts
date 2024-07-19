@@ -357,7 +357,7 @@ describe('Donate', () => {
       it('should return 500 if there is no donation record', async () => {
         const response = await superPut('/donate/update-stripe-card');
         expect(response.body).toEqual({
-          message: 'Something went wrong.',
+          message: 'flash.generic-error',
           type: 'danger'
         });
         expect(response.status).toBe(500);

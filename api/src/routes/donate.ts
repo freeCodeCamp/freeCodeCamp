@@ -35,36 +35,27 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.updateStripeCard
     },
-    async (req, reply) => {
-      try {
-        const donation = await fastify.prisma.donation.findFirst({
-          where: { userId: req.user?.id }
-        });
-        if (!donation)
-          throw Error(`Stripe donation record not found: ${req.user?.id}`);
-        const { customerId, subscriptionId } = donation;
-        const session = await stripe.checkout.sessions.create({
-          payment_method_types: ['card'],
-          mode: 'setup',
-          customer: customerId,
-          setup_intent_data: {
-            metadata: {
-              customer_id: customerId,
-              subscription_id: subscriptionId
-            }
-          },
-          success_url: `${HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
-          cancel_url: `${HOME_LOCATION}/update-stripe-card`
-        });
-        return { sessionId: session.id } as const;
-      } catch (error) {
-        fastify.log.error(error);
-        void reply.code(500);
-        return {
-          type: 'danger',
-          message: 'Something went wrong.'
-        } as const;
-      }
+    async req => {
+      const donation = await fastify.prisma.donation.findFirst({
+        where: { userId: req.user?.id }
+      });
+      if (!donation)
+        throw Error(`Stripe donation record not found: ${req.user?.id}`);
+      const { customerId, subscriptionId } = donation;
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        mode: 'setup',
+        customer: customerId,
+        setup_intent_data: {
+          metadata: {
+            customer_id: customerId,
+            subscription_id: subscriptionId
+          }
+        },
+        success_url: `${HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${HOME_LOCATION}/update-stripe-card`
+      });
+      return { sessionId: session.id } as const;
     }
   );
 
