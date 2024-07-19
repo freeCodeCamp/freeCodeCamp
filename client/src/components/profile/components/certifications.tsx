@@ -90,7 +90,7 @@ function Certificates({
           <h3>{t('settings.headings.legacy-certs')}</h3>
           <Spacer size='medium' />
           {legacyCerts && (
-            <ul aria-labelledby='legacy-certifications'>
+            <ul>
               {legacyCerts
                 .filter(({ show }) => show)
                 .map(cert => (
