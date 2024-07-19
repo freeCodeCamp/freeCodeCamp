@@ -182,7 +182,7 @@ export type ChallengeNode = {
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
-    demoType: 'lab' | 'finished-project' | null;
+    demoType: 'lab' | 'workshop' | null;
     description: string;
     challengeFiles: ChallengeFiles;
     fields: Fields;

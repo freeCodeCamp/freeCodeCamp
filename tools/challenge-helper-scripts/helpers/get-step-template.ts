@@ -71,7 +71,7 @@ function getStepTemplate({
 
   const demoString = isFirstChallenge
     ? `
-# demoType can either be 'lab' or 'finished-project'. If the project or lab doesn't have a preview, delete the property
+# demoType can either be 'lab' or 'workshop'. If the project or lab doesn't have a preview, delete the property
 demoType: lab`
     : '';
 
