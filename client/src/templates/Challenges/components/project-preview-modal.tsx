@@ -16,7 +16,6 @@ import './project-preview-modal.css';
 
 interface ProjectPreviewMountedPayload {
   challengeData: CompletedChallenge | null;
-  showProjectPreview: boolean;
 }
 
 interface Props {
@@ -25,7 +24,6 @@ interface Props {
   projectPreviewMounted: (payload: ProjectPreviewMountedPayload) => void;
   challengeData: CompletedChallenge | null;
   setEditorFocusability: (focusability: boolean) => void;
-  showProjectPreview: boolean;
   previewTitle: string;
   closeText: string;
 }
@@ -45,7 +43,6 @@ function ProjectPreviewModal({
   projectPreviewMounted,
   challengeData,
   setEditorFocusability,
-  showProjectPreview,
   previewTitle,
   closeText
 }: Props): JSX.Element {
@@ -66,9 +63,7 @@ function ProjectPreviewModal({
       <Modal.Body>
         <Preview
           previewId={projectPreviewId}
-          previewMounted={() =>
-            projectPreviewMounted({ challengeData, showProjectPreview })
-          }
+          previewMounted={() => projectPreviewMounted({ challengeData })}
         />
       </Modal.Body>
       <Modal.Footer>
