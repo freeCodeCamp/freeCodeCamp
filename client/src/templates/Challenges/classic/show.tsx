@@ -11,6 +11,7 @@ import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
+import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
@@ -58,6 +59,8 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
+import { preloadPage } from '../../../../utils/gatsby/page-loading';
+import envData from '../../../../config/env.json';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -302,6 +305,14 @@ function ShowClassic({
   ): void => {
     setUsingKeyboardInTablist(usingKeyboardInTablist);
   };
+
+  // AB testing Pre-fetch in the Spanish locale
+  const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
+  useEffect(() => {
+    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
+      preloadPage(nextChallengePath);
+    }
+  }, [nextChallengePath, isPreFetchEnabled]);
 
   useEffect(() => {
     initializeComponent(title);
