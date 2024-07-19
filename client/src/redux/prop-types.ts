@@ -193,6 +193,7 @@ export type ChallengeNode = {
     guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
+    hasDemo: boolean | null;
     helpCategory: string;
     id: string;
     instructions: string;
