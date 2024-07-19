@@ -110,7 +110,6 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
     challengeMeta: ChallengeMeta;
     projectPreview: {
       challengeData: CompletedChallenge;
-      showProjectPreview: boolean;
     };
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -183,13 +182,13 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
+        demoType,
         title,
         description,
         instructions,
         fields: { tests, blockName },
         challengeType,
         hasEditableBoundaries,
-        hasDemo,
         superBlock,
         helpCategory,
         forumTopicId,
@@ -203,7 +202,7 @@ function ShowClassic({
   pageContext: {
     challengeMeta,
     challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
-    projectPreview: { challengeData, showProjectPreview }
+    projectPreview: { challengeData }
   },
   createFiles,
   cancelTests,
@@ -360,7 +359,10 @@ function ShowClassic({
     );
 
     initTests(tests);
-    if (showProjectPreview) openModal('projectPreview');
+    // Typically, this kind of preview only appears on the first step of a
+    // project and is shown (once) automatically. In contrast, labs are more
+    // freeform, so the preview is shown on demand.
+    if (demoType === 'workshop') openModal('projectPreview');
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -424,7 +426,7 @@ function ShowClassic({
           resizeProps={resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
-          showProjectPreview={showProjectPreview}
+          showProjectPreview={demoType === 'workshop'}
         />
       )
     );
@@ -453,7 +455,7 @@ function ShowClassic({
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
-              hasDemo
+              hasDemo: demoType === 'lab'
             })}
             notes={notes}
             onPreviewResize={onPreviewResize}
@@ -488,7 +490,7 @@ function ShowClassic({
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
-              hasDemo
+              hasDemo: demoType === 'lab'
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
@@ -518,7 +520,7 @@ function ShowClassic({
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
           previewTitle={t('learn.project-preview-title')}
-          showProjectPreview={showProjectPreview}
+          showProjectPreview={true}
         />
         <ShortcutsModal />
       </LearnLayout>
@@ -535,11 +537,11 @@ export const query = graphql`
     challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
       challenge {
         block
+        demoType
         title
         description
         id
         hasEditableBoundaries
-        hasDemo
         instructions
         notes
         challengeType

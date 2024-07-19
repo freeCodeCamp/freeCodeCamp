@@ -147,7 +147,7 @@ exports.createChallengePages = function (createPage) {
 // it during the curriculum build process and attach it to the first challenge?
 // That would remove the need to analyse allChallengeEdges.
 function getProjectPreviewConfig(challenge, allChallengeEdges) {
-  const { block, demoType } = challenge;
+  const { block } = challenge;
 
   const challengesInBlock = allChallengeEdges
     .filter(({ node: { challenge } }) => challenge.block === block)
@@ -165,7 +165,6 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   }));
 
   return {
-    showProjectPreview: demoType === 'workshop' || demoType === 'lab',
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles
