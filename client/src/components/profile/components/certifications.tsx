@@ -2,11 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import './certifications.css';
 
 import { certificatesByNameSelector } from '../../../redux/selectors';
 import type { CurrentCert } from '../../../redux/prop-types';
 import { FullWidthRow, Spacer, ButtonLink } from '../../helpers';
+import './certifications.css';
 
 const mapStateToProps = (
   state: Record<string, unknown>,
@@ -70,8 +70,8 @@ function Certificates({
 }: CertificationProps): JSX.Element {
   const { t } = useTranslation();
   return (
-    <FullWidthRow className='certifications'>
-      <h2>{t('profile.fcc-certs')}</h2>
+    <FullWidthRow className='certifications profile-certifications'>
+      <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
       <br />
       {hasModernCert && currentCerts ? (
         <ul aria-labelledby='fcc-certifications'>
@@ -90,7 +90,7 @@ function Certificates({
           <h3>{t('settings.headings.legacy-certs')}</h3>
           <Spacer size='medium' />
           {legacyCerts && (
-            <ul>
+            <ul aria-labelledby='legacy-certifications'>
               {legacyCerts
                 .filter(({ show }) => show)
                 .map(cert => (
