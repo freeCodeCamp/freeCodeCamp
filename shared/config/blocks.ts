@@ -1,8 +1,8 @@
 export enum BlockTypes {
-  workshop,
-  lab,
-  lecture,
-  review,
-  quiz,
-  exam
+  lecture = 'lecture',
+  workshop = 'workshop',
+  lab = 'lab',
+  review = 'review',
+  quiz = 'quiz',
+  exam = 'exam'
 }
