@@ -512,6 +512,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {

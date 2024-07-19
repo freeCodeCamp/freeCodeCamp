@@ -76,6 +76,7 @@ exports.createPages = async function createPages({
           node {
             challenge {
               block
+              blockType
               certification
               challengeType
               dashedName
