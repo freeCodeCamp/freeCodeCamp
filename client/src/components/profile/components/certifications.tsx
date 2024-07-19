@@ -70,7 +70,7 @@ function Certificates({
 }: CertificationProps): JSX.Element {
   const { t } = useTranslation();
   return (
-    <FullWidthRow className='certifications profile-certifications'>
+    <FullWidthRow className='profile-certifications'>
       <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
       <br />
       {hasModernCert && currentCerts ? (
