@@ -351,8 +351,6 @@ describe('Donate', () => {
         });
         expect(response.body).toEqual({ sessionId: 'checkout_session_id' });
         expect(response.status).toBe(200);
-
-        expect(true).toBe(true);
       });
       it('should return 500 if there is no donation record', async () => {
         const response = await superPut('/donate/update-stripe-card');
