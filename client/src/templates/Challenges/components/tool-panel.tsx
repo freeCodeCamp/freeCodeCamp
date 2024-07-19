@@ -44,7 +44,6 @@ interface ToolPanelProps {
   challengeType: number;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   saveChallenge: () => void;
-  hasDemo: boolean | null;
   isMobile?: boolean;
   isSignedIn: boolean;
   openHelpModal: () => void;
@@ -64,8 +63,7 @@ function ToolPanel({
   openVideoModal,
   openResetModal,
   guideUrl,
-  videoUrl,
-  hasDemo
+  videoUrl
 }: ToolPanelProps) {
   const handleRunTests = () => {
     executeChallenge({ showCompletionModal: true });
@@ -105,9 +103,6 @@ function ToolPanel({
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {hasDemo && (
-            <MenuItem onClick={() => {}}>{t('buttons.show-demo')}</MenuItem>
-          )}
           {guideUrl ? (
             <MenuItem
               href={guideUrl}
