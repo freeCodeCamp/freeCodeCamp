@@ -277,7 +277,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     );
 
     challenge.block = meta.dashedName;
-    challenge.blockType = meta.blockType || null;
+    challenge.blockType = meta.blockType;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);
