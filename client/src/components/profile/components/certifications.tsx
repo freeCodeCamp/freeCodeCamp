@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import './certifications.css';
 
 import { certificatesByNameSelector } from '../../../redux/selectors';
 import type { CurrentCert } from '../../../redux/prop-types';
@@ -45,7 +46,7 @@ interface CertButtonProps {
 function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   const { t } = useTranslation();
   return (
-    <>
+    <li>
       <ButtonLink
         block
         size='large'
@@ -56,7 +57,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
         })}
       </ButtonLink>
       <Spacer size='small' />
-    </>
+    </li>
   );
 }
 
@@ -73,11 +74,13 @@ function Certificates({
       <h2>{t('profile.fcc-certs')}</h2>
       <br />
       {hasModernCert && currentCerts ? (
-        currentCerts
-          .filter(({ show }) => show)
-          .map(cert => (
-            <CertButton key={cert.certSlug} cert={cert} username={username} />
-          ))
+        <ul aria-labelledby='fcc-certifications'>
+          {currentCerts
+            .filter(({ show }) => show)
+            .map(cert => (
+              <CertButton key={cert.certSlug} cert={cert} username={username} />
+            ))}
+        </ul>
       ) : (
         <p className='text-center'>{t('profile.no-certs')}</p>
       )}
@@ -86,16 +89,19 @@ function Certificates({
           <Spacer size='medium' />
           <h3>{t('settings.headings.legacy-certs')}</h3>
           <Spacer size='medium' />
-          {legacyCerts &&
-            legacyCerts
-              .filter(({ show }) => show)
-              .map(cert => (
-                <CertButton
-                  key={cert.certSlug}
-                  cert={cert}
-                  username={username}
-                />
-              ))}
+          {legacyCerts && (
+            <ul aria-labelledby='legacy-certifications'>
+              {legacyCerts
+                .filter(({ show }) => show)
+                .map(cert => (
+                  <CertButton
+                    key={cert.certSlug}
+                    cert={cert}
+                    username={username}
+                  />
+                ))}
+            </ul>
+          )}
           <Spacer size='medium' />
         </div>
       ) : null}
