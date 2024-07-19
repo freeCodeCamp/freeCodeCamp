@@ -16,13 +16,15 @@ interface Options {
   challengeType: number;
   projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
+  isFirstChallenge?: boolean;
 }
 
 const createStepFile = ({
   stepNum,
   challengeType,
   projectPath = getProjectPath(),
-  challengeSeeds = {}
+  challengeSeeds = {},
+  isFirstChallenge = false
 }: Options): ObjectID => {
   const challengeId = new ObjectID();
 
@@ -30,7 +32,8 @@ const createStepFile = ({
     challengeId,
     challengeSeeds,
     stepNum,
-    challengeType
+    challengeType,
+    isFirstChallenge
   });
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
