@@ -520,7 +520,6 @@ function ShowClassic({
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
           previewTitle={t('learn.project-preview-title')}
-          showProjectPreview={true}
         />
         <ShortcutsModal />
       </LearnLayout>
