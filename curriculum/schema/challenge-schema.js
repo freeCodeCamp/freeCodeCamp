@@ -106,6 +106,7 @@ const schema = Joi.object()
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),
+    hasDemo: Joi.boolean(),
     helpCategory: Joi.valid(
       'JavaScript',
       'HTML-CSS',

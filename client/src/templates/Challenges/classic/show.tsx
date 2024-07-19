@@ -189,6 +189,7 @@ function ShowClassic({
         fields: { tests, blockName },
         challengeType,
         hasEditableBoundaries,
+        hasDemo,
         superBlock,
         helpCategory,
         forumTopicId,
@@ -465,7 +466,12 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             toolPanel={
-              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
+              <ToolPanel
+                guideUrl={guideUrl}
+                isMobile
+                videoUrl={videoUrl}
+                hasDemo={hasDemo}
+              />
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
@@ -482,7 +488,13 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
+              toolPanel: (
+                <ToolPanel
+                  guideUrl={guideUrl}
+                  videoUrl={videoUrl}
+                  hasDemo={hasDemo}
+                />
+              )
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
@@ -533,6 +545,7 @@ export const query = graphql`
         description
         id
         hasEditableBoundaries
+        hasDemo
         instructions
         notes
         challengeType
