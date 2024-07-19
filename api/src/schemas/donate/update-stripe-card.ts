@@ -7,4 +7,5 @@ export const updateStripeCard = {
       sessionId: Type.String()
     }),
     default: genericError
+  }
 };

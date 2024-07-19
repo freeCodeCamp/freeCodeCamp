@@ -37,7 +37,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     },
     async req => {
       const donation = await fastify.prisma.donation.findFirst({
-        where: { userId: req.user?.id }
+        where: { userId: req.user?.id, provider: 'stripe' }
       });
       if (!donation)
         throw Error(`Stripe donation record not found: ${req.user?.id}`);
