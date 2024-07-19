@@ -1,9 +1,6 @@
 const path = require('path');
 const { sortChallengeFiles } = require('../sort-challengefiles');
-const {
-  challengeTypes,
-  viewTypes
-} = require('../../../shared/config/challenge-types');
+const { viewTypes } = require('../../../shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -147,8 +144,7 @@ exports.createChallengePages = function (createPage) {
 };
 
 function getProjectPreviewConfig(challenge, allChallengeEdges) {
-  const { block, challengeOrder, challengeType, usesMultifileEditor } =
-    challenge;
+  const { block, demoType } = challenge;
 
   const challengesInBlock = allChallengeEdges
     .filter(({ node: { challenge } }) => challenge.block === block)
@@ -166,15 +162,7 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   }));
 
   return {
-    showProjectPreview:
-      challengeOrder === 0 &&
-      usesMultifileEditor &&
-      // TODO: handle the special cases better. Create a meta property for
-      // showProjectPreview, maybe? Then we can remove all the following cases
-      challengeType !== challengeTypes.multifileCertProject &&
-      challengeType !== challengeTypes.multifilePythonCertProject &&
-      challengeType !== challengeTypes.python &&
-      challengeType !== challengeTypes.js,
+    showProjectPreview: demoType === 'finished-project' || demoType === 'lab',
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles
