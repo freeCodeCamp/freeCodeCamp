@@ -163,7 +163,8 @@ async function createFirstChallenge(
     projectPath: newChallengeDir + '/',
     stepNum: 1,
     challengeType: 0,
-    challengeSeeds
+    challengeSeeds,
+    isFirstChallenge: true
   });
 }
 
