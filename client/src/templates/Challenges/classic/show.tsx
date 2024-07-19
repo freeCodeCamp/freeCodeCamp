@@ -372,9 +372,11 @@ function ShowClassic({
   };
 
   const renderInstructionsPanel = ({
-    toolPanel
+    toolPanel,
+    hasDemo
   }: {
     toolPanel: React.ReactNode;
+    hasDemo: boolean | null;
   }) => {
     return (
       <SidePanel
@@ -398,6 +400,7 @@ function ShowClassic({
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
         superBlock={superBlock}
+        hasDemo={hasDemo}
       />
     );
   };
@@ -449,7 +452,8 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: null
+              toolPanel: null,
+              hasDemo
             })}
             notes={notes}
             onPreviewResize={onPreviewResize}
@@ -466,12 +470,7 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             toolPanel={
-              <ToolPanel
-                guideUrl={guideUrl}
-                isMobile
-                videoUrl={videoUrl}
-                hasDemo={hasDemo}
-              />
+              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
@@ -488,13 +487,8 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: (
-                <ToolPanel
-                  guideUrl={guideUrl}
-                  videoUrl={videoUrl}
-                  hasDemo={hasDemo}
-                />
-              )
+              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
+              hasDemo
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
