@@ -27,6 +27,7 @@
     "insert-challenge": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-challenge",
     "insert-step": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-step",
     "insert-task": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/insert-task",
+    "install-puppeteer": "puppeteer browsers install chrome",
     "delete-step": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "delete-challenge": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "delete-task": "CALLING_DIR=$INIT_CWD ts-node --project ../tsconfig.json ../tools/challenge-helper-scripts/delete-task",

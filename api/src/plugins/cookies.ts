@@ -10,6 +10,12 @@ import {
 
 export { type CookieSerializeOptions } from '@fastify/cookie';
 
+declare module 'fastify' {
+  interface FastifyReply {
+    clearOurCookies: () => void;
+  }
+}
+
 /**
  * Signs a cookie value by prefixing it with "s:" and using the COOKIE_SECRET.
  *
@@ -58,6 +64,12 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
       secure: FREECODECAMP_NODE_ENV !== 'development',
       signed: true
     }
+  });
+
+  void fastify.decorateReply('clearOurCookies', function () {
+    void this.clearCookie('jwt_access_token');
+    void this.clearCookie('_csrf');
+    void this.clearCookie('csrf_token');
   });
 
   done();

@@ -282,16 +282,8 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
 
   if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
     describe('Assert meta order', function () {
-      /** This array can be used to skip a superblock - we'll use this
-       * when we are working on the new project-based curriculum for
-       * a superblock (because keeping those challenges in order is
-       * tricky and needs cleaning up before deploying).
-       */
-      const superBlocksUnderDevelopment = ['scientific-computing-with-python'];
       const superBlocks = new Set([
-        ...Object.values(meta)
-          .map(el => el.superBlock)
-          .filter(el => !superBlocksUnderDevelopment.includes(el))
+        ...Object.values(meta).map(el => el.superBlock)
       ]);
       superBlocks.forEach(superBlock => {
         const filteredMeta = Object.values(meta)
@@ -316,9 +308,12 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           );
         });
         filteredMeta.forEach((meta, index) => {
-          it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-            assert.equal(meta.order, index);
-          });
+          // ignore block order for upcoming blocks
+          if (!meta.isUpcomingChange) {
+            it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+              assert.equal(meta.order, index);
+            });
+          }
         });
       });
     });
@@ -453,7 +448,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   console.error = oldConsoleError;
                   assert(
                     fails,
-                    'Test suit does not fail on the initial contents'
+                    'Test suite does not fail on the initial contents'
                   );
                 });
 

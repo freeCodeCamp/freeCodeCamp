@@ -100,4 +100,38 @@ describe('cookies', () => {
       value: expect.stringMatching(/s:value\.\w*/)
     });
   });
+
+  // TODO(Post-MVP): Clear all cookies rather than just three specific ones?
+  // Then it should be called something like clearAllCookies.
+  it('clearOurCookies should clear cookies that we set', async () => {
+    fastify.get('/test', async (req, reply) => {
+      void reply.clearOurCookies();
+      return { ok: true };
+    });
+
+    const res = await fastify.inject({
+      method: 'GET',
+      url: '/test'
+    });
+
+    expect(res.cookies).toStrictEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          name: 'jwt_access_token',
+          expires: new Date(0),
+          value: ''
+        }),
+        expect.objectContaining({
+          name: '_csrf',
+          expires: new Date(0),
+          value: ''
+        }),
+        expect.objectContaining({
+          name: 'csrf_token',
+          expires: new Date(0),
+          value: ''
+        })
+      ])
+    );
+  });
 });
