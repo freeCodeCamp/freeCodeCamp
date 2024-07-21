@@ -211,7 +211,7 @@ test.describe('Signed in user', () => {
   });
 
   test.afterEach(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('User can reset on a multi-file project after reloading and saving', async ({

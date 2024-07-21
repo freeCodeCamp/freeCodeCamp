@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.afterEach(async () => {
-  await execP('node ./tools/scripts/seed/seed-demo-user certified-user');
+  await execP('node ./tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Progress reset modal', () => {
