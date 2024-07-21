@@ -21,7 +21,7 @@ Höre dir das Audio an, um die unteren Sätze zu vervollständigen.
 
 ## --sentence--
 
-`Tell me about our team meetings, Sophie. Do they happen _ week?`
+`Tell me about our team meetings, Sophie. Do they happen BLANK week?`
 
 ## -blanks--
 

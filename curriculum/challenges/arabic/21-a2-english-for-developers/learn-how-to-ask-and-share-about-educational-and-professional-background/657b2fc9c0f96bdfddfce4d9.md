@@ -15,7 +15,7 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 ## --sentence--
 
-`I _ a course in organizational _, and it _ my interest in the workplace and employee dynamics.`
+`I BLANK a course in organizational BLANK, and it BLANK my interest in the workplace and employee dynamics.`
 
 ## --blanks--
 

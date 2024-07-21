@@ -19,7 +19,7 @@ Listen to the audio to complete the sentence below.
 
 ## Frases
 
-`Maria thinks challenges are positive. She _ us to find solutions together.`
+`Maria thinks challenges are positive. She BLANK us to find solutions together.`
 
 ## Palabra correcta
 

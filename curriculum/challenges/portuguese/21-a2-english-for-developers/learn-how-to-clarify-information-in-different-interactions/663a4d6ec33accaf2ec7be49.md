@@ -21,7 +21,7 @@ Listen to the dialogue and fill in the blanks.
 
 ## --sentence--
 
-`Sure. Tom is a tall guy with a _ _.`
+`Sure. Tom is a tall guy with a BLANK BLANK.`
 
 ## --blanks--
 

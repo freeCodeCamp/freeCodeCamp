@@ -15,7 +15,7 @@ dashedName: task-104
 
 ## --sentence--
 
-`Absolutely. If you see any security breaches or incidents, you _ _ report them _.`
+`Absolutely. If you see any security breaches or incidents, you BLANK BLANK report them BLANK.`
 
 ## --blanks--
 

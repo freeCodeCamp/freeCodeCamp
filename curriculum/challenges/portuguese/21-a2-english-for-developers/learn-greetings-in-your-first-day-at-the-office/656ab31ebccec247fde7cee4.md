@@ -18,7 +18,7 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 ## --frase--
 
-`_. My computer and drawing tablet are great, too.`
+`BLANK. My computer and drawing tablet are great, too.`
 
 ## --espaços em branco--
 

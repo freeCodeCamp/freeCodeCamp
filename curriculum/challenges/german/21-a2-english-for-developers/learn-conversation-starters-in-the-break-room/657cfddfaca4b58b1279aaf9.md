@@ -19,7 +19,7 @@ Höre dir das Audio an, um die unteren Sätze zu vervollständigen.
 
 ## --sentence--
 
-`Maria thinks challenges are positive. She _ us to find solutions together.`
+`Maria thinks challenges are positive. She BLANK us to find solutions together.`
 
 ## -blanks--
 

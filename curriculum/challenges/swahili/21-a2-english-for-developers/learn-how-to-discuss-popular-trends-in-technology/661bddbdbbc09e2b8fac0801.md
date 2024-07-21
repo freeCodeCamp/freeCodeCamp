@@ -23,7 +23,7 @@ Listen to the sentence and fill in the blank.
 
 ## --sentence--
 
-`Also, it's used for identity verification _ airports and secure facilities.`
+`Also, it's used for identity verification BLANK airports and secure facilities.`
 
 ## --blanks--
 

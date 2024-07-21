@@ -72,7 +72,7 @@ assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
 assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
 ```
 
-`tokenize('hello^|world|how^are^you^|', '|', '^')` should return `['hello|world', 'howareyou|']`
+`tokenize('hello^|world|how^are^you^|', '|', '^')` deve retornar `['hello|world', 'howareyou|']`
 
 ```js
 assert.deepEqual(tokenize(testStr3, '|', '^'), res3);
