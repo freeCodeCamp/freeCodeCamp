@@ -1,9 +1,9 @@
 {
-  "name": "Learn Semantic HTML by building a blog page ",
+  "name": "Semantic HTML Workshop - Personal Blog Page",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "learn-semantic-html-by-building-a-blog-page",
+  "dashedName": "workshop-blog-page",
   "order": 12,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "669aff9f5488f1bea056416d", "title": "Step 1" }],
