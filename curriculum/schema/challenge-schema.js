@@ -91,7 +91,6 @@ const schema = Joi.object()
       then: Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam').required(),
       otherwise: Joi.valid(null)
     }),
-    //Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam'),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
     challengeType: Joi.number().min(0).max(23).required(),
