@@ -1701,7 +1701,7 @@
     "intro": ["placeholder"],
     "blocks": {
       "workshop-cat-photo-app": {
-        "title": "Basic HTML Workshop - Build a Cat Photo App",
+        "title": "Build a Cat Photo App",
         "intro": [
           "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
           "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
