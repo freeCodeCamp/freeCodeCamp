@@ -176,11 +176,11 @@ const defaultOutput = `
 */`;
 
 function ShowClassic({
-  challengeFiles: reduxChallengeFiles,
+  challengeFiles,
   data: {
     challengeNode: {
       challenge: {
-        challengeFiles,
+        challengeFiles: seedChallengeFiles,
         block,
         title,
         description,
@@ -363,7 +363,7 @@ function ShowClassic({
     });
 
     createFiles(
-      mergeChallengeFiles(challengeFiles, savedChallenge?.challengeFiles)
+      mergeChallengeFiles(seedChallengeFiles, savedChallenge?.challengeFiles)
     );
 
     initTests(tests);
@@ -416,9 +416,9 @@ function ShowClassic({
     isUsingKeyboardInTablist
   }: RenderEditorArgs) => {
     return (
-      reduxChallengeFiles && (
+      challengeFiles && (
         <MultifileEditor
-          challengeFiles={reduxChallengeFiles}
+          challengeFiles={challengeFiles}
           block={block}
           superBlock={superBlock}
           containerRef={containerRef}
@@ -482,7 +482,7 @@ function ShowClassic({
         )}
         {!isMobile && (
           <DesktopLayout
-            challengeFiles={reduxChallengeFiles}
+            challengeFiles={challengeFiles}
             challengeType={challengeType}
             editor={renderEditor({
               isMobileLayout: false,
