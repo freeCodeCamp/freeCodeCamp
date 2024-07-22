@@ -2,6 +2,7 @@ const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../shared/config/challenge-types');
+const { SuperBlocks } = require('../../shared/config/superblocks');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -85,7 +86,12 @@ const schema = Joi.object()
   .keys({
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
-    blockType: Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam'),
+    blockType: Joi.when('superBlock', {
+      is: [SuperBlocks.FrontEndDevelopment],
+      then: Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam').required(),
+      otherwise: Joi.valid(null)
+    }),
+    //Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam'),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
     challengeType: Joi.number().min(0).max(23).required(),
