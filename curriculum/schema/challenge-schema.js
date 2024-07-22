@@ -88,7 +88,14 @@ const schema = Joi.object()
     blockId: Joi.objectId(),
     blockType: Joi.when('superBlock', {
       is: [SuperBlocks.FrontEndDevelopment],
-      then: Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam').required(),
+      then: Joi.valid(
+        'workshop',
+        'lab',
+        'lecture',
+        'review',
+        'quiz',
+        'exam'
+      ).required(),
       otherwise: Joi.valid(null)
     }),
     challengeOrder: Joi.number(),
