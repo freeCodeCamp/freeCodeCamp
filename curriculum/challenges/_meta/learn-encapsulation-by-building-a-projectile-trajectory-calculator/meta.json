@@ -1,10 +1,10 @@
 {
   "name": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-encapsulation-by-building-a-projectile-trajectory-calculator",
-  "order": 16,
+  "order": 17,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

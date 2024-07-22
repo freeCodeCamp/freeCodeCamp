@@ -1,35 +1,35 @@
 ---
 id: 6570447ee7b02272663824e2
-title: Learn Block and Inline Lesson D
+title: Блокові та рядкові елементи. Урок №4
 challengeType: 15
 dashedName: learn-block-and-inline-lesson-d
 ---
 
 # --description--
 
-Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a top margin to an `inline` element?
+Тепер у вас є базове розуміння того, як додати ширину та висоту до рядкових елементів. Що ж відбудеться, якщо додати верхнє поле до рядкового елемента?
 
 # --question--
 
 ## --text--
 
-How does `margin-top` affect `inline` elements?
+Як `margin-top` впливає на рядкові елементи?
 
 ## --answers--
 
-`margin-top` has no impact on the layout of `inline` elements
+`margin-top` не впливає на макет рядкових елементів.
 
 ---
 
-`margin-top` increases the height of `inline` elements.
+`margin-top` збільшує висоту рядкових елементів.
 
 ---
 
-`margin-top` adds space above the `inline` element.
+`margin-top` додає місце зверху рядкових елементів.
 
 ---
 
-`margin-top` only affects the horizontal spacing of `inline` elements.
+`margin-top` впливає лише на горизонтальний інтервал рядкових елементів.
 
 ## --video-solution--
 

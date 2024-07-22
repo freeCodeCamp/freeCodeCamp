@@ -75,7 +75,7 @@ describe('fill-in-the-blanks plugin', () => {
     const testObject = file.data.fillInTheBlank;
 
     expect(testObject.sentence).toBe(
-      '<p>Hello, You _ the new graphic designer, _? _ to meet you!</p>'
+      '<p>Hello, You BLANK the new graphic designer, BLANK? BLANK to meet you!</p>'
     );
   });
 
@@ -84,8 +84,8 @@ describe('fill-in-the-blanks plugin', () => {
     const testObject = file.data.fillInTheBlank;
 
     expect(testObject.sentence).toBe(
-      `<p>A sentence _ paragraph 1</p>
-<p>Sentence in _ 2</p>`
+      `<p>A sentence BLANK paragraph 1</p>
+<p>Sentence in BLANK 2</p>`
     );
   });
 
