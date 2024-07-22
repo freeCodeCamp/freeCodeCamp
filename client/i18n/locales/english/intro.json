@@ -1710,8 +1710,8 @@
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
       },
-      "lab-travel-page": {
-        "title": "Travel Page",
+      "lab-travel-agency-page": {
+        "title": "Travel Agency Page",
         "intro": [
           "For this lab, you will create a web page of a travel agency."
         ]
