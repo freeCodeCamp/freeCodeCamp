@@ -1,15 +1,15 @@
 ---
 id: 637f4e8772c65bc8e73dfe2d
-title: Working With Text Lesson G
+title: Робота з текстом. Урок №7
 challengeType: 15
 dashedName: working-with-text-lesson-g
 ---
 
 # --description--
 
-HTML comments are not visible to the browser; they allow us to comment on your code so that other developers or your future selves can read them and get some context about something that might not be clear in the code.
+Браузер не бачить коментарі HTML: вони дозволяють коментувати код, щоб ви або інші розробники могли прочитати їх і отримати певний контекст про те, що може бути незрозумілим у коді.
 
-Writing an HTML comment is simple: You just enclose the comment with `<!--` and `-->`tags. For example:
+Написати коментар HTML просто: ви всього лиш вкладаєте коментар у теги `<!--` та `-->`. Наприклад:
 
 ```html
 <h1> View the html to see the hidden comments </h1>
@@ -23,13 +23,13 @@ Writing an HTML comment is simple: You just enclose the comment with `<!--` and 
 
 # --assignment--
 
-To get some practice working with text in HTML, create a plain blog article page which uses different headings, uses paragraphs, and has some text in the paragraphs bolded and italicized. You can use [Lorem Ipsum](https://loremipsum.io) to generate dummy text, in place of real text as you build your sites.
+Щоб трохи попрактикуватися в роботі з текстом у HTML, створіть звичайну сторінку із публікацією, у якій наявні різні заголовки та абзаци, а деякий текст в абзацах виділено жирним шрифтом і курсивом. Під час створення вебсайту можна використовувати [Lorem Ipsum](https://loremipsum.io), щоб створити фіктивний текст.
 
 # --question--
 
 ## --text--
 
-How do you create HTML comments?
+Як створити коментар у HTML?
 
 ## --answers--
 

@@ -7,7 +7,7 @@ dashedName: learn-arrays-and-loops-lesson-g
 
 # --description--
 
-Now that you know about the most common ways to iterate over values and arrays, there are a few more ways to iterate over arrays. Arrays have a built-in method called `map()`, which is used to create a new array by applying a function to each element of the original array. The `map()` method does not change the original array. The syntax of the `map()` method is as follows:
+Now that you know about the most common ways to iterate over values and arrays, there are a few more ways to iterate over arrays. Arrays have a built-in method called `map()`, which is used to create a new array by applying a function to each element of the original array. The `map()` method does not change the original array. Синтаксис методу `map()` такий:
 
 ```javascript
 const array = [1, 2, 3, 4, 5];

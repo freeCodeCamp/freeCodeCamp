@@ -1,13 +1,13 @@
 ---
 id: 6489cb0b82cf2e4f86f03ae3
-title: The Cascade of CSS Lesson C
+title: Каскадність CSS. Урок №3
 challengeType: 15
 dashedName: the-cascade-of-css-lesson-c
 ---
 
 # --description--
 
-Let’s take a look at a few quick examples to visualize how specificity works. Consider the following HTML and CSS code:
+Розберемо декілька прикладів, щоб зрозуміти специфічність. Розглянемо такий код HTML та CSS:
 
 ```html
 <!-- index.html -->
@@ -29,29 +29,29 @@ Let’s take a look at a few quick examples to visualize how specificity works. 
 }
 ```
 
-In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors.
+У прикладі вище обидва правила використовують лише селектори класу, але правило №2 специфічніше, оскільки використовує більше селекторів класу.
 
 # --question--
 
 ## --text--
 
-Based on the given HTML and CSS code, which color would the `<div class="list subsection"></div>` element be rendered as?
+На основі наданого коду HTML та CSS, якого кольору буде елемент `<div class="list subsection"></div>`?
 
 ## --answers--
 
-blue
+Синього
 
 ---
 
-red
+Червоного
 
 ---
 
-purple
+Фіолетового
 
 ---
 
-black
+Чорного
 
 ## --video-solution--
 

@@ -15,7 +15,7 @@ Ouça o áudio para completar a frase abaixo.
 
 ## --frase--
 
-`Absolutely. If you see any security breaches or incidents, you _ _ report them _.`
+`Absolutely. If you see any security breaches or incidents, you BLANK BLANK report them BLANK.`
 
 ## --espaços em branco--
 

@@ -17,7 +17,7 @@ dashedName: task-58
 
 ## --sentence--
 
-`Sarah: Are you _?`
+`Sarah: Are you BLANK?`
 
 ## --blanks--
 

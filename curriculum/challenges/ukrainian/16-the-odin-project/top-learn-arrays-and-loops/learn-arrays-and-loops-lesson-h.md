@@ -7,7 +7,7 @@ dashedName: learn-arrays-and-loops-lesson-h
 
 # --description--
 
-One other useful array method is the `filter()` method. The `filter()` method creates a new array with all elements that pass the test implemented by the provided function. The syntax of the `filter()` method is as follows:
+One other useful array method is the `filter()` method. The `filter()` method creates a new array with all elements that pass the test implemented by the provided function. Синтаксис методу `filter()` такий:
 
 ```javascript
 const numbers = [2, 5, 6, 1, 9, -1]

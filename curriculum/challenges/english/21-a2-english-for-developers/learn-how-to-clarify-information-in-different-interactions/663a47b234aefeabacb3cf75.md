@@ -16,7 +16,7 @@ A `tall` person is someone above the average in terms of their height. The oppos
 
 ## --sentence--
 
-`Sure. Tom is a _ guy with a friendly smile.`
+`Sure. Tom is a BLANK guy with a friendly smile.`
 
 ## --blanks--
 

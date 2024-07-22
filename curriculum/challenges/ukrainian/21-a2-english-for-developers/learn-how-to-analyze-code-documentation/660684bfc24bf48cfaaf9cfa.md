@@ -17,7 +17,7 @@ dashedName: task-8
 
 ## --sentence--
 
-`Thanks, _ give it a _.`
+`Thanks, BLANK give it a BLANK.`
 
 ## --blanks--
 
