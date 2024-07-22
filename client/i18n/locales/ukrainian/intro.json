@@ -1695,6 +1695,12 @@
         "title": "Вивчіть основи HTML, створивши сторінку з рецептами",
         "intro": ["", ""]
       },
+      "lab-recipe-page": {
+        "title": "Recipe Page",
+        "intro": [
+          "For this lab, you will create a web page of your favorite recipe."
+        ]
+      },
       "front-end-development-certification-exam": {
         "title": "Екзамен з сертифікації «Front End розробка»",
         "intro": ["", ""]
