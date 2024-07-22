@@ -33,7 +33,6 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
-import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
@@ -458,12 +457,11 @@ function ShowClassic({
             })}
             guideUrl={getGuideUrl({ forumTopicId, title })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasNotes={!!notes}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               showToolPanel: false
             })}
-            notes={<Notes notes={notes} />}
+            notes={notes}
             onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
@@ -498,7 +496,7 @@ function ShowClassic({
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
-            notes={<Notes notes={notes} />}
+            notes={notes}
             onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
