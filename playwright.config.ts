@@ -27,6 +27,8 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   timeout: 15 * 1000,
   outputDir: 'playwright/test-results',
+  snapshotPathTemplate:
+    '{testDir}/__screenshots__/{testFilePath}/{testName}-{projectName}{ext}',
 
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
