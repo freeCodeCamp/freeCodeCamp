@@ -314,17 +314,15 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
 
   test.beforeEach(async ({ page }) => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user certified-user --unset-full-stack-cert'
+      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
     );
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
-  // To run this test you will need to run the email server.
-  // See https://contribute.freecodecamp.org/#/how-to-catch-outgoing-emails-locally?id=using-mailhog
   test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
     page
   }) => {
@@ -361,7 +359,7 @@ test.describe('Settings - New User', () => {
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
