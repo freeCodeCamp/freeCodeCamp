@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
-import { SuperBlocks } from '../shared/config/superblocks';
+import { SuperBlocks } from '../shared/config/curriculum';
 import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
@@ -70,12 +70,12 @@ describe('createSuperOrder', () => {
 });
 
 describe('getSuperOrder', () => {
-  it('returns a number for valid superblocks', () => {
+  it('returns a number for valid curriculum', () => {
     expect.assertions(1);
     expect(typeof getSuperOrder('responsive-web-design')).toBe('number');
   });
 
-  it('throws for unknown superblocks', () => {
+  it('throws for unknown curriculum', () => {
     expect.assertions(4);
     expect(() => getSuperOrder()).toThrow();
     expect(() => getSuperOrder(null)).toThrow();
@@ -88,7 +88,7 @@ describe('getSuperOrder', () => {
     expect(() => getSuperOrder('certifications')).toThrow();
   });
 
-  it.skip('returns unique numbers for all current superblocks', () => {
+  it.skip('returns unique numbers for all current curriculum', () => {
     if (
       process.env.SHOW_NEW_CURRICULUM !== 'true' &&
       process.env.SHOW_UPCOMING_CHANGES !== 'true'
