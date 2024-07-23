@@ -71,7 +71,7 @@ function Certificates({
   const { t } = useTranslation();
   return (
     <FullWidthRow className='profile-certifications'>
-      <h2>{t('profile.fcc-certs')}</h2>
+      <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
       <br />
       {hasModernCert && currentCerts ? (
         <ul aria-labelledby='fcc-certifications'>
@@ -87,7 +87,9 @@ function Certificates({
       {hasLegacyCert ? (
         <div>
           <Spacer size='medium' />
-          <h3>{t('settings.headings.legacy-certs')}</h3>
+          <h3 id='legacy-certifications'>
+            {t('settings.headings.legacy-certs')}
+          </h3>
           <Spacer size='medium' />
           {legacyCerts && (
             <ul aria-labelledby='legacy-certifications'>
