@@ -84,7 +84,7 @@ function Certificates({
       ) : (
         <p className='text-center'>{t('profile.no-certs')}</p>
       )}
-      {hasLegacyCert ? (
+      {hasLegacyCert && (
         <div>
           <Spacer size='medium' />
           <h3 id='legacy-certifications'>
@@ -92,21 +92,23 @@ function Certificates({
           </h3>
           <Spacer size='medium' />
           {legacyCerts && (
-            <ul aria-labelledby='legacy-certifications'>
-              {legacyCerts
-                .filter(({ show }) => show)
-                .map(cert => (
-                  <CertButton
-                    key={cert.certSlug}
-                    cert={cert}
-                    username={username}
-                  />
-                ))}
-            </ul>
+            <>
+              <ul aria-labelledby='legacy-certifications'>
+                {legacyCerts
+                  .filter(({ show }) => show)
+                  .map(cert => (
+                    <CertButton
+                      key={cert.certSlug}
+                      cert={cert}
+                      username={username}
+                    />
+                  ))}
+              </ul>
+              <Spacer size='medium' />
+            </>
           )}
-          <Spacer size='medium' />
         </div>
-      ) : null}
+      )}
       <hr />
     </FullWidthRow>
   );
