@@ -138,6 +138,7 @@ function DefaultLayout({
   superBlock,
   theme,
   user,
+  pathname,
   fetchUser,
   updateAllChallengesInfo
 }: DefaultLayoutProps): JSX.Element {
@@ -265,7 +266,7 @@ function DefaultLayout({
                 superBlock={superBlock as string}
               />
             </div>
-          ) : isExSmallViewportHeight ? (
+          ) : pathname === '/donate' ? null : isExSmallViewportHeight ? (
             <Spacer size='xxSmall' />
           ) : (
             <Spacer size='small' />
