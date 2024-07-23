@@ -261,14 +261,12 @@ function DefaultLayout({
           {isChallenge &&
             !examInProgress &&
             (isRenderBreadcrumb ? (
-              <>
-                <div className='breadcrumbs-demo'>
-                  <BreadCrumb
-                    block={block as string}
-                    superBlock={superBlock as string}
-                  />
-                </div>
-              </>
+              <div className='breadcrumbs-demo'>
+                <BreadCrumb
+                  block={block as string}
+                  superBlock={superBlock as string}
+                />
+              </div>
             ) : isExSmallViewportHeight ? (
               <Spacer size='xxSmall' />
             ) : (
