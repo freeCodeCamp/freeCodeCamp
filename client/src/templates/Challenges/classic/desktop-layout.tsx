@@ -271,7 +271,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
 
         {(displayPreviewPane || displayPreviewConsole) && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
+          <ReflexSplitter
+            data-playwright-test-label='preview-left-splitter'
+            propagate={true}
+            {...resizeProps}
+          />
         )}
         {(displayPreviewPane || displayPreviewConsole) && (
           <ReflexElement
