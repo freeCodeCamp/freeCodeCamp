@@ -253,6 +253,8 @@ function ShowClassic({
       reflexLayout &&
       isContained(Object.keys(BASE_LAYOUT), Object.keys(reflexLayout));
 
+    if (!isValidLayout) store.remove(REFLEX_LAYOUT);
+
     return isValidLayout ? reflexLayout : BASE_LAYOUT;
   };
 
