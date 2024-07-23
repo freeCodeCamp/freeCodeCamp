@@ -43,7 +43,15 @@ test.describe('MultifileEditor Component', () => {
     }
   });
 
-  test('Reloading should preserve the editor layout', async ({ page }) => {
+  test('Reloading should preserve the editor layout', async ({
+    page,
+    isMobile
+  }) => {
+    test.skip(
+      isMobile,
+      'The mobile layout does not have resizable panes, so this test is not applicable.'
+    );
+
     const desktopLayout = page.getByTestId('desktop-layout');
     const splitter = desktopLayout.getByTestId('preview-left-splitter');
     const editorPane = desktopLayout.getByTestId('editor-pane');
