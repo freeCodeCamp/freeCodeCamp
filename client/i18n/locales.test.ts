@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { setup } from 'jest-json-schema-extended';
 import { availableLangs, LangNames, LangCodes } from '../../shared/config/i18n';
-import { SuperBlocks } from '../../shared/config/superblocks';
+import { SuperBlocks } from '../../shared/config/curriculum';
 import intro from './locales/english/intro.json';
 
 setup();

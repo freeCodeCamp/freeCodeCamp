@@ -2,10 +2,7 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import intro from '../client/i18n/locales/english/intro.json';
 
-import {
-  SuperBlockStages,
-  superBlockOrder
-} from '../shared/config/superblocks';
+import { SuperBlockStages, superBlockOrder } from '../shared/config/curriculum';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/learn');
