@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect, Page } from '@playwright/test';
-import { SuperBlocks } from '../shared/config/superblocks';
+import { SuperBlocks } from '../shared/config/curriculum';
 import tributePageHtml from './fixtures/tribute-page-html.json';
 import tributePageCss from './fixtures/tribute-page-css.json';
 import curriculum from './fixtures/js-ads-projects.json';

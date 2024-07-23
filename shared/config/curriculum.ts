@@ -1,4 +1,6 @@
-import { Languages } from '../config/i18n';
+// TODO: eventually this should all flow from the curriculum service, since it
+// defines the top-level structure of the curriculum.
+import { Languages } from './i18n';
 
 // all superblocks
 export enum SuperBlocks {

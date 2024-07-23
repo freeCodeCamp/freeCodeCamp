@@ -7,7 +7,7 @@ import {
   SuperBlockStages,
   SuperBlocks,
   superBlockOrder
-} from '../../../../shared/config/superblocks';
+} from '../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { Spacer, ButtonLink } from '../helpers';
