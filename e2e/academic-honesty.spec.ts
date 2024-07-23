@@ -69,6 +69,6 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 });

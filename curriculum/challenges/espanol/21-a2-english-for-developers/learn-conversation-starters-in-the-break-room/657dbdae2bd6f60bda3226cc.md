@@ -21,7 +21,7 @@ Presta atención al audio para completar la oración abajo.
 
 ## Frases
 
-`Tell me about our team meetings, Sophie. Do they happen _ week?`
+`Tell me about our team meetings, Sophie. Do they happen BLANK week?`
 
 ## Palabra correcta
 

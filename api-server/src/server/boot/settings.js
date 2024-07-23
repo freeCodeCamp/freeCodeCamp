@@ -254,7 +254,7 @@ const updatePrivacyTerms = (req, res, next) => {
 const allowedSocialsAndDomains = {
   githubProfile: 'github.com',
   linkedin: 'linkedin.com',
-  twitter: 'twitter.com',
+  twitter: ['twitter.com', 'x.com'],
   website: ''
 };
 
@@ -280,7 +280,9 @@ export function updateMySocials(...args) {
         const url = new URL(val);
         const topDomain = url.hostname.split('.').slice(-2);
         if (topDomain.length === 2) {
-          return topDomain.join('.') === domain;
+          return Array.isArray(domain)
+            ? domain.some(d => topDomain.join('.') === d)
+            : topDomain.join('.') === domain;
         }
         return false;
       } catch (e) {

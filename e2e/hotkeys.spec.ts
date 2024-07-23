@@ -3,6 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { getEditors } from './utils/editor';
+import { alertToBeVisible } from './utils/alerts';
 
 const links = {
   basicJS1:
@@ -67,11 +68,7 @@ test.beforeEach(async ({ page }) => {
     .getByRole('button', { name: translations.buttons.on, exact: true })
     .click();
   // wait for the client to register the change:
-  await expect(
-    page
-      .getByRole('alert')
-      .filter({ hasText: translations.flash['keyboard-shortcut-updated'] })
-  ).toBeVisible();
+  await alertToBeVisible(page, translations.flash['keyboard-shortcut-updated']);
 });
 
 test.afterEach(

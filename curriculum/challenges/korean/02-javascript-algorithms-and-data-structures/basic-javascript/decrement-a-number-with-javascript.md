@@ -1,6 +1,6 @@
 ---
 id: 56533eb9ac21ba0edf2244ad
-title: Decrement a Number with JavaScript
+title: 자바스크립트를 이용해서 수치를 감소시키기
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
@@ -9,51 +9,51 @@ dashedName: decrement-a-number-with-javascript
 
 # --description--
 
-You can easily <dfn>decrement</dfn> or decrease a variable by one with the `--` operator.
+`--` 연산자를 사용해서 간단하게 변수의 값을 1만큼 <dfn>감소(Decrement)</dfn> 시킬 수 있습니다.
 
 ```js
 i--;
 ```
 
-is the equivalent of
+이것은 다음에 나오는 수식과 같습니다.
 
 ```js
 i = i - 1;
 ```
 
-**Note:** The entire line becomes `i--;`, eliminating the need for the equal sign.
+**참고:** 이 전체 행이 `i--;`가 되어, 등호(=) 가 불필요해집니다.
 
 # --instructions--
 
-Change the code to use the `--` operator on `myVar`.
+코드를 변경해서 `myVar`에 `--` 연산자를 사용해 주세요.
 
 # --hints--
 
-`myVar` should equal `10`.
+`myVar`는 `10`과 같아야 합니다.
 
 ```js
 assert(myVar === 10);
 ```
 
-`myVar = myVar - 1;` should be changed.
+`myVar = myVar - 1;`의 식이 변경되어야 합니다.
 
 ```js
 assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*myVar\s*[-]\s*1.*?;?/));
 ```
 
-You should not assign `myVar` with `10`.
+`myVar`에 `10`을 할당해서는 안됩니다.
 
 ```js
 assert(!__helpers.removeJSComments(code).match(/myVar\s*=\s*10.*?;?/));
 ```
 
-You should use the `--` operator on `myVar`.
+`--` 연산자를 `myVar`에 사용해야 합니다.
 
 ```js
 assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(__helpers.removeJSComments(code)));
 ```
 
-You should not change code above the specified comment.
+지정된 코멘트 위의 코드를 변경하면 안됩니다.
 
 ```js
 assert(/let myVar = 11;/.test(__helpers.removeJSComments(code)));

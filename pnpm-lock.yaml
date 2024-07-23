@@ -238,8 +238,8 @@ importers:
         specifier: ^2.3.2
         version: 2.3.2
       stripe:
-        specifier: 8.222.0
-        version: 8.222.0
+        specifier: 16.0.0
+        version: 16.0.0
       validator:
         specifier: 13.11.0
         version: 13.11.0
@@ -820,8 +820,8 @@ importers:
         specifier: 6.26.10
         version: 6.26.10
       '@types/react-instantsearch-dom':
-        specifier: 6.12.7
-        version: 6.12.7
+        specifier: 6.12.8
+        version: 6.12.8
       '@types/react-redux':
         specifier: 7.1.33
         version: 7.1.33
@@ -1238,8 +1238,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.7)
       '@freecodecamp/curriculum-helpers':
-        specifier: 3.6.0
-        version: 3.6.0
+        specifier: 3.7.0
+        version: 3.7.0
       '@types/chai':
         specifier: 4.3.12
         version: 4.3.12
@@ -3045,8 +3045,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@freecodecamp/curriculum-helpers@3.6.0':
-    resolution: {integrity: sha512-ztj6uH1zLGXRM4ZNxOynAO/gNNNIG2nm/bse8VnV40R9i1ZcagKBN7Bs1kemQ98stNy+PWYiyD92Rxv3EucUlw==}
+  '@freecodecamp/curriculum-helpers@3.7.0':
+    resolution: {integrity: sha512-rN3GN57XJh/T8n9Jl7Z71ZoRDrNccumG4qRASq5QncJOaVaXQHKI3eh8pLWdLhZavhXEh4wGSApHq3dXfXknGQ==}
     engines: {npm: '>= 4.0.0'}
 
   '@freecodecamp/loop-protect@3.0.0':
@@ -4293,8 +4293,8 @@ packages:
   '@types/react-instantsearch-core@6.26.10':
     resolution: {integrity: sha512-izn21BqXtO3GA5Tx3x7SP6kfk1GJppkVdowuenKIOUj1sCJ3VHwoggsqVWv1DYVcsS8wydjR8Ra91XtI2a12rw==}
 
-  '@types/react-instantsearch-dom@6.12.7':
-    resolution: {integrity: sha512-9PPKCOn0gnfMh+IdmM8WD3Ww1cwHbKeWsSddjI/lwLzs7SSSRh+UbYxo6RAM8kGw90EbDn0zTtrdAPl9RiizWQ==}
+  '@types/react-instantsearch-dom@6.12.8':
+    resolution: {integrity: sha512-LKrV3yqtar29TqkG76sfw7k6s95BXRvESKIarNiniXdC+6pioZ23KOx71WJNnwiWbHfeyeSILsKStwDpVWry4A==}
 
   '@types/react-redux@7.1.33':
     resolution: {integrity: sha512-NF8m5AjWCkert+fosDsN3hAlHzpjSiXlVy9EgQEmLoBhaNXbmyeGs/aj5dQzKuF+/q+S7JQagorGDW8pJ28Hmg==}
@@ -12669,12 +12669,12 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
+  stripe@16.0.0:
+    resolution: {integrity: sha512-HNPTzXrSompUxeGqDpbNmPvH/UEzziIxGWvTDTZwIBLlL6CFqR+3YLpV+g4HXOsPKbQRguauptQwVWO7Y/yEGg==}
+    engines: {node: '>=12.*'}
+
   stripe@8.205.0:
     resolution: {integrity: sha512-hmYnc7je6j0n9GlkUpc8USsUquLzSxmWj78g9NKFokCtSybNy7y9fYS+VB5AuZUwmIkzhTczgf+TaSmI4kbk9A==}
-    engines: {node: ^8.1 || >=10.*}
-
-  stripe@8.222.0:
-    resolution: {integrity: sha512-hrA79fjmN2Eb6K3kxkDzU4ODeVGGjXQsuVaAPSUro6I9MM3X+BvIsVqdphm3BXWfimAGFvUqWtPtHy25mICY1w==}
     engines: {node: ^8.1 || >=10.*}
 
   strnum@1.0.5:
@@ -17194,7 +17194,7 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
 
-  '@freecodecamp/curriculum-helpers@3.6.0':
+  '@freecodecamp/curriculum-helpers@3.7.0':
     dependencies:
       browserify: 17.0.0
 
@@ -18799,7 +18799,7 @@ snapshots:
       algoliasearch: 4.22.1
       algoliasearch-helper: 3.14.2(algoliasearch@4.22.1)
 
-  '@types/react-instantsearch-dom@6.12.7':
+  '@types/react-instantsearch-dom@6.12.8':
     dependencies:
       '@types/react': 16.14.56
       '@types/react-instantsearch-core': 6.26.10
@@ -30088,14 +30088,14 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
+  stripe@16.0.0:
+    dependencies:
+      '@types/node': 20.12.8
+      qs: 6.11.2
+
   stripe@8.205.0:
     dependencies:
       '@types/node': 20.8.0
-      qs: 6.11.2
-
-  stripe@8.222.0:
-    dependencies:
-      '@types/node': 20.8.2
       qs: 6.11.2
 
   strnum@1.0.5: {}

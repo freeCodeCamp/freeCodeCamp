@@ -17,7 +17,7 @@ dashedName: task-128
 
 ## --sentence--
 
-`For me, I like the idea of _ my skills and getting _ for my contributions.`
+`For me, I like the idea of BLANK my skills and getting BLANK for my contributions.`
 
 ## --blanks--
 

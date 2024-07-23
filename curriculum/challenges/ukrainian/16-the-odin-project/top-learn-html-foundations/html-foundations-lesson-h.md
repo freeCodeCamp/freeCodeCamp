@@ -1,31 +1,31 @@
 ---
 id: 637633162724a688c04636e4
-title: HTML Foundations Lesson H
+title: Основи HTML. Урок №8
 challengeType: 15
 dashedName: html-foundations-lesson-h
 ---
 
 # --description--
 
-Many helpful resources out there keep referring to HTML and CSS as programming languages, but if you want to get technical, labeling them as such is not quite accurate. This is because they are only concerned with presenting information. They are not used to program logic. JavaScript, which you will learn in the next section, is a programming language because it’s used to make webpages do things. Yet, there is quite a lot you can do with just HTML and CSS, and you will definitely need them both. Throughout our curriculum, the following lessons focus on giving you the tools you need to succeed once you reach JavaScript content.
+Багато ресурсів продовжують називати HTML та CSS мовами програмування, але, якщо розібратися з технічної точки зору, це не зовсім правильно. Причина в тому, що їх використовують лише для представлення інформації. Їх не використовують для створення логіки програми. JavaScript, який ви вивчите в наступному розділі, є мовою програмування, оскільки його використовують для того, щоб вебсторінки виконували певні дії. Однак багато чого можна зробити, використовуючи лише HTML та CSS, тому вони обов’язково знадобляться. Наступні уроки нашої навчальної програми зосереджені на інструментах, які необхідно осягнути перед тим, як перейти до JavaScript.
 
 # --question--
 
 ## --text--
 
-Why are HTML and CSS not typically classified as programming languages?
+Чому HTML та CSS зазвичай не класифікуються як мови програмування?
 
 ## --answers--
 
-They lack the ability to create webpages.
+Їм не вистачає здатності створювати вебсторінки.
 
 ---
 
-They focus on presenting information rather than programming logic.
+Вони зосереджуються на відтворенні інформації, а не логіці програмування.
 
 ---
 
-They are outdated technologies.
+Це застарілі технології.
 
 ## --video-solution--
 

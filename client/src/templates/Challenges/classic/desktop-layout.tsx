@@ -22,6 +22,7 @@ import {
   isAdvancingToChallengeSelector
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
+import Notes from '../components/notes';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -31,7 +32,6 @@ interface DesktopLayoutProps {
   challengeType: number;
   editor: ReactElement | null;
   hasEditableBoundaries: boolean;
-  hasNotes: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -44,7 +44,7 @@ interface DesktopLayoutProps {
     previewPane: Pane;
     testsPane: Pane;
   };
-  notes: ReactElement;
+  notes: string;
   onPreviewResize: () => void;
   preview: ReactElement;
   resizeProps: ResizeProps;
@@ -146,7 +146,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     instructions,
     editor,
     testOutput,
-    hasNotes,
     hasPreview,
     isAdvancing,
     isFirstStep,
@@ -175,7 +174,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.multifilePythonCertProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
-  const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
+  const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
   const displayEditorConsole = !(
     projectBasedChallenge || isMultifileCertProject
   )
@@ -197,7 +196,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       {(projectBasedChallenge || isMultifileCertProject) && (
         <ActionRow
           hasPreview={hasPreview}
-          hasNotes={hasNotes}
+          hasNotes={!!notes}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
@@ -260,7 +259,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (
           <ReflexElement flex={notesPane.flex} {...resizeProps}>
-            {notes}
+            <Notes notes={notes} />
           </ReflexElement>
         )}
 
