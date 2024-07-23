@@ -12,7 +12,7 @@ import { getChallengesForLang } from '../../curriculum/get-challenges';
 import {
   SuperBlocks,
   getAuditedSuperBlocks
-} from '../../shared/config/superblocks';
+} from '../../shared/config/curriculum';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in

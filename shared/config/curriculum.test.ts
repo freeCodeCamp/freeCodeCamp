@@ -7,7 +7,7 @@ import {
   createSuperBlockMap,
   createFlatSuperBlockMap,
   getAuditedSuperBlocks
-} from './superblocks';
+} from './curriculum';
 
 describe('superBlockOrder', () => {
   it('should contain all SuperBlocks', () => {
