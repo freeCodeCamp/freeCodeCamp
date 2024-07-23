@@ -489,7 +489,6 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasNotes={!!notes}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               showToolPanel: true
