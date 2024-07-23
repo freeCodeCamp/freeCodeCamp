@@ -274,17 +274,16 @@ function ShowClassic({
       return;
     }
 
-    // Forcing a state update with the value of each panel since on stop resize
-    // is executed per each panel.
     if (typeof layout === 'object') {
-      setLayout({
-        ...layout,
-        [name]: { flex }
+      // onStopResize can be called multiple times before the state changes, so
+      // we need an updater function to ensure all updates are applied.
+      setLayout(l => {
+        const newLayout = { ...l, [name]: { flex } };
+        store.set(REFLEX_LAYOUT, newLayout);
+        return newLayout;
       });
     }
     setResizing(false);
-
-    store.set(REFLEX_LAYOUT, layout);
   };
 
   const setHtmlHeight = () => {

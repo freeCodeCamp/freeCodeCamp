@@ -215,6 +215,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           <ReflexElement
             flex={instructionPane.flex}
             {...resizeProps}
+            name='instructionPane'
             data-playwright-test-label='instruction-pane'
           >
             {instructions}
@@ -226,6 +227,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
         <ReflexElement
           flex={editorPane.flex}
+          name='editorPane'
           {...resizeProps}
           data-playwright-test-label='editor-pane'
         >
@@ -236,6 +238,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             >
               <ReflexElement
                 flex={codePane.flex}
+                name='codePane'
                 {...reflexProps}
                 {...resizeProps}
               >
@@ -258,7 +261,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         </ReflexElement>
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (
-          <ReflexElement flex={notesPane.flex} {...resizeProps}>
+          <ReflexElement
+            name='notesPane'
+            flex={notesPane.flex}
+            {...resizeProps}
+          >
             <Notes notes={notes} />
           </ReflexElement>
         )}
@@ -269,6 +276,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         {(displayPreviewPane || displayPreviewConsole) && (
           <ReflexElement
             flex={previewPane.flex}
+            name='previewPane'
             {...resizeProps}
             data-playwright-test-label='preview-pane'
           >
@@ -279,6 +287,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               )}
               {displayPreviewConsole && (
                 <ReflexElement
+                  name='testsPane'
                   {...(displayPreviewPane && { flex: testsPane.flex })}
                   {...resizeProps}
                 >
