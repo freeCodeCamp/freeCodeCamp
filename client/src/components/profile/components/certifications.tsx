@@ -71,7 +71,7 @@ function Certificates({
   const { t } = useTranslation();
   return (
     <FullWidthRow className='profile-certifications'>
-      <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
+      <h2>{t('profile.fcc-certs')}</h2>
       <br />
       {hasModernCert && currentCerts ? (
         <ul aria-labelledby='fcc-certifications'>
