@@ -244,18 +244,14 @@ function ShowClassic({
     challengeTypes.python
   ].includes(challengeType);
   const getLayoutState = () => {
-    const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
-
-    // Validate if user has not done any resize of the panes
-    if (!reflexLayout) return BASE_LAYOUT;
+    const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout | null;
 
     // Check that the layout values stored are valid (exist in base layout). If
     // not valid, it will fallback to the base layout values and be set on next
     // user resize.
-    const isValidLayout = isContained(
-      Object.keys(BASE_LAYOUT),
-      Object.keys(reflexLayout)
-    );
+    const isValidLayout =
+      reflexLayout &&
+      isContained(Object.keys(BASE_LAYOUT), Object.keys(reflexLayout));
 
     return isValidLayout ? reflexLayout : BASE_LAYOUT;
   };
@@ -266,24 +262,17 @@ function ShowClassic({
   const [layout, setLayout] = useState(getLayoutState());
 
   const onStopResize = (event: HandlerProps) => {
+    setResizing(false);
+    // 'name' is used to identify the Elements whose layout is stored.
     const { name, flex } = event.component.props;
 
-    // Only interested in tracking layout updates for ReflexElement's
-    if (!name) {
-      setResizing(false);
-      return;
-    }
-
-    if (typeof layout === 'object') {
-      // onStopResize can be called multiple times before the state changes, so
-      // we need an updater function to ensure all updates are applied.
-      setLayout(l => {
-        const newLayout = { ...l, [name]: { flex } };
-        store.set(REFLEX_LAYOUT, newLayout);
-        return newLayout;
-      });
-    }
-    setResizing(false);
+    // onStopResize can be called multiple times before the state changes, so
+    // we need an updater function to ensure all updates are applied.
+    setLayout(l => {
+      const newLayout = name ? { ...l, [name]: { flex } } : l;
+      store.set(REFLEX_LAYOUT, newLayout);
+      return newLayout;
+    });
   };
 
   const setHtmlHeight = () => {
