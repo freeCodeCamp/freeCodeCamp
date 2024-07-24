@@ -9,6 +9,7 @@
     "@fastify/cookie": "9.4.0",
     "@fastify/csrf-protection": "6.4.1",
     "@fastify/express": "^2.3.0",
+    "@fastify/oauth2": "7.8.1",
     "@fastify/swagger": "8.14.0",
     "@fastify/swagger-ui": "1.10.2",
     "@fastify/type-provider-typebox": "3.6.0",
