@@ -58,11 +58,6 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   const challenges = getChallenges();
   const certTypeIds = createCertTypeIds(challenges);
 
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authorize);
-
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
   // OR: Always respond with current user - full user object - not random pieces.
   fastify.put(

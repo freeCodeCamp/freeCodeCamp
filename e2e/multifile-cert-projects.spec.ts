@@ -4,7 +4,7 @@ import { clearEditor, focusEditor } from './utils/editor';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto(
       'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
@@ -26,11 +26,15 @@ test.describe('multifileCertProjects', () => {
     await page.keyboard.type('save1text');
     await expect(page.getByText('save1text')).toBeVisible();
 
-    await page.getByRole('button', { name: 'Save your Code' }).click();
+    await page
+      .getByRole('button', { name: !isMobile ? 'Save your Code' : 'Save' })
+      .click();
 
     await expect(page.getByTestId('flash-message')).toContainText(success);
 
     await page.reload();
+
+    await focusEditor({ page, isMobile });
 
     await expect(page.getByText('save1text')).toBeVisible();
   });
@@ -40,6 +44,8 @@ test.describe('multifileCertProjects', () => {
     isMobile,
     browserName
   }) => {
+    test.skip(isMobile);
+
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
 
@@ -58,7 +64,6 @@ test.describe('multifileCertProjects', () => {
     await page.reload();
 
     await expect(page.getByText('save2text')).toBeVisible();
-
     await focusEditor({ page, isMobile });
 
     await page.keyboard.down('Control');

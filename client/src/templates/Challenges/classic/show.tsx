@@ -11,6 +11,7 @@ import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
+import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
@@ -32,7 +33,6 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
-import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
@@ -58,6 +58,8 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
+import { preloadPage } from '../../../../utils/gatsby/page-loading';
+import envData from '../../../../config/env.json';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -174,11 +176,11 @@ const defaultOutput = `
 */`;
 
 function ShowClassic({
-  challengeFiles: reduxChallengeFiles,
+  challengeFiles,
   data: {
     challengeNode: {
       challenge: {
-        challengeFiles,
+        challengeFiles: seedChallengeFiles,
         block,
         title,
         description,
@@ -303,6 +305,14 @@ function ShowClassic({
     setUsingKeyboardInTablist(usingKeyboardInTablist);
   };
 
+  // AB testing Pre-fetch in the Spanish locale
+  const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
+  useEffect(() => {
+    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
+      preloadPage(nextChallengePath);
+    }
+  }, [nextChallengePath, isPreFetchEnabled]);
+
   useEffect(() => {
     initializeComponent(title);
     // Bug fix for the monaco content widget and touch devices/right mouse
@@ -353,7 +363,7 @@ function ShowClassic({
     });
 
     createFiles(
-      mergeChallengeFiles(challengeFiles, savedChallenge?.challengeFiles)
+      mergeChallengeFiles(seedChallengeFiles, savedChallenge?.challengeFiles)
     );
 
     initTests(tests);
@@ -406,9 +416,9 @@ function ShowClassic({
     isUsingKeyboardInTablist
   }: RenderEditorArgs) => {
     return (
-      reduxChallengeFiles && (
+      challengeFiles && (
         <MultifileEditor
-          challengeFiles={reduxChallengeFiles}
+          challengeFiles={challengeFiles}
           block={block}
           superBlock={superBlock}
           containerRef={containerRef}
@@ -447,12 +457,11 @@ function ShowClassic({
             })}
             guideUrl={getGuideUrl({ forumTopicId, title })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasNotes={!!notes}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               showToolPanel: false
             })}
-            notes={<Notes notes={notes} />}
+            notes={notes}
             onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
@@ -473,21 +482,20 @@ function ShowClassic({
         )}
         {!isMobile && (
           <DesktopLayout
-            challengeFiles={reduxChallengeFiles}
+            challengeFiles={challengeFiles}
             challengeType={challengeType}
             editor={renderEditor({
               isMobileLayout: false,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasNotes={!!notes}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
               showToolPanel: true
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
-            notes={<Notes notes={notes} />}
+            notes={notes}
             onPreviewResize={onPreviewResize}
             preview={
               <StepPreview

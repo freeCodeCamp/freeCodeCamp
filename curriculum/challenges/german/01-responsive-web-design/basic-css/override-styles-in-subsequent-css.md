@@ -19,7 +19,7 @@ Schreibe eine weitere CSS-Klasse namens `blue-text`, die ein Element blau färbt
 
 Wende die Klasse `blue-text` auf dein `h1`-Element zusätzlich zu deiner Klasse `pink-text` an und lass uns sehen, wer gewinnt.
 
-Applying multiple class attributes to an HTML element is done with a space between them like this:
+Man kann mehrere Klassenattribute auf ein HTML-Element anwenden, indem man sie mit einem Leerzeichen trennt:
 
 ```html
 class="class1 class2"

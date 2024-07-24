@@ -17,7 +17,7 @@ You learned that after `everyone`, you should use the third-party singular form 
 
 ## --sentence--
 
-`He also ensures that everyone _ _ _.`
+`He also ensures that everyone BLANK BLANK BLANK.`
 
 ## --blanks--
 

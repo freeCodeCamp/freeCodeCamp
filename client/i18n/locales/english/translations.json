@@ -733,6 +733,7 @@
     "last-page": "Go to last page",
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
+    "timeline-pagination-nav": "Timeline Pagination",
     "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests",
     "hide-preview": "Hide the preview",

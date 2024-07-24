@@ -369,7 +369,7 @@
         "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
         "intro": [
           "Um aspecto comum da criação de aplicações web é trabalhar com o processamento de conjuntos de dados e, em seguida, enviar informações para a tela. Nesse projeto de cartões da equipe de futebol, você aprenderá como trabalhar com a manipulação do DOM, desestruturação de objetos, manipulação de eventos, e filtragem de dados.",
-          "Esse projeto abrangerá conceitos como instruções switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
+          "Este projeto abrangerá conceitos como parâmetros padrão, <code>Object.freeze()</code> e reforçará seu conhecimento sobre a instrução <code>switch</code> e sobre o método <code>map()</code>."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -410,11 +410,11 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Review Algorithmic Thinking by Building a Dice Game",
+        "title": "Revise o raciocínio algorítmico criando um jogo de dados",
         "intro": [
-          "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
-          "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
-          "This project covers concepts such as event handling, array manipulation, conditional logic, and updating the user interface dynamically based on game state."
+          "Raciocínio algorítmico implica a capacidade de dividir problemas complexos em uma sequência de instruções passo a passo e bem definidas.",
+          "Neste projeto de jogo de dados, você aprenderá como gerenciar o estado do jogo, implementar a lógica do jogo para rolar os dados, manter a pontuação e aplicar as regras para várias combinações.",
+          "O projeto aborda conceitos como manipulação de eventos, manipulação de arrays, lógica condicional e atualização dinâmica da interface de usuário baseada no estado do jogo."
         ]
       },
       "learn-intermediate-oop-by-building-a-platformer-game": {
@@ -884,6 +884,13 @@
           "Este é um dos projetos necessários para obter a certificação."
         ]
       },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Aprenda Interfaces criando um solucionador de equações",
+        "intro": [
+          "Classes abstratas permitem definir interfaces formais – objetos que agem como diagramas para as classes.",
+          "Neste projeto, você descobrirá como implementar uma interface em Python ao criar um programa simples de resolução de equações."
+        ]
+      },
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Aprenda métodos especiais criando um espaço vetorial",
         "intro": [
@@ -1281,6 +1288,12 @@
         "title": "Aprenda a resolver problemas e a entender erros",
         "intro": [
           "Aprenda a resolver problemas e a entender os erros em JavaScript."
+        ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Crie um jogo de pedra, papel e tesoura",
+        "intro": [
+          "Teste suas habilidades em JavaScript criando um jogo de pedra, papel e tesoura."
         ]
       }
     }
@@ -1682,13 +1695,23 @@
       }
     }
   },
-  "example-certification": {
-    "title": "Certificação de exemplo",
+  "front-end-development": {
+    "title": "Desenvolvimento de front-end",
     "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "Exame da certificação de exemplo",
-        "intro": ["placeholder"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Aprenda HTML básico criando uma página de receitas",
+        "intro": ["", ""]
+      },
+      "lab-recipe-page": {
+        "title": "Página de receita",
+        "intro": [
+          "Neste laboratório, você criará uma página da web com sua receita favorita."
+        ]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Exame de certificação de desenvolvimento de front-end",
+        "intro": ["", ""]
       }
     }
   },

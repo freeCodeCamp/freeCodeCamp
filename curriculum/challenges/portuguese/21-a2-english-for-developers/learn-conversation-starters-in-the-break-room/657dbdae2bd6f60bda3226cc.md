@@ -21,7 +21,7 @@ Ouça o áudio para completar a frase abaixo.
 
 ## --frase--
 
-`Tell me about our team meetings, Sophie. Do they happen _ week?`
+`Tell me about our team meetings, Sophie. Do they happen BLANK week?`
 
 ## --espaços em branco--
 

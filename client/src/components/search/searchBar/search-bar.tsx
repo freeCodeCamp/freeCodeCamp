@@ -212,22 +212,21 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
           <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
             <div className='fcc_search_wrapper'>
               <ObserveKeys except={['Space']}>
-                <div onFocus={this.handleFocus} role='textbox'>
-                  <SearchBox
-                    data-playwright-test-label='header-search'
-                    focusShortcuts={['83', '191']}
-                    onChange={this.handleChange}
-                    onSubmit={e => {
-                      this.handleSearch(e);
-                    }}
-                    showLoadingIndicator={false}
-                    translations={{
-                      submitTitle: t('icons.magnifier'),
-                      resetTitle: t('icons.input-reset'),
-                      placeholder: t('search.placeholder')
-                    }}
-                  />
-                </div>
+                <SearchBox
+                  data-playwright-test-label='header-search'
+                  focusShortcuts={['83', '191']}
+                  onChange={this.handleChange}
+                  onSubmit={e => {
+                    this.handleSearch(e);
+                  }}
+                  showLoadingIndicator={false}
+                  translations={{
+                    submitTitle: t('icons.magnifier'),
+                    resetTitle: t('icons.input-reset'),
+                    placeholder: t('search.placeholder')
+                  }}
+                  onFocus={this.handleFocus}
+                />
               </ObserveKeys>
               {isDropdownEnabled && isSearchFocused && (
                 <SearchHits

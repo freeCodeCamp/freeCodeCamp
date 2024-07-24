@@ -9,7 +9,7 @@ test.beforeAll(() => {
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Add Portfolio Item', () => {

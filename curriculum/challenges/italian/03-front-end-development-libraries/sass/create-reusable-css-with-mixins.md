@@ -8,85 +8,112 @@ dashedName: create-reusable-css-with-mixins
 
 # --description--
 
-In Sass, un <dfn>mixin</dfn> è un gruppo di dichiarazioni CSS che possono essere riutilizzate in tutto il foglio di stile.
-
-Ci vuole tempo prima che le nuove funzionalità di CSS siano completamente adottate e utilizzabili in tutti i browser. Poiché le funzionalità vengono inizialmente aggiunte ai singoli browser, le regole CSS che le utilizzano potrebbero avere bisogno di prefissi del fornitore. Considera `box-shadow`:
+In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet. The definition starts with the `@mixin` at-rule, followed by a custom name. You apply the mixin using the `@include` at-rule.
 
 ```scss
-div {
-  -webkit-box-shadow: 0px 0px 4px #fff;
-  -moz-box-shadow: 0px 0px 4px #fff;
-  -ms-box-shadow: 0px 0px 4px #fff;
-  box-shadow: 0px 0px 4px #fff;
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul {
+  @include reset-list;
 }
 ```
 
-Ci sarebbe molto da digitare per riscrivere questa regola per tutti gli elementi che hanno una `box-shadow`, o per modificare ogni valore per testare effetti differenti. I mixin sono come funzioni per il CSS. Ecco come scriverne uno:
+Compiles to:
 
-```scss
-@mixin box-shadow($x, $y, $blur, $c){ 
-  -webkit-box-shadow: $x $y $blur $c;
-  -moz-box-shadow: $x $y $blur $c;
-  -ms-box-shadow: $x $y $blur $c;
-  box-shadow: $x $y $blur $c;
+```css
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 ```
 
-La definizione inizia con `@mixin` seguito da un nome personalizzato. I parametri ( `$x`, `$y`, `$blur`e `$c` nell'esempio sopra) sono opzionali. Ora ogni volta che è necessaria una regola `box-shadow`, invece di dover digitare tutti i prefissi dei venditori dovremo scrivere una singola linea che chiama il mixin. Un mixin è chiamato con la direttiva `@include`:
+Your mixins can also take arguments, which allows their behavior to be customized. The arguments are required when using the mixin.
 
 ```scss
-div {
-  @include box-shadow(0px, 0px, 4px, #fff);
+@mixin prose($font-size, $spacing) {
+  font-size: $font-size;
+  margin: 0;
+  margin-block-end: $spacing;
+}
+
+p {
+  @include prose(1.25rem, 1rem);
+}
+
+h2 {
+  @include prose(2.4rem, 1.5rem);
+}
+```
+
+You can make arguments optional by giving the parameters default values.
+
+```scss
+@mixin text-color($color: black) {
+  color: $color;
+}
+
+p {
+  @include text-color(); /* color: black */
+}
+
+nav a {
+  @include text-color(orange);
 }
 ```
 
 # --instructions--
 
-Scrivi un mixin per `border-radius` e dagli un parametro `$radius`. Dovrebbe usare tutti i prefissi del fornitore dell'esempio. Quindi usa il mixin `border-radius` per dare all'elemento `#awesome` un raggio di curvatura di `15px`.
+Write a mixin named `shape` and give it 3 parameters: `$w`, `$h`, and `$bg-color`.
+
+Use the `shape` mixin to give the `#square` element a width and height of `50px`, and the background color `red`. For the `#rect-a` element add a width of `100px`, a height of `50px`, and the background color `blue`. Finally, for the `#rect-b` element add a width of `50px`, a height of `100px`, and the background color `orange`.
 
 # --hints--
 
-Il tuo codice dovrebbe dichiarare un mixin chiamato `border-radius` che ha un parametro denominato `$radius`.
+You should declare a mixin named `shape` with 3 parameters: `$w`, `$h`, and `$bg-color`.
 
 ```js
-assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
+assert.match(code, /@mixin\s+shape\s*\(\s*\$w,\s*\$h,\s*\$bg-color\s*\)\s*{/gi);
 ```
 
-Il tuo codice dovrebbe includere il prefisso del fornitore `-webkit-border-radius` che utilizza il parametro `$radius`.
+Your mixin should include a `width` property that uses the `$w` parameter.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-webkit-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /width:\$w;/gi);
 ```
 
-Il tuo codice dovrebbe includere il prefisso del fornitore `-moz-border-radius` che utilizza il parametro `$radius`.
+Your mixin should include a `height` property that uses the `$h` parameter.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-moz-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /height:\$h;/gi);
 ```
 
-Il tuo codice dovrebbe includere il prefisso del fornitore `-ms-border-radius` che utilizza il parametro `$radius`.
+Your mixin should include a `background-color` property that uses the `$bg-color` parameter.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
+assert.match(__helpers.removeWhiteSpace(code), /background-color:\$bg\-color;/gi);
 ```
 
-Il tuo codice dovrebbe includere la regola generale `border-radius` che utilizza il parametro `$radius`.
+You should replace the styles inside the `#square` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width and height of `50px`, and the background color `red`.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/border-radius:\$radius;/gi).length ==
-    4
-);
+assert.match(code, /#square\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*50px\s*,\s*red\s*\)\s*;\s*}/gi);
 ```
 
-Il tuo codice dovrebbe chiamare il `border-radius mixin` usando la parola chiave `@include`, con un raggio di `15px`.
+You should replace the styles inside the `#rect-a` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `100px`, a height of `50px`, and the background color `blue`.
 
 ```js
-assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
+assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px\s*,\s*50px\s*,\s*blue\s*\)\s*;\s*}/gi);
+```
+
+You should replace the styles inside the `#rect-b` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `50px`, a height of `100px`, and the background color `orange`.
+
+```js
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*100px\s*,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--
@@ -95,38 +122,54 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
 ```html
 <style type='text/scss'>
+#square {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
 
+#rect-a {
+  width: 100px;
+  height: 50px;
+  background-color: blue;
+}
 
-
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-
-  }
+#rect-b {
+  width: 50px;
+  height: 100px;
+  background-color: orange;
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```
 
 # --solutions--
 
 ```html
 <style type='text/scss'>
-  @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;
-  }
+@mixin shape($w, $h, $bg-color) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+}
 
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-    @include border-radius(15px);
-  }
+#square {
+  @include shape(50px, 50px, red);
+}
+
+#rect-a {
+  @include shape(100px, 50px, blue);
+}
+
+#rect-b {
+  @include shape(50px, 100px, orange);
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```

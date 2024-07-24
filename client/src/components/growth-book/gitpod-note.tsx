@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/ui';
 import { useFeatureValue } from '@growthbook/growthbook-react';
-import { SuperBlocks } from '../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../shared/config/curriculum';
 import { Link } from '../helpers';
 
 type GitpodNoteProps = {
