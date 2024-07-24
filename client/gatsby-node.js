@@ -84,21 +84,8 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                     slug
                     blockHashSlug
                   }
-                  fillInTheBlank {
-                    sentence
-                    blanks {
-                      answer
-                      feedback
-                    }
-                  }
-                  hasEditableBoundaries
                   id
-                  msTrophyId
                   order
-                  prerequisites {
-                    id
-                    title
-                  }
                   required {
                     link
                     src
@@ -122,41 +109,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                   superOrder
                   template
                   usesMultifileEditor
-                  scene {
-                    setup {
-                      background
-                      characters {
-                        character
-                        position {
-                          x
-                          y
-                          z
-                        }
-                      }
-                      audio {
-                        filename
-                        startTime
-                        startTimestamp
-                        finishTimestamp
-                      }
-                      alwaysShowDialogue
-                    }
-                    commands {
-                      background
-                      character
-                      position {
-                        x
-                        y
-                        z
-                      }
-                      startTime
-                      finishTime
-                      dialogue {
-                        text
-                        align
-                      }
-                    }
-                  }
                 }
               }
             }
