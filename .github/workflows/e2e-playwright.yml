@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Checkout client-config
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -44,7 +46,10 @@ jobs:
           cache: pnpm
 
       - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'BUILD_WITH_SUBMODULE=true' >> .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Install and Build
         run: |
@@ -102,6 +107,8 @@ jobs:
 
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
         with:
@@ -123,7 +130,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'BUILD_WITH_SUBMODULE=true' >> .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Install and Build
         run: |
