@@ -64,13 +64,28 @@ IntroductionPage.displayName = 'IntroductionPage';
 export default IntroductionPage;
 
 export const query = graphql`
-  query IntroPageBySlug($slug: String!) {
+  query IntroPageBySlug($slug: String!, $block: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         block
         superBlock
       }
       html
+    }
+    allChallengeNode(
+      sort: { fields: [challenge___challengeOrder] }
+      filter: { challenge: { block: { eq: $block } } }
+      limit: 1
+    ) {
+      edges {
+        node {
+          challenge {
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   }
 `;

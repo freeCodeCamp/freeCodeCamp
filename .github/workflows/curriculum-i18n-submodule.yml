@@ -63,6 +63,9 @@ jobs:
         run: |
           pnpm run build
 
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
+
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
