@@ -1,10 +1,11 @@
-import { FastifyPluginCallback, FastifyRequest } from 'fastify';
+import { FastifyPluginCallback, FastifyRequest, FastifyReply } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { type user } from '@prisma/client';
 
 import { JWT_SECRET } from '../utils/env';
 import { type Token, isExpired } from '../utils/tokens';
+import { CODE, STATUS } from '../utils';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -19,6 +20,10 @@ declare module 'fastify' {
 
   interface FastifyInstance {
     authorize: (req: FastifyRequest, reply: FastifyReply) => void;
+    authorizeExamEnvironmentToken: (
+      req: FastifyRequest,
+      reply: FastifyReply
+    ) => void;
   }
 }
 
@@ -70,7 +75,89 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     req.user = user;
   };
 
+  async function handleExamEnvironmentTokenAuth(
+    req: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    const { 'exam-environment-authorization-token': encodedToken } =
+      req.headers;
+
+    if (!encodedToken || typeof encodedToken !== 'string') {
+      return reply.send({
+        status: STATUS.ERROR,
+        message: {
+          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
+          text: 'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN header is a required string.'
+        }
+      });
+    }
+
+    try {
+      jwt.verify(encodedToken, JWT_SECRET);
+    } catch (e) {
+      void reply.code(403);
+      return reply.send({
+        message: {
+          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
+          text: JSON.stringify(e)
+        },
+        status: STATUS.ERROR
+      });
+    }
+
+    const payload = jwt.decode(encodedToken);
+
+    if (typeof payload !== 'object' || payload === null) {
+      void reply.code(500);
+      return reply.send({
+        status: STATUS.ERROR,
+        message: {
+          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
+          text: 'Unreachable. Decoded token has been verified.'
+        }
+      });
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const examEnvironmentAuthorizationToken =
+      payload['examEnvironmentAuthorizationToken'];
+
+    if (typeof examEnvironmentAuthorizationToken !== 'string') {
+      return reply.send({
+        status: STATUS.ERROR,
+        message: {
+          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
+          text: 'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN is not valid.'
+        }
+      });
+    }
+
+    const token =
+      await fastify.prisma.examEnvironmentAuthorizationToken.findFirst({
+        where: {
+          id: examEnvironmentAuthorizationToken
+        }
+      });
+
+    if (!token) {
+      return {
+        message: 'Token not found',
+        status: STATUS.ERROR
+      };
+    }
+
+    const user = await fastify.prisma.user.findUnique({
+      where: { id: token.userId }
+    });
+    if (!user) return setAccessDenied(req, TOKEN_INVALID);
+    req.user = user;
+  }
+
   fastify.decorate('authorize', handleAuth);
+  fastify.decorate(
+    'authorizeExamEnvironmentToken',
+    handleExamEnvironmentTokenAuth
+  );
 
   done();
 };

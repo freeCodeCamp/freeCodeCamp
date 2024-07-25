@@ -194,6 +194,15 @@ model UserToken {
   @@index([userId], map: "userId_1")
 }
 
+model ExamEnvironmentAuthorizationToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Float
+  userId  String   @db.ObjectId
+
+  @@index([userId], map: "userId_1")
+}
+
 model sessions {
   id      String   @id @map("_id")
   expires DateTime @db.Date

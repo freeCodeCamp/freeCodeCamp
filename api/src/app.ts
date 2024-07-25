@@ -50,6 +50,10 @@ import {
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import {
+  examEnvironmentOpenRoutes,
+  examEnvironmentValidatedTokenRoutes
+} from './routes/exam-environment';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -181,7 +185,7 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  // redirectWithMessage must be registered before codeFlowAuth
+  // redirectWithMessage must be registered before auth
   void fastify.register(redirectWithMessage);
   void fastify.register(auth);
   void fastify.register(notFound);
@@ -222,7 +226,15 @@ export const build = async (
       await fastify.register(settingRedirectRoutes);
     });
   });
-  // Routes not requiring authentication:
+
+  void fastify.register(function (fastify, _opts, done) {
+    fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+
+    void fastify.register(examEnvironmentValidatedTokenRoutes);
+    done();
+  });
+
+  // Routes not requiring authentication
   void fastify.register(mobileAuth0Routes);
   // TODO: consolidate with LOCAL_MOCK_AUTH
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
@@ -238,6 +250,7 @@ export const build = async (
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
+  void fastify.register(examEnvironmentOpenRoutes);
 
   return fastify;
 };
