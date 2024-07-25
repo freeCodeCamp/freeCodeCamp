@@ -55,8 +55,6 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
           cat .env
         # TODO: Remove this ^ after migration is complete
 
