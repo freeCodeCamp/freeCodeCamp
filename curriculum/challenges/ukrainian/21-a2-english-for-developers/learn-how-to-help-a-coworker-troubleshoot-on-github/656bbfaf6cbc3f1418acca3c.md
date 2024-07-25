@@ -15,7 +15,7 @@ dashedName: task-6
 
 ## --sentence--
 
-`Sure, Bob. _ the problem?`
+`Sure, Bob. BLANK the problem?`
 
 ## --blanks--
 

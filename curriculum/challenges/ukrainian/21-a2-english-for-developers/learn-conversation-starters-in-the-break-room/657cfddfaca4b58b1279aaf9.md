@@ -19,7 +19,7 @@ To `encourage` means to give support, confidence, or hope to someone. It's what 
 
 ## --sentence--
 
-`Maria thinks challenges are positive. She _ us to find solutions together.`
+`Maria thinks challenges are positive. She BLANK us to find solutions together.`
 
 ## --blanks--
 

@@ -1,10 +1,10 @@
-name: CI - Node.js - i18n
+name: CI - Node.js - i18n - Submodule
 
 on:
   # Run on push events, but only for the below branches
   push:
     branches:
-      - 'i18n-sync-curriculum'
+      - 'chore/update-i18n-curriculum-submodule'
   workflow_dispatch:
 
 permissions:
@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
@@ -46,7 +48,8 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          cat .env
+          echo 'BUILD_WITH_SUBMODULE=true' >> .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Install node_modules
         run: pnpm install
@@ -59,6 +62,9 @@ jobs:
           CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           pnpm run build
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         env:

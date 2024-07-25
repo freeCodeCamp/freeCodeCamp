@@ -21,7 +21,7 @@ When you want to know how often something happens, you can use `every` followed 
 
 ## --sentence--
 
-`Tell me about our team meetings, Sophie. Do they happen _ week?`
+`Tell me about our team meetings, Sophie. Do they happen BLANK week?`
 
 ## --blanks--
 

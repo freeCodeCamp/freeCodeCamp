@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Check number of lockfiles
         run: |
@@ -53,8 +55,8 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Install node_modules
         run: pnpm install
@@ -85,6 +87,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
@@ -98,7 +102,10 @@ jobs:
           cache: pnpm
 
       - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'BUILD_WITH_SUBMODULE=true' >> .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Install and Build
         run: |
@@ -118,6 +125,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
@@ -133,7 +142,9 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
+          echo 'BUILD_WITH_SUBMODULE=true' >> .env
           cat .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
@@ -166,6 +177,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
@@ -183,7 +196,9 @@ jobs:
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
+          echo 'BUILD_WITH_SUBMODULE=true' >> .env
           cat .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
@@ -217,6 +232,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
@@ -232,7 +249,9 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
+          echo 'BUILD_WITH_SUBMODULE=true' >> .env
           cat .env
+        # TODO: Remove this ^ after migration is complete
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0

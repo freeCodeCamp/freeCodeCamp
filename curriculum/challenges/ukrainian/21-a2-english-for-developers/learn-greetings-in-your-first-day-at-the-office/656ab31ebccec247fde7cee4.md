@@ -18,7 +18,7 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 ## --sentence--
 
-`_. My computer and drawing tablet are great, too.`
+`BLANK. My computer and drawing tablet are great, too.`
 
 ## --blanks--
 

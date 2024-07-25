@@ -7,9 +7,6 @@ import {
 } from './utils/mailhog';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-// To run this test you will need to run the email server.
-// To do this: https://contribute.freecodecamp.org/#/how-to-catch-outgoing-emails-locally?id=using-mailhog
-
 test.beforeEach(async () => {
   await deleteAllEmails();
 });

@@ -15,7 +15,7 @@ In this part of the conversation, Brian talks about how the talk made him feel a
 
 ## --sentence--
 
-`Yeah, wow. You know what? This was really a _ talk. Thanks for _ your thoughts.`
+`Yeah, wow. You know what? This was really a BLANK talk. Thanks for BLANK your thoughts.`
 
 ## --blanks--
 

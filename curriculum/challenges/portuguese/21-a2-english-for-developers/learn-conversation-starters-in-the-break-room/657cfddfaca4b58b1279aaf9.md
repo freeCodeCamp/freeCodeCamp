@@ -19,7 +19,7 @@ Ouça o áudio para completar a frase abaixo.
 
 ## --frase--
 
-`Maria thinks challenges are positive. She _ us to find solutions together.`
+`Maria thinks challenges are positive. She BLANK us to find solutions together.`
 
 ## --espaços em branco--
 

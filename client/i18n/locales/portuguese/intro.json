@@ -1703,6 +1703,12 @@
         "title": "Aprenda HTML básico criando uma página de receitas",
         "intro": ["", ""]
       },
+      "lab-recipe-page": {
+        "title": "Página de receita",
+        "intro": [
+          "Neste laboratório, você criará uma página da web com sua receita favorita."
+        ]
+      },
       "front-end-development-certification-exam": {
         "title": "Exame de certificação de desenvolvimento de front-end",
         "intro": ["", ""]

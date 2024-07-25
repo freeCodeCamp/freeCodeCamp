@@ -10,12 +10,12 @@ import { createUserInput } from '../../utils/create-user';
 export const findOrCreateUser = async (
   fastify: FastifyInstance,
   email: string
-): Promise<{ id: string }> => {
+): Promise<{ id: string; acceptedPrivacyTerms: boolean }> => {
   // TODO: handle the case where there are multiple users with the same email.
   // e.g. use findMany and throw an error if more than one is found.
   const existingUser = await fastify.prisma.user.findMany({
     where: { email },
-    select: { id: true }
+    select: { id: true, acceptedPrivacyTerms: true }
   });
   if (existingUser.length > 1) {
     fastify.Sentry.captureException(
@@ -27,7 +27,7 @@ export const findOrCreateUser = async (
     existingUser[0] ??
     (await fastify.prisma.user.create({
       data: createUserInput(email),
-      select: { id: true }
+      select: { id: true, acceptedPrivacyTerms: true }
     }))
   );
 };

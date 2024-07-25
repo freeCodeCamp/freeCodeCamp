@@ -21,7 +21,7 @@ A `smile` is what happens when you turn up the corners of your mouth to show hap
 
 ## --sentence--
 
-`Sure. Tom is a tall guy with a _ _.`
+`Sure. Tom is a tall guy with a BLANK BLANK.`
 
 ## --blanks--
 
