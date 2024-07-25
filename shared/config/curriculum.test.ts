@@ -1,8 +1,8 @@
 import { Languages } from './i18n';
 import {
   SuperBlocks,
-  SuperBlockStages,
-  superBlockOrder,
+  SuperBlockStage,
+  superBlockStages,
   notAuditedSuperBlocks,
   createSuperBlockMap,
   createFlatSuperBlockMap,
@@ -12,7 +12,7 @@ import {
 describe('superBlockOrder', () => {
   it('should contain all SuperBlocks', () => {
     const allSuperBlocks = Object.values(SuperBlocks);
-    const superBlockOrderValues = Object.values(superBlockOrder).flat();
+    const superBlockOrderValues = Object.values(superBlockStages).flat();
     expect(superBlockOrderValues).toHaveLength(allSuperBlocks.length);
     expect(superBlockOrderValues).toEqual(
       expect.arrayContaining(allSuperBlocks)
@@ -26,11 +26,11 @@ describe('createSuperBlockMap', () => {
       showNewCurriculum: true,
       showUpcomingChanges: true
     });
-    expect(result[SuperBlockStages.New]).toHaveLength(
-      superBlockOrder[SuperBlockStages.New].length
+    expect(result[SuperBlockStage.New]).toHaveLength(
+      superBlockStages[SuperBlockStage.New].length
     );
-    expect(result[SuperBlockStages.Upcoming]).toHaveLength(
-      superBlockOrder[SuperBlockStages.Upcoming].length
+    expect(result[SuperBlockStage.Upcoming]).toHaveLength(
+      superBlockStages[SuperBlockStage.Upcoming].length
     );
   });
 
@@ -39,8 +39,8 @@ describe('createSuperBlockMap', () => {
       showNewCurriculum: false,
       showUpcomingChanges: false
     });
-    expect(result[SuperBlockStages.New]).toHaveLength(0);
-    expect(result[SuperBlockStages.Upcoming]).toHaveLength(0);
+    expect(result[SuperBlockStage.New]).toHaveLength(0);
+    expect(result[SuperBlockStage.Upcoming]).toHaveLength(0);
   });
 });
 
@@ -50,7 +50,7 @@ describe('createFlatSuperBlockMap', () => {
       showNewCurriculum: true,
       showUpcomingChanges: true
     });
-    expect(result).toHaveLength(Object.values(superBlockOrder).flat().length);
+    expect(result).toHaveLength(Object.values(superBlockStages).flat().length);
   });
 
   it('should return an array of SuperBlocks without New and Upcoming when { showNewCurriculum: false, showUpcomingChanges: false }', () => {
@@ -58,9 +58,9 @@ describe('createFlatSuperBlockMap', () => {
       showNewCurriculum: false,
       showUpcomingChanges: false
     });
-    const tempSuperBlockMap = { ...superBlockOrder };
-    tempSuperBlockMap[SuperBlockStages.New] = [];
-    tempSuperBlockMap[SuperBlockStages.Upcoming] = [];
+    const tempSuperBlockMap = { ...superBlockStages };
+    tempSuperBlockMap[SuperBlockStage.New] = [];
+    tempSuperBlockMap[SuperBlockStage.Upcoming] = [];
     expect(result).toHaveLength(Object.values(tempSuperBlockMap).flat().length);
   });
 });
@@ -68,7 +68,7 @@ describe('createFlatSuperBlockMap', () => {
 describe('Immutability of superBlockOrder, notAuditedSuperBlocks, and flatSuperBlockMap', () => {
   it('should not allow modification of superBlockOrder', () => {
     expect(() => {
-      superBlockOrder[SuperBlockStages.Core] = [];
+      superBlockStages[SuperBlockStage.Core] = [];
     }).toThrowError(TypeError);
   });
 
