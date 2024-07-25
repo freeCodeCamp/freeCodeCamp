@@ -25,6 +25,8 @@ const ENGLISH_CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
 const ENGLISH_DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, '_meta');
 
+// This is to allow English to build without having to download the i18n files.
+// It fails when trying to resolve the i18n-curriculum path if they don't exist.
 const I18N_CURRICULUM_DIR = path.resolve(
   __dirname,
   process.env.CURRICULUM_LOCALE === 'english'
