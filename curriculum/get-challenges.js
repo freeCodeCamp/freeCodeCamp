@@ -27,7 +27,9 @@ const META_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, '_meta');
 
 const I18N_CURRICULUM_DIR = path.resolve(
   __dirname,
-  'i18n-curriculum/curriculum'
+  process.env.CURRICULUM_LOCALE === 'english'
+    ? '.'
+    : 'i18n-curriculum/curriculum'
 );
 
 const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
@@ -43,11 +45,7 @@ const COMMENT_TRANSLATIONS = createCommentMap(
 );
 
 function createCommentMap(dictionariesDir, englishDictionariesDir) {
-  // get all the languages for which there are dictionaries. Note: the english
-  // entries are created separately, so we remove it from languages.
-  const languages = fs
-    .readdirSync(dictionariesDir)
-    .filter(lang => lang !== 'english'); // TODO: Remove the filter after migrating to i18n-curriculum
+  const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
   const dictionaries = languages.reduce(
