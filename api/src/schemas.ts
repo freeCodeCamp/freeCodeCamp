@@ -39,3 +39,8 @@ export { postMsUsername } from './schemas/user/post-ms-username';
 export { reportUser } from './schemas/user/report-user';
 export { resetMyProgress } from './schemas/user/reset-my-progress';
 export { submitSurvey } from './schemas/user/submit-survey';
+export { userExamEnvironmentToken } from './schemas/user/exam-environment-token';
+export { examEnvironmentTokenVerify } from './schemas/exam-environment/token-verify';
+export { examEnvironmentPostExamGenerate } from './schemas/exam-environment/exam-generate';
+export { examEnvironmentPostExamAttempt } from './schemas/exam-environment/exam-attempt';
+export { examEnvironmentPostScreenshot } from './schemas/exam-environment/screenshot';

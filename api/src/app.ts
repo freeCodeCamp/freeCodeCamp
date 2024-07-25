@@ -50,6 +50,10 @@ import {
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import {
+  examEnvironmentOpenRoutes,
+  examEnvironmentValidatedTokenRoutes
+} from './routes/exam-environment';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -181,7 +185,7 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  // redirectWithMessage must be registered before codeFlowAuth
+  // redirectWithMessage must be registered before auth
   void fastify.register(redirectWithMessage);
   void fastify.register(auth);
   void fastify.register(notFound);
@@ -235,6 +239,14 @@ export const build = async (
       await fastify.register(authRoutes);
     }
   });
+
+  void fastify.register(function (fastify, _opts, done) {
+    fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+
+    void fastify.register(examEnvironmentValidatedTokenRoutes);
+    done();
+  });
+
   void fastify.register(chargeStripeRoute);
   void fastify.register(signoutRoute);
   void fastify.register(emailSubscribtionRoutes);
@@ -243,6 +255,7 @@ export const build = async (
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);
+  void fastify.register(examEnvironmentOpenRoutes);
 
   return fastify;
 };
