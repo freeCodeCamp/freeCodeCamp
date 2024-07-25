@@ -25,22 +25,20 @@ const ENGLISH_CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
 const ENGLISH_DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, '_meta');
 
-const CURRICULUM_DIR = path.resolve(
+const I18N_CURRICULUM_DIR = path.resolve(
   __dirname,
-  process.env.BUILD_WITH_SUBMODULE === 'true'
-    ? 'i18n-curriculum/curriculum'
-    : '.'
+  'i18n-curriculum/curriculum'
 );
 
-const CHALLENGES_DIR = path.resolve(CURRICULUM_DIR, 'challenges');
-const DICTIONARIES_DIR = path.resolve(CURRICULUM_DIR, 'dictionaries');
+const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
+const I18N_DICTIONARIES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'dictionaries');
 
 exports.ENGLISH_CHALLENGES_DIR = ENGLISH_CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
-exports.CHALLENGES_DIR = CHALLENGES_DIR;
+exports.I18N_CHALLENGES_DIR = I18N_CHALLENGES_DIR;
 
 const COMMENT_TRANSLATIONS = createCommentMap(
-  DICTIONARIES_DIR,
+  I18N_DICTIONARIES_DIR,
   ENGLISH_DICTIONARIES_DIR
 );
 
@@ -130,7 +128,7 @@ function getChallengesDirForLang(lang) {
   if (lang === 'english') {
     return path.resolve(ENGLISH_CHALLENGES_DIR, `${lang}`);
   } else {
-    return path.resolve(CHALLENGES_DIR, `${lang}`);
+    return path.resolve(I18N_CHALLENGES_DIR, `${lang}`);
   }
 }
 
@@ -258,7 +256,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
     'english',
     filePath
   );
-  const i18nPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
+  const i18nPath = path.resolve(__dirname, I18N_CHALLENGES_DIR, lang, filePath);
   const createChallenge = generateChallengeCreator(lang, englishPath, i18nPath);
 
   await assertHasEnglishSource(filePath, lang, englishPath);
