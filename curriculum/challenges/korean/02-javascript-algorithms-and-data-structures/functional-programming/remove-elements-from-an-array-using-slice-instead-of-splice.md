@@ -1,6 +1,6 @@
 ---
 id: 9d7123c8c441eeafaeb5bdef
-title: Remove Elements from an Array Using slice Instead of splice
+title: splice 대신 slice로 배열에서 요소 제거하기
 challengeType: 1
 forumTopicId: 301236
 dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
@@ -8,44 +8,44 @@ dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
 
 # --description--
 
-A common pattern while working with arrays is when you want to remove items and keep the rest of the array. JavaScript offers the `splice` method for this, which takes arguments for the index of where to start removing items, then the number of items to remove. If the second argument is not provided, the default is to remove items through the end. However, the `splice` method mutates the original array it is called on. Here's an example:
+배열로 작업을 할 시 배열에서 아이템을 제거하고 나머지를 유지하는 것이 일반적인 패턴입니다. 자바스크립트는 이를 위해 `splice`를 제공하는데 제거를 시작할 아이템의 인덱스와 삭제할 아이템의 개수를 인자로 취합니다. 두번째 인자가 제공되지 않으면 기본으로 마지막 아이템까지 삭제하게 됩니다. 그러나 `splice` 메소드는 호출하는 본래 배열을 변형시킵니다. 여기 예시가 있습니다.
 
 ```js
 const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 cities.splice(3, 1);
 ```
 
-Here `splice` returns the string `London` and deletes it from the cities array. `cities` will have the value `["Chicago", "Delhi", "Islamabad", "Berlin"]`.
+`splice`는 문자열 `London`를 반환하고 cities 배열에서 그것을 삭제합니다. `cities`는 `["Chicago", "Delhi", "Islamabad", "Berlin"]` 값을 가질 것입니다.
 
-As we saw in the last challenge, the `slice` method does not mutate the original array, but returns a new one which can be saved into a variable. Recall that the `slice` method takes two arguments for the indices to begin and end the slice (the end is non-inclusive), and returns those items in a new array. Using the `slice` method instead of `splice` helps to avoid any array-mutating side effects.
+이전 과제에서 본 것처럼 `slice` 메소드는 본래 배열을 변형시키지 않고 변수에 저장될 수 있는 새로운 배열을 반환합니다. `slice` 메소드는 슬라이스를 시작하고 끝낼 인덱스에 대한 두 개의 인수를 받으며 (끝 인덱스는 포함되지 않음), 해당 항목들을 새로운 배열로 반환한다는 것을 기억하세요. `splice` 대신 `slice` 메소드를 사용하면 배열을 변형시키는 부작용을 피할 수 있습니다.
 
 # --instructions--
 
-Rewrite the function `nonMutatingSplice` by using `slice` instead of `splice`. It should limit the provided `cities` array to a length of 3, and return a new array with only the first three items.
+`splice` 대신에 `slice`를 사용하여 함수 `nonMutatingSplice`를 다시 작성하시오. `cities` 배열의 길이를 3으로 제한해야 하고 오직 첫 세 개의 아이템만 담은 배열을 반환해야 합니다.
 
-Do not mutate the original array provided to the function.
+함수에 제공된 본래 함수를 변형시키지 마시오.
 
 # --hints--
 
-Your code should use the `slice` method.
+`slice` 메소드를 사용해야 합니다.
 
 ```js
 assert(__helpers.removeJSComments(code).match(/\.slice/g));
 ```
 
-Your code should not use the `splice` method.
+`splice` 메소드를 사용하지 않아야 합니다.
 
 ```js
 assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 ```
 
-You should not mutate the original array passed to the function.
+함수에 전달된 본래 배열을 변형시키지 않아야 합니다.
 
 ```js
 assert.deepEqual(_inputCities, ["Chicago", "Delhi", "Islamabad", "London", "Berlin"]);
 ```
 
-`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` should return `["Chicago", "Delhi", "Islamabad"]`.
+`nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])`는 `["Chicago", "Delhi", "Islamabad"]`를 반환해야 합니다.
 
 ```js
 assert.deepEqual(nonMutatingSplice(_inputCities), ["Chicago", "Delhi", "Islamabad"]);

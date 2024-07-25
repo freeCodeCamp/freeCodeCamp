@@ -10,7 +10,7 @@ dashedName: problem-351-hexagonal-orchards
 
 Un frutteto esagonale di ordine $n$ è un reticolo triangolare composto da punti all'interno di un esagono regolare con il lato $n$. Il seguente è un esempio di frutteto esagonale di ordine 5:
 
-<img class="img-responsive center-block" alt="frutteto esagonale di ordine 5, con punti evidenziati in verde, che sono nascosti dal centro da un punto più vicino a esso" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px;" />
+<img alt="frutteto esagonale di ordine 5, con punti evidenziati in verde, che sono nascosti dal centro da un punto più vicino a esso" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-orchards.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 In evidenza in verde si vedono i punti che sono nascosti dal centro da un punto più vicino a esso. Si può vedere che per un frutteto esagonale di ordine 5, 30 punti sono nascosti dal centro.
 

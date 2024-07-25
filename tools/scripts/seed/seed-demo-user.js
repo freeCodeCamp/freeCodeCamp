@@ -1,31 +1,27 @@
+const { parseArgs } = require('node:util');
+
 const path = require('path');
 const debug = require('debug');
+const { MongoClient } = require('mongodb');
+
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
-const { MongoClient, ObjectId } = require('mongodb');
 const {
   demoUser,
   blankUser,
   publicUser,
-  fullyCertifiedUser
+  fullyCertifiedUser,
+  userIds
 } = require('./user-data');
 
-const args = process.argv.slice(2);
+const options = {
+  'set-true': { type: 'string', multiple: true },
+  'top-contributor': { type: 'boolean' },
+  'set-false': { type: 'string', multiple: true },
+  'seed-trophy-challenges': { type: 'boolean' },
+  'certified-user': { type: 'boolean' }
+};
 
-const allowedArgs = [
-  '--donor',
-  '--top-contributor',
-  '--unset-privacy-terms',
-  '--seed-trophy-challenges',
-  'certified-user'
-];
-
-// Check for invalid arguments
-args.forEach(arg => {
-  if (!allowedArgs.includes(arg))
-    throw new Error(
-      `Invalid argument ${arg}. Allowed arguments are ${allowedArgs.join(', ')}`
-    );
-});
+const { values: argValues } = parseArgs({ options });
 
 const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
@@ -85,16 +81,16 @@ const trophyChallenges = [
 ];
 
 [demoUser, blankUser, fullyCertifiedUser].forEach(user => {
-  if (args.includes('--donor')) {
-    user.isDonating = true;
-  }
-  if (args.includes('--top-contributor')) {
+  if (argValues['top-contributor']) {
     user.yearsTopContributor = ['2017', '2018', '2019'];
   }
-  if (args.includes('--unset-privacy-terms')) {
-    user.acceptedPrivacyTerms = false;
+  for (const key of argValues['set-false'] || []) {
+    user[key] = false;
   }
-  if (args.includes('--seed-trophy-challenges')) {
+  for (const key of argValues['set-true'] || []) {
+    user[key] = true;
+  }
+  if (argValues['--seed-trophy-challenges']) {
     user.completedChallenges = trophyChallenges;
   }
 });
@@ -103,13 +99,6 @@ const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
 
 const db = client.db('freecodecamp');
 const user = db.collection('user');
-
-const userIds = [
-  new ObjectId('5fa2db00a25c1c1fa49ce067'),
-  new ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-  new ObjectId('5bd30e0f1caf6ac3ddddddb9'),
-  new ObjectId('663b839b24a8b29f57728b13')
-];
 
 const dropUserTokens = async function () {
   await db.collection('UserToken').deleteMany({
@@ -133,7 +122,7 @@ const run = async () => {
 
   await dropUserTokens();
   await dropUsers();
-  if (args.includes('certified-user')) {
+  if (argValues['certified-user']) {
     await user.insertOne(fullyCertifiedUser);
     await user.insertOne(blankUser);
     await user.insertOne(publicUser);

@@ -14,7 +14,7 @@ Cuando cortamos la hoja a lo largo de las líneas de cuadrícula en dos piezas y
 
 Por ejemplo, desde una hoja con dimensiones 9 × 4, podemos hacer rectángulos con dimensiones 18 × 2, 12 × 3 y 6 × 6 cortando y reorganizando como a continuación:
 
-<img class="img-responsive center-block" alt="hoja con dimensiones 9 x 4 cortadas en tres diferentes maneras para hacer rectángulos con 18 x 2, dimensiones de 12 x 3 y 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px;" />
+<img alt="hoja con dimensiones 9 x 4 cortadas en tres diferentes maneras para hacer rectángulos con 18 x 2, dimensiones de 12 x 3 y 6 x 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-rectangular-grid-paper.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Similarmente, desde una hoja con dimensiones 9 × 8, podemos hacer rectángulos con dimensiones 18 × 4 y 12 × 6.
 

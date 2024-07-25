@@ -13,13 +13,13 @@ To `encourage` means to give support, confidence, or hope to someone. It's what 
 
 # --instructions--
 
-Listen to the audio to complete the sentence below.
+Ouça o áudio para completar a frase abaixo.
 
 # --fillInTheBlank--
 
 ## --frase--
 
-`Maria thinks challenges are positive. She _ us to find solutions together.`
+`Maria thinks challenges are positive. She BLANK us to find solutions together.`
 
 ## --espaços em branco--
 

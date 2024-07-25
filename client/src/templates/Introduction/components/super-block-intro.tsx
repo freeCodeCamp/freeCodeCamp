@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/ui';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/icons/superblock-icon';
 import { Spacer, Link } from '../../../components/helpers';
 
@@ -22,6 +22,7 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.A2English,
     SuperBlocks.UpcomingPython,
+    SuperBlocks.FrontEndDevelopment,
     SuperBlocks.SciCompPy
   ];
 
@@ -30,9 +31,9 @@ export const ConditionalDonationAlert = ({
       <Alert variant='info' className='annual-donation-alert'>
         <p>{t('donate.beta-certification')}</p>
         <hr />
-        <p className={'text-center'}>
+        <p className='btn-container'>
           <Link
-            className='btn'
+            className='btn donate-button'
             key='donate'
             sameTab={false}
             to='/donate'

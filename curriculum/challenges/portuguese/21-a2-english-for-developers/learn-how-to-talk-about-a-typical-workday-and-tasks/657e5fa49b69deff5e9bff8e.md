@@ -9,13 +9,13 @@ dashedName: task-104
 
 # --description--
 
-Listen to the audio to complete the sentence below.
+Ouça o áudio para completar a frase abaixo.
 
 # --fillInTheBlank--
 
 ## --frase--
 
-`Absolutely. If you see any security breaches or incidents, you _ _ report them _.`
+`Absolutely. If you see any security breaches or incidents, you BLANK BLANK report them BLANK.`
 
 ## --espaços em branco--
 

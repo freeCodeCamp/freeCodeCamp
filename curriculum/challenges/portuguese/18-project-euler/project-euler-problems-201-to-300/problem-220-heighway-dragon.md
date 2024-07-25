@@ -19,7 +19,7 @@ Essas strings podem ser interpretadas como instruções para um programa gráfic
 
 Então $D_n$ é um desenho exótico conhecido como Dragão de Heighway da ordem $n$. Por exemplo, $D_{10}$ é mostrado abaixo. Contando cada "F" como uma etapa, o local destacado em (18,16) é a posição alcançada após 500 etapas.
 
-<img class="img-responsive center-block" alt="desenho do Dragão de Heighway após 500 etapas" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;" />
+<img alt="desenho do Dragão de Heighway após 500 etapas" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Qual é a posição do cursor depois de ${10}^{12}$ etapas em $D_{50}$? Dê sua resposta como uma string na forma `x,y` sem espaços.
 

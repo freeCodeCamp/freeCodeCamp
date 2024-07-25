@@ -82,5 +82,17 @@ export const superBlockList = [
   {
     name: 'Rosetta Code',
     path: '22-rosetta-code'
+  },
+  {
+    name: 'Python For Everybody',
+    path: '23-python-for-everybody'
+  },
+  {
+    name: 'B1 English for Developers (Beta)',
+    path: '24-b1-english-for-developers'
+  },
+  {
+    name: 'Front End Development',
+    path: '25-front-end-development'
   }
 ];

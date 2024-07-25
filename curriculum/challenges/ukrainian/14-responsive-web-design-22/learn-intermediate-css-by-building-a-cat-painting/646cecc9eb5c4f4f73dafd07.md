@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Крок 24
+title: Step 25
 challengeType: 0
-dashedName: step-24
+dashedName: step-25
 ---
 
 # --description--
@@ -11,7 +11,7 @@ dashedName: step-24
 
 # --hints--
 
-Селектор `.cat-left-ear` повинен мати властивість `position` зі значенням `absolute`. Не забудьте про крапку з комою.
+Селектор `.cat-left-ear` повинен мати властивість `position` зі значенням `absolute`. Don't forget to add a semicolon.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

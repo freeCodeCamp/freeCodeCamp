@@ -15,7 +15,7 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 **User Stories:**
 
 1. You should have an `input` element with an `id` of `"search-input"`
-1. You should have a `button` element with an `id` of `"search-button`
+1. You should have a `button` element with an `id` of `"search-button"`
 1. You should have an element with an `id` of `"pokemon-name"`
 1. You should have an element with an `id` of `"pokemon-id"`
 1. You should have an element with an `id` of `"weight"`
@@ -143,6 +143,7 @@ async () => {
     let alertMessage;
     window.alert = (message) => alertMessage = message; // Override alert and store message
     searchInput.value = 'Red';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/red'); // Fetch from proxy to simulate network delay
@@ -166,6 +167,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = 'Pikachu';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
@@ -209,6 +211,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = 'Pikachu';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
@@ -225,7 +228,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. Make sure the `#type` element content is cleared between searches.
+When the `#search-input` element contains the value `Pikachu` and the `#search-button` element is clicked, the `#types` element should contain a single inner element with the value `ELECTRIC`. Make sure the `#types` element content is cleared between searches.
 
 ```js
 async () => {
@@ -233,6 +236,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = 'Pikachu';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu'); // Fetch from proxy to simulate network delay
@@ -259,6 +263,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = '94';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
@@ -302,6 +307,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = '94';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
@@ -318,7 +324,7 @@ async () => {
 };
 ```
 
-When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. Make sure the `#type` element content is cleared between searches.
+When the `#search-input` element contains the value `94` and the `#search-button` element is clicked, the `#types` element should contain two inner elements with the text values `GHOST` and `POISON`, respectively. Make sure the `#types` element content is cleared between searches.
 
 ```js
 async () => {
@@ -326,6 +332,7 @@ async () => {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
     searchInput.value = '94';
+    searchInput.dispatchEvent(new Event('change'));
     searchButton.click();
 
     const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/94'); // Fetch from proxy to simulate network delay
@@ -338,6 +345,70 @@ async () => {
 
       assert.lengthOf(typesEl.children, 2);
       assert.sameMembers(['ghost', 'poison'], [...typesEl.children].map(el => el.innerText.trim().toLowerCase()));
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+```
+
+When the `#search-input` element contains an invalid Pokemon name and the `#search-button` element is clicked, an alert should appear with the text `"Pokémon not found"`.
+
+```js
+async () => {
+  try {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    let alertMessage;
+    window.alert = (message) => alertMessage = message; // Override alert and store message
+
+    const randomInvalidPokeId = crypto.randomUUID().substring(0, 6);
+
+    searchInput.value = randomInvalidPokeId;
+    searchInput.dispatchEvent(new Event('change'));
+    searchButton.click();
+
+    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' + randomInvalidPokeId); // Fetch from proxy to simulate network delay
+
+    if (!res.ok) {
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Additional delay to allow the alert to trigger
+
+      assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+```
+
+
+When the `#search-input` element contains a valid Pokemon id and the `#search-button` element is clicked, the UI should be filled with the correct data.
+
+```js
+async () => {
+  try {
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    let alertMessage;
+    window.alert = (message) => alertMessage = message; // Override alert and store message
+
+    const randomValidPokeId = String(Math.floor(Math.random() * 1025) + 1);
+
+    searchInput.value = randomValidPokeId;
+    searchInput.dispatchEvent(new Event('change'));
+    searchButton.click();
+
+    const res = await fetch('https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/' +  randomValidPokeId); // Fetch from proxy to simulate network delay
+
+    if (res.ok) {
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Additional delay to allow UI to update
+
+      const data = await res.json();
+      const typesEl = document.getElementById('types');
+      const actualTypes = data.types.map(typeSlot => typeSlot.type.name);
+
+      assert.lengthOf(typesEl.children, actualTypes.length);
+      assert.sameMembers(actualTypes, [...typesEl.children].map(el => el.innerText.trim().toLowerCase()));
     }
   } catch (err) {
     throw new Error(err);

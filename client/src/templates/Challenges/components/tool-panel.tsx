@@ -70,7 +70,7 @@ function ToolPanel({
   const { t } = useTranslation();
   return (
     <div
-      className={`tool-panel-group button-group ${
+      className={`tool-panel-group ${
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
@@ -82,24 +82,17 @@ function ToolPanel({
           challengeType === challengeTypes.multifilePythonCertProject) && (
           <>
             <Spacer size='xxSmall' />
-            <Button
-              block={true}
-              variant='primary'
-              data-cy='save-code-to-database-btn'
-              onClick={saveChallenge}
-            >
+            <Button block={true} variant='primary' onClick={saveChallenge}>
               {isMobile ? t('buttons.save') : t('buttons.save-code')}
             </Button>
           </>
         )}
-      {challengeType !== challengeTypes.multifilePythonCertProject && (
-        <>
-          <Spacer size='xxSmall' />
-          <Button block={true} variant='primary' onClick={openResetModal}>
-            {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
-          </Button>
-        </>
-      )}
+      <>
+        <Spacer size='xxSmall' />
+        <Button block={true} variant='primary' onClick={openResetModal}>
+          {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
+        </Button>
+      </>
       <Spacer size='xxSmall' />
       <Dropdown dropup>
         <Dropdown.Toggle

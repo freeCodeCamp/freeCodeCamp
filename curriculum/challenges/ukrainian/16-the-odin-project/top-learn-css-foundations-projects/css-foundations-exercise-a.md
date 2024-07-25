@@ -11,132 +11,135 @@ dashedName: css-foundations-exercise-a
 
 ## Історія користувача
 
-1. Ви повинні бачити елемент `div` із фоном `red`, текстом `white`, розміром шрифту `32px`, вирівняним за центром та `bold`.
-
-1. Використайте селектор типу, щоб зовнішньо додати CSS елемента `div`.
-
-1. Ви повинні бачити елемент `p` із фоном `green`, текстом `white` та розміром шрифту `18px`.
-
-1. Використайте селектор типу, щоб внутрішньо додати CSS елемента `p`.
-
-1. Ви повинні бачити елемент `button` із фоном `orange` та розміром шрифту `18px`.
-
-1. CSS елемента `button` повинен мати вбудований стиль.
+- Ви повинні бачити елемент `div` з деяким текстом.
+  - Він повинен мати червоний (`red`) фон, білий (`white`) текст, шрифт розміром `32px`, вирівняний за центром та жирний (`bold`).
+  - Використайте селектор типу, щоб зовнішньо додати CSS для елемента `div`.
+- Ви повинні бачити елемент `p` з деяким текстом.
+  - Він повинен мати зелений (`green`) фон, білий (`white`) текст та шрифт розміром `18px`.
+  - Використайте селектор типу, щоб внутрішньо додати CSS для елемента `p`.
+- Ви повинні бачити елемент `button` з деяким текстом.
+  - Він повинен мати оранжевий (`orange`) фон та шрифт розміром `18px`.
+  - Використайте вбудовані стилі, щоб додати CSS для елемента `button`.
 
 # --hints--
 
-Має бути один елемент `div`. Він повинен містити вирівняний за центром текст.
+Ви повинні мати один елемент `div`, який містить текст.
 
 ```js
-const aligned = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('text-align');
+const divElement = document.querySelector('div');
 
-assert(aligned === 'center');
-assert(document.getElementsByTagName('DIV')?.length == 1);
-assert(document.getElementsByTagName('DIV')?.[0]?.innerText.length > 0)
+assert.isNotNull(divElement);
+assert.isAtLeast(divElement?.innerText.length, 1);
 ```
 
-Елемент `div` повинен мати `background-color` зі значенням `red` та колір тексту зі значенням `white`.
+Ви повинні мати зовнішню таблицю стилів, яка містить стилі елемента `div`.
 
 ```js
+const styleSheet = new __helpers.CSSHelp(document).getStyleSheet();
+const isExternal = styleSheet?.ownerNode.classList.contains('fcc-injected-styles');
+const divStyle = new __helpers.CSSHelp(document).getStyle('div');
 
-const bgc = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('background-color');
-
-const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('color');
-
-assert(bgc === 'red');
-assert(color === 'white');
+assert.isTrue(isExternal);
+assert.isNotNull(divStyle);
 ```
 
-Елемент `div` повинен мати `font-weight` зі значенням `bold` та `font-size` зі значенням `32px`.
+Не додавайте CSS до елемента `div`, використовуючи внутрішні або вбудовані стилі.
 
 ```js
-const fontSize = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-size');
-const fontWeight = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('font-weight');
+const styleElement = document.querySelector('style:not([class])');
 
-assert(fontSize === '32px');
-assert(fontWeight === 'bold');
+assert.isNotTrue(styleElement?.innerText.includes('div'));
+assert.isNotTrue(document.querySelector('div')?.hasAttribute('style'));
 ```
 
-CSS елемента `div` потрібно додати зовнішньо.
+Елемент `div` повинен мати `background-color` зі значенням `red` та `color` зі значенням `white`.
 
 ```js
-assert(!document.getElementsByTagName('style')?.[0]?.innerText.includes('div'));
-assert(!document.getElementsByTagName('div')?.[0]?.hasAttribute('style'));
+const divStyle = new __helpers.CSSHelp(document).getStyle('div');
+const divBGColor = divStyle?.getPropertyValue('background-color');
+const divColor = divStyle?.getPropertyValue('color');
+
+assert.equal(divBGColor, 'red');
+assert.equal(divColor, 'white');
+```
+
+Елемент `div` повинен мати `font-weight` зі значенням `bold`, `font-size` зі значенням `32px` та `text-align` зі значенням `center`.
+
+```js
+const divStyle = new __helpers.CSSHelp(document).getStyle('div');
+const textAlign = divStyle?.getPropertyValue('text-align');
+const fontSize = divStyle?.getPropertyValue('font-size');
+const fontWeight = divStyle?.getPropertyValue('font-weight');
+
+assert.equal(textAlign, 'center');
+assert.equal(fontSize, '32px');
+assert.equal(fontWeight,'bold');
 ```
 
 Ви повинні мати один елемент `p`, який містить текст.
 
 ```js
-assert(document.getElementsByTagName('P')?.length == 1);
-assert(document.getElementsByTagName('P')?.[0]?.innerText.length > 0)
+const pElement = document.querySelector('p');
+
+assert.isNotNull(pElement);
+assert.isAtLeast(pElement?.innerText.length, 1)
 ```
 
-Елемент `p` повинен мати `color` зі значенням `white`.
+Додайте стилі до елемента `p` внутрішньо, використавши елемент `style`.
 
 ```js
-const color = new __helpers.CSSHelp(document).getStyle('div')?.getPropertyValue('color');
+const styleElement = document.querySelector('style:not([class])');
+const rules = styleElement?.sheet?.cssRules?.[0] || styleElement?.sheet?.rules?.[0];
+let isStyled = false;
 
-assert(color == 'white');
-```
-
-Елемент `p` повинен мати `font-size` зі значенням `18px`.
-
-```js
-const styleTag = document.getElementsByTagName('style')?.[0];
-let pHasFontSize18 = false;
-
-const rules = styleTag?.sheet?.cssRules || styleTag?.sheet?.rules;
-if (rules) {
-  for (let j = 0; j < rules.length; j++) {
-    const rule = rules[j];
-    if (rule.selectorText === 'p' && rule.style.fontSize === '18px') {
-      pHasFontSize18 = true;
-      break;
-    }
-  }
+if (rules && rules.selectorText === 'p') {
+  isStyled = true;
 }
 
-assert(pHasFontSize18);
+assert.isTrue(isStyled);
 ```
 
-Стиль елемента `p` потрібно додати внутрішньо.
+Елемент `p` повинен мати `font-size` зі значенням `18px` та `color` зі значенням `white`.
 
 ```js
+const styleElement = document.querySelector('style:not([class])');
+const rules = styleElement?.sheet?.cssRules?.[0] || styleElement?.sheet?.rules?.[0];
+let fontSize, color;
 
-const styleTag = document.getElementsByTagName('style')?.[0];
-let pIsStyled = false;
-
-
-const rules = styleTag?.sheet?.cssRules || styleTag?.sheet?.rules;
-if (rules) {
-  for (let j = 0; j < rules.length; j++) {
-    const rule = rules[j];
-    if (rule.selectorText === 'p') {
-      pIsStyled = true;
-      break;
-    }
-  }
+if (rules && rules.selectorText === 'p') {
+  fontSize = rules.style.fontSize;
+  color = rules.style.color;
 }
 
-assert(pIsStyled);
+assert.equal(fontSize, "18px");
+assert.equal(color, 'white');
 ```
 
-Елемент `button` повинен мати `background-color` зі значенням `orange`.
+Ви повинні мати один елемент `button`, який містить текст.
 
 ```js
-assert(document.getElementsByTagName('button')?.[0]?.style.backgroundColor === 'orange')
-```
+const btnElement = document.querySelector('button');
 
-Елемент `button` повинен мати `font-size` зі значенням `18px`.
-
-```js
-assert(document.getElementsByTagName('button')?.[0]?.style.fontSize === '18px')
+assert.isNotNull(btnElement);
+assert.isAtLeast(btnElement?.innerText.length, 1);
 ```
 
 Елемент `button` повинен мати вбудований стиль.
 
 ```js
-assert(document.getElementsByTagName('button')?.[0]?.hasAttribute('style'));
+assert.isTrue(document.querySelector('button')?.hasAttribute('style'));
+```
+
+Елемент `button` повинен мати `background-color` зі значенням `orange`.
+
+```js
+assert.equal(document.querySelector('button')?.style.backgroundColor, 'orange')
+```
+
+Елемент `button` повинен мати `font-size` зі значенням `18px`.
+
+```js
+assert.equal(document.querySelector('button')?.style.fontSize, '18px')
 ```
 
 # --seed--

@@ -39,7 +39,7 @@ export enum FlashMessages {
   None = '',
   NotEligible = 'flash.not-eligible',
   NotHonest = 'flash.not-honest',
-  NotRight = 'flash.not-right',
+  GenericError = 'flash.generic-error',
   ProfilePrivate = 'flash.profile-private',
   ProgressReset = 'flash.progress-reset',
   ProvideUsername = 'flash.provide-username',

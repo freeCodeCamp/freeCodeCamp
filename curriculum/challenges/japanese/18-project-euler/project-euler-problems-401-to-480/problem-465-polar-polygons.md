@@ -14,7 +14,7 @@ dashedName: problem-465-polar-polygons
 
 例えば、次のうち 1 つ目だけが極の多角形です (2 つ目、3 つ目、4 つ目の多角形の核は厳密には原点を含んでおらず、5 つ目には核が全くありません)。
 
-<img class="img-responsive center-block" alt="多角形の 5 例" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px;" />
+<img alt="多角形の 5 例" src="https://cdn.freecodecamp.org/curriculum/project-euler/polar-polygons.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 1 つ目の多角形で、3 つの頂点が同一線上で連続していることに注目してください。
 

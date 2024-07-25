@@ -12,7 +12,7 @@ N×N disks are placed on a square game board. Each disk has a black side and whi
 
 At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus $2 × N - 1$ disks are flipped. 當所有磁盤顯示其白色邊時，遊戲結束。 以下示例顯示了5×5板上的遊戲。
 
-<img class="img-responsive center-block" alt="animation showing game on 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px;" />
+<img alt="animation showing game on 5x5 board" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-flips.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 It can be proven that 3 is the minimal number of turns to finish this game.
 

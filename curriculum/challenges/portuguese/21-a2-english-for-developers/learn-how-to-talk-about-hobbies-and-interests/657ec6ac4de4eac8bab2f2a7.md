@@ -1,6 +1,6 @@
 ---
 id: 657ec6ac4de4eac8bab2f2a7
-title: Task 39
+title: Tarefa 39
 challengeType: 22
 dashedName: task-39
 ---
@@ -15,7 +15,7 @@ The word `date` can be used in different contexts. While it often refers to a ro
 
 ## --sentence--
 
-`Ok, it's a _ _, then.`
+`Ok, it's a BLANK BLANK, then.`
 
 ## --blanks--
 

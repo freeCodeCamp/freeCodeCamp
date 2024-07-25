@@ -5,7 +5,6 @@ function FreeCodeCampLogo(
 ): JSX.Element {
   return (
     <svg
-      data-cy='freeCodeCamp-logo'
       height={24}
       version='1.1'
       viewBox='0 0 210 24'

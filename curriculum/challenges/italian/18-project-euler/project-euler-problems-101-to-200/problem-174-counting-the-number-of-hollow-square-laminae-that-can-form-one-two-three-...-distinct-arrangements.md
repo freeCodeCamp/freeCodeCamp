@@ -14,7 +14,7 @@ Definiremo una lamina quadrata come un contorno quadrato con un "foro" quadrato 
 
 Date otto piastrelle è possibile formare una lamina in un solo modo: quadrato 3x3 con un foro 1x1 nel mezzo. Tuttavia, utilizzando trentadue piastrelle è possibile formare due lamine distinte.
 
-<img class="img-responsive center-block" alt="due lamine quadrate con fori 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px;" />
+<img alt="due lamine quadrate con fori 2x2 e 7x7" src="https://cdn.freecodecamp.org/curriculum/project-euler/using-up-to-one-million-tiles-how-many-different-hollow-square-laminae-can-be-formed.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Se $t$ rappresenta il numero di piastrelle utilizzate, diremo che $t = 8$ è di tipo $L(1)$ e $t = 32$ è di tipo $L(2)$.
 

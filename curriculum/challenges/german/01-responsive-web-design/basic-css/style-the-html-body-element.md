@@ -41,7 +41,7 @@ assert(
 );
 ```
 
-Deine CSS-Eigenschaft sollte mit einem Semikolon enden.
+Your CSS rule should end with a semicolon.
 
 ```js
 assert(

@@ -10,7 +10,7 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 Використовуючи комбінацію чорних квадратних комірок і довгастих комірок, вибраних з: червоних комірок розміром дві одиниці, зелених комірок розміром три одиниці та синіх комірок розміром чотири одиниці, можна створити ряд довжиною п’ять одиниць рівно п’ятнадцятьма різними способами.
 
-<img class="img-responsive center-block" alt="Можливі способи розміщення червоних, зелених і синіх довгастих комірок ряду довжиною в п’ять одиниць" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="Можливі способи розміщення червоних, зелених і синіх довгастих комірок ряду довжиною в п’ять одиниць" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Скількома способами можна викласти ряд довжиною п’ятдесят одиниць?
 

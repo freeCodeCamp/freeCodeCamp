@@ -16,7 +16,7 @@ $AO = CO ≤ BO = DO$ の場合、$ABCD$ を「二斜整数四辺形」(biclinic
 
 例えば、下の四辺形は $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$, $AO = CO = 23$ であり、二斜整数四角形です。
 
-<img class="img-responsive center-block" alt="BD の中点を点 O とする四辺形 ABCD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="quadrilateral ABCD, with point O, a midpoint of BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$ を満たす相異なる二斜整数四角形 $ABCD$ の数を、$B(N)$ とします。 $B(10\\000) = 49$, $B(1\\,000\\000) = 38239$ であることを確認できます。
 

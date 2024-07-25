@@ -17,7 +17,7 @@ CSS 裏的 `opacity` 屬性用來設置元素的透明度。
 
 # --instructions--
 
-將 class 爲 `links` 的所有超鏈接的 `opacity` 屬性值設置 0.7。
+將 class 爲 `links` 的所有錨標籤的 `opacity` 屬性值設置 0.7。
 
 # --hints--
 

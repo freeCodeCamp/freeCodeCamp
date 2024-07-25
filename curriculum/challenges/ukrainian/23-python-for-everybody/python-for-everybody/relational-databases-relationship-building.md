@@ -14,7 +14,7 @@ dashedName: relational-databases-relationship-building
 
 ## --text--
 
-What does the INSERT command do in SQL?
+Що робить команда INSERT у SQL?
 
 ## --answers--
 

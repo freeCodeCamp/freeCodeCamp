@@ -1,5 +1,5 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
 
@@ -116,6 +116,7 @@ export type Characters =
   | 'Brian'
   | 'Candidate'
   | 'David'
+  | 'Delivery Man'
   | 'Expert'
   | 'Jake'
   | 'James'
@@ -176,7 +177,6 @@ export type ChallengeWithCompletedNode = {
 
 export type ChallengeNode = {
   challenge: {
-    audioPath: string;
     block: string;
     certification: string;
     challengeOrder: number;
@@ -223,7 +223,6 @@ export type ChallengeNode = {
     tail: string[];
     template: string;
     tests: Test[];
-    time: string;
     title: string;
     translationPending: boolean;
     url: string;
@@ -358,6 +357,8 @@ export type SavedChallenge = {
   challengeFiles: SavedChallengeFiles;
 };
 
+// TODO: remove unused properties and stop returning them from api? (e.g.
+// history, ext, name)
 export type SavedChallengeFile = {
   fileKey: string;
   ext: Ext;
@@ -422,7 +423,7 @@ export type ChallengeFile = {
   name: string;
   editableRegionBoundaries?: number[];
   usesMultifileEditor?: boolean;
-  error: null | string;
+  error?: unknown;
   head: string;
   tail: string;
   seed: string;

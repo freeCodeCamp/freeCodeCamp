@@ -16,7 +16,7 @@ We'll call $ABCD$ a biclinic integral quadrilateral if $AO = CO ≤ BO = DO$.
 
 For example, the following quadrilateral is a biclinic integral quadrilateral: $AB = 19$, $BC = 29$, $CD = 37$, $AD = 43$, $BD = 48$ and $AO = CO = 23$.
 
-<img class="img-responsive center-block" alt="quadrilateral ABCD, with point O, an midpoint of BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px;">
+<img alt="quadrilateral ABCD, with point O, a midpoint of BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/biclinic-integral-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Let $B(N)$ be the number of distinct biclinic integral quadrilaterals $ABCD$ that satisfy ${AB}^2 + {BC}^2 + {CD}^2 + {AD}^2 ≤ N$. We can verify that $B(10\\,000) = 49$ and $B(1\\,000\\,000) = 38239$.
 

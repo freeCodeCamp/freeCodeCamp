@@ -1,6 +1,6 @@
 ---
 id: 64cb4ebdc75b3a73a43da5ec
-title: Step 108
+title: Passo 108
 challengeType: 0
 dashedName: step-108
 ---
@@ -235,8 +235,8 @@ class Player {
       this.position.x = this.width;
     }
 
-    if (this.position.x >= canvas.width - 2 * this.width) {
-      this.position.x = canvas.width - 2 * this.width;
+    if (this.position.x >= canvas.width - this.width * 2) {
+      this.position.x = canvas.width - this.width * 2;
     }
   }
 }

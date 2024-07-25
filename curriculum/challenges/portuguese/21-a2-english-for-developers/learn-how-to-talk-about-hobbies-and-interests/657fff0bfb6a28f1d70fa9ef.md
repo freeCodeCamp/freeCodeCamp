@@ -1,6 +1,6 @@
 ---
 id: 657fff0bfb6a28f1d70fa9ef
-title: Task 78
+title: Tarefa 78
 challengeType: 22
 dashedName: task-78
 ---
@@ -17,7 +17,7 @@ For example, if your friend offers to help you with coding challenge, and you're
 
 ## --sentence--
 
-`Thanks for the invite, Sarah. I _ it, _ I'm not really into sci-fi.`
+`Thanks for the invite, Sarah. I BLANK it, BLANK I'm not really into sci-fi.`
 
 ## --blanks--
 

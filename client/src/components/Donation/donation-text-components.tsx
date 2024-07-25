@@ -20,7 +20,9 @@ export const CtaText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <h1 data-playwright-test-label='main-head'>{t('donate.help-more')}</h1>
+      <h1 data-playwright-test-label='main-head' id='content-start'>
+        {t('donate.help-more')}
+      </h1>
       <Spacer size='medium' />
       <p data-playwright-test-label='donate-text-1'>{t('donate.efficiency')}</p>
       <p data-playwright-test-label='donate-text-2'>
@@ -43,15 +45,11 @@ export const ThankYouMessage = ({
   const { t } = useTranslation();
   return (
     <>
-      <h1 data-playwright-test-label='main-head' data-cy='donate.thank-you'>
-        {t('donate.thank-you')}
-      </h1>
+      <h1 data-playwright-test-label='main-head'>{t('donate.thank-you')}</h1>
       {(askForDonation || thankContributon) && (
         <>
           <Spacer size='medium' />
-          <p data-cy='donate.crucial-contribution'>
-            {t('donate.crucial-contribution')}
-          </p>
+          <p>{t('donate.crucial-contribution')}</p>
         </>
       )}
       {askForDonation && <OtherWaysToSupport />}
@@ -63,13 +61,11 @@ export const OtherWaysToSupport = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <p data-cy='donate.if-support-further'>
+      <p>
         <Trans i18nKey='donate.if-support-further'>
           <a href={t('links:donate.one-time-external-url')}>placeholder</a>
           <a href={t('links:donate.mail-check-url')}>placeholder</a>
-          <a data-cy='donate-link' href={t('links:donate.other-ways-url')}>
-            placeholder
-          </a>
+          <a href={t('links:donate.other-ways-url')}>placeholder</a>
         </Trans>
       </p>
     </>
@@ -88,14 +84,15 @@ const FaqItem = (
         className='map-title'
         onClick={() => setExpanded(!isExpanded)}
         aria-expanded={isExpanded}
+        aria-controls={`donate-faq-content-${key}`}
       >
         <Caret />
         <h3>{title}</h3>
       </button>
       {isExpanded && (
-        <>
-          <div className='map-challenges-ul'>{text}</div>
-        </>
+        <div className='map-challenges-ul' id={`donate-faq-content-${key}`}>
+          {text}
+        </div>
       )}
     </div>
   );

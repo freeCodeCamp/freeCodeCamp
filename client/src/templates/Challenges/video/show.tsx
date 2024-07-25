@@ -15,7 +15,7 @@ import { Container, Col, Row, Button } from '@freecodecamp/ui';
 import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
@@ -28,7 +28,8 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 
@@ -45,6 +46,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
@@ -59,6 +61,7 @@ interface ShowVideoProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
   description: string;
+  initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
   openHelpModal: () => void;
@@ -103,12 +106,19 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: {
+            fields: { tests },
+            title,
+            challengeType,
+            helpCategory
+          }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
     } = this.props;
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -372,6 +382,10 @@ export const query = graphql`
         fields {
           blockName
           slug
+          tests {
+            text
+            testString
+          }
         }
         question {
           text

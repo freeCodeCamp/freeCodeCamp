@@ -24,7 +24,7 @@ dashedName: problem-392-enmeshed-unit-circle
 
 例: 下図は $N = 10$ のときの解を示しています。
 
-<img class="img-responsive center-block" alt="N = 10 のときの解" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px;" />
+<img alt="N = 10 のときの解" src="https://cdn.freecodecamp.org/curriculum/project-euler/enmeshed-unit-circle.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $N = 10$ のときに赤色のマスが占める面積を、四捨五入して小数第 10 位まで示すと 3.3469640797 になります。
 

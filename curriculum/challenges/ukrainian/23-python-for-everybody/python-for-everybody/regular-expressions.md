@@ -14,7 +14,7 @@ dashedName: regular-expressions
 
 ## --text--
 
-Which regex matches only a white space character?
+Який регулярний вираз підходить лише для пробілу?
 
 ## --answers--
 

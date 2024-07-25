@@ -30,12 +30,7 @@ const ProjectModal = ({
         <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer alignment='end'>
-        <Button
-          data-cy='solution-viewer-close-btn'
-          onClick={handleSolutionModalHide}
-        >
-          {t('buttons.close')}
-        </Button>
+        <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );

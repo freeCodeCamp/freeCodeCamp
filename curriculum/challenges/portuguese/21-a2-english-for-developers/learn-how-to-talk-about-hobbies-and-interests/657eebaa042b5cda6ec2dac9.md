@@ -1,6 +1,6 @@
 ---
 id: 657eebaa042b5cda6ec2dac9
-title: Task 58
+title: Tarefa 58
 challengeType: 22
 dashedName: task-58
 ---
@@ -17,7 +17,7 @@ If your friend tells you they saw a dog riding a skateboard down the street, you
 
 ## --sentence--
 
-`Sarah: Are you _?`
+`Sarah: Are you BLANK?`
 
 ## --blanks--
 

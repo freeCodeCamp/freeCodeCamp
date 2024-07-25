@@ -20,7 +20,7 @@ dashedName: stock-price-checker
 
 # --instructions--
 
-1.  將 `NODE_ENV` 設置爲 `test`，不帶引號，並將 `DB` 設爲你的 MongoDB 連接字符串。
+1.  Set the `NODE_ENV` environment variable to `test`, without quotes
 2.  在 `routes/api.js` 中完成項目，或者通過創建一個處理程序/控制器來完成項目
 3.  添加安全功能到 `server.js`。
 4.  在 `tests/2_functional-tests.js` 中創建所有的功能測試
@@ -123,12 +123,3 @@ async (getUserInput) => {
 };
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

@@ -2,7 +2,7 @@ const path = require('path');
 const {
   createFlatSuperBlockMap,
   SuperBlocks
-} = require('../shared/config/superblocks');
+} = require('../shared/config/curriculum');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
@@ -85,7 +85,8 @@ const directoryToSuperblock = {
   '21-a2-english-for-developers': 'a2-english-for-developers',
   '22-rosetta-code': 'rosetta-code',
   '23-python-for-everybody': 'python-for-everybody',
-  '99-example-certification': 'example-certification'
+  '24-b1-english-for-developers': 'b1-english-for-developers',
+  '25-front-end-development': 'front-end-development'
 };
 
 function getSuperBlockFromDir(dir) {

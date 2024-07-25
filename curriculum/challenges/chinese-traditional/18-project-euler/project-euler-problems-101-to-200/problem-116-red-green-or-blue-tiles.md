@@ -12,15 +12,15 @@ A row of five black square tiles is to have a number of its tiles replaced with 
 
 如果選擇紅色瓷磚，有七種方法可以做到這一點。
 
-<img class="img-responsive center-block" alt="將紅色塊放在長度爲 5 個單元的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px;" />
+<img alt="將紅色塊放在長度爲 5 個單元的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 If green tiles are chosen there are three ways.
 
-<img class="img-responsive center-block" alt="將綠色塊放在長度爲 5 個單位的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px;" />
+<img alt="將綠色塊放在長度爲 5 個單位的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 And if blue tiles are chosen there are two ways.
 
-<img class="img-responsive center-block" alt="將藍色塊放在長度爲 5 個單位的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px;" />
+<img alt="將藍色塊放在長度爲 5 個單位的一行中的可能方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-or-blue-tiles-3.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 假定顏色不能混合，則有 7 + 3 + 2 = 12 種方法來替換長度爲 5 個單位的黑色瓷磚。 如果顏色不能混合且至少必須使用一個彩色瓷塊，那麼一行長度爲50個單位的黑色瓷塊可以有多少種不同的更換方式？
 

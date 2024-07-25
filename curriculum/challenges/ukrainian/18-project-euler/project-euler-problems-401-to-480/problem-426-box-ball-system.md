@@ -14,13 +14,13 @@ dashedName: problem-426-box-ball-system
 
 Як можна побачити нижче, після одного ходу послідовність (2, 2, 2, 1, 2) стає послідовністю (2, 2, 1, 2, 3). Зверніть увагу, що нова послідовність починається з першої заповненої коробки.
 
-<img class="img-responsive center-block" alt="анімація завершеного ходу з (2, 2, 2, 1, 2) до (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="анімація завершеного ходу з (2, 2, 2, 1, 2) до (2, 2, 1, 2, 3)" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Така система називається системою коробок та м’ячів, або якщо коротко — СКМ.
 
 Можна довести, що після значної кількості ходів система доходить до положення, де послідовні числа заповнених коробок не змінюються. У прикладі нижче послідовні числа заповнених коробок досягають [1, 2, 3], що назвемо кінцевим положенням.
 
-<img class="img-responsive center-block" alt="чотири ходи з заповнених коробок [2, 2, 2] до кінцевого положення [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="чотири ходи з заповнених коробок [2, 2, 2] до кінцевого положення [1, 2, 3]" src="https://cdn.freecodecamp.org/curriculum/project-euler/box-ball-system-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Визначимо послідовність $\\{t_i\\}$:
 

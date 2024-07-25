@@ -11,7 +11,7 @@ dashedName: issue-tracker
 Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a este: <a href="https://issue-tracker.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://issue-tracker.freecodecamp.rocks/</a>. Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
--   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
+-   Recorra ao <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-issuetracker/" target="_blank" rel="noopener noreferrer nofollow"> nosso projeto inicial no Gitpod </a> para completar o seu projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 # --instructions--
@@ -19,8 +19,8 @@ Crie um aplicativo full stack em JavaScript que seja funcionalmente semelhante a
 -   Complete a rota /api/translate em `/routes/api.js`
 -   Crie todos os testes funcionais em `tests/2_functional-tests.js`
 -   Copie o arquivo `sample.env` para `.env` e defina as variáveis adequadamente
--   To run the tests automatically, add `NODE_ENV=test` in your `.env` file
--   To run the tests in the console, use the command `npm run test`
+-   Para executar os testes, adicione `NODE_ENV=test` no seu arquivo `.env`
+-   Para executar os testes no console, use o comando `npm run test`
 
 Escreva os testes a seguir em `tests/2_functional-tests.js`:
 
@@ -205,6 +205,11 @@ async (getUserInput) => {
     const getMultiple = await $.get(url + '?created_by=Alice&assigned_to=Bob');
     assert.isArray(getMultiple);
     assert.lengthOf(getMultiple, 2);
+    const copyId = getMultiple[0]._id;
+    const getById = await $.get(url + `?_id=${copyId}`);
+    assert.isArray(getById);
+    assert.lengthOf(getById, 1);
+    assert.equal(getById[0]._id, copyId, 'should be able to query a document by _id')
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
@@ -356,12 +361,3 @@ async (getUserInput) => {
 };
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

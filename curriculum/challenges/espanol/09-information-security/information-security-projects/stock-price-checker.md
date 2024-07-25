@@ -20,7 +20,7 @@ Trabajar en este proyecto implicará escribir tu código utilizando uno de los s
 
 # --instructions--
 
-1.  SET `NODE_ENV` to `test` without quotes and set `DB` to your MongoDB connection string
+1.  Set the `NODE_ENV` environment variable to `test`, without quotes
 2.  Completa el proyecto en `routes/api.js` o creando un manejador/controlador
 3.  Añadirás cualquier característica de seguridad a `server.js`
 4.  Crearás todas las pruebas funcionales en `tests/2_functional-tests.js`
@@ -123,12 +123,3 @@ async (getUserInput) => {
 };
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

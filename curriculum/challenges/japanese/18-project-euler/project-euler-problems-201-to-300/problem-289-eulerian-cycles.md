@@ -16,7 +16,7 @@ $E(m,n)$ 上のオイラー閉路は、各弧をちょうど 1 回ずつ通る�
 
 下の画像は、$E(3,3)$ と、交差しないオイラー経路の例です。
 
-<img class="img-responsive center-block" alt="オイラー閉路 E(3,3) と、交差しないオイラー経路" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;" />
+<img alt="オイラー閉路 E(3,3) と、交差しないオイラー経路" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $E(m,n)$ 上の交差しないオイラー経路の数を $L(m,n)$ とします。 例えば、$L(1,2) = 2$, $L(2,2) = 37$, $L(3,3) = 104290$ です。
 

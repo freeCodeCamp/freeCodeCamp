@@ -58,11 +58,6 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   const challenges = getChallenges();
   const certTypeIds = createCertTypeIds(challenges);
 
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authorize);
-
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
   // OR: Always respond with current user - full user object - not random pieces.
   fastify.put(
@@ -101,170 +96,162 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       const certType = certSlugTypeMap[certSlug];
       const certName = certTypeTitleMap[certType];
 
-      try {
-        const user = await fastify.prisma.user.findUnique({
-          where: { id: req.user?.id }
-        });
+      const user = await fastify.prisma.user.findUnique({
+        where: { id: req.user?.id }
+      });
 
-        if (!user) {
-          void reply.code(500);
-          return {
-            type: 'danger',
-            // message: 'User not found'
-            message: 'flash.went-wrong'
-          } as const;
-        }
-        const { completedChallenges } = user;
-        const isCertMap = getUserIsCertMap(removeNulls(user));
-
-        // TODO: Discuss if this is a requirement still
-        if (!user.name) {
-          void reply.code(400);
-          return {
-            response: {
-              type: 'info',
-              message: 'flash.name-needed'
-            },
-            isCertMap,
-            completedChallenges: normalizeChallenges(completedChallenges)
-          } as const;
-        }
-
-        if (user[certType]) {
-          void reply.code(200);
-          return {
-            response: {
-              type: 'info',
-              message: 'flash.already-claimed',
-              variables: {
-                name: certName
-              }
-            },
-            isCertMap,
-            completedChallenges: normalizeChallenges(completedChallenges)
-          } as const;
-        }
-
-        const { id, tests, challengeType } = certTypeIds[certType];
-        const hasCompletedTestRequirements = hasCompletedTests(
-          tests,
-          user.completedChallenges
-        );
-
-        if (!hasCompletedTestRequirements) {
-          void reply.code(400);
-          return {
-            response: {
-              type: 'info',
-              message: 'flash.incomplete-steps',
-              variables: {
-                name: certName
-              }
-            },
-            isCertMap,
-            completedChallenges: normalizeChallenges(completedChallenges)
-          } as const;
-        }
-
-        const updatedUser = await fastify.prisma.user.update({
-          where: { id: user.id },
-          data: {
-            [certType]: true,
-            completedChallenges: {
-              push: {
-                id,
-                completedDate: Date.now(),
-                challengeType
-              }
-            }
-          },
-          select: {
-            username: true,
-            email: true,
-            name: true,
-            completedChallenges: true,
-            is2018DataVisCert: true,
-            is2018FullStackCert: true,
-            isApisMicroservicesCert: true,
-            isBackEndCert: true,
-            isDataVisCert: true,
-            isCollegeAlgebraPyCertV8: true,
-            isDataAnalysisPyCertV7: true,
-            isFoundationalCSharpCertV8: true,
-            isFrontEndCert: true,
-            isFrontEndLibsCert: true,
-            isFullStackCert: true,
-            isInfosecCertV7: true,
-            isInfosecQaCert: true,
-            isJsAlgoDataStructCert: true,
-            isJsAlgoDataStructCertV8: true,
-            isMachineLearningPyCertV7: true,
-            isQaCertV7: true,
-            isRelationalDatabaseCertV8: true,
-            isRespWebDesignCert: true,
-            isSciCompPyCertV7: true,
-            isUpcomingPythonCertV8: true
-          }
-        });
-
-        const updatedUserSansNull = removeNulls(updatedUser);
-
-        const updatedIsCertMap = getUserIsCertMap(updatedUserSansNull);
-
-        // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
-        const hasCompletedAllCerts = currentCertifications
-          .map(x => certSlugTypeMap[x])
-          .every(certType => updatedIsCertMap[certType]);
-        const shouldSendCertifiedEmailToCamper =
-          isEmail(updatedUser.email) && hasCompletedAllCerts;
-
-        if (shouldSendCertifiedEmailToCamper) {
-          const notifyUser = {
-            to: updatedUser.email,
-            from: 'quincy@freecodecamp.org',
-            subject:
-              'Congratulations on completing all of the freeCodeCamp certifications!',
-            text: renderCertifiedEmail({
-              username: updatedUser.username,
-              // Safety: `user.name` is required to exist earlier. TODO: Assert
-              name: updatedUser.name as string
-            })
-          };
-
-          // Failed email should not prevent successful response.
-          try {
-            // TODO(POST-MVP): Ensure Camper knows they **have** claimed the cert, but the email failed to send.
-            await fastify.sendEmail(notifyUser);
-          } catch (e) {
-            fastify.log.error(e);
-            // TODO: Log to Sentry
-          }
-        }
-
-        void reply.code(200);
-        return {
-          response: {
-            type: 'success',
-            message: 'flash.cert-claim-success',
-            variables: {
-              username: updatedUser.username,
-              name: certName
-            }
-          },
-          isCertMap: updatedIsCertMap,
-          completedChallenges: normalizeChallenges(
-            updatedUserSansNull.completedChallenges
-          )
-        } as const;
-      } catch (e) {
-        fastify.log.error(e);
+      if (!user) {
         void reply.code(500);
-        throw {
+        fastify.log.error('User not found');
+        fastify.Sentry.captureException(Error('User not found'));
+        return {
           type: 'danger',
-          // message: 'Oops! Something went wrong. Please try again in a moment or contact
+          // message: 'User not found'
           message: 'flash.went-wrong'
         } as const;
       }
+      const { completedChallenges } = user;
+      const isCertMap = getUserIsCertMap(removeNulls(user));
+
+      // TODO: Discuss if this is a requirement still
+      if (!user.name) {
+        void reply.code(400);
+        return {
+          response: {
+            type: 'info',
+            message: 'flash.name-needed'
+          },
+          isCertMap,
+          completedChallenges: normalizeChallenges(completedChallenges)
+        } as const;
+      }
+
+      if (user[certType]) {
+        void reply.code(200);
+        return {
+          response: {
+            type: 'info',
+            message: 'flash.already-claimed',
+            variables: {
+              name: certName
+            }
+          },
+          isCertMap,
+          completedChallenges: normalizeChallenges(completedChallenges)
+        } as const;
+      }
+
+      const { id, tests, challengeType } = certTypeIds[certType];
+      const hasCompletedTestRequirements = hasCompletedTests(
+        tests,
+        user.completedChallenges
+      );
+
+      if (!hasCompletedTestRequirements) {
+        void reply.code(400);
+        return {
+          response: {
+            type: 'info',
+            message: 'flash.incomplete-steps',
+            variables: {
+              name: certName
+            }
+          },
+          isCertMap,
+          completedChallenges: normalizeChallenges(completedChallenges)
+        } as const;
+      }
+
+      const updatedUser = await fastify.prisma.user.update({
+        where: { id: user.id },
+        data: {
+          [certType]: true,
+          completedChallenges: {
+            push: {
+              id,
+              completedDate: Date.now(),
+              challengeType
+            }
+          }
+        },
+        select: {
+          username: true,
+          email: true,
+          name: true,
+          completedChallenges: true,
+          is2018DataVisCert: true,
+          is2018FullStackCert: true,
+          isApisMicroservicesCert: true,
+          isBackEndCert: true,
+          isDataVisCert: true,
+          isCollegeAlgebraPyCertV8: true,
+          isDataAnalysisPyCertV7: true,
+          isFoundationalCSharpCertV8: true,
+          isFrontEndCert: true,
+          isFrontEndLibsCert: true,
+          isFullStackCert: true,
+          isInfosecCertV7: true,
+          isInfosecQaCert: true,
+          isJsAlgoDataStructCert: true,
+          isJsAlgoDataStructCertV8: true,
+          isMachineLearningPyCertV7: true,
+          isQaCertV7: true,
+          isRelationalDatabaseCertV8: true,
+          isRespWebDesignCert: true,
+          isSciCompPyCertV7: true,
+          isUpcomingPythonCertV8: true
+        }
+      });
+
+      const updatedUserSansNull = removeNulls(updatedUser);
+
+      const updatedIsCertMap = getUserIsCertMap(updatedUserSansNull);
+
+      // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
+      const hasCompletedAllCerts = currentCertifications
+        .map(x => certSlugTypeMap[x])
+        .every(certType => updatedIsCertMap[certType]);
+      const shouldSendCertifiedEmailToCamper =
+        isEmail(updatedUser.email) && hasCompletedAllCerts;
+
+      if (shouldSendCertifiedEmailToCamper) {
+        const notifyUser = {
+          to: updatedUser.email,
+          from: 'quincy@freecodecamp.org',
+          subject:
+            'Congratulations on completing all of the freeCodeCamp certifications!',
+          text: renderCertifiedEmail({
+            username: updatedUser.username,
+            // Safety: `user.name` is required to exist earlier. TODO: Assert
+            name: updatedUser.name as string
+          })
+        };
+
+        // Failed email should not prevent successful response.
+        try {
+          // TODO(POST-MVP): Ensure Camper knows they **have** claimed the cert, but the email failed to send.
+          await fastify.sendEmail(notifyUser);
+        } catch (e) {
+          fastify.log.error(e);
+          // TODO: Log to Sentry
+        }
+      }
+
+      void reply.code(200);
+      return {
+        response: {
+          type: 'success',
+          message: 'flash.cert-claim-success',
+          variables: {
+            username: updatedUser.username,
+            name: certName
+          }
+        },
+        isCertMap: updatedIsCertMap,
+        completedChallenges: normalizeChallenges(
+          updatedUserSansNull.completedChallenges
+        )
+      } as const;
     }
   );
 
@@ -289,215 +276,205 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.certSlug
     },
     async (req, reply) => {
-      try {
-        const username = req.params.username.toLowerCase();
-        const certSlug = req.params.certSlug;
+      const username = req.params.username.toLowerCase();
+      const certSlug = req.params.certSlug;
 
-        fastify.log.info(`certSlug: ${certSlug}`);
+      fastify.log.info(`certSlug: ${certSlug}`);
 
-        if (!isKnownCertSlug(certSlug)) {
-          void reply.code(404);
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.cert-not-found',
-                variables: { certSlug }
-              }
-            ]
-          });
-        }
-
-        const certType = certSlugTypeMap[certSlug];
-        const certId = certTypeIdMap[certType];
-        const certTitle = certTypeTitleMap[certType];
-        const completionTime = completionHours[certType] || 300;
-        const user = await fastify.prisma.user.findFirst({
-          where: { username },
-          select: {
-            isBanned: true,
-            isCheater: true,
-            isFrontEndCert: true,
-            isBackEndCert: true,
-            isFullStackCert: true,
-            isRespWebDesignCert: true,
-            isFrontEndLibsCert: true,
-            isJsAlgoDataStructCert: true,
-            isJsAlgoDataStructCertV8: true,
-            isDataVisCert: true,
-            is2018DataVisCert: true,
-            isApisMicroservicesCert: true,
-            isInfosecQaCert: true,
-            isQaCertV7: true,
-            isInfosecCertV7: true,
-            isSciCompPyCertV7: true,
-            isDataAnalysisPyCertV7: true,
-            isMachineLearningPyCertV7: true,
-            isRelationalDatabaseCertV8: true,
-            isCollegeAlgebraPyCertV8: true,
-            isFoundationalCSharpCertV8: true,
-            isUpcomingPythonCertV8: true,
-            isHonest: true,
-            username: true,
-            name: true,
-            completedChallenges: true,
-            profileUI: true
-          }
+      if (!isKnownCertSlug(certSlug)) {
+        void reply.code(404);
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.cert-not-found',
+              variables: { certSlug }
+            }
+          ]
         });
+      }
 
-        if (user === null) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.username-not-found',
-                variables: { username }
-              }
-            ]
-          });
+      const certType = certSlugTypeMap[certSlug];
+      const certId = certTypeIdMap[certType];
+      const certTitle = certTypeTitleMap[certType];
+      const completionTime = completionHours[certType] || 300;
+      const user = await fastify.prisma.user.findFirst({
+        where: { username },
+        select: {
+          isBanned: true,
+          isCheater: true,
+          isFrontEndCert: true,
+          isBackEndCert: true,
+          isFullStackCert: true,
+          isRespWebDesignCert: true,
+          isFrontEndLibsCert: true,
+          isJsAlgoDataStructCert: true,
+          isJsAlgoDataStructCertV8: true,
+          isDataVisCert: true,
+          is2018DataVisCert: true,
+          isApisMicroservicesCert: true,
+          isInfosecQaCert: true,
+          isQaCertV7: true,
+          isInfosecCertV7: true,
+          isSciCompPyCertV7: true,
+          isDataAnalysisPyCertV7: true,
+          isMachineLearningPyCertV7: true,
+          isRelationalDatabaseCertV8: true,
+          isCollegeAlgebraPyCertV8: true,
+          isFoundationalCSharpCertV8: true,
+          isUpcomingPythonCertV8: true,
+          isHonest: true,
+          username: true,
+          name: true,
+          completedChallenges: true,
+          profileUI: true
         }
+      });
 
-        if (user.isCheater || user.isBanned) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.not-eligible'
-              }
-            ]
-          });
-        }
+      if (user === null) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.username-not-found',
+              variables: { username }
+            }
+          ]
+        });
+      }
 
-        if (!user.isHonest) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.not-honest',
-                variables: { username }
-              }
-            ]
-          });
-        }
+      if (user.isCheater || user.isBanned) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-eligible'
+            }
+          ]
+        });
+      }
 
-        if (user.profileUI?.isLocked) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.profile-private',
-                variables: { username }
-              }
-            ]
-          });
-        }
+      if (!user.isHonest) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.not-honest',
+              variables: { username }
+            }
+          ]
+        });
+      }
 
-        if (!user.name) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.add-name'
-              }
-            ]
-          });
-        }
+      if (user.profileUI?.isLocked) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.profile-private',
+              variables: { username }
+            }
+          ]
+        });
+      }
 
-        if (!user.profileUI?.showCerts) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.certs-private',
-                variables: { username }
-              }
-            ]
-          });
-        }
+      if (!user.name) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.add-name'
+            }
+          ]
+        });
+      }
 
-        if (!user.profileUI?.showTimeLine) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.timeline-private',
-                variables: { username }
-              }
-            ]
-          });
-        }
+      if (!user.profileUI?.showCerts) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.certs-private',
+              variables: { username }
+            }
+          ]
+        });
+      }
 
-        if (!user[certType]) {
-          return reply.send({
-            messages: [
-              {
-                type: 'info',
-                message: 'flash.user-not-certified',
-                variables: { username, cert: certTypeTitleMap[certType] }
-              }
-            ]
-          });
-        }
+      if (!user.profileUI?.showTimeLine) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.timeline-private',
+              variables: { username }
+            }
+          ]
+        });
+      }
 
-        const { completedChallenges } = user;
-        const certChallenge = find(
+      if (!user[certType]) {
+        return reply.send({
+          messages: [
+            {
+              type: 'info',
+              message: 'flash.user-not-certified',
+              variables: { username, cert: certTypeTitleMap[certType] }
+            }
+          ]
+        });
+      }
+
+      const { completedChallenges } = user;
+      const certChallenge = find(
+        completedChallenges,
+        ({ id }) => certId === id
+      );
+
+      let { completedDate = Date.now() } = certChallenge || {};
+
+      // the challenge id has been rotated for isDataVisCert
+      if (certType === 'isDataVisCert' && !certChallenge) {
+        const oldDataVisIdChall = find(
           completedChallenges,
-          ({ id }) => certId === id
+          ({ id }) => oldDataVizId === id
         );
 
-        let { completedDate = Date.now() } = certChallenge || {};
-
-        // the challenge id has been rotated for isDataVisCert
-        if (certType === 'isDataVisCert' && !certChallenge) {
-          const oldDataVisIdChall = find(
-            completedChallenges,
-            ({ id }) => oldDataVizId === id
-          );
-
-          if (oldDataVisIdChall) {
-            completedDate = oldDataVisIdChall.completedDate || completedDate;
-          }
+        if (oldDataVisIdChall) {
+          completedDate = oldDataVisIdChall.completedDate || completedDate;
         }
+      }
 
-        // if fullcert is not found, return the latest completedDate
-        if (certType === 'isFullStackCert' && !certChallenge) {
-          completedDate = getFallbackFullStackDate(
-            completedChallenges,
-            completedDate
-          );
-        }
+      // if fullcert is not found, return the latest completedDate
+      if (certType === 'isFullStackCert' && !certChallenge) {
+        completedDate = getFallbackFullStackDate(
+          completedChallenges,
+          completedDate
+        );
+      }
 
-        const { name } = user;
+      const { name } = user;
 
-        if (!user.profileUI.showName) {
-          void reply.code(200);
-          return reply.send({
-            certSlug,
-            certTitle,
-            username,
-            date: completedDate,
-            completionTime
-          });
-        }
-
+      if (!user.profileUI.showName) {
         void reply.code(200);
         return reply.send({
           certSlug,
           certTitle,
           username,
-          name,
           date: completedDate,
           completionTime
         });
-      } catch (err) {
-        fastify.log.error(err);
-        void reply.code(500);
-        return reply.send({
-          message:
-            'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.',
-          type: 'danger'
-        });
       }
+
+      void reply.code(200);
+      return reply.send({
+        certSlug,
+        certTitle,
+        username,
+        name,
+        date: completedDate,
+        completionTime
+      });
     }
   );
 

@@ -10,7 +10,7 @@ dashedName: problem-126-cuboid-layers
 
 Il numero minimo di cubi per coprire ogni faccia visibile su un cuboide che misura 3 x 2 x 1 è ventidue.
 
-<img class="img-responsive center-block" alt="Un cuboide 3x2x1 ricoperto con ventidue cubi 1x1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px;" />
+<img alt="Un cuboide 3x2x1 ricoperto con ventidue cubi 1x1x1" src="https://cdn.freecodecamp.org/curriculum/project-euler/cuboid-layers.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Se aggiungessimo un secondo strato a questo solido occorrerebbero quarantasei cubi per coprire ogni faccia visibile, il terzo strato richiederebbe settantotto cubi, mentre il quarto strato richiederebbe centodiciotto cubi per coprire ogni faccia visibile.
 

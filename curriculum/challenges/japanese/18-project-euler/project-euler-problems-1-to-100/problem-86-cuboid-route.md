@@ -10,7 +10,7 @@ dashedName: problem-86-cuboid-route
 
 寸法 6 × 5 × 3 の直方体の部屋の一方の角にクモ S、反対側の角にハエ F がいます。 部屋の表面を移動するとして、S から F までの最短の「直線」距離は 10 です。その経路が図に示されています。
 
-<img class="img-responsive center-block" alt="直方体の部屋の一方の角から反対側の角に至る、クモとハエの間の経路図" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img alt="直方体の部屋の一方の角から反対側の角に至る、クモとハエの間の経路図" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 しかし、任意の直方体に対して「最短」経路の候補は最大 3 本あります。最短経路の長さが整数であるとは限りません。
 

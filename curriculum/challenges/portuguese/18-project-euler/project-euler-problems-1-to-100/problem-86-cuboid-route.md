@@ -10,7 +10,7 @@ dashedName: problem-86-cuboid-route
 
 Uma aranha, S, está no canto de uma sala em formato de cubo, medindo 6 por 5 por 3, e uma mosca, F, fica no canto oposto. Ao passear pelas superfícies da sala, a menor distância de "linha reta" entre S e F é 10 e o caminho é mostrado no diagrama.
 
-<img class="img-responsive center-block" alt="um diagrama do caminho entre uma aranha e uma mosca a partir de um canto de uma sala no formato de cubo até o canto oposto" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px;" />
+<img alt="um diagrama do caminho entre uma aranha e uma mosca a partir de um canto de uma sala no formato de cubo até o canto oposto" src="https://cdn-media-1.freecodecamp.org/project-euler/cuboid-route.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 No entanto, há até três candidatos a caminhos "mais curtos" para qualquer cuboide dado. O caminho mais curto nem sempre tem o tamanho expresso em números inteiros.
 

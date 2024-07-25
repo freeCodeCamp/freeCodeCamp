@@ -1,7 +1,7 @@
 FROM node:20-bookworm AS builder
 # global installs need root permissions, so have to happen before we switch to
 # the node user
-RUN npm i -g pnpm@8
+RUN npm i -g pnpm@9
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
@@ -19,7 +19,6 @@ ARG NEWS_LOCATION
 ARG RADIO_LOCATION
 ARG CLIENT_LOCALE
 ARG CURRICULUM_LOCALE
-ARG SHOW_LOCALE_DROPDOWN_MENU
 ARG ALGOLIA_APP_ID
 ARG ALGOLIA_API_KEY
 ARG STRIPE_PUBLIC_KEY

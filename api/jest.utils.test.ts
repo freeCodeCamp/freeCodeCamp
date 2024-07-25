@@ -1,4 +1,4 @@
-import { getCsrfToken } from './jest.utils';
+import { getCsrfToken, getCookies } from './jest.utils';
 
 const fakeCookies = [
   '_csrf=123; Path=/; HttpOnly; SameSite=Strict',
@@ -15,5 +15,20 @@ describe('getCsrfToken', () => {
     expect(
       getCsrfToken(['_csrf=123; Path=/; HttpOnly; SameSite=Strict'])
     ).toBeUndefined();
+  });
+});
+
+describe('setCookiesToCookies', () => {
+  test('returns a string of cookies', () => {
+    expect(getCookies(fakeCookies)).toEqual(
+      '_csrf=123; csrf_token=abc-123; sessionId=CV-abc.123'
+    );
+  });
+  test('handles bare cookies', () => {
+    expect(getCookies(['_csrf=123'])).toEqual('_csrf=123');
+  });
+
+  test('throws an error if the cookies are malformed', () => {
+    expect(() => getCookies(['_csrf'])).toThrow();
   });
 });

@@ -12,7 +12,7 @@ Ti viene dato un triangolo con lati interi $ABC$ con lati $a ≤ b ≤ c$ ($AB =
 
 Le bisettrici angolari del triangolo intersecano i lati nei punti $E$, $F$ e $G$ (vedi la figura sotto).
 
-<img class="img-responsive center-block" alt="triangolo ABC, con bisettrici angolari intersecanti i lati nei punti E, F e G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px;" />
+<img alt="triangolo ABC, con bisettrici angolari intersecanti i lati nei punti E, F e G" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisectors.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 I segmenti $EF$, $EG$ e $FG$, dividono il triangolo $ABC$ in quattro triangoli più piccoli: $AEG$, $BFE$, $CGF$ e $EFG$. Si può provare che per ognuno di questi quattro triangoli il rapporto $\frac{\text{area}(ABC)}{\text{area}(\text{sottotriangolo})}$ è razionale. Eppure, ci sono alcuni triangoli per cui alcuni o tutti di questi rapporti sono numeri interi.
 

@@ -10,7 +10,7 @@ dashedName: problem-332-spherical-triangles
 
 球面三角形は、3 つの頂点で 2 本ずつ交差する 3 本の大円弧によって球面上に作られる図形です。
 
-<img class="img-responsive center-block" alt="球面に形成された球面三角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px;" />
+<img alt="球面に形成された球面三角形" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 中心 (0,0,0) と半径 $r$ を持つ球を $C(r)$ とします。
 

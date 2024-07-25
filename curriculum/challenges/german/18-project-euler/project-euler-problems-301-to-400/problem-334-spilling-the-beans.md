@@ -12,7 +12,7 @@ In Plato's heaven, there exist an infinite number of bowls in a straight line. E
 
 Nehmen wir zum Beispiel zwei benachbarte Schüsseln, die 2 bzw. 3 Bohnen enthalten, während alle anderen Schüsseln leer sind. Die folgenden acht Züge beenden das Spiel:
 
-<img class="img-responsive center-block" alt="Animation des Spiels, wenn zwei benachbarte Schalen 2 bzw. 3 Bohnen enthalten" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px;" />
+<img alt="Animation des Spiels, wenn zwei benachbarte Schalen 2 bzw. 3 Bohnen enthalten" src="https://cdn.freecodecamp.org/curriculum/project-euler/spilling-the-beans.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Dir wird die folgende Sequenz gegeben:
 

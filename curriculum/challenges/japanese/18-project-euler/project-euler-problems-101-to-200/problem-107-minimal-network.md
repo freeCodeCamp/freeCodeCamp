@@ -10,7 +10,7 @@ dashedName: problem-107-minimal-network
 
 下の無向ネットワークは 7 つの頂点と 12 本の辺からなり、辺の重みは計 243 です。
 
-<img class="img-responsive center-block" alt="7 頂点と 12 辺で構成されるネットワーク" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px;" />
+<img alt="7 頂点と 12 辺で構成されるネットワーク" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-1.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 このネットワークを次のような行列で表すことができます。
 
@@ -27,7 +27,7 @@ dashedName: problem-107-minimal-network
 
 しかし、ネットワーク上のすべての頂点がつながっている状態を保ちながら一部の辺を取り除くことにより、このネットワークを最適化することができます。 最大限の節約を実現するネットワークを下に示します。 このネットワークの重みは 93 で、元のネットワークからの節約量は 243 - 93 = 150 となります。
 
-<img class="img-responsive center-block" alt="7 頂点と残された 6 辺 (AB, BD, CA, DE, DF, EG) で構成されるネットワーク" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px;" />
+<img alt="7 頂点と残された 6 辺 (AB, BD, CA, DE, DF, EG) で構成されるネットワーク" src="https://cdn.freecodecamp.org/curriculum/project-euler/minimal-network-2.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 ネットワークを行列形式で表す二次元配列 `network` を使用して、ネットワークの連結を保ちながら余分な辺を取り除くことで実現できる最大節約量を求めなさい。 連結されていない頂点は `-1` で表されます。
 

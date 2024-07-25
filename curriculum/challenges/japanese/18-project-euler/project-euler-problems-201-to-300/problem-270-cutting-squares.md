@@ -16,7 +16,7 @@ dashedName: problem-270-cutting-squares
 
 反転または回転した図もすべて相異なる切り方として数え、$N×N$ の正方形の切り方の数を $C(N)$ とします。 例えば、$C(1) = 2$ であり、$C(2) = 30$ です (下図参照)。
 
-<img class="img-responsive center-block" alt="2x2 の正方形の切り方。反転・回転したものは相異なる切り方とされる" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;" />
+<img alt="2x2 の正方形の切り方。反転・回転したものは相異なる切り方とされる" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 $C(30)\bmod {10}^8$ を求めなさい。
 

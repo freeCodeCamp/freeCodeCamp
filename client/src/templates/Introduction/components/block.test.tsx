@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { createStore } from '../../../redux/create-store';
 import {
   ChallengeFiles,
@@ -70,7 +70,6 @@ const defaultProps = {
         tail: ['mockTail'],
         template: 'mockTemplate',
         tests: [] as Test[],
-        time: 'mockTime',
         title: 'mockTitle',
         translationPending: false,
         url: 'https://mockurl.com',

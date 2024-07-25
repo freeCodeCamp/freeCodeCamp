@@ -10,7 +10,7 @@ dashedName: problem-117-red-green-and-blue-tiles
 
 Mit einer Kombination aus schwarzen quadratischen Steinen und länglichen Steinen, ausgewählt aus roten Steinen mit einer Größe von zwei Einheiten, grünen Steinen mit einer Größe von drei Einheiten und blauen Steinen mit einer Größe von vier Einheiten, ist es möglich, eine Reihe mit einer Länge von fünf Einheiten auf genau fünfzehn verschiedene Arten zu verlegen.
 
-<img class="img-responsive center-block" alt="Mögliche Wege, um rote, grüne und blaue Rechtecke in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px;" />
+<img alt="Mögliche Wege, um rote, grüne und blaue Rechtecke in einer Reihe mit einer Länge von fünf Einheiten zu platzieren" src="https://cdn.freecodecamp.org/curriculum/project-euler/red-green-and-blue-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Auf wie viele Arten kann eine Reihe mit einer Länge von fünfzig Einheiten übereinander gelegt werden?
 

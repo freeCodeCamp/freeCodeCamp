@@ -10,7 +10,7 @@ dashedName: problem-199-iterative-circle-packing
 
 Drei Kreise mit gleichem Radius werden innerhalb eines größeren Kreises so angeordnet, dass jedes Kreispaar tangiert wird und sich die inneren Kreise nicht überschneiden. Es gibt vier unbedeckte "Lücken", die iterativ mit weiteren Kreistangenten gefüllt werden sollen.
 
-<img class="img-responsive center-block" alt="ein Diagramm aus sich nicht überschneidenden Kreisen" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px;" />
+<img alt="ein Diagramm aus sich nicht überschneidenden Kreisen" src="https://cdn-media-1.freecodecamp.org/project-euler/199-circles-in-circles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Bei jeder Iteration wird ein maximal großer Kreis in jede Lücke gesetzt, wodurch weitere Lücken für die nächste Iteration entstehen. Nach 3 Iterationen (siehe Bild) gibt es 108 Lücken und der Anteil der Fläche, die nicht von Kreisen bedeckt ist, beträgt 0,06790342, gerundet auf acht Dezimalstellen.
 

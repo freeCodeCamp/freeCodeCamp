@@ -1,6 +1,6 @@
 ---
 id: 656ab31ebccec247fde7cee4
-title: Task 63
+title: Tarefa 63
 challengeType: 22
 dashedName: task-63
 ---
@@ -18,7 +18,7 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 ## --frase--
 
-`_. My computer and drawing tablet are great, too.`
+`BLANK. My computer and drawing tablet are great, too.`
 
 ## --espaços em branco--
 

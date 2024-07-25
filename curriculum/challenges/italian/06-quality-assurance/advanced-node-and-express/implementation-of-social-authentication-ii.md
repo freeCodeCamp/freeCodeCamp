@@ -35,7 +35,7 @@ Invia la tua pagina quando pensi di averlo fatto correttamente. Se incontri degl
 
 # --hints--
 
-passport-github deve essere aggiunto come dipendenza.
+`passport-github` dependency should be added.
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-passaport-github deve essere richiesto.
+`passport-github` should be required.
 
 ```js
 async (getUserInput) => {
@@ -93,14 +93,4 @@ async (getUserInput) => {
     'You should use process.env.GITHUB_CLIENT_ID'
   );
 }
-```
-
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
 ```

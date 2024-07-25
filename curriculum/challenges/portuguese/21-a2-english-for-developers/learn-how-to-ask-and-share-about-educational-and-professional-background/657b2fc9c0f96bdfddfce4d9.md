@@ -1,6 +1,6 @@
 ---
 id: 657b2fc9c0f96bdfddfce4d9
-title: Task 86
+title: Tarefa 86
 challengeType: 22
 dashedName: task-86
 ---
@@ -15,7 +15,7 @@ In this exercise, you will explore the phrase `pique one's interest`. This phras
 
 ## --frase--
 
-`I _ a course in organizational _, and it _ my interest in the workplace and employee dynamics.`
+`I BLANK a course in organizational BLANK, and it BLANK my interest in the workplace and employee dynamics.`
 
 ## --espaços em branco--
 

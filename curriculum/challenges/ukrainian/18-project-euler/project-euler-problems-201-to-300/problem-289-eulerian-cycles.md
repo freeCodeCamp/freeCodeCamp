@@ -16,7 +16,7 @@ dashedName: problem-289-eulerian-cycles
 
 На зображенні нижче показано $E(3,3)$ і наведено приклад неперетинного шляху Ейлера.
 
-<img class="img-responsive center-block" alt="цикл Ейлера E(3, 3) та неперетинний шлях Ейлера" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;" />
+<img alt="цикл Ейлера E(3, 3) та неперетинний шлях Ейлера" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $L(m,n)$ буде кількістю неперетинних шляхів Ейлера на $E(m,n)$. Наприклад, $L(1,2) = 2$, $L(2,2) = 37$ та $L(3,3) = 104290$.
 

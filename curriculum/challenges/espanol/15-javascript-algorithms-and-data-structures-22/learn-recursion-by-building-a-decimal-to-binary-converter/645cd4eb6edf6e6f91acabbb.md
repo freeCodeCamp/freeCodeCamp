@@ -7,7 +7,7 @@ dashedName: step-53
 
 # --description--
 
-Now that `b()` has executed, pop it off the call stack. Then, update your mock call to `a()` to the following: `a(): returns "freeCodeCamp " + "is awesome!"`.
+Now that `b()` has executed, pop it off the call stack. Then, update your mock call to `a()` to the following: `"a(): returns 'freeCodeCamp ' + 'is awesome!'"`.
 
 # --hints--
 
@@ -18,7 +18,7 @@ assert.lengthOf(callStack, 1);
 assert.isString(callStack[0]);
 ```
 
-The string in `callStack` should be the string `a(): returns "freeCodeCamp " + "is awesome!"`.
+The string in `callStack` should be the string `"a(): returns 'freeCodeCamp ' + 'is awesome!'"`.
 
 ```js
 assert.match(
@@ -191,8 +191,12 @@ const decimalToBinary = (input) => {
 };
 
 const checkUserInput = () => {
-  if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
-    alert("Please provide a decimal number");
+  if (
+    !numberInput.value ||
+    isNaN(parseInt(numberInput.value)) ||
+    parseInt(numberInput.value) < 0
+  ) {
+    alert("Please provide a decimal number greater than or equal to 0");
     return;
   }
 

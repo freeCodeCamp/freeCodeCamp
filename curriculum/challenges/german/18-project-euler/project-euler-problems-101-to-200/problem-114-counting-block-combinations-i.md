@@ -10,7 +10,7 @@ dashedName: problem-114-counting-block-combinations-i
 
 A row measuring seven units in length has red blocks with a minimum length of three units placed on it, such that any two red blocks (which are allowed to be different lengths) are separated by at least one black square. Es gibt genau siebzehn Möglichkeiten, dies zu tun.
 
-<img class="img-responsive center-block" alt="Möglichkeiten der Platzierung von Blöcken mit einer Mindestlänge von drei Einheiten in einer Reihe mit einer Länge von sieben Einheiten" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px;" />
+<img alt="Möglichkeiten der Platzierung von Blöcken mit einer Mindestlänge von drei Einheiten in einer Reihe mit einer Länge von sieben Einheiten" src="https://cdn.freecodecamp.org/curriculum/project-euler/counting-block-combinations-i.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Auf wie viele Arten kann eine Reihe mit einer Länge von fünfzig Einheiten gefüllt werden?
 

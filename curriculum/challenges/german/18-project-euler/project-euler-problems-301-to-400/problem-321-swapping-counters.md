@@ -10,11 +10,11 @@ dashedName: problem-321-swapping-counters
 
 A horizontal row comprising of $2n + 1$ squares has $n$ red counters placed at one end and $n$ blue counters at the other end, being separated by a single empty square in the center. For example, when $n = 3$.
 
-<img class="img-responsive center-block" alt="drei Quadrate mit roten und blauen Zählern an den gegenüberliegenden Enden der Reihe, getrennt durch ein leeres Feld" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="drei Quadrate mit roten und blauen Zählern an den gegenüberliegenden Enden der Reihe, getrennt durch ein leeres Feld" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Ein Spielstein kann sich von einem Feld zum nächsten bewegen (schieben) oder über einen anderen Spielstein springen (hüpfen), solange das Feld neben diesem Spielstein unbesetzt ist.
 
-<img class="img-responsive center-block" alt="erlaubte Züge des Spielsteins" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="erlaubte Züge des Spielsteins" src="https://cdn.freecodecamp.org/curriculum/project-euler/swapping-counters-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Lasse $M(n)$ die minimale Anzahl von Zügen/Aktionen sein, um die Positionen der farbigen Spielsteine vollständig umzukehren, d.h. alle roten Spielsteine nach rechts und alle blauen Spielsteine nach links zu bewegen.
 

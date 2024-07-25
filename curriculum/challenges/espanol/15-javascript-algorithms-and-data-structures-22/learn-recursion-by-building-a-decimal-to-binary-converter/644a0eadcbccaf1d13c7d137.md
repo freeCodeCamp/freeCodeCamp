@@ -44,7 +44,7 @@ Your `decimalToBinary` function should return a string with a length of `4`.
 assert.strictEqual(decimalToBinary().length, 4);
 ```
 
-Your `decimalToBinary` function should return `1010` as a string.
+Your `decimalToBinary` function should return `"1010"` as a string.
 
 ```js
 assert.strictEqual(decimalToBinary(), '1010');
@@ -184,8 +184,12 @@ const decimalToBinary = (input) => {
 };
 
 const checkUserInput = () => {
-  if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
-    alert("Please provide a decimal number");
+  if (
+    !numberInput.value ||
+    isNaN(parseInt(numberInput.value)) ||
+    parseInt(numberInput.value) < 0
+  ) {
+    alert("Please provide a decimal number greater than or equal to 0");
     return;
   }
 

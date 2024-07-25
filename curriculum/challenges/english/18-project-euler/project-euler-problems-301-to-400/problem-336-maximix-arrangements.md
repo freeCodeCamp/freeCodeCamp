@@ -18,7 +18,7 @@ However, Simple Simon, the train driver, is not known for his efficiency, so he 
 
 Using four carriages, the worst possible arrangements for Simon, which we shall call maximix arrangements, are $DACB$ and $DBAC$; each requiring him five rotations (although, using the most efficient approach, they could be solved using just three rotations). The process he uses for $DACB$ is shown below.
 
-<img class="img-responsive center-block" alt="five rotations for maximix arrangement DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px;">
+<img alt="five rotations for maximix arrangement DACB" src="https://cdn.freecodecamp.org/curriculum/project-euler/maximix-arrangements.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 It can be verified that there are 24 maximix arrangements for six carriages, of which the tenth lexicographic maximix arrangement is $DFAECB$.
 

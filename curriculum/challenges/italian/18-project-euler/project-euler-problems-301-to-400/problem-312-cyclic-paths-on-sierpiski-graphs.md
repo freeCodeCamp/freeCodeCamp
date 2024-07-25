@@ -11,11 +11,11 @@ dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 - Un grafo di Sierpiński di ordine 1 ($S_1$) è un triangolo equilatero.
 - $S_{n + 1}$ è ottenuto da $S_n$ posizionando tre copie di $S_n$ in modo che ogni coppia di copie abbia un angolo comune.
 
-<img class="img-responsive center-block" alt="Grafi di Sierpinski dell’ordine da 1 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px;" />
+<img alt="Grafi di Sierpinski dell’ordine da 1 a 5" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Sia $C(n)$ il numero di cicli che passano esattamente una volta attraverso tutti i vertici di $S_n$. Ad esempio, $C(3) = 8$ perché otto di questi cicli possono essere disegnati su $S_3$, come mostrato di seguito:
 
-<img class="img-responsive center-block" alt="otto cicli che passano esattamente una volta attraverso tutti i vertici di S_3" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px;" />
+<img alt="otto cicli che passano esattamente una volta attraverso tutti i vertici di S_3" src="https://cdn.freecodecamp.org/curriculum/project-euler/cyclic-paths-on-sierpinski-graphs-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Si può anche verificare che:
 

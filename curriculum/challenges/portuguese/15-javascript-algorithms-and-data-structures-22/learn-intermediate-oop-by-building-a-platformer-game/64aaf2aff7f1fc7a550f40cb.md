@@ -1,6 +1,6 @@
 ---
 id: 64aaf2aff7f1fc7a550f40cb
-title: Step 36
+title: Passo 36
 challengeType: 0
 dashedName: step-36
 ---
@@ -219,8 +219,8 @@ class Player {
       this.position.x = this.width;
     }
 
-    if (this.position.x >= canvas.width - 2 * this.width) {
-      this.position.x = canvas.width - 2 * this.width;
+    if (this.position.x >= canvas.width - this.width * 2) {
+      this.position.x = canvas.width - this.width * 2;
     }
   }
 }

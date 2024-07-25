@@ -4,9 +4,6 @@
   "dashedName": "numpy",
   "helpCategory": "Python",
   "order": 1,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "data-analysis-with-python",
   "challengeOrder": [
     {

@@ -23,7 +23,7 @@ Intro project buttons and headings
  intro to courses section
 */
 
-[dir='rtl'] .link-btn.btn-lg > svg {
+[dir='rtl'] .map-superblock-link.btn-lg > svg {
   transform: rotate(180deg);
 }
 

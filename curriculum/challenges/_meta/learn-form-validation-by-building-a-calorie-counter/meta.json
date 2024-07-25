@@ -1,14 +1,11 @@
 {
-  "name": "Learn Form Validation By Building a Calorie Counter",
+  "name": "Learn Form Validation by Building a Calorie Counter",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-form-validation-by-building-a-calorie-counter",
   "helpCategory": "JavaScript",
-  "order": 3,
-  "time": "2 hours",
-  "template": "",
-  "required": [],
+  "order": 4,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

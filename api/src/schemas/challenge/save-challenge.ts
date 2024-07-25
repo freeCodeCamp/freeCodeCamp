@@ -1,23 +1,29 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { saveChallengeBody } from '../types';
+import { file, genericError, savedChallenge } from '../types';
 
 export const saveChallenge = {
-  body: saveChallengeBody,
+  body: Type.Object({
+    id: Type.String({
+      format: 'objectid',
+      maxLength: 24,
+      minLength: 24
+    }),
+    files: Type.Array(file)
+  }),
   response: {
     200: Type.Object({
-      savedChallenges: Type.Array(
-        Type.Intersect([
-          saveChallengeBody,
-          Type.Object({ lastSavedDate: Type.Number() })
-        ])
-      )
+      savedChallenges: Type.Array(savedChallenge)
     }),
-    403: Type.Literal('That challenge type is not saveable.'),
-    500: Type.Object({
-      type: Type.Literal('danger'),
+    400: Type.Object({
       message: Type.Literal(
-        'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-      )
-    })
+        'That does not appear to be a valid challenge submission.'
+      ),
+      type: Type.Literal('error')
+    }),
+    403: Type.Union([
+      Type.Literal('That challenge type is not saveable.'),
+      genericError
+    ]),
+    default: genericError
   }
 };

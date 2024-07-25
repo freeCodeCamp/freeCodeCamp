@@ -10,7 +10,7 @@ dashedName: problem-163-cross-hatched-triangles
 
 Розглянемо рівносторонній трикутник, у якому проведені меридіани, як у трикутнику розміру 1 на рисунку нижче.
 
-<img class="img-responsive center-block" alt="трикутники розміру 1 і розміру 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px;" />
+<img alt="трикутники розміру 1 і розміру 2" src="https://cdn.freecodecamp.org/curriculum/project-euler/cross-hatched-triangles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Тепер у цьому трикутнику можна знайти шістнадцять трикутників різної форми, розміру, напряму чи розташування. Використовуючи трикутники розміру 1 як будівельні блоки, можна сформувати більші трикутники, такі як трикутник розміру 2 на рисунку вище. Тепер у трикутнику розміру 2 можна знайти сто чотири трикутники різної форми, розміру, напряму чи розташування.
 

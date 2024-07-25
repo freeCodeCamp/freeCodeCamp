@@ -2,7 +2,7 @@ FROM node:20-bookworm AS builder
 RUN apt-get update && apt-get install -y jq
 # global installs need root permissions, so have to happen before we switch to
 # the node user
-RUN npm i -g pnpm@8
+RUN npm i -g pnpm@9
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
@@ -42,7 +42,7 @@ WORKDIR /home/node/build
 COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
-RUN npm i -g pnpm@8
+RUN npm i -g pnpm@9
 
 # Weirdly this config does not seem necessary for the new api (the same number
 # of deps are installed in both cases), but I'm including it just for
@@ -51,12 +51,13 @@ RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
 RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
-FROM node:20-alpine
+FROM node:20-bookworm
 RUN npm i -g pm2@4
 USER node
 WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
 COPY --from=builder --chown=node:node /home/node/build/api/package.json api/
+COPY --from=builder --chown=node:node /home/node/build/shared/config/curriculum.json shared/config/
 
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/shared/node_modules/ shared/node_modules/

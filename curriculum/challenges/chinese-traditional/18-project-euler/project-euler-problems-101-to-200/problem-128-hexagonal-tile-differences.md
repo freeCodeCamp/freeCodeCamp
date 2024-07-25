@@ -12,7 +12,7 @@ A hexagonal tile with number 1 is surrounded by a ring of six hexagonal tiles, s
 
 新環以相同的方式添加，下一個環編號爲8至19,20至37,38至61，依此類推。 下圖顯示了前三個環。
 
-<img class="img-responsive center-block" alt="前三圈排列好的六角磚，數字編號爲 1 到 37，其中磚 8 和磚 17高亮" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px;" />
+<img alt="前三圈排列好的六角磚，數字編號爲 1 到 37，其中磚 8 和磚 17高亮" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 通過計算磚 $n$ 和它周圍 6 塊磚的數字差，我們定位 $PD(n)$ 爲數字差中素數的個數。
 

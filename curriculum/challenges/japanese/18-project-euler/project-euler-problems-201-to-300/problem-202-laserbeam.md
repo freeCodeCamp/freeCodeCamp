@@ -12,7 +12,7 @@ dashedName: problem-202-laserbeam
 
 頂点を $A$, $B$, $C$ とします。 レーザー光線が頂点 $C$ から入り、11 回反射して同じ頂点から出るには、2 通りの経路があります。その一つは下図、もう一つはその逆です。
 
-<img class="img-responsive center-block" alt="レーザー光線が頂点 C から入り、11 回反射して同じ頂点から出る経路の一つ" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px;" />
+<img alt="レーザー光線が頂点 C から入り、11 回反射して同じ頂点から出る経路の一つ" src="https://cdn.freecodecamp.org/curriculum/project-euler/laserbeam.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 レーザー光線が頂点 $C$ から入り、1000001 回反射して同じ頂点から出るには、80840 通りの経路があります。
 

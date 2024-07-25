@@ -20,7 +20,7 @@ dashedName: stock-price-checker
 
 # --instructions--
 
-1.  Встановіть `NODE_ENV` на `test` без лапок та встановіть `DB` на свій рядок з’єднання MongoDB
+1.  Встановіть змінну середовища `NODE_ENV` на `test`, без лапок
 2.  Завершіть проєкт в `routes/api.js` або створивши обробник/контролер
 3.  Ви додаватимете будь-які функції безпеки до `server.js`
 4.  Ви створюватимете усі функціональні тести в `tests/2_functional-tests.js`
@@ -123,12 +123,3 @@ async (getUserInput) => {
 };
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

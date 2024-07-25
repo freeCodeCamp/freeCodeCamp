@@ -35,7 +35,7 @@ passport.use(new GitHubStrategy({
 
 # --hints--
 
-Потрібно додати залежність passport-github.
+Потрібно додати залежність `passport-github`.
 
 ```js
 async (getUserInput) => {
@@ -50,7 +50,7 @@ async (getUserInput) => {
 }
 ```
 
-passport-github повинен бути правильно заданий.
+`passport-github` повинен бути обов’язковим.
 
 ```js
 async (getUserInput) => {
@@ -93,14 +93,4 @@ async (getUserInput) => {
     'You should use process.env.GITHUB_CLIENT_ID'
   );
 }
-```
-
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions,
-  because they would need to be tested against a full working project.
-  Please check our contributing guidelines to learn more.
-*/
 ```

@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Passo 24
+title: Passo 25
 challengeType: 0
-dashedName: step-24
+dashedName: step-25
 ---
 
 # --description--
@@ -11,7 +11,7 @@ Mova a orelha esquerda interna para o lugar com uma position `absolute`, um `top
 
 # --hints--
 
-O seletor `.cat-left-ear` deve ter a propriedade `position` definida como `absolute`. Não se esqueça de adicionar um ponto e vírgula.
+O seletor `.cat-left-ear` deve ter a propriedade `position` definida como `absolute`. Não se esqueça de adicionar um ponto-e-vírgula.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

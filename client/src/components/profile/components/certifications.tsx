@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 
 import { certificatesByNameSelector } from '../../../redux/selectors';
 import type { CurrentCert } from '../../../redux/prop-types';
-import { FullWidthRow, Link, Spacer } from '../../helpers';
+import { FullWidthRow, Spacer, ButtonLink } from '../../helpers';
 
 const mapStateToProps = (
   state: Record<string, unknown>,
@@ -46,15 +46,15 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <>
-      <Link
-        className='btn btn-lg btn-primary btn-block'
-        to={`/certification/${username}/${cert.certSlug}`}
-        data-cy='claimed-certification'
+      <ButtonLink
+        block
+        size='large'
+        href={`/certification/${username}/${cert.certSlug}`}
       >
         {t('buttons.view-cert-title', {
           certTitle: t(`certification.title.${cert.certSlug}`)
         })}
-      </Link>
+      </ButtonLink>
       <Spacer size='small' />
     </>
   );

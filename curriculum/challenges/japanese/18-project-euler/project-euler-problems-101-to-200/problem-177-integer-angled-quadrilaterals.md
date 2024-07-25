@@ -10,7 +10,7 @@ dashedName: problem-177-integer-angled-quadrilaterals
 
 対角線 AC と BD を持つ 凸四角形を ABCD とします。 各頂点で、対角線を引くと 2 辺のそれぞれを使って角が作られ、計 8 つの角ができます。
 
-<img class="img-responsive center-block" alt="対角線 AC と BD が引かれた凸四角形 ABCD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;" />
+<img alt="対角線 AC と BD が引かれた凸四角形 ABCD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 例えば、頂点 A では CAD, CAB という 2 つの角ができます。
 

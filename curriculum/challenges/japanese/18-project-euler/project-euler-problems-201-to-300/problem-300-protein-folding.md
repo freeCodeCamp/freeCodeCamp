@@ -20,7 +20,7 @@ dashedName: problem-300-protein-folding
 
 下図は、上の例のタンパク質を折り畳む 2 通りの方法を示しています (赤い点は H-H 接点)。
 
-<img class="img-responsive center-block" alt="タンパク質 (例) を折り畳む 2 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px;" />
+<img alt="タンパク質 (例) を折り畳む 2 通りの方法" src="https://cdn.freecodecamp.org/curriculum/project-euler/protein-folding.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 左側の折り畳みは H-H 接点が 6つしかないため、自然にこの形になることはあり得ないでしょう。 一方、右側の折り畳みは H-H 接点が 9 つあり、この文字列には最適です。
 

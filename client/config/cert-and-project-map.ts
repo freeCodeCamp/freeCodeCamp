@@ -23,9 +23,7 @@ const apiMicroBase =
   '/learn/back-end-development-and-apis/back-end-development-and-apis-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
-const sciCompPyBase =
-  '/learn/scientific-computing-with-python/' +
-  'scientific-computing-with-python-projects';
+const sciCompPyBase = '/learn/scientific-computing-with-python';
 const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
 const machineLearningPyBase =
@@ -35,8 +33,9 @@ const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const upcomingPythonBase = '/learn/upcoming-python';
-const exampleCertBase = '/learn/example-certification';
+const frontEndDevelopmentBase = '/learn/front-end-development';
 const a2EnglishBase = '/learn/a2-english-for-developers';
+const b1EnglishBase = '/learn/b1-english-for-developers';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -328,31 +327,31 @@ const allStandardCerts = [
       {
         id: '5e44412c903586ffb414c94c',
         title: 'Arithmetic Formatter',
-        link: `${sciCompPyBase}/arithmetic-formatter`,
+        link: `${sciCompPyBase}/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e444136903586ffb414c94d',
         title: 'Time Calculator',
-        link: `${sciCompPyBase}/time-calculator`,
+        link: `${sciCompPyBase}/build-a-time-calculator-project/build-a-time-calculator-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e44413e903586ffb414c94e',
         title: 'Budget App',
-        link: `${sciCompPyBase}/budget-app`,
+        link: `${sciCompPyBase}/build-a-budget-app-project/build-a-budget-app-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e444147903586ffb414c94f',
         title: 'Polygon Area Calculator',
-        link: `${sciCompPyBase}/polygon-area-calculator`,
+        link: `${sciCompPyBase}/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e44414f903586ffb414c950',
         title: 'Probability Calculator',
-        link: `${sciCompPyBase}/probability-calculator`,
+        link: `${sciCompPyBase}/build-a-probability-calculator-project/build-a-probability-calculator-project`,
         certSlug: Certification.SciCompPy
       }
     ]
@@ -801,14 +800,14 @@ const allStandardCerts = [
   // Upcoming Certifications
   {
     id: '64514fda6c245de4d11eb7bb',
-    title: 'Example Certification',
-    certSlug: 'example-certification-v8',
+    title: 'Front End Development',
+    certSlug: Certification.FrontEndDevelopment,
     projects: [
       {
         id: '645147516c245de4d11eb7ba',
-        title: 'Certification Exam',
-        link: `${exampleCertBase}/example-certification-exam`,
-        certSlug: 'example-certification-v8'
+        title: 'Front End Development Certification Exam',
+        link: `${frontEndDevelopmentBase}/front-end-development-certification-exam/front-end-development-certification-exam`,
+        certSlug: Certification.FrontEndDevelopment
       }
     ]
   },
@@ -835,6 +834,19 @@ const allStandardCerts = [
         title: 'Challenge 1',
         link: `${a2EnglishBase}/learn-greetings-in-your-first-day-at-the-office/challenge-1`,
         certSlug: Certification.A2English
+      }
+    ]
+  },
+  {
+    id: '66607e53317411dd5e8aae21',
+    title: 'B1 English for Developers',
+    certSlug: Certification.B1English,
+    projects: [
+      {
+        id: '66607e5b317411dd5e8aae22',
+        title: "Dialogue 1: I'm Tom",
+        link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
+        certSlug: Certification.B1English
       }
     ]
   }

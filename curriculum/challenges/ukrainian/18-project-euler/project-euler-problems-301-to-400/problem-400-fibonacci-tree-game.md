@@ -18,7 +18,7 @@ dashedName: problem-400-fibonacci-tree-game
 
 Ось виграшні ходи першого гравця на першому ході за умови $T(k)$ від $k = 1$ до $k = 6$.
 
-<img class="img-responsive center-block" alt="виграшні ходи першого гравця на першому ході за умови від k = 1 до k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px;" />
+<img alt="виграшні ходи першого гравця на першому ході за умови від k = 1 до k = 6" src="https://cdn.freecodecamp.org/curriculum/project-euler/fibonacci-tree-game.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Нехай $f(k)$ буде кількістю виграшних ходів першого гравця (тобто ходів, для яких другий гравець не має виграшної стратегії) на першому ході гри на дереві $T(k)$.
 

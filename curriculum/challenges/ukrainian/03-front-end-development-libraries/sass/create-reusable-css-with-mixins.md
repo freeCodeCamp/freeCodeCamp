@@ -8,85 +8,112 @@ dashedName: create-reusable-css-with-mixins
 
 # --description--
 
-<dfn>Міксин</dfn> у Sass — це група оголошень CSS, які можна повторно використовувати у таблиці стилів.
-
-Новіші функції CSS потребують трохи часу, перш ніж вони будуть повністю прийнятними та готовими до використання у всіх браузерах. Як тільки функції додано до браузерів, то правилам CSS, які використовують їх, можливо, знадобляться вендорні префікси. Розглянемо `box-shadow`:
+In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet. The definition starts with the `@mixin` at-rule, followed by a custom name. You apply the mixin using the `@include` at-rule.
 
 ```scss
-div {
-  -webkit-box-shadow: 0px 0px 4px #fff;
-  -moz-box-shadow: 0px 0px 4px #fff;
-  -ms-box-shadow: 0px 0px 4px #fff;
-  box-shadow: 0px 0px 4px #fff;
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul {
+  @include reset-list;
 }
 ```
 
-Потрібно написати багато тексту, щоб переписати правило для всіх елементів, які мають `box-shadow`, чи щоб змінити кожне значення для перевірки різних ефектів. Міксини — це як функції для CSS. Ось приклад як написати один з них:
+Compiles to:
 
-```scss
-@mixin box-shadow($x, $y, $blur, $c){ 
-  -webkit-box-shadow: $x $y $blur $c;
-  -moz-box-shadow: $x $y $blur $c;
-  -ms-box-shadow: $x $y $blur $c;
-  box-shadow: $x $y $blur $c;
+```css
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 ```
 
-Визначення починається з `@mixin`, після якого пишуть назву. Параметри (`$x`, `$y`, `$blur` та `$c` у прикладі вище) необов’язкові. Тепер, якщо нам знадобиться правило `box-shadow`, то лише один рядок, який викличе міксин, замінює необхідність написання усіх вендорних префіксів. Міксин викликається директивою `@include`:
+Your mixins can also take arguments, which allows their behavior to be customized. The arguments are required when using the mixin.
 
 ```scss
-div {
-  @include box-shadow(0px, 0px, 4px, #fff);
+@mixin prose($font-size, $spacing) {
+  font-size: $font-size;
+  margin: 0;
+  margin-block-end: $spacing;
+}
+
+p {
+  @include prose(1.25rem, 1rem);
+}
+
+h2 {
+  @include prose(2.4rem, 1.5rem);
+}
+```
+
+You can make arguments optional by giving the parameters default values.
+
+```scss
+@mixin text-color($color: black) {
+  color: $color;
+}
+
+p {
+  @include text-color(); /* color: black */
+}
+
+nav a {
+  @include text-color(orange);
 }
 ```
 
 # --instructions--
 
-Напишіть міксин для `border-radius` і надайте йому параметр `$radius`. Він має використати усі вендорні префікси з прикладу. Після цього використайте міксин `border-radius`, щоб надати елементу `#awesome` заокруглений радіус зі значенням `15px`.
+Write a mixin named `shape` and give it 3 parameters: `$w`, `$h`, and `$bg-color`.
+
+Use the `shape` mixin to give the `#square` element a width and height of `50px`, and the background color `red`. For the `#rect-a` element add a width of `100px`, a height of `50px`, and the background color `blue`. Finally, for the `#rect-b` element add a width of `50px`, a height of `100px`, and the background color `orange`.
 
 # --hints--
 
-Код має оголосити міксин під назвою `border-radius`, який має параметр `$radius`.
+You should declare a mixin named `shape` with 3 parameters: `$w`, `$h`, and `$bg-color`.
 
 ```js
-assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
+assert.match(code, /@mixin\s+shape\s*\(\s*\$w,\s*\$h,\s*\$bg-color\s*\)\s*{/gi);
 ```
 
-Код має містити вендорний префікс `-webkit-border-radius`, який використовує параметр `$radius`.
+Your mixin should include a `width` property that uses the `$w` parameter.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-webkit-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /width:\$w;/gi);
 ```
 
-Код має містити вендорний префікс `-moz-border-radius`, який використовує параметр `$radius`.
+Your mixin should include a `height` property that uses the `$h` parameter.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-moz-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /height:\$h;/gi);
 ```
 
-Код має містити вендорний префікс `-ms-border-radius`, який використовує параметр `$radius`.
+Your mixin should include a `background-color` property that uses the `$bg-color` parameter.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
+assert.match(__helpers.removeWhiteSpace(code), /background-color:\$bg\-color;/gi);
 ```
 
-Код має містити загальне правило `border-radius`, яке використовує параметр `$radius`.
+You should replace the styles inside the `#square` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width and height of `50px`, and the background color `red`.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/border-radius:\$radius;/gi).length ==
-    4
-);
+assert.match(code, /#square\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*50px\s*,\s*red\s*\)\s*;\s*}/gi);
 ```
 
-Код має викликати `border-radius mixin` за допомогою ключового слова `@include`, встановивши його на `15px`.
+You should replace the styles inside the `#rect-a` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `100px`, a height of `50px`, and the background color `blue`.
 
 ```js
-assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
+assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px\s*,\s*50px\s*,\s*blue\s*\)\s*;\s*}/gi);
+```
+
+You should replace the styles inside the `#rect-b` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `50px`, a height of `100px`, and the background color `orange`.
+
+```js
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*100px\s*,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--
@@ -95,38 +122,54 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
 ```html
 <style type='text/scss'>
+#square {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
 
+#rect-a {
+  width: 100px;
+  height: 50px;
+  background-color: blue;
+}
 
-
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-
-  }
+#rect-b {
+  width: 50px;
+  height: 100px;
+  background-color: orange;
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```
 
 # --solutions--
 
 ```html
 <style type='text/scss'>
-  @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;
-  }
+@mixin shape($w, $h, $bg-color) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+}
 
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-    @include border-radius(15px);
-  }
+#square {
+  @include shape(50px, 50px, red);
+}
+
+#rect-a {
+  @include shape(100px, 50px, blue);
+}
+
+#rect-b {
+  @include shape(50px, 100px, orange);
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```

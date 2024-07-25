@@ -6,9 +6,9 @@ client/**/trending.json
 client/config/*.json
 client/config/browser-scripts/*.json
 client/static
-curriculum-server/data/curriculum.json
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
+curriculum/i18n-curriculum
 docs/**/*.md
 /playwright
 pnpm-lock.yaml
@@ -19,4 +19,3 @@ shared/utils/get-lines.test.js
 shared/utils/is-audited.js
 shared/utils/validate.js
 shared/utils/validate.test.js
-web/.next

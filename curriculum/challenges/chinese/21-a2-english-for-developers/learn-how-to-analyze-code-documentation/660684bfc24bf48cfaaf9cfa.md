@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-8
 ---
 
-<!--
-AUDIO REFERENCE:
-Sophie: Thanks. I'll give it a shot.
--->
+<!-- (Audio) Sophie: Thanks, I'll give it a shot. -->
 
 # --description--
 
@@ -20,7 +17,7 @@ For example, if your friend is hesitant about joining a coding class because the
 
 ## --sentence--
 
-`Thanks. _ give it a _.`
+`Thanks, BLANK give it a BLANK.`
 
 ## --blanks--
 
@@ -37,3 +34,51 @@ It is short for `I will`. Sophie is expressing her decision to try what Brian su
 ### --feedback--
 
 In this context, it means an attempt or try at doing something. Sophie is saying she will try what Brian has recommended.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-breakroom.png",
+    "characters": [
+      {
+        "character": "Sophie",
+        "position": {
+          "x": 50,
+          "y": 0,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "7.3-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 24.86,
+      "finishTimestamp": 26.28
+    }
+  },
+  "commands": [
+    {
+      "character": "Sophie",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sophie",
+      "startTime": 1,
+      "finishTime": 2.42,
+      "dialogue": {
+        "text": "Thanks, I'll give it a shot.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sophie",
+      "opacity": 0,
+      "startTime": 2.92
+    }
+  ]
+}
+```

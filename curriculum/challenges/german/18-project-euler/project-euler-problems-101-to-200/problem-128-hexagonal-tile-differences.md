@@ -12,7 +12,7 @@ Ein sechseckiger Stein mit der Nummer 1 ist von einem Ring aus sechs sechseckige
 
 Neue Ringe werden auf die gleiche Weise hinzugefügt, wobei die nächsten Ringe die Nummern 8 bis 19, 20 bis 37, 38 bis 61 usw. tragen. Das folgende Diagramm zeigt die ersten drei Ringe.
 
-<img class="img-responsive center-block" alt="drei erste Ringe aus angeordneten sechseckigen Steinen mit den Nummern 1 bis 37 und den hervorgehobenen Steinen 8 und 17" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px;" />
+<img alt="drei erste Ringe aus angeordneten sechseckigen Steinen mit den Nummern 1 bis 37 und den hervorgehobenen Steinen 8 und 17" src="https://cdn.freecodecamp.org/curriculum/project-euler/hexagonal-tile-differences.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Indem wir die Differenz zwischen dem Stein $n$ und jedem seiner sechs Nachbarn ermitteln, definieren wir $PD(n)$ als die Anzahl der Differenzen, die Primzahlen sind.
 

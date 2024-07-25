@@ -8,85 +8,112 @@ dashedName: create-reusable-css-with-mixins
 
 # --description--
 
-在 Sass 中，<dfn>mixin</dfn> 是一組 CSS 聲明，可以在整個樣式表中重複使用。
-
-CSS 的新功能需要一段時間適配後，所有瀏覽器後才能完全使用。 隨着瀏覽器的不斷升級，使用這些 CSS 規則時可能需要添加瀏覽器前綴。 考慮 `box-shadow`：
+In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet. The definition starts with the `@mixin` at-rule, followed by a custom name. You apply the mixin using the `@include` at-rule.
 
 ```scss
-div {
-  -webkit-box-shadow: 0px 0px 4px #fff;
-  -moz-box-shadow: 0px 0px 4px #fff;
-  -ms-box-shadow: 0px 0px 4px #fff;
-  box-shadow: 0px 0px 4px #fff;
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul {
+  @include reset-list;
 }
 ```
 
-對於所有具有 `box-shadow` 屬性的元素重寫此規則，或者更改每個值以測試不同的效果，需要花費大量的精力。 Mixins 就像 CSS 的函數。 以下是一個例子：
+Compiles to:
 
-```scss
-@mixin box-shadow($x, $y, $blur, $c){ 
-  -webkit-box-shadow: $x $y $blur $c;
-  -moz-box-shadow: $x $y $blur $c;
-  -ms-box-shadow: $x $y $blur $c;
-  box-shadow: $x $y $blur $c;
+```css
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 ```
 
-定義以 `@mixin` 開頭，後跟自定義名稱。 參數（`$x`，`$y`，`$blur`，以及上例中的 `$c` ）是可選的。 現在在需要 `box-shadow` 規則的地方，只需一行 mixin 調用而無需添加所有的瀏覽器前綴。 mixin 可以通過 `@include` 指令調用。
+Your mixins can also take arguments, which allows their behavior to be customized. The arguments are required when using the mixin.
 
 ```scss
-div {
-  @include box-shadow(0px, 0px, 4px, #fff);
+@mixin prose($font-size, $spacing) {
+  font-size: $font-size;
+  margin: 0;
+  margin-block-end: $spacing;
+}
+
+p {
+  @include prose(1.25rem, 1rem);
+}
+
+h2 {
+  @include prose(2.4rem, 1.5rem);
+}
+```
+
+You can make arguments optional by giving the parameters default values.
+
+```scss
+@mixin text-color($color: black) {
+  color: $color;
+}
+
+p {
+  @include text-color(); /* color: black */
+}
+
+nav a {
+  @include text-color(orange);
 }
 ```
 
 # --instructions--
 
-爲 `border-radius` 寫一個 mixin，並給它一個 `$radius` 參數。 應該使用之前例子中的所有瀏覽器前綴。 然後使用 `border-radius` mixin 爲 `#awesome` 元素提供 `15px` 的邊框半徑。
+Write a mixin named `shape` and give it 3 parameters: `$w`, `$h`, and `$bg-color`.
+
+Use the `shape` mixin to give the `#square` element a width and height of `50px`, and the background color `red`. For the `#rect-a` element add a width of `100px`, a height of `50px`, and the background color `blue`. Finally, for the `#rect-b` element add a width of `50px`, a height of `100px`, and the background color `orange`.
 
 # --hints--
 
-應聲明名爲 `border-radius` 的 mixin，其中包含名爲 `$radius` 的參數。
+You should declare a mixin named `shape` with 3 parameters: `$w`, `$h`, and `$bg-color`.
 
 ```js
-assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
+assert.match(code, /@mixin\s+shape\s*\(\s*\$w,\s*\$h,\s*\$bg-color\s*\)\s*{/gi);
 ```
 
-應該給 `$radius` 添加 `-webkit-border-radius` 瀏覽器前綴。
+Your mixin should include a `width` property that uses the `$w` parameter.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-webkit-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /width:\$w;/gi);
 ```
 
-應該給 `$radius` 添加 `-moz-border-radius` 瀏覽器前綴。
+Your mixin should include a `height` property that uses the `$h` parameter.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/-moz-border-radius:\$radius;/gi)
-);
+assert.match(__helpers.removeWhiteSpace(code), /height:\$h;/gi);
 ```
 
-應該給 `$radius` 添加 `-ms-border-radius` 瀏覽器前綴。
+Your mixin should include a `background-color` property that uses the `$bg-color` parameter.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
+assert.match(__helpers.removeWhiteSpace(code), /background-color:\$bg\-color;/gi);
 ```
 
-應該給 `$radius` 添加 `border-radius`。
+You should replace the styles inside the `#square` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width and height of `50px`, and the background color `red`.
 
 ```js
-assert(
-  __helpers.removeWhiteSpace(code).match(/border-radius:\$radius;/gi).length ==
-    4
-);
+assert.match(code, /#square\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*50px\s*,\s*red\s*\)\s*;\s*}/gi);
 ```
 
-應使用 `@include` 關鍵字調用 `border-radius mixin`，並將其設置爲 `15px`。
+You should replace the styles inside the `#rect-a` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `100px`, a height of `50px`, and the background color `blue`.
 
 ```js
-assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
+assert.match(code, /#rect-a\s*{\s*@include\s+shape\s*\(\s*100px\s*,\s*50px\s*,\s*blue\s*\)\s*;\s*}/gi);
+```
+
+You should replace the styles inside the `#rect-b` selector with a call to the `shape` mixin using the `@include` keyword. Setting a width of `50px`, a height of `100px`, and the background color `orange`.
+
+```js
+assert.match(code, /#rect-b\s*{\s*@include\s+shape\s*\(\s*50px\s*,\s*100px\s*,\s*orange\s*\)\s*;\s*}/gi);
 ```
 
 # --seed--
@@ -95,38 +122,54 @@ assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
 ```html
 <style type='text/scss'>
+#square {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
 
+#rect-a {
+  width: 100px;
+  height: 50px;
+  background-color: blue;
+}
 
-
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-
-  }
+#rect-b {
+  width: 50px;
+  height: 100px;
+  background-color: orange;
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```
 
 # --solutions--
 
 ```html
 <style type='text/scss'>
-  @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    border-radius: $radius;
-  }
+@mixin shape($w, $h, $bg-color) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+}
 
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-    @include border-radius(15px);
-  }
+#square {
+  @include shape(50px, 50px, red);
+}
+
+#rect-a {
+  @include shape(100px, 50px, blue);
+}
+
+#rect-b {
+  @include shape(50px, 100px, orange);
+}
 </style>
 
-<div id="awesome"></div>
+<div id="square"></div>
+<div id="rect-a"></div>
+<div id="rect-b"></div>
 ```

@@ -15,12 +15,12 @@ Como todas as APIs de preço de ações confiáveis requerem uma chave de API, c
 Trabalhar nesse projeto vai fazer com que você escreva seu código usando um dos seguintes métodos:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">este repositório do GitHub</a> e complete o projeto localmente.
--   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project.
+-   Recorra ao <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-stockchecker/" target="_blank" rel="noopener noreferrer nofollow"> nosso projeto inicial no Gitpod </a> para completar o seu projeto.
 -   Use um construtor de site de sua escolha para completar o projeto. Certifique-se de incorporar todos os arquivos do nosso repositório no GitHub.
 
 # --instructions--
 
-1.  Defina `NODE_ENV` como `test` sem aspas e `DB` como sua string de conexão ao MongoDB
+1.  Defina a variável de ambiente `NODE_ENV` como `test`, sem aspas
 2.  Complete o projeto em `routes/api.js` ou criando um manipulador/controlador
 3.  Você adicionará todas as funcionalidades de segurança ao `server.js`
 4.  Você criará todos os testes funcionais em `tests/2_functional-tests.js`
@@ -123,12 +123,3 @@ async (getUserInput) => {
 };
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

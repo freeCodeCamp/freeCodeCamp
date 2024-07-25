@@ -1,6 +1,6 @@
 ---
 id: 587d781d367417b2b2512ac8
-title: 调整锚点的悬停状态
+title: 调整锚标签的悬停状态
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
@@ -11,7 +11,7 @@ dashedName: adjust-the-hover-state-of-an-anchor-tag
 
 本挑战将要涉及到伪类。 伪类是可以添加到选择器上的关键字，用来选择特定状态的元素。
 
-比如，可以使用 `:hover` 伪类选择器来选取超链接的悬停状态。 下面的代码可以在鼠标悬停在超链接上时将其 `color` 变成红色：
+比如，可以使用 `:hover` 伪类选择器来选取锚标签的悬停状态。 下面的代码可以在鼠标悬停在锚标签上时将其 `color` 变成红色：
 
 ```css
 a:hover {
@@ -25,13 +25,13 @@ a:hover {
 
 # --hints--
 
-超链接的 `color` 应该保持黑色，应只添加 `:hover` CSS 规则。
+The anchor tag `color` should remain black, only add CSS rules for the `:hover` state.
 
 ```js
 assert($('a').css('color') == 'rgb(0, 0, 0)');
 ```
 
-悬停超链接时超链接的 `color` 应该变成蓝色。
+悬停锚标签时它的 `color` 应该变成蓝色。
 
 ```js
 assert(

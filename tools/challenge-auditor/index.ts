@@ -12,7 +12,7 @@ import { getChallengesForLang } from '../../curriculum/get-challenges';
 import {
   SuperBlocks,
   getAuditedSuperBlocks
-} from '../../shared/config/superblocks';
+} from '../../shared/config/curriculum';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
@@ -54,7 +54,8 @@ const superBlockFolderMap = {
   'a2-english-for-developers': '21-a2-english-for-developers',
   'rosetta-code': '22-rosetta-code',
   'python-for-everybody': '23-python-for-everybody',
-  'example-certification': '99-example-certification'
+  'b1-english-for-developers': '24-b1-english-for-developers',
+  'front-end-development': '25-front-end-development'
 };
 
 // These blocks are in the incorrect superblock. They should be moved but, for

@@ -1,0 +1,68 @@
+{
+  "name": "Review Algorithmic Thinking by Building a Dice Game",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "review-algorithmic-thinking-by-building-a-dice-game",
+  "helpCategory": "JavaScript",
+  "order": 20,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "657a0ea50da0c8d9d6d7950a",
+      "title": "Step 1"
+    },
+    {
+      "id": "657a19e477dc04e36a86dffc",
+      "title": "Step 2"
+    },
+    {
+      "id": "657c91ad5028770fc68d6116",
+      "title": "Step 3"
+    },
+    {
+      "id": "657ca813b0908a230e3eb488",
+      "title": "Step 4"
+    },
+    {
+      "id": "657caa69db80ef25862b1b17",
+      "title": "Step 5"
+    },
+    {
+      "id": "657caf204c0d672a35411c31",
+      "title": "Step 6"
+    },
+    {
+      "id": "657cf677438e705eab9fd1f9",
+      "title": "Step 7"
+    },
+    {
+      "id": "657d1d52d574588677347c7f",
+      "title": "Step 8"
+    },
+    {
+      "id": "657d3ab710745d17697c633a",
+      "title": "Step 9"
+    },
+    {
+      "id": "657d4a7e2002f822c646204b",
+      "title": "Step 10"
+    },
+    {
+      "id": "657d552526c0d72beb57160f",
+      "title": "Step 11"
+    },
+    {
+      "id": "657dfeef78fe0364bd241d7f",
+      "title": "Step 12"
+    },
+    {
+      "id": "657e0c2c6a9d37705146f34d",
+      "title": "Step 13"
+    },
+    {
+      "id": "657e230500602983e01fff6e",
+      "title": "Step 14"
+    }
+  ]
+}

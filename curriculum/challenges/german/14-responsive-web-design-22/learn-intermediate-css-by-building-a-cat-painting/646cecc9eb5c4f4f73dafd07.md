@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Schritt 24
+title: Schritt 25
 challengeType: 0
-dashedName: step-24
+dashedName: step-25
 ---
 
 # --description--
@@ -11,7 +11,7 @@ Bringe das linke Ohr in Position, indem du eine Position auf `absolute`, einen `
 
 # --hints--
 
-Dein `.cat-left-ear`-Selektor sollte eine `position`-Eigenschaft auf `absolute` gesetzt haben. Vergiss nicht, ein Semikolon hinzuzufügen.
+Dein `.cat-left-ear`-Selektor sollte eine `position`-Eigenschaft auf `absolute` gesetzt haben. Vergiss nicht, ein Semikolon hinzuzfügen.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

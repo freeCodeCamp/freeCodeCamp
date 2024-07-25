@@ -1,6 +1,6 @@
 ---
 id: 64aced3e88b0a38cec824dea
-title: Step 43
+title: Passo 43
 challengeType: 0
 dashedName: step-43
 ---
@@ -209,8 +209,8 @@ class Player {
       this.position.x = this.width;
     }
 
-    if (this.position.x >= canvas.width - 2 * this.width) {
-      this.position.x = canvas.width - 2 * this.width;
+    if (this.position.x >= canvas.width - this.width * 2) {
+      this.position.x = canvas.width - this.width * 2;
     }
   }
 }

@@ -20,7 +20,7 @@ dashedName: stock-price-checker
 
 # --instructions--
 
-1.  `NODE_ENV` を引用符なしの `test` に設定し、`DB` を MongoDB 接続文字列に設定します。
+1.  Set the `NODE_ENV` environment variable to `test`, without quotes
 2.  `routes/api.js` でプロジェクトを完成させるか、ハンドラー/コントローラーを作成します。
 3.  `server.js` にセキュリティ機能を追加します。
 4.  `tests/2_functional-tests.js` にすべての機能テストを作成します。
@@ -123,12 +123,3 @@ async (getUserInput) => {
 };
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

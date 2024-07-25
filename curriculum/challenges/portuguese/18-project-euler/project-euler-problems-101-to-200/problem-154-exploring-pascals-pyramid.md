@@ -10,7 +10,7 @@ dashedName: problem-154-exploring-pascals-pyramid
 
 Uma pirâmide triangular é construída usando bolas esféricas de modo que cada bola fique exatamente sobre três bolas do próximo nível.
 
-<img class="img-responsive center-block" alt="pirâmide triangular de quatro níveis construída usando bolas esféricas" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px;" />
+<img alt="pirâmide triangular de quatro níveis construída usando bolas esféricas" src="https://cdn.freecodecamp.org/curriculum/project-euler/exploring-pascals-pyramid.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Então, calculamos o número de caminhos que levam a partir do ápice para cada posição: um caminho começa no ápice e avança para baixo para qualquer uma das três esferas diretamente abaixo da posição atual. Consequentemente, o número de caminhos para chegar a uma determinada posição é a soma dos números imediatamente acima dele (dependendo da posição, há até três números acima dele).
 

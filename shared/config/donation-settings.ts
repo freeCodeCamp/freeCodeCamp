@@ -38,10 +38,10 @@ export const durationKeysConfig = ['month', 'one-time'];
 export const donationOneTimeConfig = [100000, 25000, 6000];
 export const donationSubscriptionConfig = {
   duration: {
-    month: 'Monthly'
+    month: 'monthly'
   },
   plans: {
-    month: [25000, 3500, 500]
+    month: subscriptionAmounts
   }
 };
 
@@ -123,3 +123,27 @@ export enum PaymentProvider {
   Stripe = 'stripe',
   StripeCard = 'stripe card'
 }
+
+const stripeProductIds = {
+  live: {
+    month: {
+      500: 'prod_Cc9bIxB2NvjpLy',
+      1000: 'prod_BuiSxWk7jGSFlJ',
+      2000: 'prod_IElpZVK7kOn6Fe',
+      4000: 'prod_IElq1foW39g3Cx'
+    }
+  },
+  staging: {
+    month: {
+      500: 'prod_GD1GGbJsqQaupl',
+      1000: 'prod_GD1IzNEXfSCGgy',
+      2000: 'prod_IEkNp8M03xvsuB',
+      4000: 'prod_IEkPebxS63mVbs'
+    }
+  }
+};
+
+export const allStripeProductIdsArray = [
+  ...Object.values(stripeProductIds['live']['month']),
+  ...Object.values(stripeProductIds['staging']['month'])
+];

@@ -1,29 +1,29 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: 步骤 24
+title: 步骤 25
 challengeType: 0
-dashedName: step-24
+dashedName: step-25
 ---
 
 # --description--
 
-Move the left ear into position by setting a position of `absolute`, a `top` of `-26px`, and a `left` of `-31px`.
+将左耳移动到合适的位置，设置 position 为 `absolute`、`top` 为 `-26px`，以及 `left` 为 `-31px`。
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+你的 `.cat-left-ear` 选择器应该具有一个 `position` 属性并设置为 `absolute`。 不要忘记加上分号。
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')
 ```
 
-Your `.cat-left-ear` selector should have a `top` property set to `-26px`
+你的 `.cat-left-ear` 选择器应该有一个 `top` 属性，值为 `-26px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.top === '-26px')
 ```
 
-Your `.cat-left-ear` selector should have a `left` property set to `-31px`
+你的 `.cat-left-ear` 选择器应该有一个 `left` 属性，值为 `-31px`
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left === '-31px')

@@ -1,6 +1,6 @@
 ---
 id: 65d86af6cdfed1fcab11abbe
-title: Task 68
+title: Tarefa 68
 challengeType: 22
 dashedName: task-68
 ---
@@ -17,7 +17,7 @@ You learned that after `everyone`, you should use the third-party singular form 
 
 ## --sentence--
 
-`He also ensures that everyone _ _ _.`
+`He also ensures that everyone BLANK BLANK BLANK.`
 
 ## --blanks--
 

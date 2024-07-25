@@ -12,7 +12,7 @@ Dato un insieme di punti su un piano, definiamo un foro convesso come un poligon
 
 Ad esempio, l'immagine sottostante mostra una serie di venti punti e alcuni di questi fori convessi. Il foro convesso mostrato come un ettagono rosso ha una superficie pari a 1049694.5 unità quadrate, che è l'area più grande possibile per un foro convesso nell'insieme di punti dato.
 
-<img class="img-responsive center-block" alt="insieme di venti punti e fori convessi sul piano" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px;" />
+<img alt="insieme di venti punti e fori convessi sul piano" src="https://cdn.freecodecamp.org/curriculum/project-euler/convex-holes.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Per il nostro esempio, abbiamo usato i primi 20 punti ($T_{2k − 1}$, $T_{2k}$), per $k = 1, 2, \ldots, 20$, prodotto con il generatore di numeri pseudo-casuali:
 

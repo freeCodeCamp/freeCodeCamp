@@ -19,7 +19,7 @@ dashedName: problem-220-heighway-dragon
 
 Тоді $D_n$ стає цікавим малюнком, відомим як «Дракон Хейтуея» порядку $n$. Наприклад, $D_{10}$ показано нижче. Якщо вважати кожен рядок "F" одним кроком, то виділена точка (18,16) буде позицією після 500 кроків.
 
-<img class="img-responsive center-block" alt="рисунок дракона Хейтуея після 500 кроків" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px;" />
+<img alt="рисунок дракона Хейтуея після 500 кроків" src="https://cdn.freecodecamp.org/curriculum/project-euler/heighway-dragon.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;" />
 
 Де буде розташовано курсор після ${10}^{12}$ кроків в $D_{50}$? Надайте свою відповідь у вигляді рядка `x,y` без пробілів.
 

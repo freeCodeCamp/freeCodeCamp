@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-La tercer imagen, debe tener un atributo `src` con el valor `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
+La tercera imagen debe tener un atributo `src` configurado a `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
