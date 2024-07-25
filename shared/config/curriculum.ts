@@ -38,9 +38,7 @@ export enum SuperBlocks {
  * 'Upcoming' is for development -> not shown on stag or prod anywhere
  */
 export enum SuperBlockStages {
-  FrontEnd,
-  Backend,
-  Python,
+  Core,
   English,
   Professional,
   Extra,
@@ -56,18 +54,14 @@ export type SuperBlockOrder = {
 // order of buttons on map, this should include all superblocks
 // new and upcoming superblocks are removed below
 export const superBlockOrder: SuperBlockOrder = {
-  [SuperBlockStages.FrontEnd]: [
+  [SuperBlockStages.Core]: [
     SuperBlocks.RespWebDesignNew,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis
-  ],
-  [SuperBlockStages.Backend]: [
+    SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
     SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance
-  ],
-  [SuperBlockStages.Python]: [
+    SuperBlocks.QualityAssurance,
     SuperBlocks.SciCompPy,
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,

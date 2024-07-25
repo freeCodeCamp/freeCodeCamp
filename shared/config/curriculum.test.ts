@@ -68,7 +68,7 @@ describe('createFlatSuperBlockMap', () => {
 describe('Immutability of superBlockOrder, notAuditedSuperBlocks, and flatSuperBlockMap', () => {
   it('should not allow modification of superBlockOrder', () => {
     expect(() => {
-      superBlockOrder[SuperBlockStages.FrontEnd] = [];
+      superBlockOrder[SuperBlockStages.Core] = [];
     }).toThrowError(TypeError);
   });
 

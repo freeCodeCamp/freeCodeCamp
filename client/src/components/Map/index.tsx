@@ -49,12 +49,6 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-const coreCurriculum = [
-  ...superBlockOrder[SuperBlockStages.FrontEnd],
-  ...superBlockOrder[SuperBlockStages.Backend],
-  ...superBlockOrder[SuperBlockStages.Python]
-];
-
 const mapStateToProps = createSelector(
   isSignedInSelector,
   currentCertsSelector,
@@ -177,7 +171,7 @@ function Map({
         {t('landing.core-certs-heading')}
       </h2>
       <ul>
-        {coreCurriculum.map((superBlock, i) => (
+        {superBlockOrder[SuperBlockStages.Core].map((superBlock, i) => (
           <MapLi
             key={i}
             superBlock={superBlock}
