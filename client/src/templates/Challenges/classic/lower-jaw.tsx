@@ -296,8 +296,8 @@ const LowerJaw = ({
   const submitButtonText = isDesktop
     ? isMacOS
       ? t('buttons.submit-and-go-3')
-      : t('buttons.submit-and-go')
-    : t('buttons.submit-and-go-2');
+      : t('buttons.submit-and-go-2')
+    : t('buttons.submit-and-go');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
 
