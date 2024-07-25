@@ -3,8 +3,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import { Container, Button } from '@freecodecamp/ui';
-import Spacer from '../../components/helpers/spacer';
+import { Container } from '@freecodecamp/ui';
+import { Spacer, ButtonLink } from '../../components/helpers';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
 import type { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
@@ -44,13 +44,13 @@ function IntroductionPage({
           />
         </FullWidthRow>
         <FullWidthRow>
-          <Button block size='large' href={firstLessonPath}>
+          <ButtonLink block size='large' href={firstLessonPath}>
             {t('buttons.first-lesson')}
-          </Button>
+          </ButtonLink>
           <Spacer size='small' />
-          <Button block size='large' href='/learn'>
+          <ButtonLink block size='large' href='/learn'>
             {t('buttons.view-curriculum')}
-          </Button>
+          </ButtonLink>
           <Spacer size='small' />
           <hr />
         </FullWidthRow>
@@ -64,13 +64,28 @@ IntroductionPage.displayName = 'IntroductionPage';
 export default IntroductionPage;
 
 export const query = graphql`
-  query IntroPageBySlug($slug: String!) {
+  query IntroPageBySlug($slug: String!, $block: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         block
         superBlock
       }
       html
+    }
+    allChallengeNode(
+      sort: { fields: [challenge___challengeOrder] }
+      filter: { challenge: { block: { eq: $block } } }
+      limit: 1
+    ) {
+      edges {
+        node {
+          challenge {
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   }
 `;

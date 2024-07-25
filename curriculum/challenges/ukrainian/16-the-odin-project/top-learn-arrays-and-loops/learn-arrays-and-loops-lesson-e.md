@@ -7,7 +7,7 @@ dashedName: learn-arrays-and-loops-lesson-e
 
 # --description--
 
-Now that you have a basic understanding about arrays, let's talk about loops. Loops are used to execute a block of code multiple times. One of those loops is the `while` loop. The `while` loop executes a block of code as long as the condition is true. The syntax of the `while` loop is as follows:
+Now that you have a basic understanding about arrays, let's talk about loops. Loops are used to execute a block of code multiple times. One of those loops is the `while` loop. The `while` loop executes a block of code as long as the condition is true. Синтаксис циклу `while` такий:
 
 ```javascript
 while (condition) {

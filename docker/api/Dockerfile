@@ -27,7 +27,7 @@ RUN pnpm -F=api-server -F=tools/scripts/build -F=challenge-parser -F=curriculum 
 # following env vars.
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
-ARG SHOW_NEW_CURRICULUM=true
+ARG SHOW_NEW_CURRICULUM=false
 ENV SHOW_NEW_CURRICULUM=$SHOW_NEW_CURRICULUM
 RUN pnpm build:curriculum
 

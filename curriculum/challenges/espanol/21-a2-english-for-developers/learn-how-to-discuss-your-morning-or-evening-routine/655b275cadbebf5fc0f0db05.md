@@ -15,7 +15,7 @@ Focus on the specific actions and timing of Maria's activities on Tuesdays.
 
 ## Frases
 
-`On Tuesdays, I learn Japanese. I _ _ lessons at 7.`
+`On Tuesdays, I learn Japanese. I BLANK BLANK lessons at 7.`
 
 ## Palabra correcta
 

@@ -72,6 +72,12 @@ assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
 assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
 ```
 
+`tokenize('hello^|world|how^are^you^|', '|', '^')` should return `['hello|world', 'howareyou|']`
+
+```js
+assert.deepEqual(tokenize(testStr3, '|', '^'), res3);
+```
+
 # --seed--
 
 ## --after-user-code--
@@ -80,9 +86,11 @@ assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
 const testStr1 = 'one^|uno||three^^^^|four^^^|^cuatro|';
 const res1 = ['one|uno', '', 'three^^', 'four^|cuatro', ''];
 
-// TODO add more tests
 const testStr2 = 'a@&bcd&ef&&@@hi';
 const res2 = ['a&bcd', 'ef', '', '@hi'];
+
+const testStr3 = 'hello^|world|how^are^you^|';
+const res3 = ['hello|world', 'howareyou|']; 
 ```
 
 ## --seed-contents--

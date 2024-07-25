@@ -15,7 +15,7 @@ dashedName: task-39
 
 ## --sentence--
 
-`Ok, it's a _ _, then.`
+`Ok, it's a BLANK BLANK, then.`
 
 ## --blanks--
 

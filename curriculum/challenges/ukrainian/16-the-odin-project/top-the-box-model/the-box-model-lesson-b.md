@@ -1,41 +1,41 @@
 ---
 id: 64a553ed02815a7d323aab89
-title: The Box Model Lesson B
+title: Блокова модель. Урок №2
 challengeType: 15
 dashedName: the-box-model-lesson-b
 ---
 
 # --description--
 
-In the Elements pane, you can see the entire HTML structure of your page. You can click on any of the elements in this pane to select that specific element. Alternatively, you can click the blue-highlighted icon shown below on the left, and hover over any element on the page.
+На панелі «Елементи» можна побачити повну структуру HTML. Ви можете натиснути на будь-який елемент панелі, щоб обрати певний елемент. Або ж ви можете натиснути на голубий значок зліва (показано нижче) та навести на будь-який елемент сторінки.
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/inspector-icon.png" alt="Aweb development environment with developer tools open, highlighting a blue inspector icon in the top-left for selecting webpage elements to view HTML structure and styles." />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/inspector-icon.png" alt="Середовище веброзробки з відкритими інструментами розробника, де у верхньому лівому куті виділено синій значок інспектора для вибору елементів вебсторінки, щоб переглянути структуру та стилі HTML." />
 
-When an element is selected, the Styles tab will show all the currently applied styles, as well as any styles that are being overwritten (indicated by a strikethrough of the text). For example, if you use the inspector to click on the “Your Career in Web Development Starts Here” header on <a href="https://www.theodinproject.com/" target="_blank">the The Odin Project homepage</a>, on the right-hand side you’ll see all the styles that are currently affecting the element, as seen below:
+Коли елемент обрано, вкладка «Стилі» покаже всі застосовані стилі, а також усі змінені стилі (у вигляді закресленого тексту). Наприклад, якщо використати інспектора та натиснути на заголовок «Your Career in Web Development Starts Here» <a href="https://www.theodinproject.com/" target="_blank">домашньої сторінки проєкту Odin</a>, справа ви побачите всі стилі, які наразі застосовані до елемента:
 
-<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/overwritten-style.png" alt="CSS code snippet in the developer console showing .hero_main-heading with applied margin-bottom: 100px, padding-bottom: 1.875rem, .accent color #ce973e. h1 style rules include font-size, weight, letter-spacing, with its margin-bottom: 2rem overridden." />
+<img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/overwritten-style.png" alt="Фрагмент коду CSS на консолі розробника, що показує .hero_main-heading із застосованими margin-bottom: 100px, padding-bottom: 1,875rem, .accent color #ce973e. Правила стилю h1 включають font-size, weight, letter-spacing та замінену властивість margin-bottom: 2rem." />
 
 # --question--
 
 ## --text--
 
-When inspecting an element in the Chrome Dev Tools, if a style property is shown with a strikethrough, what does it indicate?
+Припустимо, ви оглядаєте елемент в інструментах веброзробника Chrome. Що означає закреслена властивість стилю?
 
 ## --answers--
 
-The style property is currently disabled and not applied to the element.
+Наразі властивість стилю пошкоджена та не застосовується до елемента.
 
 ---
 
-The style property is overridden by a more specific CSS rule.
+Властивість стилю замінена специфічнішим правилом CSS.
 
 ---
 
-The style property is deprecated and should not be used.
+Властивість стилю нерекомендована та її бажано не використовувати.
 
 ---
 
-The style property is experimental and may not be supported by all browsers
+Властивість стилю експериментальна та може підтримуватись не всіма браузерами.
 
 ## --video-solution--
 
