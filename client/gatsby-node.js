@@ -174,14 +174,15 @@ exports.createPages = async function createPages({
     if (slug.includes('LICENCE')) {
       return;
     }
-    try {
-      if (nodeIdentity === 'blockIntroMarkdown') {
-        if (!blocks.includes(frontmatter.block)) {
-          return;
-        }
-      } else if (!superBlocks.includes(frontmatter.superBlock)) {
+    if (nodeIdentity === 'blockIntroMarkdown') {
+      if (!blocks.includes(frontmatter.block)) {
         return;
       }
+    } else if (!superBlocks.includes(frontmatter.superBlock)) {
+      return;
+    }
+
+    try {
       const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
       pageBuilder(edge);
     } catch (e) {
