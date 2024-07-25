@@ -162,6 +162,18 @@ test('should display the text of submit and go to next challenge button accordin
   isMobile,
   browserName
 }) => {
+  const editor = getEditors(page);
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+
+  await focusEditor({ page, isMobile });
+  await clearEditor({ page, browserName });
+
+  await editor.fill(
+    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+  );
+
+  await checkButton.click();
+
   if (isMobile) {
     await expect(
       page.getByRole('button', {
