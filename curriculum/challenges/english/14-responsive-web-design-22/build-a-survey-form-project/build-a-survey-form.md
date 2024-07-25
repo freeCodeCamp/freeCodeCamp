@@ -33,6 +33,7 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 **Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
 
+**Click the "Save your Code" button to save your progress.**
 # --hints--
 
 You should have an `h1` element with an `id` of `title`.
