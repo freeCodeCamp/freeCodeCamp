@@ -178,9 +178,9 @@ model Donation {
 }
 
 model UserRateLimit {
-  id             String @id @default(auto()) @map("_id") @db.ObjectId
-  /// Field referred in an index, but found no data to define the type.
-  expirationDate Json?
+  id             String  @id @map("_id")
+  counter        Int
+  expirationDate DateTime @db.Date
 
   @@index([expirationDate], map: "expirationDate_1")
 }
