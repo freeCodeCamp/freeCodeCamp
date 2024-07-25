@@ -293,18 +293,13 @@ const LowerJaw = ({
       : t('buttons.check-code')
     : t('buttons.check-code-2');
 
-  const showSignInButton = !isSignedIn && challengeIsCompleted;
+  const submitButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.submit-and-go-3')
+      : t('buttons.submit-and-go')
+    : t('buttons.submit-and-go-2');
 
-  let buttonText;
-  if (isDesktop) {
-    if (isMacOS) {
-      buttonText = t('buttons.submit-and-go-3');
-    } else {
-      buttonText = t('buttons.submit-and-go-2');
-    }
-  } else {
-    buttonText = t('buttons.submit-and-go');
-  }
+  const showSignInButton = !isSignedIn && challengeIsCompleted;
 
   return (
     <div className='action-row-container'>
@@ -331,7 +326,7 @@ const LowerJaw = ({
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
         ref={submitButtonRef}
       >
-        {buttonText}
+        {submitButtonText}
       </Button>
       <div
         className={
