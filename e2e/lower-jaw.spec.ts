@@ -156,3 +156,30 @@ test('Should display the text of the check code button accordingly based on devi
     ).toBeVisible();
   }
 });
+
+test('should display the text of submit and go to next challenge button accordingly based on device type', async ({
+  page,
+  isMobile,
+  browserName
+}) => {
+  if (isMobile) {
+    await expect(
+      page.getByRole('button', {
+        name: 'Submit and go to next challenge',
+        exact: true
+      })
+    ).toBeVisible();
+  } else if (browserName === 'webkit') {
+    await expect(
+      page.getByRole('button', {
+        name: 'Submit and go to next challenge (Command + Enter)'
+      })
+    ).toBeVisible();
+  } else {
+    await expect(
+      page.getByRole('button', {
+        name: 'Submit and go to next challenge (Ctrl + Enter)'
+      })
+    ).toBeVisible();
+  }
+});
