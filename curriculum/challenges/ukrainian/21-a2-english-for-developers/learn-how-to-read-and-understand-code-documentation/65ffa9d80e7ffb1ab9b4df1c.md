@@ -15,7 +15,7 @@ dashedName: task-11
 
 ## --sentence--
 
-`_ you've _ the section you need, you should start by reading the _ paragraphs to get an overview of what the documentation _.`
+`BLANK you've BLANK the section you need, you should start by reading the BLANK paragraphs to get an overview of what the documentation BLANK.`
 
 ## --blanks--
 

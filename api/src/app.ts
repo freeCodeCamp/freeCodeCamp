@@ -26,7 +26,7 @@ import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import codeFlowAuth from './plugins/code-flow-auth';
 import notFound from './plugins/not-found';
-import { mobileAuth0Routes } from './routes/auth';
+import { authRoutes, mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
 import {
   protectedCertificateRoutes,
@@ -35,11 +35,12 @@ import {
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
-import { donateRoutes } from './routes/donate';
+import { donateRoutes, chargeStripeRoute } from './routes/donate';
 import { emailSubscribtionRoutes } from './routes/email-subscription';
 import { settingRoutes, settingRedirectRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
+import { signoutRoute } from './routes/signout';
 import {
   API_LOCATION,
   EMAIL_PROVIDER,
@@ -184,20 +185,53 @@ export const build = async (
   void fastify.register(codeFlowAuth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
+
+  // Routes requiring authentication and CSRF protection
+  void fastify.register(function (fastify, _opts, done) {
+    // The order matters here, since we want to reject invalid cross site requests
+    // before checking if the user is authenticated.
+    // @ts-expect-error - @fastify/csrf-protection needs to update their types
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    fastify.addHook('onRequest', fastify.csrfProtection);
+    fastify.addHook('onRequest', fastify.authorize);
+
+    void fastify.register(challengeRoutes);
+    void fastify.register(donateRoutes);
+    void fastify.register(protectedCertificateRoutes);
+    void fastify.register(settingRoutes);
+    void fastify.register(userRoutes);
+    done();
+  });
+
+  // Routes requiring authentication and NOT CSRF protection
+  void fastify.register(function (fastify, _opts, done) {
+    fastify.addHook('onRequest', fastify.authorize);
+
+    void fastify.register(userGetRoutes);
+    done();
+  });
+
+  // Routes requiring authentication that redirect on failure
+  void fastify.register(function (fastify, _opts, done) {
+    fastify.addHook('onRequest', fastify.authorizeOrRedirect);
+
+    void fastify.register(settingRedirectRoutes);
+    done();
+  });
+
+  // Routes not requiring authentication
   void fastify.register(mobileAuth0Routes);
+  // TODO: consolidate with LOCAL_MOCK_AUTH
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devAuthRoutes);
+  } else {
+    void fastify.register(authRoutes);
   }
-  void fastify.register(challengeRoutes);
-  void fastify.register(settingRoutes);
-  void fastify.register(settingRedirectRoutes);
-  void fastify.register(donateRoutes);
+  void fastify.register(chargeStripeRoute);
+  void fastify.register(signoutRoute);
   void fastify.register(emailSubscribtionRoutes);
-  void fastify.register(userRoutes);
   void fastify.register(userPublicGetRoutes);
-  void fastify.register(protectedCertificateRoutes);
   void fastify.register(unprotectedCertificateRoutes);
-  void fastify.register(userGetRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);

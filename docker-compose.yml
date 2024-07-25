@@ -3,6 +3,18 @@ services:
     image: mongo
     ports:
       - '27017:27017'
+    command: mongod --replSet rs0
+  setup:
+    image: mongo
+    depends_on:
+      - mongo
+    restart: on-failure
+    entrypoint: [
+        'bash',
+        '-c',
+        # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+        'mongosh --host mongo:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
+      ]
   mailhog:
     restart: unless-stopped
     image: mailhog/mailhog
@@ -10,10 +22,11 @@ services:
       - '1025:1025'
       - '8025:8025'
   api:
+    restart: unless-stopped
     depends_on:
       - mongo
       - mailhog
-    image: fcc-api
+    image: fcc-new-api
     env_file:
       - .env
     environment:
@@ -24,9 +37,4 @@ services:
     ports:
       # PORT is used by the new api, so we use the less generic API_PORT to
       # avoid conflicts.
-      - '${API_PORT:-3000}:3000'
-  client:
-    image: fcc-client
-    ports:
-      # Same principle as above (avoiding conflicts)
-      - '${CLIENT_PORT:-8000}:8000'
+      - '3000:3000'

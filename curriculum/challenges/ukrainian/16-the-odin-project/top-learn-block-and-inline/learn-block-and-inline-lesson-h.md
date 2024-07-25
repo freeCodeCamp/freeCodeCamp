@@ -1,35 +1,35 @@
 ---
 id: 65704483e7b02272663824e6
-title: Learn Block and Inline Lesson H
+title: Блокові та рядкові елементи. Урок №8
 challengeType: 15
 dashedName: learn-block-and-inline-lesson-h
 ---
 
 # --description--
 
-Now that you have some basic understanding of `block` and inline elements, pull up your list of `block` and `inline` elements from a couple questions ago and see if you can identify which of the following elements are `block` elements and which are `inline` elements.
+Тепер у вас є базове розуміння блокових та рядкових елементів. Поверніться до списку блокових та рядкових елементів з попереднього завдання та перевірте, чи зможете ідентифікувати блокові та рядкові елементи.
 
 # --question--
 
 ## --text--
 
-Which of the following is NOT a `block` level element?
+Що з переліченого НЕ є блоковим елементом?
 
 ## --answers--
 
-paragraph element
+Елемент paragraph
 
 ---
 
-image element
+Елемент image
 
 ---
 
-unordered list element
+Елемент unordered list
 
 ---
 
-footer element
+Елемент footer
 
 ## --video-solution--
 

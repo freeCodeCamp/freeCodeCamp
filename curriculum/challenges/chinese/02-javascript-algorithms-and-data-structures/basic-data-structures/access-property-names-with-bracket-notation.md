@@ -8,7 +8,7 @@ dashedName: access-property-names-with-bracket-notation
 
 # --description--
 
-在关于对象的第一个挑战中，我们提到可以在一对方括号中用一个变量作为属性名来访问属性的值。 假设一个超市收银台程序中有一个 `foods` 对象, 并且有一个函数会设置 `selectedFood`；如果我们需要查询 `foods` 对象中，某种食物是否存在， 可以这样实现：
+在关于对象的第一个挑战中，我们提到可以在一对方括号中用一个变量作为属性名来访问属性的值。 假设一个超市收银机程序中有一个 `foods` 对象, 并且有一个函数会设置 `selectedFood`；如果我们需要查询 `foods` 对象中，某种食物是否存在， 可以这样实现：
 
 ```js
 let selectedFood = getCurrentFood(scannedItem);

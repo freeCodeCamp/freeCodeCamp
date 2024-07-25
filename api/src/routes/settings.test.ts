@@ -11,7 +11,11 @@ import {
 import { formatMessage } from '../plugins/redirect-with-message';
 import { createUserInput } from '../utils/create-user';
 import { API_LOCATION, HOME_LOCATION } from '../utils/env';
-import { isPictureWithProtocol, getWaitMessage } from './settings';
+import {
+  isPictureWithProtocol,
+  getWaitMessage,
+  validateSocialUrl
+} from './settings';
 
 const baseProfileUI = {
   isLocked: false,
@@ -827,12 +831,24 @@ Happy coding!
         expect(response.statusCode).toEqual(200);
       });
 
-      test('PUT returns 400 status code with invalid socials setting', async () => {
+      test('PUT rejects non-url values', async () => {
         const response = await superPut('/update-my-socials').send({
           website: 'invalid',
           twitter: '',
           linkedin: '',
-          githubProfile: 'invalid'
+          githubProfile: ''
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT only accepts urls to certain domains', async () => {
+        const response = await superPut('/update-my-socials').send({
+          website: '',
+          twitter: '',
+          linkedin: '',
+          githubProfile: 'https://x.com/should-be-github'
         });
 
         expect(response.body).toEqual(updateErrorResponse);
@@ -1029,9 +1045,8 @@ Happy coding!
     describe('/confirm-email', () => {
       it('redirects to the HOME_LOCATION with flash message', async () => {
         const res = await superRequest('/confirm-email', {
-          method: 'GET',
-          headers: { referer: 'https://who.knows/' }
-        });
+          method: 'GET'
+        }).set('Referer', 'https://who.knows/');
 
         expect(res.status).toBe(302);
         expect(res.headers).toMatchObject({
@@ -1121,5 +1136,31 @@ describe('getWaitMessage', () => {
     expect(getWaitMessage({ sentAt: new Date() })).toEqual(
       'Please wait 5 minutes to resend an authentication link.'
     );
+  });
+});
+
+describe('validateSocialUrl', () => {
+  it.each(['githubProfile', 'linkedin', 'twitter'] as const)(
+    'accepts empty strings for %s',
+    social => {
+      expect(validateSocialUrl('', social)).toBe(true);
+    }
+  );
+
+  it.each([
+    ['githubProfile', 'https://something.com/user'],
+    ['linkedin', 'https://www.x.com/in/username'],
+    ['twitter', 'https://www.toomanyexes.com/username']
+  ] as const)('rejects invalid urls for %s', (social, url) => {
+    expect(validateSocialUrl(url, social)).toBe(false);
+  });
+
+  it.each([
+    ['githubProfile', 'https://something.github.com/user'],
+    ['linkedin', 'https://www.linkedin.com/in/username'],
+    ['twitter', 'https://twitter.com/username'],
+    ['twitter', 'https://x.com/username']
+  ] as const)('accepts valid urls for %s', (social, url) => {
+    expect(validateSocialUrl(url, social)).toBe(true);
   });
 });

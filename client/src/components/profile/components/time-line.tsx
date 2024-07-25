@@ -18,7 +18,7 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow, Spacer } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(

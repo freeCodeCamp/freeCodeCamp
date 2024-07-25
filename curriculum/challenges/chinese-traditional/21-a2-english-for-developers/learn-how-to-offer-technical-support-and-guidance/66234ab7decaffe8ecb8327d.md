@@ -17,7 +17,7 @@ For example, `Changing the database structure could affect the application's per
 
 ## --sentence--
 
-`Ok, so if I make changes here, do you think it could _ other _?`
+`Ok, so if I make changes here, do you think it could BLANK other BLANK?`
 
 ## --blanks--
 

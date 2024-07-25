@@ -1,35 +1,35 @@
 ---
 id: 6570447ee7b02272663824e1
-title: Learn Block and Inline Lesson C
+title: Блокові та рядкові елементи. Урок №3
 challengeType: 15
 dashedName: learn-block-and-inline-lesson-c
 ---
 
 # --description--
 
-Padding is used to create space around an element's content, inside of any defined borders. With inline elements, padding adds space to the left, right, top, and bottom of the content. However, it's important to note that while padding does affect the space around the content, it does not affect the layout of other elements around the inline element. This means that horizontal padding (left and right) is respected, but vertical padding (top and bottom) does not cause other elements to move away.
+Відступ використовують, щоб створити місце навколо вмісту елемента всередині будь-яких визначених кордонів. Відступ в рядкових елементах додає місце зліва, справа, зверху та знизу вмісту. Однак важливо зазначити, що відступ впливає на місце навколо вмісту, але не впливає на макет інших елементів навколо рядкового елемента. Тобто це впливає на горизонтальний відступ (зліва та справа), а вертикальний відступ (зверху та знизу) не змушує інші елементи віддалятись.
 
 # --question--
 
 ## --text--
 
-How does `padding` affect `inline` elements?
+Як відступ впливає на рядкові елементи?
 
 ## --answers--
 
-Padding has no effect on `inline` elements.
+Відступ не впливає на рядкові елементи.
 
 ---
 
-Padding increases the width and height of `inline` elements.
+Відступ збільшує ширину та висоту рядкових елементів.
 
 ---
 
-Padding only affects the horizontal spacing of `inline` elements.
+Відступ впливає лише на горизонтальний інтервал рядкових елементів.
 
 ---
 
-Padding only affects the vertical spacing of `inline` elements.
+Відступ впливає лише на вертикальний інтервал рядкових елементів.
 
 ## --video-solution--
 

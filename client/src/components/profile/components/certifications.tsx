@@ -2,11 +2,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
 
 import { certificatesByNameSelector } from '../../../redux/selectors';
 import type { CurrentCert } from '../../../redux/prop-types';
-import { FullWidthRow, Spacer } from '../../helpers';
+import { FullWidthRow, Spacer, ButtonLink } from '../../helpers';
 
 const mapStateToProps = (
   state: Record<string, unknown>,
@@ -47,16 +46,15 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <>
-      <Button
+      <ButtonLink
         block
         size='large'
         href={`/certification/${username}/${cert.certSlug}`}
-        data-playwright-test-label='claimed-certification'
       >
         {t('buttons.view-cert-title', {
           certTitle: t(`certification.title.${cert.certSlug}`)
         })}
-      </Button>
+      </ButtonLink>
       <Spacer size='small' />
     </>
   );

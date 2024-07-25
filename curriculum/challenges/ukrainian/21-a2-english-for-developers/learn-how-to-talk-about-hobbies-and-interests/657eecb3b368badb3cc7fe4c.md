@@ -17,7 +17,7 @@ dashedName: task-60
 
 ## --sentence--
 
-`I go to _ _ one convention every year. It's the best moment of the year for me.`
+`I go to BLANK BLANK one convention every year. It's the best moment of the year for me.`
 
 ## --blanks--
 

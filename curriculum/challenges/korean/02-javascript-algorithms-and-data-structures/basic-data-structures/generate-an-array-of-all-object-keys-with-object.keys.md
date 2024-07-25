@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1e
-title: Generate an Array of All Object Keys with Object.keys()
+title: Object.keys()를 사용하여 모든 객체 키의 배열 생성하기
 challengeType: 1
 forumTopicId: 301160
 dashedName: generate-an-array-of-all-object-keys-with-object-keys
@@ -8,15 +8,15 @@ dashedName: generate-an-array-of-all-object-keys-with-object-keys
 
 # --description--
 
-We can also generate an array which contains all the keys stored in an object with the `Object.keys()` method. This method takes an object as the argument and returns an array of strings representing each property in the object. Again, there will be no specific order to the entries in the array.
+또한 `Object.keys()` 메서드를 사용하여 객체에 저장된 모든 키를 포함하는 배열을 생성할 수 있습니다. 이 메서드는 객체를 인수로 사용하고 객체의 각 속성을 나타내는 문자열 배열을 반환합니다. 배열의 항목에는 특정한 순서가 없을 것입니다.
 
 # --instructions--
 
-Finish writing the `getArrayOfUsers` function so that it returns an array containing all the properties in the object it receives as an argument.
+`getArrayOfUsers` 함수를 인수로 받은 객체의 모든 속성을 포함하는 배열을 반환하도록 완성하세요.
 
 # --hints--
 
-The `users` object should only contain the keys `Alan`, `Jeff`, `Sarah`, and `Ryan`
+`users` 객체에는 `Alan`, `Jeff`, `Sarah`, `Ryan` 키만 포함되어야 합니다.
 
 ```js
 assert(
@@ -28,7 +28,7 @@ assert(
 );
 ```
 
-The `getArrayOfUsers` function should return an array which contains all the keys in the `users` object
+`getArrayOfUsers` 함수는 `users` 객체의 모든 키를 포함하는 배열을 반환해야 합니다.
 
 ```js
 assert(

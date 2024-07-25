@@ -69,6 +69,35 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   }
 };
 
+const ALLOWED_DOMAINS_MAP = {
+  githubProfile: ['github.com'],
+  linkedin: ['linkedin.com'],
+  twitter: ['twitter.com', 'x.com']
+};
+
+/**
+ * Validate a social URL.
+ *
+ * @param socialUrl The URL to check.
+ * @param key The key of the allowed socials and domains.
+ * @returns Whether the URL is valid.
+ */
+export const validateSocialUrl = (
+  socialUrl: string,
+  key: keyof typeof ALLOWED_DOMAINS_MAP
+): boolean => {
+  if (!socialUrl) return true;
+
+  try {
+    const url = new URL(socialUrl);
+    const domains = ALLOWED_DOMAINS_MAP[key];
+    const domainAndTld = url.hostname.split('.').slice(-2).join('.');
+    return domains.includes(domainAndTld);
+  } catch {
+    return false;
+  }
+};
+
 /**
  * Plugin for all endpoints related to user settings.
  *
@@ -81,13 +110,6 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  // The order matters here, since we want to reject invalid cross site requests
-  // before checking if the user is authenticated.
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
-  // eslint-disable-next-line @typescript-eslint/unbound-method
-  fastify.addHook('onRequest', fastify.csrfProtection);
-  fastify.addHook('onRequest', fastify.authorize);
-
   type CommonResponseSchema = {
     response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
   };
@@ -335,6 +357,18 @@ ${isLinkSentWithinLimitTTL}`
       errorHandler: updateErrorHandler
     },
     async (req, reply) => {
+      const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
+        key => validateSocialUrl(req.body[key], key)
+      );
+
+      if (!valid) {
+        void reply.code(400);
+        return reply.send({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+      }
+
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -681,8 +715,6 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.addHook('onRequest', fastify.authorizeOrRedirect);
-
   const redirectMessage = {
     type: 'danger',
     content:

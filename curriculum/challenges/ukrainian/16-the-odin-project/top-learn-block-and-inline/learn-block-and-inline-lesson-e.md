@@ -1,35 +1,35 @@
 ---
 id: 6570447fe7b02272663824e3
-title: Learn Block and Inline Lesson E
+title: Блокові та рядкові елементи. Урок №5
 challengeType: 15
 dashedName: learn-block-and-inline-lesson-e
 ---
 
 # --description--
 
-Inline-block elements behave like inline elements, but with block-style padding and margin. `display: inline-block` is a useful tool to know about, but in practice, you'll probably end up reaching for flexbox more often if you're trying to line up a bunch of boxes. Flexbox will be covered in-depth in the next lesson.
+Рядково-блокові елементи поводяться як рядкові елементи, але мають відступ та поле блокових елементів. Про `display: inline-block` корисно знати, однак на практиці, швидше за все, ви частіше послуговуватиметесь гнучким контейнером, якщо намагатиметесь вирівняти декілька блоків. У наступному уроці детальніше розглянемо гнучкий контейнер.
 
 # --question--
 
 ## --text--
 
-What is the difference between an `inline` element and an `inline-block` element?
+Яка різниця між рядковими та рядково-блоковими елементами?
 
 ## --answers--
 
-`inline` elements are displayed without line breaks, while `inline-block` elements are displayed with line breaks.
+Рядкові елементи відтворюються без розірваних рядків, а рядково-блокові елементи відтворюються з розірваними рядками.
 
 ---
 
-`inline` elements do not allow setting width and height, while `inline-block` elements allow setting width and height.
+Рядкові елементи не дозволяють налаштувати ширину та висоту, а рядково-блокові елементи дозволяють налаштувати ширину та висоту.
 
 ---
 
-`inline` elements are always positioned horizontally, while `inline-block` elements are positioned vertically.
+Рядкові елементи завжди розташовані горизонтально, а рядково-блокові елементи розташовані вертикально.
 
 ---
 
-`inline` elements can contain block-level elements, while `inline-block` elements cannot contain other elements.
+Рядкові елементи можуть містити блокові елементи, а рядково-блокові елементи не можуть містити інших елементів.
 
 ## --video-solution--
 
