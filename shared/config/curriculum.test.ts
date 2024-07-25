@@ -4,7 +4,6 @@ import {
   SuperBlockStage,
   superBlockStages,
   notAuditedSuperBlocks,
-  createSuperBlockMap,
   createFlatSuperBlockMap,
   getAuditedSuperBlocks
 } from './curriculum';
@@ -17,30 +16,6 @@ describe('superBlockOrder', () => {
     expect(superBlockOrderValues).toEqual(
       expect.arrayContaining(allSuperBlocks)
     );
-  });
-});
-
-describe('createSuperBlockMap', () => {
-  it('should return an object with New and Upcoming when { showNewCurriculum: true, showUpcomingChanges: true }', () => {
-    const result = createSuperBlockMap({
-      showNewCurriculum: true,
-      showUpcomingChanges: true
-    });
-    expect(result[SuperBlockStage.New]).toHaveLength(
-      superBlockStages[SuperBlockStage.New].length
-    );
-    expect(result[SuperBlockStage.Upcoming]).toHaveLength(
-      superBlockStages[SuperBlockStage.Upcoming].length
-    );
-  });
-
-  it('should return an object without New and Upcoming when { showNewCurriculum: false, showUpcomingChanges: false }', () => {
-    const result = createSuperBlockMap({
-      showNewCurriculum: false,
-      showUpcomingChanges: false
-    });
-    expect(result[SuperBlockStage.New]).toHaveLength(0);
-    expect(result[SuperBlockStage.Upcoming]).toHaveLength(0);
   });
 });
 

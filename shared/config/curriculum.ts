@@ -47,23 +47,30 @@ export enum SuperBlockStage {
   Upcoming
 }
 
-// TODO: generate this with new and upcoming missing, depending on the env vars.
-export const stageOrder = [
+const defaultStageOrder = [
   SuperBlockStage.Core,
   SuperBlockStage.English,
   SuperBlockStage.Professional,
   SuperBlockStage.Extra,
-  SuperBlockStage.Legacy,
-  SuperBlockStage.New,
-  SuperBlockStage.Upcoming
+  SuperBlockStage.Legacy
 ];
+
+export function getStageOrder({
+  showNewCurriculum,
+  showUpcomingChanges
+}: Config): SuperBlockStage[] {
+  const stageOrder = [...defaultStageOrder];
+
+  if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
+  if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
+  return stageOrder;
+}
 
 export type StageMap = {
   [key in SuperBlockStage]: SuperBlocks[];
 };
 
-// groups of superblocks on map, this should include all superblocks
-// new and upcoming superblocks are removed below
+// Groups of superblocks in learn map. This should include all superblocks.
 export const superBlockStages: StageMap = {
   [SuperBlockStage.Core]: [
     SuperBlocks.RespWebDesignNew,
@@ -282,31 +289,10 @@ type LanguagesConfig = Config & {
   language: string;
 };
 
-// removes new and upcoming from superBlockOrder
-// not used yet, will be used when adding progress indicators to map
-export function createSuperBlockMap({
-  showNewCurriculum,
-  showUpcomingChanges
-}: Config): StageMap {
-  const superBlockMap = { ...superBlockStages };
-  if (!showNewCurriculum) {
-    superBlockMap[SuperBlockStage.New] = [];
-  }
-  if (!showUpcomingChanges) {
-    superBlockMap[SuperBlockStage.Upcoming] = [];
-  }
-  return superBlockMap;
-}
-
-export function createFlatSuperBlockMap({
-  showNewCurriculum,
-  showUpcomingChanges
-}: Config): SuperBlocks[] {
-  const superBlockMap = createSuperBlockMap({
-    showNewCurriculum,
-    showUpcomingChanges
-  });
-  return stageOrder.map(stage => superBlockMap[stage]).flat();
+export function createFlatSuperBlockMap(config: Config): SuperBlocks[] {
+  return getStageOrder(config)
+    .map(stage => superBlockStages[stage])
+    .flat();
 }
 
 export function getAuditedSuperBlocks({

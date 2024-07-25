@@ -6,14 +6,17 @@ import { createSelector } from 'reselect';
 import {
   type SuperBlocks,
   SuperBlockStage,
-  stageOrder,
+  getStageOrder,
   superBlockStages
 } from '../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { Spacer, ButtonLink } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
-import { showUpcomingChanges } from '../../../config/env.json';
+import {
+  showUpcomingChanges,
+  showNewCurriculum
+} from '../../../config/env.json';
 
 import './map.css';
 
@@ -178,32 +181,28 @@ function Map({
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
-      {stageOrder
-        .filter(
-          stage => showUpcomingChanges || stage !== SuperBlockStage.Upcoming
-        )
-        .map(stage => (
-          <>
-            <h2 className={forLanding ? 'big-heading' : ''}>
-              {t(superBlockHeadings[stage])}
-            </h2>
-            <ul key={stage}>
-              {superBlockStages[stage].map((superblock, i) => (
-                <MapLi
-                  key={superblock}
-                  superBlock={superblock}
-                  landing={forLanding}
-                  index={i}
-                  claimed={isClaimed(superblock)}
-                  showProgressionLines={stage === SuperBlockStage.Core}
-                  showNumbers={stage === SuperBlockStage.Core}
-                  completed={allSuperblockChallengesCompleted(superblock)}
-                />
-              ))}
-            </ul>
-            <Spacer size='medium' />
-          </>
-        ))}
+      {getStageOrder({ showNewCurriculum, showUpcomingChanges }).map(stage => (
+        <>
+          <h2 className={forLanding ? 'big-heading' : ''}>
+            {t(superBlockHeadings[stage])}
+          </h2>
+          <ul key={stage}>
+            {superBlockStages[stage].map((superblock, i) => (
+              <MapLi
+                key={superblock}
+                superBlock={superblock}
+                landing={forLanding}
+                index={i}
+                claimed={isClaimed(superblock)}
+                showProgressionLines={stage === SuperBlockStage.Core}
+                showNumbers={stage === SuperBlockStage.Core}
+                completed={allSuperblockChallengesCompleted(superblock)}
+              />
+            ))}
+          </ul>
+          <Spacer size='medium' />
+        </>
+      ))}
     </div>
   );
 }
