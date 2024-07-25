@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Get started (it's free)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "Sign in to save your progress (it's free)",
     "view-curriculum": "View the Curriculum",
     "first-lesson": "Go to the first lesson",
@@ -104,11 +105,15 @@
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Build projects.",
     "big-heading-3": "Earn certifications.",
+    "big-heading-4": "All for free.",
     "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "freeCodeCamp students at a local study group in South Korea.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group screenshots showing the freeCodeCamp editor interface and a certification.",
     "as-seen-in": "As seen in:",
     "testimonials": {
       "heading": "Here is what our alumni say about freeCodeCamp:",

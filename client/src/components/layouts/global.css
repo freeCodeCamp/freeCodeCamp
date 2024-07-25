@@ -10,6 +10,7 @@ body {
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
+  overflow-x: hidden;
 }
 
 /* This is to override Tailwind as it sets the font-weight to `bolder`.
