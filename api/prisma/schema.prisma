@@ -145,6 +145,104 @@ model user {
 
 // -----------------------------------
 
+/// An exam as designed by the examiners
+model NewExam {
+  /// Globally unique exam id
+  id                 String        @id @map("_id") @db.ObjectId
+  /// Human-readable exam name
+  name               String
+  /// Notes given about exam
+  accessibility_note String
+  /// All questions for a given exam
+  questions          NewQuestion[]
+  /// All dialogue monologues
+  dialogues          NewDialogue[]
+  /// Configuration for exam metadata
+  config             NewConfig
+}
+
+/// A multiple choice question
+type NewQuestion {
+  /// Unique question id
+  id            String          @db.ObjectId
+  /// Type of question
+  question_type NewQuestionType
+  /// Foreign key to a dialogue
+  /// dialogue_id ObjectId?
+  dialogue_id   String?
+  /// Main question paragraph
+  text          String
+  /// Zero or more tags given to categorize a question
+  tags          NewTag[]
+  /// URL to audio file
+  audio_url     String?
+  /// Optional text for audio
+  captions      String?
+  /// Available possible answers for an exam
+  answers       Answer[]
+  /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
+  deprecated    Boolean
+}
+
+/// A mass of text referenced by questions
+type NewDialogue {
+  id   String @db.ObjectId
+  text String
+}
+
+enum NewQuestionType {
+  /// Single question with one or more answers
+  MultipleChoice
+  /// Mass text
+  Dialogue
+}
+
+type NewTag {
+  id   String @db.ObjectId
+  name String
+}
+
+type NewAnswer {
+  id         String  @db.ObjectId
+  is_correct Boolean
+  text       String
+}
+
+type NewConfig {
+  tags       NewTagConfig[]
+  total_time Int
+}
+
+type NewTagConfig {
+  /// Foreign key to a tag
+  id                  String @db.ObjectId
+  number_of_questions Int
+}
+
+model NewExamAttempt {
+  /// id ObjectId
+  id               String               @id @map("_id") @db.ObjectId
+  /// Foreign key to exam
+  exam_id          String               @db.ObjectId
+  questions        NewQuestionAttempt[]
+  total_time_taken Int
+  needs_retake     Boolean
+}
+
+type NewQuestionAttempt {
+  /// Foreign key to question
+  id      String             @db.ObjectId
+  /// An array of answers if a question allows checkboxes
+  answers NewAnswerAttempt[]
+}
+
+type NewAnswerAttempt {
+  /// Foreign key to answer
+  id String @db.ObjectId
+}
+
+// -----------------------------------
+
 model AccessToken {
   id      String   @id @map("_id")
   created DateTime @db.Date
