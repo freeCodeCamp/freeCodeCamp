@@ -18,23 +18,25 @@ async function setupServer() {
 
   await fastify.register(redirectWithMessage);
   await fastify.register(bouncer);
-
+  fastify.addHook('onRequest', fastify.authorize);
+  fastify.get('/', (_req, reply) => {
+    void reply.send({ foo: 'bar' });
+  });
   return fastify;
 }
 
 describe('bouncer', () => {
   let fastify: FastifyInstance;
+  beforeEach(async () => {
+    fastify = await setupServer();
+  });
+
+  afterEach(async () => {
+    await fastify.close();
+  });
 
   describe('send401IfNoUser', () => {
-    beforeEach(async () => {
-      fastify = await setupServer();
-    });
-
     beforeEach(() => {
-      fastify.addHook('onRequest', fastify.authorize);
-      fastify.get('/', (_req, reply) => {
-        void reply.send({ foo: 'bar' });
-      });
       fastify.addHook('onRequest', fastify.send401IfNoUser);
     });
 
@@ -76,19 +78,10 @@ describe('bouncer', () => {
   });
 
   describe('redirectIfNoUser', () => {
-    const redirectLocation = `${HOME_LOCATION}?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
-
-    beforeEach(async () => {
-      fastify = await setupServer();
-    });
-
     beforeEach(() => {
-      fastify.addHook('onRequest', fastify.authorize);
-      fastify.get('/', (_req, reply) => {
-        void reply.send({ foo: 'bar' });
-      });
       fastify.addHook('onRequest', fastify.redirectIfNoUser);
     });
+    const redirectLocation = `${HOME_LOCATION}?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
 
     it('should redirect to HOME_LOCATION if no user is present', async () => {
       const message = {
@@ -125,14 +118,6 @@ describe('bouncer', () => {
   });
 
   describe('fallback hook', () => {
-    beforeEach(async () => {
-      fastify = await setupServer();
-      fastify.addHook('onRequest', fastify.authorize);
-      fastify.get('/', (_req, reply) => {
-        void reply.send({ foo: 'bar' });
-      });
-    });
-
     it('should reject unauthed requests when no other reject hooks are added', async () => {
       const message = {
         type: 'danger',
