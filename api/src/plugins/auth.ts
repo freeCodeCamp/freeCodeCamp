@@ -15,6 +15,7 @@ declare module 'fastify' {
   interface FastifyRequest {
     // TODO: is the full user the correct type here?
     user?: user;
+    accessDeniedMessage: { type: 'info'; content: string } | null;
   }
 
   interface FastifyInstance {
@@ -33,11 +34,13 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     });
   });
 
+  fastify.decorateRequest('accessDeniedMessage', null);
+
   const TOKEN_REQUIRED = 'Access token is required for this request';
   const TOKEN_INVALID = 'Your access token is invalid';
   const TOKEN_EXPIRED = 'Access token is no longer valid';
 
-  const send401 = (
+  const _send401 = (
     _req: FastifyRequest,
     reply: FastifyReply,
     message: string
@@ -45,7 +48,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     void reply.status(401).send({ type: 'info', message });
   };
 
-  const redirectHome = (
+  const _redirectHome = (
     req: FastifyRequest,
     reply: FastifyReply,
     _ignored: string
@@ -59,48 +62,40 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     });
   };
 
-  const handleAuth =
-    (
-      rejectStrategy: (
-        req: FastifyRequest,
-        reply: FastifyReply,
-        message: string
-      ) => void
-    ) =>
-    async (req: FastifyRequest, reply: FastifyReply) => {
-      const tokenCookie = req.cookies.jwt_access_token;
-      if (!tokenCookie) return rejectStrategy(req, reply, TOKEN_REQUIRED);
+  const setAccessDenied = (req: FastifyRequest, content: string) =>
+    (req.accessDeniedMessage = { type: 'info', content });
 
-      const unsignedToken = req.unsignCookie(tokenCookie);
-      if (!unsignedToken.valid)
-        return rejectStrategy(req, reply, TOKEN_REQUIRED);
+  const handleAuth = async (req: FastifyRequest) => {
+    const tokenCookie = req.cookies.jwt_access_token;
+    if (!tokenCookie) return setAccessDenied(req, TOKEN_REQUIRED);
 
-      const jwtAccessToken = unsignedToken.value;
+    const unsignedToken = req.unsignCookie(tokenCookie);
+    if (!unsignedToken.valid) return setAccessDenied(req, TOKEN_REQUIRED);
 
-      try {
-        jwt.verify(jwtAccessToken, JWT_SECRET);
-      } catch {
-        return rejectStrategy(req, reply, TOKEN_INVALID);
-      }
+    const jwtAccessToken = unsignedToken.value;
 
-      const { accessToken } = jwt.decode(jwtAccessToken) as {
-        accessToken: Token;
-      };
+    try {
+      jwt.verify(jwtAccessToken, JWT_SECRET);
+    } catch {
+      return setAccessDenied(req, TOKEN_INVALID);
+    }
 
-      if (isExpired(accessToken))
-        return rejectStrategy(req, reply, TOKEN_EXPIRED);
-
-      const user = await fastify.prisma.user.findUnique({
-        where: { id: accessToken.userId }
-      });
-      if (!user) return rejectStrategy(req, reply, TOKEN_INVALID);
-      req.user = user;
+    const { accessToken } = jwt.decode(jwtAccessToken) as {
+      accessToken: Token;
     };
 
-  fastify.decorate('authorize', handleAuth(send401));
-  fastify.decorate('authorizeOrRedirect', handleAuth(redirectHome));
+    if (isExpired(accessToken)) return setAccessDenied(req, TOKEN_EXPIRED);
+
+    const user = await fastify.prisma.user.findUnique({
+      where: { id: accessToken.userId }
+    });
+    if (!user) return setAccessDenied(req, TOKEN_INVALID);
+    req.user = user;
+  };
+
+  fastify.decorate('authorize', handleAuth);
 
   done();
 };
 
-export default fp(auth, { dependencies: ['redirect-with-message'] });
+export default fp(auth, { name: 'auth' });
