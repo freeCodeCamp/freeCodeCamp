@@ -123,4 +123,56 @@ describe('bouncer', () => {
       expect(res.statusCode).toEqual(200);
     });
   });
+
+  describe('fallback hook', () => {
+    beforeEach(async () => {
+      fastify = await setupServer();
+      fastify.addHook('onRequest', fastify.authorize);
+      fastify.get('/', (_req, reply) => {
+        void reply.send({ foo: 'bar' });
+      });
+    });
+
+    it('should reject unauthed requests when no other reject hooks are added', async () => {
+      const message = {
+        type: 'danger',
+        content: 'Something undesirable occurred'
+      };
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.accessDeniedMessage = message;
+        done();
+      });
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      expect(res.json()).toStrictEqual({
+        type: message.type,
+        message: message.content
+      });
+    });
+
+    it('should not be called if another reject hook is added', async () => {
+      const redirectLocation = `${HOME_LOCATION}?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
+      const message = {
+        type: 'danger',
+        content: 'Something undesirable occurred'
+      };
+      // using redirectIfNoUser as the reject hook since then it's obvious that
+      // the fallback hook is not called.
+      fastify.addHook('onRequest', fastify.redirectIfNoUser);
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.accessDeniedMessage = message;
+        done();
+      });
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      expect(res.headers.location).toBe(redirectLocation);
+      expect(res.statusCode).toEqual(302);
+    });
+  });
 });
