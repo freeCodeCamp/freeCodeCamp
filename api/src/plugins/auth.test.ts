@@ -78,8 +78,7 @@ describe('auth', () => {
   });
 
   describe('authorize', () => {
-    beforeEach(async () => {
-      fastify = await setupServer();
+    beforeEach(() => {
       fastify.get('/test', (_req, reply) => {
         void reply.send({ ok: true });
       });
