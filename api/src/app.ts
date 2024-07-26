@@ -49,6 +49,7 @@ import {
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import bouncer from './plugins/bouncer';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -183,6 +184,7 @@ export const build = async (
   // redirectWithMessage must be registered before codeFlowAuth
   void fastify.register(redirectWithMessage);
   void fastify.register(auth);
+  void fastify.register(bouncer);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
 
@@ -194,6 +196,7 @@ export const build = async (
     // eslint-disable-next-line @typescript-eslint/unbound-method
     fastify.addHook('onRequest', fastify.csrfProtection);
     fastify.addHook('onRequest', fastify.authorize);
+    fastify.addHook('onRequest', fastify.send401IfNoUser);
 
     void fastify.register(challengeRoutes);
     void fastify.register(donateRoutes);
@@ -206,6 +209,7 @@ export const build = async (
   // Routes requiring authentication and NOT CSRF protection
   void fastify.register(function (fastify, _opts, done) {
     fastify.addHook('onRequest', fastify.authorize);
+    fastify.addHook('onRequest', fastify.send401IfNoUser);
 
     void fastify.register(userGetRoutes);
     done();
@@ -213,7 +217,8 @@ export const build = async (
 
   // Routes requiring authentication that redirect on failure
   void fastify.register(function (fastify, _opts, done) {
-    fastify.addHook('onRequest', fastify.authorizeOrRedirect);
+    fastify.addHook('onRequest', fastify.authorize);
+    fastify.addHook('onRequest', fastify.redirectIfNoUser);
 
     void fastify.register(settingRedirectRoutes);
     done();
