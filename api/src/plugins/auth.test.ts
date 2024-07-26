@@ -93,7 +93,7 @@ describe('auth', () => {
           type: 'info',
           content: 'Access token is required for this request'
         });
-        expect(req.user).toBeUndefined();
+        expect(req.user).toBeNull();
         done();
       });
 
@@ -114,7 +114,7 @@ describe('auth', () => {
           type: 'info',
           content: 'Access token is required for this request'
         });
-        expect(req.user).toBeUndefined();
+        expect(req.user).toBeNull();
         done();
       });
 
@@ -142,7 +142,7 @@ describe('auth', () => {
           type: 'info',
           content: 'Your access token is invalid'
         });
-        expect(req.user).toBeUndefined();
+        expect(req.user).toBeNull();
         done();
       });
 
@@ -171,7 +171,7 @@ describe('auth', () => {
           type: 'info',
           content: 'Access token is no longer valid'
         });
-        expect(req.user).toBeUndefined();
+        expect(req.user).toBeNull();
         done();
       });
 
@@ -200,7 +200,7 @@ describe('auth', () => {
           type: 'info',
           content: 'Your access token is invalid'
         });
-        expect(req.user).toBeUndefined();
+        expect(req.user).toBeNull();
         done();
       });
 

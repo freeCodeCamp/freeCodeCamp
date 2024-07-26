@@ -13,7 +13,7 @@ declare module 'fastify' {
 
   interface FastifyRequest {
     // TODO: is the full user the correct type here?
-    user?: user;
+    user: user | null;
     accessDeniedMessage: { type: 'info'; content: string } | null;
   }
 
@@ -33,6 +33,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
   });
 
   fastify.decorateRequest('accessDeniedMessage', null);
+  fastify.decorateRequest('user', null);
 
   const TOKEN_REQUIRED = 'Access token is required for this request';
   const TOKEN_INVALID = 'Your access token is invalid';
