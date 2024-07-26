@@ -24,7 +24,7 @@ import { SESProvider } from './plugins/mail-providers/ses';
 import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
-import codeFlowAuth from './plugins/code-flow-auth';
+import auth from './plugins/auth';
 import notFound from './plugins/not-found';
 import { authRoutes, mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
@@ -182,7 +182,7 @@ export const build = async (
 
   // redirectWithMessage must be registered before codeFlowAuth
   void fastify.register(redirectWithMessage);
-  void fastify.register(codeFlowAuth);
+  void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
 

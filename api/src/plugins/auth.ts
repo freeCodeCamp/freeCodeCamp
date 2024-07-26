@@ -23,7 +23,7 @@ declare module 'fastify' {
   }
 }
 
-const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
+const auth: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.decorateReply('setAccessTokenCookie', function (accessToken: Token) {
     const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
     void this.setCookie('jwt_access_token', signedToken, {
@@ -103,4 +103,4 @@ const codeFlowAuth: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(codeFlowAuth, { dependencies: ['redirect-with-message'] });
+export default fp(auth, { dependencies: ['redirect-with-message'] });

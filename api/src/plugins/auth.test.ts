@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import { COOKIE_DOMAIN, HOME_LOCATION, JWT_SECRET } from '../utils/env';
 import { type Token, createAccessToken } from '../utils/tokens';
 import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies';
-import codeFlowAuth from './code-flow-auth';
+import auth from './auth';
 import redirectWithMessage, { formatMessage } from './redirect-with-message';
 
 describe('auth', () => {
@@ -14,7 +14,7 @@ describe('auth', () => {
     fastify = Fastify();
     await fastify.register(cookies);
     await fastify.register(redirectWithMessage);
-    await fastify.register(codeFlowAuth);
+    await fastify.register(auth);
   });
 
   afterEach(async () => {
