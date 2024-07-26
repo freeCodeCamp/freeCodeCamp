@@ -6,7 +6,6 @@ import type {
 import fp from 'fastify-plugin';
 import { getRedirectParams } from '../utils/redirection';
 
-// add types to fastify instance
 declare module 'fastify' {
   interface FastifyInstance {
     send401IfNoUser: (req: FastifyRequest, reply: FastifyReply) => void;
