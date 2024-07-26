@@ -1,11 +1,10 @@
-import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
+import { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { type user } from '@prisma/client';
 
 import { JWT_SECRET } from '../utils/env';
 import { type Token, isExpired } from '../utils/tokens';
-import { getRedirectParams } from '../utils/redirection';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -39,28 +38,6 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
   const TOKEN_REQUIRED = 'Access token is required for this request';
   const TOKEN_INVALID = 'Your access token is invalid';
   const TOKEN_EXPIRED = 'Access token is no longer valid';
-
-  const _send401 = (
-    _req: FastifyRequest,
-    reply: FastifyReply,
-    message: string
-  ): void => {
-    void reply.status(401).send({ type: 'info', message });
-  };
-
-  const _redirectHome = (
-    req: FastifyRequest,
-    reply: FastifyReply,
-    _ignored: string
-  ) => {
-    const { origin } = getRedirectParams(req);
-
-    void reply.redirectWithMessage(origin, {
-      type: 'info',
-      content:
-        'Only authenticated users can access this route. Please sign in and try again.'
-    });
-  };
 
   const setAccessDenied = (req: FastifyRequest, content: string) =>
     (req.accessDeniedMessage = { type: 'info', content });
