@@ -98,4 +98,4 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(auth, { name: 'auth' });
+export default fp(auth, { name: 'auth', dependencies: ['cookies'] });

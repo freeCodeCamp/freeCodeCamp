@@ -1,0 +1,126 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import Fastify, { type FastifyInstance } from 'fastify';
+
+import { HOME_LOCATION } from '../utils/env';
+import bouncer from './bouncer';
+import auth from './auth';
+import cookies from './cookies';
+import redirectWithMessage, { formatMessage } from './redirect-with-message';
+
+let authorizeSpy: jest.SpyInstance;
+
+async function setupServer() {
+  const fastify = Fastify();
+  await fastify.register(cookies);
+  await fastify.register(auth);
+  authorizeSpy = jest.spyOn(fastify, 'authorize');
+
+  await fastify.register(redirectWithMessage);
+  await fastify.register(bouncer);
+
+  return fastify;
+}
+
+describe('bouncer', () => {
+  let fastify: FastifyInstance;
+
+  describe('send401IfNoUser', () => {
+    beforeEach(async () => {
+      fastify = await setupServer();
+    });
+
+    beforeEach(() => {
+      fastify.addHook('onRequest', fastify.authorize);
+      fastify.get('/', (_req, reply) => {
+        void reply.send({ foo: 'bar' });
+      });
+      fastify.addHook('onRequest', fastify.send401IfNoUser);
+    });
+
+    it('should return 401 if no user is present', async () => {
+      const message = {
+        type: 'danger',
+        content: 'Something undesirable occurred'
+      };
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.accessDeniedMessage = message;
+        done();
+      });
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      expect(res.json()).toStrictEqual({
+        type: message.type,
+        message: message.content
+      });
+      expect(res.statusCode).toEqual(401);
+    });
+
+    it('should not alter the response if a user is present', async () => {
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.user = { id: '123' };
+        done();
+      });
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      expect(res.json()).toEqual({ foo: 'bar' });
+      expect(res.statusCode).toEqual(200);
+    });
+  });
+
+  describe('redirectIfNoUser', () => {
+    const redirectLocation = `${HOME_LOCATION}?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
+
+    beforeEach(async () => {
+      fastify = await setupServer();
+    });
+
+    beforeEach(() => {
+      fastify.addHook('onRequest', fastify.authorize);
+      fastify.get('/', (_req, reply) => {
+        void reply.send({ foo: 'bar' });
+      });
+      fastify.addHook('onRequest', fastify.redirectIfNoUser);
+    });
+
+    it('should redirect to HOME_LOCATION if no user is present', async () => {
+      const message = {
+        type: 'danger',
+        content: 'At the moment, content is ignored'
+      };
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.accessDeniedMessage = message;
+        done();
+      });
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      expect(res.headers.location).toBe(redirectLocation);
+      expect(res.statusCode).toEqual(302);
+    });
+
+    it('should not alter the response if a user is present', async () => {
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.user = { id: '123' };
+        done();
+      });
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      expect(res.json()).toEqual({ foo: 'bar' });
+      expect(res.statusCode).toEqual(200);
+    });
+  });
+});
