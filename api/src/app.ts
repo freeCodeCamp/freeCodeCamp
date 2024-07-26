@@ -193,8 +193,9 @@ export const build = async (
     fastify.addHook('onRequest', fastify.authorize);
     // CSRF protection enabled:
     await fastify.register(async function (fastify, _opts) {
-      // The order matters here, since we want to reject invalid cross site requests
-      // before checking if the user is authenticated.
+      // TODO: bounce unauthed requests before checking CSRF token. This will
+      // mean moving csrfProtection into custom plugin and testing separately,
+      // because it's a pain to mess around with other cookies/hook order.
       // @ts-expect-error - @fastify/csrf-protection needs to update their types
       // eslint-disable-next-line @typescript-eslint/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
