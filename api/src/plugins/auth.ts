@@ -19,7 +19,6 @@ declare module 'fastify' {
 
   interface FastifyInstance {
     authorize: (req: FastifyRequest, reply: FastifyReply) => void;
-    authorizeOrRedirect: (req: FastifyRequest, reply: FastifyReply) => void;
   }
 }
 

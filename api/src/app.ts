@@ -25,6 +25,7 @@ import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import auth from './plugins/auth';
+import bouncer from './plugins/bouncer';
 import notFound from './plugins/not-found';
 import { authRoutes, mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
@@ -49,7 +50,6 @@ import {
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
-import bouncer from './plugins/bouncer';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
