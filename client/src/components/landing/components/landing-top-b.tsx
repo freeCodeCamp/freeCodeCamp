@@ -24,7 +24,6 @@ const LogoRow = (): JSX.Element => {
   return (
     <>
       <p
-        data-playwright-test-label='landing-h2-heading'
         className='logo-row-title'
       >
         {t('landing.h2-heading-b')}
