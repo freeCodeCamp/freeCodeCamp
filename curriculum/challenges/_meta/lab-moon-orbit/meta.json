@@ -1,0 +1,11 @@
+{
+  "name": "Learn CSS Animation by Creating a Moon Orbit",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": false,
+  "dashedName": "lab-moon-orbit",
+  "order": 122,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66a37f37ef5823a313de8c26", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
