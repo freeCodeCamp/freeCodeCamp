@@ -289,14 +289,14 @@ const LowerJaw = ({
 
   const checkButtonText = isDesktop
     ? isMacOS
-      ? t('buttons.check-code-3')
-      : t('buttons.check-code')
-    : t('buttons.check-code-2');
+      ? t('buttons.check-code-cmd')
+      : t('buttons.check-code-ctrl')
+    : t('buttons.check-code');
 
   const submitButtonText = isDesktop
     ? isMacOS
-      ? t('buttons.submit-and-go-3')
-      : t('buttons.submit-and-go-2')
+      ? t('buttons.submit-and-go-cmd')
+      : t('buttons.submit-and-go-ctrl')
     : t('buttons.submit-and-go');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
