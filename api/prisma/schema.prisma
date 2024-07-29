@@ -168,20 +168,32 @@ type NewQuestion {
   /// Type of question
   question_type NewQuestionType
   /// Foreign key to a dialogue
-  /// dialogue_id ObjectId?
-  dialogue_id   String?
+  dialogue_id   String?         @db.ObjectId
   /// Main question paragraph
   text          String
   /// Zero or more tags given to categorize a question
   tags          NewTag[]
-  /// URL to audio file
-  audio_url     String?
+  /// Optional audio for a question
+  audio         NewAudio?
   /// Optional text for audio
   captions      String?
   /// Available possible answers for an exam
   answers       Answer[]
   /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
   deprecated    Boolean
+}
+
+type NewAudio {
+  /// URL to audio file
+  url        String
+  /// Start time of audio clip for question
+  ///
+  /// If not set, audio starts at 0
+  start_time Float?
+  /// End time of audio clip for question
+  ///
+  /// If not set, audio ends at the end of the clip
+  end_time   Float?
 }
 
 /// A mass of text referenced by questions
@@ -220,7 +232,6 @@ type NewTagConfig {
 }
 
 model NewExamAttempt {
-  /// id ObjectId
   id               String               @id @map("_id") @db.ObjectId
   /// Foreign key to exam
   exam_id          String               @db.ObjectId
