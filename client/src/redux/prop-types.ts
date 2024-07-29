@@ -364,6 +364,7 @@ export type SavedChallengeFile = {
   ext: Ext;
   name: string;
   history?: string[];
+  editableRegionBoundaries?: number[];
   contents: string;
 };
 
