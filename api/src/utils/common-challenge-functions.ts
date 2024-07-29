@@ -1,4 +1,4 @@
-import { ExamResults, user } from '@prisma/client';
+import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
@@ -107,21 +107,26 @@ export function saveUserChallengeData(
 /**
  * Helper function to update a user's challenge data. Used in challenge
  * submission endpoints.
- *
- * @deprecated Create specific functions for each submission endpoint.
+ * TODO: Keep refactoring. This function does too much.
  * @param fastify The Fastify instance.
  * @param user The existing user record.
  * @param challengeId The id of the submitted challenge.
  * @param _completedChallenge The challenge submission.
- * @param timezone The user's timezone.
  * @returns Information about the update.
  */
 export async function updateUserChallengeData(
   fastify: FastifyInstance,
-  user: user,
+  user: Pick<
+    user,
+    | 'id'
+    | 'completedChallenges'
+    | 'needsModeration'
+    | 'savedChallenges'
+    | 'progressTimestamps'
+    | 'partiallyCompletedChallenges'
+  >,
   challengeId: string,
-  _completedChallenge: CompletedChallenge,
-  timezone?: string // TODO: is this required as its not given as a arg anywhere
+  _completedChallenge: CompletedChallenge
 ) {
   const { files, completedDate: newProgressTimeStamp = Date.now() } =
     _completedChallenge;
@@ -149,11 +154,8 @@ export async function updateUserChallengeData(
   } else {
     completedChallenge = omit(_completedChallenge, ['files']);
   }
-  let finalChallenge = {} as CompletedChallenge;
 
-  // Since these values are destuctured for easier updating, collectively update before returning
   const {
-    timezone: userTimezone,
     completedChallenges = [],
     needsModeration = false,
     savedChallenges = [],
@@ -161,36 +163,34 @@ export async function updateUserChallengeData(
     partiallyCompletedChallenges = []
   } = user;
 
-  const userCompletedChallenges: CompletedChallenge[] = completedChallenges;
-  const userSavedChallenges: SavedChallenge[] = savedChallenges;
-  const userProgressTimestamps = progressTimestamps;
-  const userPartiallyCompletedChallenges = partiallyCompletedChallenges;
+  let savedChallengesUpdate: Prisma.userUpdateInput['savedChallenges'];
 
-  const oldIndex = userCompletedChallenges.findIndex(
-    ({ id }) => challengeId === id
-  );
+  const oldChallenge = completedChallenges.find(({ id }) => challengeId === id);
+  const alreadyCompleted = !!oldChallenge;
 
-  const alreadyCompleted = oldIndex !== -1;
-  const oldChallenge = alreadyCompleted
-    ? userCompletedChallenges[oldIndex]
-    : null;
+  const finalChallenge = alreadyCompleted
+    ? {
+        ...completedChallenge,
+        completedDate: oldChallenge.completedDate
+      }
+    : completedChallenge;
 
-  if (alreadyCompleted && oldChallenge) {
-    finalChallenge = {
-      ...completedChallenge,
-      completedDate: oldChallenge.completedDate
-    };
+  // TODO(Post-MVP): prevent concurrent completions of the same challenge by
+  // using optimistic concurrency control. i.e. the update should simultaneously
+  // check and update some property of the user record such that the same update
+  // can't be applied twice.
+  const userCompletedChallenges = alreadyCompleted
+    ? completedChallenges.map(x => (x.id === challengeId ? finalChallenge : x))
+    : { push: finalChallenge };
 
-    userCompletedChallenges[oldIndex] = finalChallenge;
-  } else {
-    finalChallenge = {
-      ...completedChallenge
-    };
-    if (userProgressTimestamps && Array.isArray(userProgressTimestamps)) {
-      userProgressTimestamps.push(newProgressTimeStamp);
-    }
-    userCompletedChallenges.push(finalChallenge);
-  }
+  // We can't use push, because progressTimestamps is a JSON blob and, until
+  // we convert it to an array, push is not available. Since this could result
+  // in the completedChallenges and progressTimestamps arrays being out of sync,
+  // we should prioritize normalizing the data structure.
+  const userProgressTimestamps =
+    !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
+      ? [...progressTimestamps, newProgressTimeStamp]
+      : progressTimestamps;
 
   if (
     multifileCertProjectIds.includes(challengeId) ||
@@ -204,63 +204,37 @@ export async function updateUserChallengeData(
       ) as SavedChallengeFile[]
     };
 
-    const savedIndex = userSavedChallenges.findIndex(
-      ({ id }) => challengeId === id
-    );
+    const isSaved = savedChallenges.some(({ id }) => challengeId === id);
 
-    if (savedIndex >= 0) {
-      userSavedChallenges[savedIndex] = challengeToSave;
-    } else {
-      userSavedChallenges.push(challengeToSave);
-    }
+    savedChallengesUpdate = isSaved
+      ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
+      : { push: challengeToSave };
   }
 
   // remove from partiallyCompleted on submit
-  const updatedPartiallyCompletedChallenges =
-    userPartiallyCompletedChallenges.filter(
-      challenge => challenge.id !== challengeId
-    );
+  const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
+    challenge => challenge.id !== challengeId
+  );
 
-  if (
-    timezone &&
-    timezone !== 'UTC' &&
-    !userTimezone &&
-    userTimezone === 'UTC'
-  ) {
-    timezone = userTimezone;
+  const { savedChallenges: userSavedChallenges } =
     await fastify.prisma.user.update({
       where: { id: user.id },
       data: {
-        timezone
+        completedChallenges: userCompletedChallenges,
+        // TODO: `needsModeration` should be handled closer to source, because it exists in 3 states: true, false, undefined/null
+        //       `undefined` in Prisma is a no-op
+        needsModeration: needsModeration || undefined,
+        savedChallenges: savedChallengesUpdate,
+        progressTimestamps: userProgressTimestamps,
+        partiallyCompletedChallenges: userPartiallyCompletedChallenges
+      },
+      select: {
+        savedChallenges: true
       }
     });
-  }
-
-  if (needsModeration) {
-    await fastify.prisma.user.update({
-      where: { id: user.id },
-      data: {
-        needsModeration: true
-      }
-    });
-  }
-
-  await fastify.prisma.user.update({
-    where: { id: user.id },
-    data: {
-      completedChallenges: userCompletedChallenges,
-      needsModeration,
-      savedChallenges: userSavedChallenges,
-      progressTimestamps: userProgressTimestamps,
-      partiallyCompletedChallenges: updatedPartiallyCompletedChallenges
-    }
-  });
-
-  const updateData = {};
 
   return {
     alreadyCompleted,
-    updateData, // Might need to remove this variable as we're updating user object in this function now instead of in the endpoint handler
     completedDate: finalChallenge.completedDate,
     userSavedChallenges
   };

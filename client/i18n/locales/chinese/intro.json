@@ -319,7 +319,7 @@
         "title": "创建收银机项目",
         "intro": [
           "这是你要获得认证必须做的项目之一。",
-          "在这个项目中，你将创建一个收银机 web 应用程序。"
+          "在这个项目中，你将创建一个收银机 Web 应用程序。"
         ]
       },
       "build-a-palindrome-checker-project": {
@@ -362,14 +362,14 @@
         "intro": [
           "函数式编程是一种流行的软件开发方法。在函数式编程中，开发人员将代码组织成更小的函数，然后将这些函数组合起来构建复杂的程序。",
           "在这个电子表格应用程序项目中，你将学习如何解析和计算数学表达式、实现电子表格功能、处理单元格引用以及创建交互式 Web 界面。你将学习如何根据用户输入动态更新页面。",
-          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, and <code>includes()</code> methods and the <code>parseInt()</code> function."
+          "这个项目将涵盖 <code>map()</code>、<code>find()</code> 和 <code>includes()</code> 方法以及 <code>parseInt()</code> 函数等概念。"
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "通过创建足球队卡学习现代 JavaScript 方法",
         "intro": [
           "构建 Web 应用程序的一个常见方面是：处理数据集，然后将信息输出到屏幕上。在这个运动队卡片项目中，你将学习如何使用 DOM 操作、对象解构、事件处理和数据过滤。",
-          "这个项目将涵盖 switch 语句、默认参数、 <code>Object.freeze()</code>、 <code>map()</code> 方法等概念。"
+          "This project will cover concepts like, default parameters, <code>Object.freeze()</code>, and reinforce your knowledge of the <code>switch</code> statement and <code>map()</code> method."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -409,8 +409,8 @@
           "本项目将帮助你理解这些算法背后的基本概念，以及如何在 web 应用程序中应用这些算法对数字数据进行排序。"
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "通过创建骰子游戏学习中级算法思维",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "通过创建骰子游戏回顾中级算法思维",
         "intro": [
           "算法思维包括将复杂问题分解为一连串定义明确、循序渐进的指令的能力。",
           "在这个骰子游戏项目中，你将学习如何管理游戏状态、实现掷骰子的游戏逻辑、记分以及应用各种组合的规则。",
@@ -474,17 +474,17 @@
         ]
       },
       "learn-basic-debugging-by-building-a-random-background-color-changer": {
-        "title": "Learn Basic Debugging by Building a Random Background Color Changer",
+        "title": "通过创建随机背景变色程序学习基本调试方法",
         "intro": [
-          "Debugging is the process of going through your code, finding any issues, and fixing them.",
-          "In this project, you will help CamperBot build a random background color changer and help them find and fix errors."
+          "调试是检查代码、发现并修复问题的过程。",
+          "在这个项目中，你将帮助 CamperBot 创建一个随机背景变色程序，并帮助其找到和修复错误。"
         ]
       },
       "review-dom-manipulation-by-building-a-rock-paper-scissors-game": {
-        "title": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+        "title": "通过创建石头剪刀布游戏回顾 DOM 操作",
         "intro": [
-          "In the previous projects you learned how to work with basic DOM manipulation. Now it is time to review what you have learned by building a Rock, Paper, Scissors game.",
-          "In this mini project, you will review conditionals, functions, <code>getElementById</code>, and more. This project will give you an opportunity to solve small problems and get a better understanding of the basics."
+          "在前面的项目中，你学习了如何使用基本的 DOM 操作。现在是时候通过创建石头剪刀布游戏来复习一下所学知识了。",
+          "在这个迷你项目中，你将复习条件、函数、<code>getElementById</code> 等内容。本项目将为你提供一个解决小问题的机会，让你更好地理解基础知识。"
         ]
       }
     }
@@ -855,22 +855,16 @@
         ]
       },
       "build-an-arithmetic-formatter-project": {
-        "title": "Build an Arithmetic Formatter Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "创建算术格式化器项目",
+        "intro": ["这是你要获得认证必须做的项目之一。"]
       },
       "build-a-time-calculator-project": {
-        "title": "Build a Time Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "创建时间计算器项目",
+        "intro": ["这是你要获得认证必须做的项目之一。"]
       },
       "build-a-budget-app-project": {
-        "title": "Build a Budget App Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "创建预算应用程序项目",
+        "intro": ["这是你要获得认证必须做的项目之一。"]
       },
       "build-a-polygon-area-calculator-project": {
         "title": "Build a Polygon Area Calculator Project",
@@ -882,6 +876,20 @@
         "title": "Build a Probability Calculator Project",
         "intro": [
           "This is one of the required projects to claim your certification."
+        ]
+      },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Learn Interfaces by Building an Equation Solver",
+        "intro": [
+          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
+          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
+        ]
+      },
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Learn Special Methods by Building a Vector Space",
+        "intro": [
+          "Python special methods are called in response to specific operations and enable you to customize the behaviour of your objects in a detailed and effective way.",
+          "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
         ]
       },
       "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
@@ -1263,6 +1271,18 @@
       "top-learn-arrays-and-loops": {
         "title": "Learn Arrays and Loops",
         "intro": ["Learn about arrays and loops in JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Learn to Solve Problems and Understand Errors",
+        "intro": [
+          "Learn how to solve problems and understand errors in JavaScript."
+        ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Build a Rock Paper Scissor Game",
+        "intro": [
+          "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
+        ]
       }
     }
   },
@@ -1490,39 +1510,57 @@
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "学习如何为项目写代码文档",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you expressions related to what to do when documenting code."
+        ]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "学习如何阅读和理解代码文档",
-        "intro": ["", ""]
+        "intro": [
+          "This course will present more expressions related to code documentation and bring tips on how to understand it."
+        ]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "学习如何分析代码文档",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
+        ]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "学习如何分享进度和成就",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
+        ]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to speak about the most recent advancements in your projects and about your plans."
+        ]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "学习如何表达同意或不同意",
-        "intro": ["", ""]
+        "intro": [
+          "This course will introduce how to say that you agree with what another person says and to tell them politely that you do not agree with them."
+        ]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "学习如何提供技术支持和指导",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see ways of offering some help in terms of technical specifics to another person."
+        ]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "学习如何请求和接受指导",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to ask for assistance from a coworker when you need it."
+        ]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "学习如何在帮助别人时提供解释",
-        "intro": ["", ""]
+        "intro": [
+          "This course will provide you with ways to explain things to other people while assisting them."
+        ]
       }
     }
   },
@@ -1643,13 +1681,23 @@
       }
     }
   },
-  "example-certification": {
-    "title": "示例认证",
-    "intro": ["占位符"],
+  "front-end-development": {
+    "title": "Front End Development",
+    "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "示例认证测验",
-        "intro": ["占位符"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Learn Basic HTML by Building a Recipe Page",
+        "intro": ["", ""]
+      },
+      "lab-recipe-page": {
+        "title": "Recipe Page",
+        "intro": [
+          "For this lab, you will create a web page of your favorite recipe."
+        ]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Front End Development Certification Exam",
+        "intro": ["", ""]
       }
     }
   },

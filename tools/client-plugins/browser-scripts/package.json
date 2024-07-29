@@ -20,7 +20,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.js"
+    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.js"
   },
   "keywords": [],
   "devDependencies": {
@@ -28,7 +28,7 @@
     "@babel/plugin-transform-runtime": "7.23.7",
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
-    "@freecodecamp/curriculum-helpers": "3.4.0",
+    "@freecodecamp/curriculum-helpers": "3.7.0",
     "@types/chai": "4.3.12",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/enzyme": "3.10.16",

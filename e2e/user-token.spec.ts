@@ -1,5 +1,9 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
+
+import translations from '../client/i18n/locales/english/translations.json';
+import { alertToBeVisible } from './utils/alerts';
+
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeEach(() => {
@@ -7,7 +11,7 @@ test.beforeEach(() => {
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Initially', () => {
@@ -36,9 +40,7 @@ test.describe('After creating token', () => {
     ).toBeVisible();
     await page.getByRole('button', { name: 'Delete my user token' }).click();
 
-    await expect(page.getByRole('alert')).toContainText(
-      /Your user token has been deleted./
-    );
+    await alertToBeVisible(page, translations.flash['token-deleted']);
     await expect(
       page.getByText('User Token', { exact: true })
     ).not.toBeVisible();

@@ -10,7 +10,7 @@ dashedName: problem-177-integer-angled-quadrilaterals
 
 Let ABCD be a convex quadrilateral, with diagonals AC and BD. At each vertex the diagonal makes an angle with each of the two sides, creating eight corner angles.
 
-<img class="img-responsive center-block" alt="convex quadrilateral ABCD, with diagonals AC and BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px;">
+<img alt="convex quadrilateral ABCD, with diagonals AC and BD" src="https://cdn.freecodecamp.org/curriculum/project-euler/integer-angled-quadrilaterals.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 For example, at vertex A, the two angles are CAD, CAB.
 

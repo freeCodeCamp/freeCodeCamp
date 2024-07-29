@@ -275,7 +275,6 @@ class ShowFillInTheBlank extends Component<
             translationPending,
             fields: { blockName },
             fillInTheBlank: { sentence, blanks },
-            audioPath,
             scene
           }
         }
@@ -322,19 +321,6 @@ class ShowFillInTheBlank extends Component<
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <PrismFormatted text={description} />
                 <Spacer size='medium' />
-                {audioPath && (
-                  <>
-                    {/* TODO: Add tracks for audio elements */}
-                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
-                    <audio className='audio' controls>
-                      <source
-                        src={`https://cdn.freecodecamp.org/${audioPath}`}
-                        type='audio/mpeg'
-                      />
-                    </audio>
-                    <Spacer size='medium' />
-                  </>
-                )}
               </Col>
 
               {scene && (
@@ -381,11 +367,7 @@ class ShowFillInTheBlank extends Component<
                                   )}`}
                                   onChange={this.handleInputChange}
                                   data-index={node.value}
-                                  style={{
-                                    width: `${
-                                      blankAnswers[node.value].length * 11 + 11
-                                    }px`
-                                  }}
+                                  size={blankAnswers[node.value].length}
                                   aria-label={t('learn.blank')}
                                 />
                               );
@@ -510,7 +492,6 @@ export const query = graphql`
           }
         }
         translationPending
-        audioPath
       }
     }
   }

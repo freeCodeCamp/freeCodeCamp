@@ -101,7 +101,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -736,6 +737,7 @@
     "last-page": "Go to last page",
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
+    "timeline-pagination-nav": "Timeline Pagination",
     "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests",
     "hide-preview": "Hide the preview",
@@ -876,7 +878,8 @@
     "own-work-url": "Remember to submit your own work.",
     "publicly-visible-url": "Remember to submit a publicly visible app URL.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
-    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Executive Director, freeCodeCamp.org",
@@ -1002,6 +1005,8 @@
       "a2-english-for-developers": "A2 English for Developers Certification",
       "B1 English for Developers": "B1 English for Developers",
       "b1-english-for-developers": "B1 English for Developers Certification",
+      "Front End Development": "Front End Development",
+      "front-end-development-v9": "Front End Development Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",

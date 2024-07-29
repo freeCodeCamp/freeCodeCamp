@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../shared/config/superblocks';
+import { SuperBlocks } from '../../shared/config/curriculum';
 
 /**
  * Certifications are not equivalent to superblocks. Each superblock corresponds
@@ -26,6 +26,7 @@ export enum Certification {
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   // Upcoming certifications
+  FrontEndDevelopment = 'front-end-development-v9',
   UpcomingPython = 'upcoming-python-v8',
   A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
@@ -75,6 +76,7 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
+  Certification.FrontEndDevelopment,
   Certification.UpcomingPython,
   Certification.A2English,
   Certification.B1English
@@ -278,6 +280,7 @@ export const linkedInCredentialIds = {
   [Certification.RelationalDb]: 'rd',
   [Certification.CollegeAlgebraPy]: 'cawp',
   [Certification.FoundationalCSharp]: 'fcswm',
+  [Certification.FrontEndDevelopment]: 'fed',
   [Certification.UpcomingPython]: 'up',
   [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd',

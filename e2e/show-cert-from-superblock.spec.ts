@@ -27,7 +27,7 @@ test.describe('When the user HAS NOT claimed their cert', () => {
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 });
 

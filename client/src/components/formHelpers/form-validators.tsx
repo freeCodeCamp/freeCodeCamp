@@ -38,6 +38,9 @@ export const httpValidator: Validator = value =>
 export const pathValidator: Validator = value =>
   isPathRoot(value) ? <Trans>validation.path-url</Trans> : null;
 
+export const sourceCodeLinkExistsValidator: Validator = value =>
+  value ? null : <Trans>validation.source-code-link-required</Trans>;
+
 export function composeValidators(...validators: Validator[]) {
   return (value: string): ReturnType<Validator> | null =>
     validators.reduce(

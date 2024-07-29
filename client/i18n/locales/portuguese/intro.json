@@ -362,14 +362,14 @@
         "intro": [
           "A programação funcional é uma abordagem popular para desenvolvimento de software. Na programação funcional, os desenvolvedores organizam o código em funções menores, então combinam essas funções para criar programas complexos.",
           "Nesse projeto de aplicação de planilha, você aprenderá sobre análise e avaliação de expressões matemáticas, implementando funções de planilha, manipulando referências de células e criando interfaces da web interativas. Você aprenderá como atualizar dinamicamente a página baseada na entrada do usuário.",
-          "This project will cover concepts like the <code>map()</code>, <code>find()</code>, and <code>includes()</code> methods and the <code>parseInt()</code> function."
+          "Este projeto abrangerá conceitos como os métodos <code>map()</code>, <code>find()</code> e <code>includes()</code> e a função <code>parseInt()</code>."
         ]
       },
       "learn-modern-javascript-methods-by-building-football-team-cards": {
         "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
         "intro": [
           "Um aspecto comum da criação de aplicações web é trabalhar com o processamento de conjuntos de dados e, em seguida, enviar informações para a tela. Nesse projeto de cartões da equipe de futebol, você aprenderá como trabalhar com a manipulação do DOM, desestruturação de objetos, manipulação de eventos, e filtragem de dados.",
-          "Esse projeto abrangerá conceitos como instruções switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
+          "Este projeto abrangerá conceitos como parâmetros padrão, <code>Object.freeze()</code> e reforçará seu conhecimento sobre a instrução <code>switch</code> e sobre o método <code>map()</code>."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -409,8 +409,8 @@
           "Este projeto ajudará você a entender os conceitos fundamentais por trás desses algoritmos, e como você pode aplicá-los para classificar dados numéricos em aplicações para a web."
         ]
       },
-      "learn-intermediate-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Aprenda raciocínio algorítmico intermediário criando um jogo de dados",
+      "review-algorithmic-thinking-by-building-a-dice-game": {
+        "title": "Revise o raciocínio algorítmico criando um jogo de dados",
         "intro": [
           "Raciocínio algorítmico implica a capacidade de dividir problemas complexos em uma sequência de instruções passo a passo e bem definidas.",
           "Neste projeto de jogo de dados, você aprenderá como gerenciar o estado do jogo, implementar a lógica do jogo para rolar os dados, manter a pontuação e aplicar as regras para várias combinações.",
@@ -884,11 +884,25 @@
           "Este é um dos projetos necessários para obter a certificação."
         ]
       },
-      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
-        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Aprenda Interfaces criando um solucionador de equações",
         "intro": [
-          "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
-          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
+          "Classes abstratas permitem definir interfaces formais – objetos que agem como diagramas para as classes.",
+          "Neste projeto, você descobrirá como implementar uma interface em Python ao criar um programa simples de resolução de equações."
+        ]
+      },
+      "learn-special-methods-by-building-a-vector-space": {
+        "title": "Aprenda métodos especiais criando um espaço vetorial",
+        "intro": [
+          "Os métodos especiais do Python são chamados em resposta a operações específicas e permitem que você personalize o comportamento dos objetos de modo detalhado e eficaz.",
+          "Neste projeto, você vai explorar alguns dos métodos especiais mais comuns enquanto aprende sobre vetores criando um espaço vetorial."
+        ]
+      },
+      "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
+        "title": "Aprenda encapsulamento criando uma calculadora de trajetória de projéteis",
+        "intro": [
+          "Encapsulamento é um princípio fundamental da OOP baseado na escrita de código que limita o acesso direto aos dados.",
+          "Neste projeto, você descobrirá novos conceitos relacionados ao encapsulamento, como getters, setters e name mangling. Você usará esses conceitos junto com o que você já aprendeu para criar um programa que calcula uma trajetória de projéteis."
         ]
       },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
@@ -1269,6 +1283,18 @@
       "top-learn-arrays-and-loops": {
         "title": "Aprenda arrays e laços",
         "intro": ["Aprenda sobre arrays e laços de repetição em JavaScript."]
+      },
+      "top-learn-to-solve-problems-and-understand-errors": {
+        "title": "Aprenda a resolver problemas e a entender erros",
+        "intro": [
+          "Aprenda a resolver problemas e a entender os erros em JavaScript."
+        ]
+      },
+      "top-build-a-rock-paper-scissors-game": {
+        "title": "Crie um jogo de pedra, papel e tesoura",
+        "intro": [
+          "Teste suas habilidades em JavaScript criando um jogo de pedra, papel e tesoura."
+        ]
       }
     }
   },
@@ -1498,39 +1524,57 @@
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Aprenda a documentar o código para um projeto",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará expressões relacionadas ao que fazer ao documentar o código."
+        ]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Aprenda a ler e entender a documentação do código",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso apresentará mais expressões relacionadas à documentação de código e dará dicas sobre como entendê-la."
+        ]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Aprenda a analisar a documentação de código",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você verá algumas ideias para ajudá-lo a lidar com a documentação e a analisá-la em termos simples."
+        ]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Aprenda a compartilhar progresso e realizações",
-        "intro": ["", ""]
+        "intro": [
+          "Neste curso, você aprenderá a compartilhar seu progresso com os colegas de trabalho e a falar sobre os sucessos que teve em seus projetos."
+        ]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Aprenda a falar sobre atualizações e planos para tarefas e projetos",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará como falar sobre os avanços mais recentes em seus projetos e sobre seus planos."
+        ]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Aprenda a expressar concordância e desacordo",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso introduzirá maneiras de dizer que concordamos com o que uma outra pessoa diz e de dizer a elas educadamente que não estamos de acordo com elas."
+        ]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Aprenda a oferecer suporte técnico e orientação",
-        "intro": ["", ""]
+        "intro": [
+          "Nesse curso, você verá maneiras de oferecer alguma ajuda em termos de especificações técnicas a outra pessoa."
+        ]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Aprenda a solicitar e receber orientação",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará como pedir ajuda a um colega de trabalho quando você precisar."
+        ]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Aprenda a fornecer explicações quando estiver ajudando outros",
-        "intro": ["", ""]
+        "intro": [
+          "Este curso mostrará maneiras de explicar algo a outras pessoas enquanto as ajuda."
+        ]
       }
     }
   },
@@ -1651,13 +1695,23 @@
       }
     }
   },
-  "example-certification": {
-    "title": "Certificação de exemplo",
+  "front-end-development": {
+    "title": "Desenvolvimento de front-end",
     "intro": ["placeholder"],
     "blocks": {
-      "example-certification-exam": {
-        "title": "Exame da certificação de exemplo",
-        "intro": ["placeholder"]
+      "learn-basic-html-by-building-a-recipe-page": {
+        "title": "Aprenda HTML básico criando uma página de receitas",
+        "intro": ["", ""]
+      },
+      "lab-recipe-page": {
+        "title": "Página de receita",
+        "intro": [
+          "Neste laboratório, você criará uma página da web com sua receita favorita."
+        ]
+      },
+      "front-end-development-certification-exam": {
+        "title": "Exame de certificação de desenvolvimento de front-end",
+        "intro": ["", ""]
       }
     }
   },

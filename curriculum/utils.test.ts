@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
-import { SuperBlocks } from '../shared/config/superblocks';
+import { SuperBlocks } from '../shared/config/curriculum';
 import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
@@ -28,7 +28,7 @@ const mockSuperBlocks = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStruct,
   SuperBlocks.TheOdinProject,
-  SuperBlocks.ExampleCertification
+  SuperBlocks.FrontEndDevelopment
 ];
 
 const fullSuperOrder = {
@@ -50,7 +50,7 @@ const fullSuperOrder = {
   [SuperBlocks.RespWebDesign]: 15,
   [SuperBlocks.JsAlgoDataStruct]: 16,
   [SuperBlocks.TheOdinProject]: 17,
-  [SuperBlocks.ExampleCertification]: 18
+  [SuperBlocks.FrontEndDevelopment]: 18
 };
 
 describe('createSuperOrder', () => {
@@ -70,12 +70,12 @@ describe('createSuperOrder', () => {
 });
 
 describe('getSuperOrder', () => {
-  it('returns a number for valid superblocks', () => {
+  it('returns a number for valid curriculum', () => {
     expect.assertions(1);
     expect(typeof getSuperOrder('responsive-web-design')).toBe('number');
   });
 
-  it('throws for unknown superblocks', () => {
+  it('throws for unknown curriculum', () => {
     expect.assertions(4);
     expect(() => getSuperOrder()).toThrow();
     expect(() => getSuperOrder(null)).toThrow();
@@ -88,7 +88,7 @@ describe('getSuperOrder', () => {
     expect(() => getSuperOrder('certifications')).toThrow();
   });
 
-  it.skip('returns unique numbers for all current superblocks', () => {
+  it.skip('returns unique numbers for all current curriculum', () => {
     if (
       process.env.SHOW_NEW_CURRICULUM !== 'true' &&
       process.env.SHOW_UPCOMING_CHANGES !== 'true'
@@ -125,12 +125,12 @@ describe('getSuperOrder', () => {
       process.env.SHOW_UPCOMING_CHANGES === 'true'
     ) {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
+      expect(getSuperOrder(SuperBlocks.FrontEndDevelopment)).toBe(18);
     } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
       return;
     } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
+      expect(getSuperOrder(SuperBlocks.FrontEndDevelopment)).toBe(18);
     }
   });
 });

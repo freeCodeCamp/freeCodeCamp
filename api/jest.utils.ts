@@ -13,7 +13,7 @@ declare global {
 
 type Options = {
   sendCSRFToken?: boolean;
-} & Record<string, unknown>;
+};
 
 const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),
@@ -34,6 +34,25 @@ export const getCsrfToken = (setCookies: string[]): string | undefined => {
 
 export const ORIGIN = 'https://www.freecodecamp.org';
 
+export const getCookies = (setCookies: string[]): string => {
+  for (const cookie of setCookies) {
+    expect(cookie).toMatch(/.*=.*/);
+  }
+  return setCookies.map(cookie => cookie.split(';')[0]).join('; ');
+};
+
+/**
+ * A wrapper around supertest that handles common setup for requests. Namely
+ * setting the Origin header, cookies and CSRF token.
+ *
+ * @param resource - The URL of the resource to be requested
+ * @param config - The configuration for the request
+ * @param config.method - The HTTP method to be used
+ * @param config.setCookies - The cookies to be set in the request
+ * @param options - Additional options for the request
+ * @param options.sendCSRFToken - Whether to send the CSRF token in the request (default: true)
+ * @returns The request object
+ */
 export function superRequest(
   resource: string,
   config: {
@@ -48,7 +67,7 @@ export function superRequest(
   const req = requests[method](resource).set('Origin', ORIGIN);
 
   if (setCookies) {
-    void req.set('Cookie', setCookies);
+    void req.set('Cookie', getCookies(setCookies));
   }
 
   const csrfToken = (setCookies && getCsrfToken(setCookies)) ?? '';
@@ -58,6 +77,15 @@ export function superRequest(
   return req;
 }
 
+/**
+ * Factory function for 'superRequest' allows for the creation of a concise
+ * request function with the desired method and setCookies baked in.
+ *
+ * @param config
+ * @param config.method - HTTP method
+ * @param config.setCookies - Cookies to be set in the request
+ * @returns A superRequest function with the desired method and setCookies
+ */
 export function createSuperRequest(config: {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
   setCookies?: string[];

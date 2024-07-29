@@ -7,6 +7,7 @@ import FourOhFourPage from '../../src/pages/404';
 interface LayoutSelectorProps {
   element: JSX.Element;
   props: {
+    data: { challengeNode?: { challenge?: { usesMultifileEditor?: boolean } } };
     location: { pathname: string };
     pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
   };
@@ -37,6 +38,9 @@ export default function layoutSelector({
         pathname={pathname}
         showFooter={false}
         isChallenge={true}
+        usesMultifileEditor={
+          props.data?.challengeNode?.challenge?.usesMultifileEditor
+        }
         block={props.pageContext?.challengeMeta?.block}
         superBlock={props.pageContext?.challengeMeta?.superBlock}
       >

@@ -8,14 +8,19 @@ const ctx: Worker & typeof globalThis = self as unknown as Worker &
 
 const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
+  const TRUNCATE_AT = 500_000;
 
   let logs: string[] = [];
 
   function flushLogs() {
     if (logs.length) {
+      let data = logs.join('\n');
+      if (data.length > TRUNCATE_AT) {
+        data = `${data.substring(0, TRUNCATE_AT)} Logs truncated. See browser console for more`;
+      }
       ctx.postMessage({
         type: 'LOG',
-        data: logs.join('\n')
+        data: data
       });
       logs = [];
     }

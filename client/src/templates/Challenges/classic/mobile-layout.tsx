@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import React, { Component, ReactElement } from 'react';
+import React, { Component } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
@@ -19,16 +19,16 @@ import {
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import ToolPanel from '../components/tool-panel';
 import PreviewPortal from '../components/preview-portal';
+import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
   guideUrl: string;
   hasEditableBoundaries: boolean;
-  hasNotes: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
-  notes: ReactElement;
+  notes: string;
   preview: JSX.Element;
   onPreviewResize: () => void;
   windowTitle: string;
@@ -154,7 +154,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       instructions,
       editor,
       testOutput,
-      hasNotes,
       hasPreview,
       notes,
       preview,
@@ -233,7 +232,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             <TabsTrigger value={tabs.editor}>
               {i18next.t('learn.editor-tabs.code')}
             </TabsTrigger>
-            {hasNotes && usesMultifileEditor && (
+            {!!notes && usesMultifileEditor && (
               <TabsTrigger value={tabs.notes}>
                 {i18next.t('learn.editor-tabs.notes')}
               </TabsTrigger>
@@ -272,19 +271,20 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           >
             {testOutput}
           </TabsContent>
-          {hasNotes && usesMultifileEditor && (
+          {!!notes && usesMultifileEditor && (
             <TabsContent
               tabIndex={-1}
               className='tab-content'
               value={tabs.notes}
             >
-              {notes}
+              <Notes notes={notes} />
             </TabsContent>
           )}
           {hasPreview && (
             <TabsContent
               tabIndex={-1}
               className='tab-content'
+              data-playwright-test-label='preview-pane'
               value={tabs.preview}
               forceMount
               // forceMount causes the preview tabpanel to never be hidden,
