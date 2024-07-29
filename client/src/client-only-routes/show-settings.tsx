@@ -20,6 +20,7 @@ import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
+import ExamToken from '../components/settings/exam-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -39,7 +40,7 @@ import {
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
-const { apiLocation } = envData;
+const { apiLocation, showUpcomingChanges } = envData;
 
 // TODO: update types for actions
 type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
@@ -170,6 +171,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           >
             {t('settings.for', { username: username })}
           </h1>
+
           <About
             about={about}
             currentTheme={theme}
@@ -206,6 +208,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='medium' />
+          {showUpcomingChanges && <ExamToken />}
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
