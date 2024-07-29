@@ -1712,7 +1712,9 @@
       },
       "lab-moon-orbit": {
         "title": "Learn CSS Animation by Creating a Moon Orbit",
-        "intro": ["", ""]
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
       }
     }
   },
