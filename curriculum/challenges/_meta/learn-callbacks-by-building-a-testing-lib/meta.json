@@ -1,9 +1,9 @@
 {
-  "name": "Learn Callbacks by Building a Testing Lib",
+  "name": "Learn Callbacks by Building a Testing Library",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "dashedName": "learn-callbacks-by-building-a-testing-lib",
+  "dashedName": "learn-callbacks-by-building-a-testing-library",
   "order": 23,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
