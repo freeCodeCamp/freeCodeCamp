@@ -1696,9 +1696,9 @@
         "intro": ["", ""]
       },
       "lab-recipe-page": {
-        "title": "Recipe Page",
+        "title": "Сторінка з рецептом",
         "intro": [
-          "For this lab, you will create a web page of your favorite recipe."
+          "У цій лабораторній роботі ви створите вебсторінку з улюбленим рецептом."
         ]
       },
       "front-end-development-certification-exam": {
