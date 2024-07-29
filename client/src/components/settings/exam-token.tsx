@@ -29,7 +29,8 @@ const ExamToken = () => {
           ) : (
             viewToken && (
               <p>
-                {t('exam-token.your-exam-token')} <code>{examToken}</code>
+                {t('exam-token.your-exam-token')}{' '}
+                <code data-playwright-test-label='exam-token'>{examToken}</code>
               </p>
             )
           )}
