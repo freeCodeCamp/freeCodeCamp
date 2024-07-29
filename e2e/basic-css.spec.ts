@@ -58,9 +58,7 @@ test.describe('Responsive Web Design Projects - Basic CSS', () => {
   test('renders', async ({ page }) => {
     await page.goto(locations.index);
 
-    await expect(page.locator('.alert.alert-info')).toContainText(
-      warningMessage
-    );
+    await expect(page.getByText(warningMessage)).toBeVisible();
 
     for (const lessonName of lessonNames) {
       await expect(
