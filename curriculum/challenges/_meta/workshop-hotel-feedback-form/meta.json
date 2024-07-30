@@ -6,6 +6,23 @@
   "dashedName": "workshop-hotel-feedback-form",
   "order": 17,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66a8290a27c2c625e2355042", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66a8290a27c2c625e2355042",
+      "title": "Step 1"
+    },
+    {
+      "id": "66a833e88d08593618f22285",
+      "title": "Step 2"
+    },
+    {
+      "id": "66a8347f97a33e36ffc81b9f",
+      "title": "Step 3"
+    },
+    {
+      "id": "66a83601cd819e37f0dccd14",
+      "title": "Step 4"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }
