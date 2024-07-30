@@ -55,6 +55,10 @@ textarea.inputarea {
   max-width: unset !important;
 }
 
+.editor-upper-jaw code {
+  white-space: pre;
+}
+
 .action-row-container,
 .description-container {
   background-color: var(--secondary-background);
@@ -141,6 +145,7 @@ textarea.inputarea {
   from {
     background-color: var(--highlight-background);
   }
+
   to {
     background-color: var(--secondary-background);
   }
@@ -211,10 +216,12 @@ textarea.inputarea {
   0% {
     opacity: 0;
   }
+
   /* keep test feedback contents initially hidden for 200ms*/
   40% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
