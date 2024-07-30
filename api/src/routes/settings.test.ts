@@ -922,6 +922,43 @@ Happy coding!
         });
         expect(response.statusCode).toEqual(200);
       });
+
+      test('PUT with empty strings clears the values in about settings ', async () => {
+        const initialResponse = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture:
+            'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
+        });
+
+        expect(initialResponse.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(initialResponse.statusCode).toEqual(200);
+
+        const response = await superPut('/update-my-about').send({
+          about: '',
+          name: '',
+          location: '',
+          picture: ''
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+        expect(user?.about).toEqual('');
+        expect(user?.name).toEqual('');
+        expect(user?.location).toEqual('');
+        expect(user?.picture).toEqual('');
+      });
     });
 
     describe('/update-my-honesty', () => {

@@ -300,4 +300,32 @@ test.describe('Settings', () => {
       })
     ).toBeVisible();
   });
+
+  test('Should allow empty string in any field in about settings', async ({
+    page
+  }) => {
+    const saveButton = page.getByRole('button', {
+      name: translations.settings.headings['personal-info']
+    });
+
+    const nameInput = page.getByLabel(translations.settings.labels.name);
+    await nameInput.fill('');
+
+    const locationInput = page.getByLabel(
+      translations.settings.labels.location
+    );
+    await locationInput.fill('');
+
+    const pictureInput = page.getByLabel(translations.settings.labels.picture);
+    await pictureInput.fill('');
+
+    const aboutInput = page.getByLabel(translations.settings.labels.about);
+    await aboutInput.fill('');
+
+    await expect(saveButton).not.toBeDisabled();
+    await saveButton.click();
+    await expect(
+      page.getByText(translations.flash['updated-about-me'])
+    ).toBeVisible();
+  });
 });
