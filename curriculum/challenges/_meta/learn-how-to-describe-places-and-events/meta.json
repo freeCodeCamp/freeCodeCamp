@@ -7,7 +7,179 @@
   "challengeOrder": [
     {
       "id": "66607e5b317411dd5e8aae22",
-      "title": "Dialogue 1: I'm Tom"
+      "title": "Dialogue 1: Hackathon Plans"
+    },
+    {
+      "id": "66a909dc2e382527ead44c23",
+      "title": "Task 1"
+    },
+    {
+      "id": "66a90bbd872bca2a1b7e63a9",
+      "title": "Task 2"
+    },
+    {
+      "id": "66a9106281f6032d5fc97104",
+      "title": "Task 3"
+    },
+    {
+      "id": "66a9147f41dab62fd1ad044e",
+      "title": "Task 4"
+    },
+    {
+      "id": "66a915ad327d9431181f4348",
+      "title": "Task 5"
+    },
+    {
+      "id": "66a916c19b18cd3197a67235",
+      "title": "Task 6"
+    },
+    {
+      "id": "66a91783d34e873290e9f5ec",
+      "title": "Task 7"
+    },
+    {
+      "id": "66a9186e4df981332d6af3e1",
+      "title": "Task 8"
+    },
+    {
+      "id": "66a91a71c2a696349d81a3ba",
+      "title": "Task 9"
+    },
+    {
+      "id": "66a91b5c9e55cb358bb22e43",
+      "title": "Task 10"
+    },
+    {
+      "id": "66a953fd5a946e45846e7037",
+      "title": "Task 11"
+    },
+    {
+      "id": "66a954b904f4d5465b4e4dc8",
+      "title": "Task 12"
+    },
+    {
+      "id": "66a95593394ef047268359e1",
+      "title": "Task 13"
+    },
+    {
+      "id": "66a95606a32d5747dae3bfba",
+      "title": "Task 14"
+    },
+    {
+      "id": "66a9575a29c2904909336b48",
+      "title": "Task 15"
+    },
+    {
+      "id": "66a957aaf52ef0496f3f630c",
+      "title": "Task 16"
+    },
+    {
+      "id": "66a9585902fdfa4a22f38810",
+      "title": "Task 17"
+    },
+    {
+      "id": "66a958bb3ac85c4a75e5fe88",
+      "title": "Task 18"
+    },
+    {
+      "id": "66a95946f05efd4b3138d24a",
+      "title": "Task 19"
+    },
+    {
+      "id": "66a9599790c94a4ba0e5dbd9",
+      "title": "Task 20"
+    },
+    {
+      "id": "66a959fe82e01c4c1bfad642",
+      "title": "Task 21"
+    },
+    {
+      "id": "66a95a67babd244ca5611794",
+      "title": "Task 22"
+    },
+    {
+      "id": "66a95ab699d0064d16bdf469",
+      "title": "Task 23"
+    },
+    {
+      "id": "66a95b3449d2504dc05ce288",
+      "title": "Task 24"
+    },
+    {
+      "id": "66a95bdc39299d4e6bf1a316",
+      "title": "Task 25"
+    },
+    {
+      "id": "66a95c8ff92dcc4ed83a8df9",
+      "title": "Task 26"
+    },
+    {
+      "id": "66a95e2611c8e5507e774ba7",
+      "title": "Task 27"
+    },
+    {
+      "id": "66a95fb1cd249b51d9d3f8d7",
+      "title": "Task 28"
+    },
+    {
+      "id": "66a9602033eec6527c8f36f3",
+      "title": "Task 29"
+    },
+    {
+      "id": "66a960c3ed12215373e888f2",
+      "title": "Task 30"
+    },
+    {
+      "id": "66a961222115ad5437ddf4fb",
+      "title": "Task 31"
+    },
+    {
+      "id": "66a961918b5072550caf38e8",
+      "title": "Task 32"
+    },
+    {
+      "id": "66a96201d8421455b1ad7d7e",
+      "title": "Task 33"
+    },
+    {
+      "id": "66a962a412fc1e5637c0f3f8",
+      "title": "Task 34"
+    },
+    {
+      "id": "66a9632e06c30156f4a7d028",
+      "title": "Task 35"
+    },
+    {
+      "id": "66a963b280d3c2579550bea6",
+      "title": "Task 36"
+    },
+    {
+      "id": "66a9640b65f4be57eff3917b",
+      "title": "Task 37"
+    },
+    {
+      "id": "66a96636a9b07f58de7e9363",
+      "title": "Task 38"
+    },
+    {
+      "id": "66a966dc522dd959c1f0e697",
+      "title": "Task 39"
+    },
+    {
+      "id": "66a96725d88e7f5a511d043d",
+      "title": "Task 40"
+    },
+    {
+      "id": "66a9675a1a28a65ab993284e",
+      "title": "Task 41"
+    },
+    {
+      "id": "66a96821b2e8985c15223702",
+      "title": "Task 42"
+    },
+    {
+      "id": "66a96848ae5b365c699585ed",
+      "title": "Task 43"
     }
   ],
   "helpCategory": "English"
