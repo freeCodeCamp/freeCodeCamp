@@ -308,18 +308,31 @@ test.describe('Settings', () => {
       name: translations.settings.headings['personal-info']
     });
 
-    const nameInput = page.getByLabel(translations.settings.labels.name);
-    await nameInput.fill('');
-
+    const nameInput = page.getByLabel(translations.settings.labels.name, {
+      exact: true
+    });
     const locationInput = page.getByLabel(
       translations.settings.labels.location
     );
-    await locationInput.fill('');
-
     const pictureInput = page.getByLabel(translations.settings.labels.picture);
-    await pictureInput.fill('');
-
     const aboutInput = page.getByLabel(translations.settings.labels.about);
+
+    await nameInput.fill('Quincy Larson');
+    await locationInput.fill('USA');
+    await pictureInput.fill(
+      'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
+    );
+    await aboutInput.fill('Teacher at freeCodeCamp');
+
+    await expect(saveButton).not.toBeDisabled();
+    await saveButton.click();
+    await expect(
+      page.getByText(translations.flash['updated-about-me'])
+    ).toBeVisible();
+
+    await nameInput.fill('');
+    await locationInput.fill('');
+    await pictureInput.fill('');
     await aboutInput.fill('');
 
     await expect(saveButton).not.toBeDisabled();
@@ -327,5 +340,12 @@ test.describe('Settings', () => {
     await expect(
       page.getByText(translations.flash['updated-about-me'])
     ).toBeVisible();
+
+    await page.reload();
+
+    await expect(nameInput).toHaveValue('');
+    await expect(locationInput).toHaveValue('');
+    await expect(pictureInput).toHaveValue('');
+    await expect(aboutInput).toHaveValue('');
   });
 });
