@@ -148,7 +148,7 @@ model user {
 /// An exam as designed by the examiners
 model NewExam {
   /// Globally unique exam id
-  id                 String        @id @map("_id") @db.ObjectId
+  id                 String        @id @default(auto()) @map("_id") @db.ObjectId
   /// Human-readable exam name
   name               String
   /// Notes given about exam
@@ -159,6 +159,8 @@ model NewExam {
   dialogues          NewDialogue[]
   /// Configuration for exam metadata
   config             NewConfig
+  /// Challenge Ids that are prerequisites for this exam
+  prerequisites      String[]
 }
 
 /// A multiple choice question
@@ -178,7 +180,7 @@ type NewQuestion {
   /// Optional text for audio
   captions      String?
   /// Available possible answers for an exam
-  answers       Answer[]
+  answers       NewAnswer[]
   /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
   deprecated    Boolean
 }
@@ -232,24 +234,41 @@ type NewTagConfig {
 }
 
 model NewExamAttempt {
-  id               String               @id @map("_id") @db.ObjectId
+  id                String               @id @default(auto()) @map("_id") @db.ObjectId
+  /// Foriegn key to user
+  user_id           String               @db.ObjectId
   /// Foreign key to exam
-  exam_id          String               @db.ObjectId
-  questions        NewQuestionAttempt[]
-  total_time_taken Int
-  needs_retake     Boolean
+  exam_id           String               @db.ObjectId
+  /// Foreign key to generated exam id
+  generated_exam_id String               @db.ObjectId
+  questions         NewQuestionAttempt[]
+  /// Time exam was started as seconds since epoch
+  start_time        Int
+  /// Time exam was submitted as seconds since epoch
+  ///
+  /// As attempt might not be submitted (disconnection or quit), field is optional
+  submission_time   Int?
+  needs_retake      Boolean
 }
 
 type NewQuestionAttempt {
   /// Foreign key to question
-  id      String             @db.ObjectId
-  /// An array of answers if a question allows checkboxes
-  answers NewAnswerAttempt[]
+  id      String   @db.ObjectId
+  /// An array of foreign keys to answers
+  answers String[] @db.ObjectId
 }
 
-type NewAnswerAttempt {
-  /// Foreign key to answer
-  id String @db.ObjectId
+model GeneratedExam {
+  id        String        @id @default(auto()) @map("_id") @db.ObjectId
+  exam_id   String        @db.ObjectId
+  questions NewQuestion[]
+}
+
+type GeneratedQuestion {
+  /// Foreign key to question id
+  id      String   @db.ObjectId
+  /// Each item is a foreign key to an answer
+  answers String[] @db.ObjectId
 }
 
 // -----------------------------------

@@ -28,7 +28,7 @@ import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
 import { createResetProperties } from '../utils/create-user';
 import { challengeTypes } from '../../../shared/config/challenge-types';
-import { UpdateReqType } from '../utils';
+import { STATUS, UpdateReqType } from '../utils';
 import { isRestricted } from './helpers/is-restricted';
 
 // user flags that the api-server returns as false if they're missing in the
@@ -446,7 +446,10 @@ async function examEnvironmentTokenHandler(
   const examEnvironmentAuthorizationToken = encodeUserToken(token.id);
 
   void reply.send({
-    examEnvironmentAuthorizationToken
+    status: STATUS.SUCCESS,
+    data: {
+      examEnvironmentAuthorizationToken
+    }
   });
 }
 
