@@ -174,7 +174,7 @@ type NewQuestion {
   /// Main question paragraph
   text          String
   /// Zero or more tags given to categorize a question
-  tags          NewTag[]
+  tags          String[]
   /// Optional audio for a question
   audio         NewAudio?
   /// Optional text for audio
@@ -211,11 +211,6 @@ enum NewQuestionType {
   Dialogue
 }
 
-type NewTag {
-  id   String @db.ObjectId
-  name String
-}
-
 type NewAnswer {
   id         String  @db.ObjectId
   is_correct Boolean
@@ -228,8 +223,8 @@ type NewConfig {
 }
 
 type NewTagConfig {
-  /// Foreign key to a tag
-  id                  String @db.ObjectId
+  /// Foreign key to tags
+  set                 String[] @db.ObjectId
   number_of_questions Int
 }
 
@@ -259,9 +254,9 @@ type NewQuestionAttempt {
 }
 
 model GeneratedExam {
-  id        String        @id @default(auto()) @map("_id") @db.ObjectId
-  exam_id   String        @db.ObjectId
-  questions NewQuestion[]
+  id        String              @id @default(auto()) @map("_id") @db.ObjectId
+  exam_id   String              @db.ObjectId
+  questions GeneratedQuestion[]
 }
 
 type GeneratedQuestion {
