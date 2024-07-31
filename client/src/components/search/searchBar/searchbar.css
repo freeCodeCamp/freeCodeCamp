@@ -16,7 +16,7 @@
 
 .fcc_searchBar strong,
 .fcc_searchBar a:hover {
-  color: var(--gray-00);
+  color: var(--red-00);
 }
 
 .fcc_search_wrapper {
@@ -81,7 +81,7 @@
 .fcc_searchBar .ais-Hits {
   z-index: 100;
   background-color: var(--gray-75);
-  color: var(--gray-00);
+  color: var(--red-00);
 }
 
 /* hits */

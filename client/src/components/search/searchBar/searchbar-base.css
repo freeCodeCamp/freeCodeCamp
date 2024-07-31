@@ -199,7 +199,7 @@ a[class^='ais-'] {
 .ais-SortBy,
 .ais-Stats,
 .ais-ToggleRefinement {
-  color: #3a4570;
+  color: #ffc168;
 }
 .ais-Breadcrumb-item--selected,
 .ais-HierarchicalMenu-item--selected,
@@ -603,16 +603,16 @@ a[class^='ais-'] {
   border-radius: 0px;
 }
 .ais-SearchBox-input::-webkit-input-placeholder {
-  color: var(--gray-15);
+  color: #ffc168;
 }
 .ais-SearchBox-input::-moz-placeholder {
-  color: var(--gray-15);
+  color: #ffc168;
 }
 .ais-SearchBox-input:-ms-input-placeholder {
-  color: var(--gray-15);
+  color: #ffc168;
 }
 .ais-SearchBox-input:-moz-placeholder {
-  color: var(--gray-15);
+  color: #ffc168;
 }
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
@@ -626,7 +626,7 @@ a[class^='ais-'] {
 }
 .ais-SearchBox-submitIcon path,
 .ais-SearchBox-resetIcon path {
-  fill: var(--gray-15);
+  fill: #ffc168;
 }
 .ais-SearchBox-submitIcon {
   width: 14px;
