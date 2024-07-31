@@ -1,0 +1,11 @@
+{
+  "name": "Build a Final Exams Table",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-final-exams-table",
+  "order": 20,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66a98f42c7c06903e5f8dd07", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
