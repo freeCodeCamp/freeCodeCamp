@@ -241,9 +241,9 @@ async function postExamGenerateHandler(
 
     const { answers, ...question } = matchingQuestion;
 
-    const userAnswers = q.answers.map(answer => {
+    const userAnswers = q.answers.map(answerId => {
       const matchingAnswer = answers.find(
-        examAnswer => examAnswer.id === answer.id
+        examAnswer => examAnswer.id === answerId
       );
 
       if (!matchingAnswer) {
