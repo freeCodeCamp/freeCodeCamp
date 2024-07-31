@@ -16,7 +16,7 @@
 
 .fcc_searchBar strong,
 .fcc_searchBar a:hover {
-  color: var(--red-00);
+  color: var(--gray-00);
 }
 
 .fcc_search_wrapper {
