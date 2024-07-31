@@ -24,22 +24,20 @@ function UIImages(): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <>
-      <Media minWidth={LARGE_SCREEN_SIZE}>
-        <figure
-          style={landingImageSize}
-          data-test-label='landing-page-figure'
-          data-playwright-test-label='landing-page-figure'
-        >
-          <LazyImage
-            alt={t('landing.hero-img-uis')}
-            src={landingPageb}
-            style={imageStyle}
-          />
-        </figure>
-        <Spacer size='exLarge' />
-      </Media>
-    </>
+    <Media minWidth={LARGE_SCREEN_SIZE}>
+      <figure
+        style={landingImageSize}
+        data-test-label='landing-page-figure'
+        data-playwright-test-label='landing-page-figure'
+      >
+        <LazyImage
+          alt={t('landing.hero-img-uis')}
+          src={landingPageb}
+          style={imageStyle}
+        />
+      </figure>
+      <Spacer size='exLarge' />
+    </Media>
   );
 }
 

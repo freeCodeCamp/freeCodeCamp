@@ -12,17 +12,15 @@ import Faq from './components/faq';
 
 import './landing.css';
 
-const LandingA = (): ReactElement => {
-  return (
-    <main className='landing-page'>
-      <LandingTop />
-      <AsSeenIn />
-      <Testimonials />
-      <Certifications />
-      <Faq />
-    </main>
-  );
-};
+const LandingA = () => (
+  <main className='landing-page'>
+    <LandingTop />
+    <AsSeenIn />
+    <Testimonials />
+    <Certifications />
+    <Faq />
+  </main>
+);
 
 const LandingB = (): ReactElement => {
   return (
