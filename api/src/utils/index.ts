@@ -36,12 +36,59 @@ export type UpdateReqType<Schema extends FastifySchema> = FastifyRequest<
   TypeBoxTypeProvider
 >;
 
-export enum CODE {
-  ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-  EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN
-}
-
 export enum STATUS {
   SUCCESS,
   ERROR
+}
+
+/* eslint-disable jsdoc/require-description-complete-sentence */
+/**
+ * Wrapper around a promise to catch errors and return them as part of the promise.
+ *
+ * This is most useful to prevent callback / try...catch hell.
+ *
+ * ## Example:
+ *
+ * ```ts
+ * const maybeWhatIWant = await mapErr(
+ *   this.prisma.whatIWantCollection.create({
+ *     data: {}
+ *   })
+ * );
+ *
+ * if (maybeWhatIWant.error !== null) {
+ *   void reply.code(500);
+ *   return reply.send('Unable to generate exam, due to: ' +
+ *     JSON.stringify(maybeWhatIWant.error)
+ *   );
+ * }
+ *
+ * const whatIWant = maybeWhatIWant.data;
+ * ```
+ *
+ * @param promise - any promise to be tried.
+ * @returns a promise with either the data or the caught error
+ */
+export async function mapErr<T>(
+  promise: Promise<T>
+): Promise<
+  { error: null; data: T } | { error: NonNullable<unknown>; data: null }
+> {
+  try {
+    return { error: null, data: await promise };
+  } catch (e) {
+    assertNotNull(e);
+    return { error: e, data: null };
+  }
+}
+
+/**
+ * Asserts the given value is not null or undefined.
+ *
+ * @param value - The value to assert.
+ */
+function assertNotNull<T>(value: T): asserts value is NonNullable<T> {
+  if (value === null || value === undefined) {
+    throw new Error('Unreachable. Value should not be null or undefined.');
+  }
 }
