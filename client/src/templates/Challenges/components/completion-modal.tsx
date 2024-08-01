@@ -128,6 +128,10 @@ class CompletionModal extends Component<
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      this.props.close();
+    }
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
@@ -172,12 +176,12 @@ class CompletionModal extends Component<
     if (isDesktop) {
       if (isMacOS) {
         buttonText = isSignedIn
-          ? t('buttons.submit-and-go-3')
-          : t('buttons.go-to-next-3');
+          ? t('buttons.submit-and-go-cmd')
+          : t('buttons.go-to-next-cmd');
       } else {
         buttonText = isSignedIn
-          ? t('buttons.submit-and-go-2')
-          : t('buttons.go-to-next-2');
+          ? t('buttons.submit-and-go-ctrl')
+          : t('buttons.go-to-next-ctrl');
       }
     } else {
       buttonText = isSignedIn
