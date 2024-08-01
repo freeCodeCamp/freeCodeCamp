@@ -525,8 +525,8 @@ ShowClassic.displayName = 'ShowClassic';
 export default connect(mapStateToProps, mapDispatchToProps)(ShowClassic);
 
 export const query = graphql`
-  query ClassicChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query ClassicChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         block
         title

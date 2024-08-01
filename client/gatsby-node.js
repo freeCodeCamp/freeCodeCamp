@@ -70,6 +70,7 @@ exports.createPages = async function createPages({
       ) {
         edges {
           node {
+            id
             challenge {
               block
               blockType
