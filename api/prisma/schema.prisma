@@ -159,8 +159,6 @@ model NewExam {
   dialogues          NewDialogue[]
   /// Configuration for exam metadata
   config             NewConfig
-  /// Challenge Ids that are prerequisites for this exam
-  prerequisites      String[]
 }
 
 /// A multiple choice question
@@ -218,8 +216,22 @@ type NewAnswer {
 }
 
 type NewConfig {
-  tags       NewTagConfig[]
-  total_time Int
+  tags            NewTagConfig[]
+  total_time      Int
+  total_questions Int
+  question_types  QuestionConfig[]
+  dialogues       DialogueConfig
+}
+
+type QuestionConfig {
+  question_type               NewQuestionType
+  number_of_questions         Int
+  number_of_correct_answers   Int
+  number_of_incorrect_answers Int
+}
+
+type DialogueConfig {
+  number_of_multiple_choice_questions Int
 }
 
 type NewTagConfig {

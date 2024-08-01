@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { CODE } from '../../utils/new-exam';
 
 // const STANDARD_RESPONSE_TYPE = Type.Object({
 //   data: Type.Optional(Type.Unknown()),
@@ -13,13 +14,16 @@ export const examEnvironmentTokenVerify = {
   response: {
     200: Type.Union([
       Type.Object({
-        status: Type.Literal('success')
+        code: Type.Enum(CODE)
       }),
       Type.Object({
-        status: Type.Literal('error'),
-        message: Type.Object({ code: Type.String(), text: Type.String() })
+        code: Type.Enum(CODE),
+        message: Type.String()
       })
     ]),
-    400: Type.Object({})
+    403: Type.Object({
+      code: Type.Enum(CODE),
+      message: Type.String()
+    })
   }
 };
