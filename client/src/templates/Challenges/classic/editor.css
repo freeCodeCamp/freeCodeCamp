@@ -56,7 +56,7 @@ textarea.inputarea {
 }
 
 .editor-upper-jaw code {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .action-row-container,
