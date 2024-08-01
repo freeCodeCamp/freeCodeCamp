@@ -69,6 +69,12 @@ test.describe('Progress reset modal', () => {
         name: 'Reset everything. I want to start from the beginning'
       })
     ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', {
+        name: 'Reset everything. I want to start from the beginning'
+      })
+    ).toBeDisabled();
   });
 
   test('should close the dialog if the user clicks the cancel button', async ({
