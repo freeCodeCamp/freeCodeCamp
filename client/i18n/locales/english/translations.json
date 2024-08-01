@@ -274,7 +274,8 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Nevermind, I don't want to delete all of my progress",
-      "reset-confirm": "Reset everything. I want to start from the beginning"
+      "reset-confirm": "Reset everything. I want to start from the beginning",
+      "verify-reset": "To verify, type '{{ verifyResetText }}' without quotes below"
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
