@@ -316,6 +316,7 @@ test.describe('Settings', () => {
     );
     const pictureInput = page.getByLabel(translations.settings.labels.picture);
     const aboutInput = page.getByLabel(translations.settings.labels.about);
+    const updatedAlert = page.getByText(translations.flash['updated-about-me']);
 
     await nameInput.fill('Quincy Larson');
     await locationInput.fill('USA');
@@ -326,9 +327,9 @@ test.describe('Settings', () => {
 
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
-    await expect(
-      page.getByText(translations.flash['updated-about-me'])
-    ).toBeVisible();
+    await expect(updatedAlert).toBeVisible();
+    // clear the alert to make sure it's gone before we save again.
+    await updatedAlert.getByRole('button').click();
 
     await nameInput.fill('');
     await locationInput.fill('');
@@ -337,9 +338,7 @@ test.describe('Settings', () => {
 
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
-    await expect(
-      page.getByText(translations.flash['updated-about-me'])
-    ).toBeVisible();
+    await expect(updatedAlert).toBeVisible();
 
     await page.reload();
 
