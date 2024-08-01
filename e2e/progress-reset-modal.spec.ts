@@ -100,6 +100,29 @@ test.describe('Progress reset modal', () => {
     ).toBeHidden();
   });
 
+  test('Reset the progress should be disabled if the user fills incorrect verify input text', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', { name: 'Reset all of my progress' })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', { name: 'Reset My Progress' })
+    ).toBeVisible();
+
+    const verifyResetInput = page.getByRole('textbox', {
+      exact: true
+    });
+    await verifyResetInput.fill('incorrect text');
+
+    await expect(
+      page.getByRole('button', {
+        name: 'Reset everything. I want to start from the beginning'
+      })
+    ).toBeDisabled();
+  });
+
   test('should reset the progress if the user fills the verify input text and clicks the reset button', async ({
     page
   }) => {
