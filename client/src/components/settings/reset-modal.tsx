@@ -20,7 +20,6 @@ function ResetModal(props: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   const { show, onHide } = props;
   const [verifyText, setVerifyText] = useState('');
-  const verifyResetText = 'I agree that all progress will be lost';
 
   const handleVerifyTextChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -56,9 +55,11 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         <Spacer size='small' />
         <FormGroup controlId='verify-reset'>
           <ControlLabel htmlFor='verify-reset-input'>
-            {t('settings.danger.verify-reset', { verifyResetText })}
-            <strong>{t('settings.danger.verify-reset')}</strong>
+            {t('settings.danger.verify-reset', {
+              verifyResetText: t('settings.danger.verify-reset-text')
+            })}
           </ControlLabel>
+          <Spacer size='small' />
           <FormControl
             onChange={handleVerifyTextChange}
             value={verifyText}
@@ -70,7 +71,7 @@ function ResetModal(props: ResetModalProps): JSX.Element {
           block={true}
           size='large'
           variant='danger'
-          disabled={verifyText !== verifyResetText}
+          disabled={verifyText !== t('settings.danger.verify-reset-text')}
           onClick={props.reset}
           type='button'
         >
