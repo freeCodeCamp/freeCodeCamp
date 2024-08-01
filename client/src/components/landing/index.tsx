@@ -22,16 +22,14 @@ const LandingA = () => (
   </main>
 );
 
-const LandingB = (): ReactElement => {
-  return (
-    <main className='landing-page landing-page-b'>
-      <LandingTopB />
-      <Testimonials />
-      <Certifications />
-      <Faq />
-    </main>
-  );
-};
+const LandingB = () => (
+  <main className='landing-page landing-page-b'>
+    <LandingTopB />
+    <Testimonials />
+    <Certifications />
+    <Faq />
+  </main>
+);
 
 function Landing(): ReactElement {
   const { t } = useTranslation();
