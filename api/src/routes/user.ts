@@ -28,8 +28,9 @@ import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
 import { createResetProperties } from '../utils/create-user';
 import { challengeTypes } from '../../../shared/config/challenge-types';
-import { STATUS, UpdateReqType } from '../utils';
+import { UpdateReqType } from '../utils';
 import { isRestricted } from './helpers/is-restricted';
+import { CODE } from '../utils/new-exam';
 
 // user flags that the api-server returns as false if they're missing in the
 // user document. Since Prisma returns null for missing fields, we need to
@@ -406,7 +407,13 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
-  fastify.post('/user/exam-environment/token', {}, examEnvironmentTokenHandler);
+  fastify.post(
+    '/user/exam-environment/token',
+    {
+      schema: schemas.userExamEnvironmentToken
+    },
+    examEnvironmentTokenHandler
+  );
 
   done();
 };
@@ -446,7 +453,7 @@ async function examEnvironmentTokenHandler(
   const examEnvironmentAuthorizationToken = encodeUserToken(token.id);
 
   void reply.send({
-    status: STATUS.SUCCESS,
+    code: CODE.EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED,
     data: {
       examEnvironmentAuthorizationToken
     }

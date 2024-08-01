@@ -2,12 +2,11 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
-import { NewAnswer, NewExam, NewQuestion } from '@prisma/client';
 
 import * as schemas from '../schemas';
-import { mapErr, STATUS, UpdateReqType } from '../utils';
+import { mapErr, UpdateReqType } from '../utils';
 import { JWT_SECRET } from '../utils/env';
-import { checkPrerequisites, CODE, generateExam } from '../utils/new-exam';
+import { CODE, generateExam, UserExam } from '../utils/new-exam';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -68,12 +67,10 @@ async function tokenVerifyHandler(
   try {
     jwt.verify(encodedToken, JWT_SECRET);
   } catch (e) {
+    void reply.code(403);
     return reply.send({
-      message: {
-        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-        text: JSON.stringify(e)
-      },
-      status: STATUS.ERROR
+      code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
+      message: JSON.stringify(e)
     });
   }
 
@@ -89,16 +86,14 @@ async function tokenVerifyHandler(
   });
 
   if (!token) {
+    void reply.code(200);
     void reply.send({
-      message: {
-        code: CODE.ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-        text: 'Token does not appear to have been created.'
-      },
-      status: STATUS.ERROR
+      code: CODE.ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
+      message: 'Token does not appear to have been created.'
     });
   } else {
     void reply.send({
-      status: STATUS.SUCCESS
+      code: CODE.EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_VERIFIED
     });
   }
 }
@@ -123,31 +118,24 @@ async function postExamGenerateHandler(
   if (!exam) {
     void reply.code(404);
     return reply.send({
-      status: STATUS.ERROR,
-      message: {
-        code: CODE.ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM,
-        text: 'Invalid exam id given.'
-      }
+      code: CODE.ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM,
+      message: 'Invalid exam id given.'
     });
   }
 
   // Check user has completed prerequisites
-  const { prerequisites } = exam;
   const { user } = req;
   if (!user) {
     throw new Error('Unreachable. User should be authenticated.');
   }
-  const isExamPrerequisitesMet = checkPrerequisites(user, prerequisites);
+  const isExamPrerequisitesMet = true; // checkPrerequisites(user, prerequisites);
 
   if (!isExamPrerequisitesMet) {
     void reply.code(403);
     // TODO: Consider sending unmet prerequisites
     return reply.send({
-      status: STATUS.ERROR,
-      message: {
-        code: CODE.EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
-        text: 'User has not completed prerequisites.'
-      }
+      code: CODE.EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
+      message: 'User has not completed prerequisites.'
     });
   }
 
@@ -171,11 +159,8 @@ async function postExamGenerateHandler(
       void reply.code(403);
       // TOOD: Consider sending last completed time
       return reply.send({
-        status: STATUS.ERROR,
-        message: {
-          code: CODE.EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
-          text: 'User has completed exam too recently to retake.'
-        }
+        code: CODE.EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
+        message: 'User has completed exam too recently to retake.'
       });
     }
   }
@@ -192,14 +177,11 @@ async function postExamGenerateHandler(
   if (maybeGeneratedExam.error !== null) {
     void reply.code(500);
     return reply.send({
-      status: STATUS.ERROR,
-      message: {
-        // TODO: Consider more specific code
-        code: CODE.ERR_EXAM_ENVIRONMENT,
-        text:
-          'Unable to generate exam, due to: ' +
-          JSON.stringify(maybeGeneratedExam.error)
-      }
+      // TODO: Consider more specific code
+      code: CODE.ERR_EXAM_ENVIRONMENT,
+      message:
+        'Unable to generate exam, due to: ' +
+        JSON.stringify(maybeGeneratedExam.error)
     });
   }
 
@@ -220,11 +202,8 @@ async function postExamGenerateHandler(
   } catch (e) {
     void reply.code(500);
     return reply.send({
-      status: STATUS.ERROR,
-      message: {
-        code: CODE.ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT,
-        text: JSON.stringify(e)
-      }
+      code: CODE.ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT,
+      message: JSON.stringify(e)
     });
   }
   // NOTE: Anything that goes wrong after this point needs to unwind the exam attempt.
@@ -268,19 +247,13 @@ async function postExamGenerateHandler(
     questions: userQuestions
   };
 
-  return void reply.send({
-    status: STATUS.SUCCESS,
+  return reply.send({
+    code: CODE.EXAM_ENVIRONMENT_EXAM_GENERATED,
     data: {
       exam: userExam
     }
   });
 }
-
-type UserExam = Omit<NewExam, 'questions'> & {
-  questions: (Omit<NewQuestion, 'answers'> & {
-    answers: Omit<NewAnswer, 'is_correct'>[];
-  })[];
-} & { generated_exam_id: string };
 
 /**
  * Handles the submission of an exam attempt.
@@ -292,9 +265,9 @@ async function postExamAttemptHandler(
   _req: UpdateReqType<typeof schemas.examEnvironmentPostExamAttempt>,
   reply: FastifyReply
 ) {
-  await reply.code(418);
-  void reply.send({
-    status: STATUS.SUCCESS
+  void reply.code(418);
+  return reply.send({
+    code: CODE.EXAM_ENVIRONMENT_EXAM_ATTEMPT_SUBMITTED
   });
 }
 
@@ -308,8 +281,8 @@ async function postScreenshotHandler(
   _req: UpdateReqType<typeof schemas.examEnvironmentPostScreenshot>,
   reply: FastifyReply
 ) {
-  await reply.code(418);
-  void reply.send({
-    status: STATUS.SUCCESS
+  void reply.code(418);
+  return reply.send({
+    code: CODE.EXAM_ENVIRONMENT_SCREENSHOT_STORED
   });
 }

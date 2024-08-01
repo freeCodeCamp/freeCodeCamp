@@ -36,11 +36,6 @@ export type UpdateReqType<Schema extends FastifySchema> = FastifyRequest<
   TypeBoxTypeProvider
 >;
 
-export enum STATUS {
-  SUCCESS,
-  ERROR
-}
-
 /* eslint-disable jsdoc/require-description-complete-sentence */
 /**
  * Wrapper around a promise to catch errors and return them as part of the promise.

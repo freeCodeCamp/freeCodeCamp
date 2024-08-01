@@ -2,6 +2,7 @@
 import {
   GeneratedExam,
   GeneratedQuestion,
+  NewAnswer,
   NewExam,
   NewQuestion,
   user
@@ -9,11 +10,10 @@ import {
 
 /**
  * Checks if all exam prerequisites have been met by the user.
+ *
+ * TODO: This will be done by getting the challenges required from the curriculum.
  */
-export function checkPrerequisites(
-  _user: user,
-  _prerequisites: NewExam['prerequisites']
-) {
+export function checkPrerequisites(_user: user, _prerequisites: unknown) {
   return true;
 }
 
@@ -67,10 +67,8 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
     }
   }
 
-  // Add random questions until default number of questions for an exam is reached.
-  const TEMP_DEFAULT_QUESTIONS = 100;
-
-  for (let i = 0; i < TEMP_DEFAULT_QUESTIONS - questionSet.size; i++) {
+  // Add random questions until number of questions for an exam is reached.
+  for (let i = 0; i < exam.config.total_questions - questionSet.size; i++) {
     const question = randomizedQuestions.splice(
       Math.floor(Math.random() * randomizedQuestions.length),
       1
@@ -107,7 +105,7 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
 /**
  * Gets random answers for a question, ensuring at least one is correct, and at least one is incorrect with a total of 4.
  */
-function getRandomAnswers(question: NewQuestion) {
+export function getRandomAnswers(question: NewQuestion) {
   const randomAnswers = shuffleArray(question.answers);
   const firstCorrect = randomAnswers.splice(
     randomAnswers.findIndex(a => a.is_correct),
@@ -160,5 +158,16 @@ export enum CODE {
   EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
   ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM,
   ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT,
-  ERR_EXAM_ENVIRONMENT
+  ERR_EXAM_ENVIRONMENT,
+  EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_VERIFIED,
+  EXAM_ENVIRONMENT_EXAM_GENERATED,
+  EXAM_ENVIRONMENT_EXAM_ATTEMPT_SUBMITTED,
+  EXAM_ENVIRONMENT_SCREENSHOT_STORED,
+  EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED
 }
+
+export type UserExam = Omit<NewExam, 'questions'> & {
+  questions: (Omit<NewQuestion, 'answers'> & {
+    answers: Omit<NewAnswer, 'is_correct'>[];
+  })[];
+} & { generated_exam_id: string };
