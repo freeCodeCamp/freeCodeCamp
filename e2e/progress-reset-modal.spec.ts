@@ -100,7 +100,7 @@ test.describe('Progress reset modal', () => {
     ).toBeHidden();
   });
 
-  test('Reset the progress button should be disabled if the user incorrectly fills verify input text', async ({
+  test('Reset progress button should be disabled if user incorrectly fills verify input text', async ({
     page
   }) => {
     await page
