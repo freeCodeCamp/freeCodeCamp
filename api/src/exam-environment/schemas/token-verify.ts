@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { CODE } from '../../utils/new-exam';
+import { CODE } from '../utils/exam';
 
 // const STANDARD_RESPONSE_TYPE = Type.Object({
 //   data: Type.Optional(Type.Unknown()),

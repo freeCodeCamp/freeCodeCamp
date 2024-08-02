@@ -54,7 +54,7 @@ import { isObjectID } from './utils/validation';
 import {
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
-} from './routes/exam-environment';
+} from './exam-environment/routes/exam-environment';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,

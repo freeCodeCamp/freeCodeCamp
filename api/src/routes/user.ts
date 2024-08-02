@@ -29,8 +29,8 @@ import { generateReportEmail } from '../utils/email-templates';
 import { createResetProperties } from '../utils/create-user';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { UpdateReqType } from '../utils';
+import { CODE } from '../exam-environment/utils/exam';
 import { isRestricted } from './helpers/is-restricted';
-import { CODE } from '../utils/new-exam';
 
 // user flags that the api-server returns as false if they're missing in the
 // user document. Since Prisma returns null for missing fields, we need to

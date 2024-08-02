@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { CODE } from '../../utils/new-exam';
+import { CODE } from '../../exam-environment/utils/exam';
 
 export const userExamEnvironmentToken = {
   response: {
