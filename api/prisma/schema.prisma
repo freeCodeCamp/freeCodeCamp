@@ -3,6 +3,11 @@ generator client {
   binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
+generator jsonSchema {
+  provider = "prisma-json-schema-generator"
+  output   = "../database-schemas"
+}
+
 datasource db {
   provider = "mongodb"
   url      = env("MONGOHQ_URL")

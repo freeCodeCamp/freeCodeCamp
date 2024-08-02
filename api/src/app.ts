@@ -49,6 +49,7 @@ import {
   SENTRY_DSN
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import { documentationRoutes } from './routes/documentation';
 
 export type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -152,16 +153,17 @@ export const build = async (
     EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
   void fastify.register(mailer, { provider });
 
+  void fastify.register(documentationRoutes);
   // Swagger plugin
-  if (FCC_ENABLE_SWAGGER_UI) {
-    void fastify.register(fastifySwagger, {
-      openapi: {
-        info: {
-          title: 'freeCodeCamp API',
-          version: '1.0.0' // API version
-        }
+  void fastify.register(fastifySwagger, {
+    openapi: {
+      info: {
+        title: 'freeCodeCamp API',
+        version: '1.0.0' // API version
       }
-    });
+    }
+  });
+  if (FCC_ENABLE_SWAGGER_UI) {
     void fastify.register(fastifySwaggerUI, {
       uiConfig: {
         // Convert csrf_token cookie to csrf-token header

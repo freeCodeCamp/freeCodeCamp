@@ -1,4 +1,12 @@
 import { randomBytes, createHash } from 'crypto';
+import { type TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import {
+  type FastifyRequest,
+  type FastifySchema,
+  type RawRequestDefaultExpression,
+  type RawServerDefault,
+  type RouteGenericInterface
+} from 'fastify';
 
 /**
  * Utility to encode a buffer to a base64 URI.
@@ -19,3 +27,11 @@ function sha256(buf: Buffer) {
   return createHash('sha256').update(buf).digest();
 }
 export const challenge = base64URLEncode(sha256(Buffer.from(verifier)));
+
+export type UpdateReqType<Schema extends FastifySchema> = FastifyRequest<
+  RouteGenericInterface,
+  RawServerDefault,
+  RawRequestDefaultExpression<RawServerDefault>,
+  Schema,
+  TypeBoxTypeProvider
+>;
