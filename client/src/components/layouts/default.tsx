@@ -267,10 +267,8 @@ function DefaultLayout({
                   superBlock={superBlock as string}
                 />
               </div>
-            ) : isExSmallViewportHeight ? (
-              <Spacer size='xxSmall' />
             ) : (
-              <Spacer size='small' />
+              <Spacer size={isExSmallViewportHeight ? 'xxSmall' : 'small'} />
             ))}
           {fetchState.complete && children}
         </div>
