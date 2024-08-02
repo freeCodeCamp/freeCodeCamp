@@ -99,7 +99,7 @@ test.describe('Email sign-up page when user is signed in', () => {
     // terms, otherwise the user will be redirected away from the email sign-up
     // page.
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user certified-user --unset-privacy-terms'
+      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false acceptedPrivacyTerms'
     );
 
     await page.goto('/email-sign-up');

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Test } from '../../../redux/prop-types';
 
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { initializeMathJax } from '../../../utils/math-jax';
 import { challengeTestsSelector } from '../redux/selectors';
 import TestSuite from './test-suite';
