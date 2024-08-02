@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { CODE } from '../../utils/new-exam';
+import { CODE } from '../utils/exam';
 
 export const examEnvironmentPostExamGenerate = {
   body: Type.Object({

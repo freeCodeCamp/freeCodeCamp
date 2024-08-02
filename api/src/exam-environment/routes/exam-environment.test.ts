@@ -1,16 +1,17 @@
-import { examId } from '../../__mocks__/new-exam';
+import { examId } from '../../../__mocks__/new-exam';
 import {
   createSuperRequest,
   devLogin,
   seedNewExam,
   setupServer
-} from '../../jest.utils';
+} from '../../../jest.utils';
 
 describe('/exam-environment', () => {
   setupServer();
   describe('Authenticated user', () => {
     let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let examEnvironmentAuthorizationToken: string;
 
     // Authenticate user

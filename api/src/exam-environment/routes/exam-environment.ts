@@ -4,9 +4,9 @@ import { type FastifyInstance, type FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
-import { mapErr, UpdateReqType } from '../utils';
-import { JWT_SECRET } from '../utils/env';
-import { CODE, generateExam, UserExam } from '../utils/new-exam';
+import { mapErr, UpdateReqType } from '../../utils';
+import { JWT_SECRET } from '../../utils/env';
+import { CODE, generateExam, UserExam } from '../utils/exam';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.

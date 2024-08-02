@@ -5,6 +5,7 @@ import {
   NewAnswer,
   NewExam,
   NewQuestion,
+  NewQuestionType,
   user
 } from '@prisma/client';
 
@@ -22,8 +23,12 @@ export function checkPrerequisites(_user: user, _prerequisites: unknown) {
  */
 export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
   // `tags` is added to keep track of how many questions of each tag are in the set.
-  const questionSet: Set<GeneratedQuestion & { tags: NewQuestion['tags'] }> =
-    new Set();
+  const questionSet: Set<
+    GeneratedQuestion & {
+      tags: NewQuestion['tags'];
+      question_type: NewQuestionType;
+    }
+  > = new Set();
   const randomizedQuestions = shuffleArray(exam.questions);
 
   // Sort tag config by number of tags in descending order.
@@ -56,11 +61,48 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
         );
       }
 
-      const answers = getRandomAnswers(question);
+      const answers = getRandomAnswers(question, exam);
 
       const generatedQuestion = {
         id: question.id,
         answers: answers.map(a => a.id),
+        question_type: question.question_type,
+        tags: question.tags
+      };
+      questionSet.add(generatedQuestion);
+    }
+  }
+
+  // Ensure question_type config is fulfilled.
+  for (const questionConfig of exam.config.question_types) {
+    // Determine how many questions of type are already fulfilled.
+    let numberOfQuestionsNeeded = questionConfig.number_of_questions;
+    for (const q of questionSet) {
+      if (q.question_type === questionConfig.question_type) {
+        numberOfQuestionsNeeded -= 1;
+      }
+    }
+
+    for (let i = 0; i < numberOfQuestionsNeeded; i++) {
+      const question = randomizedQuestions.splice(
+        randomizedQuestions.findIndex(
+          q => q.question_type === questionConfig.question_type
+        ),
+        1
+      )[0];
+
+      if (!question) {
+        throw new Error(
+          `Invalid Exam Configuration for ${exam.id}. Not enough questions for question type ${questionConfig.question_type}.`
+        );
+      }
+
+      const answers = getRandomAnswers(question, exam);
+
+      const generatedQuestion = {
+        id: question.id,
+        answers: answers.map(a => a.id),
+        question_type: question.question_type,
         tags: question.tags
       };
       questionSet.add(generatedQuestion);
@@ -69,21 +111,19 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
 
   // Add random questions until number of questions for an exam is reached.
   for (let i = 0; i < exam.config.total_questions - questionSet.size; i++) {
-    const question = randomizedQuestions.splice(
-      Math.floor(Math.random() * randomizedQuestions.length),
-      1
-    )[0];
+    const question = randomizedQuestions.pop();
     if (!question) {
       throw new Error(
         `Invalid Exam Configuration for ${exam.id}. Not enough questions.`
       );
     }
 
-    const answers = getRandomAnswers(question);
+    const answers = getRandomAnswers(question, exam);
 
     const generatedQuestion = {
       id: question.id,
       answers: answers.map(a => a.id),
+      question_type: question.question_type,
       tags: question.tags
     };
     questionSet.add(generatedQuestion);
@@ -103,26 +143,35 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
 }
 
 /**
- * Gets random answers for a question, ensuring at least one is correct, and at least one is incorrect with a total of 4.
+ * Gets random answers for a question.
  */
-export function getRandomAnswers(question: NewQuestion) {
+export function getRandomAnswers(question: NewQuestion, exam: NewExam) {
+  const questionConfig = exam.config.question_types.find(
+    c => question.question_type === c.question_type
+  );
+  if (!questionConfig) {
+    throw new Error(
+      `Invalid Exam Configuration for ${exam.id}. Question Type ${question.question_type} not found.`
+    );
+  }
+
+  const { number_of_correct_answers, number_of_incorrect_answers } =
+    questionConfig;
   const randomAnswers = shuffleArray(question.answers);
-  const firstCorrect = randomAnswers.splice(
-    randomAnswers.findIndex(a => a.is_correct),
-    1
-  )[0];
-  const firstIncorrect = randomAnswers.splice(
-    randomAnswers.findIndex(a => !a.is_correct),
-    1
-  )[0];
-  if (!firstCorrect || !firstIncorrect) {
+  const incorrectAnswers = randomAnswers
+    .filter(a => !a.is_correct)
+    .splice(0, number_of_incorrect_answers);
+  const correctAnswers = randomAnswers
+    .filter(a => a.is_correct)
+    .splice(0, number_of_correct_answers);
+
+  if (!incorrectAnswers || !correctAnswers) {
     throw new Error(
       `Question ${question.id} does not have enough correct/incorrect answers.`
     );
   }
-  const answers = [firstCorrect, firstIncorrect].concat(
-    randomAnswers.slice(0, 2)
-  );
+
+  const answers = incorrectAnswers.concat(correctAnswers);
   return answers;
 }
 
