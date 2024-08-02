@@ -334,7 +334,7 @@ describe('Donate', () => {
         await fastifyTestInstance.prisma.donation.create({
           data: donationMock
         });
-        const response = await superPut('/donate/update-stripe-card');
+        const response = await superPut('/donate/update-stripe-card').send({});
         expect(mockCheckoutSessionCreate).toHaveBeenCalledWith({
           cancel_url: 'http://localhost:8000/update-stripe-card',
           customer: 'cust_test_id',
@@ -353,7 +353,7 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
       it('should return 500 if there is no donation record', async () => {
-        const response = await superPut('/donate/update-stripe-card');
+        const response = await superPut('/donate/update-stripe-card').send({});
         expect(response.body).toEqual({
           message: 'flash.generic-error',
           type: 'danger'

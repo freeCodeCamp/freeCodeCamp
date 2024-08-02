@@ -243,7 +243,7 @@ export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
 }
 
 export function updateStripeCard() {
-  return put('/donate/update-stripe-card');
+  return put('/donate/update-stripe-card', {});
 }
 
 export function postChargeStripe(
