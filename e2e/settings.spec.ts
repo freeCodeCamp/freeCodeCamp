@@ -165,7 +165,6 @@ test.describe('Settings', () => {
       name: translations.settings.headings.privacy
     });
     await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
     await expect(page.getByText(translations.settings.data)).toBeVisible();
     const downloadButton = page.getByRole('link', {
       name: translations.buttons['download-data']
