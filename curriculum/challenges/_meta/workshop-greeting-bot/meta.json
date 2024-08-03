@@ -1,0 +1,11 @@
+{
+  "name": "Build a Greeting Bot",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-greeting-bot",
+  "order": 131,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ad8294a0ad902f1b31b612", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
