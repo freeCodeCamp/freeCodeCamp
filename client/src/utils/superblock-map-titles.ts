@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 
 // these are keys from i18n translations.json files
 enum SuperBlockI18nKeys {

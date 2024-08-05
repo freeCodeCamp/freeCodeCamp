@@ -5,7 +5,7 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import { SuperBlocks } from '../../shared/config/superblocks';
+import { SuperBlocks } from '../../shared/config/curriculum';
 import { createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
