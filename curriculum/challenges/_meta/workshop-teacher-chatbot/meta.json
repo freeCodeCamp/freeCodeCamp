@@ -1,0 +1,11 @@
+{
+  "name": "Build a Teacher Chatbot",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-teacher-chatbot",
+  "order": 137,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66b102ee0bdbad34a9f85ba0", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
