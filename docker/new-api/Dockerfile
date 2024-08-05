@@ -23,7 +23,7 @@ RUN pnpm config set dedupe-peer-dependents false
 # the right version of prisma.
 RUN pnpm install -F=api -F=curriculum -F tools/scripts/build -F challenge-parser \
   --frozen-lockfile --ignore-scripts
-RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
+RUN cd api && npm i -g prisma-json-schema-generator@$(jq -r '.devDependencies.["prisma-json-schema-generator"]' < package.json) && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 # The api needs to source curriculum.json and build:curriculum relies on the
 # following env vars.
