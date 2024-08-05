@@ -59,7 +59,7 @@ export function post<T = void>(
 
 function put<T = void>(
   path: string,
-  body?: unknown
+  body: unknown
 ): Promise<ResponseWithData<T>> {
   return request('PUT', path, body);
 }
