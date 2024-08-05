@@ -148,39 +148,39 @@ model user {
 /// An exam as designed by the examiners
 model NewExam {
   /// Globally unique exam id
-  id                 String        @id @default(auto()) @map("_id") @db.ObjectId
+  id                 String         @id @default(auto()) @map("_id") @db.ObjectId
   /// Human-readable exam name
   name               String
   /// Notes given about exam
   accessibility_note String
   /// All questions for a given exam
-  questions          NewQuestion[]
-  /// All dialogue monologues
-  dialogues          NewDialogue[]
+  question_types     QuestionType[]
   /// Configuration for exam metadata
   config             NewConfig
+}
+
+type QuestionType {
+  type      NewQuestionType
+  text      String?
+  questions NewQuestion[]
 }
 
 /// A multiple choice question
 type NewQuestion {
   /// Unique question id
-  id            String          @db.ObjectId
-  /// Type of question
-  question_type NewQuestionType
-  /// Foreign key to a dialogue
-  dialogue_id   String?         @db.ObjectId
+  id         String      @db.ObjectId
   /// Main question paragraph
-  text          String
+  text       String
   /// Zero or more tags given to categorize a question
-  tags          String[]
+  tags       String[]
   /// Optional audio for a question
-  audio         NewAudio?
+  audio      NewAudio?
   /// Optional text for audio
-  captions      String?
+  captions   String?
   /// Available possible answers for an exam
-  answers       NewAnswer[]
+  answers    NewAnswer[]
   /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
-  deprecated    Boolean
+  deprecated Boolean
 }
 
 type NewAudio {
@@ -194,12 +194,6 @@ type NewAudio {
   ///
   /// If not set, audio ends at the end of the clip
   end_time   Float?
-}
-
-/// A mass of text referenced by questions
-type NewDialogue {
-  id   String @db.ObjectId
-  text String
 }
 
 enum NewQuestionType {
@@ -220,18 +214,14 @@ type NewConfig {
   total_time      Int
   total_questions Int
   question_types  QuestionConfig[]
-  dialogues       DialogueConfig
 }
 
 type QuestionConfig {
-  question_type               NewQuestionType
+  type                        NewQuestionType
+  number_of_type              Int
   number_of_questions         Int
   number_of_correct_answers   Int
   number_of_incorrect_answers Int
-}
-
-type DialogueConfig {
-  number_of_multiple_choice_questions Int
 }
 
 type NewTagConfig {
