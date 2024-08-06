@@ -162,6 +162,8 @@ model NewExam {
 }
 
 type QuestionType {
+  /// Unique question type id
+  id        String          @db.ObjectId
   type      NewQuestionType
   text      String?
   questions NewQuestion[]
