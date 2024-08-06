@@ -258,18 +258,18 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge && !examInProgress && isRenderBreadcrumb ? (
-            <div className='breadcrumbs-demo'>
-              <BreadCrumb
-                block={block as string}
-                superBlock={superBlock as string}
-              />
-            </div>
-          ) : isExSmallViewportHeight ? (
-            <Spacer size='xxSmall' />
-          ) : (
-            <Spacer size='small' />
-          )}
+          {isChallenge &&
+            !examInProgress &&
+            (isRenderBreadcrumb ? (
+              <div className='breadcrumbs-demo'>
+                <BreadCrumb
+                  block={block as string}
+                  superBlock={superBlock as string}
+                />
+              </div>
+            ) : (
+              <Spacer size={isExSmallViewportHeight ? 'xxSmall' : 'small'} />
+            ))}
           {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}

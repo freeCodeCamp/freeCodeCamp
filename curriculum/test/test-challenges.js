@@ -77,6 +77,7 @@ const handleRejection = err => {
 
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
+global.DOMParser = dom.window.DOMParser;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function (test, err) {
