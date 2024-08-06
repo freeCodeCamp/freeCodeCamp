@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import React, {
   useState,
   useEffect,
@@ -21,7 +20,7 @@ import {
 } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { Spacer, Loader } from '../components/helpers';
+import { Spacer, Loader, Link } from '../components/helpers';
 import './show-update-email.css';
 import { isSignedInSelector, userSelector } from '../redux/selectors';
 import { hardGoTo as navigate } from '../redux/actions';
