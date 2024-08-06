@@ -245,12 +245,7 @@ const parseAndTransform = async function (transform, contents) {
   const parser = new DOMParser();
   const newDoc = parser.parseFromString(contents, 'text/html');
 
-  try {
-    return await transform(newDoc.documentElement, newDoc);
-  } catch (e) {
-    console.error(e);
-    return contents;
-  }
+  return await transform(newDoc.documentElement, newDoc);
 };
 
 const transformHtml = async function (file) {
