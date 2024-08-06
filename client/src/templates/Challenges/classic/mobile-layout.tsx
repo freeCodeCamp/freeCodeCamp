@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import React, { Component } from 'react';
+import React, { Component, type ReactNode } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
@@ -17,14 +17,12 @@ import {
   showPreviewPaneSelector
 } from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
-import ToolPanel from '../components/tool-panel';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
-  guideUrl: string;
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
@@ -34,13 +32,13 @@ interface MobileLayoutProps {
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
+  toolPanel: ReactNode;
   removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
   portalWindow: null | Window;
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
-  videoUrl: string;
   usesMultifileEditor: boolean;
 }
 
@@ -160,13 +158,12 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       onPreviewResize,
       showPreviewPane,
       showPreviewPortal,
+      toolPanel,
       removePortalWindow,
       setShowPreviewPane,
       setShowPreviewPortal,
       portalWindow,
       windowTitle,
-      guideUrl,
-      videoUrl,
       usesMultifileEditor
     } = this.props;
 
@@ -309,13 +306,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               )}
             </TabsContent>
           )}
-          {!hasEditableBoundaries && (
-            <ToolPanel
-              guideUrl={guideUrl}
-              isMobile={true}
-              videoUrl={videoUrl}
-            />
-          )}
+          {!hasEditableBoundaries && toolPanel}
           {hasPreview && this.state.currentTab !== 'preview' && (
             <div className='portal-button-wrap'>
               <button
