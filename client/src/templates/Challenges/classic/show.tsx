@@ -60,6 +60,7 @@ import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
+import ToolPanel from '../components/tool-panel';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -227,6 +228,7 @@ function ShowClassic({
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
+  const guideUrl = getGuideUrl({ forumTopicId, title });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -369,9 +371,9 @@ function ShowClassic({
   };
 
   const renderInstructionsPanel = ({
-    showToolPanel
+    toolPanel
   }: {
-    showToolPanel: boolean;
+    toolPanel: React.ReactNode;
   }) => {
     return (
       <SidePanel
@@ -392,11 +394,9 @@ function ShowClassic({
             {title}
           </ChallengeTitle>
         }
-        guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={instructionsPanelRef}
-        showToolPanel={showToolPanel}
+        toolPanel={toolPanel}
         superBlock={superBlock}
-        videoUrl={videoUrl}
       />
     );
   };
@@ -445,11 +445,10 @@ function ShowClassic({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            guideUrl={getGuideUrl({ forumTopicId, title })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
-              showToolPanel: false
+              toolPanel: null
             })}
             notes={notes}
             onPreviewResize={onPreviewResize}
@@ -465,9 +464,11 @@ function ShowClassic({
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
+            toolPanel={
+              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
+            }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
-            videoUrl={videoUrl}
           />
         )}
         {!isMobile && (
@@ -481,7 +482,7 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
-              showToolPanel: true
+              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
