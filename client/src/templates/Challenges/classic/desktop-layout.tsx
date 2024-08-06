@@ -22,6 +22,7 @@ import {
   isAdvancingToChallengeSelector
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
+import Notes from '../components/notes';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -31,7 +32,6 @@ interface DesktopLayoutProps {
   challengeType: number;
   editor: ReactElement | null;
   hasEditableBoundaries: boolean;
-  hasNotes: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -44,7 +44,7 @@ interface DesktopLayoutProps {
     previewPane: Pane;
     testsPane: Pane;
   };
-  notes: ReactElement;
+  notes: string;
   onPreviewResize: () => void;
   preview: ReactElement;
   resizeProps: ResizeProps;
@@ -146,7 +146,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     instructions,
     editor,
     testOutput,
-    hasNotes,
     hasPreview,
     isAdvancing,
     isFirstStep,
@@ -175,7 +174,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.multifilePythonCertProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
-  const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
+  const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
   const displayEditorConsole = !(
     projectBasedChallenge || isMultifileCertProject
   )
@@ -197,7 +196,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       {(projectBasedChallenge || isMultifileCertProject) && (
         <ActionRow
           hasPreview={hasPreview}
-          hasNotes={hasNotes}
+          hasNotes={!!notes}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
@@ -216,6 +215,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           <ReflexElement
             flex={instructionPane.flex}
             {...resizeProps}
+            name='instructionPane'
             data-playwright-test-label='instruction-pane'
           >
             {instructions}
@@ -227,6 +227,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
         <ReflexElement
           flex={editorPane.flex}
+          name='editorPane'
           {...resizeProps}
           data-playwright-test-label='editor-pane'
         >
@@ -237,6 +238,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             >
               <ReflexElement
                 flex={codePane.flex}
+                name='codePane'
                 {...reflexProps}
                 {...resizeProps}
               >
@@ -259,17 +261,26 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         </ReflexElement>
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (
-          <ReflexElement flex={notesPane.flex} {...resizeProps}>
-            {notes}
+          <ReflexElement
+            name='notesPane'
+            flex={notesPane.flex}
+            {...resizeProps}
+          >
+            <Notes notes={notes} />
           </ReflexElement>
         )}
 
         {(displayPreviewPane || displayPreviewConsole) && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
+          <ReflexSplitter
+            data-playwright-test-label='preview-left-splitter'
+            propagate={true}
+            {...resizeProps}
+          />
         )}
         {(displayPreviewPane || displayPreviewConsole) && (
           <ReflexElement
             flex={previewPane.flex}
+            name='previewPane'
             {...resizeProps}
             data-playwright-test-label='preview-pane'
           >
@@ -280,6 +291,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               )}
               {displayPreviewConsole && (
                 <ReflexElement
+                  name='testsPane'
                   {...(displayPreviewPane && { flex: testsPane.flex })}
                   {...resizeProps}
                 >

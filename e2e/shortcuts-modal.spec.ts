@@ -28,6 +28,7 @@ const openModal = async (page: Page) => {
   // The editor pane is focused by default, so we need to escape or it will
   // capture the keyboard shortcuts
   await getEditors(page).press('Escape');
+  await expect(page.getByTestId('hotkeys')).toBeFocused();
   await page.keyboard.press('Shift+?');
 };
 

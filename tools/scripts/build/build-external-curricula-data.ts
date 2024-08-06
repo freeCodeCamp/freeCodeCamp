@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
 export type Curriculum<T> = {
