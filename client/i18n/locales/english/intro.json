@@ -1716,6 +1716,12 @@
           "In this workshop, you will learn how to work with forms by building a Hotel Feedback Form.",
           "You will learn how to work with labels, inputs, fieldsets, legends, textareas and buttons."
         ]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+        ]
       }
     }
   },
