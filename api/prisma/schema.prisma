@@ -148,7 +148,9 @@ model user {
 /// An exam as designed by the examiners
 model NewExam {
   /// Globally unique exam id
-  id                 String         @id @default(auto()) @map("_id") @db.ObjectId
+  ///
+  /// NOTE: Field is not "default", because of when/where exams are created.
+  id                 String         @id @map("_id") @db.ObjectId
   /// Human-readable exam name
   name               String
   /// Notes given about exam
