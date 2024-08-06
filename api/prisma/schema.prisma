@@ -212,10 +212,10 @@ type NewAnswer {
 }
 
 type NewConfig {
-  tags            NewTagConfig[]
-  total_time      Int
-  total_questions Int
-  question_types  QuestionConfig[]
+  tags           NewTagConfig[]
+  /// Total time allocated for exam in seconds
+  total_time     Int
+  question_types QuestionConfig[]
 }
 
 type QuestionConfig {
