@@ -1,0 +1,10 @@
+{
+  "name": "Rainbow Painting",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-rainbow-painting",
+  "order": 100,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66b1ec7e2bb25947ca579bf3", "title": "Build a Raibow Painting" }],
+  "helpCategory": "HTML-CSS"
+}
