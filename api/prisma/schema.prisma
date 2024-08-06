@@ -175,8 +175,6 @@ type NewQuestion {
   tags       String[]
   /// Optional audio for a question
   audio      NewAudio?
-  /// Optional text for audio
-  captions   String?
   /// Available possible answers for an exam
   answers    NewAnswer[]
   /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
@@ -184,6 +182,8 @@ type NewQuestion {
 }
 
 type NewAudio {
+  /// Optional text for audio
+  captions   String?
   /// URL to audio file
   url        String
   /// Start time of audio clip for question
