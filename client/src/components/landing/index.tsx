@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useFeature } from '@growthbook/growthbook-react';
+import { useGrowthBook } from '@growthbook/growthbook-react';
 import SEO from '../seo';
 import { Loader } from '../helpers';
 import AsSeenIn from './components/as-seen-in';
@@ -33,20 +33,26 @@ const LandingB = () => (
 
 function Landing(): ReactElement {
   const { t } = useTranslation();
-  const showLandingPageRedesign = useFeature('landing-page-redesign');
-
-  return (
-    <>
-      <SEO title={t('metaTags:title')} />
-      {showLandingPageRedesign.value === true ? (
-        <LandingB />
-      ) : showLandingPageRedesign.value === false ? (
-        <LandingA />
-      ) : (
+  const growthbook = useGrowthBook();
+  if (growthbook && growthbook.ready) {
+    const showLandingPageRedesign = growthbook.getFeatureValue(
+      'landing-page-redesign',
+      false
+    );
+    return (
+      <>
+        <SEO title={t('metaTags:title')} />
+        {showLandingPageRedesign === true ? <LandingB /> : <LandingA />}
+      </>
+    );
+  } else {
+    return (
+      <>
+        <SEO title={t('metaTags:title')} />
         <Loader fullScreen={true} />
-      )}
-    </>
-  );
+      </>
+    );
+  }
 }
 
 Landing.displayName = 'Landing';
