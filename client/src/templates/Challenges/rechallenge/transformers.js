@@ -219,7 +219,7 @@ export const embedFilesInHtml = async function (challengeFiles) {
   };
 
   if (indexHtml) {
-    const { contents } = await transformWithFrame(
+    const { contents } = await parseAndTransform(
       embedStylesAndScript,
       indexHtml.contents
     );
@@ -243,30 +243,17 @@ function challengeFilesToObject(challengeFiles) {
   return { indexHtml, indexJsx, stylesCss, scriptJs };
 }
 
-const transformWithFrame = async function (transform, contents) {
-  // we use iframe here since file.contents is destined to be be inserted into
-  // the root of an iframe.
-  const frame = document.createElement('iframe');
-  frame.style = 'display: none';
+const parseAndTransform = async function (transform, contents) {
+  // store the original contents the transform fails
   let out = { contents };
+
+  const parser = new DOMParser();
+  const newDoc = parser.parseFromString(contents, 'text/html');
+
   try {
-    // the frame needs to be inserted into the document to create the html
-    // element
-    document.body.appendChild(frame);
-    // replace the root element with user code
-    frame.contentDocument.documentElement.innerHTML = contents;
-    // grab the contents now, in case the transformation fails
-    out = { contents: frame.contentDocument.documentElement.innerHTML };
-    // it's important to pass around the documentElement and NOT the frame
-    // itself. It appears that the frame's documentElement can get replaced by a
-    // blank documentElement without the contents. This seems only to happen on
-    // Firefox.
-    out = await transform(
-      frame.contentDocument.documentElement,
-      frame.contentDocument
-    );
-  } finally {
-    document.body.removeChild(frame);
+    out = await transform(newDoc.documentElement, newDoc);
+  } catch (e) {
+    console.error(e);
   }
   return out;
 };
@@ -280,7 +267,7 @@ const transformHtml = async function (file) {
     return { contents: documentElement.innerHTML };
   };
 
-  const { contents } = await transformWithFrame(transform, file.contents);
+  const { contents } = await parseAndTransform(transform, file.contents);
   return transformContents(() => contents, file);
 };
 
