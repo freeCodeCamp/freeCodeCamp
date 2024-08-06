@@ -213,13 +213,11 @@ export const embedFilesInHtml = async function (challengeFiles) {
       script.removeAttribute('src');
       script.setAttribute('data-src', 'script.js');
     }
-    return {
-      contents: documentElement.innerHTML
-    };
+    return documentElement.innerHTML;
   };
 
   if (indexHtml) {
-    const { contents } = await parseAndTransform(
+    const contents = await parseAndTransform(
       embedStylesAndScript,
       indexHtml.contents
     );
@@ -244,18 +242,15 @@ function challengeFilesToObject(challengeFiles) {
 }
 
 const parseAndTransform = async function (transform, contents) {
-  // store the original contents the transform fails
-  let out = { contents };
-
   const parser = new DOMParser();
   const newDoc = parser.parseFromString(contents, 'text/html');
 
   try {
-    out = await transform(newDoc.documentElement, newDoc);
+    return await transform(newDoc.documentElement, newDoc);
   } catch (e) {
     console.error(e);
+    return contents;
   }
-  return out;
 };
 
 const transformHtml = async function (file) {
@@ -264,10 +259,10 @@ const transformHtml = async function (file) {
       transformSASS(documentElement),
       transformScript(documentElement)
     ]);
-    return { contents: documentElement.innerHTML };
+    return documentElement.innerHTML;
   };
 
-  const { contents } = await parseAndTransform(transform, file.contents);
+  const contents = await parseAndTransform(transform, file.contents);
   return transformContents(() => contents, file);
 };
 
