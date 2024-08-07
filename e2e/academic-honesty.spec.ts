@@ -1,12 +1,17 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { alertToBeVisible } from './utils/alerts';
 
 test.describe('When the user has not accepted the Academic Honesty Policy', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('they should be able to accept it', async ({ page }) => {
@@ -48,11 +53,13 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
 
   test('Should show an error message', async ({ page }) => {
     await page.goto('/settings#cert-responsive-web-design');
-    await page.getByTestId('btn-for-responsive-web-design').click();
 
-    await expect(page.getByTestId('flash-message')).toContainText(
-      translations.flash['honest-first']
-    );
+    const claimCertButton = page.getByRole('button', {
+      name: 'Claim Certification Responsive Web Design'
+    });
+    await claimCertButton.click();
+
+    await alertToBeVisible(page, translations.flash['honest-first']);
 
     const agreeButton = page.getByRole('button', {
       name: translations.buttons['agree-honesty']
@@ -61,14 +68,11 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
 
     await page.reload();
 
-    await page.getByTestId('btn-for-responsive-web-design').click();
+    await claimCertButton.click();
 
-    await expect(page.getByTestId('flash-message')).toContainText(
-      /It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification./
+    await alertToBeVisible(
+      page,
+      'It looks like you have not completed the necessary steps. Please complete the required projects to claim the Responsive Web Design Certification.'
     );
-  });
-
-  test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 });
