@@ -224,6 +224,7 @@ function Hotkeys({
     <>
       <HotKeys
         id='editor-layout'
+        data-playwright-test-label='hotkeys'
         allowChanges={true}
         handlers={handlers}
         innerRef={containerRef}

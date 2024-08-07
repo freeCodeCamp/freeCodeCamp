@@ -46,11 +46,5 @@ export const devAuthRoutes: FastifyPluginCallback = (
     await handleRedirects(req, reply);
   });
 
-  fastify.get('/signout', async (req, reply) => {
-    reply.clearOurCookies();
-
-    const { returnTo } = getRedirectParams(req);
-    await reply.redirect(returnTo);
-  });
   done();
 };

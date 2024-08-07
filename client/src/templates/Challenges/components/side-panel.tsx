@@ -1,13 +1,12 @@
-import React, { useEffect, ReactElement } from 'react';
+import React, { useEffect, ReactElement, ReactNode } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Test } from '../../../redux/prop-types';
 
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { initializeMathJax } from '../../../utils/math-jax';
 import { challengeTestsSelector } from '../redux/selectors';
 import TestSuite from './test-suite';
-import ToolPanel from './tool-panel';
 
 import './side-panel.css';
 
@@ -21,24 +20,20 @@ interface SidePanelProps {
   block: string;
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
-  guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
-  showToolPanel: boolean;
+  toolPanel: ReactNode;
   superBlock: SuperBlocks;
   tests: Test[];
-  videoUrl: string;
 }
 
 export function SidePanel({
   block,
   challengeDescription,
   challengeTitle,
-  guideUrl,
   instructionsPanelRef,
-  showToolPanel = false,
+  toolPanel,
   superBlock,
-  tests,
-  videoUrl
+  tests
 }: SidePanelProps): JSX.Element {
   useEffect(() => {
     const mathJaxChallenge =
@@ -56,7 +51,7 @@ export function SidePanel({
     >
       {challengeTitle}
       {challengeDescription}
-      {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
+      {toolPanel}
       <TestSuite tests={tests} />
     </div>
   );

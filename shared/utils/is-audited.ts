@@ -1,7 +1,7 @@
 import {
   type SuperBlocks,
   getAuditedSuperBlocks
-} from '../../shared/config/superblocks';
+} from '../../shared/config/curriculum';
 
 export function isAuditedSuperBlock(
   language: string,
