@@ -1,0 +1,558 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replace-imports should have an output to match the snapshot 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 18,
+              "line": 3,
+              "offset": 68,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 53,
+            },
+          },
+          "type": "text",
+          "value": "--description--",
+        },
+      ],
+      "depth": 1,
+      "position": {
+        "end": {
+          "column": 18,
+          "line": 3,
+          "offset": 68,
+        },
+        "start": {
+          "column": 1,
+          "line": 3,
+          "offset": 51,
+        },
+      },
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 12,
+              "line": 5,
+              "offset": 81,
+            },
+            "start": {
+              "column": 1,
+              "line": 5,
+              "offset": 70,
+            },
+          },
+          "type": "text",
+          "value": "Paragraph 1",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 12,
+          "line": 5,
+          "offset": 81,
+        },
+        "start": {
+          "column": 1,
+          "line": 5,
+          "offset": 70,
+        },
+      },
+      "type": "paragraph",
+    },
+    {
+      "lang": "html",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 9,
+          "offset": 107,
+        },
+        "start": {
+          "column": 1,
+          "line": 7,
+          "offset": 83,
+        },
+      },
+      "type": "code",
+      "value": "code example",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 19,
+              "line": 11,
+              "offset": 127,
+            },
+            "start": {
+              "column": 3,
+              "line": 11,
+              "offset": 111,
+            },
+          },
+          "type": "text",
+          "value": "--instructions--",
+        },
+      ],
+      "depth": 1,
+      "position": {
+        "end": {
+          "column": 19,
+          "line": 11,
+          "offset": 127,
+        },
+        "start": {
+          "column": 1,
+          "line": 11,
+          "offset": 109,
+        },
+      },
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 12,
+              "line": 13,
+              "offset": 140,
+            },
+            "start": {
+              "column": 1,
+              "line": 13,
+              "offset": 129,
+            },
+          },
+          "type": "text",
+          "value": "Paragraph 0",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 12,
+          "line": 13,
+          "offset": 140,
+        },
+        "start": {
+          "column": 1,
+          "line": 13,
+          "offset": 129,
+        },
+      },
+      "type": "paragraph",
+    },
+    {
+      "lang": "html",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 17,
+          "offset": 168,
+        },
+        "start": {
+          "column": 1,
+          "line": 15,
+          "offset": 142,
+        },
+      },
+      "type": "code",
+      "value": "code example 0",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 12,
+              "line": 19,
+              "offset": 181,
+            },
+            "start": {
+              "column": 3,
+              "line": 19,
+              "offset": 172,
+            },
+          },
+          "type": "text",
+          "value": "--hints--",
+        },
+      ],
+      "depth": 1,
+      "position": {
+        "end": {
+          "column": 12,
+          "line": 19,
+          "offset": 181,
+        },
+        "start": {
+          "column": 1,
+          "line": 19,
+          "offset": 170,
+        },
+      },
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 11,
+              "line": 21,
+              "offset": 193,
+            },
+            "start": {
+              "column": 1,
+              "line": 21,
+              "offset": 183,
+            },
+          },
+          "type": "text",
+          "value": "First hint",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 11,
+          "line": 21,
+          "offset": 193,
+        },
+        "start": {
+          "column": 1,
+          "line": 21,
+          "offset": 183,
+        },
+      },
+      "type": "paragraph",
+    },
+    {
+      "lang": "js",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 25,
+          "offset": 217,
+        },
+        "start": {
+          "column": 1,
+          "line": 23,
+          "offset": 195,
+        },
+      },
+      "type": "code",
+      "value": "// test code",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 18,
+              "line": 27,
+              "offset": 236,
+            },
+            "start": {
+              "column": 1,
+              "line": 27,
+              "offset": 219,
+            },
+          },
+          "type": "text",
+          "value": "Second hint with ",
+        },
+        {
+          "position": {
+            "end": {
+              "column": 24,
+              "line": 27,
+              "offset": 242,
+            },
+            "start": {
+              "column": 18,
+              "line": 27,
+              "offset": 236,
+            },
+          },
+          "type": "html",
+          "value": "<code>",
+        },
+        {
+          "position": {
+            "end": {
+              "column": 28,
+              "line": 27,
+              "offset": 246,
+            },
+            "start": {
+              "column": 24,
+              "line": 27,
+              "offset": 242,
+            },
+          },
+          "type": "text",
+          "value": "code",
+        },
+        {
+          "position": {
+            "end": {
+              "column": 35,
+              "line": 27,
+              "offset": 253,
+            },
+            "start": {
+              "column": 28,
+              "line": 27,
+              "offset": 246,
+            },
+          },
+          "type": "html",
+          "value": "</code>",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 35,
+          "line": 27,
+          "offset": 253,
+        },
+        "start": {
+          "column": 1,
+          "line": 27,
+          "offset": 219,
+        },
+      },
+      "type": "paragraph",
+    },
+    {
+      "lang": "js",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 31,
+          "offset": 282,
+        },
+        "start": {
+          "column": 1,
+          "line": 29,
+          "offset": 255,
+        },
+      },
+      "type": "code",
+      "value": "// more test code",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 11,
+              "line": 34,
+              "offset": 295,
+            },
+            "start": {
+              "column": 3,
+              "line": 34,
+              "offset": 287,
+            },
+          },
+          "type": "text",
+          "value": "--seed--",
+        },
+      ],
+      "depth": 1,
+      "position": {
+        "end": {
+          "column": 11,
+          "line": 34,
+          "offset": 295,
+        },
+        "start": {
+          "column": 1,
+          "line": 34,
+          "offset": 285,
+        },
+      },
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 21,
+              "line": 36,
+              "offset": 317,
+            },
+            "start": {
+              "column": 4,
+              "line": 36,
+              "offset": 300,
+            },
+          },
+          "type": "text",
+          "value": "--seed-contents--",
+        },
+      ],
+      "depth": 2,
+      "position": {
+        "end": {
+          "column": 21,
+          "line": 36,
+          "offset": 317,
+        },
+        "start": {
+          "column": 1,
+          "line": 36,
+          "offset": 297,
+        },
+      },
+      "type": "heading",
+    },
+    {
+      "lang": "html",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 43,
+          "offset": 364,
+        },
+        "start": {
+          "column": 1,
+          "line": 38,
+          "offset": 319,
+        },
+      },
+      "type": "code",
+      "value": "<html>
+  <body>
+  </body>
+</html>",
+    },
+    {
+      "lang": "css",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 49,
+          "offset": 406,
+        },
+        "start": {
+          "column": 1,
+          "line": 45,
+          "offset": 366,
+        },
+      },
+      "type": "code",
+      "value": "body {
+  background: green;
+}",
+    },
+    {
+      "children": [
+        {
+          "alt": "custom-name",
+          "position": {
+            "end": {
+              "column": 17,
+              "line": 51,
+              "offset": 424,
+            },
+            "start": {
+              "column": 1,
+              "line": 51,
+              "offset": 408,
+            },
+          },
+          "title": null,
+          "type": "image",
+          "url": "",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 17,
+          "line": 51,
+          "offset": 424,
+        },
+        "start": {
+          "column": 1,
+          "line": 51,
+          "offset": 408,
+        },
+      },
+      "type": "paragraph",
+    },
+    {
+      "lang": "js",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 55,
+          "offset": 448,
+        },
+        "start": {
+          "column": 1,
+          "line": 53,
+          "offset": 426,
+        },
+      },
+      "type": "code",
+      "value": "var x = 'y';",
+    },
+    {
+      "lang": "js",
+      "meta": null,
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 6,
+          "offset": 125,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "code",
+      "value": "for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  // imported from script.md
+}",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 1,
+      "line": 58,
+      "offset": 476,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;

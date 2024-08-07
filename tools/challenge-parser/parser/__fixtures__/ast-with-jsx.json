@@ -1,0 +1,1072 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--description--",
+          "position": {
+            "start": { "line": 1, "column": 3, "offset": 2 },
+            "end": { "line": 1, "column": 18, "offset": 17 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 1, "column": 1, "offset": 0 },
+        "end": { "line": 1, "column": 18, "offset": 17 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.",
+          "position": {
+            "start": { "line": 3, "column": 1, "offset": 19 },
+            "end": { "line": 3, "column": 107, "offset": 125 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 3, "column": 1, "offset": 19 },
+        "end": { "line": 3, "column": 107, "offset": 125 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "After the last ",
+          "position": {
+            "start": { "line": 5, "column": 1, "offset": 127 },
+            "end": { "line": 5, "column": 16, "offset": 142 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<code>",
+          "position": {
+            "start": { "line": 5, "column": 16, "offset": 142 },
+            "end": { "line": 5, "column": 22, "offset": 148 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": "h2",
+          "position": {
+            "start": { "line": 5, "column": 22, "offset": 148 },
+            "end": { "line": 5, "column": 24, "offset": 150 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</code>",
+          "position": {
+            "start": { "line": 5, "column": 24, "offset": 150 },
+            "end": { "line": 5, "column": 31, "offset": 157 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element of the second ",
+          "position": {
+            "start": { "line": 5, "column": 31, "offset": 157 },
+            "end": { "line": 5, "column": 54, "offset": 180 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "section",
+          "position": {
+            "start": { "line": 5, "column": 54, "offset": 180 },
+            "end": { "line": 5, "column": 63, "offset": 189 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element, add an ",
+          "position": {
+            "start": { "line": 5, "column": 63, "offset": 189 },
+            "end": { "line": 5, "column": 80, "offset": 206 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "h3",
+          "position": {
+            "start": { "line": 5, "column": 80, "offset": 206 },
+            "end": { "line": 5, "column": 84, "offset": 210 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element with the text ",
+          "position": {
+            "start": { "line": 5, "column": 84, "offset": 210 },
+            "end": { "line": 5, "column": 107, "offset": 233 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "Things cats love:",
+          "position": {
+            "start": { "line": 5, "column": 107, "offset": 233 },
+            "end": { "line": 5, "column": 126, "offset": 252 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": ".",
+          "position": {
+            "start": { "line": 5, "column": 126, "offset": 252 },
+            "end": { "line": 5, "column": 127, "offset": 253 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 5, "column": 1, "offset": 127 },
+        "end": { "line": 5, "column": 127, "offset": 253 },
+        "indent": []
+      }
+    },
+    {
+      "type": "jsx",
+      "value": "<blockquote>\n  <p>Some text in a blockquote</p>\n  <p>\n    Some text in a blockquote, with <code>code</code>\n  </p>\n</blockquote>",
+      "position": {
+        "start": { "line": 7, "column": 1, "offset": 255 },
+        "end": { "line": 12, "column": 14, "offset": 383 },
+        "indent": [1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--instructions--",
+          "position": {
+            "start": { "line": 14, "column": 3, "offset": 387 },
+            "end": { "line": 14, "column": 19, "offset": 403 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 14, "column": 1, "offset": 385 },
+        "end": { "line": 14, "column": 19, "offset": 403 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Do something with the ",
+          "position": {
+            "start": { "line": 16, "column": 1, "offset": 405 },
+            "end": { "line": 16, "column": 23, "offset": 427 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "code",
+          "position": {
+            "start": { "line": 16, "column": 23, "offset": 427 },
+            "end": { "line": 16, "column": 29, "offset": 433 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": ".",
+          "position": {
+            "start": { "line": 16, "column": 29, "offset": 433 },
+            "end": { "line": 16, "column": 30, "offset": 434 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 16, "column": 1, "offset": 405 },
+        "end": { "line": 16, "column": 30, "offset": 434 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "To test that adjacent tags are handled correctly:",
+          "position": {
+            "start": { "line": 18, "column": 1, "offset": 436 },
+            "end": { "line": 18, "column": 50, "offset": 485 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 18, "column": 1, "offset": 436 },
+        "end": { "line": 18, "column": 50, "offset": 485 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "a bit of ",
+          "position": {
+            "start": { "line": 20, "column": 1, "offset": 487 },
+            "end": { "line": 20, "column": 10, "offset": 496 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<code>",
+          "position": {
+            "start": { "line": 20, "column": 10, "offset": 496 },
+            "end": { "line": 20, "column": 16, "offset": 502 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": "code",
+          "position": {
+            "start": { "line": 20, "column": 16, "offset": 502 },
+            "end": { "line": 20, "column": 20, "offset": 506 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</code>",
+          "position": {
+            "start": { "line": 20, "column": 20, "offset": 506 },
+            "end": { "line": 20, "column": 27, "offset": 513 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " ",
+          "position": {
+            "start": { "line": 20, "column": 27, "offset": 513 },
+            "end": { "line": 20, "column": 28, "offset": 514 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<tag>",
+          "position": {
+            "start": { "line": 20, "column": 28, "offset": 514 },
+            "end": { "line": 20, "column": 33, "offset": 519 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": "with more after a space",
+          "position": {
+            "start": { "line": 20, "column": 33, "offset": 519 },
+            "end": { "line": 20, "column": 56, "offset": 542 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</tag>",
+          "position": {
+            "start": { "line": 20, "column": 56, "offset": 542 },
+            "end": { "line": 20, "column": 62, "offset": 548 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " and another pair of ",
+          "position": {
+            "start": { "line": 20, "column": 62, "offset": 548 },
+            "end": { "line": 20, "column": 83, "offset": 569 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<strong>",
+          "position": {
+            "start": { "line": 20, "column": 83, "offset": 569 },
+            "end": { "line": 20, "column": 91, "offset": 577 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": "elements",
+          "position": {
+            "start": { "line": 20, "column": 91, "offset": 577 },
+            "end": { "line": 20, "column": 99, "offset": 585 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</strong>",
+          "position": {
+            "start": { "line": 20, "column": 99, "offset": 585 },
+            "end": { "line": 20, "column": 108, "offset": 594 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " ",
+          "position": {
+            "start": { "line": 20, "column": 108, "offset": 594 },
+            "end": { "line": 20, "column": 109, "offset": 595 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "<em>",
+          "position": {
+            "start": { "line": 20, "column": 109, "offset": 595 },
+            "end": { "line": 20, "column": 113, "offset": 599 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": "with a space",
+          "position": {
+            "start": { "line": 20, "column": 113, "offset": 599 },
+            "end": { "line": 20, "column": 125, "offset": 611 },
+            "indent": []
+          }
+        },
+        {
+          "type": "jsx",
+          "value": "</em>",
+          "position": {
+            "start": { "line": 20, "column": 125, "offset": 611 },
+            "end": { "line": 20, "column": 130, "offset": 616 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 20, "column": 1, "offset": 487 },
+        "end": { "line": 20, "column": 130, "offset": 616 },
+        "indent": []
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--hints--",
+          "position": {
+            "start": { "line": 22, "column": 3, "offset": 620 },
+            "end": { "line": 22, "column": 12, "offset": 629 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 22, "column": 1, "offset": 618 },
+        "end": { "line": 22, "column": 12, "offset": 629 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "test-id-1",
+          "label": "test-id-1",
+          "referenceType": "shortcut",
+          "alt": "test-id-1",
+          "position": {
+            "start": { "line": 24, "column": 1, "offset": 631 },
+            "end": { "line": 24, "column": 13, "offset": 643 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 24, "column": 1, "offset": 631 },
+        "end": { "line": 24, "column": 13, "offset": 643 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "The second ",
+          "position": {
+            "start": { "line": 26, "column": 1, "offset": 645 },
+            "end": { "line": 26, "column": 12, "offset": 656 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "section",
+          "position": {
+            "start": { "line": 26, "column": 12, "offset": 656 },
+            "end": { "line": 26, "column": 21, "offset": 665 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element appears to be missing or does not have both an opening and closing tag.",
+          "position": {
+            "start": { "line": 26, "column": 21, "offset": 665 },
+            "end": { "line": 26, "column": 101, "offset": 745 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 26, "column": 1, "offset": 645 },
+        "end": { "line": 26, "column": 101, "offset": 745 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "assert(\n  document.querySelectorAll('main > section')[1] &&\n    code.match(/\\<\\/section>/g).length == 2\n);",
+      "position": {
+        "start": { "line": 28, "column": 1, "offset": 747 },
+        "end": { "line": 33, "column": 4, "offset": 863 },
+        "indent": [1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "test-id-2",
+          "label": "test-id-2",
+          "referenceType": "shortcut",
+          "alt": "test-id-2",
+          "position": {
+            "start": { "line": 35, "column": 1, "offset": 865 },
+            "end": { "line": 35, "column": 13, "offset": 877 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 35, "column": 1, "offset": 865 },
+        "end": { "line": 35, "column": 13, "offset": 877 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "There should be an ",
+          "position": {
+            "start": { "line": 37, "column": 1, "offset": 879 },
+            "end": { "line": 37, "column": 20, "offset": 898 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "h3",
+          "position": {
+            "start": { "line": 37, "column": 20, "offset": 898 },
+            "end": { "line": 37, "column": 24, "offset": 902 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element right above the second ",
+          "position": {
+            "start": { "line": 37, "column": 24, "offset": 902 },
+            "end": { "line": 37, "column": 56, "offset": 934 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "section",
+          "position": {
+            "start": { "line": 37, "column": 56, "offset": 934 },
+            "end": { "line": 37, "column": 65, "offset": 943 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element's closing tag.",
+          "position": {
+            "start": { "line": 37, "column": 65, "offset": 943 },
+            "end": { "line": 37, "column": 88, "offset": 966 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 37, "column": 1, "offset": 879 },
+        "end": { "line": 37, "column": 88, "offset": 966 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "assert(\n  document.querySelectorAll('main > section')[1].lastElementChild.nodeName ===\n    'H3'\n);",
+      "position": {
+        "start": { "line": 39, "column": 1, "offset": 968 },
+        "end": { "line": 44, "column": 4, "offset": 1076 },
+        "indent": [1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "test-id-3",
+          "label": "test-id-3",
+          "referenceType": "shortcut",
+          "alt": "test-id-3",
+          "position": {
+            "start": { "line": 46, "column": 1, "offset": 1078 },
+            "end": { "line": 46, "column": 13, "offset": 1090 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 46, "column": 1, "offset": 1078 },
+        "end": { "line": 46, "column": 13, "offset": 1090 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "The ",
+          "position": {
+            "start": { "line": 48, "column": 1, "offset": 1092 },
+            "end": { "line": 48, "column": 5, "offset": 1096 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "h3",
+          "position": {
+            "start": { "line": 48, "column": 5, "offset": 1096 },
+            "end": { "line": 48, "column": 9, "offset": 1100 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element right above the second ",
+          "position": {
+            "start": { "line": 48, "column": 9, "offset": 1100 },
+            "end": { "line": 48, "column": 41, "offset": 1132 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "section",
+          "position": {
+            "start": { "line": 48, "column": 41, "offset": 1132 },
+            "end": { "line": 48, "column": 50, "offset": 1141 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element's closing tag should have the text ",
+          "position": {
+            "start": { "line": 48, "column": 50, "offset": 1141 },
+            "end": { "line": 48, "column": 94, "offset": 1185 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "Things cats love:",
+          "position": {
+            "start": { "line": 48, "column": 94, "offset": 1185 },
+            "end": { "line": 48, "column": 113, "offset": 1204 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": ". Make sure to include the colon at the end of the text.",
+          "position": {
+            "start": { "line": 48, "column": 113, "offset": 1204 },
+            "end": { "line": 48, "column": 169, "offset": 1260 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 48, "column": 1, "offset": 1092 },
+        "end": { "line": 48, "column": 169, "offset": 1260 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "assert(\n  document\n    .querySelectorAll('main > section')[1]\n    .lastElementChild.innerText.toLowerCase()\n    .replace(/\\s+/g, ' ') === 'things cats love:'\n);",
+      "position": {
+        "start": { "line": 50, "column": 1, "offset": 1262 },
+        "end": { "line": 57, "column": 4, "offset": 1432 },
+        "indent": [1, 1, 1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "test-id-4",
+          "label": "test-id-4",
+          "referenceType": "shortcut",
+          "alt": "test-id-4",
+          "position": {
+            "start": { "line": 59, "column": 1, "offset": 1434 },
+            "end": { "line": 59, "column": 13, "offset": 1446 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 59, "column": 1, "offset": 1434 },
+        "end": { "line": 59, "column": 13, "offset": 1446 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "There should be an ",
+          "position": {
+            "start": { "line": 61, "column": 1, "offset": 1448 },
+            "end": { "line": 61, "column": 20, "offset": 1467 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "h2",
+          "position": {
+            "start": { "line": 61, "column": 20, "offset": 1467 },
+            "end": { "line": 61, "column": 24, "offset": 1471 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element with the text ",
+          "position": {
+            "start": { "line": 61, "column": 24, "offset": 1471 },
+            "end": { "line": 61, "column": 47, "offset": 1494 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "Cat Lists",
+          "position": {
+            "start": { "line": 61, "column": 47, "offset": 1494 },
+            "end": { "line": 61, "column": 58, "offset": 1505 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " above the last ",
+          "position": {
+            "start": { "line": 61, "column": 58, "offset": 1505 },
+            "end": { "line": 61, "column": 74, "offset": 1521 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "h3",
+          "position": {
+            "start": { "line": 61, "column": 74, "offset": 1521 },
+            "end": { "line": 61, "column": 78, "offset": 1525 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element that is nested in the last ",
+          "position": {
+            "start": { "line": 61, "column": 78, "offset": 1525 },
+            "end": { "line": 61, "column": 114, "offset": 1561 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "section",
+          "position": {
+            "start": { "line": 61, "column": 114, "offset": 1561 },
+            "end": { "line": 61, "column": 123, "offset": 1570 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element'. You may have accidentally deleted the ",
+          "position": {
+            "start": { "line": 61, "column": 123, "offset": 1570 },
+            "end": { "line": 61, "column": 172, "offset": 1619 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "h2",
+          "position": {
+            "start": { "line": 61, "column": 172, "offset": 1619 },
+            "end": { "line": 61, "column": 176, "offset": 1623 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " element.",
+          "position": {
+            "start": { "line": 61, "column": 176, "offset": 1623 },
+            "end": { "line": 61, "column": 185, "offset": 1632 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 61, "column": 1, "offset": 1448 },
+        "end": { "line": 61, "column": 185, "offset": 1632 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]\n  .lastElementChild;\nassert(\n  secondSectionLastElemNode.nodeName === 'H3' &&\n    secondSectionLastElemNode.previousElementSibling.innerText\n      .toLowerCase()\n      .replace(/\\s+/g, ' ') === 'cat lists'\n);",
+      "position": {
+        "start": { "line": 63, "column": 1, "offset": 1634 },
+        "end": { "line": 72, "column": 4, "offset": 1933 },
+        "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--seed--",
+          "position": {
+            "start": { "line": 74, "column": 3, "offset": 1937 },
+            "end": { "line": 74, "column": 11, "offset": 1945 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 74, "column": 1, "offset": 1935 },
+        "end": { "line": 74, "column": 11, "offset": 1945 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "html-key",
+          "label": "html-key",
+          "referenceType": "shortcut",
+          "alt": "html-key",
+          "position": {
+            "start": { "line": 76, "column": 1, "offset": 1947 },
+            "end": { "line": 76, "column": 12, "offset": 1958 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 76, "column": 1, "offset": 1947 },
+        "end": { "line": 76, "column": 12, "offset": 1958 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "html",
+      "meta": null,
+      "value": "<html>\n  <body>\n    <h1>CatPhotoApp</h1>\n    <main>\n      <section>\n        <h2>Cat Photos</h2>\n        <!-- TODO: Add link to cat photos -->\n        <p>\n          Click here to view more\n          <a target=\"_blank\" href=\"https://www.freecodecamp.org/cat-photos\"\n            >cat photos</a\n          >.\n        </p>\n        <a href=\"https://www.freecodecamp.org/cat-photos\"\n          ><img\n            src=\"https://bit.ly/fcc-relaxing-cat\"\n            alt=\"A cute orange cat lying on its back.\"\n        /></a>\n      </section>\n      --fcc-editable-region--\n      <section>\n        <h2>Cat Lists</h2>\n      </section>\n      --fcc-editable-region--\n    </main>\n  </body>\n</html>",
+      "position": {
+        "start": { "line": 78, "column": 1, "offset": 1960 },
+        "end": { "line": 106, "column": 4, "offset": 2649 },
+        "indent": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "type": "code",
+      "lang": "css",
+      "meta": null,
+      "value": "body {\n  background: white;\n}\n\nh1 {\n  font-size: 20px;\n}\n--fcc-editable-region--\n\n--fcc-editable-region--\n\na {\n  color: green;\n}",
+      "position": {
+        "start": { "line": 108, "column": 1, "offset": 2651 },
+        "end": { "line": 123, "column": 4, "offset": 2790 },
+        "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "final-key",
+          "label": "final-key",
+          "referenceType": "shortcut",
+          "alt": "final-key",
+          "position": {
+            "start": { "line": 125, "column": 1, "offset": 2792 },
+            "end": { "line": 125, "column": 13, "offset": 2804 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 125, "column": 1, "offset": 2792 },
+        "end": { "line": 125, "column": 13, "offset": 2804 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "var x = 'y';",
+      "position": {
+        "start": { "line": 127, "column": 1, "offset": 2806 },
+        "end": { "line": 129, "column": 4, "offset": 2828 },
+        "indent": [1, 1]
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--solutions--",
+          "position": {
+            "start": { "line": 131, "column": 3, "offset": 2832 },
+            "end": { "line": 131, "column": 15, "offset": 2844 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 131, "column": 1, "offset": 2830 },
+        "end": { "line": 131, "column": 15, "offset": 2844 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "html-key",
+          "label": "html-key",
+          "referenceType": "shortcut",
+          "alt": "html-key",
+          "position": {
+            "start": { "line": 133, "column": 1, "offset": 2846 },
+            "end": { "line": 133, "column": 12, "offset": 2857 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 133, "column": 1, "offset": 2846 },
+        "end": { "line": 133, "column": 12, "offset": 2857 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "html",
+      "meta": null,
+      "value": "<html>\n  <body>\n    <h1>CatPhotoApp</h1>\n    <main>\n      <section>\n        <h2>Cat Photos</h2>\n        <!-- TODO: Add link to cat photos -->\n        <p>\n          Click here to view more\n          <a target=\"_blank\" href=\"https://www.freecodecamp.org/cat-photos\"\n            >cat photos</a\n          >.\n        </p>\n        <a href=\"https://www.freecodecamp.org/cat-photos\"\n          ><img\n            src=\"https://bit.ly/fcc-relaxing-cat\"\n            alt=\"A cute orange cat lying on its back.\"\n        /></a>\n      </section>\n      <section>\n        <h2>Cat Lists</h2>\n      </section>\n    </main>\n  </body>\n</html>",
+      "position": {
+        "start": { "line": 135, "column": 1, "offset": 2859 },
+        "end": { "line": 161, "column": 4, "offset": 3488 },
+        "indent": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "type": "code",
+      "lang": "css",
+      "meta": null,
+      "value": "body {\n  background: white;\n}\n\nh1 {\n  font-size: 20px;\n}\n--fcc-editable-region--\n\n--fcc-editable-region--\n\na {\n  color: green;\n}",
+      "position": {
+        "start": { "line": 163, "column": 1, "offset": 3490 },
+        "end": { "line": 178, "column": 4, "offset": 3629 },
+        "indent": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "final-key",
+          "label": "final-key",
+          "referenceType": "shortcut",
+          "alt": "final-key",
+          "position": {
+            "start": { "line": 180, "column": 1, "offset": 3631 },
+            "end": { "line": 180, "column": 13, "offset": 3643 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 180, "column": 1, "offset": 3631 },
+        "end": { "line": 180, "column": 13, "offset": 3643 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "var x = 'y';",
+      "position": {
+        "start": { "line": 182, "column": 1, "offset": 3645 },
+        "end": { "line": 184, "column": 4, "offset": 3667 },
+        "indent": [1, 1]
+      }
+    }
+  ],
+  "position": {
+    "start": { "line": 1, "column": 1, "offset": 0 },
+    "end": { "line": 185, "column": 1, "offset": 3668 }
+  }
+}

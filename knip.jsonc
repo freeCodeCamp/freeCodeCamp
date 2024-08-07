@@ -1,0 +1,27 @@
+{
+  "$schema": "https://unpkg.com/knip@1/schema.json",
+
+  "ignore": "**/*.d.ts",
+
+  // Only workspaces with a configuration below are analyzed by Knip
+  "workspaces": {
+    ".": {
+      // No custom entry/project files in root workspace to not interfere with workspaces that are not set up yet
+      "entry": []
+    },
+    "client": {
+      "webpack": "webpack-workers.js",
+      "ignore": ["**/__mocks__"]
+    },
+    "client/plugins/*": {
+      "entry": "gatsby-node.js"
+    },
+    "tools/scripts/build": {
+      "entry": ["*.ts"]
+    }
+  },
+  "ignoreDependencies": [
+    // framerunner throws error if removed
+    "@babel/runtime"
+  ]
+}

@@ -1,0 +1,75 @@
+name: i18n - Upload Curriculum
+on:
+  workflow_dispatch:
+  schedule:
+    # runs every weekday at 11:30 AM UTC
+    - cron: '30 11 * * 1-5'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
+  CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
+  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
+
+jobs:
+  i18n-upload-curriculum-files:
+    name: Learn
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Generate Crowdin Config
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'generate-config'
+          PROJECT_NAME: 'curriculum'
+
+      - name: Crowdin Upload
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_sources: true
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
+
+          # downloads
+          download_translations: false
+
+          # pull-request
+          create_pull_request: false
+
+          # global options
+          config: './crowdin-config.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          # dryrun_action: true
+
+      - name: Remove deleted files
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'remove-deleted-files'
+          FILE_PATHS: '["curriculum/challenges/english", "curriculum/dictionaries/english"]'
+
+      - name: Hide Non-Translated Strings
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'hide-curriculum-strings'
+
+      - name: Hide a String
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'hide-string'
+          FILE_NAME: 'basic-html-and-html5/nest-an-anchor-element-within-a-paragraph.md'
+          STRING_CONTENT: Here's a <a href="https://www.freecodecamp.org" target="_blank" mark="crwd-mark">link to www.freecodecamp.org</a> for you to follow.
+
+      - name: Unhide Title of Use && For a More Concise Conditional
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'unhide-string'
+          FILE_NAME: 'react/use--for-a-more-concise-conditional.md'
+          STRING_CONTENT: 'Use &amp;&amp; for a More Concise Conditional'

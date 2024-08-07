@@ -1,0 +1,21 @@
+{
+  "frontEnd": "isFrontEndCert",
+  "backEnd": "isBackEndCert",
+  "dataVis": "isDataVisCert",
+  "respWebDesign": "isRespWebDesignCert",
+  "frontEndLibs": "isFrontEndLibsCert",
+  "dataVis2018": "is2018DataVisCert",
+  "jsAlgoDataStruct": "isJsAlgoDataStructCert",
+  "apisMicroservices": "isApisMicroservicesCert",
+  "infosecQa": "isInfosecQaCert",
+  "qaV7": "isQaCertV7",
+  "infosecV7": "isInfosecCertV7",
+  "sciCompPyV7": "isSciCompPyCertV7",
+  "dataAnalysisPyV7": "isDataAnalysisPyCertV7",
+  "machineLearningPyV7": "isMachineLearningPyCertV7",
+  "fullStack": "isFullStackCert",
+  "relationalDatabaseV8": "isRelationalDatabaseV8",
+  "collegeAlgebraPyV8": "isCollegeAlgebraPyCertV8",
+  "foundationalCSharpV8": "isFoundationalCSharpCertV8",
+  "isJsAlgoDataStructCertV8": "isJsAlgoDataStructCertV8"
+}

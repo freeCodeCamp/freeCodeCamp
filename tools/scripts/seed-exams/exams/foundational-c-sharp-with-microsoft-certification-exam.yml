@@ -1,0 +1,179 @@
+_id: 647e22d18acb466c97ccbef8
+title: Foundational C# with Microsoft Certification Exam
+numberOfQuestionsInExam: 5
+passingPercent: 75
+prerequisites:
+  - id: 647f85d407d29547b3bee1bb
+    title: Trophy - Write Your First Code Using C#
+  - id: 647f87dc07d29547b3bee1bf
+    title: Trophy - Create and Run Simple C# Console Applications
+  - id: 647f882207d29547b3bee1c0
+    title: Trophy - Add Logic to C# Console Applications
+  - id: 647f867a07d29547b3bee1bc
+    title: Trophy - Work with Variable Data in C# Console Applications
+  - id: 647f877f07d29547b3bee1be
+    title: Trophy - Create Methods in C# Console Applications
+  - id: 647f86ff07d29547b3bee1bd
+    title: Trophy - Debug C# Console Applications
+questions:
+  - id: vjxyn2ngzs
+    question: Which of the following is NOT a JavaScript data type?
+    wrongAnswers:
+      - id: 5y7xv9ppc1
+        answer: Integer
+      - id: 3x3j6ts2sb
+        answer: Boolean
+      - id: 9g4ix2tr1z
+        answer: Symbol
+      - id: n1rfllrvvy
+        answer: String
+      - id: 33oq8q3aio
+        answer: Bigint
+      - id: 7w1gaddxup
+        answer: Undefined
+      - id: ywgqr2wp6i
+        answer: Object
+    correctAnswers:
+      - id: ydmnlkjviv
+        answer: Array
+      - id: sy2trjs7p8
+        answer: Float
+  - id: lpmv63p5sv
+    question: What does the `NaN` keyword represent in JavaScript?
+    wrongAnswers:
+      - id: 3cxs9as4bt
+        answer: Not a Node
+      - id: axn8omt3zf
+        answer: Null and None
+      - id: 7ssyazt4zu
+        answer: No Assignment Named
+      - id: do4cm37x7y
+        answer: Negative Assertion Needed
+      - id: r2hbfnrodz
+        answer: Never Allow Null
+    correctAnswers:
+      - id: ah5kkj38s1
+        answer: Not a Number
+  - id: g2hudvmgoj
+    question: >-
+      Which method is used to remove the last element from an array in
+      JavaScript?
+    wrongAnswers:
+      - id: jrxd1hjv63
+        answer: '`shift()`'
+      - id: udc3kecrqn
+        answer: '`unshift()`'
+      - id: a12aysp2et
+        answer: '`slice()`'
+      - id: xljr0lkb0n
+        answer: '`splice()`'
+      - id: qe4z3kxgyz
+        answer: '`concat()`'
+    correctAnswers:
+      - id: gwddf01p89
+        answer: '`pop()`'
+  - id: 7tfdjebrnq
+    question: >-
+      What is the correct way to create a new instance of an object in
+      JavaScript?
+    wrongAnswers:
+      - id: 5bygwpaz4d
+        answer: '`Object.create(MyObject);`'
+      - id: h5s3304gbl
+        answer: '`MyObject.create();`'
+      - id: mdsjsjpi9t
+        answer: '`Object.new(MyObject);`'
+      - id: 3o8otd8j9h
+        answer: '`MyObject.new();`'
+      - id: h4ozml27zn
+        answer: '`MyObject.instance();`'
+        deprecated: true
+    correctAnswers:
+      - id: qbfhqmnedn
+        answer: '`new MyObject();`'
+  - id: hx0gxr5yjc
+    question: What is the purpose of the `querySelectorAll` method in JavaScript?
+    deprecated: true
+    wrongAnswers:
+      - id: 71iry42cy1
+        answer: To select all elements with a specific ID
+      - id: jjyk5e9e1l
+        answer: To select all elements of a specific tag name
+      - id: k5tpc2o2q8
+        answer: To select all child elements of a specific parent
+      - id: s3cm1tq4wt
+        answer: To select all elements with a specific attribute
+      - id: l1gtuheh87
+        answer: To select elements based on their position in the DOM
+    correctAnswers:
+      - id: e6xz6zdpxr
+        answer: To select all elements with a specific class name
+  - id: eigcj3e0mg
+    question: Which operator is used to compare two values for equality in JavaScript?
+    wrongAnswers:
+      - id: ltgdcoyonb
+        answer: '`!=`'
+      - id: f3szfel7x6
+        answer: '`<`'
+      - id: b0meyxhvtu
+        answer: '`>`'
+      - id: 31dd0pte4i
+        answer: '`<=`'
+      - id: 9u8bi7wqa2
+        answer: '`>=`'
+    correctAnswers:
+      - id: fmo9sof6v2
+        answer: '`==`'
+        deprecated: true
+      - id: tl6eo06r4x
+        answer: '`===`'
+  - id: l5f2beg2ih
+    question: >-
+      Which of the following statements is used to terminate a loop in
+      JavaScript?
+    wrongAnswers:
+      - id: kqi1fg8vtm
+        answer: stop
+      - id: a2clf7fmyx
+        answer: exit
+      - id: v58wx865e7
+        answer: return
+      - id: 5mgeaetnf0
+        answer: halt
+      - id: 2u73kyry6o
+        answer: skip
+    correctAnswers:
+      - id: 7j046bkjmf
+        answer: break
+  - id: atuq2zwg4h
+    question: What is the correct syntax to define a function in JavaScript?
+    wrongAnswers:
+      - id: dusl68wx2o
+        answer: '`function myFunction {}`'
+      - id: dlwjt59a5s
+        answer: '`def myFunction():`'
+      - id: 98p8ai27ko
+        answer: '`function = myFunction {}`'
+      - id: 7ciq8sood9
+        answer: '`function myFunction():`'
+    correctAnswers:
+      - id: wc3h7uc4zn
+        answer: '`function myFunction() {}`'
+  - id: 3ne0ju7yzq
+    question: >-
+      Which of the following methods is used to add a new element to the end of
+      an array in JavaScript?
+    wrongAnswers:
+      - id: fytb9yvbug
+        answer: shift()
+      - id: wnc31qc1ie
+        answer: unshift()
+      - id: 22mi7j64h5
+        answer: pop()
+      - id: da96ukvtol
+        answer: splice()
+      - id: gc6elnmtzw
+        answer: concat()
+    correctAnswers:
+      - id: pymbxhyn12
+        answer: push()

@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "mongodb",
+    "allowExtendedOperators": true
+  },
+  "mail": {
+    "name": "mail",
+    "connector": "mail"
+  }
+}

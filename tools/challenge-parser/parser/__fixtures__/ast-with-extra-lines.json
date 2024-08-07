@@ -1,0 +1,95 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--seed--",
+          "position": {
+            "start": { "line": 1, "column": 3, "offset": 2 },
+            "end": { "line": 1, "column": 11, "offset": 10 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 1, "column": 1, "offset": 0 },
+        "end": { "line": 1, "column": 11, "offset": 10 }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "text",
+          "value": "--seed-contents--",
+          "position": {
+            "start": { "line": 3, "column": 4, "offset": 15 },
+            "end": { "line": 3, "column": 21, "offset": 32 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 3, "column": 1, "offset": 12 },
+        "end": { "line": 3, "column": 21, "offset": 32 }
+      }
+    },
+    {
+      "type": "code",
+      "lang": "html",
+      "meta": null,
+      "value": "<html>\n  <body>\n  </body>\n</html>",
+      "position": {
+        "start": { "line": 5, "column": 1, "offset": 34 },
+        "end": { "line": 10, "column": 4, "offset": 79 }
+      }
+    },
+    {
+      "type": "leafDirective",
+      "name": "id",
+      "attributes": { "id": "key-for-css" },
+      "children": [],
+      "position": {
+        "start": { "line": 11, "column": 1, "offset": 80 },
+        "end": { "line": 11, "column": 19, "offset": 98 }
+      }
+    },
+    {
+      "type": "code",
+      "lang": "css",
+      "meta": null,
+      "value": "body {\n  background: green;\n}",
+      "position": {
+        "start": { "line": 15, "column": 1, "offset": 102 },
+        "end": { "line": 19, "column": 4, "offset": 142 }
+      }
+    },
+    {
+      "type": "leafDirective",
+      "name": "id",
+      "attributes": { "id": "key-for-js" },
+      "children": [],
+      "position": {
+        "start": { "line": 24, "column": 1, "offset": 147 },
+        "end": { "line": 24, "column": 18, "offset": 164 }
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "var x = 'y';",
+      "position": {
+        "start": { "line": 25, "column": 1, "offset": 165 },
+        "end": { "line": 27, "column": 4, "offset": 187 }
+      }
+    }
+  ],
+  "position": {
+    "start": { "line": 1, "column": 1, "offset": 0 },
+    "end": { "line": 28, "column": 1, "offset": 188 }
+  }
+}

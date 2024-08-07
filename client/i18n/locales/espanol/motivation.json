@@ -1,0 +1,286 @@
+{
+  "compliments": [
+    "No hay plan B para la pasión!",
+    "¡Hasta lo más alto!",
+    "El Nirvana está llegando, el portal místico espera",
+    "¡Haz que llueva!",
+    "Eso no fue volar. Eso fue caer con estilo",
+    "¡Siente la velocidad!",
+    "¡Tienes agallas!",
+    "¡Al infinito, y más allá!",
+    "¡Otra más!",
+    "¡Hacia adelante!",
+    "¡Es el momento perfecto para ser histérico!",
+    "¡Objectivo destruido!",
+    "¡Nunca bajes la guardia!",
+    "¡Récord de juego!",
+    "¡Eres más fuerte de lo que crees!",
+    "¡Ríe y el mundo reirá contigo!",
+    "¿Nivel de poder? ¡Supera los 9000!",
+    "Programa mucho y prospera",
+    "¡La tribuna se enloquece!",
+    "¡Una para los Récords Guinness!",
+    "¡Victoria perfecta!",
+    "¡Tienes una cita con el destino!",
+    "¡Ultra eficiente!",
+    "¡Tienes el toque!",
+    "¡Estás en llamas!",
+    "¡Al batimóvil!",
+    "¡Eres un mago, Harry!",
+    "¡Eres un jugador estrella!",
+    "¡Te felicito!",
+    "¡Más rápido que la vista!",
+    "¡La estás rompiendo!",
+    "¿Qué clase de brujería es esta?",
+    "¡El mundo lo festeja!",
+    "¡Así se hace!",
+    "¡Eres lo máximo!",
+    "¡Guauuuu!",
+    "¡Sabíamos que lo lograrías!",
+    "¡Súper combo!",
+    "¡Eres una estrella fugaz!",
+    "¡Eres imparable!",
+    "¡Supercalifragilísticoespialidoso!",
+    "¡Vas por la vereda del sol!",
+    "¡Dale que vas!",
+    "¡Fuera de serie!",
+    "¡La cuchara no existe, Neo!",
+    "¡Con el volumen a 11!",
+    "Velocidad de escape confirmada.",
+    "¡Haces ver esto fácil!",
+    "¡Aprobado con honores!",
+    "¡Lo tienes!",
+    "¡A conquistar el mundo!",
+    "Está vivo. ¡Está vivo!",
+    "¡Estallido supersónico!",
+    "¡En tu cara, código!",
+    "¡Corre como el viento!",
+    "¡Legen... aguarda... dario!",
+    "¡Velocidad ridícula!",
+    "¡Triunfo superlativo!",
+    "Un bucle para gobernarlos a todos.",
+    "¡Por el poder de Grayskull!",
+    "¡Lo hiciste!",
+    "Reclama la propiedad de tus sueños!",
+    "¡Asalta ese castillo!",
+    "¡Jaque mate!",
+    "¡Con calma y a codificar!",
+    "¡Incluso Grumpy Cat lo aprueba!",
+    "¡Justo en el blanco!",
+    "¡Ovación de pie!",
+    "¡Buena esa!",
+    "¡Excelente!",
+    "¡Hasta la vista, desafío!",
+    "Thundercats, ¡guooooo!",
+    "¡Bingo!",
+    "Tengo un poder. Nunca me rindo.",
+    "¡Enciende los motores!",
+    "¡Pikachu te elige a ti!",
+    "¡Esto es pan comido!",
+    "¡A buen paso dale prisa!",
+    "¡No contaban con tu astucia!",
+    "¡Prístina Luna, dame el poder! "
+  ],
+  "motivationalQuotes": [
+    {
+      "quote": "Confía en el tiempo, que suele dar dulces salidas a muchas amargas dificultades.",
+      "author": "Miguel de Cervantes Saavedra"
+    },
+    {
+      "quote": "El pasado puede doler, pero según lo veas puedes huir de él o aprender de él",
+      "author": "Rafiki - El Rey León"
+    },
+    {
+      "quote": "El trabajo duro no vale nada para los que no creen en sí mismos",
+      "author": "Naruto"
+    },
+    {
+      "quote": "La senda de la virtud es muy estrecha y el camino del vicio ancho y espacioso.",
+      "author": "Miguel de Cervantes Saavedra"
+    },
+    {
+      "quote": "El hombre bien preparado para la lucha ya ha conseguido medio triunfo.",
+      "author": "Miguel de Cervantes Saavedra"
+    },
+    {
+      "quote": "Una persona que nunca cometió un error nunca intentó nada nuevo.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "No hay nada imposible para quien lo intenta.",
+      "author": "Alejandro Magno"
+    },
+    {
+      "quote": "Seguir cuando crees que no puedes más, es lo que te hace diferente a los demás",
+      "author": "Rocky Balboa"
+    },
+    {
+      "quote": "Lo intentaste. Fracasaste. No importa. Inténtalo de nuevo. Fracasa otra vez. Fracasa mejor",
+      "author": "Samuel Beckett"
+    },
+    {
+      "quote": "La vida no nos da un propósito. Nosotros le damos propósito a la vida",
+      "author": "Flash - The Flash"
+    },
+    {
+      "quote": "El mundo es tu ostra. Depende de ti encontrar las perlas",
+      "author": "Chris Gardner"
+    },
+    {
+      "quote": "La victoria se consigue apelando a la inteligencia, nunca por pura fuerza.",
+      "author": "Ludwig von Mises"
+    },
+    {
+      "quote": "Todo es imposible hasta que alguien lo hace",
+      "author": "Batman"
+    },
+    {
+      "quote": "Empieza donde estás",
+      "author": "Chris Gardner"
+    },
+    {
+      "quote": "La palabra imposible no está en mi diccionario",
+      "author": "Napoleón Bonaparte"
+    },
+    {
+      "quote": "El mundo cambia con tu ejemplo no con tu opinión",
+      "author": "Paulo Coelho"
+    },
+    {
+      "quote": "La acción es la clave fundamental para todo éxito.",
+      "author": "Pablo Picasso"
+    },
+    {
+      "quote": "Es tu responsabilidad perseguir lo que importa",
+      "author": "Chris Gardner"
+    },
+    {
+      "quote": "Trabaja duro en silencio, que el éxito sea tu ruido.",
+      "author": "Frank Ocean"
+    },
+    {
+      "quote": "No importa lo lento que vayas, siempre y cuando no te detengas.",
+      "author": "Confucio"
+    },
+    {
+      "quote": "La victoria pertenece al más perseverante",
+      "author": "Napoleón Bonaparte"
+    },
+    {
+      "quote": "La victoria se consigue apelando a la inteligencia, nunca por pura fuerza.",
+      "author": "Ludwig von Mises"
+    },
+    {
+      "quote": "Seguir cuando crees que no puedes más, es lo que te hace diferente a los demás.",
+      "author": "Rocky Balboa"
+    },
+    {
+      "quote": "El hombre bien preparado para la lucha ya ha conseguido medio triunfo.",
+      "author": "Miguel de Cervantes Saavedra"
+    },
+    {
+      "quote": "Lo intentaste. Fracasaste. No importa. Inténtalo de nuevo. Fracasa otra vez. Fracasa mejor.",
+      "author": "Samuel Beckett"
+    },
+    {
+      "quote": "El mundo cambia con tu ejemplo no con tu opinión",
+      "author": "Paulo Coelho"
+    },
+    {
+      "quote": "Una persona que nunca cometió un error nunca intento nada nuevo.",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "Queda prohibido no sonreír a los problemas, no luchar por lo que quieres, abandonarlo todo por miedo, no convertir en realidad tus sueños.",
+      "author": "Pablo Neruda"
+    },
+    {
+      "quote": "Cuando creíamos que teníamos todas las respuestas, de pronto, cambiaron todas las preguntas.",
+      "author": "Mario Benedetti"
+    },
+    {
+      "quote": "No dejes que alguien defina tus límites sólo por el lugar de donde vienes. Tu único límite es tu alma",
+      "author": "Chef Gusteau - Ratatouille"
+    },
+    {
+      "quote": "La gloria no consiste en no caer nunca, sino más bien en levantarse las veces que sea necesario.",
+      "author": "Mario Benedetti"
+    },
+    {
+      "quote": "Aprender a dudar es aprender a pensar.",
+      "author": "Octavio Paz"
+    },
+    {
+      "quote": "Enfrenta los obstáculos a medida que se presenten, no pierdas energía temiendo lo que pueda haber en el futuro.",
+      "author": "Isabel Allende"
+    },
+    {
+      "quote": "La gente que no puede hacer algo por sí misma, quiere decirte que no puedes hacerlo. Si quieres algo, ve a buscarlo. Punto",
+      "author": "Chris Gardner"
+    },
+    {
+      "quote": "La vida es como un viaje sin meta. Lo que cuenta es el camino.",
+      "author": "Isabel Allende"
+    },
+    {
+      "quote": "Sin el Conocimiento, la Habilidad no puede ser enfocada. Sin habilidad, la fuerza no puede ser aplicada y sin fuerza, el conocimiento no puede ser aplicado.",
+      "author": "Alejandro Magno"
+    },
+    {
+      "quote": "La lógica te llevará desde A hasta B. La imaginación te llevará a cualquier parte",
+      "author": "Albert Einstein"
+    },
+    {
+      "quote": "No fracasé en la prueba. Encontré 100 formas de hacerla mal",
+      "author": "Benjamin Franklin"
+    },
+    {
+      "quote": "Si haces lo que siempre has hecho, llegarás donde siempre has llegado",
+      "author": "Tony Robbins"
+    },
+    {
+      "quote": "La mejor preparación para mañana es hacer lo mejor que puedas hoy",
+      "author": "H. Jackson Brown, Jr."
+    },
+    {
+      "quote": "El éxito es ir de fracaso en fracaso sin perder el entusiasmo",
+      "author": "Winston Churchill"
+    },
+    {
+      "quote": "No cuentes los días, haz que los días cuenten",
+      "author": "Muhammad Ali"
+    },
+    {
+      "quote": "Al final, cuando todo termine, lo único que importa es lo que has hecho.",
+      "author": "Alejandro Magno"
+    },
+    {
+      "quote": "La acción es la llave fundamental de todo éxito",
+      "author": "Pablo Picasso"
+    },
+    {
+      "quote": "La perfección no es alcanzable pero si la perseguimmos podemos conseguir la excelencia",
+      "author": "Vince Lombardi"
+    },
+    {
+      "quote": "Si no das los pasos necesarios para hacerlos realidad, los sueños no son más que espejismos que se meten en tu cabeza",
+      "author": "Chris Gardner"
+    },
+    {
+      "quote": "Ahora veo que las circunstancias de nuestro nacimiento no importan. Es lo que hacemos con el regalo de la vida lo que nos define",
+      "author": "MewTwo - Pokemon"
+    },
+    {
+      "quote": "La excelencia no es un acto, es un hábito",
+      "author": "Aristóteles"
+    },
+    {
+      "quote": "La habilidad no es nada sin la oportunidad",
+      "author": "Napoleón Bonaparte"
+    },
+    {
+      "quote": "Creo que la suerte es la oportunidad que se encuentra con la preparación",
+      "author": "Scarlett Johansson"
+    }
+  ]
+}

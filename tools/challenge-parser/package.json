@@ -1,0 +1,59 @@
+{
+  "name": "@freecodecamp/challenge-parser",
+  "version": "0.0.1",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "hast-util-to-html": "7.1.3",
+    "js-yaml": "3.14.1",
+    "lodash": "4.17.21",
+    "mdast-builder": "1.1.1",
+    "mdast-util-directive": "1.0.1",
+    "mdast-util-gfm-strikethrough": "0.2.3",
+    "mdast-util-gfm-table": "0.1.6",
+    "mdast-util-to-hast": "9.1.2",
+    "mdast-util-to-markdown": "0.6.5",
+    "micromark-extension-gfm-strikethrough": "0.6.5",
+    "micromark-extension-gfm-table": "0.4.3",
+    "remark": "13.0.0",
+    "remark-directive": "1.0.1",
+    "remark-frontmatter": "3.0.0",
+    "remark-html": "13.0.2",
+    "remark-parse": "9.0.0",
+    "remark-stringify": "9.0.1",
+    "to-vfile": "5.0.3",
+    "unified": "7.1.0",
+    "unist-util-find": "1.0.2",
+    "unist-util-find-after": "3.0.0",
+    "unist-util-find-all-after": "3.0.2",
+    "unist-util-find-all-before": "3.0.1",
+    "unist-util-find-all-between": "2.1.0",
+    "unist-util-is": "4.1.0",
+    "unist-util-modify-children": "2.0.0",
+    "unist-util-position": "3.1.0",
+    "unist-util-remove": "2.1.0",
+    "unist-util-visit": "2.0.3",
+    "unist-util-visit-children": "1.1.4"
+  },
+  "devDependencies": {
+    "unist-util-select": "3.0.4"
+  }
+}

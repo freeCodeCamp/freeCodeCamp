@@ -1,0 +1,11 @@
+client/.cache
+client/public
+.env
+.git
+.gitignore
+.dockerignore
+docker/web/Dockerfile
+docker/api/Dockerfile
+**/*docker-compose*
+**/node_modules
+.eslintcache

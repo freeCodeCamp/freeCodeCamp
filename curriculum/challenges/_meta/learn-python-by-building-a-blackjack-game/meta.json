@@ -1,0 +1,32 @@
+{
+  "name": "Learn Python by Building a Blackjack Game",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-python-by-building-a-blackjack-game",
+  "helpCategory": "Python",
+  "order": 0,
+  "superBlock": "upcoming-python",
+  "challengeOrder": [
+    {
+      "id": "5daa813381b9e3db6c126b43",
+      "title": "Step 1"
+    },
+    {
+      "id": "64a5229b99ff0e8250cd9a72",
+      "title": "Step 2"
+    },
+    {
+      "id": "64b163c20e59cbd4a64940b0",
+      "title": "Step 3"
+    },
+    {
+      "id": "64b171849f925b0773aa434c",
+      "title": "Step 4"
+    },
+    {
+      "id": "65df3afd233057f6a620a860",
+      "title": "Step 5"
+    }
+  ]
+}

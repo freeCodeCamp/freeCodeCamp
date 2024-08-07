@@ -1,0 +1,134 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "mocha": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "plugins": ["no-only-tests", "filenames-simple"],
+  "globals": {
+    "Promise": true,
+    "window": true,
+    "$": true,
+    "ga": true,
+    "jQuery": true,
+    "router": true
+  },
+  "settings": {
+    "react": {
+      "version": "16.4.2"
+    },
+    "import/resolver": {
+      "typescript": true,
+      "node": true
+    }
+  },
+  "rules": {
+    "import/no-unresolved": [2, { "commonjs": true }],
+    "import/named": "error",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/order": "error",
+    "import/no-cycle": [2, { "maxDepth": 2 }],
+    "react/prop-types": "off",
+    "no-only-tests/no-only-tests": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "filenames-simple/naming-convention": ["warn"]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": [
+          "./client/tsconfig.json",
+          "./tsconfig.json",
+          "./api/tsconfig.json",
+          "./shared/tsconfig.json",
+          "./tools/client-plugins/browser-scripts/tsconfig.json",
+          "./e2e/tsconfig.json"
+        ]
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/typescript"
+      ],
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "import/no-unresolved": "off",
+        "import/named": 0,
+        "@typescript-eslint/naming-convention": "off"
+      }
+    },
+    {
+      "files": ["./client/**/*.test.[jt]s?(x)"],
+      "extends": [
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+      ],
+      "rules": { "import/named": 2 }
+    },
+    {
+      "files": ["e2e/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
+      }
+    },
+    {
+      "files": ["**/api-server/**/*", "**/404.*"],
+      "rules": {
+        "filenames-simple/naming-convention": "off"
+      }
+    },
+    {
+      "files": ["**/api/src/**/*.ts"],
+      "plugins": ["jsdoc"],
+      "extends": ["plugin:jsdoc/recommended-typescript-error"],
+      "rules": {
+        "jsdoc/require-jsdoc": [
+          "error",
+          {
+            "require": {
+              "ArrowFunctionExpression": true,
+              "ClassDeclaration": true,
+              "ClassExpression": true,
+              "FunctionDeclaration": true,
+              "FunctionExpression": true,
+              "MethodDefinition": true
+            },
+            "publicOnly": true
+          }
+        ],
+        "jsdoc/require-description-complete-sentence": "warn",
+        "jsdoc/tag-lines": "off"
+      }
+    }
+  ]
+}

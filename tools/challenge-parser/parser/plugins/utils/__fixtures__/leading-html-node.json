@@ -1,0 +1,119 @@
+{
+  "type": "paragraph",
+  "children": [
+    {
+      "type": "html",
+      "value": "<code>",
+      "position": {
+        "start": { "line": 3, "column": 1, "offset": 19 },
+        "end": { "line": 3, "column": 7, "offset": 25 },
+        "indent": []
+      }
+    },
+    {
+      "type": "text",
+      "value": " code in ",
+      "position": {
+        "start": { "line": 3, "column": 7, "offset": 25 },
+        "end": { "line": 3, "column": 16, "offset": 34 },
+        "indent": []
+      }
+    },
+    {
+      "type": "html",
+      "value": "</code>",
+      "position": {
+        "start": { "line": 3, "column": 16, "offset": 34 },
+        "end": { "line": 3, "column": 23, "offset": 41 },
+        "indent": []
+      }
+    },
+    {
+      "type": "text",
+      "value": " code tags ",
+      "position": {
+        "start": { "line": 3, "column": 23, "offset": 41 },
+        "end": { "line": 3, "column": 34, "offset": 52 },
+        "indent": []
+      }
+    },
+    {
+      "type": "emphasis",
+      "children": [
+        {
+          "type": "text",
+          "value": "emphasis",
+          "position": {
+            "start": { "line": 3, "column": 35, "offset": 53 },
+            "end": { "line": 3, "column": 43, "offset": 61 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 3, "column": 34, "offset": 52 },
+        "end": { "line": 3, "column": 44, "offset": 62 },
+        "indent": []
+      }
+    },
+    {
+      "type": "text",
+      "value": " followed by ",
+      "position": {
+        "start": { "line": 3, "column": 44, "offset": 62 },
+        "end": { "line": 3, "column": 57, "offset": 75 },
+        "indent": []
+      }
+    },
+    {
+      "type": "html",
+      "value": "<div>",
+      "position": {
+        "start": { "line": 3, "column": 57, "offset": 75 },
+        "end": { "line": 3, "column": 62, "offset": 80 },
+        "indent": []
+      }
+    },
+    {
+      "type": "html",
+      "value": "<span>",
+      "position": {
+        "start": { "line": 3, "column": 62, "offset": 80 },
+        "end": { "line": 3, "column": 68, "offset": 86 },
+        "indent": []
+      }
+    },
+    {
+      "type": "text",
+      "value": "some nested html ",
+      "position": {
+        "start": { "line": 3, "column": 68, "offset": 86 },
+        "end": { "line": 3, "column": 85, "offset": 103 },
+        "indent": []
+      }
+    },
+    {
+      "type": "html",
+      "value": "</span>",
+      "position": {
+        "start": { "line": 3, "column": 85, "offset": 103 },
+        "end": { "line": 3, "column": 92, "offset": 110 },
+        "indent": []
+      }
+    },
+    {
+      "type": "html",
+      "value": "</div>",
+      "position": {
+        "start": { "line": 3, "column": 92, "offset": 110 },
+        "end": { "line": 3, "column": 98, "offset": 116 },
+        "indent": []
+      }
+    }
+  ],
+  "position": {
+    "start": { "line": 3, "column": 1, "offset": 19 },
+    "end": { "line": 3, "column": 98, "offset": 116 },
+    "indent": []
+  }
+}
