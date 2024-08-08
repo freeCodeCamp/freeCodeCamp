@@ -127,7 +127,6 @@ interface EditorProperties {
   outputZoneTop: number;
   outputZoneId: string;
   descriptionNode?: HTMLDivElement;
-  outputNode?: HTMLDivElement;
   descriptionWidget?: editor.IContentWidget;
   outputWidget?: editor.IOverlayWidget;
 }
@@ -799,14 +798,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function createOutputNode(editor: editor.IStandaloneCodeEditor) {
-    if (dataRef.current.outputNode) return dataRef.current.outputNode;
+    if (lowerJawContainer) return lowerJawContainer;
     const outputNode = document.createElement('div');
     outputNode.classList.add('editor-lower-jaw');
     outputNode.setAttribute('id', 'editor-lower-jaw');
     outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     outputNode.style.width = `${getEditorContentWidth(editor)}px`;
     outputNode.style.top = getOutputZoneTop();
-    dataRef.current.outputNode = outputNode;
     setLowerJawContainer(outputNode);
     return outputNode;
   }
@@ -1231,7 +1229,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   useEffect(() => {
     const { model, insideEditDecId } = dataRef.current;
-    const lowerJawElement = dataRef.current.outputNode;
     const isChallengeComplete = challengeIsComplete();
     const range = model?.getDecorationRange(insideEditDecId);
     if (range && isChallengeComplete) {
@@ -1243,7 +1240,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       );
     }
-    dataRef.current.outputNode = lowerJawElement;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
 
