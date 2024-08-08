@@ -719,14 +719,15 @@ const Editor = (props: EditorProps): JSX.Element => {
   // the outputViewZone has actually changed.
   const updateOutputViewZone = (
     outputNode: HTMLDivElement,
-    editor: editor.IStandaloneCodeEditor
+    editor?: editor.IStandaloneCodeEditor
   ) => {
+    if (!editor) return;
     // make sure the overlayWidget has resized before using it to set the height
     outputNode.style.width = `${getEditorContentWidth(editor)}px`;
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
-    editor?.changeViewZones(changeAccessor => {
+    editor.changeViewZones(changeAccessor => {
       changeAccessor.removeZone(dataRef.current.outputZoneId);
       const viewZone = {
         afterLineNumber: getLastLineOfEditableRegion(),
@@ -1281,8 +1282,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         ? 'vs-custom'
         : editorSystemTheme;
 
-  const editor = dataRef.current.editor!;
-
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
@@ -1308,7 +1307,7 @@ const Editor = (props: EditorProps): JSX.Element => {
               tryToSubmitChallenge={tryToSubmitChallenge}
               isSignedIn={props.isSignedIn}
               updateContainer={() =>
-                updateOutputViewZone(lowerJawContainer, editor)
+                updateOutputViewZone(lowerJawContainer, dataRef.current.editor)
               }
             />
           </Provider>,
