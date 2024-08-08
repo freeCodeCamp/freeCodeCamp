@@ -188,8 +188,8 @@ async function postExamGenerateHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
-  try {
-    await this.prisma.newExamAttempt.create({
+  const { error, data: examAttempt } = await mapErr(
+    this.prisma.newExamAttempt.create({
       data: {
         user_id: user.id,
         exam_id: exam.id,
@@ -198,53 +198,75 @@ async function postExamGenerateHandler(
         questions: [],
         needs_retake: false
       }
-    });
-  } catch (e) {
+    })
+  );
+
+  if (error !== null) {
     void reply.code(500);
     return reply.send({
       code: CODE.ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT,
-      message: JSON.stringify(e)
+      message: JSON.stringify(error)
     });
   }
   // NOTE: Anything that goes wrong after this point needs to unwind the exam attempt.
 
   // Map generated exam to user exam (a.k.a. public exam information for user)
-  const userQuestions = generatedExam.questions.map(q => {
+  const userQuestionTypes = generatedExam.question_types.map(qt => {
     // Get matching question from `exam`, but remove `is_correct` from `exam.questions[].answers[]`
-    const matchingQuestion = exam.questions.find(
-      examQuestion => examQuestion.id === q.id
+    const matchingQuestionType = exam.question_types.find(
+      eqt => eqt.id === qt.id
     );
-    if (!matchingQuestion) {
-      throw new Error('Unreachable. Matching question should exist.');
+    if (!matchingQuestionType) {
+      throw new Error('Unreachable. Matching question type should exist.');
     }
 
-    const { answers, ...question } = matchingQuestion;
+    const { questions } = matchingQuestionType;
 
-    const userAnswers = q.answers.map(answerId => {
-      const matchingAnswer = answers.find(
-        examAnswer => examAnswer.id === answerId
+    const userQuestions = questions.map(q => {
+      const matchingQuestion = matchingQuestionType.questions.find(
+        eq => eq.id === q.id
       );
-
-      if (!matchingAnswer) {
-        throw new Error('Unreachable. Matching answer should exist.');
+      if (!matchingQuestion) {
+        throw new Error('Unreachable. Matching question should exist.');
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { is_correct, ...rest } = matchingAnswer;
-      return rest;
+      // Remove `is_correct` from question answers
+      const answers = matchingQuestion.answers.map(a => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { is_correct, ...answer } = a;
+        return answer;
+      });
+
+      return {
+        id: matchingQuestion.id,
+        audio: matchingQuestion.audio,
+        text: matchingQuestion.text,
+        deprecated: matchingQuestion.deprecated,
+        answers
+      };
     });
 
-    const userQuestion = {
-      ...question,
-      answers: userAnswers
+    const userQuestionType = {
+      type: matchingQuestionType.type,
+      questions: userQuestions,
+      id: matchingQuestionType.id,
+      text: matchingQuestionType.text
     };
-    return userQuestion;
+    return userQuestionType;
   });
 
+  const config = {
+    total_time: exam.config.total_time
+  };
+
   const userExam: UserExam = {
-    ...exam,
+    exam_id: exam.id,
+    name: exam.name,
+    attempt_id: examAttempt.id,
     generated_exam_id: generatedExam.id,
-    questions: userQuestions
+    accessibility_note: exam.accessibility_note,
+    config,
+    question_types: userQuestionTypes
   };
 
   return reply.send({

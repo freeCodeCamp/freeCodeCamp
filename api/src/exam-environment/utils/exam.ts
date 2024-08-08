@@ -6,6 +6,7 @@ import {
   NewExam,
   NewQuestion,
   NewQuestionType,
+  QuestionType,
   user
 } from '@prisma/client';
 
@@ -215,8 +216,11 @@ export enum CODE {
   EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED
 }
 
-export type UserExam = Omit<NewExam, 'questions'> & {
-  questions: (Omit<NewQuestion, 'answers'> & {
-    answers: Omit<NewAnswer, 'is_correct'>[];
+export type UserExam = Omit<NewExam, 'question_types' | 'config' | 'id'> & {
+  config: Omit<NewExam['config'], 'tags' | 'question_types'>;
+  question_types: (Omit<QuestionType, 'questions'> & {
+    questions: (Omit<NewQuestion, 'answers' | 'tags'> & {
+      answers: Omit<NewAnswer, 'is_correct'>[];
+    })[];
   })[];
-} & { generated_exam_id: string };
+} & { generated_exam_id: string; attempt_id: string; exam_id: string };

@@ -235,14 +235,14 @@ type NewTagConfig {
 }
 
 model NewExamAttempt {
-  id                String               @id @default(auto()) @map("_id") @db.ObjectId
+  id                String                    @id @default(auto()) @map("_id") @db.ObjectId
   /// Foriegn key to user
-  user_id           String               @db.ObjectId
+  user_id           String                    @db.ObjectId
   /// Foreign key to exam
-  exam_id           String               @db.ObjectId
+  exam_id           String                    @db.ObjectId
   /// Foreign key to generated exam id
-  generated_exam_id String               @db.ObjectId
-  questions         NewQuestionAttempt[]
+  generated_exam_id String                    @db.ObjectId
+  question_types    NewQuestionTypesAttempt[]
   /// Time exam was started as seconds since epoch
   start_time        Int
   /// Time exam was submitted as seconds since epoch
@@ -250,6 +250,11 @@ model NewExamAttempt {
   /// As attempt might not be submitted (disconnection or quit), field is optional
   submission_time   Int?
   needs_retake      Boolean
+}
+
+type NewQuestionTypesAttempt {
+  id        String               @db.ObjectId
+  questions NewQuestionAttempt[]
 }
 
 type NewQuestionAttempt {
@@ -260,8 +265,13 @@ type NewQuestionAttempt {
 }
 
 model GeneratedExam {
-  id        String              @id @default(auto()) @map("_id") @db.ObjectId
-  exam_id   String              @db.ObjectId
+  id             String                  @id @default(auto()) @map("_id") @db.ObjectId
+  exam_id        String                  @db.ObjectId
+  question_types GeneratedQuestionType[]
+}
+
+type GeneratedQuestionType {
+  id        String              @db.ObjectId
   questions GeneratedQuestion[]
 }
 
