@@ -63,9 +63,12 @@ async function loadBabel() {
 async function loadPresetEnv() {
   /* eslint-disable no-inline-comments */
   if (!presetEnv)
-    presetEnv = await import(
-      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-    );
+    presetEnv = [
+      await import(
+        /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+      ),
+      { targets: '> 0.4%, not dead' }
+    ];
   /* eslint-enable no-inline-comments */
 
   presetsJS = {
@@ -80,9 +83,12 @@ async function loadPresetReact() {
       /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
     );
   if (!presetEnv)
-    presetEnv = await import(
-      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-    );
+    presetEnv = [
+      await import(
+        /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+      ),
+      { targets: '> 0.4%, not dead' }
+    ];
   /* eslint-enable no-inline-comments */
   presetsJSX = {
     presets: [presetEnv, presetReact]

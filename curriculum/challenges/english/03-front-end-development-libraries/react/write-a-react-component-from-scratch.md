@@ -50,8 +50,8 @@ assert(document.getElementById('challenge-node').childNodes.length === 1);
 
 ```js
 assert(
-  MyComponent.toString().includes('MyComponent(props)') &&
-    MyComponent.toString().includes('_super.call(this, props)')
+  MyComponent.toString().includes('constructor(props)') &&
+    MyComponent.toString().includes('super(props)')
 );
 ```
 

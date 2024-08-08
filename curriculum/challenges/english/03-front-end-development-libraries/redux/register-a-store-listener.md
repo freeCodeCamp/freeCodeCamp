@@ -49,12 +49,6 @@ assert(store.getState() === count);
 
 # --seed--
 
-## --before-user-code--
-
-```js
-count = 0;
-```
-
 ## --seed-contents--
 
 ```js
