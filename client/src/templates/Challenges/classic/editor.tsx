@@ -10,7 +10,7 @@ import type {
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 import { Provider, connect, useStore } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
@@ -255,6 +255,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorProperties>({ ...initialData });
+  const [lowerJawContainer, setLowerJawContainer] =
+    React.useState<HTMLDivElement | null>(null);
 
   const submitChallengeDebounceRef = useRef(
     debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
@@ -713,40 +715,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
-  function createLowerJaw(
-    outputNode: HTMLDivElement,
-    editor: editor.IStandaloneCodeEditor
-  ) {
-    const { output } = props;
-    const isChallengeComplete = challengeIsComplete();
-
-    ReactDOM.render(
-      <Provider store={reduxStore}>
-        <LowerJaw
-          openHelpModal={props.openHelpModal}
-          openResetModal={props.openResetModal}
-          tryToExecuteChallenge={tryToExecuteChallenge}
-          hint={output[1]}
-          testsLength={props.tests.length}
-          attempts={attemptsRef.current}
-          challengeIsCompleted={isChallengeComplete}
-          tryToSubmitChallenge={tryToSubmitChallenge}
-          isSignedIn={props.isSignedIn}
-          updateContainer={() => updateOutputViewZone(outputNode, editor)}
-        />
-      </Provider>,
-      outputNode
-    );
-  }
-
-  const updateOutputZone = () => {
-    const editor = dataRef.current.editor;
-    if (!editor || !dataRef.current.outputNode) return;
-
-    const outputNode = dataRef.current.outputNode;
-    createLowerJaw(outputNode, editor);
-  };
-
   // TODO: there's a potential performance gain to be had by only updating when
   // the outputViewZone has actually changed.
   const updateOutputViewZone = (
@@ -838,6 +806,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     outputNode.style.width = `${getEditorContentWidth(editor)}px`;
     outputNode.style.top = getOutputZoneTop();
     dataRef.current.outputNode = outputNode;
+    setLowerJawContainer(outputNode);
     return outputNode;
   }
 
@@ -1129,7 +1098,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         getOutputZoneTop
       );
       editor.addOverlayWidget(dataRef.current.outputWidget);
-      editor.changeViewZones(updateOutputZone);
     }
 
     editor.onDidScrollChange(() => {
@@ -1157,7 +1125,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       // ask monaco to update regardless.
       redecorateEditableRegion();
       updateDescriptionZone();
-      updateOutputZone();
     });
   }
 
@@ -1276,7 +1243,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       );
     }
     dataRef.current.outputNode = lowerJawElement;
-    updateOutputZone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
 
@@ -1290,7 +1256,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
     if (hasEditableRegion()) {
       updateDescriptionZone();
-      updateOutputZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
@@ -1315,6 +1280,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       : theme === Themes.Default
         ? 'vs-custom'
         : editorSystemTheme;
+
+  const editor = dataRef.current.editor!;
+
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
@@ -1326,6 +1294,26 @@ const Editor = (props: EditorProps): JSX.Element => {
           theme={editorTheme}
         />
       </span>
+      {lowerJawContainer !== null &&
+        createPortal(
+          <Provider store={reduxStore}>
+            <LowerJaw
+              openHelpModal={props.openHelpModal}
+              openResetModal={props.openResetModal}
+              tryToExecuteChallenge={tryToExecuteChallenge}
+              hint={props.output[1]}
+              testsLength={props.tests.length}
+              attempts={attemptsRef.current}
+              challengeIsCompleted={challengeIsComplete()}
+              tryToSubmitChallenge={tryToSubmitChallenge}
+              isSignedIn={props.isSignedIn}
+              updateContainer={() =>
+                updateOutputViewZone(lowerJawContainer, editor)
+              }
+            />
+          </Provider>,
+          lowerJawContainer
+        )}
     </Suspense>
   );
 };
