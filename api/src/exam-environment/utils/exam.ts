@@ -213,7 +213,8 @@ export enum CODE {
   EXAM_ENVIRONMENT_EXAM_GENERATED,
   EXAM_ENVIRONMENT_EXAM_ATTEMPT_SUBMITTED,
   EXAM_ENVIRONMENT_SCREENSHOT_STORED,
-  EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED
+  EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED,
+  EXAM_ENVIRONMENT_GENERATED_EXAM_FOUND
 }
 
 export type UserExam = Omit<NewExam, 'question_types' | 'config' | 'id'> & {
@@ -223,4 +224,72 @@ export type UserExam = Omit<NewExam, 'question_types' | 'config' | 'id'> & {
       answers: Omit<NewAnswer, 'is_correct'>[];
     })[];
   })[];
-} & { generated_exam_id: string; attempt_id: string; exam_id: string };
+} & { generated_exam_id: string; exam_id: string };
+
+/**
+ * Takes the generated exam and the original exam, and creates the user-facing exam.
+ */
+export function createUserExam(
+  generatedExam: GeneratedExam,
+  exam: NewExam
+): UserExam {
+  // Map generated exam to user exam (a.k.a. public exam information for user)
+  const userQuestionTypes = generatedExam.question_types.map(qt => {
+    // Get matching question from `exam`, but remove `is_correct` from `exam.questions[].answers[]`
+    const matchingQuestionType = exam.question_types.find(
+      eqt => eqt.id === qt.id
+    );
+    if (!matchingQuestionType) {
+      throw new Error('Unreachable. Matching question type should exist.');
+    }
+
+    const { questions } = matchingQuestionType;
+
+    const userQuestions = questions.map(q => {
+      const matchingQuestion = matchingQuestionType.questions.find(
+        eq => eq.id === q.id
+      );
+      if (!matchingQuestion) {
+        throw new Error('Unreachable. Matching question should exist.');
+      }
+
+      // Remove `is_correct` from question answers
+      const answers = matchingQuestion.answers.map(a => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { is_correct, ...answer } = a;
+        return answer;
+      });
+
+      return {
+        id: matchingQuestion.id,
+        audio: matchingQuestion.audio,
+        text: matchingQuestion.text,
+        deprecated: matchingQuestion.deprecated,
+        answers
+      };
+    });
+
+    const userQuestionType = {
+      type: matchingQuestionType.type,
+      questions: userQuestions,
+      id: matchingQuestionType.id,
+      text: matchingQuestionType.text
+    };
+    return userQuestionType;
+  });
+
+  const config = {
+    total_time: exam.config.total_time
+  };
+
+  const userExam: UserExam = {
+    exam_id: exam.id,
+    name: exam.name,
+    generated_exam_id: generatedExam.id,
+    accessibility_note: exam.accessibility_note,
+    config,
+    question_types: userQuestionTypes
+  };
+
+  return userExam;
+}

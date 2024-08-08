@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 import * as schemas from '../schemas';
 import { mapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET } from '../../utils/env';
-import { CODE, generateExam, UserExam } from '../utils/exam';
+import { CODE, createUserExam, generateExam } from '../utils/exam';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -162,6 +162,44 @@ async function postExamGenerateHandler(
         code: CODE.EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
         message: 'User has completed exam too recently to retake.'
       });
+    } else {
+      // Camper has started an attempt, but not submitted it, and there is still time left to complete it.
+      // This is most likely to happen if the Camper's app closes and is reopened.
+      // Send the Camper back to the exam they were working on.
+      const { error, data: generatedExam } = await mapErr(
+        this.prisma.generatedExam.findFirst({
+          where: {
+            id: lastAttempt.generated_exam_id
+          }
+        })
+      );
+
+      if (error !== null) {
+        void reply.code(500);
+        return reply.send({
+          code: CODE.ERR_EXAM_ENVIRONMENT,
+          message: JSON.stringify(error)
+        });
+      }
+
+      // This should be unreachable
+      if (generatedExam === null) {
+        void reply.code(500);
+        return reply.send({
+          code: CODE.ERR_EXAM_ENVIRONMENT,
+          message: 'Generated exam not found.'
+        });
+      }
+
+      const userExam = createUserExam(generatedExam, exam);
+
+      return reply.send({
+        code: CODE.EXAM_ENVIRONMENT_GENERATED_EXAM_FOUND,
+        data: {
+          exam: userExam,
+          examAttempt: lastAttempt
+        }
+      });
     }
   }
 
@@ -210,69 +248,13 @@ async function postExamGenerateHandler(
   }
   // NOTE: Anything that goes wrong after this point needs to unwind the exam attempt.
 
-  // Map generated exam to user exam (a.k.a. public exam information for user)
-  const userQuestionTypes = generatedExam.question_types.map(qt => {
-    // Get matching question from `exam`, but remove `is_correct` from `exam.questions[].answers[]`
-    const matchingQuestionType = exam.question_types.find(
-      eqt => eqt.id === qt.id
-    );
-    if (!matchingQuestionType) {
-      throw new Error('Unreachable. Matching question type should exist.');
-    }
-
-    const { questions } = matchingQuestionType;
-
-    const userQuestions = questions.map(q => {
-      const matchingQuestion = matchingQuestionType.questions.find(
-        eq => eq.id === q.id
-      );
-      if (!matchingQuestion) {
-        throw new Error('Unreachable. Matching question should exist.');
-      }
-
-      // Remove `is_correct` from question answers
-      const answers = matchingQuestion.answers.map(a => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { is_correct, ...answer } = a;
-        return answer;
-      });
-
-      return {
-        id: matchingQuestion.id,
-        audio: matchingQuestion.audio,
-        text: matchingQuestion.text,
-        deprecated: matchingQuestion.deprecated,
-        answers
-      };
-    });
-
-    const userQuestionType = {
-      type: matchingQuestionType.type,
-      questions: userQuestions,
-      id: matchingQuestionType.id,
-      text: matchingQuestionType.text
-    };
-    return userQuestionType;
-  });
-
-  const config = {
-    total_time: exam.config.total_time
-  };
-
-  const userExam: UserExam = {
-    exam_id: exam.id,
-    name: exam.name,
-    attempt_id: examAttempt.id,
-    generated_exam_id: generatedExam.id,
-    accessibility_note: exam.accessibility_note,
-    config,
-    question_types: userQuestionTypes
-  };
+  const userExam = createUserExam(generatedExam, exam);
 
   return reply.send({
     code: CODE.EXAM_ENVIRONMENT_EXAM_GENERATED,
     data: {
-      exam: userExam
+      exam: userExam,
+      examAttempt
     }
   });
 }
