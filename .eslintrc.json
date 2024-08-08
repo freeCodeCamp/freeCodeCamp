@@ -102,7 +102,11 @@
       }
     },
     {
-      "files": ["**/api-server/**/*", "**/404.*"],
+      "files": [
+        "**/api-server/**/*",
+        "**/404.*",
+        "shared/migrations/versions/**/*"
+      ],
       "rules": {
         "filenames-simple/naming-convention": "off"
       }

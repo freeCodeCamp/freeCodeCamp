@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "Shaun Hamilton"
+  ],
+  "name": "normalizer",
+  "private": true,
+  "scripts": {
+    "test": "echo 'No tests available' && exit 0"
+  },
+  "type": "module",
+  "dependencies": {
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10"
+  }
+}
