@@ -14,7 +14,7 @@ A shopping cart does not serve much purpose without products. Declare a `product
 You should declare a `products` variable with `const`.
 
 ```js
-assert.match(code, /const\s+products/);
+assert.match(code, /const\s+products\b/);
 ```
 
 You should set the `products` variable to an empty array.
