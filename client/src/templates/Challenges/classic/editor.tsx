@@ -717,12 +717,12 @@ const Editor = (props: EditorProps): JSX.Element => {
   // TODO: there's a potential performance gain to be had by only updating when
   // the outputViewZone has actually changed.
   const updateOutputViewZone = (
-    outputNode: HTMLDivElement,
+    lowerJawContainer: HTMLDivElement,
     editor?: editor.IStandaloneCodeEditor
   ) => {
     if (!editor) return;
     // make sure the overlayWidget has resized before using it to set the height
-    outputNode.style.width = `${getEditorContentWidth(editor)}px`;
+    lowerJawContainer.style.width = `${getEditorContentWidth(editor)}px`;
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
@@ -730,7 +730,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       changeAccessor.removeZone(dataRef.current.outputZoneId);
       const viewZone = {
         afterLineNumber: getLastLineOfEditableRegion(),
-        heightInPx: outputNode.offsetHeight,
+        heightInPx: lowerJawContainer.offsetHeight,
         domNode: document.createElement('div'),
         onComputedHeight: () =>
           dataRef.current.outputWidget &&
@@ -797,16 +797,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     return editor.getLayoutInfo().contentWidth - getScrollbarWidth();
   }
 
-  function createOutputNode(editor: editor.IStandaloneCodeEditor) {
+  function createLowerJawContainer(editor: editor.IStandaloneCodeEditor) {
     if (lowerJawContainer) return lowerJawContainer;
-    const outputNode = document.createElement('div');
-    outputNode.classList.add('editor-lower-jaw');
-    outputNode.setAttribute('id', 'editor-lower-jaw');
-    outputNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
-    outputNode.style.width = `${getEditorContentWidth(editor)}px`;
-    outputNode.style.top = getOutputZoneTop();
-    setLowerJawContainer(outputNode);
-    return outputNode;
+    const container = document.createElement('div');
+    container.classList.add('editor-lower-jaw');
+    container.setAttribute('id', 'editor-lower-jaw');
+    container.style.left = `${editor.getLayoutInfo().contentLeft}px`;
+    container.style.width = `${getEditorContentWidth(editor)}px`;
+    container.style.top = getOutputZoneTop();
+    setLowerJawContainer(container);
+    return container;
   }
 
   function createScrollGutterNode(
@@ -1067,7 +1067,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
     const descriptionNode = createDescription(editor);
 
-    const outputNode = createOutputNode(editor);
+    const lowerJawNode = createLowerJawContainer(editor);
 
     if (!dataRef.current.descriptionWidget) {
       dataRef.current.descriptionWidget = createWidget(
@@ -1093,7 +1093,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       dataRef.current.outputWidget = createWidget(
         editor,
         'output.widget',
-        outputNode,
+        lowerJawNode,
         getOutputZoneTop
       );
       editor.addOverlayWidget(dataRef.current.outputWidget);
