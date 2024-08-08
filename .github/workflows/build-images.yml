@@ -1,0 +1,37 @@
+name: CI - Build Images
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['CI - Node.js']
+    types:
+      - completed
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    name: Build (Image)
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20.x]
+        apps: [new-api]
+        site_tlds: [dev]
+      fail-fast: false
+    environment: staging
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Create a tagname
+        id: tagname
+        run: |
+          echo "tagname=$(git rev-parse --short HEAD)-$(date +%Y%m%d)-$(date +%H%M)" >> $GITHUB_ENV
+
+      - name: Build & Tag Image
+        run: |
+          docker build \
+            --tag registry-name-goes-here/repo-name-goes-here/${{ matrix.site_tlds }}/learn-${{ matrix.apps }}:$tagname \
+            --file docker/${{ matrix.apps }}/Dockerfile .
