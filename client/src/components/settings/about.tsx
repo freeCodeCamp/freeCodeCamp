@@ -165,7 +165,11 @@ class AboutSettings extends Component<AboutProps, AboutState> {
 
   handlePictureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
-    if (isURL(value, { require_protocol: true })) {
+    if (!value) {
+      this.setState({
+        isPictureUrlValid: true
+      });
+    } else if (isURL(value, { require_protocol: true })) {
       this.validationImage.src = encodeURI(value);
     } else {
       this.setState({

@@ -585,10 +585,7 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": {
-        "title": "D3 Dashboard",
-        "intro": ["", ""]
-      }
+      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
     }
   },
   "relational-database": {
@@ -891,7 +888,6 @@
           "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
         ]
       },
-
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Learn Special Methods by Building a Vector Space",
         "intro": [
@@ -1713,6 +1709,12 @@
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+        ]
       }
     }
   },

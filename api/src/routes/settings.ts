@@ -494,7 +494,7 @@ ${isLinkSentWithinLimitTTL}`
             about: req.body.about,
             name: req.body.name,
             location: req.body.location,
-            ...(hasProtocol && { picture: req.body.picture })
+            picture: hasProtocol ? req.body.picture : ''
           }
         });
 

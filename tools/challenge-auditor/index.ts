@@ -127,6 +127,8 @@ void (async () => {
     const langCurriculumDirectory = join(
       process.cwd(),
       'curriculum',
+      'i18n-curriculum',
+      'curriculum',
       'challenges',
       lang
     );
