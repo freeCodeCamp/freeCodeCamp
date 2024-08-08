@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import SEO from '../seo';
+import { SuperBlocks } from '../../../../shared/config/curriculum';
 import AsSeenIn from './components/as-seen-in';
 import Certifications from './components/certifications';
 import LandingTop from './components/landing-top';
@@ -10,7 +11,14 @@ import Faq from './components/faq';
 
 import './landing.css';
 
-function Landing(): ReactElement {
+function Landing({
+  allChallenges
+}: {
+  allChallenges: {
+    id: string;
+    superBlock: SuperBlocks;
+  }[];
+}): ReactElement {
   const { t } = useTranslation();
 
   return (
@@ -20,7 +28,7 @@ function Landing(): ReactElement {
         <LandingTop />
         <AsSeenIn />
         <Testimonials />
-        <Certifications />
+        <Certifications allChallenges={allChallenges} />
         <Faq />
       </main>
     </>

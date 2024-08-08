@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -27,11 +26,7 @@ import {
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
-import {
-  CurrentCert,
-  ClaimedCertifications,
-  AllChallengeNode
-} from '../../redux/prop-types';
+import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
@@ -44,6 +39,10 @@ interface MapProps {
   currentCerts: CurrentCert[];
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
+  allChallenges: {
+    id: string;
+    superBlock: SuperBlocks;
+  }[];
 }
 
 const linkSpacingStyle = {
@@ -131,29 +130,9 @@ function Map({
   forLanding = false,
   isSignedIn,
   currentCerts,
-  completedChallengeIds
+  completedChallengeIds,
+  allChallenges
 }: MapProps): React.ReactElement {
-  const {
-    allChallengeNode: { edges }
-  }: {
-    allChallengeNode: AllChallengeNode;
-  } = useStaticQuery(graphql`
-    query allChallenges {
-      allChallengeNode {
-        edges {
-          node {
-            challenge {
-              id
-              superBlock
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const allChallenges = edges.map(edge => edge.node.challenge);
-
   const { t } = useTranslation();
 
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
