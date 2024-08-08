@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -182,7 +182,7 @@ function Map({
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({ showNewCurriculum, showUpcomingChanges }).map(stage => (
-        <>
+        <Fragment key={stage}>
           <h2 className={forLanding ? 'big-heading' : ''}>
             {t(superBlockHeadings[stage])}
           </h2>
@@ -201,7 +201,7 @@ function Map({
             ))}
           </ul>
           <Spacer size='medium' />
-        </>
+        </Fragment>
       ))}
     </div>
   );
