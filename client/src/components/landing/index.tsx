@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
 import SEO from '../seo';
 import { Loader } from '../helpers';
+import { SuperBlocks } from '../../../../shared/config/curriculum';
 import AsSeenIn from './components/as-seen-in';
 import Certifications from './components/certifications';
 import LandingTop from './components/landing-top';
@@ -12,26 +13,33 @@ import Faq from './components/faq';
 
 import './landing.css';
 
-const LandingA = () => (
+type LandingProps = {
+  allChallenges: {
+    id: string;
+    superBlock: SuperBlocks;
+  }[];
+};
+
+const LandingA = ({ allChallenges }: LandingProps) => (
   <main className='landing-page'>
     <LandingTop />
     <AsSeenIn />
     <Testimonials />
-    <Certifications />
+    <Certifications allChallenges={allChallenges} />
     <Faq />
   </main>
 );
 
-const LandingB = () => (
+const LandingB = ({ allChallenges }: LandingProps) => (
   <main className='landing-page landing-page-b'>
     <LandingTopB />
     <Testimonials />
-    <Certifications />
+    <Certifications allChallenges={allChallenges} />
     <Faq />
   </main>
 );
 
-function Landing(): ReactElement {
+function Landing({ allChallenges }: LandingProps): ReactElement {
   const { t } = useTranslation();
   const growthbook = useGrowthBook();
   if (growthbook && growthbook.ready) {
@@ -42,7 +50,11 @@ function Landing(): ReactElement {
     return (
       <>
         <SEO title={t('metaTags:title')} />
-        {showLandingPageRedesign === true ? <LandingB /> : <LandingA />}
+        {showLandingPageRedesign === true ? (
+          <LandingB allChallenges={allChallenges} />
+        ) : (
+          <LandingA allChallenges={allChallenges} />
+        )}
       </>
     );
   } else {

@@ -174,7 +174,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     user
   } = props;
 
-  const nodesForSuperBlock = edges.map(({ node }) => node);
+  const allChallenges = edges.map(({ node }) => node.challenge);
+  const nodesForSuperBlock = edges
+    .filter(edge => edge.node.challenge.superBlock === superBlock)
+    .map(({ node }) => node);
   const blockDashedNames = uniq(
     nodesForSuperBlock.map(({ challenge: { block } }) => block)
   );
@@ -257,7 +260,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='medium' />
-              <Map />
+              <Map allChallenges={allChallenges} />
               <Spacer size='large' />
             </Col>
           </Row>
@@ -276,7 +279,7 @@ export default connect(
 )(withTranslation()(memo(SuperBlockIntroductionPage)));
 
 export const query = graphql`
-  query SuperBlockIntroPageBySlug($id: String!, $superBlock: String!) {
+  query SuperBlockIntroPageBySlug($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         certification
@@ -292,7 +295,6 @@ export const query = graphql`
           challenge___challengeOrder
         ]
       }
-      filter: { challenge: { superBlock: { eq: $superBlock } } }
     ) {
       edges {
         node {
