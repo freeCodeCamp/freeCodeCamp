@@ -11,7 +11,7 @@ import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { Provider, connect, useStore } from 'react-redux';
+import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
@@ -242,7 +242,6 @@ const initialData: EditorProperties = {
 };
 
 const Editor = (props: EditorProps): JSX.Element => {
-  const reduxStore = useStore();
   const { t } = useTranslation();
   const { editorRef, initTests, resetAttempts, isMobileLayout } = props;
   // These refs are used during initialisation of the editor as well as by
@@ -1291,22 +1290,20 @@ const Editor = (props: EditorProps): JSX.Element => {
       </span>
       {lowerJawContainer !== null &&
         createPortal(
-          <Provider store={reduxStore}>
-            <LowerJaw
-              openHelpModal={props.openHelpModal}
-              openResetModal={props.openResetModal}
-              tryToExecuteChallenge={tryToExecuteChallenge}
-              hint={props.output[1]}
-              testsLength={props.tests.length}
-              attempts={attemptsRef.current}
-              challengeIsCompleted={challengeIsComplete()}
-              tryToSubmitChallenge={tryToSubmitChallenge}
-              isSignedIn={props.isSignedIn}
-              updateContainer={() =>
-                updateOutputViewZone(lowerJawContainer, dataRef.current.editor)
-              }
-            />
-          </Provider>,
+          <LowerJaw
+            openHelpModal={props.openHelpModal}
+            openResetModal={props.openResetModal}
+            tryToExecuteChallenge={tryToExecuteChallenge}
+            hint={props.output[1]}
+            testsLength={props.tests.length}
+            attempts={attemptsRef.current}
+            challengeIsCompleted={challengeIsComplete()}
+            tryToSubmitChallenge={tryToSubmitChallenge}
+            isSignedIn={props.isSignedIn}
+            updateContainer={() =>
+              updateOutputViewZone(lowerJawContainer, dataRef.current.editor)
+            }
+          />,
           lowerJawContainer
         )}
     </Suspense>
