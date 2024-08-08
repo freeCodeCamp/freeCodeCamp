@@ -243,7 +243,7 @@ export type CertificateNode = {
 };
 
 export type AllChallengesInfo = {
-  challengeEdges: { node: ChallengeNode }[];
+  challengeNodes: ChallengeNode[];
   certificateNodes: CertificateNode[];
 };
 

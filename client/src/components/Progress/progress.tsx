@@ -13,7 +13,7 @@ import {
 } from '../../templates/Challenges/redux/selectors';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { updateAllChallengesInfo } from '../../redux/actions';
-import { AllChallengeNode, CertificateNode } from '../../redux/prop-types';
+import { CertificateNode, ChallengeNode } from '../../redux/prop-types';
 import ProgressInner from './progress-inner';
 
 const mapStateToProps = createSelector(
@@ -67,10 +67,10 @@ function Progress({
     cert.projects?.some((project: { id: string }) => project.id === id)
   );
 
-  const { challengeEdges, certificateNodes } = useGetAllBlockIds();
+  const { challengeNodes, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {
-    updateAllChallengesInfo({ challengeEdges, certificateNodes });
-  }, [challengeEdges, certificateNodes, updateAllChallengesInfo]);
+    updateAllChallengesInfo({ challengeNodes, certificateNodes });
+  }, [challengeNodes, certificateNodes, updateAllChallengesInfo]);
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
   const meta =
@@ -100,14 +100,12 @@ function Progress({
 // and in completion-modal). Then we don't have to pass the data into redux.
 // This would mean that we have to memoize any complex calculations in the hook.
 // Otherwise, this will undo all the recent performance improvements.
-
-// TODO: get challenge nodes directly rather than wrapped in edges
 const useGetAllBlockIds = () => {
   const {
-    allChallengeNode: { edges: challengeEdges },
+    allChallengeNode: { nodes: challengeNodes },
     allCertificateNode: { nodes: certificateNodes }
   }: {
-    allChallengeNode: AllChallengeNode;
+    allChallengeNode: { nodes: ChallengeNode[] };
     allCertificateNode: { nodes: CertificateNode[] };
   } = useStaticQuery(graphql`
     query getBlockNode {
@@ -120,12 +118,10 @@ const useGetAllBlockIds = () => {
           ]
         }
       ) {
-        edges {
-          node {
-            challenge {
-              block
-              id
-            }
+        nodes {
+          challenge {
+            block
+            id
           }
         }
       }
@@ -142,7 +138,7 @@ const useGetAllBlockIds = () => {
     }
   `);
 
-  return { challengeEdges, certificateNodes };
+  return { challengeNodes, certificateNodes };
 };
 
 Progress.displayName = 'Progress';
