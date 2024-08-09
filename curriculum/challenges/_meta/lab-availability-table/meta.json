@@ -1,5 +1,6 @@
 {
   "name": "Build an Availability Table",
+  "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-availability-table",
