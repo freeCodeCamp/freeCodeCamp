@@ -207,7 +207,7 @@ exports.createSuperBlockIntroPages = function (createPage) {
   return function (edge) {
     const {
       fields: { slug },
-      frontmatter: { superBlock, certification }
+      frontmatter: { superBlock, certification, title }
     } = edge.node;
 
     if (!certification) {
@@ -225,7 +225,7 @@ exports.createSuperBlockIntroPages = function (createPage) {
       context: {
         certification,
         superBlock,
-        slug
+        title
       }
     });
   };
