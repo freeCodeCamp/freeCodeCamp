@@ -35,7 +35,7 @@ interface SidePanelProps extends DispatchProps, StateProps {
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
-  hasDemo: boolean | null;
+  hasDemo: boolean;
   toolPanel: ReactNode;
   superBlock: SuperBlocks;
   tests: Test[];
