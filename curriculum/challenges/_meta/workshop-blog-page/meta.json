@@ -1,5 +1,6 @@
 {
   "name": "Build a Cat Blog Page",
+  "blockType": "workshop",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,

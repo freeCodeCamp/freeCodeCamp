@@ -1,5 +1,6 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared/config/curriculum';
+import { BlockTypes } from '../../../shared/config/blocks';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
 
@@ -178,6 +179,7 @@ export type ChallengeWithCompletedNode = {
 export type ChallengeNode = {
   challenge: {
     block: string;
+    blockType: BlockTypes;
     certification: string;
     challengeOrder: number;
     challengeType: number;

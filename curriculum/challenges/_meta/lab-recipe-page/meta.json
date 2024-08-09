@@ -1,5 +1,6 @@
 {
   "name": "Recipe Page",
+  "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-recipe-page",
