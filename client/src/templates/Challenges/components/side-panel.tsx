@@ -68,7 +68,6 @@ export function SidePanel({
       tabIndex={-1}
     >
       {challengeTitle}
-      {challengeDescription}
       {hasDemo && (
         <>
           <Button size='small' onClick={() => openModal('projectPreview')}>
