@@ -1713,6 +1713,12 @@
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
       },
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit using CSS animation",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
