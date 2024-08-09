@@ -23,7 +23,12 @@ const LogoRow = (): JSX.Element => {
 
   return (
     <>
-      <p className='logo-row-title'>{t('landing.h2-heading-b')}</p>
+      <p
+        className='logo-row-title'
+        data-playwright-test-label='landing-h2-heading-b'
+      >
+        {t('landing.h2-heading-b')}
+      </p>
       <Spacer size='small' />
       <div
         className='logo-row'
