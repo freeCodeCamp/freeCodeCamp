@@ -18,7 +18,7 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow, Spacer } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -198,13 +198,13 @@ function TimelineInner({
         </Table>
       )}
       {id && (
-        <Modal onClose={closeSolution} open={solutionOpen}>
+        <Modal onClose={closeSolution} open={solutionOpen} size='large'>
           <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
             {`${username}'s Solution to ${
               idToNameMap.get(id)?.challengeTitle ?? ''
             }`}
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body alignment='left'>
             <SolutionViewer
               challengeFiles={challengeData.challengeFiles}
               solution={challengeData.solution ?? ''}

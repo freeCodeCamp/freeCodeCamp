@@ -1,9 +1,10 @@
 {
   "name": "Front End Development Certification Exam",
+  "blockType": "exam",
   "isUpcomingChange": true,
   "dashedName": "front-end-development-certification-exam",
   "helpCategory": "HTML-CSS",
-  "order": 1,
+  "order": 386,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {

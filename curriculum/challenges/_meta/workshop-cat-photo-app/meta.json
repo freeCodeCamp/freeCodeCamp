@@ -1,0 +1,173 @@
+{
+  "name": "Build a Cat Photo App",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-cat-photo-app",
+  "order": 2,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66731cd027ef3acb155669f5",
+      "title": "Step 1"
+    },
+    {
+      "id": "6690b9626a66f51257ae5a91",
+      "title": "Step 2"
+    },
+    {
+      "id": "6690b9a24f5b0f1300040c76",
+      "title": "Step 3"
+    },
+    {
+      "id": "6690ba16cf76f613b4e36197",
+      "title": "Step 4"
+    },
+    {
+      "id": "6690bb0b4062b114997f708a",
+      "title": "Step 5"
+    },
+    {
+      "id": "6690bd5ad96139157eedf697",
+      "title": "Step 6"
+    },
+    {
+      "id": "6690be42942f421648b119eb",
+      "title": "Step 7"
+    },
+    {
+      "id": "6690be902f051416f668962b",
+      "title": "Step 8"
+    },
+    {
+      "id": "6690bebfd5c918179ea4fd3a",
+      "title": "Step 9"
+    },
+    {
+      "id": "6690beec809b4f184cab6914",
+      "title": "Step 10"
+    },
+    {
+      "id": "669840900adeba35e4ebb917",
+      "title": "Step 11"
+    },
+    {
+      "id": "669840c70aea8936930dba35",
+      "title": "Step 12"
+    },
+    {
+      "id": "6698410269ace0373ec812b6",
+      "title": "Step 13"
+    },
+    {
+      "id": "6698417821794837f14ca275",
+      "title": "Step 14"
+    },
+    {
+      "id": "6698419d8f52cf3891f34853",
+      "title": "Step 15"
+    },
+    {
+      "id": "66984218720e29393b1adad2",
+      "title": "Step 16"
+    },
+    {
+      "id": "6698429ba5761b39f8aad814",
+      "title": "Step 17"
+    },
+    {
+      "id": "669842cee55b683aa13ee758",
+      "title": "Step 18"
+    },
+    {
+      "id": "669842f261665d3b4a42df81",
+      "title": "Step 19"
+    },
+    {
+      "id": "66984330a510e63bf0787898",
+      "title": "Step 20"
+    },
+    {
+      "id": "6698440c54c8823cc60af8bc",
+      "title": "Step 21"
+    },
+    {
+      "id": "6698444102ebd53d78cf66f8",
+      "title": "Step 22"
+    },
+    {
+      "id": "66984484deb84b3e21e5b3d7",
+      "title": "Step 23"
+    },
+    {
+      "id": "66984535d474083eec6bb8da",
+      "title": "Step 24"
+    },
+    {
+      "id": "6698457295f6403fa49050b8",
+      "title": "Step 25"
+    },
+    {
+      "id": "6698458e123b4f403936994d",
+      "title": "Step 26"
+    },
+    {
+      "id": "669845af34899240d9196258",
+      "title": "Step 27"
+    },
+    {
+      "id": "66984881117baa41da8bbde0",
+      "title": "Step 28"
+    },
+    {
+      "id": "669848cd668e7242872f4861",
+      "title": "Step 29"
+    },
+    {
+      "id": "66984905e95af5432faa28b1",
+      "title": "Step 30"
+    },
+    {
+      "id": "6698491eff5f2e43c20c6503",
+      "title": "Step 31"
+    },
+    {
+      "id": "6698496716e821448ba724a6",
+      "title": "Step 32"
+    },
+    {
+      "id": "66984e0cb4febb50c3794edf",
+      "title": "Step 33"
+    },
+    {
+      "id": "66984e8ab54bee517207be42",
+      "title": "Step 34"
+    },
+    {
+      "id": "66984ec64a3652522e81c678",
+      "title": "Step 35"
+    },
+    {
+      "id": "66984eef66cc1752d93b53f5",
+      "title": "Step 36"
+    },
+    {
+      "id": "66984fe8efbd8c53a78c9b62",
+      "title": "Step 37"
+    },
+    {
+      "id": "66985068aeb06e54562df39e",
+      "title": "Step 38"
+    },
+    {
+      "id": "669850ce0ccf395511ff4254",
+      "title": "Step 39"
+    },
+    {
+      "id": "6698510677b5e655ba8c1017",
+      "title": "Step 40"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

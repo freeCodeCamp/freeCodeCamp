@@ -24,9 +24,10 @@ import { SESProvider } from './plugins/mail-providers/ses';
 import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
-import codeFlowAuth from './plugins/code-flow-auth';
+import auth from './plugins/auth';
+import bouncer from './plugins/bouncer';
 import notFound from './plugins/not-found';
-import { mobileAuth0Routes } from './routes/auth';
+import { authRoutes, mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
 import {
   protectedCertificateRoutes,
@@ -40,6 +41,7 @@ import { emailSubscribtionRoutes } from './routes/email-subscription';
 import { settingRoutes, settingRedirectRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
+import { signoutRoute } from './routes/signout';
 import {
   API_LOCATION,
   EMAIL_PROVIDER,
@@ -181,49 +183,55 @@ export const build = async (
 
   // redirectWithMessage must be registered before codeFlowAuth
   void fastify.register(redirectWithMessage);
-  void fastify.register(codeFlowAuth);
+  void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
 
-  // Routes requiring authentication and CSRF protection
-  void fastify.register(function (fastify, _opts, done) {
-    // The order matters here, since we want to reject invalid cross site requests
-    // before checking if the user is authenticated.
-    // @ts-expect-error - @fastify/csrf-protection needs to update their types
-    // eslint-disable-next-line @typescript-eslint/unbound-method
-    fastify.addHook('onRequest', fastify.csrfProtection);
+  // Routes requiring authentication:
+  void fastify.register(async function (fastify, _opts) {
+    await fastify.register(bouncer);
     fastify.addHook('onRequest', fastify.authorize);
+    // CSRF protection enabled:
+    await fastify.register(async function (fastify, _opts) {
+      // TODO: bounce unauthed requests before checking CSRF token. This will
+      // mean moving csrfProtection into custom plugin and testing separately,
+      // because it's a pain to mess around with other cookies/hook order.
+      // @ts-expect-error - @fastify/csrf-protection needs to update their types
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      fastify.addHook('onRequest', fastify.csrfProtection);
+      fastify.addHook('onRequest', fastify.send401IfNoUser);
 
-    void fastify.register(challengeRoutes);
-    void fastify.register(donateRoutes);
-    void fastify.register(protectedCertificateRoutes);
-    void fastify.register(settingRoutes);
-    void fastify.register(userRoutes);
-    done();
+      await fastify.register(challengeRoutes);
+      await fastify.register(donateRoutes);
+      await fastify.register(protectedCertificateRoutes);
+      await fastify.register(settingRoutes);
+      await fastify.register(userRoutes);
+    });
+
+    // CSRF protection disabled:
+    await fastify.register(async function (fastify, _opts) {
+      fastify.addHook('onRequest', fastify.send401IfNoUser);
+
+      await fastify.register(userGetRoutes);
+    });
+
+    // Routes that redirect if access is denied:
+    await fastify.register(async function (fastify, _opts) {
+      fastify.addHook('onRequest', fastify.redirectIfNoUser);
+
+      await fastify.register(settingRedirectRoutes);
+    });
   });
-
-  // Routes requiring authentication and NOT CSRF protection
-  void fastify.register(function (fastify, _opts, done) {
-    fastify.addHook('onRequest', fastify.authorize);
-
-    void fastify.register(userGetRoutes);
-    done();
-  });
-
-  // Routes requiring authentication that redirect on failure
-  void fastify.register(function (fastify, _opts, done) {
-    fastify.addHook('onRequest', fastify.authorizeOrRedirect);
-
-    void fastify.register(settingRedirectRoutes);
-    done();
-  });
-
-  // Routes not requiring authentication
+  // Routes not requiring authentication:
   void fastify.register(mobileAuth0Routes);
+  // TODO: consolidate with LOCAL_MOCK_AUTH
   if (FCC_ENABLE_DEV_LOGIN_MODE) {
     void fastify.register(devAuthRoutes);
+  } else {
+    void fastify.register(authRoutes);
   }
   void fastify.register(chargeStripeRoute);
+  void fastify.register(signoutRoute);
   void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userPublicGetRoutes);
   void fastify.register(unprotectedCertificateRoutes);

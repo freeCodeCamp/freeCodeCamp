@@ -1696,9 +1696,12 @@
     "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Learn Basic HTML by Building a Recipe Page",
-        "intro": ["", ""]
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
       },
       "lab-recipe-page": {
         "title": "Recipe Page",
@@ -1710,10 +1713,17 @@
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
       },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+        ]
+      },
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
-        "intro": ["For this lab, you will create a video compilation web page."]
-      }
+        "intro": [
+          "For this lab, you will create a video compilation web page."
+        ]
     }
   },
   "misc-text": {
