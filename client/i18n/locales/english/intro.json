@@ -1713,6 +1713,10 @@
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
       },
+      "lab-rainbow-painting": {
+        "title": "Build a Rainbow Painting",
+        "intro": ["For this lab, you will create a raibow painting."]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
