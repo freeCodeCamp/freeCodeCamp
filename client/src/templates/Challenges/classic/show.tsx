@@ -378,7 +378,7 @@ function ShowClassic({
     hasDemo
   }: {
     toolPanel: React.ReactNode;
-    hasDemo: boolean | null;
+    hasDemo: boolean;
   }) => {
     return (
       <SidePanel
