@@ -198,13 +198,13 @@ function TimelineInner({
         </Table>
       )}
       {id && (
-        <Modal onClose={closeSolution} open={solutionOpen}>
+        <Modal onClose={closeSolution} open={solutionOpen} size='large'>
           <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
             {`${username}'s Solution to ${
               idToNameMap.get(id)?.challengeTitle ?? ''
             }`}
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body alignment='left'>
             <SolutionViewer
               challengeFiles={challengeData.challengeFiles}
               solution={challengeData.solution ?? ''}
