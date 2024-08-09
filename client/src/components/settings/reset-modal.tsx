@@ -55,8 +55,8 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         <Spacer size='small' />
         <FormGroup controlId='verify-reset'>
           <ControlLabel htmlFor='verify-reset-input'>
-            {t('settings.danger.verify-reset', {
-              verifyResetText: t('settings.danger.verify-reset-text')
+            {t('settings.danger.verify-text', {
+              verifyText: t('settings.danger.verify-reset-text')
             })}
           </ControlLabel>
           <Spacer size='small' />

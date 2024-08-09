@@ -275,8 +275,9 @@
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Nevermind, I don't want to delete all of my progress",
       "reset-confirm": "Reset everything. I want to start from the beginning",
-      "verify-reset": "To verify, type text '{{ verifyResetText }}' without quotes below:",
-      "verify-reset-text": "I agree that all progress will be lost"
+      "verify-text": "To verify, type text '{{ verifyText }}' without quotes below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
