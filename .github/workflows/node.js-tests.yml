@@ -56,7 +56,6 @@ jobs:
         run: |
           cp sample.env .env
           cat .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Install node_modules
         run: pnpm install
@@ -104,8 +103,6 @@ jobs:
       - name: Set freeCodeCamp Environment Variables
         run: |
           cp sample.env .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Install and Build
         run: |
@@ -142,9 +139,7 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
           cat .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
@@ -196,9 +191,7 @@ jobs:
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           echo 'SHOW_NEW_CURRICULUM=true' >> .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
           cat .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
@@ -249,9 +242,7 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
           cat .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0

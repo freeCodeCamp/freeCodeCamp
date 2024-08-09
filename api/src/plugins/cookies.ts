@@ -75,4 +75,4 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(cookies);
+export default fp(cookies, { name: 'cookies' });
