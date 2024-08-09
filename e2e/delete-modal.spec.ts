@@ -96,7 +96,7 @@ test.describe('Delete Modal component', () => {
     page
   }) => {
     await page
-      .getByRole('button', { name: translations.settings.danger.certain })
+      .getByRole('button', { name: translations.settings.danger.delete })
       .click();
 
     await expect(
