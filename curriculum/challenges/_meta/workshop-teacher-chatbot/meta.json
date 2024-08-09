@@ -6,6 +6,27 @@
   "dashedName": "workshop-teacher-chatbot",
   "order": 137,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66b102ee0bdbad34a9f85ba0", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66b102ee0bdbad34a9f85ba0",
+      "title": "Step 1"
+    },
+    {
+      "id": "66b5928b86e907fdfbf34e56",
+      "title": "Step 2"
+    },
+    {
+      "id": "66b59829dba144ff1351220f",
+      "title": "Step 3"
+    },
+    {
+      "id": "66b59b12a745e10011158f7b",
+      "title": "Step 4"
+    },
+    {
+      "id": "66b59be6ab830800c4df9146",
+      "title": "Step 5"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
