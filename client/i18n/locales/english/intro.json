@@ -1715,6 +1715,10 @@
         "intro": [
           "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
         ]
+      },
+      "lab-availability-table": {
+        "title": "Build an Availability Table",
+        "intro": ["For this lab, you will create an availability table."]
       }
     }
   },
