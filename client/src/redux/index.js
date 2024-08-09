@@ -66,7 +66,7 @@ const initialState = {
     ...defaultFetchState
   },
   allChallengesInfo: {
-    challengeEdges: [],
+    challengeNodes: [],
     certificateNodes: []
   },
   userProfileFetchState: {

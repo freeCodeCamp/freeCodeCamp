@@ -8,11 +8,8 @@ import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
-import {
-  isSignedInSelector,
-  allChallengesInfoSelector
-} from '../../../redux/selectors';
-import { AllChallengesInfo, ChallengeFiles } from '../../../redux/prop-types';
+import { isSignedInSelector } from '../../../redux/selectors';
+import { ChallengeFiles } from '../../../redux/prop-types';
 import { closeModal, submitChallenge } from '../redux/actions';
 import {
   completedChallengesIdsSelector,
@@ -35,7 +32,6 @@ const mapStateToProps = createSelector(
   completedChallengesIdsSelector,
   isCompletionModalOpenSelector,
   isSignedInSelector,
-  allChallengesInfoSelector,
   successMessageSelector,
   isSubmittingSelector,
   (
@@ -44,7 +40,6 @@ const mapStateToProps = createSelector(
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
-    allChallengesInfo: AllChallengesInfo,
     message: string,
     isSubmitting: boolean
   ) => ({
@@ -54,7 +49,6 @@ const mapStateToProps = createSelector(
     completedChallengesIds,
     isOpen,
     isSignedIn,
-    allChallengesInfo,
     message,
     isSubmitting
   })

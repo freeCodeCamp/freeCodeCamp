@@ -13,16 +13,18 @@ Inside your `update` method, create an `if` statement that checks if `this.posit
 
 # --hints--
 
-You should have an `if` statement inside your `update` method.
+You should have another `if` statement inside your `update` method.
 
 ```js
-assert.match(code, /if\s*\(\s*.*\s*\)\s*{/g);
+const player = new Player();
+assert.lengthOf(player?.update?.toString().match(/if\s*\(\s*.*\s*\)\s*{/g), 4);
 ```
 
 Your `if` statement should check if `this.position.x >= canvas.width - this.width * 2`.
 
 ```js
-assert.match(code, /if\s*\(\s*this\.position\.x\s*>=\s*canvas\.width\s*-\s*this\.width\s*\*\s*2\s*\)\s*{/gi);
+const player = new Player();
+assert.match(player?.update?.toString(), /if\s*\(\s*this\.position\.x\s*>=\s*canvas\.width\s*-\s*this\.width\s*\*\s*2\s*\)\s*{/gi);
 ```
 
 # --seed--

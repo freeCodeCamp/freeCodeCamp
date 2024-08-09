@@ -24,7 +24,7 @@ assert(
 The `class` keyword should be used.
 
 ```js
-assert(code.match(/class/g));
+assert.match(code, /^\s*class/m);
 ```
 
 You should create a new class called `Player`
