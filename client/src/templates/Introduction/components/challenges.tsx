@@ -5,7 +5,7 @@ import { withTranslation, useTranslation } from 'react-i18next';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { ButtonLink } from '../../../components/helpers/button-link';
 

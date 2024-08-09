@@ -6,6 +6,7 @@
   "order": 1,
   "superBlock": "project-euler",
   "disableLoopProtectTests": true,
+  "disableLoopProtectPreview": true,
   "challengeOrder": [
     {
       "id": "5900f3d21000cf542c50fee4",

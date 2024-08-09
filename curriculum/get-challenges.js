@@ -25,31 +25,29 @@ const ENGLISH_CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
 const ENGLISH_DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, '_meta');
 
-const CURRICULUM_DIR = path.resolve(
+// This is to allow English to build without having to download the i18n files.
+// It fails when trying to resolve the i18n-curriculum path if they don't exist.
+const I18N_CURRICULUM_DIR = path.resolve(
   __dirname,
-  process.env.BUILD_WITH_SUBMODULE === 'true'
-    ? 'i18n-curriculum/curriculum'
-    : '.'
+  process.env.CURRICULUM_LOCALE === 'english'
+    ? '.'
+    : 'i18n-curriculum/curriculum'
 );
 
-const CHALLENGES_DIR = path.resolve(CURRICULUM_DIR, 'challenges');
-const DICTIONARIES_DIR = path.resolve(CURRICULUM_DIR, 'dictionaries');
+const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
+const I18N_DICTIONARIES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'dictionaries');
 
 exports.ENGLISH_CHALLENGES_DIR = ENGLISH_CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
-exports.CHALLENGES_DIR = CHALLENGES_DIR;
+exports.I18N_CHALLENGES_DIR = I18N_CHALLENGES_DIR;
 
 const COMMENT_TRANSLATIONS = createCommentMap(
-  DICTIONARIES_DIR,
+  I18N_DICTIONARIES_DIR,
   ENGLISH_DICTIONARIES_DIR
 );
 
 function createCommentMap(dictionariesDir, englishDictionariesDir) {
-  // get all the languages for which there are dictionaries. Note: the english
-  // entries are created separately, so we remove it from languages.
-  const languages = fs
-    .readdirSync(dictionariesDir)
-    .filter(lang => lang !== 'english'); // TODO: Remove the filter after migrating to i18n-curriculum
+  const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
   const dictionaries = languages.reduce(
@@ -130,7 +128,7 @@ function getChallengesDirForLang(lang) {
   if (lang === 'english') {
     return path.resolve(ENGLISH_CHALLENGES_DIR, `${lang}`);
   } else {
-    return path.resolve(CHALLENGES_DIR, `${lang}`);
+    return path.resolve(I18N_CHALLENGES_DIR, `${lang}`);
   }
 }
 
@@ -258,7 +256,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
     'english',
     filePath
   );
-  const i18nPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
+  const i18nPath = path.resolve(__dirname, I18N_CHALLENGES_DIR, lang, filePath);
   const createChallenge = generateChallengeCreator(lang, englishPath, i18nPath);
 
   await assertHasEnglishSource(filePath, lang, englishPath);
@@ -279,6 +277,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     );
 
     challenge.block = meta.dashedName;
+    challenge.blockType = meta.blockType;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);

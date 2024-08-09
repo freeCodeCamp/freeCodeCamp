@@ -1,0 +1,97 @@
+{
+  "name": "Build a Cat Blog Page",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-blog-page",
+  "order": 12,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "669aff9f5488f1bea056416d",
+      "title": "Step 1"
+    },
+    {
+      "id": "669fc7e141e4703748c558bf",
+      "title": "Step 2"
+    },
+    {
+      "id": "669fc938d38e6e38ace9251e",
+      "title": "Step 3"
+    },
+    {
+      "id": "669fcb06c3034a39f5431a38",
+      "title": "Step 4"
+    },
+    {
+      "id": "669fcb5106eeb13ab7afcd09",
+      "title": "Step 5"
+    },
+    {
+      "id": "66a49f685961e997e337cab1",
+      "title": "Step 6"
+    },
+    {
+      "id": "669fd003cb89ee3c2402e041",
+      "title": "Step 7"
+    },
+    {
+      "id": "669fd6fd12918e3de87854d4",
+      "title": "Step 8"
+    },
+    {
+      "id": "669fdc11c9b0263fe0814a7a",
+      "title": "Step 9"
+    },
+    {
+      "id": "669fdd3965f36f40af9615e5",
+      "title": "Step 10"
+    },
+    {
+      "id": "669fde2081f65141ad703fe4",
+      "title": "Step 11"
+    },
+    {
+      "id": "66a7e72adf226c02626715a3",
+      "title": "Step 12"
+    },
+    {
+      "id": "669fdfc9a5e3da42d2376609",
+      "title": "Step 13"
+    },
+    {
+      "id": "66a334a1a7cca6354999f9bf",
+      "title": "Step 14"
+    },
+    {
+      "id": "66a335e5888ffb367633200a",
+      "title": "Step 15"
+    },
+    {
+      "id": "66a338be7f1dee383a0e0ecb",
+      "title": "Step 16"
+    },
+    {
+      "id": "66a33a00514b40393a983c24",
+      "title": "Step 17"
+    },
+    {
+      "id": "66a33ac0ae8e3139fb34afc3",
+      "title": "Step 18"
+    },
+    {
+      "id": "66a33bd56208583aeb4837c4",
+      "title": "Step 19"
+    },
+    {
+      "id": "66a33c449ffdf93b90c5821e",
+      "title": "Step 20"
+    },
+    {
+      "id": "66a33e9bd3aa213cd23d9c57",
+      "title": "Step 21"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

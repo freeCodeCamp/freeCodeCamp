@@ -1,9 +1,10 @@
 {
   "name": "Recipe Page",
+  "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-recipe-page",
-  "order": 2,
+  "order": 3,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {
