@@ -1711,7 +1711,7 @@
         "intro": ["", ""]
       },
       "lab-moon-orbit": {
-        "title": "Learn CSS Animation by Creating a Moon Orbit",
+        "title": "Build a Moon Orbit using CSS animation",
         "intro": [
           "For this lab, you will create an animation of the moon orbiting the earth."
         ]
