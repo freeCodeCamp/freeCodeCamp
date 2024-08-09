@@ -2,6 +2,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
+import { FastifyInstance, FastifyReply } from 'fastify';
 
 import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
@@ -27,6 +28,8 @@ import { trimTags } from '../utils/validation';
 import { generateReportEmail } from '../utils/email-templates';
 import { createResetProperties } from '../utils/create-user';
 import { challengeTypes } from '../../../shared/config/challenge-types';
+import { UpdateReqType } from '../utils';
+import { CODE } from '../exam-environment/utils/exam';
 import { isRestricted } from './helpers/is-restricted';
 
 // user flags that the api-server returns as false if they're missing in the
@@ -115,6 +118,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       });
       await fastify.prisma.user.delete({
         where: { id: req.user!.id }
+      });
+      await fastify.prisma.examEnvironmentAuthorizationToken.deleteMany({
+        where: { userId: req.user!.id }
       });
       reply.clearOurCookies();
 
@@ -401,8 +407,58 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.post(
+    '/user/exam-environment/token',
+    {
+      schema: schemas.userExamEnvironmentToken
+    },
+    examEnvironmentTokenHandler
+  );
+
   done();
 };
+
+// eslint-disable-next-line jsdoc/require-param
+/**
+ * Generate a new authorization token for the given user, and invalidates any existing tokens.
+ *
+ * Requires the user to be authenticated.
+ */
+async function examEnvironmentTokenHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.userExamEnvironmentToken>,
+  reply: FastifyReply
+) {
+  const userId = req.user?.id;
+  if (!userId) {
+    throw new Error('Unreachable. User should be authenticated.');
+  }
+  // Delete (invalidate) any existing tokens for the user.
+  await this.prisma.examEnvironmentAuthorizationToken.deleteMany({
+    where: {
+      userId
+    }
+  });
+
+  const token = await this.prisma.examEnvironmentAuthorizationToken.create({
+    data: {
+      created: new Date(),
+      id: customNanoid(),
+      userId,
+      // TODO(Post-MVP): expire after ttl has passed.
+      ttl: 30 * 24 * 60 * 60 * 1000
+    }
+  });
+
+  const examEnvironmentAuthorizationToken = encodeUserToken(token.id);
+
+  void reply.send({
+    code: CODE.EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED,
+    data: {
+      examEnvironmentAuthorizationToken
+    }
+  });
+}
 
 /**
  * Plugin containing GET routes for user account management. They are kept

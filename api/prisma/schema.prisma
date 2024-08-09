@@ -145,6 +145,145 @@ model user {
 
 // -----------------------------------
 
+/// An exam as designed by the examiners
+model NewExam {
+  /// Globally unique exam id
+  ///
+  /// NOTE: Field is not "default", because of when/where exams are created.
+  id                 String         @id @map("_id") @db.ObjectId
+  /// Human-readable exam name
+  name               String
+  /// Notes given about exam
+  accessibility_note String
+  /// All questions for a given exam
+  question_types     QuestionType[]
+  /// Configuration for exam metadata
+  config             NewConfig
+}
+
+type QuestionType {
+  /// Unique question type id
+  id        String          @db.ObjectId
+  type      NewQuestionType
+  text      String?
+  questions NewQuestion[]
+}
+
+/// A multiple choice question
+type NewQuestion {
+  /// Unique question id
+  id         String      @db.ObjectId
+  /// Main question paragraph
+  text       String
+  /// Zero or more tags given to categorize a question
+  tags       String[]
+  /// Optional audio for a question
+  audio      NewAudio?
+  /// Available possible answers for an exam
+  answers    NewAnswer[]
+  /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
+  deprecated Boolean
+}
+
+type NewAudio {
+  /// Optional text for audio
+  captions   String?
+  /// URL to audio file
+  url        String
+  /// Start time of audio clip for question
+  ///
+  /// If not set, audio starts at 0
+  start_time Float?
+  /// End time of audio clip for question
+  ///
+  /// If not set, audio ends at the end of the clip
+  end_time   Float?
+}
+
+enum NewQuestionType {
+  /// Single question with one or more answers
+  MultipleChoice
+  /// Mass text
+  Dialogue
+}
+
+type NewAnswer {
+  id         String  @db.ObjectId
+  is_correct Boolean
+  text       String
+}
+
+type NewConfig {
+  tags           NewTagConfig[]
+  /// Total time allocated for exam in seconds
+  total_time     Int
+  question_types QuestionConfig[]
+}
+
+type QuestionConfig {
+  type                        NewQuestionType
+  number_of_type              Int
+  number_of_questions         Int
+  number_of_correct_answers   Int
+  number_of_incorrect_answers Int
+}
+
+type NewTagConfig {
+  /// Foreign key to tags
+  set                 String[] @db.ObjectId
+  number_of_questions Int
+}
+
+model NewExamAttempt {
+  id                String                    @id @default(auto()) @map("_id") @db.ObjectId
+  /// Foriegn key to user
+  user_id           String                    @db.ObjectId
+  /// Foreign key to exam
+  exam_id           String                    @db.ObjectId
+  /// Foreign key to generated exam id
+  generated_exam_id String                    @db.ObjectId
+  question_types    NewQuestionTypesAttempt[]
+  /// Time exam was started as seconds since epoch
+  start_time        Int
+  /// Time exam was submitted as seconds since epoch
+  ///
+  /// As attempt might not be submitted (disconnection or quit), field is optional
+  submission_time   Int?
+  needs_retake      Boolean
+}
+
+type NewQuestionTypesAttempt {
+  id        String               @db.ObjectId
+  questions NewQuestionAttempt[]
+}
+
+type NewQuestionAttempt {
+  /// Foreign key to question
+  id      String   @db.ObjectId
+  /// An array of foreign keys to answers
+  answers String[] @db.ObjectId
+}
+
+model GeneratedExam {
+  id             String                  @id @default(auto()) @map("_id") @db.ObjectId
+  exam_id        String                  @db.ObjectId
+  question_types GeneratedQuestionType[]
+}
+
+type GeneratedQuestionType {
+  id        String              @db.ObjectId
+  questions GeneratedQuestion[]
+}
+
+type GeneratedQuestion {
+  /// Foreign key to question id
+  id      String   @db.ObjectId
+  /// Each item is a foreign key to an answer
+  answers String[] @db.ObjectId
+}
+
+// -----------------------------------
+
 model AccessToken {
   id      String   @id @map("_id")
   created DateTime @db.Date
@@ -186,6 +325,15 @@ model UserRateLimit {
 }
 
 model UserToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Float
+  userId  String   @db.ObjectId
+
+  @@index([userId], map: "userId_1")
+}
+
+model ExamEnvironmentAuthorizationToken {
   id      String   @id @map("_id")
   created DateTime @db.Date
   ttl     Float

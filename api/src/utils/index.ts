@@ -1,4 +1,12 @@
 import { randomBytes, createHash } from 'crypto';
+import { type TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import {
+  type FastifyRequest,
+  type FastifySchema,
+  type RawRequestDefaultExpression,
+  type RawServerDefault,
+  type RouteGenericInterface
+} from 'fastify';
 
 /**
  * Utility to encode a buffer to a base64 URI.
@@ -19,3 +27,63 @@ function sha256(buf: Buffer) {
   return createHash('sha256').update(buf).digest();
 }
 export const challenge = base64URLEncode(sha256(Buffer.from(verifier)));
+
+export type UpdateReqType<Schema extends FastifySchema> = FastifyRequest<
+  RouteGenericInterface,
+  RawServerDefault,
+  RawRequestDefaultExpression<RawServerDefault>,
+  Schema,
+  TypeBoxTypeProvider
+>;
+
+/* eslint-disable jsdoc/require-description-complete-sentence */
+/**
+ * Wrapper around a promise to catch errors and return them as part of the promise.
+ *
+ * This is most useful to prevent callback / try...catch hell.
+ *
+ * ## Example:
+ *
+ * ```ts
+ * const maybeWhatIWant = await mapErr(
+ *   this.prisma.whatIWantCollection.create({
+ *     data: {}
+ *   })
+ * );
+ *
+ * if (maybeWhatIWant.error !== null) {
+ *   void reply.code(500);
+ *   return reply.send('Unable to generate exam, due to: ' +
+ *     JSON.stringify(maybeWhatIWant.error)
+ *   );
+ * }
+ *
+ * const whatIWant = maybeWhatIWant.data;
+ * ```
+ *
+ * @param promise - any promise to be tried.
+ * @returns a promise with either the data or the caught error
+ */
+export async function mapErr<T>(
+  promise: Promise<T>
+): Promise<
+  { error: null; data: T } | { error: NonNullable<unknown>; data: null }
+> {
+  try {
+    return { error: null, data: await promise };
+  } catch (e) {
+    assertNotNull(e);
+    return { error: e, data: null };
+  }
+}
+
+/**
+ * Asserts the given value is not null or undefined.
+ *
+ * @param value - The value to assert.
+ */
+function assertNotNull<T>(value: T): asserts value is NonNullable<T> {
+  if (value === null || value === undefined) {
+    throw new Error('Unreachable. Value should not be null or undefined.');
+  }
+}
