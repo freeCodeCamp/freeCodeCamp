@@ -102,7 +102,7 @@ function getNextBlock(id, edges) {
 }
 
 exports.createChallengePages = function (createPage) {
-  return function ({ node: { challenge } }, index, allChallengeEdges) {
+  return function ({ node }, index, allChallengeEdges) {
     const {
       dashedName,
       disableLoopProtectTests,
@@ -115,7 +115,7 @@ exports.createChallengePages = function (createPage) {
       template,
       challengeType,
       id
-    } = challenge;
+    } = node.challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
 
@@ -139,8 +139,11 @@ exports.createChallengePages = function (createPage) {
           prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
           id
         },
-        projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
-        slug
+        projectPreview: getProjectPreviewConfig(
+          node.challenge,
+          allChallengeEdges
+        ),
+        id: node.id
       }
     });
   };
@@ -189,7 +192,8 @@ exports.createBlockIntroPages = function (createPage) {
   return function (edge) {
     const {
       fields: { slug },
-      frontmatter: { block }
+      frontmatter: { block },
+      id
     } = edge.node;
 
     createPage({
@@ -197,7 +201,7 @@ exports.createBlockIntroPages = function (createPage) {
       component: intro,
       context: {
         block,
-        slug
+        id
       }
     });
   };
@@ -207,7 +211,8 @@ exports.createSuperBlockIntroPages = function (createPage) {
   return function (edge) {
     const {
       fields: { slug },
-      frontmatter: { superBlock, certification }
+      frontmatter: { superBlock, certification },
+      id
     } = edge.node;
 
     if (!certification) {
@@ -223,9 +228,8 @@ exports.createSuperBlockIntroPages = function (createPage) {
       path: slug,
       component: superBlockIntro,
       context: {
-        certification,
-        superBlock,
-        slug
+        id,
+        superBlock
       }
     });
   };

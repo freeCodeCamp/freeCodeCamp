@@ -23,11 +23,7 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
-      const {
-        frontmatter: { component = '' }
-      } = node;
       createNodeField({ node, name: 'slug', value: slug });
-      createNodeField({ node, name: 'component', value: component });
     }
   }
 };
@@ -74,6 +70,7 @@ exports.createPages = async function createPages({
       ) {
         edges {
           node {
+            id
             challenge {
               block
               blockType
@@ -121,7 +118,6 @@ exports.createPages = async function createPages({
             fields {
               slug
               nodeIdentity
-              component
             }
             frontmatter {
               certification
@@ -129,9 +125,7 @@ exports.createPages = async function createPages({
               superBlock
               title
             }
-            htmlAst
             id
-            excerpt
           }
         }
       }

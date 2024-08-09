@@ -426,8 +426,8 @@ export default connect(
 
 // GraphQL
 export const query = graphql`
-  query CodeAllyChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query CodeAllyChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         block
         fields {

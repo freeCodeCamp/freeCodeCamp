@@ -282,8 +282,8 @@ export default connect(
 )(withTranslation()(BackEnd));
 
 export const query = graphql`
-  query BackendChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query BackendChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         forumTopicId
         title

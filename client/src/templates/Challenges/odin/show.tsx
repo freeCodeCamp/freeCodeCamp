@@ -452,8 +452,8 @@ export default connect(
 )(withTranslation()(ShowOdin));
 
 export const query = graphql`
-  query TheOdinProject($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query TheOdinProject($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         videoId
         videoLocaleIds {

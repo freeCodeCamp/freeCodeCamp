@@ -596,8 +596,8 @@ export default connect(
 
 // GraphQL
 export const query = graphql`
-  query ExamChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query ExamChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         block
         challengeType

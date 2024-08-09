@@ -329,8 +329,8 @@ export default connect(
 )(withTranslation()(ShowDialogue));
 
 export const query = graphql`
-  query Dialogue($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query Dialogue($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         videoId
         title

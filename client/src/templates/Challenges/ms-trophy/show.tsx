@@ -250,8 +250,8 @@ export default connect(
 )(withTranslation()(MsTrophy));
 
 export const query = graphql`
-  query MsTrophyChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query MsTrophyChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         title
         description

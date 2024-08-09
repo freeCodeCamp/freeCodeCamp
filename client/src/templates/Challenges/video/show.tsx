@@ -359,8 +359,8 @@ export default connect(
 )(withTranslation()(ShowVideo));
 
 export const query = graphql`
-  query VideoChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query VideoChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         videoId
         videoLocaleIds {
