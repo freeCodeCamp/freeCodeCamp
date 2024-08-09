@@ -1711,7 +1711,7 @@
         "intro": ["", ""]
       },
       "lab-business-card": {
-        "title": "Design a Business Card",
+        "title": "Build a Business Card",
         "intro": [
           "In this lab, you'll create a business card and style it using CSS."
         ]
