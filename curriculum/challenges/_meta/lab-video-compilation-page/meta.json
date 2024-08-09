@@ -1,0 +1,16 @@
+{
+  "name": "Build a Video Compilation Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-video-compilation-page",
+  "order": 7,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "669e81368e52b3a5c35a2dc5",
+      "title": "Build a Video Compilation Page"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
