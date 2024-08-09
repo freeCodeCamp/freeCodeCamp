@@ -1718,6 +1718,12 @@
         "intro": [
           "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
         ]
+      },
+      "lab-random-background-color-changer": {
+        "title": "Build a Random Background Color Changer",
+        "intro": [
+          "For this lab, you will create a random background color changer."
+        ]
       }
     }
   },

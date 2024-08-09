@@ -1,0 +1,12 @@
+{
+  "name": "Build a Random Background Color Changer",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "lab-random-background-color-changer",
+  "order": 206,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66b62d0ad68488dd76228d6c", "title": "Build a Random Background Color Changer" }],
+  "helpCategory": "JavaScript"
+}
