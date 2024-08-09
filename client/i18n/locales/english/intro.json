@@ -1696,9 +1696,12 @@
     "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Learn Basic HTML by Building a Recipe Page",
-        "intro": ["", ""]
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
       },
       "lab-recipe-page": {
         "title": "Recipe Page",
@@ -1714,7 +1717,13 @@
         "title": "Build a Greeting Bot",
         "intro": [
           "For this workshop, you will learn how to work with JavaScript fundamentals by building a greeting bot.",
-          "You will learn about variables, let, const, console.log and basic string usage."
+          "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
+        ]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
         ]
       }
     }
