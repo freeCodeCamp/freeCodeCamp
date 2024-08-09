@@ -1713,6 +1713,12 @@
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
       },
+      "workshop-final-exams-table": {
+        "title": "Build a Final Exams Table",
+        "intro": [
+          "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
