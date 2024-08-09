@@ -214,3 +214,37 @@ figcaption.caption {
     padding: 40px;
   }
 }
+
+/* AB testing styles */
+.landing-page-b .mega-heading {
+  font-size: 2rem !important;
+  margin: 0px 0px 1rem !important;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+@media (min-width: 500px) {
+  .landing-page-b .mega-heading {
+    font-size: 3rem !important;
+  }
+}
+
+.landing-page-b .landing-top .btn-cta-big {
+  margin: 0px;
+  min-width: 300px;
+  max-width: fit-content;
+  background-image: none;
+  color: var(--primary-background) !important;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 12px;
+}
+
+.landing-page-b .landing-top .btn-cta-big:hover,
+.landing-page-b .landing-top .btn-cta-big:focus {
+  background-color: var(--quaternary-color) !important;
+}
+
+.landing-page-b .logo-row-title {
+  font-weight: normal;
+}

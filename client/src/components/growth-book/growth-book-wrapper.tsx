@@ -12,6 +12,7 @@ import {
   userFetchStateSelector
 } from '../../redux/selectors';
 import envData from '../../../config/env.json';
+import defaultGrowthBookFeatures from '../../../config/growthbook-features-default.json';
 import { User, UserFetchState } from '../../redux/prop-types';
 import { getUUID } from '../../utils/growthbook-cookie';
 import callGA from '../../analytics/call-ga';
@@ -77,17 +78,19 @@ const GrowthBookWrapper = ({
 
   useEffect(() => {
     async function setGrowthBookFeatures() {
-      if (!growthbookUri) return;
-
-      try {
-        const res = await fetch(growthbookUri);
-        const data = (await res.json()) as {
-          features: Record<string, FeatureDefinition>;
-        };
-        growthbook.setFeatures(data.features);
-      } catch (e) {
-        // TODO: report to sentry when it's enabled
-        console.error(e);
+      if (!growthbookUri) {
+        growthbook.setFeatures(defaultGrowthBookFeatures);
+      } else {
+        try {
+          const res = await fetch(growthbookUri);
+          const data = (await res.json()) as {
+            features: Record<string, FeatureDefinition>;
+          };
+          growthbook.setFeatures(data.features);
+        } catch (e) {
+          // TODO: report to sentry when it's enabled
+          console.error(e);
+        }
       }
     }
 
