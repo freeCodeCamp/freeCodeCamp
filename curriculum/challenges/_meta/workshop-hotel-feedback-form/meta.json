@@ -1,5 +1,6 @@
 {
   "name": "Build a Hotel Feedback Form",
+  "blockType": "workshop",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
