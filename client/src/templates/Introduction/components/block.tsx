@@ -26,11 +26,10 @@ import '../intro.css';
 
 const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
 
-const mapStateToProps = (
-  state: unknown,
-  ownProps: { blockDashedName: string }
-) => {
-  const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
+type Challenge = ChallengeNode['challenge'];
+
+const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
+  const expandedSelector = makeExpandedBlockSelector(ownProps.block);
 
   return createSelector(
     expandedSelector,
@@ -46,8 +45,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ toggleBlock }, dispatch);
 
 interface BlockProps {
-  blockDashedName: string;
-  challenges: ChallengeNode[];
+  block: string;
+  challenges: Challenge[];
   completedChallengeIds: string[];
   isExpanded: boolean;
   superBlock: SuperBlocks;
@@ -82,14 +81,14 @@ class Block extends Component<BlockProps> {
   }
 
   handleBlockClick(): void {
-    const { blockDashedName, toggleBlock } = this.props;
+    const { block, toggleBlock } = this.props;
     void playTone('block-toggle');
-    toggleBlock(blockDashedName);
+    toggleBlock(block);
   }
 
   render(): JSX.Element {
     const {
-      blockDashedName,
+      block,
       completedChallengeIds,
       challenges,
       isExpanded,
@@ -99,7 +98,7 @@ class Block extends Component<BlockProps> {
 
     let completedCount = 0;
 
-    const challengesWithCompleted = challenges.map(({ challenge }) => {
+    const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
       const isCompleted = completedChallengeIds.some(
         (completedChallengeId: string) => completedChallengeId === id
@@ -110,11 +109,11 @@ class Block extends Component<BlockProps> {
       return { ...challenge, isCompleted };
     });
 
-    const isProjectBlock = challenges.some(({ challenge }) => {
-      return isProjectBased(challenge.challengeType, blockDashedName);
+    const isProjectBlock = challenges.some(challenge => {
+      return isProjectBased(challenge.challengeType, block);
     });
 
-    const isGridBlock = challenges.some(({ challenge }) => {
+    const isGridBlock = challenges.some(challenge => {
       return isGridBased(superBlock, challenge.challengeType);
     });
 
@@ -123,12 +122,12 @@ class Block extends Component<BlockProps> {
       showUpcomingChanges
     });
 
-    const blockTitle = t(`intro:${superBlock}.blocks.${blockDashedName}.title`);
+    const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
     // the real type of TFunction is the type below, because intro can be an array of strings
     // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
     // But changing the type will require refactoring that isn't worth it for a wrong type.
     const blockIntroArr = t<string, DefaultTFuncReturn & string[]>(
-      `intro:${superBlock}.blocks.${blockDashedName}.intro`
+      `intro:${superBlock}.blocks.${block}.intro`
     );
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
@@ -151,7 +150,7 @@ class Block extends Component<BlockProps> {
     const Block = (
       <>
         {' '}
-        <ScrollableAnchor id={blockDashedName}>
+        <ScrollableAnchor id={block}>
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
@@ -207,7 +206,7 @@ class Block extends Component<BlockProps> {
 
     const ProjectBlock = (
       <>
-        <ScrollableAnchor id={blockDashedName}>
+        <ScrollableAnchor id={block}>
           <div className='block'>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
@@ -245,12 +244,12 @@ class Block extends Component<BlockProps> {
     const GridBlock = (
       <>
         {' '}
-        <ScrollableAnchor id={blockDashedName}>
+        <ScrollableAnchor id={block}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
             <h3 className='block-grid-title'>
               <button
                 aria-expanded={isExpanded ? 'true' : 'false'}
-                aria-controls={`${blockDashedName}-panel`}
+                aria-controls={`${block}-panel`}
                 className='block-header'
                 onClick={() => {
                   this.handleBlockClick();
@@ -283,7 +282,7 @@ class Block extends Component<BlockProps> {
               </div>
             )}
             {isExpanded && (
-              <div id={`${blockDashedName}-panel`}>
+              <div id={`${block}-panel`}>
                 <BlockIntros intros={blockIntroArr} />
                 <Challenges
                   challengesWithCompleted={challengesWithCompleted}
@@ -299,7 +298,7 @@ class Block extends Component<BlockProps> {
     );
 
     const GridProjectBlock = (
-      <ScrollableAnchor id={blockDashedName}>
+      <ScrollableAnchor id={block}>
         <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
