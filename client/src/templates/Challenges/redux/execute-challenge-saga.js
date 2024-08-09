@@ -1,6 +1,7 @@
 import i18next from 'i18next';
 import { escape } from 'lodash-es';
 import { channel } from 'redux-saga';
+import chai from 'chai';
 import {
   call,
   cancel,
@@ -221,18 +222,35 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
       } else if (errorType) {
-        const msgKey =
-          errorType === 'indentation'
-            ? 'learn.indentation-error'
-            : 'learn.syntax-error';
+        let msgKey;
+        switch (errorType) {
+          case 'indentation':
+            // Python indent error
+            msgKey = 'learn.indentation-error';
+            break;
+          case 'js-syntax-error':
+            msgKey = 'learn.js-syntax-error';
+            break;
+          default:
+            // Python syntax error
+            msgKey = 'learn.syntax-error';
+            break;
+        }
         newTest.message = `<p>${i18next.t(msgKey)}</p>`;
+        if (errorType === 'js-syntax-error') {
+          yield put(updateConsole(newTest.message));
+          // Stop running tests
+          break;
+        }
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
       }
 
-      yield put(updateConsole(newTest.message));
+      if (err instanceof chai.AssertionError) {
+        yield put(updateConsole(newTest.message));
+      }
     } finally {
       testResults.push(newTest);
     }
