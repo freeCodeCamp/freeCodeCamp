@@ -1,6 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 const execP = promisify(exec);
 
@@ -69,6 +70,12 @@ test.describe('Progress reset modal', () => {
         name: 'Reset everything. I want to start from the beginning'
       })
     ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', {
+        name: 'Reset everything. I want to start from the beginning'
+      })
+    ).toBeDisabled();
   });
 
   test('should close the dialog if the user clicks the cancel button', async ({
@@ -93,7 +100,7 @@ test.describe('Progress reset modal', () => {
     ).toBeHidden();
   });
 
-  test('should reset the progress if the user clicks the reset button', async ({
+  test('Reset progress button should be disabled if user incorrectly fills verify input text', async ({
     page
   }) => {
     await page
@@ -103,6 +110,36 @@ test.describe('Progress reset modal', () => {
     await expect(
       page.getByRole('dialog', { name: 'Reset My Progress' })
     ).toBeVisible();
+
+    const verifyResetInput = page.getByRole('textbox', {
+      exact: true
+    });
+    await verifyResetInput.fill('incorrect text');
+
+    await expect(
+      page.getByRole('button', {
+        name: 'Reset everything. I want to start from the beginning'
+      })
+    ).toBeDisabled();
+  });
+
+  test('should reset the progress if the user fills the verify input text and clicks the reset button', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', { name: 'Reset all of my progress' })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', { name: 'Reset My Progress' })
+    ).toBeVisible();
+
+    const verifyResetText = translations.settings.danger['verify-reset-text'];
+
+    const verifyResetInput = page.getByRole('textbox', {
+      exact: true
+    });
+    await verifyResetInput.fill(verifyResetText);
 
     await page
       .getByRole('button', {
