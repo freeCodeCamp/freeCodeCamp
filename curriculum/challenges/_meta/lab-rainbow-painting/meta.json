@@ -1,5 +1,6 @@
 {
-  "name": "Rainbow Painting",
+  "name": "Build a Rainbow Painting",
+  "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-rainbow-painting",
