@@ -1713,6 +1713,12 @@
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
       },
+      "lab-travel-agency-page": {
+        "title": "Build a Travel Agency Page",
+        "intro": [
+          "For this lab, you will create a web page of a travel agency."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
