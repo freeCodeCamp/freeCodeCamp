@@ -3,7 +3,6 @@
   "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "lab-random-background-color-changer",
   "order": 206,
   "superBlock": "front-end-development",
