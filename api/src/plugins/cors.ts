@@ -5,7 +5,7 @@ import { HOME_LOCATION } from '../utils/env';
 
 const allowedOrigins = [
   'https://www.freecodecamp.dev',
-  'https://www.freecodecamp.org',
+  'https://fcc.navgurukul.org',
   'https://beta.freecodecamp.dev',
   'https://beta.freecodecamp.org',
   'https://chinese.freecodecamp.dev',
