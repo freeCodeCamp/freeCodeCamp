@@ -1711,7 +1711,7 @@
         "intro": ["", ""]
       },
       "lab-book-inventory-app": {
-        "title": "Book Inventory App",
+        "title": "Build a Book Inventory App",
         "intro": ["For this lab, you will create a book inventory app."]
       }
     }
