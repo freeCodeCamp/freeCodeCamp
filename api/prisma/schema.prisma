@@ -317,7 +317,7 @@ model Donation {
 }
 
 model UserRateLimit {
-  id             String  @id @map("_id")
+  id             String   @id @map("_id")
   counter        Int
   expirationDate DateTime @db.Date
 

@@ -110,7 +110,6 @@ async function postExamGenerateHandler(
 ) {
   // Get exam from DB
   const examId = req.body.examId;
-  // TODO: Create exportable schema for exam structure
   const exam = await this.prisma.newExam.findUnique({
     where: {
       id: examId

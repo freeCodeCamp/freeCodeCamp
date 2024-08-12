@@ -1,7 +1,6 @@
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import {
   GeneratedExam,
-  GeneratedQuestion,
   NewAnswer,
   NewExam,
   NewQuestion,
@@ -19,18 +18,24 @@ export function checkPrerequisites(_user: user, _prerequisites: unknown) {
   return true;
 }
 
+type QuestionSetT = NewExam['question_types'][number]['questions'][number] & {
+  tags: NewQuestion['tags'];
+  question_type: NewQuestionType;
+};
+
 /**
  * Generates an exam for the user, based on the exam configuration.
  */
 export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
+  // 1. Select questions based on tag config
+  // 2. Get all questions based on question_type config
+
   // `tags` is added to keep track of how many questions of each tag are in the set.
-  const questionSet: Set<
-    GeneratedQuestion & {
-      tags: NewQuestion['tags'];
-      question_type: NewQuestionType;
-    }
-  > = new Set();
-  const randomizedQuestions = shuffleArray(exam.questions);
+  const questionSet: Set<QuestionSetT> = new Set();
+  const allQuestions = exam.question_types.flatMap(qt =>
+    qt.questions.map(q => ({ ...q, question_type: qt.type }))
+  );
+  const randomizedQuestions = shuffleArray(allQuestions);
 
   // Sort tag config by number of tags in descending order.
   const sortedTags = exam.config.tags.sort(
@@ -65,21 +70,19 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
       const answers = getRandomAnswers(question, exam);
 
       const generatedQuestion = {
-        id: question.id,
-        answers: answers.map(a => a.id),
-        question_type: question.question_type,
-        tags: question.tags
+        ...question,
+        answers: answers
       };
       questionSet.add(generatedQuestion);
     }
   }
 
   // Ensure question_type config is fulfilled.
-  for (const questionConfig of exam.config.question_types) {
+  for (const questionTypeConfig of exam.config.question_types) {
     // Determine how many questions of type are already fulfilled.
-    let numberOfQuestionsNeeded = questionConfig.number_of_questions;
+    let numberOfQuestionsNeeded = questionTypeConfig.number_of_questions;
     for (const q of questionSet) {
-      if (q.question_type === questionConfig.question_type) {
+      if (q.question_type === questionTypeConfig.type) {
         numberOfQuestionsNeeded -= 1;
       }
     }
@@ -87,68 +90,67 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
     for (let i = 0; i < numberOfQuestionsNeeded; i++) {
       const question = randomizedQuestions.splice(
         randomizedQuestions.findIndex(
-          q => q.question_type === questionConfig.question_type
+          q => q.question_type === questionTypeConfig.type
         ),
         1
       )[0];
 
       if (!question) {
         throw new Error(
-          `Invalid Exam Configuration for ${exam.id}. Not enough questions for question type ${questionConfig.question_type}.`
+          `Invalid Exam Configuration for ${exam.id}. Not enough questions for question type ${questionTypeConfig.type}.`
         );
       }
 
       const answers = getRandomAnswers(question, exam);
 
       const generatedQuestion = {
-        id: question.id,
-        answers: answers.map(a => a.id),
-        question_type: question.question_type,
-        tags: question.tags
+        ...question,
+        answers: answers
       };
       questionSet.add(generatedQuestion);
     }
   }
 
-  // Add random questions until number of questions for an exam is reached.
-  for (let i = 0; i < exam.config.total_questions - questionSet.size; i++) {
-    const question = randomizedQuestions.pop();
-    if (!question) {
-      throw new Error(
-        `Invalid Exam Configuration for ${exam.id}. Not enough questions.`
-      );
-    }
-
-    const answers = getRandomAnswers(question, exam);
-
-    const generatedQuestion = {
-      id: question.id,
-      answers: answers.map(a => a.id),
-      question_type: question.question_type,
-      tags: question.tags
-    };
-    questionSet.add(generatedQuestion);
-  }
-
-  // Remove tags
+  // Remove tags, deprecated, and is_correct from questions.
   const questions = Array.from(questionSet).map(q => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { tags, ...question } = q;
-    return question;
+    const answers = q.answers.map(a => a.id);
+
+    return {
+      id: q.id,
+      question_type: q.question_type,
+      answers
+    };
+  });
+
+  const question_types = exam.question_types.map(qt => {
+    const questionsForType = questions.filter(q => q.question_type === qt.type);
+
+    const qs = questionsForType.map(q => {
+      return {
+        id: q.id,
+        answers: q.answers
+      };
+    });
+
+    return {
+      id: qt.id,
+      questions: qs
+    };
   });
 
   return {
     exam_id: exam.id,
-    questions
+    question_types
   };
 }
 
 /**
  * Gets random answers for a question.
  */
-export function getRandomAnswers(question: NewQuestion, exam: NewExam) {
+export function getRandomAnswers(question: QuestionSetT, exam: NewExam) {
   const questionConfig = exam.config.question_types.find(
-    c => question.question_type === c.question_type
+    c => question.question_type === c.type
   );
   if (!questionConfig) {
     throw new Error(
