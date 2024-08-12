@@ -585,10 +585,7 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": {
-        "title": "D3 Dashboard",
-        "intro": ["", ""]
-      }
+      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
     }
   },
   "relational-database": {
@@ -891,7 +888,6 @@
           "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
         ]
       },
-
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Learn Special Methods by Building a Vector Space",
         "intro": [
@@ -1700,15 +1696,543 @@
     "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Learn Basic HTML by Building a Recipe Page",
-        "intro": ["", ""]
+      "0": {
+        "title": "0",
+        "intro": []
+      },
+      "1": {
+        "title": "1",
+        "intro": []
+      },
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
       },
       "lab-recipe-page": {
-        "title": "Recipe Page",
+        "title": "Build a Recipe Page",
         "intro": [
           "For this lab, you will create a web page of your favorite recipe."
         ]
+      },
+      "4": {
+        "title": "4",
+        "intro": []
+      },
+      "lab-travel-agency-page": {
+        "title": "Build a Travel Agency Page",
+        "intro": [
+          "For this lab, you will create a web page of a travel agency."
+        ]
+      },
+      "6": {
+        "title": "6",
+        "intro": []
+      },
+      "lab-video-compilation-page": {
+        "title": "Build a Video Compilation Page",
+        "intro": ["For this lab, you will create a video compilation web page."]
+      },
+      "8": {
+        "title": "8",
+        "intro": []
+      },
+      "9": {
+        "title": "9",
+        "intro": []
+      },
+      "10": {
+        "title": "10",
+        "intro": []
+      },
+      "11": {
+        "title": "11",
+        "intro": []
+      },
+      "workshop-final-exams-table": {
+        "title": "Build a Final Exams Table",
+        "intro": [
+          "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
+        ]
+      },
+      "workshop-greeting-bot": {
+        "title": "Build a Greeting Bot",
+        "intro": [
+          "For this workshop, you will learn how to work with JavaScript fundamentals by building a greeting bot.",
+          "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
+        ]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+        ]
+      },
+      "13": {
+        "title": "13",
+        "intro": []
+      },
+      "14": {
+        "title": "14",
+        "intro": []
+      },
+      "15": {
+        "title": "15",
+        "intro": []
+      },
+      "16": {
+        "title": "16",
+        "intro": []
+      },
+      "17": {
+        "title": "17",
+        "intro": []
+      },
+      "18": {
+        "title": "18",
+        "intro": []
+      },
+      "19": {
+        "title": "19",
+        "intro": []
+      },
+      "20": {
+        "title": "20",
+        "intro": []
+      },
+      "21": {
+        "title": "21",
+        "intro": []
+      },
+      "22": {
+        "title": "22",
+        "intro": []
+      },
+      "23": {
+        "title": "23",
+        "intro": []
+      },
+      "24": {
+        "title": "24",
+        "intro": []
+      },
+      "25": {
+        "title": "25",
+        "intro": []
+      },
+      "26": {
+        "title": "26",
+        "intro": []
+      },
+      "27": {
+        "title": "27",
+        "intro": []
+      },
+      "28": {
+        "title": "28",
+        "intro": []
+      },
+      "29": {
+        "title": "29",
+        "intro": []
+      },
+      "30": {
+        "title": "30",
+        "intro": []
+      },
+      "31": {
+        "title": "31",
+        "intro": []
+      },
+      "32": {
+        "title": "32",
+        "intro": []
+      },
+      "33": {
+        "title": "33",
+        "intro": []
+      },
+      "34": {
+        "title": "34",
+        "intro": []
+      },
+      "35": {
+        "title": "35",
+        "intro": []
+      },
+      "36": {
+        "title": "36",
+        "intro": []
+      },
+      "37": {
+        "title": "37",
+        "intro": []
+      },
+      "38": {
+        "title": "38",
+        "intro": []
+      },
+      "39": {
+        "title": "39",
+        "intro": []
+      },
+      "40": {
+        "title": "40",
+        "intro": []
+      },
+      "41": {
+        "title": "41",
+        "intro": []
+      },
+      "42": {
+        "title": "42",
+        "intro": []
+      },
+      "43": {
+        "title": "43",
+        "intro": []
+      },
+      "44": {
+        "title": "44",
+        "intro": []
+      },
+      "45": {
+        "title": "45",
+        "intro": []
+      },
+      "46": {
+        "title": "46",
+        "intro": []
+      },
+      "47": {
+        "title": "47",
+        "intro": []
+      },
+      "48": {
+        "title": "48",
+        "intro": []
+      },
+      "49": {
+        "title": "49",
+        "intro": []
+      },
+      "50": {
+        "title": "50",
+        "intro": []
+      },
+      "51": {
+        "title": "51",
+        "intro": []
+      },
+      "52": {
+        "title": "52",
+        "intro": []
+      },
+      "53": {
+        "title": "53",
+        "intro": []
+      },
+      "54": {
+        "title": "54",
+        "intro": []
+      },
+      "55": {
+        "title": "55",
+        "intro": []
+      },
+      "56": {
+        "title": "56",
+        "intro": []
+      },
+      "57": {
+        "title": "57",
+        "intro": []
+      },
+      "58": {
+        "title": "58",
+        "intro": []
+      },
+      "59": {
+        "title": "59",
+        "intro": []
+      },
+      "60": {
+        "title": "60",
+        "intro": []
+      },
+      "61": {
+        "title": "61",
+        "intro": []
+      },
+      "62": {
+        "title": "62",
+        "intro": []
+      },
+      "63": {
+        "title": "63",
+        "intro": []
+      },
+      "64": {
+        "title": "64",
+        "intro": []
+      },
+      "65": {
+        "title": "65",
+        "intro": []
+      },
+      "66": {
+        "title": "66",
+        "intro": []
+      },
+      "67": {
+        "title": "67",
+        "intro": []
+      },
+      "68": {
+        "title": "68",
+        "intro": []
+      },
+      "69": {
+        "title": "69",
+        "intro": []
+      },
+      "70": {
+        "title": "70",
+        "intro": []
+      },
+      "71": {
+        "title": "71",
+        "intro": []
+      },
+      "72": {
+        "title": "72",
+        "intro": []
+      },
+      "73": {
+        "title": "73",
+        "intro": []
+      },
+      "74": {
+        "title": "74",
+        "intro": []
+      },
+      "75": {
+        "title": "75",
+        "intro": []
+      },
+      "76": {
+        "title": "76",
+        "intro": []
+      },
+      "77": {
+        "title": "77",
+        "intro": []
+      },
+      "78": {
+        "title": "78",
+        "intro": []
+      },
+      "79": {
+        "title": "79",
+        "intro": []
+      },
+      "80": {
+        "title": "80",
+        "intro": []
+      },
+      "81": {
+        "title": "81",
+        "intro": []
+      },
+      "82": {
+        "title": "82",
+        "intro": []
+      },
+      "83": {
+        "title": "83",
+        "intro": []
+      },
+      "84": {
+        "title": "84",
+        "intro": []
+      },
+      "85": {
+        "title": "85",
+        "intro": []
+      },
+      "86": {
+        "title": "86",
+        "intro": []
+      },
+      "87": {
+        "title": "87",
+        "intro": []
+      },
+      "88": {
+        "title": "88",
+        "intro": []
+      },
+      "89": {
+        "title": "89",
+        "intro": []
+      },
+      "90": {
+        "title": "90",
+        "intro": []
+      },
+      "91": {
+        "title": "91",
+        "intro": []
+      },
+      "92": {
+        "title": "92",
+        "intro": []
+      },
+      "93": {
+        "title": "93",
+        "intro": []
+      },
+      "94": {
+        "title": "94",
+        "intro": []
+      },
+      "95": {
+        "title": "95",
+        "intro": []
+      },
+      "96": {
+        "title": "96",
+        "intro": []
+      },
+      "97": {
+        "title": "97",
+        "intro": []
+      },
+      "98": {
+        "title": "98",
+        "intro": []
+      },
+      "99": {
+        "title": "99",
+        "intro": []
+      },
+      "100": {
+        "title": "100",
+        "intro": []
+      },
+      "101": {
+        "title": "101",
+        "intro": []
+      },
+      "103": {
+        "title": "103",
+        "intro": []
+      },
+      "104": {
+        "title": "104",
+        "intro": []
+      },
+      "105": {
+        "title": "105",
+        "intro": []
+      },
+      "106": {
+        "title": "106",
+        "intro": []
+      },
+      "107": {
+        "title": "107",
+        "intro": []
+      },
+      "108": {
+        "title": "108",
+        "intro": []
+      },
+      "109": {
+        "title": "109",
+        "intro": []
+      },
+      "110": {
+        "title": "110",
+        "intro": []
+      },
+      "111": {
+        "title": "111",
+        "intro": []
+      },
+      "112": {
+        "title": "112",
+        "intro": []
+      },
+      "113": {
+        "title": "113",
+        "intro": []
+      },
+      "114": {
+        "title": "114",
+        "intro": []
+      },
+      "115": {
+        "title": "115",
+        "intro": []
+      },
+      "116": {
+        "title": "116",
+        "intro": []
+      },
+      "117": {
+        "title": "117",
+        "intro": []
+      },
+      "118": {
+        "title": "118",
+        "intro": []
+      },
+      "119": {
+        "title": "119",
+        "intro": []
+      },
+      "120": {
+        "title": "120",
+        "intro": []
+      },
+      "121": {
+        "title": "121",
+        "intro": []
+      },
+      "122": {
+        "title": "122",
+        "intro": []
+      },
+      "123": {
+        "title": "123",
+        "intro": []
+      },
+      "124": {
+        "title": "124",
+        "intro": []
+      },
+      "125": {
+        "title": "125",
+        "intro": []
+      },
+      "126": {
+        "title": "126",
+        "intro": []
+      },
+      "127": {
+        "title": "127",
+        "intro": []
+      },
+      "128": {
+        "title": "128",
+        "intro": []
+      },
+      "129": {
+        "title": "129",
+        "intro": []
       },
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",

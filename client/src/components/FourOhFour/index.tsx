@@ -1,12 +1,11 @@
 import { RouteComponentProps } from '@reach/router';
-import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
 import { randomQuote } from '../../utils/get-words';
-import { Spacer } from '../helpers';
+import { Spacer, Link } from '../helpers';
 
 import './404.css';
 

@@ -1701,12 +1701,15 @@
     "title": "Desarrollo Front End",
     "intro": ["marcador de posición"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Aprende HTML básico creando una página de recetas",
-        "intro": ["", ""]
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
       },
       "lab-recipe-page": {
-        "title": "Página de Recetas",
+        "title": "Build a Recipe Page",
         "intro": [
           "Para este laboratorio, crearás una página web con tu receta favorita."
         ]
@@ -1714,6 +1717,12 @@
       "front-end-development-certification-exam": {
         "title": "Examen de Certificación en Desarrollo Front End",
         "intro": ["", ""]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+        ]
       }
     }
   },

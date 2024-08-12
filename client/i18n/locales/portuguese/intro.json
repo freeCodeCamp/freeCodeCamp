@@ -1699,12 +1699,15 @@
     "title": "Desenvolvimento de front-end",
     "intro": ["placeholder"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Aprenda HTML básico criando uma página de receitas",
-        "intro": ["", ""]
+      "workshop-cat-photo-app": {
+        "title": "Crie um aplicativo de fotos de gatos",
+        "intro": [
+          "O HTML é a linguagem de marcação de hipertexto e representa o conteúdo e a estrutura de uma página da web.",
+          "Neste workshop, você aprenderá a trabalhar com elementos básicos do HTML, como títulos, parágrafos, imagens, links e listas."
+        ]
       },
       "lab-recipe-page": {
-        "title": "Página de receita",
+        "title": "Build a Recipe Page",
         "intro": [
           "Neste laboratório, você criará uma página da web com sua receita favorita."
         ]
@@ -1712,6 +1715,12 @@
       "front-end-development-certification-exam": {
         "title": "Exame de certificação de desenvolvimento de front-end",
         "intro": ["", ""]
+      },
+      "workshop-blog-page": {
+        "title": "Crie uma página de blog sobre gatos",
+        "intro": [
+          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elemento main, nav, article e footer."
+        ]
       }
     }
   },

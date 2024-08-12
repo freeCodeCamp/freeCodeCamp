@@ -255,9 +255,7 @@ export function* previewChallengeSaga(action) {
     yield put(initLogs());
     yield put(initConsole(''));
   }
-  // long enough so that holding down a key will only send one request, but not
-  // so long that it feels unresponsive
-  yield delay(30);
+  yield delay(700);
 
   const logProxy = yield channel();
   const proxyLogger = args => logProxy.put(args);
