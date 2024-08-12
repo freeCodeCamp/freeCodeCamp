@@ -14,7 +14,6 @@ function UIImages(): JSX.Element {
     <Media minWidth={LARGE_SCREEN_SIZE}>
       <figure
         className='ui-images'
-        data-test-label='landing-page-figure'
         data-playwright-test-label='landing-page-figure'
       >
         <LazyImage alt={t('landing.hero-img-uis')} src={landingPageb} />
