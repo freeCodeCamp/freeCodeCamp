@@ -40,8 +40,6 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
     }
   );
 
-  fastify.addHook('preParsing', fastify.send401IfNoUser);
-
   done();
 };
 
