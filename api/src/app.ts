@@ -186,10 +186,10 @@ export const build = async (
   void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
+  void fastify.register(bouncer);
 
   // Routes requiring authentication:
   void fastify.register(async function (fastify, _opts) {
-    await fastify.register(bouncer);
     fastify.addHook('onRequest', fastify.authorize);
     // CSRF protection enabled:
     await fastify.register(async function (fastify, _opts) {
@@ -222,14 +222,18 @@ export const build = async (
       await fastify.register(settingRedirectRoutes);
     });
   });
-  // Routes not requiring authentication:
-  void fastify.register(mobileAuth0Routes);
-  // TODO: consolidate with LOCAL_MOCK_AUTH
-  if (FCC_ENABLE_DEV_LOGIN_MODE) {
-    void fastify.register(devAuthRoutes);
-  } else {
-    void fastify.register(authRoutes);
-  }
+  // Routes for signed out users:
+  void fastify.register(async function (fastify) {
+    fastify.addHook('onRequest', fastify.authorize);
+    fastify.addHook('onRequest', fastify.redirectIfSignedIn);
+    await fastify.register(mobileAuth0Routes);
+    // TODO: consolidate with LOCAL_MOCK_AUTH
+    if (FCC_ENABLE_DEV_LOGIN_MODE) {
+      await fastify.register(devAuthRoutes);
+    } else {
+      await fastify.register(authRoutes);
+    }
+  });
   void fastify.register(chargeStripeRoute);
   void fastify.register(signoutRoute);
   void fastify.register(emailSubscribtionRoutes);
