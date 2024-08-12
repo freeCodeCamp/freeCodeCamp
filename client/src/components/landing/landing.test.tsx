@@ -36,6 +36,8 @@ function render(ui: JSX.Element) {
 
 describe('<Landing />', () => {
   it('renders when visiting index page and logged out', () => {
+    // @ts-expect-error the mock superblocks have type string, but the component
+    // expects SuperBlocks
     const { container } = render(<IndexPage {...loggedOutProps} />);
     expect(container).toMatchSnapshot();
   });

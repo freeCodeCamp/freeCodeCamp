@@ -1,5 +1,3 @@
-import { SuperBlocks } from '../../../shared/config/curriculum';
-
 interface MockChallengeNodes {
   challenge: {
     fields: {
@@ -10,7 +8,7 @@ interface MockChallengeNodes {
     block: string;
     title: string;
     isPrivate: boolean;
-    superBlock: SuperBlocks;
+    superBlock: string;
     dashedName: string;
   };
 }
