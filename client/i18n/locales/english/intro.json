@@ -1704,7 +1704,7 @@
         ]
       },
       "lab-recipe-page": {
-        "title": "Recipe Page",
+        "title": "Build a Recipe Page",
         "intro": [
           "For this lab, you will create a web page of your favorite recipe."
         ]
@@ -1716,7 +1716,8 @@
       "lab-email-masker": {
         "title": "Build an Email Masker",
         "intro": [
-          "In this lab, you'll build an email masker that will take an email address and mask it."]
+          "In this lab, you'll build an email masker that will take an email address and mask it."
+        ]
       },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
