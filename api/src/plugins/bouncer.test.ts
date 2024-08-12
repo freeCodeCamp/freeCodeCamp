@@ -40,7 +40,7 @@ describe('bouncer', () => {
       fastify.addHook('onRequest', fastify.send401IfNoUser);
     });
 
-    it('should return 401 if no user is present', async () => {
+    it('should return 401 if NO user is present', async () => {
       const message = {
         type: 'danger',
         content: 'Something undesirable occurred'
@@ -83,7 +83,10 @@ describe('bouncer', () => {
     });
     const redirectLocation = `${HOME_LOCATION}?${formatMessage({ type: 'info', content: 'Only authenticated users can access this route. Please sign in and try again.' })}`;
 
-    it('should redirect to HOME_LOCATION if no user is present', async () => {
+    // TODO(Post-MVP): make the redirects consistent between redirectIfNoUser
+    // and redirectIfSignedIn. Either both should redirect to the referer or
+    // both should redirect to HOME_LOCATION.
+    it('should redirect to HOME_LOCATION if NO user is present', async () => {
       const message = {
         type: 'danger',
         content: 'At the moment, content is ignored'
@@ -107,6 +110,49 @@ describe('bouncer', () => {
         done();
       });
 
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/'
+      });
+
+      expect(res.json()).toEqual({ foo: 'bar' });
+      expect(res.statusCode).toEqual(200);
+    });
+  });
+
+  describe('redirectIfSignedIn', () => {
+    beforeEach(() => {
+      fastify.addHook('onRequest', fastify.redirectIfSignedIn);
+    });
+
+    it('should redirect to the referer if a user is present', async () => {
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.user = { id: '123' };
+        done();
+      });
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/',
+        headers: {
+          referer: 'https://www.freecodecamp.org/some/other/path'
+        }
+      });
+
+      expect(res.headers.location).toBe(
+        'https://www.freecodecamp.org/some/other/path'
+      );
+      expect(res.statusCode).toEqual(302);
+    });
+
+    it('should not alter the response if NO user is present', async () => {
+      const message = {
+        type: 'danger',
+        content: 'At the moment, content is ignored'
+      };
+      authorizeSpy.mockImplementationOnce((req, _reply, done) => {
+        req.accessDeniedMessage = message;
+        done();
+      });
       const res = await fastify.inject({
         method: 'GET',
         url: '/'

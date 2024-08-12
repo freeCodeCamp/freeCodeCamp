@@ -10,6 +10,7 @@ declare module 'fastify' {
   interface FastifyInstance {
     send401IfNoUser: (req: FastifyRequest, reply: FastifyReply) => void;
     redirectIfNoUser: (req: FastifyRequest, reply: FastifyReply) => void;
+    redirectIfSignedIn: (req: FastifyRequest, reply: FastifyReply) => void;
   }
 }
 
@@ -36,6 +37,16 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
           content:
             'Only authenticated users can access this route. Please sign in and try again.'
         });
+      }
+    }
+  );
+
+  fastify.decorate(
+    'redirectIfSignedIn',
+    async function (req: FastifyRequest, reply: FastifyReply) {
+      if (req.user) {
+        const { returnTo } = getRedirectParams(req);
+        await reply.redirect(returnTo);
       }
     }
   );
