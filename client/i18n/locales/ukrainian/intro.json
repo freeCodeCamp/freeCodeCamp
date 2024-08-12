@@ -1691,12 +1691,15 @@
     "title": "Front End розробка",
     "intro": ["placeholder"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Вивчіть основи HTML, створивши сторінку з рецептами",
-        "intro": ["", ""]
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
       },
       "lab-recipe-page": {
-        "title": "Сторінка з рецептом",
+        "title": "Build a Recipe Page",
         "intro": [
           "У цій лабораторній роботі ви створите вебсторінку з улюбленим рецептом."
         ]
