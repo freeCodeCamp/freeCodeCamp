@@ -217,15 +217,15 @@ figcaption.caption {
 
 /* AB testing styles */
 .landing-page-b .mega-heading {
-  font-size: 2rem !important;
-  margin: 0px 0px 1rem !important;
+  font-size: 2rem;
+  margin: 0px 0px 1rem;
   font-weight: 700;
   line-height: 3rem;
 }
 
 @media (min-width: 500px) {
   .landing-page-b .mega-heading {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 }
 
@@ -247,4 +247,17 @@ figcaption.caption {
 
 .landing-page-b .logo-row-title {
   font-weight: normal;
+}
+
+figure.ui-images {
+  position: absolute;
+  left: 50%;
+  height: auto;
+  width: 750px;
+  top: 3vw;
+}
+
+figure.ui-images img {
+  width: 100%;
+  height: auto;
 }

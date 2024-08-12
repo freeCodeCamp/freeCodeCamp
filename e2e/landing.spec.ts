@@ -60,10 +60,11 @@ test.describe('Landing Page - Variation B', () => {
   });
 
   test('The component Landing-top renders correctly', async ({ page }) => {
-    const landingHeading1 = page.getByTestId('landing-big-heading-1');
-    await expect(landingHeading1).toHaveText(
-      translations.landing['big-heading-1-b']
-    );
+    await expect(
+      page
+        .getByRole('heading', { level: 1 })
+        .filter({ hasText: `${translations.landing['big-heading-1-b']}` })
+    ).toBeVisible();
 
     const landingHeading2 = page.getByTestId('landing-big-heading-2');
     await expect(landingHeading2).toHaveText(

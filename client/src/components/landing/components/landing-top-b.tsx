@@ -30,7 +30,7 @@ const LogoRow = (): JSX.Element => {
         {t('landing.h2-heading-b')}
       </p>
       <Spacer size='small' />
-      <div
+      <ul
         className='logo-row'
         data-playwright-test-label='brand-logo-container'
       >
@@ -48,7 +48,7 @@ const LogoRow = (): JSX.Element => {
             <AmazonLogo />
           </>
         )}
-      </div>
+      </ul>
     </>
   );
 };
@@ -66,7 +66,6 @@ function LandingTop(): JSX.Element {
               id='content-start'
               className='mega-heading'
               data-test-label='landing-header'
-              data-playwright-test-label='landing-big-heading-1'
             >
               {t('landing.big-heading-1-b')}
             </h1>
