@@ -69,6 +69,35 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   }
 };
 
+const ALLOWED_DOMAINS_MAP = {
+  githubProfile: ['github.com'],
+  linkedin: ['linkedin.com'],
+  twitter: ['twitter.com', 'x.com']
+};
+
+/**
+ * Validate a social URL.
+ *
+ * @param socialUrl The URL to check.
+ * @param key The key of the allowed socials and domains.
+ * @returns Whether the URL is valid.
+ */
+export const validateSocialUrl = (
+  socialUrl: string,
+  key: keyof typeof ALLOWED_DOMAINS_MAP
+): boolean => {
+  if (!socialUrl) return true;
+
+  try {
+    const url = new URL(socialUrl);
+    const domains = ALLOWED_DOMAINS_MAP[key];
+    const domainAndTld = url.hostname.split('.').slice(-2).join('.');
+    return domains.includes(domainAndTld);
+  } catch {
+    return false;
+  }
+};
+
 /**
  * Plugin for all endpoints related to user settings.
  *
@@ -328,6 +357,18 @@ ${isLinkSentWithinLimitTTL}`
       errorHandler: updateErrorHandler
     },
     async (req, reply) => {
+      const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
+        key => validateSocialUrl(req.body[key], key)
+      );
+
+      if (!valid) {
+        void reply.code(400);
+        return reply.send({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+      }
+
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -453,7 +494,7 @@ ${isLinkSentWithinLimitTTL}`
             about: req.body.about,
             name: req.body.name,
             location: req.body.location,
-            ...(hasProtocol && { picture: req.body.picture })
+            picture: hasProtocol ? req.body.picture : ''
           }
         });
 

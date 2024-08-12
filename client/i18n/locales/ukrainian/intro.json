@@ -1696,14 +1696,20 @@
         "intro": ["", ""]
       },
       "lab-recipe-page": {
-        "title": "Recipe Page",
+        "title": "Сторінка з рецептом",
         "intro": [
-          "For this lab, you will create a web page of your favorite recipe."
+          "У цій лабораторній роботі ви створите вебсторінку з улюбленим рецептом."
         ]
       },
       "front-end-development-certification-exam": {
         "title": "Екзамен з сертифікації «Front End розробка»",
         "intro": ["", ""]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+        ]
       }
     }
   },

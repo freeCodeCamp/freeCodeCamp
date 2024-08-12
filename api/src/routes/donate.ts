@@ -8,7 +8,7 @@ import {
   allStripeProductIdsArray
 } from '../../../shared/config/donation-settings';
 import * as schemas from '../schemas';
-import { STRIPE_SECRET_KEY } from '../utils/env';
+import { STRIPE_SECRET_KEY, HOME_LOCATION } from '../utils/env';
 import { inLastFiveMinutes } from '../utils/validate-donation';
 import { findOrCreateUser } from './helpers/auth-helpers';
 
@@ -29,6 +29,35 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     apiVersion: '2024-06-20',
     typescript: true
   });
+
+  fastify.put(
+    '/donate/update-stripe-card',
+    {
+      schema: schemas.updateStripeCard
+    },
+    async req => {
+      const donation = await fastify.prisma.donation.findFirst({
+        where: { userId: req.user?.id, provider: 'stripe' }
+      });
+      if (!donation)
+        throw Error(`Stripe donation record not found: ${req.user?.id}`);
+      const { customerId, subscriptionId } = donation;
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        mode: 'setup',
+        customer: customerId,
+        setup_intent_data: {
+          metadata: {
+            customer_id: customerId,
+            subscription_id: subscriptionId
+          }
+        },
+        success_url: `${HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${HOME_LOCATION}/update-stripe-card`
+      });
+      return { sessionId: session.id } as const;
+    }
+  );
 
   fastify.post(
     '/donate/add-donation',

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link as GatsbyLink } from 'gatsby';
 import { Button } from '@freecodecamp/ui';
+
+import Link from './link';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 
@@ -67,13 +68,8 @@ export const ButtonLink = ({
   }
 
   return (
-    <GatsbyLink
-      className={gatsbyLinkCls}
-      to={href}
-      target={target}
-      onClick={onClick}
-    >
+    <Link className={gatsbyLinkCls} to={href} target={target} onClick={onClick}>
       {children}
-    </GatsbyLink>
+    </Link>
   );
 };

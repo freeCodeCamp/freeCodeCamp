@@ -1714,6 +1714,12 @@
       "front-end-development-certification-exam": {
         "title": "Examen de Certificación en Desarrollo Front End",
         "intro": ["", ""]
+      },
+      "workshop-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+        ]
       }
     }
   },

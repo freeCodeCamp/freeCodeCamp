@@ -170,7 +170,7 @@ function updateMyProfileUI(req, res, next) {
   );
 }
 
-function updateMyAbout(req, res, next) {
+export function updateMyAbout(req, res, next) {
   const {
     user,
     body: { name, location, about, picture }
@@ -179,7 +179,7 @@ function updateMyAbout(req, res, next) {
   // prevent dataurls from being stored
   const update = isURL(picture, { require_protocol: true })
     ? { name, location, about, picture }
-    : { name, location, about };
+    : { name, location, about, picture: '' };
   return user.updateAttributes(
     update,
     createStandardHandler(req, res, next, 'flash.updated-about-me')

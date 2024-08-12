@@ -37,10 +37,8 @@ export enum SuperBlocks {
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
  * 'Upcoming' is for development -> not shown on stag or prod anywhere
  */
-export enum SuperBlockStages {
-  FrontEnd,
-  Backend,
-  Python,
+export enum SuperBlockStage {
+  Core,
   English,
   Professional,
   Extra,
@@ -49,53 +47,67 @@ export enum SuperBlockStages {
   Upcoming
 }
 
-export type SuperBlockOrder = {
-  [key in SuperBlockStages]: SuperBlocks[];
+const defaultStageOrder = [
+  SuperBlockStage.Core,
+  SuperBlockStage.English,
+  SuperBlockStage.Professional,
+  SuperBlockStage.Extra,
+  SuperBlockStage.Legacy
+];
+
+export function getStageOrder({
+  showNewCurriculum,
+  showUpcomingChanges
+}: Config): SuperBlockStage[] {
+  const stageOrder = [...defaultStageOrder];
+
+  if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
+  if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
+  return stageOrder;
+}
+
+export type StageMap = {
+  [key in SuperBlockStage]: SuperBlocks[];
 };
 
-// order of buttons on map, this should include all superblocks
-// new and upcoming superblocks are removed below
-export const superBlockOrder: SuperBlockOrder = {
-  [SuperBlockStages.FrontEnd]: [
+// Groups of superblocks in learn map. This should include all superblocks.
+export const superBlockStages: StageMap = {
+  [SuperBlockStage.Core]: [
     SuperBlocks.RespWebDesignNew,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.DataVis
-  ],
-  [SuperBlockStages.Backend]: [
+    SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
     SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance
-  ],
-  [SuperBlockStages.Python]: [
+    SuperBlocks.QualityAssurance,
     SuperBlocks.SciCompPy,
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy
   ],
-  [SuperBlockStages.English]: [SuperBlocks.A2English],
-  [SuperBlockStages.Professional]: [SuperBlocks.FoundationalCSharp],
-  [SuperBlockStages.Extra]: [
+  [SuperBlockStage.English]: [SuperBlocks.A2English],
+  [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
+  [SuperBlockStage.Extra]: [
     SuperBlocks.TheOdinProject,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.RosettaCode
   ],
-  [SuperBlockStages.Legacy]: [
+  [SuperBlockStage.Legacy]: [
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.PythonForEverybody
   ],
-  [SuperBlockStages.New]: [],
-  [SuperBlockStages.Upcoming]: [
+  [SuperBlockStage.New]: [],
+  [SuperBlockStage.Upcoming]: [
     SuperBlocks.B1English,
     SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython
   ]
 };
 
-Object.freeze(superBlockOrder);
+Object.freeze(superBlockStages);
 
 type NotAuditedSuperBlocks = {
   [key in Languages]: SuperBlocks[];
@@ -277,34 +289,10 @@ type LanguagesConfig = Config & {
   language: string;
 };
 
-// removes new and upcoming from superBlockOrder
-// not used yet, will be used when adding progress indicators to map
-export function createSuperBlockMap({
-  showNewCurriculum,
-  showUpcomingChanges
-}: Config): SuperBlockOrder {
-  const superBlockMap = { ...superBlockOrder };
-  if (!showNewCurriculum) {
-    superBlockMap[SuperBlockStages.New] = [];
-  }
-  if (!showUpcomingChanges) {
-    superBlockMap[SuperBlockStages.Upcoming] = [];
-  }
-  return superBlockMap;
-}
-
-export function createFlatSuperBlockMap({
-  showNewCurriculum,
-  showUpcomingChanges
-}: Config): SuperBlocks[] {
-  const superBlockMap = { ...superBlockOrder };
-  if (!showNewCurriculum) {
-    superBlockMap[SuperBlockStages.New] = [];
-  }
-  if (!showUpcomingChanges) {
-    superBlockMap[SuperBlockStages.Upcoming] = [];
-  }
-  return Object.values(superBlockMap).flat();
+export function createFlatSuperBlockMap(config: Config): SuperBlocks[] {
+  return getStageOrder(config)
+    .map(stage => superBlockStages[stage])
+    .flat();
 }
 
 export function getAuditedSuperBlocks({

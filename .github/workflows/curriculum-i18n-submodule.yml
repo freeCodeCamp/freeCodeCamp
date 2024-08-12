@@ -48,8 +48,6 @@ jobs:
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Install node_modules
         run: pnpm install

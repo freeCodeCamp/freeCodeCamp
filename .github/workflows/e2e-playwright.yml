@@ -48,8 +48,6 @@ jobs:
       - name: Set freeCodeCamp Environment Variables
         run: |
           cp sample.env .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Install and Build
         run: |
@@ -132,8 +130,6 @@ jobs:
       - name: Set freeCodeCamp Environment Variables
         run: |
           cp sample.env .env
-          echo 'BUILD_WITH_SUBMODULE=true' >> .env
-        # TODO: Remove this ^ after migration is complete
 
       - name: Install and Build
         run: |
