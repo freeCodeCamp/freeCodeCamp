@@ -1810,7 +1810,12 @@
       "habq": { "title": "82", "intro": [] },
       "vqut": { "title": "83", "intro": [] },
       "ujcf": { "title": "84", "intro": [] },
-      "upuu": { "title": "85", "intro": [] },
+      "lab-newspaper-article": {
+        "title": "Build a Newspaper Article",
+        "intro": [
+          "In this lab, you will build a newspaper article page using HTML and CSS."
+        ]
+      },
       "hbme": { "title": "86", "intro": [] },
       "ioby": { "title": "87", "intro": [] },
       "dyvj": { "title": "88", "intro": [] },
