@@ -14,6 +14,16 @@ jest.unmock('react-i18next');
 
 jest.mock('../../analytics');
 
+jest.mock('../../../config/env.json', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return {
+    ...jest.requireActual('../../../config/env.json'),
+    showUpcomingChanges: false,
+    showNewCurriculum: false,
+    clientLocale: 'english'
+  };
+});
+
 jest
   .spyOn(Gatsby, `useStaticQuery`)
   .mockImplementation(() => mockUseStaticQuery);
