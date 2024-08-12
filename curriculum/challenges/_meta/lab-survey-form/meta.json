@@ -1,5 +1,6 @@
 {
-  "name": "Survey Form",
+  "name": "Build a Survey Form",
+  "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-survey-form",

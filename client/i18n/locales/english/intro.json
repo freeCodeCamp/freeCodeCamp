@@ -1711,7 +1711,7 @@
         "intro": ["", ""]
       },
       "lab-survey-form": {
-        "title": "Survey Form",
+        "title": "Build a Survey Form",
         "intro": ["For this lab, you will create a survey form."]
       }
     }
