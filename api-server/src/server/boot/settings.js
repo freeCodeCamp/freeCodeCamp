@@ -170,7 +170,7 @@ function updateMyProfileUI(req, res, next) {
   );
 }
 
-function updateMyAbout(req, res, next) {
+export function updateMyAbout(req, res, next) {
   const {
     user,
     body: { name, location, about, picture }
