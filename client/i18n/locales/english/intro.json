@@ -1885,7 +1885,10 @@
       "193": { "title": "193", "intro": [] },
       "194": { "title": "194", "intro": [] },
       "195": { "title": "195", "intro": [] },
-      "196": { "title": "196", "intro": [] },
+      "build-a-real-time-counter": {
+        "title": "Build a Real Time Counter",
+        "intro": ["", ""]
+      },
       "197": { "title": "197", "intro": [] },
       "198": { "title": "198", "intro": [] },
       "199": { "title": "199", "intro": [] },
@@ -2033,10 +2036,6 @@
       },
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
-        "intro": ["", ""]
-      },
-      "build-a-real-time-counter": {
-        "title": "Build a Real Time Counter",
         "intro": ["", ""]
       }
     }
