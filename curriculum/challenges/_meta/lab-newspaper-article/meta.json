@@ -1,5 +1,6 @@
 {
   "name": "Build a Newspaper Article",
+  "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-newspaper-article",
