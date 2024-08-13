@@ -184,6 +184,7 @@ export type ChallengeNode = {
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
+    demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
     fields: Fields;
