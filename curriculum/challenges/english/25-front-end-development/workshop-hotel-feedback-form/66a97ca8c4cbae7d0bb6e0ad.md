@@ -118,7 +118,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
       </p>
     </header>
     <main>
-      <form action="example-url"> 
+      <form method="POST" action="https://hotel-feedback.freecodecamp.org">
         <fieldset>
           <legend>Personal Information</legend>
           <label for="full-name">Name*:</label>
