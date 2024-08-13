@@ -225,7 +225,8 @@ export const build = async (
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);
-    fastify.addHook('onRequest', fastify.redirectIfSignedIn);
+    // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
+    // mobileAuth0Routes and authRoutes plugins.
     await fastify.register(mobileAuth0Routes);
     // TODO: consolidate with LOCAL_MOCK_AUTH
     if (FCC_ENABLE_DEV_LOGIN_MODE) {
