@@ -462,13 +462,6 @@ button.confirm-donation-btn {
   display: inline-flex;
   align-items: center;
 }
-button.confirm-donation-btn:focus,
-button.confirm-donation-btn:active,
-button.confirm-donation-btn:active:focus {
-  background-color: var(--quaternary-background);
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
-}
 button.confirm-donation-btn:hover {
   color: black;
   background-color: #f2ba38;
