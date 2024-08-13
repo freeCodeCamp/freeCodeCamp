@@ -4,6 +4,7 @@ import {
   NewAnswer,
   NewConfig,
   NewExam,
+  NewExamAttempt,
   NewQuestion,
   QuestionType,
   user
@@ -312,4 +313,47 @@ export function createUserExam(
   };
 
   return userExam;
+}
+
+/**
+ * Ensures all questions and answers in the attempt are from the generated exam.
+ */
+export function validateAttempt(
+  generatedExam: GeneratedExam,
+  attempt: Pick<NewExamAttempt, 'question_types'>
+) {
+  for (const attemptQuestionType of attempt.question_types) {
+    const generatedQuestionType = generatedExam.question_types.find(
+      qt => qt.id === attemptQuestionType.id
+    );
+    if (!generatedQuestionType) {
+      throw new Error(
+        `Question type ${attemptQuestionType.id} not found in generated exam.`
+      );
+    }
+
+    for (const attemptQuestion of attemptQuestionType.questions) {
+      const generatedQuestion = generatedQuestionType.questions.find(
+        q => q.id === attemptQuestion.id
+      );
+      if (!generatedQuestion) {
+        throw new Error(
+          `Question ${attemptQuestion.id} not found in generated exam.`
+        );
+      }
+
+      for (const attemptAnswer of attemptQuestion.answers) {
+        const generatedAnswer = generatedQuestion.answers.find(
+          a => a === attemptAnswer
+        );
+        if (!generatedAnswer) {
+          throw new Error(
+            `Answer ${attemptAnswer} not found in generated exam.`
+          );
+        }
+      }
+    }
+  }
+
+  return true;
 }

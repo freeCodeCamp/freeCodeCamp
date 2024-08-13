@@ -6,7 +6,12 @@ import jwt from 'jsonwebtoken';
 import * as schemas from '../schemas';
 import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET } from '../../utils/env';
-import { CODE, createUserExam, generateExam } from '../utils/exam';
+import {
+  CODE,
+  createUserExam,
+  generateExam,
+  validateAttempt
+} from '../utils/exam';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -286,13 +291,79 @@ async function postExamGenerateHandler(
  * Handles the submission of an exam attempt.
  *
  * Requires token to be validated.
+ *
+ * TODO: Consider validating req.user.id == attempt.user_id?
  */
 async function postExamAttemptHandler(
   this: FastifyInstance,
-  _req: UpdateReqType<typeof schemas.examEnvironmentPostExamAttempt>,
+  req: UpdateReqType<typeof schemas.examEnvironmentPostExamAttempt>,
   reply: FastifyReply
 ) {
-  void reply.code(418);
+  const { attempt } = req.body;
+
+  // Get generated exam from database
+  const maybeGeneratedExam = await mapErr(
+    this.prisma.generatedExam.findUnique({
+      where: {
+        id: attempt.generated_exam_id
+      }
+    })
+  );
+
+  if (maybeGeneratedExam.error !== null) {
+    void reply.code(500);
+    return reply.send({
+      code: CODE.ERR_EXAM_ENVIRONMENT,
+      message: JSON.stringify(maybeGeneratedExam.error)
+    });
+  }
+
+  const generatedExam = maybeGeneratedExam.data;
+
+  if (generatedExam === null) {
+    void reply.code(404);
+    return reply.send({
+      code: CODE.ERR_EXAM_ENVIRONMENT,
+      message: 'Generated exam not found.'
+    });
+  }
+  // Ensure attempt matches generated exam
+  const maybeValidExamAttempt = syncMapErr(() =>
+    validateAttempt(generatedExam, attempt)
+  );
+
+  // Update attempt in database
+  const maybeUpdatedAttempt = await mapErr(
+    this.prisma.newExamAttempt.update({
+      where: {
+        id: attempt.id
+      },
+      data: {
+        submission_time: Date.now(),
+        question_types: attempt.question_types,
+        // If attempt is not valid, immediately flag attempt as needing retake
+        needs_retake: maybeValidExamAttempt.error ? true : false
+      }
+    })
+  );
+
+  if (maybeValidExamAttempt.error !== null) {
+    void reply.code(400);
+    return reply.send({
+      code: CODE.ERR_EXAM_ENVIRONMENT,
+      message: JSON.stringify(maybeValidExamAttempt.error)
+    });
+  }
+
+  if (maybeUpdatedAttempt.error !== null) {
+    void reply.code(500);
+    return reply.send({
+      code: CODE.ERR_EXAM_ENVIRONMENT,
+      message: JSON.stringify(maybeUpdatedAttempt.error)
+    });
+  }
+
+  void reply.code(200);
   return reply.send({
     code: CODE.EXAM_ENVIRONMENT_EXAM_ATTEMPT_SUBMITTED
   });
