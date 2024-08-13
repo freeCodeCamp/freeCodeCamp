@@ -1696,6 +1696,14 @@
     "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
+      "0": {
+        "title": "0",
+        "intro": []
+      },
+      "1": {
+        "title": "1",
+        "intro": []
+      },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
         "intro": [
@@ -1709,15 +1717,1206 @@
           "For this lab, you will create a web page of your favorite recipe."
         ]
       },
-      "front-end-development-certification-exam": {
-        "title": "Front End Development Certification Exam",
-        "intro": ["", ""]
+      "4": {
+        "title": "4",
+        "intro": []
+      },
+      "lab-travel-agency-page": {
+        "title": "Build a Travel Agency Page",
+        "intro": [
+          "For this lab, you will create a web page of a travel agency."
+        ]
+      },
+      "6": {
+        "title": "6",
+        "intro": []
+      },
+      "lab-video-compilation-page": {
+        "title": "Build a Video Compilation Page",
+        "intro": ["For this lab, you will create a video compilation web page."]
+      },
+      "8": {
+        "title": "8",
+        "intro": []
+      },
+      "9": {
+        "title": "9",
+        "intro": []
+      },
+      "10": {
+        "title": "10",
+        "intro": []
+      },
+      "11": {
+        "title": "11",
+        "intro": []
       },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
           "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
         ]
+      },
+      "13": {
+        "title": "13",
+        "intro": []
+      },
+      "14": {
+        "title": "14",
+        "intro": []
+      },
+      "15": {
+        "title": "15",
+        "intro": []
+      },
+      "16": {
+        "title": "16",
+        "intro": []
+      },
+      "17": {
+        "title": "17",
+        "intro": []
+      },
+      "18": {
+        "title": "18",
+        "intro": []
+      },
+      "19": {
+        "title": "19",
+        "intro": []
+      },
+      "workshop-final-exams-table": {
+        "title": "Build a Final Exams Table",
+        "intro": [
+          "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
+        ]
+      },
+      "21": {
+        "title": "21",
+        "intro": []
+      },
+      "22": {
+        "title": "22",
+        "intro": []
+      },
+      "23": {
+        "title": "23",
+        "intro": []
+      },
+      "24": {
+        "title": "24",
+        "intro": []
+      },
+      "25": {
+        "title": "25",
+        "intro": []
+      },
+      "26": {
+        "title": "26",
+        "intro": []
+      },
+      "27": {
+        "title": "27",
+        "intro": []
+      },
+      "28": {
+        "title": "28",
+        "intro": []
+      },
+      "29": {
+        "title": "29",
+        "intro": []
+      },
+      "30": {
+        "title": "30",
+        "intro": []
+      },
+      "31": {
+        "title": "31",
+        "intro": []
+      },
+      "32": {
+        "title": "32",
+        "intro": []
+      },
+      "33": {
+        "title": "33",
+        "intro": []
+      },
+      "34": {
+        "title": "34",
+        "intro": []
+      },
+      "35": {
+        "title": "35",
+        "intro": []
+      },
+      "36": {
+        "title": "36",
+        "intro": []
+      },
+      "37": {
+        "title": "37",
+        "intro": []
+      },
+      "38": {
+        "title": "38",
+        "intro": []
+      },
+      "39": {
+        "title": "39",
+        "intro": []
+      },
+      "40": {
+        "title": "40",
+        "intro": []
+      },
+      "41": {
+        "title": "41",
+        "intro": []
+      },
+      "42": {
+        "title": "42",
+        "intro": []
+      },
+      "43": {
+        "title": "43",
+        "intro": []
+      },
+      "44": {
+        "title": "44",
+        "intro": []
+      },
+      "45": {
+        "title": "45",
+        "intro": []
+      },
+      "46": {
+        "title": "46",
+        "intro": []
+      },
+      "47": {
+        "title": "47",
+        "intro": []
+      },
+      "48": {
+        "title": "48",
+        "intro": []
+      },
+      "49": {
+        "title": "49",
+        "intro": []
+      },
+      "50": {
+        "title": "50",
+        "intro": []
+      },
+      "51": {
+        "title": "51",
+        "intro": []
+      },
+      "52": {
+        "title": "52",
+        "intro": []
+      },
+      "53": {
+        "title": "53",
+        "intro": []
+      },
+      "54": {
+        "title": "54",
+        "intro": []
+      },
+      "55": {
+        "title": "55",
+        "intro": []
+      },
+      "56": {
+        "title": "56",
+        "intro": []
+      },
+      "57": {
+        "title": "57",
+        "intro": []
+      },
+      "58": {
+        "title": "58",
+        "intro": []
+      },
+      "59": {
+        "title": "59",
+        "intro": []
+      },
+      "60": {
+        "title": "60",
+        "intro": []
+      },
+      "61": {
+        "title": "61",
+        "intro": []
+      },
+      "62": {
+        "title": "62",
+        "intro": []
+      },
+      "63": {
+        "title": "63",
+        "intro": []
+      },
+      "64": {
+        "title": "64",
+        "intro": []
+      },
+      "65": {
+        "title": "65",
+        "intro": []
+      },
+      "66": {
+        "title": "66",
+        "intro": []
+      },
+      "67": {
+        "title": "67",
+        "intro": []
+      },
+      "68": {
+        "title": "68",
+        "intro": []
+      },
+      "69": {
+        "title": "69",
+        "intro": []
+      },
+      "70": {
+        "title": "70",
+        "intro": []
+      },
+      "71": {
+        "title": "71",
+        "intro": []
+      },
+      "72": {
+        "title": "72",
+        "intro": []
+      },
+      "73": {
+        "title": "73",
+        "intro": []
+      },
+      "74": {
+        "title": "74",
+        "intro": []
+      },
+      "75": {
+        "title": "75",
+        "intro": []
+      },
+      "76": {
+        "title": "76",
+        "intro": []
+      },
+      "77": {
+        "title": "77",
+        "intro": []
+      },
+      "78": {
+        "title": "78",
+        "intro": []
+      },
+      "79": {
+        "title": "79",
+        "intro": []
+      },
+      "80": {
+        "title": "80",
+        "intro": []
+      },
+      "81": {
+        "title": "81",
+        "intro": []
+      },
+      "82": {
+        "title": "82",
+        "intro": []
+      },
+      "83": {
+        "title": "83",
+        "intro": []
+      },
+      "84": {
+        "title": "84",
+        "intro": []
+      },
+      "85": {
+        "title": "85",
+        "intro": []
+      },
+      "86": {
+        "title": "86",
+        "intro": []
+      },
+      "87": {
+        "title": "87",
+        "intro": []
+      },
+      "88": {
+        "title": "88",
+        "intro": []
+      },
+      "89": {
+        "title": "89",
+        "intro": []
+      },
+      "90": {
+        "title": "90",
+        "intro": []
+      },
+      "91": {
+        "title": "91",
+        "intro": []
+      },
+      "92": {
+        "title": "92",
+        "intro": []
+      },
+      "93": {
+        "title": "93",
+        "intro": []
+      },
+      "94": {
+        "title": "94",
+        "intro": []
+      },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": ["For this lab, you will create a book inventory app."]
+      },
+      "96": {
+        "title": "96",
+        "intro": []
+      },
+      "97": {
+        "title": "97",
+        "intro": []
+      },
+      "98": {
+        "title": "98",
+        "intro": []
+      },
+      "99": {
+        "title": "99",
+        "intro": []
+      },
+      "100": {
+        "title": "100",
+        "intro": []
+      },
+      "101": {
+        "title": "101",
+        "intro": []
+      },
+      "102": {
+        "title": "102",
+        "intro": []
+      },
+      "103": {
+        "title": "103",
+        "intro": []
+      },
+      "104": {
+        "title": "104",
+        "intro": []
+      },
+      "105": {
+        "title": "105",
+        "intro": []
+      },
+      "106": {
+        "title": "106",
+        "intro": []
+      },
+      "107": {
+        "title": "107",
+        "intro": []
+      },
+      "108": {
+        "title": "108",
+        "intro": []
+      },
+      "109": {
+        "title": "109",
+        "intro": []
+      },
+      "110": {
+        "title": "110",
+        "intro": []
+      },
+      "111": {
+        "title": "111",
+        "intro": []
+      },
+      "112": {
+        "title": "112",
+        "intro": []
+      },
+      "113": {
+        "title": "113",
+        "intro": []
+      },
+      "114": {
+        "title": "114",
+        "intro": []
+      },
+      "115": {
+        "title": "115",
+        "intro": []
+      },
+      "116": {
+        "title": "116",
+        "intro": []
+      },
+      "117": {
+        "title": "117",
+        "intro": []
+      },
+      "118": {
+        "title": "118",
+        "intro": []
+      },
+      "119": {
+        "title": "119",
+        "intro": []
+      },
+      "120": {
+        "title": "120",
+        "intro": []
+      },
+      "121": {
+        "title": "121",
+        "intro": []
+      },
+      "122": {
+        "title": "122",
+        "intro": []
+      },
+      "123": {
+        "title": "123",
+        "intro": []
+      },
+      "124": {
+        "title": "124",
+        "intro": []
+      },
+      "125": {
+        "title": "125",
+        "intro": []
+      },
+      "126": {
+        "title": "126",
+        "intro": []
+      },
+      "127": {
+        "title": "127",
+        "intro": []
+      },
+      "128": {
+        "title": "128",
+        "intro": []
+      },
+      "129": {
+        "title": "129",
+        "intro": []
+      },
+      "130": {
+        "title": "130",
+        "intro": []
+      },
+      "workshop-greeting-bot": {
+        "title": "Build a Greeting Bot",
+        "intro": [
+          "For this workshop, you will learn how to work with JavaScript fundamentals by building a greeting bot.",
+          "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
+        ]
+      },
+      "132": {
+        "title": "132",
+        "intro": []
+      },
+      "133": {
+        "title": "133",
+        "intro": []
+      },
+      "134": {
+        "title": "134",
+        "intro": []
+      },
+      "135": {
+        "title": "135",
+        "intro": []
+      },
+      "136": {
+        "title": "136",
+        "intro": []
+      },
+      "137": {
+        "title": "137",
+        "intro": []
+      },
+      "138": {
+        "title": "138",
+        "intro": []
+      },
+      "139": {
+        "title": "139",
+        "intro": []
+      },
+      "140": {
+        "title": "140",
+        "intro": []
+      },
+      "141": {
+        "title": "141",
+        "intro": []
+      },
+      "142": {
+        "title": "142",
+        "intro": []
+      },
+      "143": {
+        "title": "143",
+        "intro": []
+      },
+      "144": {
+        "title": "144",
+        "intro": []
+      },
+      "145": {
+        "title": "145",
+        "intro": []
+      },
+      "146": {
+        "title": "146",
+        "intro": []
+      },
+      "147": {
+        "title": "147",
+        "intro": []
+      },
+      "148": {
+        "title": "148",
+        "intro": []
+      },
+      "149": {
+        "title": "149",
+        "intro": []
+      },
+      "150": {
+        "title": "150",
+        "intro": []
+      },
+      "151": {
+        "title": "151",
+        "intro": []
+      },
+      "152": {
+        "title": "152",
+        "intro": []
+      },
+      "153": {
+        "title": "153",
+        "intro": []
+      },
+      "154": {
+        "title": "154",
+        "intro": []
+      },
+      "155": {
+        "title": "155",
+        "intro": []
+      },
+      "156": {
+        "title": "156",
+        "intro": []
+      },
+      "157": {
+        "title": "157",
+        "intro": []
+      },
+      "158": {
+        "title": "158",
+        "intro": []
+      },
+      "159": {
+        "title": "159",
+        "intro": []
+      },
+      "160": {
+        "title": "160",
+        "intro": []
+      },
+      "161": {
+        "title": "161",
+        "intro": []
+      },
+      "162": {
+        "title": "162",
+        "intro": []
+      },
+      "163": {
+        "title": "163",
+        "intro": []
+      },
+      "164": {
+        "title": "164",
+        "intro": []
+      },
+      "165": {
+        "title": "165",
+        "intro": []
+      },
+      "166": {
+        "title": "166",
+        "intro": []
+      },
+      "167": {
+        "title": "167",
+        "intro": []
+      },
+      "168": {
+        "title": "168",
+        "intro": []
+      },
+      "169": {
+        "title": "169",
+        "intro": []
+      },
+      "170": {
+        "title": "170",
+        "intro": []
+      },
+      "171": {
+        "title": "171",
+        "intro": []
+      },
+      "172": {
+        "title": "172",
+        "intro": []
+      },
+      "173": {
+        "title": "173",
+        "intro": []
+      },
+      "174": {
+        "title": "174",
+        "intro": []
+      },
+      "175": {
+        "title": "175",
+        "intro": []
+      },
+      "176": {
+        "title": "176",
+        "intro": []
+      },
+      "177": {
+        "title": "177",
+        "intro": []
+      },
+      "178": {
+        "title": "178",
+        "intro": []
+      },
+      "179": {
+        "title": "179",
+        "intro": []
+      },
+      "180": {
+        "title": "180",
+        "intro": []
+      },
+      "181": {
+        "title": "181",
+        "intro": []
+      },
+      "182": {
+        "title": "182",
+        "intro": []
+      },
+      "183": {
+        "title": "183",
+        "intro": []
+      },
+      "184": {
+        "title": "184",
+        "intro": []
+      },
+      "185": {
+        "title": "185",
+        "intro": []
+      },
+      "186": {
+        "title": "186",
+        "intro": []
+      },
+      "187": {
+        "title": "187",
+        "intro": []
+      },
+      "188": {
+        "title": "188",
+        "intro": []
+      },
+      "189": {
+        "title": "189",
+        "intro": []
+      },
+      "190": {
+        "title": "190",
+        "intro": []
+      },
+      "191": {
+        "title": "191",
+        "intro": []
+      },
+      "192": {
+        "title": "192",
+        "intro": []
+      },
+      "193": {
+        "title": "193",
+        "intro": []
+      },
+      "194": {
+        "title": "194",
+        "intro": []
+      },
+      "195": {
+        "title": "195",
+        "intro": []
+      },
+      "196": {
+        "title": "196",
+        "intro": []
+      },
+      "197": {
+        "title": "197",
+        "intro": []
+      },
+      "198": {
+        "title": "198",
+        "intro": []
+      },
+      "199": {
+        "title": "199",
+        "intro": []
+      },
+      "200": {
+        "title": "200",
+        "intro": []
+      },
+      "201": {
+        "title": "201",
+        "intro": []
+      },
+      "202": {
+        "title": "202",
+        "intro": []
+      },
+      "203": {
+        "title": "203",
+        "intro": []
+      },
+      "204": {
+        "title": "204",
+        "intro": []
+      },
+      "205": {
+        "title": "205",
+        "intro": []
+      },
+      "206": {
+        "title": "206",
+        "intro": []
+      },
+      "207": {
+        "title": "207",
+        "intro": []
+      },
+      "208": {
+        "title": "208",
+        "intro": []
+      },
+      "209": {
+        "title": "209",
+        "intro": []
+      },
+      "210": {
+        "title": "210",
+        "intro": []
+      },
+      "211": {
+        "title": "211",
+        "intro": []
+      },
+      "212": {
+        "title": "212",
+        "intro": []
+      },
+      "213": {
+        "title": "213",
+        "intro": []
+      },
+      "214": {
+        "title": "214",
+        "intro": []
+      },
+      "215": {
+        "title": "215",
+        "intro": []
+      },
+      "216": {
+        "title": "216",
+        "intro": []
+      },
+      "217": {
+        "title": "217",
+        "intro": []
+      },
+      "218": {
+        "title": "218",
+        "intro": []
+      },
+      "219": {
+        "title": "219",
+        "intro": []
+      },
+      "220": {
+        "title": "220",
+        "intro": []
+      },
+      "221": {
+        "title": "221",
+        "intro": []
+      },
+      "222": {
+        "title": "222",
+        "intro": []
+      },
+      "223": {
+        "title": "223",
+        "intro": []
+      },
+      "224": {
+        "title": "224",
+        "intro": []
+      },
+      "225": {
+        "title": "225",
+        "intro": []
+      },
+      "226": {
+        "title": "226",
+        "intro": []
+      },
+      "227": {
+        "title": "227",
+        "intro": []
+      },
+      "228": {
+        "title": "228",
+        "intro": []
+      },
+      "229": {
+        "title": "229",
+        "intro": []
+      },
+      "230": {
+        "title": "230",
+        "intro": []
+      },
+      "231": {
+        "title": "231",
+        "intro": []
+      },
+      "232": {
+        "title": "232",
+        "intro": []
+      },
+      "233": {
+        "title": "233",
+        "intro": []
+      },
+      "234": {
+        "title": "234",
+        "intro": []
+      },
+      "235": {
+        "title": "235",
+        "intro": []
+      },
+      "236": {
+        "title": "236",
+        "intro": []
+      },
+      "237": {
+        "title": "237",
+        "intro": []
+      },
+      "238": {
+        "title": "238",
+        "intro": []
+      },
+      "239": {
+        "title": "239",
+        "intro": []
+      },
+      "240": {
+        "title": "240",
+        "intro": []
+      },
+      "241": {
+        "title": "241",
+        "intro": []
+      },
+      "242": {
+        "title": "242",
+        "intro": []
+      },
+      "243": {
+        "title": "243",
+        "intro": []
+      },
+      "244": {
+        "title": "244",
+        "intro": []
+      },
+      "245": {
+        "title": "245",
+        "intro": []
+      },
+      "246": {
+        "title": "246",
+        "intro": []
+      },
+      "247": {
+        "title": "247",
+        "intro": []
+      },
+      "248": {
+        "title": "248",
+        "intro": []
+      },
+      "249": {
+        "title": "249",
+        "intro": []
+      },
+      "250": {
+        "title": "250",
+        "intro": []
+      },
+      "251": {
+        "title": "251",
+        "intro": []
+      },
+      "252": {
+        "title": "252",
+        "intro": []
+      },
+      "253": {
+        "title": "253",
+        "intro": []
+      },
+      "254": {
+        "title": "254",
+        "intro": []
+      },
+      "255": {
+        "title": "255",
+        "intro": []
+      },
+      "256": {
+        "title": "256",
+        "intro": []
+      },
+      "257": {
+        "title": "257",
+        "intro": []
+      },
+      "258": {
+        "title": "258",
+        "intro": []
+      },
+      "259": {
+        "title": "259",
+        "intro": []
+      },
+      "260": {
+        "title": "260",
+        "intro": []
+      },
+      "261": {
+        "title": "261",
+        "intro": []
+      },
+      "262": {
+        "title": "262",
+        "intro": []
+      },
+      "263": {
+        "title": "263",
+        "intro": []
+      },
+      "264": {
+        "title": "264",
+        "intro": []
+      },
+      "265": {
+        "title": "265",
+        "intro": []
+      },
+      "266": {
+        "title": "266",
+        "intro": []
+      },
+      "267": {
+        "title": "267",
+        "intro": []
+      },
+      "268": {
+        "title": "268",
+        "intro": []
+      },
+      "269": {
+        "title": "269",
+        "intro": []
+      },
+      "270": {
+        "title": "270",
+        "intro": []
+      },
+      "271": {
+        "title": "271",
+        "intro": []
+      },
+      "272": {
+        "title": "272",
+        "intro": []
+      },
+      "273": {
+        "title": "273",
+        "intro": []
+      },
+      "274": {
+        "title": "274",
+        "intro": []
+      },
+      "275": {
+        "title": "275",
+        "intro": []
+      },
+      "276": {
+        "title": "276",
+        "intro": []
+      },
+      "277": {
+        "title": "277",
+        "intro": []
+      },
+      "278": {
+        "title": "278",
+        "intro": []
+      },
+      "279": {
+        "title": "279",
+        "intro": []
+      },
+      "280": {
+        "title": "280",
+        "intro": []
+      },
+      "281": {
+        "title": "281",
+        "intro": []
+      },
+      "282": {
+        "title": "282",
+        "intro": []
+      },
+      "283": {
+        "title": "283",
+        "intro": []
+      },
+      "284": {
+        "title": "284",
+        "intro": []
+      },
+      "285": {
+        "title": "285",
+        "intro": []
+      },
+      "286": {
+        "title": "286",
+        "intro": []
+      },
+      "287": {
+        "title": "287",
+        "intro": []
+      },
+      "288": {
+        "title": "288",
+        "intro": []
+      },
+      "289": {
+        "title": "289",
+        "intro": []
+      },
+      "290": {
+        "title": "290",
+        "intro": []
+      },
+      "291": {
+        "title": "291",
+        "intro": []
+      },
+      "292": {
+        "title": "292",
+        "intro": []
+      },
+      "293": {
+        "title": "293",
+        "intro": []
+      },
+      "294": {
+        "title": "294",
+        "intro": []
+      },
+      "295": {
+        "title": "295",
+        "intro": []
+      },
+      "296": {
+        "title": "296",
+        "intro": []
+      },
+      "297": {
+        "title": "297",
+        "intro": []
+      },
+      "298": {
+        "title": "298",
+        "intro": []
+      },
+      "299": {
+        "title": "299",
+        "intro": []
+      },
+      "300": {
+        "title": "300",
+        "intro": []
+      },
+      "front-end-development-certification-exam": {
+        "title": "Front End Development Certification Exam",
+        "intro": ["", ""]
       }
     }
   },
