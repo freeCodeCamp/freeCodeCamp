@@ -408,7 +408,7 @@
     "rsa-forum": "<strong>在发布新帖子之前</strong> ，请<0>查看你的问题是否已经在论坛上被回答过</0>。",
     "reset": "重置这一节课程？",
     "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
-    "reset-warn-2": "这个操作不可撤销",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "donation-record-not-found": "未找到你的捐款记录。",
@@ -512,6 +512,14 @@
       "link-li-6": "单击“链接账户”链接你的微软用户名。",
       "transcript-label": "你的微软成绩单链接",
       "invalid-transcript": "你的成绩单链接不正确，它应该有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 请检查你的链接中的 UPPERCASE 项目是否正确。"
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
