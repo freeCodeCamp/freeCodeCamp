@@ -1751,10 +1751,6 @@
         "title": "11",
         "intro": []
       },
-      "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
-        "intro": ["For this lab, you will create a book inventory app."]
-      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
@@ -2091,9 +2087,9 @@
         "title": "94",
         "intro": []
       },
-      "95": {
-        "title": "95",
-        "intro": []
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": ["For this lab, you will create a book inventory app."]
       },
       "96": {
         "title": "96",
@@ -2638,8 +2634,8 @@
         "title": "230",
         "intro": []
       },
-      "230": {
-        "title": "230",
+      "231": {
+        "title": "231",
         "intro": []
       },
       "232": {
