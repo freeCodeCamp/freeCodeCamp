@@ -2422,9 +2422,9 @@
         "title": "177",
         "intro": []
       },
-      "178": {
-        "title": "178",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": ["For this lab, you will create a gradebook app."]
       },
       "179": {
         "title": "179",
@@ -2634,8 +2634,8 @@
         "title": "230",
         "intro": []
       },
-      "230": {
-        "title": "230",
+      "231": {
+        "title": "231",
         "intro": []
       },
       "232": {
