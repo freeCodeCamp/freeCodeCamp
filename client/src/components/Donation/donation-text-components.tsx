@@ -319,7 +319,8 @@ export const GetSupporterBenefitsText = ({
 export const ModalBenefitList = () => {
   const { t } = useTranslation();
   return (
-    <ul>
+    // Set the initial focus to this list as it appears first in the second modal.
+    <ul tabIndex={-1}>
       <li>
         <GreenPass aria-hidden={true} />
         {t('donate.help-us-more-certifications')}

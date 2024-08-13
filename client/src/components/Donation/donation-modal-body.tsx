@@ -1,4 +1,4 @@
-import React, { useEffect, useState, forwardRef, useRef } from 'react';
+import React, { useEffect, useState, forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Modal } from '@freecodecamp/ui';
 import { closeDonationModal } from '../../redux/actions';
@@ -189,12 +189,6 @@ const BecomeASupporterConfirmation = ({
   handleProcessing: () => void;
   setShowForm: (arg: boolean) => void;
 }) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    buttonRef.current?.focus();
-  }, []);
-
   return (
     <div className='no-delay-fade-in'>
       <div className='donation-icon-container'>
@@ -215,7 +209,7 @@ const BecomeASupporterConfirmation = ({
           isMinimalForm={true}
         />
       ) : (
-        <Benefits setShowForm={setShowForm} ref={buttonRef} />
+        <Benefits setShowForm={setShowForm} />
       )}
       {(showHeaderAndFooter || donationAttempted) && (
         <CloseButtonRow
