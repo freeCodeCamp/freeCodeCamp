@@ -5,7 +5,7 @@ import { type user } from '@prisma/client';
 
 import { JWT_SECRET } from '../utils/env';
 import { type Token, isExpired } from '../utils/tokens';
-import { CODE, STATUS } from '../utils';
+import { CODE } from '../exam-environment/utils/exam';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -84,9 +84,8 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
 
     if (!encodedToken || typeof encodedToken !== 'string') {
       return reply.send({
-        status: STATUS.ERROR,
+        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
         message: {
-          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
           text: 'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN header is a required string.'
         }
       });
@@ -97,11 +96,10 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     } catch (e) {
       void reply.code(403);
       return reply.send({
+        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
         message: {
-          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
           text: JSON.stringify(e)
-        },
-        status: STATUS.ERROR
+        }
       });
     }
 
@@ -110,9 +108,8 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     if (typeof payload !== 'object' || payload === null) {
       void reply.code(500);
       return reply.send({
-        status: STATUS.ERROR,
+        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
         message: {
-          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
           text: 'Unreachable. Decoded token has been verified.'
         }
       });
@@ -124,9 +121,8 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
 
     if (typeof examEnvironmentAuthorizationToken !== 'string') {
       return reply.send({
-        status: STATUS.ERROR,
+        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
         message: {
-          code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
           text: 'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN is not valid.'
         }
       });
@@ -141,8 +137,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
 
     if (!token) {
       return {
-        message: 'Token not found',
-        status: STATUS.ERROR
+        message: 'Token not found'
       };
     }
 

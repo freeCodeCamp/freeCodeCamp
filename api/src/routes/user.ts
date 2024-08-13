@@ -3,6 +3,7 @@ import { Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 import { FastifyInstance, FastifyReply } from 'fastify';
+import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
 // Loopback creates a 64 character string for the user id, this customizes
@@ -29,6 +30,7 @@ import { generateReportEmail } from '../utils/email-templates';
 import { createResetProperties } from '../utils/create-user';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { UpdateReqType } from '../utils';
+import { JWT_SECRET } from '../utils/env';
 import { CODE } from '../exam-environment/utils/exam';
 import { isRestricted } from './helpers/is-restricted';
 
@@ -450,7 +452,10 @@ async function examEnvironmentTokenHandler(
     }
   });
 
-  const examEnvironmentAuthorizationToken = encodeUserToken(token.id);
+  const examEnvironmentAuthorizationToken = jwt.sign(
+    { examEnvironmentAuthorizationToken: token.id },
+    JWT_SECRET
+  );
 
   void reply.send({
     code: CODE.EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED,

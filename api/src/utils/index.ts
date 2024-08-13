@@ -64,11 +64,7 @@ export type UpdateReqType<Schema extends FastifySchema> = FastifyRequest<
  * @param promise - any promise to be tried.
  * @returns a promise with either the data or the caught error
  */
-export async function mapErr<T>(
-  promise: Promise<T>
-): Promise<
-  { error: null; data: T } | { error: NonNullable<unknown>; data: null }
-> {
+export async function mapErr<T>(promise: Promise<T>): Promise<Result<T>> {
   try {
     return { error: null, data: await promise };
   } catch (e) {
@@ -76,6 +72,24 @@ export async function mapErr<T>(
     return { error: e, data: null };
   }
 }
+
+/**
+ * Wow.
+ * @param fn - any function to be tried.
+ * @returns the data or the caught error
+ */
+export function syncMapErr<T>(fn: () => T): Result<T> {
+  try {
+    return { error: null, data: fn() };
+  } catch (e) {
+    assertNotNull(e);
+    return { error: e, data: null };
+  }
+}
+
+export type Result<T> =
+  | { error: null; data: T }
+  | { error: NonNullable<unknown>; data: null };
 
 /**
  * Asserts the given value is not null or undefined.

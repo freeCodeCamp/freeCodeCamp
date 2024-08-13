@@ -2,9 +2,9 @@
 import {
   GeneratedExam,
   NewAnswer,
+  NewConfig,
   NewExam,
   NewQuestion,
-  NewQuestionType,
   QuestionType,
   user
 } from '@prisma/client';
@@ -18,27 +18,27 @@ export function checkPrerequisites(_user: user, _prerequisites: unknown) {
   return true;
 }
 
-type QuestionSetT = NewExam['question_types'][number]['questions'][number] & {
-  tags: NewQuestion['tags'];
-  question_type: NewQuestionType;
-};
-
 /**
  * Generates an exam for the user, based on the exam configuration.
+ *
+ * TODO: Tag config can be sorted by least number of questions available to satisfy tag set.
  */
 export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
-  // 1. Select questions based on tag config
-  // 2. Get all questions based on question_type config
+  // `exam` is shallow cloned to prevent mutation.
+  const examCopy = { ...exam };
+  const questionTypeSet: Set<NewExam['question_types'][number]> = new Set();
 
-  // `tags` is added to keep track of how many questions of each tag are in the set.
-  const questionSet: Set<QuestionSetT> = new Set();
-  const allQuestions = exam.question_types.flatMap(qt =>
-    qt.questions.map(q => ({ ...q, question_type: qt.type }))
-  );
-  const randomizedQuestions = shuffleArray(allQuestions);
+  const questionTypesSansDeprecated = examCopy.question_types.map(qt => {
+    const questions = qt.questions.filter(q => !q.deprecated);
+    return {
+      ...qt,
+      questions
+    };
+  });
+  const randomizedQuestionTypes = shuffleArray(questionTypesSansDeprecated);
 
   // Sort tag config by number of tags in descending order.
-  const sortedTags = exam.config.tags.sort(
+  const sortedTags = examCopy.config.tags.sort(
     (a, b) => b.set.length - a.set.length
   );
 
@@ -46,101 +46,119 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
     // Check if tag is partially fulfilled by existing questions in set.
     // - If tag is subset of existing questions tag set, only add more questions if needed.
     let numberOfQuestionsNeeded = tag.number_of_questions;
-    for (const q of questionSet) {
-      if (tag.set.every(t => q.tags.some(qt => qt === t))) {
+    for (const qt of questionTypeSet) {
+      const questionTypeTagCoverage = qt.questions.reduce(
+        (acc, q) => acc.concat(q.tags),
+        [] as string[]
+      );
+      if (tag.set.every(t => questionTypeTagCoverage.some(qt => qt === t))) {
         numberOfQuestionsNeeded -= 1;
+      }
+      if (numberOfQuestionsNeeded === 0) {
+        break;
       }
     }
     // Push number_of_questions random questions.
     for (let i = 0; i < numberOfQuestionsNeeded; i++) {
       // Find question with at least all tags in the set.
-      const question = randomizedQuestions.splice(
-        randomizedQuestions.findIndex(q =>
-          tag.set.every(t => q.tags.some(qt => qt === t))
+      const questionTypeWithFulfillingTags = randomizedQuestionTypes.splice(
+        randomizedQuestionTypes.findIndex(qt =>
+          qt.questions.some(q =>
+            tag.set.every(t => q.tags.some(qt => qt === t))
+          )
         ),
         1
       )[0];
 
-      if (!question) {
+      if (!questionTypeWithFulfillingTags) {
         throw new Error(
-          `Invalid Exam Configuration for ${exam.id}. Not enough questions for tag ${tag.set.toString()}.`
+          `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for tag ${tag.set.toString()}.`
         );
       }
 
-      const answers = getRandomAnswers(question, exam);
-
-      const generatedQuestion = {
-        ...question,
-        answers: answers
-      };
-      questionSet.add(generatedQuestion);
+      questionTypeSet.add(questionTypeWithFulfillingTags);
     }
   }
 
   // Ensure question_type config is fulfilled.
-  for (const questionTypeConfig of exam.config.question_types) {
+  for (const questionTypeConfig of examCopy.config.question_types) {
     // Determine how many questions of type are already fulfilled.
-    let numberOfQuestionsNeeded = questionTypeConfig.number_of_questions;
-    for (const q of questionSet) {
-      if (q.question_type === questionTypeConfig.type) {
-        numberOfQuestionsNeeded -= 1;
+    let numberOfTypeNeeded = questionTypeConfig.number_of_type;
+    for (const qt of questionTypeSet) {
+      if (qt.type === questionTypeConfig.type) {
+        numberOfTypeNeeded -= 1;
+      }
+      if (numberOfTypeNeeded === 0) {
+        break;
       }
     }
 
-    for (let i = 0; i < numberOfQuestionsNeeded; i++) {
-      const question = randomizedQuestions.splice(
-        randomizedQuestions.findIndex(
-          q => q.question_type === questionTypeConfig.type
+    for (let i = 0; i < numberOfTypeNeeded; i++) {
+      const questionType = randomizedQuestionTypes.splice(
+        randomizedQuestionTypes.findIndex(
+          qt => qt.type === questionTypeConfig.type
         ),
         1
       )[0];
 
-      if (!question) {
+      if (!questionType) {
         throw new Error(
-          `Invalid Exam Configuration for ${exam.id}. Not enough questions for question type ${questionTypeConfig.type}.`
+          `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionTypeConfig.type}.`
         );
       }
 
-      const answers = getRandomAnswers(question, exam);
-
-      const generatedQuestion = {
-        ...question,
-        answers: answers
-      };
-      questionSet.add(generatedQuestion);
+      questionTypeSet.add(questionType);
     }
   }
 
-  // Remove tags, deprecated, and is_correct from questions.
-  const questions = Array.from(questionSet).map(q => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const answers = q.answers.map(a => a.id);
+  const finalQuestionTypes = [];
 
-    return {
-      id: q.id,
-      question_type: q.question_type,
-      answers
-    };
-  });
+  for (const questionTypeConfig of examCopy.config.question_types) {
+    const questionTypes = Array.from(questionTypeSet).filter(
+      qt => qt.type === questionTypeConfig.type
+    );
 
-  const question_types = exam.question_types.map(qt => {
-    const questionsForType = questions.filter(q => q.question_type === qt.type);
+    for (const qt of questionTypes) {
+      // Splice question type from set to prevent re-use
+      if (!questionTypeSet.delete(qt)) {
+        throw new Error(
+          `Unreachable. ${qt.id} should be in set. ${JSON.stringify(Array.from(questionTypeSet.values()).map(({ id }) => id))}.`
+        );
+      }
+      const questions = qt.questions;
+      const randomizedQuestions = shuffleArray(questions);
+      qt.questions = randomizedQuestions.splice(
+        0,
+        questionTypeConfig.number_of_questions
+      );
+      qt.questions = qt.questions.map(q => {
+        const answers = getRandomAnswers(q, questionTypeConfig);
+        return {
+          ...q,
+          answers
+        };
+      });
+      finalQuestionTypes.push(qt);
+    }
+  }
 
-    const qs = questionsForType.map(q => {
+  const question_types = finalQuestionTypes.map(qt => {
+    const questions = qt.questions.map(q => {
+      const answers = q.answers.map(a => a.id);
       return {
         id: q.id,
-        answers: q.answers
+        answers
       };
     });
 
     return {
       id: qt.id,
-      questions: qs
+      questions
     };
   });
 
   return {
-    exam_id: exam.id,
+    exam_id: examCopy.id,
     question_types
   };
 }
@@ -148,18 +166,13 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
 /**
  * Gets random answers for a question.
  */
-export function getRandomAnswers(question: QuestionSetT, exam: NewExam) {
-  const questionConfig = exam.config.question_types.find(
-    c => question.question_type === c.type
-  );
-  if (!questionConfig) {
-    throw new Error(
-      `Invalid Exam Configuration for ${exam.id}. Question Type ${question.question_type} not found.`
-    );
-  }
-
+export function getRandomAnswers(
+  question: NewQuestion,
+  questionTypeConfig: NewConfig['question_types'][number]
+): NewQuestion['answers'] {
   const { number_of_correct_answers, number_of_incorrect_answers } =
-    questionConfig;
+    questionTypeConfig;
+
   const randomAnswers = shuffleArray(question.answers);
   const incorrectAnswers = randomAnswers
     .filter(a => !a.is_correct)
@@ -241,8 +254,11 @@ export function createUserExam(
     const matchingQuestionType = exam.question_types.find(
       eqt => eqt.id === qt.id
     );
+
     if (!matchingQuestionType) {
-      throw new Error('Unreachable. Matching question type should exist.');
+      throw new Error(
+        `Unreachable. Matching question type '${qt.id}' should exist.`
+      );
     }
 
     const { questions } = matchingQuestionType;
@@ -252,7 +268,9 @@ export function createUserExam(
         eq => eq.id === q.id
       );
       if (!matchingQuestion) {
-        throw new Error('Unreachable. Matching question should exist.');
+        throw new Error(
+          `Unreachable. Matching question '${q.id}' should exist.`
+        );
       }
 
       // Remove `is_correct` from question answers

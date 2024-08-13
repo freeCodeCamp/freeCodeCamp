@@ -4,7 +4,7 @@ import { type FastifyInstance, type FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
-import { mapErr, UpdateReqType } from '../../utils';
+import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET } from '../../utils/env';
 import { CODE, createUserExam, generateExam } from '../utils/exam';
 
@@ -18,7 +18,9 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
     // TODO: Is there any reason to delete the token without generating a new one?
     fastify.post(
       '/exam-environment/exam/generate',
-      {},
+      {
+        schema: schemas.examEnvironmentPostExamGenerate
+      },
       postExamGenerateHandler
     );
     fastify.post('/exam-environment/exam/attempt', {}, postExamAttemptHandler);
@@ -233,7 +235,7 @@ async function postExamGenerateHandler(
         exam_id: exam.id,
         generated_exam_id: generatedExam.id,
         start_time: Date.now(),
-        questions: [],
+        question_types: [],
         needs_retake: false
       }
     })
@@ -248,8 +250,29 @@ async function postExamGenerateHandler(
   }
   // NOTE: Anything that goes wrong after this point needs to unwind the exam attempt.
 
-  const userExam = createUserExam(generatedExam, exam);
+  const maybeUserExam = syncMapErr(() => createUserExam(generatedExam, exam));
 
+  if (maybeUserExam.error !== null) {
+    await this.prisma.newExamAttempt.delete({
+      where: {
+        id: examAttempt.id
+      }
+    });
+    await this.prisma.generatedExam.delete({
+      where: {
+        id: generatedExam.id
+      }
+    });
+    void reply.code(500);
+    return reply.send({
+      code: CODE.ERR_EXAM_ENVIRONMENT,
+      message: JSON.stringify(maybeUserExam.error)
+    });
+  }
+
+  const userExam = maybeUserExam.data;
+
+  void reply.code(200);
   return reply.send({
     code: CODE.EXAM_ENVIRONMENT_EXAM_GENERATED,
     data: {
