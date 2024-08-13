@@ -408,7 +408,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Vuoi resettare questa lezione?",
     "reset-warn": "Sei sicuro di voler resettare questa lezione? Gli editor e i test saranno resettati.",
-    "reset-warn-2": "Questa operazione non potrà essere annullata",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
     "chal-preview": "Anteprima della sfida",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -512,6 +512,14 @@
       "link-li-6": "Clicca su \"Collega Account\" per collegare il tuo nome utente Microsoft.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
