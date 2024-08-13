@@ -408,7 +408,7 @@
     "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請<0>查看你的問題是否已經在論壇上被回答過</0>。",
     "reset": "重置這一節課程？",
     "reset-warn": "你確定要重置這一節課程嗎？編輯器和測試將被重置。",
-    "reset-warn-2": "這個操作不可撤銷",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
     "chal-preview": "挑戰預覽",
     "donation-record-not-found": "未找到你的捐款記錄。",
@@ -512,6 +512,14 @@
       "link-li-6": "單擊“鏈接賬戶”鏈接你的微軟用戶名。",
       "transcript-label": "你的微軟成績單鏈接",
       "invalid-transcript": "你的成績單鏈接不正確，它應該有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 請檢查你的鏈接中的 UPPERCASE 項目是否正確。"
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
