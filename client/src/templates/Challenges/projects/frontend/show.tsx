@@ -228,8 +228,8 @@ export default connect(
 )(withTranslation()(Project));
 
 export const query = graphql`
-  query ProjectChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query ProjectChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         forumTopicId
         title
