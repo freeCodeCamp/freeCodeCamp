@@ -54,4 +54,7 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(plugin, { dependencies: ['auth', 'redirect-with-message'] });
+export default fp(plugin, {
+  dependencies: ['auth', 'redirect-with-message'],
+  name: 'bouncer'
+});

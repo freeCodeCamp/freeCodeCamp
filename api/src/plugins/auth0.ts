@@ -158,5 +158,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
     done();
   },
-  { dependencies: ['redirect-with-message'] }
+  // TODO(Post-MVP): remove bouncer dependency when moving redirectIfSignedIn
+  // out of this plugin.
+  { dependencies: ['redirect-with-message', 'bouncer'] }
 );
