@@ -67,6 +67,7 @@
     "click-here": "サインインするにはここをクリック",
     "save": "保存",
     "save-code": "コードを保存",
+    "show-demo": "Show Demo",
     "no-thanks": "結構です",
     "yes-please": "はい、お願いします",
     "update-email": "メールアドレスを更新",
@@ -408,7 +409,7 @@
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
-    "reset-warn-2": "この操作は取り消すことが出来ません",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
     "donation-record-not-found": "寄付の履歴が見つかりませんでした。",
@@ -512,6 +513,14 @@
       "link-li-6": "「アカウントをリンク」をクリックして、Microsoft のユーザー名をリンクします。",
       "transcript-label": "Microsoft 成績証明書のリンク",
       "invalid-transcript": "成績証明書のリンクが正しくありません。以下の形式になっているか確認してください: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - 特に大文字で示した部分が正しいか確認してください。"
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
