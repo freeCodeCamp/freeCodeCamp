@@ -1800,7 +1800,12 @@
       "nxbr": { "title": "72", "intro": [] },
       "qzcx": { "title": "73", "intro": [] },
       "wozq": { "title": "74", "intro": [] },
-      "wmkc": { "title": "75", "intro": [] },
+      "lab-confidential-email-page": {
+        "title": "Build a Confidential Email Page",
+        "intro": [
+          "For this lab, you will create a web page of a confidential email using HTML and CSS."
+        ]
+      },
       "zter": { "title": "76", "intro": [] },
       "rfiq": { "title": "77", "intro": [] },
       "tcwi": { "title": "78", "intro": [] },
