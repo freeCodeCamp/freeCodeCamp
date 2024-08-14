@@ -3,6 +3,7 @@ id: 5d8a4cfbe6b6180ed9a1c9de
 title: Step 1
 challengeType: 0
 dashedName: step-1
+demoType: onLoad
 ---
 
 # --description--
