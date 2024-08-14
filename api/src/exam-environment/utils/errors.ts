@@ -27,9 +27,9 @@ export const ERRORS = {
 
 /**
  * Returns a function which optionally takes arguments to format an error message.
- * @param code - Identifier for the error
- * @param message - Human-readable error message
- * @returns Function which optionally takes arguments to format an error message
+ * @param code - Identifier for the error.
+ * @param message - Human-readable error message.
+ * @returns Function which optionally takes arguments to format an error message.
  */
 function createError(code: string, message: string) {
   return (...args: unknown[]) => {
