@@ -1,29 +1,14 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { CODE } from '../utils/exam';
-
-// const STANDARD_RESPONSE_TYPE = Type.Object({
-//   data: Type.Optional(Type.Unknown()),
-//   message: Type.Optional(Type.Object({ code: Type.String(), text: Type.String() })),
-//   status: Type.Union([Type.Literal('success'), Type.Literal('error')])
-// });
+import { STANDARD_ERROR } from '../utils/errors';
 
 export const examEnvironmentTokenVerify = {
   headers: Type.Object({
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
-    200: Type.Union([
-      Type.Object({
-        code: Type.Enum(CODE)
-      }),
-      Type.Object({
-        code: Type.Enum(CODE),
-        message: Type.String()
-      })
-    ]),
-    403: Type.Object({
-      code: Type.Enum(CODE),
-      message: Type.String()
-    })
+    200: Type.Object({
+      data: Type.String()
+    }),
+    403: STANDARD_ERROR
   }
 };

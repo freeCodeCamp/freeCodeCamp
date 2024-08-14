@@ -1,10 +1,7 @@
-import { Type } from '@fastify/type-provider-typebox';
-import { CODE } from '../utils/exam';
+// import { Type } from '@fastify/type-provider-typebox';
 
 export const examEnvironmentPostScreenshot = {
   response: {
-    200: Type.Object({
-      code: Type.Enum(CODE)
-    })
+    // 200: Type.Object({})
   }
 };

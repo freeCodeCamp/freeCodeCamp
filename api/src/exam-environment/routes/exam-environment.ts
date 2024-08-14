@@ -7,11 +7,12 @@ import * as schemas from '../schemas';
 import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET } from '../../utils/env';
 import {
-  CODE,
+  checkPrerequisites,
   createUserExam,
   generateExam,
   validateAttempt
 } from '../utils/exam';
+import { ERRORS } from '../utils/errors';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -75,10 +76,9 @@ async function tokenVerifyHandler(
     jwt.verify(encodedToken, JWT_SECRET);
   } catch (e) {
     void reply.code(403);
-    return reply.send({
-      code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-      message: JSON.stringify(e)
-    });
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(JSON.stringify(e))
+    );
   }
 
   const payload = jwt.decode(encodedToken) as JwtPayload;
@@ -94,13 +94,13 @@ async function tokenVerifyHandler(
 
   if (!token) {
     void reply.code(200);
-    void reply.send({
-      code: CODE.ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-      message: 'Token does not appear to have been created.'
+    return reply.send({
+      data: 'Token does not appear to have been created.'
     });
   } else {
-    void reply.send({
-      code: CODE.EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_VERIFIED
+    void reply.code(200);
+    return reply.send({
+      data: 'Token verified.'
     });
   }
 }
@@ -124,26 +124,29 @@ async function postExamGenerateHandler(
   });
   if (!exam) {
     void reply.code(404);
-    return reply.send({
-      code: CODE.ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM,
-      message: 'Invalid exam id given.'
-    });
+    return reply.send(
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM('Invalid exam id given.')
+    );
   }
 
   // Check user has completed prerequisites
   const { user } = req;
   if (!user) {
-    throw new Error('Unreachable. User should be authenticated.');
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Unreachable. User not authenticated.')
+    );
   }
-  const isExamPrerequisitesMet = true; // checkPrerequisites(user, prerequisites);
+  const isExamPrerequisitesMet = checkPrerequisites(user, true);
 
   if (!isExamPrerequisitesMet) {
     void reply.code(403);
     // TODO: Consider sending unmet prerequisites
-    return reply.send({
-      code: CODE.EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
-      message: 'User has not completed prerequisites.'
-    });
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(
+        'User has not completed prerequisites.'
+      )
+    );
   }
 
   // Check user has not completed exam in last 24 hours
@@ -165,10 +168,11 @@ async function postExamGenerateHandler(
     if (effectiveSubmissionTime > coolDown) {
       void reply.code(403);
       // TOOD: Consider sending last completed time
-      return reply.send({
-        code: CODE.EINVAL_EXAM_ENVIRONMENT_PREREQUISITES,
-        message: 'User has completed exam too recently to retake.'
-      });
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(
+          'User has completed exam too recently to retake.'
+        )
+      );
     } else {
       // Camper has started an attempt, but not submitted it, and there is still time left to complete it.
       // This is most likely to happen if the Camper's app closes and is reopened.
@@ -183,25 +187,22 @@ async function postExamGenerateHandler(
 
       if (error !== null) {
         void reply.code(500);
-        return reply.send({
-          code: CODE.ERR_EXAM_ENVIRONMENT,
-          message: JSON.stringify(error)
-        });
+        return reply.send(
+          ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(error))
+        );
       }
 
       // This should be unreachable
       if (generatedExam === null) {
         void reply.code(500);
-        return reply.send({
-          code: CODE.ERR_EXAM_ENVIRONMENT,
-          message: 'Generated exam not found.'
-        });
+        return reply.send(
+          ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Generated exam not found.')
+        );
       }
 
       const userExam = createUserExam(generatedExam, exam);
 
       return reply.send({
-        code: CODE.EXAM_ENVIRONMENT_GENERATED_EXAM_FOUND,
         data: {
           exam: userExam,
           examAttempt: lastAttempt
@@ -221,13 +222,13 @@ async function postExamGenerateHandler(
 
   if (maybeGeneratedExam.error !== null) {
     void reply.code(500);
-    return reply.send({
+    return reply.send(
       // TODO: Consider more specific code
-      code: CODE.ERR_EXAM_ENVIRONMENT,
-      message:
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
         'Unable to generate exam, due to: ' +
-        JSON.stringify(maybeGeneratedExam.error)
-    });
+          JSON.stringify(maybeGeneratedExam.error)
+      )
+    );
   }
 
   const generatedExam = maybeGeneratedExam.data;
@@ -248,10 +249,9 @@ async function postExamGenerateHandler(
 
   if (error !== null) {
     void reply.code(500);
-    return reply.send({
-      code: CODE.ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT,
-      message: JSON.stringify(error)
-    });
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT(JSON.stringify(error))
+    );
   }
   // NOTE: Anything that goes wrong after this point needs to unwind the exam attempt.
 
@@ -269,17 +269,15 @@ async function postExamGenerateHandler(
       }
     });
     void reply.code(500);
-    return reply.send({
-      code: CODE.ERR_EXAM_ENVIRONMENT,
-      message: JSON.stringify(maybeUserExam.error)
-    });
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUserExam.error))
+    );
   }
 
   const userExam = maybeUserExam.data;
 
   void reply.code(200);
   return reply.send({
-    code: CODE.EXAM_ENVIRONMENT_EXAM_GENERATED,
     data: {
       exam: userExam,
       examAttempt
@@ -312,20 +310,18 @@ async function postExamAttemptHandler(
 
   if (maybeGeneratedExam.error !== null) {
     void reply.code(500);
-    return reply.send({
-      code: CODE.ERR_EXAM_ENVIRONMENT,
-      message: JSON.stringify(maybeGeneratedExam.error)
-    });
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeGeneratedExam.error))
+    );
   }
 
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
     void reply.code(404);
-    return reply.send({
-      code: CODE.ERR_EXAM_ENVIRONMENT,
-      message: 'Generated exam not found.'
-    });
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Generated exam not found.')
+    );
   }
   // Ensure attempt matches generated exam
   const maybeValidExamAttempt = syncMapErr(() =>
@@ -349,24 +345,21 @@ async function postExamAttemptHandler(
 
   if (maybeValidExamAttempt.error !== null) {
     void reply.code(400);
-    return reply.send({
-      code: CODE.ERR_EXAM_ENVIRONMENT,
-      message: JSON.stringify(maybeValidExamAttempt.error)
-    });
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        JSON.stringify(maybeValidExamAttempt.error)
+      )
+    );
   }
 
   if (maybeUpdatedAttempt.error !== null) {
     void reply.code(500);
-    return reply.send({
-      code: CODE.ERR_EXAM_ENVIRONMENT,
-      message: JSON.stringify(maybeUpdatedAttempt.error)
-    });
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUpdatedAttempt.error))
+    );
   }
 
-  void reply.code(200);
-  return reply.send({
-    code: CODE.EXAM_ENVIRONMENT_EXAM_ATTEMPT_SUBMITTED
-  });
+  return reply.code(200);
 }
 
 /**
@@ -379,8 +372,5 @@ async function postScreenshotHandler(
   _req: UpdateReqType<typeof schemas.examEnvironmentPostScreenshot>,
   reply: FastifyReply
 ) {
-  void reply.code(418);
-  return reply.send({
-    code: CODE.EXAM_ENVIRONMENT_SCREENSHOT_STORED
-  });
+  return reply.code(418);
 }

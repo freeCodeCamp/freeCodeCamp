@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { CODE } from '../utils/exam';
+import { STANDARD_ERROR } from '../utils/errors';
 
 export const examEnvironmentPostExamAttempt = {
   body: Type.Object({
@@ -23,8 +23,8 @@ export const examEnvironmentPostExamAttempt = {
     })
   }),
   response: {
-    200: Type.Object({
-      code: Type.Enum(CODE)
-    })
+    400: STANDARD_ERROR,
+    404: STANDARD_ERROR,
+    500: STANDARD_ERROR
   }
 };

@@ -5,7 +5,7 @@ import { type user } from '@prisma/client';
 
 import { JWT_SECRET } from '../utils/env';
 import { type Token, isExpired } from '../utils/tokens';
-import { CODE } from '../exam-environment/utils/exam';
+import { ERRORS } from '../exam-environment/utils/errors';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -83,36 +83,33 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       req.headers;
 
     if (!encodedToken || typeof encodedToken !== 'string') {
-      return reply.send({
-        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-        message: {
-          text: 'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN header is a required string.'
-        }
-      });
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN header is a required string.'
+        )
+      );
     }
 
     try {
       jwt.verify(encodedToken, JWT_SECRET);
     } catch (e) {
       void reply.code(403);
-      return reply.send({
-        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-        message: {
-          text: JSON.stringify(e)
-        }
-      });
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          JSON.stringify(e)
+        )
+      );
     }
 
     const payload = jwt.decode(encodedToken);
 
     if (typeof payload !== 'object' || payload === null) {
       void reply.code(500);
-      return reply.send({
-        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-        message: {
-          text: 'Unreachable. Decoded token has been verified.'
-        }
-      });
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          'Unreachable. Decoded token has been verified.'
+        )
+      );
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -120,12 +117,11 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       payload['examEnvironmentAuthorizationToken'];
 
     if (typeof examEnvironmentAuthorizationToken !== 'string') {
-      return reply.send({
-        code: CODE.EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN,
-        message: {
-          text: 'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN is not valid.'
-        }
-      });
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN is not valid.'
+        )
+      );
     }
 
     const token =
