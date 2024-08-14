@@ -6,4 +6,6 @@ superBlock: college-algebra-with-python
 
 ## Introduction to Learn How to Solve for X
 
-This unit will focus on how to solve for an unknown number (often referred to as \"x\") using written Algebra and Python code.
+Solving equations for unknown variables, often represented as "x," is a fundamental skill in mathematics. In this video series, we will explore various methods and techniques to solve equations and find the value of "x" in different contexts and scenarios.
+
+By the end of this series, you'll have a solid understanding of how to approach and solve equations effectively, equipping you with practical skills to apply mathematical methods confidently in various contexts.

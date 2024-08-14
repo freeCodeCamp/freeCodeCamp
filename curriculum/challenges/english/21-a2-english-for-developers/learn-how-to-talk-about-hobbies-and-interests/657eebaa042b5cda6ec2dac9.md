@@ -17,7 +17,7 @@ If your friend tells you they saw a dog riding a skateboard down the street, you
 
 ## --sentence--
 
-`Sarah: Are you _?`
+`Sarah: Are you BLANK?`
 
 ## --blanks--
 

@@ -11,16 +11,18 @@
 
 .fill-in-the-blank-wrap > p {
   margin: 0;
-  font-size: 1.25em;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .fill-in-the-blank-input {
+  font-family: monospace;
   padding: 0;
   text-align: center;
   background-color: var(--primary-background);
   border-radius: 0;
   overflow-wrap: anywhere;
-  line-height: 1.5rem;
+  line-height: 1.5;
   z-index: 1;
   position: relative;
   border-left: none;
@@ -28,6 +30,10 @@
   border-top: none;
   border-bottom-width: 4px;
   border-bottom-color: var(--gray-45) !important;
+}
+
+.fill-in-the-blank-input:focus {
+  z-index: 2;
 }
 
 .code-tag code {

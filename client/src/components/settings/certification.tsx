@@ -1,4 +1,4 @@
-import { Link, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
 import { withTranslation } from 'react-i18next';
@@ -21,7 +21,7 @@ import {
 } from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
-import { FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow, Spacer, Link } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
@@ -130,9 +130,8 @@ const isCertMapSelector = createSelector(
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
     'Legacy Information Security and Quality Assurance': isInfosecQaCert,
-    // TODO: remove Example Certification? Also, include Upcoming Python
     // Certification.
-    'Example Certification': false,
+    'Front End Development': false,
     'Upcoming Python Certification': false,
     'A2 English for Developers': false,
     'B1 English for Developers': false,
@@ -232,7 +231,21 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             onClick={createClickHandler(certSlug)}
             target='_blank'
           >
-            {isFullStackCert ? t('buttons.show-cert') : t('buttons.claim-cert')}
+            {isFullStackCert ? (
+              <>
+                {t('buttons.show-cert')}{' '}
+                <span className='sr-only'>
+                  {t('certification.title.Legacy Full Stack')}
+                </span>
+              </>
+            ) : (
+              <>
+                {t('buttons.claim-cert')}{' '}
+                <span className='sr-only'>
+                  {t('certification.title.Legacy Full Stack')}
+                </span>
+              </>
+            )}
           </Button>
         ) : (
           <Button
@@ -242,7 +255,10 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
             disabled={true}
             id={'button-' + certSlug}
           >
-            {t('buttons.claim-cert')}
+            {t('buttons.claim-cert')}{' '}
+            <span className='sr-only'>
+              {t('certification.title.Legacy Full Stack')}
+            </span>
           </Button>
         )}
       </div>
@@ -384,12 +400,12 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <>
         {certsToProjects[certName].map(({ link, title, id }) => (
           <tr className='project-row' key={id}>
-            <td className='project-title col-sm-8 col-xs-8'>
+            <td className='project-title col-xs-8'>
               <Link to={link}>
                 {t(`certification.project.title.${title}`, title)}
               </Link>
             </td>
-            <td className='project-solution col-sm-4 col-xs-4'>
+            <td className='project-solution col-xs-4'>
               {getProjectSolution(id, title)}
             </td>
           </tr>
@@ -445,7 +461,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
         challengeData={challengeData}
         previewTitle={projectTitle}
         closeText={t('buttons.close')}
-        showProjectPreview={true}
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
     </section>

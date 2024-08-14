@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { isCertMap } from '../types';
+import { genericError, isCertMap } from '../types';
 
 export const certificateVerify = {
   // TODO(POST_MVP): Remove partial validation from route for schema validation
@@ -121,9 +121,13 @@ export const certificateVerify = {
         )
       })
     ]),
-    500: Type.Object({
-      type: Type.Literal('danger'),
-      message: Type.Literal('flash.went-wrong')
-    })
+    500: Type.Union([
+      Type.Object({
+        type: Type.Literal('danger'),
+        message: Type.Literal('flash.went-wrong')
+      }),
+      genericError
+    ]),
+    default: genericError
   }
 };

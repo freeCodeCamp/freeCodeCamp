@@ -52,7 +52,6 @@ function FinishExamModal({
       </Modal.Body>
       <Modal.Footer>
         <Button
-          data-cy='finish-exam-modal-confirm'
           block={true}
           size='medium'
           variant='primary'
@@ -62,7 +61,6 @@ function FinishExamModal({
         </Button>
         <Spacer size='xxSmall' />
         <Button
-          data-cy='finish-exam-modal-deny'
           block={true}
           size='medium'
           variant='primary'

@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import {
-  defaultUserEmail,
-  devLogin,
-  setupServer,
-  superRequest
-} from '../../jest.utils';
+import { defaultUserEmail, setupServer, superRequest } from '../../jest.utils';
 import { HOME_LOCATION } from '../utils/env';
 import { nanoidCharSet } from '../utils/create-user';
 
@@ -41,6 +36,7 @@ describe('dev login', () => {
       const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
       const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
       const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
+      const mongodbIdRe = /^[a-f0-9]{24}$/;
 
       await superRequest('/signin', { method: 'GET' });
       const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -51,19 +47,29 @@ describe('dev login', () => {
         about: '',
         acceptedPrivacyTerms: false,
         completedChallenges: [],
+        completedExams: [],
         currentChallengeId: '',
+        donationEmails: [],
         email: defaultUserEmail,
+        emailAuthLinkTTL: null,
         emailVerified: true,
+        emailVerifyTTL: null,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         externalId: expect.stringMatching(uuidRe),
+        githubProfile: null,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        id: expect.stringMatching(mongodbIdRe),
         is2018DataVisCert: false,
         is2018FullStackCert: false,
         isApisMicroservicesCert: false,
         isBackEndCert: false,
         isBanned: false,
         isCheater: false,
+        isClassroomAccount: null,
         isDataAnalysisPyCertV7: false,
         isDataVisCert: false,
         isDonating: false,
+        isFoundationalCSharpCertV8: false,
         isFrontEndCert: false,
         isFrontEndLibsCert: false,
         isFullStackCert: false,
@@ -71,17 +77,26 @@ describe('dev login', () => {
         isInfosecCertV7: false,
         isInfosecQaCert: false,
         isJsAlgoDataStructCert: false,
+        isJsAlgoDataStructCertV8: false,
         isMachineLearningPyCertV7: false,
         isQaCertV7: false,
         isRelationalDatabaseCertV8: false,
         isCollegeAlgebraPyCertV8: false,
         isRespWebDesignCert: false,
         isSciCompPyCertV7: false,
+        isUpcomingPythonCertV8: null,
         keyboardShortcuts: false,
+        linkedin: null,
         location: '',
         name: '',
+        needsModeration: false,
+        newEmail: null,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         unsubscribeId: expect.stringMatching(unsubscribeIdRe),
+        partiallyCompletedChallenges: [],
+        password: null,
         picture: '',
+        portfolio: [],
         profileUI: {
           isLocked: false,
           showAbout: false,
@@ -95,10 +110,18 @@ describe('dev login', () => {
           showTimeLine: false
         },
         progressTimestamps: [expect.any(Number)],
+        savedChallenges: [],
         sendQuincyEmail: false,
         theme: 'default',
+        timezone: null,
+        twitter: null,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         username: expect.stringMatching(fccUuidRe),
-        usernameDisplay: expect.stringMatching(fccUuidRe)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        usernameDisplay: expect.stringMatching(fccUuidRe),
+        verificationToken: null,
+        website: null,
+        yearsTopContributor: []
       });
       expect(user.username).toBe(user.usernameDisplay);
     });
@@ -167,35 +190,6 @@ describe('dev login', () => {
 
       expect(res.status).toBe(302);
       expect(res.headers.location).toBe(`${HOME_LOCATION}/learn`);
-    });
-  });
-
-  describe('GET /signout', () => {
-    beforeEach(async () => {
-      await devLogin();
-    });
-    it('should clear all the cookies', async () => {
-      const res = await superRequest('/signout', { method: 'GET' });
-
-      const setCookie = res.headers['set-cookie'];
-      expect(setCookie).toEqual(
-        expect.arrayContaining([
-          'jwt_access_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
-          '_csrf=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
-          'csrf_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT'
-        ])
-      );
-      expect(setCookie).toHaveLength(3);
-    });
-
-    it('should redirect to / on the client by default', async () => {
-      const res = await superRequest('/signout', { method: 'GET' });
-
-      // This happens because localhost:8000 is not an allowed origin and so
-      // normalizeParams rejects it and sets the returnTo to /learn. TODO:
-      // separate the validation and normalization logic.
-      expect(res.headers.location).toBe(`${HOME_LOCATION}/learn`);
-      expect(res.status).toBe(302);
     });
   });
 });

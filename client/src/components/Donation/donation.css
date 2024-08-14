@@ -74,6 +74,10 @@
   align-items: center;
 }
 
+.donation-completion-body .complete-button {
+  border-color: var(--green70);
+}
+
 .donation-email-container label {
   display: flex;
   flex-direction: column;
@@ -89,7 +93,10 @@
 }
 
 .donate-input-element {
-  padding-top: 8px;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
 }
 
 .donation-form .form-control::placeholder {
@@ -280,6 +287,8 @@ li.disabled > a {
 .donation-modal li {
   list-style-type: none;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
 }
 .donation-modal li svg {
   margin: 0 5px;

@@ -2,6 +2,7 @@ const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../shared/config/challenge-types');
+const { SuperBlocks } = require('../../shared/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -83,15 +84,27 @@ const commandJoi = Joi.object().keys({
 
 const schema = Joi.object()
   .keys({
-    audioPath: Joi.string(),
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
+    blockType: Joi.when('superBlock', {
+      is: [SuperBlocks.FrontEndDevelopment],
+      then: Joi.valid(
+        'workshop',
+        'lab',
+        'lecture',
+        'review',
+        'quiz',
+        'exam'
+      ).required(),
+      otherwise: Joi.valid(null)
+    }),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
     challengeType: Joi.number().min(0).max(23).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
+    demoType: Joi.string().valid('onClick', 'onLoad'),
     description: Joi.when('challengeType', {
       is: [
         challengeTypes.step,

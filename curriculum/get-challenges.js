@@ -21,17 +21,32 @@ const { metaSchemaValidator } = require('./schema/meta-schema');
 
 const access = util.promisify(fs.access);
 
-const CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
-const META_DIR = path.resolve(CHALLENGES_DIR, '_meta');
-exports.CHALLENGES_DIR = CHALLENGES_DIR;
-exports.META_DIR = META_DIR;
+const ENGLISH_CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
+const ENGLISH_DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
+const META_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, '_meta');
 
-const COMMENT_TRANSLATIONS = createCommentMap(
-  path.resolve(__dirname, 'dictionaries')
+// This is to allow English to build without having to download the i18n files.
+// It fails when trying to resolve the i18n-curriculum path if they don't exist.
+const I18N_CURRICULUM_DIR = path.resolve(
+  __dirname,
+  process.env.CURRICULUM_LOCALE === 'english'
+    ? '.'
+    : 'i18n-curriculum/curriculum'
 );
 
-function createCommentMap(dictionariesDir) {
-  // get all the languages for which there are dictionaries.
+const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
+const I18N_DICTIONARIES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'dictionaries');
+
+exports.ENGLISH_CHALLENGES_DIR = ENGLISH_CHALLENGES_DIR;
+exports.META_DIR = META_DIR;
+exports.I18N_CHALLENGES_DIR = I18N_CHALLENGES_DIR;
+
+const COMMENT_TRANSLATIONS = createCommentMap(
+  I18N_DICTIONARIES_DIR,
+  ENGLISH_DICTIONARIES_DIR
+);
+
+function createCommentMap(dictionariesDir, englishDictionariesDir) {
   const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
@@ -45,11 +60,15 @@ function createCommentMap(dictionariesDir) {
 
   // get the english dicts
   const COMMENTS_TO_TRANSLATE = require(
-    path.resolve(dictionariesDir, 'english', 'comments.json')
+    path.resolve(englishDictionariesDir, 'english', 'comments.json')
   );
 
   const COMMENTS_TO_NOT_TRANSLATE = require(
-    path.resolve(dictionariesDir, 'english', 'comments-to-not-translate')
+    path.resolve(
+      englishDictionariesDir,
+      'english',
+      'comments-to-not-translate.json'
+    )
   );
 
   // map from english comment text to translations
@@ -80,7 +99,15 @@ function createCommentMap(dictionariesDir) {
     };
   }, {});
 
-  return { ...translatedCommentMap, ...untranslatableCommentMap };
+  const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
+
+  // the english entries need to be added here, because english is not in
+  // languages
+  Object.keys(allComments).forEach(comment => {
+    allComments[comment].english = comment;
+  });
+
+  return allComments;
 }
 
 exports.createCommentMap = createCommentMap;
@@ -98,7 +125,11 @@ function getTranslationEntry(dicts, { engId, text }) {
 }
 
 function getChallengesDirForLang(lang) {
-  return path.resolve(CHALLENGES_DIR, `${lang}`);
+  if (lang === 'english') {
+    return path.resolve(ENGLISH_CHALLENGES_DIR, `${lang}`);
+  } else {
+    return path.resolve(I18N_CHALLENGES_DIR, `${lang}`);
+  }
 }
 
 function getMetaForBlock(block) {
@@ -221,11 +252,11 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   const isCert = path.extname(filePath) === '.yml';
   const englishPath = path.resolve(
     __dirname,
-    CHALLENGES_DIR,
+    ENGLISH_CHALLENGES_DIR,
     'english',
     filePath
   );
-  const i18nPath = path.resolve(__dirname, CHALLENGES_DIR, lang, filePath);
+  const i18nPath = path.resolve(__dirname, I18N_CHALLENGES_DIR, lang, filePath);
   const createChallenge = generateChallengeCreator(lang, englishPath, i18nPath);
 
   await assertHasEnglishSource(filePath, lang, englishPath);
@@ -246,6 +277,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     );
 
     challenge.block = meta.dashedName;
+    challenge.blockType = meta.blockType;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);
@@ -336,7 +368,8 @@ function challengeFilesToPolys(files) {
 
 async function assertHasEnglishSource(filePath, lang, englishPath) {
   const missingEnglish =
-    lang !== 'english' && !(await hasEnglishSource(CHALLENGES_DIR, filePath));
+    lang !== 'english' &&
+    !(await hasEnglishSource(ENGLISH_CHALLENGES_DIR, filePath));
   if (missingEnglish)
     throw Error(`Missing English challenge for
 ${filePath}

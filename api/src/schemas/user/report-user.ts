@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { generic500 } from '../types';
+import { genericError } from '../types';
 
 export const reportUser = {
   body: Type.Object({
@@ -18,6 +18,6 @@ export const reportUser = {
       type: Type.Literal('danger'),
       message: Type.Literal('flash.provide-username')
     }),
-    500: generic500
+    default: genericError
   }
 };

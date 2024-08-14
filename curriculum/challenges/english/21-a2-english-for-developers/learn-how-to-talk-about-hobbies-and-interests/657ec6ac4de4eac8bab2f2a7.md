@@ -15,7 +15,7 @@ The word `date` can be used in different contexts. While it often refers to a ro
 
 ## --sentence--
 
-`Ok, it's a _ _, then.`
+`Ok, it's a BLANK BLANK, then.`
 
 ## --blanks--
 

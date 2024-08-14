@@ -1,5 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { Certification } from '../../../../shared/config/certification-settings';
+import { genericError } from '../types';
 
 export const certSlug = {
   params: Type.Object({
@@ -119,11 +120,6 @@ export const certSlug = {
         })
       )
     }),
-    500: Type.Object({
-      type: Type.Literal('danger'),
-      message: Type.Literal(
-        'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-      )
-    })
+    default: genericError
   }
 };

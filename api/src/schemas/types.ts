@@ -1,9 +1,7 @@
 import { Type } from '@fastify/type-provider-typebox';
 
-export const generic500 = Type.Object({
-  message: Type.Literal(
-    'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-  ),
+export const genericError = Type.Object({
+  message: Type.Literal('flash.generic-error'),
   type: Type.Literal('danger')
 });
 

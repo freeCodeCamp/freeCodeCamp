@@ -198,11 +198,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const isDisabled =
       !(isValidUsername && valid && !isFormPristine) || submitClicked;
     return (
-      <form
-        id='usernameSettings'
-        onSubmit={this.handleSubmit}
-        data-cy='username-form'
-      >
+      <form id='usernameSettings' onSubmit={this.handleSubmit}>
         <FullWidthRow>
           <FormGroup>
             <ControlLabel htmlFor='username-settings'>

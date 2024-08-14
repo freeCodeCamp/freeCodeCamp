@@ -24,6 +24,7 @@ const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
+const paymentIntentRE = /^\/donate\/create-stripe-payment-intent$/;
 const submitCoderoadChallengeRE = /^\/coderoad-challenge-completed$/;
 const mobileLoginRE = /^\/mobile-login\/?$/;
 
@@ -40,6 +41,7 @@ const _pathsAllowedREs = [
   unsubscribedRE,
   unsubscribeRE,
   donateRE,
+  paymentIntentRE,
   submitCoderoadChallengeRE,
   mobileLoginRE
 ];

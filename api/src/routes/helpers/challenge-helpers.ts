@@ -1,7 +1,3 @@
-import type { Prisma } from '@prisma/client';
-
-import type { ProgressTimestamp } from '../../utils/progress';
-
 /**
  * Confirm that a user can submit a CodeRoad project.
  *
@@ -25,39 +21,6 @@ export const canSubmitCodeRoadCertProject = (
   if (completedChallenges.some(c => c.id === id)) return true;
   return false;
 };
-
-/**
- * Create the Prisma query to update a project.
- * @param id The id of the project.
- * @param newChallenge The challenge corresponding to the project.
- * @returns A Prisma query to update the project.
- */
-export const updateProject = (
-  id: string,
-  newChallenge: Prisma.CompletedChallengeUpdateInput
-) => ({
-  completedChallenges: {
-    updateMany: { where: { id }, data: newChallenge }
-  },
-  partiallyCompletedChallenges: { deleteMany: { where: { id } } }
-});
-
-/**
- * Create the Prisma query to create a project.
- * @param id The id of the project.
- * @param newChallenge The challenge corresponding to the project.
- * @param progressTimestamps The user's current progress timestamps.
- * @returns A Prisma query to update the project.
- */
-export const createProject = (
-  id: string,
-  newChallenge: Prisma.CompletedChallengeCreateInput,
-  progressTimestamps: ProgressTimestamp[]
-) => ({
-  completedChallenges: { push: newChallenge },
-  partiallyCompletedChallenges: { deleteMany: { where: { id } } },
-  progressTimestamps: [...progressTimestamps, newChallenge.completedDate]
-});
 
 type MSProfileError = {
   type: 'error';

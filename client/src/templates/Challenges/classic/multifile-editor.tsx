@@ -35,6 +35,8 @@ type MultifileEditorProps = Pick<
   | 'initialTests'
   | 'editorRef'
   | 'containerRef'
+  | 'block'
+  | 'superBlock'
   | 'challengeFiles'
   | 'description'
   // We use dimensions to trigger a re-render of the editor
@@ -65,6 +67,8 @@ const mapStateToProps = createSelector(
 
 const MultifileEditor = (props: MultifileEditorProps) => {
   const {
+    block,
+    superBlock,
     challengeFiles,
     containerRef,
     description,
@@ -126,7 +130,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
             } else {
               return (
                 <ReflexElement
-                  data-cy={`editor-container-${key}`}
                   data-playwright-test-label={`editor-container-${key}`}
                   {...reflexProps}
                   {...resizeProps}
@@ -134,6 +137,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                 >
                   <Editor
                     canFocusOnMountRef={canFocusOnMountRef}
+                    block={block}
+                    superBlock={superBlock}
                     challengeFiles={challengeFiles}
                     containerRef={containerRef}
                     description={targetEditor === key ? description : ''}

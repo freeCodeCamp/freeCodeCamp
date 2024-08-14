@@ -1,4 +1,4 @@
-import type { Token, PaymentIntentResult } from '@stripe/stripe-js';
+import type { PaymentIntentResult } from '@stripe/stripe-js';
 
 export type PaymentContext = 'modal' | 'donate page' | 'certificate';
 export type PaymentProvider = 'patreon' | 'paypal' | 'stripe' | 'stripe card';
@@ -11,11 +11,11 @@ export type HandleAuthentication = (
 export interface PostPayment {
   paymentProvider: PaymentProvider;
   data?: DonationApprovalData;
-  token?: Token;
   payerEmail?: string | undefined;
   payerName?: string | undefined;
   paymentMethodId?: string;
   handleAuthentication?: HandleAuthentication;
+  subscriptionId?: string;
 }
 
 export interface DonationApprovalData {

@@ -19,7 +19,7 @@ While there is at least a given fraction $F$ of pie left, he performs the follow
 
 When less than a fraction $F$ of pie remains, he does not repeat this procedure. Instead, he eats all of the remaining pie.
 
-<img class="img-responsive center-block" alt="animation of pie slicing procedure" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px;">
+<img alt="animation of pie slicing procedure" src="https://cdn.freecodecamp.org/curriculum/project-euler/eating-pie.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 For $x ≥ 1$, let $E(x)$ be the expected number of times Jeff repeats the procedure above with $F = \frac{1}{x}$. It can be verified that $E(1) = 1$, $E(2) ≈ 1.2676536759$, and $E(7.5) ≈ 2.1215732071$.
 

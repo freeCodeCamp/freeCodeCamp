@@ -4,6 +4,7 @@ import { promisify } from 'util';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { alertToBeVisible } from './utils/alerts';
 
 const execP = promisify(exec);
 
@@ -16,7 +17,7 @@ test.beforeEach(async ({ page }) => {
 test.afterAll(
   async () =>
     await Promise.all([
-      await execP('node ./tools/scripts/seed/seed-demo-user certified-user'),
+      await execP('node ./tools/scripts/seed/seed-demo-user --certified-user'),
       await execP('node ./tools/scripts/seed/seed-surveys'),
       await execP('node ./tools/scripts/seed/seed-ms-username')
     ])
@@ -111,11 +112,7 @@ test.describe('Delete Modal component', () => {
     ).not.toBeVisible();
 
     await expect(page).toHaveURL(/.*\/learn\/?/);
-    await expect(
-      page
-        .getByRole('alert')
-        .filter({ hasText: 'Your account has been successfully deleted' })
-    ).toBeVisible();
+    await alertToBeVisible(page, translations.flash['account-deleted']);
     // The user is signed out after their account is deleted
     await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(2);
   });

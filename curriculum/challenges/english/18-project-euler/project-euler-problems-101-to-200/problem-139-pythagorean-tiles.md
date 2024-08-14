@@ -12,7 +12,7 @@ Let (a, b, c) represent the three sides of a right angle triangle with integral 
 
 For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5 square can be tiled with twenty-five 1 by 1 squares.
 
-<img class="img-responsive center-block" alt="two 5 x 5 squares: one with four 3x4x5 triangles placed to create 1x1 hole in the middle; second with twenty-five 1x1 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px;">
+<img alt="two 5 x 5 squares: one with four 3x4x5 triangles placed to create 1x1 hole in the middle; second with twenty-five 1x1 squares" src="https://cdn.freecodecamp.org/curriculum/project-euler/pythagorean-tiles.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 However, if (5, 12, 13) triangles were used, the hole would measure 7 by 7. These 7 by 7 squares could not be used to tile the 13 by 13 square.
 

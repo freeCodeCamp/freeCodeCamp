@@ -56,7 +56,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
         </div>
         <button
           aria-disabled="false"
-          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus-visible:ring focus-visible:ring-focus-outline-color text-center cursor-pointer no-underline block w-full border-foreground-secondary bg-background-quaternary text-foreground-secondary hover:bg-foreground-primary hover:text-background-primary hover:border-foreground-secondary dark:hover:bg-background-primary dark:hover:text-foreground-primary px-3 py-1.5 text-md"
+          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 text-center cursor-pointer no-underline block w-full bg-background-quaternary text-foreground-secondary border-foreground-secondary hover:bg-foreground-primary hover:text-background-primary hover:border-foreground-secondary dark:hover:bg-background-primary dark:hover:text-foreground-primary px-3 py-1.5 text-md"
           type="button"
         >
           buttons.agree-honesty
@@ -123,7 +123,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
         </div>
         <button
           aria-disabled="true"
-          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 focus:outline-none focus-visible:ring focus-visible:ring-focus-outline-color text-center cursor-pointer no-underline block w-full border-foreground-secondary bg-background-quaternary text-foreground-secondary active:before:hidden px-3 py-1.5 text-md"
+          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 text-center cursor-pointer no-underline block w-full bg-background-quaternary text-foreground-secondary active:before:hidden border-gray-450 aria-disabled:cursor-not-allowed aria-disabled:opacity-80 px-3 py-1.5 text-md"
           type="button"
         >
           buttons.accepted-honesty

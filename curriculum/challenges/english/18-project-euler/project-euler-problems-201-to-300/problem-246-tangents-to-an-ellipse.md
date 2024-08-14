@@ -14,7 +14,7 @@ Given a circle $c$ with centre $M$ and radius $r$ and a point $G$ such that $d(G
 
 The construction of the points of the ellipse is shown below.
 
-<img class="img-responsive center-block" alt="animation of ellipse construction" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px;">
+<img alt="animation of ellipse construction" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Given are the points $M(-2000, 1500)$ and $G(8000, 1500)$.
 
@@ -26,7 +26,7 @@ From a point $P$ outside $e$ the two tangents $t_1$ and $t_2$ to the ellipse are
 
 Let the points where $t_1$ and $t_2$ touch the ellipse be $R$ and $S$.
 
-<img class="img-responsive center-block" alt="circle c with the centre M, radius 15000, and point P outsie of ellipse e; from point P two tangents t_1 and t_2 are drawn to the ellipse, with points touching ellipse are R and S" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px;">
+<img alt="circle c with the centre M, radius 15000, and point P outsie of ellipse e; from point P two tangents t_1 and t_2 are drawn to the ellipse, with points touching ellipse are R and S" src="https://cdn.freecodecamp.org/curriculum/project-euler/tangents-to-an-ellipse-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 For how many lattice points $P$ is angle $RPS$ greater than 45°?
 

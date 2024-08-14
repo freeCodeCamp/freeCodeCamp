@@ -16,7 +16,7 @@ Let $S(n)$ be the maximum number of stations such a path can pass through.
 
 For example, if $n = 22$, there are 11 distinct stations, and a valid path can pass through at most 5 stations. Therefore, $S(22) = 5$. The case is illustrated below, with an example of an optimal path:
 
-<img class="img-responsive center-block" alt="valid path passing through 5 stations, for n = 22, with 11 distinct stations" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px;">
+<img alt="valid path passing through 5 stations, for n = 22, with 11 distinct stations" src="https://cdn.freecodecamp.org/curriculum/project-euler/uphill-paths.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 It can also be verified that $S(123) = 14$ and $S(10\\,000) = 48$.
 

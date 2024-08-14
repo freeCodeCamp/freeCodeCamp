@@ -75,6 +75,12 @@
   max-width: 100%;
 }
 
+.completion-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media screen and (max-width: 991px) {
   .progress-bar-wrap,
   .progress-bar-background {

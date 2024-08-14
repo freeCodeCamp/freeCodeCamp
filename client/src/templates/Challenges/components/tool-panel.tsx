@@ -82,12 +82,7 @@ function ToolPanel({
           challengeType === challengeTypes.multifilePythonCertProject) && (
           <>
             <Spacer size='xxSmall' />
-            <Button
-              block={true}
-              variant='primary'
-              data-cy='save-code-to-database-btn'
-              onClick={saveChallenge}
-            >
+            <Button block={true} variant='primary' onClick={saveChallenge}>
               {isMobile ? t('buttons.save') : t('buttons.save-code')}
             </Button>
           </>

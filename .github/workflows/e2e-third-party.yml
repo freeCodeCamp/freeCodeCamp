@@ -32,6 +32,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Checkout client-config
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -53,17 +55,21 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          sed '/STRIPE/d; /PAYPAL/d;' sample.env > .env
+          sed '/STRIPE/d; /PAYPAL/d; /PATREON/d;' sample.env > .env
           echo 'STRIPE_PUBLIC_KEY=${{ secrets.STRIPE_PUBLIC_KEY }}' >> .env
-          echo 'STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}' >> .env
           echo 'PAYPAL_CLIENT_ID=${{ secrets.PAYPAL_CLIENT_ID }}' >> .env
+          echo 'PATREON_CLIENT_ID=${{ secrets.PATREON_CLIENT_ID }}' >> .env
 
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run build
-      - name: Seed Database
-        run: pnpm run seed
+          pnpm run create:shared
+          pnpm run build:curriculum
+          pnpm run build:server
+
+      - name: Seed Database with Certified User
+        run: pnpm run seed:certified-user
+
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
 
@@ -71,21 +77,18 @@ jobs:
       - name: Install pm2
         run: npm i -g pm2
 
-        # In our cypress config, we default to the cypress/e2e/default directory.
-        # We need to change this to cypress/e2e/ for the specific tests we are running
-        # in this workflow.
-        #
-      - name: Adjust the Cypress Config
-        run: |
-          sed -i 's#cypress/e2e/default/#cypress/e2e/#g' cypress.config.js
+      - name: Install playwright dependencies
+        run: npx playwright install --with-deps
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+      - name: Run playwright tests
+        run: |
+          pnpm run start-ci &
+          sleep 10
+          npx playwright test third-party-donation.spec.ts --project=${{ matrix.browsers }}
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
         with:
-          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
-          start: pnpm run start-ci
-          wait-on: http://localhost:8000
-          wait-on-timeout: 1200
-          config: baseUrl=http://localhost:8000
-          browser: chrome
-          spec: 'cypress/e2e/third-party/donate-page.ts'
+          name: playwright-report-${{ matrix.browsers }}
+          path: playwright/reporter
+          retention-days: 30

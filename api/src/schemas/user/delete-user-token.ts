@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { genericError } from '../types';
 
 export const deleteUserToken = {
   response: {
@@ -9,11 +10,6 @@ export const deleteUserToken = {
       message: Type.Literal('userToken not found'),
       type: Type.Literal('info')
     }),
-    500: Type.Object({
-      message: Type.Literal(
-        'Oops! Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.'
-      ),
-      type: Type.Literal('danger')
-    })
+    default: genericError
   }
 };

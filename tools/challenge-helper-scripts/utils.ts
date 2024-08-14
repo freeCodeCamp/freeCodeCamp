@@ -16,13 +16,15 @@ interface Options {
   challengeType: number;
   projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
+  isFirstChallenge?: boolean;
 }
 
 const createStepFile = ({
   stepNum,
   challengeType,
   projectPath = getProjectPath(),
-  challengeSeeds = {}
+  challengeSeeds = {},
+  isFirstChallenge = false
 }: Options): ObjectID => {
   const challengeId = new ObjectID();
 
@@ -30,7 +32,8 @@ const createStepFile = ({
     challengeId,
     challengeSeeds,
     stepNum,
-    challengeType
+    challengeType,
+    isFirstChallenge
   });
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -201,6 +204,16 @@ const getChallengeSeeds = (
   return parseMDSync(challengeFilePath).challengeFiles;
 };
 
+const validateBlockName = (block: string): boolean | string => {
+  if (!block.trim().length) {
+    return 'please enter a dashed name';
+  }
+  if (/[^a-z0-9-]/.test(block.trim())) {
+    return 'please use alphanumerical characters and kebab case';
+  }
+  return true;
+};
+
 export {
   createStepFile,
   createChallengeFile,
@@ -211,5 +224,6 @@ export {
   insertChallengeIntoMeta,
   insertStepIntoMeta,
   deleteChallengeFromMeta,
-  deleteStepFromMeta
+  deleteStepFromMeta,
+  validateBlockName
 };

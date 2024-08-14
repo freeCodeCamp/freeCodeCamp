@@ -16,7 +16,7 @@ An Eulerian cycle on $E(m,n)$ is a closed path that passes through each arc exac
 
 The image below shows $E(3,3)$ and an example of an Eulerian non-crossing path.
 
-<img class="img-responsive center-block" alt="Eulerian cycle E(3, 3) and Eulerian non-crossing path" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px;">
+<img alt="Eulerian cycle E(3, 3) and Eulerian non-crossing path" src="https://cdn.freecodecamp.org/curriculum/project-euler/eulerian-cycles.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Let $L(m,n)$ be the number of Eulerian non-crossing paths on $E(m,n)$. For example, $L(1,2) = 2$, $L(2,2) = 37$ and $L(3,3) = 104290$.
 

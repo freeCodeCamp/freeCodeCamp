@@ -1,9 +1,15 @@
 ---
-title: Introduction to the Learn Responsive Web Design by Building a Piano Project
+title: Introduction to the Learn Responsive Web Design by Building a Piano
 block: learn-responsive-web-design-by-building-a-piano
 superBlock: 2022/responsive-web-design
 ---
 
-## Introduction to the Learn Responsive Web Design by Building a Piano Project
+## Introduction to the Learn Responsive Web Design by Building a Piano
 
-This is a test for the new project-based curriculum.
+Today, there are many types of devices that can access the web. They range from large desktop computers to small mobile phones. These devices have different screen sizes, resolutions, and processing power.
+
+Responsive Web Design is an approach to designing web content that responds to the constraints of different devices. The page structure and CSS rules should be flexible to accommodate these differences.
+
+In general, design the page's CSS to your target audience. If you expect most of your traffic to be from mobile users, take a 'mobile-first' approach. Then add conditional rules for larger screen sizes. If your visitors are desktop users, then design for larger screens with conditional rules for smaller sizes.
+
+CSS gives you the tools to write different style rules, then apply them depending on the device displaying the page. This section will cover the basic ways to use CSS for Responsive Web Design.

@@ -68,6 +68,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         );
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
           type: 'danger',
@@ -125,6 +126,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
           type: 'danger',

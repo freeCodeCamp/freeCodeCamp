@@ -385,7 +385,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           <p>{t('settings.share-projects')}</p>
           <Spacer size='small' />
           <Button
-            data-cy='add-portfolio'
             block={true}
             size='large'
             variant='primary'

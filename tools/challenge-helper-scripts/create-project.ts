@@ -5,8 +5,8 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import { SuperBlocks } from '../../shared/config/superblocks';
-import { createStepFile } from './utils';
+import { SuperBlocks } from '../../shared/config/curriculum';
+import { createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
@@ -163,7 +163,8 @@ async function createFirstChallenge(
     projectPath: newChallengeDir + '/',
     stepNum: 1,
     challengeType: 0,
-    challengeSeeds
+    challengeSeeds,
+    isFirstChallenge: true
   });
 }
 
@@ -198,17 +199,9 @@ void prompt([
   {
     name: 'block',
     message: 'What is the dashed name (in kebab-case) for this project?',
-    validate: (block: string) => {
-      if (!block.length) {
-        return 'please enter a dashed name';
-      }
-      if (/[^a-z0-9-]/.test(block)) {
-        return 'please use alphanumerical characters and kebab case';
-      }
-      return true;
-    },
+    validate: validateBlockName,
     filter: (block: string) => {
-      return block.toLowerCase();
+      return block.toLowerCase().trim();
     }
   },
   {

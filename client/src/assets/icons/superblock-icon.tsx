@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../shared/config/curriculum';
 import APIIcon from './api';
 import D3Icon from './d3';
 import DatabaseIcon from './database';
@@ -38,7 +38,7 @@ const iconMap = {
   [SuperBlocks.ProjectEuler]: Graduation,
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
-  [SuperBlocks.ExampleCertification]: ResponsiveDesign,
+  [SuperBlocks.FrontEndDevelopment]: ResponsiveDesign,
   [SuperBlocks.UpcomingPython]: PythonIcon,
   [SuperBlocks.A2English]: A2EnglishIcon,
   [SuperBlocks.B1English]: A2EnglishIcon,

@@ -10,7 +10,7 @@ dashedName: problem-109-darts
 
 In the game of darts a player throws three darts at a target board which is split into twenty equal sized sections numbered one to twenty.
 
-<img class="img-responsive center-block" alt="Darts board" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px;">
+<img alt="Darts board" src="https://cdn.freecodecamp.org/curriculum/project-euler/darts.png" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 The score of a dart is determined by the number of the region that the dart lands in. A dart landing outside the red/green outer ring scores zero. The black and cream regions inside this ring represent single scores. However, the red/green outer ring and middle ring score double and treble scores respectively.
 

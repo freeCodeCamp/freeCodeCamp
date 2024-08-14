@@ -55,9 +55,9 @@
     "reset-lesson": "Reset this lesson",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "Reset",
     "reset-step": "Reset This Step",
     "help": "Help",
@@ -72,11 +72,11 @@
     "update-email": "Update my Email",
     "verify-email": "Verify Email",
     "submit-and-go": "Submit and go to next challenge",
-    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
-    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Go to next challenge",
-    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
-    "go-to-next-3": "Go to next challenge (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "Ask me later",
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -384,6 +385,7 @@
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
     "i-completed": "I've completed this challenge",
+    "example-code": "Example Code",
     "test-output": "Your test output will go here",
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
@@ -406,7 +408,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
-    "reset-warn-2": "This cannot be undone",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -510,6 +512,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
@@ -574,6 +584,7 @@
     "other-ways": "Here are many <0>other ways you can support our charity's mission</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "Uh - oh. It looks like your transaction didn't go through. Could you please try again?",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "Please try again.",
     "card-number": "Your Card Number:",
     "expiration": "Expiration Date:",
@@ -668,7 +679,8 @@
     "see-results": "See all results for {{searchQuery}}",
     "no-tutorials": "No tutorials found",
     "try": "Looking for something? Try the search bar on this page.",
-    "no-results": "We could not find anything relating to <0>{{query}}</0>"
+    "no-results": "We could not find anything relating to <0>{{query}}</0>",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "You appear to be offline, your progress may not be saved",
@@ -728,6 +740,7 @@
     "last-page": "Go to last page",
     "primary-nav": "primary",
     "breadcrumb-nav": "breadcrumb",
+    "timeline-pagination-nav": "Timeline Pagination",
     "submit": "Use Ctrl + Enter to submit.",
     "running-tests": "Running tests",
     "hide-preview": "Hide the preview",
@@ -749,7 +762,7 @@
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Something went wrong, please check and try again",
     "account-deleted": "Your account has been successfully deleted",
     "progress-reset": "Your progress has been reset",
@@ -785,7 +798,6 @@
     "cert-claim-success": "@{{username}}, you have successfully claimed the {{name}} Certification! Congratulations on behalf of the freeCodeCamp.org team!",
     "wrong-name": "Something went wrong with the verification of {{name}}, please try again. If you continue to receive this error, you can send a message to support@freeCodeCamp.org to get help.",
     "error-claiming": "Error claiming {{certName}}",
-    "refresh-needed": "You can only use the PaymentRequest button once. Refresh the page to start over.",
     "username-not-found": "We could not find a user with the username \"{{username}}\"",
     "add-name": "This user needs to add their name to their account in order for others to be able to view their certification.",
     "not-eligible": "This user is not eligible for freeCodeCamp.org certifications at this time.",
@@ -869,7 +881,8 @@
     "own-work-url": "Remember to submit your own work.",
     "publicly-visible-url": "Remember to submit a publicly visible app URL.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
-    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Executive Director, freeCodeCamp.org",
@@ -995,6 +1008,8 @@
       "a2-english-for-developers": "A2 English for Developers Certification",
       "B1 English for Developers": "B1 English for Developers",
       "b1-english-for-developers": "B1 English for Developers Certification",
+      "Front End Development": "Front End Development",
+      "front-end-development-v9": "Front End Development Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",

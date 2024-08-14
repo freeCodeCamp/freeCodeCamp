@@ -210,7 +210,7 @@ ${options.title} description.
 
 ## --sentence--
 
-\`Fill _ the _ sentence.\`
+\`Fill BLANK the BLANK sentence.\`
 
 ## --blanks--
 

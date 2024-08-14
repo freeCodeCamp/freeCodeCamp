@@ -153,7 +153,7 @@ function AcceptPrivacyTerms({
             <hr />
           </Col>
         </Row>
-        <Row className='email-sign-up' data-cy='email-sign-up'>
+        <Row className='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='small' />
             <p>{t('misc.email-blast')}</p>

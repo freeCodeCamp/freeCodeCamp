@@ -90,5 +90,9 @@ export const superBlockList = [
   {
     name: 'B1 English for Developers (Beta)',
     path: '24-b1-english-for-developers'
+  },
+  {
+    name: 'Front End Development',
+    path: '25-front-end-development'
   }
 ];

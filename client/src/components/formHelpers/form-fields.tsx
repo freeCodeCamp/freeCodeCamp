@@ -14,13 +14,15 @@ import {
   composeValidators,
   fCCValidator,
   httpValidator,
-  pathValidator
+  pathValidator,
+  sourceCodeLinkExistsValidator
 } from './form-validators';
 
 export type FormOptions = {
   ignored?: string[];
   isEditorLinkAllowed?: boolean;
   isLocalLinkAllowed?: boolean;
+  isSourceCodeLinkRequired?: boolean;
   required?: string[];
   types?: { [key: string]: string };
   placeholders?: { [key: string]: string };
@@ -38,7 +40,8 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
     required = [],
     types = {},
     isEditorLinkAllowed = false,
-    isLocalLinkAllowed = false
+    isLocalLinkAllowed = false,
+    isSourceCodeLinkRequired = false
   } = options;
 
   const nullOrWarning = (
@@ -63,6 +66,9 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
       if (isLocalLinkAllowed) {
         validators.push(pathValidator);
       }
+    }
+    if (isSourceCodeLinkRequired && name === 'githubLink') {
+      validators.push(sourceCodeLinkExistsValidator);
     }
     if (!isLocalLinkAllowed) {
       validators.push(localhostValidator);

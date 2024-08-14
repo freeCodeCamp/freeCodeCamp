@@ -55,12 +55,16 @@
 
 .ais-SearchBox-submit {
   grid-area: submit;
-  padding-inline: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ais-SearchBox-reset {
   grid-area: reset;
-  padding-block: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ais-SearchBox-form button:hover {

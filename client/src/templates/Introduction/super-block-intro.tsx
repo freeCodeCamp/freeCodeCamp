@@ -10,7 +10,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row } from '@freecodecamp/ui';
 
-import { SuperBlocks } from '../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../shared/config/curriculum';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
@@ -276,8 +276,8 @@ export default connect(
 )(withTranslation()(memo(SuperBlockIntroductionPage)));
 
 export const query = graphql`
-  query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query SuperBlockIntroPageBySlug($id: String!, $superBlock: String!) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         certification
         superBlock

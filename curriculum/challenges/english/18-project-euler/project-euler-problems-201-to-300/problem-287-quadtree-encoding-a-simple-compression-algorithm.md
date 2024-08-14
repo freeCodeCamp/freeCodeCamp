@@ -19,7 +19,7 @@ The quadtree encoding allows us to describe a $2^N×2^N$ black and white image a
 
 Consider the following 4×4 image (colored marks denote places where a split can occur):
 
-<img class="img-responsive center-block" alt="4x4 image with colored marks denoting place where split can occur" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px;">
+<img alt="4x4 image with colored marks denoting place where split can occur" src="https://cdn.freecodecamp.org/curriculum/project-euler/quadtree-encoding-a-simple-compression-algorithm.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 This image can be described by several sequences, for example : "<strong><span style="color: red">0</span></strong><strong><span style="color: blue">0</span></strong>10101010<strong><span style="color: green">0</span></strong>1011111011<strong><span style="color: orange">0</span></strong>10101010", of length 30, or "<strong><span style="color: red">0</span></strong>10<strong><span style="color: green">0</span></strong>101111101110", of length 16, which is the minimal sequence for this image.
 

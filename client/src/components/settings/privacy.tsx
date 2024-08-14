@@ -147,7 +147,6 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
             type='submit'
             size='large'
             variant='primary'
-            data-cy='save-privacy-settings'
             block={true}
             disabled={!madeChanges}
             {...(!madeChanges && { tabIndex: -1 })}

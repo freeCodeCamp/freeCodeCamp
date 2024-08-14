@@ -75,9 +75,11 @@ export default function StripeCardForm({
   }
 
   const options = {
+    // Ref: https://docs.stripe.com/js/appendix/style
     style: {
       base: {
         fontSize: '18px',
+        fontFamily: 'Lato, sans-serif',
         color: `${theme === Themes.Night ? '#fff' : '#0a0a23'}`,
         '::placeholder': {
           color: `#858591`
@@ -155,7 +157,6 @@ export default function StripeCardForm({
       <button
         className='confirm-donation-btn'
         disabled={!stripe || !elements || isSubmitting}
-        data-cy='donation-confirmation-button'
         type='submit'
       >
         {t('buttons.donate')}

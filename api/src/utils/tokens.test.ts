@@ -1,5 +1,6 @@
+jest.useFakeTimers();
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { createAccessToken, createAuthToken } from './tokens';
+import { createAccessToken, createAuthToken, isExpired } from './tokens';
 
 describe('createAccessToken', () => {
   it('creates an object with id, ttl, created and userId', () => {
@@ -50,5 +51,27 @@ describe('createAuthToken', () => {
 
     expect(actual.ttl).toBe(ttl);
     expect(createAuthToken(userId).ttl).toBe(900000);
+  });
+});
+
+describe('isExpired', () => {
+  it('returns true if the token expiry date is in the past', () => {
+    const token = createAccessToken('abc', 1000);
+    expect(isExpired(token)).toBe(false);
+    jest.advanceTimersByTime(500);
+    expect(isExpired(token)).toBe(false);
+    jest.advanceTimersByTime(500);
+    expect(isExpired(token)).toBe(false);
+    jest.advanceTimersByTime(1);
+    expect(isExpired(token)).toBe(true);
+  });
+
+  it('handles tokens with Date values for created', () => {
+    const token = { ...createAccessToken('abc', 2000), created: new Date() };
+    expect(isExpired(token)).toBe(false);
+    jest.advanceTimersByTime(2000);
+    expect(isExpired(token)).toBe(false);
+    jest.advanceTimersByTime(1);
+    expect(isExpired(token)).toBe(true);
   });
 });

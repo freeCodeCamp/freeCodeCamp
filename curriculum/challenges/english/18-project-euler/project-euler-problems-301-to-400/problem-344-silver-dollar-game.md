@@ -18,7 +18,7 @@ Alternatively, the player can choose to make the special move of pocketing the l
 
 The winner is the player who pockets the silver dollar.
 
-<img class="img-responsive center-block" alt="silver dollar game" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px;">
+<img alt="silver dollar game" src="https://cdn.freecodecamp.org/curriculum/project-euler/silver-dollar-game.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 A winning configuration is an arrangement of coins on the strip where the first player can force a win no matter what the second player does.
 

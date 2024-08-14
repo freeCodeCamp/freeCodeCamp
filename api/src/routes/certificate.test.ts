@@ -229,7 +229,7 @@ describe('certificate routes', () => {
         });
 
         expect(response.body).toStrictEqual({
-          message: 'flash.went-wrong',
+          message: 'flash.generic-error',
           type: 'danger'
         });
         expect(response.status).toBe(500);

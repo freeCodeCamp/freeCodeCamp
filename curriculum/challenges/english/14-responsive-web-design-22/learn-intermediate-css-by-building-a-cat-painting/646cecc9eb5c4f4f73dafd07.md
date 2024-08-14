@@ -1,8 +1,8 @@
 ---
 id: 646cecc9eb5c4f4f73dafd07
-title: Step 23
+title: Step 25
 challengeType: 0
-dashedName: step-23
+dashedName: step-25
 ---
 
 # --description--
@@ -11,7 +11,7 @@ Move the left ear into position by setting a position of `absolute`, a `top` of 
 
 # --hints--
 
-Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semi-colon.
+Your `.cat-left-ear` selector should have a `position` property set to `absolute`. Don't forget to add a semicolon.
 
 ```js
 assert(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.position === 'absolute')

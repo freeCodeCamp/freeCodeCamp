@@ -1,0 +1,42 @@
+{
+  "name": "Learn to Solve Problems and Understand Errors",
+  "isUpcomingChange": true,
+  "dashedName": "top-learn-to-solve-problems-and-understand-errors",
+  "helpCategory": "Odin",
+  "order": 15,
+  "superBlock": "the-odin-project",
+  "challengeOrder": [
+    {
+      "id": "66581a78b1eb2281159492fa",
+      "title": "Learn to Solve Problems and Understand Errors Lesson A"
+    },
+    {
+      "id": "66581a7ab1eb2281159492fb",
+      "title": "Learn to Solve Problems and Understand Errors Lesson B"
+    },
+    {
+      "id": "66581a7bb1eb2281159492fc",
+      "title": "Learn to Solve Problems and Understand Errors Lesson C"
+    },
+    {
+      "id": "66581a7bb1eb2281159492fd",
+      "title": "Learn to Solve Problems and Understand Errors Lesson D"
+    },
+    {
+      "id": "66581a7cb1eb2281159492fe",
+      "title": "Learn to Solve Problems and Understand Errors Lesson E"
+    },
+    {
+      "id": "66581a7db1eb2281159492ff",
+      "title": "Learn to Solve Problems and Understand Errors Lesson F"
+    },
+    {
+      "id": "66581a7eb1eb228115949300",
+      "title": "Learn to Solve Problems and Understand Errors Lesson G"
+    },
+    {
+      "id": "66581a7fb1eb228115949301",
+      "title": "Learn to Solve Problems and Understand Errors Lesson H"
+    }
+  ]
+}

@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - name: Checkout client-config
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -44,7 +46,8 @@ jobs:
           cache: pnpm
 
       - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
 
       - name: Install and Build
         run: |
@@ -77,7 +80,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browsers: [chromium, firefox, webkit]
+        # Not Mobile Safari until we can get it working. Webkit and Mobile
+        # Chrome both work, so hopefully there are no Mobile Safari specific
+        # bugs.
+        browsers: [chromium, firefox, webkit, Mobile Chrome]
         node-version: [20.x]
 
     services:
@@ -89,7 +95,8 @@ jobs:
       mailhog:
         image: mailhog/mailhog
         ports:
-          - 1025:1025
+          - 1025:1025 # SMTP server (listens for emails)
+          - 8025:8025 # HTTP server (so we can make requests to the api)
 
     steps:
       - name: Set Action Environment Variables
@@ -98,6 +105,8 @@ jobs:
 
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: 'recursive'
 
       - uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
         with:
@@ -119,7 +128,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
 
       - name: Install and Build
         run: |
@@ -142,7 +152,7 @@ jobs:
         run: |
           pnpm run start-ci &
           sleep 10
-          npx playwright test --project=${{ matrix.browsers }}
+          npx playwright test --project="${{ matrix.browsers }}" --grep-invert 'third-party-donation.spec.ts'
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

@@ -4,7 +4,7 @@ import fs from 'fs';
 import readdirp from 'readdirp';
 // TODO: remove chai and use jest's assertion errors
 import { AssertionError } from 'chai';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -46,6 +46,7 @@ describe('external curriculum data build', () => {
     const result = validateAvailableSuperBlocks(availableSuperblocks);
 
     if (result.error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       throw new AssertionError(
         result.error.message,
         `file: available-superblocks.json`
@@ -71,6 +72,7 @@ describe('external curriculum data build', () => {
         const result = validateSuperBlock(JSON.parse(fileContent));
 
         if (result.error) {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
           throw new AssertionError(
             result.error.message,
             `file: ${fileInArray}`
@@ -87,7 +89,7 @@ describe('external curriculum data build', () => {
     const isUpcoming = [
       'b1-english-for-developers',
       'upcoming-python',
-      'example-certification'
+      'front-end-development'
     ];
 
     // TODO: this is a hack, we should have a single source of truth for the

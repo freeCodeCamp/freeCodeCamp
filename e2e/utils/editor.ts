@@ -26,13 +26,15 @@ export const focusEditor = async ({
 
 export async function clearEditor({
   page,
-  browserName
+  browserName,
+  isMobile = false
 }: {
   page: Page;
   browserName: string;
+  isMobile?: boolean;
 }) {
   // TODO: replace with ControlOrMeta when it's supported
-  if (browserName === 'webkit') {
+  if (browserName === 'webkit' && !isMobile) {
     await page.keyboard.press('Meta+a');
   } else {
     await page.keyboard.press('Control+a');

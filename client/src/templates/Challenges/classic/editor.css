@@ -38,6 +38,13 @@ textarea.inputarea {
   height: var(--breadcrumbs-height);
 }
 
+@media screen and (max-height: 300px) {
+  .default-layout:has(#mobile-layout) .breadcrumbs-demo {
+    height: auto;
+    padding-block: 2px;
+  }
+}
+
 .editor-upper-jaw,
 .editor-lower-jaw {
   padding-inline: 0 15px;
@@ -46,6 +53,10 @@ textarea.inputarea {
 
 .editor-upper-jaw {
   max-width: unset !important;
+}
+
+.editor-upper-jaw code {
+  white-space: pre-wrap;
 }
 
 .action-row-container,
@@ -60,8 +71,54 @@ textarea.inputarea {
 
 .challenge-description-header {
   display: flex;
+  align-items: center;
   gap: 7px;
   margin: 0.1em 0 0.6rem;
+}
+
+.description-container .breadcrumbs {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  list-style-type: none;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  padding-inline-start: 0;
+  width: 100%;
+  min-width: 0;
+  color: var(--foreground-quaternary);
+}
+
+.description-container .breadcrumbs li:first-child {
+  position: relative;
+  max-width: 35%;
+}
+
+.description-container .breadcrumbs li:first-child:after {
+  content: ' >';
+  font-size: 17px;
+  position: absolute;
+  top: 0;
+  right: -0.7rem;
+}
+
+.description-container .breadcrumbs li:nth-child(2) {
+  min-width: 0;
+}
+
+.description-container .breadcrumbs a {
+  width: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  border-bottom: 1px solid var(--foreground-quaternary);
+}
+
+.description-container .breadcrumbs a:focus {
+  background-color: inherit;
 }
 
 .description-container h1 {
@@ -88,6 +145,7 @@ textarea.inputarea {
   from {
     background-color: var(--highlight-background);
   }
+
   to {
     background-color: var(--secondary-background);
   }
@@ -158,10 +216,12 @@ textarea.inputarea {
   0% {
     opacity: 0;
   }
+
   /* keep test feedback contents initially hidden for 200ms*/
   40% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

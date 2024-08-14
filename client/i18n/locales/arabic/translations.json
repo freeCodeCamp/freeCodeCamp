@@ -55,9 +55,9 @@
     "reset-lesson": "أعد الدرس ألى حالته الأولية",
     "run": "تشغيل",
     "run-test": "تشغيل الاختبارات (Ctrl + Enter)",
-    "check-code": "تيقن من كودك (Ctrl + Enter)",
-    "check-code-2": "تيقن من كودك",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "إعادة ضبط",
     "reset-step": "إعادة الخطوة إلى حالتها الأولية",
     "help": "مساعدة",
@@ -72,11 +72,11 @@
     "update-email": "تحديث بريدي الإلكتروني",
     "verify-email": "التحقق من البريد الإلكتروني",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
-    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
-    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "انتقل إلى التحدي التالي",
-    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
-    "go-to-next-3": "Go to next challenge (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "اسألني لاحقاً",
     "start-coding": "ابدأ البرمجة!",
     "go-to-settings": "اذهب إلى الإعدادات للحصول على الشهادة الخاصة بك",
@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
@@ -384,6 +385,7 @@
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
     "congratulations": "تهانينا، نجح كودك. قدّم كودك للمتابعة.",
     "i-completed": "لقد أكملت هذا التحدي",
+    "example-code": "Example Code",
     "test-output": "ستكون مخرجات اختبارك هنا",
     "running-tests": "// جاري تشغيل الاختبارات",
     "tests-completed": "// الاختبارات اكتملت",
@@ -406,7 +408,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "أعد الدرس ألى حالته الأولية؟",
     "reset-warn": "هل أنت متأكد من رغبتك في إعادة الدرس ألى حالته الأولية؟ سيتم إعادة المحرر والاختبارات إلى حالتهما الأولية.",
-    "reset-warn-2": "لا يمكن التراجع عن هذا",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "نصيحة: إذا كان المتصفح المصغر يغطي الكود البرمجي ، انقر واسحب لتحريكه. كذلك لا تتردد في إيقاف وتعديل التعليمات البرمجية في الفيديو في أي وقت.",
     "chal-preview": "معاينة التحدي",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -510,6 +512,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
@@ -574,6 +584,7 @@
     "other-ways": "فيما يلي العديد من <0>الطرق الأخرى الذي يمكنك بها دعم مهمتنا الخيرية</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "أوه - أوه. يبدو أن معاملتك لم تمر. هل يمكنك المحاولة مرة أخرى؟",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "الرجاء المحاولة مرة أخرى.",
     "card-number": "رقم البطاقة الخاص بك:",
     "expiration": "تاريخ انتهاء الصلاحية:",
@@ -668,7 +679,8 @@
     "see-results": "عرض جميع النتائج لـ {{searchQuery}}",
     "no-tutorials": "لا توجد دروس",
     "try": "هل تبحث عن شيء ما؟ جرب شريط البحث في هذه الصفحة.",
-    "no-results": "لم نتمكن من العثور على أي شيء يتعلق بـ <0>{{query}}</0>"
+    "no-results": "لم نتمكن من العثور على أي شيء يتعلق بـ <0>{{query}}</0>",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "يبدو أنك غير متصل بالإنترنت، قد لا يتم حفظ تقدمك",
@@ -728,6 +740,7 @@
     "last-page": "الذهاب إلى الصفحة الأخيرة",
     "primary-nav": "أساسي",
     "breadcrumb-nav": "عناوين",
+    "timeline-pagination-nav": "Timeline Pagination",
     "submit": "أستخدم Ctrl + Enter لتقديم.",
     "running-tests": "جاري تشغيل الاختبارات",
     "hide-preview": "إخفاء المعاينة",
@@ -749,7 +762,7 @@
   "flash": {
     "honest-first": "للمطالبة بشهادة، يجب عليك أولاً الموافقة على سياسة للصدق الأكاديمي",
     "really-weird": "حدث شيء غريب حقاً، إذا حدث مرة أخرى، يرجى النظر في الإبلاغ عنها على https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
-    "not-right": "يبدو ان هناك خطأ ما. لقد تم إنشاء تقرير وتم إخطار فريق freeCodeCamp.org",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "حدث خطأ ما، الرجاء التحقق والمحاولة مرة أخرى",
     "account-deleted": "تم حذف حسابك بنجاح",
     "progress-reset": "تم إعادة تقدمك ألى حالته الأولية",
@@ -785,7 +798,6 @@
     "cert-claim-success": "@{{username}}، لقد حصلت بنجاح علي شهادة {{name}}! تهانينا بالنيابة عن فريق freeCodeCamp.org!",
     "wrong-name": "حدث خطأ ما في التحقق من {{name}}، يرجى المحاولة مرة أخرى. إذا استمريت في تلقي هذا الخطأ، يمكنك إرسال رسالة إلى support@freeCodeCamp.org للحصول على المساعدة.",
     "error-claiming": "خطأ في المطالبة بـ {{certName}}",
-    "refresh-needed": "يمكنك استخدام زر PaymentRequest مرة واحدة فقط. قم بتحديث الصفحة للبدء من جديد.",
     "username-not-found": "لم نتمكن من العثور على مستخدم باسم المستخدم \"{{username}}\"",
     "add-name": "يحتاج هذا المستخدم إلى إضافة اسمه إلى حسابه حتى يتمكن الآخرون من مشاهدة شهاداته.",
     "not-eligible": "هذا المستخدم غير مؤهل للحصول على شهادات freeCodeCamp.org في هذا الوقت.",
@@ -869,7 +881,8 @@
     "own-work-url": "تذكر أن تقدم عملك الخاص.",
     "publicly-visible-url": "تذكر أن ترسل عنوان URL للتطبيق متاح للجميع.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
-    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "المدير التنفيذي، freeCodeCamp.org",
@@ -995,6 +1008,8 @@
       "a2-english-for-developers": "A2 English for Developers Certification",
       "B1 English for Developers": "B1 English for Developers",
       "b1-english-for-developers": "B1 English for Developers Certification",
+      "Front End Development": "Front End Development",
+      "front-end-development-v9": "Front End Development Certification",
       "Legacy Front End": "الواجهة الأمامية التراثية",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "الواجهة الخلفية التراثية",

@@ -18,7 +18,7 @@ function BlockedPage(): JSX.Element {
             <Spacer size='large' />
             <Col lg={10} lgOffset={1} sm={10} smOffset={1} xs={12}>
               <div
-                className='text-left blocked-body'
+                className='text-start'
                 data-playwright-test-label='blocked-body-text'
               >
                 <p>

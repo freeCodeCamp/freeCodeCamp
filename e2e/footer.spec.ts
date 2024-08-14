@@ -152,7 +152,7 @@ test.describe('Footer bottom section', () => {
     }
 
     for (const item of BOTTOM_LINKS) {
-      const link = page.getByRole('link', { name: item.title });
+      const link = page.getByRole('link', { name: item.title, exact: true });
 
       await expect(link).toBeVisible();
       await expect(link).toHaveAttribute('href', item.href);

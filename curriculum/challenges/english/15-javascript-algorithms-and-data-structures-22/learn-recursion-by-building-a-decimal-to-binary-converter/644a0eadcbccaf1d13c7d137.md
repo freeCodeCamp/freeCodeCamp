@@ -44,7 +44,7 @@ Your `decimalToBinary` function should return a string with a length of `4`.
 assert.strictEqual(decimalToBinary().length, 4);
 ```
 
-Your `decimalToBinary` function should return `1010` as a string.
+Your `decimalToBinary` function should return `"1010"` as a string.
 
 ```js
 assert.strictEqual(decimalToBinary(), '1010');

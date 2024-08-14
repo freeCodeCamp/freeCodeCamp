@@ -25,7 +25,6 @@ const Illustration = () => {
       alt={t('donate.flying-bear')}
       id={'supporter-bear'}
       src={supporterBear}
-      data-playwright-test-label='not-found-image'
     />
   );
 };
@@ -47,7 +46,7 @@ function ModalHeader({
     return null;
   } else if (!showForm) {
     return (
-      <Row className='text-center block-modal-text'>
+      <Row className='text-center'>
         <Col sm={10} smOffset={1} xs={12}>
           {recentlyClaimedBlock !== null && (
             <>
@@ -158,7 +157,7 @@ const AnimationContainer = ({
           alt=''
           src={donationAnimation}
           id={'donation-animation'}
-          data-playwright-test-label='not-found-image'
+          data-playwright-test-label='donation-animation'
         />
       </div>
     </>

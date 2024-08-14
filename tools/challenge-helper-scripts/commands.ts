@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { SuperBlocks } from '../../shared/config/superblocks';
+import { SuperBlocks } from '../../shared/config/curriculum';
 import { challengeTypes } from '../../shared/config/challenge-types';
 import { getProjectPath } from './helpers/get-project-info';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';

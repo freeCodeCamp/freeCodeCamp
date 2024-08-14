@@ -1,5 +1,7 @@
 import { test, expect, Page } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
+import { alertToBeVisible } from './utils/alerts';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
@@ -142,9 +144,7 @@ test.describe('Invalid certification page', () => {
     {
       await page.goto('/certification/certifieduser/invalid-certification');
       await expect(page).toHaveURL('/');
-      await expect(page.getByRole('alert')).toHaveText(
-        /The certification you tried to view does not exist/
-      );
+      await alertToBeVisible(page, translations.flash['certificate-missing']);
     }
   };
   test.describe('for authenticated user', () => {

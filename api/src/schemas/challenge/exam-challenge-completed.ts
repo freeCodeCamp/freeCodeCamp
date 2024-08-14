@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { examResults } from '../types';
+import { examResults, genericError } from '../types';
 
 export const examChallengeCompleted = {
   body: Type.Object({
@@ -30,9 +30,12 @@ export const examChallengeCompleted = {
     400: Type.Object({
       error: Type.String()
     }),
-    403: Type.Object({
-      error: Type.String()
-    }),
+    403: Type.Union([
+      Type.Object({
+        error: Type.String()
+      }),
+      genericError
+    ]),
     500: Type.Object({
       error: Type.String()
     })

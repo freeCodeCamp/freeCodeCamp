@@ -38,7 +38,7 @@ const LearnAlert = ({
       <Spacer size='medium' />
       <div className={'text-center'}>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
@@ -57,9 +57,9 @@ const LearnAlert = ({
       </p>
       <p>{t('learn.if-getting-value')}</p>
       <hr />
-      <p className={'text-center'}>
+      <p className='btn-container'>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
@@ -85,7 +85,7 @@ const LearnAlert = ({
       <Spacer size='medium' />
       <p className={'text-center'}>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'

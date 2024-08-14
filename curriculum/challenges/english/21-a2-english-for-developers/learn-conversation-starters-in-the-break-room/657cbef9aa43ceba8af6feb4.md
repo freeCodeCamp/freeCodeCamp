@@ -17,7 +17,7 @@ For example, you can say, `I enjoy playing video games` if playing video games i
 
 ## --sentence--
 
-`I think she has a passion for technology and she _ leading our team.`
+`I think she has a passion for technology and she BLANK leading our team.`
 
 ## --blanks--
 

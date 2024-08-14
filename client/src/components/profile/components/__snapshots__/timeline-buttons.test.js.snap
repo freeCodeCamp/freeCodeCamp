@@ -370,8 +370,7 @@ exports[`should check certification page consistency 1`] = `
       </tbody>
     </table>
     <nav
-      aria-label="Timeline Pagination"
-      role="navigation"
+      aria-label="aria.timeline-pagination-nav"
     >
       <ul
         aria-hidden="true"

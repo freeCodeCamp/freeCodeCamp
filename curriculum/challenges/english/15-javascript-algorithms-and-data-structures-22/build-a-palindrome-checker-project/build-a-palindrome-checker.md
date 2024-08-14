@@ -68,6 +68,7 @@ let alertMessage;
 window.alert = (message) => alertMessage = message; // Override alert and store message
 
 inputEl.value = '';
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please input a value');
 ```
@@ -259,6 +260,7 @@ const fourthLetter = characters.charAt(Math.floor(Math.random() * charactersLeng
 const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter + fourthLetter + thirdLetter + secondLetter + firstLetter;
 
 inputEl.value = phrase;
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is a palindrome');
@@ -298,6 +300,7 @@ charactersLength--;
 const phrase = firstLetter + secondLetter + thirdLetter + fourthLetter;
 
 inputEl.value = phrase;
+inputEl.dispatchEvent(new Event('change'))
 checkBtn.click();
 
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), phrase + ' is not a palindrome');

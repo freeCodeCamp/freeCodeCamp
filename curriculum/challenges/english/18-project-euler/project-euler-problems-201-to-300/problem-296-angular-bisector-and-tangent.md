@@ -12,7 +12,7 @@ Given is an integer sided triangle $ABC$ with $BC ≤ AC ≤ AB$. $k$ is the ang
 
 The intersection of $n$ and $k$ is called $E$.
 
-<img class="img-responsive center-block" alt="triangle ABC, with k - the angular bisector of angle ACB, m - tangent at point C, n - line parallel to m through B, and point E - intersection of k and n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px;">
+<img alt="triangle ABC, with k - the angular bisector of angle ACB, m - tangent at point C, n - line parallel to m through B, and point E - intersection of k and n" src="https://cdn.freecodecamp.org/curriculum/project-euler/angular-bisector-and-tangent.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 How many triangles $ABC$ with a perimeter not exceeding $100\\,000$ exist such that $BE$ has integral length?
 

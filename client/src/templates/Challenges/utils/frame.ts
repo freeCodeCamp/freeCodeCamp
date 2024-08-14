@@ -208,6 +208,20 @@ const mountFrame =
     };
   };
 
+// Tests should not use functions that directly interact with the user, so
+// they're overridden. If tests need to spy on these functions, they can supply
+// the spy themselves.
+const overrideUserInteractions = (frameContext: Context) => {
+  if (frameContext.window) {
+    frameContext.window.prompt = () => null;
+    frameContext.window.alert = () => {};
+    frameContext.window.confirm = () => false;
+  }
+  return frameContext;
+};
+
+const noop = <T>(x: T) => x;
+
 const actRE = new RegExp(/act\(\.\.\.\) is not supported in production builds/);
 
 const updateProxyConsole =
@@ -259,7 +273,7 @@ const updateProxyConsole =
     return frameContext;
   };
 
-const updateWindowI18next = () => (frameContext: Context) => {
+const updateWindowI18next = (frameContext: Context) => {
   // window does not exist if the preview is hidden, so we have to check.
   if (frameContext?.window) {
     frameContext.window.i18nContent = i18next;
@@ -332,21 +346,6 @@ function handleDocumentNotFound(err: string) {
 
 const initPreviewFrame = () => (frameContext: Context) => frameContext;
 
-// TODO: reimplement when ready to preview python challenges
-// const initPreviewFrame = () => (frameContext: Context) => {
-//   waitForFrame(frameContext)
-//     .then(() => {
-//       if (
-//         frameContext.document &&
-//         '__initPythonFrame' in frameContext.document
-//       ) {
-//         void frameContext.document?.__initPythonFrame();
-//       }
-//     })
-//     .catch(handleDocumentNotFound);
-//   return frameContext;
-// };
-
 const waitForFrame = (frameContext: Context) => {
   return new Promise((resolve, reject) => {
     if (!frameContext.document) {
@@ -389,48 +388,63 @@ export const createMainPreviewFramer = (
   frameTitle: string,
   frameReady?: () => void
 ): ((args: Context) => void) =>
-  createFramer(
+  createFramer({
     document,
-    mainPreviewId,
-    initMainFrame,
+    id: mainPreviewId,
+    init: initMainFrame,
     proxyLogger,
     frameReady,
     frameTitle
-  );
+  });
 
 export const createProjectPreviewFramer = (
   document: Document,
   frameTitle: string
 ): ((args: Context) => void) =>
-  createFramer(
+  createFramer({
     document,
-    projectPreviewId,
-    initPreviewFrame,
-    undefined,
-    undefined,
+    id: projectPreviewId,
+    init: initPreviewFrame,
     frameTitle
-  );
+  });
 
 export const createTestFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameReady: () => void
 ): ((args: Context) => void) =>
-  createFramer(document, testId, initTestFrame, proxyLogger, frameReady);
+  createFramer({
+    document,
+    id: testId,
+    init: initTestFrame,
+    proxyLogger,
+    frameReady,
+    updateWindowFunctions: overrideUserInteractions
+  });
 
-const createFramer = (
-  document: Document,
-  id: string,
-  init: InitFrame,
-  proxyLogger?: ProxyLogger,
-  frameReady?: () => void,
-  frameTitle?: string
-) =>
+const createFramer = ({
+  document,
+  id,
+  init,
+  proxyLogger,
+  frameReady,
+  frameTitle,
+  updateWindowFunctions
+}: {
+  document: Document;
+  id: string;
+  init: InitFrame;
+  proxyLogger?: ProxyLogger;
+  frameReady?: () => void;
+  frameTitle?: string;
+  updateWindowFunctions?: (frameContext: Context) => Context;
+}) =>
   flow(
     createFrame(document, id, frameTitle),
     mountFrame(document, id),
+    updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
-    updateWindowI18next(),
+    updateWindowI18next,
     writeContentToFrame,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;

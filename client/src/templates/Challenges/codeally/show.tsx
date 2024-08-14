@@ -45,7 +45,7 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
 
@@ -426,8 +426,8 @@ export default connect(
 
 // GraphQL
 export const query = graphql`
-  query CodeAllyChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query CodeAllyChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         block
         fields {

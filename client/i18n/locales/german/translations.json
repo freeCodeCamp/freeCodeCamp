@@ -55,9 +55,9 @@
     "reset-lesson": "Diese Lektion zurücksetzen",
     "run": "Ausführen",
     "run-test": "Führe die Tests aus (Strg + Enter)",
-    "check-code": "Überprüfe deinen Code (Strg + Enter)",
-    "check-code-2": "Prüfe deinen Code",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "Zurücksetzen",
     "reset-step": "Reset This Step",
     "help": "Hilfe",
@@ -72,11 +72,11 @@
     "update-email": "Meine E-Mail-Adresse aktualisieren",
     "verify-email": "E-Mail-Adresse bestätigen",
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
-    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
-    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Gehe zur nächsten Herausforderung",
-    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
-    "go-to-next-3": "Go to next challenge (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "Frag später",
     "start-coding": "Beginne zu programmieren!",
     "go-to-settings": "Gehe zu den Einstellungen, um dein Zertifikat zu beantragen",
@@ -100,7 +100,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play"
+    "play-scene": "Press Play",
+    "closed-caption": "Closed caption"
   },
   "landing": {
     "big-heading-1": "Lerne zu programmieren — kostenlos.",
@@ -384,6 +385,7 @@
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
     "congratulations": "Glückwunsch, dein Code hat bestanden. Sende deinen Code ein, um fortzufahren.",
     "i-completed": "Ich habe diese Herausforderung abgeschlossen",
+    "example-code": "Example Code",
     "test-output": "Deine Testergebnisse werden hier erscheinen",
     "running-tests": "// Tests werden durchgeführt",
     "tests-completed": "// Tests abgeschlossen",
@@ -406,7 +408,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Diese Lektion zurücksetzen?",
     "reset-warn": "Bist du dir sicher, dass du diese Lektion zurücksetzen möchtest? Die Editoren und Tests werden zurückgesetzt.",
-    "reset-warn-2": "Dies kann nicht rückgängig gemacht werden",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Tipp: Wenn der Mini-Browser den Code verdeckt, kann man ihn mittels Drag-and-drop bewegen. Du kannst jederzeit stoppen und den Code im Video bearbeiten.",
     "chal-preview": "Herausforderungs-Vorschau",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -510,6 +512,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
@@ -574,6 +584,7 @@
     "other-ways": "Here are many <0>other ways you can support our charity's mission</0>.",
     "if-support-further": "If you want to support our charity further, please consider <0>making a one-time donation</0>, <1>sending us a check</1>, or <2>learning about other ways you could support our charity.</2>",
     "failed-pay": "Oh - oh. Es sieht so aus, als ob deine Transaktion nicht durchgeführt werden konnte. Kannst du es bitte noch einmal versuchen?",
+    "try-another-method": "Uh - oh. It looks like your transaction didn't go through. Could you please try another payment method?",
     "try-again": "Bitte versuche es erneut.",
     "card-number": "Deine Kartennummer:",
     "expiration": "Ablaufdatum:",
@@ -668,7 +679,8 @@
     "see-results": "Alle Ergebnisse für {{searchQuery}} ansehen",
     "no-tutorials": "Keine Tutorials gefunden",
     "try": "Suchst du nach etwas? Versuche es mit der Suchleiste auf dieser Seite.",
-    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden"
+    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden",
+    "result-list": "Search results"
   },
   "misc": {
     "offline": "Du scheinst offline zu sein, dein Fortschritt wird möglicherweise nicht gespeichert",
@@ -728,6 +740,7 @@
     "last-page": "Zur letzten Seite gehen",
     "primary-nav": "primär",
     "breadcrumb-nav": "Breadcrumb",
+    "timeline-pagination-nav": "Timeline Pagination",
     "submit": "Verwende Strg + Enter zum Absenden.",
     "running-tests": "Tests werden durchgeführt",
     "hide-preview": "Vorschau ausblenden",
@@ -749,7 +762,7 @@
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Etwas wirklich Seltsames ist passiert. Wenn es wieder passiert, erwäge bitte, einen Fehler auf https://github.com/freeCodeCamp/freeCodeCamp/issues/new zu melden.",
-    "not-right": "Irgendetwas ist nicht in Ordnung. Es wurde ein Bericht erstellt und das freeCodeCamp.org Team wurde benachrichtigt",
+    "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
     "went-wrong": "Etwas ist schief gelaufen, bitte überprüfe und versuche es erneut",
     "account-deleted": "Dein Konto wurde erfolgreich gelöscht",
     "progress-reset": "Dein Fortschritt wurde zurückgesetzt",
@@ -785,7 +798,6 @@
     "cert-claim-success": "@{{username}}, du hast erfolgreich die {{name}} Zertifizierung bestanden! Herzlichen Glückwunsch im Namen des freeCodeCamp.org Teams!",
     "wrong-name": "Bei der Überprüfung von {{name}} ist etwas schief gelaufen, bitte versuche es erneut. Wenn du weiterhin diesen Fehler erhältst, kannst du eine Nachricht an support@freeCodeCamp.org senden, um Hilfe zu erhalten.",
     "error-claiming": "Fehler beim Anfordern von {{certName}}",
-    "refresh-needed": "Du kannst den Button Zahlungsanforderung nur einmal verwenden. Aktualisiere die Seite, um neu zu beginnen.",
     "username-not-found": "Wir konnten keinen Benutzer mit dem Benutzernamen \"{{username}}\" finden",
     "add-name": "Dieser Nutzer muss seinen Namen zu seinem Konto hinzufügen, damit andere seine Zertifizierungen sehen können.",
     "not-eligible": "Dieser Benutzer ist zu diesem Zeitpunkt nicht für freeCodeCamp.org-Zertifizierungen berechtigt.",
@@ -869,7 +881,8 @@
     "own-work-url": "Denke daran, deine eigene Arbeit einzureichen.",
     "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
-    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path"
+    "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
+    "source-code-link-required": "Remember to submit the link to your source code."
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",
@@ -995,6 +1008,8 @@
       "a2-english-for-developers": "A2 English for Developers Certification",
       "B1 English for Developers": "B1 English for Developers",
       "b1-english-for-developers": "B1 English for Developers Certification",
+      "Front End Development": "Front End Development",
+      "front-end-development-v9": "Front End Development Certification",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",

@@ -80,7 +80,7 @@ function getfillInTheBlank(sentenceNodes, blanksNodes) {
 
   if (!sentence) throw Error('sentence is missing from fill in the blank');
   if (!blanks) throw Error('blanks are missing from fill in the blank');
-  if (sentence.match(/_/g).length !== blanks.length)
+  if (sentence.match(/BLANK/g).length !== blanks.length)
     throw Error(
       `Number of underscores in sentence doesn't match the number of blanks`
     );

@@ -21,7 +21,7 @@ Now listen and fill in the blanks with Tom's description of Lisa's eyes.
 
 ## --sentence--
 
-`She's a colleague with long wavy brown hair and _ _ eyes.`
+`She's a colleague with long wavy brown hair and BLANK BLANK eyes.`
 
 ## --blanks--
 

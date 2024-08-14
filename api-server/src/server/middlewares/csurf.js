@@ -14,7 +14,9 @@ export default function getCsurf() {
     const { path } = req;
     if (
       // eslint-disable-next-line max-len
-      /^\/donate\/charge-stripe$|^\/coderoad-challenge-completed$/.test(path)
+      /^\/donate\/charge-stripe$|^\/donate\/create-stripe-payment-intent$|^\/coderoad-challenge-completed$/.test(
+        path
+      )
     ) {
       next();
     } else {

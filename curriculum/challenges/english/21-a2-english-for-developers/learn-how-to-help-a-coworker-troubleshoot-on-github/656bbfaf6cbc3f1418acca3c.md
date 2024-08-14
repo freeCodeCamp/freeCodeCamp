@@ -15,7 +15,7 @@ Listen to the audio and complete the sentence.
 
 ## --sentence--
 
-`Sure, Bob. _ the problem?`
+`Sure, Bob. BLANK the problem?`
 
 ## --blanks--
 

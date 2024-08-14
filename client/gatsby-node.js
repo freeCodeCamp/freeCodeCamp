@@ -23,16 +23,16 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
-      const {
-        frontmatter: { component = '' }
-      } = node;
       createNodeField({ node, name: 'slug', value: slug });
-      createNodeField({ node, name: 'component', value: component });
     }
   }
 };
 
-exports.createPages = function createPages({ graphql, actions, reporter }) {
+exports.createPages = async function createPages({
+  graphql,
+  actions,
+  reporter
+}) {
   if (!env.algoliaAPIKey || !env.algoliaAppId) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error(
@@ -57,202 +57,140 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
 
   const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
-    // Query for all markdown 'nodes' and for the slug we previously created.
-    resolve(
-      graphql(`
-        {
-          allChallengeNode(
-            sort: {
-              fields: [
-                challenge___superOrder
-                challenge___order
-                challenge___challengeOrder
-              ]
-            }
-          ) {
-            edges {
-              node {
-                challenge {
-                  audioPath
-                  block
-                  certification
-                  challengeType
-                  dashedName
-                  disableLoopProtectTests
-                  disableLoopProtectPreview
-                  fields {
-                    slug
-                    blockHashSlug
-                  }
-                  fillInTheBlank {
-                    sentence
-                    blanks {
-                      answer
-                      feedback
-                    }
-                  }
-                  hasEditableBoundaries
-                  id
-                  msTrophyId
-                  order
-                  prerequisites {
-                    id
-                    title
-                  }
-                  required {
-                    link
-                    src
-                  }
-                  challengeOrder
-                  challengeFiles {
-                    name
-                    ext
-                    contents
-                    head
-                    tail
-                    history
-                    fileKey
-                  }
-                  solutions {
-                    contents
-                    ext
-                    history
-                  }
-                  superBlock
-                  superOrder
-                  template
-                  usesMultifileEditor
-                  scene {
-                    setup {
-                      background
-                      characters {
-                        character
-                        position {
-                          x
-                          y
-                          z
-                        }
-                      }
-                      audio {
-                        filename
-                        startTime
-                        startTimestamp
-                        finishTimestamp
-                      }
-                      alwaysShowDialogue
-                    }
-                    commands {
-                      background
-                      character
-                      position {
-                        x
-                        y
-                        z
-                      }
-                      startTime
-                      finishTime
-                      dialogue {
-                        text
-                        align
-                      }
-                    }
-                  }
-                }
+  const result = await graphql(`
+    {
+      allChallengeNode(
+        sort: {
+          fields: [
+            challenge___superOrder
+            challenge___order
+            challenge___challengeOrder
+          ]
+        }
+      ) {
+        edges {
+          node {
+            id
+            challenge {
+              block
+              blockType
+              certification
+              challengeType
+              dashedName
+              demoType
+              disableLoopProtectTests
+              disableLoopProtectPreview
+              fields {
+                slug
+                blockHashSlug
               }
-            }
-          }
-          allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                  nodeIdentity
-                  component
-                }
-                frontmatter {
-                  certification
-                  block
-                  superBlock
-                  title
-                }
-                htmlAst
-                id
-                excerpt
+              id
+              order
+              required {
+                link
+                src
               }
+              challengeOrder
+              challengeFiles {
+                name
+                ext
+                contents
+                head
+                tail
+                history
+                fileKey
+              }
+              solutions {
+                contents
+                ext
+                history
+              }
+              superBlock
+              superOrder
+              template
+              usesMultifileEditor
             }
           }
         }
-      `).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          return reject(result.errors);
-        }
-
-        // Create challenge pages.
-        result.data.allChallengeNode.edges.forEach(
-          createChallengePages(createPage)
-        );
-
-        const blocks = uniq(
-          result.data.allChallengeNode.edges.map(
-            ({
-              node: {
-                challenge: { block }
-              }
-            }) => block
-          )
-        );
-
-        const superBlocks = uniq(
-          result.data.allChallengeNode.edges.map(
-            ({
-              node: {
-                challenge: { superBlock }
-              }
-            }) => superBlock
-          )
-        );
-
-        // Create intro pages
-        // TODO: Remove allMarkdownRemark (populate from elsewhere)
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-          const {
-            node: { frontmatter, fields }
-          } = edge;
-
-          if (!fields) {
-            return;
-          }
-          const { slug, nodeIdentity } = fields;
-          if (slug.includes('LICENCE')) {
-            return;
-          }
-          try {
-            if (nodeIdentity === 'blockIntroMarkdown') {
-              if (!blocks.includes(frontmatter.block)) {
-                return;
-              }
-            } else if (!superBlocks.includes(frontmatter.superBlock)) {
-              return;
+      }
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+              nodeIdentity
             }
-            const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-            pageBuilder(edge);
-          } catch (e) {
-            console.log(e);
-            console.log(`
+            frontmatter {
+              certification
+              block
+              superBlock
+              title
+            }
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  // Create challenge pages.
+  result.data.allChallengeNode.edges.forEach(createChallengePages(createPage));
+
+  const blocks = uniq(
+    result.data.allChallengeNode.edges.map(
+      ({
+        node: {
+          challenge: { block }
+        }
+      }) => block
+    )
+  );
+
+  const superBlocks = uniq(
+    result.data.allChallengeNode.edges.map(
+      ({
+        node: {
+          challenge: { superBlock }
+        }
+      }) => superBlock
+    )
+  );
+
+  // Create intro pages
+  // TODO: Remove allMarkdownRemark (populate from elsewhere)
+  result.data.allMarkdownRemark.edges.forEach(edge => {
+    const {
+      node: { frontmatter, fields }
+    } = edge;
+
+    if (!fields) {
+      return;
+    }
+    const { slug, nodeIdentity } = fields;
+    if (slug.includes('LICENCE')) {
+      return;
+    }
+    if (nodeIdentity === 'blockIntroMarkdown') {
+      if (!blocks.includes(frontmatter.block)) {
+        return;
+      }
+    } else if (!superBlocks.includes(frontmatter.superBlock)) {
+      return;
+    }
+
+    try {
+      const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
+      pageBuilder(edge);
+    } catch (e) {
+      console.log(e);
+      console.log(`
             ident: ${nodeIdentity} does not belong to a function
 
             ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
 
 
             `);
-          }
-        });
-
-        return null;
-      })
-    );
+    }
   });
 };
 
@@ -321,7 +259,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
-      audioPath: String
+      blockType: String
       challengeFiles: [FileContents]
       notes: String
       url: String

@@ -12,15 +12,15 @@ A triomino is a shape consisting of three squares joined via the edges.
 
 There are two basic forms:
 
-<img class="img-responsive center-block" alt="two basic triominoes forms" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-1.gif" style="background-color: white; padding: 10px;">
+<img alt="two basic triominoes forms" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-1.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 If all possible orientations are taken into account there are six:
 
-<img class="img-responsive center-block" alt="triominoes forms including orientation" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px;">
+<img alt="triominoes forms including orientation" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-2.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 Any n by m grid for which nxm is divisible by 3 can be tiled with triominoes. If we consider tilings that can be obtained by reflection or rotation from another tiling as different there are 41 ways a 2 by 9 grid can be tiled with triominoes:
 
-<img class="img-responsive center-block" alt="animation showing 41 ways of filling 2x9 grid with triominoes" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px;">
+<img alt="animation showing 41 ways of filling 2x9 grid with triominoes" src="https://cdn.freecodecamp.org/curriculum/project-euler/triominoes-3.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 In how many ways can a 9 by 12 grid be tiled in this way by triominoes?
 

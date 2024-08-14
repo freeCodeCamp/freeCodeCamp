@@ -19,7 +19,7 @@ setup.describe('developmentuser', () => {
   });
 
   setup.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   setup('can sign in', async ({ request }) => {

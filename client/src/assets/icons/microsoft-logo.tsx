@@ -5,7 +5,6 @@ function MicrosoftLogo(
 ): JSX.Element {
   return (
     <svg
-      data-cy='microsoft-logo'
       version='1.1'
       viewBox='0 0 610 130'
       xmlns='http://www.w3.org/2000/svg'

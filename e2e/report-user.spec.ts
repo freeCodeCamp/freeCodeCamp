@@ -1,8 +1,15 @@
 import { test, expect } from '@playwright/test';
+import {
+  deleteAllEmails,
+  getAllEmails,
+  getFirstEmail,
+  getSubject
+} from './utils/mailhog';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
-// To run this test you will need to run the email server.
-// To do this: https://contribute.freecodecamp.org/#/how-to-catch-outgoing-emails-locally?id=using-mailhog
+test.beforeEach(async () => {
+  await deleteAllEmails();
+});
 
 test('should be possible to report a user from their profile page', async ({
   page
@@ -20,7 +27,9 @@ test('should be possible to report a user from their profile page', async ({
     page.getByText("Do you want to report twaha's portfolio for abuse?")
   ).toBeVisible();
 
-  await page.getByRole('textbox').nth(1).fill('Some details');
+  await page
+    .getByRole('textbox', { name: 'What would you like to report?' })
+    .fill('Some details');
   await page.getByRole('button', { name: 'Submit the report' }).click();
   await expect(page).toHaveURL('/learn');
 
@@ -28,4 +37,12 @@ test('should be possible to report a user from their profile page', async ({
   await expect(page.getByTestId('flash-message')).toContainText(
     'A report was sent to the team with foo@bar.com in copy'
   );
+
+  await expect(async () => {
+    const emails = await getAllEmails();
+    expect(emails.items).toHaveLength(1);
+    expect(getSubject(getFirstEmail(emails))).toBe(
+      "Abuse Report : Reporting twaha's profile."
+    );
+  }).toPass();
 });

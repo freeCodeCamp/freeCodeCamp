@@ -16,7 +16,7 @@ A square piece of paper with integer dimensions $N×N$ is placed with a corner a
 
 Counting any reflections or rotations as distinct, we call $C(N)$ the number of ways to cut an $N×N$ square. For example, $C(1) = 2$ and $C(2) = 30$ (shown below).
 
-<img class="img-responsive center-block" alt="ways to cut 2x2 square, counting reflections and rotations as distinct" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px;">
+<img alt="ways to cut 2x2 square, counting reflections and rotations as distinct" src="https://cdn.freecodecamp.org/curriculum/project-euler/cutting-squares.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
 What is $C(30)\bmod {10}^8$ ?
 

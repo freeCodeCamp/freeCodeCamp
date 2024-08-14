@@ -1,12 +1,3 @@
-*,
-::before,
-::after {
-  /* Override the browser default border width in order to style individual border sides
-   * Ref: https://stackoverflow.com/a/76961084
-   */
-  border-width: 0;
-}
-
 html {
   height: 100%;
   font-size: 18px;
@@ -19,6 +10,83 @@ body {
   font-family: var(--font-family-sans-serif);
   color: var(--secondary-color);
   background: var(--secondary-background);
+}
+
+/* This is to override Tailwind as it sets the font-weight to `bolder`.
+   TODO: Move this rule to @freecodecamp/ui. */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. (Though some styles might need to be dropped). */
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eeeeee;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote footer,
+blockquote small,
+blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.42857143;
+  color: var(--gray-45);
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote footer:before,
+blockquote small:before,
+blockquote .small:before {
+  content: '\2014 \00A0';
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-inline-start: 40px;
+  list-style-type: disc;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-inline-start: 40px;
+  list-style-type: decimal;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid var(--quaternary-background);
 }
 
 #___gatsby {
@@ -223,6 +291,7 @@ input[type='submit'],
   border-radius: 0;
   text-decoration: none;
   white-space: pre-line;
+  text-align: center;
 }
 
 button:hover,
@@ -297,7 +366,33 @@ fieldset[disabled] .btn {
   color: inherit;
 }
 
-.link-btn {
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Equivalent to the `medium` size of `@freecodecamp/ui` Button component */
+.btn {
+  padding: 6px 12px;
+  font-size: 18px;
+  line-height: 1.42857143;
+}
+
+/* Equivalent to the `large` size of `@freecodecamp/ui` Button component */
+.btn-lg {
+  padding: 0.625rem 1rem;
+  font-size: 24px;
+  line-height: 1.3333333;
+}
+
+/* Equivalent to the `small` size of `@freecodecamp/ui` Button component */
+.btn-sm {
+  padding: 0.25rem 0.625rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.map-superblock-link {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -307,42 +402,42 @@ fieldset[disabled] .btn {
   text-align: left;
 }
 
-.link-btn.btn-lg svg {
+.map-superblock-link.btn-lg svg {
   height: 100%;
   min-height: 20px;
   min-width: 16px;
   margin-inline-start: 5px;
 }
 
-.link-btn:active {
+.map-superblock-link:active {
   background-color: var(--quaternary-background);
 }
 
-.link-btn:focus,
-.link-btn.btn-lg:focus svg {
+.map-superblock-link:focus,
+.map-superblock-link.btn-lg:focus svg {
   fill: var(--quaternary-background);
   background-color: var(--secondary-color);
   border-color: var(--gray-45);
   color: var(--secondary-background);
 }
 
-.link-btn:focus:not(:focus-visible),
-.link-btn.btn-lg:focus:not(:focus-visible) svg {
+.map-superblock-link:focus:not(:focus-visible),
+.map-superblock-link.btn-lg:focus:not(:focus-visible) svg {
   background-color: var(--quaternary-background);
   border-color: var(--secondary-color);
   color: var(--secondary-color);
   fill: var(--primary-color);
 }
 
-.link-btn:hover,
-.link-btn.btn-lg:hover svg {
+.map-superblock-link:hover,
+.map-superblock-link.btn-lg:hover svg {
   fill: var(--quaternary-background) !important;
   background-color: var(--secondary-color) !important;
   border-color: var(--secondary-color) !important;
   color: var(--secondary-background) !important;
 }
 
-.link-btn.btn-lg svg,
+.map-superblock-link.btn-lg svg,
 .map-icon,
 .cert-header-icon {
   flex-shrink: 0;
@@ -353,7 +448,7 @@ fieldset[disabled] .btn {
   fill: var(--quaternary-background);
 }
 
-.link-btn.btn-lg:hover .map-icon .inverted-color,
+.map-superblock-link.btn-lg:hover .map-icon .inverted-color,
 .map-arrow-icon {
   fill: var(--secondary-color);
 }
@@ -376,7 +471,7 @@ fieldset[disabled] .btn {
 }
 
 @media (min-width: 700px) {
-  .link-btn {
+  .map-superblock-link {
     font-size: 1.1rem;
   }
   .map-icon {
@@ -440,6 +535,7 @@ code {
   border-radius: 0;
   font-family: var(--font-family-monospace);
   overflow-wrap: anywhere;
+  font-size: 90%;
 }
 
 :not(pre) > code {
@@ -448,10 +544,6 @@ code {
 
 .challenge-instructions code {
   white-space: break-spaces;
-}
-
-hr {
-  border-top: 1px solid var(--quaternary-background);
 }
 
 .challenge-output span {
@@ -468,10 +560,28 @@ pre[class*='language-'] {
   border-radius: 0;
 }
 
+/* TODO: Move this rule to @freecodecamp/ui. */
 pre {
   color: inherit;
   background-color: inherit;
   border: none;
+  border-radius: 0;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
   border-radius: 0;
 }
 
@@ -480,15 +590,17 @@ pre {
   margin-bottom: 0;
 }
 
-blockquote footer,
-blockquote small,
-blockquote .small {
-  color: var(--gray-45);
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
-.alert {
-  border-radius: 0;
-  overflow-wrap: break-word;
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
 }
 
 .alert .btn,
@@ -505,10 +617,6 @@ blockquote .small {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
-}
-
-.alert-dismissable .close {
-  top: 0;
 }
 
 .annual-donation-alert {
@@ -554,4 +662,30 @@ blockquote .small {
 }
 #headlessui-portal-root .text-background-danger h2 {
   color: var(--background-danger);
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Port from Bootstrap as the Col component from @freecodecamp/ui 
+   doesn't fully support the xs-8 + xs-4 layout.
+   TODO: Remove these and replace the classes with Col 
+   once https://github.com/freeCodeCamp/ui/issues/162 is resolved. */
+.col-xs-8,
+.col-xs-4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-xs-8 {
+  width: 66.66666667%;
+}
+.col-xs-4 {
+  width: 33.33333333%;
 }

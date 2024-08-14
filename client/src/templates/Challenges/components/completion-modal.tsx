@@ -8,11 +8,8 @@ import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
-import {
-  isSignedInSelector,
-  allChallengesInfoSelector
-} from '../../../redux/selectors';
-import { AllChallengesInfo, ChallengeFiles } from '../../../redux/prop-types';
+import { isSignedInSelector } from '../../../redux/selectors';
+import { ChallengeFiles } from '../../../redux/prop-types';
 import { closeModal, submitChallenge } from '../redux/actions';
 import {
   completedChallengesIdsSelector,
@@ -35,7 +32,6 @@ const mapStateToProps = createSelector(
   completedChallengesIdsSelector,
   isCompletionModalOpenSelector,
   isSignedInSelector,
-  allChallengesInfoSelector,
   successMessageSelector,
   isSubmittingSelector,
   (
@@ -44,7 +40,6 @@ const mapStateToProps = createSelector(
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
-    allChallengesInfo: AllChallengesInfo,
     message: string,
     isSubmitting: boolean
   ) => ({
@@ -54,7 +49,6 @@ const mapStateToProps = createSelector(
     completedChallengesIds,
     isOpen,
     isSignedIn,
-    allChallengesInfo,
     message,
     isSubmitting
   })
@@ -128,6 +122,10 @@ class CompletionModal extends Component<
   }
 
   handleKeypress(e: React.KeyboardEvent): void {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      this.props.close();
+    }
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
@@ -172,12 +170,12 @@ class CompletionModal extends Component<
     if (isDesktop) {
       if (isMacOS) {
         buttonText = isSignedIn
-          ? t('buttons.submit-and-go-3')
-          : t('buttons.go-to-next-3');
+          ? t('buttons.submit-and-go-cmd')
+          : t('buttons.go-to-next-cmd');
       } else {
         buttonText = isSignedIn
-          ? t('buttons.submit-and-go-2')
-          : t('buttons.go-to-next-2');
+          ? t('buttons.submit-and-go-ctrl')
+          : t('buttons.go-to-next-ctrl');
       }
     } else {
       buttonText = isSignedIn
@@ -194,7 +192,7 @@ class CompletionModal extends Component<
         onKeyDown={isOpen ? this.handleKeypress : undefined}
       >
         <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='completion-modal-body'>
           <GreenPass
             className='completion-success-icon'
             data-testid='fcc-completion-success-icon'
@@ -216,7 +214,6 @@ class CompletionModal extends Component<
             size='large'
             variant='primary'
             disabled={isSubmitting}
-            data-cy='submit-challenge'
             onClick={() => submitChallenge()}
           >
             {buttonText}

@@ -1,19 +1,12 @@
 import { FastifyPluginCallback, FastifyRequest } from 'fastify';
-
+// TODO(Post-MVP): use fastify-rate-limit instead of express-rate-limit
 import rateLimit from 'express-rate-limit';
 // @ts-expect-error - no types
 import MongoStoreRL from 'rate-limit-mongo';
 
 import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
+import { auth0Client } from '../plugins/auth0';
 import { findOrCreateUser } from './helpers/auth-helpers';
-
-declare module 'fastify' {
-  interface Session {
-    user: {
-      id: string;
-    };
-  }
-}
 
 const getEmailFromAuth0 = async (req: FastifyRequest) => {
   const auth0Res = await fetch(`https://${AUTH0_DOMAIN}/userinfo`, {
@@ -66,10 +59,23 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
   fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);
 
-    const { id } = await findOrCreateUser(fastify, email);
-    req.session.user = { id };
-    await req.session.save();
+    await findOrCreateUser(fastify, email);
   });
 
+  done();
+};
+
+/**
+ * Route handler for authentication routes.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const authRoutes: FastifyPluginCallback = (fastify, _options, done) => {
+  // All routes are registered by the auth0 plugin, but we need an extra plugin
+  // (this one) to encapsulate the auth0 decorators. Otherwise auth0OAuth will
+  // be available globally.
+  void fastify.register(auth0Client);
   done();
 };

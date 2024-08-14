@@ -100,7 +100,6 @@ const LowerButtonsPanel = ({
         <Button
           data-playwright-test-label='lowerJaw-reset-button'
           className='fade-in'
-          data-cy='reset-code-button'
           onClick={resetButtonEvent}
         >
           <Reset />
@@ -112,7 +111,6 @@ const LowerButtonsPanel = ({
           <Button
             className='fade-in'
             id='get-help-button'
-            data-cy='get-help-button'
             onClick={helpButtonEvent}
           >
             <Help />
@@ -133,7 +131,6 @@ const LowerJawTips = ({
     <>
       <div
         data-playwright-test-label='lowerJaw-failing-test-feedback'
-        data-cy='failing-test-feedback'
         className='test-status fade-in'
         aria-hidden={showFeedback}
       >
@@ -292,17 +289,23 @@ const LowerJaw = ({
 
   const checkButtonText = isDesktop
     ? isMacOS
-      ? t('buttons.check-code-3')
-      : t('buttons.check-code')
-    : t('buttons.check-code-2');
+      ? t('buttons.check-code-cmd')
+      : t('buttons.check-code-ctrl')
+    : t('buttons.check-code');
+
+  const submitButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.submit-and-go-cmd')
+      : t('buttons.submit-and-go-ctrl')
+    : t('buttons.submit-and-go');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
+
   return (
     <div className='action-row-container'>
       {showSignInButton && (
         <>
           <a
-            data-cy='sign-in-button'
             href={`${apiLocation}/signin`}
             className='btn-cta btn btn-block'
             onClick={() => {
@@ -323,7 +326,7 @@ const LowerJaw = ({
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
         ref={submitButtonRef}
       >
-        {t('buttons.submit-and-go')}
+        {submitButtonText}
       </Button>
       <div
         className={

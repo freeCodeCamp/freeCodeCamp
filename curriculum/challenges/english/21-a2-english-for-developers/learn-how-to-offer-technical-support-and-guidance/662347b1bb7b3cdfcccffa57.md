@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-48
 ---
 
-<!--
-AUDIO REFERENCE:
-Brian: Sophie, I heard you're working on fixing that bug in the user authentication module. Need any help?
--->
+<!-- (Audio) Brian: Sophie, I heard you're working on fixing that bug in the user authentication module. Need any help? -->
 
 # --description--
 
@@ -20,7 +17,7 @@ An `authentication module` in a software context is a part of a system responsib
 
 ## --sentence--
 
-`Sophie, I _ you're working on _ that bug in the user _ module. Need any help?`
+`Sophie, I BLANK you're working on BLANK that bug in the user BLANK module. Need any help?`
 
 ## --blanks--
 
@@ -45,3 +42,60 @@ It refers to the act of repairing or resolving the issue (bug) in the software.
 ### --feedback--
 
 It refers to the process of verifying a user's identity in the software module.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Brian",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "9.1-3.mp3",
+      "startTime": 1,
+      "startTimestamp": 0,
+      "finishTimestamp": 5.66
+    }
+  },
+  "commands": [
+    {
+      "character": "Brian",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Brian",
+      "startTime": 1,
+      "finishTime": 3.84,
+      "dialogue": {
+        "text": "Sophie, I heard you're working on fixing that bug",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Brian",
+      "startTime": 3.84,
+      "finishTime": 6.66,
+      "dialogue": {
+        "text": "in the user authentication module. Need any help?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Brian",
+      "opacity": 0,
+      "startTime": 7.16
+    }
+  ]
+}
+```
