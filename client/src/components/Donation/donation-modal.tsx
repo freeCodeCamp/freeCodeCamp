@@ -5,6 +5,7 @@ import { goToAnchor } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { Modal } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 import { closeDonationModal } from '../../redux/actions';
 import {
@@ -45,6 +46,7 @@ function DonateModal({
   recentlyClaimedBlock
 }: DonateModalProps): JSX.Element {
   const [canClose, setCanClose] = useState(false);
+  const isA11yFeatureEnabled = useFeature('a11y-donation-modal').on;
 
   useEffect(() => {
     if (show) {
@@ -60,16 +62,18 @@ function DonateModal({
   }, [show, recentlyClaimedBlock]);
 
   const handleModalHide = () => {
-    if (!canClose) {
-      return;
-    }
-
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
       goToAnchor('claim-cert-block');
     }
 
-    closeDonationModal();
+    if (isA11yFeatureEnabled) {
+      if (!canClose) {
+        return;
+      }
+
+      closeDonationModal();
+    }
   };
 
   return (
