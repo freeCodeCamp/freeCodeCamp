@@ -2494,7 +2494,7 @@
         "title": "195",
         "intro": []
       },
-      "build-a-real-time-counter": {
+      "lab-real-time-counter": {
         "title": "Build a Real Time Counter",
         "intro": ["In this lab, you will build a real-time character counter"]
       },
