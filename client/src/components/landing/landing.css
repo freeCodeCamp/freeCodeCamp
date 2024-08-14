@@ -249,6 +249,10 @@ figcaption.caption {
   font-weight: normal;
 }
 
+.landing-page-b {
+  overflow-x: hidden;
+}
+
 figure.ui-images {
   position: absolute;
   left: 50%;
