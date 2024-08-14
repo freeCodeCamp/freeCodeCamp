@@ -67,6 +67,7 @@
     "click-here": "Klicke hier, um dich anzumelden",
     "save": "Speichern",
     "save-code": "Speichere deinen Code",
+    "show-demo": "Show Demo",
     "no-thanks": "Nein, danke",
     "yes-please": "Ja, bitte",
     "update-email": "Meine E-Mail-Adresse aktualisieren",
@@ -408,7 +409,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Diese Lektion zurücksetzen?",
     "reset-warn": "Bist du dir sicher, dass du diese Lektion zurücksetzen möchtest? Die Editoren und Tests werden zurückgesetzt.",
-    "reset-warn-2": "Dies kann nicht rückgängig gemacht werden",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Tipp: Wenn der Mini-Browser den Code verdeckt, kann man ihn mittels Drag-and-drop bewegen. Du kannst jederzeit stoppen und den Code im Video bearbeiten.",
     "chal-preview": "Herausforderungs-Vorschau",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -512,6 +513,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {

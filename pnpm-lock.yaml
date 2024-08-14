@@ -362,8 +362,8 @@ importers:
         specifier: 2.28.0
         version: 2.28.0
       loopback-connector-mongodb:
-        specifier: 4.2.0
-        version: 4.2.0
+        specifier: 5.6.0
+        version: 5.6.0
       method-override:
         specifier: 3.0.0
         version: 3.0.0
@@ -9589,9 +9589,9 @@ packages:
     resolution: {integrity: sha512-vDRR4gqkvGOEXh5yL383xGuGxUW9xtF+NCY6/lJu1VAgupKltZxEx3Vw+L3nsGvQrlkJTSmiK3jk72qxkoBtbw==}
     engines: {node: '>=6'}
 
-  loopback-connector-mongodb@4.2.0:
-    resolution: {integrity: sha512-/rv4QQ9428XYlQ22P3dH3ELQKu6iZRXWZgrR2ilB9fX1WnUdOwegVWBT+MizpLLqjD2wr0Sq9M0lS1eZSUvyGQ==}
-    engines: {node: '>=6'}
+  loopback-connector-mongodb@5.6.0:
+    resolution: {integrity: sha512-mhuOUknJkmZhr9BhJCUz3ggRuFKNZuU1tkZrwqUxwosAUPWeZMIdrj7XP9Vr6OCP6+RfZoSRMITj3keAOPTKrg==}
+    engines: {node: '>=10'}
 
   loopback-connector-remote@3.4.1:
     resolution: {integrity: sha512-O22X2Gcq8YzZF9DvRjOCyktQlASw1/22i/zzqxJHNKSQA5aQYeTB0w5FttOiKxcw6Q/jzL476hUvUE/NaZVZ1Q==}
@@ -9600,6 +9600,10 @@ packages:
   loopback-connector@4.11.1:
     resolution: {integrity: sha512-EA31zur3xIhP4UW+P2rWEcSbqpk4jPddpTBZSSw8KCszM7T0/Pe4HvEmG0MndAWJctRPtrwKDEu/8rWuMDLf+A==}
     engines: {node: '>=8.9'}
+
+  loopback-connector@5.3.3:
+    resolution: {integrity: sha512-ZYULfy5W7+R2A3I9TILWZOdfMVcZ2qEQT/tye0Fy7Ju3zQ6Gv1bmroARGPGVDAneFt+5YaiaieLdoJ1t02hLpg==}
+    engines: {node: '>=10'}
 
   loopback-datasource-juggler@3.36.1:
     resolution: {integrity: sha512-6eop3qxFyN3AkPBPUte2DHcsW1DopJwXXA20x3vwYsBSo4hLSv4gIeXo0+yqdQoXpHfbKRB9cv1hHEHAQSiWUA==}
@@ -26211,14 +26215,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  loopback-connector-mongodb@4.2.0:
+  loopback-connector-mongodb@5.6.0:
     dependencies:
-      async: 2.6.4
+      async: 3.2.4
       bson: 1.1.6
-      debug: 3.2.7(supports-color@5.5.0)
-      loopback-connector: 4.11.1
+      debug: 4.3.4(supports-color@8.1.1)
+      loopback-connector: 5.3.3
       mongodb: 3.6.9
-      strong-globalize: 4.1.3
+      strong-globalize: 6.0.6
     transitivePeerDependencies:
       - aws4
       - bson-ext
@@ -26243,6 +26247,17 @@ snapshots:
       msgpack5: 4.5.1
       strong-globalize: 5.1.0
       uuid: 7.0.3
+    transitivePeerDependencies:
+      - supports-color
+
+  loopback-connector@5.3.3:
+    dependencies:
+      async: 3.2.4
+      bluebird: 3.7.2
+      debug: 4.3.4(supports-color@8.1.1)
+      msgpack5: 4.5.1
+      strong-globalize: 6.0.6
+      uuid: 9.0.1
     transitivePeerDependencies:
       - supports-color
 
