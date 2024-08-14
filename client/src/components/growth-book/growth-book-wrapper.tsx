@@ -79,6 +79,7 @@ const GrowthBookWrapper = ({
   useEffect(() => {
     async function setGrowthBookFeatures() {
       if (!growthbookUri) {
+        // Defaults are added to facilitate testing, and avoid passing the related env
         growthbook.setFeatures(defaultGrowthBookFeatures);
       } else {
         try {
