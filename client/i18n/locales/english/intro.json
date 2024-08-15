@@ -1814,7 +1814,12 @@
       "rfiq": { "title": "77", "intro": [] },
       "tcwi": { "title": "78", "intro": [] },
       "uptf": { "title": "79", "intro": [] },
-      "nbwu": { "title": "80", "intro": [] },
+      "lab-poker-hand-page": {
+        "title": "Build a Poker Hand Page",
+        "intro": [
+          "For this lab, you will use flexbox to create a webpage of a poker hand."
+        ]
+      },
       "kqao": { "title": "81", "intro": [] },
       "habq": { "title": "82", "intro": [] },
       "vqut": { "title": "83", "intro": [] },

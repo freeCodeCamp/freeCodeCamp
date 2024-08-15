@@ -1,0 +1,16 @@
+{
+  "name": "Build a Poker Hand Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-poker-hand-page",
+  "order": 80,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66be24cb4144f955b6bcc550",
+      "title": "Build a Poker Hand Page"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
