@@ -7,6 +7,7 @@ module.exports = {
     connectionTimeout: 10000,
     url: secrets.db,
     useNewUrlParser: true,
+    useUnifiedTopology: true,
     allowExtendedOperators: true
   },
   mail: {

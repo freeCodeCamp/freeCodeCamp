@@ -67,6 +67,7 @@
     "click-here": "Click here to sign in",
     "save": "Save",
     "save-code": "Save your Code",
+    "show-demo": "Show Demo",
     "no-thanks": "No thanks",
     "yes-please": "Yes please",
     "update-email": "Update my Email",
@@ -408,7 +409,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
-    "reset-warn-2": "This cannot be undone",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -512,6 +513,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {

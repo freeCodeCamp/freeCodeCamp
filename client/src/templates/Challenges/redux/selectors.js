@@ -16,8 +16,10 @@ export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
-export const completedChallengesIdsSelector = state =>
-  completedChallengesSelector(state).map(node => node.id);
+export const completedChallengesIdsSelector = createSelector(
+  completedChallengesSelector,
+  completedChallenges => completedChallenges.map(node => node.id)
+);
 export const isChallengeCompletedSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const { id: currentChallengeId } = challengeMetaSelector(state);
@@ -119,17 +121,13 @@ export const currentBlockIdsSelector = createSelector(
   }
 );
 
-export const completedChallengesInBlockSelector = state => {
-  const completedChallengesIds = completedChallengesIdsSelector(state);
-  const currentBlockIds = currentBlockIdsSelector(state);
-  const { id } = challengeMetaSelector(state);
-
-  return getCompletedChallengesInBlock(
-    completedChallengesIds,
-    currentBlockIds,
-    id
-  );
-};
+export const completedChallengesInBlockSelector = createSelector(
+  completedChallengesIdsSelector,
+  currentBlockIdsSelector,
+  challengeMetaSelector,
+  (completedChallengesIds, currentBlockIds, { id }) =>
+    getCompletedChallengesInBlock(completedChallengesIds, currentBlockIds, id)
+);
 
 export const completedPercentageSelector = createSelector(
   isSignedInSelector,
