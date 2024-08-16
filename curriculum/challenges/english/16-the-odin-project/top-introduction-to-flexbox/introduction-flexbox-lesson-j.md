@@ -20,7 +20,7 @@ Remove `flex: 1` from `.item` and add `justify-content: space-between` to `.cont
 
 `justify-content` aligns items across the **main axis**. There are a few values that you can use here. You'll learn the rest of them in the reading assignments, but for now try changing it to center, which should center the boxes along the main axis.
 
-# --question--
+# --question-1--
 
 ## --assignment--
 

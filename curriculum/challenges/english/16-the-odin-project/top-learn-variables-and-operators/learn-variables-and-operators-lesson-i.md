@@ -79,7 +79,7 @@ let counter = 0;
 console.log( counter++ ); // 0
 ```
 
-# --question--
+# --question-1--
 
 ## --text--
 
