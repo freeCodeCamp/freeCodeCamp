@@ -6,20 +6,37 @@ const mdastToHtml = require('./utils/mdast-to-html');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
+const getNextQuestionNodes = (tree, n) => {
+  const questionNodes = getAllBetween(tree, `--question-${n}--`);
+  return questionNodes;
+};
+
 function plugin() {
   return transformer;
   function transformer(tree, file) {
-    const questionNodes = getAllBetween(tree, '--question--');
-    if (questionNodes.length > 0) {
-      const questionTree = root(questionNodes);
+    const questions = [];
+    let questionNumber = 1;
+    let endOfQuestions = false;
 
-      const textNodes = getAllBetween(questionTree, '--text--');
-      const answersNodes = getAllBetween(questionTree, '--answers--');
-      const solutionNodes = getAllBetween(questionTree, '--video-solution--');
+    while (!endOfQuestions) {
+      const questionNodes = getNextQuestionNodes(tree, questionNumber);
 
-      const question = getQuestion(textNodes, answersNodes, solutionNodes);
+      if (questionNodes.length > 0) {
+        questionNumber++;
+        const questionTree = root(questionNodes);
 
-      file.data.question = question;
+        const textNodes = getAllBetween(questionTree, '--text--');
+        const answersNodes = getAllBetween(questionTree, '--answers--');
+        const solutionNodes = getAllBetween(questionTree, '--video-solution--');
+
+        questions.push(getQuestion(textNodes, answersNodes, solutionNodes));
+      } else {
+        endOfQuestions = true;
+      }
+    }
+
+    if (questions.length > 0) {
+      file.data.questions = questions;
     }
   }
 }
