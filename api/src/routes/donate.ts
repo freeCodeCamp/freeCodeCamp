@@ -105,6 +105,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
           type: 'danger',
@@ -231,6 +232,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'
