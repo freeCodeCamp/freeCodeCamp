@@ -30,7 +30,14 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postcssOptions: {
+          config: path.resolve(__dirname, 'postcss.config.js')
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-create-client-paths',
       options: {
