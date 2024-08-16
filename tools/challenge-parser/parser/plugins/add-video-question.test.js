@@ -16,48 +16,53 @@ describe('add-video-question plugin', () => {
     expect(typeof plugin).toEqual('function');
   });
 
-  it('adds a `question` property to `file.data`', () => {
+  it('adds a `questions` property to `file.data`', () => {
     plugin(mockVideoAST, file);
 
-    expect('question' in file.data).toBe(true);
+    expect('questions' in file.data).toBe(true);
   });
 
   it('should generate a question object from a video challenge AST', () => {
-    expect.assertions(10);
+    expect.assertions(11);
     plugin(mockVideoAST, file);
-    const testObject = file.data.question;
-    expect(Object.keys(testObject).length).toBe(3);
-    expect(testObject).toHaveProperty('text');
-    expect(typeof testObject.text).toBe('string');
-    expect(testObject).toHaveProperty('solution');
-    expect(typeof testObject.solution).toBe('number');
-    expect(testObject).toHaveProperty('answers');
-    expect(Array.isArray(testObject.answers)).toBe(true);
-    expect(typeof testObject.answers[0]).toBe('object');
-    expect(testObject.answers[0]).toHaveProperty('answer');
-    expect(testObject.answers[0]).toHaveProperty('feedback');
+    const testObject = file.data.questions;
+    expect(Array.isArray(testObject)).toBe(true);
+
+    const question = testObject[0];
+    expect(testObject.length).toBe(1);
+    expect(question).toHaveProperty('text');
+    expect(typeof question.text).toBe('string');
+    expect(question).toHaveProperty('solution');
+    expect(typeof question.solution).toBe('number');
+    expect(question).toHaveProperty('answers');
+    expect(Array.isArray(question.answers)).toBe(true);
+    expect(typeof question.answers[0]).toBe('object');
+    expect(question.answers[0]).toHaveProperty('answer');
+    expect(question.answers[0]).toHaveProperty('feedback');
   });
 
   it('should convert question and answer markdown into html', () => {
     plugin(mockVideoAST, file);
-    const testObject = file.data.question;
-    expect(Object.keys(testObject).length).toBe(3);
-    expect(testObject.text).toBe(
+    const testObject = file.data.questions;
+    expect(testObject.length).toBe(1);
+
+    const question = testObject[0];
+    expect(question.text).toBe(
       '<p>Question line 1</p>\n' +
         `<pre><code class="language-js">  var x = 'y';\n` +
         '</code></pre>'
     );
-    expect(testObject.solution).toBe(3);
-    expect(testObject.answers[0]).toStrictEqual({
+    expect(question.solution).toBe(3);
+    expect(question.answers[0]).toStrictEqual({
       answer: '<p>Some inline <code>code</code></p>',
       feedback: '<p>That is not correct.</p>'
     });
-    expect(testObject.answers[1]).toStrictEqual({
+    expect(question.answers[1]).toStrictEqual({
       answer: `<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>`,
       feedback: null
     });
-    expect(testObject.answers[2]).toStrictEqual({
+    expect(question.answers[2]).toStrictEqual({
       answer: '<p><code> code in </code> code tags</p>',
       feedback: null
     });
