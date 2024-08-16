@@ -55,7 +55,7 @@ const defaultProps = {
         isLocked: false,
         isPrivate: false,
         order: 1,
-        question: {} as Question,
+        questions: [] as Question[],
         assignments: ['mockAssignment'],
         required: [],
         solutions: {

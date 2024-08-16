@@ -201,7 +201,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
             videoLocaleIds,
             bilibiliIds,
             fields: { blockName },
-            question: { text, answers, solution }
+            questions
           }
         }
       },
@@ -213,6 +213,8 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       t,
       isChallengeCompleted
     } = this.props;
+
+    const { text, answers, solution } = questions[0];
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
@@ -387,7 +389,7 @@ export const query = graphql`
             testString
           }
         }
-        question {
+        questions {
           text
           answers {
             answer

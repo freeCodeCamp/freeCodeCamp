@@ -196,7 +196,7 @@ export type ChallengeNode = {
     isLocked: boolean;
     isPrivate: boolean;
     order: number;
-    question: Question;
+    questions: Question[];
     assignments: string[];
     required: Required[];
     scene: FullScene;
