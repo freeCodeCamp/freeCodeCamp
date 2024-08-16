@@ -10,6 +10,7 @@ declare module 'fastify' {
   interface FastifyInstance {
     send401IfNoUser: (req: FastifyRequest, reply: FastifyReply) => void;
     redirectIfNoUser: (req: FastifyRequest, reply: FastifyReply) => void;
+    redirectIfSignedIn: (req: FastifyRequest, reply: FastifyReply) => void;
   }
 }
 
@@ -40,9 +41,20 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
     }
   );
 
-  fastify.addHook('preParsing', fastify.send401IfNoUser);
+  fastify.decorate(
+    'redirectIfSignedIn',
+    async function (req: FastifyRequest, reply: FastifyReply) {
+      if (req.user) {
+        const { returnTo } = getRedirectParams(req);
+        await reply.redirect(returnTo);
+      }
+    }
+  );
 
   done();
 };
 
-export default fp(plugin, { dependencies: ['auth', 'redirect-with-message'] });
+export default fp(plugin, {
+  dependencies: ['auth', 'redirect-with-message'],
+  name: 'bouncer'
+});

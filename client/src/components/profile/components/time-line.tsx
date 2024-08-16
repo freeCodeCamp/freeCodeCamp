@@ -229,7 +229,6 @@ function TimelineInner({
         challengeData={challengeData}
         closeText={t('buttons.close')}
         previewTitle={projectTitle}
-        showProjectPreview={true}
       />
       <ExamResultsModal
         projectTitle={projectTitle}

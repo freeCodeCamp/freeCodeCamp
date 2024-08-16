@@ -1,0 +1,14 @@
+{
+  "name": "Build a Travel Agency Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-travel-agency-page",
+  "order": 5,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "669e2f60e83c011754f711f9",
+      "title": "Build a Travel Agency Page" }],
+  "helpCategory": "HTML-CSS"
+}

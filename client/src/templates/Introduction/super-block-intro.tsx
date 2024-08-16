@@ -276,8 +276,8 @@ export default connect(
 )(withTranslation()(memo(SuperBlockIntroductionPage)));
 
 export const query = graphql`
-  query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query SuperBlockIntroPageBySlug($id: String!, $superBlock: String!) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         certification
         superBlock
