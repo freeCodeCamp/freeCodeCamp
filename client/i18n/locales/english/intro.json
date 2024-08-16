@@ -1935,6 +1935,10 @@
       "gibb": { "title": "189", "intro": [] },
       "whrm": { "title": "190", "intro": [] },
       "fhxc": { "title": "191", "intro": [] },
+      "lab-favourite-icon-toggler": {
+        "title": "Build a Favourite Icon Toggler",
+        "intro": ["", ""]
+      },
       "arqa": { "title": "192", "intro": [] },
       "ubpx": { "title": "193", "intro": [] },
       "lbyi": { "title": "194", "intro": [] },
