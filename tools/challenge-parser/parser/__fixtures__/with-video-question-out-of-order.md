@@ -22,7 +22,7 @@ Question line 1
   var x = 'y';
 ```
 
-# --question--
+# --question-1--
 
 ## --answers--
 
