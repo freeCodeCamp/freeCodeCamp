@@ -1910,7 +1910,10 @@
       "dvnt": { "title": "164", "intro": [] },
       "ekdb": { "title": "165", "intro": [] },
       "ezek": { "title": "166", "intro": [] },
-      "vabq": { "title": "167", "intro": [] },
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": ["", ""]
+      },
       "lgfm": { "title": "168", "intro": [] },
       "kgtw": { "title": "169", "intro": [] },
       "ljmq": { "title": "170", "intro": [] },
