@@ -1777,7 +1777,10 @@
       "zlfj": { "title": "40", "intro": [] },
       "ioqd": { "title": "41", "intro": [] },
       "sdul": { "title": "42", "intro": [] },
-      "pdqp": { "title": "43", "intro": [] },
+      "lab-stylized-to-do-list": {
+        "title": "Build a Stylized To-Do List",
+        "intro": ["", ""]
+      },
       "humj": { "title": "44", "intro": [] },
       "pahx": { "title": "45", "intro": [] },
       "rzdx": { "title": "46", "intro": [] },
