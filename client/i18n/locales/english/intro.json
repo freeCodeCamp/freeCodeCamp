@@ -1894,7 +1894,10 @@
       "phko": { "title": "148", "intro": [] },
       "wjzt": { "title": "149", "intro": [] },
       "tsdq": { "title": "150", "intro": [] },
-      "kkix": { "title": "151", "intro": [] },
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": ["", ""]
+      },
       "icxa": { "title": "152", "intro": [] },
       "hqba": { "title": "153", "intro": [] },
       "nnqa": { "title": "154", "intro": [] },
