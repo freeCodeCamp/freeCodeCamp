@@ -1888,7 +1888,10 @@
       "xkbo": { "title": "142", "intro": [] },
       "nkxq": { "title": "143", "intro": [] },
       "wfyg": { "title": "144", "intro": [] },
-      "guqy": { "title": "145", "intro": [] },
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller App",
+        "intro": ["", ""]
+      },
       "nkge": { "title": "146", "intro": [] },
       "hafd": { "title": "147", "intro": [] },
       "phko": { "title": "148", "intro": [] },
