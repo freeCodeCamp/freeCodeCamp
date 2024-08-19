@@ -1773,7 +1773,7 @@
       "dxpc": { "title": "36", "intro": [] },
       "liti": { "title": "37", "intro": [] },
       "lab-business-card": {
-        "title": "Build a Business Card",
+        "title": "Design a Business Card",
         "intro": [
           "In this lab, you'll create a business card and style it using CSS."
         ]
