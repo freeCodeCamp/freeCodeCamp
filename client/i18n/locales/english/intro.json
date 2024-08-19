@@ -1737,7 +1737,13 @@
       "ijdq": { "title": "14", "intro": [] },
       "pwwg": { "title": "15", "intro": [] },
       "cfgp": { "title": "16", "intro": [] },
-      "gesh": { "title": "17", "intro": [] },
+      "workshop-hotel-feedback-form": {
+        "title": "Build a Hotel Feedback Form",
+        "intro": [
+          "In this workshop, you will learn how to work with forms by building a Hotel Feedback Form.",
+          "You will learn how to work with labels, inputs, fieldsets, legends, textareas and buttons."
+        ]
+      },
       "lab-survey-form": {
         "title": "Build a Survey Form",
         "intro": ["For this lab, you will create a survey form."]

@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Anza hapa (ni bure)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "Ingia katika akaunti ili kuhifadhi maendeleo yako (ni bure)",
     "view-curriculum": "Tazama Mtaala",
     "first-lesson": "Nenda kwenye somo la kwanza",
@@ -106,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Unda miradi.",
     "big-heading-3": "Pata vyeti.",
+    "big-heading-4": "All for free.",
     "h2-heading": "Tangu 2014, zaidi ya wahitimu 40,000 wa freeCodeCamp.org wamepata kazi katika kampuni za teknolojia ikijumuisha:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "wanafunzi wa freeCodeCamp katika kikundi cha mafunzo nchini Korea Kusini.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "Kama inavyoonekana katika:",
     "testimonials": {
       "heading": "Hivi ndivyo wahitimu wetu wanasema kuhusu freeCodeCamp:",
@@ -275,7 +280,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Usijali, sitaki kufuta maendeleo yangu yote",
-      "reset-confirm": "Weka upya kila kitu. Nataka kuanza tena mwanzo"
+      "reset-confirm": "Weka upya kila kitu. Nataka kuanza tena mwanzo",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "Huna barua pepe inayohusishwa na akaunti hii.",
