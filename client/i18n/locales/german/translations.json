@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Los geht's! (Es ist 100% kostenlos.)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "Melde dich an, um deinen Fortschritt zu speichern. (Es ist kostenlos.)",
     "view-curriculum": "Curriculum anzeigen",
     "first-lesson": "Gehe zur ersten Lektion",
@@ -106,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Lerne zu programmieren — kostenlos.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Projekte entwickeln.",
     "big-heading-3": "Zertifizierungen erwerben.",
+    "big-heading-4": "All for free.",
     "h2-heading": "Seit 2014 haben mehr als 40.000 Absolventen von FreeCodeCamp.org Jobs bei Tech-Unternehmen erhalten, unter anderem:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "freeCodeCamp Studenten einer lokalen Lerngruppe in Südkorea.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "Wie gesehen in:",
     "testimonials": {
       "heading": "Das sagen unsere Absolventen zu freeCodeCamp:",
@@ -275,7 +280,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Ich habe es mir anders überlegt und will meinen Fortschritt nicht löschen",
-      "reset-confirm": "Alles zurücksetzen. Ich möchte von Anfang an beginnen"
+      "reset-confirm": "Alles zurücksetzen. Ich möchte von Anfang an beginnen",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "Du hast keine E-Mail mit diesem Konto verbunden.",
