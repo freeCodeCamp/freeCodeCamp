@@ -461,7 +461,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
         challengeData={challengeData}
         previewTitle={projectTitle}
         closeText={t('buttons.close')}
-        showProjectPreview={true}
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
     </section>
