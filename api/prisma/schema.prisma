@@ -161,7 +161,7 @@ type EnvQuestionSet {
   id        String                      @db.ObjectId
   type      EnvQuestionType
   /// Content related to all questions in set
-  text      String?
+  context   String?
   questions EnvMultipleChoiceQuestion[]
 }
 
