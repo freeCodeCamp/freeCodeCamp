@@ -90,7 +90,7 @@ assert(document.querySelector('img').parentNode.nodeName === 'A');
       <p>Everyone loves <a href="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg">cute cats</a> online!</p>
       <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
 --fcc-editable-region--
-      <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back.">
+      <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back">
 --fcc-editable-region--
     </main>
   </body>
