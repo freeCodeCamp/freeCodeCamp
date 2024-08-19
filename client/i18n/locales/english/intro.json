@@ -1912,7 +1912,7 @@
       "ezek": { "title": "166", "intro": [] },
       "lab-factorial-calculator": {
         "title": "Build a Factorial Calculator ",
-        "intro": ["", ""]
+        "intro": ["In this lab, you will build a factorial calculator."]
       },
       "lgfm": { "title": "168", "intro": [] },
       "kgtw": { "title": "169", "intro": [] },
