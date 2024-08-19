@@ -241,6 +241,7 @@ export const build = async (
     }
   });
 
+  // NOTE: Code behind the `FREECODECAMP_NODE_ENV` var is not ready to be deployed yet.
   if (FREECODECAMP_NODE_ENV !== 'production') {
     void fastify.register(function (fastify, _opts, done) {
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
