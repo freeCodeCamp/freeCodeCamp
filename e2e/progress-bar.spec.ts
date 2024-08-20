@@ -19,7 +19,7 @@ test.describe('Progress bar component', () => {
     await clearEditor({ page, browserName });
 
     await page.keyboard.insertText(
-      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>See more cat photos in our gallery.</p></body></html>'
+      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>Everyone loves cute cats online!</p></body></html>'
     );
 
     await page.getByRole('button', { name: 'Check Your Code' }).click();
