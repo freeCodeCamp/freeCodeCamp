@@ -64,8 +64,8 @@ IntroductionPage.displayName = 'IntroductionPage';
 export default IntroductionPage;
 
 export const query = graphql`
-  query IntroPageBySlug($slug: String!, $block: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query IntroPageBySlug($id: String!, $block: String!) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         block
         superBlock
