@@ -1,7 +1,4 @@
-import {
-  Type,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 import {
   donationSubscriptionConfig,
@@ -62,22 +59,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
   fastify.post(
     '/donate/add-donation',
     {
-      schema: {
-        body: Type.Object({}),
-        response: {
-          200: Type.Object({
-            isDonating: Type.Boolean()
-          }),
-          400: Type.Object({
-            message: Type.Literal('User is already donating.'),
-            type: Type.Literal('info')
-          }),
-          500: Type.Object({
-            message: Type.Literal('Something went wrong.'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.addDonation
     },
     async (req, reply) => {
       try {
@@ -105,6 +87,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
           type: 'danger',
@@ -231,6 +214,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'

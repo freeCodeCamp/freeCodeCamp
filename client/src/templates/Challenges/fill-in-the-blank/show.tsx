@@ -429,8 +429,8 @@ export default connect(
 )(withTranslation()(ShowFillInTheBlank));
 
 export const query = graphql`
-  query FillInTheBlankChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query FillInTheBlankChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         title
         description

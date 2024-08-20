@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "始める (無料)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "サインインして進行状況を保存 (無料)",
     "view-curriculum": "カリキュラムを見る",
     "first-lesson": "最初のレッスンへ",
@@ -67,6 +68,7 @@
     "click-here": "サインインするにはここをクリック",
     "save": "保存",
     "save-code": "コードを保存",
+    "show-demo": "Show Demo",
     "no-thanks": "結構です",
     "yes-please": "はい、お願いします",
     "update-email": "メールアドレスを更新",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "プロジェクトを完成させる。",
     "big-heading-3": "認定証を取得する。",
+    "big-heading-4": "All for free.",
     "h2-heading": "2014 年以来、4 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "hero-img-alt": "さまざまな人種、性別の人々がノートパソコンの周りに集まっている様子",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "下記で取り上げられました",
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
@@ -274,7 +280,10 @@
       "reset-p2": "実質的に、サインアップ直後の状態に戻ります。",
       "reset-p3": "削除後にお問い合わせいただいても、一切のデータを復旧できかねます。",
       "nevermind-2": "やめておきます。進行状況を削除しません。",
-      "reset-confirm": "すべてをリセットして最初から始めます。"
+      "reset-confirm": "すべてをリセットして最初から始めます。",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "このアカウントに関連付けられているメールアドレスがありません。",
