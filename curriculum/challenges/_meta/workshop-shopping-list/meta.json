@@ -7,6 +7,35 @@
   "dashedName": "workshop-shopping-list",
   "order": 155,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66c63bfa4685e4e3843fa0dc", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66c63bfa4685e4e3843fa0dc",
+      "title": "Step 1"
+    },
+    {
+      "id": "66c64095f61166ede6e39a84",
+      "title": "Step 2"
+    },
+    {
+      "id": "66c64210413532ee9d3bd342",
+      "title": "Step 3"
+    },
+    {
+      "id": "66c644c08ebcd2ef90c750bd",
+      "title": "Step 4"
+    },
+    {
+      "id": "66c645b345a39bf04864dc50",
+      "title": "Step 5"
+    },
+    {
+      "id": "66c6491fe4c8e0f16845425f",
+      "title": "Step 6"
+    },
+    {
+      "id": "66c64ad16796c7f2419b45c5",
+      "title": "Step 7"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
