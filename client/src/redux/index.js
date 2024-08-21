@@ -22,6 +22,7 @@ import updateCompleteEpic from './update-complete-epic';
 import { createUserTokenSaga } from './user-token-saga';
 import { createMsUsernameSaga } from './ms-username-saga';
 import { createSurveySaga } from './survey-saga';
+import { createSessionCompletedChallengesSaga } from './session-completed-challenges';
 
 const defaultFetchState = {
   pending: true,
@@ -97,7 +98,8 @@ export const sagas = [
   ...createUserTokenSaga(actionTypes),
   ...createSaveChallengeSaga(actionTypes),
   ...createMsUsernameSaga(actionTypes),
-  ...createSurveySaga(actionTypes)
+  ...createSurveySaga(actionTypes),
+  ...createSessionCompletedChallengesSaga(actionTypes)
 ];
 
 function spreadThePayloadOnUser(state, payload) {
