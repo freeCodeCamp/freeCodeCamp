@@ -171,6 +171,9 @@ importers:
       ajv-formats:
         specifier: 2.1.1
         version: 2.1.1(ajv@8.12.0)
+      chai:
+        specifier: 4.4.1
+        version: 4.4.1
       date-fns:
         specifier: 2.30.0
         version: 2.30.0
@@ -232,6 +235,9 @@ importers:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
+      '@types/chai':
+        specifier: ^4.3.17
+        version: 4.3.17
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -3925,6 +3931,9 @@ packages:
 
   '@types/chai@4.3.16':
     resolution: {integrity: sha512-PatH4iOdyh3MyWtmHVFXLWCCIhUbopaltqddG9BzB+gMIzee2MJrvd+jouii9Z3wzQJruGWAm7WOMjgfG8hQlQ==}
+
+  '@types/chai@4.3.17':
+    resolution: {integrity: sha512-zmZ21EWzR71B4Sscphjief5djsLre50M6lI622OSySTmn9DB3j+C3kWroHfBQWXbOBwbgg/M8CG/hUxDLIloow==}
 
   '@types/cheerio@0.22.35':
     resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
@@ -14155,7 +14164,7 @@ snapshots:
       '@babel/traverse': 7.23.7
       '@babel/types': 7.23.9
       convert-source-map: 2.0.0
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -16368,7 +16377,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.23.6
       '@babel/types': 7.23.9
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -18000,6 +18009,8 @@ snapshots:
 
   '@types/chai@4.3.16': {}
 
+  '@types/chai@4.3.17': {}
+
   '@types/cheerio@0.22.35':
     dependencies:
       '@types/node': 20.12.8
@@ -18855,7 +18866,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -19187,7 +19198,7 @@ snapshots:
     dependencies:
       '@fastify/error': 3.4.1
       archy: 1.0.0
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
       fastq: 1.17.1
     transitivePeerDependencies:
       - supports-color
@@ -20767,10 +20778,6 @@ snapshots:
       ms: 2.1.3
     optionalDependencies:
       supports-color: 5.5.0
-
-  debug@4.3.4:
-    dependencies:
-      ms: 2.1.2
 
   debug@4.3.4(supports-color@8.1.1):
     dependencies:
@@ -23645,7 +23652,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -24169,7 +24176,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
       istanbul-lib-coverage: 3.2.0
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -24715,7 +24722,7 @@ snapshots:
 
   json-schema-resolver@2.0.0:
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
       rfdc: 1.3.0
       uri-js: 4.4.1
     transitivePeerDependencies:
@@ -28497,7 +28504,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.4
       '@hapi/wreck': 18.1.0
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
       joi: 17.12.2
     transitivePeerDependencies:
       - supports-color
@@ -29079,7 +29086,7 @@ snapshots:
     dependencies:
       component-emitter: 1.3.0
       cookiejar: 2.1.4
-      debug: 4.3.4
+      debug: 4.3.4(supports-color@8.1.1)
       fast-safe-stringify: 2.1.1
       form-data: 4.0.0
       formidable: 2.1.2

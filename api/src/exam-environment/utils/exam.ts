@@ -9,6 +9,7 @@ import {
   EnvQuestionSet,
   user
 } from '@prisma/client';
+import { assert } from 'chai';
 
 /**
  * Checks if all exam prerequisites have been met by the user.
@@ -313,6 +314,9 @@ export function validateAttempt(
   generatedExam: EnvGeneratedExam,
   attempt: Pick<EnvExamAttempt, 'questionSets'>
 ) {
+  // TODO: Evaluating if this works instead of custom logic below
+  assert.deepInclude(generatedExam, attempt);
+
   for (const attemptQuestionSet of attempt.questionSets) {
     const generatedQuestionSet = generatedExam.questionSets.find(
       qt => qt.id === attemptQuestionSet.id
