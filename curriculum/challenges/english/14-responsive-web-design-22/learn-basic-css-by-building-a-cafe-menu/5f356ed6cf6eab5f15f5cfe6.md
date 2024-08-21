@@ -16,8 +16,7 @@ Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
 Your opening `<div>` tag should have an `id` attribute set to `menu`.
 
 ```js
-const div = document.querySelector('div');
-assert(div.id === 'menu');
+assert.strictEqual(document.querySelector('div')?.id, 'menu');
 ```
 
 You should have a closing `</div>` tag.
@@ -35,8 +34,7 @@ assert.lengthOf(document.querySelectorAll('body'), 1);
 Your `div` tag should be nested in the `body`.
 
 ```js
-const div = document.querySelector('div');
-assert(div.parentElement.tagName === 'BODY');
+assert.equal(document.querySelector('div')?.parentElement?.tagName, 'BODY');
 ```
 
 

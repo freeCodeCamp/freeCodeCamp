@@ -33,7 +33,7 @@ Your new `section` element should be nested in the `main` element.
 
 ```js
 const main = document.querySelector('main');
-const sections = main.querySelectorAll(`:scope ${'section'}`);
+const sections = main?.querySelectorAll(`:scope ${'section'}`);
 assert.lengthOf(sections,2);
 ```
 

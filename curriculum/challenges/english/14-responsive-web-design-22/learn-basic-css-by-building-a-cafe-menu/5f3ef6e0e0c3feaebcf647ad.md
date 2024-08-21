@@ -20,13 +20,13 @@ assert.lengthOf(document.querySelectorAll('section'), 2);
 You should add an `h2` element in your second `section` element.
 
 ```js
-assert.strictEqual(document.querySelectorAll('section')[1].children[0].tagName , 'H2');
+assert.strictEqual(document.querySelectorAll('section')?.[1]?.children?.[0]?.tagName, 'H2');
 ```
 
 Your new `h2` element should have the text `Desserts`.
 
 ```js
-assert.match(document.querySelectorAll('h2')[1].innerText,/Desserts/i);
+assert.match(document.querySelectorAll('h2')?.[1]?.innerText, /Desserts/i);
 ```
 
 # --seed--
