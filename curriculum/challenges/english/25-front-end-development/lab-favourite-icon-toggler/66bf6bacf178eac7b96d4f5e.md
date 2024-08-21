@@ -8,24 +8,106 @@ demoType: onClick
 
 # --description--
 
-**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab. 
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab. **Do not copy this demo project**.
 
 **User Stories:**
 
-1. You should have an `h1` element that contains the heading.
 1. You should have an unordered list with three items.
-1. The unordered list should have the class `item-list`.
-1. The three list items should contain the item name followed by a `span` element with the class `favorite-icon` and an id of `favorite-icon-1`, `favorite-icon-2`, and `favorite-icon-3`, respectively.
-1. The `span` element should contain the code `&#9825;` initially to represent an empty heart.
-1. When the `span` element is clicked, the class `filled` should be added to the `span` with class `favorite-icon` if it doesn't exist, and removed if it does.  `&#9825;` should change to `&#10084;` to represent a filled heart.
+2. The unordered list should have the class `item-list`.
+3. The three list items should contain the item name followed by a `span` element with the class `favorite-icon` and an id of `favorite-icon-1`, `favorite-icon-2`, and `favorite-icon-3`, respectively.
+4. The `span` element should contain the code `&#9825;` initially to represent an empty heart.
+5. When the `span` element containing the heart is clicked, the class `filled` should be added to the `span` with class `favorite-icon` if it doesn't exist, and removed if it does.  `&#9825;` should change to `&#10084;` to represent a filled heart.
 
 # --hints--
 
-Your `link` element should be within your `head` element.
+You should have an unordered list.
 
 ```js
-const link = document.querySelector('head > link');
-assert.isNotNull(link);
+
+```
+
+Your unordered list should have 3 items.
+
+```js
+
+```
+
+Your individual list item should contain the item name.
+
+```js
+
+```
+
+Your individual list item should contain a  `span` element with the class `favorite-icon` 
+
+```js
+
+```
+
+The `span` elements with the class `favorite-icon` should contain ids of `favorite-icon-1`, `favorite-icon-2`, and `favorite-icon-3`.
+
+```js
+
+```
+
+Initially, the `span` elements should contain the code `&#9825;` to represent an empty heart.
+
+```js
+
+```
+
+You should select all the `.favorite-icon` `span` elements and store them in the `favouriteIcons` variable.
+
+```js
+
+```
+
+You should attach a click event listener to each of the `span` elements.
+
+```js
+
+```
+
+When the `span` element is clicked, you should check if the `span` element contains the class `filled`.
+
+```js
+
+```
+
+When the `span` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `span` element.
+
+```js
+
+```
+
+When the `span` element is clicked, and it contains the class `filled`, you should remove change the innerHTML of the `span` element to `&#9825;`.
+
+```js
+
+```
+
+When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element.
+
+```js
+
+```
+
+When the `span` element is clicked, and it doesn't contain the class `filled`, you should change the innerHTML of the `span` element to `&#10084;`.
+
+```js
+
+```
+
+Don't forget to link your style sheet using the `link` tag in the `head` section of your HTML file.
+
+```js
+
+```
+
+Don't forget to link your javascript file using the `script` tag at the end of the `body` section of your HTML file.
+
+```js
+
 ```
 
 # --seed--
