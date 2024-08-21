@@ -1779,7 +1779,9 @@
       "sdul": { "title": "42", "intro": [] },
       "lab-stylized-to-do-list": {
         "title": "Build a Stylized To-Do List",
-        "intro": ["", ""]
+        "intro": [
+          "In this lab, you'll build a To-Do list with and apply different styles to the links"
+        ]
       },
       "humj": { "title": "44", "intro": [] },
       "pahx": { "title": "45", "intro": [] },
