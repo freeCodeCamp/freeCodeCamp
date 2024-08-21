@@ -6,4 +6,4 @@ superBlock: front-end-development
 
 ## Introduction to the Build a Random Background Color Changer
 
-For this lab, you will create a random background color changer.
+For this lab, you will debug a random background color changer and fix the errors to make it work properly.
