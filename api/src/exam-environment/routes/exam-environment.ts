@@ -117,7 +117,7 @@ async function postExamGenerateHandler(
 ) {
   // Get exam from DB
   const examId = req.body.examId;
-  const exam = await this.prisma.newExam.findUnique({
+  const exam = await this.prisma.envExam.findUnique({
     where: {
       id: examId
     }
@@ -150,22 +150,25 @@ async function postExamGenerateHandler(
   }
 
   // Check user has not completed exam in last 24 hours
-  const examAttempts = await this.prisma.newExamAttempt.findMany({
+  const examAttempts = await this.prisma.envExamAttempt.findMany({
     where: {
-      user_id: user.id
+      userId: user.id,
+      examId: exam.id
     }
   });
 
-  const lastAttempt = examAttempts.find(attempt => attempt.exam_id === exam.id);
+  const lastAttempt = examAttempts.reduce((latest, current) =>
+    latest.startTimeInMS > current.startTimeInMS ? latest : current
+  );
 
   if (lastAttempt) {
     // If exam is not submitted, use exam start time + time allocated for exam
     const effectiveSubmissionTime =
-      lastAttempt.submission_time ??
-      lastAttempt.start_time + exam.config.total_time;
-    const coolDown = Date.now() - 24 * 60 * 60 * 1000;
+      lastAttempt.submissionTimeInMS ??
+      lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
+    const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
 
-    if (effectiveSubmissionTime > coolDown) {
+    if (effectiveSubmissionTime > twentyFourHoursAgo) {
       void reply.code(403);
       // TOOD: Consider sending last completed time
       return reply.send(
@@ -178,9 +181,9 @@ async function postExamGenerateHandler(
       // This is most likely to happen if the Camper's app closes and is reopened.
       // Send the Camper back to the exam they were working on.
       const { error, data: generatedExam } = await mapErr(
-        this.prisma.generatedExam.findFirst({
+        this.prisma.envGeneratedExam.findFirst({
           where: {
-            id: lastAttempt.generated_exam_id
+            id: lastAttempt.generatedExamId
           }
         })
       );
@@ -215,7 +218,7 @@ async function postExamGenerateHandler(
   const generatedExamContent = generateExam(exam);
 
   const maybeGeneratedExam = await mapErr(
-    this.prisma.generatedExam.create({
+    this.prisma.envGeneratedExam.create({
       data: generatedExamContent
     })
   );
@@ -235,14 +238,14 @@ async function postExamGenerateHandler(
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
   const { error, data: examAttempt } = await mapErr(
-    this.prisma.newExamAttempt.create({
+    this.prisma.envExamAttempt.create({
       data: {
-        user_id: user.id,
-        exam_id: exam.id,
-        generated_exam_id: generatedExam.id,
-        start_time: Date.now(),
-        question_types: [],
-        needs_retake: false
+        userId: user.id,
+        examId: exam.id,
+        generatedExamId: generatedExam.id,
+        startTimeInMS: Date.now(),
+        questionSets: [],
+        needsRetake: false
       }
     })
   );
@@ -258,12 +261,12 @@ async function postExamGenerateHandler(
   const maybeUserExam = syncMapErr(() => createUserExam(generatedExam, exam));
 
   if (maybeUserExam.error !== null) {
-    await this.prisma.newExamAttempt.delete({
+    await this.prisma.envExamAttempt.delete({
       where: {
         id: examAttempt.id
       }
     });
-    await this.prisma.generatedExam.delete({
+    await this.prisma.envGeneratedExam.delete({
       where: {
         id: generatedExam.id
       }
@@ -299,11 +302,90 @@ async function postExamAttemptHandler(
 ) {
   const { attempt } = req.body;
 
+  const { user } = req;
+  if (!user) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Unreachable. User not authenticated.')
+    );
+  }
+
+  const maybeAttempts = await mapErr(
+    this.prisma.envExamAttempt.findMany({
+      where: {
+        examId: attempt.examId,
+        userId: user.id
+      }
+    })
+  );
+
+  if (maybeAttempts.error !== null) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
+    );
+  }
+
+  const attempts = maybeAttempts.data;
+
+  const latestAttempt = attempts.reduce((latest, current) =>
+    latest.startTimeInMS > current.startTimeInMS ? latest : current
+  );
+
+  // Ensure attempt is:
+  // - Not already submitted
+  // - Not already past submission time
+
+  if (latestAttempt.submissionTimeInMS !== null) {
+    void reply.code(403);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+        'Attempt has already been submitted.'
+      )
+    );
+  }
+
+  const maybeExam = await mapErr(
+    this.prisma.envExam.findUnique({
+      where: {
+        id: attempt.examId
+      }
+    })
+  );
+
+  if (maybeExam.error !== null) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+    );
+  }
+
+  const exam = maybeExam.data;
+
+  if (exam === null) {
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM('Invalid exam id given.')
+    );
+  }
+
+  const isAttemptExpired =
+    latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+
+  if (isAttemptExpired) {
+    void reply.code(403);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+        'Attempt has exceeded submission time.'
+      )
+    );
+  }
+
   // Get generated exam from database
   const maybeGeneratedExam = await mapErr(
-    this.prisma.generatedExam.findUnique({
+    this.prisma.envGeneratedExam.findUnique({
       where: {
-        id: attempt.generated_exam_id
+        id: latestAttempt.generatedExamId
       }
     })
   );
@@ -325,20 +407,20 @@ async function postExamAttemptHandler(
   }
   // Ensure attempt matches generated exam
   const maybeValidExamAttempt = syncMapErr(() =>
-    validateAttempt(generatedExam, attempt)
+    validateAttempt(generatedExam, latestAttempt)
   );
 
   // Update attempt in database
   const maybeUpdatedAttempt = await mapErr(
-    this.prisma.newExamAttempt.update({
+    this.prisma.envExamAttempt.update({
       where: {
-        id: attempt.id
+        id: latestAttempt.id
       },
       data: {
-        submission_time: Date.now(),
-        question_types: attempt.question_types,
+        submissionTimeInMS: Date.now(),
+        questionSets: attempt.questionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
-        needs_retake: maybeValidExamAttempt.error ? true : false
+        needsRetake: maybeValidExamAttempt.error ? true : false
       }
     })
   );

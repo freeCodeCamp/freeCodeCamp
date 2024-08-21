@@ -5,11 +5,8 @@ export const examEnvironmentPostExamAttempt = {
   body: Type.Object({
     // TODO: Find a way to use Prisma `NewExamAttempt` type
     attempt: Type.Object({
-      id: Type.String(),
-      exam_id: Type.String(),
-      generated_exam_id: Type.String(),
-      user_id: Type.String(),
-      question_types: Type.Array(
+      examId: Type.String(),
+      questionSets: Type.Array(
         Type.Object({
           id: Type.String(),
           questions: Type.Array(

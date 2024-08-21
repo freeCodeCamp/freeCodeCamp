@@ -3,7 +3,7 @@ import { generateExam } from './exam';
 
 describe('Exam Environment', () => {
   describe('generateExam()', () => {
-    const _randomizedExam = generateExam(exam);
+    // const _randomizedExam = generateExam(exam);
   });
 
   describe('getRandomAnswers()', () => {});

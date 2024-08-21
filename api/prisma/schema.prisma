@@ -148,11 +148,11 @@ model user {
 /// An exam for the Exam Environment App as designed by the examiners
 model EnvExam {
   /// Globally unique exam id
-  id            String           @id @default(auto()) @map("_id") @db.ObjectId
+  id           String           @id @default(auto()) @map("_id") @db.ObjectId
   /// All questions for a given exam
-  question_sets EnvQuestionSet[]
+  questionSets EnvQuestionSet[]
   /// Configuration for exam metadata
-  config        EnvConfig
+  config       EnvConfig
 }
 
 /// A grouping of one or more questions of a given type
@@ -184,17 +184,17 @@ type EnvMultipleChoiceQuestion {
 /// Audio for an Exam Environment App multiple choice question
 type EnvAudio {
   /// Optional text for audio
-  captions   String?
+  captions  String?
   /// URL to audio file
-  url        String
+  url       String
   /// Start time of audio clip for question
   ///
   /// If not set, audio starts at 0
-  start_time Float?
+  startTime Float?
   /// End time of audio clip for question
   ///
   /// If not set, audio ends at the end of the clip
-  end_time   Float?
+  endTime   Float?
 }
 
 /// Type of question for the Exam Environment App
@@ -208,11 +208,11 @@ enum EnvQuestionType {
 /// Answer for an Exam Environment App multiple choice question
 type EnvAnswer {
   /// Unique answer id
-  id         String  @db.ObjectId
+  id        String  @db.ObjectId
   /// Whether the answer is correct
-  is_correct Boolean
+  isCorrect Boolean
   /// Answer paragraph
-  text       String
+  text      String
 }
 
 /// Configuration for an exam in the Exam Environment App
@@ -223,22 +223,22 @@ type EnvConfig {
   note          String
   tags          EnvTagConfig[]
   /// Total time allocated for exam in milliseconds
-  total_time    Int
+  totalTimeInMS Int
   /// Configuration for sets of questions
-  question_sets EnvQuestionSetConfig[]
+  questionSets  EnvQuestionSetConfig[]
 }
 
 /// Configuration for a set of questions in the Exam Environment App
 type EnvQuestionSetConfig {
-  type                        EnvQuestionType
+  type                     EnvQuestionType
   /// Number of this grouping of questions per exam
-  number_of_type              Int
+  numberOfSet              Int
   /// Number of multiple choice questions per grouping matching this set config
-  number_of_questions         Int
+  numberOfQuestions        Int
   /// Number of correct answers given per multiple choice question
-  number_of_correct_answers   Int
+  numberOfCorrectAnswers   Int
   /// Number of incorrect answers given per multiple choice question
-  number_of_incorrect_answers Int
+  numberOfIncorrectAnswers Int
 }
 
 /// Configuration for tags in the Exam Environment App
@@ -246,28 +246,28 @@ type EnvQuestionSetConfig {
 /// This configures the number of questions that should resolve to a given tag set criteria.
 type EnvTagConfig {
   /// Foreign key to multiple choice question tags
-  set                 String[] @db.ObjectId
-  /// Number of multiple choice questions per exam that should meet the set criteria
-  number_of_questions Int
+  group             String[] @db.ObjectId
+  /// Number of multiple choice questions per exam that should meet the group criteria
+  numberOfQuestions Int
 }
 
 /// An attempt at an exam in the Exam Environment App
 model EnvExamAttempt {
-  id                String                  @id @default(auto()) @map("_id") @db.ObjectId
+  id                 String                  @id @default(auto()) @map("_id") @db.ObjectId
   /// Foriegn key to user
-  user_id           String                  @db.ObjectId
+  userId             String                  @db.ObjectId
   /// Foreign key to exam
-  exam_id           String                  @db.ObjectId
+  examId             String                  @db.ObjectId
   /// Foreign key to generated exam id
-  generated_exam_id String                  @db.ObjectId
-  question_sets     EnvQuestionSetAttempt[]
-  /// Time exam was started as seconds since epoch
-  start_time        Int
-  /// Time exam was submitted as seconds since epoch
+  generatedExamId    String                  @db.ObjectId
+  questionSets       EnvQuestionSetAttempt[]
+  /// Time exam was started as milliseconds since epoch
+  startTimeInMS      Int
+  /// Time exam was submitted as milliseconds since epoch
   ///
   /// As attempt might not be submitted (disconnection or quit), field is optional
-  submission_time   Int?
-  needs_retake      Boolean
+  submissionTimeInMS Int?
+  needsRetake        Boolean
 }
 
 type EnvQuestionSetAttempt {
@@ -285,18 +285,18 @@ type EnvMultipleChoiceQuestionAttempt {
 /// A generated exam for the Exam Environment App
 ///
 /// This is the user-facing information for an exam.
-model GeneratedEnvExam {
-  id            String                    @id @default(auto()) @map("_id") @db.ObjectId
-  exam_id       String                    @db.ObjectId
-  question_sets GeneratedEnvQuestionSet[]
+model EnvGeneratedExam {
+  id           String                    @id @default(auto()) @map("_id") @db.ObjectId
+  examId       String                    @db.ObjectId
+  questionSets EnvGeneratedQuestionSet[]
 }
 
-type GeneratedEnvQuestionSet {
+type EnvGeneratedQuestionSet {
   id        String                               @db.ObjectId
-  questions GeneratedEnvMultipleChoiceQuestion[]
+  questions EnvGeneratedMultipleChoiceQuestion[]
 }
 
-type GeneratedEnvMultipleChoiceQuestion {
+type EnvGeneratedMultipleChoiceQuestion {
   /// Foreign key to question id
   id      String   @db.ObjectId
   /// Each item is a foreign key to an answer

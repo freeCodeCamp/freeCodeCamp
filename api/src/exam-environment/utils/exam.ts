@@ -1,12 +1,12 @@
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import {
-  GeneratedExam,
-  NewAnswer,
-  NewConfig,
-  NewExam,
-  NewExamAttempt,
-  NewQuestion,
-  QuestionType,
+  EnvAnswer,
+  EnvConfig,
+  EnvExam,
+  EnvExamAttempt,
+  EnvGeneratedExam,
+  EnvMultipleChoiceQuestion,
+  EnvQuestionSet,
   user
 } from '@prisma/client';
 
@@ -24,35 +24,35 @@ export function checkPrerequisites(_user: user, _prerequisites: unknown) {
  *
  * TODO: Tag config can be sorted by least number of questions available to satisfy tag set.
  */
-export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
+export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
   // `exam` is shallow cloned to prevent mutation.
   const examCopy = { ...exam };
-  const questionTypeSet: Set<NewExam['question_types'][number]> = new Set();
+  const setOfQuestionSets: Set<EnvExam['questionSets'][number]> = new Set();
 
-  const questionTypesSansDeprecated = examCopy.question_types.map(qt => {
+  const questionSetsSansDeprecated = examCopy.questionSets.map(qt => {
     const questions = qt.questions.filter(q => !q.deprecated);
     return {
       ...qt,
       questions
     };
   });
-  const randomizedQuestionTypes = shuffleArray(questionTypesSansDeprecated);
+  const randomizedQuestionSets = shuffleArray(questionSetsSansDeprecated);
 
   // Sort tag config by number of tags in descending order.
   const sortedTags = examCopy.config.tags.sort(
-    (a, b) => b.set.length - a.set.length
+    (a, b) => b.group.length - a.group.length
   );
 
   for (const tag of sortedTags) {
     // Check if tag is partially fulfilled by existing questions in set.
     // - If tag is subset of existing questions tag set, only add more questions if needed.
-    let numberOfQuestionsNeeded = tag.number_of_questions;
-    for (const qt of questionTypeSet) {
-      const questionTypeTagCoverage = qt.questions.reduce(
+    let numberOfQuestionsNeeded = tag.numberOfQuestions;
+    for (const qt of setOfQuestionSets) {
+      const questionSetTagCoverage = qt.questions.reduce(
         (acc, q) => acc.concat(q.tags),
         [] as string[]
       );
-      if (tag.set.every(t => questionTypeTagCoverage.some(qt => qt === t))) {
+      if (tag.group.every(t => questionSetTagCoverage.some(qt => qt === t))) {
         numberOfQuestionsNeeded -= 1;
       }
       if (numberOfQuestionsNeeded === 0) {
@@ -62,10 +62,10 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
     // Push number_of_questions random questions.
     for (let i = 0; i < numberOfQuestionsNeeded; i++) {
       // Find question with at least all tags in the set.
-      const questionTypeWithFulfillingTags = randomizedQuestionTypes.splice(
-        randomizedQuestionTypes.findIndex(qt =>
+      const questionTypeWithFulfillingTags = randomizedQuestionSets.splice(
+        randomizedQuestionSets.findIndex(qt =>
           qt.questions.some(q =>
-            tag.set.every(t => q.tags.some(qt => qt === t))
+            tag.group.every(t => q.tags.some(qt => qt === t))
           )
         ),
         1
@@ -73,19 +73,19 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
 
       if (!questionTypeWithFulfillingTags) {
         throw new Error(
-          `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for tag ${tag.set.toString()}.`
+          `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for tag ${tag.group.toString()}.`
         );
       }
 
-      questionTypeSet.add(questionTypeWithFulfillingTags);
+      setOfQuestionSets.add(questionTypeWithFulfillingTags);
     }
   }
 
   // Ensure question_type config is fulfilled.
-  for (const questionTypeConfig of examCopy.config.question_types) {
+  for (const questionTypeConfig of examCopy.config.questionSets) {
     // Determine how many questions of type are already fulfilled.
-    let numberOfTypeNeeded = questionTypeConfig.number_of_type;
-    for (const qt of questionTypeSet) {
+    let numberOfTypeNeeded = questionTypeConfig.numberOfSet;
+    for (const qt of setOfQuestionSets) {
       if (qt.type === questionTypeConfig.type) {
         numberOfTypeNeeded -= 1;
       }
@@ -95,55 +95,55 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
     }
 
     for (let i = 0; i < numberOfTypeNeeded; i++) {
-      const questionType = randomizedQuestionTypes.splice(
-        randomizedQuestionTypes.findIndex(
+      const questionSet = randomizedQuestionSets.splice(
+        randomizedQuestionSets.findIndex(
           qt => qt.type === questionTypeConfig.type
         ),
         1
       )[0];
 
-      if (!questionType) {
+      if (!questionSet) {
         throw new Error(
           `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionTypeConfig.type}.`
         );
       }
 
-      questionTypeSet.add(questionType);
+      setOfQuestionSets.add(questionSet);
     }
   }
 
-  const finalQuestionTypes = [];
+  const finalQuestionSets = [];
 
-  for (const questionTypeConfig of examCopy.config.question_types) {
-    const questionTypes = Array.from(questionTypeSet).filter(
-      qt => qt.type === questionTypeConfig.type
+  for (const questionSetConfig of examCopy.config.questionSets) {
+    const questionTypes = Array.from(setOfQuestionSets).filter(
+      qt => qt.type === questionSetConfig.type
     );
 
     for (const qt of questionTypes) {
       // Splice question type from set to prevent re-use
-      if (!questionTypeSet.delete(qt)) {
+      if (!setOfQuestionSets.delete(qt)) {
         throw new Error(
-          `Unreachable. ${qt.id} should be in set. ${JSON.stringify(Array.from(questionTypeSet.values()).map(({ id }) => id))}.`
+          `Unreachable. ${qt.id} should be in set. ${JSON.stringify(Array.from(setOfQuestionSets.values()).map(({ id }) => id))}.`
         );
       }
       const questions = qt.questions;
       const randomizedQuestions = shuffleArray(questions);
       qt.questions = randomizedQuestions.splice(
         0,
-        questionTypeConfig.number_of_questions
+        questionSetConfig.numberOfQuestions
       );
       qt.questions = qt.questions.map(q => {
-        const answers = getRandomAnswers(q, questionTypeConfig);
+        const answers = getRandomAnswers(q, questionSetConfig);
         return {
           ...q,
           answers
         };
       });
-      finalQuestionTypes.push(qt);
+      finalQuestionSets.push(qt);
     }
   }
 
-  const question_types = finalQuestionTypes.map(qt => {
+  const questionSets = finalQuestionSets.map(qt => {
     const questions = qt.questions.map(q => {
       const answers = q.answers.map(a => a.id);
       return {
@@ -159,8 +159,8 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
   });
 
   return {
-    exam_id: examCopy.id,
-    question_types
+    examId: examCopy.id,
+    questionSets
   };
 }
 
@@ -168,19 +168,19 @@ export function generateExam(exam: NewExam): Omit<GeneratedExam, 'id'> {
  * Gets random answers for a question.
  */
 export function getRandomAnswers(
-  question: NewQuestion,
-  questionTypeConfig: NewConfig['question_types'][number]
-): NewQuestion['answers'] {
-  const { number_of_correct_answers, number_of_incorrect_answers } =
-    questionTypeConfig;
+  question: EnvMultipleChoiceQuestion,
+  questionSetConfig: EnvConfig['questionSets'][number]
+): EnvMultipleChoiceQuestion['answers'] {
+  const { numberOfCorrectAnswers, numberOfIncorrectAnswers } =
+    questionSetConfig;
 
   const randomAnswers = shuffleArray(question.answers);
   const incorrectAnswers = randomAnswers
-    .filter(a => !a.is_correct)
-    .splice(0, number_of_incorrect_answers);
+    .filter(a => !a.isCorrect)
+    .splice(0, numberOfIncorrectAnswers);
   const correctAnswers = randomAnswers
-    .filter(a => a.is_correct)
-    .splice(0, number_of_correct_answers);
+    .filter(a => a.isCorrect)
+    .splice(0, numberOfCorrectAnswers);
 
   if (!incorrectAnswers || !correctAnswers) {
     throw new Error(
@@ -218,83 +218,89 @@ function shuffleArray<T>(array: Array<T>) {
 }
 /* eslint-enable jsdoc/require-description-complete-sentence */
 
-export type UserExam = Omit<NewExam, 'question_types' | 'config' | 'id'> & {
-  config: Omit<NewExam['config'], 'tags' | 'question_types'>;
-  question_types: (Omit<QuestionType, 'questions'> & {
-    questions: (Omit<NewQuestion, 'answers' | 'tags'> & {
-      answers: Omit<NewAnswer, 'is_correct'>[];
+export type UserExam = Omit<EnvExam, 'questionSets' | 'config' | 'id'> & {
+  config: Omit<EnvExam['config'], 'tags' | 'questionSets'>;
+  questionSets: (Omit<EnvQuestionSet, 'questions'> & {
+    questions: (Omit<
+      EnvMultipleChoiceQuestion,
+      'answers' | 'tags' | 'deprecated'
+    > & {
+      answers: Omit<EnvAnswer, 'isCorrect'>[];
     })[];
   })[];
-} & { generated_exam_id: string; exam_id: string };
+} & { generatedExamId: string; examId: string };
 
 /**
  * Takes the generated exam and the original exam, and creates the user-facing exam.
  */
 export function createUserExam(
-  generatedExam: GeneratedExam,
-  exam: NewExam
+  generatedExam: EnvGeneratedExam,
+  exam: EnvExam
 ): UserExam {
   // Map generated exam to user exam (a.k.a. public exam information for user)
-  const userQuestionTypes = generatedExam.question_types.map(qt => {
+  const userQuestionSets = generatedExam.questionSets.map(gqs => {
     // Get matching question from `exam`, but remove `is_correct` from `exam.questions[].answers[]`
-    const matchingQuestionType = exam.question_types.find(
-      eqt => eqt.id === qt.id
-    );
+    const examQuestionSet = exam.questionSets.find(eqs => eqs.id === gqs.id);
 
-    if (!matchingQuestionType) {
+    if (!examQuestionSet) {
       throw new Error(
-        `Unreachable. Matching question type '${qt.id}' should exist.`
+        `Unreachable. Matching question type '${gqs.id}' should exist.`
       );
     }
 
-    const { questions } = matchingQuestionType;
+    const { questions } = examQuestionSet;
 
-    const userQuestions = questions.map(q => {
-      const matchingQuestion = matchingQuestionType.questions.find(
-        eq => eq.id === q.id
-      );
-      if (!matchingQuestion) {
+    const userQuestions = gqs.questions.map(gq => {
+      const examQuestion = questions.find(eq => eq.id === gq.id);
+      if (!examQuestion) {
         throw new Error(
-          `Unreachable. Matching question '${q.id}' should exist.`
+          `Unreachable. Matching question '${gq.id}' should exist.`
         );
       }
 
-      // Remove `is_correct` from question answers
-      const answers = matchingQuestion.answers.map(a => {
+      // Remove `isCorrect` from question answers
+      const answers = gq.answers.map(generatedAnswerId => {
+        const examAnswer = examQuestion.answers.find(
+          ea => ea.id === generatedAnswerId
+        );
+        if (!examAnswer) {
+          throw new Error(
+            `Unreachable. Matching answer '${generatedAnswerId}' should exist.`
+          );
+        }
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { is_correct, ...answer } = a;
+        const { isCorrect, ...answer } = examAnswer;
         return answer;
       });
 
       return {
-        id: matchingQuestion.id,
-        audio: matchingQuestion.audio,
-        text: matchingQuestion.text,
-        deprecated: matchingQuestion.deprecated,
+        id: examQuestion.id,
+        audio: examQuestion.audio,
+        text: examQuestion.text,
         answers
       };
     });
 
-    const userQuestionType = {
-      type: matchingQuestionType.type,
+    const userQuestionSet = {
+      type: examQuestionSet.type,
       questions: userQuestions,
-      id: matchingQuestionType.id,
-      text: matchingQuestionType.text
+      id: examQuestionSet.id,
+      context: examQuestionSet.context
     };
-    return userQuestionType;
+    return userQuestionSet;
   });
 
   const config = {
-    total_time: exam.config.total_time
+    totalTimeInMS: exam.config.totalTimeInMS,
+    name: exam.config.name,
+    note: exam.config.note
   };
 
   const userExam: UserExam = {
-    exam_id: exam.id,
-    name: exam.name,
-    generated_exam_id: generatedExam.id,
-    accessibility_note: exam.accessibility_note,
+    examId: exam.id,
+    generatedExamId: generatedExam.id,
     config,
-    question_types: userQuestionTypes
+    questionSets: userQuestionSets
   };
 
   return userExam;
@@ -304,21 +310,21 @@ export function createUserExam(
  * Ensures all questions and answers in the attempt are from the generated exam.
  */
 export function validateAttempt(
-  generatedExam: GeneratedExam,
-  attempt: Pick<NewExamAttempt, 'question_types'>
+  generatedExam: EnvGeneratedExam,
+  attempt: Pick<EnvExamAttempt, 'questionSets'>
 ) {
-  for (const attemptQuestionType of attempt.question_types) {
-    const generatedQuestionType = generatedExam.question_types.find(
-      qt => qt.id === attemptQuestionType.id
+  for (const attemptQuestionSet of attempt.questionSets) {
+    const generatedQuestionSet = generatedExam.questionSets.find(
+      qt => qt.id === attemptQuestionSet.id
     );
-    if (!generatedQuestionType) {
+    if (!generatedQuestionSet) {
       throw new Error(
-        `Question type ${attemptQuestionType.id} not found in generated exam.`
+        `Question type ${attemptQuestionSet.id} not found in generated exam.`
       );
     }
 
-    for (const attemptQuestion of attemptQuestionType.questions) {
-      const generatedQuestion = generatedQuestionType.questions.find(
+    for (const attemptQuestion of attemptQuestionSet.questions) {
+      const generatedQuestion = generatedQuestionSet.questions.find(
         q => q.id === attemptQuestion.id
       );
       if (!generatedQuestion) {
