@@ -23,43 +23,69 @@ demoType: onClick
 You should have an unordered list.
 
 ```js
-
+assert.exists(document.querySelector('ul'));
 ```
 
 Your unordered list should have 3 items.
 
 ```js
+assert.lengthOf(document.querySelectorAll('ul li'), 3);
 
 ```
 
-Your individual list item should contain the item name.
+Your unordered list should have the class `item-list`.
 
 ```js
+assert.exists(document.querySelector('ul.item-list'));
+```
+
+Your individual list items should contain the item name.
+
+```js
+assert.exists(document.querySelector('ul li').textContent);
 
 ```
 
 Your individual list item should contain a  `span` element with the class `favorite-icon` 
 
 ```js
-
+assert.exists(document.querySelector('ul li span.favorite-icon'));
 ```
 
-The `span` elements with the class `favorite-icon` should contain ids of `favorite-icon-1`, `favorite-icon-2`, and `favorite-icon-3`.
+The first `span` element with the class `favorite-icon` should contain an `id` of `favoriteIcon1`
 
 ```js
+const id = document.querySelector('ul li span.favorite-icon');
+assert.equal(id?.id, 'favoriteIcon1');
+```
 
+The second `span` element with the class `favorite-icon` should contain an `id` of `favoriteIcon2`
+
+```js
+const id = document.querySelectorAll('ul li span.favorite-icon');
+assert.equal(id[1]?.id, 'favoriteIcon2');
+```
+
+The third `span` element with the class `favorite-icon` should contain an `id` of `favoriteIcon3`
+
+```js
+const id = document.querySelectorAll('ul li span.favorite-icon');
+assert.equal(id[2]?.id, 'favoriteIcon3');
 ```
 
 Initially, the `span` elements should contain the code `&#9825;` to represent an empty heart.
 
 ```js
-
+const inputs = document.querySelectorAll('ul li span.favorite-icon');
+for (let input of inputs) {
+    assert.equal(input.innerHTML.charCodeAt(0), 9825);
+}
 ```
 
 You should select all the `.favorite-icon` `span` elements and store them in the `favouriteIcons` variable.
 
 ```js
-
+assert.match(__helpers.removeJSComments(code), /favoriteIcons\s*=\s*document\.querySelectorAll\(["']\.favorite-icon["']\)/);
 ```
 
 You should attach a click event listener to each of the `span` elements.
