@@ -1,0 +1,12 @@
+{
+  "name": "Build a Shopping List",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-shopping-list",
+  "order": 155,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66c63bfa4685e4e3843fa0dc", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
