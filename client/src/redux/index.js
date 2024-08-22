@@ -15,7 +15,7 @@ import { createFetchUserSaga } from './fetch-user-saga';
 import hardGoToEpic from './hard-go-to-epic';
 import { createReportUserSaga } from './report-user-saga';
 import { createSaveChallengeSaga } from './save-challenge-saga';
-import { completionCountSelector, savedChallengesSelector } from './selectors';
+import { savedChallengesSelector } from './selectors';
 import { actionTypes as settingsTypes } from './settings/action-types';
 import { createShowCertSaga } from './show-cert-saga';
 import updateCompleteEpic from './update-complete-epic';
@@ -52,9 +52,6 @@ const initialState = {
   appUsername: '',
   showMultipleProgressModals: false,
   recentlyClaimedBlock: null,
-  completionCountWhenShownProgressModal: 0,
-  progressDonationModalShown: false,
-  completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
   isProcessing: false,
@@ -276,13 +273,6 @@ export const reducer = handleActions(
       ...state,
       recentlyClaimedBlock: null
     }),
-    [actionTypes.setCompletionCountWhenShownProgressModal]: state => ({
-      ...state,
-      progressDonationModalShown: true,
-      completionCountWhenShownProgressModal: completionCountSelector({
-        [MainApp]: state
-      })
-    }),
     [actionTypes.setShowMultipleProgressModals]: (state, { payload }) => ({
       ...state,
       showMultipleProgressModals: payload
@@ -348,7 +338,6 @@ export const reducer = handleActions(
           }
         : {
             ...state,
-            completionCount: state.completionCount + 1,
             user: {
               ...state.user,
               [appUsername]: {

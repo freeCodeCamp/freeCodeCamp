@@ -1,4 +1,8 @@
 import { Certification } from '../../../shared/config/certification-settings';
+import {
+  getCompletionCountWhenShownProgressModal,
+  getSessionCompletedChallengesLength
+} from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -13,10 +17,6 @@ export const currentChallengeIdSelector = state =>
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const showMultipleProgressModalsSelector = state =>
   state[MainApp].showMultipleProgressModals;
-export const completionCountWhenShownProgressModalSelector = state =>
-  state[MainApp].completionCountWhenShownProgressModal;
-export const progressDonationModalShownSelector = state =>
-  state[MainApp].progressDonationModalShown;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -37,10 +37,10 @@ export const showCertFetchStateSelector = state =>
   state[MainApp].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
   const completedChallengesLength = completedChallengesSelector(state).length;
-  const completionCount = completionCountSelector(state);
-  const lastCompletionCount =
-    completionCountWhenShownProgressModalSelector(state);
-  const progressDonationModalShown = progressDonationModalShownSelector(state);
+  const sessionCompletedChallengesLength =
+    getSessionCompletedChallengesLength();
+  const lastProgressModalShown = getCompletionCountWhenShownProgressModal();
+  const progressDonationModalShown = lastProgressModalShown !== null;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
 
@@ -53,7 +53,10 @@ export const shouldRequestDonationSelector = state => {
   /*
     Different intervals need to be tested for optimization.
    */
-  if (progressDonationModalShown && completionCount - lastCompletionCount >= 20)
+  if (
+    progressDonationModalShown &&
+    sessionCompletedChallengesLength - lastProgressModalShown >= 20
+  )
     return true;
 
   // a donation has already been requested
@@ -65,7 +68,7 @@ export const shouldRequestDonationSelector = state => {
 
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
-  return completionCount >= 3;
+  return sessionCompletedChallengesLength >= 3;
 };
 
 export const userTokenSelector = state => {

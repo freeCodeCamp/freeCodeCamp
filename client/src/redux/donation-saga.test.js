@@ -50,7 +50,6 @@ const analyticsDataMock = {
 const signedInStoreMock = {
   app: {
     appUsername: 'devuser',
-    completionCount: 2,
     user: {
       devuser: {
         completedChallenges: [
@@ -83,7 +82,6 @@ const signedInStoreMock = {
 const signedOutStoreMock = {
   app: {
     appUsername: '',
-    completionCount: 0,
     user: {
       '': {
         completedChallenges: []
@@ -160,7 +158,6 @@ describe('donation-saga', () => {
     const signedOutStoreMock = {
       app: {
         appUsername: '',
-        completionCount: 0,
         user: {
           '': {
             completedChallenges: []
