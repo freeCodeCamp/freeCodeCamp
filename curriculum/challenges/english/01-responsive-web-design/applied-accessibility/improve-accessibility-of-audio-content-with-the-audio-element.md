@@ -41,10 +41,8 @@ assert.lengthOf(document.querySelectorAll('audio'),1);
 Your `audio` element should have a closing tag.
 
 ```js
-assert.isTrue(
-  code.match(/<\/audio>/g).length === 1 &&
-    code.match(/<audio.*>[\s\S]*<\/audio>/g) != null
-);
+assert.match(code,/<audio.*>[\s\S]*<\/audio>/g);
+assert.lengthOf(code.match(/<\/audio>/g),1);
 ```
 
 The `audio` tag should have the `controls` attribute.

@@ -67,8 +67,7 @@ Your `figure` element should have a closing tag.
 
 ```js
 assert.isTrue(
-  code.match(/<\/figure>/g) != null &&
-    code.match(/<\/figure>/g).length === code.match(/<figure>/g).length
+    code.match(/<\/figure>/g)?.length === code.match(/<figure>/g)?.length
 );
 ```
 

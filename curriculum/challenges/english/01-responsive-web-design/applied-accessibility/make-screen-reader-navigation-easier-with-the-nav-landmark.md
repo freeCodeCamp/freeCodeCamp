@@ -42,10 +42,7 @@ assert.lengthOf(document.querySelectorAll('div') , 0);
 Your `nav` element should have a closing tag.
 
 ```js
-assert.isTrue(
-  code.match(/<\/nav>/g) != null &&
-    code.match(/<\/nav>/g).length === code.match(/<nav>/g).length
-);
+assert.isTrue(code.match(/<\/nav>/g)?.length === code.match(/<nav>/g)?.length);
 ```
 
 # --seed--

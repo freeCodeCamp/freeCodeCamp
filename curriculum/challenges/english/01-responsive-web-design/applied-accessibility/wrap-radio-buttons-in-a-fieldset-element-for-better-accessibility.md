@@ -46,10 +46,7 @@ assert.lengthOf(document.querySelectorAll('fieldset'),1);
 The `fieldset` element should have a closing tag.
 
 ```js
-assert.isTrue(
-  code.match(/<\/fieldset>/g) != null &&
-    code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length
-);
+assert.isTrue(code.match(/<\/fieldset>/g)?.length === code.match(/<fieldset>/g)?.length);
 ```
 
 Your code should have a `legend` tag around the text asking what level ninja a user is.

@@ -34,10 +34,7 @@ assert.isEmpty(document.querySelector('a').getAttribute('href'));
 The `a` element should have a closing tag.
 
 ```js
-assert.isTrue(
-  code.match(/<\/a>/g) &&
-    code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length
-);
+assert.isTrue(code.match(/<\/a>/g)?.length === code.match(/<a href=(''|"")>/g)?.length);
 ```
 
 # --seed--

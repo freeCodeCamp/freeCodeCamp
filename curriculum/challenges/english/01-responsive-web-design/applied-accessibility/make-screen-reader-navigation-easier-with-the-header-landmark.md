@@ -44,10 +44,7 @@ assert.lengthOf(document.querySelectorAll('div') , 0);
 Your `header` element should have a closing tag.
 
 ```js
-assert.isTrue(
-  code.match(/<\/header>/g) != null &&
-    code.match(/<\/header>/g).length === code.match(/<header>/g).length
-);
+assert.isTrue(code.match(/<\/header>/g)?.length === code.match(/<header>/g)?.length);
 ```
 
 # --seed--
