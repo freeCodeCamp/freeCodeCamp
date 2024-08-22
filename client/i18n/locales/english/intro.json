@@ -1880,7 +1880,13 @@
       "yskn": { "title": "134", "intro": [] },
       "tpni": { "title": "135", "intro": [] },
       "hoec": { "title": "136", "intro": [] },
-      "cygu": { "title": "137", "intro": [] },
+      "workshop-teacher-chatbot": {
+        "title": "Build a Teacher Chatbot",
+        "intro": [
+          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
+          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+        ]
+      },
       "axgb": { "title": "138", "intro": [] },
       "rwac": { "title": "139", "intro": [] },
       "uzjg": { "title": "140", "intro": [] },
