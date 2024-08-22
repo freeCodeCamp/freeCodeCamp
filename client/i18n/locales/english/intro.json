@@ -1860,7 +1860,7 @@
       "dorc": { "title": "120", "intro": [] },
       "adzu": { "title": "121", "intro": [] },
       "lab-moon-orbit": {
-        "title": "Build a Moon Orbit using CSS animation",
+        "title": "Build a Moon Orbit",
         "intro": [
           "For this lab, you will create an animation of the moon orbiting the earth."
         ]
