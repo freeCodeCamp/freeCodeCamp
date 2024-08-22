@@ -1927,7 +1927,10 @@
       "ccnu": { "title": "175", "intro": [] },
       "skiq": { "title": "176", "intro": [] },
       "epfc": { "title": "177", "intro": [] },
-      "gsfr": { "title": "178", "intro": [] },
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": ["For this lab, you will create a gradebook app."]
+      },
       "fbbn": { "title": "179", "intro": [] },
       "lnmg": { "title": "180", "intro": [] },
       "wead": { "title": "181", "intro": [] },
