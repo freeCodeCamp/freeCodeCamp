@@ -79,11 +79,19 @@ export const reducer = handleActions(
       ...state,
       isSubmitting: false
     }),
-    [actionTypes.createFiles]: (state, { payload }) => ({
-      ...state,
-      challengeFiles: payload,
-      visibleEditors: { [getTargetEditor(payload)]: true }
-    }),
+    [actionTypes.createFiles]: (state, { payload }) => {
+      let visibleEditors = state.visibleEditors;
+
+      if (Object.keys(visibleEditors).length === 0) {
+        visibleEditors = { [getTargetEditor(payload)]: true };
+      }
+
+      return {
+        ...state,
+        challengeFiles: payload,
+        visibleEditors
+      };
+    },
     [actionTypes.updateFile]: (
       state,
       { payload: { fileKey, editorValue, editableRegionBoundaries } }
