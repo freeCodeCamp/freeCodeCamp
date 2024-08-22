@@ -352,3 +352,41 @@ export function validateAttempt(
 
   return true;
 }
+
+/**
+ * Checks all question sets and questions in the generated exam are in the attempt.
+ *
+ * @param attempt An exam attempt.
+ * @param generatedExam The corresponding generated exam.
+ * @returns Whether or not the attempt can be considered finished.
+ */
+export function checkAttemptAgainstGeneratedExam(
+  attempt: Pick<EnvExamAttempt, 'questionSets'>,
+  generatedExam: Pick<EnvGeneratedExam, 'questionSets'>
+): boolean {
+  // Check all question sets and questions are in generated exam
+  for (const generatedQuestionSet of generatedExam.questionSets) {
+    const attemptQuestionSet = attempt.questionSets.find(
+      q => q.id === generatedQuestionSet.id
+    );
+    if (!attemptQuestionSet) {
+      return false;
+    }
+
+    for (const generatedQuestion of generatedQuestionSet.questions) {
+      const attemptQuestion = attemptQuestionSet.questions.find(
+        q => q.id === generatedQuestion.id
+      );
+      if (!attemptQuestion) {
+        return false;
+      }
+
+      const atLeastOneAnswer = attemptQuestion.answers.length > 0;
+      if (!atLeastOneAnswer) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}

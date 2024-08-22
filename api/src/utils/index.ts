@@ -74,7 +74,27 @@ export async function mapErr<T>(promise: Promise<T>): Promise<Result<T>> {
 }
 
 /**
- * Wow.
+ * Wrapper around a synchronise function to catch throws and return them as part of the value.
+ *
+ * This is most useful to prevent try...catch hell.
+ *
+ * ## Example:
+ *
+ * ```ts
+ * const maybeWhatIWant = await syncMapErr(
+ *   () => chai.assert.deepEqual({}, {})
+ * );
+ *
+ * if (maybeWhatIWant.error !== null) {
+ *   void reply.code(500);
+ *   return reply.send('Unable to generate exam, due to: ' +
+ *     JSON.stringify(maybeWhatIWant.error)
+ *   );
+ * }
+ *
+ * const whatIWant = maybeWhatIWant.data;
+ * ```
+ *
  * @param fn - any function to be tried.
  * @returns the data or the caught error
  */

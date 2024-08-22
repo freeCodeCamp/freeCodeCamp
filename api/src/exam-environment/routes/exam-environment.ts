@@ -7,6 +7,7 @@ import * as schemas from '../schemas';
 import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET } from '../../utils/env';
 import {
+  checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
   createUserExam,
   generateExam,
@@ -289,11 +290,14 @@ async function postExamGenerateHandler(
 }
 
 /**
- * Handles the submission of an exam attempt.
+ * Handles updates to an exam attempt.
  *
  * Requires token to be validated.
  *
  * TODO: Consider validating req.user.id == attempt.user_id?
+ *
+ * NOTE: Currently, questions can be _unanswered_ - taken away from a previous attempt submission.
+ * Theorectically, this is fine. Practically, it is unclear when that would be useful.
  */
 async function postExamAttemptHandler(
   this: FastifyInstance,
@@ -410,6 +414,12 @@ async function postExamAttemptHandler(
     validateAttempt(generatedExam, latestAttempt)
   );
 
+  // If all questions have been answered, add submission time
+  const allQuestionsAnswered = checkAttemptAgainstGeneratedExam(
+    attempt,
+    generatedExam
+  );
+
   // Update attempt in database
   const maybeUpdatedAttempt = await mapErr(
     this.prisma.envExamAttempt.update({
@@ -417,7 +427,7 @@ async function postExamAttemptHandler(
         id: latestAttempt.id
       },
       data: {
-        submissionTimeInMS: Date.now(),
+        submissionTimeInMS: allQuestionsAnswered ? Date.now() : undefined,
         questionSets: attempt.questionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
         needsRetake: maybeValidExamAttempt.error ? true : false
@@ -425,6 +435,7 @@ async function postExamAttemptHandler(
     })
   );
 
+  // TODO: Discuss what to do on error here?
   if (maybeValidExamAttempt.error !== null) {
     void reply.code(400);
     return reply.send(
