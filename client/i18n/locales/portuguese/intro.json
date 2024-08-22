@@ -1779,10 +1779,10 @@
         "intro": []
       },
       "workshop-hotel-feedback-form": {
-        "title": "Build a Hotel Feedback Form",
+        "title": "Crie um formulário de feedback de hotéis",
         "intro": [
-          "In this workshop, you will learn how to work with forms by building a Hotel Feedback Form.",
-          "You will learn how to work with labels, inputs, fieldsets, legends, textareas and buttons."
+          "Neste workshop, você aprenderá a trabalhar com formulários criando um formulário de feedback de hotéis.",
+          "Você aprenderá a trabalhar com os elementos label, input, fieldset, legend, textarea e button."
         ]
       },
       "lab-survey-form": {
