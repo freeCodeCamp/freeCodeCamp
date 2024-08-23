@@ -1772,7 +1772,12 @@
       "hqia": { "title": "35", "intro": [] },
       "dxpc": { "title": "36", "intro": [] },
       "liti": { "title": "37", "intro": [] },
-      "xjin": { "title": "38", "intro": [] },
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS."
+        ]
+      },
       "gnuk": { "title": "39", "intro": [] },
       "zlfj": { "title": "40", "intro": [] },
       "ioqd": { "title": "41", "intro": [] },
