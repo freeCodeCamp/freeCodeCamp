@@ -1,6 +1,8 @@
 import {
   EnvConfig,
   EnvExam,
+  EnvExamAttempt,
+  EnvGeneratedExam,
   EnvQuestionSet,
   EnvQuestionType
 } from '@prisma/client';
@@ -188,6 +190,102 @@ export const questionSets: EnvQuestionSet[] = [
     ]
   }
 ];
+
+export const generatedExam: EnvGeneratedExam = {
+  examId,
+  id: oid(),
+  questionSets: [
+    {
+      id: questionSets[0]!.id,
+      questions: [
+        {
+          id: questionSets[0]!.questions[0]!.id,
+          answers: [
+            questionSets[0]!.questions[0]!.answers[0]!.id,
+            questionSets[0]!.questions[0]!.answers[1]!.id
+          ]
+        }
+      ]
+    },
+    {
+      id: questionSets[1]!.id,
+      questions: [
+        {
+          id: questionSets[1]!.questions[0]!.id,
+          answers: [
+            questionSets[1]!.questions[0]!.answers[0]!.id,
+            questionSets[1]!.questions[0]!.answers[1]!.id,
+            questionSets[1]!.questions[0]!.answers[2]!.id
+          ]
+        }
+      ]
+    },
+    {
+      id: questionSets[2]!.id,
+      questions: [
+        {
+          id: questionSets[2]!.questions[0]!.id,
+          answers: [
+            questionSets[2]!.questions[0]!.answers[0]!.id,
+            questionSets[2]!.questions[0]!.answers[1]!.id,
+            questionSets[2]!.questions[0]!.answers[2]!.id
+          ]
+        },
+        {
+          id: questionSets[2]!.questions[1]!.id,
+          answers: [
+            questionSets[2]!.questions[1]!.answers[0]!.id,
+            questionSets[2]!.questions[1]!.answers[1]!.id,
+            questionSets[2]!.questions[1]!.answers[2]!.id
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+export const examAttempt: EnvExamAttempt = {
+  examId,
+  generatedExamId: generatedExam.id,
+  id: oid(),
+  needsRetake: false,
+  questionSets: [
+    {
+      id: generatedExam.questionSets[0]!.id,
+      questions: [
+        {
+          id: generatedExam.questionSets[0]!.questions[0]!.id,
+          answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!]
+        }
+      ]
+    },
+    {
+      id: generatedExam.questionSets[1]!.id,
+      questions: [
+        {
+          id: generatedExam.questionSets[1]!.questions[0]!.id,
+          answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!]
+        }
+      ]
+    },
+    {
+      id: generatedExam.questionSets[2]!.id,
+      questions: [
+        {
+          id: generatedExam.questionSets[2]!.questions[0]!.id,
+          answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!]
+        },
+        {
+          id: generatedExam.questionSets[2]!.questions[1]!.id,
+          answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!]
+        }
+      ]
+    }
+  ],
+  startTimeInMS: Date.now(),
+  userId: oid(),
+  submissionTimeInMS: null
+};
 
 export const exam: EnvExam = {
   id: examId,

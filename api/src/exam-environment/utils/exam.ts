@@ -9,7 +9,6 @@ import {
   EnvQuestionSet,
   user
 } from '@prisma/client';
-import { assert } from 'chai';
 
 /**
  * Checks if all exam prerequisites have been met by the user.
@@ -21,209 +20,9 @@ export function checkPrerequisites(_user: user, _prerequisites: unknown) {
 }
 
 /**
- * Generates an exam for the user, based on the exam configuration.
- *
- * TODO: Tag config can be sorted by least number of questions available to satisfy tag set.
- */
-// export function generateExamOld(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
-//   // `exam` is shallow cloned to prevent mutation.
-//   const examCopy = { ...exam };
-//   type SetOfQuestionSet = Set<EnvExam['questionSets'][number]>;
-//   const setOfQuestionSets: SetOfQuestionSet = new Set();
-
-//   const questionSetsSansDeprecated = examCopy.questionSets.map(qt => {
-//     const questions = qt.questions.filter(q => !q.deprecated);
-//     return {
-//       ...qt,
-//       questions
-//     };
-//   });
-//   const randomizedQuestionSets = shuffleArray(questionSetsSansDeprecated);
-
-//   // Sort tag config by number of tags in descending order.
-//   const sortedTags = examCopy.config.tags.sort(
-//     (a, b) => b.group.length - a.group.length
-//   );
-
-//   for (const tag of sortedTags) {
-//     // Check if tag is partially fulfilled by existing questions in set.
-//     // - If tag is subset of existing questions tag set, only add more questions if needed.
-//     let numberOfQuestionsNeeded = tag.numberOfQuestions;
-//     for (const qt of setOfQuestionSets) {
-//       const questionSetTagCoverage = qt.questions.reduce(
-//         (acc, q) => acc.concat(q.tags),
-//         [] as string[]
-//       );
-//       if (tag.group.every(t => questionSetTagCoverage.some(qt => qt === t))) {
-//         numberOfQuestionsNeeded -= 1;
-//       }
-//       if (numberOfQuestionsNeeded === 0) {
-//         break;
-//       }
-//     }
-//     // Push number_of_questions random questions.
-//     for (let i = 0; i < numberOfQuestionsNeeded; i++) {
-//       // Find question with at least all tags in the set.
-//       const questionTypeWithFulfillingTags = randomizedQuestionSets.splice(
-//         randomizedQuestionSets.findIndex(qt =>
-//           qt.questions.some(q =>
-//             tag.group.every(t => q.tags.some(qt => qt === t))
-//           )
-//         ),
-//         1
-//       )[0];
-
-//       if (!questionTypeWithFulfillingTags) {
-//         throw new Error(
-//           `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for tag ${tag.group.toString()}.`
-//         );
-//       }
-
-//       setOfQuestionSets.add(questionTypeWithFulfillingTags);
-//     }
-//   }
-
-//   // Convert question set config by type: [[all question sets of type], [another type], ...]
-//   const typeConvertedQuestionSetsConfig = examCopy.config.questionSets.reduce(
-//     (acc, curr) => {
-//       // If type is already in accumulator, add to it.
-//       const typeIndex = acc.findIndex(a => a[0]?.type === curr.type);
-//       acc[typeIndex]?.push(curr) ?? acc.push([curr]);
-//       return acc;
-//     },
-//     [] as unknown as [EnvConfig['questionSets']]
-//   );
-
-//   // Heuristic (in order):
-//   // - The higher the number of correct answers, the more difficult to fulfill.
-//   // - The higher the number of incorrect answers, the more difficult to fulfill.
-//   // - The higher the number of questions, the more difficult to fulfill.
-//   typeConvertedQuestionSetsConfig.forEach(qsc => {
-//     qsc.sort((a, b) => {
-//       const aDifficulty =
-//         a.numberOfCorrectAnswers * 0.6 +
-//         a.numberOfIncorrectAnswers * 0.3 +
-//         a.numberOfQuestions * 0.1;
-//       const bDifficulty =
-//         b.numberOfCorrectAnswers * 0.6 +
-//         b.numberOfIncorrectAnswers * 0.3 +
-//         b.numberOfQuestions * 0.1;
-
-//       return aDifficulty < bDifficulty ? 1 : -1;
-//     });
-//   });
-
-//   const sortedQuestionSetConfig = typeConvertedQuestionSetsConfig.flat();
-
-//   // Ensure question_type config is fulfilled.
-//   const tempSetOfQuestionSets: SetOfQuestionSet = new Set();
-//   for (const questionSetConfig of sortedQuestionSetConfig) {
-//     // Determine how many questions of type are already fulfilled.
-//     let numberOfConfigSetNeeded = questionSetConfig.numberOfSet;
-//     for (const qs of setOfQuestionSets) {
-//       const numberOfQuestions = qs.questions.length;
-//       const numberOfCorrectAnswers = qs.questions.reduce(
-//         (acc, q) => acc + q.answers.filter(a => a.isCorrect).length,
-//         0
-//       );
-//       const numberOfIncorrectAnswers = qs.questions.reduce(
-//         (acc, q) => acc + q.answers.filter(a => !a.isCorrect).length,
-//         0
-//       );
-
-//       if (
-//         qs.type === questionSetConfig.type &&
-//         numberOfQuestions >= questionSetConfig.numberOfQuestions &&
-//         numberOfCorrectAnswers >= questionSetConfig.numberOfCorrectAnswers &&
-//         numberOfIncorrectAnswers >= questionSetConfig.numberOfIncorrectAnswers
-//       ) {
-//         numberOfConfigSetNeeded -= 1;
-//         tempSetOfQuestionSets.add(qs);
-//         // Remove question from set as it is being used to "cover" a question set.
-//         assert.isTrue(setOfQuestionSets.delete(qs));
-//       }
-//       if (numberOfConfigSetNeeded === 0) {
-//         break;
-//       }
-//     }
-
-//     for (let i = 0; i < numberOfConfigSetNeeded; i++) {
-//       const questionSet = findQuestionSetFullfillingQuestionSetConfig(
-//         randomizedQuestionSets,
-//         questionSetConfig
-//       );
-
-//       if (!questionSet) {
-//         throw new Error(
-//           `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`
-//         );
-//       }
-
-//       setOfQuestionSets.add(questionSet);
-//     }
-//   }
-
-//   // Add all question sets back to original set:
-//   for (const qt of tempSetOfQuestionSets) {
-//     setOfQuestionSets.add(qt);
-//   }
-
-//   const finalQuestionSets = [];
-
-//   for (const questionSetConfig of sortedQuestionSetConfig) {
-//     const questionTypes = Array.from(setOfQuestionSets).filter(
-//       qt => qt.type === questionSetConfig.type
-//     );
-
-//     for (const qt of questionTypes) {
-//       // Splice question type from set to prevent re-use
-//       if (!setOfQuestionSets.delete(qt)) {
-//         throw new Error(
-//           `Unreachable. ${qt.id} should be in set. ${JSON.stringify(Array.from(setOfQuestionSets.values()).map(({ id }) => id))}.`
-//         );
-//       }
-//       const questions = qt.questions;
-//       const randomizedQuestions = shuffleArray(questions);
-//       qt.questions = randomizedQuestions.splice(
-//         0,
-//         questionSetConfig.numberOfQuestions
-//       );
-//       qt.questions = qt.questions.map(q => {
-//         const answers = getRandomAnswers(q, questionSetConfig);
-//         return {
-//           ...q,
-//           answers
-//         };
-//       });
-//       finalQuestionSets.push(qt);
-//     }
-//   }
-
-//   const questionSets = finalQuestionSets.map(qt => {
-//     const questions = qt.questions.map(q => {
-//       const answers = q.answers.map(a => a.id);
-//       return {
-//         id: q.id,
-//         answers
-//       };
-//     });
-
-//     return {
-//       id: qt.id,
-//       questions
-//     };
-//   });
-
-//   return {
-//     examId: examCopy.id,
-//     questionSets
-//   };
-// }
-
-/**
  * Gets random answers for a question.
  */
-export function getRandomAnswers(
+function getRandomAnswers(
   question: EnvMultipleChoiceQuestion,
   questionSetConfig: EnvConfig['questionSets'][number]
 ): EnvMultipleChoiceQuestion['answers'] {
@@ -369,9 +168,6 @@ export function validateAttempt(
   generatedExam: EnvGeneratedExam,
   attempt: Pick<EnvExamAttempt, 'questionSets'>
 ) {
-  // TODO: Evaluating if this works instead of custom logic below
-  assert.deepInclude(generatedExam, attempt);
-
   for (const attemptQuestionSet of attempt.questionSets) {
     const generatedQuestionSet = generatedExam.questionSets.find(
       qt => qt.id === attemptQuestionSet.id
@@ -411,6 +207,8 @@ export function validateAttempt(
 /**
  * Checks all question sets and questions in the generated exam are in the attempt.
  *
+ * TODO: Consider throwing with specific issue.
+ *
  * @param attempt An exam attempt.
  * @param generatedExam The corresponding generated exam.
  * @returns Whether or not the attempt can be considered finished.
@@ -440,6 +238,14 @@ export function checkAttemptAgainstGeneratedExam(
       if (!atLeastOneAnswer) {
         return false;
       }
+
+      // All answers in attempt must be in generated exam
+      const allAnswersInGeneratedExam = attemptQuestion.answers.every(a =>
+        generatedQuestion.answers.includes(a)
+      );
+      if (!allAnswersInGeneratedExam) {
+        return false;
+      }
     }
   }
 
@@ -450,7 +256,7 @@ export function checkAttemptAgainstGeneratedExam(
  * Generates an exam for the user, based on the exam configuration.
  */
 export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
-  const examCopy = { ...exam };
+  const examCopy = JSON.parse(JSON.stringify(exam)) as EnvExam;
 
   const shuffledQuestionSets = shuffleArray(examCopy.questionSets).map(qs => {
     const shuffledQuestions = shuffleArray(
@@ -501,43 +307,6 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
 
   const sortedQuestionSetsConfig = typeConvertedQuestionSetsConfig.flat();
 
-  // const questionSetsConfigNotYetUsed = sortedQuestionSetConfig.map(qsc => {
-  //   const questionSetsThatCouldFulfill = shuffledQuestionSets.reduce(
-  //     (acc, curr) => {
-  //       const numberOfQuestions = curr.questions.length;
-  //       const numberOfCorrectAnswers = curr.questions.reduce(
-  //         (acc, q) => acc + q.answers.filter(a => a.isCorrect).length,
-  //         0
-  //       );
-  //       const numberOfIncorrectAnswers = curr.questions.reduce(
-  //         (acc, q) => acc + q.answers.filter(a => !a.isCorrect).length,
-  //         0
-  //       );
-
-  //       if (
-  //         curr.type === qsc.type &&
-  //         numberOfQuestions >= qsc.numberOfQuestions &&
-  //         numberOfCorrectAnswers >= qsc.numberOfCorrectAnswers &&
-  //         numberOfIncorrectAnswers >= qsc.numberOfIncorrectAnswers
-  //       ) {
-  //         return acc.concat(curr);
-  //       }
-
-  //       return acc;
-  //     },
-  //     [] as EnvQuestionSet[]
-  //   );
-
-  //   const questionSetConfigWithFullfillingQuestions = {
-  //     ...qsc,
-  //     questionSetsThatCouldFulfill
-  //   };
-
-  //   return questionSetConfigWithFullfillingQuestions;
-  // });
-
-  // console.log(questionSetsConfigNotYetUsed);
-
   // Move all questions from set that are used to fulfill tag config.
   const questionSetsConfigWithQuestions = sortedQuestionSetsConfig.map(qsc => {
     return {
@@ -552,17 +321,6 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
   );
 
   for (const questionSetConfig of questionSetsConfigWithQuestions) {
-    // if (
-    //   questionSetConfig.numberOfSet === questionSetConfig.questionSets.length &&
-    //   questionSetConfig.numberOfQuestions ===
-    //     questionSetConfig.questionSets.reduce(
-    //       (acc, curr) => acc + curr.questions.length,
-    //       0
-    //     )
-    // ) {
-    //   continue;
-    // }
-
     for (const tagConfig of sortedTagConfig) {
       for (const questionSet of shuffledQuestionSets.filter(
         sqs => sqs.type === questionSetConfig.type

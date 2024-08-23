@@ -1,18 +1,55 @@
-import { exam } from '../../../__mocks__/env-exam';
-import { generateExam } from './exam';
+import { EnvExamAttempt } from '@prisma/client';
+import { exam, examAttempt, generatedExam } from '../../../__mocks__/env-exam';
+import {
+  checkAttemptAgainstGeneratedExam,
+  constructUserExam,
+  generateExam,
+  validateAttempt
+} from './exam';
 
 describe('Exam Environment', () => {
-  xdescribe('checkAttemptAgainstGeneratedExam()', () => {});
+  describe('checkAttemptAgainstGeneratedExam()', () => {
+    it('should return true if all questions are answered', () => {
+      expect(checkAttemptAgainstGeneratedExam(examAttempt, generatedExam)).toBe(
+        true
+      );
+    });
+
+    it('should return false if one or more questions are not answered', () => {
+      const badExamAttempt = JSON.parse(
+        JSON.stringify(examAttempt)
+      ) as EnvExamAttempt;
+
+      badExamAttempt.questionSets[0]!.questions[0]!.answers = [];
+      expect(
+        checkAttemptAgainstGeneratedExam(badExamAttempt, generatedExam)
+      ).toBe(false);
+
+      badExamAttempt.questionSets[0]!.questions[0]!.answers = ['bad-answer'];
+      expect(
+        checkAttemptAgainstGeneratedExam(badExamAttempt, generatedExam)
+      ).toBe(false);
+
+      badExamAttempt.questionSets[0]!.questions = [];
+      expect(
+        checkAttemptAgainstGeneratedExam(badExamAttempt, generatedExam)
+      ).toBe(false);
+    });
+  });
   xdescribe('checkPrequisites()', () => {});
-  xdescribe('constructUserExam()', () => {});
+  describe('constructUserExam()', () => {
+    it('should not provide the answers', () => {
+      const userExam = constructUserExam(generatedExam, exam);
+      expect(userExam).not.toHaveProperty('answers.isCorrect');
+    });
+  });
 
   describe('generateExam()', () => {
     it('should generate a randomized exam without throwing', () => {
-      const randomizedExam = generateExam(exam);
-      console.log(JSON.stringify(exam, null, 2));
+      const _randomizedExam = generateExam(exam);
     });
 
-    xit('should generate an exam matching with the correct number of question sets', () => {
+    it('should generate an exam matching with the correct number of question sets', () => {
       const generatedExam = generateExam(exam);
 
       // { [type]: numberOfType }
@@ -46,7 +83,7 @@ describe('Exam Environment', () => {
       expect(generatedNumberOfSets).toEqual(configNumberOfSets);
     });
 
-    xit('should not generate any deprecated questions', () => {
+    it('should not generate any deprecated questions', () => {
       const generatedExam = generateExam(exam);
 
       const allQuestions = exam.questionSets.flatMap(qs => qs.questions);
@@ -65,6 +102,17 @@ describe('Exam Environment', () => {
     });
   });
 
-  xdescribe('getRandomAnswers()', () => {});
-  xdescribe('validateAttempt()', () => {});
+  describe('validateAttempt()', () => {
+    it('should validate a correct attempt', () => {
+      validateAttempt(generatedExam, examAttempt);
+    });
+
+    it('should invalidate an incorrect attempt', () => {
+      const badExamAttempt = JSON.parse(
+        JSON.stringify(examAttempt)
+      ) as EnvExamAttempt;
+      badExamAttempt.questionSets[0]!.questions[0]!.answers = ['bad-answer'];
+      expect(() => validateAttempt(generatedExam, badExamAttempt)).toThrow();
+    });
+  });
 });
