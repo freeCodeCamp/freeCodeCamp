@@ -14,70 +14,30 @@ Paragraph 0
 code example 0
 ```
 
-# --hints--
+## --text--
 
-First hint
-
-```js
-// test code
-```
-
-Second hint with <code>code</code>
-
-```js
-// more test code
-```
-
-Third _hint_ with <code>code</code> and `inline code`
-
-```js
-// more test code
-if(let x of xs) {
-  console.log(x);
-}
-```
-
-# --seed--
-
-## --seed-contents--
-
-```html
-<html>
-  <body></body>
-</html>
-```
-
-![key-for-css]()
-
-```css
-body {
-  background: green;
-}
-```
-
-![key-for-js]()
+Question line 1
 
 ```js
 var x = 'y';
 ```
 
-# --solutions--
+# --questions--
 
-![html-key]()
+## --answers--
 
-```html
-<html>
-  <body></body>
-</html>
-```
+Some inline `code`
 
-```css
-body {
-  background: white;
-}
-```
+---
 
-```js
-var x = 'y';
-``;
-```
+Some _italics_
+
+A second answer paragraph.
+
+---
+
+<code> code in </code> code tags
+
+## --video-solution--
+
+3
