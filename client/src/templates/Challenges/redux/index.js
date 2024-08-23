@@ -84,7 +84,7 @@ export const reducer = handleActions(
 
       if (Object.keys(visibleEditors).length === 0) {
         visibleEditors = { [getTargetEditor(payload)]: true };
-      };
+      }
 
       return {
         ...state,
