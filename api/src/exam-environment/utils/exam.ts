@@ -82,30 +82,77 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
     }
   }
 
+  // Convert question set config by type: [[all question sets of type], [another type], ...]
+  const typeConvertedQuestionSetsConfig = examCopy.config.questionSets.reduce(
+    (acc, curr) => {
+      // If type is already in accumulator, add to it.
+      const typeIndex = acc.findIndex(a => a[0]?.type === curr.type);
+      acc[typeIndex]?.push(curr) ?? acc.push([curr]);
+      return acc;
+    },
+    [] as unknown as [EnvConfig['questionSets']]
+  );
+
+  // Heuristic (in order):
+  // - The higher the number of correct answers, the more difficult to fulfill.
+  // - The higher the number of incorrect answers, the more difficult to fulfill.
+  // - The higher the number of questions, the more difficult to fulfill.
+  typeConvertedQuestionSetsConfig.forEach(qsc => {
+    qsc.sort((a, b) => {
+      const aDifficulty =
+        a.numberOfCorrectAnswers * 0.6 +
+        a.numberOfIncorrectAnswers * 0.3 +
+        a.numberOfQuestions * 0.1;
+      const bDifficulty =
+        b.numberOfCorrectAnswers * 0.6 +
+        b.numberOfIncorrectAnswers * 0.3 +
+        b.numberOfQuestions * 0.1;
+
+      return aDifficulty < bDifficulty ? 1 : -1;
+    });
+  });
+
+  const sortedQuestionSetConfig = typeConvertedQuestionSetsConfig.flat();
+
   // Ensure question_type config is fulfilled.
-  for (const questionTypeConfig of examCopy.config.questionSets) {
+  for (const questionSetConfig of sortedQuestionSetConfig) {
     // Determine how many questions of type are already fulfilled.
-    let numberOfTypeNeeded = questionTypeConfig.numberOfSet;
-    for (const qt of setOfQuestionSets) {
-      if (qt.type === questionTypeConfig.type) {
-        numberOfTypeNeeded -= 1;
+    let numberOfConfigSetNeeded = questionSetConfig.numberOfSet;
+    for (const qs of setOfQuestionSets) {
+      const numberOfQuestions = qs.questions.length;
+      const numberOfCorrectAnswers = qs.questions.reduce(
+        (acc, q) => acc + q.answers.filter(a => a.isCorrect).length,
+        0
+      );
+      const numberOfIncorrectAnswers = qs.questions.reduce(
+        (acc, q) => acc + q.answers.filter(a => !a.isCorrect).length,
+        0
+      );
+
+      if (
+        qs.type === questionSetConfig.type &&
+        numberOfQuestions >= questionSetConfig.numberOfQuestions &&
+        numberOfCorrectAnswers >= questionSetConfig.numberOfCorrectAnswers &&
+        numberOfIncorrectAnswers >= questionSetConfig.numberOfIncorrectAnswers
+      ) {
+        numberOfConfigSetNeeded -= 1;
       }
-      if (numberOfTypeNeeded === 0) {
+      if (numberOfConfigSetNeeded === 0) {
         break;
       }
     }
 
-    for (let i = 0; i < numberOfTypeNeeded; i++) {
+    for (let i = 0; i < numberOfConfigSetNeeded; i++) {
       const questionSet = randomizedQuestionSets.splice(
         randomizedQuestionSets.findIndex(
-          qt => qt.type === questionTypeConfig.type
+          qt => qt.type === questionSetConfig.type
         ),
         1
       )[0];
 
       if (!questionSet) {
         throw new Error(
-          `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionTypeConfig.type}.`
+          `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`
         );
       }
 
@@ -234,7 +281,7 @@ export type UserExam = Omit<EnvExam, 'questionSets' | 'config' | 'id'> & {
 /**
  * Takes the generated exam and the original exam, and creates the user-facing exam.
  */
-export function createUserExam(
+export function constructUserExam(
   generatedExam: EnvGeneratedExam,
   exam: EnvExam
 ): UserExam {

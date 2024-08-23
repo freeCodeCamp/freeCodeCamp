@@ -9,7 +9,7 @@ import { JWT_SECRET } from '../../utils/env';
 import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
-  createUserExam,
+  constructUserExam,
   generateExam,
   validateAttempt
 } from '../utils/exam';
@@ -30,8 +30,20 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
       },
       postExamGenerateHandler
     );
-    fastify.post('/exam-environment/exam/attempt', {}, postExamAttemptHandler);
-    fastify.post('/exam-environment/screenshot', {}, postScreenshotHandler);
+    fastify.post(
+      '/exam-environment/exam/attempt',
+      {
+        schema: schemas.examEnvironmentPostExamAttempt
+      },
+      postExamAttemptHandler
+    );
+    fastify.post(
+      '/exam-environment/screenshot',
+      {
+        schema: schemas.examEnvironmentPostScreenshot
+      },
+      postScreenshotHandler
+    );
     done();
   };
 
@@ -204,7 +216,7 @@ async function postExamGenerateHandler(
         );
       }
 
-      const userExam = createUserExam(generatedExam, exam);
+      const userExam = constructUserExam(generatedExam, exam);
 
       return reply.send({
         data: {
@@ -259,7 +271,9 @@ async function postExamGenerateHandler(
   }
   // NOTE: Anything that goes wrong after this point needs to unwind the exam attempt.
 
-  const maybeUserExam = syncMapErr(() => createUserExam(generatedExam, exam));
+  const maybeUserExam = syncMapErr(() =>
+    constructUserExam(generatedExam, exam)
+  );
 
   if (maybeUserExam.error !== null) {
     await this.prisma.envExamAttempt.delete({
@@ -294,7 +308,7 @@ async function postExamGenerateHandler(
  *
  * Requires token to be validated.
  *
- * TODO: Consider validating req.user.id == attempt.user_id?
+ * TODO: Consider validating req.user.id == lastAttempt.user_id?
  *
  * NOTE: Currently, questions can be _unanswered_ - taken away from a previous attempt submission.
  * Theorectically, this is fine. Practically, it is unclear when that would be useful.
@@ -336,18 +350,19 @@ async function postExamAttemptHandler(
     latest.startTimeInMS > current.startTimeInMS ? latest : current
   );
 
-  // Ensure attempt is:
-  // - Not already submitted
-  // - Not already past submission time
-
-  if (latestAttempt.submissionTimeInMS !== null) {
-    void reply.code(403);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
-        'Attempt has already been submitted.'
-      )
-    );
-  }
+  // TODO: Currently, submission time is set when all questions have been answered.
+  //       This might not necessarily be fully submitted. So, provided there is time
+  //       left on the clock, the attempt should still be updated, even if the submission
+  //       time is set.
+  //       The submission time just needs to be updated.
+  // if (latestAttempt.submissionTimeInMS !== null) {
+  //   void reply.code(403);
+  //   return reply.send(
+  //     ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+  //       'Attempt has already been submitted.'
+  //     )
+  //   );
+  // }
 
   const maybeExam = await mapErr(
     this.prisma.envExam.findUnique({
@@ -427,9 +442,11 @@ async function postExamAttemptHandler(
         id: latestAttempt.id
       },
       data: {
-        submissionTimeInMS: allQuestionsAnswered ? Date.now() : undefined,
+        // NOTE: submission time is set to null, because it just depends on whether all questions have been answered.
+        submissionTimeInMS: allQuestionsAnswered ? Date.now() : null,
         questionSets: attempt.questionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
+        // TODO: If `needsRetake`, prevent further submissions?
         needsRetake: maybeValidExamAttempt.error ? true : false
       }
     })

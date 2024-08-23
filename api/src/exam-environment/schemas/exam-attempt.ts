@@ -3,7 +3,6 @@ import { STANDARD_ERROR } from '../utils/errors';
 
 export const examEnvironmentPostExamAttempt = {
   body: Type.Object({
-    // TODO: Find a way to use Prisma `NewExamAttempt` type
     attempt: Type.Object({
       examId: Type.String(),
       questionSets: Type.Array(
@@ -19,8 +18,13 @@ export const examEnvironmentPostExamAttempt = {
       )
     })
   }),
+  headers: Type.Object({
+    'exam-environment-authorization-token': Type.String()
+  }),
   response: {
+    200: Type.Undefined(),
     400: STANDARD_ERROR,
+    403: STANDARD_ERROR,
     404: STANDARD_ERROR,
     500: STANDARD_ERROR
   }

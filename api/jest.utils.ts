@@ -3,7 +3,7 @@ import request from 'supertest';
 import { build } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
-import { exam } from './__mocks__/new-exam';
+import { exam } from './__mocks__/env-exam';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 

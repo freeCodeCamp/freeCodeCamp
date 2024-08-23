@@ -277,9 +277,13 @@ type EnvQuestionSetAttempt {
 
 type EnvMultipleChoiceQuestionAttempt {
   /// Foreign key to question
-  id      String   @db.ObjectId
+  id                 String   @db.ObjectId
   /// An array of foreign keys to answers
-  answers String[] @db.ObjectId
+  answers            String[] @db.ObjectId
+  /// Time answers to question were submitted as milliseconds since epoch
+  ///
+  /// If the question is later revisited, this field is updated
+  submissionTimeInMS Int
 }
 
 /// A generated exam for the Exam Environment App

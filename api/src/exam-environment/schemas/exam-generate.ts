@@ -15,8 +15,8 @@ export const examEnvironmentPostExamGenerate = {
         examAttempt: Type.Record(Type.String(), Type.Unknown())
       })
     }),
-    404: STANDARD_ERROR,
     403: STANDARD_ERROR,
+    404: STANDARD_ERROR,
     500: STANDARD_ERROR
   }
 };

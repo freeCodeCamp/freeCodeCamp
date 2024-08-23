@@ -1,4 +1,4 @@
-import { examId } from '../../../__mocks__/new-exam';
+import { examId } from '../../../__mocks__/env-exam';
 import {
   createSuperRequest,
   devLogin,
