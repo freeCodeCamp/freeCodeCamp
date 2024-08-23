@@ -9,7 +9,7 @@ dashedName: task-66
 
 `Physical or behavioral traits` are special things about your body or how you act. It can be your face, fingerprints, or the way you move. Biometrics uses these things to keep things safe.
 
-# --question--
+# --questions--
 
 ## --text--
 

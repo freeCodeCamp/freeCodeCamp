@@ -26,7 +26,7 @@ Strings declared using single quotes and strings declared using double quotes ar
 
 There are many ways to manipulate strings in JavaScript. Go through points 8 through 12 of our <a href="https://www.freecodecamp.org/news/javascript-string-handbook/" target="_blank">JavaScript String Handbook</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

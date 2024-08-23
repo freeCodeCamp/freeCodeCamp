@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: relational-databases-join-operation
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

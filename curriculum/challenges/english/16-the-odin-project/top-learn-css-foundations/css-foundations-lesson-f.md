@@ -22,7 +22,7 @@ A couple of the pros to this method are:
 1. It keeps your HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
 2. You only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
 
-# --question--    
+# --questions--    
 
 ## --text--
 

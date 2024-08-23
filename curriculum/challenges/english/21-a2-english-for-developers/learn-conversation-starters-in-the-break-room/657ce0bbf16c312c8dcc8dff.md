@@ -17,7 +17,7 @@ When `usually` is used with the verb `to be,` it is placed after the verb.
 With other verbs, `usually` comes before the main verb, for example: 
 `He usually works late.`
 
-# --question--
+# --questions--
 
 ## --text--
 

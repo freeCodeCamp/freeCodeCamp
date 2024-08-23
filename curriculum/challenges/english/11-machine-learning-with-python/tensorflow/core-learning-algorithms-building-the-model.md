@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: core-learning-algorithms-building-the-model
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

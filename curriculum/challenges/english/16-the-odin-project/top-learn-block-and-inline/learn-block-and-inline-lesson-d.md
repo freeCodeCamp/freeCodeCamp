@@ -8,7 +8,7 @@ dashedName: learn-block-and-inline-lesson-d
 
 Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a top margin to an `inline` element?
 
-# --question--    
+# --questions--    
 
 ## --text--
 

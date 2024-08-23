@@ -33,7 +33,7 @@ myFunction();
 
 If a same-named variable is declared inside the function then it shadows the outer one.
 
-# --question--
+# --questions--
 
 ## --text--
 

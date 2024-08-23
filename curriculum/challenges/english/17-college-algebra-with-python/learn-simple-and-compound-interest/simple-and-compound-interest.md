@@ -14,7 +14,7 @@ Here is the <a href="https://colab.research.google.com/drive/1IVBaeX84arJXS73raR
 
 Here is an additional <a href="https://colab.research.google.com/drive/1-HWYmzKn6HmEUWMBv7G525CpoQpm8TnN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook that shows you one way to put many of these interest and payment formulas into Python functions.</a> Also you will see an example of using some formulas to output results, notice a trend, and follow up with other formulas to analyze patterns.
 
-# --question--
+# --questions--
 
 ## --text--
 

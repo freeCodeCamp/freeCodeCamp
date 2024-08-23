@@ -8,7 +8,7 @@ dashedName: learn-block-and-inline-lesson-f
 
 The concept of “Normal flow” is implied in the box-model resources, but isn’t laid out very specifically. Read <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow" target="_blank">Normal Flow</a> from MDN to make sure you understand how elements lay themselves out by default.
 
-# --question-- 
+# --questions-- 
 
 ## --text--
 

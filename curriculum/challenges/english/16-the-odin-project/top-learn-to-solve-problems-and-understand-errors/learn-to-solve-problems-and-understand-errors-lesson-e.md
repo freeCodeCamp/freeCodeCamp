@@ -30,7 +30,7 @@ This allows you to easily navigate to the problematic line in your code. Here, t
 
 Sometimes your browser’s console will also display the column (or character) in the line at which the error is occurring. In our example, this would be at `script.js:4:13`.
 
-# --question--
+# --questions--
 
 ## --text--
 

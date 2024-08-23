@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 Complete the <a href="https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/" target="_blank" rel="noreferrer">Implement Exception Handling in C# Console Applications</a> module on Microsoft Learn. Then, answer the question below.
 
-# --question--
+# --questions--
 
 ## --text--
 

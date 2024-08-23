@@ -25,7 +25,7 @@ const add = (a, b) => a + b;
 
 In the example above, the arrow function `add` takes two parameters `a` and `b` and returns their sum. The `return` keyword and curly braces `{}` are omitted, and the result of the addition operation is implicitly returned.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: core-learning-algorithms-clustering
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

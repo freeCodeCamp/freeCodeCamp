@@ -14,7 +14,7 @@ When an element is selected, the Styles tab will show all the currently applied 
 
 <img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/overwritten-style.png" alt="CSS code snippet in the developer console showing .hero_main-heading with applied margin-bottom: 100px, padding-bottom: 1.875rem, .accent color #ce973e. h1 style rules include font-size, weight, letter-spacing, with its margin-bottom: 2rem overridden.">
 
-# --question--    
+# --questions--    
 
 ## --text--
 
