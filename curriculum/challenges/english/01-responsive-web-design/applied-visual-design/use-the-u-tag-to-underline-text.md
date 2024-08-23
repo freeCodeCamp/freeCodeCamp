@@ -28,7 +28,7 @@ assert.lengthOf(document.querySelectorAll('u'), 1);
 The `u` tag should wrap around the text `Ph.D. students`.
 
 ```js
-assert.equal(document.querySelector('u').textContent , 'Ph.D. students');
+assert.equal(document.querySelector('u')?.textContent , 'Ph.D. students');
 ```
 
 # --seed--

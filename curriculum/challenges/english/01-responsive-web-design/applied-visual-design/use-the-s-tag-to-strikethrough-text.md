@@ -25,14 +25,14 @@ assert.lengthOf(document.querySelectorAll('s'),1);
 A `s` tag should wrap around the `Google` text in the `h4` tag. It should not contain the word `Alphabet`.
 
 ```js
-assert.match( document.querySelector('h4 > s').textContent,/Google/gi);
-assert.notMatch(document.querySelector('h4 > s').textContent,/Alphabet/gi);
+assert.match(document.querySelector('h4 > s')?.textContent, /Google/gi);
+assert.notMatch(document.querySelector('h4 > s')?.textContent, /Alphabet/gi);
 ```
 
 You should include the word `Alphabet` in the `h4` tag, without strikethrough formatting.
 
 ```js
-assert.match(document.querySelector('h4').innerHTML,(/Alphabet/gi));
+assert.match(document.querySelector('h4')?.innerHTML, /Alphabet/gi);
 ```
 
 # --seed--

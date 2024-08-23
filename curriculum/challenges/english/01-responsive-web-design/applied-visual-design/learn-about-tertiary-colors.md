@@ -51,7 +51,7 @@ assert.equal(raspberryStyle.backgroundColor,'rgb(255, 0, 127)');
 All `background-color` values for the color classes should be hex codes and not color names.
 
 ```js
-assert.isFalse(/background-color:\s(orange|cyan|raspberry)/.test(code));
+assert.notMatch(code, /background-color:\s(orange|cyan|raspberry)/);
 ```
 
 # --seed--

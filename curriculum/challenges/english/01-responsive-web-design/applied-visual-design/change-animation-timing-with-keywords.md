@@ -26,7 +26,7 @@ const ballOne =document.querySelector('#ball1');
 const ballOneStyle = window.getComputedStyle(ballOne); 
 
 const ball1Animation = __helpers.removeWhiteSpace(ballOneStyle.animationTimingFunction);
-assert.isOk(ball1Animation == 'linear' || ball1Animation == 'cubic-bezier(0,0,1,1)');
+assert.isTrue(ball1Animation == 'linear' || ball1Animation == 'cubic-bezier(0,0,1,1)');
 ```
 
 The value of the `animation-timing-function` property for the element with the id `ball2` should be `ease-out`.
@@ -36,7 +36,7 @@ const ballTwo = document.querySelector('#ball2');
 const ballTwoStyle = window.getComputedStyle(ballTwo); 
 
 const ball2Animation = __helpers.removeWhiteSpace(ballTwoStyle.animationTimingFunction);
-assert.isOk(ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)');
+assert.isTrue(ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)');
 ```
 
 # --seed--

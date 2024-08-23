@@ -51,7 +51,7 @@ const blueStyle = window.getComputedStyle( blueElement);
 const blueBallAnimation = __helpers.removeWhiteSpace(
   blueStyle.animationTimingFunction
 );
-assert.isOk(
+assert.isTrue(
   blueBallAnimation == 'ease-out' ||
     blueBallAnimation == 'cubic-bezier(0,0,0.58,1)'
 );

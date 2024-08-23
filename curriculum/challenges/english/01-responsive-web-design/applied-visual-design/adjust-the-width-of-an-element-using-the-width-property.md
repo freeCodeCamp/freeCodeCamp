@@ -31,7 +31,7 @@ const fullCardElement = document.querySelector('.fullCard');
 const fullCardStyle = window.getComputedStyle(fullCardElement); 
 assert.match(code,/\.fullCard\s*{[\s\S]+?[^}]}/g); 
 
-assert.match(fullCard[0],/width\s*:\s*245px\s*(;|})/gi);
+assert.match(fullCard?.[0],/width\s*:\s*245px\s*(;|})/gi);
 assert.equal(fullCardStyle.maxWidth ,'none');
 ```
 

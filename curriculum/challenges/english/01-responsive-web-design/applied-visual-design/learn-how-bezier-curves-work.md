@@ -44,7 +44,7 @@ The value of the `animation-timing-function` property for the element with the i
 const ballTwoElement = document.querySelector('#ball2');
 const ballTwoStyle = window.getComputedStyle(ballTwoElement); 
 const ball2Animation = __helpers.removeWhiteSpace(ballTwoStyle.animationTimingFunction);
-assert.isOk(
+assert.isTrue(
   ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)'
 );
 ```

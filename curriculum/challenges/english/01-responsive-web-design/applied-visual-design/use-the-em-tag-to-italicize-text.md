@@ -28,8 +28,8 @@ The `em` tag should wrap around the contents of the `p` tag but not the `p` tag 
 ```js
 const paragraphElement = document.querySelector('p');
 const emElement = document.querySelector('em');
-assert.lengthOf(paragraphElement.children, 1 );
-assert.lengthOf(emElement.children,2);
+assert.lengthOf(paragraphElement?.children, 1);
+assert.lengthOf(emElement?.children, 2);
 ```
 
 # --seed--

@@ -27,14 +27,14 @@ The `strong` tag should be inside the `p` tag.
 
 ```js
 const pargraphElement = document.querySelector('p');
-const pargraphChildren = pargraphElement.querySelectorAll(`:scope ${'strong'}`);
+const pargraphChildren = pargraphElement?.querySelectorAll(`:scope ${'strong'}`);
 assert.lengthOf(pargraphChildren, 1);
 ```
 
 The `strong` tag should wrap around the words `Stanford University`.
 
 ```js
-assert.match(document.querySelector('strong').textContent,/^Stanford University\.?$/gi);
+assert.match(document.querySelector('strong')?.textContent, /^Stanford University\.?$/gi);
 ```
 
 # --seed--
