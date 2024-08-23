@@ -17,6 +17,7 @@ export const incrementSessionCompletedChallenges = () => {
   sessionStorage.setItem(key, challengesCompleted.toString());
 };
 
+// this key stores the last time the progress modal has been shown
 export const setCompletionCountWhenShownProgressModal = () => {
   const key = 'completion-count-progress-modal';
   const challengesCompleted = getSessionCompletedChallengesLength();
