@@ -9,17 +9,37 @@ const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 function plugin() {
   return transformer;
   function transformer(tree, file) {
-    const questionNodes = getAllBetween(tree, '--question--');
-    if (questionNodes.length > 0) {
-      const questionTree = root(questionNodes);
+    const allQuestionNodes = getAllBetween(tree, '--questions--');
 
-      const textNodes = getAllBetween(questionTree, '--text--');
-      const answersNodes = getAllBetween(questionTree, '--answers--');
-      const solutionNodes = getAllBetween(questionTree, '--video-solution--');
+    if (allQuestionNodes.length > 0) {
+      const questions = [];
+      const questionTrees = [];
+      let questionTreeNumber = -1;
 
-      const question = getQuestion(textNodes, answersNodes, solutionNodes);
+      allQuestionNodes.forEach(questionNode => {
+        if (
+          questionNode.children &&
+          questionNode.children[0] &&
+          questionNode.children[0].value === '--text--'
+        ) {
+          questionTreeNumber++;
+          questionTrees[questionTreeNumber] = [];
+        }
 
-      file.data.question = question;
+        questionTrees[questionTreeNumber].push(questionNode);
+      });
+
+      questionTrees.forEach(questionNodes => {
+        const questionTree = root(questionNodes);
+
+        const textNodes = getAllBetween(questionTree, '--text--');
+        const answersNodes = getAllBetween(questionTree, '--answers--');
+        const solutionNodes = getAllBetween(questionTree, '--video-solution--');
+
+        questions.push(getQuestion(textNodes, answersNodes, solutionNodes));
+      });
+
+      file.data.questions = questions;
     }
   }
 }
