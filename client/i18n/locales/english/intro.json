@@ -1869,7 +1869,12 @@
       "yqma": { "title": "119", "intro": [] },
       "dorc": { "title": "120", "intro": [] },
       "adzu": { "title": "121", "intro": [] },
-      "cdzo": { "title": "122", "intro": [] },
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
+      },
       "lugl": { "title": "123", "intro": [] },
       "mtcg": { "title": "124", "intro": [] },
       "lvqc": { "title": "125", "intro": [] },
