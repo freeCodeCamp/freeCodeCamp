@@ -237,8 +237,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               orientation='horizontal'
             >
               <ReflexElement
-                flex={codePane.flex}
                 name='codePane'
+                {...(!isMultifileCertProject &&
+                  !projectBasedChallenge && { flex: codePane.flex })}
                 {...reflexProps}
                 {...resizeProps}
               >
