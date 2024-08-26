@@ -1898,6 +1898,11 @@
       "icxa": { "title": "152", "intro": [] },
       "hqba": { "title": "153", "intro": [] },
       "nnqa": { "title": "154", "intro": [] },
+      "cktz": { "title": "155", "intro": [] },
+      "pljo": { "title": "156", "intro": [] },
+      "avln": { "title": "157", "intro": [] },
+      "mexq": { "title": "158", "intro": [] },
+      "ifgn": { "title": "159", "intro": [] },
       "workshop-shopping-list": {
         "title": "Build a Shopping List",
         "intro": [
@@ -1905,11 +1910,6 @@
           "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
-      "pljo": { "title": "156", "intro": [] },
-      "avln": { "title": "157", "intro": [] },
-      "mexq": { "title": "158", "intro": [] },
-      "ifgn": { "title": "159", "intro": [] },
-      "qmdt": { "title": "160", "intro": [] },
       "mokm": { "title": "161", "intro": [] },
       "froz": { "title": "162", "intro": [] },
       "ozth": { "title": "163", "intro": [] },
