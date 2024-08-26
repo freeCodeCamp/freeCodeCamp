@@ -308,14 +308,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               </Col>
 
               {scene && (
-                <>
-                  <Scene
-                    scene={scene}
-                    isPlaying={this.state.isScenePlaying}
-                    setIsPlaying={this.setIsScenePlaying}
-                  />{' '}
-                  <Spacer size='medium' />
-                </>
+                <Scene
+                  scene={scene}
+                  isPlaying={this.state.isScenePlaying}
+                  setIsPlaying={this.setIsScenePlaying}
+                />
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
