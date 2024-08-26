@@ -1865,9 +1865,11 @@
         "title": "37",
         "intro": []
       },
-      "xjin": {
-        "title": "38",
-        "intro": []
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS."
+        ]
       },
       "gnuk": {
         "title": "39",
@@ -2033,9 +2035,11 @@
         "title": "79",
         "intro": []
       },
-      "nbwu": {
-        "title": "80",
-        "intro": []
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "For this lab, you will use flexbox to create a webpage of playing cards."
+        ]
       },
       "kqao": {
         "title": "81",
@@ -2201,9 +2205,11 @@
         "title": "121",
         "intro": []
       },
-      "cdzo": {
-        "title": "122",
-        "intro": []
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
       },
       "lugl": {
         "title": "123",
@@ -2264,9 +2270,12 @@
         "title": "136",
         "intro": []
       },
-      "cygu": {
-        "title": "137",
-        "intro": []
+      "workshop-teacher-chatbot": {
+        "title": "Build a Teacher Chatbot",
+        "intro": [
+          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
+          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+        ]
       },
       "axgb": {
         "title": "138",
@@ -2428,9 +2437,9 @@
         "title": "177",
         "intro": []
       },
-      "gsfr": {
-        "title": "178",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": ["For this lab, you will create a gradebook app."]
       },
       "fbbn": {
         "title": "179",
@@ -2541,9 +2550,9 @@
         "intro": []
       },
       "lab-random-background-color-changer": {
-        "title": "Build a Random Background Color Changer",
+        "title": "Debug a Random Background Color Changer",
         "intro": [
-          "For this lab, you will create a random background color changer."
+          "For this lab, you will debug a random background color changer and fix the errors to make it work properly."
         ]
       },
       "dqth": {

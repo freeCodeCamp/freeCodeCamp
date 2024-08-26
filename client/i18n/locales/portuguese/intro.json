@@ -1867,9 +1867,11 @@
         "title": "37",
         "intro": []
       },
-      "xjin": {
-        "title": "38",
-        "intro": []
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS."
+        ]
       },
       "gnuk": {
         "title": "39",
@@ -2035,9 +2037,11 @@
         "title": "79",
         "intro": []
       },
-      "nbwu": {
-        "title": "80",
-        "intro": []
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "For this lab, you will use flexbox to create a webpage of playing cards."
+        ]
       },
       "kqao": {
         "title": "81",
@@ -2205,9 +2209,11 @@
         "title": "121",
         "intro": []
       },
-      "cdzo": {
-        "title": "122",
-        "intro": []
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
       },
       "lugl": {
         "title": "123",
@@ -2268,9 +2274,12 @@
         "title": "136",
         "intro": []
       },
-      "cygu": {
-        "title": "137",
-        "intro": []
+      "workshop-teacher-chatbot": {
+        "title": "Crie um chatbot professor",
+        "intro": [
+          "Neste workshop, você continuará a aprender mais sobre strings em JavaScript criando um chatbot.",
+          "Você aprenderá a trabalhar com template literals e com o método <code>indexOf</code>."
+        ]
       },
       "axgb": {
         "title": "138",
@@ -2432,9 +2441,11 @@
         "title": "177",
         "intro": []
       },
-      "gsfr": {
-        "title": "178",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Crie uma aplicação de quadro de notas",
+        "intro": [
+          "Neste laboratório, você criará uma aplicação de quadro de notas."
+        ]
       },
       "fbbn": {
         "title": "179",
@@ -2545,9 +2556,9 @@
         "intro": []
       },
       "lab-random-background-color-changer": {
-        "title": "Crie um modificador de cor de fundo aleatório",
+        "title": "Faça a depuração do modificador de cor de fundo aleatório",
         "intro": [
-          "Neste laboratório, você criará um modificador de cores de fundo aleatório."
+          "Para esse laboratório, você fará a depuração de um alterador de cor de fundo aleatório e corrigirá os erros para fazê-lo funcionar corretamente."
         ]
       },
       "dqth": {

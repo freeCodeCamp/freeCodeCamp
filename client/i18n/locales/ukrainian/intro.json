@@ -1857,9 +1857,11 @@
         "title": "37",
         "intro": []
       },
-      "xjin": {
-        "title": "38",
-        "intro": []
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS."
+        ]
       },
       "gnuk": {
         "title": "39",
@@ -2025,9 +2027,11 @@
         "title": "79",
         "intro": []
       },
-      "nbwu": {
-        "title": "80",
-        "intro": []
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "For this lab, you will use flexbox to create a webpage of playing cards."
+        ]
       },
       "kqao": {
         "title": "81",
@@ -2195,9 +2199,11 @@
         "title": "121",
         "intro": []
       },
-      "cdzo": {
-        "title": "122",
-        "intro": []
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
       },
       "lugl": {
         "title": "123",
@@ -2258,9 +2264,12 @@
         "title": "136",
         "intro": []
       },
-      "cygu": {
-        "title": "137",
-        "intro": []
+      "workshop-teacher-chatbot": {
+        "title": "Створіть вчителя-бота",
+        "intro": [
+          "У цьому практичному завданні ви продовжите знайомство з рядками JavaScript, створюючи чат-бот.",
+          "Ви навчитеся працювати з шаблонними літерами та методом <code>indexOf</code>."
+        ]
       },
       "axgb": {
         "title": "138",
@@ -2422,9 +2431,11 @@
         "title": "177",
         "intro": []
       },
-      "gsfr": {
-        "title": "178",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Створіть журнал з оцінками",
+        "intro": [
+          "У цій лабораторній роботі ви створите електронний журнал з оцінками."
+        ]
       },
       "fbbn": {
         "title": "179",
@@ -2535,9 +2546,9 @@
         "intro": []
       },
       "lab-random-background-color-changer": {
-        "title": "Створіть перемикач кольору фону",
+        "title": "Налагодьте перемикач кольору фону",
         "intro": [
-          "У цій лабораторній роботі ви створите перемикач кольору фону."
+          "У цій лабораторній роботі ви налагодите перемикач кольору фону та виправите помилки, щоб він працював правильно."
         ]
       },
       "dqth": {
