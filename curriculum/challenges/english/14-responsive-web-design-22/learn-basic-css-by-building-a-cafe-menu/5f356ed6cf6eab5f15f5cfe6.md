@@ -16,8 +16,7 @@ Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
 Your opening `<div>` tag should have an `id` attribute set to `menu`.
 
 ```js
-const div = $('div')[0];
-assert(div.id === 'menu');
+assert.strictEqual(document.querySelector('div')?.id, 'menu');
 ```
 
 You should have a closing `</div>` tag.
@@ -29,14 +28,13 @@ assert(code.match(/<\/div>/i));
 You should not change your existing `body` element. Make sure you did not delete the closing tag.
 
 ```js
-assert($('body').length === 1);
+assert.lengthOf(document.querySelectorAll('body'), 1);
 ```
 
 Your `div` tag should be nested in the `body`.
 
 ```js
-const div = $('div')[0];
-assert(div.parentElement.tagName === 'BODY');
+assert.equal(document.querySelector('div')?.parentElement?.tagName, 'BODY');
 ```
 
 
