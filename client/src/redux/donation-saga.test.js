@@ -6,7 +6,6 @@ import {
   updateStripeCard
 } from '../utils/ajax';
 import callGA from '../analytics/call-ga';
-import { incrementSessionCompletedChallenges } from '../utils/session-storage';
 import {
   postChargeSaga,
   setDonationCookie,
@@ -93,11 +92,8 @@ const signedOutStoreMock = {
 
 describe('donation-saga', () => {
   it('calls postChargeStrip for Stripe', () => {
-    // The incrementSessionsStorage function has to be called separately because
-    // it is not part of the Redux store.
-
-    incrementSessionCompletedChallenges();
-    incrementSessionCompletedChallenges();
+    // The number of completed challenges per session is stored in the session storage
+    sessionStorage.setItem('session-completed-challenges', '2');
 
     return expectSaga(postChargeSaga, postChargeDataMock)
       .withState(signedInStoreMock)
@@ -161,9 +157,7 @@ describe('donation-saga', () => {
       action: 'Donate Page Paypal Payment Submission',
       isSignedIn: false,
       completed_challenges: 0,
-      completed_challenges_session: parseInt(
-        sessionStorage.getItem('session-completed-challenges')
-      )
+      completed_challenges_session: 0
     };
 
     const signedOutStoreMock = {
