@@ -29,8 +29,8 @@ export const config: EnvConfig = {
       type: EnvQuestionType.MultipleChoice,
       numberOfSet: 1,
       numberOfQuestions: 1,
-      numberOfCorrectAnswers: 1,
-      numberOfIncorrectAnswers: 2
+      numberOfCorrectAnswers: 2,
+      numberOfIncorrectAnswers: 1
     },
     {
       type: EnvQuestionType.Dialogue,
@@ -63,7 +63,7 @@ export const questionSets: EnvQuestionSet[] = [
           {
             id: oid(),
             text: 'Answer 2',
-            isCorrect: false
+            isCorrect: true
           },
           {
             id: oid(),

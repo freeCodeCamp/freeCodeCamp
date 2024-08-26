@@ -7,6 +7,11 @@ import {
   validateAttempt
 } from './exam';
 
+// NOTE: Whilst the tests could be run against a single generation of exam,
+//       it is more useful to run the tests against a new generation each time.
+//       This helps ensure the config/logic is _reasonably_ likely to be able to
+//       generate a valid exam.
+//       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
 describe('Exam Environment', () => {
   describe('checkAttemptAgainstGeneratedExam()', () => {
     it('should return true if all questions are answered', () => {
@@ -99,6 +104,34 @@ describe('Exam Environment', () => {
         });
 
       expect(deprecatedQuestions).toHaveLength(0);
+    });
+
+    it('should not generate an exam with duplicate questions', () => {
+      const generatedExam = generateExam(exam);
+
+      const questionIds = generatedExam.questionSets.flatMap(qs =>
+        qs.questions.map(q => q.id)
+      );
+
+      const duplicateQuestions = questionIds.filter(
+        (id, index) => questionIds.indexOf(id) !== index
+      );
+
+      expect(duplicateQuestions).toHaveLength(0);
+    });
+
+    it('should not generate an exam with duplicate answers', () => {
+      const generatedExam = generateExam(exam);
+
+      const answerIds = generatedExam.questionSets.flatMap(qs =>
+        qs.questions.flatMap(q => q.answers)
+      );
+
+      const duplicateAnswers = answerIds.filter(
+        (id, index) => answerIds.indexOf(id) !== index
+      );
+
+      expect(duplicateAnswers).toHaveLength(0);
     });
   });
 

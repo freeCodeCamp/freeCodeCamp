@@ -286,22 +286,54 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
     [] as unknown as [EnvConfig['questionSets']]
   );
 
-  // Heuristic (in order):
-  // - The higher the number of correct answers, the more difficult to fulfill.
-  // - The higher the number of incorrect answers, the more difficult to fulfill.
-  // - The higher the number of questions, the more difficult to fulfill.
+  // Heuristic:
+  // The lower the number of questions able to fulfill the criteria, the harder the question set.
   typeConvertedQuestionSetsConfig.forEach(qsc => {
     qsc.sort((a, b) => {
-      const aDifficulty =
-        a.numberOfCorrectAnswers * 0.6 +
-        a.numberOfIncorrectAnswers * 0.3 +
-        a.numberOfQuestions * 0.1;
-      const bDifficulty =
-        b.numberOfCorrectAnswers * 0.6 +
-        b.numberOfIncorrectAnswers * 0.3 +
-        b.numberOfQuestions * 0.1;
+      const allQuestionsForAType = shuffledQuestionSets
+        .filter(sqs => sqs.type === a.type)
+        .flatMap(qs => qs.questions);
+      const allQuestionsForBType = shuffledQuestionSets
+        .filter(sqs => sqs.type === b.type)
+        .flatMap(qs => qs.questions);
 
-      return aDifficulty < bDifficulty ? 1 : -1;
+      const aNumberOfQuestionsAbleToFulfillAnswerCriteria =
+        allQuestionsForAType.filter(q => {
+          const numberOfCorrectAnswers = q.answers.filter(
+            a => a.isCorrect
+          ).length;
+          const numberOfIncorrectAnswers = q.answers.filter(
+            a => !a.isCorrect
+          ).length;
+          return (
+            a.numberOfCorrectAnswers <= numberOfCorrectAnswers &&
+            a.numberOfIncorrectAnswers <= numberOfIncorrectAnswers
+          );
+        }).length;
+      const bNumberOfQuestionsAbleToFulfillAnswerCriteria =
+        allQuestionsForBType.filter(q => {
+          const numberOfCorrectAnswers = q.answers.filter(
+            a => a.isCorrect
+          ).length;
+          const numberOfIncorrectAnswers = q.answers.filter(
+            a => !a.isCorrect
+          ).length;
+          return (
+            b.numberOfCorrectAnswers <= numberOfCorrectAnswers &&
+            b.numberOfIncorrectAnswers <= numberOfIncorrectAnswers
+          );
+        }).length;
+
+      const aDifficulty =
+        (aNumberOfQuestionsAbleToFulfillAnswerCriteria /
+          allQuestionsForAType.length) *
+        a.numberOfQuestions;
+      const bDifficulty =
+        (bNumberOfQuestionsAbleToFulfillAnswerCriteria /
+          allQuestionsForBType.length) *
+        b.numberOfQuestions;
+
+      return aDifficulty < bDifficulty ? -1 : 1;
     });
   });
 
