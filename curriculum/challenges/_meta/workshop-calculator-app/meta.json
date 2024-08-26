@@ -1,0 +1,12 @@
+{
+  "name": "Build a Calculator",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-calculator-app",
+  "order": 155,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66cc06012e46aa6bc9b8c001", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

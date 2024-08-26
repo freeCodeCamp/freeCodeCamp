@@ -1919,7 +1919,12 @@
       "icxa": { "title": "152", "intro": [] },
       "hqba": { "title": "153", "intro": [] },
       "nnqa": { "title": "154", "intro": [] },
-      "cktz": { "title": "155", "intro": [] },
+      "workshop-calculator-app": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review working with functions by building a calculator app."
+        ]
+      },
       "pljo": { "title": "156", "intro": [] },
       "avln": { "title": "157", "intro": [] },
       "mexq": { "title": "158", "intro": [] },
