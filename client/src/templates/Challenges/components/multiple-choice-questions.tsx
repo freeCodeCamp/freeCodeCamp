@@ -32,22 +32,31 @@ function MultipleChoiceQuestions({
       <PrismFormatted className={'line-numbers'} text={text} />
       <div className='video-quiz-options'>
         {answers.map(({ answer }, index) => (
-          <label className='video-quiz-option-label' key={index}>
+          <label
+            className='video-quiz-option-label'
+            key={index}
+            htmlFor={`mc-question-${index}`}
+          >
             <input
-              aria-label={t('aria.answer')}
+              name='quiz'
               checked={selectedOption === index}
               className='sr-only'
-              name='quiz'
               onChange={handleOptionChange}
               type='radio'
               value={index}
+              id={`mc-question-${index}`}
             />{' '}
             <span className='video-quiz-input-visible'>
               {selectedOption === index ? (
                 <span className='video-quiz-selected-input' />
               ) : null}
             </span>
-            <PrismFormatted className={'video-quiz-option'} text={answer} />
+            <PrismFormatted
+              className={'video-quiz-option'}
+              text={answer.replace(/^<p>|<\/p>$/g, '')}
+              useSpan
+              noAria
+            />
           </label>
         ))}
       </div>
