@@ -13,7 +13,6 @@ import { Container, Col, Row, Button } from '@freecodecamp/ui';
 import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
-import Loader from '../../../components/helpers/loader';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
@@ -276,25 +275,19 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           <Container>
             <Row>
               {videoId && (
-                <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                <>
                   <Spacer size='medium' />
-                  <div className='video-wrapper'>
-                    {!this.state.videoIsLoaded ? (
-                      <div className='video-placeholder-loader'>
-                        <Loader />
-                      </div>
-                    ) : null}
-                    <VideoPlayer
-                      bilibiliIds={bilibiliIds}
-                      onVideoLoad={this.onVideoLoad}
-                      title={title}
-                      videoId={videoId}
-                      videoIsLoaded={this.state.videoIsLoaded}
-                      videoLocaleIds={videoLocaleIds}
-                    />
-                  </div>
-                </Col>
+                  <VideoPlayer
+                    bilibiliIds={bilibiliIds}
+                    onVideoLoad={this.onVideoLoad}
+                    title={title}
+                    videoId={videoId}
+                    videoIsLoaded={this.state.videoIsLoaded}
+                    videoLocaleIds={videoLocaleIds}
+                  />
+                </>
               )}
+
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
                 <ChallengeTitle

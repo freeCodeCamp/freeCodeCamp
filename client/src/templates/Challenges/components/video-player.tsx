@@ -1,5 +1,8 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+import { Col } from '@freecodecamp/ui';
+
+import Loader from '../../../components/helpers/loader';
 import envData from '../../../../config/env.json';
 import type { BilibiliIds, VideoLocaleIds } from '../../../redux/prop-types';
 
@@ -47,31 +50,39 @@ function VideoPlayer({
   }
 
   return (
-    <>
-      {bilibiliSrc ? (
-        <iframe
-          frameBorder='no'
-          scrolling='no'
-          src={bilibiliSrc}
-          title={title}
-        />
-      ) : (
-        <YouTube
-          className={
-            videoIsLoaded ? 'display-youtube-video' : 'hide-youtube-video'
-          }
-          onReady={onVideoLoad}
-          opts={{
-            playerVars: {
-              rel: 0
-            },
-            width: 'auto',
-            height: 'auto'
-          }}
-          videoId={videoId}
-        />
-      )}
-    </>
+    <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+      <div className='video-wrapper'>
+        {!videoIsLoaded ? (
+          <div className='video-placeholder-loader'>
+            <Loader />
+          </div>
+        ) : null}
+
+        {bilibiliSrc ? (
+          <iframe
+            frameBorder='no'
+            scrolling='no'
+            src={bilibiliSrc}
+            title={title}
+          />
+        ) : (
+          <YouTube
+            className={
+              videoIsLoaded ? 'display-youtube-video' : 'hide-youtube-video'
+            }
+            onReady={onVideoLoad}
+            opts={{
+              playerVars: {
+                rel: 0
+              },
+              width: 'auto',
+              height: 'auto'
+            }}
+            videoId={videoId}
+          />
+        )}
+      </div>
+    </Col>
   );
 }
 
