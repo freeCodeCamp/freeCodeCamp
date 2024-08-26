@@ -1,9 +1,12 @@
 import { EnvExamAttempt } from '@prisma/client';
+import { type Static } from '@fastify/type-provider-typebox';
 import { exam, examAttempt, generatedExam } from '../../../__mocks__/env-exam';
+import * as schemas from '../schemas';
 import {
   checkAttemptAgainstGeneratedExam,
   constructUserExam,
   generateExam,
+  userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
 } from './exam';
 
@@ -15,9 +18,12 @@ import {
 describe('Exam Environment', () => {
   describe('checkAttemptAgainstGeneratedExam()', () => {
     it('should return true if all questions are answered', () => {
-      expect(checkAttemptAgainstGeneratedExam(examAttempt, generatedExam)).toBe(
-        true
-      );
+      expect(
+        checkAttemptAgainstGeneratedExam(
+          examAttempt.questionSets,
+          generatedExam
+        )
+      ).toBe(true);
     });
 
     it('should return false if one or more questions are not answered', () => {
@@ -27,17 +33,26 @@ describe('Exam Environment', () => {
 
       badExamAttempt.questionSets[0]!.questions[0]!.answers = [];
       expect(
-        checkAttemptAgainstGeneratedExam(badExamAttempt, generatedExam)
+        checkAttemptAgainstGeneratedExam(
+          badExamAttempt.questionSets,
+          generatedExam
+        )
       ).toBe(false);
 
       badExamAttempt.questionSets[0]!.questions[0]!.answers = ['bad-answer'];
       expect(
-        checkAttemptAgainstGeneratedExam(badExamAttempt, generatedExam)
+        checkAttemptAgainstGeneratedExam(
+          badExamAttempt.questionSets,
+          generatedExam
+        )
       ).toBe(false);
 
       badExamAttempt.questionSets[0]!.questions = [];
       expect(
-        checkAttemptAgainstGeneratedExam(badExamAttempt, generatedExam)
+        checkAttemptAgainstGeneratedExam(
+          badExamAttempt.questionSets,
+          generatedExam
+        )
       ).toBe(false);
     });
   });
@@ -137,7 +152,7 @@ describe('Exam Environment', () => {
 
   describe('validateAttempt()', () => {
     it('should validate a correct attempt', () => {
-      validateAttempt(generatedExam, examAttempt);
+      validateAttempt(generatedExam, examAttempt.questionSets);
     });
 
     it('should invalidate an incorrect attempt', () => {
@@ -145,7 +160,123 @@ describe('Exam Environment', () => {
         JSON.stringify(examAttempt)
       ) as EnvExamAttempt;
       badExamAttempt.questionSets[0]!.questions[0]!.answers = ['bad-answer'];
-      expect(() => validateAttempt(generatedExam, badExamAttempt)).toThrow();
+      expect(() =>
+        validateAttempt(generatedExam, badExamAttempt.questionSets)
+      ).toThrow();
+    });
+  });
+
+  describe('userAttemptToDatabaseAttemptQuestionSets()', () => {
+    it('should add submission time to all questions', () => {
+      const userAttempt: Static<
+        typeof schemas.examEnvironmentPostExamAttempt.body.properties.attempt
+      > = {
+        examId: '0',
+        questionSets: [
+          {
+            id: '0',
+            questions: [{ id: '00', answers: ['000'] }]
+          },
+          {
+            id: '1',
+            questions: [{ id: '10', answers: ['100'] }]
+          }
+        ]
+      };
+      const latestAttempt = JSON.parse(
+        JSON.stringify(examAttempt)
+      ) as EnvExamAttempt;
+      latestAttempt.questionSets = [];
+
+      const databaseAttemptQuestionSets =
+        userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);
+
+      const allQuestions = databaseAttemptQuestionSets.flatMap(
+        qs => qs.questions
+      );
+      expect(allQuestions.every(q => q.submissionTimeInMS)).toBe(true);
+    });
+
+    it('should not change the submission time of any questions that have not changed', () => {
+      const userAttempt: Static<
+        typeof schemas.examEnvironmentPostExamAttempt.body.properties.attempt
+      > = {
+        examId: '0',
+        questionSets: [
+          {
+            id: '0',
+            questions: [{ id: '00', answers: ['000'] }]
+          },
+          {
+            id: '1',
+            questions: [{ id: '10', answers: ['100'] }]
+          }
+        ]
+      };
+      const latestAttempt = JSON.parse(
+        JSON.stringify(examAttempt)
+      ) as EnvExamAttempt;
+
+      const databaseAttemptQuestionSets =
+        userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);
+
+      const submissionTimes = databaseAttemptQuestionSets.flatMap(qs =>
+        qs.questions.map(q => q.submissionTimeInMS)
+      );
+
+      const sameAttempt = userAttemptToDatabaseAttemptQuestionSets(
+        userAttempt,
+        { ...latestAttempt, questionSets: databaseAttemptQuestionSets }
+      );
+
+      const sameSubmissionTimes = sameAttempt.flatMap(qs =>
+        qs.questions.map(q => q.submissionTimeInMS)
+      );
+
+      expect(submissionTimes).toEqual(sameSubmissionTimes);
+    });
+
+    it('should change all submission times of questions that have changed', async () => {
+      const userAttempt: Static<
+        typeof schemas.examEnvironmentPostExamAttempt.body.properties.attempt
+      > = {
+        examId: '0',
+        questionSets: [
+          {
+            id: '0',
+            questions: [{ id: '00', answers: ['000'] }]
+          },
+          {
+            id: '1',
+            questions: [{ id: '10', answers: ['100'] }]
+          }
+        ]
+      };
+      const latestAttempt = JSON.parse(
+        JSON.stringify(examAttempt)
+      ) as EnvExamAttempt;
+
+      const databaseAttemptQuestionSets =
+        userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);
+      userAttempt.questionSets[0]!.questions[0]!.answers = ['001'];
+
+      // The `userAttemptToDatabaseAttemptQuestionSets` function uses `Date.now()`
+      // to set the submission time, so we need to wait a bit to ensure differences.
+      await new Promise(resolve => setTimeout(resolve, 10));
+
+      const newAttemptQuestionSets = userAttemptToDatabaseAttemptQuestionSets(
+        userAttempt,
+        {
+          ...latestAttempt,
+          questionSets: databaseAttemptQuestionSets
+        }
+      );
+
+      expect(
+        newAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+      ).not.toEqual(
+        databaseAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+      );
     });
   });
 });

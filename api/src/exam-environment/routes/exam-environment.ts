@@ -11,6 +11,7 @@ import {
   checkPrerequisites,
   constructUserExam,
   generateExam,
+  userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
 } from '../utils/exam';
 import { ERRORS } from '../utils/errors';
@@ -424,14 +425,19 @@ async function postExamAttemptHandler(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Generated exam not found.')
     );
   }
+
+  const databaseAttemptQuestionSets = userAttemptToDatabaseAttemptQuestionSets(
+    attempt,
+    latestAttempt
+  );
   // Ensure attempt matches generated exam
   const maybeValidExamAttempt = syncMapErr(() =>
-    validateAttempt(generatedExam, latestAttempt)
+    validateAttempt(generatedExam, databaseAttemptQuestionSets)
   );
 
   // If all questions have been answered, add submission time
   const allQuestionsAnswered = checkAttemptAgainstGeneratedExam(
-    attempt,
+    databaseAttemptQuestionSets,
     generatedExam
   );
 
@@ -444,7 +450,7 @@ async function postExamAttemptHandler(
       data: {
         // NOTE: submission time is set to null, because it just depends on whether all questions have been answered.
         submissionTimeInMS: allQuestionsAnswered ? Date.now() : null,
-        questionSets: attempt.questionSets,
+        questionSets: databaseAttemptQuestionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
         // TODO: If `needsRetake`, prevent further submissions?
         needsRetake: maybeValidExamAttempt.error ? true : false

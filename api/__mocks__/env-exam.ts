@@ -141,8 +141,8 @@ export const questionSets: EnvQuestionSet[] = [
         deprecated: true,
         audio: {
           url: 'https://freecodecamp.org',
-          startTime: 0,
-          endTime: null,
+          startTimeInMS: 0,
+          endTimeInMS: null,
           captions: null
         },
         answers: [
@@ -255,7 +255,8 @@ export const examAttempt: EnvExamAttempt = {
       questions: [
         {
           id: generatedExam.questionSets[0]!.questions[0]!.id,
-          answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!]
+          answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!],
+          submissionTimeInMS: Date.now()
         }
       ]
     },
@@ -264,7 +265,8 @@ export const examAttempt: EnvExamAttempt = {
       questions: [
         {
           id: generatedExam.questionSets[1]!.questions[0]!.id,
-          answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!]
+          answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!],
+          submissionTimeInMS: Date.now()
         }
       ]
     },
@@ -273,11 +275,13 @@ export const examAttempt: EnvExamAttempt = {
       questions: [
         {
           id: generatedExam.questionSets[2]!.questions[0]!.id,
-          answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!]
+          answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!],
+          submissionTimeInMS: Date.now()
         },
         {
           id: generatedExam.questionSets[2]!.questions[1]!.id,
-          answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!]
+          answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!],
+          submissionTimeInMS: Date.now()
         }
       ]
     }

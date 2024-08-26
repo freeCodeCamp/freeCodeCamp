@@ -7,8 +7,11 @@ import {
   EnvGeneratedExam,
   EnvMultipleChoiceQuestion,
   EnvQuestionSet,
+  EnvQuestionSetAttempt,
   user
 } from '@prisma/client';
+import { type Static } from '@fastify/type-provider-typebox';
+import * as schemas from '../schemas';
 
 /**
  * Checks if all exam prerequisites have been met by the user.
@@ -166,9 +169,9 @@ export function constructUserExam(
  */
 export function validateAttempt(
   generatedExam: EnvGeneratedExam,
-  attempt: Pick<EnvExamAttempt, 'questionSets'>
+  questionSets: EnvExamAttempt['questionSets']
 ) {
-  for (const attemptQuestionSet of attempt.questionSets) {
+  for (const attemptQuestionSet of questionSets) {
     const generatedQuestionSet = generatedExam.questionSets.find(
       qt => qt.id === attemptQuestionSet.id
     );
@@ -209,17 +212,17 @@ export function validateAttempt(
  *
  * TODO: Consider throwing with specific issue.
  *
- * @param attempt An exam attempt.
+ * @param questionSets An exam attempt.
  * @param generatedExam The corresponding generated exam.
  * @returns Whether or not the attempt can be considered finished.
  */
 export function checkAttemptAgainstGeneratedExam(
-  attempt: Pick<EnvExamAttempt, 'questionSets'>,
+  questionSets: EnvQuestionSetAttempt[],
   generatedExam: Pick<EnvGeneratedExam, 'questionSets'>
 ): boolean {
   // Check all question sets and questions are in generated exam
   for (const generatedQuestionSet of generatedExam.questionSets) {
-    const attemptQuestionSet = attempt.questionSets.find(
+    const attemptQuestionSet = questionSets.find(
       q => q.id === generatedQuestionSet.id
     );
     if (!attemptQuestionSet) {
@@ -598,4 +601,59 @@ function isQuestionSetConfigFulfilled(
       return qs.questions.length === questionSetConfig.numberOfQuestions;
     })
   );
+}
+
+/**
+ * Adds the current time submission time to all questions in the attempt if the question answer has changed.
+ */
+export function userAttemptToDatabaseAttemptQuestionSets(
+  userAttempt: Static<
+    typeof schemas.examEnvironmentPostExamAttempt.body.properties.attempt
+  >,
+  latestAttempt: EnvExamAttempt
+): EnvExamAttempt['questionSets'] {
+  const databaseAttemptQuestionSets: EnvExamAttempt['questionSets'] = [];
+
+  for (const questionSet of userAttempt.questionSets) {
+    const latestQuestionSet = latestAttempt.questionSets.find(
+      qs => qs.id === questionSet.id
+    );
+
+    // If no latest attempt, add submission time to all questions
+    if (!latestQuestionSet) {
+      databaseAttemptQuestionSets.push({
+        ...questionSet,
+        questions: questionSet.questions.map(q => {
+          return { ...q, submissionTimeInMS: Date.now() };
+        })
+      });
+    } else {
+      const databaseAttemptQuestionSet = {
+        ...questionSet,
+        questions: questionSet.questions.map(q => {
+          const latestQuestion = latestQuestionSet.questions.find(
+            lq => lq.id === q.id
+          );
+
+          // If no latest question, add submission time
+          if (!latestQuestion) {
+            return { ...q, submissionTimeInMS: Date.now() };
+          }
+
+          // If answers have changed, add submission time
+          if (
+            JSON.stringify(q.answers) !== JSON.stringify(latestQuestion.answers)
+          ) {
+            return { ...q, submissionTimeInMS: Date.now() };
+          }
+
+          return latestQuestion;
+        })
+      };
+
+      databaseAttemptQuestionSets.push(databaseAttemptQuestionSet);
+    }
+  }
+
+  return databaseAttemptQuestionSets;
 }
