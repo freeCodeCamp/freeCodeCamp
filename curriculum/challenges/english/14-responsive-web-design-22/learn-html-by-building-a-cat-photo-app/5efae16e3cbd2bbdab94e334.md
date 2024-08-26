@@ -26,7 +26,7 @@ assert(code.match(/<\/figcaption\>/g).length === 2);
 There should be a `figure` element right above the second `section` element's closing tag.
 
 ```js
-assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
+assert.strictEqual(document.querySelectorAll('main > section')?.[1]?.lastElementChild?.nodeName, 'FIGURE');
 ```
 
 The last `img` element should be nested in the `figure` element.
