@@ -26,11 +26,11 @@ assert.match(code, /console\.log\(("')(Here\s+is\s+the\s+final\s+shopping\s+list
 ## --seed-contents--
 
 ```js
-console.log("Let's create a grocery shopping list");
+console.log("Grocery shopping list");
 
 const shoppingList = [];
 
-console.log("It will be nice to have some fruit to eat. Let's add some to our list.");
+console.log("It will be nice to have some fruit to eat.");
 
 shoppingList.push("Apples");
 console.log(`Current Shopping List: ${shoppingList}`);
@@ -38,7 +38,7 @@ console.log(`Current Shopping List: ${shoppingList}`);
 shoppingList.push("Grapes");
 console.log(`Current Shopping List: ${shoppingList}`);
 
-console.log("It looks like we are out of cooking oil at home. Let's put that at the top of the list so we get that first.");
+console.log("It looks like we need to get some cooking oil.");
 
 shoppingList.unshift("Vegetable Oil");
 console.log(`Current Shopping List: ${shoppingList}`);
@@ -69,11 +69,11 @@ shoppingList[0] = "Canola Oil";
 # --solutions--
 
 ```js
-console.log("Let's create a grocery shopping list");
+console.log("Grocery shopping list");
 
 const shoppingList = [];
 
-console.log("It will be nice to have some fruit to eat. Let's add some to our list.");
+console.log("It will be nice to have some fruit to eat.");
 
 shoppingList.push("Apples");
 console.log(`Current Shopping List: ${shoppingList}`);
@@ -81,7 +81,7 @@ console.log(`Current Shopping List: ${shoppingList}`);
 shoppingList.push("Grapes");
 console.log(`Current Shopping List: ${shoppingList}`);
 
-console.log("It looks like we are out of cooking oil at home. Let's put that at the top of the list so we get that first.");
+console.log("It looks like we need to get some cooking oil.");
 
 shoppingList.unshift("Vegetable Oil");
 console.log(`Current Shopping List: ${shoppingList}`);
