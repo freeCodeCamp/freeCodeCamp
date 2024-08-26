@@ -44,7 +44,7 @@ function Assignments({
         <>
           <Spacer size='medium' />
           <div className='text-center assignments-not-complete'>
-            * {t('learn.assignment-not-complete')}
+            {t('learn.assignment-not-complete')}
           </div>
         </>
       )}
