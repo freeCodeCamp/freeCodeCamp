@@ -22,13 +22,13 @@ The link text that Camper Cat is using is not very descriptive without the surro
 Your code should move the anchor `a` tags from around the words `Click here` to wrap around the words `information about batteries`.
 
 ```js
-assert.match(document.querySelector('a').textContent,(/^(information about batteries)$/g));
+assert.match(document.querySelector('a')?.textContent, /^(information about batteries)$/g);
 ```
 
 The `a` element should have an `href` attribute with a value of an empty string `""`.
 
 ```js
-assert.isEmpty(document.querySelector('a').getAttribute('href'));
+assert.isEmpty(document.querySelector('a')?.getAttribute('href'));
 ```
 
 The `a` element should have a closing tag.

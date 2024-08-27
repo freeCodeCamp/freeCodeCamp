@@ -32,7 +32,7 @@ assert.exists(timeElement);
 Your added `time` tags should wrap around the text `Thursday, September 15<sup>th</sup>`.
 
 ```js
-assert.isTrue(timeElement?.innerHTML?.trim() === 'Thursday, September 15<sup>th</sup>');
+assert.strictEqual(timeElement?.innerHTML?.trim(), 'Thursday, September 15<sup>th</sup>');
 ```
 
 Your added `time` tag should have a `datetime` attribute that is not empty.

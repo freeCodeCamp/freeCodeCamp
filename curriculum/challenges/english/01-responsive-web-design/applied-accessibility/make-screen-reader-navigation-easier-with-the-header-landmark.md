@@ -31,7 +31,7 @@ Your `header` tags should wrap around the `h1`.
 
 ```js
 const header = document.querySelector('header');
-const children = header.querySelectorAll(`:scope ${'h1'}`);
+const children = header?.querySelectorAll(`:scope ${'h1'}`);
 assert.lengthOf(children , 1);
 ```
 

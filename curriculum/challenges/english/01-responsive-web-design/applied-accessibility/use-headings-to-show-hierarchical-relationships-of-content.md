@@ -48,7 +48,7 @@ assert.isEmpty(document.querySelectorAll('h5'));
 Your code should not have any `h5` closing tags.
 
 ```js
-assert.isFalse(/\/h5/.test(code));
+assert.notMatch(code, /\/h5/);
 ```
 
 # --seed--

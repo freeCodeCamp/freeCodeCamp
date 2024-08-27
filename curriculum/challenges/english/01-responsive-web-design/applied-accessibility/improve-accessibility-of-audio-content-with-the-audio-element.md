@@ -48,7 +48,7 @@ assert.lengthOf(code.match(/<\/audio>/g),1);
 The `audio` tag should have the `controls` attribute.
 
 ```js
-assert.exists(document.querySelector('audio').getAttribute('controls'));
+assert.exists(document.querySelector('audio')?.getAttribute('controls'));
 ```
 
 Your code should have one `source` tag.
@@ -69,14 +69,15 @@ The value for the `src` attribute on the `source` tag should match the link in t
 
 ```js
 assert.equal(
-  document.querySelector('source').getAttribute('src'),'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
+  document.querySelector('source')?.getAttribute('src'),
+  'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
 );
 ```
 
 Your code should include a `type` attribute on the `source` tag with a value of audio/mpeg.
 
 ```js
-assert.equal(document.querySelector('source').getAttribute('type') , 'audio/mpeg');
+assert.equal(document.querySelector('source')?.getAttribute('type'), 'audio/mpeg');
 ```
 
 # --seed--

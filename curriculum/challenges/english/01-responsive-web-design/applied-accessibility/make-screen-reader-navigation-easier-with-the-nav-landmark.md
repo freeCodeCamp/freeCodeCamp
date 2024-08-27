@@ -29,7 +29,7 @@ Your `nav` tags should wrap around the `ul` and its list items.
 
 ```js
 const nav = document.querySelector('nav');
-const children = nav.querySelectorAll(`:scope ${'ul'}`);
+const children = nav?.querySelectorAll(`:scope ${'ul'}`);
 assert.lengthOf(children,1);
 ```
 

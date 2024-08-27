@@ -37,19 +37,19 @@ assert.lengthOf(document.querySelectorAll('input'), 2);
 Your `input` tag should have a `type` attribute with a value of `date`.
 
 ```js
-assert.equal(document.querySelector('input').getAttribute('type') , 'date');
+assert.equal(document.querySelector('input')?.getAttribute('type'), 'date');
 ```
 
 Your `input` tag should have an `id` attribute with a value of `pickdate`.
 
 ```js
-assert.equal(document.querySelector('input').getAttribute('id') ,'pickdate');
+assert.equal(document.querySelector('input')?.getAttribute('id'),'pickdate');
 ```
 
 Your `input` tag should have a `name` attribute with a value of `date`.
 
 ```js
-assert.equal(document.querySelector('input').getAttribute('name') , 'date');
+assert.equal(document.querySelector('input')?.getAttribute('name'), 'date');
 ```
 
 # --seed--
