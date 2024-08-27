@@ -1857,7 +1857,10 @@
       "scec": { "title": "107", "intro": [] },
       "mtbl": { "title": "108", "intro": [] },
       "vlov": { "title": "109", "intro": [] },
-      "njkq": { "title": "110", "intro": [] },
+      "lab-availability-table": {
+        "title": "Build an Availability Table",
+        "intro": ["For this lab, you will create an availability table."]
+      },
       "sget": { "title": "111", "intro": [] },
       "huge": { "title": "112", "intro": [] },
       "agbl": { "title": "113", "intro": [] },
