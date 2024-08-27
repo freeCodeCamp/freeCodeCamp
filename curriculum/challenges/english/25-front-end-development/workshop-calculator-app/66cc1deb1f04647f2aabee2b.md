@@ -1,8 +1,8 @@
 ---
 id: 66cc1deb1f04647f2aabee2b
-title: Step 14
+title: Step 15
 challengeType: 1
-dashedName: step-14
+dashedName: step-15
 ---
 
 # --description--
@@ -66,6 +66,6 @@ function calculateQuotient(num1, num2) {
 
 --fcc-editable-region--
 
-console.log(calculateQuotient(10, 2));
+console.log(calculateQuotient(7, 11));
 console.log(calculateQuotient(3, 0));
 ```
