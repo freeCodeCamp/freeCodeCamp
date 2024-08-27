@@ -43,7 +43,7 @@ function Assignments({
       {!allAssignmentsCompleted && (
         <>
           <Spacer size='medium' />
-          <div className='text-center assignments-not-complete'>
+          <div className='assignments-not-complete'>
             {t('learn.assignment-not-complete')}
           </div>
         </>
