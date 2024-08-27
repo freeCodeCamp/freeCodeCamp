@@ -184,17 +184,12 @@ type EnvMultipleChoiceQuestion {
 /// Audio for an Exam Environment App multiple choice question
 type EnvAudio {
   /// Optional text for audio
-  captions      String?
+  captions String?
   /// URL to audio file
-  url           String
-  /// Start time of audio clip for question
   ///
-  /// If not set, audio starts at 0
-  startTimeInMS Int?
-  /// End time of audio clip for question
-  ///
-  /// If not set, audio ends at the end of the clip
-  endTimeInMS   Int?
+  /// Expected in the format: `<url>#t=<start_time_in_seconds>,<end_time_in_seconds>`
+  /// Where `start_time_in_seconds` and `end_time_in_seconds` are optional floats.
+  url      String
 }
 
 /// Type of question for the Exam Environment App
