@@ -20,7 +20,7 @@ import { stripe } from '../utils/stripe';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
 import {
   getSessionCompletedChallengesLength,
-  setCompletionCountWhenShownProgressModals
+  setCompletionCountWhenShownProgressModal
 } from '../utils/session-storage';
 import { actionTypes as appTypes } from './action-types';
 import {
@@ -58,7 +58,7 @@ function* showDonateModalSaga() {
     if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());
     } else {
-      yield call(setCompletionCountWhenShownProgressModals);
+      yield call(setCompletionCountWhenShownProgressModal);
     }
   }
 }
