@@ -27,8 +27,7 @@ Your code should set the `opacity` property to 0.7 on the anchor tags by selecti
 assert.match(
   document.querySelector('style')?.textContent,
   /\.links\s*{([\s\S]*?;)*\s*opacity\s*:\s*0*\.70*\s*(;[\s\S]*?|\s*)}/
-  )
-);
+  );
 ```
 
 # --seed--
