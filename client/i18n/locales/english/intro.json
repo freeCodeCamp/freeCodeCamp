@@ -1882,10 +1882,7 @@
       "hoec": { "title": "136", "intro": [] },
       "cygu": { "title": "137", "intro": [] },
       "axgb": { "title": "138", "intro": [] },
-      "lab-sentence-maker": {
-        "title": "Build a Sentence Maker",
-        "intro": ["", ""]
-      },
+      "nnqa": { "title": "154", "intro": [] },
       "rwac": { "title": "139", "intro": [] },
       "uzjg": { "title": "140", "intro": [] },
       "hxwa": { "title": "141", "intro": [] },
@@ -1901,7 +1898,10 @@
       "kkix": { "title": "151", "intro": [] },
       "icxa": { "title": "152", "intro": [] },
       "hqba": { "title": "153", "intro": [] },
-      "nnqa": { "title": "154", "intro": [] },
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": ["", ""]
+      },
       "cktz": { "title": "155", "intro": [] },
       "pljo": { "title": "156", "intro": [] },
       "avln": { "title": "157", "intro": [] },
