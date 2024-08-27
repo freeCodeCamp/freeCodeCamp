@@ -8,7 +8,7 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-First, add a new image below the existing one. Set its `src` attribute to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
+First, add a new image below the existing one. Set its `src`.getAttributeibute to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 It would be great if this image could be exactly the width of our phone's screen.
 
@@ -19,35 +19,36 @@ Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class
 You should have a total of two images.
 
 ```js
-assert($('img').length === 2);
+assert.lengthOf(document.querySelectorAll('img'), 2);
 ```
 
 Your new image should be below your old one and have the class `img-responsive`.
 
 ```js
-assert($('img:eq(1)').hasClass('img-responsive'));
+const newImage = [...document.querySelectorAll('img')].at(1); 
+assert.isTrue(newImage.classList.contains('img-responsive'));
 ```
 
 Your new image should not have the class `smaller-image`.
 
 ```js
-assert(!$('img:eq(1)').hasClass('smaller-image'));
+const newImage = [...document.querySelectorAll('img')].at(1); 
+assert.isFalse(newImage.classList.contains('smaller-image'));
 ```
 
 Your new image should have a `src` of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 ```js
-assert($('img:eq(1)').attr('src') === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
+const newImage = [...document.querySelectorAll('img')].at(1); 
+assert.equal(newImage.getAttribute('src') , 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
 Your new `img` element should have a closing angle bracket.
 
 ```js
-assert(
-  code.match(/<img/g) &&
-    code.match(/<img[^<]*>/g).length === 2 &&
-    code.match(/<img/g).length === 2
-);
+assert.match(code,/<img/g);
+assert.lengthOf(code.match(/<img[^<]*>/g), 2);
+assert.lengthOf(code.match(/<img/g), 2);
 ```
 
 # --seed--

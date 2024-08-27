@@ -25,8 +25,8 @@ You should add a `<i class="fas fa-info-circle"></i>` within your `info` button 
 
 ```js
 assert(
-  $('.btn-info > i').is('.fas.fa-info-circle') ||
-    $('.btn-info > span').is('.fas.fa-info-circle')
+  document.querySelector('.btn-info > i') === document.querySelector('.fas.fa-info-circle') ||
+    document.querySelector('.btn-info > span') === document.querySelector('.fas.fa-info-circle')
 );
 ```
 
@@ -34,19 +34,19 @@ You should add a `<i class="fas fa-trash"></i>` within your `delete` button elem
 
 ```js
 assert(
-  $('.btn-danger > i').is('.fas.fa-trash') ||
-    $('.btn-danger > span').is('.fas.fa-trash')
+  document.querySelector('.btn-danger > i') === document.querySelector('.fas.fa-trash') ||
+    document.querySelector('.btn-danger > span') === document.querySelector('.fas.fa-trash')
 );
 ```
 
 Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your `like` button element.
 
 ```js
+assert.match(code,/<\/i>|<\/span/g);
+assert.lengthOf(code.match(/<\/i|<\/span>/g),4)
 assert(
-  code.match(/<\/i>|<\/span/g) &&
-    code.match(/<\/i|<\/span>/g).length > 2 &&
-    ($('.btn-primary > i').is('.fas.fa-thumbs-up') ||
-      $('.btn-primary > span').is('.fas.fa-thumbs-up'))
+    (document.querySelector('.btn-primary > i') === document.querySelector('.fas.fa-thumbs-up') ||
+      document.querySelector('.btn-primary > span') === document.querySelector('.fas.fa-thumbs-up'))
 );
 ```
 
