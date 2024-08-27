@@ -239,10 +239,10 @@ export async function seedExam(): Promise<void> {
   });
 }
 
-export async function seedNewExam(): Promise<void> {
-  await fastifyTestInstance.prisma.newExam.deleteMany({});
+export async function seedEnvExam(): Promise<void> {
+  await fastifyTestInstance.prisma.envExam.deleteMany({});
 
-  await fastifyTestInstance.prisma.newExam.create({
+  await fastifyTestInstance.prisma.envExam.create({
     data: {
       ...exam
     }

@@ -284,6 +284,7 @@ type EnvMultipleChoiceQuestionAttempt {
 /// A generated exam for the Exam Environment App
 ///
 /// This is the user-facing information for an exam.
+/// TODO: Add userId?
 model EnvGeneratedExam {
   id           String                    @id @default(auto()) @map("_id") @db.ObjectId
   examId       String                    @db.ObjectId

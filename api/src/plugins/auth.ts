@@ -83,6 +83,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       req.headers;
 
     if (!encodedToken || typeof encodedToken !== 'string') {
+      void reply.code(400);
       return reply.send(
         ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
           'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN header is a required string.'
@@ -116,13 +117,18 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     const examEnvironmentAuthorizationToken =
       payload['examEnvironmentAuthorizationToken'];
 
-    if (typeof examEnvironmentAuthorizationToken !== 'string') {
-      return reply.send(
-        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
-          'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN is not valid.'
-        )
-      );
-    }
+    // if (typeof examEnvironmentAuthorizationToken !== 'string') {
+    //   // TODO: This code is debatable, because the token would have to have been signed by the api
+    //   //       which means it is valid, but, somehow, got signed as an object instead of a string.
+    //   void reply.code(400+500);
+    //   return reply.send(
+    //     ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+    //       'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN is not valid.'
+    //     )
+    //   );
+    // }
+
+    assertIsString(examEnvironmentAuthorizationToken);
 
     const token =
       await fastify.prisma.examEnvironmentAuthorizationToken.findFirst({
@@ -152,5 +158,11 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
 
   done();
 };
+
+function assertIsString(some: unknown): asserts some is string {
+  if (typeof some !== 'string') {
+    throw new Error('Expected a string');
+  }
+}
 
 export default fp(auth, { name: 'auth', dependencies: ['cookies'] });

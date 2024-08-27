@@ -213,7 +213,9 @@ async function postExamGenerateHandler(
       if (generatedExam === null) {
         void reply.code(500);
         return reply.send(
-          ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Generated exam not found.')
+          ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+            'Unreachable. Generated exam not found.'
+          )
         );
       }
 

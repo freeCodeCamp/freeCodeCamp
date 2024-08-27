@@ -141,8 +141,6 @@ export const questionSets: EnvQuestionSet[] = [
         deprecated: true,
         audio: {
           url: 'https://freecodecamp.org',
-          startTimeInMS: 0,
-          endTimeInMS: null,
           captions: null
         },
         answers: [
