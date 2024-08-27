@@ -243,14 +243,16 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               </ChallengeTitle>
 
               {challengeType === challengeTypes.video && (
-                <VideoPlayer
-                  bilibiliIds={bilibiliIds}
-                  onVideoLoad={this.onVideoLoad}
-                  title={title}
-                  videoId={videoId}
-                  videoIsLoaded={this.state.videoIsLoaded}
-                  videoLocaleIds={videoLocaleIds}
-                />
+                <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                  <VideoPlayer
+                    bilibiliIds={bilibiliIds}
+                    onVideoLoad={this.onVideoLoad}
+                    title={title}
+                    videoId={videoId}
+                    videoIsLoaded={this.state.videoIsLoaded}
+                    videoLocaleIds={videoLocaleIds}
+                  />
+                </Col>
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

@@ -275,7 +275,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           <Container>
             <Row>
               {videoId && (
-                <>
+                <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
                   <Spacer size='medium' />
                   <VideoPlayer
                     bilibiliIds={bilibiliIds}
@@ -285,7 +285,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     videoIsLoaded={this.state.videoIsLoaded}
                     videoLocaleIds={videoLocaleIds}
                   />
-                </>
+                </Col>
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
