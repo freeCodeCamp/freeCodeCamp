@@ -23,13 +23,13 @@ Finally, remove the `smaller-image` class from your first `img` element and repl
 Your `h2` element should no longer have the class `red-text`.
 
 ```js
-assert.isFalse(document.querySelector('h2').classList.contains('red-text'));
+assert.isFalse(document.querySelector('h2')?.classList?.contains('red-text'));
 ```
 
 Your `h2` element should now have the class `text-primary`.
 
 ```js
-assert.isTrue(document.querySelector('h2').classList.contains('text-primary'));
+assert.isTrue(document.querySelector('h2')?.classList?.contains('text-primary'));
 ```
 
 Your paragraph elements should no longer use the font `Monospace`.
@@ -43,7 +43,7 @@ assert.notMatch(paragraphFontFamily,/monospace/i);
 The `smaller-image` class should be removed from your top image.
 
 ```js
-assert.isFalse(document.querySelector('img').classList.contains('smaller-image'));
+assert.isFalse(document.querySelector('img')?.classList?.contains('smaller-image'));
 ```
 
 You should add the `img-responsive` class to your top image.

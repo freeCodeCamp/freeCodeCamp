@@ -19,15 +19,14 @@ Note that this button will still need the `btn` and `btn-block` classes.
 Your button should have the class `btn-primary`.
 
 ```js
-assert.isTrue(document.querySelector('button').classList.contains('btn-primary'));
+assert.isTrue(document.querySelector('button')?.classList?.contains('btn-primary'));
 ```
 
 Your button should still have the `btn` and `btn-block` classes.
 
 ```js
-assert.isTrue(document.querySelector('button').classList.contains('btn-block'));
-
-assert.isTrue(document.querySelector('button').classList.contains('btn'));
+assert.isTrue(document.querySelector('button')?.classList?.contains('btn-block'));
+assert.isTrue(document.querySelector('button')?.classList?.contains('btn'));
 ```
 
 All your `button` elements should have closing tags.

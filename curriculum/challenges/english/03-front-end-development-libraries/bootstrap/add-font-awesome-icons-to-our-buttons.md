@@ -38,18 +38,18 @@ Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `
 You should add an `i` element with the classes `fas` and `fa-thumbs-up`.
 
 ```js
-assert.isTrue(document.querySelector('i')=== document.querySelector('.fas.fa-thumbs-up') || document.querySelector('span') === document.querySelector('.fas.fa-thumbs-up'));
+assert.isTrue(document.querySelector('i')?.classList?.value === 'fas fa-thumbs-up' || document.querySelector('span')?.classList?.value === 'fas fa-thumbs-up');
 ```
 
 Your `fa-thumbs-up` icon should be located within the Like button.
 
 ```js
-const iconTextContent = document.querySelector('i.fa-thumbs-up')?.parentNode.textContent;  
-const spanTextContent = document.querySelector('span.fa-thumbs-up')?.parentNode.textContent;  
+const iconTextContent = document.querySelector('i.fa-thumbs-up')?.parentNode?.textContent;  
+const spanTextContent = document.querySelector('span.fa-thumbs-up')?.parentNode?.textContent;  
 assert.isTrue(
-  (iconTextContent.match(/Like/gi) &&
+  (iconTextContent?.match(/Like/gi) &&
     document.querySelector('.btn-primary > i') === document.querySelector('.fas.fa-thumbs-up')) ||
-    (spanTextContent.match(/Like/gi) &&
+    (spanTextContent?.match(/Like/gi) &&
       document.querySelector('.btn-primary > span') === document.querySelector('.fas.fa-thumbs-up')));
 ```
 
@@ -57,15 +57,15 @@ Your `i` element should be nested within your `button` element.
 
 ```js
 const button = document.querySelector('button'); 
-const i = button.querySelectorAll("i");
-const span =  button.querySelectorAll("span");
+const i = button?.querySelectorAll("i");
+const span =  button?.querySelectorAll("span");
 assert(i.length > 0 ||span.length > 0);
 ```
 
 Your icon element should have a closing tag.
 
 ```js
-assert.match(code,/<\/i>|<\/span>/g);
+assert.match(code,/(<\/i>|<\/span>)<\/button>/g);
 ```
 
 # --seed--

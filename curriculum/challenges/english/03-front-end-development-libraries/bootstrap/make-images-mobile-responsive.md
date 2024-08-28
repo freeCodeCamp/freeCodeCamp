@@ -8,7 +8,7 @@ dashedName: make-images-mobile-responsive
 
 # --description--
 
-First, add a new image below the existing one. Set its `src`.getAttributeibute to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
+First, add a new image below the existing one. Set its `src` attribute to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 It would be great if this image could be exactly the width of our phone's screen.
 
@@ -25,22 +25,19 @@ assert.lengthOf(document.querySelectorAll('img'), 2);
 Your new image should be below your old one and have the class `img-responsive`.
 
 ```js
-const newImage = [...document.querySelectorAll('img')].at(1); 
-assert.isTrue(newImage.classList.contains('img-responsive'));
+assert.isTrue(document.querySelectorAll('img')?.[1]?.classList?.contains('img-responsive'));
 ```
 
 Your new image should not have the class `smaller-image`.
 
 ```js
-const newImage = [...document.querySelectorAll('img')].at(1); 
-assert.isFalse(newImage.classList.contains('smaller-image'));
+assert.isFalse(document.querySelectorAll('img')?.[1]?.classList?.contains('smaller-image'));
 ```
 
 Your new image should have a `src` of `https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg`.
 
 ```js
-const newImage = [...document.querySelectorAll('img')].at(1); 
-assert.equal(newImage.getAttribute('src') , 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
+assert.equal(document.querySelectorAll('img')?.[1]?.getAttribute('src') , 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg');
 ```
 
 Your new `img` element should have a closing angle bracket.

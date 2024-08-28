@@ -35,19 +35,19 @@ assert.equal( code.match(/<\/h3>/g).length , code.match(/<h3/g).length);
 Your `h3` element should be colored by applying the class `text-primary`
 
 ```js
-assert.isTrue(document.querySelector('h3')?.classList.contains('text-primary'));
+assert.isTrue(document.querySelector('h3')?.classList?.contains('text-primary'));
 ```
 
 Your `h3` element should be centered by applying the class `text-center`
 
 ```js
-assert.isTrue(document.querySelector('h3').classList.contains('text-center'));
+assert.isTrue(document.querySelector('h3')?.classList?.contains('text-center'));
 ```
 
 Your `h3` element should have the text `jQuery Playground`.
 
 ```js
-assert.match(document.querySelector('h3').textContent,/jquery(\s)+playground/gi);
+assert.match(document.querySelector('h3')?.textContent, /jquery(\s)+playground/gi);
 ```
 
 # --seed--

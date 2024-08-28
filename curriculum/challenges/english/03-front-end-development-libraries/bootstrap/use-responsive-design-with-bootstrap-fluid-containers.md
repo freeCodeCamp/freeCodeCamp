@@ -29,7 +29,7 @@ To get started, we should nest all of our HTML (except the `link` tag and the `s
 Your `div` element should have the class `container-fluid`.
 
 ```js
-assert.isTrue(document.querySelector('div').classList.contains('container-fluid'));
+assert.isTrue(document.querySelector('div')?.classList?.contains('container-fluid'));
 ```
 
 Your `div` element should have a closing tag.
@@ -47,7 +47,7 @@ const fluidContainer = document.querySelector('.container-fluid');
 const possibleStyleElements = fluidContainer?.querySelectorAll(`:scope ${'style'}`);
 const possibleLinkElements = fluidContainer?.querySelectorAll(`:scope ${'link'}`);
 
-assert.lengthOf(fluidContainer .children,8);
+assert.lengthOf(fluidContainer?.children,8);
 assert.isEmpty(possibleStyleElements);
 assert.isEmpty(possibleLinkElements);
 ```

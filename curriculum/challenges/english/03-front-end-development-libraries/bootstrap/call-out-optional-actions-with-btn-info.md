@@ -19,7 +19,7 @@ Note that these buttons still need the `btn` and `btn-block` classes.
 You should create a new `button` element with the text `Info`.
 
 ```js
-const infoButton = [...document.querySelectorAll('button')].at(1); 
+const infoButton = document.querySelectorAll('button')?.[1]; 
 assert.match(infoButton.textContent,/info/gi);
 ```
 
@@ -33,7 +33,7 @@ Your new button should have the class `btn-info`.
 
 ```js
 const infoButton = [...document.querySelectorAll('button')].at(1);
-assert.isTrue(infoButton.classList.contains('btn-info'));
+assert.isTrue(infoButton?.classList?.contains('btn-info'));
 ```
 
 All of your `button` elements should have closing tags.

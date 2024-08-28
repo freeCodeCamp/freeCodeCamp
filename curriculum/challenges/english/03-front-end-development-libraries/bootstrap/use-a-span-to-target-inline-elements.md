@@ -38,13 +38,13 @@ Your `span` element should have just the text `love`.
 
 ```js
 assert.match(document.querySelector('p span')?.textContent,/love/i);
-assert.notMatch(document.querySelector('p span').textContent,/Things cats/i);
+assert.notMatch(document.querySelector('p span')?.textContent, /Things cats/i);
 ```
 
 Your `span` element should have class `text-danger`.
 
 ```js
-assert.isTrue(document.querySelector('span').classList.contains('text-danger'));
+assert.isTrue(document.querySelector('span')?.classList?.contains('text-danger'));
 ```
 
 Your `span` element should have a closing tag.

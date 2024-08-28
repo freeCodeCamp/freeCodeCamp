@@ -19,7 +19,7 @@ Note that these buttons still need the `btn` and `btn-block` classes.
 You should create a new `button` element with the text `Delete`.
 
 ```js
-const deleteButton = [...document.querySelectorAll('button')].at(2); 
+const deleteButton = document.querySelectorAll('button')?.[2]; 
 assert.match(deleteButton.textContent ,/delete/gi);
 ```
 
@@ -32,8 +32,8 @@ assert.lengthOf(document.querySelectorAll('button.btn-block.btn'),3);
 Your new button should have the class `btn-danger`.
 
 ```js
-const deleteButton = [...document.querySelectorAll('button')].at(2); 
-assert.isTrue(deleteButton.classList.contains('btn-danger'));
+const deleteButton = document.querySelectorAll('button')?.[2]; 
+assert.isTrue(deleteButton?.classList?.contains('btn-danger'));
 ```
 
 All of your `button` elements should have closing tags.

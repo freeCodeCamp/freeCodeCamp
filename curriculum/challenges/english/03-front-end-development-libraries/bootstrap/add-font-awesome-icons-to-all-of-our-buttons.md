@@ -24,18 +24,18 @@ Use Font Awesome to add an `info-circle` icon to your info button and a `trash` 
 You should add a `<i class="fas fa-info-circle"></i>` within your `info` button element.
 
 ```js
-assert(
-  document.querySelector('.btn-info > i') === document.querySelector('.fas.fa-info-circle') ||
-    document.querySelector('.btn-info > span') === document.querySelector('.fas.fa-info-circle')
+assert.isTrue(
+  document.querySelector('.btn-info > i')?.classList?.value === 'fas fa-info-circle' ||
+    document.querySelector('.btn-info > span')?.classList?.value === 'fas fa-info-circle'
 );
 ```
 
 You should add a `<i class="fas fa-trash"></i>` within your `delete` button element.
 
 ```js
-assert(
-  document.querySelector('.btn-danger > i') === document.querySelector('.fas.fa-trash') ||
-    document.querySelector('.btn-danger > span') === document.querySelector('.fas.fa-trash')
+assert.isTrue(
+  document.querySelector('.btn-danger > i')?.classList?.value === 'fas fa-trash' ||
+    document.querySelector('.btn-danger > span')?.classList?.value === 'fas fa-trash'
 );
 ```
 
@@ -44,9 +44,9 @@ Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs
 ```js
 assert.match(code,/<\/i>|<\/span/g);
 assert.lengthOf(code.match(/<\/i|<\/span>/g),4)
-assert(
-    (document.querySelector('.btn-primary > i') === document.querySelector('.fas.fa-thumbs-up') ||
-      document.querySelector('.btn-primary > span') === document.querySelector('.fas.fa-thumbs-up'))
+assert.isTrue(
+    document.querySelector('.btn-primary > i')?.classList?.value === 'fas fa-thumbs-up' ||
+      document.querySelector('.btn-primary > span')?.classList?.value === 'fas fa-thumbs-up'
 );
 ```
 

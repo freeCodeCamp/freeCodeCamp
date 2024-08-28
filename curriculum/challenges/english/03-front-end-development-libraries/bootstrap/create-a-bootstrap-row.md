@@ -26,7 +26,7 @@ assert.lengthOf(document.querySelectorAll('h3.text-primary + div.row'),1);
 Your `div` element should have the class `row`
 
 ```js
-const newDiv = document.querySelectorAll('div')[1]; 
+const newDiv = document.querySelectorAll('div')?.[1]; 
 assert.isTrue(newDiv.classList.contains('row'));
 ```
 

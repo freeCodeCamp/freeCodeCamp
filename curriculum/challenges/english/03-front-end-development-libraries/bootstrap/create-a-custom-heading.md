@@ -22,8 +22,8 @@ Your `h2` element and topmost `img` element should both be nested together withi
 
 ```js
 const row = document.querySelector('div.row');
-const h2 = row.querySelectorAll(`:scope ${'h2'}`)
-const image = row.querySelectorAll(`:scope ${'img'}`)
+const h2 = row?.querySelectorAll(`:scope ${'h2'}`)
+const image = row?.querySelectorAll(`:scope ${'img'}`)
 assert.lengthOf(h2,1);
 assert.lengthOf(image ,1);
 ```
@@ -32,8 +32,8 @@ Your topmost `img` element should be nested within a `div` with the class `col-x
 
 ```js
 const column = document.querySelector('div.col-xs-4');
-const div = column.querySelectorAll(`:scope ${'div'}`);
-const img = column.querySelectorAll(`:scope ${'img'}`)
+const div = column?.querySelectorAll(`:scope ${'div'}`);
+const img = column?.querySelectorAll(`:scope ${'img'}`)
 assert.isEmpty(div);
 assert.lengthOf(img,1)
 ```
@@ -42,8 +42,8 @@ Your `h2` element should be nested within a `div` with the class `col-xs-8`.
 
 ```js
 const column = document.querySelector('div.col-xs-8');
-const div = column.querySelectorAll(`:scope ${'div'}`);
-const h2 = column.querySelectorAll(`:scope ${'h2'}`)
+const div = column?.querySelectorAll(`:scope ${'div'}`);
+const h2 = column?.querySelectorAll(`:scope ${'h2'}`)
 
 assert.isEmpty(div);
 assert.lengthOf(h2, 1);

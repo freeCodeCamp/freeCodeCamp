@@ -17,7 +17,7 @@ Give each of your `button` elements text that corresponds to its id selector.
 Your `button` element with the id `target1` should have the text `#target1`.
 
 ```js
-assert.match(document.querySelector('#target1').textContent,/#target1/gi)
+assert.match(document.querySelector('#target1')?.textContent,/#target1/gi)
 ```
 
 Your `button` element with the id `target2` should have the text `#target2`.
@@ -29,25 +29,25 @@ assert.match(document.querySelector('#target2').textContent,/#target2/gi)
 Your `button` element with the id `target3` should have the text `#target3`.
 
 ```js
-assert.match(document.querySelector('#target3').textContent,/#target3/gi)
+assert.match(document.querySelector('#target3')?.textContent,/#target3/gi)
 ```
 
 Your `button` element with the id `target4` should have the text `#target4`.
 
 ```js
-assert.match(document.querySelector('#target4').textContent,/#target4/gi)
+assert.match(document.querySelector('#target4')?.textContent,/#target4/gi)
 ```
 
 Your `button` element with the id `target5` should have the text `#target5`.
 
 ```js
-assert.match(document.querySelector('#target5').textContent,/#target5/gi)
+assert.match(document.querySelector('#target5')?.textContent,/#target5/gi)
 ```
 
 Your `button` element with the id `target6` should have the text `#target6`.
 
 ```js
-assert.match(document.querySelector('#target6').textContent,/#target6/gi)
+assert.match(document.querySelector('#target6')?.textContent,/#target6/gi)
 ```
 
 # --seed--

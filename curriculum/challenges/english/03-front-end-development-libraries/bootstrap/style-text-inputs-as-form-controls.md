@@ -23,15 +23,15 @@ All textual `<input>`, `<textarea>`, and `<select>` elements with the class `.fo
 The submit button in your form should have the classes `btn btn-primary`.
 
 ```js
-assert.isTrue(document.querySelector('button[type="submit"]').classList.contains('btn'));
-assert.isTrue(document.querySelector('button[type="submit"]').classList.contains('btn-primary'));
+assert.isTrue(document.querySelector('button[type="submit"]')?.classList?.contains('btn'));
+assert.isTrue(document.querySelector('button[type="submit"]')?.classList?.contains('btn-primary'));
 ```
 
 You should add a `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
 
 ```js
 const submitButton = document.querySelector('button[type="submit"]');
-const fontIcon = submitButton.querySelectorAll('i.fa.fa-paper-plane'); 
+const fontIcon = submitButton?.querySelectorAll('i.fa.fa-paper-plane'); 
 
 assert.lengthOf(fontIcon ,1);
 ```

@@ -19,11 +19,11 @@ Above your right-well, inside its `col-xs-6` `div` element, add a `h4` element w
 You should add an `h4` element to each of your `<div class="col-xs-6">` elements.
 
 ```js
-const columnSixes = [...document.querySelectorAll('.col-xs-6')];
-const columnSixOneChildren = columnSixes[0]?.querySelectorAll(`:scope ${'h4'}`);
+const columnSixes = document.querySelectorAll('.col-xs-6');
+const columnSixOneChildren = columnSixes?.[0]?.querySelectorAll(`:scope ${'h4'}`);
 assert.lengthOf(columnSixOneChildren,1); 
 
-const columnSixTwoChildren = columnSixes[1]?.querySelectorAll(`:scope ${'h4'}`);
+const columnSixTwoChildren = columnSixes?.[1]?.querySelectorAll(`:scope ${'h4'}`);
 assert.lengthOf(columnSixTwoChildren,1); 
 ```
 
@@ -37,7 +37,7 @@ assert.match(firstH4?.textContent,/#left-well/gi);
 One `h4` element should have the text `#right-well`.
 
 ```js
-const secondH4 = [...document.querySelectorAll('h4')].at(1); 
+const secondH4 = document.querySelectorAll('h4')?.[1]; 
 assert.match(secondH4?.textContent,/#right-well/gi); 
 ```
 

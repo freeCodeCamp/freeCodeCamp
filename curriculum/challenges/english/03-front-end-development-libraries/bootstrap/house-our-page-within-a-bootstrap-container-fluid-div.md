@@ -17,7 +17,7 @@ Let's nest your `h3` element within a `div` element with the class `container-fl
 Your `div` element should have the class `container-fluid`.
 
 ```js
-assert.isTrue(document.querySelector('div').classList.contains('container-fluid'));
+assert.isTrue(document.querySelector('div')?.classList?.contains('container-fluid'));
 ```
 
 Each of your `div` elements should have closing tags.
@@ -33,7 +33,7 @@ Your `h3` element should be nested inside a `div` element.
 
 ```js
 const divElement = document.querySelector('div');
-const divChildren = divElement.querySelectorAll(`:scope ${'h3'}`)
+const divChildren = divElement?.querySelectorAll(`:scope ${'h3'}`)
 assert.lengthOf(divChildren,1);
 ```
 

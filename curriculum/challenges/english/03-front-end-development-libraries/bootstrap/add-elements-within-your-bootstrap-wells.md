@@ -21,7 +21,7 @@ const buttonOne = [...document.querySelectorAll('div.well')].at(0);
 const buttonOneChildren = buttonOne?.querySelectorAll(`:scope ${'button'}`);
 assert.lengthOf(buttonOneChildren,3);
 
-const buttonTwo = [...document.querySelectorAll('div.well')].at(1)
+const buttonTwo = document.querySelectorAll('div.well')?.[1]
 const buttonTwoChildren = buttonTwo?.querySelectorAll(`:scope ${'button'}`);
 assert.lengthOf(buttonTwoChildren,3);
 ```

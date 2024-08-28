@@ -32,7 +32,7 @@ All your `div` elements should have closing tags.
 ```js
 assert.match(code,/<\/div>/g);
 assert.match(code,/<div/g);
-assert.equal(code.match(/<\/div>/g).length , code.match(/<div/g).length);
+assert.equal(code.match(/<\/div>/g)?.length , code.match(/<div/g)?.length);
 ```
 
 # --seed--

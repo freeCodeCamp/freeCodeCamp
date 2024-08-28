@@ -26,7 +26,7 @@ Your buttons should all be nested within the same `div` element with the class `
 
 ```js
 const row = document.querySelector('div.row');
-const rowChildren = row.querySelectorAll(`:scope ${'button'}`); 
+const rowChildren = row?.querySelectorAll(`:scope ${'button'}`); 
 assert.lengthOf(rowChildren, 3);
 ```
 
@@ -35,13 +35,13 @@ Each of your Bootstrap buttons should be nested within its own `div` element wit
 ```js
 const columns = document.querySelectorAll('div.col-xs-4');
 
-const firstButton = columns[0].querySelectorAll(`:scope ${'button'}`)
+const firstButton = columns?.[0]?.querySelectorAll(`:scope ${'button'}`)
 assert.lengthOf(firstButton,1);
 
-const secondButton = columns[1].querySelectorAll(`:scope ${'button'}`)
+const secondButton = columns?.[1]?.querySelectorAll(`:scope ${'button'}`)
 assert.lengthOf(secondButton,1);
 
-const thirdButton = columns[2].querySelectorAll(`:scope ${'button'}`)
+const thirdButton = columns?.[2]?.querySelectorAll(`:scope ${'button'}`)
 assert.lengthOf(thirdButton,1);
 
 ```
