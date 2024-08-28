@@ -372,6 +372,35 @@ assert.strictEqual(
 );
 ```
 
+When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
+
+```js
+const cashInput = document.getElementById('cash');
+const purchaseBtn = document.getElementById('purchase-btn');
+const changeDueDiv = document.getElementById('change-due');
+// set price, customer cash, and cid
+price = 19.5;
+cashInput.value = 20;
+cid = [
+  ['PENNY', 0.01],
+  ['NICKEL', 0],
+  ['DIME', 0],
+  ['QUARTER', 0],
+  ['ONE', 1],
+  ['FIVE', 0],
+  ['TEN', 0],
+  ['TWENTY', 0],
+  ['ONE HUNDRED', 0]
+];
+
+cashInput.dispatchEvent(new Event('change'));
+purchaseBtn.click();
+assert.strictEqual(
+  changeDueDiv.innerText.trim().toLowerCase(),
+  'status: insufficient_funds'
+);
+```
+
 When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than change due, individual denomination amounts make impossible to return needed change, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
 
 ```js
@@ -409,35 +438,6 @@ const drawerCount = _randomNumber(Math.min(15, changeLeft - 1));
 _cashInDrawer.push(['PENNY', drawerCount / 100]);
 
 cid = _cashInDrawer.reverse();
-
-cashInput.dispatchEvent(new Event('change'));
-purchaseBtn.click();
-assert.strictEqual(
-  changeDueDiv.innerText.trim().toLowerCase(),
-  'status: insufficient_funds'
-);
-```
-
-When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
-
-```js
-const cashInput = document.getElementById('cash');
-const purchaseBtn = document.getElementById('purchase-btn');
-const changeDueDiv = document.getElementById('change-due');
-// set price, customer cash, and cid
-price = 19.5;
-cashInput.value = 20;
-cid = [
-  ['PENNY', 0.01],
-  ['NICKEL', 0],
-  ['DIME', 0],
-  ['QUARTER', 0],
-  ['ONE', 1],
-  ['FIVE', 0],
-  ['TEN', 0],
-  ['TWENTY', 0],
-  ['ONE HUNDRED', 0]
-];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
