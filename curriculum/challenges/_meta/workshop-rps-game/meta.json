@@ -1,0 +1,12 @@
+{
+  "name": "Build a Rock, Paper, Scissors Game",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-rps-game",
+  "order": 198,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66cf13fe7619e9a1d57c7b5e", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
