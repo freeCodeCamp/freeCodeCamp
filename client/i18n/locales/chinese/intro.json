@@ -2143,9 +2143,9 @@
         "title": "109",
         "intro": []
       },
-      "njkq": {
-        "title": "110",
-        "intro": []
+      "lab-availability-table": {
+        "title": "Build an Availability Table",
+        "intro": ["For this lab, you will create an availability table."]
       },
       "sget": {
         "title": "111",
@@ -2351,9 +2351,12 @@
         "title": "159",
         "intro": []
       },
-      "qmdt": {
-        "title": "160",
-        "intro": []
+      "workshop-shopping-list": {
+        "title": "Build a Shopping List",
+        "intro": [
+          "In this workshop, you will practice working with arrays by building a shopping list.",
+          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+        ]
       },
       "mokm": {
         "title": "161",
