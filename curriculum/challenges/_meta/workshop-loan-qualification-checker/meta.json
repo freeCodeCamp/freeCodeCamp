@@ -3,6 +3,7 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "workshop-loan-qualification-checker",
   "order": 42,
   "superBlock": "front-end-development",
@@ -12,80 +13,76 @@
       "title": "Step 1"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4a8",
+      "id": "66c8ba975ee7230e29f6c4a9",
       "title": "Step 2"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4a9",
+      "id": "66c8ba975ee7230e29f6c4aa",
       "title": "Step 3"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4aa",
+      "id": "66c8ba975ee7230e29f6c4ab",
       "title": "Step 4"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4ab",
+      "id": "66c8ba975ee7230e29f6c4ac",
       "title": "Step 5"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4ac",
+      "id": "66c8ba975ee7230e29f6c4ad",
       "title": "Step 6"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4ad",
+      "id": "66c8ba975ee7230e29f6c4ae",
       "title": "Step 7"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4ae",
+      "id": "66c8ba975ee7230e29f6c4af",
       "title": "Step 8"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4af",
+      "id": "66c8ba975ee7230e29f6c4b0",
       "title": "Step 9"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b0",
+      "id": "66c8ba975ee7230e29f6c4b1",
       "title": "Step 10"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b1",
+      "id": "66c8ba975ee7230e29f6c4b2",
       "title": "Step 11"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b2",
+      "id": "66c8ba975ee7230e29f6c4b3",
       "title": "Step 12"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b3",
+      "id": "66c8ba975ee7230e29f6c4b4",
       "title": "Step 13"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b4",
+      "id": "66c8ba975ee7230e29f6c4b5",
       "title": "Step 14"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b5",
+      "id": "66c8ba975ee7230e29f6c4b6",
       "title": "Step 15"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b6",
+      "id": "66c8ba975ee7230e29f6c4b7",
       "title": "Step 16"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b7",
+      "id": "66c8ba975ee7230e29f6c4b8",
       "title": "Step 17"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b8",
+      "id": "66c8ba975ee7230e29f6c4b9",
       "title": "Step 18"
     },
     {
-      "id": "66c8ba975ee7230e29f6c4b9",
-      "title": "Step 19"
-    },
-    {
       "id": "66c8ba975ee7230e29f6c4ba",
-      "title": "Step 20"
+      "title": "Step 19"
     }
   ],
   "helpCategory": "JavaScript"
