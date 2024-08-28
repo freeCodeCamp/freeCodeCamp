@@ -7,7 +7,8 @@ import prismaPlugin from '../db/prisma';
 import cookies, { sign, unsign } from './cookies';
 import { auth0Client } from './auth0';
 import redirectWithMessage, { formatMessage } from './redirect-with-message';
-import codeFlowAuth from './code-flow-auth';
+import auth from './auth';
+import bouncer from './bouncer';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-return
 jest.mock('../utils/env', () => ({
@@ -23,7 +24,8 @@ describe('auth0 plugin', () => {
 
     await fastify.register(cookies);
     await fastify.register(redirectWithMessage);
-    await fastify.register(codeFlowAuth);
+    await fastify.register(auth);
+    await fastify.register(bouncer);
     await fastify.register(auth0Client);
     await fastify.register(prismaPlugin);
   });

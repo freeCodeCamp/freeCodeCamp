@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Inizia ora (è gratuito)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "Accedi per salvare il tuo avanzamento (è gratuito)",
     "view-curriculum": "Visualizza il Curriculum",
     "first-lesson": "Vai alla prima lezione",
@@ -67,6 +68,7 @@
     "click-here": "Clicca qui per accedere",
     "save": "Salva",
     "save-code": "Salva il codice",
+    "show-demo": "Show Demo",
     "no-thanks": "No, grazie",
     "yes-please": "Sì, volentieri",
     "update-email": "Aggiorna la mia Email",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Costruisci progetti.",
     "big-heading-3": "Ottieni certificazioni.",
+    "big-heading-4": "All for free.",
     "h2-heading": "Dal 2014, più di 40.000 studenti di freeCodeCamp.org hanno ottenuto posti di lavoro presso aziende tecnologiche, tra cui:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "Studenti di un gruppo di studio locale di freeCodeCamp in Corea del Sud.",
     "hero-img-alt": "Un gruppo di persone, tra cui un uomo bianco, una donna di colore e una donna asiatica, riuniti intorno a un computer portatile.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "Hanno parlato di noi:",
     "testimonials": {
       "heading": "Ecco cosa dicono i nostri allievi su freeCodeCamp:",
@@ -274,7 +280,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Non importa, non voglio cancellare il mio account",
-      "reset-confirm": "Azzera tutto. Voglio ricominciare dall'inizio"
+      "reset-confirm": "Azzera tutto. Voglio ricominciare dall'inizio",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "Non hai un'email associata a questo account.",
@@ -408,7 +417,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Vuoi resettare questa lezione?",
     "reset-warn": "Sei sicuro di voler resettare questa lezione? Gli editor e i test saranno resettati.",
-    "reset-warn-2": "Questa operazione non potrà essere annullata",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
     "chal-preview": "Anteprima della sfida",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -512,6 +521,14 @@
       "link-li-6": "Clicca su \"Collega Account\" per collegare il tuo nome utente Microsoft.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {

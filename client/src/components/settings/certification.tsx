@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
 import { withTranslation } from 'react-i18next';
@@ -21,7 +20,7 @@ import {
 } from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
-import { FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow, Spacer, Link } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
@@ -446,7 +445,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
         challengeData={challengeData}
         previewTitle={projectTitle}
         closeText={t('buttons.close')}
-        showProjectPreview={true}
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
     </section>

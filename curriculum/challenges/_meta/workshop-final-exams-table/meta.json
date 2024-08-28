@@ -1,0 +1,61 @@
+{
+  "name": "Build a Final Exams Table",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-final-exams-table",
+  "order": 20,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66a98f42c7c06903e5f8dd07",
+      "title": "Step 1"
+    },
+    {
+      "id": "66a9b333487b9c14998539a5",
+      "title": "Step 2"
+    },
+    {
+      "id": "66a9b48a211a73155621d0df",
+      "title": "Step 3"
+    },
+    {
+      "id": "66a9b8f14b963916a3baa732",
+      "title": "Step 4"
+    },
+    {
+      "id": "66a9bb8578459a175432e7d0",
+      "title": "Step 5"
+    },
+    {
+      "id": "66a9bcf00f13a418368a272e",
+      "title": "Step 6"
+    },
+    {
+      "id": "66a9c006e4f58819396605b3",
+      "title": "Step 7"
+    },
+    {
+      "id": "66a9c14e3b34c719e34bae20",
+      "title": "Step 8"
+    },
+    {
+      "id": "66a9c7a4521d2b1b1ec6dcf0",
+      "title": "Step 9"
+    },
+    {
+      "id": "66a9ca099e3ecb1be10a2696",
+      "title": "Step 10"
+    },
+    {
+      "id": "66a9cb26ec6bd41cf6c82bc5",
+      "title": "Step 11"
+    },
+    {
+      "id": "66a9cd4ffa48cf1ef7333640",
+      "title": "Step 12"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

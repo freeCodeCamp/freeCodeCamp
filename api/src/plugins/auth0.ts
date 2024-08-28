@@ -53,21 +53,28 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       }
     });
 
-    fastify.get('/signin', async function (request, reply) {
-      const returnTo = request.headers.referer ?? `${HOME_LOCATION}/learn`;
-      void reply.setCookie('login-returnto', returnTo, {
-        domain: COOKIE_DOMAIN,
-        httpOnly: true,
-        secure: true,
-        signed: true,
-        sameSite: 'lax'
-      });
+    void fastify.register(function (fastify, _options, done) {
+      // TODO(Post-MVP): move this into the app, so that we add this hook once for
+      // all auth routes.
+      fastify.addHook('onRequest', fastify.redirectIfSignedIn);
 
-      const redirectUrl = await this.auth0OAuth.generateAuthorizationUri(
-        request,
-        reply
-      );
-      void reply.redirect(redirectUrl);
+      fastify.get('/signin', async function (request, reply) {
+        const returnTo = request.headers.referer ?? `${HOME_LOCATION}/learn`;
+        void reply.setCookie('login-returnto', returnTo, {
+          domain: COOKIE_DOMAIN,
+          httpOnly: true,
+          secure: true,
+          signed: true,
+          sameSite: 'lax'
+        });
+
+        const redirectUrl = await this.auth0OAuth.generateAuthorizationUri(
+          request,
+          reply
+        );
+        void reply.redirect(redirectUrl);
+      });
+      done();
     });
 
     // TODO: use a schema to validate the query params.
@@ -151,5 +158,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
     done();
   },
-  { dependencies: ['redirect-with-message'] }
+  // TODO(Post-MVP): remove bouncer dependency when moving redirectIfSignedIn
+  // out of this plugin.
+  { dependencies: ['redirect-with-message', 'bouncer'] }
 );
