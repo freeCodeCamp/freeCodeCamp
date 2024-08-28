@@ -2,6 +2,7 @@ import { Static } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 import {
   createSuperRequest,
+  defaultUserId,
   devLogin,
   seedEnvExam,
   setupServer
@@ -10,6 +11,11 @@ import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGenerate
 } from '../schemas';
+import {
+  examAttempt,
+  examId,
+  generatedExam
+} from '../../../__mocks__/env-exam';
 
 describe('/exam-environment/', () => {
   setupServer();
@@ -34,6 +40,11 @@ describe('/exam-environment/', () => {
     });
 
     describe('POST /exam-environment/exam/attempt', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
+        await fastifyTestInstance.prisma.envGeneratedExam.deleteMany();
+      });
+
       it('should return an error if there are no current exam attempts matching the given id', async () => {
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt: {
@@ -60,17 +71,178 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('should return an error if the given exam id does not match an existing exam', async () => {});
+      it('should return an error if the given exam id does not match an existing exam', async () => {
+        const examId = new ObjectId().toString();
+        // Create exam attempt with bad exam id
+        await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: {
+            examId,
+            generatedExamId: new ObjectId().toString(),
+            needsRetake: false,
+            startTimeInMS: Date.now(),
+            userId: defaultUserId
+          }
+        });
+        const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
+          attempt: {
+            examId,
+            questionSets: []
+          }
+        };
+        const res = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
 
-      xit('should return an error if the attempt has expired', async () => {});
+        expect(res).toMatchObject({
+          status: 404,
+          body: {
+            code: 'FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM'
+          }
+        });
+      });
 
-      xit('should return an error if there is no matching generated exam', async () => {});
+      it('should return an error if the attempt has expired', async () => {
+        // Create exam attempt with expired time
+        await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: {
+            examId,
+            generatedExamId: new ObjectId().toString(),
+            needsRetake: false,
+            startTimeInMS: Date.now() - (1000 * 60 * 60 * 2 + 1000),
+            userId: defaultUserId
+          }
+        });
+        const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
+          attempt: {
+            examId,
+            questionSets: []
+          }
+        };
+        const res = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
 
-      xit('should return an error if the attempt does not match the generated exam', async () => {});
+        expect(res).toMatchObject({
+          status: 403,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
+          }
+        });
+      });
 
-      xit('should mark the attempt as needs retake if the attempt is invalid', async () => {});
+      it('should return an error if there is no matching generated exam', async () => {
+        // Create exam attempt with no matching generated exam
+        await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: {
+            examId,
+            generatedExamId: new ObjectId().toString(),
+            needsRetake: false,
+            startTimeInMS: Date.now(),
+            userId: defaultUserId
+          }
+        });
+        const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
+          attempt: {
+            examId,
+            questionSets: []
+          }
+        };
+        const res = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
 
-      xit('should return 200 if request is valid', async () => {});
+        expect(res).toMatchObject({
+          status: 404,
+          body: {
+            code: 'FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM'
+          }
+        });
+      });
+
+      it('should return an error if the attempt does not match the generated exam', async () => {
+        const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: { ...examAttempt, userId: defaultUserId }
+        });
+        await fastifyTestInstance.prisma.envGeneratedExam.create({
+          data: generatedExam
+        });
+
+        // @ts-expect-error Exam is defined
+        attempt.questionSets[0].id = new ObjectId().toString();
+
+        const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
+          attempt
+        };
+
+        const res = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
+
+        expect(res).toMatchObject({
+          status: 400,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
+          }
+        });
+
+        // Database should mark attempt as `needsRetake`
+        const updatedAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.findUnique({
+            where: { id: attempt.id }
+          });
+        expect(updatedAttempt).toMatchObject({
+          needsRetake: true
+        });
+      });
+
+      it('should return 200 if request is valid, and update attempt in database', async () => {
+        const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: {
+            userId: defaultUserId,
+            examId,
+            generatedExamId: generatedExam.id,
+            startTimeInMS: Date.now(),
+            questionSets: [],
+            needsRetake: false
+          }
+        });
+        await fastifyTestInstance.prisma.envGeneratedExam.create({
+          data: generatedExam
+        });
+
+        const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
+          attempt
+        };
+
+        const res = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
+
+        expect(res.status).toBe(200);
+
+        // Database should update attempt
+        const updatedAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.findUnique({
+            where: { id: attempt.id }
+          });
+
+        expect(updatedAttempt).toMatchObject(attempt);
+      });
     });
 
     describe('POST /exam-environment/generate', () => {

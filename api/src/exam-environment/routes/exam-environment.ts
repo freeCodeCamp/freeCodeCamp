@@ -434,7 +434,9 @@ async function postExamAttemptHandler(
   if (generatedExam === null) {
     void reply.code(404);
     return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Generated exam not found.')
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM(
+        'Generated exam not found.'
+      )
     );
   }
 
@@ -470,11 +472,10 @@ async function postExamAttemptHandler(
     })
   );
 
-  // TODO: Discuss what to do on error here?
   if (maybeValidExamAttempt.error !== null) {
     void reply.code(400);
     return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
         JSON.stringify(maybeValidExamAttempt.error)
       )
     );
@@ -487,7 +488,7 @@ async function postExamAttemptHandler(
     );
   }
 
-  return reply.code(200);
+  return reply.code(200).send();
 }
 
 /**

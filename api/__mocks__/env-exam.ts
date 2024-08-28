@@ -13,7 +13,7 @@ const oid = () => new ObjectId().toString();
 export const examId = oid();
 
 export const config: EnvConfig = {
-  totalTimeInMS: 1234567890,
+  totalTimeInMS: 2 * 60 * 60 * 1000,
   tags: [],
   name: 'Test Exam',
   note: 'Some exam note...',
