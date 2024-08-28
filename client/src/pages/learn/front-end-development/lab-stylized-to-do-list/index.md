@@ -6,4 +6,4 @@ superBlock: front-end-development
 
 ## Introduction to the Build a Stylized To-Do List
 
-This is a test for the new project-based curriculum.
+In this lab, you will practice the different styles that can be applied to links when they are hovered over, focused, clicked, and visited.
