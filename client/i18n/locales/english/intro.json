@@ -1883,12 +1883,7 @@
       "cygu": { "title": "137", "intro": [] },
       "axgb": { "title": "138", "intro": [] },
       "rwac": { "title": "139", "intro": [] },
-      "lab-email-masker": {
-        "title": "Build an Email Masker",
-        "intro": [
-          "In this lab, you'll build an email masker that will take an email address and obscure it."
-        ]
-      },
+      "hqba": { "title": "153", "intro": [] },
       "hxwa": { "title": "141", "intro": [] },
       "xkbo": { "title": "142", "intro": [] },
       "nkxq": { "title": "143", "intro": [] },
@@ -1901,7 +1896,12 @@
       "tsdq": { "title": "150", "intro": [] },
       "kkix": { "title": "151", "intro": [] },
       "icxa": { "title": "152", "intro": [] },
-      "hqba": { "title": "153", "intro": [] },
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it."
+        ]
+      },
       "nnqa": { "title": "154", "intro": [] },
       "cktz": { "title": "155", "intro": [] },
       "pljo": { "title": "156", "intro": [] },
