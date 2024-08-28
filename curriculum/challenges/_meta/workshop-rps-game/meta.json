@@ -7,6 +7,31 @@
   "dashedName": "workshop-rps-game",
   "order": 198,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66cf13fe7619e9a1d57c7b5e", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66cf13fe7619e9a1d57c7b5e",
+      "title": "Step 1"
+    },
+    {
+      "id": "66cf315cff4d36b27da828ba",
+      "title": "Step 2"
+    },
+    {
+      "id": "66cf33305293e1b35c1aef7f",
+      "title": "Step 3"
+    },
+    {
+      "id": "66cf34fcb005e7b447141afd",
+      "title": "Step 4"
+    },
+    {
+      "id": "66cf35a75f891ab4f4e5497b",
+      "title": "Step 5"
+    },
+    {
+      "id": "66cf3639aca119b5c00b02d3",
+      "title": "Step 6"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
