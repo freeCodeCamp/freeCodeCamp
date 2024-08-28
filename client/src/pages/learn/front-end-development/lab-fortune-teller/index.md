@@ -4,6 +4,6 @@ block: lab-fortune-teller
 superBlock: front-end-development
 ---
 
-## Introduction to the Build a Fortune Teller
+## Introduction to Building a Fortune Teller
 
-This is a test for the new project-based curriculum.
+In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes.

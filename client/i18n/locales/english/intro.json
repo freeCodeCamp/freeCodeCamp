@@ -1888,7 +1888,9 @@
       "xkbo": { "title": "142", "intro": [] },
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
-        "intro": ["", ""]
+        "intro": [
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+        ]
       },
       "wfyg": { "title": "144", "intro": [] },
       "guqy": { "title": "145", "intro": [] },
