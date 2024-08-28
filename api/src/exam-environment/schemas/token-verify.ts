@@ -6,9 +6,11 @@ export const examEnvironmentTokenVerify = {
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
-    200: Type.Object({
-      data: Type.String()
-    }),
-    403: STANDARD_ERROR
+    200: Type.Union([
+      Type.Object({
+        data: Type.String()
+      }),
+      STANDARD_ERROR
+    ])
   }
 };

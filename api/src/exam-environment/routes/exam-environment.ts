@@ -89,7 +89,8 @@ async function tokenVerifyHandler(
   try {
     jwt.verify(encodedToken, JWT_SECRET);
   } catch (e) {
-    void reply.code(403);
+    // TODO: What to send back here? Request is valid, but token is not?
+    void reply.code(200);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(JSON.stringify(e))
     );
@@ -348,6 +349,15 @@ async function postExamAttemptHandler(
   }
 
   const attempts = maybeAttempts.data;
+
+  if (attempts.length === 0) {
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+        `No attempts found for user '${user.id}' with attempt id '${attempt.examId}'.`
+      )
+    );
+  }
 
   const latestAttempt = attempts.reduce((latest, current) =>
     latest.startTimeInMS > current.startTimeInMS ? latest : current

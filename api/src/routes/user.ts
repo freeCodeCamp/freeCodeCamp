@@ -31,7 +31,6 @@ import { createResetProperties } from '../utils/create-user';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { UpdateReqType } from '../utils';
 import { JWT_SECRET } from '../utils/env';
-import { CODE } from '../exam-environment/utils/exam';
 import { isRestricted } from './helpers/is-restricted';
 
 // user flags that the api-server returns as false if they're missing in the
@@ -458,7 +457,6 @@ async function examEnvironmentTokenHandler(
   );
 
   void reply.send({
-    code: CODE.EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN_CREATED,
     data: {
       examEnvironmentAuthorizationToken
     }
