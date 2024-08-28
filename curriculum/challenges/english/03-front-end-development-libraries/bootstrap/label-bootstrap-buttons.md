@@ -23,7 +23,7 @@ assert.match(document.querySelector('#target1')?.textContent,/#target1/gi)
 Your `button` element with the id `target2` should have the text `#target2`.
 
 ```js
-assert.match(document.querySelector('#target2').textContent,/#target2/gi)
+assert.match(document.querySelector('#target2')?.textContent,/#target2/gi)
 ```
 
 Your `button` element with the id `target3` should have the text `#target3`.
