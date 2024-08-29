@@ -73,67 +73,49 @@ const id = document.querySelectorAll('ul li span.favorite-icon');
 assert.equal(id[2]?.id, 'favoriteIcon3');
 ```
 
-Initially, the `span` elements should contain the code `&#9825;` to represent an empty heart.
+always passing >> Initially, the `span` elements should contain the code `&#9825;` to represent an empty heart.
 
 ```js
 const inputs = document.querySelectorAll('ul li span.favorite-icon');
 for (let input of inputs) {
-    assert.equal(input.innerHTML.charCodeAt(0), 9825);
+    assert.strictEqual(input.innerHTML.charCodeAt(0), 9825);
 }
 ```
 
-You should select all the `.favorite-icon` `span` elements and store them in the `favouriteIcons` variable.
+test >> When the `span` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `span` element and change the innerHTML of the `span` element to `&#9825;`.
 
 ```js
-assert.match(__helpers.removeJSComments(code), /favoriteIcons\s*=\s*document\.querySelectorAll\(["']\.favorite-icon["']\)/);
+// Select all span elements with the class 'favorite-icon'
+const spanElements = document.querySelectorAll('.favorite-icon');
+
+// Add the 'filled' class to all span elements
+spanElements.forEach(span => span.classList.add('filled'));
+
+// Simulate a click on each span element and check if the 'filled' class is removed
+spanElements.forEach(span => {
+    span.dispatchEvent(new Event('click'));
+    span.dispatchEvent(new Event('change'));
+    assert.isFalse(span.classList.contains('filled'));
+    assert.equal(span.innerHTML.charCodeAt(0), 9825);
+});
 ```
 
-You should attach a click event listener to each of the `span` elements.
+test >> When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element and change the innerHTML of the `span` element to `&#10084;`.
 
 ```js
+// Select all span elements with the class 'favorite-icon'
+const spanElements = document.querySelectorAll('.favorite-icon');
 
-```
+// Remove the 'filled' class from all span elements
+spanElements.forEach(span => span.classList.remove('filled'));
 
-When the `span` element is clicked, you should check if the `span` element contains the class `filled`.
-
-```js
-
-```
-
-When the `span` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `span` element.
-
-```js
-
-```
-
-When the `span` element is clicked, and it contains the class `filled`, you should remove change the innerHTML of the `span` element to `&#9825;`.
-
-```js
-
-```
-
-When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element.
-
-```js
-
-```
-
-When the `span` element is clicked, and it doesn't contain the class `filled`, you should change the innerHTML of the `span` element to `&#10084;`.
-
-```js
-
-```
-
-Don't forget to link your style sheet using the `link` tag in the `head` section of your HTML file.
-
-```js
-
-```
-
-Don't forget to link your javascript file using the `script` tag at the end of the `body` section of your HTML file.
-
-```js
-
+// Simulate a click on each span element and check if the 'filled' class is added
+spanElements.forEach(span => {
+    span.dispatchEvent(new Event('click'));
+    span.dispatchEvent(new Event('change'));
+    assert.isTrue(span.classList.contains('filled'));
+    assert.equal(span.innerHTML.charCodeAt(0), 10084);
+});
 ```
 
 # --seed--
