@@ -1,9 +1,9 @@
 ---
 title: Introduction to Build a Real Time Counter
-block: build-a-real-time-counter
+block: lab-real-time-counter
 superBlock: front-end-development
 ---
 
 ## Introduction to Build a Real Time Counter
 
-This is a test for the new project-based curriculum.
+In this lab, you will build a real-time character counter
