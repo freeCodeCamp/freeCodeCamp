@@ -265,7 +265,16 @@ async function postExamGenerateHandler(
   }
 
   // Generate exam for user, and store in db for later validation against submission
-  const generatedExamContent = generateExam(exam);
+  const maybeGeneratedExamContent = syncMapErr(() => generateExam(exam));
+
+  if (maybeGeneratedExamContent.error !== null) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExamContent.error)
+    );
+  }
+
+  const generatedExamContent = maybeGeneratedExamContent.data;
 
   const maybeGeneratedExam = await mapErr(
     this.prisma.envGeneratedExam.create({

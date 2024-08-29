@@ -382,8 +382,6 @@ describe('/exam-environment/', () => {
             examEnvironmentAuthorizationToken
           );
 
-        // TODO: This test does not work because `generateExam` does not throw with an invalid tag.
-
         expect(res).toMatchObject({
           status: 500,
           body: {
@@ -418,12 +416,15 @@ describe('/exam-environment/', () => {
           });
 
         expect(examAttempt).toEqual({
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           id: expect.any(String),
           userId: defaultUserId,
           examId,
           generatedExamId: generatedExam!.id,
           questionSets: [],
           needsRetake: false,
+          submissionTimeInMS: null,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTimeInMS: expect.any(Number)
         });
       });

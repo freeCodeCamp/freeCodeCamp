@@ -429,6 +429,10 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
           }
         }
       }
+
+      if (tagConfig.numberOfQuestions !== 0) {
+        throw `Invalid Exam Configuration for exam "${examCopy.id}". Not enough questions for tag group "${tagConfig.group.join(',')}".`;
+      }
     }
 
     // Add questions to questionSetsConfigWithQuestions until fulfilled.
@@ -466,9 +470,7 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
         });
 
         if (!questionSet) {
-          throw new Error(
-            `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`
-          );
+          throw `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`;
         }
         // Remove questionSet from shuffledQuestionSets
         shuffledQuestionSets.splice(
@@ -515,9 +517,7 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
               q => !questionSet.questions.find(qsq => qsq.id === q.id)
             );
           if (!questions) {
-            throw new Error(
-              `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`
-            );
+            throw `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`;
           }
 
           const questionsWithEnoughAnswers = questions.filter(q => {

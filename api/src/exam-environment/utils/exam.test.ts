@@ -56,7 +56,9 @@ describe('Exam Environment', () => {
       ).toBe(false);
     });
   });
-  xdescribe('checkPrequisites()', () => {});
+  xdescribe('checkPrequisites()', () => {
+    // TODO: Awaiting implementation
+  });
   describe('constructUserExam()', () => {
     it('should not provide the answers', () => {
       const userExam = constructUserExam(generatedExam, exam);
@@ -147,6 +149,22 @@ describe('Exam Environment', () => {
       );
 
       expect(duplicateAnswers).toHaveLength(0);
+    });
+
+    it('should throw if the exam config is invalid', () => {
+      const invalidExam = {
+        ...exam,
+        config: {
+          ...exam.config,
+          tags: [
+            {
+              group: ['non-existant-tag'],
+              numberOfQuestions: 1
+            }
+          ]
+        }
+      };
+      expect(() => generateExam(invalidExam)).toThrow();
     });
   });
 
