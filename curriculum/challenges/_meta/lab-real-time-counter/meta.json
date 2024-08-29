@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "blockType": "lab",
   "dashedName": "lab-real-time-counter",
-  "order": 196,
+  "order": 195,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "66bb3e20d3dc5b6d0a21f5dd", "title": "Build a Real Time Counter" }],
   "helpCategory": "JavaScript"
