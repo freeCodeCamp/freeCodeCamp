@@ -4,6 +4,6 @@ block: lab-sentence-maker
 superBlock: front-end-development
 ---
 
-## Introduction to the Build a Sentence Maker
+## Introduction to Build a Sentence Maker
 
-This is a test for the new project-based curriculum.
+In this lab, you will create different stories by assigning different words to different variables.
