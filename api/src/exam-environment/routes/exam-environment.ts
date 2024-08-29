@@ -132,11 +132,24 @@ async function postExamGenerateHandler(
 ) {
   // Get exam from DB
   const examId = req.body.examId;
-  const exam = await this.prisma.envExam.findUnique({
-    where: {
-      id: examId
-    }
-  });
+  // TODO: This throws if `id` is not serializable into an ObjectId
+  //       Should this be caught, and thrown to the client as a client error?
+  const maybeExam = await mapErr(
+    this.prisma.envExam.findUnique({
+      where: {
+        id: examId
+      }
+    })
+  );
+  if (maybeExam.error !== null) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+    );
+  }
+
+  const exam = maybeExam.data;
+
   if (!exam) {
     void reply.code(404);
     return reply.send(
@@ -165,32 +178,52 @@ async function postExamGenerateHandler(
   }
 
   // Check user has not completed exam in last 24 hours
-  const examAttempts = await this.prisma.envExamAttempt.findMany({
-    where: {
-      userId: user.id,
-      examId: exam.id
-    }
-  });
-
-  const lastAttempt = examAttempts.reduce((latest, current) =>
-    latest.startTimeInMS > current.startTimeInMS ? latest : current
+  const maybeExamAttemts = await mapErr(
+    this.prisma.envExamAttempt.findMany({
+      where: {
+        userId: user.id,
+        examId: exam.id
+      }
+    })
   );
 
-  if (lastAttempt) {
-    // If exam is not submitted, use exam start time + time allocated for exam
-    const effectiveSubmissionTime =
-      lastAttempt.submissionTimeInMS ??
-      lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
-    const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
+  if (maybeExamAttemts.error !== null) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttemts.error))
+    );
+  }
 
-    if (effectiveSubmissionTime > twentyFourHoursAgo) {
-      void reply.code(403);
-      // TOOD: Consider sending last completed time
-      return reply.send(
-        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(
-          'User has completed exam too recently to retake.'
-        )
-      );
+  const examAttempts = maybeExamAttemts.data;
+
+  const maybeLastAttempt = examAttempts.reduce(
+    (latest, current) =>
+      latest && latest.startTimeInMS > current.startTimeInMS ? latest : current,
+    // This is to prevent reduce from throwing a TypeError when `examAttempts` is empty
+    null as (typeof examAttempts)[number] | null
+  );
+
+  if (maybeLastAttempt) {
+    const lastAttempt = maybeLastAttempt;
+
+    const attemptIsExpired =
+      lastAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+    if (attemptIsExpired) {
+      // If exam is not submitted, use exam start time + time allocated for exam
+      const effectiveSubmissionTime =
+        lastAttempt.submissionTimeInMS ??
+        lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
+      const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
+
+      if (effectiveSubmissionTime > twentyFourHoursAgo) {
+        void reply.code(403);
+        // TOOD: Consider sending last completed time
+        return reply.send(
+          ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(
+            'User has completed exam too recently to retake.'
+          )
+        );
+      }
     } else {
       // Camper has started an attempt, but not submitted it, and there is still time left to complete it.
       // This is most likely to happen if the Camper's app closes and is reopened.

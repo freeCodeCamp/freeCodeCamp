@@ -4,7 +4,6 @@ import {
   createSuperRequest,
   defaultUserId,
   devLogin,
-  seedEnvExam,
   setupServer
 } from '../../../jest.utils';
 import {
@@ -12,10 +11,13 @@ import {
   examEnvironmentPostExamGenerate
 } from '../schemas';
 import {
+  exam,
   examAttempt,
   examId,
+  seedEnvExam,
   generatedExam
 } from '../../../__mocks__/env-exam';
+import { constructUserExam } from '../utils/exam';
 
 describe('/exam-environment/', () => {
   setupServer();
@@ -246,6 +248,12 @@ describe('/exam-environment/', () => {
     });
 
     describe('POST /exam-environment/generate', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
+        await fastifyTestInstance.prisma.envGeneratedExam.deleteMany();
+        await seedEnvExam();
+      });
+
       it('should return an error if the given exam id is invalid', async () => {
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
           examId: new ObjectId().toString()
@@ -265,21 +273,202 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('should return an error if the exam prerequisites are not met', async () => {});
+      xit('should return an error if the exam prerequisites are not met', async () => {
+        // TODO: Waiting on prerequisites
+      });
 
-      xit('should return an error if the exam cooldown is in effect', async () => {});
+      it('should return an error if the exam cooldown is in effect', async () => {
+        const recentExamAttempt = {
+          ...examAttempt,
+          startTimeInMS: Date.now() - exam.config.totalTimeInMS
+        };
+        const _latestAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.create({
+            data: recentExamAttempt
+          });
 
-      xit('should return the current attempt if it is still ongoing', async () => {});
+        const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
 
-      xit('should store a random generated exam in the database', async () => {});
+        const res = await superPost('/exam-environment/exam/generate')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
 
-      xit('should return an error if the exam generation fails', async () => {});
+        // console.log(res);
 
-      xit('should store an exam attempt in the database', async () => {});
+        expect(res).toMatchObject({
+          status: 403,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
+          }
+        });
+      });
 
-      xit('should unwind (delete) the exam attempt and generated exam if the user exam cannot be constructed', async () => {});
+      it('should return the current attempt if it is still ongoing', async () => {
+        const latestAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.create({
+            data: examAttempt
+          });
+        await fastifyTestInstance.prisma.envGeneratedExam.create({
+          data: generatedExam
+        });
 
-      xit('should return the exam with the exam attempt', async () => {});
+        const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
+
+        const res = await superPost('/exam-environment/exam/generate')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res).toMatchObject({
+          status: 200,
+          body: {
+            data: {
+              examAttempt: latestAttempt
+            }
+          }
+        });
+      });
+
+      it('should store a random generated exam in the database', async () => {
+        const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
+        const res = await superPost('/exam-environment/exam/generate')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(200);
+
+        const generatedExam =
+          await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
+            where: { examId }
+          });
+
+        expect(generatedExam).toBeDefined();
+      });
+
+      it('should return an error if the exam generation fails', async () => {
+        await fastifyTestInstance.prisma.envExam.deleteMany();
+        // Create an exam that cannot be generated
+        await fastifyTestInstance.prisma.envExam.create({
+          data: {
+            ...exam,
+            config: {
+              ...exam.config,
+              tags: [{ group: ['invalid'], numberOfQuestions: 1 }]
+            }
+          }
+        });
+
+        const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
+        const res = await superPost('/exam-environment/exam/generate')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        // TODO: This test does not work because `generateExam` does not throw with an invalid tag.
+
+        expect(res).toMatchObject({
+          status: 500,
+          body: {
+            code: 'FCC_ERR_EXAM_ENVIRONMENT'
+          }
+        });
+      });
+
+      it('should store an empty exam attempt in the database', async () => {
+        const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
+        const res = await superPost('/exam-environment/exam/generate')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(200);
+
+        const generatedExam =
+          await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
+            where: { examId }
+          });
+
+        expect(generatedExam).toBeDefined();
+
+        const examAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.findFirst({
+            where: { generatedExamId: generatedExam!.id }
+          });
+
+        expect(examAttempt).toEqual({
+          id: expect.any(String),
+          userId: defaultUserId,
+          examId,
+          generatedExamId: generatedExam!.id,
+          questionSets: [],
+          needsRetake: false,
+          startTimeInMS: expect.any(Number)
+        });
+      });
+
+      xit('should unwind (delete) the exam attempt and generated exam if the user exam cannot be constructed', async () => {
+        // TODO: Not sure how to test this as it involves stopping half way through a valid request
+      });
+
+      it('should return the use exam with the exam attempt', async () => {
+        const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
+        const res = await superPost('/exam-environment/exam/generate')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(200);
+
+        const generatedExam =
+          await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
+            where: { examId }
+          });
+
+        expect(generatedExam).toBeDefined();
+
+        const examAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.findFirst({
+            where: { generatedExamId: generatedExam!.id }
+          });
+
+        const userExam = constructUserExam(generatedExam!, exam);
+
+        expect(res).toMatchObject({
+          status: 200,
+          body: {
+            data: {
+              examAttempt,
+              exam: userExam
+            }
+          }
+        });
+      });
     });
 
     xdescribe('POST /exam-environment/screenshot', () => {});

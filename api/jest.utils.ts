@@ -3,7 +3,6 @@ import request from 'supertest';
 import { build } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
-import { exam } from './__mocks__/env-exam';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -235,16 +234,6 @@ export async function seedExam(): Promise<void> {
   await fastifyTestInstance.prisma.exam.create({
     data: {
       ...examJson
-    }
-  });
-}
-
-export async function seedEnvExam(): Promise<void> {
-  await fastifyTestInstance.prisma.envExam.deleteMany({});
-
-  await fastifyTestInstance.prisma.envExam.create({
-    data: {
-      ...exam
     }
   });
 }

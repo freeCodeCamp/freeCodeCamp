@@ -7,6 +7,7 @@ import {
   EnvQuestionType
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
+import { defaultUserId } from '../jest.utils';
 
 const oid = () => new ObjectId().toString();
 
@@ -285,7 +286,7 @@ export const examAttempt: EnvExamAttempt = {
     }
   ],
   startTimeInMS: Date.now(),
-  userId: oid(),
+  userId: defaultUserId,
   submissionTimeInMS: null
 };
 
@@ -294,3 +295,11 @@ export const exam: EnvExam = {
   config,
   questionSets
 };
+
+export async function seedEnvExam(): Promise<void> {
+  await fastifyTestInstance.prisma.envExam.deleteMany({});
+
+  await fastifyTestInstance.prisma.envExam.create({
+    data: exam
+  });
+}

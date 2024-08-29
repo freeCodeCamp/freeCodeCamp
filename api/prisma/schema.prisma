@@ -240,8 +240,8 @@ type EnvQuestionSetConfig {
 ///
 /// This configures the number of questions that should resolve to a given tag set criteria.
 type EnvTagConfig {
-  /// Foreign key to multiple choice question tags
-  group             String[] @db.ObjectId
+  /// Group of multiple choice question tags
+  group             String[]
   /// Number of multiple choice questions per exam that should meet the group criteria
   numberOfQuestions Int
 }
