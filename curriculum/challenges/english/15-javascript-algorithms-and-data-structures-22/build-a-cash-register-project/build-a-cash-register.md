@@ -372,7 +372,7 @@ assert.strictEqual(
 );
 ```
 
-When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is less than the change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
+When the `price` is less than the value in the `#cash` element and the total cash in the drawer (`cid`) is insufficient to cover the change due, the purchase should not proceed. When the `#purchase-btn` is clicked under these conditions, the `#change-due` element should display `"Status: INSUFFICIENT_FUNDS"`.
 
 ```js
 const cashInput = document.getElementById('cash');
