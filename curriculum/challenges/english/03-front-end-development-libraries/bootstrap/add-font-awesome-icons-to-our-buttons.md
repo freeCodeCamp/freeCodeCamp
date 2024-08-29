@@ -65,7 +65,7 @@ assert(i.length > 0 ||span.length > 0);
 Your icon element should have a closing tag.
 
 ```js
-assert.match(code,/(<\/i>|<\/span>)<\/button>/g);
+assert.match(code, /(<\/i>|<\/span>)\s*Like\s*<\/button>/g);
 ```
 
 # --seed--
