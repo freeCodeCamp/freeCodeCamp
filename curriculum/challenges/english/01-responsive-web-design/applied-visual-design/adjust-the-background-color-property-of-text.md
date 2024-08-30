@@ -40,10 +40,10 @@ Your code should add a `padding` property to the `h4` element and set it to 10 p
 ```js
 const h4Element = document.querySelector("h4"); 
 const h4style = window.getComputedStyle(h4Element);
-assert.equal(h4style.paddingTop,"10px");
-assert.equal(h4style.paddingRight,"10px");
-assert.equal(h4style.paddingBottom,"10px");
-assert.equal(h4style.paddingLeft,"10px");
+assert.equal(h4style?.paddingTop, "10px");
+assert.equal(h4style?.paddingRight, "10px");
+assert.equal(h4style?.paddingBottom, "10px");
+assert.equal(h4style?.paddingLeft, "10px");
 ```
 
 The `height` property on the `h4` element should be removed.
