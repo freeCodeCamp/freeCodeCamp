@@ -1929,7 +1929,12 @@
       "wjzt": { "title": "149", "intro": [] },
       "tsdq": { "title": "150", "intro": [] },
       "kkix": { "title": "151", "intro": [] },
-      "icxa": { "title": "152", "intro": [] },
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review working with functions by building a calculator."
+        ]
+      },
       "hqba": { "title": "153", "intro": [] },
       "nnqa": { "title": "154", "intro": [] },
       "cktz": { "title": "155", "intro": [] },
