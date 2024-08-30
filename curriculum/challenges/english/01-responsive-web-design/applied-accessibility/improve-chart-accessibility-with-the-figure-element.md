@@ -59,7 +59,7 @@ The `figcaption` should be a child of the `figure` tag.
 
 ```js
 const figure = document.querySelector('figure');
-const children = figure.querySelectorAll(`:scope ${'figcaption'}`);
+const children = figure?.querySelectorAll(`:scope ${'figcaption'}`);
 assert.lengthOf(children, 1);
 ```
 
