@@ -23,6 +23,8 @@ export function mergeChallengeFiles(
 
   return sortedChallengeFiles.map((file, index) => ({
     ...file,
-    contents: sortedSavedChallengeFiles[index].contents
+    contents: sortedSavedChallengeFiles[index].contents,
+    editableRegionBoundaries:
+      sortedSavedChallengeFiles[index].editableRegionBoundaries
   }));
 }

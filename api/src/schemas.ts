@@ -11,9 +11,11 @@ export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challe
 export { projectCompleted } from './schemas/challenge/project-completed';
 export { saveChallenge } from './schemas/challenge/save-challenge';
 export { deprecatedEndpoints } from './schemas/deprecated';
+export { addDonation } from './schemas/donate/add-donation';
 export { chargeStripeCard } from './schemas/donate/charge-stripe-card';
 export { chargeStripe } from './schemas/donate/charge-stripe';
 export { createStripePaymentIntent } from './schemas/donate/create-stripe-payment-intent';
+export { updateStripeCard } from './schemas/donate/update-stripe-card';
 export { resubscribe } from './schemas/email-subscription/resubscribe';
 export { unsubscribe } from './schemas/email-subscription/unsubscribe';
 export { updateMyAbout } from './schemas/settings/update-my-about';

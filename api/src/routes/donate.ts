@@ -1,14 +1,11 @@
-import {
-  Type,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 import {
   donationSubscriptionConfig,
   allStripeProductIdsArray
 } from '../../../shared/config/donation-settings';
 import * as schemas from '../schemas';
-import { STRIPE_SECRET_KEY } from '../utils/env';
+import { STRIPE_SECRET_KEY, HOME_LOCATION } from '../utils/env';
 import { inLastFiveMinutes } from '../utils/validate-donation';
 import { findOrCreateUser } from './helpers/auth-helpers';
 
@@ -30,25 +27,39 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     typescript: true
   });
 
+  fastify.put(
+    '/donate/update-stripe-card',
+    {
+      schema: schemas.updateStripeCard
+    },
+    async req => {
+      const donation = await fastify.prisma.donation.findFirst({
+        where: { userId: req.user?.id, provider: 'stripe' }
+      });
+      if (!donation)
+        throw Error(`Stripe donation record not found: ${req.user?.id}`);
+      const { customerId, subscriptionId } = donation;
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        mode: 'setup',
+        customer: customerId,
+        setup_intent_data: {
+          metadata: {
+            customer_id: customerId,
+            subscription_id: subscriptionId
+          }
+        },
+        success_url: `${HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${HOME_LOCATION}/update-stripe-card`
+      });
+      return { sessionId: session.id } as const;
+    }
+  );
+
   fastify.post(
     '/donate/add-donation',
     {
-      schema: {
-        body: Type.Object({}),
-        response: {
-          200: Type.Object({
-            isDonating: Type.Boolean()
-          }),
-          400: Type.Object({
-            message: Type.Literal('User is already donating.'),
-            type: Type.Literal('info')
-          }),
-          500: Type.Object({
-            message: Type.Literal('Something went wrong.'),
-            type: Type.Literal('danger')
-          })
-        }
-      }
+      schema: schemas.addDonation
     },
     async (req, reply) => {
       try {
@@ -76,6 +87,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
           type: 'danger',
@@ -202,6 +214,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         fastify.log.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'

@@ -232,6 +232,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.stack = stack;
       }
 
+      newTest.message = newTest.message.replace(/<p>/, `<p>${i + 1}. `);
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
@@ -255,9 +256,7 @@ export function* previewChallengeSaga(action) {
     yield put(initLogs());
     yield put(initConsole(''));
   }
-  // long enough so that holding down a key will only send one request, but not
-  // so long that it feels unresponsive
-  yield delay(30);
+  yield delay(700);
 
   const logProxy = yield channel();
   const proxyLogger = args => logProxy.put(args);
@@ -350,9 +349,8 @@ function* updatePython(challengeData) {
 }
 
 function* previewProjectSolutionSaga({ payload }) {
-  if (!payload) return;
-  const { showProjectPreview, challengeData } = payload;
-  if (!showProjectPreview) return;
+  if (!payload?.challengeData) return;
+  const { challengeData } = payload;
 
   try {
     if (canBuildChallenge(challengeData)) {

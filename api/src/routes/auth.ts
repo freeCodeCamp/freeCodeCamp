@@ -1,4 +1,5 @@
 import { FastifyPluginCallback, FastifyRequest } from 'fastify';
+// TODO(Post-MVP): use fastify-rate-limit instead of express-rate-limit
 import rateLimit from 'express-rate-limit';
 // @ts-expect-error - no types
 import MongoStoreRL from 'rate-limit-mongo';
@@ -54,6 +55,10 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
       })
     })
   );
+
+  // TODO(Post-MVP): move this into the app, so that we add this hook once for
+  // all auth routes.
+  fastify.addHook('onRequest', fastify.redirectIfSignedIn);
 
   fastify.get('/mobile-login', async req => {
     const email = await getEmailFromAuth0(req);

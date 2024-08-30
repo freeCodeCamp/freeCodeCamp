@@ -60,6 +60,7 @@ import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
+import ToolPanel from '../components/tool-panel';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -109,7 +110,6 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
     challengeMeta: ChallengeMeta;
     projectPreview: {
       challengeData: CompletedChallenge;
-      showProjectPreview: boolean;
     };
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -182,6 +182,7 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
+        demoType,
         title,
         description,
         instructions,
@@ -201,7 +202,7 @@ function ShowClassic({
   pageContext: {
     challengeMeta,
     challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
-    projectPreview: { challengeData, showProjectPreview }
+    projectPreview: { challengeData }
   },
   createFiles,
   cancelTests,
@@ -227,6 +228,7 @@ function ShowClassic({
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
+  const guideUrl = getGuideUrl({ forumTopicId, title });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -357,7 +359,10 @@ function ShowClassic({
     );
 
     initTests(tests);
-    if (showProjectPreview) openModal('projectPreview');
+    // Typically, this kind of preview only appears on the first step of a
+    // project and is shown (once) automatically. In contrast, labs are more
+    // freeform, so the preview is shown on demand.
+    if (demoType === 'onLoad') openModal('projectPreview');
     updateChallengeMeta({
       ...challengeMeta,
       title,
@@ -369,9 +374,11 @@ function ShowClassic({
   };
 
   const renderInstructionsPanel = ({
-    showToolPanel
+    toolPanel,
+    hasDemo
   }: {
-    showToolPanel: boolean;
+    toolPanel: React.ReactNode;
+    hasDemo: boolean;
   }) => {
     return (
       <SidePanel
@@ -392,11 +399,10 @@ function ShowClassic({
             {title}
           </ChallengeTitle>
         }
-        guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={instructionsPanelRef}
-        showToolPanel={showToolPanel}
+        toolPanel={toolPanel}
         superBlock={superBlock}
-        videoUrl={videoUrl}
+        hasDemo={hasDemo}
       />
     );
   };
@@ -420,7 +426,7 @@ function ShowClassic({
           resizeProps={resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
-          showProjectPreview={showProjectPreview}
+          showProjectPreview={demoType === 'onLoad'}
         />
       )
     );
@@ -445,11 +451,11 @@ function ShowClassic({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            guideUrl={getGuideUrl({ forumTopicId, title })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
-              showToolPanel: false
+              toolPanel: null,
+              hasDemo: demoType === 'onClick'
             })}
             notes={notes}
             onPreviewResize={onPreviewResize}
@@ -465,9 +471,11 @@ function ShowClassic({
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
+            toolPanel={
+              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
+            }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
-            videoUrl={videoUrl}
           />
         )}
         {!isMobile && (
@@ -481,7 +489,8 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={showPreview}
             instructions={renderInstructionsPanel({
-              showToolPanel: true
+              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
+              hasDemo: demoType === 'onClick'
             })}
             isFirstStep={isFirstStep}
             layoutState={layout}
@@ -511,7 +520,6 @@ function ShowClassic({
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
           previewTitle={t('learn.project-preview-title')}
-          showProjectPreview={showProjectPreview}
         />
         <ShortcutsModal />
       </LearnLayout>
@@ -524,10 +532,11 @@ ShowClassic.displayName = 'ShowClassic';
 export default connect(mapStateToProps, mapDispatchToProps)(ShowClassic);
 
 export const query = graphql`
-  query ClassicChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query ClassicChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         block
+        demoType
         title
         description
         id
