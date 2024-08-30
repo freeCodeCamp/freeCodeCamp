@@ -444,7 +444,7 @@ assert.strictEqual(
 ```
 
 
-When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than change due, individual denomination amounts make impossible to return needed change, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than change due, but the individual denomination amounts make it impossible to return needed change, when the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
 
 ```js
 const cashInput = document.getElementById('cash');
