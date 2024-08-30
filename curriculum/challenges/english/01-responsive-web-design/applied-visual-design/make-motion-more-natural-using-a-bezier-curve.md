@@ -32,7 +32,7 @@ The value of the `animation-timing-function` property for the element with the i
 ```js
 const greenElement = document.querySelector('#green');
  const greenStyle = window.getComputedStyle(greenElement);
-assert.equal(greenStyle.animationTimingFunction ,'cubic-bezier(0.311, 0.441, 0.444, 1.649)');
+assert.equal(greenStyle?.animationTimingFunction, 'cubic-bezier(0.311, 0.441, 0.444, 1.649)');
 ```
 
 # --seed--

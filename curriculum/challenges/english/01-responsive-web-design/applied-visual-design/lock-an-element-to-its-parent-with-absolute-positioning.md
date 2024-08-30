@@ -24,7 +24,7 @@ The `#searchbar` element should have a `position` set to `absolute`.
 ```js
 const searchbarElement = document.querySelector('#searchbar');
 const searchbarStyle = window.getComputedStyle(searchbarElement);
-assert.equal(searchbarStyle.position ,'absolute');
+assert.equal(searchbarStyle?.position, 'absolute');
 ```
 
 Your code should use the `top` CSS offset of 50 pixels on the `#searchbar` element.
@@ -32,7 +32,7 @@ Your code should use the `top` CSS offset of 50 pixels on the `#searchbar` eleme
 ```js
 const searchbarElement = document.querySelector('#searchbar');
 const searchbarStyle = window.getComputedStyle(searchbarElement);
-assert.equal(searchbarStyle.top , '50px');
+assert.equal(searchbarStyle?.top, '50px');
 ```
 
 Your code should use the `right` CSS offset of 50 pixels on the `#searchbar` element.
@@ -40,7 +40,7 @@ Your code should use the `right` CSS offset of 50 pixels on the `#searchbar` ele
 ```js
 const searchbarElement = document.querySelector('#searchbar');
 const searchbarStyle = window.getComputedStyle(searchbarElement);
-assert.equal(searchbarStyle.right,'50px');
+assert.equal(searchbarStyle?.right, '50px');
 ```
 
 # --seed--

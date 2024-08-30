@@ -34,7 +34,7 @@ The `div` element with class `blue` should have a `background-color` of blue.
 ```js
 const blueElement = document.querySelector('.blue');
 const blueStyle = window.getComputedStyle(blueElement); 
-assert.equal(blueStyle.backgroundColor , 'rgb(0, 0, 255)');
+assert.equal(blueStyle?.backgroundColor, 'rgb(0, 0, 255)');
 ```
 
 The `div` element with class `yellow` should have a `background-color` of yellow.
@@ -42,7 +42,7 @@ The `div` element with class `yellow` should have a `background-color` of yellow
 ```js
 const yellowElement = document.querySelector('.yellow');
 const yellowStyle = window.getComputedStyle(yellowElement);
-assert.equal(yellowStyle.backgroundColor ,'rgb(255, 255, 0)');
+assert.equal(yellowStyle?.backgroundColor, 'rgb(255, 255, 0)');
 ```
 
 # --seed--

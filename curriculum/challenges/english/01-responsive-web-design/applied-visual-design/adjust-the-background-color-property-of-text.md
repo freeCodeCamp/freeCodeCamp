@@ -51,7 +51,7 @@ The `height` property on the `h4` element should be removed.
 ```js
 const h4Element = document.querySelector("h4"); 
 const h4style = window.getComputedStyle(h4Element);
-assert.notEqual(h4style.height,'25px');
+assert.notEqual(h4style?.height, '25px');
 ```
 
 # --seed--

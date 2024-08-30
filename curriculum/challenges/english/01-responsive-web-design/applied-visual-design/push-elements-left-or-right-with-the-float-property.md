@@ -21,16 +21,16 @@ The element with id `left` should have a `float` value of `left`.
 
 ```js
 const leftElement = document.querySelector('#left');
- const leftStyle = window.getComputedStyle(leftElement);
- assert.equal(leftStyle.float ,'left');
+const leftStyle = window.getComputedStyle(leftElement);
+assert.equal(leftStyle?.float, 'left');
 ```
 
 The element with id `right` should have a `float` value of `right`.
 
 ```js
 const rightElement = document.querySelector('#right');
- const rightStyle = window.getComputedStyle(rightElement);
- assert.equal(rightStyle.float , 'right');
+const rightStyle = window.getComputedStyle(rightElement);
+assert.equal(rightStyle?.float, 'right');
 ```
 
 # --seed--

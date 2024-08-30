@@ -35,7 +35,7 @@ The `h2` element should have a `position` property set to `relative`.
 ```js
 const h2Element =document.querySelector('h2')
 const h2Style = window.getComputedStyle(h2Element);
-assert.equal(h2Style.position , 'relative');
+assert.equal(h2Style?.position, 'relative');
 ```
 
 Your code should use a CSS offset to relatively position the `h2` 15px away from the `top` of where it normally sits.
@@ -43,7 +43,7 @@ Your code should use a CSS offset to relatively position the `h2` 15px away from
 ```js
 const h2Element =document.querySelector('h2')
 const h2Style = window.getComputedStyle(h2Element);
-assert.equal(h2Style.top,'15px');
+assert.equal(h2Style?.top, '15px');
 ```
 
 # --seed--

@@ -23,7 +23,7 @@ Your code should add a `font-size` property to the `h4` element set to 27 pixels
 
 const h4Element =document.querySelector('h4')
 const h4Style = window.getComputedStyle(h4Element);
-assert.equal(h4Style.fontSize,'27px');
+assert.equal(h4Style?.fontSize,'27px');
 ```
 
 # --seed--

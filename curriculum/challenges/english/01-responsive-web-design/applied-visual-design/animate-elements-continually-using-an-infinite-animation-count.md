@@ -28,7 +28,7 @@ The `animation-iteration-count` property should have a value of `infinite`.
 ```js
 const ballElement = document.querySelector('#ball');
 const ballStyle = window.getComputedStyle(ballElement); 
-assert.equal(ballStyle.animationIterationCount, 'infinite');
+assert.equal(ballStyle?.animationIterationCount, 'infinite');
 ```
 
 # --seed--

@@ -24,7 +24,7 @@ Your code should set the `font-weight` property for the `h1` tag to 800.
 ```js
 const h1Element =document.querySelector('h1')
 const h1Style = window.getComputedStyle(h1Element);
-assert.equal(h1Style.fontWeight , '800');
+assert.equal(h1Style?.fontWeight, '800');
 ```
 
 Your code should set the `font-weight` property for the `h2` tag to 600.
@@ -32,7 +32,7 @@ Your code should set the `font-weight` property for the `h2` tag to 600.
 ```js
 const h2Element =document.querySelector('h2')
 const h2Style = window.getComputedStyle(h2Element);
-assert.equal(h2Style.fontWeight , '600');
+assert.equal(h2Style?.fontWeight, '600');
 ```
 
 Your code should set the `font-weight` property for the `h3` tag to 500.
@@ -40,7 +40,7 @@ Your code should set the `font-weight` property for the `h3` tag to 500.
 ```js
 const h3Element =document.querySelector('h3')
 const h3Style = window.getComputedStyle(h3Element);
-assert.equal(h3Style.fontWeight ,'500');
+assert.equal(h3Style?.fontWeight, '500');
 ```
 
 Your code should set the `font-weight` property for the `h4` tag to 400.
@@ -48,7 +48,7 @@ Your code should set the `font-weight` property for the `h4` tag to 400.
 ```js
 const h4Element =document.querySelector('h4')
 const h4Style = window.getComputedStyle(h4Element);
-assert.equal(h4Style.fontWeight , '400');
+assert.equal(h4Style?.fontWeight, '400');
 ```
 
 Your code should set the `font-weight` property for the `h5` tag to 300.
@@ -56,7 +56,7 @@ Your code should set the `font-weight` property for the `h5` tag to 300.
 ```js
 const h5Element =document.querySelector('h5')
 const h5Style = window.getComputedStyle(h5Element);
-assert.equal(h5Style.fontWeight, '300');
+assert.equal(h5Style?.fontWeight, '300');
 ```
 
 Your code should set the `font-weight` property for the `h6` tag to 200.
@@ -64,7 +64,7 @@ Your code should set the `font-weight` property for the `h6` tag to 200.
 ```js
 const h6Element =document.querySelector('h6')
 const h6Style = window.getComputedStyle(h6Element);
-assert.equal(h6Style.fontWeight ,'200');
+assert.equal(h6Style?.fontWeight, '200');
 ```
 
 # --seed--

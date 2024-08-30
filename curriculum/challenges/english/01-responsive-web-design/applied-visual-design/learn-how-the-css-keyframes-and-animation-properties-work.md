@@ -46,7 +46,7 @@ The element with id of `rect` should have an `animation-name` property with a va
 ```js
 const rectElement = document.querySelector('#rect');
 const rectStyle = window.getComputedStyle(rectElement);
-assert.equal(rectStyle.animationName , 'rainbow');
+assert.equal(rectStyle?.animationName, 'rainbow');
 ```
 
 The element with id of `rect` should have an `animation-duration` property with a value of 4s.
@@ -54,7 +54,7 @@ The element with id of `rect` should have an `animation-duration` property with 
 ```js
 const rectElement = document.querySelector('#rect');
 const rectStyle = window.getComputedStyle(rectElement);
-assert.equal(rectStyle.animationDuration , '4s');
+assert.equal(rectStyle?.animationDuration, '4s');
 ```
 
 The `@keyframes` rule should use the `animation-name` of `rainbow`.

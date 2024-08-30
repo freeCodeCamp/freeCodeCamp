@@ -22,7 +22,7 @@ Your code should use a CSS offset to relatively position the `h2` 10px upwards. 
 ```js
 const h2Element =document.querySelector('h2')
 const h2Style = window.getComputedStyle(h2Element);
-assert.equal(h2Style.bottom, '10px');
+assert.equal(h2Style?.bottom, '10px');
 ```
 
 Your code should use a CSS offset to relatively position the `h2` 15px towards the right. In other words, move it 15px away from the `left` of where it normally sits.
@@ -30,7 +30,7 @@ Your code should use a CSS offset to relatively position the `h2` 15px towards t
 ```js
 const h2Element =document.querySelector('h2')
 const h2Style = window.getComputedStyle(h2Element);
-assert.equal(h2Style.left , '15px');
+assert.equal(h2Style?.left , '15px');
 ```
 
 # --seed--

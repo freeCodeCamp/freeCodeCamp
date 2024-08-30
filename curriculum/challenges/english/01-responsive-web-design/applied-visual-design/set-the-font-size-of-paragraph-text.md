@@ -22,7 +22,7 @@ Your `p` tag should have a `font-size` of 16 pixels.
 ```js
 const pElement =document.querySelector('p')
 const pStyle = window.getComputedStyle(pElement);
-assert.equal(pStyle.fontSize , '16px');
+assert.equal(pStyle?.fontSize, '16px');
 ```
 
 # --seed--

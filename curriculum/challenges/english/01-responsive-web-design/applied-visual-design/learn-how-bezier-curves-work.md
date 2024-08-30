@@ -33,7 +33,7 @@ The value of the `animation-timing-function` property for the element with the i
 const ballOne = document.querySelector('#ball1');
 const ballOneStyle = window.getComputedStyle(ballOne); 
 assert.equal(
-  ballOneStyle.animationTimingFunction ,
+  ballOneStyle?.animationTimingFunction,
     'cubic-bezier(0.25, 0.25, 0.75, 0.75)'
 );
 ```
@@ -43,7 +43,7 @@ The value of the `animation-timing-function` property for the element with the i
 ```js
 const ballTwoElement = document.querySelector('#ball2');
 const ballTwoStyle = window.getComputedStyle(ballTwoElement); 
-const ball2Animation = __helpers.removeWhiteSpace(ballTwoStyle.animationTimingFunction);
+const ball2Animation = __helpers.removeWhiteSpace(ballTwoStyle?.animationTimingFunction);
 assert.isTrue(
   ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)'
 );

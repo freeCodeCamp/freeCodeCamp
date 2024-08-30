@@ -31,7 +31,7 @@ The value of the `animation-timing-function` property of the element with the id
 const redElement = document.querySelector('#red');
 const redStyle = window.getComputedStyle(redElement);
 assert.equal(
-  redStyle.animationTimingFunction , 'cubic-bezier(0, 0, 0.58, 1)'
+  redStyle?.animationTimingFunction, 'cubic-bezier(0, 0, 0.58, 1)'
 );
 ```
 
@@ -40,7 +40,7 @@ The element with the id `red` should no longer have the `animation-timing-functi
 ```js
 const redElement = document.querySelector('#red');
 const redStyle = window.getComputedStyle(redElement);
-assert.notEqual(redStyle.animationTimingFunction,'linear');
+assert.notEqual(redStyle?.animationTimingFunction, 'linear');
 ```
 
 The value of the `animation-timing-function` property for the element with the id `blue` should not change.
@@ -49,7 +49,7 @@ The value of the `animation-timing-function` property for the element with the i
 const blueElement = document.querySelector('#blue');
 const blueStyle = window.getComputedStyle( blueElement);
 const blueBallAnimation = __helpers.removeWhiteSpace(
-  blueStyle.animationTimingFunction
+  blueStyle?.animationTimingFunction
 );
 assert.isTrue(
   blueBallAnimation == 'ease-out' ||

@@ -50,7 +50,7 @@ The `div` element with class `green` should have a `background-color` of green.
 ```js
 const greenElement = document.querySelector(".green");
 const greenStyle = window.getComputedStyle(greenElement); 
-assert.equal(greenStyle.backgroundColor,'rgb(0, 255, 0)');
+assert.equal(greenStyle?.backgroundColor, 'rgb(0, 255, 0)');
 ```
 
 The `div` element with class `cyan` should have a `background-color` of cyan.
@@ -58,7 +58,7 @@ The `div` element with class `cyan` should have a `background-color` of cyan.
 ```js
 const cyanElement = document.querySelector(".cyan");
 const cyanStyle = window.getComputedStyle(cyanElement); 
-assert.equal(cyanStyle.backgroundColor, 'rgb(0, 255, 255)');
+assert.equal(cyanStyle?.backgroundColor, 'rgb(0, 255, 255)');
 ```
 
 The `div` element with class `blue` should have a `background-color` of blue.
@@ -66,7 +66,7 @@ The `div` element with class `blue` should have a `background-color` of blue.
 ```js
 const blueElement = document.querySelector(".blue");
 const blueStyle = window.getComputedStyle(blueElement); 
-assert.equal(blueStyle.backgroundColor ,'rgb(0, 0, 255)');
+assert.equal(blueStyle?.backgroundColor, 'rgb(0, 0, 255)');
 ```
 
 # --seed--

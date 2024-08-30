@@ -22,7 +22,7 @@ The `header` element should have a `background-color` of #09A7A1.
 ```js
 const headerElement = document.querySelector('header'); 
 const headerStyle = window.getComputedStyle(headerElement);
-assert.equal(headerStyle.backgroundColor,'rgb(9, 167, 161)');
+assert.equal(headerStyle?.backgroundColor, 'rgb(9, 167, 161)');
 ```
 
 The `footer` element should have a `background-color` of #09A7A1.
@@ -30,7 +30,7 @@ The `footer` element should have a `background-color` of #09A7A1.
 ```js
 const footerElement = document.querySelector('footer'); 
 const footerStyle = window.getComputedStyle(footerElement);
-assert.equal(footerStyle.backgroundColor,'rgb(9, 167, 161)');
+assert.equal(footerStyle?.backgroundColor, 'rgb(9, 167, 161)');
 ```
 
 The `h2` element should have a `color` of #09A7A1.
@@ -38,7 +38,7 @@ The `h2` element should have a `color` of #09A7A1.
 ```js
 const h2Element = document.querySelector('h2'); 
 const h2Style = window.getComputedStyle(h2Element);
-assert.equal(h2Style.color,'rgb(9, 167, 161)');
+assert.equal(h2Style?.color, 'rgb(9, 167, 161)');
 ```
 
 The `button` element should have a `background-color` of #FF790E.
@@ -46,7 +46,7 @@ The `button` element should have a `background-color` of #FF790E.
 ```js
 const buttonElement = document.querySelector('button'); 
 const buttonStyle = window.getComputedStyle(buttonElement);
-assert.equal(buttonStyle.backgroundColor,'rgb(255, 121, 14)');
+assert.equal(buttonStyle?.backgroundColor, 'rgb(255, 121, 14)');
 ```
 
 # --seed--

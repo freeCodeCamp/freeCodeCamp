@@ -24,7 +24,7 @@ The `animation-iteration-count` property for the `heart` class should have a val
 ```js
 const heartElement = document.querySelector('.heart');
  const heartStyle = window.getComputedStyle(heartElement);
- assert.equal(heartStyle.animationIterationCount , 'infinite');
+ assert.equal(heartStyle?.animationIterationCount, 'infinite');
 ```
 
 The `animation-iteration-count` property for the `back` class should have a value of `infinite`.
@@ -32,7 +32,7 @@ The `animation-iteration-count` property for the `back` class should have a valu
 ```js
 const backElement = document.querySelector('.back');
  const backStyle = window.getComputedStyle(backElement);
- assert.equal(backStyle.animationIterationCount , 'infinite');
+ assert.equal(backStyle?.animationIterationCount, 'infinite');
 ```
 
 # --seed--

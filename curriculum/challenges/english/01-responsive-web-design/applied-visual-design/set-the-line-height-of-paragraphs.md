@@ -22,7 +22,7 @@ Your code should set the `line-height` of the `p` tag to 25 pixels.
 ```js
 const pElement =document.querySelector('p')
 const pStyle = window.getComputedStyle(pElement);
-assert.equal(pStyle.lineHeight ,'25px');
+assert.equal(pStyle?.lineHeight, '25px');
 ```
 
 # --seed--

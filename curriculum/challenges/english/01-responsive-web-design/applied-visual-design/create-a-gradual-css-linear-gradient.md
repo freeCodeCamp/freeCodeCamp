@@ -34,7 +34,7 @@ The `div` element should have a `linear-gradient` `background` with the specifie
 ```js
 const divElement = document.querySelector('div');
 const divStyle = window.getComputedStyle(divElement); 
-assert.match(divStyle.background,/linear-gradient\(35deg, rgb\(204, 255, 255\), rgb\(255, 204, 204\)\)/gi);
+assert.match(divStyle?.background, /linear-gradient\(35deg, rgb\(204, 255, 255\), rgb\(255, 204, 204\)\)/gi);
 ```
 
 # --seed--

@@ -26,13 +26,13 @@ The `h4` text should be `uppercase`.
 ```js
 const h4Element =document.querySelector('h4')
 const h4Style = window.getComputedStyle(h4Element);
-assert.equal(h4Style.textTransform ,'uppercase');
+assert.equal(h4Style?.textTransform, 'uppercase');
 ```
 
 The original text of the h4 should not be changed.
 
 ```js
-assert.notEqual(document.querySelector('h4').textContent , document.querySelector('h4').textContent.toUpperCase());
+assert.notEqual(document.querySelector('h4')?.textContent, document.querySelector('h4')?.textContent?.toUpperCase());
 ```
 
 # --seed--

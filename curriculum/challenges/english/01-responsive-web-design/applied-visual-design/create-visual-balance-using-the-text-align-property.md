@@ -32,7 +32,7 @@ Your code should use the text-align property on the `h4` tag to set it to `cente
 ```js
 const h4Element =document.querySelector('h4')
 const h4Style = window.getComputedStyle(h4Element);
-assert.equal(h4Style.textAlign , 'center');
+assert.equal(h4Style?.textAlign, 'center');
 ```
 
 Your code should use the text-align property on the `p` tag to set it to `justify`.
@@ -40,7 +40,7 @@ Your code should use the text-align property on the `p` tag to set it to `justif
 ```js
 const pElement =document.querySelector('p')
 const pStyle = window.getComputedStyle(pElement);
-assert.equal(pStyle.textAlign,'justify');
+assert.equal(pStyle?.textAlign, 'justify');
 ```
 
 # --seed--

@@ -24,7 +24,7 @@ The `#navbar` element should have a `position` set to `fixed`.
 ```js
 const navbarElement = document.querySelector('#navbar');
 const navbarStyle = window.getComputedStyle(navbarElement);
- assert.equal(navbarStyle.position ,'fixed');
+ assert.equal(navbarStyle?.position, 'fixed');
 ```
 
 Your code should use the `top` CSS offset of 0 pixels on the `#navbar` element.
@@ -32,7 +32,7 @@ Your code should use the `top` CSS offset of 0 pixels on the `#navbar` element.
 ```js
 const navbarElement = document.querySelector('#navbar');
  const navbarStyle = window.getComputedStyle(navbarElement);
-assert.equal(navbarStyle.top , '0px');
+assert.equal(navbarStyle?.top, '0px');
 ```
 
 Your code should use the `left` CSS offset of 0 pixels on the `#navbar` element.
@@ -40,7 +40,7 @@ Your code should use the `left` CSS offset of 0 pixels on the `#navbar` element.
 ```js
 const navbarElement = document.querySelector('#navbar');
  const navbarStyle = window.getComputedStyle(navbarElement);
- assert.equal(navbarStyle.left, '0px');
+ assert.equal(navbarStyle?.left, '0px');
 ```
 
 # --seed--

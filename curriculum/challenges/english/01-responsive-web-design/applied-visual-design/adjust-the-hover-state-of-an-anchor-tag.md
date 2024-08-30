@@ -30,7 +30,7 @@ The anchor tag `color` should remain black, only add CSS rules for the `:hover` 
 ```js
 const anchorElement = document.querySelector("a"); 
 const anchorStyle = window.getComputedStyle(anchorElement);
-assert.equal(anchorStyle.color ,'rgb(0, 0, 0)');
+assert.equal(anchorStyle?.color, 'rgb(0, 0, 0)');
 ```
 
 The anchor tag should have a `color` of blue on hover.

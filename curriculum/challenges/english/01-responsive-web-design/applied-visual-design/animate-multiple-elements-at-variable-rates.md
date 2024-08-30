@@ -24,7 +24,7 @@ The `animation-duration` property for the star with class `star-1` should remain
 ```js
 const starOne = document.querySelector('.star-1');
 const starOneStyle = window.getComputedStyle(starOne); 
-assert.equal(starOneStyle.animationDuration,'1s');
+assert.equal(starOneStyle?.animationDuration, '1s');
 ```
 
 The `animation-duration` property for the star with class `star-2` should be 0.9s.
@@ -32,7 +32,7 @@ The `animation-duration` property for the star with class `star-2` should be 0.9
 ```js
 const starTwo = document.querySelector('.star-2');
 const starTwoStyle = window.getComputedStyle(starTwo); 
-assert.equal(starTwoStyle.animationDuration , '0.9s');
+assert.equal(starTwoStyle?.animationDuration , '0.9s');
 ```
 
 The `animation-duration` property for the star with class `star-3` should be 1.1s.
@@ -40,7 +40,7 @@ The `animation-duration` property for the star with class `star-3` should be 1.1
 ```js
 const starThree = document.querySelector('.star-3');
 const starThreeStyle = window.getComputedStyle(starThree); 
-assert.equal(starThreeStyle.animationDuration,'1.1s');
+assert.equal(starThreeStyle?.animationDuration, '1.1s');
 ```
 
 # --seed--

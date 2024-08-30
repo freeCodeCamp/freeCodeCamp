@@ -22,7 +22,7 @@ The element with class `first` should have a `z-index` value of 2.
 ```js
 const firstElement = document.querySelector('.first');
 const firstStyle = window.getComputedStyle(firstElement); 
-assert.equal(firstStyle.zIndex,'2');
+assert.equal(firstStyle?.zIndex, '2');
 ```
 
 # --seed--
