@@ -77,8 +77,6 @@ Percentage spent by category
         g     
 ```
 
-Note: open the browser console with F12 to see a more verbose output of the tests.
-
 # --hints--
 
 The `deposit` method should create a specific object in the ledger instance variable.
@@ -711,7 +709,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`create_spend_chart` should print a different chart representation. Check that all spacing is exact.
+`create_spend_chart` should print a different chart representation. Check that all spacing is exact. Open the browser console with F12 to see a more verbose output of the tests.
 
 ```js
 ({
@@ -739,7 +737,7 @@ class UnitTests(unittest.TestCase):
         self.business.withdraw(10.99)
         actual = budget.create_spend_chart([self.business, self.food, self.entertainment])
         expected = "Percentage spent by category\\n100|          \\n 90|          \\n 80|          \\n 70|    o     \\n 60|    o     \\n 50|    o     \\n 40|    o     \\n 30|    o     \\n 20|    o  o  \\n 10|    o  o  \\n  0| o  o  o  \\n    ----------\\n     B  F  E  \\n     u  o  n  \\n     s  o  t  \\n     i  d  e  \\n     n     r  \\n     e     t  \\n     s     a  \\n     s     i  \\n           n  \\n           m  \\n           e  \\n           n  \\n           t  "
-        self.assertEqual(actual, expected, 'Expected different chart representation. Check that all spacing is exact.')
+        self.assertEqual(actual, expected, 'Expected different chart representation. Check that all spacing is exact. Open the browser console with F12 to see a more verbose output of the tests.')
 `);
 
     const testCode = `
