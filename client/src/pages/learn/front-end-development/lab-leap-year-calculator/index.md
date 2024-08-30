@@ -4,6 +4,6 @@ block: lab-leap-year-calculator
 superBlock: front-end-development
 ---
 
-## Introduction to the a Leap Year Calculator
+## Introduction to Leap Year Calculator
 
-This is a test for the new project-based curriculum.
+In this lab you will utilise conditional statements and loops to create a leap year calculator.

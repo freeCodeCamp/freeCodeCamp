@@ -1900,7 +1900,9 @@
       "nnqa": { "title": "154", "intro": [] },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
-        "intro": ["", ""]
+        "intro": [
+          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+        ]
       },
       "pljo": { "title": "156", "intro": [] },
       "avln": { "title": "157", "intro": [] },
