@@ -73,7 +73,7 @@ const id = document.querySelectorAll('ul li span.favorite-icon');
 assert.equal(id[2]?.id, 'favoriteIcon3');
 ```
 
-always passing >> Initially, the `span` elements should contain the code `&#9825;` to represent an empty heart.
+Initially, the `span` elements should contain the code `&#9825;` to represent an empty heart.
 
 ```js
 const inputs = document.querySelectorAll('ul li span.favorite-icon');
@@ -84,12 +84,12 @@ for (let input of inputs) {
 }
 ```
 
-test >> When the `span` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `span` element and change the innerHTML of the `span` element to `&#9825;`.
+When the `span` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `span` element and change the innerHTML of the `span` element to `&#9825;`.
 
 ```js
 // Select all span elements with the class 'favorite-icon'
 const spanElements = document.querySelectorAll('.favorite-icon');
-
+assert(spanElements.length);
 // Add the 'filled' class to all span elements
 spanElements.forEach(span => span.classList.add('filled'));
 
@@ -102,12 +102,12 @@ spanElements.forEach(span => {
 });
 ```
 
-test >> When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element and change the innerHTML of the `span` element to `&#10084;`.
+When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element and change the innerHTML of the `span` element to `&#10084;`.
 
 ```js
 // Select all span elements with the class 'favorite-icon'
 const spanElements = document.querySelectorAll('.favorite-icon');
-
+assert(spanElements.length);
 // Remove the 'filled' class from all span elements
 spanElements.forEach(span => span.classList.remove('filled'));
 
