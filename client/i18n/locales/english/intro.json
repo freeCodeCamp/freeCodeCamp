@@ -1916,10 +1916,10 @@
       "wjzt": { "title": "149", "intro": [] },
       "tsdq": { "title": "150", "intro": [] },
       "kkix": { "title": "151", "intro": [] },
-      "workshop-calculator-app": {
+      "workshop-calculator": {
         "title": "Build a Calculator",
         "intro": [
-          "In this workshop, you will review working with functions by building a calculator app."
+          "In this workshop, you will review working with functions by building a calculator."
         ]
       },
       "hqba": { "title": "153", "intro": [] },

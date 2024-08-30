@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Build a Calculator
-block: workshop-calculator-app
+block: workshop-calculator
 superBlock: front-end-development
 ---
 
