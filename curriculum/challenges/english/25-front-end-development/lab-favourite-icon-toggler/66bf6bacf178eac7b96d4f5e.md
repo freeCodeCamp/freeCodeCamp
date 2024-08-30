@@ -77,6 +77,8 @@ always passing >> Initially, the `span` elements should contain the code `&#9825
 
 ```js
 const inputs = document.querySelectorAll('ul li span.favorite-icon');
+assert(inputs.length)
+
 for (let input of inputs) {
     assert.strictEqual(input.innerHTML.charCodeAt(0), 9825);
 }
