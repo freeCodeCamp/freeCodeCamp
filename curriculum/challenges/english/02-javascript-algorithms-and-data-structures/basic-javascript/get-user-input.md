@@ -1,6 +1,6 @@
 ---
 id: 6639bd2d8170d75242be99cb
-videoId: ADD YOUR VIDEO ID HERE!!!
+videoId: lrCIETMrtNs
 title: Get User Input
 challengeType: 11
 dashedName: get-user-input
