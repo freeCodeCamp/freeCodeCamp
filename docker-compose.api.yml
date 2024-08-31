@@ -1,0 +1,29 @@
+services:
+  mailhog:
+    restart: unless-stopped
+    image: mailhog/mailhog
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+
+  api:
+    depends_on:
+      - mailhog
+    image: fcc-api
+    build:
+      context: .
+      dockerfile: ./docker/api/Dockerfile
+    env_file:
+      - .env
+    environment:
+      # The api cannot connect to mongodb or mailhog via localhost from inside the
+      # container, so we have to override these variables.
+      - MAILHOG_HOST=mailhog
+      - MONGODB_URI=mongodb://localhost:27017/freecodecamp?directConnection=true
+
+    ports:
+      # PORT is used by the new api, so we use the less generic API_PORT to
+      # avoid conflicts.
+      - "${API_PORT:-3001}:3001"
+    network_mode: host
+

@@ -7,456 +7,444 @@
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {
-      "id": "bd7123c9c441eddfaeb4bdef",
+      "id": "65f529b6140df417f2a1f4a3",
+      "title": "Step 1"
+    },
+    {
+      "id": "65f529af5fb6b017ccb1f3fc",
+      "title": "Step 2"
+    },
+    {
+      "id": "65f529a39bc08f17a811bf8a",
+      "title": "Step 3"
+    },
+    {
+      "id": "65f7c183c1389c18cf109ba3",
+      "title": "Step 4"
+    },
+    {
+      "id": "65f7c62e5affb11bc3aab14a",
+      "title": "Step 5"
+    },
+    {
+      "id": "65f7c7edfb80341c5f2b3123",
+      "title": "Step 6"
+    },
+    {
+      "id": "65f7c99535fe6f1ce7cd6d61",
+      "title": "Step 7"
+    },
+    {
+      "id": "65f7cc0b01b9e51d88f003b8",
+      "title": "Step 8"
+    },
+    {
+      "id": "65f7e82aa7e77921654e3050",
+      "title": "Step 9"
+    },
+    {
+      "id": "66353d1bb82c310e67f08d58",
+      "title": "Explore Your JavaScript Version"
+    },
+    {
+      "id": "66353e2500c6680f1c52e068",
+      "title": "Exploring Node.js"
+    },
+    {
+      "id": "66353f23dddff50f6c78b932",
+      "title": "Explore Request Handling in Node.js"
+    },
+    {
+      "id": "663541809425b71085084621",
+      "title": "Discover the Power of Node.js"
+    },
+    {
+      "id": "663542e6b0922e110ec5dfc9",
+      "title": "Unveiling the Package Manager"
+    },
+    {
+      "id": "6639b8d43773f150517b576d",
+      "title": "Why npm is Essential for Developers?"
+    },
+    {
+      "id": "66354491c0bef611aacffd3a",
+      "title": "Understand npm Scripts"
+    },
+    {
+      "id": "66352b2418c108072d0a062e",
+      "title": "From Flowcharts to JavaScript"
+    },
+    {
+      "id": "661260d77fe6b7f6af628f7b",
       "title": "Comment Your JavaScript Code"
     },
     {
-      "id": "bd7123c9c443eddfaeb5bdef",
+      "id": "661bc7a2b575475da9a67513",
+      "title": "Variable Declaration"
+    },
+    {
+      "id": "6606c952f62155112026cbb0",
       "title": "Declare JavaScript Variables"
     },
     {
-      "id": "56533eb9ac21ba0edf2244a8",
-      "title": "Storing Values with the Assignment Operator"
+      "id": "66126195048243f78835919c",
+      "title": "Understanding Input and Output in JavaScript"
     },
     {
-      "id": "5ee127a03c3b35dd45426493",
-      "title": "Assigning the Value of One Variable to Another"
+      "id": "6639bd2d8170d75242be99cb",
+      "title": "Get User Input"
     },
     {
-      "id": "56533eb9ac21ba0edf2244a9",
-      "title": "Initializing Variables with the Assignment Operator"
+      "id": "6606ca03a0aa92116bead97f",
+      "title": "Storing values with the assignment operator"
     },
     {
-      "id": "bd7123c9c444eddfaeb5bdef",
-      "title": "Declare String Variables"
+      "id": "6606ca2b9b8fc711a74602f5",
+      "title": "Initializing Variables with the assignment operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244aa",
-      "title": "Understanding Uninitialized Variables"
+      "id": "66232ce20e33bc54d6b6181b",
+      "title": "Print Birthday Details"
     },
     {
-      "id": "56533eb9ac21ba0edf2244ab",
+      "id": "6606ca4e13f21011d7519a2b",
+      "title": "Create Decimal with Javascript"
+    },
+    {
+      "id": "6606ca7c680cf9120606740b",
+      "title": "Declare string variables"
+    },
+    {
+      "id": "6606caa003b026122d3796cc",
+      "title": "Understanding uninitialized variables"
+    },
+    {
+      "id": "6606cacbe01af0125eba6d66",
       "title": "Understanding Case Sensitivity in Variables"
     },
     {
-      "id": "587d7b87367417b2b2512b3f",
+      "id": "6606caefb893da1298c87c2b",
       "title": "Explore Differences Between the var and let Keywords"
     },
     {
-      "id": "587d7b87367417b2b2512b41",
+      "id": "6606cb14de147212ca33dc95",
       "title": "Declare a Read-Only Variable with the const Keyword"
     },
     {
-      "id": "cf1111c1c11feddfaeb3bdef",
-      "title": "Add Two Numbers with JavaScript"
+      "id": "6612634a986f69f85acd948c",
+      "title": "Assigning the Value of One Variable to Another"
     },
     {
-      "id": "cf1111c1c11feddfaeb4bdef",
-      "title": "Subtract One Number from Another with JavaScript"
+      "id": "661a6798129b0c40e6cc6fed",
+      "title": "Swapping Variable-values"
     },
     {
-      "id": "cf1231c1c11feddfaeb5bdef",
-      "title": "Multiply Two Numbers with JavaScript"
+      "id": "661263e70d0e83f9399022ad",
+      "title": "Learn Operators in JavaScript"
     },
     {
-      "id": "cf1111c1c11feddfaeb6bdef",
+      "id": "6606cb5a07022b12f11c53a4",
+      "title": "Add two numbers with javascript"
+    },
+    {
+      "id": "6606cbba038815132f490073",
+      "title": "Subtract one number from another with javascript"
+    },
+    {
+      "id": "6606cbe0e0a3c313551e82b3",
+      "title": "Multiply Two numbers with javascript"
+    },
+    {
+      "id": "6606cbfa63c3c013858ccb20",
+      "title": "Multiply two decimals with javascript"
+    },
+    {
+      "id": "6606cc27ba694613bfa54939",
+      "title": "Divide one number by another with javascript"
+    },
+    {
+      "id": "66337f396eae04ee875fcb09",
       "title": "Divide One Number by Another with JavaScript"
     },
     {
-      "id": "56533eb9ac21ba0edf2244ac",
-      "title": "Increment a Number with JavaScript"
+      "id": "6606cc4d8e0dc513ee166527",
+      "title": "Divide one decimal by another with javascript"
     },
     {
-      "id": "56533eb9ac21ba0edf2244ad",
-      "title": "Decrement a Number with JavaScript"
+      "id": "6606cc932d3660142b585e31",
+      "title": "Finding remainder with Javascript"
     },
     {
-      "id": "cf1391c1c11feddfaeb4bdef",
-      "title": "Create Decimal Numbers with JavaScript"
+      "id": "6606ccc83c029d145d2a29fd",
+      "title": "Compound assignment with Augmented Subtraction)"
     },
     {
-      "id": "bd7993c9c69feddfaeb7bdef",
-      "title": "Multiply Two Decimals with JavaScript"
+      "id": "6606cceb895847148c4f961a",
+      "title": "Compound assignment with Augmented Addition"
     },
     {
-      "id": "bd7993c9ca9feddfaeb7bdef",
-      "title": "Divide One Decimal by Another with JavaScript"
+      "id": "6606cd08e7e61d14b2c8a0ec",
+      "title": "Compound assignment with Augmented Multiplication"
     },
     {
-      "id": "56533eb9ac21ba0edf2244ae",
-      "title": "Finding a Remainder in JavaScript"
+      "id": "6606cd2298a89d14e243ce13",
+      "title": "Compound assignment with Augmented Division"
     },
     {
-      "id": "56533eb9ac21ba0edf2244af",
-      "title": "Compound Assignment With Augmented Addition"
+      "id": "6612d9905f3d25033c09e869",
+      "title": "Temperature Converter"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b0",
-      "title": "Compound Assignment With Augmented Subtraction"
+      "id": "6612dad1c726f003e1d542b1",
+      "title": "Swapping Variables using Operators"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b1",
-      "title": "Compound Assignment With Augmented Multiplication"
+      "id": "6612f547127b940ecd79b0b8",
+      "title": "Perfectly Divisible"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b2",
-      "title": "Compound Assignment With Augmented Division"
+      "id": "661bb2ec557e2c551a684538",
+      "title": "Finding Last Digit"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b5",
-      "title": "Escaping Literal Quotes in Strings"
+      "id": "6612dc88af197504846d7451",
+      "title": "Relational Operators"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b4",
-      "title": "Quoting Strings with Single Quotes"
+      "id": "6612eba87bc1910774356543",
+      "title": "Understanding Decisions with if statements"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b6",
-      "title": "Escape Sequences in Strings"
+      "id": "663a66f2c0a6d1710495f601",
+      "title": "Getting Started with Functions"
     },
     {
-      "id": "56533eb9ac21ba0edf2244b7",
-      "title": "Concatenating Strings with Plus Operator"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244b8",
-      "title": "Concatenating Strings with the Plus Equals Operator"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244b9",
-      "title": "Constructing Strings with Variables"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244ed",
-      "title": "Appending Variables to Strings"
-    },
-    {
-      "id": "bd7123c9c448eddfaeb5bdef",
-      "title": "Find the Length of a String"
-    },
-    {
-      "id": "bd7123c9c549eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the First Character in a String"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244ba",
-      "title": "Understand String Immutability"
-    },
-    {
-      "id": "bd7123c9c450eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the Nth Character in a String"
-    },
-    {
-      "id": "bd7123c9c451eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the Last Character in a String"
-    },
-    {
-      "id": "bd7123c9c452eddfaeb5bdef",
-      "title": "Use Bracket Notation to Find the Nth-to-Last Character in a String"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244bb",
-      "title": "Word Blanks"
-    },
-    {
-      "id": "bd7993c9c69feddfaeb8bdef",
-      "title": "Store Multiple Values in one Variable using JavaScript Arrays"
-    },
-    {
-      "id": "cf1111c1c11feddfaeb7bdef",
-      "title": "Nest one Array within Another Array"
-    },
-    {
-      "id": "56bbb991ad1ed5201cd392ca",
-      "title": "Access Array Data with Indexes"
-    },
-    {
-      "id": "cf1111c1c11feddfaeb8bdef",
-      "title": "Modify Array Data With Indexes"
-    },
-    {
-      "id": "56592a60ddddeae28f7aa8e1",
-      "title": "Access Multi-Dimensional Arrays With Indexes"
-    },
-    {
-      "id": "56bbb991ad1ed5201cd392cb",
-      "title": "Manipulate Arrays With push Method"
-    },
-    {
-      "id": "56bbb991ad1ed5201cd392cc",
-      "title": "Manipulate Arrays With pop Method"
-    },
-    {
-      "id": "56bbb991ad1ed5201cd392cd",
-      "title": "Manipulate Arrays With shift Method"
-    },
-    {
-      "id": "56bbb991ad1ed5201cd392ce",
-      "title": "Manipulate Arrays With unshift Method"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244bc",
-      "title": "Shopping List"
-    },
-    {
-      "id": "56bbb991ad1ed5201cd392cf",
-      "title": "Write Reusable JavaScript with Functions"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244bd",
+      "id": "663a681002cceb71ddc38ac6",
       "title": "Passing Values to Functions with Arguments"
     },
     {
-      "id": "56533eb9ac21ba0edf2244c2",
-      "title": "Return a Value from a Function with Return"
+      "id": "663a695533166e723f6facdd",
+      "title": "Return a value from a Function"
     },
     {
-      "id": "56533eb9ac21ba0edf2244be",
-      "title": "Global Scope and Functions"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244bf",
-      "title": "Local Scope and Functions"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244c0",
-      "title": "Global vs. Local Scope in Functions"
-    },
-    {
-      "id": "598e8944f009e646fc236146",
-      "title": "Understanding Undefined Value returned from a Function"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244c3",
+      "id": "663a6a375c1eb272829dfc3c",
       "title": "Assignment with a Returned Value"
     },
     {
-      "id": "56533eb9ac21ba0edf2244c6",
-      "title": "Stand in Line"
+      "id": "6612ed0b000dcb07f12da1da",
+      "title": "Use Conditional Logic with if Statements"
     },
     {
-      "id": "bd7123c9c441eddfaeb5bdef",
-      "title": "Understanding Boolean Values"
+      "id": "6612ed8ab22861085436c4d7",
+      "title": "Introducing else Statements"
     },
     {
-      "id": "cf1111c1c12feddfaeb3bdef",
-      "title": "Use Conditional Logic with If Statements"
-    },
-    {
-      "id": "56533eb9ac21ba0edf2244d0",
+      "id": "6606cd7e93dd661526d76c23",
       "title": "Comparison with the Equality Operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d1",
-      "title": "Comparison with the Strict Equality Operator"
+      "id": "6606cdad8576d0154d7d233b",
+      "title": "Comparison with the strict Equality Operator"
     },
     {
-      "id": "599a789b454f2bbd91a3ff4d",
+      "id": "6606ce021a1fe7157cf1b247",
       "title": "Practice comparing different values"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d2",
+      "id": "6606ce1bcbc39c15b0b5d550",
       "title": "Comparison with the Inequality Operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d3",
-      "title": "Comparison with the Strict Inequality Operator"
+      "id": "6606ce425820df15df086618",
+      "title": "Comparison with the strict Inequality Operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d4",
-      "title": "Comparison with the Greater Than Operator"
+      "id": "661bb3ac21bbd0556144beb2",
+      "title": "Check Odd or Even"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d5",
-      "title": "Comparison with the Greater Than Or Equal To Operator"
+      "id": "6606ce62940aa6160f7ac863",
+      "title": "Comparison with the Greater than Operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d6",
-      "title": "Comparison with the Less Than Operator"
+      "id": "6606ce8cbd18071648f2e09e",
+      "title": "Comparison with the Less than Operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d7",
-      "title": "Comparison with the Less Than Or Equal To Operator"
+      "id": "6606cf6d22836816903282f5",
+      "title": "Comparison with the Greater than or equal to Operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d8",
-      "title": "Comparisons with the Logical And Operator"
+      "id": "6606cf95f70a7e16b9c46b1a",
+      "title": "Comparison with the Less than or equal to Operator"
     },
     {
-      "id": "56533eb9ac21ba0edf2244d9",
-      "title": "Comparisons with the Logical Or Operator"
+      "id": "6606cfe93d07c01723fb7bda",
+      "title": "Introducing else if statements"
     },
     {
-      "id": "56533eb9ac21ba0edf2244da",
-      "title": "Introducing Else Statements"
+      "id": "6612f0aa105bf609c2c8ba7b",
+      "title": "Check if Positive or Negative"
     },
     {
-      "id": "56533eb9ac21ba0edf2244db",
-      "title": "Introducing Else If Statements"
+      "id": "6606d0691e2c3e1780002742",
+      "title": "Chaining if else statements"
     },
     {
-      "id": "5690307fddb111c6084545d7",
-      "title": "Logical Order in If Else Statements"
+      "id": "663384135a79fcf03708cafb",
+      "title": "Logical Order in if-else Statements"
     },
     {
-      "id": "56533eb9ac21ba0edf2244dc",
-      "title": "Chaining If Else Statements"
+      "id": "6635f1834b9dfd17c2f1ffbe",
+      "title": "Leap Year"
     },
     {
-      "id": "5664820f61c48e80c9fa476c",
-      "title": "Golf Code"
+      "id": "663385f778c882f0a886c6ea",
+      "title": "Find Greater of Two Numbers"
     },
     {
-      "id": "56533eb9ac21ba0edf2244dd",
-      "title": "Selecting from Many Options with Switch Statements"
+      "id": "66338666063672f0f8d895f7",
+      "title": "Find Greatest of Three Numbers"
     },
     {
-      "id": "56533eb9ac21ba0edf2244de",
-      "title": "Adding a Default Option in Switch Statements"
+      "id": "6633870a1bb230f155bc79fd",
+      "title": "Find Greatest Number in Four Numbers"
     },
     {
-      "id": "56533eb9ac21ba0edf2244df",
-      "title": "Multiple Identical Options in Switch Statements"
+      "id": "6612f20c9620c70a5a2a2f19",
+      "title": "Finding Second Maximum in Three Numbers"
     },
     {
-      "id": "56533eb9ac21ba0edf2244e0",
-      "title": "Replacing If Else Chains with Switch"
+      "id": "6612f2a187c0950a9f5d2cbd",
+      "title": "Finding Third Maximum in Four Numbers"
     },
     {
-      "id": "5679ceb97cbaa8c51670a16b",
-      "title": "Returning Boolean Values from Functions"
+      "id": "6612f3accc64ff0b6dc7c9b9",
+      "title": "Calculate Gross Salary"
     },
     {
-      "id": "56533eb9ac21ba0edf2244c4",
-      "title": "Return Early Pattern for Functions"
+      "id": "6612f46dc9c08b0e5e147c86",
+      "title": "Calculate Electricity Bill"
     },
     {
-      "id": "565bbe00e9cc8ac0725390f4",
-      "title": "Counting Cards"
+      "id": "66413debf4a3371e1e9ad315",
+      "title": "Smallest Positive Integer"
     },
     {
-      "id": "56bbb991ad1ed5201cd392d0",
-      "title": "Build JavaScript Objects"
+      "id": "661a69e57f6c0c41f2128c3a",
+      "title": "Loops in JavaScript"
     },
     {
-      "id": "56533eb9ac21ba0edf2244c7",
-      "title": "Accessing Object Properties with Dot Notation"
+      "id": "6606d0e224f91f17cffa8b46",
+      "title": "Increment a number with Javascript"
     },
     {
-      "id": "56533eb9ac21ba0edf2244c8",
-      "title": "Accessing Object Properties with Bracket Notation"
+      "id": "6606d0fc4a9e3118004d0f7a",
+      "title": "Decrement a number with Javascript"
     },
     {
-      "id": "56533eb9ac21ba0edf2244c9",
-      "title": "Accessing Object Properties with Variables"
+      "id": "661a6d0eded4cf42e594bd3c",
+      "title": "Start with Your First Loop"
     },
     {
-      "id": "56bbb991ad1ed5201cd392d1",
-      "title": "Updating Object Properties"
+      "id": "661a6d9381ae1d433a6e5ec3",
+      "title": "Finding Even Numbers in a Range"
     },
     {
-      "id": "56bbb991ad1ed5201cd392d2",
-      "title": "Add New Properties to a JavaScript Object"
+      "id": "661a6e055483ba4385d58e4d",
+      "title": "Sum of Odd Numbers"
     },
     {
-      "id": "56bbb991ad1ed5201cd392d3",
-      "title": "Delete Properties from a JavaScript Object"
+      "id": "661a6f10ce4c51441d61a568",
+      "title": "Calculate Sum of a Range"
     },
     {
-      "id": "56533eb9ac21ba0edf2244ca",
-      "title": "Using Objects for Lookups"
+      "id": "661a6fd12f879044795843ea",
+      "title": "Interesting Decimal Series"
     },
     {
-      "id": "567af2437cbaa8c51670a16c",
-      "title": "Testing Objects for Properties"
+      "id": "661a70248a02a745810c70fa",
+      "title": "Finding Digits"
     },
     {
-      "id": "56533eb9ac21ba0edf2244cb",
-      "title": "Manipulating Complex Objects"
+      "id": "661a7087c7f03a45b7d04fc0",
+      "title": "Sum of Digits"
     },
     {
-      "id": "56533eb9ac21ba0edf2244cc",
-      "title": "Accessing Nested Objects"
+      "id": "661a70d9105d3745fb8289f3",
+      "title": "Reverse Digits"
     },
     {
-      "id": "56533eb9ac21ba0edf2244cd",
-      "title": "Accessing Nested Arrays"
+      "id": "664136b9352eac18eec20bec",
+      "title": "Finding Factors"
     },
     {
-      "id": "56533eb9ac21ba0edf2244cf",
-      "title": "Record Collection"
+      "id": "661a724d73a29d468e9f809c",
+      "title": "Checking Primes"
     },
     {
-      "id": "cf1111c1c11feddfaeb1bdef",
-      "title": "Iterate with JavaScript While Loops"
+      "id": "661a72950a02b346c33e851f",
+      "title": "Checking Perfect Numbers"
     },
     {
-      "id": "cf1111c1c11feddfaeb5bdef",
-      "title": "Iterate with JavaScript For Loops"
+      "id": "661a75553723024999eec4f0",
+      "title": "Understanding Nested Loops"
     },
     {
-      "id": "56104e9e514f539506016a5c",
-      "title": "Iterate Odd Numbers With a For Loop"
+      "id": "66288e7c3bcc7716ca2bca1b",
+      "title": "Sum of Digits-2"
     },
     {
-      "id": "56105e7b514f539506016a5e",
-      "title": "Count Backwards With a For Loop"
+      "id": "661bb9b0f3a78a57622e0446",
+      "title": "Understanding Arrays"
     },
     {
-      "id": "5675e877dbd60be8ad28edc6",
-      "title": "Iterate Through an Array with a For Loop"
+      "id": "6606d150c472e91833764b63",
+      "title": "Store Multiple Values in one Variable using JavaScript Arrays"
     },
     {
-      "id": "56533eb9ac21ba0edf2244e1",
-      "title": "Nesting For Loops"
+      "id": "661bbb0abe070c57af09be41",
+      "title": "Create an Array of Natural Numbers"
     },
     {
-      "id": "5a2efd662fb457916e1fe604",
-      "title": "Iterate with JavaScript Do...While Loops"
+      "id": "6606d17360f6cb18637f1ed7",
+      "title": "Access Array data with indexes"
     },
     {
-      "id": "5cfa3679138e7d9595b9d9d4",
-      "title": "Replace Loops using Recursion"
+      "id": "661bbd211675cd580e7cb917",
+      "title": "Resverse Array"
     },
     {
-      "id": "5688e62ea601b2482ff8422b",
-      "title": "Profile Lookup"
+      "id": "661bbda189d54858509990c3",
+      "title": "Odd Even Sum"
     },
     {
-      "id": "cf1111c1c11feddfaeb9bdef",
-      "title": "Generate Random Fractions with JavaScript"
+      "id": "661bbe8b685931595f61b791",
+      "title": "Exiting the Loop early"
     },
     {
-      "id": "cf1111c1c12feddfaeb1bdef",
-      "title": "Generate Random Whole Numbers with JavaScript"
+      "id": "661bc0e16083b65a7f3a3cb1",
+      "title": "Check Existance of an Element in an Array"
     },
     {
-      "id": "cf1111c1c12feddfaeb2bdef",
-      "title": "Generate Random Whole Numbers within a Range"
+      "id": "6606d1d09b1f7e18cf5bf127",
+      "title": "Modifying Array data with indexes"
     },
     {
-      "id": "587d7b7e367417b2b2512b23",
-      "title": "Use the parseInt Function"
+      "id": "66288ccd87056f15c01c3abc",
+      "title": "Find Duplicates"
     },
     {
-      "id": "587d7b7e367417b2b2512b22",
-      "title": "Use the parseInt Function with a Radix"
+      "id": "6641370f1d4553192737b462",
+      "title": "Finding Frequency"
     },
     {
-      "id": "587d7b7e367417b2b2512b24",
-      "title": "Use the Conditional (Ternary) Operator"
+      "id": "66288f543b9f6a171d8d635c",
+      "title": "Merging Arrays"
     },
     {
-      "id": "587d7b7e367417b2b2512b21",
-      "title": "Use Multiple Conditional (Ternary) Operators"
-    },
-    {
-      "id": "5cd9a70215d3c4e65518328f",
-      "title": "Use Recursion to Create a Countdown"
-    },
-    {
-      "id": "5cc0bd7a49b71cb96132e54c",
-      "title": "Use Recursion to Create a Range of Numbers"
+      "id": "66288d9daeeabf161b9ccb3c",
+      "title": "Print Pattern from an Array"
     }
   ]
 }

@@ -1,0 +1,61 @@
+{
+  "name": "Module-3 : Introduction to Basic Javascript ",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "module-3",
+  "order": 5,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 3,
+  "isBeta": true,
+  "challengeOrder": [
+    {
+      "id": "65f3f6213293b31d7df443e5",
+      "title": "Step 1"
+    },
+    {
+      "id": "65f411ef1540c01e03d41b09",
+      "title": "Step 2"
+    },
+    {
+      "id": "65f416ff62ed3524affa6c2c",
+      "title": "Step 3"
+    },
+    {
+      "id": "65f4128330131d20c7373c2e",
+      "title": "Step 4"
+    },
+    {
+      "id": "65f413125d6338218918820f",
+      "title": "Step 5"
+    },
+    {
+      "id": "65f4132a76991621af4b0e4b",
+      "title": "Step 6"
+    },
+    {
+      "id": "65f4134acd811521d5dd1094",
+      "title": "Step 7"
+    },
+    {
+      "id": "65f4136f9d2a942229aa018e",
+      "title": "Step 8"
+    },
+    {
+      "id": "65f413c4f3b87d224e8b856e",
+      "title": "Step 9"
+    },
+    {
+      "id": "65f413ee386282227bc38a5e",
+      "title": "Step 10"
+    },
+    {
+      "id": "65f4144757efed229f90c970",
+      "title": "Step 11"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -9,7 +9,9 @@ import MenuButton from './menu-button';
 import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
+
 import AuthOrProfile from './auth-or-profile';
+
 import LanguageList from './language-list';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
