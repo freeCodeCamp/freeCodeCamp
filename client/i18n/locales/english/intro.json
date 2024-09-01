@@ -2047,7 +2047,10 @@
       "lofk": { "title": "246", "intro": [] },
       "udia": { "title": "247", "intro": [] },
       "wevl": { "title": "248", "intro": [] },
-      "mouu": { "title": "249", "intro": [] },
+      "lab-cash-register": {
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
+      },
       "xayi": { "title": "250", "intro": [] },
       "mjbe": { "title": "251", "intro": [] },
       "byqx": { "title": "252", "intro": [] },
