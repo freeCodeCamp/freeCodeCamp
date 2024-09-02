@@ -180,6 +180,7 @@ export type ChallengeNode = {
     id: string;
     instructions: string;
     isComingSoon: boolean;
+    isDescriptionCollapsible: boolean;
     internal?: {
       content: string;
       contentDigest: string;

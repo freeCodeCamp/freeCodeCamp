@@ -268,6 +268,7 @@ class ShowFillInTheBlank extends Component<
         challengeNode: {
           challenge: {
             title,
+            isDescriptionCollapsible,
             description,
             instructions,
             superBlock,
@@ -319,7 +320,14 @@ class ShowFillInTheBlank extends Component<
               </ChallengeTitle>
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <PrismFormatted text={description} />
+                {isDescriptionCollapsible ? (
+                  <details>
+                    <summary>More information</summary>
+                    <PrismFormatted text={description} />
+                  </details>
+                ) : (
+                  <PrismFormatted text={description} />
+                )}
                 <Spacer size='medium' />
               </Col>
 
@@ -437,6 +445,7 @@ export const query = graphql`
         instructions
         challengeType
         helpCategory
+        isDescriptionCollapsible
         superBlock
         block
         fields {
