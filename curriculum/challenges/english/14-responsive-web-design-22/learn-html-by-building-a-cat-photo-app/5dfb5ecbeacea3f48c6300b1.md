@@ -29,7 +29,8 @@ Within the `ul` element nest three list items to display three things cats love:
 You should have three `li` elements. Each `li` element should have its own opening and closing tag.
 
 ```js
-assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
+assert.lengthOf(document.querySelectorAll('li'),3)
+assert.lengthOf(code.match(/<\/li\>/g),3);
 ```
 
 You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.

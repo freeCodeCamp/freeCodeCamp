@@ -1696,14 +1696,8 @@
     "title": "Front End Development",
     "intro": ["placeholder"],
     "blocks": {
-      "0": {
-        "title": "0",
-        "intro": []
-      },
-      "1": {
-        "title": "1",
-        "intro": []
-      },
+      "efpl": { "title": "0", "intro": [] },
+      "xpmy": { "title": "1", "intro": [] },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
         "intro": [
@@ -1717,520 +1711,191 @@
           "For this lab, you will create a web page of your favorite recipe."
         ]
       },
-      "4": {
-        "title": "4",
-        "intro": []
-      },
+      "gwyd": { "title": "4", "intro": [] },
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
           "For this lab, you will create a web page of a travel agency."
         ]
       },
-      "6": {
-        "title": "6",
-        "intro": []
-      },
+      "vipr": { "title": "6", "intro": [] },
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
         "intro": ["For this lab, you will create a video compilation web page."]
       },
-      "8": {
-        "title": "8",
-        "intro": []
-      },
-      "9": {
-        "title": "9",
-        "intro": []
-      },
-      "10": {
-        "title": "10",
-        "intro": []
-      },
-      "11": {
-        "title": "11",
-        "intro": []
-      },
+      "bzfv": { "title": "8", "intro": [] },
+      "snuv": { "title": "9", "intro": [] },
+      "uowk": { "title": "10", "intro": [] },
+      "evdc": { "title": "11", "intro": [] },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
           "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
         ]
       },
-      "13": {
-        "title": "13",
-        "intro": []
+      "szcd": { "title": "13", "intro": [] },
+      "ijdq": { "title": "14", "intro": [] },
+      "pwwg": { "title": "15", "intro": [] },
+      "cfgp": { "title": "16", "intro": [] },
+      "workshop-hotel-feedback-form": {
+        "title": "Build a Hotel Feedback Form",
+        "intro": [
+          "In this workshop, you will learn how to work with forms by building a Hotel Feedback Form.",
+          "You will learn how to work with labels, inputs, fieldsets, legends, textareas and buttons."
+        ]
       },
-      "14": {
-        "title": "14",
-        "intro": []
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": ["For this lab, you will create a survey form."]
       },
-      "15": {
-        "title": "15",
-        "intro": []
-      },
-      "16": {
-        "title": "16",
-        "intro": []
-      },
-      "17": {
-        "title": "17",
-        "intro": []
-      },
-      "18": {
-        "title": "18",
-        "intro": []
-      },
-      "19": {
-        "title": "19",
-        "intro": []
-      },
+      "wgot": { "title": "19", "intro": [] },
       "workshop-final-exams-table": {
         "title": "Build a Final Exams Table",
         "intro": [
           "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
         ]
       },
-      "21": {
-        "title": "21",
-        "intro": []
-      },
-      "22": {
-        "title": "22",
-        "intro": []
-      },
-      "23": {
-        "title": "23",
-        "intro": []
-      },
-      "24": {
-        "title": "24",
-        "intro": []
-      },
-      "25": {
-        "title": "25",
-        "intro": []
-      },
-      "26": {
-        "title": "26",
-        "intro": []
-      },
-      "27": {
-        "title": "27",
-        "intro": []
-      },
-      "28": {
-        "title": "28",
-        "intro": []
-      },
-      "29": {
-        "title": "29",
-        "intro": []
-      },
-      "30": {
-        "title": "30",
-        "intro": []
-      },
-      "31": {
-        "title": "31",
-        "intro": []
-      },
-      "32": {
-        "title": "32",
-        "intro": []
-      },
-      "33": {
-        "title": "33",
-        "intro": []
-      },
-      "34": {
-        "title": "34",
-        "intro": []
-      },
-      "35": {
-        "title": "35",
-        "intro": []
-      },
-      "36": {
-        "title": "36",
-        "intro": []
-      },
-      "37": {
-        "title": "37",
-        "intro": []
-      },
-      "38": {
-        "title": "38",
-        "intro": []
-      },
-      "39": {
-        "title": "39",
-        "intro": []
-      },
-      "40": {
-        "title": "40",
-        "intro": []
-      },
-      "41": {
-        "title": "41",
-        "intro": []
-      },
-      "42": {
-        "title": "42",
-        "intro": []
-      },
-      "43": {
-        "title": "43",
-        "intro": []
-      },
-      "44": {
-        "title": "44",
-        "intro": []
-      },
-      "45": {
-        "title": "45",
-        "intro": []
-      },
-      "46": {
-        "title": "46",
-        "intro": []
-      },
-      "47": {
-        "title": "47",
-        "intro": []
-      },
-      "48": {
-        "title": "48",
-        "intro": []
-      },
-      "49": {
-        "title": "49",
-        "intro": []
-      },
-      "50": {
-        "title": "50",
-        "intro": []
-      },
-      "51": {
-        "title": "51",
-        "intro": []
-      },
-      "52": {
-        "title": "52",
-        "intro": []
-      },
-      "53": {
-        "title": "53",
-        "intro": []
-      },
-      "54": {
-        "title": "54",
-        "intro": []
-      },
-      "55": {
-        "title": "55",
-        "intro": []
-      },
-      "56": {
-        "title": "56",
-        "intro": []
-      },
-      "57": {
-        "title": "57",
-        "intro": []
-      },
-      "58": {
-        "title": "58",
-        "intro": []
-      },
-      "59": {
-        "title": "59",
-        "intro": []
-      },
-      "60": {
-        "title": "60",
-        "intro": []
-      },
-      "61": {
-        "title": "61",
-        "intro": []
-      },
-      "62": {
-        "title": "62",
-        "intro": []
-      },
-      "63": {
-        "title": "63",
-        "intro": []
-      },
-      "64": {
-        "title": "64",
-        "intro": []
-      },
-      "65": {
-        "title": "65",
-        "intro": []
-      },
-      "66": {
-        "title": "66",
-        "intro": []
-      },
-      "67": {
-        "title": "67",
-        "intro": []
-      },
-      "68": {
-        "title": "68",
-        "intro": []
-      },
-      "69": {
-        "title": "69",
-        "intro": []
-      },
-      "70": {
-        "title": "70",
-        "intro": []
-      },
-      "71": {
-        "title": "71",
-        "intro": []
-      },
-      "72": {
-        "title": "72",
-        "intro": []
-      },
-      "73": {
-        "title": "73",
-        "intro": []
-      },
-      "74": {
-        "title": "74",
-        "intro": []
-      },
-      "75": {
-        "title": "75",
-        "intro": []
-      },
-      "76": {
-        "title": "76",
-        "intro": []
-      },
-      "77": {
-        "title": "77",
-        "intro": []
-      },
-      "78": {
-        "title": "78",
-        "intro": []
-      },
-      "79": {
-        "title": "79",
-        "intro": []
-      },
-      "80": {
-        "title": "80",
-        "intro": []
-      },
-      "81": {
-        "title": "81",
-        "intro": []
-      },
-      "82": {
-        "title": "82",
-        "intro": []
-      },
-      "83": {
-        "title": "83",
-        "intro": []
-      },
-      "84": {
-        "title": "84",
-        "intro": []
-      },
-      "85": {
-        "title": "85",
-        "intro": []
-      },
-      "86": {
-        "title": "86",
-        "intro": []
-      },
-      "87": {
-        "title": "87",
-        "intro": []
-      },
-      "88": {
-        "title": "88",
-        "intro": []
-      },
-      "89": {
-        "title": "89",
-        "intro": []
-      },
-      "90": {
-        "title": "90",
-        "intro": []
-      },
-      "91": {
-        "title": "91",
-        "intro": []
-      },
-      "92": {
-        "title": "92",
-        "intro": []
-      },
-      "93": {
-        "title": "93",
-        "intro": []
-      },
-      "94": {
-        "title": "94",
-        "intro": []
-      },
+      "xdvu": { "title": "21", "intro": [] },
+      "rsve": { "title": "22", "intro": [] },
+      "xzam": { "title": "23", "intro": [] },
+      "isho": { "title": "24", "intro": [] },
+      "ghoc": { "title": "25", "intro": [] },
+      "cikh": { "title": "26", "intro": [] },
+      "fqai": { "title": "27", "intro": [] },
+      "cayd": { "title": "28", "intro": [] },
+      "pspj": { "title": "29", "intro": [] },
+      "qpra": { "title": "30", "intro": [] },
+      "joim": { "title": "31", "intro": [] },
+      "gvtb": { "title": "32", "intro": [] },
+      "cqhu": { "title": "33", "intro": [] },
+      "tmdc": { "title": "34", "intro": [] },
+      "hqia": { "title": "35", "intro": [] },
+      "dxpc": { "title": "36", "intro": [] },
+      "liti": { "title": "37", "intro": [] },
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS."
+        ]
+      },
+      "gnuk": { "title": "39", "intro": [] },
+      "zlfj": { "title": "40", "intro": [] },
+      "ioqd": { "title": "41", "intro": [] },
+      "sdul": { "title": "42", "intro": [] },
+      "pdqp": { "title": "43", "intro": [] },
+      "humj": { "title": "44", "intro": [] },
+      "pahx": { "title": "45", "intro": [] },
+      "rzdx": { "title": "46", "intro": [] },
+      "sgpy": { "title": "47", "intro": [] },
+      "ljmt": { "title": "48", "intro": [] },
+      "lxpk": { "title": "49", "intro": [] },
+      "lzqy": { "title": "50", "intro": [] },
+      "gvel": { "title": "51", "intro": [] },
+      "hgxz": { "title": "52", "intro": [] },
+      "bgrw": { "title": "53", "intro": [] },
+      "sbnz": { "title": "54", "intro": [] },
+      "chca": { "title": "55", "intro": [] },
+      "ywfm": { "title": "56", "intro": [] },
+      "yspe": { "title": "57", "intro": [] },
+      "ohhu": { "title": "58", "intro": [] },
+      "syga": { "title": "59", "intro": [] },
+      "sdym": { "title": "60", "intro": [] },
+      "ivpx": { "title": "61", "intro": [] },
+      "xnph": { "title": "62", "intro": [] },
+      "fvcj": { "title": "63", "intro": [] },
+      "ogdb": { "title": "64", "intro": [] },
+      "zxiy": { "title": "65", "intro": [] },
+      "qpze": { "title": "66", "intro": [] },
+      "uqiy": { "title": "67", "intro": [] },
+      "jnqt": { "title": "68", "intro": [] },
+      "vkei": { "title": "69", "intro": [] },
+      "jows": { "title": "70", "intro": [] },
+      "ipmw": { "title": "71", "intro": [] },
+      "nxbr": { "title": "72", "intro": [] },
+      "qzcx": { "title": "73", "intro": [] },
+      "wozq": { "title": "74", "intro": [] },
+      "lab-confidential-email-page": {
+        "title": "Build a Confidential Email Page",
+        "intro": [
+          "For this lab, you will create a web page of a confidential email using HTML and CSS."
+        ]
+      },
+      "zter": { "title": "76", "intro": [] },
+      "rfiq": { "title": "77", "intro": [] },
+      "tcwi": { "title": "78", "intro": [] },
+      "uptf": { "title": "79", "intro": [] },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "For this lab, you will use flexbox to create a webpage of playing cards."
+        ]
+      },
+      "kqao": { "title": "81", "intro": [] },
+      "habq": { "title": "82", "intro": [] },
+      "vqut": { "title": "83", "intro": [] },
+      "ujcf": { "title": "84", "intro": [] },
+      "lab-newspaper-article": {
+        "title": "Build a Newspaper Article",
+        "intro": [
+          "In this lab, you will build a newspaper article page using HTML and CSS."
+        ]
+      },
+      "hbme": { "title": "86", "intro": [] },
+      "ioby": { "title": "87", "intro": [] },
+      "dyvj": { "title": "88", "intro": [] },
+      "rjsv": { "title": "89", "intro": [] },
+      "txmt": { "title": "90", "intro": [] },
+      "fnde": { "title": "91", "intro": [] },
+      "gxjm": { "title": "92", "intro": [] },
+      "swpl": { "title": "93", "intro": [] },
+      "hcje": { "title": "94", "intro": [] },
       "lab-book-inventory-app": {
         "title": "Build a Book Inventory App",
         "intro": ["For this lab, you will create a book inventory app."]
       },
-      "96": {
-        "title": "96",
-        "intro": []
+      "huyd": { "title": "96", "intro": [] },
+      "kbwy": { "title": "97", "intro": [] },
+      "rxzk": { "title": "98", "intro": [] },
+      "xobh": { "title": "99", "intro": [] },
+      "pgyf": { "title": "100", "intro": [] },
+      "rrtt": { "title": "101", "intro": [] },
+      "rbnd": { "title": "102", "intro": [] },
+      "xebj": { "title": "103", "intro": [] },
+      "jkdt": { "title": "104", "intro": [] },
+      "cbbz": { "title": "105", "intro": [] },
+      "xcti": { "title": "106", "intro": [] },
+      "scec": { "title": "107", "intro": [] },
+      "mtbl": { "title": "108", "intro": [] },
+      "vlov": { "title": "109", "intro": [] },
+      "lab-availability-table": {
+        "title": "Build an Availability Table",
+        "intro": ["For this lab, you will create an availability table."]
       },
-      "97": {
-        "title": "97",
-        "intro": []
+      "sget": { "title": "111", "intro": [] },
+      "huge": { "title": "112", "intro": [] },
+      "agbl": { "title": "113", "intro": [] },
+      "ogko": { "title": "114", "intro": [] },
+      "harp": { "title": "115", "intro": [] },
+      "nsiq": { "title": "116", "intro": [] },
+      "geuv": { "title": "117", "intro": [] },
+      "fdam": { "title": "118", "intro": [] },
+      "yqma": { "title": "119", "intro": [] },
+      "dorc": { "title": "120", "intro": [] },
+      "adzu": { "title": "121", "intro": [] },
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
       },
-      "98": {
-        "title": "98",
-        "intro": []
-      },
-      "99": {
-        "title": "99",
-        "intro": []
-      },
-      "100": {
-        "title": "100",
-        "intro": []
-      },
-      "101": {
-        "title": "101",
-        "intro": []
-      },
-      "102": {
-        "title": "102",
-        "intro": []
-      },
-      "103": {
-        "title": "103",
-        "intro": []
-      },
-      "104": {
-        "title": "104",
-        "intro": []
-      },
-      "105": {
-        "title": "105",
-        "intro": []
-      },
-      "106": {
-        "title": "106",
-        "intro": []
-      },
-      "107": {
-        "title": "107",
-        "intro": []
-      },
-      "108": {
-        "title": "108",
-        "intro": []
-      },
-      "109": {
-        "title": "109",
-        "intro": []
-      },
-      "110": {
-        "title": "110",
-        "intro": []
-      },
-      "111": {
-        "title": "111",
-        "intro": []
-      },
-      "112": {
-        "title": "112",
-        "intro": []
-      },
-      "113": {
-        "title": "113",
-        "intro": []
-      },
-      "114": {
-        "title": "114",
-        "intro": []
-      },
-      "115": {
-        "title": "115",
-        "intro": []
-      },
-      "116": {
-        "title": "116",
-        "intro": []
-      },
-      "117": {
-        "title": "117",
-        "intro": []
-      },
-      "118": {
-        "title": "118",
-        "intro": []
-      },
-      "119": {
-        "title": "119",
-        "intro": []
-      },
-      "120": {
-        "title": "120",
-        "intro": []
-      },
-      "121": {
-        "title": "121",
-        "intro": []
-      },
-      "122": {
-        "title": "122",
-        "intro": []
-      },
-      "123": {
-        "title": "123",
-        "intro": []
-      },
-      "124": {
-        "title": "124",
-        "intro": []
-      },
-      "125": {
-        "title": "125",
-        "intro": []
-      },
-      "126": {
-        "title": "126",
-        "intro": []
-      },
-      "127": {
-        "title": "127",
-        "intro": []
-      },
-      "128": {
-        "title": "128",
-        "intro": []
-      },
-      "129": {
-        "title": "129",
-        "intro": []
-      },
-      "130": {
-        "title": "130",
-        "intro": []
-      },
+      "lugl": { "title": "123", "intro": [] },
+      "mtcg": { "title": "124", "intro": [] },
+      "lvqc": { "title": "125", "intro": [] },
+      "oxbd": { "title": "126", "intro": [] },
+      "wvjx": { "title": "127", "intro": [] },
+      "uquz": { "title": "128", "intro": [] },
+      "kdgd": { "title": "129", "intro": [] },
+      "wryp": { "title": "130", "intro": [] },
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
@@ -2238,682 +1903,205 @@
           "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
         ]
       },
-      "132": {
-        "title": "132",
-        "intro": []
-      },
-      "133": {
-        "title": "133",
-        "intro": []
-      },
-      "134": {
-        "title": "134",
-        "intro": []
-      },
-      "135": {
-        "title": "135",
-        "intro": []
-      },
-      "136": {
-        "title": "136",
-        "intro": []
-      },
-      "137": {
-        "title": "137",
-        "intro": []
-      },
-      "138": {
-        "title": "138",
-        "intro": []
-      },
-      "139": {
-        "title": "139",
-        "intro": []
-      },
-      "140": {
-        "title": "140",
-        "intro": []
-      },
-      "141": {
-        "title": "141",
-        "intro": []
-      },
-      "142": {
-        "title": "142",
-        "intro": []
-      },
-      "143": {
-        "title": "143",
-        "intro": []
-      },
-      "144": {
-        "title": "144",
-        "intro": []
-      },
-      "145": {
-        "title": "145",
-        "intro": []
-      },
-      "146": {
-        "title": "146",
-        "intro": []
-      },
-      "147": {
-        "title": "147",
-        "intro": []
-      },
-      "148": {
-        "title": "148",
-        "intro": []
-      },
-      "149": {
-        "title": "149",
-        "intro": []
-      },
-      "150": {
-        "title": "150",
-        "intro": []
-      },
-      "151": {
-        "title": "151",
-        "intro": []
-      },
-      "152": {
-        "title": "152",
-        "intro": []
-      },
-      "153": {
-        "title": "153",
-        "intro": []
-      },
-      "154": {
-        "title": "154",
-        "intro": []
-      },
-      "155": {
-        "title": "155",
-        "intro": []
-      },
-      "156": {
-        "title": "156",
-        "intro": []
-      },
-      "157": {
-        "title": "157",
-        "intro": []
-      },
-      "158": {
-        "title": "158",
-        "intro": []
-      },
-      "159": {
-        "title": "159",
-        "intro": []
-      },
-      "160": {
-        "title": "160",
-        "intro": []
-      },
-      "161": {
-        "title": "161",
-        "intro": []
-      },
-      "162": {
-        "title": "162",
-        "intro": []
-      },
-      "163": {
-        "title": "163",
-        "intro": []
-      },
-      "164": {
-        "title": "164",
-        "intro": []
-      },
-      "165": {
-        "title": "165",
-        "intro": []
-      },
-      "166": {
-        "title": "166",
-        "intro": []
-      },
-      "167": {
-        "title": "167",
-        "intro": []
-      },
-      "168": {
-        "title": "168",
-        "intro": []
-      },
-      "169": {
-        "title": "169",
-        "intro": []
-      },
-      "170": {
-        "title": "170",
-        "intro": []
-      },
-      "171": {
-        "title": "171",
-        "intro": []
-      },
-      "172": {
-        "title": "172",
-        "intro": []
-      },
-      "173": {
-        "title": "173",
-        "intro": []
-      },
-      "174": {
-        "title": "174",
-        "intro": []
-      },
-      "175": {
-        "title": "175",
-        "intro": []
-      },
-      "176": {
-        "title": "176",
-        "intro": []
-      },
-      "177": {
-        "title": "177",
-        "intro": []
-      },
-      "178": {
-        "title": "178",
-        "intro": []
-      },
-      "179": {
-        "title": "179",
-        "intro": []
-      },
-      "180": {
-        "title": "180",
-        "intro": []
-      },
-      "181": {
-        "title": "181",
-        "intro": []
-      },
-      "182": {
-        "title": "182",
-        "intro": []
-      },
-      "183": {
-        "title": "183",
-        "intro": []
-      },
-      "184": {
-        "title": "184",
-        "intro": []
-      },
-      "185": {
-        "title": "185",
-        "intro": []
-      },
-      "186": {
-        "title": "186",
-        "intro": []
-      },
-      "187": {
-        "title": "187",
-        "intro": []
-      },
-      "188": {
-        "title": "188",
-        "intro": []
-      },
-      "189": {
-        "title": "189",
-        "intro": []
-      },
-      "190": {
-        "title": "190",
-        "intro": []
-      },
-      "191": {
-        "title": "191",
-        "intro": []
-      },
-      "192": {
-        "title": "192",
-        "intro": []
-      },
-      "193": {
-        "title": "193",
-        "intro": []
-      },
-      "194": {
-        "title": "194",
-        "intro": []
-      },
-      "195": {
-        "title": "195",
-        "intro": []
-      },
-      "196": {
-        "title": "196",
-        "intro": []
-      },
-      "197": {
-        "title": "197",
-        "intro": []
-      },
-      "198": {
-        "title": "198",
-        "intro": []
-      },
-      "199": {
-        "title": "199",
-        "intro": []
-      },
-      "200": {
-        "title": "200",
-        "intro": []
-      },
-      "201": {
-        "title": "201",
-        "intro": []
-      },
-      "202": {
-        "title": "202",
-        "intro": []
-      },
-      "203": {
-        "title": "203",
-        "intro": []
-      },
-      "204": {
-        "title": "204",
-        "intro": []
-      },
-      "205": {
-        "title": "205",
-        "intro": []
-      },
-      "206": {
-        "title": "206",
-        "intro": []
-      },
-      "207": {
-        "title": "207",
-        "intro": []
-      },
-      "208": {
-        "title": "208",
-        "intro": []
-      },
-      "209": {
-        "title": "209",
-        "intro": []
-      },
-      "210": {
-        "title": "210",
-        "intro": []
-      },
-      "211": {
-        "title": "211",
-        "intro": []
-      },
-      "212": {
-        "title": "212",
-        "intro": []
-      },
-      "213": {
-        "title": "213",
-        "intro": []
-      },
-      "214": {
-        "title": "214",
-        "intro": []
-      },
-      "215": {
-        "title": "215",
-        "intro": []
-      },
-      "216": {
-        "title": "216",
-        "intro": []
-      },
-      "217": {
-        "title": "217",
-        "intro": []
-      },
-      "218": {
-        "title": "218",
-        "intro": []
-      },
-      "219": {
-        "title": "219",
-        "intro": []
-      },
-      "220": {
-        "title": "220",
-        "intro": []
-      },
-      "221": {
-        "title": "221",
-        "intro": []
-      },
-      "222": {
-        "title": "222",
-        "intro": []
-      },
-      "223": {
-        "title": "223",
-        "intro": []
-      },
-      "224": {
-        "title": "224",
-        "intro": []
-      },
-      "225": {
-        "title": "225",
-        "intro": []
-      },
-      "226": {
-        "title": "226",
-        "intro": []
-      },
-      "227": {
-        "title": "227",
-        "intro": []
-      },
-      "228": {
-        "title": "228",
-        "intro": []
-      },
-      "229": {
-        "title": "229",
-        "intro": []
-      },
-      "230": {
-        "title": "230",
-        "intro": []
-      },
-      "231": {
-        "title": "231",
-        "intro": []
-      },
-      "232": {
-        "title": "232",
-        "intro": []
-      },
-      "233": {
-        "title": "233",
-        "intro": []
-      },
-      "234": {
-        "title": "234",
-        "intro": []
-      },
-      "235": {
-        "title": "235",
-        "intro": []
-      },
-      "236": {
-        "title": "236",
-        "intro": []
-      },
-      "237": {
-        "title": "237",
-        "intro": []
-      },
-      "238": {
-        "title": "238",
-        "intro": []
-      },
-      "239": {
-        "title": "239",
-        "intro": []
-      },
-      "240": {
-        "title": "240",
-        "intro": []
-      },
-      "241": {
-        "title": "241",
-        "intro": []
-      },
-      "242": {
-        "title": "242",
-        "intro": []
-      },
-      "243": {
-        "title": "243",
-        "intro": []
-      },
-      "244": {
-        "title": "244",
-        "intro": []
-      },
-      "245": {
-        "title": "245",
-        "intro": []
-      },
-      "246": {
-        "title": "246",
-        "intro": []
-      },
-      "247": {
-        "title": "247",
-        "intro": []
-      },
-      "248": {
-        "title": "248",
-        "intro": []
-      },
-      "249": {
-        "title": "249",
-        "intro": []
-      },
-      "250": {
-        "title": "250",
-        "intro": []
-      },
-      "251": {
-        "title": "251",
-        "intro": []
-      },
-      "252": {
-        "title": "252",
-        "intro": []
-      },
-      "253": {
-        "title": "253",
-        "intro": []
-      },
-      "254": {
-        "title": "254",
-        "intro": []
-      },
-      "255": {
-        "title": "255",
-        "intro": []
-      },
-      "256": {
-        "title": "256",
-        "intro": []
-      },
-      "257": {
-        "title": "257",
-        "intro": []
-      },
-      "258": {
-        "title": "258",
-        "intro": []
-      },
-      "259": {
-        "title": "259",
-        "intro": []
-      },
-      "260": {
-        "title": "260",
-        "intro": []
-      },
-      "261": {
-        "title": "261",
-        "intro": []
-      },
-      "262": {
-        "title": "262",
-        "intro": []
-      },
-      "263": {
-        "title": "263",
-        "intro": []
-      },
-      "264": {
-        "title": "264",
-        "intro": []
-      },
-      "265": {
-        "title": "265",
-        "intro": []
-      },
-      "266": {
-        "title": "266",
-        "intro": []
-      },
-      "267": {
-        "title": "267",
-        "intro": []
-      },
-      "268": {
-        "title": "268",
-        "intro": []
-      },
-      "269": {
-        "title": "269",
-        "intro": []
-      },
-      "270": {
-        "title": "270",
-        "intro": []
-      },
-      "271": {
-        "title": "271",
-        "intro": []
-      },
-      "272": {
-        "title": "272",
-        "intro": []
-      },
-      "273": {
-        "title": "273",
-        "intro": []
-      },
-      "274": {
-        "title": "274",
-        "intro": []
-      },
-      "275": {
-        "title": "275",
-        "intro": []
-      },
-      "276": {
-        "title": "276",
-        "intro": []
-      },
-      "277": {
-        "title": "277",
-        "intro": []
-      },
-      "278": {
-        "title": "278",
-        "intro": []
-      },
-      "279": {
-        "title": "279",
-        "intro": []
-      },
-      "280": {
-        "title": "280",
-        "intro": []
-      },
-      "281": {
-        "title": "281",
-        "intro": []
-      },
-      "282": {
-        "title": "282",
-        "intro": []
-      },
-      "283": {
-        "title": "283",
-        "intro": []
-      },
-      "284": {
-        "title": "284",
-        "intro": []
-      },
-      "285": {
-        "title": "285",
-        "intro": []
-      },
-      "286": {
-        "title": "286",
-        "intro": []
-      },
-      "287": {
-        "title": "287",
-        "intro": []
-      },
-      "288": {
-        "title": "288",
-        "intro": []
-      },
-      "289": {
-        "title": "289",
-        "intro": []
-      },
-      "290": {
-        "title": "290",
-        "intro": []
-      },
-      "291": {
-        "title": "291",
-        "intro": []
-      },
-      "292": {
-        "title": "292",
-        "intro": []
-      },
-      "293": {
-        "title": "293",
-        "intro": []
-      },
-      "294": {
-        "title": "294",
-        "intro": []
-      },
-      "295": {
-        "title": "295",
-        "intro": []
-      },
-      "296": {
-        "title": "296",
-        "intro": []
-      },
-      "297": {
-        "title": "297",
-        "intro": []
-      },
-      "298": {
-        "title": "298",
-        "intro": []
-      },
-      "299": {
-        "title": "299",
-        "intro": []
-      },
-      "300": {
-        "title": "300",
-        "intro": []
-      },
+      "zmzg": { "title": "132", "intro": [] },
+      "dthi": { "title": "133", "intro": [] },
+      "yskn": { "title": "134", "intro": [] },
+      "tpni": { "title": "135", "intro": [] },
+      "hoec": { "title": "136", "intro": [] },
+      "workshop-teacher-chatbot": {
+        "title": "Build a Teacher Chatbot",
+        "intro": [
+          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
+          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+        ]
+      },
+      "axgb": { "title": "138", "intro": [] },
+      "rwac": { "title": "139", "intro": [] },
+      "uzjg": { "title": "140", "intro": [] },
+      "hxwa": { "title": "141", "intro": [] },
+      "xkbo": { "title": "142", "intro": [] },
+      "nkxq": { "title": "143", "intro": [] },
+      "wfyg": { "title": "144", "intro": [] },
+      "guqy": { "title": "145", "intro": [] },
+      "nkge": { "title": "146", "intro": [] },
+      "hafd": { "title": "147", "intro": [] },
+      "phko": { "title": "148", "intro": [] },
+      "wjzt": { "title": "149", "intro": [] },
+      "tsdq": { "title": "150", "intro": [] },
+      "kkix": { "title": "151", "intro": [] },
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review working with functions by building a calculator."
+        ]
+      },
+      "hqba": { "title": "153", "intro": [] },
+      "nnqa": { "title": "154", "intro": [] },
+      "cktz": { "title": "155", "intro": [] },
+      "pljo": { "title": "156", "intro": [] },
+      "avln": { "title": "157", "intro": [] },
+      "mexq": { "title": "158", "intro": [] },
+      "ifgn": { "title": "159", "intro": [] },
+      "workshop-shopping-list": {
+        "title": "Build a Shopping List",
+        "intro": [
+          "In this workshop, you will practice working with arrays by building a shopping list.",
+          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+        ]
+      },
+      "mokm": { "title": "161", "intro": [] },
+      "froz": { "title": "162", "intro": [] },
+      "ozth": { "title": "163", "intro": [] },
+      "dvnt": { "title": "164", "intro": [] },
+      "ekdb": { "title": "165", "intro": [] },
+      "ezek": { "title": "166", "intro": [] },
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": ["In this lab, you will build a factorial calculator."]
+      },
+      "lgfm": { "title": "168", "intro": [] },
+      "kgtw": { "title": "169", "intro": [] },
+      "ljmq": { "title": "170", "intro": [] },
+      "kcci": { "title": "171", "intro": [] },
+      "puhe": { "title": "172", "intro": [] },
+      "ttrm": { "title": "173", "intro": [] },
+      "hjtr": { "title": "174", "intro": [] },
+      "ccnu": { "title": "175", "intro": [] },
+      "skiq": { "title": "176", "intro": [] },
+      "epfc": { "title": "177", "intro": [] },
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": ["For this lab, you will create a gradebook app."]
+      },
+      "fbbn": { "title": "179", "intro": [] },
+      "lnmg": { "title": "180", "intro": [] },
+      "wead": { "title": "181", "intro": [] },
+      "eekl": { "title": "182", "intro": [] },
+      "plic": { "title": "183", "intro": [] },
+      "vjmm": { "title": "184", "intro": [] },
+      "bxtv": { "title": "185", "intro": [] },
+      "xiqk": { "title": "186", "intro": [] },
+      "quyu": { "title": "187", "intro": [] },
+      "esfh": { "title": "188", "intro": [] },
+      "gibb": { "title": "189", "intro": [] },
+      "whrm": { "title": "190", "intro": [] },
+      "fhxc": { "title": "191", "intro": [] },
+      "arqa": { "title": "192", "intro": [] },
+      "ubpx": { "title": "193", "intro": [] },
+      "lbyi": { "title": "194", "intro": [] },
+      "ctwj": { "title": "195", "intro": [] },
+      "fmbk": { "title": "196", "intro": [] },
+      "nlbo": { "title": "197", "intro": [] },
+      "bbyq": { "title": "198", "intro": [] },
+      "uglc": { "title": "199", "intro": [] },
+      "vonu": { "title": "200", "intro": [] },
+      "iejn": { "title": "201", "intro": [] },
+      "arrr": { "title": "202", "intro": [] },
+      "kaqq": { "title": "203", "intro": [] },
+      "ksfc": { "title": "204", "intro": [] },
+      "xeqa": { "title": "205", "intro": [] },
+      "lab-random-background-color-changer": {
+        "title": "Debug a Random Background Color Changer",
+        "intro": [
+          "For this lab, you will debug a random background color changer and fix the errors to make it work properly."
+        ]
+      },
+      "dqth": { "title": "207", "intro": [] },
+      "ilop": { "title": "208", "intro": [] },
+      "qrer": { "title": "209", "intro": [] },
+      "unyy": { "title": "210", "intro": [] },
+      "svsl": { "title": "211", "intro": [] },
+      "wnmj": { "title": "212", "intro": [] },
+      "zalp": { "title": "213", "intro": [] },
+      "hhvp": { "title": "214", "intro": [] },
+      "egkv": { "title": "215", "intro": [] },
+      "qlvw": { "title": "216", "intro": [] },
+      "cyrl": { "title": "217", "intro": [] },
+      "lupt": { "title": "218", "intro": [] },
+      "yvqn": { "title": "219", "intro": [] },
+      "xtfk": { "title": "220", "intro": [] },
+      "xnpr": { "title": "221", "intro": [] },
+      "lvts": { "title": "222", "intro": [] },
+      "foal": { "title": "223", "intro": [] },
+      "crzf": { "title": "224", "intro": [] },
+      "xofr": { "title": "225", "intro": [] },
+      "bsmn": { "title": "226", "intro": [] },
+      "pehm": { "title": "227", "intro": [] },
+      "cvsw": { "title": "228", "intro": [] },
+      "qjws": { "title": "229", "intro": [] },
+      "fgbp": { "title": "230", "intro": [] },
+      "jbst": { "title": "232", "intro": [] },
+      "peyf": { "title": "233", "intro": [] },
+      "bdqj": { "title": "234", "intro": [] },
+      "ndlf": { "title": "235", "intro": [] },
+      "cpmq": { "title": "236", "intro": [] },
+      "yshh": { "title": "237", "intro": [] },
+      "wyxz": { "title": "238", "intro": [] },
+      "dtfv": { "title": "239", "intro": [] },
+      "miza": { "title": "240", "intro": [] },
+      "manv": { "title": "241", "intro": [] },
+      "bnvw": { "title": "242", "intro": [] },
+      "xkhk": { "title": "243", "intro": [] },
+      "yaxm": { "title": "244", "intro": [] },
+      "bfzo": { "title": "245", "intro": [] },
+      "lofk": { "title": "246", "intro": [] },
+      "udia": { "title": "247", "intro": [] },
+      "wevl": { "title": "248", "intro": [] },
+      "lab-cash-register": {
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
+      },
+      "xayi": { "title": "250", "intro": [] },
+      "mjbe": { "title": "251", "intro": [] },
+      "byqx": { "title": "252", "intro": [] },
+      "alda": { "title": "253", "intro": [] },
+      "lkyc": { "title": "254", "intro": [] },
+      "cvaf": { "title": "255", "intro": [] },
+      "tdgy": { "title": "256", "intro": [] },
+      "saxu": { "title": "257", "intro": [] },
+      "kagw": { "title": "258", "intro": [] },
+      "mbib": { "title": "259", "intro": [] },
+      "oxiv": { "title": "260", "intro": [] },
+      "mdrz": { "title": "261", "intro": [] },
+      "nixz": { "title": "262", "intro": [] },
+      "zywg": { "title": "263", "intro": [] },
+      "wraf": { "title": "264", "intro": [] },
+      "kwxs": { "title": "265", "intro": [] },
+      "muyw": { "title": "266", "intro": [] },
+      "mvzb": { "title": "267", "intro": [] },
+      "rmpy": { "title": "268", "intro": [] },
+      "plfo": { "title": "269", "intro": [] },
+      "xdyh": { "title": "270", "intro": [] },
+      "ybrh": { "title": "271", "intro": [] },
+      "vjgg": { "title": "272", "intro": [] },
+      "kaui": { "title": "273", "intro": [] },
+      "afhj": { "title": "274", "intro": [] },
+      "cfyv": { "title": "275", "intro": [] },
+      "sgau": { "title": "276", "intro": [] },
+      "clak": { "title": "277", "intro": [] },
+      "fcom": { "title": "278", "intro": [] },
+      "ffpt": { "title": "279", "intro": [] },
+      "vyzp": { "title": "280", "intro": [] },
+      "hiyk": { "title": "281", "intro": [] },
+      "fihs": { "title": "282", "intro": [] },
+      "icdr": { "title": "283", "intro": [] },
+      "zdsj": { "title": "284", "intro": [] },
+      "mzae": { "title": "285", "intro": [] },
+      "gjbf": { "title": "286", "intro": [] },
+      "mbpv": { "title": "287", "intro": [] },
+      "eeez": { "title": "288", "intro": [] },
+      "xweg": { "title": "289", "intro": [] },
+      "khuu": { "title": "290", "intro": [] },
+      "xdly": { "title": "291", "intro": [] },
+      "rhhl": { "title": "292", "intro": [] },
+      "trvf": { "title": "293", "intro": [] },
+      "kwmg": { "title": "294", "intro": [] },
+      "nodx": { "title": "295", "intro": [] },
+      "erfj": { "title": "296", "intro": [] },
+      "zcef": { "title": "297", "intro": [] },
+      "hfwi": { "title": "298", "intro": [] },
+      "rnwr": { "title": "299", "intro": [] },
+      "oeqv": { "title": "300", "intro": [] },
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
