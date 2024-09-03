@@ -30,7 +30,7 @@ assert.lengthOf(columnSixTwoChildren,1);
 One `h4` element should have the text `#left-well`.
 
 ```js
-const firstH4 = [...document.querySelectorAll('h4')].at(0); 
+const firstH4 = document.querySelectorAll('h4')?.[0]; 
 assert.match(firstH4?.textContent,/#left-well/gi); 
 ```
 

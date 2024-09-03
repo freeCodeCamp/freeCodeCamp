@@ -17,7 +17,7 @@ Nest three `button` elements within each of your `div` elements having the class
 Three `button` elements should be nested within each of your `div` elements with class `well`.
 
 ```js
-const buttonOne = [...document.querySelectorAll('div.well')].at(0);
+const buttonOne = document.querySelectorAll('div.well')?.[0];
 const buttonOneChildren = buttonOne?.querySelectorAll(`:scope ${'button'}`);
 assert.lengthOf(buttonOneChildren,3);
 

@@ -20,7 +20,7 @@ You should create a new `button` element with the text `Delete`.
 
 ```js
 const deleteButton = document.querySelectorAll('button')?.[2]; 
-assert.match(deleteButton.textContent ,/delete/gi);
+assert.match(deleteButton?.textContent ,/delete/gi);
 ```
 
 All of your Bootstrap buttons should have the `btn` and `btn-block` classes.

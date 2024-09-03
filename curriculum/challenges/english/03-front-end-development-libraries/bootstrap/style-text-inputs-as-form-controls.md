@@ -39,7 +39,7 @@ assert.lengthOf(fontIcon ,1);
 The text `input` in your form should have the class `form-control`.
 
 ```js
-assert.isTrue(document.querySelector('input[type="text"]').classList.contains('form-control'));
+assert.isTrue(document.querySelector('input[type="text"]')?.classList?.contains('form-control'));
 ```
 
 Each of your `i` elements should have a closing tag.

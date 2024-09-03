@@ -27,7 +27,7 @@ Your `div` element should have the class `row`
 
 ```js
 const newDiv = document.querySelectorAll('div')?.[1]; 
-assert.isTrue(newDiv.classList.contains('row'));
+assert.isTrue(newDiv?.classList?.contains('row'));
 ```
 
 Your `row div` should be nested inside the `container-fluid div`
