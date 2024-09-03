@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "ابدأ (بالمجان)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "سجل الدخول لحفظ تقدّمك (بالمجان)",
     "view-curriculum": "عرض المنهج الدراسي",
     "first-lesson": "انتقل إلى الدرس الأول",
@@ -106,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "ابني مشاريع.",
     "big-heading-3": "احصل على الشهادات.",
+    "big-heading-4": "All for free.",
     "h2-heading": "منذ عام 2014، حصل أكثر من 40,000 من خريجي freeCodeCamp.org على وظائف في شركات تكنولوجية منها:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "طلاب freeCodeCamp في مجموعة دراسية محلية في كوريا الجنوبية.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "كما رأينا في:",
     "testimonials": {
       "heading": "إليك ما يقوله خريجونا عن freeCodeCamp:",
@@ -275,7 +280,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "لا داعي للقلق ، لا أريد حذف كل تقدمي",
-      "reset-confirm": "أعد كل شيء ألى حالته الأولية. أريد أن أبدأ من البداية"
+      "reset-confirm": "أعد كل شيء ألى حالته الأولية. أريد أن أبدأ من البداية",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "ليس لديك بريد إلكتروني مرتبط بهذا الحساب.",
