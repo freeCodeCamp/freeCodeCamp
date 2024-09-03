@@ -2007,9 +2007,11 @@
         "title": "74",
         "intro": []
       },
-      "wmkc": {
-        "title": "75",
-        "intro": []
+      "lab-confidential-email-page": {
+        "title": "Build a Confidential Email Page",
+        "intro": [
+          "For this lab, you will create a web page of a confidential email using HTML and CSS."
+        ]
       },
       "zter": {
         "title": "76",
@@ -2049,9 +2051,11 @@
         "title": "84",
         "intro": []
       },
-      "upuu": {
-        "title": "85",
-        "intro": []
+      "lab-newspaper-article": {
+        "title": "Build a Newspaper Article",
+        "intro": [
+          "In this lab, you will build a newspaper article page using HTML and CSS."
+        ]
       },
       "hbme": {
         "title": "86",
@@ -2327,9 +2331,11 @@
         "title": "151",
         "intro": []
       },
-      "icxa": {
-        "title": "152",
-        "intro": []
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review working with functions by building a calculator."
+        ]
       },
       "hqba": {
         "title": "153",
@@ -2390,9 +2396,9 @@
         "title": "166",
         "intro": []
       },
-      "vabq": {
-        "title": "167",
-        "intro": []
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": ["In this lab, you will build a factorial calculator."]
       },
       "lgfm": {
         "title": "168",
@@ -2718,9 +2724,9 @@
         "title": "248",
         "intro": []
       },
-      "mouu": {
-        "title": "249",
-        "intro": []
+      "lab-cash-register": {
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
       },
       "xayi": {
         "title": "250",
