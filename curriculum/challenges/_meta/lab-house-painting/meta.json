@@ -1,0 +1,11 @@
+{
+  "name": "Build a House Painting",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-house-painting",
+  "order": 100,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66d6a7a3e1aa411e94bf2346", "title": "Build a House Painting" }],
+  "helpCategory": "HTML-CSS"
+}
