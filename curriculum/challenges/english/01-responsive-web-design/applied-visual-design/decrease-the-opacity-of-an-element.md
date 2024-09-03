@@ -24,11 +24,10 @@ Set the `opacity` of the anchor tags to 0.7 using `links` class to select them.
 Your code should set the `opacity` property to 0.7 on the anchor tags by selecting the class of `links`.
 
 ```js
-assert(
-  /\.links\s*{([\s\S]*?;)*\s*opacity\s*:\s*0*\.70*\s*(;[\s\S]*?|\s*)}/.test(
-    $('style').text()
-  )
-);
+assert.match(
+  document.querySelector('style')?.textContent,
+  /\.links\s*{([\s\S]*?;)*\s*opacity\s*:\s*0*\.70*\s*(;[\s\S]*?|\s*)}/
+  );
 ```
 
 # --seed--

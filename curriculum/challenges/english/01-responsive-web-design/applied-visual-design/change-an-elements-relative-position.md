@@ -33,13 +33,17 @@ Change the `position` of the `h2` to `relative`, and use a CSS offset to move it
 The `h2` element should have a `position` property set to `relative`.
 
 ```js
-assert($('h2').css('position') == 'relative');
+const h2Element =document.querySelector('h2')
+const h2Style = window.getComputedStyle(h2Element);
+assert.equal(h2Style?.position, 'relative');
 ```
 
 Your code should use a CSS offset to relatively position the `h2` 15px away from the `top` of where it normally sits.
 
 ```js
-assert($('h2').css('top') == '15px');
+const h2Element =document.querySelector('h2')
+const h2Style = window.getComputedStyle(h2Element);
+assert.equal(h2Style?.top, '15px');
 ```
 
 # --seed--
