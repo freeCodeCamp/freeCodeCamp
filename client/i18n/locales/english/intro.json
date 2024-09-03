@@ -1917,7 +1917,6 @@
       },
       "axgb": { "title": "138", "intro": [] },
       "rwac": { "title": "139", "intro": [] },
-      "uzjg": { "title": "140", "intro": [] },
       "hxwa": { "title": "141", "intro": [] },
       "xkbo": { "title": "142", "intro": [] },
       "nkxq": { "title": "143", "intro": [] },
@@ -1935,7 +1934,12 @@
           "In this workshop, you will review working with functions by building a calculator."
         ]
       },
-      "hqba": { "title": "153", "intro": [] },
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it."
+        ]
+      },
       "lab-sentence-maker": {
         "title": "Build a Sentence Maker",
         "intro": [
