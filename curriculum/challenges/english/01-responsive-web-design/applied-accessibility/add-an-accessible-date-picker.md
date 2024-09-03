@@ -31,25 +31,25 @@ Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competi
 Your code should add one `input` tag for the date selector field.
 
 ```js
-assert($('input').length == 2);
+assert.lengthOf(document.querySelectorAll('input'), 2);
 ```
 
 Your `input` tag should have a `type` attribute with a value of `date`.
 
 ```js
-assert($('input').attr('type') == 'date');
+assert.equal(document.querySelector('input')?.getAttribute('type'), 'date');
 ```
 
 Your `input` tag should have an `id` attribute with a value of `pickdate`.
 
 ```js
-assert($('input').attr('id') == 'pickdate');
+assert.equal(document.querySelector('input')?.getAttribute('id'),'pickdate');
 ```
 
 Your `input` tag should have a `name` attribute with a value of `date`.
 
 ```js
-assert($('input').attr('name') == 'date');
+assert.equal(document.querySelector('input')?.getAttribute('name'), 'date');
 ```
 
 # --seed--

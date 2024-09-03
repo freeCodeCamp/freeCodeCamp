@@ -34,39 +34,40 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 Your code should have one `figure` tag.
 
 ```js
-assert($('figure').length == 1);
+assert.lengthOf(document.querySelectorAll('figure') , 1);
 ```
 
 Your code should have one `figcaption` tag.
 
 ```js
-assert($('figcaption').length == 1);
+assert.lengthOf(document.querySelectorAll('figcaption') , 1);
 ```
 
 Your code should not have any `div` tags.
 
 ```js
-assert($('div').length == 0);
+assert.lengthOf(document.querySelectorAll('div'), 0);
 ```
 
 Your code should not have any `p` tags.
 
 ```js
-assert($('p').length == 0);
+assert.lengthOf(document.querySelectorAll('p') , 0);
 ```
 
 The `figcaption` should be a child of the `figure` tag.
 
 ```js
-assert($('figure').children('figcaption').length == 1);
+const figure = document.querySelector('figure');
+const children = figure?.querySelectorAll(`:scope ${'figcaption'}`);
+assert.lengthOf(children, 1);
 ```
 
 Your `figure` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/figure>/g) &&
-    code.match(/<\/figure>/g).length === code.match(/<figure>/g).length
+assert.isTrue(
+    code.match(/<\/figure>/g)?.length === code.match(/<figure>/g)?.length
 );
 ```
 

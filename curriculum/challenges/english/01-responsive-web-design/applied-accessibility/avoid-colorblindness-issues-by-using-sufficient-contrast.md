@@ -26,13 +26,13 @@ Camper Cat is experimenting with using color for his blog text and background, b
 Your code should only change the lightness value for the text `color` property to a value of 15%.
 
 ```js
-assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi));
+assert.match(code ,/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi);
 ```
 
 Your code should only change the lightness value for the `background-color` property to a value of 55%.
 
 ```js
-assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
+assert.match(code ,/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi);
 ```
 
 # --seed--
