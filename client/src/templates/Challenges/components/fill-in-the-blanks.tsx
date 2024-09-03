@@ -53,15 +53,13 @@ function FillInTheBlanks({
                     <input
                       key={j}
                       type='text'
-                      maxLength={
-                        blankAnswers[value as unknown as number].length + 3
-                      }
+                      maxLength={blankAnswers[value].length + 3}
                       className={`fill-in-the-blank-input ${addInputClass(
-                        value as unknown as number
+                        value
                       )}`}
                       onChange={handleInputChange}
                       data-index={node.value}
-                      size={blankAnswers[value as unknown as number].length}
+                      size={blankAnswers[value].length}
                       aria-label={t('learn.blank')}
                     />
                   );
