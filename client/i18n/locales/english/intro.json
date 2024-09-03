@@ -1936,7 +1936,12 @@
         ]
       },
       "hqba": { "title": "153", "intro": [] },
-      "nnqa": { "title": "154", "intro": [] },
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you will create different stories by assigning different words to different variables."
+        ]
+      },
       "cktz": { "title": "155", "intro": [] },
       "pljo": { "title": "156", "intro": [] },
       "avln": { "title": "157", "intro": [] },
