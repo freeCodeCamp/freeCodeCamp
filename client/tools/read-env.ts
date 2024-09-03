@@ -25,7 +25,6 @@ const {
   RADIO_LOCATION: radioLocation,
   CLIENT_LOCALE: clientLocale,
   CURRICULUM_LOCALE: curriculumLocale,
-  SHOW_LOCALE_DROPDOWN_MENU: showLocaleDropdownMenu,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
   STRIPE_PUBLIC_KEY: stripePublicKey,
@@ -50,7 +49,6 @@ const locations = {
 export default Object.assign(locations, {
   clientLocale,
   curriculumLocale,
-  showLocaleDropdownMenu: showLocaleDropdownMenu === 'true',
   deploymentEnv,
   environment: process.env.FREECODECAMP_NODE_ENV || 'development',
   algoliaAppId:

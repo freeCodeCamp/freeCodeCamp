@@ -4,6 +4,7 @@ import { getEditors } from './utils/editor';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('Challenge with editor', function () {
+  test.skip(({ isMobile }) => isMobile);
   test('the shortcut "Ctrl + S" saves the code', async ({ page }) => {
     await page.goto(
       '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'

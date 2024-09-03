@@ -17,7 +17,7 @@ For example, when you see an old friend, you may say `Hey, how's it going? I hav
 
 ## --sentence--
 
-`Hey, Sophie. _ it _?`
+`Hey, Sophie. BLANK it BLANK?`
 
 ## --blanks--
 

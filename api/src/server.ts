@@ -4,7 +4,7 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./reset.d.ts" />
 import { build } from './app';
-import { FREECODECAMP_NODE_ENV, PORT } from './utils/env';
+import { FREECODECAMP_NODE_ENV, HOST, PORT } from './utils/env';
 
 const envToLogger = {
   development: {
@@ -27,7 +27,7 @@ const start = async () => {
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);
-    await fastify.listen({ port });
+    await fastify.listen({ port, host: HOST });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

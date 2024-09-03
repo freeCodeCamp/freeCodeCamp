@@ -4,7 +4,7 @@ import fs from 'fs';
 import readdirp from 'readdirp';
 // TODO: remove chai and use jest's assertion errors
 import { AssertionError } from 'chai';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -89,7 +89,7 @@ describe('external curriculum data build', () => {
     const isUpcoming = [
       'b1-english-for-developers',
       'upcoming-python',
-      'example-certification'
+      'front-end-development'
     ];
 
     // TODO: this is a hack, we should have a single source of truth for the

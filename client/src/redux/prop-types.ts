@@ -1,5 +1,6 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../shared/config/curriculum';
+import { BlockTypes } from '../../../shared/config/blocks';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
 
@@ -18,8 +19,6 @@ export type CurrentCert = {
 };
 
 export type MarkdownRemark = {
-  fields: [{ component: string; nodeIdentity: string; slug: string }];
-  fileAbsolutePath: string;
   frontmatter: {
     block: string;
     superBlock: SuperBlocks;
@@ -27,23 +26,8 @@ export type MarkdownRemark = {
     certification: string;
     title: CertTitle;
   };
-  headings: [
-    {
-      depth: number;
-      value: string;
-      id: string;
-    }
-  ];
   html: string;
-  htmlAst: Record<string, unknown>;
   id: string;
-  rawMarkdownBody: string;
-  timeToRead: number;
-  wordCount: {
-    paragraphs: number;
-    sentences: number;
-    words: number;
-  };
 };
 
 export type MultipleChoiceAnswer = {
@@ -178,10 +162,12 @@ export type ChallengeWithCompletedNode = {
 export type ChallengeNode = {
   challenge: {
     block: string;
+    blockType: BlockTypes;
     certification: string;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
+    demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
     fields: Fields;
@@ -243,7 +229,7 @@ export type CertificateNode = {
 };
 
 export type AllChallengesInfo = {
-  challengeEdges: { node: ChallengeNode }[];
+  challengeNodes: ChallengeNode[];
   certificateNodes: CertificateNode[];
 };
 
@@ -357,11 +343,14 @@ export type SavedChallenge = {
   challengeFiles: SavedChallengeFiles;
 };
 
+// TODO: remove unused properties and stop returning them from api? (e.g.
+// history, ext, name)
 export type SavedChallengeFile = {
   fileKey: string;
   ext: Ext;
   name: string;
   history?: string[];
+  editableRegionBoundaries?: number[];
   contents: string;
 };
 

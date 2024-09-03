@@ -213,7 +213,6 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         challengeData={challengeData}
         closeText={t('buttons.close')}
         previewTitle={projectTitle}
-        showProjectPreview={true}
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
 

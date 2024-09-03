@@ -77,6 +77,7 @@ const handleRejection = err => {
 
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
+global.DOMParser = dom.window.DOMParser;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function (test, err) {
@@ -144,7 +145,8 @@ async function setup() {
       // because Docker’s default for /dev/shm is 64MB
       '--disable-dev-shm-usage'
       // dumpio: true
-    ]
+    ],
+    headless: 'new'
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
 
@@ -281,16 +283,8 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
 
   if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
     describe('Assert meta order', function () {
-      /** This array can be used to skip a superblock - we'll use this
-       * when we are working on the new project-based curriculum for
-       * a superblock (because keeping those challenges in order is
-       * tricky and needs cleaning up before deploying).
-       */
-      const superBlocksUnderDevelopment = ['scientific-computing-with-python'];
       const superBlocks = new Set([
-        ...Object.values(meta)
-          .map(el => el.superBlock)
-          .filter(el => !superBlocksUnderDevelopment.includes(el))
+        ...Object.values(meta).map(el => el.superBlock)
       ]);
       superBlocks.forEach(superBlock => {
         const filteredMeta = Object.values(meta)
@@ -315,159 +309,174 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           );
         });
         filteredMeta.forEach((meta, index) => {
-          it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-            assert.equal(meta.order, index);
-          });
+          // ignore block order for upcoming blocks
+          if (!meta.isUpcomingChange) {
+            it(`${meta.superBlock} ${meta.name} must be in order`, function () {
+              assert.equal(meta.order, index);
+            });
+          }
         });
       });
     });
   }
 
   superBlocks.forEach(superBlock => {
-    describe(`Check challenges (${lang}, ${superBlock})`, function () {
-      this.timeout(5000);
-      const superBlockChallenges = challenges.filter(
-        c => c.superBlock === superBlock
-      );
-      superBlockChallenges.forEach((challenge, id) => {
-        // When testing single challenge, in project based curriculum,
-        // challenge to test (current challenge) might not have solution.
-        // Instead seed from next challenge is tested against tests from
-        // current challenge. Next challenge is skipped from testing.
-        if (process.env.FCC_CHALLENGE_ID && id > 0) return;
+    describe(`Language: ${lang}`, function () {
+      describe(`SuperBlock: ${superBlock}`, function () {
+        this.timeout(5000);
+        const superBlockChallenges = challenges.filter(
+          c => c.superBlock === superBlock
+        );
+        superBlockChallenges.forEach((challenge, id) => {
+          // When testing single challenge, in project based curriculum,
+          // challenge to test (current challenge) might not have solution.
+          // Instead seed from next challenge is tested against tests from
+          // current challenge. Next challenge is skipped from testing.
+          if (process.env.FCC_CHALLENGE_ID && id > 0) return;
 
-        const dashedBlockName = challenge.block;
-        // TODO: once certifications are not included in the list of challenges,
-        // stop returning early here.
-        if (typeof dashedBlockName === 'undefined') return;
-        describe(challenge.block || 'No block', function () {
-          describe(challenge.title || 'No title', function () {
-            // Note: the title in meta.json are purely for human readability and
-            // do not include translations, so we do not validate against them.
-            it('Matches an ID in meta.json', function () {
-              const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
-                ({ id }) => id === challenge.id
-              );
+          const dashedBlockName = challenge.block;
+          // TODO: once certifications are not included in the list of challenges,
+          // stop returning early here.
+          if (typeof dashedBlockName === 'undefined') return;
+          describe(`Block: ${challenge.block}`, function () {
+            describe(`Title: ${challenge.title}`, function () {
+              describe(`ID: ${challenge.id}`, function () {
+                // Note: the title in meta.json are purely for human readability and
+                // do not include translations, so we do not validate against them.
+                it('Matches an ID in meta.json', function () {
+                  const index = meta[
+                    dashedBlockName
+                  ]?.challengeOrder?.findIndex(({ id }) => id === challenge.id);
 
-              if (index < 0) {
-                throw new AssertionError(
-                  `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
-                );
-              }
-            });
-
-            it('Common checks', function () {
-              const result = validateChallenge(challenge);
-
-              if (result.error) {
-                throw new AssertionError(result.error);
-              }
-              const { id, title, block, dashedName } = challenge;
-              assert.exists(
-                dashedName,
-                `Missing dashedName for challenge ${id} in ${block}.`
-              );
-              const pathAndTitle = `${block}/${dashedName}`;
-              const idVerificationMessage = mongoIds.check(id, title);
-              assert.isNull(idVerificationMessage, idVerificationMessage);
-              const dupeTitleCheck = challengeTitles.check(dashedName, block);
-              assert.isTrue(
-                dupeTitleCheck,
-                `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
-              );
-            });
-
-            const { challengeType } = challenge;
-
-            if (hasNoSolution(challengeType)) return;
-
-            let { tests = [] } = challenge;
-            tests = tests.filter(test => !!test.testString);
-            if (tests.length === 0) {
-              it('Check tests. No tests.');
-              return;
-            }
-
-            describe('Check tests syntax', function () {
-              tests.forEach(test => {
-                it(`Check for: ${test.text}`, function () {
-                  assert.doesNotThrow(() => new vm.Script(test.testString));
-                });
-              });
-            });
-
-            if (challengeType === challengeTypes.backend) {
-              it('Check tests is not implemented.');
-              return;
-            }
-
-            // TODO(after python PR): simplify pipeline and sync with client.
-            // buildChallengeData should be called and any errors handled.
-            // canBuildChallenge does not need to exist independently.
-            const buildChallenge =
-              {
-                [challengeTypes.js]: buildJSChallenge,
-                [challengeTypes.jsProject]: buildJSChallenge,
-                [challengeTypes.python]: buildPythonChallenge,
-                [challengeTypes.multifilePythonCertProject]:
-                  buildPythonChallenge
-              }[challengeType] ?? buildDOMChallenge;
-
-            // The python tests are (currently) slow, so we give them more time.
-            const timePerTest =
-              challengeType === challengeTypes.python ? 10000 : 5000;
-            it('Test suite must fail on the initial contents', async function () {
-              this.timeout(timePerTest * tests.length + 1000);
-              // suppress errors in the console.
-              const oldConsoleError = console.error;
-              console.error = () => {};
-              let fails = false;
-              let testRunner;
-              try {
-                testRunner = await createTestRunner(
-                  challenge,
-                  challenge.challengeFiles,
-                  buildChallenge
-                );
-              } catch {
-                fails = true;
-              }
-              if (!fails) {
-                for (const test of tests) {
-                  try {
-                    await testRunner(test);
-                  } catch (e) {
-                    fails = true;
-                    break;
+                  if (index < 0) {
+                    throw new AssertionError(
+                      `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
+                    );
                   }
+                });
+
+                it('Common checks', function () {
+                  const result = validateChallenge(challenge);
+
+                  if (result.error) {
+                    throw new AssertionError(result.error);
+                  }
+                  const { id, title, block, dashedName } = challenge;
+                  assert.exists(
+                    dashedName,
+                    `Missing dashedName for challenge ${id} in ${block}.`
+                  );
+                  const pathAndTitle = `${block}/${dashedName}`;
+                  const idVerificationMessage = mongoIds.check(id, title);
+                  assert.isNull(idVerificationMessage, idVerificationMessage);
+                  const dupeTitleCheck = challengeTitles.check(
+                    dashedName,
+                    block
+                  );
+                  assert.isTrue(
+                    dupeTitleCheck,
+                    `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
+                  );
+                });
+
+                const { challengeType } = challenge;
+
+                if (hasNoSolution(challengeType)) return;
+
+                let { tests = [] } = challenge;
+                tests = tests.filter(test => !!test.testString);
+                if (tests.length === 0) {
+                  it('Check tests. No tests.');
+                  return;
                 }
-              }
-              console.error = oldConsoleError;
-              assert(fails, 'Test suit does not fail on the initial contents');
-            });
 
-            let { solutions = [] } = challenge;
+                describe('Check tests syntax', function () {
+                  tests.forEach(test => {
+                    it(`Check for: ${test.text}`, function () {
+                      assert.doesNotThrow(() => new vm.Script(test.testString));
+                    });
+                  });
+                });
 
-            // if there's an empty string as solution, this is likely a mistake
-            // TODO: what does this look like now? (this being detection of empty
-            // lines in solutions - rather than entirely missing solutions)
+                if (challengeType === challengeTypes.backend) {
+                  it('Check tests is not implemented.');
+                  return;
+                }
 
-            // We need to track where the solution came from to give better
-            // feedback if the solution is failing.
-            let solutionFromNext = false;
+                // TODO(after python PR): simplify pipeline and sync with client.
+                // buildChallengeData should be called and any errors handled.
+                // canBuildChallenge does not need to exist independently.
+                const buildChallenge =
+                  {
+                    [challengeTypes.js]: buildJSChallenge,
+                    [challengeTypes.jsProject]: buildJSChallenge,
+                    [challengeTypes.python]: buildPythonChallenge,
+                    [challengeTypes.multifilePythonCertProject]:
+                      buildPythonChallenge
+                  }[challengeType] ?? buildDOMChallenge;
 
-            if (isEmpty(solutions)) {
-              // if there are no solutions in the challenge, it's assumed the next
-              // challenge's seed will be a solution to the current challenge.
-              // This is expected to happen in the project based curriculum.
+                // The python tests are (currently) slow, so we give them more time.
+                const timePerTest =
+                  challengeType === challengeTypes.python ? 10000 : 5000;
+                it('Test suite must fail on the initial contents', async function () {
+                  // TODO: some tests take a surprisingly long time to setup the
+                  // test runner, so this timeout is large while we investigate.
+                  this.timeout(timePerTest * tests.length + 20000);
+                  // suppress errors in the console.
+                  const oldConsoleError = console.error;
+                  console.error = () => {};
+                  let fails = false;
+                  let testRunner;
+                  try {
+                    testRunner = await createTestRunner(
+                      challenge,
+                      challenge.challengeFiles,
+                      buildChallenge
+                    );
+                  } catch {
+                    fails = true;
+                  }
+                  if (!fails) {
+                    for (const test of tests) {
+                      try {
+                        await testRunner(test);
+                      } catch (e) {
+                        fails = true;
+                        break;
+                      }
+                    }
+                  }
+                  console.error = oldConsoleError;
+                  assert(
+                    fails,
+                    'Test suite does not fail on the initial contents'
+                  );
+                });
 
-              const nextChallenge = superBlockChallenges[id + 1];
+                let { solutions = [] } = challenge;
 
-              if (nextChallenge) {
-                const solutionFiles = cloneDeep(nextChallenge.challengeFiles);
-                if (!solutionFiles) {
-                  throw Error(
-                    `No solution found.
+                // if there's an empty string as solution, this is likely a mistake
+                // TODO: what does this look like now? (this being detection of empty
+                // lines in solutions - rather than entirely missing solutions)
+
+                // We need to track where the solution came from to give better
+                // feedback if the solution is failing.
+                let solutionFromNext = false;
+
+                if (isEmpty(solutions)) {
+                  // if there are no solutions in the challenge, it's assumed the next
+                  // challenge's seed will be a solution to the current challenge.
+                  // This is expected to happen in the project based curriculum.
+
+                  const nextChallenge = superBlockChallenges[id + 1];
+
+                  if (nextChallenge) {
+                    const solutionFiles = cloneDeep(
+                      nextChallenge.challengeFiles
+                    );
+                    if (!solutionFiles) {
+                      throw Error(
+                        `No solution found.
 Check the next challenge (${nextChallenge.title}): it should have a seed which solves the current challenge.
 For example:
 
@@ -479,59 +488,61 @@ For example:
 seed goes here
 \`\`\`
                   `
-                  );
-                }
-                const solutionFilesWithEditableContents = solutionFiles.map(
-                  file => ({
-                    ...file,
-                    editableContents: getLines(
-                      file.contents,
-                      file.editableRegionBoundaries
-                    )
-                  })
-                );
-                // Since there is only one seed, there can only be one solution,
-                // but the tests assume solutions is an array.
-                solutions = [solutionFilesWithEditableContents];
-                solutionFromNext = true;
-              } else {
-                throw Error(
-                  `solution omitted for ${challenge.superBlock} ${challenge.block} ${challenge.title}`
-                );
-              }
-            }
-
-            // TODO: the no-solution filtering is a little convoluted:
-            const noSolution = new RegExp('// solution required');
-
-            const filteredSolutions = solutions.filter(solution => {
-              return !isEmpty(
-                solution.filter(
-                  challengeFile => !noSolution.test(challengeFile.contents)
-                )
-              );
-            });
-
-            if (isEmpty(filteredSolutions)) {
-              it('Check tests. No solutions');
-              return;
-            }
-
-            describe('Check tests against solutions', function () {
-              solutions.forEach((solution, index) => {
-                it(`Solution ${
-                  index + 1
-                } must pass the tests`, async function () {
-                  this.timeout(timePerTest * tests.length + 2000);
-                  const testRunner = await createTestRunner(
-                    challenge,
-                    solution,
-                    buildChallenge,
-                    solutionFromNext
-                  );
-                  for (const test of tests) {
-                    await testRunner(test);
+                      );
+                    }
+                    const solutionFilesWithEditableContents = solutionFiles.map(
+                      file => ({
+                        ...file,
+                        editableContents: getLines(
+                          file.contents,
+                          file.editableRegionBoundaries
+                        )
+                      })
+                    );
+                    // Since there is only one seed, there can only be one solution,
+                    // but the tests assume solutions is an array.
+                    solutions = [solutionFilesWithEditableContents];
+                    solutionFromNext = true;
+                  } else {
+                    throw Error(
+                      `solution omitted for ${challenge.superBlock} ${challenge.block} ${challenge.title}`
+                    );
                   }
+                }
+
+                // TODO: the no-solution filtering is a little convoluted:
+                const noSolution = new RegExp('// solution required');
+
+                const filteredSolutions = solutions.filter(solution => {
+                  return !isEmpty(
+                    solution.filter(
+                      challengeFile => !noSolution.test(challengeFile.contents)
+                    )
+                  );
+                });
+
+                if (isEmpty(filteredSolutions)) {
+                  it('Check tests. No solutions');
+                  return;
+                }
+
+                describe('Check tests against solutions', function () {
+                  solutions.forEach((solution, index) => {
+                    it(`Solution ${
+                      index + 1
+                    } must pass the tests`, async function () {
+                      this.timeout(timePerTest * tests.length + 2000);
+                      const testRunner = await createTestRunner(
+                        challenge,
+                        solution,
+                        buildChallenge,
+                        solutionFromNext
+                      );
+                      for (const test of tests) {
+                        await testRunner(test);
+                      }
+                    });
+                  });
                 });
               });
             });

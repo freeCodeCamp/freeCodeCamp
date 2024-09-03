@@ -17,7 +17,7 @@ For example, if your friend is hesitant about joining a coding class because the
 
 ## --sentence--
 
-`Thanks, _ give it a _.`
+`Thanks, BLANK give it a BLANK.`
 
 ## --blanks--
 

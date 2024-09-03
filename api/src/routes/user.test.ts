@@ -60,7 +60,15 @@ const testUserData: Prisma.userCreateInput = {
       id: 'a5229172f011153519423692',
       completedDate: 1520440323274,
       githubLink: '',
-      challengeType: 5
+      challengeType: 5,
+      examResults: {
+        numberOfCorrectAnswers: 0,
+        numberOfQuestionsInExam: 0,
+        percentCorrect: 0,
+        passingPercent: 0,
+        passed: false,
+        examTimeInSeconds: 0
+      }
     }
   ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
@@ -185,7 +193,15 @@ const publicUserData = {
       completedDate: 1520440323274,
       githubLink: '',
       challengeType: 5,
-      files: []
+      files: [],
+      examResults: {
+        numberOfCorrectAnswers: 0,
+        numberOfQuestionsInExam: 0,
+        percentCorrect: 0,
+        passingPercent: 0,
+        passed: false,
+        examTimeInSeconds: 0
+      }
     }
   ],
   completedExams: testUserData.completedExams,
@@ -1211,6 +1227,17 @@ Thanks and regards,
       });
 
       describe('GET', () => {
+        test('returns 400 status code if the user agent is blocked', async () => {
+          const response = await superGet(
+            '/api/users/get-public-profile?username=public-user'
+          ).set('User-Agent', 'curl');
+
+          expect(response.text).toBe(
+            'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
         test('returns 400 status code if the username param is missing', async () => {
           const res = await superGet('/api/users/get-public-profile');
           // TODO(Post-MVP): return something more informative

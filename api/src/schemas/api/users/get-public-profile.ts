@@ -35,7 +35,8 @@ export const getPublicProfile = {
                       path: Type.Optional(Type.String())
                     })
                   ),
-                  isManuallyApproved: Type.Optional(Type.Boolean())
+                  isManuallyApproved: Type.Optional(Type.Boolean()),
+                  examResults: Type.Optional(examResults)
                 })
               ),
               completedExams: Type.Array(
@@ -111,7 +112,12 @@ export const getPublicProfile = {
     // We can't simply have Type.Object({}), even though that's correct, because
     // TypeScript will then accept all responses (since every object can be
     // assigned to {})
-    400: Type.Object({ entities: Type.Optional(Type.Never()) }),
+    400: Type.Union([
+      Type.Object({ entities: Type.Optional(Type.Never()) }),
+      Type.Literal(
+        'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+      )
+    ]),
     404: Type.Object({ entities: Type.Optional(Type.Never()) })
   }
 };

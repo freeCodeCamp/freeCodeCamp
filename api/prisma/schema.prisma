@@ -55,11 +55,6 @@ type ProfileUI {
   showTimeLine  Boolean? // Undefined
 }
 
-// Currently unused, so commented out.
-// type ProgressTimestamp {
-//   timestamp Float
-// }
-
 type SavedChallengeFile {
   contents String
   ext      String
@@ -74,11 +69,11 @@ type SavedChallenge {
   lastSavedDate Float
 }
 
+/// Corresponds to the `user` collection.
 model user {
   id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
   about                        String
   acceptedPrivacyTerms         Boolean
-  // badges    Json? // Undefined | { coreTeam [][] } removed, as new API never uses it.
   completedChallenges          CompletedChallenge[]
   completedExams               CompletedExam[] // Undefined
   currentChallengeId           String?
@@ -88,7 +83,6 @@ model user {
   emailVerified                Boolean
   emailVerifyTTL               DateTime? // Null | Undefined
   externalId                   String
-  // github    String? Removed, because value was only ever found to be Null
   githubProfile                String? // Undefined
   isApisMicroservicesCert      Boolean? // Undefined
   isBackEndCert                Boolean? // Undefined
@@ -127,13 +121,20 @@ model user {
   portfolio                    Portfolio[]
   profileUI                    ProfileUI? // Undefined
   progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
-  // rand Float? // Undefined removed, as new API never uses it.
+  /// A random number between 0 and 1.
+  ///
+  /// Valuable for selectively performing random logic.
+  rand                         Float?
   savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
   sendQuincyEmail              Boolean
   theme                        String? // Undefined
   timezone                     String? // Undefined
   twitter                      String? // Null | Undefined
   unsubscribeId                String
+  /// Used to track the number of times the user's record was written to.
+  ///
+  /// This has the main benefit of allowing concurrent ops to check for race conditions.
+  updateCount                  Int?                          @default(0)
   username                     String // TODO(Post-MVP): make this unique
   usernameDisplay              String? // Undefined
   verificationToken            String? // Undefined
@@ -177,9 +178,9 @@ model Donation {
 }
 
 model UserRateLimit {
-  id             String @id @default(auto()) @map("_id") @db.ObjectId
-  /// Field referred in an index, but found no data to define the type.
-  expirationDate Json?
+  id             String  @id @map("_id")
+  counter        Int
+  expirationDate DateTime @db.Date
 
   @@index([expirationDate], map: "expirationDate_1")
 }

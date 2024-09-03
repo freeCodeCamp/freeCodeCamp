@@ -16,7 +16,7 @@ In this challenge, focus on identifying the adjectives Sophie uses to describe h
 
 ## --sentence--
 
-`On Sunday, I have a _ morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep _, because, on Monday, it is back to work again`
+`On Sunday, I have a BLANK morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep BLANK, because, on Monday, it is back to work again`
 
 ## --blanks--
 

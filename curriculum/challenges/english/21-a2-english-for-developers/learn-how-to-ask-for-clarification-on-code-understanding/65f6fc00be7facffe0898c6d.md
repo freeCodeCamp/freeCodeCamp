@@ -15,7 +15,7 @@ This task will help you summarize the dialogue using keywords from it.
 
 ## --sentence--
 
-`Sophie has _ an issue in the code and needs Brian's _ to figure it out. They plan to _ the symptoms and investigate what's happening, especially with _ data sets. By the end, they expect to have a _ understanding of the problem.`
+`Sophie has BLANK an issue in the code and needs Brian's BLANK to figure it out. They plan to BLANK the symptoms and investigate what's happening, especially with BLANK data sets. By the end, they expect to have a BLANK understanding of the problem.`
 
 ## --blanks--
 

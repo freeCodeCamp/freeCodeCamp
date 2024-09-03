@@ -24,8 +24,10 @@ import { SESProvider } from './plugins/mail-providers/ses';
 import mailer from './plugins/mailer';
 import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
-import codeFlowAuth from './plugins/code-flow-auth';
-import { mobileAuth0Routes } from './routes/auth';
+import auth from './plugins/auth';
+import bouncer from './plugins/bouncer';
+import notFound from './plugins/not-found';
+import { authRoutes, mobileAuth0Routes } from './routes/auth';
 import { devAuthRoutes } from './routes/auth-dev';
 import {
   protectedCertificateRoutes,
@@ -34,11 +36,12 @@ import {
 import { challengeRoutes } from './routes/challenge';
 import { deprecatedEndpoints } from './routes/deprecated-endpoints';
 import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
-import { donateRoutes } from './routes/donate';
+import { donateRoutes, chargeStripeRoute } from './routes/donate';
 import { emailSubscribtionRoutes } from './routes/email-subscription';
 import { settingRoutes, settingRedirectRoutes } from './routes/settings';
 import { statusRoute } from './routes/status';
 import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
+import { signoutRoute } from './routes/signout';
 import {
   API_LOCATION,
   EMAIL_PROVIDER,
@@ -93,9 +96,6 @@ export const build = async (
 
   void fastify.register(security);
 
-  fastify.get('/', async (_request, _reply) => {
-    return { hello: 'world' };
-  });
   // NOTE: Awaited to ensure `.use` is registered on `fastify`
   await fastify.register(express);
 
@@ -140,7 +140,10 @@ export const build = async (
       const token = reply.generateCsrf();
       void reply.setCookie('csrf_token', token, {
         sameSite: 'strict',
-        signed: false
+        signed: false,
+        // it needs to be read by the client, so that it can be sent in the
+        // header of the next request:
+        httpOnly: false
       });
     }
     done();
@@ -180,22 +183,63 @@ export const build = async (
 
   // redirectWithMessage must be registered before codeFlowAuth
   void fastify.register(redirectWithMessage);
-  void fastify.register(codeFlowAuth);
+  void fastify.register(auth);
+  void fastify.register(notFound);
   void fastify.register(prismaPlugin);
-  void fastify.register(mobileAuth0Routes);
-  if (FCC_ENABLE_DEV_LOGIN_MODE) {
-    void fastify.register(devAuthRoutes);
-  }
-  void fastify.register(challengeRoutes);
-  void fastify.register(settingRoutes);
-  void fastify.register(settingRedirectRoutes);
-  void fastify.register(donateRoutes);
+  void fastify.register(bouncer);
+
+  // Routes requiring authentication:
+  void fastify.register(async function (fastify, _opts) {
+    fastify.addHook('onRequest', fastify.authorize);
+    // CSRF protection enabled:
+    await fastify.register(async function (fastify, _opts) {
+      // TODO: bounce unauthed requests before checking CSRF token. This will
+      // mean moving csrfProtection into custom plugin and testing separately,
+      // because it's a pain to mess around with other cookies/hook order.
+      // @ts-expect-error - @fastify/csrf-protection needs to update their types
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      fastify.addHook('onRequest', fastify.csrfProtection);
+      fastify.addHook('onRequest', fastify.send401IfNoUser);
+
+      await fastify.register(challengeRoutes);
+      await fastify.register(donateRoutes);
+      await fastify.register(protectedCertificateRoutes);
+      await fastify.register(settingRoutes);
+      await fastify.register(userRoutes);
+    });
+
+    // CSRF protection disabled:
+    await fastify.register(async function (fastify, _opts) {
+      fastify.addHook('onRequest', fastify.send401IfNoUser);
+
+      await fastify.register(userGetRoutes);
+    });
+
+    // Routes that redirect if access is denied:
+    await fastify.register(async function (fastify, _opts) {
+      fastify.addHook('onRequest', fastify.redirectIfNoUser);
+
+      await fastify.register(settingRedirectRoutes);
+    });
+  });
+  // Routes for signed out users:
+  void fastify.register(async function (fastify) {
+    fastify.addHook('onRequest', fastify.authorize);
+    // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
+    // mobileAuth0Routes and authRoutes plugins.
+    await fastify.register(mobileAuth0Routes);
+    // TODO: consolidate with LOCAL_MOCK_AUTH
+    if (FCC_ENABLE_DEV_LOGIN_MODE) {
+      await fastify.register(devAuthRoutes);
+    } else {
+      await fastify.register(authRoutes);
+    }
+  });
+  void fastify.register(chargeStripeRoute);
+  void fastify.register(signoutRoute);
   void fastify.register(emailSubscribtionRoutes);
-  void fastify.register(userRoutes);
   void fastify.register(userPublicGetRoutes);
-  void fastify.register(protectedCertificateRoutes);
   void fastify.register(unprotectedCertificateRoutes);
-  void fastify.register(userGetRoutes);
   void fastify.register(deprecatedEndpoints);
   void fastify.register(statusRoute);
   void fastify.register(unsubscribeDeprecated);

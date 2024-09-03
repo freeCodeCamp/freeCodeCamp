@@ -16,6 +16,7 @@
 }
 
 .fill-in-the-blank-input {
+  font-family: monospace;
   padding: 0;
   text-align: center;
   background-color: var(--primary-background);

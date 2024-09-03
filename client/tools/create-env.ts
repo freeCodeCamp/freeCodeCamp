@@ -47,7 +47,6 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   const deploymentKeys = [
     'clientLocale',
     'curriculumLocale',
-    'showLocaleDropdownMenu',
     'deploymentEnv',
     'environment',
     'showUpcomingChanges',

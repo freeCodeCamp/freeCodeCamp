@@ -270,7 +270,7 @@
       "children": [
         {
           "type": "inlineCode",
-          "value": "Hello, You _ the new graphic designer, _? _ to meet you!",
+          "value": "Hello, You BLANK the new graphic designer, BLANK? BLANK to meet you!",
           "position": {
             "start": {
               "line": 11,

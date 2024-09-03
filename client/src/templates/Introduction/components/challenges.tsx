@@ -1,14 +1,13 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
-
-import { Button } from '@freecodecamp/ui';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
 import { ChallengeWithCompletedNode } from '../../../redux/prop-types';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { Link } from '../../../components/helpers';
+import { ButtonLink } from '../../../components/helpers/button-link';
 
 const getStepNumber = (dashedName: string) => {
   // dashedName should be in the format 'step-1' or 'task-1'
@@ -68,12 +67,12 @@ function Challenges({
     <>
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>
-          <Button size='small' href={firstIncompleteChallenge.fields.slug}>
+          <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
             {!isChallengeStarted
               ? t('buttons.start-project')
               : t('buttons.resume-project')}{' '}
             {blockTitle && <span className='sr-only'>{blockTitle}</span>}
-          </Button>
+          </ButtonLink>
         </div>
       )}
       <nav

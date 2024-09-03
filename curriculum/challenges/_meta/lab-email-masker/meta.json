@@ -1,0 +1,11 @@
+{
+  "name": "Build an Email Masker",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-email-masker",
+  "order": 153,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66b205e6eacba4c4e54ea434", "title": "Build an Email Masker" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

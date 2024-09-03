@@ -8,6 +8,7 @@ client/config/browser-scripts/*.json
 client/static
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
+curriculum/i18n-curriculum
 docs/**/*.md
 /playwright
 pnpm-lock.yaml

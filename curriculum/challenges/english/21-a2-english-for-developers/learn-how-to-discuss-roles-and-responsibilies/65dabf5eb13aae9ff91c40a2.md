@@ -21,7 +21,7 @@ A `solution` is an answer to a problem or a way to fix an issue.
 
 ## --sentence--
 
-`And you don't have to _ _ _ _ for that.`
+`And you don't have to BLANK BLANK BLANK BLANK for that.`
 
 ## --blanks--
 

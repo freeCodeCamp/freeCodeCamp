@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "始める (無料)",
+    "get-started": "始める",
     "logged-out-cta-btn": "サインインして進行状況を保存 (無料)",
     "view-curriculum": "カリキュラムを見る",
     "first-lesson": "最初のレッスンへ",
@@ -55,9 +56,9 @@
     "reset-lesson": "レッスンをリセット",
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
-    "check-code": "コードをチェック (Ctrl + Enter)",
-    "check-code-2": "コードをチェック",
-    "check-code-3": "コードをチェック (Command + Enter)",
+    "check-code": "コードをチェック",
+    "check-code-ctrl": "コードをチェック (Ctrl + Enter)",
+    "check-code-cmd": "コードをチェック (Command + Enter)",
     "reset": "リセット",
     "reset-step": "ステップをリセット",
     "help": "ヘルプ",
@@ -67,16 +68,17 @@
     "click-here": "サインインするにはここをクリック",
     "save": "保存",
     "save-code": "コードを保存",
+    "show-demo": "デモを表示",
     "no-thanks": "結構です",
     "yes-please": "はい、お願いします",
     "update-email": "メールアドレスを更新",
     "verify-email": "メールアドレスの確認",
     "submit-and-go": "提出して次のチャレンジに進む",
-    "submit-and-go-2": "提出して次のチャレンジに進む (Ctrl + Enter)",
-    "submit-and-go-3": "提出して次のチャレンジに進む (Command + Enter)",
+    "submit-and-go-ctrl": "提出して次のチャレンジに進む (Ctrl + Enter)",
+    "submit-and-go-cmd": "提出して次のチャレンジに進む (Command + Enter)",
     "go-to-next": "次のチャレンジに進む",
-    "go-to-next-2": "次のチャレンジに進む (Ctrl + Enter)",
-    "go-to-next-3": "次のチャレンジに進む (Command + Enter)",
+    "go-to-next-ctrl": "次のチャレンジに進む (Ctrl + Enter)",
+    "go-to-next-cmd": "次のチャレンジに進む (Command + Enter)",
     "ask-later": "後で",
     "start-coding": "コーディングを始めましょう！",
     "go-to-settings": "設定へ移動して認定証を取得",
@@ -101,15 +103,19 @@
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
     "play-scene": "再生",
-    "closed-caption": "Closed caption"
+    "closed-caption": "クローズドキャプション"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
+    "big-heading-1-b": "プログラミングを学ぶ。",
     "big-heading-2": "プロジェクトを完成させる。",
     "big-heading-3": "認定証を取得する。",
+    "big-heading-4": "すべてが無料です。",
     "h2-heading": "2014 年以来、4 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
+    "h2-heading-b": "10 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
     "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "hero-img-alt": "さまざまな人種、性別の人々がノートパソコンの周りに集まっている様子",
+    "hero-img-uis": "freeCodeCamp コードエディター (モバイル版およびデスクトップ版) と、認定証のスクリーンショット",
     "as-seen-in": "下記で取り上げられました",
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
@@ -274,7 +280,10 @@
       "reset-p2": "実質的に、サインアップ直後の状態に戻ります。",
       "reset-p3": "削除後にお問い合わせいただいても、一切のデータを復旧できかねます。",
       "nevermind-2": "やめておきます。進行状況を削除しません。",
-      "reset-confirm": "すべてをリセットして最初から始めます。"
+      "reset-confirm": "すべてをリセットして最初から始めます。",
+      "verify-text": "確認するには、以下に「{{ verifyText }}」と入力してください:",
+      "verify-reset-text": "すべての進捗状況が失われることに同意します",
+      "verify-delete-text": "アカウントを削除することに同意します"
     },
     "email": {
       "missing": "このアカウントに関連付けられているメールアドレスがありません。",
@@ -408,7 +417,7 @@
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
-    "reset-warn-2": "この操作は取り消すことが出来ません",
+    "reset-warn-2": "この操作は取り消すことが出来ません.",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
     "donation-record-not-found": "寄付の履歴が見つかりませんでした。",
@@ -512,6 +521,14 @@
       "link-li-6": "「アカウントをリンク」をクリックして、Microsoft のユーザー名をリンクします。",
       "transcript-label": "Microsoft 成績証明書のリンク",
       "invalid-transcript": "成績証明書のリンクが正しくありません。以下の形式になっているか確認してください: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - 特に大文字で示した部分が正しいか確認してください。"
+    },
+    "blockType": {
+      "lecture": "レクチャー",
+      "workshop": "ワークショップ",
+      "lab": "ラボ",
+      "review": "レビュー",
+      "quiz": "小テスト",
+      "exam": "試験"
     }
   },
   "donate": {
@@ -732,6 +749,7 @@
     "last-page": "最後のページへ移動",
     "primary-nav": "プライマリー",
     "breadcrumb-nav": "パンくずリスト",
+    "timeline-pagination-nav": "タイムラインのページネーション",
     "submit": "提出するには Ctrl + Enter を押してください。",
     "running-tests": "テスト実行中",
     "hide-preview": "プレビューを非表示",
@@ -873,7 +891,7 @@
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
     "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "ソースコードのリンクを提出してください。"
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
@@ -999,6 +1017,8 @@
       "a2-english-for-developers": "開発者のための A2 レベル英語認定証",
       "B1 English for Developers": "開発者のための B1 レベル英語",
       "b1-english-for-developers": "開発者のための B1 レベル英語認定証",
+      "Front End Development": "フロントエンド開発",
+      "front-end-development-v9": "フロントエンド開発認定証",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "(レガシー) フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",

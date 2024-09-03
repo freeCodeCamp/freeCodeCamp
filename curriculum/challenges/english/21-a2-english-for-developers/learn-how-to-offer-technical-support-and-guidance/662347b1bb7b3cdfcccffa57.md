@@ -17,7 +17,7 @@ An `authentication module` in a software context is a part of a system responsib
 
 ## --sentence--
 
-`Sophie, I _ you're working on _ that bug in the user _ module. Need any help?`
+`Sophie, I BLANK you're working on BLANK that bug in the user BLANK module. Need any help?`
 
 ## --blanks--
 

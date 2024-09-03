@@ -17,7 +17,7 @@ dashedName: task-36
 
 ## --sentence--
 
-`Don't worry. Debugging is a _ _ for programmers.`
+`Don't worry. Debugging is a BLANK BLANK for programmers.`
 
 ## --blanks--
 

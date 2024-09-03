@@ -16,7 +16,7 @@ Asking `What's her role?` is a way to find out about someone's job or position i
 
 ## --sentence--
 
-`I don't really know her, to be honest. What's _ _?`
+`I don't really know her, to be honest. What's BLANK BLANK?`
 
 ## --blanks--
 
