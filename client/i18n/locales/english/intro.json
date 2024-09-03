@@ -1976,11 +1976,16 @@
       "ttrm": { "title": "173", "intro": [] },
       "hjtr": { "title": "174", "intro": [] },
       "ccnu": { "title": "175", "intro": [] },
-      "skiq": { "title": "176", "intro": [] },
-      "epfc": { "title": "177", "intro": [] },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
+      },
+      "epfc": { "title": "177", "intro": [] },
+      "lab-inventory-management-program": {
+        "title": "Build an Inventory Management Program",
+        "intro": [
+          "For this lab, you will build an inventory management program."
+        ]
       },
       "fbbn": { "title": "179", "intro": [] },
       "lnmg": { "title": "180", "intro": [] },
