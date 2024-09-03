@@ -814,10 +814,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     Prism.hooks.add('complete', makePrismCollapsible);
     Prism.highlightAllUnder(desc);
 
-    const obs = new ResizeObserver(() => {
-      updateDescriptionZone();
-    });
-
+    // Since the description can be resized without React knowing about it, the
+    // zone needs updating in response.
+    const obs = new ResizeObserver(() => updateDescriptionZone());
     obs.observe(domNode);
 
     domNode.style.userSelect = 'text';
