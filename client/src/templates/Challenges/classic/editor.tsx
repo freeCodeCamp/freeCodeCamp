@@ -1294,7 +1294,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       setMonacoTabTrapped(false);
     }
     if (hasEditableRegion()) {
-      updateDescriptionZone();
       updateOutputZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
