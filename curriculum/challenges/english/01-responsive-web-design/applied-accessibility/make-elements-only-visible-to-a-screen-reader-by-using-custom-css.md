@@ -42,25 +42,29 @@ Camper Cat created a really cool stacked bar chart for his training page, and pu
 Your code should set the `position` property of the `sr-only` class to a value of `absolute`.
 
 ```js
-assert($('.sr-only').css('position') == 'absolute');
+const srOnly = document.querySelector('.sr-only');
+const position = window.getComputedStyle(srOnly).position; 
+assert.equal(position, 'absolute');
 ```
 
 Your code should set the `left` property of the `sr-only` class to a value of `-10000px`.
 
 ```js
-assert($('.sr-only').css('left') == '-10000px');
+const srOnly = document.querySelector('.sr-only');
+const left = window.getComputedStyle(srOnly).left;
+assert.equal(left, '-10000px');
 ```
 
 Your code should set the `width` property of the `sr-only` class to a value of `1` pixel.
 
 ```js
-assert(code.match(/width:\s*?1px/gi));
+assert.match(code , /width:\s*?1px/gi);
 ```
 
 Your code should set the `height` property of the `sr-only` class to a value of `1` pixel.
 
 ```js
-assert(code.match(/height:\s*?1px/gi));
+assert.match(code , /height:\s*?1px/gi);
 ```
 
 # --seed--

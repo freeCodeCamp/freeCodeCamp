@@ -32,13 +32,9 @@ Use a `linear-gradient()` for the `div` element's `background`, and set it from 
 The `div` element should have a `linear-gradient` `background` with the specified direction and colors.
 
 ```js
-assert(
-  $('div')
-    .css('background-image')
-    .match(
-      /linear-gradient\(35deg, rgb\(204, 255, 255\), rgb\(255, 204, 204\)\)/gi
-    )
-);
+const divElement = document.querySelector('div');
+const divStyle = window.getComputedStyle(divElement); 
+assert.match(divStyle?.background, /linear-gradient\(35deg, rgb\(204, 255, 255\), rgb\(255, 204, 204\)\)/gi);
 ```
 
 # --seed--
