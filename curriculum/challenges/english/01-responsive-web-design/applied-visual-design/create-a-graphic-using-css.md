@@ -26,21 +26,19 @@ Manipulate the square element in the editor to create the moon shape. First, cha
 The value of the `background-color` property should be set to `transparent`.
 
 ```js
-assert(code.match(/background-color:\s*?transparent;/gi));
+assert.match(code,/background-color:\s*?transparent;/gi);
 ```
 
 The value of the `border-radius` property should be set to `50%`.
 
 ```js
-assert(code.match(/border-radius:\s*?50%;/gi));
+assert.match(code,/border-radius:\s*?50%;/gi);
 ```
 
 The value of the `box-shadow` property should be set to 25px for `offset-x`, 10px for `offset-y`, 0 for `blur-radius`, 0 for `spread-radius`, and finally `blue` for the `color`.
 
 ```js
-assert(
-  code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi)
-);
+assert.match(code,/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi);
 ```
 
 # --seed--

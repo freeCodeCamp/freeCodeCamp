@@ -21,25 +21,25 @@ Add a comment at the top of your HTML that says `Code below this line should not
 You should start a comment with `<!--` at the top of your HTML.
 
 ```js
-assert(code.match(/^\s*<!--/));
+assert.match(code,(/^\s*<!--/));
 ```
 
 Your comment should have the text `Code below this line should not be changed`.
 
 ```js
-assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
+assert.match(code,(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
 ```
 
 You should close your comment with `-->`.
 
 ```js
-assert(code.match(/-->.*\n+.+/g));
+assert.match(code,(/-->.*\n+.+/g));
 ```
 
 You should have the same number of comment openers and closers.
 
 ```js
-assert(code.match(/<!--/g).length === code.match(/-->/g).length);
+assert.equal(code.match(/<!--/g).length,code.match(/-->/g).length);
 ```
 
 # --seed--

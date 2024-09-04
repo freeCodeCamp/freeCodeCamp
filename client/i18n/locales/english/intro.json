@@ -1772,7 +1772,12 @@
       "hqia": { "title": "35", "intro": [] },
       "dxpc": { "title": "36", "intro": [] },
       "liti": { "title": "37", "intro": [] },
-      "xjin": { "title": "38", "intro": [] },
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS."
+        ]
+      },
       "gnuk": { "title": "39", "intro": [] },
       "zlfj": { "title": "40", "intro": [] },
       "ioqd": { "title": "41", "intro": [] },
@@ -1809,17 +1814,32 @@
       "nxbr": { "title": "72", "intro": [] },
       "qzcx": { "title": "73", "intro": [] },
       "wozq": { "title": "74", "intro": [] },
-      "wmkc": { "title": "75", "intro": [] },
+      "lab-confidential-email-page": {
+        "title": "Build a Confidential Email Page",
+        "intro": [
+          "For this lab, you will create a web page of a confidential email using HTML and CSS."
+        ]
+      },
       "zter": { "title": "76", "intro": [] },
       "rfiq": { "title": "77", "intro": [] },
       "tcwi": { "title": "78", "intro": [] },
       "uptf": { "title": "79", "intro": [] },
-      "nbwu": { "title": "80", "intro": [] },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "For this lab, you will use flexbox to create a webpage of playing cards."
+        ]
+      },
       "kqao": { "title": "81", "intro": [] },
       "habq": { "title": "82", "intro": [] },
       "vqut": { "title": "83", "intro": [] },
       "ujcf": { "title": "84", "intro": [] },
-      "upuu": { "title": "85", "intro": [] },
+      "lab-newspaper-article": {
+        "title": "Build a Newspaper Article",
+        "intro": [
+          "In this lab, you will build a newspaper article page using HTML and CSS."
+        ]
+      },
       "hbme": { "title": "86", "intro": [] },
       "ioby": { "title": "87", "intro": [] },
       "dyvj": { "title": "88", "intro": [] },
@@ -1847,7 +1867,10 @@
       "scec": { "title": "107", "intro": [] },
       "mtbl": { "title": "108", "intro": [] },
       "vlov": { "title": "109", "intro": [] },
-      "njkq": { "title": "110", "intro": [] },
+      "lab-availability-table": {
+        "title": "Build an Availability Table",
+        "intro": ["For this lab, you will create an availability table."]
+      },
       "sget": { "title": "111", "intro": [] },
       "huge": { "title": "112", "intro": [] },
       "agbl": { "title": "113", "intro": [] },
@@ -1859,7 +1882,12 @@
       "yqma": { "title": "119", "intro": [] },
       "dorc": { "title": "120", "intro": [] },
       "adzu": { "title": "121", "intro": [] },
-      "cdzo": { "title": "122", "intro": [] },
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
+      },
       "lugl": { "title": "123", "intro": [] },
       "mtcg": { "title": "124", "intro": [] },
       "lvqc": { "title": "125", "intro": [] },
@@ -1880,13 +1908,23 @@
       "yskn": { "title": "134", "intro": [] },
       "tpni": { "title": "135", "intro": [] },
       "hoec": { "title": "136", "intro": [] },
-      "cygu": { "title": "137", "intro": [] },
+      "workshop-teacher-chatbot": {
+        "title": "Build a Teacher Chatbot",
+        "intro": [
+          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
+          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+        ]
+      },
       "axgb": { "title": "138", "intro": [] },
       "rwac": { "title": "139", "intro": [] },
-      "uzjg": { "title": "140", "intro": [] },
       "hxwa": { "title": "141", "intro": [] },
       "xkbo": { "title": "142", "intro": [] },
-      "nkxq": { "title": "143", "intro": [] },
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller",
+        "intro": [
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+        ]
+      },
       "wfyg": { "title": "144", "intro": [] },
       "guqy": { "title": "145", "intro": [] },
       "nkge": { "title": "146", "intro": [] },
@@ -1895,9 +1933,24 @@
       "wjzt": { "title": "149", "intro": [] },
       "tsdq": { "title": "150", "intro": [] },
       "kkix": { "title": "151", "intro": [] },
-      "icxa": { "title": "152", "intro": [] },
-      "hqba": { "title": "153", "intro": [] },
-      "nnqa": { "title": "154", "intro": [] },
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review working with functions by building a calculator."
+        ]
+      },
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it."
+        ]
+      },
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you will create different stories by assigning different words to different variables."
+        ]
+      },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
@@ -1908,14 +1961,23 @@
       "avln": { "title": "157", "intro": [] },
       "mexq": { "title": "158", "intro": [] },
       "ifgn": { "title": "159", "intro": [] },
-      "qmdt": { "title": "160", "intro": [] },
+      "workshop-shopping-list": {
+        "title": "Build a Shopping List",
+        "intro": [
+          "In this workshop, you will practice working with arrays by building a shopping list.",
+          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+        ]
+      },
       "mokm": { "title": "161", "intro": [] },
       "froz": { "title": "162", "intro": [] },
       "ozth": { "title": "163", "intro": [] },
       "dvnt": { "title": "164", "intro": [] },
       "ekdb": { "title": "165", "intro": [] },
       "ezek": { "title": "166", "intro": [] },
-      "vabq": { "title": "167", "intro": [] },
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": ["In this lab, you will build a factorial calculator."]
+      },
       "lgfm": { "title": "168", "intro": [] },
       "kgtw": { "title": "169", "intro": [] },
       "ljmq": { "title": "170", "intro": [] },
@@ -1926,7 +1988,10 @@
       "ccnu": { "title": "175", "intro": [] },
       "skiq": { "title": "176", "intro": [] },
       "epfc": { "title": "177", "intro": [] },
-      "gsfr": { "title": "178", "intro": [] },
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": ["For this lab, you will create a gradebook app."]
+      },
       "fbbn": { "title": "179", "intro": [] },
       "lnmg": { "title": "180", "intro": [] },
       "wead": { "title": "181", "intro": [] },
@@ -1955,9 +2020,9 @@
       "ksfc": { "title": "204", "intro": [] },
       "xeqa": { "title": "205", "intro": [] },
       "lab-random-background-color-changer": {
-        "title": "Build a Random Background Color Changer",
+        "title": "Debug a Random Background Color Changer",
         "intro": [
-          "For this lab, you will create a random background color changer."
+          "For this lab, you will debug a random background color changer and fix the errors to make it work properly."
         ]
       },
       "dqth": { "title": "207", "intro": [] },
@@ -2001,7 +2066,10 @@
       "lofk": { "title": "246", "intro": [] },
       "udia": { "title": "247", "intro": [] },
       "wevl": { "title": "248", "intro": [] },
-      "mouu": { "title": "249", "intro": [] },
+      "lab-cash-register": {
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
+      },
       "xayi": { "title": "250", "intro": [] },
       "mjbe": { "title": "251", "intro": [] },
       "byqx": { "title": "252", "intro": [] },

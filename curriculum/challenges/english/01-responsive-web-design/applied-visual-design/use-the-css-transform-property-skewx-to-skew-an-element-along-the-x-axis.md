@@ -28,7 +28,7 @@ Skew the element with the id of `bottom` by 24 degrees along the X-axis by using
 The element with id `bottom` should be skewed by 24 degrees along its X-axis.
 
 ```js
-assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
+assert.match(code, /#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g);
 ```
 
 # --seed--

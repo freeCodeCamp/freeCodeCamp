@@ -13,7 +13,7 @@ const outputTexts = {
   > 1 | var
       |    ^`,
   empty: `// running tests
-  You should declare myName with the var keyword, ending with a semicolon
+  1. You should declare myName with the var keyword, ending with a semicolon
   // tests completed`,
   passed: `// running tests
 // tests completed`

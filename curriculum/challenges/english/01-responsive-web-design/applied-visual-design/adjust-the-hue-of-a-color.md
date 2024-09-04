@@ -30,37 +30,43 @@ Change the `background-color` of each `div` element based on the class names (`g
 Your code should use the `hsl()` function to declare the color green.
 
 ```js
-assert(code.match(/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi));
+assert.match(code,/\.green\s*?{\s*?background-color\s*:\s*?hsl/gi);
 ```
 
 Your code should use the `hsl()` function to declare the color cyan.
 
 ```js
-assert(code.match(/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi));
+assert.match(code,/\.cyan\s*?{\s*?background-color\s*:\s*?hsl/gi);
 ```
 
 Your code should use the `hsl()` function to declare the color blue.
 
 ```js
-assert(code.match(/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi));
+assert.match(code,/\.blue\s*?{\s*?background-color\s*:\s*?hsl/gi);
 ```
 
 The `div` element with class `green` should have a `background-color` of green.
 
 ```js
-assert($('.green').css('background-color') == 'rgb(0, 255, 0)');
+const greenElement = document.querySelector(".green");
+const greenStyle = window.getComputedStyle(greenElement); 
+assert.equal(greenStyle?.backgroundColor, 'rgb(0, 255, 0)');
 ```
 
 The `div` element with class `cyan` should have a `background-color` of cyan.
 
 ```js
-assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
+const cyanElement = document.querySelector(".cyan");
+const cyanStyle = window.getComputedStyle(cyanElement); 
+assert.equal(cyanStyle?.backgroundColor, 'rgb(0, 255, 255)');
 ```
 
 The `div` element with class `blue` should have a `background-color` of blue.
 
 ```js
-assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
+const blueElement = document.querySelector(".blue");
+const blueStyle = window.getComputedStyle(blueElement); 
+assert.equal(blueStyle?.backgroundColor, 'rgb(0, 0, 255)');
 ```
 
 # --seed--
