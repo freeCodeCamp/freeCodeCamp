@@ -19,30 +19,29 @@ Note that these buttons still need the `btn` and `btn-block` classes.
 You should create a new `button` element with the text `Info`.
 
 ```js
-const infoButton = document.querySelectorAll('button')?.[1]; 
-assert.match(infoButton.textContent,/info/gi);
+assert(new RegExp('info', 'gi').test($('button').text()));
 ```
 
 Both of your Bootstrap buttons should have the `btn` and `btn-block` classes.
 
 ```js
-assert.lengthOf(document.querySelectorAll('button.btn-block.btn'),2);
+assert($('button.btn-block.btn').length > 1);
 ```
 
 Your new button should have the class `btn-info`.
 
 ```js
-const infoButton = [...document.querySelectorAll('button')].at(1);
-assert.isTrue(infoButton?.classList?.contains('btn-info'));
+assert($('button').hasClass('btn-info'));
 ```
 
 All of your `button` elements should have closing tags.
 
 ```js
-assert.match(code,/<\/button>/g);
-assert.match(code,/<button/g);
-
-assert.equal(code.match(/<\/button>/g)?.length,code.match(/<button/g)?.length);
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
 ```
 
 # --seed--

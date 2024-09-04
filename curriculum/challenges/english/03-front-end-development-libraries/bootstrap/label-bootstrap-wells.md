@@ -19,34 +19,31 @@ Above your right-well, inside its `col-xs-6` `div` element, add a `h4` element w
 You should add an `h4` element to each of your `<div class="col-xs-6">` elements.
 
 ```js
-const columnSixes = document.querySelectorAll('.col-xs-6');
-const columnSixOneChildren = columnSixes?.[0]?.querySelectorAll(`:scope ${'h4'}`);
-assert.lengthOf(columnSixOneChildren,1); 
-
-const columnSixTwoChildren = columnSixes?.[1]?.querySelectorAll(`:scope ${'h4'}`);
-assert.lengthOf(columnSixTwoChildren,1); 
+assert(
+  $('.col-xs-6').children('h4') && $('.col-xs-6').children('h4').length > 1
+);
 ```
 
 One `h4` element should have the text `#left-well`.
 
 ```js
-const firstH4 = document.querySelectorAll('h4')?.[0]; 
-assert.match(firstH4?.textContent,/#left-well/gi); 
+assert(new RegExp('#left-well', 'gi').test($('h4').text()));
 ```
 
 One `h4` element should have the text `#right-well`.
 
 ```js
-const secondH4 = document.querySelectorAll('h4')?.[1]; 
-assert.match(secondH4?.textContent,/#right-well/gi); 
+assert(new RegExp('#right-well', 'gi').test($('h4').text()));
 ```
 
 All of your `h4` elements should have closing tags.
 
 ```js
-assert.match(code,/<\/h4>/g);
-assert.match(code,/<h4/g);
-assert.equal(code.match(/<\/h4>/g).length , code.match(/<h4/g).length);
+assert(
+  code.match(/<\/h4>/g) &&
+    code.match(/<h4/g) &&
+    code.match(/<\/h4>/g).length === code.match(/<h4/g).length
+);
 ```
 
 # --seed--

@@ -2295,6 +2295,10 @@
         "title": "139",
         "intro": []
       },
+      "uzjg": {
+        "title": "140",
+        "intro": []
+      },
       "hxwa": {
         "title": "141",
         "intro": []
@@ -2303,11 +2307,9 @@
         "title": "142",
         "intro": []
       },
-      "lab-fortune-teller": {
-        "title": "Crie um adivinhador do futuro",
-        "intro": [
-          "Neste laboratório, você criará um adivinhador do futuro selecionando aleatoriamente um futuro possível de uma lista de futuros disponíveis."
-        ]
+      "nkxq": {
+        "title": "143",
+        "intro": []
       },
       "wfyg": {
         "title": "144",
@@ -2342,22 +2344,18 @@
         "intro": []
       },
       "workshop-calculator": {
-        "title": "Crie uma calculadora",
+        "title": "Build a Calculator",
         "intro": [
-          "Neste workshop, você vai revisar o trabalho com funções ao criar uma calculadora."
+          "In this workshop, you will review working with functions by building a calculator."
         ]
       },
-      "lab-email-masker": {
-        "title": "Crie um mascarador de e-mails",
-        "intro": [
-          "Neste laboratório, você criará um mascarador de e-mails, que vai ocultar um endereço de e-mail selecionado."
-        ]
+      "hqba": {
+        "title": "153",
+        "intro": []
       },
-      "lab-sentence-maker": {
-        "title": "Crie um construtor de frases",
-        "intro": [
-          "Neste laboratório, você criará histórias diferentes atribuindo palavras diferentes a variáveis diferentes."
-        ]
+      "nnqa": {
+        "title": "154",
+        "intro": []
       },
       "cktz": {
         "title": "155",
@@ -2411,10 +2409,8 @@
         "intro": []
       },
       "lab-factorial-calculator": {
-        "title": "Crie uma calculadora de fatorial ",
-        "intro": [
-          "Neste laboratório, você vai construir uma calculadora de fatorial."
-        ]
+        "title": "Build a Factorial Calculator ",
+        "intro": ["In this lab, you will build a factorial calculator."]
       },
       "lgfm": {
         "title": "168",
@@ -2741,8 +2737,8 @@
         "intro": []
       },
       "lab-cash-register": {
-        "title": "Crie uma caixa registradora",
-        "intro": ["Para este laboratório, você criará uma caixa registradora."]
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
       },
       "xayi": {
         "title": "250",

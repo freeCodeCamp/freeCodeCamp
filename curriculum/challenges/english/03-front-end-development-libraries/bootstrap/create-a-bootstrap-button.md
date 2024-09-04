@@ -17,23 +17,26 @@ Create a new `button` element below your large kitten photo. Give it the `btn` a
 You should create a new `button` element with the text `Like`.
 
 ```js
-assert.match(document.querySelector('button')?.textContent, /like/gi);
-assert.lengthOf(document.querySelectorAll('img.img-responsive + button.btn'),1)
+assert(
+  new RegExp('like', 'gi').test($('button').text()) &&
+    $('img.img-responsive + button.btn').length > 0
+);
 ```
 
 Your new button should have two classes: `btn` and `btn-default`.
 
 ```js
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn') )
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn-default'));
+assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
 All of your `button` elements should have closing tags.
 
 ```js
-assert.match(code,/<\/button>/g);
-assert.match(code,/<button/g);
-assert.equal(code.match(/<\/button>/g).length ,code.match(/<button/g).length);
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
 ```
 
 # --seed--

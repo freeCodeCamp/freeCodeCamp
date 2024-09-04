@@ -19,22 +19,23 @@ Note that this button will still need the `btn` and `btn-block` classes.
 Your button should have the class `btn-primary`.
 
 ```js
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn-primary'));
+assert($('button').hasClass('btn-primary'));
 ```
 
 Your button should still have the `btn` and `btn-block` classes.
 
 ```js
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn-block'));
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn'));
+assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
 ```
 
 All your `button` elements should have closing tags.
 
 ```js
-assert.match(code,/<\/button>/g);
-assert.match(code,/<button/g);
-assert.equal(code.match(/<\/button>/g).length , code.match(/<button/g).length);
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
 ```
 
 # --seed--

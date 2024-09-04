@@ -37,22 +37,23 @@ Add Bootstrap's `btn-block` class to your Bootstrap button.
 Your button should still have the `btn` and `btn-default` classes.
 
 ```js
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn'));
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn-default'));
+assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
 Your button should have the class `btn-block`.
 
 ```js
-assert.isTrue(document.querySelector('button')?.classList?.contains('btn-block'));
+assert($('button').hasClass('btn-block'));
 ```
 
 All of your `button` elements should have closing tags.
 
 ```js
-assert.match(code,/<\/button>/g);
-assert.match(code,/<button/g);
-assert.equal(code.match(/<\/button>/g).length, code.match(/<button/g).length);
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
 ```
 
 # --seed--

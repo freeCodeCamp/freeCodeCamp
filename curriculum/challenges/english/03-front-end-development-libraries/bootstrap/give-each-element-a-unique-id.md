@@ -19,49 +19,55 @@ Make sure that `target1` to `target3` are in `#left-well`, and `target4` to `tar
 One `button` element should have the id `target1`.
 
 ```js
-const leftWall = document.querySelector('#left-well'); 
-const targetOne = leftWall?.querySelectorAll(`:scope ${'#target1'}`)
-assert.lengthOf(targetOne,1);
+assert(
+  $('#left-well').children('#target1') &&
+    $('#left-well').children('#target1').length > 0
+);
 ```
 
 One `button` element should have the id `target2`.
 
 ```js
-const leftWall = document.querySelector('#left-well'); 
-const targetTwo = leftWall?.querySelectorAll(`:scope ${'#target2'}`)
-assert.lengthOf(targetTwo,1);
+assert(
+  $('#left-well').children('#target2') &&
+    $('#left-well').children('#target2').length > 0
+);
 ```
 
 One `button` element should have the id `target3`.
 
 ```js
-const leftWall = document.querySelector('#left-well'); 
-const targetThree = leftWall?.querySelectorAll(`:scope ${'#target3'}`)
-assert.lengthOf(targetThree,1);
+assert(
+  $('#left-well').children('#target3') &&
+    $('#left-well').children('#target3').length > 0
+);
 ```
 
 One `button` element should have the id `target4`.
 
 ```js
-const leftWall = document.querySelector('#right-well'); 
-const targetFour = leftWall?.querySelectorAll(`:scope ${'#target4'}`)
-assert.lengthOf(targetFour,1);
+assert(
+  $('#right-well').children('#target4') &&
+    $('#right-well').children('#target4').length > 0
+);
 ```
 
 One `button` element should have the id `target5`.
 
 ```js
-const leftWall = document.querySelector('#right-well'); 
-const targetFive = leftWall?.querySelectorAll(`:scope ${'#target5'}`)
-assert.lengthOf(targetFive,1);
+assert(
+  $('#right-well').children('#target5') &&
+    $('#right-well').children('#target5').length > 0
+);
 ```
 
 One `button` element should have the id `target6`.
 
 ```js
-const leftWall = document.querySelector('#right-well'); 
-const targetSix = leftWall?.querySelectorAll(`:scope ${'#target6'}`)
-assert.lengthOf(targetSix,1);
+assert(
+  $('#right-well').children('#target6') &&
+    $('#right-well').children('#target6').length > 0
+);
 ```
 
 # --seed--

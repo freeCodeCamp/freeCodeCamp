@@ -23,30 +23,25 @@ All textual `<input>`, `<textarea>`, and `<select>` elements with the class `.fo
 The submit button in your form should have the classes `btn btn-primary`.
 
 ```js
-assert.isTrue(document.querySelector('button[type="submit"]')?.classList?.contains('btn'));
-assert.isTrue(document.querySelector('button[type="submit"]')?.classList?.contains('btn-primary'));
+assert($('button[type="submit"]').hasClass('btn btn-primary'));
 ```
 
 You should add a `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
 
 ```js
-const submitButton = document.querySelector('button[type="submit"]');
-const fontIcon = submitButton?.querySelectorAll('i.fa.fa-paper-plane'); 
-
-assert.lengthOf(fontIcon ,1);
+assert($('button[type="submit"]:has(i.fa.fa-paper-plane)').length > 0);
 ```
 
 The text `input` in your form should have the class `form-control`.
 
 ```js
-assert.isTrue(document.querySelector('input[type="text"]')?.classList?.contains('form-control'));
+assert($('input[type="text"]').hasClass('form-control'));
 ```
 
 Each of your `i` elements should have a closing tag.
 
 ```js
-assert.match(code,/<\/i>/g);
-assert.lengthOf(code.match(/<\/i/g),4);
+assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);
 ```
 
 # --seed--

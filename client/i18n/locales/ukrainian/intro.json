@@ -2008,9 +2008,9 @@
         "intro": []
       },
       "lab-confidential-email-page": {
-        "title": "Створіть сторінку конфіденційної пошти",
+        "title": "Build a Confidential Email Page",
         "intro": [
-          "У цій лабораторній роботі ви створите конфіденційну пошту, використовуючи HTML та CSS."
+          "For this lab, you will create a web page of a confidential email using HTML and CSS."
         ]
       },
       "zter": {
@@ -2052,9 +2052,9 @@
         "intro": []
       },
       "lab-newspaper-article": {
-        "title": "Створіть статтю в газеті",
+        "title": "Build a Newspaper Article",
         "intro": [
-          "У цій лабораторній роботі ви створите сторінку зі статтею, використовуючи HTML та CSS."
+          "In this lab, you will build a newspaper article page using HTML and CSS."
         ]
       },
       "hbme": {
@@ -2156,10 +2156,8 @@
         "intro": []
       },
       "lab-availability-table": {
-        "title": "Створіть таблицю з вільними годинами",
-        "intro": [
-          "У цій лабораторній роботі ви створите таблицю з вільними годинами для запису."
-        ]
+        "title": "Build an Availability Table",
+        "intro": ["For this lab, you will create an availability table."]
       },
       "sget": {
         "title": "111",
@@ -2285,6 +2283,10 @@
         "title": "139",
         "intro": []
       },
+      "uzjg": {
+        "title": "140",
+        "intro": []
+      },
       "hxwa": {
         "title": "141",
         "intro": []
@@ -2293,11 +2295,9 @@
         "title": "142",
         "intro": []
       },
-      "lab-fortune-teller": {
-        "title": "Build a Fortune Teller",
-        "intro": [
-          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
-        ]
+      "nkxq": {
+        "title": "143",
+        "intro": []
       },
       "wfyg": {
         "title": "144",
@@ -2332,22 +2332,18 @@
         "intro": []
       },
       "workshop-calculator": {
-        "title": "Створіть калькулятор",
+        "title": "Build a Calculator",
         "intro": [
-          "У цьому практичному завданні ви пригадаєте, як працювати з функціями, створивши калькулятор."
+          "In this workshop, you will review working with functions by building a calculator."
         ]
       },
-      "lab-email-masker": {
-        "title": "Build an Email Masker",
-        "intro": [
-          "In this lab, you'll build an email masker that will take an email address and obscure it."
-        ]
+      "hqba": {
+        "title": "153",
+        "intro": []
       },
-      "lab-sentence-maker": {
-        "title": "Build a Sentence Maker",
-        "intro": [
-          "In this lab, you will create different stories by assigning different words to different variables."
-        ]
+      "nnqa": {
+        "title": "154",
+        "intro": []
       },
       "cktz": {
         "title": "155",
@@ -2370,10 +2366,10 @@
         "intro": []
       },
       "workshop-shopping-list": {
-        "title": "Створіть список покупок",
+        "title": "Build a Shopping List",
         "intro": [
-          "У цьому практичному завданні ви попрактикуєтесь працювати з масивами, створивши список покупок.",
-          "Ви пригадаєте, як додавати й видаляти елементи з масиву за допомогою різних методів, серед яких <code>push</code>, <code>pop</code>, <code>shift</code> та <code>unshift</code>."
+          "In this workshop, you will practice working with arrays by building a shopping list.",
+          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
       "mokm": {
@@ -2401,10 +2397,8 @@
         "intro": []
       },
       "lab-factorial-calculator": {
-        "title": "Створіть калькулятор факторіалів ",
-        "intro": [
-          "У цій лабораторній роботі ви створите калькулятор факторіалів."
-        ]
+        "title": "Build a Factorial Calculator ",
+        "intro": ["In this lab, you will build a factorial calculator."]
       },
       "lgfm": {
         "title": "168",
@@ -2731,8 +2725,8 @@
         "intro": []
       },
       "lab-cash-register": {
-        "title": "Створіть касовий апарат",
-        "intro": ["У цій лабораторній роботі ви створите касовий апарат."]
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
       },
       "xayi": {
         "title": "250",
