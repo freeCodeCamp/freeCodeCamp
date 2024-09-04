@@ -23,23 +23,23 @@ Nest both your radio buttons within a `<div class="row">` element. Then nest eac
 All of your radio buttons should be nested inside one `div` with the class `row`.
 
 ```js
-assert($('div.row:has(input[type="radio"])').length > 0);
+const radioButtons = document.querySelectorAll(`div.row input[type=radio]`); 
+assert.lengthOf(radioButtons , 2);
 ```
 
 Each of your radio buttons should be nested inside its own `div` with the class `col-xs-6`.
 
 ```js
-assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
+const radioButtons = document.querySelectorAll(`div.col-xs-6 input[type=radio]`); 
+assert.lengthOf(radioButtons , 2);
 ```
 
 All of your `div` elements should have closing tags.
 
 ```js
-assert(
-  code.match(/<\/div>/g) &&
-    code.match(/<div/g) &&
-    code.match(/<\/div>/g).length === code.match(/<div/g).length
-);
+assert.match(code,/<\/div>/);
+assert.match(code,/<div/g);
+assert.equal(code.match(/<\/div>/g).length,code.match(/<div/g).length);
 ```
 
 # --seed--
