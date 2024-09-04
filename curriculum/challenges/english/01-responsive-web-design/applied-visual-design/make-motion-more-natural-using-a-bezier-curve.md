@@ -30,10 +30,9 @@ Change value of the `animation-timing-function` of the element with the id of `g
 The value of the `animation-timing-function` property for the element with the id `green` should be a `cubic-bezier` function with x1, y1, x2, y2 values as specified.
 
 ```js
-assert(
-  $('#green').css('animation-timing-function') ==
-    'cubic-bezier(0.311, 0.441, 0.444, 1.649)'
-);
+const greenElement = document.querySelector('#green');
+ const greenStyle = window.getComputedStyle(greenElement);
+assert.equal(greenStyle?.animationTimingFunction, 'cubic-bezier(0.311, 0.441, 0.444, 1.649)');
 ```
 
 # --seed--

@@ -1710,14 +1710,14 @@
         "intro": []
       },
       "workshop-cat-photo-app": {
-        "title": "Build a Cat Photo App",
+        "title": "Crea una aplicación de fotos de gato",
         "intro": [
-          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
-          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+          "HTML significa Lenguaje de marcado de HyperText y representa el contenido y la estructura de una página web.",
+          "En este taller, aprenderás a trabajar con elementos HTML básicos como encabezados, párrafos, imágenes, enlaces y listas."
         ]
       },
       "lab-recipe-page": {
-        "title": "Build a Recipe Page",
+        "title": "Crea una página de recetas",
         "intro": [
           "Para este laboratorio, crearás una página web con tu receta favorita."
         ]
@@ -1727,9 +1727,9 @@
         "intro": []
       },
       "lab-travel-agency-page": {
-        "title": "Build a Travel Agency Page",
+        "title": "Crea una página de agencia de viajes",
         "intro": [
-          "For this lab, you will create a web page of a travel agency."
+          "Para este laboratorio, crearás una página web de una agencia de viajes."
         ]
       },
       "vipr": {
@@ -1737,8 +1737,10 @@
         "intro": []
       },
       "lab-video-compilation-page": {
-        "title": "Build a Video Compilation Page",
-        "intro": ["For this lab, you will create a video compilation web page."]
+        "title": "Crea una página de compilación de vídeo",
+        "intro": [
+          "Para este laboratorio, crearás una página web de compilación de vídeo."
+        ]
       },
       "bzfv": {
         "title": "8",
@@ -1757,9 +1759,9 @@
         "intro": []
       },
       "workshop-blog-page": {
-        "title": "Build a Cat Blog Page",
+        "title": "Crea una página blog de gatos",
         "intro": [
-          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+          "En este taller, aprenderás cómo crear una páginablog con sólo HTML usando elementos semánticos incluyendo los elementos main, nav, article y footer."
         ]
       },
       "szcd": {
@@ -1779,24 +1781,24 @@
         "intro": []
       },
       "workshop-hotel-feedback-form": {
-        "title": "Build a Hotel Feedback Form",
+        "title": "Crea un formulario de opinión para hotel",
         "intro": [
-          "In this workshop, you will learn how to work with forms by building a Hotel Feedback Form.",
-          "You will learn how to work with labels, inputs, fieldsets, legends, textareas and buttons."
+          "En este taller, aprenderás a trabajar con formularios creando un formulario de opinión para hoteles.",
+          "Aprenderás a trabajar con etiquetas, inputs, conjuntos de campos, leyendas, textareas y botones."
         ]
       },
       "lab-survey-form": {
-        "title": "Build a Survey Form",
-        "intro": ["For this lab, you will create a survey form."]
+        "title": "Crea un formulario de encuesta",
+        "intro": ["Para este laboratorio, crearás un formulario de encuesta."]
       },
       "wgot": {
         "title": "19",
         "intro": []
       },
       "workshop-final-exams-table": {
-        "title": "Build a Final Exams Table",
+        "title": "Crea una mesa de exámenes finales",
         "intro": [
-          "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
+          "En este taller, aprenderás a trabajar con tablas HTML construyendo una tabla de exámenes finales."
         ]
       },
       "xdvu": {
@@ -1868,9 +1870,9 @@
         "intro": []
       },
       "lab-business-card": {
-        "title": "Design a Business Card",
+        "title": "Diseña una tarjeta de presentación",
         "intro": [
-          "In this lab, you'll create a business card and style it using CSS."
+          "En este laboratorio, crearás una tarjeta de presentación y la estilizarás usando CSS."
         ]
       },
       "gnuk": {
@@ -2017,9 +2019,11 @@
         "title": "74",
         "intro": []
       },
-      "wmkc": {
-        "title": "75",
-        "intro": []
+      "lab-confidential-email-page": {
+        "title": "Build a Confidential Email Page",
+        "intro": [
+          "For this lab, you will create a web page of a confidential email using HTML and CSS."
+        ]
       },
       "zter": {
         "title": "76",
@@ -2059,9 +2063,11 @@
         "title": "84",
         "intro": []
       },
-      "upuu": {
-        "title": "85",
-        "intro": []
+      "lab-newspaper-article": {
+        "title": "Build a Newspaper Article",
+        "intro": [
+          "In this lab, you will build a newspaper article page using HTML and CSS."
+        ]
       },
       "hbme": {
         "title": "86",
@@ -2335,9 +2341,11 @@
         "title": "151",
         "intro": []
       },
-      "icxa": {
-        "title": "152",
-        "intro": []
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review working with functions by building a calculator."
+        ]
       },
       "hqba": {
         "title": "153",
@@ -2398,9 +2406,9 @@
         "title": "166",
         "intro": []
       },
-      "vabq": {
-        "title": "167",
-        "intro": []
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": ["In this lab, you will build a factorial calculator."]
       },
       "lgfm": {
         "title": "168",
@@ -2724,9 +2732,9 @@
         "title": "248",
         "intro": []
       },
-      "mouu": {
-        "title": "249",
-        "intro": []
+      "lab-cash-register": {
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
       },
       "xayi": {
         "title": "250",
