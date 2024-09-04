@@ -27,7 +27,7 @@ About how much memory does the integer `5` consume in plain Python?
 
 ## --answers--
 
-32 bits
+28 bits
 
 ---
 
@@ -43,5 +43,5 @@ About how much memory does the integer `5` consume in plain Python?
 
 ## --video-solution--
 
-2
+1
 
