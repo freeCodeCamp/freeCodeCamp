@@ -6,4 +6,4 @@ superBlock: front-end-development
 
 ## Introduction to Leap Year Calculator
 
-In this lab you will utilise conditional statements and loops to create a leap year calculator.
+In this lab you will utilize conditional statements and loops to create a leap year calculator.
