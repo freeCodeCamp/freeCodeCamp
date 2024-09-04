@@ -2275,10 +2275,6 @@
         "title": "139",
         "intro": []
       },
-      "uzjg": {
-        "title": "140",
-        "intro": []
-      },
       "hxwa": {
         "title": "141",
         "intro": []
@@ -2287,9 +2283,11 @@
         "title": "142",
         "intro": []
       },
-      "nkxq": {
-        "title": "143",
-        "intro": []
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller",
+        "intro": [
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+        ]
       },
       "wfyg": {
         "title": "144",
@@ -2329,13 +2327,17 @@
           "In this workshop, you will review working with functions by building a calculator."
         ]
       },
-      "hqba": {
-        "title": "153",
-        "intro": []
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it."
+        ]
       },
-      "nnqa": {
-        "title": "154",
-        "intro": []
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you will create different stories by assigning different words to different variables."
+        ]
       },
       "cktz": {
         "title": "155",
