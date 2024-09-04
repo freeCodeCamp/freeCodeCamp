@@ -1984,7 +1984,7 @@
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
-          "For this lab, you will build an inventory management program."
+          "For this lab, you will build an inventory management program using JavaScript."
         ]
       },
       "fbbn": { "title": "179", "intro": [] },
