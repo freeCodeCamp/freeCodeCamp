@@ -21,35 +21,33 @@ Color your `h3` element with the `text-primary` Bootstrap class, and center it w
 You should add an `h3` element to your page.
 
 ```js
-assert($('h3') && $('h3').length > 0);
+assert.lengthOf(document.querySelectorAll('h3'),1);
 ```
 
 Your `h3` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/h3>/g) &&
-    code.match(/<h3/g) &&
-    code.match(/<\/h3>/g).length === code.match(/<h3/g).length
-);
+assert.match(code,/<\/h3>/g);
+assert.match(code,/<h3/g);
+assert.equal( code.match(/<\/h3>/g).length , code.match(/<h3/g).length);
 ```
 
 Your `h3` element should be colored by applying the class `text-primary`
 
 ```js
-assert($('h3').hasClass('text-primary'));
+assert.isTrue(document.querySelector('h3')?.classList?.contains('text-primary'));
 ```
 
 Your `h3` element should be centered by applying the class `text-center`
 
 ```js
-assert($('h3').hasClass('text-center'));
+assert.isTrue(document.querySelector('h3')?.classList?.contains('text-center'));
 ```
 
 Your `h3` element should have the text `jQuery Playground`.
 
 ```js
-assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));
+assert.match(document.querySelector('h3')?.textContent, /jquery(\s)+playground/gi);
 ```
 
 # --seed--
