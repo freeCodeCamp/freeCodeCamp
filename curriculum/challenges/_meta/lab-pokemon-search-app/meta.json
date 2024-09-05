@@ -1,0 +1,11 @@
+{
+  "name": "Build a Pokémon Search App",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-pokemon-search-app",
+  "order": 281,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66d9988d03f6ed285c711724", "title": "Build a Pokémon Search App" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}
