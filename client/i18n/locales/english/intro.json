@@ -1950,7 +1950,12 @@
           "In this lab, you will create different stories by assigning different words to different variables."
         ]
       },
-      "cktz": { "title": "155", "intro": [] },
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": [
+          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+        ]
+      },
       "pljo": { "title": "156", "intro": [] },
       "avln": { "title": "157", "intro": [] },
       "mexq": { "title": "158", "intro": [] },
