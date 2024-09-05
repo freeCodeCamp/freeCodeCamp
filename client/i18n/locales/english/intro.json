@@ -1889,7 +1889,12 @@
         ]
       },
       "lugl": { "title": "123", "intro": [] },
-      "mtcg": { "title": "124", "intro": [] },
+      "lab-personal-portfolio": {
+        "title": "Build a Personal Portfolio",
+        "intro": [
+          "For this project, you will build your own personal portfolio page."
+        ]
+      },
       "lvqc": { "title": "125", "intro": [] },
       "oxbd": { "title": "126", "intro": [] },
       "wvjx": { "title": "127", "intro": [] },
