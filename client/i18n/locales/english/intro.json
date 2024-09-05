@@ -1877,7 +1877,10 @@
       "ogko": { "title": "114", "intro": [] },
       "harp": { "title": "115", "intro": [] },
       "nsiq": { "title": "116", "intro": [] },
-      "geuv": { "title": "117", "intro": [] },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": ["", ""]
+      },
       "fdam": { "title": "118", "intro": [] },
       "yqma": { "title": "119", "intro": [] },
       "dorc": { "title": "120", "intro": [] },
