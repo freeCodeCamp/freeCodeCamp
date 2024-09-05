@@ -2052,7 +2052,10 @@
       "yshh": { "title": "237", "intro": [] },
       "wyxz": { "title": "238", "intro": [] },
       "dtfv": { "title": "239", "intro": [] },
-      "miza": { "title": "240", "intro": [] },
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort Algorithm",
+        "intro": ["", ""]
+      },
       "manv": { "title": "241", "intro": [] },
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
