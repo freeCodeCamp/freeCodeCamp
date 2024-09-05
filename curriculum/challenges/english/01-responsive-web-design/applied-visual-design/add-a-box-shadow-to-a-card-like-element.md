@@ -40,7 +40,7 @@ The element now has an id of `thumbnail`. With this selector, use the example CS
 Your code should add a `box-shadow` property for the `thumbnail` id.
 
 ```js
-assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
+assert.match(code,(/#thumbnail\s*?{\s*?box-shadow/g));
 ```
 
 You should use the given CSS for the `box-shadow` value.

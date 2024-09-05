@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Get started (it's free)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "Sign in to save your progress (it's free)",
     "view-curriculum": "View the Curriculum",
     "first-lesson": "Go to the first lesson",
@@ -55,9 +56,9 @@
     "reset-lesson": "Reset this lesson",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "Reset",
     "reset-step": "Reset This Step",
     "help": "Help",
@@ -67,16 +68,17 @@
     "click-here": "Click here to sign in",
     "save": "Save",
     "save-code": "Save your Code",
+    "show-demo": "Show Demo",
     "no-thanks": "No thanks",
     "yes-please": "Yes please",
     "update-email": "Update my Email",
     "verify-email": "Verify Email",
     "submit-and-go": "Submit and go to next challenge",
-    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
-    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Go to next challenge",
-    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
-    "go-to-next-3": "Go to next challenge (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "Ask me later",
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Build projects.",
     "big-heading-3": "Earn certifications.",
+    "big-heading-4": "All for free.",
     "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "freeCodeCamp students at a local study group in South Korea.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "As seen in:",
     "testimonials": {
       "heading": "Here is what our alumni say about freeCodeCamp:",
@@ -274,7 +280,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Nevermind, I don't want to delete all of my progress",
-      "reset-confirm": "Reset everything. I want to start from the beginning"
+      "reset-confirm": "Reset everything. I want to start from the beginning",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
@@ -408,7 +417,7 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
-    "reset-warn-2": "This cannot be undone",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -512,6 +521,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {

@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Empieza (es gratis)",
+    "get-started": "Empieza",
     "logged-out-cta-btn": "Inicia sesión para guardar tu progreso (es gratis)",
     "view-curriculum": "Ver el currículo",
     "first-lesson": "Ir a la primera lección",
@@ -55,9 +56,9 @@
     "reset-lesson": "Restablecer esta lección",
     "run": "Ejecutar",
     "run-test": "Ejecutar las Pruebas (Ctrl + Entrar)",
-    "check-code": "Comprueba tu código (Ctrl + Enter)",
-    "check-code-2": "Comprueba tu código",
-    "check-code-3": "Comprueba tu código (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "Restablecer",
     "reset-step": "Restablecer este paso",
     "help": "Ayuda",
@@ -67,16 +68,17 @@
     "click-here": "Haz clic aquí para iniciar sesión",
     "save": "Guardar",
     "save-code": "Guarda tu código",
+    "show-demo": "Show Demo",
     "no-thanks": "No, Gracias",
     "yes-please": "Sí, por favor",
     "update-email": "Actualizar mi correo electrónico",
     "verify-email": "Verificar correo electrónico",
     "submit-and-go": "Enviar y pasar al siguiente desafío",
-    "submit-and-go-2": "Enviar e ir al siguiente desafío (Ctrl + Enter)",
-    "submit-and-go-3": "Enviar e ir al siguiente desafío (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Ir al próximo desafío",
-    "go-to-next-2": "Ir al siguiente desafío (Ctrl + Enter)",
-    "go-to-next-3": "Ir al siguiente desafío (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "Pregúntame luego",
     "start-coding": "¡Empieza a programar!",
     "go-to-settings": "Ve a la configuración para reclamar tu certificación",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
+    "big-heading-1-b": "Aprende a codificar.",
     "big-heading-2": "Construye proyectos.",
     "big-heading-3": "Obtén certificaciones.",
+    "big-heading-4": "Todo de forma gratuita.",
     "h2-heading": "Desde 2014, más de 40.000 graduados de freeCodeCamp.org han conseguido trabajos en empresas de tecnología, entre las que se incluyen:",
+    "h2-heading-b": "Más de 100.000 graduados de freeCodeCamp.org han conseguido trabajo en empresas tecnológicas, entre ellas:",
     "hero-img-description": "Estudiantes de freeCodeCamp en un grupo de estudio local en Corea del Sur.",
     "hero-img-alt": "Un grupo de personas, incluyendo un hombre blanco, una mujer negra y una mujer asiática, reunidos alrededor de un portátil.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "Como se ha visto en:",
     "testimonials": {
       "heading": "Esto es lo que dicen nuestros alumnos sobre freeCodeCamp:",
@@ -274,7 +280,10 @@
       "reset-p2": "Efectivamente, volverás al primer día en que te registraste.",
       "reset-p3": "No podremos recuperar nada de esto más adelante, incluso si cambias de opinión.",
       "nevermind-2": "Cambié de opinión, no quiero eliminar todo mi progreso",
-      "reset-confirm": "Restablecer todo. Quiero empezar desde el principio"
+      "reset-confirm": "Restablecer todo. Quiero empezar desde el principio",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "No tienes un correo electrónico asociado a esta cuenta.",
@@ -408,7 +417,7 @@
     "rsa-forum": "<strong>Antes de hacer una nueva publicación</strong> por favor <0>comprueba si tu pregunta ya ha sido respondida en el foro</0>.",
     "reset": "¿Restablecer esta lección?",
     "reset-warn": "¿Estás seguro de que deseas restablecer esta lección? Los editores y las pruebas se restablecerán.",
-    "reset-warn-2": "Esto no se puede deshacer",
+    "reset-warn-2": "This cannot be undone.",
     "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntete libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
     "donation-record-not-found": "No se ha encontrado tu historial de donaciones.",
@@ -512,6 +521,14 @@
       "link-li-6": "Presiona \"Vincular Cuenta\" para vincular tu nombre de usuario de Microsoft.",
       "transcript-label": "Tu vinculo de transcripción de Microsoft",
       "invalid-transcript": "Tu link de transcripción no es correcta, debería tener está forma: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - revisa si los objetos MAYÚSCULA en tu vinculo están correctos."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {

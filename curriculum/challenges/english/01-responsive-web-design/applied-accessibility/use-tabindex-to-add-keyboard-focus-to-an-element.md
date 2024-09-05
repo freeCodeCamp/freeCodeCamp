@@ -28,13 +28,13 @@ Camper Cat created a new survey to collect information about his users. He knows
 Your code should add a `tabindex` attribute to the `p` tag that holds the form instructions.
 
 ```js
-assert($('p').attr('tabindex'));
+assert.isNotNull(document.querySelector('p')?.getAttribute('tabindex'));
 ```
 
 Your code should set the `tabindex` attribute on the `p` tag to a value of 0.
 
 ```js
-assert($('p').attr('tabindex') == '0');
+assert.equal(document.querySelector('p')?.getAttribute('tabindex'), '0');
 ```
 
 # --seed--

@@ -1,0 +1,73 @@
+{
+  "name": "Build a Greeting Bot",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-greeting-bot",
+  "order": 131,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66ad8294a0ad902f1b31b612",
+      "title": "Step 1"
+    },
+    {
+      "id": "66ad8ab945d266383f318cbf",
+      "title": "Step 2"
+    },
+    {
+      "id": "66ad8d150264db3926eccfeb",
+      "title": "Step 3"
+    },
+    {
+      "id": "66ad984e92ce213a66f7e51c",
+      "title": "Step 4"
+    },
+    {
+      "id": "66ad998285df023b23dacdd3",
+      "title": "Step 5"
+    },
+    {
+      "id": "66ad9c633fa26d3c1475eae3",
+      "title": "Step 6"
+    },
+    {
+      "id": "66ada3f46945763dd97f43f8",
+      "title": "Step 7"
+    },
+    {
+      "id": "66adb844118ba74107ce771f",
+      "title": "Step 8"
+    },
+    {
+      "id": "66adbc8a9793d64250f7e609",
+      "title": "Step 9"
+    },
+    {
+      "id": "66adc42868cab843ccee87d9",
+      "title": "Step 10"
+    },
+    {
+      "id": "66adc5919c1853448f119d11",
+      "title": "Step 11"
+    },
+    {
+      "id": "66adc6046acc18453decf577",
+      "title": "Step 12"
+    },
+    {
+      "id": "66adc82170acb1464bd348eb",
+      "title": "Step 13"
+    },
+    {
+      "id": "66adcf383276814776aba3ca",
+      "title": "Step 14"
+    },
+    {
+      "id": "66add47d27763c4862492c8c",
+      "title": "Step 15"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

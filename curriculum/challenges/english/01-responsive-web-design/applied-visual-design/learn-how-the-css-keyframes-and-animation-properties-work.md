@@ -44,37 +44,41 @@ Create an animation for the element with the id `rect`, by setting the `animatio
 The element with id of `rect` should have an `animation-name` property with a value of `rainbow`.
 
 ```js
-assert($('#rect').css('animation-name') == 'rainbow');
+const rectElement = document.querySelector('#rect');
+const rectStyle = window.getComputedStyle(rectElement);
+assert.equal(rectStyle?.animationName, 'rainbow');
 ```
 
 The element with id of `rect` should have an `animation-duration` property with a value of 4s.
 
 ```js
-assert($('#rect').css('animation-duration') == '4s');
+const rectElement = document.querySelector('#rect');
+const rectStyle = window.getComputedStyle(rectElement);
+assert.equal(rectStyle?.animationDuration, '4s');
 ```
 
 The `@keyframes` rule should use the `animation-name` of `rainbow`.
 
 ```js
-assert(code.match(/@keyframes\s+?rainbow\s*?{/g));
+assert.match(code ,/@keyframes\s+?rainbow\s*?{/g);
 ```
 
 The `@keyframes` rule for `rainbow` should use a `background-color` of `blue` at 0%.
 
 ```js
-assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi));
+assert.match(code,/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi);
 ```
 
 The `@keyframes` rule for `rainbow` should use a `background-color` of `green` at 50%.
 
 ```js
-assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi));
+assert.match(code,/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi);
 ```
 
 The `@keyframes` rule for rainbow should use a `background-color` of `yellow` at 100%.
 
 ```js
-assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
+assert.match(code,/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi);
 ```
 
 # --seed--

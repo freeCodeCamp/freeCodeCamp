@@ -25,7 +25,8 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import type { AllChallengeNode, User } from '../../redux/prop-types';
+import { CertTitle } from '../../../config/cert-and-project-map';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -44,7 +45,6 @@ type FetchState = {
 type SuperBlockProp = {
   currentChallengeId: string;
   data: {
-    markdownRemark: MarkdownRemark;
     allChallengeNode: AllChallengeNode;
   };
   expandedState: {
@@ -54,6 +54,11 @@ type SuperBlockProp = {
   isSignedIn: boolean;
   signInLoading: boolean;
   location: WindowLocation<{ breadcrumbBlockClick: string }>;
+  pageContext: {
+    superBlock: SuperBlocks;
+    title: CertTitle;
+    certification: string;
+  };
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
@@ -164,17 +169,18 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const {
     data: {
-      markdownRemark: {
-        frontmatter: { superBlock, title, certification }
-      },
       allChallengeNode: { edges }
     },
     isSignedIn,
     signInLoading,
-    user
+    user,
+    pageContext: { superBlock, title, certification }
   } = props;
 
-  const nodesForSuperBlock = edges.map(({ node }) => node);
+  const allChallenges = edges.map(({ node }) => node.challenge);
+  const nodesForSuperBlock = edges
+    .filter(edge => edge.node.challenge.superBlock === superBlock)
+    .map(({ node }) => node);
   const blockDashedNames = uniq(
     nodesForSuperBlock.map(({ challenge: { block } }) => block)
   );
@@ -257,7 +263,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='medium' />
-              <Map />
+              <Map allChallenges={allChallenges} />
               <Spacer size='large' />
             </Col>
           </Row>
@@ -276,14 +282,7 @@ export default connect(
 )(withTranslation()(memo(SuperBlockIntroductionPage)));
 
 export const query = graphql`
-  query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        certification
-        superBlock
-        title
-      }
-    }
+  query SuperBlockIntroPageQuery {
     allChallengeNode(
       sort: {
         fields: [
@@ -292,7 +291,6 @@ export const query = graphql`
           challenge___challengeOrder
         ]
       }
-      filter: { challenge: { superBlock: { eq: $superBlock } } }
     ) {
       edges {
         node {

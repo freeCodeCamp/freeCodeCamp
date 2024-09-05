@@ -20,7 +20,9 @@ Change the value of the `font-size` property for the paragraph to 16px to make i
 Your `p` tag should have a `font-size` of 16 pixels.
 
 ```js
-assert($('p').css('font-size') == '16px');
+const pElement =document.querySelector('p')
+const pStyle = window.getComputedStyle(pElement);
+assert.equal(pStyle?.fontSize, '16px');
 ```
 
 # --seed--

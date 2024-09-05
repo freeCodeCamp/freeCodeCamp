@@ -60,6 +60,10 @@ test.describe('Delete Modal component', () => {
     ).toBeVisible();
 
     await expect(
+      page.getByRole('button', { name: translations.settings.danger.certain })
+    ).toBeDisabled();
+
+    await expect(
       page.getByRole('button', { name: translations.buttons.close })
     ).toBeVisible();
   });
@@ -88,7 +92,7 @@ test.describe('Delete Modal component', () => {
     ).not.toBeVisible();
   });
 
-  test('should close the modal and redirect to /learn after the user clicks delete', async ({
+  test('Delele button should be disabled if user incorrectly fills verify input text', async ({
     page
   }) => {
     await page
@@ -100,6 +104,38 @@ test.describe('Delete Modal component', () => {
         name: translations.settings.danger['delete-title']
       })
     ).toBeVisible();
+
+    const verifyDeleteInput = page.getByRole('textbox', {
+      exact: true
+    });
+    await verifyDeleteInput.fill('incorrect text');
+
+    await expect(
+      page.getByRole('button', {
+        name: translations.settings.danger.certain
+      })
+    ).toBeDisabled();
+  });
+
+  test('should close the modal and redirect to /learn after the user fills the verify input text and clicks delete', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', { name: translations.settings.danger.delete })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', {
+        name: translations.settings.danger['delete-title']
+      })
+    ).toBeVisible();
+
+    const verifyDeleteText = translations.settings.danger['verify-delete-text'];
+
+    const verifyDeleteInput = page.getByRole('textbox', {
+      exact: true
+    });
+    await verifyDeleteInput.fill(verifyDeleteText);
 
     await page
       .getByRole('button', { name: translations.settings.danger.certain })
