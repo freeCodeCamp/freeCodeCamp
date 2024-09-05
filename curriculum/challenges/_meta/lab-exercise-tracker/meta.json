@@ -1,0 +1,11 @@
+{
+  "name": "Build an Exercise Tracker",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "lab-exercise-tracker",
+  "order": 376,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66d97362f1f2b957c83e6404", "title": "Build an Exercise Tracker" }],
+  "helpCategory": "Backend Development"
+}
