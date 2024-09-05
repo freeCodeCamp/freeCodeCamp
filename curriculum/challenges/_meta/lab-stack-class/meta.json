@@ -1,0 +1,11 @@
+{
+  "name": "Build a Stack Class",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "dashedName": "lab-stack-class",
+  "order": 264,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66d9ac40e5c98f4dc9e979f4", "title": "Build a Stack Class" }],
+  "helpCategory": "JavaScript"
+}
