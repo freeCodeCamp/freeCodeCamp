@@ -6,5 +6,6 @@
   "order": 240,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "66d97c3be4030e8f41a92083", "title": "Build a Quick Sort Algorithm" }],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
 }
