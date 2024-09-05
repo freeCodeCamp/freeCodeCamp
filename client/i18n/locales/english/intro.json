@@ -1879,7 +1879,9 @@
       "nsiq": { "title": "116", "intro": [] },
       "lab-product-landing-page": {
         "title": "Build a Product Landing Page",
-        "intro": ["", ""]
+        "intro": [
+          "For this project, you will build a product landing page to market a product of your choice."
+        ]
       },
       "fdam": { "title": "118", "intro": [] },
       "yqma": { "title": "119", "intro": [] },
