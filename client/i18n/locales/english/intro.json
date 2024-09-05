@@ -2052,9 +2052,9 @@
       "yshh": { "title": "237", "intro": [] },
       "wyxz": { "title": "238", "intro": [] },
       "dtfv": { "title": "239", "intro": [] },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort Algorithm",
-        "intro": ["", ""]
+      "lab-quick-sort-algorithm": {
+        "title": "Build the Quick Sort Algorithm",
+        "intro": ["For this lab, you will implement the Quick Sort algorithm using JavaScript."]
       },
       "manv": { "title": "241", "intro": [] },
       "bnvw": { "title": "242", "intro": [] },

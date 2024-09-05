@@ -1,11 +1,11 @@
 {
-  "name": "Build a Quick Sort Algorithm",
+  "name": "Build the Quick Sort Algorithm",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "dashedName": "lab-quick-sort",
+  "dashedName": "lab-quick-sort-algorithm",
   "order": 240,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66d97c3be4030e8f41a92083", "title": "Build a Quick Sort Algorithm" }],
+  "challengeOrder": [{ "id": "66d97c3be4030e8f41a92083", "title": "Build the Quick Sort Algorithm" }],
   "helpCategory": "JavaScript",
   "blockType": "lab"
 }
