@@ -2005,7 +2005,12 @@
       "lbyi": { "title": "194", "intro": [] },
       "ctwj": { "title": "195", "intro": [] },
       "fmbk": { "title": "196", "intro": [] },
-      "nlbo": { "title": "197", "intro": [] },
+      "lab-lightbox-viewer": {
+        "title": "Build a Lightbox Viewer",
+        "intro": [
+          "In this lab, you will build a lighbox viewer for viewing images in a focused mode."
+        ]
+      },
       "bbyq": { "title": "198", "intro": [] },
       "uglc": { "title": "199", "intro": [] },
       "vonu": { "title": "200", "intro": [] },
