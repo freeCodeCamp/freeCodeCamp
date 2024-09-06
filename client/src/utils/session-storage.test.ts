@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import {
-  getSessionCompletedChallengesLength,
-  incrementSessionCompletedChallenges,
-  setCompletionCountWhenShownProgressModal,
-  getCompletionCountWhenShownProgressModal
+  CURRENT_COUNT_KEY,
+  SAVED_COUNT_KEY,
+  getSessionChallengeData,
+  incrementCurrentCount,
+  saveCurrentCount
 } from './session-storage';
 
-describe('Session Storage Functions', () => {
+describe('Session Storage', () => {
   let sessionStorageMock: Storage;
 
   beforeEach(() => {
@@ -56,55 +57,78 @@ describe('Session Storage Functions', () => {
     jest.clearAllMocks();
   });
 
-  test('getSessionCompletedChallengesLength returns 0 when no data in sessionStorage', () => {
-    expect(getSessionCompletedChallengesLength()).toBe(0);
-    expect(sessionStorage.getItem).toHaveBeenCalledWith(
-      'session-completed-challenges'
-    );
+  describe('getSessionChallengeData', () => {
+    describe('countSinceSave', () => {
+      it('is not included if nothing has been saved', () => {
+        expect(getSessionChallengeData()).not.toHaveProperty('countSinceSave');
+      });
+
+      it('is included if the count has been saved', () => {
+        sessionStorage.setItem(SAVED_COUNT_KEY, '7');
+        sessionStorage.setItem(CURRENT_COUNT_KEY, '10');
+        expect(getSessionChallengeData()).toMatchObject({
+          countSinceSave: 3
+        });
+      });
+    });
+
+    describe('currentCount', () => {
+      it('defaults to 0 if no challenges have been completed', () => {
+        expect(getSessionChallengeData()).toMatchObject({
+          currentCount: 0
+        });
+      });
+
+      it('returns the stored number if it exists', () => {
+        sessionStorage.setItem(CURRENT_COUNT_KEY, '5');
+        expect(getSessionChallengeData()).toMatchObject({
+          currentCount: 5
+        });
+      });
+    });
+
+    describe('isSaved', () => {
+      it('is false if we haved saved the count', () => {
+        expect(getSessionChallengeData()).toMatchObject({
+          isSaved: false
+        });
+      });
+
+      it('is true if we have saved something', () => {
+        sessionStorage.setItem(SAVED_COUNT_KEY, '7');
+        expect(getSessionChallengeData()).toMatchObject({
+          isSaved: true
+        });
+      });
+    });
   });
 
-  test('getSessionCompletedChallengesLength returns correct number from sessionStorage', () => {
-    sessionStorage.setItem('session-completed-challenges', '5');
-    expect(getSessionCompletedChallengesLength()).toBe(5);
+  describe('incrementCurrentCount', () => {
+    test('increments the completed challenge count', () => {
+      sessionStorage.setItem(CURRENT_COUNT_KEY, '5');
+      incrementCurrentCount();
+      expect(sessionStorage.setItem).toHaveBeenCalledWith(
+        CURRENT_COUNT_KEY,
+        '6'
+      );
+      expect(getSessionChallengeData()).toMatchObject({ currentCount: 6 });
+    });
+
+    test('sets the count to 1 if no previous value exists', () => {
+      incrementCurrentCount();
+      expect(sessionStorage.setItem).toHaveBeenCalledWith(
+        CURRENT_COUNT_KEY,
+        '1'
+      );
+      expect(getSessionChallengeData()).toMatchObject({ currentCount: 1 });
+    });
   });
 
-  test('incrementSessionCompletedChallenges increments the session-completed-challenges count', () => {
-    sessionStorage.setItem('session-completed-challenges', '5');
-    incrementSessionCompletedChallenges();
-    expect(sessionStorage.setItem).toHaveBeenCalledWith(
-      'session-completed-challenges',
-      '6'
-    );
-    expect(getSessionCompletedChallengesLength()).toBe(6);
-  });
-
-  test('incrementSessionCompletedChallenges sets the count to 1 if no previous value exists', () => {
-    incrementSessionCompletedChallenges();
-    expect(sessionStorage.setItem).toHaveBeenCalledWith(
-      'session-completed-challenges',
-      '1'
-    );
-    expect(getSessionCompletedChallengesLength()).toBe(1);
-  });
-
-  test('setCompletionCountWhenShownProgressModal sets correct value in sessionStorage', () => {
-    sessionStorage.setItem('session-completed-challenges', '5');
-    setCompletionCountWhenShownProgressModal();
-    expect(sessionStorage.setItem).toHaveBeenCalledWith(
-      'completion-count-progress-modal',
-      '5'
-    );
-  });
-
-  test('getCompletionCountWhenShownProgressModal returns null if no value set', () => {
-    expect(getCompletionCountWhenShownProgressModal()).toBeNull();
-    expect(sessionStorage.getItem).toHaveBeenCalledWith(
-      'completion-count-progress-modal'
-    );
-  });
-
-  test('getCompletionCountWhenShownProgressModal returns correct number from sessionStorage', () => {
-    sessionStorage.setItem('completion-count-progress-modal', '7');
-    expect(getCompletionCountWhenShownProgressModal()).toBe(7);
+  describe('saveCurrentCount', () => {
+    test('sets correct value in sessionStorage', () => {
+      sessionStorage.setItem(CURRENT_COUNT_KEY, '5');
+      saveCurrentCount();
+      expect(sessionStorage.setItem).toHaveBeenCalledWith(SAVED_COUNT_KEY, '5');
+    });
   });
 });

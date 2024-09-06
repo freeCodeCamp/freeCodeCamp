@@ -1,33 +1,52 @@
-export const getSessionCompletedChallengesLength = () => {
-  const key = 'session-completed-challenges';
-  const storedValue = sessionStorage.getItem(key);
-  const challengesCompleted =
-    storedValue !== null ? parseInt(storedValue, 10) : 0;
-  return challengesCompleted;
+const parseCount = (rawCount: string | null) =>
+  rawCount == null ? 0 : parseInt(rawCount, 10);
+
+export const CURRENT_COUNT_KEY = 'session-completed-challenges';
+export const SAVED_COUNT_KEY = 'saved-session-completed-challenges';
+
+const getCurrentCount = () =>
+  parseCount(sessionStorage.getItem(CURRENT_COUNT_KEY));
+
+const getSavedCount = () => parseCount(sessionStorage.getItem(SAVED_COUNT_KEY));
+
+export const incrementCurrentCount = () => {
+  const newCount = getCurrentCount() + 1;
+  sessionStorage.setItem(CURRENT_COUNT_KEY, newCount.toString());
 };
 
-export const incrementSessionCompletedChallenges = () => {
-  const key = 'session-completed-challenges';
-  let challengesCompleted = getSessionCompletedChallengesLength();
-
-  // Update the existing value or set it to 1 if it doesn't exist
-  challengesCompleted += 1;
-
-  // Convert the number back to a string before saving
-  sessionStorage.setItem(key, challengesCompleted.toString());
+/**
+ * Saves the current count so we can compare it later.
+ */
+export const saveCurrentCount = () => {
+  sessionStorage.setItem(SAVED_COUNT_KEY, getCurrentCount().toString());
 };
 
-// this key stores the last time the progress modal has been shown
-export const setCompletionCountWhenShownProgressModal = () => {
-  const key = 'completion-count-progress-modal';
-  const challengesCompleted = getSessionCompletedChallengesLength();
-  sessionStorage.setItem(key, challengesCompleted.toString());
+const isSaved = () => sessionStorage.getItem(SAVED_COUNT_KEY) !== null;
+
+type AfterSave = {
+  isSaved: true;
+  currentCount: number;
+  countSinceSave: number;
 };
 
-export const getCompletionCountWhenShownProgressModal = () => {
-  const key = 'completion-count-progress-modal';
-  const storedValue = sessionStorage.getItem(key);
-  const challengesCompleted =
-    storedValue == null ? null : parseInt(storedValue, 10);
-  return challengesCompleted;
+type BeforeSave = {
+  isSaved: false;
+  currentCount: number;
+};
+
+type SessionChallengeData = AfterSave | BeforeSave;
+
+export const getSessionChallengeData = (): SessionChallengeData => {
+  if (isSaved()) {
+    return {
+      isSaved: true,
+      currentCount: getCurrentCount(),
+      countSinceSave: getCurrentCount() - getSavedCount()
+    };
+  } else {
+    return {
+      isSaved: false,
+      currentCount: getCurrentCount()
+    };
+  }
 };

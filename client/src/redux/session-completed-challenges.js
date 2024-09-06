@@ -1,9 +1,9 @@
 import { takeEvery, call } from 'redux-saga/effects';
 
-import { incrementSessionCompletedChallenges } from '../utils/session-storage';
+import { incrementCurrentCount } from '../utils/session-storage';
 
 function* SessionCompletedChallengesSaga() {
-  yield call(incrementSessionCompletedChallenges);
+  yield call(incrementCurrentCount);
 }
 
 export function createSessionCompletedChallengesSaga(types) {

@@ -19,8 +19,8 @@ import { stringifyDonationEvents } from '../utils/analytics-strings';
 import { stripe } from '../utils/stripe';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
 import {
-  getSessionCompletedChallengesLength,
-  setCompletionCountWhenShownProgressModal
+  getSessionChallengeData,
+  saveCurrentCount
 } from '../utils/session-storage';
 import { actionTypes as appTypes } from './action-types';
 import {
@@ -58,7 +58,7 @@ function* showDonateModalSaga() {
     if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());
     } else {
-      yield call(setCompletionCountWhenShownProgressModal);
+      yield call(saveCurrentCount);
     }
   }
 }
@@ -126,9 +126,8 @@ export function* postChargeSaga({
       });
     } else {
       const completedChallenges = yield select(completedChallengesSelector);
-      const completedChallengesInSession = yield call(
-        getSessionCompletedChallengesLength
-      );
+      const sessionChallengeData = yield call(getSessionChallengeData);
+      const completedChallengesInSession = sessionChallengeData.currentCount;
       yield call(callGA, {
         event: 'donation',
         action: stringifyDonationEvents(paymentContext, paymentProvider),
