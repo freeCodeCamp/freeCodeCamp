@@ -14,19 +14,15 @@ function plugin() {
     if (allQuestionNodes.length > 0) {
       const questions = [];
       const questionTrees = [];
-      let questionTreeNumber = -1;
 
       allQuestionNodes.forEach(questionNode => {
-        if (
-          questionNode.children &&
-          questionNode.children[0] &&
-          questionNode.children[0].value === '--text--'
-        ) {
-          questionTreeNumber++;
-          questionTrees[questionTreeNumber] = [];
+        const isStartOfQuestion =
+          questionNode.children?.[0]?.value === '--text--';
+        if (isStartOfQuestion) {
+          questionTrees.push([questionNode]);
+        } else {
+          questionTrees[questionTrees.length - 1].push(questionNode);
         }
-
-        questionTrees[questionTreeNumber].push(questionNode);
       });
 
       questionTrees.forEach(questionNodes => {
