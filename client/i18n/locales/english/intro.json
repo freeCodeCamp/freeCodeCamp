@@ -2056,7 +2056,12 @@
       "yshh": { "title": "237", "intro": [] },
       "wyxz": { "title": "238", "intro": [] },
       "dtfv": { "title": "239", "intro": [] },
-      "miza": { "title": "240", "intro": [] },
+      "lab-quicksort-algorithm": {
+        "title": "Build the Quicksort Algorithm",
+        "intro": [
+          "For this lab, you will implement the Quicksort algorithm using JavaScript."
+        ]
+      },
       "manv": { "title": "241", "intro": [] },
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
