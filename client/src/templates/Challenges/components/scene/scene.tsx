@@ -46,6 +46,8 @@ export function Scene({
 
   // on mount
   useEffect(() => {
+    audioRef.current.addEventListener('canplaythrough', audioLoaded);
+
     // preload images
     loadImage(`${backgrounds}/${setup.background}`);
 
@@ -60,14 +62,13 @@ export function Scene({
       )
       .forEach(loadImage);
 
-    setSceneIsReady(true);
-
     // on unmount
     return () => {
       const { current } = audioRef;
 
       current.pause();
       current.currentTime = 0;
+      current.removeEventListener('canplaythrough', audioLoaded);
     };
   }, [audioRef, setup.background, setup.characters, commands]);
 
@@ -96,6 +97,10 @@ export function Scene({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying]);
+
+  const audioLoaded = () => {
+    setSceneIsReady(true);
+  };
 
   let start = 0;
   let stopAudio = false;
