@@ -213,13 +213,12 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       isChallengeCompleted
     } = this.props;
 
-    const { text, answers, solution } = questions[0];
+    const question = questions[0];
+    const { solution } = question;
 
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-
-    const { solution } = question;
 
     return (
       <Hotkeys
