@@ -1963,6 +1963,12 @@
           "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
+      "lab-lunch-picker-program": {
+        "title": "Build a Lunch Picker Program",
+        "intro": [
+          "In this lab, you create a lunch picker user arrays and random numbers"
+        ]
+      },
       "mokm": { "title": "161", "intro": [] },
       "froz": { "title": "162", "intro": [] },
       "ozth": { "title": "163", "intro": [] },
