@@ -2052,7 +2052,10 @@
       "pehm": { "title": "227", "intro": [] },
       "cvsw": { "title": "228", "intro": [] },
       "qjws": { "title": "229", "intro": [] },
-      "fgbp": { "title": "230", "intro": [] },
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": ["For this lab, you will build a bookmark manager app."]
+      },
       "jbst": { "title": "232", "intro": [] },
       "peyf": { "title": "233", "intro": [] },
       "bdqj": { "title": "234", "intro": [] },
