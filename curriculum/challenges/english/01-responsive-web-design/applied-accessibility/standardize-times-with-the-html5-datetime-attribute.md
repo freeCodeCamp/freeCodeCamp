@@ -26,28 +26,25 @@ Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the t
 Your code should have a `p` element which includes the text `Thank you to everyone for responding to Master Camper Cat's survey.` and include a `time` element.
 
 ```js
-assert(timeElement);
+assert.exists(timeElement);
 ```
 
 Your added `time` tags should wrap around the text `Thursday, September 15<sup>th</sup>`.
 
 ```js
-assert(
-  timeElement &&
-    timeElement?.innerHTML?.trim() === 'Thursday, September 15<sup>th</sup>'
-);
+assert.strictEqual(timeElement?.innerHTML?.trim(), 'Thursday, September 15<sup>th</sup>');
 ```
 
 Your added `time` tag should have a `datetime` attribute that is not empty.
 
 ```js
-assert(datetimeAttr && datetimeAttr?.length);
+assert(datetimeAttr?.length != 0);
 ```
 
 Your added `datetime` attribute should be set to a value of `2016-09-15`.
 
 ```js
-assert(datetimeAttr === '2016-09-15');
+assert.equal(datetimeAttr , '2016-09-15');
 ```
 
 # --seed--

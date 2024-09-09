@@ -30,7 +30,7 @@ Add a CSS rule for the `hover` state of the `div` and use the `transform` proper
 The size of the `div` element should scale 1.1 times when the user hovers over it.
 
 ```js
-assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi));
+assert.match(code, /div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi);
 ```
 
 # --seed--

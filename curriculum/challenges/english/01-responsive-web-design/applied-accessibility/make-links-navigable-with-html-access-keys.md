@@ -28,25 +28,25 @@ Camper Cat wants the links around the two blog article titles to have keyboard s
 Your code should add an `accesskey` attribute to the `a` tag with the `id` of `first`.
 
 ```js
-assert($('#first').attr('accesskey'));
+assert.isTrue(document.querySelector('#first')?.hasAttribute('accesskey'));
 ```
 
 Your code should add an `accesskey` attribute to the `a` tag with the `id` of `second`.
 
 ```js
-assert($('#second').attr('accesskey'));
+assert.isTrue(document.querySelector('#second')?.hasAttribute('accesskey'));
 ```
 
 Your code should set the `accesskey` attribute on the `a` tag with the `id` of `first` to `g`. Note that case matters.
 
 ```js
-assert($('#first').attr('accesskey') == 'g');
+assert.equal(document.querySelector('#first')?.getAttribute('accesskey'), 'g');
 ```
 
 Your code should set the `accesskey` attribute on the `a` tag with the `id` of `second` to `c`. Note that case matters.
 
 ```js
-assert($('#second').attr('accesskey') == 'c');
+assert.equal(document.querySelector('#second')?.getAttribute('accesskey'), 'c');
 ```
 
 # --seed--

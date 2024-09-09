@@ -1757,7 +1757,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
       "szcd": {
@@ -1865,9 +1865,11 @@
         "title": "37",
         "intro": []
       },
-      "xjin": {
-        "title": "38",
-        "intro": []
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS."
+        ]
       },
       "gnuk": {
         "title": "39",
@@ -2013,9 +2015,11 @@
         "title": "74",
         "intro": []
       },
-      "wmkc": {
-        "title": "75",
-        "intro": []
+      "lab-confidential-email-page": {
+        "title": "Build a Confidential Email Page",
+        "intro": [
+          "For this lab, you will create a web page of a confidential email using HTML and CSS."
+        ]
       },
       "zter": {
         "title": "76",
@@ -2033,9 +2037,11 @@
         "title": "79",
         "intro": []
       },
-      "nbwu": {
-        "title": "80",
-        "intro": []
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "For this lab, you will use flexbox to create a webpage of playing cards."
+        ]
       },
       "kqao": {
         "title": "81",
@@ -2053,9 +2059,11 @@
         "title": "84",
         "intro": []
       },
-      "upuu": {
-        "title": "85",
-        "intro": []
+      "lab-newspaper-article": {
+        "title": "Build a Newspaper Article",
+        "intro": [
+          "In this lab, you will build a newspaper article page using HTML and CSS."
+        ]
       },
       "hbme": {
         "title": "86",
@@ -2153,9 +2161,9 @@
         "title": "109",
         "intro": []
       },
-      "njkq": {
-        "title": "110",
-        "intro": []
+      "lab-availability-table": {
+        "title": "Build an Availability Table",
+        "intro": ["For this lab, you will create an availability table."]
       },
       "sget": {
         "title": "111",
@@ -2201,9 +2209,11 @@
         "title": "121",
         "intro": []
       },
-      "cdzo": {
-        "title": "122",
-        "intro": []
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
       },
       "lugl": {
         "title": "123",
@@ -2264,9 +2274,12 @@
         "title": "136",
         "intro": []
       },
-      "cygu": {
-        "title": "137",
-        "intro": []
+      "workshop-teacher-chatbot": {
+        "title": "Build a Teacher Chatbot",
+        "intro": [
+          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
+          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+        ]
       },
       "axgb": {
         "title": "138",
@@ -2274,10 +2287,6 @@
       },
       "rwac": {
         "title": "139",
-        "intro": []
-      },
-      "uzjg": {
-        "title": "140",
         "intro": []
       },
       "hxwa": {
@@ -2288,9 +2297,11 @@
         "title": "142",
         "intro": []
       },
-      "nkxq": {
-        "title": "143",
-        "intro": []
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller",
+        "intro": [
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+        ]
       },
       "wfyg": {
         "title": "144",
@@ -2320,25 +2331,29 @@
         "title": "150",
         "intro": []
       },
-      "kkix": {
-        "title": "151",
-        "intro": []
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review working with functions by building a calculator."
+        ]
       },
-      "icxa": {
-        "title": "152",
-        "intro": []
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it."
+        ]
       },
-      "hqba": {
-        "title": "153",
-        "intro": []
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you will create different stories by assigning different words to different variables."
+        ]
       },
-      "nnqa": {
-        "title": "154",
-        "intro": []
-      },
-      "cktz": {
-        "title": "155",
-        "intro": []
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": [
+          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+        ]
       },
       "pljo": {
         "title": "156",
@@ -2356,9 +2371,12 @@
         "title": "159",
         "intro": []
       },
-      "qmdt": {
-        "title": "160",
-        "intro": []
+      "workshop-shopping-list": {
+        "title": "Build a Shopping List",
+        "intro": [
+          "In this workshop, you will practice working with arrays by building a shopping list.",
+          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+        ]
       },
       "mokm": {
         "title": "161",
@@ -2384,9 +2402,9 @@
         "title": "166",
         "intro": []
       },
-      "vabq": {
-        "title": "167",
-        "intro": []
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": ["In this lab, you will build a factorial calculator."]
       },
       "lgfm": {
         "title": "168",
@@ -2420,17 +2438,19 @@
         "title": "175",
         "intro": []
       },
-      "skiq": {
-        "title": "176",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": ["For this lab, you will create a gradebook app."]
       },
       "epfc": {
         "title": "177",
         "intro": []
       },
-      "gsfr": {
-        "title": "178",
-        "intro": []
+      "lab-inventory-management-program": {
+        "title": "Build an Inventory Management Program",
+        "intro": [
+          "For this lab, you will build an inventory management program using JavaScript."
+        ]
       },
       "fbbn": {
         "title": "179",
@@ -2541,9 +2561,9 @@
         "intro": []
       },
       "lab-random-background-color-changer": {
-        "title": "Build a Random Background Color Changer",
+        "title": "Debug a Random Background Color Changer",
         "intro": [
-          "For this lab, you will create a random background color changer."
+          "For this lab, you will debug a random background color changer and fix the errors to make it work properly."
         ]
       },
       "dqth": {
@@ -2674,9 +2694,11 @@
         "title": "239",
         "intro": []
       },
-      "miza": {
-        "title": "240",
-        "intro": []
+      "lab-quicksort-algorithm": {
+        "title": "Build the Quicksort Algorithm",
+        "intro": [
+          "For this lab, you will implement the Quicksort algorithm using JavaScript."
+        ]
       },
       "manv": {
         "title": "241",
@@ -2710,9 +2732,9 @@
         "title": "248",
         "intro": []
       },
-      "mouu": {
-        "title": "249",
-        "intro": []
+      "lab-cash-register": {
+        "title": "Build a Cash Register",
+        "intro": ["For this lab, you will build a cash register."]
       },
       "xayi": {
         "title": "250",
