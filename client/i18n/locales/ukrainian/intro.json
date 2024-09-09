@@ -1749,7 +1749,7 @@
       "workshop-blog-page": {
         "title": "Створіть сторінку блогу про котів",
         "intro": [
-          "У цьому практичному завданні ви дізнаєтесь, як створити сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
       "szcd": {
@@ -2327,10 +2327,6 @@
         "title": "150",
         "intro": []
       },
-      "kkix": {
-        "title": "151",
-        "intro": []
-      },
       "workshop-calculator": {
         "title": "Створіть калькулятор",
         "intro": [
@@ -2349,9 +2345,11 @@
           "In this lab, you will create different stories by assigning different words to different variables."
         ]
       },
-      "cktz": {
-        "title": "155",
-        "intro": []
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": [
+          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+        ]
       },
       "pljo": {
         "title": "156",
@@ -2438,18 +2436,20 @@
         "title": "175",
         "intro": []
       },
-      "skiq": {
-        "title": "176",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Створіть журнал з оцінками",
+        "intro": [
+          "У цій лабораторній роботі ви створите електронний журнал з оцінками."
+        ]
       },
       "epfc": {
         "title": "177",
         "intro": []
       },
-      "lab-gradebook-app": {
-        "title": "Створіть журнал з оцінками",
+      "lab-inventory-management-program": {
+        "title": "Build an Inventory Management Program",
         "intro": [
-          "У цій лабораторній роботі ви створите електронний журнал з оцінками."
+          "For this lab, you will build an inventory management program using JavaScript."
         ]
       },
       "fbbn": {
@@ -2694,9 +2694,11 @@
         "title": "239",
         "intro": []
       },
-      "miza": {
-        "title": "240",
-        "intro": []
+      "lab-quicksort-algorithm": {
+        "title": "Build the Quicksort Algorithm",
+        "intro": [
+          "For this lab, you will implement the Quicksort algorithm using JavaScript."
+        ]
       },
       "manv": {
         "title": "241",
