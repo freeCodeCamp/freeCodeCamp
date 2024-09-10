@@ -79,19 +79,10 @@ export const reducer = handleActions(
       ...state,
       isSubmitting: false
     }),
-    [actionTypes.createFiles]: (state, { payload }) => {
-      let visibleEditors = state.visibleEditors;
-
-      if (Object.keys(visibleEditors).length === 0) {
-        visibleEditors = { [getTargetEditor(payload)]: true };
-      }
-
-      return {
-        ...state,
-        challengeFiles: payload,
-        visibleEditors
-      };
-    },
+    [actionTypes.createFiles]: (state, { payload }) => ({
+      ...state,
+      challengeFiles: payload
+    }),
     [actionTypes.updateFile]: (
       state,
       { payload: { fileKey, editorValue, editableRegionBoundaries } }
@@ -131,7 +122,6 @@ export const reducer = handleActions(
       ...state,
       challengeTests: payload
     }),
-
     [actionTypes.initConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: payload ? [payload] : []
@@ -153,6 +143,10 @@ export const reducer = handleActions(
       consoleOut: isEmpty(state.logsOut)
         ? state.consoleOut
         : state.consoleOut.concat(payload, state.logsOut)
+    }),
+    [actionTypes.initVisibleEditors]: state => ({
+      ...state,
+      visibleEditors: { [getTargetEditor(state.challengeFiles)]: true }
     }),
     [actionTypes.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
