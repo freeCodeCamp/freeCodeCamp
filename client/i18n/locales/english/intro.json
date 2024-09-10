@@ -2235,14 +2235,6 @@
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
-      },
-      "lab-exercise-tracker": {
-        "title": "Build an Exercise Tracker",
-        "intro": ["In this lab, you will build an exercise tracker"]
-      },
-      "front-end-development-certification-exam": {
-        "title": "Front End Development Certification Exam",
-        "intro": ["", ""]
       }
     }
   },
