@@ -56,7 +56,7 @@ assert(/<div>[\s\S]*{\s*\/\*[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code));
 ## --after-user-code--
 
 ```jsx
-ReactDOM.render(JSX, document.getElementById('root'))
+ReactDOM.render(JSX, document.getElementById('root'));
 ```
 
 ## --seed-contents--
@@ -74,9 +74,10 @@ const JSX = (
 
 ```jsx
 const JSX = (
-<div>
-  <h1>This is a block of JSX</h1>
-  { /* this is a JSX comment */ }
-  <p>Here's a subtitle</p>
-</div>);
+  <div>
+    <h1>This is a block of JSX</h1>
+    {/* this is a JSX comment */}
+    <p>Here's a subtitle</p>
+  </div>
+);
 ```
