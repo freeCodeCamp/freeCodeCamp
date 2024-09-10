@@ -201,6 +201,7 @@ export type ChallengeNode = {
     isPrivate: boolean;
     order: number;
     questions: Question[];
+    quizzes: Quiz[];
     assignments: string[];
     required: Required[];
     scene: FullScene;
@@ -222,6 +223,21 @@ export type ChallengeNode = {
     bilibiliIds?: BilibiliIds;
     videoUrl: string;
   };
+};
+
+export type Quiz = {
+  questions: QuizQuestion[];
+};
+
+export type QuizQuestion = {
+  question: string;
+  options: QuizOptions[];
+  solution: number;
+};
+
+export type QuizOptions = {
+  option: string;
+  feedback?: string;
 };
 
 export type CertificateNode = {

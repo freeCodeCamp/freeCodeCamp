@@ -268,6 +268,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
       scene: Scene
+      quizzes: [Quiz]
     }
     type FileContents {
       fileKey: String
@@ -328,6 +329,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       x: Float
       y: Float
       z: Float
+    }
+    type Quiz {
+      questions: [QuizQuestion]
+    }
+    type QuizQuestion {
+      question: String
+      options: [QuizQuestionOption]
+      solution: Int
+    }
+    type QuizQuestionOption {
+      option: String
+      feedback: String
     }
   `;
   createTypes(typeDefs);
