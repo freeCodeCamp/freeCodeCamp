@@ -1,0 +1,11 @@
+{
+  "name": "Build the Quicksort Algorithm",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-quicksort-algorithm",
+  "order": 240,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66d97c3be4030e8f41a92083", "title": "Build the Quicksort Algorithm" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

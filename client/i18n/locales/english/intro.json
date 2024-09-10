@@ -1730,7 +1730,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
       "szcd": { "title": "13", "intro": [] },
@@ -1932,7 +1932,6 @@
       "phko": { "title": "148", "intro": [] },
       "wjzt": { "title": "149", "intro": [] },
       "tsdq": { "title": "150", "intro": [] },
-      "kkix": { "title": "151", "intro": [] },
       "workshop-calculator": {
         "title": "Build a Calculator",
         "intro": [
@@ -1951,7 +1950,12 @@
           "In this lab, you will create different stories by assigning different words to different variables."
         ]
       },
-      "cktz": { "title": "155", "intro": [] },
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": [
+          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+        ]
+      },
       "pljo": { "title": "156", "intro": [] },
       "avln": { "title": "157", "intro": [] },
       "mexq": { "title": "158", "intro": [] },
@@ -1987,11 +1991,16 @@
       "ttrm": { "title": "173", "intro": [] },
       "hjtr": { "title": "174", "intro": [] },
       "ccnu": { "title": "175", "intro": [] },
-      "skiq": { "title": "176", "intro": [] },
-      "epfc": { "title": "177", "intro": [] },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
+      },
+      "epfc": { "title": "177", "intro": [] },
+      "lab-inventory-management-program": {
+        "title": "Build an Inventory Management Program",
+        "intro": [
+          "For this lab, you will build an inventory management program using JavaScript."
+        ]
       },
       "fbbn": { "title": "179", "intro": [] },
       "lnmg": { "title": "180", "intro": [] },
@@ -2058,7 +2067,12 @@
       "yshh": { "title": "237", "intro": [] },
       "wyxz": { "title": "238", "intro": [] },
       "dtfv": { "title": "239", "intro": [] },
-      "miza": { "title": "240", "intro": [] },
+      "lab-quicksort-algorithm": {
+        "title": "Build the Quicksort Algorithm",
+        "intro": [
+          "For this lab, you will implement the Quicksort algorithm using JavaScript."
+        ]
+      },
       "manv": { "title": "241", "intro": [] },
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
@@ -2095,7 +2109,12 @@
       "ybrh": { "title": "271", "intro": [] },
       "vjgg": { "title": "272", "intro": [] },
       "kaui": { "title": "273", "intro": [] },
-      "afhj": { "title": "274", "intro": [] },
+      "lab-nth-fibonacci-number-generator": {
+        "title": "Build the nth Fibonacci number generator",
+        "intro": [
+          "For this lab, you will implement the nth Fibonacci number generator."
+        ]
+      },
       "cfyv": { "title": "275", "intro": [] },
       "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
