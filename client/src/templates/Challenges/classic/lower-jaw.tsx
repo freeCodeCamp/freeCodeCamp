@@ -193,6 +193,7 @@ const LowerJaw = ({
   isSignedIn,
   updateContainer
 }: LowerJawProps): JSX.Element => {
+  const [shownHint, setShownHint] = useState(hint);
   const [quote, setQuote] = useState(randomCompliment());
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
@@ -224,6 +225,7 @@ const LowerJaw = ({
     setShownAttempts(0);
     setRunningTests(false);
     setIsFeedbackHidden(false);
+    setShownHint('');
   }
   useEffect(() => {
     if (attempts > shownAttempts) {
@@ -243,6 +245,12 @@ const LowerJaw = ({
       }, 300);
     }
   }, [attempts, shownAttempts]);
+
+  useEffect(() => {
+    // Since there's no guarantee that hint and attempts update in the same
+    // render, hints have to be updated separately.
+    if (hint) setShownHint(hint);
+  }, [hint]);
 
   useEffect(() => {
     if (challengeIsCompleted) {
@@ -369,12 +377,12 @@ const LowerJaw = ({
             </span>
           </>
         )}
-        {hint && !challengeIsCompleted && (
+        {shownHint && !challengeIsCompleted && (
           <LowerJawTips
             data-testid='lowerJaw-tips'
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
-            htmlDescription={hint ?? ''}
+            htmlDescription={shownHint ?? ''}
             learnEncouragementText={t(sentencePicker(shownAttempts))}
           />
         )}
