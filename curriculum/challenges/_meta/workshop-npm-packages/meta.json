@@ -2,11 +2,52 @@
   "name": "Managing Packages with NPM",
   "blockType": "workshop",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
   "dashedName": "workshop-npm-packages",
   "order": 370,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "587d7fb3367417b2b2512bfb", "title": "How to Use package.json, the Core of Any Node.js Project or npm Package" }],
+  "challengeOrder": [
+    {
+      "id": "587d7fb3367417b2b2512bfb",
+      "title": "Step 1"
+    },
+    {
+      "id": "587d7fb3367417b2b2512bfc",
+      "title": "Step 2"
+    },
+    {
+      "id": "587d7fb4367417b2b2512bfd",
+      "title": "Step 3"
+    },
+    {
+      "id": "587d7fb4367417b2b2512bfe",
+      "title": "Step 4"
+    },
+    {
+      "id": "587d7fb4367417b2b2512bff",
+      "title": "Step 5"
+    },
+    {
+      "id": "587d7fb4367417b2b2512c00",
+      "title": "Step 6"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c01",
+      "title": "Step 7"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c02",
+      "title": "Step 8"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c03",
+      "title": "Step 9"
+    },
+    {
+      "id": "587d7fb5367417b2b2512c04",
+      "title": "Step 10"
+    }
+  ],
   "helpCategory": "Backend Development"
 }
