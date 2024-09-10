@@ -2015,7 +2015,12 @@
       "ctwj": { "title": "195", "intro": [] },
       "fmbk": { "title": "196", "intro": [] },
       "nlbo": { "title": "197", "intro": [] },
-      "bbyq": { "title": "198", "intro": [] },
+      "workshop-rps-game": {
+        "title": "Build a Rock, Paper, Scissors Game",
+        "intro": [
+          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+        ]
+      },
       "uglc": { "title": "199", "intro": [] },
       "vonu": { "title": "200", "intro": [] },
       "iejn": { "title": "201", "intro": [] },
