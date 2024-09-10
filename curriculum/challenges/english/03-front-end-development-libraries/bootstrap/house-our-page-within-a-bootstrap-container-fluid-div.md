@@ -17,23 +17,24 @@ Let's nest your `h3` element within a `div` element with the class `container-fl
 Your `div` element should have the class `container-fluid`.
 
 ```js
-assert($('div').hasClass('container-fluid'));
+assert.isTrue(document.querySelector('div')?.classList?.contains('container-fluid'));
 ```
 
 Each of your `div` elements should have closing tags.
 
 ```js
-assert(
-  code.match(/<\/div>/g) &&
-    code.match(/<div/g) &&
-    code.match(/<\/div>/g).length === code.match(/<div/g).length
-);
+assert.match(code,/<\/div>/g);
+assert.match(code,/<div/g);
+
+assert.equal(code.match(/<\/div>/g).length ,code.match(/<div/g).length);
 ```
 
 Your `h3` element should be nested inside a `div` element.
 
 ```js
-assert($('div').children('h3').length > 0);
+const divElement = document.querySelector('div');
+const divChildren = divElement?.querySelectorAll(`:scope ${'h3'}`)
+assert.lengthOf(divChildren,1);
 ```
 
 # --seed--

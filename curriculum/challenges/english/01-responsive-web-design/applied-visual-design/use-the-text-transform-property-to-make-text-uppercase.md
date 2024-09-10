@@ -24,13 +24,15 @@ Transform the text of the `h4` to be uppercase using the `text-transform` proper
 The `h4` text should be `uppercase`.
 
 ```js
-assert($('h4').css('text-transform') === 'uppercase');
+const h4Element =document.querySelector('h4')
+const h4Style = window.getComputedStyle(h4Element);
+assert.equal(h4Style?.textTransform, 'uppercase');
 ```
 
 The original text of the h4 should not be changed.
 
 ```js
-assert($('h4').text() !== $('h4').text().toUpperCase());
+assert.notEqual(document.querySelector('h4')?.textContent, document.querySelector('h4')?.textContent?.toUpperCase());
 ```
 
 # --seed--

@@ -36,25 +36,6 @@
   z-index: 2;
 }
 
-.code-tag code {
-  font-size: 100%;
-  z-index: 0;
-  position: relative;
-}
-
-.first-code-tag code {
-  border-right: none;
-}
-
-.middle-code-tag code {
-  border-left: none;
-  border-right: none;
-}
-
-.last-code-tag code {
-  border-left: none;
-}
-
 .green-underline {
   border-bottom-color: var(--success-background) !important;
 }
