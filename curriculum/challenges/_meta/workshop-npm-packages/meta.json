@@ -10,43 +10,43 @@
   "challengeOrder": [
     {
       "id": "587d7fb3367417b2b2512bfb",
-      "title": "Step 1"
+      "title": "How to Use package.json, the Core of Any Node.js Project or npm Package"
     },
     {
       "id": "587d7fb3367417b2b2512bfc",
-      "title": "Step 2"
+      "title": "Add a Description to Your package.json"
     },
     {
       "id": "587d7fb4367417b2b2512bfd",
-      "title": "Step 3"
+      "title": "Add Keywords to Your package.json"
     },
     {
       "id": "587d7fb4367417b2b2512bfe",
-      "title": "Step 4"
+      "title": "Add a License to Your package.json"
     },
     {
       "id": "587d7fb4367417b2b2512bff",
-      "title": "Step 5"
+      "title": "Add a Version to Your package.json"
     },
     {
       "id": "587d7fb4367417b2b2512c00",
-      "title": "Step 6"
+      "title": "Expand Your Project with External Packages from npm"
     },
     {
       "id": "587d7fb5367417b2b2512c01",
-      "title": "Step 7"
+      "title": "Manage npm Dependencies By Understanding Semantic Versioning"
     },
     {
       "id": "587d7fb5367417b2b2512c02",
-      "title": "Step 8"
+      "title": "Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency"
     },
     {
       "id": "587d7fb5367417b2b2512c03",
-      "title": "Step 9"
+      "title": "Use the Caret-Character to Use the Latest Minor Version of a Dependency"
     },
     {
       "id": "587d7fb5367417b2b2512c04",
-      "title": "Step 10"
+      "title": "Remove a Package from Your Dependencies"
     }
   ],
   "helpCategory": "Backend Development"
