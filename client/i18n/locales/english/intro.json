@@ -1955,6 +1955,13 @@
           "In this lab, you will create different stories by assigning different words to different variables."
         ]
       },
+      "workshop-loan-qualification-checker": {
+        "title": "Build a Loan Qualification Checker",
+        "intro": [
+          "In this workshop, you will continue to learn how to work with conditionals by building a loan qualification checker app.",
+          "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
+        ]
+      },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
