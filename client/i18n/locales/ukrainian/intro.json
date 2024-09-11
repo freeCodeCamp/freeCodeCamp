@@ -1749,7 +1749,7 @@
       "workshop-blog-page": {
         "title": "Створіть сторінку блогу про котів",
         "intro": [
-          "У цьому практичному завданні ви дізнаєтесь, як створити сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
       "szcd": {
@@ -2008,9 +2008,9 @@
         "intro": []
       },
       "lab-confidential-email-page": {
-        "title": "Build a Confidential Email Page",
+        "title": "Створіть сторінку конфіденційної пошти",
         "intro": [
-          "For this lab, you will create a web page of a confidential email using HTML and CSS."
+          "У цій лабораторній роботі ви створите конфіденційну пошту, використовуючи HTML та CSS."
         ]
       },
       "zter": {
@@ -2052,9 +2052,9 @@
         "intro": []
       },
       "lab-newspaper-article": {
-        "title": "Build a Newspaper Article",
+        "title": "Створіть статтю в газеті",
         "intro": [
-          "In this lab, you will build a newspaper article page using HTML and CSS."
+          "У цій лабораторній роботі ви створите сторінку зі статтею, використовуючи HTML та CSS."
         ]
       },
       "hbme": {
@@ -2156,8 +2156,10 @@
         "intro": []
       },
       "lab-availability-table": {
-        "title": "Build an Availability Table",
-        "intro": ["For this lab, you will create an availability table."]
+        "title": "Створіть таблицю з вільними годинами",
+        "intro": [
+          "У цій лабораторній роботі ви створите таблицю з вільними годинами для запису."
+        ]
       },
       "sget": {
         "title": "111",
@@ -2283,10 +2285,6 @@
         "title": "139",
         "intro": []
       },
-      "uzjg": {
-        "title": "140",
-        "intro": []
-      },
       "hxwa": {
         "title": "141",
         "intro": []
@@ -2295,9 +2293,11 @@
         "title": "142",
         "intro": []
       },
-      "nkxq": {
-        "title": "143",
-        "intro": []
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller",
+        "intro": [
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+        ]
       },
       "wfyg": {
         "title": "144",
@@ -2327,27 +2327,29 @@
         "title": "150",
         "intro": []
       },
-      "kkix": {
-        "title": "151",
-        "intro": []
-      },
       "workshop-calculator": {
-        "title": "Build a Calculator",
+        "title": "Створіть калькулятор",
         "intro": [
-          "In this workshop, you will review working with functions by building a calculator."
+          "У цьому практичному завданні ви пригадаєте, як працювати з функціями, створивши калькулятор."
         ]
       },
-      "hqba": {
-        "title": "153",
-        "intro": []
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it."
+        ]
       },
-      "nnqa": {
-        "title": "154",
-        "intro": []
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you will create different stories by assigning different words to different variables."
+        ]
       },
-      "cktz": {
-        "title": "155",
-        "intro": []
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": [
+          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+        ]
       },
       "pljo": {
         "title": "156",
@@ -2366,10 +2368,10 @@
         "intro": []
       },
       "workshop-shopping-list": {
-        "title": "Build a Shopping List",
+        "title": "Створіть список покупок",
         "intro": [
-          "In this workshop, you will practice working with arrays by building a shopping list.",
-          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+          "У цьому практичному завданні ви попрактикуєтесь працювати з масивами, створивши список покупок.",
+          "Ви пригадаєте, як додавати й видаляти елементи з масиву за допомогою різних методів, серед яких <code>push</code>, <code>pop</code>, <code>shift</code> та <code>unshift</code>."
         ]
       },
       "mokm": {
@@ -2397,8 +2399,10 @@
         "intro": []
       },
       "lab-factorial-calculator": {
-        "title": "Build a Factorial Calculator ",
-        "intro": ["In this lab, you will build a factorial calculator."]
+        "title": "Створіть калькулятор факторіалів ",
+        "intro": [
+          "У цій лабораторній роботі ви створите калькулятор факторіалів."
+        ]
       },
       "lgfm": {
         "title": "168",
@@ -2432,18 +2436,20 @@
         "title": "175",
         "intro": []
       },
-      "skiq": {
-        "title": "176",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Створіть журнал з оцінками",
+        "intro": [
+          "У цій лабораторній роботі ви створите електронний журнал з оцінками."
+        ]
       },
       "epfc": {
         "title": "177",
         "intro": []
       },
-      "lab-gradebook-app": {
-        "title": "Створіть журнал з оцінками",
+      "lab-inventory-management-program": {
+        "title": "Build an Inventory Management Program",
         "intro": [
-          "У цій лабораторній роботі ви створите електронний журнал з оцінками."
+          "For this lab, you will build an inventory management program using JavaScript."
         ]
       },
       "fbbn": {
@@ -2688,9 +2694,11 @@
         "title": "239",
         "intro": []
       },
-      "miza": {
-        "title": "240",
-        "intro": []
+      "lab-quicksort-algorithm": {
+        "title": "Build the Quicksort Algorithm",
+        "intro": [
+          "For this lab, you will implement the Quicksort algorithm using JavaScript."
+        ]
       },
       "manv": {
         "title": "241",
@@ -2725,8 +2733,8 @@
         "intro": []
       },
       "lab-cash-register": {
-        "title": "Build a Cash Register",
-        "intro": ["For this lab, you will build a cash register."]
+        "title": "Створіть касовий апарат",
+        "intro": ["У цій лабораторній роботі ви створите касовий апарат."]
       },
       "xayi": {
         "title": "250",
