@@ -49,7 +49,7 @@ export const defaultDonationFormState = {
 
 const initialState = {
   appUsername: '',
-  showMultipleProgressModals: false,
+  changeDonationLogic: false,
   recentlyClaimedBlock: null,
   completionCountWhenShownProgressModal: 0,
   progressDonationModalShown: false,
@@ -281,9 +281,9 @@ export const reducer = handleActions(
         [MainApp]: state
       })
     }),
-    [actionTypes.setShowMultipleProgressModals]: (state, { payload }) => ({
+    [actionTypes.setChangeDonationLogic]: (state, { payload }) => ({
       ...state,
-      showMultipleProgressModals: payload
+      changeDonationLogic: payload
     }),
     [actionTypes.resetUserData]: state => ({
       ...state,

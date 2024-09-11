@@ -5,49 +5,49 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   isSignedInSelector,
-  showMultipleProgressModalsSelector,
+  changeDonationLogicSelector,
   userIdSelector,
   userFetchStateSelector
 } from '../../redux/selectors';
-import { setShowMultipleProgressModals } from '../../redux/actions';
+import { setChangeDonationLogic } from '../../redux/actions';
 import { UserFetchState } from '../../redux/prop-types';
 import callGA from '../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  showMultipleProgressModalsSelector,
+  changeDonationLogicSelector,
   userIdSelector,
   userFetchStateSelector,
   (
     isSignedIn: boolean,
-    showMultipleProgressModals: boolean,
+    changeDonationLogic: boolean,
     userId: string,
     userFetchState: UserFetchState
   ) => ({
     isSignedIn,
-    showMultipleProgressModals,
+    changeDonationLogic,
     userId,
     userFetchState
   })
 );
 
 type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = { setShowMultipleProgressModals: (arg: boolean) => void };
+type DispatchProps = { setChangeDonationLogic: (arg: boolean) => void };
 
 interface GrowthBookReduxConnector extends StateProps, DispatchProps {
   children: ReactNode;
 }
 
 const mapDispatchToProps = {
-  setShowMultipleProgressModals
+  setChangeDonationLogic
 };
 
 const GrowthBookReduxConnector = ({
   children,
   isSignedIn,
-  showMultipleProgressModals,
+  changeDonationLogic,
   userId,
-  setShowMultipleProgressModals,
+  setChangeDonationLogic,
   userFetchState
 }: GrowthBookReduxConnector) => {
   // Send user id to GA
@@ -68,15 +68,15 @@ const GrowthBookReduxConnector = ({
     if (
       isSignedIn &&
       displayProgressModalMultipleTimes &&
-      !showMultipleProgressModals
+      !changeDonationLogic
     ) {
-      setShowMultipleProgressModals(true);
+      setChangeDonationLogic(true);
     }
   }, [
     isSignedIn,
-    showMultipleProgressModals,
+    changeDonationLogic,
     displayProgressModalMultipleTimes,
-    setShowMultipleProgressModals
+    setChangeDonationLogic
   ]);
   return <>{children}</>;
 };

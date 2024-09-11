@@ -20,8 +20,8 @@ export const preventBlockDonationRequests = createAction(
 export const setCompletionCountWhenShownProgressModal = createAction(
   actionTypes.setCompletionCountWhenShownProgressModal
 );
-export const setShowMultipleProgressModals = createAction(
-  actionTypes.setShowMultipleProgressModals
+export const setChangeDonationLogic = createAction(
+  actionTypes.setChangeDonationLogic
 );
 export const updateDonationFormState = createAction(
   actionTypes.updateDonationFormState

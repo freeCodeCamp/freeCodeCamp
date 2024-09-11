@@ -11,8 +11,8 @@ export const partiallyCompletedChallengesSelector = state =>
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
 export const completionCountSelector = state => state[MainApp].completionCount;
-export const showMultipleProgressModalsSelector = state =>
-  state[MainApp].showMultipleProgressModals;
+export const changeDonationLogicSelector = state =>
+  state[MainApp].changeDonationLogic;
 export const completionCountWhenShownProgressModalSelector = state =>
   state[MainApp].completionCountWhenShownProgressModal;
 export const progressDonationModalShownSelector = state =>

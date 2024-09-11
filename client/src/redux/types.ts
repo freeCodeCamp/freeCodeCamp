@@ -15,7 +15,7 @@ export interface State {
     appUsername: string;
     recentlyClaimedBlock: null | string;
     completionCountWhenShownProgressModal: number | null;
-    showMultipleProgressModals: boolean;
+    changeDonationLogic: boolean;
     completionCount: number;
     currentChallengId: string;
     showCert: Record<string, unknown>;
