@@ -45,6 +45,7 @@ import {
   executeChallenge,
   initConsole,
   initTests,
+  initVisibleEditors,
   previewMounted,
   updateChallengeMeta,
   openModal,
@@ -83,6 +84,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       createFiles,
       initConsole,
       initTests,
+      initVisibleEditors,
       updateChallengeMeta,
       challengeMounted,
       executeChallenge,
@@ -104,6 +106,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
+  initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
@@ -209,6 +212,7 @@ function ShowClassic({
   challengeMounted,
   initConsole,
   initTests,
+  initVisibleEditors,
   updateChallengeMeta,
   openModal,
   setIsAdvancing,
@@ -359,6 +363,9 @@ function ShowClassic({
     );
 
     initTests(tests);
+
+    initVisibleEditors();
+
     // Typically, this kind of preview only appears on the first step of a
     // project and is shown (once) automatically. In contrast, labs are more
     // freeform, so the preview is shown on demand.

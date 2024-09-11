@@ -140,11 +140,11 @@ export const getAssignmentChallengeTemplate = (
 
 ${options.title} description.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 ${options.title} assignment!
+
+# --question--
 
 ## --text--
 
@@ -233,7 +233,7 @@ export const getDialogueChallengeTemplate = (
 
 Watch the video below to understand the context of the upcoming lessons.
 
-## --assignment--
+# --assignment--
 
 Watch the video.
 `;

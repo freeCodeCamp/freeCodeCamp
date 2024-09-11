@@ -1759,7 +1759,7 @@
       "workshop-blog-page": {
         "title": "Crie uma página de blog sobre gatos",
         "intro": [
-          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elemento main, nav, article e footer."
+          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elementos <code>main</code>, <code>nav</code>, <code>article</code> e <code>footer</code>."
         ]
       },
       "szcd": {
@@ -2337,10 +2337,6 @@
         "title": "150",
         "intro": []
       },
-      "kkix": {
-        "title": "151",
-        "intro": []
-      },
       "workshop-calculator": {
         "title": "Crie uma calculadora",
         "intro": [
@@ -2359,9 +2355,11 @@
           "Neste laboratório, você criará histórias diferentes atribuindo palavras diferentes a variáveis diferentes."
         ]
       },
-      "cktz": {
-        "title": "155",
-        "intro": []
+      "lab-leap-year-calculator": {
+        "title": "Crie uma calculadora de ano bissexto ",
+        "intro": [
+          "Neste laboratório, você usará instruções condicionais e laços de repetição para determinar se um ano é bissexto."
+        ]
       },
       "pljo": {
         "title": "156",
@@ -2448,18 +2446,20 @@
         "title": "175",
         "intro": []
       },
-      "skiq": {
-        "title": "176",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Crie uma aplicação de quadro de notas",
+        "intro": [
+          "Neste laboratório, você criará uma aplicação de quadro de notas."
+        ]
       },
       "epfc": {
         "title": "177",
         "intro": []
       },
-      "lab-gradebook-app": {
-        "title": "Crie uma aplicação de quadro de notas",
+      "lab-inventory-management-program": {
+        "title": "Crie um programa de gestão de inventário",
         "intro": [
-          "Neste laboratório, você criará uma aplicação de quadro de notas."
+          "Para este laboratório, você vai criar um programa de gerenciamento de inventário usando JavaScript."
         ]
       },
       "fbbn": {
@@ -2704,9 +2704,11 @@
         "title": "239",
         "intro": []
       },
-      "miza": {
-        "title": "240",
-        "intro": []
+      "lab-quicksort-algorithm": {
+        "title": "Crie o algoritmo de ordenação rápida (quicksort)",
+        "intro": [
+          "Para este laboratório, você vai implementar o algoritmo de Quicksort, ou ordenação rápida, usando JavaScript."
+        ]
       },
       "manv": {
         "title": "241",
