@@ -1782,7 +1782,12 @@
       "zlfj": { "title": "40", "intro": [] },
       "ioqd": { "title": "41", "intro": [] },
       "sdul": { "title": "42", "intro": [] },
-      "pdqp": { "title": "43", "intro": [] },
+      "lab-stylized-to-do-list": {
+        "title": "Build a Stylized To-Do List",
+        "intro": [
+          "In this lab, you'll build a To-Do list with and apply different styles to the links"
+        ]
+      },
       "humj": { "title": "44", "intro": [] },
       "pahx": { "title": "45", "intro": [] },
       "rzdx": { "title": "46", "intro": [] },
@@ -1950,6 +1955,13 @@
           "In this lab, you will create different stories by assigning different words to different variables."
         ]
       },
+      "workshop-loan-qualification-checker": {
+        "title": "Build a Loan Qualification Checker",
+        "intro": [
+          "In this workshop, you will continue to learn how to work with conditionals by building a loan qualification checker app.",
+          "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
+        ]
+      },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
@@ -2012,7 +2024,10 @@
       "arqa": { "title": "192", "intro": [] },
       "ubpx": { "title": "193", "intro": [] },
       "lbyi": { "title": "194", "intro": [] },
-      "ctwj": { "title": "195", "intro": [] },
+      "lab-real-time-counter": {
+        "title": "Build a Real Time Counter",
+        "intro": ["In this lab, you will build a real-time character counter"]
+      },
       "fmbk": { "title": "196", "intro": [] },
       "nlbo": { "title": "197", "intro": [] },
       "workshop-rps-game": {
@@ -2218,7 +2233,10 @@
         "title": "Build an URL Shortener Microservice",
         "intro": ["In this lab, you will build an URL Shortener Microservice"]
       },
-      "bqlb": { "title": "376", "intro": [] },
+      "lab-exercise-tracker": {
+        "title": "Build an Exercise Tracker",
+        "intro": ["In this lab, you will build an exercise tracker"]
+      },
       "kegi": { "title": "377", "intro": [] },
       "nqhi": { "title": "378", "intro": [] },
       "vnfu": { "title": "379", "intro": [] },
