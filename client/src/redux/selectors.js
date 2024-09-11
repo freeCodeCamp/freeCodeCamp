@@ -1,4 +1,5 @@
 import { Certification } from '../../../shared/config/certification-settings';
+import { randomBetween } from '../utils/random-between';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -43,6 +44,7 @@ export const shouldRequestDonationSelector = state => {
   const progressDonationModalShown = progressDonationModalShownSelector(state);
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  const changeDonationLogic = changeDonationLogicSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -65,7 +67,12 @@ export const shouldRequestDonationSelector = state => {
 
   // this will mean we have completed 3 or more challenges this browser session
   // and enough challenges overall to not be new
-  return completionCount >= 3;
+  // the changeDonationLogic flag is used to AB test interval randomness
+  if (changeDonationLogic) {
+    return completionCount >= randomBetween(3, 10);
+  } else {
+    return completionCount >= 3;
+  }
 };
 
 export const userTokenSelector = state => {
