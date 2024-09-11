@@ -60,22 +60,16 @@ const GrowthBookReduxConnector = ({
     }
   }, [userFetchState, userId, isSignedIn]);
 
-  const displayProgressModalMultipleTimes = useFeature(
-    'display_progress_modal_multiple_times'
-  ).on;
+  const showModalsRandomly = useFeature('show-modal-randomly').on;
   useFeature('aa-test');
   useEffect(() => {
-    if (
-      isSignedIn &&
-      displayProgressModalMultipleTimes &&
-      !changeDonationLogic
-    ) {
+    if (isSignedIn && showModalsRandomly && !changeDonationLogic) {
       setChangeDonationLogic(true);
     }
   }, [
     isSignedIn,
     changeDonationLogic,
-    displayProgressModalMultipleTimes,
+    showModalsRandomly,
     setChangeDonationLogic
   ]);
   return <>{children}</>;
