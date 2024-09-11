@@ -1937,19 +1937,10 @@
       "phko": { "title": "148", "intro": [] },
       "wjzt": { "title": "149", "intro": [] },
       "tsdq": { "title": "150", "intro": [] },
-      "kkix": { "title": "151", "intro": [] },
       "workshop-calculator": {
         "title": "Build a Calculator",
         "intro": [
           "In this workshop, you will review working with functions by building a calculator."
-        ]
-      },
-      "hqba": { "title": "153", "intro": [] },
-      "workshop-loan-qualification-checker": {
-        "title": "Build a Loan Qualification Checker",
-        "intro": [
-          "In this workshop, you will continue to learn how to work with conditionals by building a loan qualification checker app.",
-          "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
         ]
       },
       "lab-email-masker": {
@@ -1962,6 +1953,13 @@
         "title": "Build a Sentence Maker",
         "intro": [
           "In this lab, you will create different stories by assigning different words to different variables."
+        ]
+      },
+      "workshop-loan-qualification-checker": {
+        "title": "Build a Loan Qualification Checker",
+        "intro": [
+          "In this workshop, you will continue to learn how to work with conditionals by building a loan qualification checker app.",
+          "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
         ]
       },
       "lab-leap-year-calculator": {
