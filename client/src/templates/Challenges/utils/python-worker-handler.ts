@@ -4,7 +4,6 @@ import pythonWorkerData from '../../../../config/browser-scripts/python-worker.j
 const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
 
 let worker: Worker | null = null;
-let testWorker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;
 type Code = {
   contents: string;
@@ -20,13 +19,6 @@ function getPythonWorker(): Worker {
     worker = new Worker(pythonWorkerSrc);
   }
   return worker;
-}
-
-export function getPythonTestWorker(): Worker {
-  if (!testWorker) {
-    testWorker = new Worker(pythonWorkerSrc);
-  }
-  return testWorker;
 }
 
 type PythonWorkerEvent = {

@@ -1759,7 +1759,7 @@
       "workshop-blog-page": {
         "title": "Crie uma página de blog sobre gatos",
         "intro": [
-          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elemento main, nav, article e footer."
+          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elementos <code>main</code>, <code>nav</code>, <code>article</code> e <code>footer</code>."
         ]
       },
       "szcd": {
@@ -2295,10 +2295,6 @@
         "title": "139",
         "intro": []
       },
-      "uzjg": {
-        "title": "140",
-        "intro": []
-      },
       "hxwa": {
         "title": "141",
         "intro": []
@@ -2307,9 +2303,11 @@
         "title": "142",
         "intro": []
       },
-      "nkxq": {
-        "title": "143",
-        "intro": []
+      "lab-fortune-teller": {
+        "title": "Crie um adivinhador do futuro",
+        "intro": [
+          "Neste laboratório, você criará um adivinhador do futuro selecionando aleatoriamente um futuro possível de uma lista de futuros disponíveis."
+        ]
       },
       "wfyg": {
         "title": "144",
@@ -2339,27 +2337,29 @@
         "title": "150",
         "intro": []
       },
-      "kkix": {
-        "title": "151",
-        "intro": []
-      },
       "workshop-calculator": {
-        "title": "Build a Calculator",
+        "title": "Crie uma calculadora",
         "intro": [
-          "In this workshop, you will review working with functions by building a calculator."
+          "Neste workshop, você vai revisar o trabalho com funções ao criar uma calculadora."
         ]
       },
-      "hqba": {
-        "title": "153",
-        "intro": []
+      "lab-email-masker": {
+        "title": "Crie um mascarador de e-mails",
+        "intro": [
+          "Neste laboratório, você criará um mascarador de e-mails, que vai ocultar um endereço de e-mail selecionado."
+        ]
       },
-      "nnqa": {
-        "title": "154",
-        "intro": []
+      "lab-sentence-maker": {
+        "title": "Crie um construtor de frases",
+        "intro": [
+          "Neste laboratório, você criará histórias diferentes atribuindo palavras diferentes a variáveis diferentes."
+        ]
       },
-      "cktz": {
-        "title": "155",
-        "intro": []
+      "lab-leap-year-calculator": {
+        "title": "Crie uma calculadora de ano bissexto ",
+        "intro": [
+          "Neste laboratório, você usará instruções condicionais e laços de repetição para determinar se um ano é bissexto."
+        ]
       },
       "pljo": {
         "title": "156",
@@ -2409,8 +2409,10 @@
         "intro": []
       },
       "lab-factorial-calculator": {
-        "title": "Build a Factorial Calculator ",
-        "intro": ["In this lab, you will build a factorial calculator."]
+        "title": "Crie uma calculadora de fatorial ",
+        "intro": [
+          "Neste laboratório, você vai construir uma calculadora de fatorial."
+        ]
       },
       "lgfm": {
         "title": "168",
@@ -2444,18 +2446,20 @@
         "title": "175",
         "intro": []
       },
-      "skiq": {
-        "title": "176",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Crie uma aplicação de quadro de notas",
+        "intro": [
+          "Neste laboratório, você criará uma aplicação de quadro de notas."
+        ]
       },
       "epfc": {
         "title": "177",
         "intro": []
       },
-      "lab-gradebook-app": {
-        "title": "Crie uma aplicação de quadro de notas",
+      "lab-inventory-management-program": {
+        "title": "Crie um programa de gestão de inventário",
         "intro": [
-          "Neste laboratório, você criará uma aplicação de quadro de notas."
+          "Para este laboratório, você vai criar um programa de gerenciamento de inventário usando JavaScript."
         ]
       },
       "fbbn": {
@@ -2700,9 +2704,11 @@
         "title": "239",
         "intro": []
       },
-      "miza": {
-        "title": "240",
-        "intro": []
+      "lab-quicksort-algorithm": {
+        "title": "Crie o algoritmo de ordenação rápida (quicksort)",
+        "intro": [
+          "Para este laboratório, você vai implementar o algoritmo de Quicksort, ou ordenação rápida, usando JavaScript."
+        ]
       },
       "manv": {
         "title": "241",
@@ -2737,8 +2743,8 @@
         "intro": []
       },
       "lab-cash-register": {
-        "title": "Build a Cash Register",
-        "intro": ["For this lab, you will build a cash register."]
+        "title": "Crie uma caixa registradora",
+        "intro": ["Para este laboratório, você criará uma caixa registradora."]
       },
       "xayi": {
         "title": "250",
