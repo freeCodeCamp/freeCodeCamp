@@ -12,8 +12,8 @@ export const partiallyCompletedChallengesSelector = state =>
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
 export const completionCountSelector = state => state[MainApp].completionCount;
-export const changeDonationLogicSelector = state =>
-  state[MainApp].changeDonationLogic;
+export const isRandomCompletionThresholdSelector = state =>
+  state[MainApp].isRandomCompletionThreshold;
 export const completionCountWhenShownProgressModalSelector = state =>
   state[MainApp].completionCountWhenShownProgressModal;
 export const progressDonationModalShownSelector = state =>
@@ -44,7 +44,8 @@ export const shouldRequestDonationSelector = state => {
   const progressDonationModalShown = progressDonationModalShownSelector(state);
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const changeDonationLogic = changeDonationLogicSelector(state);
+  const isRandomCompletionThreshold =
+    isRandomCompletionThresholdSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -68,9 +69,9 @@ export const shouldRequestDonationSelector = state => {
   /*
    Show modal if user has completed 10 challanged in total
    and 3 or more in this session.
-   The changeDonationLogic flag is used to AB test interval randomness
+   The isRandomCompletionThreshold flag is used to AB test interval randomness
   */
-  if (changeDonationLogic) {
+  if (isRandomCompletionThreshold) {
     return completionCount >= randomBetween(3, 7);
   } else {
     return completionCount >= 3;

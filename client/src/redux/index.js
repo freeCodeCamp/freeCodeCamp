@@ -49,7 +49,7 @@ export const defaultDonationFormState = {
 
 const initialState = {
   appUsername: '',
-  changeDonationLogic: false,
+  isRandomCompletionThreshold: false,
   recentlyClaimedBlock: null,
   completionCountWhenShownProgressModal: 0,
   progressDonationModalShown: false,
@@ -281,9 +281,9 @@ export const reducer = handleActions(
         [MainApp]: state
       })
     }),
-    [actionTypes.setChangeDonationLogic]: (state, { payload }) => ({
+    [actionTypes.setIsRandomCompletionThreshold]: (state, { payload }) => ({
       ...state,
-      changeDonationLogic: payload
+      isRandomCompletionThreshold: payload
     }),
     [actionTypes.resetUserData]: state => ({
       ...state,

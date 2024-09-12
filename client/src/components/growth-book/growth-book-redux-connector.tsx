@@ -5,49 +5,49 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   isSignedInSelector,
-  changeDonationLogicSelector,
+  isRandomCompletionThresholdSelector,
   userIdSelector,
   userFetchStateSelector
 } from '../../redux/selectors';
-import { setChangeDonationLogic } from '../../redux/actions';
+import { setIsRandomCompletionThreshold } from '../../redux/actions';
 import { UserFetchState } from '../../redux/prop-types';
 import callGA from '../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  changeDonationLogicSelector,
+  isRandomCompletionThresholdSelector,
   userIdSelector,
   userFetchStateSelector,
   (
     isSignedIn: boolean,
-    changeDonationLogic: boolean,
+    isRandomCompletionThreshold: boolean,
     userId: string,
     userFetchState: UserFetchState
   ) => ({
     isSignedIn,
-    changeDonationLogic,
+    isRandomCompletionThreshold,
     userId,
     userFetchState
   })
 );
 
 type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = { setChangeDonationLogic: (arg: boolean) => void };
+type DispatchProps = { setIsRandomCompletionThreshold: (arg: boolean) => void };
 
 interface GrowthBookReduxConnector extends StateProps, DispatchProps {
   children: ReactNode;
 }
 
 const mapDispatchToProps = {
-  setChangeDonationLogic
+  setIsRandomCompletionThreshold
 };
 
 const GrowthBookReduxConnector = ({
   children,
   isSignedIn,
-  changeDonationLogic,
+  isRandomCompletionThreshold,
   userId,
-  setChangeDonationLogic,
+  setIsRandomCompletionThreshold,
   userFetchState
 }: GrowthBookReduxConnector) => {
   // Send user id to GA
@@ -63,14 +63,14 @@ const GrowthBookReduxConnector = ({
   const showModalsRandomly = useFeature('show-modal-randomly').on;
   useFeature('aa-test');
   useEffect(() => {
-    if (isSignedIn && showModalsRandomly && !changeDonationLogic) {
-      setChangeDonationLogic(true);
+    if (isSignedIn && showModalsRandomly && !isRandomCompletionThreshold) {
+      setIsRandomCompletionThreshold(true);
     }
   }, [
     isSignedIn,
-    changeDonationLogic,
+    isRandomCompletionThreshold,
     showModalsRandomly,
-    setChangeDonationLogic
+    setIsRandomCompletionThreshold
   ]);
   return <>{children}</>;
 };
