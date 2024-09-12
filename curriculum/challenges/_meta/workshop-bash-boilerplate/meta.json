@@ -1,0 +1,11 @@
+{
+  "name": "Build a Boilerplate",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-bash-boilerplate",
+  "order": 333,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66e2f354e950f620a9ab165a", "title": "Step 1" }],
+  "helpCategory": "Backend Development"
+}

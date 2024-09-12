@@ -2187,7 +2187,13 @@
       "mfwu": { "title": "330", "intro": [] },
       "dfcd": { "title": "331", "intro": [] },
       "vfje": { "title": "332", "intro": [] },
-      "hkdc": { "title": "333", "intro": [] },
+      "workshop-bash-boilerplate": {
+        "title": "Build a Boilerplate",
+        "intro": [
+          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
+        ]
+      },
       "ovvb": { "title": "334", "intro": [] },
       "thsj": { "title": "335", "intro": [] },
       "cvvu": { "title": "336", "intro": [] },
