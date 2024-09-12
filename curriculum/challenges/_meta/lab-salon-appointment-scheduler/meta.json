@@ -1,6 +1,6 @@
 {
   "name": "Build a Salon Appointment Scheduler",
-  "isUpcomingChange": false,
+  "isUpcomingChange": true,
   "dashedName": "lab-salon-appointment-scheduler",
   "order": 351,
   "helpCategory": "Backend Development",
