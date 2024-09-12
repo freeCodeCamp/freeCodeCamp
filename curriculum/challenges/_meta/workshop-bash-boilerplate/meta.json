@@ -6,6 +6,6 @@
   "dashedName": "workshop-bash-boilerplate",
   "order": 333,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66e2f354e950f620a9ab165a", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "5ea8adfab628f68d805bfc5e", "title": "Build a Boilerplate" }],
   "helpCategory": "Backend Development"
 }
