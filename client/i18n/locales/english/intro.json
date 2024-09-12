@@ -1991,7 +1991,10 @@
       },
       "lgfm": { "title": "168", "intro": [] },
       "kgtw": { "title": "169", "intro": [] },
-      "ljmq": { "title": "170", "intro": [] },
+      "workshop-sentence-analyzer": {
+        "title": "Build a Sentence Analyzer",
+        "intro": ["", ""]
+      },
       "kcci": { "title": "171", "intro": [] },
       "puhe": { "title": "172", "intro": [] },
       "ttrm": { "title": "173", "intro": [] },
