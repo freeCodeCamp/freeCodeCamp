@@ -1,0 +1,12 @@
+{
+  "name": "Basic Node and Express",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-node-and-express",
+  "order": 372,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66e2db8bc7adfa7983cfee86", "title": "Step 1" }],
+  "helpCategory": "Backend Development"
+}
