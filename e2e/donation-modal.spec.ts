@@ -373,7 +373,7 @@ test.describe('Donation modal appearance logic - Donor user', () => {
   });
 });
 
-test.describe('Donation modal appearance logic - Certified user after completing challenges', () => {
+test.describe('Donation modal appearance logic - Certified user - variation B', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test.beforeEach(async ({ context }) => {
@@ -381,7 +381,7 @@ test.describe('Donation modal appearance logic - Certified user after completing
     await addGrowthbookCookie({ context, variation: 'B' });
   });
 
-  test('should pass as soon as the modal is seen after completing challenges', async ({
+  test('should show the modal in the first few challenges', async ({
     page,
     browserName,
     isMobile,
