@@ -16,6 +16,25 @@ function getTypeScriptWorker(): Worker {
   return worker;
 }
 
-export function compileTypeScriptCode(code: Code): void {
-  getTypeScriptWorker().postMessage({ type: 'compile', code });
+export function compileTypeScriptCode(code: Code): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const channel = new MessageChannel();
+
+    channel.port1.onmessage = ({
+      data
+    }: {
+      data: { type: string; value: string };
+    }) => {
+      channel.port1.close();
+      if (data.type === 'compiled') {
+        resolve(data.value);
+      } else {
+        reject('unable to compile code');
+      }
+    };
+
+    getTypeScriptWorker().postMessage({ type: 'compile', code }, [
+      channel.port2
+    ]);
+  });
 }

@@ -102,14 +102,14 @@ async function setupTypeScript(version: string) {
 void setupTypeScript('5');
 
 ctx.onmessage = (e: TSCompileEvent | ListenRequestEvent | CancelEvent) => {
-  const { data } = e;
+  const { data, ports } = e;
   console.log('data:', data);
   if (data.type === 'listen') {
     handleListenRequest();
   } else if (data.type === 'cancel') {
     handleCancelRequest(data);
   } else {
-    handleCompileRequest(data);
+    handleCompileRequest(data, ports[0]);
   }
 };
 
@@ -122,7 +122,7 @@ function handleListenRequest() {
   ignoreRunMessages = false;
 }
 
-function handleCompileRequest(data: TSCompileEvent['data']) {
+function handleCompileRequest(data: TSCompileEvent['data'], port: MessagePort) {
   // if (ignoreRunMessages) return;
   // If we try to update or create an empty file, the environment will become
   // permanently unable to interact with that file. The workaround is to create
@@ -138,7 +138,8 @@ function handleCompileRequest(data: TSCompileEvent['data']) {
   // TODO: If creating the file fresh each time is too slow, we can try checking
   // if the file exists and updating it if it does.
   tsEnv?.createFile('index.ts', code);
-  postMessage({ type: 'reset' });
+  // TODO: do we need this message at all? It's terminal stuff, right?
+  // postMessage({ type: 'reset' });
 
   const semanticDiagnostics =
     tsEnv?.languageService.getSemanticDiagnostics('index.ts');
@@ -202,4 +203,9 @@ function handleCompileRequest(data: TSCompileEvent['data']) {
 
   console.log('otherDiagnostics:');
   console.log(otherDiagnostics);
+
+  const emitOutput = tsEnv!.languageService.getEmitOutput('index.ts');
+  const compiled = emitOutput.outputFiles[0].text;
+
+  port.postMessage({ type: 'compiled', value: compiled });
 }
