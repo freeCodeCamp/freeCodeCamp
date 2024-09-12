@@ -2194,7 +2194,9 @@
       "ohnc": { "title": "337", "intro": [] },
       "lab-celestial-bodies-database": {
         "title": "Build a Celestial Bodies Databse",
-        "intro": ["In this lab, you will build a celestial bodies databse"]
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
       },
       "oxxf": { "title": "339", "intro": [] },
       "ynqt": { "title": "340", "intro": [] },
