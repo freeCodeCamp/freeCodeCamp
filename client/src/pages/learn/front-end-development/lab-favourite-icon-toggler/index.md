@@ -6,4 +6,4 @@ superBlock: front-end-development
 
 ## Introduction to the Build a Favourite Icon Toggler
 
-This is a test for the new project-based curriculum.
+In this lab, you will build a favourite icon toggler by utilizing JavaScript click events.

@@ -2023,7 +2023,9 @@
       "fhxc": { "title": "191", "intro": [] },
       "lab-favourite-icon-toggler": {
         "title": "Build a Favourite Icon Toggler",
-        "intro": ["", ""]
+        "intro": [
+          "In this lab, you will build a favourite icon toggler by utilizing JavaScript click events."
+        ]
       },
       "arqa": { "title": "192", "intro": [] },
       "ubpx": { "title": "193", "intro": [] },
