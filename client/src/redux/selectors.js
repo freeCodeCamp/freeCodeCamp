@@ -65,11 +65,13 @@ export const shouldRequestDonationSelector = state => {
   // not before the 11th challenge has mounted)
   if (completedChallengesLength < 10) return false;
 
-  // this will mean we have completed 3 or more challenges this browser session
-  // and enough challenges overall to not be new
-  // the changeDonationLogic flag is used to AB test interval randomness
+  /*
+   Show modal if user has completed 10 challanged in total
+   and 3 or more in this session.
+   The changeDonationLogic flag is used to AB test interval randomness
+  */
   if (changeDonationLogic) {
-    return completionCount >= randomBetween(3, 10);
+    return completionCount >= randomBetween(3, 7);
   } else {
     return completionCount >= 3;
   }
