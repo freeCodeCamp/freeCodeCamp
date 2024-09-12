@@ -1,5 +1,6 @@
 {
   "name": "Build a Boilerplate",
+  "blockType": "workshop",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
