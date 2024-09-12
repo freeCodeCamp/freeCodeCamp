@@ -17,23 +17,22 @@ Nest one `div` element with the class `well` within each of your `col-xs-6` `div
 You should add a `div` element with the class `well` inside each of your `div` elements with the class `col-xs-6`
 
 ```js
-assert($('div.col-xs-6').not(':has(>div.well)').length < 1);
+const wells = document.querySelectorAll('div.col-xs-6 > div.well');
+assert.lengthOf( wells,2 ); 
 ```
 
 Both of your `div` elements with the class `col-xs-6` should be nested within your `div` element with the class `row`.
 
 ```js
-assert($('div.row > div.col-xs-6').length > 1);
+assert.lengthOf(document.querySelectorAll('div.row > div.col-xs-6'),2);
 ```
 
 All your `div` elements should have closing tags.
 
 ```js
-assert(
-  code.match(/<\/div>/g) &&
-    code.match(/<div/g) &&
-    code.match(/<\/div>/g).length === code.match(/<div/g).length
-);
+assert.match(code,/<\/div>/g);
+assert.match(code,/<div/g);
+assert.equal(code.match(/<\/div>/g)?.length , code.match(/<div/g)?.length);
 ```
 
 # --seed--

@@ -1699,11 +1699,11 @@
     "title": "Desenvolvimento de front-end",
     "intro": ["placeholder"],
     "blocks": {
-      "0": {
+      "efpl": {
         "title": "0",
         "intro": []
       },
-      "1": {
+      "xpmy": {
         "title": "1",
         "intro": []
       },
@@ -1715,1206 +1715,1601 @@
         ]
       },
       "lab-recipe-page": {
-        "title": "Build a Recipe Page",
+        "title": "Crie uma página de receitas",
         "intro": [
           "Neste laboratório, você criará uma página da web com sua receita favorita."
         ]
       },
-      "4": {
+      "gwyd": {
         "title": "4",
         "intro": []
       },
       "lab-travel-agency-page": {
-        "title": "Build a Travel Agency Page",
+        "title": "Crie uma página de agência de viagens",
         "intro": [
-          "For this lab, you will create a web page of a travel agency."
+          "Neste laboratório, você criará uma página da web de uma agência de viagens."
         ]
       },
-      "6": {
+      "vipr": {
         "title": "6",
         "intro": []
       },
       "lab-video-compilation-page": {
-        "title": "Build a Video Compilation Page",
-        "intro": ["For this lab, you will create a video compilation web page."]
+        "title": "Crie uma página de compilação de vídeos",
+        "intro": [
+          "Neste laboratório, você criará uma página web de compilação de vídeos."
+        ]
       },
-      "8": {
+      "bzfv": {
         "title": "8",
         "intro": []
       },
-      "9": {
+      "snuv": {
         "title": "9",
         "intro": []
       },
-      "10": {
+      "uowk": {
         "title": "10",
         "intro": []
       },
-      "11": {
+      "evdc": {
         "title": "11",
         "intro": []
       },
       "workshop-blog-page": {
         "title": "Crie uma página de blog sobre gatos",
         "intro": [
-          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elemento main, nav, article e footer."
+          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elementos <code>main</code>, <code>nav</code>, <code>article</code> e <code>footer</code>."
         ]
       },
-      "13": {
+      "szcd": {
         "title": "13",
         "intro": []
       },
-      "14": {
+      "ijdq": {
         "title": "14",
         "intro": []
       },
-      "15": {
+      "pwwg": {
         "title": "15",
         "intro": []
       },
-      "16": {
+      "cfgp": {
         "title": "16",
         "intro": []
       },
-      "17": {
-        "title": "17",
-        "intro": []
+      "workshop-hotel-feedback-form": {
+        "title": "Crie um formulário de feedback de hotéis",
+        "intro": [
+          "Neste workshop, você aprenderá a trabalhar com formulários criando um formulário de feedback de hotéis.",
+          "Você aprenderá a trabalhar com os elementos label, input, fieldset, legend, textarea e button."
+        ]
       },
-      "18": {
-        "title": "18",
-        "intro": []
+      "lab-survey-form": {
+        "title": "Crie um formulário de pesquisa",
+        "intro": ["Neste laboratório, você criará um formulário de pesquisa."]
       },
-      "19": {
+      "wgot": {
         "title": "19",
         "intro": []
       },
       "workshop-final-exams-table": {
-        "title": "Build a Final Exams Table",
+        "title": "Crie uma tabela dos exames finais",
         "intro": [
-          "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
+          "Neste workshop, você aprenderá a trabalhar com tabelas em HTML criando uma tabela de exames finais."
         ]
       },
-      "21": {
+      "xdvu": {
         "title": "21",
         "intro": []
       },
-      "22": {
+      "rsve": {
         "title": "22",
         "intro": []
       },
-      "23": {
+      "xzam": {
         "title": "23",
         "intro": []
       },
-      "24": {
+      "isho": {
         "title": "24",
         "intro": []
       },
-      "25": {
+      "ghoc": {
         "title": "25",
         "intro": []
       },
-      "26": {
+      "cikh": {
         "title": "26",
         "intro": []
       },
-      "27": {
+      "fqai": {
         "title": "27",
         "intro": []
       },
-      "28": {
+      "cayd": {
         "title": "28",
         "intro": []
       },
-      "29": {
+      "pspj": {
         "title": "29",
         "intro": []
       },
-      "30": {
+      "qpra": {
         "title": "30",
         "intro": []
       },
-      "31": {
+      "joim": {
         "title": "31",
         "intro": []
       },
-      "32": {
+      "gvtb": {
         "title": "32",
         "intro": []
       },
-      "33": {
+      "cqhu": {
         "title": "33",
         "intro": []
       },
-      "34": {
+      "tmdc": {
         "title": "34",
         "intro": []
       },
-      "35": {
+      "hqia": {
         "title": "35",
         "intro": []
       },
-      "36": {
+      "dxpc": {
         "title": "36",
         "intro": []
       },
-      "37": {
+      "liti": {
         "title": "37",
         "intro": []
       },
-      "38": {
-        "title": "38",
-        "intro": []
+      "lab-business-card": {
+        "title": "Crie um cartão de visita",
+        "intro": [
+          "Neste laboratório, você vai criar um cartão de visita e estilizá-lo usando CSS."
+        ]
       },
-      "39": {
+      "gnuk": {
         "title": "39",
         "intro": []
       },
-      "40": {
+      "zlfj": {
         "title": "40",
         "intro": []
       },
-      "41": {
+      "ioqd": {
         "title": "41",
         "intro": []
       },
-      "42": {
+      "sdul": {
         "title": "42",
         "intro": []
       },
-      "43": {
-        "title": "43",
-        "intro": []
+      "lab-stylized-to-do-list": {
+        "title": "Build a Stylized To-Do List",
+        "intro": [
+          "In this lab, you'll build a To-Do list with and apply different styles to the links"
+        ]
       },
-      "44": {
+      "humj": {
         "title": "44",
         "intro": []
       },
-      "45": {
+      "pahx": {
         "title": "45",
         "intro": []
       },
-      "46": {
+      "rzdx": {
         "title": "46",
         "intro": []
       },
-      "47": {
+      "sgpy": {
         "title": "47",
         "intro": []
       },
-      "48": {
+      "ljmt": {
         "title": "48",
         "intro": []
       },
-      "49": {
+      "lxpk": {
         "title": "49",
         "intro": []
       },
-      "50": {
+      "lzqy": {
         "title": "50",
         "intro": []
       },
-      "51": {
+      "gvel": {
         "title": "51",
         "intro": []
       },
-      "52": {
+      "hgxz": {
         "title": "52",
         "intro": []
       },
-      "53": {
+      "bgrw": {
         "title": "53",
         "intro": []
       },
-      "54": {
+      "sbnz": {
         "title": "54",
         "intro": []
       },
-      "55": {
+      "chca": {
         "title": "55",
         "intro": []
       },
-      "56": {
+      "ywfm": {
         "title": "56",
         "intro": []
       },
-      "57": {
+      "yspe": {
         "title": "57",
         "intro": []
       },
-      "58": {
+      "ohhu": {
         "title": "58",
         "intro": []
       },
-      "59": {
+      "syga": {
         "title": "59",
         "intro": []
       },
-      "60": {
+      "sdym": {
         "title": "60",
         "intro": []
       },
-      "61": {
+      "ivpx": {
         "title": "61",
         "intro": []
       },
-      "62": {
+      "xnph": {
         "title": "62",
         "intro": []
       },
-      "63": {
+      "fvcj": {
         "title": "63",
         "intro": []
       },
-      "64": {
+      "ogdb": {
         "title": "64",
         "intro": []
       },
-      "65": {
+      "zxiy": {
         "title": "65",
         "intro": []
       },
-      "66": {
+      "qpze": {
         "title": "66",
         "intro": []
       },
-      "67": {
+      "uqiy": {
         "title": "67",
         "intro": []
       },
-      "68": {
+      "jnqt": {
         "title": "68",
         "intro": []
       },
-      "69": {
+      "vkei": {
         "title": "69",
         "intro": []
       },
-      "70": {
+      "jows": {
         "title": "70",
         "intro": []
       },
-      "71": {
+      "ipmw": {
         "title": "71",
         "intro": []
       },
-      "72": {
+      "nxbr": {
         "title": "72",
         "intro": []
       },
-      "73": {
+      "qzcx": {
         "title": "73",
         "intro": []
       },
-      "74": {
+      "wozq": {
         "title": "74",
         "intro": []
       },
-      "75": {
-        "title": "75",
-        "intro": []
+      "lab-confidential-email-page": {
+        "title": "Crie uma página de e-mail confidencial",
+        "intro": [
+          "Para este laboratório, você criará uma página da web de um e-mail confidencial usando HTML e CSS."
+        ]
       },
-      "76": {
+      "zter": {
         "title": "76",
         "intro": []
       },
-      "77": {
+      "rfiq": {
         "title": "77",
         "intro": []
       },
-      "78": {
+      "tcwi": {
         "title": "78",
         "intro": []
       },
-      "79": {
+      "uptf": {
         "title": "79",
         "intro": []
       },
-      "80": {
-        "title": "80",
-        "intro": []
+      "lab-page-of-playing-cards": {
+        "title": "Construa uma página de jogos de cartas",
+        "intro": [
+          "Para este laboratório, você usará o Flexbox para criar uma página da web de jogos de cartas."
+        ]
       },
-      "81": {
+      "kqao": {
         "title": "81",
         "intro": []
       },
-      "82": {
+      "habq": {
         "title": "82",
         "intro": []
       },
-      "83": {
+      "vqut": {
         "title": "83",
         "intro": []
       },
-      "84": {
+      "ujcf": {
         "title": "84",
         "intro": []
       },
-      "85": {
-        "title": "85",
-        "intro": []
+      "lab-newspaper-article": {
+        "title": "Crie um artigo de jornal",
+        "intro": [
+          "Neste laboratório, você criará uma página de artigo de jornal usando HTML e CSS."
+        ]
       },
-      "86": {
+      "hbme": {
         "title": "86",
         "intro": []
       },
-      "87": {
+      "ioby": {
         "title": "87",
         "intro": []
       },
-      "88": {
+      "dyvj": {
         "title": "88",
         "intro": []
       },
-      "89": {
+      "rjsv": {
         "title": "89",
         "intro": []
       },
-      "90": {
+      "txmt": {
         "title": "90",
         "intro": []
       },
-      "91": {
+      "fnde": {
         "title": "91",
         "intro": []
       },
-      "92": {
+      "gxjm": {
         "title": "92",
         "intro": []
       },
-      "93": {
+      "swpl": {
         "title": "93",
         "intro": []
       },
-      "94": {
+      "hcje": {
         "title": "94",
         "intro": []
       },
       "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
-        "intro": ["For this lab, you will create a book inventory app."]
+        "title": "Crie uma aplicação de inventário de livros",
+        "intro": [
+          "Neste laboratório, você criará uma aplicação de inventário de livros."
+        ]
       },
-      "96": {
+      "huyd": {
         "title": "96",
         "intro": []
       },
-      "97": {
+      "kbwy": {
         "title": "97",
         "intro": []
       },
-      "98": {
+      "rxzk": {
         "title": "98",
         "intro": []
       },
-      "99": {
+      "xobh": {
         "title": "99",
         "intro": []
       },
-      "100": {
+      "pgyf": {
         "title": "100",
         "intro": []
       },
-      "101": {
+      "rrtt": {
         "title": "101",
         "intro": []
       },
-      "102": {
+      "rbnd": {
         "title": "102",
         "intro": []
       },
-      "103": {
+      "xebj": {
         "title": "103",
         "intro": []
       },
-      "104": {
+      "jkdt": {
         "title": "104",
         "intro": []
       },
-      "105": {
+      "cbbz": {
         "title": "105",
         "intro": []
       },
-      "106": {
+      "xcti": {
         "title": "106",
         "intro": []
       },
-      "107": {
+      "scec": {
         "title": "107",
         "intro": []
       },
-      "108": {
+      "mtbl": {
         "title": "108",
         "intro": []
       },
-      "109": {
+      "vlov": {
         "title": "109",
         "intro": []
       },
-      "110": {
-        "title": "110",
-        "intro": []
+      "lab-availability-table": {
+        "title": "Crie uma tabela de disponibilidade",
+        "intro": [
+          "Neste laboratório, você criará uma tabela de disponibilidade."
+        ]
       },
-      "111": {
+      "sget": {
         "title": "111",
         "intro": []
       },
-      "112": {
+      "huge": {
         "title": "112",
         "intro": []
       },
-      "113": {
+      "agbl": {
         "title": "113",
         "intro": []
       },
-      "114": {
+      "ogko": {
         "title": "114",
         "intro": []
       },
-      "115": {
+      "harp": {
         "title": "115",
         "intro": []
       },
-      "116": {
+      "nsiq": {
         "title": "116",
         "intro": []
       },
-      "117": {
+      "geuv": {
         "title": "117",
         "intro": []
       },
-      "118": {
+      "fdam": {
         "title": "118",
         "intro": []
       },
-      "119": {
+      "yqma": {
         "title": "119",
         "intro": []
       },
-      "120": {
+      "dorc": {
         "title": "120",
         "intro": []
       },
-      "121": {
+      "adzu": {
         "title": "121",
         "intro": []
       },
-      "122": {
-        "title": "122",
-        "intro": []
+      "lab-moon-orbit": {
+        "title": "Crie uma órbita lunar",
+        "intro": [
+          "Para esse laboratório, você criará uma animação da lua orbitando a Terra."
+        ]
       },
-      "123": {
+      "lugl": {
         "title": "123",
         "intro": []
       },
-      "124": {
+      "mtcg": {
         "title": "124",
         "intro": []
       },
-      "125": {
+      "lvqc": {
         "title": "125",
         "intro": []
       },
-      "126": {
+      "oxbd": {
         "title": "126",
         "intro": []
       },
-      "127": {
+      "wvjx": {
         "title": "127",
         "intro": []
       },
-      "128": {
+      "uquz": {
         "title": "128",
         "intro": []
       },
-      "129": {
+      "kdgd": {
         "title": "129",
         "intro": []
       },
-      "130": {
+      "wryp": {
         "title": "130",
         "intro": []
       },
       "workshop-greeting-bot": {
-        "title": "Build a Greeting Bot",
+        "title": "Crie um bot de saudações",
         "intro": [
-          "For this workshop, you will learn how to work with JavaScript fundamentals by building a greeting bot.",
-          "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
+          "Neste workshop, você aprenderá a trabalhar com os fundamentos de JavaScript criando um bot de saudações.",
+          "Você aprenderá sobre as variáveis, <code>let</code>, <code>const</code>, <code>console.log</code> e sobre o uso básico de strings."
         ]
       },
-      "132": {
+      "zmzg": {
         "title": "132",
         "intro": []
       },
-      "133": {
+      "dthi": {
         "title": "133",
         "intro": []
       },
-      "134": {
+      "yskn": {
         "title": "134",
         "intro": []
       },
-      "135": {
+      "tpni": {
         "title": "135",
         "intro": []
       },
-      "136": {
+      "hoec": {
         "title": "136",
         "intro": []
       },
-      "137": {
-        "title": "137",
-        "intro": []
+      "workshop-teacher-chatbot": {
+        "title": "Crie um chatbot professor",
+        "intro": [
+          "Neste workshop, você continuará a aprender mais sobre strings em JavaScript criando um chatbot.",
+          "Você aprenderá a trabalhar com template literals e com o método <code>indexOf</code>."
+        ]
       },
-      "138": {
+      "axgb": {
         "title": "138",
         "intro": []
       },
-      "139": {
+      "rwac": {
         "title": "139",
         "intro": []
       },
-      "140": {
-        "title": "140",
-        "intro": []
-      },
-      "141": {
+      "hxwa": {
         "title": "141",
         "intro": []
       },
-      "142": {
+      "xkbo": {
         "title": "142",
         "intro": []
       },
-      "143": {
-        "title": "143",
-        "intro": []
+      "lab-fortune-teller": {
+        "title": "Crie um adivinhador do futuro",
+        "intro": [
+          "Neste laboratório, você criará um adivinhador do futuro selecionando aleatoriamente um futuro possível de uma lista de futuros disponíveis."
+        ]
       },
-      "144": {
+      "wfyg": {
         "title": "144",
         "intro": []
       },
-      "145": {
+      "guqy": {
         "title": "145",
         "intro": []
       },
-      "146": {
+      "nkge": {
         "title": "146",
         "intro": []
       },
-      "147": {
+      "hafd": {
         "title": "147",
         "intro": []
       },
-      "148": {
+      "phko": {
         "title": "148",
         "intro": []
       },
-      "149": {
+      "wjzt": {
         "title": "149",
         "intro": []
       },
-      "150": {
+      "tsdq": {
         "title": "150",
         "intro": []
       },
-      "151": {
-        "title": "151",
-        "intro": []
+      "workshop-calculator": {
+        "title": "Crie uma calculadora",
+        "intro": [
+          "Neste workshop, você vai revisar o trabalho com funções ao criar uma calculadora."
+        ]
       },
-      "152": {
-        "title": "152",
-        "intro": []
+      "lab-email-masker": {
+        "title": "Crie um mascarador de e-mails",
+        "intro": [
+          "Neste laboratório, você criará um mascarador de e-mails, que vai ocultar um endereço de e-mail selecionado."
+        ]
       },
-      "153": {
-        "title": "153",
-        "intro": []
+      "lab-sentence-maker": {
+        "title": "Crie um construtor de frases",
+        "intro": [
+          "Neste laboratório, você criará histórias diferentes atribuindo palavras diferentes a variáveis diferentes."
+        ]
       },
-      "154": {
-        "title": "154",
-        "intro": []
+      "lab-leap-year-calculator": {
+        "title": "Crie uma calculadora de ano bissexto ",
+        "intro": [
+          "Neste laboratório, você usará instruções condicionais e laços de repetição para determinar se um ano é bissexto."
+        ]
       },
-      "155": {
-        "title": "155",
-        "intro": []
-      },
-      "156": {
+      "pljo": {
         "title": "156",
         "intro": []
       },
-      "157": {
+      "avln": {
         "title": "157",
         "intro": []
       },
-      "158": {
+      "mexq": {
         "title": "158",
         "intro": []
       },
-      "159": {
+      "ifgn": {
         "title": "159",
         "intro": []
       },
-      "160": {
-        "title": "160",
-        "intro": []
+      "workshop-shopping-list": {
+        "title": "Crie uma lista de compras",
+        "intro": [
+          "Neste workshop, você vai praticar o uso de arrays criando uma lista de compras.",
+          "Você lembrará de como adicionar e remover elementos de um array usando métodos como <code>push</code>, <code>pop</code>, <code>shift</code> e <code>unshift</code>."
+        ]
       },
-      "161": {
+      "mokm": {
         "title": "161",
         "intro": []
       },
-      "162": {
+      "froz": {
         "title": "162",
         "intro": []
       },
-      "163": {
+      "ozth": {
         "title": "163",
         "intro": []
       },
-      "164": {
+      "dvnt": {
         "title": "164",
         "intro": []
       },
-      "165": {
+      "ekdb": {
         "title": "165",
         "intro": []
       },
-      "166": {
+      "ezek": {
         "title": "166",
         "intro": []
       },
-      "167": {
-        "title": "167",
-        "intro": []
+      "lab-factorial-calculator": {
+        "title": "Crie uma calculadora de fatorial ",
+        "intro": [
+          "Neste laboratório, você vai construir uma calculadora de fatorial."
+        ]
       },
-      "168": {
+      "lgfm": {
         "title": "168",
         "intro": []
       },
-      "169": {
+      "kgtw": {
         "title": "169",
         "intro": []
       },
-      "170": {
+      "ljmq": {
         "title": "170",
         "intro": []
       },
-      "171": {
+      "kcci": {
         "title": "171",
         "intro": []
       },
-      "172": {
+      "puhe": {
         "title": "172",
         "intro": []
       },
-      "173": {
+      "ttrm": {
         "title": "173",
         "intro": []
       },
-      "174": {
+      "hjtr": {
         "title": "174",
         "intro": []
       },
-      "175": {
+      "ccnu": {
         "title": "175",
         "intro": []
       },
-      "176": {
-        "title": "176",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Crie uma aplicação de quadro de notas",
+        "intro": [
+          "Neste laboratório, você criará uma aplicação de quadro de notas."
+        ]
       },
-      "177": {
+      "epfc": {
         "title": "177",
         "intro": []
       },
-      "178": {
-        "title": "178",
-        "intro": []
+      "lab-inventory-management-program": {
+        "title": "Crie um programa de gestão de inventário",
+        "intro": [
+          "Para este laboratório, você vai criar um programa de gerenciamento de inventário usando JavaScript."
+        ]
       },
-      "179": {
+      "fbbn": {
         "title": "179",
         "intro": []
       },
-      "180": {
+      "lnmg": {
         "title": "180",
         "intro": []
       },
-      "181": {
+      "wead": {
         "title": "181",
         "intro": []
       },
-      "182": {
+      "eekl": {
         "title": "182",
         "intro": []
       },
-      "183": {
+      "plic": {
         "title": "183",
         "intro": []
       },
-      "184": {
+      "vjmm": {
         "title": "184",
         "intro": []
       },
-      "185": {
+      "bxtv": {
         "title": "185",
         "intro": []
       },
-      "186": {
+      "xiqk": {
         "title": "186",
         "intro": []
       },
-      "187": {
+      "quyu": {
         "title": "187",
         "intro": []
       },
-      "188": {
+      "esfh": {
         "title": "188",
         "intro": []
       },
-      "189": {
+      "gibb": {
         "title": "189",
         "intro": []
       },
-      "190": {
+      "whrm": {
         "title": "190",
         "intro": []
       },
-      "191": {
+      "fhxc": {
         "title": "191",
         "intro": []
       },
-      "192": {
+      "arqa": {
         "title": "192",
         "intro": []
       },
-      "193": {
+      "ubpx": {
         "title": "193",
         "intro": []
       },
-      "194": {
+      "lbyi": {
         "title": "194",
         "intro": []
       },
-      "195": {
-        "title": "195",
-        "intro": []
+      "lab-real-time-counter": {
+        "title": "Build a Real Time Counter",
+        "intro": ["In this lab, you will build a real-time character counter"]
       },
-      "196": {
+      "fmbk": {
         "title": "196",
         "intro": []
       },
-      "197": {
+      "nlbo": {
         "title": "197",
         "intro": []
       },
-      "198": {
-        "title": "198",
-        "intro": []
+      "workshop-rps-game": {
+        "title": "Build a Rock, Paper, Scissors Game",
+        "intro": [
+          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+        ]
       },
-      "199": {
+      "uglc": {
         "title": "199",
         "intro": []
       },
-      "200": {
+      "vonu": {
         "title": "200",
         "intro": []
       },
-      "201": {
+      "iejn": {
         "title": "201",
         "intro": []
       },
-      "202": {
+      "arrr": {
         "title": "202",
         "intro": []
       },
-      "203": {
+      "kaqq": {
         "title": "203",
         "intro": []
       },
-      "204": {
+      "ksfc": {
         "title": "204",
         "intro": []
       },
-      "205": {
+      "xeqa": {
         "title": "205",
         "intro": []
       },
-      "206": {
-        "title": "206",
-        "intro": []
+      "lab-random-background-color-changer": {
+        "title": "Faça a depuração do modificador de cor de fundo aleatório",
+        "intro": [
+          "Para esse laboratório, você fará a depuração de um alterador de cor de fundo aleatório e corrigirá os erros para fazê-lo funcionar corretamente."
+        ]
       },
-      "207": {
+      "dqth": {
         "title": "207",
         "intro": []
       },
-      "208": {
+      "ilop": {
         "title": "208",
         "intro": []
       },
-      "209": {
+      "qrer": {
         "title": "209",
         "intro": []
       },
-      "210": {
+      "unyy": {
         "title": "210",
         "intro": []
       },
-      "211": {
+      "svsl": {
         "title": "211",
         "intro": []
       },
-      "212": {
+      "wnmj": {
         "title": "212",
         "intro": []
       },
-      "213": {
+      "zalp": {
         "title": "213",
         "intro": []
       },
-      "214": {
+      "hhvp": {
         "title": "214",
         "intro": []
       },
-      "215": {
+      "egkv": {
         "title": "215",
         "intro": []
       },
-      "216": {
+      "qlvw": {
         "title": "216",
         "intro": []
       },
-      "217": {
+      "cyrl": {
         "title": "217",
         "intro": []
       },
-      "218": {
+      "lupt": {
         "title": "218",
         "intro": []
       },
-      "219": {
+      "yvqn": {
         "title": "219",
         "intro": []
       },
-      "220": {
+      "xtfk": {
         "title": "220",
         "intro": []
       },
-      "221": {
+      "xnpr": {
         "title": "221",
         "intro": []
       },
-      "222": {
+      "lvts": {
         "title": "222",
         "intro": []
       },
-      "223": {
+      "foal": {
         "title": "223",
         "intro": []
       },
-      "224": {
+      "crzf": {
         "title": "224",
         "intro": []
       },
-      "225": {
+      "xofr": {
         "title": "225",
         "intro": []
       },
-      "226": {
+      "bsmn": {
         "title": "226",
         "intro": []
       },
-      "227": {
+      "pehm": {
         "title": "227",
         "intro": []
       },
-      "228": {
+      "cvsw": {
         "title": "228",
         "intro": []
       },
-      "229": {
+      "qjws": {
         "title": "229",
         "intro": []
       },
-      "230": {
+      "fgbp": {
         "title": "230",
         "intro": []
       },
-      "231": {
-        "title": "231",
-        "intro": []
-      },
-      "232": {
+      "jbst": {
         "title": "232",
         "intro": []
       },
-      "233": {
+      "peyf": {
         "title": "233",
         "intro": []
       },
-      "234": {
+      "bdqj": {
         "title": "234",
         "intro": []
       },
-      "235": {
+      "ndlf": {
         "title": "235",
         "intro": []
       },
-      "236": {
+      "cpmq": {
         "title": "236",
         "intro": []
       },
-      "237": {
+      "yshh": {
         "title": "237",
         "intro": []
       },
-      "238": {
+      "wyxz": {
         "title": "238",
         "intro": []
       },
-      "239": {
+      "dtfv": {
         "title": "239",
         "intro": []
       },
-      "240": {
-        "title": "240",
-        "intro": []
+      "lab-quicksort-algorithm": {
+        "title": "Crie o algoritmo de ordenação rápida (quicksort)",
+        "intro": [
+          "Para este laboratório, você vai implementar o algoritmo de Quicksort, ou ordenação rápida, usando JavaScript."
+        ]
       },
-      "241": {
+      "manv": {
         "title": "241",
         "intro": []
       },
-      "242": {
+      "bnvw": {
         "title": "242",
         "intro": []
       },
-      "243": {
+      "xkhk": {
         "title": "243",
         "intro": []
       },
-      "244": {
+      "yaxm": {
         "title": "244",
         "intro": []
       },
-      "245": {
+      "bfzo": {
         "title": "245",
         "intro": []
       },
-      "246": {
+      "lofk": {
         "title": "246",
         "intro": []
       },
-      "247": {
+      "udia": {
         "title": "247",
         "intro": []
       },
-      "248": {
+      "wevl": {
         "title": "248",
         "intro": []
       },
-      "249": {
-        "title": "249",
-        "intro": []
+      "lab-cash-register": {
+        "title": "Crie uma caixa registradora",
+        "intro": ["Para este laboratório, você criará uma caixa registradora."]
       },
-      "250": {
+      "xayi": {
         "title": "250",
         "intro": []
       },
-      "251": {
+      "mjbe": {
         "title": "251",
         "intro": []
       },
-      "252": {
+      "byqx": {
         "title": "252",
         "intro": []
       },
-      "253": {
+      "alda": {
         "title": "253",
         "intro": []
       },
-      "254": {
+      "lkyc": {
         "title": "254",
         "intro": []
       },
-      "255": {
+      "cvaf": {
         "title": "255",
         "intro": []
       },
-      "256": {
+      "tdgy": {
         "title": "256",
         "intro": []
       },
-      "257": {
+      "saxu": {
         "title": "257",
         "intro": []
       },
-      "258": {
+      "kagw": {
         "title": "258",
         "intro": []
       },
-      "259": {
+      "mbib": {
         "title": "259",
         "intro": []
       },
-      "260": {
+      "oxiv": {
         "title": "260",
         "intro": []
       },
-      "261": {
+      "mdrz": {
         "title": "261",
         "intro": []
       },
-      "262": {
+      "nixz": {
         "title": "262",
         "intro": []
       },
-      "263": {
+      "zywg": {
         "title": "263",
         "intro": []
       },
-      "264": {
+      "wraf": {
         "title": "264",
         "intro": []
       },
-      "265": {
+      "kwxs": {
         "title": "265",
         "intro": []
       },
-      "266": {
+      "muyw": {
         "title": "266",
         "intro": []
       },
-      "267": {
+      "mvzb": {
         "title": "267",
         "intro": []
       },
-      "268": {
+      "rmpy": {
         "title": "268",
         "intro": []
       },
-      "269": {
+      "plfo": {
         "title": "269",
         "intro": []
       },
-      "270": {
+      "xdyh": {
         "title": "270",
         "intro": []
       },
-      "271": {
+      "ybrh": {
         "title": "271",
         "intro": []
       },
-      "272": {
+      "vjgg": {
         "title": "272",
         "intro": []
       },
-      "273": {
+      "kaui": {
         "title": "273",
         "intro": []
       },
-      "274": {
-        "title": "274",
-        "intro": []
+      "lab-nth-fibonacci-number-generator": {
+        "title": "Crie um gerador do enésimo número de Fibonacci",
+        "intro": [
+          "Para este laboratório, você implementará o gerador do enésimo número de Fibonacci."
+        ]
       },
-      "275": {
+      "cfyv": {
         "title": "275",
         "intro": []
       },
-      "276": {
+      "sgau": {
         "title": "276",
         "intro": []
       },
-      "277": {
+      "clak": {
         "title": "277",
         "intro": []
       },
-      "278": {
+      "fcom": {
         "title": "278",
         "intro": []
       },
-      "279": {
+      "ffpt": {
         "title": "279",
         "intro": []
       },
-      "280": {
+      "vyzp": {
         "title": "280",
         "intro": []
       },
-      "281": {
+      "hiyk": {
         "title": "281",
         "intro": []
       },
-      "282": {
+      "fihs": {
         "title": "282",
         "intro": []
       },
-      "283": {
+      "icdr": {
         "title": "283",
         "intro": []
       },
-      "284": {
+      "zdsj": {
         "title": "284",
         "intro": []
       },
-      "285": {
+      "mzae": {
         "title": "285",
         "intro": []
       },
-      "286": {
+      "gjbf": {
         "title": "286",
         "intro": []
       },
-      "287": {
+      "mbpv": {
         "title": "287",
         "intro": []
       },
-      "288": {
+      "eeez": {
         "title": "288",
         "intro": []
       },
-      "289": {
+      "xweg": {
         "title": "289",
         "intro": []
       },
-      "290": {
+      "khuu": {
         "title": "290",
         "intro": []
       },
-      "291": {
+      "xdly": {
         "title": "291",
         "intro": []
       },
-      "292": {
+      "rhhl": {
         "title": "292",
         "intro": []
       },
-      "293": {
+      "trvf": {
         "title": "293",
         "intro": []
       },
-      "294": {
+      "kwmg": {
         "title": "294",
         "intro": []
       },
-      "295": {
+      "nodx": {
         "title": "295",
         "intro": []
       },
-      "296": {
+      "erfj": {
         "title": "296",
         "intro": []
       },
-      "297": {
+      "zcef": {
         "title": "297",
         "intro": []
       },
-      "298": {
+      "hfwi": {
         "title": "298",
         "intro": []
       },
-      "299": {
+      "rnwr": {
         "title": "299",
         "intro": []
       },
-      "300": {
+      "oeqv": {
         "title": "300",
+        "intro": []
+      },
+      "rdzk": {
+        "title": "301",
+        "intro": []
+      },
+      "vtpz": {
+        "title": "302",
+        "intro": []
+      },
+      "dfwl": {
+        "title": "303",
+        "intro": []
+      },
+      "adzm": {
+        "title": "304",
+        "intro": []
+      },
+      "yani": {
+        "title": "305",
+        "intro": []
+      },
+      "voks": {
+        "title": "306",
+        "intro": []
+      },
+      "uwum": {
+        "title": "307",
+        "intro": []
+      },
+      "ukem": {
+        "title": "308",
+        "intro": []
+      },
+      "sdjg": {
+        "title": "309",
+        "intro": []
+      },
+      "buzx": {
+        "title": "310",
+        "intro": []
+      },
+      "pexz": {
+        "title": "311",
+        "intro": []
+      },
+      "prlo": {
+        "title": "312",
+        "intro": []
+      },
+      "jsnd": {
+        "title": "313",
+        "intro": []
+      },
+      "lpdx": {
+        "title": "314",
+        "intro": []
+      },
+      "tkgg": {
+        "title": "315",
+        "intro": []
+      },
+      "coip": {
+        "title": "316",
+        "intro": []
+      },
+      "wkxy": {
+        "title": "317",
+        "intro": []
+      },
+      "hzab": {
+        "title": "318",
+        "intro": []
+      },
+      "ggea": {
+        "title": "319",
+        "intro": []
+      },
+      "vgvz": {
+        "title": "320",
+        "intro": []
+      },
+      "jkfc": {
+        "title": "321",
+        "intro": []
+      },
+      "jsbo": {
+        "title": "322",
+        "intro": []
+      },
+      "zhhp": {
+        "title": "323",
+        "intro": []
+      },
+      "nwwd": {
+        "title": "324",
+        "intro": []
+      },
+      "iuad": {
+        "title": "325",
+        "intro": []
+      },
+      "gora": {
+        "title": "326",
+        "intro": []
+      },
+      "vpkl": {
+        "title": "327",
+        "intro": []
+      },
+      "qmur": {
+        "title": "328",
+        "intro": []
+      },
+      "lzvx": {
+        "title": "329",
+        "intro": []
+      },
+      "mfwu": {
+        "title": "330",
+        "intro": []
+      },
+      "dfcd": {
+        "title": "331",
+        "intro": []
+      },
+      "vfje": {
+        "title": "332",
+        "intro": []
+      },
+      "hkdc": {
+        "title": "333",
+        "intro": []
+      },
+      "ovvb": {
+        "title": "334",
+        "intro": []
+      },
+      "thsj": {
+        "title": "335",
+        "intro": []
+      },
+      "cvvu": {
+        "title": "336",
+        "intro": []
+      },
+      "ohnc": {
+        "title": "337",
+        "intro": []
+      },
+      "suqn": {
+        "title": "338",
+        "intro": []
+      },
+      "oxxf": {
+        "title": "339",
+        "intro": []
+      },
+      "ynqt": {
+        "title": "340",
+        "intro": []
+      },
+      "hnta": {
+        "title": "341",
+        "intro": []
+      },
+      "hwpv": {
+        "title": "342",
+        "intro": []
+      },
+      "keqo": {
+        "title": "343",
+        "intro": []
+      },
+      "pegc": {
+        "title": "344",
+        "intro": []
+      },
+      "udfh": {
+        "title": "345",
+        "intro": []
+      },
+      "kuyg": {
+        "title": "346",
+        "intro": []
+      },
+      "tvlh": {
+        "title": "347",
+        "intro": []
+      },
+      "lhwu": {
+        "title": "348",
+        "intro": []
+      },
+      "mtkd": {
+        "title": "349",
+        "intro": []
+      },
+      "wgfc": {
+        "title": "350",
+        "intro": []
+      },
+      "sldv": {
+        "title": "351",
+        "intro": []
+      },
+      "zygv": {
+        "title": "352",
+        "intro": []
+      },
+      "movb": {
+        "title": "353",
+        "intro": []
+      },
+      "dzsr": {
+        "title": "354",
+        "intro": []
+      },
+      "awnl": {
+        "title": "355",
+        "intro": []
+      },
+      "cysa": {
+        "title": "356",
+        "intro": []
+      },
+      "pzmc": {
+        "title": "357",
+        "intro": []
+      },
+      "trpm": {
+        "title": "358",
+        "intro": []
+      },
+      "ufxg": {
+        "title": "359",
+        "intro": []
+      },
+      "lvrx": {
+        "title": "360",
+        "intro": []
+      },
+      "ofxk": {
+        "title": "361",
+        "intro": []
+      },
+      "mgoc": {
+        "title": "362",
+        "intro": []
+      },
+      "ibmn": {
+        "title": "363",
+        "intro": []
+      },
+      "zpjj": {
+        "title": "364",
+        "intro": []
+      },
+      "ghfk": {
+        "title": "365",
+        "intro": []
+      },
+      "ugfq": {
+        "title": "366",
+        "intro": []
+      },
+      "pfui": {
+        "title": "367",
+        "intro": []
+      },
+      "qjov": {
+        "title": "368",
+        "intro": []
+      },
+      "niie": {
+        "title": "369",
+        "intro": []
+      },
+      "ttip": {
+        "title": "370",
+        "intro": []
+      },
+      "hjku": {
+        "title": "371",
+        "intro": []
+      },
+      "sykw": {
+        "title": "372",
+        "intro": []
+      },
+      "zzhp": {
+        "title": "373",
+        "intro": []
+      },
+      "nmve": {
+        "title": "374",
+        "intro": []
+      },
+      "agky": {
+        "title": "375",
+        "intro": []
+      },
+      "bqlb": {
+        "title": "376",
+        "intro": []
+      },
+      "kegi": {
+        "title": "377",
+        "intro": []
+      },
+      "nqhi": {
+        "title": "378",
+        "intro": []
+      },
+      "vnfu": {
+        "title": "379",
+        "intro": []
+      },
+      "rlli": {
+        "title": "380",
+        "intro": []
+      },
+      "rjpv": {
+        "title": "381",
+        "intro": []
+      },
+      "xbri": {
+        "title": "382",
+        "intro": []
+      },
+      "kwhp": {
+        "title": "383",
+        "intro": []
+      },
+      "nkjt": {
+        "title": "384",
+        "intro": []
+      },
+      "pgjj": {
+        "title": "385",
+        "intro": []
+      },
+      "exom": {
+        "title": "386",
+        "intro": []
+      },
+      "bvqc": {
+        "title": "387",
+        "intro": []
+      },
+      "xish": {
+        "title": "388",
+        "intro": []
+      },
+      "oadg": {
+        "title": "389",
         "intro": []
       },
       "front-end-development-certification-exam": {

@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "開始學習（免費）",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "登錄以保存你的學習進度（免費）",
     "view-curriculum": "查看課程",
     "first-lesson": "訪問第一個課程",
@@ -106,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "免費學習編程",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "構建項目",
     "big-heading-3": "獲得認證",
+    "big-heading-4": "All for free.",
     "h2-heading": "自 2014 年以來，已有超過 40,000 名 freeCodeCamp.org 學員入職科技公司，例如：",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
     "hero-img-alt": "一羣人，包括一名白人男子、一名黑人女子和一名亞裔女子，圍在一臺筆記本電腦旁。",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "媒體報道：",
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
@@ -275,7 +280,10 @@
       "reset-p2": "一切將被恢復到你註冊的第一天。",
       "reset-p3": "即使你之後改變主意，我們也無法爲你恢復任何信息。",
       "nevermind-2": "我不想刪除我的所有進度",
-      "reset-confirm": "重置所有內容，我想重新開始。"
+      "reset-confirm": "重置所有內容，我想重新開始。",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "你的賬戶未綁定郵箱。",
@@ -377,7 +385,7 @@
     "add-subtitles": "幫助我們完善或添加字幕",
     "wrong-answer": "抱歉，這個答案不正確。再試一次？",
     "check-answer": "點擊下方按鈕，查看你的答案。",
-    "assignment-not-complete": "請完成任務",
+    "assignment-not-complete": "Please complete the assignments",
     "assignments": "任務",
     "question": "問題",
     "solution-link": "解決方案鏈接",

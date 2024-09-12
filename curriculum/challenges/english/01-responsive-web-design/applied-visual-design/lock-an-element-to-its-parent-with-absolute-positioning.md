@@ -22,19 +22,25 @@ Lock the `#searchbar` element to the top-right of its `section` parent by declar
 The `#searchbar` element should have a `position` set to `absolute`.
 
 ```js
-assert($('#searchbar').css('position') == 'absolute');
+const searchbarElement = document.querySelector('#searchbar');
+const searchbarStyle = window.getComputedStyle(searchbarElement);
+assert.equal(searchbarStyle?.position, 'absolute');
 ```
 
 Your code should use the `top` CSS offset of 50 pixels on the `#searchbar` element.
 
 ```js
-assert($('#searchbar').css('top') == '50px');
+const searchbarElement = document.querySelector('#searchbar');
+const searchbarStyle = window.getComputedStyle(searchbarElement);
+assert.equal(searchbarStyle?.top, '50px');
 ```
 
 Your code should use the `right` CSS offset of 50 pixels on the `#searchbar` element.
 
 ```js
-assert($('#searchbar').css('right') == '50px');
+const searchbarElement = document.querySelector('#searchbar');
+const searchbarStyle = window.getComputedStyle(searchbarElement);
+assert.equal(searchbarStyle?.right, '50px');
 ```
 
 # --seed--

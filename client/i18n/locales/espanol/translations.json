@@ -1,6 +1,7 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Empieza (es gratis)",
+    "get-started": "Empieza",
     "logged-out-cta-btn": "Inicia sesión para guardar tu progreso (es gratis)",
     "view-curriculum": "Ver el currículo",
     "first-lesson": "Ir a la primera lección",
@@ -106,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
+    "big-heading-1-b": "Aprende a codificar.",
     "big-heading-2": "Construye proyectos.",
     "big-heading-3": "Obtén certificaciones.",
+    "big-heading-4": "Todo de forma gratuita.",
     "h2-heading": "Desde 2014, más de 40.000 graduados de freeCodeCamp.org han conseguido trabajos en empresas de tecnología, entre las que se incluyen:",
+    "h2-heading-b": "Más de 100.000 graduados de freeCodeCamp.org han conseguido trabajo en empresas tecnológicas, entre ellas:",
     "hero-img-description": "Estudiantes de freeCodeCamp en un grupo de estudio local en Corea del Sur.",
     "hero-img-alt": "Un grupo de personas, incluyendo un hombre blanco, una mujer negra y una mujer asiática, reunidos alrededor de un portátil.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "Como se ha visto en:",
     "testimonials": {
       "heading": "Esto es lo que dicen nuestros alumnos sobre freeCodeCamp:",
@@ -275,7 +280,10 @@
       "reset-p2": "Efectivamente, volverás al primer día en que te registraste.",
       "reset-p3": "No podremos recuperar nada de esto más adelante, incluso si cambias de opinión.",
       "nevermind-2": "Cambié de opinión, no quiero eliminar todo mi progreso",
-      "reset-confirm": "Restablecer todo. Quiero empezar desde el principio"
+      "reset-confirm": "Restablecer todo. Quiero empezar desde el principio",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "No tienes un correo electrónico asociado a esta cuenta.",
@@ -377,7 +385,7 @@
     "add-subtitles": "Ayudar a mejorar o agregar subtítulos",
     "wrong-answer": "Lo siento, esa no es la respuesta correcta. ¡Vuelve a intentarlo!",
     "check-answer": "Haz clic en el botón de abajo para verificar tu respuesta.",
-    "assignment-not-complete": "Por favor, completa las tareas",
+    "assignment-not-complete": "Please complete the assignments",
     "assignments": "Asignaciones",
     "question": "Pregunta",
     "solution-link": "Enlace a la solución",

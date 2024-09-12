@@ -39,28 +39,26 @@ Finally, in the `.heart::before` selector, set its `content` property to an empt
 The `background-color` property of the `.heart::after` selector should be `pink`.
 
 ```js
-const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)[0];
-assert(
-  /({|;)\s*background-color\s*:\s*pink\s*(;|})/g.test(heartAfter)
-);
+const heartAfter = code.match(/\.heart::after\s*{[\s\S]+?[^\}]}/g)?.[0];
+assert.match(heartAfter, /({|;)\s*background-color\s*:\s*pink\s*(;|})/g);
 ```
 
 The `border-radius` of the `.heart::after` selector should be 50%.
 
 ```js
-assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
+assert.lengthOf(code.match(/border-radius\s*?:\s*?50%/gi),2);
 ```
 
 The `transform` property for the `heart` class should use a `rotate()` function set to -45 degrees.
 
 ```js
-assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
+assert.match(code,/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi);
 ```
 
 The `content` of the `.heart::before` selector should be an empty string.
 
 ```js
-assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
+assert.match(code,/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi);
 ```
 
 # --seed--

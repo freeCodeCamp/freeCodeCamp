@@ -30,13 +30,13 @@ Camper Cat used `article` tags to wrap the posts on his blog page, but he forgot
 Your code should have three `article` tags.
 
 ```js
-assert($('article').length == 3);
+assert.lengthOf(document.querySelectorAll('article') ,3);
 ```
 
 Your code should not have any `div` tags.
 
 ```js
-assert($('div').length == 0);
+assert.lengthOf(document.querySelectorAll('div'), 0);
 ```
 
 # --seed--

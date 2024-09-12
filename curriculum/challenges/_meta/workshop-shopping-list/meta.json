@@ -1,0 +1,93 @@
+{
+  "name": "Build a Shopping List",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-shopping-list",
+  "order": 155,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66c63bfa4685e4e3843fa0dc",
+      "title": "Step 1"
+    },
+    {
+      "id": "66c64095f61166ede6e39a84",
+      "title": "Step 2"
+    },
+    {
+      "id": "66c64210413532ee9d3bd342",
+      "title": "Step 3"
+    },
+    {
+      "id": "66c644c08ebcd2ef90c750bd",
+      "title": "Step 4"
+    },
+    {
+      "id": "66c645b345a39bf04864dc50",
+      "title": "Step 5"
+    },
+    {
+      "id": "66cbe2319d3845545a293a0b",
+      "title": "Step 6"
+    },
+    {
+      "id": "66c6491fe4c8e0f16845425f",
+      "title": "Step 7"
+    },
+    {
+      "id": "66c64ad16796c7f2419b45c5",
+      "title": "Step 8"
+    },
+    {
+      "id": "66c726c34ecf1e238aa9d7d5",
+      "title": "Step 9"
+    },
+    {
+      "id": "66c72a55418cc9247b710827",
+      "title": "Step 10"
+    },
+    {
+      "id": "66c72b0ffbc5522525768558",
+      "title": "Step 11"
+    },
+    {
+      "id": "66c72f4d0528bd268a82107b",
+      "title": "Step 12"
+    },
+    {
+      "id": "66c730183f4020275cbf0611",
+      "title": "Step 13"
+    },
+    {
+      "id": "66c730ee6ae076281721d0b9",
+      "title": "Step 14"
+    },
+    {
+      "id": "66c73a0c5b264f2a75164d94",
+      "title": "Step 15"
+    },
+    {
+      "id": "66c73a7798f6f62b2ae58f22",
+      "title": "Step 16"
+    },
+    {
+      "id": "66c73fa7433e082c4be096b1",
+      "title": "Step 17"
+    },
+    {
+      "id": "66c74079c30b1c2d166cb9a4",
+      "title": "Step 18"
+    },
+    {
+      "id": "66c742d045c9fc2e09fa64b1",
+      "title": "Step 19"
+    },
+    {
+      "id": "66c748ffdfbe4f2ede268be2",
+      "title": "Step 20"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

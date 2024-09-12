@@ -36,25 +36,25 @@ Another thing to note is that some browsers may place you in the middle of your 
 Your code should add a `tabindex` attribute to the `search` `input` tag.
 
 ```js
-assert($('#search').attr('tabindex'));
+assert.isNotNull(document.querySelector('#search')?.getAttribute('tabindex'));
 ```
 
 Your code should add a `tabindex` attribute to the `submit` `input` tag.
 
 ```js
-assert($('#submit').attr('tabindex'));
+assert.isNotNull(document.querySelector('#submit')?.getAttribute('tabindex'));
 ```
 
 Your code should set the `tabindex` attribute on the `search` `input` tag to a value of 1.
 
 ```js
-assert($('#search').attr('tabindex') == '1');
+assert.equal(document.querySelector('#search')?.getAttribute('tabindex'), '1');
 ```
 
 Your code should set the `tabindex` attribute on the `submit` `input` tag to a value of 2.
 
 ```js
-assert($('#submit').attr('tabindex') == '2');
+assert.equal(document.querySelector('#submit')?.getAttribute('tabindex'), '2');
 ```
 
 # --seed--
