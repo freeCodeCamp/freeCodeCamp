@@ -6,6 +6,6 @@
   "dashedName": "workshop-mario-database",
   "order": 337,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66e2fe13bfc0c433dfc5bd2c", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "5f2c289f164c29556da632fd", "title": "Build a Mario Database" }],
   "helpCategory": "Backend Development"
 }
