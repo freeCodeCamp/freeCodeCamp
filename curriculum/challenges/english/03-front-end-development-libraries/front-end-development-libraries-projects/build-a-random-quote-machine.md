@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c442eddfaeb5bd13
 title: Build a Random Quote Machine
-challengeType: 3
+challengeType: 14
 forumTopicId: 301374
 dashedName: build-a-random-quote-machine
 ---
@@ -42,6 +42,216 @@ You can build your project by <a href='https://codepen.io/pen?template=MJjpwO' t
 Once you're done, submit the URL to your working project with all its tests passing.
 
 **Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
+
+
+# --hints--
+
+I can see a wrapper element with a corresponding id="quote-box".
+
+```js
+ assert.isNotNull(document.getElementById('quote-box'));
+```
+
+Within #quote-box, I can see an element with corresponding id="text".
+
+```js
+assert.isNotNull(document.getElementById('text'), '#text is not defined ');
+assert.strictEqual(document.querySelectorAll('#quote-box #text').length, 1);
+```
+
+Within #quote-box, I can see an element with corresponding id="author".
+
+```js
+  assert.isNotNull(document.getElementById('author'), '#author is not defined ');
+  assert.strictEqual(document.querySelectorAll('#quote-box #author').length, 1)
+```
+Within #quote-box, I can see a clickable element with corresponding id="new-quote"
+
+```js
+ assert.isNotNull(document.getElementById('new-quote'), '#new-quote is not defined ');
+  assert.strictEqual(document.querySelectorAll('#quote-box #new-quote').length, 1, '#new-quote button is not a child of #quote-box ');
+```
+
+Within #quote-box, I can see a clickable <a> element with corresponding id="tweet-quote"
+
+```js
+ assert.isNotNull(document.getElementById('tweet-quote'));
+  assert.strictEqual(document.getElementById('tweet-quote').nodeName, 'A', '#tweet-quote element is not an <a> element');
+  assert.strictEqual(document.querySelectorAll('#quote-box #tweet-quote').length, 1, '#tweet-quote element is not a child of #quote-box ');
+```
+
+On first load, my quote machine displays a random quote in the element with id="text".
+
+```js
+ const text = document.getElementById('text');
+  assert.isNotNull(text, '#text is not defined ');
+  const textContentLength = text.innerText.length;
+  assert.isAbove(textContentLength, 0, 'element with id="text" should contain a random quote');
+  if (text) {
+    assert(() => {
+      return new Promise((resolve) => {
+        const intervalId = setInterval(() => {
+          if (text.innerText.length > 0) {
+            console.log('Clearing interval ' + intervalId);
+            clearInterval(intervalId);
+            resolve();
+          }
+        }, 500);
+      });
+    });
+  }
+```
+
+On first load, my quote machine displays the random quote's author in the element with id="author".
+
+```js
+  const author = document.getElementById('author');
+  assert.isNotNull(author, '#author is not defined ');
+  const authorContentLength = author.innerText.length;
+  assert.isAbove(authorContentLength, 0, 'element with id="author" should contain an authors name');
+
+
+  if (author) {
+    assert(() => {
+      return new Promise((resolve) => {
+        const intervalId = setInterval(() => {
+          if (author.innerText.length > 0) {
+            console.log('Clearing interval ' + intervalId);
+            clearInterval(intervalId);
+            resolve();
+          }
+        }, 500);
+      });
+    });
+  }
+```
+
+When the #new-quote button is clicked, my quote machine should fetch a new quote and display it in the #text element."
+
+```js
+ let prevText;
+  const newQuoteBtn = document.getElementById('new-quote');
+
+  const text = document.getElementById('text');
+  assert.isNotNull(text, '#text is not defined ');
+  prevText = document.getElementById('text').innerText;
+  newQuoteBtn.click();
+
+  assert.isAbove(prevText.length, 0, 'element with id="text" should contain a random quote');
+
+  if (prevText) {
+    assert(() => {
+      return new Promise((resolve) => {
+        const intervalId = setInterval(() => {
+          const newText = document.getElementById('text').innerText;
+          if (newText !== prevText) {
+            clearInterval(intervalId);
+            resolve();
+          } else {
+            console.log('got here');
+            newQuoteBtn.click();
+          }
+        }, 1000);
+      });
+    });
+  }
+```
+
+My quote machine should fetch the new quote's author when the #new-quote button is clicked and display it in the #author element.
+
+```js
+
+ let prevAuth;
+  const newQuoteBtn = document.getElementById('new-quote');
+
+  const author = document.getElementById('author');
+  assert.isNotNull(author, '#author is not defined ');
+  prevAuth = document.getElementById('author').innerText;
+  newQuoteBtn.click();
+
+  assert.isAbove(prevAuth.length, 0, 'element with id="author" should contain an authors name');
+
+  if (prevAuth) {
+    assert(() => {
+      return new Promise((resolve) => {
+        const intervalId = setInterval(() => {
+          const newAuth = document.getElementById('author').innerText;
+          if (newAuth !== prevAuth) {
+            clearInterval(intervalId);
+            resolve();
+          } else {
+            console.log('got here');
+            newQuoteBtn.click();
+          }
+        }, 1000);
+      });
+    });
+  }
+```
+
+I can tweet the current quote by clicking on the #tweet-quote <a> element. This <a> element should include the "twitter.com/intent/tweet" path in it's href attribute to tweet the current quote.
+
+```js
+assert.isOk(document.getElementById('tweet-quote').hasAttribute('href'), '#tweet-quote <a> element must have an href attribute ');
+  const href = document.getElementById('tweet-quote').href;
+  assert.include(href.toLowerCase(), 'twitter.com/intent/tweet', 'The #tweet-quote element does not utilize the correct twitter intent ');
+```
+
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel" src="./script.js">
+    
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this section for a production-ready setup with JSX:
+      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+      In a larger project, you can use an integrated toolchain that includes JSX instead:
+      https://reactjs.org/docs/create-a-new-react-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      https://reactjs.org/docs/react-without-jsx.html
+    -->
+  </body>
+</html>
+```
+
+```css
+
+```
+
+```js
+function MyApp() {
+  return <h1>Hello, world!</h1>;
+}
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<MyApp />);
+
+```
+
 
 # --solutions--
 
