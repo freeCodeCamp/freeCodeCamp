@@ -2214,7 +2214,12 @@
       "pzmc": { "title": "357", "intro": [] },
       "trpm": { "title": "358", "intro": [] },
       "ufxg": { "title": "359", "intro": [] },
-      "lvrx": { "title": "360", "intro": [] },
+      "lab-periodic-table-database": {
+        "title": "Build a Periodic Table Database",
+        "intro": [
+          "For this lab, you will create a Bash script to get information about chemical elements from a periodic table database."
+        ]
+      },
       "ofxk": { "title": "361", "intro": [] },
       "mgoc": { "title": "362", "intro": [] },
       "ibmn": { "title": "363", "intro": [] },
