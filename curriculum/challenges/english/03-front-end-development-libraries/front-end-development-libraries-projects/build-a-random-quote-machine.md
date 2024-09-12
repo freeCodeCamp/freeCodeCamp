@@ -48,8 +48,6 @@ Once you're done, submit the URL to your working project with all its tests pass
 
 I can see a wrapper element with a corresponding id="quote-box".
 
-I can see a wrapper element with a corresponding id="quote-box".
-
 ```js
  assert.isNotNull(document.getElementById('quote-box'));
 ```
