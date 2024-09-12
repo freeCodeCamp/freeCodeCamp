@@ -171,9 +171,6 @@ importers:
       ajv-formats:
         specifier: 2.1.1
         version: 2.1.1(ajv@8.12.0)
-      chai:
-        specifier: 4.4.1
-        version: 4.4.1
       date-fns:
         specifier: 2.30.0
         version: 2.30.0
@@ -235,9 +232,6 @@ importers:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
-      '@types/chai':
-        specifier: ^4.3.17
-        version: 4.3.17
       '@types/express':
         specifier: 4.17.21
         version: 4.17.21
@@ -3931,9 +3925,6 @@ packages:
 
   '@types/chai@4.3.16':
     resolution: {integrity: sha512-PatH4iOdyh3MyWtmHVFXLWCCIhUbopaltqddG9BzB+gMIzee2MJrvd+jouii9Z3wzQJruGWAm7WOMjgfG8hQlQ==}
-
-  '@types/chai@4.3.17':
-    resolution: {integrity: sha512-zmZ21EWzR71B4Sscphjief5djsLre50M6lI622OSySTmn9DB3j+C3kWroHfBQWXbOBwbgg/M8CG/hUxDLIloow==}
 
   '@types/cheerio@0.22.35':
     resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
@@ -18008,8 +17999,6 @@ snapshots:
   '@types/chai@4.3.12': {}
 
   '@types/chai@4.3.16': {}
-
-  '@types/chai@4.3.17': {}
 
   '@types/cheerio@0.22.35':
     dependencies:
