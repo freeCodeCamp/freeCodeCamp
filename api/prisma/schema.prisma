@@ -354,11 +354,13 @@ model UserToken {
   @@index([userId], map: "userId_1")
 }
 
+/// TODO: Token has to outlive the exam attempt
+/// Validation has to be taken as the attempt is requested
+/// to ensure it lives long enough.
 model ExamEnvironmentAuthorizationToken {
-  id      String   @id @map("_id")
-  created DateTime @db.Date
-  ttl     Float
-  userId  String   @db.ObjectId
+  id          String   @id @map("_id")
+  createdDate DateTime @db.Date
+  userId      String   @db.ObjectId
 
   @@index([userId], map: "userId_1")
 }

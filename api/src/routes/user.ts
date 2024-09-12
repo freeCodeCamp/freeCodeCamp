@@ -443,11 +443,9 @@ async function examEnvironmentTokenHandler(
 
   const token = await this.prisma.examEnvironmentAuthorizationToken.create({
     data: {
-      created: new Date(),
+      createdDate: new Date(),
       id: customNanoid(),
-      userId,
-      // TODO(Post-MVP): expire after ttl has passed.
-      ttl: 30 * 24 * 60 * 60 * 1000
+      userId
     }
   });
 

@@ -115,7 +115,9 @@ async function tokenVerifyHandler(
   } else {
     void reply.code(200);
     return reply.send({
-      data: 'Token verified.'
+      data: {
+        createdDate: token.createdDate
+      }
     });
   }
 }
@@ -123,7 +125,7 @@ async function tokenVerifyHandler(
 /**
  * Generates an exam for the user.
  *
- * Requires token to be validated.
+ * Requires token to be validated and TODO: live longer than the exam attempt.
  */
 async function postExamGenerateHandler(
   this: FastifyInstance,
@@ -178,7 +180,7 @@ async function postExamGenerateHandler(
   }
 
   // Check user has not completed exam in last 24 hours
-  const maybeExamAttemts = await mapErr(
+  const maybeExamAttempts = await mapErr(
     this.prisma.envExamAttempt.findMany({
       where: {
         userId: user.id,
@@ -187,14 +189,14 @@ async function postExamGenerateHandler(
     })
   );
 
-  if (maybeExamAttemts.error !== null) {
+  if (maybeExamAttempts.error !== null) {
     void reply.code(500);
     return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttemts.error))
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttempts.error))
     );
   }
 
-  const examAttempts = maybeExamAttemts.data;
+  const examAttempts = maybeExamAttempts.data;
 
   const maybeLastAttempt = examAttempts.reduce(
     (latest, current) =>

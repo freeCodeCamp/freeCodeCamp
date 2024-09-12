@@ -8,7 +8,12 @@ export const examEnvironmentTokenVerify = {
   response: {
     200: Type.Union([
       Type.Object({
-        data: Type.String()
+        data: Type.Union([
+          Type.String(),
+          Type.Object({
+            createdDate: Type.String({ format: 'date' })
+          })
+        ])
       }),
       STANDARD_ERROR
     ])

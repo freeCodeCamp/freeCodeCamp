@@ -21,7 +21,7 @@ import { constructUserExam } from '../utils/exam';
 
 describe('/exam-environment/', () => {
   setupServer();
-  describe('Authenticated user', () => {
+  describe('Authenticated user with exam environment authorization token', () => {
     let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -224,8 +224,13 @@ describe('/exam-environment/', () => {
           data: generatedExam
         });
 
+        const newAttempt = {
+          ...attempt,
+          questionSets: [examAttempt.questionSets[0]!]
+        };
+
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
-          attempt
+          attempt: newAttempt
         };
 
         const res = await superPost('/exam-environment/exam/attempt')
@@ -243,7 +248,7 @@ describe('/exam-environment/', () => {
             where: { id: attempt.id }
           });
 
-        expect(updatedAttempt).toMatchObject(attempt);
+        expect(updatedAttempt).toMatchObject(newAttempt);
       });
     });
 
@@ -433,7 +438,7 @@ describe('/exam-environment/', () => {
         // TODO: Not sure how to test this as it involves stopping half way through a valid request
       });
 
-      it('should return the use exam with the exam attempt', async () => {
+      it('should return the user exam with the exam attempt', async () => {
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
           examId
         };
@@ -475,7 +480,7 @@ describe('/exam-environment/', () => {
     xdescribe('POST /exam-environment/screenshot', () => {});
   });
 
-  describe('Unauthenticated user', () => {
+  describe('Authenticated user without exam environment authorization token', () => {
     let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
 

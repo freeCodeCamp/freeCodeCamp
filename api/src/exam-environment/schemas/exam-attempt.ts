@@ -22,6 +22,7 @@ export const examEnvironmentPostExamAttempt = {
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
+    // An empty 200 response cannot be typed 🤷‍♂️
     400: STANDARD_ERROR,
     403: STANDARD_ERROR,
     404: STANDARD_ERROR,
