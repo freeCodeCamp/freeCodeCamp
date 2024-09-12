@@ -511,18 +511,18 @@ async function postExamAttemptHandler(
         questionSets: databaseAttemptQuestionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
         // TODO: If `needsRetake`, prevent further submissions?
-        needsRetake: maybeValidExamAttempt.error ? true : false
+        needsRetake: maybeValidExamAttempt.error ? true : undefined
       }
     })
   );
 
   if (maybeValidExamAttempt.error !== null) {
     void reply.code(400);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
-        JSON.stringify(maybeValidExamAttempt.error)
-      )
-    );
+    const message =
+      maybeValidExamAttempt.error instanceof Error
+        ? maybeValidExamAttempt.error.message
+        : 'Unknown attempt validation error';
+    return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
   }
 
   if (maybeUpdatedAttempt.error !== null) {
