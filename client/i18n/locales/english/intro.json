@@ -1970,7 +1970,7 @@
       "lab-lunch-picker-program": {
         "title": "Build a Lunch Picker Program",
         "intro": [
-          "In this lab, you create a lunch picker user arrays and random numbers"
+          "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
         ]
       },
       "mokm": { "title": "161", "intro": [] },
