@@ -2205,7 +2205,7 @@
       "lhwu": { "title": "348", "intro": [] },
       "mtkd": { "title": "349", "intro": [] },
       "wgfc": { "title": "350", "intro": [] },
-      "lab-salon-appointment-scheduler-project": {
+      "lab-salon-appointment-scheduler": {
         "title": "Build a Salon Appointment Scheduler",
         "intro": [
           "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."

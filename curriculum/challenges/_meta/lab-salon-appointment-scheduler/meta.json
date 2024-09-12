@@ -1,7 +1,7 @@
 {
   "name": "Build a Salon Appointment Scheduler",
   "isUpcomingChange": false,
-  "dashedName": "lab-salon-appointment-scheduler-project",
+  "dashedName": "lab-salon-appointment-scheduler",
   "order": 351,
   "helpCategory": "Backend Development",
   "superBlock": "relational-database",
