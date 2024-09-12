@@ -7,6 +7,55 @@
   "dashedName": "workshop-node-and-express",
   "order": 372,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66e2db8bc7adfa7983cfee86", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66e2db8bc7adfa7983cfee86",
+      "title": "Step 1"
+    },
+    {
+      "id": "66e2dda1816eb580a0220a3c",
+      "title": "Step 2"
+    },
+    {
+      "id": "66e2ddc1f74318813dbdc8e1",
+      "title": "Step 3"
+    },
+    {
+      "id": "66e2dde56189de81d867852e",
+      "title": "Step 4"
+    },
+    {
+      "id": "66e2ddffd24a19827208183f",
+      "title": "Step 5"
+    },
+    {
+      "id": "66e2de2541d8d88307b84915",
+      "title": "Step 6"
+    },
+    {
+      "id": "66e2dec056465583c59d5d19",
+      "title": "Step 7"
+    },
+    {
+      "id": "66e2df1963f55a846c3130d8",
+      "title": "Step 8"
+    },
+    {
+      "id": "66e2df3993453c8508d81e73",
+      "title": "Step 9"
+    },
+    {
+      "id": "66e2df565d823f85a03874a1",
+      "title": "Step 10"
+    },
+    {
+      "id": "66e2df8535fa82863771f1f6",
+      "title": "Step 11"
+    },
+    {
+      "id": "66e2dfa3c7e4f7009bfcadf8",
+      "title": "Step 12"
+    }
+  ],
   "helpCategory": "Backend Development"
 }
