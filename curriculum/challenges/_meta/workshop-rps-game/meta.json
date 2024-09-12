@@ -1,0 +1,69 @@
+{
+  "name": "Build a Rock, Paper, Scissors Game",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-rps-game",
+  "order": 198,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66d8fade439d513e5f77c906",
+      "title": "Step 1"
+    },
+    {
+      "id": "66d05da61ff145d7a46fe41b",
+      "title": "Step 2"
+    },
+    {
+      "id": "66cf13fe7619e9a1d57c7b5e",
+      "title": "Step 3"
+    },
+    {
+      "id": "66cf315cff4d36b27da828ba",
+      "title": "Step 4"
+    },
+    {
+      "id": "66d064c7d79408da050f8b2f",
+      "title": "Step 5"
+    },
+    {
+      "id": "66cf33305293e1b35c1aef7f",
+      "title": "Step 6"
+    },
+    {
+      "id": "66d068348ca093db469b4d59",
+      "title": "Step 7"
+    },
+    {
+      "id": "66cf34fcb005e7b447141afd",
+      "title": "Step 8"
+    },
+    {
+      "id": "66d0746099f6f3de3678fd26",
+      "title": "Step 9"
+    },
+    {
+      "id": "66d076040c7d1cdf36525af9",
+      "title": "Step 10"
+    },
+    {
+      "id": "66d081d79b1d57e1b42caabf",
+      "title": "Step 11"
+    },
+    {
+      "id": "66cf35a75f891ab4f4e5497b",
+      "title": "Step 12"
+    },
+    {
+      "id": "66d085d37aeffce2ef786de3",
+      "title": "Step 13"
+    },
+    {
+      "id": "66cf3639aca119b5c00b02d3",
+      "title": "Step 14"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
