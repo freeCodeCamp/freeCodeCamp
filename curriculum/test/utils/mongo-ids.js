@@ -14,7 +14,8 @@ const duplicatedProjectIds = [
   '56533eb9ac21ba0edf2244e2',
   'aff0395860f5d3034dc0bfc9',
   'aa2e6f85cab2ab736c9a9b24',
-  '6555c1d3e11a1574434cf8b5'
+  '6555c1d3e11a1574434cf8b5',
+  '5a8b073d06fa14fcfde687aa'
 ];
 
 class MongoIds {
