@@ -1,0 +1,41 @@
+{
+  "name": "Build a Loan Qualification Checker",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockType": "workshop",
+  "dashedName": "workshop-loan-qualification-checker",
+  "order": 154,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66c8ba41a77db20a93f9d7a1",
+      "title": "Step 1"
+    },
+    {
+      "id": "66c8ba975ee7230e29f6c4ac",
+      "title": "Step 2"
+    },
+    {
+      "id": "66c8ba975ee7230e29f6c4ad",
+      "title": "Step 3"
+    },
+    {
+      "id": "66c8ba975ee7230e29f6c4af",
+      "title": "Step 4"
+    },
+    {
+      "id": "66c8ba975ee7230e29f6c4b0",
+      "title": "Step 5"
+    },
+    {
+      "id": "66c8ba975ee7230e29f6c4b1",
+      "title": "Step 6"
+    },
+    {
+      "id": "66c8ba975ee7230e29f6c4b2",
+      "title": "Step 7"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
