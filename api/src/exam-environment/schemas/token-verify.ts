@@ -11,7 +11,7 @@ export const examEnvironmentTokenVerify = {
         data: Type.Union([
           Type.String(),
           Type.Object({
-            createdDate: Type.String({ format: 'date' })
+            createdDate: Type.String({ format: 'date-time' })
           })
         ])
       }),
