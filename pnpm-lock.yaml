@@ -1126,6 +1126,9 @@ importers:
       '@types/lodash-es':
         specifier: 4.17.12
         version: 4.17.12
+      '@typescript/vfs':
+        specifier: ^1.6.0
+        version: 1.6.0(typescript@5.4.5)
       babel-loader:
         specifier: 8.3.0
         version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3)
@@ -4595,6 +4598,11 @@ packages:
   '@typescript-eslint/visitor-keys@7.1.1':
     resolution: {integrity: sha512-yTdHDQxY7cSoCcAtiBzVzxleJhkGB9NncSIyMYe2+OGON1ZsP9zOPws/Pqgopa65jvknOjlk/w7ulPlZ78PiLQ==}
     engines: {node: ^16.0.0 || >=18.0.0}
+
+  '@typescript/vfs@1.6.0':
+    resolution: {integrity: sha512-hvJUjNVeBMp77qPINuUvYXj4FyWeeMMKZkxEATEU3hqBAQ7qdTBCUFT7Sp0Zu0faeEtFf+ldXxMEDr/bk73ISg==}
+    peerDependencies:
+      typescript: '*'
 
   '@uiw/react-codemirror@3.2.10':
     resolution: {integrity: sha512-sSabPpOQFFRAZwm/JZ6gRRqQg0PBPw9nRAT9YepqUSM3TJHQzavZDRDxKF8B9jL+KU24+aKqM/clLlpPPPF5sQ==}
@@ -18906,6 +18914,13 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.1.1
       eslint-visitor-keys: 3.4.3
+
+  '@typescript/vfs@1.6.0(typescript@5.4.5)':
+    dependencies:
+      debug: 4.3.4(supports-color@8.1.1)
+      typescript: 5.4.5
+    transitivePeerDependencies:
+      - supports-color
 
   '@uiw/react-codemirror@3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
