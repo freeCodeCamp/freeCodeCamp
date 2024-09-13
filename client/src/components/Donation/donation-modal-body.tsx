@@ -238,7 +238,6 @@ function DonationModalBody({
           return prevSeconds - 1;
         } else {
           setIsAnimationVisible(false);
-          setCanClose(true);
           clearInterval(interval);
           return 0;
         }
@@ -246,7 +245,13 @@ function DonationModalBody({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [setCanClose]);
+  }, []);
+
+  useEffect(() => {
+    if (secondsRemaining === 0) {
+      setCanClose(true);
+    }
+  }, [secondsRemaining, setCanClose]);
 
   return (
     <Modal.Body borderless alignment='start'>
