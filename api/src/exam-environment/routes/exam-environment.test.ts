@@ -224,13 +224,29 @@ describe('/exam-environment/', () => {
           data: generatedExam
         });
 
-        const newAttempt = {
-          ...attempt,
-          questionSets: [examAttempt.questionSets[0]!]
-        };
+        const attemptWithoutSubmissionTime = structuredClone(examAttempt);
+
+        function removeSubmissionTime(obj: unknown) {
+          if (Array.isArray(obj)) {
+            obj.forEach(removeSubmissionTime);
+          } else if (typeof obj === 'object' && obj !== null) {
+            (Object.keys(obj) as [keyof typeof obj]).forEach(key => {
+              if (key === 'submissionTimeInMS') {
+                delete obj[key];
+              } else {
+                removeSubmissionTime(obj[key]);
+              }
+            });
+          }
+        }
+
+        removeSubmissionTime(attemptWithoutSubmissionTime);
 
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
-          attempt: newAttempt
+          attempt: {
+            examId: attemptWithoutSubmissionTime.examId,
+            questionSets: attemptWithoutSubmissionTime.questionSets
+          }
         };
 
         const res = await superPost('/exam-environment/exam/attempt')
@@ -248,7 +264,7 @@ describe('/exam-environment/', () => {
             where: { id: attempt.id }
           });
 
-        expect(updatedAttempt).toMatchObject(newAttempt);
+        expect(updatedAttempt).toMatchObject(body.attempt);
       });
     });
 
