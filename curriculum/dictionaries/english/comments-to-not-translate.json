@@ -11,5 +11,7 @@
   "4143lf": "initialize buttons",
   "y1f9p0": "for (let i = 1; i <= count; i++) {\n  rows.push(padRow(i, count));\n}",
   "697fln": "while (rows.length < count) {\n  rows.push(padRow(rows.length + 1, count));\n}",
-  "499lw3": "for (let i = count; i > 0; i--) {\n  rows.push(padRow(i, count));\n}"
+  "499lw3": "for (let i = count; i > 0; i--) {\n  rows.push(padRow(i, count));\n}",
+  "t8ci0e": "for (let i = 0; i < sentence.length; i++) {\n  let char = sentence[i];\n\n  if (vowels.indexOf(char) !== -1) {\n    vowelCount++;\n  } else if (consonants.indexOf(char) !== -1) {\n    consonantCount++;\n  } else if (punctuations.indexOf(char) !== -1) {\n    punctuationCount++;\n  }\n}",
+  "db7zq9": "while (i < sentence.length) {\n  if (sentence[i] === ' ' || i === sentence.length - 1) {\n    wordCount++;\n  }\n  i++\n}"
 }
