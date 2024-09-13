@@ -35,49 +35,49 @@ Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), 
 Your code should have one `audio` tag.
 
 ```js
-assert($('audio').length === 1);
+assert.lengthOf(document.querySelectorAll('audio'),1);
 ```
 
 Your `audio` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/audio>/g).length === 1 &&
-    code.match(/<audio.*>[\s\S]*<\/audio>/g)
-);
+assert.match(code,/<audio.*>[\s\S]*<\/audio>/g);
+assert.lengthOf(code.match(/<\/audio>/g),1);
 ```
 
 The `audio` tag should have the `controls` attribute.
 
 ```js
-assert($('audio').attr('controls'));
+assert.exists(document.querySelector('audio')?.getAttribute('controls'));
 ```
 
 Your code should have one `source` tag.
 
 ```js
-assert($('source').length === 1);
+assert.lengthOf(document.querySelectorAll('source'), 1);
 ```
 
 Your `source` tag should be inside the `audio` tags.
 
 ```js
-assert($('audio').children('source').length === 1);
+const audio = document.querySelector('audio');
+const children = audio.querySelectorAll(`:scope ${'source'}`);
+assert.lengthOf(children,1);
 ```
 
 The value for the `src` attribute on the `source` tag should match the link in the instructions exactly.
 
 ```js
-assert(
-  $('source').attr('src') ===
-    'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
+assert.equal(
+  document.querySelector('source')?.getAttribute('src'),
+  'https://cdn.freecodecamp.org/curriculum/applied-accessibility/screen-reader.mp3'
 );
 ```
 
 Your code should include a `type` attribute on the `source` tag with a value of audio/mpeg.
 
 ```js
-assert($('source').attr('type') === 'audio/mpeg');
+assert.equal(document.querySelector('source')?.getAttribute('type'), 'audio/mpeg');
 ```
 
 # --seed--

@@ -233,7 +233,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           await fastify.sendEmail(notifyUser);
         } catch (e) {
           fastify.log.error(e);
-          // TODO: Log to Sentry
+          fastify.Sentry.captureException(e);
         }
       }
 

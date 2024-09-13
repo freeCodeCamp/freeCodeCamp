@@ -21,35 +21,40 @@ Notice how the image is now just the right size to fit along the text?
 Your `h2` element and topmost `img` element should both be nested together within a `div` element with the class `row`.
 
 ```js
-assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0);
+const row = document.querySelector('div.row');
+const h2 = row?.querySelectorAll(`:scope ${'h2'}`)
+const image = row?.querySelectorAll(`:scope ${'img'}`)
+assert.lengthOf(h2,1);
+assert.lengthOf(image ,1);
 ```
 
 Your topmost `img` element should be nested within a `div` with the class `col-xs-4`.
 
 ```js
-assert(
-  $('div.col-xs-4:has(img)').length > 0 &&
-    $('div.col-xs-4:has(div)').length === 0
-);
+const column = document.querySelector('div.col-xs-4');
+const div = column?.querySelectorAll(`:scope ${'div'}`);
+const img = column?.querySelectorAll(`:scope ${'img'}`)
+assert.isEmpty(div);
+assert.lengthOf(img,1)
 ```
 
 Your `h2` element should be nested within a `div` with the class `col-xs-8`.
 
 ```js
-assert(
-  $('div.col-xs-8:has(h2)').length > 0 &&
-    $('div.col-xs-8:has(div)').length === 0
-);
+const column = document.querySelector('div.col-xs-8');
+const div = column?.querySelectorAll(`:scope ${'div'}`);
+const h2 = column?.querySelectorAll(`:scope ${'h2'}`)
+
+assert.isEmpty(div);
+assert.lengthOf(h2, 1);
 ```
 
 All of your `div` elements should have closing tags.
 
 ```js
-assert(
-  code.match(/<\/div>/g) &&
-    code.match(/<div/g) &&
-    code.match(/<\/div>/g).length === code.match(/<div/g).length
-);
+assert.match(code,/<\/div>/g);
+assert.match(code,/<div/g);
+assert.equal(code.match(/<\/div>/g).length,code.match(/<div/g).length);
 ```
 
 # --seed--

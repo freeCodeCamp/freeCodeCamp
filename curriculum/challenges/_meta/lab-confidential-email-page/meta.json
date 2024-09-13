@@ -1,0 +1,16 @@
+{
+  "name": "Build a Confidential Email Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-confidential-email-page",
+  "order": 75,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66bba6fff611169359d9d36a",
+      "title": "Build a Confidential Email Page"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

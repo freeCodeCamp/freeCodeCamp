@@ -372,7 +372,7 @@ assert.strictEqual(
 );
 ```
 
-When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than change due, individual denomination amounts make impossible to return needed change, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
+When the `price` is less than the value in the `#cash` element and the total cash in the drawer (`cid`) is insufficient to cover the change due, the purchase should not proceed. When the `#purchase-btn` is clicked under these conditions, the `#change-due` element should display `"Status: INSUFFICIENT_FUNDS"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -387,26 +387,22 @@ price = (randomCash - randomChange) / 100;
 cashInput.value = `${randomCash / 100}`;
 
 let changeLeft = randomChange;
-const _expectedChangeDue = [];
 const _cashInDrawer = [];
 for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
-  // If denomination can complete required changeLeft, available amount in drawer cannot
-  // equal the maximum. Otherwise count in drawer can be greater than maximum count in change.
-  const drawerCount = _randomNumber(
-    changeLeft % denomination === 0 ? Math.min(15, maxCountInChange - 1) : 15
-  );
+  // Amount lower than maximum (adjusted to changeLeft) will ensure total in drawer
+  // will be lower than needed change.
+  const drawerCount = _randomNumber(Math.max(0, Math.min(15, maxCountInChange - 1)));
   const amountInDrawer = drawerCount * denomination;
   _cashInDrawer.push([denominationName, amountInDrawer / 100]);
-  const changeCount = Math.min(drawerCount, maxCountInChange);
-  if (denomination <= changeLeft && changeCount > 0) {
-    changeLeft -= changeCount * denomination;
+  if (denomination <= changeLeft && drawerCount > 0) {
+    changeLeft -= amountInDrawer;
   }
 }
 
-// Less pennies than changeLeft makes impossible to return change due.
-const drawerCount = _randomNumber(Math.min(15, changeLeft - 1));
-_cashInDrawer.push(['PENNY', drawerCount / 100]);
+// Less pennies than changeLeft makes sure total cash in drawer is less than change due.
+const count = _randomNumber(Math.min(15, changeLeft - 1));
+_cashInDrawer.push(['PENNY', count / 100]);
 
 cid = _cashInDrawer.reverse();
 
@@ -447,7 +443,8 @@ assert.strictEqual(
 );
 ```
 
-When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is less than the change due, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
+
+When `price` is less than the value in the `#cash` element, total cash in drawer `cid` is greater than change due, but the individual denomination amounts make it impossible to return needed change, when the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -462,22 +459,26 @@ price = (randomCash - randomChange) / 100;
 cashInput.value = `${randomCash / 100}`;
 
 let changeLeft = randomChange;
+const _expectedChangeDue = [];
 const _cashInDrawer = [];
 for (const [denominationName, denomination] of _money) {
   const maxCountInChange = Math.floor(changeLeft / denomination);
-  // Amount lower than maximum (adjusted to changeLeft) will ensure total in drawer
-  // will be lower than needed change.
-  const drawerCount = _randomNumber(Math.max(0, Math.min(15, maxCountInChange - 1)));
+  // If denomination can complete required changeLeft, available amount in drawer cannot
+  // equal the maximum. Otherwise count in drawer can be greater than maximum count in change.
+  const drawerCount = _randomNumber(
+    changeLeft % denomination === 0 ? Math.min(15, maxCountInChange - 1) : 15
+  );
   const amountInDrawer = drawerCount * denomination;
   _cashInDrawer.push([denominationName, amountInDrawer / 100]);
-  if (denomination <= changeLeft && drawerCount > 0) {
-    changeLeft -= amountInDrawer;
+  const changeCount = Math.min(drawerCount, maxCountInChange);
+  if (denomination <= changeLeft && changeCount > 0) {
+    changeLeft -= changeCount * denomination;
   }
 }
 
-// Less pennies than changeLeft makes sure total cash in drawer is less than change due.
-const count = _randomNumber(Math.min(15, changeLeft - 1));
-_cashInDrawer.push(['PENNY', count / 100]);
+// Less pennies than changeLeft makes impossible to return change due.
+const drawerCount = _randomNumber(Math.min(15, changeLeft - 1));
+_cashInDrawer.push(['PENNY', drawerCount / 100]);
 
 cid = _cashInDrawer.reverse();
 

@@ -1,0 +1,89 @@
+{
+  "name": "Build a Calculator",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-calculator",
+  "order": 152,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66cc06012e46aa6bc9b8c001",
+      "title": "Step 1"
+    },
+    {
+      "id": "66cc095dfe1682753d2ab030",
+      "title": "Step 2"
+    },
+    {
+      "id": "66cc0a9e06e00b75d6782be9",
+      "title": "Step 3"
+    },
+    {
+      "id": "66cc0ba5881acb7692cfc4de",
+      "title": "Step 4"
+    },
+    {
+      "id": "66cc0de2920bec775f610424",
+      "title": "Step 5"
+    },
+    {
+      "id": "66cc0f1ae40802781b2ea972",
+      "title": "Step 6"
+    },
+    {
+      "id": "66cc10958d72e57907f898b2",
+      "title": "Step 7"
+    },
+    {
+      "id": "66cc12fa504b0479dac479a0",
+      "title": "Step 8"
+    },
+    {
+      "id": "66cdf76685e4cb5a8726e27b",
+      "title": "Step 9"
+    },
+    {
+      "id": "66cc14ca14e65e7a9ebecb80",
+      "title": "Step 10"
+    },
+    {
+      "id": "66cc16abc30b367ba1d1f9ef",
+      "title": "Step 11"
+    },
+    {
+      "id": "66cc172af7159a7c67804544",
+      "title": "Step 12"
+    },
+    {
+      "id": "66cc1a3a39aef47d6473cb2f",
+      "title": "Step 13"
+    },
+    {
+      "id": "66cc1ccfefdd727e18c2ab20",
+      "title": "Step 14"
+    },
+    {
+      "id": "66cc1deb1f04647f2aabee2b",
+      "title": "Step 15"
+    },
+    {
+      "id": "66cc21d23238dc8240a8a182",
+      "title": "Step 16"
+    },
+    {
+      "id": "66cc26907ff6908402af0149",
+      "title": "Step 17"
+    },
+    {
+      "id": "66cc2739f687e484d50bb6f1",
+      "title": "Step 18"
+    },
+    {
+      "id": "66cc281d687975858049fd8d",
+      "title": "Step 19"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
