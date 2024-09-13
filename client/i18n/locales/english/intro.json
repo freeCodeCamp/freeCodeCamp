@@ -2229,7 +2229,10 @@
       "sykw": { "title": "372", "intro": [] },
       "zzhp": { "title": "373", "intro": [] },
       "nmve": { "title": "374", "intro": [] },
-      "agky": { "title": "375", "intro": [] },
+      "lab-url-shortener-microservice": {
+        "title": "Build a URL Shortener Microservice",
+        "intro": ["In this lab, you will build a URL Shortener Microservice"]
+      },
       "lab-exercise-tracker": {
         "title": "Build an Exercise Tracker",
         "intro": ["In this lab, you will build an exercise tracker"]
