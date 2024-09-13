@@ -92,6 +92,7 @@ const completeChallenges = async ({
   checkModal?: boolean;
 }) => {
   await page.goto(challenges[0].url);
+  let donationModalFound = false;
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(challenge.url);
     await focusEditor({ page, isMobile });
@@ -111,10 +112,13 @@ const completeChallenges = async ({
         .getByRole('dialog')
         .filter({ hasText: 'Become a Supporter' });
       if (await donationModal.isVisible()) {
-        await expect(donationModal).toBeVisible();
-        return;
+        donationModalFound = true;
+        break;
       }
     }
+  }
+  if (checkModal) {
+    expect(donationModalFound).toBe(true);
   }
 };
 
