@@ -2192,7 +2192,12 @@
       "thsj": { "title": "335", "intro": [] },
       "cvvu": { "title": "336", "intro": [] },
       "ohnc": { "title": "337", "intro": [] },
-      "suqn": { "title": "338", "intro": [] },
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Databse",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
+      },
       "oxxf": { "title": "339", "intro": [] },
       "ynqt": { "title": "340", "intro": [] },
       "hnta": { "title": "341", "intro": [] },
