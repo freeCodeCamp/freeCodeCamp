@@ -1,0 +1,12 @@
+{
+  "name": "Build Five Programs",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-bash-five-programs",
+  "order": 342,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66e45df803b9ef7a109493cd", "title": "Step 1" }],
+  "helpCategory": "Backend Development"
+}
