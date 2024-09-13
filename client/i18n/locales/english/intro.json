@@ -2230,8 +2230,8 @@
       "zzhp": { "title": "373", "intro": [] },
       "nmve": { "title": "374", "intro": [] },
       "lab-url-shortener-microservice": {
-        "title": "Build an URL Shortener Microservice",
-        "intro": ["In this lab, you will build an URL Shortener Microservice"]
+        "title": "Build a URL Shortener Microservice",
+        "intro": ["In this lab, you will build a URL Shortener Microservice"]
       },
       "lab-exercise-tracker": {
         "title": "Build an Exercise Tracker",
