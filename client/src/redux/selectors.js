@@ -1,5 +1,6 @@
 import { Certification } from '../../../shared/config/certification-settings';
 import { randomBetween } from '../utils/random-between';
+import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -14,10 +15,6 @@ export const currentChallengeIdSelector = state =>
 export const completionCountSelector = state => state[MainApp].completionCount;
 export const isRandomCompletionThresholdSelector = state =>
   state[MainApp].isRandomCompletionThreshold;
-export const completionCountWhenShownProgressModalSelector = state =>
-  state[MainApp].completionCountWhenShownProgressModal;
-export const progressDonationModalShownSelector = state =>
-  state[MainApp].progressDonationModalShown;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -37,11 +34,7 @@ export const showCertSelector = state => state[MainApp].showCert;
 export const showCertFetchStateSelector = state =>
   state[MainApp].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
-  const completedChallengesLength = completedChallengesSelector(state).length;
-  const completionCount = completionCountSelector(state);
-  const lastCompletionCount =
-    completionCountWhenShownProgressModalSelector(state);
-  const progressDonationModalShown = progressDonationModalShownSelector(state);
+  const completedChallengeCount = completedChallengesSelector(state).length;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
   const isRandomCompletionThreshold =
@@ -53,18 +46,20 @@ export const shouldRequestDonationSelector = state => {
   // a block has been completed
   if (recentlyClaimedBlock) return true;
 
+  const sessionChallengeData = getSessionChallengeData();
   /*
     Different intervals need to be tested for optimization.
    */
-  if (progressDonationModalShown && completionCount - lastCompletionCount >= 20)
-    return true;
-
-  // a donation has already been requested
-  if (progressDonationModalShown) return false;
+  // the assumption is that we save the count when we request donations
+  if (sessionChallengeData.isSaved) {
+    // only request if sufficient challenges have been completed since last
+    // request
+    return sessionChallengeData.countSinceSave >= 20;
+  }
 
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)
-  if (completedChallengesLength < 10) return false;
+  if (completedChallengeCount < 10) return false;
 
   /*
    Show modal if user has completed 10 challanged in total
@@ -72,9 +67,9 @@ export const shouldRequestDonationSelector = state => {
    The isRandomCompletionThreshold flag is used to AB test interval randomness
   */
   if (isRandomCompletionThreshold) {
-    return completionCount >= randomBetween(3, 7);
+    return sessionChallengeData.currentCount >= randomBetween(3, 7);
   } else {
-    return completionCount >= 3;
+    return sessionChallengeData.currentCount >= 3;
   }
 };
 

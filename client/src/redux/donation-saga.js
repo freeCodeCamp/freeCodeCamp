@@ -18,6 +18,10 @@ import {
 import { stringifyDonationEvents } from '../utils/analytics-strings';
 import { stripe } from '../utils/stripe';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
+import {
+  getSessionChallengeData,
+  saveCurrentCount
+} from '../utils/session-storage';
 import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,
@@ -25,7 +29,6 @@ import {
   postChargeProcessing,
   postChargeError,
   preventBlockDonationRequests,
-  setCompletionCountWhenShownProgressModal,
   updateCardError,
   updateCardRedirecting
 } from './actions';
@@ -34,7 +37,6 @@ import {
   recentlyClaimedBlockSelector,
   shouldRequestDonationSelector,
   isSignedInSelector,
-  completionCountSelector,
   completedChallengesSelector
 } from './selectors';
 
@@ -56,7 +58,7 @@ function* showDonateModalSaga() {
     if (recentlyClaimedBlock) {
       yield put(preventBlockDonationRequests());
     } else {
-      yield put(setCompletionCountWhenShownProgressModal());
+      yield call(saveCurrentCount);
     }
   }
 }
@@ -124,9 +126,8 @@ export function* postChargeSaga({
       });
     } else {
       const completedChallenges = yield select(completedChallengesSelector);
-      const completedChallengesInSession = yield select(
-        completionCountSelector
-      );
+      const sessionChallengeData = yield call(getSessionChallengeData);
+      const completedChallengesInSession = sessionChallengeData.currentCount;
       yield call(callGA, {
         event: 'donation',
         action: stringifyDonationEvents(paymentContext, paymentProvider),
