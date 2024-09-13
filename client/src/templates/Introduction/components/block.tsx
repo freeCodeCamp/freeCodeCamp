@@ -118,7 +118,8 @@ class Block extends Component<BlockProps> {
       return isGridBased({
         superBlock,
         challengeType: challenge.challengeType,
-        blockType: challenge.blockType
+        blockType: challenge.blockType,
+        helpCategory: challenge.helpCategory
       });
     });
 
