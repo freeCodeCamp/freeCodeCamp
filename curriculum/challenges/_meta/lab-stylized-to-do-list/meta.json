@@ -1,0 +1,11 @@
+{
+  "name": "Build a Stylized To-Do List",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "dashedName": "lab-stylized-to-do-list",
+  "order": 43,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66c051d13a6a20255a963695", "title": "Build a Stylized To-Do List" }],
+  "helpCategory": "HTML-CSS"
+}

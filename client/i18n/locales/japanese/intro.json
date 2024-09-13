@@ -1757,7 +1757,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the main, nav, article and footer elements."
+          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
       "szcd": {
@@ -1887,9 +1887,11 @@
         "title": "42",
         "intro": []
       },
-      "pdqp": {
-        "title": "43",
-        "intro": []
+      "lab-stylized-to-do-list": {
+        "title": "Build a Stylized To-Do List",
+        "intro": [
+          "In this lab, you'll build a To-Do list with and apply different styles to the links"
+        ]
       },
       "humj": {
         "title": "44",
@@ -2289,10 +2291,6 @@
         "title": "139",
         "intro": []
       },
-      "uzjg": {
-        "title": "140",
-        "intro": []
-      },
       "hxwa": {
         "title": "141",
         "intro": []
@@ -2301,9 +2299,11 @@
         "title": "142",
         "intro": []
       },
-      "nkxq": {
-        "title": "143",
-        "intro": []
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller",
+        "intro": [
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+        ]
       },
       "wfyg": {
         "title": "144",
@@ -2333,27 +2333,29 @@
         "title": "150",
         "intro": []
       },
-      "kkix": {
-        "title": "151",
-        "intro": []
-      },
       "workshop-calculator": {
         "title": "Build a Calculator",
         "intro": [
           "In this workshop, you will review working with functions by building a calculator."
         ]
       },
-      "hqba": {
-        "title": "153",
-        "intro": []
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it."
+        ]
       },
-      "nnqa": {
-        "title": "154",
-        "intro": []
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you will create different stories by assigning different words to different variables."
+        ]
       },
-      "cktz": {
-        "title": "155",
-        "intro": []
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": [
+          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+        ]
       },
       "pljo": {
         "title": "156",
@@ -2438,17 +2440,19 @@
         "title": "175",
         "intro": []
       },
-      "skiq": {
-        "title": "176",
-        "intro": []
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": ["For this lab, you will create a gradebook app."]
       },
       "epfc": {
         "title": "177",
         "intro": []
       },
-      "lab-gradebook-app": {
-        "title": "Build a Gradebook App",
-        "intro": ["For this lab, you will create a gradebook app."]
+      "lab-inventory-management-program": {
+        "title": "Build an Inventory Management Program",
+        "intro": [
+          "For this lab, you will build an inventory management program using JavaScript."
+        ]
       },
       "fbbn": {
         "title": "179",
@@ -2514,9 +2518,9 @@
         "title": "194",
         "intro": []
       },
-      "ctwj": {
-        "title": "195",
-        "intro": []
+      "lab-real-time-counter": {
+        "title": "Build a Real Time Counter",
+        "intro": ["In this lab, you will build a real-time character counter"]
       },
       "fmbk": {
         "title": "196",
@@ -2526,9 +2530,11 @@
         "title": "197",
         "intro": []
       },
-      "bbyq": {
-        "title": "198",
-        "intro": []
+      "workshop-rps-game": {
+        "title": "Build a Rock, Paper, Scissors Game",
+        "intro": [
+          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+        ]
       },
       "uglc": {
         "title": "199",
@@ -2692,9 +2698,11 @@
         "title": "239",
         "intro": []
       },
-      "miza": {
-        "title": "240",
-        "intro": []
+      "lab-quicksort-algorithm": {
+        "title": "Build the Quicksort Algorithm",
+        "intro": [
+          "For this lab, you will implement the Quicksort algorithm using JavaScript."
+        ]
       },
       "manv": {
         "title": "241",
@@ -2828,9 +2836,11 @@
         "title": "273",
         "intro": []
       },
-      "afhj": {
-        "title": "274",
-        "intro": []
+      "lab-nth-fibonacci-number-generator": {
+        "title": "Build the nth Fibonacci number generator",
+        "intro": [
+          "For this lab, you will implement the nth Fibonacci number generator."
+        ]
       },
       "cfyv": {
         "title": "275",
@@ -2934,6 +2944,362 @@
       },
       "oeqv": {
         "title": "300",
+        "intro": []
+      },
+      "rdzk": {
+        "title": "301",
+        "intro": []
+      },
+      "vtpz": {
+        "title": "302",
+        "intro": []
+      },
+      "dfwl": {
+        "title": "303",
+        "intro": []
+      },
+      "adzm": {
+        "title": "304",
+        "intro": []
+      },
+      "yani": {
+        "title": "305",
+        "intro": []
+      },
+      "voks": {
+        "title": "306",
+        "intro": []
+      },
+      "uwum": {
+        "title": "307",
+        "intro": []
+      },
+      "ukem": {
+        "title": "308",
+        "intro": []
+      },
+      "sdjg": {
+        "title": "309",
+        "intro": []
+      },
+      "buzx": {
+        "title": "310",
+        "intro": []
+      },
+      "pexz": {
+        "title": "311",
+        "intro": []
+      },
+      "prlo": {
+        "title": "312",
+        "intro": []
+      },
+      "jsnd": {
+        "title": "313",
+        "intro": []
+      },
+      "lpdx": {
+        "title": "314",
+        "intro": []
+      },
+      "tkgg": {
+        "title": "315",
+        "intro": []
+      },
+      "coip": {
+        "title": "316",
+        "intro": []
+      },
+      "wkxy": {
+        "title": "317",
+        "intro": []
+      },
+      "hzab": {
+        "title": "318",
+        "intro": []
+      },
+      "ggea": {
+        "title": "319",
+        "intro": []
+      },
+      "vgvz": {
+        "title": "320",
+        "intro": []
+      },
+      "jkfc": {
+        "title": "321",
+        "intro": []
+      },
+      "jsbo": {
+        "title": "322",
+        "intro": []
+      },
+      "zhhp": {
+        "title": "323",
+        "intro": []
+      },
+      "nwwd": {
+        "title": "324",
+        "intro": []
+      },
+      "iuad": {
+        "title": "325",
+        "intro": []
+      },
+      "gora": {
+        "title": "326",
+        "intro": []
+      },
+      "vpkl": {
+        "title": "327",
+        "intro": []
+      },
+      "qmur": {
+        "title": "328",
+        "intro": []
+      },
+      "lzvx": {
+        "title": "329",
+        "intro": []
+      },
+      "mfwu": {
+        "title": "330",
+        "intro": []
+      },
+      "dfcd": {
+        "title": "331",
+        "intro": []
+      },
+      "vfje": {
+        "title": "332",
+        "intro": []
+      },
+      "hkdc": {
+        "title": "333",
+        "intro": []
+      },
+      "ovvb": {
+        "title": "334",
+        "intro": []
+      },
+      "thsj": {
+        "title": "335",
+        "intro": []
+      },
+      "cvvu": {
+        "title": "336",
+        "intro": []
+      },
+      "ohnc": {
+        "title": "337",
+        "intro": []
+      },
+      "suqn": {
+        "title": "338",
+        "intro": []
+      },
+      "oxxf": {
+        "title": "339",
+        "intro": []
+      },
+      "ynqt": {
+        "title": "340",
+        "intro": []
+      },
+      "hnta": {
+        "title": "341",
+        "intro": []
+      },
+      "hwpv": {
+        "title": "342",
+        "intro": []
+      },
+      "keqo": {
+        "title": "343",
+        "intro": []
+      },
+      "pegc": {
+        "title": "344",
+        "intro": []
+      },
+      "udfh": {
+        "title": "345",
+        "intro": []
+      },
+      "kuyg": {
+        "title": "346",
+        "intro": []
+      },
+      "tvlh": {
+        "title": "347",
+        "intro": []
+      },
+      "lhwu": {
+        "title": "348",
+        "intro": []
+      },
+      "mtkd": {
+        "title": "349",
+        "intro": []
+      },
+      "wgfc": {
+        "title": "350",
+        "intro": []
+      },
+      "sldv": {
+        "title": "351",
+        "intro": []
+      },
+      "zygv": {
+        "title": "352",
+        "intro": []
+      },
+      "movb": {
+        "title": "353",
+        "intro": []
+      },
+      "dzsr": {
+        "title": "354",
+        "intro": []
+      },
+      "awnl": {
+        "title": "355",
+        "intro": []
+      },
+      "cysa": {
+        "title": "356",
+        "intro": []
+      },
+      "pzmc": {
+        "title": "357",
+        "intro": []
+      },
+      "trpm": {
+        "title": "358",
+        "intro": []
+      },
+      "ufxg": {
+        "title": "359",
+        "intro": []
+      },
+      "lvrx": {
+        "title": "360",
+        "intro": []
+      },
+      "ofxk": {
+        "title": "361",
+        "intro": []
+      },
+      "mgoc": {
+        "title": "362",
+        "intro": []
+      },
+      "ibmn": {
+        "title": "363",
+        "intro": []
+      },
+      "zpjj": {
+        "title": "364",
+        "intro": []
+      },
+      "ghfk": {
+        "title": "365",
+        "intro": []
+      },
+      "ugfq": {
+        "title": "366",
+        "intro": []
+      },
+      "pfui": {
+        "title": "367",
+        "intro": []
+      },
+      "qjov": {
+        "title": "368",
+        "intro": []
+      },
+      "niie": {
+        "title": "369",
+        "intro": []
+      },
+      "ttip": {
+        "title": "370",
+        "intro": []
+      },
+      "hjku": {
+        "title": "371",
+        "intro": []
+      },
+      "sykw": {
+        "title": "372",
+        "intro": []
+      },
+      "zzhp": {
+        "title": "373",
+        "intro": []
+      },
+      "nmve": {
+        "title": "374",
+        "intro": []
+      },
+      "agky": {
+        "title": "375",
+        "intro": []
+      },
+      "bqlb": {
+        "title": "376",
+        "intro": []
+      },
+      "kegi": {
+        "title": "377",
+        "intro": []
+      },
+      "nqhi": {
+        "title": "378",
+        "intro": []
+      },
+      "vnfu": {
+        "title": "379",
+        "intro": []
+      },
+      "rlli": {
+        "title": "380",
+        "intro": []
+      },
+      "rjpv": {
+        "title": "381",
+        "intro": []
+      },
+      "xbri": {
+        "title": "382",
+        "intro": []
+      },
+      "kwhp": {
+        "title": "383",
+        "intro": []
+      },
+      "nkjt": {
+        "title": "384",
+        "intro": []
+      },
+      "pgjj": {
+        "title": "385",
+        "intro": []
+      },
+      "exom": {
+        "title": "386",
+        "intro": []
+      },
+      "bvqc": {
+        "title": "387",
+        "intro": []
+      },
+      "xish": {
+        "title": "388",
+        "intro": []
+      },
+      "oadg": {
+        "title": "389",
         "intro": []
       },
       "front-end-development-certification-exam": {

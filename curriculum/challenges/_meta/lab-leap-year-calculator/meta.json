@@ -1,0 +1,11 @@
+{
+  "name": "Build a Leap Year Calculator ",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "dashedName": "lab-leap-year-calculator",
+  "order": 155,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66c06fad3475cd92421b9ac2", "title": "Build a Leap Year Calculator" }],
+  "helpCategory": "JavaScript"
+}
