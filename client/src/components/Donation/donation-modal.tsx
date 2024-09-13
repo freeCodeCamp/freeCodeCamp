@@ -67,11 +67,7 @@ function DonateModal({
       goToAnchor('claim-cert-block');
     }
 
-    if (isA11yFeatureEnabled) {
-      if (!canClose) {
-        return;
-      }
-
+    if (isA11yFeatureEnabled && canClose) {
       closeDonationModal();
     }
   };
