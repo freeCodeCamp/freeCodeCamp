@@ -17,6 +17,7 @@ import Graduation from './graduation';
 import CollegeAlgebra from './college-algebra';
 import CSharpLogo from './c-sharp-logo';
 import A2EnglishIcon from './a2-english';
+import B1EnglishIcon from './b1-english';
 import RosettaCodeIcon from './rosetta-code';
 
 const iconMap = {
@@ -41,7 +42,7 @@ const iconMap = {
   [SuperBlocks.FrontEndDevelopment]: ResponsiveDesign,
   [SuperBlocks.UpcomingPython]: PythonIcon,
   [SuperBlocks.A2English]: A2EnglishIcon,
-  [SuperBlocks.B1English]: A2EnglishIcon,
+  [SuperBlocks.B1English]: B1EnglishIcon,
   [SuperBlocks.RosettaCode]: RosettaCodeIcon,
   [SuperBlocks.PythonForEverybody]: PythonIcon
 };

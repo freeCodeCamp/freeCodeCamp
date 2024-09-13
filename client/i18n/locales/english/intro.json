@@ -615,7 +615,7 @@
         "title": "Periodic Table Database",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will create Bash a script to get information about chemical elements from a periodic table database."
+          "For this project, you will create a Bash script to get information about chemical elements from a periodic table database."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
@@ -2198,7 +2198,12 @@
       "thsj": { "title": "335", "intro": [] },
       "cvvu": { "title": "336", "intro": [] },
       "ohnc": { "title": "337", "intro": [] },
-      "suqn": { "title": "338", "intro": [] },
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Databse",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
+      },
       "oxxf": { "title": "339", "intro": [] },
       "ynqt": { "title": "340", "intro": [] },
       "hnta": { "title": "341", "intro": [] },
@@ -2235,7 +2240,10 @@
       "sykw": { "title": "372", "intro": [] },
       "zzhp": { "title": "373", "intro": [] },
       "nmve": { "title": "374", "intro": [] },
-      "agky": { "title": "375", "intro": [] },
+      "lab-url-shortener-microservice": {
+        "title": "Build a URL Shortener Microservice",
+        "intro": ["In this lab, you will build a URL Shortener Microservice"]
+      },
       "lab-exercise-tracker": {
         "title": "Build an Exercise Tracker",
         "intro": ["In this lab, you will build an exercise tracker"]
