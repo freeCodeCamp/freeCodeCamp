@@ -1,5 +1,4 @@
-image:
-  file: .gitpod.Dockerfile
+image: ghcr.io/freecodecamp/gitpod-fcc:latest
 ports:
   - port: 27017 # mongodb
     onOpen: ignore
