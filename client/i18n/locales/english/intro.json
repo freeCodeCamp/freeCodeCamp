@@ -2225,7 +2225,12 @@
       "trpm": { "title": "358", "intro": [] },
       "ufxg": { "title": "359", "intro": [] },
       "lvrx": { "title": "360", "intro": [] },
-      "ofxk": { "title": "361", "intro": [] },
+      "lab-number-guessing-game": {
+        "title": "Build a Number Guessing Game",
+        "intro": [
+          "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+        ]
+      },
       "mgoc": { "title": "362", "intro": [] },
       "ibmn": { "title": "363", "intro": [] },
       "zpjj": { "title": "364", "intro": [] },
