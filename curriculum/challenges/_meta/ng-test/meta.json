@@ -1,0 +1,11 @@
+{
+  "name": "ng test",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "ng-test",
+  "order": 1,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [{ "id": "66e42777f316992855411a74", "title": "Step 1" }],
+  "helpCategory": "English"
+}
