@@ -2239,7 +2239,12 @@
       "hjku": { "title": "371", "intro": [] },
       "sykw": { "title": "372", "intro": [] },
       "zzhp": { "title": "373", "intro": [] },
-      "nmve": { "title": "374", "intro": [] },
+      "lab-request-header-parser-microservice": {
+        "title": "Build a Request Header Parser Microservice",
+        "intro": [
+          "In this lab, you will build a request header parser microservice"
+        ]
+      },
       "lab-url-shortener-microservice": {
         "title": "Build a URL Shortener Microservice",
         "intro": ["In this lab, you will build a URL Shortener Microservice"]
