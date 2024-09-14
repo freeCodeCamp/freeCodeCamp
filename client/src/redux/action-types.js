@@ -9,7 +9,6 @@ export const actionTypes = createTypes(
     'allowBlockDonationRequests',
     'setRenderStartTime',
     'preventBlockDonationRequests',
-    'setCompletionCountWhenShownProgressModal',
     'setShowMultipleProgressModals',
     'openDonationModal',
     'closeDonationModal',
