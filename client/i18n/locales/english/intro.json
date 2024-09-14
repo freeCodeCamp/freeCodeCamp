@@ -228,7 +228,7 @@
       "basic-javascript": {
         "title": "Basic JavaScript",
         "intro": [
-          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.",
+          "JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers",
           "In this course, you'll learn fundamental programming concepts in JavaScript. You'll start with basic data structures like numbers and strings. Then you'll learn to work with arrays, objects, functions, loops, if/else statements, and more."
         ]
       },
@@ -299,7 +299,31 @@
       },
       "module-3": {
         "title": "Module-3 : Introduction to Basic Javascript ",
-        "intro": ["", ""]
+        "intro": [
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult."
+        ]
+      },
+      "module-ai-4": {
+        "title": "Module-ai-4",
+        "intro": [
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult."
+        ]
+      },
+      "module4": {
+        "title": "Module4",
+        "intro": [
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult."
+        ]
+      },
+      "ng-test": {
+        "title": "Ng Test",
+        "intro": [
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult.",
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before – just much more difficult."
+        ]
       }
     }
   },
