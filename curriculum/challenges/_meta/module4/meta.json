@@ -1,0 +1,20 @@
+{
+  "name": "module4",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "module4",
+  "order": 42,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "66e3fe547e3cd15eec044767",
+      "title": "Step 1"
+    },
+    {
+      "id": "66e424792c8cc80e984ac365",
+      "title": "demo1"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
