@@ -58,7 +58,7 @@ export function SolutionDisplayWidget({
           rel='noopener noreferrer'
           target='_blank'
         >
-          {t('certification.project.solution')}
+          {t('certification.project.solution')}{' '}
           <span className='sr-only'>({t('aria.opens-new-window')})</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
@@ -68,7 +68,7 @@ export function SolutionDisplayWidget({
           rel='noopener noreferrer'
           target='_blank'
         >
-          {t('certification.project.source')}
+          {t('certification.project.source')}{' '}
           <span className='sr-only'>({t('aria.opens-new-window')})</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
@@ -144,7 +144,7 @@ export function SolutionDisplayWidget({
             rel='noopener noreferrer'
             target='_blank'
           >
-            {t('buttons.frontend')}{' '}
+            {t('certification.project.solution')}{' '}
             <span className='sr-only'>({t('aria.opens-new-window')})</span>
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </MenuItem>
@@ -154,7 +154,7 @@ export function SolutionDisplayWidget({
             rel='noopener noreferrer'
             target='_blank'
           >
-            {t('buttons.backend')}{' '}
+            {t('certification.project.source')}{' '}
             <span className='sr-only'>({t('aria.opens-new-window')})</span>
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </MenuItem>
