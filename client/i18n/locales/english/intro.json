@@ -2207,7 +2207,12 @@
       "udfh": { "title": "345", "intro": [] },
       "kuyg": { "title": "346", "intro": [] },
       "tvlh": { "title": "347", "intro": [] },
-      "lhwu": { "title": "348", "intro": [] },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
       "mtkd": { "title": "349", "intro": [] },
       "wgfc": { "title": "350", "intro": [] },
       "sldv": { "title": "351", "intro": [] },
