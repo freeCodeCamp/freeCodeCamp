@@ -50,7 +50,6 @@ const analyticsDataMock = {
 const signedInStoreMock = {
   app: {
     appUsername: 'devuser',
-    completionCount: 2,
     user: {
       devuser: {
         completedChallenges: [
@@ -83,7 +82,6 @@ const signedInStoreMock = {
 const signedOutStoreMock = {
   app: {
     appUsername: '',
-    completionCount: 0,
     user: {
       '': {
         completedChallenges: []
@@ -94,6 +92,9 @@ const signedOutStoreMock = {
 
 describe('donation-saga', () => {
   it('calls postChargeStrip for Stripe', () => {
+    // The number of completed challenges per session is stored in the session storage
+    sessionStorage.setItem('session-completed-challenges', '2');
+
     return expectSaga(postChargeSaga, postChargeDataMock)
       .withState(signedInStoreMock)
       .put(postChargeProcessing())
@@ -149,6 +150,8 @@ describe('donation-saga', () => {
       payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
     };
 
+    sessionStorage.setItem('session-completed-challenges', '0');
+
     const paypalAnalyticsDataMock = {
       ...analyticsDataMock,
       action: 'Donate Page Paypal Payment Submission',
@@ -160,7 +163,6 @@ describe('donation-saga', () => {
     const signedOutStoreMock = {
       app: {
         appUsername: '',
-        completionCount: 0,
         user: {
           '': {
             completedChallenges: []
