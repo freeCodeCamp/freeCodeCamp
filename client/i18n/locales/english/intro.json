@@ -2213,7 +2213,13 @@
           "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
         ]
       },
-      "mtkd": { "title": "349", "intro": [] },
+      "workshop-kitty-ipsum-translator": {
+        "title": "Build a Kitty Ipsum Translator",
+        "intro": [
+          "There's more to Bash commands than you might think.",
+          "In this 140-lesson workshop, you will learn some more complex commands, and the details of how commands work."
+        ]
+      },
       "wgfc": { "title": "350", "intro": [] },
       "sldv": { "title": "351", "intro": [] },
       "zygv": { "title": "352", "intro": [] },
