@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Build a Student Database: Part 1
+title: Introduction to the Build a Student Database Part 1
 block: workshop-sql-student-database-part-1
 superBlock: front-end-development
 ---
