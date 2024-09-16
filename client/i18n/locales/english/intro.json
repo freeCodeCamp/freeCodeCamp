@@ -2191,9 +2191,15 @@
       "ovvb": { "title": "334", "intro": [] },
       "thsj": { "title": "335", "intro": [] },
       "cvvu": { "title": "336", "intro": [] },
-      "ohnc": { "title": "337", "intro": [] },
+      "workshop-mario-database": {
+        "title": "Build a Mario Database",
+        "intro": [
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+        ]
+      },
       "lab-celestial-bodies-database": {
-        "title": "Build a Celestial Bodies Databse",
+        "title": "Build a Celestial Bodies Database",
         "intro": [
           "For this project, you will build a database of celestial bodies using PostgreSQL."
         ]
