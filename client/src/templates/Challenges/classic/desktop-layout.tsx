@@ -182,6 +182,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     : false;
   const displayPreviewConsole =
     (projectBasedChallenge || isMultifileCertProject) && showConsole;
+  const hasVerticalResizableCodePane =
+    !isMultifileCertProject && !projectBasedChallenge;
   const {
     codePane,
     editorPane,
@@ -237,8 +239,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               orientation='horizontal'
             >
               <ReflexElement
-                flex={codePane.flex}
                 name='codePane'
+                {...(hasVerticalResizableCodePane && { flex: codePane.flex })}
                 {...reflexProps}
                 {...resizeProps}
               >
