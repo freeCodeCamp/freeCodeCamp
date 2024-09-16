@@ -269,6 +269,11 @@ textarea.inputarea {
   cursor: pointer;
 }
 
+.code-details-overflow-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 /* overwriting default arrow styles for accessibility */
 :root {
   --monaco-scrollbar-arrow-box-size: 0;

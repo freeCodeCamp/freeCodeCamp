@@ -560,6 +560,10 @@ pre[class*='language-'] {
   border-radius: 0;
 }
 
+details pre[class*='language-'] {
+  min-width: max-content;
+}
+
 /* TODO: Move this rule to @freecodecamp/ui. */
 pre {
   color: inherit;
@@ -672,9 +676,9 @@ pre code {
   text-align: justify;
 }
 
-/* Port from Bootstrap as the Col component from @freecodecamp/ui 
+/* Port from Bootstrap as the Col component from @freecodecamp/ui
    doesn't fully support the xs-8 + xs-4 layout.
-   TODO: Remove these and replace the classes with Col 
+   TODO: Remove these and replace the classes with Col
    once https://github.com/freeCodeCamp/ui/issues/162 is resolved. */
 .col-xs-8,
 .col-xs-4 {
