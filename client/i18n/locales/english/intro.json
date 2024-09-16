@@ -2032,7 +2032,12 @@
         "intro": ["In this lab, you will build a real-time character counter"]
       },
       "fmbk": { "title": "196", "intro": [] },
-      "nlbo": { "title": "197", "intro": [] },
+      "lab-lightbox-viewer": {
+        "title": "Build a Lightbox Viewer",
+        "intro": [
+          "In this lab, you will build a lighbox viewer for viewing images in a focused mode."
+        ]
+      },
       "workshop-rps-game": {
         "title": "Build a Rock, Paper, Scissors Game",
         "intro": [
