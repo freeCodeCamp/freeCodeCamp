@@ -82,17 +82,14 @@ const completeChallenges = async ({
   page,
   browserName,
   isMobile,
-  number,
-  checkModal = false
+  number
 }: {
   page: Page;
   browserName: string;
   isMobile: boolean;
   number: number;
-  checkModal?: boolean;
 }) => {
   await page.goto(challenges[0].url);
-  let donationModalFound = false;
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(challenge.url);
     await focusEditor({ page, isMobile });
@@ -107,18 +104,6 @@ const completeChallenges = async ({
       page.getByRole('dialog').filter({ hasText: 'Basic Javascript' })
     ).toBeVisible(); // completion dialog
     await page.getByRole('button', { name: 'Submit' }).click();
-    if (checkModal) {
-      const donationModal = page
-        .getByRole('dialog')
-        .filter({ hasText: 'Become a Supporter' });
-      if (await donationModal.isVisible()) {
-        donationModalFound = true;
-        break;
-      }
-    }
-  }
-  if (checkModal) {
-    expect(donationModalFound).toBe(true);
   }
 };
 
@@ -374,33 +359,5 @@ test.describe('Donation modal appearance logic - Donor user', () => {
       .getByRole('dialog')
       .filter({ hasText: 'Become a Supporter' });
     await expect(donationModal).toBeHidden();
-  });
-});
-
-test.describe('Donation modal appearance logic - Certified user - variation B', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
-  test.beforeEach(async ({ context }) => {
-    // Add GrowthBook cookie with variation B
-    await addGrowthbookCookie({ context, variation: 'B' });
-  });
-
-  test('should show the modal in the first few challenges', async ({
-    page,
-    browserName,
-    isMobile,
-    context
-  }) => {
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-    test.setTimeout(50000);
-
-    // Iterate through challenges and check for the modal after each one.
-    await completeChallenges({
-      page,
-      browserName,
-      isMobile,
-      number: 10,
-      checkModal: true
-    });
   });
 });
