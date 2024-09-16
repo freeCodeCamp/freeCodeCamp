@@ -15,7 +15,6 @@ const {
 /* eslint-enable max-len*/
 
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
-const { createPoly } = require('../shared/utils/polyvinyl');
 const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
 const { metaSchemaValidator } = require('./schema/meta-schema');
 
@@ -266,6 +265,24 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
+function fixChallengeFiles(files) {
+  function addMissingProperties({ name, ext, contents, history, ...rest }) {
+    return {
+      ...rest,
+      history: Array.isArray(history) ? history : [name + '.' + ext],
+      name,
+      ext,
+      path: name + '.' + ext,
+      fileKey: name + ext,
+      contents,
+      error: null,
+      seed: contents.slice(0)
+    };
+  }
+
+  return files.map(addMissingProperties);
+}
+
 // This is a slightly weird abstraction, but it lets us define helper functions
 // without passing around a ton of arguments.
 function generateChallengeCreator(lang, englishPath, i18nPath) {
@@ -321,20 +338,6 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
   }
 
-  function fixChallengeProperties(challenge) {
-    if (challenge.challengeFiles) {
-      // The client expects the challengeFiles to be an array of polyvinyls
-      challenge.challengeFiles = challengeFilesToPolys(
-        challenge.challengeFiles
-      );
-    }
-    if (challenge.solutions?.length) {
-      // The test runner needs the solutions to be arrays of polyvinyls so it
-      // can sort them correctly.
-      challenge.solutions = challenge.solutions.map(challengeFilesToPolys);
-    }
-  }
-
   async function createChallenge(filePath, maybeMeta) {
     const meta = maybeMeta
       ? maybeMeta
@@ -357,23 +360,17 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     );
     challenge.translationPending = lang !== 'english' && !isAudited;
     addMetaToChallenge(challenge, meta);
-    fixChallengeProperties(challenge);
+    if (challenge.challengeFiles) {
+      challenge.challengeFiles = fixChallengeFiles(challenge.challengeFiles);
+    }
+    if (challenge.solutions?.length) {
+      // The test runner needs the solution files to have a history for sorting
+      challenge.solutions = challenge.solutions.map(fixChallengeFiles);
+    }
 
     return challenge;
   }
   return createChallenge;
-}
-
-function challengeFilesToPolys(files) {
-  return files.reduce((challengeFiles, challengeFile) => {
-    return [
-      ...challengeFiles,
-      {
-        ...createPoly(challengeFile),
-        seed: challengeFile.contents.slice(0)
-      }
-    ];
-  }, []);
 }
 
 async function assertHasEnglishSource(filePath, lang, englishPath) {
