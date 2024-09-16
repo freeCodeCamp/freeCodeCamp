@@ -2244,7 +2244,13 @@
       "zygv": { "title": "352", "intro": [] },
       "movb": { "title": "353", "intro": [] },
       "dzsr": { "title": "354", "intro": [] },
-      "awnl": { "title": "355", "intro": [] },
+      "workshop-castle": {
+        "title": "Build a Castle",
+        "intro": [
+          "Nano is a program that allows you to edit files right in the terminal.",
+          "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
+        ]
+      },
       "cysa": { "title": "356", "intro": [] },
       "pzmc": { "title": "357", "intro": [] },
       "trpm": { "title": "358", "intro": [] },
