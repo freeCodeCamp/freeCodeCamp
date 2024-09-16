@@ -1760,7 +1760,10 @@
       "xzam": { "title": "23", "intro": [] },
       "isho": { "title": "24", "intro": [] },
       "ghoc": { "title": "25", "intro": [] },
-      "cikh": { "title": "26", "intro": [] },
+      "lab-checkout-page": {
+        "title": "Build a Checkout Page",
+        "intro": ["In this lab, you will create an accessible checkout page."]
+      },
       "fqai": { "title": "27", "intro": [] },
       "cayd": { "title": "28", "intro": [] },
       "pspj": { "title": "29", "intro": [] },
