@@ -52,6 +52,8 @@
     "create-post": "Create a help post on the forum",
     "cancel": "Cancel",
     "reset-lesson": "Reset this lesson",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to saved code",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
     "check-code": "Check Your Code",
