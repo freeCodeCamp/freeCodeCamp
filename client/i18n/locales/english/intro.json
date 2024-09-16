@@ -2230,7 +2230,12 @@
       },
       "mtkd": { "title": "349", "intro": [] },
       "wgfc": { "title": "350", "intro": [] },
-      "sldv": { "title": "351", "intro": [] },
+      "lab-salon-appointment-scheduler": {
+        "title": "Build a Salon Appointment Scheduler",
+        "intro": [
+          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
+      },
       "zygv": { "title": "352", "intro": [] },
       "movb": { "title": "353", "intro": [] },
       "dzsr": { "title": "354", "intro": [] },
