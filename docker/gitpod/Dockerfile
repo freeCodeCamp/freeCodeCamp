@@ -10,4 +10,4 @@ RUN bash -c 'VERSION="20" \
   && nvm use $VERSION && nvm alias default $VERSION \
   && npm i -g pnpm@9 \
   && echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix \
-  && pnpm dlx playwright install --with-deps chromium'
+  && pnpm dlx playwright@1.47.1 install --with-deps chromium'
