@@ -3,10 +3,7 @@ import frameRunnerData from '../../../../../client/config/browser-scripts/frame-
 import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
-import {
-  ChallengeFile as PropTypesChallengeFile,
-  ChallengeMeta
-} from '../../../redux/prop-types';
+import { ChallengeFile, ChallengeMeta } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
@@ -24,12 +21,6 @@ import {
   Source
 } from './frame';
 import { WorkerExecutor } from './worker-executor';
-
-interface ChallengeFile extends PropTypesChallengeFile {
-  source: string;
-  index: string;
-  editableContents: string;
-}
 
 interface BuildChallengeData extends Context {
   challengeType: number;
@@ -240,6 +231,8 @@ export async function buildDOMChallenge(
     challengeFile => challengeFile.ext === 'jsx'
   );
 
+  // @ts-expect-error getTransformers is compatible, but we can't prove it since
+  // it a JS file.
   const pipeLine = composeFunctions(...getTransformers(options));
   const usesTestRunner = options?.usesTestRunner ?? false;
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
@@ -276,6 +269,8 @@ export async function buildJSChallenge(
   options: BuildOptions
 ): Promise<BuildResult> {
   if (!challengeFiles) throw Error('No challenge files provided');
+  // @ts-expect-error getTransformers is compatible, but we can't prove it since
+  // it a JS file.
   const pipeLine = composeFunctions(...getTransformers(options));
 
   const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
@@ -313,6 +308,8 @@ export async function buildPythonChallenge({
   challengeFiles
 }: BuildChallengeData): Promise<BuildResult> {
   if (!challengeFiles) throw new Error('No challenge files provided');
+  // @ts-expect-error getTransformers is compatible, but we can't prove it since
+  // it a JS file.
   const pipeLine = composeFunctions(...getPythonTransformers());
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
