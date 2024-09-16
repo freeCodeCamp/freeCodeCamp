@@ -14,9 +14,7 @@ export interface State {
   [MainApp]: {
     appUsername: string;
     recentlyClaimedBlock: null | string;
-    completionCountWhenShownProgressModal: number | null;
     showMultipleProgressModals: boolean;
-    completionCount: number;
     currentChallengId: string;
     showCert: Record<string, unknown>;
     showCertFetchState: DefaultFetchState;
