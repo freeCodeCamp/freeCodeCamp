@@ -196,7 +196,7 @@ test('User can reset on a multi-file project', async ({
 
   await page
     .getByRole('button', {
-      name: translations.buttons['reset-lesson']
+      name: translations.buttons['revert-to-saved-code']
     })
     .click();
 
@@ -246,7 +246,7 @@ test.describe('Signed in user', () => {
 
     await page
       .getByRole('button', {
-        name: translations.buttons['reset-lesson']
+        name: translations.buttons['revert-to-saved-code']
       })
       .click();
 
@@ -284,7 +284,7 @@ test.describe('Signed in user', () => {
 
     await page
       .getByRole('button', {
-        name: translations.buttons['reset-lesson']
+        name: translations.buttons['revert-to-saved-code']
       })
       .click();
 
