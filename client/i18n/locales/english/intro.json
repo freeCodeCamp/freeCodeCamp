@@ -1802,7 +1802,7 @@
       "lab-event-flyer-page": {
         "title": "Build an Event Flyer Page",
         "intro": [
-          "In this lab, will use absolute and relative CSS units to create an event flyer page."
+          "In this lab, you will use absolute and relative CSS units to create an event flyer page."
         ]
       },
       "ywfm": { "title": "56", "intro": [] },
