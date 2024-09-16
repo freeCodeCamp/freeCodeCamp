@@ -2191,9 +2191,15 @@
       "ovvb": { "title": "334", "intro": [] },
       "thsj": { "title": "335", "intro": [] },
       "cvvu": { "title": "336", "intro": [] },
-      "ohnc": { "title": "337", "intro": [] },
+      "workshop-mario-database": {
+        "title": "Build a Mario Database",
+        "intro": [
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+        ]
+      },
       "lab-celestial-bodies-database": {
-        "title": "Build a Celestial Bodies Databse",
+        "title": "Build a Celestial Bodies Database",
         "intro": [
           "For this project, you will build a database of celestial bodies using PostgreSQL."
         ]
@@ -2207,7 +2213,12 @@
       "udfh": { "title": "345", "intro": [] },
       "kuyg": { "title": "346", "intro": [] },
       "tvlh": { "title": "347", "intro": [] },
-      "lhwu": { "title": "348", "intro": [] },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
       "mtkd": { "title": "349", "intro": [] },
       "wgfc": { "title": "350", "intro": [] },
       "sldv": { "title": "351", "intro": [] },
@@ -2220,7 +2231,12 @@
       "trpm": { "title": "358", "intro": [] },
       "ufxg": { "title": "359", "intro": [] },
       "lvrx": { "title": "360", "intro": [] },
-      "ofxk": { "title": "361", "intro": [] },
+      "lab-number-guessing-game": {
+        "title": "Build a Number Guessing Game",
+        "intro": [
+          "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+        ]
+      },
       "mgoc": { "title": "362", "intro": [] },
       "ibmn": { "title": "363", "intro": [] },
       "zpjj": { "title": "364", "intro": [] },
@@ -2229,11 +2245,22 @@
       "pfui": { "title": "367", "intro": [] },
       "qjov": { "title": "368", "intro": [] },
       "niie": { "title": "369", "intro": [] },
-      "ttip": { "title": "370", "intro": [] },
+      "workshop-npm-packages": {
+        "title": "Managing Packages with npm",
+        "intro": [
+          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
+          "In this workshop, you'll learn the basics of using npm, including how to work with the <code>package.json</code> file and how to manage your installed dependencies."
+        ]
+      },
       "hjku": { "title": "371", "intro": [] },
       "sykw": { "title": "372", "intro": [] },
       "zzhp": { "title": "373", "intro": [] },
-      "nmve": { "title": "374", "intro": [] },
+      "lab-request-header-parser-microservice": {
+        "title": "Build a Request Header Parser Microservice",
+        "intro": [
+          "In this lab, you will build a request header parser microservice"
+        ]
+      },
       "lab-url-shortener-microservice": {
         "title": "Build a URL Shortener Microservice",
         "intro": ["In this lab, you will build a URL Shortener Microservice"]
