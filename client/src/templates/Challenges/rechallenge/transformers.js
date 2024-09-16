@@ -112,19 +112,19 @@ const babelTransformer = loopProtectOptions => {
   return cond([
     [
       testJS,
-      async code => {
+      async challengeFile => {
         await loadBabel();
         await loadPresetEnv();
         const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
         return transformHeadTailAndContents(
           babelTransformCode(babelOptions),
-          code
+          challengeFile
         );
       }
     ],
     [
       testJSX,
-      async code => {
+      async challengeFile => {
         await loadBabel();
         await loadPresetReact();
         const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
@@ -134,7 +134,7 @@ const babelTransformer = loopProtectOptions => {
             babelTransformCode(babelOptions)
           ),
           partial(setExt, 'js')
-        )(code);
+        )(challengeFile);
       }
     ],
     [stubTrue, identity]
