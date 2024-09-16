@@ -28,7 +28,7 @@ const expectToRenderResetModal = async (page: Page) => {
 
   await expect(
     page.getByRole('button', {
-      name: translations.buttons['reset-lesson']
+      name: translations.buttons['revert-to-saved-code']
     })
   ).toBeVisible();
 };
