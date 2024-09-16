@@ -2214,7 +2214,12 @@
         ]
       },
       "mtkd": { "title": "349", "intro": [] },
-      "wgfc": { "title": "350", "intro": [] },
+      "workshop-bike-rental-shop": {
+        "title": "Build a Bike Rental Shop",
+        "intro": [
+          "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
       "sldv": { "title": "351", "intro": [] },
       "zygv": { "title": "352", "intro": [] },
       "movb": { "title": "353", "intro": [] },
