@@ -190,7 +190,7 @@ test('User can reset on a multi-file project', async ({
   await getEditors(page).fill(sampleText);
   await expect(page.getByText(sampleText)).toBeVisible();
 
-  await page.getByRole('button', { name: translations.buttons.reset }).click();
+  await page.getByRole('button', { name: translations.buttons.revert }).click();
 
   await expectToRenderResetModal(page);
 
@@ -241,7 +241,7 @@ test.describe('Signed in user', () => {
     await getEditors(page).fill(updatedText);
 
     await page
-      .getByRole('button', { name: translations.buttons.reset })
+      .getByRole('button', { name: translations.buttons.revert })
       .click();
 
     await page
@@ -279,7 +279,7 @@ test.describe('Signed in user', () => {
     await getEditors(page).fill(updatedText);
 
     await page
-      .getByRole('button', { name: translations.buttons.reset })
+      .getByRole('button', { name: translations.buttons.revert })
       .click();
 
     await page
