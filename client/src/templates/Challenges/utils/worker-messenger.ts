@@ -36,12 +36,13 @@ export function awaitResponse<
     const channel = new MessageChannel();
     // TODO: Figure out how to ensure the worker is ready and/or handle when it
     // is not.
-    setTimeout(() => {
+    const id = setTimeout(() => {
       channel.port1.close();
       reject(Error('No response from worker'));
     }, 5000);
 
     channel.port1.onmessage = (event: MessageEvent<MessageIn>) => {
+      clearTimeout(id);
       channel.port1.close();
       onMessage(event.data, resolve, reject);
     };
