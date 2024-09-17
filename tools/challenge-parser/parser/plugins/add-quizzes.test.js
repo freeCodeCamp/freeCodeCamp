@@ -50,44 +50,6 @@ describe('add-quizzes plugin', () => {
     });
   });
 
-  //   it('should convert questions and options markdown into html', () => {
-  //     plugin(mockQuizzesAST, file);
-  //     const question = file.data.quizzes[0][0];
-
-  //     expect(Object.keys(testObject).length).toBe(3);
-  //     expect(testObject.text).toBe(
-  //       '<p>Question line 1</p>\n' +
-  //         `<pre><code class="language-js">  var x = 'y';\n` +
-  //         '</code></pre>'
-  //     );
-  //     expect(testObject.solution).toBe(3);
-  //     expect(testObject.answers[0]).toStrictEqual({
-  //       answer: '<p>Some inline <code>code</code></p>',
-  //       feedback: '<p>That is not correct.</p>'
-  //     });
-  //     expect(testObject.answers[1]).toStrictEqual({
-  //       answer: `<p>Some <em>italics</em></p>
-  // <p>A second answer paragraph.</p>`,
-  //       feedback: null
-  //     });
-  //     expect(testObject.answers[2]).toStrictEqual({
-  //       answer: '<p><code> code in </code> code tags</p>',
-  //       feedback: null
-  //     });
-  //   });
-
-  // TODO: consider testing for more specific messages.  Ideally we them to say
-  // 'The md is missing "x"', so it's obvious how to fix things.
-  // it('should throw if the subheadings are outside the question heading', () => {
-  //   expect.assertions(1);
-  //   expect(() => plugin(videoOutOfOrderAST)).toThrow();
-  // });
-
-  // it('should NOT throw if there is no question', () => {
-  //   expect.assertions(1);
-  //   expect(() => plugin(simpleAST)).not.toThrow();
-  // });
-
   it('should match the quizzes snapshot', () => {
     plugin(mockQuizzesAST, file);
     expect(file.data).toMatchSnapshot();
