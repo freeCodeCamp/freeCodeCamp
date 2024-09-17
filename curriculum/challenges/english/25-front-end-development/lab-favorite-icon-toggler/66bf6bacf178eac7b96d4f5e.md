@@ -32,7 +32,6 @@ Your unordered list should have 3 items.
 
 ```js
 assert.lengthOf(document.querySelectorAll('ul li'), 3);
-
 ```
 
 Your unordered list should have the class `item-list`.
@@ -68,13 +67,11 @@ for (let input of inputs) {
 When the `span` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `span` element and change the innerHTML of the `span` element to `&#9825;`.
 
 ```js
-// Select all span elements with the class 'favorite-icon'
 const spanElements = document.querySelectorAll('.favorite-icon');
 assert(spanElements.length);
-// Add the 'filled' class to all span elements
+
 spanElements.forEach(span => span.classList.add('filled'));
 
-// Simulate a click on each span element and check if the 'filled' class is removed
 spanElements.forEach(span => {
     span.dispatchEvent(new Event('click'));
     span.dispatchEvent(new Event('change'));
@@ -86,13 +83,11 @@ spanElements.forEach(span => {
 When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element and change the innerHTML of the `span` element to `&#10084;`.
 
 ```js
-// Select all span elements with the class 'favorite-icon'
 const spanElements = document.querySelectorAll('.favorite-icon');
 assert(spanElements.length);
-// Remove the 'filled' class from all span elements
+
 spanElements.forEach(span => span.classList.remove('filled'));
 
-// Simulate a click on each span element and check if the 'filled' class is added
 spanElements.forEach(span => {
     span.dispatchEvent(new Event('click'));
     span.dispatchEvent(new Event('change'));
