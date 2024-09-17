@@ -22,6 +22,10 @@ function plugin() {
         }
       });
 
+      if (quizTrees.length === 0) {
+        throw Error('Quizzes should have at least one quiz');
+      }
+
       quizTrees.forEach(allQuizNodes => {
         const quizTree = root(allQuizNodes);
         const quizNodes = getAllBetween(quizTree, `--quiz--`);
@@ -37,6 +41,10 @@ function plugin() {
             questionTrees[questionTrees.length - 1].push(quizNode);
           }
         });
+
+        if (questionTrees.length === 0) {
+          throw Error('A quiz should have at least one quiz-question');
+        }
 
         questionTrees.forEach(questionNodes => {
           const questionTree = root(questionNodes);
@@ -86,10 +94,13 @@ function getQuestion(questionNodes, optionsNodes, solutionNodes) {
 }
 
 function getOptions(optionsNodes) {
-  const optionGroups = splitOnThematicBreak(optionsNodes);
+  const optionsGroups = splitOnThematicBreak(optionsNodes);
 
-  return optionGroups.map(optionGroup => {
-    return mdastToHtml(optionGroup);
+  if (!optionsGroups.length === 4)
+    throw Error('Four question-options are required per quiz-question');
+
+  return optionsGroups.map(optionsGroup => {
+    return mdastToHtml(optionsGroup);
   });
 }
 
