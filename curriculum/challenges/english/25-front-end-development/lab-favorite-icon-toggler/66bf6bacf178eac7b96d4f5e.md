@@ -16,7 +16,7 @@ In this lab you will use JavaScript click events to toggle the appearance of a f
 
 1. You should have an unordered list with three items.
 2. The unordered list should have the class `item-list`.
-3. The three list items should contain the item name followed by a `span` element with the class `favorite-icon` and an id of `favorite-icon-1`, `favorite-icon-2`, and `favorite-icon-3`, respectively.
+3. The three list items should contain the item name followed by a `span` element with the class `favorite-icon`.
 4. The `span` element should contain the code `&#9825;` initially to represent an empty heart.
 5. When the `span` element containing the heart is clicked, the class `filled` should be added to the `span` with class `favorite-icon` if it doesn't exist, and removed if it does.  `&#9825;` should change to `&#10084;` to represent a filled heart.
 
@@ -52,27 +52,6 @@ Your individual list item should contain a  `span` element with the class `favor
 
 ```js
 assert.exists(document.querySelector('ul li span.favorite-icon'));
-```
-
-The first `span` element with the class `favorite-icon` should contain an `id` of `favoriteIcon1`
-
-```js
-const id = document.querySelector('ul li span.favorite-icon');
-assert.equal(id?.id, 'favoriteIcon1');
-```
-
-The second `span` element with the class `favorite-icon` should contain an `id` of `favoriteIcon2`
-
-```js
-const id = document.querySelectorAll('ul li span.favorite-icon');
-assert.equal(id[1]?.id, 'favoriteIcon2');
-```
-
-The third `span` element with the class `favorite-icon` should contain an `id` of `favoriteIcon3`
-
-```js
-const id = document.querySelectorAll('ul li span.favorite-icon');
-assert.equal(id[2]?.id, 'favoriteIcon3');
 ```
 
 Initially, the `span` elements should contain the code `&#9825;` to represent an empty heart.
