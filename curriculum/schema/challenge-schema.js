@@ -95,6 +95,27 @@ const questionJoi = Joi.object().keys({
   solution: Joi.number().required()
 });
 
+const quizJoi = Joi.object().keys({
+  questions: Joi.array()
+    .items(
+      Joi.object().keys({
+        question: Joi.string().required(),
+        options: Joi.array()
+          .items(
+            Joi.object().keys({
+              option: Joi.string().required(),
+              feedback: Joi.string().allow(null)
+            })
+          )
+          .min(4)
+          .required(),
+        solution: Joi.number().required()
+      })
+    )
+    .min(10)
+    .required()
+});
+
 const schema = Joi.object()
   .keys({
     block: Joi.string().regex(slugRE).required(),
@@ -199,6 +220,11 @@ const schema = Joi.object()
         challengeTypes.theOdinProject
       ],
       then: Joi.array().items(questionJoi).min(1).required(),
+      otherwise: Joi.forbidden()
+    }),
+    quizzes: Joi.when('challengeType', {
+      is: challengeTypes.quiz,
+      then: Joi.array().items(quizJoi).min(1).required(),
       otherwise: Joi.forbidden()
     }),
     required: Joi.array().items(
