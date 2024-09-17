@@ -19,5 +19,8 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
     "invariant": "2.2.4"
+  },
+  "devDependencies": {
+    "@types/invariant": "^2.2.37"
   }
 }
