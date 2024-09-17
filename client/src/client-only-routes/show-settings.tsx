@@ -15,7 +15,7 @@ import MiscSettings from '../components/settings/misc-settings';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
-import Internet, { Socials } from '../components/settings/internet';
+import { Socials } from '../components/settings/internet';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
@@ -120,16 +120,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       sendQuincyEmail,
       username,
       theme,
-      keyboardShortcuts,
-      githubProfile,
-      linkedin,
-      twitter,
-      website
+      keyboardShortcuts
     },
     navigate,
     showLoading,
     updateQuincyEmail,
-    updateSocials,
     updateIsHonest,
     verifyCert,
     userToken
@@ -177,13 +172,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             updateQuincyEmail={updateQuincyEmail}
           />
           <Spacer size='medium' />
-          <Internet
-            githubProfile={githubProfile}
-            linkedin={linkedin}
-            twitter={twitter}
-            updateSocials={updateSocials}
-            website={website}
-          />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='medium' />
           <Certification

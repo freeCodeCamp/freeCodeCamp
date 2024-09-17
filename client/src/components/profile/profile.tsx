@@ -9,10 +9,12 @@ import { FullWidthRow, Link, Spacer } from '../helpers';
 import Portfolio from '../settings/portfolio';
 import {
   submitNewAbout,
-  updateMyPortfolio
+  updateMyPortfolio,
+  updateMySocials
 } from '../../redux/settings/actions';
 import UsernameSettings from '../../components/settings/username';
 import About from '../../components/settings/about';
+import Internet, { Socials } from '../settings/internet';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
@@ -25,6 +27,7 @@ interface ProfileProps {
   isSessionUser: boolean;
   user: User;
   updateMyPortfolio: () => void;
+  updateMySocials: (formValues: Socials) => void;
   submitNewAbout: () => void;
 }
 
@@ -32,6 +35,7 @@ interface EditModalProps {
   user: User;
   isEditing: boolean;
   setIsEditing: (isEditing: boolean) => void;
+  updateMySocials: (formValues: Socials) => void;
   updateMyPortfolio: () => void;
   submitNewAbout: () => void;
 }
@@ -43,6 +47,7 @@ interface MessageProps {
 
 const mapDispatchToProps = {
   updateMyPortfolio,
+  updateMySocials,
   submitNewAbout
 };
 
@@ -59,13 +64,26 @@ const EditModal = ({
   user,
   isEditing,
   setIsEditing,
-  updateMyPortfolio
+  updateMyPortfolio,
+  updateMySocials
 }: EditModalProps) => {
-  const { portfolio, username, about, location, name, picture } = user;
+  const {
+    portfolio,
+    username,
+    about,
+    location,
+    name,
+    picture,
+    githubProfile,
+
+    linkedin,
+    twitter,
+    website
+  } = user;
 
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='xLarge'>
-      <Modal.Header>Header</Modal.Header>
+      <Modal.Header>Edit</Modal.Header>
       <Modal.Body>
         <UsernameSettings username={username} />
         <Spacer size='medium' />
@@ -78,11 +96,15 @@ const EditModal = ({
           submitNewAbout={submitNewAbout}
         />
         <Spacer size='medium' />
+        <Internet
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          updateSocials={updateMySocials}
+          website={website}
+        />
         <Portfolio portfolio={portfolio} updatePortfolio={updateMyPortfolio} />
       </Modal.Body>
-      <Modal.Footer>
-        <Button>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 };
@@ -108,7 +130,11 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({ user, updateMyPortfolio }: ProfileProps): JSX.Element {
+function UserProfile({
+  user,
+  updateMyPortfolio,
+  updateMySocials
+}: ProfileProps): JSX.Element {
   const [isEditing, setIsEditing] = useState(false);
 
   const {
@@ -149,6 +175,7 @@ function UserProfile({ user, updateMyPortfolio }: ProfileProps): JSX.Element {
         setIsEditing={setIsEditing}
         updateMyPortfolio={updateMyPortfolio}
         submitNewAbout={submitNewAbout}
+        updateMySocials={updateMySocials}
       />
       <Button onClick={() => setIsEditing(true)}>Edit Profile</Button>
       <Camper
@@ -204,6 +231,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
             user={user}
             isSessionUser={isSessionUser}
             updateMyPortfolio={updateMyPortfolio}
+            updateMySocials={updateMySocials}
             submitNewAbout={submitNewAbout}
           />
         )}
