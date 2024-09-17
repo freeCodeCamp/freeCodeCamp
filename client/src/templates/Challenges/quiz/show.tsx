@@ -257,10 +257,7 @@ export const query = graphql`
         }
         quizzes {
           questions {
-            options {
-              option
-              feedback
-            }
+            options
             question
             solution
           }
