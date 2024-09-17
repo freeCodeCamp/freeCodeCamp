@@ -2236,8 +2236,20 @@
       "keqo": { "title": "343", "intro": [] },
       "pegc": { "title": "344", "intro": [] },
       "udfh": { "title": "345", "intro": [] },
-      "kuyg": { "title": "346", "intro": [] },
-      "tvlh": { "title": "347", "intro": [] },
+      "workshop-sql-student-database-part-1": {
+        "title": "Build a Student Database: Part 1",
+        "intro": [
+          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
+          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+        ]
+      },
+      "workshop-sql-student-database-part-2": {
+        "title": "Build a Student Database: Part 2",
+        "intro": [
+          "SQL join commands are used to combine information from multiple tables in a relational database",
+          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
+        ]
+      },
       "lab-world-cup-database": {
         "title": "Build a World Cup Database",
         "intro": [
