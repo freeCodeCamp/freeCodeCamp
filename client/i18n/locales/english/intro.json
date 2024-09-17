@@ -2226,7 +2226,13 @@
       "oxxf": { "title": "339", "intro": [] },
       "ynqt": { "title": "340", "intro": [] },
       "hnta": { "title": "341", "intro": [] },
-      "hwpv": { "title": "342", "intro": [] },
+      "workshop-bash-five-programs": {
+        "title": "Build Five Programs",
+        "intro": [
+          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+        ]
+      },
       "keqo": { "title": "343", "intro": [] },
       "pegc": { "title": "344", "intro": [] },
       "udfh": { "title": "345", "intro": [] },
