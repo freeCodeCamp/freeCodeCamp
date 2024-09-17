@@ -1802,7 +1802,12 @@
       "hgxz": { "title": "52", "intro": [] },
       "bgrw": { "title": "53", "intro": [] },
       "sbnz": { "title": "54", "intro": [] },
-      "chca": { "title": "55", "intro": [] },
+      "lab-event-flyer-page": {
+        "title": "Build an Event Flyer Page",
+        "intro": [
+          "In this lab, you will use absolute and relative CSS units to create an event flyer page."
+        ]
+      },
       "ywfm": { "title": "56", "intro": [] },
       "yspe": { "title": "57", "intro": [] },
       "ohhu": { "title": "58", "intro": [] },
