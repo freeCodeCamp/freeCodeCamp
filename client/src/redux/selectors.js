@@ -1,4 +1,5 @@
 import { Certification } from '../../../shared/config/certification-settings';
+import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
 
@@ -12,8 +13,8 @@ export const partiallyCompletedChallengesSelector = state =>
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
 export const completionCountSelector = state => state[MainApp].completionCount;
-export const showMultipleProgressModalsSelector = state =>
-  state[MainApp].showMultipleProgressModals;
+export const isRandomCompletionThresholdSelector = state =>
+  state[MainApp].isRandomCompletionThreshold;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
@@ -36,6 +37,8 @@ export const shouldRequestDonationSelector = state => {
   const completedChallengeCount = completedChallengesSelector(state).length;
   const isDonating = isDonatingSelector(state);
   const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  const isRandomCompletionThreshold =
+    isRandomCompletionThresholdSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
@@ -58,9 +61,16 @@ export const shouldRequestDonationSelector = state => {
   // not before the 11th challenge has mounted)
   if (completedChallengeCount < 10) return false;
 
-  // this will mean we have completed 3 or more challenges this browser session
-  // and enough challenges overall to not be new
-  return sessionChallengeData.currentCount >= 3;
+  /*
+   Show modal if user has completed 10 challanged in total
+   and 3 or more in this session.
+   The isRandomCompletionThreshold flag is used to AB test interval randomness
+  */
+  if (isRandomCompletionThreshold) {
+    return sessionChallengeData.currentCount >= randomBetween(3, 7);
+  } else {
+    return sessionChallengeData.currentCount >= 3;
+  }
 };
 
 export const userTokenSelector = state => {

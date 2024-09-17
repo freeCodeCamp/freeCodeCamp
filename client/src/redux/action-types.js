@@ -9,7 +9,7 @@ export const actionTypes = createTypes(
     'allowBlockDonationRequests',
     'setRenderStartTime',
     'preventBlockDonationRequests',
-    'setShowMultipleProgressModals',
+    'setIsRandomCompletionThreshold',
     'openDonationModal',
     'closeDonationModal',
     'openSignoutModal',

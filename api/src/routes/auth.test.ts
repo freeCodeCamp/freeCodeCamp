@@ -61,12 +61,16 @@ describe('auth0 routes', () => {
     });
 
     it('should be rate-limited', async () => {
-      await Promise.all(
-        [...Array(10).keys()].map(() => superGet('/mobile-login'))
-      );
-
+      // Rather than spamming the endpoint, we can check the headers.
       const res = await superGet('/mobile-login');
-      expect(res.status).toBe(429);
+      // These headers are semi-official
+      // https://www.ietf.org/archive/id/draft-polli-ratelimit-headers-02.html
+      // so should not depend on the details of the rate-limiting library
+      expect(res.headers['ratelimit-limit']).toBe('10');
+      expect(res.headers['ratelimit-remaining']).toBe('9');
+
+      const res2 = await superGet('/mobile-login');
+      expect(res2.headers['ratelimit-remaining']).toBe('8');
     });
 
     it('should return 401 if the authorization header is invalid', async () => {

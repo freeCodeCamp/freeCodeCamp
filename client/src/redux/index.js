@@ -50,7 +50,7 @@ export const defaultDonationFormState = {
 
 const initialState = {
   appUsername: '',
-  showMultipleProgressModals: false,
+  isRandomCompletionThreshold: false,
   recentlyClaimedBlock: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
@@ -273,9 +273,9 @@ export const reducer = handleActions(
       ...state,
       recentlyClaimedBlock: null
     }),
-    [actionTypes.setShowMultipleProgressModals]: (state, { payload }) => ({
+    [actionTypes.setIsRandomCompletionThreshold]: (state, { payload }) => ({
       ...state,
-      showMultipleProgressModals: payload
+      isRandomCompletionThreshold: payload
     }),
     [actionTypes.resetUserData]: state => ({
       ...state,
