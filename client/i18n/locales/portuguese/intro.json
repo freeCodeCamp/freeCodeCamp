@@ -618,7 +618,7 @@
         "title": "Banco de dados da tabela periódica",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará um script no Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
+          "Para este projeto, você criará um script do Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
@@ -1890,9 +1890,9 @@
         "intro": []
       },
       "lab-stylized-to-do-list": {
-        "title": "Build a Stylized To-Do List",
+        "title": "Crie uma lista de tarefas estilizada",
         "intro": [
-          "In this lab, you'll build a To-Do list with and apply different styles to the links"
+          "Neste laboratório, você vai criar uma lista de tarefas e aplicar diferentes estilos aos links"
         ]
       },
       "humj": {
@@ -2357,6 +2357,13 @@
           "Neste laboratório, você criará histórias diferentes atribuindo palavras diferentes a variáveis diferentes."
         ]
       },
+      "workshop-loan-qualification-checker": {
+        "title": "Crie um verificador de qualificação para empréstimos",
+        "intro": [
+          "Neste workshop, você continuará a aprender a trabalhar com condicionais criando uma aplicação de verificação de qualificação para empréstimos.",
+          "Você aprenderá mais sobre instruções <code>if</code> e sobre como usar operadores de comparação e várias condições em uma instrução <code>if</code>."
+        ]
+      },
       "lab-leap-year-calculator": {
         "title": "Crie uma calculadora de ano bissexto ",
         "intro": [
@@ -2529,8 +2536,10 @@
         "intro": []
       },
       "lab-real-time-counter": {
-        "title": "Build a Real Time Counter",
-        "intro": ["In this lab, you will build a real-time character counter"]
+        "title": "Crie um contador em tempo real",
+        "intro": [
+          "Neste laboratório, você criará um contador de caracteres em tempo real"
+        ]
       },
       "fmbk": {
         "title": "196",
@@ -2541,9 +2550,9 @@
         "intro": []
       },
       "workshop-rps-game": {
-        "title": "Build a Rock, Paper, Scissors Game",
+        "title": "Crie um jogo de pedra, papel e tesoura",
         "intro": [
-          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+          "Neste workshop, você revisará a manipulação do DOM e eventos criando um jogo de Pedra, Papel e Tesoura."
         ]
       },
       "uglc": {
@@ -3100,13 +3109,18 @@
         "title": "336",
         "intro": []
       },
-      "ohnc": {
-        "title": "337",
-        "intro": []
+      "workshop-mario-database": {
+        "title": "Crie um banco de dados do Mario",
+        "intro": [
+          "Um banco de dados relacional organiza dados em tabelas que são ligadas entre si através de relações.",
+          "Neste workshop de 165 aulas, você aprenderá o essencial sobre bancos de dados relacionais, criando um banco de dados PostgreSQL com vários personagens de videogame."
+        ]
       },
-      "suqn": {
-        "title": "338",
-        "intro": []
+      "lab-celestial-bodies-database": {
+        "title": "Crie um banco de dados de corpos celestiais",
+        "intro": [
+          "Para este projeto, você vai construir um banco de dados de corpos celestiais usando PostgreSQL."
+        ]
       },
       "oxxf": {
         "title": "339",
@@ -3144,9 +3158,11 @@
         "title": "347",
         "intro": []
       },
-      "lhwu": {
-        "title": "348",
-        "intro": []
+      "lab-world-cup-database": {
+        "title": "Crie um banco de dados da Copa do Mundo",
+        "intro": [
+          "Para este projeto, você criará um script do Bash que insere informações de jogos da Copa do Mundo no PostgreSQL. Depois, você vai consultar o banco de dados para obter estatísticas úteis."
+        ]
       },
       "mtkd": {
         "title": "349",
@@ -3196,9 +3212,11 @@
         "title": "360",
         "intro": []
       },
-      "ofxk": {
-        "title": "361",
-        "intro": []
+      "lab-number-guessing-game": {
+        "title": "Crie um jogo de adivinhação de números",
+        "intro": [
+          "Para este laboratório, você usará scripts de Bash, PostgreSQL e o Git para criar um jogo de sugestões de números que será executado no terminal e que gravará as informações de usuários."
+        ]
       },
       "mgoc": {
         "title": "362",
@@ -3232,9 +3250,12 @@
         "title": "369",
         "intro": []
       },
-      "ttip": {
-        "title": "370",
-        "intro": []
+      "workshop-npm-packages": {
+        "title": "Gerenciamento de pacotes com o npm",
+        "intro": [
+          "O npm (Node Package Manager) é uma ferramenta de linha de comando para instalar, criar e compartilhar pacotes de código JavaScript escritos para Node.js. Há muitos pacotes de código aberto disponíveis no npm. Então, antes de iniciar um projeto, explore os pacotes que já existem para que você não acabe recriando do zero coisas como trabalhar com datas ou buscar dados de uma API.",
+          "Neste workshop, você aprenderá o básico sobre como usar o npm, incluindo como trabalhar com o arquivo <code>package.json</code> e como gerenciar suas dependências instaladas."
+        ]
       },
       "hjku": {
         "title": "371",
@@ -3248,17 +3269,23 @@
         "title": "373",
         "intro": []
       },
-      "nmve": {
-        "title": "374",
-        "intro": []
+      "lab-request-header-parser-microservice": {
+        "title": "Crie um microsserviço conversor de requisição de cabeçalho",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de conversão de cabeçalho de solicitação"
+        ]
       },
-      "agky": {
-        "title": "375",
-        "intro": []
+      "lab-url-shortener-microservice": {
+        "title": "Crie um microsserviço redutor de URL",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de redução de URLs"
+        ]
       },
-      "bqlb": {
-        "title": "376",
-        "intro": []
+      "lab-exercise-tracker": {
+        "title": "Crie um monitor de exercícios",
+        "intro": [
+          "Neste laboratório, você vai construir um monitor de exercícios"
+        ]
       },
       "kegi": {
         "title": "377",
