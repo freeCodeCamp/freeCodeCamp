@@ -1993,7 +1993,9 @@
       "kgtw": { "title": "169", "intro": [] },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
-        "intro": ["", ""]
+        "intro": [
+          "In this workshop, you'll learn JavaScript loops by building a sentence analyzer app. You'll learn about for loop, while loop, for of loop, and more."
+        ]
       },
       "kcci": { "title": "171", "intro": [] },
       "puhe": { "title": "172", "intro": [] },
