@@ -19,7 +19,7 @@ import { PortfolioProjects } from './components/portfolio-projects';
 interface ProfileProps {
   isSessionUser: boolean;
   user: User;
-  updatePortfolio: () => void;
+  updateMyPortfolio: () => void;
 }
 interface MessageProps {
   isSessionUser: boolean;
@@ -28,7 +28,7 @@ interface MessageProps {
 }
 
 const mapDispatchToProps = {
-  updatePortfolio: updateMyPortfolio
+  updateMyPortfolio
 };
 
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
@@ -64,7 +64,7 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
 function UserProfile({
   user,
   isSessionUser,
-  updatePortfolio
+  updateMyPortfolio
 }: ProfileProps): JSX.Element {
   const {
     profileUI: {
@@ -120,7 +120,7 @@ function UserProfile({
       ) : null}
       <Spacer size='medium' />
       {isSessionUser && (
-        <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
+        <Portfolio portfolio={portfolio} updatePortfolio={updateMyPortfolio} />
       )}
       <Spacer size='medium' />
       {showTimeLine ? (
@@ -155,7 +155,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
           <UserProfile
             user={user}
             isSessionUser={isSessionUser}
-            updatePortfolio={updateMyPortfolio}
+            updateMyPortfolio={updateMyPortfolio}
           />
         )}
         {!isSessionUser && (
@@ -173,4 +173,4 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
 Profile.displayName = 'Profile';
 
-export default connect(null, mapDispatchToProps)(Profile);
+export default connect(null, mapDispatchToProps)(UserProfile);
