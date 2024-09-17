@@ -86,6 +86,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   updateItem = (id: string) => {
     const { portfolio, unsavedItemId } = this.state;
+
     if (unsavedItemId === id) {
       this.setState({ unsavedItemId: null });
     }

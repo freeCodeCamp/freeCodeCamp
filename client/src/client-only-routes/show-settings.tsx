@@ -16,7 +16,6 @@ import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
 import Internet, { Socials } from '../components/settings/internet';
-import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
@@ -31,7 +30,6 @@ import { User } from '../redux/prop-types';
 import {
   submitNewAbout,
   updateMyHonesty,
-  updateMyPortfolio,
   updateMyQuincyEmail,
   updateMySocials,
   updateMySound,
@@ -52,7 +50,6 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateSocials: (formValues: Socials) => void;
   updateIsHonest: () => void;
-  updatePortfolio: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
   verifyCert: typeof verifyCert;
@@ -83,7 +80,6 @@ const mapDispatchToProps = {
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
   updateSocials: (formValues: Socials) => updateMySocials(formValues),
   updateIsHonest: updateMyHonesty,
-  updatePortfolio: updateMyPortfolio,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
   verifyCert
@@ -133,14 +129,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       githubProfile,
       linkedin,
       twitter,
-      website,
-      portfolio
+      website
     },
     navigate,
     showLoading,
     updateQuincyEmail,
     updateSocials,
-    updatePortfolio,
     updateIsHonest,
     verifyCert,
     userToken
@@ -201,9 +195,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             updateSocials={updateSocials}
             website={website}
           />
-          <Spacer size='medium' />
-          <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
-          <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='medium' />
           <Certification

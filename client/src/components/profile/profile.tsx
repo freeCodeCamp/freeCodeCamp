@@ -4,7 +4,10 @@ import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 import { Alert, Container, Row } from '@freecodecamp/ui';
+import { connect } from 'react-redux';
 import { FullWidthRow, Link, Spacer } from '../helpers';
+import Portfolio from '../settings/portfolio';
+import { updateMyPortfolio } from '../../redux/settings/actions';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
@@ -16,12 +19,17 @@ import { PortfolioProjects } from './components/portfolio-projects';
 interface ProfileProps {
   isSessionUser: boolean;
   user: User;
+  updatePortfolio: () => void;
 }
 interface MessageProps {
   isSessionUser: boolean;
   t: TFunction;
   username: string;
 }
+
+const mapDispatchToProps = {
+  updatePortfolio: updateMyPortfolio
+};
 
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
@@ -53,7 +61,11 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
+function UserProfile({
+  user,
+  isSessionUser,
+  updatePortfolio
+}: ProfileProps): JSX.Element {
   const {
     profileUI: {
       showAbout,
@@ -106,6 +118,11 @@ function UserProfile({ user }: { user: ProfileProps['user'] }): JSX.Element {
       {showPortfolio ? (
         <PortfolioProjects portfolioProjects={portfolio} />
       ) : null}
+      <Spacer size='medium' />
+      {isSessionUser && (
+        <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
+      )}
+      <Spacer size='medium' />
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
@@ -134,7 +151,13 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         {isLocked && (
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
-        {showUserProfile && <UserProfile user={user} />}
+        {showUserProfile && (
+          <UserProfile
+            user={user}
+            isSessionUser={isSessionUser}
+            updatePortfolio={updateMyPortfolio}
+          />
+        )}
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>
@@ -150,4 +173,4 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
 Profile.displayName = 'Profile';
 
-export default Profile;
+export default connect(null, mapDispatchToProps)(Profile);
