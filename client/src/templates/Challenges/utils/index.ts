@@ -98,12 +98,8 @@ export function makePrismCollapsible(
   summary.classList.add('code-details-summary');
   summary.innerHTML = i18next.t('learn.example-code');
 
-  const exampleOverflowContainer = document.createElement('div');
-  exampleOverflowContainer.classList.add('code-details-overflow-container');
-
-  details.appendChild(exampleOverflowContainer);
   details.appendChild(summary);
-  exampleOverflowContainer.appendChild(preElem.cloneNode(true));
+  details.appendChild(preElem.cloneNode(true));
   details.open = true;
 
   sectionElem.replaceChild(details, preElem);

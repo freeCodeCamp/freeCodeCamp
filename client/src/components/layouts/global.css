@@ -560,10 +560,6 @@ pre[class*='language-'] {
   border-radius: 0;
 }
 
-details pre[class*='language-'] {
-  min-width: max-content;
-}
-
 /* TODO: Move this rule to @freecodecamp/ui. */
 pre {
   color: inherit;

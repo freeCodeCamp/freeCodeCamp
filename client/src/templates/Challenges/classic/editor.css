@@ -269,9 +269,8 @@ textarea.inputarea {
   cursor: pointer;
 }
 
-.code-details-overflow-container {
-  max-width: 100%;
-  overflow-x: auto;
+.editor-upper-jaw pre code {
+  white-space: pre;
 }
 
 /* overwriting default arrow styles for accessibility */
