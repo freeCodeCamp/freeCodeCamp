@@ -11,7 +11,7 @@ import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import Certification from '../components/settings/certification';
-import About from '../components/settings/about';
+import MiscSettings from '../components/settings/misc-settings';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
@@ -90,7 +90,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const {
     createFlashMessage,
     isSignedIn,
-    submitNewAbout,
     toggleNightMode,
     toggleSoundMode,
     toggleKeyboardShortcuts,
@@ -120,12 +119,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
-      about,
-      picture,
       theme,
       keyboardShortcuts,
-      location,
-      name,
       githubProfile,
       linkedin,
       twitter,
@@ -164,19 +159,13 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           >
             {t('settings.for', { username: username })}
           </h1>
-          <About
-            about={about}
+          <MiscSettings
             currentTheme={theme}
-            location={location}
-            name={name}
-            picture={picture}
-            sound={sound}
             keyboardShortcuts={keyboardShortcuts}
-            submitNewAbout={submitNewAbout}
+            sound={sound}
+            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
-            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            username={username}
           />
           <Spacer size='medium' />
           <Privacy />

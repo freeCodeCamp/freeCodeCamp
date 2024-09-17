@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
-import { Alert, Container, Row } from '@freecodecamp/ui';
+import { Alert, Button, Container, Modal, Row } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import Portfolio from '../settings/portfolio';
-import { updateMyPortfolio } from '../../redux/settings/actions';
+import {
+  submitNewAbout,
+  updateMyPortfolio
+} from '../../redux/settings/actions';
+import UsernameSettings from '../../components/settings/username';
+import About from '../../components/settings/about';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
@@ -20,6 +25,15 @@ interface ProfileProps {
   isSessionUser: boolean;
   user: User;
   updateMyPortfolio: () => void;
+  submitNewAbout: () => void;
+}
+
+interface EditModalProps {
+  user: User;
+  isEditing: boolean;
+  setIsEditing: (isEditing: boolean) => void;
+  updateMyPortfolio: () => void;
+  submitNewAbout: () => void;
 }
 interface MessageProps {
   isSessionUser: boolean;
@@ -28,7 +42,8 @@ interface MessageProps {
 }
 
 const mapDispatchToProps = {
-  updateMyPortfolio
+  updateMyPortfolio,
+  submitNewAbout
 };
 
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
@@ -37,6 +52,38 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
       <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
       <Spacer size='medium' />
     </FullWidthRow>
+  );
+};
+
+const EditModal = ({
+  user,
+  isEditing,
+  setIsEditing,
+  updateMyPortfolio
+}: EditModalProps) => {
+  const { portfolio, username, about, location, name, picture } = user;
+
+  return (
+    <Modal onClose={() => setIsEditing(false)} open={isEditing} size='xLarge'>
+      <Modal.Header>Header</Modal.Header>
+      <Modal.Body>
+        <UsernameSettings username={username} />
+        <Spacer size='medium' />
+        <About
+          about={about}
+          location={location}
+          name={name}
+          picture={picture}
+          username={username}
+          submitNewAbout={submitNewAbout}
+        />
+        <Spacer size='medium' />
+        <Portfolio portfolio={portfolio} updatePortfolio={updateMyPortfolio} />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button>Close</Button>
+      </Modal.Footer>
+    </Modal>
   );
 };
 
@@ -61,11 +108,9 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({
-  user,
-  isSessionUser,
-  updateMyPortfolio
-}: ProfileProps): JSX.Element {
+function UserProfile({ user, updateMyPortfolio }: ProfileProps): JSX.Element {
+  const [isEditing, setIsEditing] = useState(false);
+
   const {
     profileUI: {
       showAbout,
@@ -98,6 +143,14 @@ function UserProfile({
 
   return (
     <>
+      <EditModal
+        user={user}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
+        updateMyPortfolio={updateMyPortfolio}
+        submitNewAbout={submitNewAbout}
+      />
+      <Button onClick={() => setIsEditing(true)}>Edit Profile</Button>
       <Camper
         about={showAbout ? about : ''}
         githubProfile={githubProfile}
@@ -118,11 +171,6 @@ function UserProfile({
       {showPortfolio ? (
         <PortfolioProjects portfolioProjects={portfolio} />
       ) : null}
-      <Spacer size='medium' />
-      {isSessionUser && (
-        <Portfolio portfolio={portfolio} updatePortfolio={updateMyPortfolio} />
-      )}
-      <Spacer size='medium' />
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
@@ -156,6 +204,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
             user={user}
             isSessionUser={isSessionUser}
             updateMyPortfolio={updateMyPortfolio}
+            submitNewAbout={submitNewAbout}
           />
         )}
         {!isSessionUser && (
