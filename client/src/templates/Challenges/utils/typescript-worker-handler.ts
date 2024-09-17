@@ -1,4 +1,5 @@
 import typeScriptWorkerData from '../../../../config/browser-scripts/typescript-worker.json';
+import { awaitResponse } from './worker-messenger';
 
 const typeScriptWorkerSrc = `/js/${typeScriptWorkerData.filename}.js`;
 
@@ -17,24 +18,15 @@ function getTypeScriptWorker(): Worker {
 }
 
 export function compileTypeScriptCode(code: Code): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const channel = new MessageChannel();
-
-    channel.port1.onmessage = ({
-      data
-    }: {
-      data: { type: string; value: string };
-    }) => {
-      channel.port1.close();
+  return awaitResponse({
+    worker: getTypeScriptWorker(),
+    message: { type: 'compile', code },
+    onMessage: (data, onSuccess, onFailure) => {
       if (data.type === 'compiled') {
-        resolve(data.value);
+        onSuccess(data.value);
       } else {
-        reject('unable to compile code');
+        onFailure('unable to compile code');
       }
-    };
-
-    getTypeScriptWorker().postMessage({ type: 'compile', code }, [
-      channel.port2
-    ]);
+    }
   });
 }
