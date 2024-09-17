@@ -40,6 +40,11 @@
   color: var(--quaternary-color);
 }
 
+.profile-edit-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .profile-meta-container div {
   margin-inline-end: 12px;
 }

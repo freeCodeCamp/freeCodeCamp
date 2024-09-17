@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-
-import { Alert, Button, Container, Modal, Row } from '@freecodecamp/ui';
+import { Alert, Container, Modal, Row } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import Portfolio from '../settings/portfolio';
@@ -75,7 +74,6 @@ const EditModal = ({
     name,
     picture,
     githubProfile,
-
     linkedin,
     twitter,
     website
@@ -94,6 +92,7 @@ const EditModal = ({
           picture={picture}
           username={username}
           submitNewAbout={submitNewAbout}
+          setIsEditing={setIsEditing}
         />
         <Spacer size='medium' />
         <Internet
@@ -177,7 +176,6 @@ function UserProfile({
         submitNewAbout={submitNewAbout}
         updateMySocials={updateMySocials}
       />
-      <Button onClick={() => setIsEditing(true)}>Edit Profile</Button>
       <Camper
         about={showAbout ? about : ''}
         githubProfile={githubProfile}
@@ -191,6 +189,7 @@ function UserProfile({
         username={username}
         website={website}
         yearsTopContributor={yearsTopContributor}
+        setIsEditing={setIsEditing}
       />
       {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
