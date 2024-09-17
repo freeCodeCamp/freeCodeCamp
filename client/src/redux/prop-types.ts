@@ -231,13 +231,8 @@ export type Quiz = {
 
 export type QuizQuestion = {
   question: string;
-  options: QuizOptions[];
+  options: string[];
   solution: number;
-};
-
-export type QuizOptions = {
-  option: string;
-  feedback?: string;
 };
 
 export type CertificateNode = {

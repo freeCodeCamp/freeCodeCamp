@@ -100,15 +100,7 @@ const quizJoi = Joi.object().keys({
     .items(
       Joi.object().keys({
         question: Joi.string().required(),
-        options: Joi.array()
-          .items(
-            Joi.object().keys({
-              option: Joi.string().required(),
-              feedback: Joi.string().allow(null)
-            })
-          )
-          .min(4)
-          .required(),
+        options: Joi.array().items(Joi.string().required()).min(4).required(),
         solution: Joi.number().required()
       })
     )
