@@ -1931,7 +1931,12 @@
       "axgb": { "title": "138", "intro": [] },
       "rwac": { "title": "139", "intro": [] },
       "hxwa": { "title": "141", "intro": [] },
-      "xkbo": { "title": "142", "intro": [] },
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
+      },
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
         "intro": [
