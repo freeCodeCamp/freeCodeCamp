@@ -1,4 +1,4 @@
-image: ghcr.io/freecodecamp/gitpod-fcc:latest
+image: ghcr.io/freecodecamp/gitpod:latest
 ports:
   - port: 27017 # mongodb
     onOpen: ignore
