@@ -1,30 +1,24 @@
-import { BlockTypes } from '../../../shared/config/blocks';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 
 // Show a grid layout on the superblock level
 
-export const gridBasedSuperBlocks = [
+const gridBasedSuperBlocks = [
   SuperBlocks.RespWebDesignNew,
   SuperBlocks.JsAlgoDataStructNew,
   SuperBlocks.SciCompPy,
   SuperBlocks.A2English
 ];
 
-export const isGridBased = ({
-  superBlock,
-  challengeType,
-  blockType
-}: {
-  superBlock: SuperBlocks;
-  challengeType: number;
-  blockType?: BlockTypes; // blockType is currently only available in FrontEndDevelopment blocks
-}) => {
+export const isGridBased = (
+  superBlock: SuperBlocks,
+  challengeType: unknown = null
+) => {
   // Python projects should not be displayed as a grid, but should be displayed
   // as a list of projects. Otherwise, if we do not do this the project will be
   // shown as a single certification project.
+
   if (challengeType === challengeTypes.pythonProject) return false;
-  if (blockType === BlockTypes.workshop) return true;
   return gridBasedSuperBlocks.includes(superBlock);
 };
 

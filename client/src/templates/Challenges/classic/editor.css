@@ -269,6 +269,10 @@ textarea.inputarea {
   cursor: pointer;
 }
 
+.editor-upper-jaw pre code {
+  white-space: pre;
+}
+
 /* overwriting default arrow styles for accessibility */
 :root {
   --monaco-scrollbar-arrow-box-size: 0;

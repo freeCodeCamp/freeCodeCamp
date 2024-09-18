@@ -1,0 +1,11 @@
+{
+  "name": "Build a Personal Portfolio",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-personal-portfolio",
+  "order": 124,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "bd7158d8c242eddfaeb5bd13", "title": "Build a Personal Portfolio" }],
+  "helpCategory": "HTML-CSS",
+  "blockType": "lab"
+}
