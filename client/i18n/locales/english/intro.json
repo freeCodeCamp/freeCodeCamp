@@ -2153,7 +2153,10 @@
       "fcom": { "title": "278", "intro": [] },
       "ffpt": { "title": "279", "intro": [] },
       "vyzp": { "title": "280", "intro": [] },
-      "hiyk": { "title": "281", "intro": [] },
+      "lab-pokemon-search-app": {
+        "title": "Build a Pokémon Search App",
+        "intro": ["For this project, you will build a Pokémon search app."]
+      },
       "fihs": { "title": "282", "intro": [] },
       "icdr": { "title": "283", "intro": [] },
       "zdsj": { "title": "284", "intro": [] },
