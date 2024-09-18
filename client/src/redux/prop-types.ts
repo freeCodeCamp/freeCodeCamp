@@ -104,6 +104,7 @@ export type Characters =
   | 'Expert'
   | 'Jake'
   | 'James'
+  | 'Jessica'
   | 'Linda'
   | 'Lisa'
   | 'Maria'
