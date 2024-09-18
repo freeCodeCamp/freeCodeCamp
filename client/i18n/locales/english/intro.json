@@ -2127,7 +2127,12 @@
       "nixz": { "title": "262", "intro": [] },
       "zywg": { "title": "263", "intro": [] },
       "wraf": { "title": "264", "intro": [] },
-      "kwxs": { "title": "265", "intro": [] },
+      "lab-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [
+          "For this lab, you will build a linked list class using JavaScript."
+        ]
+      },
       "muyw": { "title": "266", "intro": [] },
       "mvzb": { "title": "267", "intro": [] },
       "rmpy": { "title": "268", "intro": [] },
