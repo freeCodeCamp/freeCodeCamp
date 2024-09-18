@@ -21,7 +21,6 @@ const expectToRenderResetModal = async (page: Page) => {
     })
   ).toBeVisible();
 
-  await expect(page.getByText(translations.learn['reset-warn'])).toBeVisible();
   await expect(
     page.getByText(translations.learn['reset-warn-2'])
   ).toBeVisible();
@@ -41,6 +40,8 @@ test('should render the modal content correctly', async ({ page }) => {
       name: translations.buttons['reset-lesson']
     })
   ).toBeVisible();
+
+  await expect(page.getByText(translations.learn['reset-warn'])).toBeVisible();
 });
 
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {
@@ -205,6 +206,8 @@ test('User can reset on a multi-file project', async ({
       name: translations.buttons['revert-to-saved-code']
     })
     .click();
+
+  await expect(page.getByText(translations.learn['revert-warn'])).toBeVisible();
 
   await expect(page.getByText(sampleText)).not.toBeVisible();
 });

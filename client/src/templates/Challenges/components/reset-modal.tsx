@@ -53,7 +53,11 @@ function ResetModal({
         {t('learn.reset')}
       </Modal.Header>
       <Modal.Body alignment='center'>
-        <p>{t('learn.reset-warn')}</p>
+        <p>
+          {isProjectBased(challengeType)
+            ? t('learn.revert-warn')
+            : t('learn.reset-warn')}
+        </p>
         <p>
           <em>{t('learn.reset-warn-2')}</em>
         </p>
