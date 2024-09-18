@@ -307,7 +307,6 @@ export const query = graphql`
             superBlock
             dashedName
             blockType
-            helpCategory
           }
         }
       }

@@ -1,6 +1,6 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockTypes, HelpCategories } from '../../../shared/config/blocks';
+import { BlockTypes } from '../../../shared/config/blocks';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
 
@@ -176,7 +176,7 @@ export type ChallengeNode = {
     guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
-    helpCategory: HelpCategories;
+    helpCategory: string;
     id: string;
     instructions: string;
     isComingSoon: boolean;

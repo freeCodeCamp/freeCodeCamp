@@ -1,4 +1,4 @@
-import { BlockTypes, HelpCategories } from '../../../shared/config/blocks';
+import { BlockTypes } from '../../../shared/config/blocks';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 
@@ -9,43 +9,19 @@ describe('isGridBased', () => {
     expect(
       isGridBased({
         superBlock: SuperBlocks.SciCompPy,
-        challengeType: challengeTypes.pythonProject,
-        helpCategory: HelpCategories.Python
+        challengeType: challengeTypes.pythonProject
       })
     ).toEqual(false);
   });
 
-  it(`should return true if block type is ${BlockTypes.workshop} and help category is ${HelpCategories.HtmlCss}`, () => {
+  it(`should return true if block type is ${BlockTypes.workshop}`, () => {
     expect(
       isGridBased({
         superBlock: SuperBlocks.FrontEndDevelopment,
         challengeType: challengeTypes.html,
-        blockType: BlockTypes.workshop,
-        helpCategory: HelpCategories.HtmlCss
+        blockType: BlockTypes.workshop
       })
     ).toEqual(true);
-  });
-
-  it(`should return true if block type is ${BlockTypes.workshop} and help category is ${HelpCategories.JavaScript}`, () => {
-    expect(
-      isGridBased({
-        superBlock: SuperBlocks.FrontEndDevelopment,
-        challengeType: challengeTypes.html,
-        blockType: BlockTypes.workshop,
-        helpCategory: HelpCategories.JavaScript
-      })
-    ).toEqual(true);
-  });
-
-  it(`should return false if block type is ${BlockTypes.workshop} and help category is not either ${HelpCategories.HtmlCss} or ${HelpCategories.JavaScript}`, () => {
-    expect(
-      isGridBased({
-        superBlock: SuperBlocks.FrontEndDevelopment,
-        challengeType: challengeTypes.html,
-        blockType: BlockTypes.workshop,
-        helpCategory: HelpCategories.BackendDevelopment
-      })
-    ).toEqual(false);
   });
 
   it('should return true if the superblock is one of `gridBasedSuperBlocks`', () => {
@@ -53,8 +29,7 @@ describe('isGridBased', () => {
       expect(
         isGridBased({
           superBlock: item,
-          challengeType: challengeTypes.html,
-          helpCategory: HelpCategories.HtmlCss
+          challengeType: challengeTypes.html
         })
       ).toEqual(true);
     });
