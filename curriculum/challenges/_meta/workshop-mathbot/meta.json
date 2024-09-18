@@ -7,6 +7,31 @@
   "dashedName": "workshop-mathbot",
   "order": 142,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66ea7adae8053065a64f9002", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66ea7adae8053065a64f9002",
+      "title": "Step 1"
+    },
+    {
+      "id": "66ea7e7399244c6d4b6052a1",
+      "title": "Step 2"
+    },
+    {
+      "id": "66ea7fc048a6e26e33c598fe",
+      "title": "Step 3"
+    },
+    {
+      "id": "66ea8239b9eeb76f12299030",
+      "title": "Step 4"
+    },
+    {
+      "id": "66ea845f54195c7020cc521b",
+      "title": "Step 5"
+    },
+    {
+      "id": "66ea89c25e1bd871688eba6a",
+      "title": "Step 6"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
