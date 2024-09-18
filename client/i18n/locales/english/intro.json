@@ -1875,7 +1875,12 @@
       "rbnd": { "title": "102", "intro": [] },
       "xebj": { "title": "103", "intro": [] },
       "jkdt": { "title": "104", "intro": [] },
-      "cbbz": { "title": "105", "intro": [] },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
+        ]
+      },
       "xcti": { "title": "106", "intro": [] },
       "scec": { "title": "107", "intro": [] },
       "mtbl": { "title": "108", "intro": [] },
