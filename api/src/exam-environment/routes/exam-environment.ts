@@ -143,7 +143,7 @@ async function postExamGenerateHandler(
       }
     })
   );
-  if (maybeExam.error !== null) {
+  if (maybeExam.hasError) {
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -189,7 +189,7 @@ async function postExamGenerateHandler(
     })
   );
 
-  if (maybeExamAttempts.error !== null) {
+  if (maybeExamAttempts.hasError) {
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttempts.error))
@@ -230,7 +230,7 @@ async function postExamGenerateHandler(
       // Camper has started an attempt, but not submitted it, and there is still time left to complete it.
       // This is most likely to happen if the Camper's app closes and is reopened.
       // Send the Camper back to the exam they were working on.
-      const { error, data: generatedExam } = await mapErr(
+      const generated = await mapErr(
         this.prisma.envGeneratedExam.findFirst({
           where: {
             id: lastAttempt.generatedExamId
@@ -238,15 +238,15 @@ async function postExamGenerateHandler(
         })
       );
 
-      if (error !== null) {
+      if (generated.hasError) {
         void reply.code(500);
         return reply.send(
-          ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(error))
+          ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(generated.error))
         );
       }
 
       // This should be unreachable
-      if (generatedExam === null) {
+      if (generated.data === null) {
         void reply.code(500);
         return reply.send(
           ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
@@ -255,7 +255,7 @@ async function postExamGenerateHandler(
         );
       }
 
-      const userExam = constructUserExam(generatedExam, exam);
+      const userExam = constructUserExam(generated.data, exam);
 
       return reply.send({
         data: {
@@ -269,7 +269,7 @@ async function postExamGenerateHandler(
   // Generate exam for user, and store in db for later validation against submission
   const maybeGeneratedExamContent = syncMapErr(() => generateExam(exam));
 
-  if (maybeGeneratedExamContent.error !== null) {
+  if (maybeGeneratedExamContent.hasError) {
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExamContent.error)
@@ -284,7 +284,7 @@ async function postExamGenerateHandler(
     })
   );
 
-  if (maybeGeneratedExam.error !== null) {
+  if (maybeGeneratedExam.hasError) {
     void reply.code(500);
     return reply.send(
       // TODO: Consider more specific code
@@ -298,7 +298,7 @@ async function postExamGenerateHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
-  const { error, data: examAttempt } = await mapErr(
+  const attempt = await mapErr(
     this.prisma.envExamAttempt.create({
       data: {
         userId: user.id,
@@ -311,10 +311,12 @@ async function postExamGenerateHandler(
     })
   );
 
-  if (error !== null) {
+  if (attempt.hasError) {
     void reply.code(500);
     return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT(JSON.stringify(error))
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT(
+        JSON.stringify(attempt.error)
+      )
     );
   }
   // NOTE: Anything that goes wrong after this point needs to unwind the exam attempt.
@@ -323,10 +325,10 @@ async function postExamGenerateHandler(
     constructUserExam(generatedExam, exam)
   );
 
-  if (maybeUserExam.error !== null) {
+  if (maybeUserExam.hasError) {
     await this.prisma.envExamAttempt.delete({
       where: {
-        id: examAttempt.id
+        id: attempt.data.id
       }
     });
     await this.prisma.envGeneratedExam.delete({
@@ -346,7 +348,7 @@ async function postExamGenerateHandler(
   return reply.send({
     data: {
       exam: userExam,
-      examAttempt
+      examAttempt: attempt.data
     }
   });
 }
@@ -385,7 +387,7 @@ async function postExamAttemptHandler(
     })
   );
 
-  if (maybeAttempts.error !== null) {
+  if (maybeAttempts.hasError) {
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -429,7 +431,7 @@ async function postExamAttemptHandler(
     })
   );
 
-  if (maybeExam.error !== null) {
+  if (maybeExam.hasError) {
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -466,7 +468,7 @@ async function postExamAttemptHandler(
     })
   );
 
-  if (maybeGeneratedExam.error !== null) {
+  if (maybeGeneratedExam.hasError) {
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeGeneratedExam.error))
@@ -511,12 +513,12 @@ async function postExamAttemptHandler(
         questionSets: databaseAttemptQuestionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
         // TODO: If `needsRetake`, prevent further submissions?
-        needsRetake: maybeValidExamAttempt.error ? true : undefined
+        needsRetake: maybeValidExamAttempt.hasError ? true : undefined
       }
     })
   );
 
-  if (maybeValidExamAttempt.error !== null) {
+  if (maybeValidExamAttempt.hasError) {
     void reply.code(400);
     const message =
       maybeValidExamAttempt.error instanceof Error
@@ -525,7 +527,7 @@ async function postExamAttemptHandler(
     return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
   }
 
-  if (maybeUpdatedAttempt.error !== null) {
+  if (maybeUpdatedAttempt.hasError) {
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUpdatedAttempt.error))
