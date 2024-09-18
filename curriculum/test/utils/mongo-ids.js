@@ -69,7 +69,7 @@ const duplicatedProjectIds = [
   // Number Sorter Project
 
   // Quick Sort Algorithm
-
+  '587d825a367417b2b2512c89',
   // Roman Numeral Converter
   'a7f4d8f2483413a6ce226cac',
 
