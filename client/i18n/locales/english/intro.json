@@ -2109,7 +2109,12 @@
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
       "yaxm": { "title": "244", "intro": [] },
-      "bfzo": { "title": "245", "intro": [] },
+      "lab-roman-numeral-converter": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "For this lab, you'll build an application that converts integers to Roman numerals."
+        ]
+      },
       "lofk": { "title": "246", "intro": [] },
       "udia": { "title": "247", "intro": [] },
       "wevl": { "title": "248", "intro": [] },
