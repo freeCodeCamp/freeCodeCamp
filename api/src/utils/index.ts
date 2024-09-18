@@ -51,7 +51,7 @@ export type UpdateReqType<Schema extends FastifySchema> = FastifyRequest<
  *   })
  * );
  *
- * if (maybeWhatIWant.error !== null) {
+ * if (maybeWhatIWant.hasError) {
  *   void reply.code(500);
  *   return reply.send('Unable to generate exam, due to: ' +
  *     JSON.stringify(maybeWhatIWant.error)
@@ -84,7 +84,7 @@ export async function mapErr<T>(promise: Promise<T>): Promise<Result<T>> {
  *   () => chai.assert.deepEqual({}, {})
  * );
  *
- * if (maybeWhatIWant.error !== null) {
+ * if (maybeWhatIWant.hasError) {
  *   void reply.code(500);
  *   return reply.send('Unable to generate exam, due to: ' +
  *     JSON.stringify(maybeWhatIWant.error)
