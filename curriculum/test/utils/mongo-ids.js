@@ -60,7 +60,7 @@ const duplicatedProjectIds = [
   // Rock, Paper, Scissors Game
 
   // Palindrome Checker
-  'aaa48de84e1ecc7c742e1124',
+  '657bdc55a322aae1eac3838f',
 
   // Date Formatter
 
