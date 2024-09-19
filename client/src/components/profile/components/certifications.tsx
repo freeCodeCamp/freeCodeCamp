@@ -109,6 +109,7 @@ function Certificates({
           )}
         </div>
       )}
+      <hr />
     </FullWidthRow>
   );
 }
