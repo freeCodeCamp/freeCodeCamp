@@ -198,12 +198,11 @@ async function postExamGenerateHandler(
 
   const examAttempts = maybeExamAttempts.data;
 
-  const maybeLastAttempt = examAttempts.reduce(
-    (latest, current) =>
-      latest && latest.startTimeInMS > current.startTimeInMS ? latest : current,
-    // This is to prevent reduce from throwing a TypeError when `examAttempts` is empty
-    null as (typeof examAttempts)[number] | null
-  );
+  const maybeLastAttempt = examAttempts.length
+    ? examAttempts.reduce((latest, current) =>
+        latest.startTimeInMS > current.startTimeInMS ? latest : current
+      )
+    : null;
 
   if (maybeLastAttempt) {
     const lastAttempt = maybeLastAttempt;
