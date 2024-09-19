@@ -298,15 +298,15 @@ describe('/exam-environment/', () => {
         // TODO: Waiting on prerequisites
       });
 
-      it('should return an error if the exam cooldown is in effect', async () => {
+      it('should return an error if the exam has been attempted in the last 24 hours', async () => {
         const recentExamAttempt = {
           ...examAttempt,
+          // Set start time such that exam has expired, but 0 hours have passed
           startTimeInMS: Date.now() - exam.config.totalTimeInMS
         };
-        const _latestAttempt =
-          await fastifyTestInstance.prisma.envExamAttempt.create({
-            data: recentExamAttempt
-          });
+        await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: recentExamAttempt
+        });
 
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
           examId
@@ -319,12 +319,76 @@ describe('/exam-environment/', () => {
             examEnvironmentAuthorizationToken
           );
 
-        // console.log(res);
-
         expect(res).toMatchObject({
           status: 403,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
+          }
+        });
+
+        await fastifyTestInstance.prisma.envExamAttempt.update({
+          where: {
+            id: recentExamAttempt.id
+          },
+          data: {
+            // Set start time such that exam has expired, but 24 hours - 1s has passed
+            startTimeInMS:
+              Date.now() -
+              (exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 - 1000))
+          }
+        });
+
+        const body2: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
+
+        const res2 = await superPost('/exam-environment/exam/generate')
+          .send(body2)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res2).toMatchObject({
+          status: 403,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
+          }
+        });
+
+        await fastifyTestInstance.prisma.envExamAttempt.update({
+          where: {
+            id: recentExamAttempt.id
+          },
+          data: {
+            // Set start time such that exam has expired, but 24 hours + 1s has passed
+            startTimeInMS:
+              Date.now() -
+              (exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 + 1000))
+          }
+        });
+
+        const body3: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId
+        };
+
+        const res3 = await superPost('/exam-environment/exam/generate')
+          .send(body3)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        // Time is greater than 24 hours. So, request should pass, and new exam should be generated
+        expect(res3).toMatchObject({
+          status: 200,
+          body: {
+            data: {
+              examAttempt: {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                id: expect.not.stringMatching(examAttempt.id)
+              }
+            }
           }
         });
       });

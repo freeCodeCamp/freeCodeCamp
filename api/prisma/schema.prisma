@@ -317,11 +317,9 @@ type EnvGeneratedQuestionSet {
 
 type EnvGeneratedMultipleChoiceQuestion {
   /// Foreign key to question id
-  id         String   @db.ObjectId
-  /// Foreign key to question
-  questionId String   @db.ObjectId
+  id      String   @db.ObjectId
   /// Each item is a foreign key to an answer
-  answers    String[] @db.ObjectId
+  answers String[] @db.ObjectId
 }
 
 // -----------------------------------
