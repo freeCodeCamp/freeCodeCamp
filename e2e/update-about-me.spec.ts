@@ -51,7 +51,7 @@ test('Should allow empty string in any field in about settings', async ({
   await expect(updatedAlert).toBeVisible();
   // clear the alert to make sure it's gone before we save again.
   await updatedAlert.getByRole('button').click();
-
+  await page.getByRole('button', { name: 'Edit' }).click();
   await nameInput.fill('');
   await locationInput.fill('');
   await pictureInput.fill('');
@@ -63,6 +63,11 @@ test('Should allow empty string in any field in about settings', async ({
 
   await page.reload();
 
+  if (!process.env.CI) {
+    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
+  }
+
+  await page.getByRole('button', { name: 'Edit' }).click();
   await expect(nameInput).toHaveValue('');
   await expect(locationInput).toHaveValue('');
   await expect(pictureInput).toHaveValue('');

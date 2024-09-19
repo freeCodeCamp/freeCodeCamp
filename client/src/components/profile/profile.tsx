@@ -93,9 +93,14 @@ const EditModal = ({
           linkedin={linkedin}
           twitter={twitter}
           updateSocials={updateMySocials}
+          setIsEditing={setIsEditing}
           website={website}
         />
-        <Portfolio portfolio={portfolio} updatePortfolio={updateMyPortfolio} />
+        <Portfolio
+          portfolio={portfolio}
+          updatePortfolio={updateMyPortfolio}
+          setIsEditing={setIsEditing}
+        />
       </Modal.Body>
     </Modal>
   );

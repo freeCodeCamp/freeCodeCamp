@@ -28,6 +28,7 @@ type AboutProps = Omit<
 > & {
   t: TFunction;
   submitNewAbout: (formValues: FormValues) => void;
+  setIsEditing: (isEditing: boolean) => void;
 };
 
 type FormValues = Pick<AboutProps, 'name' | 'location' | 'picture' | 'about'>;
@@ -72,6 +73,10 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     };
   }
 
+  toggleEditing = () => {
+    this.props.setIsEditing(false);
+  };
+
   componentDidUpdate() {
     const { name, location, picture, about } = this.props;
     const { formValues, formClicked } = this.state;
@@ -110,10 +115,12 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
     if (this.state.isPictureUrlValid === true && !this.isFormPristine()) {
+      this.toggleEditing();
       return this.setState({ formClicked: true }, () =>
         submitNewAbout(formValues)
       );
     } else {
+      this.toggleEditing();
       return false;
     }
   };

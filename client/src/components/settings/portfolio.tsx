@@ -26,6 +26,7 @@ type PortfolioProps = {
   t: TFunction;
   updatePortfolio: (obj: { portfolio: PortfolioProjectData[] }) => void;
   username?: string;
+  setIsEditing: (isEditing: boolean) => void;
 };
 
 type PortfolioState = {
@@ -64,6 +65,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       unsavedItemId: null
     };
   }
+
+  toggleEditing = () => {
+    this.props.setIsEditing(false);
+  };
 
   createOnChangeHandler =
     (id: string, key: 'description' | 'image' | 'title' | 'url') =>

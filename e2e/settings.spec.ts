@@ -7,8 +7,7 @@ import { alertToBeVisible } from './utils/alerts';
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
   internetPresence: 'internet-presence',
-  portfolioItems: 'portfolio-items',
-  camperIdentity: 'camper-identity'
+  portfolioItems: 'portfolio-items'
 };
 
 const settingsObject = {
@@ -188,32 +187,6 @@ test.describe('Settings - Certified User', () => {
       })
     ).toBeVisible();
 
-    // Personal Information
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings['personal-info']
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.camperIdentity)
-    ).toBeVisible();
-    const savePersonalInfoButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
-    });
-    await expect(savePersonalInfoButton).toBeVisible();
-    await expect(savePersonalInfoButton).toBeDisabled();
-    await expect(
-      page.getByLabel(translations.settings.labels.name, { exact: true })
-    ).toHaveValue('Full Stack User');
-    await expect(
-      page.getByLabel(translations.settings.labels.location)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.picture)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.about)
-    ).toHaveValue('');
     await expect(
       page
         .getByRole('group', {
