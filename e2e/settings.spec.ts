@@ -6,7 +6,6 @@ import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
-  internetPresence: 'internet-presence',
   portfolioItems: 'portfolio-items'
 };
 
@@ -171,21 +170,6 @@ test.describe('Settings - Certified User', () => {
       name: translations.buttons['download-data']
     });
     await expect(downloadButton).toBeVisible();
-
-    // Internet Presence
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.internet
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.internetPresence)
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', {
-        name: translations.settings.headings.internet
-      })
-    ).toBeVisible();
 
     await expect(
       page

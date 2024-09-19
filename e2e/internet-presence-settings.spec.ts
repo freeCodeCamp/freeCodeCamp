@@ -90,7 +90,7 @@ test.describe('Your Internet Presence', () => {
       await expect(
         page.getByTestId(settingsPageElement.flashMessageAlert)
       ).toContainText('We have updated your social links');
-
+      await page.getByRole('button', { name: 'Edit' }).click();
       // clear value before next test
       await socialInput.clear();
       await Promise.all([

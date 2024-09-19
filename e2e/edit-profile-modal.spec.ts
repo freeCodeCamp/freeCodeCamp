@@ -20,6 +20,12 @@ test('edit profile modal should render correctly', async ({ page }) => {
       name: translations.settings.headings.internet
     })
   ).toBeVisible();
+  await expect(page.getByTestId('internet-presence')).toBeVisible();
+  await expect(
+    page.getByRole('button', {
+      name: translations.settings.headings.internet
+    })
+  ).toBeVisible();
 
   // Personal Information
   await expect(
