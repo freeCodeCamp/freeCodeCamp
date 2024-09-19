@@ -7,9 +7,11 @@ import {
   EnvQuestionType
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
+import { Static } from '@fastify/type-provider-typebox';
 import { defaultUserId } from '../jest.utils';
+import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
 
-const oid = () => new ObjectId().toString();
+export const oid = () => new ObjectId().toString();
 
 export const examId = oid();
 
@@ -288,6 +290,44 @@ export const examAttempt: EnvExamAttempt = {
   startTimeInMS: Date.now(),
   userId: defaultUserId,
   submissionTimeInMS: null
+};
+export const examAttemptSansSubmissionTimeInMS: Static<
+  typeof examEnvironmentPostExamAttempt.body
+>['attempt'] = {
+  examId,
+  questionSets: [
+    {
+      id: generatedExam.questionSets[0]!.id,
+      questions: [
+        {
+          id: generatedExam.questionSets[0]!.questions[0]!.id,
+          answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!]
+        }
+      ]
+    },
+    {
+      id: generatedExam.questionSets[1]!.id,
+      questions: [
+        {
+          id: generatedExam.questionSets[1]!.questions[0]!.id,
+          answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!]
+        }
+      ]
+    },
+    {
+      id: generatedExam.questionSets[2]!.id,
+      questions: [
+        {
+          id: generatedExam.questionSets[2]!.questions[0]!.id,
+          answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!]
+        },
+        {
+          id: generatedExam.questionSets[2]!.questions[1]!.id,
+          answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!]
+        }
+      ]
+    }
+  ]
 };
 
 export const exam: EnvExam = {

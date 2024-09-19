@@ -1,5 +1,4 @@
 import { Static } from '@fastify/type-provider-typebox';
-import { ObjectId } from 'mongodb';
 import {
   createSuperRequest,
   defaultUserId,
@@ -10,13 +9,7 @@ import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGenerate
 } from '../schemas';
-import {
-  exam,
-  examAttempt,
-  examId,
-  seedEnvExam,
-  generatedExam
-} from '../../../__mocks__/env-exam';
+import * as mock from '../../../__mocks__/env-exam';
 import { constructUserExam } from '../utils/exam';
 
 describe('/exam-environment/', () => {
@@ -24,14 +17,13 @@ describe('/exam-environment/', () => {
   describe('Authenticated user with exam environment authorization token', () => {
     let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let examEnvironmentAuthorizationToken: string;
 
     // Authenticate user
     beforeAll(async () => {
       setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
-      await seedEnvExam();
+      await mock.seedEnvExam();
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
       expect(res.status).toBe(200);
@@ -50,7 +42,7 @@ describe('/exam-environment/', () => {
       it('should return an error if there are no current exam attempts matching the given id', async () => {
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt: {
-            examId: new ObjectId().toString(),
+            examId: mock.oid(),
             questionSets: []
           }
         };
@@ -74,12 +66,12 @@ describe('/exam-environment/', () => {
       });
 
       it('should return an error if the given exam id does not match an existing exam', async () => {
-        const examId = new ObjectId().toString();
+        const examId = mock.oid();
         // Create exam attempt with bad exam id
         await fastifyTestInstance.prisma.envExamAttempt.create({
           data: {
             examId,
-            generatedExamId: new ObjectId().toString(),
+            generatedExamId: mock.oid(),
             needsRetake: false,
             startTimeInMS: Date.now(),
             userId: defaultUserId
@@ -110,8 +102,8 @@ describe('/exam-environment/', () => {
         // Create exam attempt with expired time
         await fastifyTestInstance.prisma.envExamAttempt.create({
           data: {
-            examId,
-            generatedExamId: new ObjectId().toString(),
+            examId: mock.examId,
+            generatedExamId: mock.oid(),
             needsRetake: false,
             startTimeInMS: Date.now() - (1000 * 60 * 60 * 2 + 1000),
             userId: defaultUserId
@@ -119,7 +111,7 @@ describe('/exam-environment/', () => {
         });
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt: {
-            examId,
+            examId: mock.examId,
             questionSets: []
           }
         };
@@ -142,8 +134,8 @@ describe('/exam-environment/', () => {
         // Create exam attempt with no matching generated exam
         await fastifyTestInstance.prisma.envExamAttempt.create({
           data: {
-            examId,
-            generatedExamId: new ObjectId().toString(),
+            examId: mock.examId,
+            generatedExamId: mock.oid(),
             needsRetake: false,
             startTimeInMS: Date.now(),
             userId: defaultUserId
@@ -151,7 +143,7 @@ describe('/exam-environment/', () => {
         });
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt: {
-            examId,
+            examId: mock.examId,
             questionSets: []
           }
         };
@@ -172,14 +164,14 @@ describe('/exam-environment/', () => {
 
       it('should return an error if the attempt does not match the generated exam', async () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
-          data: { ...examAttempt, userId: defaultUserId }
+          data: { ...mock.examAttempt, userId: defaultUserId }
         });
         await fastifyTestInstance.prisma.envGeneratedExam.create({
-          data: generatedExam
+          data: mock.generatedExam
         });
 
         // @ts-expect-error Exam is defined
-        attempt.questionSets[0].id = new ObjectId().toString();
+        attempt.questionSets[0].id = mock.oid();
 
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt
@@ -213,40 +205,19 @@ describe('/exam-environment/', () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: {
             userId: defaultUserId,
-            examId,
-            generatedExamId: generatedExam.id,
+            examId: mock.examId,
+            generatedExamId: mock.generatedExam.id,
             startTimeInMS: Date.now(),
             questionSets: [],
             needsRetake: false
           }
         });
         await fastifyTestInstance.prisma.envGeneratedExam.create({
-          data: generatedExam
+          data: mock.generatedExam
         });
 
-        const attemptWithoutSubmissionTime = structuredClone(examAttempt);
-
-        function removeSubmissionTime(obj: unknown) {
-          if (Array.isArray(obj)) {
-            obj.forEach(removeSubmissionTime);
-          } else if (typeof obj === 'object' && obj !== null) {
-            (Object.keys(obj) as [keyof typeof obj]).forEach(key => {
-              if (key === 'submissionTimeInMS') {
-                delete obj[key];
-              } else {
-                removeSubmissionTime(obj[key]);
-              }
-            });
-          }
-        }
-
-        removeSubmissionTime(attemptWithoutSubmissionTime);
-
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
-          attempt: {
-            examId: attemptWithoutSubmissionTime.examId,
-            questionSets: attemptWithoutSubmissionTime.questionSets
-          }
+          attempt: mock.examAttemptSansSubmissionTimeInMS
         };
 
         const res = await superPost('/exam-environment/exam/attempt')
@@ -272,12 +243,12 @@ describe('/exam-environment/', () => {
       afterEach(async () => {
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
         await fastifyTestInstance.prisma.envGeneratedExam.deleteMany();
-        await seedEnvExam();
+        await mock.seedEnvExam();
       });
 
       it('should return an error if the given exam id is invalid', async () => {
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId: new ObjectId().toString()
+          examId: mock.oid()
         };
         const res = await superPost('/exam-environment/exam/generate')
           .send(body)
@@ -300,16 +271,16 @@ describe('/exam-environment/', () => {
 
       it('should return an error if the exam has been attempted in the last 24 hours', async () => {
         const recentExamAttempt = {
-          ...examAttempt,
+          ...mock.examAttempt,
           // Set start time such that exam has expired, but 0 hours have passed
-          startTimeInMS: Date.now() - exam.config.totalTimeInMS
+          startTimeInMS: Date.now() - mock.exam.config.totalTimeInMS
         };
         await fastifyTestInstance.prisma.envExamAttempt.create({
           data: recentExamAttempt
         });
 
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
 
         const res = await superPost('/exam-environment/exam/generate')
@@ -320,7 +291,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res).toMatchObject({
-          status: 403,
+          status: 429,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
@@ -334,12 +305,12 @@ describe('/exam-environment/', () => {
             // Set start time such that exam has expired, but 24 hours - 1s has passed
             startTimeInMS:
               Date.now() -
-              (exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 - 1000))
+              (mock.exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 - 1000))
           }
         });
 
         const body2: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
 
         const res2 = await superPost('/exam-environment/exam/generate')
@@ -350,7 +321,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res2).toMatchObject({
-          status: 403,
+          status: 429,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
@@ -364,12 +335,12 @@ describe('/exam-environment/', () => {
             // Set start time such that exam has expired, but 24 hours + 1s has passed
             startTimeInMS:
               Date.now() -
-              (exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 + 1000))
+              (mock.exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 + 1000))
           }
         });
 
         const body3: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
 
         const res3 = await superPost('/exam-environment/exam/generate')
@@ -386,7 +357,7 @@ describe('/exam-environment/', () => {
             data: {
               examAttempt: {
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                id: expect.not.stringMatching(examAttempt.id)
+                id: expect.not.stringMatching(mock.examAttempt.id)
               }
             }
           }
@@ -396,14 +367,14 @@ describe('/exam-environment/', () => {
       it('should return the current attempt if it is still ongoing', async () => {
         const latestAttempt =
           await fastifyTestInstance.prisma.envExamAttempt.create({
-            data: examAttempt
+            data: mock.examAttempt
           });
         await fastifyTestInstance.prisma.envGeneratedExam.create({
-          data: generatedExam
+          data: mock.generatedExam
         });
 
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
 
         const res = await superPost('/exam-environment/exam/generate')
@@ -425,7 +396,7 @@ describe('/exam-environment/', () => {
 
       it('should store a random generated exam in the database', async () => {
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
         const res = await superPost('/exam-environment/exam/generate')
           .send(body)
@@ -438,7 +409,7 @@ describe('/exam-environment/', () => {
 
         const generatedExam =
           await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
-            where: { examId }
+            where: { examId: mock.examId }
           });
 
         expect(generatedExam).toBeDefined();
@@ -449,16 +420,16 @@ describe('/exam-environment/', () => {
         // Create an exam that cannot be generated
         await fastifyTestInstance.prisma.envExam.create({
           data: {
-            ...exam,
+            ...mock.exam,
             config: {
-              ...exam.config,
+              ...mock.exam.config,
               tags: [{ group: ['invalid'], numberOfQuestions: 1 }]
             }
           }
         });
 
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
         const res = await superPost('/exam-environment/exam/generate')
           .send(body)
@@ -477,7 +448,7 @@ describe('/exam-environment/', () => {
 
       it('should store an empty exam attempt in the database', async () => {
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
         const res = await superPost('/exam-environment/exam/generate')
           .send(body)
@@ -490,7 +461,7 @@ describe('/exam-environment/', () => {
 
         const generatedExam =
           await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
-            where: { examId }
+            where: { examId: mock.examId }
           });
 
         expect(generatedExam).toBeDefined();
@@ -504,7 +475,7 @@ describe('/exam-environment/', () => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           id: expect.any(String),
           userId: defaultUserId,
-          examId,
+          examId: mock.examId,
           generatedExamId: generatedExam!.id,
           questionSets: [],
           needsRetake: false,
@@ -514,13 +485,43 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('should unwind (delete) the exam attempt and generated exam if the user exam cannot be constructed', async () => {
-        // TODO: Not sure how to test this as it involves stopping half way through a valid request
+      it('should unwind (delete) the exam attempt and generated exam if the user exam cannot be constructed', async () => {
+        const _mockConstructUserExam = jest
+          .spyOn(await import('../utils/exam'), 'constructUserExam')
+          .mockImplementationOnce(() => {
+            throw new Error('Test error');
+          });
+
+        const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
+          examId: mock.examId
+        };
+        const res = await superPost('/exam-environment/exam/generate')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(500);
+
+        const generatedExam =
+          await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
+            where: { examId: mock.examId }
+          });
+
+        expect(generatedExam).toBeNull();
+
+        const examAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.findFirst({
+            where: { examId: mock.examId }
+          });
+
+        expect(examAttempt).toBeNull();
       });
 
       it('should return the user exam with the exam attempt', async () => {
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId
+          examId: mock.examId
         };
         const res = await superPost('/exam-environment/exam/generate')
           .send(body)
@@ -533,7 +534,7 @@ describe('/exam-environment/', () => {
 
         const generatedExam =
           await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
-            where: { examId }
+            where: { examId: mock.examId }
           });
 
         expect(generatedExam).toBeDefined();
@@ -543,7 +544,7 @@ describe('/exam-environment/', () => {
             where: { generatedExamId: generatedExam!.id }
           });
 
-        const userExam = constructUserExam(generatedExam!, exam);
+        const userExam = constructUserExam(generatedExam!, mock.exam);
 
         expect(res).toMatchObject({
           status: 200,
@@ -568,13 +569,13 @@ describe('/exam-environment/', () => {
     beforeAll(async () => {
       setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
-      await seedEnvExam();
+      await mock.seedEnvExam();
     });
     describe('POST /exam-environment/exam/attempt', () => {
       it('should return 403', async () => {
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt: {
-            examId: new ObjectId().toString(),
+            examId: mock.oid(),
             questionSets: []
           }
         };
@@ -589,7 +590,7 @@ describe('/exam-environment/', () => {
     describe('POST /exam-environment/exam/generate', () => {
       it('should return 403', async () => {
         const body: Static<typeof examEnvironmentPostExamGenerate.body> = {
-          examId: new ObjectId().toString()
+          examId: mock.oid()
         };
         const res = await superPost('/exam-environment/exam/generate')
           .send(body)

@@ -218,7 +218,7 @@ async function postExamGenerateHandler(
       const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
 
       if (effectiveSubmissionTime > twentyFourHoursAgo) {
-        void reply.code(403);
+        void reply.code(429);
         // TOOD: Consider sending last completed time
         return reply.send(
           ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(
