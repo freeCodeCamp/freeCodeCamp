@@ -7,12 +7,19 @@ import FourOhFour from '../components/FourOhFour';
 import Loader from '../components/helpers/loader';
 import Profile from '../components/profile/profile';
 import { fetchProfileForUser } from '../redux/actions';
+
+import {
+  submitNewAbout,
+  updateMyPortfolio,
+  updateMySocials
+} from '../redux/settings/actions';
 import {
   usernameSelector,
   userByNameSelector,
   userProfileFetchStateSelector
 } from '../redux/selectors';
 import { User } from '../redux/prop-types';
+import { Socials } from '../components/settings/internet';
 
 interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
@@ -53,8 +60,14 @@ const makeMapStateToProps =
 
 const mapDispatchToProps: {
   fetchProfileForUser: ShowProfileOrFourOhFourProps['fetchProfileForUser'];
+  submitNewAbout: () => void;
+  updateMyPortfolio: () => void;
+  updateMySocials: (formValues: Socials) => void;
 } = {
-  fetchProfileForUser
+  fetchProfileForUser,
+  submitNewAbout,
+  updateMyPortfolio,
+  updateMySocials
 };
 
 function ShowProfileOrFourOhFour({
@@ -85,7 +98,13 @@ function ShowProfileOrFourOhFour({
       <FourOhFour />
     )
   ) : (
-    <Profile isSessionUser={isSessionUser} user={requestedUser} />
+    <Profile
+      isSessionUser={isSessionUser}
+      user={requestedUser}
+      submitNewAbout={submitNewAbout}
+      updateMyPortfolio={updateMyPortfolio}
+      updateMySocials={updateMySocials}
+    />
   );
 }
 

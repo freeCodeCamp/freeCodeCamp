@@ -24,7 +24,8 @@ const Bio = ({
   isDonating,
   yearsTopContributor,
   picture,
-  setIsEditing
+  setIsEditing,
+  isSessionUser
 }: CamperProps) => {
   const { t } = useTranslation();
 
@@ -42,14 +43,12 @@ const Bio = ({
       </div>
       <div className='profile-edit-container'>
         <h1>@{username}</h1>
-        <Button
-          onClick={() => {
-            setIsEditing(true);
-          }}
-          size='small'
-        >
-          <FontAwesomeIcon icon={faEdit} /> {'Edit '}
-        </Button>
+        {isSessionUser && (
+          <Button onClick={() => setIsEditing(true)} size='small'>
+            <FontAwesomeIcon icon={faEdit} />
+            {t('buttons.edit')}
+          </Button>
+        )}
       </div>
       {name && <h2>{name}</h2>}
       <Spacer size={'small'} />

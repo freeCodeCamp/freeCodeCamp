@@ -3,14 +3,9 @@ import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Alert, Container, Modal, Row } from '@freecodecamp/ui';
-import { connect } from 'react-redux';
 import { FullWidthRow, Link, Spacer } from '../helpers';
 import Portfolio from '../settings/portfolio';
-import {
-  submitNewAbout,
-  updateMyPortfolio,
-  updateMySocials
-} from '../../redux/settings/actions';
+
 import UsernameSettings from '../../components/settings/username';
 import About from '../../components/settings/about';
 import Internet, { Socials } from '../settings/internet';
@@ -33,6 +28,7 @@ interface ProfileProps {
 interface EditModalProps {
   user: User;
   isEditing: boolean;
+  isSessionUser: boolean;
   setIsEditing: (isEditing: boolean) => void;
   updateMySocials: (formValues: Socials) => void;
   updateMyPortfolio: () => void;
@@ -43,12 +39,6 @@ interface MessageProps {
   t: TFunction;
   username: string;
 }
-
-const mapDispatchToProps = {
-  updateMyPortfolio,
-  updateMySocials,
-  submitNewAbout
-};
 
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
@@ -62,9 +52,11 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
 const EditModal = ({
   user,
   isEditing,
+  isSessionUser,
   setIsEditing,
   updateMyPortfolio,
-  updateMySocials
+  updateMySocials,
+  submitNewAbout
 }: EditModalProps) => {
   const {
     portfolio,
@@ -93,6 +85,7 @@ const EditModal = ({
           username={username}
           submitNewAbout={submitNewAbout}
           setIsEditing={setIsEditing}
+          isSessionUser={isSessionUser}
         />
         <Spacer size='medium' />
         <Internet
@@ -131,8 +124,10 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
 
 function UserProfile({
   user,
+  isSessionUser,
   updateMyPortfolio,
-  updateMySocials
+  updateMySocials,
+  submitNewAbout
 }: ProfileProps): JSX.Element {
   const [isEditing, setIsEditing] = useState(false);
 
@@ -168,14 +163,17 @@ function UserProfile({
 
   return (
     <>
-      <EditModal
-        user={user}
-        isEditing={isEditing}
-        setIsEditing={setIsEditing}
-        updateMyPortfolio={updateMyPortfolio}
-        submitNewAbout={submitNewAbout}
-        updateMySocials={updateMySocials}
-      />
+      {isSessionUser && (
+        <EditModal
+          user={user}
+          isEditing={isEditing}
+          isSessionUser={isSessionUser}
+          setIsEditing={setIsEditing}
+          updateMyPortfolio={updateMyPortfolio}
+          updateMySocials={updateMySocials}
+          submitNewAbout={submitNewAbout}
+        />
+      )}
       <Camper
         about={showAbout ? about : ''}
         githubProfile={githubProfile}
@@ -189,6 +187,7 @@ function UserProfile({
         username={username}
         website={website}
         yearsTopContributor={yearsTopContributor}
+        isSessionUser={isSessionUser}
         setIsEditing={setIsEditing}
       />
       {showPoints ? <Stats points={points} calendar={calendar} /> : null}
@@ -205,7 +204,13 @@ function UserProfile({
   );
 }
 
-function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
+function Profile({
+  user,
+  isSessionUser,
+  updateMyPortfolio,
+  updateMySocials,
+  submitNewAbout
+}: ProfileProps): JSX.Element {
   const { t } = useTranslation();
   const {
     profileUI: { isLocked },
@@ -249,4 +254,4 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
 Profile.displayName = 'Profile';
 
-export default connect(null, mapDispatchToProps)(UserProfile);
+export default Profile;
