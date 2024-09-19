@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Quiz } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -29,9 +29,6 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-
-// Styles
-import '../video.css';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -71,7 +68,8 @@ interface ShowQuizProps {
 }
 
 interface ShowQuizState {
-  answer: number;
+  hasSubmitted: boolean;
+  quiz: null;
 }
 
 // Component
@@ -82,7 +80,8 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
   constructor(props: ShowQuizProps) {
     super(props);
     this.state = {
-      answer: 0
+      hasSubmitted: false,
+      quiz: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -149,12 +148,6 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
     console.log('handleSubmit');
   }
 
-  handleOptionChange = (): void => {
-    this.setState({
-      answer: 2
-    });
-  };
-
   render() {
     const {
       data: {
@@ -184,6 +177,20 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
 
+    const random = Math.floor(Math.random() * quizzes.length);
+    const quiz = quizzes[random].questions;
+    const quizForComponent = quiz.map(question => {
+      return {
+        question: question.question,
+        answers: question.options.map((option, index) => {
+          return {
+            label: option,
+            value: index + 1
+          };
+        })
+      };
+    });
+
     return (
       <Hotkeys
         executeChallenge={() => {
@@ -209,7 +216,9 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
-                <ObserveKeys>{JSON.stringify(quizzes)}</ObserveKeys>
+                <ObserveKeys>
+                  <Quiz questions={quizForComponent} />
+                </ObserveKeys>
                 <Spacer size='medium' />
                 <Button
                   block={true}
