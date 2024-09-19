@@ -22,6 +22,7 @@ export type VisibleEditors = {
   indexjsx?: boolean;
   stylescss?: boolean;
   scriptjs?: boolean;
+  indexts?: boolean;
   mainpy?: boolean;
 };
 type MultifileEditorProps = Pick<
@@ -78,7 +79,14 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     isUsingKeyboardInTablist,
     resizeProps,
     title,
-    visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx, mainpy },
+    visibleEditors: {
+      stylescss,
+      indexhtml,
+      scriptjs,
+      indexts,
+      indexjsx,
+      mainpy
+    },
     usesMultifileEditor,
     showProjectPreview
   } = props;
@@ -103,6 +111,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
   if (mainpy) editorKeys.push('mainpy');
+  if (indexts) editorKeys.push('indexts');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {
