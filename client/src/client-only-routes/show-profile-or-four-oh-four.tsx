@@ -23,6 +23,9 @@ import { Socials } from '../components/settings/internet';
 
 interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
+  updateMyPortfolio: () => void;
+  submitNewAbout: () => void;
+  updateMySocials: (formValues: Socials) => void;
   fetchState: {
     pending: boolean;
     complete: boolean;
@@ -74,6 +77,9 @@ function ShowProfileOrFourOhFour({
   requestedUser,
   maybeUser,
   fetchProfileForUser,
+  submitNewAbout,
+  updateMyPortfolio,
+  updateMySocials,
   isSessionUser,
   showLoading
 }: ShowProfileOrFourOhFourProps) {

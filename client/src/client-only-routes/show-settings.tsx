@@ -15,7 +15,6 @@ import MiscSettings from '../components/settings/misc-settings';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
-import { Socials } from '../components/settings/internet';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
@@ -31,7 +30,6 @@ import {
   submitNewAbout,
   updateMyHonesty,
   updateMyQuincyEmail,
-  updateMySocials,
   updateMySound,
   updateMyTheme,
   updateMyKeyboardShortcuts,
@@ -45,10 +43,8 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
-  submitNewAbout: () => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  updateSocials: (formValues: Socials) => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
@@ -78,7 +74,6 @@ const mapDispatchToProps = {
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
-  updateSocials: (formValues: Socials) => updateMySocials(formValues),
   updateIsHonest: updateMyHonesty,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
