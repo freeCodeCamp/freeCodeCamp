@@ -14,7 +14,13 @@ const settingsPageElement = {
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/settings');
+  await page.goto('/certifieduser');
+
+  if (!process.env.CI) {
+    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
+  }
+
+  await page.getByRole('button', { name: 'Edit' }).click();
 });
 
 test.describe('Your Internet Presence', () => {
@@ -70,7 +76,7 @@ test.describe('Your Internet Presence', () => {
     });
 
     test(`should update ${social.name} URL`, async ({ page }) => {
-      const socialInput = page.getByLabel(social.label);
+      const socialInput = page.locator(`#internet-${social.name}-input`);
       await socialInput.fill(social.url);
       const socialCheckmark = page.getByTestId(social.checkTestId);
       await expect(socialCheckmark).toBeVisible();

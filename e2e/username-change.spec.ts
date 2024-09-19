@@ -16,9 +16,19 @@ const settingsObject = {
   errorCode: '404'
 };
 
+let currentUsername = 'certifieduser';
+
 test.describe('Username Settings Validation', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
+    await page.goto(`/${currentUsername}`);
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+
+    await page.getByRole('button', { name: 'Edit' }).click();
   });
 
   test('Should display Username Input and Save Button', async ({ page }) => {
@@ -98,6 +108,7 @@ test.describe('Username Settings Validation', () => {
         )
       )
     ).toBeVisible();
+    currentUsername = settingsObject.usernameAvailable;
   });
 
   test('should update username in lowercase and reflect in the UI', async ({
@@ -118,6 +129,7 @@ test.describe('Username Settings Validation', () => {
         )
       )
     ).toBeVisible();
+    currentUsername = settingsObject.usernameUpdateToLowerCase;
   });
 
   test('should update username in uppercase and reflect in the UI', async ({
@@ -138,6 +150,7 @@ test.describe('Username Settings Validation', () => {
         )
       )
     ).toBeVisible();
+    currentUsername = settingsObject.usernameUpdateToUpperCase;
   });
 
   test('should update username by pressing enter', async ({ page }) => {
@@ -158,6 +171,7 @@ test.describe('Username Settings Validation', () => {
         )
       )
     ).toBeVisible();
+    currentUsername = settingsObject.testUser;
   });
 
   test('should not be able to update username to the same username', async ({
