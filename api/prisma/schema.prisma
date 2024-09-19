@@ -141,6 +141,9 @@ model user {
   website                      String? // Undefined
   yearsTopContributor          String[] // Undefined | String[]
   isClassroomAccount           Boolean? // Undefined
+
+  // Relations
+  examAttempts EnvExamAttempt[]
 }
 
 // -----------------------------------
@@ -153,6 +156,10 @@ model EnvExam {
   questionSets EnvQuestionSet[]
   /// Configuration for exam metadata
   config       EnvConfig
+
+  // Relations
+  generatedExams EnvGeneratedExam[]
+  examAttempts   EnvExamAttempt[]
 }
 
 /// A grouping of one or more questions of a given type
@@ -216,6 +223,7 @@ type EnvConfig {
   name          String
   /// Notes given about exam
   note          String
+  /// Category configuration for question selection
   tags          EnvTagConfig[]
   /// Total time allocated for exam in milliseconds
   totalTimeInMS Int
@@ -248,13 +256,14 @@ type EnvTagConfig {
 
 /// An attempt at an exam in the Exam Environment App
 model EnvExamAttempt {
-  id                 String                  @id @default(auto()) @map("_id") @db.ObjectId
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
   /// Foriegn key to user
-  userId             String                  @db.ObjectId
+  userId          String @db.ObjectId
   /// Foreign key to exam
-  examId             String                  @db.ObjectId
+  examId          String @db.ObjectId
   /// Foreign key to generated exam id
-  generatedExamId    String                  @db.ObjectId
+  generatedExamId String @db.ObjectId
+
   questionSets       EnvQuestionSetAttempt[]
   /// Time exam was started as milliseconds since epoch
   startTimeInMS      Int
@@ -263,6 +272,11 @@ model EnvExamAttempt {
   /// As attempt might not be submitted (disconnection or quit), field is optional
   submissionTimeInMS Int?
   needsRetake        Boolean
+
+  // Relations
+  user          user             @relation(fields: [userId], references: [id])
+  exam          EnvExam          @relation(fields: [examId], references: [id])
+  generatedExam EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
 }
 
 type EnvQuestionSetAttempt {
@@ -287,8 +301,13 @@ type EnvMultipleChoiceQuestionAttempt {
 /// TODO: Add userId?
 model EnvGeneratedExam {
   id           String                    @id @default(auto()) @map("_id") @db.ObjectId
+  /// Foreign key to exam
   examId       String                    @db.ObjectId
   questionSets EnvGeneratedQuestionSet[]
+
+  // Relations
+  exam           EnvExam          @relation(fields: [examId], references: [id])
+  EnvExamAttempt EnvExamAttempt[]
 }
 
 type EnvGeneratedQuestionSet {
@@ -298,9 +317,11 @@ type EnvGeneratedQuestionSet {
 
 type EnvGeneratedMultipleChoiceQuestion {
   /// Foreign key to question id
-  id      String   @db.ObjectId
+  id         String   @db.ObjectId
+  /// Foreign key to question
+  questionId String   @db.ObjectId
   /// Each item is a foreign key to an answer
-  answers String[] @db.ObjectId
+  answers    String[] @db.ObjectId
 }
 
 // -----------------------------------
