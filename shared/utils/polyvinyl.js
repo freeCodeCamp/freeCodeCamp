@@ -120,11 +120,11 @@ function clearHeadTail(poly) {
   };
 }
 
-// compileHeadTail(padding: String, poly: PolyVinyl) => PolyVinyl
-function compileHeadTail(padding = '', poly) {
+// compileHeadTail(poly: PolyVinyl) => PolyVinyl
+function compileHeadTail(poly) {
   return clearHeadTail(
     transformContents(
-      () => [poly.head, poly.contents, poly.tail].join(padding),
+      () => [poly.head, poly.contents, poly.tail].join('\n'),
       poly
     )
   );
@@ -145,18 +145,6 @@ function transformContents(wrap, poly) {
   return newPoly;
 }
 
-// transformHeadTailAndContents(
-//   wrap: (source: String) => String,
-//   poly: PolyVinyl
-// ) => PolyVinyl
-function transformHeadTailAndContents(wrap, poly) {
-  return {
-    ...transformContents(wrap, poly),
-    head: wrap(poly.head),
-    tail: wrap(poly.tail)
-  };
-}
-
 module.exports = {
   createPoly,
   isPoly,
@@ -165,6 +153,5 @@ module.exports = {
   setImportedFiles,
   compileHeadTail,
   regeneratePathAndHistory,
-  transformContents,
-  transformHeadTailAndContents
+  transformContents
 };

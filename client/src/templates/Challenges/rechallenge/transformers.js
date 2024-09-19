@@ -12,7 +12,6 @@ import {
 import sassData from '../../../../../client/config/browser-scripts/sass-compile.json';
 import {
   transformContents,
-  transformHeadTailAndContents,
   setExt,
   compileHeadTail
 } from '../../../../../shared/utils/polyvinyl';
@@ -115,10 +114,7 @@ const babelTransformer = loopProtectOptions => {
         await loadBabel();
         await loadPresetEnv();
         const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-        return transformHeadTailAndContents(
-          babelTransformCode(babelOptions),
-          code
-        );
+        return transformContents(babelTransformCode(babelOptions), code);
       }
     ],
     [
@@ -128,10 +124,7 @@ const babelTransformer = loopProtectOptions => {
         await loadPresetReact();
         const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
         return flow(
-          partial(
-            transformHeadTailAndContents,
-            babelTransformCode(babelOptions)
-          ),
+          partial(transformContents, babelTransformCode(babelOptions)),
           partial(setExt, 'js')
         )(code);
       }
@@ -276,12 +269,9 @@ const htmlTransformer = cond([
 
 export const getTransformers = loopProtectOptions => [
   replaceNBSP,
+  compileHeadTail,
   babelTransformer(loopProtectOptions),
-  partial(compileHeadTail, ''),
   htmlTransformer
 ];
 
-export const getPythonTransformers = () => [
-  replaceNBSP,
-  partial(compileHeadTail, '')
-];
+export const getPythonTransformers = () => [replaceNBSP, compileHeadTail];
