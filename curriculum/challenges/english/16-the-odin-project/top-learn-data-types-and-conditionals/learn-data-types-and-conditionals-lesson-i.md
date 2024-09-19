@@ -24,7 +24,7 @@ if (x > 10) {
 
 In this example, the `x` variable is compared to the number `10` using the `>` operator. If `x` is greater than `10`, the first block of code will be executed. Otherwise, the `else if` statement will check the next condition. If `x` is greater than `5`, the second block of code will be executed. Otherwise, the `else` block will be executed.
 
-# --question--
+# --questions--
 
 ## --text--
 

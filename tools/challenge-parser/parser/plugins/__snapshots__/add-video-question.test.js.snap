@@ -2,26 +2,28 @@
 
 exports[`add-video-question plugin should match the video snapshot 1`] = `
 {
-  "question": {
-    "answers": [
-      {
-        "answer": "<p>Some inline <code>code</code></p>",
-        "feedback": "<p>That is not correct.</p>",
-      },
-      {
-        "answer": "<p>Some <em>italics</em></p>
+  "questions": [
+    {
+      "answers": [
+        {
+          "answer": "<p>Some inline <code>code</code></p>",
+          "feedback": "<p>That is not correct.</p>",
+        },
+        {
+          "answer": "<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>",
-        "feedback": null,
-      },
-      {
-        "answer": "<p><code> code in </code> code tags</p>",
-        "feedback": null,
-      },
-    ],
-    "solution": 3,
-    "text": "<p>Question line 1</p>
+          "feedback": null,
+        },
+        {
+          "answer": "<p><code> code in </code> code tags</p>",
+          "feedback": null,
+        },
+      ],
+      "solution": 3,
+      "text": "<p>Question line 1</p>
 <pre><code class="language-js">  var x = 'y';
 </code></pre>",
-  },
+    },
+  ],
 }
 `;

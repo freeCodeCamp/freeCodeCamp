@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: developing-a-banner-grabber
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -36,7 +36,7 @@ The stack trace tells us that:
 
 Thus the stack trace lets you trace the evolution of an error back to its origin, which here is the declaration of `add()`.
 
-# --question--
+# --questions--
 
 ## --text--
 

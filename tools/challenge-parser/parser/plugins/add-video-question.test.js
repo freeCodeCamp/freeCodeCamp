@@ -16,17 +16,20 @@ describe('add-video-question plugin', () => {
     expect(typeof plugin).toEqual('function');
   });
 
-  it('adds a `question` property to `file.data`', () => {
+  it('adds a `questions` property to `file.data`', () => {
     plugin(mockVideoAST, file);
 
-    expect('question' in file.data).toBe(true);
+    expect('questions' in file.data).toBe(true);
   });
 
-  it('should generate a question object from a video challenge AST', () => {
-    expect.assertions(10);
+  it('should generate a questions array from a video challenge AST', () => {
+    expect.assertions(11);
     plugin(mockVideoAST, file);
-    const testObject = file.data.question;
-    expect(Object.keys(testObject).length).toBe(3);
+    const testArr = file.data.questions;
+    expect(Array.isArray(testArr)).toBe(true);
+    expect(testArr.length).toBe(1);
+
+    const testObject = testArr[0];
     expect(testObject).toHaveProperty('text');
     expect(typeof testObject.text).toBe('string');
     expect(testObject).toHaveProperty('solution');
@@ -40,7 +43,7 @@ describe('add-video-question plugin', () => {
 
   it('should convert question and answer markdown into html', () => {
     plugin(mockVideoAST, file);
-    const testObject = file.data.question;
+    const testObject = file.data.questions[0];
     expect(Object.keys(testObject).length).toBe(3);
     expect(testObject.text).toBe(
       '<p>Question line 1</p>\n' +

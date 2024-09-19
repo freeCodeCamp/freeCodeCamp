@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: reorganizing-arrays
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

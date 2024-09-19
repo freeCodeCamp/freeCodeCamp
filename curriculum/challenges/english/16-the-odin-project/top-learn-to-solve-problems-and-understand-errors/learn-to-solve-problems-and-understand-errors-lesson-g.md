@@ -23,7 +23,7 @@ But that's the key - `.push()` is not a String method, it's an Array method. Hen
 
 A good note to keep in mind when faced with a `TypeError` is to consider the data type you are trying to run a method or operation against. You'll likely find that it is not what you think, or the operation or method is not compatible with that type.
 
-# --question-- 
+# --questions-- 
 
 ## --text--
 
