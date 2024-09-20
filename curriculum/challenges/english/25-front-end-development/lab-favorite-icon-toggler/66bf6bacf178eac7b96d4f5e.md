@@ -19,7 +19,7 @@ In this lab you will use JavaScript click events to toggle the appearance of a f
 3. The three list items should contain the item name followed by a `span` element with the class `favorite-icon`.
 4. The `span` element should contain the code `&#9825;` initially to represent an empty heart.
 5. When a span element containing a heart is clicked, you should add the `filled` class to the clicked `span` if it's not already present, and remove it, if it is.
-6. When a `span` element containing a heart is clicked, the heart symbol should toggle between `&#9825;` (empty heart) and `&#10084`; (filled heart), depending on its current state.
+6. When a `span` element containing a heart is clicked, the heart symbol should toggle between `&#9825;` (empty heart) and `&#10084;` (filled heart), depending on its current state.
 
 # --hints--
 
@@ -81,7 +81,7 @@ spanElements.forEach(span => {
 });
 ```
 
-When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element and change the innerHTML of the `span` element to `&#10084;`.
+When the `span` element is clicked, and it doesn't contain the class `filled`, you should add the class `filled` to the `span` element and change the `innerHTML` of the `span` element to `&#10084;`.
 
 ```js
 const spanElements = document.querySelectorAll('.favorite-icon');
