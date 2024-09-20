@@ -14,8 +14,6 @@ import {
 interface Options {
   stepNum: number;
   challengeType: number;
-  dashedName: string;
-  title: string;
   projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
   isFirstChallenge?: boolean;
@@ -23,8 +21,6 @@ interface Options {
 
 const createStepFile = ({
   stepNum,
-  dashedName,
-  title,
   challengeType,
   projectPath = getProjectPath(),
   challengeSeeds = {},
@@ -34,8 +30,6 @@ const createStepFile = ({
 
   const template = getStepTemplate({
     challengeId,
-    dashedName,
-    title,
     challengeSeeds,
     stepNum,
     challengeType,
