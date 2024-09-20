@@ -7,6 +7,55 @@
   "dashedName": "workshop-cafe-menu",
   "order": 37,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66ecf7dcf7c318fcb27b8983", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "5f33071498eb2472b87ddee4",
+      "title": "Step 1"
+    },
+    {
+      "id": "5f3313e74582ad9d063e3a38",
+      "title": "Step 2"
+    },
+    {
+      "id": "5f331e55dfab7a896e53c3a1",
+      "title": "Step 3"
+    },
+    {
+      "id": "5f3326b143638ee1a09ff1e3",
+      "title": "Step 4"
+    },
+    {
+      "id": "5f33294a6af5e9188dbdb8f3",
+      "title": "Step 5"
+    },
+    {
+      "id": "5f332a88dc25a0fd25c7687a",
+      "title": "Step 6"
+    },
+    {
+      "id": "5f332b23c2045fb843337579",
+      "title": "Step 7"
+    },
+    {
+      "id": "5f344fc1520b6719f2e35605",
+      "title": "Step 8"
+    },
+    {
+      "id": "5f344fbc22624a2976425065",
+      "title": "Step 9"
+    },
+    {
+      "id": "5f344fad8bf01691e71a30eb",
+      "title": "Step 10"
+    },
+    {
+      "id": "5f344f9c805cd193c33d829c",
+      "title": "Step 11"
+    },
+    {
+      "id": "5f3477ae9675db8bb7655b30",
+      "title": "Step 12"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

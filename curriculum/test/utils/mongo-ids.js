@@ -16,6 +16,18 @@ const duplicatedProjectIds = [
   /*** CSS ***/
 
   // Cafe Menu
+  '5f33071498eb2472b87ddee4',
+  '5f3313e74582ad9d063e3a38',
+  '5f331e55dfab7a896e53c3a1',
+  '5f3326b143638ee1a09ff1e3',
+  '5f33294a6af5e9188dbdb8f3',
+  '5f332a88dc25a0fd25c7687a',
+  '5f332b23c2045fb843337579',
+  '5f344fc1520b6719f2e35605',
+  '5f344fbc22624a2976425065',
+  '5f344fad8bf01691e71a30eb',
+  '5f344f9c805cd193c33d829c',
+  '5f3477ae9675db8bb7655b30',
 
   // Colored Markers
 
