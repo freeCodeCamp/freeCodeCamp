@@ -1,0 +1,12 @@
+{
+  "name": "Design a Cafe Menu",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-cafe-menu",
+  "order": 37,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ecf7dcf7c318fcb27b8983", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
