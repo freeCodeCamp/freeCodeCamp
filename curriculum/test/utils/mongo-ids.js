@@ -96,7 +96,17 @@ const duplicatedProjectIds = [
   '5f45a66d4a2b0453301e5a26',
   '5f45b0731d39e15d54df4dfc',
   '5f45b25e7ec2405f166b9de1',
-
+  '5f45b3c93c027860d9298dbd',
+  '5f45b45d099f3e621fbbb256',
+  '5f45b4c81cea7763550e40df',
+  '5f45b715301bbf667badc04a',
+  '5f46e270702a8456a664f0df',
+  '5f46e36e745ead58487aabf2',
+  '5f46e7a4750dd05b5a673920',
+  '5f46e8284aae155c83015dee',
+  '5f475bb508746c16c9431d42',
+  '5f475e1c7f71a61d913836c6',
+  '5f47fe7e31980053a8d4403b',
   // Colored Markers
 
   // Registration Form
