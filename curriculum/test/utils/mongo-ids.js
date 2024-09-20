@@ -46,6 +46,16 @@ const duplicatedProjectIds = [
   '5f35e5c44359872a137bd98f',
   '5f35e5c4321f818cdc4bed30',
   '5f3c866daec9a49519871816',
+  '5f3c866d5414453fc2d7b480',
+  '5f3c866d28d7ad0de6470505',
+  '5f769541be494f25449b292f',
+  '5f76967fad478126d6552b0d',
+  '5f769702e6e33127d14aa120',
+  '5f3c866de7a5b784048f94b1',
+  '5f3c866dbf362f99b9a0c6d0',
+  '5f3c866d0fc037f7311b4ac8',
+  '5f3c866dd0d0275f01d4d847',
+  '5f3cade9fa77275d9f4efe62',
 
   // Colored Markers
 
