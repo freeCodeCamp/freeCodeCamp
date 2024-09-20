@@ -1,26 +1,39 @@
 // originally based off of https://github.com/gulpjs/vinyl
-const invariant = require('invariant');
+import invariant from 'invariant';
 
-// interface PolyVinyl {
-//   source: String,
-//   contents: String,
-//   name: String,
-//   ext: String,
-//   path: String,
-//   key: String,
-//   head: String,
-//   tail: String,
-//   history: [...String],
-//   error: Null|Object|Error
-// }
+export type Ext = 'js' | 'html' | 'css' | 'jsx' | 'ts';
 
-// createPoly({
-//   name: String,
-//   ext: String,
-//   contents: String,
-//   history?: [...String],
-// }) => PolyVinyl, throws
-function createPoly({ name, ext, contents, history, ...rest }) {
+export type ChallengeFile = {
+  fileKey: string;
+  ext: Ext;
+  name: string;
+  editableRegionBoundaries?: number[];
+  editableContents?: string;
+  usesMultifileEditor?: boolean;
+  error?: unknown;
+  head: string;
+  tail: string;
+  seed: string;
+  contents: string;
+  source: string | null;
+  id: string;
+  history: string[];
+};
+
+type PolyProps = {
+  name: string;
+  ext: string;
+  contents: string;
+  history?: string[];
+};
+
+export function createPoly<Rest>({
+  name,
+  ext,
+  contents,
+  history,
+  ...rest
+}: PolyProps & Rest) {
   invariant(typeof name === 'string', 'name must be a string but got %s', name);
 
   invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
@@ -43,19 +56,22 @@ function createPoly({ name, ext, contents, history, ...rest }) {
   };
 }
 
-// isPoly(poly: Any) => Boolean
-function isPoly(poly) {
+export function isPoly(poly: unknown): poly is ChallengeFile {
   return (
-    poly &&
+    !!poly &&
+    typeof poly === 'object' &&
+    'contents' in poly &&
     typeof poly.contents === 'string' &&
+    'name' in poly &&
     typeof poly.name === 'string' &&
+    'ext' in poly &&
     typeof poly.ext === 'string' &&
+    'history' in poly &&
     Array.isArray(poly.history)
   );
 }
 
-// checkPoly(poly: Any) => Void, throws
-function checkPoly(poly) {
+function checkPoly(poly: ChallengeFile) {
   invariant(
     isPoly(poly),
     'function should receive a PolyVinyl, but got %s',
@@ -63,9 +79,11 @@ function checkPoly(poly) {
   );
 }
 
-// setContent(contents: String, poly: PolyVinyl) => PolyVinyl
-// setContent will loose source if set
-function setContent(contents, poly) {
+// setContent will lose source if set
+export function setContent(
+  contents: string,
+  poly: ChallengeFile
+): ChallengeFile {
   checkPoly(poly);
   return {
     ...poly,
@@ -74,8 +92,8 @@ function setContent(contents, poly) {
   };
 }
 
-// setExt(ext: String, poly: PolyVinyl) => PolyVinyl
-function setExt(ext, poly) {
+export async function setExt(ext: string, polyP: Promise<ChallengeFile>) {
+  const poly = await polyP;
   checkPoly(poly);
   const newPoly = {
     ...poly,
@@ -89,7 +107,7 @@ function setExt(ext, poly) {
 
 // This is currently only used to add back properties that are not stored in the
 // database.
-function regeneratePathAndHistory(poly) {
+export function regeneratePathAndHistory(poly: ChallengeFile) {
   const newPath = poly.name + '.' + poly.ext;
   const newPoly = {
     ...poly,
@@ -100,8 +118,8 @@ function regeneratePathAndHistory(poly) {
   return newPoly;
 }
 
-// clearHeadTail(poly: PolyVinyl) => PolyVinyl
-function clearHeadTail(poly) {
+async function clearHeadTail(polyP: Promise<ChallengeFile>) {
+  const poly = await polyP;
   checkPoly(poly);
   return {
     ...poly,
@@ -110,8 +128,7 @@ function clearHeadTail(poly) {
   };
 }
 
-// compileHeadTail(padding: String, poly: PolyVinyl) => PolyVinyl
-function compileHeadTail(padding = '', poly) {
+export async function compileHeadTail(padding = '', poly: ChallengeFile) {
   return clearHeadTail(
     transformContents(
       () => [poly.head, poly.contents, poly.tail].join(padding),
@@ -120,49 +137,42 @@ function compileHeadTail(padding = '', poly) {
   );
 }
 
-// transformContents(
-//   wrap: (contents: String) => String,
-//   poly: PolyVinyl
-// ) => PolyVinyl
+type Wrapper = (x: string) => Promise<string> | string;
 // transformContents will keep a copy of the original
 // code in the `source` property. If the original polyvinyl
 // already contains a source, this version will continue as
 // the source property
-function transformContents(wrap, poly) {
-  const newPoly = setContent(wrap(poly.contents), poly);
+export async function transformContents(
+  wrap: Wrapper,
+  polyP: ChallengeFile | Promise<ChallengeFile>
+) {
+  const poly = await polyP;
+  const newPoly = setContent(await wrap(poly.contents), poly);
   // if no source exist, set the original contents as source
   newPoly.source = poly.source || poly.contents;
   return newPoly;
 }
 
-// transformHeadTailAndContents(
-//   wrap: (source: String) => String,
-//   poly: PolyVinyl
-// ) => PolyVinyl
-function transformHeadTailAndContents(wrap, poly) {
+export async function transformHeadTailAndContents(
+  wrap: Wrapper,
+  polyP: ChallengeFile | Promise<ChallengeFile>
+) {
+  const poly = await polyP;
+  const contents = await transformContents(wrap, poly);
+  const head = await wrap(poly.head);
+  const tail = await wrap(poly.tail);
   return {
-    ...transformContents(wrap, poly),
-    head: wrap(poly.head),
-    tail: wrap(poly.tail)
+    ...contents,
+    head,
+    tail
   };
 }
 
 // createSource(poly: PolyVinyl) => PolyVinyl
-function createSource(poly) {
+export function createSource(poly: ChallengeFile) {
   return {
     ...poly,
     source: poly.source || poly.contents
   };
 }
 
-module.exports = {
-  createPoly,
-  isPoly,
-  setContent,
-  setExt,
-  createSource,
-  compileHeadTail,
-  regeneratePathAndHistory,
-  transformContents,
-  transformHeadTailAndContents
-};
