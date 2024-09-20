@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Functional Programming Quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-functional-programming",
+  "order": 255,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd4f31ff19bf5573bf64b",
+      "title": "JavaScript Functional Programming Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

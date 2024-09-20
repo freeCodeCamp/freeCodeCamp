@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Recursion Quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-recursion",
+  "order": 237,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66edd43cded6bff30944b676", "title": "JavaScript Recursion Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

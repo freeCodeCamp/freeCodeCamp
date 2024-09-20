@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Graphs and Trees Quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-graphs-and-trees",
+  "order": 272,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd5c8ac5314f8e80a3fc0",
+      "title": "JavaScript Graphs and Trees Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
