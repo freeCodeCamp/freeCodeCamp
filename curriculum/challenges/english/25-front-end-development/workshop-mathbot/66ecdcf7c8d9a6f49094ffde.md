@@ -7,13 +7,13 @@ dashedName: step-11
 
 # --description--
 
-The `Math.round()` method rounds the value to the nearest whole integer.
+In the lecture videos, you learned that the `Math.round()` method rounds the value to the nearest whole integer.
 
 Here are some examples:
 
 ```js
-Math.round(6.7); // returns 7
-Math.round(3.2); // returns 3
+Math.round(6.7); // 7
+Math.round(3.2); // 3
 ```
 
 This differs from the `Math.floor()` and `Math.ceil()` methods, which round down and up to the nearest whole integer, respectively.
@@ -36,7 +36,7 @@ You should assign the result of rounding the number `2.7` to the variable `numRo
 assert.equal(numRounded, 3);
 ```
 
-You should not hardcode the value of 3 for the variable `numRounded`. Make sure you are using the `Math.round()` method.
+You should not hardcode the value of `3` for the variable `numRounded`. Make sure you are using the `Math.round()` method.
 
 ```js
 assert.notMatch(code, /numRounded\s*=\s*3/);
@@ -60,7 +60,7 @@ You should assign the result of rounding the number `11.2` to the variable `numR
 assert.equal(numRounded2, 11);
 ```
 
-You should not hardcode the value of 11 for the variable `numRounded2`. Make sure you are using the `Math.round()` method.
+You should not hardcode the value of `11` for the variable `numRounded2`. Make sure you are using the `Math.round()` method.
 
 ```js
 assert.notMatch(code, /numRounded2\s*=\s*11/);
@@ -105,9 +105,7 @@ console.log("The Math.ceil() method rounds the value up to the nearest whole int
 const numRoundedUp = Math.ceil(3.2);
 console.log(numRoundedUp);
 
-console.log(
-  "The Math.round() method rounds the value to the nearest whole integer."
-);
+console.log("The Math.round() method rounds the value to the nearest whole integer.");
 
 --fcc-editable-region--
 
