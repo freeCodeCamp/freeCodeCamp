@@ -26,11 +26,6 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
     removeFlashMessage();
   }
 
-  // Prevents the flash message from rendering if the element with the id already exists.
-  if (document.getElementById(id)) {
-    return <> </>;
-  }
-
   return (
     <TransitionGroup>
       <CSSTransition key={id} timeout={500}>
