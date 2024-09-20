@@ -9,7 +9,7 @@ const SearchBarOptimized = ({
   innerRef
 }: Pick<SearchBarProps, 'innerRef'>): JSX.Element => {
   const { t } = useTranslation();
-  const placeholder = t('search.placeholder');
+  const placeholder = t('search-bar:placeholder');
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
   const inputElementRef = useRef<HTMLInputElement>(null);
