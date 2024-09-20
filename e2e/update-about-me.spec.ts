@@ -37,7 +37,9 @@ test('Should allow empty string in any field in about settings', async ({
   const locationInput = page.getByLabel(translations.settings.labels.location);
   const pictureInput = page.getByLabel(translations.settings.labels.picture);
   const aboutInput = page.getByLabel(translations.settings.labels.about);
-  const updatedAlert = page.getByText(translations.flash['updated-about-me']);
+  const updatedAlert = page
+    .getByText(translations.flash['updated-about-me'])
+    .nth(0);
 
   await nameInput.fill('Quincy Larson');
   await locationInput.fill('USA');

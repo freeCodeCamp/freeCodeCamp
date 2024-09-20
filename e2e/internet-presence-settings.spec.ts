@@ -88,7 +88,7 @@ test.describe('Your Internet Presence', () => {
       await expect(saveButton).toBeVisible();
       await saveButton.click();
       await expect(
-        page.getByTestId(settingsPageElement.flashMessageAlert)
+        page.getByTestId(settingsPageElement.flashMessageAlert).nth(0)
       ).toContainText('We have updated your social links');
       await page.getByRole('button', { name: 'Edit' }).click();
       // clear value before next test

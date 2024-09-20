@@ -32,7 +32,6 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
         <Alert
           variant={flashStyle}
           className='flash-message'
-          id={id}
           data-playwright-test-label='flash-message'
         >
           {t(message, variables)}

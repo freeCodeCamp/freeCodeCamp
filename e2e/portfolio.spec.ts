@@ -142,7 +142,7 @@ test.describe('Add Portfolio Item', () => {
     await page
       .getByRole('button', { name: 'Save this portfolio item' })
       .click();
-    await expect(page.getByTestId('flash-message')).toContainText(
+    await expect(page.getByTestId('flash-message').nth(0)).toContainText(
       /We have updated your portfolio/
     );
   });

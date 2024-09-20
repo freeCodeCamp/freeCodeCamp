@@ -101,12 +101,14 @@ test.describe('Username Settings Validation', () => {
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameAvailable
+      page
+        .getByText(
+          translations.flash['username-updated'].replace(
+            settingsObject.usernamePlaceholder,
+            settingsObject.usernameAvailable
+          )
         )
-      )
+        .nth(0)
     ).toBeVisible();
     currentUsername = settingsObject.usernameAvailable;
   });
@@ -122,12 +124,14 @@ test.describe('Username Settings Validation', () => {
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameUpdateToLowerCase
+      page
+        .getByText(
+          translations.flash['username-updated'].replace(
+            settingsObject.usernamePlaceholder,
+            settingsObject.usernameUpdateToLowerCase
+          )
         )
-      )
+        .nth(0)
     ).toBeVisible();
     currentUsername = settingsObject.usernameUpdateToLowerCase;
   });
@@ -143,12 +147,14 @@ test.describe('Username Settings Validation', () => {
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameUpdateToUpperCase
+      page
+        .getByText(
+          translations.flash['username-updated'].replace(
+            settingsObject.usernamePlaceholder,
+            settingsObject.usernameUpdateToUpperCase
+          )
         )
-      )
+        .nth(0)
     ).toBeVisible();
     currentUsername = settingsObject.usernameUpdateToUpperCase;
   });
@@ -164,12 +170,14 @@ test.describe('Username Settings Validation', () => {
     await inputLabel.press('Enter');
 
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.testUser
+      page
+        .getByText(
+          translations.flash['username-updated'].replace(
+            settingsObject.usernamePlaceholder,
+            settingsObject.testUser
+          )
         )
-      )
+        .nth(0)
     ).toBeVisible();
     currentUsername = settingsObject.testUser;
   });
