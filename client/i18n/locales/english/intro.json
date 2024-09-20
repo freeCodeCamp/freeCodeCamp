@@ -2376,6 +2376,12 @@
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
+      },
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS"
+        ]
       }
     }
   },
