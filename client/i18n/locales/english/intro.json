@@ -2055,7 +2055,12 @@
         ]
       },
       "uglc": { "title": "199", "intro": [] },
-      "vonu": { "title": "200", "intro": [] },
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
+      },
       "iejn": { "title": "201", "intro": [] },
       "arrr": { "title": "202", "intro": [] },
       "kaqq": { "title": "203", "intro": [] },
