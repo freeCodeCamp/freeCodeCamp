@@ -2040,7 +2040,7 @@
       "lab-football-team-cards": {
         "title": "Build a Set of Football Team Cards",
         "intro": [
-          "One common aspect of building web applications: processing datasets, and then outputting information to the screen. In this sports team cards project, you'll have to use DOM manipulation, object destructuring, event handling, and data filtering."
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
         ]
       },
       "iejn": { "title": "201", "intro": [] },
