@@ -28,25 +28,27 @@ export function awaitResponse<
   message: MessageOut;
   onMessage: (
     response: MessageIn,
-    resolve: (res: Value) => void,
-    reject: (err: string) => void
+    onSuccess: (res: Value) => void,
+    onFailure: (err: Error) => void
   ) => void;
 }): Promise<Value> {
-  return new Promise((resolve, reject) => {
-    const channel = new MessageChannel();
-    // TODO: Figure out how to ensure the worker is ready and/or handle when it
-    // is not.
-    const id = setTimeout(() => {
-      channel.port1.close();
-      reject(Error('No response from worker'));
-    }, 5000);
+  return new Promise(
+    (resolve: (res: Value) => void, reject: (err: Error) => void) => {
+      const channel = new MessageChannel();
+      // TODO: Figure out how to ensure the worker is ready and/or handle when it
+      // is not.
+      const id = setTimeout(() => {
+        channel.port1.close();
+        reject(Error('No response from worker'));
+      }, 5000);
 
-    channel.port1.onmessage = (event: MessageEvent<MessageIn>) => {
-      clearTimeout(id);
-      channel.port1.close();
-      onMessage(event.data, resolve, reject);
-    };
+      channel.port1.onmessage = (event: MessageEvent<MessageIn>) => {
+        clearTimeout(id);
+        channel.port1.close();
+        onMessage(event.data, resolve, reject);
+      };
 
-    worker.postMessage(message, [channel.port2]);
-  });
+      worker.postMessage(message, [channel.port2]);
+    }
+  );
 }

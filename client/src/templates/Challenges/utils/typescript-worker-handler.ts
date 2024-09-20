@@ -25,7 +25,7 @@ export function compileTypeScriptCode(code: Code): Promise<string> {
       if (data.type === 'compiled') {
         onSuccess(data.value);
       } else {
-        onFailure('unable to compile code');
+        onFailure(Error('unable to compile code'));
       }
     }
   });
