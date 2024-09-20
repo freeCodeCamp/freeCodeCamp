@@ -1921,7 +1921,10 @@
           "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
         ]
       },
-      "zmzg": { "title": "132", "intro": [] },
+      "lab-chat-bot": {
+        "title": "Build a Chat Bot",
+        "intro": ["In this lab you will build a chat bot"]
+      },
       "dthi": { "title": "133", "intro": [] },
       "yskn": { "title": "134", "intro": [] },
       "tpni": { "title": "135", "intro": [] },
