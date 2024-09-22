@@ -18,7 +18,7 @@ In the above screenshot, `flex: 1` equates to: `flex-grow: 1`, `flex-shrink: 1`,
 
 Very often, you see the flex shorthand defined with only one value. In that case, that value is applied to `flex-grow`. So when you put `flex: 1` on our divs, you were actually specifying a shorthand of `flex: 1 1 0`.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -15,7 +15,7 @@ A CSS declaration that is more specific will take precedence over less specific 
 
 Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it, sort of like a tie-breaker. An ID selector will always beat any number of class selectors, a class selector will always beat any number of type selectors, and a type selector will always beat any number of anything less specific than it. When no declaration has a selector with a higher specificity, a larger amount of a single selector will beat a smaller amount of that same selector.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -53,7 +53,7 @@ From a mathematician’s standpoint, the abundance of pluses may seem strange. B
 
 Why are unary pluses applied to values before the binary ones? As you’re going to see, that’s because of their _higher_ precedence.
 
-# --question--
+# --questions--
 
 ## --text--
 Given the explanation of unary and binary `+` operators in JavaScript, how can you correctly sum the string values `'2'` and `'3'` as numbers using unary `+`?

@@ -8,7 +8,7 @@ dashedName: learn-block-and-inline-lesson-i
 
 You can't talk about `block` and `inline` elements without discussing `div`s and `span`s. All the other HTML elements you have encountered so far give meaning to their content. For example, paragraph elements tell the browser to display the text it contains as a paragraph. Strong elements tell the browser which texts within are important and so on. Yet, `div`s and `span`s give no particular meaning to their content. They are just generic boxes that can contain anything.
 
-# --question--    
+# --questions--    
 
 ## --text--
 

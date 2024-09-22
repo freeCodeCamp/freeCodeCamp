@@ -1819,9 +1819,11 @@
         "title": "25",
         "intro": []
       },
-      "cikh": {
-        "title": "26",
-        "intro": []
+      "lab-checkout-page": {
+        "title": "Crie uma página de check-out",
+        "intro": [
+          "Neste laboratório, você criará uma página de check-out com acessíbilidade."
+        ]
       },
       "fqai": {
         "title": "27",
@@ -1939,9 +1941,11 @@
         "title": "54",
         "intro": []
       },
-      "chca": {
-        "title": "55",
-        "intro": []
+      "lab-event-flyer-page": {
+        "title": "Crie uma página de anúncio de evento",
+        "intro": [
+          "Neste laboratório, você usará unidades absolutas e relativas do CSS para criar uma página de anúncio de evento."
+        ]
       },
       "ywfm": {
         "title": "56",
@@ -2545,9 +2549,11 @@
         "title": "196",
         "intro": []
       },
-      "nlbo": {
-        "title": "197",
-        "intro": []
+      "lab-lightbox-viewer": {
+        "title": "Crie um visualizador de lightbox",
+        "intro": [
+          "Neste laboratório, você vai criar um visualizador de lightbox para visualizar imagens em modo focado."
+        ]
       },
       "workshop-rps-game": {
         "title": "Crie um jogo de pedra, papel e tesoura",
@@ -2819,9 +2825,11 @@
         "title": "264",
         "intro": []
       },
-      "kwxs": {
-        "title": "265",
-        "intro": []
+      "lab-linked-list-class": {
+        "title": "Crie uma classe de listas encadeadas",
+        "intro": [
+          "Para este laboratório, você vai criar uma classe de listas vinculadas usando o JavaScript."
+        ]
       },
       "muyw": {
         "title": "266",
@@ -3093,9 +3101,12 @@
         "title": "332",
         "intro": []
       },
-      "hkdc": {
-        "title": "333",
-        "intro": []
+      "workshop-bash-boilerplate": {
+        "title": "Crie um boilerplate",
+        "intro": [
+          "O terminal permite que você envie comandos de texto para o seu computador que podem manipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
+          "Neste workshop de 170 aulas, você aprenderá comandos do terminal criando o boilerplate de um site usando apenas a linha de comando."
+        ]
       },
       "ovvb": {
         "title": "334",
@@ -3134,9 +3145,12 @@
         "title": "341",
         "intro": []
       },
-      "hwpv": {
-        "title": "342",
-        "intro": []
+      "workshop-bash-five-programs": {
+        "title": "Crie cinco programas",
+        "intro": [
+          "Os scripts do Bash combinam comandos de terminal e lógica em programas que podem executar ou automatizar tarefas e muito mais.",
+          "Neste workshop de 220 aulas, você aprenderá mais comandos do terminal e como usá-los dentro de scripts do Bash, criando cinco programas pequenos."
+        ]
       },
       "keqo": {
         "title": "343",
@@ -3150,13 +3164,19 @@
         "title": "345",
         "intro": []
       },
-      "kuyg": {
-        "title": "346",
-        "intro": []
+      "workshop-sql-student-database-part-1": {
+        "title": "Crie um banco de dados de alunos: parte 1",
+        "intro": [
+          "O SQL, ou linguagem de consulta estruturada, é a linguagem de comunicação com um banco de dados relacional.",
+          "Neste workshop de 140 aulas, você criará um script do Bash que utiliza SQL para inserir informações sobre seus alunos de ciência da computação no PostgreSQL."
+        ]
       },
-      "tvlh": {
-        "title": "347",
-        "intro": []
+      "workshop-sql-student-database-part-2": {
+        "title": "Crie um banco de dados de alunos: parte 2",
+        "intro": [
+          "Comandos join do SQL são usados para combinar informações de várias tabelas em um banco de dados relacional",
+          "Neste workshop de 140 aulas, você completará seu banco de dados de alunos, mergulhando mais fundo nos comandos SQL."
+        ]
       },
       "lab-world-cup-database": {
         "title": "Crie um banco de dados da Copa do Mundo",
@@ -3164,17 +3184,24 @@
           "Para este projeto, você criará um script do Bash que insere informações de jogos da Copa do Mundo no PostgreSQL. Depois, você vai consultar o banco de dados para obter estatísticas úteis."
         ]
       },
-      "mtkd": {
-        "title": "349",
-        "intro": []
+      "workshop-kitty-ipsum-translator": {
+        "title": "Crie um tradutor de Kitty Ipsum",
+        "intro": [
+          "Há mais comandos do Bash do que você imagina.",
+          "Neste workshop de 140 aulas, você aprenderá alguns comandos mais complexos e detalhes de como funcionam os comandos."
+        ]
       },
-      "wgfc": {
-        "title": "350",
-        "intro": []
+      "workshop-bike-rental-shop": {
+        "title": "Crie uma loja de aluguel de bicicletas",
+        "intro": [
+          "Neste workshop de 210 aulas, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL."
+        ]
       },
-      "sldv": {
-        "title": "351",
-        "intro": []
+      "lab-salon-appointment-scheduler": {
+        "title": "Crie um agendador de compromissos do salão de beleza",
+        "intro": [
+          "Para este laboratório, você criará um programa de bash interativo que utiliza PostgreSQL para acompanhar os clientes e horários marcados em seu salão."
+        ]
       },
       "zygv": {
         "title": "352",
@@ -3188,9 +3215,12 @@
         "title": "354",
         "intro": []
       },
-      "awnl": {
-        "title": "355",
-        "intro": []
+      "workshop-castle": {
+        "title": "Crie um castelo",
+        "intro": [
+          "O Nano é um programa que permite editar arquivos diretamente no terminal.",
+          "Neste workshop de 40 aulas, você aprenderá a editar arquivos no terminal com o nano e construirá um castelo."
+        ]
       },
       "cysa": {
         "title": "356",
@@ -3204,13 +3234,18 @@
         "title": "358",
         "intro": []
       },
-      "ufxg": {
-        "title": "359",
-        "intro": []
+      "workshop-sql-reference-object": {
+        "title": "Crie um objeto de referência SQL",
+        "intro": [
+          "O Git é um sistema de controle de versão que mantém o controle de todas as alterações feitas em sua base de código.",
+          "Neste workshop de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
+        ]
       },
-      "lvrx": {
-        "title": "360",
-        "intro": []
+      "lab-periodic-table-database": {
+        "title": "Crie um banco de dados da tabela periódica",
+        "intro": [
+          "Para este laboratório, você criará um script do Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
+        ]
       },
       "lab-number-guessing-game": {
         "title": "Crie um jogo de adivinhação de números",

@@ -16,7 +16,7 @@ Here's an example. If you shrink your browser window you'll notice that `.two` n
 
 An important implication to notice here is that when you specify `flex-grow` or `flex-shrink`, flex items do not necessarily respect your given values for `width`. In the above example, all 3 divs are given a `width` of `250px`, but when their parent is big enough, they grow to fill it. Likewise, when the parent is too small, the default behavior is for them to shrink to fit. This is not a bug, but it could be confusing behavior if you aren’t expecting it.
 
-# --question--
+# --questions--
 
 ## --text--
 

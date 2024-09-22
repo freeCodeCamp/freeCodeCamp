@@ -1802,7 +1802,12 @@
       "hgxz": { "title": "52", "intro": [] },
       "bgrw": { "title": "53", "intro": [] },
       "sbnz": { "title": "54", "intro": [] },
-      "chca": { "title": "55", "intro": [] },
+      "lab-event-flyer-page": {
+        "title": "Build an Event Flyer Page",
+        "intro": [
+          "In this lab, you will use absolute and relative CSS units to create an event flyer page."
+        ]
+      },
       "ywfm": { "title": "56", "intro": [] },
       "yspe": { "title": "57", "intro": [] },
       "ohhu": { "title": "58", "intro": [] },
@@ -1897,7 +1902,12 @@
         ]
       },
       "lugl": { "title": "123", "intro": [] },
-      "mtcg": { "title": "124", "intro": [] },
+      "lab-personal-portfolio": {
+        "title": "Build a Personal Portfolio",
+        "intro": [
+          "For this project, you will build your own personal portfolio page."
+        ]
+      },
       "lvqc": { "title": "125", "intro": [] },
       "oxbd": { "title": "126", "intro": [] },
       "wvjx": { "title": "127", "intro": [] },
@@ -2050,7 +2060,12 @@
           "For this lab, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
-      "vonu": { "title": "200", "intro": [] },
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
+      },
       "iejn": { "title": "201", "intro": [] },
       "arrr": { "title": "202", "intro": [] },
       "kaqq": { "title": "203", "intro": [] },
@@ -2104,7 +2119,12 @@
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
       "yaxm": { "title": "244", "intro": [] },
-      "bfzo": { "title": "245", "intro": [] },
+      "lab-roman-numeral-converter": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "For this lab, you'll build an application that converts integers to Roman numerals."
+        ]
+      },
       "lofk": { "title": "246", "intro": [] },
       "udia": { "title": "247", "intro": [] },
       "wevl": { "title": "248", "intro": [] },
@@ -2127,7 +2147,12 @@
       "nixz": { "title": "262", "intro": [] },
       "zywg": { "title": "263", "intro": [] },
       "wraf": { "title": "264", "intro": [] },
-      "kwxs": { "title": "265", "intro": [] },
+      "lab-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [
+          "For this lab, you will build a linked list class using JavaScript."
+        ]
+      },
       "muyw": { "title": "266", "intro": [] },
       "mvzb": { "title": "267", "intro": [] },
       "rmpy": { "title": "268", "intro": [] },
@@ -2148,7 +2173,10 @@
       "fcom": { "title": "278", "intro": [] },
       "ffpt": { "title": "279", "intro": [] },
       "vyzp": { "title": "280", "intro": [] },
-      "hiyk": { "title": "281", "intro": [] },
+      "lab-pokemon-search-app": {
+        "title": "Build a Pokémon Search App",
+        "intro": ["For this project, you will build a Pokémon search app."]
+      },
       "fihs": { "title": "282", "intro": [] },
       "icdr": { "title": "283", "intro": [] },
       "zdsj": { "title": "284", "intro": [] },
@@ -2226,12 +2254,30 @@
       "oxxf": { "title": "339", "intro": [] },
       "ynqt": { "title": "340", "intro": [] },
       "hnta": { "title": "341", "intro": [] },
-      "hwpv": { "title": "342", "intro": [] },
+      "workshop-bash-five-programs": {
+        "title": "Build Five Programs",
+        "intro": [
+          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+        ]
+      },
       "keqo": { "title": "343", "intro": [] },
       "pegc": { "title": "344", "intro": [] },
       "udfh": { "title": "345", "intro": [] },
-      "kuyg": { "title": "346", "intro": [] },
-      "tvlh": { "title": "347", "intro": [] },
+      "workshop-sql-student-database-part-1": {
+        "title": "Build a Student Database: Part 1",
+        "intro": [
+          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
+          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+        ]
+      },
+      "workshop-sql-student-database-part-2": {
+        "title": "Build a Student Database: Part 2",
+        "intro": [
+          "SQL join commands are used to combine information from multiple tables in a relational database",
+          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
+        ]
+      },
       "lab-world-cup-database": {
         "title": "Build a World Cup Database",
         "intro": [
@@ -2270,7 +2316,13 @@
       "cysa": { "title": "356", "intro": [] },
       "pzmc": { "title": "357", "intro": [] },
       "trpm": { "title": "358", "intro": [] },
-      "ufxg": { "title": "359", "intro": [] },
+      "workshop-sql-reference-object": {
+        "title": "Build an SQL Reference Object",
+        "intro": [
+          "Git is a version control system that keeps track of all the changes you make to your codebase.",
+          "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+        ]
+      },
       "lab-periodic-table-database": {
         "title": "Build a Periodic Table Database",
         "intro": [
@@ -2299,7 +2351,15 @@
         ]
       },
       "hjku": { "title": "371", "intro": [] },
-      "sykw": { "title": "372", "intro": [] },
+      "workshop-node-and-express": {
+        "title": "Basic Node and Express",
+        "intro": [
+          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+        ]
+      },
       "zzhp": { "title": "373", "intro": [] },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",

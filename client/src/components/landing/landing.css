@@ -234,16 +234,7 @@ figcaption.caption {
   margin: 0px;
   min-width: 300px;
   max-width: fit-content;
-  background-image: none;
-  color: var(--primary-background) !important;
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
   padding: 12px;
-}
-
-.landing-page-b .landing-top .btn-cta-big:hover,
-.landing-page-b .landing-top .btn-cta-big:focus {
-  background-color: var(--quaternary-color) !important;
 }
 
 .landing-page-b .logo-row-title {

@@ -8,7 +8,7 @@ dashedName: learn-block-and-inline-lesson-c
 
 Padding is used to create space around an element's content, inside of any defined borders. With inline elements, padding adds space to the left, right, top, and bottom of the content. However, it's important to note that while padding does affect the space around the content, it does not affect the layout of other elements around the inline element. This means that horizontal padding (left and right) is respected, but vertical padding (top and bottom) does not cause other elements to move away.
 
-# --question--    
+# --questions--    
 
 ## --text--
 

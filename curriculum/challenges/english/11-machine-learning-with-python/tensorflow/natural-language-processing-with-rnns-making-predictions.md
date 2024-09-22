@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: natural-language-processing-with-rnns-making-predictions
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 
