@@ -78,7 +78,7 @@ assert.strictEqual(booWho('false'), false);
 
 ## --seed-contents--
 
-```js
+```ts 
 function booWho(bool) {
   return bool;
 }
@@ -88,7 +88,7 @@ booWho(null);
 
 # --solutions--
 
-```js
+```ts
 function booWho(bool) {
   return typeof bool === "boolean";
 }
