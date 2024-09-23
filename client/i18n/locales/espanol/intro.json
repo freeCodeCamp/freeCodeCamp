@@ -2089,9 +2089,11 @@
         "title": "89",
         "intro": []
       },
-      "txmt": {
-        "title": "90",
-        "intro": []
+      "lab-tribute-page": {
+        "title": "Build a Tribute Page",
+        "intro": [
+          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+        ]
       },
       "fnde": {
         "title": "91",
@@ -2149,9 +2151,11 @@
         "title": "104",
         "intro": []
       },
-      "cbbz": {
-        "title": "105",
-        "intro": []
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
+        ]
       },
       "xcti": {
         "title": "106",
@@ -2227,9 +2231,11 @@
         "title": "123",
         "intro": []
       },
-      "mtcg": {
-        "title": "124",
-        "intro": []
+      "lab-personal-portfolio": {
+        "title": "Build a Personal Portfolio",
+        "intro": [
+          "For this project, you will build your own personal portfolio page."
+        ]
       },
       "lvqc": {
         "title": "125",
@@ -2555,9 +2561,11 @@
         "title": "199",
         "intro": []
       },
-      "vonu": {
-        "title": "200",
-        "intro": []
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
       },
       "iejn": {
         "title": "201",
@@ -2735,9 +2743,11 @@
         "title": "244",
         "intro": []
       },
-      "bfzo": {
-        "title": "245",
-        "intro": []
+      "lab-roman-numeral-converter": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "For this lab, you'll build an application that converts integers to Roman numerals."
+        ]
       },
       "lofk": {
         "title": "246",
@@ -2883,9 +2893,9 @@
         "title": "280",
         "intro": []
       },
-      "hiyk": {
-        "title": "281",
-        "intro": []
+      "lab-pokemon-search-app": {
+        "title": "Build a Pokémon Search App",
+        "intro": ["For this project, you will build a Pokémon search app."]
       },
       "fihs": {
         "title": "282",
@@ -3286,9 +3296,14 @@
         "title": "371",
         "intro": []
       },
-      "sykw": {
-        "title": "372",
-        "intro": []
+      "workshop-node-and-express": {
+        "title": "Basic Node and Express",
+        "intro": [
+          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+        ]
       },
       "zzhp": {
         "title": "373",

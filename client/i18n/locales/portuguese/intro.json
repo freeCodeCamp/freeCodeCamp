@@ -2089,9 +2089,11 @@
         "title": "89",
         "intro": []
       },
-      "txmt": {
-        "title": "90",
-        "intro": []
+      "lab-tribute-page": {
+        "title": "Build a Tribute Page",
+        "intro": [
+          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+        ]
       },
       "fnde": {
         "title": "91",
@@ -2151,9 +2153,11 @@
         "title": "104",
         "intro": []
       },
-      "cbbz": {
-        "title": "105",
-        "intro": []
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
+        ]
       },
       "xcti": {
         "title": "106",
@@ -2231,9 +2235,11 @@
         "title": "123",
         "intro": []
       },
-      "mtcg": {
-        "title": "124",
-        "intro": []
+      "lab-personal-portfolio": {
+        "title": "Crie um portfólio pessoal",
+        "intro": [
+          "Para este projeto, você criará sua própria página pessoal de portfólio."
+        ]
       },
       "lvqc": {
         "title": "125",
@@ -2565,9 +2571,11 @@
         "title": "199",
         "intro": []
       },
-      "vonu": {
-        "title": "200",
-        "intro": []
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
       },
       "iejn": {
         "title": "201",
@@ -2745,9 +2753,11 @@
         "title": "244",
         "intro": []
       },
-      "bfzo": {
-        "title": "245",
-        "intro": []
+      "lab-roman-numeral-converter": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "For this lab, you'll build an application that converts integers to Roman numerals."
+        ]
       },
       "lofk": {
         "title": "246",
@@ -2893,9 +2903,11 @@
         "title": "280",
         "intro": []
       },
-      "hiyk": {
-        "title": "281",
-        "intro": []
+      "lab-pokemon-search-app": {
+        "title": "Crie uma aplicação de busca de Pokémons",
+        "intro": [
+          "Para esse projeto, você criará uma aplicação para a busca de Pokémons."
+        ]
       },
       "fihs": {
         "title": "282",
@@ -3296,9 +3308,14 @@
         "title": "371",
         "intro": []
       },
-      "sykw": {
-        "title": "372",
-        "intro": []
+      "workshop-node-and-express": {
+        "title": "Básico sobre Node e Express",
+        "intro": [
+          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
+          "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
+          "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
+          "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
+        ]
       },
       "zzhp": {
         "title": "373",

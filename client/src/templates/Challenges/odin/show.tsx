@@ -236,7 +236,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             videoLocaleIds,
             bilibiliIds,
             fields: { blockName },
-            question,
+            questions,
             assignments,
             translationPending,
             scene
@@ -252,11 +252,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       isChallengeCompleted
     } = this.props;
 
+    const question = questions[0];
+    const { solution } = question;
+
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-
-    const { solution } = question;
 
     return (
       <Hotkeys
@@ -400,7 +401,7 @@ export const query = graphql`
             testString
           }
         }
-        question {
+        questions {
           text
           answers {
             answer

@@ -2,6 +2,20 @@ import { ChallengeFile } from "../../src/redux/prop-types";
 
 export const challengeFiles: ChallengeFile[] = [
   {
+    id: '0',
+    contents: 'some ts',
+    error: null,
+    ext: 'ts',
+    head: '',
+    history: ['index.ts'],
+    fileKey: 'indexts',
+    name: 'index',
+    seed: 'some ts',
+    tail: '',
+    editableRegionBoundaries: [],
+    usesMultifileEditor: true,
+  },
+  {
     id: '1',
     contents: 'some css',
     error: null,

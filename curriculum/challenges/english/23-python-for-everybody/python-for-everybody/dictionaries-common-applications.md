@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: dictionaries-common-applications
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

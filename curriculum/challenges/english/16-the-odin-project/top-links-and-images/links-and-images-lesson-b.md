@@ -39,7 +39,7 @@ By default, any text wrapped with an anchor tag without an `href` attribute will
 
 It’s worth noting you can use anchor tags to link to any kind of resource on the internet, not just other HTML documents. You can link to videos, pdf files, images, and so on, but for the most part, you will be linking to other HTML documents.
 
-# --question--    
+# --questions--    
 ## --text--
 
 What is an attribute?

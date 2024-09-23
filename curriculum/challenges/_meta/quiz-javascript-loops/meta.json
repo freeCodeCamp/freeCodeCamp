@@ -1,0 +1,13 @@
+{
+  "name": "JavaScript Loops Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-loops",
+  "order": 173,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66edcd49e73385dd4df54ac7", "title": "JavaScript Loops Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

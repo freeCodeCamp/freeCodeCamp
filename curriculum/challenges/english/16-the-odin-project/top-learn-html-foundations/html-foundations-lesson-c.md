@@ -31,7 +31,7 @@ However, you probably won’t ever want to be using an older version of HTML, an
 
 Open the `index.html` file created earlier in your text editor and add `<!DOCTYPE html>` to the very first line. 
 
-# --question-- 
+# --questions-- 
 ## --text--
 
 What is the purpose of the `DOCTYPE` declaration?

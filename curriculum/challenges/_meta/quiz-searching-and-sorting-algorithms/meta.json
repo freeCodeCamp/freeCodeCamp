@@ -1,0 +1,16 @@
+{
+  "name": "Searching and Sorting Algorithms Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-searching-and-sorting-algorithms",
+  "order": 241,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd476078cf3f3bc654271",
+      "title": "Searching and Sorting Algorithms Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -16,7 +16,7 @@ In the above example, if the condition is true, the value of `result` will be `v
 
 Ternary operators are often used to assign a value to a variable based on a condition. They are also used to return a value based on a condition.
 
-# --question--
+# --questions--
 
 ## --text--
 

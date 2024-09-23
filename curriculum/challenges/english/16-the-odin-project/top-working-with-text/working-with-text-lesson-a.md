@@ -35,7 +35,7 @@ Changing our example from before to use paragraph elements fixes the issue:
 
 Watch and follow along to Kevin Powell’s HTML Paragraph and Headings Video above.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -26,7 +26,7 @@ while (i <= 5) {
 
 The above code snippet initializes a variable `i` with the value `1`. The `while` loop executes the block of code as long as the value of `i` is less than or equal to `5`. The value of `i` is incremented by `1` in each iteration.
 
-# --question--
+# --questions--
 
 ## --text--
 

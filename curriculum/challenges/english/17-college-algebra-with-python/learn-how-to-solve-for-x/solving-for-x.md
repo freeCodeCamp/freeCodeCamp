@@ -16,7 +16,7 @@ Here is the <a href="https://colab.research.google.com/drive/11Zi77gs1FKoEqfPqYa
 
 Add the code to solve for x from the video to your algebra Colab notebook.
 
-# --question--
+# --questions--
 
 ## --text--
 

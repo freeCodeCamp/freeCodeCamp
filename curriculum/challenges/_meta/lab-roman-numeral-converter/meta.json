@@ -1,0 +1,11 @@
+{
+  "name": "Build a Roman Numeral Converter",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-roman-numeral-converter",
+  "order": 244,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "657bdc8ba322aae1eac38390", "title": "Build a Roman Numeral Converter" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

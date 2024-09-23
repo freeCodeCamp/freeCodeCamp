@@ -33,7 +33,7 @@ The exception to this is when directly targeting an element, as this always beat
 
 Despite the `parent` element having a higher specificity with an ID, the `child` element would have the `color: blue` style applied since that declaration directly targets it, while `color: red` from the parent is only inherited.
 
-# --question--
+# --questions--
 
 ## --text--
 

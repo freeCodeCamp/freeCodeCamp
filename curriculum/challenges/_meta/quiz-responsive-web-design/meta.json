@@ -1,0 +1,10 @@
+{
+  "name": "Responsive Web Design Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-responsive-web-design",
+  "order": 107,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed9034f45ce3ece4053ebd", "title": "Responsive Web Design Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

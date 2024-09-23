@@ -8,7 +8,7 @@ dashedName: learn-block-and-inline-lesson-j
 
 Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a top padding of 10 pixels to a `span` element?
 
-# --question--    
+# --questions--    
 
 ## --text--
 

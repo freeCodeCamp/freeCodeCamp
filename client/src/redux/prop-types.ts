@@ -105,10 +105,13 @@ export type Characters =
   | 'Jake'
   | 'James'
   | 'Jessica'
+  | 'Jim'
+  | 'Josh'
   | 'Linda'
   | 'Lisa'
   | 'Maria'
   | 'Mark'
+  | 'Riker'
   | 'Sarah'
   | 'Second Candidate'
   | 'Sophie'
@@ -197,7 +200,7 @@ export type ChallengeNode = {
     isLocked: boolean;
     isPrivate: boolean;
     order: number;
-    question: Question;
+    questions: Question[];
     assignments: string[];
     required: Required[];
     scene: FullScene;

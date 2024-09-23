@@ -1,0 +1,13 @@
+{
+  "name": "JavaScript Events Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-events",
+  "order": 202,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66edd0ac31fea6e678eb925a", "title": "JavaScript Events Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}
