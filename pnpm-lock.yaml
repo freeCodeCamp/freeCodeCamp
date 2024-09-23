@@ -25,8 +25,8 @@ importers:
         specifier: 9.3.4
         version: 9.3.4
       '@testing-library/jest-dom':
-        specifier: 6.4.2
-        version: 6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(jest@29.7.0(@types/node@20.12.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@20.12.8)(typescript@5.4.5)))
+        specifier: 5.17.0
+        version: 5.17.0
       '@types/jest':
         specifier: 29.5.12
         version: 29.5.12
@@ -36,6 +36,9 @@ importers:
       '@types/node':
         specifier: 20.12.8
         version: 20.12.8
+      '@types/testing-library__jest-dom':
+        specifier: ^5.14.5
+        version: 5.14.9
       '@typescript-eslint/eslint-plugin':
         specifier: 7.1.1
         version: 7.1.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
@@ -485,6 +488,9 @@ importers:
       '@redux-devtools/extension':
         specifier: 3.3.0
         version: 3.3.0(redux@4.2.1)
+      '@redux-saga/core':
+        specifier: ^1.2.2
+        version: 1.2.3
       '@stripe/react-stripe-js':
         specifier: 1.16.5
         version: 1.16.5(@stripe/stripe-js@1.54.2)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
@@ -3829,26 +3835,9 @@ packages:
     resolution: {integrity: sha512-FlS4ZWlp97iiNWig0Muq8p+3rVDjRiYE+YKGbAqXOu9nwJFFOdL00kFpz42M+4huzYi86vAK1sOOfyOG45muIQ==}
     engines: {node: '>=14'}
 
-  '@testing-library/jest-dom@6.4.2':
-    resolution: {integrity: sha512-CzqH0AFymEMG48CpzXFriYYkOjk6ZGPCLMhW9e9jg3KMCn5OfJecF8GtGW7yGfR/IgCe3SX8BSwjdzI6BBbZLw==}
-    engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
-    peerDependencies:
-      '@jest/globals': '>= 28'
-      '@types/bun': latest
-      '@types/jest': '>= 28'
-      jest: '>= 28'
-      vitest: '>= 0.32'
-    peerDependenciesMeta:
-      '@jest/globals':
-        optional: true
-      '@types/bun':
-        optional: true
-      '@types/jest':
-        optional: true
-      jest:
-        optional: true
-      vitest:
-        optional: true
+  '@testing-library/jest-dom@5.17.0':
+    resolution: {integrity: sha512-ynmNeT7asXyH3aSVv4vvX4Rb+0qjOhdNHnO/3vuZNqPmhDpV/+rCSGwQ7bLcmU2cJ4dvoheIO85LQj0IbJHEtg==}
+    engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
 
   '@testing-library/react@12.1.5':
     resolution: {integrity: sha512-OfTXCJUFgjd/digLUuPxa0+/3ZxsQmE7ub9kcbW/wi96Bh3o/p5vrETcBGfP17NWPGqeYYl5LTRpwyGoMC4ysg==}
@@ -4248,6 +4237,9 @@ packages:
 
   '@types/tern@0.23.5':
     resolution: {integrity: sha512-POau56wDk3TQ0mQ0qG7XDzv96U5whSENZ9lC0htDvEH+9YUREo+J2U+apWcVRgR2UydEE70JXZo44goG+akTNQ==}
+
+  '@types/testing-library__jest-dom@5.14.9':
+    resolution: {integrity: sha512-FSYhIjFlfOpGSRyVoMBMuS3ws5ehFQODymf3vlI7U1K8c7PHwWwFY7VREfmsuzHSOnoKs/9/Y983ayOs7eRzqw==}
 
   '@types/through@0.0.33':
     resolution: {integrity: sha512-HsJ+z3QuETzP3cswwtzt2vEIiHBk/dCcHGhbmG5X3ecnwFD/lPrMpliGXxSCg03L9AhrdwA4Oz/qfspkDW+xGQ==}
@@ -6353,9 +6345,6 @@ packages:
 
   dom-accessibility-api@0.5.16:
     resolution: {integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==}
-
-  dom-accessibility-api@0.6.3:
-    resolution: {integrity: sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==}
 
   dom-converter@0.2.0:
     resolution: {integrity: sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==}
@@ -17903,20 +17892,17 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(jest@29.7.0(@types/node@20.12.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@20.12.8)(typescript@5.4.5)))':
+  '@testing-library/jest-dom@5.17.0':
     dependencies:
       '@adobe/css-tools': 4.3.3
       '@babel/runtime': 7.23.9
+      '@types/testing-library__jest-dom': 5.14.9
       aria-query: 5.3.0
       chalk: 3.0.0
       css.escape: 1.5.1
-      dom-accessibility-api: 0.6.3
+      dom-accessibility-api: 0.5.16
       lodash: 4.17.21
       redent: 3.0.0
-    optionalDependencies:
-      '@jest/globals': 29.7.0
-      '@types/jest': 29.5.12
-      jest: 29.7.0(@types/node@20.12.8)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@20.12.8)(typescript@5.4.5))
 
   '@testing-library/react@12.1.5(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
@@ -18391,6 +18377,10 @@ snapshots:
   '@types/tern@0.23.5':
     dependencies:
       '@types/estree': 1.0.2
+
+  '@types/testing-library__jest-dom@5.14.9':
+    dependencies:
+      '@types/jest': 29.5.12
 
   '@types/through@0.0.33':
     dependencies:
@@ -21026,8 +21016,6 @@ snapshots:
       esutils: 2.0.3
 
   dom-accessibility-api@0.5.16: {}
-
-  dom-accessibility-api@0.6.3: {}
 
   dom-converter@0.2.0:
     dependencies:
