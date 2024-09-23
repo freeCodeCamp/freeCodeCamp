@@ -36,7 +36,7 @@ const catsImg = document.querySelectorAll('figure > img')[1];
 assert.isNotNull(catsImg);
 ```
 
-The `src` attribute of the third image should not be null.
+The third image should have a `src` attribute with a value.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
