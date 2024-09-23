@@ -33,19 +33,31 @@ You should have a third `img` element nested in the `figure` element.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
-assert(
-  catsImg
-);
+assert.isNotNull(catsImg);
+```
+
+The `src` attribute of the third image should not be null.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+const catsSrc = catsImg.getAttribute('src');
+assert.isNotNull(catsSrc); 
+```
+
+The `src` attribute of the third image should not start or end with any extra spaces.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+const catsSrc = catsImg.getAttribute('src');
+assert.strictEqual(catsSrc,catsSrc.trim()); 
 ```
 
 The third image should have a `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
-assert(
-  catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
-);
+assert.isNotNull(catsImg);
+assert.strictEqual(catsImg.getAttribute('src').toLowerCase(),'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg')
 ```
 
 Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
