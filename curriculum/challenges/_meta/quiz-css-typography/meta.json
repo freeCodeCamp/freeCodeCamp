@@ -1,0 +1,10 @@
+{
+  "name": "CSS Typography Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-typography",
+  "order": 87,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed9010f45ce3ece4053eb8", "title": "CSS Typography Quiz" }],
+  "helpCategory": "HTML-CSS"
+}
