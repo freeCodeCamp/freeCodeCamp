@@ -108,8 +108,5 @@
   "es69h6": "When you join two windows into one window",
   "fho5t5": "When you open a new tab at the end",
   "00kcrm": "yields true",
-  "sxpg2a": "Your mailbox, drive, and other work sites",
-  "n4f332": "TODO: use a different type of loop",
-  "t8ci0e": "for (let i = 0; i < sentence.length; i++) {\n  let char = sentence[i];\n\n  if (vowels.indexOf(char) !== -1) {\n    vowelCount++;\n  } else if (consonants.indexOf(char) !== -1) {\n    consonantCount++;\n  } else if (punctuations.indexOf(char) !== -1) {\n    punctuationCount++;\n  }\n}",
-  "db7zq9": "while (i < sentence.length) {\n  if (sentence[i] === ' ' || i === sentence.length - 1) {\n    wordCount++;\n  }\n  i++\n}"
+  "sxpg2a": "Your mailbox, drive, and other work sites"
 }
