@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Problem Solving and Algorithmic Thinking Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-problem-solving-and-algorithmic-thinking",
+  "order": 249,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd4bc0ce399f475ad6f9b",
+      "title": "JavaScript Problem Solving and Algorithmic Thinking Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

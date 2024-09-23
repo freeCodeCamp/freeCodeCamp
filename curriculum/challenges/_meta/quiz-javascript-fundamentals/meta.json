@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Fundamentals Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-fundamentals",
+  "order": 182,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edcd875b0d91de1fbbb492",
+      "title": "JavaScript Fundamentals Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
