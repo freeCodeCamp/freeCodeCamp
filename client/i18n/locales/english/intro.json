@@ -1885,7 +1885,10 @@
       "kbwy": { "title": "97", "intro": [] },
       "rxzk": { "title": "98", "intro": [] },
       "xobh": { "title": "99", "intro": [] },
-      "pgyf": { "title": "100", "intro": [] },
+      "lab-house-painting": {
+        "title": "Build a House Painting",
+        "intro": ["For this lab, you will build a house painting using CSS."]
+      },
       "rrtt": { "title": "101", "intro": [] },
       "rbnd": { "title": "102", "intro": [] },
       "xebj": { "title": "103", "intro": [] },
