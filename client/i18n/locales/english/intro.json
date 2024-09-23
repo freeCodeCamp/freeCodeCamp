@@ -1857,7 +1857,12 @@
       "ioby": { "title": "87", "intro": [] },
       "dyvj": { "title": "88", "intro": [] },
       "rjsv": { "title": "89", "intro": [] },
-      "txmt": { "title": "90", "intro": [] },
+      "lab-tribute-page": {
+        "title": "Build a Tribute Page",
+        "intro": [
+          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+        ]
+      },
       "fnde": { "title": "91", "intro": [] },
       "gxjm": { "title": "92", "intro": [] },
       "swpl": { "title": "93", "intro": [] },
