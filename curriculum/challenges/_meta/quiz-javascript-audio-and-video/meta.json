@@ -1,5 +1,6 @@
 {
   "name": "JavaScript Audio and Video Quiz",
+  "blockType": "quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-audio-and-video",

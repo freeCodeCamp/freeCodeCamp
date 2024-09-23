@@ -1,5 +1,6 @@
 {
   "name": "Recursion Quiz",
+  "blockType": "quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-recursion",

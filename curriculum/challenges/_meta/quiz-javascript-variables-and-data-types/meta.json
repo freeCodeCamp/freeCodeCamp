@@ -1,5 +1,6 @@
 {
   "name": "JavaScript Variables and Data Types Quiz",
+  "blockType": "quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-variables-and-data-types",

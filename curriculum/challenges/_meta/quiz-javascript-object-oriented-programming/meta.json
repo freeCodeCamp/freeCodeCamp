@@ -1,5 +1,6 @@
 {
   "name": "JavaScript Object Oriented Programming Quiz",
+  "blockType": "quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-object-oriented-programming",

@@ -1,5 +1,6 @@
 {
   "name": "JavaScript Comparisons and Conditionals Quiz",
+  "blockType": "quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-comparisons-and-conditionals",

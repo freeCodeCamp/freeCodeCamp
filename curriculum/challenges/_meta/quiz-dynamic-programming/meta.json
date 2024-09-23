@@ -1,5 +1,6 @@
 {
   "name": "Dynamic Programming Quiz",
+  "blockType": "quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-dynamic-programming",
