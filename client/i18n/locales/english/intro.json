@@ -2208,7 +2208,10 @@
       "gjbf": { "title": "286", "intro": [] },
       "mbpv": { "title": "287", "intro": [] },
       "eeez": { "title": "288", "intro": [] },
-      "xweg": { "title": "289", "intro": [] },
+      "quiz-web-standards": {
+        "title": "Web Standards Quiz",
+        "intro": ["Test what you've learned in this quiz on Web Standards."]
+      },
       "khuu": { "title": "290", "intro": [] },
       "xdly": { "title": "291", "intro": [] },
       "rhhl": { "title": "292", "intro": [] },
@@ -2216,7 +2219,10 @@
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
       "erfj": { "title": "296", "intro": [] },
-      "zcef": { "title": "297", "intro": [] },
+      "quiz-react": {
+        "title": "React Basics Quiz",
+        "intro": ["Test what you've learned in this quiz on React Basics."]
+      },
       "hfwi": { "title": "298", "intro": [] },
       "rnwr": { "title": "299", "intro": [] },
       "oeqv": { "title": "300", "intro": [] },
@@ -2224,7 +2230,12 @@
       "vtpz": { "title": "302", "intro": [] },
       "dfwl": { "title": "303", "intro": [] },
       "adzm": { "title": "304", "intro": [] },
-      "yani": { "title": "305", "intro": [] },
+      "quiz-react-state-and-hooks": {
+        "title": "React State and Hooks Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on React State and Hooks."
+        ]
+      },
       "voks": { "title": "306", "intro": [] },
       "uwum": { "title": "307", "intro": [] },
       "ukem": { "title": "308", "intro": [] },
