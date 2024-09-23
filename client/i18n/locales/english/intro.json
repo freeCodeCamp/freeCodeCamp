@@ -2100,7 +2100,10 @@
       "dqth": { "title": "207", "intro": [] },
       "ilop": { "title": "208", "intro": [] },
       "qrer": { "title": "209", "intro": [] },
-      "unyy": { "title": "210", "intro": [] },
+      "lab-regex-sandbox": {
+        "title": "Build a RegEx Sandbox",
+        "intro": ["In this lab you will build a regex sandbox."]
+      },
       "svsl": { "title": "211", "intro": [] },
       "wnmj": { "title": "212", "intro": [] },
       "zalp": { "title": "213", "intro": [] },
