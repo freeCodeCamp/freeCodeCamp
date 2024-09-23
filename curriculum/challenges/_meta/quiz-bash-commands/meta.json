@@ -1,0 +1,13 @@
+{
+  "name": "Bash Commands Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-bash-commands",
+  "order": 334,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1af4fedf643c78d024c5e", "title": "Bash Commands Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

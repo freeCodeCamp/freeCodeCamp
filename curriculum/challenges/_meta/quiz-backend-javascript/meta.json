@@ -1,0 +1,13 @@
+{
+  "name": "Backend JavaScript Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-backend-javascript",
+  "order": 378,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1b11026394bcdb7c42473", "title": "Backend JavaScript Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}
