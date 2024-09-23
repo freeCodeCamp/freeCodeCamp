@@ -31,6 +31,7 @@ export default function ThemeSettings({
         toggleNightMode(
           currentTheme === Themes.Night ? Themes.Default : Themes.Night
         );
+        localStorage.setItem('theme', currentTheme);
       }}
     />
   );
