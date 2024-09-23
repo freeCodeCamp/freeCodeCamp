@@ -1755,7 +1755,12 @@
           "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
         ]
       },
-      "xdvu": { "title": "21", "intro": [] },
+      "lab-book-catalog-table": {
+        "title": "Build a Book Catalog Table",
+        "intro": [
+          "In this lab, you will create table filled with book information."
+        ]
+      },
       "rsve": { "title": "22", "intro": [] },
       "xzam": { "title": "23", "intro": [] },
       "isho": { "title": "24", "intro": [] },
