@@ -70,10 +70,10 @@ const EditModal = ({
     twitter,
     website
   } = user;
-
+  const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='xLarge'>
-      <Modal.Header>Edit</Modal.Header>
+      <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
       <Modal.Body>
         <UsernameSettings username={username} />
         <Spacer size='medium' />

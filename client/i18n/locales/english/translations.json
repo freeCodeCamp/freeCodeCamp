@@ -332,7 +332,8 @@
     "total-points": "Total Points:",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
-    "page-number": "{{pageNumber}} of {{totalPages}}"
+    "page-number": "{{pageNumber}} of {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
