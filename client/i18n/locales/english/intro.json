@@ -2022,7 +2022,7 @@
       "ozth": { "title": "163", "intro": [] },
       "dvnt": { "title": "164", "intro": [] },
       "ekdb": { "title": "165", "intro": [] },
-      "ezek": { "title": "166", "intro": [] },
+      "lab-quiz-game": { "title": "Build a Quiz Game", "intro": ["", ""] },
       "lab-factorial-calculator": {
         "title": "Build a Factorial Calculator ",
         "intro": ["In this lab, you will build a factorial calculator."]
