@@ -4,11 +4,6 @@ import { awaitResponse } from './worker-messenger';
 const typeScriptWorkerSrc = `/js/${typeScriptWorkerData.filename}.js`;
 
 let worker: Worker | null = null;
-type Code = {
-  contents: string;
-  editableContents: string;
-  original: string;
-};
 
 function getTypeScriptWorker(): Worker {
   if (!worker) {
@@ -17,16 +12,33 @@ function getTypeScriptWorker(): Worker {
   return worker;
 }
 
-export function compileTypeScriptCode(code: Code): Promise<string> {
+export function compileTypeScriptCode(code: string): Promise<string> {
   return awaitResponse({
     worker: getTypeScriptWorker(),
     message: { type: 'compile', code },
     onMessage: (data, onSuccess, onFailure) => {
       if (data.type === 'compiled') {
-        onSuccess(data.value);
+        if (!data.error) {
+          onSuccess(data.value);
+        } else {
+          onFailure(Error(data.error));
+        }
       } else {
         onFailure(Error('unable to compile code'));
       }
+    }
+  });
+}
+
+export function initTypeScriptService(): Promise<boolean> {
+  return awaitResponse({
+    worker: getTypeScriptWorker(),
+    message: { type: 'init' },
+    onMessage: (data, onSuccess) => {
+      if (data.type === 'ready') {
+        onSuccess(true);
+      }
+      // otherwise it times out.
     }
   });
 }

@@ -17,7 +17,7 @@
  */
 export function awaitResponse<
   MessageOut,
-  MessageIn extends { type: string; value: Value },
+  MessageIn extends { type: string; value: Value; error: string },
   Value
 >({
   worker,

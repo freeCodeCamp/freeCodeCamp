@@ -16,19 +16,22 @@ const ctx: Worker & typeof globalThis = self as unknown as Worker &
 let tsEnv: VirtualTypeScriptEnvironment | null = null;
 let compilerHost: CompilerHost | null = null;
 
-// We _may_ not run the TS code in the worker, so we probably don't want a Run
-// event.
-
 interface TSCompileEvent extends MessageEvent {
   data: {
     type: 'compile';
-    code: { contents: string }; // TODO: just a string, rather than an object?
+    code: string;
   };
 }
 
-interface ListenRequestEvent extends MessageEvent {
+interface TSCompiledMessage {
+  type: 'compiled';
+  value: string;
+  error: string;
+}
+
+interface InitRequestEvent extends MessageEvent {
   data: {
-    type: 'listen';
+    type: 'init';
   };
 }
 
@@ -39,16 +42,11 @@ interface CancelEvent extends MessageEvent {
   };
 }
 
-// TODO: consider if this is necessary. Can we prevent messages queueing up
-// without relying on global state?
-//
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-let ignoreRunMessages = true;
 let cachedVersion: string | null = null;
 
 async function setupTypeScript(version: string) {
+  // TODO: make sure no racing happens if multiple inits arrive at once.
   if (cachedVersion == version) return tsEnv;
-  cachedVersion = version;
 
   importScripts('https://unpkg.com/typescript@' + version);
   importScripts('https://unpkg.com/@typescript/vfs@1.6.0/dist/vfs.globals.js');
@@ -84,28 +82,25 @@ async function setupTypeScript(version: string) {
     ts
   ).compilerHost;
 
-  console.log('env', env);
-
   tsEnv = env;
-
-  console.log('tsEnv', tsEnv);
 
   // We freeze this to prevent learners from getting the worker into a
   // weird state.
   Object.freeze(self);
 
-  // ignoreRunMessages = true;
-  postMessage({ type: 'stopped' });
+  cachedVersion = version;
   return env;
 }
 
-void setupTypeScript('5');
+// TODO: figure out how to start setting up TS in the background, but allow the
+// client to wait for it to be ready. Currently the waiting works, but the setup
+// is done on demand.
+// void setupTypeScript('5');
 
-ctx.onmessage = (e: TSCompileEvent | ListenRequestEvent | CancelEvent) => {
+ctx.onmessage = (e: TSCompileEvent | InitRequestEvent | CancelEvent) => {
   const { data, ports } = e;
-  console.log('data:', data);
-  if (data.type === 'listen') {
-    handleListenRequest();
+  if (data.type === 'init') {
+    void handleInitRequest(ports[0]);
   } else if (data.type === 'cancel') {
     handleCancelRequest(data);
   } else {
@@ -118,94 +113,35 @@ function handleCancelRequest({ value }: { value: number }) {
   postMessage({ type: 'is-alive', text: value });
 }
 
-function handleListenRequest() {
-  ignoreRunMessages = false;
+async function handleInitRequest(port: MessagePort) {
+  await setupTypeScript('5');
+  port.postMessage({ type: 'ready' });
 }
 
 function handleCompileRequest(data: TSCompileEvent['data'], port: MessagePort) {
-  // if (ignoreRunMessages) return;
   // If we try to update or create an empty file, the environment will become
   // permanently unable to interact with that file. The workaround is to create
   // a file with a single newline character.
-  const code = (data.code.contents || '').slice() || '\n';
-  console.log('code:', code);
-  console.log('tsEnv:', tsEnv);
-  console.log('tsEnv.languageService:', tsEnv?.languageService);
-  // all files
-  const allFiles = tsEnv?.languageService.getProgram()?.getSourceFiles();
-  console.log('allFiles:', allFiles);
+  const code = (data.code || '').slice() || '\n';
 
   // TODO: If creating the file fresh each time is too slow, we can try checking
   // if the file exists and updating it if it does.
   tsEnv?.createFile('index.ts', code);
-  // TODO: do we need this message at all? It's terminal stuff, right?
-  // postMessage({ type: 'reset' });
 
-  const semanticDiagnostics =
-    tsEnv?.languageService.getSemanticDiagnostics('index.ts');
-
-  console.log('semanticDiagnostics:');
-
-  // TODO: this formatting is a bit of a chore. Is there a utility function that
-  // does this?
-  semanticDiagnostics?.forEach(diagnostic => {
-    console.log('diagnostic', diagnostic);
-    const message = ts.flattenDiagnosticMessageText(
-      diagnostic.messageText,
-      '\n'
-    );
-    const start = diagnostic.start;
-    if (start === undefined || !diagnostic.file) return;
-    const { line, character: startCharacter } =
-      diagnostic.file.getLineAndCharacterOfPosition(start);
-
-    const end = startCharacter + (diagnostic.length ?? 0);
-
-    console.log(
-      `Semantic error in ${diagnostic.file.fileName} (line ${line + 1}, from ${start + 1} to ${end}): ${message}`
-    );
-    console.log(
-      'ts formatDiagnostic',
-      ts.formatDiagnostic(diagnostic, compilerHost!)
-    );
-  });
-
-  if (!semanticDiagnostics || semanticDiagnostics.length === 0) {
-    console.log('No semantic errors!');
-  } else {
-    // TODO: see if we can make use of this. Probably not. Instead, we can
-    // create our own.
-    console.log(
-      'ts formatDiagnosticsWithColorAndContext',
-      ts.formatDiagnosticsWithColorAndContext(
-        semanticDiagnostics,
-        compilerHost!
-      )
-    );
-  }
-
-  // TODO: Figure out how to actually get diagnostics. This function looks like
-  // it should, but if you pass an invalid compiler options object to
-  const globalDiagnostics =
-    tsEnv?.languageService.getCompilerOptionsDiagnostics();
-
-  console.log('globalDiagnostics:');
-  console.log(globalDiagnostics);
-
-  const getSyntacticDiagnostics =
-    tsEnv?.languageService.getSyntacticDiagnostics('index.ts');
-
-  console.log('getSyntacticDiagnostics:');
-  console.log(getSyntacticDiagnostics);
-
-  const otherDiagnostics =
-    tsEnv?.languageService.getSuggestionDiagnostics('index.ts');
-
-  console.log('otherDiagnostics:');
-  console.log(otherDiagnostics);
+  const program = tsEnv!.languageService.getProgram()!;
 
   const emitOutput = tsEnv!.languageService.getEmitOutput('index.ts');
   const compiled = emitOutput.outputFiles[0].text;
 
-  port.postMessage({ type: 'compiled', value: compiled });
+  const message: TSCompiledMessage = {
+    type: 'compiled',
+    value: compiled,
+    // TODO: stop forcing the non-null assertions here.
+    error: ts.formatDiagnostics(
+      ts.getPreEmitDiagnostics(program),
+      compilerHost!
+    )
+  };
+
+  port.postMessage(message);
 }
