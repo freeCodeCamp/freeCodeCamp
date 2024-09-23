@@ -87,16 +87,6 @@ function setExt(ext, poly) {
   return newPoly;
 }
 
-// setImportedFiles(importedFiles: String[], poly: PolyVinyl) => PolyVinyl
-function setImportedFiles(importedFiles, poly) {
-  checkPoly(poly);
-  const newPoly = {
-    ...poly,
-    importedFiles: [...importedFiles]
-  };
-  return newPoly;
-}
-
 // This is currently only used to add back properties that are not stored in the
 // database.
 function regeneratePathAndHistory(poly) {
@@ -162,7 +152,6 @@ module.exports = {
   isPoly,
   setContent,
   setExt,
-  setImportedFiles,
   compileHeadTail,
   regeneratePathAndHistory,
   transformContents,

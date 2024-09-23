@@ -215,11 +215,6 @@ const completedExamChallenge = {
   completedDate: expect.any(Number)
 };
 
-export const completedExamChallengeZeroCorrect = {
-  ...completedExamChallenge,
-  examResults: mockResultsZeroCorrect
-};
-
 export const completedExamChallengeOneCorrect = {
   ...completedExamChallenge,
   examResults: mockResultsOneCorrect
