@@ -1,5 +1,5 @@
 {
-  "name": "Form Validation with Javascript Quiz",
+  "name": "Form Validation with JavaScript Quiz",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-form-validation-with-javascript",
@@ -8,7 +8,7 @@
   "challengeOrder": [
     {
       "id": "66edd3403d7077eece6dc4b6",
-      "title": "Form Validation with Javascript Quiz"
+      "title": "Form Validation with JavaScript Quiz"
     }
   ],
   "helpCategory": "JavaScript"

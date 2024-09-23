@@ -2174,9 +2174,9 @@
       "egkv": { "title": "215", "intro": [] },
       "qlvw": { "title": "216", "intro": [] },
       "quiz-form-validation-with-javascript": {
-        "title": "Form Validation with Javascript Quiz",
+        "title": "Form Validation with JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on Form Validation with Javascript."
+          "Test what you've learned in this quiz on Form Validation with JavaScript."
         ]
       },
       "lupt": { "title": "218", "intro": [] },
@@ -2210,11 +2210,9 @@
       "peyf": { "title": "233", "intro": [] },
       "bdqj": { "title": "234", "intro": [] },
       "ndlf": { "title": "235", "intro": [] },
-      "quiz-javascript-recursion": {
-        "title": "JavaScript Recursion Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Recursion."
-        ]
+      "quiz-recursion": {
+        "title": "Recursion Quiz",
+        "intro": ["Test what you've learned in this quiz on Recursion."]
       },
       "yshh": { "title": "237", "intro": [] },
       "wyxz": { "title": "238", "intro": [] },
@@ -2225,10 +2223,10 @@
         ]
       },
       "dtfv": { "title": "240", "intro": [] },
-      "quiz-javascript-searching-and-sorting-algorithms": {
-        "title": "JavaScript Searching and Sorting Algorithms Quiz",
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Searching and Sorting Algorithms."
+          "Test what you've learned in this quiz on Searching and Sorting Algorithms."
         ]
       },
       "bnvw": { "title": "242", "intro": [] },
@@ -2293,11 +2291,9 @@
       "rmpy": { "title": "268", "intro": [] },
       "plfo": { "title": "269", "intro": [] },
       "xdyh": { "title": "270", "intro": [] },
-      "quiz-javascript-graphs-and-trees": {
-        "title": "JavaScript Graphs and Trees Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Graphs and Trees."
-        ]
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": ["Test what you've learned in this quiz on Graphs and Trees."]
       },
       "vjgg": { "title": "272", "intro": [] },
       "lab-nth-fibonacci-number-generator": {
@@ -2307,10 +2303,10 @@
         ]
       },
       "kaui": { "title": "274", "intro": [] },
-      "quiz-javascript-dynamic-programming": {
-        "title": "JavaScript Dynamic Programming Quiz",
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Dynamic Programming."
+          "Test what you've learned in this quiz on Dynamic Programming."
         ]
       },
       "sgau": { "title": "276", "intro": [] },
