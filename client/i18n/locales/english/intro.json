@@ -2130,7 +2130,6 @@
       "oxiv": { "title": "260", "intro": [] },
       "mdrz": { "title": "261", "intro": [] },
       "nixz": { "title": "262", "intro": [] },
-      "zywg": { "title": "263", "intro": [] },
       "lab-stack-class": {
         "title": "Build a Stack Class",
         "intro": [
@@ -2143,6 +2142,7 @@
           "For this lab, you will build a linked list class using JavaScript."
         ]
       },
+      "wraf": { "title": "265", "intro": [] },
       "muyw": { "title": "266", "intro": [] },
       "mvzb": { "title": "267", "intro": [] },
       "rmpy": { "title": "268", "intro": [] },
