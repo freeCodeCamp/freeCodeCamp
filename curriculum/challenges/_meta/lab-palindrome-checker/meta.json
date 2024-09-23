@@ -2,7 +2,6 @@
   "name": "Build a Palindrome Checker",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "lab-palindrome-checker",
   "order": 199,
   "superBlock": "front-end-development",
