@@ -2155,7 +2155,12 @@
       "cfyv": { "title": "275", "intro": [] },
       "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
-      "fcom": { "title": "278", "intro": [] },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you will build a Weather App using an API to fetch the data."
+        ]
+      },
       "ffpt": { "title": "279", "intro": [] },
       "vyzp": { "title": "280", "intro": [] },
       "lab-pokemon-search-app": {
