@@ -2148,7 +2148,7 @@
           "For this lab, you will debug a random background color changer and fix the errors to make it work properly."
         ]
       },
-      "xeqa": { "title": "205", "intro": [] },
+      "ksfc": { "title": "205", "intro": [] },
       "quiz-debugging-javascript": {
         "title": "Debugging JavaScript Quiz",
         "intro": [
@@ -2182,21 +2182,21 @@
       "lupt": { "title": "218", "intro": [] },
       "yvqn": { "title": "219", "intro": [] },
       "xtfk": { "title": "220", "intro": [] },
-      "xnpr": { "title": "221", "intro": [] },
       "quiz-javascript-dates": {
         "title": "JavaScript Dates Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Dates."]
       },
+      "lvts": { "title": "222", "intro": [] },
       "foal": { "title": "223", "intro": [] },
       "crzf": { "title": "224", "intro": [] },
       "xofr": { "title": "225", "intro": [] },
-      "bsmn": { "title": "226", "intro": [] },
       "quiz-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Audio and Video."
         ]
       },
+      "pehm": { "title": "227", "intro": [] },
       "cvsw": { "title": "228", "intro": [] },
       "qjws": { "title": "229", "intro": [] },
       "fgbp": { "title": "230", "intro": [] },
@@ -2206,16 +2206,17 @@
           "Test what you've learned in this quiz on Local Storage and CRUD."
         ]
       },
+      "jbst": { "title": "232", "intro": [] },
       "peyf": { "title": "233", "intro": [] },
       "bdqj": { "title": "234", "intro": [] },
       "ndlf": { "title": "235", "intro": [] },
-      "cpmq": { "title": "236", "intro": [] },
       "quiz-javascript-recursion": {
         "title": "JavaScript Recursion Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Recursion."
         ]
       },
+      "yshh": { "title": "237", "intro": [] },
       "wyxz": { "title": "238", "intro": [] },
       "lab-quicksort-algorithm": {
         "title": "Build the Quicksort Algorithm",
@@ -2224,13 +2225,13 @@
         ]
       },
       "dtfv": { "title": "240", "intro": [] },
-      "manv": { "title": "241", "intro": [] },
       "quiz-javascript-searching-and-sorting-algorithms": {
         "title": "JavaScript Searching and Sorting Algorithms Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Searching and Sorting Algorithms."
         ]
       },
+      "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
       "lab-roman-numeral-converter": {
         "title": "Build a Roman Numeral Converter",
@@ -2245,7 +2246,6 @@
         "intro": ["For this lab, you will build a cash register."]
       },
       "udia": { "title": "248", "intro": [] },
-      "wevl": { "title": "249", "intro": [] },
       "quiz-javascript-problem-solving-and-algorithmic-thinking": {
         "title": "JavaScript Problem Solving and Algorithmic Thinking Quiz",
         "intro": [
@@ -2256,25 +2256,25 @@
       "mjbe": { "title": "251", "intro": [] },
       "byqx": { "title": "252", "intro": [] },
       "alda": { "title": "253", "intro": [] },
-      "lkyc": { "title": "254", "intro": [] },
       "quiz-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Functional Programming."
         ]
       },
+      "cvaf": { "title": "255", "intro": [] },
       "tdgy": { "title": "256", "intro": [] },
       "saxu": { "title": "257", "intro": [] },
       "kagw": { "title": "258", "intro": [] },
       "mbib": { "title": "259", "intro": [] },
       "oxiv": { "title": "260", "intro": [] },
-      "mdrz": { "title": "261", "intro": [] },
       "quiz-javascript-object-oriented-programming": {
         "title": "JavaScript Object Oriented Programming Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Object Oriented Programming."
         ]
       },
+      "nixz": { "title": "262", "intro": [] },
       "zywg": { "title": "263", "intro": [] },
       "lab-linked-list-class": {
         "title": "Build a Linked List Class",
@@ -2284,13 +2284,13 @@
       },
       "wraf": { "title": "265", "intro": [] },
       "muyw": { "title": "266", "intro": [] },
-      "mvzb": { "title": "267", "intro": [] },
       "quiz-javascript-data-structures": {
         "title": "JavaScript Data Structures Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Data Structures."
         ]
       },
+      "rmpy": { "title": "268", "intro": [] },
       "plfo": { "title": "269", "intro": [] },
       "xdyh": { "title": "270", "intro": [] },
       "quiz-javascript-graphs-and-trees": {
@@ -2307,13 +2307,13 @@
         ]
       },
       "kaui": { "title": "274", "intro": [] },
-      "cfyv": { "title": "275", "intro": [] },
       "quiz-javascript-dynamic-programming": {
         "title": "JavaScript Dynamic Programming Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Dynamic Programming."
         ]
       },
+      "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
       "fcom": { "title": "278", "intro": [] },
       "ffpt": { "title": "279", "intro": [] },
@@ -2322,13 +2322,13 @@
         "intro": ["For this project, you will build a Pokémon search app."]
       },
       "vyzp": { "title": "281", "intro": [] },
-      "fihs": { "title": "282", "intro": [] },
       "quiz-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Quiz",
         "intro": [
           "Test what you've learned in this quiz on Asynchronous JavaScript."
         ]
       },
+      "icdr": { "title": "283", "intro": [] },
       "zdsj": { "title": "284", "intro": [] },
       "mzae": { "title": "285", "intro": [] },
       "gjbf": { "title": "286", "intro": [] },
