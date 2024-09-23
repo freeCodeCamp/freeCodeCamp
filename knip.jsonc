@@ -16,7 +16,11 @@
     "client": {
       "entry": ["static/**/*.js"],
       "webpack": "webpack-workers.js",
-      "ignore": ["**/__mocks__/**", "tailwind.config.js"],
+      "ignore": [
+        "**/__mocks__/**",
+        "tailwind.config.js",
+        "src/assets/icons/*.tsx" // Ignored based on https://github.com/freeCodeCamp/freeCodeCamp/pull/56244#issuecomment-2367830791
+      ],
       "ignoreDependencies": [
         "core-js",
         // Node.js built-ins need to be ignored
