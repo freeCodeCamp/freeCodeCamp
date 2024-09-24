@@ -46,19 +46,26 @@ i18n
 
 const t = i18n.t.bind(i18n);
 
-const convertToLocalizedString = (num: number, ISOCode: string) =>
+export const roundDownToNearestHundred = (num: number) =>
+  Math.floor(num / 100) * 100;
+
+export const convertToLocalizedString = (num: number, ISOCode: string) =>
   num.toLocaleString(ISOCode);
 
-export const generateSearchPlaceholder = async () => {
+export const generateSearchPlaceholder = async (mockRecordsNum?: number) => {
   let placeholderText = t('search.placeholder.default');
 
   try {
-    const algoliaClient = algoliasearch(algoliaAppId, algoliaAPIKey);
-    const index = algoliaClient.initIndex(newsIndex);
-    const res = await index.search('');
-    const roundedTotalRecords = Math.floor(res?.nbHits / 100) * 100;
+    let totalRecords = mockRecordsNum || 0;
+    if (!mockRecordsNum) {
+      const algoliaClient = algoliasearch(algoliaAppId, algoliaAPIKey);
+      const index = algoliaClient.initIndex(newsIndex);
+      const res = await index.search('');
+      totalRecords = res.nbHits;
+    }
+    const roundedTotalRecords = roundDownToNearestHundred(totalRecords);
 
-    if (roundedTotalRecords > 100) {
+    if (roundedTotalRecords >= 100) {
       placeholderText = i18n.t('search.placeholder.numbered', {
         roundedTotalRecords: convertToLocalizedString(
           roundedTotalRecords,
@@ -86,6 +93,8 @@ export const generateSearchPlaceholder = async () => {
       placeholder: placeholderText
     })
   );
+
+  return placeholderText; // for testing
 };
 
 void generateSearchPlaceholder();
