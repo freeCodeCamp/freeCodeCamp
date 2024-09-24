@@ -2,11 +2,17 @@ const isArray = require('lodash/isArray');
 const { root } = require('mdast-builder');
 const find = require('unist-util-find');
 
-const extraHeadingAst = require('../../__fixtures__/ast-extra-heading.json');
-const simpleAst = require('../../__fixtures__/ast-simple.json');
+const parseFixture = require('../../__fixtures__/parse-fixture');
 const getSection = require('./get-section');
 
 describe('getSection', () => {
+  let simpleAst, extraHeadingAst;
+
+  beforeAll(async () => {
+    extraHeadingAst = await parseFixture('with-extra-heading.md');
+    simpleAst = await parseFixture('simple.md');
+  });
+
   it('should return an array', () => {
     expect.assertions(1);
     const actual = getSection(simpleAst, '--hints--');
