@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Build a Favourite Icon Toggler
+title: Introduction to the Build a Favorite Icon Toggler
 block: lab-favorite-icon-toggler
 superBlock: front-end-development
 ---

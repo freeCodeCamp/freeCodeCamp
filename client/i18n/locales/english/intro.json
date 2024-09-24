@@ -2022,7 +2022,7 @@
       "whrm": { "title": "190", "intro": [] },
       "fhxc": { "title": "191", "intro": [] },
       "lab-favorite-icon-toggler": {
-        "title": "Build a Favourite Icon Toggler",
+        "title": "Build a Favorite Icon Toggler",
         "intro": [
           "In this lab, you will build a favorite icon toggler by utilizing JavaScript click events."
         ]
