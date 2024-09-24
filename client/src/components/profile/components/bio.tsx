@@ -45,7 +45,7 @@ const Bio = ({
         <h1>@{username}</h1>
         {isSessionUser && (
           <Button onClick={() => setIsEditing(true)} size='small'>
-            <FontAwesomeIcon icon={faEdit} />
+            <FontAwesomeIcon icon={faEdit} style={{ marginRight: '0.5em' }} />
             {t('buttons.edit')}
           </Button>
         )}
