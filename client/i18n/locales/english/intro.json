@@ -1822,7 +1822,12 @@
       "uqiy": { "title": "67", "intro": [] },
       "jnqt": { "title": "68", "intro": [] },
       "vkei": { "title": "69", "intro": [] },
-      "jows": { "title": "70", "intro": [] },
+      "lab-contact-form": {
+        "title": "Build a Contact Form",
+        "intro": [
+          "In this lab, you will build a contact form in HTML and style it using CSS."
+        ]
+      },
       "ipmw": { "title": "71", "intro": [] },
       "nxbr": { "title": "72", "intro": [] },
       "qzcx": { "title": "73", "intro": [] },
