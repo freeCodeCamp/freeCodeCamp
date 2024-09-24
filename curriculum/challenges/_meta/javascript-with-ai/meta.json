@@ -6,6 +6,15 @@
   "dashedName": "javascript-with-ai",
   "order": 42,
   "superBlock": "javascript-algorithms-and-data-structures",
-  "challengeOrder": [{ "id": "66e3fd3fdd70614f1d6401c7", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66e3fd3fdd70614f1d6401c7",
+      "title": "Step 1"
+    },
+    {
+      "id": "66f2988e5ce47a89f2c3c012",
+      "title": "Deepen Insight into Variables"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
