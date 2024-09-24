@@ -23,7 +23,9 @@ function plugin() {
       });
 
       if (quizTrees.length === 0) {
-        throw Error('Quizzes should have at least one quiz');
+        throw Error(
+          'The --quizzes-- section should contain at least one quiz.'
+        );
       }
 
       quizTrees.forEach(allQuizNodes => {
@@ -43,7 +45,9 @@ function plugin() {
         });
 
         if (questionTrees.length === 0) {
-          throw Error('A quiz should have at least one quiz-question');
+          throw Error(
+            'The --quiz-- section should contain at least one question.'
+          );
         }
 
         questionTrees.forEach(singleQuestionNodes => {
@@ -76,9 +80,10 @@ function getQuestion(questionNodes, distractorNodes, answerNodes) {
   const distractors = getDistractors(distractorNodes);
   const answer = mdastToHtml(answerNodes);
 
-  if (!question) throw Error('question is missing from the quiz');
-  if (!distractors) throw Error('distractors are missing from quiz question');
-  if (!answer) throw Error('answer is missing from quiz question');
+  if (!question) throw Error('--question-- is missing from the quiz');
+  if (!distractors)
+    throw Error('--distractors-- are missing from quiz question');
+  if (!answer) throw Error('--answer-- is missing from quiz question');
 
   return { question, distractors, answer };
 }
