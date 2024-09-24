@@ -73,7 +73,7 @@ const EditModal = ({
   } = user;
   const { t } = useTranslation();
   return (
-    <Modal onClose={() => setIsEditing(false)} open={isEditing} size='xLarge'>
+    <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
       <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
