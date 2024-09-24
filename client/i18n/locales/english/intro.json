@@ -2451,7 +2451,7 @@
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
       "erfj": { "title": "296", "intro": [] },
-      "quiz-react": {
+      "quiz-react-basics": {
         "title": "React Basics Quiz",
         "intro": ["Test what you've learned in this quiz on React Basics."]
       },
