@@ -108,7 +108,8 @@ const quizJoi = Joi.object().keys({
         answer: Joi.string().required()
       })
     )
-    .min(10)
+    .min(20)
+    .max(20)
     .required()
 });
 
