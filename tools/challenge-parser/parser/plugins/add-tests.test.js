@@ -2,13 +2,14 @@ const parseFixture = require('../__fixtures__/parse-fixture');
 const addTests = require('./add-tests');
 
 describe('add-tests plugin', () => {
-  let brokenHintsAST, simpleAST;
+  let brokenHintsAST, simpleAST, missingTestStringAST;
   const plugin = addTests();
   let file = { data: {} };
 
   beforeAll(async () => {
     simpleAST = await parseFixture('simple.md');
     brokenHintsAST = await parseFixture('with-broken-hints.md');
+    missingTestStringAST = await parseFixture('with-missing-teststring.md');
   });
 
   beforeEach(() => {
@@ -38,9 +39,14 @@ describe('add-tests plugin', () => {
 
   // TODO: make this a bit more robust and informative
   it('should throw if a test pair is out of order', () => {
-    expect.assertions(1);
     // TODO: update the markdown so it makes this error
     expect(() => plugin(brokenHintsAST, file)).toThrow(
+      'Tests must be in (text, ```testString```) order'
+    );
+  });
+
+  it('should throw if a test string is not found', () => {
+    expect(() => plugin(missingTestStringAST, file)).toThrow(
       'testString (code block) is missing from hint'
     );
   });
