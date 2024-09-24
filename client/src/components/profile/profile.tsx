@@ -15,6 +15,7 @@ import Camper from './components/camper';
 import Certifications from './components/certifications';
 import Stats from './components/stats';
 import HeatMap from './components/heat-map';
+import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
 
 interface ProfileProps {
@@ -74,7 +75,7 @@ const EditModal = ({
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='xLarge'>
       <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
-      <Modal.Body>
+      <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='medium' />
         <About
@@ -197,10 +198,10 @@ function UserProfile({
       />
       {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
-      {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? (
         <PortfolioProjects portfolioProjects={portfolio} />
       ) : null}
+      {showCerts ? <Certifications username={username} /> : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}

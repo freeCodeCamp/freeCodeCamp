@@ -20,7 +20,7 @@ test.beforeEach(async ({ page }) => {
     await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
   }
 
-  await page.getByRole('button', { name: 'Edit' }).click();
+  await page.getByTestId('edit-profile-button').click();
 });
 
 test.describe('Your Internet Presence', () => {
@@ -91,7 +91,7 @@ test.describe('Your Internet Presence', () => {
       await expect(
         page.getByTestId(settingsPageElement.flashMessageAlert).nth(0)
       ).toContainText('We have updated your social links');
-      await page.getByRole('button', { name: 'Edit' }).click();
+      await page.getByTestId('edit-profile-button').click();
       // clear value before next test
       await socialInput.clear();
       await Promise.all([

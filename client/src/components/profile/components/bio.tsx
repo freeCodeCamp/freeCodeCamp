@@ -2,8 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCalendar,
-  faEdit,
-  faLocationDot
+  faLocationDot,
+  faPen
 } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
@@ -44,9 +44,13 @@ const Bio = ({
       <div className='profile-edit-container'>
         <h1>@{username}</h1>
         {isSessionUser && (
-          <Button onClick={() => setIsEditing(true)} size='small'>
-            <FontAwesomeIcon icon={faEdit} style={{ marginRight: '0.5em' }} />
-            {t('buttons.edit')}
+          <Button
+            onClick={() => setIsEditing(true)}
+            size='small'
+            className='button-fit'
+            data-playwright-test-label='edit-profile-button'
+          >
+            <FontAwesomeIcon icon={faPen} />
           </Button>
         )}
       </div>

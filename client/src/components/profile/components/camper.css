@@ -43,6 +43,12 @@
 .profile-edit-container {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  margin-top: 1em;
+}
+
+.profile-edit-container h1 {
+  margin: 0;
 }
 
 .profile-meta-container div {

@@ -30,7 +30,7 @@ test.describe('Public profile certifications', () => {
         .getByRole('button', { name: 'Preview custom 404 page' })
         .click();
     }
-    await page.getByRole('button', { name: 'Edit' }).click();
+    await page.getByTestId('edit-profile-button').click();
 
     await page.getByLabel('Username').fill('CertifiedBoozer');
     await page.getByRole('button', { name: 'Save' }).nth(0).click();
