@@ -3,7 +3,7 @@ const findAfter = require('unist-util-find-after');
 const findAllAfter = require('unist-util-find-all-after');
 const between = require('unist-util-find-all-between');
 
-function getAllBetween(tree, marker) {
+function getSection(tree, marker) {
   const start = find(tree, {
     type: 'heading',
     children: [
@@ -43,4 +43,4 @@ function getAllBetween(tree, marker) {
   return targetNodes;
 }
 
-module.exports = getAllBetween;
+module.exports = getSection;
