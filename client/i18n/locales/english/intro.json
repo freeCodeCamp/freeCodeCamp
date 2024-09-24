@@ -2212,14 +2212,13 @@
       },
       "esfh": { "title": "188", "intro": [] },
       "gibb": { "title": "189", "intro": [] },
-      "whrm": { "title": "190", "intro": [] },
-      "fhxc": { "title": "191", "intro": [] },
       "lab-favorite-icon-toggler": {
         "title": "Build a Favorite Icon Toggler",
         "intro": [
           "In this lab, you will build a favorite icon toggler by utilizing JavaScript click events."
         ]
       },
+      "fhxc": { "title": "191", "intro": [] },
       "arqa": { "title": "192", "intro": [] },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
