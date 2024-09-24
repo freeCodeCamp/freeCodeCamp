@@ -6,48 +6,44 @@ exports[`add-quizzes plugin should match the quizzes snapshot 1`] = `
     {
       "questions": [
         {
-          "options": [
-            "<p>Quiz 1, question 1, option 1</p>",
-            "<p>Quiz 1, question 1, option 2</p>",
-            "<p>Quiz 1, question 1, option 3</p>",
-            "<p>Quiz 1, question 1, option 4</p>",
+          "answer": "<p>Quiz 1, question 1, answer</p>",
+          "distractors": [
+            "<p>Quiz 1, question 1, distractor 1</p>",
+            "<p>Quiz 1, question 1, distractor 2</p>",
+            "<p>Quiz 1, question 1, distractor 3</p>",
           ],
           "question": "<p>Quiz 1, question 1</p>",
-          "solution": 1,
         },
         {
-          "options": [
-            "<p>Quiz 1, question 2, option 1</p>",
-            "<p>Quiz 1, question 2, option 2</p>",
-            "<p>Quiz 1, question 2, option 3</p>",
-            "<p>Quiz 1, question 2, option 4</p>",
+          "answer": "<p>Quiz 1, question 2, answer</p>",
+          "distractors": [
+            "<p>Quiz 1, question 2, distractor 1</p>",
+            "<p>Quiz 1, question 2, distractor 2</p>",
+            "<p>Quiz 1, question 2, distractor 3</p>",
           ],
           "question": "<p>Quiz 1, question 2</p>",
-          "solution": 1,
         },
       ],
     },
     {
       "questions": [
         {
-          "options": [
-            "<p>Quiz 2, question 1, option 1</p>",
-            "<p>Quiz 2, question 1, option 2</p>",
-            "<p>Quiz 2, question 1, option 3</p>",
-            "<p>Quiz 2, question 1, option 4</p>",
+          "answer": "<p>Quiz 2, question 1, answer</p>",
+          "distractors": [
+            "<p>Quiz 2, question 1, distractor 1</p>",
+            "<p>Quiz 2, question 1, distractor 2</p>",
+            "<p>Quiz 2, question 1, distractor 3</p>",
           ],
           "question": "<p>Quiz 2, question 1</p>",
-          "solution": 1,
         },
         {
-          "options": [
-            "<p>Quiz 2, question 2, option 1</p>",
-            "<p>Quiz 2, question 2, option 2</p>",
-            "<p>Quiz 2, question 2, option 3</p>",
-            "<p>Quiz 2, question 2, option 4</p>",
+          "answer": "<p>Quiz 2, question 2, answer</p>",
+          "distractors": [
+            "<p>Quiz 2, question 2, distractor 1</p>",
+            "<p>Quiz 2, question 2, distractor 2</p>",
+            "<p>Quiz 2, question 2, distractor 3</p>",
           ],
           "question": "<p>Quiz 2, question 2</p>",
-          "solution": 1,
         },
       ],
     },

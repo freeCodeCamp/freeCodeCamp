@@ -20,10 +20,11 @@ describe('add-quizzes plugin', () => {
   });
 
   it('should generate a quizzes array from a quizzes challenge AST', () => {
-    expect.assertions(47);
+    expect.assertions(44);
     plugin(mockQuizzesAST, file);
 
     const quizzes = file.data.quizzes;
+    expect(Array.isArray(quizzes)).toBe(true);
     expect(quizzes.length).toBe(2);
 
     quizzes.forEach(quiz => {
@@ -33,18 +34,18 @@ describe('add-quizzes plugin', () => {
       const questions = quiz.questions;
       expect(questions.length).toBe(2);
 
-      questions.forEach(quizQuestion => {
-        expect(quizQuestion).toHaveProperty('question');
-        expect(typeof quizQuestion.question).toBe('string');
-        expect(quizQuestion).toHaveProperty('solution');
-        expect(typeof quizQuestion.solution).toBe('number');
-        expect(quizQuestion).toHaveProperty('options');
-        expect(Array.isArray(quizQuestion.options)).toBe(true);
+      questions.forEach(question => {
+        expect(question).toHaveProperty('question');
+        expect(typeof question.question).toBe('string');
+        expect(question).toHaveProperty('answer');
+        expect(typeof question.answer).toBe('string');
+        expect(question).toHaveProperty('distractors');
+        expect(Array.isArray(question.distractors)).toBe(true);
 
-        const options = quizQuestion.options;
+        const distractors = question.distractors;
 
-        options.forEach(option => {
-          expect(typeof option).toBe('string');
+        distractors.forEach(distractor => {
+          expect(typeof distractor).toBe('string');
         });
       });
     });

@@ -75,7 +75,7 @@
       "children": [
         {
           "type": "text",
-          "value": "--quiz-question--",
+          "value": "--question--",
           "position": {
             "start": {
               "line": 5,
@@ -84,8 +84,8 @@
             },
             "end": {
               "line": 5,
-              "column": 22,
-              "offset": 49
+              "column": 17,
+              "offset": 44
             }
           }
         }
@@ -98,8 +98,8 @@
         },
         "end": {
           "line": 5,
-          "column": 22,
-          "offset": 49
+          "column": 17,
+          "offset": 44
         }
       }
     },
@@ -113,12 +113,12 @@
             "start": {
               "line": 7,
               "column": 1,
-              "offset": 51
+              "offset": 46
             },
             "end": {
               "line": 7,
               "column": 19,
-              "offset": 69
+              "offset": 64
             }
           }
         }
@@ -127,12 +127,12 @@
         "start": {
           "line": 7,
           "column": 1,
-          "offset": 51
+          "offset": 46
         },
         "end": {
           "line": 7,
           "column": 19,
-          "offset": 69
+          "offset": 64
         }
       }
     },
@@ -142,17 +142,17 @@
       "children": [
         {
           "type": "text",
-          "value": "--question-options--",
+          "value": "--distractors--",
           "position": {
             "start": {
               "line": 9,
               "column": 5,
-              "offset": 75
+              "offset": 70
             },
             "end": {
               "line": 9,
-              "column": 25,
-              "offset": 95
+              "column": 20,
+              "offset": 85
             }
           }
         }
@@ -161,12 +161,12 @@
         "start": {
           "line": 9,
           "column": 1,
-          "offset": 71
+          "offset": 66
         },
         "end": {
           "line": 9,
-          "column": 25,
-          "offset": 95
+          "column": 20,
+          "offset": 85
         }
       }
     },
@@ -175,17 +175,17 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 1, question 1, option 1",
+          "value": "Quiz 1, question 1, distractor 1",
           "position": {
             "start": {
               "line": 11,
               "column": 1,
-              "offset": 97
+              "offset": 87
             },
             "end": {
               "line": 11,
-              "column": 29,
-              "offset": 125
+              "column": 33,
+              "offset": 119
             }
           }
         }
@@ -194,12 +194,12 @@
         "start": {
           "line": 11,
           "column": 1,
-          "offset": 97
+          "offset": 87
         },
         "end": {
           "line": 11,
-          "column": 29,
-          "offset": 125
+          "column": 33,
+          "offset": 119
         }
       }
     },
@@ -209,12 +209,12 @@
         "start": {
           "line": 13,
           "column": 1,
-          "offset": 127
+          "offset": 121
         },
         "end": {
           "line": 13,
           "column": 4,
-          "offset": 130
+          "offset": 124
         }
       }
     },
@@ -223,17 +223,17 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 1, question 1, option 2",
+          "value": "Quiz 1, question 1, distractor 2",
           "position": {
             "start": {
               "line": 15,
               "column": 1,
-              "offset": 132
+              "offset": 126
             },
             "end": {
               "line": 15,
-              "column": 29,
-              "offset": 160
+              "column": 33,
+              "offset": 158
             }
           }
         }
@@ -242,75 +242,94 @@
         "start": {
           "line": 15,
           "column": 1,
-          "offset": 132
+          "offset": 126
         },
         "end": {
           "line": 15,
-          "column": 29,
+          "column": 33,
+          "offset": 158
+        }
+      }
+    },
+    {
+      "type": "thematicBreak",
+      "position": {
+        "start": {
+          "line": 17,
+          "column": 1,
           "offset": 160
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 17,
-          "column": 1,
-          "offset": 162
         },
         "end": {
           "line": 17,
           "column": 4,
+          "offset": 163
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quiz 1, question 1, distractor 3",
+          "position": {
+            "start": {
+              "line": 19,
+              "column": 1,
+              "offset": 165
+            },
+            "end": {
+              "line": 19,
+              "column": 33,
+              "offset": 197
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 19,
+          "column": 1,
           "offset": 165
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 1, question 1, option 3",
-          "position": {
-            "start": {
-              "line": 19,
-              "column": 1,
-              "offset": 167
-            },
-            "end": {
-              "line": 19,
-              "column": 29,
-              "offset": 195
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 19,
-          "column": 1,
-          "offset": 167
         },
         "end": {
           "line": 19,
-          "column": 29,
-          "offset": 195
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 21,
-          "column": 1,
+          "column": 33,
           "offset": 197
+        }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "children": [
+        {
+          "type": "text",
+          "value": "--answer--",
+          "position": {
+            "start": {
+              "line": 21,
+              "column": 5,
+              "offset": 203
+            },
+            "end": {
+              "line": 21,
+              "column": 15,
+              "offset": 213
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 21,
+          "column": 1,
+          "offset": 199
         },
         "end": {
           "line": 21,
-          "column": 4,
-          "offset": 200
+          "column": 15,
+          "offset": 213
         }
       }
     },
@@ -319,17 +338,17 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 1, question 1, option 4",
+          "value": "Quiz 1, question 1, answer",
           "position": {
             "start": {
               "line": 23,
               "column": 1,
-              "offset": 202
+              "offset": 215
             },
             "end": {
               "line": 23,
-              "column": 29,
-              "offset": 230
+              "column": 27,
+              "offset": 241
             }
           }
         }
@@ -338,12 +357,12 @@
         "start": {
           "line": 23,
           "column": 1,
-          "offset": 202
+          "offset": 215
         },
         "end": {
           "line": 23,
-          "column": 29,
-          "offset": 230
+          "column": 27,
+          "offset": 241
         }
       }
     },
@@ -353,98 +372,31 @@
       "children": [
         {
           "type": "text",
-          "value": "--question-solution--",
+          "value": "--question--",
           "position": {
             "start": {
               "line": 25,
               "column": 5,
-              "offset": 236
+              "offset": 247
             },
             "end": {
               "line": 25,
-              "column": 26,
-              "offset": 257
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 25,
-          "column": 1,
-          "offset": 232
-        },
-        "end": {
-          "line": 25,
-          "column": 26,
-          "offset": 257
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "1",
-          "position": {
-            "start": {
-              "line": 27,
-              "column": 1,
+              "column": 17,
               "offset": 259
-            },
-            "end": {
-              "line": 27,
-              "column": 2,
-              "offset": 260
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 27,
+          "line": 25,
           "column": 1,
+          "offset": 243
+        },
+        "end": {
+          "line": 25,
+          "column": 17,
           "offset": 259
-        },
-        "end": {
-          "line": 27,
-          "column": 2,
-          "offset": 260
-        }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 3,
-      "children": [
-        {
-          "type": "text",
-          "value": "--quiz-question--",
-          "position": {
-            "start": {
-              "line": 29,
-              "column": 5,
-              "offset": 266
-            },
-            "end": {
-              "line": 29,
-              "column": 22,
-              "offset": 283
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 29,
-          "column": 1,
-          "offset": 262
-        },
-        "end": {
-          "line": 29,
-          "column": 22,
-          "offset": 283
         }
       }
     },
@@ -456,14 +408,81 @@
           "value": "Quiz 1, question 2",
           "position": {
             "start": {
-              "line": 31,
+              "line": 27,
               "column": 1,
+              "offset": 261
+            },
+            "end": {
+              "line": 27,
+              "column": 19,
+              "offset": 279
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 27,
+          "column": 1,
+          "offset": 261
+        },
+        "end": {
+          "line": 27,
+          "column": 19,
+          "offset": 279
+        }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "children": [
+        {
+          "type": "text",
+          "value": "--distractors--",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 5,
               "offset": 285
             },
             "end": {
+              "line": 29,
+              "column": 20,
+              "offset": 300
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 29,
+          "column": 1,
+          "offset": 281
+        },
+        "end": {
+          "line": 29,
+          "column": 20,
+          "offset": 300
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quiz 1, question 2, distractor 1",
+          "position": {
+            "start": {
               "line": 31,
-              "column": 19,
-              "offset": 303
+              "column": 1,
+              "offset": 302
+            },
+            "end": {
+              "line": 31,
+              "column": 33,
+              "offset": 334
             }
           }
         }
@@ -472,46 +491,27 @@
         "start": {
           "line": 31,
           "column": 1,
-          "offset": 285
+          "offset": 302
         },
         "end": {
           "line": 31,
-          "column": 19,
-          "offset": 303
+          "column": 33,
+          "offset": 334
         }
       }
     },
     {
-      "type": "heading",
-      "depth": 3,
-      "children": [
-        {
-          "type": "text",
-          "value": "--question-options--",
-          "position": {
-            "start": {
-              "line": 33,
-              "column": 5,
-              "offset": 309
-            },
-            "end": {
-              "line": 33,
-              "column": 25,
-              "offset": 329
-            }
-          }
-        }
-      ],
+      "type": "thematicBreak",
       "position": {
         "start": {
           "line": 33,
           "column": 1,
-          "offset": 305
+          "offset": 336
         },
         "end": {
           "line": 33,
-          "column": 25,
-          "offset": 329
+          "column": 4,
+          "offset": 339
         }
       }
     },
@@ -520,17 +520,17 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 1, question 2, option 1",
+          "value": "Quiz 1, question 2, distractor 2",
           "position": {
             "start": {
               "line": 35,
               "column": 1,
-              "offset": 331
+              "offset": 341
             },
             "end": {
               "line": 35,
-              "column": 29,
-              "offset": 359
+              "column": 33,
+              "offset": 373
             }
           }
         }
@@ -539,12 +539,12 @@
         "start": {
           "line": 35,
           "column": 1,
-          "offset": 331
+          "offset": 341
         },
         "end": {
           "line": 35,
-          "column": 29,
-          "offset": 359
+          "column": 33,
+          "offset": 373
         }
       }
     },
@@ -554,12 +554,12 @@
         "start": {
           "line": 37,
           "column": 1,
-          "offset": 361
+          "offset": 375
         },
         "end": {
           "line": 37,
           "column": 4,
-          "offset": 364
+          "offset": 378
         }
       }
     },
@@ -568,17 +568,17 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 1, question 2, option 2",
+          "value": "Quiz 1, question 2, distractor 3",
           "position": {
             "start": {
               "line": 39,
               "column": 1,
-              "offset": 366
+              "offset": 380
             },
             "end": {
               "line": 39,
-              "column": 29,
-              "offset": 394
+              "column": 33,
+              "offset": 412
             }
           }
         }
@@ -587,108 +587,12 @@
         "start": {
           "line": 39,
           "column": 1,
-          "offset": 366
+          "offset": 380
         },
         "end": {
           "line": 39,
-          "column": 29,
-          "offset": 394
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 41,
-          "column": 1,
-          "offset": 396
-        },
-        "end": {
-          "line": 41,
-          "column": 4,
-          "offset": 399
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 1, question 2, option 3",
-          "position": {
-            "start": {
-              "line": 43,
-              "column": 1,
-              "offset": 401
-            },
-            "end": {
-              "line": 43,
-              "column": 29,
-              "offset": 429
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 43,
-          "column": 1,
-          "offset": 401
-        },
-        "end": {
-          "line": 43,
-          "column": 29,
-          "offset": 429
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 45,
-          "column": 1,
-          "offset": 431
-        },
-        "end": {
-          "line": 45,
-          "column": 4,
-          "offset": 434
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 1, question 2, option 4",
-          "position": {
-            "start": {
-              "line": 47,
-              "column": 1,
-              "offset": 436
-            },
-            "end": {
-              "line": 47,
-              "column": 29,
-              "offset": 464
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 47,
-          "column": 1,
-          "offset": 436
-        },
-        "end": {
-          "line": 47,
-          "column": 29,
-          "offset": 464
+          "column": 33,
+          "offset": 412
         }
       }
     },
@@ -698,31 +602,31 @@
       "children": [
         {
           "type": "text",
-          "value": "--question-solution--",
+          "value": "--answer--",
           "position": {
             "start": {
-              "line": 49,
+              "line": 41,
               "column": 5,
-              "offset": 470
+              "offset": 418
             },
             "end": {
-              "line": 49,
-              "column": 26,
-              "offset": 491
+              "line": 41,
+              "column": 15,
+              "offset": 428
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 49,
+          "line": 41,
           "column": 1,
-          "offset": 466
+          "offset": 414
         },
         "end": {
-          "line": 49,
-          "column": 26,
-          "offset": 491
+          "line": 41,
+          "column": 15,
+          "offset": 428
         }
       }
     },
@@ -731,31 +635,31 @@
       "children": [
         {
           "type": "text",
-          "value": "1",
+          "value": "Quiz 1, question 2, answer",
           "position": {
             "start": {
-              "line": 51,
+              "line": 43,
               "column": 1,
-              "offset": 493
+              "offset": 430
             },
             "end": {
-              "line": 51,
-              "column": 2,
-              "offset": 494
+              "line": 43,
+              "column": 27,
+              "offset": 456
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 51,
+          "line": 43,
           "column": 1,
-          "offset": 493
+          "offset": 430
         },
         "end": {
-          "line": 51,
-          "column": 2,
-          "offset": 494
+          "line": 43,
+          "column": 27,
+          "offset": 456
         }
       }
     },
@@ -768,28 +672,28 @@
           "value": "--quiz--",
           "position": {
             "start": {
-              "line": 53,
+              "line": 45,
               "column": 4,
-              "offset": 499
+              "offset": 461
             },
             "end": {
-              "line": 53,
+              "line": 45,
               "column": 12,
-              "offset": 507
+              "offset": 469
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 53,
+          "line": 45,
           "column": 1,
-          "offset": 496
+          "offset": 458
         },
         "end": {
-          "line": 53,
+          "line": 45,
           "column": 12,
-          "offset": 507
+          "offset": 469
         }
       }
     },
@@ -799,31 +703,31 @@
       "children": [
         {
           "type": "text",
-          "value": "--quiz-question--",
+          "value": "--question--",
           "position": {
             "start": {
-              "line": 55,
+              "line": 47,
               "column": 5,
-              "offset": 513
+              "offset": 475
             },
             "end": {
-              "line": 55,
-              "column": 22,
-              "offset": 530
+              "line": 47,
+              "column": 17,
+              "offset": 487
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 55,
+          "line": 47,
           "column": 1,
-          "offset": 509
+          "offset": 471
         },
         "end": {
-          "line": 55,
-          "column": 22,
-          "offset": 530
+          "line": 47,
+          "column": 17,
+          "offset": 487
         }
       }
     },
@@ -835,28 +739,28 @@
           "value": "Quiz 2, question 1",
           "position": {
             "start": {
-              "line": 57,
+              "line": 49,
               "column": 1,
-              "offset": 532
+              "offset": 489
             },
             "end": {
-              "line": 57,
+              "line": 49,
               "column": 19,
-              "offset": 550
+              "offset": 507
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 57,
+          "line": 49,
           "column": 1,
-          "offset": 532
+          "offset": 489
         },
         "end": {
-          "line": 57,
+          "line": 49,
           "column": 19,
-          "offset": 550
+          "offset": 507
         }
       }
     },
@@ -866,31 +770,31 @@
       "children": [
         {
           "type": "text",
-          "value": "--question-options--",
+          "value": "--distractors--",
           "position": {
             "start": {
-              "line": 59,
+              "line": 51,
               "column": 5,
-              "offset": 556
+              "offset": 513
             },
             "end": {
-              "line": 59,
-              "column": 25,
-              "offset": 576
+              "line": 51,
+              "column": 20,
+              "offset": 528
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 59,
+          "line": 51,
           "column": 1,
-          "offset": 552
+          "offset": 509
         },
         "end": {
-          "line": 59,
-          "column": 25,
-          "offset": 576
+          "line": 51,
+          "column": 20,
+          "offset": 528
         }
       }
     },
@@ -899,46 +803,161 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 2, question 1, option 1",
+          "value": "Quiz 2, question 1, distractor 1",
           "position": {
             "start": {
-              "line": 61,
+              "line": 53,
               "column": 1,
-              "offset": 578
+              "offset": 530
             },
             "end": {
-              "line": 61,
-              "column": 29,
-              "offset": 606
+              "line": 53,
+              "column": 33,
+              "offset": 562
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 61,
+          "line": 53,
           "column": 1,
-          "offset": 578
+          "offset": 530
         },
         "end": {
-          "line": 61,
-          "column": 29,
+          "line": 53,
+          "column": 33,
+          "offset": 562
+        }
+      }
+    },
+    {
+      "type": "thematicBreak",
+      "position": {
+        "start": {
+          "line": 55,
+          "column": 1,
+          "offset": 564
+        },
+        "end": {
+          "line": 55,
+          "column": 4,
+          "offset": 567
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quiz 2, question 1, distractor 2",
+          "position": {
+            "start": {
+              "line": 57,
+              "column": 1,
+              "offset": 569
+            },
+            "end": {
+              "line": 57,
+              "column": 33,
+              "offset": 601
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 57,
+          "column": 1,
+          "offset": 569
+        },
+        "end": {
+          "line": 57,
+          "column": 33,
+          "offset": 601
+        }
+      }
+    },
+    {
+      "type": "thematicBreak",
+      "position": {
+        "start": {
+          "line": 59,
+          "column": 1,
+          "offset": 603
+        },
+        "end": {
+          "line": 59,
+          "column": 4,
           "offset": 606
         }
       }
     },
     {
-      "type": "thematicBreak",
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quiz 2, question 1, distractor 3",
+          "position": {
+            "start": {
+              "line": 61,
+              "column": 1,
+              "offset": 608
+            },
+            "end": {
+              "line": 61,
+              "column": 33,
+              "offset": 640
+            }
+          }
+        }
+      ],
       "position": {
         "start": {
-          "line": 63,
+          "line": 61,
           "column": 1,
           "offset": 608
         },
         "end": {
+          "line": 61,
+          "column": 33,
+          "offset": 640
+        }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "children": [
+        {
+          "type": "text",
+          "value": "--answer--",
+          "position": {
+            "start": {
+              "line": 63,
+              "column": 5,
+              "offset": 646
+            },
+            "end": {
+              "line": 63,
+              "column": 15,
+              "offset": 656
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
           "line": 63,
-          "column": 4,
-          "offset": 611
+          "column": 1,
+          "offset": 642
+        },
+        "end": {
+          "line": 63,
+          "column": 15,
+          "offset": 656
         }
       }
     },
@@ -947,17 +966,17 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 2, question 1, option 2",
+          "value": "Quiz 2, question 1, answer",
           "position": {
             "start": {
               "line": 65,
               "column": 1,
-              "offset": 613
+              "offset": 658
             },
             "end": {
               "line": 65,
-              "column": 29,
-              "offset": 641
+              "column": 27,
+              "offset": 684
             }
           }
         }
@@ -966,108 +985,12 @@
         "start": {
           "line": 65,
           "column": 1,
-          "offset": 613
+          "offset": 658
         },
         "end": {
           "line": 65,
-          "column": 29,
-          "offset": 641
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 67,
-          "column": 1,
-          "offset": 643
-        },
-        "end": {
-          "line": 67,
-          "column": 4,
-          "offset": 646
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 2, question 1, option 3",
-          "position": {
-            "start": {
-              "line": 69,
-              "column": 1,
-              "offset": 648
-            },
-            "end": {
-              "line": 69,
-              "column": 29,
-              "offset": 676
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 69,
-          "column": 1,
-          "offset": 648
-        },
-        "end": {
-          "line": 69,
-          "column": 29,
-          "offset": 676
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 71,
-          "column": 1,
-          "offset": 678
-        },
-        "end": {
-          "line": 71,
-          "column": 4,
-          "offset": 681
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 2, question 1, option 4",
-          "position": {
-            "start": {
-              "line": 73,
-              "column": 1,
-              "offset": 683
-            },
-            "end": {
-              "line": 73,
-              "column": 29,
-              "offset": 711
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 73,
-          "column": 1,
-          "offset": 683
-        },
-        "end": {
-          "line": 73,
-          "column": 29,
-          "offset": 711
+          "column": 27,
+          "offset": 684
         }
       }
     },
@@ -1077,98 +1000,31 @@
       "children": [
         {
           "type": "text",
-          "value": "--question-solution--",
+          "value": "--question--",
           "position": {
             "start": {
-              "line": 75,
+              "line": 67,
               "column": 5,
-              "offset": 717
+              "offset": 690
             },
             "end": {
-              "line": 75,
-              "column": 26,
-              "offset": 738
+              "line": 67,
+              "column": 17,
+              "offset": 702
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 75,
+          "line": 67,
           "column": 1,
-          "offset": 713
+          "offset": 686
         },
         "end": {
-          "line": 75,
-          "column": 26,
-          "offset": 738
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "1",
-          "position": {
-            "start": {
-              "line": 77,
-              "column": 1,
-              "offset": 740
-            },
-            "end": {
-              "line": 77,
-              "column": 2,
-              "offset": 741
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 77,
-          "column": 1,
-          "offset": 740
-        },
-        "end": {
-          "line": 77,
-          "column": 2,
-          "offset": 741
-        }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 3,
-      "children": [
-        {
-          "type": "text",
-          "value": "--quiz-question--",
-          "position": {
-            "start": {
-              "line": 79,
-              "column": 5,
-              "offset": 747
-            },
-            "end": {
-              "line": 79,
-              "column": 22,
-              "offset": 764
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 79,
-          "column": 1,
-          "offset": 743
-        },
-        "end": {
-          "line": 79,
-          "column": 22,
-          "offset": 764
+          "line": 67,
+          "column": 17,
+          "offset": 702
         }
       }
     },
@@ -1180,28 +1036,191 @@
           "value": "Quiz 2, question 2",
           "position": {
             "start": {
-              "line": 81,
+              "line": 69,
               "column": 1,
-              "offset": 766
+              "offset": 704
             },
             "end": {
-              "line": 81,
+              "line": 69,
               "column": 19,
-              "offset": 784
+              "offset": 722
             }
           }
         }
       ],
       "position": {
         "start": {
-          "line": 81,
+          "line": 69,
           "column": 1,
-          "offset": 766
+          "offset": 704
         },
         "end": {
-          "line": 81,
+          "line": 69,
           "column": 19,
+          "offset": 722
+        }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "children": [
+        {
+          "type": "text",
+          "value": "--distractors--",
+          "position": {
+            "start": {
+              "line": 71,
+              "column": 5,
+              "offset": 728
+            },
+            "end": {
+              "line": 71,
+              "column": 20,
+              "offset": 743
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 71,
+          "column": 1,
+          "offset": 724
+        },
+        "end": {
+          "line": 71,
+          "column": 20,
+          "offset": 743
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quiz 2, question 2, distractor 1",
+          "position": {
+            "start": {
+              "line": 73,
+              "column": 1,
+              "offset": 745
+            },
+            "end": {
+              "line": 73,
+              "column": 33,
+              "offset": 777
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 73,
+          "column": 1,
+          "offset": 745
+        },
+        "end": {
+          "line": 73,
+          "column": 33,
+          "offset": 777
+        }
+      }
+    },
+    {
+      "type": "thematicBreak",
+      "position": {
+        "start": {
+          "line": 75,
+          "column": 1,
+          "offset": 779
+        },
+        "end": {
+          "line": 75,
+          "column": 4,
+          "offset": 782
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quiz 2, question 2, distractor 2",
+          "position": {
+            "start": {
+              "line": 77,
+              "column": 1,
+              "offset": 784
+            },
+            "end": {
+              "line": 77,
+              "column": 33,
+              "offset": 816
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 77,
+          "column": 1,
           "offset": 784
+        },
+        "end": {
+          "line": 77,
+          "column": 33,
+          "offset": 816
+        }
+      }
+    },
+    {
+      "type": "thematicBreak",
+      "position": {
+        "start": {
+          "line": 79,
+          "column": 1,
+          "offset": 818
+        },
+        "end": {
+          "line": 79,
+          "column": 4,
+          "offset": 821
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quiz 2, question 2, distractor 3",
+          "position": {
+            "start": {
+              "line": 81,
+              "column": 1,
+              "offset": 823
+            },
+            "end": {
+              "line": 81,
+              "column": 33,
+              "offset": 855
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 81,
+          "column": 1,
+          "offset": 823
+        },
+        "end": {
+          "line": 81,
+          "column": 33,
+          "offset": 855
         }
       }
     },
@@ -1211,17 +1230,17 @@
       "children": [
         {
           "type": "text",
-          "value": "--question-options--",
+          "value": "--answer--",
           "position": {
             "start": {
               "line": 83,
               "column": 5,
-              "offset": 790
+              "offset": 861
             },
             "end": {
               "line": 83,
-              "column": 25,
-              "offset": 810
+              "column": 15,
+              "offset": 871
             }
           }
         }
@@ -1230,12 +1249,12 @@
         "start": {
           "line": 83,
           "column": 1,
-          "offset": 786
+          "offset": 857
         },
         "end": {
           "line": 83,
-          "column": 25,
-          "offset": 810
+          "column": 15,
+          "offset": 871
         }
       }
     },
@@ -1244,17 +1263,17 @@
       "children": [
         {
           "type": "text",
-          "value": "Quiz 2, question 2, option 1",
+          "value": "Quiz 2, question 2, answer",
           "position": {
             "start": {
               "line": 85,
               "column": 1,
-              "offset": 812
+              "offset": 873
             },
             "end": {
               "line": 85,
-              "column": 29,
-              "offset": 840
+              "column": 27,
+              "offset": 899
             }
           }
         }
@@ -1263,223 +1282,12 @@
         "start": {
           "line": 85,
           "column": 1,
-          "offset": 812
+          "offset": 873
         },
         "end": {
           "line": 85,
-          "column": 29,
-          "offset": 840
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 87,
-          "column": 1,
-          "offset": 842
-        },
-        "end": {
-          "line": 87,
-          "column": 4,
-          "offset": 845
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 2, question 2, option 2",
-          "position": {
-            "start": {
-              "line": 89,
-              "column": 1,
-              "offset": 847
-            },
-            "end": {
-              "line": 89,
-              "column": 29,
-              "offset": 875
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 89,
-          "column": 1,
-          "offset": 847
-        },
-        "end": {
-          "line": 89,
-          "column": 29,
-          "offset": 875
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 91,
-          "column": 1,
-          "offset": 877
-        },
-        "end": {
-          "line": 91,
-          "column": 4,
-          "offset": 880
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 2, question 2, option 3",
-          "position": {
-            "start": {
-              "line": 93,
-              "column": 1,
-              "offset": 882
-            },
-            "end": {
-              "line": 93,
-              "column": 29,
-              "offset": 910
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 93,
-          "column": 1,
-          "offset": 882
-        },
-        "end": {
-          "line": 93,
-          "column": 29,
-          "offset": 910
-        }
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": {
-          "line": 95,
-          "column": 1,
-          "offset": 912
-        },
-        "end": {
-          "line": 95,
-          "column": 4,
-          "offset": 915
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Quiz 2, question 2, option 4",
-          "position": {
-            "start": {
-              "line": 97,
-              "column": 1,
-              "offset": 917
-            },
-            "end": {
-              "line": 97,
-              "column": 29,
-              "offset": 945
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 97,
-          "column": 1,
-          "offset": 917
-        },
-        "end": {
-          "line": 97,
-          "column": 29,
-          "offset": 945
-        }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 3,
-      "children": [
-        {
-          "type": "text",
-          "value": "--question-solution--",
-          "position": {
-            "start": {
-              "line": 99,
-              "column": 5,
-              "offset": 951
-            },
-            "end": {
-              "line": 99,
-              "column": 26,
-              "offset": 972
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 99,
-          "column": 1,
-          "offset": 947
-        },
-        "end": {
-          "line": 99,
-          "column": 26,
-          "offset": 972
-        }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "1",
-          "position": {
-            "start": {
-              "line": 101,
-              "column": 1,
-              "offset": 974
-            },
-            "end": {
-              "line": 101,
-              "column": 2,
-              "offset": 975
-            }
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 101,
-          "column": 1,
-          "offset": 974
-        },
-        "end": {
-          "line": 101,
-          "column": 2,
-          "offset": 975
+          "column": 27,
+          "offset": 899
         }
       }
     }
@@ -1491,9 +1299,9 @@
       "offset": 0
     },
     "end": {
-      "line": 102,
+      "line": 86,
       "column": 1,
-      "offset": 976
+      "offset": 900
     }
   }
 }

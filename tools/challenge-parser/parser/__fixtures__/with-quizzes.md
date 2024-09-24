@@ -2,100 +2,84 @@
 
 ## --quiz--
 
-### --quiz-question--
+### --question--
 
 Quiz 1, question 1
 
-### --question-options--
+### --distractors--
 
-Quiz 1, question 1, option 1
-
----
-
-Quiz 1, question 1, option 2
+Quiz 1, question 1, distractor 1
 
 ---
 
-Quiz 1, question 1, option 3
+Quiz 1, question 1, distractor 2
 
 ---
 
-Quiz 1, question 1, option 4
+Quiz 1, question 1, distractor 3
 
-### --question-solution--
+### --answer--
 
-1
+Quiz 1, question 1, answer
 
-### --quiz-question--
+### --question--
 
 Quiz 1, question 2
 
-### --question-options--
+### --distractors--
 
-Quiz 1, question 2, option 1
-
----
-
-Quiz 1, question 2, option 2
+Quiz 1, question 2, distractor 1
 
 ---
 
-Quiz 1, question 2, option 3
+Quiz 1, question 2, distractor 2
 
 ---
 
-Quiz 1, question 2, option 4
+Quiz 1, question 2, distractor 3
 
-### --question-solution--
+### --answer--
 
-1
+Quiz 1, question 2, answer
 
 ## --quiz--
 
-### --quiz-question--
+### --question--
 
 Quiz 2, question 1
 
-### --question-options--
+### --distractors--
 
-Quiz 2, question 1, option 1
-
----
-
-Quiz 2, question 1, option 2
+Quiz 2, question 1, distractor 1
 
 ---
 
-Quiz 2, question 1, option 3
+Quiz 2, question 1, distractor 2
 
 ---
 
-Quiz 2, question 1, option 4
+Quiz 2, question 1, distractor 3
 
-### --question-solution--
+### --answer--
 
-1
+Quiz 2, question 1, answer
 
-### --quiz-question--
+### --question--
 
 Quiz 2, question 2
 
-### --question-options--
+### --distractors--
 
-Quiz 2, question 2, option 1
-
----
-
-Quiz 2, question 2, option 2
+Quiz 2, question 2, distractor 1
 
 ---
 
-Quiz 2, question 2, option 3
+Quiz 2, question 2, distractor 2
 
 ---
 
-Quiz 2, question 2, option 4
+Quiz 2, question 2, distractor 3
 
-### --question-solution--
+### --answer--
 
-1
+Quiz 2, question 2, answer
