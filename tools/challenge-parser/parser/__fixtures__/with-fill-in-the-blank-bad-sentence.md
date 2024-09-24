@@ -6,9 +6,9 @@ In English, to check or confirm something people sometimes use tag questions. Fo
 
 ## --sentence--
 
-`A sentence _ paragraph 1`
+`A sentence BLANK paragraph 1`
 
-Sentence in _ 2
+Sentence in BLANK 2
 
 ## --blanks--
 

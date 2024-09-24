@@ -1,10 +1,15 @@
-const brokenHintsAST = require('../__fixtures__/ast-broken-hints.json');
-const simpleAST = require('../__fixtures__/ast-simple.json');
+const parseFixture = require('../__fixtures__/parse-fixture');
 const addTests = require('./add-tests');
 
 describe('add-tests plugin', () => {
+  let brokenHintsAST, simpleAST;
   const plugin = addTests();
   let file = { data: {} };
+
+  beforeAll(async () => {
+    simpleAST = await parseFixture('simple.md');
+    brokenHintsAST = await parseFixture('with-broken-hints.md');
+  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -34,6 +39,7 @@ describe('add-tests plugin', () => {
   // TODO: make this a bit more robust and informative
   it('should throw if a test pair is out of order', () => {
     expect.assertions(1);
+    // TODO: update the markdown so it makes this error
     expect(() => plugin(brokenHintsAST, file)).toThrow(
       'testString (code block) is missing from hint'
     );

@@ -1,12 +1,21 @@
-const simpleAST = require('../__fixtures__/ast-simple.json');
-const videoAST = require('../__fixtures__/ast-video-challenge.json');
-const multipleQuestionAST = require('../__fixtures__/ast-multiple-video-questions.json');
-const videoOutOfOrderAST = require('../__fixtures__/ast-video-out-of-order.json');
+const parseFixture = require('../__fixtures__/parse-fixture');
 const addVideoQuestion = require('./add-video-question');
 
 describe('add-video-question plugin', () => {
+  let simpleAST, videoAST, multipleQuestionAST, videoOutOfOrderAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
+
+  beforeAll(async () => {
+    simpleAST = await parseFixture('simple.md');
+    videoAST = await parseFixture('with-video-question.md');
+    multipleQuestionAST = await parseFixture(
+      'with-multiple-video-questions.md'
+    );
+    videoOutOfOrderAST = await parseFixture(
+      'with-video-question-out-of-order.md'
+    );
+  });
 
   beforeEach(() => {
     file = { data: {} };
