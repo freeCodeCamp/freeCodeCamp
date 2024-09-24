@@ -131,9 +131,34 @@ export function Scene({
     }
   }
 
+  const buildTranscript = () => {
+    let transcript = '';
+    commands.forEach(command => {
+      console.log(command);
+      if (command.character != null && command.dialogue != null) {
+        transcript =
+          transcript +
+          '\n' +
+          command.character +
+          ':' +
+          ' ' +
+          command.dialogue.text;
+      }
+    });
+    return transcript;
+  };
+
+  const toggleTranscript = () => {
+    const transcriptElement = document.getElementById('transcript')!;
+    if (transcriptElement.innerText != '') {
+      transcriptElement.innerText = buildTranscript();
+    } else {
+      transcriptElement.innerText = '';
+    }
+  };
+
   const playScene = () => {
     setShowDialogue(true);
-
     setTimeout(() => {
       if (audioRef.current.paused) {
         start = Date.now();
@@ -299,6 +324,10 @@ export function Scene({
           </>
         )}
       </div>
+      <button id='toggle-transcript' onClick={toggleTranscript}>
+        Toggle Transcript
+      </button>
+      <p id='transcript'></p>
       <Spacer size='medium' />
     </Col>
   );
