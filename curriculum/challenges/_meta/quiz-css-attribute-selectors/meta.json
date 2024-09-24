@@ -1,0 +1,10 @@
+{
+  "name": "CSS Attribute Selectors Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-attribute-selectors",
+  "order": 97,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed8fd0f45ce3ece4053eaf", "title": "CSS Attribute Selectors Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

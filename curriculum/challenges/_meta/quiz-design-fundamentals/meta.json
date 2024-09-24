@@ -1,0 +1,10 @@
+{
+  "name": "Design Fundamentals Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-design-fundamentals",
+  "order": 52,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed901ff45ce3ece4053eba", "title": "Design Fundamentals Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

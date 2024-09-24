@@ -1,0 +1,13 @@
+{
+  "name": "Web Standards Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-web-standards",
+  "order": 289,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1a0fcab4dfe9fcdcb269d", "title": "Web Standards Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

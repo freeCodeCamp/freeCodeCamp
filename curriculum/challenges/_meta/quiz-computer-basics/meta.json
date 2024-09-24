@@ -1,0 +1,10 @@
+{
+  "name": "Computer Basics Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-computer-basics",
+  "order": 35,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed8fb9f45ce3ece4053eac", "title": "Computer Basics Quiz" }],
+  "helpCategory": "HTML-CSS"
+}
