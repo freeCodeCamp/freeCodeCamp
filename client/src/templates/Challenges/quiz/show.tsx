@@ -1,15 +1,13 @@
-// Package Utilities
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
-import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button, Quiz } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Quiz, useQuiz } from '@freecodecamp/ui';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -28,6 +26,9 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import PrismFormatted from '../components/prism-formatted';
+
+import './show.css';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -43,8 +44,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion'),
-      openHelpModal: () => openModal('help')
+      openCompletionModal: () => openModal('completion')
     },
     dispatch
   );
@@ -57,52 +57,89 @@ interface ShowQuizProps {
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
-  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
-  t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
 }
 
-interface ShowQuizState {
-  hasSubmitted: boolean;
-  quiz: null;
-}
+const ShowQuiz = ({
+  challengeMounted,
+  data: {
+    challengeNode: {
+      challenge: {
+        fields: { tests },
+        title,
+        description,
+        challengeType,
+        helpCategory,
+        superBlock,
+        block,
+        translationPending,
+        quizzes
+      }
+    }
+  },
+  pageContext: { challengeMeta },
+  initTests,
+  updateChallengeMeta,
+  openCompletionModal,
+  isChallengeCompleted
+}: ShowQuizProps) => {
+  const { t } = useTranslation();
+  const { nextChallengePath, prevChallengePath } = challengeMeta;
+  const container = useRef<HTMLElement | null>(null);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-// Component
-class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
-  static displayName: string;
-  private container: React.RefObject<HTMLElement> = React.createRef();
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
 
-  constructor(props: ShowQuizProps) {
-    super(props);
-    this.state = {
-      hasSubmitted: false,
-      quiz: null
+  // `random` needs to be a ref object so that it won't change between renders.
+  const random = useRef(Math.floor(Math.random() * quizzes.length));
+  const quiz = quizzes[random.current].questions;
+
+  // Initialize the data passed to `useQuiz`
+  const initialQuizData = quiz.map(question => {
+    const distractors = question.distractors.map((distractor, index) => {
+      return {
+        label: (
+          <PrismFormatted className='quiz-answer-label' text={distractor} />
+        ),
+        value: index + 1
+      };
+    });
+
+    const answer = {
+      label: (
+        <PrismFormatted className='quiz-answer-label' text={question.answer} />
+      ),
+      value: 4
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+    return {
+      question: <PrismFormatted text={question.question} />,
+      // TODO: Shuffle the array
+      answers: [...distractors, answer],
+      correctAnswer: answer.value
+    };
+  });
 
-  componentDidMount(): void {
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: {
-            fields: { tests },
-            title,
-            challengeType,
-            helpCategory
-          }
-        }
-      },
-      pageContext: { challengeMeta },
-      initTests,
-      updateChallengeMeta
-    } = this.props;
+  const {
+    questions: quizData,
+    validateAnswers,
+    correctAnswerCount
+  } = useQuiz({
+    initialQuestions: initialQuizData,
+    validationMessages: {
+      correct: t('learn.quiz.correct-answer'),
+      incorrect: t('learn.quiz.incorrect-answer')
+    }
+  });
+
+  useEffect(() => {
     initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
@@ -111,147 +148,113 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
-    this.container.current?.focus();
-  }
+    container.current?.focus();
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentDidUpdate(prevProps: ShowQuizProps): void {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { title: prevTitle }
-        }
-      }
-    } = prevProps;
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: { title: currentTitle, challengeType, helpCategory }
-        }
-      },
-      pageContext: { challengeMeta },
-      updateChallengeMeta
-    } = this.props;
-    if (prevTitle !== currentTitle) {
-      updateChallengeMeta({
-        ...challengeMeta,
-        title: currentTitle,
-        challengeType,
-        helpCategory
-      });
-      challengeMounted(challengeMeta.id);
-    }
-  }
-
-  handleSubmit() {
-    console.log('handleSubmit');
-  }
-
-  render() {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title,
-            // challengeType,
-            description,
-            superBlock,
-            block,
-            translationPending,
-            quizzes
-          }
-        }
-      },
-      // openCompletionModal,
-      openHelpModal,
-      pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
-      },
-      t,
-      isChallengeCompleted
-    } = this.props;
-
-    const blockNameTitle = `${t(
-      `intro:${superBlock}.blocks.${block}.title`
-    )} - ${title}`;
-
-    const random = Math.floor(Math.random() * quizzes.length);
-    const quiz = quizzes[random].questions;
-    const quizForComponent = quiz.map(question => {
-      const distractors = question.distractors.map((distractor, index) => {
-        return {
-          label: distractor,
-          value: index + 1
-        };
-      });
-      const answer = {
-        label: question.answer,
-        value: 4
-      };
-
-      return {
-        question: question.question,
-        answers: [...distractors, answer]
-      };
+  useEffect(() => {
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
     });
+    challengeMounted(challengeMeta.id);
+  }, [
+    title,
+    challengeMeta,
+    challengeType,
+    helpCategory,
+    challengeMounted,
+    updateChallengeMeta
+  ]);
 
-    return (
-      <Hotkeys
-        executeChallenge={() => {
-          this.handleSubmit();
-        }}
-        containerRef={this.container}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
-      >
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
+  const handleSubmit = () => {
+    if (quizData.some(question => question.selectedAnswer == null)) {
+      setErrorMessage(t('learn.quiz.unanswered-questions'));
+      return;
+    }
+
+    validateAnswers();
+    setHasSubmitted(true);
+  };
+
+  // Handle error message display on submit.
+  useEffect(() => {
+    if (!hasSubmitted) return;
+
+    // `correctAnswerCount` is stored as a state in `useQuiz`,
+    // and the state setter is called when `validateAnswers` is called.
+    // With set state being performed async,
+    // the `correctAnswerCount` value cannot be used immediately within `handleSubmit.`
+    if (correctAnswerCount === quiz.length) {
+      openCompletionModal();
+      setErrorMessage('');
+    } else {
+      setErrorMessage(
+        t('learn.quiz.have-n-correct-questions', {
+          correctAnswerCount,
+          total: quiz.length
+        })
+      );
+    }
+  }, [correctAnswerCount, quiz.length, hasSubmitted, openCompletionModal, t]);
+
+  return (
+    <Hotkeys
+      executeChallenge={handleSubmit}
+      containerRef={container}
+      nextChallengePath={nextChallengePath}
+      prevChallengePath={prevChallengePath}
+    >
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container className='quiz-challenge-container'>
+          <Row>
+            <Spacer size='medium' />
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
+
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <ChallengeDescription description={description} />
+              <ObserveKeys>
+                {/* TODO: Export the useQuiz return type from fcc/ui */}
+                {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+                <Quiz questions={quizData} disabled={hasSubmitted} />
+              </ObserveKeys>
               <Spacer size='medium' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
+              <div aria-live='polite' aria-atomic='true'>
+                {errorMessage}
+              </div>
+              <Spacer size='medium' />
+              <Button
+                block={true}
+                variant='primary'
+                onClick={handleSubmit}
+                disabled={hasSubmitted}
               >
-                {title}
-              </ChallengeTitle>
-
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeDescription description={description} />
-                <ObserveKeys>
-                  <Quiz questions={quizForComponent} />
-                </ObserveKeys>
-                <Spacer size='medium' />
-                <Button
-                  block={true}
-                  variant='primary'
-                  onClick={() => this.handleSubmit()}
-                >
-                  {t('buttons.check-answer')}
-                </Button>
-                <Spacer size='xxSmall' />
-                <Button block={true} variant='primary' onClick={openHelpModal}>
-                  {t('buttons.ask-for-help')}
-                </Button>
-                <Spacer size='large' />
-              </Col>
-              <CompletionModal />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
-    );
-  }
-}
+                {t('buttons.check-answer')}
+              </Button>
+              <Spacer size='large' />
+            </Col>
+            <CompletionModal />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
+  );
+};
 
 ShowQuiz.displayName = 'ShowQuiz';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(ShowQuiz));
+export default connect(mapStateToProps, mapDispatchToProps)(ShowQuiz);
 
 export const query = graphql`
   query QuizChallenge($id: String!) {
@@ -266,6 +269,10 @@ export const query = graphql`
         fields {
           blockName
           slug
+          tests {
+            text
+            testString
+          }
         }
         quizzes {
           questions {
