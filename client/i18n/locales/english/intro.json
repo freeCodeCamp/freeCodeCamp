@@ -2244,7 +2244,12 @@
           "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
         ]
       },
-      "uglc": { "title": "199", "intro": [] },
+      "lab-palindrome-checker": {
+        "title": "Build a Palindrome Checker",
+        "intro": [
+          "For this lab, you'll build an application that checks whether a given word is a palindrome."
+        ]
+      },
       "lab-football-team-cards": {
         "title": "Build a Set of Football Team Cards",
         "intro": [
