@@ -2007,7 +2007,12 @@
       "ogko": { "title": "114", "intro": [] },
       "harp": { "title": "115", "intro": [] },
       "nsiq": { "title": "116", "intro": [] },
-      "geuv": { "title": "117", "intro": [] },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "For this project, you will build a product landing page to market a product of your choice."
+        ]
+      },
       "fdam": { "title": "118", "intro": [] },
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
