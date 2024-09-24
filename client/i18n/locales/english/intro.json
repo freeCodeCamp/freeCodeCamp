@@ -2176,7 +2176,12 @@
         ]
       },
       "kgtw": { "title": "169", "intro": [] },
-      "ljmq": { "title": "170", "intro": [] },
+      "workshop-sentence-analyzer": {
+        "title": "Build a Sentence Analyzer",
+        "intro": [
+          "In this workshop, you'll review working with JavaScript loops by building a sentence analyzer app."
+        ]
+      },
       "kcci": { "title": "171", "intro": [] },
       "puhe": { "title": "172", "intro": [] },
       "quiz-javascript-loops": {
