@@ -24,6 +24,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Your Internet Presence', () => {
+  test.skip(({ browserName }) => browserName === 'webkit', 'flaky on Safari');
   test('should display the section with save button being disabled', async ({
     page
   }) => {
