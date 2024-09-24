@@ -24,7 +24,7 @@ Be sure to study the diagrams carefully.
 
 Add a border to every element on the page and see how the boxes are laid out.
 
-# --question--
+# --questions--
 
 ## --text--
 

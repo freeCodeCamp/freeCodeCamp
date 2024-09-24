@@ -10,7 +10,7 @@ dashedName: simple-and-compound-interest-extra
 
 Here is a detour from the Python code, as this video shows you how to create mortgage payment amortization tables in Google Sheets. You will also learn about how to use a very similar setup to estimate retirement account investment returns. This is the video that shows you where your money is going.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -1,0 +1,61 @@
+{
+  "name": "Basic Node and Express",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-node-and-express",
+  "order": 372,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "587d7fb0367417b2b2512bed",
+      "title": "Meet the Node console"
+    },
+    {
+      "id": "587d7fb0367417b2b2512bee",
+      "title": "Start a Working Express Server"
+    },
+    {
+      "id": "587d7fb0367417b2b2512bef",
+      "title": "Serve an HTML File"
+    },
+    {
+      "id": "587d7fb0367417b2b2512bf0",
+      "title": "Serve Static Assets"
+    },
+    {
+      "id": "587d7fb1367417b2b2512bf1",
+      "title": "Serve JSON on a Specific Route"
+    },
+    {
+      "id": "587d7fb1367417b2b2512bf2",
+      "title": "Use the .env File"
+    },
+    {
+      "id": "587d7fb1367417b2b2512bf3",
+      "title": "Implement a Root-Level Request Logger Middleware"
+    },
+    {
+      "id": "587d7fb1367417b2b2512bf4",
+      "title": "Chain Middleware to Create a Time Server"
+    },
+    {
+      "id": "587d7fb2367417b2b2512bf5",
+      "title": "Get Route Parameter Input from the Client"
+    },
+    {
+      "id": "587d7fb2367417b2b2512bf6",
+      "title": "Get Query Parameter Input from the Client"
+    },
+    {
+      "id": "587d7fb2367417b2b2512bf7",
+      "title": "Use body-parser to Parse POST Requests"
+    },
+    {
+      "id": "587d7fb2367417b2b2512bf8",
+      "title": "Get Data from POST Requests"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

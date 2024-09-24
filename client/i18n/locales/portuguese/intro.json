@@ -618,7 +618,7 @@
         "title": "Banco de dados da tabela periódica",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará um script no Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
+          "Para este projeto, você criará um script do Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
@@ -1819,9 +1819,11 @@
         "title": "25",
         "intro": []
       },
-      "cikh": {
-        "title": "26",
-        "intro": []
+      "lab-checkout-page": {
+        "title": "Crie uma página de check-out",
+        "intro": [
+          "Neste laboratório, você criará uma página de check-out com acessíbilidade."
+        ]
       },
       "fqai": {
         "title": "27",
@@ -1890,9 +1892,9 @@
         "intro": []
       },
       "lab-stylized-to-do-list": {
-        "title": "Build a Stylized To-Do List",
+        "title": "Crie uma lista de tarefas estilizada",
         "intro": [
-          "In this lab, you'll build a To-Do list with and apply different styles to the links"
+          "Neste laboratório, você vai criar uma lista de tarefas e aplicar diferentes estilos aos links"
         ]
       },
       "humj": {
@@ -1939,9 +1941,11 @@
         "title": "54",
         "intro": []
       },
-      "chca": {
-        "title": "55",
-        "intro": []
+      "lab-event-flyer-page": {
+        "title": "Crie uma página de anúncio de evento",
+        "intro": [
+          "Neste laboratório, você usará unidades absolutas e relativas do CSS para criar uma página de anúncio de evento."
+        ]
       },
       "ywfm": {
         "title": "56",
@@ -2085,9 +2089,11 @@
         "title": "89",
         "intro": []
       },
-      "txmt": {
-        "title": "90",
-        "intro": []
+      "lab-tribute-page": {
+        "title": "Build a Tribute Page",
+        "intro": [
+          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+        ]
       },
       "fnde": {
         "title": "91",
@@ -2147,9 +2153,11 @@
         "title": "104",
         "intro": []
       },
-      "cbbz": {
-        "title": "105",
-        "intro": []
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
+        ]
       },
       "xcti": {
         "title": "106",
@@ -2227,9 +2235,11 @@
         "title": "123",
         "intro": []
       },
-      "mtcg": {
-        "title": "124",
-        "intro": []
+      "lab-personal-portfolio": {
+        "title": "Crie um portfólio pessoal",
+        "intro": [
+          "Para este projeto, você criará sua própria página pessoal de portfólio."
+        ]
       },
       "lvqc": {
         "title": "125",
@@ -2355,6 +2365,13 @@
         "title": "Crie um construtor de frases",
         "intro": [
           "Neste laboratório, você criará histórias diferentes atribuindo palavras diferentes a variáveis diferentes."
+        ]
+      },
+      "workshop-loan-qualification-checker": {
+        "title": "Crie um verificador de qualificação para empréstimos",
+        "intro": [
+          "Neste workshop, você continuará a aprender a trabalhar com condicionais criando uma aplicação de verificação de qualificação para empréstimos.",
+          "Você aprenderá mais sobre instruções <code>if</code> e sobre como usar operadores de comparação e várias condições em uma instrução <code>if</code>."
         ]
       },
       "lab-leap-year-calculator": {
@@ -2529,30 +2546,36 @@
         "intro": []
       },
       "lab-real-time-counter": {
-        "title": "Build a Real Time Counter",
-        "intro": ["In this lab, you will build a real-time character counter"]
+        "title": "Crie um contador em tempo real",
+        "intro": [
+          "Neste laboratório, você criará um contador de caracteres em tempo real"
+        ]
       },
       "fmbk": {
         "title": "196",
         "intro": []
       },
-      "nlbo": {
-        "title": "197",
-        "intro": []
+      "lab-lightbox-viewer": {
+        "title": "Crie um visualizador de lightbox",
+        "intro": [
+          "Neste laboratório, você vai criar um visualizador de lightbox para visualizar imagens em modo focado."
+        ]
       },
       "workshop-rps-game": {
-        "title": "Build a Rock, Paper, Scissors Game",
+        "title": "Crie um jogo de pedra, papel e tesoura",
         "intro": [
-          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+          "Neste workshop, você revisará a manipulação do DOM e eventos criando um jogo de Pedra, Papel e Tesoura."
         ]
       },
       "uglc": {
         "title": "199",
         "intro": []
       },
-      "vonu": {
-        "title": "200",
-        "intro": []
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
       },
       "iejn": {
         "title": "201",
@@ -2730,9 +2753,11 @@
         "title": "244",
         "intro": []
       },
-      "bfzo": {
-        "title": "245",
-        "intro": []
+      "lab-roman-numeral-converter": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "For this lab, you'll build an application that converts integers to Roman numerals."
+        ]
       },
       "lofk": {
         "title": "246",
@@ -2810,9 +2835,11 @@
         "title": "264",
         "intro": []
       },
-      "kwxs": {
-        "title": "265",
-        "intro": []
+      "lab-linked-list-class": {
+        "title": "Crie uma classe de listas encadeadas",
+        "intro": [
+          "Para este laboratório, você vai criar uma classe de listas vinculadas usando o JavaScript."
+        ]
       },
       "muyw": {
         "title": "266",
@@ -2876,9 +2903,11 @@
         "title": "280",
         "intro": []
       },
-      "hiyk": {
-        "title": "281",
-        "intro": []
+      "lab-pokemon-search-app": {
+        "title": "Crie uma aplicação de busca de Pokémons",
+        "intro": [
+          "Para esse projeto, você criará uma aplicação para a busca de Pokémons."
+        ]
       },
       "fihs": {
         "title": "282",
@@ -3084,9 +3113,12 @@
         "title": "332",
         "intro": []
       },
-      "hkdc": {
-        "title": "333",
-        "intro": []
+      "workshop-bash-boilerplate": {
+        "title": "Crie um boilerplate",
+        "intro": [
+          "O terminal permite que você envie comandos de texto para o seu computador que podem manipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
+          "Neste workshop de 170 aulas, você aprenderá comandos do terminal criando o boilerplate de um site usando apenas a linha de comando."
+        ]
       },
       "ovvb": {
         "title": "334",
@@ -3100,13 +3132,18 @@
         "title": "336",
         "intro": []
       },
-      "ohnc": {
-        "title": "337",
-        "intro": []
+      "workshop-mario-database": {
+        "title": "Crie um banco de dados do Mario",
+        "intro": [
+          "Um banco de dados relacional organiza dados em tabelas que são ligadas entre si através de relações.",
+          "Neste workshop de 165 aulas, você aprenderá o essencial sobre bancos de dados relacionais, criando um banco de dados PostgreSQL com vários personagens de videogame."
+        ]
       },
-      "suqn": {
-        "title": "338",
-        "intro": []
+      "lab-celestial-bodies-database": {
+        "title": "Crie um banco de dados de corpos celestiais",
+        "intro": [
+          "Para este projeto, você vai construir um banco de dados de corpos celestiais usando PostgreSQL."
+        ]
       },
       "oxxf": {
         "title": "339",
@@ -3120,9 +3157,12 @@
         "title": "341",
         "intro": []
       },
-      "hwpv": {
-        "title": "342",
-        "intro": []
+      "workshop-bash-five-programs": {
+        "title": "Crie cinco programas",
+        "intro": [
+          "Os scripts do Bash combinam comandos de terminal e lógica em programas que podem executar ou automatizar tarefas e muito mais.",
+          "Neste workshop de 220 aulas, você aprenderá mais comandos do terminal e como usá-los dentro de scripts do Bash, criando cinco programas pequenos."
+        ]
       },
       "keqo": {
         "title": "343",
@@ -3136,29 +3176,44 @@
         "title": "345",
         "intro": []
       },
-      "kuyg": {
-        "title": "346",
-        "intro": []
+      "workshop-sql-student-database-part-1": {
+        "title": "Crie um banco de dados de alunos: parte 1",
+        "intro": [
+          "O SQL, ou linguagem de consulta estruturada, é a linguagem de comunicação com um banco de dados relacional.",
+          "Neste workshop de 140 aulas, você criará um script do Bash que utiliza SQL para inserir informações sobre seus alunos de ciência da computação no PostgreSQL."
+        ]
       },
-      "tvlh": {
-        "title": "347",
-        "intro": []
+      "workshop-sql-student-database-part-2": {
+        "title": "Crie um banco de dados de alunos: parte 2",
+        "intro": [
+          "Comandos join do SQL são usados para combinar informações de várias tabelas em um banco de dados relacional",
+          "Neste workshop de 140 aulas, você completará seu banco de dados de alunos, mergulhando mais fundo nos comandos SQL."
+        ]
       },
-      "lhwu": {
-        "title": "348",
-        "intro": []
+      "lab-world-cup-database": {
+        "title": "Crie um banco de dados da Copa do Mundo",
+        "intro": [
+          "Para este projeto, você criará um script do Bash que insere informações de jogos da Copa do Mundo no PostgreSQL. Depois, você vai consultar o banco de dados para obter estatísticas úteis."
+        ]
       },
-      "mtkd": {
-        "title": "349",
-        "intro": []
+      "workshop-kitty-ipsum-translator": {
+        "title": "Crie um tradutor de Kitty Ipsum",
+        "intro": [
+          "Há mais comandos do Bash do que você imagina.",
+          "Neste workshop de 140 aulas, você aprenderá alguns comandos mais complexos e detalhes de como funcionam os comandos."
+        ]
       },
-      "wgfc": {
-        "title": "350",
-        "intro": []
+      "workshop-bike-rental-shop": {
+        "title": "Crie uma loja de aluguel de bicicletas",
+        "intro": [
+          "Neste workshop de 210 aulas, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL."
+        ]
       },
-      "sldv": {
-        "title": "351",
-        "intro": []
+      "lab-salon-appointment-scheduler": {
+        "title": "Crie um agendador de compromissos do salão de beleza",
+        "intro": [
+          "Para este laboratório, você criará um programa de bash interativo que utiliza PostgreSQL para acompanhar os clientes e horários marcados em seu salão."
+        ]
       },
       "zygv": {
         "title": "352",
@@ -3172,9 +3227,12 @@
         "title": "354",
         "intro": []
       },
-      "awnl": {
-        "title": "355",
-        "intro": []
+      "workshop-castle": {
+        "title": "Crie um castelo",
+        "intro": [
+          "O Nano é um programa que permite editar arquivos diretamente no terminal.",
+          "Neste workshop de 40 aulas, você aprenderá a editar arquivos no terminal com o nano e construirá um castelo."
+        ]
       },
       "cysa": {
         "title": "356",
@@ -3188,17 +3246,24 @@
         "title": "358",
         "intro": []
       },
-      "ufxg": {
-        "title": "359",
-        "intro": []
+      "workshop-sql-reference-object": {
+        "title": "Crie um objeto de referência SQL",
+        "intro": [
+          "O Git é um sistema de controle de versão que mantém o controle de todas as alterações feitas em sua base de código.",
+          "Neste workshop de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
+        ]
       },
-      "lvrx": {
-        "title": "360",
-        "intro": []
+      "lab-periodic-table-database": {
+        "title": "Crie um banco de dados da tabela periódica",
+        "intro": [
+          "Para este laboratório, você criará um script do Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
+        ]
       },
-      "ofxk": {
-        "title": "361",
-        "intro": []
+      "lab-number-guessing-game": {
+        "title": "Crie um jogo de adivinhação de números",
+        "intro": [
+          "Para este laboratório, você usará scripts de Bash, PostgreSQL e o Git para criar um jogo de sugestões de números que será executado no terminal e que gravará as informações de usuários."
+        ]
       },
       "mgoc": {
         "title": "362",
@@ -3232,33 +3297,47 @@
         "title": "369",
         "intro": []
       },
-      "ttip": {
-        "title": "370",
-        "intro": []
+      "workshop-npm-packages": {
+        "title": "Gerenciamento de pacotes com o npm",
+        "intro": [
+          "O npm (Node Package Manager) é uma ferramenta de linha de comando para instalar, criar e compartilhar pacotes de código JavaScript escritos para Node.js. Há muitos pacotes de código aberto disponíveis no npm. Então, antes de iniciar um projeto, explore os pacotes que já existem para que você não acabe recriando do zero coisas como trabalhar com datas ou buscar dados de uma API.",
+          "Neste workshop, você aprenderá o básico sobre como usar o npm, incluindo como trabalhar com o arquivo <code>package.json</code> e como gerenciar suas dependências instaladas."
+        ]
       },
       "hjku": {
         "title": "371",
         "intro": []
       },
-      "sykw": {
-        "title": "372",
-        "intro": []
+      "workshop-node-and-express": {
+        "title": "Básico sobre Node e Express",
+        "intro": [
+          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
+          "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
+          "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
+          "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
+        ]
       },
       "zzhp": {
         "title": "373",
         "intro": []
       },
-      "nmve": {
-        "title": "374",
-        "intro": []
+      "lab-request-header-parser-microservice": {
+        "title": "Crie um microsserviço conversor de requisição de cabeçalho",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de conversão de cabeçalho de solicitação"
+        ]
       },
-      "agky": {
-        "title": "375",
-        "intro": []
+      "lab-url-shortener-microservice": {
+        "title": "Crie um microsserviço redutor de URL",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de redução de URLs"
+        ]
       },
-      "bqlb": {
-        "title": "376",
-        "intro": []
+      "lab-exercise-tracker": {
+        "title": "Crie um monitor de exercícios",
+        "intro": [
+          "Neste laboratório, você vai construir um monitor de exercícios"
+        ]
       },
       "kegi": {
         "title": "377",

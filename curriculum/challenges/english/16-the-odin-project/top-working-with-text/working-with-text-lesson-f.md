@@ -41,7 +41,7 @@ You use indentation to make the level of nesting clear and readable for yourselv
 
 The parent, child, and sibling relationships between elements will become much more important later when you start styling your HTML with CSS and adding behavior with JavaScript. For now, however, it is just important to know the distinction between how elements are related and the terminology used to describe their relationships.
 
-# --question--
+# --questions--
 
 ## --text--
 

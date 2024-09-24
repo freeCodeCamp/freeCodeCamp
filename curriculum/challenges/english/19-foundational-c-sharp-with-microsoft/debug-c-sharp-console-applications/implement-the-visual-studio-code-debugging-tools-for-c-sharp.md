@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 Complete the <a href="https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/" target="_blank" rel="noreferrer">Implement the Visual Studio Code Debugging Tools for C#</a> module on Microsoft Learn. Then, answer the question below.
 
-# --question--
+# --questions--
 
 ## --text--
 

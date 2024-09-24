@@ -3,9 +3,9 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-quicksort-algorithm",
-  "order": 240,
+  "order": 239,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66d97c3be4030e8f41a92083", "title": "Build the Quicksort Algorithm" }],
+  "challengeOrder": [{ "id": "587d825a367417b2b2512c89", "title": "Build the Quicksort Algorithm" }],
   "helpCategory": "JavaScript",
   "blockType": "lab"
 }

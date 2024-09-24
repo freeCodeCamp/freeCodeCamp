@@ -10,7 +10,7 @@ dashedName: more-resources-in-colab
 
 One more thing... This brief video will show you some of the resources available to you in Google Colab notebooks.
 
-# --question--
+# --questions--
 
 ## --text--
 

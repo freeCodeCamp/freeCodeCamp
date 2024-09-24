@@ -9,6 +9,8 @@ exports.sortChallengeFiles = function sortChallengeFiles(challengeFiles) {
     if (b.history[0] === 'index.jsx') return 1;
     if (a.history[0] === 'script.js') return -1;
     if (b.history[0] === 'script.js') return 1;
+    if (a.history[0] === 'index.ts') return -1;
+    if (b.history[0] === 'index.ts') return 1;
     return 0;
   });
   return xs;

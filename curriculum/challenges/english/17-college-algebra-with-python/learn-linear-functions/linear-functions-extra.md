@@ -12,7 +12,7 @@ This video will give you a deeper look into developing equations from word probl
 
 Here is the <a href="https://colab.research.google.com/drive/1OzC7gqCNWNzwv50ziNeG2IJhbXm88-XK?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

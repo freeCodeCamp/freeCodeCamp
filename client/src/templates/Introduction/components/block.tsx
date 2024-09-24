@@ -115,11 +115,7 @@ class Block extends Component<BlockProps> {
     });
 
     const isGridBlock = challenges.some(({ challenge }) => {
-      return isGridBased({
-        superBlock,
-        challengeType: challenge.challengeType,
-        blockType: challenge.blockType
-      });
+      return isGridBased(superBlock, challenge.challengeType);
     });
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {

@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect, type Page } from '@playwright/test';
+import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 import { clearEditor, focusEditor } from './utils/editor';
 
@@ -34,122 +35,74 @@ const completeFrontEndCert = async (page: Page) => {
   }
 };
 
-const completeThreeChallenges = async ({
-  page,
-  browserName,
-  isMobile
-}: {
-  page: Page;
-  browserName: string;
-  isMobile: boolean;
-}) => {
-  await page.goto(
-    '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
-  );
-
-  const challenges = [
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
-      solution: `// some comment\n/* some comment */`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables',
-      solution: 'var myName;'
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator',
-      solution: `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
-    }
-  ];
-
-  for (const challenge of challenges) {
-    await page.waitForURL(challenge.url);
-
-    await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
-
-    await page.evaluate(
-      async contents => await navigator.clipboard.writeText(contents),
-      challenge.solution
-    );
-    await page.keyboard.press('ControlOrMeta+V');
-
-    await page.getByRole('button', { name: 'Run' }).click();
-    await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
-    await page.getByRole('button', { name: 'Submit' }).click();
+const challenges = [
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
+    solution: `// some comment\n/* some comment */`
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables',
+    solution: 'var myName;'
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator',
+    solution: `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another',
+    solution: `// Setup\nvar a;\na = 7;\nvar b;\n\n// Only change code below this line\nb = a;`
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator',
+    solution: 'var a = 9;'
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables',
+    solution: `var myFirstName = 'foo';\nvar myLastName = 'bar';`
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables',
+    solution: `// Only change code below this line\nvar a = 5;\nvar b = 10;\nvar c = 'I am a';\n// Only change code above this line\n\na = a + 1;\nb = b + 5;\nc = c + " String!";`
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables',
+    solution: `// Variable declarations\nvar studlyCapVar;\nvar properCamelCase;\nvar titleCaseOver;\n\n// Variable assignments\nstudlyCapVar = 10;\nproperCamelCase = "A String";\ntitleCaseOver = 9000;`
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords',
+    solution: `let catName = "Oliver";\nlet catSound = "Meow!";`
+  },
+  {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword',
+    solution: `const FCC = "freeCodeCamp";\n// Change this line\nlet fact = "is cool!";\n// Change this line\nfact = "is awesome!";\nconsole.log(FCC, fact);\n// Change this line`
   }
-};
+];
 
-const completeTenChallenges = async ({
+const completeChallenges = async ({
   page,
   browserName,
-  isMobile
+  isMobile,
+  number
 }: {
   page: Page;
   browserName: string;
   isMobile: boolean;
+  number: number;
 }) => {
-  await page.goto(
-    '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
-  );
-
-  const challenges = [
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
-      solution: `// some comment\n/* some comment */`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables',
-      solution: 'var myName;'
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator',
-      solution: `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another',
-      solution: `// Setup\nvar a;\na = 7;\nvar b;\n\n// Only change code below this line\nb = a;`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator',
-      solution: 'var a = 9;'
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables',
-      solution: `var myFirstName = 'foo';\nvar myLastName = 'bar';`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables',
-      solution: `// Only change code below this line\nvar a = 5;\nvar b = 10;\nvar c = 'I am a';\n// Only change code above this line\n\na = a + 1;\nb = b + 5;\nc = c + " String!";`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables',
-      solution: `// Variable declarations\nvar studlyCapVar;\nvar properCamelCase;\nvar titleCaseOver;\n\n// Variable assignments\nstudlyCapVar = 10;\nproperCamelCase = "A String";\ntitleCaseOver = 9000;`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords',
-      solution: `let catName = "Oliver";\nlet catSound = "Meow!";`
-    },
-    {
-      url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword',
-      solution: `const FCC = "freeCodeCamp";\n// Change this line\nlet fact = "is cool!";\n// Change this line\nfact = "is awesome!";\nconsole.log(FCC, fact);\n// Change this line`
-    }
-  ];
-
-  for (const challenge of challenges) {
+  await page.goto(challenges[0].url);
+  for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(challenge.url);
-
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
-
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),
       challenge.solution
     );
     await page.keyboard.press('ControlOrMeta+V');
-
     await page.getByRole('button', { name: 'Run' }).click();
-    await expect(page.getByRole('dialog')).toBeVisible(); // completion dialog
+    await expect(
+      page.getByRole('dialog').filter({ hasText: 'Basic Javascript' })
+    ).toBeVisible(); // completion dialog
     await page.getByRole('button', { name: 'Submit' }).click();
   }
 };
@@ -160,6 +113,10 @@ test.skip(
 );
 
 test.describe('Donation modal display', () => {
+  test.beforeEach(async ({ context }) => {
+    await addGrowthbookCookie({ context, variation: 'A' });
+  });
+
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test('should display the content correctly and disable close when the animation is not complete', async ({
@@ -171,7 +128,7 @@ test.describe('Donation modal display', () => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     test.setTimeout(40000);
 
-    await completeThreeChallenges({ page, browserName, isMobile });
+    await completeChallenges({ page, browserName, isMobile, number: 3 });
 
     const donationModal = page
       .getByRole('dialog')
@@ -241,6 +198,9 @@ test.describe('Donation modal display', () => {
 
 test.describe('Donation modal appearance logic - New user', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
+  test.beforeEach(async ({ context }) => {
+    await addGrowthbookCookie({ context, variation: 'B' });
+  });
 
   test.beforeEach(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
@@ -259,7 +219,7 @@ test.describe('Donation modal appearance logic - New user', () => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     // Development user doesn't have any completed challenges, we are completing the first 3.
-    await completeThreeChallenges({ page, browserName, isMobile });
+    await completeChallenges({ page, browserName, isMobile, number: 3 });
 
     const donationModal = page
       .getByRole('dialog')
@@ -276,7 +236,7 @@ test.describe('Donation modal appearance logic - New user', () => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     test.setTimeout(50000);
 
-    await completeTenChallenges({ page, isMobile, browserName });
+    await completeChallenges({ page, isMobile, browserName, number: 10 });
 
     const donationModal = page
       .getByRole('dialog')
@@ -333,6 +293,9 @@ test.describe('Donation modal appearance logic - New user', () => {
 
 test.describe('Donation modal appearance logic - Certified user', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  test.beforeEach(async ({ context }) => {
+    await addGrowthbookCookie({ context, variation: 'A' });
+  });
 
   test('should appear if the user has completed 3 challenges and has more than 10 completed challenges in total', async ({
     page,
@@ -344,7 +307,7 @@ test.describe('Donation modal appearance logic - Certified user', () => {
     test.setTimeout(40000);
 
     // Certified user already has more than 10 completed challenges, we are just completing 3 more.
-    await completeThreeChallenges({ page, browserName, isMobile });
+    await completeChallenges({ page, isMobile, browserName, number: 3 });
 
     const donationModal = page
       .getByRole('dialog')
@@ -390,7 +353,7 @@ test.describe('Donation modal appearance logic - Donor user', () => {
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
-    await completeThreeChallenges({ page, browserName, isMobile });
+    await completeChallenges({ page, browserName, isMobile, number: 3 });
 
     const donationModal = page
       .getByRole('dialog')

@@ -1,0 +1,13 @@
+{
+  "name": "JavaScript Arrays Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-arrays",
+  "order": 163,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66edcccbba6dacdb65a59067", "title": "JavaScript Arrays Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

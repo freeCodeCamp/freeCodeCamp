@@ -1,0 +1,13 @@
+{
+  "name": "JavaScript Dates Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-dates",
+  "order": 221,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66edd3711bb9f7efa73aef91", "title": "JavaScript Dates Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

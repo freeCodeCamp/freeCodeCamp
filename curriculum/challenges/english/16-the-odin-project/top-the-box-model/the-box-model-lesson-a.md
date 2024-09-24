@@ -16,7 +16,7 @@ Don’t get overwhelmed with all the tools you’re now seeing! For this lesson,
 
 Play around with Chrome Dev Tools and see if you can answer the following question.
 
-# --question--
+# --questions--
 
 ## --text--
 

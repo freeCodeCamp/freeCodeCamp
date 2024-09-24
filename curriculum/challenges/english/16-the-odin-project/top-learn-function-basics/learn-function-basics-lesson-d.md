@@ -29,7 +29,7 @@ function favoriteAnimal(animal = 'Giant Panda') {
 
 In the example above, the default value of the parameter `animal` is set to `'Giant Panda'`. If the function `favoriteAnimal` is called without an argument, the parameter `animal` will be assigned the value `'Giant Panda'`.
 
-# --question--
+# --questions--
 
 ## --text--
 

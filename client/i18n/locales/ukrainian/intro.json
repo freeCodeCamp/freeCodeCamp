@@ -618,7 +618,7 @@
         "title": "База даних «Періодична таблиця»",
         "intro": [
           "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
-          "У цьому проєкті ви створите скрипт Bash для отримання інформації про хімічні елементи з бази даних періодичної таблиці."
+          "У цьому проєкті ви створите Bash-скрипт, щоб отримати інформацію про хімічні елементи з бази даних періодичної таблиці."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
@@ -1749,7 +1749,7 @@
       "workshop-blog-page": {
         "title": "Створіть сторінку блогу про котів",
         "intro": [
-          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "У цьому практичному завданні ви дізнаєтесь, як створити сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
         ]
       },
       "szcd": {
@@ -1809,9 +1809,11 @@
         "title": "25",
         "intro": []
       },
-      "cikh": {
-        "title": "26",
-        "intro": []
+      "lab-checkout-page": {
+        "title": "Створіть платіжну сторінку",
+        "intro": [
+          "У цій лабораторній роботі ви створите доступну платіжну сторінку."
+        ]
       },
       "fqai": {
         "title": "27",
@@ -1880,9 +1882,9 @@
         "intro": []
       },
       "lab-stylized-to-do-list": {
-        "title": "Build a Stylized To-Do List",
+        "title": "Створіть стилізований список справ",
         "intro": [
-          "In this lab, you'll build a To-Do list with and apply different styles to the links"
+          "У цій лабораторній роботі ви створите список справ, які потрібно виконати, та застосуєте різні стилі до посилань."
         ]
       },
       "humj": {
@@ -1929,9 +1931,11 @@
         "title": "54",
         "intro": []
       },
-      "chca": {
-        "title": "55",
-        "intro": []
+      "lab-event-flyer-page": {
+        "title": "Build an Event Flyer Page",
+        "intro": [
+          "In this lab, you will use absolute and relative CSS units to create an event flyer page."
+        ]
       },
       "ywfm": {
         "title": "56",
@@ -2075,9 +2079,11 @@
         "title": "89",
         "intro": []
       },
-      "txmt": {
-        "title": "90",
-        "intro": []
+      "lab-tribute-page": {
+        "title": "Build a Tribute Page",
+        "intro": [
+          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+        ]
       },
       "fnde": {
         "title": "91",
@@ -2137,9 +2143,11 @@
         "title": "104",
         "intro": []
       },
-      "cbbz": {
-        "title": "105",
-        "intro": []
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
+        ]
       },
       "xcti": {
         "title": "106",
@@ -2217,9 +2225,9 @@
         "title": "123",
         "intro": []
       },
-      "mtcg": {
-        "title": "124",
-        "intro": []
+      "lab-personal-portfolio": {
+        "title": "Створіть особисте портфоліо",
+        "intro": ["У цьому проєкті ви створите особисте портфоліо."]
       },
       "lvqc": {
         "title": "125",
@@ -2296,9 +2304,9 @@
         "intro": []
       },
       "lab-fortune-teller": {
-        "title": "Build a Fortune Teller",
+        "title": "Створіть генератор передбачень",
         "intro": [
-          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+          "У цій лабораторній роботі ви створите генератор передбачень, де користувач випадково обиратиме передбачення зі всіх доступних."
         ]
       },
       "wfyg": {
@@ -2336,21 +2344,28 @@
         ]
       },
       "lab-email-masker": {
-        "title": "Build an Email Masker",
+        "title": "Створіть маскування електронної пошти",
         "intro": [
-          "In this lab, you'll build an email masker that will take an email address and obscure it."
+          "У цій лабораторній роботі ви створите маскування е-пошти, яке прийматиме адресу та приховуватиме її."
         ]
       },
       "lab-sentence-maker": {
-        "title": "Build a Sentence Maker",
+        "title": "Створіть творця речень",
         "intro": [
-          "In this lab, you will create different stories by assigning different words to different variables."
+          "У цій лабораторній роботі ви створите різноманітні історії, призначаючи різні слова до різних змінних."
+        ]
+      },
+      "workshop-loan-qualification-checker": {
+        "title": "Створіть перевірку на дотримання вимог до позики",
+        "intro": [
+          "У цьому практичному завданні ви продовжите вивчати про умовні інструкції, створивши перевірку на дотримання вимог до позики.",
+          "Ви детальніше дізнаєтесь про інструкції <code>if</code> та як використовувати оператори порівняння і декілька умов в інструкції <code>if</code>."
         ]
       },
       "lab-leap-year-calculator": {
-        "title": "Build a Leap Year Calculator ",
+        "title": "Створіть калькулятор високосних років ",
         "intro": [
-          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+          "У цій лабораторній роботі ви будете використовувати умовні інструкції та цикли, щоб визначити, чи рік високосний."
         ]
       },
       "pljo": {
@@ -2449,9 +2464,9 @@
         "intro": []
       },
       "lab-inventory-management-program": {
-        "title": "Build an Inventory Management Program",
+        "title": "Створіть програму керування запасами",
         "intro": [
-          "For this lab, you will build an inventory management program using JavaScript."
+          "У цій лабораторній роботі ви створите програму керування запасами за допомогою JavaScript."
         ]
       },
       "fbbn": {
@@ -2519,30 +2534,36 @@
         "intro": []
       },
       "lab-real-time-counter": {
-        "title": "Build a Real Time Counter",
-        "intro": ["In this lab, you will build a real-time character counter"]
+        "title": "Створіть лічильник реального часу",
+        "intro": [
+          "У цій лабораторній роботі ви створите лічильник символів у реальному часі."
+        ]
       },
       "fmbk": {
         "title": "196",
         "intro": []
       },
-      "nlbo": {
-        "title": "197",
-        "intro": []
+      "lab-lightbox-viewer": {
+        "title": "Build a Lightbox Viewer",
+        "intro": [
+          "In this lab, you will build a lighbox viewer for viewing images in a focused mode."
+        ]
       },
       "workshop-rps-game": {
-        "title": "Build a Rock, Paper, Scissors Game",
+        "title": "Створіть гру «Камінь-ножиці-папір»",
         "intro": [
-          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+          "У цьому практичному завданні ви пригадаєте маніпуляцію та події DOM, створивши гру «Камінь-ножиці-папір»."
         ]
       },
       "uglc": {
         "title": "199",
         "intro": []
       },
-      "vonu": {
-        "title": "200",
-        "intro": []
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
       },
       "iejn": {
         "title": "201",
@@ -2699,9 +2720,9 @@
         "intro": []
       },
       "lab-quicksort-algorithm": {
-        "title": "Build the Quicksort Algorithm",
+        "title": "Створіть алгоритм швидкого сортування",
         "intro": [
-          "For this lab, you will implement the Quicksort algorithm using JavaScript."
+          "У цій лабораторній роботі ви імплементуєте алгоритм швидкого сортування, використовуючи JavaScript."
         ]
       },
       "manv": {
@@ -2720,9 +2741,11 @@
         "title": "244",
         "intro": []
       },
-      "bfzo": {
-        "title": "245",
-        "intro": []
+      "lab-roman-numeral-converter": {
+        "title": "Build a Roman Numeral Converter Project",
+        "intro": [
+          "For this lab, you'll build an application that converts integers to Roman numerals."
+        ]
       },
       "lofk": {
         "title": "246",
@@ -2800,9 +2823,11 @@
         "title": "264",
         "intro": []
       },
-      "kwxs": {
-        "title": "265",
-        "intro": []
+      "lab-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [
+          "For this lab, you will build a linked list class using JavaScript."
+        ]
       },
       "muyw": {
         "title": "266",
@@ -2837,9 +2862,9 @@
         "intro": []
       },
       "lab-nth-fibonacci-number-generator": {
-        "title": "Build the nth Fibonacci number generator",
+        "title": "Створіть генератор n-го числа Фібоначчі",
         "intro": [
-          "For this lab, you will implement the nth Fibonacci number generator."
+          "У цій лабораторній роботі ви імплементуєте генератор n-го числа Фібоначчі."
         ]
       },
       "cfyv": {
@@ -2866,9 +2891,9 @@
         "title": "280",
         "intro": []
       },
-      "hiyk": {
-        "title": "281",
-        "intro": []
+      "lab-pokemon-search-app": {
+        "title": "Build a Pokémon Search App",
+        "intro": ["For this project, you will build a Pokémon search app."]
       },
       "fihs": {
         "title": "282",
@@ -3074,9 +3099,12 @@
         "title": "332",
         "intro": []
       },
-      "hkdc": {
-        "title": "333",
-        "intro": []
+      "workshop-bash-boilerplate": {
+        "title": "Build a Boilerplate",
+        "intro": [
+          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
+        ]
       },
       "ovvb": {
         "title": "334",
@@ -3090,13 +3118,18 @@
         "title": "336",
         "intro": []
       },
-      "ohnc": {
-        "title": "337",
-        "intro": []
+      "workshop-mario-database": {
+        "title": "Build a Mario Database",
+        "intro": [
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+        ]
       },
-      "suqn": {
-        "title": "338",
-        "intro": []
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Database",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
       },
       "oxxf": {
         "title": "339",
@@ -3110,9 +3143,12 @@
         "title": "341",
         "intro": []
       },
-      "hwpv": {
-        "title": "342",
-        "intro": []
+      "workshop-bash-five-programs": {
+        "title": "Build Five Programs",
+        "intro": [
+          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+        ]
       },
       "keqo": {
         "title": "343",
@@ -3126,29 +3162,44 @@
         "title": "345",
         "intro": []
       },
-      "kuyg": {
-        "title": "346",
-        "intro": []
+      "workshop-sql-student-database-part-1": {
+        "title": "Build a Student Database: Part 1",
+        "intro": [
+          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
+          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+        ]
       },
-      "tvlh": {
-        "title": "347",
-        "intro": []
+      "workshop-sql-student-database-part-2": {
+        "title": "Build a Student Database: Part 2",
+        "intro": [
+          "SQL join commands are used to combine information from multiple tables in a relational database",
+          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
+        ]
       },
-      "lhwu": {
-        "title": "348",
-        "intro": []
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
       },
-      "mtkd": {
-        "title": "349",
-        "intro": []
+      "workshop-kitty-ipsum-translator": {
+        "title": "Build a Kitty Ipsum Translator",
+        "intro": [
+          "There's more to Bash commands than you might think.",
+          "In this 140-lesson workshop, you will learn some more complex commands, and the details of how commands work."
+        ]
       },
-      "wgfc": {
-        "title": "350",
-        "intro": []
+      "workshop-bike-rental-shop": {
+        "title": "Build a Bike Rental Shop",
+        "intro": [
+          "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
       },
-      "sldv": {
-        "title": "351",
-        "intro": []
+      "lab-salon-appointment-scheduler": {
+        "title": "Build a Salon Appointment Scheduler",
+        "intro": [
+          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
       },
       "zygv": {
         "title": "352",
@@ -3162,9 +3213,12 @@
         "title": "354",
         "intro": []
       },
-      "awnl": {
-        "title": "355",
-        "intro": []
+      "workshop-castle": {
+        "title": "Build a Castle",
+        "intro": [
+          "Nano is a program that allows you to edit files right in the terminal.",
+          "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
+        ]
       },
       "cysa": {
         "title": "356",
@@ -3178,17 +3232,24 @@
         "title": "358",
         "intro": []
       },
-      "ufxg": {
-        "title": "359",
-        "intro": []
+      "workshop-sql-reference-object": {
+        "title": "Build an SQL Reference Object",
+        "intro": [
+          "Git is a version control system that keeps track of all the changes you make to your codebase.",
+          "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+        ]
       },
-      "lvrx": {
-        "title": "360",
-        "intro": []
+      "lab-periodic-table-database": {
+        "title": "Build a Periodic Table Database",
+        "intro": [
+          "For this lab, you will create a Bash script to get information about chemical elements from a periodic table database."
+        ]
       },
-      "ofxk": {
-        "title": "361",
-        "intro": []
+      "lab-number-guessing-game": {
+        "title": "Build a Number Guessing Game",
+        "intro": [
+          "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+        ]
       },
       "mgoc": {
         "title": "362",
@@ -3222,33 +3283,43 @@
         "title": "369",
         "intro": []
       },
-      "ttip": {
-        "title": "370",
-        "intro": []
+      "workshop-npm-packages": {
+        "title": "Managing Packages with npm",
+        "intro": [
+          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
+          "In this workshop, you'll learn the basics of using npm, including how to work with the <code>package.json</code> file and how to manage your installed dependencies."
+        ]
       },
       "hjku": {
         "title": "371",
         "intro": []
       },
-      "sykw": {
-        "title": "372",
-        "intro": []
+      "workshop-node-and-express": {
+        "title": "Basic Node and Express",
+        "intro": [
+          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
+          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
+          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+        ]
       },
       "zzhp": {
         "title": "373",
         "intro": []
       },
-      "nmve": {
-        "title": "374",
-        "intro": []
+      "lab-request-header-parser-microservice": {
+        "title": "Build a Request Header Parser Microservice",
+        "intro": [
+          "In this lab, you will build a request header parser microservice"
+        ]
       },
-      "agky": {
-        "title": "375",
-        "intro": []
+      "lab-url-shortener-microservice": {
+        "title": "Build a URL Shortener Microservice",
+        "intro": ["In this lab, you will build a URL Shortener Microservice"]
       },
-      "bqlb": {
-        "title": "376",
-        "intro": []
+      "lab-exercise-tracker": {
+        "title": "Створіть трекер вправ",
+        "intro": ["У цій лабораторній роботі ви створите трекер вправ."]
       },
       "kegi": {
         "title": "377",

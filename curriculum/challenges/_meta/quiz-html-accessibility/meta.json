@@ -1,0 +1,10 @@
+{
+  "name": "HTML Accessibility Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-html-accessibility",
+  "order": 28,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed9026f45ce3ece4053ebb", "title": "HTML Accessibility Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

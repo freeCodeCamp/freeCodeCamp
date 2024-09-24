@@ -22,7 +22,7 @@ Back in the `index.html` file, let’s add the `<html>` element by typing out it
 ## What is the lang attribute?
 `lang` specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.
 
-# --question--
+# --questions--
     
 ## --text--
 

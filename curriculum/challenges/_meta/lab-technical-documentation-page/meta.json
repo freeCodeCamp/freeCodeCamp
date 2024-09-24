@@ -1,0 +1,16 @@
+{
+  "name": "Build a Technical Documentation Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-technical-documentation-page",
+  "order": 105,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "587d78b0367417b2b2512b05",
+      "title": "Build a Technical Documentation Page" 
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

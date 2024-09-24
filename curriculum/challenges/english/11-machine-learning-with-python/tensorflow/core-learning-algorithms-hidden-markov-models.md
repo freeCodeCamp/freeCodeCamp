@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: core-learning-algorithms-hidden-markov-models
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

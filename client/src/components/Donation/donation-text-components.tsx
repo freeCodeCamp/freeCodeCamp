@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
+
 import Caret from '../../assets/icons/caret';
 import { Spacer } from '../helpers';
 import GreenPass from '../../assets/icons/green-pass';
@@ -318,8 +320,11 @@ export const GetSupporterBenefitsText = ({
 
 export const ModalBenefitList = () => {
   const { t } = useTranslation();
+  const isA11yFeatureEnabled = useFeature('a11y-donation-modal').on;
+
   return (
-    <ul>
+    // Set the initial focus to this list as it appears first in the second modal.
+    <ul {...(isA11yFeatureEnabled && { tabIndex: -1 })}>
       <li>
         <GreenPass aria-hidden={true} />
         {t('donate.help-us-more-certifications')}

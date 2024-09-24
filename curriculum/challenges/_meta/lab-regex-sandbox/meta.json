@@ -1,0 +1,11 @@
+{
+  "name": "Build a RegEx Sandbox",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-regex-sandbox",
+  "order": 210,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66e028680eca7d21db7e1aee", "title": "Build a RegEx Sandbox" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

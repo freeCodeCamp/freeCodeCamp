@@ -12,7 +12,7 @@ Inline elements, however, do not start on a new line. They appear in line with w
 
 Search the web for a list of `block` elements and a list of `inline` elements. 
 
-# --question-- 
+# --questions--
 
 ## --text--
 

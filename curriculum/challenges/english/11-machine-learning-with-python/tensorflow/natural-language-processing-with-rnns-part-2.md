@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: natural-language-processing-with-rnns-part-2
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

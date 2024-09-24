@@ -31,7 +31,7 @@ Now, let’s change things a little bit:
 
 In the example above, despite rule 2 having more class selectors than ID selectors, rule 1 is more specific because ID beats class.
 
-# --question--
+# --questions--
 
 ## --text--
 
