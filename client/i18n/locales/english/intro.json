@@ -2440,7 +2440,10 @@
       "gjbf": { "title": "286", "intro": [] },
       "mbpv": { "title": "287", "intro": [] },
       "eeez": { "title": "288", "intro": [] },
-      "xweg": { "title": "289", "intro": [] },
+      "quiz-web-standards": {
+        "title": "Web Standards Quiz",
+        "intro": ["Test what you've learned in this quiz on Web Standards."]
+      },
       "khuu": { "title": "290", "intro": [] },
       "xdly": { "title": "291", "intro": [] },
       "rhhl": { "title": "292", "intro": [] },
@@ -2448,7 +2451,10 @@
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
       "erfj": { "title": "296", "intro": [] },
-      "zcef": { "title": "297", "intro": [] },
+      "quiz-react": {
+        "title": "React Basics Quiz",
+        "intro": ["Test what you've learned in this quiz on React Basics."]
+      },
       "hfwi": { "title": "298", "intro": [] },
       "rnwr": { "title": "299", "intro": [] },
       "oeqv": { "title": "300", "intro": [] },
@@ -2456,7 +2462,12 @@
       "vtpz": { "title": "302", "intro": [] },
       "dfwl": { "title": "303", "intro": [] },
       "adzm": { "title": "304", "intro": [] },
-      "yani": { "title": "305", "intro": [] },
+      "quiz-react-state-and-hooks": {
+        "title": "React State and Hooks Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on React State and Hooks."
+        ]
+      },
       "voks": { "title": "306", "intro": [] },
       "uwum": { "title": "307", "intro": [] },
       "ukem": { "title": "308", "intro": [] },
@@ -2465,21 +2476,38 @@
       "pexz": { "title": "311", "intro": [] },
       "prlo": { "title": "312", "intro": [] },
       "jsnd": { "title": "313", "intro": [] },
-      "lpdx": { "title": "314", "intro": [] },
+      "quiz-advanced-react": {
+        "title": "Advanced React Quiz",
+        "intro": ["Test what you've learned in this quiz on Advanced React."]
+      },
       "tkgg": { "title": "315", "intro": [] },
       "coip": { "title": "316", "intro": [] },
-      "wkxy": { "title": "317", "intro": [] },
+      "quiz-web-performance": {
+        "title": "Web Performance Quiz",
+        "intro": ["Test what you've learned in this quiz on Web Performance."]
+      },
       "hzab": { "title": "318", "intro": [] },
       "ggea": { "title": "319", "intro": [] },
       "vgvz": { "title": "320", "intro": [] },
       "jkfc": { "title": "321", "intro": [] },
-      "jsbo": { "title": "322", "intro": [] },
+      "quiz-typescript": {
+        "title": "TypeScript Quiz",
+        "intro": ["Test what you've learned in this quiz on TypeScript."]
+      },
       "zhhp": { "title": "323", "intro": [] },
       "nwwd": { "title": "324", "intro": [] },
-      "iuad": { "title": "325", "intro": [] },
+      "quiz-css-libraries-and-frameworks": {
+        "title": "CSS Libraries and Frameworks Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on CSS Libraries and Frameworks."
+        ]
+      },
       "gora": { "title": "326", "intro": [] },
       "vpkl": { "title": "327", "intro": [] },
-      "qmur": { "title": "328", "intro": [] },
+      "quiz-testing": {
+        "title": "Testing Quiz",
+        "intro": ["Test what you've learned in this quiz on Testing."]
+      },
       "lzvx": { "title": "329", "intro": [] },
       "mfwu": { "title": "330", "intro": [] },
       "dfcd": { "title": "331", "intro": [] },
@@ -2491,7 +2519,10 @@
         ]
       },
       "vfje": { "title": "333", "intro": [] },
-      "ovvb": { "title": "334", "intro": [] },
+      "quiz-bash-commands": {
+        "title": "Bash Commands Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash Commands."]
+      },
       "thsj": { "title": "335", "intro": [] },
       "workshop-mario-database": {
         "title": "Build a Mario Database",
@@ -2507,7 +2538,12 @@
         ]
       },
       "cvvu": { "title": "338", "intro": [] },
-      "oxxf": { "title": "339", "intro": [] },
+      "quiz-relational-database": {
+        "title": "Relational Database Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Relational Databases."
+        ]
+      },
       "ynqt": { "title": "340", "intro": [] },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
@@ -2517,7 +2553,10 @@
         ]
       },
       "hnta": { "title": "342", "intro": [] },
-      "keqo": { "title": "343", "intro": [] },
+      "quiz-bash-scripting": {
+        "title": "Bash Scripting Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash Scripting."]
+      },
       "pegc": { "title": "344", "intro": [] },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
@@ -2559,7 +2598,10 @@
         ]
       },
       "udfh": { "title": "351", "intro": [] },
-      "zygv": { "title": "352", "intro": [] },
+      "quiz-bash-and-sql": {
+        "title": "Bash and SQL Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+      },
       "movb": { "title": "353", "intro": [] },
       "workshop-castle": {
         "title": "Build a Castle",
@@ -2569,7 +2611,10 @@
         ]
       },
       "dzsr": { "title": "355", "intro": [] },
-      "cysa": { "title": "356", "intro": [] },
+      "quiz-nano": {
+        "title": "Nano Quiz",
+        "intro": ["Test what you've learned in this quiz on Nano."]
+      },
       "pzmc": { "title": "357", "intro": [] },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
@@ -2591,12 +2636,20 @@
         ]
       },
       "nfoc": { "title": "361", "intro": [] },
-      "mgoc": { "title": "362", "intro": [] },
+      "quiz-git": {
+        "title": "Git Quiz",
+        "intro": ["Test what you've learned in this quiz on Git."]
+      },
       "ibmn": { "title": "363", "intro": [] },
       "zpjj": { "title": "364", "intro": [] },
       "ghfk": { "title": "365", "intro": [] },
       "ugfq": { "title": "366", "intro": [] },
-      "pfui": { "title": "367", "intro": [] },
+      "quiz-security-and-privacy": {
+        "title": "Security and Privacy Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Security and Privacy."
+        ]
+      },
       "qjov": { "title": "368", "intro": [] },
       "workshop-npm-packages": {
         "title": "Managing Packages with npm",
@@ -2632,7 +2685,12 @@
       },
       "tbei": { "title": "376", "intro": [] },
       "kegi": { "title": "377", "intro": [] },
-      "nqhi": { "title": "378", "intro": [] },
+      "quiz-backend-javascript": {
+        "title": "Backend JavaScript Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Backend JavaScript."
+        ]
+      },
       "vnfu": { "title": "379", "intro": [] },
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },
