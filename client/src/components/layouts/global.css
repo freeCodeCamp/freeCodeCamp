@@ -633,6 +633,11 @@ pre code {
     );
 }
 
+.university-alert p,
+.annual-donation-alert p {
+  color: inherit;
+}
+
 /* gatsby 404 */
 #search {
   background-color: var(--quaternary-background);
