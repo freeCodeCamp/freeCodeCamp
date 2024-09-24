@@ -355,24 +355,24 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
     (a, b) => b.group.length - a.group.length
   );
 
-  for (const questionSetConfig of questionSetsConfigWithQuestions) {
-    for (const tagConfig of sortedTagConfig) {
-      for (const questionSet of shuffledQuestionSets.filter(
+  questionSetsConfigWithQuestionsLoop: for (const questionSetConfig of questionSetsConfigWithQuestions) {
+    sortedTagConfigLoop: for (const tagConfig of sortedTagConfig) {
+      shuffledQuestionSetsLoop: for (const questionSet of shuffledQuestionSets.filter(
         sqs => sqs.type === questionSetConfig.type
       )) {
         // If questionSet does not have enough questions for config, do not consider.
         if (
           questionSetConfig.numberOfQuestions > questionSet.questions.length
         ) {
-          continue;
+          continue shuffledQuestionSetsLoop;
         }
-        // If tagConfig is finished, break.
+        // If tagConfig is finished, skip.
         if (tagConfig.numberOfQuestions === 0) {
-          continue;
+          continue sortedTagConfigLoop;
         }
-        // If questionSetConfig has been fulfilled, break.
+        // If questionSetConfig has been fulfilled, skip.
         if (isQuestionSetConfigFulfilled(questionSetConfig)) {
-          break;
+          continue questionSetsConfigWithQuestionsLoop;
         }
 
         // Find question with at least all tags in the set.
@@ -380,11 +380,7 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
           tagConfig.group.every(t => q.tags.some(qt => qt === t))
         );
 
-        if (!questions.length) {
-          continue;
-        }
-
-        for (const question of questions) {
+        questionsLoop: for (const question of questions) {
           // Does question fulfill criteria for questionSetConfig:
           const numberOfCorrectAnswers = question.answers.filter(
             a => a.isCorrect
@@ -400,7 +396,7 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
               numberOfIncorrectAnswers
           ) {
             if (isQuestionSetConfigFulfilled(questionSetConfig)) {
-              break;
+              continue questionSetsConfigWithQuestionsLoop;
             }
             // Push questionSet if it does not exist. Otherwise, just push question
             const qscqs = questionSetConfig.questionSets.find(
@@ -411,14 +407,33 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
               answers: getRandomAnswers(question, questionSetConfig)
             };
             if (!qscqs) {
+              if (
+                questionSetConfig.numberOfSet ===
+                questionSetConfig.questionSets.length
+              ) {
+                break questionsLoop;
+              }
               const newQuestionSetWithQuestion = {
                 ...questionSet,
                 questions: [questionWithCorrectNumberOfAnswers]
               };
               questionSetConfig.questionSets.push(newQuestionSetWithQuestion);
             } else {
+              if (
+                qscqs.questions.length === questionSetConfig.numberOfQuestions
+              ) {
+                break questionsLoop;
+              }
               qscqs.questions.push(questionWithCorrectNumberOfAnswers);
             }
+
+            // TODO: Issue is question set is not being removed. So, one question set is used multiple times to fulfill config.
+            // Just remove question set once used? Evaluate:
+            shuffledQuestionSets.splice(
+              shuffledQuestionSets.findIndex(qs => qs.id === questionSet.id),
+              1
+            );
+            // New issue: Once the set is removed, tag config might not be able to be fulfilled.
 
             // Remove question from questionSet, decrement tagConfig.numberOfQuestions and `questionSetConfig.numberOfQuestions`
             questionSet.questions.splice(
@@ -429,14 +444,15 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
           }
         }
       }
-
-      if (tagConfig.numberOfQuestions !== 0) {
-        throw `Invalid Exam Configuration for exam "${examCopy.id}". Not enough questions for tag group "${tagConfig.group.join(',')}".`;
-      }
     }
 
     // Add questions to questionSetsConfigWithQuestions until fulfilled.
     while (!isQuestionSetConfigFulfilled(questionSetConfig)) {
+      console.log(questionSetConfig);
+      console.log(questionSetConfig.questionSets.length);
+      console.log(
+        questionSetConfig.questionSets.map(qs => qs.questions.length)
+      );
       // Ensure all questionSets ARE FULL
       if (
         questionSetConfig.numberOfSet > questionSetConfig.questionSets.length
@@ -564,6 +580,22 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
           });
         }
       }
+    }
+  }
+
+  for (const tagConfig of sortedTagConfig) {
+    if (tagConfig.numberOfQuestions > 0) {
+      console.log(
+        JSON.stringify(
+          questionSetsConfigWithQuestions.filter(qs =>
+            qs.questionSets.find(q => q.type === 'Dialogue')
+          ),
+          null,
+          2
+        )
+      );
+      console.log(tagConfig);
+      throw `Invalid Exam Configuration for exam "${examCopy.id}". Not enough questions for tag group "${tagConfig.group.join(',')}".`;
     }
   }
 
