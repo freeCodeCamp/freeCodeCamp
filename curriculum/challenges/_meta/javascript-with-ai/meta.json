@@ -1,9 +1,9 @@
 {
-  "name": "module-ai-4",
+  "name": "Javascript with AI",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
-  "dashedName": "module-ai-4",
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "javascript-with-ai",
   "order": 42,
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [{ "id": "66e3fd3fdd70614f1d6401c7", "title": "Step 1" }],

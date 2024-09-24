@@ -1,11 +1,28 @@
 {
   "name": "ng test",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
   "dashedName": "ng-test",
   "order": 1,
   "superBlock": "javascript-algorithms-and-data-structures",
-  "challengeOrder": [{ "id": "66e42777f316992855411a74", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "66e42777f316992855411a74",
+      "title": "Step 1"
+    },
+    {
+      "id": "66e97e9f2c770460daf650de",
+      "title": "step 2"
+    },
+    {
+      "id": "66e9805f61be8663285e37b7",
+      "title": "step 3"
+    },
+    {
+      "id": "66ed1340cdcfc6d9d343693e",
+      "title": "step 4"
+    }
+  ],
   "helpCategory": "English"
 }
