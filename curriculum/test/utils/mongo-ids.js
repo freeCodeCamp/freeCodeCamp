@@ -85,6 +85,7 @@ const duplicatedProjectIds = [
   // Shopping Cart
 
   // Stacks
+  '587d8250367417b2b2512c5f',
 
   // Linked Lists
 
