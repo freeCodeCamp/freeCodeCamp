@@ -231,8 +231,8 @@ export type Quiz = {
 
 export type QuizQuestion = {
   question: string;
-  options: string[];
-  solution: number;
+  distractors: string[];
+  answer: string;
 };
 
 export type CertificateNode = {

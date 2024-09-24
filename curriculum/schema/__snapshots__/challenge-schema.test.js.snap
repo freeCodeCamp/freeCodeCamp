@@ -103,12 +103,12 @@ const quizJoi = Joi.object().keys({
     .items(
       Joi.object().keys({
         question: Joi.string().required(),
-        options: Joi.array()
+        distractors: Joi.array()
           .items(Joi.string().required())
-          .min(4)
-          .max(4)
+          .min(3)
+          .max(3)
           .required(),
-        solution: Joi.number().required()
+        answer: Joi.string().required()
       })
     )
     .min(10)

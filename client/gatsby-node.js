@@ -335,8 +335,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type QuizQuestion {
       question: String
-      options: [String]
-      solution: Int
+      distractors: [String]
+      answer: String
     }
   `;
   createTypes(typeDefs);

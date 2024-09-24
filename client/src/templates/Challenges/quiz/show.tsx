@@ -180,14 +180,20 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
     const random = Math.floor(Math.random() * quizzes.length);
     const quiz = quizzes[random].questions;
     const quizForComponent = quiz.map(question => {
+      const distractors = question.distractors.map((distractor, index) => {
+        return {
+          label: distractor,
+          value: index + 1
+        };
+      });
+      const answer = {
+        label: question.answer,
+        value: 4
+      };
+
       return {
         question: question.question,
-        answers: question.options.map((option, index) => {
-          return {
-            label: option,
-            value: index + 1
-          };
-        })
+        answers: [...distractors, answer]
       };
     });
 
@@ -266,9 +272,9 @@ export const query = graphql`
         }
         quizzes {
           questions {
-            options
+            distractors
             question
-            solution
+            answer
           }
         }
         translationPending

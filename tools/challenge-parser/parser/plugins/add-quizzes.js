@@ -34,7 +34,7 @@ function plugin() {
 
         quizNodes.forEach(quizNode => {
           const isStartOfQuestion =
-            quizNode.children?.[0]?.value === '--quiz-question--';
+            quizNode.children?.[0]?.value === '--question--';
           if (isStartOfQuestion) {
             questionTrees.push([quizNode]);
           } else {
@@ -46,28 +46,18 @@ function plugin() {
           throw Error('A quiz should have at least one quiz-question');
         }
 
-        questionTrees.forEach(questionNodes => {
-          const questionTree = root(questionNodes);
+        questionTrees.forEach(singleQuestionNodes => {
+          const questionTree = root(singleQuestionNodes);
 
-          const quizQuestionNodes = getAllBetween(
+          const questionNodes = getAllBetween(questionTree, '--question--');
+          const distractorNodes = getAllBetween(
             questionTree,
-            '--quiz-question--'
+            '--distractors--'
           );
-          const questionOptionNodes = getAllBetween(
-            questionTree,
-            '--question-options--'
-          );
-          const questionSolutionNodes = getAllBetween(
-            questionTree,
-            '--question-solution--'
-          );
+          const answerNodes = getAllBetween(questionTree, '--answer--');
 
           quizQuestions.push(
-            getQuestion(
-              quizQuestionNodes,
-              questionOptionNodes,
-              questionSolutionNodes
-            )
+            getQuestion(questionNodes, distractorNodes, answerNodes)
           );
         });
 
@@ -81,47 +71,27 @@ function plugin() {
   }
 }
 
-function getQuestion(questionNodes, optionsNodes, solutionNodes) {
+function getQuestion(questionNodes, distractorNodes, answerNodes) {
   const question = mdastToHtml(questionNodes);
-  const options = getOptions(optionsNodes);
-  const solution = getSolution(solutionNodes);
+  const distractors = getDistractors(distractorNodes);
+  const answer = mdastToHtml(answerNodes);
 
-  if (!question) throw Error('quiz-question is missing from the quiz');
-  if (!options) throw Error('question-options are missing from quiz question');
-  if (!solution) throw Error('question-solution is missing from quiz question');
+  if (!question) throw Error('question is missing from the quiz');
+  if (!distractors) throw Error('distractors are missing from quiz question');
+  if (!answer) throw Error('answer is missing from quiz question');
 
-  return { question, options, solution };
+  return { question, distractors, answer };
 }
 
-function getOptions(optionsNodes) {
-  const optionsGroups = splitOnThematicBreak(optionsNodes);
+function getDistractors(distractorsNodes) {
+  const distractorsGroups = splitOnThematicBreak(distractorsNodes);
 
-  if (!optionsGroups.length === 4)
-    throw Error('Four question-options are required per quiz-question');
+  if (distractorsGroups.length !== 3)
+    throw Error('Three distractors are required per quiz-question');
 
-  return optionsGroups.map(optionsGroup => {
-    return mdastToHtml(optionsGroup);
+  return distractorsGroups.map(distractorsGroup => {
+    return mdastToHtml(distractorsGroup);
   });
-}
-
-function getSolution(solutionNodes) {
-  let solution;
-  try {
-    if (solutionNodes.length > 1) throw Error('Too many nodes');
-    if (solutionNodes[0].children.length > 1)
-      throw Error('Too many child nodes');
-    const solutionString = solutionNodes[0].children[0].value;
-    if (solutionString === '') throw Error('Non-empty string required');
-
-    solution = Number(solutionString);
-    if (Number.isNaN(solution)) throw Error('Not a number');
-    if (solution < 1) throw Error('Not positive number');
-  } catch (e) {
-    console.log(e);
-    throw Error('A quiz question solution should be a positive integer');
-  }
-
-  return solution;
 }
 
 module.exports = plugin;
