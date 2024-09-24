@@ -4,11 +4,11 @@ import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Alert, Container, Modal, Row } from '@freecodecamp/ui';
 import { FullWidthRow, Link, Spacer } from '../helpers';
-import Portfolio from '../settings/portfolio';
+import Portfolio from './components/portfolio';
 
-import UsernameSettings from '../../components/settings/username';
-import About from '../../components/settings/about';
-import Internet, { Socials } from '../settings/internet';
+import UsernameSettings from './components/username';
+import About from './components/about';
+import Internet, { Socials } from './components/internet';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
@@ -75,7 +75,7 @@ const EditModal = ({
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='xLarge'>
       <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
       <Modal.Body>
-        <UsernameSettings username={username} />
+        <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='medium' />
         <About
           about={about}

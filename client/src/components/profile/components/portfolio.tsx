@@ -12,13 +12,13 @@ import {
 } from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
-import { PortfolioProjectData } from '../../redux/prop-types';
+import { PortfolioProjectData } from '../../../redux/prop-types';
 
-import { hasProtocolRE } from '../../utils';
+import { hasProtocolRE } from '../../../utils';
 
-import { FullWidthRow, Spacer } from '../helpers';
-import BlockSaveButton from '../helpers/form/block-save-button';
-import SectionHeader from './section-header';
+import { FullWidthRow, Spacer } from '../../helpers';
+import BlockSaveButton from '../../helpers/form/block-save-button';
+import SectionHeader from '../../settings/section-header';
 
 type PortfolioProps = {
   picture?: string;
@@ -95,6 +95,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       this.setState({ unsavedItemId: null });
     }
     this.props.updatePortfolio({ portfolio });
+    this.toggleEditing();
   };
 
   handleAdd = () => {
@@ -112,6 +113,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       }),
       () => this.updateItem(id)
     );
+    this.toggleEditing();
   };
 
   isFormPristine = (id: string) => {
@@ -257,6 +259,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
       if (isButtonDisabled) return null;
+      this.toggleEditing();
       return this.updateItem(id);
     };
     return (

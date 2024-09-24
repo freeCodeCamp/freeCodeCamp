@@ -10,11 +10,10 @@ import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 
-import { FullWidthRow } from '../helpers';
-import BlockSaveButton from '../helpers/form/block-save-button';
-import type { CamperProps } from '../profile/components/camper';
-
-import SectionHeader from './section-header';
+import { FullWidthRow } from '../../helpers';
+import BlockSaveButton from '../../helpers/form/block-save-button';
+import SectionHeader from '../../settings/section-header';
+import type { CamperProps } from './camper';
 
 type AboutProps = Omit<
   CamperProps,

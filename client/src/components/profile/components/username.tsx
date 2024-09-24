@@ -8,14 +8,14 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { isValidUsername } from '../../../../shared/utils/validate';
-import { usernameValidationSelector } from '../../redux/settings/selectors';
+import { isValidUsername } from '../../../../../shared/utils/validate';
+import { usernameValidationSelector } from '../../../redux/settings/selectors';
 import {
   validateUsername,
   submitNewUsername
-} from '../../redux/settings/actions';
-import BlockSaveButton from '../helpers/form/block-save-button';
-import FullWidthRow from '../helpers/full-width-row';
+} from '../../../redux/settings/actions';
+import BlockSaveButton from '../../helpers/form/block-save-button';
+import FullWidthRow from '../../helpers/full-width-row';
 
 type UsernameProps = {
   isValidUsername: boolean;
@@ -24,6 +24,7 @@ type UsernameProps = {
   username: string;
   validateUsername: (name: string) => void;
   validating: boolean;
+  setIsEditing: (isEditing: boolean) => void;
 };
 
 type UsernameState = {
@@ -101,6 +102,10 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     return null;
   }
 
+  toggleEditing = () => {
+    this.props.setIsEditing(false);
+  };
+
   handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const { submitNewUsername } = this.props;
@@ -108,6 +113,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
       formValue,
       characterValidation: { valid }
     } = this.state;
+
+    this.toggleEditing();
 
     return this.setState({ submitClicked: true }, () =>
       valid ? submitNewUsername(formValue) : null

@@ -19,7 +19,7 @@ import {
   userProfileFetchStateSelector
 } from '../redux/selectors';
 import { User } from '../redux/prop-types';
-import { Socials } from '../components/settings/internet';
+import { Socials } from '../components/profile/components/internet';
 
 interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
