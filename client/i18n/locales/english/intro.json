@@ -1725,7 +1725,12 @@
       },
       "bzfv": { "title": "8", "intro": [] },
       "snuv": { "title": "9", "intro": [] },
-      "uowk": { "title": "10", "intro": [] },
+      "quiz-basic-html": {
+        "title": "Basic HTML Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of basic HTML knowledge."
+        ]
+      },
       "evdc": { "title": "11", "intro": [] },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
