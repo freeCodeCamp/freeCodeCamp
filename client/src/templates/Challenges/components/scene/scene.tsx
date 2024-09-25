@@ -99,6 +99,7 @@ export function Scene({
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
+  const [showTranscript, setTranscriptVisiblity] = useState(false);
 
   useEffect(() => {
     if (isPlaying) {
@@ -134,33 +135,16 @@ export function Scene({
   const buildTranscript = () => {
     let transcript = '';
     commands.forEach(command => {
-      console.log(command);
-      if (
-        command.character &&
-        command.dialogue &&
-        command.startTime
-      ) {
-        transcript =
-          transcript +
-          '\n' +
-          command.startTime +
-          '&nbsp;&nbsp;&nbsp;&nbsp;' +
-          command.character +
-          ':' +
-          ' ' +
-          command.dialogue.text;
+      if (command.character && command.dialogue && command.startTime) {
+        transcript = transcript + '\n' + command.startTime;
+        ' ' + command.character + ':' + ' ' + command.dialogue.text;
       }
     });
     return transcript;
   };
 
   const toggleTranscript = () => {
-    const transcriptElement = document.getElementById('transcript')!;
-    if (transcriptElement.innerText == '') {
-      transcriptElement.innerHTML = buildTranscript();
-    } else {
-      transcriptElement.innerHTML = '';
-    }
+    setTranscriptVisiblity(!showTranscript);
   };
 
   const playScene = () => {
@@ -252,6 +236,7 @@ export function Scene({
     setBackground(initBackground);
   };
 
+  const transcriptText = buildTranscript();
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
       <div
@@ -333,7 +318,11 @@ export function Scene({
       <button id='toggle-transcript' onClick={toggleTranscript}>
         {t('buttons.toggle-transcript')}
       </button>
-      <p id='transcript' className='transcript'></p>
+      {showTranscript && (
+        <p id='transcript' className='transcript'>
+          {transcriptText}
+        </p>
+      )}
       <Spacer size='medium' />
     </Col>
   );
