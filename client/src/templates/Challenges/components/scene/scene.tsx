@@ -136,9 +136,9 @@ export function Scene({
     commands.forEach(command => {
       console.log(command);
       if (
-        command.character != null &&
-        command.dialogue != null &&
-        command.startTime != null
+        command.character &&
+        command.dialogue &&
+        command.startTime
       ) {
         transcript =
           transcript +
