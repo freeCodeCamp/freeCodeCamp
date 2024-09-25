@@ -77,7 +77,7 @@ const duplicatedProjectIds = [
   // Dice Game Project
 
   // Telephone Number Validator
-  'aff0395860f5d3034dc0bfc9',
+  '657bdcb9a322aae1eac38391',
 
   // Cash Register
   'aa2e6f85cab2ab736c9a9b24',
