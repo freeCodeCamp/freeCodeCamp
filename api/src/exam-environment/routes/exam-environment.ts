@@ -215,6 +215,7 @@ async function postExamGeneratedExamHandler(
         lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
       const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
 
+      // TODO: Bug here
       if (effectiveSubmissionTime > twentyFourHoursAgo) {
         void reply.code(429);
         // TOOD: Consider sending last completed time
@@ -268,10 +269,13 @@ async function postExamGeneratedExamHandler(
     this.prisma.envGeneratedExam.findMany({
       where: {
         // Find generated exams user has not already seen
+        examId: exam.id,
         id: {
-          notIn: examAttempts.map(a => a.id)
+          notIn: examAttempts.map(a => a.generatedExamId)
         },
-        deprecated: false
+        deprecated: {
+          not: true
+        }
       },
       select: {
         id: true

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "generate-exams": "echo \"Error: no test specified\" && exit 1"
+    "generate-exams": "node --experimental-strip-types index.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,6 @@
   "dependencies": {
     "@prisma/client": "5.5.2",
     "mongodb": "6.9.0"
-  }
+  },
+  "type": "module"
 }

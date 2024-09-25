@@ -1,5 +1,4 @@
-import path from 'path';
-import {
+import type {
   EnvExam,
   EnvGeneratedExam,
   EnvConfig,
@@ -9,7 +8,7 @@ import {
 import { MongoClient, ObjectId } from 'mongodb';
 import dotenv from 'dotenv';
 
-dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
+dotenv.config({ path: '../../../.env' });
 const { MONGOHQ_URL } = process.env;
 const NUMBER_OF_EXAMS_TO_GENERATE = 100;
 const ENV_EXAM_ID = new ObjectId('66e9a8fecac3bbedc76f6bc8');
@@ -19,6 +18,8 @@ if (!MONGOHQ_URL) {
 }
 const client = new MongoClient(MONGOHQ_URL);
 
+/// TODO:
+/// 1. Deprecate all previous generated exams for a given exam id?
 async function main() {
   await client.db('admin').command({ ping: 1 });
 
@@ -39,9 +40,7 @@ async function main() {
     try {
       const generatedExam = generateExam(exam);
       await db
-        .collection<
-          Omit<EnvGeneratedExam, 'id' | 'deprecated'>
-        >('EnvGeneratedExam')
+        .collection<Omit<EnvGeneratedExam, 'id'>>('EnvGeneratedExam')
         .insertOne(generatedExam);
       numberOfExamsGenerated++;
     } catch (e) {
@@ -55,10 +54,8 @@ void main();
 /**
  * Generates an exam for the user, based on the exam configuration.
  */
-function generateExam(
-  exam: EnvExam
-): Omit<EnvGeneratedExam, 'id' | 'deprecated'> {
-  const examCopy = JSON.parse(JSON.stringify(exam)) as EnvExam;
+function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
+  const examCopy = structuredClone(exam);
 
   const shuffledQuestionSets = shuffleArray(examCopy.questionSets).map(qs => {
     const shuffledQuestions = shuffleArray(
@@ -203,8 +200,10 @@ function generateExam(
       }
     }
 
+    const timeout = setTimeout(() => {
+      throw 'Unable to generate exam in under 5s. Likely infinite loop.';
+    }, 5_000);
     // Add questions to questionSetsConfigWithQuestions until fulfilled.
-    // TODO: Add timeout
     while (!isQuestionSetConfigFulfilled(questionSetConfig)) {
       // Ensure all questionSets ARE FULL
       if (
@@ -334,20 +333,11 @@ function generateExam(
         }
       }
     }
+    clearTimeout(timeout);
   }
 
   for (const tagConfig of sortedTagConfig) {
     if (tagConfig.numberOfQuestions > 0) {
-      console.log(
-        JSON.stringify(
-          questionSetsConfigWithQuestions.filter(qs =>
-            qs.questionSets.find(q => q.type === 'Dialogue')
-          ),
-          null,
-          2
-        )
-      );
-      console.log(tagConfig);
       throw `Invalid Exam Configuration for exam "${examCopy.id}". Not enough questions for tag group "${tagConfig.group.join(',')}".`;
     }
   }
@@ -371,7 +361,8 @@ function generateExam(
 
   return {
     examId: examCopy.id,
-    questionSets
+    questionSets,
+    deprecated: false
   };
 }
 
