@@ -21,17 +21,7 @@ function plugin() {
 
       quizSections.forEach(quizNodes => {
         const quizQuestions = [];
-        const questionTrees = [];
-
-        quizNodes.forEach(quizNode => {
-          const isStartOfQuestion =
-            quizNode.children?.[0]?.value === '--question--';
-          if (isStartOfQuestion) {
-            questionTrees.push([quizNode]);
-          } else {
-            questionTrees[questionTrees.length - 1].push(quizNode);
-          }
-        });
+        const questionTrees = getAllSections(root(quizNodes), `--question--`);
 
         if (questionTrees.length === 0) {
           throw Error(
@@ -42,12 +32,12 @@ function plugin() {
         questionTrees.forEach(singleQuestionNodes => {
           const questionTree = root(singleQuestionNodes);
 
-          const questionNodes = getSection(questionTree, '--question--');
+          const textNodes = getSection(questionTree, '--text--');
           const distractorNodes = getSection(questionTree, '--distractors--');
           const answerNodes = getSection(questionTree, '--answer--');
 
           quizQuestions.push(
-            getQuestion(questionNodes, distractorNodes, answerNodes)
+            getQuestion(textNodes, distractorNodes, answerNodes)
           );
         });
 
@@ -61,17 +51,17 @@ function plugin() {
   }
 }
 
-function getQuestion(questionNodes, distractorNodes, answerNodes) {
-  const question = mdastToHtml(questionNodes);
+function getQuestion(textNodes, distractorNodes, answerNodes) {
+  const text = mdastToHtml(textNodes);
   const distractors = getDistractors(distractorNodes);
   const answer = mdastToHtml(answerNodes);
 
-  if (!question) throw Error('--question-- is missing from the quiz');
+  if (!text) throw Error('--text-- is missing from the quiz question');
   if (!distractors)
     throw Error('--distractors-- are missing from quiz question');
   if (!answer) throw Error('--answer-- is missing from quiz question');
 
-  return { question, distractors, answer };
+  return { text, distractors, answer };
 }
 
 function getDistractors(distractorsNodes) {
