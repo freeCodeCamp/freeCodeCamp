@@ -43,4 +43,4 @@ function getSection(tree, marker) {
   return targetNodes;
 }
 
-module.exports = getSection;
+module.exports = { getSection };

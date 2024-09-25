@@ -1,5 +1,5 @@
 const { root } = require('mdast-builder');
-const getSection = require('./utils/get-section');
+const { getSection } = require('./utils/get-section');
 const mdastToHtml = require('./utils/mdast-to-html');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
