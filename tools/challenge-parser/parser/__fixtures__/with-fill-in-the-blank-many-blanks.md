@@ -2,7 +2,7 @@
 
 ## --sentence--
 
-`Sure thing! _ _ _.`
+`Sure thing! BLANK _ _.`
 
 ## --blanks--
 

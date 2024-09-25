@@ -8,7 +8,7 @@ Maria is introducing herself and confirming Tom's job role. `Are` is used in the
 
 ## --sentence--
 
-`Hello, You _ the new graphic designer, _? _ to meet you!`
+`Hello, You BLANK the new graphic designer, BLANK? BLANK to meet you!`
 
 ## --blanks--
 

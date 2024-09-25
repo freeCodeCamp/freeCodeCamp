@@ -1,4 +1,3 @@
-import { navigate } from 'gatsby';
 import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
 import { withTranslation } from 'react-i18next';
@@ -179,17 +178,16 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
   const certSlug = Certification.LegacyFullStack;
   const certLocation = `/certification/${username}/${certSlug}`;
 
-  const createClickHandler =
+  const handleClaim =
     (certSlug: keyof typeof certSlugTypeMap) =>
     (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      if (isFullStackCert) {
-        return navigate(certLocation);
-      }
+
       return isHonest
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
+
   return (
     <FullWidthRow key={certSlug}>
       <Spacer size='medium' />
@@ -219,41 +217,28 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
       </div>
 
       <div>
-        {fullStackClaimable ? (
+        {isFullStackCert ? (
           <Button
             size='small'
             variant='primary'
             block={true}
             href={certLocation}
             id={'button-' + certSlug}
-            // This floating promise is acceptable
-            // eslint-disable-next-line @typescript-eslint/no-misused-promises
-            onClick={createClickHandler(certSlug)}
             target='_blank'
           >
-            {isFullStackCert ? (
-              <>
-                {t('buttons.show-cert')}{' '}
-                <span className='sr-only'>
-                  {t('certification.title.Legacy Full Stack')}
-                </span>
-              </>
-            ) : (
-              <>
-                {t('buttons.claim-cert')}{' '}
-                <span className='sr-only'>
-                  {t('certification.title.Legacy Full Stack')}
-                </span>
-              </>
-            )}
+            {t('buttons.show-cert')}{' '}
+            <span className='sr-only'>
+              {t('certification.title.Legacy Full Stack')}
+            </span>
           </Button>
         ) : (
           <Button
             size='small'
             variant='primary'
             block={true}
-            disabled={true}
+            disabled={!fullStackClaimable}
             id={'button-' + certSlug}
+            onClick={handleClaim(certSlug)}
           >
             {t('buttons.claim-cert')}{' '}
             <span className='sr-only'>
@@ -387,15 +372,15 @@ function CertificationSettings(props: CertificationSettingsProps) {
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
     const { certSlug } = certsToProjects[certName][0];
     const certLocation = `/certification/${username}/${certSlug}`;
-    const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+
+    const handleClaim = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
-      if (isCert) {
-        return navigate(certLocation);
-      }
+
       return isHonest
         ? verifyCert(certSlug)
         : createFlashMessage(honestyInfoMessage);
     };
+
     return (
       <>
         {certsToProjects[certName].map(({ link, title, id }) => (
@@ -412,18 +397,17 @@ function CertificationSettings(props: CertificationSettingsProps) {
         ))}
         <tr key={`cert-${certSlug}-button`}>
           <td colSpan={2}>
-            <Button
-              block={true}
-              variant='primary'
-              href={certLocation}
-              data-playwright-test-label={`btn-for-${certSlug}`}
-              // This floating promise is acceptable
-              // eslint-disable-next-line @typescript-eslint/no-misused-promises
-              onClick={clickHandler}
-            >
-              {isCert ? t('buttons.show-cert') : t('buttons.claim-cert')}{' '}
-              <span className='sr-only'>{certName}</span>
-            </Button>
+            {isCert ? (
+              <Button block={true} variant='primary' href={certLocation}>
+                {t('buttons.show-cert')}{' '}
+                <span className='sr-only'>{certName}</span>
+              </Button>
+            ) : (
+              <Button block={true} variant='primary' onClick={handleClaim}>
+                {t('buttons.claim-cert')}{' '}
+                <span className='sr-only'>{certName}</span>
+              </Button>
+            )}
           </td>
         </tr>
       </>

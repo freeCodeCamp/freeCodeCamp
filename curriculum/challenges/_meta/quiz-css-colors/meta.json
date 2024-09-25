@@ -1,0 +1,10 @@
+{
+  "name": "CSS Colors Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-colors",
+  "order": 67,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed8fe1f45ce3ece4053eb1", "title": "CSS Colors Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

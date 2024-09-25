@@ -1,0 +1,16 @@
+{
+  "name": "Dynamic Programming Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-dynamic-programming",
+  "order": 275,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd5ffe490bef99ea99395",
+      "title": "Dynamic Programming Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
