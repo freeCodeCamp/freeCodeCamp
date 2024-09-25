@@ -135,10 +135,16 @@ export function Scene({
     let transcript = '';
     commands.forEach(command => {
       console.log(command);
-      if (command.character != null && command.dialogue != null) {
+      if (
+        command.character != null &&
+        command.dialogue != null &&
+        command.startTime != null
+      ) {
         transcript =
           transcript +
           '\n' +
+          command.startTime +
+          '&nbsp;&nbsp;&nbsp;&nbsp;' +
           command.character +
           ':' +
           ' ' +
@@ -150,10 +156,10 @@ export function Scene({
 
   const toggleTranscript = () => {
     const transcriptElement = document.getElementById('transcript')!;
-    if (transcriptElement.innerText != '') {
-      transcriptElement.innerText = buildTranscript();
+    if (transcriptElement.innerText == '') {
+      transcriptElement.innerHTML = buildTranscript();
     } else {
-      transcriptElement.innerText = '';
+      transcriptElement.innerHTML = '';
     }
   };
 
@@ -325,9 +331,9 @@ export function Scene({
         )}
       </div>
       <button id='toggle-transcript' onClick={toggleTranscript}>
-        Toggle Transcript
+        {t('buttons.toggle-transcript')}
       </button>
-      <p id='transcript'></p>
+      <p id='transcript' className='transcript'></p>
       <Spacer size='medium' />
     </Col>
   );
