@@ -190,7 +190,7 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
       };
 
       return {
-        question: question.question,
+        question: question.text,
         answers: [...distractors, answer]
       };
     });
@@ -270,7 +270,7 @@ export const query = graphql`
         quizzes {
           questions {
             distractors
-            question
+            text
             answer
           }
         }

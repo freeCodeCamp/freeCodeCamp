@@ -225,12 +225,12 @@ export type ChallengeNode = {
   };
 };
 
-export type Quiz = {
+type Quiz = {
   questions: QuizQuestion[];
 };
 
-export type QuizQuestion = {
-  question: string;
+type QuizQuestion = {
+  text: string;
   distractors: string[];
   answer: string;
 };
