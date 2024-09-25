@@ -1792,7 +1792,12 @@
         ]
       },
       "humj": { "title": "44", "intro": [] },
-      "pahx": { "title": "45", "intro": [] },
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS"
+        ]
+      },
       "rzdx": { "title": "46", "intro": [] },
       "sgpy": { "title": "47", "intro": [] },
       "ljmt": { "title": "48", "intro": [] },
@@ -2376,12 +2381,6 @@
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
-      },
-      "lab-blog-post-card": {
-        "title": "Design a Blog Post Card",
-        "intro": [
-          "In this lab, you'll design a blog post card using HTML and CSS"
-        ]
       }
     }
   },
