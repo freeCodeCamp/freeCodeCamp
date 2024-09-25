@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`between-headings should match the hints snapshot 1`] = `
+exports[`getSection should match the hints snapshot 1`] = `
 [
   {
     "children": [
@@ -338,7 +338,7 @@ if(let x of xs) {
 ]
 `;
 
-exports[`between-headings should match the instructions snapshot 1`] = `
+exports[`getSection should match the instructions snapshot 1`] = `
 [
   {
     "children": [

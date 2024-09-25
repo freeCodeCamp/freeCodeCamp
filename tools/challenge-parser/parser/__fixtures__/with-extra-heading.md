@@ -1,6 +1,6 @@
-::import{component="Script" from="./script.md" }
-
 # --description--
+
+# this should still be inside --description--
 
 Paragraph 1
 
@@ -18,15 +18,11 @@ code example 0
 
 # --hints--
 
-::id{#test-id-1}
-
 First hint
 
 ```js
 // test code
 ```
-
-::id{#test-id-2}
 
 Second hint with <code>code</code>
 
@@ -34,8 +30,18 @@ Second hint with <code>code</code>
 // more test code
 ```
 
+Third *hint* with <code>code</code> and `inline code`
+
+```js
+// more test code
+if(let x of xs) {
+  console.log(x);
+}
+```
 
 # --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -50,10 +56,28 @@ body {
 }
 ```
 
-::id{#custom-name}
-
 ```js
 var x = 'y';
 ```
 
-::use{component="Script"}
+
+# --solutions--
+
+::id{#html-key}
+
+```html
+<html>
+  <body>
+  </body>
+</html>
+```
+
+```css
+body {
+  background: white;
+}
+```
+
+```js
+var x = 'y';
+``

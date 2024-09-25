@@ -1,5 +1,3 @@
-::import{component="Script" from="./script.md" }
-
 # --description--
 
 Paragraph 1
@@ -30,6 +28,14 @@ Second hint with <code>code</code>
 // more test code
 ```
 
+Third *hint* with <code>code</code> and `inline code`
+
+```js
+// more test code
+if(let x of xs) {
+  console.log(x);
+}
+```
 
 # --seed--
 
@@ -44,14 +50,35 @@ Second hint with <code>code</code>
 
 ```css
 body {
+--fcc-editable-region-- --fcc-editable-region--
   background: green;
+
+
 }
 ```
-
-::id{#custom-name}
 
 ```js
 var x = 'y';
 ```
 
-::use{component="Script"}
+
+# --solutions--
+
+::id{#html-key}
+
+```html
+<html>
+  <body>
+  </body>
+</html>
+```
+
+```css
+body {
+  background: white;
+}
+```
+
+```js
+var x = 'y';
+```
