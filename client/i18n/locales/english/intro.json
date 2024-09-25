@@ -1878,7 +1878,12 @@
       },
       "fvcj": { "title": "63", "intro": [] },
       "ogdb": { "title": "64", "intro": [] },
-      "zxiy": { "title": "65", "intro": [] },
+      "lab-css-colors": {
+        "title": "Design Colored Boxes",
+        "intro": [
+          "In this lab, you'll practice using CSS colors by designing boxes"
+        ]
+      },
       "qpze": { "title": "66", "intro": [] },
       "quiz-css-colors": {
         "title": "CSS Colors Quiz",

@@ -1,0 +1,11 @@
+{
+  "name": "Design Colored Boxes",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-css-colors",
+  "order": 65,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66f3f6eb66ea9dc41cdc30df", "title": "Design Colored Boxes" }],
+  "helpCategory": "HTML-CSS",
+  "blockType": "lab"
+}
