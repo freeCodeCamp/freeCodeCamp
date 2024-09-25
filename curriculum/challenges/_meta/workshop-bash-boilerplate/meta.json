@@ -1,0 +1,12 @@
+{
+  "name": "Build a Boilerplate",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-bash-boilerplate",
+  "order": 332,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "5ea8adfab628f68d805bfc5e", "title": "Build a Boilerplate" }],
+  "helpCategory": "Backend Development"
+}

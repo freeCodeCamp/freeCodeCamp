@@ -12,7 +12,7 @@ A flex container is any element that has `display: flex` on it. A flex item is a
 
 <img src="https://cdn.freecodecamp.org/curriculum/odin-project/flex-box/flexbox-01.png" style="width: 95%; height: 95%;" alt="An outer rectangle representing a flex container encompassing three smaller inner rectangles lined up side by side, each representing a flex item.">
 
-# --question--
+# --questions--
 
 ## --text--
 

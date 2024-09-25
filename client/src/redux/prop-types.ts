@@ -104,10 +104,14 @@ export type Characters =
   | 'Expert'
   | 'Jake'
   | 'James'
+  | 'Jessica'
+  | 'Jim'
+  | 'Josh'
   | 'Linda'
   | 'Lisa'
   | 'Maria'
   | 'Mark'
+  | 'Riker'
   | 'Sarah'
   | 'Second Candidate'
   | 'Sophie'
@@ -196,7 +200,8 @@ export type ChallengeNode = {
     isLocked: boolean;
     isPrivate: boolean;
     order: number;
-    question: Question;
+    questions: Question[];
+    quizzes: Quiz[];
     assignments: string[];
     required: Required[];
     scene: FullScene;
@@ -218,6 +223,16 @@ export type ChallengeNode = {
     bilibiliIds?: BilibiliIds;
     videoUrl: string;
   };
+};
+
+type Quiz = {
+  questions: QuizQuestion[];
+};
+
+type QuizQuestion = {
+  text: string;
+  distractors: string[];
+  answer: string;
 };
 
 export type CertificateNode = {

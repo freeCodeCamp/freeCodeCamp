@@ -27,7 +27,7 @@ console.log(pet); // Output: ['cat', 'dog']
 ```
 
 
-# --question--
+# --questions--
 
 ## --text--
 

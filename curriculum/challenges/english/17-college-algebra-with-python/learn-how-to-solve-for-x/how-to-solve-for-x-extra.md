@@ -20,7 +20,7 @@ Add the code for more ways to solve for x from the video to your algebra Colab n
 
 Open the following Colab notebook, run the cell, and <a href="https://colab.research.google.com/drive/1XjmHoERFKcvol7FPidQE-wgdvR82HV45" target="_blank" rel="noopener noreferrer nofollow">practice solving one and two-step algebra problems.</a> As a bonus, look at the code that generates the practice problems.
 
-# --question--
+# --questions--
 
 ## --text--
 

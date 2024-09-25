@@ -23,7 +23,7 @@ Sometimes you will want to make text bold without giving it an important meaning
 
 Watch Kevin Powell’s HTML Bold and Italic Text Video above.
 
-# --question--
+# --questions--
 
 ## --text--
 

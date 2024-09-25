@@ -1,0 +1,11 @@
+{
+  "name": "Build a Set of Football Team Cards",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-football-team-cards",
+  "order": 200,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66e7ee20b79186306fc12da5", "title": "Build a Set of Football Team Cards" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

@@ -36,7 +36,7 @@ In the above example, the first two elements with the `contents` class (`B` and 
 
 There’s really no limit to how many combinators you can add to a rule, so `.one .two .three .four` would be totally valid. This would just select an element that has a class of `four` if it has an ancestor with a class of `three`, and if that ancestor has its own ancestor with a class of `two`, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
 
-# --question--    
+# --questions--    
 
 ## --text--
 

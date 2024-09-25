@@ -8,7 +8,7 @@ dashedName: introduction-flexbox-lesson-d
 
 Now that you have a basic understanding of how flexbox works, what is the primairy role of a flex item in a `flexbox` layout? Try and answer the question below.
 
-# --question--
+# --questions--
 
 ## --text--
 

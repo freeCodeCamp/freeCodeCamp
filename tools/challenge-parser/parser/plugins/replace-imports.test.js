@@ -2,22 +2,32 @@ const path = require('path');
 const cloneDeep = require('lodash/cloneDeep');
 const toVfile = require('to-vfile');
 const selectAll = require('unist-util-select').selectAll;
+const parseFixture = require('../__fixtures__/parse-fixture');
 
-const originalImportsExtraAST = require('../__fixtures__/ast-imports-extra.json');
-const originalImportsTwoAST = require('../__fixtures__/ast-imports-two.json');
-const originalImportsAST = require('../__fixtures__/ast-imports.json');
-const originalMarkerAST = require('../__fixtures__/ast-marker-imports.json');
-const originalSimpleAST = require('../__fixtures__/ast-simple.json');
 const addImports = require('./replace-imports');
 
 describe('replace-imports', () => {
-  let importsAST;
-  let importsTwoAST;
-  let importsExtraAST;
-  let simpleAST;
-  let markerAST;
-  let correctFile;
-  let incorrectFile;
+  let importsAST,
+    importsTwoAST,
+    importsExtraAST,
+    simpleAST,
+    markerAST,
+    correctFile,
+    incorrectFile;
+
+  let originalImportsAST,
+    originalImportsTwoAST,
+    originalImportsExtraAST,
+    originalMarkerAST,
+    originalSimpleAST;
+
+  beforeAll(async () => {
+    originalImportsAST = await parseFixture('with-imports.md');
+    originalImportsTwoAST = await parseFixture('with-imports-two.md');
+    originalImportsExtraAST = await parseFixture('with-imports-extra.md');
+    originalSimpleAST = await parseFixture('simple.md');
+    originalMarkerAST = await parseFixture('with-marker-imports.md');
+  });
 
   beforeEach(() => {
     importsAST = cloneDeep(originalImportsAST);

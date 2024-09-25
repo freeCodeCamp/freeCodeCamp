@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: core-learning-algorithms-using-probabilities-to-make-predictions
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

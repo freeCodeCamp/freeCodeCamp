@@ -16,11 +16,11 @@ To change the placement of items along the cross axis use `align-items`. Try get
 
 Because `justify-content` and `align-items` are based on the main and cross axis of your container, their behavior changes when you change the flex-direction of a flex-container. For example, when you change `flex-direction` to `column`, `justify-content` aligns vertically and `align-items` aligns horizontally. The most common behavior, however, is the default, i.e. `justify-content` aligns items horizontally (because the main axis defaults to horizontal), and `align-items` aligns them vertically. One of the biggest sticking points that beginners have with flexbox is confusion when this behavior changes.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 Before moving on to the next lesson, see if you can figure out how `align-items` behaves when you change the `flex-direction` property to `column`.
+
+# --questions--
 
 ## --text--
 

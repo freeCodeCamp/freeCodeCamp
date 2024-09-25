@@ -25,7 +25,7 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type { AllChallengeNode, User } from '../../redux/prop-types';
+import type { ChallengeNode, User } from '../../redux/prop-types';
 import { CertTitle } from '../../../config/cert-and-project-map';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
@@ -45,7 +45,7 @@ type FetchState = {
 type SuperBlockProp = {
   currentChallengeId: string;
   data: {
-    allChallengeNode: AllChallengeNode;
+    allChallengeNode: { nodes: ChallengeNode[] };
   };
   expandedState: {
     [key: string]: boolean;
@@ -119,7 +119,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const getChosenBlock = (): string => {
     const {
       data: {
-        allChallengeNode: { edges }
+        allChallengeNode: { nodes }
       },
       isSignedIn,
       currentChallengeId,
@@ -144,20 +144,18 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       return dashedBlock;
     }
 
-    const edge = edges[0];
+    const firstChallenge = nodes[0]?.challenge;
 
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
-      const currentChallengeEdge = edges.find(
-        edge => edge.node.challenge.id === currentChallengeId
-      );
+      const currentChallenge = nodes.find(
+        node => node.challenge.id === currentChallengeId
+      )?.challenge;
 
-      return currentChallengeEdge
-        ? currentChallengeEdge.node.challenge.block
-        : edge.node.challenge.block;
+      return currentChallenge ? currentChallenge.block : firstChallenge?.block;
     }
 
-    return edge.node.challenge.block;
+    return firstChallenge?.block;
   };
 
   const initializeExpandedState = () => {
@@ -169,7 +167,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const {
     data: {
-      allChallengeNode: { edges }
+      allChallengeNode: { nodes }
     },
     isSignedIn,
     signInLoading,
@@ -177,16 +175,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     pageContext: { superBlock, title, certification }
   } = props;
 
-  const allChallenges = edges.map(({ node }) => node.challenge);
-  const nodesForSuperBlock = edges
-    .filter(edge => edge.node.challenge.superBlock === superBlock)
-    .map(({ node }) => node);
-  const blockDashedNames = uniq(
-    nodesForSuperBlock.map(({ challenge: { block } }) => block)
-  );
+  const allChallenges = nodes.map(({ challenge }) => challenge);
+  const challenges = allChallenges.filter(c => c.superBlock === superBlock);
+  const blocks = uniq(challenges.map(({ block }) => block));
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
-  const defaultCurriculumNames = blockDashedNames;
 
   const superblockWithoutCert = [
     SuperBlocks.RespWebDesign,
@@ -230,13 +223,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               </h2>
               <Spacer size='medium' />
               <div className='block-ui'>
-                {defaultCurriculumNames.map(blockDashedName => (
+                {blocks.map(block => (
                   <Block
-                    key={blockDashedName}
-                    blockDashedName={blockDashedName}
-                    challenges={nodesForSuperBlock.filter(
-                      node => node.challenge.block === blockDashedName
-                    )}
+                    key={block}
+                    block={block}
+                    challenges={challenges.filter(c => c.block === block)}
                     superBlock={superBlock}
                   />
                 ))}
@@ -292,21 +283,19 @@ export const query = graphql`
         ]
       }
     ) {
-      edges {
-        node {
-          challenge {
-            fields {
-              slug
-              blockName
-            }
-            id
-            block
-            challengeType
-            title
-            order
-            superBlock
-            dashedName
+      nodes {
+        challenge {
+          fields {
+            slug
+            blockName
           }
+          id
+          block
+          challengeType
+          title
+          order
+          superBlock
+          dashedName
         }
       }
     }

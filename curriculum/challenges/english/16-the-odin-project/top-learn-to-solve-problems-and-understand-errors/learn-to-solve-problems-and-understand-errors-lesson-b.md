@@ -25,10 +25,11 @@ Now that you know what you’re aiming to solve, don’t jump into coding just y
 
 The last question is where you will write out an algorithm to solve the problem. You can think of an algorithm as a recipe for solving a particular problem. It defines the steps that need to be taken by the computer to solve a problem in pseudocode.
 
-# --question-- 
+# --assignment--
 
-## --assignment--
 Watch <a href="https://www.youtube.com/watch?v=azcrPFhaY9k" target="_blank">How to Begin Thinking Like a Programmer</a> by Coding Tech. It’s an hour long but packed full of information and definitely worth your time watching.
+
+# --questions--
 
 ## --text--
 

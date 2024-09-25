@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: natural-language-processing-with-rnns-building-the-model
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

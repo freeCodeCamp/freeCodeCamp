@@ -1,0 +1,12 @@
+{
+  "name": "Build a Kitty Ipsum Translator",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-kitty-ipsum-translator",
+  "order": 348,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "602da0de22201c65d2a019f6", "title": "Build a Kitty Ipsum Translator" }],
+  "helpCategory": "Backend Development"
+}

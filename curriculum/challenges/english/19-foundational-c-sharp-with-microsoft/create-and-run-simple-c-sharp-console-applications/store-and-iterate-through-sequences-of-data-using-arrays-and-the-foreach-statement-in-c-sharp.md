@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 Complete the <a href="https://learn.microsoft.com/training/modules/csharp-arrays/" target="_blank" rel="noreferrer">Store and Iterate Through Sequences of Data Using Arrays and the `foreach` Statement in C#</a> module on Microsoft Learn. Then, answer the question below.
 
-# --question--
+# --questions--
 
 ## --text--
 

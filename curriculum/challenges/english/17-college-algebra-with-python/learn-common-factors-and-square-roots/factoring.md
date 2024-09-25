@@ -12,7 +12,7 @@ This first video will show you how to find common factors and divide them out - 
 
 Here is the <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0BdTwZTVkS9ju9yn6?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

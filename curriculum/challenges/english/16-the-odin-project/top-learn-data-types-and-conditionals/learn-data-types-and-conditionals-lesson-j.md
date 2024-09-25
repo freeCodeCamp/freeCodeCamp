@@ -51,7 +51,7 @@ if (!(a > b)) {
 
 In the above example, the extra pair of parentheses is used to make the code more readable. It is not necessary to use them.
 
-# --question--
+# --questions--
 
 ## --text--
 

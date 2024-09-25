@@ -1,0 +1,10 @@
+{
+  "name": "CSS Grid Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-grid",
+  "order": 119,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed8fedf45ce3ece4053eb3", "title": "CSS Grid Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

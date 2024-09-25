@@ -12,7 +12,7 @@ This next video will give you a deeper dive into what you can do with graphing s
 
 Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCPRfr1SzvbywRWPV?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

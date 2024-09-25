@@ -1,0 +1,10 @@
+{
+  "name": "Semantic HTML Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-semantic-html",
+  "order": 15,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed903cf45ce3ece4053ebe", "title": "Semantic HTML Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

@@ -11,7 +11,7 @@ dashedName: task-79
 
 Sometimes people invite their friends to events or activities they enjoy. How you respond to these invitations shows you interest or lack of interest in the event.
 
-# --question--
+# --questions--
 
 ## --text--
 

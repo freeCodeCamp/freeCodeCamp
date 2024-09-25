@@ -1,5 +1,4 @@
-image:
-  file: .gitpod.Dockerfile
+image: ghcr.io/freecodecamp/gitpod:latest
 ports:
   - port: 27017 # mongodb
     onOpen: ignore
@@ -19,6 +18,14 @@ ports:
     visibility: public
   - port: 3300 # challenge editor client
     visibility: public
+  - port: 8025 # MailHog
+    visibility: public
+    onOpen: ignore
+  - port: 1025 # MailHog
+    onOpen: ignore
+  - port: 9323 # Playwright
+    visibility: public
+    onOpen: ignore
 
 tasks:
   - before: |
