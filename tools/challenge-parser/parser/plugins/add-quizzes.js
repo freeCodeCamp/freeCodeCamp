@@ -1,5 +1,5 @@
 const { root } = require('mdast-builder');
-const getAllBetween = require('./utils/between-headings');
+const getSection = require('./utils/get-section');
 const mdastToHtml = require('./utils/mdast-to-html');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
@@ -7,7 +7,7 @@ const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 function plugin() {
   return transformer;
   function transformer(tree, file) {
-    const quizzesNodes = getAllBetween(tree, `--quizzes--`);
+    const quizzesNodes = getSection(tree, `--quizzes--`);
 
     if (quizzesNodes.length > 0) {
       const quizzes = [];
@@ -30,7 +30,7 @@ function plugin() {
 
       quizTrees.forEach(allQuizNodes => {
         const quizTree = root(allQuizNodes);
-        const quizNodes = getAllBetween(quizTree, `--quiz--`);
+        const quizNodes = getSection(quizTree, `--quiz--`);
         const quizQuestions = [];
         const questionTrees = [];
 
@@ -53,12 +53,9 @@ function plugin() {
         questionTrees.forEach(singleQuestionNodes => {
           const questionTree = root(singleQuestionNodes);
 
-          const questionNodes = getAllBetween(questionTree, '--question--');
-          const distractorNodes = getAllBetween(
-            questionTree,
-            '--distractors--'
-          );
-          const answerNodes = getAllBetween(questionTree, '--answer--');
+          const questionNodes = getSection(questionTree, '--question--');
+          const distractorNodes = getSection(questionTree, '--distractors--');
+          const answerNodes = getSection(questionTree, '--answer--');
 
           quizQuestions.push(
             getQuestion(questionNodes, distractorNodes, answerNodes)
