@@ -170,7 +170,7 @@ const ShowQuiz = ({
     updateChallengeMeta
   ]);
 
-  const handleSubmit = () => {
+  const handleAnswersCheck = () => {
     if (quizData.some(question => question.selectedAnswer == null)) {
       setErrorMessage(t('learn.quiz.unanswered-questions'));
       return;
@@ -178,6 +178,10 @@ const ShowQuiz = ({
 
     validateAnswers();
     setHasSubmitted(true);
+  };
+
+  const handleSubmitAndGo = () => {
+    openCompletionModal();
   };
 
   // Handle error message display on submit.
@@ -203,7 +207,7 @@ const ShowQuiz = ({
 
   return (
     <Hotkeys
-      executeChallenge={handleSubmit}
+      executeChallenge={!hasSubmitted ? handleAnswersCheck : handleSubmitAndGo}
       containerRef={container}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
@@ -225,8 +229,6 @@ const ShowQuiz = ({
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <ChallengeDescription description={description} />
               <ObserveKeys>
-                {/* TODO: Export the useQuiz return type from fcc/ui */}
-                {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
                 <Quiz questions={quizData} disabled={hasSubmitted} />
               </ObserveKeys>
               <Spacer size='medium' />
@@ -234,14 +236,23 @@ const ShowQuiz = ({
                 {errorMessage}
               </div>
               <Spacer size='medium' />
-              <Button
-                block={true}
-                variant='primary'
-                onClick={handleSubmit}
-                disabled={hasSubmitted}
-              >
-                {t('buttons.check-answer')}
-              </Button>
+              {!hasSubmitted ? (
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleAnswersCheck}
+                >
+                  {t('buttons.check-answer')}
+                </Button>
+              ) : (
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleSubmitAndGo}
+                >
+                  {t('buttons.submit-and-go')}
+                </Button>
+              )}
               <Spacer size='large' />
             </Col>
             <CompletionModal />
