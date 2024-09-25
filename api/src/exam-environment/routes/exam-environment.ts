@@ -243,7 +243,6 @@ async function postExamGeneratedExamHandler(
         );
       }
 
-      // This should be unreachable
       if (generated.data === null) {
         void reply.code(500);
         return reply.send(
@@ -361,11 +360,6 @@ async function postExamGeneratedExamHandler(
     await this.prisma.envExamAttempt.delete({
       where: {
         id: attempt.data.id
-      }
-    });
-    await this.prisma.envGeneratedExam.delete({
-      where: {
-        id: generatedExam.id
       }
     });
     void reply.code(500);

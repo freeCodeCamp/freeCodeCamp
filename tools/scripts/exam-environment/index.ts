@@ -89,9 +89,11 @@ function generateExam(
   );
 
   // Heuristic:
-  // The lower the number of questions able to fulfill the criteria, the harder the question set.
+  // TODO: The lower the number of questions able to fulfill the criteria, the harder the question set.
   // TODO: Sort difficulty, push question, sort new difficulty, push question, ...
   typeConvertedQuestionSetsConfig.forEach(qsc => {
+    // Currently, the sorted order is random as this allows the existing algorithm to be retried until
+    // a successful exam generation.
     qsc.sort(() => Math.round(Math.random() * 2 - 1));
   });
 
