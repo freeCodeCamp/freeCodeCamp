@@ -1,5 +1,5 @@
 const { root } = require('mdast-builder');
-const getSection = require('./utils/get-section');
+const { getSection, getAllSections } = require('./utils/get-section');
 const mdastToHtml = require('./utils/mdast-to-html');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
@@ -10,27 +10,16 @@ function plugin() {
     const quizzesNodes = getSection(tree, `--quizzes--`);
 
     if (quizzesNodes.length > 0) {
-      const quizzes = [];
-      const quizTrees = [];
+      const compiledQuizzes = [];
+      const quizSections = getAllSections(root(quizzesNodes), `--quiz--`);
 
-      quizzesNodes.forEach(quizNode => {
-        const isStartOfQuiz = quizNode.children?.[0]?.value === '--quiz--';
-        if (isStartOfQuiz) {
-          quizTrees.push([quizNode]);
-        } else {
-          quizTrees[quizTrees.length - 1].push(quizNode);
-        }
-      });
-
-      if (quizTrees.length === 0) {
+      if (quizSections.length === 0) {
         throw Error(
           'The --quizzes-- section should contain at least one quiz.'
         );
       }
 
-      quizTrees.forEach(allQuizNodes => {
-        const quizTree = root(allQuizNodes);
-        const quizNodes = getSection(quizTree, `--quiz--`);
+      quizSections.forEach(quizNodes => {
         const quizQuestions = [];
         const questionTrees = [];
 
@@ -62,11 +51,11 @@ function plugin() {
           );
         });
 
-        quizzes.push({ questions: quizQuestions });
+        compiledQuizzes.push({ questions: quizQuestions });
       });
 
-      if (quizzes.length > 0) {
-        file.data.quizzes = quizzes;
+      if (compiledQuizzes.length > 0) {
+        file.data.quizzes = compiledQuizzes;
       }
     }
   }
