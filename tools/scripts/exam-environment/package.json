@@ -1,0 +1,16 @@
+{
+  "name": "exam-environment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "generate-exams": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "5.5.2",
+    "mongodb": "6.9.0"
+  }
+}

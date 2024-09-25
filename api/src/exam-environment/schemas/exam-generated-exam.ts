@@ -1,7 +1,7 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { STANDARD_ERROR } from '../utils/errors';
 
-export const examEnvironmentPostExamGenerate = {
+export const examEnvironmentPostExamGeneratedExam = {
   body: Type.Object({
     examId: Type.String()
   }),

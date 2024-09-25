@@ -10,7 +10,6 @@ import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
   constructUserExam,
-  generateExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
 } from '../utils/exam';
@@ -25,11 +24,11 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
     // TODO: Is there any reason to delete the token without generating a new one?
     fastify.post(
-      '/exam-environment/exam/generate',
+      '/exam-environment/exam/generated-exam',
       {
-        schema: schemas.examEnvironmentPostExamGenerate
+        schema: schemas.examEnvironmentPostExamGeneratedExam
       },
-      postExamGenerateHandler
+      postExamGeneratedExamHandler
     );
     fastify.post(
       '/exam-environment/exam/attempt',
@@ -127,9 +126,9 @@ async function tokenVerifyHandler(
  *
  * Requires token to be validated and TODO: live longer than the exam attempt.
  */
-async function postExamGenerateHandler(
+async function postExamGeneratedExamHandler(
   this: FastifyInstance,
-  req: UpdateReqType<typeof schemas.examEnvironmentPostExamGenerate>,
+  req: UpdateReqType<typeof schemas.examEnvironmentPostExamGeneratedExam>,
   reply: FastifyReply
 ) {
   // Get exam from DB
@@ -265,21 +264,48 @@ async function postExamGenerateHandler(
     }
   }
 
-  // Generate exam for user, and store in db for later validation against submission
-  const maybeGeneratedExamContent = syncMapErr(() => generateExam(exam));
+  // Randomly pick a generated exam for user
+  const maybeGeneratedExams = await mapErr(
+    this.prisma.envGeneratedExam.findMany({
+      where: {
+        // Find generated exams user has not already seen
+        id: {
+          notIn: examAttempts.map(a => a.id)
+        },
+        deprecated: false
+      },
+      select: {
+        id: true
+      }
+    })
+  );
 
-  if (maybeGeneratedExamContent.hasError) {
+  if (maybeGeneratedExams.hasError) {
     void reply.code(500);
     return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExamContent.error)
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExams.error)
     );
   }
 
-  const generatedExamContent = maybeGeneratedExamContent.data;
+  const generatedExams = maybeGeneratedExams.data;
+
+  if (generatedExams.length === 0) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`
+      )
+    );
+  }
+
+  const randomGeneratedExam =
+    generatedExams[Math.floor(Math.random() * generatedExams.length)]!;
 
   const maybeGeneratedExam = await mapErr(
-    this.prisma.envGeneratedExam.create({
-      data: generatedExamContent
+    this.prisma.envGeneratedExam.findFirst({
+      where: {
+        id: randomGeneratedExam.id
+      }
     })
   );
 
@@ -288,13 +314,20 @@ async function postExamGenerateHandler(
     return reply.send(
       // TODO: Consider more specific code
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-        'Unable to generate exam, due to: ' +
+        'Unable to query generated exam, due to: ' +
           JSON.stringify(maybeGeneratedExam.error)
       )
     );
   }
 
   const generatedExam = maybeGeneratedExam.data;
+
+  if (generatedExam === null) {
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(`Unable to locate generated exam.`)
+    );
+  }
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
   const attempt = await mapErr(

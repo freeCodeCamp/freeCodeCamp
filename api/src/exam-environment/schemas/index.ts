@@ -1,4 +1,4 @@
 export { examEnvironmentPostExamAttempt } from './exam-attempt';
-export { examEnvironmentPostExamGenerate } from './exam-generate';
+export { examEnvironmentPostExamGeneratedExam } from './exam-generated-exam';
 export { examEnvironmentPostScreenshot } from './screenshot';
 export { examEnvironmentTokenVerify } from './token-verify';
