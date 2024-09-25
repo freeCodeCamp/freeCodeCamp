@@ -90,8 +90,14 @@ const ShowQuiz = ({
   const { t } = useTranslation();
   const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
+
+  // Campers are not allowed to change their answers once the quiz is submitted.
+  // `hasSubmitted` is used as a flag to disable the quiz.
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
+  // `isPassed` is used as a flag to conditionally render the test or submit button.
+  const [isPassed, setIsPassed] = useState(false);
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -124,6 +130,8 @@ const ShowQuiz = ({
       // TODO: Shuffle the array
       answers: [...distractors, answer],
       correctAnswer: answer.value
+      // TODO: This is for testing, be sure to remove it when the PR is ready
+      // selectedAnswer: answer.value
     };
   });
 
@@ -171,8 +179,22 @@ const ShowQuiz = ({
   ]);
 
   const handleAnswersCheck = () => {
-    if (quizData.some(question => question.selectedAnswer == null)) {
-      setErrorMessage(t('learn.quiz.unanswered-questions'));
+    const unansweredQuestions = quizData.reduce(
+      (accumulator, currentQuestion, currentIndex) => {
+        if (currentQuestion.selectedAnswer == null) {
+          accumulator.push(currentIndex + 1);
+        }
+        return accumulator;
+      },
+      [] as number[]
+    );
+
+    if (unansweredQuestions.length) {
+      setErrorMessage(
+        t('learn.quiz.unanswered-questions', {
+          unansweredQuestions: unansweredQuestions.join(', ')
+        })
+      );
       return;
     }
 
@@ -186,28 +208,26 @@ const ShowQuiz = ({
 
   // Handle error message display on submit.
   useEffect(() => {
-    if (!hasSubmitted) return;
+    if (!hasSubmitted) {
+      return;
+    }
 
-    // `correctAnswerCount` is stored as a state in `useQuiz`,
-    // and the state setter is called when `validateAnswers` is called.
-    // With set state being performed async,
-    // the `correctAnswerCount` value cannot be used immediately within `handleSubmit.`
+    setErrorMessage(
+      t('learn.quiz.have-n-correct-questions', {
+        correctAnswerCount,
+        total: quiz.length
+      })
+    );
+
     if (correctAnswerCount === quiz.length) {
       openCompletionModal();
-      setErrorMessage('');
-    } else {
-      setErrorMessage(
-        t('learn.quiz.have-n-correct-questions', {
-          correctAnswerCount,
-          total: quiz.length
-        })
-      );
+      setIsPassed(true);
     }
   }, [correctAnswerCount, quiz.length, hasSubmitted, openCompletionModal, t]);
 
   return (
     <Hotkeys
-      executeChallenge={!hasSubmitted ? handleAnswersCheck : handleSubmitAndGo}
+      executeChallenge={!isPassed ? handleAnswersCheck : handleSubmitAndGo}
       containerRef={container}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
@@ -236,7 +256,8 @@ const ShowQuiz = ({
                 {errorMessage}
               </div>
               <Spacer size='medium' />
-              {!hasSubmitted ? (
+              {/* TODO: Handle the incorrect answers case (display a link maybe?) */}
+              {!isPassed ? (
                 <Button
                   block={true}
                   variant='primary'
