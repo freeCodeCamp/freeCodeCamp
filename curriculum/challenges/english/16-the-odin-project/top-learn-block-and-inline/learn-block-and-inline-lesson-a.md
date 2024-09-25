@@ -8,7 +8,7 @@ dashedName: learn-block-and-inline-lesson-a
 
 Most of the elements that you have learned about so far are block elements. In other words, their default style is `display: block`. By default, block elements will appear on the page stacked atop each other, each new element starting on a new line.
 
-# --question--
+# --questions--
 
 ## --text--
 

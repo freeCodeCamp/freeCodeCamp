@@ -41,7 +41,7 @@ Back in `index.html` file, let’s add a `head` element with a `charset` `meta` 
 </html>
 ```
 
-# --question--
+# --questions--
     
 ## --text--
 

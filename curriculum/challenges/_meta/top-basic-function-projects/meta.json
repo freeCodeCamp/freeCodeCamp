@@ -1,6 +1,6 @@
 {
   "name": "Basic Function Projects",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "top-basic-function-projects",
   "helpCategory": "Odin",
   "order": 13,
@@ -22,6 +22,5 @@
       "id": "661e17c6068359c3ccf2f4d8",
       "title": "Basic Functions Exercise D"
     }
-
   ]
 }

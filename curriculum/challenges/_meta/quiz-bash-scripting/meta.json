@@ -1,0 +1,13 @@
+{
+  "name": "Bash Scripting Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-bash-scripting",
+  "order": 343,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1afbd9998e9c985d8e73b", "title": "Bash Scripting Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

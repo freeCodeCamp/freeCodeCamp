@@ -12,7 +12,7 @@ This video show you how to solve quadratic equations, and explain the coefficien
 
 Here is the <a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9oS_WnDblDjX3pc?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

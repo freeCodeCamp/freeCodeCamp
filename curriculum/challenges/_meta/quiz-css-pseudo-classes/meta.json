@@ -1,0 +1,10 @@
+{
+  "name": "CSS Pseudo-classes Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-pseudo-classes",
+  "order": 62,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed9002f45ce3ece4053eb6", "title": "CSS Pseudo-classes Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

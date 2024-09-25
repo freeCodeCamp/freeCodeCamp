@@ -1,0 +1,13 @@
+{
+  "name": "Nano Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-nano",
+  "order": 356,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1b03b922a53cb231e1c0d", "title": "Nano Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

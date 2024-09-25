@@ -13,7 +13,7 @@ So if you end up with some unexpected behavior like this it’s either because o
 
 The cascade is what determines which rules actually get applied to your HTML. There are different factors that the cascade uses to determine this. We will examine three of these factors, which will hopefully help you avoid those frustrating “I hate CSS” moments.
 
-# --question--
+# --questions--
 ## --text--
 
 Why might you encounter unexpected behavior in CSS?

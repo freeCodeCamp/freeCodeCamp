@@ -1,0 +1,16 @@
+{
+  "name": "Form Validation with JavaScript Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-form-validation-with-javascript",
+  "order": 217,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd3403d7077eece6dc4b6",
+      "title": "Form Validation with JavaScript Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

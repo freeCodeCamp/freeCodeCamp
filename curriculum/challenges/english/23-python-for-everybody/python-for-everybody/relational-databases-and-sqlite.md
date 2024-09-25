@@ -20,7 +20,7 @@ More resources:
 
 \- <a href="https://www.sqlite.org/famous.html" target="_blank" rel="noopener noreferrer nofollow">SQLite usage</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

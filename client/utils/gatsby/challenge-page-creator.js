@@ -26,6 +26,11 @@ const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/super-block-intro.tsx'
 );
+const quiz = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/quiz/show.tsx'
+);
+
 const video = path.resolve(
   __dirname,
   '../../src/templates/Challenges/video/show.tsx'
@@ -61,6 +66,7 @@ const views = {
   classic,
   modern: classic,
   frontend,
+  quiz,
   video,
   codeAlly,
   odin,

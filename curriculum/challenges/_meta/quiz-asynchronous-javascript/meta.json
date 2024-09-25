@@ -1,0 +1,16 @@
+{
+  "name": "Asynchronous JavaScript Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-asynchronous-javascript",
+  "order": 282,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd630f7666cfa54b404d0",
+      "title": "Asynchronous JavaScript Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

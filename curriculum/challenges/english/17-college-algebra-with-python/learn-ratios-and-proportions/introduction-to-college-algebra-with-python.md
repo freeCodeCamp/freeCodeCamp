@@ -20,7 +20,7 @@ This first video includes an introduction to the course, how it will work, and h
 
 Create an algebra <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer nofollow">Colab notebook on your google drive</a> so you can follow along with the videos.
 
-# --question--
+# --questions--
 
 ## --text--
 

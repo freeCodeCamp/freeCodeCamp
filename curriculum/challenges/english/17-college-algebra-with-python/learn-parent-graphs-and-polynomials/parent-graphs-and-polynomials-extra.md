@@ -12,7 +12,7 @@ This next video will show you how to add sliders to your graphs, to see them cha
 
 Here is the <a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb0Mwl0GUGbqMpka?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

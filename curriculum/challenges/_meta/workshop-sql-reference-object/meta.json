@@ -1,0 +1,12 @@
+{
+  "name": "Build an SQL Reference Object",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-sql-reference-object",
+  "order": 358,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "5fa323cdaf6a73463d590659", "title": "Build an SQL Reference Object" }],
+  "helpCategory": "Backend Development"
+}

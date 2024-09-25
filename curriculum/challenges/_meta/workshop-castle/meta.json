@@ -1,0 +1,12 @@
+{
+  "name": "Build a Castle",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-castle",
+  "order": 354,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "5f32db63eb37f7e17323f459", "title": "Build a Castle" }],
+  "helpCategory": "Backend Development"
+}

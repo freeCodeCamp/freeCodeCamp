@@ -4,8 +4,8 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-cash-register",
-  "order": 249,
+  "order": 247,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66c58d2477d7622ddc30ae06", "title": "Build a Cash Register" }],
+  "challengeOrder": [{ "id": "aa2e6f85cab2ab736c9a9b24", "title": "Build a Cash Register" }],
   "helpCategory": "JavaScript"
 }

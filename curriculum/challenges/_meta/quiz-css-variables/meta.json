@@ -1,0 +1,10 @@
+{
+  "name": "CSS Variables Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-variables",
+  "order": 112,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed9018f45ce3ece4053eb9", "title": "CSS Variables Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

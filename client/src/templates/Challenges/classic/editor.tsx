@@ -191,6 +191,7 @@ const modeMap = {
   html: 'html',
   js: 'javascript',
   jsx: 'javascript',
+  ts: 'typescript',
   py: 'python',
   python: 'python'
 };
@@ -781,6 +782,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     Prism.hooks.add('complete', makePrismCollapsible);
     Prism.highlightAllUnder(desc);
 
+    // Since the description can be resized without React knowing about it, the
+    // zone needs updating in response.
+    const obs = new ResizeObserver(() => updateDescriptionZone());
+    obs.observe(domNode);
+
     domNode.style.userSelect = 'text';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
@@ -1249,9 +1255,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     // need to untrap it if the user had it set to false.
     if (!isTabTrapped()) {
       setMonacoTabTrapped(false);
-    }
-    if (hasEditableRegion()) {
-      updateDescriptionZone();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);

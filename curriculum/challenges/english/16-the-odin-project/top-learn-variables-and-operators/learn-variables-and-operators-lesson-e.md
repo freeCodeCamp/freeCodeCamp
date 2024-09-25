@@ -22,7 +22,7 @@ Numbers are the building blocks of programming logic! In fact, it’s hard to th
 
 Given the table of operators above, write a simple program snippet that demonstrates the use of each operator with the variable `x` initialized to `10`.
 
-# --question--
+# --questions--
 
 ## --text--
 
