@@ -52,7 +52,15 @@ export const roundDownToNearestHundred = (num: number) =>
 export const convertToLocalizedString = (num: number, ISOCode: string) =>
   num.toLocaleString(ISOCode);
 
-export const generateSearchPlaceholder = async (mockRecordsNum?: number) => {
+interface GenerateSearchPlaceholderOptions {
+  locale?: string;
+  mockRecordsNum?: number;
+}
+
+export const generateSearchPlaceholder = async (
+  options: GenerateSearchPlaceholderOptions = {}
+) => {
+  const { locale, mockRecordsNum } = options;
   let placeholderText = t('search.placeholder.default');
 
   try {
@@ -88,7 +96,10 @@ export const generateSearchPlaceholder = async (mockRecordsNum?: number) => {
   }
 
   writeFileSync(
-    resolve(__dirname, `../i18n/locales/${clientLocale}/search-bar.json`),
+    resolve(
+      __dirname,
+      `../i18n/locales/${locale ? locale : clientLocale}/search-bar.json`
+    ),
     JSON.stringify({
       placeholder: placeholderText
     })
@@ -98,3 +109,7 @@ export const generateSearchPlaceholder = async (mockRecordsNum?: number) => {
 };
 
 void generateSearchPlaceholder();
+// TODO: remove the need to fallback to english once we're confident it's
+// unnecessary (client/i18n/config.js will need all references to 'en' removing)
+if (clientLocale !== 'english')
+  void generateSearchPlaceholder({ locale: 'english' });

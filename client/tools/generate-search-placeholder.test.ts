@@ -136,20 +136,26 @@ describe('Search bar placeholder tests:', () => {
 
   test('When the total number of hits is less than 100 the expected placeholder is generated', async () => {
     const expected = 'Search our tutorials';
-    const placeholderText = await generateSearchPlaceholder(99);
+    const placeholderText = await generateSearchPlaceholder({
+      mockRecordsNum: 99
+    });
 
     expect(placeholderText).toEqual(expected);
   });
 
   test('When the total number of hits is equal to 100 the expected placeholder is generated', async () => {
-    const placeholderText = await generateSearchPlaceholder(100);
+    const placeholderText = await generateSearchPlaceholder({
+      mockRecordsNum: 100
+    });
     const expected = 'Search 100+ tutorials';
 
     expect(placeholderText).toEqual(expected);
   });
 
   test('When the total number of hits is greater than 100 the expected placeholder is generated', async () => {
-    const placeholderText = await generateSearchPlaceholder(11000);
+    const placeholderText = await generateSearchPlaceholder({
+      mockRecordsNum: 11000
+    });
     const expected = 'Search 11,000+ tutorials';
 
     expect(placeholderText).toEqual(expected);
