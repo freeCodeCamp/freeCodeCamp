@@ -1,3 +1,4 @@
+import { clientLocale } from '../config/env.json';
 import {
   convertToLocalizedString,
   generateSearchPlaceholder,
@@ -64,100 +65,111 @@ describe('Search bar placeholder tests:', () => {
     });
   });
 
-  test('Numbers are converted to the correct decimal or comma format for each locale', () => {
-    const testArr = [
-      {
-        num: 100,
-        locale: 'en',
-        expected: '100'
-      },
-      {
-        num: 100,
-        locale: 'zh',
-        expected: '100'
-      },
-      {
-        num: 100,
-        locale: 'de',
-        expected: '100'
-      },
-      {
-        num: 1000,
-        locale: 'en',
-        expected: '1,000'
-      },
-      {
-        num: 1000,
-        locale: 'zh',
-        expected: '1,000'
-      },
-      {
-        num: 1000,
-        locale: 'de',
-        expected: '1.000'
-      },
-      {
-        num: 10000,
-        locale: 'en',
-        expected: '10,000'
-      },
-      {
-        num: 10000,
-        locale: 'zh',
-        expected: '10,000'
-      },
-      {
-        num: 10000,
-        locale: 'de',
-        expected: '10.000'
-      },
-      {
-        num: 100000,
-        locale: 'en',
-        expected: '100,000'
-      },
-      {
-        num: 100000,
-        locale: 'zh',
-        expected: '100,000'
-      },
-      {
-        num: 100000,
-        locale: 'de',
-        expected: '100.000'
-      }
-    ];
+  describe('Number formatting', () => {
+    test('Numbers are converted to the correct decimal or comma format for each locale', () => {
+      const testArr = [
+        {
+          num: 100,
+          locale: 'en',
+          expected: '100'
+        },
+        {
+          num: 100,
+          locale: 'zh',
+          expected: '100'
+        },
+        {
+          num: 100,
+          locale: 'de',
+          expected: '100'
+        },
+        {
+          num: 1000,
+          locale: 'en',
+          expected: '1,000'
+        },
+        {
+          num: 1000,
+          locale: 'zh',
+          expected: '1,000'
+        },
+        {
+          num: 1000,
+          locale: 'de',
+          expected: '1.000'
+        },
+        {
+          num: 10000,
+          locale: 'en',
+          expected: '10,000'
+        },
+        {
+          num: 10000,
+          locale: 'zh',
+          expected: '10,000'
+        },
+        {
+          num: 10000,
+          locale: 'de',
+          expected: '10.000'
+        },
+        {
+          num: 100000,
+          locale: 'en',
+          expected: '100,000'
+        },
+        {
+          num: 100000,
+          locale: 'zh',
+          expected: '100,000'
+        },
+        {
+          num: 100000,
+          locale: 'de',
+          expected: '100.000'
+        }
+      ];
 
-    testArr.forEach(obj => {
-      const { num, locale, expected } = obj;
-      expect(convertToLocalizedString(num, locale)).toEqual(expected);
+      testArr.forEach(obj => {
+        const { num, locale, expected } = obj;
+        expect(convertToLocalizedString(num, locale)).toEqual(expected);
+      });
     });
   });
 
-  test('When the total number of hits is less than 100 the expected placeholder is generated', async () => {
-    const expected = 'Search our tutorials';
-    const placeholderText = await generateSearchPlaceholder({
-      mockRecordsNum: 99
+  // Note: Only test the English locale to prevent duplicate tests,
+  // and just to ensure the logic is working as expected.
+  if (clientLocale === 'english') {
+    describe('Placeholder strings', () => {
+      test('When the total number of hits is less than 100 the expected placeholder is generated', async () => {
+        const expected = 'Search our tutorials';
+        const placeholderText = await generateSearchPlaceholder({
+          mockRecordsNum: 99,
+          locale: 'english'
+        });
+
+        expect(placeholderText).toEqual(expected);
+      });
+
+      test('When the total number of hits is equal to 100 the expected placeholder is generated', async () => {
+        const placeholderText = await generateSearchPlaceholder({
+          mockRecordsNum: 100,
+          locale: 'english'
+        });
+        const expected = 'Search 100+ tutorials';
+
+        expect(placeholderText).toEqual(expected);
+      });
+
+      test('When the total number of hits is greater than 100 the expected placeholder is generated', async () => {
+        const placeholderText = await generateSearchPlaceholder({
+          mockRecordsNum: 11000,
+          locale: 'english'
+        });
+        const expected = 'Search 11,000+ tutorials';
+
+        expect(placeholderText).toEqual(expected);
+      });
     });
-
-    expect(placeholderText).toEqual(expected);
-  });
-
-  test('When the total number of hits is equal to 100 the expected placeholder is generated', async () => {
-    const placeholderText = await generateSearchPlaceholder({
-      mockRecordsNum: 100
-    });
-    const expected = 'Search 100+ tutorials';
-
-    expect(placeholderText).toEqual(expected);
-  });
-
-  test('When the total number of hits is greater than 100 the expected placeholder is generated', async () => {
-    const placeholderText = await generateSearchPlaceholder({
-      mockRecordsNum: 11000
-    });
-    const expected = 'Search 11,000+ tutorials';
-
-    expect(placeholderText).toEqual(expected);
-  });
+  }
 });
