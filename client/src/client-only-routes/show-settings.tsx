@@ -39,6 +39,7 @@ import {
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
+import CareerTimeline from '../components/profile/components/career-timeline';
 const { apiLocation } = envData;
 
 // TODO: update types for actions
@@ -170,6 +171,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           >
             {t('settings.for', { username: username })}
           </h1>
+          <CareerTimeline />
           <About
             about={about}
             currentTheme={theme}
