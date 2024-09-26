@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { useTranslation } from 'react-i18next';
@@ -64,6 +64,18 @@ interface ShowQuizProps {
   updateSolutionFormValues: () => void;
 }
 
+// Shuffle array using the Fisher–Yates shuffle algorithm
+const shuffle = (arrToShuffle: Array<{ label: ReactNode; value: number }>) => {
+  const arr = [...arrToShuffle];
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  return arr;
+};
+
 const ShowQuiz = ({
   challengeMounted,
   data: {
@@ -127,11 +139,8 @@ const ShowQuiz = ({
 
     return {
       question: <PrismFormatted text={question.question} />,
-      // TODO: Shuffle the array
-      answers: [...distractors, answer],
+      answers: shuffle([...distractors, answer]),
       correctAnswer: answer.value
-      // TODO: This is for testing, be sure to remove it when the PR is ready
-      // selectedAnswer: answer.value
     };
   });
 
@@ -256,7 +265,16 @@ const ShowQuiz = ({
                 {errorMessage}
               </div>
               <Spacer size='medium' />
-              {/* TODO: Handle the incorrect answers case (display a link maybe?) */}
+              {/* 
+                 There are three cases for the button display:
+                 1. Campers submit the answers but don't pass 
+                 2. Campers submit the answers and pass, click the submit button on the completion modal
+                 3. Campers submit the answers and pass, but they close the completion modal
+
+                 This rendering logic is only handling (2) and (3).
+                 TODO: Update the logic to handle (1). 
+                 The code should render a link that points campers to the module's review block.
+               */}
               {!isPassed ? (
                 <Button
                   block={true}
