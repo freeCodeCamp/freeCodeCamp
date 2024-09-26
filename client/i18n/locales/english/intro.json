@@ -2204,7 +2204,7 @@
       "hjtr": { "title": "174", "intro": [] },
       "lab-pyramid-generator": {
         "title": "Build a Pyramid Generator",
-        "intro": ["In this lab you will build a pyramid generator"]
+        "intro": ["In this lab you will build a pyramid generator."]
       },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
