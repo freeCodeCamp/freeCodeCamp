@@ -10,12 +10,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 18,
               "line": 3,
-              "offset": 68,
+              "offset": 67,
             },
             "start": {
               "column": 3,
               "line": 3,
-              "offset": 53,
+              "offset": 52,
             },
           },
           "type": "text",
@@ -27,12 +27,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 18,
           "line": 3,
-          "offset": 68,
+          "offset": 67,
         },
         "start": {
           "column": 1,
           "line": 3,
-          "offset": 51,
+          "offset": 50,
         },
       },
       "type": "heading",
@@ -44,12 +44,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 12,
               "line": 5,
-              "offset": 81,
+              "offset": 80,
             },
             "start": {
               "column": 1,
               "line": 5,
-              "offset": 70,
+              "offset": 69,
             },
           },
           "type": "text",
@@ -60,12 +60,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 12,
           "line": 5,
-          "offset": 81,
+          "offset": 80,
         },
         "start": {
           "column": 1,
           "line": 5,
-          "offset": 70,
+          "offset": 69,
         },
       },
       "type": "paragraph",
@@ -77,12 +77,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 4,
           "line": 9,
-          "offset": 107,
+          "offset": 106,
         },
         "start": {
           "column": 1,
           "line": 7,
-          "offset": 83,
+          "offset": 82,
         },
       },
       "type": "code",
@@ -95,12 +95,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 19,
               "line": 11,
-              "offset": 127,
+              "offset": 126,
             },
             "start": {
               "column": 3,
               "line": 11,
-              "offset": 111,
+              "offset": 110,
             },
           },
           "type": "text",
@@ -112,12 +112,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 19,
           "line": 11,
-          "offset": 127,
+          "offset": 126,
         },
         "start": {
           "column": 1,
           "line": 11,
-          "offset": 109,
+          "offset": 108,
         },
       },
       "type": "heading",
@@ -129,12 +129,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 12,
               "line": 13,
-              "offset": 140,
+              "offset": 139,
             },
             "start": {
               "column": 1,
               "line": 13,
-              "offset": 129,
+              "offset": 128,
             },
           },
           "type": "text",
@@ -145,12 +145,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 12,
           "line": 13,
-          "offset": 140,
+          "offset": 139,
         },
         "start": {
           "column": 1,
           "line": 13,
-          "offset": 129,
+          "offset": 128,
         },
       },
       "type": "paragraph",
@@ -162,12 +162,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 4,
           "line": 17,
-          "offset": 168,
+          "offset": 167,
         },
         "start": {
           "column": 1,
           "line": 15,
-          "offset": 142,
+          "offset": 141,
         },
       },
       "type": "code",
@@ -180,12 +180,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 12,
               "line": 19,
-              "offset": 181,
+              "offset": 180,
             },
             "start": {
               "column": 3,
               "line": 19,
-              "offset": 172,
+              "offset": 171,
             },
           },
           "type": "text",
@@ -197,12 +197,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 12,
           "line": 19,
-          "offset": 181,
+          "offset": 180,
         },
         "start": {
           "column": 1,
           "line": 19,
-          "offset": 170,
+          "offset": 169,
         },
       },
       "type": "heading",
@@ -214,12 +214,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 11,
               "line": 21,
-              "offset": 193,
+              "offset": 192,
             },
             "start": {
               "column": 1,
               "line": 21,
-              "offset": 183,
+              "offset": 182,
             },
           },
           "type": "text",
@@ -230,12 +230,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 11,
           "line": 21,
-          "offset": 193,
+          "offset": 192,
         },
         "start": {
           "column": 1,
           "line": 21,
-          "offset": 183,
+          "offset": 182,
         },
       },
       "type": "paragraph",
@@ -247,12 +247,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 4,
           "line": 25,
-          "offset": 217,
+          "offset": 216,
         },
         "start": {
           "column": 1,
           "line": 23,
-          "offset": 195,
+          "offset": 194,
         },
       },
       "type": "code",
@@ -265,12 +265,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 18,
               "line": 27,
-              "offset": 236,
+              "offset": 235,
             },
             "start": {
               "column": 1,
               "line": 27,
-              "offset": 219,
+              "offset": 218,
             },
           },
           "type": "text",
@@ -281,12 +281,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 24,
               "line": 27,
-              "offset": 242,
+              "offset": 241,
             },
             "start": {
               "column": 18,
               "line": 27,
-              "offset": 236,
+              "offset": 235,
             },
           },
           "type": "html",
@@ -297,12 +297,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 28,
               "line": 27,
-              "offset": 246,
+              "offset": 245,
             },
             "start": {
               "column": 24,
               "line": 27,
-              "offset": 242,
+              "offset": 241,
             },
           },
           "type": "text",
@@ -313,12 +313,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 35,
               "line": 27,
-              "offset": 253,
+              "offset": 252,
             },
             "start": {
               "column": 28,
               "line": 27,
-              "offset": 246,
+              "offset": 245,
             },
           },
           "type": "html",
@@ -329,12 +329,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 35,
           "line": 27,
-          "offset": 253,
+          "offset": 252,
         },
         "start": {
           "column": 1,
           "line": 27,
-          "offset": 219,
+          "offset": 218,
         },
       },
       "type": "paragraph",
@@ -346,12 +346,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 4,
           "line": 31,
-          "offset": 282,
+          "offset": 281,
         },
         "start": {
           "column": 1,
           "line": 29,
-          "offset": 255,
+          "offset": 254,
         },
       },
       "type": "code",
@@ -364,12 +364,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 11,
               "line": 34,
-              "offset": 295,
+              "offset": 294,
             },
             "start": {
               "column": 3,
               "line": 34,
-              "offset": 287,
+              "offset": 286,
             },
           },
           "type": "text",
@@ -381,12 +381,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 11,
           "line": 34,
-          "offset": 295,
+          "offset": 294,
         },
         "start": {
           "column": 1,
           "line": 34,
-          "offset": 285,
+          "offset": 284,
         },
       },
       "type": "heading",
@@ -398,12 +398,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
             "end": {
               "column": 21,
               "line": 36,
-              "offset": 317,
+              "offset": 316,
             },
             "start": {
               "column": 4,
               "line": 36,
-              "offset": 300,
+              "offset": 299,
             },
           },
           "type": "text",
@@ -415,12 +415,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 21,
           "line": 36,
-          "offset": 317,
+          "offset": 316,
         },
         "start": {
           "column": 1,
           "line": 36,
-          "offset": 297,
+          "offset": 296,
         },
       },
       "type": "heading",
@@ -432,12 +432,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 4,
           "line": 43,
-          "offset": 364,
+          "offset": 363,
         },
         "start": {
           "column": 1,
           "line": 38,
-          "offset": 319,
+          "offset": 318,
         },
       },
       "type": "code",
@@ -453,12 +453,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 4,
           "line": 49,
-          "offset": 406,
+          "offset": 405,
         },
         "start": {
           "column": 1,
           "line": 45,
-          "offset": 366,
+          "offset": 365,
         },
       },
       "type": "code",
@@ -467,39 +467,24 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
 }",
     },
     {
-      "children": [
-        {
-          "alt": "custom-name",
-          "position": {
-            "end": {
-              "column": 17,
-              "line": 51,
-              "offset": 424,
-            },
-            "start": {
-              "column": 1,
-              "line": 51,
-              "offset": 408,
-            },
-          },
-          "title": null,
-          "type": "image",
-          "url": "",
-        },
-      ],
+      "attributes": {
+        "id": "custom-name",
+      },
+      "children": [],
+      "name": "id",
       "position": {
         "end": {
-          "column": 17,
+          "column": 19,
           "line": 51,
-          "offset": 424,
+          "offset": 425,
         },
         "start": {
           "column": 1,
           "line": 51,
-          "offset": 408,
+          "offset": 407,
         },
       },
-      "type": "paragraph",
+      "type": "leafDirective",
     },
     {
       "lang": "js",
@@ -508,12 +493,12 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
         "end": {
           "column": 4,
           "line": 55,
-          "offset": 448,
+          "offset": 449,
         },
         "start": {
           "column": 1,
           "line": 53,
-          "offset": 426,
+          "offset": 427,
         },
       },
       "type": "code",
@@ -545,7 +530,7 @@ exports[`replace-imports should have an output to match the snapshot 1`] = `
     "end": {
       "column": 1,
       "line": 58,
-      "offset": 476,
+      "offset": 477,
     },
     "start": {
       "column": 1,

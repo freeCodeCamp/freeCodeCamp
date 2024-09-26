@@ -1725,7 +1725,12 @@
       },
       "bzfv": { "title": "8", "intro": [] },
       "snuv": { "title": "9", "intro": [] },
-      "uowk": { "title": "10", "intro": [] },
+      "quiz-basic-html": {
+        "title": "Basic HTML Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of basic HTML knowledge."
+        ]
+      },
       "evdc": { "title": "11", "intro": [] },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
@@ -1805,7 +1810,13 @@
         ]
       },
       "dxpc": { "title": "36", "intro": [] },
-      "liti": { "title": "37", "intro": [] },
+      "workshop-cafe-menu": {
+        "title": "Design a Cafe Menu",
+        "intro": [
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+        ]
+      },
       "lab-business-card": {
         "title": "Design a Business Card",
         "intro": [
@@ -2082,7 +2093,12 @@
         ]
       },
       "hxwa": { "title": "141", "intro": [] },
-      "xkbo": { "title": "142", "intro": [] },
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
+      },
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
         "intro": [
@@ -2159,7 +2175,10 @@
       },
       "dvnt": { "title": "164", "intro": [] },
       "ekdb": { "title": "165", "intro": [] },
-      "ezek": { "title": "166", "intro": [] },
+      "lab-quiz-game": {
+        "title": "Build a Quiz Game",
+        "intro": ["For this lab, you will build a quiz game."]
+      },
       "lab-factorial-calculator": {
         "title": "Build a Factorial Calculator ",
         "intro": ["In this lab, you will build a factorial calculator."]
@@ -2171,7 +2190,12 @@
         ]
       },
       "kgtw": { "title": "169", "intro": [] },
-      "ljmq": { "title": "170", "intro": [] },
+      "workshop-sentence-analyzer": {
+        "title": "Build a Sentence Analyzer",
+        "intro": [
+          "In this workshop, you'll review working with JavaScript loops by building a sentence analyzer app."
+        ]
+      },
       "kcci": { "title": "171", "intro": [] },
       "puhe": { "title": "172", "intro": [] },
       "quiz-javascript-loops": {
@@ -2212,7 +2236,12 @@
       },
       "esfh": { "title": "188", "intro": [] },
       "gibb": { "title": "189", "intro": [] },
-      "whrm": { "title": "190", "intro": [] },
+      "lab-favorite-icon-toggler": {
+        "title": "Build a Favorite Icon Toggler",
+        "intro": [
+          "In this lab, you will build a favorite icon toggler by utilizing JavaScript click events."
+        ]
+      },
       "fhxc": { "title": "191", "intro": [] },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
@@ -2239,7 +2268,12 @@
           "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
         ]
       },
-      "uglc": { "title": "199", "intro": [] },
+      "lab-palindrome-checker": {
+        "title": "Build a Palindrome Checker",
+        "intro": [
+          "For this lab, you'll build an application that checks whether a given word is a palindrome."
+        ]
+      },
       "lab-football-team-cards": {
         "title": "Build a Set of Football Team Cards",
         "intro": [
@@ -2348,7 +2382,12 @@
         ]
       },
       "yaxm": { "title": "245", "intro": [] },
-      "lofk": { "title": "246", "intro": [] },
+      "lab-telephone-number-validator": {
+        "title": "Build a Telephone Number Validator",
+        "intro": [
+          "For this lab, you'll build an application that checks if a number is a valid United States phone number."
+        ]
+      },
       "lab-cash-register": {
         "title": "Build a Cash Register",
         "intro": ["For this lab, you will build a cash register."]
@@ -2383,7 +2422,12 @@
         ]
       },
       "nixz": { "title": "262", "intro": [] },
-      "zywg": { "title": "263", "intro": [] },
+      "lab-stack-class": {
+        "title": "Build a Stack Class",
+        "intro": [
+          "For this lab, you will build a stack class using JavaScript."
+        ]
+      },
       "lab-linked-list-class": {
         "title": "Build a Linked List Class",
         "intro": [
@@ -2455,7 +2499,7 @@
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
       "erfj": { "title": "296", "intro": [] },
-      "quiz-react": {
+      "quiz-react-basics": {
         "title": "React Basics Quiz",
         "intro": ["Test what you've learned in this quiz on React Basics."]
       },

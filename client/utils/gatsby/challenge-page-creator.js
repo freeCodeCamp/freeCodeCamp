@@ -28,7 +28,7 @@ const superBlockIntro = path.resolve(
 );
 const quiz = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/projects/backend/show.tsx'
+  '../../src/templates/Challenges/quiz/show.tsx'
 );
 
 const video = path.resolve(

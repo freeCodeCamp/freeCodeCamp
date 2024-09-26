@@ -1,0 +1,45 @@
+{
+  "name": "Build a Sentence Analyzer",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-sentence-analyzer",
+  "order": 170,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66e2d680e129e1423116a541",
+      "title": "Step 1"
+    },
+    {
+      "id": "66e2df8c5676fe51cead8ec8",
+      "title": "Step 2"
+    },
+    {
+      "id": "66e2e5d890ac8a54c9d703bd",
+      "title": "Step 3"
+    },
+    {
+      "id": "66e2e99caa0cb3570f4822b4",
+      "title": "Step 4"
+    },
+    {
+      "id": "66e2eab8a5638f57b637b7cc",
+      "title": "Step 5"
+    },
+    {
+      "id": "66e2edb23013ca596f8d9568",
+      "title": "Step 6"
+    },
+    {
+      "id": "66e2f06b191e305c00574e4d",
+      "title": "Step 7"
+    },
+    {
+      "id": "66e2f376df6f315ee81de81a",
+      "title": "Step 8"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "blockType": "workshop"
+}
