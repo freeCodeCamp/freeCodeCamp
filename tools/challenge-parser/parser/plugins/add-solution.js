@@ -3,7 +3,7 @@ const { root } = require('mdast-builder');
 const visitChildren = require('unist-util-visit-children');
 
 const { editableRegionMarker } = require('./add-seed');
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 const { getFileVisitor } = require('./utils/get-file-visitor');
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
@@ -19,7 +19,7 @@ function validateMarkers({ value }) {
 function createPlugin() {
   return function transformer(tree, file) {
     const solutionArrays = splitOnThematicBreak(
-      getAllBetween(tree, `--solutions--`)
+      getSection(tree, `--solutions--`)
     );
     const solutions = [];
 

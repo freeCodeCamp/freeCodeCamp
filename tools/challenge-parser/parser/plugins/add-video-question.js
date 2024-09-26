@@ -1,6 +1,6 @@
 const { root } = require('mdast-builder');
 const find = require('unist-util-find');
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
 
@@ -9,7 +9,7 @@ const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 function plugin() {
   return transformer;
   function transformer(tree, file) {
-    const allQuestionNodes = getAllBetween(tree, '--questions--');
+    const allQuestionNodes = getSection(tree, '--questions--');
 
     if (allQuestionNodes.length > 0) {
       const questions = [];
@@ -28,9 +28,9 @@ function plugin() {
       questionTrees.forEach(questionNodes => {
         const questionTree = root(questionNodes);
 
-        const textNodes = getAllBetween(questionTree, '--text--');
-        const answersNodes = getAllBetween(questionTree, '--answers--');
-        const solutionNodes = getAllBetween(questionTree, '--video-solution--');
+        const textNodes = getSection(questionTree, '--text--');
+        const answersNodes = getSection(questionTree, '--answers--');
+        const solutionNodes = getSection(questionTree, '--video-solution--');
 
         questions.push(getQuestion(textNodes, answersNodes, solutionNodes));
       });
@@ -61,7 +61,7 @@ function getAnswers(answersNodes) {
 
     if (feedback) {
       const answerNodes = getAllBefore(answerTree, '--feedback--');
-      const feedbackNodes = getAllBetween(answerTree, '--feedback--');
+      const feedbackNodes = getSection(answerTree, '--feedback--');
 
       if (answerNodes.length < 1) {
         throw Error('Answer missing');

@@ -138,7 +138,7 @@ const ShowQuiz = ({
     };
 
     return {
-      question: <PrismFormatted text={question.question} />,
+      question: <PrismFormatted text={question.text} />,
       answers: shuffle([...distractors, answer]),
       correctAnswer: answer.value
     };
@@ -327,7 +327,7 @@ export const query = graphql`
         quizzes {
           questions {
             distractors
-            question
+            text
             answer
           }
         }
