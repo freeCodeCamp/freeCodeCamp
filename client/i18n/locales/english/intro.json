@@ -1784,7 +1784,6 @@
           "Test what you've learned in this quiz of HTML tables and forms."
         ]
       },
-
       "ghoc": { "title": "25", "intro": [] },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
@@ -2301,7 +2300,12 @@
       },
       "dqth": { "title": "207", "intro": [] },
       "ilop": { "title": "208", "intro": [] },
-      "qrer": { "title": "209", "intro": [] },
+      "lab-markdown-to-html-converter": {
+        "title": "Build a Markdown to HTML Converter",
+        "intro": [
+          "For this lab, you will build a Markdown to HTML converter using JavaScript."
+        ]
+      },
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you will build a regex sandbox."]
