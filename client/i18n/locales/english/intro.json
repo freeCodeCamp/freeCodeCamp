@@ -2438,7 +2438,6 @@
         "title": "Build a Hash Table Class",
         "intro": ["For this lab, you will build a hash table using JavaScript."]
       },
-      "wraf": { "title": "265", "intro": [] },
       "muyw": { "title": "266", "intro": [] },
       "quiz-javascript-data-structures": {
         "title": "JavaScript Data Structures Quiz",
