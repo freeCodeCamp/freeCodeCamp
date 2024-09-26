@@ -216,6 +216,8 @@ const ShowQuiz = ({
   };
 
   // Handle error message display on submit.
+  // We keep the logic in a useEffect hook in order to subscribe to the `correctAnswerCount` change
+  // as `correctAnswerCount` is a React state and its value is updated asynchronously,
   useEffect(() => {
     if (!hasSubmitted) {
       return;
