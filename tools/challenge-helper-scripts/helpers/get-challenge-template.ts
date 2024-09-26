@@ -5,7 +5,7 @@ const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
 };
 
-export interface ChallengeOptions {
+interface ChallengeOptions {
   challengeId: ObjectID;
   title: string;
   dashedName: string;
@@ -37,7 +37,7 @@ challengeType: ${challengeType}
 dashedName: ${dashedName}
 ---`;
 
-export const getLegacyChallengeTemplate = (
+const getLegacyChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -70,7 +70,7 @@ Test 1
 \`\`\`
 `;
 
-export const getQuizChallengeTemplate = (
+const getQuizChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -524,7 +524,7 @@ Placeholder answer
 
 `;
 
-export const getVideoChallengeTemplate = (
+const getVideoChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatterWithVideo(options)}
 
@@ -555,7 +555,7 @@ Answer 3
 1
 `;
 
-export const getAssignmentChallengeTemplate = (
+const getAssignmentChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -590,7 +590,7 @@ Answer 3
 1
 `;
 
-export const getMultipleChoiceChallengeTemplate = (
+const getMultipleChoiceChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -621,7 +621,7 @@ Answer 3
 1
 `;
 
-export const getFillInTheBlankChallengeTemplate = (
+const getFillInTheBlankChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -648,7 +648,7 @@ It's \`in\`
 \`blank\`
 `;
 
-export const getDialogueChallengeTemplate = (
+const getDialogueChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 

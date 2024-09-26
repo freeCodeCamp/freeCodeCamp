@@ -51,7 +51,7 @@ import {
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 
-export type FastifyInstanceWithTypeProvider = FastifyInstance<
+type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,

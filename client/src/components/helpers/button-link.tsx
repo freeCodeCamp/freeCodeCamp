@@ -3,7 +3,7 @@ import { Button } from '@freecodecamp/ui';
 
 import Link from './link';
 
-export type ButtonSize = 'small' | 'medium' | 'large';
+type ButtonSize = 'small' | 'medium' | 'large';
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
