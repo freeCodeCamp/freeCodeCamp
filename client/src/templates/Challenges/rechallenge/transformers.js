@@ -217,7 +217,7 @@ async function transformScript(documentElement) {
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
-  const { indexHtml, stylesCss, scriptJs, indexJsx } =
+  const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs } =
     challengeFilesToObject(challengeFiles);
 
   const embedStylesAndScript = (documentElement, contentDocument) => {
@@ -255,8 +255,10 @@ export const embedFilesInHtml = async function (challengeFiles) {
     return [challengeFiles, `<script>${indexJsx.contents}</script>`];
   } else if (scriptJs) {
     return [challengeFiles, `<script>${scriptJs.contents}</script>`];
+  } else if (indexTs) {
+    return [challengeFiles, `<script>${indexTs.contents}</script>`];
   } else {
-    throw Error('No html or js(x) file found');
+    throw Error('No html, ts or js(x) file found');
   }
 };
 
@@ -267,7 +269,8 @@ function challengeFilesToObject(challengeFiles) {
   );
   const stylesCss = challengeFiles.find(file => file.fileKey === 'stylescss');
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
-  return { indexHtml, indexJsx, stylesCss, scriptJs };
+  const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
+  return { indexHtml, indexJsx, stylesCss, scriptJs, indexTs };
 }
 
 const parseAndTransform = async function (transform, contents) {
