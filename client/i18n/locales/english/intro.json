@@ -1823,9 +1823,9 @@
       "jnqt": { "title": "68", "intro": [] },
       "vkei": { "title": "69", "intro": [] },
       "lab-contact-form": {
-        "title": "Build a Contact Form",
+        "title": "Design a Contact Form",
         "intro": [
-          "In this lab, you will build a contact form in HTML and style it using CSS."
+          "In this lab, you will design a contact form in HTML and style it using CSS."
         ]
       },
       "ipmw": { "title": "71", "intro": [] },
