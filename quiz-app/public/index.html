@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            overflow: visible;
+            position: relative;
+            height: 100vh;
+        }
+
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            max-width: 600px;
+            height: 80vh; 
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            overflow-y: auto; 
+        }
+
+       
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+       
+        #info-box {
+            background: #f0f8ff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+       
+        #quiz-container {
+            margin-bottom: 20px;
+        }
+
+        
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        
+        #submit-btn {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            width: 100%; 
+        }
+
+        #submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+       
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+       
+        .loading {
+            display: none;
+            font-style: italic;
+            text-align: center;
+        }
+
+        
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            border-radius: 50%;
+            opacity: 0.6;
+            pointer-events: none; 
+            animation: rise 10s infinite;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-700px);
+                opacity: 0;
+            }
+        }
+
+       
+        .bubble:nth-child(1) { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.7); left: 10%; animation-duration: 8s; }
+        .bubble:nth-child(2) { width: 60px; height: 60px; background: rgba(255, 255, 255, 0.5); left: 30%; animation-duration: 12s; }
+        .bubble:nth-child(3) { width: 50px; height: 50px; background: rgba(255, 255, 255, 0.6); left: 50%; animation-duration: 9s; }
+        .bubble:nth-child(4) { width: 30px; height: 30px; background: rgba(255, 255, 255, 0.8); left: 70%; animation-duration: 7s; }
+        .bubble:nth-child(5) { width: 70px; height: 70px; background: rgba(255, 255, 255, 0.5); left: 90%; animation-duration: 11s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="info-box">
+            <h2>Title: Design Fundamentals Quiz</h2>
+            <p>Description: Answer all of the questions below correctly to pass the quiz.</p>
+        </div>
+        <div id="quiz-container"></div>
+        <button id="submit-btn">Submit</button>
+        <div id="result"></div>
+        <div class="loading" id="loading-message">Loading questions...</div>
+    </div>
+
+    <!-- Floating Bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <script src="script.js"></script>
+    <script>
+        
+        const loadingMessage = document.getElementById('loading-message');
+        loadingMessage.style.display = 'block'; 
+
+      
+        fetch('/api/quiz')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                loadingMessage.style.display = 'none'; 
+
+                const questions = data.questions; 
+                questions.forEach((q, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.innerHTML = `
+                        <h3>${q.text}</h3>
+                        ${[q.answer, ...q.distractors].sort(() => Math.random() - 0.5).map(option => `
+                            <label>
+                                <input type="radio" name="question${index}" value="${option}">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    `;
+                    document.getElementById('quiz-container').appendChild(questionDiv);
+                });
+            })
+            .catch(err => {
+                console.error('Error fetching quiz questions:', err);
+                loadingMessage.textContent = 'Failed to load questions. Please try again.';
+            });
+
+       
+        const submitButton = document.getElementById('submit-btn');
+        submitButton.addEventListener('click', () => {
+            
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.disabled = true; 
+            });
+
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Quiz submitted! You cannot change your answers now.';
+        });
+    </script>
+</body>
+</html>

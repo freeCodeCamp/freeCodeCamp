@@ -1,0 +1,107 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+/* Main Container */
+.container {
+    position: relative;
+    z-index: 2; /* Ensure content is above bubbles */
+    padding: 20px;
+    max-width: 600px;
+    max-height: 80vh; /* Set a max height */
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Quiz Container Styles */
+#quiz-container {
+    margin-bottom: 20px;
+}
+
+/* Label Styles */
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Submit Button Styles */
+#submit-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    width: 100%; /* Make it full width */
+}
+
+#submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Result Styles */
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Loading Message Styles */
+.loading {
+    display: none;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Bubbles Animation */
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    border-radius: 50%;
+    opacity: 0.6;
+    pointer-events: none; 
+    animation: rise 10s infinite;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-700px);
+        opacity: 0;
+    }
+}
+
+
+.bubble:nth-child(1) { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.7); left: 10%; animation-duration: 8s; }
+.bubble:nth-child(2) { width: 60px; height: 60px; background: rgba(255, 255, 255, 0.5); left: 30%; animation-duration: 12s; }
+.bubble:nth-child(3) { width: 50px; height: 50px; background: rgba(255, 255, 255, 0.6); left: 50%; animation-duration: 9s; }
+.bubble:nth-child(4) { width: 30px; height: 30px; background: rgba(255, 255, 255, 0.8); left: 70%; animation-duration: 7s; }
+.bubble:nth-child(5) { width: 70px; height: 70px; background: rgba(255, 255, 255, 0.5); left: 90%; animation-duration: 11s; }
