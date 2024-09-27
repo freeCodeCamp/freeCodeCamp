@@ -37,7 +37,8 @@ import {
   updateMySound,
   updateMyTheme,
   updateMyKeyboardShortcuts,
-  verifyCert
+  verifyCert,
+  updateMyCareer
 } from '../redux/settings/actions';
 import CareerTimeline from '../components/profile/components/career-timeline';
 const { apiLocation } = envData;
@@ -54,6 +55,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   updateSocials: (formValues: Socials) => void;
   updateIsHonest: () => void;
   updatePortfolio: () => void;
+  updateCareer: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
   verifyCert: typeof verifyCert;
@@ -85,6 +87,7 @@ const mapDispatchToProps = {
   updateSocials: (formValues: Socials) => updateMySocials(formValues),
   updateIsHonest: updateMyHonesty,
   updatePortfolio: updateMyPortfolio,
+  updateCareer: updateMyCareer,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
   verifyCert
@@ -143,6 +146,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     updateSocials,
     updatePortfolio,
     updateIsHonest,
+    updateCareer,
     verifyCert,
     userToken
   } = props;
@@ -171,7 +175,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           >
             {t('settings.for', { username: username })}
           </h1>
-          <CareerTimeline />
+          <CareerTimeline updateMyCareer={updateCareer} />
           <About
             about={about}
             currentTheme={theme}

@@ -112,7 +112,11 @@ const EditCareerTimeline = ({
   );
 };
 
-const CareerTimeline = () => {
+const CareerTimeline = ({
+  updateMyCareer
+}: {
+  updateMyCareer: (value: { career: Job[] }) => void;
+}) => {
   const [myCareer, _setMyCareer] = useState<Job[]>([
     {
       title: 'Full Stack Developer',
@@ -149,6 +153,15 @@ const CareerTimeline = () => {
   return (
     <>
       <SectionHeader>Your Experience</SectionHeader>
+      <Button
+        onClick={() => {
+          updateMyCareer({
+            career: [myCareer[0]]
+          });
+        }}
+      >
+        TEST REDUX UPDATE CAREER TIMELINE
+      </Button>
       <FullWidthRow>
         {myCareer.map((job: Job, index) => {
           const start = job.start_date.toLocaleString().split(',')[0];

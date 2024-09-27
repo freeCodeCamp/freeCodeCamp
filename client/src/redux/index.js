@@ -477,8 +477,6 @@ export const reducer = handleActions(
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
-    [settingsTypes.updateMySocialsComplete]: (state, { payload }) =>
-      payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMySoundComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyThemeComplete]: (state, { payload }) =>
@@ -490,6 +488,8 @@ export const reducer = handleActions(
     [settingsTypes.updateMyQuincyEmailComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMySocialsComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyCareerComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyPortfolioComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
