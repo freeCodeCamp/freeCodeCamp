@@ -115,9 +115,8 @@ const ShowQuiz = ({
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
 
-  // `random` needs to be a ref object so that it won't change between renders.
-  const random = useRef(Math.floor(Math.random() * quizzes.length));
-  const quiz = quizzes[random.current].questions;
+  const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
+  const quiz = quizzes[quizId].questions;
 
   // Initialize the data passed to `useQuiz`
   const initialQuizData = quiz.map(question => {
@@ -188,14 +187,10 @@ const ShowQuiz = ({
   ]);
 
   const handleAnswersCheck = () => {
-    const unansweredQuestions = quizData.reduce(
-      (accumulator, currentQuestion, currentIndex) => {
-        if (currentQuestion.selectedAnswer == null) {
-          accumulator.push(currentIndex + 1);
-        }
-        return accumulator;
+    const unansweredQuestions = quizData.reduce<number[]>(
+      (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
       },
-      [] as number[]
+      []
     );
 
     if (unansweredQuestions.length) {
