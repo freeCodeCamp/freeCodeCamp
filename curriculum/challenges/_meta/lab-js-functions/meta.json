@@ -1,0 +1,11 @@
+{
+  "name": "Build a Password Generator App",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "dashedName": "lab-js-functions",
+  "order": 180,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66f53dc2c5bd6a11d6c3282f", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

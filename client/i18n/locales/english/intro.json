@@ -2218,7 +2218,10 @@
         ]
       },
       "fbbn": { "title": "179", "intro": [] },
-      "lnmg": { "title": "180", "intro": [] },
+      "lab-js-functions": {
+        "title": "Build a Password Generator App",
+        "intro": ["In this lab, you'll build a password generator app."]
+      },
       "wead": { "title": "181", "intro": [] },
       "quiz-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Quiz",
