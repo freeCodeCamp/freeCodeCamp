@@ -230,6 +230,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           challenge: {
             title,
             description,
+            instructions,
             superBlock,
             block,
             videoId,
@@ -310,6 +311,13 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                {instructions && (
+                  <PrismFormatted
+                    className={'line-numbers'}
+                    text={instructions}
+                  />
+                )}
+
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <Assignments
@@ -389,6 +397,7 @@ export const query = graphql`
         }
         title
         description
+        instructions
         challengeType
         helpCategory
         superBlock
