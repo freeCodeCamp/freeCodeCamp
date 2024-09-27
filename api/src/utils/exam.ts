@@ -24,7 +24,7 @@ function shuffleArray<T>(arr: T[]): T[] {
  * @param arr An array.
  * @returns The array without objects that have deprecated: true.
  */
-export function filterDeprecated<T extends { deprecated: boolean | null }>(
+function filterDeprecated<T extends { deprecated: boolean | null }>(
   arr: T[]
 ): T[] {
   return arr.filter(i => !i.deprecated);

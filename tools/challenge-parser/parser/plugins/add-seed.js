@@ -1,7 +1,7 @@
 const { isEmpty } = require('lodash');
 const { root } = require('mdast-builder');
 const visitChildren = require('unist-util-visit-children');
-const getSection = require('./utils/get-section');
+const { getSection } = require('./utils/get-section');
 const { getFileVisitor } = require('./utils/get-file-visitor');
 
 const editableRegionMarker = '--fcc-editable-region--';

@@ -3,7 +3,7 @@ const { root } = require('mdast-builder');
 const find = require('unist-util-find');
 
 const parseFixture = require('../../__fixtures__/parse-fixture');
-const getSection = require('./get-section');
+const { getSection } = require('./get-section');
 
 describe('getSection', () => {
   let simpleAst, extraHeadingAst;

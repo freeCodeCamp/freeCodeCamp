@@ -1,9 +1,14 @@
-const mockQuizzesAST = require('../__fixtures__/ast-with-quizzes.json');
+const parseFixture = require('./../__fixtures__/parse-fixture');
 const addQuizzes = require('./add-quizzes');
 
 describe('add-quizzes plugin', () => {
+  let mockQuizzesAST;
   const plugin = addQuizzes();
   let file = { data: {} };
+
+  beforeAll(async () => {
+    mockQuizzesAST = await parseFixture('with-quizzes.md');
+  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -35,8 +40,8 @@ describe('add-quizzes plugin', () => {
       expect(questions.length).toBe(2);
 
       questions.forEach(question => {
-        expect(question).toHaveProperty('question');
-        expect(typeof question.question).toBe('string');
+        expect(question).toHaveProperty('text');
+        expect(typeof question.text).toBe('string');
         expect(question).toHaveProperty('answer');
         expect(typeof question.answer).toBe('string');
         expect(question).toHaveProperty('distractors');
