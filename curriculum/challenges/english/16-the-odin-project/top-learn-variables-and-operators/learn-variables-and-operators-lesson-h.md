@@ -32,7 +32,7 @@ Here’s an extract from the precedence table (you don’t need to remember this
 
 
 
-# --question--
+# --questions--
 
 ## --text--
 

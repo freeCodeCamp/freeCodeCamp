@@ -14,19 +14,19 @@ Add an `h2` element in the new section and give it the text `Desserts`.
 You should not change your existing `section` element.
 
 ```js
-assert($('section').length === 2);
+assert.lengthOf(document.querySelectorAll('section'), 2);
 ```
 
 You should add an `h2` element in your second `section` element.
 
 ```js
-assert($('section')[1].children[0].tagName === 'H2');
+assert.strictEqual(document.querySelectorAll('section')?.[1]?.children?.[0]?.tagName, 'H2');
 ```
 
 Your new `h2` element should have the text `Desserts`.
 
 ```js
-assert($('h2')[1].innerText.match(/Desserts/i));
+assert.match(document.querySelectorAll('h2')?.[1]?.innerText, /Desserts/i);
 ```
 
 # --seed--
@@ -102,7 +102,7 @@ h1, h2, p {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 ```
 

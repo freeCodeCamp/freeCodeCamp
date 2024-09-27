@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Higher Order Functions Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-higher-order-functions",
+  "order": 187,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edcdd18a4ef8df16e6bb7e",
+      "title": "JavaScript Higher Order Functions Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

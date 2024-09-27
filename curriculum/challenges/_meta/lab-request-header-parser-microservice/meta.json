@@ -1,0 +1,10 @@
+{
+  "name": "Build a Request Header Parser Microservice",
+  "isUpcomingChange": true,
+  "dashedName": "lab-request-header-parser-microservice",
+  "order": 373,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "bd7158d8c443edefaeb5bdff", "title": "Build a Request Header Parser Microservice" }],
+  "helpCategory": "Backend Development",
+  "blockType": "lab"
+}

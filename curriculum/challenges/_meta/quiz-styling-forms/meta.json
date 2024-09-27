@@ -1,0 +1,10 @@
+{
+  "name": "Styling Forms Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-styling-forms",
+  "order": 72,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed9043f45ce3ece4053ebf", "title": "Styling Forms Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

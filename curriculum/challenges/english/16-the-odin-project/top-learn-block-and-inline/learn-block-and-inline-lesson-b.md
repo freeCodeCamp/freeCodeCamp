@@ -8,11 +8,11 @@ dashedName: learn-block-and-inline-lesson-b
 
 Inline elements, however, do not start on a new line. They appear in line with whatever elements they are placed beside. A clear example of an inline element is a link, or `<a>` tag. If you stick one of these in the middle of a paragraph of text, it will behave like a part of the paragraph. <a  href="https://www.freecodecamp.org/" target="_blank">(Like this)</a> The link’s text will sit alongside other words in that paragraph. Additionally, padding and margin behave differently on inline elements. In general, you do not want to try to put extra padding or margin on inline elements.
 
-# --question-- 
-
-## --assignment--
+# --assignment--
 
 Search the web for a list of `block` elements and a list of `inline` elements. 
+
+# --questions--
 
 ## --text--
 

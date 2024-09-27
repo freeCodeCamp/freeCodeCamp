@@ -6,7 +6,7 @@ videoId: UVimlsy9eW0
 dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

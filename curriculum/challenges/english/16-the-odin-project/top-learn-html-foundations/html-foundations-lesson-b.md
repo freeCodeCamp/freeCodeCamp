@@ -14,7 +14,7 @@ HTML has a vast list of predefined tags that you can use to create all kinds of 
 
 Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
 
-# --question--
+# --questions--
     
 ## --text--
 

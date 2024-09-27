@@ -44,13 +44,13 @@ Use CSS `@keyframes` to change the `background-color` of the `button` element so
 The @keyframes rule should use the `animation-name` background-color.
 
 ```js
-assert(code.match(/@keyframes\s+?background-color\s*?{/g));
+assert.match(code, /@keyframes\s+?background-color\s*?{/g);
 ```
 
 There should be one rule under `@keyframes` that changes the `background-color` to `#4791d0` at 100%.
 
 ```js
-assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));
+assert.match(code, /100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi);
 ```
 
 # --seed--

@@ -1,0 +1,13 @@
+{
+  "name": "Security and Privacy Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-security-and-privacy",
+  "order": 367,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1b0a939e913ccd3d4fa18", "title": "Security and Privacy Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

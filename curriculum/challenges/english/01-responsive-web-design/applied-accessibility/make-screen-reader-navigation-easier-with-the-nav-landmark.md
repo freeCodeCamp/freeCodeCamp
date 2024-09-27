@@ -22,28 +22,27 @@ Camper Cat included navigation links at the top of his training page, but wrappe
 Your code should have one `nav` tag.
 
 ```js
-assert($('nav').length == 1);
+assert.lengthOf(document.querySelectorAll('nav') , 1);
 ```
 
 Your `nav` tags should wrap around the `ul` and its list items.
 
 ```js
-assert($('nav').children('ul').length == 1);
+const nav = document.querySelector('nav');
+const children = nav?.querySelectorAll(`:scope ${'ul'}`);
+assert.lengthOf(children,1);
 ```
 
 Your code should not have any `div` tags.
 
 ```js
-assert($('div').length == 0);
+assert.lengthOf(document.querySelectorAll('div') , 0);
 ```
 
 Your `nav` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/nav>/g) &&
-    code.match(/<\/nav>/g).length === code.match(/<nav>/g).length
-);
+assert.isTrue(code.match(/<\/nav>/g)?.length === code.match(/<nav>/g)?.length);
 ```
 
 # --seed--

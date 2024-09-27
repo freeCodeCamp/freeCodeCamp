@@ -1,0 +1,13 @@
+{
+  "name": "Testing Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-testing",
+  "order": 328,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1aeffc5774ac692112a7e", "title": "Testing Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -16,7 +16,7 @@ Here is the <a href="https://colab.research.google.com/drive/1Q7nCcbrnoYttkwiHB_
 
 Add the code from the video to the algebra Colab notebook you created in the first step.
 
-# --question--
+# --questions--
 
 ## --text--
 

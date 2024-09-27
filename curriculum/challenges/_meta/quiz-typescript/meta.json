@@ -1,0 +1,13 @@
+{
+  "name": "TypeScript Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-typescript",
+  "order": 322,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1ae758b77cfc3e4da6151", "title": "TypeScript Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

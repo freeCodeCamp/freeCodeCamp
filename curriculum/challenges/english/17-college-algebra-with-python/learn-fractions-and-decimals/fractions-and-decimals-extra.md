@@ -20,7 +20,7 @@ Add the code to factor and solve for a variable to your algebra Colab notebook.
 
 Run the code in the following notebook to get <a href="https://colab.research.google.com/drive/1qON4GYbMkaZJA7MYd7-RcDROOkuuBJg9?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">practice converting fractions and decimals.</a> As a bonus, look at the code used to generate the practice problems.
 
-# --question--
+# --questions--
 
 ## --text--
 

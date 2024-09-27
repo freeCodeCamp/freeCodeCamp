@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Comparisons and Conditionals Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-comparisons-and-conditionals",
+  "order": 149,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edc47c11492ac5cf258ad9",
+      "title": "JavaScript Comparisons and Conditionals Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

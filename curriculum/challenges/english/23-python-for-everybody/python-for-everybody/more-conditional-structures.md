@@ -18,7 +18,7 @@ More resources:
 
 \- <a href="https://www.youtube.com/watch?v=KJN3-7HH6yk" target="_blank" rel="noopener noreferrer nofollow">Exercise 2</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

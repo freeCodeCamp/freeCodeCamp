@@ -1,7 +1,8 @@
-import { BrowserContext, expect, Page, test } from '@playwright/test';
+import { expect, Page, test } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
 import { SuperBlocks } from '../shared/config/curriculum';
+import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 const landingPageElements = {
   heading: 'landing-header',
@@ -37,25 +38,13 @@ const superBlocks = [
   intro[SuperBlocks.PythonForEverybody].title
 ];
 
-async function addDefaultCookies(context: BrowserContext, variation: string) {
-  await context.addCookies([
-    {
-      name: 'gbuuid',
-      value: variation,
-      domain: 'localhost',
-      path: '/',
-      expires: Math.floor(Date.now() / 1000) + 400 * 24 * 60 * 60 // 400 days from now
-    }
-  ]);
-}
-
 async function goToLandingPage(page: Page) {
   await page.goto('/');
 }
 
 test.describe('Landing Page - Variation B', () => {
   test.beforeEach(async ({ context, page }) => {
-    await addDefaultCookies(context, 'B');
+    await addGrowthbookCookie({ context, variation: 'B' });
     await goToLandingPage(page);
   });
 
@@ -132,7 +121,7 @@ test.describe('Landing Page - Variation B', () => {
 
 test.describe('Landing Page - Variation A', () => {
   test.beforeEach(async ({ context, page }) => {
-    await addDefaultCookies(context, 'A');
+    await addGrowthbookCookie({ context, variation: 'A' });
     await goToLandingPage(page);
   });
 

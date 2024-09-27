@@ -38,18 +38,20 @@ assert(
 Your code should add a `padding` property to the `h4` element and set it to 10 pixels.
 
 ```js
-assert(
-  $('h4').css('padding-top') == '10px' &&
-    $('h4').css('padding-right') == '10px' &&
-    $('h4').css('padding-bottom') == '10px' &&
-    $('h4').css('padding-left') == '10px'
-);
+const h4Element = document.querySelector("h4"); 
+const h4style = window.getComputedStyle(h4Element);
+assert.equal(h4style?.paddingTop, "10px");
+assert.equal(h4style?.paddingRight, "10px");
+assert.equal(h4style?.paddingBottom, "10px");
+assert.equal(h4style?.paddingLeft, "10px");
 ```
 
 The `height` property on the `h4` element should be removed.
 
 ```js
-assert(!($('h4').css('height') == '25px'));
+const h4Element = document.querySelector("h4"); 
+const h4style = window.getComputedStyle(h4Element);
+assert.notEqual(h4style?.height, '25px');
 ```
 
 # --seed--

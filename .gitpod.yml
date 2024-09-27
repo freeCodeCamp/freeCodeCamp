@@ -1,5 +1,4 @@
-image:
-  file: .gitpod.Dockerfile
+image: ghcr.io/freecodecamp/gitpod:latest
 ports:
   - port: 27017 # mongodb
     onOpen: ignore
@@ -19,6 +18,14 @@ ports:
     visibility: public
   - port: 3300 # challenge editor client
     visibility: public
+  - port: 8025 # MailHog
+    visibility: public
+    onOpen: ignore
+  - port: 1025 # MailHog
+    onOpen: ignore
+  - port: 9323 # Playwright
+    visibility: public
+    onOpen: ignore
 
 tasks:
   - before: |
@@ -34,8 +41,8 @@ tasks:
   - name: db
     # starting mongod in background, so it doesn't block prebuilds
     before: >
-      mkdir -p /workspace/data &&
-      (mongod --dbpath /workspace/data &)
+      cd api/tools &&
+      docker compose up -d
 
   - name: server
     before: export COOKIE_DOMAIN=gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
@@ -51,7 +58,8 @@ tasks:
       pnpm run seed &&
       mongosh --eval "db.fsyncLock(); db.fsyncUnlock()" &&
       gp ports await 27017 &&
-      pnpm run develop:server
+      cd api &&
+      pnpm run develop
 
   - name: client
     before: export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)

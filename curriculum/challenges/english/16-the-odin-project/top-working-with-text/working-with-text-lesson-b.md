@@ -16,7 +16,7 @@ Headings are defined much like paragraphs. For example, to create an `h1` headin
 
 Using the correct level of heading is important as levels provide a hierarchy to the content. An `h1` heading should always be used for the heading of the overall page, and the lower level headings should be used as the headings for content in smaller sections of the page.
 
-# --question--
+# --questions--
 ## --text--
 
 How many different levels of headings are there and what is the difference between them?
