@@ -270,12 +270,8 @@ export function userAttemptToDatabaseAttemptQuestionSets(
 export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
   const examCopy = structuredClone(exam);
 
-  let shouldThrow = false;
-
-  const timeout = setTimeout(() => {
-    shouldThrow = true;
-    // throw 'Unable to generate exam in under 5s. Likely infinite loop.';
-  }, 10);
+  const TIMEOUT_IN_MS = 5_000;
+  const START_TIME = Date.now();
 
   const shuffledQuestionSets = shuffleArray(examCopy.questionSets).map(qs => {
     const shuffledQuestions = shuffleArray(
@@ -422,9 +418,8 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
 
     // Add questions to questionSetsConfigWithQuestions until fulfilled.
     while (!isQuestionSetConfigFulfilled(questionSetConfig)) {
-      console.log(shouldThrow, 'looping', Date.now());
-      if (shouldThrow) {
-        throw 'TEST THROW';
+      if (Date.now() - START_TIME > TIMEOUT_IN_MS) {
+        throw `Unable to generate exam within ${TIMEOUT_IN_MS}ms`;
       }
       // Ensure all questionSets ARE FULL
       if (
@@ -578,8 +573,6 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
       };
     });
   });
-
-  clearTimeout(timeout);
 
   return {
     examId: examCopy.id,

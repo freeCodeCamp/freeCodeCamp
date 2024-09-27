@@ -331,6 +331,12 @@ describe('/exam-environment/', () => {
               (mock.exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 + 1000))
           }
         });
+        // Generate new exam for user to be assigned
+        const newGeneratedExam = structuredClone(mock.generatedExam);
+        newGeneratedExam.id = mock.oid();
+        await fastifyTestInstance.prisma.envGeneratedExam.create({
+          data: newGeneratedExam
+        });
 
         const body3: Static<typeof examEnvironmentPostExamGeneratedExam.body> =
           {

@@ -11,14 +11,15 @@ import {
 } from './exam';
 
 function timedoutGenerateExam(ex: EnvExam) {
-  const timeout = setTimeout(() => {
-    throw 'Unable to generate 1 valid exam within 200ms.';
-  }, 200);
+  const TIMEOUT_IN_MS = 1_000;
+  const START_TIME = Date.now();
   // eslint-disable-next-line
   while (true) {
+    if (Date.now() - START_TIME > TIMEOUT_IN_MS) {
+      throw `Unable to generate 1 valid exam in ${TIMEOUT_IN_MS}ms`;
+    }
     try {
       const exam = generateExam(ex);
-      clearTimeout(timeout);
       return exam;
     } catch (_e) {
       //
@@ -165,7 +166,7 @@ describe('Exam Environment', () => {
       expect(duplicateAnswers).toHaveLength(0);
     });
 
-    xit('TODO: infinite loop?? should throw if the exam config is invalid', () => {
+    it('should throw if the exam config is invalid', () => {
       const invalidExam = {
         ...exam,
         config: {
