@@ -21,7 +21,7 @@ See another example:
 
 - `I'm not tired, so I can stay longer.` - This implies the person is available without directly saying they are.
 
-# --question--
+# --questions--
 
 ## --text--
 
