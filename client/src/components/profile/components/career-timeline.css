@@ -1,0 +1,25 @@
+.card {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 1em;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+}
+
+/* grey date as sub header */
+.card .date {
+  color: #999;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+.card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .edit-btn {
+  height: fit-content;
+  width: 30px;
+  padding: 0;
+}
