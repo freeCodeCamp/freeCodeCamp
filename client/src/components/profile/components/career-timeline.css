@@ -22,4 +22,11 @@
   height: fit-content;
   width: 30px;
   padding: 0;
+  margin-left: 1em;
+}
+
+.card .action-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

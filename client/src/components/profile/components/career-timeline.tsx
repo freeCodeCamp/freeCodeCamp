@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Button, ControlLabel, FormControl, FormGroup } from '@freecodecamp/ui';
 import { FullWidthRow } from '../../helpers';
 import SectionHeader from '../../settings/section-header';
@@ -176,15 +176,20 @@ const CareerTimeline = () => {
                     <h3>
                       {job.function} at {job.company}
                     </h3>
-                    <Button
-                      className='edit-btn'
-                      onClick={() => {
-                        setIsEditing(true);
-                        setEditingIndex(index);
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faPen} />
-                    </Button>
+                    <div className='action-container'>
+                      <Button className='edit-btn'>
+                        <FontAwesomeIcon icon={faTrash} />
+                      </Button>
+                      <Button
+                        className='edit-btn'
+                        onClick={() => {
+                          setIsEditing(true);
+                          setEditingIndex(index);
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faPen} />
+                      </Button>
+                    </div>
                   </div>
                   <p className='date'>
                     {start} - {end} - {total_time_in_years} years
