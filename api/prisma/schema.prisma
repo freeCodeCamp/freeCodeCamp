@@ -305,7 +305,7 @@ model EnvGeneratedExam {
   examId       String                    @db.ObjectId
   questionSets EnvGeneratedQuestionSet[]
   /// If `deprecated`, the generation should not longer be considered for users
-  deprecated   Boolean                   @default(false)
+  deprecated   Boolean
 
   // Relations
   exam           EnvExam          @relation(fields: [examId], references: [id])

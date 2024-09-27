@@ -1,4 +1,3 @@
-import { EnvExamAttempt } from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
 import { exam, examAttempt, generatedExam } from '../../../__mocks__/env-exam';
 import * as schemas from '../schemas';
@@ -27,9 +26,7 @@ describe('Exam Environment', () => {
     });
 
     it('should return false if one or more questions are not answered', () => {
-      const badExamAttempt = JSON.parse(
-        JSON.stringify(examAttempt)
-      ) as EnvExamAttempt;
+      const badExamAttempt = structuredClone(examAttempt);
 
       badExamAttempt.questionSets[0]!.questions[0]!.answers = [];
       expect(
@@ -174,9 +171,7 @@ describe('Exam Environment', () => {
     });
 
     it('should invalidate an incorrect attempt', () => {
-      const badExamAttempt = JSON.parse(
-        JSON.stringify(examAttempt)
-      ) as EnvExamAttempt;
+      const badExamAttempt = structuredClone(examAttempt);
       badExamAttempt.questionSets[0]!.questions[0]!.answers = ['bad-answer'];
       expect(() =>
         validateAttempt(generatedExam, badExamAttempt.questionSets)
@@ -201,9 +196,7 @@ describe('Exam Environment', () => {
           }
         ]
       };
-      const latestAttempt = JSON.parse(
-        JSON.stringify(examAttempt)
-      ) as EnvExamAttempt;
+      const latestAttempt = structuredClone(examAttempt);
       latestAttempt.questionSets = [];
 
       const databaseAttemptQuestionSets =
@@ -231,9 +224,7 @@ describe('Exam Environment', () => {
           }
         ]
       };
-      const latestAttempt = JSON.parse(
-        JSON.stringify(examAttempt)
-      ) as EnvExamAttempt;
+      const latestAttempt = structuredClone(examAttempt);
 
       const databaseAttemptQuestionSets =
         userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);
@@ -270,9 +261,7 @@ describe('Exam Environment', () => {
           }
         ]
       };
-      const latestAttempt = JSON.parse(
-        JSON.stringify(examAttempt)
-      ) as EnvExamAttempt;
+      const latestAttempt = structuredClone(examAttempt);
 
       const databaseAttemptQuestionSets =
         userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);

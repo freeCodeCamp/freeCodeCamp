@@ -35,6 +35,7 @@
     "query-string": "7.1.3",
     "rate-limit-mongo": "^2.3.2",
     "stripe": "16.0.0",
+    "ts-node": "10.9.2",
     "validator": "13.11.0"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
@@ -81,7 +82,9 @@
     "test": "jest --force-exit",
     "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate",
-    "lint": "cd .. && eslint api/src --max-warnings 0"
+    "lint": "cd .. && eslint api/src --max-warnings 0",
+    "generate-exams": "ts-node src/exam-environment/generate/index.ts",
+    "seed:env-exams": "ts-node src/exam-environment/seed/index.ts"
   },
   "version": "0.0.1"
 }

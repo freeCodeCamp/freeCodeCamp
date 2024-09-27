@@ -1,15 +1,16 @@
+import { Static } from '@fastify/type-provider-typebox';
 import {
   EnvConfig,
-  EnvExam,
+  EnvQuestionType,
   EnvExamAttempt,
+  EnvExam,
   EnvGeneratedExam,
-  EnvQuestionSet,
-  EnvQuestionType
+  EnvQuestionSet
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import { Static } from '@fastify/type-provider-typebox';
 import { defaultUserId } from '../jest.utils';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
+import { generateExam } from '../src/exam-environment/utils/exam';
 
 export const oid = () => new ObjectId().toString();
 
@@ -195,6 +196,7 @@ export const questionSets: EnvQuestionSet[] = [
 export const generatedExam: EnvGeneratedExam = {
   examId,
   id: oid(),
+  deprecated: false,
   questionSets: [
     {
       id: questionSets[0]!.id,
@@ -291,6 +293,7 @@ export const examAttempt: EnvExamAttempt = {
   userId: defaultUserId,
   submissionTimeInMS: null
 };
+
 export const examAttemptSansSubmissionTimeInMS: Static<
   typeof examEnvironmentPostExamAttempt.body
 >['attempt'] = {
@@ -336,10 +339,25 @@ export const exam: EnvExam = {
   questionSets
 };
 
-export async function seedEnvExam(): Promise<void> {
+export async function seedEnvExam() {
+  await fastifyTestInstance.prisma.envExamAttempt.deleteMany({});
+  await fastifyTestInstance.prisma.envGeneratedExam.deleteMany({});
   await fastifyTestInstance.prisma.envExam.deleteMany({});
 
   await fastifyTestInstance.prisma.envExam.create({
     data: exam
   });
+
+  let numberOfExamsGenerated = 0;
+  while (numberOfExamsGenerated < 2) {
+    try {
+      const generatedExam = generateExam(exam);
+      await fastifyTestInstance.prisma.envGeneratedExam.create({
+        data: generatedExam
+      });
+      numberOfExamsGenerated++;
+    } catch (_e) {
+      //
+    }
+  }
 }

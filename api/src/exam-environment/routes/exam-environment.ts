@@ -215,10 +215,9 @@ async function postExamGeneratedExamHandler(
         lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
       const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
 
-      // TODO: Bug here
       if (effectiveSubmissionTime > twentyFourHoursAgo) {
         void reply.code(429);
-        // TOOD: Consider sending last completed time
+        // TODO: Consider sending last completed time
         return reply.send(
           ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(
             'User has completed exam too recently to retake.'
@@ -273,9 +272,7 @@ async function postExamGeneratedExamHandler(
         id: {
           notIn: examAttempts.map(a => a.generatedExamId)
         },
-        deprecated: {
-          not: true
-        }
+        deprecated: false
       },
       select: {
         id: true
