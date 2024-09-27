@@ -2326,7 +2326,12 @@
         ]
       },
       "lupt": { "title": "218", "intro": [] },
-      "yvqn": { "title": "219", "intro": [] },
+      "lab-date-conversion": {
+        "title": "Build a Date Conversion Program",
+        "intro": [
+          "In this lab, you will build a program to convert a date from one format to another."
+        ]
+      },
       "xtfk": { "title": "220", "intro": [] },
       "quiz-javascript-dates": {
         "title": "JavaScript Dates Quiz",
