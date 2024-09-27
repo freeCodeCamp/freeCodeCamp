@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +10,7 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Button, Quiz, useQuiz } from '@freecodecamp/ui';
 
 // Local Utilities
+import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
@@ -64,18 +65,6 @@ interface ShowQuizProps {
   updateSolutionFormValues: () => void;
 }
 
-// Shuffle array using the Fisher–Yates shuffle algorithm
-const shuffle = (arrToShuffle: Array<{ label: ReactNode; value: number }>) => {
-  const arr = [...arrToShuffle];
-
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-
-  return arr;
-};
-
 const ShowQuiz = ({
   challengeMounted,
   data: {
@@ -119,29 +108,34 @@ const ShowQuiz = ({
   const quiz = quizzes[quizId].questions;
 
   // Initialize the data passed to `useQuiz`
-  const initialQuizData = quiz.map(question => {
-    const distractors = question.distractors.map((distractor, index) => {
-      return {
+  const [initialQuizData] = useState(
+    quiz.map(question => {
+      const distractors = question.distractors.map((distractor, index) => {
+        return {
+          label: (
+            <PrismFormatted className='quiz-answer-label' text={distractor} />
+          ),
+          value: index + 1
+        };
+      });
+
+      const answer = {
         label: (
-          <PrismFormatted className='quiz-answer-label' text={distractor} />
+          <PrismFormatted
+            className='quiz-answer-label'
+            text={question.answer}
+          />
         ),
-        value: index + 1
+        value: 4
       };
-    });
 
-    const answer = {
-      label: (
-        <PrismFormatted className='quiz-answer-label' text={question.answer} />
-      ),
-      value: 4
-    };
-
-    return {
-      question: <PrismFormatted text={question.text} />,
-      answers: shuffle([...distractors, answer]),
-      correctAnswer: answer.value
-    };
-  });
+      return {
+        question: <PrismFormatted text={question.text} />,
+        answers: shuffleArray([...distractors, answer]),
+        correctAnswer: answer.value
+      };
+    })
+  );
 
   const {
     questions: quizData,
@@ -189,7 +183,6 @@ const ShowQuiz = ({
   const handleAnswersCheck = () => {
     const unansweredQuestions = quizData.reduce<number[]>(
       (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
-      },
       []
     );
 
