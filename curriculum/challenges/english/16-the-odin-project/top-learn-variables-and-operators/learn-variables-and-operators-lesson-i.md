@@ -89,7 +89,7 @@ What is the difference in the result of the two console log statements in the Ja
 let counter = 1;
 console.log(2 * ++counter); // Statement A
 
-let counter = 1;
+counter = 1; // Reassigning counter
 console.log(2 * counter++); // Statement B
 ```
 
