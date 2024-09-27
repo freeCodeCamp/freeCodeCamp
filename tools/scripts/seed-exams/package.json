@@ -24,7 +24,6 @@
     "joi": "17.12.2",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
-    "lodash": "4.17.21",
     "mongodb": "5.9.2",
     "nanoid": "4.0.2"
   },

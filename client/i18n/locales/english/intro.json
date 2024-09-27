@@ -1784,7 +1784,6 @@
           "Test what you've learned in this quiz of HTML tables and forms."
         ]
       },
-
       "ghoc": { "title": "25", "intro": [] },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
@@ -2203,7 +2202,10 @@
         "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
       },
       "hjtr": { "title": "174", "intro": [] },
-      "ccnu": { "title": "175", "intro": [] },
+      "lab-pyramid-generator": {
+        "title": "Build a Pyramid Generator",
+        "intro": ["In this lab you will build a pyramid generator."]
+      },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
@@ -2342,7 +2344,10 @@
       },
       "pehm": { "title": "227", "intro": [] },
       "cvsw": { "title": "228", "intro": [] },
-      "qjws": { "title": "229", "intro": [] },
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": ["For this lab, you will build a bookmark manager app."]
+      },
       "fgbp": { "title": "230", "intro": [] },
       "quiz-local-storage-and-crud": {
         "title": "Local Storage and CRUD Quiz",

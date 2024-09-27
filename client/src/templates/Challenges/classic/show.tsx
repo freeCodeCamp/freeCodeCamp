@@ -526,7 +526,11 @@ function ShowClassic({
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
-          previewTitle={t('learn.project-preview-title')}
+          previewTitle={
+            demoType === 'onClick'
+              ? t('learn.demo-project-title')
+              : t('learn.project-preview-title')
+          }
         />
         <ShortcutsModal />
       </LearnLayout>
