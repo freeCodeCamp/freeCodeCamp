@@ -7,7 +7,7 @@ import SectionHeader from '../../settings/section-header';
 import './career-timeline.css';
 
 interface Job {
-  function: string;
+  title: string;
   company: string;
   location: string;
   start_date: Date;
@@ -58,7 +58,7 @@ const EditCareerTimeline = ({
           <FormControl
             placeholder='Function'
             name='function'
-            defaultValue={job.function}
+            defaultValue={job.title}
           ></FormControl>
         </FormGroup>
         <FormGroup controlId='company'>
@@ -115,7 +115,7 @@ const EditCareerTimeline = ({
 const CareerTimeline = () => {
   const [myCareer, _setMyCareer] = useState<Job[]>([
     {
-      function: 'Full Stack Developer',
+      title: 'Full Stack Developer',
       company: 'freeCodeCamp',
       location: 'San Francisco, CA',
       start_date: new Date(),
@@ -124,7 +124,7 @@ const CareerTimeline = () => {
         'freeCodeCamp is a non-profit organization that consists of an interactive learning web platform, an online community forum, chat rooms, online publications and local organizations that intend to make learning web development accessible to anyone.'
     },
     {
-      function: 'Full Stack Developer',
+      title: 'Full Stack Developer',
       company: 'Microsoft',
       location: 'Redmond, WA',
       start_date: new Date(),
@@ -133,7 +133,7 @@ const CareerTimeline = () => {
         'Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.'
     },
     {
-      function: 'Full Stack Developer',
+      title: 'Full Stack Developer',
       company: 'Google',
       location: 'Mountain View, CA',
       start_date: new Date(),
@@ -174,7 +174,7 @@ const CareerTimeline = () => {
                 <div className='card'>
                   <div className='header'>
                     <h3>
-                      {job.function} at {job.company}
+                      {job.title} at {job.company}
                     </h3>
                     <div className='action-container'>
                       <Button className='edit-btn'>

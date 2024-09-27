@@ -42,6 +42,15 @@ type Portfolio {
   url         String
 }
 
+type Career {
+  title       String
+  company     String
+  location    String
+  start_date  DateTime
+  end_date    DateTime?
+  description String
+}
+
 type ProfileUI {
   isLocked      Boolean? // Undefined
   showAbout     Boolean? // Undefined
@@ -119,6 +128,7 @@ model user {
   password                     String? // Undefined
   picture                      String
   portfolio                    Portfolio[]
+  career                       Career[]
   profileUI                    ProfileUI? // Undefined
   progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
   /// A random number between 0 and 1.
@@ -178,7 +188,7 @@ model Donation {
 }
 
 model UserRateLimit {
-  id             String  @id @map("_id")
+  id             String   @id @map("_id")
   counter        Int
   expirationDate DateTime @db.Date
 
