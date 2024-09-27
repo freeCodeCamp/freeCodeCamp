@@ -95,7 +95,7 @@ console.log(2 * counter++); // Statement B
 
 ## --answers--
 
-There is no difference; both alert statements will show the same result.
+There is no difference; both console log statements will show the same result.
 
 ---
 
