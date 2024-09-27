@@ -270,6 +270,13 @@ export function userAttemptToDatabaseAttemptQuestionSets(
 export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
   const examCopy = structuredClone(exam);
 
+  let shouldThrow = false;
+
+  const timeout = setTimeout(() => {
+    shouldThrow = true;
+    // throw 'Unable to generate exam in under 5s. Likely infinite loop.';
+  }, 10);
+
   const shuffledQuestionSets = shuffleArray(examCopy.questionSets).map(qs => {
     const shuffledQuestions = shuffleArray(
       qs.questions.filter(q => !q.deprecated)
@@ -413,11 +420,12 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
       }
     }
 
-    const timeout = setTimeout(() => {
-      throw 'Unable to generate exam in under 5s. Likely infinite loop.';
-    }, 5_000);
     // Add questions to questionSetsConfigWithQuestions until fulfilled.
     while (!isQuestionSetConfigFulfilled(questionSetConfig)) {
+      console.log(shouldThrow, 'looping', Date.now());
+      if (shouldThrow) {
+        throw 'TEST THROW';
+      }
       // Ensure all questionSets ARE FULL
       if (
         questionSetConfig.numberOfSet > questionSetConfig.questionSets.length
@@ -546,7 +554,6 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
         }
       }
     }
-    clearTimeout(timeout);
   }
 
   for (const tagConfig of sortedTagConfig) {
@@ -571,6 +578,8 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
       };
     });
   });
+
+  clearTimeout(timeout);
 
   return {
     examId: examCopy.id,

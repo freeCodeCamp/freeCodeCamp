@@ -161,12 +161,9 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('TODO: should return an error if the attempt does not match the generated exam', async () => {
+      it('should return an error if the attempt does not match the generated exam', async () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: { ...mock.examAttempt, userId: defaultUserId }
-        });
-        await fastifyTestInstance.prisma.envGeneratedExam.create({
-          data: mock.generatedExam
         });
 
         // @ts-expect-error Exam is defined
@@ -200,7 +197,7 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('TODO: should return 200 if request is valid, and update attempt in database', async () => {
+      it('should return 200 if request is valid, and update attempt in database', async () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: {
             userId: defaultUserId,
@@ -210,9 +207,6 @@ describe('/exam-environment/', () => {
             questionSets: [],
             needsRetake: false
           }
-        });
-        await fastifyTestInstance.prisma.envGeneratedExam.create({
-          data: mock.generatedExam
         });
 
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
@@ -238,7 +232,7 @@ describe('/exam-environment/', () => {
       });
     });
 
-    describe('POST /exam-environment/generate', () => {
+    describe('POST /exam-environment/generated-exam', () => {
       afterEach(async () => {
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
         await mock.seedEnvExam();
@@ -364,14 +358,11 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('TODO: should return the current attempt if it is still ongoing', async () => {
+      it('should return the current attempt if it is still ongoing', async () => {
         const latestAttempt =
           await fastifyTestInstance.prisma.envExamAttempt.create({
             data: mock.examAttempt
           });
-        await fastifyTestInstance.prisma.envGeneratedExam.create({
-          data: mock.generatedExam
-        });
 
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
@@ -394,17 +385,19 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('TODO: should return an error if the exam generation fails', async () => {
-        await fastifyTestInstance.prisma.envExam.deleteMany();
-        // Create an exam that cannot be generated
-        await fastifyTestInstance.prisma.envExam.create({
-          data: {
-            ...mock.exam,
-            config: {
-              ...mock.exam.config,
-              tags: [{ group: ['invalid'], numberOfQuestions: 1 }]
-            }
-          }
+      it('should return an error if Camper has taken all generated exams', async () => {
+        // Add completed attempt for generated exam
+        const submittedAttempt = structuredClone(mock.examAttempt);
+        // Long-enough ago to be considered "submitted", and not trigger cooldown
+        submittedAttempt.startTimeInMS =
+          Date.now() -
+          24 * 60 * 60 * 1000 -
+          mock.exam.config.totalTimeInMS -
+          1 * 60 * 60 * 1000;
+        submittedAttempt.submissionTimeInMS =
+          Date.now() - mock.exam.config.totalTimeInMS - 24 * 60 * 60 * 1000;
+        await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: submittedAttempt
         });
 
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
@@ -425,7 +418,7 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('TODO: should store an empty exam attempt in the database', async () => {
+      it('should store an empty exam attempt in the database', async () => {
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
@@ -464,7 +457,7 @@ describe('/exam-environment/', () => {
         });
       });
 
-      xit('TODO: should unwind (delete) the exam attempt and generated exam if the user exam cannot be constructed', async () => {
+      it('should unwind (delete) the exam attempt if the user exam cannot be constructed', async () => {
         const _mockConstructUserExam = jest
           .spyOn(await import('../utils/exam'), 'constructUserExam')
           .mockImplementationOnce(() => {
@@ -483,13 +476,6 @@ describe('/exam-environment/', () => {
 
         expect(res.status).toBe(500);
 
-        const generatedExam =
-          await fastifyTestInstance.prisma.envGeneratedExam.findFirst({
-            where: { examId: mock.examId }
-          });
-
-        expect(generatedExam).toBeNull();
-
         const examAttempt =
           await fastifyTestInstance.prisma.envExamAttempt.findFirst({
             where: { examId: mock.examId }
@@ -498,7 +484,7 @@ describe('/exam-environment/', () => {
         expect(examAttempt).toBeNull();
       });
 
-      xit('TODO: should return the user exam with the exam attempt', async () => {
+      it('should return the user exam with the exam attempt', async () => {
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };

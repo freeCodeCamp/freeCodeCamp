@@ -13,8 +13,9 @@ const prisma = new PrismaClient({
 async function main() {
   await prisma.$connect();
 
-  await prisma.envExam.deleteMany({});
+  await prisma.envExamAttempt.deleteMany({});
   await prisma.envGeneratedExam.deleteMany({});
+  await prisma.envExam.deleteMany({});
 
   await prisma.envExam.create({ data: mocks.exam });
   await prisma.envGeneratedExam.create({ data: mocks.generatedExam });

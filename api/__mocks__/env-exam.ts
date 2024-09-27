@@ -8,11 +8,13 @@ import {
   EnvQuestionSet
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import { defaultUserId } from '../jest.utils';
+// import { defaultUserId } from '../jest.utils';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
-import { generateExam } from '../src/exam-environment/utils/exam';
+// import { generateExam } from '../src/exam-environment/utils/exam';
 
 export const oid = () => new ObjectId().toString();
+
+const defaultUserId = '64c7810107dd4782d32baee7';
 
 export const examId = oid();
 
@@ -347,17 +349,22 @@ export async function seedEnvExam() {
   await fastifyTestInstance.prisma.envExam.create({
     data: exam
   });
+  await fastifyTestInstance.prisma.envGeneratedExam.create({
+    data: generatedExam
+  });
 
-  let numberOfExamsGenerated = 0;
-  while (numberOfExamsGenerated < 2) {
-    try {
-      const generatedExam = generateExam(exam);
-      await fastifyTestInstance.prisma.envGeneratedExam.create({
-        data: generatedExam
-      });
-      numberOfExamsGenerated++;
-    } catch (_e) {
-      //
-    }
-  }
+  // TODO: This would be nice to use, but the test logic for examAttempt need to account
+  //       for dynamic ids.
+  // let numberOfExamsGenerated = 0;
+  // while (numberOfExamsGenerated < 2) {
+  //   try {
+  //     const generatedExam = generateExam(exam);
+  //     await fastifyTestInstance.prisma.envGeneratedExam.create({
+  //       data: generatedExam
+  //     });
+  //     numberOfExamsGenerated++;
+  //   } catch (_e) {
+  //     //
+  //   }
+  // }
 }
