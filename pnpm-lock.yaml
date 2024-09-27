@@ -144,12 +144,12 @@ importers:
       '@fastify/csrf-protection':
         specifier: 6.4.1
         version: 6.4.1
-      '@fastify/express':
-        specifier: ^2.3.0
-        version: 2.3.0
       '@fastify/oauth2':
         specifier: 7.8.1
         version: 7.8.1
+      '@fastify/rate-limit':
+        specifier: 9.1.0
+        version: 9.1.0
       '@fastify/swagger':
         specifier: 8.14.0
         version: 8.14.0
@@ -177,9 +177,6 @@ importers:
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
-      express-rate-limit:
-        specifier: ^6.7.0
-        version: 6.7.0(express@4.18.2)
       fast-uri:
         specifier: 2.3.0
         version: 2.3.0
@@ -232,9 +229,6 @@ importers:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
-      '@types/express':
-        specifier: 4.17.21
-        version: 4.17.21
       '@types/jsonwebtoken':
         specifier: 9.0.5
         version: 9.0.5
@@ -2858,14 +2852,14 @@ packages:
   '@fastify/error@3.4.1':
     resolution: {integrity: sha512-wWSvph+29GR783IhmvdwWnN4bUxTD01Vm5Xad4i7i1VuAOItLvbPAb69sb0IQ2N57yprvhNIwAP5B6xfKTmjmQ==}
 
-  '@fastify/express@2.3.0':
-    resolution: {integrity: sha512-jvvjlPPCfJsSHfF6tQDyARJ3+c3xXiqcxVZu6bi3xMWCWB3fl07vrjFDeaqnwqKhLZ9+m6cog5dw7gIMKEsTnQ==}
-
   '@fastify/fast-json-stringify-compiler@4.3.0':
     resolution: {integrity: sha512-aZAXGYo6m22Fk1zZzEUKBvut/CIIQe/BapEORnxiD5Qr0kPHqqI69NtEMCme74h+at72sPhbkb4ZrLd1W3KRLA==}
 
   '@fastify/oauth2@7.8.1':
     resolution: {integrity: sha512-PBIMizzgEOcUcttyfX1hC6CR9vESoI1lfNucBywgcqrxvknVg+zvBCgH2+oU8NvrpSDMtlY6nyuEYYZtVhDT7Q==}
+
+  '@fastify/rate-limit@9.1.0':
+    resolution: {integrity: sha512-h5dZWCkuZXN0PxwqaFQLxeln8/LNwQwH9popywmDCFdKfgpi4b/HoMH1lluy6P+30CG9yzzpSpwTCIPNB9T1JA==}
 
   '@fastify/send@2.1.0':
     resolution: {integrity: sha512-yNYiY6sDkexoJR0D8IDy3aRP3+L4wdqCpvx5WP+VtEU58sn7USmKynBzDQex5X42Zzvw2gNzzYgP90UfWShLFA==}
@@ -3265,8 +3259,8 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
 
-  '@lukeed/ms@2.0.1':
-    resolution: {integrity: sha512-Xs/4RZltsAL7pkvaNStUQt7netTkyxrS0K+RILcVr3TRMS/ToOg4I6uNfhB9SlGsnWBym4U+EaXq0f0cEMNkHA==}
+  '@lukeed/ms@2.0.2':
+    resolution: {integrity: sha512-9I2Zn6+NJLfaGoz9jN3lpwDgAYvfGeNYdbAIjJOqzs4Tpc+VU3Jqq4IofSUBKajiDS8k9fZIg18/z13mpk1bsA==}
     engines: {node: '>=8'}
 
   '@mdx-js/util@2.0.0-next.8':
@@ -12441,6 +12435,10 @@ packages:
     resolution: {integrity: sha512-3oDzcogWGHZdkwrHyvJVpPjA7oNzY6ENOV3PsWJY9XYPZ6INo94Yd47s5may1U+nleBPwDhrRiTPMIvKaa3MQg==}
     engines: {node: '>=12'}
 
+  toad-cache@3.7.0:
+    resolution: {integrity: sha512-/m8M+2BJUpoJdgAHoG+baCwBT+tf2VraSfkBgl0Y00qIWt41DJ8R5B8nsEw0I58YwF5IZH6z24/2TobDKnqSWw==}
+    engines: {node: '>=12'}
+
   toidentifier@1.0.0:
     resolution: {integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==}
     engines: {node: '>=0.6'}
@@ -14155,7 +14153,7 @@ snapshots:
       '@babel/traverse': 7.23.7
       '@babel/types': 7.23.9
       convert-source-map: 2.0.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -16368,7 +16366,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.23.6
       '@babel/types': 7.23.9
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -16606,13 +16604,6 @@ snapshots:
 
   '@fastify/error@3.4.1': {}
 
-  '@fastify/express@2.3.0':
-    dependencies:
-      express: 4.18.2
-      fastify-plugin: 4.5.1
-    transitivePeerDependencies:
-      - supports-color
-
   '@fastify/fast-json-stringify-compiler@4.3.0':
     dependencies:
       fast-json-stringify: 5.8.0
@@ -16625,9 +16616,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@fastify/rate-limit@9.1.0':
+    dependencies:
+      '@lukeed/ms': 2.0.2
+      fastify-plugin: 4.5.1
+      toad-cache: 3.7.0
+
   '@fastify/send@2.1.0':
     dependencies:
-      '@lukeed/ms': 2.0.1
+      '@lukeed/ms': 2.0.2
       escape-html: 1.0.3
       fast-decode-uri-component: 1.0.1
       http-errors: 2.0.0
@@ -17190,8 +17187,8 @@ snapshots:
 
   '@jridgewell/trace-mapping@0.3.9':
     dependencies:
-      '@jridgewell/resolve-uri': 3.1.1
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/resolve-uri': 3.1.2
+      '@jridgewell/sourcemap-codec': 1.5.0
 
   '@lmdb/lmdb-darwin-arm64@2.5.3':
     optional: true
@@ -17218,7 +17215,7 @@ snapshots:
       react: 16.14.0
       react-is: 16.13.1
 
-  '@lukeed/ms@2.0.1': {}
+  '@lukeed/ms@2.0.2': {}
 
   '@mdx-js/util@2.0.0-next.8': {}
 
@@ -18855,7 +18852,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
 
@@ -19187,7 +19184,7 @@ snapshots:
     dependencies:
       '@fastify/error': 3.4.1
       archy: 1.0.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       fastq: 1.17.1
     transitivePeerDependencies:
       - supports-color
@@ -20748,6 +20745,10 @@ snapshots:
       ms: 2.1.3
     optionalDependencies:
       supports-color: 5.5.0
+
+  debug@4.3.4:
+    dependencies:
+      ms: 2.1.2
 
   debug@4.3.4(supports-color@8.1.1):
     dependencies:
@@ -23622,7 +23623,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
 
@@ -24146,7 +24147,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       istanbul-lib-coverage: 3.2.0
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -24692,7 +24693,7 @@ snapshots:
 
   json-schema-resolver@2.0.0:
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       rfdc: 1.3.0
       uri-js: 4.4.1
     transitivePeerDependencies:
@@ -28474,7 +28475,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.4
       '@hapi/wreck': 18.1.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       joi: 17.12.2
     transitivePeerDependencies:
       - supports-color
@@ -29056,7 +29057,7 @@ snapshots:
     dependencies:
       component-emitter: 1.3.0
       cookiejar: 2.1.4
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       fast-safe-stringify: 2.1.1
       form-data: 4.0.0
       formidable: 2.1.2
@@ -29292,6 +29293,8 @@ snapshots:
       vfile: 3.0.1
 
   toad-cache@3.3.0: {}
+
+  toad-cache@3.7.0: {}
 
   toidentifier@1.0.0: {}
 
