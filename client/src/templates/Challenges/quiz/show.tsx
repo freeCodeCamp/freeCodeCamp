@@ -137,16 +137,17 @@ const ShowQuiz = ({
     })
   );
 
-  const {
-    questions: quizData,
-    validateAnswers,
-    correctAnswerCount
-  } = useQuiz({
+  const { questions: quizData, validateAnswers } = useQuiz({
     initialQuestions: initialQuizData,
     validationMessages: {
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
-    }
+    },
+    onSuccess: () => {
+      openCompletionModal();
+      setIsPassed(true);
+    },
+    onFailure: () => setIsPassed(false)
   });
 
   useEffect(() => {
@@ -195,34 +196,25 @@ const ShowQuiz = ({
       return;
     }
 
+    const correctCount = quizData.reduce(
+      (acc, curr) => (curr.selectedAnswer === curr.correctAnswer ? ++acc : acc),
+      0
+    );
+
     validateAnswers();
     setHasSubmitted(true);
+
+    setErrorMessage(
+      t('learn.quiz.have-n-correct-questions', {
+        correctAnswerCount: correctCount,
+        total: quiz.length
+      })
+    );
   };
 
   const handleSubmitAndGo = () => {
     openCompletionModal();
   };
-
-  // Handle error message display on submit.
-  // We keep the logic in a useEffect hook in order to subscribe to the `correctAnswerCount` change
-  // as `correctAnswerCount` is a React state and its value is updated asynchronously,
-  useEffect(() => {
-    if (!hasSubmitted) {
-      return;
-    }
-
-    setErrorMessage(
-      t('learn.quiz.have-n-correct-questions', {
-        correctAnswerCount,
-        total: quiz.length
-      })
-    );
-
-    if (correctAnswerCount === quiz.length) {
-      openCompletionModal();
-      setIsPassed(true);
-    }
-  }, [correctAnswerCount, quiz.length, hasSubmitted, openCompletionModal, t]);
 
   return (
     <Hotkeys
