@@ -6,3 +6,4 @@ exports.allowedOrigins = [
   'https://chinese.freecodecamp.dev',
   'https://chinese.freecodecamp.org'
 ];
+http :// www google .com
