@@ -15,7 +15,7 @@ export const updateMyCareer = {
   }),
   response: {
     200: Type.Object({
-      message: Type.Literal('flash.career-updated'),
+      message: Type.Literal('flash.updated-career'),
       type: Type.Literal('success')
     }),
     400: Type.Object({

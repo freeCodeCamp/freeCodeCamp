@@ -658,7 +658,7 @@ ${isLinkSentWithinLimitTTL}`
         });
 
         return {
-          message: 'flash.career-updated',
+          message: 'flash.updated-career',
           type: 'success'
         } as const;
       } catch (err) {
