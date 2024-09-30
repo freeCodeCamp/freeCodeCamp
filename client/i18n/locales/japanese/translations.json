@@ -444,7 +444,8 @@
     },
     "help-translate": "この認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
-    "project-preview-title": "これが今から作る物のプレビューです。",
+    "project-preview-title": "これから作成する物のプレビューです。",
+    "demo-project-title": "要件を満たすプロジェクトの例です。",
     "github-required": "<0>GitHub</0> アカウントをお持ちでない場合は作成してください。 仮想 Linux サーバーマシンを作成する際に必要です。この処理には数分かかることがあります。",
     "gitpod": {
       "intro": "このコースは、Gitpod を使用して仮想 Linux マシンで実行されます。コースを開始するには、以下の手順に従ってください:",
