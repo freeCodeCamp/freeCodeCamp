@@ -332,7 +332,17 @@
     "total-points": "Total Points:",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
-    "page-number": "{{pageNumber}} of {{totalPages}}"
+    "page-number": "{{pageNumber}} of {{totalPages}}",
+    "your-exp": "Your Experience",
+    "present": "Present",
+    "job-at": "{{title}} at {{company}}",
+    "start-end-years": "{{start}} - {{end}} ● {{years}} years",
+    "job-company": "Company",
+    "job-title": "Title",
+    "job-location": "Location",
+    "job-start-date": "Start Date",
+    "job-end-date": "End Date",
+    "job-description": "Description"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",

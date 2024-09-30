@@ -1,11 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 import { Button, ControlLabel, FormControl, FormGroup } from '@freecodecamp/ui';
+import { TFunction } from 'i18next';
 import { FullWidthRow } from '../../helpers';
 import SectionHeader from '../../settings/section-header';
 import './career-timeline.css';
 import { Career } from '../../../redux/prop-types';
+import { parseDate } from './utils';
 
 const EditCareerTimeline = ({
   myCareer,
@@ -13,7 +16,8 @@ const EditCareerTimeline = ({
   editIndex,
   setEditingIndex,
   updateMyCareer,
-  setIsEditing
+  setIsEditing,
+  t
 }: {
   myCareer: Career[];
   index: number;
@@ -21,6 +25,7 @@ const EditCareerTimeline = ({
   setEditingIndex: (value: number) => void;
   setIsEditing: (value: boolean) => void;
   updateMyCareer: (value: { career: Career[] }) => void;
+  t: TFunction;
 }) => {
   const handleSubmit = (formEvent: React.FormEvent) => {
     formEvent.preventDefault();
@@ -31,7 +36,7 @@ const EditCareerTimeline = ({
     const newCareer = myCareer.map((job, i) => {
       if (i === index) {
         return {
-          title: (formData.get('function') as string) || '',
+          title: (formData.get('title') as string) || '',
           company: (formData.get('company') as string) || '',
           location: (formData.get('location') as string) || '',
           start_date: (formData.get('start_date') as string) || '',
@@ -60,60 +65,75 @@ const EditCareerTimeline = ({
   return (
     <>
       <form key={job.company} onSubmit={handleSubmit}>
-        <FormGroup controlId='function'>
-          <ControlLabel htmlFor='function'>Function</ControlLabel>
+        <FormGroup controlId='title'>
+          <ControlLabel htmlFor='title'>{t('profile.job-title')}</ControlLabel>
           <FormControl
-            placeholder='Function'
-            name='function'
+            placeholder='title'
+            name='title'
             defaultValue={job.title}
+            required
           ></FormControl>
         </FormGroup>
         <FormGroup controlId='company'>
-          <ControlLabel htmlFor='company'>Company</ControlLabel>
+          <ControlLabel htmlFor='company'>
+            {t('profile.job-company')}
+          </ControlLabel>
           <FormControl
             placeholder='Company'
             name='company'
             defaultValue={job.company}
+            required
           ></FormControl>
         </FormGroup>
         <FormGroup controlId='location'>
-          <ControlLabel htmlFor='location'>Location</ControlLabel>
+          <ControlLabel htmlFor='location'>
+            {t('profile.job-location')}
+          </ControlLabel>
           <FormControl
             placeholder='Location'
             name='location'
             defaultValue={job.location}
+            required
           ></FormControl>
         </FormGroup>
         <FormGroup controlId='start_date'>
-          <ControlLabel htmlFor='start_date'>Start Date</ControlLabel>
+          <ControlLabel htmlFor='start_date'>
+            {t('profile.job-start-date')}
+          </ControlLabel>
           <FormControl
             type='date'
             name='start_date'
-            defaultValue={job.start_date.toLocaleString()}
+            defaultValue={new Date(job.start_date).toDateString()}
+            required
           ></FormControl>
         </FormGroup>
         <FormGroup controlId='end_date'>
-          <ControlLabel htmlFor='end_date'>End Date</ControlLabel>
+          <ControlLabel htmlFor='end_date'>
+            {t('profile.job-end-date')}
+          </ControlLabel>
           <FormControl
             type='date'
             name='end_date'
-            defaultValue={job.end_date.toLocaleString()}
+            defaultValue={new Date(job.start_date).toDateString()}
           ></FormControl>
         </FormGroup>
         <FormGroup controlId='description'>
-          <ControlLabel htmlFor='description'>Description</ControlLabel>
+          <ControlLabel htmlFor='description'>
+            {t('profile.job-description')}
+          </ControlLabel>
           <FormControl
             placeholder='Description'
             name='description'
             defaultValue={job.description}
+            required
           ></FormControl>
         </FormGroup>
         <Button block={true} type='submit'>
-          Save
+          {t('buttons.save')}
         </Button>
       </form>
       <Button block={true} onClick={() => setIsEditing(false)}>
-        Cancel
+        {t('buttons.cancel')}
       </Button>
     </>
   );
@@ -131,21 +151,32 @@ const CareerTimeline = ({
   const [isEditing, setIsEditing] = useState(false);
   const [editingIndex, setEditingIndex] = useState(-1);
 
+  const { t } = useTranslation();
+
   return (
     <>
-      <SectionHeader>Your Experience</SectionHeader>
+      <SectionHeader>{t('profile.your-exp')}</SectionHeader>
       <FullWidthRow>
         {myCareer.map((job: Career, index) => {
-          const start = job.start_date.split(',')[0];
-          const end = job.end_date.split(',')[0];
+          const start = parseDate(
+            new Date(job.start_date).toDateString(),
+            t,
+            'short'
+          );
+          let end = t('profile.present');
 
-          const debug_time = new Date('December 17, 2002 03:24:00');
+          const present = new Date();
 
-          const start_date = new Date(job.start_date);
+          let total_time_in_years =
+            present.getFullYear() - new Date(job.start_date).getFullYear();
 
-          const total_time = start_date.getTime() - debug_time.getTime();
-          const total_time_in_days = total_time / (1000 * 3600 * 24);
-          const total_time_in_years = Math.floor(total_time_in_days / 365);
+          if (job.end_date) {
+            end = parseDate(new Date(job.end_date).toDateString(), t, 'short');
+
+            total_time_in_years =
+              new Date(job.end_date).getFullYear() -
+              new Date(job.start_date).getFullYear();
+          }
 
           return (
             <Fragment key={index}>
@@ -157,12 +188,16 @@ const CareerTimeline = ({
                   setEditingIndex={setEditingIndex}
                   updateMyCareer={updateMyCareer}
                   editIndex={editingIndex}
+                  t={t}
                 />
               ) : (
                 <div className='card'>
                   <div className='header'>
                     <h3>
-                      {job.title} at {job.company}
+                      {t('profile.job-at', {
+                        company: job.company,
+                        title: job.title
+                      })}
                     </h3>
                     <div className='action-container'>
                       <Button className='edit-btn'>
@@ -180,7 +215,11 @@ const CareerTimeline = ({
                     </div>
                   </div>
                   <p className='date'>
-                    {start} - {end} - {total_time_in_years} years
+                    {t('profile.start-end-years', {
+                      start: start,
+                      end: end,
+                      years: total_time_in_years
+                    })}
                   </p>
                   <p>{job.location}</p>
                   <p>{job.description}</p>
