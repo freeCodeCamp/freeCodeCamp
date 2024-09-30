@@ -1,7 +1,7 @@
 import {
   certSlugTypeMap,
   certIds
-} from '../../../shared/config/certification-settings';
+} from '../../../../shared/config/certification-settings';
 
 const {
   legacyInfosecQaId,

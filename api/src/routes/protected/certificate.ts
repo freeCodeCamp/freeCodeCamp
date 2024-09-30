@@ -18,7 +18,7 @@ import * as schemas from '../../schemas';
 import { normalizeChallenges, removeNulls } from '../../utils/normalize';
 
 import { SHOW_UPCOMING_CHANGES } from '../../utils/env';
-import { isKnownCertSlug } from '../certificate-utils';
+import { isKnownCertSlug } from '../helpers/certificate-utils';
 
 const {
   legacyFrontEndChallengeId,

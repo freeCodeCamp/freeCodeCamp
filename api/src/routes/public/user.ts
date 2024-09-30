@@ -5,7 +5,7 @@ import _ from 'lodash';
 
 import { isRestricted } from '../helpers/is-restricted';
 import * as schemas from '../../schemas';
-import { splitUser } from '../user-utils';
+import { splitUser } from '../helpers/user-utils';
 import {
   normalizeChallenges,
   NormalizedChallenge,

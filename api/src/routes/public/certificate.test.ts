@@ -5,7 +5,7 @@ import {
   setupServer,
   superRequest
 } from '../../../jest.utils';
-import { getFallbackFullStackDate } from '../certificate-utils';
+import { getFallbackFullStackDate } from '../helpers/certificate-utils';
 
 describe('certificate routes', () => {
   setupServer();

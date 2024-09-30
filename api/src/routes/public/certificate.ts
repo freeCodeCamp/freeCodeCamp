@@ -12,7 +12,7 @@ import {
 import {
   getFallbackFullStackDate,
   isKnownCertSlug
-} from '../certificate-utils';
+} from '../helpers/certificate-utils';
 
 /**
  * Plugin for the unprotected certificate endpoints.

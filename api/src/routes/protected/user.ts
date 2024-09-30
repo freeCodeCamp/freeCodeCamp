@@ -7,7 +7,7 @@ import { customNanoid } from '../../utils/ids';
 import { encodeUserToken } from '../../utils/tokens';
 import { trimTags } from '../../utils/validation';
 import { generateReportEmail } from '../../utils/email-templates';
-import { splitUser } from '../user-utils';
+import { splitUser } from '../helpers/user-utils';
 import {
   normalizeChallenges,
   normalizeFlags,
