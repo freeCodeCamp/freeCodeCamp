@@ -1,5 +1,5 @@
-import { devLogin, setupServer, superRequest } from '../../jest.utils';
-import { HOME_LOCATION } from '../utils/env';
+import { devLogin, setupServer, superRequest } from '../../../jest.utils';
+import { HOME_LOCATION } from '../../utils/env';
 
 describe('GET /signout', () => {
   setupServer();

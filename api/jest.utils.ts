@@ -205,9 +205,9 @@ export const defaultUserId = '64c7810107dd4782d32baee7';
 export const defaultUserEmail = 'foo@bar.com';
 export const defaultUsername = 'fcc-test-user';
 
-export async function devLogin(): Promise<string[]> {
+export const resetDefaultUser = async (): Promise<void> => {
   await fastifyTestInstance.prisma.user.deleteMany({
-    where: { email: 'foo@bar.com' }
+    where: { email: defaultUserEmail }
   });
 
   await fastifyTestInstance.prisma.user.create({
@@ -217,6 +217,10 @@ export async function devLogin(): Promise<string[]> {
       username: defaultUsername
     }
   });
+};
+
+export async function devLogin(): Promise<string[]> {
+  await resetDefaultUser();
   const res = await superRequest('/signin', { method: 'GET' });
   expect(res.status).toBe(302);
   return res.get('Set-Cookie');

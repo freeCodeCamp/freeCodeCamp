@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { Prisma } from '@prisma/client';
-import { setupServer, superRequest } from '../../jest.utils';
-import { HOME_LOCATION } from '../utils/env';
-import { createUserInput } from '../utils/create-user';
+import { setupServer, superRequest } from '../../../jest.utils';
+import { HOME_LOCATION } from '../../utils/env';
+import { createUserInput } from '../../utils/create-user';
 
 const urlEncodedInfoMessage1 =
   '?messages=info%5B0%5D%3DWe%2520could%2520not%2520find%2520an%2520account%2520to%2520unsubscribe.';
