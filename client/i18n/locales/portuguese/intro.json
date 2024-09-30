@@ -1749,9 +1749,9 @@
         "intro": []
       },
       "quiz-basic-html": {
-        "title": "Basic HTML Quiz",
+        "title": "Questionário básico de HTML",
         "intro": [
-          "Test what you've learned in this quiz of basic HTML knowledge."
+          "Teste o que você aprendeu neste questionário de conhecimento básico sobre o HTML."
         ]
       },
       "evdc": {
@@ -1765,9 +1765,9 @@
         ]
       },
       "lab-event-hub": {
-        "title": "Build an Event Hub",
+        "title": "Crrie uma central de eventos",
         "intro": [
-          "In this lab, you will build an event hub using semantic HTML."
+          "Neste laboratório, você criará uma central de eventos utilizando HTML semântico."
         ]
       },
       "ijdq": {
@@ -1775,9 +1775,9 @@
         "intro": []
       },
       "quiz-semantic-html": {
-        "title": "Semantic HTML Quiz",
+        "title": "Questionário sobre HTML semântico",
         "intro": [
-          "Test what you've learned in this quiz of semantic HTML knowledge."
+          "Teste o que você aprendeu neste questionário de conhecimento sobre o HTML semântico."
         ]
       },
       "cfgp": {
@@ -1806,9 +1806,9 @@
         ]
       },
       "lab-book-catalog-table": {
-        "title": "Build a Book Catalog Table",
+        "title": "Crie uma tabela de catálogo de livros",
         "intro": [
-          "In this lab, you will create table filled with book information."
+          "Neste laboratório, você criará uma tabela preenchida com informações sobre livros."
         ]
       },
       "rsve": {
@@ -1820,9 +1820,9 @@
         "intro": []
       },
       "quiz-html-tables-and-forms": {
-        "title": "HTML Tables and Forms Quiz",
+        "title": "Questionário sobre tabelas e formulários em HTML",
         "intro": [
-          "Test what you've learned in this quiz of HTML tables and forms."
+          "Teste o que você aprendeu neste questionário sobre tabelas e formulários em HTML."
         ]
       },
       "ghoc": {
@@ -1840,9 +1840,9 @@
         "intro": []
       },
       "quiz-html-accessibility": {
-        "title": "HTML Accessibility Quiz",
+        "title": "Questionário sobre acessibilidade no HTML",
         "intro": [
-          "Test what you've learned in this quiz of HTML accessibility knowledge."
+          "Teste o que você aprendeu neste questionário sobre acessibilidade no HTML."
         ]
       },
       "pspj": {
@@ -1870,18 +1870,21 @@
         "intro": []
       },
       "quiz-computer-basics": {
-        "title": "Computer Basics Quiz",
+        "title": "Questionário sobre o básico a respeito de computadores",
         "intro": [
-          "Test what you've learned in this quiz of basic computer knowledge."
+          "Teste o que você aprendeu neste questionário de conhecimentos básicos sobre computadores."
         ]
       },
       "dxpc": {
         "title": "36",
         "intro": []
       },
-      "liti": {
-        "title": "37",
-        "intro": []
+      "workshop-cafe-menu": {
+        "title": "Crie um menu de cafeteria",
+        "intro": [
+          "O CSS informa ao navegador como exibir sua página da web. Você pode usar o CSS para definir cor, fonte, tamanho e outros aspectos dos elementos HTML.",
+          "Neste workshop, você aprenderá CSS criando uma página de menu para uma página da web para um café."
+        ]
       },
       "lab-business-card": {
         "title": "Crie um cartão de visita",
@@ -1898,9 +1901,9 @@
         "intro": []
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "Questionário básico de CSS",
         "intro": [
-          "Test what you've learned in this quiz of basic CSS knowledge."
+          "Teste o que você aprendeu neste questionário de conhecimento básico sobre o CSS."
         ]
       },
       "sdul": {
@@ -1926,9 +1929,9 @@
         "intro": []
       },
       "quiz-css-backgrounds-and-borders": {
-        "title": "CSS Backgrounds and Borders Quiz",
+        "title": "Questionário sobre bordas e segundo plano no CSS",
         "intro": [
-          "Test what you've learned in this quiz of backgrounds and borders in CSS."
+          "Teste o que você aprendeu neste questionário sobre bordas e segundo plano em CSS."
         ]
       },
       "ljmt": {
@@ -1948,9 +1951,9 @@
         "intro": []
       },
       "quiz-design-fundamentals": {
-        "title": "Design Fundamentals Quiz",
+        "title": "Questionário de fundamentos de design",
         "intro": [
-          "Test what you've learned in this quiz of UI design fundamentals."
+          "Teste o que você aprendeu neste questionário de fundamentos de design de UIs."
         ]
       },
       "bgrw": {
@@ -1972,9 +1975,9 @@
         "intro": []
       },
       "quiz-css-relative-and-absolute-units": {
-        "title": "CSS Relative and Absolute Units Quiz",
+        "title": "Questionário de unidades relativas e absolutas no CSS",
         "intro": [
-          "Test what you've learned in this quiz of relative and absolute units in CSS."
+          "Teste o que você aprendeu neste questionário sobre unidades relativas e absolutas em CSS."
         ]
       },
       "ohhu": {
@@ -1994,9 +1997,9 @@
         "intro": []
       },
       "quiz-css-pseudo-classes": {
-        "title": "CSS Pseudo-classes Quiz",
+        "title": "Questionário de pseudoclasses em CSS",
         "intro": [
-          "Test what you've learned in this quiz of pseudo-classes in CSS."
+          "Teste o que você aprendeu neste questionário sobre pseudoclasses em CSS."
         ]
       },
       "fvcj": {
@@ -2016,9 +2019,9 @@
         "intro": []
       },
       "quiz-css-colors": {
-        "title": "CSS Colors Quiz",
+        "title": "Questionário sobre cores no CSS",
         "intro": [
-          "Test what you've learned in this quiz of using colors in CSS."
+          "Teste o que você aprendeu neste questionário sobre o uso de cores no CSS."
         ]
       },
       "jnqt": {
@@ -2038,9 +2041,9 @@
         "intro": []
       },
       "quiz-styling-forms": {
-        "title": "Styling Forms Quiz",
+        "title": "Questionário sobre estilização de formulários",
         "intro": [
-          "Test what you've learned in this quiz of how to style forms using CSS."
+          "Teste o que você aprendeu neste questionário sobre como estilizar formulários usando o CSS."
         ]
       },
       "qzcx": {
@@ -2062,9 +2065,9 @@
         "intro": []
       },
       "quiz-css-layout-and-effects": {
-        "title": "CSS Layout and Effects Quiz",
+        "title": "Questionário sobre efeitos e layout em CSS",
         "intro": [
-          "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
+          "Teste o que você aprendeu neste questionário sobre o modelo de caixas, transformações, filtros e ultrapassagem de limites em CSS."
         ]
       },
       "tcwi": {
@@ -2086,9 +2089,9 @@
         "intro": []
       },
       "quiz-css-flexbox": {
-        "title": "CSS Flexbox Quiz",
+        "title": "Questionário sobre o Flexbox do CSS",
         "intro": [
-          "Test what you've learned in this quiz of using flexbox in CSS."
+          "Teste o que você aprendeu neste questionário sobre o uso do Flexbox no CSS."
         ]
       },
       "vqut": {
@@ -2110,8 +2113,10 @@
         "intro": []
       },
       "quiz-css-typography": {
-        "title": "CSS Typography Quiz",
-        "intro": ["Test what you've learned in this quiz of typography in CSS."]
+        "title": "Questionário sobre tipografia no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre a tipografia no CSS."
+        ]
       },
       "dyvj": {
         "title": "88",
@@ -2122,9 +2127,9 @@
         "intro": []
       },
       "lab-tribute-page": {
-        "title": "Build a Tribute Page",
+        "title": "Crie uma página de homenagem",
         "intro": [
-          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+          "Para este laboratório, você criará uma página de tributo para alguém de sua escolha, fictício ou real."
         ]
       },
       "fnde": {
@@ -2132,9 +2137,9 @@
         "intro": []
       },
       "quiz-css-accessibility": {
-        "title": "CSS Accessibility Quiz",
+        "title": "Questionário sobre acessibilidade no CSS",
         "intro": [
-          "Test what you've learned in this quiz of making your webpage accessible with CSS."
+          "Teste o que você aprendeu neste questionário sobre como tornar uma página da web acessível com CSS."
         ]
       },
       "swpl": {
@@ -2156,9 +2161,9 @@
         "intro": []
       },
       "quiz-css-attribute-selectors": {
-        "title": "CSS Attribute Selectors Quiz",
+        "title": "Questionário sobre seletores de atributos em CSS",
         "intro": [
-          "Test what you've learned in this quiz of using attribute selectors in CSS."
+          "Teste o que você aprendeu neste questionário sobre o uso de seletores de atributos no CSS."
         ]
       },
       "rxzk": {
@@ -2170,17 +2175,19 @@
         "intro": []
       },
       "lab-house-painting": {
-        "title": "Build a House Painting",
-        "intro": ["For this lab, you will build a house painting using CSS."]
+        "title": "Crie a pintura de uma casa",
+        "intro": [
+          "Para este laboratório, você criará a pintura de uma casa usando o CSS."
+        ]
       },
       "rrtt": {
         "title": "101",
         "intro": []
       },
       "quiz-css-positioning": {
-        "title": "CSS Positioning Quiz",
+        "title": "Questionário sobre posicionamento em CSS",
         "intro": [
-          "Test what you've learned in this quiz of how positioning works in CSS."
+          "Teste o que você aprendeu neste questionário sobre como funciona o posicionamento no CSS."
         ]
       },
       "xebj": {
@@ -2192,9 +2199,9 @@
         "intro": []
       },
       "lab-technical-documentation-page": {
-        "title": "Build a Technical Documentation Page",
+        "title": "Crie uma página de documentação técnica",
         "intro": [
-          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
+          "Para este laboratório, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico."
         ]
       },
       "xcti": {
@@ -2202,9 +2209,9 @@
         "intro": []
       },
       "quiz-responsive-web-design": {
-        "title": "Responsive Web Design Quiz",
+        "title": "Questionário sobre design responsivo para a web",
         "intro": [
-          "Test what you've learned in this quiz of making your webpage responsive."
+          "Teste o que você aprendeu neste questionário sobre como tornar uma página da web responsiva."
         ]
       },
       "mtbl": {
@@ -2226,9 +2233,9 @@
         "intro": []
       },
       "quiz-css-variables": {
-        "title": "CSS Variables Quiz",
+        "title": "Questionário sobre variáveis no CSS",
         "intro": [
-          "Test what you've learned in this quiz of how using variables in CSS."
+          "Teste o que você aprendeu neste questionário sobre como usar variáveis no CSS."
         ]
       },
       "agbl": {
@@ -2248,9 +2255,9 @@
         "intro": []
       },
       "lab-product-landing-page": {
-        "title": "Build a Product Landing Page",
+        "title": "Crie uma página inicial para um produto",
         "intro": [
-          "For this project, you will build a product landing page to market a product of your choice."
+          "Para este projeto, você criará uma página inicial de produto para comercializar um produto de sua escolha."
         ]
       },
       "fdam": {
@@ -2258,8 +2265,10 @@
         "intro": []
       },
       "quiz-css-grid": {
-        "title": "CSS Grid Quiz",
-        "intro": ["Test what you've learned in this quiz of using grid in CSS."]
+        "title": "Questionário de grid no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o uso do grid no CSS."
+        ]
       },
       "dorc": {
         "title": "120",
@@ -2290,9 +2299,9 @@
         "intro": []
       },
       "quiz-css-animations": {
-        "title": "CSS Animations Quiz",
+        "title": "Questionário sobre animações no CSS",
         "intro": [
-          "Test what you've learned in this quiz of using animations in CSS."
+          "Teste o que você aprendeu neste questionário sobre o uso de animações no CSS."
         ]
       },
       "wvjx": {
@@ -2319,9 +2328,9 @@
         ]
       },
       "lab-javascript-trivia-bot": {
-        "title": "Build a JavaScript Trivia Bot",
+        "title": "Crie um bot informativo em JavaScript",
         "intro": [
-          "In this lab, you will practice working with JavaScript variables and strings by building a trivia bot."
+          "Neste laboratório, você vai praticar com variáveis e strings no JavaScript criando um bot informativo."
         ]
       },
       "dthi": {
@@ -2333,9 +2342,9 @@
         "intro": []
       },
       "quiz-javascript-variables-and-data-types": {
-        "title": "JavaScript Variables and Data Types Quiz",
+        "title": "Questionário sobre variáveis e tipos de dados em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Variables and Data Types."
+          "Teste o que você aprendeu neste questionário sobre variáveis e tipos de dados no JavaScript."
         ]
       },
       "hoec": {
@@ -2358,18 +2367,20 @@
         "intro": []
       },
       "quiz-javascript-strings": {
-        "title": "JavaScript Strings Quiz",
+        "title": "Questionário sobre strings em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Strings."
+          "Teste o que você aprendeu neste questionário sobre strings em JavaScript."
         ]
       },
       "hxwa": {
         "title": "141",
         "intro": []
       },
-      "xkbo": {
-        "title": "142",
-        "intro": []
+      "workshop-mathbot": {
+        "title": "Crie um bot de matemática",
+        "intro": [
+          "Neste workshop, você vai rever como trabalhar com os diferentes métodos de objetos matemáticos, construindo um bot matemático."
+        ]
       },
       "lab-fortune-teller": {
         "title": "Crie um adivinhador do futuro",
@@ -2386,8 +2397,10 @@
         "intro": []
       },
       "quiz-javascript-math": {
-        "title": "JavaScript Math Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Math."]
+        "title": "Questionário sobre Math em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre Math em JavaScript."
+        ]
       },
       "hafd": {
         "title": "147",
@@ -2398,9 +2411,9 @@
         "intro": []
       },
       "quiz-javascript-comparisons-and-conditionals": {
-        "title": "JavaScript Comparisons and Conditionals Quiz",
+        "title": "Questionário sobre condicionais e comparações em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Comparisons and Conditionals."
+          "Teste o que você aprendeu neste questionário sobre comparações e condicionais em JavaScript."
         ]
       },
       "tsdq": {
@@ -2443,9 +2456,9 @@
         "intro": []
       },
       "quiz-javascript-functions": {
-        "title": "JavaScript Functions Quiz",
+        "title": "Questionário sobre funções em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Functions."
+          "Teste o que você aprendeu neste questionário sobre funções em JavaScript."
         ]
       },
       "mexq": {
@@ -2472,8 +2485,10 @@
         "intro": []
       },
       "quiz-javascript-arrays": {
-        "title": "JavaScript Arrays Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Arrays."]
+        "title": "Questionário sobre arrays em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre arrays em JavaScript."
+        ]
       },
       "dvnt": {
         "title": "164",
@@ -2483,9 +2498,9 @@
         "title": "165",
         "intro": []
       },
-      "ezek": {
-        "title": "166",
-        "intro": []
+      "lab-quiz-game": {
+        "title": "Criar um jogo de questionário",
+        "intro": ["Para este laboratório, você criará um jogo de questionário."]
       },
       "lab-factorial-calculator": {
         "title": "Crie uma calculadora de fatorial ",
@@ -2494,9 +2509,9 @@
         ]
       },
       "quiz-javascript-objects": {
-        "title": "JavaScript Objects Quiz",
+        "title": "Questionário sobre objetos em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Objects."
+          "Teste o que você aprendeu neste questionário sobre objetos em JavaScript."
         ]
       },
       "kgtw": {
@@ -2504,9 +2519,9 @@
         "intro": []
       },
       "workshop-sentence-analyzer": {
-        "title": "Build a Sentence Analyzer",
+        "title": "Crie um analisador de frases",
         "intro": [
-          "In this workshop, you'll review working with JavaScript loops by building a sentence analyzer app."
+          "Neste workshop, você vai revisar os laços em JavaScript criando uma aplicação de análise de frases."
         ]
       },
       "kcci": {
@@ -2518,16 +2533,18 @@
         "intro": []
       },
       "quiz-javascript-loops": {
-        "title": "JavaScript Loops Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
+        "title": "Questionário sobre laços em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre laços em JavaScript."
+        ]
       },
       "hjtr": {
         "title": "174",
         "intro": []
       },
-      "ccnu": {
-        "title": "175",
-        "intro": []
+      "lab-pyramid-generator": {
+        "title": "Crie um gerador de pirâmides",
+        "intro": ["Neste laboratório, você vai criar um gerador de pirâmides."]
       },
       "lab-gradebook-app": {
         "title": "Crie uma aplicação de quadro de notas",
@@ -2558,9 +2575,9 @@
         "intro": []
       },
       "quiz-javascript-fundamentals": {
-        "title": "JavaScript Fundamentals Quiz",
+        "title": "Questionário sobre o básico em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
+          "Teste o que você aprendeu neste questionário sobre o básico em JavaScript."
         ]
       },
       "plic": {
@@ -2580,9 +2597,9 @@
         "intro": []
       },
       "quiz-javascript-higher-order-functions": {
-        "title": "JavaScript Higher Order Functions Quiz",
+        "title": "Questionário sobre funções de ordem superior em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Higher Order Functions."
+          "Teste o que você aprendeu neste questionário sobre funções de ordem superior em JavaScript."
         ]
       },
       "esfh": {
@@ -2594,9 +2611,9 @@
         "intro": []
       },
       "lab-favorite-icon-toggler": {
-        "title": "Build a Favorite Icon Toggler",
+        "title": "Criar um alternador de ícones favoritos",
         "intro": [
-          "In this lab, you will build a favorite icon toggler by utilizing JavaScript click events."
+          "Neste laboratório, você criará um alternador de ícones favoritos utilizando eventos de clique em JavaScript."
         ]
       },
       "fhxc": {
@@ -2604,9 +2621,9 @@
         "intro": []
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
-        "title": "DOM Manipulation and Click Events with JavaScript Quiz",
+        "title": "Questionário sobre manipulação do DOM e eventos de clique em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
+          "Teste o que você aprendeu neste questionário sobre manipulação do DOM e eventos de clique em JavaScript."
         ]
       },
       "ubpx": {
@@ -2640,15 +2657,15 @@
         ]
       },
       "lab-palindrome-checker": {
-        "title": "Build a Palindrome Checker",
+        "title": "Crie um verificador de palíndromo",
         "intro": [
-          "For this lab, you'll build an application that checks whether a given word is a palindrome."
+          "Para esse laboratório, você criará uma aplicação que verifica se uma determinada palavra é um palíndromo."
         ]
       },
       "lab-football-team-cards": {
-        "title": "Build a Set of Football Team Cards",
+        "title": "Crie um conjunto de cartões de times de futebol",
         "intro": [
-          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+          "Um aspecto comum na criação de aplicações para a web é o processamento de conjuntos de dados e, em seguida, o envio de informações para a tela. Neste projeto de cartões de times de futebol, você aprenderá como trabalhar com a manipulação do DOM, desestruturação de objetos, manipulação de eventos e filtragem de dados."
         ]
       },
       "iejn": {
@@ -2656,8 +2673,10 @@
         "intro": []
       },
       "quiz-javascript-events": {
-        "title": "JavaScript Events Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Events."]
+        "title": "Questionário sobre eventos em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre eventos em JavaScript."
+        ]
       },
       "kaqq": {
         "title": "203",
@@ -2674,9 +2693,9 @@
         "intro": []
       },
       "quiz-debugging-javascript": {
-        "title": "Debugging JavaScript Quiz",
+        "title": "Questionário sobre depuração em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on Debugging JavaScript."
+          "Teste o que você aprendeu neste questionário sobre depuração em JavaScript."
         ]
       },
       "dqth": {
@@ -2692,17 +2711,19 @@
         "intro": []
       },
       "lab-regex-sandbox": {
-        "title": "Build a RegEx Sandbox",
-        "intro": ["In this lab you will build a regex sandbox."]
+        "title": "Crie um sandbox de expressões regulares",
+        "intro": [
+          "Neste laboratório, você vai criar um sandbox de expressões regulares."
+        ]
       },
       "svsl": {
         "title": "211",
         "intro": []
       },
       "quiz-javascript-regular-expressions": {
-        "title": "JavaScript Regular Expressions Quiz",
+        "title": "Questionário sobre expressões regulares em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Regular Expressions."
+          "Teste o que você aprendeu neste questionário sobre expressões regulares em JavaScript."
         ]
       },
       "zalp": {
@@ -2722,9 +2743,9 @@
         "intro": []
       },
       "quiz-form-validation-with-javascript": {
-        "title": "Form Validation with JavaScript Quiz",
+        "title": "Questionário sobre validação de formulários em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on Form Validation with JavaScript."
+          "Teste o que você aprendeu neste questionário sobre validação de formulários em JavaScript."
         ]
       },
       "lupt": {
@@ -2740,8 +2761,10 @@
         "intro": []
       },
       "quiz-javascript-dates": {
-        "title": "JavaScript Dates Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Dates."]
+        "title": "Questionário sobre datas em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre datas em JavaScript."
+        ]
       },
       "lvts": {
         "title": "222",
@@ -2760,9 +2783,9 @@
         "intro": []
       },
       "quiz-javascript-audio-and-video": {
-        "title": "JavaScript Audio and Video Quiz",
+        "title": "Questionário sobre áudio e vídeo em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Audio and Video."
+          "Teste o que você aprendeu neste questionário sobre áudio e vídeo em JavaScript."
         ]
       },
       "pehm": {
@@ -2773,18 +2796,20 @@
         "title": "228",
         "intro": []
       },
-      "qjws": {
-        "title": "229",
-        "intro": []
+      "lab-bookmark-manager-app": {
+        "title": "Crie uma aplicação gerenciadora de favoritos",
+        "intro": [
+          "Para este laboratório, você vai criar uma aplicação de gerenciamento de favoritos."
+        ]
       },
       "fgbp": {
         "title": "230",
         "intro": []
       },
       "quiz-local-storage-and-crud": {
-        "title": "Local Storage and CRUD Quiz",
+        "title": "Questionário sobre armazenamento local e CRUD",
         "intro": [
-          "Test what you've learned in this quiz on Local Storage and CRUD."
+          "Teste o que você aprendeu neste questionário sobre armazenamento local e CRUD."
         ]
       },
       "jbst": {
@@ -2804,8 +2829,10 @@
         "intro": []
       },
       "quiz-recursion": {
-        "title": "Recursion Quiz",
-        "intro": ["Test what you've learned in this quiz on Recursion."]
+        "title": "Questionário sobre recursão",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre recursão em JavaScript."
+        ]
       },
       "yshh": {
         "title": "237",
@@ -2826,9 +2853,9 @@
         "intro": []
       },
       "quiz-searching-and-sorting-algorithms": {
-        "title": "Searching and Sorting Algorithms Quiz",
+        "title": "Questionário sobre algoritmos de busca e de ordenamento",
         "intro": [
-          "Test what you've learned in this quiz on Searching and Sorting Algorithms."
+          "Teste o que você aprendeu nesse questionário sobre algoritmos de busca e de ordenamento."
         ]
       },
       "bnvw": {
@@ -2840,18 +2867,20 @@
         "intro": []
       },
       "lab-roman-numeral-converter": {
-        "title": "Build a Roman Numeral Converter",
+        "title": "Crie um conversor de números romanos",
         "intro": [
-          "For this lab, you'll build an application that converts integers to Roman numerals."
+          "Para este laboratório, você criará uma aplicação que converte números inteiros em números romanos."
         ]
       },
       "yaxm": {
         "title": "245",
         "intro": []
       },
-      "lofk": {
-        "title": "246",
-        "intro": []
+      "lab-telephone-number-validator": {
+        "title": "Crie um validador de números de telefone",
+        "intro": [
+          "Para este laboratório, você criará uma aplicação que verifica se o número de telefone é um número válido de telefone dos Estados Unidos."
+        ]
       },
       "lab-cash-register": {
         "title": "Crie uma caixa registradora",
@@ -2862,9 +2891,9 @@
         "intro": []
       },
       "quiz-javascript-problem-solving-and-algorithmic-thinking": {
-        "title": "JavaScript Problem Solving and Algorithmic Thinking Quiz",
+        "title": "Questionário sobre resolução de problemas e pensamento algorítmico em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Problem Solving and Algorithmic Thinking."
+          "Teste o que você aprendeu neste questionário sobre resolução de problemas e pensamento algoritmico em JavaScript."
         ]
       },
       "xayi": {
@@ -2884,9 +2913,9 @@
         "intro": []
       },
       "quiz-javascript-functional-programming": {
-        "title": "JavaScript Functional Programming Quiz",
+        "title": "Questionário sobre programação funcional em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Functional Programming."
+          "Teste o que você aprendeu neste questionário sobre programação funcional em JavaScript."
         ]
       },
       "cvaf": {
@@ -2914,9 +2943,9 @@
         "intro": []
       },
       "quiz-javascript-object-oriented-programming": {
-        "title": "JavaScript Object Oriented Programming Quiz",
+        "title": "Questionário sobre programação orientada a objetos em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Object Oriented Programming."
+          "Teste o que você aprendeu neste questionário sobre programação orientada a objetos em JavaScript."
         ]
       },
       "nixz": {
@@ -2924,9 +2953,9 @@
         "intro": []
       },
       "lab-stack-class": {
-        "title": "Build a Stack Class",
+        "title": "Crie uma classe de stack",
         "intro": [
-          "For this lab, you will build a stack class using JavaScript."
+          "Para este laboratório, você vai criar uma classe de stack usando o JavaScript."
         ]
       },
       "lab-linked-list-class": {
@@ -2944,9 +2973,9 @@
         "intro": []
       },
       "quiz-javascript-data-structures": {
-        "title": "JavaScript Data Structures Quiz",
+        "title": "Questionário sobre estruturas de dados em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Data Structures."
+          "Teste o que você aprendeu neste questionário sobre estruturas de dados em JavaScript."
         ]
       },
       "rmpy": {
@@ -2962,8 +2991,10 @@
         "intro": []
       },
       "quiz-graphs-and-trees": {
-        "title": "Graphs and Trees Quiz",
-        "intro": ["Test what you've learned in this quiz on Graphs and Trees."]
+        "title": "Questionário sobre gráficos e árvores",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre gráficos e árvores em JavaScript."
+        ]
       },
       "vjgg": {
         "title": "272",
@@ -2980,9 +3011,9 @@
         "intro": []
       },
       "quiz-dynamic-programming": {
-        "title": "Dynamic Programming Quiz",
+        "title": "Questionário sobre programação dinâmica",
         "intro": [
-          "Test what you've learned in this quiz on Dynamic Programming."
+          "Teste o que você aprendeu neste questionário sobre programação dinâmica."
         ]
       },
       "sgau": {
@@ -3012,9 +3043,9 @@
         "intro": []
       },
       "quiz-asynchronous-javascript": {
-        "title": "Asynchronous JavaScript Quiz",
+        "title": "Questionário sobre JavaScript assíncrono",
         "intro": [
-          "Test what you've learned in this quiz on Asynchronous JavaScript."
+          "Teste o que você aprendeu neste questionário sobre JavaScript assíncrono."
         ]
       },
       "icdr": {
@@ -3042,8 +3073,10 @@
         "intro": []
       },
       "quiz-web-standards": {
-        "title": "Web Standards Quiz",
-        "intro": ["Test what you've learned in this quiz on Web Standards."]
+        "title": "Questionário sobre padrões da web",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre padrões da web."
+        ]
       },
       "khuu": {
         "title": "290",
@@ -3074,8 +3107,10 @@
         "intro": []
       },
       "quiz-react-basics": {
-        "title": "React Basics Quiz",
-        "intro": ["Test what you've learned in this quiz on React Basics."]
+        "title": "Questionário básico sobre React",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o básico do React."
+        ]
       },
       "hfwi": {
         "title": "298",
@@ -3106,9 +3141,9 @@
         "intro": []
       },
       "quiz-react-state-and-hooks": {
-        "title": "React State and Hooks Quiz",
+        "title": "Questionário sobre state e hooks em React",
         "intro": [
-          "Test what you've learned in this quiz on React State and Hooks."
+          "Teste o que você aprendeu neste questionário sobre state e hooks em React."
         ]
       },
       "voks": {
@@ -3144,8 +3179,10 @@
         "intro": []
       },
       "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
-        "intro": ["Test what you've learned in this quiz on Advanced React."]
+        "title": "Questionário avançado sobre React",
+        "intro": [
+          "Teste o que você aprendeu neste questionário avançado sobre React."
+        ]
       },
       "tkgg": {
         "title": "315",
@@ -3156,8 +3193,10 @@
         "intro": []
       },
       "quiz-web-performance": {
-        "title": "Web Performance Quiz",
-        "intro": ["Test what you've learned in this quiz on Web Performance."]
+        "title": "Questionário sobre desempenho na web",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre desempenho na web."
+        ]
       },
       "hzab": {
         "title": "318",
@@ -3176,8 +3215,10 @@
         "intro": []
       },
       "quiz-typescript": {
-        "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned in this quiz on TypeScript."]
+        "title": "Questionário sobre TypeScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre TypeScript."
+        ]
       },
       "zhhp": {
         "title": "323",
@@ -3188,9 +3229,9 @@
         "intro": []
       },
       "quiz-css-libraries-and-frameworks": {
-        "title": "CSS Libraries and Frameworks Quiz",
+        "title": "Questionário sobre bibliotecas e frameworks do CSS",
         "intro": [
-          "Test what you've learned in this quiz on CSS Libraries and Frameworks."
+          "Teste o que você aprendeu neste questionário sobre bibliotecas e frameworks do CSS."
         ]
       },
       "gora": {
@@ -3202,8 +3243,8 @@
         "intro": []
       },
       "quiz-testing": {
-        "title": "Testing Quiz",
-        "intro": ["Test what you've learned in this quiz on Testing."]
+        "title": "Questionário sobre testes",
+        "intro": ["Teste o que você aprendeu neste questionário sobre testes."]
       },
       "lzvx": {
         "title": "329",
@@ -3229,8 +3270,10 @@
         "intro": []
       },
       "quiz-bash-commands": {
-        "title": "Bash Commands Quiz",
-        "intro": ["Test what you've learned in this quiz on Bash Commands."]
+        "title": "Questionário sobre comandos no Bash",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre comandos no Bash."
+        ]
       },
       "thsj": {
         "title": "335",
@@ -3254,9 +3297,9 @@
         "intro": []
       },
       "quiz-relational-database": {
-        "title": "Relational Database Quiz",
+        "title": "Questionário sobre bancos de dados relacionais",
         "intro": [
-          "Test what you've learned in this quiz on Relational Databases."
+          "Teste o que você aprendeu neste questionário sobre bancos de dados relacionais."
         ]
       },
       "ynqt": {
@@ -3275,8 +3318,10 @@
         "intro": []
       },
       "quiz-bash-scripting": {
-        "title": "Bash Scripting Quiz",
-        "intro": ["Test what you've learned in this quiz on Bash Scripting."]
+        "title": "Questionário sobre scripts em Bash",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre scripts do Bash."
+        ]
       },
       "pegc": {
         "title": "344",
@@ -3326,8 +3371,10 @@
         "intro": []
       },
       "quiz-bash-and-sql": {
-        "title": "Bash and SQL Quiz",
-        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+        "title": "Questionário sobre Bash e SQL",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre Bash e SQL."
+        ]
       },
       "movb": {
         "title": "353",
@@ -3345,8 +3392,8 @@
         "intro": []
       },
       "quiz-nano": {
-        "title": "Nano Quiz",
-        "intro": ["Test what you've learned in this quiz on Nano."]
+        "title": "Questionário sobre o Nano",
+        "intro": ["Teste o que você aprendeu neste questionário sobre o Nano."]
       },
       "pzmc": {
         "title": "357",
@@ -3376,8 +3423,8 @@
         "intro": []
       },
       "quiz-git": {
-        "title": "Git Quiz",
-        "intro": ["Test what you've learned in this quiz on Git."]
+        "title": "Questionário sobre o Git",
+        "intro": ["Teste o que você aprendeu neste questionário sobre o Git."]
       },
       "ibmn": {
         "title": "363",
@@ -3396,9 +3443,9 @@
         "intro": []
       },
       "quiz-security-and-privacy": {
-        "title": "Security and Privacy Quiz",
+        "title": "Questionário sobre segurança e privacidade",
         "intro": [
-          "Test what you've learned in this quiz on Security and Privacy."
+          "Teste o que você aprendeu neste questionário sobre segurança e privacidade."
         ]
       },
       "qjov": {
@@ -3456,9 +3503,9 @@
         "intro": []
       },
       "quiz-backend-javascript": {
-        "title": "Backend JavaScript Quiz",
+        "title": "Questionário sobre backend em JavaScript",
         "intro": [
-          "Test what you've learned in this quiz on Backend JavaScript."
+          "Teste o que você aprendeu neste questionário sobre backend em JavaScript."
         ]
       },
       "vnfu": {
