@@ -2717,7 +2717,10 @@
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
-      "zzhp": { "title": "372", "intro": [] },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": ["In this lab you will build a timestamp microservice"]
+      },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
         "intro": [
