@@ -138,7 +138,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       linkedin,
       twitter,
       website,
-      portfolio
+      portfolio,
+      career
     },
     navigate,
     showLoading,
@@ -155,7 +156,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
-
+  console.log(career);
+  console.log(username);
+  console.log(portfolio);
   if (!isSignedInRef.current) {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
@@ -175,7 +178,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           >
             {t('settings.for', { username: username })}
           </h1>
-          <CareerTimeline updateMyCareer={updateCareer} />
+          <CareerTimeline updateMyCareer={updateCareer} career={career} />
           <About
             about={about}
             currentTheme={theme}

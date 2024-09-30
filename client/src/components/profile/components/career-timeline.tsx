@@ -5,28 +5,22 @@ import { Button, ControlLabel, FormControl, FormGroup } from '@freecodecamp/ui';
 import { FullWidthRow } from '../../helpers';
 import SectionHeader from '../../settings/section-header';
 import './career-timeline.css';
-
-interface Job {
-  title: string;
-  company: string;
-  location: string;
-  start_date: Date;
-  end_date: Date;
-  description: string;
-}
+import { Career } from '../../../redux/prop-types';
 
 const EditCareerTimeline = ({
   myCareer,
   index,
   editIndex,
   setEditingIndex,
+  updateMyCareer,
   setIsEditing
 }: {
-  myCareer: Job[];
+  myCareer: Career[];
   index: number;
   editIndex: number;
   setEditingIndex: (value: number) => void;
   setIsEditing: (value: boolean) => void;
+  updateMyCareer: (value: { career: Career[] }) => void;
 }) => {
   const handleSubmit = (formEvent: React.FormEvent) => {
     formEvent.preventDefault();
@@ -34,12 +28,25 @@ const EditCareerTimeline = ({
     const form = formEvent.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    formData.forEach((value, key) => {
-      console.log(key, value);
+    const newCareer = myCareer.map((job, i) => {
+      if (i === index) {
+        return {
+          title: (formData.get('function') as string) || '',
+          company: (formData.get('company') as string) || '',
+          location: (formData.get('location') as string) || '',
+          start_date: (formData.get('start_date') as string) || '',
+          end_date: (formData.get('end_date') as string) || '',
+          description: (formData.get('description') as string) || ''
+        };
+      }
+
+      return job;
     });
 
     setIsEditing(false);
     setEditingIndex(-1);
+
+    updateMyCareer({ career: newCareer });
 
     return formEvent;
   };
@@ -113,39 +120,13 @@ const EditCareerTimeline = ({
 };
 
 const CareerTimeline = ({
+  career,
   updateMyCareer
 }: {
-  updateMyCareer: (value: { career: Job[] }) => void;
+  career: Career[];
+  updateMyCareer: (value: { career: Career[] }) => void;
 }) => {
-  const [myCareer, _setMyCareer] = useState<Job[]>([
-    {
-      title: 'Full Stack Developer',
-      company: 'freeCodeCamp',
-      location: 'San Francisco, CA',
-      start_date: new Date(),
-      end_date: new Date(),
-      description:
-        'freeCodeCamp is a non-profit organization that consists of an interactive learning web platform, an online community forum, chat rooms, online publications and local organizations that intend to make learning web development accessible to anyone.'
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Microsoft',
-      location: 'Redmond, WA',
-      start_date: new Date(),
-      end_date: new Date(),
-      description:
-        'Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.'
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Google',
-      location: 'Mountain View, CA',
-      start_date: new Date(),
-      end_date: new Date(),
-      description:
-        'Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware.'
-    }
-  ]);
+  const [myCareer, _setMyCareer] = useState<Career[]>([...career]);
 
   const [isEditing, setIsEditing] = useState(false);
   const [editingIndex, setEditingIndex] = useState(-1);
@@ -153,26 +134,19 @@ const CareerTimeline = ({
   return (
     <>
       <SectionHeader>Your Experience</SectionHeader>
-      <Button
-        onClick={() => {
-          updateMyCareer({
-            career: [myCareer[0]]
-          });
-        }}
-      >
-        TEST REDUX UPDATE CAREER TIMELINE
-      </Button>
       <FullWidthRow>
-        {myCareer.map((job: Job, index) => {
-          const start = job.start_date.toLocaleString().split(',')[0];
-          const end = job.end_date.toLocaleString().split(',')[0];
+        {myCareer.map((job: Career, index) => {
+          const start = job.start_date.split(',')[0];
+          const end = job.end_date.split(',')[0];
 
           const debug_time = new Date('December 17, 2002 03:24:00');
 
-          const total_time = job.start_date.getTime() - debug_time.getTime();
+          const start_date = new Date(job.start_date);
+
+          const total_time = start_date.getTime() - debug_time.getTime();
           const total_time_in_days = total_time / (1000 * 3600 * 24);
           const total_time_in_years = Math.floor(total_time_in_days / 365);
-          console.log(0 / 365);
+
           return (
             <Fragment key={index}>
               {isEditing ? (
@@ -181,6 +155,7 @@ const CareerTimeline = ({
                   index={index}
                   setIsEditing={setIsEditing}
                   setEditingIndex={setEditingIndex}
+                  updateMyCareer={updateMyCareer}
                   editIndex={editingIndex}
                 />
               ) : (

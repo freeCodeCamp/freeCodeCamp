@@ -46,8 +46,8 @@ type Career {
   title       String
   company     String
   location    String
-  start_date  DateTime
-  end_date    DateTime?
+  start_date  String
+  end_date    String
   description String
 }
 

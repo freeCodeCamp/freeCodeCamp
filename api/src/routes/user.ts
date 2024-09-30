@@ -1,5 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { Portfolio } from '@prisma/client';
+import { Career, Portfolio } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 
@@ -433,6 +433,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           select: {
             about: true,
             acceptedPrivacyTerms: true,
+            career: true,
             completedChallenges: true,
             completedExams: true,
             currentChallengeId: true,
@@ -587,6 +588,7 @@ type ProfileUI = Partial<{
 type RawUser = {
   about: string;
   completedChallenges: NormalizedChallenge[];
+  career: Career[];
   calendar: Calendar;
   id: string;
   isDonating: boolean;

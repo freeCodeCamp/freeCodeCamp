@@ -644,8 +644,8 @@ ${isLinkSentWithinLimitTTL}`
             company: company ? company : '',
             location: location ? location : '',
             title: title ? title : '',
-            start_date: start_date ? new Date(start_date) : new Date(),
-            end_date: end_date ? new Date(end_date) : new Date(),
+            start_date: start_date ? start_date : '',
+            end_date: end_date ? end_date : '',
             description: description ? description : ''
           })
         );
