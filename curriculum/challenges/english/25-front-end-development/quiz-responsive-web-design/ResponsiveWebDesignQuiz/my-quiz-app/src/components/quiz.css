@@ -1,0 +1,513 @@
+/* =========================================================
+   RESET STYLES
+   Resetting default browser styles for consistency across browsers.
+============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   TYPOGRAPHY & BASE STYLES
+   Setting base font styles and colors.
+============================================================ */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.quiz-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 2.6em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #3498db;
+    border-radius: 3px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 30px;
+    height: 24px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+    height: 100%;
+    background-color: #3498db;
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Question Styles */
+.question-number {
+    font-size: 1.4em;
+    margin-bottom: 12px;
+    color: #34495e;
+    font-weight: bold;
+}
+
+.question-text {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Options Styles */
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-label {
+    background-color: #ecf0f1;
+    padding: 16px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.option-label:hover {
+    background-color: #d0d7de;
+    transform: translateX(6px);
+}
+
+.option-label input {
+    margin-right: 14px;
+    transform: scale(1.3);
+}
+
+/* Navigation Buttons Styles */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* Button Styles */
+.button {
+    padding: 14px 28px;
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button.disabled {
+    background-color: #95a5a6;
+
+    box-shadow: none;
+}
+
+/* Specific styles for different button types */
+.nav-button {
+    background-color: #3498db;
+}
+
+.submit-button {
+    background-color: #2ecc71;
+    position: relative;
+}
+
+.submit-button:hover {
+    background-color: #27ae60;
+}
+
+.submit-button::before {
+    content: "✔";
+    position: absolute;
+    left: -30px;
+    font-size: 1.4em;
+}
+
+.retry-button {
+    background-color: #e67e22;
+}
+
+.retry-button:hover {
+    background-color: #d35400;
+}
+
+/* Feedback Styles */
+.feedback {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
+
+.feedback.correct {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.feedback.incorrect {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.feedback svg {
+    margin-right: 14px;
+    font-size: 1.4em;
+}
+
+/* Result Section Styles */
+.result-section {
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-section h2 {
+    font-size: 2.6em;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.result-feedback {
+    font-size: 1.4em;
+    margin-bottom: 50px;
+}
+
+.result-feedback.excellent {
+    color: #2ecc71;
+}
+
+.result-feedback.good {
+    color: #f1c40f;
+}
+
+.result-feedback.needs-improvement {
+    color: #e74c3c;
+}
+
+/* Retry Button Styles */
+.retry-button {
+    padding: 14px 24px;
+    background-color: #e67e22;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.retry-button:hover {
+    background-color: #d35400;
+    transform: scale(1.08);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Ensuring the quiz is mobile-friendly.
+============================================================ */
+@media (max-width: 1024px) {
+    .quiz-container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.3em;
+    }
+
+    .question-text {
+        font-size: 1.4em;
+    }
+
+    .option-label {
+        padding: 12px 16px;
+        font-size: 1em;
+    }
+
+    .nav-button, .retry-button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    .progress-bar {
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-button {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .feedback {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .feedback svg {
+        margin-bottom: 5px;
+    }
+
+    .quiz-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .question-text {
+        font-size: 1.3em;
+    }
+
+    .progress-bar {
+        height: 18px;
+    }
+
+    .progress {
+        transition: width 0.5s ease;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-container {
+        padding: 15px;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .question-text {
+        font-size: 1.2em;
+    }
+
+    .option-label {
+        padding: 10px 12px;
+        font-size: 0.85em;
+    }
+
+    .nav-button, .retry-button {
+        font-size: 0.9em;
+        padding: 10px 18px;
+    }
+
+    .progress-bar {
+        height: 16px;
+    }
+
+    .result-section h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 360px) {
+    .quiz-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .question-text {
+        font-size: 1.1em;
+    }
+
+    .option-label {
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+
+    .nav-button, .retry-button {
+        font-size: 0.8em;
+        padding: 8px 14px;
+    }
+
+    .progress-bar {
+        height: 14px;
+    }
+}
+/* quiz.css */
+
+.quiz-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.question-container {
+    margin-bottom: 20px;
+}
+
+.options-container {
+    margin: 10px 0;
+}
+
+.option {
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #ccc;
+ 
+    
+}
+
+.marked {
+    background-color: #ffc107;
+}
+
+.hint {
+    margin-top: 10px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Optional: add some styles for active buttons */
+input[type="radio"]:checked + label {
+    background-color: #e7f1ff;
+    border: 1px solid #007bff;
+}
+/* Resetting previous floating styles for submit button */
+.submit-button {
+    background-color: #2ecc71;
+    clear: both; /* Ensures that the submit button does not overlap floated elements */
+    display: block;
+    margin: 20px auto; /* Center the button horizontally */
+    padding: 14px 28px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.submit-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button.disabled {
+    background-color: #95a5a6;
+
+    box-shadow: none;
+}
