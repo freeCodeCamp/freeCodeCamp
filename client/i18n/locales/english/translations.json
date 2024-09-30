@@ -101,7 +101,8 @@
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
     "play-scene": "Press Play",
-    "closed-caption": "Closed caption"
+    "closed-caption": "Closed caption",
+    "delete": "Delete"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -342,7 +343,9 @@
     "job-location": "Location",
     "job-start-date": "Start Date",
     "job-end-date": "End Date",
-    "job-description": "Description"
+    "job-description": "Description",
+    "job-delete-heading": "Delete Job from Career?",
+    "job-delete": "Are you sure you want to delete this job from your career?"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",

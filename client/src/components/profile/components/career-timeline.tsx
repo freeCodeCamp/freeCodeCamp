@@ -2,7 +2,14 @@ import React, { Fragment, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-import { Button, ControlLabel, FormControl, FormGroup } from '@freecodecamp/ui';
+import {
+  Button,
+  ControlLabel,
+  FormControl,
+  FormGroup,
+  Modal,
+  Spacer
+} from '@freecodecamp/ui';
 import { TFunction } from 'i18next';
 import { FullWidthRow } from '../../helpers';
 import SectionHeader from '../../settings/section-header';
@@ -10,19 +17,88 @@ import './career-timeline.css';
 import { Career } from '../../../redux/prop-types';
 import { parseDate } from './utils';
 
+const DeleteModal = ({
+  isDeleting,
+  selectedIndex,
+  setSelectedIndex,
+  setIsDeleting,
+  setMyCareer,
+  updateMyCareer,
+  myCareer,
+  t
+}: {
+  isDeleting: boolean;
+  selectedIndex: number;
+  setSelectedIndex: (value: number) => void;
+  setIsDeleting: (value: boolean) => void;
+  setMyCareer: (value: Career[]) => void;
+  updateMyCareer: (value: { career: Career[] }) => void;
+  myCareer: Career[];
+  t: TFunction;
+}) => {
+  const handleDelete = (selectedIndex: number) => {
+    const updatedCareer = myCareer.filter((_job, index) => {
+      return index !== selectedIndex;
+    });
+
+    updateMyCareer({ career: updatedCareer });
+    setMyCareer(updatedCareer);
+
+    setIsDeleting(false);
+    setSelectedIndex(-1);
+  };
+
+  return (
+    <>
+      <Modal
+        onClose={() => {
+          setIsDeleting(false);
+          setSelectedIndex(-1);
+        }}
+        variant='danger'
+        open={isDeleting}
+      >
+        <Modal.Header>{t('profile.job-delete-heading')}</Modal.Header>
+        <Modal.Body>
+          <p>{t('profile.job-delete')}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            onClick={() => {
+              setIsDeleting(false);
+            }}
+          >
+            {t('buttons.cancel')}
+          </Button>
+
+          <Spacer size='s' />
+          <Button
+            variant='danger'
+            onClick={() => {
+              handleDelete(selectedIndex);
+            }}
+          >
+            {t('buttons.delete')}
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+
 const EditCareerTimeline = ({
   myCareer,
   index,
-  editIndex,
-  setEditingIndex,
+  selectedIndex,
+  setSelectedIndex,
   updateMyCareer,
   setIsEditing,
   t
 }: {
   myCareer: Career[];
   index: number;
-  editIndex: number;
-  setEditingIndex: (value: number) => void;
+  selectedIndex: number;
+  setSelectedIndex: (value: number) => void;
   setIsEditing: (value: boolean) => void;
   updateMyCareer: (value: { career: Career[] }) => void;
   t: TFunction;
@@ -49,7 +125,7 @@ const EditCareerTimeline = ({
     });
 
     setIsEditing(false);
-    setEditingIndex(-1);
+    setSelectedIndex(-1);
 
     updateMyCareer({ career: newCareer });
 
@@ -58,7 +134,7 @@ const EditCareerTimeline = ({
 
   const job = myCareer[index];
 
-  if (index !== editIndex) {
+  if (index !== selectedIndex) {
     return <></>;
   }
 
@@ -146,15 +222,27 @@ const CareerTimeline = ({
   career: Career[];
   updateMyCareer: (value: { career: Career[] }) => void;
 }) => {
-  const [myCareer, _setMyCareer] = useState<Career[]>([...career]);
+  const [myCareer, setMyCareer] = useState<Career[]>([...career]);
 
   const [isEditing, setIsEditing] = useState(false);
-  const [editingIndex, setEditingIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const { t } = useTranslation();
 
   return (
     <>
+      <DeleteModal
+        isDeleting={isDeleting}
+        setSelectedIndex={setSelectedIndex}
+        setIsDeleting={setIsDeleting}
+        setMyCareer={setMyCareer}
+        updateMyCareer={updateMyCareer}
+        myCareer={myCareer}
+        selectedIndex={selectedIndex}
+        t={t}
+      />
       <SectionHeader>{t('profile.your-exp')}</SectionHeader>
       <FullWidthRow>
         {myCareer.map((job: Career, index) => {
@@ -185,9 +273,9 @@ const CareerTimeline = ({
                   myCareer={myCareer}
                   index={index}
                   setIsEditing={setIsEditing}
-                  setEditingIndex={setEditingIndex}
+                  setSelectedIndex={setSelectedIndex}
                   updateMyCareer={updateMyCareer}
-                  editIndex={editingIndex}
+                  selectedIndex={selectedIndex}
                   t={t}
                 />
               ) : (
@@ -200,14 +288,20 @@ const CareerTimeline = ({
                       })}
                     </h3>
                     <div className='action-container'>
-                      <Button className='edit-btn'>
+                      <Button
+                        className='edit-btn'
+                        onClick={() => {
+                          setIsDeleting(true);
+                          setSelectedIndex(index);
+                        }}
+                      >
                         <FontAwesomeIcon icon={faTrash} />
                       </Button>
                       <Button
                         className='edit-btn'
                         onClick={() => {
                           setIsEditing(true);
-                          setEditingIndex(index);
+                          setSelectedIndex(index);
                         }}
                       >
                         <FontAwesomeIcon icon={faPen} />
