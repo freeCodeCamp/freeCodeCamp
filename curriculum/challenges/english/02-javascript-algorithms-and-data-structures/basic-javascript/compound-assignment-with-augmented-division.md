@@ -48,16 +48,16 @@ assert(c === 3);
 You should use the `/=` operator for each variable.
 
 ```js
-assert(code.match(/\/=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/\/=/g).length === 3);
 ```
 
 You should not modify the code above the specified comment.
 
 ```js
 assert(
-  /var a = 48;/.test(code) &&
-    /var b = 108;/.test(code) &&
-    /var c = 33;/.test(code)
+  /let a = 48;/.test(__helpers.removeJSComments(code)) &&
+    /let b = 108;/.test(__helpers.removeJSComments(code)) &&
+    /let c = 33;/.test(__helpers.removeJSComments(code))
 );
 ```
 
@@ -72,9 +72,9 @@ assert(
 ## --seed-contents--
 
 ```js
-var a = 48;
-var b = 108;
-var c = 33;
+let a = 48;
+let b = 108;
+let c = 33;
 
 // Only change code below this line
 a = a / 12;
@@ -85,9 +85,9 @@ c = c / 11;
 # --solutions--
 
 ```js
-var a = 48;
-var b = 108;
-var c = 33;
+let a = 48;
+let b = 108;
+let c = 33;
 
 a /= 12;
 b /= 4;

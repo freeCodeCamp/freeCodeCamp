@@ -24,7 +24,7 @@ if (val === 1) {
 can be replaced with:
 
 ```js
-switch(val) {
+switch (val) {
   case 1:
     answer = "a";
     break;
@@ -45,58 +45,58 @@ Change the chained `if`/`else if` statements into a `switch` statement.
 You should not use any `else` statements anywhere in the editor
 
 ```js
-assert(!/else/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should not use any `if` statements anywhere in the editor
 
 ```js
-assert(!/if/g.test(code));
+assert(!/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should have at least four `break` statements
 
 ```js
-assert(code.match(/break/g).length >= 4);
+assert(__helpers.removeJSComments(code).match(/break/g).length >= 4);
 ```
 
-`chainToSwitch("bob")` should be the string `Marley`
+`chainToSwitch("bob")` should return the string `Marley`
 
 ```js
 assert(chainToSwitch('bob') === 'Marley');
 ```
 
-`chainToSwitch(42)` should be the string `The Answer`
+`chainToSwitch(42)` should return the string `The Answer`
 
 ```js
 assert(chainToSwitch(42) === 'The Answer');
 ```
 
-`chainToSwitch(1)` should be the string `There is no #1`
+`chainToSwitch(1)` should return the string `There is no #1`
 
 ```js
 assert(chainToSwitch(1) === 'There is no #1');
 ```
 
-`chainToSwitch(99)` should be the string `Missed me by this much!`
+`chainToSwitch(99)` should return the string `Missed me by this much!`
 
 ```js
 assert(chainToSwitch(99) === 'Missed me by this much!');
 ```
 
-`chainToSwitch(7)` should be the string `Ate Nine`
+`chainToSwitch(7)` should return the string `Ate Nine`
 
 ```js
 assert(chainToSwitch(7) === 'Ate Nine');
 ```
 
-`chainToSwitch("John")` should be `""` (empty string)
+`chainToSwitch("John")` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch('John') === '');
 ```
 
-`chainToSwitch(156)` should be `""` (empty string)
+`chainToSwitch(156)` should return `""` (empty string)
 
 ```js
 assert(chainToSwitch(156) === '');
@@ -108,7 +108,7 @@ assert(chainToSwitch(156) === '');
 
 ```js
 function chainToSwitch(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
   if (val === "bob") {
@@ -134,9 +134,9 @@ chainToSwitch(7);
 
 ```js
 function chainToSwitch(val) {
-  var answer = "";
+  let answer = "";
 
-  switch(val) {
+  switch (val) {
     case "bob":
       answer = "Marley";
       break;

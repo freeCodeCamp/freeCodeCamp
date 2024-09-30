@@ -50,7 +50,7 @@ You should call `reusableFunction` once it is defined.
 
 ```js
 const functionStr = reusableFunction && __helpers.removeWhiteSpace(reusableFunction.toString());
-const codeWithoutFunction = __helpers.removeWhiteSpace(code).replace(/reusableFunction\(\)\{/g, '');
+const codeWithoutFunction = __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).replace(/reusableFunction\(\)\{/g, '');
 assert(/reusableFunction\(\)/.test(codeWithoutFunction));
 ```
 

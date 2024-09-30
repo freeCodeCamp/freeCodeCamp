@@ -39,6 +39,7 @@ assert(ohRegex.source.match(/{.*?}/).length > 0);
 Your regex should not match the string `Ohh no`
 
 ```js
+ohRegex.lastIndex = 0;
 assert(!ohRegex.test('Ohh no'));
 ```
 
@@ -69,6 +70,7 @@ assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
 Your regex should not match the string `Ohhhhhhh no`
 
 ```js
+ohRegex.lastIndex = 0;
 assert(!ohRegex.test('Ohhhhhhh no'));
 ```
 

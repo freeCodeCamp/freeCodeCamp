@@ -1,0 +1,69 @@
+{
+  "name": "Build a Mathbot",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-mathbot",
+  "order": 142,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66ea7adae8053065a64f9002",
+      "title": "Step 1"
+    },
+    {
+      "id": "66ea7e7399244c6d4b6052a1",
+      "title": "Step 2"
+    },
+    {
+      "id": "66ea7fc048a6e26e33c598fe",
+      "title": "Step 3"
+    },
+    {
+      "id": "66ea8239b9eeb76f12299030",
+      "title": "Step 4"
+    },
+    {
+      "id": "66ea845f54195c7020cc521b",
+      "title": "Step 5"
+    },
+    {
+      "id": "66ea89c25e1bd871688eba6a",
+      "title": "Step 6"
+    },
+    {
+      "id": "66eb3ec3b07dfe8f898646c0",
+      "title": "Step 7"
+    },
+    {
+      "id": "66eb480d996af5918d7c9c86",
+      "title": "Step 8"
+    },
+    {
+      "id": "66eb488c0129e192542f0865",
+      "title": "Step 9"
+    },
+    {
+      "id": "66eb499511810e932ca7eecc",
+      "title": "Step 10"
+    },
+    {
+      "id": "66ecdcf7c8d9a6f49094ffde",
+      "title": "Step 11"
+    },
+    {
+      "id": "66ece0b518f5dcf5930612ab",
+      "title": "Step 12"
+    },
+    {
+      "id": "66ece147323c91f654bf8dd9",
+      "title": "Step 13"
+    },
+    {
+      "id": "66ece75c0b840df77c7e20f0",
+      "title": "Step 14"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

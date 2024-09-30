@@ -24,8 +24,8 @@ assert(
     var test = new LinkedList();
     test.add('cat');
     test.add('dog');
-    test.addAt(0, 'cat');
-    return test.head().element === 'cat';
+    test.addAt(0, 'fish');
+    return test.head().element === 'fish' && test.head().next.element === 'cat';
   })()
 );
 ```

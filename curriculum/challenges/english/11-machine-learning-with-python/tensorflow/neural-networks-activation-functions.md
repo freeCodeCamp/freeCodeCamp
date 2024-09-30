@@ -10,11 +10,11 @@ bilibiliIds:
 dashedName: neural-networks-activation-functions
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 
-Which activation function switches values between -1 and 1?
+Which activation function squishes values between -1 and 1?
 
 ## --answers--
 

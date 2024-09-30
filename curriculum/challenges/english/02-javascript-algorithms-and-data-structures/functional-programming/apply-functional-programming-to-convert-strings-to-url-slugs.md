@@ -31,7 +31,7 @@ The output should not have any spaces
 Your code should not use the `replace` method for this challenge.
 
 ```js
-assert(!code.match(/\.?[\s\S]*?replace/g));
+assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?replace/g));
 ```
 
 `urlSlug("Winter Is Coming")` should return the string `winter-is-coming`.
@@ -72,12 +72,12 @@ function urlSlug(title) {
 
 }
 // Only change code above this line
+urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
 ```
 
 # --solutions--
 
 ```js
-// Only change code below this line
 function urlSlug(title) {
   return title.trim().split(/\s+/).join("-").toLowerCase();
 }

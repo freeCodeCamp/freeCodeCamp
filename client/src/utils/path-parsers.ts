@@ -1,16 +1,8 @@
 import { WindowLocation } from '@reach/router';
-import { i18nConstants } from '../../../config/constants';
+import { i18nConstants } from '../../../shared/config/constants';
 
 const splitPath = (pathname: string): string[] =>
   pathname.split('/').filter(x => x);
-
-export const isChallenge = (pathname: string): boolean => {
-  const pathArray = splitPath(pathname);
-  return (
-    (pathArray.length === 4 && pathArray[0]) === 'learn' ||
-    (pathArray.length === 5 && pathArray[1]) === 'learn'
-  );
-};
 
 export const isLanding = (pathname: string): boolean => {
   const pathArray = splitPath(pathname);
@@ -25,6 +17,3 @@ export const isLocationSuperBlock = (
 ): boolean => {
   return /^\/learn\/[\w-]+\/$/.test(location?.pathname ?? '');
 };
-
-const pathParsers = { isLanding, isChallenge };
-export default pathParsers;

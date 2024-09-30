@@ -1,86 +1,96 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable react/prop-types */
-// @ts-nocheck
 import Loadable from '@loadable/component';
-import React, { Ref } from 'react';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
+import { SEARCH_EXPOSED_WIDTH } from '../../../../config/misc';
 import MenuButton from './menu-button';
-import NavLinks from './nav-links';
+import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
 import './universal-nav.css';
+import AuthOrProfile from './auth-or-profile';
+import LanguageList from './language-list';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
 
-export interface UniversalNavProps {
-  displayMenu?: boolean;
-  fetchState?: { pending: boolean };
-  menuButtonRef?: Ref<HTMLButtonElement> | undefined;
-  searchBarRef?: unknown;
-  toggleDisplayMenu?: React.MouseEventHandler<HTMLButtonElement> | undefined;
-  user?: Record<string, unknown>;
-}
-export const UniversalNav = ({
+type UniversalNavProps = Omit<
+  NavLinksProps,
+  'toggleNightMode' | 'openSignoutModal'
+> & {
+  fetchState: { pending: boolean };
+  searchBarRef?: React.RefObject<HTMLDivElement>;
+};
+const UniversalNav = ({
   displayMenu,
-  toggleDisplayMenu,
+  showMenu,
+  hideMenu,
   menuButtonRef,
   searchBarRef,
   user,
   fetchState
 }: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
+  const { t } = useTranslation();
+  const isSearchExposedWidth = useMediaQuery({
+    query: `(min-width: ${SEARCH_EXPOSED_WIDTH}px)`
+  });
 
   const search =
     typeof window !== `undefined` && isLanding(window.location.pathname) ? (
-      <SearchBarOptimized />
+      <SearchBarOptimized innerRef={searchBarRef} />
     ) : (
       <SearchBar innerRef={searchBarRef} />
     );
 
   return (
     <nav
-      className={'universal-nav' + (displayMenu ? ' expand-nav' : '')}
+      aria-label={t('aria.primary-nav')}
+      className='universal-nav'
       id='universal-nav'
+      data-playwright-test-label='header-universal-nav'
     >
-      <div
-        className={
-          'universal-nav-left' + (displayMenu ? ' display-search' : '')
-        }
+      {isSearchExposedWidth && (
+        <div className='universal-nav-left'>{search}</div>
+      )}
+      <Link
+        className='universal-nav-logo'
+        id='universal-nav-logo'
+        to='/learn'
+        data-playwright-test-label='header-universal-nav-logo'
       >
-        {search}
-      </div>
-      <div className='universal-nav-middle'>
-        <Link id='universal-nav-logo' to='/learn'>
-          <NavLogo />
-          <span className='sr-only'>freeCodeCamp.org</span>
-        </Link>
-      </div>
+        <NavLogo />
+      </Link>
       <div className='universal-nav-right main-nav'>
         {pending ? (
           <div className='nav-skeleton'>
             <SkeletonSprite />
           </div>
         ) : (
-          <MenuButton
-            displayMenu={displayMenu}
-            innerRef={menuButtonRef}
-            onClick={toggleDisplayMenu}
-            user={user}
-          />
+          <>
+            <LanguageList />
+            <MenuButton
+              displayMenu={displayMenu}
+              hideMenu={hideMenu}
+              innerRef={menuButtonRef}
+              showMenu={showMenu}
+              user={user}
+            />
+            {!isSearchExposedWidth && search}
+            <NavLinks
+              displayMenu={displayMenu}
+              hideMenu={hideMenu}
+              menuButtonRef={menuButtonRef}
+              showMenu={showMenu}
+              user={user}
+            />
+            <AuthOrProfile user={user} />
+          </>
         )}
       </div>
-
-      <NavLinks
-        displayMenu={displayMenu}
-        fetchState={fetchState}
-        toggleDisplayMenu={toggleDisplayMenu}
-        user={user}
-      />
     </nav>
   );
 };

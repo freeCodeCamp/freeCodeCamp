@@ -22,7 +22,7 @@ In JavaScript, when the `+` operator is used with a `String` value, it is called
 Example:
 
 ```js
-var ourStr = "I come first. " + "I come second.";
+const ourStr = "I come first. " + "I come second.";
 ```
 
 The string `I come first. I come second.` would be displayed in the console.
@@ -31,6 +31,12 @@ The string `I come first. I come second.` would be displayed in the console.
 Build `myStr` from the strings `This is the start.` and `This is the end.` using the `+` operator. Be sure to include a space between the two strings.
 
 # --hints--
+
+`myStr` should have a single space character between the two strings.
+
+```js
+assert(/start\. This/.test(myStr));
+```
 
 `myStr` should have a value of the string `This is the start. This is the end.`
 
@@ -41,19 +47,19 @@ assert(myStr === 'This is the start. This is the end.');
 You should use the `+` operator to build `myStr`.
 
 ```js
-assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+assert(__helpers.removeJSComments(code).match(/(["']).*\1\s*\+\s*(["']).*\2/g));
 ```
 
-`myStr` should be created using the `var` keyword.
+`myStr` should be created using the `const` keyword.
 
 ```js
-assert(/var\s+myStr/.test(code));
+assert(/const\s+myStr/.test(__helpers.removeJSComments(code)));
 ```
 
 You should assign the result to the `myStr` variable.
 
 ```js
-assert(/myStr\s*=/.test(code));
+assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
@@ -73,11 +79,11 @@ assert(/myStr\s*=/.test(code));
 ## --seed-contents--
 
 ```js
-var myStr; // Change this line
+const myStr = ""; // Change this line
 ```
 
 # --solutions--
 
 ```js
-var myStr = "This is the start. " + "This is the end.";
+const myStr = "This is the start. " + "This is the end.";
 ```

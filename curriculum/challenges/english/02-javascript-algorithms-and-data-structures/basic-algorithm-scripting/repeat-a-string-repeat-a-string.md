@@ -1,7 +1,7 @@
 ---
 id: afcc8d540bea9ea2669306b6
 title: Repeat a String Repeat a String
-challengeType: 5
+challengeType: 1
 forumTopicId: 16041
 dashedName: repeat-a-string-repeat-a-string
 ---
@@ -51,7 +51,7 @@ assert(repeatStringNumTimes('abc', -2) === '');
 The built-in `repeat()` method should not be used.
 
 ```js
-assert(!/\.repeat/g.test(code));
+assert(!/\.repeat/g.test(__helpers.removeJSComments(code)));
 ```
 
 `repeatStringNumTimes("abc", 0)` should return `""`.

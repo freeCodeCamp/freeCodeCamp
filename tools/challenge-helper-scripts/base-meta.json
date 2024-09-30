@@ -1,13 +1,15 @@
 {
   "name": "",
   "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
   "dashedName": "",
   "order": 42,
-  "time": "5 hours",
-  "template": "",
-  "required": [],
   "superBlock": "",
-  "superOrder": 1,
-  "isBeta": true,
-  "challengeOrder": [["", ""]]
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": ""
+    }
+  ]
 }

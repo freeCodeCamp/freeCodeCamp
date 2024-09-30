@@ -4,9 +4,8 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
-const env = require('../config/env.json');
+const env = require('./config/env.json');
 
-const { blockNameify } = require('../utils/block-nameify');
 const {
   createChallengePages,
   createBlockIntroPages,
@@ -20,27 +19,20 @@ const createByIdentityMap = {
 
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
-  if (node.internal.type === 'ChallengeNode') {
-    const { tests = [], block, dashedName, superBlock } = node;
-    const slug = `/learn/${superBlock}/${block}/${dashedName}`;
-    createNodeField({ node, name: 'slug', value: slug });
-    createNodeField({ node, name: 'blockName', value: blockNameify(block) });
-    createNodeField({ node, name: 'tests', value: tests });
-  }
 
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
-      const {
-        frontmatter: { component = '' }
-      } = node;
       createNodeField({ node, name: 'slug', value: slug });
-      createNodeField({ node, name: 'component', value: component });
     }
   }
 };
 
-exports.createPages = function createPages({ graphql, actions, reporter }) {
+exports.createPages = async function createPages({
+  graphql,
+  actions,
+  reporter
+}) {
   if (!env.algoliaAPIKey || !env.algoliaAppId) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error(
@@ -65,113 +57,140 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
 
   const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
-    // Query for all markdown 'nodes' and for the slug we previously created.
-    resolve(
-      graphql(`
-        {
-          allChallengeNode(
-            sort: { fields: [superOrder, order, challengeOrder] }
-          ) {
-            edges {
-              node {
-                block
-                challengeType
-                fields {
-                  slug
-                }
-                id
-                order
-                required {
-                  link
-                  src
-                }
-                challengeOrder
-                superBlock
-                superOrder
-                template
+  const result = await graphql(`
+    {
+      allChallengeNode(
+        sort: {
+          fields: [
+            challenge___superOrder
+            challenge___order
+            challenge___challengeOrder
+          ]
+        }
+      ) {
+        edges {
+          node {
+            id
+            challenge {
+              block
+              blockType
+              certification
+              challengeType
+              dashedName
+              demoType
+              disableLoopProtectTests
+              disableLoopProtectPreview
+              fields {
+                slug
+                blockHashSlug
               }
-            }
-          }
-          allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                  nodeIdentity
-                  component
-                }
-                frontmatter {
-                  block
-                  superBlock
-                  title
-                }
-                htmlAst
-                id
-                excerpt
+              id
+              order
+              required {
+                link
+                src
               }
+              challengeOrder
+              challengeFiles {
+                name
+                ext
+                contents
+                head
+                tail
+                history
+                fileKey
+              }
+              solutions {
+                contents
+                ext
+                history
+              }
+              superBlock
+              superOrder
+              template
+              usesMultifileEditor
             }
           }
         }
-      `).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          return reject(result.errors);
-        }
-
-        // Create challenge pages.
-        result.data.allChallengeNode.edges.forEach(
-          createChallengePages(createPage)
-        );
-
-        const blocks = uniq(
-          result.data.allChallengeNode.edges.map(({ node: { block } }) => block)
-        ).map(block => blockNameify(block));
-
-        const superBlocks = uniq(
-          result.data.allChallengeNode.edges.map(
-            ({ node: { superBlock } }) => superBlock
-          )
-        );
-
-        // Create intro pages
-        // TODO: Remove allMarkdownRemark (populate from elsewhere)
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-          const {
-            node: { frontmatter, fields }
-          } = edge;
-
-          if (!fields) {
-            return;
-          }
-          const { slug, nodeIdentity } = fields;
-          if (slug.includes('LICENCE')) {
-            return;
-          }
-          try {
-            if (nodeIdentity === 'blockIntroMarkdown') {
-              if (!blocks.includes(frontmatter.block)) {
-                return;
-              }
-            } else if (!superBlocks.includes(frontmatter.superBlock)) {
-              return;
+      }
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+              nodeIdentity
             }
-            const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-            pageBuilder(edge);
-          } catch (e) {
-            console.log(`
+            frontmatter {
+              certification
+              block
+              superBlock
+              title
+            }
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  // Create challenge pages.
+  result.data.allChallengeNode.edges.forEach(createChallengePages(createPage));
+
+  const blocks = uniq(
+    result.data.allChallengeNode.edges.map(
+      ({
+        node: {
+          challenge: { block }
+        }
+      }) => block
+    )
+  );
+
+  const superBlocks = uniq(
+    result.data.allChallengeNode.edges.map(
+      ({
+        node: {
+          challenge: { superBlock }
+        }
+      }) => superBlock
+    )
+  );
+
+  // Create intro pages
+  // TODO: Remove allMarkdownRemark (populate from elsewhere)
+  result.data.allMarkdownRemark.edges.forEach(edge => {
+    const {
+      node: { frontmatter, fields }
+    } = edge;
+
+    if (!fields) {
+      return;
+    }
+    const { slug, nodeIdentity } = fields;
+    if (slug.includes('LICENCE')) {
+      return;
+    }
+    if (nodeIdentity === 'blockIntroMarkdown') {
+      if (!blocks.includes(frontmatter.block)) {
+        return;
+      }
+    } else if (!superBlocks.includes(frontmatter.superBlock)) {
+      return;
+    }
+
+    try {
+      const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
+      pageBuilder(edge);
+    } catch (e) {
+      console.log(e);
+      console.log(`
             ident: ${nodeIdentity} does not belong to a function
 
             ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
 
 
             `);
-          }
-        });
-
-        return null;
-      })
-    );
+    }
   });
 };
 
@@ -200,7 +219,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         path: require.resolve('path-browserify'),
         assert: require.resolve('assert'),
         crypto: require.resolve('crypto-browserify'),
-        util: false,
+        util: require.resolve('util/util'),
         buffer: require.resolve('buffer'),
         stream: require.resolve('stream-browserify'),
         process: require.resolve('process/browser')
@@ -217,15 +236,6 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from'
   });
-  actions.setBabelPlugin({
-    name: 'babel-plugin-transform-imports',
-    options: {
-      '@freecodecamp/react-bootstrap': {
-        transform: '@freecodecamp/react-bootstrap/lib/${member}',
-        preventFullImport: true
-      }
-    }
-  });
 };
 
 exports.onCreatePage = async ({ page, actions }) => {
@@ -240,12 +250,25 @@ exports.onCreatePage = async ({ page, actions }) => {
   }
 };
 
+// Take care to QA the challenges when modifying this. It has broken certain
+// types of challenge in the past.
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type ChallengeNode implements Node {
+      challenge: Challenge
+    }
+    type Challenge {
+      blockType: String
       challengeFiles: [FileContents]
+      notes: String
       url: String
+      assignments: [String]
+      prerequisites: [PrerequisiteChallenge]
+      msTrophyId: String
+      fillInTheBlank: FillInTheBlank
+      scene: Scene
+      quizzes: [Quiz]
     }
     type FileContents {
       fileKey: String
@@ -256,47 +279,65 @@ exports.createSchemaCustomization = ({ actions }) => {
       tail: String
       editableRegionBoundaries: [Int]
     }
+    type PrerequisiteChallenge {
+      id: String
+      title: String
+    }
+    type FillInTheBlank {
+      sentence: String
+      blanks: [Blank]
+    }
+    type Blank {
+      answer: String
+      feedback: String
+    }
+    type Scene {
+      setup: SceneSetup
+      commands: [SceneCommands]
+    }
+    type SceneSetup {
+      background: String
+      characters: [SetupCharacter]
+      audio: SetupAudio
+      alwaysShowDialogue: Boolean
+    }
+    type SetupCharacter {
+      character: String
+      position: CharacterPosition
+      opacity: Float
+    }
+    type SetupAudio {
+      filename: String
+      startTime: Float
+      startTimestamp: Float
+      finishTimestamp: Float
+    }
+    type SceneCommands {
+      background: String
+      character: String
+      position: CharacterPosition
+      opacity: Float
+      startTime: Float
+      finishTime: Float
+      dialogue: Dialogue
+    }
+    type Dialogue {
+      text: String
+      align: String
+    }
+    type CharacterPosition {
+      x: Float
+      y: Float
+      z: Float
+    }
+    type Quiz {
+      questions: [QuizQuestion]
+    }
+    type QuizQuestion {
+      text: String
+      distractors: [String]
+      answer: String
+    }
   `;
   createTypes(typeDefs);
 };
-
-// TODO: this broke the React challenges, not sure why, but I'll investigate
-// further and reimplement if it's possible and necessary (Oliver)
-// I'm still not sure why, but the above schema seems to work.
-// Typically the schema can be inferred, but not when some challenges are
-// skipped (at time of writing the Chinese only has responsive web design), so
-// this makes the missing fields explicit.
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions;
-//   const typeDefs = `
-//     type ChallengeNode implements Node {
-//       question: Question
-//       videoId: String
-//       required: ExternalFile
-//       files: ChallengeFile
-//     }
-//     type Question {
-//       text: String
-//       answers: [String]
-//       solution: Int
-//     }
-//     type ChallengeFile {
-//       indexhtml: FileContents
-//       indexjs: FileContents
-//       indexjsx: FileContents
-//     }
-//     type ExternalFile {
-//       link: String
-//       src: String
-//     }
-//     type FileContents {
-//       key: String
-//       ext: String
-//       name: String
-//       contents: String
-//       head: String
-//       tail: String
-//     }
-//   `;
-//   createTypes(typeDefs);
-// };

@@ -33,7 +33,7 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header enclosed in a single `div`.
+`MyComponent` should render an `h1` heading element enclosed in a single `div`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-The rendered `h1` header should only contain text rendered from the component's state.
+The rendered `h1` heading element should only contain text rendered from the component's state.
 
 ```js
 async () => {

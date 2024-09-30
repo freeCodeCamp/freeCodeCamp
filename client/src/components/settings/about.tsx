@@ -1,43 +1,63 @@
+import React, { Component } from 'react';
 import {
   FormGroup,
-  ControlLabel,
   FormControl,
   HelpBlock,
-  Alert
-} from '@freecodecamp/react-bootstrap';
-import React, { Component } from 'react';
+  Alert,
+  ControlLabel
+} from '@freecodecamp/ui';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
+import isURL from 'validator/lib/isURL';
 
-import { TFunction, withTranslation } from 'react-i18next';
 import { FullWidthRow, Spacer } from '../helpers';
 import BlockSaveButton from '../helpers/form/block-save-button';
-import ThemeSettings from './theme';
+import type { CamperProps } from '../profile/components/camper';
+import SoundSettings from './sound';
+import ThemeSettings, { type ThemeProps } from './theme';
 import UsernameSettings from './username';
+import KeyboardShortcutsSettings from './keyboard-shortcuts';
+import SectionHeader from './section-header';
+import ScrollbarWidthSettings from './scrollbar-width';
 
-type FormValues = {
-  name: string;
-  location: string;
-  picture: string;
-  about: string;
-};
+type AboutProps = ThemeProps &
+  Omit<
+    CamperProps,
+    | 'linkedin'
+    | 'joinDate'
+    | 'isDonating'
+    | 'githubProfile'
+    | 'twitter'
+    | 'website'
+    | 'yearsTopContributor'
+  > & {
+    sound: boolean;
+    keyboardShortcuts: boolean;
+    submitNewAbout: (formValues: FormValues) => void;
+    t: TFunction;
+    toggleSoundMode: (sound: boolean) => void;
+    toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
+  };
 
-type AboutProps = {
-  about: string;
-  currentTheme: string;
-  location: string;
-  name: string;
-  picture: string;
-  points: number;
-  submitNewAbout: (formValues: FormValues) => void;
-  t: TFunction;
-  toggleNightMode: (theme: string) => void;
-  username: string;
-};
+type FormValues = Pick<AboutProps, 'name' | 'location' | 'picture' | 'about'>;
 
 type AboutState = {
   formValues: FormValues;
   originalValues: FormValues;
   formClicked: boolean;
   isPictureUrlValid: boolean;
+};
+
+const ShowImageValidationWarning = ({
+  alertContent
+}: {
+  alertContent: string;
+}) => {
+  return (
+    <HelpBlock>
+      <Alert variant='info'>{alertContent}</Alert>
+    </HelpBlock>
+  );
 };
 
 class AboutSettings extends Component<AboutProps, AboutState> {
@@ -71,7 +91,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       picture === formValues.picture &&
       about === formValues.about
     ) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         originalValues: {
           name,
@@ -95,11 +114,11 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     );
   };
 
-  handleSubmit = (e: React.FormEvent) => {
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
-    if (this.state.isPictureUrlValid === true) {
+    if (this.state.isPictureUrlValid === true && !this.isFormPristine()) {
       return this.setState({ formClicked: true }, () =>
         submitNewAbout(formValues)
       );
@@ -108,7 +127,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }
   };
 
-  handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
@@ -118,7 +137,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  handleLocationChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
@@ -139,12 +158,25 @@ class AboutSettings extends Component<AboutProps, AboutState> {
   }
 
   loadEvent = () => this.setState({ isPictureUrlValid: true });
-  errorEvent = () => this.setState({ isPictureUrlValid: false });
+  errorEvent = () =>
+    this.setState(state => ({
+      isPictureUrlValid: state.formValues.picture === ''
+    }));
 
-  handlePictureChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handlePictureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
-    this.validationImage.src = value;
-    return this.setState(state => ({
+    if (!value) {
+      this.setState({
+        isPictureUrlValid: true
+      });
+    } else if (isURL(value, { require_protocol: true })) {
+      this.validationImage.src = encodeURI(value);
+    } else {
+      this.setState({
+        isPictureUrlValid: false
+      });
+    }
+    this.setState(state => ({
       formValues: {
         ...state.formValues,
         picture: value
@@ -152,20 +184,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     }));
   };
 
-  showImageValidationWarning = () => {
-    const { t } = this.props;
-    if (this.state.isPictureUrlValid === false) {
-      return (
-        <HelpBlock>
-          <Alert bsStyle='info'>{t('validation.url-not-image')}</Alert>
-        </HelpBlock>
-      );
-    } else {
-      return true;
-    }
-  };
-
-  handleAboutChange = (e: React.FormEvent<HTMLInputElement>) => {
+  handleAboutChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.slice(0);
     return this.setState(state => ({
       formValues: {
@@ -179,66 +198,105 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    const { currentTheme, username, t, toggleNightMode } = this.props;
+    const {
+      currentTheme,
+      sound,
+      keyboardShortcuts,
+      username,
+      t,
+      toggleNightMode,
+      toggleSoundMode,
+      toggleKeyboardShortcuts
+    } = this.props;
     return (
-      <div className='about-settings'>
+      <>
         <UsernameSettings username={username} />
-        <br />
+        <Spacer size='medium' />
+        <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
-          <form id='camper-identity' onSubmit={this.handleSubmit}>
-            <FormGroup controlId='about-name'>
-              <ControlLabel>
-                <strong>{t('settings.labels.name')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleNameChange}
-                type='text'
-                value={name}
-              />
-            </FormGroup>
-            <FormGroup controlId='about-location'>
-              <ControlLabel>
-                <strong>{t('settings.labels.location')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleLocationChange}
-                type='text'
-                value={location}
-              />
-            </FormGroup>
-            <FormGroup controlId='about-picture'>
-              <ControlLabel>
-                <strong>{t('settings.labels.picture')}</strong>
-              </ControlLabel>
-              <FormControl
-                onChange={this.handlePictureChange}
-                required={true}
-                type='url'
-                value={picture}
-              />
-              {this.showImageValidationWarning()}
-            </FormGroup>
-            <FormGroup controlId='about-about'>
-              <ControlLabel>
-                <strong>{t('settings.labels.about')}</strong>
-              </ControlLabel>
-              <FormControl
-                componentClass='textarea'
-                onChange={this.handleAboutChange}
-                value={about}
-              />
-            </FormGroup>
-            <BlockSaveButton disabled={this.isFormPristine()} />
+          <form
+            id='camper-identity'
+            onSubmit={this.handleSubmit}
+            data-playwright-test-label='camper-identity'
+          >
+            <div role='group' aria-label={t('settings.headings.personal-info')}>
+              <FormGroup controlId='about-name'>
+                <ControlLabel htmlFor='about-name-input'>
+                  <strong>{t('settings.labels.name')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleNameChange}
+                  type='text'
+                  value={name}
+                  id='about-name-input'
+                />
+              </FormGroup>
+              <FormGroup controlId='about-location'>
+                <ControlLabel htmlFor='about-location-input'>
+                  <strong>{t('settings.labels.location')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handleLocationChange}
+                  type='text'
+                  value={location}
+                  id='about-location-input'
+                />
+              </FormGroup>
+              <FormGroup controlId='about-picture'>
+                <ControlLabel htmlFor='about-picture-input'>
+                  <strong>{t('settings.labels.picture')}</strong>
+                </ControlLabel>
+                <FormControl
+                  onChange={this.handlePictureChange}
+                  type='url'
+                  value={picture}
+                  id='about-picture-input'
+                />
+                {!this.state.isPictureUrlValid && (
+                  <ShowImageValidationWarning
+                    alertContent={t('validation.url-not-image')}
+                  />
+                )}
+              </FormGroup>
+              <FormGroup controlId='about-about'>
+                <ControlLabel htmlFor='about-about-input'>
+                  <strong>{t('settings.labels.about')}</strong>
+                </ControlLabel>
+                <FormControl
+                  componentClass='textarea'
+                  onChange={this.handleAboutChange}
+                  value={about}
+                  id='about-about-input'
+                />
+              </FormGroup>
+            </div>
+            <BlockSaveButton
+              disabled={this.isFormPristine()}
+              bgSize='large'
+              {...(this.isFormPristine() && { tabIndex: -1 })}
+            >
+              {t('buttons.save')}{' '}
+              <span className='sr-only'>
+                {t('settings.headings.personal-info')}
+              </span>
+            </BlockSaveButton>
           </form>
         </FullWidthRow>
-        <Spacer />
+        <Spacer size='medium' />
         <FullWidthRow>
           <ThemeSettings
             currentTheme={currentTheme}
             toggleNightMode={toggleNightMode}
           />
+          <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
+          <KeyboardShortcutsSettings
+            keyboardShortcuts={keyboardShortcuts}
+            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+            explain={t('settings.shortcuts-explained')}
+          />
+          <ScrollbarWidthSettings />
         </FullWidthRow>
-      </div>
+      </>
     );
   }
 }

@@ -26,7 +26,9 @@ To keep the ball bouncing on the right on a continuous loop, change the `animati
 The `animation-iteration-count` property should have a value of `infinite`.
 
 ```js
-assert($('#ball').css('animation-iteration-count') == 'infinite');
+const ballElement = document.querySelector('#ball');
+const ballStyle = window.getComputedStyle(ballElement); 
+assert.equal(ballStyle?.animationIterationCount, 'infinite');
 ```
 
 # --seed--

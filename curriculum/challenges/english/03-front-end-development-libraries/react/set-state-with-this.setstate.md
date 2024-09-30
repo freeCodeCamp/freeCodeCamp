@@ -16,7 +16,7 @@ this.setState({
 });
 ```
 
-React expects you to never modify `state` directly, instead always use `this.setState()` when state changes occur. Also, you should note that React may batch multiple state updates in order to improve performance. What this means is that state updates through the `setState` method can be asynchronous. There is an alternative syntax for the `setState` method which provides a way around this problem. This is rarely needed but it's good to keep it in mind! Please consult the [React documentation](https://facebook.github.io/react/docs/state-and-lifecycle.html) for further details.
+React expects you to never modify `state` directly, instead always use `this.setState()` when state changes occur. Also, you should note that React may batch multiple state updates in order to improve performance. What this means is that state updates through the `setState` method can be asynchronous. There is an alternative syntax for the `setState` method which provides a way around this problem. This is rarely needed but it's good to keep it in mind! Please consult our <a href="https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/" target="_blank" rel="noopener noreferrer nofollow">React article</a> for further details.
 
 # --instructions--
 
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header.
+`MyComponent` should render an `h1` heading element.
 
 ```js
 assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+The rendered `h1` heading element should contain text rendered from the component's state.
 
 ```js
 async () => {

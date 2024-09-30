@@ -1,25 +1,13 @@
-import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
-import psl from 'psl';
 import React from 'react';
-import env from '../../config/env.json';
 
-const { homeLocation } = env;
+import { isMathJaxAllowed, mathJaxSrc } from '../src/utils/math-jax';
 
 export function getheadTagComponents(): JSX.Element[] {
   const socialImage =
     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
 
-  const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
-
   const headTags = [
-    <link
-      as='style'
-      href={pathToBootstrap}
-      key='bootstrap-min-preload'
-      rel='preload'
-    />,
-    <link href={pathToBootstrap} key='bootstrap-min' rel='stylesheet' />,
     <meta content='freeCodeCamp.org' key='og:title' name='og:title' />,
     <meta
       content={i18next.t('metaTags:social-description')}
@@ -53,67 +41,7 @@ export function getheadTagComponents(): JSX.Element[] {
       name='monetization'
     />
   ];
-  return injectConditionalTags(headTags, homeLocation);
-}
-
-// strips subpath and protocol
-
-export function injectConditionalTags(
-  tagsArray: JSX.Element[],
-  homeLocation: string
-): JSX.Element[] {
-  if (homeLocation.includes('localhost')) return tagsArray;
-
-  const parsedHomeUrl = psl.parse(
-    new URL(homeLocation).host
-  ) as psl.ParsedDomain;
-
-  // inject gap all production languages except Chinese
-  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'org') {
-    tagsArray.push(
-      <script
-        // @ts-expect-error TODO: check use of href/rel on <script>
-        href={withPrefix('/misc/gap-org.js')}
-        id='gap-org'
-        key='gap-org'
-        rel='stylesheet'
-      />
-    );
-  }
-
-  // inject gap for staging
-  if (parsedHomeUrl.subdomain === 'www' && parsedHomeUrl.tld === 'dev') {
-    tagsArray.push(
-      <script
-        // @ts-expect-error See above
-        href={withPrefix('/misc/gap-dev.js')}
-        id='gap-dev'
-        key='gap-dev'
-        rel='stylesheet'
-      />
-    );
-  }
-
-  // inject cap and Chinese gap for production Chinese
-  if (parsedHomeUrl.subdomain === 'chinese' && parsedHomeUrl.tld === 'org') {
-    tagsArray.push(
-      <script
-        // @ts-expect-error See above
-        href={withPrefix('/misc/cap.js')}
-        id='cap'
-        key='cap'
-        rel='stylesheet'
-      />,
-      <script
-        // @ts-expect-error See above
-        href={withPrefix('/misc/gap-org-chinese.js')}
-        id='gap-org-chinese'
-        key='gap-org-chinese'
-        rel='stylesheet'
-      />
-    );
-  }
-  return tagsArray;
+  return headTags;
 }
 
 export function getPostBodyComponents(pathname: string): JSX.Element[] {
@@ -123,15 +51,12 @@ export function getPostBodyComponents(pathname: string): JSX.Element[] {
       async={false}
       id='mathjax'
       key='mathjax'
-      src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
+      src={mathJaxSrc}
       type='text/javascript'
     />
   );
 
-  if (
-    pathname.includes('/learn/coding-interview-prep/rosetta-code') ||
-    pathname.includes('/learn/coding-interview-prep/project-euler')
-  ) {
+  if (isMathJaxAllowed(pathname)) {
     scripts.push(mathJaxScriptElement);
   }
 

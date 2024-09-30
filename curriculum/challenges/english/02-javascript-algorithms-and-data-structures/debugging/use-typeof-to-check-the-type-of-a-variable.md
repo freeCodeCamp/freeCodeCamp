@@ -21,7 +21,7 @@ console.log(typeof {});
 
 In order, the console will display the strings `string`, `number`, `object`, and `object`.
 
-JavaScript recognizes six primitive (immutable) data types: `Boolean`, `Null`, `Undefined`, `Number`, `String`, and `Symbol` (new with ES6) and one type for mutable items: `Object`. Note that in JavaScript, arrays are technically a type of object.
+JavaScript recognizes seven primitive (immutable) data types: `Boolean`, `Null`, `Undefined`, `Number`, `String`, `Symbol` (new with ES6), and `BigInt` (new with ES2020), and one type for mutable items: `Object`. Note that in JavaScript, arrays are technically a type of object.
 
 # --instructions--
 
@@ -32,19 +32,19 @@ Add two `console.log()` statements to check the `typeof` each of the two variabl
 Your code should use `typeof` in two `console.log()` statements to check the type of the variables.
 
 ```js
-assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2);
+assert(__helpers.removeJSComments(code).match(/console\.log\s*\(typeof[\( ].*\)?\)/g).length == 2);
 ```
 
 Your code should use `typeof` to check the type of the variable `seven`.
 
 ```js
-assert(code.match(/typeof[\( ]seven\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]seven\)?/g));
 ```
 
 Your code should use `typeof` to check the type of the variable `three`.
 
 ```js
-assert(code.match(/typeof[\( ]three\)?/g));
+assert(__helpers.removeJSComments(code).match(/typeof[\( ]three\)?/g));
 ```
 
 # --seed--

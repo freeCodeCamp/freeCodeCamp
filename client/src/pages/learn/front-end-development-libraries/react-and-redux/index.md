@@ -1,7 +1,7 @@
 ---
 title: Introduction to the React and Redux Challenges
-block: React and Redux
-superBlock: Front End Development Libraries
+block: react-and-redux
+superBlock: front-end-development-libraries
 ---
 
 ## Introduction to the React and Redux Challenges

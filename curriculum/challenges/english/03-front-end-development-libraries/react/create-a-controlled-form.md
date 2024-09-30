@@ -109,7 +109,7 @@ assert(
 );
 ```
 
-The `h1` header should render the value of the `submit` field from the component's state.
+The `h1` heading element should render the value of the `submit` field from the component's state.
 
 ```js
 (() => {

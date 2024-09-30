@@ -26,10 +26,8 @@ Increase the size of the element with the id of `ball2` to 1.5 times its origina
 The `transform` property for `#ball2` should be set to scale it to 1.5 times its size.
 
 ```js
-assert(
-  code.match(
+assert.match(code,
     /#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi
-  )
 );
 ```
 

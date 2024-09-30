@@ -1,11 +1,12 @@
 import { navigate } from 'gatsby';
-import { call, put, takeEvery, take } from 'redux-saga/effects';
+import { call, put, take, takeEvery } from 'redux-saga/effects';
 
-import { resetUserData, fetchUser } from '../';
 import { createFlashMessage } from '../../components/Flash/redux';
-import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
+import { FlashMessages } from '../../components/Flash/redux/flash-messages';
+import { postDeleteAccount, postResetProgress } from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
-import { deleteAccountError, resetProgressError } from './';
+import { fetchUser, resetUserData } from '../actions';
+import { deleteAccountError, resetProgressError } from './actions';
 
 function* deleteAccountSaga() {
   try {
@@ -13,12 +14,12 @@ function* deleteAccountSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.account-deleted'
+        message: FlashMessages.AccountDeleted
       })
     );
     // remove current user information from application state
     yield put(resetUserData());
-    yield call(navigate, '/');
+    yield call(navigate, '/learn');
   } catch (e) {
     yield put(deleteAccountError(e));
   }
@@ -30,7 +31,7 @@ function* resetProgressSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.progress-reset'
+        message: FlashMessages.ProgressReset
       })
     );
     // refresh current user data in application state

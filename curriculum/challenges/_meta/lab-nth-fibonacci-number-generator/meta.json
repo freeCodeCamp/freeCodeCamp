@@ -1,0 +1,11 @@
+{
+  "name": "Build the nth Fibonacci number generator",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-nth-fibonacci-number-generator",
+  "order": 273,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66d9af3897e7d75a895b72c2", "title": "Build the nth Fibonacci number generator" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

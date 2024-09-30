@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Managing Packages with npm Challenges
-block: Managing Packages with Npm
-superBlock: Back End Development and APIs
+block: managing-packages-with-npm
+superBlock: back-end-development-and-apis
 ---
 
 ## Introduction to the Managing Packages with npm Challenges
@@ -14,6 +14,14 @@ npm saves packages in a folder named <code>node_modules</code>. These packages c
 2. locally within a project's own <code>node_modules</code> folder, accessible only to that project.
 
 Most developers prefer to install packages local to each project to create a separation between the dependencies of different projects.
-Working on these challenges will involve you writing your code on Replit on our starter project. After completing each challenge you can copy your public Replit URL (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 
-Start this project on Replit using <a href='https://replit.com/github/freeCodeCamp/boilerplate-npm'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use Replit, remember to save the link to your project somewhere safe!
+Working on these challenges involves writing code on Replit in our starter project.
+
+- Start by importing the project on Replit.
+- Next, you will see a <code>.replit</code> window.
+- Select <code>Use run command</code> and click the <code>Done</code> button.
+- Complete each challenge and copy the public Replit URL (to the homepage of your app) into the challenge screen to test it!
+
+Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
+
+Start this project by cloning <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub!

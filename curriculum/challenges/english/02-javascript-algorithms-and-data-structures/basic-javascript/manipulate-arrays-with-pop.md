@@ -1,6 +1,6 @@
 ---
 id: 56bbb991ad1ed5201cd392cc
-title: Manipulate Arrays With pop()
+title: Manipulate Arrays With pop Method
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
@@ -16,8 +16,8 @@ Another way to change the data in an array is with the `.pop()` function.
 Any type of entry can be popped off of an array - numbers, strings, even nested arrays.
 
 ```js
-var threeArr = [1, 4, 6];
-var oneDown = threeArr.pop();
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop();
 console.log(oneDown);
 console.log(threeArr);
 ```
@@ -26,7 +26,7 @@ The first `console.log` will display the value `6`, and the second will display 
 
 # --instructions--
 
-Use the `.pop()` function to remove the last item from `myArray`, assigning the popped off value to `removedFromMyArray`.
+Use the `.pop()` function to remove the last item from `myArray` and assign the popped off value to a new variable, `removedFromMyArray`.
 
 # --hints--
 
@@ -47,7 +47,7 @@ assert(
 You should use `pop()` on `myArray`.
 
 ```js
-assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
+assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(__helpers.removeJSComments(code)));
 ```
 
 `removedFromMyArray` should only contain `["cat", 2]`.
@@ -69,22 +69,22 @@ assert(
 ## --after-user-code--
 
 ```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 ## --seed-contents--
 
 ```js
 // Setup
-var myArray = [["John", 23], ["cat", 2]];
+const myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
-var removedFromMyArray;
+
 ```
 
 # --solutions--
 
 ```js
-var myArray = [["John", 23], ["cat", 2]];
-var removedFromMyArray = myArray.pop();
+const myArray = [["John", 23], ["cat", 2]];
+const removedFromMyArray = myArray.pop();
 ```

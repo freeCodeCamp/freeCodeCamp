@@ -18,7 +18,7 @@ JavaScript uses the `+` symbol as an addition operator when placed between two n
 **Example:**
 
 ```js
-myVar = 5 + 10;
+const myVar = 5 + 10;
 ```
 
 `myVar` now has the value `15`.
@@ -38,7 +38,7 @@ assert(sum === 20);
 You should use the `+` operator.
 
 ```js
-assert(/\+/.test(code));
+assert(/\+/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
@@ -52,11 +52,11 @@ assert(/\+/.test(code));
 ## --seed-contents--
 
 ```js
-var sum = 10 + 0;
+const sum = 10 + 0;
 ```
 
 # --solutions--
 
 ```js
-var sum = 10 + 10;
+const sum = 10 + 10;
 ```

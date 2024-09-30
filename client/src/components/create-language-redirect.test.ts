@@ -9,7 +9,7 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     const currentPageURL =
       'https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const chinesePageURL =
-      'https://chinese.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+      'https://www.freecodecamp.org/chinese/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const espanolPageURL =
       'https://www.freecodecamp.org/espanol/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const chineseTraditionalPageURL =
@@ -30,50 +30,31 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       window.location = originalLocation;
     });
 
-    it('should redirect to same version of page for lang == english', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'english'
-      });
-      expect(receivedPageURL).toBe(currentPageURL);
-    });
-
-    it('should redirect to chinese version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese'
-      });
-      expect(receivedPageURL).toBe(chinesePageURL);
-    });
-
-    it('should redirect to espanol version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'espanol'
-      });
-      expect(receivedPageURL).toBe(espanolPageURL);
-    });
-
-    it('should redirect to chinese-traditional version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese-traditional'
-      });
-      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
-    });
-
-    it('should redirect to dothraki version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'dothraki'
-      });
-      expect(receivedPageURL).toBe(dothrakiPageURL);
+    [
+      { lang: 'english', url: currentPageURL },
+      { lang: 'chinese', url: chinesePageURL },
+      { lang: 'espanol', url: espanolPageURL },
+      { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
+      { lang: 'dothraki', url: dothrakiPageURL }
+    ].forEach(({ lang, url }) => {
+      it(
+        lang === 'english'
+          ? `should redirect to same version of page for lang == english`
+          : `should redirect to ${lang} version of page`,
+        () => {
+          const receivedPageURL = createLanguageRedirect({
+            ...envVars,
+            lang
+          });
+          expect(receivedPageURL).toBe(url);
+        }
+      );
     });
   });
 
   describe('settings page', () => {
     const currentPageURL = 'https://www.freecodecamp.org/settings';
-    const chinesePageURL = 'https://chinese.freecodecamp.org/settings';
+    const chinesePageURL = 'https://www.freecodecamp.org/chinese/settings';
     const espanolPageURL = 'https://www.freecodecamp.org/espanol/settings';
     const chineseTraditionalPageURL =
       'https://www.freecodecamp.org/chinese-traditional/settings';
@@ -92,44 +73,25 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       window.location = originalLocation;
     });
 
-    it('should redirect to same version of page for lang == english', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'english'
-      });
-      expect(receivedPageURL).toBe(currentPageURL);
-    });
-
-    it('should redirect to chinese version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese'
-      });
-      expect(receivedPageURL).toBe(chinesePageURL);
-    });
-
-    it('should redirect to espanol version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'espanol'
-      });
-      expect(receivedPageURL).toBe(espanolPageURL);
-    });
-
-    it('should redirect to chinese-traditional version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese-traditional'
-      });
-      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
-    });
-
-    it('should redirect to dothraki version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'dothraki'
-      });
-      expect(receivedPageURL).toBe(dothrakiPageURL);
+    [
+      { lang: 'english', url: currentPageURL },
+      { lang: 'chinese', url: chinesePageURL },
+      { lang: 'espanol', url: espanolPageURL },
+      { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
+      { lang: 'dothraki', url: dothrakiPageURL }
+    ].forEach(({ lang, url }) => {
+      it(
+        lang === 'english'
+          ? `should redirect to same version of page for lang == english`
+          : `should redirect to ${lang} version of page`,
+        () => {
+          const receivedPageURL = createLanguageRedirect({
+            ...envVars,
+            lang
+          });
+          expect(receivedPageURL).toBe(url);
+        }
+      );
     });
   });
 });
@@ -141,7 +103,7 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
 
   describe('challenge page', () => {
     const currentPageURL =
-      'https://chinese.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
+      'https://www.freecodecamp.org/chinese/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const englishPageURL =
       'https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
     const espanolPageURL =
@@ -164,49 +126,30 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       window.location = originalLocation;
     });
 
-    it('should redirect to same version of page for lang == chinese', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese'
-      });
-      expect(receivedPageURL).toBe(currentPageURL);
-    });
-
-    it('should redirect to english version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'english'
-      });
-      expect(receivedPageURL).toBe(englishPageURL);
-    });
-
-    it('should redirect to espanol version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'espanol'
-      });
-      expect(receivedPageURL).toBe(espanolPageURL);
-    });
-
-    it('should redirect to chinese-traditional version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese-traditional'
-      });
-      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
-    });
-
-    it('should redirect to dothraki version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'dothraki'
-      });
-      expect(receivedPageURL).toBe(dothrakiPageURL);
+    [
+      { lang: 'chinese', url: currentPageURL },
+      { lang: 'english', url: englishPageURL },
+      { lang: 'espanol', url: espanolPageURL },
+      { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
+      { lang: 'dothraki', url: dothrakiPageURL }
+    ].forEach(({ lang, url }) => {
+      it(
+        lang === 'chinese'
+          ? `should redirect to same version of page for lang == chinese`
+          : `should redirect to ${lang} version of page`,
+        () => {
+          const receivedPageURL = createLanguageRedirect({
+            ...envVars,
+            lang
+          });
+          expect(receivedPageURL).toBe(url);
+        }
+      );
     });
   });
 
   describe('settings page', () => {
-    const currentPageURL = 'https://chinese.freecodecamp.org/settings';
+    const currentPageURL = 'https://www.freecodecamp.org/chinese/settings';
     const englishPageURL = 'https://www.freecodecamp.org/settings';
     const espanolPageURL = 'https://www.freecodecamp.org/espanol/settings';
     const chineseTraditionalPageURL =
@@ -226,44 +169,25 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       window.location = originalLocation;
     });
 
-    it('should redirect to same version of page for lang == chinese', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese'
-      });
-      expect(receivedPageURL).toBe(currentPageURL);
-    });
-
-    it('should redirect to english version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'english'
-      });
-      expect(receivedPageURL).toBe(englishPageURL);
-    });
-
-    it('should redirect to espanol version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'espanol'
-      });
-      expect(receivedPageURL).toBe(espanolPageURL);
-    });
-
-    it('should redirect to chinese-traditional version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'chinese-traditional'
-      });
-      expect(receivedPageURL).toBe(chineseTraditionalPageURL);
-    });
-
-    it('should redirect to dothraki version of page', () => {
-      const receivedPageURL = createLanguageRedirect({
-        ...envVars,
-        lang: 'dothraki'
-      });
-      expect(receivedPageURL).toBe(dothrakiPageURL);
+    [
+      { lang: 'chinese', url: currentPageURL },
+      { lang: 'english', url: englishPageURL },
+      { lang: 'espanol', url: espanolPageURL },
+      { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
+      { lang: 'dothraki', url: dothrakiPageURL }
+    ].forEach(({ lang, url }) => {
+      it(
+        lang === 'chinese'
+          ? `should redirect to same version of page for lang == chinese`
+          : `should redirect to ${lang} version of page`,
+        () => {
+          const receivedPageURL = createLanguageRedirect({
+            ...envVars,
+            lang
+          });
+          expect(receivedPageURL).toBe(url);
+        }
+      );
     });
   });
 });

@@ -16,7 +16,7 @@ JavaScript uses the `*` symbol for multiplication of two numbers.
 **Example**
 
 ```js
-myVar = 13 * 13;
+const myVar = 13 * 13;
 ```
 
 `myVar` would have the value `169`.
@@ -36,7 +36,7 @@ assert(product === 80);
 You should use the `*` operator.
 
 ```js
-assert(/\*/.test(code));
+assert(/\*/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
@@ -50,11 +50,11 @@ assert(/\*/.test(code));
 ## --seed-contents--
 
 ```js
-var product = 8 * 0;
+const product = 8 * 0;
 ```
 
 # --solutions--
 
 ```js
-var product = 8 * 10;
+const product = 8 * 10;
 ```

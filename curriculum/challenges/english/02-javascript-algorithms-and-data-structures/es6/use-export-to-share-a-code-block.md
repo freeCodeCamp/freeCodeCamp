@@ -42,7 +42,7 @@ You should properly export `uppercaseString`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /(export\s+const\s+uppercaseString|export\s*{\s*(uppercaseString[^}]*|[^,]*,\s*uppercaseString\s*)})/g
   )
 );
@@ -52,7 +52,7 @@ You should properly export `lowercaseString`.
 
 ```js
 assert(
-  code.match(
+  __helpers.removeJSComments(code).match(
     /(export\s+const\s+lowercaseString|export\s*{\s*(lowercaseString[^}]*|[^,]*,\s*lowercaseString\s*)})/g
   )
 );

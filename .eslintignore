@@ -1,6 +1,12 @@
-client/.cache/**
 client/static/**
+client/.cache/**
 client/public/**
 api-server/src/public/**
 api-server/lib/**
-tools/contributor/**
+shared/config/i18n.js
+shared/config/certification-settings.js
+shared/config/donation-settings.js
+shared/config/superblocks.js
+docs/**/*.md
+playwright*.config.ts
+playwright/**

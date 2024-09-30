@@ -16,7 +16,7 @@ JavaScript uses the `-` symbol for subtraction.
 **Example**
 
 ```js
-myVar = 12 - 6;
+const myVar = 12 - 6;
 ```
 
 `myVar` would have the value `6`.
@@ -26,16 +26,16 @@ Change the `0` so the difference is `12`.
 
 # --hints--
 
-The variable `difference` should be equal to 12.
+The variable `difference` should be equal to `12`.
 
 ```js
 assert(difference === 12);
 ```
 
-You should only subtract one number from 45.
+You should only subtract one number from `45`.
 
 ```js
-assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
+assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
 ```
 
 # --seed--
@@ -49,11 +49,11 @@ assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
 ## --seed-contents--
 
 ```js
-var difference = 45 - 0;
+const difference = 45 - 0;
 ```
 
 # --solutions--
 
 ```js
-var difference = 45 - 33;
+const difference = 45 - 33;
 ```

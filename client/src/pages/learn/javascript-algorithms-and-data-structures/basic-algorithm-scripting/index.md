@@ -1,8 +1,9 @@
 ---
 title: Introduction to Basic Algorithm Scripting
-block: Basic Algorithm Scripting
-superBlock: JavaScript Algorithms and Data Structures
+block: basic-algorithm-scripting
+superBlock: javascript-algorithms-and-data-structures
 ---
+
 ## Introduction to Basic Algorithm Scripting
 
 A computer algorithm is a sequence of steps that is followed to achieve a particular outcome. To write an algorithm, you must first understand a problem, and then solve it with coding.

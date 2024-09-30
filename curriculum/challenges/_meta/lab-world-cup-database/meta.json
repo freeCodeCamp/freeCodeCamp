@@ -1,0 +1,12 @@
+{
+  "name": "Build a World Cup Database",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "lab-world-cup-database",
+  "order": 347,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "5f9771307d4d22b9d2b75a94", "title": "Build a World Cup Database" }],
+  "helpCategory": "Backend Development",
+  "blockType": "lab"
+}

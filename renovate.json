@@ -1,37 +1,3 @@
 {
-  "labels": ["renovate"],
-  "extends": ["config:base"],
-  "branchConcurrentLimit": 20,
-  "dependencyDashboard": true,
-  "major": {
-    "dependencyDashboardApproval": true
-  },
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true
-    },
-    {
-      "groupName": "Monaco Editor",
-      "matchPackageNames": ["monaco-editor", "monaco-editor-webpack-plugin", "react-monaco-editor"]
-    },
-    {
-      "matchPackageNames": ["normalize-url"],
-      "allowedVersions": "<5.0.0"
-    },
-    {
-      "groupName": "CodeSee",
-      "matchPackagePrefixes": [
-        "@codesee/"
-      ],
-      "automerge": true
-    }
-  ],
-  "ignorePaths": [
-    "api-server",
-    "tools/contributor",
-    "tools/contributor/dashboard-app/client",
-    "tools/contributor/dashboard-app/server"
-  ]
+  "enabled": false
 }

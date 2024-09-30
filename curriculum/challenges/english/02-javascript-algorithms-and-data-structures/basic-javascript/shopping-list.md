@@ -81,13 +81,13 @@ var hasNumber = false;
 ## --seed-contents--
 
 ```js
-var myList = [];
+const myList = [];
 ```
 
 # --solutions--
 
 ```js
-var myList = [
+const myList = [
   ["Candy", 10],
   ["Potatoes", 12],
   ["Eggs", 12],

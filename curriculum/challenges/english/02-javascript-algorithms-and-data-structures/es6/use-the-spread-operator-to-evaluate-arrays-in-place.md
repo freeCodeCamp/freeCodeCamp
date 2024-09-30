@@ -28,7 +28,13 @@ const maximus = Math.max(...arr);
 
 `maximus` would have a value of `89`.
 
-`...arr` returns an unpacked array. In other words, it *spreads* the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:
+`...arr` returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. For example:
+
+```js
+const spreaded = [...arr];
+```
+
+However, the following code will not work:
 
 ```js
 const spreaded = ...arr;
@@ -49,7 +55,7 @@ assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
 `...` spread operator should be used to duplicate `arr1`.
 
 ```js
-assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
+assert(__helpers.removeJSComments(code).match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
 ```
 
 `arr2` should remain unchanged when `arr1` is changed.

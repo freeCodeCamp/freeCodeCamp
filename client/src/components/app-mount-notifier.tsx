@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { appMount } from '../redux';
+import { appMount } from '../redux/actions';
 
 interface AppMountNotifierProps {
-  render: () => React.ReactNode;
+  children: React.ReactNode;
   appMount: () => void;
 }
 
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ appMount }, dispatch);
 
 const AppMountNotifier = ({
-  render,
+  children,
   appMount
 }: AppMountNotifierProps): JSX.Element => {
   useEffect(() => {
@@ -28,7 +28,7 @@ const AppMountNotifier = ({
   return (
     <>
       <Helmet htmlAttributes={{ lang: i18n.language }} />
-      {render()}
+      {children}
     </>
   );
 };

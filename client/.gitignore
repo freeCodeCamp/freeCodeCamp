@@ -9,3 +9,12 @@ yarn-error.log
 
 /static/js
 ./static/_redirects
+static/curriculum-data
+
+# Generated config
+config/browser-scripts/*.json
+i18n/locales/**/trending.json
+
+# Config
+
+config/env.json

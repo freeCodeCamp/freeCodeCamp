@@ -15,7 +15,7 @@ Another data type is the <dfn>Boolean</dfn>. Booleans may only be one of two val
 
 # --instructions--
 
-Modify the `welcomeToBooleans` function so that it returns `true` instead of `false` when the run button is clicked.
+Modify the `welcomeToBooleans` function so that it returns `true` instead of `false`.
 
 # --hints--
 
@@ -43,7 +43,6 @@ welcomeToBooleans();
 
 ```js
 function welcomeToBooleans() {
-
   // Only change code below this line
 
   return false; // Change this line

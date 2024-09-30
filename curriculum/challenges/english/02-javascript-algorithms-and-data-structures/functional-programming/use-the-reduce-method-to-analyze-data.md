@@ -66,7 +66,7 @@ assert(
 Your code should use the `reduce` method.
 
 ```js
-assert(code.match(/\.reduce/g));
+assert(__helpers.removeJSComments(code).match(/\.reduce/g));
 ```
 
 The `getRating(watchList)` should equal 8.675.
@@ -78,7 +78,7 @@ assert(getRating(watchList) === 8.675);
 Your code should not use a `for` loop.
 
 ```js
-assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/g));
 ```
 
 Your code should return the correct output after modifying the `watchList` object.
@@ -93,7 +93,7 @@ assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
 
 ```js
 // The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -206,22 +206,22 @@ var watchList = [
   }
 ];
 
-function getRating(watchList){
+function getRating(watchList) {
   // Only change code below this line
-  var averageRating;
+  let averageRating;
 
 
   // Only change code above this line
   return averageRating;
 }
+
 console.log(getRating(watchList));
 ```
 
 # --solutions--
 
 ```js
-// The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -334,8 +334,8 @@ var watchList = [
   }
 ];
 
-function getRating(watchList){
-  var averageRating;
+function getRating(watchList) {
+  let averageRating;
   const rating = watchList
     .filter(obj => obj.Director === "Christopher Nolan")
     .map(obj => Number(obj.imdbRating));

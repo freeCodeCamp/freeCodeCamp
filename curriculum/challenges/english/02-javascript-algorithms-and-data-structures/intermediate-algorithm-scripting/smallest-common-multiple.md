@@ -1,7 +1,7 @@
 ---
 id: ae9defd7acaf69703ab432ea
 title: Smallest Common Multiple
-challengeType: 5
+challengeType: 1
 forumTopicId: 16075
 dashedName: smallest-common-multiple
 ---
@@ -60,7 +60,6 @@ assert.deepEqual(smallestCommons([23, 18]), 6056820);
 function smallestCommons(arr) {
   return arr;
 }
-
 
 smallestCommons([1,5]);
 ```

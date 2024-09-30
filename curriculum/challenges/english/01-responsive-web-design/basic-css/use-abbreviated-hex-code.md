@@ -19,7 +19,7 @@ This reduces the total number of possible colors to around 4,000. But browsers w
 
 Go ahead, try using the abbreviated hex codes to color the correct elements.
 
-<table class='table table-striped'><tbody><tr><th>Color</th><th>Short Hex Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Green</td><td><code>#0F0</code></td></tr><tr><td>Red</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></tbody></table>
+<table><tbody><tr><th>Color</th><th>Short Hex Code</th></tr><tr><td>Cyan</td><td><code>#0FF</code></td></tr><tr><td>Green</td><td><code>#0F0</code></td></tr><tr><td>Red</td><td><code>#F00</code></td></tr><tr><td>Fuchsia</td><td><code>#F0F</code></td></tr></tbody></table>
 
 # --hints--
 
@@ -29,7 +29,7 @@ Your `h1` element with the text `I am red!` should be given the `color` red.
 assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-The abbreviated `hex code` for the color red should be used instead of the hex code `#FF0000`.
+The abbreviated hex code for the color red should be used instead of the hex code `#FF0000`.
 
 ```js
 assert(code.match(/\.red-text\s*?{\s*?color\s*:\s*?#F00\s*?;?\s*?}/gi));
@@ -41,7 +41,7 @@ Your `h1` element with the text `I am green!` should be given the `color` green.
 assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
 ```
 
-The abbreviated `hex code` for the color green should be used instead of the hex code `#00FF00`.
+The abbreviated hex code for the color green should be used instead of the hex code `#00FF00`.
 
 ```js
 assert(code.match(/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi));
@@ -53,7 +53,7 @@ Your `h1` element with the text `I am cyan!` should be given the `color` cyan.
 assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
 ```
 
-The abbreviated `hex code` for the color cyan should be used instead of the hex code `#00FFFF`.
+The abbreviated hex code for the color cyan should be used instead of the hex code `#00FFFF`.
 
 ```js
 assert(code.match(/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi));
@@ -65,7 +65,7 @@ Your `h1` element with the text `I am fuchsia!` should be given the `color` fuch
 assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
 ```
 
-The abbreviated `hex code` for the color fuchsia should be used instead of the hex code `#FF00FF`.
+The abbreviated hex code for the color fuchsia should be used instead of the hex code `#FF00FF`.
 
 ```js
 assert(code.match(/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi));

@@ -1,41 +1,73 @@
 import { nanoid } from 'nanoid';
-import { createAction, handleActions } from 'redux-actions';
 
-import { createTypes } from '../../../utils/create-types';
+import {
+  FlashState,
+  State,
+  FlashApp,
+  FlashMessageArg
+} from '../../../redux/types';
+import { playTone } from '../../../utils/tone';
+import { Themes } from '../../settings/theme';
+import { FlashMessages } from './flash-messages';
 
-export const ns = 'flash';
+export const flashMessageSelector = (state: State): FlashState['message'] =>
+  state[FlashApp].message;
+
+// ACTION DEFINITIONS
+
+enum FlashActionTypes {
+  CreateFlashMessage = 'createFlashMessage',
+  RemoveFlashMessage = 'removeFlashMessage'
+}
 
 const initialState = {
-  message: {}
+  message: {
+    id: '',
+    type: '',
+    message: FlashMessages.None
+  }
 };
 
-export const types = createTypes(
-  ['createFlashMessage', 'removeFlashMessage'],
-  ns
-);
+export const createFlashMessage = (
+  flash: FlashMessageArg
+): ReducerPayload<FlashActionTypes.CreateFlashMessage> => {
+  // Nightmode theme has special tones
+  if (flash.variables?.theme) {
+    void playTone(flash.variables.theme as Themes);
+  } else if (flash.message !== FlashMessages.None) {
+    void playTone(flash.message);
+  }
+  return {
+    type: FlashActionTypes.CreateFlashMessage,
+    payload: { ...flash, id: nanoid() }
+  };
+};
 
-export const sagas = [];
+export const removeFlashMessage =
+  (): ReducerPayload<FlashActionTypes.RemoveFlashMessage> => ({
+    type: FlashActionTypes.RemoveFlashMessage
+  });
 
-export const createFlashMessage = createAction(
-  types.createFlashMessage,
-  (msg: string[]) => ({ id: nanoid(), ...msg })
-);
-export const removeFlashMessage = createAction(types.removeFlashMessage);
+// REDUCER
+type ReducerBase<T> = { type: T };
+type ReducerPayload<T extends FlashActionTypes> =
+  T extends FlashActionTypes.CreateFlashMessage
+    ? ReducerBase<T> & {
+        payload: FlashState['message'];
+      }
+    : ReducerBase<T>;
 
-// TODO: Once state is typed, add here, remove disable.
-// eslint-disable-next-line
-export const flashMessageSelector = (state: any): string => state[ns].message;
-
-export const reducer = handleActions(
-  {
-    [types.createFlashMessage]: (state, { payload }) => ({
-      ...state,
-      message: payload
-    }),
-    [types.removeFlashMessage]: state => ({
-      ...state,
-      message: {}
-    })
-  },
-  initialState
-);
+// Does reducer return FlashState or AppState (whole app)?
+export const reducer = (
+  state: FlashState = initialState,
+  action: ReducerPayload<FlashActionTypes>
+): FlashState => {
+  switch (action.type) {
+    case FlashActionTypes.CreateFlashMessage:
+      return { ...state, message: action.payload };
+    case FlashActionTypes.RemoveFlashMessage:
+      return { ...state, message: initialState.message };
+    default:
+      return state;
+  }
+};

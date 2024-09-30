@@ -1,7 +1,7 @@
 ---
 title: Introduction to jQuery
-block: jQuery
-superBlock: Front End Development Libraries
+block: jquery
+superBlock: front-end-development-libraries
 ---
 
 ## Introduction to jQuery

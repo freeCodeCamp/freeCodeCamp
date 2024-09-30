@@ -1,0 +1,11 @@
+.link-ms-user-ol li {
+  margin-bottom: 5px;
+}
+
+.link-ms-user-ol li a {
+  word-break: break-all;
+}
+
+.link-ms-user-ol li:last-child {
+  margin-bottom: 0;
+}

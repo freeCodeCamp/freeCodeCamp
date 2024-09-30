@@ -1,20 +1,16 @@
 import { combineEpics, ofType } from 'redux-observable';
 import { of } from 'rxjs';
-import { filter, switchMap, map, tap, ignoreElements } from 'rxjs/operators';
+import { filter, ignoreElements, map, switchMap, tap } from 'rxjs/operators';
 import store from 'store';
 
-import { setContent, isPoly } from '../../../../../utils/polyvinyl';
+import { isPoly, setContent } from '../../../../../shared/utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
+import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { actionTypes as appTypes } from '../../../redux/action-types';
-
 import { actionTypes } from './action-types';
-import {
-  storedCodeFound,
-  noStoredCodeFound,
-  isCodeLockedSelector,
-  challengeFilesSelector,
-  challengeMetaSelector
-} from './';
+import { noStoredCodeFound, storedCodeFound } from './actions';
+import { challengeFilesSelector, challengeMetaSelector } from './selectors';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -86,7 +82,6 @@ function saveCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(actionTypes.executeChallenge, actionTypes.saveEditorContent),
     // do not save challenge if code is locked
-    filter(() => !isCodeLockedSelector(state$.value)),
     map(action => {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
@@ -112,9 +107,8 @@ function saveCodeEpic(action$, state$) {
         createFlashMessage({
           type: error ? 'warning' : 'success',
           message: error
-            ? // eslint-disable-next-line max-len
-              "Oops, your code did not save, your browser's local storage may be full."
-            : "Saved! Your code was saved to your browser's local storage."
+            ? FlashMessages.LocalCodeSaveError
+            : FlashMessages.LocalCodeSaved
         })
       )
     )
@@ -136,21 +130,61 @@ function loadCodeEpic(action$, state$) {
       const fileKeys = challengeFiles.map(x => x.fileKey);
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
-
       const codeFound = getCode(id);
-      if (codeFound && isFilesAllPoly(codeFound)) {
+
+      // first check if the store (which is synchronized with the db) has saved
+      // code
+      const savedChallenges = savedChallengesSelector(state);
+      const savedChallenge = savedChallenges?.find(saved => {
+        return saved.id === challenge.id;
+      });
+
+      // if the store is already populated with the saved files, we should not
+      // overwrite them with the local storage data
+      if (savedChallenge) {
+        return of(noStoredCodeFound());
+      } else if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = challengeFiles.reduce((challengeFiles, challengeFile) => {
           let foundChallengeFile = {};
+          // TODO: after sufficient time, say 6 months from this commit, we can
+          // assume that the majority of users have revisited any pages with old
+          // stored code. At this point we can remove everything related to
+          // indexjsCode.
+          let indexjsCode = null;
           if (Array.isArray(codeFound)) {
             foundChallengeFile = codeFound.find(
               x => x.fileKey === challengeFile.fileKey
             );
+            indexjsCode = codeFound.find(x => x.fileKey === 'indexjs');
           } else {
             // TODO: After sufficient time, remove parsing of old code-storage format
             // This was pushed to production with https://github.com/freeCodeCamp/freeCodeCamp/pull/43023
             foundChallengeFile = codeFound[challengeFile.fileKey];
+            indexjsCode = codeFound['indexjs'];
           }
-          const isCodeFound = Object.keys(foundChallengeFile).length > 0;
+          let isCodeFound;
+          // Fix the format of the old file
+          if (indexjsCode) {
+            indexjsCode.fileKey = 'scriptjs';
+            delete indexjsCode.key;
+            indexjsCode.history = ['script.js'];
+            indexjsCode.name = 'script';
+            indexjsCode.path = 'script.js';
+          }
+
+          if (foundChallengeFile) {
+            isCodeFound = Object.keys(foundChallengeFile).length > 0;
+          } else if (indexjsCode) {
+            isCodeFound = Object.keys(indexjsCode).length > 0;
+            foundChallengeFile = indexjsCode;
+            // Repair the store, by replacing old style code with the repaired
+            // file
+            store.set(id, [indexjsCode]);
+          } else {
+            // The stored code is neither old code nor new, so we do not know
+            // how to handle it.  The safest option is to delete it.
+            store.remove(id);
+          }
           return [
             ...challengeFiles,
             {

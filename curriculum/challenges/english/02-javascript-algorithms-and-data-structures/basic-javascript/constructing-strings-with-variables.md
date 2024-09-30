@@ -9,13 +9,13 @@ dashedName: constructing-strings-with-variables
 
 # --description--
 
-Sometimes you will need to build a string, [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs) style. By using the concatenation operator (`+`), you can insert one or more variables into a string you're building.
+Sometimes you will need to build a string. By using the concatenation operator (`+`), you can insert one or more variables into a string you're building.
 
 Example:
 
 ```js
-var ourName = "freeCodeCamp";
-var ourStr = "Hello, our name is " + ourName + ", how are you?";
+const ourName = "freeCodeCamp";
+const ourStr = "Hello, our name is " + ourName + ", how are you?";
 ```
 
 `ourStr` would have a value of the string `Hello, our name is freeCodeCamp, how are you?`.
@@ -35,7 +35,7 @@ assert(typeof myName !== 'undefined' && myName.length > 2);
 You should use two `+` operators to build `myStr` with `myName` inside it.
 
 ```js
-assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 ```
 
 # --seed--
@@ -63,13 +63,13 @@ assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 
 ```js
 // Only change code below this line
-var myName;
-var myStr;
+const myName = "";
+const myStr = "";
 ```
 
 # --solutions--
 
 ```js
-var myName = "Bob";
-var myStr = "My name is " + myName + " and I am well!";
+const myName = "Bob";
+const myStr = "My name is " + myName + " and I am well!";
 ```

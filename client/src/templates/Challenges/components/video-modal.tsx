@@ -1,18 +1,17 @@
-import { Modal } from '@freecodecamp/react-bootstrap';
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-
-import { executeGA } from '../../../redux';
-import { closeModal, isVideoModalOpenSelector } from '../redux';
+import { Modal } from '@freecodecamp/ui';
+import { closeModal } from '../redux/actions';
+import { isVideoModalOpenSelector } from '../redux/selectors';
+import callGA from '../../../analytics/call-ga';
 
 import './video-modal.css';
 
 interface VideoModalProps {
   closeVideoModal: () => void;
-  executeGA: (attributes: { type: string; data: string }) => void;
-  isOpen?: boolean;
+  isOpen: boolean;
   t: (attribute: string) => string;
   videoUrl?: string;
 }
@@ -22,31 +21,25 @@ const mapStateToProps = (state: unknown) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    { closeVideoModal: () => closeModal('video'), executeGA },
-    dispatch
-  );
+  bindActionCreators({ closeVideoModal: () => closeModal('video') }, dispatch);
 
-export function VideoModal({
+function VideoModal({
   closeVideoModal,
-  executeGA,
   isOpen,
   t,
   videoUrl
 }: VideoModalProps): JSX.Element {
   if (isOpen) {
-    executeGA({ type: 'modal', data: '/completion-modal' });
+    callGA({ event: 'pageview', pagePath: '/completion-modal' });
   }
   return (
-    <Modal dialogClassName='video-modal' onHide={closeVideoModal} show={isOpen}>
-      <Modal.Header className='video-modal-header fcc-modal' closeButton={true}>
-        <Modal.Title className='text-center'>
-          {t('buttons.watch-video')}
-        </Modal.Title>
+    <Modal onClose={closeVideoModal} size='xLarge' open={isOpen}>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('buttons.watch-video')}
       </Modal.Header>
-      <Modal.Body className='video-modal-body'>
+      <Modal.Body alignment='start' className='video-modal-body'>
         <iframe
-          frameBorder='0'
+          data-playwright-test-label='video-modal-video-player-iframe'
           src={videoUrl}
           title={t('buttons.watch-video')}
         />

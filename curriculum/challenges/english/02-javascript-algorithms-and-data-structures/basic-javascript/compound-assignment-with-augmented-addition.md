@@ -20,7 +20,7 @@ to add `5` to `myVar`. Since this is such a common pattern, there are operators 
 One such operator is the `+=` operator.
 
 ```js
-var myVar = 1;
+let myVar = 1;
 myVar += 5;
 console.log(myVar);
 ```
@@ -54,16 +54,16 @@ assert(c === 19);
 You should use the `+=` operator for each variable.
 
 ```js
-assert(code.match(/\+=/g).length === 3);
+assert(__helpers.removeJSComments(code).match(/\+=/g).length === 3);
 ```
 
 You should not modify the code above the specified comment.
 
 ```js
 assert(
-  /var a = 3;/.test(code) &&
-    /var b = 17;/.test(code) &&
-    /var c = 12;/.test(code)
+  /let a = 3;/.test(__helpers.removeJSComments(code)) &&
+    /let b = 17;/.test(__helpers.removeJSComments(code)) &&
+    /let c = 12;/.test(__helpers.removeJSComments(code))
 );
 ```
 
@@ -78,9 +78,9 @@ assert(
 ## --seed-contents--
 
 ```js
-var a = 3;
-var b = 17;
-var c = 12;
+let a = 3;
+let b = 17;
+let c = 12;
 
 // Only change code below this line
 a = a + 12;
@@ -91,9 +91,9 @@ c = c + 7;
 # --solutions--
 
 ```js
-var a = 3;
-var b = 17;
-var c = 12;
+let a = 3;
+let b = 17;
+let c = 12;
 
 a += 12;
 b += 9;

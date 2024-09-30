@@ -1,0 +1,11 @@
+{
+  "name": "Build an Availability Table",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-availability-table",
+  "order": 110,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66b36358ed4f261d64840c24", "title": "Build an Availability Table" }],
+  "helpCategory": "HTML-CSS"
+}

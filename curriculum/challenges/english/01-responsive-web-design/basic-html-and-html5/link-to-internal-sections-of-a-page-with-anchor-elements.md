@@ -21,11 +21,11 @@ Below is an example of an internal anchor link and its target element:
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-When users click the `Contacts` link, they'll be taken to the section of the webpage with the **Contacts** header element.
+When users click the `Contacts` link, they'll be taken to the section of the webpage with the **Contacts** heading element.
 
 # --instructions--
 
-Change your external link to an internal link by changing the `href` attribute to `"#footer"` and the text from `cat photos` to `Jump to Bottom`.
+Change your external link to an internal link by changing the `href` attribute to `#footer` and the text from `cat photos` to `Jump to Bottom`.
 
 Remove the `target="_blank"` attribute from the anchor tag since this causes the linked document to open in a new window tab.
 

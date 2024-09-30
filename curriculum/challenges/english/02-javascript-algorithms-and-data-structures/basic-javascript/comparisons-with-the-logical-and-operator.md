@@ -11,7 +11,7 @@ dashedName: comparisons-with-the-logical-and-operator
 
 Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (`&&`) returns `true` if and only if the <dfn>operands</dfn> to the left and right of it are true.
 
-The same effect could be achieved by nesting an if statement inside another if:
+The same effect could be achieved by nesting an `if` statement inside another `if`.
 
 ```js
 if (num > 5) {
@@ -22,7 +22,7 @@ if (num > 5) {
 return "No";
 ```
 
-will only return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written as:
+This code will return `Yes` if `num` is greater than `5` and less than `10`. The same logic can be written with the <dfn>logical and</dfn> operator.
 
 ```js
 if (num > 5 && num < 10) {
@@ -40,13 +40,13 @@ Replace the two if statements with one statement, using the `&&` operator, which
 You should use the `&&` operator once
 
 ```js
-assert(code.match(/&&/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/&&/g).length === 1);
 ```
 
 You should only have one `if` statement
 
 ```js
-assert(code.match(/if/g).length === 1);
+assert(__helpers.removeJSComments(code).match(/if/g).length === 1);
 ```
 
 `testLogicalAnd(0)` should return the string `No`

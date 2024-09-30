@@ -18,7 +18,7 @@ Let's implement heap sort with a min heap. Feel free to adapt your max heap code
 
 # --hints--
 
-The MinHeap data structure should exist.
+The `MinHeap` data structure should exist.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-MinHeap should have a method called insert.
+`MinHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -48,7 +48,7 @@ assert(
 );
 ```
 
-MinHeap should have a method called remove.
+`MinHeap` should have a method called `remove`.
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-MinHeap should have a method called sort.
+`MinHeap` should have a method called `sort`.
 
 ```js
 assert(
@@ -80,7 +80,7 @@ assert(
 );
 ```
 
-The sort method should return an array containing all items added to the min heap in sorted order.
+The `sort` method should return an array containing all items added to the min heap in sorted order.
 
 ```js
 assert(

@@ -13,30 +13,28 @@ To make text bold, you can use the `strong` tag. This is often used to draw atte
 
 # --instructions--
 
-Wrap a `strong` tag around `Stanford University` text inside the `p` tag (do not include the period).
+Wrap a `strong` tag around the text `Stanford University` inside the `p` tag (do not include the period).
 
 # --hints--
 
 Your code should add one `strong` tag to the markup.
 
 ```js
-assert($('strong').length == 1);
+assert.lengthOf(document.querySelectorAll('strong'),1);
 ```
 
 The `strong` tag should be inside the `p` tag.
 
 ```js
-assert($('p').children('strong').length == 1);
+const pargraphElement = document.querySelector('p');
+const pargraphChildren = pargraphElement?.querySelectorAll(`:scope ${'strong'}`);
+assert.lengthOf(pargraphChildren, 1);
 ```
 
 The `strong` tag should wrap around the words `Stanford University`.
 
 ```js
-assert(
-  $('strong')
-    .text()
-    .match(/^Stanford University\.?$/gi)
-);
+assert.match(document.querySelector('strong')?.textContent, /^Stanford University\.?$/gi);
 ```
 
 # --seed--

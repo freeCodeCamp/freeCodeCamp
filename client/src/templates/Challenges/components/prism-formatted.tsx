@@ -1,36 +1,42 @@
 import Prism from 'prismjs';
-import React, { Component } from 'react';
+import React, { useRef, useEffect } from 'react';
+import { enhancePrismAccessibility } from '../utils';
 
 interface PrismFormattedProps {
   className?: string;
   text: string;
+  useSpan?: boolean;
+  noAria?: boolean;
 }
 
-class PrismFormatted extends Component<PrismFormattedProps> {
-  static displayName: string;
-  instructionsRef: React.RefObject<HTMLInputElement>;
-  componentDidMount(): void {
+function PrismFormatted({
+  className,
+  text,
+  useSpan,
+  noAria
+}: PrismFormattedProps): JSX.Element {
+  const instructionsRef = useRef<HTMLDivElement>(null);
+  const ElementName = useSpan ? 'span' : 'div';
+
+  if (noAria) {
+    text = text.replace(/<pre( [^>]+)?>/, '<pre$1 data-no-aria="true">');
+  }
+
+  useEffect(() => {
     // Just in case 'current' has not been created, though it should have been.
-    if (this.instructionsRef.current) {
-      Prism.highlightAllUnder(this.instructionsRef.current);
+    if (instructionsRef.current) {
+      Prism.hooks.add('complete', enhancePrismAccessibility);
+      Prism.highlightAllUnder(instructionsRef.current);
     }
-  }
+  }, []);
 
-  constructor(props: PrismFormattedProps | Readonly<PrismFormattedProps>) {
-    super(props);
-    this.instructionsRef = React.createRef();
-  }
-
-  render(): JSX.Element {
-    const { text, className } = this.props;
-    return (
-      <div
-        className={className}
-        dangerouslySetInnerHTML={{ __html: text }}
-        ref={this.instructionsRef}
-      />
-    );
-  }
+  return (
+    <ElementName
+      className={className}
+      dangerouslySetInnerHTML={{ __html: text }}
+      ref={instructionsRef}
+    />
+  );
 }
 
 PrismFormatted.displayName = 'PrismFormatted';

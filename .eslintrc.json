@@ -6,24 +6,22 @@
     "node": true,
     "jest": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "root": true,
   "extends": [
-    "./.eslintrc-base.json",
-    "plugin:prettier/recommended",
-    "plugin:import/typescript",
-    "plugin:jsx-a11y/recommended"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
-  "plugins": [
-    "react",
-    "import",
-    "prefer-object-spread",
-    "prettier",
-    "react-hooks",
-    "jsx-a11y",
-    "jest-dom",
-    "testing-library"
-  ],
+  "plugins": ["no-only-tests", "filenames-simple"],
   "globals": {
     "Promise": true,
     "window": true,
@@ -34,11 +32,32 @@
   },
   "settings": {
     "react": {
-      "version": "16.4.2",
-      "import/ignore": ["\\.json$"],
-      "import/extensions": [".js", ".jsx", ".tsx"]
+      "version": "16.4.2"
     },
-    "import/ignore": ["node_modules"]
+    "import/resolver": {
+      "typescript": true,
+      "node": true
+    }
+  },
+  "rules": {
+    "import/no-unresolved": [2, { "commonjs": true }],
+    "import/named": "error",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/order": "error",
+    "import/no-cycle": [2, { "maxDepth": 2 }],
+    "react/prop-types": "off",
+    "no-only-tests/no-only-tests": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "filenames-simple/naming-convention": ["warn"]
   },
   "overrides": [
     {
@@ -47,25 +66,68 @@
       "parserOptions": {
         "project": [
           "./client/tsconfig.json",
-          "./tools/challenge-helper-scripts/tsconfig.json",
-          "./tools/ui-components/tsconfig.json"
+          "./tsconfig.json",
+          "./api/tsconfig.json",
+          "./shared/tsconfig.json",
+          "./tools/client-plugins/browser-scripts/tsconfig.json",
+          "./e2e/tsconfig.json"
         ]
       },
       "extends": [
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/typescript"
       ],
-      "plugins": ["@typescript-eslint"]
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "import/no-unresolved": "off",
+        "import/named": 0,
+        "@typescript-eslint/naming-convention": "off"
+      }
     },
     {
-      "files": ["./tools/ui-components/**/*.test.[jt]s?(x)", "./client/**/*.test.[jt]s?(x)"],
-      "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+      "files": ["./client/**/*.test.[jt]s?(x)"],
+      "extends": [
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+      ],
+      "rules": { "import/named": 2 }
     },
     {
-      "files": ["cypress/**/*.js"],
-      "globals": {
-        "cy": true,
-        "Cypress": true
+      "files": ["e2e/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
+      }
+    },
+    {
+      "files": ["**/api-server/**/*", "**/404.*"],
+      "rules": {
+        "filenames-simple/naming-convention": "off"
+      }
+    },
+    {
+      "files": ["**/api/src/**/*.ts"],
+      "plugins": ["jsdoc"],
+      "extends": ["plugin:jsdoc/recommended-typescript-error"],
+      "rules": {
+        "jsdoc/require-jsdoc": [
+          "error",
+          {
+            "require": {
+              "ArrowFunctionExpression": true,
+              "ClassDeclaration": true,
+              "ClassExpression": true,
+              "FunctionDeclaration": true,
+              "FunctionExpression": true,
+              "MethodDefinition": true
+            },
+            "publicOnly": true
+          }
+        ],
+        "jsdoc/require-description-complete-sentence": "warn",
+        "jsdoc/tag-lines": "off"
       }
     }
   ]

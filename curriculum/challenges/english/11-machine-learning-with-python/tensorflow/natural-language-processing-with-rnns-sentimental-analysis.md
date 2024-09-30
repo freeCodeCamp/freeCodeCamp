@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: natural-language-processing-with-rnns-sentiment-analysis
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 
@@ -20,7 +20,7 @@ Fill in the blanks below to create the model for the RNN:
 model = __A__.keras.Sequential([
     __A__.keras.layers.__B__(88584, 32),
     __A__.keras.layers.__C__(32),
-    __A__.keras.layers.DENSE(1, activation='sigmoid')
+    __A__.keras.layers.Dense(1, activation='sigmoid')
 ])
 ```
 

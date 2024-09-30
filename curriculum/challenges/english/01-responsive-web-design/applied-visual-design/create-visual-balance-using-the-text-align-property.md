@@ -13,7 +13,7 @@ This section of the curriculum focuses on Applied Visual Design. The first group
 
 Text is often a large part of web content. CSS has several options for how to align it with the `text-align` property.
 
-`text-align: justify;` causes all lines of text except the last line to meet the left and right edges of the line box.
+`text-align: justify;` spaces the text so that each line has equal width.
 
 `text-align: center;` centers the text
 
@@ -30,13 +30,17 @@ Align the `h4` tag's text, which says "Google", to the center. Then justify the 
 Your code should use the text-align property on the `h4` tag to set it to `center`.
 
 ```js
-assert($('h4').css('text-align') == 'center');
+const h4Element =document.querySelector('h4')
+const h4Style = window.getComputedStyle(h4Element);
+assert.equal(h4Style?.textAlign, 'center');
 ```
 
 Your code should use the text-align property on the `p` tag to set it to `justify`.
 
 ```js
-assert($('p').css('text-align') == 'justify');
+const pElement =document.querySelector('p')
+const pStyle = window.getComputedStyle(pElement);
+assert.equal(pStyle?.textAlign, 'justify');
 ```
 
 # --seed--

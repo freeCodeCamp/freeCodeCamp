@@ -1,0 +1,13 @@
+{
+  "name": "Local Storage and CRUD Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-local-storage-and-crud",
+  "order": 231,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66edd3f9bef926f129990425", "title": "Local Storage and CRUD Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

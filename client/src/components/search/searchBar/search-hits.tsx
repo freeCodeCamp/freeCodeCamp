@@ -8,7 +8,7 @@ import NoHitsSuggestion from './no-hits-suggestion';
 import Suggestion from './search-suggestion';
 
 const searchUrl = searchPageUrl;
-interface customHitsPropTypes {
+interface CustomHitsProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hits: Array<any>;
   searchQuery: string;
@@ -17,7 +17,7 @@ interface customHitsPropTypes {
   selectedIndex: number;
   handleHits: (currHits: Array<Hit>) => void;
 }
-interface searchHitsPropTypes {
+interface SearchHitsProps {
   searchState: SearchState;
   handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
   handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
@@ -32,7 +32,7 @@ const CustomHits = connectHits(
     handleMouseLeave,
     selectedIndex,
     handleHits
-  }: customHitsPropTypes) => {
+  }: CustomHitsProps) => {
     const { t } = useTranslation();
     const noHits = isEmpty(hits);
     const noHitsTitle = t('search.no-tutorials');
@@ -57,12 +57,13 @@ const CustomHits = connectHits(
     ];
     const allHits = hits.slice(0, 8).concat(footer);
     useEffect(() => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       handleHits(allHits);
     });
 
     return (
       <div className='ais-Hits'>
-        <ul className='ais-Hits-list' data-cy='ais-Hits-list'>
+        <ul className='ais-Hits-list' aria-label={t('search.result-list')}>
           {allHits.map((hit: Hit, i: number) => (
             <li
               className={
@@ -101,7 +102,7 @@ const SearchHits = connectStateResults(
     handleMouseLeave,
     selectedIndex,
     handleHits
-  }: searchHitsPropTypes) => {
+  }: SearchHitsProps) => {
     return isEmpty(searchState) || !searchState.query ? null : (
       <CustomHits
         handleHits={handleHits}

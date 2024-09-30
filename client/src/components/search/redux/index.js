@@ -12,24 +12,17 @@ const initialState = {
 };
 
 const types = createTypes(
-  [
-    'toggleSearchDropdown',
-    'toggleSearchFocused',
-    'updateSearchIndexName',
-    'updateSearchQuery'
-  ],
+  ['toggleSearchDropdown', 'toggleSearchFocused', 'updateSearchQuery'],
   ns
 );
 
 export const toggleSearchDropdown = createAction(types.toggleSearchDropdown);
 export const toggleSearchFocused = createAction(types.toggleSearchFocused);
-export const updateSearchIndexName = createAction(types.updateSearchIndexName);
 export const updateSearchQuery = createAction(types.updateSearchQuery);
 
 export const isSearchDropdownEnabledSelector = state =>
   state[ns].isSearchDropdownEnabled;
 export const isSearchBarFocusedSelector = state => state[ns].isSearchBarFocused;
-export const searchIndexNameSelector = state => state[ns].indexName;
 export const searchQuerySelector = state => state[ns].query;
 
 export const reducer = handleActions(
@@ -42,10 +35,6 @@ export const reducer = handleActions(
     [types.toggleSearchFocused]: (state, { payload }) => ({
       ...state,
       isSearchBarFocused: payload
-    }),
-    [types.updateSearchIndexName]: (state, { payload }) => ({
-      ...state,
-      indexName: payload
     }),
     [types.updateSearchQuery]: (state, { payload }) => {
       return {

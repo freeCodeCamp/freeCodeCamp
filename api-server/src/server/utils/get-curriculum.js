@@ -6,7 +6,8 @@ import { flatten } from 'lodash';
 // via the user object, then we should *not* store this so it can be garbage
 // collected.
 
-import curriculum from '../../../../config/curriculum.json';
+// eslint-disable-next-line import/no-unresolved
+import curriculum from '../../../../shared/config/curriculum.json';
 
 export function getChallenges() {
   return Object.keys(curriculum)

@@ -49,7 +49,7 @@ Add the property `numLegs` and the two methods `eat()` and `describe()` to the `
 `Dog.prototype` should be set to a new object.
 
 ```js
-assert(/Dog\.prototype\s*?=\s*?{/.test(code));
+assert(/Dog\.prototype\s*?=\s*?{/.test(__helpers.removeJSComments(code)));
 ```
 
 `Dog.prototype` should have the property `numLegs`.

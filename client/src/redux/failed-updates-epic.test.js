@@ -27,6 +27,7 @@ describe('failed-updates-epic', () => {
 const initialState = {
   app: {
     isOnline: true,
+    isServerOnline: true,
     appUsername: 'developmentuser'
   }
 };

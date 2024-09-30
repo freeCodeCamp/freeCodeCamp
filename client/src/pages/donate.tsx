@@ -1,139 +1,141 @@
-import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+import { Container, Col, Row } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import DonateForm from '../components/Donation/DonateForm';
+import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import {
-  DonationText,
-  DonationSupportText,
-  DonationOptionsText,
-  DonationOptionsAlertText
-} from '../components/Donation/DonationTextComponents';
+  CtaText,
+  ThankYouMessage,
+  DonationFaqText,
+  SupportBenefitsText,
+  CurrentInitiativesText,
+  CommunityAchievementsText,
+  GetSupporterBenefitsText
+} from '../components/Donation/donation-text-components';
 import { Spacer, Loader } from '../components/helpers';
-import CampersImage from '../components/landing/components/CampersImage';
-import { signInLoadingSelector, userSelector, executeGA } from '../redux';
-
-interface ExecuteGaArg {
-  type: string;
-  data: {
-    category: string;
-    action: string;
-    nonInteraction?: boolean;
-    label?: string;
-    value?: number;
-  };
-}
+import {
+  signInLoadingSelector,
+  userSelector,
+  donationFormStateSelector
+} from '../redux/selectors';
+import { PaymentContext } from '../../../shared/config/donation-settings';
+import { DonateFormState } from '../redux/types';
+import callGA from '../analytics/call-ga';
 interface DonatePageProps {
-  executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
   t: TFunction;
+  donationFormState: DonateFormState;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
+  donationFormStateSelector,
+  (
+    { isDonating }: { isDonating: boolean },
+    showLoading: boolean,
+    donationFormState: DonateFormState
+  ) => ({
     isDonating,
-    showLoading
+    showLoading,
+    donationFormState
   })
 );
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ executeGA }, dispatch);
-
 function DonatePage({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  executeGA = () => {},
   isDonating = false,
   showLoading,
-  t
+  t,
+  donationFormState
 }: DonatePageProps) {
   useEffect(() => {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation View',
-        action: `Displayed donate page`,
-        nonInteraction: true
-      }
+    callGA({
+      event: 'donation_view',
+      action: `Displayed Donate Page`
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  function handleProcessing(duration: string, amount: number, action: string) {
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `donate page ${action}`,
-        label: duration,
-        value: amount
-      }
-    });
-  }
 
   return showLoading ? (
     <Loader fullScreen={true} />
   ) : (
     <>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
-      <Grid className='donate-page-wrapper'>
-        <Spacer />
+      <Container fluid={true} className='gradient-container'>
+        <Container className='donate-supporter-page-section'>
+          <main>
+            <Row className={'donation-section'}>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
+                {isDonating ? (
+                  <ThankYouMessage
+                    askForDonation={!donationFormState.success}
+                  />
+                ) : (
+                  <CtaText />
+                )}
+              </Col>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
+                {!isDonating || donationFormState.success ? (
+                  <MultiTierDonationForm
+                    paymentContext={PaymentContext.DonatePage}
+                  />
+                ) : null}
+              </Col>
+            </Row>
+          </main>
+        </Container>
+      </Container>
+      <Container className='donate-supporter-page-section'>
         <Row>
-          <>
-            <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-              <Row>
-                <Col className={'text-center'} xs={12}>
-                  {isDonating ? (
-                    <h2>{t('donate.thank-you')}</h2>
-                  ) : (
-                    <h2>{t('donate.help-more')}</h2>
-                  )}
-                  <Spacer />
-                </Col>
-              </Row>
-              {isDonating ? (
-                <Alert>
-                  <p>{t('donate.thank-you-2')}</p>
-                  <br />
-                  <DonationOptionsAlertText />
-                </Alert>
-              ) : null}
-              <DonationText />
-              <Row>
-                <Col xs={12}>
-                  <DonateForm handleProcessing={handleProcessing} />
-                </Col>
-              </Row>
-              <Row className='donate-support'>
-                <Col xs={12}>
-                  <hr />
-                  <DonationOptionsText />
-                  <DonationSupportText />
-                </Col>
-              </Row>
-            </Col>
-            <Col lg={6}>
-              <CampersImage page='donate' />
-            </Col>
-          </>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <Spacer size='large' />
+            <SupportBenefitsText />
+          </Col>
         </Row>
-        <Spacer />
-      </Grid>
+        <Row>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <Spacer size='large' />
+            <CurrentInitiativesText />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <Spacer size='large' />
+            <CommunityAchievementsText />
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <GetSupporterBenefitsText isDonating={Boolean(isDonating)} />
+          </Col>
+        </Row>
+      </Container>
+      <Container fluid={true}>
+        <Row>
+          <Col sm={12}>
+            <Spacer size='large' />
+            <hr />
+            <Spacer size='large' />
+          </Col>
+        </Row>
+      </Container>
+      <Container className='donate-supporter-page-section'>
+        <Row>
+          <Col lg={10} lgOffset={0} md={8} mdOffset={2} sm={10}>
+            <DonationFaqText />
+          </Col>
+        </Row>
+        <Spacer size='large' />
+      </Container>
     </>
   );
 }
 
 DonatePage.displayName = 'DonatePage';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(DonatePage));
+export default connect(mapStateToProps)(withTranslation()(DonatePage));

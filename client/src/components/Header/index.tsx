@@ -3,24 +3,38 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/unbound-method */
 import React from 'react';
-import Helmet from 'react-helmet';
+import { ConnectedProps, connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import { User } from '../../redux/prop-types';
+import { examInProgressSelector } from '../../redux/selectors';
 
 import UniversalNav from './components/universal-nav';
+import ExamNav from './components/exam-nav';
 
 import './header.css';
 
-export interface HeaderProps {
+const mapStateToProps = createSelector(
+  examInProgressSelector,
+  (examInProgress: boolean) => ({
+    examInProgress
+  })
+);
+
+const connector = connect(mapStateToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+type Props = PropsFromRedux & {
   fetchState: { pending: boolean };
-  user: Record<string, any>;
-}
-export class Header extends React.Component<
-  HeaderProps,
-  { displayMenu: boolean }
-> {
-  menuButtonRef: React.RefObject<any>;
+  user: User;
+  skipButtonText: string;
+};
+
+class Header extends React.Component<Props, { displayMenu: boolean }> {
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;
-  constructor(props: HeaderProps) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       displayMenu: false
@@ -28,57 +42,71 @@ export class Header extends React.Component<
     this.menuButtonRef = React.createRef();
     this.searchBarRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.toggleDisplayMenu = this.toggleDisplayMenu.bind(this);
-  }
-
-  componentDidMount(): void {
-    document.addEventListener('click', this.handleClickOutside);
-  }
-
-  componentWillUnmount(): void {
-    document.removeEventListener('click', this.handleClickOutside);
+    this.showMenu = this.showMenu.bind(this);
+    this.hideMenu = this.hideMenu.bind(this);
   }
 
   handleClickOutside(event: globalThis.MouseEvent): void {
+    const eventTarget = event.target as HTMLElement;
     if (
       this.state.displayMenu &&
       this.menuButtonRef.current &&
-      !this.menuButtonRef.current.contains(event.target) &&
+      !this.menuButtonRef.current.contains(eventTarget) &&
+      // since the search bar is part of the menu on small screens, clicks on
+      // the search bar should not toggle the menu
       this.searchBarRef.current &&
-      !this.searchBarRef.current.contains(event.target)
+      !this.searchBarRef.current.contains(eventTarget) &&
+      // don't count clicks on searcn bar inputs reset button
+      !eventTarget.closest('.ais-SearchBox-reset') &&
+      // don't count clicks on disabled elements
+      !eventTarget.closest('[aria-disabled="true"]')
     ) {
-      this.toggleDisplayMenu();
+      this.hideMenu();
     }
   }
 
-  toggleDisplayMenu(): void {
-    this.setState(({ displayMenu }: { displayMenu: boolean }) => ({
-      displayMenu: !displayMenu
-    }));
+  showMenu(): void {
+    this.setState({ displayMenu: true }, () => {
+      document.addEventListener('click', this.handleClickOutside);
+    });
   }
+
+  hideMenu(): void {
+    this.setState({ displayMenu: false }, () => {
+      document.removeEventListener('click', this.handleClickOutside);
+    });
+  }
+
   render(): JSX.Element {
     const { displayMenu } = this.state;
-    const { fetchState, user } = this.props;
+    const { examInProgress, fetchState, user, skipButtonText } = this.props;
     return (
-      <>
-        <Helmet>
-          <style>{':root{--header-height: 38px}'}</style>
-        </Helmet>
-        <header>
+      <header className='site-header'>
+        <a
+          href='#content-start'
+          className='skip-to-content-button'
+          data-playwright-test-label='header-skip-content'
+        >
+          {skipButtonText}
+        </a>
+        {examInProgress ? (
+          <ExamNav />
+        ) : (
           <UniversalNav
             displayMenu={displayMenu}
             fetchState={fetchState}
+            hideMenu={this.hideMenu}
             menuButtonRef={this.menuButtonRef}
             searchBarRef={this.searchBarRef}
-            toggleDisplayMenu={this.toggleDisplayMenu}
+            showMenu={this.showMenu}
             user={user}
           />
-        </header>
-      </>
+        )}
+      </header>
     );
   }
 }
 
 Header.displayName = 'Header';
 
-export default Header;
+export default connector(Header);

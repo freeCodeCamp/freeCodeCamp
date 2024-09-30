@@ -17,7 +17,7 @@ Some examples of complementary colors with their hex codes are:
 
 <blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)</blockquote>
 
-This is different than the outdated RYB color model that many of us were taught in school, which has different primary and complementary colors. Modern color theory uses the additive RGB model (like on a computer screen) and the subtractive CMY(K) model (like in printing). Read [here](https://en.wikipedia.org/wiki/Color_model) for more information on this complex subject.
+This is different than the outdated RYB color model that many of us were taught in school, which has different primary and complementary colors. Modern color theory uses the additive RGB model (like on a computer screen) and the subtractive CMY(K) model (like in printing).
 
 There are many color picking tools available online that have an option to find the complement of a color.
 
@@ -32,13 +32,17 @@ Change the `background-color` property of the `blue` and `yellow` classes to the
 The `div` element with class `blue` should have a `background-color` of blue.
 
 ```js
-assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
+const blueElement = document.querySelector('.blue');
+const blueStyle = window.getComputedStyle(blueElement); 
+assert.equal(blueStyle?.backgroundColor, 'rgb(0, 0, 255)');
 ```
 
 The `div` element with class `yellow` should have a `background-color` of yellow.
 
 ```js
-assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
+const yellowElement = document.querySelector('.yellow');
+const yellowStyle = window.getComputedStyle(yellowElement);
+assert.equal(yellowStyle?.backgroundColor, 'rgb(255, 255, 0)');
 ```
 
 # --seed--

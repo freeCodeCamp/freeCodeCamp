@@ -5,8 +5,8 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": "^6.14.12"
+    "node": ">=16",
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,11 @@
     "js-yaml": "3.14.1",
     "lodash": "4.17.21",
     "mdast-builder": "1.1.1",
-    "mdast-util-gfm": "0.1.2",
+    "mdast-util-directive": "1.0.1",
+    "mdast-util-gfm-strikethrough": "0.2.3",
+    "mdast-util-gfm-table": "0.1.6",
     "mdast-util-to-hast": "9.1.2",
+    "mdast-util-to-markdown": "0.6.5",
     "micromark-extension-gfm-strikethrough": "0.6.5",
     "micromark-extension-gfm-table": "0.4.3",
     "remark": "13.0.0",
@@ -41,6 +44,7 @@
     "unist-util-find": "1.0.2",
     "unist-util-find-after": "3.0.0",
     "unist-util-find-all-after": "3.0.2",
+    "unist-util-find-all-before": "3.0.1",
     "unist-util-find-all-between": "2.1.0",
     "unist-util-is": "4.1.0",
     "unist-util-modify-children": "2.0.0",

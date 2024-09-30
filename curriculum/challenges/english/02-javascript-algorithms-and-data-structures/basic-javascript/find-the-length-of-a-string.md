@@ -15,13 +15,13 @@ You can find the length of a `String` value by writing `.length` after the strin
 console.log("Alan Peter".length);
 ```
 
-The value `10` would be displayed in the console.
+The value `10` would be displayed in the console. Note that the space character between "Alan" and "Peter" is also counted.
 
-For example, if we created a variable `var firstName = "Ada"`, we could find out how long the string `Ada` is by using the `firstName.length` property.
+For example, if we created a variable `const firstName = "Ada"`, we could find out how long the string `Ada` is by using the `firstName.length` property.
 
 # --instructions--
 
-Use the `.length` property to count the number of characters in the `lastName` variable and assign it to `lastNameLength`.
+Use the `.length` property to set `lastNameLength` to the number of characters in `lastName`.
 
 # --hints--
 
@@ -29,8 +29,8 @@ You should not change the variable declarations in the `// Setup` section.
 
 ```js
 assert(
-  code.match(/var lastNameLength = 0;/) &&
-    code.match(/var lastName = "Lovelace";/)
+  __helpers.removeJSComments(code).match(/let lastNameLength = 0;/) &&
+    __helpers.removeJSComments(code).match(/const lastName = "Lovelace";/)
 );
 ```
 
@@ -43,7 +43,7 @@ assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8);
 You should be getting the length of `lastName` by using `.length` like this: `lastName.length`.
 
 ```js
-assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
+assert(__helpers.removeJSComments(code).match(/=\s*lastName\.length/g) && !__helpers.removeJSComments(code).match(/lastName\s*=\s*8/));
 ```
 
 # --seed--
@@ -52,18 +52,17 @@ assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
 
 ```js
 // Setup
-var lastNameLength = 0;
-var lastName = "Lovelace";
+let lastNameLength = 0;
+const lastName = "Lovelace";
 
 // Only change code below this line
-
 lastNameLength = lastName;
 ```
 
 # --solutions--
 
 ```js
-var lastNameLength = 0;
-var lastName = "Lovelace";
+let lastNameLength = 0;
+const lastName = "Lovelace";
 lastNameLength = lastName.length;
 ```

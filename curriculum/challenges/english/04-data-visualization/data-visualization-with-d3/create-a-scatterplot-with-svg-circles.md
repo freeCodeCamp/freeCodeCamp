@@ -14,7 +14,7 @@ SVG has a `circle` tag to create the circle shape. It works a lot like the `rect
 
 # --instructions--
 
-Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG canvas.
+Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG.
 
 **Note:** The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
 

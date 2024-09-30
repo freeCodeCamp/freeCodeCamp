@@ -37,7 +37,7 @@ Look at the `ourName` example above if you get stuck.
 You should declare `myName` with the `var` keyword, ending with a semicolon
 
 ```js
-assert(/var\s+myName\s*;/.test(code));
+assert(/var\s+myName\s*;/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

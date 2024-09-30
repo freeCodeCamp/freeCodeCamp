@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Object Oriented Programming Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-object-oriented-programming",
+  "order": 261,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd5267b52f8f617d8364f",
+      "title": "JavaScript Object Oriented Programming Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

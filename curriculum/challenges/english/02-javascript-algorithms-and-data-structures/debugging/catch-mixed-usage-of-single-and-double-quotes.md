@@ -37,13 +37,13 @@ Fix the string so it either uses different quotes for the `href` value, or escap
 Your code should fix the quotes around the `href` value `#Home` by either changing or escaping them.
 
 ```js
-assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
+assert(__helpers.removeJSComments(code).match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
 ```
 
 Your code should keep the double quotes around the entire string.
 
 ```js
-assert(code.match(/"<p>.*?<\/p>";/g));
+assert(__helpers.removeJSComments(code).match(/"<p>.*?<\/p>";/g));
 ```
 
 # --seed--

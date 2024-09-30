@@ -1,0 +1,11 @@
+{
+  "name": "Build a Quiz Game",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-quiz-game",
+  "order": 166,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66f17db06803d11a1bd19a20", "title": "Build a Quiz Game" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

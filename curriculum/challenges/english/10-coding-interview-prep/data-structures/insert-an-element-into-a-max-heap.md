@@ -48,7 +48,7 @@ Finally, add a `print` method which returns an array of all the items that have 
 
 # --hints--
 
-The MaxHeap data structure should exist.
+The `MaxHeap` data structure should exist.
 
 ```js
 assert(
@@ -62,7 +62,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called insert.
+`MaxHeap` should have a method called `insert`.
 
 ```js
 assert(
@@ -78,7 +78,7 @@ assert(
 );
 ```
 
-MaxHeap should have a method called print.
+`MaxHeap` should have a method called `print`.
 
 ```js
 assert(
@@ -94,7 +94,7 @@ assert(
 );
 ```
 
-The insert method should add elements according to the max heap property.
+The `insert` method should add elements according to the max heap property.
 
 ```js
 assert(
@@ -110,8 +110,12 @@ assert(
     test.insert(700);
     test.insert(32);
     test.insert(51);
-    let result = test.print();
-    return result.length == 5 ? result[0] == 700 : result[1] == 700;
+    test.insert(800);
+    const result = test.print();
+    const solution = JSON.stringify([null,800,51,700,32,50,100]);
+    const solutionWithoutNull = JSON.stringify([800,51,700,32,50,100]);
+
+    return (result.length == 6) ? (JSON.stringify(result) == solutionWithoutNull) : (JSON.stringify(result) == solution);
   })()
 );
 ```

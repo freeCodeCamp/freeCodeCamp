@@ -61,7 +61,7 @@ The `duck` variable should be initialised with `Object.create`.
 ```js
 assert(
   /(let|const|var)\s{1,}duck\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```
@@ -71,7 +71,7 @@ The `beagle` variable should be initialised with `Object.create`.
 ```js
 assert(
   /(let|const|var)\s{1,}beagle\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(
-    code
+    __helpers.removeJSComments(code)
   )
 );
 ```

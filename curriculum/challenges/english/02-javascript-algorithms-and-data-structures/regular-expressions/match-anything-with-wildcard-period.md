@@ -31,7 +31,7 @@ Complete the regex `unRegex` so that it matches the strings `run`, `sun`, `fun`,
 You should use the `.test()` method.
 
 ```js
-assert(code.match(/\.test\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.test\(.*\)/));
 ```
 
 You should use the wildcard character in your regex `unRegex`

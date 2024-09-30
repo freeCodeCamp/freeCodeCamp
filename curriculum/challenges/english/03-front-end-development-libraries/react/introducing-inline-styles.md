@@ -8,7 +8,7 @@ dashedName: introducing-inline-styles
 
 # --description--
 
-There are other complex concepts that add powerful capabilities to your React code. But you may be wondering about the more simple problem of how to style those JSX elements you create in React. You likely know that it won't be exactly the same as working with HTML because of [the way you apply classes to JSX elements](/learn/front-end-development-libraries/react/define-an-html-class-in-jsx).
+There are other complex concepts that add powerful capabilities to your React code. But you may be wondering about the more simple problem of how to style those JSX elements you create in React. You likely know that it won't be exactly the same as working with HTML because of <a href="/learn/front-end-development-libraries/react/define-an-html-class-in-jsx" target="_blank" rel="noopener noreferrer nofollow">the way you apply classes to JSX elements</a>.
 
 If you import styles from a stylesheet, it isn't much different at all. You apply a class to your JSX element using the `className` attribute, and apply styles to the class in your stylesheet. Another option is to apply inline styles, which are very common in ReactJS development.
 
@@ -30,7 +30,7 @@ Notice how we camelCase the `fontSize` property? This is because React will not 
 
 Add a `style` attribute to the `div` in the code editor to give the text a color of red and font size of `72px`.
 
-Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `72px`.
+Note that you can optionally set the font size to be a number, omitting the units `px`, or write it as `"72px"`.
 # --hints--
 
 The component should render a `div` element.

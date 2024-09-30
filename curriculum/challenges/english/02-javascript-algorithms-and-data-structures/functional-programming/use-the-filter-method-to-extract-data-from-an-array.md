@@ -10,7 +10,7 @@ dashedName: use-the-filter-method-to-extract-data-from-an-array
 
 Another useful array function is `Array.prototype.filter()`, or simply `filter()`.
 
-`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns `true`. In other words, it filters the array, based on the function passed to it. Like `map`, it does this without needing to modify the original array.
+`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns a truthy value - that is, a value which returns `true` if passed to the `Boolean()` constructor. In other words, it filters the array, based on the function passed to it. Like `map`, it does this without needing to modify the original array.
 
 The callback function accepts three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `filter` method was called.
 
@@ -46,16 +46,16 @@ assert(
 Your code should use the `filter` method.
 
 ```js
-assert(code.match(/\s*\.\s*filter/g));
+assert(__helpers.removeJSComments(code).match(/\s*\.\s*filter/g));
 ```
 
 Your code should not use a `for` loop.
 
 ```js
-assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/g));
 ```
 
-`filteredList` should equal `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`.
+`filteredList` should equal `[{"title": "Inception", "rating": "8.8"}, {"title": "Interstellar", "rating": "8.6"}, {"title": "The Dark Knight", "rating": "9.0"}, {"title": "Batman Begins", "rating": "8.3"}]`.
 
 ```js
 assert.deepEqual(filteredList, [
@@ -72,7 +72,7 @@ assert.deepEqual(filteredList, [
 
 ```js
 // The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -187,7 +187,7 @@ var watchList = [
 
 // Only change code below this line
 
-var filteredList;
+const filteredList = "";
 
 // Only change code above this line
 
@@ -197,8 +197,7 @@ console.log(filteredList);
 # --solutions--
 
 ```js
-// The global variable
-var watchList = [
+const watchList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -311,7 +310,5 @@ var watchList = [
   }
 ];
 
-// Only change code below this line
-let filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
-// Only change code above this line
+const filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
 ```

@@ -1,0 +1,13 @@
+{
+  "name": "Relational Database Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-relational-database",
+  "order": 339,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1af82732957c895f0b21a", "title": "Relational Database Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

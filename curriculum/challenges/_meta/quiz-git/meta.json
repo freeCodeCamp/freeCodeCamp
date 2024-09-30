@@ -1,0 +1,11 @@
+{
+  "name": "Git Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-git",
+  "order": 362,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66f1b06a5a5d10cc100af620", "title": "Git Quiz" }],
+  "helpCategory": "Backend Development"
+}

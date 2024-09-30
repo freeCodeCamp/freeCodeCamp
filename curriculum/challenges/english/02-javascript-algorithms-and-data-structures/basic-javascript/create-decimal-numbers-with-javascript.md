@@ -11,7 +11,7 @@ dashedName: create-decimal-numbers-with-javascript
 
 We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.
 
-**Note:** Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. [Details Here](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems).
+**Note:** when you compute numbers, they are computed with finite precision. Operations using floating points may lead to different results than the desired outcome. If you are getting one of these results, open a topic on the <a href="https://forum.freecodecamp.org/" target="_blank" rel="noopener noreferrer nofollow">freeCodeCamp forum</a>.
 
 # --instructions--
 
@@ -42,13 +42,14 @@ assert(myDecimal % 1 != 0);
 ## --seed-contents--
 
 ```js
-var ourDecimal = 5.7;
+const ourDecimal = 5.7;
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myDecimal = 9.9;
+const myDecimal = 9.9;
 ```

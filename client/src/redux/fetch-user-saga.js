@@ -1,30 +1,22 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-
 import { getSessionUser, getUserProfile } from '../utils/ajax';
-import { jwt } from './cookieValues';
 import {
-  fetchUserComplete,
-  fetchUserError,
+  fetchProfileForUserComplete,
   fetchProfileForUserError,
-  fetchProfileForUserComplete
-} from './';
+  fetchUserComplete,
+  fetchUserError
+} from './actions';
 
 function* fetchSessionUser() {
-  if (!jwt) {
-    yield put(fetchUserComplete({ user: {}, username: '' }));
-    return;
-  }
   try {
     const {
-      user = {},
-      result = '',
-      sessionMeta = {}
+      data: { user = {}, result = '' }
     } = yield call(getSessionUser);
     const appUser = user[result] || {};
-    yield put(
-      fetchUserComplete({ user: appUser, username: result, sessionMeta })
-    );
+
+    yield put(fetchUserComplete({ user: appUser, username: result }));
   } catch (e) {
+    console.log('failed to fetch user', e);
     yield put(fetchUserError(e));
   }
 }
@@ -33,10 +25,9 @@ function* fetchOtherUser({ payload: maybeUser = '' }) {
   try {
     const maybeUserLC = maybeUser.toLowerCase();
 
-    const { entities: { user = {} } = {}, result = '' } = yield call(
-      getUserProfile,
-      maybeUserLC
-    );
+    const {
+      data: { entities: { user = {} } = {}, result = '' }
+    } = yield call(getUserProfile, maybeUserLC);
     const otherUser = user[result] || {};
     yield put(
       fetchProfileForUserComplete({ user: otherUser, username: result })

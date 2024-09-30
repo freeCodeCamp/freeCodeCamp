@@ -1,10 +1,14 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import React from 'react';
+import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import {
+  Button,
+  ControlLabel,
+  FormControl,
+  FormGroup,
+  Modal
+} from '@freecodecamp/ui';
 
-import { ButtonSpacer } from '../helpers';
-
-import './danger-zone.css';
+import { Spacer } from '../helpers';
 
 type DeleteModalProps = {
   delete: () => void;
@@ -14,22 +18,20 @@ type DeleteModalProps = {
 
 function DeleteModal(props: DeleteModalProps): JSX.Element {
   const { show, onHide } = props;
-  const email = 'team@freecodecamp.org';
+  const email = 'support@freecodecamp.org';
   const { t } = useTranslation();
+  const [verifyText, setVerifyText] = useState('');
+
+  const handleVerifyTextChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setVerifyText(event.target.value);
+  };
+
   return (
-    <Modal
-      aria-labelledby='modal-title'
-      backdrop={true}
-      bsSize='lg'
-      className='text-center'
-      keyboard={true}
-      onHide={onHide}
-      show={show}
-    >
-      <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>
-          {t('settings.danger.delete-title')}
-        </Modal.Title>
+    <Modal onClose={onHide} open={show} variant='danger' size='large'>
+      <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+        {t('settings.danger.delete-title')}
       </Modal.Header>
       <Modal.Body>
         <p>{t('settings.danger.delete-p1')}</p>
@@ -41,31 +43,42 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
             </a>
           </Trans>
         </p>
-        <hr />
+      </Modal.Body>
+      <Modal.Footer>
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='primary'
-          className='btn-invert'
+          size='large'
+          variant='primary'
           onClick={props.onHide}
           type='button'
         >
           {t('settings.danger.nevermind')}
         </Button>
-        <ButtonSpacer />
+        <Spacer size='small' />
+        <FormGroup controlId='verify-delete'>
+          <ControlLabel htmlFor='verify-delete-input'>
+            {t('settings.danger.verify-text', {
+              verifyText: t('settings.danger.verify-delete-text')
+            })}
+          </ControlLabel>
+          <Spacer size='small' />
+          <FormControl
+            onChange={handleVerifyTextChange}
+            value={verifyText}
+            id='verify-delete-input'
+          />
+        </FormGroup>
+        <Spacer size='small' />
         <Button
           block={true}
-          bsSize='lg'
-          bsStyle='danger'
-          className='btn-danger'
+          size='large'
+          variant='danger'
           onClick={props.delete}
+          disabled={verifyText !== t('settings.danger.verify-delete-text')}
           type='button'
         >
           {t('settings.danger.certain')}
         </Button>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );

@@ -14,18 +14,16 @@ The inequality operator (`!=`) is the opposite of the equality operator. It mean
 **Examples**
 
 ```js
-1 !=  2
-1 != "1"
-1 != '1'
-1 != true
-0 != false
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
 ```
-
-In order, these expressions would evaluate to `true`, `false`, `false`, `false`, and `false`.
 
 # --instructions--
 
-Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`
+Add the inequality operator `!=` in the `if` statement so that the function will return the string `Not Equal` when `val` is not equivalent to `99`.
 
 # --hints--
 
@@ -62,7 +60,7 @@ assert(testNotEqual('bob') === 'Not Equal');
 You should use the `!=` operator
 
 ```js
-assert(code.match(/(?!!==)!=/));
+assert(__helpers.removeJSComments(code).match(/(?!!==)!=/));
 ```
 
 # --seed--

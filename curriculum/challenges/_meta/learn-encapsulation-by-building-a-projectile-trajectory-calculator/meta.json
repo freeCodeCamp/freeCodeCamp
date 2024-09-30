@@ -1,0 +1,108 @@
+{
+  "name": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-encapsulation-by-building-a-projectile-trajectory-calculator",
+  "order": 17,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "65f569725359e10d345bc52a",
+      "title": "Step 1"
+    },
+    {
+      "id": "65fd4b3bedee044b4b957d33",
+      "title": "Step 2"
+    },
+    {
+      "id": "65fd4bd84561a14d3e720061",
+      "title": "Step 3"
+    },
+    {
+      "id": "660400f02cf3a76795b82d4e",
+      "title": "Step 4"
+    },
+    {
+      "id": "660fcf3e1b9bb056b2edb567",
+      "title": "Step 5"
+    },
+    {
+      "id": "6616ec0bf9ee8548ce6b0f08",
+      "title": "Step 6"
+    },
+    {
+      "id": "662f9f65c50bd21d05ffdee9",
+      "title": "Step 7"
+    },
+    {
+      "id": "662fa453ec8033322b3ab2e3",
+      "title": "Step 8"
+    },
+    {
+      "id": "6634fa2417d7194b0c9425f9",
+      "title": "Step 9"
+    },
+    {
+      "id": "662fc35902038376c7a00b3c",
+      "title": "Step 10"
+    },
+    {
+      "id": "66671a41b55e531d08ab82b5",
+      "title": "Step 11"
+    },
+    {
+      "id": "6633b26c4f2d603072ef0818",
+      "title": "Step 12"
+    },
+    {
+      "id": "66335223f3e2a31d62d84367",
+      "title": "Step 13"
+    },
+    {
+      "id": "663353465bfb14259717da93",
+      "title": "Step 14"
+    },
+    {
+      "id": "6633b4d3271d5b3aea1c1195",
+      "title": "Step 15"
+    },
+    {
+      "id": "66475bab40e5125c84b03337",
+      "title": "Step 16"
+    },
+    {
+      "id": "66475d40dd42fb614f14fd03",
+      "title": "Step 17"
+    },
+    {
+      "id": "665d949e628d9f3fe305b6e8",
+      "title": "Step 18"
+    },
+    {
+      "id": "66475e40f3891c645d50135e",
+      "title": "Step 19"
+    },
+    {
+      "id": "66475f7b91d7c6681987739d",
+      "title": "Step 20"
+    },
+    {
+      "id": "6633bdc3ca38c068c3735984",
+      "title": "Step 21"
+    },
+    {
+      "id": "66601c3c460ee12fbd669d6a",
+      "title": "Step 22"
+    },
+    {
+      "id": "6633bfcef57e1d70cc3142c6",
+      "title": "Step 23"
+    },
+    {
+      "id": "6633c06601c081735063b528",
+      "title": "Step 24"
+    }
+  ],
+  "helpCategory": "Python"
+}

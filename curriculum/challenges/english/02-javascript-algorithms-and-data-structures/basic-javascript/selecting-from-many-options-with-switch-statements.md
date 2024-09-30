@@ -9,17 +9,17 @@ dashedName: selecting-from-many-options-with-switch-statements
 
 # --description--
 
-If you have many options to choose from, use a <dfn>switch</dfn> statement. A `switch` statement tests a value and can have many <dfn>case</dfn> statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered.
+If you need to match one value against many options, you can use a <dfn>switch</dfn> statement. A `switch` statement compares the value to the <dfn>case</dfn> statements which define various possible values. Any valid JavaScript statements can be executed inside a <dfn>case</dfn> block and will run from the first matched `case` value until a `break` is encountered.
 
 Here is an example of a `switch` statement:
 
 ```js
-switch(lowercaseLetter) {
-  case "a":
-    console.log("A");
+switch (fruit) {
+  case "apple":
+    console.log("The fruit is an apple");
     break;
-  case "b":
-    console.log("B");
+  case "orange":
+    console.log("The fruit is an orange");
     break;
 }
 ```
@@ -63,13 +63,13 @@ assert(caseInSwitch(4) === 'delta');
 You should not use any `if` or `else` statements
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should have at least 3 `break` statements
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--
@@ -78,7 +78,7 @@ assert(code.match(/break/g).length > 2);
 
 ```js
 function caseInSwitch(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -94,9 +94,9 @@ caseInSwitch(1);
 
 ```js
 function caseInSwitch(val) {
-  var answer = "";
+  let answer = "";
 
-  switch(val) {
+  switch (val) {
     case 1:
       answer = "alpha";
       break;

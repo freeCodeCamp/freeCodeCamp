@@ -29,10 +29,6 @@
     "checksum": {
       "type": "number"
     },
-    "isBeta": {
-      "type": "boolean",
-      "description": "Show only during dev or on beta site. Completely omitted otherwise"
-    },
     "isComingSoon": {
       "type": "boolean",
       "description": "Challenge shows in production, but is unreachable and disabled. Is reachable in beta/dev only if isBeta flag is set"

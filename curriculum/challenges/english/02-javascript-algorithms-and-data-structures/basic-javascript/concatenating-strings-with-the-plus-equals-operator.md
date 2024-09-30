@@ -16,7 +16,7 @@ We can also use the `+=` operator to <dfn>concatenate</dfn> a string onto the en
 Example:
 
 ```js
-var ourStr = "I come first. ";
+let ourStr = "I come first. ";
 ourStr += "I come second.";
 ```
 
@@ -28,6 +28,12 @@ Build `myStr` over several lines by concatenating these two strings: `This is th
 
 # --hints--
 
+`myStr` should have a single space character between the two strings.
+
+```js
+assert(/sentence\. This/.test(myStr));
+```
+
 `myStr` should have a value of the string `This is the first sentence. This is the second sentence.`
 
 ```js
@@ -37,7 +43,7 @@ assert(myStr === 'This is the first sentence. This is the second sentence.');
 You should use the `+=` operator to build `myStr`.
 
 ```js
-assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
+assert(__helpers.removeJSComments(code).match(/myStr\s*\+=\s*(["']).*\1/g));
 ```
 
 # --seed--
@@ -57,14 +63,12 @@ assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
 ## --seed-contents--
 
 ```js
-// Only change code below this line
-
-var myStr;
+let myStr;
 ```
 
 # --solutions--
 
 ```js
-var myStr = "This is the first sentence. ";
+let myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 ```

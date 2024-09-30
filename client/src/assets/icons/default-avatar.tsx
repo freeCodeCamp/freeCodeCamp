@@ -8,13 +8,13 @@ function DefaultAvatar(
 
   return (
     <svg
-      className='default-avatar'
       height='500px'
       version='1.1'
       viewBox='0 0 500 500'
       width='500px'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
+      aria-hidden='true'
       {...props}
     >
       <title>{t('icons.avatar')}</title>

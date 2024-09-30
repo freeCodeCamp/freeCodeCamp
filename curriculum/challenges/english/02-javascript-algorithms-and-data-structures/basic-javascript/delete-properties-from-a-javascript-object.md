@@ -18,7 +18,7 @@ delete ourDog.bark;
 Example:
 
 ```js
-var ourDog = {
+const ourDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,
@@ -55,7 +55,7 @@ assert(typeof myDog === 'object' && myDog.tails === undefined);
 You should not modify the `myDog` setup.
 
 ```js
-assert(code.match(/"tails": 1/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/"tails": 1/g).length > 0);
 ```
 
 # --seed--
@@ -70,7 +70,7 @@ assert(code.match(/"tails": 1/g).length > 0);
 
 ```js
 // Setup
-var myDog = {
+const myDog = {
   "name": "Happy Coder",
   "legs": 4,
   "tails": 1,
@@ -79,12 +79,13 @@ var myDog = {
 };
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Happy Coder",
   "legs": 4,
   "tails": 1,

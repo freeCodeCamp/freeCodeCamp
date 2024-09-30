@@ -15,7 +15,8 @@
 
 .quote-wrapper {
   background-color: var(--tertiary-background);
-  padding: 20px 20px 20px 42px;
+  padding-inline: 42px 20px;
+  padding-block: 20px;
   border-width: 0;
   position: relative;
   max-width: 980px;
@@ -28,18 +29,10 @@
   text-align: left;
 }
 
-.quote-wrapper span {
-  font-size: 50px;
+.quote-wrapper .quote::before {
+  content: open-quote;
+  font-size: 25px;
   font-weight: 700;
-  color: var(--tertiary-color);
-  font-family: 'Arial', sans-serif;
-  font-style: normal;
-  padding-left: 15px;
-  padding-top: 5px;
-  position: absolute;
-  border-radius: 0;
-  top: 0;
-  left: 0;
 }
 
 .quote-wrapper .author {

@@ -1,5 +1,5 @@
 const path = require('path');
-const envData = require('../config/env.json');
+const envData = require('./config/env.json');
 const {
   buildChallenges,
   replaceChallengeNode,
@@ -9,10 +9,7 @@ const {
 const { clientLocale, curriculumLocale, homeLocation } = envData;
 
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
-const pathPrefix =
-  clientLocale === 'english' || clientLocale === 'chinese'
-    ? ''
-    : '/' + clientLocale;
+const pathPrefix = clientLocale === 'english' ? '' : '/' + clientLocale;
 
 module.exports = {
   flags: {
@@ -24,6 +21,7 @@ module.exports = {
   },
   pathPrefix: pathPrefix,
   plugins: [
+    'gatsby-plugin-pnpm',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
@@ -32,7 +30,14 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postcssOptions: {
+          config: path.resolve(__dirname, 'postcss.config.js')
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-create-client-paths',
       options: {
@@ -46,7 +51,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'fcc-source-challenges',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-source-challenges'
+      ),
       options: {
         name: 'challenges',
         source: buildChallenges,
@@ -65,7 +72,9 @@ module.exports = {
       resolve: 'gatsby-transformer-remark'
     },
     {
-      resolve: 'gatsby-remark-node-identity',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-remark-node-identity'
+      ),
       options: {
         identity: 'blockIntroMarkdown',
         predicate: ({ frontmatter }) => {
@@ -78,7 +87,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-remark-node-identity',
+      resolve: require.resolve(
+        '../tools/client-plugins/gatsby-remark-node-identity'
+      ),
       options: {
         identity: 'superBlockIntroMarkdown',
         predicate: ({ frontmatter }) => {
@@ -90,30 +101,14 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-advanced-sitemap`,
-    //   options: {
-    //     exclude: [
-    //       `/dev-404-page`,
-    //       `/404`,
-    //       `/404.html`,
-    //       `/offline-plugin-app-shell-fallback`,
-    //       `/learn`,
-    //       /(\/)learn(\/)\S*/
-    //     ],
-    //     addUncaughtPages: true
-    //   }
-    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'freeCodeCamp',
-        /* eslint-disable camelcase */
         short_name: 'fCC',
         start_url: '/',
         theme_color: '#0a0a23',
         background_color: '#fff',
-        /* eslint-enable camelcase */
         display: 'minimal-ui',
         icon: 'src/assets/images/square_puck.png'
       }

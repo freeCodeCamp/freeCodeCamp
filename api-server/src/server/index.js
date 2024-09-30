@@ -2,30 +2,19 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 
 const Sentry = require('@sentry/node');
+// const Tracing = require('@sentry/tracing');
 const createDebugger = require('debug');
 const _ = require('lodash');
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 const morgan = require('morgan');
 
-const { sentry } = require('../../../config/secrets');
+const { sentry } = require('../../config/secrets');
 const { setupPassport } = require('./component-passport');
+const { getRedirectParams } = require('./utils/redirection.js');
 
 const log = createDebugger('fcc:server');
 const reqLogFormat = ':date[iso] :status :method :response-time ms - :url';
-
-// force logger to always output
-// this may be brittle
-log.enabled = true;
-
-if (sentry.dns === 'dsn_from_sentry_dashboard') {
-  log('Sentry reporting disabled unless DSN is provided.');
-} else {
-  Sentry.init({
-    dsn: sentry.dns
-  });
-  log('Sentry initialized');
-}
 
 const app = loopback();
 
@@ -66,6 +55,7 @@ db.on(
   'connected',
   _.once(() => log('db connected'))
 );
+
 app.start = _.once(function () {
   const server = app.listen(app.get('port'), function () {
     app.emit('started');
@@ -92,6 +82,33 @@ app.start = _.once(function () {
     });
   });
 });
+
+if (process.env.FREECODECAMP_NODE_ENV === 'development') {
+  app.get('/', (req, res) => {
+    log('Mounting dev root redirect...');
+    const { origin } = getRedirectParams(req);
+    res.redirect(origin);
+  });
+}
+
+if (sentry.dsn === 'dsn_from_sentry_dashboard') {
+  log('Sentry reporting disabled unless DSN is provided.');
+} else {
+  Sentry.init({
+    dsn: sentry.dsn
+    // integrations: [
+    //   new Sentry.Integrations.Http({ tracing: true }),
+    //   new Tracing.Integrations.Express({
+    //     app
+    //   })
+    // ],
+    // // Capture 20% of transactions to avoid
+    // // overwhelming Sentry and remain within
+    // // the usage quota
+    // tracesSampleRate: 0.2
+  });
+  log('Sentry initialized');
+}
 
 module.exports = app;
 

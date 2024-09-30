@@ -2,7 +2,7 @@ import React from 'react';
 import { Hit } from 'react-instantsearch-core';
 import { Highlight } from 'react-instantsearch-dom';
 
-interface suggestionPropTypes {
+interface SuggestionProps {
   hit: Hit;
   handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
   handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
@@ -12,7 +12,7 @@ const Suggestion = ({
   hit,
   handleMouseEnter,
   handleMouseLeave
-}: suggestionPropTypes): JSX.Element => {
+}: SuggestionProps): JSX.Element => {
   const dropdownFooter = hit.objectID.includes('footer-');
   return (
     <a

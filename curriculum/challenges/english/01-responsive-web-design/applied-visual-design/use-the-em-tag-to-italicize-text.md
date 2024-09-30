@@ -20,13 +20,16 @@ Wrap an `em` tag around the contents of the paragraph tag to give it emphasis.
 Your code should add an `em` tag to the markup.
 
 ```js
-assert($('em').length == 1);
+assert.lengthOf(document.querySelectorAll('em'),1);
 ```
 
 The `em` tag should wrap around the contents of the `p` tag but not the `p` tag itself.
 
 ```js
-assert($('p').children().length == 1 && $('em').children().length == 2);
+const paragraphElement = document.querySelector('p');
+const emElement = document.querySelector('em');
+assert.lengthOf(paragraphElement?.children, 1);
+assert.lengthOf(emElement?.children, 2);
 ```
 
 # --seed--

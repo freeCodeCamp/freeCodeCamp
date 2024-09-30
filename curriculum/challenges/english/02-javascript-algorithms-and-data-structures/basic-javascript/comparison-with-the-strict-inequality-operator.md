@@ -14,12 +14,10 @@ The strict inequality operator (`!==`) is the logical opposite of the strict equ
 **Examples**
 
 ```js
-3 !==  3
-3 !== '3'
-4 !==  3
+3 !==  3  // false
+3 !== '3' // true
+4 !==  3  // true
 ```
-
-In order, these expressions would evaluate to `false`, `true`, and `true`.
 
 # --instructions--
 
@@ -54,7 +52,7 @@ assert(testStrictNotEqual('bob') === 'Not Equal');
 You should use the `!==` operator
 
 ```js
-assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
+assert(__helpers.removeJSComments(code).match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
 ```
 
 # --seed--

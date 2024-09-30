@@ -39,9 +39,9 @@ The `oranges`, `plums`, and `strawberries` keys should be removed using `delete`
 
 ```js
 assert(
-  code.search(/oranges:/) !== -1 &&
-    code.search(/plums:/) !== -1 &&
-    code.search(/strawberries:/) !== -1
+  __helpers.removeJSComments(code).search(/oranges:/) !== -1 &&
+    __helpers.removeJSComments(code).search(/plums:/) !== -1 &&
+    __helpers.removeJSComments(code).search(/strawberries:/) !== -1
 );
 ```
 

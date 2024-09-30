@@ -1,0 +1,12 @@
+{
+  "name": "Build a Student Database: Part 1",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-sql-student-database-part-1",
+  "order": 345,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "602da0c222201c65d2a019f5", "title": "Build a Student Database: Part 1" }],
+  "helpCategory": "Backend Development"
+}

@@ -9,11 +9,11 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-Instead of generating a random whole number between zero and a given number like we did before, we can generate a random whole number that falls within a range of two specific numbers.
+You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
 
-To do this, we'll define a minimum number `min` and a maximum number `max`.
+You'll call your minimum number `min` and your maximum number `max`.
 
-Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
+This formula gives a random whole number in the range from `min` to `max`. Take a moment to read it and try to understand what this code is doing:
 
 ```js
 Math.floor(Math.random() * (max - min + 1)) + min
@@ -21,7 +21,7 @@ Math.floor(Math.random() * (max - min + 1)) + min
 
 # --instructions--
 
-Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin`, and is less than or equal to `myMax`, inclusive.
+Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin` and less than or equal to `myMax`.
 
 # --hints--
 
@@ -49,10 +49,10 @@ assert(randomRange(0, 1) % 1 === 0);
 assert(
   (function () {
     if (
-      code.match(/myMax/g).length > 1 &&
-      code.match(/myMin/g).length > 2 &&
-      code.match(/Math.floor/g) &&
-      code.match(/Math.random/g)
+      __helpers.removeJSComments(code).match(/myMax/g).length > 1 &&
+      __helpers.removeJSComments(code).match(/myMin/g).length > 2 &&
+      __helpers.removeJSComments(code).match(/Math.floor/g) &&
+      __helpers.removeJSComments(code).match(/Math.random/g)
     ) {
       return true;
     } else {
@@ -87,9 +87,7 @@ for(var i = 0; i < 100; i++) {
 
 ```js
 function randomRange(myMin, myMax) {
-  // Only change code below this line
   return 0;
-  // Only change code above this line
 }
 ```
 

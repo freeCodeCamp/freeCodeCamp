@@ -1,4 +1,4 @@
-var secrets = require('../../../config/secrets');
+var secrets = require('../../config/secrets');
 
 module.exports = {
   db: {
@@ -7,6 +7,7 @@ module.exports = {
     connectionTimeout: 10000,
     url: secrets.db,
     useNewUrlParser: true,
+    useUnifiedTopology: true,
     allowExtendedOperators: true
   },
   mail: {

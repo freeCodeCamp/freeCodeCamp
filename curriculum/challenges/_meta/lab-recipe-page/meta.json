@@ -1,0 +1,16 @@
+{
+  "name": "Build a Recipe Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-recipe-page",
+  "order": 3,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "668f08ea07b99b1f4a91acab",
+      "title": "Build a Recipe Page"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

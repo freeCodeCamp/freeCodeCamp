@@ -1,0 +1,11 @@
+{
+  "name": "Build a Palindrome Checker",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-palindrome-checker",
+  "order": 199,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "657bdc55a322aae1eac3838f", "title": "Build a Palindrome Checker" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

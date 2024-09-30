@@ -71,7 +71,7 @@ assert(switchOfStuff(4) === 'stuff');
 You should not use any `if` or `else` statements
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should use a `default` statement
@@ -83,7 +83,7 @@ assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
 You should have at least 3 `break` statements
 
 ```js
-assert(code.match(/break/g).length > 2);
+assert(__helpers.removeJSComments(code).match(/break/g).length > 2);
 ```
 
 # --seed--
@@ -92,7 +92,7 @@ assert(code.match(/break/g).length > 2);
 
 ```js
 function switchOfStuff(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -108,7 +108,7 @@ switchOfStuff(1);
 
 ```js
 function switchOfStuff(val) {
-  var answer = "";
+  let answer = "";
 
   switch(val) {
     case "a":

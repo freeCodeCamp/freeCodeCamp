@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-me
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on [Replit](https://replit.com/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
+As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 When you test a `PUT` request, you'll often send data along with it. The data you include with your `PUT` request is called the body of the request.
 
@@ -17,6 +17,7 @@ To send a `PUT` request and a JSON object to the `'/travellers'` endpoint, you c
 ```js
 chai
   .request(server)
+  .keepOpen()
   .put('/travellers')
   .send({
     "surname": [last name of a traveller of the past]
@@ -137,12 +138,3 @@ You should test for `res.body.surname` to be `'Colombo'`.
   );
 ```
 
-# --solutions--
-
-```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
-```

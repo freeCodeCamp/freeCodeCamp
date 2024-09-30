@@ -2,26 +2,28 @@ import {
   HelpBlock,
   Alert,
   FormGroup,
-  ControlLabel,
+  FormGroupProps,
   FormControl,
+  ControlLabel,
   Button
-} from '@freecodecamp/react-bootstrap';
-import { Link } from 'gatsby';
-import React, { Component } from 'react';
-import { TFunction, Trans, withTranslation } from 'react-i18next';
+} from '@freecodecamp/ui';
+import React, { useState } from 'react';
+import type { TFunction } from 'i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import isEmail from 'validator/lib/isEmail';
 
-import { updateMyEmail } from '../../redux/settings';
+import { updateMyEmail } from '../../redux/settings/actions';
 import { maybeEmailRE } from '../../utils';
 
 import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 import Spacer from '../helpers/spacer';
+import Link from '../helpers/link';
 import SectionHeader from './section-header';
-import ToggleSetting from './toggle-setting';
+import ToggleButtonSetting from './toggle-button-setting';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -36,70 +38,54 @@ type EmailProps = {
   updateQuincyEmail: (sendQuincyEmail: boolean) => void;
 };
 
-type EmailState = {
-  emailForm: {
-    currentEmail: string;
-    newEmail: string;
-    confirmNewEmail: string;
-    isPristine: boolean;
-  };
-};
-
-export function UpdateEmailButton(this: EmailSettings): JSX.Element {
-  const { t } = this.props;
-  return (
-    <Link style={{ textDecoration: 'none' }} to='/update-email'>
-      <Button block={true} bsSize='lg' bsStyle='primary'>
-        {t('buttons.edit')}
-      </Button>
-    </Link>
-  );
+interface EmailForm {
+  currentEmail: string;
+  newEmail: string;
+  confirmNewEmail: string;
+  isPristine: boolean;
 }
 
-class EmailSettings extends Component<EmailProps, EmailState> {
-  static displayName: string;
-  constructor(props: EmailProps) {
-    super(props);
+interface EmailValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
 
-    this.state = {
-      emailForm: {
-        currentEmail: props.email,
-        newEmail: '',
-        confirmNewEmail: '',
-        isPristine: true
-      }
+function EmailSettings({
+  email,
+  isEmailVerified,
+  sendQuincyEmail,
+  t,
+  updateMyEmail,
+  updateQuincyEmail
+}: EmailProps): JSX.Element {
+  const [emailForm, setEmailForm] = useState<EmailForm>({
+    currentEmail: email,
+    newEmail: '',
+    confirmNewEmail: '',
+    isPristine: true
+  });
+
+  function handleSubmit(e: React.FormEvent): void {
+    e.preventDefault();
+    updateMyEmail(emailForm.newEmail);
+  }
+
+  function createHandleEmailFormChange(
+    key: 'newEmail' | 'confirmNewEmail'
+  ): (e: React.ChangeEvent<HTMLInputElement>) => void {
+    return e => {
+      e.preventDefault();
+      const userInput = e.target.value.slice();
+      setEmailForm(prev => ({
+        ...prev,
+        [key]: userInput,
+        isPristine: userInput === prev.currentEmail
+      }));
     };
   }
 
-  handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const {
-      emailForm: { newEmail }
-    } = this.state;
-    const { updateMyEmail } = this.props;
-    return updateMyEmail(newEmail);
-  };
-
-  createHandleEmailFormChange =
-    (key: 'newEmail' | 'confirmNewEmail') =>
-    (e: React.FormEvent<HTMLInputElement>) => {
-      e.preventDefault();
-      const userInput = (e.target as HTMLInputElement).value.slice();
-      return this.setState(state => ({
-        emailForm: {
-          ...state.emailForm,
-          [key]: userInput,
-          isPristine: userInput === state.emailForm.currentEmail
-        }
-      }));
-    };
-
-  getValidationForNewEmail = () => {
-    const {
-      emailForm: { newEmail, currentEmail }
-    } = this.state;
-    const { t } = this.props;
-
+  function getValidationForNewEmail(): EmailValidation {
+    const { newEmail, currentEmail } = emailForm;
     if (!maybeEmailRE.test(newEmail)) {
       return {
         state: null,
@@ -120,14 +106,10 @@ class EmailSettings extends Component<EmailProps, EmailState> {
         message: t('validation.invalid-email')
       };
     }
-  };
+  }
 
-  getValidationForConfirmEmail = () => {
-    const {
-      emailForm: { confirmNewEmail, newEmail }
-    } = this.state;
-    const { t } = this.props;
-
+  function getValidationForConfirmEmail(): EmailValidation {
+    const { confirmNewEmail, newEmail } = emailForm;
     if (!maybeEmailRE.test(newEmail)) {
       return {
         state: null,
@@ -146,111 +128,137 @@ class EmailSettings extends Component<EmailProps, EmailState> {
         message: ''
       };
     }
-  };
+  }
 
-  render() {
-    const {
-      emailForm: { newEmail, confirmNewEmail, currentEmail, isPristine }
-    } = this.state;
+  const { newEmail, confirmNewEmail, currentEmail, isPristine } = emailForm;
 
-    const { isEmailVerified, updateQuincyEmail, sendQuincyEmail, t } =
-      this.props;
+  const { state: newEmailValidation, message: newEmailValidationMessage } =
+    getValidationForNewEmail();
 
-    const { state: newEmailValidation, message: newEmailValidationMessage } =
-      this.getValidationForNewEmail();
-
-    const {
-      state: confirmEmailValidation,
-      message: confirmEmailValidationMessage
-    } = this.getValidationForConfirmEmail();
-
-    if (!currentEmail) {
-      return (
-        <div>
-          <FullWidthRow>
-            <p className='large-p text-center'>{t('settings.email.missing')}</p>
-          </FullWidthRow>
-          <FullWidthRow>
-            <UpdateEmailButton />
-          </FullWidthRow>
-        </div>
-      );
-    }
+  const {
+    state: confirmEmailValidation,
+    message: confirmEmailValidationMessage
+  } = getValidationForConfirmEmail();
+  const isDisabled =
+    newEmailValidation !== 'success' ||
+    confirmEmailValidation !== 'success' ||
+    isPristine;
+  if (!currentEmail) {
     return (
-      <div className='email-settings'>
-        <SectionHeader>{t('settings.email.heading')}</SectionHeader>
-        {isEmailVerified ? null : (
-          <FullWidthRow>
-            <HelpBlock>
-              <Alert bsStyle='info' className='text-center'>
-                {t('settings.email.not-verified')}
-                <br />
-                <Trans i18nKey='settings.email.check'>
-                  <Link to='/update-email' />
-                </Trans>
-              </Alert>
-            </HelpBlock>
-          </FullWidthRow>
-        )}
+      <div>
         <FullWidthRow>
-          <form id='form-update-email' onSubmit={this.handleSubmit}>
-            <FormGroup controlId='current-email'>
-              <ControlLabel>{t('settings.email.current')}</ControlLabel>
-              <FormControl.Static>{currentEmail}</FormControl.Static>
-            </FormGroup>
+          <p className='large-p text-center'>{t('settings.email.missing')}</p>
+        </FullWidthRow>
+        <FullWidthRow>
+          <Button
+            block={true}
+            size='large'
+            variant='primary'
+            href='/update-email'
+          >
+            {t('buttons.edit')}
+          </Button>
+        </FullWidthRow>
+      </div>
+    );
+  }
+  return (
+    <div className='email-settings'>
+      <SectionHeader>{t('settings.email.heading')}</SectionHeader>
+      {isEmailVerified ? null : (
+        <FullWidthRow>
+          <HelpBlock>
+            <Alert
+              variant='info'
+              className='text-center'
+              data-playwright-test-label='email-verification-alert'
+            >
+              {t('settings.email.not-verified')}
+              <br />
+              <Trans i18nKey='settings.email.check'>
+                <Link
+                  data-playwright-test-label='email-verification-link'
+                  to='/update-email'
+                />
+              </Trans>
+            </Alert>
+          </HelpBlock>
+        </FullWidthRow>
+      )}
+      <FullWidthRow>
+        <form
+          id='form-update-email'
+          {...(!isDisabled
+            ? { onSubmit: handleSubmit }
+            : { onSubmit: e => e.preventDefault() })}
+        >
+          <FormGroup controlId='current-email'>
+            <ControlLabel>{t('settings.email.current')}</ControlLabel>
+            <FormControl.Static>{currentEmail}</FormControl.Static>
+          </FormGroup>
+          <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
             >
-              <ControlLabel>{t('settings.email.new')}</ControlLabel>
+              <ControlLabel htmlFor='new-email-input'>
+                {t('settings.email.new')}
+              </ControlLabel>
               <FormControl
-                onChange={this.createHandleEmailFormChange('newEmail')}
+                onChange={createHandleEmailFormChange('newEmail')}
                 type='email'
                 value={newEmail}
+                id='new-email-input'
               />
               {newEmailValidationMessage ? (
-                <HelpBlock>{newEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-playwright-test-label='new-email-validation'>
+                  {newEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
             <FormGroup
               controlId='confirm-email'
               validationState={confirmEmailValidation}
             >
-              <ControlLabel>{t('settings.email.confirm')}</ControlLabel>
+              <ControlLabel htmlFor='confirm-email-input'>
+                {t('settings.email.confirm')}
+              </ControlLabel>
               <FormControl
-                onChange={this.createHandleEmailFormChange('confirmNewEmail')}
+                onChange={createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
                 value={confirmNewEmail}
+                id='confirm-email-input'
               />
               {confirmEmailValidationMessage ? (
-                <HelpBlock>{confirmEmailValidationMessage}</HelpBlock>
+                <HelpBlock data-playwright-test-label='confirm-email-validation'>
+                  {confirmEmailValidationMessage}
+                </HelpBlock>
               ) : null}
             </FormGroup>
-            <BlockSaveButton
-              disabled={
-                newEmailValidation !== 'success' ||
-                confirmEmailValidation !== 'success' ||
-                isPristine
-              }
-            />
-          </form>
-        </FullWidthRow>
-        <Spacer />
-        <FullWidthRow>
-          <form id='form-quincy-email' onSubmit={this.handleSubmit}>
-            <ToggleSetting
-              action={t('settings.email.weekly')}
-              flag={sendQuincyEmail}
-              flagName='sendQuincyEmail'
-              offLabel={t('buttons.no-thanks')}
-              onLabel={t('buttons.yes-please')}
-              toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
-            />
-          </form>
-        </FullWidthRow>
-      </div>
-    );
-  }
+          </div>
+          <BlockSaveButton
+            disabled={isDisabled}
+            bgSize='large'
+            {...(isDisabled && { tabIndex: -1 })}
+          >
+            {t('buttons.save')}{' '}
+            <span className='sr-only'>{t('settings.email.heading')}</span>
+          </BlockSaveButton>
+        </form>
+      </FullWidthRow>
+      <Spacer size='medium' />
+      <FullWidthRow>
+        <ToggleButtonSetting
+          action={t('settings.email.weekly')}
+          flag={sendQuincyEmail}
+          flagName='sendQuincyEmail'
+          offLabel={t('buttons.no-thanks')}
+          onLabel={t('buttons.yes-please')}
+          toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
+        />
+      </FullWidthRow>
+    </div>
+  );
 }
 
 EmailSettings.displayName = 'EmailSettings';

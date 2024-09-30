@@ -46,6 +46,25 @@ assert(
 );
 ```
 
+Trying to remove an element from an empty tree should return `null`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.remove !== 'function') {
+      return false;
+    }
+    return test.remove(100) == null;
+  })()
+);
+```
+
 Trying to remove an element that does not exist should return `null`.
 
 ```js
@@ -60,6 +79,8 @@ assert(
     if (typeof test.remove !== 'function') {
       return false;
     }
+    test.add(15);
+    test.add(30);
     return test.remove(100) == null;
   })()
 );

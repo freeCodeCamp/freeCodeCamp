@@ -1,0 +1,66 @@
+{
+  "aa-test": {
+    "defaultValue": false
+  },
+  "aa-test-in-component": {
+    "defaultValue": false
+  },
+  "landing-page-redesign": {
+    "defaultValue": false,
+    "rules": [
+      {
+        "coverage": 1,
+        "hashAttribute": "id",
+        "seed": "landing-page-redesign",
+        "hashVersion": 2,
+        "variations": [false, true],
+        "weights": [0.5, 0.5],
+        "key": "landing-page-redesign",
+        "meta": [
+          {
+            "key": "0",
+            "name": "Control"
+          },
+          {
+            "key": "1",
+            "name": "Variation 1"
+          }
+        ],
+        "phase": "0",
+        "name": "tests the conversion rate of the new design comparing to the old one"
+      }
+    ]
+  },
+  "show-modal-randomly": {
+    "defaultValue": false,
+    "rules": [
+      {
+        "coverage": 1,
+        "hashAttribute": "id",
+        "seed": "show-modal-randomly",
+        "hashVersion": 2,
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "key": "show-modal-randomly",
+        "meta": [
+          {
+            "key": "0",
+            "name": "Control"
+          },
+          {
+            "key": "1",
+            "name": "Variation 1"
+          }
+        ],
+        "phase": "0",
+        "name": "stg show modal randomly"
+      }
+    ]
+  }
+}

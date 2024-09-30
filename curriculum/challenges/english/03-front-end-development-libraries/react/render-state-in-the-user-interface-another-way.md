@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`MyComponent` should render an `h1` header enclosed in a single `div`.
+`MyComponent` should render an `h1` heading element enclosed in a single `div`.
 
 ```js
 assert(
@@ -44,7 +44,7 @@ The rendered `h1` tag should include a reference to `{name}`.
   assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')));
 ```
 
-The rendered `h1` header should contain text rendered from the component's state.
+The rendered `h1` heading element should contain text rendered from the component's state.
 
 ```js
 async () => {

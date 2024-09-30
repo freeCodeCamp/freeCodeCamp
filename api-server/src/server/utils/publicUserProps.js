@@ -1,16 +1,11 @@
 import { isURL } from 'validator';
 
-import {
-  prepUniqueDaysByHours,
-  calcCurrentStreak,
-  calcLongestStreak
-} from '../utils/user-stats';
-import { addPlaceholderImage } from './';
-
 export const publicUserProps = [
   'about',
   'calendar',
   'completedChallenges',
+  'completedExams',
+  'completedSurveys',
   'githubProfile',
   'isApisMicroservicesCert',
   'isBackEndCert',
@@ -26,18 +21,23 @@ export const publicUserProps = [
   'isQaCertV7',
   'isInfosecCertV7',
   'isJsAlgoDataStructCert',
+  'isRelationalDatabaseCertV8',
   'isRespWebDesignCert',
   'isSciCompPyCertV7',
   'isDataAnalysisPyCertV7',
   'isMachineLearningPyCertV7',
+  'isCollegeAlgebraPyCertV8',
+  'isFoundationalCSharpCertV8',
+  'isJsAlgoDataStructCertV8',
   'linkedin',
   'location',
   'name',
+  'partiallyCompletedChallenges',
   'points',
   'portfolio',
   'profileUI',
   'projects',
-  'streak',
+  'savedChallenges',
   'twitter',
   'username',
   'website',
@@ -52,17 +52,14 @@ export const userPropsForSession = [
   'id',
   'sendQuincyEmail',
   'theme',
+  'keyboardShortcuts',
   'completedChallengeCount',
-  'completedProjectCount',
-  'completedCertCount',
-  'completedLegacyCertCount',
-  'acceptedPrivacyTerms',
-  'donationEmails'
+  'acceptedPrivacyTerms'
 ];
 
 export function normaliseUserFields(user) {
   const about = user.bio && !user.about ? user.bio : user.about;
-  const picture = user.picture || addPlaceholderImage(user.username);
+  const picture = user.picture || '';
   const twitter =
     user.twitter && isURL(user.twitter)
       ? user.twitter
@@ -71,17 +68,12 @@ export function normaliseUserFields(user) {
   return { about, picture, twitter };
 }
 
-export function getProgress(progressTimestamps, timezone = 'EST') {
+export function getProgress(progressTimestamps) {
   const calendar = progressTimestamps
     .filter(Boolean)
     .reduce((data, timestamp) => {
       data[Math.floor(timestamp / 1000)] = 1;
       return data;
     }, {});
-  const uniqueHours = prepUniqueDaysByHours(progressTimestamps, timezone);
-  const streak = {
-    longest: calcLongestStreak(uniqueHours, timezone),
-    current: calcCurrentStreak(uniqueHours, timezone)
-  };
-  return { calendar, streak };
+  return { calendar };
 }

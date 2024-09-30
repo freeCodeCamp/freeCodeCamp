@@ -18,6 +18,7 @@ function ascendingOrder(arr) {
     return a - b;
   });
 }
+
 ascendingOrder([1, 5, 2, 3, 4]);
 ```
 
@@ -29,6 +30,7 @@ function reverseAlpha(arr) {
     return a === b ? 0 : a < b ? 1 : -1;
   });
 }
+
 reverseAlpha(['l', 'h', 'z', 'b', 's']);
 ```
 
@@ -45,7 +47,7 @@ Use the `sort` method in the `alphabeticalOrder` function to sort the elements o
 Your code should use the `sort` method.
 
 ```js
-assert(code.match(/\.sort/g));
+assert(__helpers.removeJSComments(code).match(/\.sort/g));
 ```
 
 `alphabeticalOrder(["a", "d", "c", "a", "z", "g"])` should return `["a", "a", "c", "d", "g", "z"]`.
@@ -86,6 +88,7 @@ function alphabeticalOrder(arr) {
   return arr
   // Only change code above this line
 }
+
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
 
@@ -93,9 +96,6 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 ```js
 function alphabeticalOrder(arr) {
-  // Only change code below this line
   return arr.sort();
-  // Only change code above this line
 }
-alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```

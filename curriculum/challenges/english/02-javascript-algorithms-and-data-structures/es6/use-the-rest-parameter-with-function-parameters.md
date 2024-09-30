@@ -22,7 +22,7 @@ console.log(howMany("string", null, [1, 2, 3], { }));
 
 The console would display the strings `You have passed 3 arguments.` and `You have passed 4 arguments.`.
 
-The rest parameter eliminates the need to check the `args` array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array.
+The rest parameter eliminates the need to use the `arguments` object and allows us to use array methods on the array of parameters passed to the function `howMany`.
 
 # --instructions--
 
@@ -57,7 +57,7 @@ assert(sum() === 0);
 `sum` should be an arrow function which uses the rest parameter syntax (`...`) on the `args` parameter.
 
 ```js
-assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/sum=\(\.\.\.args\)=>/));
 ```
 
 # --seed--
@@ -67,7 +67,11 @@ assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
 ```js
 const sum = (x, y, z) => {
   const args = [x, y, z];
-  return args.reduce((a, b) => a + b, 0);
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```
 
@@ -75,6 +79,10 @@ const sum = (x, y, z) => {
 
 ```js
 const sum = (...args) => {
-  return args.reduce((a, b) => a + b, 0);
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
 }
 ```

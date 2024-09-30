@@ -23,60 +23,70 @@ Write a regex `fccRegex` to match `freeCodeCamp`, no matter its case. Your regex
 Your regex should match the string `freeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0; 
 assert(fccRegex.test('freeCodeCamp'));
 ```
 
 Your regex should match the string `FreeCodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodeCamp'));
 ```
 
 Your regex should match the string `FreecodeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreecodeCamp'));
 ```
 
 Your regex should match the string `FreeCodecamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCodecamp'));
 ```
 
 Your regex should not match the string `Free Code Camp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('Free Code Camp'));
 ```
 
 Your regex should match the string `FreeCOdeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FreeCOdeCamp'));
 ```
 
 Your regex should not match the string `FCC`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(!fccRegex.test('FCC'));
 ```
 
 Your regex should match the string `FrEeCoDeCamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCoDeCamp'));
 ```
 
 Your regex should match the string `FrEeCodECamp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FrEeCodECamp'));
 ```
 
 Your regex should match the string `FReeCodeCAmp`
 
 ```js
+fccRegex.lastIndex = 0;
 assert(fccRegex.test('FReeCodeCAmp'));
 ```
 

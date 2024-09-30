@@ -15,14 +15,15 @@ Here is a function `myTest` with a local variable called `loc`.
 
 ```js
 function myTest() {
-  var loc = "foo";
+  const loc = "foo";
   console.log(loc);
 }
+
 myTest();
 console.log(loc);
 ```
 
-The `myTest()` function call will display the string `foo` in the console. The `console.log(loc)` line will throw an error, as `loc` is not defined outside of the function.
+The `myTest()` function call will display the string `foo` in the console. The `console.log(loc)` line (outside of the `myTest` function) will throw an error, as `loc` is not defined outside of the function.
 
 # --instructions--
 
@@ -38,6 +39,7 @@ The code should not contain a global `myVar` variable.
 function declared() {
   myVar;
 }
+
 assert.throws(declared, ReferenceError);
 ```
 
@@ -46,7 +48,7 @@ You should add a local `myVar` variable.
 ```js
 assert(
   /functionmyLocalScope\(\)\{.*(var|let|const)myVar[\s\S]*}/.test(
-    __helpers.removeWhiteSpace(code)
+    __helpers.removeWhiteSpace(__helpers.removeJSComments(code))
   )
 );
 ```
@@ -57,7 +59,6 @@ assert(
 
 ```js
 function myLocalScope() {
-
   // Only change code below this line
 
   console.log('inside myLocalScope', myVar);
@@ -73,9 +74,8 @@ console.log('outside myLocalScope', myVar);
 
 ```js
 function myLocalScope() {
-
   // Only change code below this line
-  var myVar;
+  let myVar;
   console.log('inside myLocalScope', myVar);
 }
 myLocalScope();

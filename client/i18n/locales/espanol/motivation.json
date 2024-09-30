@@ -1,19 +1,27 @@
 {
   "compliments": [
+    "No hay plan B para la pasión!",
     "¡Hasta lo más alto!",
+    "El Nirvana está llegando, el portal místico espera",
     "¡Haz que llueva!",
+    "Eso no fue volar. Eso fue caer con estilo",
     "¡Siente la velocidad!",
     "¡Tienes agallas!",
     "¡Al infinito, y más allá!",
     "¡Otra más!",
     "¡Hacia adelante!",
+    "¡Es el momento perfecto para ser histérico!",
     "¡Objectivo destruido!",
+    "¡Nunca bajes la guardia!",
     "¡Récord de juego!",
+    "¡Eres más fuerte de lo que crees!",
+    "¡Ríe y el mundo reirá contigo!",
     "¿Nivel de poder? ¡Supera los 9000!",
-    "Programa mucho y prospera.",
+    "Programa mucho y prospera",
     "¡La tribuna se enloquece!",
     "¡Una para los Récords Guinness!",
     "¡Victoria perfecta!",
+    "¡Tienes una cita con el destino!",
     "¡Ultra eficiente!",
     "¡Tienes el toque!",
     "¡Estás en llamas!",
@@ -53,6 +61,7 @@
     "Un bucle para gobernarlos a todos.",
     "¡Por el poder de Grayskull!",
     "¡Lo hiciste!",
+    "Reclama la propiedad de tus sueños!",
     "¡Asalta ese castillo!",
     "¡Jaque mate!",
     "¡Con calma y a codificar!",
@@ -64,6 +73,7 @@
     "¡Hasta la vista, desafío!",
     "Thundercats, ¡guooooo!",
     "¡Bingo!",
+    "Tengo un poder. Nunca me rindo.",
     "¡Enciende los motores!",
     "¡Pikachu te elige a ti!",
     "¡Esto es pan comido!",
@@ -75,6 +85,14 @@
     {
       "quote": "Confía en el tiempo, que suele dar dulces salidas a muchas amargas dificultades.",
       "author": "Miguel de Cervantes Saavedra"
+    },
+    {
+      "quote": "El pasado puede doler, pero según lo veas puedes huir de él o aprender de él",
+      "author": "Rafiki - El Rey León"
+    },
+    {
+      "quote": "El trabajo duro no vale nada para los que no creen en sí mismos",
+      "author": "Naruto"
     },
     {
       "quote": "La senda de la virtud es muy estrecha y el camino del vicio ancho y espacioso.",
@@ -89,6 +107,10 @@
       "author": "Albert Einstein"
     },
     {
+      "quote": "No hay nada imposible para quien lo intenta.",
+      "author": "Alejandro Magno"
+    },
+    {
       "quote": "Seguir cuando crees que no puedes más, es lo que te hace diferente a los demás",
       "author": "Rocky Balboa"
     },
@@ -97,8 +119,28 @@
       "author": "Samuel Beckett"
     },
     {
+      "quote": "La vida no nos da un propósito. Nosotros le damos propósito a la vida",
+      "author": "Flash - The Flash"
+    },
+    {
+      "quote": "El mundo es tu ostra. Depende de ti encontrar las perlas",
+      "author": "Chris Gardner"
+    },
+    {
       "quote": "La victoria se consigue apelando a la inteligencia, nunca por pura fuerza.",
       "author": "Ludwig von Mises"
+    },
+    {
+      "quote": "Todo es imposible hasta que alguien lo hace",
+      "author": "Batman"
+    },
+    {
+      "quote": "Empieza donde estás",
+      "author": "Chris Gardner"
+    },
+    {
+      "quote": "La palabra imposible no está en mi diccionario",
+      "author": "Napoleón Bonaparte"
     },
     {
       "quote": "El mundo cambia con tu ejemplo no con tu opinión",
@@ -109,12 +151,20 @@
       "author": "Pablo Picasso"
     },
     {
+      "quote": "Es tu responsabilidad perseguir lo que importa",
+      "author": "Chris Gardner"
+    },
+    {
       "quote": "Trabaja duro en silencio, que el éxito sea tu ruido.",
       "author": "Frank Ocean"
     },
     {
       "quote": "No importa lo lento que vayas, siempre y cuando no te detengas.",
       "author": "Confucio"
+    },
+    {
+      "quote": "La victoria pertenece al más perseverante",
+      "author": "Napoleón Bonaparte"
     },
     {
       "quote": "La victoria se consigue apelando a la inteligencia, nunca por pura fuerza.",
@@ -149,6 +199,10 @@
       "author": "Mario Benedetti"
     },
     {
+      "quote": "No dejes que alguien defina tus límites sólo por el lugar de donde vienes. Tu único límite es tu alma",
+      "author": "Chef Gusteau - Ratatouille"
+    },
+    {
       "quote": "La gloria no consiste en no caer nunca, sino más bien en levantarse las veces que sea necesario.",
       "author": "Mario Benedetti"
     },
@@ -161,8 +215,16 @@
       "author": "Isabel Allende"
     },
     {
+      "quote": "La gente que no puede hacer algo por sí misma, quiere decirte que no puedes hacerlo. Si quieres algo, ve a buscarlo. Punto",
+      "author": "Chris Gardner"
+    },
+    {
       "quote": "La vida es como un viaje sin meta. Lo que cuenta es el camino.",
       "author": "Isabel Allende"
+    },
+    {
+      "quote": "Sin el Conocimiento, la Habilidad no puede ser enfocada. Sin habilidad, la fuerza no puede ser aplicada y sin fuerza, el conocimiento no puede ser aplicado.",
+      "author": "Alejandro Magno"
     },
     {
       "quote": "La lógica te llevará desde A hasta B. La imaginación te llevará a cualquier parte",
@@ -189,6 +251,10 @@
       "author": "Muhammad Ali"
     },
     {
+      "quote": "Al final, cuando todo termine, lo único que importa es lo que has hecho.",
+      "author": "Alejandro Magno"
+    },
+    {
       "quote": "La acción es la llave fundamental de todo éxito",
       "author": "Pablo Picasso"
     },
@@ -197,8 +263,24 @@
       "author": "Vince Lombardi"
     },
     {
+      "quote": "Si no das los pasos necesarios para hacerlos realidad, los sueños no son más que espejismos que se meten en tu cabeza",
+      "author": "Chris Gardner"
+    },
+    {
+      "quote": "Ahora veo que las circunstancias de nuestro nacimiento no importan. Es lo que hacemos con el regalo de la vida lo que nos define",
+      "author": "MewTwo - Pokemon"
+    },
+    {
       "quote": "La excelencia no es un acto, es un hábito",
       "author": "Aristóteles"
+    },
+    {
+      "quote": "La habilidad no es nada sin la oportunidad",
+      "author": "Napoleón Bonaparte"
+    },
+    {
+      "quote": "Creo que la suerte es la oportunidad que se encuentra con la preparación",
+      "author": "Scarlett Johansson"
     }
   ]
 }

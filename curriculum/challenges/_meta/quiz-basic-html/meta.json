@@ -1,0 +1,10 @@
+{
+  "name": "Basic HTML Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-basic-html",
+  "order": 10,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66df3b712c41c499e9d31e5b", "title": "Basic HTML Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

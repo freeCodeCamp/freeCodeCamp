@@ -1,0 +1,694 @@
+{
+  "name": "Learn Greetings in your First Day at the Office",
+  "isUpcomingChange": false,
+  "dashedName": "learn-greetings-in-your-first-day-at-the-office",
+  "order": 0,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "651dd3e06ffb500e3f2ce478",
+      "title": "Dialogue 1: Maria Introduces Herself to Tom"
+    },
+    {
+      "id": "651dd5296ffb500e3f2ce479",
+      "title": "Task 1"
+    },
+    {
+      "id": "651dd5386ffb500e3f2ce47a",
+      "title": "Task 2"
+    },
+    {
+      "id": "6537e6ece93e5724eeb27c54",
+      "title": "Task 3"
+    },
+    {
+      "id": "6543aa3df5f028dba112f275",
+      "title": "Task 4"
+    },
+    {
+      "id": "6543aaa9f5f028dba112f276",
+      "title": "Task 5"
+    },
+    {
+      "id": "6543aae6f5f028dba112f277",
+      "title": "Task 6"
+    },
+    {
+      "id": "6543abeff5f028dba112f278",
+      "title": "Task 7"
+    },
+    {
+      "id": "6543abf5f5f028dba112f279",
+      "title": "Task 8"
+    },
+    {
+      "id": "655283c039eb38f51e0e6f7e",
+      "title": "Task 9"
+    },
+    {
+      "id": "65528a7c39eb38f51e0e6f7f",
+      "title": "Task 10"
+    },
+    {
+      "id": "6552939414fdaa21fc734788",
+      "title": "Task 11"
+    },
+    {
+      "id": "65529784e7cb6e24eb03a1af",
+      "title": "Task 12"
+    },
+    {
+      "id": "6568bf620d3e770ea770123f",
+      "title": "Task 13"
+    },
+    {
+      "id": "6568c0f3792d990efe47949e",
+      "title": "Task 14"
+    },
+    {
+      "id": "6568c181c8a1420f262b698b",
+      "title": "Task 15"
+    },
+    {
+      "id": "6568c3539307ad0f902d20e7",
+      "title": "Task 16"
+    },
+    {
+      "id": "6568c3d772f1460fc81f40e9",
+      "title": "Task 17"
+    },
+    {
+      "id": "6568c618310cf51076e23d33",
+      "title": "Task 18"
+    },
+    {
+      "id": "6568c68b92a63810a57cffaf",
+      "title": "Task 19"
+    },
+    {
+      "id": "6568c759cb59e810dfaa1506",
+      "title": "Task 20"
+    },
+    {
+      "id": "656a0d0e74f6a40d87328d38",
+      "title": "Task 21"
+    },
+    {
+      "id": "656a0dde6087df0dd5729d6e",
+      "title": "Task 22"
+    },
+    {
+      "id": "656a0eaf7d37610e43662464",
+      "title": "Task 23"
+    },
+    {
+      "id": "656a0f4f303dce0e865e746b",
+      "title": "Task 24"
+    },
+    {
+      "id": "656a10141825a30eb81ff4db",
+      "title": "Task 25"
+    },
+    {
+      "id": "656a10aaa023200eddd09d88",
+      "title": "Task 26"
+    },
+    {
+      "id": "656a1298f2a0400f56b31e25",
+      "title": "Task 27"
+    },
+    {
+      "id": "657bcf58b87d01890f9bdc93",
+      "title": "Task 28"
+    },
+    {
+      "id": "656a137523a9bc0f9d3bae01",
+      "title": "Task 29"
+    },
+    {
+      "id": "656a13f01a59cb0fc9d52149",
+      "title": "Task 30"
+    },
+    {
+      "id": "656a14b0e1c43d0ffabd15a9",
+      "title": "Task 31"
+    },
+    {
+      "id": "656a18189b21f51037e518b4",
+      "title": "Task 32"
+    },
+    {
+      "id": "656a2a7b05241026c429e3f0",
+      "title": "Dialogue 2: Tom Meets the Coworker Next to Him"
+    },
+    {
+      "id": "656a2b1c7216c026fcd156c7",
+      "title": "Task 33"
+    },
+    {
+      "id": "656a2bfbfc3336274c874bed",
+      "title": "Task 34"
+    },
+    {
+      "id": "656a3f5be79ce02dcc157d6b",
+      "title": "Task 35"
+    },
+    {
+      "id": "656a3fd085a6e92dfbaee96a",
+      "title": "Task 36"
+    },
+    {
+      "id": "656a401d1b00af2e25b0fd8b",
+      "title": "Task 37"
+    },
+    {
+      "id": "656a417f7f9daf2e9aae6831",
+      "title": "Task 38"
+    },
+    {
+      "id": "656a421a905e792eca05d447",
+      "title": "Task 39"
+    },
+    {
+      "id": "656a4297fcc0d72ef9b60c21",
+      "title": "Task 40"
+    },
+    {
+      "id": "656a4e97fa176a2fed5011fc",
+      "title": "Task 41"
+    },
+    {
+      "id": "656a4ef5de14f8301be5764b",
+      "title": "Task 42"
+    },
+    {
+      "id": "656a4f714165773059ce7ad4",
+      "title": "Task 43"
+    },
+    {
+      "id": "656a4fcaa739b7308ad795bf",
+      "title": "Task 44"
+    },
+    {
+      "id": "656a503aa1f2c630b3951067",
+      "title": "Task 45"
+    },
+    {
+      "id": "656a509eeac7e030e2a16bab",
+      "title": "Task 46"
+    },
+    {
+      "id": "656a510695ccb03109117af0",
+      "title": "Task 47"
+    },
+    {
+      "id": "656a51895811ed31345b2eaf",
+      "title": "Task 48"
+    },
+    {
+      "id": "656a51effc10b2316bad8479",
+      "title": "Task 49"
+    },
+    {
+      "id": "656a52680e234b3191131cc5",
+      "title": "Task 50"
+    },
+    {
+      "id": "656a52da3392f631b9f3e022",
+      "title": "Task 51"
+    },
+    {
+      "id": "656a533c5a7e5231e15b93b4",
+      "title": "Task 52"
+    },
+    {
+      "id": "656a538cc4109d3209f5f536",
+      "title": "Task 53"
+    },
+    {
+      "id": "656a54278a4df6323549e8f9",
+      "title": "Task 54"
+    },
+    {
+      "id": "656a549c4d9b91326cfe1863",
+      "title": "Task 55"
+    },
+    {
+      "id": "656a554956201b329a0d182a",
+      "title": "Task 56"
+    },
+    {
+      "id": "656a55ea17414032d482d278",
+      "title": "Task 57"
+    },
+    {
+      "id": "656a56f89acf253314e9f6d6",
+      "title": "Task 58"
+    },
+    {
+      "id": "656a575febfa2c333c495c2f",
+      "title": "Task 59"
+    },
+    {
+      "id": "656a57d2c0603e33638c7770",
+      "title": "Task 60"
+    },
+    {
+      "id": "656a584f57a1a9338e3cb347",
+      "title": "Task 61"
+    },
+    {
+      "id": "656a58b31bc9f233debc2bc9",
+      "title": "Task 62"
+    },
+    {
+      "id": "656ab31ebccec247fde7cee4",
+      "title": "Task 63"
+    },
+    {
+      "id": "656ab3bfc9e49d4841672043",
+      "title": "Task 64"
+    },
+    {
+      "id": "656ab4205a4054486ef3b691",
+      "title": "Task 65"
+    },
+    {
+      "id": "656ab48697d63748952254a4",
+      "title": "Task 66"
+    },
+    {
+      "id": "656ab50005c38348b94da7a3",
+      "title": "Task 67"
+    },
+    {
+      "id": "656ab5a3ee689949124d2e39",
+      "title": "Task 68"
+    },
+    {
+      "id": "656ab61f20aa9d494cee5466",
+      "title": "Task 69"
+    },
+    {
+      "id": "656ab66db70b464974489b79",
+      "title": "Task 70"
+    },
+    {
+      "id": "656ab6f67515b149a377009d",
+      "title": "Task 71"
+    },
+    {
+      "id": "656ab76473a1ee49d537698d",
+      "title": "Task 72"
+    },
+    {
+      "id": "656ab7e9be47c04a2518dbed",
+      "title": "Task 73"
+    },
+    {
+      "id": "656ab828bd06214a51193f3d",
+      "title": "Task 74"
+    },
+    {
+      "id": "656ab8a1d294e14a920320d2",
+      "title": "Task 75"
+    },
+    {
+      "id": "656aba8d560d3c4b069ae7a8",
+      "title": "Task 76"
+    },
+    {
+      "id": "656abac861f4a04b312b0421",
+      "title": "Task 77"
+    },
+    {
+      "id": "656abb977f9ecf4b821aed11",
+      "title": "Task 78"
+    },
+    {
+      "id": "656abcd4cccfc84bf50f861b",
+      "title": "Task 79"
+    },
+    {
+      "id": "656abd3412f31c4c2483de5c",
+      "title": "Task 80"
+    },
+    {
+      "id": "656abe0ac290774c4de173d4",
+      "title": "Task 81"
+    },
+    {
+      "id": "656cad88af98af049df17177",
+      "title": "Task 82"
+    },
+    {
+      "id": "656caddea3aba304c6172571",
+      "title": "Task 83"
+    },
+    {
+      "id": "656caf2085b7ab04ff9a6b3f",
+      "title": "Task 84"
+    },
+    {
+      "id": "656caf89ead43c0523378566",
+      "title": "Task 85"
+    },
+    {
+      "id": "656cb0b3e4e30f0550131acd",
+      "title": "Task 86"
+    },
+    {
+      "id": "656cb18802ef22057a58db13",
+      "title": "Task 87"
+    },
+    {
+      "id": "656cb2526a741405b2b34870",
+      "title": "Task 88"
+    },
+    {
+      "id": "656cb2ee9d60f205d362b1de",
+      "title": "Task 89"
+    },
+    {
+      "id": "656cb3592aa0460609993b10",
+      "title": "Task 90"
+    },
+    {
+      "id": "656cb39802398f062c461e2c",
+      "title": "Task 91"
+    },
+    {
+      "id": "656cb3f8df42660676854d29",
+      "title": "Task 92"
+    },
+    {
+      "id": "656cbad538b114095fb14c0e",
+      "title": "Dialogue 3: Tom and Sophie Take a Lunch Break"
+    },
+    {
+      "id": "656cc35036d0a00fe17e7cee",
+      "title": "Task 93"
+    },
+    {
+      "id": "656cc3b856f1d01011bfc027",
+      "title": "Task 94"
+    },
+    {
+      "id": "656cc4aa4726711043189619",
+      "title": "Task 95"
+    },
+    {
+      "id": "656cc523e668741073c4e916",
+      "title": "Task 96"
+    },
+    {
+      "id": "656cc5d403162710a3fae634",
+      "title": "Task 97"
+    },
+    {
+      "id": "656cc6259c711d10cde2c486",
+      "title": "Task 98"
+    },
+    {
+      "id": "656cc6981cbf2711196a284f",
+      "title": "Task 99"
+    },
+    {
+      "id": "656cc6dd00af9f117f10446b",
+      "title": "Task 100"
+    },
+    {
+      "id": "656cc73e6b1c6811a73b04bb",
+      "title": "Task 101"
+    },
+    {
+      "id": "656cc7a3f479f511d56ab246",
+      "title": "Task 102"
+    },
+    {
+      "id": "656cc833fe9c0611feeb5b26",
+      "title": "Task 103"
+    },
+    {
+      "id": "656cc86fc6a990122ac6c6a1",
+      "title": "Task 104"
+    },
+    {
+      "id": "656cc8dafb6343124f729ec5",
+      "title": "Task 105"
+    },
+    {
+      "id": "656cc92ecdebaa1278505e87",
+      "title": "Task 106"
+    },
+    {
+      "id": "656cc98cfe781112ace7d3ee",
+      "title": "Task 107"
+    },
+    {
+      "id": "656cca055e5d1912d9784ce1",
+      "title": "Task 108"
+    },
+    {
+      "id": "656cca6bb44ce5130a759829",
+      "title": "Task 109"
+    },
+    {
+      "id": "656ccd12c27bf013529db8ce",
+      "title": "Task 110"
+    },
+    {
+      "id": "656ccd8bafe46d138451d176",
+      "title": "Task 111"
+    },
+    {
+      "id": "656ccde87f42ec13b19c5dab",
+      "title": "Task 112"
+    },
+    {
+      "id": "656cce4130c4d313e92ed22e",
+      "title": "Task 113"
+    },
+    {
+      "id": "656cce9ebec3c01412c0e564",
+      "title": "Task 114"
+    },
+    {
+      "id": "656ccf01c07406143b90ff84",
+      "title": "Task 115"
+    },
+    {
+      "id": "656ccf6255561e1467afd1c6",
+      "title": "Task 116"
+    },
+    {
+      "id": "656ccfb763eddb149831854d",
+      "title": "Task 117"
+    },
+    {
+      "id": "656cd00707c0d614c38e7416",
+      "title": "Task 118"
+    },
+    {
+      "id": "656cd061eb49fb14f672f77f",
+      "title": "Task 119"
+    },
+    {
+      "id": "656cd0c550a08915211f32ce",
+      "title": "Task 120"
+    },
+    {
+      "id": "656cd118ca4f1115500a4bf8",
+      "title": "Task 121"
+    },
+    {
+      "id": "656cd17584250515779ca7e5",
+      "title": "Task 122"
+    },
+    {
+      "id": "656cd1ca72b3e615a33c05b6",
+      "title": "Task 123"
+    },
+    {
+      "id": "656cd22d91db1915cb11f584",
+      "title": "Task 124"
+    },
+    {
+      "id": "656cd27f38f17f15f06f6ed6",
+      "title": "Task 125"
+    },
+    {
+      "id": "656cd31045ce74162adef6c7",
+      "title": "Task 126"
+    },
+    {
+      "id": "656cd4b014d03a1baf452429",
+      "title": "Dialogue 4: Sophie Introduces Brian to Tom"
+    },
+    {
+      "id": "656cd52f0f43551be96b4640",
+      "title": "Task 127"
+    },
+    {
+      "id": "657e0d0037192f3d9e3d5417",
+      "title": "Task 128"
+    },
+    {
+      "id": "656cd63a45146d1c2c51e682",
+      "title": "Task 129"
+    },
+    {
+      "id": "656cd6a37495961c5f242c5d",
+      "title": "Task 130"
+    },
+    {
+      "id": "656cd7da364a181cb1038846",
+      "title": "Task 131"
+    },
+    {
+      "id": "656cd83ad397f61ce1259ad6",
+      "title": "Task 132"
+    },
+    {
+      "id": "656cd8d68948d11d201308d4",
+      "title": "Task 133"
+    },
+    {
+      "id": "656cd983328ab41d5bd929d0",
+      "title": "Task 134"
+    },
+    {
+      "id": "656cd9f4e30e6d1d81f0e62d",
+      "title": "Task 135"
+    },
+    {
+      "id": "656cda3cd706aa1daa128704",
+      "title": "Task 136"
+    },
+    {
+      "id": "656cdab71161371dd6b0a401",
+      "title": "Task 137"
+    },
+    {
+      "id": "656cdb10b568061e0bd6757f",
+      "title": "Task 138"
+    },
+    {
+      "id": "656cdcc291e5531ea11a8f2a",
+      "title": "Task 139"
+    },
+    {
+      "id": "656d1831a6a2fe0465ea9488",
+      "title": "Task 140"
+    },
+    {
+      "id": "656d1936ab6cfb04e2ca6944",
+      "title": "Task 141"
+    },
+    {
+      "id": "656d199a0d5c10050b7e8241",
+      "title": "Task 142"
+    },
+    {
+      "id": "656d19d9ab6e0c052edfb1e7",
+      "title": "Task 143"
+    },
+    {
+      "id": "656d1a520285050552702fc1",
+      "title": "Task 144"
+    },
+    {
+      "id": "656d1ad4fbdb51057f0f0714",
+      "title": "Task 145"
+    },
+    {
+      "id": "656d1becadf67d05d5b27bab",
+      "title": "Task 146"
+    },
+    {
+      "id": "656d1c98a6bd5505fd346b50",
+      "title": "Task 147"
+    },
+    {
+      "id": "656d1d1f46bc820629aecc0d",
+      "title": "Task 148"
+    },
+    {
+      "id": "656d23d22a488510bca0e418",
+      "title": "Dialogue 5: End of the First Day"
+    },
+    {
+      "id": "656d25e0c5d5aa11ade33754",
+      "title": "Task 149"
+    },
+    {
+      "id": "656d2600b0ffa811dac3853f",
+      "title": "Task 150"
+    },
+    {
+      "id": "656d266537ff53120d194ae8",
+      "title": "Task 151"
+    },
+    {
+      "id": "656d26bc907ce0123546288a",
+      "title": "Task 152"
+    },
+    {
+      "id": "656d27271410d4125ee2ad5a",
+      "title": "Task 153"
+    },
+    {
+      "id": "656d27a603926f1288bafcc0",
+      "title": "Task 154"
+    },
+    {
+      "id": "656d283b7ba56912bb2ceb06",
+      "title": "Task 155"
+    },
+    {
+      "id": "656d2914e7cfc312ea00c864",
+      "title": "Task 156"
+    },
+    {
+      "id": "656d299e9d0027131875568f",
+      "title": "Task 157"
+    },
+    {
+      "id": "656d2a2ed95bfa1345fd9fd1",
+      "title": "Task 158"
+    },
+    {
+      "id": "656d2aee945ce2137bd8b8b8",
+      "title": "Task 159"
+    },
+    {
+      "id": "656d2b6aaad95013a86cea6c",
+      "title": "Task 160"
+    },
+    {
+      "id": "656d2bc10f29b413d1a843d5",
+      "title": "Task 161"
+    },
+    {
+      "id": "656d2c2fedbd5f14055b7e7b",
+      "title": "Task 162"
+    },
+    {
+      "id": "656d2c94279eb6143485eac6",
+      "title": "Task 163"
+    },
+    {
+      "id": "656d2d19c570e2146b5e8835",
+      "title": "Task 164"
+    },
+    {
+      "id": "656d2d814b60b6149a03c699",
+      "title": "Task 165"
+    },
+    {
+      "id": "656d2f31f23860155477ca7b",
+      "title": "Task 166"
+    }
+  ],
+  "helpCategory": "English"
+}

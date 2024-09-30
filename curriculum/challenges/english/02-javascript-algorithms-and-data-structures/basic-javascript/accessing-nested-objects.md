@@ -14,7 +14,7 @@ The sub-properties of objects can be accessed by chaining together the dot or br
 Here is a nested object:
 
 ```js
-var ourStorage = {
+const ourStorage = {
   "desk": {
     "drawer": "stapler"
   },
@@ -26,6 +26,7 @@ var ourStorage = {
     "bottom drawer": "soda"
   }
 };
+
 ourStorage.cabinet["top drawer"].folder2;
 ourStorage.desk.drawer;
 ```
@@ -44,10 +45,33 @@ Access the `myStorage` object and assign the contents of the `glove box` propert
 assert(gloveBoxContents === 'maps');
 ```
 
-Your code should use dot and bracket notation to access `myStorage`.
+Your code should use dot notation, where possible, to access `myStorage`.
 
 ```js
-assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
+assert.match(code, /myStorage\.car\.inside/);
+```
+
+`gloveBoxContents` should still be declared with `const`.
+
+```js
+assert.match(code, /const\s+gloveBoxContents\s*=/);
+```
+
+You should not change the `myStorage` object.
+
+```js
+const expectedMyStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
 # --seed--
@@ -66,7 +90,7 @@ assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 ## --seed-contents--
 
 ```js
-var myStorage = {
+const myStorage = {
   "car": {
     "inside": {
       "glove box": "maps",
@@ -78,13 +102,13 @@ var myStorage = {
   }
 };
 
-var gloveBoxContents = undefined;
+const gloveBoxContents = undefined;
 ```
 
 # --solutions--
 
 ```js
-var myStorage = {
+const myStorage = {
   "car":{
     "inside":{
       "glove box":"maps",
@@ -95,5 +119,5 @@ var myStorage = {
     }
   }
 };
-var gloveBoxContents = myStorage.car.inside["glove box"];
+const gloveBoxContents = myStorage.car.inside["glove box"];
 ```

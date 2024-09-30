@@ -1,8 +1,9 @@
 ---
 title: Introduction to the Coding Interview Algorithms
-block: Algorithms
-superBlock: Coding Interview Prep
+block: algorithms
+superBlock: coding-interview-prep
 ---
+
 ## Introduction to the Coding Interview Prep Algorithms
 
 These challenges are meant to teach and challenge you with common algorithms that you will encounter in real life. These challenges will be a great learning experience to help improve your programming and logical skills.

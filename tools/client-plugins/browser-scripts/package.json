@@ -1,0 +1,55 @@
+{
+  "name": "@freecodecamp/browser-scripts",
+  "version": "1.0.0",
+  "description": "The freeCodeCamp.org open-source codebase and curriculum",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.js"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.23.7",
+    "@babel/preset-env": "7.23.7",
+    "@babel/preset-typescript": "7.23.3",
+    "@freecodecamp/curriculum-helpers": "3.8.0",
+    "@types/chai": "4.3.12",
+    "@types/copy-webpack-plugin": "^8.0.1",
+    "@types/enzyme": "3.10.16",
+    "@types/enzyme-adapter-react-16": "1.0.9",
+    "@types/jquery": "3.5.29",
+    "@types/lodash-es": "4.17.12",
+    "babel-loader": "8.3.0",
+    "chai": "4.4.1",
+    "copy-webpack-plugin": "9.1.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.8",
+    "jquery": "3.7.1",
+    "lodash-es": "4.17.21",
+    "process": "0.11.10",
+    "pyodide": "^0.23.3",
+    "sass.js": "0.11.1",
+    "util": "0.12.5",
+    "webpack": "5.90.3",
+    "webpack-cli": "4.10.0"
+  },
+  "dependencies": {
+    "xterm": "^5.2.1"
+  }
+}

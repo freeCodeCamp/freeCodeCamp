@@ -1,7 +1,7 @@
 ---
 id: ab306dbdcc907c7ddfc30830
 title: Steamroller
-challengeType: 5
+challengeType: 1
 forumTopicId: 16079
 dashedName: steamroller
 ---
@@ -39,7 +39,14 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 Your solution should not use the `Array.prototype.flat()` or `Array.prototype.flatMap()` methods.
 
 ```js
-assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+assert(!__helpers.removeJSComments(code).match(/\.\s*flat\s*\(/) && !__helpers.removeJSComments(code).match(/\.\s*flatMap\s*\(/));
+```
+
+Global variables should not be used.
+
+```js
+steamrollArray([1, {}, [3, [[4]]]])
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4])
 ```
 
 # --seed--

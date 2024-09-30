@@ -42,7 +42,7 @@ Modify the code to show the correct prototype chain.
 Your code should show that `Object.prototype` is the prototype of `Dog.prototype`
 
 ```js
-assert(/Object\.prototype\.isPrototypeOf/.test(code));
+assert(/Object\.prototype\.isPrototypeOf/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--

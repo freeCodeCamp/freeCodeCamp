@@ -1,64 +1,126 @@
-import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import { TFunction, withTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import IntroDescription from '../components/Intro/components/IntroDescription';
-import createRedirect from '../components/create-redirect';
-import { ButtonSpacer, Spacer } from '../components/helpers';
-import SectionHeader from '../components/settings/section-header';
+import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
-import { acceptTerms, userSelector } from '../redux';
+import IntroDescription from '../components/Intro/components/intro-description';
+import createRedirect from '../components/create-redirect';
+import { Spacer, Loader, Link } from '../components/helpers';
+import { apiLocation } from '../../config/env.json';
+
+import { acceptTerms } from '../redux/actions';
+import {
+  signInLoadingSelector,
+  userSelector,
+  isSignedInSelector
+} from '../redux/selectors';
 
 import './email-sign-up.css';
-
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
-  t: TFunction;
+  isSignedIn: boolean;
+  showLoading: boolean;
+  completedChallengeCount?: number;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ acceptedPrivacyTerms }: { acceptedPrivacyTerms: boolean }) => ({
-    acceptedPrivacyTerms
+  isSignedInSelector,
+  signInLoadingSelector,
+  (
+    {
+      acceptedPrivacyTerms,
+      completedChallengeCount
+    }: { acceptedPrivacyTerms: boolean; completedChallengeCount: number },
+    isSignedIn: boolean,
+    showLoading: boolean
+  ) => ({
+    acceptedPrivacyTerms,
+    isSignedIn,
+    showLoading,
+    completedChallengeCount
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ acceptTerms }, dispatch);
 const RedirectToLearn = createRedirect('/learn');
 
+function EmailListOptIn({
+  isSignedIn,
+  acceptTerms
+}: {
+  isSignedIn: boolean;
+  acceptTerms: (accepted: boolean) => void;
+}) {
+  const { t } = useTranslation();
+  if (isSignedIn) {
+    return (
+      <Container>
+        <Row className='email-list-opt'>
+          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+            <Button
+              block={true}
+              size='large'
+              variant='primary'
+              onClick={() => acceptTerms(true)}
+            >
+              {t('buttons.yes-please')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+          <Col md={4} sm={5} xs={12}>
+            <Button
+              block={true}
+              size='large'
+              variant='primary'
+              onClick={() => acceptTerms(false)}
+            >
+              {t('buttons.no-thanks')}
+            </Button>
+            <Spacer size='small' />
+          </Col>
+        </Row>
+      </Container>
+    );
+  } else {
+    return (
+      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+        <Spacer size='small' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`${apiLocation}/signin`}
+        >
+          {t('buttons.sign-up-email-list')}
+        </Button>
+        <Spacer size='small' />
+      </Col>
+    );
+  }
+}
+
 function AcceptPrivacyTerms({
   acceptTerms,
   acceptedPrivacyTerms,
-  t
+  isSignedIn,
+  showLoading,
+  completedChallengeCount = 0
 }: AcceptPrivacyTermsProps) {
+  const { t } = useTranslation();
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
+
   useEffect(() => {
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
     acceptTermsRef.current = acceptTerms;
-  });
-
-  useEffect(() => {
-    return () => {
-      // if a user navigates away from here we should set acceptedPrivacyTerms
-      // to true (so they do not get pulled back) without changing their email
-      // preferences (hence the null payload)
-      // This makes sure that the user has to opt in to Quincy's emails and that
-      // they are only asked twice
-      if (!acceptedPrivacyRef.current) {
-        acceptTermsRef.current(null);
-      }
-    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  function onClick(isWeeklyEmailAccepted: boolean) {
-    acceptTerms(isWeeklyEmailAccepted);
-  }
 
   return acceptedPrivacyTerms ? (
     <RedirectToLearn />
@@ -67,54 +129,48 @@ function AcceptPrivacyTerms({
       <Helmet>
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
-      <Grid
-        className='default-page-wrapper email-sign-up'
-        data-cy='email-sign-up'
-      >
-        <SectionHeader>{t('misc.email-signup')}</SectionHeader>
+      <Container>
+        {isSignedIn && completedChallengeCount < 1 ? (
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='large' />
+              <h1 className='text-center'>{t('misc.brand-new-account')}</h1>
+              <Spacer size='small' />
+              <p>
+                <Trans i18nKey='misc.duplicate-account-warning'>
+                  <Link className='inline' to='/settings#danger-zone' />
+                </Trans>
+              </p>
+            </Col>
+          </Row>
+        ) : (
+          ''
+        )}
         <Row>
-          <IntroDescription />
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <strong>{t('misc.quincy')}</strong>
-            <Spacer />
-            <p>{t('misc.email-blast')}</p>
-            <Spacer />
-          </Col>
-
-          <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='big-cta-btn'
-              onClick={() => onClick(true)}
-            >
-              {t('buttons.yes-please')}
-            </Button>
-            <ButtonSpacer />
-          </Col>
-          <Col md={4} sm={5} xs={12}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='big-cta-btn'
-              onClick={() => onClick(false)}
-            >
-              {t('buttons.no-thanks')}
-            </Button>
-            <ButtonSpacer />
-          </Col>
-          <Col xs={12}>
-            <Spacer />
+            <Spacer size='small' />
+            <IntroDescription />
+            <hr />
           </Col>
         </Row>
-      </Grid>
+        <Row className='email-sign-up'>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <Spacer size='small' />
+            <p>{t('misc.email-blast')}</p>
+            <Spacer size='small' />
+          </Col>
+          {showLoading ? (
+            <Loader fullScreen={true} />
+          ) : (
+            <EmailListOptIn isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
+          )}
+          <Col xs={12}>
+            <Spacer size='medium' />
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(AcceptPrivacyTerms));
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptPrivacyTerms);

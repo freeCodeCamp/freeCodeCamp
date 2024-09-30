@@ -13,7 +13,7 @@ You can build web forms that actually submit data to a server using nothing more
 For example:
 
 ```html
-<form action="/url-where-you-want-to-submit-form-data">
+<form action="url-where-you-want-to-submit-form-data">
   <input>
 </form>
 ```
@@ -64,7 +64,7 @@ assert(
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -89,7 +89,7 @@ assert(
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

@@ -1,0 +1,11 @@
+{
+  "name": "Build a Cash Register",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-cash-register",
+  "order": 247,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "aa2e6f85cab2ab736c9a9b24", "title": "Build a Cash Register" }],
+  "helpCategory": "JavaScript"
+}

@@ -1,74 +1,51 @@
-import { Alert } from '@freecodecamp/react-bootstrap';
-import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
+import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { FlashState } from '../../redux/types';
+import { removeFlashMessage } from './redux';
 
 import './flash.css';
 
 type FlashProps = {
-  flashMessage: {
-    type: string;
-    message: string;
-    id: string;
-    variables: Record<string, unknown>;
-  };
-  onClose: () => void;
+  flashMessage: FlashState['message'];
+  removeFlashMessage: typeof removeFlashMessage;
 };
 
-function Flash({ flashMessage, onClose }: FlashProps): JSX.Element {
+function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
-  const [flashMessageHeight, setFlashMessageHeight] = useState(0);
 
-  useEffect(() => {
-    const flashMessageElem: HTMLElement | null =
-      document.querySelector('.flash-message');
-    setFlashMessageHeight(flashMessageElem?.offsetHeight || 0);
-    document.documentElement.style.setProperty(
-      '--flash-message-height',
-      `${flashMessageHeight}px`
-    );
-  }, [flashMessageHeight]);
+  // Some APIs are returning 'error' as a flash type, and it needs to be mapped to 'danger'.
+  // TODO: Standardize the value of `type`.
+  // Tracking issue: https://github.com/freeCodeCamp/freeCodeCamp/issues/50184
+  const flashStyle =
+    type === 'error' ? 'danger' : (type as AlertProps['variant']);
 
   function handleClose() {
-    document.documentElement.style.setProperty('--flash-message-height', '0px');
-    onClose();
+    removeFlashMessage();
   }
 
   return (
-    <>
-      <TransitionGroup>
-        <CSSTransition classNames='flash-message' key={id} timeout={500}>
-          <Alert
-            bsStyle={type}
-            className='flash-message'
-            onDismiss={handleClose}
-          >
-            {t(message, variables)}
-          </Alert>
-        </CSSTransition>
-      </TransitionGroup>
-      {flashMessage && (
-        <div
-          style={{
-            height: `${flashMessageHeight}px`
-          }}
-        />
-      )}
-    </>
+    <TransitionGroup>
+      <CSSTransition key={id} timeout={500}>
+        <Alert
+          variant={flashStyle}
+          className='flash-message'
+          data-playwright-test-label='flash-message'
+        >
+          {t(message, variables)}
+          <CloseButton
+            onClick={handleClose}
+            label={t('buttons.close')}
+            className='close'
+          />
+        </Alert>
+      </CSSTransition>
+    </TransitionGroup>
   );
 }
 
 Flash.displayName = 'FlashMessages';
-Flash.propTypes = {
-  flashMessage: PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    message: PropTypes.string,
-    variables: PropTypes.object
-  }),
-  onClose: PropTypes.func.isRequired
-};
 
 export default Flash;

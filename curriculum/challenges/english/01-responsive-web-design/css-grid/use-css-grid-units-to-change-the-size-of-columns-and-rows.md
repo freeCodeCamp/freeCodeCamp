@@ -31,7 +31,7 @@ Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
 
 # --hints--
 
-`container` class should have a `grid-template-columns` property that has three columns with the following widths: `1fr, 100px, and 2fr`.
+Your `container` class should have a `grid-template-columns` property that has three columns with the following widths: `1fr`, `100px`, and `2fr`.
 
 ```js
 assert(

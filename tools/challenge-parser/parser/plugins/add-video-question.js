@@ -1,23 +1,41 @@
 const { root } = require('mdast-builder');
-const getAllBetween = require('./utils/between-headings');
+const find = require('unist-util-find');
+const { getSection } = require('./utils/get-section');
+const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
 function plugin() {
   return transformer;
-
   function transformer(tree, file) {
-    const questionNodes = getAllBetween(tree, '--question--');
-    if (questionNodes.length > 0) {
-      const questionTree = root(questionNodes);
-      const textNodes = getAllBetween(questionTree, '--text--');
-      const answersNodes = getAllBetween(questionTree, '--answers--');
-      const solutionNodes = getAllBetween(questionTree, '--video-solution--');
+    const allQuestionNodes = getSection(tree, '--questions--');
 
-      const question = getQuestion(textNodes, answersNodes, solutionNodes);
+    if (allQuestionNodes.length > 0) {
+      const questions = [];
+      const questionTrees = [];
 
-      file.data.question = question;
+      allQuestionNodes.forEach(questionNode => {
+        const isStartOfQuestion =
+          questionNode.children?.[0]?.value === '--text--';
+        if (isStartOfQuestion) {
+          questionTrees.push([questionNode]);
+        } else {
+          questionTrees[questionTrees.length - 1].push(questionNode);
+        }
+      });
+
+      questionTrees.forEach(questionNodes => {
+        const questionTree = root(questionNodes);
+
+        const textNodes = getSection(questionTree, '--text--');
+        const answersNodes = getSection(questionTree, '--answers--');
+        const solutionNodes = getSection(questionTree, '--video-solution--');
+
+        questions.push(getQuestion(textNodes, answersNodes, solutionNodes));
+      });
+
+      file.data.questions = questions;
     }
   }
 }
@@ -31,13 +49,32 @@ function getQuestion(textNodes, answersNodes, solutionNodes) {
   if (!answers) throw Error('answers are missing from question');
   if (!solution) throw Error('solution is missing from question');
 
-  // console.log({ text, answers, solution });
   return { text, answers, solution };
 }
 
 function getAnswers(answersNodes) {
   const answerGroups = splitOnThematicBreak(answersNodes);
-  return answerGroups.map(answer => mdastToHtml(answer));
+
+  return answerGroups.map(answerGroup => {
+    const answerTree = root(answerGroup);
+    const feedback = find(answerTree, { value: '--feedback--' });
+
+    if (feedback) {
+      const answerNodes = getAllBefore(answerTree, '--feedback--');
+      const feedbackNodes = getSection(answerTree, '--feedback--');
+
+      if (answerNodes.length < 1) {
+        throw Error('Answer missing');
+      }
+
+      return {
+        answer: mdastToHtml(answerNodes),
+        feedback: mdastToHtml(feedbackNodes)
+      };
+    }
+
+    return { answer: mdastToHtml(answerGroup), feedback: null };
+  });
 }
 
 function getSolution(solutionNodes) {

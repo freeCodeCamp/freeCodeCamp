@@ -1,11 +1,16 @@
 const { isObject } = require('lodash');
-const editableSolutionAST = require('../__fixtures__/ast-erm-in-solution.json');
-const multiSolnsAST = require('../__fixtures__/ast-multiple-solutions.json');
-const mockAST = require('../__fixtures__/ast-simple.json');
-
+const parseFixture = require('../__fixtures__/parse-fixture');
 const addSolution = require('./add-solution');
 
 describe('add solution plugin', () => {
+  let mockAST, multiSolnsAST, editableSolutionAST;
+
+  beforeAll(async () => {
+    editableSolutionAST = await parseFixture('with-erm-in-solution.md');
+    mockAST = await parseFixture('simple.md');
+    multiSolnsAST = await parseFixture('with-multiple-solns.md');
+  });
+
   const plugin = addSolution();
   let file = { data: {} };
 
@@ -34,17 +39,13 @@ describe('add solution plugin', () => {
   });
 
   it('adds solution objects to the challengeFiles array following a schema', () => {
-    expect.assertions(15);
+    expect.assertions(13);
     plugin(mockAST, file);
     const {
       data: { solutions }
     } = file;
-    const testObject = solutions[0].find(
-      solution => solution.fileKey === 'indexjs'
-    );
-    expect(Object.keys(testObject).length).toEqual(7);
-    expect(testObject).toHaveProperty('fileKey');
-    expect(typeof testObject['fileKey']).toBe('string');
+    const testObject = solutions[0].find(solution => solution.ext === 'js');
+    expect(Object.keys(testObject).length).toEqual(6);
     expect(testObject).toHaveProperty('ext');
     expect(typeof testObject['ext']).toBe('string');
     expect(testObject).toHaveProperty('name');
@@ -66,24 +67,22 @@ describe('add solution plugin', () => {
       data: { solutions }
     } = file;
     expect(solutions.length).toBe(3);
-    expect(
-      solutions[0].find(solution => solution.fileKey === 'indexjs').contents
-    ).toBe("var x = 'y';");
-    expect(
-      solutions[1].find(solution => solution.fileKey === 'indexhtml').contents
-    ).toBe(`<html>
+    expect(solutions[0].find(solution => solution.ext === 'js').contents).toBe(
+      "var x = 'y';"
+    );
+    expect(solutions[1].find(solution => solution.ext === 'html').contents)
+      .toBe(`<html>
   <body>
   solution number two
   </body>
 </html>`);
-    expect(
-      solutions[1].find(solution => solution.fileKey === 'indexcss').contents
-    ).toBe(`body {
+    expect(solutions[1].find(solution => solution.ext === 'css').contents)
+      .toBe(`body {
   background: white;
 }`);
-    expect(
-      solutions[2].find(solution => solution.fileKey === 'indexjs').contents
-    ).toBe("var x = 'y3';");
+    expect(solutions[2].find(solution => solution.ext === 'js').contents).toBe(
+      "var x = 'y3';"
+    );
   });
 
   it('should reject solutions with editable region markers', () => {

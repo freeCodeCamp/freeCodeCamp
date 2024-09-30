@@ -1,43 +1,9 @@
-.completion-message {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.completion-modal-body {
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.video-modal-body {
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding-left: 30px;
-}
-
-.completion-challenge-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
 .completion-success-icon {
   width: 200px;
   height: 200px;
   transform: scale(1.5);
   opacity: 0;
   animation: success-icon-animation 150ms linear 100ms forwards;
-}
-
-.challenge-success-modal .btn-cta-big {
-  max-width: 100%;
-  font-size: 1.3rem;
 }
 
 @keyframes success-icon-animation {
@@ -51,27 +17,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
   justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
 }
 
 .completion-block-name {
-  text-align: center;
   font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.completion-block-meta {
+  color: var(--quaternary-color);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.completion-block-details .completion-block-name {
   font-size: 1.2rem;
-  margin-bottom: 15px;
+}
+
+.completion-block-details .completion-block-meta {
+  font-size: 1rem;
 }
 
 .progress-bar-wrap {
-  width: 400px;
-  height: 50px;
+  width: 100%;
   position: relative;
 }
 
 .progress-bar-background {
-  width: 400px;
-  height: 50px;
+  width: 100%;
+  height: 10px;
   color: var(--primary-color);
-  border: 3px solid var(--primary-color);
   background-color: var(--quaternary-background);
   display: flex;
   align-items: center;
@@ -82,39 +62,29 @@
 }
 
 .progress-bar-percent {
-  width: 0;
+  height: 10px;
   overflow: hidden;
   position: relative;
   background-color: var(--primary-color);
   transition: width 0ms linear;
 }
 
-.progress-bar-foreground {
-  color: var(--primary-background);
-  width: 400px;
-  height: 50px;
+/* The maximum width of login button is 500px, which is set in global.css.
+   An override is needed as 500px is not enough to allow the button to span the modal width. */
+.completion-modal-login-btn .signup-btn {
+  max-width: 100%;
+}
+
+.completion-modal-body {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 @media screen and (max-width: 991px) {
-  .challenge-success-modal .btn-lg {
-    font-size: 1rem;
-  }
-  .challenge-success-modal .btn-cta-big {
-    max-width: 100%;
-    font-size: 1rem;
-  }
-  .completion-modal-body {
-    min-height: 340px;
-  }
-
   .progress-bar-wrap,
-  .progress-bar-background,
-  .progress-bar-foreground {
-    width: 260px;
-    height: 40px;
+  .progress-bar-background {
+    height: 10px;
   }
 
   .completion-success-icon {
@@ -127,9 +97,7 @@
     font-size: 1.2rem;
   }
 
-  .completion-challenge-name,
   .completion-block-name {
-    font-weight: 400;
     font-size: 1rem;
   }
 }

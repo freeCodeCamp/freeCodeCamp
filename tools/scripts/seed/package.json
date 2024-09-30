@@ -5,8 +5,8 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": "^6.14.12"
+    "node": ">=16",
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,8 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
-    "debug": "4.3.2",
-    "dotenv": "10.0.0",
-    "lodash": "4.17.21",
-    "mongodb": "3.7.1"
+    "debug": "4.3.4",
+    "dotenv": "16.4.5",
+    "mongodb": "5.9.2"
   }
 }

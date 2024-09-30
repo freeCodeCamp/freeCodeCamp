@@ -8,7 +8,7 @@
   "c24by8": "Add your code below this line",
   "jbrt8k": "Adds the m-th row into newArray",
   "zkh12d": "After passing the challenge experiment with myString and see how the grouping works",
-  "mobihi": "Assign 5 to oopsGlobal Here",
+  "mobihi": "Assign 5 to oopsGlobal here",
   "v3ups9": "Call scale with an argument here",
   "iw4a3a": "Case 1: Target has no children",
   "463xp8": "Case 2: Target has one child",
@@ -66,7 +66,7 @@
   "cvh4x7": "Only change code below this line",
   "lvmnm7": "Open a new tab for cat memes",
   "avpx79": "Open your browser console.",
-  "0b5ps6": "Padding between the SVG canvas boundary and the plot",
+  "0b5ps6": "Padding between the SVG boundary and the plot",
   "uemoej": "Pushes n zeroes into the current row to create the columns",
   "lm86nf": "Pushes the current row, which now has n zeroes in it, to the array",
   "qscelx": "Redux methods are available from a Redux object",
@@ -98,6 +98,8 @@
   "bheu99": "This will hold the set",
   "x1djjr": "Use console.clear() on the next line to clear the browser console.",
   "22ta95": "Use console.log() to print the output variable.",
+  "owgrP6": "Use the classes ABOVE this line",
+  "oszrtn": "Use the classes BELOW this line",
   "w43c7l": "Using s = [2, 5, 7] would be invalid",
   "pgckoj": "Variable assignments",
   "2xiqvv": "Variable declarations",
@@ -106,5 +108,6 @@
   "es69h6": "When you join two windows into one window",
   "fho5t5": "When you open a new tab at the end",
   "00kcrm": "yields true",
-  "sxpg2a": "Your mailbox, drive, and other work sites"
+  "sxpg2a": "Your mailbox, drive, and other work sites",
+  "n4f332": "TODO: use a different type of loop"
 }

@@ -2,10 +2,9 @@ import dedent from 'dedent';
 import { check } from 'express-validator';
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
+import fetch from 'node-fetch';
 import { isEmail } from 'validator';
-
-import { jwtSecret } from '../../../../config/secrets';
-
+import { jwtSecret } from '../../../config/secrets';
 import { decodeEmail } from '../../common/utils';
 import {
   createPassportCallbackAuthenticator,
@@ -14,8 +13,13 @@ import {
 } from '../component-passport';
 import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
-import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
+import {
+  ifUserRedirectTo,
+  ifNoUserRedirectHome,
+  ifNotMobileRedirect
+} from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
+import { createDeleteUserToken } from '../middlewares/user-token';
 
 const passwordlessGetValidators = [
   check('email')
@@ -33,11 +37,13 @@ module.exports = function enableAuthentication(app) {
   // enable loopback access control authentication. see:
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
+  const ifNotMobile = ifNotMobileRedirect();
   const ifUserRedirect = ifUserRedirectTo();
   const ifNoUserRedirect = ifNoUserRedirectHome();
   const devSaveAuthCookies = devSaveResponseAuthCookies();
   const devLoginSuccessRedirect = devLoginRedirect();
   const api = app.loopback.Router();
+  const deleteUserToken = createDeleteUserToken(app);
 
   // Use a local mock strategy for signing in if we are in dev mode.
   // Otherwise we use auth0 login. We use a string for 'true' because values
@@ -62,7 +68,7 @@ module.exports = function enableAuthentication(app) {
     );
   }
 
-  api.get('/signout', (req, res) => {
+  api.get('/signout', deleteUserToken, (req, res) => {
     const { origin, returnTo } = getRedirectParams(req);
     req.logout();
     req.session.destroy(err => {
@@ -84,6 +90,8 @@ module.exports = function enableAuthentication(app) {
     passwordlessGetValidators,
     createGetPasswordlessAuth(app)
   );
+
+  api.get('/mobile-login', ifNotMobile, ifUserRedirect, mobileLogin(app));
 
   app.use(api);
 };
@@ -127,7 +135,7 @@ function createGetPasswordlessAuth(app) {
             );
           }
           // find user then validate and destroy email validation token
-          // finally retun user instance
+          // finally return user instance
           return User.findOne$({ where: { id: authToken.userId } }).flatMap(
             user => {
               if (!user) {
@@ -184,5 +192,55 @@ function createGetPasswordlessAuth(app) {
         })
         .subscribe(() => {}, next)
     );
+  };
+}
+
+function mobileLogin(app) {
+  const {
+    models: { User }
+  } = app;
+  return async function getPasswordlessAuth(req, res, next) {
+    try {
+      const auth0Res = await fetch(
+        `https://${process.env.AUTH0_DOMAIN}/userinfo`,
+        {
+          headers: { Authorization: req.headers.authorization }
+        }
+      );
+
+      if (!auth0Res.ok) {
+        return next(
+          wrapHandledError(new Error('Invalid Auth0 token'), {
+            type: 'danger',
+            message: 'We could not log you in, please try again in a moment.',
+            status: auth0Res.status
+          })
+        );
+      }
+
+      const { email } = await auth0Res.json();
+
+      if (typeof email !== 'string' || !isEmail(email)) {
+        return next(
+          wrapHandledError(new TypeError('decoded email is invalid'), {
+            type: 'danger',
+            message: 'The email is incorrectly formatted',
+            status: 400
+          })
+        );
+      }
+
+      User.findOne$({ where: { email } })
+        .do(async user => {
+          if (!user) {
+            user = await User.create({ email });
+          }
+          await user.mobileLoginByRequest(req, res);
+          res.end();
+        })
+        .subscribe(() => {}, next);
+    } catch (err) {
+      next(err);
+    }
   };
 }

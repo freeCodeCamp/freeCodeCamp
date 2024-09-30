@@ -19,7 +19,7 @@ Both of these would return `true`.
 
 # --instructions--
 
-Finish writing the function so that it returns true if the object passed to it contains all four names, `Alan`, `Jeff`, `Sarah` and `Ryan` and returns false otherwise.
+Finish writing the function so that it returns `true` if the object passed to it contains all four names, `Alan`, `Jeff`, `Sarah` and `Ryan` and returns `false` otherwise.
 
 # --hints--
 
@@ -27,7 +27,7 @@ The `users` object should not be accessed directly
 
 ```js 
 
-assert(code.match(/users/gm).length <= 2)
+assert(__helpers.removeJSComments(code).match(/users/gm).length <= 2)
 
 ```
 

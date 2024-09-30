@@ -74,6 +74,9 @@
       },
       "require": true
     },
+    "usernameDisplay": {
+      "type": "string"
+    },
     "about": {
       "type": "string",
       "default": ""
@@ -107,6 +110,10 @@
       "type": "boolean",
       "default": false
     },
+    "isClassroomAccount": {
+      "type": "boolean",
+      "default": false
+    },
     "currentChallengeId": {
       "type": "string",
       "description": "The challenge last visited by the user",
@@ -116,6 +123,17 @@
       "type": "boolean",
       "description": "Camper has signed academic honesty policy",
       "default": false
+    },
+    "needsModeration": {
+      "type": "boolean",
+      "description": "Camper has challenges needing to be moderated",
+      "default": false,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "isFrontEndCert": {
       "type": "boolean",
@@ -197,6 +215,26 @@
       "description": "Camper is machine learning with Python certified",
       "default": false
     },
+    "isRelationalDatabaseCertV8": {
+      "type": "boolean",
+      "description": "Camper is relational database certified",
+      "default": false
+    },
+    "isCollegeAlgebraPyCertV8": {
+      "type": "boolean",
+      "description": "Camper is college algebra with Python certified",
+      "default": false
+    },
+    "isFoundationalCSharpCertV8": {
+      "type": "boolean",
+      "description": "Camper is foundational C# certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCertV8": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified (2023)",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {
@@ -204,6 +242,49 @@
           "id": "string",
           "solution": "string",
           "githubLink": "string",
+          "challengeType": "number",
+          "isManuallyApproved": "boolean",
+          "files": {
+            "type": [
+              {
+                "contents": {
+                  "type": "string",
+                  "default": ""
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            ],
+            "default": []
+          }
+        }
+      ],
+      "default": []
+    },
+    "partiallyCompletedChallenges": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string"
+        }
+      ],
+      "default": []
+    },
+    "savedChallenges": {
+      "type": [
+        {
+          "lastSavedDate": "number",
+          "id": "string",
           "challengeType": "number",
           "files": {
             "type": [
@@ -232,6 +313,26 @@
       ],
       "default": []
     },
+    "completedExams": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string",
+          "challengeType": "number",
+          "examResults": {
+            "type": {
+              "numberOfCorrectAnswers": "number",
+              "numberOfQuestionsInExam": "number",
+              "percentCorrect": "number",
+              "passingPercent": "number",
+              "passed": "boolean",
+              "examTimeInSeconds": "number"
+            }
+          }
+        }
+      ],
+      "default": []
+    },
     "portfolio": {
       "type": "array",
       "default": []
@@ -250,6 +351,10 @@
     "theme": {
       "type": "string",
       "default": "default"
+    },
+    "keyboardShortcuts": {
+      "type": "boolean",
+      "default": false
     },
     "profileUI": {
       "type": "object",
@@ -276,9 +381,7 @@
       "default": {}
     },
     "donationEmails": {
-      "type": [
-        "string"
-      ]
+      "type": ["string"]
     },
     "isDonating": {
       "type": "boolean",
@@ -320,6 +423,21 @@
       "type": "hasMany",
       "model": "article",
       "foreignKey": "externalId"
+    },
+    "userTokens": {
+      "type": "hasMany",
+      "model": "UserToken",
+      "foreignKey": "userId"
+    },
+    "msUsernames": {
+      "type": "hasMany",
+      "model": "MsUsername",
+      "foreignKey": "userId"
+    },
+    "surveys": {
+      "type": "hasMany",
+      "model": "Survey",
+      "foreignKey": "userId"
     }
   },
   "acls": [

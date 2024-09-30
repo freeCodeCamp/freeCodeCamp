@@ -12,7 +12,7 @@ Let's create one more method for our doubly linked list called reverse which rev
 
 # --hints--
 
-The DoublyLinkedList data structure should exist.
+The `DoublyLinkedList` data structure should exist.
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-The DoublyLinkedList should have a method called reverse.
+The `DoublyLinkedList` should have a method called `reverse`.
 
 ```js
 assert(
@@ -43,7 +43,7 @@ assert(
 );
 ```
 
-Reversing an empty list should return null.
+Reversing an empty list should return `null`.
 
 ```js
 assert(
@@ -57,7 +57,7 @@ assert(
 );
 ```
 
-The reverse method should reverse the list.
+The `reverse` method should reverse the list.
 
 ```js
 assert(
@@ -77,7 +77,7 @@ assert(
 );
 ```
 
-The next and previous references should be correctly maintained when a list is reversed.
+The `next` and `previous` references should be correctly maintained when a list is reversed.
 
 ```js
 assert(

@@ -44,7 +44,7 @@ assert(increment(5) === 6);
 A default parameter value of `1` should be used for `value`.
 
 ```js
-assert(code.match(/value\s*=\s*1/g));
+assert(__helpers.removeJSComments(code).match(/value\s*=\s*1/g));
 ```
 
 # --seed--

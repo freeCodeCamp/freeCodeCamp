@@ -14,7 +14,7 @@ After you've created a JavaScript object, you can update its properties at any t
 For example, let's look at `ourDog`:
 
 ```js
-var ourDog = {
+const ourDog = {
   "name": "Camper",
   "legs": 4,
   "tails": 1,
@@ -39,7 +39,7 @@ assert(/happy coder/gi.test(myDog.name));
 You should not edit the `myDog` definition.
 
 ```js
-assert(/"name": "Coder"/.test(code));
+assert(/"name": "Coder"/.test(__helpers.removeJSComments(code)));
 ```
 
 # --seed--
@@ -54,7 +54,7 @@ assert(/"name": "Coder"/.test(code));
 
 ```js
 // Setup
-var myDog = {
+const myDog = {
   "name": "Coder",
   "legs": 4,
   "tails": 1,
@@ -62,12 +62,13 @@ var myDog = {
 };
 
 // Only change code below this line
+
 ```
 
 # --solutions--
 
 ```js
-var myDog = {
+const myDog = {
   "name": "Coder",
   "legs": 4,
   "tails": 1,

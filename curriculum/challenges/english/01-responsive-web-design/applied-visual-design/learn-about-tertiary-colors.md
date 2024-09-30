@@ -16,7 +16,7 @@ There are various methods of selecting different colors that result in a harmoni
 
 Here are three colors created using the split-complement scheme:
 
-<table class='table table-striped'><thead><tr><th>Color</th><th>Hex Code</th></tr></thead><thead></thead><tbody><tr><td>orange</td><td>#FF7F00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>raspberry</td><td>#FF007F</td></tr></tbody></table>
+<table><thead><tr><th>Color</th><th>Hex Code</th></tr></thead><thead></thead><tbody><tr><td>orange</td><td>#FF7F00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>raspberry</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 
@@ -27,25 +27,31 @@ Change the `background-color` property of the `orange`, `cyan`, and `raspberry` 
 The `div` element with class `orange` should have a `background-color` of orange.
 
 ```js
-assert($('.orange').css('background-color') == 'rgb(255, 127, 0)');
+const orangeElement = document.querySelector('.orange');
+const orangeStyle = window.getComputedStyle(orangeElement);
+assert.equal(orangeStyle?.backgroundColor, 'rgb(255, 127, 0)');
 ```
 
 The `div` element with class `cyan` should have a `background-color` of cyan.
 
 ```js
-assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
+const cyanElement = document.querySelector('.cyan');
+const cyanStyle = window.getComputedStyle(cyanElement);
+assert.equal(cyanStyle?.backgroundColor, 'rgb(0, 255, 255)');
 ```
 
 The `div` element with class `raspberry` should have a `background-color` of raspberry.
 
 ```js
-assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
+const raspberryElement = document.querySelector('.raspberry');
+const raspberryStyle = window.getComputedStyle(raspberryElement);
+assert.equal(raspberryStyle?.backgroundColor, 'rgb(255, 0, 127)');
 ```
 
 All `background-color` values for the color classes should be hex codes and not color names.
 
 ```js
-assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
+assert.notMatch(code, /background-color:\s(orange|cyan|raspberry)/);
 ```
 
 # --seed--

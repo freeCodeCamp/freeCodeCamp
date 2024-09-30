@@ -16,7 +16,7 @@
     "Coding spree!",
     "Code long and prosper.",
     "The crowd goes wild!",
-    "One for the guinness book!",
+    "One for the Guinness book!",
     "Flawless victory!",
     "Most efficient!",
     "You've got the touch!",
@@ -87,7 +87,7 @@
     "Shiver me timbers!",
     "Raise the roof!",
     "Bingo!",
-    "Even honeybadger cares!",
+    "Even Honey Badger cares!",
     "Helm, Warp Nine. Engage!",
     "Gotta code 'em all!",
     "Spool up the FTL drive!",
@@ -95,12 +95,40 @@
     "They're in another castle.",
     "Power UP!",
     "Pikachu chooses you!",
-    "I gotta have more cow bell.",
+    "I gotta have more cowbell.",
     "Gotta go fast!",
-    "Yipee!",
+    "Yippee!",
     "Cowabunga!",
     "Moon Prism Power!",
-    "Plus Ultra!"
+    "Plus Ultra!",
+    "Everything's coming up Milhouse!",
+    "King of the Pirates!",
+    "Thunder Breathing First Form!",
+    "It's time to duel!",
+    "You better believe it!",
+    "Do a barrel roll!",
+    "You can do this all day!",
+    "It's super effective!",
+    "This is the way!",
+    "You're king of the world!",
+    "It's morphin' time!",
+    "Just keep swimming!",
+    "You are the one who knocks!",
+    "Inconceivable!",
+    "Great Scott!",
+    "By Grabthar's hammer!",
+    "Get to the choppa!",
+    "It's clobberin' time!",
+    "Somebody stop me!",
+    "Oh, hi Mark!",
+    "Groovy!",
+    "The Dude abides!",
+    "Are you not entertained?",
+    "There can be only one!",
+    "You are the danger!",
+    "You know kung fu!",
+    "Elementary, my dear Watson!",
+    "Maximum effort!"
   ],
   "motivationalQuotes": [
     {
@@ -174,6 +202,10 @@
     {
       "quote": "There is only one corner of the universe you can be certain of improving, and that's your own self.",
       "author": "Aldous Huxley"
+    },
+    {
+      "quote": "I am thankful for my struggle because, without it, I wouldn't have stumbled across my strength.",
+      "author": "Alex Elle"
     },
     {
       "quote": "The most common way people give up their power is by thinking they don't have any.",
@@ -256,6 +288,10 @@
       "author": "Carl Sagan"
     },
     {
+      "quote": "When you have a dream, you've got to grab it and never let go.",
+      "author": "Carol Burnett"
+    },
+    {
       "quote": "If you're not making mistakes, then you're not making decisions.",
       "author": "Catherine Cook"
     },
@@ -270,6 +306,14 @@
     {
       "quote": "It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change.",
       "author": "Charles Darwin"
+    },
+    {
+      "quote": "The details are not the details. They make the design.",
+      "author": "Charles Eames"
+    },
+    {
+      "quote": "Creativity is more than just being different. Anybody can plan weird. That's easy. What's hard is to be as simple as Bach. Making the simple, awesomely simple, that's creativity.",
+      "author": "Charles Mingus"
     },
     {
       "quote": "Life is 10% what happens to you and 90% how you react to it.",
@@ -304,12 +348,20 @@
       "author": "Dennis Ritchie"
     },
     {
+      "quote": "The way I see it, if you want the rainbow, you gotta put up with the rain!",
+      "author": "Dolly Parton"
+    },
+    {
       "quote": "Computers are good at following instructions, but not at reading your mind.",
       "author": "Donald Knuth"
     },
     {
       "quote": "A good programmer is someone who always looks both ways before crossing a one-way street.",
       "author": "Doug Linder"
+    },
+    {
+      "quote": "Creativity is a wild mind and a disciplined eye.",
+      "author": "Dorothy Parker"
     },
     {
       "quote": "Tough times never last, but tough people do.",
@@ -346,6 +398,10 @@
     {
       "quote": "Light tomorrow with today.",
       "author": "Elizabeth Barrett Browning"
+    },
+    {
+      "quote": "If your dreams do not scare you, they are not big enough.",
+      "author": "Ellen Johnson Sirleaf"
     },
     {
       "quote": "Forever is composed of nows.",
@@ -448,6 +504,10 @@
       "author": "Isaac Asimov"
     },
     {
+      "quote": "What you do makes a difference. And you have to decide what kind of difference you want to make.",
+      "author": "Jane Goodall"
+    },
+    {
       "quote": "We are all failures. At least the best of us are.",
       "author": "J.M. Barrie"
     },
@@ -521,7 +581,7 @@
     },
     {
       "quote": "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things.",
-      "author": "Leonardo da Vinci"
+      "author": "Elinor Smith"
     },
     {
       "quote": "If you're any good at all, you know you can be better.",
@@ -589,6 +649,10 @@
     },
     {
       "quote": "Nothing will work unless you do.",
+      "author": "Maya Angelou"
+    },
+    {
+      "quote": "You can't use up creativity. The more you use, the more you have.",
       "author": "Maya Angelou"
     },
     {
@@ -748,6 +812,10 @@
       "author": "Unknown"
     },
     {
+      "quote": "Look at usual things with unusual eyes.",
+      "author": "Vico Magistetti"
+    },
+    {
       "quote": "Even if you fall on your face, you're still moving forward.",
       "author": "Victor Kiam"
     },
@@ -757,6 +825,10 @@
     },
     {
       "quote": "I dream my painting and I paint my dream.",
+      "author": "Vincent van Gogh"
+    },
+    {
+      "quote": "Great things are done by a series of small things brought together.",
       "author": "Vincent van Gogh"
     },
     {

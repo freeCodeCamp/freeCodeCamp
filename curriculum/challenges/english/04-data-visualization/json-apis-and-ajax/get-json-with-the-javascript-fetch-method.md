@@ -15,10 +15,10 @@ Here is the code for making a GET request to `/json/cats.json`
 ```js
 
 fetch('/json/cats.json')
-	.then(response => response.json())
-	.then(data => {
-		document.getElementById('message').innerHTML = JSON.stringify(data);
-	})
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('message').innerHTML = JSON.stringify(data);
+  })
 
 ```
 
@@ -37,6 +37,30 @@ Now, it selects the element that will receive the data by using `document.getEle
 Update the code to create and send a `GET` request to the freeCodeCamp Cat Photo API. But this time, using the `fetch` method instead of `XMLHttpRequest`.
 
 # --hints--
+
+
+Your code should use the fetched data to replace the inner HTML
+
+```js
+const catData = "dummy data";
+const ref = fetch;
+fetch = () => Promise.resolve({ json: () => catData });
+async () => {
+  try {
+    document.getElementById("getMessage").click();
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    fetch = ref;
+    assert.equal(
+      document.getElementById("message").textContent,
+      JSON.stringify(catData)
+    );
+  }
+};
+```
+
 
 Your code should make a `GET` request with `fetch`.
 

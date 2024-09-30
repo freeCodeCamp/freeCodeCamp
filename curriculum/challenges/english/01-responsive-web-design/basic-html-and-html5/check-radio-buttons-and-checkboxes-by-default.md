@@ -11,7 +11,7 @@ dashedName: check-radio-buttons-and-checkboxes-by-default
 
 You can set a checkbox or radio button to be checked by default using the `checked` attribute.
 
-To do this, just add the word `checked` to the inside of an input element. For example:
+To do this, just add the word `checked` to the inside of an `input` element. For example:
 
 ```html
 <input type="radio" name="test-name" checked>
@@ -35,6 +35,18 @@ Your first checkbox on your form should be checked by default.
 assert($('input[type="checkbox"]').prop('checked'));
 ```
 
+You should not change the inner text of the `Indoor` label.
+
+```js
+assert.equal(document.querySelector('label[for="indoor"]')?.innerText?.trim(), 'Indoor');
+```
+
+You should not change the inner text of the `Loving` label.
+
+```js
+assert.equal(document.querySelector('label[for="loving"]')?.innerText?.trim(), 'Loving');
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -48,7 +60,7 @@ assert($('input[type="checkbox"]').prop('checked'));
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -81,7 +93,7 @@ assert($('input[type="checkbox"]').prop('checked'));
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

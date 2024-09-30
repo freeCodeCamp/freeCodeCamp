@@ -10,7 +10,7 @@ dashedName: call-out-optional-actions-with-btn-info
 
 Bootstrap comes with several pre-defined colors for buttons. The `btn-info` class is used to call attention to optional actions that the user can take.
 
-Create a new block-level Bootstrap button below your `Like` button with the text `Info`, and add Bootstrap's `btn-info` and `btn-block` classes to it.
+Create a new block-level Bootstrap button below your `Like` button with the text `Info`, and add Bootstrap's `btn-info` class to it.
 
 Note that these buttons still need the `btn` and `btn-block` classes.
 
@@ -19,29 +19,30 @@ Note that these buttons still need the `btn` and `btn-block` classes.
 You should create a new `button` element with the text `Info`.
 
 ```js
-assert(new RegExp('info', 'gi').test($('button').text()));
+const infoButton = document.querySelectorAll('button')?.[1]; 
+assert.match(infoButton.textContent,/info/gi);
 ```
 
 Both of your Bootstrap buttons should have the `btn` and `btn-block` classes.
 
 ```js
-assert($('button.btn-block.btn').length > 1);
+assert.lengthOf(document.querySelectorAll('button.btn-block.btn'),2);
 ```
 
 Your new button should have the class `btn-info`.
 
 ```js
-assert($('button').hasClass('btn-info'));
+const infoButton = [...document.querySelectorAll('button')].at(1);
+assert.isTrue(infoButton?.classList?.contains('btn-info'));
 ```
 
 All of your `button` elements should have closing tags.
 
 ```js
-assert(
-  code.match(/<\/button>/g) &&
-    code.match(/<button/g) &&
-    code.match(/<\/button>/g).length === code.match(/<button/g).length
-);
+assert.match(code,/<\/button>/g);
+assert.match(code,/<button/g);
+
+assert.equal(code.match(/<\/button>/g)?.length,code.match(/<button/g)?.length);
 ```
 
 # --seed--

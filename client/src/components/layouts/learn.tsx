@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
-import {
-  userSelector,
-  userFetchStateSelector,
-  isSignedInSelector,
-  tryToShowDonationModal
-} from '../../redux';
-import DonateModal from '../Donation/DonationModal';
-import createRedirect from '../create-redirect';
+import { tryToShowDonationModal } from '../../redux/actions';
+import { userFetchStateSelector } from '../../redux/selectors';
+import DonateModal from '../Donation/donation-modal';
 
 import './prism.css';
 import './prism-night.css';
@@ -23,18 +18,10 @@ type FetchState = {
   errored: boolean;
 };
 
-type User = {
-  acceptedPrivacyTerms: boolean;
-};
-
 const mapStateToProps = createSelector(
   userFetchStateSelector,
-  isSignedInSelector,
-  userSelector,
-  (fetchState: FetchState, isSignedIn, user: User) => ({
-    fetchState,
-    isSignedIn,
-    user
+  (fetchState: FetchState) => ({
+    fetchState
   })
 );
 
@@ -42,58 +29,51 @@ const mapDispatchToProps = {
   tryToShowDonationModal
 };
 
-const RedirectEmailSignUp = createRedirect('/email-sign-up');
-
 type LearnLayoutProps = {
-  isSignedIn?: boolean;
   fetchState: FetchState;
-  user: User;
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
+  hasEditableBoundaries?: boolean;
 };
 
-class LearnLayout extends Component<LearnLayoutProps> {
-  static displayName = 'LearnLayout';
+function LearnLayout({
+  fetchState,
+  tryToShowDonationModal,
+  children,
+  hasEditableBoundaries
+}: LearnLayoutProps): JSX.Element {
+  useEffect(() => {
+    tryToShowDonationModal();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentDidMount() {
-    this.props.tryToShowDonationModal();
+  useEffect(() => {
+    return () => {
+      const metaTag = document.querySelector(`meta[name="robots"]`);
+      if (metaTag) {
+        metaTag.remove();
+      }
+    };
+  }, []);
+
+  if (fetchState.pending && !fetchState.complete) {
+    return <Loader fullScreen={true} />;
   }
 
-  componentWillUnmount() {
-    const metaTag = document.querySelector(`meta[name="robots"]`);
-    if (metaTag) {
-      metaTag.remove();
-    }
-  }
-
-  render() {
-    const {
-      fetchState: { pending, complete },
-      isSignedIn,
-      user: { acceptedPrivacyTerms },
-      children
-    } = this.props;
-
-    if (pending && !complete) {
-      return <Loader fullScreen={true} />;
-    }
-
-    if (isSignedIn && !acceptedPrivacyTerms) {
-      return <RedirectEmailSignUp />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <meta content='noindex' name='robots' />
-        </Helmet>
-        <main id='learn-app-wrapper'>{children}</main>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-        /* @ts-ignore  */}
-        <DonateModal />
-      </>
-    );
-  }
+  return (
+    <>
+      <Helmet>
+        <meta content='noindex' name='robots' />
+      </Helmet>
+      <main
+        id='learn-app-wrapper'
+        {...(hasEditableBoundaries && { 'data-has-editable-boundaries': true })}
+      >
+        {children}
+      </main>
+      <DonateModal />
+    </>
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LearnLayout);

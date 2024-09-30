@@ -2,11 +2,11 @@
   "name": "@freecodecamp/curriculum-helper-scripts",
   "version": "0.0.0-next.1",
   "description": "freeCodeCamp's project-based curriculum scripts",
-  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": "^6.14.12"
+    "node": ">=16",
+    "pnpm": ">=9"
   },
   "repository": {
     "type": "git",
@@ -23,13 +23,14 @@
     "create-project": "ts-node create-project"
   },
   "devDependencies": {
-    "@types/inquirer": "7.3.3",
-    "bson-objectid": "2.0.1",
-    "cross-env": "7.0.3",
+    "@types/glob": "^8.0.1",
+    "@types/inquirer": "^8.2.5",
+    "bson-objectid": "2.0.4",
+    "glob": "^8.1.0",
     "gray-matter": "4.0.3",
-    "inquirer": "8.1.2",
-    "prettier": "2.4.1",
-    "ts-node": "10.2.1",
-    "typescript": "4.4.3"
+    "inquirer": "8.2.6",
+    "prettier": "3.2.5",
+    "ts-node": "10.9.2",
+    "typescript": "5.2.2"
   }
 }

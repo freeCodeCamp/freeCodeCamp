@@ -1,48 +1,24 @@
-import request from 'request';
-
-import { gitHubUserAgent } from '../../../../config/misc';
+import { pick } from 'lodash';
 import { getRedirectParams } from '../utils/redirection';
-
-const githubClient = process.env.GITHUB_ID;
-const githubSecret = process.env.GITHUB_SECRET;
+import { deprecatedEndpoint } from '../utils/disabled-endpoints';
+import {
+  getProgress,
+  normaliseUserFields,
+  publicUserProps
+} from '../utils/publicUserProps';
 
 module.exports = function (app) {
   const router = app.loopback.Router();
   const User = app.models.User;
 
-  router.get('/api/github', githubCalls);
+  router.get('/api/github', deprecatedEndpoint);
   router.get('/u/:email', unsubscribeDeprecated);
   router.get('/unsubscribe/:email', unsubscribeDeprecated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
-  router.get(
-    '/the-fastest-web-page-on-the-internet',
-    theFastestWebPageOnTheInternet
-  );
-  router.get('/unsubscribed/:unsubscribeId', unsubscribedWithId);
-  router.get('/unsubscribed', unsubscribed);
   router.get('/resubscribe/:unsubscribeId', resubscribe);
-  router.get('/nonprofits', nonprofits);
-  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
+  router.get('/api/users/get-public-profile', blockUserAgent, getPublicProfile);
 
   app.use(router);
-
-  function theFastestWebPageOnTheInternet(req, res) {
-    res.render('resources/the-fastest-web-page-on-the-internet', {
-      title: 'This is the fastest web page on the internet'
-    });
-  }
-
-  function bootcampCalculator(req, res) {
-    res.render('resources/calculator', {
-      title: 'Coding Bootcamp Cost Calculator'
-    });
-  }
-
-  function nonprofits(req, res) {
-    res.render('resources/nonprofits', {
-      title: 'Your Nonprofit Can Get Pro Bono Code'
-    });
-  }
 
   function unsubscribeDeprecated(req, res) {
     req.flash(
@@ -96,27 +72,13 @@ module.exports = function (app) {
     });
   }
 
-  function unsubscribed(req, res) {
-    res.render('resources/unsubscribed', {
-      title: 'You have been unsubscribed'
-    });
-  }
-
-  function unsubscribedWithId(req, res) {
-    const { unsubscribeId } = req.params;
-    return res.render('resources/unsubscribed', {
-      title: 'You have been unsubscribed',
-      unsubscribeId
-    });
-  }
-
   function resubscribe(req, res, next) {
     const { unsubscribeId } = req.params;
     const { origin } = getRedirectParams(req);
     if (!unsubscribeId) {
       req.flash(
         'info',
-        'We we unable to process this request, please check and try againÍ'
+        'We we unable to process this request, please check and try again'
       );
       res.redirect(origin);
     }
@@ -143,8 +105,7 @@ module.exports = function (app) {
         .then(() => {
           req.flash(
             'success',
-            "We've successfully updated your email preferences. Thank you " +
-              'for resubscribing.'
+            "We've successfully updated your email preferences. Thank you for resubscribing."
           );
           return res.redirectWithFlash(origin);
         })
@@ -152,54 +113,117 @@ module.exports = function (app) {
     });
   }
 
-  function githubCalls(req, res, next) {
-    var githubHeaders = {
-      headers: {
-        'User-Agent': gitHubUserAgent
-      },
-      port: 80
-    };
-    request(
-      [
-        'https://api.github.com/repos/freecodecamp/',
-        'freecodecamp/pulls?client_id=',
-        githubClient,
-        '&client_secret=',
-        githubSecret
-      ].join(''),
-      githubHeaders,
-      function (err, status1, pulls) {
-        if (err) {
-          return next(err);
-        }
-        pulls = pulls
-          ? Object.keys(JSON.parse(pulls)).length
-          : "Can't connect to github";
+  const blockedUserAgentParts = ['python', 'google-apps-script', 'curl'];
 
-        return request(
-          [
-            'https://api.github.com/repos/freecodecamp/',
-            'freecodecamp/issues?client_id=',
-            githubClient,
-            '&client_secret=',
-            githubSecret
-          ].join(''),
-          githubHeaders,
-          function (err, status2, issues) {
-            if (err) {
-              return next(err);
-            }
-            issues =
-              pulls === parseInt(pulls, 10) && issues
-                ? Object.keys(JSON.parse(issues)).length - pulls
-                : "Can't connect to GitHub";
-            return res.json({
-              issues: issues,
-              pulls: pulls
-            });
-          }
+  function blockUserAgent(req, res, next) {
+    const userAgent = req.headers['user-agent'];
+
+    if (
+      !userAgent ||
+      blockedUserAgentParts.some(ua => userAgent.toLowerCase().includes(ua))
+    ) {
+      return res
+        .status(400)
+        .send(
+          'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
         );
-      }
-    );
+    }
+
+    return next();
+  }
+
+  async function getPublicProfile(req, res) {
+    const { username } = req.query;
+    if (!username) {
+      return res.status(400).json({ error: 'No username provided' });
+    }
+
+    const user = await User.findOne({ where: { username } });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const { completedChallenges, progressTimestamps, profileUI } = user;
+    const allUser = {
+      ...pick(user, publicUserProps),
+      points: progressTimestamps.length,
+      completedChallenges,
+      ...getProgress(progressTimestamps),
+      ...normaliseUserFields(user),
+      joinDate: user.id.getTimestamp()
+    };
+
+    const publicUser = prepUserForPublish(allUser, profileUI);
+
+    return res.json({
+      entities: {
+        user: {
+          [user.username]: {
+            ...publicUser
+          }
+        }
+      },
+      result: user.username
+    });
+  }
+
+  function prepUserForPublish(user, profileUI) {
+    const {
+      about,
+      calendar,
+      completedChallenges,
+      isDonating,
+      joinDate,
+      location,
+      name,
+      points,
+      portfolio,
+      username,
+      yearsTopContributor
+    } = user;
+    const {
+      isLocked = true,
+      showAbout = false,
+      showCerts = false,
+      showDonation = false,
+      showHeatMap = false,
+      showLocation = false,
+      showName = false,
+      showPoints = false,
+      showPortfolio = false,
+      showTimeLine = false
+    } = profileUI;
+
+    if (isLocked) {
+      return {
+        isLocked,
+        profileUI,
+        username
+      };
+    }
+    return {
+      ...user,
+      about: showAbout ? about : '',
+      calendar: showHeatMap ? calendar : {},
+      completedChallenges: (function () {
+        if (showTimeLine) {
+          return showCerts
+            ? completedChallenges
+            : completedChallenges.filter(
+                ({ challengeType }) => challengeType !== 7
+              );
+        } else {
+          return [];
+        }
+      })(),
+      isDonating: showDonation ? isDonating : null,
+      joinDate: showAbout ? joinDate : '',
+      location: showLocation ? location : '',
+      name: showName ? name : '',
+      points: showPoints ? points : null,
+      portfolio: showPortfolio ? portfolio : [],
+      yearsTopContributor: yearsTopContributor
+    };
   }
 };

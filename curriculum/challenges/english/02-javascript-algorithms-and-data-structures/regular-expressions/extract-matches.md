@@ -51,7 +51,7 @@ assert(codingRegex.source === 'coding');
 You should use the `.match()` method.
 
 ```js
-assert(code.match(/\.match\(.*\)/));
+assert(__helpers.removeJSComments(code).match(/\.match\(.*\)/));
 ```
 
 # --seed--

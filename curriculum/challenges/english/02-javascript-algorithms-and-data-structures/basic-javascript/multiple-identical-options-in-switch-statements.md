@@ -12,8 +12,8 @@ dashedName: multiple-identical-options-in-switch-statements
 If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered. If you have multiple inputs with the same output, you can represent them in a `switch` statement like this:
 
 ```js
-var result = "";
-switch(val) {
+let result = "";
+switch (val) {
   case 1:
   case 2:
   case 3:
@@ -94,13 +94,13 @@ assert(sequentialSizes(9) === 'High');
 You should not use any `if` or `else` statements
 
 ```js
-assert(!/else/g.test(code) || !/if/g.test(code));
+assert(!/else/g.test(__helpers.removeJSComments(code)) || !/if/g.test(__helpers.removeJSComments(code)));
 ```
 
 You should have nine `case` statements
 
 ```js
-assert(code.match(/case/g).length === 9);
+assert(__helpers.removeJSComments(code).match(/case/g).length === 9);
 ```
 
 # --seed--
@@ -109,7 +109,7 @@ assert(code.match(/case/g).length === 9);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
   // Only change code below this line
 
 
@@ -125,9 +125,9 @@ sequentialSizes(1);
 
 ```js
 function sequentialSizes(val) {
-  var answer = "";
+  let answer = "";
 
-  switch(val) {
+  switch (val) {
     case 1:
     case 2:
     case 3:

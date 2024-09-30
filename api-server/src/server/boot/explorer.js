@@ -14,7 +14,7 @@ module.exports = function mountLoopBackExplorer(app) {
     // Do not print any message when the project is used as a component.
     app.once('started', function () {
       log(
-        'Run `npm install loopback-component-explorer` to enable ' +
+        'Run `pnpm add loopback-component-explorer` to enable ' +
           'the LoopBack explorer'
       );
     });

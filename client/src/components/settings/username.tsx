@@ -1,23 +1,19 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import {
-  ControlLabel,
-  FormControl,
-  Alert,
-  FormGroup
-} from '@freecodecamp/react-bootstrap';
+import { FormControl, Alert, FormGroup, ControlLabel } from '@freecodecamp/ui';
 import React, { Component } from 'react';
-import { TFunction, withTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { isValidUsername } from '../../../../utils/validate';
+import { isValidUsername } from '../../../../shared/utils/validate';
+import { usernameValidationSelector } from '../../redux/settings/selectors';
 import {
   validateUsername,
-  usernameValidationSelector,
   submitNewUsername
-} from '../../redux/settings';
+} from '../../redux/settings/actions';
 import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
 
@@ -96,7 +92,6 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { username } = this.props;
     const { formValue } = this.state;
     if (prevUsername !== username && prevFormValue === formValue) {
-      // eslint-disable-next-line react/no-did-update-set-state
       return this.setState({
         isFormPristine: username === formValue,
         submitClicked: false,
@@ -131,7 +126,9 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
         submitClicked: false
       },
       () =>
-        this.state.isFormPristine || this.state.characterValidation.error
+        this.state.isFormPristine ||
+        this.state.characterValidation.error ||
+        username.toLowerCase().trim() === newValue.toLowerCase().trim()
           ? null
           : validateUsername(this.state.formValue)
     );
@@ -149,10 +146,9 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     const { t } = this.props;
 
     if (!validating && error) {
-      console.log(error);
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>
+          <Alert variant='danger'>
             {t(`settings.username.${error}`, {
               username: this.state.formValue
             })}
@@ -163,28 +159,28 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>{t('settings.username.unavailable')}</Alert>
+          <Alert variant='warning'>{t('settings.username.unavailable')}</Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='info'>{t('settings.username.validating')}</Alert>
+          <Alert variant='info'>{t('settings.username.validating')}</Alert>
         </FullWidthRow>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
+          <Alert variant='success'>{t('settings.username.available')}</Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
-          <Alert bsStyle='info'>{t('settings.username.change')}</Alert>
+          <Alert variant='success'>{t('settings.username.available')}</Alert>
+          <Alert variant='info'>{t('settings.username.change')}</Alert>
         </FullWidthRow>
       );
     }
@@ -199,7 +195,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
       submitClicked
     } = this.state;
     const { isValidUsername, t, validating } = this.props;
-
+    const isDisabled =
+      !(isValidUsername && valid && !isFormPristine) || submitClicked;
     return (
       <form id='usernameSettings' onSubmit={this.handleSubmit}>
         <FullWidthRow>
@@ -211,6 +208,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               name='username-settings'
               onChange={this.handleChange}
               value={formValue}
+              id='username-settings'
             />
           </FormGroup>
         </FullWidthRow>
@@ -218,10 +216,13 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
           this.renderAlerts(validating, error, isValidUsername)}
         <FullWidthRow>
           <BlockSaveButton
-            disabled={
-              !(isValidUsername && valid && !isFormPristine) || submitClicked
-            }
-          />
+            disabled={isDisabled}
+            bgSize='large'
+            {...(isDisabled && { tabIndex: -1 })}
+          >
+            {t('buttons.save')}{' '}
+            <span className='sr-only'>{t('settings.labels.username')}</span>
+          </BlockSaveButton>
         </FullWidthRow>
       </form>
     );

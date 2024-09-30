@@ -2,33 +2,25 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
-  backend,
-  backEndProject,
-  frontEndProject,
-  pythonProject
-} from '../../../../utils/challenge-types';
-import { Form } from '../../../components/formHelpers';
+  StrictSolutionForm,
+  ValidatedValues
+} from '../../../components/formHelpers/form';
 
 interface SubmitProps {
-  isShouldCompletionModalOpen: boolean;
+  showCompletionModal: boolean;
 }
 
-interface FormProps extends WithTranslation {
+interface SolutionFormProps extends WithTranslation {
   challengeType: number;
   description?: string;
   onSubmit: (arg0: SubmitProps) => void;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
 }
 
-interface ValidatedValues {
-  errors: string[];
-  invalidValues: string[];
-  values: Record<string, unknown>;
-}
-
-export class SolutionForm extends Component<FormProps> {
-  constructor(props: FormProps) {
+export class SolutionForm extends Component<SolutionFormProps> {
+  constructor(props: SolutionFormProps) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -43,9 +35,9 @@ export class SolutionForm extends Component<FormProps> {
       // updates values on store
       this.props.updateSolutionForm(validatedValues.values);
       if (validatedValues.invalidValues.length === 0) {
-        this.props.onSubmit({ isShouldCompletionModalOpen: true });
+        this.props.onSubmit({ showCompletionModal: true });
       } else {
-        this.props.onSubmit({ isShouldCompletionModalOpen: false });
+        this.props.onSubmit({ showCompletionModal: false });
       }
     }
   };
@@ -59,7 +51,7 @@ export class SolutionForm extends Component<FormProps> {
     ];
     const backEndProjectFields = [
       { name: 'solution', label: t('learn.solution-link') },
-      { name: 'githubLink', label: t('learn.github-link') }
+      { name: 'githubLink', label: t('learn.source-code-link') }
     ];
 
     const buttonCopy = t('learn.i-completed');
@@ -71,7 +63,8 @@ export class SolutionForm extends Component<FormProps> {
       },
       required: ['solution'],
       isEditorLinkAllowed: false,
-      isLocalLinkAllowed: false
+      isLocalLinkAllowed: false,
+      isSourceCodeLinkRequired: false
     };
 
     let formFields = solutionField;
@@ -79,25 +72,29 @@ export class SolutionForm extends Component<FormProps> {
     let solutionFormID = 'front-end-form';
 
     switch (challengeType) {
-      case frontEndProject:
+      case challengeTypes.frontEndProject:
         formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
         break;
 
-      case backend:
+      case challengeTypes.backend:
         formFields = solutionField;
         options.isLocalLinkAllowed = true;
-        solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
+        solutionLink = solutionLink + 'https://3000-project-url.gitpod.io/';
         break;
 
-      case backEndProject:
+      case challengeTypes.backEndProject:
         formFields = backEndProjectFields;
-        solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
+        // options.required.push('githubLink');
+        options.isSourceCodeLinkRequired = true;
+        options.isLocalLinkAllowed = true;
+        solutionLink = solutionLink + 'https://3000-project-url.gitpod.io/';
         solutionFormID = 'back-end-form';
         break;
 
-      case pythonProject:
+      case challengeTypes.pythonProject:
+      case challengeTypes.colab:
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink =
@@ -107,6 +104,12 @@ export class SolutionForm extends Component<FormProps> {
             : 'https://replit.com/@camperbot/hello');
         break;
 
+      case challengeTypes.codeAllyCert:
+        formFields = solutionField;
+        options.isEditorLinkAllowed = true;
+        solutionLink = solutionLink + 'https://your-git-repo.url/files';
+        break;
+
       default:
         formFields = solutionField;
         solutionLink =
@@ -114,7 +117,7 @@ export class SolutionForm extends Component<FormProps> {
     }
 
     return (
-      <Form
+      <StrictSolutionForm
         buttonText={`${buttonCopy}`}
         formFields={formFields}
         id={solutionFormID}
@@ -122,7 +125,7 @@ export class SolutionForm extends Component<FormProps> {
           ...options,
           placeholders: {
             solution: solutionLink,
-            githubLink: 'ex: https://github.com/camperbot/hello'
+            githubLink: 'ex: https://your-git-repo.url/files'
           }
         }}
         submit={this.handleSubmit}

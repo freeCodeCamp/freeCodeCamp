@@ -17,7 +17,7 @@ export const mockFirstChallenge = {
   superBlock: 'the',
   dashedName: 'challenge',
   challengeOrder: 0,
-  superOrder: 1,
+  superOrder: 0,
   order: 0
 };
 
@@ -35,6 +35,68 @@ export const mockCompletedChallenge = {
   ],
   completedDate: Date.now()
 };
+
+export const mockCompletedChallengeNoFiles = {
+  id: '123abc456def',
+  challengeType: 0,
+  completedDate: Date.now()
+};
+
+export const mockFailingExamChallenge = {
+  id: '647e22d18acb466c97ccbef8',
+  challengeType: 17,
+  completedDate: Date.now(),
+  examResults: {
+    "numberOfCorrectAnswers" : 5,
+    "numberOfQuestionsInExam" : 10,
+    "percentCorrect" : 50,
+    "passingPercent" : 70,
+    "passed" : false,
+    "examTimeInSeconds" : 1200
+  }
+}
+
+export const mockPassingExamChallenge = {
+  id: '647e22d18acb466c97ccbef8',
+  challengeType: 17,
+  completedDate: 1538052380328,
+  examResults: {
+    "numberOfCorrectAnswers" : 9,
+    "numberOfQuestionsInExam" : 10,
+    "percentCorrect" : 90,
+    "passingPercent" : 70,
+    "passed" : true,
+    "examTimeInSeconds" : 1200
+  }
+}
+
+export const mockBetterPassingExamChallenge = {
+  id: '647e22d18acb466c97ccbef8',
+  challengeType: 17,
+  completedDate: Date.now(),
+  examResults: {
+    "numberOfCorrectAnswers" : 10,
+    "numberOfQuestionsInExam" : 10,
+    "percentCorrect" : 100,
+    "passingPercent" : 70,
+    "passed" : true,
+    "examTimeInSeconds" : 1200
+  }
+}
+
+export const mockWorsePassingExamChallenge = {
+  id: '647e22d18acb466c97ccbef8',
+  challengeType: 17,
+  completedDate: Date.now(),
+  examResults: {
+    "numberOfCorrectAnswers" : 8,
+    "numberOfQuestionsInExam" : 10,
+    "percentCorrect" : 80,
+    "passingPercent" : 70,
+    "passed" : true,
+    "examTimeInSeconds" : 1200
+  }
+}
 
 export const mockCompletedChallenges = [
   {
@@ -89,6 +151,9 @@ export const mockUser = {
   },
   updateAttributes: updateUserAttr
 };
+
+export const mockUser2 = JSON.parse(JSON.stringify(mockUser));
+mockUser2.completedChallenges.push(mockPassingExamChallenge);
 
 const mockObservable = {
   toPromise: () => Promise.resolve('result')
@@ -161,11 +226,6 @@ export const matchSubscriptionIdQuery = {
 };
 export const matchUserIdQuery = {
   where: { id: mockUser.id }
-};
-
-export const firstChallengeQuery = {
-  // first challenge of the first block of the first superBlock
-  where: { challengeOrder: 0, superOrder: 1, order: 0 }
 };
 
 export const fullStackChallenges = [

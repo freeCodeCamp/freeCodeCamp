@@ -10,7 +10,11 @@ bilibiliIds:
 dashedName: convolutional-neural-networks
 ---
 
-# --question--
+# --description--
+
+The next few video lessons will reference [this Colab notebook](https://colab.research.google.com/drive/1ZZXnCjFEOkp_KdNcNabd14yok0BAIuwS#forceEdit=true&sandboxMode=true).
+
+# --questions--
 
 ## --text--
 

@@ -1,13 +1,12 @@
 module.exports = {
-  // TODO: remove /tools/dashboard when the tests are configured correctly
-  testPathIgnorePatterns: ['/node_modules/', '/tools/dashboard'],
+  testPathIgnorePatterns: ['/node_modules/', 'api/', 'e2e/'],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
-      '<rootDir>/client/src/__mocks__/fileMock.js',
+      '<rootDir>/client/src/__mocks__/file-mock.ts',
     // Plain CSS - match css files that don't end with
     // '.module.css' https://regex101.com/r/VzwrKH/4
     '^(?!.*\\.module\\.css$).*\\.css$':
-      '<rootDir>/client/src/__mocks__/styleMock.js',
+      '<rootDir>/client/src/__mocks__/style-mock.ts',
     // CSS Modules - match files that end with 'module.css'
     '\\.module\\.css$': 'identity-obj-proxy',
     '^lodash-es$': 'lodash'
@@ -20,7 +19,8 @@ module.exports = {
     '^.+\\.[jt]sx?$': '<rootDir>/jest.transform.js'
   },
   roots: ['.', './client', './api-server'],
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  transformIgnorePatterns: ['node_modules/.pnpm/(?!(nanoid|uuid)@)'],
   setupFilesAfterEnv: ['./jest.setup.js'],
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  watchPathIgnorePatterns: ['<rootDir>/__fixtures__.*']
 };

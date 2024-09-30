@@ -1,7 +1,7 @@
 ---
 title: Introduction to the MongoDB and Mongoose Challenges
-block: MongoDB and Mongoose
-superBlock: Back End Development and APIs
+block: mongodb-and-mongoose
+superBlock: back-end-development-and-apis
 ---
 
 ## Introduction to the MongoDB and Mongoose Challenges
@@ -16,9 +16,9 @@ While there are many non-relational databases, Mongo's use of JSON as its docume
 
 Mongoose.js is an npm module for Node.js that allows you to write objects for Mongo as you would in JavaScript. This can make it easier to construct documents for storage in Mongo.
 
-Working on these challenges will involve you writing your code on Replit on our starter project. After completing each challenge you can copy your public Replit URL (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
+Optionally, you may write your project on another platform, but it must be publicly visible for our testing.
 
-Start this project on Replit using [this link](https://replit.com/github/freeCodeCamp/boilerplate-mongomongoose) or clone [this repository](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) on GitHub! If you use Replit, remember to save the link to your project somewhere safe!
+Start this by cloning [this repository](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) on GitHub!
 
 ## Use MongoDB Atlas to host a free mongodb instance for your projects
 
