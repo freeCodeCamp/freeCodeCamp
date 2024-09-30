@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import {
   Button,
@@ -12,7 +12,6 @@ import {
 } from '@freecodecamp/ui';
 import { TFunction } from 'i18next';
 import { FullWidthRow } from '../../helpers';
-import SectionHeader from '../../settings/section-header';
 import './career-timeline.css';
 import { Career } from '../../../redux/prop-types';
 import { parseDate } from './utils';
@@ -88,18 +87,24 @@ const DeleteModal = ({
 
 const EditCareerTimeline = ({
   myCareer,
-  index,
   selectedIndex,
+  isAdding,
+  isEditing,
   setSelectedIndex,
   updateMyCareer,
+  setMyCareer,
+  setIsAdding,
   setIsEditing,
   t
 }: {
   myCareer: Career[];
-  index: number;
   selectedIndex: number;
+  setIsAdding: (value: boolean) => void;
+  isAdding: boolean;
+  isEditing: boolean;
   setSelectedIndex: (value: number) => void;
   setIsEditing: (value: boolean) => void;
+  setMyCareer: (value: Career[]) => void;
   updateMyCareer: (value: { career: Career[] }) => void;
   t: TFunction;
 }) => {
@@ -109,33 +114,60 @@ const EditCareerTimeline = ({
     const form = formEvent.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    const newCareer = myCareer.map((job, i) => {
-      if (i === index) {
-        return {
+    let newCareer;
+
+    if (isEditing) {
+      newCareer = myCareer.map((job, i) => {
+        if (i === selectedIndex) {
+          return {
+            title: (formData.get('title') as string) || '',
+            company: (formData.get('company') as string) || '',
+            location: (formData.get('location') as string) || '',
+            start_date: (formData.get('start_date') as string) || '',
+            end_date: (formData.get('end_date') as string) || '',
+            description: (formData.get('description') as string) || ''
+          };
+        }
+
+        return job;
+      });
+    } else if (isAdding) {
+      newCareer = [
+        ...myCareer,
+        {
           title: (formData.get('title') as string) || '',
           company: (formData.get('company') as string) || '',
           location: (formData.get('location') as string) || '',
           start_date: (formData.get('start_date') as string) || '',
           end_date: (formData.get('end_date') as string) || '',
           description: (formData.get('description') as string) || ''
-        };
-      }
-
-      return job;
-    });
+        }
+      ];
+    } else {
+      newCareer = myCareer;
+    }
 
     setIsEditing(false);
+    setIsAdding(false);
     setSelectedIndex(-1);
 
     updateMyCareer({ career: newCareer });
+    setMyCareer(newCareer);
 
     return formEvent;
   };
 
-  const job = myCareer[index];
+  let job = {
+    title: '',
+    company: '',
+    location: '',
+    start_date: '',
+    end_date: '',
+    description: ''
+  };
 
-  if (index !== selectedIndex) {
-    return <></>;
+  if (selectedIndex > -1) {
+    job = myCareer[selectedIndex];
   }
 
   return (
@@ -208,7 +240,14 @@ const EditCareerTimeline = ({
           {t('buttons.save')}
         </Button>
       </form>
-      <Button block={true} onClick={() => setIsEditing(false)}>
+      <Button
+        block={true}
+        onClick={() => {
+          setIsEditing(false);
+          setIsAdding(false);
+          setSelectedIndex(-1);
+        }}
+      >
         {t('buttons.cancel')}
       </Button>
     </>
@@ -224,9 +263,10 @@ const CareerTimeline = ({
 }) => {
   const [myCareer, setMyCareer] = useState<Career[]>([...career]);
 
-  const [isEditing, setIsEditing] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
+  const [isAdding, setIsAdding] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
   const { t } = useTranslation();
@@ -243,8 +283,36 @@ const CareerTimeline = ({
         selectedIndex={selectedIndex}
         t={t}
       />
-      <SectionHeader>{t('profile.your-exp')}</SectionHeader>
+
       <FullWidthRow>
+        <div className='header-container'>
+          <h1>{t('profile.your-exp')}</h1>
+          <Button
+            className='edit-btn'
+            onClick={() => {
+              setIsAdding(true);
+              console.log('HELLO');
+            }}
+          >
+            <FontAwesomeIcon icon={faPlus} />
+          </Button>
+        </div>
+        {isAdding || isEditing ? (
+          <EditCareerTimeline
+            myCareer={myCareer}
+            selectedIndex={selectedIndex}
+            isAdding={isAdding}
+            isEditing={isEditing}
+            setSelectedIndex={setSelectedIndex}
+            setMyCareer={setMyCareer}
+            updateMyCareer={updateMyCareer}
+            setIsAdding={setIsAdding}
+            setIsEditing={setIsEditing}
+            t={t}
+          />
+        ) : (
+          <></>
+        )}
         {myCareer.map((job: Career, index) => {
           const start = parseDate(
             new Date(job.start_date).toDateString(),
@@ -267,18 +335,9 @@ const CareerTimeline = ({
           }
 
           return (
-            <Fragment key={index}>
-              {isEditing ? (
-                <EditCareerTimeline
-                  myCareer={myCareer}
-                  index={index}
-                  setIsEditing={setIsEditing}
-                  setSelectedIndex={setSelectedIndex}
-                  updateMyCareer={updateMyCareer}
-                  selectedIndex={selectedIndex}
-                  t={t}
-                />
-              ) : (
+            !isAdding &&
+            !isEditing && (
+              <Fragment key={index}>
                 <div className='card'>
                   <div className='header'>
                     <h3>
@@ -292,6 +351,7 @@ const CareerTimeline = ({
                         className='edit-btn'
                         onClick={() => {
                           setIsDeleting(true);
+                          setSelectedIndex(-1);
                           setSelectedIndex(index);
                         }}
                       >
@@ -318,8 +378,8 @@ const CareerTimeline = ({
                   <p>{job.location}</p>
                   <p>{job.description}</p>
                 </div>
-              )}
-            </Fragment>
+              </Fragment>
+            )
           );
         })}
         <hr />

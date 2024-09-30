@@ -6,7 +6,6 @@
   border-radius: 5px;
 }
 
-/* grey date as sub header */
 .card .date {
   color: #999;
   font-size: 0.9em;
@@ -18,7 +17,7 @@
   align-items: center;
 }
 
-.card .edit-btn {
+.edit-btn {
   height: fit-content;
   width: 30px;
   padding: 0;
@@ -29,4 +28,12 @@
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1em;
+  padding-right: 1em;
 }
