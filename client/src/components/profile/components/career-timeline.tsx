@@ -211,7 +211,9 @@ const EditCareerTimeline = ({
           <FormControl
             type='date'
             name='start_date'
-            defaultValue={new Date(job.start_date).toDateString()}
+            min='1950-01-01'
+            max={new Date().toISOString().split('T')[0]}
+            defaultValue={new Date(job.start_date).toISOString().split('T')[0]}
             required
           ></FormControl>
         </FormGroup>
@@ -222,7 +224,13 @@ const EditCareerTimeline = ({
           <FormControl
             type='date'
             name='end_date'
-            defaultValue={new Date(job.start_date).toDateString()}
+            min='1950-01-01'
+            max={new Date().toISOString().split('T')[0]}
+            defaultValue={
+              job.end_date
+                ? new Date(job.end_date).toISOString().split('T')[0]
+                : ''
+            }
           ></FormControl>
         </FormGroup>
         <FormGroup controlId='description'>
