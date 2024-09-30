@@ -2448,7 +2448,12 @@
         ]
       },
       "rmpy": { "title": "268", "intro": [] },
-      "plfo": { "title": "269", "intro": [] },
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
+      },
       "xdyh": { "title": "270", "intro": [] },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Quiz",
