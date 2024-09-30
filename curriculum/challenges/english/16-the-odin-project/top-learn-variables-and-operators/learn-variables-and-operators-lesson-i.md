@@ -88,7 +88,6 @@ What are the outputs of the two `console.log` statements in the JavaScript code 
 let counter = 1;
 console.log(2 * ++counter); // Statement A
 ```
-
 ```js
 let counter = 1;
 console.log(2 * counter++); // Statement B
@@ -97,10 +96,6 @@ console.log(2 * counter++); // Statement B
 ## --answers--
 
 There is no difference; both `console.log` statements will show the same result.
-
-## --answers--
-
-There is no difference; both alert statements will show the same result.
 
 ---
 
