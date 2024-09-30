@@ -84,6 +84,7 @@ console.log( counter++ ); // 0
 ## --text--
 
 What are the outputs of the two `console.log` statements in the JavaScript code below?
+
 ```js
 let counter = 1;
 console.log(2 * ++counter); // Statement A
