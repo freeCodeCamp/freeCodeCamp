@@ -113,6 +113,8 @@ function* updateMySoundSaga({ payload: update }) {
 function* updateMyThemeSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyTheme, update);
+    const theme = { ...data }.variables.theme;
+    localStorage.setItem('theme', theme);
     yield put(updateMyThemeComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
   } catch (e) {
