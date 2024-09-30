@@ -26,21 +26,25 @@ import security from './plugins/security';
 import auth from './plugins/auth';
 import bouncer from './plugins/bouncer';
 import notFound from './plugins/not-found';
-import { authRoutes, mobileAuth0Routes } from './routes/auth';
-import { devAuthRoutes } from './routes/auth-dev';
+import { authRoutes, mobileAuth0Routes } from './routes/public/auth';
+import { devAuthRoutes } from './routes/public/auth-dev';
+import { protectedCertificateRoutes } from './routes/protected/certificate';
+import { chargeStripeRoute } from './routes/public/donate';
+import { userPublicGetRoutes } from './routes/public/user';
+import { unprotectedCertificateRoutes } from './routes/public/certificate';
+import { challengeRoutes } from './routes/protected/challenge';
+import { deprecatedEndpoints } from './routes/public/deprecated-endpoints';
+import { unsubscribeDeprecated } from './routes/public/deprecated-unsubscribe';
+import { donateRoutes } from './routes/protected/donate';
+import { emailSubscribtionRoutes } from './routes/public/email-subscription';
 import {
-  protectedCertificateRoutes,
-  unprotectedCertificateRoutes
-} from './routes/certificate';
-import { challengeRoutes } from './routes/challenge';
-import { deprecatedEndpoints } from './routes/deprecated-endpoints';
-import { unsubscribeDeprecated } from './routes/deprecated-unsubscribe';
-import { donateRoutes, chargeStripeRoute } from './routes/donate';
-import { emailSubscribtionRoutes } from './routes/email-subscription';
-import { settingRoutes, settingRedirectRoutes } from './routes/settings';
-import { statusRoute } from './routes/status';
-import { userGetRoutes, userRoutes, userPublicGetRoutes } from './routes/user';
-import { signoutRoute } from './routes/signout';
+  settingRoutes,
+  settingRedirectRoutes
+} from './routes/protected/settings';
+import { statusRoute } from './routes/public/status';
+import { userGetRoutes, userRoutes } from './routes/protected/user';
+import { signoutRoute } from './routes/public/signout';
+
 import {
   API_LOCATION,
   EMAIL_PROVIDER,

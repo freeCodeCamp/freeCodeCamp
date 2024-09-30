@@ -15,7 +15,7 @@ import {
   isPictureWithProtocol,
   getWaitMessage,
   validateSocialUrl
-} from './settings';
+} from './protected/settings';
 
 const baseProfileUI = {
   isLocked: false,

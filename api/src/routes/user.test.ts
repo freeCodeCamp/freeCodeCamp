@@ -16,7 +16,8 @@ import {
   createSuperRequest
 } from '../../jest.utils';
 import { JWT_SECRET } from '../utils/env';
-import { getMsTranscriptApiUrl, replacePrivateData } from './user';
+import { getMsTranscriptApiUrl } from './protected/user';
+import { replacePrivateData } from './public/user';
 
 const mockedFetch = jest.fn();
 jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);

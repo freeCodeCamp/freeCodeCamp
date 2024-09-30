@@ -1,6 +1,6 @@
 import type { FastifyPluginCallback } from 'fastify';
 
-import { getRedirectParams } from '../utils/redirection';
+import { getRedirectParams } from '../../utils/redirection';
 
 /**
  * Route handler for signing out.

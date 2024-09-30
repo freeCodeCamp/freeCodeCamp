@@ -1,12 +1,12 @@
 import { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
 
-import { createAccessToken } from '../utils/tokens';
+import { createAccessToken } from '../../utils/tokens';
 import {
   getPrefixedLandingPath,
   getRedirectParams,
   haveSamePath
-} from '../utils/redirection';
-import { findOrCreateUser } from './helpers/auth-helpers';
+} from '../../utils/redirection';
+import { findOrCreateUser } from '../helpers/auth-helpers';
 
 const trimTrailingSlash = (str: string) =>
   str.endsWith('/') ? str.slice(0, -1) : str;

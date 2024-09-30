@@ -8,7 +8,7 @@ import {
   superRequest
 } from '../../jest.utils';
 import { SHOW_UPCOMING_CHANGES } from '../utils/env';
-import { getFallbackFullStackDate } from './certificate';
+import { getFallbackFullStackDate } from './certificate-utils';
 
 describe('certificate routes', () => {
   setupServer();

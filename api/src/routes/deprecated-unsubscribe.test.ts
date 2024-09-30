@@ -1,6 +1,6 @@
 import { setupServer, superRequest } from '../../jest.utils';
 
-import { unsubscribeEndpoints } from './deprecated-unsubscribe';
+import { unsubscribeEndpoints } from './public/deprecated-unsubscribe';
 
 const urlEncodedMessage =
   '?messages=info%5B0%5D%3DWe%2520are%2520no%2520longer%2520able%2520to%2520process%2520this%2520unsubscription%2520request.%2520Please%2520go%2520to%2520your%2520settings%2520to%2520update%2520your%2520email%2520preferences';

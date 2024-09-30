@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { defaultUserEmail, setupServer, superRequest } from '../../jest.utils';
-import { HOME_LOCATION } from '../utils/env';
-import { nanoidCharSet } from '../utils/create-user';
+import {
+  defaultUserEmail,
+  setupServer,
+  superRequest
+} from '../../../jest.utils';
+import { HOME_LOCATION } from '../../utils/env';
+import { nanoidCharSet } from '../../utils/create-user';
 
 describe('dev login', () => {
   setupServer();

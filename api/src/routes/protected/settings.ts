@@ -17,12 +17,12 @@ import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
-import { isValidUsername } from '../../../shared/utils/validate';
-import * as schemas from '../schemas';
-import { createAuthToken, isExpired } from '../utils/tokens';
-import { API_LOCATION } from '../utils/env';
-import { getRedirectParams } from '../utils/redirection';
-import { isRestricted } from './helpers/is-restricted';
+import { isValidUsername } from '../../../../shared/utils/validate';
+import * as schemas from '../../schemas';
+import { createAuthToken, isExpired } from '../../utils/tokens';
+import { API_LOCATION } from '../../utils/env';
+import { getRedirectParams } from '../../utils/redirection';
+import { isRestricted } from '../helpers/is-restricted';
 
 const { isEmail } = validator;
 
