@@ -97,6 +97,7 @@ const EditModal = ({
           setIsEditing={setIsEditing}
           website={website}
         />
+        <Spacer size='medium' />
         <Portfolio
           portfolio={portfolio}
           updatePortfolio={updateMyPortfolio}
