@@ -28,6 +28,9 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import PrismFormatted from '../components/prism-formatted';
+
+import './show.css';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -180,17 +183,24 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
     const quizForComponent = quiz.map(question => {
       const distractors = question.distractors.map((distractor, index) => {
         return {
-          label: distractor,
+          label: (
+            <PrismFormatted className='quiz-answer-label' text={distractor} />
+          ),
           value: index + 1
         };
       });
       const answer = {
-        label: question.answer,
+        label: (
+          <PrismFormatted
+            className='quiz-answer-label'
+            text={question.answer}
+          />
+        ),
         value: 4
       };
 
       return {
-        question: question.text,
+        question: <PrismFormatted text={question.text} />,
         answers: [...distractors, answer]
       };
     });
@@ -208,7 +218,7 @@ class ShowQuiz extends Component<ShowQuizProps, ShowQuizState> {
           <Helmet
             title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
           />
-          <Container>
+          <Container className='quiz-challenge-container'>
             <Row>
               <Spacer size='medium' />
               <ChallengeTitle
