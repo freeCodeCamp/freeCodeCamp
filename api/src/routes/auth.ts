@@ -1,6 +1,10 @@
-import { FastifyPluginCallback, FastifyRequest } from 'fastify';
-// TODO(Post-MVP): use fastify-rate-limit instead of express-rate-limit
-import rateLimit from 'express-rate-limit';
+import type {
+  FastifyPluginCallback,
+  FastifyPluginAsync,
+  FastifyRequest,
+  RouteOptions
+} from 'fastify';
+import rateLimit, { type FastifyRateLimitStore } from '@fastify/rate-limit';
 // @ts-expect-error - no types
 import MongoStoreRL from 'rate-limit-mongo';
 import isEmail from 'validator/lib/isEmail';
@@ -27,37 +31,74 @@ const getEmailFromAuth0 = async (
   return typeof email === 'string' ? email : null;
 };
 
+// TODO: Use Redis! Then we don't need to maintain this store.
+class Store implements FastifyRateLimitStore {
+  mongoStore: MongoStoreRL;
+  // We don't really need this.options, but it's here for consistency with the
+  // custom store in the fastify-rate-limit docs.
+  options: { timeWindow: number };
+  constructor({ timeWindow }: { timeWindow: number }) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+    this.mongoStore = new MongoStoreRL({
+      collectionName: 'UserRateLimit',
+      uri: MONGOHQ_URL,
+      expireTimeMs: timeWindow // timeWindow is Fastify's equivalent of express-rate-limit's expireTimeMs
+    });
+    this.options = { timeWindow };
+  }
+
+  incr(
+    key: string,
+    cb: (err: Error | null, result?: { current: number; ttl: number }) => void
+  ) {
+    // This converts between what rate-limit-mongo calls and what
+    // fastify-rate-limit expects
+    const callbackConverted = (
+      err: Error | null,
+      current: number,
+      expires: Date
+    ) => {
+      const ttl = expires.getTime() - Date.now();
+      cb(err, { current, ttl });
+    };
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    this.mongoStore.incr(key, callbackConverted);
+  }
+
+  // routeOptions are ignored for now, but this is the signature we need to implement
+  child(
+    routeOptions: RouteOptions & { path: string; prefix: string }
+  ): FastifyRateLimitStore {
+    const childParams = { ...this.options, ...routeOptions };
+    const store = new Store(childParams);
+    return store;
+  }
+}
+
 /**
  * Route handler for Mobile authentication.
  *
  * @param fastify The Fastify instance.
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
- * @param done Callback to signal that the logic has completed.
+ *
  */
-export const mobileAuth0Routes: FastifyPluginCallback = (
+export const mobileAuth0Routes: FastifyPluginAsync = async (
   fastify,
-  _options,
-  done
+  _options
 ) => {
   // Rate limit for mobile login
   // 10 requests per 15 minute windows
-  void fastify.use(
-    rateLimit({
-      windowMs: 15 * 60 * 1000,
-      max: 10,
-      standardHeaders: true,
-      legacyHeaders: false,
-      keyGenerator: req => {
-        return (req.headers['x-forwarded-for'] as string) || 'localhost';
-      },
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-      store: new MongoStoreRL({
-        collectionName: 'UserRateLimit',
-        uri: MONGOHQ_URL,
-        expireTimeMs: 15 * 60 * 1000
-      })
-    })
-  );
+  // @ts-expect-error - no types
+  await fastify.register(rateLimit, {
+    timeWindow: 15 * 60 * 1000,
+    max: 10,
+    enableDraftSpec: true, // ratelimit-* instead of x-ratelimit-*
+    keyGenerator: req => {
+      return (req.headers['x-forwarded-for'] as string) || 'localhost';
+    },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+    store: Store
+  });
 
   // TODO(Post-MVP): move this into the app, so that we add this hook once for
   // all auth routes.
@@ -83,8 +124,6 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
 
     reply.setAccessTokenCookie(createAccessToken(id));
   });
-
-  done();
 };
 
 /**
