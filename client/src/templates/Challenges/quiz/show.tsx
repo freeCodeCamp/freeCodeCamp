@@ -91,7 +91,6 @@ const ShowQuiz = ({
   const { t } = useTranslation();
   const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string>('');
 
   // Campers are not allowed to change their answers once the quiz is submitted.
   // `hasSubmitted` is used as a flag to disable the quiz.
@@ -137,7 +136,11 @@ const ShowQuiz = ({
     })
   );
 
-  const { questions: quizData, validateAnswers } = useQuiz({
+  const {
+    questions: quizData,
+    validateAnswers,
+    correctAnswerCount
+  } = useQuiz({
     initialQuestions: initialQuizData,
     validationMessages: {
       correct: t('learn.quiz.correct-answer'),
@@ -182,39 +185,35 @@ const ShowQuiz = ({
   ]);
 
   const handleAnswersCheck = () => {
-    const unansweredQuestions = quizData.reduce<number[]>(
-      (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
-      []
-    );
-
-    if (unansweredQuestions.length) {
-      setErrorMessage(
-        t('learn.quiz.unanswered-questions', {
-          unansweredQuestions: unansweredQuestions.join(', ')
-        })
-      );
-      return;
-    }
-
-    const correctCount = quizData.reduce(
-      (acc, curr) => (curr.selectedAnswer === curr.correctAnswer ? ++acc : acc),
-      0
-    );
-
     validateAnswers();
     setHasSubmitted(true);
-
-    setErrorMessage(
-      t('learn.quiz.have-n-correct-questions', {
-        correctAnswerCount: correctCount,
-        total: quiz.length
-      })
-    );
   };
 
   const handleSubmitAndGo = () => {
     openCompletionModal();
   };
+
+  function getErrorMessage() {
+    if (!hasSubmitted) return '';
+
+    const unansweredList = quizData.reduce<number[]>(
+      (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
+      []
+    );
+
+    if (unansweredList.length > 0) {
+      return t('learn.quiz.unanswered-questions', {
+        unansweredQuestions: unansweredList.join(', ')
+      });
+    }
+
+    return t('learn.quiz.have-n-correct-questions', {
+      correctAnswerCount,
+      total: quiz.length
+    });
+  }
+
+  const errorMessage = getErrorMessage();
 
   return (
     <Hotkeys
@@ -247,14 +246,14 @@ const ShowQuiz = ({
                 {errorMessage}
               </div>
               <Spacer size='medium' />
-              {/* 
+              {/*
                  There are three cases for the button display:
-                 1. Campers submit the answers but don't pass 
+                 1. Campers submit the answers but don't pass
                  2. Campers submit the answers and pass, click the submit button on the completion modal
                  3. Campers submit the answers and pass, but they close the completion modal
 
                  This rendering logic is only handling (2) and (3).
-                 TODO: Update the logic to handle (1). 
+                 TODO: Update the logic to handle (1).
                  The code should render a link that points campers to the module's review block.
                */}
               {!isPassed ? (
