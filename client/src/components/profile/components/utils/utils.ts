@@ -5,20 +5,6 @@ const { clientLocale } = envData;
 
 const localeCode = getLangCode(clientLocale);
 
-const formatYears = (array: string[], t: TFunction): string => {
-  return array.reduce((string, item, index, array) => {
-    if (string.length > 0) {
-      if (index === array.length - 1) {
-        return `${string} ${t('misc.and')} ${item}`;
-      } else {
-        return `${string}, ${item}`;
-      }
-    } else {
-      return item;
-    }
-  });
-};
-
 const parseDate = (
   joinDate: string,
   t: TFunction,
