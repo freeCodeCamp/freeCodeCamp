@@ -4,452 +4,265 @@ title: Basic CSS Quiz
 challengeType: 8
 dashedName: quiz-basic-css
 ---
-
 # --description--
-
 Answer all of the questions below correctly to pass the quiz.
-
 # --quizzes--
+## --quiz--
+### --question--
+#### --text--
+What does CSS stand for?
+#### --distractors--
+Cascading Styling Sheets
+---
+Computer Style Sheets
+---
+Creative Style Sheets
+#### --answer--
+Cascading Style Sheets
 
 ## --quiz--
-
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which part of a CSS rule selects the HTML elements to style?
 #### --distractors--
-
-Placeholder distractor 1
-
+Property
 ---
-
-Placeholder distractor 2
-
+Value
 ---
-
-Placeholder distractor 3
-
+Declaration block
 #### --answer--
+Selector
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+What does the meta viewport tag do?
 #### --distractors--
-
-Placeholder distractor 1
-
+Adds a background image to the page
 ---
-
-Placeholder distractor 2
-
+Helps in making a webpage responsive
 ---
-
-Placeholder distractor 3
-
+Sets the page title
 #### --answer--
+Helps in making a webpage responsive
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which method of adding CSS applies to all pages that include the CSS file?
 #### --distractors--
-
-Placeholder distractor 1
-
+Inline CSS
 ---
-
-Placeholder distractor 2
-
+Internal CSS
 ---
-
-Placeholder distractor 3
-
+Universal CSS
 #### --answer--
+External CSS
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+What is the default display property of a `<div>` element?
 #### --distractors--
-
-Placeholder distractor 1
-
+inline
 ---
-
-Placeholder distractor 2
-
+inline-block
 ---
-
-Placeholder distractor 3
-
+none
 #### --answer--
+block
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which CSS combinator targets all elements that are direct children of a specific element?
 #### --distractors--
-
-Placeholder distractor 1
-
+Descendant combinator
 ---
-
-Placeholder distractor 2
-
+Next-sibling combinator
 ---
-
-Placeholder distractor 3
-
+Subsequent-sibling combinator
 #### --answer--
+Child combinator (`>`)
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which CSS combinator selects an element that is directly preceded by another element?
 #### --distractors--
-
-Placeholder distractor 1
-
+Child combinator (`>`)
 ---
-
-Placeholder distractor 2
-
+Descendant combinator
 ---
-
-Placeholder distractor 3
-
+Subsequent-sibling combinator (`~`)
 #### --answer--
+Next-sibling combinator (`+`)
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+What is the main difference between inline and block elements in CSS?
 #### --distractors--
-
-Placeholder distractor 1
-
+Inline elements take up the full width of their container
 ---
-
-Placeholder distractor 2
-
+Block elements can only contain text
 ---
-
-Placeholder distractor 3
-
+Block elements sit next to each other horizontally by default
 #### --answer--
+Inline elements do not start on a new line, whereas block elements do
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which of the following is an inline element by default?
 #### --distractors--
-
-Placeholder distractor 1
-
+`<div>`
 ---
-
-Placeholder distractor 2
-
+`<h1>`
 ---
-
-Placeholder distractor 3
-
+`<section>`
 #### --answer--
+`<span>`
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+What is the `inline-block` value used for in CSS?
 #### --distractors--
-
-Placeholder distractor 1
-
+For stacking elements vertically
 ---
-
-Placeholder distractor 2
-
+For making an element a full block with new lines
 ---
-
-Placeholder distractor 3
-
+For making an element take up full width
 #### --answer--
+For combining features of inline and block elements
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which of the following selectors has the highest specificity?
 #### --distractors--
-
-Placeholder distractor 1
-
+Type selector
 ---
-
-Placeholder distractor 2
-
+Class selector
 ---
-
-Placeholder distractor 3
-
+Universal selector
 #### --answer--
+ID selector
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+What is the purpose of the `*` selector in CSS?
 #### --distractors--
-
-Placeholder distractor 1
-
+Selects only elements with a class
 ---
-
-Placeholder distractor 2
-
+Selects only elements with an ID
 ---
-
-Placeholder distractor 3
-
+Selects only block elements
 #### --answer--
+Selects all elements
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+What does the `!important` declaration do in CSS?
 #### --distractors--
-
-Placeholder distractor 1
-
+Adds more specificity to the selector
 ---
-
-Placeholder distractor 2
-
+Disables the CSS rule
 ---
-
-Placeholder distractor 3
-
+Removes the rule from the cascade
 #### --answer--
+Overrides other CSS rules
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which of the following properties controls the amount of space inside an element’s border?
 #### --distractors--
-
-Placeholder distractor 1
-
+Margin
 ---
-
-Placeholder distractor 2
-
+Height
 ---
-
-Placeholder distractor 3
-
+Line-height
 #### --answer--
+Padding
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which property defines the space between an element and its neighboring elements?
 #### --distractors--
-
-Placeholder distractor 1
-
+Padding
 ---
-
-Placeholder distractor 2
-
+Width
 ---
-
-Placeholder distractor 3
-
+Border
 #### --answer--
+Margin
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which CSS property affects the vertical spacing between lines of text?
 #### --distractors--
-
-Placeholder distractor 1
-
+Letter-spacing
 ---
-
-Placeholder distractor 2
-
+Font-size
 ---
-
-Placeholder distractor 3
-
+Padding
 #### --answer--
+Line-height
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which of the following best describes how CSS rules are applied in a cascade?
 #### --distractors--
-
-Placeholder distractor 1
-
+The last defined rule always wins
 ---
-
-Placeholder distractor 2
-
+Specificity always determines which rule is applied
 ---
-
-Placeholder distractor 3
-
+The least specific rule is applied last
 #### --answer--
+Rules are applied based on specificity and order
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+What is the purpose of a descendant combinator in CSS?
 #### --distractors--
-
-Placeholder distractor 1
-
+To select only the direct child of an element
 ---
-
-Placeholder distractor 2
-
+To select the next sibling element
 ---
-
-Placeholder distractor 3
-
+To select all elements that are siblings of another element
 #### --answer--
+To select an element that is a descendant of another element
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which of the following would select all `<p>` elements that follow a `<div>` element?
 #### --distractors--
-
-Placeholder distractor 1
-
+`div > p`
 ---
-
-Placeholder distractor 2
-
+`div + p`
 ---
-
-Placeholder distractor 3
-
+`div p`
 #### --answer--
+`div ~ p`
 
-Placeholder answer
-
+## --quiz--
 ### --question--
-
 #### --text--
-
-Placeholder question
-
+Which of the following CSS rules would set both the width and height of an element to 100px?
 #### --distractors--
-
-Placeholder distractor 1
-
+`width: 100px; height: auto;`
 ---
-
-Placeholder distractor 2
-
+`width: auto; height: 100px;`
 ---
-
-Placeholder distractor 3
-
+`max-width: 100px; max-height: 100px;`
 #### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
+`width: 100px; height: 100px;`
