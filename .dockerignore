@@ -9,3 +9,4 @@ docker/api/Dockerfile
 **/*docker-compose*
 **/node_modules
 .eslintcache
+api/__mocks__
