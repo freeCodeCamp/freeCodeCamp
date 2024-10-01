@@ -1,0 +1,10 @@
+/* Override global ul styles */
+.quiz-challenge-container ul {
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+/* Override the bottom margin set in global.css */
+.quiz-challenge-container .quiz-answer-label p:last-child {
+  margin-bottom: 0;
+}

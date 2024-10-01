@@ -177,11 +177,8 @@ const duplicatedProjectIds = [
   // Stacks
   '587d8250367417b2b2512c5f',
 
-  // Linked Lists
-
-  // Hash Tables
-
   // Depth-first Search
+  '587d825d367417b2b2512c96',
 
   // Nth Fibonacci Number
 
