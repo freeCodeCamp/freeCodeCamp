@@ -68,6 +68,7 @@ describe('auth0 routes', () => {
       // so should not depend on the details of the rate-limiting library
       expect(res.headers['ratelimit-limit']).toBe('10');
       expect(res.headers['ratelimit-remaining']).toBe('9');
+      expect(res.headers['ratelimit-reset']).toMatch(/^\d+$/);
 
       const res2 = await superGet('/mobile-login');
       expect(res2.headers['ratelimit-remaining']).toBe('8');

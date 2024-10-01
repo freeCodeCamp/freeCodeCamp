@@ -144,12 +144,12 @@ importers:
       '@fastify/csrf-protection':
         specifier: 6.4.1
         version: 6.4.1
-      '@fastify/express':
-        specifier: ^2.3.0
-        version: 2.3.0
       '@fastify/oauth2':
         specifier: 7.8.1
         version: 7.8.1
+      '@fastify/rate-limit':
+        specifier: 9.1.0
+        version: 9.1.0
       '@fastify/swagger':
         specifier: 8.14.0
         version: 8.14.0
@@ -177,9 +177,6 @@ importers:
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
-      express-rate-limit:
-        specifier: ^6.7.0
-        version: 6.11.2(express@4.18.2)
       fast-uri:
         specifier: 2.3.0
         version: 2.3.0
@@ -232,9 +229,6 @@ importers:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
-      '@types/express':
-        specifier: 4.17.21
-        version: 4.17.21
       '@types/jsonwebtoken':
         specifier: 9.0.5
         version: 9.0.5
@@ -2730,9 +2724,6 @@ packages:
   '@fastify/error@3.4.1':
     resolution: {integrity: sha512-wWSvph+29GR783IhmvdwWnN4bUxTD01Vm5Xad4i7i1VuAOItLvbPAb69sb0IQ2N57yprvhNIwAP5B6xfKTmjmQ==}
 
-  '@fastify/express@2.3.0':
-    resolution: {integrity: sha512-jvvjlPPCfJsSHfF6tQDyARJ3+c3xXiqcxVZu6bi3xMWCWB3fl07vrjFDeaqnwqKhLZ9+m6cog5dw7gIMKEsTnQ==}
-
   '@fastify/fast-json-stringify-compiler@4.3.0':
     resolution: {integrity: sha512-aZAXGYo6m22Fk1zZzEUKBvut/CIIQe/BapEORnxiD5Qr0kPHqqI69NtEMCme74h+at72sPhbkb4ZrLd1W3KRLA==}
 
@@ -2741,6 +2732,9 @@ packages:
 
   '@fastify/oauth2@7.8.1':
     resolution: {integrity: sha512-PBIMizzgEOcUcttyfX1hC6CR9vESoI1lfNucBywgcqrxvknVg+zvBCgH2+oU8NvrpSDMtlY6nyuEYYZtVhDT7Q==}
+
+  '@fastify/rate-limit@9.1.0':
+    resolution: {integrity: sha512-h5dZWCkuZXN0PxwqaFQLxeln8/LNwQwH9popywmDCFdKfgpi4b/HoMH1lluy6P+30CG9yzzpSpwTCIPNB9T1JA==}
 
   '@fastify/send@2.1.0':
     resolution: {integrity: sha512-yNYiY6sDkexoJR0D8IDy3aRP3+L4wdqCpvx5WP+VtEU58sn7USmKynBzDQex5X42Zzvw2gNzzYgP90UfWShLFA==}
@@ -16884,13 +16878,6 @@ snapshots:
 
   '@fastify/error@3.4.1': {}
 
-  '@fastify/express@2.3.0':
-    dependencies:
-      express: 4.18.2
-      fastify-plugin: 4.5.1
-    transitivePeerDependencies:
-      - supports-color
-
   '@fastify/fast-json-stringify-compiler@4.3.0':
     dependencies:
       fast-json-stringify: 5.16.1
@@ -16906,6 +16893,12 @@ snapshots:
       simple-oauth2: 5.1.0
     transitivePeerDependencies:
       - supports-color
+
+  '@fastify/rate-limit@9.1.0':
+    dependencies:
+      '@lukeed/ms': 2.0.2
+      fastify-plugin: 4.5.1
+      toad-cache: 3.7.0
 
   '@fastify/send@2.1.0':
     dependencies:

@@ -445,6 +445,7 @@
     "help-translate": "We are still translating this certification.",
     "help-translate-link": "Tusaidie kutafsiri.",
     "project-preview-title": "Hapa kuna muonyesho wa kile utakachounda",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Unda akaunti ya GitHub</0> ikiwa huna akaunti. Utaihitaji unapounda mashine ya seva ya Linux. Mchakato huu unaweza kuchukua dakika chache.",
     "gitpod": {
       "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",

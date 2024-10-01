@@ -1869,9 +1869,12 @@
         "title": "36",
         "intro": []
       },
-      "liti": {
-        "title": "37",
-        "intro": []
+      "workshop-cafe-menu": {
+        "title": "Design a Cafe Menu",
+        "intro": [
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+        ]
       },
       "lab-business-card": {
         "title": "Створіть дизайн візитівки",
@@ -2355,9 +2358,11 @@
         "title": "141",
         "intro": []
       },
-      "xkbo": {
-        "title": "142",
-        "intro": []
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
       },
       "lab-fortune-teller": {
         "title": "Створіть генератор передбачень",
@@ -2471,9 +2476,9 @@
         "title": "165",
         "intro": []
       },
-      "ezek": {
-        "title": "166",
-        "intro": []
+      "lab-quiz-game": {
+        "title": "Build a Quiz Game",
+        "intro": ["For this lab, you will build a quiz game."]
       },
       "lab-factorial-calculator": {
         "title": "Створіть калькулятор факторіалів ",
@@ -2513,9 +2518,9 @@
         "title": "174",
         "intro": []
       },
-      "ccnu": {
-        "title": "175",
-        "intro": []
+      "lab-pyramid-generator": {
+        "title": "Build a Pyramid Generator",
+        "intro": ["In this lab you will build a pyramid generator."]
       },
       "lab-gradebook-app": {
         "title": "Створіть журнал з оцінками",
@@ -2761,9 +2766,9 @@
         "title": "228",
         "intro": []
       },
-      "qjws": {
-        "title": "229",
-        "intro": []
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": ["For this lab, you will build a bookmark manager app."]
       },
       "fgbp": {
         "title": "230",
@@ -2837,9 +2842,11 @@
         "title": "245",
         "intro": []
       },
-      "lofk": {
-        "title": "246",
-        "intro": []
+      "lab-telephone-number-validator": {
+        "title": "Build a Telephone Number Validator",
+        "intro": [
+          "For this lab, you'll build an application that checks if a number is a valid United States phone number."
+        ]
       },
       "lab-cash-register": {
         "title": "Створіть касовий апарат",
