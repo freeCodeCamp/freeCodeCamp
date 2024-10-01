@@ -445,6 +445,7 @@
     "help-translate": "我們還在翻譯這個認證課程。",
     "help-translate-link": "幫助我們翻譯。",
     "project-preview-title": "下面是你將構建的項目的預覽",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "如果你沒有 GitHub 賬戶，你需要 <0>創建 GitHub</0> 賬戶。 你需要創建虛擬 Linux 服務器，這個過程可能需要幾分鐘。",
     "gitpod": {
       "intro": "本課程使用 Gitpod 在虛擬的 Linux 機器中運行。按照這些說明開始學習課程：",

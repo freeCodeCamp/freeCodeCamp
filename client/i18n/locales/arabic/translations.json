@@ -445,6 +445,7 @@
     "help-translate": "We are still translating this certification.",
     "help-translate-link": "ساعدنا على الترجمة.",
     "project-preview-title": "إليك معاينة لما ستقوم ببناؤه",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>إنشاء حساب GitHub</0> إذا لم يكن لديك حساب. ستحتاج إليه عند إنشاء جهاز Linux الافتراضي. قد تستغرق هذه العملية بضع دقائق.",
     "gitpod": {
       "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",

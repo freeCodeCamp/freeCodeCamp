@@ -1,5 +1,1 @@
-const challengePageCreators = require('./challenge-page-creator');
-
-module.exports = {
-  ...challengePageCreators
-};
+module.exports = require('./challenge-page-creator');

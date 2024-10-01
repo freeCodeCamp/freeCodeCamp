@@ -1725,7 +1725,12 @@
       },
       "bzfv": { "title": "8", "intro": [] },
       "snuv": { "title": "9", "intro": [] },
-      "uowk": { "title": "10", "intro": [] },
+      "quiz-basic-html": {
+        "title": "Basic HTML Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of basic HTML knowledge."
+        ]
+      },
       "evdc": { "title": "11", "intro": [] },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
@@ -1779,7 +1784,6 @@
           "Test what you've learned in this quiz of HTML tables and forms."
         ]
       },
-
       "ghoc": { "title": "25", "intro": [] },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
@@ -1805,7 +1809,13 @@
         ]
       },
       "dxpc": { "title": "36", "intro": [] },
-      "liti": { "title": "37", "intro": [] },
+      "workshop-cafe-menu": {
+        "title": "Design a Cafe Menu",
+        "intro": [
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+        ]
+      },
       "lab-business-card": {
         "title": "Design a Business Card",
         "intro": [
@@ -2082,7 +2092,12 @@
         ]
       },
       "hxwa": { "title": "141", "intro": [] },
-      "xkbo": { "title": "142", "intro": [] },
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
+      },
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
         "intro": [
@@ -2159,7 +2174,10 @@
       },
       "dvnt": { "title": "164", "intro": [] },
       "ekdb": { "title": "165", "intro": [] },
-      "ezek": { "title": "166", "intro": [] },
+      "lab-quiz-game": {
+        "title": "Build a Quiz Game",
+        "intro": ["For this lab, you will build a quiz game."]
+      },
       "lab-factorial-calculator": {
         "title": "Build a Factorial Calculator ",
         "intro": ["In this lab, you will build a factorial calculator."]
@@ -2171,7 +2189,12 @@
         ]
       },
       "kgtw": { "title": "169", "intro": [] },
-      "ljmq": { "title": "170", "intro": [] },
+      "workshop-sentence-analyzer": {
+        "title": "Build a Sentence Analyzer",
+        "intro": [
+          "In this workshop, you'll review working with JavaScript loops by building a sentence analyzer app."
+        ]
+      },
       "kcci": { "title": "171", "intro": [] },
       "puhe": { "title": "172", "intro": [] },
       "quiz-javascript-loops": {
@@ -2179,7 +2202,10 @@
         "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
       },
       "hjtr": { "title": "174", "intro": [] },
-      "ccnu": { "title": "175", "intro": [] },
+      "lab-pyramid-generator": {
+        "title": "Build a Pyramid Generator",
+        "intro": ["In this lab you will build a pyramid generator."]
+      },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
@@ -2212,7 +2238,12 @@
       },
       "esfh": { "title": "188", "intro": [] },
       "gibb": { "title": "189", "intro": [] },
-      "whrm": { "title": "190", "intro": [] },
+      "lab-favorite-icon-toggler": {
+        "title": "Build a Favorite Icon Toggler",
+        "intro": [
+          "In this lab, you will build a favorite icon toggler by utilizing JavaScript click events."
+        ]
+      },
       "fhxc": { "title": "191", "intro": [] },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
@@ -2239,7 +2270,12 @@
           "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
         ]
       },
-      "uglc": { "title": "199", "intro": [] },
+      "lab-palindrome-checker": {
+        "title": "Build a Palindrome Checker",
+        "intro": [
+          "For this lab, you'll build an application that checks whether a given word is a palindrome."
+        ]
+      },
       "lab-football-team-cards": {
         "title": "Build a Set of Football Team Cards",
         "intro": [
@@ -2308,7 +2344,10 @@
       },
       "pehm": { "title": "227", "intro": [] },
       "cvsw": { "title": "228", "intro": [] },
-      "qjws": { "title": "229", "intro": [] },
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": ["For this lab, you will build a bookmark manager app."]
+      },
       "fgbp": { "title": "230", "intro": [] },
       "quiz-local-storage-and-crud": {
         "title": "Local Storage and CRUD Quiz",
@@ -2348,7 +2387,12 @@
         ]
       },
       "yaxm": { "title": "245", "intro": [] },
-      "lofk": { "title": "246", "intro": [] },
+      "lab-telephone-number-validator": {
+        "title": "Build a Telephone Number Validator",
+        "intro": [
+          "For this lab, you'll build an application that checks if a number is a valid United States phone number."
+        ]
+      },
       "lab-cash-register": {
         "title": "Build a Cash Register",
         "intro": ["For this lab, you will build a cash register."]
@@ -2383,7 +2427,12 @@
         ]
       },
       "nixz": { "title": "262", "intro": [] },
-      "zywg": { "title": "263", "intro": [] },
+      "lab-stack-class": {
+        "title": "Build a Stack Class",
+        "intro": [
+          "For this lab, you will build a stack class using JavaScript."
+        ]
+      },
       "lab-linked-list-class": {
         "title": "Build a Linked List Class",
         "intro": [
@@ -2451,7 +2500,7 @@
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
       "erfj": { "title": "296", "intro": [] },
-      "quiz-react": {
+      "quiz-react-basics": {
         "title": "React Basics Quiz",
         "intro": ["Test what you've learned in this quiz on React Basics."]
       },
@@ -2668,7 +2717,10 @@
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
-      "zzhp": { "title": "372", "intro": [] },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": ["In this lab you will build a timestamp microservice"]
+      },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
         "intro": [
@@ -2683,7 +2735,10 @@
         "title": "Build an Exercise Tracker",
         "intro": ["In this lab, you will build an exercise tracker"]
       },
-      "tbei": { "title": "376", "intro": [] },
+      "lab-file-metadata-microservice": {
+        "title": "Build a File Metadata Microservice",
+        "intro": ["For this lab you will build a file metadata microservice"]
+      },
       "kegi": { "title": "377", "intro": [] },
       "quiz-backend-javascript": {
         "title": "Backend JavaScript Quiz",

@@ -37,4 +37,4 @@ const parseDate = (
   return t('profile.joined', { date: date });
 };
 
-export { formatYears, parseDate };
+export { parseDate };

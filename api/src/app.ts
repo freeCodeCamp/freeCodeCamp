@@ -1,5 +1,4 @@
 import fastifyCsrfProtection from '@fastify/csrf-protection';
-import express from '@fastify/express';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
@@ -51,7 +50,7 @@ import {
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 
-export type FastifyInstanceWithTypeProvider = FastifyInstance<
+type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
@@ -95,9 +94,6 @@ export const build = async (
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
   void fastify.register(security);
-
-  // NOTE: Awaited to ensure `.use` is registered on `fastify`
-  await fastify.register(express);
 
   await fastify.register(fastifySentry, {
     dsn: SENTRY_DSN,

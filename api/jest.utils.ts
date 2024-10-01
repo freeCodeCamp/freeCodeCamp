@@ -32,7 +32,7 @@ export const getCsrfToken = (setCookies: string[]): string | undefined => {
   return csrfToken;
 };
 
-export const ORIGIN = 'https://www.freecodecamp.org';
+const ORIGIN = 'https://www.freecodecamp.org';
 
 export const getCookies = (setCookies: string[]): string => {
   for (const cookie of setCookies) {

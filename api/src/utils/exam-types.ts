@@ -4,7 +4,7 @@ export interface Answer {
 }
 
 // types for a generated exam
-export interface GeneratedQuestion {
+interface GeneratedQuestion {
   id: string;
   question: string;
   answers: Answer[];
@@ -13,7 +13,7 @@ export interface GeneratedQuestion {
 export type GeneratedExam = GeneratedQuestion[];
 
 // types for a user completed exam (from client)
-export interface UserQuestion {
+interface UserQuestion {
   id: string;
   question: string;
   answer: Answer;

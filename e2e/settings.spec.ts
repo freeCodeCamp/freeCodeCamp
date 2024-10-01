@@ -368,7 +368,7 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
   test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
     page
   }) => {
-    const claimButton = page.getByRole('link', {
+    const claimButton = page.getByRole('button', {
       name: 'Claim Certification Legacy Full Stack'
     });
     const showButton = page.getByRole('link', {
@@ -407,10 +407,20 @@ test.describe('Settings - New User', () => {
   test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
     page
   }) => {
-    const claimButton = page.getByRole('button', {
+    const claimFullStackCertButton = page.getByRole('button', {
       name: 'Claim Certification Legacy Full Stack'
     });
-    await expect(claimButton).toBeVisible();
-    await expect(claimButton).toBeDisabled();
+
+    const claimRwdCertButton = page.getByRole('button', {
+      name: 'Claim Certification Responsive Web Design'
+    });
+
+    // Buttons for normal certs are enabled
+    await expect(claimRwdCertButton).toBeVisible();
+    await expect(claimRwdCertButton).toBeEnabled();
+
+    // Button for full stack cert is disabled if the user hasn't claimed the required certs
+    await expect(claimFullStackCertButton).toBeVisible();
+    await expect(claimFullStackCertButton).toBeDisabled();
   });
 });
