@@ -322,6 +322,7 @@ describe('auth0 plugin', () => {
       expect(user).toEqual({
         about: '',
         acceptedPrivacyTerms: false,
+        career: [],
         completedChallenges: [],
         completedExams: [],
         currentChallengeId: '',

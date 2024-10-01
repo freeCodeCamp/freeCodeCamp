@@ -204,6 +204,7 @@ const publicUserData = {
       }
     }
   ],
+  career: [],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
   githubProfile: testUserData.githubProfile,
@@ -689,6 +690,7 @@ describe('userRoutes', () => {
           completedSurveys: [],
           partiallyCompletedChallenges: [],
           portfolio: [],
+          career: [],
           savedChallenges: [],
           yearsTopContributor: [],
           is2018DataVisCert: false,
@@ -1429,6 +1431,7 @@ describe('get-public-profile helpers', () => {
       joinDate: 'joinDate',
       name: 'name',
       points: 2,
+      career: [],
       portfolio: [
         {
           id: '789',
