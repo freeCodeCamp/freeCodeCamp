@@ -15,441 +15,400 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+What is a CSS framework?
 
 #### --distractors--
 
-Placeholder distractor 1
+A programming language used to style web pages
 
 ---
 
-Placeholder distractor 2
+A tool for writing JavaScript code
 
 ---
 
-Placeholder distractor 3
+A database management system for storing CSS files
 
 #### --answer--
 
-Placeholder answer
+A pre-prepared library that is meant to allow for easier, more standards-compliant web design using CSS
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which of the following is an advantage of using a CSS framework?
 
 #### --distractors--
 
-Placeholder distractor 1
+It makes the website load slower
 
 ---
 
-Placeholder distractor 2
+It requires more custom CSS code
 
 ---
 
-Placeholder distractor 3
+It reduces browser compatibility
 
 #### --answer--
 
-Placeholder answer
+It speeds up development time by providing pre-built components and styles
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+What is a potential disadvantage of using a CSS framework?
 
 #### --distractors--
 
-Placeholder distractor 1
+Increased website performance
 
 ---
 
-Placeholder distractor 2
+Better cross-browser compatibility
 
 ---
 
-Placeholder distractor 3
+More unique and customized designs
 
 #### --answer--
 
-Placeholder answer
+Websites may look similar if developers don't customize the framework's default styles
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which CSS framework uses utility classes for rapid UI development?
 
 #### --distractors--
 
-Placeholder distractor 1
+Bootstrap
 
 ---
 
-Placeholder distractor 2
+Foundation
 
 ---
 
-Placeholder distractor 3
+Bulma
 
 #### --answer--
 
-Placeholder answer
+Tailwind CSS
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+In Tailwind CSS, which class would you use to make text bold?
 
 #### --distractors--
 
-Placeholder distractor 1
+.text-strong
 
 ---
 
-Placeholder distractor 2
+.font-bold
 
 ---
 
-Placeholder distractor 3
+.bold-text
 
 #### --answer--
 
-Placeholder answer
+font-bold
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which of the following is a core concept in Bootstrap's grid system?
 
 #### --distractors--
 
-Placeholder distractor 1
+Flexbox
 
 ---
 
-Placeholder distractor 2
+Grid areas
 
 ---
 
-Placeholder distractor 3
+Absolute positioning
 
 #### --answer--
 
-Placeholder answer
+Columns
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+In Bootstrap, which class is used to create a responsive container?
 
 #### --distractors--
 
-Placeholder distractor 1
+.flex-container
 
 ---
 
-Placeholder distractor 2
+.responsive-box
 
 ---
 
-Placeholder distractor 3
+.wrapper
 
 #### --answer--
 
-Placeholder answer
+.container-fluid
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which color system does Material Design use?
 
 #### --distractors--
 
-Placeholder distractor 1
+RGB
 
 ---
 
-Placeholder distractor 2
+CMYK
 
 ---
 
-Placeholder distractor 3
+HSL
 
 #### --answer--
 
-Placeholder answer
+A color system based on palettes with primary and accent colors
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+In Materialize CSS, which class is used to create a wave effect on buttons?
 
 #### --distractors--
 
-Placeholder distractor 1
+.btn-effect
 
 ---
 
-Placeholder distractor 2
+.button-animated
 
 ---
 
-Placeholder distractor 3
+.ripple
 
 #### --answer--
 
-Placeholder answer
+.waves-effect
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+What is a CSS preprocessor?
 
 #### --distractors--
 
-Placeholder distractor 1
+A tool for minifying CSS files
 
 ---
 
-Placeholder distractor 2
+A framework for creating responsive layouts
 
 ---
 
-Placeholder distractor 3
+A browser extension for debugging CSS
 
 #### --answer--
 
-Placeholder answer
+A program that lets you generate CSS from a language with special features like variables and nesting
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which of the following is a feature of Sass?
 
 #### --distractors--
 
-Placeholder distractor 1
+JavaScript integration
 
 ---
 
-Placeholder distractor 2
+Automatic browser prefixing
 
 ---
 
-Placeholder distractor 3
+Real-time CSS validation
 
 #### --answer--
 
-Placeholder answer
+Mixins for reusable pieces of CSS code
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+What is the file extension for SCSS files?
 
 #### --distractors--
 
-Placeholder distractor 1
+.css
 
 ---
 
-Placeholder distractor 2
+.sass
 
 ---
 
-Placeholder distractor 3
+.style
 
 #### --answer--
 
-Placeholder answer
+.scss
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+In SCSS, how do you define a variable?
 
 #### --distractors--
 
-Placeholder distractor 1
+@var
 
 ---
 
-Placeholder distractor 2
+let
 
 ---
 
-Placeholder distractor 3
+const
 
 #### --answer--
 
-Placeholder answer
+$
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which CSS framework was originally developed by Twitter?
 
 #### --distractors--
 
-Placeholder distractor 1
+Foundation
 
 ---
 
-Placeholder distractor 2
+Bulma
 
 ---
 
-Placeholder distractor 3
+Tailwind CSS
 
 #### --answer--
 
-Placeholder answer
+Bootstrap
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+What does the term "responsive design" mean in the context of CSS frameworks?
 
 #### --distractors--
 
-Placeholder distractor 1
+The website responds to user input
 
 ---
 
-Placeholder distractor 2
+The CSS code automatically updates
 
 ---
 
-Placeholder distractor 3
+The framework responds to different programming languages
 
 #### --answer--
 
-Placeholder answer
+The layout and design adapt to different screen sizes and devices
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which of the following is NOT typically included in a CSS framework?
 
 #### --distractors--
 
-Placeholder distractor 1
+Grid system
 
 ---
 
-Placeholder distractor 2
+Typography styles
 
 ---
 
-Placeholder distractor 3
+Pre-styled components
 
 #### --answer--
 
-Placeholder answer
+Server-side rendering
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+In the context of CSS preprocessors, what is a mixin?
 
 #### --distractors--
 
-Placeholder distractor 1
+A type of CSS selector
 
 ---
 
-Placeholder distractor 2
+A method for importing external stylesheets
 
 ---
 
-Placeholder distractor 3
+A way to define custom CSS properties
 
 #### --answer--
 
-Placeholder answer
+A reusable piece of CSS code that can include variables and other Sass features
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which of the following is a key difference between Sass and SCSS syntax?
 
 #### --distractors--
 
-Placeholder distractor 1
+Sass supports variables while SCSS doesn't
 
 ---
 
-Placeholder distractor 2
+SCSS uses mixins while Sass doesn't
 
 ---
 
-Placeholder distractor 3
+Sass is more powerful than SCSS
 
 #### --answer--
 
-Placeholder answer
+Sass uses indentation for nesting while SCSS uses curly braces
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+What is the purpose of the @extend directive in Sass?
 
 #### --distractors--
 
-Placeholder distractor 1
+To import external files
 
 ---
 
-Placeholder distractor 2
+To create mixins
 
 ---
 
-Placeholder distractor 3
+To define variables
 
 #### --answer--
 
-Placeholder answer
+To share a set of CSS properties from one selector to another
 
 ### --question--
 
-#### --text--
-
-Placeholder question
+Which statement about CSS frameworks is FALSE?
 
 #### --distractors--
 
-Placeholder distractor 1
+They can speed up development time
 
 ---
 
-Placeholder distractor 2
+They often provide cross-browser compatibility
 
 ---
 
-Placeholder distractor 3
+They usually include a grid system
 
 #### --answer--
 
-Placeholder answer
-
+They always result in smaller file sizes compared to custom CSS
