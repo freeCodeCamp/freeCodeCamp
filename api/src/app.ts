@@ -43,7 +43,7 @@ import {
 } from './routes/protected/settings';
 import { statusRoute } from './routes/public/status';
 import { userGetRoutes, userRoutes } from './routes/protected/user';
-import { signoutRoute } from './routes/public/signout';
+import { signoutRoute } from './routes/protected/signout';
 
 import {
   API_LOCATION,
@@ -206,6 +206,7 @@ export const build = async (
       await fastify.register(protectedCertificateRoutes);
       await fastify.register(settingRoutes);
       await fastify.register(userRoutes);
+      await fastify.register(signoutRoute);
     });
 
     // CSRF protection disabled:
@@ -236,7 +237,6 @@ export const build = async (
     }
   });
   void fastify.register(chargeStripeRoute);
-  void fastify.register(signoutRoute);
   void fastify.register(emailSubscribtionRoutes);
   void fastify.register(userPublicGetRoutes);
   void fastify.register(unprotectedCertificateRoutes);
