@@ -97,18 +97,16 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameAvailable
+    );
+
     await inputLabel.fill(settingsObject.usernameAvailable);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page
-        .getByText(
-          translations.flash['username-updated'].replace(
-            settingsObject.usernamePlaceholder,
-            settingsObject.usernameAvailable
-          )
-        )
-        .nth(0)
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
     currentUsername = settingsObject.usernameAvailable;
   });
@@ -120,18 +118,16 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameUpdateToLowerCase
+    );
+
     await inputLabel.fill(settingsObject.usernameUpdateToLowerCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page
-        .getByText(
-          translations.flash['username-updated'].replace(
-            settingsObject.usernamePlaceholder,
-            settingsObject.usernameUpdateToLowerCase
-          )
-        )
-        .nth(0)
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
     currentUsername = settingsObject.usernameUpdateToLowerCase;
   });
@@ -143,18 +139,16 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameUpdateToUpperCase
+    );
+
     await inputLabel.fill(settingsObject.usernameUpdateToUpperCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page
-        .getByText(
-          translations.flash['username-updated'].replace(
-            settingsObject.usernamePlaceholder,
-            settingsObject.usernameUpdateToUpperCase
-          )
-        )
-        .nth(0)
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
     currentUsername = settingsObject.usernameUpdateToUpperCase;
   });
@@ -163,6 +157,11 @@ test.describe('Username Settings Validation', () => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
     await inputLabel.fill(settingsObject.testUser);
 
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.testUser
+    );
+
     await expect(
       page.getByText(translations.settings.username.available)
     ).toBeVisible();
@@ -170,14 +169,7 @@ test.describe('Username Settings Validation', () => {
     await inputLabel.press('Enter');
 
     await expect(
-      page
-        .getByText(
-          translations.flash['username-updated'].replace(
-            settingsObject.usernamePlaceholder,
-            settingsObject.testUser
-          )
-        )
-        .nth(0)
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
     currentUsername = settingsObject.testUser;
   });

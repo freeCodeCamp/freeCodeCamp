@@ -27,6 +27,8 @@ test.afterAll(() => {
 test('Should allow empty string in any field in about settings', async ({
   page
 }) => {
+  test.setTimeout(20000);
+
   const saveButton = page.getByRole('button', {
     name: translations.settings.headings['personal-info']
   });
@@ -38,8 +40,9 @@ test('Should allow empty string in any field in about settings', async ({
   const pictureInput = page.getByLabel(translations.settings.labels.picture);
   const aboutInput = page.getByLabel(translations.settings.labels.about);
   const updatedAlert = page
-    .getByText(translations.flash['updated-about-me'])
-    .nth(0);
+    .getByRole('alert')
+    .filter({ hasText: translations.flash['updated-about-me'] })
+    .first();
 
   await nameInput.fill('Quincy Larson');
   await locationInput.fill('USA');
