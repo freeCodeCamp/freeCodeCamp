@@ -483,6 +483,12 @@
     "preview-external-window": "Visualização exibida atualmente na janela externa.",
     "fill-in-the-blank": "Preencha o espaço em branco",
     "blank": "vazio",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
       "not-qualified": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:",

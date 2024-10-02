@@ -2930,9 +2930,9 @@
           "For this lab, you will build a linked list class using JavaScript."
         ]
       },
-      "wraf": {
-        "title": "265",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Build a Hash Table Class",
+        "intro": ["For this lab, you will build a hash table using JavaScript."]
       },
       "muyw": {
         "title": "266",
@@ -2948,9 +2948,11 @@
         "title": "268",
         "intro": []
       },
-      "plfo": {
-        "title": "269",
-        "intro": []
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3418,9 +3420,9 @@
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
-      "zzhp": {
-        "title": "372",
-        "intro": []
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": ["In this lab you will build a timestamp microservice"]
       },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
@@ -3436,9 +3438,9 @@
         "title": "Створіть трекер вправ",
         "intro": ["У цій лабораторній роботі ви створите трекер вправ."]
       },
-      "tbei": {
-        "title": "376",
-        "intro": []
+      "lab-file-metadata-microservice": {
+        "title": "Build a File Metadata Microservice",
+        "intro": ["For this lab you will build a file metadata microservice"]
       },
       "kegi": {
         "title": "377",

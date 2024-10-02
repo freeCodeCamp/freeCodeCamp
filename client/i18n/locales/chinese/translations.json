@@ -483,6 +483,12 @@
     "preview-external-window": "预览当前显示在外部窗口中。",
     "fill-in-the-blank": "填空",
     "blank": "空白",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "恭喜，你已经完成了考试资格的所有要求。",
       "not-qualified": "你尚未达到考试资格要求。要获得资格，请完成以下挑战：",
