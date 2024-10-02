@@ -6,7 +6,7 @@ const mockVerifyTrophyWithMicrosoft = jest.fn();
 import { omit } from 'lodash';
 import { Static } from '@fastify/type-provider-typebox';
 
-import { challengeTypes } from '../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../shared/config/challenge-types';
 import {
   defaultUserId,
   devLogin,
@@ -16,7 +16,7 @@ import {
   defaultUserEmail,
   createSuperRequest,
   defaultUsername
-} from '../../jest.utils';
+} from '../../../jest.utils';
 import {
   completedExamChallengeOneCorrect,
   completedExamChallengeTwoCorrect,
@@ -31,14 +31,14 @@ import {
   examWithTwoCorrect,
   examWithAllCorrect,
   type ExamSubmission
-} from '../../__mocks__/exam';
-import { Answer } from '../utils/exam-types';
-import type { getSessionUser } from '../schemas/user/get-session-user';
+} from '../../../__mocks__/exam';
+import { Answer } from '../../utils/exam-types';
+import type { getSessionUser } from '../../schemas/user/get-session-user';
 
-jest.mock('./helpers/challenge-helpers', () => {
+jest.mock('../helpers/challenge-helpers', () => {
   const originalModule = jest.requireActual<
-    typeof import('./helpers/challenge-helpers')
-  >('./helpers/challenge-helpers');
+    typeof import('../helpers/challenge-helpers')
+  >('../helpers/challenge-helpers');
 
   return {
     __esModule: true,

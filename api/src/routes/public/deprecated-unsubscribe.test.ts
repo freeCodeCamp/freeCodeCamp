@@ -1,4 +1,4 @@
-import { setupServer, superRequest } from '../../jest.utils';
+import { setupServer, superRequest } from '../../../jest.utils';
 
 import { unsubscribeEndpoints } from './deprecated-unsubscribe';
 

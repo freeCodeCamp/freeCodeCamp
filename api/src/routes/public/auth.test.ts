@@ -3,8 +3,8 @@ import {
   setupServer,
   superRequest,
   createSuperRequest
-} from '../../jest.utils';
-import { AUTH0_DOMAIN } from '../utils/env';
+} from '../../../jest.utils';
+import { AUTH0_DOMAIN } from '../../utils/env';
 
 const mockedFetch = jest.fn();
 jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
@@ -25,10 +25,10 @@ const mockAuth0ValidEmail = () => ({
   json: () => ({ email: newUserEmail })
 });
 
-jest.mock('../utils/env', () => {
+jest.mock('../../utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
-    ...jest.requireActual('../utils/env'),
+    ...jest.requireActual('../../utils/env'),
     FCC_ENABLE_DEV_LOGIN_MODE: false
   };
 });

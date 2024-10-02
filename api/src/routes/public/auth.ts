@@ -9,10 +9,10 @@ import rateLimit, { type FastifyRateLimitStore } from '@fastify/rate-limit';
 import MongoStoreRL from 'rate-limit-mongo';
 import isEmail from 'validator/lib/isEmail';
 
-import { AUTH0_DOMAIN, MONGOHQ_URL } from '../utils/env';
-import { auth0Client } from '../plugins/auth0';
-import { createAccessToken } from '../utils/tokens';
-import { findOrCreateUser } from './helpers/auth-helpers';
+import { AUTH0_DOMAIN, MONGOHQ_URL } from '../../utils/env';
+import { auth0Client } from '../../plugins/auth0';
+import { createAccessToken } from '../../utils/tokens';
+import { findOrCreateUser } from '../helpers/auth-helpers';
 
 const getEmailFromAuth0 = async (
   req: FastifyRequest

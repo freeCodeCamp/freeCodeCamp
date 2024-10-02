@@ -1,6 +1,6 @@
 import request from 'supertest';
 
-import { setupServer } from '../../jest.utils';
+import { setupServer } from '../../../jest.utils';
 import { endpoints } from './deprecated-endpoints';
 
 describe('Deprecated endpoints', () => {

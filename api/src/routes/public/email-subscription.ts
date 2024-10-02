@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import * as schemas from '../schemas';
-import { getRedirectParams } from '../utils/redirection';
+import * as schemas from '../../schemas';
+import { getRedirectParams } from '../../utils/redirection';
 
 /**
  * Endpoints to set 'sendQuincyEmail' to true or false using 'unsubscribeId'.

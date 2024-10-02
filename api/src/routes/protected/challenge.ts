@@ -4,8 +4,8 @@ import { uniqBy } from 'lodash';
 import { CompletedExam, ExamResults } from '@prisma/client';
 import isURL from 'validator/lib/isURL';
 
-import { challengeTypes } from '../../../shared/config/challenge-types';
-import * as schemas from '../schemas';
+import { challengeTypes } from '../../../../shared/config/challenge-types';
+import * as schemas from '../../schemas';
 import {
   jsCertProjectIds,
   multifileCertProjectIds,
@@ -14,25 +14,25 @@ import {
   type CompletedChallenge,
   saveUserChallengeData,
   msTrophyChallenges
-} from '../utils/common-challenge-functions';
-import { JWT_SECRET } from '../utils/env';
+} from '../../utils/common-challenge-functions';
+import { JWT_SECRET } from '../../utils/env';
 import {
   formatCoderoadChallengeCompletedValidation,
   formatProjectCompletedValidation
-} from '../utils/error-formatting';
-import { getChallenges } from '../utils/get-challenges';
-import { ProgressTimestamp, getPoints } from '../utils/progress';
+} from '../../utils/error-formatting';
+import { getChallenges } from '../../utils/get-challenges';
+import { ProgressTimestamp, getPoints } from '../../utils/progress';
 import {
   validateExamFromDbSchema,
   validateGeneratedExamSchema,
   validateUserCompletedExamSchema,
   validateExamResultsSchema
-} from '../utils/exam-schemas';
-import { generateRandomExam, createExamResults } from '../utils/exam';
+} from '../../utils/exam-schemas';
+import { generateRandomExam, createExamResults } from '../../utils/exam';
 import {
   canSubmitCodeRoadCertProject,
   verifyTrophyWithMicrosoft
-} from './helpers/challenge-helpers';
+} from '../helpers/challenge-helpers';
 
 interface JwtPayload {
   userToken: string;

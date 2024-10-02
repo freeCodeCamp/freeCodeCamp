@@ -7,10 +7,10 @@ import {
   createSuperRequest,
   defaultUserId,
   defaultUserEmail
-} from '../../jest.utils';
-import { formatMessage } from '../plugins/redirect-with-message';
-import { createUserInput } from '../utils/create-user';
-import { API_LOCATION, HOME_LOCATION } from '../utils/env';
+} from '../../../jest.utils';
+import { formatMessage } from '../../plugins/redirect-with-message';
+import { createUserInput } from '../../utils/create-user';
+import { API_LOCATION, HOME_LOCATION } from '../../utils/env';
 import {
   isPictureWithProtocol,
   getWaitMessage,
