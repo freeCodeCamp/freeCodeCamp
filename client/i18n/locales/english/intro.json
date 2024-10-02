@@ -1893,7 +1893,12 @@
       },
       "jnqt": { "title": "68", "intro": [] },
       "vkei": { "title": "69", "intro": [] },
-      "jows": { "title": "70", "intro": [] },
+      "lab-contact-form": {
+        "title": "Design a Contact Form",
+        "intro": [
+          "In this lab, you will design a contact form in HTML and style it using CSS."
+        ]
+      },
       "ipmw": { "title": "71", "intro": [] },
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
