@@ -204,7 +204,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
       keyboardShortcuts,
       username,
       t,
-      toggleNightMode,
       toggleSoundMode,
       toggleKeyboardShortcuts
     } = this.props;
@@ -284,10 +283,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         </FullWidthRow>
         <Spacer size='medium' />
         <FullWidthRow>
-          <ThemeSettings
-            currentTheme={currentTheme}
-            toggleNightMode={toggleNightMode}
-          />
+          <ThemeSettings currentTheme={currentTheme} />
           <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
           <KeyboardShortcutsSettings
             keyboardShortcuts={keyboardShortcuts}
