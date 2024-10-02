@@ -18,7 +18,7 @@ import Honesty from '../components/settings/honesty';
 import Internet, { Socials } from '../components/settings/internet';
 import Portfolio from '../components/settings/portfolio';
 import Privacy from '../components/settings/privacy';
-import { type ThemeProps, Themes } from '../components/settings/theme';
+import { Themes, type ThemeProps } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
@@ -35,19 +35,20 @@ import {
   updateMyQuincyEmail,
   updateMySocials,
   updateMySound,
-  updateMyTheme,
   updateMyKeyboardShortcuts,
-  verifyCert
+  verifyCert,
+  updateMyTheme
 } from '../redux/settings/actions';
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
+type ShowSettingsProps = Pick<ThemeProps, 'currentTheme'> & {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   submitNewAbout: () => void;
+  updateMyTheme: (theme: Themes) => void;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateSocials: (formValues: Socials) => void;
@@ -77,7 +78,7 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  updateMyTheme: (theme: Themes) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
@@ -95,7 +96,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     createFlashMessage,
     isSignedIn,
     submitNewAbout,
-    toggleNightMode,
     toggleSoundMode,
     toggleKeyboardShortcuts,
     user: {
@@ -179,7 +179,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             sound={sound}
             keyboardShortcuts={keyboardShortcuts}
             submitNewAbout={submitNewAbout}
-            toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             username={username}

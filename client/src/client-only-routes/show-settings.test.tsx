@@ -5,6 +5,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import envData from '../../config/env.json';
 
 import { ShowSettings } from './show-settings';
+import { updateMyTheme } from '../redux/settings/actions';
 
 const { apiLocation } = envData as Record<string, string>;
 
@@ -42,7 +43,7 @@ const loggedInProps = {
   navigate: navigate,
   showLoading: false,
   submitNewAbout: jest.fn(),
-  toggleNightMode: jest.fn(),
+  updateMyTheme: jest.fn(),
   updateSocials: jest.fn(),
   updateIsHonest: jest.fn(),
   updatePortfolio: jest.fn(),

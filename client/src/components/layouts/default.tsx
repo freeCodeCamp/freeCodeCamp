@@ -107,11 +107,16 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
 }
 
 const getSystemTheme = () =>
-  `${
-    window.matchMedia('(prefers-color-scheme: dark)').matches === true
+{
+  if (localStorage.getItem("theme") != null)
+  {
+    return localStorage.getItem("theme");
+  }
+  return `${window.matchMedia('(prefers-color-scheme: dark)').matches === true
       ? 'dark-palette'
       : 'light-palette'
-  }`;
+    }`;
+}
 
 function DefaultLayout({
   children,

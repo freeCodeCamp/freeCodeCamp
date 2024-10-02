@@ -236,7 +236,10 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const certURL = `https://freecodecamp.org${pathname}`;
 
   const currentTheme =
-    (localStorage.getItem('theme') as Themes) ?? Themes.Default;
+    localStorage.getItem('theme') == Themes.Night
+      ? Themes.Night
+      : Themes.Default;
+
   const donationCloseBtn = (
     <div>
       <Button
