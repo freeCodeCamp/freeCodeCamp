@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "AuthToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "block": {
+    "dataSource": "db",
+    "public": true
+  },
+  "challenge": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Donation": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "mail",
+    "public": false
+  },
+  "Exam": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "MsUsername": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Survey": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "db",
+    "public": true
+  },
+  "userIdentity": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "UserToken": {
+    "dataSource": "db",
+    "public": false
+  }
+}

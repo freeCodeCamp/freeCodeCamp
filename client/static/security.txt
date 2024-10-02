@@ -1,0 +1,8 @@
+Contact: https://contribute.freecodecamp.org/#/security
+Expires: 2022-12-31T18:30:00.000Z
+Encryption: https://flowcrypt.com/me/freecodecamp
+Encryption: https://flowcrypt.com/pub/freecodecamp?show=pubkey
+Acknowledgments: https://contribute.freecodecamp.org/#/security-hall-of-fame
+Preferred-Languages: en
+Policy: https://contribute.freecodecamp.org/#/security
+

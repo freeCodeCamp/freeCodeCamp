@@ -1,0 +1,16 @@
+{
+  "name": "Build a Page of Playing Cards",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-page-of-playing-cards",
+  "order": 80,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66be24cb4144f955b6bcc550",
+      "title": "Build a Page of Playing Cards"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

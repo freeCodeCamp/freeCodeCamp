@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlockIntros /> matches snapshot 1`] = `
+<div
+  className="block-description"
+>
+  <p
+    dangerouslySetInnerHTML={
+      {
+        "__html": "first paragraph",
+      }
+    }
+  />
+  <p
+    dangerouslySetInnerHTML={
+      {
+        "__html": "second paragraph",
+      }
+    }
+  />
+</div>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add-text should have an output to match the snapshot 1`] = `
+{
+  "description": "<section id="description">
+<p>Paragraph 1</p>
+<pre><code class="language-html">code example
+</code></pre>
+</section>",
+  "instructions": "<section id="instructions">
+<p>Paragraph 0</p>
+<pre><code class="language-html">code example 0
+</code></pre>
+</section>",
+}
+`;

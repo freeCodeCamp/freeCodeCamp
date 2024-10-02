@@ -1,0 +1,36 @@
+.tool-panel-group button,
+.tool-panel-group a {
+  font-size: 1.1rem;
+}
+
+.tool-panel-group-mobile button,
+.tool-panel-group-mobile a {
+  font-size: 0.8rem;
+}
+
+.tool-panel-group-mobile {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 37px;
+  width: 100%;
+  background-color: var(--tertiary-background);
+  position: absolute;
+  bottom: 0;
+}
+
+.tool-panel-group-mobile #get-help-dropdown {
+  height: 36.5px;
+}
+
+.tool-panel-group-mobile button:focus-visible {
+  outline-offset: -3px;
+  border-color: var(--focus-outline-color);
+  outline: none;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 450px) {
+  #get-help-dropdown {
+    min-width: 90px;
+  }
+}

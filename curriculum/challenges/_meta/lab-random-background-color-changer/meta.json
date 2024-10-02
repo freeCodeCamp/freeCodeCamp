@@ -1,0 +1,11 @@
+{
+  "name": "Debug a Random Background Color Changer",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-random-background-color-changer",
+  "order": 204,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66b62d0ad68488dd76228d6c", "title": "Debug a Random Background Color Changer" }],
+  "helpCategory": "JavaScript"
+}

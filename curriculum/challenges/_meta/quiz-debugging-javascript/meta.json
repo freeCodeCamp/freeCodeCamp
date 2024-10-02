@@ -1,0 +1,13 @@
+{
+  "name": "Debugging JavaScript Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-debugging-javascript",
+  "order": 206,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66edd10913f078e7669eca81", "title": "Debugging JavaScript Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

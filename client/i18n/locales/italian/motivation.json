@@ -1,0 +1,56 @@
+{
+  "compliments": [
+    "A tutta birra!",
+    "Pikachu, scelgo te!",
+    "Hai fegato!",
+    "Alla Batmobile",
+    "Tu sei un mago, Harry",
+    "È così che si fa!",
+    "Leggen - non ti muovere - dario!",
+    "Potere del cristallo di Luna!",
+    "Mitico!!!",
+    "Verso l'infinito e oltre!"
+  ],
+  "motivationalQuotes": [
+    {
+      "quote": "Se i costruttori costruissero come i programmatori programmano, il primo picchio che passa potrebbe distruggere la civiltà.",
+      "author": "Artur Bloch, Seconda legge di Weinberg"
+    },
+    {
+      "quote": "I bravi programmatori sanno cosa scrivere. I migliori sanno cosa riscrivere.",
+      "author": "Eric Steven Raymond"
+    },
+    {
+      "quote": "Misurare i progressi della programmazione dalle linee di codice è come misurare i progressi nella costruzione di aerei dal loro peso.",
+      "author": "Bill Gates"
+    },
+    {
+      "quote": "Il passato non può essere cambiato. Il futuro è ancora in tuo potere.",
+      "author": "Confucio"
+    },
+    {
+      "quote": "Vendi la tua intelligenza e compra lo sconcerto.",
+      "author": "Rumi"
+    },
+    {
+      "quote": "Il fallimento è il condimento che dà al successo il suo sapore.",
+      "author": "Truman Capote"
+    },
+    {
+      "quote": "Credi di poterlo fare e sei a metà strada.",
+      "author": "Theodore Roosevelt"
+    },
+    {
+      "quote": "Educazione: il percorso dall'ignoranza arrogante alla miserabile incertezza.",
+      "author": "Mark Twain"
+    },
+    {
+      "quote": "Una formica in movimento fa più di un bue assopito.",
+      "author": "Lao Tzu"
+    },
+    {
+      "quote": "Il controllo della complessità è l'essenza della programmazione informatica.",
+      "author": "Brian Kernighan"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "DOM Manipulation and Click Events with JavaScript Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript",
+  "order": 192,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edd07682767adff3a6231e",
+      "title": "DOM Manipulation and Click Events with JavaScript Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

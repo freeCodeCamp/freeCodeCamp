@@ -1,0 +1,15 @@
+{
+  "name": "Build a Salon Appointment Scheduler",
+  "isUpcomingChange": true,
+  "dashedName": "lab-salon-appointment-scheduler",
+  "order": 350,
+  "helpCategory": "Backend Development",
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "5f87ac112ae598023a42df1a",
+      "title": "Build a Salon Appointment Scheduler"
+    }
+  ],
+  "blockType": "lab"
+}

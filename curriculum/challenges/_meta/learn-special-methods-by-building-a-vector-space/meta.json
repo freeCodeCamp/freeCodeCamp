@@ -1,0 +1,320 @@
+{
+  "name": "Learn Special Methods by Building a Vector Space",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-special-methods-by-building-a-vector-space",
+  "order": 14,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "65f01969115f933073b6be03",
+      "title": "Step 1"
+    },
+    {
+      "id": "65f03d9f92eac9183a4d3281",
+      "title": "Step 2"
+    },
+    {
+      "id": "65f055b9190fc41ca35549b8",
+      "title": "Step 3"
+    },
+    {
+      "id": "65f056a405239e1dc4cc2854",
+      "title": "Step 4"
+    },
+    {
+      "id": "65f058e06f34fd1f0ee6e55d",
+      "title": "Step 5"
+    },
+    {
+      "id": "65f0694fb2296f3caadf8347",
+      "title": "Step 6"
+    },
+    {
+      "id": "65f06a8e5a57673d700c79c3",
+      "title": "Step 7"
+    },
+    {
+      "id": "65f07c9b1ffb814d856dcffc",
+      "title": "Step 8"
+    },
+    {
+      "id": "65f3fa097f26b510db6c710b",
+      "title": "Step 9"
+    },
+    {
+      "id": "65f3fa60a93b84110b3f1708",
+      "title": "Step 10"
+    },
+    {
+      "id": "65f3fe07cc763212efe91285",
+      "title": "Step 11"
+    },
+    {
+      "id": "65f40051d6b09a139f253e8e",
+      "title": "Step 12"
+    },
+    {
+      "id": "65f40401e6ef53173c04e27d",
+      "title": "Step 13"
+    },
+    {
+      "id": "65f407ea37ad6e181b90462e",
+      "title": "Step 14"
+    },
+    {
+      "id": "65f40f8af784751c613d638a",
+      "title": "Step 15"
+    },
+    {
+      "id": "65f40fdb3579aa1ced28b2eb",
+      "title": "Step 16"
+    },
+    {
+      "id": "65f412c208c3791fee305acf",
+      "title": "Step 17"
+    },
+    {
+      "id": "65f4148dea0f802040225e0c",
+      "title": "Step 18"
+    },
+    {
+      "id": "65f4520e363e2642f8112e33",
+      "title": "Step 19"
+    },
+    {
+      "id": "65f4535bbdb28d436ff3ddc9",
+      "title": "Step 20"
+    },
+    {
+      "id": "65f870003444fb1a2ad171f2",
+      "title": "Step 21"
+    },
+    {
+      "id": "66680ddfd0f8c76782923cb0",
+      "title": "Step 22"
+    },
+    {
+      "id": "65f8709620b2ce1a62608f5a",
+      "title": "Step 23"
+    },
+    {
+      "id": "65f8720685ec351abef26740",
+      "title": "Step 24"
+    },
+    {
+      "id": "65f872a0fe6aa21b456ad4fe",
+      "title": "Step 25"
+    },
+    {
+      "id": "6659875502b6d7765498f324",
+      "title": "Step 26"
+    },
+    {
+      "id": "65f8749b13774b1d2e4a7fba",
+      "title": "Step 27"
+    },
+    {
+      "id": "65f876d17832001e8e1abb05",
+      "title": "Step 28"
+    },
+    {
+      "id": "65f93acbb514857003510e79",
+      "title": "Step 29"
+    },
+    {
+      "id": "65f93b67169a9c703264458a",
+      "title": "Step 30"
+    },
+    {
+      "id": "65f93d4647ce2670dc6f095c",
+      "title": "Step 31"
+    },
+    {
+      "id": "65f93e54a9121571dcdd3e79",
+      "title": "Step 32"
+    },
+    {
+      "id": "66682150151af29efec9727d",
+      "title": "Step 33"
+    },
+    {
+      "id": "666826f258fda1ab3396a509",
+      "title": "Step 34"
+    },
+    {
+      "id": "666827a6fd0dbaafe8330ea6",
+      "title": "Step 35"
+    },
+    {
+      "id": "666832e427d70bc5219dc62a",
+      "title": "Step 36"
+    },
+    {
+      "id": "6668374ed18b7fce10259cb3",
+      "title": "Step 37"
+    },
+    {
+      "id": "65f9b17a638f0d0dcce8c354",
+      "title": "Step 38"
+    },
+    {
+      "id": "65f9b486989cb90ff3e77ac8",
+      "title": "Step 39"
+    },
+    {
+      "id": "65f9b9710cca621244d3bde1",
+      "title": "Step 40"
+    },
+    {
+      "id": "65f9bb7c0d524612b2a88a4b",
+      "title": "Step 41"
+    },
+    {
+      "id": "65f9bc10a9fb1612e066e9e8",
+      "title": "Step 42"
+    },
+    {
+      "id": "65f9c2c2006feb1428ad2d4c",
+      "title": "Step 43"
+    },
+    {
+      "id": "65f9cb678070ca1668898c70",
+      "title": "Step 44"
+    },
+    {
+      "id": "65f9dd6e5a08af19c196c2df",
+      "title": "Step 45"
+    },
+    {
+      "id": "65f9dfd2e75e291a38695f13",
+      "title": "Step 46"
+    },
+    {
+      "id": "65f9e0a578b22c1a736f3d82",
+      "title": "Step 47"
+    },
+    {
+      "id": "65fa8d5cf0ef3b141010f5d8",
+      "title": "Step 48"
+    },
+    {
+      "id": "65fa8df56a0e2c149b4d24fe",
+      "title": "Step 49"
+    },
+    {
+      "id": "65fa9402d1fb5516aa42159d",
+      "title": "Step 50"
+    },
+    {
+      "id": "65fa9e1b6c6db919385359ec",
+      "title": "Step 51"
+    },
+    {
+      "id": "65faaed8f7a9772f023ea816",
+      "title": "Step 52"
+    },
+    {
+      "id": "65fc87e19930a503e5f05500",
+      "title": "Step 53"
+    },
+    {
+      "id": "65fc899d77495504d6deeccc",
+      "title": "Step 54"
+    },
+    {
+      "id": "65fc8e7c766ab1070213aadb",
+      "title": "Step 55"
+    },
+    {
+      "id": "65fc8fa7e7860407ab479bf0",
+      "title": "Step 56"
+    },
+    {
+      "id": "65fd681b20b7e45f55def415",
+      "title": "Step 57"
+    },
+    {
+      "id": "65fd9250db0d6b8198cf29ef",
+      "title": "Step 58"
+    },
+    {
+      "id": "65fd95c23beef982af29004c",
+      "title": "Step 59"
+    },
+    {
+      "id": "65fd97f3c1b4c4839bdeb8d2",
+      "title": "Step 60"
+    },
+    {
+      "id": "65fd9aa649f6cc84631882a9",
+      "title": "Step 61"
+    },
+    {
+      "id": "65fd9c6e49d7cd8513ab1005",
+      "title": "Step 62"
+    },
+    {
+      "id": "65fd9d6203afea85931094c9",
+      "title": "Step 63"
+    },
+    {
+      "id": "65fd9e2c56ff19862dfb8cbb",
+      "title": "Step 64"
+    },
+    {
+      "id": "65fdc3c8478ee70fc7966151",
+      "title": "Step 65"
+    },
+    {
+      "id": "65fdc496f4440e1055a2ac1b",
+      "title": "Step 66"
+    },
+    {
+      "id": "6601918b44a11b4a8c986c6a",
+      "title": "Step 67"
+    },
+    {
+      "id": "66019258a7c71d4ae50da42e",
+      "title": "Step 68"
+    },
+    {
+      "id": "66019319edb1cb4b57d3a793",
+      "title": "Step 69"
+    },
+    {
+      "id": "660193a2a71faa4bd8f10970",
+      "title": "Step 70"
+    },
+    {
+      "id": "66019977710caa516276c0a8",
+      "title": "Step 71"
+    },
+    {
+      "id": "6601a7eb860fb8546516674d",
+      "title": "Step 72"
+    },
+    {
+      "id": "6601a88a6e2ccc550d7d7208",
+      "title": "Step 73"
+    },
+    {
+      "id": "6601a8fb2e993b55912f9e9f",
+      "title": "Step 74"
+    },
+    {
+      "id": "6601ab2809898f57591f2f7f",
+      "title": "Step 75"
+    },
+    {
+      "id": "6601ac48a2ee6b59e6a5060d",
+      "title": "Step 76"
+    },
+    {
+      "id": "6601ad0fe415985a5c83f3cc",
+      "title": "Step 77"
+    }
+  ],
+  "helpCategory": "Python"
+}
