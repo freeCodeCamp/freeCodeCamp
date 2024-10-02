@@ -77,7 +77,8 @@ test.describe('Your Internet Presence', () => {
     });
 
     test(`should update ${social.name} URL`, async ({ page }) => {
-      const socialInput = page.locator(`#internet-${social.name}-input`);
+      const socialInput = page.getByRole('textbox', { name: social.label });
+      await expect(socialInput).toBeVisible();
       await socialInput.fill(social.url);
       const socialCheckmark = page.getByTestId(social.checkTestId);
       await expect(socialCheckmark).toBeVisible();
