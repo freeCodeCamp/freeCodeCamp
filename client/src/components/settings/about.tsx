@@ -283,9 +283,7 @@ class AboutSettings extends Component<AboutProps, AboutState> {
         </FullWidthRow>
         <Spacer size='medium' />
         <FullWidthRow>
-          <ThemeSettings
-            currentTheme={currentTheme}
-          />
+          <ThemeSettings currentTheme={currentTheme} />
           <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
           <KeyboardShortcutsSettings
             keyboardShortcuts={keyboardShortcuts}
