@@ -2439,7 +2439,10 @@
           "For this lab, you will build a linked list class using JavaScript."
         ]
       },
-      "wraf": { "title": "265", "intro": [] },
+      "lab-hash-table-class": {
+        "title": "Build a Hash Table Class",
+        "intro": ["For this lab, you will build a hash table using JavaScript."]
+      },
       "muyw": { "title": "266", "intro": [] },
       "quiz-javascript-data-structures": {
         "title": "JavaScript Data Structures Quiz",
@@ -2448,7 +2451,12 @@
         ]
       },
       "rmpy": { "title": "268", "intro": [] },
-      "plfo": { "title": "269", "intro": [] },
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
+      },
       "xdyh": { "title": "270", "intro": [] },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Quiz",
