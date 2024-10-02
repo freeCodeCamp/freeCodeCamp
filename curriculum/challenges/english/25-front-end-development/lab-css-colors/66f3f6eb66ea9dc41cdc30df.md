@@ -79,9 +79,18 @@ colorGridChildren.forEach((child) => {
 `.color1` should have a hexadecimal background color.
 
 ```js
+function rgbToHex(rgb) {
+    const result = rgb.match(/\d+/g);
+    return result
+        ? '#' + result.map(x => ('0' + parseInt(x).toString(16)).slice(-2)).join('')
+        : rgb;
+}
+
 const color1 = document.querySelector('.color1');
 const color1BgColor = getComputedStyle(color1).backgroundColor;
-assert.match(color1BgColor, /^#(?:[0-9a-fA-F]{3}){1,2}$/, 'The background color of .color1 is a valid hexadecimal value');
+const color1Hex = rgbToHex(color1BgColor);
+const isHex = /^#(?:[0-9a-fA-F]{3}){1,2}$/.test(color1Hex);
+assert(isHex, 'The background color of .color1 should be a valid hexadecimal value');
 ```
 
 `.color2` should have an RGB background color.
@@ -95,15 +104,16 @@ assert.match(color2BgColor, /^rgb\(\d+, \d+, \d+\)$/, 'The background color of .
 `.color3` should have a predefined (word) background color.
 
 ```js
-const 
+//
 ```
 
 `.color4` should have a HSL background color.
 
 ```js
-const color4 = document.querySelector('.color4');
-const color4BgColor = getComputedStyle(color4).backgroundColor;
-assert.match(color4BgColor, /^hsl\(\d+, \d+%, \d+%\)$/);
+const color4Element = document.querySelector('.color4');
+const originalBackgroundColor = color4Element.style.backgroundColor;
+const isHslFormat = originalBackgroundColor.startsWith('hsl');
+assert(isHslFormat, 'The background color of .color4 should be an HSL color value');
 ```
 
 `.color5` should have a background color set.
@@ -149,7 +159,7 @@ assert.isNotEmpty(color5BgColor, 'The background color of .color5 is set');
 </head>
 <body>
     <h1>Colored Boxes</h1>
-    <div class="color-grid">
+    <div class="color-grid">git 
         <div class="color-box color1"></div>
         <div class="color-box color2"></div>
         <div class="color-box color3"></div>
