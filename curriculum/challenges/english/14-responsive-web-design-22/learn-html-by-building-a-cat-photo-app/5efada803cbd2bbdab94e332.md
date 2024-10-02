@@ -42,20 +42,14 @@ The third image should have a `src` attribute set to `https://cdn.freecodecamp.o
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
-assert(
-  catsImg &&
-    catsImg.getAttribute('src').trim().toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
-);
+assert.equal(catsImg?.getAttribute('src')?.trim().toLowerCase(), 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg');
 ```
 
 The `src` attribute must not contain any extra spaces before or after the link. Remove the extra spaces.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
-assert(
-  catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
-);
+assert.equal(catsImg?.getAttribute('src')?.toLowerCase(), 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg');
 ```
 
 Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
