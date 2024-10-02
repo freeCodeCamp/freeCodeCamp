@@ -12,7 +12,7 @@ test.describe('Picture input field', () => {
         .click();
     }
 
-    await page.getByTestId('edit-profile-button').click();
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('Should be possible to type', async ({ page }) => {

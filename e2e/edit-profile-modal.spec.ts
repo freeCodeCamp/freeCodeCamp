@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
     await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
   }
 
-  await page.getByTestId('edit-profile-button').click();
+  await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
 
 test('edit profile modal should render correctly', async ({ page }) => {

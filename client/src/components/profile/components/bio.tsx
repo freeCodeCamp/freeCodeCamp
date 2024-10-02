@@ -48,7 +48,7 @@ const Bio = ({
             onClick={() => setIsEditing(true)}
             size='small'
             className='button-fit'
-            data-playwright-test-label='edit-profile-button'
+            aria-label={t('aria.edit-my-profile')}
           >
             <FontAwesomeIcon icon={faPen} />
           </Button>

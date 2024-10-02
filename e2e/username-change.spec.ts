@@ -28,7 +28,7 @@ test.describe('Username Settings Validation', () => {
         .click();
     }
 
-    await page.getByTestId('edit-profile-button').click();
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('Should display Username Input and Save Button', async ({ page }) => {

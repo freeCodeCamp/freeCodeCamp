@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
     await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
   }
 
-  await page.getByTestId('edit-profile-button').click();
+  await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
 
 test.afterAll(() => {
@@ -53,7 +53,7 @@ test('Should allow empty string in any field in about settings', async ({
   await expect(updatedAlert).toBeVisible();
   // clear the alert to make sure it's gone before we save again.
   await updatedAlert.getByRole('button').click();
-  await page.getByTestId('edit-profile-button').click();
+  await page.getByRole('button', { name: 'Edit my profile' }).click();
   await nameInput.fill('');
   await locationInput.fill('');
   await pictureInput.fill('');
@@ -69,7 +69,7 @@ test('Should allow empty string in any field in about settings', async ({
     await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
   }
 
-  await page.getByTestId('edit-profile-button').click();
+  await page.getByRole('button', { name: 'Edit my profile' }).click();
   await expect(nameInput).toHaveValue('');
   await expect(locationInput).toHaveValue('');
   await expect(pictureInput).toHaveValue('');

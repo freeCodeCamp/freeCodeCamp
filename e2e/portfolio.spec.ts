@@ -22,7 +22,7 @@ test.describe('Add Portfolio Item', () => {
         .click();
     }
 
-    await page.getByTestId('edit-profile-button').click();
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('The title has validation', async ({ page }) => {
