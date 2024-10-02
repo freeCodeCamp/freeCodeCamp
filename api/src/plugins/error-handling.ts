@@ -3,6 +3,7 @@ import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import fp from 'fastify-plugin';
 
 import { SENTRY_DSN } from '../utils/env';
+import { getRedirectParams } from '../utils/redirection';
 
 /**
  * Plugin to handle errors and send them to Sentry.
@@ -17,17 +18,29 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
     // No need to initialize if DSN is not provided (e.g. in development and
     // test environments)
     skipInit: !SENTRY_DSN,
-    errorResponse: (error, _request, reply) => {
+    errorResponse: (error, request, reply) => {
+      const accepts = request.accepts().type(['json', 'html']);
       const isCSRFError =
         error.code === 'FST_CSRF_INVALID_TOKEN' ||
         error.code === 'FST_CSRF_MISSING_SECRET';
-      if (reply.statusCode === 500 || isCSRFError) {
+
+      const { returnTo } = getRedirectParams(request);
+
+      const message =
+        reply.statusCode === 500 || isCSRFError
+          ? 'flash.generic-error'
+          : error.message;
+      if (accepts === 'json') {
         void reply.send({
-          message: 'flash.generic-error',
+          message,
           type: 'danger'
         });
       } else {
-        void reply.send(error);
+        void reply.status(302);
+        void reply.redirectWithMessage(returnTo, {
+          type: 'danger',
+          content: message
+        });
       }
     }
   });
@@ -36,5 +49,5 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
 };
 
 export default fp(errorHandling, {
-  dependencies: ['redirect-with-message']
+  dependencies: ['redirect-with-message', '@fastify/accepts']
 });
