@@ -53,52 +53,6 @@ const updateErrorResponse = {
 describe('settingRoutes', () => {
   setupServer();
 
-  // TODO: rather than testing every single route, create a single test for the
-  // rest api plugin that checks that the appropriate hooks are added to all
-
-  // This only tests one route, but all of the routes in the settings plugin add
-  // the same hooks. So if this suite passes, the other routes should be
-  // protected.
-  describe('CSRF protection', () => {
-    it('should return 403 if the _csrf secret is missing', async () => {
-      const response = await superRequest('/update-my-profileui', {
-        method: 'PUT'
-      });
-
-      expect(response.body).toEqual({
-        message: 'flash.generic-error',
-        type: 'danger'
-      });
-      expect(response.statusCode).toEqual(403);
-    });
-
-    it('should return 403 if the csrf_token is invalid', async () => {
-      const response = await superRequest('/update-my-profileui', {
-        method: 'PUT'
-      }).set('Cookie', ['_csrf=foo', 'csrf-token=bar']);
-
-      expect(response.body).toEqual({
-        message: 'flash.generic-error',
-        type: 'danger'
-      });
-      expect(response.statusCode).toEqual(403);
-    });
-
-    it('should receive a new CSRF token + secret in the response', async () => {
-      const response = await superRequest('/update-my-profileui', {
-        method: 'PUT'
-      });
-
-      const newCookies = response.get('Set-Cookie');
-      expect(newCookies).toEqual(
-        expect.arrayContaining([
-          expect.stringContaining('_csrf'),
-          expect.stringContaining('csrf_token')
-        ])
-      );
-    });
-  });
-
   describe('Authenticated user', () => {
     let superPut: ReturnType<typeof createSuperRequest>;
     let superGet: ReturnType<typeof createSuperRequest>;
