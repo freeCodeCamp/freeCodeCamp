@@ -1,22 +1,6 @@
 import { Exam, Question } from '@prisma/client';
+import { shuffleArray } from './../../../shared/utils/shuffle-array';
 import { UserExam, GeneratedExam } from './exam-types';
-
-function shuffleArray<T>(arr: T[]): T[] {
-  let currentIndex: number = arr.length;
-  let randomIndex: number;
-
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [arr[currentIndex], arr[randomIndex]] = [
-      arr[randomIndex] as T,
-      arr[currentIndex] as T
-    ];
-  }
-
-  return arr;
-}
 
 /**
  * Remove objects from array with deprecated: true.
