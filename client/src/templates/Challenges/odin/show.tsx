@@ -23,6 +23,7 @@ import HelpModal from '../components/help-modal';
 import Scene from '../components/scene/scene';
 import PrismFormatted from '../components/prism-formatted';
 import ChallengeTitle from '../components/challenge-title';
+import ChallegeExplanation from '../components/challenge-explanation';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import Assignments from '../components/assignments';
 import {
@@ -62,7 +63,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowOdinProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
@@ -231,6 +231,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
             title,
             description,
             instructions,
+            explanation,
             superBlock,
             block,
             videoId,
@@ -336,7 +337,13 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                     handleOptionChange={this.handleOptionChange}
                   />
                 </ObserveKeys>
-                <Spacer size='medium' />
+
+                {explanation ? (
+                  <ChallegeExplanation explanation={explanation} />
+                ) : (
+                  <Spacer size='medium' />
+                )}
+
                 <Button
                   block={true}
                   size='medium'
@@ -398,6 +405,7 @@ export const query = graphql`
         title
         description
         instructions
+        explanation
         challengeType
         helpCategory
         superBlock
