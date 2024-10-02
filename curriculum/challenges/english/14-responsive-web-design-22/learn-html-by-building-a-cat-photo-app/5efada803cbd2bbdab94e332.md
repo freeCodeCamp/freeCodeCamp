@@ -44,6 +44,15 @@ The third image should have a `src` attribute set to `https://cdn.freecodecamp.o
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert(
   catsImg &&
+    catsImg.getAttribute('src').trim() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
+);
+```
+The `src` attribute should not have any extra spaces before or after the link. Remove the extra spaces.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert(
+  catsImg &&
     catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
 );
 ```
