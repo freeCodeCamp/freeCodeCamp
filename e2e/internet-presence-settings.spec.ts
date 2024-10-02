@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
@@ -14,6 +15,9 @@ const settingsPageElement = {
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
+  // Reset input values
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+
   await page.goto('/certifieduser');
 
   if (!process.env.CI) {
@@ -92,18 +96,6 @@ test.describe('Your Internet Presence', () => {
       await expect(
         page.getByTestId(settingsPageElement.flashMessageAlert).nth(0)
       ).toContainText('We have updated your social links');
-      await page.getByRole('button', { name: 'Edit my profile' }).click();
-      // clear value before next test
-      await socialInput.clear();
-      await Promise.all([
-        page.waitForResponse(
-          response =>
-            response.url().includes('update-my-socials') &&
-            response.status() === 200
-        ),
-        saveButton.click()
-      ]);
-      await expect(socialCheckmark).toBeHidden();
     });
   });
 });
