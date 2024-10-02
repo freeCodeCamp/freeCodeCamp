@@ -32,5 +32,5 @@ During development and testing, the api exposes the endpoint GET auth/dev-callba
 ## Generating Exams
 
 ```bash
-pnpm run generate-exams -- <ENV_EXAM_ID> <NUMBER_OF_EXAMS_TO_GENERATE>
+pnpm run generate-exams <ENV_EXAM_ID> <NUMBER_OF_EXAMS_TO_GENERATE>
 ```

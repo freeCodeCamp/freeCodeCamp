@@ -15,13 +15,12 @@ import { constructUserExam } from '../utils/exam';
 describe('/exam-environment/', () => {
   setupServer();
   describe('Authenticated user with exam environment authorization token', () => {
-    let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
     let examEnvironmentAuthorizationToken: string;
 
     // Authenticate user
     beforeAll(async () => {
-      setCookies = await devLogin();
+      const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
       await mock.seedEnvExam();
       // Add exam environment authorization token
@@ -52,16 +51,15 @@ describe('/exam-environment/', () => {
           )
           .send(body);
 
-        expect(res).toMatchObject({
-          status: 404,
-          body: {
-            code: 'FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
-            // NOTE: Could be tested, but might not necessarily be a part of the api compatability guarantee.
-            //       That is, it could be changed without requiring a major version bump, because it is just
-            //       a human-readable/debug message.
-            // message: "Invalid exam id given."
-          }
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // NOTE: message may not necessarily be a part of the api compatability guarantee.
+          //       That is, it could be changed without requiring a major version bump, because it is just
+          //       a human-readable/debug message.
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
         });
+        expect(res.status).toBe(404);
       });
 
       it('should return an error if the given exam id does not match an existing exam', async () => {
@@ -89,12 +87,12 @@ describe('/exam-environment/', () => {
           )
           .send(body);
 
-        expect(res).toMatchObject({
-          status: 404,
-          body: {
-            code: 'FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM'
-          }
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
         });
+        expect(res.status).toBe(404);
       });
 
       it('should return an error if the attempt has expired', async () => {
@@ -121,12 +119,12 @@ describe('/exam-environment/', () => {
           )
           .send(body);
 
-        expect(res).toMatchObject({
-          status: 403,
-          body: {
-            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
-          }
+        expect(res.body).toStrictEqual({
+          code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
         });
+        expect(res.status).toBe(403);
       });
 
       it('should return an error if there is no matching generated exam', async () => {
@@ -153,12 +151,12 @@ describe('/exam-environment/', () => {
           )
           .send(body);
 
-        expect(res).toMatchObject({
-          status: 404,
-          body: {
-            code: 'FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM'
-          }
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
         });
+        expect(res.status).toBe(404);
       });
 
       it('should return an error if the attempt does not match the generated exam', async () => {
@@ -166,8 +164,7 @@ describe('/exam-environment/', () => {
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
 
-        // @ts-expect-error Exam is defined
-        attempt.questionSets[0].id = mock.oid();
+        attempt.questionSets[0]!.id = mock.oid();
 
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt
@@ -180,21 +177,19 @@ describe('/exam-environment/', () => {
           )
           .send(body);
 
-        expect(res).toMatchObject({
-          status: 400,
-          body: {
-            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
-          }
+        expect(res.body).toStrictEqual({
+          code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
         });
+        expect(res.status).toBe(400);
 
         // Database should mark attempt as `needsRetake`
         const updatedAttempt =
           await fastifyTestInstance.prisma.envExamAttempt.findUnique({
             where: { id: attempt.id }
           });
-        expect(updatedAttempt).toMatchObject({
-          needsRetake: true
-        });
+        expect(updatedAttempt).toHaveProperty('needsRetake', true);
       });
 
       it('should return 200 if request is valid, and update attempt in database', async () => {
@@ -249,12 +244,12 @@ describe('/exam-environment/', () => {
             examEnvironmentAuthorizationToken
           );
 
-        expect(res).toMatchObject({
-          status: 404,
-          body: {
-            code: 'FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM'
-          }
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
         });
+        expect(res.status).toBe(404);
       });
 
       xit('should return an error if the exam prerequisites are not met', async () => {
@@ -533,12 +528,11 @@ describe('/exam-environment/', () => {
   });
 
   describe('Authenticated user without exam environment authorization token', () => {
-    let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
 
     // Authenticate user
     beforeAll(async () => {
-      setCookies = await devLogin();
+      const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
       await mock.seedEnvExam();
     });

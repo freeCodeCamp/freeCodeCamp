@@ -2,8 +2,9 @@ import { PrismaClient } from '@prisma/client';
 import { generateExam } from '../utils/exam';
 import { MONGOHQ_URL } from '../../utils/env';
 
-const ENV_EXAM_ID = process.argv[1];
-const NUMBER_OF_EXAMS_TO_GENERATE = Number(process.argv[2]);
+const args = process.argv.slice(2);
+const ENV_EXAM_ID = args[0];
+const NUMBER_OF_EXAMS_TO_GENERATE = Number(args[1]);
 
 if (!ENV_EXAM_ID) {
   throw 'First argument must be the EnvExam _id';
@@ -32,7 +33,7 @@ async function main() {
   });
 
   if (!exam) {
-    throw `No exam with id "${ENV_EXAM_ID}" found.`;
+    throw Error(`No exam with id "${ENV_EXAM_ID}" found.`);
   }
 
   let numberOfExamsGenerated = 0;
