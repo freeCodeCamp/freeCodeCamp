@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: introduction-hardware-architecture
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

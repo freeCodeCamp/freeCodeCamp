@@ -10,7 +10,7 @@ dashedName: business-applications-of-college-algebra-extra
 
 This video is showing you some economics applications, and creating graphs and formulas.
 
-# --question--
+# --questions--
 
 ## --text--
 

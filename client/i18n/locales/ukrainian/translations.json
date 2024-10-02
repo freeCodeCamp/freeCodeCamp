@@ -445,6 +445,7 @@
     "help-translate": "Ми досі перекладаємо цю сертифікацію.",
     "help-translate-link": "Допоможіть нам з перекладом.",
     "project-preview-title": "Попередній перегляд того, що ви будете створювати",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Створіть обліковий запис GitHub</0>, якщо у вас його немає. Він знадобиться під час створення віртуальної серверної машини Linux. Цей процес може зайняти кілька хвилин.",
     "gitpod": {
       "intro": "Цей курс виконується у віртуальній машині Linux за допомогою Gitpod. Дотримуйтесь цих інструкцій, щоб розпочати курс:",
@@ -482,6 +483,12 @@
     "preview-external-window": "Попередній перегляд знаходиться у зовнішньому вікні.",
     "fill-in-the-blank": "Заповніть прогалини",
     "blank": "пусто",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Вітаємо, ви виконали всі вимоги для допуску на екзамен.",
       "not-qualified": "Ви недопущені до екзамену, оскільки не виконали всі вимоги. Будь ласка, виконайте такі завдання:",
@@ -1085,7 +1092,7 @@
     "heading": "Вийти з облікового запису",
     "p1": "Увага: якщо ви продовжите, ваш прогрес не буде збережено.",
     "p2": "Ця дія призведе до виходу з облікового запису лише на цьому пристрої та в сеансі браузера. Підтвердьте, якщо ви бажаєте продовжити.",
-    "certain": "Так, вийти з облікового запису",
+    "certain": "Вийти з облікового запису",
     "nevermind": "Залишитись в обліковому записі"
   },
   "staging-warning": {

@@ -29,7 +29,7 @@ console.log(newCharacters); // Output: ['Ron']
 
 The above code creates a new array `newCharacters` with the second element from the `characters` array. The `slice()` method takes two arguments: the index of the element to start the slice and the index of the element to end the slice (not included).
 
-# --question--
+# --questions--
 
 ## --text--
 

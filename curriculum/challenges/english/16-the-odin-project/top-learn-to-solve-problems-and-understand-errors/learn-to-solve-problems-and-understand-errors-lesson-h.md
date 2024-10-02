@@ -15,7 +15,7 @@ At this point, you might be wondering how you can resolve these errors.
 
 1. Another way is to use `console.log()` — it is a popular choice for quick debugging. For more involved troubleshooting, using the debugger might be more appropriate, but using `console.log()` is great for getting immediate feedback without needing to step through your functions. There are also other useful methods such as `console.table()`, `console.trace()`, and more!
 
-# --question--
+# --questions--
 
 ## --text--
 

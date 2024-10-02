@@ -26,6 +26,10 @@ const tom = `${characters}/tom`;
 const mark = `${characters}/npc`;
 const amy = `${characters}/npc`;
 const deliveryMan = `${characters}/npc`;
+const jessica = `${characters}/npc`;
+const jim = `${characters}/npc`;
+const josh = `${characters}/npc`;
+const riker = `${characters}/npc`;
 
 export const characterAssets = {
   Alice: {
@@ -127,6 +131,33 @@ export const characterAssets = {
     mouthClosed: `${james}/mouth-smile.png`,
     mouthOpen: `${james}/mouth-laugh.png`
   },
+  Jessica: {
+    base: `${jessica}/woman-base.png`,
+    brows: `${jessica}/woman-base.png`,
+    eyesClosed: `${jessica}/woman-eyes-closed.png`,
+    eyesOpen: `${jessica}/woman-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${jessica}/woman-mouth-smile.png`,
+    mouthOpen: `${jessica}/woman-mouth-laugh.png`
+  },
+  Jim: {
+    base: `${jim}/man-base.png`,
+    brows: `${jim}/man-base.png`,
+    eyesClosed: `${jim}/man-eyes-closed.png`,
+    eyesOpen: `${jim}/man-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${jim}/man-mouth-smile.png`,
+    mouthOpen: `${jim}/man-mouth-laugh.png`
+  },
+  Josh: {
+    base: `${josh}/man-base.png`,
+    brows: `${josh}/man-base.png`,
+    eyesClosed: `${josh}/man-eyes-closed.png`,
+    eyesOpen: `${josh}/man-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${josh}/man-mouth-smile.png`,
+    mouthOpen: `${josh}/man-mouth-laugh.png`
+  },
   Linda: {
     base: `${linda}/base.png`,
     brows: `${linda}/brows-neutral.png`,
@@ -162,6 +193,15 @@ export const characterAssets = {
     glasses: null,
     mouthClosed: `${mark}/boy-mouth-smile.png`,
     mouthOpen: `${mark}/boy-mouth-laugh.png`
+  },
+  Riker: {
+    base: `${riker}/man-base.png`,
+    brows: `${riker}/man-base.png`,
+    eyesClosed: `${riker}/man-eyes-closed.png`,
+    eyesOpen: `${riker}/man-eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${riker}/man-mouth-smile.png`,
+    mouthOpen: `${riker}/man-mouth-laugh.png`
   },
   Sarah: {
     base: `${sarah}/base.png`,

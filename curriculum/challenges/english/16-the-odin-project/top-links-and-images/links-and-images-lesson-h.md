@@ -73,7 +73,7 @@ This is how the The Odin Project logo example you used earlier looks with an alt
 
 Read about the <a href="https://www.freecodecamp.org/news/image-file-types-picture-format-extensions-jpeg-gif-png-svg-tiff/" target="_blank">four main image formats</a> that can be used on the web.
 
-# --question--
+# --questions--
 
 ## --text--
 

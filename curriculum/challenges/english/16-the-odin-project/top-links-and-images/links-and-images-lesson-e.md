@@ -74,7 +74,7 @@ This is how the The Odin Project logo example you used earlier looks with an `al
 
 Watch Kevin Powell’s HTML Images Video above.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -24,7 +24,7 @@ Remove `flex: 1` from `.item` and add `justify-content: space-between` to `.cont
 
 Before moving on to the next lesson, see what is possible with the `justify-content` property. Read this [interactive article on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) and play around with the different values of `justify-content` on the example.
 
-# --question--
+# --questions--
 
 ## --text--
 

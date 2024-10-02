@@ -19,7 +19,7 @@ console.log(fruits[2]); // Output: orange
 If the index is out of range, JavaScript will return `undefined`. Meaning that if you try to access `fruits[3]` in the above example, it will return `undefined`.
 
 
-# --question--
+# --questions--
 
 ## --text--
 

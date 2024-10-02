@@ -383,7 +383,7 @@
     "add-subtitles": "字幕の改善や追加を支援する",
     "wrong-answer": "残念、正しい答えではありません。もう一度挑戦してみましょう。",
     "check-answer": "以下のボタンをクリックして解答を確認してください。",
-    "assignment-not-complete": "Please complete the assignments",
+    "assignment-not-complete": "課題を完了してください",
     "assignments": "課題",
     "question": "質問",
     "solution-link": "回答のリンク",
@@ -444,7 +444,8 @@
     },
     "help-translate": "この認定講座は現在翻訳中です。",
     "help-translate-link": "翻訳にご協力ください。",
-    "project-preview-title": "これが今から作る物のプレビューです。",
+    "project-preview-title": "これから作成する物のプレビューです。",
+    "demo-project-title": "要件を満たすプロジェクトの例です。",
     "github-required": "<0>GitHub</0> アカウントをお持ちでない場合は作成してください。 仮想 Linux サーバーマシンを作成する際に必要です。この処理には数分かかることがあります。",
     "gitpod": {
       "intro": "このコースは、Gitpod を使用して仮想 Linux マシンで実行されます。コースを開始するには、以下の手順に従ってください:",
@@ -482,6 +483,12 @@
     "preview-external-window": "プレビューは別ウィンドウに表示されています。",
     "fill-in-the-blank": "空欄を埋めてください。",
     "blank": "空欄",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "おめでとうございます。受験資格に必要なすべての要件を完了しました。",
       "not-qualified": "受験資格に必要な要件を満たしていません。資格を得るには、以下のチャレンジを完了してください:",
@@ -902,9 +909,9 @@
       "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
       "heading-exam": "この認定講座の一環として、{{user}} は以下の試験に合格しました: ",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
-      "solution": "Solution",
+      "solution": "解答",
       "no-solution": "解答の表示中にエラーが発生しました。 support@freeCodeCamp.org までメールにてお問い合わせください。",
-      "source": "Source",
+      "source": "ソースコード",
       "footnote": "これらのプロジェクトのいずれかが<2>学問的誠実性ポリシー</2>に反すると思われる場合は、<5>freeCodeCamp チームに報告</5>してください。",
       "title": {
         "Build a Personal Portfolio Webpage": "個人ポートフォリオのウェブページを作成する",

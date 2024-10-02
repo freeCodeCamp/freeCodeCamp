@@ -16,7 +16,7 @@ Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2
 
 Add code to your algebra Colab notebook to graph a function from points or from equation input.
 
-# --question--
+# --questions--
 
 ## --text--
 
