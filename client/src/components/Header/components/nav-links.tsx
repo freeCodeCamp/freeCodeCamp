@@ -15,7 +15,7 @@ import { type ThemeProps, Themes } from '../../settings/theme';
 import { User } from '../../../redux/prop-types';
 import SupporterBadge from '../../../assets/icons/supporter-badge';
 
-export interface NavLinksProps extends Pick<ThemeProps,'currentTheme'> {
+export interface NavLinksProps extends Pick<ThemeProps, 'currentTheme'> {
   displayMenu: boolean;
   showMenu: () => void;
   hideMenu: () => void;
@@ -253,10 +253,9 @@ function NavLinks({
                 currentUserTheme === Themes.Night
                   ? Themes.Default
                   : Themes.Night;
-              dispatch(updateMyTheme({ invertedTheme }));
+              dispatch(updateMyTheme({ theme: invertedTheme }));
             }
-          }
-          }
+          }}
           onKeyDown={currentUserName ? handleMenuKeyDown : handleSignOutKeys}
         >
           {currentUserName ? (
