@@ -26,24 +26,8 @@ import security from './plugins/security';
 import auth from './plugins/auth';
 import bouncer from './plugins/bouncer';
 import notFound from './plugins/not-found';
-import { authRoutes, mobileAuth0Routes } from './routes/public/auth';
-import { devAuthRoutes } from './routes/public/auth-dev';
-import { protectedCertificateRoutes } from './routes/protected/certificate';
-import { chargeStripeRoute } from './routes/public/donate';
-import { userPublicGetRoutes } from './routes/public/user';
-import { unprotectedCertificateRoutes } from './routes/public/certificate';
-import { challengeRoutes } from './routes/protected/challenge';
-import { deprecatedEndpoints } from './routes/public/deprecated-endpoints';
-import { unsubscribeDeprecated } from './routes/public/deprecated-unsubscribe';
-import { donateRoutes } from './routes/protected/donate';
-import { emailSubscribtionRoutes } from './routes/public/email-subscription';
-import {
-  settingRoutes,
-  settingRedirectRoutes
-} from './routes/protected/settings';
-import { statusRoute } from './routes/public/status';
-import { userGetRoutes, userRoutes } from './routes/protected/user';
-import { signoutRoute } from './routes/public/signout';
+import * as publicRoutes from './routes/public';
+import * as protectedRoutes from './routes/protected';
 
 import {
   API_LOCATION,
@@ -201,25 +185,25 @@ export const build = async (
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
-      await fastify.register(challengeRoutes);
-      await fastify.register(donateRoutes);
-      await fastify.register(protectedCertificateRoutes);
-      await fastify.register(settingRoutes);
-      await fastify.register(userRoutes);
+      await fastify.register(protectedRoutes.challengeRoutes);
+      await fastify.register(protectedRoutes.donateRoutes);
+      await fastify.register(protectedRoutes.protectedCertificateRoutes);
+      await fastify.register(protectedRoutes.settingRoutes);
+      await fastify.register(protectedRoutes.userRoutes);
     });
 
     // CSRF protection disabled:
     await fastify.register(async function (fastify, _opts) {
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
-      await fastify.register(userGetRoutes);
+      await fastify.register(protectedRoutes.userGetRoutes);
     });
 
     // Routes that redirect if access is denied:
     await fastify.register(async function (fastify, _opts) {
       fastify.addHook('onRequest', fastify.redirectIfNoUser);
 
-      await fastify.register(settingRedirectRoutes);
+      await fastify.register(protectedRoutes.settingRedirectRoutes);
     });
   });
   // Routes for signed out users:
@@ -227,22 +211,22 @@ export const build = async (
     fastify.addHook('onRequest', fastify.authorize);
     // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
     // mobileAuth0Routes and authRoutes plugins.
-    await fastify.register(mobileAuth0Routes);
+    await fastify.register(publicRoutes.mobileAuth0Routes);
     // TODO: consolidate with LOCAL_MOCK_AUTH
     if (FCC_ENABLE_DEV_LOGIN_MODE) {
-      await fastify.register(devAuthRoutes);
+      await fastify.register(publicRoutes.devAuthRoutes);
     } else {
-      await fastify.register(authRoutes);
+      await fastify.register(publicRoutes.authRoutes);
     }
   });
-  void fastify.register(chargeStripeRoute);
-  void fastify.register(signoutRoute);
-  void fastify.register(emailSubscribtionRoutes);
-  void fastify.register(userPublicGetRoutes);
-  void fastify.register(unprotectedCertificateRoutes);
-  void fastify.register(deprecatedEndpoints);
-  void fastify.register(statusRoute);
-  void fastify.register(unsubscribeDeprecated);
+  void fastify.register(publicRoutes.chargeStripeRoute);
+  void fastify.register(publicRoutes.signoutRoute);
+  void fastify.register(publicRoutes.emailSubscribtionRoutes);
+  void fastify.register(publicRoutes.userPublicGetRoutes);
+  void fastify.register(publicRoutes.unprotectedCertificateRoutes);
+  void fastify.register(publicRoutes.deprecatedEndpoints);
+  void fastify.register(publicRoutes.statusRoute);
+  void fastify.register(publicRoutes.unsubscribeDeprecated);
 
   return fastify;
 };
