@@ -34,7 +34,8 @@ export const ERRORS = {
   FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM: createError(
     'FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM',
     '%s'
-  )
+  ),
+  FCC_EINVAL_EXAM_ID: createError('FCC_EINVAL_EXAM_ID', '%s')
 };
 
 /**

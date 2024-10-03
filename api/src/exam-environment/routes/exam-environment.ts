@@ -1,5 +1,6 @@
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { PrismaClientValidationError } from '@prisma/client/runtime/library';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
 
@@ -22,7 +23,6 @@ import { ERRORS } from '../utils/errors';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
-    // TODO: Is there any reason to delete the token without generating a new one?
     fastify.post(
       '/exam-environment/exam/generated-exam',
       {
@@ -133,8 +133,6 @@ async function postExamGeneratedExamHandler(
 ) {
   // Get exam from DB
   const examId = req.body.examId;
-  // TODO: This throws if `id` is not serializable into an ObjectId
-  //       Should this be caught, and thrown to the client as a client error?
   const maybeExam = await mapErr(
     this.prisma.envExam.findUnique({
       where: {
@@ -143,6 +141,11 @@ async function postExamGeneratedExamHandler(
     })
   );
   if (maybeExam.hasError) {
+    if (maybeExam.error instanceof PrismaClientValidationError) {
+      void reply.code(400);
+      return reply.send(ERRORS.FCC_EINVAL_EXAM_ID(maybeExam.error.message));
+    }
+
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
