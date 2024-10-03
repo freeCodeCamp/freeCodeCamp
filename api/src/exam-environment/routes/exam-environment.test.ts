@@ -385,7 +385,7 @@ describe('/exam-environment/', () => {
         });
       });
 
-      it('should return an error if Camper has taken all generated exams', async () => {
+      it('should return an error if the database has insufficient generated exams', async () => {
         // Add completed attempt for generated exam
         const submittedAttempt = structuredClone(mock.examAttempt);
         // Long-enough ago to be considered "submitted", and not trigger cooldown
@@ -418,7 +418,7 @@ describe('/exam-environment/', () => {
         });
       });
 
-      it('should store an empty exam attempt in the database', async () => {
+      it('should record the fact the user has started an exam by creating an exam attempt', async () => {
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
