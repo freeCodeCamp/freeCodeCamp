@@ -1,22 +1,23 @@
 image: ghcr.io/freecodecamp/gitpod:latest
+
 ports:
-  - port: 27017 # mongodb
+  - port: 27017 # MongoDB
     onOpen: ignore
-  - port: 8000 # client
+  - port: 8000 # Client
     onOpen: notify
     visibility: public
-  - port: 9228 # node debug
+  - port: 9228 # Node Debug
     onOpen: ignore
-  - port: 3000 # api
+  - port: 3000 # API
     onOpen: ignore
     visibility: public
-  - port: 9229 # node debug
+  - port: 9229 # Node Debug
     onOpen: ignore
-  - port: 9230 # client node debug
+  - port: 9230 # Client Node Debug
     onOpen: ignore
-  - port: 3200 # challenge editor api
+  - port: 3200 # Challenge Editor API
     visibility: public
-  - port: 3300 # challenge editor client
+  - port: 3300 # Challenge Editor Client
     visibility: public
   - port: 8025 # MailHog
     visibility: public
@@ -35,41 +36,44 @@ tasks:
       export API_LOCATION=$(gp url 3000)
       export CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
       export CHALLENGE_EDITOR_CLIENT_LOCATION=$(gp url 3300)
-      ' >> ~/.bashrc;
-      exit;
+      ' >> ~/.bashrc
+      && exit
 
   - name: db
-    # starting mongod in background, so it doesn't block prebuilds
-    before: >
-      cd api/tools &&
-      docker compose up -d
+    # Starting MongoDB in the background, so it doesn't block prebuilds
+    before: |
+      cd api/tools
+      && docker compose up -d
 
   - name: server
-    before: export COOKIE_DOMAIN=gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
-    # init is not executed for prebuilt workspaces and restarts,
-    # so we should put all the heavy initialization here
-    init: >
-      cp sample.env .env &&
-      pnpm install &&
-      gp sync-done pnpm-install &&
-      pnpm run build:curriculum &&
-      gp ports await 27017
-    command: >
-      pnpm run seed &&
-      mongosh --eval "db.fsyncLock(); db.fsyncUnlock()" &&
-      gp ports await 27017 &&
-      cd api &&
-      pnpm run develop
+    before: |
+      export COOKIE_DOMAIN=gitpod.io
+      export HOME_LOCATION=$(gp url 8000)
+      export API_LOCATION=$(gp url 3000)
+    init: |
+      cp sample.env .env
+      && pnpm install
+      && gp sync-done pnpm-install
+      && pnpm run build:curriculum
+      && gp ports await 27017
+    command: |
+      pnpm run seed
+      && mongosh --eval "db.fsyncLock(); db.fsyncUnlock()"
+      && gp ports await 27017
+      && cd api
+      && pnpm run develop
 
   - name: client
-    before: export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
-    init: >
-      cd ./client &&
-      gp sync-await pnpm-install &&
-      cd ..
-    command: >
-      gp ports await 3000 &&
-      pnpm run develop:client -- -H '0.0.0.0'
+    before: |
+      export HOME_LOCATION=$(gp url 8000)
+      export API_LOCATION=$(gp url 3000)
+    init: |
+      cd ./client
+      && gp sync-await pnpm-install
+      && cd ..
+    command: |
+      gp ports await 3000
+      && pnpm run develop:client -- -H '0.0.0.0'
     openMode: split-right
 
 vscode:
