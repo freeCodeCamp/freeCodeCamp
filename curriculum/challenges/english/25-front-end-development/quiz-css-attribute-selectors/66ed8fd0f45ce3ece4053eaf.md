@@ -17,23 +17,38 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+In which scenario is using an attribute selector a bad idea?
 
 #### --distractors--
 
-Placeholder distractor 1
+```
+input[type="text"]:focus {
+    background-color: yellow;
+}
+
+```
 
 ---
-
-Placeholder distractor 2
+```
+img[alt] {
+    border: 2px solid red;
+}
+```
 
 ---
-
-Placeholder distractor 3
+```
+input[type="text"] {
+    border: 1px solid gray;
+}
+```
 
 #### --answer--
 
-Placeholder answer
+```
+a[href^="http"] { 
+    color: blue;
+ }
+```
 
 ### --question--
 
