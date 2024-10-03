@@ -136,8 +136,7 @@ const schema = Joi.object()
         'challenge-grid',
         'link',
         'project-list'
-      ).required(),
-      otherwise: Joi.valid(null)
+      )
     }),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
