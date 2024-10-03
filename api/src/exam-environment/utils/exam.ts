@@ -44,34 +44,19 @@ export function constructUserExam(
   // Map generated exam to user exam (a.k.a. public exam information for user)
   const userQuestionSets = generatedExam.questionSets.map(gqs => {
     // Get matching question from `exam`, but remove `is_correct` from `exam.questions[].answers[]`
-    const examQuestionSet = exam.questionSets.find(eqs => eqs.id === gqs.id);
-
-    if (!examQuestionSet) {
-      throw new Error(
-        `Unreachable. Matching question type '${gqs.id}' should exist.`
-      );
-    }
+    const examQuestionSet = exam.questionSets.find(eqs => eqs.id === gqs.id)!;
 
     const { questions } = examQuestionSet;
 
     const userQuestions = gqs.questions.map(gq => {
-      const examQuestion = questions.find(eq => eq.id === gq.id);
-      if (!examQuestion) {
-        throw new Error(
-          `Unreachable. Matching question '${gq.id}' should exist.`
-        );
-      }
+      const examQuestion = questions.find(eq => eq.id === gq.id)!;
 
       // Remove `isCorrect` from question answers
       const answers = gq.answers.map(generatedAnswerId => {
         const examAnswer = examQuestion.answers.find(
           ea => ea.id === generatedAnswerId
-        );
-        if (!examAnswer) {
-          throw new Error(
-            `Unreachable. Matching answer '${generatedAnswerId}' should exist.`
-          );
-        }
+        )!;
+
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { isCorrect, ...answer } = examAnswer;
         return answer;
@@ -535,13 +520,9 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
           // Remove questions from shuffledQuestionSets
           questionsToAdd.forEach(q => {
             const index = shuffledQuestionSets
-              .find(qs => qs.id === questionSet.id)
-              ?.questions.findIndex(qs => qs.id === q.id);
-            if (index === undefined) {
-              throw new Error(
-                `Unreachable. Question ${q.id} should exist in question set ${questionSet.id}.`
-              );
-            }
+              .find(qs => qs.id === questionSet.id)!
+              .questions.findIndex(qs => qs.id === q.id);
+
             shuffledQuestionSets
               .find(qs => qs.id === questionSet.id)
               ?.questions.splice(index, 1);
