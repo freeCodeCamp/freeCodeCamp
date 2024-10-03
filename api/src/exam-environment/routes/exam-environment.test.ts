@@ -314,18 +314,18 @@ describe('/exam-environment/', () => {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
         });
+      });
 
-        await fastifyTestInstance.prisma.envExamAttempt.update({
-          where: {
-            id: recentExamAttempt.id
-          },
-          data: {
-            // Set start time such that exam has expired, but 24 hours + 1s has passed
-            startTimeInMS:
-              Date.now() -
-              (mock.exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 + 1000))
-          }
+      it('should use a new exam attempt if all previous attempts were started > 24 hours ago', async () => {
+        const recentExamAttempt = structuredClone(mock.examAttempt);
+        // Set start time such that exam has expired, but 24 hours + 1s has passed
+        recentExamAttempt.startTimeInMS =
+          Date.now() -
+          (mock.exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 + 1000));
+        await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: recentExamAttempt
         });
+
         // Generate new exam for user to be assigned
         const newGeneratedExam = structuredClone(mock.generatedExam);
         newGeneratedExam.id = mock.oid();
@@ -333,20 +333,19 @@ describe('/exam-environment/', () => {
           data: newGeneratedExam
         });
 
-        const body3: Static<typeof examEnvironmentPostExamGeneratedExam.body> =
-          {
-            examId: mock.examId
-          };
+        const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
+          examId: mock.examId
+        };
 
-        const res3 = await superPost('/exam-environment/exam/generated-exam')
-          .send(body3)
+        const res = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
           .set(
             'exam-environment-authorization-token',
             examEnvironmentAuthorizationToken
           );
 
         // Time is greater than 24 hours. So, request should pass, and new exam should be generated
-        expect(res3).toMatchObject({
+        expect(res).toMatchObject({
           status: 200,
           body: {
             data: {
