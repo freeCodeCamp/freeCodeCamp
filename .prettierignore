@@ -1,11 +1,11 @@
 **/.cache
 **/*fixtures*
-**/public
 api-server/lib
 client/**/trending.json
 client/config/*.json
 client/config/browser-scripts/*.json
 client/static
+client/public
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 curriculum/i18n-curriculum

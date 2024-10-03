@@ -1869,9 +1869,12 @@
         "title": "36",
         "intro": []
       },
-      "liti": {
-        "title": "37",
-        "intro": []
+      "workshop-cafe-menu": {
+        "title": "Design a Cafe Menu",
+        "intro": [
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+        ]
       },
       "lab-business-card": {
         "title": "Створіть дизайн візитівки",
@@ -2355,9 +2358,11 @@
         "title": "141",
         "intro": []
       },
-      "xkbo": {
-        "title": "142",
-        "intro": []
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
       },
       "lab-fortune-teller": {
         "title": "Створіть генератор передбачень",
@@ -2471,9 +2476,9 @@
         "title": "165",
         "intro": []
       },
-      "ezek": {
-        "title": "166",
-        "intro": []
+      "lab-quiz-game": {
+        "title": "Build a Quiz Game",
+        "intro": ["For this lab, you will build a quiz game."]
       },
       "lab-factorial-calculator": {
         "title": "Створіть калькулятор факторіалів ",
@@ -2513,9 +2518,9 @@
         "title": "174",
         "intro": []
       },
-      "ccnu": {
-        "title": "175",
-        "intro": []
+      "lab-pyramid-generator": {
+        "title": "Build a Pyramid Generator",
+        "intro": ["In this lab you will build a pyramid generator."]
       },
       "lab-gradebook-app": {
         "title": "Створіть журнал з оцінками",
@@ -2761,9 +2766,9 @@
         "title": "228",
         "intro": []
       },
-      "qjws": {
-        "title": "229",
-        "intro": []
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": ["For this lab, you will build a bookmark manager app."]
       },
       "fgbp": {
         "title": "230",
@@ -2837,9 +2842,11 @@
         "title": "245",
         "intro": []
       },
-      "lofk": {
-        "title": "246",
-        "intro": []
+      "lab-telephone-number-validator": {
+        "title": "Build a Telephone Number Validator",
+        "intro": [
+          "For this lab, you'll build an application that checks if a number is a valid United States phone number."
+        ]
       },
       "lab-cash-register": {
         "title": "Створіть касовий апарат",
@@ -2923,9 +2930,9 @@
           "For this lab, you will build a linked list class using JavaScript."
         ]
       },
-      "wraf": {
-        "title": "265",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Build a Hash Table Class",
+        "intro": ["For this lab, you will build a hash table using JavaScript."]
       },
       "muyw": {
         "title": "266",
@@ -2941,9 +2948,11 @@
         "title": "268",
         "intro": []
       },
-      "plfo": {
-        "title": "269",
-        "intro": []
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3411,9 +3420,9 @@
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
-      "zzhp": {
-        "title": "372",
-        "intro": []
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": ["In this lab you will build a timestamp microservice"]
       },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
@@ -3429,9 +3438,9 @@
         "title": "Створіть трекер вправ",
         "intro": ["У цій лабораторній роботі ви створите трекер вправ."]
       },
-      "tbei": {
-        "title": "376",
-        "intro": []
+      "lab-file-metadata-microservice": {
+        "title": "Build a File Metadata Microservice",
+        "intro": ["For this lab you will build a file metadata microservice"]
       },
       "kegi": {
         "title": "377",

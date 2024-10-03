@@ -30,7 +30,7 @@ export type MarkdownRemark = {
   id: string;
 };
 
-export type MultipleChoiceAnswer = {
+type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
 };
@@ -71,7 +71,7 @@ export interface VideoLocaleIds {
 }
 
 // English types for animations
-export interface Dialogue {
+interface Dialogue {
   text: string;
   align: 'left' | 'right' | 'center';
 }
@@ -82,7 +82,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-export interface SceneCommand {
+interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -117,21 +117,21 @@ export type Characters =
   | 'Sophie'
   | 'Tom';
 
-export interface SetupCharacter {
+interface SetupCharacter {
   character: Characters;
   position: CharacterPosition;
   opacity: number;
   isTalking?: boolean;
 }
 
-export interface SetupAudio {
+interface SetupAudio {
   filename: string;
   startTime: number;
   startTimestamp?: number;
   finishTimestamp?: number;
 }
 
-export interface SceneSetup {
+interface SceneSetup {
   background: string;
   characters: SetupCharacter[];
   audio: SetupAudio;
@@ -456,7 +456,7 @@ export interface GeneratedExamQuestion {
   answers: GeneratedExamAnswer[];
 }
 
-export interface GenerateExamResponse {
+interface GenerateExamResponse {
   error?: string;
   generatedExam?: GeneratedExamQuestion[];
 }
