@@ -1,0 +1,16 @@
+{
+  "name": "Build a Tribute Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-tribute-page",
+  "order": 90,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "bd7158d8c442eddfaeb5bd18",
+      "title": "Build a Tribute Page" 
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

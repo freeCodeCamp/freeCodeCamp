@@ -1,0 +1,10 @@
+{
+  "name": "CSS Backgrounds and Borders Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-backgrounds-and-borders",
+  "order": 47,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed8fd7f45ce3ece4053eb0", "title": "CSS Backgrounds and Borders Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

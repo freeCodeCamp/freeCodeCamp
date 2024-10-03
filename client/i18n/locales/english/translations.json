@@ -397,6 +397,7 @@
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
     "console-output": "// console output",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Sign in to save your progress",
@@ -445,6 +446,7 @@
     "help-translate": "We are still translating this certification.",
     "help-translate-link": "Help us translate.",
     "project-preview-title": "Here's a preview of what you will build",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Create a GitHub</0> account if you don't have one. You'll need it when you create the virtual Linux server machine. This process may take a few minutes.",
     "gitpod": {
       "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
@@ -482,6 +484,12 @@
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",

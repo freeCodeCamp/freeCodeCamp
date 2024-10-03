@@ -1,0 +1,10 @@
+{
+  "name": "Build a Timestamp Microservice",
+  "isUpcomingChange": true,
+  "dashedName": "lab-timestamp-microservice",
+  "order": 372,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "bd7158d8c443edefaeb5bdef", "title": "Build a Timestamp Microservice" }],
+  "helpCategory": "Backend Development",
+  "blockType": "lab"
+}

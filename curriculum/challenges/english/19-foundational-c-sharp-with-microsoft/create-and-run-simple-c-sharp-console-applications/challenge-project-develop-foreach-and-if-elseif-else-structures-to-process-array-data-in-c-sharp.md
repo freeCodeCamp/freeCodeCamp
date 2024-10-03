@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 Complete the <a href="https://learn.microsoft.com/training/modules/challenge-project-arrays-iteration-selection/" target="_blank" rel="noreferrer">Develop `foreach` and `if`-`elseif`-`else` Structures to Process Array Data in C#</a> challenge project on Microsoft Learn. Then, answer the question below.
 
-# --question--
+# --questions--
 
 ## --text--
 

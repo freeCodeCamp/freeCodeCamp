@@ -20,7 +20,7 @@ console.log(newArray); // Output: [2, 4, 6, 8, 10]
 
 The `map()` method creates a new array by applying the function `(arrayValue) => { return arrayValue * 2;` to each element of the original array. This is particularly useful when you want to transform the elements of an array without changing the original array.
 
-# --question--
+# --questions--
 
 ## --text--
 

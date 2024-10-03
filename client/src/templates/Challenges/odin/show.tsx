@@ -230,13 +230,14 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
           challenge: {
             title,
             description,
+            instructions,
             superBlock,
             block,
             videoId,
             videoLocaleIds,
             bilibiliIds,
             fields: { blockName },
-            question,
+            questions,
             assignments,
             translationPending,
             scene
@@ -252,11 +253,12 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       isChallengeCompleted
     } = this.props;
 
+    const question = questions[0];
+    const { solution } = question;
+
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
-
-    const { solution } = question;
 
     return (
       <Hotkeys
@@ -309,6 +311,13 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                {instructions && (
+                  <PrismFormatted
+                    className={'line-numbers'}
+                    text={instructions}
+                  />
+                )}
+
                 <ObserveKeys>
                   {assignments.length > 0 && (
                     <Assignments
@@ -388,6 +397,7 @@ export const query = graphql`
         }
         title
         description
+        instructions
         challengeType
         helpCategory
         superBlock
@@ -400,7 +410,7 @@ export const query = graphql`
             testString
           }
         }
-        question {
+        questions {
           text
           answers {
             answer

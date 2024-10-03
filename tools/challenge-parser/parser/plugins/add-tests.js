@@ -1,12 +1,12 @@
 const chunk = require('lodash/chunk');
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 const mdastToHtml = require('./utils/mdast-to-html');
 
 function plugin() {
   return transformer;
 
   function transformer(tree, file) {
-    const hintNodes = getAllBetween(tree, '--hints--');
+    const hintNodes = getSection(tree, '--hints--');
     if (hintNodes.length % 2 !== 0)
       throw Error('Tests must be in (text, ```testString```) order');
 

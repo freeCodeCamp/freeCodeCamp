@@ -28,7 +28,7 @@
     "@babel/plugin-transform-runtime": "7.23.7",
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
-    "@freecodecamp/curriculum-helpers": "3.7.0",
+    "@freecodecamp/curriculum-helpers": "3.8.0",
     "@types/chai": "4.3.12",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/enzyme": "3.10.16",
@@ -36,10 +36,8 @@
     "@types/jquery": "3.5.29",
     "@types/lodash-es": "4.17.12",
     "babel-loader": "8.3.0",
-    "buffer": "6.0.3",
     "chai": "4.4.1",
     "copy-webpack-plugin": "9.1.0",
-    "css-loader": "^6.8.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.8",
     "jquery": "3.7.1",
@@ -47,14 +45,11 @@
     "process": "0.11.10",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1",
-    "style-loader": "^3.3.3",
     "util": "0.12.5",
     "webpack": "5.90.3",
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
-    "xterm": "^5.2.1",
-    "xterm-addon-fit": "^0.8.0"
+    "xterm": "^5.2.1"
   }
 }

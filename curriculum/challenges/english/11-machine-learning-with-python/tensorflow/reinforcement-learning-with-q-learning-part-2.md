@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: reinforcement-learning-with-q-learning-part-2
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -24,7 +24,7 @@ Writing an HTML comment is simple: You just enclose the comment with `<!--` and 
 
 To get some practice working with text in HTML, create a plain blog article page which uses different headings, uses paragraphs, and has some text in the paragraphs bolded and italicized. You can use [Lorem Ipsum](https://loremipsum.io) to generate dummy text, in place of real text as you build your sites.
 
-# --question--
+# --questions--
   
 ## --text--
 

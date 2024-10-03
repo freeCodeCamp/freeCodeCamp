@@ -18,7 +18,7 @@ When an element is selected, the Styles tab will show all the currently applied 
 
 Play around with Chrome Dev Tools and see if you can answer the following question.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -1,0 +1,10 @@
+{
+  "name": "CSS Positioning Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-css-positioning",
+  "order": 102,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66ed8ffcf45ce3ece4053eb5", "title": "CSS Positioning Quiz" }],
+  "helpCategory": "HTML-CSS"
+}

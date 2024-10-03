@@ -445,6 +445,7 @@
     "help-translate": "我們還在翻譯這個認證課程。",
     "help-translate-link": "幫助我們翻譯。",
     "project-preview-title": "下面是你將構建的項目的預覽",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "如果你沒有 GitHub 賬戶，你需要 <0>創建 GitHub</0> 賬戶。 你需要創建虛擬 Linux 服務器，這個過程可能需要幾分鐘。",
     "gitpod": {
       "intro": "本課程使用 Gitpod 在虛擬的 Linux 機器中運行。按照這些說明開始學習課程：",
@@ -482,6 +483,12 @@
     "preview-external-window": "預覽當前顯示在外部窗口中。",
     "fill-in-the-blank": "填空",
     "blank": "空白",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "恭喜，你已經完成了考試資格的所有要求。",
       "not-qualified": "你尚未達到考試資格要求。要獲得資格，請完成以下挑戰：",

@@ -16,7 +16,7 @@ This challenge will be partially completed on the Microsoft Learn platform. Foll
 
 Complete the <a href="https://learn.microsoft.com/training/modules/csharp-arrays-operations/" target="_blank" rel="noreferrer">Perform Operations on Arrays Using Helper Methods in C#</a> module on Microsoft Learn. Then, answer the question below.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -9,8 +9,7 @@
     "react-dom": "16.14.0",
     "react-router-dom": "6.18.0",
     "typescript": "5.2.2",
-    "vite": "4.5.2",
-    "vite-tsconfig-paths": "4.2.1"
+    "vite": "4.5.2"
   },
   "scripts": {
     "start": "PORT=3300 vite",
@@ -24,7 +23,6 @@
     "@types/react": "16.14.56",
     "@types/react-dom": "16.9.24",
     "@uiw/react-codemirror": "3.2.10",
-    "eslint-plugin-react-hooks": "4.6.0",
     "shx": "0.3.4"
   }
 }

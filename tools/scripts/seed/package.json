@@ -21,7 +21,6 @@
   "devDependencies": {
     "debug": "4.3.4",
     "dotenv": "16.4.5",
-    "lodash": "4.17.21",
     "mongodb": "5.9.2"
   }
 }

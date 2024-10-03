@@ -10,7 +10,7 @@ bilibiliIds:
 dashedName: initializing-different-arrays
 ---
 
-# --question--
+# --questions--
 
 ## --text--
 

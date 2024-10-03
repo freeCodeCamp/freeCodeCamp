@@ -27,6 +27,7 @@ import {
 } from '../../../redux/selectors';
 import {
   ChallengeFiles,
+  ChallengeTest,
   Dimensions,
   FileKey,
   ResizeProps,
@@ -51,7 +52,6 @@ import {
   attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
-  consoleOutputSelector,
   challengeTestsSelector,
   isResettingSelector,
   isProjectPreviewModalOpenSelector,
@@ -93,7 +93,6 @@ export interface EditorProps {
   isUsingKeyboardInTablist: boolean;
   openHelpModal: () => void;
   openResetModal: () => void;
-  output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
   sendRenderTime: (renderTime: number) => void;
@@ -135,7 +134,6 @@ const mapStateToProps = createSelector(
   attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
-  consoleOutputSelector,
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
   isResettingSelector,
@@ -147,7 +145,6 @@ const mapStateToProps = createSelector(
     attempts: number,
     canFocus: boolean,
     { challengeType }: { challengeType: number },
-    output: string[],
     open,
     previewOpen: boolean,
     isResetting: boolean,
@@ -162,7 +159,6 @@ const mapStateToProps = createSelector(
     previewOpen,
     isResetting,
     isSignedIn,
-    output,
     theme,
     tests,
     isChallengeCompleted
@@ -191,6 +187,7 @@ const modeMap = {
   html: 'html',
   js: 'javascript',
   jsx: 'javascript',
+  ts: 'typescript',
   py: 'python',
   python: 'python'
 };
@@ -1279,6 +1276,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         ? 'vs-custom'
         : editorSystemTheme;
 
+  const isFailedChallengeTest = (test: Test): test is ChallengeTest =>
+    !!test.err && 'text' in test;
+  const firstFailedTest = props.tests.find<ChallengeTest>(test =>
+    isFailedChallengeTest(test)
+  );
+
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
@@ -1296,7 +1299,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             openHelpModal={props.openHelpModal}
             openResetModal={props.openResetModal}
             tryToExecuteChallenge={tryToExecuteChallenge}
-            hint={props.output[1]}
+            hint={firstFailedTest?.text}
             testsLength={props.tests.length}
             attempts={attemptsRef.current}
             challengeIsCompleted={challengeIsComplete()}

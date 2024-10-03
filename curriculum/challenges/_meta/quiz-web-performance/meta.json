@@ -1,0 +1,13 @@
+{
+  "name": "Web Performance Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-web-performance",
+  "order": 317,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1adcf97e3e4c1bd89ebf5", "title": "Web Performance Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}
