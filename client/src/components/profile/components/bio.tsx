@@ -1,12 +1,16 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCalendar,
+  faLocationDot,
+  faPen
+} from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@freecodecamp/ui';
 import { AvatarRenderer, FullWidthRow, Spacer } from '../../helpers';
 import { parseDate } from './utils';
 import SocialIcons from './social-icons';
 import { type CamperProps } from './camper';
-
 const Bio = ({
   joinDate,
   location,
@@ -19,7 +23,9 @@ const Bio = ({
   website,
   isDonating,
   yearsTopContributor,
-  picture
+  picture,
+  setIsEditing,
+  isSessionUser
 }: CamperProps) => {
   const { t } = useTranslation();
 
@@ -35,7 +41,19 @@ const Bio = ({
           picture={picture}
         />
       </div>
-      <h1>@{username}</h1>
+      <div className='profile-edit-container'>
+        <h1>@{username}</h1>
+        {isSessionUser && (
+          <Button
+            onClick={() => setIsEditing(true)}
+            size='small'
+            className='button-fit'
+            aria-label={t('aria.edit-my-profile')}
+          >
+            <FontAwesomeIcon icon={faPen} />
+          </Button>
+        )}
+      </div>
       {name && <h2>{name}</h2>}
       <Spacer size={'small'} />
       {about && <p>{about}</p>}

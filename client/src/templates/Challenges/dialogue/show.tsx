@@ -197,6 +197,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
           challenge: {
             title,
             description,
+            instructions,
             superBlock,
             block,
             fields: { blockName },
@@ -255,6 +256,15 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
+                {instructions && (
+                  <>
+                    <PrismFormatted
+                      className={'line-numbers'}
+                      text={instructions}
+                    />
+                    <Spacer size='medium' />
+                  </>
+                )}
                 <ObserveKeys>
                   <Assignments
                     assignments={assignments}
@@ -302,6 +312,7 @@ export const query = graphql`
         videoId
         title
         description
+        instructions
         challengeType
         helpCategory
         superBlock
