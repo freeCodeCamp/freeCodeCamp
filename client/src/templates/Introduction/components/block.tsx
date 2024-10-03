@@ -20,6 +20,7 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
+import { BlockLayouts } from '../../../../../shared/config/blocks';
 import Challenges from './challenges';
 
 import '../intro.css';
@@ -358,14 +359,24 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const blockrenderer = () => {
-      if (isProjectBlock) return isGridBlock ? LinkBlock : ProjectListBlock;
-      return isGridBlock ? ChallengeGridBlock : ChallengeListBlock;
+    const blockRenderer = () => {
+      const blockLayout = challenges[0].blockLayout;
+
+      // `blockLayout` property isn't available in all challenges
+      if (!blockLayout) {
+        if (isProjectBlock) return isGridBlock ? LinkBlock : ProjectListBlock;
+        return isGridBlock ? ChallengeGridBlock : ChallengeListBlock;
+      }
+
+      if (blockLayout === BlockLayouts.ChallengeGrid) return ChallengeGridBlock;
+      if (blockLayout === BlockLayouts.ChallengeList) return ChallengeListBlock;
+      if (blockLayout === BlockLayouts.Link) return LinkBlock;
+      if (blockLayout === BlockLayouts.ProjectList) return ProjectListBlock;
     };
 
     return (
       <>
-        {blockrenderer()}
+        {blockRenderer()}
         {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );
