@@ -162,13 +162,7 @@ async function postExamGeneratedExamHandler(
   }
 
   // Check user has completed prerequisites
-  const { user } = req;
-  if (!user) {
-    void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Unreachable. User not authenticated.')
-    );
-  }
+  const user = req.user!;
   const isExamPrerequisitesMet = checkPrerequisites(user, true);
 
   if (!isExamPrerequisitesMet) {
@@ -200,15 +194,13 @@ async function postExamGeneratedExamHandler(
 
   const examAttempts = maybeExamAttempts.data;
 
-  const maybeLastAttempt = examAttempts.length
+  const lastAttempt = examAttempts.length
     ? examAttempts.reduce((latest, current) =>
         latest.startTimeInMS > current.startTimeInMS ? latest : current
       )
     : null;
 
-  if (maybeLastAttempt) {
-    const lastAttempt = maybeLastAttempt;
-
+  if (lastAttempt) {
     const attemptIsExpired =
       lastAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
     if (attemptIsExpired) {
@@ -400,13 +392,7 @@ async function postExamAttemptHandler(
 ) {
   const { attempt } = req.body;
 
-  const { user } = req;
-  if (!user) {
-    void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Unreachable. User not authenticated.')
-    );
-  }
+  const user = req.user!;
 
   const maybeAttempts = await mapErr(
     this.prisma.envExamAttempt.findMany({
