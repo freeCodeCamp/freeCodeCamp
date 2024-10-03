@@ -259,7 +259,7 @@ describe('/exam-environment/', () => {
       it('should return an error if the exam has been attempted in the last 24 hours', async () => {
         const recentExamAttempt = {
           ...mock.examAttempt,
-          // Set start time such that exam has expired, but 0 hours have passed
+          // Set start time such that exam has just expired
           startTimeInMS: Date.now() - mock.exam.config.totalTimeInMS
         };
         await fastifyTestInstance.prisma.envExamAttempt.create({
