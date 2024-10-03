@@ -17,23 +17,23 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What is CSS Grid?
 
 #### --distractors--
 
-Placeholder distractor 1
+A method used for displaying tables on a website.
 
 ---
 
-Placeholder distractor 2
+A method used for tiling images.
 
 ---
 
-Placeholder distractor 3
+A way do display outlines around HTML elements.
 
 #### --answer--
 
-Placeholder answer
+A two-dimensional layout for HTML documents.
 
 ### --question--
 
