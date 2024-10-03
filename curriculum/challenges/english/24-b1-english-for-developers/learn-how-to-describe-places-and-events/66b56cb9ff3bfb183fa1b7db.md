@@ -9,7 +9,7 @@ dashedName: task-83
 
 # --description--
 
-Anna is asking about the timeline for a specific part of the training `Module` refers to a unit or section of a course or training program. For example:
+Anna is asking about the timeline for a specific part of the training. `Module` refers to a unit or section of a course or training program. For example:
 
 - `The new module on cybersecurity will be added next week.` - Here, `module` refers to a specific part of the training focused on cybersecurity.
 
