@@ -21,7 +21,7 @@ In which scenario is using an attribute selector a bad idea?
 
 #### --distractors--
 
-```
+```css
 input[type="text"]:focus {
     background-color: yellow;
 }
@@ -29,14 +29,14 @@ input[type="text"]:focus {
 ```
 
 ---
-```
+```css
 img[alt] {
     border: 2px solid red;
 }
 ```
 
 ---
-```
+```css
 input[type="text"] {
     border: 1px solid gray;
 }
@@ -44,7 +44,7 @@ input[type="text"] {
 
 #### --answer--
 
-```
+```css
 a[href^="http"] { 
     color: blue;
  }
@@ -54,23 +54,37 @@ a[href^="http"] {
 
 #### --text--
 
-Placeholder question
+Which of the following will not run as expected with this style?
+```CSS
+<style>
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+</style>
+```
+
 
 #### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
+```css
+<img src="img1.jpg" title="klematis flower" width="150" height="113">
+```
 
 ---
 
-Placeholder distractor 3
+```css
+<img src="img2.jpg" title="flower" width="150" height="113">
+```
+
+---
+
+```css
+<img src="img2.jpg" title="FLOWERS of flower" width="150" height="113">
+```
 
 #### --answer--
-
-Placeholder answer
+```css
+<img src="img2.jpg" title="flowers" width="150" height="113">
+```
 
 ### --question--
 
