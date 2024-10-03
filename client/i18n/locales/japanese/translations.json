@@ -483,6 +483,12 @@
     "preview-external-window": "プレビューは別ウィンドウに表示されています。",
     "fill-in-the-blank": "空欄を埋めてください。",
     "blank": "空欄",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "おめでとうございます。受験資格に必要なすべての要件を完了しました。",
       "not-qualified": "受験資格に必要な要件を満たしていません。資格を得るには、以下のチャレンジを完了してください:",

@@ -175,10 +175,14 @@ exports[`<Profile/> renders correctly 1`] = `
               </svg>
             </div>
           </div>
-          <h1>
-            @
-            string
-          </h1>
+          <div
+            class="profile-edit-container"
+          >
+            <h1>
+              @
+              string
+            </h1>
+          </div>
           
           <div
             class="spacer"
