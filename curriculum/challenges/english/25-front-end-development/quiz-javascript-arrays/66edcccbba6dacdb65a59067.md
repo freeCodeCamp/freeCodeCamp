@@ -63,8 +63,7 @@ Primitives hold direct values, non-primitives hold references.
 
 What will be the result of the following array method `indexOf()`?
 
-
-```javascript
+```js
 const numbers = [10, 20, 30, 40];
 const index = numbers.indexOf(20);
 console.log(index);
@@ -92,8 +91,7 @@ console.log(index);
 
 What will the following code output using the spread operator?
 
-
-```javascript
+```js
 const arr1 = [1, 2, 3];
 const arr2 = [...arr1, 4, 5];
 console.log(arr2);
@@ -121,13 +119,10 @@ console.log(arr2);
 
 What will `splice()` do in the following example?
 
-
-```javascript
-
+```js
 const colors = ['red', 'blue', 'green', 'yellow'];
 colors.splice(1, 2, 'purple');
 console.log(colors);
-
 ```
 
 #### --distractors--
@@ -152,13 +147,10 @@ console.log(colors);
 
 What will be the result of the following code using `slice()`?
 
-
-```javascript
-
+```js
 const arr = ['apple', 'banana', 'cherry', 'date'];
 const slicedArr = arr.slice(1, 3);
 console.log(slicedArr);
-
 ```
 
 #### --distractors--
@@ -272,16 +264,13 @@ The array gets truncated, removing elements beyond the new length.
 
 What will be the output of this code ?
 
-
-```javascript
-
+```js
 const fruits = ['apple', 'banana', 'cherry', 'apple', 'orange'];
 const index = fruits.indexOf('apple');
 if (index !== -1) {
     fruits.splice(index, 1);
 }
 console.log(fruits);
-
 ```
 
 #### --distractors--
@@ -306,15 +295,12 @@ console.log(fruits);
 
 What is the final value of result in the following code ?
 
-
-```javascript
-
+```js
 const arr1 = [1, 2];
 const arr2 = [3, 4, 5];
 const combined = arr1.concat(arr2);
 const result = combined.includes(3);
 console.log(result);
-
 ```
 
 #### --distractors--
@@ -339,13 +325,10 @@ true
 
 What does the following code output?
 
-
-```javascript
-
+```js
 const nums = [1, 2, 3, 4];
 const doubled = nums.map(n => n * 2);
 console.log(doubled.includes(8));
-
 ```
 
 #### --distractors--
@@ -370,9 +353,7 @@ true
 
 What is the output when using splice() to remove elements from a 2D array?
 
-
-```javascript
-
+```js
 let matrix = [
   [1, 2, 3],
   [4, 5, 6],
@@ -380,7 +361,6 @@ let matrix = [
 ];
 matrix.splice(1, 1);
 console.log(matrix);
-
 ```
 
 #### --distractors--
@@ -475,7 +455,6 @@ How does the rest parameter (`...rest`) work in array destructuring in JavaScrip
 
 It is used to add extra elements to the array.
 
-
 ---
 
 It allows you to access elements outside the array's bounds.
@@ -494,15 +473,12 @@ It collects the remaining elements into a new array after the initial elements a
 
 What will be the result of this code ?
 
-
-```javascript
-
+```js
 const numbers = [10, 20, 30];
 numbers.push(40);
 numbers.pop();
 const length = numbers.length;
 console.log(length);
-
 ```
 
 #### --distractors--
