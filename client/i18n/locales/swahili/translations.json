@@ -483,6 +483,12 @@
     "preview-external-window": "Onyesho la kukagua linaloonyeshwa kwa sasa kwenye dirisha la nje.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Hongera, umekamilisha mahitaji yote ya kufuzu kwa mtihani.",
       "not-qualified": "Hujatimiza masharti ili ustahiki mtihani. Ili kuhitimu, tafadhali kamilisha changamoto zifuatazo:",

@@ -14,7 +14,15 @@ test.afterAll(() => {
 
 test.describe('Add Portfolio Item', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
+    await page.goto('/developmentuser');
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('The title has validation', async ({ page }) => {
@@ -134,7 +142,7 @@ test.describe('Add Portfolio Item', () => {
     await page
       .getByRole('button', { name: 'Save this portfolio item' })
       .click();
-    await expect(page.getByTestId('flash-message')).toContainText(
+    await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your portfolio/
     );
   });

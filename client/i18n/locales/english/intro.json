@@ -1893,7 +1893,12 @@
       },
       "jnqt": { "title": "68", "intro": [] },
       "vkei": { "title": "69", "intro": [] },
-      "jows": { "title": "70", "intro": [] },
+      "lab-contact-form": {
+        "title": "Design a Contact Form",
+        "intro": [
+          "In this lab, you will design a contact form in HTML and style it using CSS."
+        ]
+      },
       "ipmw": { "title": "71", "intro": [] },
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
@@ -2166,6 +2171,12 @@
           "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
+      "lab-lunch-picker-program": {
+        "title": "Build a Lunch Picker Program",
+        "intro": [
+          "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
+        ]
+      },
       "mokm": { "title": "161", "intro": [] },
       "froz": { "title": "162", "intro": [] },
       "quiz-javascript-arrays": {
@@ -2326,7 +2337,12 @@
         ]
       },
       "lupt": { "title": "218", "intro": [] },
-      "yvqn": { "title": "219", "intro": [] },
+      "lab-date-conversion": {
+        "title": "Build a Date Conversion Program",
+        "intro": [
+          "In this lab, you will build a program to convert a date from one format to another."
+        ]
+      },
       "xtfk": { "title": "220", "intro": [] },
       "quiz-javascript-dates": {
         "title": "JavaScript Dates Quiz",

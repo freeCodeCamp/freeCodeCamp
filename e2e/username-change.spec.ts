@@ -16,9 +16,19 @@ const settingsObject = {
   errorCode: '404'
 };
 
+let currentUsername = 'certifieduser';
+
 test.describe('Username Settings Validation', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
+    await page.goto(`/${currentUsername}`);
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('Should display Username Input and Save Button', async ({ page }) => {
@@ -87,17 +97,18 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameAvailable
+    );
+
     await inputLabel.fill(settingsObject.usernameAvailable);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameAvailable
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
+    currentUsername = settingsObject.usernameAvailable;
   });
 
   test('should update username in lowercase and reflect in the UI', async ({
@@ -107,17 +118,18 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameUpdateToLowerCase
+    );
+
     await inputLabel.fill(settingsObject.usernameUpdateToLowerCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameUpdateToLowerCase
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
+    currentUsername = settingsObject.usernameUpdateToLowerCase;
   });
 
   test('should update username in uppercase and reflect in the UI', async ({
@@ -127,22 +139,28 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameUpdateToUpperCase
+    );
+
     await inputLabel.fill(settingsObject.usernameUpdateToUpperCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameUpdateToUpperCase
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
+    currentUsername = settingsObject.usernameUpdateToUpperCase;
   });
 
   test('should update username by pressing enter', async ({ page }) => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
     await inputLabel.fill(settingsObject.testUser);
+
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.testUser
+    );
 
     await expect(
       page.getByText(translations.settings.username.available)
@@ -151,13 +169,9 @@ test.describe('Username Settings Validation', () => {
     await inputLabel.press('Enter');
 
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.testUser
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
+    currentUsername = settingsObject.testUser;
   });
 
   test('should not be able to update username to the same username', async ({
