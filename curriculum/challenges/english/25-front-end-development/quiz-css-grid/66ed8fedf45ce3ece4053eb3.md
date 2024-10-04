@@ -391,23 +391,23 @@ Which of these properties is NOT used to align items inside of a grid element?
 
 #### --text--
 
-Placeholder question
+Which of these properties can be used as a shorthand for the `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end` properties?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-section`
 
 ---
 
-Placeholder distractor 2
+`grid-item`.
 
 ---
 
-Placeholder distractor 3
+`grid-row-column`.
 
 #### --answer--
 
-Placeholder answer
+`grid-area`.
 
 ### --question--
 
