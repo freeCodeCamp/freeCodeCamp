@@ -237,23 +237,23 @@ Tells the grid item which grid line it should start and end at.
 
 #### --text--
 
-Placeholder question
+How do you create four columns of equal width?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-template-columns: repeat(4)`.
 
 ---
 
-Placeholder distractor 2
+`grid-template-columns: 1, 1, 1, 1,`
 
 ---
 
-Placeholder distractor 3
+`grid-column: repeat(4, 1fr)`.
 
 #### --answer--
 
-Placeholder answer
+`grid-template-columns: repeat(4, 1fr)`.
 
 ### --question--
 
