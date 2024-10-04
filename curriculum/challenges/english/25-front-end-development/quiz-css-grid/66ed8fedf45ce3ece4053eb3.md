@@ -95,7 +95,7 @@ Creates a template for creating new grid rows.
 
 ---
 
-Specified a default row size.
+Specifies a default row size.
 
 #### --answer--
 
@@ -105,23 +105,23 @@ Specifies the number and heights of the rows in a grid layout.
 
 #### --text--
 
-Placeholder question
+What does `minmax()` do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Toggles between the first and second value, depending on available space.
 
 ---
 
-Placeholder distractor 2
+Returns the average of the two inputs.
 
 ---
 
-Placeholder distractor 3
+Sets the minimal size of the element for browser working in fullscreen mode.
 
 #### --answer--
 
-Placeholder answer
+Definesa size range between the first and second value.
 
 ### --question--
 
