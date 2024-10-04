@@ -1,0 +1,11 @@
+{
+  "name": "Tooling and Deployment Quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-tooling-and-deployment",
+  "order": 383,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66fd6f0370213be90fed82ec", "title": "Tooling and Deployment Quiz" }],
+  "helpCategory": "JavaScript",
+  "blockType": "quiz"
+}

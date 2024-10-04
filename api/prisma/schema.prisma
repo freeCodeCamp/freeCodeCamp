@@ -141,6 +141,187 @@ model user {
   website                      String? // Undefined
   yearsTopContributor          String[] // Undefined | String[]
   isClassroomAccount           Boolean? // Undefined
+
+  // Relations
+  examAttempts EnvExamAttempt[]
+}
+
+// -----------------------------------
+
+/// An exam for the Exam Environment App as designed by the examiners
+model EnvExam {
+  /// Globally unique exam id
+  id           String           @id @default(auto()) @map("_id") @db.ObjectId
+  /// All questions for a given exam
+  questionSets EnvQuestionSet[]
+  /// Configuration for exam metadata
+  config       EnvConfig
+
+  // Relations
+  generatedExams EnvGeneratedExam[]
+  examAttempts   EnvExamAttempt[]
+}
+
+/// A grouping of one or more questions of a given type
+type EnvQuestionSet {
+  /// Unique question type id
+  id        String                      @db.ObjectId
+  type      EnvQuestionType
+  /// Content related to all questions in set
+  context   String?
+  questions EnvMultipleChoiceQuestion[]
+}
+
+/// A multiple choice question for the Exam Environment App
+type EnvMultipleChoiceQuestion {
+  /// Unique question id
+  id         String      @db.ObjectId
+  /// Main question paragraph
+  text       String
+  /// Zero or more tags given to categorize a question
+  tags       String[]
+  /// Optional audio for a question
+  audio      EnvAudio?
+  /// Available possible answers for an exam
+  answers    EnvAnswer[]
+  /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
+  deprecated Boolean
+}
+
+/// Audio for an Exam Environment App multiple choice question
+type EnvAudio {
+  /// Optional text for audio
+  captions String?
+  /// URL to audio file
+  ///
+  /// Expected in the format: `<url>#t=<start_time_in_seconds>,<end_time_in_seconds>`
+  /// Where `start_time_in_seconds` and `end_time_in_seconds` are optional floats.
+  url      String
+}
+
+/// Type of question for the Exam Environment App
+enum EnvQuestionType {
+  /// Single question with one or more answers
+  MultipleChoice
+  /// Mass text
+  Dialogue
+}
+
+/// Answer for an Exam Environment App multiple choice question
+type EnvAnswer {
+  /// Unique answer id
+  id        String  @db.ObjectId
+  /// Whether the answer is correct
+  isCorrect Boolean
+  /// Answer paragraph
+  text      String
+}
+
+/// Configuration for an exam in the Exam Environment App
+type EnvConfig {
+  /// Human-readable exam name
+  name          String
+  /// Notes given about exam
+  note          String
+  /// Category configuration for question selection
+  tags          EnvTagConfig[]
+  /// Total time allocated for exam in milliseconds
+  totalTimeInMS Int
+  /// Configuration for sets of questions
+  questionSets  EnvQuestionSetConfig[]
+}
+
+/// Configuration for a set of questions in the Exam Environment App
+type EnvQuestionSetConfig {
+  type                     EnvQuestionType
+  /// Number of this grouping of questions per exam
+  numberOfSet              Int
+  /// Number of multiple choice questions per grouping matching this set config
+  numberOfQuestions        Int
+  /// Number of correct answers given per multiple choice question
+  numberOfCorrectAnswers   Int
+  /// Number of incorrect answers given per multiple choice question
+  numberOfIncorrectAnswers Int
+}
+
+/// Configuration for tags in the Exam Environment App
+///
+/// This configures the number of questions that should resolve to a given tag set criteria.
+type EnvTagConfig {
+  /// Group of multiple choice question tags
+  group             String[]
+  /// Number of multiple choice questions per exam that should meet the group criteria
+  numberOfQuestions Int
+}
+
+/// An attempt at an exam in the Exam Environment App
+model EnvExamAttempt {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Foriegn key to user
+  userId          String @db.ObjectId
+  /// Foreign key to exam
+  examId          String @db.ObjectId
+  /// Foreign key to generated exam id
+  generatedExamId String @db.ObjectId
+
+  questionSets       EnvQuestionSetAttempt[]
+  /// Time exam was started as milliseconds since epoch
+  startTimeInMS      Int
+  /// Time exam was submitted as milliseconds since epoch
+  ///
+  /// As attempt might not be submitted (disconnection or quit), field is optional
+  submissionTimeInMS Int?
+  needsRetake        Boolean
+
+  // Relations
+  user          user             @relation(fields: [userId], references: [id])
+  exam          EnvExam          @relation(fields: [examId], references: [id])
+  generatedExam EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
+}
+
+type EnvQuestionSetAttempt {
+  id        String                             @db.ObjectId
+  questions EnvMultipleChoiceQuestionAttempt[]
+}
+
+type EnvMultipleChoiceQuestionAttempt {
+  /// Foreign key to question
+  id                 String   @db.ObjectId
+  /// An array of foreign keys to answers
+  answers            String[] @db.ObjectId
+  /// Time answers to question were submitted as milliseconds since epoch
+  ///
+  /// If the question is later revisited, this field is updated
+  submissionTimeInMS Int
+}
+
+/// A generated exam for the Exam Environment App
+///
+/// This is the user-facing information for an exam.
+/// TODO: Add userId?
+model EnvGeneratedExam {
+  id           String                    @id @default(auto()) @map("_id") @db.ObjectId
+  /// Foreign key to exam
+  examId       String                    @db.ObjectId
+  questionSets EnvGeneratedQuestionSet[]
+  /// If `deprecated`, the generation should not longer be considered for users
+  deprecated   Boolean
+
+  // Relations
+  exam           EnvExam          @relation(fields: [examId], references: [id])
+  EnvExamAttempt EnvExamAttempt[]
+}
+
+type EnvGeneratedQuestionSet {
+  id        String                               @db.ObjectId
+  questions EnvGeneratedMultipleChoiceQuestion[]
+}
+
+type EnvGeneratedMultipleChoiceQuestion {
+  /// Foreign key to question id
+  id      String   @db.ObjectId
+  /// Each item is a foreign key to an answer
+  answers String[] @db.ObjectId
 }
 
 // -----------------------------------
@@ -178,7 +359,7 @@ model Donation {
 }
 
 model UserRateLimit {
-  id             String  @id @map("_id")
+  id             String   @id @map("_id")
   counter        Int
   expirationDate DateTime @db.Date
 
@@ -190,6 +371,17 @@ model UserToken {
   created DateTime @db.Date
   ttl     Float
   userId  String   @db.ObjectId
+
+  @@index([userId], map: "userId_1")
+}
+
+/// TODO: Token has to outlive the exam attempt
+/// Validation has to be taken as the attempt is requested
+/// to ensure it lives long enough.
+model ExamEnvironmentAuthorizationToken {
+  id          String   @id @map("_id")
+  createdDate DateTime @db.Date
+  userId      String   @db.ObjectId
 
   @@index([userId], map: "userId_1")
 }
