@@ -347,23 +347,23 @@ fr.
 
 #### --text--
 
-Placeholder question
+How do you make a grid item take up 2 rows using the `grid-row-end` property?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-row-end: 2 / 2`.
 
 ---
 
-Placeholder distractor 2
+`grid-row-end: -2`
 
 ---
 
-Placeholder distractor 3
+`grid-row-end: 2`.
 
 #### --answer--
 
-Placeholder answer
+`grid-row-end: span 2`.
 
 ### --question--
 
