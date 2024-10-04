@@ -296,6 +296,42 @@ exports[`<Profile/> renders correctly 1`] = `
       </div>
     </div>
     <div
+      class="mx-[-15px] "
+    >
+      <div
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+      >
+        <div
+          class="header-container"
+        >
+          <h2>
+            profile.your-exp
+          </h2>
+          <button
+            class="edit-btn relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 text-center cursor-pointer no-underline bg-background-quaternary text-foreground-secondary border-foreground-secondary hover:bg-foreground-primary hover:text-background-primary hover:border-foreground-secondary dark:hover:bg-background-primary dark:hover:text-foreground-primary px-3 py-1.5 text-md"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-plus "
+              data-icon="plus"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <div
       class="spacer"
       style="padding: 15px 0px;"
     />
