@@ -1,5 +1,4 @@
 import fastifyAccepts from '@fastify/accepts';
-import fastifyCsrfProtection from '@fastify/csrf-protection';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
@@ -26,6 +25,7 @@ import security from './plugins/security';
 import auth from './plugins/auth';
 import bouncer from './plugins/bouncer';
 import errorHandling from './plugins/error-handling';
+import csrf, { CSRF_COOKIE, CSRF_HEADER } from './plugins/csrf';
 import notFound from './plugins/not-found';
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -34,9 +34,14 @@ import {
   API_LOCATION,
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
-  FCC_ENABLE_SWAGGER_UI
+  FCC_ENABLE_SWAGGER_UI,
+  FREECODECAMP_NODE_ENV
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import {
+  examEnvironmentOpenRoutes,
+  examEnvironmentValidatedTokenRoutes
+} from './exam-environment/routes/exam-environment';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -88,33 +93,7 @@ export const build = async (
 
   await fastify.register(cors);
   await fastify.register(cookies);
-
-  void fastify.register(fastifyCsrfProtection, {
-    // TODO: consider signing cookies. We don't on the api-server, but we could
-    // as an extra layer of security.
-
-    ///Ignore all other possible sources of CSRF
-    // tokens since we know we can provide this one
-    getToken: req => req.headers['csrf-token'] as string,
-    cookieOpts: { signed: false, sameSite: 'strict' }
-  });
-
-  // All routes except signout should add a CSRF token to the response
-  fastify.addHook('onRequest', (_req, reply, done) => {
-    const isSignout = _req.url === '/signout' || _req.url === '/signout/';
-
-    if (!isSignout) {
-      const token = reply.generateCsrf();
-      void reply.setCookie('csrf_token', token, {
-        sameSite: 'strict',
-        signed: false,
-        // it needs to be read by the client, so that it can be sent in the
-        // header of the next request:
-        httpOnly: false
-      });
-    }
-    done();
-  });
+  await fastify.register(csrf);
 
   const provider =
     EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
@@ -136,11 +115,11 @@ export const build = async (
         requestInterceptor: req => {
           const csrfTokenCookie = document.cookie
             .split(';')
-            .find(str => str.includes('csrf_token'));
+            .find(str => str.includes(CSRF_COOKIE));
           const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
+          if (csrfToken) req.headers[CSRF_HEADER] = csrfToken.trim();
           return req;
         }
       }
@@ -200,6 +179,18 @@ export const build = async (
       await fastify.register(publicRoutes.authRoutes);
     }
   });
+
+  // NOTE: Code behind the `FREECODECAMP_NODE_ENV` var is not ready to be deployed yet.
+  if (FREECODECAMP_NODE_ENV !== 'production') {
+    void fastify.register(function (fastify, _opts, done) {
+      fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+
+      void fastify.register(examEnvironmentValidatedTokenRoutes);
+      done();
+    });
+    void fastify.register(examEnvironmentOpenRoutes);
+  }
+
   void fastify.register(publicRoutes.chargeStripeRoute);
   void fastify.register(publicRoutes.signoutRoute);
   void fastify.register(publicRoutes.emailSubscribtionRoutes);

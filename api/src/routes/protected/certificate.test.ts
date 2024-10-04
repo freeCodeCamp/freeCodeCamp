@@ -1,4 +1,3 @@
-import { type PrismaPromise } from '@prisma/client';
 import { Certification } from '../../../../shared/config/certification-settings';
 import {
   defaultUserEmail,
@@ -85,7 +84,10 @@ describe('certificate routes', () => {
         jest
           .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
           .mockImplementation(
-            () => Promise.resolve(null) as PrismaPromise<null>
+            () =>
+              Promise.resolve(null) as ReturnType<
+                typeof fastifyTestInstance.prisma.user.findUnique
+              >
           );
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
