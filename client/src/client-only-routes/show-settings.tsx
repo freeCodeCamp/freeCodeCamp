@@ -33,10 +33,8 @@ import {
   updateMySound,
   updateMyTheme,
   updateMyKeyboardShortcuts,
-  verifyCert,
-  updateMyCareer
+  verifyCert
 } from '../redux/settings/actions';
-import CareerTimeline from '../components/profile/components/career-timeline';
 const { apiLocation } = envData;
 
 // TODO: update types for actions
@@ -78,7 +76,6 @@ const mapDispatchToProps = {
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
   updateIsHonest: updateMyHonesty,
-  updateCareer: updateMyCareer,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
   verifyCert
@@ -119,15 +116,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       sendQuincyEmail,
       username,
       theme,
-      keyboardShortcuts,
-      portfolio,
-      career
+      keyboardShortcuts
     },
     navigate,
     showLoading,
     updateQuincyEmail,
     updateIsHonest,
-    updateCareer,
     verifyCert,
     userToken
   } = props;
@@ -136,9 +130,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
-  console.log(career);
-  console.log(username);
-  console.log(portfolio);
+
   if (!isSignedInRef.current) {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
@@ -158,7 +150,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           >
             {t('settings.for', { username: username })}
           </h1>
-          <CareerTimeline updateMyCareer={updateCareer} career={career} />
+
           <MiscSettings
             currentTheme={theme}
             keyboardShortcuts={keyboardShortcuts}

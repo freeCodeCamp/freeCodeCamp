@@ -298,12 +298,11 @@ const CareerTimeline = ({
 
       <FullWidthRow>
         <div className='header-container'>
-          <h1>{t('profile.your-exp')}</h1>
+          <h2>{t('profile.your-exp')}</h2>
           <Button
             className='edit-btn'
             onClick={() => {
               setIsAdding(true);
-              console.log('HELLO');
             }}
           >
             <FontAwesomeIcon icon={faPlus} />
@@ -363,7 +362,6 @@ const CareerTimeline = ({
                         className='edit-btn'
                         onClick={() => {
                           setIsDeleting(true);
-                          setSelectedIndex(-1);
                           setSelectedIndex(index);
                         }}
                       >
