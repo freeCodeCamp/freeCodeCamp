@@ -193,23 +193,23 @@ Which property sets a size for the rows in a grid container?
 
 #### --text--
 
-Placeholder question
+What are grid lines?
 
 #### --distractors--
 
-Placeholder distractor 1
+Shorthand for rows and columns.
 
 ---
 
-Placeholder distractor 2
+Outline of a grid element.
 
 ---
 
-Placeholder distractor 3
+Lines alog which grid columns and rows are created.
 
 #### --answer--
 
-Placeholder answer
+Lines on which each of the grid items begin and end.
 
 ### --question--
 
