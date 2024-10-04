@@ -303,23 +303,23 @@ Controls how auto-placed elements get inserted to the grid.
 
 #### --text--
 
-Placeholder question
+What does the secondary value `dense` do in the `grid-auto-flow` property?
 
 #### --distractors--
 
-Placeholder distractor 1
+Narrows the grid container to fit to its content width.
 
 ---
 
-Placeholder distractor 2
+Groups the grid items of the same size.
 
 ---
 
-Placeholder distractor 3
+Sorts the grid items based on their size.
 
 #### --answer--
 
-Placeholder answer
+Place smaller items to fill gaps in the grid.
 
 ### --question--
 
