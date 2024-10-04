@@ -10,7 +10,7 @@ declare module 'fastify' {
     prisma: ReturnType<typeof extendClient>;
   }
 }
-
+//Used to put database url connection 
 const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
   const prisma = extendClient(
     new PrismaClient({
