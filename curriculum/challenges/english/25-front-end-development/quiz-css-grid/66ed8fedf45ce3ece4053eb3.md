@@ -105,7 +105,7 @@ Specifies the number and heights of the rows in a grid layout.
 
 #### --text--
 
-What does `minmax()` do?
+What does `minmax()` function do?
 
 #### --distractors--
 
@@ -117,7 +117,7 @@ Returns the average of the two inputs.
 
 ---
 
-Sets the minimal size of the element for browser working in fullscreen mode.
+Sets the minimal size of the element for browser working in full-screen mode.
 
 #### --answer--
 
