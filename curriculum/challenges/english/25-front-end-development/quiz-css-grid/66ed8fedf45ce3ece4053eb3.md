@@ -413,23 +413,23 @@ Which of these properties can be used as a shorthand for the `grid-row-start`, `
 
 #### --text--
 
-Placeholder question
+What are grid tracks?
 
 #### --distractors--
 
-Placeholder distractor 1
+Shorthand for rows and columns.
 
 ---
 
-Placeholder distractor 2
+Lines along which you can animate movement of the grid items.
 
 ---
 
-Placeholder distractor 3
+Lines on which each of the grid items begins and ends.
 
 #### --answer--
 
-Placeholder answer
+Spaces between two adjacent grid lines.
 
 ### --question--
 
