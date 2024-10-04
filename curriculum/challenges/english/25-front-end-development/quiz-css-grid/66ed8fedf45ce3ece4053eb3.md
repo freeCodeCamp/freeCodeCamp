@@ -29,7 +29,7 @@ A method used for tiling images.
 
 ---
 
-A way do display outlines around HTML elements.
+A way to display outlines around HTML elements.
 
 #### --answer--
 
