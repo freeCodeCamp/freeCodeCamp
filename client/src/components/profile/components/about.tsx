@@ -10,34 +10,25 @@ import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 
-import { FullWidthRow, Spacer } from '../helpers';
-import BlockSaveButton from '../helpers/form/block-save-button';
-import type { CamperProps } from '../profile/components/camper';
-import SoundSettings from './sound';
-import ThemeSettings, { type ThemeProps } from './theme';
-import UsernameSettings from './username';
-import KeyboardShortcutsSettings from './keyboard-shortcuts';
-import SectionHeader from './section-header';
-import ScrollbarWidthSettings from './scrollbar-width';
+import { FullWidthRow } from '../../helpers';
+import BlockSaveButton from '../../helpers/form/block-save-button';
+import SectionHeader from '../../settings/section-header';
+import type { CamperProps } from './camper';
 
-type AboutProps = ThemeProps &
-  Omit<
-    CamperProps,
-    | 'linkedin'
-    | 'joinDate'
-    | 'isDonating'
-    | 'githubProfile'
-    | 'twitter'
-    | 'website'
-    | 'yearsTopContributor'
-  > & {
-    sound: boolean;
-    keyboardShortcuts: boolean;
-    submitNewAbout: (formValues: FormValues) => void;
-    t: TFunction;
-    toggleSoundMode: (sound: boolean) => void;
-    toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  };
+type AboutProps = Omit<
+  CamperProps,
+  | 'linkedin'
+  | 'joinDate'
+  | 'isDonating'
+  | 'githubProfile'
+  | 'twitter'
+  | 'website'
+  | 'yearsTopContributor'
+> & {
+  t: TFunction;
+  submitNewAbout: (formValues: FormValues) => void;
+  setIsEditing: (isEditing: boolean) => void;
+};
 
 type FormValues = Pick<AboutProps, 'name' | 'location' | 'picture' | 'about'>;
 
@@ -81,6 +72,10 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     };
   }
 
+  toggleEditing = () => {
+    this.props.setIsEditing(false);
+  };
+
   componentDidUpdate() {
     const { name, location, picture, about } = this.props;
     const { formValues, formClicked } = this.state;
@@ -119,10 +114,12 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const { formValues } = this.state;
     const { submitNewAbout } = this.props;
     if (this.state.isPictureUrlValid === true && !this.isFormPristine()) {
+      this.toggleEditing();
       return this.setState({ formClicked: true }, () =>
         submitNewAbout(formValues)
       );
     } else {
+      this.toggleEditing();
       return false;
     }
   };
@@ -198,20 +195,9 @@ class AboutSettings extends Component<AboutProps, AboutState> {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    const {
-      currentTheme,
-      sound,
-      keyboardShortcuts,
-      username,
-      t,
-      toggleNightMode,
-      toggleSoundMode,
-      toggleKeyboardShortcuts
-    } = this.props;
+    const { t } = this.props;
     return (
       <>
-        <UsernameSettings username={username} />
-        <Spacer size='medium' />
         <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
         <FullWidthRow>
           <form
@@ -281,20 +267,6 @@ class AboutSettings extends Component<AboutProps, AboutState> {
               </span>
             </BlockSaveButton>
           </form>
-        </FullWidthRow>
-        <Spacer size='medium' />
-        <FullWidthRow>
-          <ThemeSettings
-            currentTheme={currentTheme}
-            toggleNightMode={toggleNightMode}
-          />
-          <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
-          <KeyboardShortcutsSettings
-            keyboardShortcuts={keyboardShortcuts}
-            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            explain={t('settings.shortcuts-explained')}
-          />
-          <ScrollbarWidthSettings />
         </FullWidthRow>
       </>
     );

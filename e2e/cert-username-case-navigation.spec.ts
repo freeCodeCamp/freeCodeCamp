@@ -23,7 +23,15 @@ test.describe('Public profile certifications', () => {
   test('Should show claimed certifications if the username includes uppercase characters', async ({
     page
   }) => {
-    await page.goto('/settings');
+    await page.goto('/certifieduser');
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
+
     await page.getByLabel('Username').fill('CertifiedBoozer');
     await page.getByRole('button', { name: 'Save' }).nth(0).click();
     await expect(page.getByTestId('flash-message')).toContainText(

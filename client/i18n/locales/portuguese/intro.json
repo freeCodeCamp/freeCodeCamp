@@ -2964,9 +2964,9 @@
           "Para este laboratório, você vai criar uma classe de listas vinculadas usando o JavaScript."
         ]
       },
-      "wraf": {
-        "title": "265",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Build a Hash Table Class",
+        "intro": ["For this lab, you will build a hash table using JavaScript."]
       },
       "muyw": {
         "title": "266",
@@ -2982,9 +2982,11 @@
         "title": "268",
         "intro": []
       },
-      "plfo": {
-        "title": "269",
-        "intro": []
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3472,9 +3474,11 @@
           "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
         ]
       },
-      "zzhp": {
-        "title": "372",
-        "intro": []
+      "lab-timestamp-microservice": {
+        "title": "Crie um microsserviço de timestamp",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de timestamp"
+        ]
       },
       "lab-request-header-parser-microservice": {
         "title": "Crie um microsserviço conversor de requisição de cabeçalho",
@@ -3494,9 +3498,11 @@
           "Neste laboratório, você vai construir um monitor de exercícios"
         ]
       },
-      "tbei": {
-        "title": "376",
-        "intro": []
+      "lab-file-metadata-microservice": {
+        "title": "Crie um microsserviço de metadados de arquivos",
+        "intro": [
+          "Para este laboratório, você criará um microsserviço de metadados de arquivos"
+        ]
       },
       "kegi": {
         "title": "377",

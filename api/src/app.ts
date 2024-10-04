@@ -1,8 +1,7 @@
-import fastifyCsrfProtection from '@fastify/csrf-protection';
+import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import uriResolver from 'fast-uri';
@@ -25,6 +24,8 @@ import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import auth from './plugins/auth';
 import bouncer from './plugins/bouncer';
+import errorHandling from './plugins/error-handling';
+import csrf, { CSRF_COOKIE, CSRF_HEADER } from './plugins/csrf';
 import notFound from './plugins/not-found';
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -34,8 +35,7 @@ import {
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FREECODECAMP_NODE_ENV,
-  SENTRY_DSN
+  FREECODECAMP_NODE_ENV
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import {
@@ -86,57 +86,14 @@ export const build = async (
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
+  void fastify.register(redirectWithMessage);
   void fastify.register(security);
-
-  await fastify.register(fastifySentry, {
-    dsn: SENTRY_DSN,
-    // No need to initialize if DSN is not provided (e.g. in development and
-    // test environments)
-    skipInit: !SENTRY_DSN,
-    errorResponse: (error, _request, reply) => {
-      const isCSRFError =
-        error.code === 'FST_CSRF_INVALID_TOKEN' ||
-        error.code === 'FST_CSRF_MISSING_SECRET';
-      if (reply.statusCode === 500 || isCSRFError) {
-        void reply.send({
-          message: 'flash.generic-error',
-          type: 'danger'
-        });
-      } else {
-        void reply.send(error);
-      }
-    }
-  });
+  void fastify.register(fastifyAccepts);
+  void fastify.register(errorHandling);
 
   await fastify.register(cors);
   await fastify.register(cookies);
-
-  void fastify.register(fastifyCsrfProtection, {
-    // TODO: consider signing cookies. We don't on the api-server, but we could
-    // as an extra layer of security.
-
-    ///Ignore all other possible sources of CSRF
-    // tokens since we know we can provide this one
-    getToken: req => req.headers['csrf-token'] as string,
-    cookieOpts: { signed: false, sameSite: 'strict' }
-  });
-
-  // All routes except signout should add a CSRF token to the response
-  fastify.addHook('onRequest', (_req, reply, done) => {
-    const isSignout = _req.url === '/signout' || _req.url === '/signout/';
-
-    if (!isSignout) {
-      const token = reply.generateCsrf();
-      void reply.setCookie('csrf_token', token, {
-        sameSite: 'strict',
-        signed: false,
-        // it needs to be read by the client, so that it can be sent in the
-        // header of the next request:
-        httpOnly: false
-      });
-    }
-    done();
-  });
+  await fastify.register(csrf);
 
   const provider =
     EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
@@ -158,11 +115,11 @@ export const build = async (
         requestInterceptor: req => {
           const csrfTokenCookie = document.cookie
             .split(';')
-            .find(str => str.includes('csrf_token'));
+            .find(str => str.includes(CSRF_COOKIE));
           const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
+          if (csrfToken) req.headers[CSRF_HEADER] = csrfToken.trim();
           return req;
         }
       }
@@ -170,8 +127,6 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  // redirectWithMessage must be registered before auth
-  void fastify.register(redirectWithMessage);
   void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
