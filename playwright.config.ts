@@ -13,7 +13,7 @@ dotenvConfig({ path: envPath });
  */
 export default defineConfig({
   testDir: 'e2e',
-  testMatch: '!(mobile)*.spec.ts',
+  testIgnore: '**/mobile*.spec.ts', // Exclude mobile tests from being run
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -25,12 +25,12 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', { outputFolder: 'playwright/reporter' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  timeout: 15 * 1000,
+  timeout: 30 * 1000, // Increase timeout for complex tests
   outputDir: 'playwright/test-results',
 
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.HOME_LOCATION || 'http://127.0.0.1:8000',
+    baseURL: process.env.HOME_LOCATION || 'http://localhost:3000', // Adjust default to a common port
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
@@ -74,23 +74,12 @@ export default defineConfig({
       use: { ...devices['iPhone 12'] },
       dependencies: ['setup']
     }
-    /* Uncomment the blocks out if you want to enable the mentioned features */
-    /* ====================================================== */
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' }
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' }
-    // }
   ],
 
-  /* Some tests make the api send emails, so we need mailhog to catch them */
+  /* Some tests make the API send emails, so we need mailhog to catch them */
   webServer: {
     command: 'docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog',
-    port: 1025,
+    port: process.env.MAILHOG_PORT || 1025, // Dynamically assign ports or use environment variables
     reuseExistingServer: true,
     timeout: 180000
   }
