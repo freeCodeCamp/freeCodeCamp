@@ -18,6 +18,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
+import ChallegeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import FillInTheBlanks from '../components/fill-in-the-blanks';
@@ -60,7 +61,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowFillInTheBlankProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
   isChallengeCompleted: boolean;
   initTests: (xs: Test[]) => void;
   openCompletionModal: () => void;
@@ -250,6 +250,7 @@ class ShowFillInTheBlank extends Component<
             title,
             description,
             instructions,
+            explanation,
             superBlock,
             block,
             translationPending,
@@ -328,7 +329,13 @@ class ShowFillInTheBlank extends Component<
                     handleInputChange={this.handleInputChange}
                   />
                 </ObserveKeys>
-                <Spacer size='medium' />
+
+                {explanation ? (
+                  <ChallegeExplanation explanation={explanation} />
+                ) : (
+                  <Spacer size='medium' />
+                )}
+
                 <Button
                   block={true}
                   variant='primary'
@@ -368,6 +375,7 @@ export const query = graphql`
         title
         description
         instructions
+        explanation
         challengeType
         helpCategory
         superBlock
