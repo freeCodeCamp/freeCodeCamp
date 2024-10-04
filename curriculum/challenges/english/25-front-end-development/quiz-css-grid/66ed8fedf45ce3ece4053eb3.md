@@ -369,23 +369,23 @@ How do you make a grid item take up 2 rows using the `grid-row-end` property?
 
 #### --text--
 
-Placeholder question
+Which of these properties is NOT used to align items inside of a grid element?
 
 #### --distractors--
 
-Placeholder distractor 1
+`align-items`.
 
 ---
 
-Placeholder distractor 2
+`place-items`.
 
 ---
 
-Placeholder distractor 3
+`justify-items`.
 
 #### --answer--
 
-Placeholder answer
+`center-items`.
 
 ### --question--
 
