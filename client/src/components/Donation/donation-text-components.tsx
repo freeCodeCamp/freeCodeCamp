@@ -59,7 +59,7 @@ export const ThankYouMessage = ({
   );
 };
 
-export const OtherWaysToSupport = (): JSX.Element => {
+const OtherWaysToSupport = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
@@ -225,7 +225,7 @@ export const SupportBenefitsText = ({
   );
 };
 
-export const BenefitsList = (): JSX.Element => {
+const BenefitsList = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <ul>

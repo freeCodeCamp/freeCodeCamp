@@ -334,7 +334,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       questions: [QuizQuestion]
     }
     type QuizQuestion {
-      question: String
+      text: String
       distractors: [String]
       answer: String
     }
