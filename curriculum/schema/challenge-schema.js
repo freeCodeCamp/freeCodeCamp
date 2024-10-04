@@ -140,6 +140,7 @@ const schema = Joi.object()
       is: [
         challengeTypes.step,
         challengeTypes.video,
+        challengeTypes.multipleChoice,
         challengeTypes.fillInTheBlank
       ],
       then: Joi.string().allow(''),
