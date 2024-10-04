@@ -121,7 +121,7 @@ Sets the minimal size of the element for browser working in fullscreen mode.
 
 #### --answer--
 
-Definesa size range between the first and second value.
+Defines a size range between the first and second value.
 
 ### --question--
 
@@ -171,23 +171,23 @@ Which property defines on which row line the item will start?
 
 #### --text--
 
-Placeholder question
+Which property sets a size for the rows in a grid container?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-rows-size`.
 
 ---
 
-Placeholder distractor 2
+`grid-template`.
 
 ---
 
-Placeholder distractor 3
+`grid-row`.
 
 #### --answer--
 
-Placeholder answer
+`grid-auto-rows`.
 
 ### --question--
 
