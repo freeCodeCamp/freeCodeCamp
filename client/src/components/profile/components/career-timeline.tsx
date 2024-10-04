@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import {
   Button,
@@ -62,14 +62,6 @@ const DeleteModal = ({
           <p>{t('profile.job-delete')}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            onClick={() => {
-              setIsDeleting(false);
-            }}
-          >
-            {t('buttons.cancel')}
-          </Button>
-
           <Spacer size='s' />
           <Button
             variant='danger'
@@ -108,6 +100,8 @@ const EditCareerTimeline = ({
   updateMyCareer: (value: { career: Career[] }) => void;
   t: TFunction;
 }) => {
+  const [isDeleting, setIsDeleting] = useState(false);
+
   const handleSubmit = (formEvent: React.FormEvent) => {
     formEvent.preventDefault();
 
@@ -172,6 +166,16 @@ const EditCareerTimeline = ({
 
   return (
     <>
+      <DeleteModal
+        isDeleting={isDeleting}
+        setSelectedIndex={setSelectedIndex}
+        setIsDeleting={setIsDeleting}
+        setMyCareer={setMyCareer}
+        updateMyCareer={updateMyCareer}
+        myCareer={myCareer}
+        selectedIndex={selectedIndex}
+        t={t}
+      />
       <form key={job.company} onSubmit={handleSubmit}>
         <FormGroup controlId='title'>
           <ControlLabel htmlFor='title'>{t('profile.job-title')}</ControlLabel>
@@ -248,29 +252,42 @@ const EditCareerTimeline = ({
             required
           ></FormControl>
         </FormGroup>
+        {isEditing && (
+          <Button
+            variant='danger'
+            block={true}
+            onClick={() => setIsDeleting(true)}
+          >
+            {t('buttons.delete')}
+          </Button>
+        )}
+        <Spacer size='xs' />
+        <Button
+          block={true}
+          onClick={() => {
+            setIsEditing(false);
+            setIsAdding(false);
+            setSelectedIndex(-1);
+          }}
+        >
+          {t('buttons.cancel')}
+        </Button>
+        <Spacer size='xs' />
         <Button block={true} type='submit'>
           {t('buttons.save')}
         </Button>
       </form>
-      <Button
-        block={true}
-        onClick={() => {
-          setIsEditing(false);
-          setIsAdding(false);
-          setSelectedIndex(-1);
-        }}
-      >
-        {t('buttons.cancel')}
-      </Button>
     </>
   );
 };
 
 const CareerTimeline = ({
   career,
+  isSessionUser,
   updateMyCareer
 }: {
   career: Career[];
+  isSessionUser: boolean;
   updateMyCareer: (value: { career: Career[] }) => void;
 }) => {
   const [myCareer, setMyCareer] = useState<Career[]>(career);
@@ -279,26 +296,14 @@ const CareerTimeline = ({
 
   const [isAdding, setIsAdding] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
 
   const { t } = useTranslation();
 
   return (
-    <>
-      <DeleteModal
-        isDeleting={isDeleting}
-        setSelectedIndex={setSelectedIndex}
-        setIsDeleting={setIsDeleting}
-        setMyCareer={setMyCareer}
-        updateMyCareer={updateMyCareer}
-        myCareer={myCareer}
-        selectedIndex={selectedIndex}
-        t={t}
-      />
-
-      <FullWidthRow>
-        <div className='header-container'>
-          <h2>{t('profile.your-exp')}</h2>
+    <FullWidthRow>
+      <div className='header-container'>
+        <h2>{t('profile.your-exp')}</h2>
+        {isSessionUser && (
           <Button
             className='edit-btn'
             onClick={() => {
@@ -307,66 +312,59 @@ const CareerTimeline = ({
           >
             <FontAwesomeIcon icon={faPlus} />
           </Button>
-        </div>
-        {isAdding || isEditing ? (
-          <EditCareerTimeline
-            myCareer={myCareer}
-            selectedIndex={selectedIndex}
-            isAdding={isAdding}
-            isEditing={isEditing}
-            setSelectedIndex={setSelectedIndex}
-            setMyCareer={setMyCareer}
-            updateMyCareer={updateMyCareer}
-            setIsAdding={setIsAdding}
-            setIsEditing={setIsEditing}
-            t={t}
-          />
-        ) : (
-          <></>
         )}
-        {myCareer.map((job: Career, index) => {
-          const start = parseDate(
-            new Date(job.start_date).toDateString(),
-            t,
-            'short'
-          );
-          let end = t('profile.present');
+      </div>
+      {isAdding || isEditing ? (
+        <EditCareerTimeline
+          myCareer={myCareer}
+          selectedIndex={selectedIndex}
+          isAdding={isAdding}
+          isEditing={isEditing}
+          setSelectedIndex={setSelectedIndex}
+          setMyCareer={setMyCareer}
+          updateMyCareer={updateMyCareer}
+          setIsAdding={setIsAdding}
+          setIsEditing={setIsEditing}
+          t={t}
+        />
+      ) : (
+        <></>
+      )}
+      {myCareer.map((job: Career, index) => {
+        const start = parseDate(
+          new Date(job.start_date).toDateString(),
+          t,
+          'short'
+        );
+        let end = t('profile.present');
 
-          const present = new Date();
+        const present = new Date();
 
-          let total_time_in_years =
-            present.getFullYear() - new Date(job.start_date).getFullYear();
+        let total_time_in_years =
+          present.getFullYear() - new Date(job.start_date).getFullYear();
 
-          if (job.end_date) {
-            end = parseDate(new Date(job.end_date).toDateString(), t, 'short');
+        if (job.end_date) {
+          end = parseDate(new Date(job.end_date).toDateString(), t, 'short');
 
-            total_time_in_years =
-              new Date(job.end_date).getFullYear() -
-              new Date(job.start_date).getFullYear();
-          }
+          total_time_in_years =
+            new Date(job.end_date).getFullYear() -
+            new Date(job.start_date).getFullYear();
+        }
 
-          return (
-            !isAdding &&
-            !isEditing && (
-              <Fragment key={index}>
-                <div className='card'>
-                  <div className='header'>
-                    <h3>
-                      {t('profile.job-at', {
-                        company: job.company,
-                        title: job.title
-                      })}
-                    </h3>
-                    <div className='action-container'>
-                      <Button
-                        className='edit-btn'
-                        onClick={() => {
-                          setIsDeleting(true);
-                          setSelectedIndex(index);
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faTrash} />
-                      </Button>
+        return (
+          !isAdding &&
+          !isEditing && (
+            <Fragment key={index}>
+              <div className='card'>
+                <div className='header'>
+                  <h3>
+                    {t('profile.job-at', {
+                      company: job.company,
+                      title: job.title
+                    })}
+                  </h3>
+                  <div className='action-container'>
+                    {isSessionUser && (
                       <Button
                         className='edit-btn'
                         onClick={() => {
@@ -376,25 +374,25 @@ const CareerTimeline = ({
                       >
                         <FontAwesomeIcon icon={faPen} />
                       </Button>
-                    </div>
+                    )}
                   </div>
-                  <p className='date'>
-                    {t('profile.start-end-years', {
-                      start: start,
-                      end: end,
-                      years: total_time_in_years
-                    })}
-                  </p>
-                  <p>{job.location}</p>
-                  <p>{job.description}</p>
                 </div>
-              </Fragment>
-            )
-          );
-        })}
-        <hr />
-      </FullWidthRow>
-    </>
+                <p className='date'>
+                  {t('profile.start-end-years', {
+                    start: start,
+                    end: end,
+                    years: total_time_in_years
+                  })}
+                </p>
+                <p>{job.location}</p>
+                <p>{job.description}</p>
+              </div>
+            </Fragment>
+          )
+        );
+      })}
+      <hr />
+    </FullWidthRow>
   );
 };
 
