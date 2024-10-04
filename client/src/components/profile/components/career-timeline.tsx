@@ -273,7 +273,7 @@ const CareerTimeline = ({
   career: Career[];
   updateMyCareer: (value: { career: Career[] }) => void;
 }) => {
-  const [myCareer, setMyCareer] = useState<Career[]>([...career]);
+  const [myCareer, setMyCareer] = useState<Career[]>(career);
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
