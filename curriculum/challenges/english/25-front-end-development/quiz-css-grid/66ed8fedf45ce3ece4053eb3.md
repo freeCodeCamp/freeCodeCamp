@@ -259,23 +259,23 @@ How do you create four columns of equal width?
 
 #### --text--
 
-Placeholder question
+Which property and value will make an element span the full width of the grid?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-column: 1 / 1`.
 
 ---
 
-Placeholder distractor 2
+`width: 100%`.
 
 ---
 
-Placeholder distractor 3
+`grid-column: 100%`.
 
 #### --answer--
 
-Placeholder answer
+`grid-column: 1 / -1`.
 
 ### --question--
 
