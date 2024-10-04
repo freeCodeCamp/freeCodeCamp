@@ -215,23 +215,23 @@ Lines on which each of the grid items begin and end.
 
 #### --text--
 
-Placeholder question
+What does the `grid-column` property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Adds a new grid element as a child of the element it's applied to.
 
 ---
 
-Placeholder distractor 2
+Aligns text in the gird item vertically.
 
 ---
 
-Placeholder distractor 3
+Specifies the number of columns in a grid element.
 
 #### --answer--
 
-Placeholder answer
+Tells the grid item which grid line it should start and end at.
 
 ### --question--
 
