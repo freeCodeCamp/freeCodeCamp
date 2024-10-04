@@ -72,6 +72,7 @@ const testUserData: Prisma.userCreateInput = {
   githubProfile: 'github.com/foobar',
   website: 'https://www.freecodecamp.org',
   donationEmails: ['an@add.ress'],
+  career: [],
   portfolio: [
     {
       description: 'A portfolio',
@@ -206,6 +207,7 @@ const publicUserData = {
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   picture: testUserData.picture,
   points: 2,
+  career: testUserData.career,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
