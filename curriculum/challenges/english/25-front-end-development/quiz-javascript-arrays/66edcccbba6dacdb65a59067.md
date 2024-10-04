@@ -61,7 +61,7 @@ Primitives hold direct values, non-primitives hold references.
 
 #### --text--
 
-What will be the result of the following array method `indexOf()`?
+What value will be assigned to the `index` variable?
 
 ```js
 const numbers = [10, 20, 30, 40];
@@ -89,7 +89,7 @@ console.log(index);
 
 #### --text--
 
-What will the following code output using the spread operator?
+What value will be assigned to the `arr2` variable?
 
 ```js
 const arr1 = [1, 2, 3];
@@ -117,7 +117,7 @@ console.log(arr2);
 
 #### --text--
 
-What will `splice()` do in the following example?
+What will this code print to the console?
 
 ```js
 const colors = ['red', 'blue', 'green', 'yellow'];
@@ -145,7 +145,7 @@ console.log(colors);
 
 #### --text--
 
-What will be the result of the following code using `slice()`?
+What value will be assigned to the `slicedArr` variable?
 
 ```js
 const arr = ['apple', 'banana', 'cherry', 'date'];
@@ -257,7 +257,6 @@ Nothing happens; the array remains the same size.
 
 The array gets truncated, removing elements beyond the new length.
 
-
 ### --question--
 
 #### --text--
@@ -293,7 +292,7 @@ console.log(fruits);
 
 #### --text--
 
-What is the final value of result in the following code ?
+What is the final value of `result` in the following code?
 
 ```js
 const arr1 = [1, 2];
@@ -305,19 +304,19 @@ console.log(result);
 
 #### --distractors--
 
-false
+`false`
 
 ---
 
-[1, 2, 3, 4, 5]
+`[1, 2, 3, 4, 5]`
 
 ---
 
-undefined
+`undefined`
 
 #### --answer--
 
-true
+`true`
 
 ### --question--
 
@@ -333,7 +332,7 @@ console.log(doubled.includes(8));
 
 #### --distractors--
 
-false
+`false`
 
 ---
 
@@ -341,17 +340,17 @@ false
 
 ---
 
-Error
+`Error`
 
 #### --answer--
 
-true
+`true`
 
 ### --question--
 
 #### --text--
 
-What is the output when using splice() to remove elements from a 2D array?
+What is the output when using `splice()` to remove elements from a 2D array?
 
 ```js
 let matrix = [
@@ -399,7 +398,7 @@ It gives the total number of elements in a 2D array.
 
 #### --answer--
 
-It counts the number of rows in a 2D array.
+It counts the number of top-level elements in a 2D array.
 
 ### --question--
 
@@ -449,7 +448,7 @@ Both `push()` and `concat()` are immutable methods.
 
 #### --text--
 
-How does the rest parameter (`...rest`) work in array destructuring in JavaScript?
+How does the rest parameter `...rest` work in array destructuring in JavaScript?
 
 #### --distractors--
 
