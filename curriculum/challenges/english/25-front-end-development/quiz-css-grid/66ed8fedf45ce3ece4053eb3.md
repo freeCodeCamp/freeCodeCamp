@@ -83,23 +83,23 @@ Which one of these options for `grid-template-columns` property will result in a
 
 #### --text--
 
-Placeholder question
+What does the `grid-template-rows` property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Specifies a grid item's size and location in a grid layout.
 
 ---
 
-Placeholder distractor 2
+Creates a template for creating new grid rows.
 
 ---
 
-Placeholder distractor 3
+Specified a default row size.
 
 #### --answer--
 
-Placeholder answer
+Specifies the number and heights of the rows in a grid layout.
 
 ### --question--
 
