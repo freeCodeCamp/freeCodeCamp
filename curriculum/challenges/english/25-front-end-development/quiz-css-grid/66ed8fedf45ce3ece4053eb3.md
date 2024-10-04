@@ -435,21 +435,20 @@ Spaces between two adjacent grid lines.
 
 #### --text--
 
-Placeholder question
+How can you use dev tools to debug the CSS Grid layout?
 
 #### --distractors--
 
-Placeholder distractor 1
+To resize the elements to fill out the gaps in the grid.
 
 ---
 
-Placeholder distractor 2
+To drag-and-drop elements inside the grid.
 
 ---
 
-Placeholder distractor 3
+To automatically fix overlaying grid elements.
 
 #### --answer--
 
-Placeholder answer
-
+To preview the layout of grid lines.
