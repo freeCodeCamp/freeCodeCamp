@@ -311,11 +311,11 @@ Narrows the grid container to fit to its content width.
 
 ---
 
-Groups the grid items of the same size.
+Groups grid items of the same size.
 
 ---
 
-Sorts the grid items based on their size.
+Sorts grid items based on their size.
 
 #### --answer--
 
@@ -325,23 +325,23 @@ Place smaller items to fill gaps in the grid.
 
 #### --text--
 
-Placeholder question
+Which one these options is NOT a unit used for the `gap` property?
 
 #### --distractors--
 
-Placeholder distractor 1
+px.
 
 ---
 
-Placeholder distractor 2
+%.
 
 ---
 
-Placeholder distractor 3
+em.
 
 #### --answer--
 
-Placeholder answer
+fr.
 
 ### --question--
 
