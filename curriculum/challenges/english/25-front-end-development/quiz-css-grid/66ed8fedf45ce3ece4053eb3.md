@@ -39,23 +39,23 @@ A two-dimensional layout for HTML documents.
 
 #### --text--
 
-Placeholder question
+Which property and value are used to turn an element into a grid container?
 
 #### --distractors--
 
-Placeholder distractor 1
+display: grid-area.
 
 ---
 
-Placeholder distractor 2
+grid: grid-template.
 
 ---
 
-Placeholder distractor 3
+grid-template: set.
 
 #### --answer--
 
-Placeholder answer
+gisplay: grid.
 
 ### --question--
 
