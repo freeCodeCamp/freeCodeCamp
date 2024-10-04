@@ -127,23 +127,23 @@ Definesa size range between the first and second value.
 
 #### --text--
 
-Placeholder question
+What is the shorthand for `column_gap` and `row_gap` properties?
 
 #### --distractors--
 
-Placeholder distractor 1
+`gap-column-row`.
 
 ---
 
-Placeholder distractor 2
+`gutters`.
 
 ---
 
-Placeholder distractor 3
+`grid-gap`.
 
 #### --answer--
 
-Placeholder answer
+`gap`.
 
 ### --question--
 
