@@ -281,23 +281,23 @@ Which property and value will make an element span the full width of the grid?
 
 #### --text--
 
-Placeholder question
+What does `grid-auto-flow` property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Controls the order in which grid items are displayed.
 
 ---
 
-Placeholder distractor 2
+Adjusts the spacing between the grid elements.
 
 ---
 
-Placeholder distractor 3
+Automatically adjusts the element to fit in the grid.
 
 #### --answer--
 
-Placeholder answer
+Controls how auto-placed elements get inserted to the grid.
 
 ### --question--
 
