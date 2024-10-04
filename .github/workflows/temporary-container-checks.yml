@@ -50,7 +50,6 @@ jobs:
             --build-arg SHOW_NEW_CURRICULUM=false \
             --build-arg GROWTHBOOK_URI=api_URI_from_Growthbook_dashboard \
             --build-arg FREECODECAMP_NODE_ENV=development \
-            -t fcc-client \
             -f docker/web/Dockerfile .
 
   build-api:
@@ -69,8 +68,7 @@ jobs:
       - name: Create Image
         run: |
           docker build \
-            -t fcc-api \
-            -f docker/api/Dockerfile .
+            -f docker/api-server/Dockerfile .
 
   build-new-api:
     name: Build New Api (Container)
@@ -88,5 +86,4 @@ jobs:
       - name: Create Image
         run: |
           docker build \
-            -t fcc-new-api \
-            -f docker/new-api/Dockerfile .
+            -f docker/api/Dockerfile .
