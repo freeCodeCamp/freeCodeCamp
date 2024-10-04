@@ -1,8 +1,8 @@
+import fastifyAccepts from '@fastify/accepts';
 import fastifyCsrfProtection from '@fastify/csrf-protection';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import uriResolver from 'fast-uri';
@@ -25,6 +25,7 @@ import redirectWithMessage from './plugins/redirect-with-message';
 import security from './plugins/security';
 import auth from './plugins/auth';
 import bouncer from './plugins/bouncer';
+import errorHandling from './plugins/error-handling';
 import notFound from './plugins/not-found';
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -33,8 +34,7 @@ import {
   API_LOCATION,
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
-  FCC_ENABLE_SWAGGER_UI,
-  SENTRY_DSN
+  FCC_ENABLE_SWAGGER_UI
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 
@@ -81,27 +81,10 @@ export const build = async (
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
+  void fastify.register(redirectWithMessage);
   void fastify.register(security);
-
-  await fastify.register(fastifySentry, {
-    dsn: SENTRY_DSN,
-    // No need to initialize if DSN is not provided (e.g. in development and
-    // test environments)
-    skipInit: !SENTRY_DSN,
-    errorResponse: (error, _request, reply) => {
-      const isCSRFError =
-        error.code === 'FST_CSRF_INVALID_TOKEN' ||
-        error.code === 'FST_CSRF_MISSING_SECRET';
-      if (reply.statusCode === 500 || isCSRFError) {
-        void reply.send({
-          message: 'flash.generic-error',
-          type: 'danger'
-        });
-      } else {
-        void reply.send(error);
-      }
-    }
-  });
+  void fastify.register(fastifyAccepts);
+  void fastify.register(errorHandling);
 
   await fastify.register(cors);
   await fastify.register(cookies);
@@ -165,8 +148,6 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  // redirectWithMessage must be registered before codeFlowAuth
-  void fastify.register(redirectWithMessage);
   void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
