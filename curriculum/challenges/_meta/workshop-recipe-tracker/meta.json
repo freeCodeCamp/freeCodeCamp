@@ -16,44 +16,48 @@
       "title": "Step 2"
     },
     {
-      "id": "66fbcf750a62784cf11f562e",
+      "id": "66ff02792b3042a2b811f475",
       "title": "Step 3"
     },
     {
-      "id": "66fbcf750a62784cf11f562f",
+      "id": "66fbcf750a62784cf11f562e",
       "title": "Step 4"
     },
     {
-      "id": "66fbcf750a62784cf11f5630",
+      "id": "66fbcf750a62784cf11f562f",
       "title": "Step 5"
     },
     {
-      "id": "66fbcf750a62784cf11f5631",
+      "id": "66fbcf750a62784cf11f5630",
       "title": "Step 6"
     },
     {
-      "id": "66fbcf750a62784cf11f5632",
+      "id": "66fbcf750a62784cf11f5631",
       "title": "Step 7"
     },
     {
-      "id": "66fbcf750a62784cf11f5633",
+      "id": "66fbcf750a62784cf11f5632",
       "title": "Step 8"
     },
     {
-      "id": "66fbcf750a62784cf11f5634",
+      "id": "66fbcf750a62784cf11f5633",
       "title": "Step 9"
     },
     {
-      "id": "66fbcf750a62784cf11f5635",
+      "id": "66fbcf750a62784cf11f5634",
       "title": "Step 10"
     },
     {
-      "id": "66fbcf750a62784cf11f5636",
+      "id": "66fbcf750a62784cf11f5635",
       "title": "Step 11"
     },
     {
-      "id": "66fbcf750a62784cf11f5637",
+      "id": "66fbcf750a62784cf11f5636",
       "title": "Step 12"
+    },
+    {
+      "id": "66fbcf750a62784cf11f5637",
+      "title": "Step 13"
     }
   ],
   "helpCategory": "JavaScript",
