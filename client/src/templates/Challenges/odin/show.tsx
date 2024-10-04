@@ -331,7 +331,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
                   )}
 
                   <MultipleChoiceQuestions
-                    questions={question}
+                    questions={questions}
                     selectedOption={this.state.selectedOption}
                     isWrongAnswer={this.state.isWrongAnswer}
                     handleOptionChange={this.handleOptionChange}

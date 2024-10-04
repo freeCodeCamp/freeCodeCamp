@@ -7,7 +7,7 @@ import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
 
 type MultipleChoiceQuestionsProps = {
-  questions: Question;
+  questions: Question[];
   selectedOption: number | null;
   isWrongAnswer: boolean;
   handleOptionChange: (
@@ -16,12 +16,14 @@ type MultipleChoiceQuestionsProps = {
 };
 
 function MultipleChoiceQuestions({
-  questions: { text, answers },
+  questions,
   selectedOption,
   isWrongAnswer,
   handleOptionChange
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
+
+  const { text, answers } = questions[0];
 
   const feedback =
     selectedOption !== null ? answers[selectedOption].feedback : undefined;

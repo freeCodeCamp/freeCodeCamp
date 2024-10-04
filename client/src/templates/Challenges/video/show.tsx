@@ -260,7 +260,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <ChallengeDescription description={description} />
                 <ObserveKeys>
                   <MultipleChoiceQuestions
-                    questions={question}
+                    questions={questions}
                     selectedOption={this.state.selectedOption}
                     isWrongAnswer={this.state.showWrong}
                     handleOptionChange={this.handleOptionChange}
