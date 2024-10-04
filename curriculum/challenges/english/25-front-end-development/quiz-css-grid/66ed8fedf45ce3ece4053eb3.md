@@ -149,23 +149,23 @@ What is the shorthand for `column_gap` and `row_gap` properties?
 
 #### --text--
 
-Placeholder question
+Which property defines on which row line the item will start?
 
 #### --distractors--
 
-Placeholder distractor 1
+`row-start`.
 
 ---
 
-Placeholder distractor 2
+`grid-row-begin`.
 
 ---
 
-Placeholder distractor 3
+`grid-row`.
 
 #### --answer--
 
-Placeholder answer
+`grid-row-start`.
 
 ### --question--
 
