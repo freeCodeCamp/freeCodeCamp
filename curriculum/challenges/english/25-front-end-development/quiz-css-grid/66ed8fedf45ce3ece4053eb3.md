@@ -43,19 +43,19 @@ Which property and attribute are used to turn an element into a grid container?
 
 #### --distractors--
 
-`display: grid-area`.
+`display: grid-area`
 
 ---
 
-`grid: grid-template`.
+`grid: grid-template`
 
 ---
 
-`grid-template: set`.
+`grid-template: set`
 
 #### --answer--
 
-`display: grid`.
+`display: grid`
 
 ### --question--
 
@@ -65,19 +65,19 @@ Which one of these options for `grid-template-columns` property will result in a
 
 #### --distractors--
 
-`10% 80rem 10%`.
+`10% 80rem 10%`
 
 ---
 
-`1fr 8fr 1fr`.
+`1fr 8fr 1fr`
 
 ---
 
-`10rem 80rem 10rem`.
+`10rem 80rem 10rem`
 
 #### --answer--
 
-`1fr 80rem 1fr`.
+`1fr 80rem 1fr`
 
 ### --question--
 
@@ -131,19 +131,19 @@ What is the shorthand for `column_gap` and `row_gap` properties?
 
 #### --distractors--
 
-`gap-column-row`.
+`gap-column-row`
 
 ---
 
-`gutters`.
+`gutters`
 
 ---
 
-`grid-gap`.
+`grid-gap`
 
 #### --answer--
 
-`gap`.
+`gap`
 
 ### --question--
 
@@ -153,19 +153,19 @@ Which property defines on which row line the item will start?
 
 #### --distractors--
 
-`row-start`.
+`row-start`
 
 ---
 
-`grid-row-begin`.
+`grid-row-begin`
 
 ---
 
-`grid-row`.
+`grid-row`
 
 #### --answer--
 
-`grid-row-start`.
+`grid-row-start`
 
 ### --question--
 
@@ -175,19 +175,19 @@ Which property sets a size for the rows in a grid container?
 
 #### --distractors--
 
-`grid-rows-size`.
+`grid-rows-size`
 
 ---
 
-`grid-template`.
+`grid-template`
 
 ---
 
-`grid-row`.
+`grid-row`
 
 #### --answer--
 
-`grid-auto-rows`.
+`grid-auto-rows`
 
 ### --question--
 
@@ -241,7 +241,7 @@ How do you create four columns of equal width?
 
 #### --distractors--
 
-`grid-template-columns: repeat(4)`.
+`grid-template-columns: repeat(4)`
 
 ---
 
@@ -249,11 +249,11 @@ How do you create four columns of equal width?
 
 ---
 
-`grid-column: repeat(4, 1fr)`.
+`grid-column: repeat(4, 1fr)`
 
 #### --answer--
 
-`grid-template-columns: repeat(4, 1fr)`.
+`grid-template-columns: repeat(4, 1fr)`
 
 ### --question--
 
@@ -263,19 +263,19 @@ Which property and value will make an element span the full width of the grid?
 
 #### --distractors--
 
-`grid-column: 1 / 1`.
+`grid-column: 1 / 1`
 
 ---
 
-`width: 100%`.
+`width: 100%`
 
 ---
 
-`grid-column: 100%`.
+`grid-column: 100%`
 
 #### --answer--
 
-`grid-column: 1 / -1`.
+`grid-column: 1 / -1`
 
 ### --question--
 
@@ -329,19 +329,19 @@ Which one these options is NOT a unit used for the `gap` property?
 
 #### --distractors--
 
-px.
+px
 
 ---
 
-%.
+%
 
 ---
 
-em.
+em
 
 #### --answer--
 
-fr.
+fr
 
 ### --question--
 
@@ -351,7 +351,7 @@ How do you make a grid item take up 2 rows using the `grid-row-end` property?
 
 #### --distractors--
 
-`grid-row-end: 2 / 2`.
+`grid-row-end: 2 / 2`
 
 ---
 
@@ -359,11 +359,11 @@ How do you make a grid item take up 2 rows using the `grid-row-end` property?
 
 ---
 
-`grid-row-end: 2`.
+`grid-row-end: 2`
 
 #### --answer--
 
-`grid-row-end: span 2`.
+`grid-row-end: span 2`
 
 ### --question--
 
@@ -373,19 +373,19 @@ Which of these properties is NOT used to align items inside of a grid element?
 
 #### --distractors--
 
-`align-items`.
+`align-items`
 
 ---
 
-`place-items`.
+`place-items`
 
 ---
 
-`justify-items`.
+`justify-items`
 
 #### --answer--
 
-`center-items`.
+`center-items`
 
 ### --question--
 
@@ -399,15 +399,15 @@ Which of these properties can be used as a shorthand for the `grid-row-start`, `
 
 ---
 
-`grid-item`.
+`grid-item`
 
 ---
 
-`grid-row-column`.
+`grid-row-column`
 
 #### --answer--
 
-`grid-area`.
+`grid-area`
 
 ### --question--
 
