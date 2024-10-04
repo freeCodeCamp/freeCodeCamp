@@ -201,11 +201,11 @@ Shorthand for rows and columns.
 
 ---
 
-Outline of a grid element.
+Outlines of a grid element.
 
 ---
 
-Lines alog which grid columns and rows are created.
+Lines along which grid columns and rows are created.
 
 #### --answer--
 
@@ -223,7 +223,7 @@ Adds a new grid element as a child of the element it's applied to.
 
 ---
 
-Aligns text in the gird item vertically.
+Aligns text in the grid item vertically.
 
 ---
 
@@ -231,7 +231,7 @@ Specifies the number of columns in a grid element.
 
 #### --answer--
 
-Tells the grid item which grid line it should start and end at.
+Tells the grid item on which grid line it should start and end at.
 
 ### --question--
 
@@ -325,7 +325,7 @@ Place smaller items to fill gaps in the grid.
 
 #### --text--
 
-Which one these options is NOT a unit used for the `gap` property?
+Which one of these options is NOT a unit used for the `gap` property?
 
 #### --distractors--
 
@@ -369,7 +369,7 @@ How do you make a grid item take up 2 rows using the `grid-row-end` property?
 
 #### --text--
 
-Which of these properties is NOT used to align items inside of a grid element?
+Which of these properties is NOT used to align items inside a grid element?
 
 #### --distractors--
 
