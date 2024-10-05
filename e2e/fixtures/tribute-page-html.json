@@ -1,5 +1,0 @@
-{
-  "tribute-page-html": {
-    "contents": "<head><link rel=\"stylesheet\" href=\"styles.css\"></head><body><main id=\"main\"><div id=\"title\">D</div><div id=\"img-div\"><img id=\"image\" src=\"\" alt=\"D\" ><div id=\"img-caption\">s</div></div><div id=\"tribute-info\">s</div><a id=\"tribute-link\" href=\"\" target=\"_blank\">L</a></main></body></html>"
-  }
-}
