@@ -554,6 +554,9 @@ importers:
       gatsby-transformer-remark:
         specifier: 5.25.1
         version: 5.25.1(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@16.14.0(react@16.14.0))(react@16.14.0)(typescript@5.2.2))
+      html-to-image:
+        specifier: ^1.11.11
+        version: 1.11.11
       i18next:
         specifier: 22.5.1
         version: 22.5.1
@@ -596,6 +599,9 @@ importers:
       query-string:
         specifier: 7.1.3
         version: 7.1.3
+      rasterizehtml:
+        specifier: ^1.3.1
+        version: 1.3.1
       react:
         specifier: 16.14.0
         version: 16.14.0
@@ -6067,6 +6073,9 @@ packages:
     peerDependencies:
       postcss: ^8.0.9
 
+  css-font-face-src@1.0.0:
+    resolution: {integrity: sha512-kUl2r9ZMiLKY+04SM83Rk6dLnUU/hk30aN5CSZ+ZMGWT2COCU8I7yVu8fHbfCQu7Gx1ce45W0Q9hRaw2awqlww==}
+
   css-loader@5.2.7:
     resolution: {integrity: sha512-Q7mOvpBNBG7YrVGMxRxcBJZFL75o+cH2abNASdibkj/fffYD8qWbInZrD0S9ccI6vZclF3DsHE7njGlLtaHbhg==}
     engines: {node: '>= 10.13.0'}
@@ -8008,6 +8017,9 @@ packages:
   html-parse-stringify@3.0.1:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
 
+  html-to-image@1.11.11:
+    resolution: {integrity: sha512-9gux8QhvjRO/erSnDPv28noDZcPZmYE7e1vFsBLKLlRlKDSqNJYebj6Qz1TGd5lsRV+X+xYyjCKjuZdABinWjA==}
+
   html-void-elements@1.0.5:
     resolution: {integrity: sha512-uE/TxKuyNIcx44cIWnjr/rfIATDH7ZaOMmstu0CwhFG1Dunhlp4OC6/NMbhiwoq5BpW0ubi303qnEk/PZj614w==}
 
@@ -8227,6 +8239,9 @@ packages:
 
   inline-style-parser@0.1.1:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
+
+  inlineresources@1.0.1:
+    resolution: {integrity: sha512-r0TMecufaxuZva1tqvTR50hxud4wEAOAe0lWRp+kxWKAjGPYUxYDl+IFcOgWE8jMxVIJQl14vuJfhtMYdomPjw==}
 
   inquirer@7.3.3:
     resolution: {integrity: sha512-JG3eIAj5V9CwcGvuOmoo6LB9kbAYT8HXffUl6memuszlwDC/qvFAJw49XJ5NROSFNPxp3iQg1GqkFhaY/CR0IA==}
@@ -11164,6 +11179,9 @@ packages:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
     engines: {node: '>= 0.6'}
 
+  rasterizehtml@1.3.1:
+    resolution: {integrity: sha512-YfFxHJgyBWe6fGKQwiZQKWb5IYICQabg2iCyzjMzOXFKj2g+AfntlOxkM4f1+I0I6XjRp7bVOAxqXbfzsqjqTA==}
+
   rate-limit-mongo@2.3.2:
     resolution: {integrity: sha512-dLck0j5N/AX9ycVHn5lX9Ti2Wrrwi1LfbXitu/mMBZOo2nC26RgYKJVbcb2mYgb9VMaPI2IwJVzIa2hAQrMaDA==}
 
@@ -11743,6 +11761,9 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  sane-domparser-error@0.2.0:
+    resolution: {integrity: sha512-wxjDV5jty95tNv8N/4WA15UNGqqaor/xX7rnNYY961hifN3bheYoKqtXN+V/M6EUgmUAs6pMul3klwUPMEiVXA==}
 
   sanitize-html@1.27.5:
     resolution: {integrity: sha512-M4M5iXDAUEcZKLXkmk90zSYWEtk5NH3JmojQxKxV371fnMh+x9t1rqdmXaGoyEHw3z/X/8vnFhKjGL5xFGOJ3A==}
@@ -13528,6 +13549,9 @@ packages:
   xmlhttprequest-ssl@1.6.3:
     resolution: {integrity: sha512-3XfeQE/wNkvrIktn2Kf0869fC0BN6UpydVasGIeSm2B1Llihf7/0UfZM+eCkOw3P7bP4+qPgqhm7ZoxuJtFU0Q==}
     engines: {node: '>=0.4.0'}
+
+  xmlserializer@0.6.1:
+    resolution: {integrity: sha512-FNb0eEqqUUbnuvxuHqNuKH8qCGKqxu+558Zi8UzOoQk8Z9LdvpONK+v7m3gpKVHrk5Aq+0nNLsKxu/6OYh7Umw==}
 
   xss@1.0.14:
     resolution: {integrity: sha512-og7TEJhXvn1a7kzZGQ7ETjdQVS2UfZyTlsEdDOqvQF7GoxNfY+0YLCzBy1kPdsDDx4QuNAonQPddpsn6Xl/7sw==}
@@ -20801,6 +20825,8 @@ snapshots:
     dependencies:
       postcss: 8.4.35
 
+  css-font-face-src@1.0.0: {}
+
   css-loader@5.2.7(webpack@5.90.3):
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.35)
@@ -23766,6 +23792,8 @@ snapshots:
     dependencies:
       void-elements: 3.1.0
 
+  html-to-image@1.11.11: {}
+
   html-void-elements@1.0.5: {}
 
   htmlescape@1.1.1: {}
@@ -23992,6 +24020,11 @@ snapshots:
       source-map: 0.5.7
 
   inline-style-parser@0.1.1: {}
+
+  inlineresources@1.0.1:
+    dependencies:
+      css-font-face-src: 1.0.0
+      url: 0.11.3
 
   inquirer@7.3.3:
     dependencies:
@@ -27714,6 +27747,13 @@ snapshots:
 
   range-parser@1.2.1: {}
 
+  rasterizehtml@1.3.1:
+    dependencies:
+      inlineresources: 1.0.1
+      sane-domparser-error: 0.2.0
+      url: 0.11.3
+      xmlserializer: 0.6.1
+
   rate-limit-mongo@2.3.2:
     dependencies:
       mongodb: 3.6.9
@@ -28454,6 +28494,8 @@ snapshots:
   safe-stable-stringify@2.4.3: {}
 
   safer-buffer@2.1.2: {}
+
+  sane-domparser-error@0.2.0: {}
 
   sanitize-html@1.27.5:
     dependencies:
@@ -30586,6 +30628,8 @@ snapshots:
   xmlcreate@2.0.4: {}
 
   xmlhttprequest-ssl@1.6.3: {}
+
+  xmlserializer@0.6.1: {}
 
   xss@1.0.14:
     dependencies:
