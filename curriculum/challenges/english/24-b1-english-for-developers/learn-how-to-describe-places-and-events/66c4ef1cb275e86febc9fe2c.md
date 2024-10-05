@@ -11,14 +11,6 @@ Sarah: It should, but it's not displaying because the live server extension migh
 <!-- Audio Reference:
 Sarah: It should, but it's not displaying because the live server extension might not be running. -->
 
-# --description--
-
-A gerund is a verb form ending in `-ing` that functions as a noun. In this sentence, `displaying` and `running` are gerunds that describe ongoing actions. For example:
-
-- `Updating the software is essential.` - Here, `Updating` is a gerund describing an action.
-
-In Sarah's sentence, `displaying` and `running` describe actions related to the live server extension and how it functions.
-
 # --instructions--
 
 Listen to the audio and complete the sentence below.
@@ -45,6 +37,13 @@ The action of showing or rendering something. This word ends in `-ing`.
 
 Indicates the extension is active and functioning. This word ends in `-ing`.
 
+# --explanation--
+
+A gerund is a verb form ending in `-ing` that functions as a noun. In this sentence, `displaying` and `running` are gerunds that describe ongoing actions. For example:
+
+- `Updating the software is essential.` - Here, `Updating` is a gerund describing an action.
+
+In Sarah's sentence, `displaying` and `running` describe actions related to the live server extension and how it functions.
 
 # --scene--
 

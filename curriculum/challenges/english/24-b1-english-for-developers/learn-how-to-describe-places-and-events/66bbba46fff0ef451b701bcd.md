@@ -9,14 +9,6 @@ dashedName: task-103
 Tom: Hey Sarah, do you have a moment? I'm struggling with these IDEs.
 Sarah: Sure, I'm not busy. What's the problem? -->
 
-# --description--
-
-Instead of directly saying she is free, Sarah uses the negative form `I'm not busy` to emphasize that she has time to help. 
-
-This is a polite and indirect way to offer availability in English, commonly used to make the conversation more tactful.
-
-Her follow-up sentence, `What's the problem?`, confirms she's willing to assist by inviting Tom to explain the issue.
-
 # --instructions--
 
 Listen to the audio and answer the question below.
@@ -58,6 +50,14 @@ Sarah doesn’t limit the time; she simply states that she is not busy.
 ## --video-solution--
 
 2
+
+# --explanation--
+
+Instead of directly saying she is free, Sarah uses the negative form `I'm not busy` to emphasize that she has time to help. 
+
+This is a polite and indirect way to offer availability in English, commonly used to make the conversation more tactful.
+
+Her follow-up sentence, `What's the problem?`, confirms she's willing to assist by inviting Tom to explain the issue.
 
 # --scene--
 

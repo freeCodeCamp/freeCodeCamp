@@ -7,14 +7,6 @@ dashedName: task-83
 
 <!-- (Audio) Anna: When do you think this new module will be ready? -->
 
-# --description--
-
-Anna is asking about the timeline for a specific part of the training. `Module` refers to a unit or section of a course or training program. For example:
-
-- `The new module on cybersecurity will be added next week.` - Here, `module` refers to a specific part of the training focused on cybersecurity.
-
-Pay attention to how the words `this`, `new`, and `module` are used. `This` is used to specify the module they are talking about, `new` shows that it's a recent addition, and `module` refers to a section of the training.
-
 # --instructions--
 
 Listen to the audio to complete the sentence below.
@@ -48,6 +40,14 @@ This word indicates that the module is a recent addition or creation.
 ### --feedback--
 
 This word refers to a specific part or section of the training program.
+
+# --explanation--
+
+Anna is asking about the timeline for a specific part of the training. `Module` refers to a unit or section of a course or training program. For example:
+
+- `The new module on cybersecurity will be added next week.` - Here, `module` refers to a specific part of the training focused on cybersecurity.
+
+Pay attention to how the words `this`, `new`, and `module` are used. `This` is used to specify the module they are talking about, `new` shows that it's a recent addition, and `module` refers to a section of the training.
 
 # --scene--
 
