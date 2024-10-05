@@ -81,6 +81,8 @@ assert.equal(document.querySelector('input')?.getAttribute('name'), 'date');
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+<img src="doingKarateWow.jpeg">
+<img src="doingKarateWow.jpeg" alt="Someone doing karate">
 
 # --solutions--
 
