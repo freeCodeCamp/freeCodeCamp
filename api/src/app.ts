@@ -34,9 +34,14 @@ import {
   API_LOCATION,
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
-  FCC_ENABLE_SWAGGER_UI
+  FCC_ENABLE_SWAGGER_UI,
+  FREECODECAMP_NODE_ENV
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import {
+  examEnvironmentOpenRoutes,
+  examEnvironmentValidatedTokenRoutes
+} from './exam-environment/routes/exam-environment';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -174,6 +179,18 @@ export const build = async (
       await fastify.register(publicRoutes.authRoutes);
     }
   });
+
+  // NOTE: Code behind the `FREECODECAMP_NODE_ENV` var is not ready to be deployed yet.
+  if (FREECODECAMP_NODE_ENV !== 'production') {
+    void fastify.register(function (fastify, _opts, done) {
+      fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+
+      void fastify.register(examEnvironmentValidatedTokenRoutes);
+      done();
+    });
+    void fastify.register(examEnvironmentOpenRoutes);
+  }
+
   void fastify.register(publicRoutes.chargeStripeRoute);
   void fastify.register(publicRoutes.signoutRoute);
   void fastify.register(publicRoutes.emailSubscribtionRoutes);

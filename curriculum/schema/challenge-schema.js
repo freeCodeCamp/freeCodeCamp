@@ -140,6 +140,7 @@ const schema = Joi.object()
       is: [
         challengeTypes.step,
         challengeTypes.video,
+        challengeTypes.multipleChoice,
         challengeTypes.fillInTheBlank
       ],
       then: Joi.string().allow(''),
@@ -147,6 +148,10 @@ const schema = Joi.object()
     }),
     disableLoopProtectTests: Joi.boolean().required(),
     disableLoopProtectPreview: Joi.boolean().required(),
+    explanation: Joi.when('challengeType', {
+      is: [challengeTypes.multipleChoice, challengeTypes.fillInTheBlank],
+      then: Joi.string()
+    }),
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),

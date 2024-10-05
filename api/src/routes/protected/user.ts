@@ -1,5 +1,8 @@
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
+import _ from 'lodash';
+import { FastifyInstance, FastifyReply } from 'fastify';
+import jwt from 'jsonwebtoken';
 
 import * as schemas from '../../schemas';
 import { createResetProperties } from '../../utils/create-user';
@@ -16,11 +19,13 @@ import {
   normalizeTwitter,
   removeNulls
 } from '../../utils/normalize';
+import type { UpdateReqType } from '../../utils';
 import {
   getCalendar,
   getPoints,
   ProgressTimestamp
 } from '../../utils/progress';
+import { JWT_SECRET } from '../../utils/env';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -70,6 +75,9 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       });
       await fastify.prisma.user.delete({
         where: { id: req.user!.id }
+      });
+      await fastify.prisma.examEnvironmentAuthorizationToken.deleteMany({
+        where: { userId: req.user!.id }
       });
       reply.clearOurCookies();
 
@@ -356,8 +364,58 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.post(
+    '/user/exam-environment/token',
+    {
+      schema: schemas.userExamEnvironmentToken
+    },
+    examEnvironmentTokenHandler
+  );
+
   done();
 };
+
+// eslint-disable-next-line jsdoc/require-param
+/**
+ * Generate a new authorization token for the given user, and invalidates any existing tokens.
+ *
+ * Requires the user to be authenticated.
+ */
+async function examEnvironmentTokenHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.userExamEnvironmentToken>,
+  reply: FastifyReply
+) {
+  const userId = req.user?.id;
+  if (!userId) {
+    throw new Error('Unreachable. User should be authenticated.');
+  }
+  // Delete (invalidate) any existing tokens for the user.
+  await this.prisma.examEnvironmentAuthorizationToken.deleteMany({
+    where: {
+      userId
+    }
+  });
+
+  const token = await this.prisma.examEnvironmentAuthorizationToken.create({
+    data: {
+      createdDate: new Date(),
+      id: customNanoid(),
+      userId
+    }
+  });
+
+  const examEnvironmentAuthorizationToken = jwt.sign(
+    { examEnvironmentAuthorizationToken: token.id },
+    JWT_SECRET
+  );
+
+  void reply.send({
+    data: {
+      examEnvironmentAuthorizationToken
+    }
+  });
+}
 
 /**
  * Plugin containing GET routes for user account management. They are kept
