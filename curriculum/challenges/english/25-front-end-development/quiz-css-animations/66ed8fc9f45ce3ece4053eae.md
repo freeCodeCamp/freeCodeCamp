@@ -17,439 +17,429 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What property is missing to apply an animation to an element?
 
 #### --distractors--
 
-Placeholder distractor 1
+animation-iteration-count
 
 ---
 
-Placeholder distractor 2
+animation-delay
 
 ---
 
-Placeholder distractor 3
+animation-timing-function
 
 #### --answer--
 
-Placeholder answer
+animation-duration
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does this animation do to the div element?
 
 #### --distractors--
 
-Placeholder distractor 1
+Changes the position
 
 ---
 
-Placeholder distractor 2
+Resizes the element
 
 ---
 
-Placeholder distractor 3
+Rotates the element
 
 #### --answer--
 
-Placeholder answer
+Fades the element in
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property ensures the animation runs 3 times?
 
 #### --distractors--
 
-Placeholder distractor 1
+animation-repeat: 3
 
 ---
 
-Placeholder distractor 2
+animation-loop: 3
 
 ---
 
-Placeholder distractor 3
+animation-delay: 3
 
 #### --answer--
 
-Placeholder answer
+animation-iteration-count: 3
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which timing function makes the animation run with the same speed from start to end?
 
 #### --distractors--
 
-Placeholder distractor 1
+ease
 
 ---
 
-Placeholder distractor 2
+ease-in
 
 ---
 
-Placeholder distractor 3
+cubic-bezier
 
 #### --answer--
 
-Placeholder answer
+linear
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How long will the animation take to complete one cycle?
 
 #### --distractors--
 
-Placeholder distractor 1
+2 seconds
 
 ---
 
-Placeholder distractor 2
+ 6 seconds
 
 ---
 
-Placeholder distractor 3
+ It depends on the timing function
 
 #### --answer--
 
-Placeholder answer
+4 seconds
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the effect of this CSS code?
 
 #### --distractors--
 
-Placeholder distractor 1
+The element rotates once and stops after 2 seconds
 
 ---
 
-Placeholder distractor 2
+The element rotates and fades out
 
 ---
 
-Placeholder distractor 3
+The element will move left to right infinitely
 
 #### --answer--
 
-Placeholder answer
+The element rotates infinitely every 2 seconds
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property is controlling the starting delay of this animation?
 
 #### --distractors--
 
-Placeholder distractor 1
+animation-timing-function
 
 ---
 
-Placeholder distractor 2
+animation-duration
 
 ---
 
-Placeholder distractor 3
+animation-iteration-count
 
 #### --answer--
 
-Placeholder answer
+animation-delay
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How will this keyframe animation affect the element's color?
 
 #### --distractors--
 
-Placeholder distractor 1
+It will fade between red and blue.
 
 ---
 
-Placeholder distractor 2
+It will change the color instantly from red to blue.
 
 ---
 
-Placeholder distractor 3
+It will cycle through all colors.
+
 
 #### --answer--
 
-Placeholder answer
+It will change the color instantly from red to blue.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property will pause the animation?
 
 #### --distractors--
 
-Placeholder distractor 1
-
+animation-timing-function: paused
 ---
 
-Placeholder distractor 2
-
+animation-stop
 ---
 
-Placeholder distractor 3
+animation-direction: paused
 
 #### --answer--
 
-Placeholder answer
+animation-play-state: paused
+### --question--
+
+#### --text--
+
+What does the animation-fill-mode property do in this example?
+#### --distractors--
+
+Reverts to the initial style after animation
+---
+
+Loops the animation infinitely
+---
+
+Resets the element to its default state
+
+#### --answer--
+
+Keeps the final animation state after it finishes
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the purpose of alternate in this code?
 
 #### --distractors--
 
-Placeholder distractor 1
-
+The animation runs once, then stops
 ---
 
-Placeholder distractor 2
-
+The animation reverses at half time
 ---
 
-Placeholder distractor 3
+The animation applies in alternate frames
 
 #### --answer--
 
-Placeholder answer
+The animation changes direction every cycle
 
 ### --question--
 
 #### --text--
 
-Placeholder question
-
+Which property defines how an animation progresses over time?
 #### --distractors--
 
-Placeholder distractor 1
+
+animation-delay
 
 ---
 
-Placeholder distractor 2
-
+animation-fill-mode
 ---
 
-Placeholder distractor 3
+animation-iteration-count
 
 #### --answer--
 
-Placeholder answer
+animation-timing-function
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What effect does step-start have on the animation?
 
 #### --distractors--
 
-Placeholder distractor 1
+Smoothly transitions between steps
 
 ---
 
-Placeholder distractor 2
-
+Repeats the animation infinitely with no delay
 ---
 
-Placeholder distractor 3
+Fades in and out during each step
 
 #### --answer--
 
-Placeholder answer
+Jumps immediately to the next frame
+
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property controls the reverse animation direction in this example?
 
 #### --distractors--
 
-Placeholder distractor 1
-
+The animation will loop infinitely
 ---
 
-Placeholder distractor 2
-
+The animation will run forward then reverse
 ---
 
-Placeholder distractor 3
+The animation will reset after each iteration
 
 #### --answer--
 
-Placeholder answer
+The animation will run backward
 
 ### --question--
 
 #### --text--
 
-Placeholder question
-
+What will happen when this animation is applied?
 #### --distractors--
 
-Placeholder distractor 1
+ The element will move left
 
 ---
 
-Placeholder distractor 2
+The element will move 200px to the bottom
 
 ---
 
-Placeholder distractor 3
+The element will rotate 200 degrees
 
 #### --answer--
 
-Placeholder answer
+The element will move 200px to the right
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How will the animation behave if animation-iteration-count is set to infinite?
 
 #### --distractors--
 
-Placeholder distractor 1
+The animation will run once and stop
 
 ---
 
-Placeholder distractor 2
+The animation will pause after the first iteration
 
 ---
 
-Placeholder distractor 3
+The animation will stop after 3 iterations
 
 #### --answer--
 
-Placeholder answer
+The animation will repeat infinitely
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which keyframe selector defines the halfway point of an animation?
 
 #### --distractors--
 
-Placeholder distractor 1
+0%
 
 ---
 
-Placeholder distractor 2
+25%
 
 ---
 
-Placeholder distractor 3
+100%
 
 #### --answer--
 
-Placeholder answer
+50%
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you ensure an animation starts from the middle of its defined steps?
 
 #### --distractors--
 
-Placeholder distractor 1
+reverse
 
 ---
 
-Placeholder distractor 2
+forwards
+
 
 ---
 
-Placeholder distractor 3
+paused
 
 #### --answer--
 
-Placeholder answer
+backwards
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the effect of using the ease-in-out timing function?
 
 #### --distractors--
 
-Placeholder distractor 1
+The animation will start fast and end slow
 
 ---
 
-Placeholder distractor 2
+The animation will run at a constant speed
 
 ---
 
-Placeholder distractor 3
+The animation will loop infinitely
 
 #### --answer--
 
-Placeholder answer
+The animation will start slow, speed up, then slow down
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property prevents the animation from running immediately?
 
 #### --distractors--
 
-Placeholder distractor 1
+animation-fill-mode
 
 ---
 
-Placeholder distractor 2
+animation-timing-function
 
 ---
 
-Placeholder distractor 3
+animation-iteration-count
 
 #### --answer--
 
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+animation-delay
 
