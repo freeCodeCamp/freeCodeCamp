@@ -222,7 +222,10 @@ async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
 
 async function buildSuperBlocks({ path, fullPath }, curriculum) {
   const superBlock = getSuperBlockFromDir(getBaseDir(path));
-  curriculum[superBlock] = { blocks: {} };
+
+  if (superBlock) {
+    curriculum[superBlock] = { blocks: {} };
+  }
 
   const cb = (file, curriculum) => buildBlocks(file, curriculum, superBlock);
   return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);

@@ -62,7 +62,11 @@ describe('external curriculum data build', () => {
     ).map(file => file.path);
 
     fileArray
-      .filter(fileInArray => fileInArray !== 'available-superblocks.json')
+      .filter(
+        fileInArray =>
+          fileInArray !== 'available-superblocks.json' &&
+          fileInArray !== '.DS_Store'
+      )
       .forEach(fileInArray => {
         const fileContent = fs.readFileSync(
           `${clientStaticPath}/curriculum-data/${VERSION}/${fileInArray}`,

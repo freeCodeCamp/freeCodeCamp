@@ -91,7 +91,7 @@ const directoryToSuperblock = {
 
 function getSuperBlockFromDir(dir) {
   const superBlock = directoryToSuperblock[dir];
-  if (!superBlock) throw Error(`${dir} does not map to a superblock`);
+  if (!superBlock) return null;
   return directoryToSuperblock[dir];
 }
 

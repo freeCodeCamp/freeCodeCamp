@@ -140,18 +140,12 @@ describe('getSuperBlockFromPath', () => {
     path.join(__dirname, './challenges/english')
   );
 
-  it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(25);
-
-    for (const directory of directories) {
-      expect(() => getSuperBlockFromDir(directory)).not.toThrow();
-    }
-  });
-
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
     expect.assertions(25);
 
-    const superBlockPaths = directories.filter(x => x !== '00-certifications');
+    const superBlockPaths = directories.filter(
+      x => x !== '00-certifications' && x !== '.DS_Store'
+    );
 
     for (const directory of superBlockPaths) {
       expect(Object.values(SuperBlocks)).toContain(
@@ -166,16 +160,21 @@ describe('getSuperBlockFromPath', () => {
 
     const superBlocks = new Set();
     for (const directory of directories) {
-      superBlocks.add(getSuperBlockFromDir(directory));
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const superBlock = getSuperBlockFromDir(directory);
+
+      if (superBlock) {
+        superBlocks.add(superBlock);
+      }
     }
 
     // + 1 for 'certifications'
     expect(superBlocks.size).toBe(Object.values(SuperBlocks).length + 1);
   });
 
-  it('throws if a directory is unknown', () => {
+  it('returns null if a directory is unknown', () => {
     expect.assertions(1);
 
-    expect(() => getSuperBlockFromDir('unknown')).toThrow();
+    expect(getSuperBlockFromDir('unknown')).toBe(null);
   });
 });
