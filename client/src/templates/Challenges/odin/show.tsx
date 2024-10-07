@@ -79,7 +79,6 @@ interface ShowOdinProps {
 interface ShowOdinState {
   subtitles: string;
   downloadURL: string | null;
-  selectedOption: number | null;
   selectedMcqOptions: (number | null)[];
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
@@ -108,7 +107,6 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     this.state = {
       subtitles: '',
       downloadURL: null,
-      selectedOption: null,
       selectedMcqOptions: questions.map(() => null),
       submittedMcqAnswers: questions.map(() => null),
       showFeedback: false,

@@ -115,10 +115,6 @@ input:focus-visible + .video-quiz-input-visible {
   background: none;
 }
 
-/* .multiple-choice-feedback p {
-  margin-bottom: 0;
-} */
-
 .mcq-correct-border {
   border-left-color: var(--success-background);
 }
@@ -128,19 +124,17 @@ input:focus-visible + .video-quiz-input-visible {
 }
 
 .mcq-correct {
-  /* background-color: var(--success-background); */
   color: var(--success-color);
   border-left-color: var(--success-background);
 }
 
 .mcq-incorrect {
-  /* background-color: var(--danger-background); */
   color: var(--danger-color);
   border-left-color: var(--danger-background);
 }
 
 .mcq-hide-border {
-  border-bottom: none !important;
+  border-bottom: none;
 }
 
 .mcq-answer {

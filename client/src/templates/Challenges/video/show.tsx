@@ -76,7 +76,6 @@ interface ShowVideoProps {
 interface ShowVideoState {
   subtitles: string;
   downloadURL: string | null;
-  selectedOption: number | null;
   selectedMcqOptions: (number | null)[];
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
@@ -102,7 +101,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     this.state = {
       subtitles: '',
       downloadURL: null,
-      selectedOption: null,
       selectedMcqOptions: questions.map(() => null),
       submittedMcqAnswers: questions.map(() => null),
       showFeedback: false,
