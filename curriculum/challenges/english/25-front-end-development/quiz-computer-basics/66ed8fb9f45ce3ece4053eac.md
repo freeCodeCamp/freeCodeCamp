@@ -303,7 +303,7 @@ Which of the following is not a configuration file?
 
 #### --text--
 
-A piece of software that allows you to look at online content is called a
+A piece of software that allows you to look at online content is called a:
 
 #### --distractors--
 
