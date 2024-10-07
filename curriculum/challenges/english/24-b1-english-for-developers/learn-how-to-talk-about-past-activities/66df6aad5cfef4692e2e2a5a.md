@@ -21,7 +21,7 @@ In Linda's sentence, `as more users navigate the updated interface,` `as` shows 
 
 # --instructions--
 
-Listen to the audio and fill in the blanks with the correct words.
+Listen to the audio and complete the sentence below.
 
 # --fillInTheBlank--
 
