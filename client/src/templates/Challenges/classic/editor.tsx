@@ -27,7 +27,6 @@ import {
 } from '../../../redux/selectors';
 import {
   ChallengeFiles,
-  ChallengeTest,
   Dimensions,
   FileKey,
   ResizeProps,
@@ -150,7 +149,7 @@ const mapStateToProps = createSelector(
     isResetting: boolean,
     isSignedIn: boolean,
     { theme }: { theme: Themes },
-    tests: [{ text: string; testString: string }],
+    tests: [{ text: string; testString: string; message?: string }],
     isChallengeCompleted: boolean
   ) => ({
     attempts,
@@ -1276,11 +1275,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         ? 'vs-custom'
         : editorSystemTheme;
 
-  const isFailedChallengeTest = (test: Test): test is ChallengeTest =>
-    !!test.err && 'text' in test;
-  const firstFailedTest = props.tests.find<ChallengeTest>(test =>
-    isFailedChallengeTest(test)
-  );
+  const firstFailedTest = props.tests.find(test => !!test.err);
 
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
@@ -1299,7 +1294,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             openHelpModal={props.openHelpModal}
             openResetModal={props.openResetModal}
             tryToExecuteChallenge={tryToExecuteChallenge}
-            hint={firstFailedTest?.text}
+            hint={firstFailedTest?.message}
             testsLength={props.tests.length}
             attempts={attemptsRef.current}
             challengeIsCompleted={challengeIsComplete()}
