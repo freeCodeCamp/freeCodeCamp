@@ -61,7 +61,7 @@ Which property and attribute are used to turn an element into a grid container?
 
 #### --text--
 
-Which one of these options for `grid-template-columns` property will result in a middle column that is 80 characters wide, and two columns taking up the remaining space?
+Which one of these options for `grid-template-columns` property will result in a middle column that is 80 relative units wide, and two columns taking up the remaining space?
 
 #### --distractors--
 
