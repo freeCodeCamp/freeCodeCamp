@@ -14,6 +14,10 @@ type MultipleChoiceQuestionsProps = {
   showFeedback: boolean;
 };
 
+function removeParagraphTags(text: string): string {
+  return text.replace(/^<p>|<\/p>$/g, '');
+}
+
 function MultipleChoiceQuestions({
   questions,
   selectedOptions,
@@ -30,44 +34,61 @@ function MultipleChoiceQuestions({
         <div key={questionIndex}>
           <PrismFormatted className={'line-numbers'} text={question.text} />
           <div className='video-quiz-options'>
-            {question.answers.map(({ answer }, answerIndex) => (
-              <label
-                className='video-quiz-option-label'
-                key={answerIndex}
-                htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
-              >
-                <input
-                  name='quiz'
-                  checked={selectedOptions[questionIndex] === answerIndex}
-                  className='sr-only'
-                  onChange={() =>
-                    handleOptionChange(questionIndex, answerIndex)
-                  }
-                  type='radio'
-                  value={answerIndex}
-                  id={`mc-question-${questionIndex}-answer-${answerIndex}`}
-                />{' '}
-                <span className='video-quiz-input-visible'>
-                  {selectedOptions[questionIndex] === answerIndex ? (
-                    <span className='video-quiz-selected-input' />
-                  ) : null}
-                </span>
-                <PrismFormatted
-                  className={'video-quiz-option'}
-                  text={answer.replace(/^<p>|<\/p>$/g, '')}
-                  useSpan
-                  noAria
-                />
-                {showFeedback &&
-                  submittedMcqAnswers[questionIndex] === answerIndex && (
-                    <div>
-                      {questions[questionIndex].answers[answerIndex].feedback
-                        ? questions[questionIndex].answers[answerIndex].feedback
-                        : 'Feedback YO!'}
+            {question.answers.map(({ answer }, answerIndex) => {
+              const isSubmittedAnswer =
+                submittedMcqAnswers[questionIndex] === answerIndex;
+              const feedback =
+                questions[questionIndex].answers[answerIndex].feedback;
+              const isCorrect =
+                submittedMcqAnswers[questionIndex] ===
+                // -1 because the solution is 1-indexed
+                questions[questionIndex].solution - 1;
+
+              return (
+                <>
+                  <label
+                    className={`video-quiz-option-label 
+                      ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
+                      ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
+                    key={answerIndex}
+                    htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                  >
+                    <input
+                      name='quiz'
+                      checked={selectedOptions[questionIndex] === answerIndex}
+                      className='sr-only'
+                      onChange={() =>
+                        handleOptionChange(questionIndex, answerIndex)
+                      }
+                      type='radio'
+                      value={answerIndex}
+                      id={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                    />{' '}
+                    <span className='video-quiz-input-visible'>
+                      {selectedOptions[questionIndex] === answerIndex ? (
+                        <span className='video-quiz-selected-input' />
+                      ) : null}
+                    </span>
+                    <PrismFormatted
+                      className={'video-quiz-option'}
+                      text={removeParagraphTags(answer)}
+                      useSpan
+                      noAria
+                    />
+                  </label>
+                  {showFeedback && isSubmittedAnswer && (
+                    <div
+                      className={`video-quiz-option-label mcq-answer ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
+                    >
+                      {isCorrect
+                        ? t('learn.quiz.correct-answer')
+                        : t('learn.quiz.incorrect-answer')}
+                      {feedback && ` ${removeParagraphTags(feedback)}`}
                     </div>
                   )}
-              </label>
-            ))}
+                </>
+              );
+            })}
           </div>
           <Spacer size='medium' />
         </div>

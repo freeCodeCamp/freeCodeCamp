@@ -488,8 +488,8 @@
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
     "quiz": {
-      "correct-answer": "Correct",
-      "incorrect-answer": "Incorrect",
+      "correct-answer": "Correct!",
+      "incorrect-answer": "Incorrect.",
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
     },

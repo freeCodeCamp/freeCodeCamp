@@ -79,7 +79,6 @@ interface ShowVideoState {
   selectedOption: number | null;
   selectedMcqOptions: (number | null)[];
   submittedMcqAnswers: (number | null)[];
-  showWrong: boolean;
   showFeedback: boolean;
   videoIsLoaded: boolean;
 }
@@ -106,7 +105,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       selectedOption: null,
       selectedMcqOptions: questions.map(() => null),
       submittedMcqAnswers: questions.map(() => null),
-      showWrong: false,
       showFeedback: false,
       videoIsLoaded: false
     };
