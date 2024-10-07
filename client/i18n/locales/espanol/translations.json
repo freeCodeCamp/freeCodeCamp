@@ -200,6 +200,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Comparte tus proyectos, artículos o pull request aceptados que no sean de FreeCodeCamp.",
     "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu cartera pública de freeCodeCamp. Pulsa guardar para guardar tus cambios.",
     "data": "Para ver qué datos tenemos en tu cuenta, haz clic en el botón \"Descarga tus datos\" a continuación",
@@ -332,7 +333,8 @@
     "total-points": "Puntos en total:",
     "points": "{{count}} punto en {{date}}",
     "points_plural": "{{count}} puntos en {{date}}",
-    "page-number": "{{pageNumber}} de {{totalPages}}"
+    "page-number": "{{pageNumber}} de {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp es una organización 501(c)(3) exenta de impuestos y sin fines de lucro respaldada por donaciones (Número de Identificación Tributaria Federal de los Estados Unidos: 82-0779546).",
@@ -386,6 +388,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "Asignaciones",
     "question": "Pregunta",
+    "explanation": "Explanation",
     "solution-link": "Enlace a la solución",
     "source-code-link": "Enlace al código fuente",
     "ms-link": "Link de Microsoft",
@@ -397,6 +400,7 @@
     "running-tests": "// ejecutando pruebas",
     "tests-completed": "// pruebas completadas",
     "console-output": "// salida de consola",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Tu código provocó un error antes de que se pudieran ejecutar las pruebas. Por favor, corrígelo y vuelve a intentarlo.",
     "indentation-error": "Tu código tiene un error de identación. Puede que necesites añadir <code>pass</code> en una nueva línea para formar un bloque de código válido.",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
@@ -689,7 +693,10 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Encuentra + 10,700 Tutoriales",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -771,7 +778,8 @@
     "code-example": "ejemplo de código de {{codeName}}",
     "opens-new-window": "Abrir en una nueva ventana",
     "rsa-checkbox": "He probado el método Leer-Buscar-Preguntar",
-    "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro"
+    "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica",
