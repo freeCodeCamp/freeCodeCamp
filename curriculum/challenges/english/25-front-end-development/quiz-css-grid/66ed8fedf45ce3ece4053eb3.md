@@ -281,7 +281,7 @@ Which property and value will make an element span the full width of the grid?
 
 #### --text--
 
-What does `grid-auto-flow` property do?
+What does the `grid-auto-flow` property do?
 
 #### --distractors--
 
