@@ -137,6 +137,14 @@ input:focus-visible + .video-quiz-input-visible {
   border-bottom: none;
 }
 
-.mcq-answer {
+.mcq-feedback {
   border-top: none;
+}
+
+.mcq-prism-correct code {
+  color: var(--success-color);
+}
+
+.mcq-prism-incorrect code {
+  color: var(--danger-color);
 }

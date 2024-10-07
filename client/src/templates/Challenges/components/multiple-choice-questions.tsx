@@ -78,12 +78,26 @@ function MultipleChoiceQuestions({
                   </label>
                   {showFeedback && isSubmittedAnswer && (
                     <div
-                      className={`video-quiz-option-label mcq-answer ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
+                      className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
                     >
                       {isCorrect
                         ? t('learn.quiz.correct-answer')
                         : t('learn.quiz.incorrect-answer')}
-                      {feedback && ` ${removeParagraphTags(feedback)}`}
+                      {feedback && (
+                        <>
+                          <span>&nbsp;</span>
+                          <PrismFormatted
+                            className={
+                              isCorrect
+                                ? 'mcq-prism-correct'
+                                : 'mcq-prism-incorrect'
+                            }
+                            text={removeParagraphTags(feedback)}
+                            useSpan
+                            noAria
+                          />
+                        </>
+                      )}
                     </div>
                   )}
                 </>
