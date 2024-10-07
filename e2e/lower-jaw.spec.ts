@@ -195,3 +195,25 @@ test('should display the text of submit and go to next challenge button accordin
     ).toBeVisible();
   }
 });
+
+test('Hint text should not contain placeholders `fcc-expected`', async ({
+  page,
+  isMobile,
+  browserName
+}) => {
+  await page.goto(
+    'learn/2022/responsive-web-design/learn-css-transforms-by-building-a-penguin/step-4'
+  );
+  const editor = getEditors(page);
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+  await checkButton.click();
+  await focusEditor({ page, isMobile });
+  await clearEditor({ page, browserName });
+
+  await editor.fill(
+    'body{background:linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));margin:0;padding:0;}'
+  );
+
+  const hintDescription = page.getByTestId('lowerJaw-failing-hint');
+  await expect(hintDescription).not.toContainText('`--fcc-expected--`');
+});
