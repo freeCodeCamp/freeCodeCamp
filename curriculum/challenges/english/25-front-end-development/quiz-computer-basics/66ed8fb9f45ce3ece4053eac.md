@@ -347,7 +347,7 @@ Search Engine
 
 #### --text--
 
-A set of one or more web pages under one domain name is called a
+A set of one or more web pages under one domain name is called a:
 
 #### --distractors--
 
