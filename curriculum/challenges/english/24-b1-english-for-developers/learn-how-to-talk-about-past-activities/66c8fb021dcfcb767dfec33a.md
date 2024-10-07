@@ -6,15 +6,15 @@ dashedName: task-16
 ---
 <!-- (Audio) Linda: No, we haven't. But we've solved similar issues on other projects. -->
 
-# --description--
+# --instructions--
 
-Linda acknowledges that they have not fixed the exact issue James is asking about. However, she adds that they have experience solving similar problems in the past. 
+Listen to the audio and answer the question below.
 
-# --question--
+# --questions--
 
 ## --text--
 
-Based on what Linda is saying, which of the statements below is true?
+Which statement below is true?
 
 ## --answers--
 
@@ -47,3 +47,68 @@ Reflect on whether Linda is talking about having fixed this exact issue or somet
 ## --video-solution--
 
 3
+
+# --explanation--
+
+To find the correct answer, focus on whether Linda is talking about fixing the `exact issue` or `similar issues`. 
+
+Linda makes it clear that they haven't fixed this exact problem before, but she also mentions that they have solved similar issues in the past. 
+
+The correct answer should show this balance—acknowledging no exact match but confirming past experience with related problems.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "interview-room3.png",
+    "characters": [
+      {
+        "character": "Linda",
+        "position": {
+          "x": 50,
+          "y": 0,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_3-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 17.02,
+      "finishTimestamp": 20.16
+    }
+  },
+  "commands": [
+    {
+      "character": "Linda",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Linda",
+      "startTime": 1,
+      "finishTime": 1.86,
+      "dialogue": {
+        "text": "No, we haven't,",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Linda",
+      "startTime": 1.9,
+      "finishTime": 4.14,
+      "dialogue": {
+        "text": "but we've solved similar issues on other projects.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Linda",
+      "opacity": 0,
+      "startTime": 4.64
+    }
+  ]
+}
+```

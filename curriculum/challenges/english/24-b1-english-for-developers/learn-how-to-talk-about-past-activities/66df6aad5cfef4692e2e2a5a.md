@@ -9,7 +9,7 @@ AUDIO REFERENCE:
 Linda: Not yet, but I anticipate we'll start receiving more detailed reports as more users navigate the updated interface.
 -->
 
-# --description--
+# --explanation--
 
 `As` can be used to mean "while" or "when," showing that one action will happen while another action is taking place.For example:
 

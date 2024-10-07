@@ -10,7 +10,7 @@ Bob: That's great to hear. Are all updated elements performing well across devic
 Linda: Yes. The navigation bar and footer adjustments have already made a big difference.
 -->
 
-# --description--
+# --explanation--
 
 To know if something is performing well, look for words or phrases that indicate a good result or improvement. 
 
@@ -18,7 +18,11 @@ In Linda's reply, she uses the phrase `have already made a big difference.` The 
 
 So, Linda's response indicates that the updated elements are working well and have improved the situation.
 
-# --question--
+# --instructions--
+
+Listen to the audio and answer the question below.
+
+# --questions--
 
 ## --text--
 
