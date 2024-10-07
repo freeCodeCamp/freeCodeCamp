@@ -105,7 +105,7 @@ Specifies the number and heights of the rows in a grid layout.
 
 #### --text--
 
-What does `minmax()` function do?
+What does the `minmax()` function do?
 
 #### --distractors--
 
