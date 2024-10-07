@@ -191,7 +191,7 @@ test.describe('Email sign-up page when user is signed in', () => {
     // to update both `acceptedPrivacyTerms` and `sendQuincyEmail`.
     // But `sendQuincyEmail` is not set in the DB since the endpoint is mocked,
     // so we are overriding the user data once again to mimic the real behavior.
-    await page.route('*/**/user/get-session-user', async route => {
+    await page.route('*/**/user/session-user', async route => {
       const response = await route.fetch();
       const json = await response.json();
 

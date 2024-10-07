@@ -34,7 +34,7 @@ export { updateMyUsername } from './schemas/settings/update-my-username';
 export { deleteMsUsername } from './schemas/user/delete-ms-username';
 export { deleteMyAccount } from './schemas/user/delete-my-account';
 export { deleteUserToken } from './schemas/user/delete-user-token';
-export { getSessionUser } from './schemas/user/get-session-user';
+export { getSessionUser } from './schemas/user/session-user';
 export { postMsUsername } from './schemas/user/post-ms-username';
 export { reportUser } from './schemas/user/report-user';
 export { resetMyProgress } from './schemas/user/reset-my-progress';

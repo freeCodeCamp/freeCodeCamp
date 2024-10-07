@@ -45,7 +45,7 @@ function bootUser(app) {
   const deleteUserSurveys = createDeleteUserSurveys(app);
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
-  api.get('/user/get-session-user', getSessionUser);
+  api.get('/user/session-user', getSessionUser);
   api.post(
     '/account/delete',
     ifNoUser401,

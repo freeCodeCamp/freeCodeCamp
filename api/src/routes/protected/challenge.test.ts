@@ -33,7 +33,7 @@ import {
   type ExamSubmission
 } from '../../../__mocks__/exam';
 import { Answer } from '../../utils/exam-types';
-import type { getSessionUser } from '../../schemas/user/get-session-user';
+import type { getSessionUser } from '../../schemas/user/session-user';
 
 jest.mock('../helpers/challenge-helpers', () => {
   const originalModule = jest.requireActual<
@@ -1516,7 +1516,7 @@ describe('challengeRoutes', () => {
             (typeof getSessionUser)['response']['200']
           >['user'];
 
-          const res = (await superGet('/user/get-session-user')).body as {
+          const res = (await superGet('/user/session-user')).body as {
             user: GetSessionUserResponseBody;
           };
 

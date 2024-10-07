@@ -161,7 +161,7 @@ function mapKeyToFileKey<K>(
 export function getSessionUser(): Promise<ResponseWithData<SessionUser>> {
   const responseWithData: Promise<
     ResponseWithData<ApiUser & ApiSessionResponse>
-  > = get('/user/get-session-user');
+  > = get('/user/session-user');
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
   return responseWithData.then(({ response, data }) => {
     const { result, user } = parseApiResponseToClientUser(data);

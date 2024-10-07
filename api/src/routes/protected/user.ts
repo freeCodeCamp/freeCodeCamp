@@ -431,7 +431,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.get(
-    '/user/get-session-user',
+    '/user/session-user',
     {
       schema: schemas.getSessionUser
     },
