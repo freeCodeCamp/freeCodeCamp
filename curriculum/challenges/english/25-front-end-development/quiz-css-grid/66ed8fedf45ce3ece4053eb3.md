@@ -127,7 +127,7 @@ Defines a size range between the first and second value.
 
 #### --text--
 
-What is the shorthand for `column_gap` and `row_gap` properties?
+What is the shorthand for the `column-gap` and `row-gap` properties?
 
 #### --distractors--
 
