@@ -171,7 +171,7 @@ Which property defines on which row line the item will start?
 
 #### --text--
 
-Which property sets a size for the rows in a grid container?
+Which property automatically allocates rows based on a fixed size?
 
 #### --distractors--
 
@@ -329,19 +329,19 @@ Which one of these options is NOT a unit used for the `gap` property?
 
 #### --distractors--
 
-px
+`px`
 
 ---
 
-%
+`%`
 
 ---
 
-em
+`em`
 
 #### --answer--
 
-fr
+`fr`
 
 ### --question--
 
