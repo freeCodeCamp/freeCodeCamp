@@ -130,7 +130,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
   const [isDonationClosed, setIsDonationClosed] = useState(false);
-
+  const certWrapper = document.getElementById('cert-wrapper')!;
   useEffect(() => {
     const { username, certSlug, isValidCert, showCert } = props;
     if (isValidCert) {
@@ -140,10 +140,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    const certWrapper = document.getElementById('cert-wrapper')!;
     htmlToImage
       .toPng(certWrapper)
       .then(function (dataUrl) {
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        document.body.appendChild(img);
+
         const twitterImage = document.querySelector(
           'meta[name="twitter:image:src"]'
         );
@@ -154,7 +157,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       .catch(function () {
         // TODO: properly log this
       });
-  });
+  }, [certWrapper]);
 
   useEffect(() => {
     const {
