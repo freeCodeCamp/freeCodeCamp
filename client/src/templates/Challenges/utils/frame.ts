@@ -88,6 +88,11 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 
 export const createHeader = (id = mainPreviewId) => `
   <base href='' />
+  <style>
+    head *, title, meta, link, script {
+      display: none !important;
+    }
+  </style>
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg) {
