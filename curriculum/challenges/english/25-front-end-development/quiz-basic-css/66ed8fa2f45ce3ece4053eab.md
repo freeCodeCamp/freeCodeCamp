@@ -337,7 +337,7 @@ Targets elements that have children on the page.
 
 ---
 
-Targets all `<p>` elements on the page.
+Targets all `p` elements on the page.
 
 #### --answer--
 
