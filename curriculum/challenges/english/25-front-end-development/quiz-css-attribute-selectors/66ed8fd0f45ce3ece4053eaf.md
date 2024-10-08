@@ -90,23 +90,30 @@ Which of the following will not run as expected with this style?
 
 #### --text--
 
-Placeholder question
+Which selector will target all elements with a `lang` attribute starting with "`fr`"?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+[lang*="fr"] { color: blue; }
+```
+
+---
+```css
+[lang="fr"] { color: blue; }
+```
 
 ---
 
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
+```css
+[lang~="fr"] { color: blue; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+[lang^="fr"] { color: blue; }
+```
 
 ### --question--
 
