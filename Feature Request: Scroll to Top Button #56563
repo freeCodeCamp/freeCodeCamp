@@ -1,0 +1,56 @@
+1.Feature request related to problem?
+No. However, users may face difficulty navigating long articles or curriculum pages, especially when they have to scroll through a lot of content. This can make the experience less user-friendly, requiring extra effort to scroll back up.
+
+
+
+Example CSS for the button:
+
+css
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: #0a0a23;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 1000;
+}
+#scrollTopBtn:hover {
+  background-color: #555;
+}
+
+
+
+JavaScript to enable the button:
+
+javascript
+// Show button after scrolling 100px
+window.onscroll = function() {
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollTopBtn.style.display = 'block';
+  } else {
+    scrollTopBtn.style.display = 'none';
+  }
+};
+
+// Scroll to top when clicked
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+
+3. Alternatives considered:
+Another option could be a navigation menu or table of contents that shows the major sections of the page, enabling users to jump to different parts of an article or lesson without scrolling manually.
+
+Sectioned navigation: On larger articles, a collapsible sidebar or fixed navigation menu could list the headings and subheadings, allowing for quick jumps between sections.
+Alternative button placement: Instead of the bottom-right corner, the scroll-to-top button could be integrated into the footer or a floating header.
+Both the scroll-to-top button and navigation menu can coexist for even better user experience, allowing users both ease of access and section-wise navigation.
+
+
+This enhancement would simplify the reading experience, especially when browsing long curriculum lessons or articles, saving time and improving overall usability. Let me know if you need help writing the code for the navigation menu or anything else related to this!
