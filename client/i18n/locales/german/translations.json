@@ -200,6 +200,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Teile deine nicht-freeCodeCamp-Projekte, Artikel oder akzeptierte Pull-Requests.",
     "privacy": "Die Einstellungen in diesem Abschnitt ermöglichen es dir, zu kontrollieren, was in deinem öffentlichen freeCodeCamp-Portfolio angezeigt wird. Drücke auf Speichern, um deine Änderungen zu speichern.",
     "data": "Um zu sehen, welche Daten wir in deinem Konto vorhalten, klicke auf den \"Deine Daten herunterladen\" Button unten",
@@ -332,7 +333,8 @@
     "total-points": "Total Points:",
     "points": "{{count}} Punkt am {{date}}",
     "points_plural": "{{count}} Punkte am {{date}}",
-    "page-number": "{{pageNumber}} von {{totalPages}}"
+    "page-number": "{{pageNumber}} von {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -386,6 +388,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "Assignments",
     "question": "Question",
+    "explanation": "Explanation",
     "solution-link": "Lösungs-Link",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
@@ -397,6 +400,7 @@
     "running-tests": "// Tests werden durchgeführt",
     "tests-completed": "// Tests abgeschlossen",
     "console-output": "// Konsolen-Ausgabe",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Melde dich an, um deinen Fortschritt zu speichern",
@@ -689,7 +693,10 @@
   },
   "search": {
     "label": "Suchen",
-    "placeholder": "Search 10,700+ tutorials",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "Alle Ergebnisse für {{searchQuery}} ansehen",
     "no-tutorials": "Keine Tutorials gefunden",
     "try": "Suchst du nach etwas? Versuche es mit der Suchleiste auf dieser Seite.",
@@ -771,7 +778,8 @@
     "code-example": "{{codeName}} code example",
     "opens-new-window": "Opens in new window",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
