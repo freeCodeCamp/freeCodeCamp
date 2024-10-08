@@ -259,7 +259,7 @@ Blockline elements start on a new line with margin before and after the element.
 
 #### --text--
 
-What statement is TRUE when using the `inline-block` rule?
+What statement is TRUE when using the `inline-block` value?
 
 #### --distractors--
 
