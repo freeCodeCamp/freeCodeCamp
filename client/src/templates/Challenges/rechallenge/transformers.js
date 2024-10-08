@@ -103,11 +103,11 @@ const testJS = matchesProperty('ext', 'js');
 const testJSX = matchesProperty('ext', 'jsx');
 const testTypeScript = matchesProperty('ext', 'ts');
 const testHTML = matchesProperty('ext', 'html');
-const testHTML$JS$JSX = overSome(testHTML, testJS, testJSX);
+const testHTML$JS$JSX$TS = overSome(testHTML, testJS, testJSX, testTypeScript);
 
 const replaceNBSP = cond([
   [
-    testHTML$JS$JSX,
+    testHTML$JS$JSX$TS,
     partial(transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]
