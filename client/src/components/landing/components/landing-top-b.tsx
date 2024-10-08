@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Container, Col, Row } from '@freecodecamp/ui';
 import { clientLocale } from '../../../../config/env.json';
 import {
@@ -13,10 +13,9 @@ import {
 } from '../../../assets/images/components';
 import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
-import UIImages from './ui-images';
+import CampersImage from './campers-image';
 
 const LogoRow = (): JSX.Element => {
-  const { t } = useTranslation();
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
   );
@@ -27,9 +26,8 @@ const LogoRow = (): JSX.Element => {
         className='logo-row-title'
         data-playwright-test-label='landing-h2-heading-b'
       >
-        {t('landing.h2-heading-b')}
+        <Trans>landing.h2-heading-b</Trans>
       </p>
-      <Spacer size='small' />
       <ul
         className='logo-row'
         data-playwright-test-label='brand-logo-container'
@@ -58,10 +56,10 @@ function LandingTop(): JSX.Element {
 
   return (
     <Container fluid={true} className='gradient-container'>
-      <Container className='landing-top'>
+      <Container className='landing-top landing-top-b'>
+        <Spacer size='medium' />
         <Row>
-          <Spacer size='medium' />
-          <Col lg={6} sm={12} xs={12}>
+          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
             <h1
               id='content-start'
               className='mega-heading'
@@ -87,18 +85,15 @@ function LandingTop(): JSX.Element {
             >
               {t('landing.big-heading-4')}
             </p>
-
+            <LogoRow />
             <Spacer size='medium' />
-            <BigCallToAction text={t('buttons.get-started')} />
-          </Col>
-          <Col lg={6}>
-            <UIImages />
+            <BigCallToAction />
           </Col>
         </Row>
         <Row>
-          <Spacer size='large' />
-          <Col xs={12}>
-            <LogoRow />
+          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+            <CampersImage />
+            <Spacer size='medium' />
           </Col>
         </Row>
       </Container>
