@@ -385,7 +385,7 @@ Improves Search Emgine Optimiztion (SEO).
 
 #### --answer--
 
-Determines styles of the element based on specificity and order of they appear from top to bottom.
+Determines styles of the element based on specificity and order of declaration.
 
 ### --question--
 
