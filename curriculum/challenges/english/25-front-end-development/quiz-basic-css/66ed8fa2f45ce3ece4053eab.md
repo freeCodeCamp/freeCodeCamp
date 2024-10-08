@@ -171,7 +171,7 @@ Which selector is correct to target `h1` elements inside of a `div`?
 
 #### --text--
 
-Which rule is correct to target direct children of a `<footer>`?
+Which selector is correct to target direct children of a `footer`?
 
 #### --distractors--
 
