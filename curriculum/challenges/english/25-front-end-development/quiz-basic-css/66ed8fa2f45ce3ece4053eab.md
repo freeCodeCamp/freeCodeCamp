@@ -413,7 +413,7 @@ Which rule applies `32px` of margin to all sides?
 
 #### --text--
 
-Which rule applies 24px padding to the top and bottom?
+Which rule applies `24px` padding to the top and bottom?
 
 #### --distractors--
 
