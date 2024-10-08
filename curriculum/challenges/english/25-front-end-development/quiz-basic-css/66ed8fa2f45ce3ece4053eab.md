@@ -363,7 +363,7 @@ Applies on to a certain selector or group of elements.
 
 #### --answer--
 
-Overrides any other styles that the property is used on.
+Overrides any other values applied to the property for that selector.
 
 ### --question--
 
