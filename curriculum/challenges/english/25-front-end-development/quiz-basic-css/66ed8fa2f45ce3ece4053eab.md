@@ -121,7 +121,7 @@ In the `body` element
 
 #### --answer--
 
-`<head>`
+In the `head` element
 
 ### --question--
 
