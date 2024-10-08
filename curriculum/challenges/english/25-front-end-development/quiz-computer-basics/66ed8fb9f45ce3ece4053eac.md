@@ -171,7 +171,7 @@ Windows File Explorer
 
 #### --text--
 
-What is something you should avoid when making file names?
+What is something you should avoid when naming files?
 
 #### --distractors--
 
