@@ -281,7 +281,7 @@ Allows you to place elements next to each other while letting you set the height
 
 #### --text--
 
-Given the following selectors, which has the highest priority?
+Given the following selectors, which has the highest specificity?
 
 #### --distractors--
 
