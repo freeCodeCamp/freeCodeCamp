@@ -312,6 +312,9 @@ const CareerTimeline = ({
         {isSessionUser && (
           <Button
             className='edit-btn'
+            disabled={isAdding || isEditing}
+            aria-disabled={isAdding || isEditing}
+            aria-label={t('profile.job-add')}
             onClick={() => {
               setIsAdding(true);
             }}
@@ -373,6 +376,9 @@ const CareerTimeline = ({
                     {isSessionUser && (
                       <Button
                         className='edit-btn'
+                        aria-label={t('profile.job-edit', {
+                          company: job.company
+                        })}
                         onClick={() => {
                           setIsEditing(true);
                           setSelectedIndex(index);

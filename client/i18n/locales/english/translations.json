@@ -346,6 +346,8 @@
     "job-description": "Description",
     "job-delete-heading": "Delete Job from Career?",
     "job-delete": "Are you sure you want to delete this job from your career?",
+    "job-edit": "Edit Job at {{company}}",
+    "job-add": "Add a new Job to Career",
     "edit-my-profile": "Edit My Profile"
   },
   "footer": {
