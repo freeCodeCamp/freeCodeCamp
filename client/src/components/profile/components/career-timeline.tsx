@@ -16,6 +16,36 @@ import './career-timeline.css';
 import { Career } from '../../../redux/prop-types';
 import { parseDate } from './utils';
 
+interface DeleteModalProps {
+  isDeleting: boolean;
+  selectedIndex: number;
+  setSelectedIndex: (value: number) => void;
+  setIsDeleting: (value: boolean) => void;
+  setMyCareer: (value: Career[]) => void;
+  updateMyCareer: (value: { career: Career[] }) => void;
+  myCareer: Career[];
+  t: TFunction;
+}
+
+interface EditCareerTimelineProps {
+  myCareer: Career[];
+  selectedIndex: number;
+  setIsAdding: (value: boolean) => void;
+  isAdding: boolean;
+  isEditing: boolean;
+  setSelectedIndex: (value: number) => void;
+  setIsEditing: (value: boolean) => void;
+  setMyCareer: (value: Career[]) => void;
+  updateMyCareer: (value: { career: Career[] }) => void;
+  t: TFunction;
+}
+
+interface CareerTimelineProps {
+  career: Career[];
+  isSessionUser: boolean;
+  updateMyCareer: (value: { career: Career[] }) => void;
+}
+
 const DeleteModal = ({
   isDeleting,
   selectedIndex,
@@ -25,16 +55,7 @@ const DeleteModal = ({
   updateMyCareer,
   myCareer,
   t
-}: {
-  isDeleting: boolean;
-  selectedIndex: number;
-  setSelectedIndex: (value: number) => void;
-  setIsDeleting: (value: boolean) => void;
-  setMyCareer: (value: Career[]) => void;
-  updateMyCareer: (value: { career: Career[] }) => void;
-  myCareer: Career[];
-  t: TFunction;
-}) => {
+}: DeleteModalProps) => {
   const handleDelete = (selectedIndex: number) => {
     const updatedCareer = myCareer.filter((_job, index) => {
       return index !== selectedIndex;
@@ -88,18 +109,7 @@ const EditCareerTimeline = ({
   setIsAdding,
   setIsEditing,
   t
-}: {
-  myCareer: Career[];
-  selectedIndex: number;
-  setIsAdding: (value: boolean) => void;
-  isAdding: boolean;
-  isEditing: boolean;
-  setSelectedIndex: (value: number) => void;
-  setIsEditing: (value: boolean) => void;
-  setMyCareer: (value: Career[]) => void;
-  updateMyCareer: (value: { career: Career[] }) => void;
-  t: TFunction;
-}) => {
+}: EditCareerTimelineProps) => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const handleSubmit = (formEvent: React.FormEvent) => {
@@ -285,11 +295,7 @@ const CareerTimeline = ({
   career,
   isSessionUser,
   updateMyCareer
-}: {
-  career: Career[];
-  isSessionUser: boolean;
-  updateMyCareer: (value: { career: Career[] }) => void;
-}) => {
+}: CareerTimelineProps) => {
   const [myCareer, setMyCareer] = useState<Career[]>(career);
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
