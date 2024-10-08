@@ -39,7 +39,7 @@ Cascading Style Sheets
 
 #### --text--
 
-Which answer uses the correct strucutre of using a CSS rule?
+Which answer uses the correct structure of using a CSS rule?
 
 #### --distractors--
 
