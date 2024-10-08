@@ -413,7 +413,7 @@ Pressing the Network/Internet button in Settings
 
 #### --text--
 
-Which of the peripherals is not the same type as the others?
+Which of these peripherals is not the same type as the others?
 
 #### --distractors--
 
