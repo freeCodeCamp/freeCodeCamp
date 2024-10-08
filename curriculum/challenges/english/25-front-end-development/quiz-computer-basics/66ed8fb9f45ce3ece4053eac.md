@@ -149,7 +149,7 @@ Visual Studio Code
 
 #### --text--
 
-Which of the following uses files on the hard drive?
+Which of the following stores and accesses files on the hard drive?
 
 #### --distractors--
 
