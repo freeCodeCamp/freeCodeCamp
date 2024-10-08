@@ -113,7 +113,7 @@ In the `meta` element
 
 ---
 
-`<script>`
+In the `script` element
 
 ---
 
