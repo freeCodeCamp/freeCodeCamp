@@ -227,14 +227,14 @@ test('Hint text should not contain placeholders `fcc-expected`', async ({
   );
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
-  await checkButton.click();
   await focusEditor({ page, isMobile });
   await clearEditor({ page, browserName });
 
   await editor.fill(
     'body{background:linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));margin:0;padding:0;width:5%;height:100vh}'
   );
-
+  await checkButton.click();
+  
   const failingHint = page.getByTestId('lowerJaw-failing-hint');
   const hintDescriptionElement = failingHint.locator('.hint-description');
   const hintDescription = hintDescriptionElement.locator('p');
