@@ -1,0 +1,140 @@
+1. What is CSS Grid?
+A) A framework for building responsive websites
+B) A method to create flexible, two-dimensional layouts
+C) A method to style HTML tables
+D) A tool for managing media queries
+Correct Answer: B
+2. Which property is used to create columns in a grid layout?
+A) grid-template-rows
+B) grid-column
+C) grid-template-columns
+D) grid-auto-columns
+Correct Answer: C
+3. How do you create a grid with 4 columns, each 100px wide?
+css
+display: grid;
+grid-template-columns: ___;
+A) 100px
+B) repeat(4, 100px)
+C) 100px 100px
+D) auto 100px
+Correct Answer: B
+4. What does the fr unit represent in CSS Grid?
+A) A fraction of the free space available
+B) Fixed row height
+C) Full row span
+D) Fixed row width
+Correct Answer: A
+5. How do you specify the gap between grid items?
+A) grid-spacing
+B) row-gap and column-gap
+C) grid-template-gap
+D) grid-space
+Correct Answer: B
+6. How can you center all grid items horizontally and vertically?
+css
+display: grid;
+___: center;
+A) align-items
+B) justify-content
+C) place-items
+D) grid-center
+Correct Answer: C
+7. How do you make a grid item span 2 columns?
+css
+grid-column: ___;
+A) span 2
+B) 2 / span
+C) 1 / 3
+D) span 3
+Correct Answer: A
+8. Which of these properties defines the rows in a grid?
+A) grid-row
+B) grid-template-columns
+C) grid-template-rows
+D) grid-auto-rows
+Correct Answer: C
+9. What does grid-area do in CSS Grid?
+A) Defines a specific grid area by row and column
+B) Automatically adds margins around grid items
+C) Controls the number of grid items
+D) Sets the background color of the grid
+Correct Answer: A
+10. Which property allows you to control the spacing between all rows and columns in a grid?
+A) grid-gap
+B) margin
+C) padding
+D) spacing
+Correct Answer: A
+11. What happens if you set grid-auto-flow to column?
+A) Grid items are placed in columns first, then in rows.
+B) Grid items fill rows first, then columns.
+C) Grid items are placed in a diagonal flow.
+D) Grid items are ordered randomly.
+Correct Answer: A
+12. How can you define a 2x2 grid using CSS Grid?
+css
+grid-template-columns: ___;
+grid-template-rows: ___;
+A) 1fr 1fr; 1fr 1fr
+B) 2x2; 2x2
+C) repeat(2, 1fr); repeat(2, 1fr)
+D) auto; auto
+Correct Answer: C
+13. How do you place a grid item in the 2nd row and span it across 3 columns?
+css
+grid-row: 2;
+grid-column: ___;
+A) 2 / 4
+B) 1 / 4
+C) span 3
+D) 2 / span 3
+Correct Answer: B
+14. What does the grid-template-areas property define?
+A) Specific names for grid areas
+B) The total size of the grid
+C) How items are placed in rows and columns
+D) The space between grid lines
+Correct Answer: A
+15. How do you set the alignment of grid items along the horizontal axis?
+A) align-items
+B) justify-items
+C) align-content
+D) grid-align
+Correct Answer: B
+16. How can you debug CSS Grid layouts using the browser's DevTools?
+A) By enabling the "Grid overlay" option in DevTools
+B) By inspecting the "Network" panel
+C) By using the "Console" panel
+D) By checking the "Styles" panel
+Correct Answer: A
+17. Which value makes a grid container’s items evenly distributed with equal space around them?
+A) space-around
+B) space-between
+C) stretch
+D) center
+Correct Answer: A
+18. How do you set the starting and ending lines of an item in CSS Grid?
+css
+grid-row: ___;
+grid-column: ___;
+A) start / end; start / end
+B) span; span
+C) 1; 2
+D) auto; auto
+Correct Answer: A
+19. What does repeat(3, 1fr) mean?
+A) Repeat three columns, each with a fractional width
+B) Repeat three rows, each with 1px height
+C) Define a single column with 3 fractions
+D) Repeat one row three times
+Correct Answer: A
+20. How do you span a grid item across both rows and columns?
+css
+grid-row: ___;
+grid-column: ___;
+A) span 2; span 2
+B) auto; auto
+C) 1 / 2; 1 / 2
+D) span 1; span 3
+Correct Answer: A
