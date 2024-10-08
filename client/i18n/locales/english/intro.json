@@ -2432,7 +2432,12 @@
       },
       "cvaf": { "title": "255", "intro": [] },
       "tdgy": { "title": "256", "intro": [] },
-      "saxu": { "title": "257", "intro": [] },
+      "lab-project-idea-board": {
+        "title": "Build a Project Idea Board",
+        "intro": [
+          "In this lab, you will build a project idea board using OOP in JavaScript."
+        ]
+      },
       "kagw": { "title": "258", "intro": [] },
       "mbib": { "title": "259", "intro": [] },
       "oxiv": { "title": "260", "intro": [] },
