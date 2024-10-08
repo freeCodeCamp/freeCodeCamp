@@ -117,7 +117,7 @@ In the `script` element
 
 ---
 
-`<body>`
+In the `body` element
 
 #### --answer--
 
