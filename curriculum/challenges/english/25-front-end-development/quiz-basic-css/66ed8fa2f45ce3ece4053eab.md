@@ -109,7 +109,7 @@ When using internal CSS, where is the `style` element placed within the HTML?
 
 #### --distractors--
 
-`<meta>`
+In the `meta` element
 
 ---
 
