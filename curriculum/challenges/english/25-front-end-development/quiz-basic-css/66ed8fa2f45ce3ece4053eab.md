@@ -303,7 +303,7 @@ Given the following selectors, which has the highest specificity?
 
 #### --text--
 
-Given the following selectors, which has the lowest priority?
+Given the following selectors, which has the lowest specificity?
 
 #### --distractors--
 
