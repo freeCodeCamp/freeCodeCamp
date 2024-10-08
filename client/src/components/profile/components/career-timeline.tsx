@@ -307,64 +307,66 @@ const CareerTimeline = ({
 
   return (
     <FullWidthRow>
-      <div className='header-container'>
-        <h2>{t('profile.your-exp')}</h2>
-        {isSessionUser && (
-          <Button
-            className='edit-btn'
-            disabled={isAdding || isEditing}
-            aria-disabled={isAdding || isEditing}
-            aria-label={t('profile.job-add')}
-            onClick={() => {
-              setIsAdding(true);
-            }}
-          >
-            <FontAwesomeIcon icon={faPlus} />
-          </Button>
+      <div className='experience-container'>
+        <div className='header-container'>
+          <h2>{t('profile.your-exp')}</h2>
+
+          {isSessionUser && (
+            <Button
+              className='edit-btn'
+              disabled={isAdding || isEditing}
+              aria-disabled={isAdding || isEditing}
+              aria-label={t('profile.job-add')}
+              onClick={() => {
+                setIsAdding(true);
+              }}
+            >
+              <FontAwesomeIcon icon={faPlus} />
+            </Button>
+          )}
+        </div>
+
+        {isAdding || isEditing ? (
+          <EditCareerTimeline
+            myCareer={myCareer}
+            selectedIndex={selectedIndex}
+            isAdding={isAdding}
+            isEditing={isEditing}
+            setSelectedIndex={setSelectedIndex}
+            setMyCareer={setMyCareer}
+            updateMyCareer={updateMyCareer}
+            setIsAdding={setIsAdding}
+            setIsEditing={setIsEditing}
+            t={t}
+          />
+        ) : (
+          <></>
         )}
-      </div>
-      {isAdding || isEditing ? (
-        <EditCareerTimeline
-          myCareer={myCareer}
-          selectedIndex={selectedIndex}
-          isAdding={isAdding}
-          isEditing={isEditing}
-          setSelectedIndex={setSelectedIndex}
-          setMyCareer={setMyCareer}
-          updateMyCareer={updateMyCareer}
-          setIsAdding={setIsAdding}
-          setIsEditing={setIsEditing}
-          t={t}
-        />
-      ) : (
-        <></>
-      )}
-      {myCareer.map((job: Career, index) => {
-        const start = parseDate(
-          new Date(job.start_date).toDateString(),
-          t,
-          'short'
-        );
-        let end = t('profile.present');
+        {myCareer.map((job: Career, index) => {
+          const start = parseDate(
+            new Date(job.start_date).toDateString(),
+            t,
+            'short'
+          );
+          let end = t('profile.present');
 
-        const present = new Date();
+          const present = new Date();
 
-        let total_time_in_years =
-          present.getFullYear() - new Date(job.start_date).getFullYear();
+          let total_time_in_years =
+            present.getFullYear() - new Date(job.start_date).getFullYear();
 
-        if (job.end_date) {
-          end = parseDate(new Date(job.end_date).toDateString(), t, 'short');
+          if (job.end_date) {
+            end = parseDate(new Date(job.end_date).toDateString(), t, 'short');
 
-          total_time_in_years =
-            new Date(job.end_date).getFullYear() -
-            new Date(job.start_date).getFullYear();
-        }
+            total_time_in_years =
+              new Date(job.end_date).getFullYear() -
+              new Date(job.start_date).getFullYear();
+          }
 
-        return (
-          !isAdding &&
-          !isEditing && (
-            <Fragment key={index}>
-              <div className='card'>
+          return (
+            !isAdding &&
+            !isEditing && (
+              <Fragment key={index}>
                 <div className='header'>
                   <h3>
                     {t('profile.job-at', {
@@ -372,38 +374,38 @@ const CareerTimeline = ({
                       title: job.title
                     })}
                   </h3>
-                  <div className='action-container'>
-                    {isSessionUser && (
-                      <Button
-                        className='edit-btn'
-                        aria-label={t('profile.job-edit', {
-                          company: job.company
-                        })}
-                        onClick={() => {
-                          setIsEditing(true);
-                          setSelectedIndex(index);
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faPen} />
-                      </Button>
-                    )}
-                  </div>
+
+                  {isSessionUser && (
+                    <Button
+                      className='edit-btn'
+                      aria-label={t('profile.job-edit', {
+                        company: job.company
+                      })}
+                      onClick={() => {
+                        setIsEditing(true);
+                        setSelectedIndex(index);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faPen} />
+                    </Button>
+                  )}
                 </div>
-                <p className='date'>
-                  {t('profile.start-end-years', {
-                    start: start,
-                    end: end,
-                    years: total_time_in_years
-                  })}
-                </p>
-                <p>{job.location}</p>
+                <div className='job-info'>
+                  <p className='date'>
+                    {t('profile.start-end-years', {
+                      start: start,
+                      end: end,
+                      years: total_time_in_years
+                    })}
+                  </p>
+                  <p>{job.location}</p>
+                </div>
                 <p>{job.description}</p>
-              </div>
-            </Fragment>
-          )
-        );
-      })}
-      <hr />
+              </Fragment>
+            )
+          );
+        })}
+      </div>
     </FullWidthRow>
   );
 };

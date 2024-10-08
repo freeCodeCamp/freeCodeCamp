@@ -1,20 +1,13 @@
-.card {
-  margin-bottom: 20px;
-  background-color: white;
-  padding: 1em;
-  border: 1px solid #e6e6e6;
-  border-radius: 5px;
-}
-
-.card .date {
+.date {
   color: #999;
   font-size: 0.9em;
   margin-bottom: 0.5em;
 }
-.card .header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2em;
 }
 
 .edit-btn {
@@ -24,16 +17,19 @@
   margin-left: 1em;
 }
 
-.card .action-container {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 1em;
-  padding-right: 1em;
+}
+
+.experience-container {
+  background: white;
+  padding: 1em;
+  border: 1px solid var(--quaternary-background);
+}
+
+.job-info p {
+  line-height: 0.8;
 }
