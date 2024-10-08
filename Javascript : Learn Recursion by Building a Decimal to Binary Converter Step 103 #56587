@@ -1,0 +1,10 @@
+function decimalToBinary(decimal) {
+  if (decimal === 0) {
+    return "0"; // Base case for 0
+  }
+  if (decimal === 1) {
+    return "1"; // Base case for 1
+  }
+  // Recursive case: divide by 2 and append the remainder
+  return decimalToBinary(Math.floor(decimal / 2)) + (decimal % 2);
+}
