@@ -348,6 +348,8 @@
     "job-delete": "Are you sure you want to delete this job from your career?",
     "job-edit": "Edit Job at {{company}}",
     "job-add": "Add a new Job to Career",
+    "job-not-added": "You haven't added any jobs to your experience timeline yet.",
+    "job-not-added-viewer": "This user has not added any jobs to their experience timeline.",
     "edit-my-profile": "Edit My Profile"
   },
   "footer": {

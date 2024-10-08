@@ -23,6 +23,7 @@ interface DeleteModalProps {
   setIsDeleting: (value: boolean) => void;
   setMyCareer: (value: Career[]) => void;
   updateMyCareer: (value: { career: Career[] }) => void;
+  setIsEditing: (value: boolean) => void;
   myCareer: Career[];
   t: TFunction;
 }
@@ -48,6 +49,7 @@ interface CareerTimelineProps {
 
 const DeleteModal = ({
   isDeleting,
+  setIsEditing,
   selectedIndex,
   setSelectedIndex,
   setIsDeleting,
@@ -65,6 +67,7 @@ const DeleteModal = ({
     setMyCareer(updatedCareer);
 
     setIsDeleting(false);
+    setIsEditing(false);
     setSelectedIndex(-1);
   };
 
@@ -184,6 +187,7 @@ const EditCareerTimeline = ({
         updateMyCareer={updateMyCareer}
         myCareer={myCareer}
         selectedIndex={selectedIndex}
+        setIsEditing={setIsEditing}
         t={t}
       />
       <form key={job.company} onSubmit={handleSubmit}>
@@ -341,6 +345,14 @@ const CareerTimeline = ({
           />
         ) : (
           <></>
+        )}
+
+        {!myCareer.length && !isAdding && (
+          <p>
+            {isSessionUser
+              ? t('profile.job-not-added')
+              : t('profile.job-not-added-viewer')}
+          </p>
         )}
         {myCareer.map((job: Career, index) => {
           const start = parseDate(
