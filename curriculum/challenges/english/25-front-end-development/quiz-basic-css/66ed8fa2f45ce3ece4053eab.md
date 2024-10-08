@@ -215,7 +215,7 @@ Which selector is correct to target the next sibling of an `img`?
 
 #### --text--
 
-Which rule is correct to target all siblings of an `<img>`?
+Which selector is correct to target all siblings of an `img`?
 
 #### --distractors--
 
