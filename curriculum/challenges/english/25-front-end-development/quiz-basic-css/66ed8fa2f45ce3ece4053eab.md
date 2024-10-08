@@ -61,7 +61,7 @@ Which answer uses the correct structure of using a CSS rule?
 
 #### --text--
 
-What does the `<meta>` viewport do?
+What does `<meta name="viewport">` do?
 
 #### --distractors--
 
