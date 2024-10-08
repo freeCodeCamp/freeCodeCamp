@@ -325,7 +325,7 @@ Web Browser
 
 #### --text--
 
-A piece of software that gives hyperlinks to web pages based on a user's query is a called a:
+A piece of software that lists web pages related to a user's query is a called a:
 
 #### --distractors--
 
