@@ -435,7 +435,7 @@ Microphone
 
 #### --text--
 
-Which of the following lists of parts have all of the items located in the circuit board?
+Which of the following lists of parts can all be found in the circuit board?
 
 #### --distractors--
 
