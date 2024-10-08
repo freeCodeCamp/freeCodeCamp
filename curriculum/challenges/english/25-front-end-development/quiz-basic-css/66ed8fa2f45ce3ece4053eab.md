@@ -439,7 +439,7 @@ What does the `line-height` property do?
 
 #### --distractors--
 
-Controls how size of the font.
+Controls the size of the font.
 
 ---
 
