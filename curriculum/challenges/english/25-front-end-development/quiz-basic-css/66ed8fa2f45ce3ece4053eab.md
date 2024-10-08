@@ -391,7 +391,7 @@ Determines styles of the element based on specificity and order of declaration.
 
 #### --text--
 
-Which rule applies 32px of margin to all sides?
+Which rule applies `32px` of margin to all sides?
 
 #### --distractors--
 
