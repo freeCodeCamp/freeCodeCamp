@@ -14,7 +14,8 @@ import {
   transformContents,
   transformHeadTailAndContents,
   setExt,
-  compileHeadTail
+  compileHeadTail,
+  createSource
 } from '../../../../../shared/utils/polyvinyl';
 import { WorkerExecutor } from '../utils/worker-executor';
 
@@ -275,6 +276,7 @@ const htmlTransformer = cond([
 ]);
 
 export const getTransformers = loopProtectOptions => [
+  createSource,
   replaceNBSP,
   babelTransformer(loopProtectOptions),
   partial(compileHeadTail, ''),
@@ -282,6 +284,7 @@ export const getTransformers = loopProtectOptions => [
 ];
 
 export const getPythonTransformers = () => [
+  createSource,
   replaceNBSP,
   partial(compileHeadTail, '')
 ];
