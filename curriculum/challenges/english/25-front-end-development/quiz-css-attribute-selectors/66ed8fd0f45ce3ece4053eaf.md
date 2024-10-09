@@ -532,7 +532,7 @@ textarea[maxlength] { border-color: darkred; }
 
 #### --text--
 
-On freeCodeCamp’s course catalog, each course has a `data-completion` attribute representing the percentage completed. You want to style courses where this attribute ends with `"100"`, indicating full completion. Which selector would work?
+Suppose, on freeCodeCamp’s course catalog, each course has a `data-completion` attribute representing the percentage completed. You want to style courses where this attribute ends with `"100"`, indicating full completion. Which selector would work?
 
 #### --distractors--
 
