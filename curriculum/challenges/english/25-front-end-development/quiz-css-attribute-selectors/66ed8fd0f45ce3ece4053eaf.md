@@ -178,23 +178,31 @@ input[id$="field"] { border-color: red; }
 
 #### --text--
 
-Placeholder question
+Which selector targets all elements with a `lang` attribute set to `"en-US"`?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+[lang*="en"] { color: black; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+[lang$="US"] { color: black; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+[lang~="en"] { color: black; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+[lang="en-US"] { color: black; }
+```
 
 ### --question--
 
