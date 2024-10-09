@@ -483,7 +483,7 @@ div[data-status$="open"] { border: 2px solid green; }
 ---
 
 ```css
-div[data-status$="open"] { border: 2px solid green; }
+div[data-status^="open"] { border: 2px solid green; }
 ```
 
 ---
@@ -502,7 +502,7 @@ div[data-status="open"] { border: 2px solid green; }
 
 #### --text--
 
- You want to style <textarea> elements in your form, but only those with a `maxlength` attribute. Which selector would work?
+ You want to style `<textarea>` elements in your form, but only those with a `maxlength` attribute. Which selector would work?
 
 #### --distractors--
 
