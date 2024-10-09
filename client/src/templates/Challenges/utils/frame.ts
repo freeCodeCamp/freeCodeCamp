@@ -86,9 +86,13 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
-export const createHeader = (id = mainPreviewId) => `
+// The "fcc-hide-header" class is added to ensure that the CSSHelper class ignores this style element
+// during tests, preventing CSS-related test failures. This is a temporary fix.
+
+const createHeader = (id = mainPreviewId) =>
+  `
   <base href='' />
-  <style>
+  <style class="fcc-hide-header">
     head *, title, meta, link, script {
       display: none !important;
     }
