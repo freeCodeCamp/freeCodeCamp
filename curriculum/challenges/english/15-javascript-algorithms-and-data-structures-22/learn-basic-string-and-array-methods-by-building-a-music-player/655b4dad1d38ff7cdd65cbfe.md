@@ -680,6 +680,10 @@ const shuffle = () => {
   userData.currentSong = null;
   userData.songCurrentTime = 0;
 
+  if (userData?.songs.length === 0) {
+    return;
+  }
+
   renderSongs(userData?.songs);
   pauseSong();
   setPlayerDisplay();
