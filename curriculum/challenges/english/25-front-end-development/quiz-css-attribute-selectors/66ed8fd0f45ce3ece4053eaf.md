@@ -238,45 +238,60 @@ a[href*="https"] { text-decoration: none; }
 
 #### --text--
 
-Placeholder question
+How would you target all elements with a lang attribute that starts with `"es"` but not `"es-MX"`?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+[lang*="es"]:not([lang="es-MX"]) { color: red; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+[lang~="es"]:not([lang="es-MX"]) { color: red; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+[lang$="es"]:not([lang="es-MX"]) { color: red; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+[lang^="es"]:not([lang="es-MX"]) { color: red; }
+```
 
 ### --question--
 
 #### --text--
-
-Placeholder question
+You want to style the `<img>` elements only if their `alt` attribute does not contain the word `"thumbnail"`. Which selector would achieve this?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+img[alt$="thumbnail"] { border: 1px solid red; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+img[alt^="thumbnail"] { border: 1px solid red; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+img[alt*="thumbnail"] { border: 1px solid red; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+img:not([alt*="thumbnail"]) { border: 1px solid red; }
+```
 
 ### --question--
 
