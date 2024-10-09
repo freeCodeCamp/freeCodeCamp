@@ -502,23 +502,31 @@ div[data-status="open"] { border: 2px solid green; }
 
 #### --text--
 
-Placeholder question
+ You want to style <textarea> elements in your form, but only those with a `maxlength` attribute. Which selector would work?
 
 #### --distractors--
 
 ```css
+textarea[maxlength="true"] { border-color: darkred; }
+```
 
 ---
 
 ```css
+textarea[maxlength^="true"] { border-color: darkred; }
+```
 
 ---
 
 ```css
+textarea[maxlength*="true"] { border-color: darkred; }
+```
 
 #### --answer--
 
 ```css
+textarea[maxlength] { border-color: darkred; }
+```
 
 ### --question--
 
