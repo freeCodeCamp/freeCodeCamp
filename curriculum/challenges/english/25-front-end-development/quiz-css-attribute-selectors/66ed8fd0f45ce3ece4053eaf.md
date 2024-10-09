@@ -148,23 +148,31 @@ a[title^="Read"] { color: blue; }
 
 #### --text--
 
-Placeholder question
+ How would you target all `<input>` elements with an id attribute that ends with `"field"`?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+input[id^="field"] { border-color: red; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+ input[id*="field"] { border-color: red; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+input[id~="field"] { border-color: red; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+input[id$="field"] { border-color: red; }
+```
 
 ### --question--
 
