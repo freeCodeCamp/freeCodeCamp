@@ -357,23 +357,31 @@ a[href$=".jpg"], a[href$=".png"], a[href$=".gif"] { border-bottom: 2px solid gre
 
 #### --text--
 
-Placeholder question
+How would you target `<section>` elements that have a `data-theme` attribute containing the word `"dark"` but exclude those where it ends with `"-light"`?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+section[data-theme="dark"]:not([data-theme$="-light"]) { background-color: black; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+section[data-theme*="dark"]:not([data-theme*="-light"]) { background-color: black; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+section[data-theme^="dark"]:not([data-theme$="-light"]) { background-color: black; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+section[data-theme*="dark"]:not([data-theme$="-light"]) { background-color: black; }
+```
 
 ### --question--
 
