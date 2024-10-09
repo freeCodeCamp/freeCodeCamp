@@ -63,7 +63,6 @@ First Contentful Paint (FCP)
 
 What best describes the critical rendering path in the browser?
 
-
 #### --distractors--
 
 The order in which images are loaded into the browser's cache.
