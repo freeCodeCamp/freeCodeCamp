@@ -562,43 +562,60 @@ div[data-completion$="100"] { font-weight: bold; }
 
 #### --text--
 
-Placeholder question
+You're building a job portal and want to style job listings where the `data-role` attribute contains `"developer"`. How would you write this selector?
 
 #### --distractors--
 
 ```css
+div[data-role="developer"] { background-color: lightgreen; }
+```
 
 ---
 
 ```css
+div[data-role^="developer"] { background-color: lightgreen; }
+```
 
 ---
 
 ```css
+div[data-role$="developer"] { background-color: lightgreen; }
+```
 
 #### --answer--
 
 ```css
+div[data-role*="developer"] { background-color: lightgreen; }
+```
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+You want to style lists that have a type attribute with a value ending in `"square"`, indicating they use square bullets. Which selector would you use?
 
 #### --distractors--
 
 ```css
+ul[type*="square"] { list-style-type: square; }
+```
+
 
 ---
 
 ```css
+ul[type="square"] { list-style-type: square; }
+```
 
 ---
 
 ```css
+ul[type~="square"] { list-style-type: square; }
+```
 
 #### --answer--
 
 ```css
+ul[type$="square"] { list-style-type: square; }
+```
 
