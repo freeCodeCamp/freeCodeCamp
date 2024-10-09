@@ -2373,7 +2373,12 @@
       },
       "jbst": { "title": "232", "intro": [] },
       "peyf": { "title": "233", "intro": [] },
-      "bdqj": { "title": "234", "intro": [] },
+      "lab-permutation-generator": {
+        "title": "Build a Permutation Generator",
+        "intro": [
+          "For this lab, you will build a permutation generator that produces all possible permutations of a given string."
+        ]
+      },
       "ndlf": { "title": "235", "intro": [] },
       "quiz-recursion": {
         "title": "Recursion Quiz",
