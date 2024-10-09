@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            display: none;
+        }
+        .correct {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Git Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <h3>1. What is version control?</h3>
+                <label><input type="radio" name="q1" value="A"> A) A method to control who can access your code</label><br>
+                <label><input type="radio" name="q1" value="B"> B) A system that tracks changes to files over time</label><br>
+                <label><input type="radio" name="q1" value="C"> C) A backup process for important files</label><br>
+                <label><input type="radio" name="q1" value="D"> D) A way to review changes before they go live</label>
+            </div>
+
+            <div class="question">
+                <h3>2. What is the main advantage of using platforms like GitHub or GitLab?</h3>
+                <label><input type="radio" name="q2" value="A"> A) They offer unlimited storage for your code</label><br>
+                <label><input type="radio" name="q2" value="B"> B) They provide a way to host your projects and collaborate with others</label><br>
+                <label><input type="radio" name="q2" value="C"> C) They are necessary to use Git on your local machine</label><br>
+                <label><input type="radio" name="q2" value="D"> D) They automatically test your code for bugs</label>
+            </div>
+
+            <div class="question">
+                <h3>3. Which command would you use to configure your username in Git for the first time?</h3>
+                <label><input type="radio" name="q3" value="A"> A) git init</label><br>
+                <label><input type="radio" name="q3" value="B"> B) git config --global user.name "Your Name"</label><br>
+                <label><input type="radio" name="q3" value="C"> C) git setup --username "Your Name"</label><br>
+                <label><input type="radio" name="q3" value="D"> D) git set-user "Your Name"</label>
+            </div>
+
+            <!-- Add more questions here in a similar format -->
+
+            <button type="button" onclick="checkAnswers()">Submit</button>
+        </form>
+
+        <div class="results" id="results"></div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            q1: 'B',
+            q2: 'B',
+            q3: 'B',
+            // Add correct answers for other questions here
+        };
+
+        function checkAnswers() {
+            const form = document.getElementById('quiz-form');
+            const resultsDiv = document.getElementById('results');
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+
+            resultsDiv.innerHTML = ''; // Clear previous results
+            for (let [question, correctAnswer] of Object.entries(correctAnswers)) {
+                const userAnswer = form[question].value;
+                const result = document.createElement('p');
+
+                if (userAnswer === correctAnswer) {
+                    result.innerHTML = `Question ${question.slice(1)}: <span class="correct">Correct!</span>`;
+                    score++;
+                } else {
+                    result.innerHTML = `Question ${question.slice(1)}: <span class="wrong">Wrong. The correct answer is ${correctAnswer}.</span>`;
+                }
+
+                resultsDiv.appendChild(result);
+            }
+
+            const finalScore = document.createElement('p');
+            finalScore.innerHTML = `<strong>Your Score: ${score} out of ${total}</strong>`;
+            resultsDiv.appendChild(finalScore);
+
+            resultsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
