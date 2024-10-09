@@ -118,24 +118,31 @@ Which selector will target all elements with a `lang` attribute starting with "`
 ### --question--
 
 #### --text--
-
-Placeholder question
+How would you style `<a>` elements where the title attribute starts with `"Read"`?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+a[title$="Read"] { color: blue; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+a[title~="Read"] { color: blue; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+a[title*="Read"] { color: blue; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+a[title^="Read"] { color: blue; }
+```
 
 ### --question--
 
