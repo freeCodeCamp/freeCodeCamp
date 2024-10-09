@@ -446,24 +446,28 @@ a:not([href^="https://freecodecamp.org"]) { color: orange; }
 ### --question--
 
 #### --text--
-
-Placeholder question
+You need to select ordered lists (`<ol>`) that use the `type="1"` (for numerical listing). Which of the following selectors is correct?
 
 #### --distractors--
 
 ```css
-
+ol[type*="1"] { font-weight: bold; }
+```
 ---
 
 ```css
-
+ol[type$="1"] { font-weight: bold; }
+```
 ---
 
 ```css
-
+ol[type~="1"] { font-weight: bold; }
+```
 #### --answer--
 
 ```css
+ ol[type="1"] { font-weight: bold; }
+```
 
 ### --question--
 
