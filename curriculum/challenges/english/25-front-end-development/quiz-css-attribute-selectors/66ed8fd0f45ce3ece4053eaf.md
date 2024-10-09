@@ -387,23 +387,61 @@ section[data-theme*="dark"]:not([data-theme$="-light"]) { background-color: blac
 
 #### --text--
 
-Placeholder question
+You want to style ordered lists (`<ol>`) where the type attribute is set to `"i"` (for Roman numerals). Which of the following selectors would you use?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+ol[type$="i"] { color: darkgreen; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+ ol[type*="i"] { color: darkgreen; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+ol[type^="i"] { color: darkgreen; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+ol[type="i"] { color: darkgreen; }
+```
+
+### --question--
+
+#### --text--
+
+You want to create a highlight effect for all external links (links that point to another domain) by checking for `href` attributes that do not start with your domain (`"freecodecamp.org"`). How would you do this?
+
+#### --distractors--
+
+```css
+ a[href^="https://freecodecamp.org"] { color: inherit; }
+```
+
+---
+
+```css
+a[href$="freecodecamp.org"] { color: inherit; }
+```
+
+---
+
+```css
+a[href*="freecodecamp.org"] { color: inherit; }
+```
+
+#### --answer--
+
+```css
+a:not([href^="https://freecodecamp.org"]) { color: orange; }
+```
 
 ### --question--
 
@@ -413,19 +451,19 @@ Placeholder question
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
 
 ---
 
-Placeholder distractor 2
+```css
 
 ---
 
-Placeholder distractor 3
+```css
 
 #### --answer--
 
-Placeholder answer
+```css
 
 ### --question--
 
@@ -435,19 +473,19 @@ Placeholder question
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
 
 ---
 
-Placeholder distractor 2
+```css
 
 ---
 
-Placeholder distractor 3
+```css
 
 #### --answer--
 
-Placeholder answer
+```css
 
 ### --question--
 
@@ -457,19 +495,19 @@ Placeholder question
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
 
 ---
 
-Placeholder distractor 2
+```css
 
 ---
 
-Placeholder distractor 3
+```css
 
 #### --answer--
 
-Placeholder answer
+```css
 
 ### --question--
 
@@ -479,19 +517,19 @@ Placeholder question
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
 
 ---
 
-Placeholder distractor 2
+```css
 
 ---
 
-Placeholder distractor 3
+```css
 
 #### --answer--
 
-Placeholder answer
+```css
 
 ### --question--
 
@@ -501,19 +539,19 @@ Placeholder question
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
 
 ---
 
-Placeholder distractor 2
+```css
 
 ---
 
-Placeholder distractor 3
+```css
 
 #### --answer--
 
-Placeholder answer
+```css
 
 ### --question--
 
@@ -523,39 +561,17 @@ Placeholder question
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
 
 ---
 
-Placeholder distractor 2
+```css
 
 ---
 
-Placeholder distractor 3
+```css
 
 #### --answer--
 
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+```css
 
