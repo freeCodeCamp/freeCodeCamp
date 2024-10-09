@@ -208,23 +208,31 @@ Which selector targets all elements with a `lang` attribute set to `"en-US"`?
 
 #### --text--
 
-Placeholder question
+Which selector targets `<a>` elements where the href attribute contains `"https"`?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+a[href^="https"] { text-decoration: none; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+a[href~="https"] { text-decoration: none; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+a[href$="https"] { text-decoration: none; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+a[href*="https"] { text-decoration: none; }
+```
 
 ### --question--
 
