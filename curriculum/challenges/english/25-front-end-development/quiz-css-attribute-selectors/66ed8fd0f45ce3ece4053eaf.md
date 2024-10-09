@@ -473,23 +473,30 @@ ol[type~="1"] { font-weight: bold; }
 
 #### --text--
 
-Placeholder question
+On freeCodeCamp’s forum, each discussion has a `data-status` attribute that could be `"open"` or `"closed"`. You want to highlight all open discussions. How would you select these discussions?
 
 #### --distractors--
 
 ```css
+div[data-status$="open"] { border: 2px solid green; }
+```
+---
+
+```css
+div[data-status$="open"] { border: 2px solid green; }
+```
 
 ---
 
 ```css
-
----
-
-```css
+div[data-status*="open"] { border: 2px solid green; }
+```
 
 #### --answer--
 
 ```css
+div[data-status="open"] { border: 2px solid green; }
+```
 
 ### --question--
 
