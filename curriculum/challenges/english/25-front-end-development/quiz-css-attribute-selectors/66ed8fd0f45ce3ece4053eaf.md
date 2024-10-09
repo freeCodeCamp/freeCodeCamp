@@ -327,23 +327,31 @@ button:not([data-tooltip="off"]) { text-decoration: underline dotted; }
 
 #### --text--
 
-Placeholder question
+You need to style all links (`<a>`) that point to image files by selecting href attributes ending with `.jpg`, `.png`, or `.gif`. Which selector works best?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+a[href*=".jpg"], a[href*=".png"], a[href*=".gif"] { border-bottom: 2px solid green; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+a[href$=".jpg"], a[href~=".png"], a[href^=".gif"] { border-bottom: 2px solid green; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+a[href*="image"] { border-bottom: 2px solid green; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+a[href$=".jpg"], a[href$=".png"], a[href$=".gif"] { border-bottom: 2px solid green; }
+```
 
 ### --question--
 
