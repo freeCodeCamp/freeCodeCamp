@@ -473,7 +473,7 @@ ol[type~="1"] { font-weight: bold; }
 
 #### --text--
 
-On freeCodeCamp’s forum, each discussion has a `data-status` attribute that could be `"open"` or `"closed"`. You want to highlight all open discussions. How would you select these discussions?
+Suppose, on freeCodeCamp’s forum, each discussion has a `data-status` attribute that could be `"open"` or `"closed"`. You want to highlight all open discussions. How would you select these discussions?
 
 #### --distractors--
 
