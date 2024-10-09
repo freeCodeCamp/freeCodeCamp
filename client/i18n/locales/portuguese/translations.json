@@ -52,6 +52,8 @@
     "create-post": "Criar uma postagem de ajuda no fórum",
     "cancel": "Cancelar",
     "reset-lesson": "Reiniciar esta aula",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código",
@@ -388,7 +390,7 @@
     "assignment-not-complete": "Complete as tarefas",
     "assignments": "Tarefas",
     "question": "Questão",
-    "explanation": "Explanation",
+    "explanation": "Explicação",
     "solution-link": "Link da solução",
     "source-code-link": "Link do código-fonte",
     "ms-link": "Link da Microsoft",
@@ -420,6 +422,7 @@
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "donation-record-not-found": "O registro de sua doação não foi encontrado.",
@@ -694,8 +697,8 @@
   "search": {
     "label": "Pesquisar",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Buscar em nossos tutoriais",
+      "numbered": "Buscar em mais de {{ roundedTotalRecords }} tutoriais"
     },
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
