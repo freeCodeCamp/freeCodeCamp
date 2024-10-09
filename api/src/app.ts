@@ -27,6 +27,8 @@ import bouncer from './plugins/bouncer';
 import errorHandling from './plugins/error-handling';
 import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
+import shadowCapture from './plugins/shadow-capture';
+
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
 
@@ -35,6 +37,7 @@ import {
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
+  FCC_ENABLE_SHADOW_CAPTURE,
   FREECODECAMP_NODE_ENV
 } from './utils/env';
 import { isObjectID } from './utils/validation';
@@ -125,6 +128,10 @@ export const build = async (
       }
     });
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
+  }
+
+  if (FCC_ENABLE_SHADOW_CAPTURE) {
+    void fastify.register(shadowCapture);
   }
 
   void fastify.register(auth);
