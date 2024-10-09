@@ -297,23 +297,31 @@ img:not([alt*="thumbnail"]) { border: 1px solid red; }
 
 #### --text--
 
-Placeholder question
+You're implementing an accessibility feature where `<button>` elements with a `data-tooltip` attribute should show a dotted underline. However, you want to exclude buttons where `data-tooltip` is exactly `"off"`. How would you write the selector?
 
 #### --distractors--
 
-Placeholder distractor 1
+```css
+button[data-tooltip="off"] { text-decoration: none; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+button[data-tooltip*="off"] { text-decoration: underline dotted; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+button[data-tooltip$="off"] { text-decoration: underline dotted; }
+```
 
 #### --answer--
 
-Placeholder answer
+```css
+button:not([data-tooltip="off"]) { text-decoration: underline dotted; }
+```
 
 ### --question--
 
