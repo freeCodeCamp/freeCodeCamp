@@ -532,23 +532,31 @@ textarea[maxlength] { border-color: darkred; }
 
 #### --text--
 
-Placeholder question
+On freeCodeCamp’s course catalog, each course has a `data-completion` attribute representing the percentage completed. You want to style courses where this attribute ends with `"100"`, indicating full completion. Which selector would work?
 
 #### --distractors--
 
 ```css
+div[data-completion="100"] { font-weight: bold; }
+```
 
 ---
 
 ```css
+div[data-completion*="100"] { font-weight: bold; }
+```
 
 ---
 
 ```css
+div[data-completion^="100"] { font-weight: bold; }
+```
 
 #### --answer--
 
 ```css
+div[data-completion$="100"] { font-weight: bold; }
+```
 
 ### --question--
 
