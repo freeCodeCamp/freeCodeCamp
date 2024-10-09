@@ -89,8 +89,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // The "fcc-hide-header" class is added to ensure that the CSSHelper class ignores this style element
 // during tests, preventing CSS-related test failures.
 
-const createHeader = (id = mainPreviewId) =>
-  `
+export const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <style class="fcc-hide-header">
     head *, title, meta, link, script {
