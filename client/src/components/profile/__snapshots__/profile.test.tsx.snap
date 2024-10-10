@@ -296,28 +296,6 @@ exports[`<Profile/> renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="mx-[-15px] "
-    >
-      <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
-      >
-        <div
-          class="experience-container"
-        >
-          <div
-            class="header-container"
-          >
-            <h2>
-              profile.your-exp
-            </h2>
-          </div>
-          <p>
-            profile.job-not-added-viewer
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
       class="spacer"
       style="padding: 15px 0px;"
     />
