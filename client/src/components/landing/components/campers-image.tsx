@@ -6,37 +6,16 @@ import { LazyImage } from '../../helpers';
 
 const LARGE_SCREEN_SIZE = 1200;
 
-interface CampersImageProps {
-  pageName: string;
-}
-
-const donateImageSize = {
-  height: 345,
-  width: 585
-};
-
-const landingImageSize = {
-  marginTop: '30px',
-  height: 442,
-  width: 750
-};
-function CampersImage({ pageName }: CampersImageProps): JSX.Element {
+function CampersImage(): JSX.Element {
   const { t } = useTranslation();
-
-  const figureSize = pageName === 'donate' ? donateImageSize : landingImageSize;
 
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>
       <figure
-        style={figureSize}
         data-test-label='landing-page-figure'
         data-playwright-test-label='landing-page-figure'
       >
-        <LazyImage
-          alt={t('landing.hero-img-alt')}
-          src={wideImg}
-          style={figureSize}
-        />
+        <LazyImage alt={t('landing.hero-img-alt')} src={wideImg} />
         <figcaption className='caption'>
           {t('landing.hero-img-description')}
         </figcaption>

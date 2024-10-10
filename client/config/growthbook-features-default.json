@@ -62,5 +62,37 @@
         "name": "stg show modal randomly"
       }
     ]
+  },
+  "show-benefits": {
+    "defaultValue": false,
+    "rules": [
+      {
+        "coverage": 1,
+        "hashAttribute": "id",
+        "seed": "show-benefits",
+        "hashVersion": 2,
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "key": "show-benefits",
+        "meta": [
+          {
+            "key": "0",
+            "name": "Control"
+          },
+          {
+            "key": "1",
+            "name": "Variation 1"
+          }
+        ],
+        "phase": "0",
+        "name": "prod-show-benefits"
+      }
+    ]
   }
 }
