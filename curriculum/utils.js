@@ -90,8 +90,12 @@ const directoryToSuperblock = {
 };
 
 function getSuperBlockFromDir(dir) {
+  if (dir === '.DS_Store') return null;
+
   const superBlock = directoryToSuperblock[dir];
-  if (!superBlock) return null;
+
+  if (!superBlock) throw Error(`${dir} does not map to a superblock`);
+
   return directoryToSuperblock[dir];
 }
 

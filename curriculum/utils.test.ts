@@ -172,9 +172,15 @@ describe('getSuperBlockFromPath', () => {
     expect(superBlocks.size).toBe(Object.values(SuperBlocks).length + 1);
   });
 
-  it('returns null if a directory is unknown', () => {
+  it('returns null when the directory is .DS_Store for Mac Devices', () => {
     expect.assertions(1);
 
-    expect(getSuperBlockFromDir('unknown')).toBe(null);
+    expect(getSuperBlockFromDir('.DS_Store')).toBeNull();
+  });
+
+  it('throws if a directory is unknown', () => {
+    expect.assertions(1);
+
+    expect(() => getSuperBlockFromDir('unknown')).toThrow();
   });
 });
