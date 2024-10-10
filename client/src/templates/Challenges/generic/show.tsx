@@ -213,7 +213,7 @@ const ShowGeneric = ({
               )}
 
               <Button block={true} variant='primary' onClick={handleSubmit}>
-                {t('buttons.check-answer')}
+                {t('buttons.submit')}
               </Button>
 
               <Spacer size='large' />
