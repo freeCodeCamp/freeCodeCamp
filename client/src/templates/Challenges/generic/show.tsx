@@ -26,6 +26,7 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import { BlockTypes } from '../../../../../shared/config/blocks';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -69,6 +70,7 @@ const ShowGeneric = ({
         assignments,
         bilibiliIds,
         block,
+        blockType,
         description,
         challengeType,
         fields: { tests },
@@ -213,7 +215,9 @@ const ShowGeneric = ({
               )}
 
               <Button block={true} variant='primary' onClick={handleSubmit}>
-                {t('buttons.submit')}
+                {blockType === BlockTypes.review
+                  ? t('buttons.submit')
+                  : t('buttons.check-answer')}
               </Button>
 
               <Spacer size='large' />
@@ -241,6 +245,7 @@ export const query = graphql`
           cid
         }
         block
+        blockType
         challengeType
         description
         helpCategory
