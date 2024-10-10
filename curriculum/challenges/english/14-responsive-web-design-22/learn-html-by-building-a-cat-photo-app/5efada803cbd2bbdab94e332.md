@@ -41,17 +41,21 @@ assert(
 The third image should have a `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
 
 ```js
-const catsImg = document.querySelectorAll('figure > img')[1];
+const trimmedSrc = catsImg.getAttribute('src').trim();
 assert(
-  catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
+  trimmedSrc === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg',
+  'The src attribute should not have extra spaces before or after the URL.'
 );
 ```
 
 Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
 
 ```js
-assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/curriculum\/cat-photo-app\/cats\.jpg/.test(code));
+assert(
+  /src=['"]https:\/\/cdn\.freecodecamp\.org\/curriculum\/cat-photo-app\/cats\.jpg['"]/.test(code),
+  'Ensure the `src` attribute value is correctly set.'
+);
+
 ```
 
 # --seed--
