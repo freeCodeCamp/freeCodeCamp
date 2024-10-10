@@ -1,0 +1,19 @@
+{
+  "name": "HTML Fundamentals",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-html-fundamentals",
+  "order": 4,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "670803abcb3e980233da4768",
+      "title": "What Are Divs and Spans, and When Should You Use Them?"
+    },
+    {
+      "id": "6708143cab2b583ecd3324f5",
+      "title": "What Are Attributes and How Do They Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS",
+  "blockType": "lecture"
+}

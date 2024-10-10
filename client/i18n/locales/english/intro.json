@@ -1714,7 +1714,10 @@
           "For this lab, you will create a web page of your favorite recipe."
         ]
       },
-      "gwyd": { "title": "4", "intro": [] },
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": ["Learn HTML fundamentals is in these lecture videos."]
+      },
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
