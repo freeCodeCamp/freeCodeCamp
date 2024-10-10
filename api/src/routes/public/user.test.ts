@@ -125,6 +125,7 @@ const lockedProfileUI = {
   showName: false,
   showPoints: false,
   showPortfolio: false,
+  showCareer: false,
   showTimeLine: false
 };
 
@@ -246,6 +247,7 @@ describe('userRoutes', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
+        showCareer: true,
         showTimeLine: true
       };
       const users = [profilelessUsername, lockedUsername, publicUsername];
@@ -485,6 +487,7 @@ describe('get-public-profile helpers', () => {
       location: 'location',
       joinDate: 'joinDate',
       name: 'name',
+      career: [],
       points: 2,
       portfolio: [
         {
@@ -505,7 +508,8 @@ describe('get-public-profile helpers', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
-        showTimeLine: true
+        showTimeLine: true,
+        showCareer: true
       }
     };
 

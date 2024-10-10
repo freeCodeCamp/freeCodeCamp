@@ -151,7 +151,8 @@ function UserProfile({
       showName,
       showPoints,
       showPortfolio,
-      showTimeLine
+      showTimeLine,
+      showCareer
     },
     calendar,
     completedChallenges,
@@ -203,11 +204,13 @@ function UserProfile({
       />
       {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
-      <CareerTimeline
-        updateMyCareer={updateMyCareer}
-        career={career}
-        isSessionUser={isSessionUser}
-      />
+      {showCareer ? (
+        <CareerTimeline
+          career={career}
+          isSessionUser={isSessionUser}
+          updateMyCareer={updateMyCareer}
+        />
+      ) : null}
       {showPortfolio ? (
         <PortfolioProjects portfolioProjects={portfolio} />
       ) : null}

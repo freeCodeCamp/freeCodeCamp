@@ -327,6 +327,7 @@ export type ProfileUI = {
   showPoints: boolean;
   showPortfolio: boolean;
   showTimeLine: boolean;
+  showCareer: boolean;
 };
 
 export type ClaimedCertifications = {

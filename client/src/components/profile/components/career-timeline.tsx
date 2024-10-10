@@ -418,6 +418,7 @@ const CareerTimeline = ({
           );
         })}
       </div>
+      <hr />
     </FullWidthRow>
   );
 };

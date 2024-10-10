@@ -62,6 +62,7 @@ type ProfileUI {
   showPoints    Boolean? // Undefined
   showPortfolio Boolean? // Undefined
   showTimeLine  Boolean? // Undefined
+  showCareer    Boolean? // Undefined
 }
 
 type SavedChallengeFile {

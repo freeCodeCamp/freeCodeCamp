@@ -12255,7 +12255,8 @@ module.exports.fullyCertifiedUser = {
     showName: true,
     showPoints: true,
     showPortfolio: true,
-    showTimeLine: true
+    showTimeLine: true,
+    showCareer: true
   },
   badges: {
     coreTeam: []

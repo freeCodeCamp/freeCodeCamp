@@ -82,7 +82,8 @@ export function createUserInput(email: string): Prisma.userCreateInput {
       showName: false,
       showPoints: false,
       showPortfolio: false,
-      showTimeLine: false
+      showTimeLine: false,
+      showCareer: false
     },
     sendQuincyEmail: false,
     theme: 'default',

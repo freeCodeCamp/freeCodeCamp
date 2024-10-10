@@ -366,9 +366,7 @@
         "showHeatMap": false,
         "showLocation": false,
         "showName": false,
-        "showPoints": false,
-        "showPortfolio": false,
-        "showTimeLine": false
+        "showPoints": false
       }
     },
     "badges": {

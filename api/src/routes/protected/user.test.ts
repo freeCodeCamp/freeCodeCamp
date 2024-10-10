@@ -128,6 +128,7 @@ const lockedProfileUI = {
   showName: false,
   showPoints: false,
   showPortfolio: false,
+  showCareer: false,
   showTimeLine: false
 };
 
