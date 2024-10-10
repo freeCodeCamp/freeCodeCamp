@@ -143,7 +143,8 @@ model user {
   isClassroomAccount           Boolean? // Undefined
 
   // Relations
-  examAttempts EnvExamAttempt[]
+  examAttempts                      EnvExamAttempt[]
+  examEnvironmentAuthorizationToken ExamEnvironmentAuthorizationToken?
 }
 
 // -----------------------------------
@@ -375,15 +376,13 @@ model UserToken {
   @@index([userId], map: "userId_1")
 }
 
-/// TODO: Token has to outlive the exam attempt
-/// Validation has to be taken as the attempt is requested
-/// to ensure it lives long enough.
 model ExamEnvironmentAuthorizationToken {
   id          String   @id @map("_id")
   createdDate DateTime @db.Date
-  userId      String   @db.ObjectId
+  userId      String   @unique @db.ObjectId
 
-  @@index([userId], map: "userId_1")
+  // Relations
+  user user @relation(fields: [userId], references: [id])
 }
 
 model sessions {

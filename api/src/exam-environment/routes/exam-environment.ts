@@ -100,7 +100,7 @@ async function tokenVerifyHandler(
   const examEnvironmentAuthorizationToken =
     payload.examEnvironmentAuthorizationToken;
 
-  const token = await this.prisma.examEnvironmentAuthorizationToken.findFirst({
+  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
     where: {
       id: examEnvironmentAuthorizationToken
     }

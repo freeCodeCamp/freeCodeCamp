@@ -110,7 +110,11 @@ export const getSessionUser = {
               )
             })
           ),
-          msUsername: Type.Optional(Type.String())
+          msUsername: Type.Optional(Type.String()),
+          examEnvironmentAuthorizationToken: Type.Union([
+            Type.String(),
+            Type.Null()
+          ])
         })
       ),
       result: Type.String()
