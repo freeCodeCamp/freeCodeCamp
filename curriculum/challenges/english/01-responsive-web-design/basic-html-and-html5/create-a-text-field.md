@@ -19,7 +19,7 @@ You can create a text input like this:
 <input type="text">
 ```
 
-Note that `input` elements are self-closing.
+Note that `input` is a void element.
 
 # --instructions--
 
