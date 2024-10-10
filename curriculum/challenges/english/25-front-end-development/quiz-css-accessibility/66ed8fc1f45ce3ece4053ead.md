@@ -17,439 +17,434 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What is a common method for hiding content in HTML?
 
 #### --distractors--
 
-Placeholder distractor 1
+display: none;
 
 ---
 
-Placeholder distractor 2
+visibility: hidden;
 
 ---
 
-Placeholder distractor 3
+opacity: 0;
 
 #### --answer--
 
-Placeholder answer
+All of the above
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the minimum contrast ratio for normal text according to WCAG?
 
 #### --distractors--
 
-Placeholder distractor 1
+2:1
 
 ---
 
-Placeholder distractor 2
+3:1
 
 ---
 
-Placeholder distractor 3
+5:1
 
 #### --answer--
 
-Placeholder answer
+4.5:1
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which tool can help inspect element styles in a web browser?
 
 #### --distractors--
 
-Placeholder distractor 1
+Adobe Photoshop
 
 ---
 
-Placeholder distractor 2
+Microsoft Word
 
 ---
 
-Placeholder distractor 3
+Notepad
 
 #### --answer--
 
-Placeholder answer
+Chrome DevTools
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which attribute is used to hide content from screen readers?
 
 #### --distractors--
 
-Placeholder distractor 1
+hidden
 
 ---
 
-Placeholder distractor 2
+display: none;
 
 ---
 
-Placeholder distractor 3
+visibility: hidden;
 
 #### --answer--
 
-Placeholder answer
+aria-hidden
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the ideal contrast ratio for large text?
 
 #### --distractors--
 
-Placeholder distractor 1
+2:1
 
 ---
 
-Placeholder distractor 2
+4.5:1
 
 ---
 
-Placeholder distractor 3
+3.5:1
 
 #### --answer--
 
-Placeholder answer
+3:1
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which online tool checks color contrast accessibility?
 
 #### --distractors--
 
-Placeholder distractor 1
+ColorZilla
 
 ---
 
-Placeholder distractor 2
+Canva
 
 ---
 
-Placeholder distractor 3
+Figma
 
 #### --answer--
 
-Placeholder answer
+Contrast Checker
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which CSS property hides an element from visual rendering?
 
 #### --distractors--
 
-Placeholder distractor 1
+visibility
 
 ---
 
-Placeholder distractor 2
+position
 
 ---
 
-Placeholder distractor 3
+float
 
 #### --answer--
 
-Placeholder answer
+display
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is a recommended contrast ratio for accessible text?
 
 #### --distractors--
 
-Placeholder distractor 1
+1.5:1
 
 ---
 
-Placeholder distractor 2
+7:1
 
 ---
 
-Placeholder distractor 3
+3:1
 
 #### --answer--
 
-Placeholder answer
+4.5:1
+
+### --question--
+
+#### --text--
+What does the 'Inspect Element' feature do?
+
+#### --distractors--
+
+Edits text directly
+
+---
+
+Downloads files
+
+---
+
+Modifies images
+
+#### --answer--
+
+Displays CSS and HTML
+
+### --question--
+
+#### --text--
+Which method keeps content in the document but hidden visually?
+
+#### --distractors--
+
+display: none;
+
+---
+
+position: absolute;
+
+---
+
+opacity: 0;
+
+#### --answer--
+
+visibility: hidden;
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is a tool for testing color combinations?
 
 #### --distractors--
 
-Placeholder distractor 1
+WordPress
 
 ---
 
-Placeholder distractor 2
+Sketch
 
 ---
 
-Placeholder distractor 3
+Excel
 
 #### --answer--
 
-Placeholder answer
+Paletton
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which browser is known for robust developer tools?
 
 #### --distractors--
 
-Placeholder distractor 1
+Safari
 
 ---
 
-Placeholder distractor 2
+Internet Explorer
 
 ---
 
-Placeholder distractor 3
+Opera
 
 #### --answer--
 
-Placeholder answer
+Firefox
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is a common use for aria-hidden="true"?
 
 #### --distractors--
 
-Placeholder distractor 1
+To show content
 
 ---
 
-Placeholder distractor 2
+To display on mobile
 
 ---
 
-Placeholder distractor 3
+To increase visibility
 
 #### --answer--
 
-Placeholder answer
+To hide from screen readers
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which color is considered low contrast with white?
 
 #### --distractors--
 
-Placeholder distractor 1
+Black
 
 ---
 
-Placeholder distractor 2
+Dark Blue
 
 ---
 
-Placeholder distractor 3
+Dark Green
 
 #### --answer--
 
-Placeholder answer
+Light Gray
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which tool allows you to test CSS live on a website?
 
 #### --distractors--
 
-Placeholder distractor 1
+CodePen
 
 ---
 
-Placeholder distractor 2
+JSFiddle
 
 ---
-
-Placeholder distractor 3
+Live CSS Editor
 
 #### --answer--
 
-Placeholder answer
+All of the above
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which CSS property makes an element invisible but still takes up space?
 
 #### --distractors--
 
-Placeholder distractor 1
+display: none;
 
 ---
 
-Placeholder distractor 2
+z-index: -1;
 
 ---
-
-Placeholder distractor 3
+opacity: 0;
 
 #### --answer--
 
-Placeholder answer
+visibility: hidden;
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the ideal contrast ratio for graphics?
 
 #### --distractors--
 
-Placeholder distractor 1
+1.5:1
 
 ---
 
-Placeholder distractor 2
+4.5:1
 
 ---
 
-Placeholder distractor 3
+3:1
 
 #### --answer--
 
-Placeholder answer
+7:1
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which feature of Chrome helps in accessibility audits?
 
 #### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
+DevTools
 
 ---
 
-Placeholder distractor 3
+Extensions
+
+---
+
+Bookmark Manager
 
 #### --answer--
 
-Placeholder answer
+Lighthouse
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is a reason to hide content on a webpage?
 
 #### --distractors--
 
-Placeholder distractor 1
+To improve SEO
 
 ---
 
-Placeholder distractor 2
+For user experience
 
 ---
 
-Placeholder distractor 3
+To save bandwidth
 
 #### --answer--
 
-Placeholder answer
+All of the above
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which color combination is generally recommended for accessibility?
 
 #### --distractors--
 
-Placeholder distractor 1
+Yellow on White
 
 ---
 
-Placeholder distractor 2
+Green on Red
 
 ---
 
-Placeholder distractor 3
+Blue on Yellow
 
 #### --answer--
 
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+Black on White  
 
