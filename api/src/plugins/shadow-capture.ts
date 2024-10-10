@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { appendFileSync } from 'fs';
+import { appendFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import type { FastifyPluginCallback } from 'fastify';
 
@@ -22,6 +22,7 @@ let RESPONSE_BUFFER: unknown[] = [];
  * @param done Callback to signal that the logic has completed.
  */
 const shadowCapture: FastifyPluginCallback = (fastify, _options, done) => {
+  mkdirSync(LOGS_DIRECTORY, { recursive: true });
   fastify.addHook('onRequest', (req, rep, done) => {
     // Attach timestamp at beginning of lifecycle
     // @ts-expect-error Exists
@@ -42,7 +43,13 @@ const shadowCapture: FastifyPluginCallback = (fastify, _options, done) => {
     done();
   });
 
-  fastify.addHook('onResponse', (req, rep, done) => {
+  fastify.addHook('onSend', async (_req, rep, payload) => {
+    // @ts-expect-error Exists
+    rep.__payload = payload;
+    return payload;
+  });
+
+  fastify.addHook('onResponse', (_req, rep, done) => {
     captureReply(rep);
     done();
   });
@@ -79,11 +86,11 @@ function captureReply(rep: FastifyReply) {
   const savedReply = {
     // @ts-expect-error Exists
     id: rep.__id,
+    headers: rep.getHeaders(),
+    timestamp: Date.now(),
     // @ts-expect-error Exists
-    headers: rep.raw._header,
-    // @ts-expect-error Exists
-    contentLength: rep.raw._contentLength,
-    timestamp: Date.now()
+    payload: rep.__payload,
+    statusCode: rep.statusCode
   };
 
   if (RESPONSE_BUFFER.length > 10) {
