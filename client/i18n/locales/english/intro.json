@@ -1727,7 +1727,10 @@
         "intro": ["For this lab, you will create a video compilation web page."]
       },
       "bzfv": { "title": "8", "intro": [] },
-      "snuv": { "title": "9", "intro": [] },
+      "review-basic-html": {
+        "title": "Basic HTML Review",
+        "intro": ["Review the basic HTML topics."]
+      },
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
