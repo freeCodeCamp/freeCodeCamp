@@ -78,6 +78,7 @@
     "gatsby-plugin-remove-serviceworker": "1.0.0",
     "gatsby-source-filesystem": "3.15.0",
     "gatsby-transformer-remark": "5.25.1",
+    "html-to-image": "^1.11.11",
     "i18next": "22.5.1",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
