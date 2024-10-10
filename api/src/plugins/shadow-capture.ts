@@ -1,10 +1,15 @@
 import { randomUUID } from 'crypto';
 import { appendFileSync } from 'fs';
+import { join } from 'path';
 import type { FastifyPluginCallback } from 'fastify';
 
 import fp from 'fastify-plugin';
 import { FastifyReply } from 'fastify/types/reply';
 import { FastifyRequest } from 'fastify/types/request';
+
+const LOGS_DIRECTORY = 'logs';
+const REQUEST_CAPTURE_FILE = 'request-capture.jsonl';
+const RESPONSE_CAPTURE_FILE = 'response-capture.jsonl';
 
 let REQUEST_BUFFER: unknown[] = [];
 let RESPONSE_BUFFER: unknown[] = [];
@@ -19,14 +24,14 @@ let RESPONSE_BUFFER: unknown[] = [];
 const shadowCapture: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.addHook('onRequest', (req, rep, done) => {
     // Attach timestamp at beginning of lifecycle
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     req.__timestamp = Date.now();
 
     // Give request and response same id to match.
     const id = randomUUID();
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     req.__id = id;
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     rep.__id = id;
     done();
   });
@@ -48,9 +53,9 @@ const shadowCapture: FastifyPluginCallback = (fastify, _options, done) => {
 /* eslint-disable @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return */
 function captureRequest(req: FastifyRequest) {
   const savedRequest = {
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     id: req.__id,
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     timestamp: req.__timestamp,
     url: req.url,
     headers: omit(req.headers, 'cookie'),
@@ -61,7 +66,7 @@ function captureRequest(req: FastifyRequest) {
 
   if (REQUEST_BUFFER.length > 10) {
     appendFileSync(
-      'request-capture.jsonl',
+      join(LOGS_DIRECTORY, REQUEST_CAPTURE_FILE),
       REQUEST_BUFFER.map(rb => JSON.stringify(rb)).join('\n') + '\n'
     );
     REQUEST_BUFFER = [savedRequest];
@@ -72,18 +77,18 @@ function captureRequest(req: FastifyRequest) {
 
 function captureReply(rep: FastifyReply) {
   const savedReply = {
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     id: rep.__id,
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     headers: rep.raw._header,
-    // @ts-expect-error TODO
+    // @ts-expect-error Exists
     contentLength: rep.raw._contentLength,
     timestamp: Date.now()
   };
 
   if (RESPONSE_BUFFER.length > 10) {
     appendFileSync(
-      'response-capture.jsonl',
+      join(LOGS_DIRECTORY, RESPONSE_CAPTURE_FILE),
       RESPONSE_BUFFER.map(rb => JSON.stringify(rb)).join('\n') + '\n'
     );
     RESPONSE_BUFFER = [savedReply];
@@ -98,33 +103,27 @@ function captureReply(rep: FastifyReply) {
  * @param vals - Items or properties to exclude from `obj`.
  * @returns Subset of `obj`.
  */
-function omit(obj: object, ...vals: unknown[]) {
+function omit(obj: Record<string, unknown> | unknown[], ...vals: unknown[]) {
   if (Array.isArray(obj)) {
     return obj.filter(o => !vals.includes(o));
   } else {
-    return (
-      Object.keys(obj)
-        .filter(k => {
-          return !vals.includes(k);
-        })
-        // @ts-expect-error TODO
-        .reduce((acc, curr) => ({ ...acc, [curr]: obj[curr] }), {})
-    );
+    return Object.keys(obj)
+      .filter(k => {
+        return !vals.includes(k);
+      })
+      .reduce((acc, curr) => ({ ...acc, [curr]: obj[curr] }), {});
   }
 }
 
-function include(obj: object, ...vals: unknown[]) {
+function include(obj: Record<string, unknown> | unknown[], ...vals: unknown[]) {
   if (Array.isArray(obj)) {
     return obj.filter(o => vals.includes(o));
   } else {
-    return (
-      Object.keys(obj)
-        .filter(k => {
-          return vals.includes(k);
-        })
-        // @ts-expect-error TODO
-        .reduce((acc, curr) => ({ ...acc, [curr]: obj[curr] }), {})
-    );
+    return Object.keys(obj)
+      .filter(k => {
+        return vals.includes(k);
+      })
+      .reduce((acc, curr) => ({ ...acc, [curr]: obj[curr] }), {});
   }
 }
 
