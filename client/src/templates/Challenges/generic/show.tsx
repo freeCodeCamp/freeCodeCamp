@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
-// import { ObserveKeys } from 'react-hotkeys';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -10,11 +9,9 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
-// import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
-// import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
@@ -29,9 +26,6 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-// import PrismFormatted from '../components/prism-formatted';
-
-// import './show.css';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -80,8 +74,6 @@ const ShowGeneric = ({
         fields: { tests },
         helpCategory,
         instructions,
-        // questions,
-        // quizzes,
         title,
         translationPending,
         superBlock,
@@ -103,36 +95,6 @@ const ShowGeneric = ({
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
-
-  // Initialize the data passed to `useQuiz`
-  // const [initialQuizData] = useState(
-  //   quiz.map(question => {
-  //     const distractors = question.distractors.map((distractor, index) => {
-  //       return {
-  //         label: (
-  //           <PrismFormatted className='quiz-answer-label' text={distractor} />
-  //         ),
-  //         value: index + 1
-  //       };
-  //     });
-
-  //     const answer = {
-  //       label: (
-  //         <PrismFormatted
-  //           className='quiz-answer-label'
-  //           text={question.answer}
-  //         />
-  //       ),
-  //       value: 4
-  //     };
-
-  //     return {
-  //       question: <PrismFormatted text={question.text} />,
-  //       answers: shuffleArray([...distractors, answer]),
-  //       correctAnswer: answer.value
-  //     };
-  //   })
-  // );
 
   useEffect(() => {
     initTests(tests);
@@ -188,12 +150,11 @@ const ShowGeneric = ({
     setAllAssignmentsCompleted(totalAssignments === newAssignmentsCompleted);
   };
 
-  // Submit
+  // submit
   const handleSubmit = () => {
-    // if all correct, open completion modal
-
-    openCompletionModal();
-    // else, show feedback
+    if (assignments.length > 0 && allAssignmentsCompleted) {
+      openCompletionModal();
+    }
   };
 
   return (
