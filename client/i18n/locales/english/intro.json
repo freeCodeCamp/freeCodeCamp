@@ -1697,7 +1697,10 @@
     "intro": ["placeholder"],
     "blocks": {
       "efpl": { "title": "0", "intro": [] },
-      "xpmy": { "title": "1", "intro": [] },
+      "lecture-what-is-html": {
+        "title": "What is HTML?",
+        "intro": ["Learn what HTML is in these lecture videos."]
+      },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
         "intro": [
