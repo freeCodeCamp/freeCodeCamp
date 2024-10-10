@@ -17,45 +17,45 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-What property is missing to apply an animation to an element?
+Which CSS property is used for 2D/3D transformations?
 
 #### --distractors--
 
-animation-iteration-count
+position
 
 ---
 
-animation-delay
+transition
 
 ---
 
-animation-timing-function
+display
 
 #### --answer--
 
-animation-duration
+transform
 
 ### --question--
 
 #### --text--
 
-What does this animation do to the div element?
+What does matrix() allow you to control?
 
 #### --distractors--
 
-Changes the position
+Only scaling
 
 ---
 
-Resizes the element
+Only translation
 
 ---
 
-Rotates the element
+Only rotation
 
 #### --answer--
 
-Fades the element in
+Multiple transformations at once
 
 ### --question--
 
@@ -105,67 +105,67 @@ linear
 
 #### --text--
 
-How long will the animation take to complete one cycle?
+What does @keyframes define?
 
 #### --distractors--
 
-2 seconds
+CSS colors
 
 ---
 
- 6 seconds
+CSS transitions
 
 ---
 
- It depends on the timing function
+CSS text styles
 
 #### --answer--
 
-4 seconds
+CSS animation sequences
 
 ### --question--
 
 #### --text--
 
-What is the effect of this CSS code?
+What does translate() do?
 
 #### --distractors--
 
-The element rotates once and stops after 2 seconds
+Changes opacity
 
 ---
 
-The element rotates and fades out
+Rotates the element
 
 ---
 
-The element will move left to right infinitely
+Skews the element
 
 #### --answer--
 
-The element rotates infinitely every 2 seconds
+Moves the element
 
 ### --question--
 
 #### --text--
 
-Which property is controlling the starting delay of this animation?
+What does accessibility focus on in web design?
 
 #### --distractors--
 
-animation-timing-function
+Color choice
 
 ---
 
-animation-duration
+Responsiveness
 
 ---
 
-animation-iteration-count
+Layout complexity
 
 #### --answer--
 
-animation-delay
+Usability for all users
 
 ### --question--
 
@@ -185,7 +185,6 @@ It will change the color instantly from red to blue.
 
 It will cycle through all colors.
 
-
 #### --answer--
 
 It will change the color instantly from red to blue.
@@ -199,9 +198,11 @@ Which property will pause the animation?
 #### --distractors--
 
 animation-timing-function: paused
+
 ---
 
 animation-stop
+
 ---
 
 animation-direction: paused
@@ -209,58 +210,53 @@ animation-direction: paused
 #### --answer--
 
 animation-play-state: paused
-### --question--
-
-#### --text--
-
-What does the animation-fill-mode property do in this example?
-#### --distractors--
-
-Reverts to the initial style after animation
----
-
-Loops the animation infinitely
----
-
-Resets the element to its default state
-
-#### --answer--
-
-Keeps the final animation state after it finishes
 
 ### --question--
 
 #### --text--
 
-What is the purpose of alternate in this code?
+Why is providing video captions important?
 
 #### --distractors--
 
-The animation runs once, then stops
+To improve SEO
+
 ---
 
-The animation reverses at half time
+To comply with web standards
+
 ---
 
-The animation applies in alternate frames
+To enhance visuals
 
 #### --answer--
+To provide accessibility for hearing impaired users
+### --question--
 
-The animation changes direction every cycle
-
+#### --text--
+Which attribute is used for form field accessibility?
+#### --distractors--
+Placeholder
+---
+action
+---
+method
+#### --answer--
+label
 ### --question--
 
 #### --text--
 
 Which property defines how an animation progresses over time?
-#### --distractors--
 
+#### --distractors--
 
 animation-delay
 
 ---
 
 animation-fill-mode
+
 ---
 
 animation-iteration-count
@@ -282,6 +278,7 @@ Smoothly transitions between steps
 ---
 
 Repeats the animation infinitely with no delay
+
 ---
 
 Fades in and out during each step
@@ -290,35 +287,27 @@ Fades in and out during each step
 
 Jumps immediately to the next frame
 
-
 ### --question--
 
 #### --text--
-
-Which property controls the reverse animation direction in this example?
-
+What is the purpose of focus indicators?
 #### --distractors--
-
-The animation will loop infinitely
+To show hidden elements
 ---
-
-The animation will run forward then reverse
+To enhance font styles
 ---
-
-The animation will reset after each iteration
-
+To adjust the layout
 #### --answer--
-
-The animation will run backward
-
+To highlight focused elements
 ### --question--
 
 #### --text--
 
-What will happen when this animation is applied?
+What will happen when this animation transform: translateX(200px) is applied?
+
 #### --distractors--
 
- The element will move left
+The element will move left
 
 ---
 
@@ -348,11 +337,11 @@ The animation will pause after the first iteration
 
 ---
 
-The animation will stop after 3 iterations
+The animation will stop after three iterations
 
 #### --answer--
 
-The animation will repeat infinitely
+The animation will repeat indefinitely
 
 ### --question--
 
@@ -384,20 +373,19 @@ How do you ensure an animation starts from the middle of its defined steps?
 
 #### --distractors--
 
-reverse
+Start
 
 ---
 
-forwards
-
+Resume
 
 ---
 
-paused
+Pause
 
 #### --answer--
 
-backwards
+Seek
 
 ### --question--
 
@@ -442,4 +430,3 @@ animation-iteration-count
 #### --answer--
 
 animation-delay
-
