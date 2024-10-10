@@ -11,6 +11,45 @@
   overflow-wrap: break-word;
 }
 
+.block-label {
+  margin: 0 10px 0 0;
+  align-self: center;
+  height: fit-content;
+  padding: 4px 10px;
+  background-color: var(--secondary-background);
+  border: 1px solid;
+}
+
+.block-label-lecture {
+  border-color: var(--yellow-color);
+  color: var(--yellow-color);
+}
+
+.block-label-workshop {
+  border-color: var(--highlight-color);
+  color: var(--highlight-color);
+}
+
+.block-label-lab {
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.block-label-review {
+  border-color: var(--purple-color);
+  color: var(--purple-color);
+}
+
+.block-label-quiz {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.block-label-exam {
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+}
+
 .block-header {
   display: flex;
   justify-content: space-between;
