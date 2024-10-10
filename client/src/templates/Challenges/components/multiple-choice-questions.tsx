@@ -45,12 +45,11 @@ function MultipleChoiceQuestions({
                 questions[questionIndex].solution - 1;
 
               return (
-                <>
+                <React.Fragment key={answerIndex}>
                   <label
                     className={`video-quiz-option-label 
                       ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
                       ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
-                    key={answerIndex}
                     htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
                   >
                     <input
@@ -100,7 +99,7 @@ function MultipleChoiceQuestions({
                       )}
                     </div>
                   )}
-                </>
+                </React.Fragment>
               );
             })}
           </div>

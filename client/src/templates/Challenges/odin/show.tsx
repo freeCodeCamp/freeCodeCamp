@@ -111,7 +111,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       submittedMcqAnswers: questions.map(() => null),
       showFeedback: false,
       assignmentsCompleted: 0,
-      allAssignmentsCompleted: assignments.length > 0 ? false : true,
+      allAssignmentsCompleted: assignments.length == 0,
       videoIsLoaded: false,
       isScenePlaying: false
     };
