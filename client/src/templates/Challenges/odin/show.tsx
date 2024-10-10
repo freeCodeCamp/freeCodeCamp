@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { isEqual } from 'lodash-es';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
 import ShortcutsModal from '../components/shortcuts-modal';
 
@@ -26,7 +27,6 @@ import ChallengeTitle from '../components/challenge-title';
 import ChallegeExplanation from '../components/challenge-explanation';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import Assignments from '../components/assignments';
-import arraysAreEqual from '../../../utils/arrays-are-equal';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -194,7 +194,7 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
       showFeedback: true
     });
 
-    const allMcqAnswersCorrect = arraysAreEqual(
+    const allMcqAnswersCorrect = isEqual(
       mcqSolutions,
       this.state.selectedMcqOptions
     );
@@ -208,14 +208,11 @@ class ShowOdin extends Component<ShowOdinProps, ShowOdinState> {
     questionIndex: number,
     answerIndex: number
   ): void => {
-    const { selectedMcqOptions } = this.state;
-
-    const newSelectedMcqOptions = [...selectedMcqOptions];
-    newSelectedMcqOptions[questionIndex] = answerIndex;
-
-    this.setState({
-      selectedMcqOptions: newSelectedMcqOptions
-    });
+    this.setState(state => ({
+      selectedMcqOptions: state.selectedMcqOptions.map((option, index) =>
+        index === questionIndex ? answerIndex : option
+      )
+    }));
   };
 
   handleAssignmentChange = (

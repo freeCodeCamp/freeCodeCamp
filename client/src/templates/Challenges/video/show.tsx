@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { isEqual } from 'lodash-es';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
@@ -23,7 +24,6 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
-import arraysAreEqual from '../../../utils/arrays-are-equal';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -183,7 +183,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       showFeedback: true
     });
 
-    const allMcqAnswersCorrect = arraysAreEqual(
+    const allMcqAnswersCorrect = isEqual(
       mcqSolutions,
       this.state.selectedMcqOptions
     );
@@ -197,14 +197,11 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     questionIndex: number,
     answerIndex: number
   ): void => {
-    const { selectedMcqOptions } = this.state;
-
-    const newSelectedMcqOptions = [...selectedMcqOptions];
-    newSelectedMcqOptions[questionIndex] = answerIndex;
-
-    this.setState({
-      selectedMcqOptions: newSelectedMcqOptions
-    });
+    this.setState(state => ({
+      selectedMcqOptions: state.selectedMcqOptions.map((option, index) =>
+        index === questionIndex ? answerIndex : option
+      )
+    }));
   };
 
   onVideoLoad = () => {

@@ -29,7 +29,11 @@ function MultipleChoiceQuestions({
 
   return (
     <>
-      <ChallengeHeading heading={t('learn.question')} />
+      <ChallengeHeading
+        heading={
+          questions.length > 1 ? t('learn.questions') : t('learn.question')
+        }
+      />
       {questions.map((question, questionIndex) => (
         <div key={questionIndex}>
           <PrismFormatted className={'line-numbers'} text={question.text} />
