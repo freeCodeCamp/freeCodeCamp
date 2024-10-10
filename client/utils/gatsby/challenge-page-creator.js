@@ -61,6 +61,11 @@ const fillInTheBlank = path.resolve(
   '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
 );
 
+const generic = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/generic/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -73,8 +78,8 @@ const views = {
   exam,
   msTrophy,
   dialogue,
-  fillInTheBlank
-  // quiz: Quiz
+  fillInTheBlank,
+  generic
 };
 
 function getIsFirstStepInBlock(id, edges) {
