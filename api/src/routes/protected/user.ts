@@ -492,8 +492,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             username: true,
             usernameDisplay: true,
             website: true,
-            yearsTopContributor: true,
-            examEnvironmentAuthorizationToken: true
+            yearsTopContributor: true
           }
         });
 
@@ -523,17 +522,6 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         const encodedToken = userToken
           ? encodeUserToken(userToken.id)
           : undefined;
-
-        const encodedExamAuthorizationToken =
-          user.examEnvironmentAuthorizationToken
-            ? jwt.sign(
-                {
-                  examEnvironmentAuthorizationToken:
-                    user.examEnvironmentAuthorizationToken.id
-                },
-                JWT_SECRET
-              )
-            : null;
 
         const [flags, rest] = splitUser(user);
 
@@ -578,8 +566,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               username: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
-              msUsername: msUsername?.msUsername,
-              examEnvironmentAuthorizationToken: encodedExamAuthorizationToken
+              msUsername: msUsername?.msUsername
             }
           },
           result: user.username

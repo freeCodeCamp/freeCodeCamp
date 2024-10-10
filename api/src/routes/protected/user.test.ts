@@ -155,8 +155,7 @@ const sessionOnlyData = {
   theme: testUserData.theme,
   keyboardShortcuts: testUserData.keyboardShortcuts,
   completedChallengeCount: 3,
-  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,
-  examEnvironmentAuthorizationToken: null
+  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms
 };
 
 const publicUserData = {
@@ -723,8 +722,7 @@ describe('userRoutes', () => {
           keyboardShortcuts: false,
           location: '',
           name: '',
-          theme: 'default',
-          examEnvironmentAuthorizationToken: null
+          theme: 'default'
         };
 
         const response = await superRequest('/user/get-session-user', {
@@ -739,27 +737,6 @@ describe('userRoutes', () => {
         };
 
         expect(testuser).toStrictEqual(publicUser);
-      });
-
-      test('GET returns the exam environment authorization token if it exists', async () => {
-        const tokenData = {
-          userId: defaultUserId,
-          id: customNanoid(),
-          createdDate: new Date()
-        };
-
-        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
-          {
-            data: tokenData
-          }
-        );
-
-        const response = await superGet('/user/get-session-user');
-        const { examEnvironmentAuthorizationToken } = jwt.decode(
-          response.body.user.foobar.examEnvironmentAuthorizationToken
-        ) as { examEnvironmentAuthorizationToken: string };
-
-        expect(tokenData.id).toBe(examEnvironmentAuthorizationToken);
       });
     });
 
