@@ -322,6 +322,7 @@ describe('auth0 plugin', () => {
       expect(user).toEqual({
         about: '',
         acceptedPrivacyTerms: false,
+        career: [],
         completedChallenges: [],
         completedExams: [],
         currentChallengeId: '',
@@ -383,7 +384,8 @@ describe('auth0 plugin', () => {
           showName: false,
           showPoints: false,
           showPortfolio: false,
-          showTimeLine: false
+          showTimeLine: false,
+          showCareer: false
         },
         progressTimestamps: [expect.any(Number)],
         rand: null,
