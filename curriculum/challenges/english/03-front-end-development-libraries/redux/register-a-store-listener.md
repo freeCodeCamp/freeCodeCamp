@@ -39,7 +39,6 @@ The `store.subscribe` should receive a function.
 
 ```js
 assert.match(code,/(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm);
-assert.notMatch(code,/store\.subscribe\(.+\(\)\)/)
 ```
 
 The function passed to `store.subscribe` should not be called.
