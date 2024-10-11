@@ -85,7 +85,8 @@ Which of the following will not run as expected with this style?
 ```
 
 #### --answer--
-```css
+
+```html
 <img src="img2.jpg" title="flowers" width="150" height="113">
 ```
 
