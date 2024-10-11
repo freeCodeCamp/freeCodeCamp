@@ -610,7 +610,6 @@ You want to style lists that have a type attribute with a value ending in `"squa
 ul[type*="square"] { list-style-type: square; }
 ```
 
-
 ---
 
 ```css
