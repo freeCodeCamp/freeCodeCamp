@@ -1186,10 +1186,10 @@ Thanks and regards,
 
         const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
 
-        expect(decodedToken).not.toStrictEqual({
-          examEnvironmentAuthorizationToken: id,
-          iat: expect.any(Number)
-        });
+        expect(decodedToken).not.toHaveProperty(
+          'examEnvironmentAuthorizationToken',
+          id
+        );
 
         expect(response.status).toBe(200);
 
