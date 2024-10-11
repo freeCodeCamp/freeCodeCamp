@@ -17,439 +17,439 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What is CSS Grid?
 
 #### --distractors--
 
-Placeholder distractor 1
+A method used for displaying tables on a website.
 
 ---
 
-Placeholder distractor 2
+A method used for tiling images.
 
 ---
 
-Placeholder distractor 3
+A way to display outlines around HTML elements.
 
 #### --answer--
 
-Placeholder answer
+A two-dimensional layout for HTML documents.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property and attribute are used to turn an element into a grid container?
 
 #### --distractors--
 
-Placeholder distractor 1
+`display: grid-area`
 
 ---
 
-Placeholder distractor 2
+`grid: grid-template`
 
 ---
 
-Placeholder distractor 3
+`grid-template: set`
 
 #### --answer--
 
-Placeholder answer
+`display: grid`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which one of these options for the `grid-template-columns` property will result in a middle column that is 80 relative units wide, and two columns taking up the remaining space?
 
 #### --distractors--
 
-Placeholder distractor 1
+`10% 80rem 10%`
 
 ---
 
-Placeholder distractor 2
+`1fr 8fr 1fr`
 
 ---
 
-Placeholder distractor 3
+`10rem 80rem 10rem`
 
 #### --answer--
 
-Placeholder answer
+`1fr 80rem 1fr`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the `grid-template-rows` property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Specifies a grid item's size and location in a grid layout.
 
 ---
 
-Placeholder distractor 2
+Creates a template for creating new grid rows.
 
 ---
 
-Placeholder distractor 3
+Specifies a default row size.
 
 #### --answer--
 
-Placeholder answer
+Specifies the number and heights of the rows in a grid layout.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the `minmax()` function do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Toggles between the first and second value, depending on available space.
 
 ---
 
-Placeholder distractor 2
+Returns the average of the two inputs.
 
 ---
 
-Placeholder distractor 3
+Sets the minimal size of the element for browser working in full-screen mode.
 
 #### --answer--
 
-Placeholder answer
+Defines a size range between the first and second value.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the shorthand for the `column-gap` and `row-gap` properties?
 
 #### --distractors--
 
-Placeholder distractor 1
+`gap-column-row`
 
 ---
 
-Placeholder distractor 2
+`gutters`
 
 ---
 
-Placeholder distractor 3
+`grid-gap`
 
 #### --answer--
 
-Placeholder answer
+`gap`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property defines on which row line the item will start?
 
 #### --distractors--
 
-Placeholder distractor 1
+`row-start`
 
 ---
 
-Placeholder distractor 2
+`grid-row-begin`
 
 ---
 
-Placeholder distractor 3
+`grid-row`
 
 #### --answer--
 
-Placeholder answer
+`grid-row-start`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property automatically allocates rows based on a fixed size?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-rows-size`
 
 ---
 
-Placeholder distractor 2
+`grid-template`
 
 ---
 
-Placeholder distractor 3
+`grid-row`
 
 #### --answer--
 
-Placeholder answer
+`grid-auto-rows`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What are grid lines?
 
 #### --distractors--
 
-Placeholder distractor 1
+Shorthand for rows and columns.
 
 ---
 
-Placeholder distractor 2
+Outlines of a grid element.
 
 ---
 
-Placeholder distractor 3
+Lines along which grid columns and rows are created.
 
 #### --answer--
 
-Placeholder answer
+Lines on which each of the grid items begin and end.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the `grid-column` property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Adds a new grid element as a child of the element it's applied to.
 
 ---
 
-Placeholder distractor 2
+Aligns text in the grid item vertically.
 
 ---
 
-Placeholder distractor 3
+Specifies the number of columns in a grid element.
 
 #### --answer--
 
-Placeholder answer
+Tells the grid item on which grid line it should start and end at.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you create four columns of equal width?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-template-columns: repeat(4)`
 
 ---
 
-Placeholder distractor 2
+`grid-template-columns: 1, 1, 1, 1,`
 
 ---
 
-Placeholder distractor 3
+`grid-column: repeat(4, 1fr)`
 
 #### --answer--
 
-Placeholder answer
+`grid-template-columns: repeat(4, 1fr)`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property and value will make an element span the full width of the grid?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-column: 1 / 1`
 
 ---
 
-Placeholder distractor 2
+`width: 100%`
 
 ---
 
-Placeholder distractor 3
+`grid-column: 100%`
 
 #### --answer--
 
-Placeholder answer
+`grid-column: 1 / -1`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the `grid-auto-flow` property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Controls the order in which grid items are displayed.
 
 ---
 
-Placeholder distractor 2
+Adjusts the spacing between the grid elements.
 
 ---
 
-Placeholder distractor 3
+Automatically adjusts the element to fit in the grid.
 
 #### --answer--
 
-Placeholder answer
+Controls how auto-placed elements get inserted to the grid.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the secondary value `dense` do in the `grid-auto-flow` property?
 
 #### --distractors--
 
-Placeholder distractor 1
+Narrows the grid container to fit to its content width.
 
 ---
 
-Placeholder distractor 2
+Groups grid items of the same size.
 
 ---
 
-Placeholder distractor 3
+Sorts grid items based on their size.
 
 #### --answer--
 
-Placeholder answer
+Place smaller items to fill gaps in the grid.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which one of these options is NOT a unit used for the `gap` property?
 
 #### --distractors--
 
-Placeholder distractor 1
+`px`
 
 ---
 
-Placeholder distractor 2
+`%`
 
 ---
 
-Placeholder distractor 3
+`em`
 
 #### --answer--
 
-Placeholder answer
+`fr`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you make a grid item take up 2 rows using the `grid-row-end` property?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-row-end: 2 / 2`
 
 ---
 
-Placeholder distractor 2
+`grid-row-end: -2`
 
 ---
 
-Placeholder distractor 3
+`grid-row-end: 2`
 
 #### --answer--
 
-Placeholder answer
+`grid-row-end: span 2`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of these properties is NOT used to align items inside a grid element?
 
 #### --distractors--
 
-Placeholder distractor 1
+`align-items`
 
 ---
 
-Placeholder distractor 2
+`place-items`
 
 ---
 
-Placeholder distractor 3
+`justify-items`
 
 #### --answer--
 
-Placeholder answer
+`center-items`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of these properties can be used as a shorthand for the `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end` properties?
 
 #### --distractors--
 
-Placeholder distractor 1
+`grid-section`
 
 ---
 
-Placeholder distractor 2
+`grid-item`
 
 ---
 
-Placeholder distractor 3
+`grid-row-column`
 
 #### --answer--
 
-Placeholder answer
+`grid-area`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What are grid tracks?
 
 #### --distractors--
 
-Placeholder distractor 1
+Shorthand for rows and columns.
 
 ---
 
-Placeholder distractor 2
+Lines along which you can animate movement of the grid items.
 
 ---
 
-Placeholder distractor 3
+Lines on which each of the grid items begins and ends.
 
 #### --answer--
 
-Placeholder answer
+Spaces between two adjacent grid lines.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How can you use dev tools to debug the CSS Grid layout?
 
 #### --distractors--
 
-Placeholder distractor 1
+To resize the elements to fill out the gaps in the grid.
 
 ---
 
-Placeholder distractor 2
+To drag-and-drop elements inside the grid.
 
 ---
 
-Placeholder distractor 3
+To automatically fix overlaying grid elements.
 
 #### --answer--
 
-Placeholder answer
+To preview the layout of grid lines.
 
