@@ -461,6 +461,7 @@ You need to select ordered lists (`<ol>`) that use the `type="1"` (for numerical
 ```css
 ol[type*="1"] { font-weight: bold; }
 ```
+
 ---
 
 ```css
