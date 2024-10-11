@@ -80,7 +80,7 @@ Which of the following will not run as expected with this style?
 
 ---
 
-```css
+```html
 <img src="img2.jpg" title="FLOWERS of flower" width="150" height="113">
 ```
 
