@@ -25,7 +25,6 @@ In which scenario is using an attribute selector a bad idea?
 input[type="text"]:focus {
     background-color: yellow;
 }
-
 ```
 
 ---
