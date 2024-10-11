@@ -467,6 +467,7 @@ ol[type*="1"] { font-weight: bold; }
 ```css
 ol[type$="1"] { font-weight: bold; }
 ```
+
 ---
 
 ```css
