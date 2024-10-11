@@ -57,14 +57,13 @@ a[href^="http"] {
 
 Which of the following will not run as expected with this style?
 
-```css
+```html
 <style>
 [title~="flower"] {
   border: 5px solid yellow;
 }
 </style>
 ```
-
 
 #### --distractors--
 
