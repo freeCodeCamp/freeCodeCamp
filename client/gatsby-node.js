@@ -1,6 +1,4 @@
 const { createFilePath } = require('gatsby-source-filesystem');
-// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
-// es modules here.
 const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
@@ -9,12 +7,12 @@ const env = require('./config/env.json');
 const {
   createChallengePages,
   createBlockIntroPages,
-  createSuperBlockIntroPages
+  createSuperBlockIntroPages,
 } = require('./utils/gatsby');
 
 const createByIdentityMap = {
   blockIntroMarkdown: createBlockIntroPages,
-  superBlockIntroMarkdown: createSuperBlockIntroPages
+  superBlockIntroMarkdown: createSuperBlockIntroPages,
 };
 
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
@@ -28,20 +26,12 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 };
 
-exports.createPages = async function createPages({
-  graphql,
-  actions,
-  reporter
-}) {
+exports.createPages = async function createPages({ graphql, actions, reporter }) {
   if (!env.algoliaAPIKey || !env.algoliaAppId) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
-      throw new Error(
-        'Algolia App id and API key are required to start the client!'
-      );
+      throw new Error('Algolia App id and API key are required to start the client!');
     } else {
-      reporter.info(
-        'Algolia keys missing or invalid. Required for search to yield results.'
-      );
+      reporter.info('Algolia keys missing or invalid. Required for search to yield results.');
     }
   }
 
@@ -49,9 +39,7 @@ exports.createPages = async function createPages({
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Stripe public key is required to start the client!');
     } else {
-      reporter.info(
-        'Stripe public key is missing or invalid. Required for Stripe integration.'
-      );
+      reporter.info('Stripe public key is missing or invalid. Required for Stripe integration.');
     }
   }
 
@@ -137,37 +125,24 @@ exports.createPages = async function createPages({
   result.data.allChallengeNode.edges.forEach(createChallengePages(createPage));
 
   const blocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { block }
-        }
-      }) => block
-    )
+    result.data.allChallengeNode.edges.map(({ node: { challenge: { block } } }) => block)
   );
 
   const superBlocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { superBlock }
-        }
-      }) => superBlock
-    )
+    result.data.allChallengeNode.edges.map(({ node: { challenge: { superBlock } } }) => superBlock)
   );
 
   // Create intro pages
-  // TODO: Remove allMarkdownRemark (populate from elsewhere)
   result.data.allMarkdownRemark.edges.forEach(edge => {
     const {
-      node: { frontmatter, fields }
+      node: { frontmatter, fields },
     } = edge;
 
     if (!fields) {
       return;
     }
     const { slug, nodeIdentity } = fields;
-    if (slug.includes('LICENCE')) {
+    if (slug.includes('LICENSE')) {
       return;
     }
     if (nodeIdentity === 'blockIntroMarkdown') {
@@ -188,7 +163,6 @@ exports.createPages = async function createPages({
 
             ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
 
-
             `);
     }
   });
@@ -196,22 +170,20 @@ exports.createPages = async function createPages({
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   const newPlugins = [
-    // We add the shims of the node globals to the global scope
     new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer']
+      Buffer: ['buffer', 'Buffer'],
     }),
     new webpack.ProvidePlugin({
-      process: 'process/browser'
-    })
+      process: 'process/browser',
+    }),
   ];
-  // The monaco editor relies on some browser only globals so should not be
-  // involved in SSR. Also, if the plugin is used during the 'build-html' stage
-  // it overwrites the minfied files with ordinary ones.
+
   if (stage !== 'build-html') {
     newPlugins.push(
       new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
     );
   }
+  
   actions.setWebpackConfig({
     resolve: {
       fallback: {
@@ -222,36 +194,35 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         util: require.resolve('util/util'),
         buffer: require.resolve('buffer'),
         stream: require.resolve('stream-browserify'),
-        process: require.resolve('process/browser')
-      }
+        process: require.resolve('process/browser'),
+      },
     },
-    plugins: newPlugins
+    plugins: newPlugins,
   });
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
-    name: '@babel/plugin-proposal-function-bind'
+    name: '@babel/plugin-proposal-function-bind',
   });
   actions.setBabelPlugin({
-    name: '@babel/plugin-proposal-export-default-from'
+    name: '@babel/plugin-proposal-export-default-from',
   });
 };
 
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions;
+
   // Only update the `/challenges` page.
   if (page.path.match(/^\/challenges/)) {
-    // page.matchPath is a special key that's used for matching pages
-    // with corresponding routes only on the client.
+    // page.matchPath is a special key used for matching pages with corresponding routes only on the client.
     page.matchPath = '/challenges/*';
     // Update the page.
     createPage(page);
   }
 };
 
-// Take care to QA the challenges when modifying this. It has broken certain
-// types of challenge in the past.
+// Take care to QA the challenges when modifying this. It has broken certain types of challenge in the past.
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
