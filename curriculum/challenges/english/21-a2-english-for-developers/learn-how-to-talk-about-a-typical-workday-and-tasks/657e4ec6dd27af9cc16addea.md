@@ -12,7 +12,7 @@ dashedName: task-78
 Example: `Health and safety regulations ensure a safe workplace.`
 
 
-# --question--
+# --questions--
 
 ## --text--
 

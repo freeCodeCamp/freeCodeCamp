@@ -291,6 +291,7 @@ input[type='submit'],
   border-radius: 0;
   text-decoration: none;
   white-space: pre-line;
+  text-align: center;
 }
 
 button:hover,
@@ -370,13 +371,6 @@ fieldset[disabled] .btn {
   width: 100%;
 }
 
-/* Equivalent to the `large` size of `@freecodecamp/ui` Button component */
-.btn-lg {
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.3333333;
-}
-
 /* Equivalent to the `medium` size of `@freecodecamp/ui` Button component */
 .btn {
   padding: 6px 12px;
@@ -384,7 +378,21 @@ fieldset[disabled] .btn {
   line-height: 1.42857143;
 }
 
-.link-btn {
+/* Equivalent to the `large` size of `@freecodecamp/ui` Button component */
+.btn-lg {
+  padding: 0.625rem 1rem;
+  font-size: 24px;
+  line-height: 1.3333333;
+}
+
+/* Equivalent to the `small` size of `@freecodecamp/ui` Button component */
+.btn-sm {
+  padding: 0.25rem 0.625rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.map-superblock-link {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -394,42 +402,42 @@ fieldset[disabled] .btn {
   text-align: left;
 }
 
-.link-btn.btn-lg svg {
+.map-superblock-link.btn-lg svg {
   height: 100%;
   min-height: 20px;
   min-width: 16px;
   margin-inline-start: 5px;
 }
 
-.link-btn:active {
+.map-superblock-link:active {
   background-color: var(--quaternary-background);
 }
 
-.link-btn:focus,
-.link-btn.btn-lg:focus svg {
+.map-superblock-link:focus,
+.map-superblock-link.btn-lg:focus svg {
   fill: var(--quaternary-background);
   background-color: var(--secondary-color);
   border-color: var(--gray-45);
   color: var(--secondary-background);
 }
 
-.link-btn:focus:not(:focus-visible),
-.link-btn.btn-lg:focus:not(:focus-visible) svg {
+.map-superblock-link:focus:not(:focus-visible),
+.map-superblock-link.btn-lg:focus:not(:focus-visible) svg {
   background-color: var(--quaternary-background);
   border-color: var(--secondary-color);
   color: var(--secondary-color);
   fill: var(--primary-color);
 }
 
-.link-btn:hover,
-.link-btn.btn-lg:hover svg {
+.map-superblock-link:hover,
+.map-superblock-link.btn-lg:hover svg {
   fill: var(--quaternary-background) !important;
   background-color: var(--secondary-color) !important;
   border-color: var(--secondary-color) !important;
   color: var(--secondary-background) !important;
 }
 
-.link-btn.btn-lg svg,
+.map-superblock-link.btn-lg svg,
 .map-icon,
 .cert-header-icon {
   flex-shrink: 0;
@@ -440,7 +448,7 @@ fieldset[disabled] .btn {
   fill: var(--quaternary-background);
 }
 
-.link-btn.btn-lg:hover .map-icon .inverted-color,
+.map-superblock-link.btn-lg:hover .map-icon .inverted-color,
 .map-arrow-icon {
   fill: var(--secondary-color);
 }
@@ -463,7 +471,7 @@ fieldset[disabled] .btn {
 }
 
 @media (min-width: 700px) {
-  .link-btn {
+  .map-superblock-link {
     font-size: 1.1rem;
   }
   .map-icon {
@@ -625,6 +633,11 @@ pre code {
     );
 }
 
+.university-alert p,
+.annual-donation-alert p {
+  color: inherit;
+}
+
 /* gatsby 404 */
 #search {
   background-color: var(--quaternary-background);
@@ -664,9 +677,9 @@ pre code {
   text-align: justify;
 }
 
-/* Port from Bootstrap as the Col component from @freecodecamp/ui 
+/* Port from Bootstrap as the Col component from @freecodecamp/ui
    doesn't fully support the xs-8 + xs-4 layout.
-   TODO: Remove these and replace the classes with Col 
+   TODO: Remove these and replace the classes with Col
    once https://github.com/freeCodeCamp/ui/issues/162 is resolved. */
 .col-xs-8,
 .col-xs-4 {

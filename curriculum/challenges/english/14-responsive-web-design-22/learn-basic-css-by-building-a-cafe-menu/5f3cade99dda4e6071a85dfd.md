@@ -14,25 +14,27 @@ You will come back to styling the menu in a few steps, but for now, go ahead and
 You should have an opening `section` tag.
 
 ```js
-assert(code.match(/<section>/ig).length === 2);
+assert.lengthOf(code.match(/<section>/ig) ,2);
 ```
 
 You should have a closing `section` tag.
 
 ```js
-assert(code.match(/<\/section>/ig).length === 2);
+assert.lengthOf(code.match(/<\/section>/ig) ,2);
 ```
 
 You should not change the existing `main` element.
 
 ```js
-assert($('main').length === 1);
+assert.lengthOf (document.querySelectorAll('main'), 1);
 ```
 
 Your new `section` element should be nested in the `main` element.
 
 ```js
-assert($('main').children('section').length === 2);
+const main = document.querySelector('main');
+const sections = main?.querySelectorAll(`:scope ${'section'}`);
+assert.lengthOf(sections,2);
 ```
 
 # --seed--
@@ -106,7 +108,7 @@ h1, h2, p {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 ```
 

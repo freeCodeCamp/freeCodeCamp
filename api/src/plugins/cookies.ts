@@ -7,6 +7,15 @@ import {
   COOKIE_SECRET,
   FREECODECAMP_NODE_ENV
 } from '../utils/env';
+import { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf';
+
+export { type CookieSerializeOptions } from '@fastify/cookie';
+
+declare module 'fastify' {
+  interface FastifyReply {
+    clearOurCookies: () => void;
+  }
+}
 
 /**
  * Signs a cookie value by prefixing it with "s:" and using the COOKIE_SECRET.
@@ -58,7 +67,13 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
     }
   });
 
+  void fastify.decorateReply('clearOurCookies', function () {
+    void this.clearCookie('jwt_access_token');
+    void this.clearCookie(CSRF_SECRET_COOKIE);
+    void this.clearCookie(CSRF_COOKIE);
+  });
+
   done();
 };
 
-export default fp(cookies);
+export default fp(cookies, { name: 'cookies' });

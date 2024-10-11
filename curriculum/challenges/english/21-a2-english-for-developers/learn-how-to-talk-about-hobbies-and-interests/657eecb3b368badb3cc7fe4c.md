@@ -17,7 +17,7 @@ For example, if you say, `I study English for at least 30 minutes every day`, it
 
 ## --sentence--
 
-`I go to _ _ one convention every year. It's the best moment of the year for me.`
+`I go to BLANK BLANK one convention every year. It's the best moment of the year for me.`
 
 ## --blanks--
 

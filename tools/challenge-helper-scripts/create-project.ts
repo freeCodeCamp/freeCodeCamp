@@ -5,7 +5,7 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import { SuperBlocks } from '../../shared/config/superblocks';
+import { SuperBlocks } from '../../shared/config/curriculum';
 import { createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
@@ -163,7 +163,8 @@ async function createFirstChallenge(
     projectPath: newChallengeDir + '/',
     stepNum: 1,
     challengeType: 0,
-    challengeSeeds
+    challengeSeeds,
+    isFirstChallenge: true
   });
 }
 

@@ -1,0 +1,13 @@
+{
+  "name": "Bash and SQL Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-bash-and-sql",
+  "order": 352,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1affc0ef4fcca423d4688", "title": "Bash and SQL Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

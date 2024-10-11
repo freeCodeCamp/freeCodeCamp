@@ -5,49 +5,49 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   isSignedInSelector,
-  showMultipleProgressModalsSelector,
+  isRandomCompletionThresholdSelector,
   userIdSelector,
   userFetchStateSelector
 } from '../../redux/selectors';
-import { setShowMultipleProgressModals } from '../../redux/actions';
+import { setIsRandomCompletionThreshold } from '../../redux/actions';
 import { UserFetchState } from '../../redux/prop-types';
 import callGA from '../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  showMultipleProgressModalsSelector,
+  isRandomCompletionThresholdSelector,
   userIdSelector,
   userFetchStateSelector,
   (
     isSignedIn: boolean,
-    showMultipleProgressModals: boolean,
+    isRandomCompletionThreshold: boolean,
     userId: string,
     userFetchState: UserFetchState
   ) => ({
     isSignedIn,
-    showMultipleProgressModals,
+    isRandomCompletionThreshold,
     userId,
     userFetchState
   })
 );
 
 type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = { setShowMultipleProgressModals: (arg: boolean) => void };
+type DispatchProps = { setIsRandomCompletionThreshold: (arg: boolean) => void };
 
 interface GrowthBookReduxConnector extends StateProps, DispatchProps {
   children: ReactNode;
 }
 
 const mapDispatchToProps = {
-  setShowMultipleProgressModals
+  setIsRandomCompletionThreshold
 };
 
 const GrowthBookReduxConnector = ({
   children,
   isSignedIn,
-  showMultipleProgressModals,
+  isRandomCompletionThreshold,
   userId,
-  setShowMultipleProgressModals,
+  setIsRandomCompletionThreshold,
   userFetchState
 }: GrowthBookReduxConnector) => {
   // Send user id to GA
@@ -60,23 +60,17 @@ const GrowthBookReduxConnector = ({
     }
   }, [userFetchState, userId, isSignedIn]);
 
-  const displayProgressModalMultipleTimes = useFeature(
-    'display_progress_modal_multiple_times'
-  ).on;
+  const showModalsRandomly = useFeature('show-modal-randomly').on;
   useFeature('aa-test');
   useEffect(() => {
-    if (
-      isSignedIn &&
-      displayProgressModalMultipleTimes &&
-      !showMultipleProgressModals
-    ) {
-      setShowMultipleProgressModals(true);
+    if (isSignedIn && showModalsRandomly && !isRandomCompletionThreshold) {
+      setIsRandomCompletionThreshold(true);
     }
   }, [
     isSignedIn,
-    showMultipleProgressModals,
-    displayProgressModalMultipleTimes,
-    setShowMultipleProgressModals
+    isRandomCompletionThreshold,
+    showModalsRandomly,
+    setIsRandomCompletionThreshold
   ]);
   return <>{children}</>;
 };

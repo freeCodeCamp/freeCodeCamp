@@ -22,13 +22,13 @@ Wrap the `u` tag only around the text `Ph.D. students`.
 Your code should add a `u` tag to the markup.
 
 ```js
-assert($('u').length === 1);
+assert.lengthOf(document.querySelectorAll('u'), 1);
 ```
 
 The `u` tag should wrap around the text `Ph.D. students`.
 
 ```js
-assert($('u').text() === 'Ph.D. students');
+assert.equal(document.querySelector('u')?.textContent , 'Ph.D. students');
 ```
 
 # --seed--

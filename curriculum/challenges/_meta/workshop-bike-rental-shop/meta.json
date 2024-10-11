@@ -1,0 +1,12 @@
+{
+  "name": "Build a Bike Rental Shop",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-bike-rental-shop",
+  "order": 349,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "5f5b969a05380d2179fe6e18", "title": "Build a Bike Rental Shop" }],
+  "helpCategory": "Backend Development"
+}

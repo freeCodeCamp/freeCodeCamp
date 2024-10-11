@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
+import translations from '../client/i18n/locales/english/translations.json';
 import stripeJson from './fixtures/donation/stripe.json';
+import { alertToBeVisible } from './utils/alerts';
 
 test.describe('third-party donation tests', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
@@ -65,11 +67,7 @@ test.describe('third-party donation tests', () => {
 
     await expect(page.getByRole('alert')).toBeVisible();
 
-    await expect(page.getByRole('alert')).toContainText(
-      'Your donations will support free technology education for people all over the world.'
-    );
-    await expect(page.getByRole('alert')).toContainText(
-      'Visit supporters page to learn about your supporter benefits.'
-    );
+    await alertToBeVisible(page, translations.donate['free-tech']);
+    await alertToBeVisible(page, translations.donate['visit-supporters']);
   });
 });

@@ -25,7 +25,7 @@ Really simply, actually. Whichever rule was the last defined is the winner.
 
 For an element that has both the `alert` and `warning` classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the `.warning` rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
 
-# --question--
+# --questions--
 ## --text--
 
 What determines which CSS rule is applied when there are conflicting rules targeting the same element?

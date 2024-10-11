@@ -35,9 +35,10 @@ Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining se
 This example shows the same thing. Even though rule 2 is using a child combinator (`>`), this does not change the specificity value. Both rules still have two classes so they have the same specificity values.
 
 *Note:* Not everything adds to specificity
+
 When comparing selectors, you may come across special symbols for the universal selector (`*`) as well as combinators (`+`, `~`, `>`, and an empty space). These symbols do not add any specificity in and of themselves.
 
-# --question--
+# --questions--
 
 ## --text--
 

@@ -17,11 +17,8 @@ export const openDonationModal = createAction(actionTypes.openDonationModal);
 export const preventBlockDonationRequests = createAction(
   actionTypes.preventBlockDonationRequests
 );
-export const setCompletionCountWhenShownProgressModal = createAction(
-  actionTypes.setCompletionCountWhenShownProgressModal
-);
-export const setShowMultipleProgressModals = createAction(
-  actionTypes.setShowMultipleProgressModals
+export const setIsRandomCompletionThreshold = createAction(
+  actionTypes.setIsRandomCompletionThreshold
 );
 export const updateDonationFormState = createAction(
   actionTypes.updateDonationFormState

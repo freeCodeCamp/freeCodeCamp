@@ -1,13 +1,12 @@
 {
   "buttons": {
     "logged-in-cta-btn": "開始學習（免費）",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "登錄以保存你的學習進度（免費）",
     "view-curriculum": "查看課程",
     "first-lesson": "訪問第一個課程",
     "close": "關閉",
     "edit": "編輯",
-    "frontend": "前端",
-    "backend": "後端",
     "view": "查看",
     "view-code": "查看代碼",
     "view-project": "查看項目",
@@ -53,11 +52,13 @@
     "create-post": "在論壇發帖請求幫助",
     "cancel": "取消",
     "reset-lesson": "重置課程",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "運行",
     "run-test": "運行測試（Ctrl + Enter）",
-    "check-code": "檢查你的代碼（Ctrl + Enter）",
-    "check-code-2": "檢查你的代碼",
-    "check-code-3": "檢查你的代碼（Command + Enter）",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "重置",
     "reset-step": "重置此步驟",
     "help": "幫助",
@@ -67,16 +68,17 @@
     "click-here": "點擊此處登陸",
     "save": "保存",
     "save-code": "保存你的代碼",
+    "show-demo": "Show Demo",
     "no-thanks": "不用，謝謝",
     "yes-please": "好的",
     "update-email": "更新我的郵箱",
     "verify-email": "確認郵箱",
     "submit-and-go": "提交併訪問下一個挑戰",
-    "submit-and-go-2": "提交併轉到下一個挑戰（Ctrl + Enter）",
-    "submit-and-go-3": "提交併轉到下一個挑戰（Command + Enter）",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "訪問下一個挑戰",
-    "go-to-next-2": "轉到下一個挑戰（Ctrl + Enter）",
-    "go-to-next-3": "轉到下一個挑戰（Command + Enter）",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "稍後問我",
     "start-coding": "開始編碼！",
     "go-to-settings": "轉到設置以領取你的認證",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "免費學習編程",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "構建項目",
     "big-heading-3": "獲得認證",
+    "big-heading-4": "All for free.",
     "h2-heading": "自 2014 年以來，已有超過 40,000 名 freeCodeCamp.org 學員入職科技公司，例如：",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
     "hero-img-alt": "一羣人，包括一名白人男子、一名黑人女子和一名亞裔女子，圍在一臺筆記本電腦旁。",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "媒體報道：",
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
@@ -196,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "分享你在 freeCodeCamp 之外做的項目，寫的文章或者在 GitHub 上被接受的 pull requests。",
     "privacy": "你可以在本節的設置中管理哪些內容可以展示在 freeCodeCamp 公開作品集，點擊“保存”以存儲你的修改。",
     "data": "請點擊下面的“下載你的數據”按鈕，查看我們在你的賬戶上保存的數據",
@@ -274,7 +281,10 @@
       "reset-p2": "一切將被恢復到你註冊的第一天。",
       "reset-p3": "即使你之後改變主意，我們也無法爲你恢復任何信息。",
       "nevermind-2": "我不想刪除我的所有進度",
-      "reset-confirm": "重置所有內容，我想重新開始。"
+      "reset-confirm": "重置所有內容，我想重新開始。",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "你的賬戶未綁定郵箱。",
@@ -325,7 +335,8 @@
     "total-points": "總分：",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
-    "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
+    "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 條款下具有免稅資格的慈善組織（稅號：82-0779546）。",
@@ -376,9 +387,10 @@
     "add-subtitles": "幫助我們完善或添加字幕",
     "wrong-answer": "抱歉，這個答案不正確。再試一次？",
     "check-answer": "點擊下方按鈕，查看你的答案。",
-    "assignment-not-complete": "請完成任務",
+    "assignment-not-complete": "Please complete the assignments",
     "assignments": "任務",
     "question": "問題",
+    "explanation": "Explanation",
     "solution-link": "解決方案鏈接",
     "source-code-link": "源代碼鏈接",
     "ms-link": "微軟的鏈接",
@@ -390,6 +402,7 @@
     "running-tests": "// 運行測試",
     "tests-completed": "// 測試完成",
     "console-output": "// 打印輸出",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "你的代碼在任何測試運行之前就出現了錯誤。請修復後重試。",
     "indentation-error": "你的代碼存在縮進錯誤。你可能需要在新行中添加 <code>pass</code> 以形成一個有效的代碼塊。",
     "sign-in-save": "登錄以保存你的學習進度",
@@ -408,7 +421,8 @@
     "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請<0>查看你的問題是否已經在論壇上被回答過</0>。",
     "reset": "重置這一節課程？",
     "reset-warn": "你確定要重置這一節課程嗎？編輯器和測試將被重置。",
-    "reset-warn-2": "這個操作不可撤銷",
+    "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
     "chal-preview": "挑戰預覽",
     "donation-record-not-found": "未找到你的捐款記錄。",
@@ -438,6 +452,7 @@
     "help-translate": "我們還在翻譯這個認證課程。",
     "help-translate-link": "幫助我們翻譯。",
     "project-preview-title": "下面是你將構建的項目的預覽",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "如果你沒有 GitHub 賬戶，你需要 <0>創建 GitHub</0> 賬戶。 你需要創建虛擬 Linux 服務器，這個過程可能需要幾分鐘。",
     "gitpod": {
       "intro": "本課程使用 Gitpod 在虛擬的 Linux 機器中運行。按照這些說明開始學習課程：",
@@ -475,6 +490,12 @@
     "preview-external-window": "預覽當前顯示在外部窗口中。",
     "fill-in-the-blank": "填空",
     "blank": "空白",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "恭喜，你已經完成了考試資格的所有要求。",
       "not-qualified": "你尚未達到考試資格要求。要獲得資格，請完成以下挑戰：",
@@ -512,6 +533,14 @@
       "link-li-6": "單擊“鏈接賬戶”鏈接你的微軟用戶名。",
       "transcript-label": "你的微軟成績單鏈接",
       "invalid-transcript": "你的成績單鏈接不正確，它應該有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 請檢查你的鏈接中的 UPPERCASE 項目是否正確。"
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
@@ -667,7 +696,10 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 10,700+ 篇教程",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -732,7 +764,7 @@
     "last-page": "訪問最後一頁",
     "primary-nav": "主要的",
     "breadcrumb-nav": "麪包屑導航",
-    "timeline-pagination-nav": "Timeline Pagination",
+    "timeline-pagination-nav": "時間線分頁",
     "submit": "按下 Ctrl + Enter 鍵提交。",
     "running-tests": "正在運行測試",
     "hide-preview": "隱藏預覽",
@@ -749,7 +781,8 @@
     "code-example": "{{codeName}} 代碼示例",
     "opens-new-window": "在新窗口打開",
     "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
-    "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案"
+    "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "在申請認證前，你必須先同意我們的《學術誠信條例》",
@@ -887,9 +920,9 @@
       "heading-legacy-full-stack": "作爲舊版全棧認證的一部分，{{user}} 完成了以下認證：",
       "heading-exam": "作爲認證的一部分，{{user}} 通過了以下考試： ",
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
-      "solution": "解決方案",
+      "solution": "Solution",
       "no-solution": "顯示解決方案出錯時，發送電子郵件到 support@freeCodeCamp.org 獲得幫助。",
-      "source": "來源",
+      "source": "Source",
       "footnote": "如果你懷疑其中任何項目違反了<2>學術誠信條例</2>，請<5>向我們的團隊報告</5>。",
       "title": {
         "Build a Personal Portfolio Webpage": "創建一個個人作品集頁面",
@@ -935,7 +968,7 @@
         "Roman Numeral Converter": "羅馬數字轉換器",
         "Caesars Cipher": "凱撒密碼",
         "Telephone Number Validator": "電話號碼驗證器",
-        "Cash Register": "現金登記",
+        "Cash Register": "收銀機",
         "Build a Drum Machine": "創建一臺鼓式機器",
         "Visualize Data with a Choropleth Map": "用分級統計圖可視化數據",
         "Visualize Data with a Treemap Diagram": "用樹形圖可視化數據",

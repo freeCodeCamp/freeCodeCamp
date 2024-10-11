@@ -44,7 +44,7 @@ It’s worth noting you can use anchor tags to link to any kind of resource on t
 
 Watch Kevin Powell’s HTML Links video above.
 
-# --question--
+# --questions--
 
 ## --text--
 

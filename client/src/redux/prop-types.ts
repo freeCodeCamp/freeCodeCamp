@@ -1,5 +1,6 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../shared/config/curriculum';
+import { BlockTypes } from '../../../shared/config/blocks';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
 
@@ -18,8 +19,6 @@ export type CurrentCert = {
 };
 
 export type MarkdownRemark = {
-  fields: [{ component: string; nodeIdentity: string; slug: string }];
-  fileAbsolutePath: string;
   frontmatter: {
     block: string;
     superBlock: SuperBlocks;
@@ -27,26 +26,11 @@ export type MarkdownRemark = {
     certification: string;
     title: CertTitle;
   };
-  headings: [
-    {
-      depth: number;
-      value: string;
-      id: string;
-    }
-  ];
   html: string;
-  htmlAst: Record<string, unknown>;
   id: string;
-  rawMarkdownBody: string;
-  timeToRead: number;
-  wordCount: {
-    paragraphs: number;
-    sentences: number;
-    words: number;
-  };
 };
 
-export type MultipleChoiceAnswer = {
+type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
 };
@@ -87,7 +71,7 @@ export interface VideoLocaleIds {
 }
 
 // English types for animations
-export interface Dialogue {
+interface Dialogue {
   text: string;
   align: 'left' | 'right' | 'center';
 }
@@ -98,7 +82,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-export interface SceneCommand {
+interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -120,30 +104,34 @@ export type Characters =
   | 'Expert'
   | 'Jake'
   | 'James'
+  | 'Jessica'
+  | 'Jim'
+  | 'Josh'
   | 'Linda'
   | 'Lisa'
   | 'Maria'
   | 'Mark'
+  | 'Riker'
   | 'Sarah'
   | 'Second Candidate'
   | 'Sophie'
   | 'Tom';
 
-export interface SetupCharacter {
+interface SetupCharacter {
   character: Characters;
   position: CharacterPosition;
   opacity: number;
   isTalking?: boolean;
 }
 
-export interface SetupAudio {
+interface SetupAudio {
   filename: string;
   startTime: number;
   startTimestamp?: number;
   finishTimestamp?: number;
 }
 
-export interface SceneSetup {
+interface SceneSetup {
   background: string;
   characters: SetupCharacter[];
   audio: SetupAudio;
@@ -178,12 +166,15 @@ export type ChallengeWithCompletedNode = {
 export type ChallengeNode = {
   challenge: {
     block: string;
+    blockType: BlockTypes;
     certification: string;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
+    demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
@@ -210,7 +201,8 @@ export type ChallengeNode = {
     isLocked: boolean;
     isPrivate: boolean;
     order: number;
-    question: Question;
+    questions: Question[];
+    quizzes: Quiz[];
     assignments: string[];
     required: Required[];
     scene: FullScene;
@@ -234,6 +226,16 @@ export type ChallengeNode = {
   };
 };
 
+type Quiz = {
+  questions: QuizQuestion[];
+};
+
+type QuizQuestion = {
+  text: string;
+  distractors: string[];
+  answer: string;
+};
+
 export type CertificateNode = {
   challenge: {
     // TODO: use enum
@@ -243,7 +245,7 @@ export type CertificateNode = {
 };
 
 export type AllChallengesInfo = {
-  challengeEdges: { node: ChallengeNode }[];
+  challengeNodes: ChallengeNode[];
   certificateNodes: CertificateNode[];
 };
 
@@ -268,6 +270,7 @@ export type Dimensions = {
 export type Test = {
   pass?: boolean;
   err?: string;
+  message?: string;
 } & (ChallengeTest | CertTest);
 
 export type ChallengeTest = {
@@ -364,6 +367,7 @@ export type SavedChallengeFile = {
   ext: Ext;
   name: string;
   history?: string[];
+  editableRegionBoundaries?: number[];
   contents: string;
 };
 
@@ -454,7 +458,7 @@ export interface GeneratedExamQuestion {
   answers: GeneratedExamAnswer[];
 }
 
-export interface GenerateExamResponse {
+interface GenerateExamResponse {
   error?: string;
   generatedExam?: GeneratedExamQuestion[];
 }

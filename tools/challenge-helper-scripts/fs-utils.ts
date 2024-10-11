@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../shared/config/superblocks';
+import { SuperBlocks } from '../../shared/config/curriculum';
 
 export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
   const pathMap = {

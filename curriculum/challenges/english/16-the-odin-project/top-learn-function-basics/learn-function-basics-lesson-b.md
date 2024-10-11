@@ -25,7 +25,7 @@ Here is a diagram to help you visualize how parameters are passed to a function,
 
 Make note of the fact that by calling `favoriteAnimal()` inside of `console.log()` with the argument `'Goat'`, you get the return value of the function, string of `"Goat is my favorite animal!"`, printed to the console. You're passing in a function call `favoriteAnimal('Goat')` as an argument in a different function call - `log()`.
 
-# --question--
+# --questions--
 
 ## --text--
 

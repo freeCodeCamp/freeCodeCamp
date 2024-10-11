@@ -1,6 +1,6 @@
 // Package Utilities
 import { graphql } from 'gatsby';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
@@ -18,9 +18,10 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
-import ChallengeHeading from '../components/challenge-heading';
+import ChallegeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import FillInTheBlanks from '../components/fill-in-the-blanks';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -31,7 +32,6 @@ import {
 } from '../redux/actions';
 import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-import { parseBlanks } from './parse-blanks';
 
 // Styles
 import '../video.css';
@@ -61,7 +61,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowFillInTheBlankProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
   isChallengeCompleted: boolean;
   initTests: (xs: Test[]) => void;
   openCompletionModal: () => void;
@@ -237,25 +236,6 @@ class ShowFillInTheBlank extends Component<
     });
   };
 
-  addCodeTags(str: string, index: number, numberOfBlanks: number): string {
-    if (index === 0) return `${str}</code>`;
-    if (index < numberOfBlanks) return `<code>${str}</code>`;
-    return `<code>${str}`;
-  }
-
-  addPrismClass(index: number, numberOfBlanks: number): string {
-    if (index === 0) return `first-code-tag`;
-    if (index < numberOfBlanks) return `middle-code-tag`;
-    return `last-code-tag`;
-  }
-
-  addInputClass(index: number): string {
-    const { answersCorrect } = this.state;
-    if (answersCorrect[index] === true) return 'green-underline';
-    if (answersCorrect[index] === false) return 'red-underline';
-    return '';
-  }
-
   setIsScenePlaying = (shouldPlay: boolean) => {
     this.setState({
       isScenePlaying: shouldPlay
@@ -270,11 +250,12 @@ class ShowFillInTheBlank extends Component<
             title,
             description,
             instructions,
+            explanation,
             superBlock,
             block,
             translationPending,
             fields: { blockName },
-            fillInTheBlank: { sentence, blanks },
+            fillInTheBlank,
             scene
           }
         }
@@ -292,9 +273,6 @@ class ShowFillInTheBlank extends Component<
     )} - ${title}`;
 
     const { allBlanksFilled, feedback, showFeedback, showWrong } = this.state;
-    const paragraphs = parseBlanks(sentence);
-
-    const blankAnswers = blanks.map(b => b.answer);
 
     return (
       <Hotkeys
@@ -324,78 +302,40 @@ class ShowFillInTheBlank extends Component<
               </Col>
 
               {scene && (
-                <>
-                  <Scene
-                    scene={scene}
-                    isPlaying={this.state.isScenePlaying}
-                    setIsPlaying={this.setIsScenePlaying}
-                  />
-                  <Spacer size='medium' />
-                </>
+                <Scene
+                  scene={scene}
+                  isPlaying={this.state.isScenePlaying}
+                  setIsPlaying={this.setIsScenePlaying}
+                />
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeHeading heading={t('learn.fill-in-the-blank')} />
-                <Spacer size='small' />
                 {instructions && (
                   <>
                     <PrismFormatted text={instructions} />
                     <Spacer size='small' />
                   </>
                 )}
+
                 {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
                 if it encounters a key combination, so we have to pass in the individual keys to observe */}
                 <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <div className='fill-in-the-blank-wrap'>
-                    {paragraphs.map((p, i) => {
-                      return (
-                        // both keys, i and j, are stable between renders, since
-                        // the paragraphs are static.
-                        <p key={i}>
-                          {p.map((node, j) => {
-                            if (node.type === 'text') return node.value;
-                            if (node.type === 'blank')
-                              return (
-                                <input
-                                  key={j}
-                                  type='text'
-                                  maxLength={
-                                    blankAnswers[node.value].length + 3
-                                  }
-                                  className={`fill-in-the-blank-input ${this.addInputClass(
-                                    node.value
-                                  )}`}
-                                  onChange={this.handleInputChange}
-                                  data-index={node.value}
-                                  size={blankAnswers[node.value].length}
-                                  aria-label={t('learn.blank')}
-                                />
-                              );
-                          })}
-                        </p>
-                      );
-                    })}
-                  </div>
+                  <FillInTheBlanks
+                    fillInTheBlank={fillInTheBlank}
+                    answersCorrect={this.state.answersCorrect}
+                    showFeedback={showFeedback}
+                    feedback={feedback}
+                    showWrong={showWrong}
+                    handleInputChange={this.handleInputChange}
+                  />
                 </ObserveKeys>
-                <Spacer size='medium' />
-                {showFeedback && feedback && (
-                  <>
-                    <PrismFormatted text={feedback} />
-                    <Spacer size='small' />
-                  </>
+
+                {explanation ? (
+                  <ChallegeExplanation explanation={explanation} />
+                ) : (
+                  <Spacer size='medium' />
                 )}
-                <div
-                  style={{
-                    textAlign: 'center'
-                  }}
-                >
-                  {showWrong ? (
-                    <span>{t('learn.wrong-answer')}</span>
-                  ) : (
-                    <span>{t('learn.check-answer')}</span>
-                  )}
-                </div>
-                <Spacer size='medium' />
+
                 <Button
                   block={true}
                   variant='primary'
@@ -429,12 +369,13 @@ export default connect(
 )(withTranslation()(ShowFillInTheBlank));
 
 export const query = graphql`
-  query FillInTheBlankChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query FillInTheBlankChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         title
         description
         instructions
+        explanation
         challengeType
         helpCategory
         superBlock

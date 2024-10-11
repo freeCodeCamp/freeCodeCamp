@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } f
 import { Col } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
-import { Loader } from '../../../../components/helpers';
+import { Loader, Spacer } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import { sounds, images, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
@@ -34,9 +34,7 @@ export function Scene({
   const hasTimestamps = startTimestamp !== null && finishTimestamp !== null;
   const audioTimestamp = hasTimestamps ? `#t=${startTimestamp}` : '';
 
-  const audioRef = useRef<HTMLAudioElement>(
-    new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
-  );
+  const audioRef = useRef<HTMLAudioElement>(new Audio());
 
   // if there are timestamps, we use the difference between them as the duration
   // if not, we assume we're playing the whole audio file.
@@ -46,7 +44,13 @@ export function Scene({
 
   // on mount
   useEffect(() => {
-    audioRef.current.addEventListener('canplaythrough', audioLoaded);
+    const { current } = audioRef;
+
+    if (current) {
+      current.addEventListener('canplaythrough', audioLoaded);
+      current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+      current.load();
+    }
 
     // preload images
     loadImage(`${backgrounds}/${setup.background}`);
@@ -64,13 +68,20 @@ export function Scene({
 
     // on unmount
     return () => {
-      const { current } = audioRef;
-
-      current.pause();
-      current.currentTime = 0;
-      current.removeEventListener('canplaythrough', audioLoaded);
+      if (current) {
+        current.pause();
+        current.currentTime = 0;
+        current.removeEventListener('canplaythrough', audioLoaded);
+      }
     };
-  }, [audioRef, setup.background, setup.characters, commands]);
+  }, [
+    audioRef,
+    audio.filename,
+    audioTimestamp,
+    setup.background,
+    setup.characters,
+    commands
+  ]);
 
   const initBackground = setup.background;
   const initDialogue = { label: '', text: '', align: 'left' };
@@ -93,7 +104,7 @@ export function Scene({
     if (isPlaying) {
       playScene();
     } else {
-      finishScene();
+      resetScene();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying]);
@@ -195,10 +206,15 @@ export function Scene({
     });
   };
 
-  const finishScene = () => {
-    audioRef.current.pause();
-    audioRef.current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
-    audioRef.current.currentTime = audio.startTimestamp || 0;
+  const resetScene = () => {
+    const { current } = audioRef;
+    if (current) {
+      current.pause();
+      current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+      current.load();
+      current.currentTime = audio.startTimestamp || 0;
+    }
+
     setShowDialogue(false);
     setDialogue(initDialogue);
     setCharacters(initCharacters);
@@ -283,6 +299,7 @@ export function Scene({
           </>
         )}
       </div>
+      <Spacer size='medium' />
     </Col>
   );
 }

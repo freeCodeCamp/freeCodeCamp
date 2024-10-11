@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Variables and Data Types Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-variables-and-data-types",
+  "order": 135,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "66edc25ae5ea80bf6f785552",
+      "title": "JavaScript Variables and Data Types Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

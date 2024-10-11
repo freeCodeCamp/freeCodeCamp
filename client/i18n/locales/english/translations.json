@@ -1,13 +1,12 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Get started (it's free)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "Sign in to save your progress (it's free)",
     "view-curriculum": "View the Curriculum",
     "first-lesson": "Go to the first lesson",
     "close": "Close",
     "edit": "Edit",
-    "frontend": "Front End",
-    "backend": "Back End",
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
@@ -53,11 +52,13 @@
     "create-post": "Create a help post on the forum",
     "cancel": "Cancel",
     "reset-lesson": "Reset this lesson",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
-    "check-code": "Check Your Code (Ctrl + Enter)",
-    "check-code-2": "Check Your Code",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "Reset",
     "reset-step": "Reset This Step",
     "help": "Help",
@@ -67,16 +68,17 @@
     "click-here": "Click here to sign in",
     "save": "Save",
     "save-code": "Save your Code",
+    "show-demo": "Show Demo",
     "no-thanks": "No thanks",
     "yes-please": "Yes please",
     "update-email": "Update my Email",
     "verify-email": "Verify Email",
     "submit-and-go": "Submit and go to next challenge",
-    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
-    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Go to next challenge",
-    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
-    "go-to-next-3": "Go to next challenge (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "Ask me later",
     "start-coding": "Start coding!",
     "go-to-settings": "Go to settings to claim your certification",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Build projects.",
     "big-heading-3": "Earn certifications.",
+    "big-heading-4": "All for free.",
     "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "freeCodeCamp students at a local study group in South Korea.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "As seen in:",
     "testimonials": {
       "heading": "Here is what our alumni say about freeCodeCamp:",
@@ -196,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
     "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "To see what data we hold on your account, click the \"Download your data\" button below",
@@ -274,7 +281,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Nevermind, I don't want to delete all of my progress",
-      "reset-confirm": "Reset everything. I want to start from the beginning"
+      "reset-confirm": "Reset everything. I want to start from the beginning",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
@@ -325,7 +335,8 @@
     "total-points": "Total Points:",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
-    "page-number": "{{pageNumber}} of {{totalPages}}"
+    "page-number": "{{pageNumber}} of {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -376,9 +387,10 @@
     "add-subtitles": "Help improve or add subtitles",
     "wrong-answer": "Sorry, that's not the right answer. Give it another try?",
     "check-answer": "Click the button below to check your answer.",
-    "assignment-not-complete": "Please finish the assignments",
+    "assignment-not-complete": "Please complete the assignments",
     "assignments": "Assignments",
     "question": "Question",
+    "explanation": "Explanation",
     "solution-link": "Solution Link",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
@@ -390,6 +402,7 @@
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
     "console-output": "// console output",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Sign in to save your progress",
@@ -408,7 +421,8 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
-    "reset-warn-2": "This cannot be undone",
+    "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -438,6 +452,7 @@
     "help-translate": "We are still translating this certification.",
     "help-translate-link": "Help us translate.",
     "project-preview-title": "Here's a preview of what you will build",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Create a GitHub</0> account if you don't have one. You'll need it when you create the virtual Linux server machine. This process may take a few minutes.",
     "gitpod": {
       "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
@@ -475,6 +490,12 @@
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -512,6 +533,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
@@ -667,7 +696,10 @@
   },
   "search": {
     "label": "Search",
-    "placeholder": "Search 10,700+ tutorials",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "See all results for {{searchQuery}}",
     "no-tutorials": "No tutorials found",
     "try": "Looking for something? Try the search bar on this page.",
@@ -749,7 +781,8 @@
     "code-example": "{{codeName}} code example",
     "opens-new-window": "Opens in new window",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
@@ -887,9 +920,9 @@
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
       "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
-      "solution": "solution",
+      "solution": "Solution",
       "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
-      "source": "source",
+      "source": "Source",
       "footnote": "If you suspect that any of these projects violate the <2>academic honesty policy</2>, please <5>report this to our team</5>.",
       "title": {
         "Build a Personal Portfolio Webpage": "Build a Personal Portfolio Webpage",

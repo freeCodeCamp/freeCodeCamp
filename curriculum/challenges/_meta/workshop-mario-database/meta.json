@@ -1,0 +1,12 @@
+{
+  "name": "Build a Mario Database",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-mario-database",
+  "order": 336,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "5f2c289f164c29556da632fd", "title": "Build a Mario Database" }],
+  "helpCategory": "Backend Development"
+}

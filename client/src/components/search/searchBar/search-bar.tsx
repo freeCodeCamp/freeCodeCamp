@@ -201,6 +201,12 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   render(): JSX.Element {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
+    // TODO: Refactor this fallback when all translation files are synced
+    const searchPlaceholder = t('search-bar:placeholder').startsWith(
+      'search.placeholder.'
+    )
+      ? t('search.placeholder')
+      : t('search-bar:placeholder');
 
     return (
       <WithInstantSearch>
@@ -212,22 +218,21 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
           <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
             <div className='fcc_search_wrapper'>
               <ObserveKeys except={['Space']}>
-                <div onFocus={this.handleFocus} role='textbox'>
-                  <SearchBox
-                    data-playwright-test-label='header-search'
-                    focusShortcuts={['83', '191']}
-                    onChange={this.handleChange}
-                    onSubmit={e => {
-                      this.handleSearch(e);
-                    }}
-                    showLoadingIndicator={false}
-                    translations={{
-                      submitTitle: t('icons.magnifier'),
-                      resetTitle: t('icons.input-reset'),
-                      placeholder: t('search.placeholder')
-                    }}
-                  />
-                </div>
+                <SearchBox
+                  data-playwright-test-label='header-search'
+                  focusShortcuts={['83', '191']}
+                  onChange={this.handleChange}
+                  onSubmit={e => {
+                    this.handleSearch(e);
+                  }}
+                  showLoadingIndicator={false}
+                  translations={{
+                    submitTitle: t('icons.magnifier'),
+                    resetTitle: t('icons.input-reset'),
+                    placeholder: searchPlaceholder
+                  }}
+                  onFocus={this.handleFocus}
+                />
               </ObserveKeys>
               {isDropdownEnabled && isSearchFocused && (
                 <SearchHits

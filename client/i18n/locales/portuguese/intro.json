@@ -369,7 +369,7 @@
         "title": "Aprenda métodos modernos de JavaScript criando cards de equipes de futebol",
         "intro": [
           "Um aspecto comum da criação de aplicações web é trabalhar com o processamento de conjuntos de dados e, em seguida, enviar informações para a tela. Nesse projeto de cartões da equipe de futebol, você aprenderá como trabalhar com a manipulação do DOM, desestruturação de objetos, manipulação de eventos, e filtragem de dados.",
-          "Esse projeto abrangerá conceitos como instruções switch, parâmetros padrão, <code>Object.freeze()</code>, o método <code>map()</code> e mais."
+          "Este projeto abrangerá conceitos como parâmetros padrão, <code>Object.freeze()</code> e reforçará seu conhecimento sobre a instrução <code>switch</code> e sobre o método <code>map()</code>."
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -618,7 +618,7 @@
         "title": "Banco de dados da tabela periódica",
         "intro": [
           "Este é um dos projetos necessários para obter sua certificação.",
-          "Para este projeto, você criará um script no Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
+          "Para este projeto, você criará um script do Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
@@ -882,6 +882,13 @@
         "title": "Projeto de criar uma calculadora de probabilidades",
         "intro": [
           "Este é um dos projetos necessários para obter a certificação."
+        ]
+      },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Aprenda Interfaces criando um solucionador de equações",
+        "intro": [
+          "Classes abstratas permitem definir interfaces formais – objetos que agem como diagramas para as classes.",
+          "Neste projeto, você descobrirá como implementar uma interface em Python ao criar um programa simples de resolução de equações."
         ]
       },
       "learn-special-methods-by-building-a-vector-space": {
@@ -1692,9 +1699,1874 @@
     "title": "Desenvolvimento de front-end",
     "intro": ["placeholder"],
     "blocks": {
-      "learn-basic-html-by-building-a-recipe-page": {
-        "title": "Aprenda HTML básico criando uma página de receitas",
-        "intro": ["", ""]
+      "efpl": {
+        "title": "0",
+        "intro": []
+      },
+      "xpmy": {
+        "title": "1",
+        "intro": []
+      },
+      "workshop-cat-photo-app": {
+        "title": "Crie um aplicativo de fotos de gatos",
+        "intro": [
+          "O HTML é a linguagem de marcação de hipertexto e representa o conteúdo e a estrutura de uma página da web.",
+          "Neste workshop, você aprenderá a trabalhar com elementos básicos do HTML, como títulos, parágrafos, imagens, links e listas."
+        ]
+      },
+      "lab-recipe-page": {
+        "title": "Crie uma página de receitas",
+        "intro": [
+          "Neste laboratório, você criará uma página da web com sua receita favorita."
+        ]
+      },
+      "gwyd": {
+        "title": "4",
+        "intro": []
+      },
+      "lab-travel-agency-page": {
+        "title": "Crie uma página de agência de viagens",
+        "intro": [
+          "Neste laboratório, você criará uma página da web de uma agência de viagens."
+        ]
+      },
+      "vipr": {
+        "title": "6",
+        "intro": []
+      },
+      "lab-video-compilation-page": {
+        "title": "Crie uma página de compilação de vídeos",
+        "intro": [
+          "Neste laboratório, você criará uma página web de compilação de vídeos."
+        ]
+      },
+      "bzfv": {
+        "title": "8",
+        "intro": []
+      },
+      "snuv": {
+        "title": "9",
+        "intro": []
+      },
+      "quiz-basic-html": {
+        "title": "Questionário básico de HTML",
+        "intro": [
+          "Teste o que você aprendeu neste questionário de conhecimento básico sobre o HTML."
+        ]
+      },
+      "evdc": {
+        "title": "11",
+        "intro": []
+      },
+      "workshop-blog-page": {
+        "title": "Crie uma página de blog sobre gatos",
+        "intro": [
+          "Neste workshop, você aprenderá a criar uma página de blog em HTML usando elementos semânticos, incluindo os elementos <code>main</code>, <code>nav</code>, <code>article</code> e <code>footer</code>."
+        ]
+      },
+      "lab-event-hub": {
+        "title": "Crrie uma central de eventos",
+        "intro": [
+          "Neste laboratório, você criará uma central de eventos utilizando HTML semântico."
+        ]
+      },
+      "ijdq": {
+        "title": "14",
+        "intro": []
+      },
+      "quiz-semantic-html": {
+        "title": "Questionário sobre HTML semântico",
+        "intro": [
+          "Teste o que você aprendeu neste questionário de conhecimento sobre o HTML semântico."
+        ]
+      },
+      "cfgp": {
+        "title": "16",
+        "intro": []
+      },
+      "workshop-hotel-feedback-form": {
+        "title": "Crie um formulário de feedback de hotéis",
+        "intro": [
+          "Neste workshop, você aprenderá a trabalhar com formulários criando um formulário de feedback de hotéis.",
+          "Você aprenderá a trabalhar com os elementos label, input, fieldset, legend, textarea e button."
+        ]
+      },
+      "lab-survey-form": {
+        "title": "Crie um formulário de pesquisa",
+        "intro": ["Neste laboratório, você criará um formulário de pesquisa."]
+      },
+      "wgot": {
+        "title": "19",
+        "intro": []
+      },
+      "workshop-final-exams-table": {
+        "title": "Crie uma tabela dos exames finais",
+        "intro": [
+          "Neste workshop, você aprenderá a trabalhar com tabelas em HTML criando uma tabela de exames finais."
+        ]
+      },
+      "lab-book-catalog-table": {
+        "title": "Crie uma tabela de catálogo de livros",
+        "intro": [
+          "Neste laboratório, você criará uma tabela preenchida com informações sobre livros."
+        ]
+      },
+      "rsve": {
+        "title": "22",
+        "intro": []
+      },
+      "xzam": {
+        "title": "23",
+        "intro": []
+      },
+      "quiz-html-tables-and-forms": {
+        "title": "Questionário sobre tabelas e formulários em HTML",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre tabelas e formulários em HTML."
+        ]
+      },
+      "ghoc": {
+        "title": "25",
+        "intro": []
+      },
+      "lab-checkout-page": {
+        "title": "Crie uma página de check-out",
+        "intro": [
+          "Neste laboratório, você criará uma página de check-out com acessíbilidade."
+        ]
+      },
+      "fqai": {
+        "title": "27",
+        "intro": []
+      },
+      "quiz-html-accessibility": {
+        "title": "Questionário sobre acessibilidade no HTML",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre acessibilidade no HTML."
+        ]
+      },
+      "pspj": {
+        "title": "29",
+        "intro": []
+      },
+      "qpra": {
+        "title": "30",
+        "intro": []
+      },
+      "joim": {
+        "title": "31",
+        "intro": []
+      },
+      "gvtb": {
+        "title": "32",
+        "intro": []
+      },
+      "cqhu": {
+        "title": "33",
+        "intro": []
+      },
+      "tmdc": {
+        "title": "34",
+        "intro": []
+      },
+      "quiz-computer-basics": {
+        "title": "Questionário sobre o básico a respeito de computadores",
+        "intro": [
+          "Teste o que você aprendeu neste questionário de conhecimentos básicos sobre computadores."
+        ]
+      },
+      "dxpc": {
+        "title": "36",
+        "intro": []
+      },
+      "workshop-cafe-menu": {
+        "title": "Crie um menu de cafeteria",
+        "intro": [
+          "O CSS informa ao navegador como exibir sua página da web. Você pode usar o CSS para definir cor, fonte, tamanho e outros aspectos dos elementos HTML.",
+          "Neste workshop, você aprenderá CSS criando uma página de menu para uma página da web para um café."
+        ]
+      },
+      "lab-business-card": {
+        "title": "Crie um cartão de visita",
+        "intro": [
+          "Neste laboratório, você vai criar um cartão de visita e estilizá-lo usando CSS."
+        ]
+      },
+      "gnuk": {
+        "title": "39",
+        "intro": []
+      },
+      "zlfj": {
+        "title": "40",
+        "intro": []
+      },
+      "quiz-basic-css": {
+        "title": "Questionário básico de CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário de conhecimento básico sobre o CSS."
+        ]
+      },
+      "sdul": {
+        "title": "42",
+        "intro": []
+      },
+      "lab-stylized-to-do-list": {
+        "title": "Crie uma lista de tarefas estilizada",
+        "intro": [
+          "Neste laboratório, você vai criar uma lista de tarefas e aplicar diferentes estilos aos links"
+        ]
+      },
+      "humj": {
+        "title": "44",
+        "intro": []
+      },
+      "pahx": {
+        "title": "45",
+        "intro": []
+      },
+      "rzdx": {
+        "title": "46",
+        "intro": []
+      },
+      "quiz-css-backgrounds-and-borders": {
+        "title": "Questionário sobre bordas e segundo plano no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre bordas e segundo plano em CSS."
+        ]
+      },
+      "ljmt": {
+        "title": "48",
+        "intro": []
+      },
+      "lxpk": {
+        "title": "49",
+        "intro": []
+      },
+      "lzqy": {
+        "title": "50",
+        "intro": []
+      },
+      "gvel": {
+        "title": "51",
+        "intro": []
+      },
+      "quiz-design-fundamentals": {
+        "title": "Questionário de fundamentos de design",
+        "intro": [
+          "Teste o que você aprendeu neste questionário de fundamentos de design de UIs."
+        ]
+      },
+      "bgrw": {
+        "title": "53",
+        "intro": []
+      },
+      "sbnz": {
+        "title": "54",
+        "intro": []
+      },
+      "lab-event-flyer-page": {
+        "title": "Crie uma página de anúncio de evento",
+        "intro": [
+          "Neste laboratório, você usará unidades absolutas e relativas do CSS para criar uma página de anúncio de evento."
+        ]
+      },
+      "ywfm": {
+        "title": "56",
+        "intro": []
+      },
+      "quiz-css-relative-and-absolute-units": {
+        "title": "Questionário de unidades relativas e absolutas no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre unidades relativas e absolutas em CSS."
+        ]
+      },
+      "ohhu": {
+        "title": "58",
+        "intro": []
+      },
+      "syga": {
+        "title": "59",
+        "intro": []
+      },
+      "sdym": {
+        "title": "60",
+        "intro": []
+      },
+      "ivpx": {
+        "title": "61",
+        "intro": []
+      },
+      "quiz-css-pseudo-classes": {
+        "title": "Questionário de pseudoclasses em CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre pseudoclasses em CSS."
+        ]
+      },
+      "fvcj": {
+        "title": "63",
+        "intro": []
+      },
+      "ogdb": {
+        "title": "64",
+        "intro": []
+      },
+      "zxiy": {
+        "title": "65",
+        "intro": []
+      },
+      "qpze": {
+        "title": "66",
+        "intro": []
+      },
+      "quiz-css-colors": {
+        "title": "Questionário sobre cores no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o uso de cores no CSS."
+        ]
+      },
+      "jnqt": {
+        "title": "68",
+        "intro": []
+      },
+      "vkei": {
+        "title": "69",
+        "intro": []
+      },
+      "lab-contact-form": {
+        "title": "Crie um formulário de contato",
+        "intro": [
+          "Neste laboratório, você projetará um formulário de contato em HTML e o estilizará usando o CSS."
+        ]
+      },
+      "ipmw": {
+        "title": "71",
+        "intro": []
+      },
+      "quiz-styling-forms": {
+        "title": "Questionário sobre estilização de formulários",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre como estilizar formulários usando o CSS."
+        ]
+      },
+      "qzcx": {
+        "title": "73",
+        "intro": []
+      },
+      "wozq": {
+        "title": "74",
+        "intro": []
+      },
+      "lab-confidential-email-page": {
+        "title": "Crie uma página de e-mail confidencial",
+        "intro": [
+          "Para este laboratório, você criará uma página da web de um e-mail confidencial usando HTML e CSS."
+        ]
+      },
+      "zter": {
+        "title": "76",
+        "intro": []
+      },
+      "quiz-css-layout-and-effects": {
+        "title": "Questionário sobre efeitos e layout em CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o modelo de caixas, transformações, filtros e ultrapassagem de limites em CSS."
+        ]
+      },
+      "tcwi": {
+        "title": "78",
+        "intro": []
+      },
+      "uptf": {
+        "title": "79",
+        "intro": []
+      },
+      "lab-page-of-playing-cards": {
+        "title": "Construa uma página de jogos de cartas",
+        "intro": [
+          "Para este laboratório, você usará o Flexbox para criar uma página da web de jogos de cartas."
+        ]
+      },
+      "kqao": {
+        "title": "81",
+        "intro": []
+      },
+      "quiz-css-flexbox": {
+        "title": "Questionário sobre o Flexbox do CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o uso do Flexbox no CSS."
+        ]
+      },
+      "vqut": {
+        "title": "83",
+        "intro": []
+      },
+      "ujcf": {
+        "title": "84",
+        "intro": []
+      },
+      "lab-newspaper-article": {
+        "title": "Crie um artigo de jornal",
+        "intro": [
+          "Neste laboratório, você criará uma página de artigo de jornal usando HTML e CSS."
+        ]
+      },
+      "hbme": {
+        "title": "86",
+        "intro": []
+      },
+      "quiz-css-typography": {
+        "title": "Questionário sobre tipografia no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre a tipografia no CSS."
+        ]
+      },
+      "dyvj": {
+        "title": "88",
+        "intro": []
+      },
+      "rjsv": {
+        "title": "89",
+        "intro": []
+      },
+      "lab-tribute-page": {
+        "title": "Crie uma página de homenagem",
+        "intro": [
+          "Para este laboratório, você criará uma página de tributo para alguém de sua escolha, fictício ou real."
+        ]
+      },
+      "fnde": {
+        "title": "91",
+        "intro": []
+      },
+      "quiz-css-accessibility": {
+        "title": "Questionário sobre acessibilidade no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre como tornar uma página da web acessível com CSS."
+        ]
+      },
+      "swpl": {
+        "title": "93",
+        "intro": []
+      },
+      "hcje": {
+        "title": "94",
+        "intro": []
+      },
+      "lab-book-inventory-app": {
+        "title": "Crie uma aplicação de inventário de livros",
+        "intro": [
+          "Neste laboratório, você criará uma aplicação de inventário de livros."
+        ]
+      },
+      "huyd": {
+        "title": "96",
+        "intro": []
+      },
+      "quiz-css-attribute-selectors": {
+        "title": "Questionário sobre seletores de atributos em CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o uso de seletores de atributos no CSS."
+        ]
+      },
+      "rxzk": {
+        "title": "98",
+        "intro": []
+      },
+      "xobh": {
+        "title": "99",
+        "intro": []
+      },
+      "lab-house-painting": {
+        "title": "Crie a pintura de uma casa",
+        "intro": [
+          "Para este laboratório, você criará a pintura de uma casa usando o CSS."
+        ]
+      },
+      "rrtt": {
+        "title": "101",
+        "intro": []
+      },
+      "quiz-css-positioning": {
+        "title": "Questionário sobre posicionamento em CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre como funciona o posicionamento no CSS."
+        ]
+      },
+      "xebj": {
+        "title": "103",
+        "intro": []
+      },
+      "jkdt": {
+        "title": "104",
+        "intro": []
+      },
+      "lab-technical-documentation-page": {
+        "title": "Crie uma página de documentação técnica",
+        "intro": [
+          "Para este laboratório, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico."
+        ]
+      },
+      "xcti": {
+        "title": "106",
+        "intro": []
+      },
+      "quiz-responsive-web-design": {
+        "title": "Questionário sobre design responsivo para a web",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre como tornar uma página da web responsiva."
+        ]
+      },
+      "mtbl": {
+        "title": "108",
+        "intro": []
+      },
+      "vlov": {
+        "title": "109",
+        "intro": []
+      },
+      "lab-availability-table": {
+        "title": "Crie uma tabela de disponibilidade",
+        "intro": [
+          "Neste laboratório, você criará uma tabela de disponibilidade."
+        ]
+      },
+      "sget": {
+        "title": "111",
+        "intro": []
+      },
+      "quiz-css-variables": {
+        "title": "Questionário sobre variáveis no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre como usar variáveis no CSS."
+        ]
+      },
+      "agbl": {
+        "title": "113",
+        "intro": []
+      },
+      "ogko": {
+        "title": "114",
+        "intro": []
+      },
+      "harp": {
+        "title": "115",
+        "intro": []
+      },
+      "nsiq": {
+        "title": "116",
+        "intro": []
+      },
+      "lab-product-landing-page": {
+        "title": "Crie uma página inicial para um produto",
+        "intro": [
+          "Para este projeto, você criará uma página inicial de produto para comercializar um produto de sua escolha."
+        ]
+      },
+      "fdam": {
+        "title": "118",
+        "intro": []
+      },
+      "quiz-css-grid": {
+        "title": "Questionário de grid no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o uso do grid no CSS."
+        ]
+      },
+      "dorc": {
+        "title": "120",
+        "intro": []
+      },
+      "adzu": {
+        "title": "121",
+        "intro": []
+      },
+      "lab-moon-orbit": {
+        "title": "Crie uma órbita lunar",
+        "intro": [
+          "Para esse laboratório, você criará uma animação da lua orbitando a Terra."
+        ]
+      },
+      "lugl": {
+        "title": "123",
+        "intro": []
+      },
+      "lab-personal-portfolio": {
+        "title": "Crie um portfólio pessoal",
+        "intro": [
+          "Para este projeto, você criará sua própria página pessoal de portfólio."
+        ]
+      },
+      "lvqc": {
+        "title": "125",
+        "intro": []
+      },
+      "quiz-css-animations": {
+        "title": "Questionário sobre animações no CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o uso de animações no CSS."
+        ]
+      },
+      "wvjx": {
+        "title": "127",
+        "intro": []
+      },
+      "uquz": {
+        "title": "128",
+        "intro": []
+      },
+      "kdgd": {
+        "title": "129",
+        "intro": []
+      },
+      "wryp": {
+        "title": "130",
+        "intro": []
+      },
+      "workshop-greeting-bot": {
+        "title": "Crie um bot de saudações",
+        "intro": [
+          "Neste workshop, você aprenderá a trabalhar com os fundamentos de JavaScript criando um bot de saudações.",
+          "Você aprenderá sobre as variáveis, <code>let</code>, <code>const</code>, <code>console.log</code> e sobre o uso básico de strings."
+        ]
+      },
+      "lab-javascript-trivia-bot": {
+        "title": "Crie um bot informativo em JavaScript",
+        "intro": [
+          "Neste laboratório, você vai praticar com variáveis e strings no JavaScript criando um bot informativo."
+        ]
+      },
+      "dthi": {
+        "title": "133",
+        "intro": []
+      },
+      "yskn": {
+        "title": "134",
+        "intro": []
+      },
+      "quiz-javascript-variables-and-data-types": {
+        "title": "Questionário sobre variáveis e tipos de dados em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre variáveis e tipos de dados no JavaScript."
+        ]
+      },
+      "hoec": {
+        "title": "136",
+        "intro": []
+      },
+      "workshop-teacher-chatbot": {
+        "title": "Crie um chatbot professor",
+        "intro": [
+          "Neste workshop, você continuará a aprender mais sobre strings em JavaScript criando um chatbot.",
+          "Você aprenderá a trabalhar com template literals e com o método <code>indexOf</code>."
+        ]
+      },
+      "axgb": {
+        "title": "138",
+        "intro": []
+      },
+      "rwac": {
+        "title": "139",
+        "intro": []
+      },
+      "quiz-javascript-strings": {
+        "title": "Questionário sobre strings em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre strings em JavaScript."
+        ]
+      },
+      "hxwa": {
+        "title": "141",
+        "intro": []
+      },
+      "workshop-mathbot": {
+        "title": "Crie um bot de matemática",
+        "intro": [
+          "Neste workshop, você vai rever como trabalhar com os diferentes métodos de objetos matemáticos, construindo um bot matemático."
+        ]
+      },
+      "lab-fortune-teller": {
+        "title": "Crie um adivinhador do futuro",
+        "intro": [
+          "Neste laboratório, você criará um adivinhador do futuro selecionando aleatoriamente um futuro possível de uma lista de futuros disponíveis."
+        ]
+      },
+      "wfyg": {
+        "title": "144",
+        "intro": []
+      },
+      "guqy": {
+        "title": "145",
+        "intro": []
+      },
+      "quiz-javascript-math": {
+        "title": "Questionário sobre Math em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre Math em JavaScript."
+        ]
+      },
+      "hafd": {
+        "title": "147",
+        "intro": []
+      },
+      "phko": {
+        "title": "148",
+        "intro": []
+      },
+      "quiz-javascript-comparisons-and-conditionals": {
+        "title": "Questionário sobre condicionais e comparações em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre comparações e condicionais em JavaScript."
+        ]
+      },
+      "tsdq": {
+        "title": "150",
+        "intro": []
+      },
+      "workshop-calculator": {
+        "title": "Crie uma calculadora",
+        "intro": [
+          "Neste workshop, você vai revisar o trabalho com funções ao criar uma calculadora."
+        ]
+      },
+      "lab-email-masker": {
+        "title": "Crie um mascarador de e-mails",
+        "intro": [
+          "Neste laboratório, você criará um mascarador de e-mails, que vai ocultar um endereço de e-mail selecionado."
+        ]
+      },
+      "lab-sentence-maker": {
+        "title": "Crie um construtor de frases",
+        "intro": [
+          "Neste laboratório, você criará histórias diferentes atribuindo palavras diferentes a variáveis diferentes."
+        ]
+      },
+      "workshop-loan-qualification-checker": {
+        "title": "Crie um verificador de qualificação para empréstimos",
+        "intro": [
+          "Neste workshop, você continuará a aprender a trabalhar com condicionais criando uma aplicação de verificação de qualificação para empréstimos.",
+          "Você aprenderá mais sobre instruções <code>if</code> e sobre como usar operadores de comparação e várias condições em uma instrução <code>if</code>."
+        ]
+      },
+      "lab-leap-year-calculator": {
+        "title": "Crie uma calculadora de ano bissexto ",
+        "intro": [
+          "Neste laboratório, você usará instruções condicionais e laços de repetição para determinar se um ano é bissexto."
+        ]
+      },
+      "pljo": {
+        "title": "156",
+        "intro": []
+      },
+      "quiz-javascript-functions": {
+        "title": "Questionário sobre funções em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre funções em JavaScript."
+        ]
+      },
+      "mexq": {
+        "title": "158",
+        "intro": []
+      },
+      "ifgn": {
+        "title": "159",
+        "intro": []
+      },
+      "workshop-shopping-list": {
+        "title": "Crie uma lista de compras",
+        "intro": [
+          "Neste workshop, você vai praticar o uso de arrays criando uma lista de compras.",
+          "Você lembrará de como adicionar e remover elementos de um array usando métodos como <code>push</code>, <code>pop</code>, <code>shift</code> e <code>unshift</code>."
+        ]
+      },
+      "lab-lunch-picker-program": {
+        "title": "Crie um programa seletor de almoços",
+        "intro": [
+          "Neste laboratório, você vai rever arrays e números aleatórios criando um programa seletor de almoço."
+        ]
+      },
+      "mokm": {
+        "title": "161",
+        "intro": []
+      },
+      "froz": {
+        "title": "162",
+        "intro": []
+      },
+      "quiz-javascript-arrays": {
+        "title": "Questionário sobre arrays em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre arrays em JavaScript."
+        ]
+      },
+      "dvnt": {
+        "title": "164",
+        "intro": []
+      },
+      "ekdb": {
+        "title": "165",
+        "intro": []
+      },
+      "lab-quiz-game": {
+        "title": "Criar um jogo de questionário",
+        "intro": ["Para este laboratório, você criará um jogo de questionário."]
+      },
+      "lab-factorial-calculator": {
+        "title": "Crie uma calculadora de fatorial ",
+        "intro": [
+          "Neste laboratório, você vai construir uma calculadora de fatorial."
+        ]
+      },
+      "quiz-javascript-objects": {
+        "title": "Questionário sobre objetos em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre objetos em JavaScript."
+        ]
+      },
+      "kgtw": {
+        "title": "169",
+        "intro": []
+      },
+      "workshop-sentence-analyzer": {
+        "title": "Crie um analisador de frases",
+        "intro": [
+          "Neste workshop, você vai revisar os laços em JavaScript criando uma aplicação de análise de frases."
+        ]
+      },
+      "kcci": {
+        "title": "171",
+        "intro": []
+      },
+      "puhe": {
+        "title": "172",
+        "intro": []
+      },
+      "quiz-javascript-loops": {
+        "title": "Questionário sobre laços em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre laços em JavaScript."
+        ]
+      },
+      "hjtr": {
+        "title": "174",
+        "intro": []
+      },
+      "lab-pyramid-generator": {
+        "title": "Crie um gerador de pirâmides",
+        "intro": ["Neste laboratório, você vai criar um gerador de pirâmides."]
+      },
+      "lab-gradebook-app": {
+        "title": "Crie uma aplicação de quadro de notas",
+        "intro": [
+          "Neste laboratório, você criará uma aplicação de quadro de notas."
+        ]
+      },
+      "epfc": {
+        "title": "177",
+        "intro": []
+      },
+      "lab-inventory-management-program": {
+        "title": "Crie um programa de gestão de inventário",
+        "intro": [
+          "Para este laboratório, você vai criar um programa de gerenciamento de inventário usando JavaScript."
+        ]
+      },
+      "fbbn": {
+        "title": "179",
+        "intro": []
+      },
+      "lnmg": {
+        "title": "180",
+        "intro": []
+      },
+      "wead": {
+        "title": "181",
+        "intro": []
+      },
+      "quiz-javascript-fundamentals": {
+        "title": "Questionário sobre o básico em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o básico em JavaScript."
+        ]
+      },
+      "plic": {
+        "title": "183",
+        "intro": []
+      },
+      "vjmm": {
+        "title": "184",
+        "intro": []
+      },
+      "bxtv": {
+        "title": "185",
+        "intro": []
+      },
+      "xiqk": {
+        "title": "186",
+        "intro": []
+      },
+      "quiz-javascript-higher-order-functions": {
+        "title": "Questionário sobre funções de ordem superior em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre funções de ordem superior em JavaScript."
+        ]
+      },
+      "esfh": {
+        "title": "188",
+        "intro": []
+      },
+      "gibb": {
+        "title": "189",
+        "intro": []
+      },
+      "lab-favorite-icon-toggler": {
+        "title": "Criar um alternador de ícones favoritos",
+        "intro": [
+          "Neste laboratório, você criará um alternador de ícones favoritos utilizando eventos de clique em JavaScript."
+        ]
+      },
+      "fhxc": {
+        "title": "191",
+        "intro": []
+      },
+      "quiz-dom-manipulation-and-click-event-with-javascript": {
+        "title": "Questionário sobre manipulação do DOM e eventos de clique em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre manipulação do DOM e eventos de clique em JavaScript."
+        ]
+      },
+      "ubpx": {
+        "title": "193",
+        "intro": []
+      },
+      "lbyi": {
+        "title": "194",
+        "intro": []
+      },
+      "lab-real-time-counter": {
+        "title": "Crie um contador em tempo real",
+        "intro": [
+          "Neste laboratório, você criará um contador de caracteres em tempo real"
+        ]
+      },
+      "fmbk": {
+        "title": "196",
+        "intro": []
+      },
+      "lab-lightbox-viewer": {
+        "title": "Crie um visualizador de lightbox",
+        "intro": [
+          "Neste laboratório, você vai criar um visualizador de lightbox para visualizar imagens em modo focado."
+        ]
+      },
+      "workshop-rps-game": {
+        "title": "Crie um jogo de pedra, papel e tesoura",
+        "intro": [
+          "Neste workshop, você revisará a manipulação do DOM e eventos criando um jogo de Pedra, Papel e Tesoura."
+        ]
+      },
+      "lab-palindrome-checker": {
+        "title": "Crie um verificador de palíndromo",
+        "intro": [
+          "Para esse laboratório, você criará uma aplicação que verifica se uma determinada palavra é um palíndromo."
+        ]
+      },
+      "lab-football-team-cards": {
+        "title": "Crie um conjunto de cartões de times de futebol",
+        "intro": [
+          "Um aspecto comum na criação de aplicações para a web é o processamento de conjuntos de dados e, em seguida, o envio de informações para a tela. Neste projeto de cartões de times de futebol, você aprenderá como trabalhar com a manipulação do DOM, desestruturação de objetos, manipulação de eventos e filtragem de dados."
+        ]
+      },
+      "iejn": {
+        "title": "201",
+        "intro": []
+      },
+      "quiz-javascript-events": {
+        "title": "Questionário sobre eventos em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre eventos em JavaScript."
+        ]
+      },
+      "kaqq": {
+        "title": "203",
+        "intro": []
+      },
+      "lab-random-background-color-changer": {
+        "title": "Faça a depuração do modificador de cor de fundo aleatório",
+        "intro": [
+          "Para esse laboratório, você fará a depuração de um alterador de cor de fundo aleatório e corrigirá os erros para fazê-lo funcionar corretamente."
+        ]
+      },
+      "ksfc": {
+        "title": "205",
+        "intro": []
+      },
+      "quiz-debugging-javascript": {
+        "title": "Questionário sobre depuração em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre depuração em JavaScript."
+        ]
+      },
+      "dqth": {
+        "title": "207",
+        "intro": []
+      },
+      "ilop": {
+        "title": "208",
+        "intro": []
+      },
+      "qrer": {
+        "title": "209",
+        "intro": []
+      },
+      "lab-regex-sandbox": {
+        "title": "Crie um sandbox de expressões regulares",
+        "intro": [
+          "Neste laboratório, você vai criar um sandbox de expressões regulares."
+        ]
+      },
+      "svsl": {
+        "title": "211",
+        "intro": []
+      },
+      "quiz-javascript-regular-expressions": {
+        "title": "Questionário sobre expressões regulares em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre expressões regulares em JavaScript."
+        ]
+      },
+      "zalp": {
+        "title": "213",
+        "intro": []
+      },
+      "hhvp": {
+        "title": "214",
+        "intro": []
+      },
+      "egkv": {
+        "title": "215",
+        "intro": []
+      },
+      "qlvw": {
+        "title": "216",
+        "intro": []
+      },
+      "quiz-form-validation-with-javascript": {
+        "title": "Questionário sobre validação de formulários em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre validação de formulários em JavaScript."
+        ]
+      },
+      "lupt": {
+        "title": "218",
+        "intro": []
+      },
+      "lab-date-conversion": {
+        "title": "Crie um programa de conversão de data",
+        "intro": [
+          "Neste laboratório, você criará um programa para converter uma data de um formato para outro."
+        ]
+      },
+      "xtfk": {
+        "title": "220",
+        "intro": []
+      },
+      "quiz-javascript-dates": {
+        "title": "Questionário sobre datas em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre datas em JavaScript."
+        ]
+      },
+      "lvts": {
+        "title": "222",
+        "intro": []
+      },
+      "foal": {
+        "title": "223",
+        "intro": []
+      },
+      "crzf": {
+        "title": "224",
+        "intro": []
+      },
+      "xofr": {
+        "title": "225",
+        "intro": []
+      },
+      "quiz-javascript-audio-and-video": {
+        "title": "Questionário sobre áudio e vídeo em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre áudio e vídeo em JavaScript."
+        ]
+      },
+      "pehm": {
+        "title": "227",
+        "intro": []
+      },
+      "cvsw": {
+        "title": "228",
+        "intro": []
+      },
+      "lab-bookmark-manager-app": {
+        "title": "Crie uma aplicação gerenciadora de favoritos",
+        "intro": [
+          "Para este laboratório, você vai criar uma aplicação de gerenciamento de favoritos."
+        ]
+      },
+      "fgbp": {
+        "title": "230",
+        "intro": []
+      },
+      "quiz-local-storage-and-crud": {
+        "title": "Questionário sobre armazenamento local e CRUD",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre armazenamento local e CRUD."
+        ]
+      },
+      "jbst": {
+        "title": "232",
+        "intro": []
+      },
+      "peyf": {
+        "title": "233",
+        "intro": []
+      },
+      "bdqj": {
+        "title": "234",
+        "intro": []
+      },
+      "ndlf": {
+        "title": "235",
+        "intro": []
+      },
+      "quiz-recursion": {
+        "title": "Questionário sobre recursão",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre recursão em JavaScript."
+        ]
+      },
+      "yshh": {
+        "title": "237",
+        "intro": []
+      },
+      "wyxz": {
+        "title": "238",
+        "intro": []
+      },
+      "lab-quicksort-algorithm": {
+        "title": "Crie o algoritmo de ordenação rápida (quicksort)",
+        "intro": [
+          "Para este laboratório, você vai implementar o algoritmo de Quicksort, ou ordenação rápida, usando JavaScript."
+        ]
+      },
+      "dtfv": {
+        "title": "240",
+        "intro": []
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Questionário sobre algoritmos de busca e de ordenamento",
+        "intro": [
+          "Teste o que você aprendeu nesse questionário sobre algoritmos de busca e de ordenamento."
+        ]
+      },
+      "bnvw": {
+        "title": "242",
+        "intro": []
+      },
+      "xkhk": {
+        "title": "243",
+        "intro": []
+      },
+      "lab-roman-numeral-converter": {
+        "title": "Crie um conversor de números romanos",
+        "intro": [
+          "Para este laboratório, você criará uma aplicação que converte números inteiros em números romanos."
+        ]
+      },
+      "yaxm": {
+        "title": "245",
+        "intro": []
+      },
+      "lab-telephone-number-validator": {
+        "title": "Crie um validador de números de telefone",
+        "intro": [
+          "Para este laboratório, você criará uma aplicação que verifica se o número de telefone é um número válido de telefone dos Estados Unidos."
+        ]
+      },
+      "lab-cash-register": {
+        "title": "Crie uma caixa registradora",
+        "intro": ["Para este laboratório, você criará uma caixa registradora."]
+      },
+      "udia": {
+        "title": "248",
+        "intro": []
+      },
+      "quiz-javascript-problem-solving-and-algorithmic-thinking": {
+        "title": "Questionário sobre resolução de problemas e pensamento algorítmico em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre resolução de problemas e pensamento algoritmico em JavaScript."
+        ]
+      },
+      "xayi": {
+        "title": "250",
+        "intro": []
+      },
+      "mjbe": {
+        "title": "251",
+        "intro": []
+      },
+      "byqx": {
+        "title": "252",
+        "intro": []
+      },
+      "alda": {
+        "title": "253",
+        "intro": []
+      },
+      "quiz-javascript-functional-programming": {
+        "title": "Questionário sobre programação funcional em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre programação funcional em JavaScript."
+        ]
+      },
+      "cvaf": {
+        "title": "255",
+        "intro": []
+      },
+      "tdgy": {
+        "title": "256",
+        "intro": []
+      },
+      "saxu": {
+        "title": "257",
+        "intro": []
+      },
+      "kagw": {
+        "title": "258",
+        "intro": []
+      },
+      "mbib": {
+        "title": "259",
+        "intro": []
+      },
+      "oxiv": {
+        "title": "260",
+        "intro": []
+      },
+      "quiz-javascript-object-oriented-programming": {
+        "title": "Questionário sobre programação orientada a objetos em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre programação orientada a objetos em JavaScript."
+        ]
+      },
+      "nixz": {
+        "title": "262",
+        "intro": []
+      },
+      "lab-stack-class": {
+        "title": "Crie uma classe de stack",
+        "intro": [
+          "Para este laboratório, você vai criar uma classe de stack usando o JavaScript."
+        ]
+      },
+      "lab-linked-list-class": {
+        "title": "Crie uma classe de listas encadeadas",
+        "intro": [
+          "Para este laboratório, você vai criar uma classe de listas vinculadas usando o JavaScript."
+        ]
+      },
+      "lab-hash-table-class": {
+        "title": "Crie uma classe de hash table",
+        "intro": [
+          "Para este laboratório, você vai criar uma classe de hash table usando o JavaScript."
+        ]
+      },
+      "muyw": {
+        "title": "266",
+        "intro": []
+      },
+      "quiz-javascript-data-structures": {
+        "title": "Questionário sobre estruturas de dados em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre estruturas de dados em JavaScript."
+        ]
+      },
+      "rmpy": {
+        "title": "268",
+        "intro": []
+      },
+      "lab-depth-first-search": {
+        "title": "Implemente o algoritmo de busca em profundidade",
+        "intro": [
+          "Para este laboratório, você usará o JavaScript para implementar o algoritmo de busca em profundidade."
+        ]
+      },
+      "xdyh": {
+        "title": "270",
+        "intro": []
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Questionário sobre gráficos e árvores",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre gráficos e árvores em JavaScript."
+        ]
+      },
+      "vjgg": {
+        "title": "272",
+        "intro": []
+      },
+      "lab-nth-fibonacci-number-generator": {
+        "title": "Crie um gerador do enésimo número de Fibonacci",
+        "intro": [
+          "Para este laboratório, você implementará o gerador do enésimo número de Fibonacci."
+        ]
+      },
+      "kaui": {
+        "title": "274",
+        "intro": []
+      },
+      "quiz-dynamic-programming": {
+        "title": "Questionário sobre programação dinâmica",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre programação dinâmica."
+        ]
+      },
+      "sgau": {
+        "title": "276",
+        "intro": []
+      },
+      "clak": {
+        "title": "277",
+        "intro": []
+      },
+      "fcom": {
+        "title": "278",
+        "intro": []
+      },
+      "ffpt": {
+        "title": "279",
+        "intro": []
+      },
+      "lab-pokemon-search-app": {
+        "title": "Crie uma aplicação de busca de Pokémons",
+        "intro": [
+          "Para esse projeto, você criará uma aplicação para a busca de Pokémons."
+        ]
+      },
+      "vyzp": {
+        "title": "281",
+        "intro": []
+      },
+      "quiz-asynchronous-javascript": {
+        "title": "Questionário sobre JavaScript assíncrono",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre JavaScript assíncrono."
+        ]
+      },
+      "icdr": {
+        "title": "283",
+        "intro": []
+      },
+      "zdsj": {
+        "title": "284",
+        "intro": []
+      },
+      "mzae": {
+        "title": "285",
+        "intro": []
+      },
+      "gjbf": {
+        "title": "286",
+        "intro": []
+      },
+      "mbpv": {
+        "title": "287",
+        "intro": []
+      },
+      "eeez": {
+        "title": "288",
+        "intro": []
+      },
+      "quiz-web-standards": {
+        "title": "Questionário sobre padrões da web",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre padrões da web."
+        ]
+      },
+      "khuu": {
+        "title": "290",
+        "intro": []
+      },
+      "xdly": {
+        "title": "291",
+        "intro": []
+      },
+      "rhhl": {
+        "title": "292",
+        "intro": []
+      },
+      "trvf": {
+        "title": "293",
+        "intro": []
+      },
+      "kwmg": {
+        "title": "294",
+        "intro": []
+      },
+      "nodx": {
+        "title": "295",
+        "intro": []
+      },
+      "erfj": {
+        "title": "296",
+        "intro": []
+      },
+      "quiz-react-basics": {
+        "title": "Questionário básico sobre React",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre o básico do React."
+        ]
+      },
+      "hfwi": {
+        "title": "298",
+        "intro": []
+      },
+      "rnwr": {
+        "title": "299",
+        "intro": []
+      },
+      "oeqv": {
+        "title": "300",
+        "intro": []
+      },
+      "rdzk": {
+        "title": "301",
+        "intro": []
+      },
+      "vtpz": {
+        "title": "302",
+        "intro": []
+      },
+      "dfwl": {
+        "title": "303",
+        "intro": []
+      },
+      "adzm": {
+        "title": "304",
+        "intro": []
+      },
+      "quiz-react-state-and-hooks": {
+        "title": "Questionário sobre state e hooks em React",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre state e hooks em React."
+        ]
+      },
+      "voks": {
+        "title": "306",
+        "intro": []
+      },
+      "uwum": {
+        "title": "307",
+        "intro": []
+      },
+      "ukem": {
+        "title": "308",
+        "intro": []
+      },
+      "sdjg": {
+        "title": "309",
+        "intro": []
+      },
+      "buzx": {
+        "title": "310",
+        "intro": []
+      },
+      "pexz": {
+        "title": "311",
+        "intro": []
+      },
+      "prlo": {
+        "title": "312",
+        "intro": []
+      },
+      "jsnd": {
+        "title": "313",
+        "intro": []
+      },
+      "quiz-advanced-react": {
+        "title": "Questionário avançado sobre React",
+        "intro": [
+          "Teste o que você aprendeu neste questionário avançado sobre React."
+        ]
+      },
+      "tkgg": {
+        "title": "315",
+        "intro": []
+      },
+      "coip": {
+        "title": "316",
+        "intro": []
+      },
+      "quiz-web-performance": {
+        "title": "Questionário sobre desempenho na web",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre desempenho na web."
+        ]
+      },
+      "hzab": {
+        "title": "318",
+        "intro": []
+      },
+      "ggea": {
+        "title": "319",
+        "intro": []
+      },
+      "vgvz": {
+        "title": "320",
+        "intro": []
+      },
+      "jkfc": {
+        "title": "321",
+        "intro": []
+      },
+      "quiz-typescript": {
+        "title": "Questionário sobre TypeScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre TypeScript."
+        ]
+      },
+      "zhhp": {
+        "title": "323",
+        "intro": []
+      },
+      "nwwd": {
+        "title": "324",
+        "intro": []
+      },
+      "quiz-css-libraries-and-frameworks": {
+        "title": "Questionário sobre bibliotecas e frameworks do CSS",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre bibliotecas e frameworks do CSS."
+        ]
+      },
+      "gora": {
+        "title": "326",
+        "intro": []
+      },
+      "vpkl": {
+        "title": "327",
+        "intro": []
+      },
+      "quiz-testing": {
+        "title": "Questionário sobre testes",
+        "intro": ["Teste o que você aprendeu neste questionário sobre testes."]
+      },
+      "lzvx": {
+        "title": "329",
+        "intro": []
+      },
+      "mfwu": {
+        "title": "330",
+        "intro": []
+      },
+      "dfcd": {
+        "title": "331",
+        "intro": []
+      },
+      "workshop-bash-boilerplate": {
+        "title": "Crie um boilerplate",
+        "intro": [
+          "O terminal permite que você envie comandos de texto para o seu computador que podem manipular o sistema de arquivos, executar programas, automatizar tarefas e muito mais.",
+          "Neste workshop de 170 aulas, você aprenderá comandos do terminal criando o boilerplate de um site usando apenas a linha de comando."
+        ]
+      },
+      "vfje": {
+        "title": "333",
+        "intro": []
+      },
+      "quiz-bash-commands": {
+        "title": "Questionário sobre comandos no Bash",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre comandos no Bash."
+        ]
+      },
+      "thsj": {
+        "title": "335",
+        "intro": []
+      },
+      "workshop-mario-database": {
+        "title": "Crie um banco de dados do Mario",
+        "intro": [
+          "Um banco de dados relacional organiza dados em tabelas que são ligadas entre si através de relações.",
+          "Neste workshop de 165 aulas, você aprenderá o essencial sobre bancos de dados relacionais, criando um banco de dados PostgreSQL com vários personagens de videogame."
+        ]
+      },
+      "lab-celestial-bodies-database": {
+        "title": "Crie um banco de dados de corpos celestiais",
+        "intro": [
+          "Para este projeto, você vai construir um banco de dados de corpos celestiais usando PostgreSQL."
+        ]
+      },
+      "cvvu": {
+        "title": "338",
+        "intro": []
+      },
+      "quiz-relational-database": {
+        "title": "Questionário sobre bancos de dados relacionais",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre bancos de dados relacionais."
+        ]
+      },
+      "ynqt": {
+        "title": "340",
+        "intro": []
+      },
+      "workshop-bash-five-programs": {
+        "title": "Crie cinco programas",
+        "intro": [
+          "Os scripts do Bash combinam comandos de terminal e lógica em programas que podem executar ou automatizar tarefas e muito mais.",
+          "Neste workshop de 220 aulas, você aprenderá mais comandos do terminal e como usá-los dentro de scripts do Bash, criando cinco programas pequenos."
+        ]
+      },
+      "hnta": {
+        "title": "342",
+        "intro": []
+      },
+      "quiz-bash-scripting": {
+        "title": "Questionário sobre scripts em Bash",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre scripts do Bash."
+        ]
+      },
+      "pegc": {
+        "title": "344",
+        "intro": []
+      },
+      "workshop-sql-student-database-part-1": {
+        "title": "Crie um banco de dados de alunos: parte 1",
+        "intro": [
+          "O SQL, ou linguagem de consulta estruturada, é a linguagem de comunicação com um banco de dados relacional.",
+          "Neste workshop de 140 aulas, você criará um script do Bash que utiliza SQL para inserir informações sobre seus alunos de ciência da computação no PostgreSQL."
+        ]
+      },
+      "workshop-sql-student-database-part-2": {
+        "title": "Crie um banco de dados de alunos: parte 2",
+        "intro": [
+          "Comandos join do SQL são usados para combinar informações de várias tabelas em um banco de dados relacional",
+          "Neste workshop de 140 aulas, você completará seu banco de dados de alunos, mergulhando mais fundo nos comandos SQL."
+        ]
+      },
+      "lab-world-cup-database": {
+        "title": "Crie um banco de dados da Copa do Mundo",
+        "intro": [
+          "Para este projeto, você criará um script do Bash que insere informações de jogos da Copa do Mundo no PostgreSQL. Depois, você vai consultar o banco de dados para obter estatísticas úteis."
+        ]
+      },
+      "workshop-kitty-ipsum-translator": {
+        "title": "Crie um tradutor de Kitty Ipsum",
+        "intro": [
+          "Há mais comandos do Bash do que você imagina.",
+          "Neste workshop de 140 aulas, você aprenderá alguns comandos mais complexos e detalhes de como funcionam os comandos."
+        ]
+      },
+      "workshop-bike-rental-shop": {
+        "title": "Crie uma loja de aluguel de bicicletas",
+        "intro": [
+          "Neste workshop de 210 aulas, você vai construir um programa de Bash interativo que armazena informações de aluguel para sua loja de aluguel de bicicletas utilizando PostgreSQL."
+        ]
+      },
+      "lab-salon-appointment-scheduler": {
+        "title": "Crie um agendador de compromissos do salão de beleza",
+        "intro": [
+          "Para este laboratório, você criará um programa de bash interativo que utiliza PostgreSQL para acompanhar os clientes e horários marcados em seu salão."
+        ]
+      },
+      "udfh": {
+        "title": "351",
+        "intro": []
+      },
+      "quiz-bash-and-sql": {
+        "title": "Questionário sobre Bash e SQL",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre Bash e SQL."
+        ]
+      },
+      "movb": {
+        "title": "353",
+        "intro": []
+      },
+      "workshop-castle": {
+        "title": "Crie um castelo",
+        "intro": [
+          "O Nano é um programa que permite editar arquivos diretamente no terminal.",
+          "Neste workshop de 40 aulas, você aprenderá a editar arquivos no terminal com o nano e construirá um castelo."
+        ]
+      },
+      "dzsr": {
+        "title": "355",
+        "intro": []
+      },
+      "quiz-nano": {
+        "title": "Questionário sobre o Nano",
+        "intro": ["Teste o que você aprendeu neste questionário sobre o Nano."]
+      },
+      "pzmc": {
+        "title": "357",
+        "intro": []
+      },
+      "workshop-sql-reference-object": {
+        "title": "Crie um objeto de referência SQL",
+        "intro": [
+          "O Git é um sistema de controle de versão que mantém o controle de todas as alterações feitas em sua base de código.",
+          "Neste workshop de 240 aulas, você aprenderá como o Git mantém o controle do seu código, criando um objeto que contém comandos SQL comumente usados."
+        ]
+      },
+      "lab-periodic-table-database": {
+        "title": "Crie um banco de dados da tabela periódica",
+        "intro": [
+          "Para este laboratório, você criará um script do Bash para obter informações sobre elementos químicos de um banco de dados de tabela periódica."
+        ]
+      },
+      "lab-number-guessing-game": {
+        "title": "Crie um jogo de adivinhação de números",
+        "intro": [
+          "Para este laboratório, você usará scripts de Bash, PostgreSQL e o Git para criar um jogo de sugestões de números que será executado no terminal e que gravará as informações de usuários."
+        ]
+      },
+      "nfoc": {
+        "title": "361",
+        "intro": []
+      },
+      "quiz-git": {
+        "title": "Questionário sobre o Git",
+        "intro": ["Teste o que você aprendeu neste questionário sobre o Git."]
+      },
+      "ibmn": {
+        "title": "363",
+        "intro": []
+      },
+      "zpjj": {
+        "title": "364",
+        "intro": []
+      },
+      "ghfk": {
+        "title": "365",
+        "intro": []
+      },
+      "ugfq": {
+        "title": "366",
+        "intro": []
+      },
+      "quiz-security-and-privacy": {
+        "title": "Questionário sobre segurança e privacidade",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre segurança e privacidade."
+        ]
+      },
+      "qjov": {
+        "title": "368",
+        "intro": []
+      },
+      "workshop-npm-packages": {
+        "title": "Gerenciamento de pacotes com o npm",
+        "intro": [
+          "O npm (Node Package Manager) é uma ferramenta de linha de comando para instalar, criar e compartilhar pacotes de código JavaScript escritos para Node.js. Há muitos pacotes de código aberto disponíveis no npm. Então, antes de iniciar um projeto, explore os pacotes que já existem para que você não acabe recriando do zero coisas como trabalhar com datas ou buscar dados de uma API.",
+          "Neste workshop, você aprenderá o básico sobre como usar o npm, incluindo como trabalhar com o arquivo <code>package.json</code> e como gerenciar suas dependências instaladas."
+        ]
+      },
+      "hjku": {
+        "title": "370",
+        "intro": []
+      },
+      "workshop-node-and-express": {
+        "title": "Básico sobre Node e Express",
+        "intro": [
+          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
+          "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
+          "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
+          "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Crie um microsserviço de timestamp",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de timestamp"
+        ]
+      },
+      "lab-request-header-parser-microservice": {
+        "title": "Crie um microsserviço conversor de requisição de cabeçalho",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de conversão de cabeçalho de solicitação"
+        ]
+      },
+      "lab-url-shortener-microservice": {
+        "title": "Crie um microsserviço redutor de URL",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de redução de URLs"
+        ]
+      },
+      "lab-exercise-tracker": {
+        "title": "Crie um monitor de exercícios",
+        "intro": [
+          "Neste laboratório, você vai construir um monitor de exercícios"
+        ]
+      },
+      "lab-file-metadata-microservice": {
+        "title": "Crie um microsserviço de metadados de arquivos",
+        "intro": [
+          "Para este laboratório, você criará um microsserviço de metadados de arquivos"
+        ]
+      },
+      "kegi": {
+        "title": "377",
+        "intro": []
+      },
+      "quiz-backend-javascript": {
+        "title": "Questionário sobre backend em JavaScript",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre backend em JavaScript."
+        ]
+      },
+      "vnfu": {
+        "title": "379",
+        "intro": []
+      },
+      "rlli": {
+        "title": "380",
+        "intro": []
+      },
+      "rjpv": {
+        "title": "381",
+        "intro": []
+      },
+      "xbri": {
+        "title": "382",
+        "intro": []
+      },
+      "quiz-tooling-and-deployment": {
+        "title": "Questionário sobre ferramentas e implantação",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre ferramentas e implantação"
+        ]
+      },
+      "nkjt": {
+        "title": "384",
+        "intro": []
+      },
+      "pgjj": {
+        "title": "385",
+        "intro": []
+      },
+      "exom": {
+        "title": "386",
+        "intro": []
+      },
+      "bvqc": {
+        "title": "387",
+        "intro": []
+      },
+      "xish": {
+        "title": "388",
+        "intro": []
       },
       "front-end-development-certification-exam": {
         "title": "Exame de certificação de desenvolvimento de front-end",

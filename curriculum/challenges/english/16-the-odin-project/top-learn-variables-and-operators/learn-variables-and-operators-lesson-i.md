@@ -79,23 +79,25 @@ let counter = 0;
 console.log( counter++ ); // 0
 ```
 
-# --question--
+# --questions--
 
 ## --text--
 
-What is the difference in the result of the two console log statements in the JavaScript code below?
+What are the outputs of the two `console.log` statements in the JavaScript code below?
 
 ```js
 let counter = 1;
 console.log(2 * ++counter); // Statement A
+```
 
+```js
 let counter = 1;
 console.log(2 * counter++); // Statement B
 ```
 
 ## --answers--
 
-There is no difference; both alert statements will show the same result.
+There is no difference; both `console.log` statements will show the same result.
 
 ---
 

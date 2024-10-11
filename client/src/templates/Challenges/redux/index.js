@@ -2,6 +2,7 @@ import { isEmpty } from 'lodash-es';
 import { handleActions } from 'redux-actions';
 
 import { getLines } from '../../../../../shared/utils/get-lines';
+import { mergeChallengeFiles } from '../classic/saved-challenges';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
 import codeStorageEpic from './code-storage-epic';
@@ -80,8 +81,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.createFiles]: (state, { payload }) => ({
       ...state,
-      challengeFiles: payload,
-      visibleEditors: { [getTargetEditor(payload)]: true }
+      challengeFiles: payload
     }),
     [actionTypes.updateFile]: (
       state,
@@ -110,7 +110,9 @@ export const reducer = handleActions(
     },
     [actionTypes.storedCodeFound]: (state, { payload }) => ({
       ...state,
-      challengeFiles: payload
+      challengeFiles: state.challengeFiles.length
+        ? mergeChallengeFiles(state.challengeFiles, payload)
+        : payload
     }),
     [actionTypes.initTests]: (state, { payload }) => ({
       ...state,
@@ -120,7 +122,6 @@ export const reducer = handleActions(
       ...state,
       challengeTests: payload
     }),
-
     [actionTypes.initConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: payload ? [payload] : []
@@ -142,6 +143,10 @@ export const reducer = handleActions(
       consoleOut: isEmpty(state.logsOut)
         ? state.consoleOut
         : state.consoleOut.concat(payload, state.logsOut)
+    }),
+    [actionTypes.initVisibleEditors]: state => ({
+      ...state,
+      visibleEditors: { [getTargetEditor(state.challengeFiles)]: true }
     }),
     [actionTypes.updateChallengeMeta]: (state, { payload }) => ({
       ...state,

@@ -1,0 +1,13 @@
+{
+  "name": "React Basics Quiz",
+  "blockType": "quiz",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-react-basics",
+  "order": 297,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "66f1a2009e65c9a40a26d51e", "title": "React Basics Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

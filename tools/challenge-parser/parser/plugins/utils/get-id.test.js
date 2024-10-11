@@ -1,10 +1,14 @@
-const idNode = require('./__fixtures__/id-node.json');
-const imageNode = require('./__fixtures__/image-node.json');
-const multipleChildrenNode = require('./__fixtures__/multiple-children.json');
-const nonIdNode = require('./__fixtures__/non-id-node.json');
+const parseFixture = require('../../__fixtures__/parse-fixture');
 const getId = require('./get-id');
 
 describe('get-id', () => {
+  let idNode, imageNode, multipleChildrenNode;
+  beforeAll(async () => {
+    const withIdNode = await parseFixture('with-id-node.md');
+    idNode = withIdNode.children[0];
+    imageNode = withIdNode.children[1];
+    multipleChildrenNode = withIdNode.children[2];
+  });
   it('should return a string', () => {
     expect.assertions(1);
     const actual = getId(idNode);
@@ -19,7 +23,7 @@ describe('get-id', () => {
 
   it('should return null if the node does contain an id', () => {
     expect.assertions(1);
-    const actual = getId(nonIdNode);
+    const actual = getId(imageNode);
     expect(actual).toBeNull();
   });
 

@@ -73,9 +73,11 @@ test.describe('Search bar', () => {
     const searchInput = await getSearchInput({ page, isMobile });
 
     await expect(searchInput).toBeVisible();
+    // Because we're mocking Algolia requests, the placeholder
+    // should be the default one.
     await expect(searchInput).toHaveAttribute(
       'placeholder',
-      translations.search.placeholder
+      translations.search.placeholder.default
     );
     await expect(
       page.getByRole('button', { name: 'Submit search terms' })
@@ -160,6 +162,23 @@ test.describe('Search bar', () => {
     await expect(
       page.getByRole('list', { name: 'Search results' })
     ).toBeHidden();
+  });
+
+  test('should close the dropdown when the user clicks outside of the search bar', async ({
+    page,
+    isMobile
+  }) => {
+    const searchInput = await getSearchInput({ page, isMobile });
+    await expect(searchInput).toBeVisible();
+
+    await searchInput.fill('test');
+
+    // Wait for the search results to show up
+    const resultList = page.getByRole('list', { name: 'Search results' });
+    await expect(resultList).toBeVisible();
+
+    await page.getByRole('navigation', { name: 'primary' }).click();
+    await expect(resultList).toBeHidden();
   });
 });
 

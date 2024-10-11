@@ -1,0 +1,10 @@
+{
+  "name": "Build an Exercise Tracker",
+  "isUpcomingChange": true,
+  "dashedName": "lab-exercise-tracker",
+  "order": 375,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "5a8b073d06fa14fcfde687aa", "title": "Build an Exercise Tracker" }],
+  "helpCategory": "Backend Development",
+  "blockType": "lab"
+}

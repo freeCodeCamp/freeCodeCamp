@@ -34,7 +34,7 @@ console.log(add(3, 7)); // Output: 7
 
 In the example above, the function `add` has a conditional statement that checks if the value of `a` is greater than `2`. If the condition is met, the function will return the value of `b` and stop executing. If the condition is not met, the function will return the sum of `a` and `b`.
 
-# --question--
+# --questions--
 
 ## --text--
 

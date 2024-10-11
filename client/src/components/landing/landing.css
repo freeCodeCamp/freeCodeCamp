@@ -181,7 +181,8 @@ figcaption.caption {
   padding: 4vw 15px;
 }
 
-.certification-section {
+.certification-section,
+.faq-section {
   padding-inline: 4vw;
 }
 
@@ -213,4 +214,46 @@ figcaption.caption {
   .testimonials-footer {
     padding: 40px;
   }
+}
+
+/* AB testing styles */
+.landing-page-b .mega-heading {
+  font-size: 2rem;
+  margin: 0px 0px 1rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+@media (min-width: 500px) {
+  .landing-page-b .mega-heading {
+    font-size: 3rem;
+  }
+}
+
+.landing-page-b .landing-top .btn-cta-big {
+  margin: 0px;
+  min-width: 300px;
+  max-width: fit-content;
+  padding: 12px;
+}
+
+.landing-page-b .logo-row-title {
+  font-weight: normal;
+}
+
+.landing-page-b {
+  overflow-x: hidden;
+}
+
+figure.ui-images {
+  position: absolute;
+  left: 50%;
+  height: auto;
+  width: 750px;
+  top: 3vw;
+}
+
+figure.ui-images img {
+  width: 100%;
+  height: auto;
 }

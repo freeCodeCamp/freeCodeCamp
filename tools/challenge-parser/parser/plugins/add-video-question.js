@@ -1,25 +1,42 @@
 const { root } = require('mdast-builder');
 const find = require('unist-util-find');
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
+const { getParagraphContent } = require('./utils/get-paragraph-content');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
 function plugin() {
   return transformer;
   function transformer(tree, file) {
-    const questionNodes = getAllBetween(tree, '--question--');
-    if (questionNodes.length > 0) {
-      const questionTree = root(questionNodes);
+    const allQuestionNodes = getSection(tree, '--questions--');
 
-      const textNodes = getAllBetween(questionTree, '--text--');
-      const answersNodes = getAllBetween(questionTree, '--answers--');
-      const solutionNodes = getAllBetween(questionTree, '--video-solution--');
+    if (allQuestionNodes.length > 0) {
+      const questions = [];
+      const questionTrees = [];
 
-      const question = getQuestion(textNodes, answersNodes, solutionNodes);
+      allQuestionNodes.forEach(questionNode => {
+        const isStartOfQuestion =
+          questionNode.children?.[0]?.value === '--text--';
+        if (isStartOfQuestion) {
+          questionTrees.push([questionNode]);
+        } else {
+          questionTrees[questionTrees.length - 1].push(questionNode);
+        }
+      });
 
-      file.data.question = question;
+      questionTrees.forEach(questionNodes => {
+        const questionTree = root(questionNodes);
+
+        const textNodes = getSection(questionTree, '--text--');
+        const answersNodes = getSection(questionTree, '--answers--');
+        const solutionNodes = getSection(questionTree, '--video-solution--');
+
+        questions.push(getQuestion(textNodes, answersNodes, solutionNodes));
+      });
+
+      file.data.questions = questions;
     }
   }
 }
@@ -45,7 +62,7 @@ function getAnswers(answersNodes) {
 
     if (feedback) {
       const answerNodes = getAllBefore(answerTree, '--feedback--');
-      const feedbackNodes = getAllBetween(answerTree, '--feedback--');
+      const feedbackNodes = getSection(answerTree, '--feedback--');
 
       if (answerNodes.length < 1) {
         throw Error('Answer missing');
@@ -64,13 +81,7 @@ function getAnswers(answersNodes) {
 function getSolution(solutionNodes) {
   let solution;
   try {
-    if (solutionNodes.length > 1) throw Error('Too many nodes');
-    if (solutionNodes[0].children.length > 1)
-      throw Error('Too many child nodes');
-    const solutionString = solutionNodes[0].children[0].value;
-    if (solutionString === '') throw Error('Non-empty string required');
-
-    solution = Number(solutionString);
+    solution = Number(getParagraphContent(solutionNodes[0]));
     if (Number.isNaN(solution)) throw Error('Not a number');
     if (solution < 1) throw Error('Not positive number');
   } catch (e) {

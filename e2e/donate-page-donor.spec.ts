@@ -5,12 +5,12 @@ test.describe('Donate page', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --donor');
+    execSync('node ./tools/scripts/seed/seed-demo-user --set-true isDonating');
     await page.goto('/donate');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should render the donate page correctly', async ({ page }) => {

@@ -19,7 +19,7 @@ to be wrapped in <p> tags`);
 
   const { paragraphs } = rawParagraphs.reduce(
     (acc, p) => {
-      const splitByBlank = p.split('_');
+      const splitByBlank = p.split('BLANK');
 
       const parsedParagraph = splitByBlank
         .map<ParagraphElement[]>((text, i) => [

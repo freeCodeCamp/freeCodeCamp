@@ -20,7 +20,7 @@ const invariant = require('invariant');
 //   contents: String,
 //   history?: [...String],
 // }) => PolyVinyl, throws
-function createPoly({ name, ext, contents, history, ...rest } = {}) {
+function createPoly({ name, ext, contents, history, ...rest }) {
   invariant(typeof name === 'string', 'name must be a string but got %s', name);
 
   invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
@@ -87,16 +87,6 @@ function setExt(ext, poly) {
   return newPoly;
 }
 
-// setImportedFiles(importedFiles: String[], poly: PolyVinyl) => PolyVinyl
-function setImportedFiles(importedFiles, poly) {
-  checkPoly(poly);
-  const newPoly = {
-    ...poly,
-    importedFiles: [...importedFiles]
-  };
-  return newPoly;
-}
-
 // This is currently only used to add back properties that are not stored in the
 // database.
 function regeneratePathAndHistory(poly) {
@@ -157,12 +147,20 @@ function transformHeadTailAndContents(wrap, poly) {
   };
 }
 
+// createSource(poly: PolyVinyl) => PolyVinyl
+function createSource(poly) {
+  return {
+    ...poly,
+    source: poly.source || poly.contents
+  };
+}
+
 module.exports = {
   createPoly,
   isPoly,
   setContent,
   setExt,
-  setImportedFiles,
+  createSource,
   compileHeadTail,
   regeneratePathAndHistory,
   transformContents,

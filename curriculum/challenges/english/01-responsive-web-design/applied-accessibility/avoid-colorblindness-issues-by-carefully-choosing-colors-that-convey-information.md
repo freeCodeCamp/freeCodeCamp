@@ -27,7 +27,9 @@ Camper Cat is testing different styles for an important button, but the yellow (
 Your code should change the text `color` for the `button` to the dark blue.
 
 ```js
-assert($('button').css('color') == 'rgb(0, 51, 102)');
+const button = document.querySelector('button');
+const buttonColor = window.getComputedStyle(button).color; 
+assert.equal(buttonColor, 'rgb(0, 51, 102)');
 ```
 
 # --seed--

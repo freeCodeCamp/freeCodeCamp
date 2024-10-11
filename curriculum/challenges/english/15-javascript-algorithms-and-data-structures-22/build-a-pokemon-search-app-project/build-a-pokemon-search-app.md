@@ -10,6 +10,8 @@ dashedName: build-a-pokemon-search-app
 
 In this project, you'll build an app that will search for Pokémon by name or ID and display the results to the user. To retrieve the Pokémon data and images, you'll use freeCodeCamp's <a href="https://pokeapi-proxy.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">PokéAPI Proxy</a>.
 
+ **Note:** The first 13 steps must be completed inside the `index.html` file. 
+
 **Objective:** Build an app that is functionally similar to <a href="https://pokemon-search-app.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://pokemon-search-app.freecodecamp.rocks</a>
 
 **User Stories:**

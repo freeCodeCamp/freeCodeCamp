@@ -1,14 +1,34 @@
-const mockFillInTheBlankAST = require('../__fixtures__/ast-fill-in-the-blank.json');
-const mockFillInTheBlankYouAreAST = require('../__fixtures__/ast-fill-in-the-blank-one-blank.json');
-const mockFillInTheBlankTwoSentencesAST = require('../__fixtures__/ast-fill-in-the-blank-two-sentences.json');
-const mockFillInTheBlankBadSentence = require('../__fixtures__/ast-fill-in-the-blank-bad-sentence.json');
-const mockFillInTheBlankBadParagraph = require('../__fixtures__/ast-fill-in-the-blank-bad-paragraph.json');
-const mockFillInTheBlankMultipleBlanks = require('../__fixtures__/ast-fill-in-the-blank-many-blanks.json');
+const parseFixture = require('../__fixtures__/parse-fixture');
 const addFillInTheBlankQuestion = require('./add-fill-in-the-blank');
 
 describe('fill-in-the-blanks plugin', () => {
+  let mockFillInTheBlankAST,
+    mockFillInTheBlankYouAreAST,
+    mockFillInTheBlankTwoSentencesAST,
+    mockFillInTheBlankBadSentence,
+    mockFillInTheBlankBadParagraph,
+    mockFillInTheBlankMultipleBlanks;
   const plugin = addFillInTheBlankQuestion();
   let file = { data: {} };
+
+  beforeAll(async () => {
+    mockFillInTheBlankAST = await parseFixture('with-fill-in-the-blank.md');
+    mockFillInTheBlankYouAreAST = await parseFixture(
+      'with-fill-in-the-blank-one-blank.md'
+    );
+    mockFillInTheBlankTwoSentencesAST = await parseFixture(
+      'with-fill-in-the-blank-two-sentences.md'
+    );
+    mockFillInTheBlankBadSentence = await parseFixture(
+      'with-fill-in-the-blank-bad-sentence.md'
+    );
+    mockFillInTheBlankBadParagraph = await parseFixture(
+      'with-fill-in-the-blank-bad-paragraph.md'
+    );
+    mockFillInTheBlankMultipleBlanks = await parseFixture(
+      'with-fill-in-the-blank-many-blanks.md'
+    );
+  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -75,7 +95,7 @@ describe('fill-in-the-blanks plugin', () => {
     const testObject = file.data.fillInTheBlank;
 
     expect(testObject.sentence).toBe(
-      '<p>Hello, You _ the new graphic designer, _? _ to meet you!</p>'
+      '<p>Hello, You BLANK the new graphic designer, BLANK? BLANK to meet you!</p>'
     );
   });
 
@@ -84,8 +104,8 @@ describe('fill-in-the-blanks plugin', () => {
     const testObject = file.data.fillInTheBlank;
 
     expect(testObject.sentence).toBe(
-      `<p>A sentence _ paragraph 1</p>
-<p>Sentence in _ 2</p>`
+      `<p>A sentence BLANK paragraph 1</p>
+<p>Sentence in BLANK 2</p>`
     );
   });
 

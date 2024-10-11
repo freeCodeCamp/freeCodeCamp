@@ -22,7 +22,7 @@ Alter the animation rate for the element with the class name of `star-1` by chan
 The `@keyframes` rule for the `star-1` class should be 50%.
 
 ```js
-assert(code.match(/twinkle-1\s*?{\s*?50%/g));
+assert.match(code,/twinkle-1\s*?{\s*?50%/g);
 ```
 
 # --seed--

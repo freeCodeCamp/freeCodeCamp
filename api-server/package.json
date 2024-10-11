@@ -54,7 +54,7 @@
     "lodash": "4.17.21",
     "loopback": "3.28.0",
     "loopback-boot": "2.28.0",
-    "loopback-connector-mongodb": "4.2.0",
+    "loopback-connector-mongodb": "5.6.0",
     "method-override": "3.0.0",
     "moment": "2.29.3",
     "moment-timezone": "0.5.33",
@@ -80,11 +80,9 @@
     "@babel/cli": "7.17.10",
     "@babel/core": "7.18.0",
     "@babel/node": "7.17.10",
-    "@babel/plugin-proposal-class-properties": "7.17.12",
     "@babel/plugin-proposal-object-rest-spread": "7.18.0",
     "@babel/plugin-proposal-optional-chaining": "7.17.12",
     "@babel/preset-env": "7.18.0",
-    "@babel/register": "7.17.7",
     "loopback-component-explorer": "6.4.0",
     "nodemon": "2.0.16"
   }

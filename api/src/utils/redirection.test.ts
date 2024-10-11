@@ -1,11 +1,11 @@
-import { FastifyRequest } from 'fastify';
 import jwt from 'jsonwebtoken';
 
 import {
   getReturnTo,
   normalizeParams,
   getRedirectParams,
-  getPrefixedLandingPath
+  getPrefixedLandingPath,
+  getLoginRedirectParams
 } from './redirection';
 import { HOME_LOCATION } from './env';
 
@@ -148,12 +148,12 @@ describe('redirection', () => {
   });
 
   describe('getRedirectParams', () => {
-    it('should decorate the request object', () => {
-      const req: FastifyRequest = {
+    it('should return origin, pathPrefix and returnTo given valid headers', () => {
+      const req = {
         headers: {
           referer: `https://www.freecodecamp.org/espanol/learn/rosetta-code/`
         }
-      } as FastifyRequest;
+      };
 
       const expectedReturn = {
         origin: 'https://www.freecodecamp.org',
@@ -166,9 +166,9 @@ describe('redirection', () => {
     });
 
     it('should use HOME_LOCATION with missing referer', () => {
-      const req: FastifyRequest = {
+      const req = {
         headers: {}
-      } as FastifyRequest;
+      };
 
       const expectedReturn = {
         returnTo: `${HOME_LOCATION}/learn`,
@@ -181,11 +181,11 @@ describe('redirection', () => {
     });
 
     it('should use HOME_LOCATION with invalid referrer', () => {
-      const req: FastifyRequest = {
+      const req = {
         headers: {
           referer: 'invalid-url'
         }
-      } as FastifyRequest;
+      };
 
       const expectedReturn = {
         returnTo: `${HOME_LOCATION}/learn`,
@@ -194,6 +194,26 @@ describe('redirection', () => {
       };
 
       const result = getRedirectParams(req);
+      expect(result).toEqual(expectedReturn);
+    });
+  });
+
+  describe('getLoginRedirectParams', () => {
+    it('should use the login-returnto cookie if present', () => {
+      const mockReq = {
+        cookies: {
+          'login-returnto': 'https://www.freecodecamp.org/espanol/learn'
+        },
+        unsignCookie: (rawValue: string) => ({ value: rawValue })
+      };
+
+      const expectedReturn = {
+        origin: 'https://www.freecodecamp.org',
+        pathPrefix: 'espanol',
+        returnTo: 'https://www.freecodecamp.org/espanol/learn'
+      };
+
+      const result = getLoginRedirectParams(mockReq);
       expect(result).toEqual(expectedReturn);
     });
   });

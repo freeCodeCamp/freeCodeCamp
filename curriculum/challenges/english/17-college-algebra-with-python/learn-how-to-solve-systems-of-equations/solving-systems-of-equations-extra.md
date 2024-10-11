@@ -12,7 +12,7 @@ This video will show you one way to create a calculator that solves and graphs. 
 
 Here is the <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4V-bCXozWf3HpM7?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook used in this video.</a> This will give you an example of what your notebook could look like so far, as you have some functions in there and create headings for the next few functions.
 
-# --question--
+# --questions--
 
 ## --text--
 

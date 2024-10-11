@@ -4,7 +4,7 @@
   "dashedName": "build-a-palindrome-checker-project",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
-  "order": 8,
+  "order": 7,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

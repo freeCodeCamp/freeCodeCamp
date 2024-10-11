@@ -1,10 +1,10 @@
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 
 function plugin() {
   return transformer;
 
   function transformer(tree, file) {
-    const sceneNodes = getAllBetween(tree, '--scene--');
+    const sceneNodes = getSection(tree, '--scene--');
 
     if (sceneNodes.length > 0) {
       if (sceneNodes.length !== 1) {

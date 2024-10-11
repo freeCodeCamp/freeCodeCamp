@@ -3,6 +3,7 @@ import request from 'supertest';
 import { build } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
+import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -13,7 +14,7 @@ declare global {
 
 type Options = {
   sendCSRFToken?: boolean;
-} & Record<string, unknown>;
+};
 
 const requests = {
   GET: (resource: string) => request(fastifyTestInstance?.server).get(resource),
@@ -25,14 +26,14 @@ const requests = {
 };
 
 export const getCsrfToken = (setCookies: string[]): string | undefined => {
-  const csrfSetCookie = setCookies.find(str => str.includes('csrf_token'));
+  const csrfSetCookie = setCookies.find(str => str.includes(CSRF_COOKIE));
   const [csrfCookie] = csrfSetCookie?.split(';') ?? [];
   const [_key, csrfToken] = csrfCookie?.split('=') ?? [];
 
   return csrfToken;
 };
 
-export const ORIGIN = 'https://www.freecodecamp.org';
+const ORIGIN = 'https://www.freecodecamp.org';
 
 export const getCookies = (setCookies: string[]): string => {
   for (const cookie of setCookies) {
@@ -41,16 +42,27 @@ export const getCookies = (setCookies: string[]): string => {
   return setCookies.map(cookie => cookie.split(';')[0]).join('; ');
 };
 
+/**
+ * A wrapper around supertest that handles common setup for requests. Namely
+ * setting the Origin header, cookies and CSRF token.
+ *
+ * @param resource - The URL of the resource to be requested
+ * @param config - The configuration for the request
+ * @param config.method - The HTTP method to be used
+ * @param config.setCookies - The cookies to be set in the request
+ * @param options - Additional options for the request
+ * @param options.sendCSRFToken - Whether to send the CSRF token in the request (default: true)
+ * @returns The request object
+ */
 export function superRequest(
   resource: string,
   config: {
     method: 'GET' | 'POST' | 'PUT' | 'DELETE';
     setCookies?: string[];
-    headers?: { referer: string };
   },
   options?: Options
 ): request.Test {
-  const { method, setCookies, headers } = config;
+  const { method, setCookies } = config;
   const { sendCSRFToken = true } = options ?? {};
 
   const req = requests[method](resource).set('Origin', ORIGIN);
@@ -59,17 +71,22 @@ export function superRequest(
     void req.set('Cookie', getCookies(setCookies));
   }
 
-  if (headers) {
-    void req.set('Referer', headers.referer);
-  }
-
   const csrfToken = (setCookies && getCsrfToken(setCookies)) ?? '';
   if (sendCSRFToken) {
-    void req.set('CSRF-Token', csrfToken);
+    void req.set(CSRF_HEADER, csrfToken);
   }
   return req;
 }
 
+/**
+ * Factory function for 'superRequest' allows for the creation of a concise
+ * request function with the desired method and setCookies baked in.
+ *
+ * @param config
+ * @param config.method - HTTP method
+ * @param config.setCookies - Cookies to be set in the request
+ * @returns A superRequest function with the desired method and setCookies
+ */
 export function createSuperRequest(config: {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
   setCookies?: string[];
@@ -189,9 +206,9 @@ export const defaultUserId = '64c7810107dd4782d32baee7';
 export const defaultUserEmail = 'foo@bar.com';
 export const defaultUsername = 'fcc-test-user';
 
-export async function devLogin(): Promise<string[]> {
+export const resetDefaultUser = async (): Promise<void> => {
   await fastifyTestInstance.prisma.user.deleteMany({
-    where: { email: 'foo@bar.com' }
+    where: { email: defaultUserEmail }
   });
 
   await fastifyTestInstance.prisma.user.create({
@@ -201,6 +218,10 @@ export async function devLogin(): Promise<string[]> {
       username: defaultUsername
     }
   });
+};
+
+export async function devLogin(): Promise<string[]> {
+  await resetDefaultUser();
   const res = await superRequest('/signin', { method: 'GET' });
   expect(res.status).toBe(302);
   return res.get('Set-Cookie');

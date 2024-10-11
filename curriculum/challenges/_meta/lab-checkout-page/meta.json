@@ -1,0 +1,11 @@
+{
+  "name": "Build a Checkout Page",
+  "blockType": "lab",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-checkout-page",
+  "order": 26,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66da326c02141df538f29ba5", "title": "Build a Checkout Page" }],
+  "helpCategory": "HTML-CSS"
+}

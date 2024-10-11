@@ -10,7 +10,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row } from '@freecodecamp/ui';
 
-import { SuperBlocks } from '../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../shared/config/curriculum';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
@@ -25,7 +25,8 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/prop-types';
+import type { ChallengeNode, User } from '../../redux/prop-types';
+import { CertTitle } from '../../../config/cert-and-project-map';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -44,8 +45,7 @@ type FetchState = {
 type SuperBlockProp = {
   currentChallengeId: string;
   data: {
-    markdownRemark: MarkdownRemark;
-    allChallengeNode: AllChallengeNode;
+    allChallengeNode: { nodes: ChallengeNode[] };
   };
   expandedState: {
     [key: string]: boolean;
@@ -54,6 +54,11 @@ type SuperBlockProp = {
   isSignedIn: boolean;
   signInLoading: boolean;
   location: WindowLocation<{ breadcrumbBlockClick: string }>;
+  pageContext: {
+    superBlock: SuperBlocks;
+    title: CertTitle;
+    certification: string;
+  };
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
@@ -114,7 +119,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   const getChosenBlock = (): string => {
     const {
       data: {
-        allChallengeNode: { edges }
+        allChallengeNode: { nodes }
       },
       isSignedIn,
       currentChallengeId,
@@ -139,20 +144,18 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       return dashedBlock;
     }
 
-    const edge = edges[0];
+    const firstChallenge = nodes[0]?.challenge;
 
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
-      const currentChallengeEdge = edges.find(
-        edge => edge.node.challenge.id === currentChallengeId
-      );
+      const currentChallenge = nodes.find(
+        node => node.challenge.id === currentChallengeId
+      )?.challenge;
 
-      return currentChallengeEdge
-        ? currentChallengeEdge.node.challenge.block
-        : edge.node.challenge.block;
+      return currentChallenge ? currentChallenge.block : firstChallenge?.block;
     }
 
-    return edge.node.challenge.block;
+    return firstChallenge?.block;
   };
 
   const initializeExpandedState = () => {
@@ -164,23 +167,19 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const {
     data: {
-      markdownRemark: {
-        frontmatter: { superBlock, title, certification }
-      },
-      allChallengeNode: { edges }
+      allChallengeNode: { nodes }
     },
     isSignedIn,
     signInLoading,
-    user
+    user,
+    pageContext: { superBlock, title, certification }
   } = props;
 
-  const nodesForSuperBlock = edges.map(({ node }) => node);
-  const blockDashedNames = uniq(
-    nodesForSuperBlock.map(({ challenge: { block } }) => block)
-  );
+  const allChallenges = nodes.map(({ challenge }) => challenge);
+  const challenges = allChallenges.filter(c => c.superBlock === superBlock);
+  const blocks = uniq(challenges.map(({ block }) => block));
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
-  const defaultCurriculumNames = blockDashedNames;
 
   const superblockWithoutCert = [
     SuperBlocks.RespWebDesign,
@@ -224,13 +223,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               </h2>
               <Spacer size='medium' />
               <div className='block-ui'>
-                {defaultCurriculumNames.map(blockDashedName => (
+                {blocks.map(block => (
                   <Block
-                    key={blockDashedName}
-                    blockDashedName={blockDashedName}
-                    challenges={nodesForSuperBlock.filter(
-                      node => node.challenge.block === blockDashedName
-                    )}
+                    key={block}
+                    block={block}
+                    challenges={challenges.filter(c => c.block === block)}
                     superBlock={superBlock}
                   />
                 ))}
@@ -257,7 +254,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='medium' />
-              <Map />
+              <Map allChallenges={allChallenges} />
               <Spacer size='large' />
             </Col>
           </Row>
@@ -276,14 +273,7 @@ export default connect(
 )(withTranslation()(memo(SuperBlockIntroductionPage)));
 
 export const query = graphql`
-  query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        certification
-        superBlock
-        title
-      }
-    }
+  query SuperBlockIntroPageQuery {
     allChallengeNode(
       sort: {
         fields: [
@@ -292,23 +282,20 @@ export const query = graphql`
           challenge___challengeOrder
         ]
       }
-      filter: { challenge: { superBlock: { eq: $superBlock } } }
     ) {
-      edges {
-        node {
-          challenge {
-            fields {
-              slug
-              blockName
-            }
-            id
-            block
-            challengeType
-            title
-            order
-            superBlock
-            dashedName
+      nodes {
+        challenge {
+          fields {
+            slug
+            blockName
           }
+          id
+          block
+          challengeType
+          title
+          order
+          superBlock
+          dashedName
         }
       }
     }

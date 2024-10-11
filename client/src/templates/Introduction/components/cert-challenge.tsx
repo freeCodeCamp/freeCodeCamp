@@ -8,7 +8,7 @@ import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../../shared/config/certification-settings';
-import { SuperBlocks } from '../../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 
 import {
   isSignedInSelector,

@@ -462,13 +462,6 @@ button.confirm-donation-btn {
   display: inline-flex;
   align-items: center;
 }
-button.confirm-donation-btn:focus,
-button.confirm-donation-btn:active,
-button.confirm-donation-btn:active:focus {
-  background-color: var(--quaternary-background);
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
-}
 button.confirm-donation-btn:hover {
   color: black;
   background-color: #f2ba38;
@@ -697,6 +690,30 @@ a.patreon-button:hover {
       rgba(255, 202, 225, 1) 0%,
       rgba(218, 234, 252, 1) 100%
     );
+}
+
+.light-palette .gradient-foreground {
+  background-image: linear-gradient(
+      -10deg,
+      rgb(0, 51, 133) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(150, 15, 46) 100%
+    ),
+    radial-gradient(circle, rgb(157, 1, 69) 0%, rgb(0, 89, 189) 100%);
+  color: transparent;
+  background-clip: text;
+}
+
+.dark-palette .gradient-foreground {
+  background-image: linear-gradient(
+      -10deg,
+      rgb(223 243 255) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(circle, rgb(255 139 189) 0%, rgb(187 219 255) 100%);
+  color: transparent;
+  background-clip: text;
 }
 
 .supporters-background {

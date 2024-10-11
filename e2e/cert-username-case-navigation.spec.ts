@@ -15,13 +15,23 @@ test.describe('Public profile certifications', () => {
         .click();
     }
 
-    await expect(page.getByTestId('claimed-certification')).toHaveCount(19);
+    await expect(
+      page.getByRole('link', { name: /View.+Certification/ })
+    ).toHaveCount(19);
   });
 
   test('Should show claimed certifications if the username includes uppercase characters', async ({
     page
   }) => {
-    await page.goto('/settings');
+    await page.goto('/certifieduser');
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
+
     await page.getByLabel('Username').fill('CertifiedBoozer');
     await page.getByRole('button', { name: 'Save' }).nth(0).click();
     await expect(page.getByTestId('flash-message')).toContainText(
@@ -37,10 +47,12 @@ test.describe('Public profile certifications', () => {
     }
 
     await page.waitForURL('/certifiedboozer');
-    await expect(page.getByTestId('claimed-certification')).toHaveCount(19);
+    await expect(
+      page.getByRole('link', { name: /View.+Certification/ })
+    ).toHaveCount(19);
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user certified-user');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
 });

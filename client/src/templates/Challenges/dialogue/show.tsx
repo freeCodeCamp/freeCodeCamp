@@ -19,7 +19,6 @@ import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import CompletionModal from '../components/completion-modal';
 import ChallengeTitle from '../components/challenge-title';
-import ChallengeHeading from '../components/challenge-heading';
 import HelpModal from '../components/help-modal';
 import PrismFormatted from '../components/prism-formatted';
 import {
@@ -30,6 +29,7 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import Scene from '../components/scene/scene';
+import Assignments from '../components/assignments';
 
 // Styles
 import '../odin/show.css';
@@ -197,6 +197,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
           challenge: {
             title,
             description,
+            instructions,
             superBlock,
             block,
             fields: { blockName },
@@ -255,46 +256,22 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer size='medium' />
+                {instructions && (
+                  <>
+                    <PrismFormatted
+                      className={'line-numbers'}
+                      text={instructions}
+                    />
+                    <Spacer size='medium' />
+                  </>
+                )}
                 <ObserveKeys>
-                  <ChallengeHeading heading={t('learn.assignments')} />
-                  <div className='video-quiz-options'>
-                    {assignments.map((assignment, index) => (
-                      <label className='video-quiz-option-label' key={index}>
-                        <input
-                          name='assignment'
-                          type='checkbox'
-                          onChange={event =>
-                            this.handleAssignmentChange(
-                              event,
-                              assignments.length
-                            )
-                          }
-                        />
-
-                        <PrismFormatted
-                          className={'video-quiz-option'}
-                          text={assignment}
-                        />
-                        <Spacer size='medium' />
-                      </label>
-                    ))}
-                  </div>
-                  <Spacer size='medium' />
+                  <Assignments
+                    assignments={assignments}
+                    allAssignmentsCompleted={this.state.allAssignmentsCompleted}
+                    handleAssignmentChange={this.handleAssignmentChange}
+                  />
                 </ObserveKeys>
-
-                <div
-                  style={{
-                    textAlign: 'center'
-                  }}
-                >
-                  {!this.state.allAssignmentsCompleted &&
-                    assignments.length > 0 && (
-                      <>
-                        <br />
-                        <span>{t('learn.assignment-not-complete')}</span>
-                      </>
-                    )}
-                </div>
                 <Spacer size='medium' />
                 <Button
                   block={true}
@@ -329,12 +306,13 @@ export default connect(
 )(withTranslation()(ShowDialogue));
 
 export const query = graphql`
-  query Dialogue($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query Dialogue($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         videoId
         title
         description
+        instructions
         challengeType
         helpCategory
         superBlock

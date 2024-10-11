@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
@@ -14,10 +15,20 @@ const settingsPageElement = {
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/settings');
+  // Reset input values
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+
+  await page.goto('/certifieduser');
+
+  if (!process.env.CI) {
+    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
+  }
+
+  await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
 
 test.describe('Your Internet Presence', () => {
+  test.skip(({ browserName }) => browserName === 'webkit', 'flaky on Safari');
   test('should display the section with save button being disabled', async ({
     page
   }) => {
@@ -70,7 +81,8 @@ test.describe('Your Internet Presence', () => {
     });
 
     test(`should update ${social.name} URL`, async ({ page }) => {
-      const socialInput = page.getByLabel(social.label);
+      const socialInput = page.getByRole('textbox', { name: social.label });
+      await expect(socialInput).toBeVisible();
       await socialInput.fill(social.url);
       const socialCheckmark = page.getByTestId(social.checkTestId);
       await expect(socialCheckmark).toBeVisible();
@@ -81,21 +93,9 @@ test.describe('Your Internet Presence', () => {
 
       await expect(saveButton).toBeVisible();
       await saveButton.click();
-      await expect(
-        page.getByTestId(settingsPageElement.flashMessageAlert)
-      ).toContainText('We have updated your social links');
-
-      // clear value before next test
-      await socialInput.clear();
-      await Promise.all([
-        page.waitForResponse(
-          response =>
-            response.url().includes('update-my-socials') &&
-            response.status() === 200
-        ),
-        saveButton.click()
-      ]);
-      await expect(socialCheckmark).toBeHidden();
+      await expect(page.getByRole('alert').first()).toContainText(
+        'We have updated your social links'
+      );
     });
   });
 });

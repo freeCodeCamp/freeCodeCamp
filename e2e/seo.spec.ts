@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { SuperBlocks } from '../shared/config/superblocks';
+import { SuperBlocks } from '../shared/config/curriculum';
 import type { ListItem } from '../client/src/components/seo/';
 import metaTags from '../client/i18n/locales/english/meta-tags.json';
 

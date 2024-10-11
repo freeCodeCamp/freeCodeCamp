@@ -32,7 +32,7 @@ If you add another `div` to the HTML, inside of `.flex-container`, it will show 
 
 > If it’s hard to see what's going on in the small embedded CodePen, feel free to click the "Edit on CodePen" or "Fork on CodePen" button. This will bring the example into a full-sized environment. Some of the later examples might especially benefit from doing this.
 
-# --question--
+# --questions--
 
 ## --text--
 

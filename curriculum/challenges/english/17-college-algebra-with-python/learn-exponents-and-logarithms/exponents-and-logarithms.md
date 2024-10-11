@@ -10,7 +10,7 @@ dashedName: exponents-and-logarithms
 
 Here is the <a href="https://colab.research.google.com/drive/1hg7ecxGT20B8HR2mV75HzMylj9SHIWH8?usp=sharing" target="_blank" rel="noopener noreferrer nofollow">Colab notebook to go along with this video.</a>
 
-# --question--
+# --questions--
 
 ## --text--
 

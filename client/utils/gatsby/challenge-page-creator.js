@@ -1,9 +1,6 @@
 const path = require('path');
 const { sortChallengeFiles } = require('../sort-challengefiles');
-const {
-  challengeTypes,
-  viewTypes
-} = require('../../../shared/config/challenge-types');
+const { viewTypes } = require('../../../shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -29,6 +26,11 @@ const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/super-block-intro.tsx'
 );
+const quiz = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/quiz/show.tsx'
+);
+
 const video = path.resolve(
   __dirname,
   '../../src/templates/Challenges/video/show.tsx'
@@ -64,6 +66,7 @@ const views = {
   classic,
   modern: classic,
   frontend,
+  quiz,
   video,
   codeAlly,
   odin,
@@ -102,7 +105,7 @@ function getNextBlock(id, edges) {
 }
 
 exports.createChallengePages = function (createPage) {
-  return function ({ node: { challenge } }, index, allChallengeEdges) {
+  return function ({ node }, index, allChallengeEdges) {
     const {
       dashedName,
       disableLoopProtectTests,
@@ -115,7 +118,7 @@ exports.createChallengePages = function (createPage) {
       template,
       challengeType,
       id
-    } = challenge;
+    } = node.challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
 
@@ -139,16 +142,21 @@ exports.createChallengePages = function (createPage) {
           prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
           id
         },
-        projectPreview: getProjectPreviewConfig(challenge, allChallengeEdges),
-        slug
+        projectPreview: getProjectPreviewConfig(
+          node.challenge,
+          allChallengeEdges
+        ),
+        id: node.id
       }
     });
   };
 };
 
+// TODO: figure out a cleaner way to get the last challenge in a block. Create
+// it during the curriculum build process and attach it to the first challenge?
+// That would remove the need to analyse allChallengeEdges.
 function getProjectPreviewConfig(challenge, allChallengeEdges) {
-  const { block, challengeOrder, challengeType, usesMultifileEditor } =
-    challenge;
+  const { block } = challenge;
 
   const challengesInBlock = allChallengeEdges
     .filter(({ node: { challenge } }) => challenge.block === block)
@@ -166,15 +174,6 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
   }));
 
   return {
-    showProjectPreview:
-      challengeOrder === 0 &&
-      usesMultifileEditor &&
-      // TODO: handle the special cases better. Create a meta property for
-      // showProjectPreview, maybe? Then we can remove all the following cases
-      challengeType !== challengeTypes.multifileCertProject &&
-      challengeType !== challengeTypes.multifilePythonCertProject &&
-      challengeType !== challengeTypes.python &&
-      challengeType !== challengeTypes.js,
     challengeData: {
       challengeType: lastChallenge.challengeType,
       challengeFiles: projectPreviewChallengeFiles
@@ -186,7 +185,8 @@ exports.createBlockIntroPages = function (createPage) {
   return function (edge) {
     const {
       fields: { slug },
-      frontmatter: { block }
+      frontmatter: { block },
+      id
     } = edge.node;
 
     createPage({
@@ -194,7 +194,7 @@ exports.createBlockIntroPages = function (createPage) {
       component: intro,
       context: {
         block,
-        slug
+        id
       }
     });
   };
@@ -204,7 +204,7 @@ exports.createSuperBlockIntroPages = function (createPage) {
   return function (edge) {
     const {
       fields: { slug },
-      frontmatter: { superBlock, certification }
+      frontmatter: { superBlock, certification, title }
     } = edge.node;
 
     if (!certification) {
@@ -222,7 +222,7 @@ exports.createSuperBlockIntroPages = function (createPage) {
       context: {
         certification,
         superBlock,
-        slug
+        title
       }
     });
   };

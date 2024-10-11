@@ -1,13 +1,12 @@
 {
   "buttons": {
     "logged-in-cta-btn": "Anza hapa (ni bure)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "Ingia katika akaunti ili kuhifadhi maendeleo yako (ni bure)",
     "view-curriculum": "Tazama Mtaala",
     "first-lesson": "Nenda kwenye somo la kwanza",
     "close": "Funga",
     "edit": "Hariri",
-    "frontend": "Front End",
-    "backend": "Back End",
     "view": "Tazama",
     "view-code": "Tazama Code",
     "view-project": "Tazama Mradi",
@@ -53,11 +52,13 @@
     "create-post": "Unda chapisho la usaidizi kwenye jukwaa",
     "cancel": "Ghairi",
     "reset-lesson": "Anza upya somo hili",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Anzisha",
     "run-test": "Endesha Majaribio (Ctrl + Enter)",
-    "check-code": "Angalia Code yako (Ctrl + Enter)",
-    "check-code-2": "Angalia Code Yako",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "Anzisha Upya",
     "reset-step": "Weka Upya Hatua Hii",
     "help": "Msaada",
@@ -67,16 +68,17 @@
     "click-here": "Bofya hapa ili kuingia",
     "save": "Hifadhi",
     "save-code": "Hifadhi Code yako",
+    "show-demo": "Show Demo",
     "no-thanks": "Hapana asante",
     "yes-please": "Ndio tafadhali",
     "update-email": "Sasisha Barua pepe yangu",
     "verify-email": "Thibitisha Barua pepe",
     "submit-and-go": "Wasilisha na uende kwa changamoto inayofuata",
-    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
-    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "Nenda kwenye changamoto inayofuata",
-    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
-    "go-to-next-3": "Go to next challenge (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "Niulize baadaye",
     "start-coding": "Anza kusimba!",
     "go-to-settings": "Nenda kwenye mipangilio ili kudai uidhinishaji wako",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Unda miradi.",
     "big-heading-3": "Pata vyeti.",
+    "big-heading-4": "All for free.",
     "h2-heading": "Tangu 2014, zaidi ya wahitimu 40,000 wa freeCodeCamp.org wamepata kazi katika kampuni za teknolojia ikijumuisha:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "wanafunzi wa freeCodeCamp katika kikundi cha mafunzo nchini Korea Kusini.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "Kama inavyoonekana katika:",
     "testimonials": {
       "heading": "Hivi ndivyo wahitimu wetu wanasema kuhusu freeCodeCamp:",
@@ -196,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Shiriki miradi yako isiyo ya bure yaCodeCamp, makala, au maombi ya kuvuta yaliyokubaliwa.",
     "privacy": "Mipangilio katika sehemu hii hukuwezesha kudhibiti kile kinachoonyeshwa kwenye jalada lako la umma la freeCodeCamp. Bonyeza save ili kuhifadhi mabadiliko yako.",
     "data": "Ili kuona ni data gani tunayoshikilia kwenye akaunti yako, bofya kitufe cha \"Pakua data yako\" hapa chini",
@@ -274,7 +281,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "Usijali, sitaki kufuta maendeleo yangu yote",
-      "reset-confirm": "Weka upya kila kitu. Nataka kuanza tena mwanzo"
+      "reset-confirm": "Weka upya kila kitu. Nataka kuanza tena mwanzo",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "Huna barua pepe inayohusishwa na akaunti hii.",
@@ -325,7 +335,8 @@
     "total-points": "Total Points:",
     "points": "Pointi {{count}} mnamo {{date}}",
     "points_plural": "Alama {{count}} mnamo {{date}}",
-    "page-number": "{{pageNumber}} kati ya {{totalPages}}"
+    "page-number": "{{pageNumber}} kati ya {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -376,9 +387,10 @@
     "add-subtitles": "Saidia kuboresha au kuongeza manukuu",
     "wrong-answer": "Samahani, hilo si jibu sahihi. Jaribu tena?",
     "check-answer": "Bofya kitufe kilicho hapa chini ili kuangalia jibu lako.",
-    "assignment-not-complete": "Tafadhali maliza kazi",
+    "assignment-not-complete": "Please complete the assignments",
     "assignments": "Kazi",
     "question": "Swali",
+    "explanation": "Explanation",
     "solution-link": "Kiungo cha Suluhisho",
     "source-code-link": "Source Code Link",
     "ms-link": "Kiungo cha Microsoft",
@@ -390,6 +402,7 @@
     "running-tests": "// kufanya majaribio",
     "tests-completed": "// majaribio yamekamilika",
     "console-output": "// pato la console",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Ingia katika akaunti ili kuhifadhi maendeleo yako",
@@ -408,7 +421,8 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Anza upya somo hili?",
     "reset-warn": "Je, una uhakika ungependa kuanza upya somo hili? Vihariri na majaribio vitawekwa upya.",
-    "reset-warn-2": "Hili haliwezi kutenduliwa",
+    "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Kidokezo: Ikiwa kivinjari kidogo kinafunika msimbo, bofya na uburute ili kuisogeza. Pia, jisikie huru kusimamisha na kuhariri msimbo katika video wakati wowote.",
     "chal-preview": "Hakiki Changamoto",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -438,6 +452,7 @@
     "help-translate": "We are still translating this certification.",
     "help-translate-link": "Tusaidie kutafsiri.",
     "project-preview-title": "Hapa kuna muonyesho wa kile utakachounda",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Unda akaunti ya GitHub</0> ikiwa huna akaunti. Utaihitaji unapounda mashine ya seva ya Linux. Mchakato huu unaweza kuchukua dakika chache.",
     "gitpod": {
       "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
@@ -475,6 +490,12 @@
     "preview-external-window": "Onyesho la kukagua linaloonyeshwa kwa sasa kwenye dirisha la nje.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Hongera, umekamilisha mahitaji yote ya kufuzu kwa mtihani.",
       "not-qualified": "Hujatimiza masharti ili ustahiki mtihani. Ili kuhitimu, tafadhali kamilisha changamoto zifuatazo:",
@@ -512,6 +533,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
@@ -667,7 +696,10 @@
   },
   "search": {
     "label": "Tafuta",
-    "placeholder": "Search 10,700+ tutorials",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "Tazama matokeo yote ya {{searchQuery}}",
     "no-tutorials": "Hakuna mafunzo yaliyopatikana",
     "try": "Unatafuta kitu? Jaribu upau wa kutafutia kwenye ukurasa huu.",
@@ -749,7 +781,8 @@
     "code-example": "mfano wa msimbo wa {{codeName}}",
     "opens-new-window": "Inafungua katika kurasa mpya",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "Ili kudai uthibitisho, lazima kwanza ukubali sera yetu ya uaminifu kitaaluma",
@@ -887,9 +920,9 @@
       "heading-legacy-full-stack": "Kama sehemu ya uthibitishaji huu wa Legacy Full Stack, {{user}} alikamilisha uthibitishaji ufuatao:",
       "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "Kama sehemu ya uthibitishaji huu, {{user}} aliunda miradi ifuatayo na akapita majaribio yote ya majaribio ya kiotomatiki:",
-      "solution": "suluhisho",
+      "solution": "Solution",
       "no-solution": "hitilafu ya kuonyesha suluhisho, tuma barua pepe kwa support@freeCodeCamp.org ili kupata usaidizi.",
-      "source": "chanzo",
+      "source": "Source",
       "footnote": "Iwapo unashuku kuwa yoyote ya miradi hii inakiuka <2>sera ya uaminifu ya kitaaluma</2>, tafadhali <5>ripoti hili kwa timu yetu</5>.",
       "title": {
         "Build a Personal Portfolio Webpage": "Jenga Ukurasa wa Tovuti ya Kibinafsi",

@@ -118,7 +118,7 @@ export const submitTypes = {
   [backEndProject]: 'project.backEnd',
   [pythonProject]: 'project.backEnd',
   [step]: 'step',
-  [quiz]: 'quiz',
+  [quiz]: 'tests',
   [backend]: 'backend',
   [modern]: 'tests',
   [video]: 'tests',

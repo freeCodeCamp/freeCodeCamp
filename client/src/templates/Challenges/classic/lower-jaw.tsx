@@ -79,8 +79,8 @@ const sentenceArray = [
   'learn.sorry-dont-giveup'
 ];
 
-const sentencePicker = (currentAttempts: number) => {
-  return sentenceArray[currentAttempts % sentenceArray.length];
+const sentencePicker = (shownAttempts: number) => {
+  return sentenceArray[shownAttempts % sentenceArray.length];
 };
 
 const LowerButtonsPanel = ({
@@ -193,12 +193,12 @@ const LowerJaw = ({
   isSignedIn,
   updateContainer
 }: LowerJawProps): JSX.Element => {
-  const hintRef = React.useRef('');
+  const [shownHint, setShownHint] = useState(hint);
   const [quote, setQuote] = useState(randomCompliment());
   const [runningTests, setRunningTests] = useState(false);
   const [testFeedbackHeight, setTestFeedbackHeight] = useState(0);
-  const [currentAttempts, setCurrentAttempts] = useState(attempts);
-  const [isFeedbackHidden, setIsFeedbackHidden] = useState(false);
+  const [shownAttempts, setShownAttempts] = useState(attempts);
+  const [isFeedbackHidden, setIsFeedbackHidden] = useState(true);
   const { t } = useTranslation();
   const testFeedbackRef = React.createRef<HTMLDivElement>();
 
@@ -219,34 +219,38 @@ const LowerJaw = ({
   const showShareButton =
     challengeIsCompleted && completedPercent === isBlockCompleted;
 
+  // Attempts should only be zero when the step is reset, so we should reset
+  // the state here.
+  if (attempts !== shownAttempts && attempts === 0) {
+    setShownAttempts(0);
+    setRunningTests(false);
+    setIsFeedbackHidden(false);
+    setShownHint('');
+  }
   useEffect(() => {
-    // prevent unnecessary updates:
-    if (attempts === currentAttempts) return;
-    // Attempts should only be zero when the step is reset, so we should reset
-    // the state here.
-    if (attempts === 0) {
-      setCurrentAttempts(0);
-      setRunningTests(false);
-      setIsFeedbackHidden(false);
-      hintRef.current = '';
-    } else if (attempts > 0 && hint) {
+    if (attempts > shownAttempts) {
       //hide the feedback from SR until the "Running tests" are displayed and removed.
       setIsFeedbackHidden(true);
       setRunningTests(true);
       //to prevent the changing attempts value from immediately triggering a new
-      //render, the rendered component only depends on currentAttempts. Since
-      //currentAttempts is updated with when the feedback is hidden, the screen
-      //reader should only read out the new message.
-      setCurrentAttempts(attempts);
-      hintRef.current = hint;
-
+      //render, the rendered component only depends on shownAttempts. Since
+      //shownAttempts is updated with when the feedback is hidden, the screen
+      //reader should only read out the new message. Note: this starts with the
+      //second encouragement since attempts starts at 1.
+      setShownAttempts(attempts);
       //display the test feedback contents.
       setTimeout(() => {
         setRunningTests(false);
         setIsFeedbackHidden(false);
       }, 300);
     }
-  }, [attempts, hint, currentAttempts]);
+  }, [attempts, shownAttempts]);
+
+  useEffect(() => {
+    // Since there's no guarantee that hint and attempts update in the same
+    // render, hints have to be updated separately.
+    if (hint) setShownHint(hint);
+  }, [hint]);
 
   useEffect(() => {
     if (challengeIsCompleted) {
@@ -280,20 +284,27 @@ const LowerJaw = ({
   });
 
   const isAttemptsLargerThanTest =
-    currentAttempts &&
+    shownAttempts &&
     testsLength &&
-    (currentAttempts >= testsLength || currentAttempts >= 3);
+    (shownAttempts >= testsLength || shownAttempts >= 3);
 
   const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
   const isMacOS = navigator.userAgent.includes('Mac OS');
 
   const checkButtonText = isDesktop
     ? isMacOS
-      ? t('buttons.check-code-3')
-      : t('buttons.check-code')
-    : t('buttons.check-code-2');
+      ? t('buttons.check-code-cmd')
+      : t('buttons.check-code-ctrl')
+    : t('buttons.check-code');
+
+  const submitButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.submit-and-go-cmd')
+      : t('buttons.submit-and-go-ctrl')
+    : t('buttons.submit-and-go');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
+
   return (
     <div className='action-row-container'>
       {showSignInButton && (
@@ -319,7 +330,7 @@ const LowerJaw = ({
         {...(!challengeIsCompleted && { 'aria-hidden': true })}
         ref={submitButtonRef}
       >
-        {t('buttons.submit-and-go')}
+        {submitButtonText}
       </Button>
       <div
         className={
@@ -366,13 +377,13 @@ const LowerJaw = ({
             </span>
           </>
         )}
-        {hintRef.current && !challengeIsCompleted && (
+        {shownHint && !challengeIsCompleted && (
           <LowerJawTips
             data-testid='lowerJaw-tips'
             showFeedback={isFeedbackHidden}
             testText={t('learn.test')}
-            htmlDescription={`${hintRef.current}`}
-            learnEncouragementText={t(sentencePicker(currentAttempts))}
+            htmlDescription={shownHint ?? ''}
+            learnEncouragementText={t(sentencePicker(shownAttempts))}
           />
         )}
       </div>

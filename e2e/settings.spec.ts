@@ -1,12 +1,12 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
+
 import translations from '../client/i18n/locales/english/translations.json';
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
+import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
-  internetPresence: 'internet-presence',
-  portfolioItems: 'portfolio-items',
-  camperIdentity: 'camper-identity'
+  portfolioItems: 'portfolio-items'
 };
 
 const settingsObject = {
@@ -46,16 +46,19 @@ const legacyCertifications = [
   ]
 ];
 
-test.describe('Settings', () => {
+test.describe('Settings - Certified User', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
   test.beforeEach(async ({ page }) => {
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
   });
 
-  test('Should have the correct page title', async ({ page }) => {
+  test('Should render correctly', async ({ page }) => {
+    // Title
     await expect(page).toHaveTitle(settingsObject.pageTitle);
-  });
 
-  test('Should display the correct header', async ({ page }) => {
+    // Header
     const header = page.getByTestId(settingsTestIds.settingsHeading);
     await expect(header).toBeVisible();
     await expect(header).toContainText(
@@ -64,9 +67,8 @@ test.describe('Settings', () => {
         settingsObject.certifiedUsername
       )}`
     );
-  });
 
-  test('Should validate Privacy Settings', async ({ page }) => {
+    // Privacy Settings
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.privacy
@@ -163,55 +165,12 @@ test.describe('Settings', () => {
       name: translations.settings.headings.privacy
     });
     await expect(saveButton).toBeVisible();
-    await saveButton.press('Enter');
     await expect(page.getByText(translations.settings.data)).toBeVisible();
     const downloadButton = page.getByRole('link', {
       name: translations.buttons['download-data']
     });
     await expect(downloadButton).toBeVisible();
-  });
 
-  test('Should validate Internet Presence Settings', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.internet
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.internetPresence)
-    ).toBeVisible();
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.headings.internet
-    });
-    await expect(saveButton).toBeVisible();
-  });
-
-  test('Should validate Personal Information Settings', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings['personal-info']
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.camperIdentity)
-    ).toBeVisible();
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
-    });
-    await expect(saveButton).toBeVisible();
-    await expect(saveButton).toBeDisabled();
-    await expect(
-      page.getByLabel(translations.settings.labels.name, { exact: true })
-    ).toHaveValue('Full Stack User');
-    await expect(
-      page.getByLabel(translations.settings.labels.location)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.picture)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.about)
-    ).toHaveValue('');
     await expect(
       page
         .getByRole('group', {
@@ -235,9 +194,8 @@ test.describe('Settings', () => {
     await expect(
       page.getByText(translations.settings['scrollbar-width'])
     ).toBeVisible();
-  });
 
-  test('Should validate Certification Settings', async ({ page }) => {
+    // Certifications
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.certs,
@@ -257,9 +215,8 @@ test.describe('Settings', () => {
         })
       ).toBeVisible();
     }
-  });
 
-  test('Should validate Legacy Certification Settings', async ({ page }) => {
+    // Legacy Certifications
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings['legacy-certs'],
@@ -280,9 +237,8 @@ test.describe('Settings', () => {
         })
       ).toBeVisible();
     }
-  });
 
-  test('Should display the Danger section properly', async ({ page }) => {
+    // Danger Zone
     await expect(page.getByText('Danger Zone')).toBeVisible();
     await expect(
       page.getByText(
@@ -299,5 +255,82 @@ test.describe('Settings', () => {
         name: 'Delete my account'
       })
     ).toBeVisible();
+  });
+});
+
+// In order to claim the Full Stack cert, the user needs to complete 6 certs.
+// Instead of simulating 6 cert claim flows,
+// we use the data of Certified User but remove the Full Stack cert.
+test.describe('Settings - Certified User without Full Stack Certification', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+  test.beforeEach(async ({ page }) => {
+    execSync(
+      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+    );
+    await page.goto('/settings');
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  });
+
+  test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
+    page
+  }) => {
+    const claimButton = page.getByRole('button', {
+      name: 'Claim Certification Legacy Full Stack'
+    });
+    const showButton = page.getByRole('link', {
+      name: 'Show Certification Legacy Full Stack'
+    });
+
+    await expect(claimButton).toBeVisible();
+    await expect(claimButton).toBeEnabled();
+    await claimButton.click();
+
+    await alertToBeVisible(
+      page,
+      '@certifieduser, you have successfully claimed the Legacy Full Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+    );
+    await expect(claimButton).toBeHidden();
+    await expect(showButton).toBeVisible();
+    await expect(showButton).toHaveAttribute(
+      'href',
+      '/certification/certifieduser/full-stack'
+    );
+  });
+});
+
+test.describe('Settings - New User', () => {
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+  test.beforeEach(async ({ page }) => {
+    execSync('node ./tools/scripts/seed/seed-demo-user');
+    await page.goto('/settings');
+  });
+
+  test.afterAll(() => {
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  });
+
+  test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
+    page
+  }) => {
+    const claimFullStackCertButton = page.getByRole('button', {
+      name: 'Claim Certification Legacy Full Stack'
+    });
+
+    const claimRwdCertButton = page.getByRole('button', {
+      name: 'Claim Certification Responsive Web Design'
+    });
+
+    // Buttons for normal certs are enabled
+    await expect(claimRwdCertButton).toBeVisible();
+    await expect(claimRwdCertButton).toBeEnabled();
+
+    // Button for full stack cert is disabled if the user hasn't claimed the required certs
+    await expect(claimFullStackCertButton).toBeVisible();
+    await expect(claimFullStackCertButton).toBeDisabled();
   });
 });

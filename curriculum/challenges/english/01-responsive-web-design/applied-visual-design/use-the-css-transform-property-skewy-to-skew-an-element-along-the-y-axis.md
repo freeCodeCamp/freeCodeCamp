@@ -20,7 +20,7 @@ Skew the element with the id of `top` -10 degrees along the Y-axis by using the 
 The element with id `top` should be skewed by -10 degrees along its Y-axis.
 
 ```js
-assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g));
+assert.match(code, /#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g);
 ```
 
 # --seed--

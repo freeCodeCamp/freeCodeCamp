@@ -14,7 +14,8 @@ import {
   transformContents,
   transformHeadTailAndContents,
   setExt,
-  compileHeadTail
+  compileHeadTail,
+  createSource
 } from '../../../../../shared/utils/polyvinyl';
 import { WorkerExecutor } from '../utils/worker-executor';
 
@@ -177,9 +178,17 @@ async function transformSASS(documentElement) {
 async function transformScript(documentElement) {
   await loadBabel();
   await loadPresetEnv();
+  await loadPresetReact();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
-    script.innerHTML = babelTransformCode(getBabelOptions(presetsJS))(
+    const isBabel = script.type === 'text/babel';
+    // TODO: make the use of JSX conditional on more than just the script type.
+    // It should only be used for React challenges since it would be confusing
+    // for learners to see the results of a transformation they didn't ask for.
+    const options = isBabel ? presetsJSX : presetsJS;
+
+    if (isBabel) script.removeAttribute('type'); // otherwise the browser will ignore the script
+    script.innerHTML = babelTransformCode(getBabelOptions(options))(
       script.innerHTML
     );
   });
@@ -213,13 +222,11 @@ export const embedFilesInHtml = async function (challengeFiles) {
       script.removeAttribute('src');
       script.setAttribute('data-src', 'script.js');
     }
-    return {
-      contents: documentElement.innerHTML
-    };
+    return documentElement.innerHTML;
   };
 
   if (indexHtml) {
-    const { contents } = await transformWithFrame(
+    const contents = await parseAndTransform(
       embedStylesAndScript,
       indexHtml.contents
     );
@@ -243,32 +250,11 @@ function challengeFilesToObject(challengeFiles) {
   return { indexHtml, indexJsx, stylesCss, scriptJs };
 }
 
-const transformWithFrame = async function (transform, contents) {
-  // we use iframe here since file.contents is destined to be be inserted into
-  // the root of an iframe.
-  const frame = document.createElement('iframe');
-  frame.style = 'display: none';
-  let out = { contents };
-  try {
-    // the frame needs to be inserted into the document to create the html
-    // element
-    document.body.appendChild(frame);
-    // replace the root element with user code
-    frame.contentDocument.documentElement.innerHTML = contents;
-    // grab the contents now, in case the transformation fails
-    out = { contents: frame.contentDocument.documentElement.innerHTML };
-    // it's important to pass around the documentElement and NOT the frame
-    // itself. It appears that the frame's documentElement can get replaced by a
-    // blank documentElement without the contents. This seems only to happen on
-    // Firefox.
-    out = await transform(
-      frame.contentDocument.documentElement,
-      frame.contentDocument
-    );
-  } finally {
-    document.body.removeChild(frame);
-  }
-  return out;
+const parseAndTransform = async function (transform, contents) {
+  const parser = new DOMParser();
+  const newDoc = parser.parseFromString(contents, 'text/html');
+
+  return await transform(newDoc.documentElement, newDoc);
 };
 
 const transformHtml = async function (file) {
@@ -277,10 +263,10 @@ const transformHtml = async function (file) {
       transformSASS(documentElement),
       transformScript(documentElement)
     ]);
-    return { contents: documentElement.innerHTML };
+    return documentElement.innerHTML;
   };
 
-  const { contents } = await transformWithFrame(transform, file.contents);
+  const contents = await parseAndTransform(transform, file.contents);
   return transformContents(() => contents, file);
 };
 
@@ -290,6 +276,7 @@ const htmlTransformer = cond([
 ]);
 
 export const getTransformers = loopProtectOptions => [
+  createSource,
   replaceNBSP,
   babelTransformer(loopProtectOptions),
   partial(compileHeadTail, ''),
@@ -297,6 +284,7 @@ export const getTransformers = loopProtectOptions => [
 ];
 
 export const getPythonTransformers = () => [
+  createSource,
   replaceNBSP,
   partial(compileHeadTail, '')
 ];

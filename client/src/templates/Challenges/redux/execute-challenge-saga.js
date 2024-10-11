@@ -232,7 +232,8 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.stack = stack;
       }
 
-      yield put(updateConsole(newTest.message));
+      const withIndex = newTest.message.replace(/<p>/, `<p>${i + 1}. `);
+      yield put(updateConsole(withIndex));
     } finally {
       testResults.push(newTest);
     }
@@ -348,9 +349,8 @@ function* updatePython(challengeData) {
 }
 
 function* previewProjectSolutionSaga({ payload }) {
-  if (!payload) return;
-  const { showProjectPreview, challengeData } = payload;
-  if (!showProjectPreview) return;
+  if (!payload?.challengeData) return;
+  const { challengeData } = payload;
 
   try {
     if (canBuildChallenge(challengeData)) {

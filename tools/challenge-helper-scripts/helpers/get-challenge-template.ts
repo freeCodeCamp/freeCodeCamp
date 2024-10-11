@@ -5,7 +5,7 @@ const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
 };
 
-export interface ChallengeOptions {
+interface ChallengeOptions {
   challengeId: ObjectID;
   title: string;
   dashedName: string;
@@ -37,7 +37,7 @@ challengeType: ${challengeType}
 dashedName: ${dashedName}
 ---`;
 
-export const getLegacyChallengeTemplate = (
+const getLegacyChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -70,38 +70,461 @@ Test 1
 \`\`\`
 `;
 
-export const getQuizChallengeTemplate = (
+const getQuizChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
 # --description--
 
-${options.title} description.
+Answer all of the questions below correctly to pass the quiz.
 
-# --question--
+# --quizzes--
 
-## --text--
+## --quiz--
 
-${options.title} question?
+### --question--
 
-## --answers--
+#### --text--
 
-Answer 1
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
 
 ---
 
-Answer 2
+Placeholder distractor 2
 
 ---
 
-Answer 3
+Placeholder distractor 3
 
-## --video-solution--
+#### --answer--
 
-1
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
 `;
 
-export const getVideoChallengeTemplate = (
+const getVideoChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatterWithVideo(options)}
 
@@ -132,7 +555,7 @@ Answer 3
 1
 `;
 
-export const getAssignmentChallengeTemplate = (
+const getAssignmentChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -140,41 +563,10 @@ export const getAssignmentChallengeTemplate = (
 
 ${options.title} description.
 
-# --question--
-
-## --assignment--
+# --assignment--
 
 ${options.title} assignment!
 
-## --text--
-
-${options.title} question?
-
-## --answers--
-
-Answer 1
-
----
-
-Answer 2
-
----
-
-Answer 3
-
-## --video-solution--
-
-1
-`;
-
-export const getMultipleChoiceChallengeTemplate = (
-  options: ChallengeOptions
-): string => `${buildFrontMatter(options)}
-
-# --description--
-
-${options.title} description.
-
 # --question--
 
 ## --text--
@@ -198,7 +590,58 @@ Answer 3
 1
 `;
 
-export const getFillInTheBlankChallengeTemplate = (
+const getMultipleChoiceChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatter(options)}
+
+# --description--
+
+${options.title} description.
+
+# --questions--
+
+## --text--
+
+${options.title} question?
+
+## --answers--
+
+Answer 1
+
+### --feedback--
+
+Include feedback for answer 1 here, but remove these last four lines if this is the correct answer.
+
+---
+
+Answer 2
+
+### --feedback--
+
+Include feedback for answer 2 here, but remove these last four lines if this is the correct answer.
+
+---
+
+Answer 3
+
+### --feedback--
+
+Include feedback for answer 3 here, but remove these last four lines if this is the correct answer.
+
+---
+
+Answer 4
+
+### --feedback--
+
+Include feedback for answer 4 here, but remove these last four lines if this is the correct answer.
+
+## --video-solution--
+
+1
+`;
+
+const getFillInTheBlankChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -210,7 +653,7 @@ ${options.title} description.
 
 ## --sentence--
 
-\`Fill _ the _ sentence.\`
+\`Fill BLANK the BLANK sentence.\`
 
 ## --blanks--
 
@@ -225,7 +668,7 @@ It's \`in\`
 \`blank\`
 `;
 
-export const getDialogueChallengeTemplate = (
+const getDialogueChallengeTemplate = (
   options: ChallengeOptions
 ): string => `${buildFrontMatter(options)}
 
@@ -233,7 +676,7 @@ export const getDialogueChallengeTemplate = (
 
 Watch the video below to understand the context of the upcoming lessons.
 
-## --assignment--
+# --assignment--
 
 Watch the video.
 `;

@@ -1,4 +1,8 @@
-import { updateMySocials, updateMyClassroomMode } from '../boot/settings';
+import {
+  updateMyAbout,
+  updateMySocials,
+  updateMyClassroomMode
+} from '../boot/settings';
 
 export const mockReq = opts => {
   const req = {};
@@ -17,6 +21,36 @@ export const mockRes = opts => {
 };
 
 describe('boot/settings', () => {
+  describe('updateMyAbout', () => {
+    it('allows empty string in any field', () => {
+      let updateData;
+      const req = mockReq({
+        user: {
+          updateAttributes: (update, cb) => {
+            updateData = update;
+            cb();
+          }
+        },
+        body: {
+          name: '',
+          location: '',
+          about: '',
+          picture: ''
+        }
+      });
+      const res = mockRes();
+      const next = jest.fn();
+      updateMyAbout(req, res, next);
+      expect(res.status).toHaveBeenCalledWith(200);
+      expect(updateData).toStrictEqual({
+        name: '',
+        location: '',
+        about: '',
+        picture: ''
+      });
+    });
+  });
+
   describe('updateMySocials', () => {
     it('does not allow non-github domain in GitHub social', () => {
       const req = mockReq({

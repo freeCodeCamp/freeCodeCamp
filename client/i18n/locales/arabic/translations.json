@@ -1,13 +1,12 @@
 {
   "buttons": {
     "logged-in-cta-btn": "ابدأ (بالمجان)",
+    "get-started": "Get Started",
     "logged-out-cta-btn": "سجل الدخول لحفظ تقدّمك (بالمجان)",
     "view-curriculum": "عرض المنهج الدراسي",
     "first-lesson": "انتقل إلى الدرس الأول",
     "close": "أغلق",
     "edit": "تعديل",
-    "frontend": "Front End",
-    "backend": "Back End",
     "view": "عرض",
     "view-code": "أظهار الكود",
     "view-project": "إظهار المشروع",
@@ -53,11 +52,13 @@
     "create-post": "إنشاء منشور مساعدة في المنتدى",
     "cancel": "إلغاء",
     "reset-lesson": "أعد الدرس ألى حالته الأولية",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "تشغيل",
     "run-test": "تشغيل الاختبارات (Ctrl + Enter)",
-    "check-code": "تيقن من كودك (Ctrl + Enter)",
-    "check-code-2": "تيقن من كودك",
-    "check-code-3": "Check Your Code (Command + Enter)",
+    "check-code": "Check Your Code",
+    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
+    "check-code-cmd": "Check Your Code (Command + Enter)",
     "reset": "إعادة ضبط",
     "reset-step": "إعادة الخطوة إلى حالتها الأولية",
     "help": "مساعدة",
@@ -67,16 +68,17 @@
     "click-here": "اضغط هنا لتسجيل الدخول",
     "save": "حفظ",
     "save-code": "حفظ كودك",
+    "show-demo": "Show Demo",
     "no-thanks": "لا شكراً",
     "yes-please": "نعم من فضلك",
     "update-email": "تحديث بريدي الإلكتروني",
     "verify-email": "التحقق من البريد الإلكتروني",
     "submit-and-go": "أرسل وانتقل إلى التحدي التالي",
-    "submit-and-go-2": "Submit and go to next challenge (Ctrl + Enter)",
-    "submit-and-go-3": "Submit and go to next challenge (Command + Enter)",
+    "submit-and-go-ctrl": "Submit and go to next challenge (Ctrl + Enter)",
+    "submit-and-go-cmd": "Submit and go to next challenge (Command + Enter)",
     "go-to-next": "انتقل إلى التحدي التالي",
-    "go-to-next-2": "Go to next challenge (Ctrl + Enter)",
-    "go-to-next-3": "Go to next challenge (Command + Enter)",
+    "go-to-next-ctrl": "Go to next challenge (Ctrl + Enter)",
+    "go-to-next-cmd": "Go to next challenge (Command + Enter)",
     "ask-later": "اسألني لاحقاً",
     "start-coding": "ابدأ البرمجة!",
     "go-to-settings": "اذهب إلى الإعدادات للحصول على الشهادة الخاصة بك",
@@ -105,11 +107,15 @@
   },
   "landing": {
     "big-heading-1": "تعلم البرمجة - مجاناً.",
+    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "ابني مشاريع.",
     "big-heading-3": "احصل على الشهادات.",
+    "big-heading-4": "All for free.",
     "h2-heading": "منذ عام 2014، حصل أكثر من 40,000 من خريجي freeCodeCamp.org على وظائف في شركات تكنولوجية منها:",
+    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
     "hero-img-description": "طلاب freeCodeCamp في مجموعة دراسية محلية في كوريا الجنوبية.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
+    "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
     "as-seen-in": "كما رأينا في:",
     "testimonials": {
       "heading": "إليك ما يقوله خريجونا عن freeCodeCamp:",
@@ -196,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "شارك مشاريعك غير التي بـ freeCodeCamp أو مقالاتك أو الـ pull requests الخاصه بك.",
     "privacy": "الإعدادات في هذا القسم تمكنك من التحكم في ما يظهر في portfolio العامة على freeCodeCamp. أضغت على زر أحفظ لحفظ تغيراتك.",
     "data": "لمعرفة البيانات التي نحتفظ بها على حسابك، انقر فوق الزر \"تحميل بياناتك\" أدناه",
@@ -274,7 +281,10 @@
       "reset-p2": "You will effectively be set back to the very first day you signed up.",
       "reset-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
       "nevermind-2": "لا داعي للقلق ، لا أريد حذف كل تقدمي",
-      "reset-confirm": "أعد كل شيء ألى حالته الأولية. أريد أن أبدأ من البداية"
+      "reset-confirm": "أعد كل شيء ألى حالته الأولية. أريد أن أبدأ من البداية",
+      "verify-text": "To verify, type \"{{ verifyText }}\" below:",
+      "verify-reset-text": "I agree that all progress will be lost",
+      "verify-delete-text": "I agree to delete my account"
     },
     "email": {
       "missing": "ليس لديك بريد إلكتروني مرتبط بهذا الحساب.",
@@ -325,7 +335,8 @@
     "total-points": "Total Points:",
     "points": "{{count}} نقطة في {{date}}",
     "points_plural": "{{count}} نقاط في {{date}}",
-    "page-number": "{{pageNumber}} من {{totalPages}}"
+    "page-number": "{{pageNumber}} من {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -376,9 +387,10 @@
     "add-subtitles": "المساعدة في تحسين أو إضافة ترجمات",
     "wrong-answer": "عذراً، هذه ليست الإجابة الصحيحة. قم بالمحاولة مرة أخرى؟",
     "check-answer": "انقر على الزر أدناه للتحقق من إجابتك.",
-    "assignment-not-complete": "يرجى إنهاء المهام",
+    "assignment-not-complete": "Please complete the assignments",
     "assignments": "Assignments",
     "question": "Question",
+    "explanation": "Explanation",
     "solution-link": "رابط الحل",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
@@ -390,6 +402,7 @@
     "running-tests": "// جاري تشغيل الاختبارات",
     "tests-completed": "// الاختبارات اكتملت",
     "console-output": "// إخراج وحدة التحكم",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "قم بتسجيل الدخول لحفظ تقدّمك",
@@ -408,7 +421,8 @@
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "أعد الدرس ألى حالته الأولية؟",
     "reset-warn": "هل أنت متأكد من رغبتك في إعادة الدرس ألى حالته الأولية؟ سيتم إعادة المحرر والاختبارات إلى حالتهما الأولية.",
-    "reset-warn-2": "لا يمكن التراجع عن هذا",
+    "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "نصيحة: إذا كان المتصفح المصغر يغطي الكود البرمجي ، انقر واسحب لتحريكه. كذلك لا تتردد في إيقاف وتعديل التعليمات البرمجية في الفيديو في أي وقت.",
     "chal-preview": "معاينة التحدي",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -438,6 +452,7 @@
     "help-translate": "We are still translating this certification.",
     "help-translate-link": "ساعدنا على الترجمة.",
     "project-preview-title": "إليك معاينة لما ستقوم ببناؤه",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>إنشاء حساب GitHub</0> إذا لم يكن لديك حساب. ستحتاج إليه عند إنشاء جهاز Linux الافتراضي. قد تستغرق هذه العملية بضع دقائق.",
     "gitpod": {
       "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
@@ -475,6 +490,12 @@
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
@@ -512,6 +533,14 @@
       "link-li-6": "Click \"Link Account\" to link your Microsoft username.",
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
+    },
+    "blockType": {
+      "lecture": "Lecture",
+      "workshop": "Workshop",
+      "lab": "Lab",
+      "review": "Review",
+      "quiz": "Quiz",
+      "exam": "Exam"
     }
   },
   "donate": {
@@ -667,7 +696,10 @@
   },
   "search": {
     "label": "بحث",
-    "placeholder": "Search 10,700+ tutorials",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "عرض جميع النتائج لـ {{searchQuery}}",
     "no-tutorials": "لا توجد دروس",
     "try": "هل تبحث عن شيء ما؟ جرب شريط البحث في هذه الصفحة.",
@@ -749,7 +781,8 @@
     "code-example": "{{codeName}} مثال على الكود",
     "opens-new-window": "فتح في نافذة جديدة",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "للمطالبة بشهادة، يجب عليك أولاً الموافقة على سياسة للصدق الأكاديمي",
@@ -887,9 +920,9 @@
       "heading-legacy-full-stack": "كجزء من شهادة Full Stack القديمة هذه، أكمل {{user}} الشهادات التالية:",
       "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "كجزء من هذه الشهادة، أنشئ {{user}} المشروعات التالية واجتاز جميع مجموعات الاختبار الآلية:",
-      "solution": "الحل",
+      "solution": "Solution",
       "no-solution": "خطأ في عرض الحل، أرسل بريد إلكتروني support@freeCodeCamp.org للحصول على المساعدة.",
-      "source": "المصدر",
+      "source": "Source",
       "footnote": "إذا كنت تشك في أن أيا من هذه المشاريع ينتهك <2>سياسة الأمانة الأكاديمية</2>، يرجى <5>إبلاغ فريقنا بهذا </5>.",
       "title": {
         "Build a Personal Portfolio Webpage": "أنشئ معرضا لأعمالك الخاصة",

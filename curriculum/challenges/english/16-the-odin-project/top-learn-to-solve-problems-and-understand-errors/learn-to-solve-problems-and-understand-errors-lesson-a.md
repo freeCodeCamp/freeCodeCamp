@@ -21,11 +21,11 @@ New programmers often find problem solving the hardest skill to build. It's not 
 
 The best way to improve your problem solving ability is by building experience by making lots and lots of programs. The more practice you have the better you'll be prepared to solve real world problems.
 
-# --question-- 
-
-## --assignment--
+# --assignment--
 
 Read <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/" target="_blank">How to Think Like a Programmer - Lessons in Problem Solving</a> by Richard Reis.
+
+# --questions--
 
 ## --text--
 
