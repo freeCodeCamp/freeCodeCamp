@@ -119,20 +119,21 @@ function bubbleSort(array) {
 
 ```js
 function bubbleSort(array) {
-  for (let i = 0; i < array.length; i++) {
-    let swapped = false;
-    for (let j = 1; j < array.length; j++) {
-      if (array[j - 1] > array[j]) {
-        let temp = array[j-1];
-        array[j-1] =  array[j];
-        array[j] = temp;
-        swapped = true;
+  const n = array.length; // Cache the length of the array
+  let iterations = 0; // Track the number of iterations for performance analysis
+  for (let i = 0; i < n - 1; i++) {
+    let swapped = false; // Track whether a swap occurred
+    for (let j = 0; j < n - 1 - i; j++) {
+      iterations++; // Increment iterations for each comparison
+      if (array[j] > array[j + 1]) {
+        // Swap using destructuring
+        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+        swapped = true; // Mark that a swap has occurred
       }
     }
-    if (swapped === false) {
-      break;
-    }
+    if (!swapped) break; // Exit if no swaps occurred
   }
-  return array;
+  console.log(`Total iterations: ${iterations}`); // Log total iterations for performance
+  return array; // Return the sorted array
 }
 ```
