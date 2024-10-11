@@ -1091,11 +1091,8 @@
     "exam-token": "Exam Token",
     "exam-token-note": "Your exam token is a secret key that allows you to access the exam. Do not share this token with anyone.",
     "generate-exam-token": "Generate Exam Token",
-    "your-exam-token": "Your Exam Token is: ",
-    "show-exam-token": "View Exam Token",
-    "hide-exam-token": "Hide Exam Token",
-    "delete-exam-token": "Delete Exam Token",
-    "delete-exam-token-note": "Deleting your exam token will prevent you from accessing the exam environment. You can generate a new exam token at any time."
+    "exam-token-error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}"
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

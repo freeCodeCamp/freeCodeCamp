@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
-import { Button, Modal, Panel } from '@freecodecamp/ui';
+import { Button, Panel } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
-import { FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow } from '../helpers';
+import { generateExamToken } from '../../utils/ajax';
 
-const ExamToken = () => {
+function ExamToken(): JSX.Element {
   const [examToken, setExamToken] = useState('');
-  const [viewToken, setViewToken] = useState(false);
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [examTokenError, setExamTokenError] = useState('');
 
   const { t } = useTranslation();
 
-  const generateExamToken = () => {
-    // Generate a random exam token
-    const token = Math.random().toString(36).slice(2, 15);
-    setExamToken(token);
+  const getToken = async () => {
+    try {
+      const response = await generateExamToken();
+
+      const {
+        data: { data: token }
+      } = response;
+      setExamToken(token.examEnvironmentAuthorizationToken);
+      setExamTokenError('');
+    } catch (e) {
+      setExamTokenError(t('exam-token.exam-token-error'));
+    }
+
+    return;
   };
 
   return (
@@ -22,67 +32,27 @@ const ExamToken = () => {
         <Panel.Heading>{t('exam-token.exam-token')}</Panel.Heading>
         <Panel.Body>
           <p>{t('exam-token.exam-token-note')}</p>
-          {!examToken ? (
-            <Button block={true} onClick={() => generateExamToken()}>
-              {t('exam-token.generate-exam-token')}
-            </Button>
-          ) : (
-            viewToken && (
-              <p>
-                {t('exam-token.your-exam-token')}{' '}
-                <code data-playwright-test-label='exam-token'>{examToken}</code>
-              </p>
-            )
-          )}
-          {examToken && !viewToken ? (
-            <Button block={true} onClick={() => setViewToken(true)}>
-              {t('exam-token.show-exam-token')}
-            </Button>
-          ) : (
-            examToken && (
-              <Button block={true} onClick={() => setViewToken(false)}>
-                {t('exam-token.hide-exam-token')}
-              </Button>
-            )
-          )}
           {examToken && (
-            <>
-              <Spacer size='small' />
-              <Button
-                variant='danger'
-                block={true}
-                onClick={() => setShowDeleteModal(true)}
-              >
-                {t('exam-token.delete-exam-token')}
-              </Button>
-            </>
+            <p style={{ wordBreak: 'break-word' }}>
+              {t('exam-token.your-exam-token', {
+                token: examToken
+              })}
+            </p>
           )}
-        </Panel.Body>
-      </Panel>
-      <Modal open={showDeleteModal} onClose={() => setShowDeleteModal(false)}>
-        <Modal.Header>{t('exam-token.delete-exam-token')}</Modal.Header>
-        <Modal.Body>
-          <p>{t('exam-token.delete-exam-token-note')}</p>
-        </Modal.Body>
-        <Modal.Footer>
+          {examTokenError && <p style={{ color: 'red' }}>{examTokenError}</p>}
           <Button
-            variant='danger'
+            block={true}
             onClick={() => {
-              setExamToken('');
-              setShowDeleteModal(false);
+              getToken().catch(e => console.log(e));
             }}
           >
-            {t('exam-token.delete-exam-token')}
+            {t('exam-token.generate-exam-token')}
           </Button>
-          <Spacer size='small' />
-          <Button onClick={() => setShowDeleteModal(false)}>
-            {t('buttons.cancel')}
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        </Panel.Body>
+      </Panel>
     </FullWidthRow>
   );
-};
+}
 
 ExamToken.displayName = 'ExamToken';
 

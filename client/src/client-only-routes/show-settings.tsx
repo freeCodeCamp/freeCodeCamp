@@ -24,7 +24,8 @@ import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  userTokenSelector
+  userTokenSelector,
+  userIdSelector
 } from '../redux/selectors';
 import { User } from '../redux/prop-types';
 import {
@@ -36,7 +37,7 @@ import {
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
-const { apiLocation, showUpcomingChanges } = envData;
+const { apiLocation } = envData;
 
 // TODO: update types for actions
 type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
@@ -52,6 +53,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
+  userId: string;
 };
 
 const mapStateToProps = createSelector(
@@ -59,11 +61,19 @@ const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
   userTokenSelector,
-  (showLoading: boolean, user: User, isSignedIn, userToken: string | null) => ({
+  userIdSelector,
+  (
+    showLoading: boolean,
+    user: User,
+    isSignedIn,
+    userToken: string | null,
+    userId: string
+  ) => ({
     showLoading,
     user,
     isSignedIn,
-    userToken
+    userToken,
+    userId
   })
 );
 
@@ -173,7 +183,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='medium' />
-          {showUpcomingChanges && <ExamToken />}
+          <ExamToken />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
