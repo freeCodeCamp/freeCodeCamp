@@ -453,6 +453,7 @@ a:not([href^="https://freecodecamp.org"]) { color: orange; }
 ### --question--
 
 #### --text--
+
 You need to select ordered lists (`<ol>`) that use the `type="1"` (for numerical listing). Which of the following selectors is correct?
 
 #### --distractors--
