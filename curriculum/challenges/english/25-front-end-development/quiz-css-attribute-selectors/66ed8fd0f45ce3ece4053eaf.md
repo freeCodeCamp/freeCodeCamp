@@ -56,7 +56,8 @@ a[href^="http"] {
 #### --text--
 
 Which of the following will not run as expected with this style?
-```CSS
+
+```css
 <style>
 [title~="flower"] {
   border: 5px solid yellow;
