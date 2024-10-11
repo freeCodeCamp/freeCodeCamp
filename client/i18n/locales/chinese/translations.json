@@ -52,6 +52,8 @@
     "create-post": "在论坛发帖请求帮助",
     "cancel": "取消",
     "reset-lesson": "重置课程",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "运行",
     "run-test": "运行测试（Ctrl + Enter）",
     "check-code": "Check Your Code",
@@ -200,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "分享你在 freeCodeCamp 之外做的项目，写的文章或者在 GitHub 上被接受的 pull requests。",
     "privacy": "你可以在本节的设置中管理哪些内容可以展示在 freeCodeCamp 公开作品集，点击“保存”以存储你的修改。",
     "data": "请点击下面的“下载你的数据”按钮，查看我们在你的账户上保存的数据",
@@ -332,7 +335,8 @@
     "total-points": "总分：",
     "points": "{{date}} 获得 {{count}} 分",
     "points_plural": "{{date}} 获得 {{count}} 分",
-    "page-number": "第 {{pageNumber}} 页，共 {{totalPages}} 页"
+    "page-number": "第 {{pageNumber}} 页，共 {{totalPages}} 页",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 条款下具有免税资格的慈善组织（税号：82-0779546）。",
@@ -386,6 +390,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "任务",
     "question": "问题",
+    "explanation": "Explanation",
     "solution-link": "解决方案链接",
     "source-code-link": "源代码链接",
     "ms-link": "微软的链接",
@@ -397,6 +402,7 @@
     "running-tests": "// 运行测试",
     "tests-completed": "// 测试完成",
     "console-output": "// 打印输出",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "你的代码在任何测试运行之前就出现了错误。请修复后重试。",
     "indentation-error": "你的代码存在缩进错误。你可能需要在新行中添加 <code>pass</code> 以形成一个有效的代码块。",
     "sign-in-save": "登录以保存你的学习进度",
@@ -416,6 +422,7 @@
     "reset": "重置这一节课程？",
     "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
     "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
     "chal-preview": "挑战预览",
     "donation-record-not-found": "未找到你的捐款记录。",
@@ -483,6 +490,12 @@
     "preview-external-window": "预览当前显示在外部窗口中。",
     "fill-in-the-blank": "填空",
     "blank": "空白",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "恭喜，你已经完成了考试资格的所有要求。",
       "not-qualified": "你尚未达到考试资格要求。要获得资格，请完成以下挑战：",
@@ -683,7 +696,10 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 10,700+ 篇教程",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
@@ -765,7 +781,8 @@
     "code-example": "{{codeName}} 代码示例",
     "opens-new-window": "在新窗口打开",
     "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读-搜索-提问）方法",
-    "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案"
+    "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",

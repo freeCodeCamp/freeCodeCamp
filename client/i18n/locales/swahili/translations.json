@@ -52,6 +52,8 @@
     "create-post": "Unda chapisho la usaidizi kwenye jukwaa",
     "cancel": "Ghairi",
     "reset-lesson": "Anza upya somo hili",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Anzisha",
     "run-test": "Endesha Majaribio (Ctrl + Enter)",
     "check-code": "Check Your Code",
@@ -200,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Shiriki miradi yako isiyo ya bure yaCodeCamp, makala, au maombi ya kuvuta yaliyokubaliwa.",
     "privacy": "Mipangilio katika sehemu hii hukuwezesha kudhibiti kile kinachoonyeshwa kwenye jalada lako la umma la freeCodeCamp. Bonyeza save ili kuhifadhi mabadiliko yako.",
     "data": "Ili kuona ni data gani tunayoshikilia kwenye akaunti yako, bofya kitufe cha \"Pakua data yako\" hapa chini",
@@ -332,7 +335,8 @@
     "total-points": "Total Points:",
     "points": "Pointi {{count}} mnamo {{date}}",
     "points_plural": "Alama {{count}} mnamo {{date}}",
-    "page-number": "{{pageNumber}} kati ya {{totalPages}}"
+    "page-number": "{{pageNumber}} kati ya {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -386,6 +390,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "Kazi",
     "question": "Swali",
+    "explanation": "Explanation",
     "solution-link": "Kiungo cha Suluhisho",
     "source-code-link": "Source Code Link",
     "ms-link": "Kiungo cha Microsoft",
@@ -397,6 +402,7 @@
     "running-tests": "// kufanya majaribio",
     "tests-completed": "// majaribio yamekamilika",
     "console-output": "// pato la console",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Ingia katika akaunti ili kuhifadhi maendeleo yako",
@@ -416,6 +422,7 @@
     "reset": "Anza upya somo hili?",
     "reset-warn": "Je, una uhakika ungependa kuanza upya somo hili? Vihariri na majaribio vitawekwa upya.",
     "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Kidokezo: Ikiwa kivinjari kidogo kinafunika msimbo, bofya na uburute ili kuisogeza. Pia, jisikie huru kusimamisha na kuhariri msimbo katika video wakati wowote.",
     "chal-preview": "Hakiki Changamoto",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -483,6 +490,12 @@
     "preview-external-window": "Onyesho la kukagua linaloonyeshwa kwa sasa kwenye dirisha la nje.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Hongera, umekamilisha mahitaji yote ya kufuzu kwa mtihani.",
       "not-qualified": "Hujatimiza masharti ili ustahiki mtihani. Ili kuhitimu, tafadhali kamilisha changamoto zifuatazo:",
@@ -683,7 +696,10 @@
   },
   "search": {
     "label": "Tafuta",
-    "placeholder": "Search 10,700+ tutorials",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "Tazama matokeo yote ya {{searchQuery}}",
     "no-tutorials": "Hakuna mafunzo yaliyopatikana",
     "try": "Unatafuta kitu? Jaribu upau wa kutafutia kwenye ukurasa huu.",
@@ -765,7 +781,8 @@
     "code-example": "mfano wa msimbo wa {{codeName}}",
     "opens-new-window": "Inafungua katika kurasa mpya",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "Ili kudai uthibitisho, lazima kwanza ukubali sera yetu ya uaminifu kitaaluma",

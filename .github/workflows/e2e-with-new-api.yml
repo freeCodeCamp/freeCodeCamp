@@ -71,8 +71,8 @@ jobs:
           name: webpack-stats
           path: client/public/stats.json
 
-  build-api:
-    name: Build Api (Container)
+  build-new-api:
+    name: Build New Api (Container)
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -90,27 +90,8 @@ jobs:
             -t fcc-api \
             -f docker/api/Dockerfile .
 
-  build-new-api:
-    name: Build New Api (Container)
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        node-version: [20.x]
-
-    steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          submodules: 'recursive'
-
-      - name: Create Image
-        run: |
-          docker build \
-            -t fcc-new-api \
-            -f docker/new-api/Dockerfile .
-
       - name: Save Image
-        run: docker save fcc-new-api > api-artifact.tar
+        run: docker save fcc-api > api-artifact.tar
 
       - name: Upload Api Artifact
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
@@ -166,7 +147,6 @@ jobs:
       - name: Set freeCodeCamp Environment Variables (needed by api)
         run: |
           cp sample.env .env
-          echo 'HOST=0.0.0.0' >> .env
 
       - name: Install playwright dependencies
         run: npx playwright install --with-deps

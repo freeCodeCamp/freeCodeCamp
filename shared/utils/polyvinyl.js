@@ -20,7 +20,7 @@ const invariant = require('invariant');
 //   contents: String,
 //   history?: [...String],
 // }) => PolyVinyl, throws
-function createPoly({ name, ext, contents, history, ...rest } = {}) {
+function createPoly({ name, ext, contents, history, ...rest }) {
   invariant(typeof name === 'string', 'name must be a string but got %s', name);
 
   invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
@@ -147,11 +147,20 @@ function transformHeadTailAndContents(wrap, poly) {
   };
 }
 
+// createSource(poly: PolyVinyl) => PolyVinyl
+function createSource(poly) {
+  return {
+    ...poly,
+    source: poly.source || poly.contents
+  };
+}
+
 module.exports = {
   createPoly,
   isPoly,
   setContent,
   setExt,
+  createSource,
   compileHeadTail,
   regeneratePathAndHistory,
   transformContents,

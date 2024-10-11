@@ -2032,9 +2032,11 @@
         "title": "69",
         "intro": []
       },
-      "jows": {
-        "title": "70",
-        "intro": []
+      "lab-contact-form": {
+        "title": "Crie um formulário de contato",
+        "intro": [
+          "Neste laboratório, você projetará um formulário de contato em HTML e o estilizará usando o CSS."
+        ]
       },
       "ipmw": {
         "title": "71",
@@ -2476,6 +2478,12 @@
           "Você lembrará de como adicionar e remover elementos de um array usando métodos como <code>push</code>, <code>pop</code>, <code>shift</code> e <code>unshift</code>."
         ]
       },
+      "lab-lunch-picker-program": {
+        "title": "Crie um programa seletor de almoços",
+        "intro": [
+          "Neste laboratório, você vai rever arrays e números aleatórios criando um programa seletor de almoço."
+        ]
+      },
       "mokm": {
         "title": "161",
         "intro": []
@@ -2752,9 +2760,11 @@
         "title": "218",
         "intro": []
       },
-      "yvqn": {
-        "title": "219",
-        "intro": []
+      "lab-date-conversion": {
+        "title": "Crie um programa de conversão de data",
+        "intro": [
+          "Neste laboratório, você criará um programa para converter uma data de um formato para outro."
+        ]
       },
       "xtfk": {
         "title": "220",
@@ -2964,9 +2974,11 @@
           "Para este laboratório, você vai criar uma classe de listas vinculadas usando o JavaScript."
         ]
       },
-      "wraf": {
-        "title": "265",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Crie uma classe de hash table",
+        "intro": [
+          "Para este laboratório, você vai criar uma classe de hash table usando o JavaScript."
+        ]
       },
       "muyw": {
         "title": "266",
@@ -2982,9 +2994,11 @@
         "title": "268",
         "intro": []
       },
-      "plfo": {
-        "title": "269",
-        "intro": []
+      "lab-depth-first-search": {
+        "title": "Implemente o algoritmo de busca em profundidade",
+        "intro": [
+          "Para este laboratório, você usará o JavaScript para implementar o algoritmo de busca em profundidade."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3472,9 +3486,11 @@
           "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
         ]
       },
-      "zzhp": {
-        "title": "372",
-        "intro": []
+      "lab-timestamp-microservice": {
+        "title": "Crie um microsserviço de timestamp",
+        "intro": [
+          "Neste laboratório, você criará um microsserviço de timestamp"
+        ]
       },
       "lab-request-header-parser-microservice": {
         "title": "Crie um microsserviço conversor de requisição de cabeçalho",
@@ -3494,9 +3510,11 @@
           "Neste laboratório, você vai construir um monitor de exercícios"
         ]
       },
-      "tbei": {
-        "title": "376",
-        "intro": []
+      "lab-file-metadata-microservice": {
+        "title": "Crie um microsserviço de metadados de arquivos",
+        "intro": [
+          "Para este laboratório, você criará um microsserviço de metadados de arquivos"
+        ]
       },
       "kegi": {
         "title": "377",
@@ -3524,9 +3542,11 @@
         "title": "382",
         "intro": []
       },
-      "kwhp": {
-        "title": "383",
-        "intro": []
+      "quiz-tooling-and-deployment": {
+        "title": "Questionário sobre ferramentas e implantação",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre ferramentas e implantação"
+        ]
       },
       "nkjt": {
         "title": "384",
