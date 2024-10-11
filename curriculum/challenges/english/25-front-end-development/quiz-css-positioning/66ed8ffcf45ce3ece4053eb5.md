@@ -47,15 +47,15 @@ position
 
 ---
 
-bg-green
+`bg-green`
 
 ---
 
-float
+`float`
 
 #### --answer--
 
-z-index
+`z-index`
 
 ### --question--
 
@@ -87,41 +87,41 @@ Which CSS property would you use to fix an element at a certain position on the 
 
 #### --distractors--
 
-position: absolute
+`position: absolute`
 
 ---
 
-position: relative
+`position: relative`
 
 ---
 
-display: block
+`display: block`
 
 #### --answer--
 
-position: fixed
+`position: fixed`
 
 ### --question--
 
 #### --text--
 
-If an element has position: absolute, to what is it positioned by default ?
+If an element has `position: absolute`, to what is it positioned by default ?
 
 #### --distractors--
 
-The closest ancestor with the attribute position: fixed
+The closest ancestor with the attribute `position: fixed`
 
 ---
 
-The closest ancestor that has position: absolute
+The closest ancestor that has `position: absolute`
 
 ---
 
-The body element
+The `<body>` element
 
 #### --answer--
 
-The closest ancestor that has position: relative
+The closest ancestor that has `position: relative`
 
 ### --question--
 
@@ -131,19 +131,19 @@ Which positioning method allows an element to stick to a defined position only w
 
 #### --distractors--
 
-position: float
+`position: float`
 
 ---
 
-position: fixed
+`position: fixed`
 
 ---
 
-position: absolute
+`position: absolute`
 
 #### --answer--
 
-position: sticky
+`position: sticky`
 
 ### --question--
 
@@ -193,19 +193,19 @@ Block elements surrounding it flow around the floated element
 
 #### --text--
 
-What does an element with position: sticky require for it to work?
+What does an element with `position: sticky` require for it to work?
 
 #### --distractors--
 
-A position: relative parent element 
+A `position: relative` parent element 
 
 ---
 
-A z-index value greater than 1
+A `z-index` value greater than 1
 
 ---
 
-A z-index of 0 or greater
+A `z-index` of 0 or greater
 
 #### --answer--
 
@@ -237,7 +237,7 @@ The child will lose its sticky behaviour when the parent scrolls.
 
 #### --text--
 
-Which of the following must be true if a position: sticky element is to work as intended?
+Which of the following must be true if a `position: sticky` element is to work as intended?
 
 #### --distractors--
 
@@ -245,11 +245,11 @@ The height in the parent container must be explicitly set.
 
 ---
 
-The sticky element should be inside a container with position: relative
+The sticky element should be inside a container with `position: relative`
 
 ---
 
-Any sticky element must declare float: left or float: right 
+Any sticky element must declare `float: left` or `float: right` 
 
 #### --answer--
 
@@ -271,7 +271,7 @@ Height will automatically adapt to fit all the floated elements.
 
 ---
 
-The containing block will automatically apply clear: both to fit the floated element 
+The containing block will automatically apply `clear: both` to fit the floated element 
 
 #### --answer--
 
@@ -285,19 +285,19 @@ Which of the following CSS techniques is an accepted method for preventing a par
 
 #### --distractors--
 
-Set float: none to the container
+Set `float: none` to the container
 
 ---
 
-Add margin: auto to the parent container.
+Add `margin: auto` to the parent container.
 
 ---
 
-Use the position: relative on the parent container 
+Use the `position: relative` on the parent container 
 
 #### --answer--
 
-Adding the property overflow: auto or overflow: hidden to the parent container
+Adding the property `overflow: auto` or `overflow: hidden` to the parent container
 
 ### --question--
 
@@ -351,19 +351,19 @@ When does an element with z-index: auto create a new stacking context?
 
 #### --distractors--
 
-Combined with position: absolute or position: relative
+Combined with `position: absolute` or `position: relative`
 
 ---
 
-When its parent element has z-index: auto and position: fixed
+When its parent element has `z-index: auto` and `position: fixed`
 
 ---
 
-When it is combined with float: left If two sibling elements are of the same z-index and absolutely positioned
+When it is combined with `float: left` If two sibling elements are of the same `z-index` and absolutely positioned
 
 #### --answer--
 
-In combination with position: fixed or position: sticky
+In combination with `position: fixed` or `position: sticky`
 
 ### --question--
 
@@ -377,11 +377,11 @@ It rearranges the sibling elements in relation to its new position
 
 ---
 
-Adding z-index: auto to the parent container
+Adding `z-index: auto` to the parent container
 
 ---
 
-Using position: relative on the parent container
+Using `position: relative` on the parent container
 
 #### --answer--
 
@@ -413,7 +413,7 @@ It allows the element to shift without affecting the document flow of sibling el
 
 #### --text--
 
-What happens when a position: relative element is nested inside of a position: absolute parent, with top and left values set?
+What happens when a `position: relative` element is nested inside of a `position: absolute` parent, with top and left values set?
 
 #### --distractors--
 
@@ -425,7 +425,7 @@ It moves with respect to the absolute coordinates of the containing parent eleme
 
 ---
 
-It will never create a new stacking context whatever the z-index value
+It will never create a new stacking context whatever the `z-index` value
 
 #### --answer--
 
@@ -435,11 +435,11 @@ It ignores the positioning of the parent and moves relative to its normal positi
 
 #### --text--
 
-What is the default of an element with position: sticky in terms of stacking context when combined with a z-index value?
+What is the default of an element with `position: sticky` in terms of stacking context when combined with a `z-index` value?
 
 #### --distractors--
 
-It will create a new stacking context, and on top of any other element whose z-index is auto.
+It will create a new stacking context, and on top of any other element whose `z-index` is auto.
 
 ---
 
@@ -451,5 +451,5 @@ It ignores stacking contexts completely and will always end behind every element
 
 #### --answer--
 
-It stays within the stacking context in which it is if z-index is not explicitly defined.
+It stays within the stacking context in which it is if `z-index` is not explicitly defined.
 
