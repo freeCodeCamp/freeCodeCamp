@@ -37,6 +37,7 @@ img[alt] {
 ```
 
 ---
+
 ```css
 input[type="text"] {
     border: 1px solid gray;
