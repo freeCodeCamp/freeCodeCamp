@@ -8,6 +8,12 @@ function ExamToken(): JSX.Element {
   const [examToken, setExamToken] = useState('');
   const [examTokenError, setExamTokenError] = useState('');
 
+  const [recentlyGenerated, setRecentlyGenerated] = useState(false);
+
+  const debouncedSetRecentlyGenerated = () => {
+    setRecentlyGenerated(true);
+    setTimeout(() => setRecentlyGenerated(false), 10000);
+  };
   const { t } = useTranslation();
 
   const getToken = async () => {
@@ -23,7 +29,7 @@ function ExamToken(): JSX.Element {
       setExamTokenError(t('exam-token.exam-token-error'));
     }
 
-    return;
+    debouncedSetRecentlyGenerated();
   };
 
   return (
@@ -42,8 +48,9 @@ function ExamToken(): JSX.Element {
           {examTokenError && <p style={{ color: 'red' }}>{examTokenError}</p>}
           <Button
             block={true}
+            disabled={recentlyGenerated}
             onClick={() => {
-              getToken().catch(e => console.log(e));
+              getToken().catch(e => console.error(e));
             }}
           >
             {t('exam-token.generate-exam-token')}
