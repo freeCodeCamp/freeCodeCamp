@@ -67,7 +67,7 @@ Which of the following will not run as expected with this style?
 
 #### --distractors--
 
-```css
+```html
 <img src="img1.jpg" title="klematis flower" width="150" height="113">
 ```
 
