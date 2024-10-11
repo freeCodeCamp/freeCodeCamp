@@ -42,6 +42,12 @@ assert.match(code,/(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm);
 assert.notMatch(code,/store\.subscribe\(.+\(\)\)/)
 ```
 
+The function passed to `store.subscribe` should not be called.
+
+```js
+assert.notMatch(code,/store\.subscribe\(.+\(\)\)/)
+```
+
 The callback to `store.subscribe` should also increment the global `count` variable as the store is updated.
 
 ```js
