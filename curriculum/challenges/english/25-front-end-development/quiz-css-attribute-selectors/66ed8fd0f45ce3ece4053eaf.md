@@ -29,6 +29,7 @@ input[type="text"]:focus {
 ```
 
 ---
+
 ```css
 img[alt] {
     border: 2px solid red;
