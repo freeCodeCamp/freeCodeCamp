@@ -32,19 +32,19 @@ assert(
 There should be a listener function subscribed to the store using `store.subscribe`.
 
 ```js
-assert.match(code,/store\s*\.\s*subscribe\(/gm);
+assert.match(code, /store\s*\.\s*subscribe\(/gm);
 ```
 
 The `store.subscribe` should receive a function.
 
 ```js
-assert.match(code,/(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm);
+assert.match(code, /(\s*function\s*)|(\s*\(\s*\)\s*=>)/gm);
 ```
 
 The function passed to `store.subscribe` should not be called.
 
 ```js
-assert.notMatch(code,/store\.subscribe\(.+\(\)\)/)
+assert.notMatch(code, /store\.subscribe\(.+\(\)\)/);
 ```
 
 The callback to `store.subscribe` should also increment the global `count` variable as the store is updated.
