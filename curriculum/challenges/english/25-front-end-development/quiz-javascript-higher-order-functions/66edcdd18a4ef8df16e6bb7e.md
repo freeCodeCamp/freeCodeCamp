@@ -61,7 +61,7 @@ Closures created by higher-order functions can capture the lexical scope, allowi
 
 #### --text--
 
-Evaluate the Output
+Evaluate the output
 
 ```js
 const numbers = [1, 1, 1, 1, 1];
