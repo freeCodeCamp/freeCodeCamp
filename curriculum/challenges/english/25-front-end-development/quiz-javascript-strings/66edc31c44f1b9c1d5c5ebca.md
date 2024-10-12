@@ -17,439 +17,444 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What will the following code output?
+
+```javascript
+let str = "JavaScript is fun!";
+console.log(str.slice(0, 10));
 
 #### --distractors--
 
-Placeholder distractor 1
+JavaScript is
 
 ---
 
-Placeholder distractor 2
+JavaScript is f
 
 ---
 
-Placeholder distractor 3
+JavaScript
 
 #### --answer--
 
-Placeholder answer
+JavaScript
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the charAt method do in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+Returns the character at a specified index in a string.
 
 ---
 
-Placeholder distractor 2
+Converts a string to an array of characters.
 
 ---
 
-Placeholder distractor 3
+Changes the case of a string.
 
 #### --answer--
 
-Placeholder answer
+Returns the character at a specified index in a string.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following methods can be used to find the length of a string in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+string.length()
 
 ---
 
-Placeholder distractor 2
+string.count()
 
 ---
 
-Placeholder distractor 3
+string.length
 
 #### --answer--
 
-Placeholder answer
+string.length
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which method can be used to convert a string to uppercase in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+toUpper()
 
 ---
 
-Placeholder distractor 2
+upperCase()
 
 ---
 
-Placeholder distractor 3
+toUpperCase()
 
 #### --answer--
 
-Placeholder answer
+toUpperCase()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the output of the following code be?
+
+```javascript
+let text = "JavaScript";
+console.log(text.includes("Script"));
 
 #### --distractors--
 
-Placeholder distractor 1
-
+true
 ---
 
-Placeholder distractor 2
-
+false
 ---
 
-Placeholder distractor 3
+undefined
 
 #### --answer--
 
-Placeholder answer
+true
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following methods splits a string into an array of substrings?
 
 #### --distractors--
 
-Placeholder distractor 1
+split()
 
 ---
 
-Placeholder distractor 2
+slice()
 
 ---
 
-Placeholder distractor 3
+substr()
 
 #### --answer--
 
-Placeholder answer
+split()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following methods checks if a string starts with a specific substring?
 
 #### --distractors--
 
-Placeholder distractor 1
+startsWithString()
 
 ---
 
-Placeholder distractor 2
+isBeginningWith()
 
 ---
 
-Placeholder distractor 3
+startsWith()
 
 #### --answer--
 
-Placeholder answer
+startsWith()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following methods can be used to replace a substring in a string?
 
 #### --distractors--
 
-Placeholder distractor 1
+replace()
 
 ---
 
-Placeholder distractor 2
+change()   
 
 ---
 
-Placeholder distractor 3
+switch()
 
 #### --answer--
 
-Placeholder answer
+replace()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the output of the following code be?
+
+```javascript
+
+let str = "JavaScript";
+console.log(str.slice(-6));
 
 #### --distractors--
 
-Placeholder distractor 1
+aScript
 
 ---
 
-Placeholder distractor 2
+vaScript
 
 ---
 
-Placeholder distractor 3
+Script
 
 #### --answer--
 
-Placeholder answer
+Script
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following methods checks if a string ends with a specific substring?
 
 #### --distractors--
 
-Placeholder distractor 1
+finishesWith()
 
 ---
 
-Placeholder distractor 2
+endsWith()
 
 ---
 
-Placeholder distractor 3
+endsWithString()
 
 #### --answer--
 
-Placeholder answer
+endsWith()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the output of the following code be?
+
+``` javascript
+let str = "Hello, World!";
+console.log(str.indexOf("World"));
 
 #### --distractors--
 
-Placeholder distractor 1
+4
 
 ---
 
-Placeholder distractor 2
-
+7
 ---
 
-Placeholder distractor 3
+5
 
 #### --answer--
 
-Placeholder answer
+7
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the output of the following code be?
+
+```javascript
+let str = "JavaScript";
+console.log(str.charAt(4));
 
 #### --distractors--
 
-Placeholder distractor 1
+S
 
 ---
 
-Placeholder distractor 2
+a
 
 ---
 
-Placeholder distractor 3
+r
 
 #### --answer--
 
-Placeholder answer
+S
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the following code output?
+
+```javascript
+let str = "foo bar baz";
+console.log(str.split(" ")[1]);
 
 #### --distractors--
 
-Placeholder distractor 1
+foo
+---
+
+bar
 
 ---
 
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
+baz
 
 #### --answer--
 
-Placeholder answer
+bar
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which method can be used to search for a match between a regular expression and a string in JavaScript?
 
-#### --distractors--
+--distractors--
 
-Placeholder distractor 1
+find()
 
----
+match()
 
-Placeholder distractor 2
+search()
 
----
+--answer--
 
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+search()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the following code return?
 
-#### --distractors--
+```javascript
+let str = "The quick brown fox";
+console.log(str.indexOf("fox"));
 
-Placeholder distractor 1
+--distractors--
+0
 
----
+16
 
-Placeholder distractor 2
+10
 
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+--answer--
+16
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following methods can be used to find the last occurrence of a substring within a string?
 
-#### --distractors--
+--distractors--
 
-Placeholder distractor 1
+includes()
 
----
+indexOf()
 
-Placeholder distractor 2
+lastIndexOf()
 
----
+--answer--
 
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+lastIndexOf()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the String.prototype.repeat() method do?
 
-#### --distractors--
+--distractors--
 
-Placeholder distractor 1
+Repeats the string for a given number of times
 
----
+Removes duplicate characters from the string
 
-Placeholder distractor 2
+Converts the string to a number
 
----
+--answer--
 
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+Repeats the string for a given number of times
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the following code output?
 
-#### --distractors--
+```javascript
+let str = "Hello World!";
+let result = str.substring(1, 5);
+console.log(result);
 
-Placeholder distractor 1
+--distractors--
 
----
+Hell
 
-Placeholder distractor 2
+ello
 
----
+o Wo
 
-Placeholder distractor 3
+--answer--
 
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+ello
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will the following code return?
 
-#### --distractors--
+```javascript
 
-Placeholder distractor 1
+let str = "apple, banana, cherry";
+let fruits = str.split(", ");
+console.log(fruits);
 
----
+--distractors--
 
-Placeholder distractor 2
+["apple", "banana", "cherry"]
 
----
+["apple", "banana cherry"]
 
-Placeholder distractor 3
+["apple, banana", "cherry"]
 
-#### --answer--
+--answer--
 
-Placeholder answer
+["apple", "banana", "cherry"]
 
+### --question--
+
+#### --text--
+
+What does the String.prototype.slice() method do?
+
+--distractors--
+
+Converts a string to uppercase
+
+Extracts a section of a string and returns it as a new string
+
+Trims whitespace from both ends of a string
+
+--answer--
+
+Extracts a section of a string and returns it as a new string
