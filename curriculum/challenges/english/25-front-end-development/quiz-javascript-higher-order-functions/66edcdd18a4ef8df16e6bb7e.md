@@ -33,7 +33,7 @@ Higher-order functions may introduce complexity in understanding code, but they 
 
 #### --answer--
 
-All functions in JavaScript, including those that do not manipulate or return other functions, can be classified as higher-order functions.Placeholder answer
+All functions in JavaScript, including those that do not manipulate or return other functions, can be classified as higher-order functions.
 
 ### --question--
 
@@ -76,19 +76,19 @@ const mapRes = numbers.map(num => {
 
 #### --distractors--
 
-forEachRes is undefined and mapRes is [1,2,3,4,5]
+`forEachRes` is `undefined` and `mapRes` is `[1,2,3,4,5]`
 
 ---
 
-forEachRes is 0 and mapRes is [1,2,3,4,5]
+`forEachRes` is `0` and `mapRes` is `[1,2,3,4,5]`
 
 ---
 
-forEachRes is 5 and mapRes is [1,2,3,4,5]
+`forEachRes` is `5` and `mapRes` is `[1,2,3,4,5]`
 
 #### --answer--
 
-forEachRes is undefined and mapRes is [6,7,8,9,10]
+`forEachRes` is `undefined` and `mapRes` is `[6,7,8,9,10]`
 
 ### --question--
 
@@ -128,7 +128,9 @@ Which of the following describes a callback function in JavaScript?
 
 #### --distractors--
 
-## A function that is called immediately upon declaration.
+A function that is called immediately upon declaration.
+
+---
 
 A function that is invoked with a specific context.
 
@@ -144,7 +146,7 @@ A function passed as an argument to another function, to be executed later.
 
 #### --text--
 
-What is the result of using reduce() on an array?
+What is the result of using `reduce()` on an array?
 
 #### --distractors--
 
@@ -166,7 +168,7 @@ A single accumulated value derived from all elements in the array.
 
 #### --text--
 
-How does the sort() method behave if no comparison function is provided?
+How does the `sort()` method behave if no comparison function is provided?
 
 #### --distractors--
 
@@ -188,7 +190,7 @@ It sorts the array as strings based on UTF-16 code units but moves empty slots t
 
 #### --text--
 
-What is the purpose of the some() method in JavaScript?
+What is the purpose of the `some()` method in JavaScript?
 
 #### --distractors--
 
@@ -306,23 +308,23 @@ A style that allows method chaining for more natural syntax.
 
 #### --text--
 
-What is the impact of using bind() on a higher-order function in JavaScript?
+What is the impact of using `bind()` on a higher-order function in JavaScript?
 
 #### --distractors--
 
-bind() creates a new function with a specific this context, but does not change the function's parameters.
+`bind()` creates a new function with a specific this context, but does not change the function's parameters.
 
 ---
 
-bind() can modify the original function's implementation.
+`bind()` can modify the original function's implementation.
 
 ---
 
-bind() ensures the function is executed immediately with the specified context.
+`bind()` ensures the function is executed immediately with the specified context.
 
 #### --answer--
 
-bind() creates a new function with a specific this context, allowing the higher-order function to retain the intended context when called later.
+`bind()` creates a new function with a specific this context, allowing the higher-order function to retain the intended context when called later.
 
 ### --question--
 
@@ -333,7 +335,7 @@ Which of the following methods supports method chaining?
 #### --distractors--
 
 ```js
-Array.prototype.push();
+Array.prototype.concat();
 ```
 
 ---
@@ -356,27 +358,29 @@ All options mentioned
 
 #### --text--
 
-what will [2, , 2].every((x) => x === 2) return?
+what will `[2, , 2].every((x) => x === 2)` return?
 
 #### --distractors--
 
-## false, every() will not run its predicate on empty slots.
-
-undefined
+`false`, `every()` will not run its predicate on empty slots.
 
 ---
 
-null
+`undefined`
+
+---
+
+`null`
 
 #### --answer--
 
-true, every() will not run its predicate on empty slots.
+`true`, `every()` will not run its predicate on empty slots.
 
 ### --question--
 
 #### --text--
 
-What does the following code demonstrate about the .filter() method in JavaScript?
+What does the following code demonstrate about the `.filter()` method in JavaScript?
 
 ```js
 const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
@@ -388,19 +392,19 @@ console.log(originalArray);
 
 #### --distractors--
 
-originalArray remains unchanged.
+`originalArray` remains unchanged.
 
 ---
 
-originalArray only retains the elements filtered out.
+`originalArray` only retains the elements filtered out.
 
 ---
 
-originalArray is completely different from filteredArray.
+`originalArray` is completely different from `filteredArray`.
 
 #### --answer--
 
-originalArray reflects changes made to filteredArray due to shallow copying.
+`originalArray` reflects changes made to `filteredArray` due to shallow copying.
 
 ### --question--
 
@@ -409,33 +413,34 @@ originalArray reflects changes made to filteredArray due to shallow copying.
 What would be the output of the following code?
 
 ```js
-const multiply = (a) => (b) => a \* b;
+const multiply = (a) => (b) => a * b;
 const operations = [multiply(2), multiply(3)];
 const result = operations.reduce((acc, fn) => fn(acc), 5);
+
 console.log(result);
 ```
 
 #### --distractors--
 
-10
+`10`
 
 ---
 
-100
+`100`
 
 ---
 
-20
+`20`
 
 #### --answer--
 
-30
+`30`
 
 ### --question--
 
 #### --text--
 
-What is the purpose of the initialValue parameter in the reduce() method?
+What is the purpose of the `initialValue` parameter in the `reduce()` method?
 
 #### --distractors--
 
@@ -457,11 +462,11 @@ To define the starting point for the accumulator.
 
 #### --text--
 
-What is the recommended practice when using the map() method comparing to forEach()?
+What is the recommended practice when using the `map()` method comparing to `forEach()`?
 
 #### --distractors--
 
-Always chain it with the forEach() method.
+Always chain it with the `forEach()` method.
 
 ---
 
@@ -473,13 +478,13 @@ Use it to delete elements from the array.
 
 #### --answer--
 
-Avoid using it for side effects; use pure functions instead.
+Use it with pure functions, avoid it when using functions making side effects.
 
 ### --question--
 
 #### --text--
 
-What happens when map() is called on a sparse array?
+What happens when `map()` is called on a sparse array?
 
 #### --distractors--
 
