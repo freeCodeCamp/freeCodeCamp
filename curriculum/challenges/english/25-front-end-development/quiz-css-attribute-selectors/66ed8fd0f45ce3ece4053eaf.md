@@ -17,38 +17,30 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-In which scenario is using an attribute selector a bad idea?
+Which selector would target all `<option>` elements where the value attribute starts with `"A"`?
 
 #### --distractors--
 
 ```css
-input[type="text"]:focus {
-    background-color: yellow;
-}
+option[value$="A"] { font-size: 14px; }
 ```
 
 ---
 
 ```css
-img[alt] {
-    border: 2px solid red;
-}
+option[value*="A"] { font-size: 14px; }
 ```
 
 ---
 
 ```css
-input[type="text"] {
-    border: 1px solid gray;
-}
+option[value~="A"] { font-size: 14px; }
 ```
 
 #### --answer--
 
 ```css
-a[href^="http"] { 
-    color: blue;
- }
+option[value^="A"] { font-size: 14px; }
 ```
 
 ### --question--
