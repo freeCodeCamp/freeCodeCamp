@@ -259,23 +259,23 @@ Cumulative Layout Shift (CLS)
 
 #### --text--
 
-What primarily influences the time to the first usable interaction on a webpage?
+When measuring Interaction to Next Paint (INP), what is being evaluated?
 
 #### --distractors--
 
-Minimizing the use of HTML and CSS files.
+The time it takes for the page to fully load all styles and images after a user interaction.
 
 ---
 
-Increasing the size of all images.
+The delay between a user's interaction and the browser's ability to register the next user input.
 
 ---
 
-Rendering the page solely on the server side.
+The interval between JavaScript execution and the browser refreshing the page content.
 
 #### --answer--
 
-Reducing JavaScript execution on the main thread.
+The time between a user's interaction and the browser responding by rendering the next frame.
 
 ### --question--
 
