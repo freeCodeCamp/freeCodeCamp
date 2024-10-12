@@ -17,439 +17,439 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What is the key difference between real performance and perceived performance in web development?
 
 #### --distractors--
 
-Placeholder distractor 1
+Real performance focuses on the number of HTTP requests made by the browser, while perceived performance is based on CSS rendering speed.
 
 ---
 
-Placeholder distractor 2
+Real performance is only about load times, while perceived performance relates to visual elements like animations and loading indicators.
 
 ---
 
-Placeholder distractor 3
+Real performance only includes server-side processing times, while perceived performance is entirely client-side.
 
 #### --answer--
 
-Placeholder answer
+Real performance is how fast content is loaded, while perceived performance is how quickly users believe the page loads.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which metric best indicates how quickly content appears on a web page?
 
 #### --distractors--
 
-Placeholder distractor 1
+Time to Interactive (TTI)
 
 ---
 
-Placeholder distractor 2
+Page Load Time (PLT)
 
 ---
 
-Placeholder distractor 3
+Largest Contentful Paint (LCP)
 
 #### --answer--
 
-Placeholder answer
+First Contentful Paint (FCP)
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What best describes the critical rendering path in the browser?
 
 #### --distractors--
 
-Placeholder distractor 1
+The order in which images are loaded into the browser's cache.
 
 ---
 
-Placeholder distractor 2
+The way JavaScript is executed before any CSS is applied.
 
 ---
 
-Placeholder distractor 3
+The priority level given to different elements in the DOM.
 
 #### --answer--
 
-Placeholder answer
+The sequence of steps a browser follows to fetch, decode, and display HTML, CSS, and JavaScript.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following factors NEGATIVELY impacts a website's perceived performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+Utilizing CSS sprites to combine multiple images.
 
 ---
 
-Placeholder distractor 2
+Loading scripts asynchronously to improve loading speed.
 
 ---
 
-Placeholder distractor 3
+Using web fonts that preload for immediate use.
 
 #### --answer--
 
-Placeholder answer
+Running long, blocking JavaScript operations that delay rendering.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does First Contentful Paint (FCP) measure?
 
 #### --distractors--
 
-Placeholder distractor 1
+The overall load time for all JavaScript files on the page.
 
 ---
 
-Placeholder distractor 2
+The delay before a user can interact with any elements on the page.
 
 ---
 
-Placeholder distractor 3
+The time taken for all stylesheets to fully load and apply.
 
 #### --answer--
 
-Placeholder answer
+The time it takes for the first piece of text or image to render.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How does reducing the number of critical resources affect web performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+It ensures that all resources are loaded simultaneously.
 
 ---
 
-Placeholder distractor 2
+It reduces the overall size of the web page for better performance.
 
 ---
 
-Placeholder distractor 3
+It makes the browser load images more quickly but doesn't impact other resources.
 
 #### --answer--
 
-Placeholder answer
+It shortens the critical rendering path, leading to faster page rendering.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which statement best describes Cumulative Layout Shift (CLS)?
 
 #### --distractors--
 
-Placeholder distractor 1
+It measures how quickly the page responds after user interactions.
 
 ---
 
-Placeholder distractor 2
+Time spent waiting for JavaScript to execute.
 
 ---
 
-Placeholder distractor 3
+The duration between content being painted and the page becoming interactive.
 
 #### --answer--
 
-Placeholder answer
+The unexpected movement of web page elements during loading, affecting layout stability.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What strategy can effectively enhance perceived performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+Using large images to improve the overall visual quality.
 
 ---
 
-Placeholder distractor 2
+Loading CSS styles last to prioritize content rendering.
 
 ---
 
-Placeholder distractor 3
+Preloading all scripts to ensure they are ready when needed.
 
 #### --answer--
 
-Placeholder answer
+Displaying a loading skeleton while content is being fetched.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the key performance benefit of utilizing a Content Delivery Network (CDN)?
 
 #### --distractors--
 
-Placeholder distractor 1
+It ensures all resources are loaded without delays.
 
 ---
 
-Placeholder distractor 2
+It minimizes the use of CSS files, improving speed.
 
 ---
 
-Placeholder distractor 3
+It eliminates the need for caching altogether.
 
 #### --answer--
 
-Placeholder answer
+It reduces latency by serving content from geographically closer servers.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How does optimizing CSS impact page performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+It prevents the browser from executing unnecessary JavaScript.
 
 ---
 
-Placeholder distractor 2
+It reduces the overall file size of images.
 
 ---
 
-Placeholder distractor 3
+It eliminates the need for lazy loading images.
 
 #### --answer--
 
-Placeholder answer
+It speeds up the parsing of HTML.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which metric assesses the stability of visual content on a web page?
 
 #### --distractors--
 
-Placeholder distractor 1
+First Input Delay (FID)
 
 ---
 
-Placeholder distractor 2
+Time to First Byte (TTFB)
 
 ---
 
-Placeholder distractor 3
+Largest Contentful Paint (LCP)
 
 #### --answer--
 
-Placeholder answer
+Cumulative Layout Shift (CLS)
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+When measuring Interaction to Next Paint (INP), what is being evaluated?
 
 #### --distractors--
 
-Placeholder distractor 1
+The time it takes for the page to fully load all styles and images after a user interaction.
 
 ---
 
-Placeholder distractor 2
+The delay between a user's interaction and the browser's ability to register the next user input.
 
 ---
 
-Placeholder distractor 3
+The interval between JavaScript execution and the browser refreshing the page content.
 
 #### --answer--
 
-Placeholder answer
+The time between a user's interaction and the browser responding by rendering the next frame.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which Web API is effective for measuring performance in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+`window.getPerformaceStatistics()`
 
 ---
 
-Placeholder distractor 2
+`document.performance()`
 
 ---
 
-Placeholder distractor 3
+`window.performance.now()`
 
 #### --answer--
 
-Placeholder answer
+`performance.now()`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is considered a good practice to enhance JavaScript performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+Placing all JavaScript code in the `<head>` tag for immediate execution.
 
 ---
 
-Placeholder distractor 2
+Using `eval()` to dynamically execute JavaScript code.
 
 ---
 
-Placeholder distractor 3
+Adding multiple `setTimeout()` calls for handling asynchronous tasks.
 
 #### --answer--
 
-Placeholder answer
+Utilizing event delegation to manage multiple events efficiently.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How does the Critical Path Length affect page load times?
 
 #### --distractors--
 
-Placeholder distractor 1
+It increases the amount of data transferred during page load.
 
 ---
 
-Placeholder distractor 2
+It complicates the loading process by introducing more JavaScript files.
 
 ---
 
-Placeholder distractor 3
+It has no impact on how quickly a page loads.
 
 #### --answer--
 
-Placeholder answer
+A shorter critical path allows the browser to render the page more quickly.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+In what way does lazy loading images enhance page performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+It ensures all images load immediately for a better user experience.
 
 ---
 
-Placeholder distractor 2
+It reduces the size of image files to speed up loading.
 
 ---
 
-Placeholder distractor 3
+It preloads images to prevent any loading delays.
 
 #### --answer--
 
-Placeholder answer
+It delays loading non-essential images until they are in view, improving initial load time.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which performance technique effectively reduces latency?
 
 #### --distractors--
 
-Placeholder distractor 1
+Inlining all JavaScript code into HTML for immediate execution.
 
 ---
 
-Placeholder distractor 2
+Using larger image resolutions for high-definition displays.
 
 ---
 
-Placeholder distractor 3
+Deferring CSS that affects page layout.
 
 #### --answer--
 
-Placeholder answer
+Minimizing DNS lookups by limiting external resource calls.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How does reducing render-blocking resources enhance performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+It caches all CSS files for future use, speeding up load times.
 
 ---
 
-Placeholder distractor 2
+It enables JavaScript to execute without any delays.
 
 ---
 
-Placeholder distractor 3
+It reduces the amount of HTML the browser needs to process.
 
 #### --answer--
 
-Placeholder answer
+It allows the browser to render content sooner, improving time to first paint.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What significantly impacts Time to First Byte (TTFB)?
 
 #### --distractors--
 
-Placeholder distractor 1
+The position of CSS files within the HTML document.
 
 ---
 
-Placeholder distractor 2
+The number of images on the page.
 
 ---
 
-Placeholder distractor 3
+The amount of JavaScript executed on page load.
 
 #### --answer--
 
-Placeholder answer
+The server response time to the initial HTTP request.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Why is energy efficiency a crucial aspect of web performance?
 
 #### --distractors--
 
-Placeholder distractor 1
+It enhances the overall visual appeal of the webpage.
 
 ---
 
-Placeholder distractor 2
+It minimizes the amount of JavaScript used on a webpage.
 
 ---
 
-Placeholder distractor 3
+It decreases the number of CSS files needed.
 
 #### --answer--
 
-Placeholder answer
+It reduces the load on hardware, conserving energy and improving sustainability.
 
