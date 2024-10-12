@@ -501,3 +501,4 @@ The array is automatically compacted to remove empty slots.
 #### --answer--
 
 The returned array remains sparse, and the callback is not invoked for empty slots.
+
