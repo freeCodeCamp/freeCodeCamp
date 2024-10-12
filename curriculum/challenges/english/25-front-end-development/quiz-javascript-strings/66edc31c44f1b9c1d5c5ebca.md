@@ -17,23 +17,242 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What is the correct way to create a string in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+let str = "Hello";
 
 ---
 
-Placeholder distractor 2
+let str = Hello;
 
 ---
 
-Placeholder distractor 3
+let str = 'Hello';
 
 #### --answer--
 
-Placeholder answer
+let str = "Hello";
+
+### --question--
+
+#### --text--
+
+How do you find the length of a string in JavaScript?
+
+#### --distractors--
+
+string.size
+
+---
+
+string.length()
+
+---
+
+string.getLength()
+
+#### --answer--
+
+string.length
+
+### --question--
+
+#### --text--
+
+What method is used to concatenate two strings in JavaScript?
+
+#### --distractors--
+
+concat()
+
+---
+
+append()
+
+---
+
+add()
+
+#### --answer--
+
+concat()
+
+### --question--
+
+#### --text--
+
+How do you convert a string to lowercase in JavaScript?
+
+#### --distractors--
+
+toLower()
+
+---
+
+string.lower()
+
+---
+
+toLowerCase()
+
+#### --answer--
+
+toLowerCase()
+
+### --question--
+
+#### --text--
+
+Which of the following methods extracts a substring from a string?
+
+#### --distractors--
+
+cut()
+
+---
+
+substring()
+
+---
+
+split()
+
+#### --answer--
+
+substring()
+
+### --question--
+
+#### --text--
+
+What is the result of "Hello".charAt(1)?
+
+#### --distractors--
+
+H
+
+---
+
+He
+
+---
+
+e
+
+#### --answer--
+
+e
+
+### --question--
+
+#### --text--
+
+Which method can be used to find the position of the first occurrence of a substring in a string?
+
+#### --distractors--
+
+indexOf()
+
+---
+
+search()
+
+---
+
+find()
+
+#### --answer--
+
+indexOf()
+
+### --question--
+
+#### --text--
+
+What does the trim() method do in JavaScript?
+
+#### --distractors--
+
+It removes the first and last characters of a string.
+
+---
+
+It converts the string to uppercase.
+
+---
+
+It removes whitespace from both ends of the string.
+
+#### --answer--
+
+It removes whitespace from both ends of the string.
+
+### --question--
+
+#### --text--
+
+How do you split a string into an array of substrings in JavaScript?
+
+#### --distractors--
+
+divide()
+
+---
+
+split()
+
+---
+
+slice()
+
+#### --answer--
+
+split()
+
+### --question--
+
+#### --text--
+
+Which method can be used to replace a part of a string in JavaScript?
+
+#### --distractors--
+
+switch()
+---
+
+replace()
+
+---
+
+modify()
+
+#### --answer--
+
+replace()
+
+### --question--
+
+#### --text--
+
+What is the result of "JavaScript".slice(0,4)?
+
+#### --distractors--
+
+avaS
+
+---
+
+Java
+
+---
+
+Scri
+
+#### --answer--
+
+Java
 
 ### --question--
 
@@ -61,395 +280,175 @@ Placeholder answer
 
 #### --text--
 
-Placeholder question
+Which of the following methods converts a string into an array of characters?
 
 #### --distractors--
 
-Placeholder distractor 1
+charAt()
 
 ---
 
-Placeholder distractor 2
+split()
 
 ---
 
-Placeholder distractor 3
+join()
 
 #### --answer--
 
-Placeholder answer
+split()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you check if a string contains a specific substring in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+includes()
 
 ---
 
-Placeholder distractor 2
+find()
 
 ---
 
-Placeholder distractor 3
+indexOf()
 
 #### --answer--
 
-Placeholder answer
+includes()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does "Hello World".toUpperCase() return?
 
 #### --distractors--
 
-Placeholder distractor 1
+hello world
 
 ---
 
-Placeholder distractor 2
+HELLO world
 
 ---
 
-Placeholder distractor 3
+HELLO WORLD
 
 #### --answer--
 
-Placeholder answer
+HELLO WORLD
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you repeat a string in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+repeatString()
 
 ---
 
-Placeholder distractor 2
+repeat()
 
 ---
 
-Placeholder distractor 3
+loop()
 
 #### --answer--
 
-Placeholder answer
+repeat()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which method is used to remove the last character from a string?
 
 #### --distractors--
 
-Placeholder distractor 1
+removeLast()
 
 ---
 
-Placeholder distractor 2
+pop()
 
 ---
 
-Placeholder distractor 3
+slice()
 
 #### --answer--
 
-Placeholder answer
+slice()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you find the Unicode value of the character at a specific index in JavaScript?
 
 #### --distractors--
 
-Placeholder distractor 1
+unicodeAt()
 
 ---
 
-Placeholder distractor 2
+charCodeAt()
 
 ---
 
-Placeholder distractor 3
+getCodeAt()
 
 #### --answer--
 
-Placeholder answer
+charCodeAt()
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will "abc".concat("def") return?
 
 #### --distractors--
 
-Placeholder distractor 1
+abcdef
 
 ---
 
-Placeholder distractor 2
+abc def
 
 ---
 
-Placeholder distractor 3
+abc,def
 
 #### --answer--
 
-Placeholder answer
+abcdef
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How can you check if a string starts with a specific substring?
 
 #### --distractors--
 
-Placeholder distractor 1
+hasPrefix()
 
 ---
 
-Placeholder distractor 2
+startsWith()
 
 ---
 
-Placeholder distractor 3
+beginWith()
 
 #### --answer--
 
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
+startsWith()
 
