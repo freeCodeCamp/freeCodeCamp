@@ -28,6 +28,7 @@ import errorHandling from './plugins/error-handling';
 import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
 import shadowCapture from './plugins/shadow-capture';
+import versioner from './plugins/versioner';
 
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -138,6 +139,7 @@ export const build = async (
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
+  void fastify.register(versioner);
 
   // Routes requiring authentication:
   void fastify.register(async function (fastify, _opts) {
