@@ -324,7 +324,7 @@ What is the impact of using `bind()` on a higher-order function in JavaScript?
 
 #### --answer--
 
-`bind()` creates a new function with a specific this context, allowing the higher-order function to retain the intended context when called later.
+`bind()` creates a new function with a specific `this` context, allowing the higher-order function to retain the intended context when called later.
 
 ### --question--
 
