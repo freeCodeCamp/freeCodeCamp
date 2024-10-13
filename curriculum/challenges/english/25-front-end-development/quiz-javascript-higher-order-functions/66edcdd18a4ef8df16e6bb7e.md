@@ -462,7 +462,7 @@ To define the starting value for the accumulator.
 
 #### --text--
 
-What is the recommended practice when using the `map()` method comparing to `forEach()`?
+What is the recommended practice when using the `map()` method instead of `forEach()`?
 
 #### --distractors--
 
