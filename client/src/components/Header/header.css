@@ -1,27 +1,51 @@
+/* Variables for padding, spacing */
+:root {
+  --header-height: 60px; /* Adjust as needed */
+  --z-index-site-header: 1000;
+  --skip-button-padding-block: 1em;
+  --skip-button-padding-inline: 1.5em;
+  --skip-button-transition-time: 0.3s;
+}
+
+/* Site Header */
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: var(--z-index-site-header);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
+/* Skip to Content Button */
 .skip-to-content-button {
   position: absolute;
   top: calc(var(--header-height) + 10px);
   font-weight: 600;
-  padding-block: 1em;
-  padding-inline: 1.5em;
+  padding-block: var(--skip-button-padding-block);
+  padding-inline: var(--skip-button-padding-inline);
   left: -1000px;
+  transition: left var(--skip-button-transition-time) ease-in-out;
+  background-color: #007bff; /* Button background */
+  color: white; /* Text color */
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box; /* For consistent padding and width */
 }
 
+/* On Focus for Large Screens */
 @media screen and (min-width: 980px) {
   .skip-to-content-button:focus {
     left: 15px;
+    outline: 2px dashed #007bff; /* Visible outline for accessibility */
+    outline-offset: 5px;
   }
 }
 
+/* On Focus for Small Screens */
 @media screen and (max-width: 979px) {
   .skip-to-content-button:focus {
     left: 5px;
+    outline: 2px dashed #007bff;
+    outline-offset: 5px;
   }
 }
