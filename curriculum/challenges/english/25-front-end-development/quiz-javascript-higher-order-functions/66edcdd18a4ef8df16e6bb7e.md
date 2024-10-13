@@ -111,7 +111,7 @@ Callback not supplied, hence error
 ---
 
 ```js
-[<1 empty item> , 'a', 'b', undefined,{ '20': 5 } ]
+[<1 empty item>, 'a', 'b', undefined, { '20': 5 }]
 ```
 
 #### --answer--
