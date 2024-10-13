@@ -456,7 +456,7 @@ To specify the return type of the function.
 
 #### --answer--
 
-To define the starting point for the accumulator.
+To define the starting value for the accumulator.
 
 ### --question--
 
