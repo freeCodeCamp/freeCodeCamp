@@ -358,7 +358,7 @@ All options mentioned
 
 #### --text--
 
-what will `[2, , 2].every((x) => x === 2)` return?
+What will `[2, , 2].every((x) => x === 2)` return?
 
 #### --distractors--
 
