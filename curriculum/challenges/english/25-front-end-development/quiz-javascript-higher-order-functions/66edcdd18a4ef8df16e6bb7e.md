@@ -312,7 +312,7 @@ What is the impact of using `bind()` on a higher-order function in JavaScript?
 
 #### --distractors--
 
-`bind()` creates a new function with a specific this context, but does not change the function's parameters.
+`bind()` creates a new function with a specific `this context`, but does not change the function's parameters.
 
 ---
 
