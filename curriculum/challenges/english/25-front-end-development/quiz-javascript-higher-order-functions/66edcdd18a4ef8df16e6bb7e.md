@@ -102,7 +102,7 @@ What is the result of this code?
 
 #### --distractors--
 
-unsupported elements for an array to be sorted, hence error
+Unsupported elements for an array to be sorted, hence error
 
 ---
 
