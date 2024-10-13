@@ -94,7 +94,7 @@ const mapRes = numbers.map(num => {
 
 #### --text--
 
-Evaluate the output
+What is the result of this code?
 
 ```js
 [, undefined, 'a', 'b', { 20: 5 }].sort();
