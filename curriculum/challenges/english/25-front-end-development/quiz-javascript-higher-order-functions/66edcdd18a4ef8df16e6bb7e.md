@@ -140,7 +140,7 @@ A function that returns another function.
 
 #### --answer--
 
-A function passed as an argument to another function, to be executed later.
+A function passed as an argument to another function, to be executed by that function's logic.
 
 ### --question--
 
