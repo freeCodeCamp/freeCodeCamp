@@ -21,19 +21,19 @@ Which CSS property is used for 2D/3D transformations?
 
 #### --distractors--
 
-position
+`position`
 
 ---
 
-transition
+`transition`
 
 ---
 
-display
+`display`
 
 #### --answer--
 
-transform
+`transform`
 
 ### --question--
 
@@ -43,19 +43,19 @@ What does matrix() allow you to control?
 
 #### --distractors--
 
-Only scaling
+`Only scaling`
 
 ---
 
-Only translation
+`Only translation`
 
 ---
 
-Only rotation
+`Only rotation`
 
 #### --answer--
 
-Multiple transformations at once
+`Multiple transformations at once`
 
 ### --question--
 
@@ -65,19 +65,19 @@ Which property ensures the animation runs 3 times?
 
 #### --distractors--
 
-animation-repeat: 3
+`animation-repeat: 3`
 
 ---
 
-animation-loop: 3
+`animation-loop: 3`
 
 ---
 
-animation-delay: 3
+`animation-delay: 3`
 
 #### --answer--
 
-animation-iteration-count: 3
+`animation-iteration-count: 3`
 
 ### --question--
 
@@ -87,19 +87,19 @@ Which timing function makes the animation run with the same speed from start to 
 
 #### --distractors--
 
-ease
+`ease`
 
 ---
 
-ease-in
+`ease-in`
 
 ---
 
-cubic-bezier
+`cubic-bezier`
 
 #### --answer--
 
-linear
+`linear`
 
 ### --question--
 
@@ -109,19 +109,19 @@ What does @keyframes define?
 
 #### --distractors--
 
-CSS colors
+`CSS colors`
 
 ---
 
-CSS transitions
+`CSS transitions`
 
 ---
 
-CSS text styles
+`CSS text styles`
 
 #### --answer--
 
-CSS animation sequences
+`CSS animation sequences`
 
 ### --question--
 
@@ -131,19 +131,19 @@ What does translate() do?
 
 #### --distractors--
 
-Changes opacity
+`Changes opacity`
 
 ---
 
-Rotates the element
+`Rotates the element`
 
 ---
 
-Skews the element
+`Skews the element`
 
 #### --answer--
 
-Moves the element
+`Moves the element`
 
 ### --question--
 
@@ -153,19 +153,19 @@ What does accessibility focus on in web design?
 
 #### --distractors--
 
-Color choice
+`Color choice`
 
 ---
 
-Responsiveness
+`Responsiveness`
 
 ---
 
-Layout complexity
+`Layout complexity`
 
 #### --answer--
 
-Usability for all users
+`Usability for all users`
 
 ### --question--
 
@@ -175,19 +175,19 @@ How will this keyframe animation affect the element's color?
 
 #### --distractors--
 
-It will fade between red and blue.
+`It will fade between red and blue.`
 
 ---
 
-It will change the color instantly from red to blue.
+`It will change the color instantly from red to blue.`
 
 ---
 
-It will cycle through all colors.
+`It will cycle through all colors.`
 
 #### --answer--
 
-It will change the color instantly from red to blue.
+`It will change the color instantly from red to blue.`
 
 ### --question--
 
@@ -197,19 +197,19 @@ Which property will pause the animation?
 
 #### --distractors--
 
-animation-timing-function: paused
+`animation-timing-function: paused`
 
 ---
 
-animation-stop
+`animation-stop`
 
 ---
 
-animation-direction: paused
+`animation-direction: paused`
 
 #### --answer--
 
-animation-play-state: paused
+`animation-play-state: paused`
 
 ### --question--
 
@@ -219,30 +219,30 @@ Why is providing video captions important?
 
 #### --distractors--
 
-To improve SEO
+`To improve SEO`
 
 ---
 
-To comply with web standards
+`To comply with web standards`
 
 ---
 
-To enhance visuals
+`To enhance visuals`
 
 #### --answer--
-To provide accessibility for hearing impaired users
+`To provide accessibility for hearing impaired users`
 ### --question--
 
 #### --text--
 Which attribute is used for form field accessibility?
 #### --distractors--
-Placeholder
+`Placeholder`
 ---
-action
+`action`
 ---
-method
+`method`
 #### --answer--
-label
+`label`
 ### --question--
 
 #### --text--
@@ -251,19 +251,19 @@ Which property defines how an animation progresses over time?
 
 #### --distractors--
 
-animation-delay
+`animation-delay`
 
 ---
 
-animation-fill-mode
+`animation-fill-mode`
 
 ---
 
-animation-iteration-count
+`animation-iteration-count`
 
 #### --answer--
 
-animation-timing-function
+`animation-timing-function`
 
 ### --question--
 
@@ -273,32 +273,32 @@ What effect does step-start have on the animation?
 
 #### --distractors--
 
-Smoothly transitions between steps
+`Smoothly transitions between steps`
 
 ---
 
-Repeats the animation infinitely with no delay
+`Repeats the animation infinitely with no delay`
 
 ---
 
-Fades in and out during each step
+`Fades in and out during each step`
 
 #### --answer--
 
-Jumps immediately to the next frame
+`Jumps immediately to the next frame`
 
 ### --question--
 
 #### --text--
 What is the purpose of focus indicators?
 #### --distractors--
-To show hidden elements
+`To show hidden elements`
 ---
-To enhance font styles
+`To enhance font styles`
 ---
-To adjust the layout
+`To adjust the layout`
 #### --answer--
-To highlight focused elements
+`To highlight focused elements`
 ### --question--
 
 #### --text--
@@ -307,19 +307,19 @@ What will happen when this animation transform: translateX(200px) is applied?
 
 #### --distractors--
 
-The element will move left
+`The element will move left`
 
 ---
 
-The element will move 200px to the bottom
+`The element will move 200px to the bottom`
 
 ---
 
-The element will rotate 200 degrees
+`The element will rotate 200 degrees`
 
 #### --answer--
 
-The element will move 200px to the right
+`The element will move 200px to the right`
 
 ### --question--
 
@@ -329,19 +329,19 @@ How will the animation behave if animation-iteration-count is set to infinite?
 
 #### --distractors--
 
-The animation will run once and stop
+`The animation will run once and stop`
 
 ---
 
-The animation will pause after the first iteration
+`The animation will pause after the first iteration`
 
 ---
 
-The animation will stop after three iterations
+`The animation will stop after three iterations`
 
 #### --answer--
 
-The animation will repeat indefinitely
+`The animation will repeat indefinitely`
 
 ### --question--
 
@@ -351,19 +351,19 @@ Which keyframe selector defines the halfway point of an animation?
 
 #### --distractors--
 
-0%
+`0%`
 
 ---
 
-25%
+`25%`
 
 ---
 
-100%
+`100%`
 
 #### --answer--
 
-50%
+`50%`
 
 ### --question--
 
@@ -373,19 +373,19 @@ How do you ensure an animation starts from the middle of its defined steps?
 
 #### --distractors--
 
-Start
+`Start`
 
 ---
 
-Resume
+`Resume`
 
 ---
 
-Pause
+`Pause`
 
 #### --answer--
 
-Seek
+`Seek`
 
 ### --question--
 
@@ -395,19 +395,19 @@ What is the effect of using the ease-in-out timing function?
 
 #### --distractors--
 
-The animation will start fast and end slow
+`The animation will start fast and end slow`
 
 ---
 
-The animation will run at a constant speed
+`The animation will run at a constant speed`
 
 ---
 
-The animation will loop infinitely
+`The animation will loop infinitely`
 
 #### --answer--
 
-The animation will start slow, speed up, then slow down
+`The animation will start slow, speed up, then slow down`
 
 ### --question--
 
@@ -417,16 +417,16 @@ Which property prevents the animation from running immediately?
 
 #### --distractors--
 
-animation-fill-mode
+`animation-fill-mode`
 
 ---
 
-animation-timing-function
+`animation-timing-function`
 
 ---
 
-animation-iteration-count
+`animation-iteration-count`
 
 #### --answer--
 
-animation-delay
+`animation-delay`
