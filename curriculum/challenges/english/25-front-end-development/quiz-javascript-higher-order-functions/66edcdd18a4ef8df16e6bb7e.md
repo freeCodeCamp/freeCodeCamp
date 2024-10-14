@@ -258,7 +258,7 @@ An array.
 
 #### --answer--
 
-The same object or another object that has more methods.
+The same object (`this`) or another object that has more methods.
 
 ### --question--
 
