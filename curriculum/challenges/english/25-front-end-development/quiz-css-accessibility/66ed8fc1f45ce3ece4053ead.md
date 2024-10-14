@@ -83,23 +83,23 @@ Chrome DevTools
 
 #### --text--
 
-Which attribute specifies a fallback for audio or video elements?
+Which property is essential for setting custom fonts in CSS?
 
 #### --distractors--
 
-src
+font-weight
 
 ---
 
-controls
+text-align
 
 ---
 
-alt
+text-transform
 
 #### --answer--
 
-poster
+font-family
 
 ### --question--
 
@@ -180,7 +180,6 @@ A browser for disabled users
 ---
 
 A CSS tool
-
 
 ---
 
@@ -326,44 +325,45 @@ Creating responsive layouts
 
 #### --text--
 
-Which tool allows you to test CSS live on a website?
+Which attribute helps improve accessibility for links?
 
 #### --distractors--
 
-CodePen
+href
 
 ---
 
-JSFiddle
+target
 
 ---
 
-Live CSS Editor
+class
 
 #### --answer--
 
-All of the above
+title
 
 ### --question--
 
 #### --text--
 
-Which attribute is essential for accessible images?
+What does CSS stand for?
 
 #### --distractors--
 
-src
+Creative Style Sheets
 
 ---
 
-title
+Colorful Style Sheets
 
 ---
-width
+
+Computer Style Sheets
 
 #### --answer--
 
-alt
+Cascading Style Sheets
 
 ### --question--
 
@@ -385,7 +385,7 @@ What is the minimum contrast ratio for graphics?
 
 #### --answer--
 
-7:1
+3:1
 
 ### --question--
 
@@ -451,5 +451,5 @@ Padding of an element
 
 #### --answer--
 
-Focus ring around an element
+Focus indicator around an element
 
