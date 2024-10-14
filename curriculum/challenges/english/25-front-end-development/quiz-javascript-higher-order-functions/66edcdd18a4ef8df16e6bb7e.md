@@ -184,7 +184,7 @@ It sorts the array in reverse order.
 
 #### --answer--
 
-It sorts the array as strings based on UTF-16 code units but moves empty slots to the end of the array and object references converts to "[object Object]"
+It sorts the array as strings based on UTF-16 code units but moves empty slots to the end of the array and object references converts to `"[object Object]"`.
 
 ### --question--
 
