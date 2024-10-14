@@ -325,23 +325,23 @@ Creating responsive layouts
 
 #### --text--
 
-Which attribute helps improve accessibility for links?
+Which of the following is a CSS Grid property?
 
 #### --distractors--
 
-href
+flex-direction
 
 ---
 
-target
+float
 
 ---
 
-class
+position
 
 #### --answer--
 
-title
+grid-area
 
 ### --question--
 
