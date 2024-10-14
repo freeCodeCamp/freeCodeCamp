@@ -172,7 +172,7 @@ How does the `sort()` method behave if no comparison function is provided?
 
 #### --distractors--
 
-It sorts the array as strings based on UTF-16 code units but takes undefined, empty slots and object references the start
+It sorts the array as strings based on UTF-16 code units but takes undefined, empty slots and object references the beginning of the array
 
 ---
 
