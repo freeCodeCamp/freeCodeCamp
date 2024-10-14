@@ -9,6 +9,11 @@ import { createSelector } from 'reselect';
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
 import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
+
+import jpSansBoldURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Bold.woff';
+import jpSansLightURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Light.woff';
+import jpSansRegularURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Regular.woff';
+
 import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
 import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
 import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
@@ -165,6 +170,12 @@ function DefaultLayout({
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
+  const lightFontUrl =
+    navigator.language == 'jp' ? jpSansLightURL : latoLightURL;
+  const regularFontUrl =
+    navigator.language == 'jp' ? jpSansRegularURL : latoRegularURL;
+  const boldFontUrl = navigator.language == 'jp' ? jpSansBoldURL : latoBoldURL;
+
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -189,21 +200,21 @@ function DefaultLayout({
           <link
             as='font'
             crossOrigin='anonymous'
-            href={latoRegularURL}
+            href={regularFontUrl}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={latoLightURL}
+            href={lightFontUrl}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={latoBoldURL}
+            href={boldFontUrl}
             rel='preload'
             type='font/woff'
           />
