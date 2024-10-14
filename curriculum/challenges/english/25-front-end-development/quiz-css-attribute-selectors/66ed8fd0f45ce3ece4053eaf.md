@@ -115,7 +115,7 @@ Which selector will target all elements with a `lang` attribute starting with "`
 
 #### --text--
 
-How would you style `<a>` elements where the title attribute starts with `"Read"`?
+How would you style `<a>` elements where the `title` attribute starts with `"Read"`?
 
 #### --distractors--
 
