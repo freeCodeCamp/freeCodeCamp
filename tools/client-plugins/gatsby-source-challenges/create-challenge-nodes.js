@@ -24,7 +24,7 @@ function createChallengeNode(
   ) {
     reporter.warn(`
 
-    ${challenge.title} has a description that will break things!
+    ${challenge.block} ${challenge.title} has a description that will break things!
 
     `);
   }
