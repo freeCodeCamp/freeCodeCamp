@@ -257,7 +257,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
           this.props.startExam();
 
           window.addEventListener('beforeunload', this.stopWindowClose);
-          window.addEventListener('unload', this.stopWindowClose);
           window.addEventListener('popstate', this.stopBrowserBack);
         }
       );
@@ -298,7 +297,6 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     });
 
     window.removeEventListener('beforeunload', this.stopWindowClose);
-    window.removeEventListener('unload', this.stopWindowClose);
     window.removeEventListener('popstate', this.stopBrowserBack);
 
     this.props.clearExamResults();
