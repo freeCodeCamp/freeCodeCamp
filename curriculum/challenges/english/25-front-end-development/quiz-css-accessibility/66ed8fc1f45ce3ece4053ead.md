@@ -17,23 +17,23 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-What is a common method for hiding content in HTML?
+Which property changes the background color in CSS?
 
 #### --distractors--
 
-display: none;
+bg-color
 
 ---
 
-visibility: hidden;
+color-bg
 
 ---
 
-opacity: 0;
+fill-color
 
 #### --answer--
 
-All of the above
+background-color
 
 ### --question--
 
@@ -79,7 +79,7 @@ Notepad
 
 Chrome DevTools
 
-### --question--
+### --question--                        
 
 #### --text--
 
@@ -149,29 +149,29 @@ Contrast Checker
 
 #### --text--
 
-Which CSS property hides an element from visual rendering?
+What is the purpose of the alt attribute in images?
 
 #### --distractors--
 
-visibility
+To change image size
 
 ---
 
-position
+To add a title
 
 ---
 
-float
+To change image color
 
 #### --answer--
 
-display
+To provide a text alternative
 
 ### --question--
 
 #### --text--
 
-What is a recommended contrast ratio for accessible text?
+What is the minimum required contrast ratio for accessible text?
 
 #### --distractors--
 
@@ -192,6 +192,7 @@ What is a recommended contrast ratio for accessible text?
 ### --question--
 
 #### --text--
+
 What does the 'Inspect Element' feature do?
 
 #### --distractors--
@@ -213,23 +214,24 @@ Displays CSS and HTML
 ### --question--
 
 #### --text--
-Which method keeps content in the document but hidden visually?
+
+Which CSS property controls text size?
 
 #### --distractors--
 
-display: none;
+text-size
 
 ---
 
-position: absolute;
+size-font
 
 ---
 
-opacity: 0;
+text-style
 
 #### --answer--
 
-visibility: hidden;
+font-size
 
 ### --question--
 
@@ -295,29 +297,29 @@ To increase visibility
 
 #### --answer--
 
-To hide from screen readers
+To hide content from screen readers
 
 ### --question--
 
 #### --text--
 
-Which color is considered low contrast with white?
+What is the flex property used for?
 
 #### --distractors--
 
-Black
+Changing text color
 
 ---
 
-Dark Blue
+Adjusting font size
 
 ---
 
-Dark Green
+Adding animations
 
 #### --answer--
 
-Light Gray
+Creating responsive layouts
 
 ### --question--
 
@@ -334,6 +336,7 @@ CodePen
 JSFiddle
 
 ---
+
 Live CSS Editor
 
 #### --answer--
@@ -344,28 +347,28 @@ All of the above
 
 #### --text--
 
-Which CSS property makes an element invisible but still takes up space?
+Which attribute is essential for accessible images?
 
 #### --distractors--
 
-display: none;
+src
 
 ---
 
-z-index: -1;
+title
 
 ---
-opacity: 0;
+width
 
 #### --answer--
 
-visibility: hidden;
+alt
 
 ### --question--
 
 #### --text--
 
-What is the ideal contrast ratio for graphics?
+What is the minimum contrast ratio for graphics?
 
 #### --distractors--
 
@@ -390,6 +393,7 @@ What is the ideal contrast ratio for graphics?
 Which feature of Chrome helps in accessibility audits?
 
 #### --distractors--
+
 DevTools
 
 ---
@@ -408,43 +412,43 @@ Lighthouse
 
 #### --text--
 
-What is a reason to hide content on a webpage?
+Which property aligns text in CSS?
 
 #### --distractors--
 
-To improve SEO
+align-text
 
 ---
 
-For user experience
+justify-text
 
 ---
 
-To save bandwidth
+text-position
 
 #### --answer--
 
-All of the above
+text-align
 
 ### --question--
 
 #### --text--
 
-Which color combination is generally recommended for accessibility?
+What does the outline property affect?
 
 #### --distractors--
 
-Yellow on White
+Border of an element
 
 ---
 
-Green on Red
+Margin of an element
 
 ---
 
-Blue on Yellow
+Padding of an element
 
 #### --answer--
 
-Black on White  
+Focus ring around an element
 
