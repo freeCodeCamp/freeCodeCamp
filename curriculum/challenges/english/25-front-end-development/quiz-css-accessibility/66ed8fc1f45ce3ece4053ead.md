@@ -391,23 +391,23 @@ What is the minimum contrast ratio for graphics?
 
 #### --text--
 
-Which feature of Chrome helps in accessibility audits?
+Which property helps with responsive design?
 
 #### --distractors--
 
-DevTools
+position
 
 ---
 
-Extensions
+width
 
 ---
 
-Bookmark Manager
+overflow 
 
 #### --answer--
 
-Lighthouse
+max-width
 
 ### --question--
 
