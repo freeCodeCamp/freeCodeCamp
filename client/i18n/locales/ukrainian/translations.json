@@ -52,6 +52,8 @@
     "create-post": "Попросити допомоги на форумі",
     "cancel": "Скасувати",
     "reset-lesson": "Скинути цей урок",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Запустити",
     "run-test": "Запустити тест (Ctrl + Enter)",
     "check-code": "Перевірити код",
@@ -388,7 +390,7 @@
     "assignment-not-complete": "Будь ласка, завершіть завдання",
     "assignments": "Завдання",
     "question": "Запитання",
-    "explanation": "Explanation",
+    "explanation": "Пояснення",
     "solution-link": "Посилання на розв’язок",
     "source-code-link": "Посилання на вихідний код",
     "ms-link": "Посилання Microsoft",
@@ -420,6 +422,7 @@
     "reset": "Скинути цей урок?",
     "reset-warn": "Ви впевнені, що хочете скинути цей урок? Редактори та тести будуть скинуті.",
     "reset-warn-2": "Цю дію неможливо скасувати.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Порада: якщо мінібраузер закриває код, то натисніть та перетягніть його у сторону. Також не соромтеся зупинятися та редагувати код у відео у будь-який час.",
     "chal-preview": "Попередній перегляд завдання",
     "donation-record-not-found": "Запис про ваш донат не знайдено.",
@@ -694,8 +697,8 @@
   "search": {
     "label": "Пошук",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Шукати серед публікацій",
+      "numbered": "Шукати серед {{ roundedTotalRecords }}+ публікацій"
     },
     "see-results": "Переглянути всі результати для {{searchQuery}}",
     "no-tutorials": "Не знайдено жодного уроку",

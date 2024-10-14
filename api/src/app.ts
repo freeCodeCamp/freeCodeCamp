@@ -25,8 +25,10 @@ import security from './plugins/security';
 import auth from './plugins/auth';
 import bouncer from './plugins/bouncer';
 import errorHandling from './plugins/error-handling';
-import csrf, { CSRF_COOKIE, CSRF_HEADER } from './plugins/csrf';
+import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
+import shadowCapture from './plugins/shadow-capture';
+
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
 
@@ -35,6 +37,7 @@ import {
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
+  FCC_ENABLE_SHADOW_CAPTURE,
   FREECODECAMP_NODE_ENV
 } from './utils/env';
 import { isObjectID } from './utils/validation';
@@ -115,16 +118,20 @@ export const build = async (
         requestInterceptor: req => {
           const csrfTokenCookie = document.cookie
             .split(';')
-            .find(str => str.includes(CSRF_COOKIE));
+            .find(str => str.includes('csrf_token'));
           const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (csrfToken) req.headers[CSRF_HEADER] = csrfToken.trim();
+          if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
           return req;
         }
       }
     });
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
+  }
+
+  if (FCC_ENABLE_SHADOW_CAPTURE) {
+    void fastify.register(shadowCapture);
   }
 
   void fastify.register(auth);

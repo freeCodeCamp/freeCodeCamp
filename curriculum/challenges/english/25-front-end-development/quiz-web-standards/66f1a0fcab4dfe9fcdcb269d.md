@@ -17,439 +17,439 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+Which protocol is responsible for domain name resolution?
 
 #### --distractors--
 
-Placeholder distractor 1
+HTTP
 
 ---
 
-Placeholder distractor 2
+FTP
 
 ---
 
-Placeholder distractor 3
+SMTP
 
 #### --answer--
 
-Placeholder answer
+DNS
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the 404 HTTP response code indicate?
 
 #### --distractors--
 
-Placeholder distractor 1
+Server error
 
 ---
 
-Placeholder distractor 2
+Unauthorized access
 
 ---
 
-Placeholder distractor 3
+Redirect
 
 #### --answer--
 
-Placeholder answer
+Resource not found
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the full form of TCP in TCP/IP?
 
 #### --distractors--
 
-Placeholder distractor 1
+Transfer Control Protocol
 
 ---
 
-Placeholder distractor 2
+Transmission Connection Protocol
 
 ---
 
-Placeholder distractor 3
+Transfer Connection Protocol
 
 #### --answer--
 
-Placeholder answer
+Transmission Control Protocol
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is a static file type?
 
 #### --distractors--
 
-Placeholder distractor 1
+ASP.NET
 
 ---
 
-Placeholder distractor 2
+Node.js
 
 ---
 
-Placeholder distractor 3
+PHP
 
 #### --answer--
 
-Placeholder answer
+HTML
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which response code class represents a successful operation?
 
 #### --distractors--
 
-Placeholder distractor 1
+1xx
 
 ---
 
-Placeholder distractor 2
+3xx
 
 ---
 
-Placeholder distractor 3
+4xx
 
 #### --answer--
 
-Placeholder answer
+2xx
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which part of a URL is 'freecodecamp.org' in 'https://www.freecodecamp.org'?
 
 #### --distractors--
 
-Placeholder distractor 1
+Protocol
 
 ---
 
-Placeholder distractor 2
+Subdomain
 
 ---
 
-Placeholder distractor 3
+TLD
 
 #### --answer--
 
-Placeholder answer
+Domain
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the main function of the HTTP protocol?
 
 #### --distractors--
 
-Placeholder distractor 1
+Send emails
 
 ---
 
-Placeholder distractor 2
+Resolve IP addresses
 
 ---
 
-Placeholder distractor 3
+Stream media
 
 #### --answer--
 
-Placeholder answer
+Transfer hypertext documents between clients and servers
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does W3C stand for?
 
 #### --distractors--
 
-Placeholder distractor 1
+World Web Communication
 
 ---
 
-Placeholder distractor 2
+Web Creation Committee
 
 ---
 
-Placeholder distractor 3
+Web Coding Center
 
 #### --answer--
 
-Placeholder answer
+World Wide Web Consortium
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does a web hosting service provide?
 
 #### --distractors--
 
-Placeholder distractor 1
+Domain name registration
 
 ---
 
-Placeholder distractor 2
+DNS management
 
 ---
 
-Placeholder distractor 3
+Browser rendering
 
 #### --answer--
 
-Placeholder answer
+Server space for storing web files
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the 301 HTTP response code indicate?
 
 #### --distractors--
 
-Placeholder distractor 1
+Temporary redirect
 
 ---
 
-Placeholder distractor 2
+Unauthorized
 
 ---
 
-Placeholder distractor 3
+Bad request
 
 #### --answer--
 
-Placeholder answer
+Permanent redirect
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the purpose of a domain registrar?
 
 #### --distractors--
 
-Placeholder distractor 1
+Store web content
 
 ---
 
-Placeholder distractor 2
+Manage DNS records
 
 ---
 
-Placeholder distractor 3
+Allocate IP addresses
 
 #### --answer--
 
-Placeholder answer
+Register domain names
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following standards bodies is primarily focused on the development of HTML?
 
 #### --distractors--
 
-Placeholder distractor 1
+W3C
 
 ---
 
-Placeholder distractor 2
+IETF
 
 ---
 
-Placeholder distractor 3
+IEEE
 
 #### --answer--
 
-Placeholder answer
+WHATWG
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What are the key aspect that differentiates the POST method from GET in terms of form submissions?
 
 #### --distractors--
 
-Placeholder distractor 1
+GET requests are more secure than POST
 
 ---
 
-Placeholder distractor 2
+POST includes data in the URL, while GET sends data in the body
 
 ---
 
-Placeholder distractor 3
+POST is idempotent, whereas GET is not
 
 #### --answer--
 
-Placeholder answer
+GET is limited by URL length, while POST is not
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the TCP three-way handshake process achieve in web communication?
 
 #### --distractors--
 
-Placeholder distractor 1
+Establishes a secure communication channel
 
 ---
 
-Placeholder distractor 2
+Initiates and terminates an HTTP request
 
 ---
 
-Placeholder distractor 3
+Encodes the IP address for DNS resolution
 
 #### --answer--
 
-Placeholder answer
+Confirms the connection between client and server for reliable data transfer
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the one disadvantage of using dynamic content over static content on a website?
 
 #### --distractors--
 
-Placeholder distractor 1
+Dynamic content loads faster than static content
 
 ---
 
-Placeholder distractor 2
+Static content cannot be updated without modifying server-side code
 
 ---
 
-Placeholder distractor 3
+Dynamic content does not require server-side languages
 
 #### --answer--
 
-Placeholder answer
+Dynamic content is difficult to cache effectively
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is a key principle of web standards?
 
 #### --distractors--
 
-Placeholder distractor 1
+Platform dependency
 
 ---
 
-Placeholder distractor 2
+High vendor lock-in
 
 ---
 
-Placeholder distractor 3
+Proprietary formats
 
 #### --answer--
 
-Placeholder answer
+Backward compatibility
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is not a type of asset returned in an HTTP response?
 
 #### --distractors--
 
-Placeholder distractor 1
+HTML file
 
 ---
 
-Placeholder distractor 2
+CSS file
 
 ---
 
-Placeholder distractor 3
+JavaScript file
 
 #### --answer--
 
-Placeholder answer
+SSH key
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the primary advantage of dynamic files over static files?
 
 #### --distractors--
 
-Placeholder distractor 1
+Faster load times
 
 ---
 
-Placeholder distractor 2
+No server-side processing required
 
 ---
 
-Placeholder distractor 3
+More cacheable by browsers
 
 #### --answer--
 
-Placeholder answer
+Ability to generate content based on user input
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the main benefit of following web standards during development?
 
 #### --distractors--
 
-Placeholder distractor 1
+Higher performance on proprietary browsers
 
 ---
 
-Placeholder distractor 2
+Allows for vendor-specific features
 
 ---
 
-Placeholder distractor 3
+Excludes older devices from support
 
 #### --answer--
 
-Placeholder answer
+Ensures cross-browser compatibility
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which phase of the web standards lifecycle comes after 'Working Draft'?
 
 #### --distractors--
 
-Placeholder distractor 1
+Public implementation
 
 ---
 
-Placeholder distractor 2
+Editor’s Draft
 
 ---
 
-Placeholder distractor 3
+Final Recommendation
 
 #### --answer--
 
-Placeholder answer
+Candidate Recommendation
 
