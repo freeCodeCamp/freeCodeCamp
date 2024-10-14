@@ -39,23 +39,23 @@ background-color
 
 #### --text--
 
-What is the minimum contrast ratio for normal text according to WCAG?
+Which CSS property controls the width of an element?
 
 #### --distractors--
 
-2:1
+size
 
 ---
 
-3:1
+dimension
 
 ---
 
-5:1
+area
 
 #### --answer--
 
-4.5:1
+width
 
 ### --question--
 
@@ -83,23 +83,23 @@ Chrome DevTools
 
 #### --text--
 
-Which attribute is used to hide content from screen readers?
+Which attribute specifies a fallback for audio or video elements?
 
 #### --distractors--
 
-hidden
+src
 
 ---
 
-display: none;
+controls
 
 ---
 
-visibility: hidden;
+alt
 
 #### --answer--
 
-aria-hidden
+poster
 
 ### --question--
 
@@ -171,23 +171,24 @@ To provide a text alternative
 
 #### --text--
 
-What is the minimum required contrast ratio for accessible text?
+What is a screen reader?
 
 #### --distractors--
 
-1.5:1
+A browser for disabled users
 
 ---
 
-7:1
+A CSS tool
+
 
 ---
 
-3:1
+A web development library
 
 #### --answer--
 
-4.5:1
+A text-to-speech software
 
 ### --question--
 
@@ -237,23 +238,23 @@ font-size
 
 #### --text--
 
-What is a tool for testing color combinations?
+What does the opacity property do in CSS?
 
 #### --distractors--
 
-WordPress
+Changes text size
 
 ---
 
-Sketch
+Adds a border
 
 ---
 
-Excel
+Sets the element's position
 
 #### --answer--
 
-Paletton
+Controls element transparency
 
 ### --question--
 
