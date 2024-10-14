@@ -318,7 +318,7 @@ button[data-tooltip$="off"] { text-decoration: underline dotted; }
 #### --answer--
 
 ```css
-button:not([data-tooltip="off"]) { text-decoration: underline dotted; }
+button[data-tooltip]:not([data-tooltip="off"]) { text-decoration: underline dotted; }
 ```
 
 ### --question--
