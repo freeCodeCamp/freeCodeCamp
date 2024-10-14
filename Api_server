@@ -1,0 +1,28 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+# Home route
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the FastAPI server!"}
+
+# Sample API route
+@app.get("/api/data")
+def get_data():
+    return {"message": "This is the data", "status": "success"}
+
+# Define a data model for POST request
+class AddRequest(BaseModel):
+    num1: int
+    num2: int
+
+# API route with parameters
+@app.post("/api/add")
+def add(request: AddRequest):
+    result = request.num1 + request.num2
+    return {"result": result}
+
+# Run the FastAPI server with Uvicorn
+# Run in terminal: uvicorn filename:app --reload
