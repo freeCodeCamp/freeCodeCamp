@@ -113,7 +113,7 @@ What is the ideal contrast ratio for large text?
 
 ---
 
-4.5:1
+4.5:2
 
 ---
 
