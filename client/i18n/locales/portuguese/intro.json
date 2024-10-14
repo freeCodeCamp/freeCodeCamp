@@ -1988,9 +1988,11 @@
         "title": "59",
         "intro": []
       },
-      "sdym": {
-        "title": "60",
-        "intro": []
+      "lab-job-application-form": {
+        "title": "Crie um formulário de candidatura para vagas de trabalho",
+        "intro": [
+          "Neste laboratório, você criará um formulário para que os usuário se candidatem a vagas de trabalho e o estilizará usando pseudoclasses."
+        ]
       },
       "ivpx": {
         "title": "61",

@@ -1962,9 +1962,11 @@
         "title": "59",
         "intro": []
       },
-      "sdym": {
-        "title": "60",
-        "intro": []
+      "lab-job-application-form": {
+        "title": "Створіть форму на працевлаштування",
+        "intro": [
+          "У цій лабораторній роботі ви створите форму із заявкою на працевлаштування та стилізуєте її, використовуючи псевдокласи."
+        ]
       },
       "ivpx": {
         "title": "61",
@@ -2282,9 +2284,9 @@
         ]
       },
       "lab-javascript-trivia-bot": {
-        "title": "Build a JavaScript Trivia Bot",
+        "title": "Створіть бот з вікториною на JavaScript",
         "intro": [
-          "In this lab, you will practice working with JavaScript variables and strings by building a trivia bot."
+          "У цій лабораторній роботі ви попрактикуєтесь працювати зі змінними та рядками JavaScript, створивши бот з вікториною."
         ]
       },
       "dthi": {
@@ -2329,9 +2331,9 @@
         "intro": []
       },
       "workshop-mathbot": {
-        "title": "Build a Mathbot",
+        "title": "Створіть математичний бот",
         "intro": [
-          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+          "У цьому практичному занятті ви пригадаєте, як працювати з різними методами математичних об’єктів, створивши математичний бот."
         ]
       },
       "lab-fortune-teller": {
@@ -2451,8 +2453,8 @@
         "intro": []
       },
       "lab-quiz-game": {
-        "title": "Build a Quiz Game",
-        "intro": ["For this lab, you will build a quiz game."]
+        "title": "Створіть ігрову вікторину",
+        "intro": ["У цій лабораторній роботі ви створите ігрову вікторину."]
       },
       "lab-factorial-calculator": {
         "title": "Створіть калькулятор факторіалів ",
@@ -2609,9 +2611,9 @@
         ]
       },
       "lab-football-team-cards": {
-        "title": "Build a Set of Football Team Cards",
+        "title": "Створіть набір карток футбольних команд",
         "intro": [
-          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+          "Один із загальних аспектів створення вебзастосунків — обробка наборів даних та виведення інформації на екран. У цьому проєкті ви дізнаєтесь, як працювати з маніпулюванням DOM, деструктуризацією об’єктів, обробкою подій та фільтрацією даних, створивши набір карток футбольних команд."
         ]
       },
       "iejn": {
@@ -2653,8 +2655,10 @@
         "intro": []
       },
       "lab-regex-sandbox": {
-        "title": "Build a RegEx Sandbox",
-        "intro": ["In this lab you will build a regex sandbox."]
+        "title": "Створіть пісочницю для регулярних виразів",
+        "intro": [
+          "У цій лабораторній роботі ви створите пісочницю для регулярних виразів."
+        ]
       },
       "svsl": {
         "title": "211",
@@ -2693,9 +2697,9 @@
         "intro": []
       },
       "lab-date-conversion": {
-        "title": "Build a Date Conversion Program",
+        "title": "Створіть програму для перетворення дати",
         "intro": [
-          "In this lab, you will build a program to convert a date from one format to another."
+          "У цій лабораторній роботі ви створите програму, яка перетворюватиме дату з одного формату в інший."
         ]
       },
       "xtfk": {
@@ -2735,8 +2739,8 @@
         "intro": []
       },
       "lab-bookmark-manager-app": {
-        "title": "Build a Bookmark Manager App",
-        "intro": ["For this lab, you will build a bookmark manager app."]
+        "title": "Створіть менеджера закладок",
+        "intro": ["У цій лабораторній роботі ви створите менеджера закладок."]
       },
       "fgbp": {
         "title": "230",
@@ -2917,9 +2921,9 @@
         "intro": []
       },
       "lab-depth-first-search": {
-        "title": "Implement the Depth-First Search Algorithm",
+        "title": "Імплементуйте алгоритм пошуку в глибину",
         "intro": [
-          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+          "У цій лабораторній роботі ви будете використовувати JavaScript, щоб імплементувати алгоритм пошуку в глибину."
         ]
       },
       "xdyh": {
@@ -3271,9 +3275,9 @@
         ]
       },
       "lab-salon-appointment-scheduler": {
-        "title": "Build a Salon Appointment Scheduler",
+        "title": "Створіть планувальник записів у салоні",
         "intro": [
-          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+          "У цій лабораторній роботі ви створите інтерактивну програму Bash, яка використовує PostgreSQL, щоб відстежувати клієнтів і записи в салоні."
         ]
       },
       "udfh": {
@@ -3308,7 +3312,7 @@
         "intro": []
       },
       "workshop-sql-reference-object": {
-        "title": "Build an SQL Reference Object",
+        "title": "Створіть референсний об’єкт SQL",
         "intro": [
           "Git — це система контролю версій, яка відстежує усі зміни, внесені вами до кодової бази.",
           "У цьому практичному завданні з 240 уроків ви вивчите, як Git відстежує код, створивши об’єкт, що містить часто використовувані команди SQL."
@@ -3321,9 +3325,9 @@
         ]
       },
       "lab-number-guessing-game": {
-        "title": "Build a Number Guessing Game",
+        "title": "Створіть гру «Вгадай число»",
         "intro": [
-          "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+          "У цій лабораторній роботі ви використовуватимете сценарії Bash, PostgreSQL та Git, щоб створити гру з вгадуванням чисел, яка працює в терміналі та зберігає інформацію користувача."
         ]
       },
       "nfoc": {
@@ -3359,10 +3363,10 @@
         "intro": []
       },
       "workshop-npm-packages": {
-        "title": "Managing Packages with npm",
+        "title": "Керування пакетами з npm",
         "intro": [
-          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
-          "In this workshop, you'll learn the basics of using npm, including how to work with the <code>package.json</code> file and how to manage your installed dependencies."
+          "npm (Node Package Manager) — це інструмент командного рядка для встановлення, створення та поширення пакетів коду JavaScript, написаного для Node.js. На npm знаходиться багато пакетів з відкритим вихідним кодом, тому спершу ретельно їх дослідіть, щоб вам не довелося виправляти помилки під час роботи з даними чи отримання даних з API.",
+          "У цьому практичному занятті ви вивчите основи використання npm, включно з тим, як працювати з файлом <code>package.json</code> та як керувати встановленими залежностями."
         ]
       },
       "hjku": {
@@ -3370,35 +3374,41 @@
         "intro": []
       },
       "workshop-node-and-express": {
-        "title": "Basic Node and Express",
+        "title": "Основи Node та Express",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
-          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
-          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+          "Node.js — це середовище виконання JavaScript, що дозволяє розробникам писати back end (серверні) програми в JavaScript. Node.js має кілька вбудованих модулів (маленьких незалежних програм), які допомагають з цим. Деякі з основних модулів містять HTTP, який працює на зразок сервера, і файлову систему (модуль для читання і редагування файлів).",
+          "У попередніх курсах ви навчилися встановлювати та керувати пакетами npm, які є скупченнями менших модулів. Ці пакети можуть допомогти зі створенням більших і складніших застосунків.",
+          "Express — це спрощений фреймворк вебзастосунків та один з найбільш популярних пакетів на npm. Express значно полегшує створення сервера та керування маршрутизацією застосунку, що відповідає за перенаправлення людей до потрібної сторінки, коли вони відвідують певну кінцеву точку (наприклад, <pre>/blog</pre>).",
+          "У цьому курсі ви дізнаєтесь основи Node та Express, включно з тим, як створювати сервер, обслуговувати різні файли та обробляти різні запити з браузера."
         ]
       },
       "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": ["In this lab you will build a timestamp microservice"]
+        "title": "Створіть мікросервіс часової мітки",
+        "intro": [
+          "У цій лабораторній роботі ви створите мікросервіс часової мітки."
+        ]
       },
       "lab-request-header-parser-microservice": {
-        "title": "Build a Request Header Parser Microservice",
+        "title": "Створіть мікросервіс парсингу заголовків запиту",
         "intro": [
-          "In this lab, you will build a request header parser microservice"
+          "У цій лабораторній роботі ви створите мікросервіс парсингу заголовків запиту."
         ]
       },
       "lab-url-shortener-microservice": {
-        "title": "Build a URL Shortener Microservice",
-        "intro": ["In this lab, you will build a URL Shortener Microservice"]
+        "title": "Створіть мікросервіс скорочення посилань",
+        "intro": [
+          "У цій лабораторній роботі ви створите мікросервіс скорочення посилань."
+        ]
       },
       "lab-exercise-tracker": {
         "title": "Створіть трекер вправ",
         "intro": ["У цій лабораторній роботі ви створите трекер вправ."]
       },
       "lab-file-metadata-microservice": {
-        "title": "Build a File Metadata Microservice",
-        "intro": ["For this lab you will build a file metadata microservice"]
+        "title": "Створіть мікросервіс метаданих файлу",
+        "intro": [
+          "У цій лабораторній роботі ви створите мікросервіс метаданих файлу."
+        ]
       },
       "kegi": {
         "title": "377",
@@ -3425,10 +3435,8 @@
         "intro": []
       },
       "quiz-tooling-and-deployment": {
-        "title": "Tooling and Deployment Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of tooling and deployment"
-        ]
+        "title": "Тест «Інструменти та розгортання»",
+        "intro": ["Перевірте, що ви дізнались про інструменти та розгортання."]
       },
       "nkjt": {
         "title": "384",
