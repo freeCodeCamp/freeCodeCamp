@@ -162,7 +162,7 @@ An Array of booleans
 
 #### --answer--
 
-A single accumulated value derived from all elements in the array.
+It varies depending on the accumulator's initial value and the callback function.
 
 ### --question--
 
