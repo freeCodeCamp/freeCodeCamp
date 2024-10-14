@@ -21,19 +21,19 @@ Which property changes the background color in CSS?
 
 #### --distractors--
 
-bg-color
+`bg-color`
 
 ---
 
-color-bg
+`color-bg`
 
 ---
 
-fill-color
+`fill-color`
 
 #### --answer--
 
-background-color
+`background-color`
 
 ### --question--
 
@@ -43,19 +43,19 @@ Which CSS property controls the width of an element?
 
 #### --distractors--
 
-size
+`size`
 
 ---
 
-dimension
+`dimension`
 
 ---
 
-area
+`area`
 
 #### --answer--
 
-width
+`width`
 
 ### --question--
 
@@ -87,19 +87,19 @@ Which property is essential for setting custom fonts in CSS?
 
 #### --distractors--
 
-font-weight
+`font-weight`
 
 ---
 
-text-align
+`text-align`
 
 ---
 
-text-transform
+`text-transform`
 
 #### --answer--
 
-font-family
+`font-family`
 
 ### --question--
 
@@ -149,7 +149,7 @@ Contrast Checker
 
 #### --text--
 
-What is the purpose of the alt attribute in images?
+What is the purpose of the `alt` attribute in images?
 
 #### --distractors--
 
@@ -219,25 +219,25 @@ Which CSS property controls text size?
 
 #### --distractors--
 
-text-size
+`text-size`
 
 ---
 
-size-font
+`size-font`
 
 ---
 
-text-style
+`text-style`
 
 #### --answer--
 
-font-size
+`font-size`
 
 ### --question--
 
 #### --text--
 
-What does the opacity property do in CSS?
+What does the `opacity` property do in CSS?
 
 #### --distractors--
 
@@ -281,7 +281,7 @@ Firefox
 
 #### --text--
 
-What is a common use for aria-hidden="true"?
+What is a common use for `aria-hidden="true"`?
 
 #### --distractors--
 
@@ -303,7 +303,7 @@ To hide content from screen readers
 
 #### --text--
 
-What is the flex property used for?
+What is the `flex` property used for?
 
 #### --distractors--
 
@@ -329,19 +329,19 @@ Which of the following is a CSS Grid property?
 
 #### --distractors--
 
-flex-direction
+`flex-direction`
 
 ---
 
-float
+`float`
 
 ---
 
-position
+`position`
 
 #### --answer--
 
-grid-area
+`grid-area`
 
 ### --question--
 
@@ -395,19 +395,19 @@ Which property helps with responsive design?
 
 #### --distractors--
 
-position
+`position`
 
 ---
 
-width
+`width`
 
 ---
 
-overflow 
+`overflow`
 
 #### --answer--
 
-max-width
+`max-width`
 
 ### --question--
 
@@ -417,25 +417,25 @@ Which property aligns text in CSS?
 
 #### --distractors--
 
-align-text
+`align-text`
 
 ---
 
-justify-text
+`justify-text`
 
 ---
 
-text-position
+`text-position`
 
 #### --answer--
 
-text-align
+`text-align`
 
 ### --question--
 
 #### --text--
 
-What does the outline property affect?
+What does the `outline` property affect?
 
 #### --distractors--
 
