@@ -171,10 +171,10 @@ function DefaultLayout({
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
   const lightFontUrl =
-    clientLocale == 'japanese' ? jpSansLightURL : latoLightURL;
+    clientLocale === 'japanese' ? jpSansLightURL : latoLightURL;
   const regularFontUrl =
-    clientLocale == 'japanese' ? jpSansRegularURL : latoRegularURL;
-  const boldFontUrl = clientLocale == 'japanese' ? jpSansBoldURL : latoBoldURL;
+    clientLocale === 'japanese' ? jpSansRegularURL : latoRegularURL;
+  const boldFontUrl = clientLocale === 'japanese' ? jpSansBoldURL : latoBoldURL;
 
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
