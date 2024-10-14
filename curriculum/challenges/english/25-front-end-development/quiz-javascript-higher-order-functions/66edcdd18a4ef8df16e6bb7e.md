@@ -212,7 +212,7 @@ To determine if any elements in an array pass a specified test.
 
 #### --text--
 
-Which of the following is an example of method chaining?
+Which of the following is a valid example of method chaining?
 
 #### --distractors--
 
