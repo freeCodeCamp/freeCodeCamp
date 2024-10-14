@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import envData, { clientLocale } from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
@@ -47,7 +48,6 @@ import {
   MAX_MOBILE_WIDTH,
   EX_SMALL_VIEWPORT_HEIGHT
 } from '../../../config/misc';
-import envData from '../../../config/env.json';
 
 import '@freecodecamp/ui/dist/base.css';
 // preload common fonts
@@ -171,10 +171,10 @@ function DefaultLayout({
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
   const lightFontUrl =
-    navigator.language == 'jp' ? jpSansLightURL : latoLightURL;
+    clientLocale == 'japanese' ? jpSansLightURL : latoLightURL;
   const regularFontUrl =
-    navigator.language == 'jp' ? jpSansRegularURL : latoRegularURL;
-  const boldFontUrl = navigator.language == 'jp' ? jpSansBoldURL : latoBoldURL;
+    clientLocale == 'japanese' ? jpSansRegularURL : latoRegularURL;
+  const boldFontUrl = clientLocale == 'japanese' ? jpSansBoldURL : latoBoldURL;
 
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
