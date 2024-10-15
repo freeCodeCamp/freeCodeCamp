@@ -2176,7 +2176,7 @@
       "workshop-recipe-tracker": {
         "title": "Build a Recipe Tracker",
         "intro": [
-          "In this workshop, you will learn JavaScript objects by building a recipe tracker."
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
         ]
       },
       "lab-quiz-game": {
