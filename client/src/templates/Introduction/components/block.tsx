@@ -20,7 +20,9 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
+import { BlockTypes } from '../../../../../shared/config/blocks';
 import Challenges from './challenges';
+import BlockLabel from './block-label';
 
 import '../intro.css';
 
@@ -46,6 +48,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 interface BlockProps {
   block: string;
+  blockType: BlockTypes | null;
   challenges: Challenge[];
   completedChallengeIds: string[];
   isExpanded: boolean;
@@ -89,6 +92,7 @@ class Block extends Component<BlockProps> {
   render(): JSX.Element {
     const {
       block,
+      blockType,
       completedChallengeIds,
       challenges,
       isExpanded,
@@ -154,6 +158,7 @@ class Block extends Component<BlockProps> {
           <div className={`block ${isExpanded ? 'open' : ''}`}>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
+              {blockType && <BlockLabel blockType={blockType} />}
               {!isAudited && (
                 <div className='block-cta-wrapper'>
                   <Link
@@ -210,6 +215,7 @@ class Block extends Component<BlockProps> {
           <div className='block'>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
+              {blockType && <BlockLabel blockType={blockType} />}
               {!isAudited && (
                 <div className='block-cta-wrapper'>
                   <Link
@@ -247,6 +253,7 @@ class Block extends Component<BlockProps> {
         <ScrollableAnchor id={block}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
             <h3 className='block-grid-title'>
+              {blockType && <BlockLabel blockType={blockType} />}
               <button
                 aria-expanded={isExpanded ? 'true' : 'false'}
                 aria-controls={`${block}-panel`}
@@ -317,6 +324,7 @@ class Block extends Component<BlockProps> {
             )}
           </div>
           <div className='title-wrapper map-title'>
+            {blockType && <BlockLabel blockType={blockType} />}
             <h3 className='block-grid-title'>
               <Link
                 className='block-header'
