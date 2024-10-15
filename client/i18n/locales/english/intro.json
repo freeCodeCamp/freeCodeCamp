@@ -1693,7 +1693,7 @@
     }
   },
   "front-end-development": {
-    "title": "Front End Development",
+    "title": "Full Stack Development",
     "intro": ["placeholder"],
     "blocks": {
       "efpl": { "title": "0", "intro": [] },
