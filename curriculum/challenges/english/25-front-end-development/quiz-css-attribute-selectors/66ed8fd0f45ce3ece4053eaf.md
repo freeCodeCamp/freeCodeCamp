@@ -265,7 +265,7 @@ How would you target all elements with a lang attribute that starts with `"es"` 
 
 #### --text--
 
-You want to style the `<img>` elements only if their `alt` attribute does not contain the word `"thumbnail"`. Which selector would achieve this?
+You want to style the `img` elements only if their `alt` attribute does not contain the word `"thumbnail"`. Which selector would achieve this?
 
 #### --distractors--
 
