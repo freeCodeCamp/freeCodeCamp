@@ -17,7 +17,7 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Which selector would target all `<option>` elements where the value attribute starts with `"A"`?
+Which selector would target all `option` elements where the value attribute starts with `"A"`?
 
 #### --distractors--
 
