@@ -3,9 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
-import { createSelector } from 'reselect';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
@@ -29,23 +26,17 @@ import { isChallengeCompletedSelector } from '../redux/selectors';
 import { BlockTypes } from '../../../../../shared/config/blocks';
 
 // Redux Setup
-const mapStateToProps = createSelector(
-  isChallengeCompletedSelector,
-  (isChallengeCompleted: boolean) => ({
-    isChallengeCompleted
-  })
-);
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      initTests,
-      updateChallengeMeta,
-      challengeMounted,
-      updateSolutionFormValues,
-      openCompletionModal: () => openModal('completion')
-    },
-    dispatch
-  );
+const mapStateToProps = (state: unknown) => ({
+  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean
+});
+
+const mapDispatchToProps = {
+  initTests,
+  updateChallengeMeta,
+  challengeMounted,
+  updateSolutionFormValues,
+  openCompletionModal: () => openModal('completion')
+};
 
 // Types
 interface ShowQuizProps {
@@ -138,7 +129,7 @@ const ShowGeneric = ({
 
   // assignments
   const [assignmentsCompleted, setAssignmentsCompleted] = useState(0);
-  const allAssignmentCompleted = assignmentsCompleted === assignments.length;
+  const allAssignmentsCompleted = assignmentsCompleted === assignments.length;
 
   const handleAssignmentChange = (
     event: React.ChangeEvent<HTMLInputElement>
