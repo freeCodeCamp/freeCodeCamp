@@ -24,8 +24,7 @@ import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  userTokenSelector,
-  userIdSelector
+  userTokenSelector
 } from '../redux/selectors';
 import { User } from '../redux/prop-types';
 import {
@@ -53,7 +52,6 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
-  userId: string;
 };
 
 const mapStateToProps = createSelector(
@@ -61,19 +59,11 @@ const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
   userTokenSelector,
-  userIdSelector,
-  (
-    showLoading: boolean,
-    user: User,
-    isSignedIn,
-    userToken: string | null,
-    userId: string
-  ) => ({
+  (showLoading: boolean, user: User, isSignedIn, userToken: string | null) => ({
     showLoading,
     user,
     isSignedIn,
-    userToken,
-    userId
+    userToken
   })
 );
 
