@@ -137,24 +137,19 @@ const ShowGeneric = ({
   };
 
   // assignments
-  const [allAssignmentsCompleted, setAllAssignmentsCompleted] = useState(false);
   const [assignmentsCompleted, setAssignmentsCompleted] = useState(0);
+  const allAssignmentCompleted = assignmentsCompleted === assignments.length;
 
   const handleAssignmentChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    totalAssignments: number
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const newAssignmentsCompleted = event.target.checked
-      ? assignmentsCompleted + 1
-      : assignmentsCompleted - 1;
-
-    setAssignmentsCompleted(newAssignmentsCompleted);
-    setAllAssignmentsCompleted(totalAssignments === newAssignmentsCompleted);
+    const isCompleted = event.target.checked; // extract value before target is nullified
+    setAssignmentsCompleted(a => (isCompleted ? a + 1 : a - 1));
   };
 
   // submit
   const handleSubmit = () => {
-    if (assignments.length > 0 && allAssignmentsCompleted) {
+    if (assignments.length == 0 || allAssignmentsCompleted) {
       openCompletionModal();
     }
   };
