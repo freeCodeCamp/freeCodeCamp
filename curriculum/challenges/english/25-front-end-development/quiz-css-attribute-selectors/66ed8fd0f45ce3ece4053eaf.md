@@ -205,7 +205,7 @@ Which selector targets all elements with a `lang` attribute set to `"en-US"`?
 
 #### --text--
 
-Which selector targets `<a>` elements where the href attribute contains `"https"`?
+Which selector targets `a` elements where the href attribute contains `"https"`?
 
 #### --distractors--
 
