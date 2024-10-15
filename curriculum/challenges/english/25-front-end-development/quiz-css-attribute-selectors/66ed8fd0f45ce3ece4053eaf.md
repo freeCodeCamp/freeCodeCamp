@@ -385,7 +385,7 @@ section[data-theme*="dark"]:not([data-theme$="-light"]) { background-color: blac
 
 #### --text--
 
-You want to style ordered lists (`ol`) where the type attribute is set to `"i"` (for Roman numerals). Which of the following selectors would you use?
+You want to style ordered lists (`ol`) where the `type` attribute is set to `"i"` (for Roman numerals). Which of the following selectors would you use?
 
 #### --distractors--
 
