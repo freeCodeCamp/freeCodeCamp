@@ -52,6 +52,8 @@
     "create-post": "Criar uma postagem de ajuda no fórum",
     "cancel": "Cancelar",
     "reset-lesson": "Reiniciar esta aula",
+    "revert": "Reverter",
+    "revert-to-saved-code": "Reverter para o código salvo",
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código",
@@ -200,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Observação: as configurações foram movidas para a página de perfil.",
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
     "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp. Pressione Save para salvar suas alterações.",
     "data": "Para ver quais dados mantemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
@@ -332,7 +335,8 @@
     "total-points": "Pontos no total:",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
-    "page-number": "{{pageNumber}} de {{totalPages}}"
+    "page-number": "{{pageNumber}} de {{totalPages}}",
+    "edit-my-profile": "Editar meu perfil"
   },
   "footer": {
     "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
@@ -386,6 +390,7 @@
     "assignment-not-complete": "Complete as tarefas",
     "assignments": "Tarefas",
     "question": "Questão",
+    "explanation": "Explicação",
     "solution-link": "Link da solução",
     "source-code-link": "Link do código-fonte",
     "ms-link": "Link da Microsoft",
@@ -397,6 +402,7 @@
     "running-tests": "// executando testes",
     "tests-completed": "// testes concluídos",
     "console-output": "// saída do console",
+    "example-app": "Crie uma aplicação que seja funcionalmente semelhante a <0>este projeto de exemplo</0>. Tente não copiar o projeto de exemplo, dê a ele seu próprio estilo pessoal.",
     "syntax-error": "Seu código gerou um erro antes que qualquer teste possa ser executado. Corrija-o e tente novamente.",
     "indentation-error": "Seu código tem um erro de indentação. Você pode precisar adicionar <code>pass</code> em uma nova linha para formar um bloco de código válido.",
     "sign-in-save": "Faça o login para salvar seu progresso",
@@ -416,6 +422,7 @@
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito.",
+    "revert-warn": "Tem certeza que deseja reverter esta lição? As alterações mais recentes serão desfeitas e o código será revertido para a versão salva mais recentemente.",
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "donation-record-not-found": "O registro de sua doação não foi encontrado.",
@@ -445,6 +452,7 @@
     "help-translate": "Ainda estamos traduzindo essa certificação.",
     "help-translate-link": "Ajude-nos a traduzir.",
     "project-preview-title": "Aqui está uma prévia do que você vai criar",
+    "demo-project-title": "Aqui está o exemplo de um projeto que atende aos requisitos",
     "github-required": "<0>Crie uma conta no GitHub</0> se você já não tiver uma. Você vai precisar dela ao criar a máquina virtual do servidor Linux. Esse processo pode demorar alguns minutos.",
     "gitpod": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Gitpod. Siga estas instruções para iniciar o curso:",
@@ -482,6 +490,12 @@
     "preview-external-window": "Visualização exibida atualmente na janela externa.",
     "fill-in-the-blank": "Preencha o espaço em branco",
     "blank": "vazio",
+    "quiz": {
+      "correct-answer": "Correto",
+      "incorrect-answer": "Incorreto",
+      "unanswered-questions": "As seguintes perguntas não foram respondidas: {{ unansweredQuestions }}. Você precisa responder a todas as perguntas.",
+      "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas."
+    },
     "exam": {
       "qualified": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
       "not-qualified": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:",
@@ -682,7 +696,10 @@
   },
   "search": {
     "label": "Pesquisar",
-    "placeholder": "Buscar entre os mais de 10.700 tutoriais",
+    "placeholder": {
+      "default": "Buscar em nossos tutoriais",
+      "numbered": "Buscar em mais de {{ roundedTotalRecords }} tutoriais"
+    },
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
@@ -764,7 +781,8 @@
     "code-example": "Exemplo de código de {{codeName}}",
     "opens-new-window": "Abre em uma nova janela",
     "rsa-checkbox": "Eu tentei o método Ler-Pesquisar-Perguntar",
-    "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum"
+    "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum",
+    "edit-my-profile": "Editar meu perfil"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",

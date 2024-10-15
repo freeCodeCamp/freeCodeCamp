@@ -1697,7 +1697,10 @@
     "intro": ["placeholder"],
     "blocks": {
       "efpl": { "title": "0", "intro": [] },
-      "xpmy": { "title": "1", "intro": [] },
+      "lecture-what-is-html": {
+        "title": "What is HTML?",
+        "intro": ["Learn what HTML is in these lecture videos."]
+      },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
         "intro": [
@@ -1873,7 +1876,12 @@
       },
       "ohhu": { "title": "58", "intro": [] },
       "syga": { "title": "59", "intro": [] },
-      "sdym": { "title": "60", "intro": [] },
+      "lab-job-application-form": {
+        "title": "Build a Job Application Form",
+        "intro": [
+          "In this lab you will build a job application form and style it using pseudo-classes."
+        ]
+      },
       "ivpx": { "title": "61", "intro": [] },
       "quiz-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Quiz",
@@ -1893,7 +1901,12 @@
       },
       "jnqt": { "title": "68", "intro": [] },
       "vkei": { "title": "69", "intro": [] },
-      "jows": { "title": "70", "intro": [] },
+      "lab-contact-form": {
+        "title": "Design a Contact Form",
+        "intro": [
+          "In this lab, you will design a contact form in HTML and style it using CSS."
+        ]
+      },
       "ipmw": { "title": "71", "intro": [] },
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
@@ -2166,6 +2179,12 @@
           "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
+      "lab-lunch-picker-program": {
+        "title": "Build a Lunch Picker Program",
+        "intro": [
+          "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
+        ]
+      },
       "mokm": { "title": "161", "intro": [] },
       "froz": { "title": "162", "intro": [] },
       "quiz-javascript-arrays": {
@@ -2202,7 +2221,10 @@
         "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
       },
       "hjtr": { "title": "174", "intro": [] },
-      "ccnu": { "title": "175", "intro": [] },
+      "lab-pyramid-generator": {
+        "title": "Build a Pyramid Generator",
+        "intro": ["In this lab you will build a pyramid generator."]
+      },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
@@ -2328,7 +2350,12 @@
         ]
       },
       "lupt": { "title": "218", "intro": [] },
-      "yvqn": { "title": "219", "intro": [] },
+      "lab-date-conversion": {
+        "title": "Build a Date Conversion Program",
+        "intro": [
+          "In this lab, you will build a program to convert a date from one format to another."
+        ]
+      },
       "xtfk": { "title": "220", "intro": [] },
       "quiz-javascript-dates": {
         "title": "JavaScript Dates Quiz",
@@ -2346,7 +2373,10 @@
       },
       "pehm": { "title": "227", "intro": [] },
       "cvsw": { "title": "228", "intro": [] },
-      "qjws": { "title": "229", "intro": [] },
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": ["For this lab, you will build a bookmark manager app."]
+      },
       "fgbp": { "title": "230", "intro": [] },
       "quiz-local-storage-and-crud": {
         "title": "Local Storage and CRUD Quiz",
@@ -2438,7 +2468,10 @@
           "For this lab, you will build a linked list class using JavaScript."
         ]
       },
-      "wraf": { "title": "265", "intro": [] },
+      "lab-hash-table-class": {
+        "title": "Build a Hash Table Class",
+        "intro": ["For this lab, you will build a hash table using JavaScript."]
+      },
       "muyw": { "title": "266", "intro": [] },
       "quiz-javascript-data-structures": {
         "title": "JavaScript Data Structures Quiz",
@@ -2447,7 +2480,12 @@
         ]
       },
       "rmpy": { "title": "268", "intro": [] },
-      "plfo": { "title": "269", "intro": [] },
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
+      },
       "xdyh": { "title": "270", "intro": [] },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Quiz",
@@ -2716,7 +2754,10 @@
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
-      "zzhp": { "title": "372", "intro": [] },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": ["In this lab you will build a timestamp microservice"]
+      },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
         "intro": [
@@ -2731,7 +2772,10 @@
         "title": "Build an Exercise Tracker",
         "intro": ["In this lab, you will build an exercise tracker"]
       },
-      "tbei": { "title": "376", "intro": [] },
+      "lab-file-metadata-microservice": {
+        "title": "Build a File Metadata Microservice",
+        "intro": ["For this lab you will build a file metadata microservice"]
+      },
       "kegi": { "title": "377", "intro": [] },
       "quiz-backend-javascript": {
         "title": "Backend JavaScript Quiz",
@@ -2743,7 +2787,12 @@
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },
       "xbri": { "title": "382", "intro": [] },
-      "kwhp": { "title": "383", "intro": [] },
+      "quiz-tooling-and-deployment": {
+        "title": "Tooling and Deployment Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of tooling and deployment"
+        ]
+      },
       "nkjt": { "title": "384", "intro": [] },
       "pgjj": { "title": "385", "intro": [] },
       "exom": { "title": "386", "intro": [] },

@@ -1,10 +1,11 @@
-import { FastifyPluginCallback, FastifyRequest } from 'fastify';
+import { FastifyPluginCallback, FastifyRequest, FastifyReply } from 'fastify';
 import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { type user } from '@prisma/client';
 
 import { JWT_SECRET } from '../utils/env';
 import { type Token, isExpired } from '../utils/tokens';
+import { ERRORS } from '../exam-environment/utils/errors';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -19,6 +20,10 @@ declare module 'fastify' {
 
   interface FastifyInstance {
     authorize: (req: FastifyRequest, reply: FastifyReply) => void;
+    authorizeExamEnvironmentToken: (
+      req: FastifyRequest,
+      reply: FastifyReply
+    ) => void;
   }
 }
 
@@ -70,9 +75,94 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     req.user = user;
   };
 
+  async function handleExamEnvironmentTokenAuth(
+    req: FastifyRequest,
+    reply: FastifyReply
+  ) {
+    const { 'exam-environment-authorization-token': encodedToken } =
+      req.headers;
+
+    if (!encodedToken || typeof encodedToken !== 'string') {
+      void reply.code(400);
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN header is a required string.'
+        )
+      );
+    }
+
+    try {
+      jwt.verify(encodedToken, JWT_SECRET);
+    } catch (e) {
+      void reply.code(403);
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          JSON.stringify(e)
+        )
+      );
+    }
+
+    const payload = jwt.decode(encodedToken);
+
+    if (typeof payload !== 'object' || payload === null) {
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          'Unreachable. Decoded token has been verified.'
+        )
+      );
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const examEnvironmentAuthorizationToken =
+      payload['examEnvironmentAuthorizationToken'];
+
+    // if (typeof examEnvironmentAuthorizationToken !== 'string') {
+    //   // TODO: This code is debatable, because the token would have to have been signed by the api
+    //   //       which means it is valid, but, somehow, got signed as an object instead of a string.
+    //   void reply.code(400+500);
+    //   return reply.send(
+    //     ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+    //       'EXAM-ENVIRONMENT-AUTHORIZATION-TOKEN is not valid.'
+    //     )
+    //   );
+    // }
+
+    assertIsString(examEnvironmentAuthorizationToken);
+
+    const token =
+      await fastify.prisma.examEnvironmentAuthorizationToken.findFirst({
+        where: {
+          id: examEnvironmentAuthorizationToken
+        }
+      });
+
+    if (!token) {
+      return {
+        message: 'Token not found'
+      };
+    }
+
+    const user = await fastify.prisma.user.findUnique({
+      where: { id: token.userId }
+    });
+    if (!user) return setAccessDenied(req, TOKEN_INVALID);
+    req.user = user;
+  }
+
   fastify.decorate('authorize', handleAuth);
+  fastify.decorate(
+    'authorizeExamEnvironmentToken',
+    handleExamEnvironmentTokenAuth
+  );
 
   done();
 };
+
+function assertIsString(some: unknown): asserts some is string {
+  if (typeof some !== 'string') {
+    throw new Error('Expected a string');
+  }
+}
 
 export default fp(auth, { name: 'auth', dependencies: ['cookies'] });

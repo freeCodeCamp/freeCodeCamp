@@ -1,0 +1,11 @@
+{
+  "name": "Build a Date Conversion Program",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-date-conversion",
+  "order": 219,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66f686b8ebdb982fa8e14330", "title": "Build a Date Conversion Program" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
+}

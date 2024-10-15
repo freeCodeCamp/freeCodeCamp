@@ -8,8 +8,8 @@
     "@fastify/accepts": "4.3.0",
     "@fastify/cookie": "9.4.0",
     "@fastify/csrf-protection": "6.4.1",
-    "@fastify/express": "^2.3.0",
     "@fastify/oauth2": "7.8.1",
+    "@fastify/rate-limit": "9.1.0",
     "@fastify/swagger": "8.14.0",
     "@fastify/swagger-ui": "1.10.2",
     "@fastify/type-provider-typebox": "3.6.0",
@@ -19,7 +19,6 @@
     "ajv-formats": "2.1.1",
     "date-fns": "2.30.0",
     "dotenv": "16.4.5",
-    "express-rate-limit": "^6.7.0",
     "fast-uri": "2.3.0",
     "fastify": "4.26.1",
     "fastify-plugin": "4.5.1",
@@ -40,7 +39,6 @@
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
     "@total-typescript/ts-reset": "0.5.1",
-    "@types/express": "4.17.21",
     "@types/jsonwebtoken": "9.0.5",
     "@types/nodemailer": "6.4.14",
     "@types/supertest": "2.0.16",
@@ -49,7 +47,8 @@
     "jest": "29.7.0",
     "prisma": "5.5.2",
     "supertest": "6.3.3",
-    "ts-jest": "29.1.2"
+    "ts-jest": "29.1.2",
+    "tsx": "4.19.1"
   },
   "engines": {
     "node": ">=18",
@@ -81,7 +80,9 @@
     "test": "jest --force-exit",
     "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate",
-    "lint": "cd .. && eslint api/src --max-warnings 0"
+    "lint": "cd .. && eslint api/src --max-warnings 0",
+    "generate-exams": "tsx src/exam-environment/generate/index.ts",
+    "seed:env-exam": "tsx src/exam-environment/seed/index.ts"
   },
   "version": "0.0.1"
 }

@@ -52,6 +52,8 @@
     "create-post": "Crea un post di aiuto sul forum",
     "cancel": "Annulla",
     "reset-lesson": "Resetta questa lezione",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Avvia",
     "run-test": "Esegui i test (Ctrl + Invio)",
     "check-code": "Check Your Code",
@@ -200,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Condividi i tuoi progetti non-freeCodeCamp, articoli o pull request accettate.",
     "privacy": "Le impostazioni di questa sezione ti permettono di controllare quello che viene mostrato sul tuo portfolio pubblico di freeCodeCamp. Premi salva per salvare le tue modifiche.",
     "data": "Per vedere quali dati teniamo nel tuo account, clicca sul pulsante \"Scarica i tuoi dati\" qui sotto",
@@ -332,7 +335,8 @@
     "total-points": "Total Points:",
     "points": "{{count}} punto il {{date}}",
     "points_plural": "{{count}} punti il {{date}}",
-    "page-number": "{{pageNumber}} di {{totalPages}}"
+    "page-number": "{{pageNumber}} di {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -386,6 +390,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "Attività",
     "question": "Domande",
+    "explanation": "Explanation",
     "solution-link": "Link alla soluzione",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
@@ -397,6 +402,7 @@
     "running-tests": "// test in corso",
     "tests-completed": "// test completati",
     "console-output": "// output della console",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Accedi per salvare i tuoi progressi",
@@ -416,6 +422,7 @@
     "reset": "Vuoi resettare questa lezione?",
     "reset-warn": "Sei sicuro di voler resettare questa lezione? Gli editor e i test saranno resettati.",
     "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
     "chal-preview": "Anteprima della sfida",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -445,6 +452,7 @@
     "help-translate": "We are still translating this certification.",
     "help-translate-link": "Aiutaci con le traduzioni...",
     "project-preview-title": "Ecco una anticipazione di quello che creerai",
+    "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Crea un account GitHub</0> se non ne hai uno. Ne avrai bisogno quando crei la macchina virtuale di Linux. Questo processo potrebbe richiedere alcuni minuti.",
     "gitpod": {
       "intro": "This course runs in a virtual Linux machine using Gitpod. Follow these instructions to start the course:",
@@ -482,6 +490,12 @@
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
+    "quiz": {
+      "correct-answer": "Correct",
+      "incorrect-answer": "Incorrect",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "Non hai soddisfatto i requisiti per accedere all'esame. Per qualificarti, completa le seguenti sfide:",
@@ -682,7 +696,10 @@
   },
   "search": {
     "label": "Cerca",
-    "placeholder": "Search 10,700+ tutorials",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
     "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
@@ -764,7 +781,8 @@
     "code-example": "{{codeName}} esempio di codice",
     "opens-new-window": "Apri in una nuova finestra",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "Per richiedere una certificazione, è necessario prima accettare la nostra politica di onestà accademica",
