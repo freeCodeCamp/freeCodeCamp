@@ -29,7 +29,7 @@
   --editor-background-light: #fffffe;
   --editor-background-dark: #2a2b40;
   --focus-outline-color: var(--blue-mid);
-  --font-family-sans-serif: 'Lato', sans-serif;
+  --font-family-sans-serif: 'Lato', 'NotoSansJapanese', sans-serif;
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
   --header-element-size: 28px;
   --header-sub-element-size: 45px;
