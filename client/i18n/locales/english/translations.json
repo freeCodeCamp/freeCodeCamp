@@ -1090,7 +1090,7 @@
   },
   "exam-token": {
     "exam-token": "Exam Token",
-    "note": "Your exam token is a secret key that allows you to access the exam. Do not share this token with anyone.",
+    "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
     "invalidation": "If you generate a new token, your old token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
     "error": "There was an error generating your token, please try again in a moment.",

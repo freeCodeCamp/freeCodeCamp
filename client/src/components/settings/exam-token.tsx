@@ -25,9 +25,11 @@ function ExamToken(): JSX.Element {
       const response = await generateExamToken();
 
       const {
-        data: { data: token }
+        data: {
+          data: { examEnvironmentAuthorizationToken }
+        }
       } = response;
-      setExamToken(token.examEnvironmentAuthorizationToken);
+      setExamToken(examEnvironmentAuthorizationToken);
       setExamTokenError('');
     } catch (e) {
       setExamTokenError(t('exam-token.error'));
@@ -37,7 +39,7 @@ function ExamToken(): JSX.Element {
   };
 
   return (
-    <FullWidthRow>
+    <FullWidthRow id='exam-environment-authorization-token'>
       <Modal
         open={generatedExamToken}
         onClose={() => {
