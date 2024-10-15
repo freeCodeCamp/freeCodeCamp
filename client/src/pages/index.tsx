@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
-
 import { SuperBlocks } from '../../../shared/config/curriculum';
 import SEO from '../components/seo';
 import { Loader } from '../components/helpers';
@@ -12,6 +11,7 @@ import AsSeenIn from '../components/landing/components/as-seen-in';
 import Testimonials from '../components/landing/components/testimonials';
 import Certifications from '../components/landing/components/certifications';
 import Faq from '../components/landing/components/faq';
+import Benefits from '../components/landing/components/benefits';
 import '../components/landing/landing.css';
 
 type Challenge = {
@@ -31,21 +31,21 @@ type Props = {
 
 type LandingProps = {
   allChallenges: Challenge[];
+  showLandingPageRedesign: boolean;
+  showBenefitsSection: boolean;
 };
 
-const LandingA = ({ allChallenges }: LandingProps) => (
-  <main className='landing-page'>
-    <LandingTop />
-    <AsSeenIn />
-    <Testimonials />
-    <Certifications allChallenges={allChallenges} />
-    <Faq />
-  </main>
-);
+const Landing = ({
+  allChallenges,
+  showLandingPageRedesign,
+  showBenefitsSection
+}: LandingProps) => (
+  <main
+    className={`landing-page ${showLandingPageRedesign ? 'landing-page-b' : ''}`}
+  >
+    {showLandingPageRedesign ? <LandingTopB /> : <LandingTop />}
+    {showBenefitsSection ? <Benefits /> : <AsSeenIn />}
 
-const LandingB = ({ allChallenges }: LandingProps) => (
-  <main className='landing-page landing-page-b'>
-    <LandingTopB />
     <Testimonials />
     <Certifications allChallenges={allChallenges} />
     <Faq />
@@ -65,14 +65,19 @@ function IndexPage({
       'landing-page-redesign',
       false
     );
+    const showBenefitsSection = growthbook.getFeatureValue(
+      'show-benefits',
+      false
+    );
+
     return (
       <>
         <SEO title={t('metaTags:title')} />
-        {showLandingPageRedesign === true ? (
-          <LandingB allChallenges={allChallenges} />
-        ) : (
-          <LandingA allChallenges={allChallenges} />
-        )}
+        <Landing
+          allChallenges={allChallenges}
+          showLandingPageRedesign={showLandingPageRedesign}
+          showBenefitsSection={showBenefitsSection}
+        />
       </>
     );
   } else {

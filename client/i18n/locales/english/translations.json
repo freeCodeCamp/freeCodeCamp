@@ -112,7 +112,7 @@
     "big-heading-3": "Earn certifications.",
     "big-heading-4": "All for free.",
     "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
-    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
     "hero-img-description": "freeCodeCamp students at a local study group in South Korea.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -135,6 +135,29 @@
         "testimony": "\"I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify.\""
       }
     },
+    "benefits": {
+      "heading": "Why learn with freeCodeCamp:",
+      "list": [
+        {
+          "title": "Large Community",
+          "description": "Join our vibrant  learning community of students, alumni, and educators."
+        },
+        {
+          "title": "Free Education",
+          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+        },
+        {
+          "title": "Extensive Certifications",
+          "description": "Earn industry-recognized, verifiable certifications in high-demand technologies."
+        },
+        {
+          "title": "Comprehensive Curriculum",
+          "description": "Enhance your technical skills with our linear, world-class, project-based curriculum."
+        }
+      ],
+      "cta": "Start Learning Now (it's free)"
+    },
+
     "certification-heading": "Earn free verified certifications in:",
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
     "learn-english-heading": "Learn English for Developers:",

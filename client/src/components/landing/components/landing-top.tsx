@@ -22,7 +22,7 @@ function LandingTop(): JSX.Element {
     clientLocale
   );
   return (
-    <Container className='landing-top'>
+    <Container className='landing-top landing-top-a'>
       <Row>
         <Spacer size='medium' />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -70,7 +70,7 @@ function LandingTop(): JSX.Element {
           </div>
           <Spacer size='medium' />
           <BigCallToAction />
-          <CampersImage pageName='landing' />
+          <CampersImage />
           <Spacer size='medium' />
         </Col>
       </Row>
