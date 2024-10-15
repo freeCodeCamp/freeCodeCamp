@@ -85,7 +85,7 @@ Which of the following will not run as expected with this style?
 
 #### --text--
 
-Which selector will target all elements with a `lang` attribute starting with "`fr`"?
+Which selector will target all elements with a `lang` attribute starting with `"fr"`?
 
 #### --distractors--
 
