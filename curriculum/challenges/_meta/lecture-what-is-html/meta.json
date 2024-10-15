@@ -1,0 +1,10 @@
+{
+  "name": "What is HTML?",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-what-is-html",
+  "order": 1,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66f6db08d55022680a3cfbc9", "title": "What is HTML and what role does it play on the web?" }],
+  "helpCategory": "HTML-CSS",
+  "blockType": "lecture"
+}
