@@ -15,10 +15,25 @@ test.describe('Exam Token Widget', () => {
         'Your exam token is a secret key that allows you to access the exam. Do not share this token with anyone'
       )
     ).toBeVisible();
+    await expect(
+      page.getByText(
+        'If you generate a new token, your old token will be invalidated.'
+      )
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', { name: 'Generate Exam Token' })
+    ).toBeVisible();
   });
 
   test('should be able to generate a token', async ({ page }) => {
     await page.getByRole('button', { name: 'Generate Exam Token' }).click();
     await expect(page.getByText('Your Exam Token is:')).toBeVisible();
+
+    await expect(page.getByRole('button', { name: 'Copy' })).toBeVisible();
+
+    await expect(
+      page.getByRole('button', { name: 'Close' }).nth(1)
+    ).toBeVisible();
   });
 });

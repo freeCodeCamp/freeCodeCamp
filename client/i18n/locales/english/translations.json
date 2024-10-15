@@ -7,6 +7,7 @@
     "first-lesson": "Go to the first lesson",
     "close": "Close",
     "edit": "Edit",
+    "copy": "Copy",
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
@@ -1089,10 +1090,13 @@
   },
   "exam-token": {
     "exam-token": "Exam Token",
-    "exam-token-note": "Your exam token is a secret key that allows you to access the exam. Do not share this token with anyone.",
+    "note": "Your exam token is a secret key that allows you to access the exam. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
-    "exam-token-error": "There was an error generating your token, please try again in a moment.",
-    "your-exam-token": "Your Exam Token is: {{token}}"
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",
