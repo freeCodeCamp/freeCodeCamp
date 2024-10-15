@@ -33,7 +33,7 @@ Higher-order functions may introduce complexity in understanding code, but they 
 
 #### --answer--
 
-All functions in JavaScript, including those that do not manipulate or return other functions, can be classified as higher-order functions.
+All functions in JavaScript, including those that do not take or return other functions, can be classified as higher-order functions.
 
 ### --question--
 
@@ -117,7 +117,7 @@ Callback not supplied, hence error
 #### --answer--
 
 ```js
-[{ '20': 5 }, 'a', 'b', undefined, <1 empty item>]
+[{ '20': 5 }, 'a', 'b', undefined, empty]
 ```
 
 ### --question--
