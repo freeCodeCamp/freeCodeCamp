@@ -325,7 +325,7 @@ button[data-tooltip]:not([data-tooltip="off"]) { text-decoration: underline dott
 
 #### --text--
 
-You need to style all links (`<a>`) that point to image files by selecting href attributes ending with `.jpg`, `.png`, or `.gif`. Which selector works best?
+You need to style all links (`a`) that point to image files by selecting href attributes ending with `.jpg`, `.png`, or `.gif`. Which selector works best?
 
 #### --distractors--
 
