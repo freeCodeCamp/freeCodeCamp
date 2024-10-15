@@ -20,7 +20,7 @@ import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
-import { BlockTypes } from '../../../../../shared/config/blocks';
+import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import Challenges from './challenges';
 import BlockLabel from './block-label';
 
@@ -151,7 +151,12 @@ class Block extends Component<BlockProps> {
       </div>
     );
 
-    const Block = (
+    /**
+     * ChallengeListBlock displays challenges in a list.
+     * This layout is used in backend blocks, The Odin Project blocks, and blocks in legacy certification.
+     * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
+     */
+    const ChallengeListBlock = (
       <>
         {' '}
         <ScrollableAnchor id={block}>
@@ -209,7 +214,12 @@ class Block extends Component<BlockProps> {
       </>
     );
 
-    const ProjectBlock = (
+    /**
+     * ProjectListBlock displays a list of certification projects.
+     * This layout is used in legacy certifications.
+     * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#javascript-algorithms-and-data-structures-projects
+     */
+    const ProjectListBlock = (
       <>
         <ScrollableAnchor id={block}>
           <div className='block'>
@@ -247,7 +257,12 @@ class Block extends Component<BlockProps> {
       return `${percentageCompleted}% ${t('learn.completed')}`;
     };
 
-    const GridBlock = (
+    /**
+     * ChallengeGridBlock displays challenges in a grid.
+     * This layout is used for step-based blocks.
+     * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
+     */
+    const ChallengeGridBlock = (
       <>
         {' '}
         <ScrollableAnchor id={block}>
@@ -304,7 +319,12 @@ class Block extends Component<BlockProps> {
       </>
     );
 
-    const GridProjectBlock = (
+    /**
+     * LinkBlock displays the block as a single link.
+     * This layout is used if the block has a single challenge.
+     * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#build-a-survey-form-project
+     */
+    const LinkBlock = (
       <ScrollableAnchor id={block}>
         <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
@@ -346,14 +366,24 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const blockrenderer = () => {
-      if (isProjectBlock) return isGridBlock ? GridProjectBlock : ProjectBlock;
-      return isGridBlock ? GridBlock : Block;
+    const blockRenderer = () => {
+      const blockLayout = challenges[0].blockLayout;
+
+      // `blockLayout` property isn't available in all challenges
+      if (!blockLayout) {
+        if (isProjectBlock) return isGridBlock ? LinkBlock : ProjectListBlock;
+        return isGridBlock ? ChallengeGridBlock : ChallengeListBlock;
+      }
+
+      if (blockLayout === BlockLayouts.ChallengeGrid) return ChallengeGridBlock;
+      if (blockLayout === BlockLayouts.ChallengeList) return ChallengeListBlock;
+      if (blockLayout === BlockLayouts.Link) return LinkBlock;
+      if (blockLayout === BlockLayouts.ProjectList) return ProjectListBlock;
     };
 
     return (
       <>
-        {blockrenderer()}
+        {blockRenderer()}
         {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
       </>
     );

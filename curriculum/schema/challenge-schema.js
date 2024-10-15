@@ -129,6 +129,15 @@ const schema = Joi.object()
       ).required(),
       otherwise: Joi.valid(null)
     }),
+    blockLayout: Joi.when('superBlock', {
+      is: [SuperBlocks.FrontEndDevelopment],
+      then: Joi.valid(
+        'challenge-list',
+        'challenge-grid',
+        'link',
+        'project-list'
+      )
+    }),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
     challengeType: Joi.number().min(0).max(23).required(),
