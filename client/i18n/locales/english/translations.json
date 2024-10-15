@@ -52,6 +52,8 @@
     "create-post": "Create a help post on the forum",
     "cancel": "Cancel",
     "reset-lesson": "Reset this lesson",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Run",
     "run-test": "Run the Tests (Ctrl + Enter)",
     "check-code": "Check Your Code",
@@ -200,6 +202,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
     "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
     "data": "To see what data we hold on your account, click the \"Download your data\" button below",
@@ -332,7 +335,8 @@
     "total-points": "Total Points:",
     "points": "{{count}} point on {{date}}",
     "points_plural": "{{count}} points on {{date}}",
-    "page-number": "{{pageNumber}} of {{totalPages}}"
+    "page-number": "{{pageNumber}} of {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -386,6 +390,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "Assignments",
     "question": "Question",
+    "explanation": "Explanation",
     "solution-link": "Solution Link",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
@@ -417,6 +422,7 @@
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
     "chal-preview": "Challenge Preview",
     "donation-record-not-found": "Your donation record has not been found.",
@@ -528,7 +534,7 @@
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     },
-    "blockType": {
+    "block-type": {
       "lecture": "Lecture",
       "workshop": "Workshop",
       "lab": "Lab",
@@ -690,7 +696,10 @@
   },
   "search": {
     "label": "Search",
-    "placeholder": "Search 10,700+ tutorials",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "See all results for {{searchQuery}}",
     "no-tutorials": "No tutorials found",
     "try": "Looking for something? Try the search bar on this page.",
@@ -772,7 +781,8 @@
     "code-example": "{{codeName}} code example",
     "opens-new-window": "Opens in new window",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum"
+    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",

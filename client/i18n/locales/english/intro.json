@@ -1873,7 +1873,12 @@
       },
       "ohhu": { "title": "58", "intro": [] },
       "syga": { "title": "59", "intro": [] },
-      "sdym": { "title": "60", "intro": [] },
+      "lab-job-application-form": {
+        "title": "Build a Job Application Form",
+        "intro": [
+          "In this lab you will build a job application form and style it using pseudo-classes."
+        ]
+      },
       "ivpx": { "title": "61", "intro": [] },
       "quiz-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Quiz",
@@ -2774,7 +2779,12 @@
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },
       "xbri": { "title": "382", "intro": [] },
-      "kwhp": { "title": "383", "intro": [] },
+      "quiz-tooling-and-deployment": {
+        "title": "Tooling and Deployment Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of tooling and deployment"
+        ]
+      },
       "nkjt": { "title": "384", "intro": [] },
       "pgjj": { "title": "385", "intro": [] },
       "exom": { "title": "386", "intro": [] },

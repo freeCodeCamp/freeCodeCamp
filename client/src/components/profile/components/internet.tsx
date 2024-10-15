@@ -12,11 +12,11 @@ import {
   type FormGroupProps
 } from '@freecodecamp/ui';
 
-import { maybeUrlRE } from '../../utils';
+import { maybeUrlRE } from '../../../utils';
 
-import { FullWidthRow } from '../helpers';
-import BlockSaveButton from '../helpers/form/block-save-button';
-import SectionHeader from './section-header';
+import { FullWidthRow } from '../../helpers';
+import BlockSaveButton from '../../helpers/form/block-save-button';
+import SectionHeader from '../../settings/section-header';
 
 export interface Socials {
   githubProfile: string;
@@ -28,6 +28,7 @@ export interface Socials {
 interface InternetProps extends Socials {
   t: TFunction;
   updateSocials: (formValues: Socials) => void;
+  setIsEditing: (isEditing: boolean) => void;
 }
 
 type InternetState = {
@@ -60,6 +61,10 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       originalValues: { githubProfile, linkedin, twitter, website }
     };
   }
+
+  toggleEditing = () => {
+    this.props.setIsEditing(false);
+  };
 
   componentDidUpdate() {
     const {
@@ -134,8 +139,10 @@ class InternetSettings extends Component<InternetProps, InternetState> {
       const { formValues } = this.state;
 
       const { updateSocials } = this.props;
+      this.toggleEditing();
       return updateSocials({ ...formValues });
     }
+    this.toggleEditing();
     return null;
   };
 

@@ -175,6 +175,7 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
@@ -270,6 +271,7 @@ export type Dimensions = {
 export type Test = {
   pass?: boolean;
   err?: string;
+  message?: string;
 } & (ChallengeTest | CertTest);
 
 export type ChallengeTest = {

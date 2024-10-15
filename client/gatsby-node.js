@@ -263,6 +263,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       blockType: String
       blockLayout: String
       challengeFiles: [FileContents]
+      explanation: String
       notes: String
       url: String
       assignments: [String]

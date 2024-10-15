@@ -522,7 +522,7 @@ function ShowClassic({
         <CompletionModal />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal />
+        <ResetModal challengeType={challengeType} />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}

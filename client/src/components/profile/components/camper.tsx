@@ -21,7 +21,10 @@ export type CamperProps = Pick<
   | 'picture'
   | 'name'
   | 'joinDate'
->;
+> & {
+  setIsEditing: (value: boolean) => void;
+  isSessionUser: boolean;
+};
 
 function Camper({
   name,
@@ -35,11 +38,12 @@ function Camper({
   joinDate,
   linkedin,
   twitter,
-  website
+  website,
+  isSessionUser,
+  setIsEditing
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
   const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
-
   return (
     <>
       <div className='bio-container'>
@@ -56,6 +60,8 @@ function Camper({
           isDonating={isDonating}
           yearsTopContributor={yearsTopContributor}
           picture={picture}
+          setIsEditing={setIsEditing}
+          isSessionUser={isSessionUser}
         />
       </div>
       {(isDonating || isTopContributor) && (

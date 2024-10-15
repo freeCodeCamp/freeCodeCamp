@@ -1988,9 +1988,11 @@
         "title": "59",
         "intro": []
       },
-      "sdym": {
-        "title": "60",
-        "intro": []
+      "lab-job-application-form": {
+        "title": "Crie um formulário de candidatura para vagas de trabalho",
+        "intro": [
+          "Neste laboratório, você criará um formulário para que os usuário se candidatem a vagas de trabalho e o estilizará usando pseudoclasses."
+        ]
       },
       "ivpx": {
         "title": "61",
@@ -2032,9 +2034,11 @@
         "title": "69",
         "intro": []
       },
-      "jows": {
-        "title": "70",
-        "intro": []
+      "lab-contact-form": {
+        "title": "Crie um formulário de contato",
+        "intro": [
+          "Neste laboratório, você projetará um formulário de contato em HTML e o estilizará usando o CSS."
+        ]
       },
       "ipmw": {
         "title": "71",
@@ -2476,6 +2480,12 @@
           "Você lembrará de como adicionar e remover elementos de um array usando métodos como <code>push</code>, <code>pop</code>, <code>shift</code> e <code>unshift</code>."
         ]
       },
+      "lab-lunch-picker-program": {
+        "title": "Crie um programa seletor de almoços",
+        "intro": [
+          "Neste laboratório, você vai rever arrays e números aleatórios criando um programa seletor de almoço."
+        ]
+      },
       "mokm": {
         "title": "161",
         "intro": []
@@ -2752,9 +2762,11 @@
         "title": "218",
         "intro": []
       },
-      "yvqn": {
-        "title": "219",
-        "intro": []
+      "lab-date-conversion": {
+        "title": "Crie um programa de conversão de data",
+        "intro": [
+          "Neste laboratório, você criará um programa para converter uma data de um formato para outro."
+        ]
       },
       "xtfk": {
         "title": "220",
@@ -2965,8 +2977,10 @@
         ]
       },
       "lab-hash-table-class": {
-        "title": "Build a Hash Table Class",
-        "intro": ["For this lab, you will build a hash table using JavaScript."]
+        "title": "Crie uma classe de hash table",
+        "intro": [
+          "Para este laboratório, você vai criar uma classe de hash table usando o JavaScript."
+        ]
       },
       "muyw": {
         "title": "266",
@@ -2983,9 +2997,9 @@
         "intro": []
       },
       "lab-depth-first-search": {
-        "title": "Implement the Depth-First Search Algorithm",
+        "title": "Implemente o algoritmo de busca em profundidade",
         "intro": [
-          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+          "Para este laboratório, você usará o JavaScript para implementar o algoritmo de busca em profundidade."
         ]
       },
       "xdyh": {
@@ -3530,9 +3544,11 @@
         "title": "382",
         "intro": []
       },
-      "kwhp": {
-        "title": "383",
-        "intro": []
+      "quiz-tooling-and-deployment": {
+        "title": "Questionário sobre ferramentas e implantação",
+        "intro": [
+          "Teste o que você aprendeu neste questionário sobre ferramentas e implantação"
+        ]
       },
       "nkjt": {
         "title": "384",
