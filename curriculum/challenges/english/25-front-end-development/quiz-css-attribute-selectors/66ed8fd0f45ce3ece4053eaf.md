@@ -47,7 +47,7 @@ option[value^="A"] { font-size: 14px; }
 
 #### --text--
 
-Which of the following will not run as expected with this style?
+Which of the following will not match this CSS rule?
 
 ```html
 <style>
