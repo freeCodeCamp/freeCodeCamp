@@ -295,7 +295,7 @@ img:not([alt*="thumbnail"]) { border: 1px solid red; }
 
 #### --text--
 
-You're implementing an accessibility feature where `<button>` elements with a `data-tooltip` attribute should show a dotted underline. However, you want to exclude buttons where `data-tooltip` is exactly `"off"`. How would you write the selector?
+You're implementing an accessibility feature where `button` elements with a `data-tooltip` attribute should show a dotted underline. However, you want to exclude `button` elements where `data-tooltip` is exactly `"off"`. How would you write the selector?
 
 #### --distractors--
 
