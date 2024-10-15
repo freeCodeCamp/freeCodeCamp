@@ -145,7 +145,7 @@ a[title^="Read"] { color: blue; }
 
 #### --text--
 
-How would you target all `<input>` elements with an `id` attribute that ends with `"field"`?
+How would you target all `input` elements with an `id` attribute that ends with `"field"`?
 
 #### --distractors--
 
