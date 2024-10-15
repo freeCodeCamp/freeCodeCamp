@@ -355,7 +355,7 @@ a[href$=".jpg"], a[href$=".png"], a[href$=".gif"] { border-bottom: 2px solid gre
 
 #### --text--
 
-How would you target `<section>` elements that have a `data-theme` attribute containing the word `"dark"` but exclude those where it ends with `"-light"`?
+How would you target `section` elements that have a `data-theme` attribute containing the word `"dark"` but exclude those where it ends with `"-light"`?
 
 #### --distractors--
 
