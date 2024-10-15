@@ -6,4 +6,4 @@ superBlock: front-end-development
 
 ## Introduction to the HTML Fundamentals
 
-Learn HTML fundamentals is in these lecture videos.
+Learn HTML fundamentals in these lecture videos.
