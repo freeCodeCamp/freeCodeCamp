@@ -5,14 +5,14 @@ import { FullWidthRow } from '../helpers';
 import { generateExamToken } from '../../utils/ajax';
 
 function ExamToken(): JSX.Element {
-  const [examToken, setExamToken] = useState('');
-  const [examTokenError, setExamTokenError] = useState('');
+  const [examToken, setExamToken] = useState<string | null>(null);
+  const [examTokenError, setExamTokenError] = useState<string | null>(null);
 
   const [recentlyGenerated, setRecentlyGenerated] = useState(false);
   const [generatedExamToken, setGeneratedExamToken] = useState(false);
 
-  const [copySuccess, setCopySuccess] = useState('');
-  const [copyError, setCopyError] = useState('');
+  const [copySuccess, setCopySuccess] = useState<string | null>(null);
+  const [copyError, setCopyError] = useState<string | null>(null);
 
   const debouncedSetRecentlyGenerated = () => {
     setRecentlyGenerated(true);
@@ -39,13 +39,13 @@ function ExamToken(): JSX.Element {
   };
 
   return (
-    <FullWidthRow id='exam-environment-authorization-token'>
+    <FullWidthRow>
       <Modal
         open={generatedExamToken}
         onClose={() => {
           setGeneratedExamToken(false);
-          setCopySuccess('');
-          setCopyError('');
+          setCopySuccess(null);
+          setCopyError(null);
         }}
       >
         <Modal.Header>{t('exam-token.exam-token')}</Modal.Header>
@@ -64,7 +64,7 @@ function ExamToken(): JSX.Element {
         <Modal.Footer>
           <Button
             onClick={() => {
-              navigator.clipboard.writeText(examToken).then(
+              navigator.clipboard.writeText(examToken ?? '').then(
                 () => {
                   setCopySuccess(t('exam-token.copied'));
                   setCopyError('');
@@ -82,15 +82,15 @@ function ExamToken(): JSX.Element {
           <Button
             onClick={() => {
               setGeneratedExamToken(false);
-              setCopySuccess('');
-              setCopyError('');
+              setCopySuccess(null);
+              setCopyError(null);
             }}
           >
             {t('buttons.close')}
           </Button>
         </Modal.Footer>
       </Modal>
-      <Panel variant='info'>
+      <Panel variant='info' id='exam-environment-authorization-token'>
         <Panel.Heading>{t('exam-token.exam-token')}</Panel.Heading>
         <Panel.Body>
           <p>{t('exam-token.note')}</p>
@@ -101,7 +101,7 @@ function ExamToken(): JSX.Element {
             disabled={recentlyGenerated}
             onClick={() => {
               setGeneratedExamToken(true);
-              getToken().catch(e => console.error(e));
+              void getToken();
             }}
           >
             {t('exam-token.generate-exam-token')}
