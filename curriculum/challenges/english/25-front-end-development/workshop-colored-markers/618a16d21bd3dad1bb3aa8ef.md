@@ -17,14 +17,15 @@ Your first marker `div` should not have the class `one`.
 
 ```js
 const containerFirstChild = [...document.querySelector('.container')?.children][0];
-assert(!containerFirstChild?.classList?.contains('one'));
+assert.isFalse(containerFirstChild?.classList?.contains('one'));
 ```
 
 Your first marker `div` should have the classes `marker` and `red`.
 
 ```js
 const containerFirstChild = [...document.querySelector('.container')?.children][0];
-assert(containerFirstChild?.classList?.contains('marker') && containerFirstChild?.classList?.contains('red'));
+assert.isTrue(containerFirstChild?.classList?.contains('marker'));
+assert.isTrue(containerFirstChild?.classList?.contains('red'));
 ```
 
 # --seed--
