@@ -25,7 +25,7 @@ To create rounded corners
 
 ---
 
-opacity
+To control opacity
 
 ---
 
@@ -33,7 +33,7 @@ To center vertically
 
 #### --answer--
 
-The property is used to align elements to either the left or the right of their container.
+To align elements to either the left or the right of their container 
 
 ### --question--
 
@@ -43,7 +43,7 @@ Which CSS property is used to set the stack order of an element?
 
 #### --distractors--
 
-position
+`position`
 
 ---
 
@@ -61,7 +61,7 @@ position
 
 #### --text--
 
-What happens when you apply the property position: relative to an element in CSS ?
+What happens when you apply `position: relative` to an element in CSS ?  
 
 #### --distractors--
 
@@ -109,11 +109,11 @@ If an element has `position: absolute`, to what is it positioned by default ?
 
 #### --distractors--
 
-The closest ancestor with the attribute `position: fixed`
+The closest ancestor with `position: fixed`
 
 ---
 
-The closest ancestor that has `position: absolute`
+The closest ancestor with `position: absolute`
 
 ---
 
@@ -121,7 +121,7 @@ The `<body>` element
 
 #### --answer--
 
-The closest ancestor that has `position: relative`
+The closest ancestor with `position: relative`
 
 ### --question--
 
@@ -149,7 +149,7 @@ Which positioning method allows an element to stick to a defined position only w
 
 #### --text--
 
-What would happen if an element had z-index: -1?
+What would happen if an element had `z-index: -1`?
 
 #### --distractors--
 
@@ -179,7 +179,7 @@ Other elements are placed in relation to the floated element
 
 ---
 
-The floated element is overlapped by surrounding elements that ignore it.
+The surrounding elements ignore the floated element and overlap it.
 
 ---
 
@@ -209,13 +209,13 @@ A `z-index` of 0 or greater
 
 #### --answer--
 
-A declared top, left, right, or bottom property
+A declared `top`, `left`, `right`, or `bottom` property 
 
 ### --question--
 
 #### --text--
 
-What happens when setting the overflow property of a parent to auto, if one of its children has the property position: sticky?
+What happens when setting the `overflow` property of a parent to `auto` if one of its children has the property `position: sticky`?
 
 #### --distractors--
 
@@ -253,7 +253,7 @@ Any sticky element must declare `float: left` or `float: right`
 
 #### --answer--
 
-The sticky element should have one of the top, left, right or bottom value defined.
+The sticky element should have one of the `top`, `left`, `right` or `bottom` value defined.
 
 ### --question--
 
@@ -281,7 +281,7 @@ The containing block will collapse, completely ignoring its floated element heig
 
 #### --text--
 
-Which of the following CSS techniques is an accepted method for preventing a parent container from schrinking in size when it contains only floated elements?
+Which of the following CSS techniques is an accepted method for preventing a parent container from shrinking in size when it contains only floated elements?
 
 #### --distractors--
 
@@ -303,7 +303,7 @@ Adding the property `overflow: auto` or `overflow: hidden` to the parent contain
 
 #### --text--
 
-When a floating element is followed by non-floating inline elements, it will affect the way in which their layout is performed. 
+When a floating element is followed by non-floating inline elements, how will their layout be affected? 
 
 #### --distractors--
 
@@ -325,7 +325,7 @@ Inline elements will wrap around the floated element if there is enough space.
 
 #### --text--
 
-What happens when clear: both is applied to an element following two floated elements -one left and one right - in a container?
+What happens when `clear: both` is applied to an element following two floated elements - one left and one right - in a container?
 
 #### --distractors--
 
@@ -347,11 +347,11 @@ The element will be underneath both floated elements - the float breaks
 
 #### --text--
 
-When does an element with z-index: auto create a new stacking context?
+When does an element with `z-index: auto` create a new stacking context?
 
 #### --distractors--
 
-Combined with `position: absolute` or `position: relative`
+When Combined with `position: absolute` or `position: relative`
 
 ---
 
@@ -369,7 +369,7 @@ In combination with `position: fixed` or `position: sticky`
 
 #### --text--
 
-If two sibling elements have the same z-index and are both positioned absolutely using position: absolute, how do you determine which one is on top?
+If two sibling elements have the same `z-index` and are both positioned absolutely using `position: absolute`, what determins which one is on top?
 
 #### --distractors--
 
@@ -385,13 +385,13 @@ Using `position: relative` on the parent container
 
 #### --answer--
 
-By changing the document order (HTML position)
+The document source order (HTML position)
 
 ### --question--
 
 #### --text--
 
-In what way will the property position: relative exert an effect on sibling elements in regards to document flow?
+In what way will the property `position: relative` exert an effect on sibling elements in regards to document flow?
 
 #### --distractors--
 
@@ -443,7 +443,7 @@ It will create a new stacking context, and on top of any other element whose `z-
 
 ---
 
-By default it behaves like position: absolute creating a new stacking context.
+By default it behaves like `position: absolute` creating a new stacking context.
 
 ---
 
