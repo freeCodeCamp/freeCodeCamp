@@ -38,7 +38,7 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
-  FREECODECAMP_NODE_ENV
+  FCC_ENABLE_EXAM_ENVIRONMENT
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import {
@@ -187,8 +187,7 @@ export const build = async (
     }
   });
 
-  // NOTE: Code behind the `FREECODECAMP_NODE_ENV` var is not ready to be deployed yet.
-  if (FREECODECAMP_NODE_ENV !== 'production') {
+  if (FCC_ENABLE_EXAM_ENVIRONMENT) {
     void fastify.register(function (fastify, _opts, done) {
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 
