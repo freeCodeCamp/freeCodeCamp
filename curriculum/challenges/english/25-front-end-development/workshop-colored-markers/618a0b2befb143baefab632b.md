@@ -18,13 +18,13 @@ First, in the `h1` rule, use the `rgb` function to set its `background-color` to
 You should not remove or modify the `text-align` property or its value.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h1')?.textAlign === 'center');
+assert.strictEqual(new __helpers.CSSHelp(document).getStyle('h1')?.textAlign, 'center');
 ```
 
 Your `h1` CSS rule should have a `background-color` property set to `rgb(0, 255, 255)`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('h1')?.backgroundColor === 'rgb(0, 255, 255)');
+assert.strictEqual(new __helpers.CSSHelp(document).getStyle('h1')?.backgroundColor, 'rgb(0, 255, 255)');
 ```
 
 # --seed--
