@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import envData, { clientLocale } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
@@ -170,12 +170,6 @@ function DefaultLayout({
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
-  const lightFontUrl =
-    clientLocale === 'japanese' ? jpSansLightURL : latoLightURL;
-  const regularFontUrl =
-    clientLocale === 'japanese' ? jpSansRegularURL : latoRegularURL;
-  const boldFontUrl = clientLocale === 'japanese' ? jpSansBoldURL : latoBoldURL;
-
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -200,21 +194,42 @@ function DefaultLayout({
           <link
             as='font'
             crossOrigin='anonymous'
-            href={regularFontUrl}
+            href={latoRegularURL}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={lightFontUrl}
+            href={latoLightURL}
             rel='preload'
             type='font/woff'
           />
           <link
             as='font'
             crossOrigin='anonymous'
-            href={boldFontUrl}
+            href={latoBoldURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={jpSansRegularURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={jpSansLightURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={jpSansBoldURL}
             rel='preload'
             type='font/woff'
           />
