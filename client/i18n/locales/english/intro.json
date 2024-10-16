@@ -1929,7 +1929,13 @@
           "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
         ]
       },
-      "tcwi": { "title": "78", "intro": [] },
+      "workshop-flexbox-photo-gallery": {
+        "title": "Build a Flexbox Photo Gallery",
+        "intro": [
+          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
+      },
       "uptf": { "title": "79", "intro": [] },
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
