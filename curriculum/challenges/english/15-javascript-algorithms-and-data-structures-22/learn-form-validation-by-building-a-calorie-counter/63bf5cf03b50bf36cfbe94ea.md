@@ -214,7 +214,7 @@ function isInvalidInput(str) {
   return str.match(regex);
 }
 
---fcc-editable-region-- 
+--fcc-editable-region--
 console.log(entryDropdown.value)
 --fcc-editable-region--
 ```
