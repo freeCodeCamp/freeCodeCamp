@@ -237,23 +237,22 @@ The child will lose its sticky behaviour when the parent scrolls.
 
 #### --text--
 
-Which of the following must be true if a `position: sticky` element is to work as intended?
+Which of the following are true about `position: relative` and how it affects the child elements?
 
 #### --distractors--
 
-The height in the parent container must be explicitly set.
+Child elements with `position: absolute` will be positioned relative to the nearest positioned ancestor, whether that is relative or absolute.
 
 ---
 
-The sticky element should be inside a container with `position: relative`
-
+A `position: relative` element moved does not occupy any space within the document flow.
 ---
 
-Any sticky element must declare `float: left` or `float: right` 
+Relative positioning allows an element to overlap sibling elements without affecting their layout.
 
 #### --answer--
 
-The sticky element should have one of the `top`, `left`, `right` or `bottom` value defined.
+The `position: relative` element keeps its space in document flow, but the children absolutely positioned should be positioned concerning the `position: relative` parent.
 
 ### --question--
 
