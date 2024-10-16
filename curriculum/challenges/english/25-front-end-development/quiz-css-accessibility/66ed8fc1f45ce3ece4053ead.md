@@ -7,7 +7,7 @@ dashedName: quiz-css-accessibility
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+Answer all of the questions below correctly to pass the quiz. This quiz tests your understanding of **CSS accessibility**, including best practices for creating accessible web content using CSS.
 
 # --quizzes--
 
@@ -17,439 +17,224 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+Which CSS property is commonly used to visually hide content while keeping it accessible to screen readers?
 
 #### --distractors--
 
-Placeholder distractor 1
+`display: none;`
 
 ---
 
-Placeholder distractor 2
+`visibility: hidden;`
 
 ---
 
-Placeholder distractor 3
+`color: transparent;`
 
 #### --answer--
 
-Placeholder answer
+`position: absolute; left: -9999px;`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the recommended way to ensure sufficient contrast between text and background in your CSS?
 
 #### --distractors--
 
-Placeholder distractor 1
+Using light gray text on a white background.
 
 ---
 
-Placeholder distractor 2
+Using vibrant colors without checking contrast ratios.
 
 ---
 
-Placeholder distractor 3
+Choosing colors that visually look good to you.
 
 #### --answer--
 
-Placeholder answer
+Use a contrast ratio checker to ensure a minimum ratio of 4.5:1 for normal text.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which CSS pseudo-class can help improve accessibility by indicating when an element is focused, especially for keyboard users?
 
 #### --distractors--
 
-Placeholder distractor 1
+`:hover`
 
 ---
 
-Placeholder distractor 2
+`:active`
 
 ---
 
-Placeholder distractor 3
+`:checked`
 
 #### --answer--
 
-Placeholder answer
+`:focus`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which CSS property should be used to provide an accessible outline for keyboard navigation focus, rather than removing it?
 
 #### --distractors--
 
-Placeholder distractor 1
+`outline: none;`
 
 ---
 
-Placeholder distractor 2
+`border: none;`
 
 ---
 
-Placeholder distractor 3
+`display: none;`
 
 #### --answer--
 
-Placeholder answer
+`outline: 2px solid blue;`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the purpose of using `em` or `rem` units in CSS for font sizes, especially in terms of accessibility?
 
 #### --distractors--
 
-Placeholder distractor 1
+To make fonts look smaller on mobile devices.
 
 ---
 
-Placeholder distractor 2
+To ensure pixel-perfect designs across all screen sizes.
 
 ---
 
-Placeholder distractor 3
+To increase loading speed of a webpage.
 
 #### --answer--
 
-Placeholder answer
+To allow for scalable text that respects the user’s browser settings.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+When creating accessible layouts with CSS, why is it important to avoid relying solely on color to convey meaning?
 
 #### --distractors--
 
-Placeholder distractor 1
+Because color is not important for UI design.
 
 ---
 
-Placeholder distractor 2
+Because some people don't like colorful designs.
 
 ---
 
-Placeholder distractor 3
+Because users with color blindness may not perceive the differences in color.
 
 #### --answer--
 
-Placeholder answer
+Because users with color blindness may not perceive the differences in color.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the purpose of using the `aria-hidden="true"` attribute alongside CSS?
 
 #### --distractors--
 
-Placeholder distractor 1
+To hide content from the visual display without affecting screen readers.
 
 ---
 
-Placeholder distractor 2
+To hide content from both the visual display and screen readers.
 
 ---
 
-Placeholder distractor 3
+To add more visual styling to the element.
 
 #### --answer--
 
-Placeholder answer
+To hide content visually but keep it accessible to screen readers.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How can the CSS `min-width` and `max-width` properties enhance accessibility on responsive websites?
 
 #### --distractors--
 
-Placeholder distractor 1
+They allow the layout to expand indefinitely.
 
 ---
 
-Placeholder distractor 2
+They force all elements to the same size.
 
 ---
 
-Placeholder distractor 3
+They have no impact on accessibility.
 
 #### --answer--
 
-Placeholder answer
+They ensure elements resize appropriately, improving readability on different screen sizes.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the main accessibility issue when using small touch targets (e.g., buttons) with CSS?
 
 #### --distractors--
 
-Placeholder distractor 1
+They make the website load faster.
 
 ---
 
-Placeholder distractor 2
+They help users focus on the important content.
 
 ---
 
-Placeholder distractor 3
+They make it easier for users to click the buttons.
 
 #### --answer--
 
-Placeholder answer
+They can be difficult to click, especially for users with mobility impairments.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Why should developers avoid setting fixed heights for containers with text content in CSS?
 
 #### --distractors--
 
-Placeholder distractor 1
+Because it can make the text overflow the container.
 
 ---
 
-Placeholder distractor 2
+Because it prevents users from resizing the browser window.
 
 ---
 
-Placeholder distractor 3
+Because it makes websites look less appealing.
 
 #### --answer--
 
-Placeholder answer
+Because users who increase the font size might have text cut off or hidden.
 
-### --question--
+# --hints--
 
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
+- Use the [WCAG contrast guidelines](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum) to check color contrast ratios.
+- Avoid using `outline: none;` to remove focus styles unless replacing it with an alternative visual indicator for keyboard users.
+- Ensure that content hidden visually is still accessible for screen readers if it's necessary for context.
