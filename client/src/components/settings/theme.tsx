@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import type { updateMyTheme } from '../../redux/settings/actions';
-
+import { useDispatch } from 'react-redux';
+import { updateMyTheme } from '../../redux/settings/actions';
 import ToggleButtonSetting from './toggle-button-setting';
 
 export enum Themes {
@@ -11,15 +11,16 @@ export enum Themes {
 
 export type ThemeProps = {
   currentTheme: Themes;
-  toggleNightMode: typeof updateMyTheme;
 };
 
 export default function ThemeSettings({
-  currentTheme,
-  toggleNightMode
+  currentTheme
 }: ThemeProps): JSX.Element {
   const { t } = useTranslation();
 
+  const dispatch = useDispatch();
+  const invertedTheme =
+    currentTheme === Themes.Night ? Themes.Default : Themes.Night;
   return (
     <ToggleButtonSetting
       action={t('settings.labels.night-mode')}
@@ -28,9 +29,7 @@ export default function ThemeSettings({
       offLabel={t('buttons.off')}
       onLabel={t('buttons.on')}
       toggleFlag={() => {
-        toggleNightMode(
-          currentTheme === Themes.Night ? Themes.Default : Themes.Night
-        );
+        dispatch(updateMyTheme({ theme: invertedTheme }));
       }}
     />
   );

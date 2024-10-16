@@ -11,7 +11,6 @@ type MiscSettingsProps = ThemeProps & {
   keyboardShortcuts: boolean;
   sound: boolean;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  toggleNightMode: () => void;
   toggleSoundMode: (sound: boolean) => void;
 };
 
@@ -20,7 +19,6 @@ const MiscSettings = ({
   keyboardShortcuts,
   sound,
   toggleKeyboardShortcuts,
-  toggleNightMode,
   toggleSoundMode
 }: MiscSettingsProps) => {
   const { t } = useTranslation();
@@ -29,10 +27,7 @@ const MiscSettings = ({
     <>
       <Spacer size='medium' />
       <FullWidthRow>
-        <ThemeSettings
-          currentTheme={currentTheme}
-          toggleNightMode={toggleNightMode}
-        />
+        <ThemeSettings currentTheme={currentTheme} />
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         <KeyboardShortcutsSettings
           keyboardShortcuts={keyboardShortcuts}
