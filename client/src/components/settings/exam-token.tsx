@@ -63,11 +63,11 @@ function ExamToken(): JSX.Element {
               navigator.clipboard.writeText(examToken ?? '').then(
                 () => {
                   setCopySuccess(t('exam-token.copied'));
-                  setCopyError('');
+                  setCopyError(null);
                 },
                 () => {
                   setCopyError(t('exam-token.copy-error'));
-                  setCopySuccess('');
+                  setCopySuccess(null);
                 }
               );
             }}
@@ -96,7 +96,6 @@ function ExamToken(): JSX.Element {
             block={true}
             disabled={recentlyGenerated}
             onClick={() => void getToken()}
-            }}
           >
             {t('exam-token.generate-exam-token')}
           </Button>
