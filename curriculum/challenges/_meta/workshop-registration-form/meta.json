@@ -1,0 +1,12 @@
+{
+  "name": "Design a Registration Form",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-registration-form",
+  "order": 68,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "670fa3a6a27b17634f0ae66f", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
