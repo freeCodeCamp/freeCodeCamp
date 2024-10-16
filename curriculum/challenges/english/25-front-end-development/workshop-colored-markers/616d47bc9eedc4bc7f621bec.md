@@ -14,26 +14,26 @@ Next, within the `div` element, add another `div` element and give it a class of
 Your new `div` element should have an opening tag.
 
 ```js
-assert([...code.matchAll(/<div.*?>/gi)][1]);
+assert.exists([...code.matchAll(/<div.*?>/gi)][1]);
 ```
 
 Your new `div` element should have a closing tag.
 
 ```js
-assert([...code.matchAll(/<\/div\s*>/gi)][1]);
+assert.exists([...code.matchAll(/<\/div\s*>/gi)][1]);
 ```
 
 You should nest your new `div` element within the `div` with the class `container`.
 
 ```js
-assert(document.querySelector('.container')?.children[0]?.localName === 'div');
+assert.equal(document.querySelector('.container')?.children[0]?.localName, 'div');
 ```
 
 You should give your new `div` element a class of `marker`.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];
-assert(containerChildren.every(child => child.classList?.contains('marker')));
+assert.isTrue(containerChildren.every(child => child.classList?.contains('marker')));
 ```
 
 # --seed--
