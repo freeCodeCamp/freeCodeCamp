@@ -1889,7 +1889,12 @@
           "Test what you've learned in this quiz of pseudo-classes in CSS."
         ]
       },
-      "fvcj": { "title": "63", "intro": [] },
+      "workshop-colored-markers": {
+        "title": "Create a Set of Colored Markers",
+        "intro": [
+          "In this course, you'll build a set of colored markers. You'll practice different ways to set color values and how to pair colors with each other."
+        ]
+      },
       "ogdb": { "title": "64", "intro": [] },
       "zxiy": { "title": "65", "intro": [] },
       "qpze": { "title": "66", "intro": [] },
