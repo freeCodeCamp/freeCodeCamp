@@ -26,7 +26,7 @@ assert.exists([...code.matchAll(/<\/div\s*>/gi)][1]);
 You should nest your new `div` element within the `div` with the class `container`.
 
 ```js
-assert.equal(document.querySelector('.container')?.children[0]?.localName, 'div');
+assert.strictEqual(document.querySelector('.container')?.children[0]?.localName, 'div');
 ```
 
 You should give your new `div` element a class of `marker`.
