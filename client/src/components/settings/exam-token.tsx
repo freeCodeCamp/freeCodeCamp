@@ -9,15 +9,10 @@ function ExamToken(): JSX.Element {
   const [examTokenError, setExamTokenError] = useState<string | null>(null);
 
   const [recentlyGenerated, setRecentlyGenerated] = useState(false);
-  const [generatedExamToken, setGeneratedExamToken] = useState(false);
 
   const [copySuccess, setCopySuccess] = useState<string | null>(null);
   const [copyError, setCopyError] = useState<string | null>(null);
 
-  const debouncedSetRecentlyGenerated = () => {
-    setRecentlyGenerated(true);
-    setTimeout(() => setRecentlyGenerated(false), 10000);
-  };
   const { t } = useTranslation();
 
   const getToken = async () => {
@@ -35,15 +30,16 @@ function ExamToken(): JSX.Element {
       setExamTokenError(t('exam-token.error'));
     }
 
-    debouncedSetRecentlyGenerated();
+    setRecentlyGenerated(true);
+    setTimeout(() => setRecentlyGenerated(false), 10000);
   };
 
   return (
     <FullWidthRow>
       <Modal
-        open={generatedExamToken}
+        open={!!examToken}
         onClose={() => {
-          setGeneratedExamToken(false);
+          setExamToken(null);
           setCopySuccess(null);
           setCopyError(null);
         }}
@@ -81,7 +77,7 @@ function ExamToken(): JSX.Element {
           <Spacer size='s' />
           <Button
             onClick={() => {
-              setGeneratedExamToken(false);
+              setExamToken(null);
               setCopySuccess(null);
               setCopyError(null);
             }}
@@ -99,9 +95,7 @@ function ExamToken(): JSX.Element {
           <Button
             block={true}
             disabled={recentlyGenerated}
-            onClick={() => {
-              setGeneratedExamToken(true);
-              void getToken();
+            onClick={() => void getToken()}
             }}
           >
             {t('exam-token.generate-exam-token')}
