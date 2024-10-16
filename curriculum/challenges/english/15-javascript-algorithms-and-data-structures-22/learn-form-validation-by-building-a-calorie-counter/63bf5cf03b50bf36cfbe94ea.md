@@ -13,6 +13,12 @@ Your next step is to allow users to add entries to the calorie counter. Declare 
 
 # --hints--
 
+You should remove the `console.log` statement.
+
+```js
+assert.strictEqual((/console\.log\s*\(.*\)/).test(code),false)
+```
+
 You should declare an `addEntry` function.
 
 ```js
@@ -208,9 +214,7 @@ function isInvalidInput(str) {
   return str.match(regex);
 }
 
-console.log(entryDropdown.value)
-
 --fcc-editable-region-- 
-
+console.log(entryDropdown.value)
 --fcc-editable-region--
 ```
