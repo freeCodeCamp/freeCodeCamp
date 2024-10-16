@@ -206,27 +206,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
   ],
-  [Languages.Arabic]: [
-    SuperBlocks.DataVis,
-    SuperBlocks.RelationalDb,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.FrontEndDevelopment,
-    SuperBlocks.UpcomingPython,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.PythonForEverybody
-  ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
