@@ -110,6 +110,16 @@ const duplicatedProjectIds = [
   // Colored Markers
 
   // Registration Form
+  '60eebd07ea685b0e777b5583',
+  '60f027099a15b00485563dd2',
+  '60f027c87bc98f050395c139',
+  '60f0286404aefb0562a4fdf9',
+  '62cc5b1779e4d313466f73c5',
+  '60f02e7361b68405e27b62a5',
+  '60f030d388cb74067cf291c3',
+  '60f1922fcbd2410527b3bd89',
+  '60f1a5e2d2c23707a4f9a660',
+  '60f1a9cbd23023082e149fee',
 
   // Rothko Painting
 
