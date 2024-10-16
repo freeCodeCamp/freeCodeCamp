@@ -482,6 +482,7 @@ Suppose, on freeCodeCamp’s forum, each discussion has a `data-status` attribut
 ```css
 div[data-status$="open"] { border: 2px solid green; }
 ```
+
 ---
 
 ```css
