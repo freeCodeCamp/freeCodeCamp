@@ -16,7 +16,7 @@ Your next step is to allow users to add entries to the calorie counter. Declare 
 You should remove the `console.log` statement.
 
 ```js
-assert.strictEqual((/console\.log\s*\(.*\)/).test(code),false)
+assert.notMatch(code, /console\.log\s*\(.*\)/)
 ```
 
 You should declare an `addEntry` function.
