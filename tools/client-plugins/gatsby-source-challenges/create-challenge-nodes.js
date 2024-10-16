@@ -7,27 +7,10 @@ function createChallengeNode(
   reporter,
   { isReloading } = { isReloading: false }
 ) {
-  // challengeType 11 is for video challenges (they only have instructions)
-  // challengeType 7 is for certificates (they only have tests)
-  // challengeType 12 is for CodeAlly/CodeRoad challenge
+  if (!challenge.description) challenge.description = '';
+  if (!challenge.instructions) challenge.instructions = '';
+  if (!challenge.seed) challenge.seed = '';
 
-  // TODO: either handle empty descriptions inside Gatsby OR ensure that
-  // description defaults to '' when creating challenges.
-  // ditto for seeds and instructions.
-  // create-md should, then, not create empty seed, description or instruction
-  // sections.
-  if (
-    typeof challenge.description !== 'string' &&
-    challenge.challengeType !== 11 &&
-    challenge.challengeType !== 7 &&
-    challenge.challengeType !== 12
-  ) {
-    reporter.warn(`
-
-    ${challenge.block} ${challenge.title} has a description that will break things!
-
-    `);
-  }
   const contentDigest = crypto
     .createHash('md5')
     .update(JSON.stringify(challenge))
