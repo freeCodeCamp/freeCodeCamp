@@ -33,7 +33,8 @@ You should give your new `div` element a class of `marker`.
 
 ```js
 const containerChildren = [...document.querySelector('.container')?.children];
-assert.isTrue(containerChildren.every(child => child.classList?.contains('marker')));
+assert.isNotEmpty(containerChildren)
+containerChildren.forEach(child => assert.isTrue(child.classList?.contains('marker')));
 ```
 
 # --seed--
