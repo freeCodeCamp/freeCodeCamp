@@ -39,23 +39,23 @@ Which CSS property is used for 2D/3D transformations?
 
 #### --text--
 
-What does matrix() allow you to control?
+What does `matrix()` allow you to control?
 
 #### --distractors--
 
-`Only scaling`
+Only scaling
 
 ---
 
-`Only translation`
+Only translation
 
 ---
 
-`Only rotation`
+Only rotation`
 
 #### --answer--
 
-`Multiple transformations at once`
+Multiple transformations at once
 
 ### --question--
 
@@ -105,45 +105,45 @@ Which timing function makes the animation run with the same speed from start to 
 
 #### --text--
 
-What does @keyframes define?
+What does `@keyframes` define?
 
 #### --distractors--
 
-`CSS colors`
+CSS colors
 
 ---
 
-`CSS transitions`
+CSS transitions
 
 ---
 
-`CSS text styles`
+CSS text styles
 
 #### --answer--
 
-`CSS animation sequences`
+CSS animation sequences
 
 ### --question--
 
 #### --text--
 
-What does translate() do?
+What does `translate()` do?
 
 #### --distractors--
 
-`Changes opacity`
+Changes opacity
 
 ---
 
-`Rotates the element`
+Rotates the element
 
 ---
 
-`Skews the element`
+Skews the element
 
 #### --answer--
 
-`Moves the element`
+Moves the element
 
 ### --question--
 
@@ -153,41 +153,42 @@ What does accessibility focus on in web design?
 
 #### --distractors--
 
-`Color choice`
+Color choice
 
 ---
 
-`Responsiveness`
+Responsiveness
 
 ---
 
-`Layout complexity`
+Layout complexity
 
 #### --answer--
 
-`Usability for all users`
+Usability for all users
 
 ### --question--
 
 #### --text--
 
-How will this keyframe animation affect the element's color?
+How will this `keyframe` animation affect the element's color?
+
 
 #### --distractors--
 
-`It will fade between red and blue.`
+It will fade between red and blue.
 
 ---
 
-`It will change the color instantly from red to blue.`
+It will change the color instantly from red to blue.
 
 ---
 
-`It will cycle through all colors.`
+It will cycle through all colors.
 
 #### --answer--
 
-`It will change the color instantly from red to blue.`
+It will change the color instantly from red to blue.
 
 ### --question--
 
@@ -219,21 +220,22 @@ Why is providing video captions important?
 
 #### --distractors--
 
-`To improve SEO`
+To improve SEO
 
 ---
 
-`To comply with web standards`
+To comply with web standards
 
 ---
 
-`To enhance visuals`
+To enhance visuals
 
 #### --answer--
-`To provide accessibility for hearing impaired users`
+To provide accessibility for hearing impaired users
 ### --question--
 
 #### --text--
+
 Which attribute is used for form field accessibility?
 #### --distractors--
 `Placeholder`
@@ -268,86 +270,85 @@ Which property defines how an animation progresses over time?
 ### --question--
 
 #### --text--
-
-What effect does step-start have on the animation?
+What effect does `step-start` have on an animation?
 
 #### --distractors--
 
-`Smoothly transitions between steps`
+Smoothly transitions between steps.
 
 ---
 
-`Repeats the animation infinitely with no delay`
+Repeats the animation infinitely with no delay.
 
 ---
 
-`Fades in and out during each step`
+Fades in and out during each step.
 
 #### --answer--
 
-`Jumps immediately to the next frame`
+Jumps immediately to the next frame.
 
 ### --question--
 
 #### --text--
+
 What is the purpose of focus indicators?
 #### --distractors--
-`To show hidden elements`
+To show hidden elements.
 ---
-`To enhance font styles`
+To enhance font styles.
 ---
-`To adjust the layout`
+To adjust the layout.
 #### --answer--
-`To highlight focused elements`
+To highlight focused elements
 ### --question--
 
 #### --text--
-
-What will happen when this animation transform: translateX(200px) is applied?
+What will happen when this animation `transform: translateX(200px)` is applied?
 
 #### --distractors--
 
-`The element will move left`
+The element will move left.
 
 ---
 
-`The element will move 200px to the bottom`
+`The element will move 200px to the bottom.
 
 ---
 
-`The element will rotate 200 degrees`
+The element will rotate 200 degrees.
 
 #### --answer--
 
-`The element will move 200px to the right`
+The element will move 200px to the right.
 
 ### --question--
 
 #### --text--
 
-How will the animation behave if animation-iteration-count is set to infinite?
+How will the animation behave if `animation-iteration-count` is set to `infinite`?
 
 #### --distractors--
 
-`The animation will run once and stop`
+The animation will run once and stop.
 
 ---
 
-`The animation will pause after the first iteration`
+The animation will pause after the first iteration.
 
 ---
 
-`The animation will stop after three iterations`
+The animation will stop after three iterations.
 
 #### --answer--
 
-`The animation will repeat indefinitely`
+The animation will repeat indefinitely.
 
 ### --question--
 
 #### --text--
 
-Which keyframe selector defines the halfway point of an animation?
+Which `keyframe` selector defines the halfway point of an animation?
 
 #### --distractors--
 
@@ -391,23 +392,23 @@ How do you ensure an animation starts from the middle of its defined steps?
 
 #### --text--
 
-What is the effect of using the ease-in-out timing function?
+What is the effect of using the `ease-in-out` timing function?
 
 #### --distractors--
 
-`The animation will start fast and end slow`
+The animation will start fast and end slow
 
 ---
 
-`The animation will run at a constant speed`
+The animation will run at a constant speed.
 
 ---
 
-`The animation will loop infinitely`
+The animation will loop infinitely.
 
 #### --answer--
 
-`The animation will start slow, speed up, then slow down`
+The animation will start slow, speed up, then slow down.
 
 ### --question--
 
