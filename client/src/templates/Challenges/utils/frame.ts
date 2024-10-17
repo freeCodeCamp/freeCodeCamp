@@ -321,7 +321,10 @@ const initMainFrame =
             });
             // Failed to fetch external resource
             if (!response.ok) {
-              return `Cannot retrieve ${urlAddr}, link status code: ${response.status}`;
+              const resourceAddress = urlAddr.substring(
+                urlAddr.lastIndexOf('/') + 1
+              );
+              return `${resourceAddress} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
             }
             const text = await response.text();
             if (text.trim().includes('<!DOCTYPE html><html id="__fcc-html')) {
