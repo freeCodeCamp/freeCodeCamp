@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Callout, Container } from '@freecodecamp/ui';
+import { useFeatureIsOn } from '@growthbook/growthbook-react';
 
 import store from 'store';
 import envData from '../../config/env.json';
@@ -18,6 +19,7 @@ import Honesty from '../components/settings/honesty';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
+import ExamToken from '../components/settings/exam-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -35,6 +37,7 @@ import {
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
+
 const { apiLocation } = envData;
 
 // TODO: update types for actions
@@ -126,6 +129,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
   const isSignedInRef = useRef(isSignedIn);
 
+  const examTokenFlag = useFeatureIsOn('exam-token-widget');
+
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
@@ -172,6 +177,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='medium' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='medium' />
+          {examTokenFlag && <ExamToken />}
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
