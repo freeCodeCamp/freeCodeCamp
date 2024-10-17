@@ -61,6 +61,11 @@ const fillInTheBlank = path.resolve(
   '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
 );
 
+const envExam = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/env-exam/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -73,7 +78,8 @@ const views = {
   exam,
   msTrophy,
   dialogue,
-  fillInTheBlank
+  fillInTheBlank,
+  envExam
   // quiz: Quiz
 };
 

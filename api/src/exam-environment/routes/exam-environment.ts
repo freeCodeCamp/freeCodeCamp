@@ -163,7 +163,7 @@ async function postExamGeneratedExamHandler(
 
   // Check user has completed prerequisites
   const user = req.user!;
-  const isExamPrerequisitesMet = checkPrerequisites(user, true);
+  const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
     void reply.code(403);
