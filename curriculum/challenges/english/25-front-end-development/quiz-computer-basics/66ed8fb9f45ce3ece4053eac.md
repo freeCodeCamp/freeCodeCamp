@@ -17,439 +17,439 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+What part of a computer is used to connect the other internal components together?
 
 #### --distractors--
 
-Placeholder distractor 1
+Processor
 
 ---
 
-Placeholder distractor 2
+Graphics Card
 
 ---
 
-Placeholder distractor 3
+Memory
 
 #### --answer--
 
-Placeholder answer
+Motherboard
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which is not a conventional way to connect a keyboard to the computer?
 
 #### --distractors--
 
-Placeholder distractor 1
+USB Receiver
 
 ---
 
-Placeholder distractor 2
+Bluetooth
 
 ---
 
-Placeholder distractor 3
+USB Cable
 
 #### --answer--
 
-Placeholder answer
+Ethernet Cable
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following ISP connections are typically the fastest?
 
 #### --distractors--
 
-Placeholder distractor 1
+DSL
 
 ---
 
-Placeholder distractor 2
+Satellite
 
 ---
 
-Placeholder distractor 3
+Cable
 
 #### --answer--
 
-Placeholder answer
+Fiber Optic
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is NOT a safe practice when signing in?
 
 #### --distractors--
 
-Placeholder distractor 1
+Using a fingerprint or face scanner
 
 ---
 
-Placeholder distractor 2
+Making a long and complex password like `@ppl3_+B@nana34823`
 
 ---
 
-Placeholder distractor 3
+Utilizing a physical USB security key
 
 #### --answer--
 
-Placeholder answer
+Saving passwords in the browser on a public computer
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is not a Web Browser?
 
 #### --distractors--
 
-Placeholder distractor 1
+Safari
 
 ---
 
-Placeholder distractor 2
+Opera GX
 
 ---
 
-Placeholder distractor 3
+DuckDuckGo
 
 #### --answer--
 
-Placeholder answer
+Google Drive
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+When you need to edit a piece of code, which of the following are you most likely going to use?
 
 #### --distractors--
 
-Placeholder distractor 1
+Node Package Manager
 
 ---
 
-Placeholder distractor 2
+Microsoft Edge
 
 ---
 
-Placeholder distractor 3
+Github
 
 #### --answer--
 
-Placeholder answer
+Visual Studio Code
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following stores and accesses files on the hard drive?
 
 #### --distractors--
 
-Placeholder distractor 1
+Dropbox
 
 ---
 
-Placeholder distractor 2
+Microsoft OneDrive
 
 ---
 
-Placeholder distractor 3
+Google Drive
 
 #### --answer--
 
-Placeholder answer
+Windows File Explorer
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is something you should avoid when naming files?
 
 #### --distractors--
 
-Placeholder distractor 1
+Putting an underscore or hyphen between words
 
 ---
 
-Placeholder distractor 2
+Use a casing style such as camelCase and sticking with it
 
 ---
 
-Placeholder distractor 3
+Putting a version number at the end of a document like `summaryReport_v2.docx`
 
 #### --answer--
 
-Placeholder answer
+Putting spaces between words
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is a way to move files?
 
 #### --distractors--
 
-Placeholder distractor 1
+Using `Ctrl + X` and `Ctrl + V` (or `Command + X` and `Command + V` on Mac)
 
 ---
 
-Placeholder distractor 2
+Dragging the file and dropping it at the destination
 
 ---
 
-Placeholder distractor 3
+Using a terminal command such as `move` (`mv` on Mac)
 
 #### --answer--
 
-Placeholder answer
+All of the other choices
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is a way to send a file to the Recycle Bin/Trash?
 
 #### --distractors--
 
-Placeholder distractor 1
+All of the other choices
 
 ---
 
-Placeholder distractor 2
+Pressing the `Backspace` key on the keyboard
 
 ---
 
-Placeholder distractor 3
+Moving it to an Archived folder
 
 #### --answer--
 
-Placeholder answer
+Pressing the `Delete` key on the keyboard (`Command + Delete` on Mac)
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is not a feature when searching for files?
 
 #### --distractors--
 
-Placeholder distractor 1
+Using boolean operators like `AND`, `OR`, and `NOT`
 
 ---
 
-Placeholder distractor 2
+Using filters like `*.jpg`
 
 ---
 
-Placeholder distractor 3
+Using Cortana on Windows or Spotlight Search on Mac
 
 #### --answer--
 
-Placeholder answer
+Typing the name of the file into your Web Browser and hitting `Enter`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What file type will be best suited for writing documentation?
 
 #### --distractors--
 
-Placeholder distractor 1
+`.php`
 
 ---
 
-Placeholder distractor 2
+`.html`
 
 ---
 
-Placeholder distractor 3
+`.json`
 
 #### --answer--
 
-Placeholder answer
+`.md`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is not a configuration file?
 
 #### --distractors--
 
-Placeholder distractor 1
+`.env`
 
 ---
 
-Placeholder distractor 2
+`.build`
 
 ---
 
-Placeholder distractor 3
+`.yaml` or `.yml`
 
 #### --answer--
 
-Placeholder answer
+`.log`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+A piece of software that allows you to look at online content is called a:
 
 #### --distractors--
 
-Placeholder distractor 1
+Internet Content Displayer
 
 ---
 
-Placeholder distractor 2
+Search Engine
 
 ---
 
-Placeholder distractor 3
+Website
 
 #### --answer--
 
-Placeholder answer
+Web Browser
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+A piece of software that lists web pages related to a user's query is a called a:
 
 #### --distractors--
 
-Placeholder distractor 1
+Page Finder
 
 ---
 
-Placeholder distractor 2
+Web Browser
 
 ---
 
-Placeholder distractor 3
+Website
 
 #### --answer--
 
-Placeholder answer
+Search Engine
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+A set of one or more web pages under one domain name is called a:
 
 #### --distractors--
 
-Placeholder distractor 1
+Web Browser
 
 ---
 
-Placeholder distractor 2
+Hyperlink
 
 ---
 
-Placeholder distractor 3
+Search Engine
 
 #### --answer--
 
-Placeholder answer
+Website
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+To search for an exact phrase, you should use what character?
 
 #### --distractors--
 
-Placeholder distractor 1
+Backtick
 
 ---
 
-Placeholder distractor 2
+Parenthesis
 
 ---
 
-Placeholder distractor 3
+Brackets
 
 #### --answer--
 
-Placeholder answer
+Quotation marks
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which is not a way to install a Web Browser?
 
 #### --distractors--
 
-Placeholder distractor 1
+Using a Package Manager
 
 ---
 
-Placeholder distractor 2
+Directly downloading from the website
 
 ---
 
-Placeholder distractor 3
+Using an App Store like Microsoft Store
 
 #### --answer--
 
-Placeholder answer
+Pressing the Network/Internet button in Settings
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of these peripherals is not the same type as the others?
 
 #### --distractors--
 
-Placeholder distractor 1
+Projector
 
 ---
 
-Placeholder distractor 2
+Speakers
 
 ---
 
-Placeholder distractor 3
+Monitor
 
 #### --answer--
 
-Placeholder answer
+Microphone
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following lists of parts can all be found in the circuit board?
 
 #### --distractors--
 
-Placeholder distractor 1
+Printer, Router, USB Ports
 
 ---
 
-Placeholder distractor 2
+Mouse, Keyboard, Monitor
 
 ---
 
-Placeholder distractor 3
+Motherboard, Hard Drive, GPU
 
 #### --answer--
 
-Placeholder answer
+BIOS/UEFI Chip, CPU, RAM
 
