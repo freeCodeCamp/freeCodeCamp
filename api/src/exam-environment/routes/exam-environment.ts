@@ -584,13 +584,11 @@ async function getCanTakeExam(
   const availableExams = exams.filter(exam => {
     const isExamPrerequisitesMet = checkPrerequisites(user, true);
 
-    return [
-      {
-        examId: exam.id,
-        examName: exam.config.name,
-        canTake: isExamPrerequisitesMet
-      }
-    ];
+    return {
+      examId: exam.id,
+      examName: exam.config.name,
+      canTake: isExamPrerequisitesMet
+    };
   });
 
   return reply.send({
