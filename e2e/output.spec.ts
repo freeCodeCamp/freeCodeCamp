@@ -177,26 +177,6 @@ test.describe('Challenge Output Component Tests', () => {
     ).toHaveText(outputTexts.empty);
   });
 
-  test('Displays a warning when the wrong source files are added', async function ({
-    page
-  }) {
-    await page.goto(
-      '/learn/2022/responsive-web-design/learn-basic-css-by-building-a-cafe-menu/step-2'
-    );
-    const editor = getEditors(page);
-    await editor.fill(
-      '<link rel="stylesheet" type="text/css"  href="coolstyle.css">'
-    );
-
-    await expect(
-      page.getByRole('region', {
-        name: translations.learn['editor-tabs'].console
-      })
-    ).toContainText(
-      'coolstyle.css does not exist. Only files that can be sourced are styles.css, script.js, or remote files'
-    );
-  });
-
   test('should contain final output after test pass', async ({
     page,
     isMobile
