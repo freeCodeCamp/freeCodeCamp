@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Fragment } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { radioLocation } from '../../../../config/env.json';
 import { openSignoutModal } from '../../../redux/actions';
 import { updateMyTheme } from '../../../redux/settings/actions';
@@ -15,7 +15,7 @@ import { type ThemeProps, Themes } from '../../settings/theme';
 import { User } from '../../../redux/prop-types';
 import SupporterBadge from '../../../assets/icons/supporter-badge';
 
-export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
+export interface NavLinksProps extends Pick<ThemeProps, 'currentTheme'> {
   displayMenu: boolean;
   showMenu: () => void;
   hideMenu: () => void;
@@ -25,7 +25,7 @@ export interface NavLinksProps extends Pick<ThemeProps, 'toggleNightMode'> {
 }
 
 const mapDispatchToProps = {
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
+  updateTheme: (theme: Themes) => updateMyTheme({ theme }),
   openSignoutModal
 };
 
@@ -65,21 +65,11 @@ const DonateButton = ({
   );
 };
 
-const toggleTheme = (
-  currentTheme = Themes.Default,
-  toggleNightMode: typeof updateMyTheme
-) => {
-  toggleNightMode(
-    currentTheme === Themes.Night ? Themes.Default : Themes.Night
-  );
-};
-
 function NavLinks({
   menuButtonRef,
   openSignoutModal,
   hideMenu,
   displayMenu,
-  toggleNightMode,
   user
 }: NavLinksProps) {
   const { t } = useTranslation();
@@ -141,6 +131,8 @@ function NavLinks({
     hideMenu();
     openSignoutModal();
   };
+
+  const dispatch = useDispatch();
 
   return (
     <ul
@@ -258,7 +250,11 @@ function NavLinks({
           }
           onClick={() => {
             if (currentUserName) {
-              toggleTheme(currentUserTheme, toggleNightMode);
+              const invertedTheme =
+                currentUserTheme === Themes.Night
+                  ? Themes.Default
+                  : Themes.Night;
+              dispatch(updateMyTheme({ theme: invertedTheme }));
             }
           }}
           onKeyDown={currentUserName ? handleMenuKeyDown : handleSignOutKeys}
