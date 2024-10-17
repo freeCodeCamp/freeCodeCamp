@@ -127,7 +127,37 @@ const duplicatedProjectIds = [
   // Cat Painting
 
   // Responsive Piano
-
+  '612e78af05201622d4bab8aa',
+  '612e7d1c29fb872d6384379c',
+  '612e804c54d5e7308d7ebe56',
+  '612e813b3ba67633222cbe54',
+  '612e8279827a28352ce83a72',
+  '612e83ec2eca1e370f830511',
+  '612e89562043183c86df287c',
+  '612e89d254fe5d3df7d6693d',
+  '612e8eebe3a6dc3fcc33a66f',
+  '612e95ef2e4bdf41f69067f9',
+  '612e96fc87fe8e44f69f7ec5',
+  '612e98f3245c98475e49cfc6',
+  '612e9a21381a1949327512e6',
+  '612e9d142affc44a453655db',
+  '612e9f1e7e5ccd4fa9ada0be',
+  '612ea4c4993aba52ab4aa32e',
+  '612ea97df5742154772f312e',
+  '612ead8788d28655ef8db056',
+  '612eaf56b7ba3257fdbfb0db',
+  '612eb4893b63c75bb9251ddf',
+  '612eb75153591b5e3b1ab65e',
+  '612eb7ca8c275d5f89c73333',
+  '612eb8e984cd73677a92b7e9',
+  '612eb934f64a4d6890a45518',
+  '612ebcba99bfa46a15370b11',
+  '612ebe7fe6d07e6b76d1cae2',
+  '612ebedec97e096c8bf64999',
+  '612ebf9a210f2b6d77001e68',
+  '612ec0490ae8626e9adf82e4',
+  '612ec19d5268da7074941f84',
+  '612ec29c84b9a6718b1f5cec',
   // Technical Documentation Page
   '587d78b0367417b2b2512b05',
 
