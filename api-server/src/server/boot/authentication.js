@@ -20,6 +20,7 @@ import {
 } from '../utils/middleware';
 import { getRedirectParams } from '../utils/redirection';
 import { createDeleteUserToken } from '../middlewares/user-token';
+import { status } from 'loopback';
 
 const passwordlessGetValidators = [
   check('email')
@@ -67,6 +68,15 @@ module.exports = function enableAuthentication(app) {
       createPassportCallbackAuthenticator('auth0-login', { provider: 'auth0' })
     );
   }
+  
+  api.use((req,res,next)=>{
+    if(!req.isAuthenticated()){
+      return res.status(200)({
+        message: 'User not signed in or authenticated',
+        status: 'unauthenticated'
+      });
+    }
+  });
 
   api.get('/signout', deleteUserToken, (req, res) => {
     const { origin, returnTo } = getRedirectParams(req);
