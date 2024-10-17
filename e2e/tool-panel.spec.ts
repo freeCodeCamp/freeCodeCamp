@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { getEditors } from './utils/editor';
 
 test.describe('Tool Panel', () => {
   test.beforeEach(async ({ page }) => {
@@ -28,6 +29,33 @@ test.describe('Tool Panel', () => {
 
     await expect(page.getByTestId('output-text')).toContainText(
       translations.learn['running-tests']
+    );
+  });
+
+  test('Displays a warning when the wrong source files are added', async function ({
+    page,
+    isMobile
+  }) {
+    await page.goto(
+      '/learn/2022/responsive-web-design/learn-basic-css-by-building-a-cafe-menu/step-2'
+    );
+    const editor = getEditors(page);
+    await editor.fill(
+      '<link rel="stylesheet" type="text/css"  href="coolstyle.css">'
+    );
+
+    if (isMobile) {
+      await page
+        .getByRole('tab', {
+          name: 'Console'
+        })
+        .click();
+    } else {
+      await page.getByText('Console').click();
+    }
+
+    await expect(page.getByTestId('output-text')).toContainText(
+      'coolstyle.css does not exist. Only files that can be sourced are styles.css, script.js, or remote files'
     );
   });
 

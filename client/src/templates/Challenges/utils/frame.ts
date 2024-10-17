@@ -305,6 +305,51 @@ const initMainFrame =
   (frameContext: Context) => {
     waitForFrame(frameContext)
       .then(async () => {
+        const linkElements = Array.from(
+          frameContext.document!.querySelectorAll('script[src], link[href]')
+        );
+
+        const errors = linkElements.map(async elem => {
+          const urlAddr =
+            elem.tagName === 'SCRIPT'
+              ? (elem as HTMLScriptElement).src
+              : (elem as HTMLLinkElement).href;
+
+          try {
+            const response = await fetch(urlAddr, {
+              mode: 'cors'
+            });
+            // Failed to fetch external resource
+            if (!response.ok) {
+              const resourceAddress = urlAddr.substring(
+                urlAddr.lastIndexOf('/') + 1
+              );
+              return `${resourceAddress} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
+            }
+            const text = await response.text();
+            if (text.trim().includes('<!DOCTYPE html><html id="__fcc-html')) {
+              // Received a 404 page from FreeCodeCamp
+              const resourceAddress = urlAddr.substring(
+                urlAddr.lastIndexOf('/') + 1
+              );
+              return `${resourceAddress} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
+            }
+          } catch {
+            // Received an error
+            const resourceAddress = urlAddr.substring(
+              urlAddr.lastIndexOf('/') + 1
+            );
+            return `${resourceAddress} does not exist. Only files that can be sourced are styles.css, script.js, or remote files`;
+          }
+        });
+
+        return (await Promise.all(errors)).filter(Boolean).join('\n');
+      })
+      .then(async importResult => {
+        if (importResult) {
+          proxyLogger && proxyLogger(importResult);
+        }
+
         // Overwriting the onerror added by createHeader to catch any errors thrown
         // after the frame is ready. It has to be overwritten, as proxyLogger cannot
         // be added as part of createHeader.
