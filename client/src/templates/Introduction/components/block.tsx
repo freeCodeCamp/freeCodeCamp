@@ -10,10 +10,10 @@ import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import envData from '../../../../config/env.json';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
-import DropDown from '../../../assets/icons/dropdown';
+// import DropDown from '../../../assets/icons/dropdown';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { ProgressBar } from '../../../components/Progress/progress-bar';
+// import { ProgressBar } from '../../../components/Progress/progress-bar';
 import { Link, Spacer } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
@@ -23,6 +23,7 @@ import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import Challenges from './challenges';
 import BlockLabel from './block-label';
+import BlockHeader from './block-header';
 
 import '../intro.css';
 
@@ -83,11 +84,11 @@ class Block extends Component<BlockProps> {
     this.handleBlockClick = this.handleBlockClick.bind(this);
   }
 
-  handleBlockClick(): void {
+  handleBlockClick = (): void => {
     const { block, toggleBlock } = this.props;
     void playTone('block-toggle');
     toggleBlock(block);
-  }
+  };
 
   render(): JSX.Element {
     const {
@@ -142,14 +143,24 @@ class Block extends Component<BlockProps> {
       (completedCount / challengesWithCompleted.length) * 100
     );
 
-    const progressBarRender = (
-      <div aria-hidden='true' className='progress-wrapper'>
-        <div>
-          <ProgressBar now={percentageCompleted} />
-        </div>
-        <span>{`${percentageCompleted}%`}</span>
-      </div>
-    );
+    // const progressBarRender = (
+    //   <div aria-hidden='true' className='progress-wrapper'>
+    //     <div>
+    //       <ProgressBar now={percentageCompleted} />
+    //     </div>
+    //     <span>{`${percentageCompleted}%`}</span>
+    //   </div>
+    // );
+
+    const courseCompletionStatus = () => {
+      if (completedCount === 0) {
+        return t('learn.not-started');
+      }
+      if (completedCount === challengesWithCompleted.length) {
+        return t('learn.completed');
+      }
+      return `${percentageCompleted}% ${t('learn.completed')}`;
+    };
 
     /**
      * ChallengeListBlock displays challenges in a list.
@@ -247,16 +258,6 @@ class Block extends Component<BlockProps> {
       </>
     );
 
-    const courseCompletionStatus = () => {
-      if (completedCount === 0) {
-        return t('learn.not-started');
-      }
-      if (completedCount === challengesWithCompleted.length) {
-        return t('learn.completed');
-      }
-      return `${percentageCompleted}% ${t('learn.completed')}`;
-    };
-
     /**
      * ChallengeGridBlock displays challenges in a grid.
      * This layout is used for step-based blocks.
@@ -267,32 +268,17 @@ class Block extends Component<BlockProps> {
         {' '}
         <ScrollableAnchor id={block}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
-            <h3 className='block-grid-title'>
-              <button
-                aria-expanded={isExpanded ? 'true' : 'false'}
-                aria-controls={`${block}-panel`}
-                className='block-header'
-                onClick={() => {
-                  this.handleBlockClick();
-                }}
-              >
-                <span className='block-header-button-text map-title'>
-                  <CheckMark isCompleted={isBlockCompleted} />
-                  <span>
-                    {blockTitle}
-                    <span className='sr-only'>
-                      , {courseCompletionStatus()}
-                    </span>
-                  </span>
-                  {blockType && <BlockLabel blockType={blockType} />}
-                  <DropDown />
-                </span>
-                {!isExpanded &&
-                  !isBlockCompleted &&
-                  completedCount > 0 &&
-                  progressBarRender}
-              </button>
-            </h3>
+            <BlockHeader
+              blockDashed={block}
+              blockTitle={blockTitle}
+              blockType={blockType}
+              completedCount={completedCount}
+              courseCompletionStatus={courseCompletionStatus()}
+              handleClick={this.handleBlockClick}
+              isCompleted={isBlockCompleted}
+              isExpanded={isExpanded}
+              percentageCompleted={percentageCompleted}
+            />
             {!isAudited && (
               <div className='tags-wrapper'>
                 <Link
@@ -366,6 +352,82 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
+    // used with blockLayout = 'challenge-list'
+    const NewChallengeListBlock = (
+      <>
+        {' '}
+        <ScrollableAnchor id={block}>
+          <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+            <BlockHeader
+              blockDashed={block}
+              blockTitle={blockTitle}
+              blockType={blockType}
+              completedCount={completedCount}
+              courseCompletionStatus={courseCompletionStatus()}
+              handleClick={this.handleBlockClick}
+              isCompleted={isBlockCompleted}
+              isExpanded={isExpanded}
+              percentageCompleted={percentageCompleted}
+            />
+            {!isAudited && (
+              <div className='tags-wrapper'>
+                <Link
+                  className='cert-tag'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              </div>
+            )}
+
+            {isExpanded && (
+              <div id={`${block}-panel`}>
+                <BlockIntros intros={blockIntroArr} />
+                <Challenges
+                  challengesWithCompleted={challengesWithCompleted}
+                  isProjectBlock={isProjectBlock}
+                />
+              </div>
+            )}
+          </div>
+        </ScrollableAnchor>
+      </>
+    );
+
+    // used with blockLayout = 'link'
+    const NewLinkBlock = (
+      <ScrollableAnchor id={block}>
+        <div className='block block-grid grid-project-block'>
+          <div className='tags-wrapper'>
+            {!isAudited && (
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}{' '}
+              </Link>
+            )}
+          </div>
+          <div className='title-wrapper map-title'>
+            <h3 className='block-grid-title'>
+              <Link
+                className='block-header'
+                onClick={() => {
+                  this.handleBlockClick();
+                }}
+                to={challengesWithCompleted[0].fields.slug}
+              >
+                <CheckMark isCompleted={isBlockCompleted} />
+                {blockTitle}
+                {blockType && <BlockLabel blockType={blockType} />}
+              </Link>
+            </h3>
+          </div>
+          <BlockIntros intros={blockIntroArr} />
+        </div>
+      </ScrollableAnchor>
+    );
+
     const blockRenderer = () => {
       const blockLayout = challenges[0].blockLayout;
 
@@ -375,9 +437,11 @@ class Block extends Component<BlockProps> {
         return isGridBlock ? ChallengeGridBlock : ChallengeListBlock;
       }
 
+      // blockLayout is only being used in new certs at the moment, so I made some new components for them for now to not interfere with the existing ones
       if (blockLayout === BlockLayouts.ChallengeGrid) return ChallengeGridBlock;
-      if (blockLayout === BlockLayouts.ChallengeList) return ChallengeListBlock;
-      if (blockLayout === BlockLayouts.Link) return LinkBlock;
+      if (blockLayout === BlockLayouts.ChallengeList)
+        return NewChallengeListBlock;
+      if (blockLayout === BlockLayouts.Link) return NewLinkBlock;
       if (blockLayout === BlockLayouts.ProjectList) return ProjectListBlock;
     };
 
