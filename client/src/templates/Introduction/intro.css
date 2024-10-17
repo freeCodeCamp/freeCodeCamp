@@ -15,9 +15,16 @@
   margin: 0 10px 0 0;
   align-self: center;
   height: fit-content;
-  padding: 4px 10px;
-  background-color: var(--secondary-background);
+  padding: 2px 6px 3px 6px;
+  font-size: 0.9rem;
   border: 1px solid;
+  border-radius: 10px;
+  position: relative;
+  top: 1px;
+}
+
+.block-header:hover .block-label {
+  background-color: var(--tertiary-background);
 }
 
 .block-label-lecture {

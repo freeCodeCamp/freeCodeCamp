@@ -268,7 +268,6 @@ class Block extends Component<BlockProps> {
         <ScrollableAnchor id={block}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
             <h3 className='block-grid-title'>
-              {blockType && <BlockLabel blockType={blockType} />}
               <button
                 aria-expanded={isExpanded ? 'true' : 'false'}
                 aria-controls={`${block}-panel`}
@@ -285,6 +284,7 @@ class Block extends Component<BlockProps> {
                       , {courseCompletionStatus()}
                     </span>
                   </span>
+                  {blockType && <BlockLabel blockType={blockType} />}
                   <DropDown />
                 </span>
                 {!isExpanded &&
