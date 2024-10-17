@@ -7,22 +7,33 @@ import {
   EnvGeneratedExam,
   EnvMultipleChoiceQuestion,
   EnvQuestionSet,
-  EnvQuestionSetAttempt,
-  user
+  EnvQuestionSetAttempt
 } from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
 import * as schemas from '../schemas';
 
-/**
- * Checks if all exam prerequisites have been met by the user.
- *
- * TODO: This will be done by getting the challenges required from the curriculum.
- */
-export function checkPrerequisites(_user: user, _prerequisites: unknown) {
-  return true;
+interface CompletedChallengeId {
+  completedChallenges: {
+    id: string;
+  }[];
 }
 
-export type UserExam = Omit<EnvExam, 'questionSets' | 'config' | 'id'> & {
+/**
+ * Checks if all exam prerequisites have been met by the user.
+ */
+export function checkPrerequisites(
+  user: CompletedChallengeId,
+  prerequisites: EnvExam['prerequisites']
+) {
+  return prerequisites.every(p =>
+    user.completedChallenges.find(c => c.id === p)
+  );
+}
+
+export type UserExam = Omit<
+  EnvExam,
+  'questionSets' | 'config' | 'id' | 'prerequisites'
+> & {
   config: Omit<EnvExam['config'], 'tags' | 'questionSets'>;
   questionSets: (Omit<EnvQuestionSet, 'questions'> & {
     questions: (Omit<
