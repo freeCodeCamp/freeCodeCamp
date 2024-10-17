@@ -112,6 +112,10 @@ const duplicatedProjectIds = [
   // Registration Form
 
   // Rothko Painting
+  '60a3e3396c7b40068ad6996b',
+  '60a3e3396c7b40068ad6996c',
+  '60a3e3396c7b40068ad6996d',
+  '60a3e3396c7b40068ad6996e',
   '60a3e3396c7b40068ad6996f',
   '60a3e3396c7b40068ad69970',
   '60a3e3396c7b40068ad69971',
