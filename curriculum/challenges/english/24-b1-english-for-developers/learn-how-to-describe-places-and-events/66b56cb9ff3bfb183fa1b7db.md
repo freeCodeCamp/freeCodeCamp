@@ -31,7 +31,7 @@ This word is used to specify the module that is currently being discussed.
 
 ### --feedback--
 
-This word indicates that the module is a recent addition or creation.
+Something recent.
 
 ---
 
@@ -39,11 +39,11 @@ This word indicates that the module is a recent addition or creation.
 
 ### --feedback--
 
-This word refers to a specific part or section of the training program.
+A specific part or section of the training program.
 
 # --explanation--
 
-Anna is asking about the timeline for a specific part of the training. `Module` refers to a unit or section of a course or training program. For example:
+`Module` refers to a unit or section of a course or training program. For example:
 
 - `The new module on cybersecurity will be added next week.` - Here, `module` refers to a specific part of the training focused on cybersecurity.
 
