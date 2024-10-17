@@ -99,6 +99,7 @@ export function Scene({
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
+  const [showTranscript, setTranscriptVisiblity] = useState(false);
 
   useEffect(() => {
     if (isPlaying) {
@@ -131,9 +132,23 @@ export function Scene({
     }
   }
 
+  const buildTranscript = () => {
+    let transcript = '';
+    commands.forEach(command => {
+      if (command.character && command.dialogue && command.startTime) {
+        transcript = transcript + '\n' + command.startTime;
+        ' ' + command.character + ':' + ' ' + command.dialogue.text;
+      }
+    });
+    return transcript;
+  };
+
+  const toggleTranscript = () => {
+    setTranscriptVisiblity(!showTranscript);
+  };
+
   const playScene = () => {
     setShowDialogue(true);
-
     setTimeout(() => {
       if (audioRef.current.paused) {
         start = Date.now();
@@ -221,6 +236,7 @@ export function Scene({
     setBackground(initBackground);
   };
 
+  const transcriptText = buildTranscript();
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
       <div
@@ -299,6 +315,14 @@ export function Scene({
           </>
         )}
       </div>
+      <button id='toggle-transcript' onClick={toggleTranscript}>
+        {t('buttons.toggle-transcript')}
+      </button>
+      {showTranscript && (
+        <p id='transcript' className='transcript'>
+          {transcriptText}
+        </p>
+      )}
       <Spacer size='medium' />
     </Col>
   );
