@@ -7,10 +7,6 @@ function createChallengeNode(
   reporter,
   { isReloading } = { isReloading: false }
 ) {
-  if (!challenge.description) challenge.description = '';
-  if (!challenge.instructions) challenge.instructions = '';
-  if (!challenge.seed) challenge.seed = '';
-
   const contentDigest = crypto
     .createHash('md5')
     .update(JSON.stringify(challenge))

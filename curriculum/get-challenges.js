@@ -289,6 +289,11 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.blockType = meta.blockType;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
+
+    if (!challenge.description) challenge.description = '';
+    if (!challenge.instructions) challenge.instructions = '';
+    if (!challenge.seed) challenge.seed = '';
+
     // const superOrder = getSuperOrder(meta.superBlock);
     // NOTE: Use this version when a super block is in beta.
     const superOrder = getSuperOrder(meta.superBlock, {
