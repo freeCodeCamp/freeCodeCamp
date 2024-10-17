@@ -16,6 +16,7 @@ import {
   createSuperRequest
 } from '../../../jest.utils';
 import { JWT_SECRET } from '../../utils/env';
+import { customNanoid } from '../../utils/ids';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();
@@ -564,6 +565,11 @@ describe('userRoutes', () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { id: userTokenId }
         });
+        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
+          {
+            where: { userId: defaultUserId }
+          }
+        );
       });
 
       test('GET rejects with 500 status code if the username is missing', async () => {
@@ -1128,6 +1134,72 @@ Thanks and regards,
           type: 'success',
           message: 'flash.survey.success'
         });
+      });
+    });
+
+    describe('/user/exam-environment/token', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
+          {
+            where: { userId: defaultUserId }
+          }
+        );
+      });
+
+      test('POST generates a new token if one does not exist', async () => {
+        const response = await superPost('/user/exam-environment/token');
+        const { examEnvironmentAuthorizationToken } = response.body.data;
+
+        const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
+
+        expect(decodedToken).toStrictEqual({
+          examEnvironmentAuthorizationToken:
+            expect.stringMatching(/^[a-zA-Z0-9]{64}$/),
+          iat: expect.any(Number)
+        });
+
+        expect(() =>
+          jwt.verify(examEnvironmentAuthorizationToken, 'wrong-secret')
+        ).toThrow();
+        expect(() =>
+          jwt.verify(examEnvironmentAuthorizationToken, JWT_SECRET)
+        ).not.toThrow();
+
+        expect(response.status).toBe(200);
+      });
+
+      test('POST only allows for one token per user id', async () => {
+        const id = customNanoid();
+        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
+          {
+            data: {
+              userId: defaultUserId,
+              id,
+              createdDate: new Date()
+            }
+          }
+        );
+
+        const response = await superPost('/user/exam-environment/token');
+
+        const { examEnvironmentAuthorizationToken } = response.body.data;
+
+        const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
+
+        expect(decodedToken).not.toHaveProperty(
+          'examEnvironmentAuthorizationToken',
+          id
+        );
+
+        expect(response.status).toBe(200);
+
+        const tokens =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.findMany(
+            {
+              where: { userId: defaultUserId }
+            }
+          );
+        expect(tokens).toHaveLength(1);
       });
     });
   });

@@ -207,6 +207,11 @@ export const defaultUserEmail = 'foo@bar.com';
 export const defaultUsername = 'fcc-test-user';
 
 export const resetDefaultUser = async (): Promise<void> => {
+  await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
+    {
+      where: { userId: defaultUserId }
+    }
+  );
   await fastifyTestInstance.prisma.user.deleteMany({
     where: { email: defaultUserEmail }
   });
