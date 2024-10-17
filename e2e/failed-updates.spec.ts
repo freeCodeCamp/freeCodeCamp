@@ -36,7 +36,7 @@ test.describe('failed update flushing', () => {
   }) => {
     // Initially, the user has no completed challenges.
     const userRes = await request.get(
-      'http://localhost:3000/user/get-session-user'
+      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
     );
     const completedChallenges = (await userRes.json()).user.developmentuser
       .completedChallenges;
@@ -55,16 +55,27 @@ test.describe('failed update flushing', () => {
 
     // The update epic sends two requests and this lets us wait for both.
     const submitRes = page
-      .waitForResponse('http://localhost:3000/modern-challenge-completed')
+      .waitForResponse(
+        new URL(
+          '/modern-challenge-completed',
+          process.env.API_LOCATION
+        ).toString()
+      )
+
       .then(() =>
-        page.waitForResponse('http://localhost:3000/modern-challenge-completed')
+        page.waitForResponse(
+          new URL(
+            '/modern-challenge-completed',
+            process.env.API_LOCATION
+          ).toString()
+        )
       );
 
     await page.reload();
     await submitRes;
 
     const updatedUserRes = await request.get(
-      'http://localhost:3000/user/get-session-user'
+      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
     );
 
     // Now the user should have both completed challenges.
