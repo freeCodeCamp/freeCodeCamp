@@ -1,6 +1,7 @@
 {
   "name": "CSS Animations Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-animations",
   "order": 126,

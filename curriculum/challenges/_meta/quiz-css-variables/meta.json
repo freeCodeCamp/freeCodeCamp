@@ -1,6 +1,7 @@
 {
   "name": "CSS Variables Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-variables",
   "order": 112,

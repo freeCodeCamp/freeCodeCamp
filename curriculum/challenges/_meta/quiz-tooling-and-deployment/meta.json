@@ -1,6 +1,7 @@
 {
   "name": "Tooling and Deployment Quiz",
   "isUpcomingChange": true,
+  "blockLayout": "link",
   "usesMultifileEditor": true,
   "dashedName": "quiz-tooling-and-deployment",
   "order": 383,

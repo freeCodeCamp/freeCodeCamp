@@ -1,6 +1,7 @@
 {
   "name": "CSS Layout and Effects Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-layout-and-effects",
   "order": 77,

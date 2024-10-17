@@ -1,11 +1,12 @@
 {
   "name": "Build an Event Hub",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-event-hub",
   "order": 13,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "66ebd4ae2812430bb883c787", "title": "Build an Event Hub" }],
-  "helpCategory": "HTML-CSS",
-  "blockType": "lab"
+  "helpCategory": "HTML-CSS"
 }

@@ -1,5 +1,7 @@
 {
   "name": "Build a Sentence Analyzer",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
@@ -40,6 +42,5 @@
       "title": "Step 8"
     }
   ],
-  "helpCategory": "JavaScript",
-  "blockType": "workshop"
+  "helpCategory": "JavaScript"
 }

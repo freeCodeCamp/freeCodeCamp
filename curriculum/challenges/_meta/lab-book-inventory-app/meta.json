@@ -1,6 +1,7 @@
 {
   "name": "Build a Book Inventory App",
   "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-book-inventory-app",

@@ -1,6 +1,7 @@
 {
   "name": "Local Storage and CRUD Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-local-storage-and-crud",

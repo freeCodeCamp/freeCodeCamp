@@ -1,8 +1,9 @@
 {
   "name": "Build a Leap Year Calculator ",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "blockType": "lab",
   "dashedName": "lab-leap-year-calculator",
   "order": 155,
   "superBlock": "front-end-development",

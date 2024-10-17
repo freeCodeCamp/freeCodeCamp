@@ -1,6 +1,7 @@
 {
   "name": "Basic Node and Express",
   "blockType": "workshop",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,

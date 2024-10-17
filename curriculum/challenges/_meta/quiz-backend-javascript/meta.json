@@ -1,6 +1,7 @@
 {
   "name": "Backend JavaScript Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-backend-javascript",
