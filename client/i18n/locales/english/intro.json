@@ -1914,7 +1914,13 @@
           "Test what you've learned in this quiz of how to style forms using CSS."
         ]
       },
-      "qzcx": { "title": "73", "intro": [] },
+      "workshop-rothko-painting": {
+        "title": "Build a Rothko Painting",
+        "intro": [
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+        ]
+      },
       "wozq": { "title": "74", "intro": [] },
       "lab-confidential-email-page": {
         "title": "Build a Confidential Email Page",
