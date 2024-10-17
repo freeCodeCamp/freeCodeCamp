@@ -136,9 +136,9 @@ describe('getSuperOrder', () => {
 });
 
 describe('getSuperBlockFromPath', () => {
-  const directories = fs.readdirSync(
-    path.join(__dirname, './challenges/english')
-  );
+  const directories = fs
+    .readdirSync(path.join(__dirname, './challenges/english'))
+    .filter(x => x !== '.DS_Store');
 
   it('handles all the directories in ./challenges/english', () => {
     expect.assertions(25);
