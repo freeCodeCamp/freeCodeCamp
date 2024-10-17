@@ -469,6 +469,11 @@ export interface GenerateExamResponseWithData {
   data: GenerateExamResponse;
 }
 
+export interface ExamTokenResponse {
+  data: {
+    examEnvironmentAuthorizationToken: string;
+  };
+}
 // User Exam (null until they answer the question)
 interface UserExamAnswer {
   id: string | null;
