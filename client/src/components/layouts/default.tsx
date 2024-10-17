@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import envData from '../../../config/env.json';
+import envData, { clientLocale } from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
@@ -212,27 +212,32 @@ function DefaultLayout({
             rel='preload'
             type='font/woff'
           />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={jpSansRegularURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={jpSansLightURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={jpSansBoldURL}
-            rel='preload'
-            type='font/woff'
-          />
+          {clientLocale === 'japanese' && (
+            <>
+              <link
+                as='font'
+                crossOrigin='anonymous'
+                href={jpSansRegularURL}
+                rel='preload'
+                type='font/woff'
+              />
+              <link
+                as='font'
+                crossOrigin='anonymous'
+                href={jpSansLightURL}
+                rel='preload'
+                type='font/woff'
+              />
+              <link
+                as='font'
+                crossOrigin='anonymous'
+                href={jpSansBoldURL}
+                rel='preload'
+                type='font/woff'
+              />
+            </>
+          )}
+
           <link
             as='font'
             crossOrigin='anonymous'
