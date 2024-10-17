@@ -5,7 +5,7 @@
   "blockType": "lab",
   "dashedName": "lab-hash-table-class",
   "order": 265,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66f1805aac05f00a7028fbcc", "title": "Build a Hash Table Class" }],
   "helpCategory": "JavaScript"
 }

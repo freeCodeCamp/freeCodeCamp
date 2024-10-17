@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-advanced-react",
   "order": 314,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1ad049d7a6ac0886cc2ba", "title": "Advanced React Quiz" }
   ],

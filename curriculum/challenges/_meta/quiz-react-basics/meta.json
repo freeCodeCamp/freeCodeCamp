@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-react-basics",
   "order": 297,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1a2009e65c9a40a26d51e", "title": "React Basics Quiz" }
   ],

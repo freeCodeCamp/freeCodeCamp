@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-product-landing-page",
   "order": 117,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "587d78af367417b2b2512b04", "title": "Build a Product Landing Page" }],
   "helpCategory": "HTML-CSS",
   "blockType": "lab"

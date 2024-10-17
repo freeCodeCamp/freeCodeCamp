@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-loops",
   "order": 173,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66edcd49e73385dd4df54ac7", "title": "JavaScript Loops Quiz" }
   ],

@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-javascript-trivia-bot",
   "order": 132,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed41f912d0bb1dc62da5dd", "title": "Build a JavaScript Trivia Bot" }],
   "helpCategory": "JavaScript",
   "blockType": "lab"
