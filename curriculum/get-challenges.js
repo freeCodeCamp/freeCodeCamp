@@ -292,7 +292,6 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
 
     if (!challenge.description) challenge.description = '';
     if (!challenge.instructions) challenge.instructions = '';
-    if (!challenge.seed) challenge.seed = '';
 
     // const superOrder = getSuperOrder(meta.superBlock);
     // NOTE: Use this version when a super block is in beta.
