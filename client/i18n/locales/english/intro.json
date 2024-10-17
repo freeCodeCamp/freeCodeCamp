@@ -1985,7 +1985,13 @@
           "Test what you've learned in this quiz of using attribute selectors in CSS."
         ]
       },
-      "rxzk": { "title": "98", "intro": [] },
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
+      },
       "xobh": { "title": "99", "intro": [] },
       "lab-house-painting": {
         "title": "Build a House Painting",
