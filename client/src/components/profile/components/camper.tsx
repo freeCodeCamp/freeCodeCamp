@@ -66,35 +66,37 @@ function Camper({
       </div>
       {(isDonating || isTopContributor) && (
         <FullWidthRow>
-          <h2>{t('profile.badges')}</h2>
-          <div className='badge-card-container'>
-            {isDonating && (
-              <div className='badge-card'>
-                <div className='camper-badge'>
-                  <SupporterBadgeEmblem />
+          <section className='card'>
+            <h2>{t('profile.badges')}</h2>
+            <div className='badge-card-container'>
+              {isDonating && (
+                <div className='badge-card'>
+                  <div className='camper-badge'>
+                    <SupporterBadgeEmblem />
+                  </div>
+                  <div className='badge-card-description'>
+                    <h3>{t('profile.supporter')}</h3>
+                    <p>{t('profile.donated')}</p>
+                  </div>
                 </div>
-                <div className='badge-card-description'>
-                  <h3>{t('profile.supporter')}</h3>
-                  <p>{t('profile.donated')}</p>
+              )}
+              {isTopContributor && (
+                <div className='badge-card'>
+                  <div className='camper-badge'>
+                    <TopContibutorBadgeEmblem />
+                  </div>
+                  <div className='badge-card-description'>
+                    <h3>{t('profile.contributor')}</h3>
+                    <p>
+                      {t('profile.contributor-prolific', {
+                        year: yearsTopContributor.join(', ')
+                      })}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            )}
-            {isTopContributor && (
-              <div className='badge-card'>
-                <div className='camper-badge'>
-                  <TopContibutorBadgeEmblem />
-                </div>
-                <div className='badge-card-description'>
-                  <h3>{t('profile.contributor')}</h3>
-                  <p>
-                    {t('profile.contributor-prolific', {
-                      year: yearsTopContributor.join(', ')
-                    })}
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          </section>
           <hr />
         </FullWidthRow>
       )}

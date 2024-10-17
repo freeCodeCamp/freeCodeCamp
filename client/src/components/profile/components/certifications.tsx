@@ -71,44 +71,50 @@ function Certificates({
   const { t } = useTranslation();
   return (
     <FullWidthRow className='profile-certifications'>
-      <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
-      <br />
-      {hasModernCert && currentCerts ? (
-        <ul aria-labelledby='fcc-certifications'>
-          {currentCerts
-            .filter(({ show }) => show)
-            .map(cert => (
-              <CertButton key={cert.certSlug} cert={cert} username={username} />
-            ))}
-        </ul>
-      ) : (
-        <p className='text-center'>{t('profile.no-certs')}</p>
-      )}
-      {hasLegacyCert && (
-        <div>
-          <Spacer size='medium' />
-          <h3 id='legacy-certifications'>
-            {t('settings.headings.legacy-certs')}
-          </h3>
-          <Spacer size='medium' />
-          {legacyCerts && (
-            <>
-              <ul aria-labelledby='legacy-certifications'>
-                {legacyCerts
-                  .filter(({ show }) => show)
-                  .map(cert => (
-                    <CertButton
-                      key={cert.certSlug}
-                      cert={cert}
-                      username={username}
-                    />
-                  ))}
-              </ul>
-              <Spacer size='medium' />
-            </>
-          )}
-        </div>
-      )}
+      <section className='card'>
+        <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
+        <br />
+        {hasModernCert && currentCerts ? (
+          <ul aria-labelledby='fcc-certifications'>
+            {currentCerts
+              .filter(({ show }) => show)
+              .map(cert => (
+                <CertButton
+                  key={cert.certSlug}
+                  cert={cert}
+                  username={username}
+                />
+              ))}
+          </ul>
+        ) : (
+          <p className='text-center'>{t('profile.no-certs')}</p>
+        )}
+        {hasLegacyCert && (
+          <div>
+            <Spacer size='medium' />
+            <h3 id='legacy-certifications'>
+              {t('settings.headings.legacy-certs')}
+            </h3>
+            <Spacer size='medium' />
+            {legacyCerts && (
+              <>
+                <ul aria-labelledby='legacy-certifications'>
+                  {legacyCerts
+                    .filter(({ show }) => show)
+                    .map(cert => (
+                      <CertButton
+                        key={cert.certSlug}
+                        cert={cert}
+                        username={username}
+                      />
+                    ))}
+                </ul>
+                <Spacer size='medium' />
+              </>
+            )}
+          </div>
+        )}
+      </section>
       <hr />
     </FullWidthRow>
   );
