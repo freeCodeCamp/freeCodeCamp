@@ -1,6 +1,7 @@
 {
   "name": "Build a Mario Database",
   "blockType": "workshop",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
