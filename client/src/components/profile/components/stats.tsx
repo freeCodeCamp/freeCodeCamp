@@ -112,28 +112,30 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
 
   return (
     <FullWidthRow>
-      <h2>{t('profile.stats')}</h2>
-      <Spacer size='small' />
-      <dl className='stats'>
-        <div>
-          <dt>
-            <b data-testid='current-streak'>{t('profile.current-streak')}</b>
-          </dt>
-          <dd>{currentStreak || 0}</dd>
-        </div>
-        <div>
-          <dt>
-            <b>{t('profile.total-points')}</b>
-          </dt>
-          <dd>{points}</dd>
-        </div>
-        <div>
-          <dt>
-            <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
-          </dt>
-          <dd>{longestStreak || 0}</dd>
-        </div>
-      </dl>
+      <section className='card'>
+        <h2>{t('profile.stats')}</h2>
+        <Spacer size='small' />
+        <dl className='stats'>
+          <div>
+            <dt>
+              <b data-testid='current-streak'>{t('profile.current-streak')}</b>
+            </dt>
+            <dd>{currentStreak || 0}</dd>
+          </div>
+          <div>
+            <dt>
+              <b>{t('profile.total-points')}</b>
+            </dt>
+            <dd>{points}</dd>
+          </div>
+          <div>
+            <dt>
+              <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
+            </dt>
+            <dd>{longestStreak || 0}</dd>
+          </div>
+        </dl>
+      </section>
       <hr />
     </FullWidthRow>
   );
