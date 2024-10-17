@@ -563,6 +563,12 @@ a.map-grid-item.challenge-completed {
   position: relative;
 }
 
+.grid-project-block {
+  margin-bottom: 0;
+  padding: 18px 15px;
+  position: relative;
+}
+
 .block-grid.grid-project-block:hover {
   cursor: pointer;
   background: var(--tertiary-background);
