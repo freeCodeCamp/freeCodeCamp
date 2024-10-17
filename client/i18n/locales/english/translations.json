@@ -37,6 +37,7 @@
     "news": "News",
     "donate": "Donate",
     "supporters": "Supporters",
+    "exam-app": "Exam App",
     "go-to-supporters": "Go to Supporters Page",
     "update-settings": "Update my account settings",
     "sign-me-out": "Sign me out of freeCodeCamp",
@@ -104,7 +105,8 @@
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
     "play-scene": "Press Play",
-    "closed-caption": "Closed caption"
+    "closed-caption": "Closed caption",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -224,6 +226,12 @@
         ]
       }
     ]
+  },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Evironment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The Latest version of our app is: {{version}}, make sure it is up to date.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
   },
   "settings": {
     "profile-note": "Note: the profile settings have been moved to the profile page.",

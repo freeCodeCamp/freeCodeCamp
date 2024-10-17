@@ -181,6 +181,16 @@ function NavLinks({
           </li>
         </>
       )}
+      <li key='exam' className='nav-inline'>
+        <Link
+          className='nav-link nav-link-flex'
+          onKeyDown={handleMenuKeyDown}
+          sameTab={false}
+          to={`/exam-download`}
+        >
+          {t('buttons.exam-app')}
+        </Link>
+      </li>
       <li key='forum' className='nav-line'>
         <Link
           className='nav-link nav-link-flex'
@@ -191,7 +201,6 @@ function NavLinks({
         >
           <span>{t('buttons.forum')}</span>
           <span className='sr-only'>, {t('aria.opens-new-window')}</span>
-
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
