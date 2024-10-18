@@ -24,6 +24,7 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { BlockTypes } from '../../../../../shared/config/blocks';
+import Scene from '../components/scene/scene';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
@@ -69,6 +70,7 @@ const ShowGeneric = ({
         instructions,
         title,
         translationPending,
+        scene,
         superBlock,
         videoId,
         videoLocaleIds
@@ -127,6 +129,9 @@ const ShowGeneric = ({
     setVideoIsLoaded(true);
   };
 
+  // scene
+  const [isScenePlaying, setIsScenePlaying] = useState(false);
+
   // assignments
   const [assignmentsCompleted, setAssignmentsCompleted] = useState(0);
   const allAssignmentsCompleted = assignmentsCompleted === assignments.length;
@@ -151,6 +156,7 @@ const ShowGeneric = ({
       containerRef={container}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
+      playScene={scene ? () => setIsScenePlaying(true) : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -166,11 +172,12 @@ const ShowGeneric = ({
               {title}
             </ChallengeTitle>
 
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {description && (
+            {description && (
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
-              )}
-            </Col>
+                <Spacer size='medium' />
+              </Col>
+            )}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
@@ -185,9 +192,17 @@ const ShowGeneric = ({
               )}
             </Col>
 
+            {scene && (
+              <Scene
+                scene={scene}
+                isPlaying={isScenePlaying}
+                setIsPlaying={setIsScenePlaying}
+              />
+            )}
+
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (
-                <ChallengeDescription description={instructions} />
+                <ChallengeDescription instructions={instructions} />
               )}
 
               <Spacer size='medium' />
@@ -242,6 +257,43 @@ export const query = graphql`
           tests {
             text
             testString
+          }
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
           }
         }
         superBlock

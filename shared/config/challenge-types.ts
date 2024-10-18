@@ -102,7 +102,7 @@ export const viewTypes = {
   [msTrophy]: 'msTrophy',
   [multipleChoice]: 'odin',
   [python]: 'modern',
-  [dialogue]: 'dialogue',
+  [dialogue]: 'generic', // TODO: use generic challengeType for dialogues
   [fillInTheBlank]: 'fillInTheBlank',
   [multifilePythonCertProject]: 'classic',
   [generic]: 'generic'
