@@ -21,6 +21,9 @@ import {
 import { getRedirectParams } from '../utils/redirection';
 import { createDeleteUserToken } from '../middlewares/user-token';
 
+// Remove unused 'status' import
+// import { status } from 'loopback';
+
 const passwordlessGetValidators = [
   check('email')
     .isBase64()
@@ -28,14 +31,11 @@ const passwordlessGetValidators = [
   check('token')
     .exists()
     .withMessage('Token should exist.')
-    // based on strongloop/loopback/common/models/access-token.js#L15
     .isLength({ min: 64, max: 64 })
     .withMessage('Token is not the right length.')
 ];
 
 module.exports = function enableAuthentication(app) {
-  // enable loopback access control authentication. see:
-  // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifNotMobile = ifNotMobileRedirect();
   const ifUserRedirect = ifUserRedirectTo();
@@ -45,9 +45,6 @@ module.exports = function enableAuthentication(app) {
   const api = app.loopback.Router();
   const deleteUserToken = createDeleteUserToken(app);
 
-  // Use a local mock strategy for signing in if we are in dev mode.
-  // Otherwise we use auth0 login. We use a string for 'true' because values
-  // set in the env file will always be strings and never boolean.
   if (process.env.LOCAL_MOCK_AUTH === 'true') {
     api.get(
       '/signin',
@@ -56,10 +53,10 @@ module.exports = function enableAuthentication(app) {
       devLoginSuccessRedirect
     );
   } else {
-    api.get('/signin', ifUserRedirect, (req, res, next) => {
+    api.get('/signin', ifUserRedirect, (req, res, _next) => {
       const { returnTo, origin, pathPrefix } = getRedirectParams(req);
       const state = jwt.sign({ returnTo, origin, pathPrefix }, jwtSecret);
-      return passport.authenticate('auth0-login', { state })(req, res, next);
+      return passport.authenticate('auth0-login', { state })(req, res, _next);
     });
 
     api.get(
@@ -99,7 +96,7 @@ module.exports = function enableAuthentication(app) {
 const defaultErrorMsg = dedent`
     Oops, something is not right,
     please request a fresh link to sign in / sign up.
-  `;
+`;
 
 function createGetPasswordlessAuth(app) {
   const {
@@ -120,7 +117,7 @@ function createGetPasswordlessAuth(app) {
         })
       );
     }
-    // first find
+
     return (
       AuthToken.findOne$({ where: { id: authTokenId } })
         .flatMap(authToken => {
@@ -134,8 +131,7 @@ function createGetPasswordlessAuth(app) {
               }
             );
           }
-          // find user then validate and destroy email validation token
-          // finally return user instance
+
           return User.findOne$({ where: { id: authToken.userId } }).flatMap(
             user => {
               if (!user) {
@@ -148,6 +144,7 @@ function createGetPasswordlessAuth(app) {
                   }
                 );
               }
+
               if (user.email !== email) {
                 if (!emailChange || (emailChange && user.newEmail !== email)) {
                   throw wrapHandledError(
@@ -160,6 +157,7 @@ function createGetPasswordlessAuth(app) {
                   );
                 }
               }
+
               return authToken
                 .validate$()
                 .map(isValid => {
@@ -179,8 +177,6 @@ function createGetPasswordlessAuth(app) {
             }
           );
         })
-        // at this point token has been validated and destroyed
-        // update user and log them in
         .map(user => user.loginByRequest(req, res))
         .do(() => {
           if (emailChange) {

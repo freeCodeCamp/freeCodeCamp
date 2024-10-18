@@ -58,32 +58,31 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.post(
-    '/account/delete',
+  fastify.delete(
+    '/account',
     {
       schema: schemas.deleteMyAccount
     },
     async (req, reply) => {
-      await fastify.prisma.userToken.deleteMany({
-        where: { userId: req.user!.id }
-      });
-      await fastify.prisma.msUsername.deleteMany({
-        where: { userId: req.user!.id }
-      });
-      await fastify.prisma.survey.deleteMany({
-        where: { userId: req.user!.id }
-      });
-      await fastify.prisma.user.delete({
-        where: { id: req.user!.id }
-      });
-      await fastify.prisma.examEnvironmentAuthorizationToken.deleteMany({
-        where: { userId: req.user!.id }
-      });
-      reply.clearOurCookies();
-
-      return {};
+      try {
+        const userId = req.user!.id;
+        await fastify.prisma.$transaction([
+          fastify.prisma.userToken.deleteMany({ where: { userId } }),
+          fastify.prisma.msUsername.deleteMany({ where: { userId } }),
+          fastify.prisma.survey.deleteMany({ where: { userId } }),
+          fastify.prisma.user.delete({ where: { id: userId } }),
+          fastify.prisma.examEnvironmentAuthorizationToken.deleteMany({ where: { userId } })
+        ]);
+  
+        reply.clearOurCookies();
+        return reply.code(204).send(); // No Content
+      } catch (error) {
+        fastify.log.error(error);
+        return reply.code(500).send({ message: 'Failed to delete account' });
+      }
     }
   );
+  
 
   fastify.post(
     '/account/reset-progress',

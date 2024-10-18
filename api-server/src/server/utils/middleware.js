@@ -1,14 +1,27 @@
 import dedent from 'dedent';
 import { validationResult } from 'express-validator';
-
 import { createValidatorErrorFormatter } from './create-handled-error.js';
-
 import {
   getAccessTokenFromRequest,
   removeCookies
 } from './getSetAccessToken.js';
 import { getRedirectParams } from './redirection';
 
+// New Middleware Function to Handle Unauthenticated Users
+export function handleUnauthenticatedRequests(req, res, next) {
+  // Check if the user is authenticated
+  if (!req.isAuthenticated()) {
+    // Instead of throwing an error, provide a friendly message
+    return res.status(200).json({
+      message: 'User not signed in or authenticated',
+      status: 'unauthenticated'
+    });
+  }
+  // Proceed to the next middleware or route handler
+  next();
+}
+
+// Existing middleware functions
 export function ifNoUserRedirectHome(message, type = 'errors') {
   return function (req, res, next) {
     const { path } = req;
@@ -66,10 +79,6 @@ export function ifUserRedirectTo(status) {
       return res.status(status).redirect(returnTo);
     }
     if (req.user && !accessToken) {
-      // This request has an active auth session
-      // but there is no accessToken attached to the request
-      // perhaps the user cleared cookies?
-      // we need to remove the zombie auth session
       removeCookies(req, res);
       delete req.session.passport;
     }
@@ -79,18 +88,10 @@ export function ifUserRedirectTo(status) {
 
 export function ifNotMobileRedirect() {
   return (req, res, next) => {
-    //
-    // Todo: Use the below check once we have done more research on usage
-    //
-    // const isMobile = /(iPhone|iPad|Android)/.test(req.headers['user-agent']);
-    // if (!isMobile) {
-    //  res.json({ error: 'not from mobile' });
-    // } else {
-    //  next();
-    // }
     next();
   };
 }
+
 // for use with express-validator error formatter
 export const createValidatorErrorHandler =
   (...args) =>
