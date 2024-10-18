@@ -535,7 +535,7 @@ describe('/exam-environment/', () => {
         );
         expect(res.status).toBe(200);
 
-        expect(res.body).toMatchObject({
+        expect(res.body).toStrictEqual({
           data: {
             exams: [
               {
