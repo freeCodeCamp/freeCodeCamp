@@ -40,7 +40,7 @@ assert(document.querySelectorAll('a').length >= 2);
 You are missing a closing (`a`) tag after the image.
 
 ```js
-assert(document.querySelectorAll('a').length === 2);
+assert.lengthOf(document.querySelectorAll('a'), 3);
 ```
 
 Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
@@ -52,7 +52,7 @@ assert(code.match(/<\/a>/g).length >= 2);
 You should only add one closing anchor (`a`) tag. Please remove any extras.
 
 ```js
-assert(code.match(/<\/a>/g).length === 2);
+assert.lengthOf(code.match(/<\/a>/g), 3);
 ```
 
 Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.

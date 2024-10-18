@@ -43,7 +43,7 @@ The third image should have a `src` attribute set to `https://cdn.freecodecamp.o
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert.strictEqual(
-  catsImg?src?.toLowerCase(), 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
+  catsImg?.src?.toLowerCase(), 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
 );
 ```
 
