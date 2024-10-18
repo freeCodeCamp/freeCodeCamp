@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Panel, Button } from '@freecodecamp/ui';
+import { Panel, Button, Spacer } from '@freecodecamp/ui';
 
 import { deleteUserToken } from '../../redux/actions';
-import { FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow } from '../helpers';
 
 type UserTokenProps = {
   deleteUserToken: () => void;
@@ -30,11 +30,11 @@ class UserToken extends Component<UserTokenProps> {
       <FullWidthRow>
         <Panel variant='info' className='text-center'>
           <Panel.Heading>{t('user-token.title')}</Panel.Heading>
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Panel.Body>
             <p>{t('user-token.delete-p1')}</p>
             <FullWidthRow>
-              <Spacer size='small' />
+              <Spacer size='s' />
               <Button
                 block={true}
                 size='large'
@@ -44,7 +44,7 @@ class UserToken extends Component<UserTokenProps> {
               >
                 {t('user-token.delete')}
               </Button>
-              <Spacer size='medium' />
+              <Spacer size='m' />
             </FullWidthRow>
           </Panel.Body>
         </Panel>
