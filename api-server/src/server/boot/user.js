@@ -46,14 +46,14 @@ function bootUser(app) {
   api.get('/account', sendNonUserToHome, deprecatedEndpoint);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
   api.get('/user/get-session-user', getSessionUser);
-  
-  api.delete(
-    '/account',
-    ifNoUser401, 
-    deleteUserToken, 
-    deleteMsUsername, 
-    deleteUserSurveys, 
-    postDeleteAccount);
+  api.post(
+    '/account/delete',
+    ifNoUser401,
+    deleteUserToken,
+    deleteMsUsername,
+    deleteUserSurveys,
+    postDeleteAccount
+  );
   api.post(
     '/account/reset-progress',
     ifNoUser401,
