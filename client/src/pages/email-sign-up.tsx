@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 
 import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
-import { Spacer, Loader, Link } from '../components/helpers';
+import { Loader, Link } from '../components/helpers';
 import { apiLocation } from '../../config/env.json';
 
 import { acceptTerms } from '../redux/actions';
@@ -71,7 +71,7 @@ function EmailListOptIn({
             >
               {t('buttons.yes-please')}
             </Button>
-            <Spacer size='small' />
+            <Spacer size='s' />
           </Col>
           <Col md={4} sm={5} xs={12}>
             <Button
@@ -82,7 +82,7 @@ function EmailListOptIn({
             >
               {t('buttons.no-thanks')}
             </Button>
-            <Spacer size='small' />
+            <Spacer size='s' />
           </Col>
         </Row>
       </Container>
@@ -90,7 +90,7 @@ function EmailListOptIn({
   } else {
     return (
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <Spacer size='small' />
+        <Spacer size='s' />
         <Button
           block={true}
           size='large'
@@ -99,7 +99,7 @@ function EmailListOptIn({
         >
           {t('buttons.sign-up-email-list')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='s' />
       </Col>
     );
   }
@@ -133,9 +133,9 @@ function AcceptPrivacyTerms({
         {isSignedIn && completedChallengeCount < 1 ? (
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size='large' />
+              <Spacer size='l' />
               <h1 className='text-center'>{t('misc.brand-new-account')}</h1>
-              <Spacer size='small' />
+              <Spacer size='s' />
               <p>
                 <Trans i18nKey='misc.duplicate-account-warning'>
                   <Link className='inline' to='/settings#danger-zone' />
@@ -148,16 +148,16 @@ function AcceptPrivacyTerms({
         )}
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer size='small' />
+            <Spacer size='s' />
             <IntroDescription />
             <hr />
           </Col>
         </Row>
         <Row className='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer size='small' />
+            <Spacer size='s' />
             <p>{t('misc.email-blast')}</p>
-            <Spacer size='small' />
+            <Spacer size='s' />
           </Col>
           {showLoading ? (
             <Loader fullScreen={true} />
@@ -165,7 +165,7 @@ function AcceptPrivacyTerms({
             <EmailListOptIn isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
           )}
           <Col xs={12}>
-            <Spacer size='medium' />
+            <Spacer size='m' />
           </Col>
         </Row>
       </Container>
