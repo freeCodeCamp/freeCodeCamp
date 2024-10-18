@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Row, Button, Modal } from '@freecodecamp/ui';
+import { Row, Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import type { GeneratedExamResults } from '../../redux/prop-types';
 import { closeModal } from '../../templates/Challenges/redux/actions';
 import { isExamResultsModalOpenSelector } from '../../templates/Challenges/redux/selectors';
 import { formatSecondsToTime } from '../../utils/format-seconds';
-import { Spacer } from '../helpers';
 
 type ExamResultsModalProps = {
   projectTitle: string;
@@ -60,18 +59,18 @@ const ExamResultsModal = ({
         {t('settings.labels.results-for', { projectTitle })}
       </Modal.Header>
       <Modal.Body alignment='start'>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <div style={{ paddingLeft: '30px' }}>
           <Row>
             {t('learn.exam.number-of-questions', {
               n: numberOfQuestionsInExam
             })}
           </Row>{' '}
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Row>
             {t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
           </Row>{' '}
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Row>{t('learn.exam.percent-correct', { n: percentCorrect })}</Row>
           <Spacer size='medium' />{' '}
           <Row>
@@ -80,7 +79,7 @@ const ExamResultsModal = ({
             })}
           </Row>
         </div>
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </Modal.Body>
       <Modal.Footer alignment='end'>
         <Button
