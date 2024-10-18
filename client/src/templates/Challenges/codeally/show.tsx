@@ -11,7 +11,7 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Alert } from '@freecodecamp/ui';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
+import { Spacer } from '@freecodecamp/ui';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import ChallengeHeading from '../components/challenge-heading';
@@ -271,18 +271,18 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
           <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
                 >
                   {title}
                 </ChallengeTitle>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <PrismFormatted text={description} />
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <div className='ca-description'>
                   <p>{t('learn.gitpod.intro')}</p>
 
@@ -316,7 +316,7 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   </ol>
                 </div>
 
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
@@ -324,18 +324,18 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                         {t('learn.complete-both-steps')}
                       </div>
                       <hr />
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                       <ChallengeHeading
                         heading={t('learn.step-1')}
                         isCompleted={isPartiallyCompleted || isCompleted}
                       />
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                       <div className='ca-description'>
                         {t('learn.runs-in-vm')}
                       </div>
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                       <PrismFormatted text={instructions} />
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                     </>
                   )}
                 <Alert variant='info'>
@@ -382,18 +382,18 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                   challengeType === challengeTypes.codeAllyCert && (
                     <>
                       <hr />
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                       <ChallengeHeading
                         heading={t('learn.step-2')}
                         isCompleted={isCompleted}
                       />
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                       <div className='ca-description'>
                         {t('learn.submit-public-url')}
                       </div>
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                       <PrismFormatted text={notes} />
-                      <Spacer size='medium' />
+                      <Spacer size='m' />
                       <SolutionForm
                         challengeType={challengeType}
                         description={description}
@@ -402,10 +402,10 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                       />
                     </>
                   )}
-                <Spacer size='xxSmall' />
+                <Spacer size='xxs' />
                 <ProjectToolPanel />
                 <br />
-                <Spacer size='medium' />
+                <Spacer size='m' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={block} />
