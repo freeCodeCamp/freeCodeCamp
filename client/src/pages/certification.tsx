@@ -7,6 +7,13 @@ import RedirectHome from '../components/redirect-home';
 
 import './certification.css';
 
+export const Head = () => (
+  <>
+    <title>Hello World</title>
+    <meta name='description' content='Hello World' />
+  </>
+);
+
 function Certification(): JSX.Element {
   return (
     <Router>

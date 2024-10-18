@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Image, Button } from '@freecodecamp/ui';
+import * as htmlToImage from 'html-to-image';
 
 import envData from '../../config/env.json';
 import { getLangCode } from '../../../shared/config/i18n';
@@ -129,7 +130,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
   const [isDonationClosed, setIsDonationClosed] = useState(false);
-
+  const certWrapper = document.getElementById('cert-wrapper')!;
   useEffect(() => {
     const { username, certSlug, isValidCert, showCert } = props;
     if (isValidCert) {
@@ -137,6 +138,26 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    htmlToImage
+      .toPng(certWrapper)
+      .then(function (dataUrl) {
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        document.body.appendChild(img);
+
+        const twitterImage = document.querySelector(
+          'meta[name="twitter:image:src"]'
+        );
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        twitterImage?.setAttribute('content', dataUrl);
+        ogImage?.setAttribute('content', dataUrl);
+      })
+      .catch(function () {
+        // TODO: properly log this
+      });
+  }, [certWrapper]);
 
   useEffect(() => {
     const {
@@ -336,6 +357,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       <div
         className='certificate-wrapper'
         data-playwright-test-label='cert-wrapper'
+        id='cert-wrapper'
       >
         <div className='certification-namespace'>
           <header data-playwright-test-label='cert-header'>
