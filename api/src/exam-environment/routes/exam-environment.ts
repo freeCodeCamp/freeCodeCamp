@@ -579,14 +579,23 @@ async function getExams(
   reply: FastifyReply
 ) {
   const user = req.user!;
-  const exams = await this.prisma.envExam.findMany();
+  const exams = await this.prisma.envExam.findMany({
+    select: {
+      id: true,
+      config: true
+    }
+  });
 
   const availableExams = exams.map(exam => {
     const isExamPrerequisitesMet = checkPrerequisites(user, true);
 
     return {
-      examId: exam.id,
-      config: exam.config,
+      id: exam.id,
+      config: {
+        name: exam.config.name,
+        note: exam.config.note,
+        totalTimeInMS: exam.config.totalTimeInMS
+      },
       canTake: isExamPrerequisitesMet
     };
   });

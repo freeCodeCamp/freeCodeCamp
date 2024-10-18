@@ -10,7 +10,7 @@ export const examEnvironmentExams = {
         data: Type.Object({
           exams: Type.Array(
             Type.Object({
-              examId: Type.String(),
+              id: Type.String(),
               config: Type.Object({
                 name: Type.String(),
                 note: Type.String(),

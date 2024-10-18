@@ -542,7 +542,6 @@ describe('/exam-environment/', () => {
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
-
         expect(res.status).toBe(200);
 
         expect(res.body).toMatchObject({
@@ -555,7 +554,7 @@ describe('/exam-environment/', () => {
                   note: mock.exam.config.note,
                   totalTimeInMS: mock.exam.config.totalTimeInMS
                 },
-                examId: mock.examId
+                id: mock.examId
               }
             ]
           }
