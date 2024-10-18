@@ -16,12 +16,14 @@ describe('/exam-environment/', () => {
   setupServer();
   describe('Authenticated user with exam environment authorization token', () => {
     let superPost: ReturnType<typeof createSuperRequest>;
+    let superGet: ReturnType<typeof createSuperRequest>;
     let examEnvironmentAuthorizationToken: string;
 
     // Authenticate user
     beforeAll(async () => {
       const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
+      superGet = createSuperRequest({ method: 'GET', setCookies });
       await mock.seedEnvExam();
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
@@ -524,6 +526,42 @@ describe('/exam-environment/', () => {
     });
 
     xdescribe('POST /exam-environment/screenshot', () => {});
+
+    describe('GET /exam-environment/exams', () => {
+      it('should return 403', async () => {
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          'invalid-token'
+        );
+
+        expect(res.status).toBe(403);
+      });
+
+      it('should return 200', async () => {
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.status).toBe(200);
+
+        expect(res.body).toMatchObject({
+          data: {
+            exams: [
+              {
+                canTake: true,
+                config: {
+                  name: mock.exam.config.name,
+                  note: mock.exam.config.note,
+                  totalTimeInMS: mock.exam.config.totalTimeInMS
+                },
+                examId: mock.examId
+              }
+            ]
+          }
+        });
+      });
+    });
   });
 
   describe('Authenticated user without exam environment authorization token', () => {

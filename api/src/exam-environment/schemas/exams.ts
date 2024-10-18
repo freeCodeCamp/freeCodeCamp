@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { STANDARD_ERROR } from '../utils/errors';
-export const examEnvironmentCanTakeExam = {
+export const examEnvironmentExams = {
   headers: Type.Object({
     'exam-environment-authorization-token': Type.String()
   }),
@@ -8,10 +8,14 @@ export const examEnvironmentCanTakeExam = {
     200: Type.Union([
       Type.Object({
         data: Type.Object({
-          availableExams: Type.Array(
+          exams: Type.Array(
             Type.Object({
               examId: Type.String(),
-              examName: Type.String(),
+              config: Type.Object({
+                name: Type.String(),
+                note: Type.String(),
+                totalTimeInMS: Type.Number()
+              }),
               canTake: Type.Boolean()
             })
           )
