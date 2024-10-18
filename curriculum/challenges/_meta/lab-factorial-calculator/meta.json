@@ -1,8 +1,9 @@
 {
   "name": "Build a Factorial Calculator ",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "blockType": "lab",
   "dashedName": "lab-factorial-calculator",
   "order": 167,
   "superBlock": "front-end-development",

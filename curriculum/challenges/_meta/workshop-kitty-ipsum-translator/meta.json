@@ -1,6 +1,7 @@
 {
   "name": "Build a Kitty Ipsum Translator",
   "blockType": "workshop",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,

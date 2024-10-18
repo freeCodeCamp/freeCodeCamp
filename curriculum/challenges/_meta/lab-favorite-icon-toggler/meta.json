@@ -1,8 +1,9 @@
 {
   "name": "Build a Favorite Icon Toggler",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "blockType": "lab",
   "dashedName": "lab-favorite-icon-toggler",
   "order": 190,
   "superBlock": "front-end-development",

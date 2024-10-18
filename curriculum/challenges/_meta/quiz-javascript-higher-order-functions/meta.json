@@ -1,6 +1,7 @@
 {
   "name": "JavaScript Higher Order Functions Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-higher-order-functions",

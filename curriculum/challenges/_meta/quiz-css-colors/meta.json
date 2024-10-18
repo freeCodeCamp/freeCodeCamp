@@ -1,6 +1,7 @@
 {
   "name": "CSS Colors Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-colors",
   "order": 67,

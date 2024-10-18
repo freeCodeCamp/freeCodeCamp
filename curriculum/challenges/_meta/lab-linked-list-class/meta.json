@@ -1,8 +1,9 @@
 {
   "name": "Build a Linked List Class",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "blockType": "lab",
   "dashedName": "lab-linked-list-class",
   "order": 264,
   "superBlock": "front-end-development",

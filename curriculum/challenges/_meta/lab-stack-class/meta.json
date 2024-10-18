@@ -1,8 +1,9 @@
 {
   "name": "Build a Stack Class",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "blockType": "lab",
   "dashedName": "lab-stack-class",
   "order": 263,
   "superBlock": "front-end-development",
