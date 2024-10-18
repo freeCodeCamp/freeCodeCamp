@@ -5,7 +5,7 @@
   "hasEditableBoundaries": false,
   "dashedName": "lab-moon-orbit",
   "order": 122,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66a37f37ef5823a313de8c26", "title": "Build a Moon Orbit" }],
   "helpCategory": "HTML-CSS",
   "blockType": "lab"

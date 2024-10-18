@@ -5,7 +5,7 @@
   "blockType": "lab",
   "dashedName": "lab-linked-list-class",
   "order": 264,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66dadcf18df3a76104054d95", "title": "Build a Linked List Class" }],
   "helpCategory": "JavaScript"
 }

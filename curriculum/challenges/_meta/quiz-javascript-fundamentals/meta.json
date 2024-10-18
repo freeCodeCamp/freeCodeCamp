@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-fundamentals",
   "order": 182,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "66edcd875b0d91de1fbbb492",

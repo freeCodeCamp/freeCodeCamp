@@ -5,7 +5,7 @@
   "blockType": "lab",
   "dashedName": "lab-fortune-teller",
   "order": 143,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66c06d618d075c7f7f1b890a", "title": "Build a Fortune Teller" }],
   "helpCategory": "JavaScript"
 }

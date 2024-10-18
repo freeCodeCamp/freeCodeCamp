@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-recursion",
   "order": 236,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66edd43cded6bff30944b676", "title": "Recursion Quiz" }
   ],

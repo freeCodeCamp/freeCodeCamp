@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-backend-javascript",
   "order": 378,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1b11026394bcdb7c42473", "title": "Backend JavaScript Quiz" }
   ],

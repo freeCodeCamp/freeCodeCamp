@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-pokemon-search-app",
   "order": 280,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "6555c1d3e11a1574434cf8b5", "title": "Build a Pokémon Search App" }],
   "helpCategory": "JavaScript",
   "blockType": "lab"

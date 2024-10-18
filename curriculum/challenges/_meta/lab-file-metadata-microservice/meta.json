@@ -5,7 +5,7 @@
   "hasEditableBoundaries": true,
   "dashedName": "lab-file-metadata-microservice",
   "order": 376,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "bd7158d8c443edefaeb5bd0f", "title": "Build a File Metadata Microservice" }],
   "helpCategory": "Backend Development",
   "blockType": "lab"

@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-functions",
   "order": 157,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66edcc779993c0da6906dbb9", "title": "JavaScript Functions Quiz" }
   ],

@@ -5,7 +5,7 @@
   "blockType": "lab",
   "dashedName": "lab-stack-class",
   "order": 263,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "587d8250367417b2b2512c5f", "title": "Build a Stack Class" }],
   "helpCategory": "JavaScript"
 }

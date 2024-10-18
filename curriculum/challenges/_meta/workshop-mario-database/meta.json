@@ -6,7 +6,7 @@
   "hasEditableBoundaries": false,
   "dashedName": "workshop-mario-database",
   "order": 336,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "5f2c289f164c29556da632fd", "title": "Build a Mario Database" }],
   "helpCategory": "Backend Development"
 }

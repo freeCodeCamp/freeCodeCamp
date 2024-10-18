@@ -6,7 +6,7 @@
   "hasEditableBoundaries": false,
   "dashedName": "workshop-sql-reference-object",
   "order": 358,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "5fa323cdaf6a73463d590659", "title": "Build an SQL Reference Object" }],
   "helpCategory": "Backend Development"
 }
