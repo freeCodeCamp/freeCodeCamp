@@ -1,0 +1,53 @@
+{
+  "name": "Build a Library Manager",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-library-manager",
+  "order": 183,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "67116c175a77cb64c5c10d49",
+      "title": "Step 1"
+    },
+    {
+      "id": "67116d7584d0b469b14579bf",
+      "title": "Step 2"
+    },
+    {
+      "id": "67116d7584d0b469b14579c0",
+      "title": "Step 3"
+    },
+    {
+      "id": "67116d7584d0b469b14579c1",
+      "title": "Step 4"
+    },
+    {
+      "id": "67116d7584d0b469b14579c2",
+      "title": "Step 5"
+    },
+    {
+      "id": "67116d7584d0b469b14579c3",
+      "title": "Step 6"
+    },
+    {
+      "id": "67116d7584d0b469b14579c4",
+      "title": "Step 7"
+    },
+    {
+      "id": "67116d7584d0b469b14579c5",
+      "title": "Step 8"
+    },
+    {
+      "id": "67116d7584d0b469b14579c6",
+      "title": "Step 9"
+    },
+    {
+      "id": "67116d7584d0b469b14579c7",
+      "title": "Step 10"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "blockType": "workshop"
+}
