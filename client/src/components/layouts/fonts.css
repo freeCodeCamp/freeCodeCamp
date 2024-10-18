@@ -76,6 +76,44 @@
   font-display: fallback;
 }
 
+/* NotoSansJapanese */
+
+@font-face {
+  font-family: 'NotoSansJapanese';
+  src: url('../../../static/fonts/noto-sans-japanese/NotoSansJP-Light.woff')
+    format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansJapanese';
+  src: url('../../../static/fonts/noto-sans-japanese/NotoSansJP-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansJapanese';
+  src: url('../../../static/fonts/noto-sans-japanese/NotoSansJP-Bold.woff')
+    format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'NotoSansJapanese';
+  src: url('../../../static/fonts/noto-sans-japanese/NotoSansJP-Black.woff')
+    format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
 /* hack zeroslash */
 
 @font-face {
