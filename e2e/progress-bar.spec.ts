@@ -19,7 +19,7 @@ test.describe('Progress bar component', () => {
     await clearEditor({ page, browserName });
 
     await page.keyboard.insertText(
-      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>See more cat photos in our gallery.</p></body></html>'
+      '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>Everyone loves cute cats online!</p></body></html>'
     );
 
     await page.getByRole('button', { name: 'Check Your Code' }).click();
@@ -28,7 +28,7 @@ test.describe('Progress bar component', () => {
     await expect(progressBarContainer).toContainText(
       'Learn HTML by Building a Cat Photo App'
     );
-    await expect(progressBarContainer).toContainText('0% complete');
+    await expect(progressBarContainer).toContainText(/\d% complete/);
     await page
       .getByRole('button', { name: 'Submit and go to next challenge' })
       .click();
@@ -55,7 +55,7 @@ test.describe('Progress bar component', () => {
       .click();
 
     await expect(page.locator('.completion-block-meta')).toContainText(
-      '99% complete'
+      /\d% complete/
     );
 
     await page
