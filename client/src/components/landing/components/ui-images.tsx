@@ -2,8 +2,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-responsive';
+import { Spacer } from '@freecodecamp/ui';
 import landingPageb from '../../../assets/images/landing/landing-page-b.svg';
-import { LazyImage, Spacer } from '../../helpers';
+import { LazyImage } from '../../helpers';
 
 const LARGE_SCREEN_SIZE = 1200;
 
@@ -18,7 +19,7 @@ function UIImages(): JSX.Element {
       >
         <LazyImage alt={t('landing.hero-img-uis')} src={landingPageb} />
       </figure>
-      <Spacer size='exLarge' />
+      <Spacer size='xl' />
     </Media>
   );
 }
