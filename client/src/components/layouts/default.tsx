@@ -170,6 +170,8 @@ function DefaultLayout({
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
+  const isJapanese = clientLocale == 'japanese';
+
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -212,30 +214,32 @@ function DefaultLayout({
             rel='preload'
             type='font/woff'
           />
-          {clientLocale === 'japanese' && (
-            <>
-              <link
-                as='font'
-                crossOrigin='anonymous'
-                href={jpSansRegularURL}
-                rel='preload'
-                type='font/woff'
-              />
-              <link
-                as='font'
-                crossOrigin='anonymous'
-                href={jpSansLightURL}
-                rel='preload'
-                type='font/woff'
-              />
-              <link
-                as='font'
-                crossOrigin='anonymous'
-                href={jpSansBoldURL}
-                rel='preload'
-                type='font/woff'
-              />
-            </>
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansRegularURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansLightURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansBoldURL}
+              rel='preload'
+              type='font/woff'
+            />
           )}
 
           <link
