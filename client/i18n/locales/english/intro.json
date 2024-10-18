@@ -2053,8 +2053,17 @@
         "title": "CSS Grid Quiz",
         "intro": ["Test what you've learned in this quiz of using grid in CSS."]
       },
-      "dorc": { "title": "120", "intro": [] },
-      "adzu": { "title": "121", "intro": [] },
+      "workshop-ferris-wheel": {
+        "title": "Draw an Animated Ferris Wheel",
+        "intro": [
+          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
+          "In this workshop, you'll build a Ferris wheel. You'll practice how to use CSS to animate elements, transform them, and adjust their speed."
+        ]
+      },
+      "adzu": {
+        "title": "121",
+        "intro": []
+      },
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
