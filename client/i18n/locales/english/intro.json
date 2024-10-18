@@ -2016,7 +2016,13 @@
           "Test what you've learned in this quiz of making your webpage responsive."
         ]
       },
-      "mtbl": { "title": "108", "intro": [] },
+      "workshop-city-skyline": {
+        "title": "Build a City Skyline",
+        "intro": [
+          "CSS variables help you organize your styles and reuse them.",
+          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+        ]
+      },
       "vlov": { "title": "109", "intro": [] },
       "lab-availability-table": {
         "title": "Build an Availability Table",
