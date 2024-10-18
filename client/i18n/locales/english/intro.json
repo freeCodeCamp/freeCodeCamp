@@ -2796,6 +2796,10 @@
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
+      },
+      "workshop-ferris-wheel": {
+        "title": "Draw an Animated Ferris Wheel",
+        "intro": ["", ""]
       }
     }
   },

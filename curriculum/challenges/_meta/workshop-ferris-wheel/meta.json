@@ -1,0 +1,11 @@
+{
+  "name": "Draw an Animated Ferris Wheel",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-ferris-wheel",
+  "order": 120,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "671226a33c4214440189c17d", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
