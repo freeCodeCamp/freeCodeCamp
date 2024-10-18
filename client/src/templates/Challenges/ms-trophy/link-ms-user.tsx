@@ -9,10 +9,9 @@ import {
   FormControl,
   FormGroup,
   HelpBlock,
-  Button
+  Button, Spacer
 } from '@freecodecamp/ui';
 
-import { Spacer } from '../../../components/helpers';
 import { isMicrosoftTranscriptLink } from '../../../../../shared/utils/validate';
 import {
   linkMsUsername,
@@ -88,7 +87,7 @@ function LinkMsUser({
   return !isSignedIn ? (
     <>
       <ChallengeHeading heading={t('learn.ms.link-header')} />
-      <Spacer size='small' />
+      <Spacer size='s' />
 
       <p>{t('learn.ms.link-signin')}</p>
       <Login />
@@ -110,7 +109,7 @@ function LinkMsUser({
       ) : (
         <div>
           <ChallengeHeading heading={'learn.ms.link-header'} />
-          <Spacer size='small' />
+          <Spacer size='s' />
 
           <p>{t('learn.ms.unlinked')}</p>
           <ol className='link-ms-user-ol'>
@@ -136,7 +135,7 @@ function LinkMsUser({
             <li>{t('learn.ms.link-li-6')}</li>
           </ol>
 
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <form onSubmit={handleLinkUsername}>
             <FormGroup validationState={isValid ? 'success' : 'error'}>
               <ControlLabel htmlFor='transcript-link'>
