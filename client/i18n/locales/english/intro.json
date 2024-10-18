@@ -2051,7 +2051,7 @@
           "For this lab, you will create an animation of the moon orbiting the earth."
         ]
       },
-      "workshop-penguin": {
+      "workshop-flappy-penguin": {
         "title": "Build a Flappy Penguin",
         "intro": [
           "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
