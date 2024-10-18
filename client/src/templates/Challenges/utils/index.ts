@@ -50,7 +50,9 @@ export function enhancePrismAccessibility(
     sql: 'SQL',
     http: 'HTTP',
     json: 'JSON',
-    pug: 'pug'
+    pug: 'pug',
+    ts: 'TypeScript',
+    typescript: 'TypeScript'
   };
   const parent = prismEnv?.element?.parentElement;
   if (
