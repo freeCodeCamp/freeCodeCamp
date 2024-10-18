@@ -3,10 +3,9 @@ import Helmet from 'react-helmet';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Row, Col } from '@freecodecamp/ui';
+import { Container, Row, Col, Spacer } from '@freecodecamp/ui';
 import BigCallToAction from '../components/landing/components/big-call-to-action';
 
-import { Spacer } from '../components/helpers';
 import {
   isSignedInSelector,
   isDonatingSelector,
@@ -62,13 +61,13 @@ function ConditionalContent({
   if (isSignedIn && !isDonating) {
     return (
       <Col md={12}>
-        <Spacer size='large' />
+        <Spacer size='l' />
         <h1 id='content-start' className='text-center'>
           {t('learn.donation-record-not-found')}
         </h1>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <p className='text-center'>{t('learn.contact-support-mistake')}</p>
-        <Spacer size='large' />
+        <Spacer size='l' />
       </Col>
     );
   } else if (isSignedIn && isDonating) {
@@ -82,7 +81,7 @@ function ConditionalContent({
         </Col>
         <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
           <CurrentInitiativesText isSupportersPage={true} />
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <SupportBenefitsText isSupportersPage={true} />
         </Col>
       </>
@@ -90,13 +89,13 @@ function ConditionalContent({
   } else
     return (
       <Col md={12}>
-        <Spacer size='large' />
+        <Spacer size='l' />
         <h1 id='content-start' className='text-center'>
           {t('learn.sign-in-see-benefits')}
         </h1>
-        <Spacer size='large' />
+        <Spacer size='l' />
         <BigCallToAction text={t('buttons.sign-in')} />
-        <Spacer size='large' />
+        <Spacer size='l' />
       </Col>
     );
 }
@@ -132,13 +131,13 @@ function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
         </Row>
       </Container>
       <Container className='donate-supporter-page-section'>
-        <Spacer size='large' />
+        <Spacer size='l' />
         <Row>
           <Col lg={10} lgOffset={0} md={8} mdOffset={2} sm={10}>
             <DonationFaqText />
           </Col>
         </Row>
-        <Spacer size='large' />
+        <Spacer size='l' />
       </Container>
     </>
   );

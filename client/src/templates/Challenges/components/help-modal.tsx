@@ -2,10 +2,9 @@ import React, { useMemo, useState, useRef, useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
-import { Button, FormControl, Modal } from '@freecodecamp/ui';
+import { Button, FormControl, Modal, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
-import { Spacer } from '../../../components/helpers';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
 
@@ -169,7 +168,7 @@ function HelpModal({
                 href={RSA}
               />
 
-              <Spacer size='small' />
+              <Spacer size='s' />
 
               <Checkbox
                 name='similar-questions-checkbox'
@@ -183,7 +182,7 @@ function HelpModal({
               />
             </fieldset>
 
-            <Spacer size='xSmall' />
+            <Spacer size='xs' />
 
             <label htmlFor='help-modal-form-description'>
               {t('forum-help.whats-happening')}
@@ -205,7 +204,7 @@ function HelpModal({
               required
             />
 
-            <Spacer size='xSmall' />
+            <Spacer size='xs' />
 
             {description.length < DESCRIPTION_MIN_CHARS ? (
               <p>
@@ -221,7 +220,7 @@ function HelpModal({
               </p>
             )}
 
-            <Spacer size='xxSmall' />
+            <Spacer size='xxs' />
 
             <Button
               block={true}
@@ -232,7 +231,7 @@ function HelpModal({
             >
               {t('buttons.submit')}
             </Button>
-            <Spacer size='xxSmall' />
+            <Spacer size='xxs' />
             <Button
               block={true}
               size='large'
@@ -276,7 +275,7 @@ function HelpModal({
             >
               {t('buttons.create-post')}
             </Button>
-            <Spacer size='xxSmall' />
+            <Spacer size='xxs' />
             <Button
               block={true}
               size='large'

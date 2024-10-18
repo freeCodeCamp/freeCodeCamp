@@ -8,7 +8,8 @@ import {
   ControlLabel,
   HelpBlock,
   FormGroupProps,
-  Button
+  Button,
+  Spacer
 } from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
@@ -16,7 +17,7 @@ import { PortfolioProjectData } from '../../../redux/prop-types';
 
 import { hasProtocolRE } from '../../../utils';
 
-import { FullWidthRow, Spacer } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
 
@@ -361,7 +362,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <Spacer size='small' />
+          <Spacer size='s' />
           <Button
             block={true}
             size='large'
@@ -374,9 +375,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         </form>
         {index + 1 !== arr.length && (
           <>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <hr />
-            <Spacer size='medium' />
+            <Spacer size='m' />
           </>
         )}
       </FullWidthRow>
@@ -391,7 +392,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
         <FullWidthRow>
           <p>{t('settings.share-projects')}</p>
-          <Spacer size='small' />
+          <Spacer size='s' />
           <Button
             block={true}
             size='large'
@@ -403,7 +404,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
             {t('buttons.add-portfolio')}
           </Button>
         </FullWidthRow>
-        <Spacer size='large' />
+        <Spacer size='l' />
         {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
       </section>
     );

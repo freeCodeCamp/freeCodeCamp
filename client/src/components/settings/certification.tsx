@@ -5,7 +5,7 @@ import type { TFunction } from 'i18next';
 import { createSelector } from 'reselect';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
-import { Table, Button } from '@freecodecamp/ui';
+import { Table, Button, Spacer } from '@freecodecamp/ui';
 
 import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
@@ -20,7 +20,7 @@ import {
 } from '../../../config/cert-and-project-map';
 import { FlashMessages } from '../Flash/redux/flash-messages';
 import ProjectModal from '../SolutionViewer/project-modal';
-import { FullWidthRow, Spacer, Link } from '../helpers';
+import { FullWidthRow, Link } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
@@ -190,7 +190,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
 
   return (
     <FullWidthRow key={certSlug}>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <h3 className='text-center'>
         {t('certification.title.Legacy Full Stack Certification')}
       </h3>
@@ -247,7 +247,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
           </Button>
         )}
       </div>
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </FullWidthRow>
   );
 };
@@ -338,7 +338,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <ScrollableAnchor id={`cert-${certSlug}`}>
         <section>
           <FullWidthRow>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <h3 className='text-center'>
               {t(`certification.title.${certName}`, certName)}
             </h3>
@@ -422,7 +422,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
       {currentCertTitles.map(title => (
         <Certification key={title} certName={title} t={t} />
       ))}
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
       <LegacyFullStack {...props} />
       {legacyCertTitles.map(title => (

@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col } from '@freecodecamp/ui';
+import { Col, Spacer } from '@freecodecamp/ui';
 
-import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 
 interface FaqItem {
@@ -24,7 +23,7 @@ const Faq = (): JSX.Element => {
       className='faq-section'
     >
       <h2 className='big-heading'>{t('landing.faq')}</h2>
-      <Spacer size='small' />
+      <Spacer size='s' />
       {faqItems.map((faq, i) => (
         <div
           data-test-label='landing-page-faq'
@@ -35,13 +34,13 @@ const Faq = (): JSX.Element => {
           {faq.answer.map((answer, i) => (
             <p key={i}>{answer}</p>
           ))}
-          <Spacer size='small' />
+          <Spacer size='s' />
         </div>
       ))}
       <h2 className='landing-page-happy'>{t('learn.read-this.p12')}</h2>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <BigCallToAction />
-      <Spacer size='large' />
+      <Spacer size='l' />
     </Col>
   );
 };

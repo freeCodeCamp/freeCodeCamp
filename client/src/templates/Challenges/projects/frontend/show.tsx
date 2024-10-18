@@ -7,9 +7,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import {
   ChallengeNode,
@@ -186,7 +185,7 @@ class Project extends Component<ProjectProps> {
           <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -209,7 +208,7 @@ class Project extends Component<ProjectProps> {
                   guideUrl={getGuideUrl({ forumTopicId, title })}
                 />
                 <br />
-                <Spacer size='medium' />
+                <Spacer size='m' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />

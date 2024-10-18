@@ -9,11 +9,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -234,7 +233,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
           <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
+                <Spacer size='m' />
 
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
@@ -243,7 +242,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                   {title}
                 </ChallengeTitle>
                 <PrismFormatted className={'line-numbers'} text={description} />
-                <Spacer size='medium' />
+                <Spacer size='m' />
               </Col>
 
               {scene && (
@@ -255,14 +254,14 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 {instructions && (
                   <>
                     <PrismFormatted
                       className={'line-numbers'}
                       text={instructions}
                     />
-                    <Spacer size='medium' />
+                    <Spacer size='m' />
                   </>
                 )}
                 <ObserveKeys>
@@ -272,7 +271,7 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                     handleAssignmentChange={this.handleAssignmentChange}
                   />
                 </ObserveKeys>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <Button
                   block={true}
                   variant='primary'
@@ -281,11 +280,11 @@ class ShowDialogue extends Component<ShowDialogueProps, ShowDialogueState> {
                 >
                   {t('buttons.submit')}
                 </Button>
-                <Spacer size='xxSmall' />
+                <Spacer size='xxs' />
                 <Button block={true} variant='primary' onClick={openHelpModal}>
                   {t('buttons.ask-for-help')}
                 </Button>
-                <Spacer size='large' />
+                <Spacer size='l' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />

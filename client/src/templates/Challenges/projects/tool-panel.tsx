@@ -3,10 +3,9 @@ import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-import { Button } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
 
 import { openModal } from '../redux/actions';
-import { Spacer } from '../../../components/helpers';
 
 const mapStateToProps = () => ({});
 
@@ -41,7 +40,7 @@ function ToolPanel({
           >
             {t('buttons.get-hint')}
           </Button>
-          <Spacer size='xxSmall' />
+          <Spacer size='xxs' />
         </>
       )}
       <Button block={true} variant='primary' onClick={openHelpModal}>
