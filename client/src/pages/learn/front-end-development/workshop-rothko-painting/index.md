@@ -1,10 +1,10 @@
 ---
-title: Introduction to the Build a Rothko Painting
+title: Introduction to the Design a Rothko Painting
 block: workshop-rothko-painting
 superBlock: front-end-development
 ---
 
-## Introduction to the Build a Rothko Painting
+## Introduction to the Design a Rothko Painting
 
 Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.
 
