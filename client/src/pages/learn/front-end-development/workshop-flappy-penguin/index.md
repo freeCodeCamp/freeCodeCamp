@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Build a Flappy Penguin
-block: workshop-penguin
+block: workshop-flappy-penguin
 superBlock: front-end-development
 ---
 
