@@ -10,7 +10,8 @@ import {
 } from '../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
-import { Spacer, ButtonLink } from '../helpers';
+import { ButtonLink } from '../helpers';
+import { Spacer } from '@freecodecamp/ui';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import {
   showUpcomingChanges,
@@ -179,7 +180,7 @@ function Map({
               />
             ))}
           </ul>
-          <Spacer size='medium' />
+          <Spacer size='m' />
         </Fragment>
       ))}
     </div>

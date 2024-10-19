@@ -4,10 +4,10 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
-import { Panel, Button } from '@freecodecamp/ui';
+import { Panel, Button, Spacer } from '@freecodecamp/ui';
 
 import { deleteAccount, resetProgress } from '../../redux/settings/actions';
-import { FullWidthRow, Spacer } from '../helpers';
+import { FullWidthRow} from '../helpers';
 import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
 
@@ -44,7 +44,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
     <FullWidthRow className='text-center'>
       <Panel variant='danger' id='danger-zone'>
         <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <p>{t('settings.danger.be-careful')}</p>
         <FullWidthRow>
           <Button
@@ -56,7 +56,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           >
             {t('settings.danger.reset')}
           </Button>
-          <Spacer size='small' />
+          <Spacer size='xs' />
           <Button
             block={true}
             size='large'
@@ -66,7 +66,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
           >
             {t('settings.danger.delete')}
           </Button>
-          <Spacer size='medium' />
+          <Spacer size='m' />
         </FullWidthRow>
       </Panel>
 

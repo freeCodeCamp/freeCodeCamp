@@ -3,7 +3,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 
 import Caret from '../../assets/icons/caret';
-import { Spacer } from '../helpers';
+import { Spacer } from '@freecodecamp/ui';
 import GreenPass from '../../assets/icons/green-pass';
 
 const POBOX = (
@@ -25,7 +25,7 @@ export const CtaText = (): JSX.Element => {
       <h1 data-playwright-test-label='main-head' id='content-start'>
         {t('donate.help-more')}
       </h1>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <p data-playwright-test-label='donate-text-1'>{t('donate.efficiency')}</p>
       <p data-playwright-test-label='donate-text-2'>
         {t('donate.why-donate-1')}
@@ -50,7 +50,7 @@ export const ThankYouMessage = ({
       <h1 data-playwright-test-label='main-head'>{t('donate.thank-you')}</h1>
       {(askForDonation || thankContributon) && (
         <>
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <p>{t('donate.crucial-contribution')}</p>
         </>
       )}
@@ -201,7 +201,7 @@ export const DonationFaqText = (): JSX.Element => {
   return (
     <>
       <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
-      <Spacer size='small' />
+      <Spacer size='xs' />
       {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
     </>
   );
@@ -311,7 +311,7 @@ export const GetSupporterBenefitsText = ({
   const { t } = useTranslation();
   return (
     <>
-      <Spacer size='large' />
+      <Spacer size='l' />
       <p>{t('donate.as-you-see')}</p>
       {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
     </>

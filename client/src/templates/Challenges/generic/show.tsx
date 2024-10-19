@@ -3,10 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -158,7 +157,7 @@ const ShowGeneric = ({
         />
         <Container>
           <Row>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <ChallengeTitle
               isCompleted={isChallengeCompleted}
               translationPending={translationPending}
@@ -190,7 +189,7 @@ const ShowGeneric = ({
                 <ChallengeDescription description={instructions} />
               )}
 
-              <Spacer size='medium' />
+              <Spacer size='m' />
 
               {assignments.length > 0 && (
                 <Assignments
@@ -206,7 +205,7 @@ const ShowGeneric = ({
                   : t('buttons.check-answer')}
               </Button>
 
-              <Spacer size='large' />
+              <Spacer size='l' />
             </Col>
             <CompletionModal />
           </Row>

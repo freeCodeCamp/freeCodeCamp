@@ -5,10 +5,10 @@ import {
   ControlLabel,
   FormControl,
   FormGroup,
-  Modal
+  Modal,
+  Spacer
 } from '@freecodecamp/ui';
 
-import { Spacer } from '../helpers';
 
 type DeleteModalProps = {
   delete: () => void;
@@ -54,21 +54,21 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         >
           {t('settings.danger.nevermind')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <FormGroup controlId='verify-delete'>
           <ControlLabel htmlFor='verify-delete-input'>
             {t('settings.danger.verify-text', {
               verifyText: t('settings.danger.verify-delete-text')
             })}
           </ControlLabel>
-          <Spacer size='small' />
+          <Spacer size='xs' />
           <FormControl
             onChange={handleVerifyTextChange}
             value={verifyText}
             id='verify-delete-input'
           />
         </FormGroup>
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <Button
           block={true}
           size='large'

@@ -5,7 +5,8 @@ import addMonths from 'date-fns/addMonths';
 import isEqual from 'date-fns/isEqual';
 import startOfDay from 'date-fns/startOfDay';
 import { User } from '../../../redux/prop-types';
-import { FullWidthRow, Spacer } from '../../helpers';
+import { FullWidthRow} from '../../helpers';
+import { Spacer } from '@freecodecamp/ui';
 import './stats.css';
 
 interface StatsProps {
@@ -113,7 +114,7 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
   return (
     <FullWidthRow>
       <h2>{t('profile.stats')}</h2>
-      <Spacer size='small' />
+      <Spacer size='xs' />
       <dl className='stats'>
         <div>
           <dt>

@@ -5,10 +5,10 @@ import {
   ControlLabel,
   FormControl,
   FormGroup,
-  Modal
+  Modal,
+  Spacer
 } from '@freecodecamp/ui';
 
-import { Spacer } from '../helpers';
 
 type ResetModalProps = {
   onHide: () => void;
@@ -52,21 +52,21 @@ function ResetModal(props: ResetModalProps): JSX.Element {
         >
           {t('settings.danger.nevermind-2')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <FormGroup controlId='verify-reset'>
           <ControlLabel htmlFor='verify-reset-input'>
             {t('settings.danger.verify-text', {
               verifyText: t('settings.danger.verify-reset-text')
             })}
           </ControlLabel>
-          <Spacer size='small' />
+          <Spacer size='xs' />
           <FormControl
             onChange={handleVerifyTextChange}
             value={verifyText}
             id='verify-reset-input'
           />
         </FormGroup>
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <Button
           block={true}
           size='large'

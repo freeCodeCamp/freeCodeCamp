@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { parseBlanks } from '../fill-in-the-blank/parse-blanks';
-import Spacer from '../../../components/helpers/spacer';
+import { Spacer } from '@freecodecamp/ui';
 import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
@@ -38,7 +38,7 @@ function FillInTheBlanks({
   return (
     <>
       <ChallengeHeading heading={t('learn.fill-in-the-blank')} />
-      <Spacer size='small' />
+      <Spacer size='xs' />
       <div className='fill-in-the-blank-wrap'>
         {paragraphs.map((p, i) => {
           return (
@@ -68,11 +68,11 @@ function FillInTheBlanks({
           );
         })}
       </div>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       {showFeedback && feedback && (
         <>
           <PrismFormatted text={feedback} />
-          <Spacer size='medium' />
+          <Spacer size='m' />
         </>
       )}
       <div className='text-center'>
