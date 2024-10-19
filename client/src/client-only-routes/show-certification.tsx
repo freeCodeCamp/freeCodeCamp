@@ -12,7 +12,7 @@ import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader, Spacer } from '../components/helpers';
+import { Spacer } from '@freecodecamp/ui';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
 import { showCert, fetchProfileForUser } from '../redux/actions';
