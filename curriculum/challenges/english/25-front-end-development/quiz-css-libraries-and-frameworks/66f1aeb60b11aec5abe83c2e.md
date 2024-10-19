@@ -17,439 +17,433 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+The properties that can be used to create a CSS grid layout?
 
 #### --distractors--
 
-Placeholder distractor 1
+display:flex;
 
 ---
 
-Placeholder distractor 2
+layout:grid;
 
 ---
 
-Placeholder distractor 3
+display:block;
 
 #### --answer--
 
-Placeholder answer
+display:grid;
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the effect of position:sticky?
 
 #### --distractors--
 
-Placeholder distractor 1
+It adds the element in the document flow.
 
 ---
 
-Placeholder distractor 2
+It fixes the element at a specific position on the screen
 
 ---
 
-Placeholder distractor 3
+It makes the element disappear on scroll
 
 #### --answer--
 
-Placeholder answer
+ It positions the element relative to its normal position until a defined scroll position is reached
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+The property that controls the alignment of items in a flex container?
 
 #### --distractors--
 
-Placeholder distractor 1
+item-align
 
 ---
 
-Placeholder distractor 2
+align-items
 
 ---
 
-Placeholder distractor 3
+flex-align
 
 #### --answer--
 
-Placeholder answer
+justify-content
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the calc() function do in CSS?
 
 #### --distractors--
 
-Placeholder distractor 1
+Calculates the area of an element
 
 ---
 
-Placeholder distractor 2
+Converts units between pixels and percentages
 
 ---
 
-Placeholder distractor 3
+Generates random numbers for styles
 
 #### --answer--
 
-Placeholder answer
+Performs calculations for values in CSS
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the use of @keyframes?
 
 #### --distractors--
 
-Placeholder distractor 1
+To import style
 
 ---
 
-Placeholder distractor 2
+To create a responsive website.
 
 ---
 
-Placeholder distractor 3
+To create variable values.
 
 #### --answer--
 
-Placeholder answer
+To define animations
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the flex-grow property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Determines how much an item will shrink
 
 ---
 
-Placeholder distractor 2
+Sets the base size of the item
 
 ---
 
-Placeholder distractor 3
+Controls the direction of the flex items
 
 #### --answer--
 
-Placeholder answer
+Defines how much space an item should take relative to other items 
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the property overflow: hidden; do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Makes the content visible on hover
 
 ---
 
-Placeholder distractor 2
+Resizes the element to fit the content
 
 ---
 
-Placeholder distractor 3
+Hides the element completely
 
 #### --answer--
 
-Placeholder answer
+Clips the content and hides the overflow
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which CSS property would you use to create a gradient background?
 
 #### --distractors--
 
-Placeholder distractor 1
+background-color: gradient;
 
 ---
 
-Placeholder distractor 2
+gradient-background: linear();
 
 ---
 
-Placeholder distractor 3
+gradient-background: linear();
 
 #### --answer--
 
-Placeholder answer
+background-image: linear-gradient(); 
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is a valid way to define a CSS variable?
 
 #### --distractors--
 
-Placeholder distractor 1
+my-variable: 10px
 
 ---
 
-Placeholder distractor 2
+var-my-variable: 10px
 
 ---
 
-Placeholder distractor 3
+$my-variable: 10px
 
 #### --answer--
 
-Placeholder answer
+--my-variable: 10px
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the purpose of the :root pseudo-class?
 
 #### --distractors--
 
-Placeholder distractor 1
+To select all elements
 
 ---
 
-Placeholder distractor 2
+To style the document’s title
 
 ---
 
-Placeholder distractor 3
+To select the first child element
 
 #### --answer--
 
-Placeholder answer
+To define global CSS variables
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the clip-path property do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Clips text to fit in a box
 
 ---
 
-Placeholder distractor 2
+Hides an element from view
 
 ---
 
-Placeholder distractor 3
+Changes the shape of the element's border
 
 #### --answer--
 
-Placeholder answer
+Defines a visible region of an element
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you target only the first child of an element in CSS?
 
 #### --distractors--
 
-Placeholder distractor 1
+(1) { }
 
 ---
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
 
 #### --answer--
 
-Placeholder answer
+{}
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How do you create a responsive font size with CSS?
 
 #### --distractors--
 
-Placeholder distractor 1
+font-responsive: true;
 
 ---
 
-Placeholder distractor 2
+size: responsive;
 
 ---
 
-Placeholder distractor 3
+font-size: percentage;
 
 #### --answer--
 
-Placeholder answer
+font-size: 2vw; 
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the effect of the display: none; property?
 
 #### --distractors--
 
-Placeholder distractor 1
+The element is hidden but occupies space
 
 ---
 
-Placeholder distractor 2
+The element is visible only on hover
 
 ---
 
-Placeholder distractor 3
+The element is faded out
 
 #### --answer--
 
-Placeholder answer
+The element is removed from the document flow
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property is used to set the stacking order of elements?
 
 #### --distractors--
 
-Placeholder distractor 1
+position-index
 
 ---
 
-Placeholder distractor 2
+layer
 
 ---
 
-Placeholder distractor 3
+order
 
 #### --answer--
 
-Placeholder answer
+z-index
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the @supports rule do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Groups media queries
 
 ---
 
-Placeholder distractor 2
+Defines fallback styles
 
 ---
 
-Placeholder distractor 3
+Imports external stylesheets
 
 #### --answer--
 
-Placeholder answer
+Checks if a browser supports a CSS feature 
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How can you prevent an element from growing in size when its content overflows?
 
 #### --distractors--
 
-Placeholder distractor 1
+overflow: visible;
 
 ---
 
-Placeholder distractor 2
+display: block;
 
 ---
 
-Placeholder distractor 3
+overflow: scroll;
 
 #### --answer--
 
-Placeholder answer
+white-space: nowrap;
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is true about the box-sizing property?
 
 #### --distractors--
 
-Placeholder distractor 1
+It defines how margins are calculated
 
 ---
 
-Placeholder distractor 2
+It only applies to block elements
 
 ---
 
-Placeholder distractor 3
+It controls the visibility of the element's box
 
 #### --answer--
 
-Placeholder answer
+box-sizing: border-box; includes padding and border in the element's total width and height
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does transition: all 0.3s ease; achieve?
 
 #### --distractors--
 
-Placeholder distractor 1
+It makes the transition instantaneous
 
 ---
 
-Placeholder distractor 2
+It disables transitions for all properties
 
 ---
 
-Placeholder distractor 3
+It sets all properties to ease mode
 
 #### --answer--
 
-Placeholder answer
+It animates all properties with a duration of 0.3 seconds 
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the difference between margin and padding?
 
 #### --distractors--
 
-Placeholder distractor 1
+Margin affects the element itself, padding affects surrounding elements
 
 ---
 
-Placeholder distractor 2
+Margin is for inner space, padding is for outer space
 
 ---
 
-Placeholder distractor 3
+There is no difference; they are interchangeable
 
 #### --answer--
 
-Placeholder answer
+Margin is outside an element’s border, padding is inside it
 
