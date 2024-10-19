@@ -2004,7 +2004,13 @@
           "Test what you've learned in this quiz of how positioning works in CSS."
         ]
       },
-      "xebj": { "title": "103", "intro": [] },
+      "workshop-piano": {
+        "title": "Design a Piano",
+        "intro": [
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+        ]
+      },
       "jkdt": { "title": "104", "intro": [] },
       "lab-technical-documentation-page": {
         "title": "Build a Technical Documentation Page",
