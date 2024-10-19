@@ -51,7 +51,7 @@ Only translation
 
 ---
 
-Only rotation`
+Only rotation
 
 #### --answer--
 
@@ -236,9 +236,10 @@ To provide accessibility for hearing impaired users
 
 #### --text--
 
+
 Which attribute is used for form field accessibility?
 #### --distractors--
-`Placeholder`
+`placeholder`
 ---
 `action`
 ---
@@ -293,6 +294,7 @@ Jumps immediately to the next frame.
 #### --text--
 
 What is the purpose of focus indicators?
+
 #### --distractors--
 To show hidden elements.
 ---
@@ -370,23 +372,23 @@ Which `keyframe` selector defines the halfway point of an animation?
 
 #### --text--
 
-How do you ensure an animation starts from the middle of its defined steps?
+What does the animation shorthand property include?
 
 #### --distractors--
 
-`Start`
+Only animation name
 
 ---
 
-`Resume`
+Only animation timing
 
 ---
 
-`Pause`
+Only animation duration
 
 #### --answer--
 
-`Seek`
+All animation properties
 
 ### --question--
 
