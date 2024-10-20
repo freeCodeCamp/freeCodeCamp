@@ -143,7 +143,7 @@ Figma
 
 #### --answer--
 
-Contrast Checker
+Contrast checker
 
 ### --question--
 
