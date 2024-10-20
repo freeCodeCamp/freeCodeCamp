@@ -102,16 +102,16 @@ What is the result of this code?
 
 #### --distractors--
 
-Unsupported elements for an array to be sorted, hence error
+Unsupported elements for an array to be sorted, hence error.
 
 ---
 
-Callback not supplied, hence error
+Callback not supplied, hence error.
 
 ---
 
 ```js
-[<1 empty item>, 'a', 'b', undefined, { '20': 5 }]
+[empty, 'a', 'b', undefined, { '20': 5 }]
 ```
 
 #### --answer--
@@ -154,11 +154,11 @@ A boolean indicating whether any elements meet a condition.
 
 ---
 
-An Array with all elements reduced by specified callback function
+An Array with all elements reduced by specified callback function.
 
 ---
 
-An Array of booleans
+An Array of booleans.
 
 #### --answer--
 
@@ -172,7 +172,7 @@ How does the `sort()` method behave if no comparison function is provided?
 
 #### --distractors--
 
-It sorts the array as strings based on UTF-16 code units but takes undefined, empty slots and object references the beginning of the array
+It sorts the array as strings based on UTF-16 code units but takes undefined, empty slots and object references the beginning of the array.
 
 ---
 
