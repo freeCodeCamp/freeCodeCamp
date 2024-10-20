@@ -352,7 +352,7 @@ Array.prototype.filter();
 
 #### --answer--
 
-All options mentioned
+All options mentioned.
 
 ### --question--
 
