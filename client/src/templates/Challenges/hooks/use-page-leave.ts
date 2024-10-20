@@ -17,6 +17,8 @@ export const usePageLeave = ({
   useEffect(() => {
     window.addEventListener('beforeunload', onWindowClose);
 
+    // This is a workaround as @reach/router doesn't support blocking history change.
+    // https://github.com/reach/router/issues/464
     const unlistenHistory = globalHistory.listen(({ action, location }) => {
       const isBack = action === 'POP';
       const isRouteChanged =
@@ -31,7 +33,6 @@ export const usePageLeave = ({
       window.removeEventListener('beforeunload', onWindowClose);
       unlistenHistory();
     };
-    // This hook should only run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, depArr);
 };
