@@ -175,4 +175,3 @@ export function createSource(poly: ChallengeFile) {
     source: poly.source || poly.contents
   };
 }
-
