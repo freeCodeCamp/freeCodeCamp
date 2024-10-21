@@ -4,6 +4,7 @@ import { test, expect, Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { alertToBeVisible } from './utils/alerts';
 
 const expectToRenderResetModal = async (page: Page) => {
   await expect(
@@ -241,6 +242,7 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(savedText);
     await page.keyboard.press('Control+S');
+    await alertToBeVisible(page, translations.flash['code-saved']);
 
     await page.reload();
 
@@ -281,6 +283,7 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(savedText);
     await page.keyboard.press('Control+S');
+    await alertToBeVisible(page, translations.flash['code-saved']);
 
     // This second edit should be reset
     await focusEditor({ page, isMobile });

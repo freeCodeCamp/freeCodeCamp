@@ -23,6 +23,13 @@ import { ERRORS } from '../utils/errors';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
+    fastify.get(
+      '/exam-environment/exams',
+      {
+        schema: schemas.examEnvironmentExams
+      },
+      getExams
+    );
     fastify.post(
       '/exam-environment/exam/generated-exam',
       {
@@ -564,4 +571,38 @@ async function postScreenshotHandler(
   reply: FastifyReply
 ) {
   return reply.code(418);
+}
+
+async function getExams(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentExams>,
+  reply: FastifyReply
+) {
+  const user = req.user!;
+  const exams = await this.prisma.envExam.findMany({
+    select: {
+      id: true,
+      config: true
+    }
+  });
+
+  const availableExams = exams.map(exam => {
+    const isExamPrerequisitesMet = checkPrerequisites(user, true);
+
+    return {
+      id: exam.id,
+      config: {
+        name: exam.config.name,
+        note: exam.config.note,
+        totalTimeInMS: exam.config.totalTimeInMS
+      },
+      canTake: isExamPrerequisitesMet
+    };
+  });
+
+  return reply.send({
+    data: {
+      exams: availableExams
+    }
+  });
 }
