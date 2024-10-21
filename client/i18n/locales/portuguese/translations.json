@@ -7,6 +7,7 @@
     "first-lesson": "Ir para a primeira aula",
     "close": "Fechar",
     "edit": "Editar",
+    "copy": "Copiar",
     "view": "Visualizar",
     "view-code": "Ver código",
     "view-project": "Ver o projeto",
@@ -112,7 +113,7 @@
     "big-heading-3": "Obtenha certificações.",
     "big-heading-4": "De graça.",
     "h2-heading": "Desde 2014, mais de 40.000 pessoas que concluíram o freeCodeCamp.org obtiveram empregos em empresas de tecnologia incluindo:",
-    "h2-heading-b": "Mais de 100 mil pessoas já concluíram o freeCodeCamp.org e obtiveram empregos em empresas de tecnologia, incluindo:",
+    "h2-heading-b": "Mais de <strong>100 mil pessoas</strong> já concluíram o freeCodeCamp.org e obtiveram <strong>empregos</strong> em empresas de tecnologia, incluindo:",
     "hero-img-description": "Estudantes do freeCodeCamp em um grupo de estudos local na Coreia do Sul.",
     "hero-img-alt": "Um grupo de pessoas, incluindo um homem branco, uma mulher negra e uma mulher asiática, reunidos ao redor de um laptop.",
     "hero-img-uis": "Um grupo de capturas de tela mostrando a interface de editor do freeCodeCamp em um dispositivo móvel e em um desktop, além de uma certificação.",
@@ -134,6 +135,28 @@
         "occupation": "Engenheira de software na <strong>Spotify</strong>",
         "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
       }
+    },
+    "benefits": {
+      "heading": "Por que aprender com o freeCodeCamp:",
+      "list": [
+        {
+          "title": "Uma grande comunidade",
+          "description": "Junte-se à nossa vibrante comunidade de estudantes, ex-estudantes e educadores."
+        },
+        {
+          "title": "Educação gratuita",
+          "description": "Aprenda com nossa instituição beneficente e economize dinheiro em sua educação. Sem pagamentos. Sem custos ocultos."
+        },
+        {
+          "title": "Certificações extensivas",
+          "description": "Obtenha certificações da área, reconhecidas e verificáveis, em tecnologias de alta demanda."
+        },
+        {
+          "title": "Currículo extenso",
+          "description": "Melhore suas habilidades técnicas com nosso currículo linear e de primeira classe, baseado em projetos."
+        }
+      ],
+      "cta": "Comece a aprender agora (é grátis)"
     },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
     "core-certs-heading": "Obtenha certificações verificadas gratuitamente com o currículo principal do freeCodeCamp:",
@@ -390,6 +413,7 @@
     "assignment-not-complete": "Complete as tarefas",
     "assignments": "Tarefas",
     "question": "Questão",
+    "questions": "Questão",
     "explanation": "Explicação",
     "solution-link": "Link da solução",
     "source-code-link": "Link do código-fonte",
@@ -491,8 +515,8 @@
     "fill-in-the-blank": "Preencha o espaço em branco",
     "blank": "vazio",
     "quiz": {
-      "correct-answer": "Correto",
-      "incorrect-answer": "Incorreto",
+      "correct-answer": "Correto!",
+      "incorrect-answer": "Incorreto.",
       "unanswered-questions": "As seguintes perguntas não foram respondidas: {{ unansweredQuestions }}. Você precisa responder a todas as perguntas.",
       "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas."
     },
@@ -534,13 +558,13 @@
       "transcript-label": "Seu link de transcrição da Microsoft",
       "invalid-transcript": "O link da transcrição não está correto. Ele deve ter esta aparência: <1>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</1> - Confira os itens que aparecem em MAIÚSCULAS no seu link para ver se estão corretos."
     },
-    "blockType": {
+    "block-type": {
       "lecture": "Aula",
       "workshop": "Workshop",
       "lab": "Laboratório",
       "review": "Revisão",
       "quiz": "Questionário",
-      "exam": "Prova"
+      "exam": "Teste"
     }
   },
   "donate": {
@@ -1086,6 +1110,16 @@
     "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
     "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
     "yes-please": "Sim, eu gostaria de excluir meu token"
+  },
+  "exam-token": {
+    "exam-token": "Token de exame",
+    "note": "O token de exame é uma chave secreta que permite que você acesse os exames. Não compartilhe esse token com ninguém.",
+    "invalidation": "Se você gerar um novo token, seu token antigo será invalidado.",
+    "generate-exam-token": "Gerar token de exame",
+    "error": "Houve um erro ao gerar seu token. Tente novamente daqui a pouco.",
+    "your-exam-token": "Seu token de exame é: {{token}}",
+    "copied": "Token copiado para a área de transferência",
+    "copy-error": "Erro ao copiar o token para a área de transferência"
   },
   "shortcuts": {
     "title": "Atalhos do teclado",
