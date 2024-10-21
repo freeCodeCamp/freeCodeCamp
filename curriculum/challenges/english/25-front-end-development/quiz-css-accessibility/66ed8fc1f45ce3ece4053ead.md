@@ -259,23 +259,23 @@ Controls element transparency
 
 #### --text--
 
-Which browser is known for robust developer tools?
+Which CSS property controls the spacing between lines of text?
 
 #### --distractors--
 
-Safari
+letter-spacing
 
 ---
 
-Internet Explorer
+letter-spacing
 
 ---
 
-Opera
+word-spacing
 
 #### --answer--
 
-Firefox
+line-height
 
 ### --question--
 
