@@ -173,7 +173,6 @@ Usability for all users
 
 How will this `keyframe` animation affect the element's color?
 
-
 #### --distractors--
 
 It will fade between red and blue.
@@ -231,21 +230,31 @@ To comply with web standards
 To enhance visuals
 
 #### --answer--
+
 To provide accessibility for hearing impaired users
+
 ### --question--
 
 #### --text--
 
-
 Which attribute is used for form field accessibility?
+
 #### --distractors--
+
 `placeholder`
+
 ---
+
 `action`
+
 ---
+
 `method`
+
 #### --answer--
+
 `label`
+
 ### --question--
 
 #### --text--
@@ -271,6 +280,7 @@ Which property defines how an animation progresses over time?
 ### --question--
 
 #### --text--
+
 What effect does `step-start` have on an animation?
 
 #### --distractors--
@@ -296,16 +306,25 @@ Jumps immediately to the next frame.
 What is the purpose of focus indicators?
 
 #### --distractors--
+
 To show hidden elements.
+
 ---
+
 To enhance font styles.
+
 ---
+
 To adjust the layout.
+
 #### --answer--
+
 To highlight focused elements
+
 ### --question--
 
 #### --text--
+
 What will happen when this animation `transform: translateX(200px)` is applied?
 
 #### --distractors--
