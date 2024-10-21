@@ -6,7 +6,20 @@ const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
 const schema = Joi.object()
   .keys({
     name: Joi.string().required(),
-    blockType: Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam'),
+    blockLayout: Joi.valid(
+      'challenge-list',
+      'challenge-grid',
+      'link',
+      'project-list'
+    ),
+    blockType: Joi.valid(
+      'workshop',
+      'lab',
+      'lecture',
+      'review',
+      'quiz',
+      'exam'
+    ),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
     superBlock: Joi.string().regex(slugWithSlashRE).required(),

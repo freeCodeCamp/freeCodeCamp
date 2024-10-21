@@ -3,6 +3,7 @@ const find = require('unist-util-find');
 const { getSection } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
+const { getParagraphContent } = require('./utils/get-paragraph-content');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
@@ -80,13 +81,7 @@ function getAnswers(answersNodes) {
 function getSolution(solutionNodes) {
   let solution;
   try {
-    if (solutionNodes.length > 1) throw Error('Too many nodes');
-    if (solutionNodes[0].children.length > 1)
-      throw Error('Too many child nodes');
-    const solutionString = solutionNodes[0].children[0].value;
-    if (solutionString === '') throw Error('Non-empty string required');
-
-    solution = Number(solutionString);
+    solution = Number(getParagraphContent(solutionNodes[0]));
     if (Number.isNaN(solution)) throw Error('Not a number');
     if (solution < 1) throw Error('Not positive number');
   } catch (e) {

@@ -27,11 +27,10 @@ const META_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, '_meta');
 
 // This is to allow English to build without having to download the i18n files.
 // It fails when trying to resolve the i18n-curriculum path if they don't exist.
+const curriculumLocale = process.env.CURRICULUM_LOCALE ?? 'english';
 const I18N_CURRICULUM_DIR = path.resolve(
   __dirname,
-  process.env.CURRICULUM_LOCALE === 'english'
-    ? '.'
-    : 'i18n-curriculum/curriculum'
+  curriculumLocale === 'english' ? '.' : 'i18n-curriculum/curriculum'
 );
 
 const I18N_CHALLENGES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'challenges');
@@ -288,6 +287,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
 
     challenge.block = meta.dashedName;
     challenge.blockType = meta.blockType;
+    challenge.blockLayout = meta.blockLayout;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);

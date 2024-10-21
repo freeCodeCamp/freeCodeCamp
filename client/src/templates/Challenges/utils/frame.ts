@@ -70,7 +70,7 @@ export const scrollManager = new ScrollManager();
 // main iframe is responsible rendering the preview and is where we proxy the
 export const mainPreviewId = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
-const testId = 'fcc-test-frame';
+export const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
 
@@ -86,7 +86,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
-const createHeader = (id = mainPreviewId) => `
+export const createHeader = (id = mainPreviewId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';

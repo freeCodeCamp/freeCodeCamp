@@ -7,6 +7,7 @@
     "first-lesson": "訪問第一個課程",
     "close": "關閉",
     "edit": "編輯",
+    "copy": "Copy",
     "view": "查看",
     "view-code": "查看代碼",
     "view-project": "查看項目",
@@ -52,6 +53,8 @@
     "create-post": "在論壇發帖請求幫助",
     "cancel": "取消",
     "reset-lesson": "重置課程",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "運行",
     "run-test": "運行測試（Ctrl + Enter）",
     "check-code": "Check Your Code",
@@ -110,7 +113,7 @@
     "big-heading-3": "獲得認證",
     "big-heading-4": "All for free.",
     "h2-heading": "自 2014 年以來，已有超過 40,000 名 freeCodeCamp.org 學員入職科技公司，例如：",
-    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
     "hero-img-alt": "一羣人，包括一名白人男子、一名黑人女子和一名亞裔女子，圍在一臺筆記本電腦旁。",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -132,6 +135,28 @@
         "occupation": "<strong>Spotify</strong> 軟件工程師",
         "testimony": "\"我一直努力學習 JavaScript，嘗試了許多課程，最後是 freeCodeCamp 的課程吸引了我。在 freeCodeCamp 學習 JavaScript、數據結構和算法，<strong>我不僅掌握了技能，</strong>還變得更自信，所以才能獲得理想中的工作，成爲 Spotify 的一名軟件工程師。\""
       }
+    },
+    "benefits": {
+      "heading": "Why learn with freeCodeCamp:",
+      "list": [
+        {
+          "title": "Large Community",
+          "description": "Join our vibrant  learning community of students, alumni, and educators."
+        },
+        {
+          "title": "Free Education",
+          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+        },
+        {
+          "title": "Extensive Certifications",
+          "description": "Earn industry-recognized, verifiable certifications in high-demand technologies."
+        },
+        {
+          "title": "Comprehensive Curriculum",
+          "description": "Enhance your technical skills with our linear, world-class, project-based curriculum."
+        }
+      ],
+      "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "獲得以下免費認證：",
     "core-certs-heading": "學習 freeCodeCamp 的核心課程，免費獲得認證：",
@@ -200,6 +225,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "分享你在 freeCodeCamp 之外做的項目，寫的文章或者在 GitHub 上被接受的 pull requests。",
     "privacy": "你可以在本節的設置中管理哪些內容可以展示在 freeCodeCamp 公開作品集，點擊“保存”以存儲你的修改。",
     "data": "請點擊下面的“下載你的數據”按鈕，查看我們在你的賬戶上保存的數據",
@@ -332,7 +358,8 @@
     "total-points": "總分：",
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
-    "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁"
+    "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 條款下具有免稅資格的慈善組織（稅號：82-0779546）。",
@@ -386,6 +413,8 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "任務",
     "question": "問題",
+    "questions": "Questions",
+    "explanation": "Explanation",
     "solution-link": "解決方案鏈接",
     "source-code-link": "源代碼鏈接",
     "ms-link": "微軟的鏈接",
@@ -397,6 +426,7 @@
     "running-tests": "// 運行測試",
     "tests-completed": "// 測試完成",
     "console-output": "// 打印輸出",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "你的代碼在任何測試運行之前就出現了錯誤。請修復後重試。",
     "indentation-error": "你的代碼存在縮進錯誤。你可能需要在新行中添加 <code>pass</code> 以形成一個有效的代碼塊。",
     "sign-in-save": "登錄以保存你的學習進度",
@@ -416,6 +446,7 @@
     "reset": "重置這一節課程？",
     "reset-warn": "你確定要重置這一節課程嗎？編輯器和測試將被重置。",
     "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
     "chal-preview": "挑戰預覽",
     "donation-record-not-found": "未找到你的捐款記錄。",
@@ -483,6 +514,12 @@
     "preview-external-window": "預覽當前顯示在外部窗口中。",
     "fill-in-the-blank": "填空",
     "blank": "空白",
+    "quiz": {
+      "correct-answer": "Correct!",
+      "incorrect-answer": "Incorrect.",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "恭喜，你已經完成了考試資格的所有要求。",
       "not-qualified": "你尚未達到考試資格要求。要獲得資格，請完成以下挑戰：",
@@ -521,7 +558,7 @@
       "transcript-label": "你的微軟成績單鏈接",
       "invalid-transcript": "你的成績單鏈接不正確，它應該有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 請檢查你的鏈接中的 UPPERCASE 項目是否正確。"
     },
-    "blockType": {
+    "block-type": {
       "lecture": "Lecture",
       "workshop": "Workshop",
       "lab": "Lab",
@@ -683,7 +720,10 @@
   },
   "search": {
     "label": "搜索",
-    "placeholder": "搜索 10,700+ 篇教程",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -765,7 +805,8 @@
     "code-example": "{{codeName}} 代碼示例",
     "opens-new-window": "在新窗口打開",
     "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
-    "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案"
+    "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "在申請認證前，你必須先同意我們的《學術誠信條例》",
@@ -1069,6 +1110,16 @@
     "delete-p3": "您需要創建一個新的令牌來保存使用虛擬機的課程部分的未來進度。",
     "no-thanks": "不，謝謝，我想保留我的令牌",
     "yes-please": "是的，我想刪除我的令牌"
+  },
+  "exam-token": {
+    "exam-token": "Exam Token",
+    "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "generate-exam-token": "Generate Exam Token",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "shortcuts": {
     "title": "鍵盤快捷鍵",

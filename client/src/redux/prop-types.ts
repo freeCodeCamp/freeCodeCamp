@@ -1,6 +1,6 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockTypes } from '../../../shared/config/blocks';
+import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
 
@@ -167,6 +167,7 @@ export type ChallengeNode = {
   challenge: {
     block: string;
     blockType: BlockTypes;
+    blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
     challengeType: number;
@@ -174,6 +175,7 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
@@ -269,6 +271,7 @@ export type Dimensions = {
 export type Test = {
   pass?: boolean;
   err?: string;
+  message?: string;
 } & (ChallengeTest | CertTest);
 
 export type ChallengeTest = {
@@ -466,6 +469,11 @@ export interface GenerateExamResponseWithData {
   data: GenerateExamResponse;
 }
 
+export interface ExamTokenResponse {
+  data: {
+    examEnvironmentAuthorizationToken: string;
+  };
+}
 // User Exam (null until they answer the question)
 interface UserExamAnswer {
   id: string | null;

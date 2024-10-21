@@ -7,6 +7,7 @@
     "first-lesson": "最初のレッスンへ",
     "close": "閉じる",
     "edit": "編集",
+    "copy": "コピー",
     "view": "表示",
     "view-code": "コードを表示",
     "view-project": "プロジェクトを表示",
@@ -52,6 +53,8 @@
     "create-post": "フォーラムにヘルプ投稿を作成",
     "cancel": "キャンセル",
     "reset-lesson": "レッスンをリセット",
+    "revert": "復元",
+    "revert-to-saved-code": "保存したコードを復元する",
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
     "check-code": "コードをチェック",
@@ -110,7 +113,7 @@
     "big-heading-3": "認定証を取得する。",
     "big-heading-4": "すべてが無料です。",
     "h2-heading": "2014 年以来、4 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
-    "h2-heading-b": "10 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
+    "h2-heading-b": "<strong>10 万人</strong>を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業に<strong>就職</strong>しました。",
     "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "hero-img-alt": "さまざまな人種、性別の人々がノートパソコンの周りに集まっている様子",
     "hero-img-uis": "freeCodeCamp コードエディター (モバイル版およびデスクトップ版) と、認定証のスクリーンショット",
@@ -132,6 +135,28 @@
         "occupation": "<strong>Spotify</strong> のソフトウェアエンジニア",
         "testimony": "「私はいつも JavaScript を学ぶことに躓いていました。たくさんのコースを受講しましたが、freeCodeCamp に一番のめり込みました。JavaScript だけでなくデータ構造とアルゴリズムも学べることで、ソフトウェアエンジニアとして Spotify という夢の仕事を得るために必要な自信と<strong>スキルを freeCodeCamp は私に与えてくれました</strong>」"
       }
+    },
+    "benefits": {
+      "heading": "freeCodeCamp で学ぶメリット:",
+      "list": [
+        {
+          "title": "大規模なコミュニティ",
+          "description": "受講者、卒業生、教育者が集まる活気に満ちた学習コミュニティに参加しましょう。"
+        },
+        {
+          "title": "無償教育",
+          "description": "チャリティから学び、学習費用を節約しましょう。有料限定の教材や隠れたコストは一切ありません。"
+        },
+        {
+          "title": "幅広い認定講座",
+          "description": "人気の技術を学んで、業界認知度の高い検証機能付き認定証を獲得しましょう。"
+        },
+        {
+          "title": "包括的なカリキュラム",
+          "description": "世界的に評価されている一貫したプロジェクトベースのカリキュラムで、技術スキルを向上させましょう。"
+        }
+      ],
+      "cta": "今すぐ学習を始める (無料)"
     },
     "certification-heading": "以下の検証済認定証を無料で取得できます。",
     "core-certs-heading": "freeCodeCamp コアカリキュラムの検証済認定証を無料で取得:",
@@ -200,6 +225,7 @@
     ]
   },
   "settings": {
+    "profile-note": "注: プロフィール設定はプロフィールページに移動しました。",
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
     "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
@@ -332,7 +358,8 @@
     "total-points": "合計ポイント:",
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
-    "page-number": "{{pageNumber}} / {{totalPages}}"
+    "page-number": "{{pageNumber}} / {{totalPages}}",
+    "edit-my-profile": "プロフィールを編集"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp は皆様からの寄付により支えられている非課税の 501(c)(3) 慈善団体です。(United States Federal Tax Identification Number: 82-0779546)",
@@ -386,6 +413,8 @@
     "assignment-not-complete": "課題を完了してください",
     "assignments": "課題",
     "question": "質問",
+    "questions": "質問",
+    "explanation": "解説",
     "solution-link": "回答のリンク",
     "source-code-link": "ソースコードのリンク",
     "ms-link": "Microsoft のリンク",
@@ -397,6 +426,7 @@
     "running-tests": "// テストを実行中です",
     "tests-completed": "// テストが完了しました",
     "console-output": "// コンソール出力",
+    "example-app": "<0>このサンプルプロジェクト</0>と似た機能を持つアプリを作成してください。サンプルプロジェクトをそのままコピーするのではなく、あなた独自のアレンジを加えましょう。",
     "syntax-error": "コードにエラーがあるためテストを実行できない状態です。コードを修正して再度お試しください。",
     "indentation-error": "コードにインデントエラーがあります。場合によっては、有効なコードブロックを形成するため新しい行に <code>pass</code> キーワードを追加する必要があるかもしれません。",
     "sign-in-save": "サインインして進行状況を保存",
@@ -416,6 +446,7 @@
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
     "reset-warn-2": "この操作は取り消すことが出来ません.",
+    "revert-warn": "このレッスンを復元してよろしいですか？直近の変更を取り消し、最後に保存したバージョンのコードに戻します。",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
     "donation-record-not-found": "寄付の履歴が見つかりませんでした。",
@@ -483,6 +514,12 @@
     "preview-external-window": "プレビューは別ウィンドウに表示されています。",
     "fill-in-the-blank": "空欄を埋めてください。",
     "blank": "空欄",
+    "quiz": {
+      "correct-answer": "正解！",
+      "incorrect-answer": "不正解です。",
+      "unanswered-questions": "以下の質問が未回答です。すべての質問に回答してください: {{ unansweredQuestions }}",
+      "have-n-correct-questions": "{{ total }} 問中 {{ correctAnswerCount }} 問正解しました。"
+    },
     "exam": {
       "qualified": "おめでとうございます。受験資格に必要なすべての要件を完了しました。",
       "not-qualified": "受験資格に必要な要件を満たしていません。資格を得るには、以下のチャレンジを完了してください:",
@@ -496,7 +533,7 @@
       "passed-message": "おめでとうございます！試験に合格しました。認定証を獲得できます。",
       "not-passed-message": "残念ながら、試験に合格するために必要な正解数に届きませんでした。",
       "results-header": "{{ title }} の結果",
-      "question-results": "{{ n }} 問中 {{ q }} 正解しました",
+      "question-results": "{{ q }} 問中 {{ n }} 問正解しました",
       "percent-results": "{{ p }}% 正解",
       "finish-header": "試験終了",
       "finish": "試験を終了してよろしいですか？終了後、回答を変更することはできません。これ最終的な結果となります。",
@@ -521,11 +558,11 @@
       "transcript-label": "Microsoft 成績証明書のリンク",
       "invalid-transcript": "成績証明書のリンクが正しくありません。以下の形式になっているか確認してください: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - 特に大文字で示した部分が正しいか確認してください。"
     },
-    "blockType": {
+    "block-type": {
       "lecture": "レクチャー",
       "workshop": "ワークショップ",
       "lab": "ラボ",
-      "review": "レビュー",
+      "review": "復習",
       "quiz": "小テスト",
       "exam": "試験"
     }
@@ -683,9 +720,12 @@
   },
   "search": {
     "label": "検索",
-    "placeholder": "投稿を検索",
+    "placeholder": {
+      "default": "記事を検索",
+      "numbered": "{{ roundedTotalRecords }} 件以上の記事から検索"
+    },
     "see-results": "{{searchQuery}} のすべての結果を見る",
-    "no-tutorials": "投稿が見つかりませんでした",
+    "no-tutorials": "記事が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
     "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした",
     "result-list": "検索結果"
@@ -765,7 +805,8 @@
     "code-example": "{{codeName}} のコード例",
     "opens-new-window": "新しいウィンドウで開く",
     "rsa-checkbox": "Read-Search-Ask (読む - 検索する - 質問する) メソッドを試しました",
-    "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました"
+    "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました",
+    "edit-my-profile": "プロフィールを編集"
   },
   "flash": {
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -1069,6 +1110,16 @@
     "delete-p3": "仮想マシンを使用するカリキュラムセクションでこの先の進行状況を保存するには、新しいトークンを作成する必要があります。",
     "no-thanks": "いいえ、トークンを維持したいです",
     "yes-please": "はい、トークンを削除します"
+  },
+  "exam-token": {
+    "exam-token": "試験用トークン",
+    "note": "試験用トークンは、試験にアクセスするために必要な秘密鍵です。このトークンを他の人に共有しないでください。",
+    "invalidation": "新しいトークンを生成すると、古いトークンは無効になります。",
+    "generate-exam-token": "試験用トークンを生成",
+    "error": "トークンの生成中にエラーが発生しました。時間を置いて再度お試しください。",
+    "your-exam-token": "あなたの試験用トークンは次のとおりです: {{token}}",
+    "copied": "トークンをクリップボードにコピーしました",
+    "copy-error": "トークンをクリップボードにコピー中にエラーが発生しました"
   },
   "shortcuts": {
     "title": "キーボードショートカット",

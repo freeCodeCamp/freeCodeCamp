@@ -7,6 +7,7 @@
     "first-lesson": "Ir a la primera lección",
     "close": "Cerrar",
     "edit": "Editar",
+    "copy": "Copy",
     "view": "Ver",
     "view-code": "Mostrar Código",
     "view-project": "Mostrar Proyecto",
@@ -52,6 +53,8 @@
     "create-post": "Crear un post de ayuda en el foro",
     "cancel": "Cancelar",
     "reset-lesson": "Restablecer esta lección",
+    "revert": "Revert",
+    "revert-to-saved-code": "Revert to Saved Code",
     "run": "Ejecutar",
     "run-test": "Ejecutar las Pruebas (Ctrl + Entrar)",
     "check-code": "Check Your Code",
@@ -110,7 +113,7 @@
     "big-heading-3": "Obtén certificaciones.",
     "big-heading-4": "Todo de forma gratuita.",
     "h2-heading": "Desde 2014, más de 40.000 graduados de freeCodeCamp.org han conseguido trabajos en empresas de tecnología, entre las que se incluyen:",
-    "h2-heading-b": "Más de 100.000 graduados de freeCodeCamp.org han conseguido trabajo en empresas tecnológicas, entre ellas:",
+    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
     "hero-img-description": "Estudiantes de freeCodeCamp en un grupo de estudio local en Corea del Sur.",
     "hero-img-alt": "Un grupo de personas, incluyendo un hombre blanco, una mujer negra y una mujer asiática, reunidos alrededor de un portátil.",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -132,6 +135,28 @@
         "occupation": "Ingeniera de Software en <strong>Spotify</strong>",
         "testimony": "\"Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong> freeCodeCamp me dio las habilidades </strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.\""
       }
+    },
+    "benefits": {
+      "heading": "Why learn with freeCodeCamp:",
+      "list": [
+        {
+          "title": "Large Community",
+          "description": "Join our vibrant  learning community of students, alumni, and educators."
+        },
+        {
+          "title": "Free Education",
+          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+        },
+        {
+          "title": "Extensive Certifications",
+          "description": "Earn industry-recognized, verifiable certifications in high-demand technologies."
+        },
+        {
+          "title": "Comprehensive Curriculum",
+          "description": "Enhance your technical skills with our linear, world-class, project-based curriculum."
+        }
+      ],
+      "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
     "core-certs-heading": "Obtén certificaciones verificadas gratuítas con el plan de estudios básico de freeCodeCamp:",
@@ -200,6 +225,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Comparte tus proyectos, artículos o pull request aceptados que no sean de FreeCodeCamp.",
     "privacy": "Los ajustes de esta sección te permiten controlar lo que se muestra en tu cartera pública de freeCodeCamp. Pulsa guardar para guardar tus cambios.",
     "data": "Para ver qué datos tenemos en tu cuenta, haz clic en el botón \"Descarga tus datos\" a continuación",
@@ -332,7 +358,8 @@
     "total-points": "Puntos en total:",
     "points": "{{count}} punto en {{date}}",
     "points_plural": "{{count}} puntos en {{date}}",
-    "page-number": "{{pageNumber}} de {{totalPages}}"
+    "page-number": "{{pageNumber}} de {{totalPages}}",
+    "edit-my-profile": "Edit My Profile"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp es una organización 501(c)(3) exenta de impuestos y sin fines de lucro respaldada por donaciones (Número de Identificación Tributaria Federal de los Estados Unidos: 82-0779546).",
@@ -386,6 +413,8 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "Asignaciones",
     "question": "Pregunta",
+    "questions": "Questions",
+    "explanation": "Explanation",
     "solution-link": "Enlace a la solución",
     "source-code-link": "Enlace al código fuente",
     "ms-link": "Link de Microsoft",
@@ -397,6 +426,7 @@
     "running-tests": "// ejecutando pruebas",
     "tests-completed": "// pruebas completadas",
     "console-output": "// salida de consola",
+    "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Tu código provocó un error antes de que se pudieran ejecutar las pruebas. Por favor, corrígelo y vuelve a intentarlo.",
     "indentation-error": "Tu código tiene un error de identación. Puede que necesites añadir <code>pass</code> en una nueva línea para formar un bloque de código válido.",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
@@ -416,6 +446,7 @@
     "reset": "¿Restablecer esta lección?",
     "reset-warn": "¿Estás seguro de que deseas restablecer esta lección? Los editores y las pruebas se restablecerán.",
     "reset-warn-2": "This cannot be undone.",
+    "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntete libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
     "donation-record-not-found": "No se ha encontrado tu historial de donaciones.",
@@ -483,6 +514,12 @@
     "preview-external-window": "Vista previa mostrada actualmente en ventana externa.",
     "fill-in-the-blank": "Rellena el espacio en blanco",
     "blank": "vacío",
+    "quiz": {
+      "correct-answer": "Correct!",
+      "incorrect-answer": "Incorrect.",
+      "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+    },
     "exam": {
       "qualified": "Enhorabuena, has completado todos los requisitos para calificar al examen.",
       "not-qualified": "No has cumplido los requisitos para ser elegible para el examen. Para calificar, por favor completa los siguientes desafíos:",
@@ -521,7 +558,7 @@
       "transcript-label": "Tu vinculo de transcripción de Microsoft",
       "invalid-transcript": "Tu link de transcripción no es correcta, debería tener está forma: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - revisa si los objetos MAYÚSCULA en tu vinculo están correctos."
     },
-    "blockType": {
+    "block-type": {
       "lecture": "Lecture",
       "workshop": "Workshop",
       "lab": "Lab",
@@ -683,7 +720,10 @@
   },
   "search": {
     "label": "Buscar",
-    "placeholder": "Encuentra + 10,700 Tutoriales",
+    "placeholder": {
+      "default": "Search our tutorials",
+      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+    },
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "no-tutorials": "No se encontraron tutoriales",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -765,7 +805,8 @@
     "code-example": "ejemplo de código de {{codeName}}",
     "opens-new-window": "Abrir en una nueva ventana",
     "rsa-checkbox": "He probado el método Leer-Buscar-Preguntar",
-    "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro"
+    "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro",
+    "edit-my-profile": "Edit my profile"
   },
   "flash": {
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica",
@@ -1069,6 +1110,16 @@
     "delete-p3": "Necesitará crear un nuevo token para guardar el progreso futuro en las secciones de currículum que utilizan una máquina virtual.",
     "no-thanks": "No gracias, me gustaría quedarme con mi token",
     "yes-please": "Si por favor, deseo borrar mi token"
+  },
+  "exam-token": {
+    "exam-token": "Exam Token",
+    "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "generate-exam-token": "Generate Exam Token",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "shortcuts": {
     "title": "Atajos de teclado",

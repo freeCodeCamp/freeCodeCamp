@@ -2,15 +2,12 @@ import { test, expect } from '@playwright/test';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { signout } from './utils/logout';
 
-test.beforeEach(async ({ page }) => {
-  await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
-  );
-});
-
 test('Check the initial states of submit button and "check your code" button', async ({
   page
 }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   const checkButton = page.getByTestId('lowerJaw-check-button');
 
   const submitButton = page.getByTestId('lowerJaw-submit-button');
@@ -21,6 +18,9 @@ test('Check the initial states of submit button and "check your code" button', a
 });
 
 test('Click on the "check your code" button', async ({ page }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
 
   await checkButton.click();
@@ -32,6 +32,9 @@ test('Click on the "check your code" button', async ({ page }) => {
 });
 
 test('Resets the lower jaw when prompted', async ({ page }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
 
   await checkButton.click();
@@ -58,12 +61,15 @@ test('Checks hotkeys when instruction is focused', async ({
   page,
   browserName
 }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
   const description = page.locator('#description');
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
 
   await description.click();
@@ -82,6 +88,9 @@ test('Focuses on the submit button after tests passed', async ({
   browserName,
   isMobile
 }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
   const submitButton = page.getByRole('button', {
@@ -91,7 +100,7 @@ test('Focuses on the submit button after tests passed', async ({
   await clearEditor({ page, browserName });
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
   await checkButton.click();
 
@@ -103,6 +112,9 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
   browserName,
   isMobile
 }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   await signout(page);
   await page.reload();
   const editor = getEditors(page);
@@ -114,7 +126,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
   await clearEditor({ page, browserName });
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
 
   await checkButton.click();
@@ -129,6 +141,9 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
 });
 
 test('Should render UI correctly', async ({ page }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   const codeCheckButton = page.getByRole('button', {
     name: 'Check Your Code'
   });
@@ -142,6 +157,9 @@ test('Should display the text of the check code button accordingly based on devi
   isMobile,
   browserName
 }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   if (isMobile) {
     await expect(
       page.getByRole('button', { name: 'Check Your Code', exact: true })
@@ -162,6 +180,9 @@ test('should display the text of submit and go to next challenge button accordin
   isMobile,
   browserName
 }) => {
+  await page.goto(
+    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+  );
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
 
@@ -169,7 +190,7 @@ test('should display the text of submit and go to next challenge button accordin
   await clearEditor({ page, browserName });
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
 
   await checkButton.click();
@@ -194,4 +215,31 @@ test('should display the text of submit and go to next challenge button accordin
       })
     ).toBeVisible();
   }
+});
+
+test('Hint text should not contain placeholders `fcc-expected`', async ({
+  page,
+  isMobile,
+  browserName
+}) => {
+  await page.goto(
+    'learn/2022/responsive-web-design/learn-css-transforms-by-building-a-penguin/step-4'
+  );
+  const editor = getEditors(page);
+  const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+  await focusEditor({ page, isMobile });
+  await clearEditor({ page, browserName });
+
+  await editor.fill(
+    'body{background:linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));margin:0;padding:0;width:5%;height:100vh}'
+  );
+  await checkButton.click();
+
+  const failingHint = page.getByTestId('lowerJaw-failing-hint');
+  const hintDescriptionElement = failingHint.locator('.hint-description');
+  const hintDescription = hintDescriptionElement.locator('p');
+  await expect(hintDescription).toContainText(
+    'You should give body a width of 100%, but found 5%',
+    { useInnerText: true }
+  );
 });

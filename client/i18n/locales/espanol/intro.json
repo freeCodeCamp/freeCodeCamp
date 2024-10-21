@@ -1705,9 +1705,9 @@
         "title": "0",
         "intro": []
       },
-      "xpmy": {
-        "title": "1",
-        "intro": []
+      "lecture-what-is-html": {
+        "title": "What is HTML?",
+        "intro": ["Learn what HTML is in these lecture videos."]
       },
       "workshop-cat-photo-app": {
         "title": "Crea una aplicación de fotos de gato",
@@ -1722,9 +1722,9 @@
           "Para este laboratorio, crearás una página web con tu receta favorita."
         ]
       },
-      "gwyd": {
-        "title": "4",
-        "intro": []
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": ["Learn about HTML fundamentals in these lecture videos."]
       },
       "lab-travel-agency-page": {
         "title": "Crea una página de agencia de viajes",
@@ -1746,9 +1746,9 @@
         "title": "8",
         "intro": []
       },
-      "snuv": {
-        "title": "9",
-        "intro": []
+      "review-basic-html": {
+        "title": "Basic HTML Review",
+        "intro": ["Review the basic HTML topics."]
       },
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
@@ -1988,9 +1988,11 @@
         "title": "59",
         "intro": []
       },
-      "sdym": {
-        "title": "60",
-        "intro": []
+      "lab-job-application-form": {
+        "title": "Build a Job Application Form",
+        "intro": [
+          "In this lab you will build a job application form and style it using pseudo-classes."
+        ]
       },
       "ivpx": {
         "title": "61",
@@ -2032,9 +2034,11 @@
         "title": "69",
         "intro": []
       },
-      "jows": {
-        "title": "70",
-        "intro": []
+      "lab-contact-form": {
+        "title": "Design a Contact Form",
+        "intro": [
+          "In this lab, you will design a contact form in HTML and style it using CSS."
+        ]
       },
       "ipmw": {
         "title": "71",
@@ -2046,9 +2050,12 @@
           "Test what you've learned in this quiz of how to style forms using CSS."
         ]
       },
-      "qzcx": {
-        "title": "73",
-        "intro": []
+      "workshop-rothko-painting": {
+        "title": "Design a Rothko Painting",
+        "intro": [
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+        ]
       },
       "wozq": {
         "title": "74",
@@ -2070,9 +2077,12 @@
           "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
         ]
       },
-      "tcwi": {
-        "title": "78",
-        "intro": []
+      "workshop-flexbox-photo-gallery": {
+        "title": "Build a Flexbox Photo Gallery",
+        "intro": [
+          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
       },
       "uptf": {
         "title": "79",
@@ -2094,9 +2104,12 @@
           "Test what you've learned in this quiz of using flexbox in CSS."
         ]
       },
-      "vqut": {
-        "title": "83",
-        "intro": []
+      "workshop-nutritional-label": {
+        "title": "Build a Nutritional Label",
+        "intro": [
+          "Typography is the art of styling your text to be easily readable and suit its purpose.",
+          "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
+        ]
       },
       "ujcf": {
         "title": "84",
@@ -2140,9 +2153,12 @@
           "Test what you've learned in this quiz of making your webpage accessible with CSS."
         ]
       },
-      "swpl": {
-        "title": "93",
-        "intro": []
+      "workshop-balance-sheet": {
+        "title": "Build a Balance Sheet",
+        "intro": [
+          "You can use CSS pseudo selectors to change specific HTML elements.",
+          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
       },
       "hcje": {
         "title": "94",
@@ -2184,9 +2200,12 @@
           "Test what you've learned in this quiz of how positioning works in CSS."
         ]
       },
-      "xebj": {
-        "title": "103",
-        "intro": []
+      "workshop-piano": {
+        "title": "Design a Piano",
+        "intro": [
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+        ]
       },
       "jkdt": {
         "title": "104",
@@ -2208,9 +2227,12 @@
           "Test what you've learned in this quiz of making your webpage responsive."
         ]
       },
-      "mtbl": {
-        "title": "108",
-        "intro": []
+      "workshop-city-skyline": {
+        "title": "Build a City Skyline",
+        "intro": [
+          "CSS variables help you organize your styles and reuse them.",
+          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+        ]
       },
       "vlov": {
         "title": "109",
@@ -2464,6 +2486,12 @@
           "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
+      "lab-lunch-picker-program": {
+        "title": "Build a Lunch Picker Program",
+        "intro": [
+          "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
+        ]
+      },
       "mokm": {
         "title": "161",
         "intro": []
@@ -2480,9 +2508,11 @@
         "title": "164",
         "intro": []
       },
-      "ekdb": {
-        "title": "165",
-        "intro": []
+      "workshop-recipe-tracker": {
+        "title": "Build a Recipe Tracker",
+        "intro": [
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+        ]
       },
       "lab-quiz-game": {
         "title": "Build a Quiz Game",
@@ -2726,9 +2756,11 @@
         "title": "218",
         "intro": []
       },
-      "yvqn": {
-        "title": "219",
-        "intro": []
+      "lab-date-conversion": {
+        "title": "Build a Date Conversion Program",
+        "intro": [
+          "In this lab, you will build a program to convert a date from one format to another."
+        ]
       },
       "xtfk": {
         "title": "220",
@@ -2932,9 +2964,9 @@
           "For this lab, you will build a linked list class using JavaScript."
         ]
       },
-      "wraf": {
-        "title": "265",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Build a Hash Table Class",
+        "intro": ["For this lab, you will build a hash table using JavaScript."]
       },
       "muyw": {
         "title": "266",
@@ -2950,9 +2982,11 @@
         "title": "268",
         "intro": []
       },
-      "plfo": {
-        "title": "269",
-        "intro": []
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3420,9 +3454,9 @@
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
-      "zzhp": {
-        "title": "372",
-        "intro": []
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": ["In this lab you will build a timestamp microservice"]
       },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
@@ -3438,9 +3472,9 @@
         "title": "Build an Exercise Tracker",
         "intro": ["In this lab, you will build an exercise tracker"]
       },
-      "tbei": {
-        "title": "376",
-        "intro": []
+      "lab-file-metadata-microservice": {
+        "title": "Build a File Metadata Microservice",
+        "intro": ["For this lab you will build a file metadata microservice"]
       },
       "kegi": {
         "title": "377",
@@ -3468,9 +3502,11 @@
         "title": "382",
         "intro": []
       },
-      "kwhp": {
-        "title": "383",
-        "intro": []
+      "quiz-tooling-and-deployment": {
+        "title": "Tooling and Deployment Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of tooling and deployment"
+        ]
       },
       "nkjt": {
         "title": "384",

@@ -1,0 +1,11 @@
+{
+  "name": "Build a Job Application Form",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-job-application-form",
+  "order": 60,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "66faac4139dbbd5dd632c860", "title": "Build a Job Application Form" }],
+  "helpCategory": "HTML-CSS",
+  "blockType": "lab"
+}

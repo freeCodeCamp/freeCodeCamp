@@ -25,7 +25,6 @@ jobs:
           - 'ukrainian'
           - 'japanese'
           - 'german'
-          - 'arabic'
           - 'swahili'
 
     steps:

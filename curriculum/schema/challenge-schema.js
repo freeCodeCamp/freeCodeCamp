@@ -129,9 +129,18 @@ const schema = Joi.object()
       ).required(),
       otherwise: Joi.valid(null)
     }),
+    blockLayout: Joi.when('superBlock', {
+      is: [SuperBlocks.FrontEndDevelopment],
+      then: Joi.valid(
+        'challenge-list',
+        'challenge-grid',
+        'link',
+        'project-list'
+      )
+    }),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(23).required(),
+    challengeType: Joi.number().min(0).max(24).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -140,6 +149,7 @@ const schema = Joi.object()
       is: [
         challengeTypes.step,
         challengeTypes.video,
+        challengeTypes.multipleChoice,
         challengeTypes.fillInTheBlank
       ],
       then: Joi.string().allow(''),
@@ -147,6 +157,10 @@ const schema = Joi.object()
     }),
     disableLoopProtectTests: Joi.boolean().required(),
     disableLoopProtectPreview: Joi.boolean().required(),
+    explanation: Joi.when('challengeType', {
+      is: [challengeTypes.multipleChoice, challengeTypes.fillInTheBlank],
+      then: Joi.string()
+    }),
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),

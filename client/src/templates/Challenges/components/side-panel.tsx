@@ -1,8 +1,7 @@
 import React, { useEffect, ReactElement, ReactNode } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Trans } from 'react-i18next';
 
 import { Test } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
@@ -52,7 +51,6 @@ export function SidePanel({
   tests,
   openModal
 }: SidePanelProps): JSX.Element {
-  const { t } = useTranslation();
   useEffect(() => {
     const mathJaxChallenge =
       superBlock === SuperBlocks.RosettaCode ||
@@ -69,14 +67,24 @@ export function SidePanel({
     >
       {challengeTitle}
       {hasDemo && (
-        <>
-          <Button size='small' onClick={() => openModal('projectPreview')}>
-            {t('buttons.show-demo')}
-          </Button>
-          <Spacer size='xSmall' />
-        </>
+        <p>
+          <Trans i18nKey='learn.example-app'>
+            <span
+              className='example-app-link'
+              onClick={() => openModal('projectPreview')}
+              role='button'
+              tabIndex={0}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  openModal('projectPreview');
+                }
+              }}
+            ></span>
+          </Trans>
+        </p>
       )}
       {challengeDescription}
+      <Spacer size='medium' />
       {toolPanel}
       <TestSuite tests={tests} />
     </div>
