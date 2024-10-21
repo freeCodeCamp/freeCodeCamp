@@ -1695,9 +1695,9 @@
         "title": "0",
         "intro": []
       },
-      "xpmy": {
-        "title": "1",
-        "intro": []
+      "lecture-what-is-html": {
+        "title": "Що таке HTML?",
+        "intro": ["Дізнайтесь про HTML у цих відеолекціях."]
       },
       "workshop-cat-photo-app": {
         "title": "Створіть застосунок із фото котів",
@@ -1712,9 +1712,9 @@
           "У цій лабораторній роботі ви створите вебсторінку з улюбленим рецептом."
         ]
       },
-      "gwyd": {
-        "title": "4",
-        "intro": []
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": ["Learn about HTML fundamentals in these lecture videos."]
       },
       "lab-travel-agency-page": {
         "title": "Створіть сторінку туристичної агенції",
@@ -1734,9 +1734,9 @@
         "title": "8",
         "intro": []
       },
-      "snuv": {
-        "title": "9",
-        "intro": []
+      "review-basic-html": {
+        "title": "Повторення основ HTML",
+        "intro": ["Пригадайте основні теми з HTML."]
       },
       "quiz-basic-html": {
         "title": "Тест «Основи HTML»",
@@ -2020,9 +2020,12 @@
           "Перевірте, що ви дізнались про стилізацію форм за допомогою CSS."
         ]
       },
-      "qzcx": {
-        "title": "73",
-        "intro": []
+      "workshop-rothko-painting": {
+        "title": "Design a Rothko Painting",
+        "intro": [
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+        ]
       },
       "wozq": {
         "title": "74",
@@ -2044,9 +2047,12 @@
           "Перевірте, що ви дізнались про блокову модель, трансформації, фільтри та переповнення в CSS."
         ]
       },
-      "tcwi": {
-        "title": "78",
-        "intro": []
+      "workshop-flexbox-photo-gallery": {
+        "title": "Build a Flexbox Photo Gallery",
+        "intro": [
+          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
       },
       "uptf": {
         "title": "79",
@@ -2066,9 +2072,12 @@
         "title": "Тест «CSS Flexbox»",
         "intro": ["Перевірте, що ви дізнались про гнучкий блок у CSS."]
       },
-      "vqut": {
-        "title": "83",
-        "intro": []
+      "workshop-nutritional-label": {
+        "title": "Build a Nutritional Label",
+        "intro": [
+          "Typography is the art of styling your text to be easily readable and suit its purpose.",
+          "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
+        ]
       },
       "ujcf": {
         "title": "84",
@@ -2112,9 +2121,12 @@
           "Перевірте, що ви дізнались про доступність вебсторінок за допомогою CSS."
         ]
       },
-      "swpl": {
-        "title": "93",
-        "intro": []
+      "workshop-balance-sheet": {
+        "title": "Build a Balance Sheet",
+        "intro": [
+          "You can use CSS pseudo selectors to change specific HTML elements.",
+          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
       },
       "hcje": {
         "title": "94",
@@ -2156,9 +2168,12 @@
         "title": "Тест «Позиціювання в CSS»",
         "intro": ["Перевірте, що ви дізнались про позиціювання в CSS."]
       },
-      "xebj": {
-        "title": "103",
-        "intro": []
+      "workshop-piano": {
+        "title": "Design a Piano",
+        "intro": [
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+        ]
       },
       "jkdt": {
         "title": "104",
@@ -2178,9 +2193,12 @@
         "title": "Тест «Адаптивний вебдизайн»",
         "intro": ["Перевірте, що ви дізнались про адаптацію вебсторінок."]
       },
-      "mtbl": {
-        "title": "108",
-        "intro": []
+      "workshop-city-skyline": {
+        "title": "Build a City Skyline",
+        "intro": [
+          "CSS variables help you organize your styles and reuse them.",
+          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+        ]
       },
       "vlov": {
         "title": "109",
@@ -2448,9 +2466,11 @@
         "title": "164",
         "intro": []
       },
-      "ekdb": {
-        "title": "165",
-        "intro": []
+      "workshop-recipe-tracker": {
+        "title": "Build a Recipe Tracker",
+        "intro": [
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+        ]
       },
       "lab-quiz-game": {
         "title": "Створіть ігрову вікторину",
