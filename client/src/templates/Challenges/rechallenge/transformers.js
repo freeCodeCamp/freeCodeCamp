@@ -227,6 +227,10 @@ export const embedFilesInHtml = async function (challengeFiles) {
     const script =
       documentElement.querySelector('script[src="script.js"]') ??
       documentElement.querySelector('script[src="./script.js"]');
+
+    const tsScript =
+      documentElement.querySelector('script[src="index.ts"]') ??
+      documentElement.querySelector('script[src="./index.ts"]');
     if (link) {
       const style = contentDocument.createElement('style');
       style.classList.add('fcc-injected-styles');
@@ -241,6 +245,11 @@ export const embedFilesInHtml = async function (challengeFiles) {
       script.innerHTML = scriptJs?.contents;
       script.removeAttribute('src');
       script.setAttribute('data-src', 'script.js');
+    }
+    if (tsScript) {
+      tsScript.innerHTML = indexTs?.contents;
+      tsScript.removeAttribute('src');
+      tsScript.setAttribute('data-src', 'index.ts');
     }
     return documentElement.innerHTML;
   };
