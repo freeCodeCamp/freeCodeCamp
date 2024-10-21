@@ -19,7 +19,7 @@
 - `wrongAnswers`: Array of answers. There should be at least 4, but 6-7 would be ideal.
 - `correctAnswers`: Array of answers. There should be at least 1, but 2 or more would be ideal when possible.
 
-4. `wrongAnswers` and `correctAnwers` arrays:
+4. `wrongAnswers` and `correctAnswers` arrays:
 
 - `answer`: This is one of the multiple choice options
 
