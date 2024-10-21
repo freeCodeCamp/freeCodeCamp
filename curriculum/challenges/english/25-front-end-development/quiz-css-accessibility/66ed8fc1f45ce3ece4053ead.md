@@ -79,9 +79,8 @@ Notepad
 
 Chrome DevTools
 
-### --question-- 
+### --question--
 
-           
 #### --text--
 
 Which property is essential for setting custom fonts in CSS?
@@ -264,19 +263,19 @@ Which CSS property controls the spacing between lines of text?
 
 #### --distractors--
 
-letter-spacing
+`letter-spacing`
 
 ---
 
-letter-spacing
+`line-spacing`
 
 ---
 
-word-spacing
+`word-spacing`
 
 #### --answer--
 
-line-height
+`line-height`
 
 ### --question--
 
