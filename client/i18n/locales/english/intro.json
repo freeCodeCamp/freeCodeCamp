@@ -2451,7 +2451,12 @@
         "title": "Build a Cash Register",
         "intro": ["For this lab, you will build a cash register."]
       },
-      "udia": { "title": "248", "intro": [] },
+      "lab-sorting-visualizer": {
+        "title": "Build a Sorting Visualizer",
+        "intro": [
+          "For this lab, you will use JavaScript to visualize the steps that the Bubble Sort algorithm takes to reorder an array of integers."
+        ]
+      },
       "quiz-javascript-problem-solving-and-algorithmic-thinking": {
         "title": "JavaScript Problem Solving and Algorithmic Thinking Quiz",
         "intro": [
