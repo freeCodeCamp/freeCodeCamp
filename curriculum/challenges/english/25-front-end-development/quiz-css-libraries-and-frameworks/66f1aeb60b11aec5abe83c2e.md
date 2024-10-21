@@ -289,15 +289,15 @@ In Tailwind CSS, which class is used to add margin to an element?
 
 ---
 
-padding-4
+`padding-4`
 
 ---
 
-margin-4
+`margin-4`
 
 #### --answer--
 
-mt-4
+`mt-4`
 
 ### --question--
 
@@ -373,19 +373,19 @@ What is the file extension for SCSS?
 
 #### --distractors--
 
-.sass
+`.sass`
 
 ---
 
-.scsss
+`.scsss`
 
 ---
 
-.css
+`.css`
 
 #### --answer--
 
-.scss
+`.scss`
 
 ### --question--
 
