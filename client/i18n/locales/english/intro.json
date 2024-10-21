@@ -2222,7 +2222,12 @@
         "intro": ["Test what you've learned in this quiz on JavaScript Arrays."]
       },
       "dvnt": { "title": "164", "intro": [] },
-      "ekdb": { "title": "165", "intro": [] },
+      "workshop-recipe-tracker": {
+        "title": "Build a Recipe Tracker",
+        "intro": [
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+        ]
+      },
       "lab-quiz-game": {
         "title": "Build a Quiz Game",
         "intro": ["For this lab, you will build a quiz game."]
