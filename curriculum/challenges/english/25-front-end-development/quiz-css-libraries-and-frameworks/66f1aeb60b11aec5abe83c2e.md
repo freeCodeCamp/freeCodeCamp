@@ -21,7 +21,7 @@ What is a CSS framework?
 
 #### --distractors--
 
-set of CSS rules
+A set of CSS rules
 
 ---
 
@@ -29,11 +29,11 @@ A JavaScript library
 
 ---
 
-coding language
+A coding language
 
 #### --answer--
 
-library for CSS styles
+A library for CSS styles
 
 ### --question--
 
@@ -127,7 +127,7 @@ Tailwind
 
 #### --text--
 
-What is the primary purpose of the .container class in Bootstrap?
+What is the primary purpose of the `.container` class in Bootstrap?
 
 #### --distractors--
 
@@ -285,7 +285,7 @@ In Tailwind CSS, which class is used to add margin to an element?
 
 #### --distractors--
 
-m-4
+`m-4`
 
 ---
 
@@ -413,23 +413,23 @@ Responsive layout
 
 #### --text--
 
-Which Tailwind class would you use to set text color to red?
+Which Tailwind class would you use to set the text color to red?
 
 #### --distractors--
 
-text-red
+`text-red`
 
 ---
 
-red-text
+`red-text`
 
 ---
 
-color-red
+`color-red`
 
 #### --answer--
 
-text-red-500
+`text-red-500`
 
 ### --question--
 
