@@ -153,19 +153,19 @@ What is the purpose of the `prompt()` function?
 
 #### --distractors--
 
-Displays a message in the console
+It displays a message in the console.
 
 ---
 
-Displays an alert box with a message
+It displays an alert box with a message.
 
 ---
 
-Displays a confirmation box with a message
+It displays a confirmation box with a message.
 
 #### --answer--
 
-Displays a dialog box that prompts the user for input
+It displays a dialog box that prompts the user for input.
 
 ### --question--
 
@@ -175,19 +175,19 @@ What is the difference between a string object and a string primitive?
 
 #### --distractors--
 
-String objects have methods, string primitives do not
+String objects have methods, string primitives do not.
 
 ---
 
-String primitives are created using the `String` constructor, string objects are created using string literals
+String primitives are created using the `String` constructor, string objects are created using string literals.
 
 ---
 
-There is no difference between a string object and a string primitive
+There is no difference between a string object and a string primitive.
 
 #### --answer--
 
-String objects are created using the `String` constructor, string primitives are created using string literals
+String objects are created using the `String` constructor, string primitives are created using string literals.
 
 ### --question--
 
