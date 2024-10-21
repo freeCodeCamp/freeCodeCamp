@@ -394,8 +394,8 @@ class Block extends Component<BlockProps> {
                 to={challengesWithCompleted[0].fields.slug}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
-                {blockTitle}
                 {blockType && <BlockLabel blockType={blockType} />}
+                {blockTitle}
               </Link>
             </h3>
           </div>

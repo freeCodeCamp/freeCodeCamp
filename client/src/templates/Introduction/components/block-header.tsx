@@ -38,11 +38,11 @@ function BlockHeader({
       >
         <span className='block-header-button-text map-title'>
           <CheckMark isCompleted={isCompleted} />
+          {blockType && <BlockLabel blockType={blockType} />}
           <span>
             {blockTitle}
             <span className='sr-only'>, {courseCompletionStatus}</span>
           </span>
-          {blockType && <BlockLabel blockType={blockType} />}
           <DropDown />
         </span>
         {!isExpanded && !isCompleted && completedCount > 0 && (
