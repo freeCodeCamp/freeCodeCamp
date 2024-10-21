@@ -1990,7 +1990,13 @@
           "Test what you've learned in this quiz of making your webpage accessible with CSS."
         ]
       },
-      "swpl": { "title": "93", "intro": [] },
+      "workshop-balance-sheet": {
+        "title": "Build a Balance Sheet",
+        "intro": [
+          "You can use CSS pseudo selectors to change specific HTML elements.",
+          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
+      },
       "hcje": { "title": "94", "intro": [] },
       "lab-book-inventory-app": {
         "title": "Build a Book Inventory App",
