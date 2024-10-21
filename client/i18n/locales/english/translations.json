@@ -513,8 +513,12 @@
     "building-a-university": "We're Building a Free Computer Science University Degree Program 🎉",
     "if-help-university": "We've already made a ton of progress. Donate now to help our charity with the road ahead.",
     "preview-external-window": "Preview currently showing in external window.",
-    "fill-in-the-blank": "Fill in the blank",
-    "blank": "blank",
+    "fill-in-the-blank": {
+      "heading": "Fill in the blank",
+      "blank": "blank",
+      "correct-answer": "Correct answer.",
+      "incorrect-answer": "Incorrect answer."
+    },
     "quiz": {
       "correct-answer": "Correct!",
       "incorrect-answer": "Incorrect.",

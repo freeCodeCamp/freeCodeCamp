@@ -37,9 +37,9 @@
 }
 
 .green-underline {
-  border-bottom-color: var(--success-background) !important;
+  border-bottom-color: var(--background-success) !important;
 }
 
 .red-underline {
-  border-bottom-color: var(--danger-background) !important;
+  border-bottom-color: var(--background-danger) !important;
 }
