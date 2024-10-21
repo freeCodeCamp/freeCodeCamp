@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useState } from 'react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '../helpers';
 
 import './sound.css';
+import { Spacer } from '@freecodecamp/ui';
 import { playTone } from '../../utils/tone';
 import ToggleButtonSetting from './toggle-button-setting';
 
@@ -64,7 +64,7 @@ export default function SoundSettings({
         className='soundbar'
         onInput={handleVolumeChange}
       />
-      <Spacer size='medium'></Spacer>
+      <Spacer size='m'></Spacer>
     </>
   );
 }

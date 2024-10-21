@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '../helpers';
+import { Spacer } from '@freecodecamp/ui';
 
 import ToggleButtonSetting from './toggle-button-setting';
 
@@ -30,7 +30,7 @@ export default function KeyboardShortcutsSettings({
           toggleKeyboardShortcuts(keyboardShortcuts ? false : true);
         }}
       />
-      <Spacer size='medium'></Spacer>
+      <Spacer size='m'></Spacer>
     </>
   );
 }
