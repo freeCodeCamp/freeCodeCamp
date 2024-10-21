@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-lunch-picker-program",
   "order": 160,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66db529d37ad966480ebb633", "title": "Build a Lunch Picker Program" }],
   "helpCategory": "JavaScript",
   "blockType": "lab"

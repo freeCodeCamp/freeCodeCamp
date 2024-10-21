@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-dates",
   "order": 221,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66edd3711bb9f7efa73aef91", "title": "JavaScript Dates Quiz" }
   ],

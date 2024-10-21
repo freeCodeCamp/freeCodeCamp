@@ -6,7 +6,7 @@
   "hasEditableBoundaries": false,
   "dashedName": "workshop-sql-student-database-part-2",
   "order": 346,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "618590adb0730ca724e37672", "title": "Build a Student Database: Part 2" }],
   "helpCategory": "Backend Development"
 }

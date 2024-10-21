@@ -1692,8 +1692,8 @@
       }
     }
   },
-  "front-end-development": {
-    "title": "Front End Development",
+  "full-stack-developer": {
+    "title": "Full Stack Developer",
     "intro": ["placeholder"],
     "blocks": {
       "efpl": { "title": "0", "intro": [] },
@@ -2846,8 +2846,8 @@
       "exom": { "title": "386", "intro": [] },
       "bvqc": { "title": "387", "intro": [] },
       "xish": { "title": "388", "intro": [] },
-      "front-end-development-certification-exam": {
-        "title": "Front End Development Certification Exam",
+      "exam-full-stack-developer-certification": {
+        "title": "Full Stack Developer Certification Exam",
         "intro": ["", ""]
       }
     }

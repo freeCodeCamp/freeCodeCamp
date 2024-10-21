@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "dashedName": "quiz-web-performance",
   "order": 317,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1adcf97e3e4c1bd89ebf5", "title": "Web Performance Quiz" }
   ],

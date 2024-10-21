@@ -3,7 +3,7 @@
     "isUpcomingChange": true,
     "dashedName": "lab-url-shortener-microservice",
     "order": 374,
-    "superBlock": "front-end-development",
+    "superBlock": "full-stack-developer",
     "challengeOrder": [{ "id": "bd7158d8c443edefaeb5bd0e", "title": "Build a URL Shortener Microservice" }],
     "helpCategory": "Backend Development",
     "blockType": "lab"

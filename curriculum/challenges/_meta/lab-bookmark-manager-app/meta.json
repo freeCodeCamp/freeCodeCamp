@@ -5,7 +5,7 @@
   "blockType": "lab",
   "dashedName": "lab-bookmark-manager-app",
   "order": 229,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66def5467aee701733aaf8cc", "title": "Build a Bookmark Manager App" }],
   "helpCategory": "JavaScript"
 }

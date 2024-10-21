@@ -4,7 +4,7 @@
   "isUpcomingChange": true,
   "dashedName": "quiz-css-flexbox",
   "order": 82,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fe7f45ce3ece4053eb2", "title": "CSS Flexbox Quiz" }],
   "helpCategory": "HTML-CSS"
 }

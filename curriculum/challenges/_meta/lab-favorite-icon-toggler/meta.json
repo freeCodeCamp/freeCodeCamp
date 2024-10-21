@@ -5,7 +5,7 @@
   "blockType": "lab",
   "dashedName": "lab-favorite-icon-toggler",
   "order": 190,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66bf6bacf178eac7b96d4f5e", "title": "Build a Favorite Icon Toggler" }],
   "helpCategory": "JavaScript"
 }
