@@ -170,7 +170,7 @@ function DefaultLayout({
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
-  const isJapanese = clientLocale == 'japanese';
+  const isJapanese = clientLocale === 'japanese';
 
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
