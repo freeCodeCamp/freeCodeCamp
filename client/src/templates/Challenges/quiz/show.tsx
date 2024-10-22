@@ -7,7 +7,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button, Quiz, useQuiz, Spacer } from '@freecodecamp/ui';
+import {
+  Container,
+  Col,
+  Row,
+  Button,
+  Quiz,
+  useQuiz,
+  Spacer
+} from '@freecodecamp/ui';
 
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';

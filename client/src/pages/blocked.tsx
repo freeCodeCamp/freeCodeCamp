@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-
 function BlockedPage(): JSX.Element {
   return (
     <>

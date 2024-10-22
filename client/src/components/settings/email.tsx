@@ -5,7 +5,8 @@ import {
   FormGroupProps,
   FormControl,
   ControlLabel,
-  Button, Spacer
+  Button,
+  Spacer
 } from '@freecodecamp/ui';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';

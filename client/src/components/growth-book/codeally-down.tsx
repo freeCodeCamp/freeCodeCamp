@@ -3,7 +3,6 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Alert, Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 
-
 const Down = () => {
   const { t } = useTranslation();
   return (

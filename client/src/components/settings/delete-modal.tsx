@@ -5,9 +5,9 @@ import {
   ControlLabel,
   FormControl,
   FormGroup,
-  Modal, Spacer
+  Modal,
+  Spacer
 } from '@freecodecamp/ui';
-
 
 type DeleteModalProps = {
   delete: () => void;
