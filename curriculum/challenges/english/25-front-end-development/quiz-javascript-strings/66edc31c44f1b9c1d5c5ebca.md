@@ -403,7 +403,7 @@ What will the following code return: `'abc'.repeat(3)`?
 
 ---
 
-It will throw an error
+It will throw an error.
 
 #### --answer--
 
