@@ -172,7 +172,7 @@ How does the `sort()` method behave if no comparison function is provided?
 
 #### --distractors--
 
-It sorts the array as strings based on UTF-16 code units but takes undefined, empty slots and object references the beginning of the array.
+It sorts the array as strings based on UTF-16 code units, sorting `undefined`, empty slots, and object references to the beginning of the array.
 
 ---
 
@@ -272,7 +272,7 @@ It inherently optimizes performance by reducing the execution time of functions.
 
 ---
 
-It eliminates the need for temporary variables but may increase memory usage in some cases.
+It eliminates the need for temporary variables, but may increase memory usage in some cases.
 
 ---
 
