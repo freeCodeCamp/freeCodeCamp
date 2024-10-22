@@ -23,7 +23,10 @@ const envToLogger = {
 };
 
 const start = async () => {
-  const fastify = await build({ logger: envToLogger[FREECODECAMP_NODE_ENV] });
+  const fastify = await build({
+    logger: envToLogger[FREECODECAMP_NODE_ENV],
+    bodyLimit: 1024 * 1024 * 100
+  });
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);
