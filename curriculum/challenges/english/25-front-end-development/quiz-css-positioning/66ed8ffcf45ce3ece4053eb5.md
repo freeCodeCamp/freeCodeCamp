@@ -61,7 +61,7 @@ Which CSS property is used to set the stack order of an element?
 
 #### --text--
 
-What happens when you apply `position: relative` to an element in CSS ?  
+What happens when you apply `position: relative` to an element in CSS?   
 
 #### --distractors--
 
@@ -77,7 +77,7 @@ It positions the element in a fixed position relative to the viewport.
 
 #### --answer--
 
-It moves an element relative to on its default position in the document.
+It moves an element relative to its default position in the document.
 
 ### --question--
 
@@ -246,6 +246,7 @@ Child elements with `position: absolute` will be positioned relative to the near
 ---
 
 A `position: relative` element moved does not occupy any space within the document flow.
+
 ---
 
 Relative positioning allows an element to overlap sibling elements without affecting their layout.
