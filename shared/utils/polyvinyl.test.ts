@@ -1,4 +1,4 @@
-import polyvinyl from './polyvinyl';
+import { createPoly, createSource } from './polyvinyl';
 
 const polyData = {
   name: 'test',
@@ -9,21 +9,21 @@ const polyData = {
 
 describe('createSource', () => {
   it('should return a vinyl object with a source matching the contents', () => {
-    const original = polyvinyl.createPoly(polyData);
+    const original = createPoly(polyData);
 
-    const updated = polyvinyl.createSource(original);
+    const updated = createSource(original);
     expect(original).not.toHaveProperty('source');
     expect(updated).toHaveProperty('source', 'var hello = world;');
     expect(updated).toMatchObject(original);
   });
 
   it('should not update the source if it already exists', () => {
-    const original = polyvinyl.createPoly({
+    const original = createPoly({
       ...polyData,
       source: 'const hello = world;'
     });
 
-    const updated = polyvinyl.createSource(original);
+    const updated = createSource(original);
     expect(updated).toStrictEqual(original);
   });
 });

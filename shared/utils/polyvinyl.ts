@@ -15,7 +15,7 @@ export type ChallengeFile = {
   tail: string;
   seed: string;
   contents: string;
-  source: string | null;
+  source?: string | null;
   id: string;
   history: string[];
 };
@@ -27,13 +27,21 @@ type PolyProps = {
   history?: string[];
 };
 
+// The types are a little awkward, but should suffice until we move the
+// curriculum to TypeScript.
+type AddedProperties = {
+  path: string;
+  fileKey: string;
+  error: null;
+};
+
 export function createPoly<Rest>({
   name,
   ext,
   contents,
   history,
   ...rest
-}: PolyProps & Rest) {
+}: PolyProps & Rest): PolyProps & AddedProperties & Rest {
   invariant(typeof name === 'string', 'name must be a string but got %s', name);
 
   invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
@@ -53,7 +61,7 @@ export function createPoly<Rest>({
     fileKey: name + ext,
     contents,
     error: null
-  };
+  } as PolyProps & AddedProperties & Rest;
 }
 
 export function isPoly(poly: unknown): poly is ChallengeFile {
@@ -169,7 +177,7 @@ export async function transformHeadTailAndContents(
 }
 
 // createSource(poly: PolyVinyl) => PolyVinyl
-export function createSource(poly: ChallengeFile) {
+export function createSource(poly: Pick<ChallengeFile, 'contents' | 'source'>) {
   return {
     ...poly,
     source: poly.source || poly.contents
