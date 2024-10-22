@@ -11,7 +11,6 @@ import {
   TencentLogo,
   AlibabaLogo
 } from '../../../assets/images/components';
-
 import BigCallToAction from './big-call-to-action';
 import CampersImage from './campers-image';
 

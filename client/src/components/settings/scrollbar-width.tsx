@@ -78,7 +78,7 @@ export default function ScrollbarWidthSettings(): JSX.Element {
           ))}
         </div>
       </div>
-      <Spacer size='m'></Spacer>
+      <Spacer size='m' />
     </>
   );
 }

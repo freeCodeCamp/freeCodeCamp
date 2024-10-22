@@ -30,7 +30,7 @@ export default function KeyboardShortcutsSettings({
           toggleKeyboardShortcuts(keyboardShortcuts ? false : true);
         }}
       />
-      <Spacer size='m'></Spacer>
+      <Spacer size='m' />
     </>
   );
 }
