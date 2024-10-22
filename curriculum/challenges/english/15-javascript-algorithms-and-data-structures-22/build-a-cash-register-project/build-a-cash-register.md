@@ -26,7 +26,7 @@ Your application should show different messages depending on the price of the it
 |:-------------------:|:------------------:|
 |        Penny        |    $0.01 (PENNY)   |
 |        Nickel       |   $0.05 (NICKEL)   |
-|         Dime        |     $0.1 (DIME)    |
+|         Dime        |     $0.1 (MOHAN)    |
 |       Quarter       |   $0.25 (QUARTER)  |
 |        Dollar       |      $1 (ONE)      |
 |     Five Dollars    |      $5 (FIVE)     |
@@ -43,11 +43,11 @@ Your application should show different messages depending on the price of the it
 1. You should have a `button` element with an `id` of `"purchase-btn"`
 1. When the value in the `#cash` element is less than `price`, an alert should appear with the text `"Customer does not have enough money to purchase the item"`
 1. When the value in the `#cash` element is equal to `price`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`
-1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN QUARTER: $0.5"`
-1. When `price` is `3.26`, the value in the `#cash` element is `100`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04"`
-1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
-1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
-1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED PENNY: $0.5"`
+1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["MOHAN", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN QUARTER: $0.5"`
+1. When `price` is `3.26`, the value in the `#cash` element is `100`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["MOHAN", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 MOHAN: $0.2 PENNY: $0.04"`
+1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["MOHAN", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
+1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["MOHAN", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
+1. When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["MOHAN", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED PENNY: $0.5"`
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -105,7 +105,7 @@ window.alert = message => (alertMessage = message); // Override alert and store 
 // set price and customer cash
 price = 20;
 cashInput.value = '10';
-cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
+cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['MOHAN', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -135,7 +135,7 @@ cashInput.value = `${randomCash / 100}`;
 cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
-  ['DIME', 3.1],
+  ['MOHAN', 3.1],
   ['QUARTER', 4.25],
   ['ONE', 90],
   ['FIVE', 55],
@@ -164,7 +164,7 @@ const changeDueDiv = document.getElementById('change-due');
 // set price and customer cash
 price = 11.95;
 cashInput.value = '11.95';
-cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
+cid = [['PENNY', 1.01], ['NICKEL', 2.05], ['MOHAN', 3.1], ['QUARTER', 4.25], ['ONE', 90], ['FIVE', 55], ['TEN', 20], ['TWENTY', 60], ['ONE HUNDRED', 100]];
 
 cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
@@ -191,7 +191,7 @@ cashInput.value = `${price}`;
 cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
-  ['DIME', 3.1],
+  ['MOHAN', 3.1],
   ['QUARTER', 4.25],
   ['ONE', 90],
   ['FIVE', 55],
@@ -211,7 +211,7 @@ assert.strictEqual(
 );
 ```
 
-When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN QUARTER: $0.5"`.
+When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["MOHAN", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN QUARTER: $0.5"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -223,7 +223,7 @@ cashInput.value = 20;
 cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
-  ['DIME', 3.1],
+  ['MOHAN', 3.1],
   ['QUARTER', 4.25],
   ['ONE', 90],
   ['FIVE', 55],
@@ -240,7 +240,7 @@ assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
 const notExpected = [
   /PENNY/,
   /NICKEL/,
-  /DIME/,
+  /MOHAN/,
   /ONE [^H]/,
   /FIVE/,
   /TEN/,
@@ -250,7 +250,7 @@ const notExpected = [
 assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
 ```
 
-When `price` is `3.26`, the value in the `#cash` element is `100`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 DIME: $0.2 PENNY: $0.04"`.
+When `price` is `3.26`, the value in the `#cash` element is `100`, `cid` is `[["PENNY", 1.01], ["NICKEL", 2.05], ["MOHAN", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: OPEN TWENTY: $60 TEN: $20 FIVE: $15 ONE: $1 QUARTER: $0.5 MOHAN: $0.2 PENNY: $0.04"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -262,7 +262,7 @@ cashInput.value = 100;
 cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
-  ['DIME', 3.1],
+  ['MOHAN', 3.1],
   ['QUARTER', 4.25],
   ['ONE', 90],
   ['FIVE', 55],
@@ -278,7 +278,7 @@ const expected = [
   'FIVE: $15',
   'ONE: $1',
   'QUARTER: $0.5',
-  'DIME: $0.2',
+  'MOHAN: $0.2',
   'PENNY: $0.04'
 ];
 cashInput.dispatchEvent(new Event('change'));
@@ -343,7 +343,7 @@ assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
 assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
 ```
 
-When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
+When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["MOHAN", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -355,7 +355,7 @@ cashInput.value = 20;
 cid = [
   ['PENNY', 0.01],
   ['NICKEL', 0],
-  ['DIME', 0],
+  ['MOHAN', 0],
   ['QUARTER', 0],
   ['ONE', 0],
   ['FIVE', 0],
@@ -414,7 +414,7 @@ assert.strictEqual(
 );
 ```
 
-When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
+When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.01], ["NICKEL", 0], ["MOHAN", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: INSUFFICIENT_FUNDS"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -426,7 +426,7 @@ cashInput.value = 20;
 cid = [
   ['PENNY', 0.01],
   ['NICKEL', 0],
-  ['DIME', 0],
+  ['MOHAN', 0],
   ['QUARTER', 0],
   ['ONE', 1],
   ['FIVE', 0],
@@ -490,7 +490,7 @@ assert.strictEqual(
 );
 ```
 
-When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED PENNY: $0.5"`.
+When `price` is `19.5`, the value in the `#cash` element is `20`, `cid` is `[["PENNY", 0.5], ["NICKEL", 0], ["MOHAN", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"Status: CLOSED PENNY: $0.5"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -502,7 +502,7 @@ cashInput.value = 20;
 cid = [
   ['PENNY', 0.5],
   ['NICKEL', 0],
-  ['DIME', 0],
+  ['MOHAN', 0],
   ['QUARTER', 0],
   ['ONE', 0],
   ['FIVE', 0],
@@ -518,7 +518,7 @@ const result = changeDueDiv.innerText.trim().toLowerCase();
 assert.isTrue(expected.every(str => result.includes(str.toLowerCase())));
 const notExpected = [
   /NICKEL/,
-  /DIME/,
+  /MOHAN/,
   /QUARTER/,
   /ONE [^H]/,
   /FIVE/,
@@ -593,13 +593,13 @@ const _money = [
   ['FIVE', 500],
   ['ONE', 100],
   ['QUARTER', 25],
-  ['DIME', 10],
+  ['MOHAN', 10],
   ['NICKEL', 5]
 ];
 const _denomRegexes = [
   /PENNY/,
   /NICKEL/,
-  /DIME/,
+  /MOHAN/,
   /QUARTER/,
   /ONE [^H]/,
   /FIVE/,
@@ -627,7 +627,7 @@ let price = 1.87;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
-  ['DIME', 3.1],
+  ['MOHAN', 3.1],
   ['QUARTER', 4.25],
   ['ONE', 90],
   ['FIVE', 55],
@@ -861,7 +861,7 @@ let price = 3.26;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
-  ['DIME', 3.1],
+  ['MOHAN', 3.1],
   ['QUARTER', 4.25],
   ['ONE', 90],
   ['FIVE', 55],
@@ -954,7 +954,7 @@ const updateUI = change => {
   const currencyNameMap = {
     PENNY: 'Pennies',
     NICKEL: 'Nickels',
-    DIME: 'Dimes',
+    MOHAN: 'Dimes',
     QUARTER: 'Quarters',
     ONE: 'Ones',
     FIVE: 'Fives',
