@@ -12,7 +12,7 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 
  **Note:** The first 13 steps must be completed inside the `index.html` file. 
 
-**Objective:** Build an app that is functionally similar to <a href="https://pokemon-search-app.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://pokemon-search-app.freecodecamp.rocks</a>
+**Objective:** Build an app that is functionally similar to <a href="https://pokemon-search-app.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://pokemon-search-app.freecodecamp.rocks</a>.
 
 **User Stories:**
 
