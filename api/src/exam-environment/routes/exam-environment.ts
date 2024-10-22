@@ -582,12 +582,13 @@ async function getExams(
   const exams = await this.prisma.envExam.findMany({
     select: {
       id: true,
-      config: true
+      config: true,
+      prerequisites: true
     }
   });
 
   const availableExams = exams.map(exam => {
-    const isExamPrerequisitesMet = checkPrerequisites(user, true);
+    const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
     return {
       id: exam.id,
