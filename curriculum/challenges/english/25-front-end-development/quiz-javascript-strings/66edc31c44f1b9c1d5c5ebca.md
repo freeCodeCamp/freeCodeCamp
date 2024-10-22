@@ -47,7 +47,7 @@ Which option demonstrates string interpolation?
 
 ---
 
-`'Hello, ${user}!'`
+`'Hello, $user!'`
 
 ---
 
