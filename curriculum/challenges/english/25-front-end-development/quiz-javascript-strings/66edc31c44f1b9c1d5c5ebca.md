@@ -131,11 +131,11 @@ Which option extracts a substring consisting of the first three characters from 
 
 #### --distractors--
 
-`'JavaScript'.substr(3)`
+`'JavaScript'.substring(3)`
 
 ---
 
-`'JavaScript'.substr(0, 4)`
+`'JavaScript'.substring(0, 4)`
 
 ---
 
@@ -143,7 +143,7 @@ Which option extracts a substring consisting of the first three characters from 
 
 #### --answer--
 
-`'JavaScript'.substr(0, 3)`
+`'JavaScript'.substring(0, 3)`
 
 ### --question--
 
