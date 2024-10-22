@@ -2299,7 +2299,12 @@
         ]
       },
       "plic": { "title": "183", "intro": [] },
-      "vjmm": { "title": "184", "intro": [] },
+      "lab-book-organizer": {
+        "title": "Build a Book Organizer",
+        "intro": [
+          "In this lab, you will build a book organizer using higher order functions in JavaScript."
+        ]
+      },
       "bxtv": { "title": "185", "intro": [] },
       "xiqk": { "title": "186", "intro": [] },
       "quiz-javascript-higher-order-functions": {
