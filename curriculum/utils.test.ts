@@ -5,7 +5,13 @@ import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
 import { SuperBlocks } from '../shared/config/curriculum';
-import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
+import {
+  createSuperOrder,
+  getSuperOrder,
+  getSuperBlockFromDir,
+  getChapterFromBlock,
+  getModuleFromBlock
+} from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
@@ -51,6 +57,24 @@ const fullSuperOrder = {
   [SuperBlocks.JsAlgoDataStruct]: 16,
   [SuperBlocks.TheOdinProject]: 17,
   [SuperBlocks.FrontEndDevelopment]: 18
+};
+
+const mockSuperBlockStructure = {
+  chapters: [
+    {
+      dashedName: 'html',
+      modules: [
+        {
+          dashedName: 'getting-started-with-freecodecamp',
+          blocks: [
+            {
+              dashedName: 'welcome-to-freecodecamp'
+            }
+          ]
+        }
+      ]
+    }
+  ]
 };
 
 describe('createSuperOrder', () => {
@@ -177,5 +201,37 @@ describe('getSuperBlockFromPath', () => {
     expect.assertions(1);
 
     expect(() => getSuperBlockFromDir('unknown')).toThrow();
+  });
+});
+
+describe('getChapterFromBlock', () => {
+  it('returns a chapter if it exists', () => {
+    expect(
+      getChapterFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
+    ).toEqual('html');
+  });
+
+  it('throws if a chapter does not exist', () => {
+    expect(() =>
+      getChapterFromBlock('welcome-to-freecodecamper', mockSuperBlockStructure)
+    ).toThrow(
+      'There is no chapter corresponding to block "welcome-to-freecodecamper". It\'s possible that the block is missing in the superblock structure.'
+    );
+  });
+});
+
+describe('getModuleFromBlock', () => {
+  it('returns a module if it exists', () => {
+    expect(
+      getModuleFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
+    ).toEqual('getting-started-with-freecodecamp');
+  });
+
+  it('throws if a module does not exist', () => {
+    expect(() =>
+      getModuleFromBlock('welcome-to-freecodecamper', mockSuperBlockStructure)
+    ).toThrow(
+      'There is no module corresponding to block "welcome-to-freecodecamper". It\'s possible that the block is missing in the superblock structure.'
+    );
   });
 });
