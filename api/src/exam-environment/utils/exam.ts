@@ -26,7 +26,7 @@ export function checkPrerequisites(
   prerequisites: EnvExam['prerequisites']
 ) {
   return prerequisites.every(p =>
-    user.completedChallenges.find(c => c.id === p)
+    user.completedChallenges.some(c => c.id === p)
   );
 }
 
