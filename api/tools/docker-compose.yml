@@ -23,10 +23,7 @@ services:
     command: >
       mongosh --host db:27017 --eval '
         try {
-          rs.initiate({
-            _id: "rs0",
-            members: [{ _id: 0, host: "db:27017" }]
-          });
+          rs.initiate();
         } catch (err) {
           if(err.codeName !== "AlreadyInitialized") throw err;
         }
