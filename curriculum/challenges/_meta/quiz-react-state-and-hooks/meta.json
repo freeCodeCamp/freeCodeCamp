@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-react-state-and-hooks",
-  "order": 305,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1a417757b6ca4eecd89d6", "title": "React State and Hooks Quiz" }

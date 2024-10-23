@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-basic-html",
-  "order": 10,
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66df3b712c41c499e9d31e5b", "title": "Basic HTML Quiz" }],
   "helpCategory": "HTML-CSS"
