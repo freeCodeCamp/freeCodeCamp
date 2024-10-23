@@ -7,7 +7,7 @@ dashedName: quiz-javascript-arrays
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must answer at least 85% of the questions correctly.
 
 # --quizzes--
 
