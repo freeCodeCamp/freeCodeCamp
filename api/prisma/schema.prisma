@@ -375,13 +375,12 @@ model UserToken {
   @@index([userId], map: "userId_1")
 }
 
-/// TODO: Token has to outlive the exam attempt
-/// Validation has to be taken as the attempt is requested
-/// to ensure it lives long enough.
 model ExamEnvironmentAuthorizationToken {
-  id          String   @id @map("_id")
-  createdDate DateTime @db.Date
-  userId      String   @db.ObjectId
+  /// An ObjectId is used to provide access to the created timestamp
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  /// Used to set an `expireAt` index to delete documents
+  expireAt DateTime @db.Date
+  userId   String   @db.ObjectId
 
   @@index([userId], map: "userId_1")
 }
