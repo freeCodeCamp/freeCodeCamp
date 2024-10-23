@@ -10,7 +10,7 @@ services:
     volumes:
       - db-data:/data
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
       interval: 2s
       retries: 5
 
