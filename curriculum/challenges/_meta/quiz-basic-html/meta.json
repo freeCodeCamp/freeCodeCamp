@@ -1,6 +1,7 @@
 {
   "name": "Basic HTML Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-basic-html",
   "order": 10,

@@ -9,11 +9,18 @@ export enum BlockTypes {
 
 export enum BlockLayouts {
   /**
+   * These two are for the new Full Stack Developer Certification,
+   * so we can play with them without affecting the existing block layouts
+   */
+  ChallengeList = 'challenge-list',
+  Link = 'link',
+
+  /**
    * ChallengeList displays challenges in a list.
    * This layout is used in backend blocks, The Odin Project blocks, and blocks in legacy certification.
    * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
    */
-  ChallengeList = 'challenge-list',
+  LegacyChallengeList = 'legacy-challenge-list',
 
   /**
    * ChallengeGrid displays challenges in a grid.
@@ -27,7 +34,7 @@ export enum BlockLayouts {
    * This layout is used if the block has a single challenge.
    * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#build-a-survey-form-project
    */
-  Link = 'link',
+  LegacyLink = 'legacy-link',
 
   /**
    * ProjectList displays a list of certification projects.

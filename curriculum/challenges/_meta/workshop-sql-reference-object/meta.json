@@ -1,6 +1,7 @@
 {
   "name": "Build an SQL Reference Object",
   "blockType": "workshop",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,

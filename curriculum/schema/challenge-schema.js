@@ -135,7 +135,9 @@ const schema = Joi.object()
         'challenge-list',
         'challenge-grid',
         'link',
-        'project-list'
+        'project-list',
+        'legacy-challenge-list',
+        'legacy-link'
       )
     }),
     challengeOrder: Joi.number(),
