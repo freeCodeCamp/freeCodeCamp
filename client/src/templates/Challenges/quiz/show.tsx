@@ -25,14 +25,14 @@ import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
+import CompletionModal from '../components/completion-modal';
 import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
   closeModal,
   updateSolutionFormValues,
-  initTests,
-  submitChallenge
+  initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import PrismFormatted from '../components/prism-formatted';
@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
-      submitChallenge,
+      openCompletionModal: () => openModal('completion'),
       openExitQuizModal: () => openModal('exitQuiz'),
       closeExitQuizModal: () => closeModal('exitQuiz'),
       openFinishQuizModal: () => openModal('finishQuiz'),
@@ -75,9 +75,9 @@ interface ShowQuizProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
-  submitChallenge: () => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
+  openCompletionModal: () => void;
   openExitQuizModal: () => void;
   closeExitQuizModal: () => void;
   openFinishQuizModal: () => void;
@@ -104,8 +104,8 @@ const ShowQuiz = ({
   pageContext: { challengeMeta },
   initTests,
   updateChallengeMeta,
-  submitChallenge,
   isChallengeCompleted,
+  openCompletionModal,
   openExitQuizModal,
   closeExitQuizModal,
   openFinishQuizModal,
@@ -177,7 +177,9 @@ const ShowQuiz = ({
       incorrect: t('learn.quiz.incorrect-answer')
     },
     passingGrade: 85,
-    onSuccess: () => setIsPassed(true),
+    onSuccess: () => {
+      openCompletionModal(), setIsPassed(true);
+    },
     onFailure: () => setIsPassed(false)
   });
 
@@ -232,7 +234,7 @@ const ShowQuiz = ({
   };
 
   const handleSubmitAndGo = () => {
-    submitChallenge();
+    openCompletionModal();
   };
 
   const handleExitQuiz = () => {
@@ -346,6 +348,7 @@ const ShowQuiz = ({
             </Col>
           </Row>
         </Container>
+        <CompletionModal />
         <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
         <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
       </LearnLayout>
