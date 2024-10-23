@@ -7,11 +7,18 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button, Quiz, useQuiz } from '@freecodecamp/ui';
+import {
+  Container,
+  Col,
+  Row,
+  Button,
+  Quiz,
+  useQuiz,
+  Spacer
+} from '@freecodecamp/ui';
 
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 // import { challengeTypes } from '../../../../../shared/config/challenge-types';
@@ -228,7 +235,7 @@ const ShowQuiz = ({
         />
         <Container className='quiz-challenge-container'>
           <Row>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <ChallengeTitle
               isCompleted={isChallengeCompleted}
               translationPending={translationPending}
@@ -238,14 +245,15 @@ const ShowQuiz = ({
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <ChallengeDescription description={description} />
+              <Spacer size='m' />
               <ObserveKeys>
                 <Quiz questions={quizData} disabled={hasSubmitted} />
               </ObserveKeys>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <div aria-live='polite' aria-atomic='true'>
                 {errorMessage}
               </div>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               {/*
                  There are three cases for the button display:
                  1. Campers submit the answers but don't pass
@@ -273,7 +281,7 @@ const ShowQuiz = ({
                   {t('buttons.submit-and-go')}
                 </Button>
               )}
-              <Spacer size='large' />
+              <Spacer size='l' />
             </Col>
             <CompletionModal />
           </Row>
