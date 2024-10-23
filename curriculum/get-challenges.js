@@ -16,8 +16,15 @@ const {
 
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const { createPoly } = require('../shared/utils/polyvinyl');
-const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
+const {
+  getSuperOrder,
+  getSuperBlockFromDir,
+  getChapterFromBlock,
+  getModuleFromBlock
+} = require('./utils');
 const { metaSchemaValidator } = require('./schema/meta-schema');
+
+const fullStackSuperBlockStructure = require('./superblock-structure/full-stack.json');
 
 const access = util.promisify(fs.access);
 
@@ -270,6 +277,18 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
 // without passing around a ton of arguments.
 function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
+    function addChapterAndModuleToChallenge(challenge) {
+      if (challenge.superBlock === 'front-end-development') {
+        challenge.chapter = getChapterFromBlock(
+          challenge.block,
+          fullStackSuperBlockStructure
+        );
+        challenge.module = getModuleFromBlock(
+          challenge.block,
+          fullStackSuperBlockStructure
+        );
+      }
+    }
     const challengeOrder = findIndex(
       meta.challengeOrder,
       ({ id }) => id === challenge.id
@@ -319,6 +338,8 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
     challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
+
+    addChapterAndModuleToChallenge(challenge);
   }
 
   function fixChallengeProperties(challenge) {
