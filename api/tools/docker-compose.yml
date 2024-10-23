@@ -11,8 +11,7 @@ services:
       - db-data:/data
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
+      interval: 2s
       retries: 5
 
   setup:
