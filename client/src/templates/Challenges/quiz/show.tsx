@@ -8,11 +8,18 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { useLocation } from '@reach/router';
-import { Container, Col, Row, Button, Quiz, useQuiz } from '@freecodecamp/ui';
+import {
+  Container,
+  Col,
+  Row,
+  Button,
+  Quiz,
+  useQuiz,
+  Spacer
+} from '@freecodecamp/ui';
 
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -293,7 +300,7 @@ const ShowQuiz = ({
         />
         <Container className='quiz-challenge-container'>
           <Row>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <ChallengeTitle
               isCompleted={isChallengeCompleted}
               translationPending={translationPending}
@@ -306,11 +313,11 @@ const ShowQuiz = ({
               <ObserveKeys>
                 <Quiz questions={quizData} disabled={hasSubmitted} />
               </ObserveKeys>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <div aria-live='polite' aria-atomic='true'>
                 {errorMessage}
               </div>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               {!isPassed ? (
                 <>
                   <Button
@@ -331,11 +338,11 @@ const ShowQuiz = ({
                   {t('buttons.submit-and-go')}
                 </Button>
               )}
-              <Spacer size='xxSmall' />
+              <Spacer size='xxs' />
               <Button block={true} variant='primary' onClick={handleExitQuiz}>
                 {t('buttons.exit-quiz')}
               </Button>
-              <Spacer size='large' />
+              <Spacer size='l' />
             </Col>
           </Row>
         </Container>
