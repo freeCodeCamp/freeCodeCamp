@@ -10,7 +10,8 @@ import {
   getSuperOrder,
   getSuperBlockFromDir,
   getChapterFromBlock,
-  getModuleFromBlock
+  getModuleFromBlock,
+  getBlockOrder
 } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
@@ -69,6 +70,33 @@ const mockSuperBlockStructure = {
           blocks: [
             {
               dashedName: 'welcome-to-freecodecamp'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      dashedName: 'css',
+      modules: [
+        {
+          dashedName: 'module-one',
+          blocks: [
+            {
+              dashedName: 'block-one-m1'
+            },
+            {
+              dashedName: 'block-two-m1'
+            }
+          ]
+        },
+        {
+          dashedName: 'module-two',
+          blocks: [
+            {
+              dashedName: 'block-one-m2'
+            },
+            {
+              dashedName: 'block-two-m2'
             }
           ]
         }
@@ -232,6 +260,26 @@ describe('getModuleFromBlock', () => {
       getModuleFromBlock('welcome-to-freecodecamper', mockSuperBlockStructure)
     ).toThrow(
       'There is no module corresponding to block "welcome-to-freecodecamper". It\'s possible that the block is missing in the superblock structure.'
+    );
+  });
+});
+
+describe('getBlockOrder', () => {
+  it('returns the correct order when the chapter only contains one module', () => {
+    expect(
+      getBlockOrder('welcome-to-freecodecamp', mockSuperBlockStructure)
+    ).toBe(1);
+  });
+
+  it('returns the correct order when the chapter contains multiple modules', () => {
+    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(4);
+  });
+
+  it('throws if a block does not exist', () => {
+    expect(() =>
+      getBlockOrder('welcome-to-freecodecamper', mockSuperBlockStructure)
+    ).toThrow(
+      'The block "welcome-to-freecodecamper" does not appear in the superblock structure.'
     );
   });
 });

@@ -129,8 +129,23 @@ function getModuleFromBlock(blockName, superBlockStructure) {
   return module.dashedName;
 }
 
+function getBlockOrder(blockName, superBlockStructure) {
+  const blocks = superBlockStructure.chapters
+    .flatMap(chapter => chapter.modules)
+    .flatMap(module => module.blocks);
+
+  const index = blocks.findIndex(block => block.dashedName === blockName);
+
+  if (index === -1)
+    throw Error(
+      `The block "${blockName}" does not appear in the superblock structure.`
+    );
+
+  return index + 1;
+}
 exports.createSuperOrder = createSuperOrder;
 exports.getSuperOrder = getSuperOrder;
 exports.getSuperBlockFromDir = getSuperBlockFromDir;
 exports.getChapterFromBlock = getChapterFromBlock;
 exports.getModuleFromBlock = getModuleFromBlock;
+exports.getBlockOrder = getBlockOrder;
