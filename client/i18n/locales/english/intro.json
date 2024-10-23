@@ -2441,7 +2441,12 @@
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
       "yshh": { "title": "237", "intro": [] },
-      "wyxz": { "title": "238", "intro": [] },
+      "lab-bank-account-manager": {
+        "title": "Build a Bank Account Management Program",
+        "intro": [
+          "In this lab, you will build a simple transaction management system for a bank account."
+        ]
+      },
       "lab-quicksort-algorithm": {
         "title": "Build the Quicksort Algorithm",
         "intro": [

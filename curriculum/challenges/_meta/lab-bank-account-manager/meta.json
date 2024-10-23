@@ -1,0 +1,10 @@
+{
+  "name": "Build a Bank Account Management Program",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-bank-account-manager",
+  "order": 238,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "6718d2d59337c822ecb697ff", "title": "Build a Bank Account Management Program" }],
+  "helpCategory": "JavaScript"
+}
