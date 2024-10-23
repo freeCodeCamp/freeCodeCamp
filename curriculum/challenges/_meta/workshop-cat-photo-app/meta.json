@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-cat-photo-app",
-  "order": 2,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {

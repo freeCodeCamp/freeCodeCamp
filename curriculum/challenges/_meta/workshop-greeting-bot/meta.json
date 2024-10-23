@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-greeting-bot",
-  "order": 131,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {

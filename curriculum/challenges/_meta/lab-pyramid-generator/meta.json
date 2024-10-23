@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-pyramid-generator",
-  "order": 175,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "66f2836c459cfb16ae76f24f", "title": "Build a Pyramid Generator" }],
   "helpCategory": "JavaScript"

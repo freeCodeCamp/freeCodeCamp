@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-basic-css",
-  "order": 41,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "66ed8fa2f45ce3ece4053eab", "title": "Basic CSS Quiz" }],
   "helpCategory": "HTML-CSS"

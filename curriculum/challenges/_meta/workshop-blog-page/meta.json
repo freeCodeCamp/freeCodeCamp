@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-blog-page",
-  "order": 12,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {

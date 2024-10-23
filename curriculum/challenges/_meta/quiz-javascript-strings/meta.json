@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-strings",
-  "order": 140,
   "superBlock": "front-end-development",
   "challengeOrder": [
     { "id": "66edc31c44f1b9c1d5c5ebca", "title": "JavaScript Strings Quiz" }

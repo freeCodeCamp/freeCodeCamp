@@ -5,9 +5,7 @@
     "isUpcomingChange": true,
     "usesMultifileEditor": true,
     "dashedName": "lab-telephone-number-validator",
-    "order": 246,
-    "superBlock": "front-end-development",
+  "superBlock": "front-end-development",
     "challengeOrder": [{ "id": "657bdcb9a322aae1eac38391", "title": "Build a Telephone Number Validator" }],
     "helpCategory": "JavaScript"
   }
-  
