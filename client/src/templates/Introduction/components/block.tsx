@@ -107,6 +107,9 @@ class Block extends Component<BlockProps> {
       showUpcomingChanges
     });
 
+    const showIntroInBlockHeader =
+      superBlock === SuperBlocks.FrontEndDevelopment;
+
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
     // the real type of TFunction is the type below, because intro can be an array of strings
     // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
@@ -238,7 +241,9 @@ class Block extends Component<BlockProps> {
       <>
         {' '}
         <ScrollableAnchor id={block}>
-          <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+          <div
+            className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
+          >
             <BlockHeader
               blockDashed={block}
               blockTitle={blockTitle}
@@ -249,6 +254,7 @@ class Block extends Component<BlockProps> {
               isCompleted={isBlockCompleted}
               isExpanded={isExpanded}
               percentageCompleted={percentageCompleted}
+              blockIntroArr={showIntroInBlockHeader ? blockIntroArr : undefined}
             />
             {!isAudited && (
               <div className='tags-wrapper'>
@@ -261,8 +267,10 @@ class Block extends Component<BlockProps> {
               </div>
             )}
             {isExpanded && (
-              <div id={`${block}-panel`}>
-                <BlockIntros intros={blockIntroArr} />
+              <div id={`${block}-panel`} className='challenge-grid-block-panel'>
+                {!showIntroInBlockHeader && (
+                  <BlockIntros intros={blockIntroArr} />
+                )}
                 <Challenges
                   challengesWithCompleted={challengesWithCompleted}
                   isProjectBlock={isProjectBlock}
@@ -330,7 +338,9 @@ class Block extends Component<BlockProps> {
      */
     const ChallengeListBlock = (
       <ScrollableAnchor id={block}>
-        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+        <div
+          className={`block block-grid challenge-list-block ${isExpanded ? 'open' : ''}`}
+        >
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
@@ -341,6 +351,7 @@ class Block extends Component<BlockProps> {
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
+            blockIntroArr={blockIntroArr}
           />
           {!isAudited && (
             <div className='tags-wrapper'>
@@ -354,7 +365,6 @@ class Block extends Component<BlockProps> {
           )}
           {isExpanded && (
             <div id={`${block}-panel`}>
-              <BlockIntros intros={blockIntroArr} />
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
