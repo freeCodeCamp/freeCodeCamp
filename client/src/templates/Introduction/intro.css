@@ -14,10 +14,9 @@
 .block-label {
   align-self: center;
   height: fit-content;
-  padding: 2px 6px 3px;
-  font-size: 0.9rem;
+  padding: 1px 6px 2px;
+  font-size: 0.85rem;
   border: 1px solid;
-  border-radius: 10px;
   position: relative;
   top: 1px;
 }
