@@ -176,7 +176,7 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    passingGrade: 80,
+    passingGrade: 85,
     onSuccess: () => setIsPassed(true),
     onFailure: () => setIsPassed(false)
   });
