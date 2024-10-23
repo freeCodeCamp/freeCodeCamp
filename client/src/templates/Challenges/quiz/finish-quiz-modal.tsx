@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { Button, Modal } from '@freecodecamp/ui';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import { closeModal } from '../redux/actions';
 import { isFinishQuizModalOpenSelector } from '../redux/selectors';
-import { Spacer } from '../../../components/helpers';
 
 interface FinishQuizModalProps {
   closeFinishQuizModal: () => void;
@@ -49,7 +48,7 @@ const FinishQuizModal = ({
         <Button block size='medium' variant='primary' onClick={onFinish}>
           {t('learn.quiz.finish-modal-yes')}
         </Button>
-        <Spacer size='xxSmall' />
+        <Spacer size='xxs' />
         <Button
           block
           size='medium'
