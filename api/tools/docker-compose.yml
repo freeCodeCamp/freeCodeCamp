@@ -20,6 +20,7 @@ services:
       db:
         condition: service_healthy
     restart: on-failure
+    # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
     command: >
       mongosh --host db:27017 --eval '
         try {
