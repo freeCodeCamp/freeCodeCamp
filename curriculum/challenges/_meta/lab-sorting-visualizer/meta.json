@@ -1,0 +1,11 @@
+{
+  "name": "Build a Sorting Visualizer",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "dashedName": "lab-sorting-visualizer",
+  "order": 248,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "6716249b5405164036fd0b0d", "title": "Build a Sorting Visualizer" }],
+  "helpCategory": "JavaScript"
+}
