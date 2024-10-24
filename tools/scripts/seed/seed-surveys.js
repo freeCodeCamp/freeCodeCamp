@@ -74,7 +74,7 @@ const certifiedUserSurvey = {
   userId: new ObjectId('5fa2db00a25c1c1fa49ce067')
 };
 
-const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
+const client = new MongoClient(MONGOHQ_URL);
 
 const run = async () => {
   await client.db('admin').command({ ping: 1 });
