@@ -1815,7 +1815,12 @@
         ]
       },
       "rsve": { "title": "22", "intro": [] },
-      "xzam": { "title": "23", "intro": [] },
+      "review-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Review",
+        "intro": [
+          "Review the HTML Tables and Forms concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
@@ -2889,6 +2894,12 @@
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
+      },
+      "review-html-accessibility": {
+        "title": "HTML Accessibility Review",
+        "intro": [
+          "Review the HTML Accessibility concepts to prepare for the upcoming quiz."
+        ]
       }
     }
   },
