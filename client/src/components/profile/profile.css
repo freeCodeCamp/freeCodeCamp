@@ -3,3 +3,11 @@
   height: fit-content;
   padding: 0 !important;
 }
+
+.card {
+  margin: 0;
+  padding: 1em;
+  box-shadow: none;
+  background: var(--gray00);
+  border: 1px solid var(--gray15);
+}

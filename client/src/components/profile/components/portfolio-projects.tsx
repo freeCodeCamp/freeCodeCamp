@@ -17,38 +17,42 @@ export const PortfolioProjects = ({
   }
   return (
     <FullWidthRow>
-      <h2>{t('profile.projects')}</h2>
-      {portfolioProjects.map(({ title, url, image, description, id }) => (
-        <a
-          href={url}
-          rel='nofollow noopener noreferrer'
-          target='_blank'
-          className='portfolio-card'
-          key={id}
-        >
-          {image && (
-            <img
-              alt=''
-              className='portfolio-image'
-              src={image}
-              onError={({ currentTarget }) => {
-                currentTarget.src =
-                  'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
-              }}
-            />
-          )}
-          <div className='portfolio-card-description'>
-            <div className='portfolio-card-text'>
-              <h3>
-                {title}
-                <span className='sr-only'>, {t('aria.opens-new-window')}</span>
-              </h3>
-              <p>{description}</p>
+      <section className='card'>
+        <h2>{t('profile.projects')}</h2>
+        {portfolioProjects.map(({ title, url, image, description, id }) => (
+          <a
+            href={url}
+            rel='nofollow noopener noreferrer'
+            target='_blank'
+            className='portfolio-card'
+            key={id}
+          >
+            {image && (
+              <img
+                alt=''
+                className='portfolio-image'
+                src={image}
+                onError={({ currentTarget }) => {
+                  currentTarget.src =
+                    'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
+                }}
+              />
+            )}
+            <div className='portfolio-card-description'>
+              <div className='portfolio-card-text'>
+                <h3>
+                  {title}
+                  <span className='sr-only'>
+                    , {t('aria.opens-new-window')}
+                  </span>
+                </h3>
+                <p>{description}</p>
+              </div>
             </div>
-          </div>
-        </a>
-      ))}
-      <Spacer size='medium' />
+          </a>
+        ))}
+        <Spacer size='medium' />
+      </section>
       <hr />
     </FullWidthRow>
   );
