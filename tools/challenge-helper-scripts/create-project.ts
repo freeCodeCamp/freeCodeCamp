@@ -52,7 +52,7 @@ async function createProject(
   }
   void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createFirstChallenge(superBlock, block, title);
+  const challengeId = await createFirstChallenge(superBlock, block);
   void createMetaJson(
     superBlock,
     block,
@@ -77,9 +77,7 @@ async function updateIntroJson(
   const newIntro = await parseJson<IntroJson>(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
-    intro: [
-      `Review the ${title.replace(' Review', '')} concepts to prepare for the upcoming quiz.`
-    ]
+    intro: ['', '']
   };
   void withTrace(
     fs.writeFile,
@@ -104,7 +102,7 @@ async function createMetaJson(
   newMeta.order = order;
   newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
+  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await withTrace(fs.mkdir, newMetaDir);
@@ -126,7 +124,7 @@ superBlock: ${superBlock}
 
 ## Introduction to the ${title}
 
-Review the ${title.replace(' Review', '')} concepts to prepare for the upcoming quiz.
+This is a test for the new project-based curriculum.
 `;
   const dirPath = path.resolve(
     __dirname,
@@ -141,8 +139,7 @@ Review the ${title.replace(' Review', '')} concepts to prepare for the upcoming 
 
 async function createFirstChallenge(
   superBlock: SuperBlocks,
-  block: string,
-  title: string
+  block: string
 ): Promise<ObjectID> {
   const superBlockSubPath = getSuperBlockSubPath(superBlock);
   const newChallengeDir = path.resolve(
@@ -164,8 +161,6 @@ async function createFirstChallenge(
   // including trailing slash for compatibility with createStepFile
   return createStepFile({
     projectPath: newChallengeDir + '/',
-    dashedName: block,
-    title,
     stepNum: 1,
     challengeType: 0,
     challengeSeeds,
