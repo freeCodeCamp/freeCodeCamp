@@ -97,7 +97,7 @@
   outline: 3px solid var(--focus-outline-color);
 }
 
-.toggle-radio-group input:checked + .custom-circle:after {
+.toggle-radio-group input:checked + .custom-circle::after {
   content: '';
   width: 0.556rem;
   height: 0.556rem;

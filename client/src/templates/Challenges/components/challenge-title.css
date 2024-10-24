@@ -72,7 +72,7 @@
   margin-inline-end: 0.57rem;
 }
 
-.breadcrumb-left:after {
+.breadcrumb-left::after {
   background-color: var(--secondary-background);
   content: '';
   border-top: calc(1.375rem / 2) solid transparent;
@@ -92,7 +92,7 @@
 
 .challenge-title h1 {
   font-size: inherit;
-  line-height: 1.42857143;
+  line-height: 1.4286;
   margin: 0;
   display: inline;
 }
