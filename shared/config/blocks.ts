@@ -9,11 +9,12 @@ export enum BlockTypes {
 
 export enum BlockLayouts {
   /**
-   * These two are for the new Full Stack Developer Certification,
+   * These three are for the new Full Stack Developer Certification,
    * so we can play with them without affecting the existing block layouts
    */
   ChallengeList = 'challenge-list',
   Link = 'link',
+  ChallengeGrid = 'challenge-grid',
 
   /**
    * ChallengeList displays challenges in a list.
@@ -23,11 +24,11 @@ export enum BlockLayouts {
   LegacyChallengeList = 'legacy-challenge-list',
 
   /**
-   * ChallengeGrid displays challenges in a grid.
+   * LegacyChallengeGrid displays challenges in a grid.
    * This layout is used for step-based blocks.
    * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
    */
-  ChallengeGrid = 'challenge-grid',
+  LegacyChallengeGrid = 'legacy-challenge-grid',
 
   /**
    * Link displays the block as a single link.

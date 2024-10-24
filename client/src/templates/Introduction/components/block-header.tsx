@@ -4,6 +4,7 @@ import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
 import CheckMark from './check-mark';
 import BlockLabel from './block-label';
+import BlockIntros from './block-intros';
 
 interface BlockHeaderProps {
   blockDashed: string;
@@ -15,6 +16,7 @@ interface BlockHeaderProps {
   isCompleted: boolean;
   isExpanded: boolean;
   percentageCompleted: number;
+  blockIntroArr?: string[];
 }
 
 function BlockHeader({
@@ -26,7 +28,8 @@ function BlockHeader({
   handleClick,
   isCompleted,
   isExpanded,
-  percentageCompleted
+  percentageCompleted,
+  blockIntroArr
 }: BlockHeaderProps): JSX.Element {
   return (
     <h3 className='block-grid-title'>
@@ -45,6 +48,9 @@ function BlockHeader({
           </span>
           <DropDown />
         </span>
+        {blockIntroArr && blockIntroArr.length && (
+          <BlockIntros intros={blockIntroArr} />
+        )}
         {!isExpanded && !isCompleted && completedCount > 0 && (
           <div aria-hidden='true' className='progress-wrapper'>
             <div>
