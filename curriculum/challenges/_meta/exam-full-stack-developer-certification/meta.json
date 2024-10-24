@@ -1,0 +1,15 @@
+{
+  "name": "Full Stack Developer Certification Exam",
+  "blockType": "exam",
+  "isUpcomingChange": true,
+  "dashedName": "exam-full-stack-developer-certification",
+  "helpCategory": "HTML-CSS",
+  "order": 389,
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "645147516c245de4d11eb7ba",
+      "title": "Full Stack Developer Certification Exam"
+    }
+  ]
+}

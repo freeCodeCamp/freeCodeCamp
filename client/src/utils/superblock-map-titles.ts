@@ -15,7 +15,8 @@ const superBlocksWithoutLastWord = [
   SuperBlocks.TheOdinProject,
   SuperBlocks.ProjectEuler,
   SuperBlocks.PythonForEverybody,
-  SuperBlocks.RosettaCode
+  SuperBlocks.RosettaCode,
+  SuperBlocks.FullStackDeveloper
 ];
 
 export function getSuperBlockTitleForMap(superBlock: SuperBlocks): string {
