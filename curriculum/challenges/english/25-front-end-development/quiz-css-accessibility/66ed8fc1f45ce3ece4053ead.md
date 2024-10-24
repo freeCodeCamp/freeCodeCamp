@@ -105,23 +105,23 @@ Which property is essential for setting custom fonts in CSS?
 
 #### --text--
 
-What is the ideal contrast ratio for large text?
+What does the  `:hover` pseudo-class indicate? 
 
 #### --distractors--
 
-2:1
+Active state
 
 ---
 
-4.5:2
+Element is focused
 
 ---
 
-3.5:1
+Element is hidden
 
 #### --answer--
 
-3:1
+Mouse is over the element
 
 ### --question--
 
