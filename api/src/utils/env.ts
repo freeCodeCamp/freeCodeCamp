@@ -58,6 +58,11 @@ assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
+  assert.notEqual(
+    process.env.FCC_ENABLE_EXAM_ENVIRONMENT,
+    'true',
+    'Exam environment is not ready for production.'
+  );
   assert.ok(process.env.SES_ID);
   assert.ok(process.env.SES_SECRET);
   assert.notEqual(
@@ -127,6 +132,8 @@ export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const FCC_ENABLE_SHADOW_CAPTURE =
   process.env.FCC_ENABLE_SHADOW_CAPTURE === 'true';
+export const FCC_ENABLE_EXAM_ENVIRONMENT =
+  process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true';
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''

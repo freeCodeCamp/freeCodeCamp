@@ -1,6 +1,7 @@
 {
   "name": "Styling Forms Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-styling-forms",
   "order": 72,

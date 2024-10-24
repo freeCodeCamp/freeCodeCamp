@@ -9,17 +9,26 @@ services:
       - 27017:27017
     volumes:
       - db-data:/data
+    healthcheck:
+      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
+      interval: 2s
+      retries: 5
+
   setup:
     image: mongo
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     restart: on-failure
-    entrypoint: [
-        'bash',
-        '-c',
-        # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
-        'mongosh --host db:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
-      ]
+    # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+    command: >
+      mongosh --host db:27017 --eval '
+        try {
+          rs.initiate();
+        } catch (err) {
+          if(err.codeName !== "AlreadyInitialized") throw err;
+        }
+      '
 
 volumes:
   db-data:

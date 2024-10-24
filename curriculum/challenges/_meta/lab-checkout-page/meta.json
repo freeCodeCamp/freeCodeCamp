@@ -1,6 +1,7 @@
 {
   "name": "Build a Checkout Page",
   "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-checkout-page",

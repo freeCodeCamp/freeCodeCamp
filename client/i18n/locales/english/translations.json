@@ -7,6 +7,7 @@
     "first-lesson": "Go to the first lesson",
     "close": "Close",
     "edit": "Edit",
+    "copy": "Copy",
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
@@ -1110,6 +1111,16 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "exam-token": {
+    "exam-token": "Exam Token",
+    "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "generate-exam-token": "Generate Exam Token",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

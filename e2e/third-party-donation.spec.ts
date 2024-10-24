@@ -59,7 +59,7 @@ test.describe('third-party donation tests', () => {
     );
 
     await page.route(
-      'http://localhost:3000/donate/charge-stripe-card',
+      new URL('donate/charge-stripe-card', process.env.API_LOCATION).toString(),
       async route => {
         await route.fulfill({ json: { isDonating: true } });
       }
