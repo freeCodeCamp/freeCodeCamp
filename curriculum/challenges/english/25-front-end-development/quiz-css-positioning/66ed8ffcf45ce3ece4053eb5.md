@@ -17,439 +17,439 @@ To pass the quiz, you must correctly answer at least 17 of the 20 of the questio
 
 #### --text--
 
-Placeholder question
+The main purpose of the float property in CSS is:
 
 #### --distractors--
 
-Placeholder distractor 1
+To create rounded corners
 
 ---
 
-Placeholder distractor 2
+To control opacity
 
 ---
 
-Placeholder distractor 3
+To center vertically
 
 #### --answer--
 
-Placeholder answer
+To align elements to either the left or the right of their container 
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which CSS property is used to set the stack order of an element?
 
 #### --distractors--
 
-Placeholder distractor 1
+`position`
 
 ---
 
-Placeholder distractor 2
+`bg-green`
 
 ---
 
-Placeholder distractor 3
+`float`
 
 #### --answer--
 
-Placeholder answer
+`z-index`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What happens when you apply `position: relative` to an element in CSS?   
 
 #### --distractors--
 
-Placeholder distractor 1
+It removes the element from document flow.
 
 ---
 
-Placeholder distractor 2
+It only moves the element relative to the viewport.
 
 ---
 
-Placeholder distractor 3
+It positions the element in a fixed position relative to the viewport.
 
 #### --answer--
 
-Placeholder answer
+It moves an element relative to its default position in the document.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which CSS property would you use to fix an element at a certain position on the page so that it does not move when scrolling occurs?
 
 #### --distractors--
 
-Placeholder distractor 1
+`position: absolute`
 
 ---
 
-Placeholder distractor 2
+`position: relative`
 
 ---
 
-Placeholder distractor 3
+`display: block`
 
 #### --answer--
 
-Placeholder answer
+`position: fixed`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+If an element has `position: absolute`, what element is it positioned relatively to?
 
 #### --distractors--
 
-Placeholder distractor 1
+The closest ancestor with `position: fixed`
 
 ---
 
-Placeholder distractor 2
+The closest ancestor with `position: absolute`
 
 ---
 
-Placeholder distractor 3
+The `<body>` element
 
 #### --answer--
 
-Placeholder answer
+The closest positioned ancestor (with `position: relative`, `absolute` or `fixed`)
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which positioning method allows an element to stick to a defined position only when you scroll past a certain point?
 
 #### --distractors--
 
-Placeholder distractor 1
+`position: float`
 
 ---
 
-Placeholder distractor 2
+`position: fixed`
 
 ---
 
-Placeholder distractor 3
+`position: absolute`
 
 #### --answer--
 
-Placeholder answer
+`position: sticky`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What would happen if an element had `z-index: -1`?
 
 #### --distractors--
 
-Placeholder distractor 1
+It will be on top of all the other elements on the page.
 
 ---
 
-Placeholder distractor 2
+It will disappear from view.
 
 ---
 
-Placeholder distractor 3
+It will stack on top of all other elements.
 
 #### --answer--
 
-Placeholder answer
+It will always be in the back of all the other elements on the page.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How does a floated element affect the layout of surrounding elements?
 
 #### --distractors--
 
-Placeholder distractor 1
+Other elements are placed in relation to the floated element.
 
 ---
 
-Placeholder distractor 2
+The surrounding elements ignore the floated element and overlap it.
 
 ---
 
-Placeholder distractor 3
+It will shift surrounding elements behind the floated element.
 
 #### --answer--
 
-Placeholder answer
+Block elements surrounding it flow around the floated element.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does an element with `position: sticky` require for it to work?
 
 #### --distractors--
 
-Placeholder distractor 1
+A `position: relative` parent element.
 
 ---
 
-Placeholder distractor 2
+A `z-index` value greater than 1.
 
 ---
 
-Placeholder distractor 3
+A `z-index` of 0 or greater.
 
 #### --answer--
 
-Placeholder answer
+A declared `top`, `left`, `right`, or `bottom` property.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What happens when setting the `overflow` property of a parent to `auto` if one of its children has the property `position: sticky`?
 
 #### --distractors--
 
-Placeholder distractor 1
+The child element's sticky behaviour is not affected by the overflow property of the parent.
 
 ---
 
-Placeholder distractor 2
+The sticky element will maintain its behavior regardless of scrolling.
 
 ---
 
-Placeholder distractor 3
+The sticky element will act as if it had position: fixed within the parent.
 
 #### --answer--
 
-Placeholder answer
+The child will lose its sticky behaviour when the parent scrolls.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following are true about `position: relative` and how it affects the child elements?
 
 #### --distractors--
 
-Placeholder distractor 1
+Child elements with `position: absolute` will be positioned relative to the nearest positioned ancestor, whether that is relative or absolute.
 
 ---
 
-Placeholder distractor 2
+A `position: relative` element moved does not occupy any space within the document flow.
 
 ---
 
-Placeholder distractor 3
+Relative positioning allows an element to overlap sibling elements without affecting their layout.
 
 #### --answer--
 
-Placeholder answer
+The `position: relative` element keeps its space in document flow, but the children absolutely positioned are positioned relative to the `position: relative` parent.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How does a floated element impact the height of its containing block when the containing block does not have an explicit height defined?
 
 #### --distractors--
 
-Placeholder distractor 1
+The height of the containing block is automatically expanded to fit the floated element.
 
 ---
 
-Placeholder distractor 2
+Height will automatically adapt to fit all the floated elements.
 
 ---
 
-Placeholder distractor 3
+The containing block will automatically apply `clear: both` to fit the floated element.
 
 #### --answer--
 
-Placeholder answer
+The containing block will collapse, completely ignoring its floated element height.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following CSS techniques is an accepted method for preventing a parent container from shrinking in size when it contains only floated elements?
 
 #### --distractors--
 
-Placeholder distractor 1
+Set `float: none` to the container.
 
 ---
 
-Placeholder distractor 2
+Add `margin: auto` to the parent container.
 
 ---
 
-Placeholder distractor 3
+Use the `position: relative` on the parent container.
 
 #### --answer--
 
-Placeholder answer
+Adding the property `overflow: auto` or `overflow: hidden` to the parent container.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+When a floating element is followed by non-floating inline elements, how will their layout be affected?
 
 #### --distractors--
 
-Placeholder distractor 1
+The inline elements will be positioned below the floated element. 
 
 ---
 
-Placeholder distractor 2
+Inline elements will always be on top of the floated element.
 
 ---
 
-Placeholder distractor 3
+The inline elements will overlap the floated element.
 
 #### --answer--
 
-Placeholder answer
+Inline elements will wrap around the floated element if there is enough space.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What happens when `clear: both` is applied to an element following two floated elements - one left and one right - in a container?
 
 #### --distractors--
 
-Placeholder distractor 1
+The element will be positioned to the left of the floated elements.
 
 ---
 
-Placeholder distractor 2
+The element will align between the two floated elements.
 
 ---
 
-Placeholder distractor 3
+The element will wrap around the floated elements depending on space.
 
 #### --answer--
 
-Placeholder answer
+The element will be underneath both floated elements - the float breaks.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+When does an element with `z-index: auto` create a new stacking context?
 
 #### --distractors--
 
-Placeholder distractor 1
+When Combined with `position: absolute` or `position: relative`.
 
 ---
 
-Placeholder distractor 2
+When its parent element has `z-index: auto` and `position: fixed`.
 
 ---
 
-Placeholder distractor 3
+When it is combined with `float: left`, if two sibling elements are of the same `z-index` and absolutely positioned.
 
 #### --answer--
 
-Placeholder answer
+In combination with `position: fixed` or `position: sticky`.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+If two sibling elements have the same `z-index` and are both positioned absolutely using `position: absolute`, what determins which one is on top?
 
 #### --distractors--
 
-Placeholder distractor 1
+It rearranges the sibling elements in relation to its new position.
 
 ---
 
-Placeholder distractor 2
+Adding `z-index: auto` to the parent container.
 
 ---
 
-Placeholder distractor 3
+Using `position: relative` on the parent container.
 
 #### --answer--
 
-Placeholder answer
+The document source order (HTML position).
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+In what way will the property `position: relative` exert an effect on sibling elements in regards to document flow?
 
 #### --distractors--
 
-Placeholder distractor 1
+It removes the element from the normal document flow, which affects the positions of siblings.
 
 ---
 
-Placeholder distractor 2
+The relative element will move by the parent's top and left properties. 
 
 ---
 
-Placeholder distractor 3
+It creates a new stacking context which lifts the element in relation to any siblings.
 
 #### --answer--
 
-Placeholder answer
+It allows the element to shift without affecting the document flow of sibling elements.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What happens when a `position: relative` element is nested inside of a `position: absolute` parent, with top and left values set?
 
 #### --distractors--
 
-Placeholder distractor 1
+It moves relative to the parent element's original position.
 
 ---
 
-Placeholder distractor 2
+It moves with respect to the absolute coordinates of the containing parent element.
 
 ---
 
-Placeholder distractor 3
+It will never create a new stacking context whatever the `z-index` value.
 
 #### --answer--
 
-Placeholder answer
+It ignores the positioning of the parent and moves relative to its normal position.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the default of an element with `position: sticky` in terms of stacking context when combined with a `z-index` value?
 
 #### --distractors--
 
-Placeholder distractor 1
+It will create a new stacking context, and on top of any other element whose `z-index` is auto.
 
 ---
 
-Placeholder distractor 2
+By default it behaves like `position: absolute` creating a new stacking context.
 
 ---
 
-Placeholder distractor 3
+It ignores stacking contexts completely and will always end behind every element.
 
 #### --answer--
 
-Placeholder answer
+It stays within the stacking context in which it is if `z-index` is not explicitly defined.
 
