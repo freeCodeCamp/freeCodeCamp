@@ -6,5 +6,6 @@
   "order": 238,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "6718d2d59337c822ecb697ff", "title": "Build a Bank Account Management Program" }],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockType": "lab"
 }
