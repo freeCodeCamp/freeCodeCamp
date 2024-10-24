@@ -1,0 +1,13 @@
+{
+  "name": "CSS Colors Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-css-colors",
+  "order": 65,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "671a90c1cf517678b130419e", "title": "CSS Colors Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

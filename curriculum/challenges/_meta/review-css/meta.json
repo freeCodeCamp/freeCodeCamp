@@ -1,0 +1,13 @@
+{
+  "name": "CSS Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-css",
+  "order": 126,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "671a9a0a140c2b9d6a75629f", "title": "CSS Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}
