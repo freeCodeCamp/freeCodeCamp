@@ -76,3 +76,7 @@
   font-size: calc(0.25vw + 1rem);
   padding: 5px 10px;
 }
+
+.transcript {
+  background-color: antiquewhite;
+}
