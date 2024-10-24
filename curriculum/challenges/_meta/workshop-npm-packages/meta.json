@@ -1,6 +1,7 @@
 {
   "name": "Managing Packages with npm",
   "blockType": "workshop",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,

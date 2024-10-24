@@ -1,6 +1,7 @@
 {
   "name": "Build a Balance Sheet",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
