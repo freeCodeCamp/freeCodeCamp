@@ -171,7 +171,7 @@ Windows File Explorer
 
 #### --text--
 
-What is something you should avoid when naming files?
+What is not a good practice when naming files for later use?
 
 #### --distractors--
 
@@ -187,7 +187,7 @@ Putting a version number at the end of a document like `summaryReport_v2.docx`
 
 #### --answer--
 
-Putting spaces between words
+Being lazy and pounding your keyboard like `asdfloweiueld` to get it over with
 
 ### --question--
 
