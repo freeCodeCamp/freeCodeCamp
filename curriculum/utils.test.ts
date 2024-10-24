@@ -5,7 +5,14 @@ import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
 import { SuperBlocks } from '../shared/config/curriculum';
-import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
+import {
+  createSuperOrder,
+  getSuperOrder,
+  getSuperBlockFromDir,
+  getChapterFromBlock,
+  getModuleFromBlock,
+  getBlockOrder
+} from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
@@ -51,6 +58,51 @@ const fullSuperOrder = {
   [SuperBlocks.JsAlgoDataStruct]: 16,
   [SuperBlocks.TheOdinProject]: 17,
   [SuperBlocks.FrontEndDevelopment]: 18
+};
+
+const mockSuperBlockStructure = {
+  chapters: [
+    {
+      dashedName: 'html',
+      modules: [
+        {
+          dashedName: 'getting-started-with-freecodecamp',
+          blocks: [
+            {
+              dashedName: 'welcome-to-freecodecamp'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      dashedName: 'css',
+      modules: [
+        {
+          dashedName: 'module-one',
+          blocks: [
+            {
+              dashedName: 'block-one-m1'
+            },
+            {
+              dashedName: 'block-two-m1'
+            }
+          ]
+        },
+        {
+          dashedName: 'module-two',
+          blocks: [
+            {
+              dashedName: 'block-one-m2'
+            },
+            {
+              dashedName: 'block-two-m2'
+            }
+          ]
+        }
+      ]
+    }
+  ]
 };
 
 describe('createSuperOrder', () => {
@@ -177,5 +229,57 @@ describe('getSuperBlockFromPath', () => {
     expect.assertions(1);
 
     expect(() => getSuperBlockFromDir('unknown')).toThrow();
+  });
+});
+
+describe('getChapterFromBlock', () => {
+  it('returns a chapter if it exists', () => {
+    expect(
+      getChapterFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
+    ).toEqual('html');
+  });
+
+  it('throws if a chapter does not exist', () => {
+    expect(() =>
+      getChapterFromBlock('welcome-to-freecodecamper', mockSuperBlockStructure)
+    ).toThrow(
+      'There is no chapter corresponding to block "welcome-to-freecodecamper". It\'s possible that the block is missing in the superblock structure.'
+    );
+  });
+});
+
+describe('getModuleFromBlock', () => {
+  it('returns a module if it exists', () => {
+    expect(
+      getModuleFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
+    ).toEqual('getting-started-with-freecodecamp');
+  });
+
+  it('throws if a module does not exist', () => {
+    expect(() =>
+      getModuleFromBlock('welcome-to-freecodecamper', mockSuperBlockStructure)
+    ).toThrow(
+      'There is no module corresponding to block "welcome-to-freecodecamper". It\'s possible that the block is missing in the superblock structure.'
+    );
+  });
+});
+
+describe('getBlockOrder', () => {
+  it('returns the correct order when the chapter only contains one module', () => {
+    expect(
+      getBlockOrder('welcome-to-freecodecamp', mockSuperBlockStructure)
+    ).toBe(1);
+  });
+
+  it('returns the correct order when the chapter contains multiple modules', () => {
+    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(4);
+  });
+
+  it('throws if a block does not exist', () => {
+    expect(() =>
+      getBlockOrder('welcome-to-freecodecamper', mockSuperBlockStructure)
+    ).toThrow(
+      'The block "welcome-to-freecodecamper" does not appear in the superblock structure.'
+    );
   });
 });

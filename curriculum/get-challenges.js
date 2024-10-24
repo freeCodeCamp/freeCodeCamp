@@ -16,8 +16,21 @@ const {
 
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const { createPoly } = require('../shared/utils/polyvinyl');
-const { getSuperOrder, getSuperBlockFromDir } = require('./utils');
+const {
+  getSuperOrder,
+  getSuperBlockFromDir,
+  getChapterFromBlock,
+  getModuleFromBlock,
+  getBlockOrder
+} = require('./utils');
 const { metaSchemaValidator } = require('./schema/meta-schema');
+const {
+  assertSuperBlockStructure
+} = require('./schema/superblock-structure-schema');
+
+const fullStackSuperBlockStructure = require('./superblock-structure/full-stack.json');
+
+assertSuperBlockStructure(fullStackSuperBlockStructure);
 
 const access = util.promisify(fs.access);
 
@@ -266,10 +279,26 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
+function isSuperBlockWithChapters(superBlock) {
+  return superBlock === 'front-end-development';
+}
+
 // This is a slightly weird abstraction, but it lets us define helper functions
 // without passing around a ton of arguments.
 function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
+    function addChapterAndModuleToChallenge(challenge) {
+      if (isSuperBlockWithChapters(challenge.superBlock)) {
+        challenge.chapter = getChapterFromBlock(
+          challenge.block,
+          fullStackSuperBlockStructure
+        );
+        challenge.module = getModuleFromBlock(
+          challenge.block,
+          fullStackSuperBlockStructure
+        );
+      }
+    }
     const challengeOrder = findIndex(
       meta.challengeOrder,
       ({ id }) => id === challenge.id
@@ -289,7 +318,9 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.blockType = meta.blockType;
     challenge.blockLayout = meta.blockLayout;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
-    challenge.order = meta.order;
+    challenge.order = isSuperBlockWithChapters(meta.superBlock)
+      ? getBlockOrder(meta.dashedName, fullStackSuperBlockStructure)
+      : meta.order;
     // const superOrder = getSuperOrder(meta.superBlock);
     // NOTE: Use this version when a super block is in beta.
     const superOrder = getSuperOrder(meta.superBlock, {
@@ -319,6 +350,8 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
     challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
     challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
+
+    addChapterAndModuleToChallenge(challenge);
   }
 
   function fixChallengeProperties(challenge) {

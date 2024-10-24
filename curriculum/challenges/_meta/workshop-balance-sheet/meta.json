@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-balance-sheet",
-  "order": 93,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {
