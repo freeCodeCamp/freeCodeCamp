@@ -111,6 +111,7 @@ describe('dev login', () => {
           showName: false,
           showPoints: false,
           showPortfolio: false,
+          showCareer: false,
           showTimeLine: false
         },
         progressTimestamps: [expect.any(Number)],
