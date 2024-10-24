@@ -230,11 +230,11 @@ class Block extends Component<BlockProps> {
     );
 
     /**
-     * ChallengeGridBlock displays challenges in a grid.
+     * LegacyChallengeGridBlock displays challenges in a grid.
      * This layout is used for step-based blocks.
      * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
      */
-    const ChallengeGridBlock = (
+    const LegacyChallengeGridBlock = (
       <>
         {' '}
         <ScrollableAnchor id={block}>
@@ -404,6 +404,52 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
+    /**
+     * ChallengeGridBlock displays challenges in a grid.
+     * This layout is specifically used for the new Full Stack Developer Certification.
+     */
+    const ChallengeGridBlock = (
+      <>
+        {' '}
+        <ScrollableAnchor id={block}>
+          <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+            <BlockHeader
+              blockDashed={block}
+              blockTitle={blockTitle}
+              blockType={blockType}
+              completedCount={completedCount}
+              courseCompletionStatus={courseCompletionStatus()}
+              handleClick={this.handleBlockClick}
+              isCompleted={isBlockCompleted}
+              isExpanded={isExpanded}
+              percentageCompleted={percentageCompleted}
+            />
+            {!isAudited && (
+              <div className='tags-wrapper'>
+                <Link
+                  className='cert-tag'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              </div>
+            )}
+            {isExpanded && (
+              <div id={`${block}-panel`}>
+                <BlockIntros intros={blockIntroArr} />
+                <Challenges
+                  challengesWithCompleted={challengesWithCompleted}
+                  isProjectBlock={isProjectBlock}
+                  isGridMap={true}
+                  blockTitle={blockTitle}
+                />
+              </div>
+            )}
+          </div>
+        </ScrollableAnchor>
+      </>
+    );
+
     const blockRenderer = () => {
       const blockLayout = challenges[0].blockLayout;
 
@@ -411,7 +457,9 @@ class Block extends Component<BlockProps> {
       if (!blockLayout) {
         if (isProjectBlock)
           return isGridBlock ? LegacyLinkBlock : ProjectListBlock;
-        return isGridBlock ? ChallengeGridBlock : LegacyChallengeListBlock;
+        return isGridBlock
+          ? LegacyChallengeGridBlock
+          : LegacyChallengeListBlock;
       }
 
       // blockLayout is only being used in new certs at the moment, so I made some new components for them for now to not interfere with the existing ones
@@ -422,6 +470,8 @@ class Block extends Component<BlockProps> {
       if (blockLayout === BlockLayouts.LegacyLink) return LegacyLinkBlock;
       if (blockLayout === BlockLayouts.LegacyChallengeList)
         return LegacyChallengeListBlock;
+      if (blockLayout === BlockLayouts.LegacyChallengeGrid)
+        return LegacyChallengeGridBlock;
     };
 
     return (
