@@ -4,8 +4,13 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-typography",
-  "order": 87,
+  "order": 86,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66ed9010f45ce3ece4053eb8", "title": "CSS Typography Quiz" }],
+  "challengeOrder": [
+    {
+      "id": "66ed9010f45ce3ece4053eb8",
+      "title": "CSS Typography Quiz"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

@@ -4,8 +4,13 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-positioning",
-  "order": 102,
+  "order": 101,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66ed8ffcf45ce3ece4053eb5", "title": "CSS Positioning Quiz" }],
+  "challengeOrder": [
+    {
+      "id": "66ed8ffcf45ce3ece4053eb5",
+      "title": "CSS Positioning Quiz"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

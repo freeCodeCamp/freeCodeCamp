@@ -4,8 +4,13 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "lab-periodic-table-database",
-  "order": 359,
+  "order": 330,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "602d9ff222201c65d2a019f2", "title": "Build a Periodic Table Database" }],
+  "challengeOrder": [
+    {
+      "id": "602d9ff222201c65d2a019f2",
+      "title": "Build a Periodic Table Database"
+    }
+  ],
   "helpCategory": "Backend Development"
 }

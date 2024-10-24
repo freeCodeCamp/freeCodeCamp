@@ -5,10 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-advanced-react",
-  "order": 314,
+  "order": 283,
   "superBlock": "front-end-development",
   "challengeOrder": [
-    { "id": "66f1ad049d7a6ac0886cc2ba", "title": "Advanced React Quiz" }
+    {
+      "id": "66f1ad049d7a6ac0886cc2ba",
+      "title": "Advanced React Quiz"
+    }
   ],
   "helpCategory": "JavaScript"
 }

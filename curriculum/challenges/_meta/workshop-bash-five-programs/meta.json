@@ -6,8 +6,13 @@
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-bash-five-programs",
-  "order": 342,
+  "order": 312,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "5f5904ac738bc2fa9efecf5a", "title": "Build Five Programs" }],
+  "challengeOrder": [
+    {
+      "id": "5f5904ac738bc2fa9efecf5a",
+      "title": "Build Five Programs"
+    }
+  ],
   "helpCategory": "Backend Development"
 }

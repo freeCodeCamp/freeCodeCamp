@@ -6,7 +6,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-calculator",
-  "order": 152,
+  "order": 150,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {

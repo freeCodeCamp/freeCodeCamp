@@ -5,8 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-product-landing-page",
-  "order": 117,
+  "order": 116,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "587d78af367417b2b2512b04", "title": "Build a Product Landing Page" }],
+  "challengeOrder": [
+    {
+      "id": "587d78af367417b2b2512b04",
+      "title": "Build a Product Landing Page"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

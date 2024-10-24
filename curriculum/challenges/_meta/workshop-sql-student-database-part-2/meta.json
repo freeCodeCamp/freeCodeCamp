@@ -6,8 +6,13 @@
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-sql-student-database-part-2",
-  "order": 346,
+  "order": 317,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "618590adb0730ca724e37672", "title": "Build a Student Database: Part 2" }],
+  "challengeOrder": [
+    {
+      "id": "618590adb0730ca724e37672",
+      "title": "Build a Student Database: Part 2"
+    }
+  ],
   "helpCategory": "Backend Development"
 }
