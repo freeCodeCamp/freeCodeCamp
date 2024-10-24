@@ -54,14 +54,14 @@ blockquote small,
 blockquote .small {
   display: block;
   font-size: 80%;
-  line-height: 1.42857143;
+  line-height: 1.4286;
   color: var(--gray-45);
 }
 
 /* TODO: Move this rule to @freecodecamp/ui. */
-blockquote footer:before,
-blockquote small:before,
-blockquote .small:before {
+blockquote footer::before,
+blockquote small::before,
+blockquote .small::before {
   content: '\2014 \00A0';
 }
 

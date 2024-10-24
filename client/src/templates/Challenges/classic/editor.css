@@ -95,7 +95,7 @@ textarea.inputarea {
   max-width: 35%;
 }
 
-.description-container .breadcrumbs li:first-child:after {
+.description-container .breadcrumbs li:first-child::after {
   content: ' >';
   font-size: 17px;
   position: absolute;

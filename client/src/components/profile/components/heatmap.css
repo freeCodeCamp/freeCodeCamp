@@ -25,6 +25,6 @@
   border: 1px solid var(--primary-color) !important;
 }
 
-.__react_component_tooltip:after {
+.__react_component_tooltip::after {
   border-top-color: var(--primary-color) !important;
 }
