@@ -1832,7 +1832,12 @@
         "title": "Build a Checkout Page",
         "intro": ["In this lab, you will create an accessible checkout page."]
       },
-      "fqai": { "title": "27", "intro": [] },
+      "review-html-accessibility": {
+        "title": "HTML Accessibility Review",
+        "intro": [
+          "Review the HTML Accessibility concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
@@ -1923,14 +1928,18 @@
         ]
       },
       "bgrw": { "title": "53", "intro": [] },
-      "sbnz": { "title": "54", "intro": [] },
       "lab-event-flyer-page": {
         "title": "Build an Event Flyer Page",
         "intro": [
           "In this lab, you will use absolute and relative CSS units to create an event flyer page."
         ]
       },
-      "ywfm": { "title": "56", "intro": [] },
+      "review-css-relative-and-absolute-units": {
+        "title": "CSS Relative and Absolute Units Review",
+        "intro": [
+          "Review the CSS Relative and Absolute Units concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-relative-and-absolute-units": {
         "title": "CSS Relative and Absolute Units Quiz",
         "intro": [
@@ -1945,7 +1954,12 @@
           "In this lab you will build a job application form and style it using pseudo-classes."
         ]
       },
-      "ivpx": { "title": "61", "intro": [] },
+      "review-css-pseudo-classes": {
+        "title": "CSS Pseudo-classes Review",
+        "intro": [
+          "Review the CSS Pseudo-classes concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Quiz",
         "intro": [
@@ -1959,8 +1973,12 @@
         ]
       },
       "ogdb": { "title": "64", "intro": [] },
-      "zxiy": { "title": "65", "intro": [] },
-      "qpze": { "title": "66", "intro": [] },
+      "review-css-colors": {
+        "title": "CSS Colors Review",
+        "intro": [
+          "Review the CSS Colors concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-colors": {
         "title": "CSS Colors Quiz",
         "intro": [
@@ -1974,20 +1992,25 @@
           "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
         ]
       },
-      "vkei": { "title": "69", "intro": [] },
       "lab-contact-form": {
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you will design a contact form in HTML and style it using CSS."
         ]
       },
-      "ipmw": { "title": "71", "intro": [] },
+      "review-styling-forms": {
+        "title": "Styling Forms Review",
+        "intro": [
+          "Review the Styling Forms concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
         "intro": [
           "Test what you've learned in this quiz of how to style forms using CSS."
         ]
       },
+      "woza": { "title": "72", "intro": [] },
       "workshop-rothko-painting": {
         "title": "Design a Rothko Painting",
         "intro": [
@@ -1995,20 +2018,25 @@
           "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
         ]
       },
-      "wozq": { "title": "74", "intro": [] },
       "lab-confidential-email-page": {
         "title": "Build a Confidential Email Page",
         "intro": [
           "For this lab, you will create a web page of a confidential email using HTML and CSS."
         ]
       },
-      "zter": { "title": "76", "intro": [] },
+      "review-css-layout-and-effects": {
+        "title": "CSS Layouts and Effects Review",
+        "intro": [
+          "Review the CSS Layouts and Effects concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-layout-and-effects": {
         "title": "CSS Layout and Effects Quiz",
         "intro": [
           "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
         ]
       },
+      "ujaf": { "title": "77", "intro": [] },
       "workshop-flexbox-photo-gallery": {
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
@@ -2016,20 +2044,25 @@
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
-      "uptf": { "title": "79", "intro": [] },
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
         "intro": [
           "For this lab, you will use flexbox to create a webpage of playing cards."
         ]
       },
-      "kqao": { "title": "81", "intro": [] },
+      "review-css-flexbox": {
+        "title": "CSS Flexbox Review",
+        "intro": [
+          "Review the CSS Flexbox concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
         "intro": [
           "Test what you've learned in this quiz of using flexbox in CSS."
         ]
       },
+      "ujcf": { "title": "82", "intro": [] },
       "workshop-nutritional-label": {
         "title": "Build a Nutritional Label",
         "intro": [
@@ -2037,14 +2070,13 @@
           "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
         ]
       },
-      "ujcf": { "title": "84", "intro": [] },
       "lab-newspaper-article": {
         "title": "Build a Newspaper Article",
         "intro": [
           "In this lab, you will build a newspaper article page using HTML and CSS."
         ]
       },
-      "hbme": { "title": "86", "intro": [] },
+      "hbma": { "title": "85", "intro": [] },
       "quiz-css-typography": {
         "title": "CSS Typography Quiz",
         "intro": ["Test what you've learned in this quiz of typography in CSS."]
@@ -2917,12 +2949,6 @@
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]
-      },
-      "review-html-accessibility": {
-        "title": "HTML Accessibility Review",
-        "intro": [
-          "Review the HTML Accessibility concepts to prepare for the upcoming quiz."
-        ]
       }
     }
   },
