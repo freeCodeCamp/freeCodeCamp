@@ -69,14 +69,20 @@ function FillInTheBlanks({
         })}
       </div>
       <Spacer size='medium' />
-      {showFeedback && feedback && (
-        <>
-          <PrismFormatted text={feedback} />
-          <Spacer size='medium' />
-        </>
-      )}
-      <div className='text-center'>
-        {showWrong && <span>{t('learn.wrong-answer')}</span>}
+      <div aria-live='polite'>
+        <div className='text-center'>
+          {showWrong && (
+            <>
+              <span>{t('learn.wrong-answer')}</span>
+              <Spacer size='medium' />
+            </>
+          )}
+        </div>
+        {showFeedback && feedback && (
+          <>
+            <PrismFormatted text={feedback} />
+          </>
+        )}
       </div>
     </>
   );
