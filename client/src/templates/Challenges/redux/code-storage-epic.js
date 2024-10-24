@@ -207,4 +207,14 @@ function loadCodeEpic(action$, state$) {
   );
 }
 
+// Mock function to simulate checkForStraights
+const checkForStraights = jest.fn();
+
+function testCheckForStraights() {
+  // Simulate button click
+  document.getElementById('rollDiceBtn').click();
+  // Check if the function was called
+  expect(checkForStraights).toHaveBeenCalled();
+}
+
 export default combineEpics(saveCodeEpic, loadCodeEpic, clearCodeEpic);
