@@ -2372,11 +2372,17 @@
           "For this lab, you will debug a random background color changer and fix the errors to make it work properly."
         ]
       },
-      "ksfc": { "title": "205", "intro": [] },
       "quiz-debugging-javascript": {
         "title": "Debugging JavaScript Quiz",
         "intro": [
           "Test what you've learned in this quiz on Debugging JavaScript."
+        ]
+      },
+      "workshop-spam-filter": {
+        "title": "Build a Spam Filter",
+        "intro": [
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this workshop, you'll use capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
         ]
       },
       "dqth": { "title": "207", "intro": [] },
