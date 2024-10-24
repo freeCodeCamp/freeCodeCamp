@@ -330,7 +330,9 @@ class Block extends Component<BlockProps> {
      */
     const ChallengeListBlock = (
       <ScrollableAnchor id={block}>
-        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+        <div
+          className={`block block-grid challenge-list-block ${isExpanded ? 'open' : ''}`}
+        >
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
@@ -341,6 +343,7 @@ class Block extends Component<BlockProps> {
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
+            blockIntroArr={blockIntroArr}
           />
           {!isAudited && (
             <div className='tags-wrapper'>
@@ -354,7 +357,6 @@ class Block extends Component<BlockProps> {
           )}
           {isExpanded && (
             <div id={`${block}-panel`}>
-              <BlockIntros intros={blockIntroArr} />
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
@@ -412,7 +414,9 @@ class Block extends Component<BlockProps> {
       <>
         {' '}
         <ScrollableAnchor id={block}>
-          <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+          <div
+            className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
+          >
             <BlockHeader
               blockDashed={block}
               blockTitle={blockTitle}
@@ -423,6 +427,7 @@ class Block extends Component<BlockProps> {
               isCompleted={isBlockCompleted}
               isExpanded={isExpanded}
               percentageCompleted={percentageCompleted}
+              blockIntroArr={blockIntroArr}
             />
             {!isAudited && (
               <div className='tags-wrapper'>
@@ -436,7 +441,6 @@ class Block extends Component<BlockProps> {
             )}
             {isExpanded && (
               <div id={`${block}-panel`}>
-                <BlockIntros intros={blockIntroArr} />
                 <Challenges
                   challengesWithCompleted={challengesWithCompleted}
                   isProjectBlock={isProjectBlock}
