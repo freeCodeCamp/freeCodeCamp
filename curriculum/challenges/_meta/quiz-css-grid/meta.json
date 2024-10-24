@@ -1,6 +1,7 @@
 {
   "name": "CSS Grid Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-grid",
   "order": 119,

@@ -1,5 +1,6 @@
 {
   "name": "Debug a Random Background Color Changer",
+  "blockLayout": "link",
   "blockType": "lab",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,

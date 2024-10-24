@@ -1,6 +1,7 @@
 {
   "name": "CSS Pseudo-classes Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-pseudo-classes",
   "order": 62,

@@ -7,6 +7,7 @@
     "first-lesson": "訪問第一個課程",
     "close": "關閉",
     "edit": "編輯",
+    "copy": "Copy",
     "view": "查看",
     "view-code": "查看代碼",
     "view-project": "查看項目",
@@ -112,7 +113,7 @@
     "big-heading-3": "獲得認證",
     "big-heading-4": "All for free.",
     "h2-heading": "自 2014 年以來，已有超過 40,000 名 freeCodeCamp.org 學員入職科技公司，例如：",
-    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
     "hero-img-alt": "一羣人，包括一名白人男子、一名黑人女子和一名亞裔女子，圍在一臺筆記本電腦旁。",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -134,6 +135,28 @@
         "occupation": "<strong>Spotify</strong> 軟件工程師",
         "testimony": "\"我一直努力學習 JavaScript，嘗試了許多課程，最後是 freeCodeCamp 的課程吸引了我。在 freeCodeCamp 學習 JavaScript、數據結構和算法，<strong>我不僅掌握了技能，</strong>還變得更自信，所以才能獲得理想中的工作，成爲 Spotify 的一名軟件工程師。\""
       }
+    },
+    "benefits": {
+      "heading": "Why learn with freeCodeCamp:",
+      "list": [
+        {
+          "title": "Large Community",
+          "description": "Join our vibrant  learning community of students, alumni, and educators."
+        },
+        {
+          "title": "Free Education",
+          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+        },
+        {
+          "title": "Extensive Certifications",
+          "description": "Earn industry-recognized, verifiable certifications in high-demand technologies."
+        },
+        {
+          "title": "Comprehensive Curriculum",
+          "description": "Enhance your technical skills with our linear, world-class, project-based curriculum."
+        }
+      ],
+      "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "獲得以下免費認證：",
     "core-certs-heading": "學習 freeCodeCamp 的核心課程，免費獲得認證：",
@@ -390,6 +413,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "任務",
     "question": "問題",
+    "questions": "Questions",
     "explanation": "Explanation",
     "solution-link": "解決方案鏈接",
     "source-code-link": "源代碼鏈接",
@@ -491,8 +515,8 @@
     "fill-in-the-blank": "填空",
     "blank": "空白",
     "quiz": {
-      "correct-answer": "Correct",
-      "incorrect-answer": "Incorrect",
+      "correct-answer": "Correct!",
+      "incorrect-answer": "Incorrect.",
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
     },
@@ -534,7 +558,7 @@
       "transcript-label": "你的微軟成績單鏈接",
       "invalid-transcript": "你的成績單鏈接不正確，它應該有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 請檢查你的鏈接中的 UPPERCASE 項目是否正確。"
     },
-    "blockType": {
+    "block-type": {
       "lecture": "Lecture",
       "workshop": "Workshop",
       "lab": "Lab",
@@ -1086,6 +1110,16 @@
     "delete-p3": "您需要創建一個新的令牌來保存使用虛擬機的課程部分的未來進度。",
     "no-thanks": "不，謝謝，我想保留我的令牌",
     "yes-please": "是的，我想刪除我的令牌"
+  },
+  "exam-token": {
+    "exam-token": "Exam Token",
+    "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "generate-exam-token": "Generate Exam Token",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "shortcuts": {
     "title": "鍵盤快捷鍵",

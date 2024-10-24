@@ -135,12 +135,14 @@ const schema = Joi.object()
         'challenge-list',
         'challenge-grid',
         'link',
-        'project-list'
-      )
+        'project-list',
+        'legacy-challenge-list',
+        'legacy-link'
+      ).required()
     }),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(23).required(),
+    challengeType: Joi.number().min(0).max(24).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
