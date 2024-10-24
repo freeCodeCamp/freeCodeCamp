@@ -1839,12 +1839,20 @@
           "Test what you've learned in this quiz of HTML accessibility knowledge."
         ]
       },
-      "pspj": { "title": "29", "intro": [] },
+      "review-html": {
+        "title": "HTML Review",
+        "intro": ["Review the HTML concepts to prepare for the upcoming exam."]
+      },
       "qpra": { "title": "30", "intro": [] },
       "joim": { "title": "31", "intro": [] },
       "gvtb": { "title": "32", "intro": [] },
       "cqhu": { "title": "33", "intro": [] },
-      "tmdc": { "title": "34", "intro": [] },
+      "review-computer-basics": {
+        "title": "Computer Basics Review",
+        "intro": [
+          "Review the Computer Basics concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-computer-basics": {
         "title": "Computer Basics Quiz",
         "intro": [
@@ -1866,7 +1874,12 @@
         ]
       },
       "gnuk": { "title": "39", "intro": [] },
-      "zlfj": { "title": "40", "intro": [] },
+      "review-basic-css": {
+        "title": "Basic CSS Review",
+        "intro": [
+          "Review the Basic CSS concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-basic-css": {
         "title": "Basic CSS Quiz",
         "intro": [
@@ -1882,7 +1895,12 @@
       },
       "humj": { "title": "44", "intro": [] },
       "pahx": { "title": "45", "intro": [] },
-      "rzdx": { "title": "46", "intro": [] },
+      "review-css-backgrounds-and-borders": {
+        "title": "CSS Backgrounds and Borders Review",
+        "intro": [
+          "Review the CSS Backgrounds and Borders concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Quiz",
         "intro": [
@@ -1892,7 +1910,12 @@
       "ljmt": { "title": "48", "intro": [] },
       "lxpk": { "title": "49", "intro": [] },
       "lzqy": { "title": "50", "intro": [] },
-      "gvel": { "title": "51", "intro": [] },
+      "review-design-fundamentals": {
+        "title": "Design Fundamentals Review",
+        "intro": [
+          "Review the Design Fundamentals concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-design-fundamentals": {
         "title": "Design Fundamentals Quiz",
         "intro": [
