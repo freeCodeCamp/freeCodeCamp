@@ -171,23 +171,23 @@ Usability for all users
 
 #### --text--
 
-How will this `keyframe` animation affect the element's color?
+Where is @keyframes written?
 
 #### --distractors--
 
-It will fade between red and blue.
+Inside HTML tags
 
 ---
 
-It will change the color instantly from red to blue.
+Inside CSS selectors
 
 ---
 
-It will cycle through all colors.
+In JavaScript
 
 #### --answer--
 
-It will change the color instantly from red to blue.
+In CSS
 
 ### --question--
 
