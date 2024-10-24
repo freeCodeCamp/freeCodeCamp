@@ -24,8 +24,13 @@ const {
   getBlockOrder
 } = require('./utils');
 const { metaSchemaValidator } = require('./schema/meta-schema');
+const {
+  assertSuperBlockStructure
+} = require('./schema/superblock-structure-schema');
 
 const fullStackSuperBlockStructure = require('./superblock-structure/full-stack.json');
+
+assertSuperBlockStructure(fullStackSuperBlockStructure);
 
 const access = util.promisify(fs.access);
 
