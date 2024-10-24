@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { isEqual } from 'lodash';
 
 // Local Utilities
 import Spacer from '../../../components/helpers/spacer';
@@ -25,6 +26,12 @@ import {
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { BlockTypes } from '../../../../../shared/config/blocks';
 import Scene from '../components/scene/scene';
+import MultipleChoiceQuestions from '../components/multiple-choice-questions';
+import ChallengeExplanation from '../components/challenge-explanation';
+
+// Styles
+import './show.css';
+import '../video.css';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
@@ -64,10 +71,12 @@ const ShowGeneric = ({
         block,
         blockType,
         description,
+        explanation,
         challengeType,
         fields: { tests },
         helpCategory,
         instructions,
+        questions,
         title,
         translationPending,
         scene,
@@ -143,9 +152,36 @@ const ShowGeneric = ({
     setAssignmentsCompleted(a => (isCompleted ? a + 1 : a - 1));
   };
 
+  // multiple choice questions
+  const [selectedMcqOptions, setSelectedMcqOptions] = useState(
+    questions.map<number | null>(() => null)
+  );
+  const [submittedMcqAnswers, setSubmittedMcqAnswers] = useState(
+    questions.map<number | null>(() => null)
+  );
+  const [showFeedback, setShowFeedback] = useState(false);
+
+  const handleMcqOptionChange = (
+    questionIndex: number,
+    answerIndex: number
+  ): void => {
+    setSelectedMcqOptions(prev =>
+      prev.map((option, index) =>
+        index === questionIndex ? answerIndex : option
+      )
+    );
+  };
+
   // submit
   const handleSubmit = () => {
-    if (assignments.length == 0 || allAssignmentsCompleted) {
+    const hasCompletedAssignments =
+      assignments.length === 0 || allAssignmentsCompleted;
+    const mcqSolutions = questions.map(question => question.solution - 1);
+    const mcqCorrect = isEqual(mcqSolutions, selectedMcqOptions);
+
+    setSubmittedMcqAnswers(selectedMcqOptions);
+    setShowFeedback(true);
+    if (hasCompletedAssignments && mcqCorrect) {
       openCompletionModal();
     }
   };
@@ -215,6 +251,20 @@ const ShowGeneric = ({
                 />
               )}
 
+              {!!questions && (
+                <MultipleChoiceQuestions
+                  questions={questions}
+                  selectedOptions={selectedMcqOptions}
+                  handleOptionChange={handleMcqOptionChange}
+                  submittedMcqAnswers={submittedMcqAnswers}
+                  showFeedback={showFeedback}
+                />
+              )}
+
+              {explanation ? (
+                <ChallengeExplanation explanation={explanation} />
+              ) : null}
+
               <Button block={true} variant='primary' onClick={handleSubmit}>
                 {blockType === BlockTypes.review
                   ? t('buttons.submit')
@@ -249,6 +299,7 @@ export const query = graphql`
         blockType
         challengeType
         description
+        explanation
         helpCategory
         instructions
         fields {
@@ -258,6 +309,14 @@ export const query = graphql`
             text
             testString
           }
+        }
+        questions {
+          text
+          answers {
+            answer
+            feedback
+          }
+          solution
         }
         scene {
           setup {
