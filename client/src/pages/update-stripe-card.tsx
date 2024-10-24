@@ -5,10 +5,9 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Row, Col, Button } from '@freecodecamp/ui';
+import { Container, Row, Col, Button, Spacer } from '@freecodecamp/ui';
 import BigCallToAction from '../components/landing/components/big-call-to-action';
 
-import { Spacer } from '../components/helpers';
 import {
   isSignedInSelector,
   isDonatingSelector,
@@ -62,7 +61,7 @@ function ConditionalContent({
     return (
       <>
         <h1 className='text-center'>{t('learn.donation-record-not-found')}</h1>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <p className='text-center'>{t('learn.contact-support-mistake')}</p>
       </>
     );
@@ -80,7 +79,7 @@ function ConditionalContent({
     } else
       return (
         <>
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Button block={true} onClick={handleClick}>
             {t('buttons.update-card')}
           </Button>
@@ -90,7 +89,7 @@ function ConditionalContent({
     return (
       <>
         <h1 className='text-center'>{t('learn.sign-in-card-update')}</h1>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <BigCallToAction text={t('buttons.sign-in')} />
       </>
     );
@@ -126,14 +125,14 @@ function UpdateStripeCard({
       <Container className='page-wrapper-80'>
         <Row>
           <Col sm={6} smOffset={3}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <ConditionalContent
               isSignedIn={isSignedIn}
               isDonating={isDonating}
               handleClick={handleClick}
               updateCardState={updateCardState}
             />
-            <Spacer size='large' />
+            <Spacer size='l' />
           </Col>
         </Row>
       </Container>

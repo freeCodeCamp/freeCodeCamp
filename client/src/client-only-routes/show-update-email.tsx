@@ -16,11 +16,12 @@ import {
   ControlLabel,
   Col,
   Row,
-  Button
+  Button,
+  Spacer
 } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { Spacer, Loader, Link } from '../components/helpers';
+import { Loader, Link } from '../components/helpers';
 import './show-update-email.css';
 import { isSignedInSelector, userSelector } from '../redux/selectors';
 import { hardGoTo as navigate } from '../redux/actions';
@@ -87,7 +88,7 @@ function ShowUpdateEmail({
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
       <Container>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
           <Col sm={6} smOffset={3}>

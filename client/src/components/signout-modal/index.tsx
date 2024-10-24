@@ -3,9 +3,8 @@ import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Button, Modal } from '@freecodecamp/ui';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
-import { Spacer } from '../helpers';
 import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../config/env.json';
@@ -64,7 +63,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
         >
           {t('signout.nevermind')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <Button
           block={true}
           variant='danger'

@@ -4,11 +4,10 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
-import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
 import {
   isSignedInSelector,
@@ -107,7 +106,7 @@ function LearnPage({
               isDonating={isDonating}
             />
             <Map allChallenges={challengeNodes.map(node => node.challenge)} />
-            <Spacer size='large' />
+            <Spacer size='l' />
           </Col>
         </Row>
       </Container>

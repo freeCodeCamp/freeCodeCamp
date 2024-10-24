@@ -1,8 +1,7 @@
 import React from 'react';
-import { Col } from '@freecodecamp/ui';
+import { Col, Spacer } from '@freecodecamp/ui';
 
 import Map from '../../Map/index';
-import { Spacer } from '../../helpers';
 import { type SuperBlocks } from '../../../../../shared/config/curriculum';
 import BigCallToAction from './big-call-to-action';
 
@@ -24,9 +23,9 @@ const Certifications = ({
       xs={12}
     >
       <Map allChallenges={allChallenges} forLanding={true} />
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <BigCallToAction />
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </Col>
   );
 };

@@ -4,14 +4,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
 
 import { userSelector } from '../../redux/selectors';
 import type { ProfileUI } from '../../redux/prop-types';
 import { submitProfileUI } from '../../redux/settings/actions';
 
 import FullWidthRow from '../helpers/full-width-row';
-import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
 import ToggleRadioSetting from './toggle-radio-setting';
 
@@ -157,7 +156,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
         </form>
       </FullWidthRow>
       <FullWidthRow>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <p>{t('settings.data')}</p>
         <Button
           block={true}

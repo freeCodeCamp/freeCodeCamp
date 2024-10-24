@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Spacer } from '@freecodecamp/ui';
 import envData, { clientLocale } from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
@@ -43,7 +44,7 @@ import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
-import { Loader, Spacer } from '../helpers';
+import { Loader } from '../helpers';
 import {
   MAX_MOBILE_WIDTH,
   EX_SMALL_VIEWPORT_HEIGHT
@@ -292,7 +293,7 @@ function DefaultLayout({
                 />
               </div>
             ) : (
-              <Spacer size={isExSmallViewportHeight ? 'xxSmall' : 'small'} />
+              <Spacer size={isExSmallViewportHeight ? 'xxs' : 'xs'} />
             ))}
           {fetchState.complete && children}
         </div>

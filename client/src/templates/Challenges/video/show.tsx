@@ -10,10 +10,9 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { isEqual } from 'lodash-es';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
@@ -254,7 +253,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           />
           <Container>
             <Row>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <ChallengeTitle
                 isCompleted={isChallengeCompleted}
                 translationPending={translationPending}
@@ -286,7 +285,7 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                     showFeedback={this.state.showFeedback}
                   />
                 </ObserveKeys>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <Button
                   block={true}
                   variant='primary'
@@ -294,11 +293,11 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer size='xxSmall' />
+                <Spacer size='xxs' />
                 <Button block={true} variant='primary' onClick={openHelpModal}>
                   {t('buttons.ask-for-help')}
                 </Button>
-                <Spacer size='large' />
+                <Spacer size='l' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />

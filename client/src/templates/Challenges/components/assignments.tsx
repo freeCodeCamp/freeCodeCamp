@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../components/helpers/spacer';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
 
@@ -36,19 +36,19 @@ function Assignments({
               }
             />
             <PrismFormatted className={'video-quiz-option'} text={assignment} />
-            <Spacer size='medium' />
+            <Spacer size='m' />
           </label>
         ))}
       </div>
       {!allAssignmentsCompleted && (
         <>
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <div className='assignments-not-complete'>
             {t('learn.assignment-not-complete')}
           </div>
         </>
       )}
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </>
   );
 }

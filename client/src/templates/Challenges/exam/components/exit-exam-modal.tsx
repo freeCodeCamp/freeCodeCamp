@@ -4,12 +4,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { Button, Modal } from '@freecodecamp/ui';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 // Local Utilities
 import { closeModal } from '../../redux/actions';
 import { isExitExamModalOpenSelector } from '../../redux/selectors';
-import { Spacer } from '../../../../components/helpers';
 
 // Types
 interface ExitExamModalProps {
@@ -58,7 +57,7 @@ function ExitExamModal({
         <Button block={true} variant='primary' onClick={closeExitExamModal}>
           {t('learn.exam.exit-no')}
         </Button>
-        <Spacer size='xxSmall' />
+        <Spacer size='xxs' />
         <Button block={true} variant='danger' onClick={exitExam}>
           {t('learn.exam.exit-yes')}
         </Button>

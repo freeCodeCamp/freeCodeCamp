@@ -2,10 +2,11 @@ import { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
 import { randomQuote } from '../../utils/get-words';
-import { Spacer, Link } from '../helpers';
+import { Link } from '../helpers';
 
 import './404.css';
 
@@ -21,16 +22,16 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
         src={notFoundLogo}
         data-playwright-test-label='not-found-image'
       />
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <h1 id='content-start' data-playwright-test-label='not-found-heading'>
         {t('404.page-not-found')}.
       </h1>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <div>
         <p data-playwright-test-label='heres-quote-paragraph'>
           {t('404.heres-a-quote')}
         </p>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <blockquote
           className='quote-wrapper'
           data-playwright-test-label='quote-wrapper'
@@ -43,7 +44,7 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
           </p>
         </blockquote>
       </div>
-      <Spacer size='large' />
+      <Spacer size='l' />
       <Link
         className='btn btn-cta'
         to='/learn'

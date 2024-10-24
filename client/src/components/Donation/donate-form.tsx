@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
 import type { TFunction } from 'i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import {
   defaultDonation,
@@ -22,7 +23,6 @@ import {
   donationFormStateSelector,
   completedChallengesSelector
 } from '../../redux/selectors';
-import Spacer from '../helpers/spacer';
 import { Themes } from '../settings/theme';
 import { DonateFormState } from '../../redux/types';
 import type { CompletedChallenge } from '../../redux/prop-types';
@@ -242,7 +242,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <div className={confirmationClass()}>{confirmationWithEditAmount}</div>
-        <Spacer size={editAmount ? 'small' : 'medium'} />
+        <Spacer size={editAmount ? 'xs' : 'm'} />
         <fieldset
           data-playwright-test-label='donation-form'
           className={'donate-btn-group security-legend'}

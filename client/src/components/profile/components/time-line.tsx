@@ -5,7 +5,7 @@ import React, { useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Table, Button, Modal } from '@freecodecamp/ui';
+import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
@@ -16,7 +16,7 @@ import { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
-import { Link, FullWidthRow, Spacer } from '../../helpers';
+import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import TimelinePagination from './timeline-pagination';
@@ -177,7 +177,7 @@ function TimelineInner({
   return (
     <FullWidthRow>
       <h2>{t('profile.timeline')}</h2>
-      <Spacer size='small' />
+      <Spacer size='xs' />
       {completedMap.length === 0 ? (
         <p className='text-center'>
           {t('profile.none-completed')}&nbsp;

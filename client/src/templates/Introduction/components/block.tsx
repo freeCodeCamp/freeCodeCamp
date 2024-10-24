@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Spacer } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import envData from '../../../../config/env.json';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
-import { Link, Spacer } from '../../../components/helpers';
+import { Link } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
@@ -427,7 +428,7 @@ class Block extends Component<BlockProps> {
     return (
       <>
         {blockRenderer()}
-        {isGridBlock && !isProjectBlock ? null : <Spacer size='medium' />}
+        {isGridBlock && !isProjectBlock ? null : <Spacer size='m' />}
       </>
     );
   }

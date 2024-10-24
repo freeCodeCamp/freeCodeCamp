@@ -5,7 +5,7 @@ import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Modal } from '@freecodecamp/ui';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
 import { isSignedInSelector } from '../../../redux/selectors';
@@ -21,7 +21,6 @@ import {
 } from '../redux/selectors';
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
-import { Spacer } from '../../../components/helpers';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
@@ -206,7 +205,7 @@ class CompletionModal extends Component<
           {isSignedIn ? null : (
             <div className='completion-modal-login-btn'>
               <Login block={true}>{t('learn.sign-in-save')}</Login>
-              <Spacer size='xxSmall' />
+              <Spacer size='xxs' />
             </div>
           )}
           <Button
@@ -218,7 +217,7 @@ class CompletionModal extends Component<
           >
             {buttonText}
           </Button>
-          <Spacer size='xxSmall' />
+          <Spacer size='xxs' />
           {this.state.downloadURL ? (
             <Button
               block={true}

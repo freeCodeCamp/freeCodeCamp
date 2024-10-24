@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Spacer } from '@freecodecamp/ui';
 import {
   type SuperBlocks,
   SuperBlockStage,
@@ -10,7 +11,7 @@ import {
 } from '../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
-import { Spacer, ButtonLink } from '../helpers';
+import { ButtonLink } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import {
   showUpcomingChanges,
@@ -179,7 +180,7 @@ function Map({
               />
             ))}
           </ul>
-          <Spacer size='medium' />
+          <Spacer size='m' />
         </Fragment>
       ))}
     </div>

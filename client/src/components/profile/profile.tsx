@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { Alert, Container, Modal, Row } from '@freecodecamp/ui';
-import { FullWidthRow, Link, Spacer } from '../helpers';
+import { Alert, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
+import { FullWidthRow, Link } from '../helpers';
 import Portfolio from './components/portfolio';
 
 import UsernameSettings from './components/username';
@@ -45,7 +45,7 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
       <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </FullWidthRow>
   );
 };
@@ -77,7 +77,7 @@ const EditModal = ({
       <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <About
           about={about}
           location={location}
@@ -88,7 +88,7 @@ const EditModal = ({
           setIsEditing={setIsEditing}
           isSessionUser={isSessionUser}
         />
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Internet
           githubProfile={githubProfile}
           linkedin={linkedin}
@@ -97,7 +97,7 @@ const EditModal = ({
           setIsEditing={setIsEditing}
           website={website}
         />
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Portfolio
           portfolio={portfolio}
           updatePortfolio={updateMyPortfolio}
@@ -117,7 +117,7 @@ const VisitorMessage = ({
       <Alert variant='info'>
         {t('profile.username-change-privacy', { username })}
       </Alert>
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </FullWidthRow>
   );
 };
@@ -206,7 +206,7 @@ function UserProfile({
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </>
   );
 }
@@ -231,9 +231,9 @@ function Profile({
       <Helmet>
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <Container>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         {isLocked && (
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
@@ -253,7 +253,7 @@ function Profile({
             </Link>
           </Row>
         )}
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </Container>
     </>
   );

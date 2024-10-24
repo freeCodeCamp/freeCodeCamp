@@ -5,11 +5,11 @@ import {
   TabsTrigger,
   TabsList,
   Col,
-  Row
+  Row,
+  Spacer
 } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '../helpers';
 
 import {
   PaymentContext,
@@ -57,7 +57,7 @@ function SelectionTabs({
             usd: formattedAmountLabel(donationAmount)
           })}
         </b>
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <Tabs
           className={'donate-btn-group'}
           defaultValue={donationAmount.toString()}
@@ -74,7 +74,7 @@ function SelectionTabs({
               </TabsTrigger>
             ))}
           </TabsList>
-          <Spacer size='small' />
+          <Spacer size='xs' />
           {subscriptionAmounts.map(value => {
             const usd = formattedAmountLabel(donationAmount);
             const hours = convertToTimeContributed(donationAmount);
@@ -103,7 +103,7 @@ function SelectionTabs({
             ? t('buttons.confirm-amount')
             : t('buttons.donate')}
         </button>
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </Col>
     </Row>
   );
@@ -132,7 +132,7 @@ function DonationFormRow({
           editAmount={() => setShowDonateForm(false)}
           selectedDonationAmount={donationAmount}
         />
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </Col>
     </Row>
   );

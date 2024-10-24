@@ -3,15 +3,13 @@
 exports[`<Profile/> renders correctly 1`] = `
 <div>
   <div
-    class="spacer"
-    style="padding: 15px 0px;"
+    class="h-[30px]"
   />
   <div
     class="mx-auto px-[15px] my-0 md:w-[750px] min-[992px]:w-[970px] min-[1200px]:w-[1170px] "
   >
     <div
-      class="spacer"
-      style="padding: 15px 0px;"
+      class="h-[30px]"
     />
     <div
       class="bio-container"
@@ -185,8 +183,7 @@ exports[`<Profile/> renders correctly 1`] = `
           </div>
           
           <div
-            class="spacer"
-            style="padding: 5px 0px;"
+            class="h-[10px]"
           />
           
           <div
@@ -296,8 +293,7 @@ exports[`<Profile/> renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="spacer"
-      style="padding: 15px 0px;"
+      class="h-[30px]"
     />
     <div
       class="mx-[-15px] text-center"
@@ -309,8 +305,7 @@ exports[`<Profile/> renders correctly 1`] = `
       </a>
     </div>
     <div
-      class="spacer"
-      style="padding: 15px 0px;"
+      class="h-[30px]"
     />
   </div>
 </div>
