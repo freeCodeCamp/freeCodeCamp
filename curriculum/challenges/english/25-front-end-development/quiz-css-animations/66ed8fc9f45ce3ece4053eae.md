@@ -453,5 +453,3 @@ Which property prevents the animation from running immediately?
 
 `animation-delay`
 
-
-.
