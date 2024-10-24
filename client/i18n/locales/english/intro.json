@@ -2076,26 +2076,35 @@
           "In this lab, you will build a newspaper article page using HTML and CSS."
         ]
       },
-      "hbma": { "title": "85", "intro": [] },
+      "review-css-typography": {
+        "title": "CSS Typography Review",
+        "intro": [
+          "Review the CSS Typography concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-typography": {
         "title": "CSS Typography Quiz",
         "intro": ["Test what you've learned in this quiz of typography in CSS."]
       },
-      "dyvj": { "title": "88", "intro": [] },
-      "rjsv": { "title": "89", "intro": [] },
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
         "intro": [
           "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
         ]
       },
-      "fnde": { "title": "91", "intro": [] },
+      "review-css-accessibility": {
+        "title": "CSS Accessibility Review",
+        "intro": [
+          "Review the CSS Accessibility concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-accessibility": {
         "title": "CSS Accessibility Quiz",
         "intro": [
           "Test what you've learned in this quiz of making your webpage accessible with CSS."
         ]
       },
+      "haje": { "title": "92", "intro": [] },
       "workshop-balance-sheet": {
         "title": "Build a Balance Sheet",
         "intro": [
@@ -2103,25 +2112,34 @@
           "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
-      "hcje": { "title": "94", "intro": [] },
       "lab-book-inventory-app": {
         "title": "Build a Book Inventory App",
         "intro": ["For this lab, you will create a book inventory app."]
       },
-      "huyd": { "title": "96", "intro": [] },
+      "review-css-attribute-selectors": {
+        "title": "CSS Attribute Selectors Review",
+        "intro": [
+          "Review the CSS Attribute Selectors concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Quiz",
         "intro": [
           "Test what you've learned in this quiz of using attribute selectors in CSS."
         ]
       },
-      "rxzk": { "title": "98", "intro": [] },
-      "xobh": { "title": "99", "intro": [] },
+      "rxzq": { "title": "97", "intro": [] },
+      "xobq": { "title": "98", "intro": [] },
       "lab-house-painting": {
         "title": "Build a House Painting",
         "intro": ["For this lab, you will build a house painting using CSS."]
       },
-      "rrtt": { "title": "101", "intro": [] },
+      "review-css-positioning": {
+        "title": "CSS Positioning Review",
+        "intro": [
+          "Review the CSS Positioning concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-positioning": {
         "title": "CSS Positioning Quiz",
         "intro": [
