@@ -78,11 +78,7 @@ function FillInTheBlanks({
             </>
           )}
         </div>
-        {showFeedback && feedback && (
-          <>
-            <PrismFormatted text={feedback} />
-          </>
-        )}
+        {showFeedback && feedback && <PrismFormatted text={feedback} />}
       </div>
     </>
   );
