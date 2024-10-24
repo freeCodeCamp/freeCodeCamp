@@ -1853,7 +1853,12 @@
         ]
       },
       "humj": { "title": "44", "intro": [] },
-      "pahx": { "title": "45", "intro": [] },
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS"
+        ]
+      },
       "rzdx": { "title": "46", "intro": [] },
       "quiz-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Quiz",
