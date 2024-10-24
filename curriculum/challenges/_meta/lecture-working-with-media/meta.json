@@ -1,6 +1,7 @@
 {
   "name": "Working with Media",
   "blockType": "lecture",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-media",
   "order": 6,
