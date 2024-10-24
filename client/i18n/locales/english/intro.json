@@ -2146,6 +2146,7 @@
           "Test what you've learned in this quiz of how positioning works in CSS."
         ]
       },
+      "jkdu": { "title": "102", "intro": [] },
       "workshop-piano": {
         "title": "Design a Piano",
         "intro": [
@@ -2153,20 +2154,25 @@
           "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
-      "jkdt": { "title": "104", "intro": [] },
       "lab-technical-documentation-page": {
         "title": "Build a Technical Documentation Page",
         "intro": [
           "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
         ]
       },
-      "xcti": { "title": "106", "intro": [] },
+      "review-responsive-web-design": {
+        "title": "Responsive Web Design Review",
+        "intro": [
+          "Review the Responsive Web Design concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-responsive-web-design": {
         "title": "Responsive Web Design Quiz",
         "intro": [
           "Test what you've learned in this quiz of making your webpage responsive."
         ]
       },
+      "vlov": { "title": "107", "intro": [] },
       "workshop-city-skyline": {
         "title": "Build a City Skyline",
         "intro": [
@@ -2174,34 +2180,44 @@
           "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
         ]
       },
-      "vlov": { "title": "109", "intro": [] },
       "lab-availability-table": {
         "title": "Build an Availability Table",
         "intro": ["For this lab, you will create an availability table."]
       },
-      "sget": { "title": "111", "intro": [] },
+      "review-css-variables": {
+        "title": "CSS Variables Review",
+        "intro": [
+          "Review the CSS Variables concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-variables": {
         "title": "CSS Variables Quiz",
         "intro": [
           "Test what you've learned in this quiz of how using variables in CSS."
         ]
       },
+      "nsia": { "title": "112", "intro": [] },
       "agbl": { "title": "113", "intro": [] },
       "ogko": { "title": "114", "intro": [] },
       "harp": { "title": "115", "intro": [] },
-      "nsiq": { "title": "116", "intro": [] },
       "lab-product-landing-page": {
         "title": "Build a Product Landing Page",
         "intro": [
           "For this project, you will build a product landing page to market a product of your choice."
         ]
       },
-      "fdam": { "title": "118", "intro": [] },
+      "review-css-grid": {
+        "title": "CSS Grid Review",
+        "intro": [
+          "Review the CSS Grid concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
         "intro": ["Test what you've learned in this quiz of using grid in CSS."]
       },
-      "dorc": { "title": "120", "intro": [] },
+      "dora": { "title": "119", "intro": [] },
+      "dpaq": { "title": "120", "intro": [] },
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
@@ -2215,19 +2231,27 @@
           "In this workshop, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
         ]
       },
-      "lugl": { "title": "123", "intro": [] },
       "lab-personal-portfolio": {
         "title": "Build a Personal Portfolio",
         "intro": [
           "For this project, you will build your own personal portfolio page."
         ]
       },
-      "lvqc": { "title": "125", "intro": [] },
+      "review-css-animations": {
+        "title": "CSS Amimations Review",
+        "intro": [
+          "Review the CSS Amimations concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-css-animations": {
         "title": "CSS Animations Quiz",
         "intro": [
           "Test what you've learned in this quiz of using animations in CSS."
         ]
+      },
+      "review-css": {
+        "title": "CSS Review",
+        "intro": ["Review the CSS concepts to prepare for the upcoming exam."]
       },
       "wvjx": { "title": "127", "intro": [] },
       "uquz": { "title": "128", "intro": [] },
