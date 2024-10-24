@@ -5,10 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-testing",
-  "order": 328,
+  "order": 292,
   "superBlock": "front-end-development",
   "challengeOrder": [
-    { "id": "66f1aeffc5774ac692112a7e", "title": "Testing Quiz" }
+    {
+      "id": "66f1aeffc5774ac692112a7e",
+      "title": "Testing Quiz"
+    }
   ],
   "helpCategory": "JavaScript"
 }

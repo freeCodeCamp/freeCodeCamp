@@ -5,7 +5,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-recipe-tracker",
-  "order": 165,
+  "order": 164,
   "superBlock": "front-end-development",
   "challengeOrder": [
     {

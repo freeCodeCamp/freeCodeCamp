@@ -5,10 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-dates",
-  "order": 221,
+  "order": 219,
   "superBlock": "front-end-development",
   "challengeOrder": [
-    { "id": "66edd3711bb9f7efa73aef91", "title": "JavaScript Dates Quiz" }
+    {
+      "id": "66edd3711bb9f7efa73aef91",
+      "title": "JavaScript Dates Quiz"
+    }
   ],
   "helpCategory": "JavaScript"
 }

@@ -4,8 +4,13 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-flexbox",
-  "order": 82,
+  "order": 81,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66ed8fe7f45ce3ece4053eb2", "title": "CSS Flexbox Quiz" }],
+  "challengeOrder": [
+    {
+      "id": "66ed8fe7f45ce3ece4053eb2",
+      "title": "CSS Flexbox Quiz"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

@@ -6,8 +6,13 @@
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-sql-reference-object",
-  "order": 358,
+  "order": 329,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "5fa323cdaf6a73463d590659", "title": "Build an SQL Reference Object" }],
+  "challengeOrder": [
+    {
+      "id": "5fa323cdaf6a73463d590659",
+      "title": "Build an SQL Reference Object"
+    }
+  ],
   "helpCategory": "Backend Development"
 }

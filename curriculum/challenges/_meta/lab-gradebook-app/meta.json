@@ -5,8 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-gradebook-app",
-  "order": 178,
+  "order": 175,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66bb6a9c2dd58b73cd759034", "title": "Build a Gradebook App" }],
+  "challengeOrder": [
+    {
+      "id": "66bb6a9c2dd58b73cd759034",
+      "title": "Build a Gradebook App"
+    }
+  ],
   "helpCategory": "JavaScript"
 }

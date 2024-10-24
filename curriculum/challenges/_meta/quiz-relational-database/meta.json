@@ -5,10 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-relational-database",
-  "order": 339,
+  "order": 310,
   "superBlock": "front-end-development",
   "challengeOrder": [
-    { "id": "66f1af82732957c895f0b21a", "title": "Relational Database Quiz" }
+    {
+      "id": "66f1af82732957c895f0b21a",
+      "title": "Relational Database Quiz"
+    }
   ],
   "helpCategory": "Backend Development"
 }

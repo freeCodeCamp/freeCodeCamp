@@ -4,8 +4,13 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-grid",
-  "order": 119,
+  "order": 118,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66ed8fedf45ce3ece4053eb3", "title": "CSS Grid Quiz" }],
+  "challengeOrder": [
+    {
+      "id": "66ed8fedf45ce3ece4053eb3",
+      "title": "CSS Grid Quiz"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

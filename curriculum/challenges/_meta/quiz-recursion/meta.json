@@ -5,10 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-recursion",
-  "order": 236,
+  "order": 245,
   "superBlock": "front-end-development",
   "challengeOrder": [
-    { "id": "66edd43cded6bff30944b676", "title": "Recursion Quiz" }
+    {
+      "id": "66edd43cded6bff30944b676",
+      "title": "Recursion Quiz"
+    }
   ],
   "helpCategory": "JavaScript"
 }

@@ -5,10 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-loops",
-  "order": 173,
+  "order": 172,
   "superBlock": "front-end-development",
   "challengeOrder": [
-    { "id": "66edcd49e73385dd4df54ac7", "title": "JavaScript Loops Quiz" }
+    {
+      "id": "66edcd49e73385dd4df54ac7",
+      "title": "JavaScript Loops Quiz"
+    }
   ],
   "helpCategory": "JavaScript"
 }

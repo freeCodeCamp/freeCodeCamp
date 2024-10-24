@@ -5,10 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-arrays",
-  "order": 163,
+  "order": 162,
   "superBlock": "front-end-development",
   "challengeOrder": [
-    { "id": "66edcccbba6dacdb65a59067", "title": "JavaScript Arrays Quiz" }
+    {
+      "id": "66edcccbba6dacdb65a59067",
+      "title": "JavaScript Arrays Quiz"
+    }
   ],
   "helpCategory": "JavaScript"
 }

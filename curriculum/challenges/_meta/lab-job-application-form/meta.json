@@ -5,8 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-job-application-form",
-  "order": 60,
+  "order": 59,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66faac4139dbbd5dd632c860", "title": "Build a Job Application Form" }],
+  "challengeOrder": [
+    {
+      "id": "66faac4139dbbd5dd632c860",
+      "title": "Build a Job Application Form"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }

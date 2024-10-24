@@ -5,8 +5,13 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-inventory-management-program",
-  "order": 178,
+  "order": 177,
   "superBlock": "front-end-development",
-  "challengeOrder": [{ "id": "66d75dd0aa65a71600dc669b", "title": "Build an Inventory Management Program" }],
+  "challengeOrder": [
+    {
+      "id": "66d75dd0aa65a71600dc669b",
+      "title": "Build an Inventory Management Program"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
