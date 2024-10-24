@@ -1773,7 +1773,12 @@
           "This lab will give you an opportunity to review working with the <code>header</code>, <code>nav</code>, <code>article</code> elements."
         ]
       },
-      "ijdq": { "title": "14", "intro": [] },
+      "review-semantic-html": {
+        "title": "Semantic HTML Review",
+        "intro": [
+          "Review the Semantic HTML concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
