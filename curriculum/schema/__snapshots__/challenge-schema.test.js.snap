@@ -141,7 +141,7 @@ const schema = Joi.object()
         'project-list',
         'legacy-challenge-list',
         'legacy-link'
-      )
+      ).required()
     }),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
