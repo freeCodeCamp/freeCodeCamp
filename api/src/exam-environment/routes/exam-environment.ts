@@ -107,7 +107,7 @@ async function tokenMetaHandler(
   const examEnvironmentAuthorizationToken =
     payload.examEnvironmentAuthorizationToken;
 
-  const token = await this.prisma.examEnvironmentAuthorizationToken.findFirst({
+  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
     where: {
       id: examEnvironmentAuthorizationToken
     }
@@ -171,7 +171,7 @@ async function postExamGeneratedExamHandler(
 
   // Check user has completed prerequisites
   const user = req.user!;
-  const isExamPrerequisitesMet = checkPrerequisites(user, true);
+  const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
     void reply.code(403);
@@ -579,12 +579,13 @@ async function getExams(
   const exams = await this.prisma.envExam.findMany({
     select: {
       id: true,
-      config: true
+      config: true,
+      prerequisites: true
     }
   });
 
   const availableExams = exams.map(exam => {
-    const isExamPrerequisitesMet = checkPrerequisites(user, true);
+    const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
     return {
       id: exam.id,
