@@ -1,6 +1,7 @@
 {
   "name": "CSS Positioning Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-positioning",
   "order": 102,

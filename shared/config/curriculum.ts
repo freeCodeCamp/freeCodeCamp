@@ -135,7 +135,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,
@@ -144,10 +143,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody
   ],
   [Languages.ChineseTraditional]: [
-    SuperBlocks.FoundationalCSharp,
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FrontEndDevelopment,
     SuperBlocks.UpcomingPython,

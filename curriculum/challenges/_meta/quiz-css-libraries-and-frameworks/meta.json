@@ -1,6 +1,7 @@
 {
   "name": "CSS Libraries and Frameworks Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-css-libraries-and-frameworks",

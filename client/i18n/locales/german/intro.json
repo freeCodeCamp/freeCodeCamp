@@ -2282,14 +2282,17 @@
         "title": "120",
         "intro": []
       },
-      "adzu": {
-        "title": "121",
-        "intro": []
-      },
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
           "For this lab, you will create an animation of the moon orbiting the earth."
+        ]
+      },
+      "workshop-flappy-penguin": {
+        "title": "Build a Flappy Penguin",
+        "intro": [
+          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
+          "In this workshop, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
         ]
       },
       "lugl": {

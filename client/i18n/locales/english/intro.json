@@ -1724,12 +1724,18 @@
           "For this lab, you will create a web page of a travel agency."
         ]
       },
-      "vipr": { "title": "6", "intro": [] },
+      "lecture-working-with-media": {
+        "title": "Working with Media",
+        "intro": ["Learn about using media in HTML with these lecture videos."]
+      },
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
         "intro": ["For this lab, you will create a video compilation web page."]
       },
-      "bzfv": { "title": "8", "intro": [] },
+      "lecture-working-with-links": {
+        "title": "Working with Links",
+        "intro": ["Learn about using links in HTML with these lecture videos."]
+      },
       "review-basic-html": {
         "title": "Basic HTML Review",
         "intro": ["Review the basic HTML topics."]
@@ -1905,7 +1911,13 @@
           "Test what you've learned in this quiz of using colors in CSS."
         ]
       },
-      "jnqt": { "title": "68", "intro": [] },
+      "workshop-registration-form": {
+        "title": "Design a Registration Form",
+        "intro": [
+          "You can use HTML forms to collect information from people who visit your webpage.",
+          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+        ]
+      },
       "vkei": { "title": "69", "intro": [] },
       "lab-contact-form": {
         "title": "Design a Contact Form",

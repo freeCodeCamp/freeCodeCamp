@@ -1,6 +1,7 @@
 {
   "name": "Build a City Skyline",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
