@@ -171,7 +171,7 @@ Usability for all users
 
 #### --text--
 
-Where is @keyframes written?
+Where is `@keyframes` written?
 
 #### --distractors--
 
