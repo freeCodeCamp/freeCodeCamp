@@ -24,10 +24,13 @@ Inside the parameter list in the callback function for the `map` method, unpack 
 You should unpack all 5 object properties from objects in `arr` using object destructuring.
 
 ```js
+const ARGS_BEFORE = "playerCards.innerHTML += arr.map((";
 
-assert.match(code, /{\s*((name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname)\s*,\s*(name|position|number|isCaptain|nickname))\s*}\s*/)
+let args = code.substring(code.indexOf(ARGS_BEFORE) + ARGS_BEFORE.length);
+args = args.substring(0, args.indexOf(")"));
+args = args.replaceAll(/\s/g, "");
 
-
+assert.equal(args, "{name,position,number,isCaptain,nickname}");
 ```
 
 # --seed--
@@ -461,9 +464,9 @@ const setPlayerCards = (arr = players) => {
 
 --fcc-editable-region--
 
-  playerCards.innerHTML += arr.map(() => {
+  playerCards.innerHTML += arr.map(() => `
 
-  })
+  `);
 
 --fcc-editable-region--
 
