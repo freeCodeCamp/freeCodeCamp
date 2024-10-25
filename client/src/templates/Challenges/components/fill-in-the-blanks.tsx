@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import { parseBlanks } from '../fill-in-the-blank/parse-blanks';
-import Spacer from '../../../components/helpers/spacer';
 import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
@@ -47,7 +47,7 @@ function FillInTheBlanks({
   return (
     <>
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
-      <Spacer size='small' />
+      <Spacer size='xs' />
       <div className='fill-in-the-blank-wrap'>
         {paragraphs.map((p, i) => {
           return (
@@ -77,17 +77,15 @@ function FillInTheBlanks({
           );
         })}
       </div>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <div aria-live='polite'>
-        {showFeedback && feedback && (
-          <>
-            <PrismFormatted text={feedback} />
-            <Spacer size='medium' />
-          </>
+        {showWrong && (
+          <div className='text-center'>
+            <span>{t('learn.wrong-answer')}</span>
+            <Spacer size='m' />
+          </div>
         )}
-        <div className='text-center'>
-          {showWrong && <span>{t('learn.wrong-answer')}</span>}
-        </div>
+        {showFeedback && feedback && <PrismFormatted text={feedback} />}
       </div>
     </>
   );
