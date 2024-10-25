@@ -90,6 +90,7 @@
         {
           "dashedName": "styling-forms",
           "blocks": [
+            { "dashedName": "workshop-registration-form" },
             { "dashedName": "lab-contact-form" },
             { "dashedName": "quiz-styling-forms" }
           ]
