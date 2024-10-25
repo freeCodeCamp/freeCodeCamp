@@ -1911,7 +1911,13 @@
           "Test what you've learned in this quiz of using colors in CSS."
         ]
       },
-      "jnqt": { "title": "68", "intro": [] },
+      "workshop-registration-form": {
+        "title": "Design a Registration Form",
+        "intro": [
+          "You can use HTML forms to collect information from people who visit your webpage.",
+          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+        ]
+      },
       "vkei": { "title": "69", "intro": [] },
       "lab-contact-form": {
         "title": "Design a Contact Form",
