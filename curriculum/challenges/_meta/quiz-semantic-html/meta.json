@@ -1,6 +1,7 @@
 {
   "name": "Semantic HTML Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-semantic-html",
   "order": 15,

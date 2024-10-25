@@ -1,6 +1,7 @@
 {
   "name": "Searching and Sorting Algorithms Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-searching-and-sorting-algorithms",

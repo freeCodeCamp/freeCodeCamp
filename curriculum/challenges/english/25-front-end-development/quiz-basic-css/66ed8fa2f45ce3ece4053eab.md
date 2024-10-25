@@ -7,7 +7,7 @@ dashedName: quiz-basic-css
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 of the questions below.
 
 # --quizzes--
 
@@ -381,7 +381,7 @@ Gives animations to the page.
 
 ---
 
-Improves Search Emgine Optimiztion (SEO).
+Improves Search Emgine Optimization (SEO).
 
 #### --answer--
 

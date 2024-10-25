@@ -3,6 +3,7 @@ import { exam, examAttempt, generatedExam } from '../../../__mocks__/env-exam';
 import * as schemas from '../schemas';
 import {
   checkAttemptAgainstGeneratedExam,
+  checkPrerequisites,
   constructUserExam,
   generateExam,
   userAttemptToDatabaseAttemptQuestionSets,
@@ -56,9 +57,27 @@ describe('Exam Environment', () => {
       ).toBe(false);
     });
   });
-  xdescribe('checkPrequisites()', () => {
-    // TODO: Awaiting implementation
+
+  describe('checkPrequisites()', () => {
+    it("should return true if all items in the second argument exist in the first argument's `.completedChallenges[].id`", () => {
+      const user = {
+        completedChallenges: [{ id: '1' }, { id: '2' }]
+      };
+      const prerequisites = ['1', '2'];
+
+      expect(checkPrerequisites(user, prerequisites)).toBe(true);
+    });
+
+    it("should return false if any items in the second argument do not exist in the first argument's `.completedChallenges[].id`", () => {
+      const user = {
+        completedChallenges: [{ id: '2' }]
+      };
+      const prerequisites = ['1', '2'];
+
+      expect(checkPrerequisites(user, prerequisites)).toBe(false);
+    });
   });
+
   describe('constructUserExam()', () => {
     it('should not provide the answers', () => {
       const userExam = constructUserExam(generatedExam, exam);

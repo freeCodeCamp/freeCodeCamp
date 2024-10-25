@@ -1,11 +1,12 @@
 {
   "name": "Build a Lunch Picker Program",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-lunch-picker-program",
   "order": 160,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "66db529d37ad966480ebb633", "title": "Build a Lunch Picker Program" }],
-  "helpCategory": "JavaScript",
-  "blockType": "lab"
+  "helpCategory": "JavaScript"
 }

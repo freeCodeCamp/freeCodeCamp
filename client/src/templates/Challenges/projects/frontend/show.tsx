@@ -197,6 +197,7 @@ class Project extends Component<ProjectProps> {
                   description={description}
                   instructions={instructions}
                 />
+                <Spacer size='medium' />
                 <SolutionForm
                   challengeType={challengeType}
                   description={description}
