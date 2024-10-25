@@ -2022,14 +2022,14 @@
           "Test what you've learned in this quiz of using colors in CSS."
         ]
       },
-      "jnqt": {
-        "title": "68",
-        "intro": []
+      "workshop-registration-form": {
+        "title": "Design a Registration Form",
+        "intro": [
+          "You can use HTML forms to collect information from people who visit your webpage.",
+          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+        ]
       },
-      "vkei": {
-        "title": "69",
-        "intro": []
-      },
+      "vkei": { "title": "69", "intro": [] },
       "lab-contact-form": {
         "title": "Design a Contact Form",
         "intro": [
@@ -2283,12 +2283,6 @@
         "intro": [
           "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
           "In this workshop, you'll build a Ferris wheel. You'll practice how to use CSS to animate elements, transform them, and adjust their speed."
-        ]
-      },
-      "lab-moon-orbit": {
-        "title": "Build a Moon Orbit",
-        "intro": [
-          "For this lab, you will create an animation of the moon orbiting the earth."
         ]
       },
       "lab-moon-orbit": {
