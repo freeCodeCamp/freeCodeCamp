@@ -1,6 +1,7 @@
 {
   "name": "Web Performance Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-web-performance",

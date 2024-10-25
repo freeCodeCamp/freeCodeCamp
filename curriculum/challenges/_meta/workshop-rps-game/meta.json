@@ -1,6 +1,7 @@
 {
   "name": "Build a Rock, Paper, Scissors Game",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,

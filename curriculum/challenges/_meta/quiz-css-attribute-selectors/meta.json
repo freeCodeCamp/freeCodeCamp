@@ -1,6 +1,7 @@
 {
   "name": "CSS Attribute Selectors Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-attribute-selectors",
   "order": 97,

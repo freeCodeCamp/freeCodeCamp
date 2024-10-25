@@ -106,6 +106,7 @@ export const build = async (
   if (FCC_ENABLE_SWAGGER_UI) {
     void fastify.register(fastifySwagger, {
       openapi: {
+        openapi: '3.1.0',
         info: {
           title: 'freeCodeCamp API',
           version: '1.0.0' // API version

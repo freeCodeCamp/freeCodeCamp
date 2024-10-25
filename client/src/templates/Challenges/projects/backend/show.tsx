@@ -242,6 +242,7 @@ class BackEnd extends Component<BackEndProps> {
                   description={description}
                   instructions={instructions}
                 />
+                <Spacer size='medium' />
                 <SolutionForm
                   challengeType={challengeType}
                   // eslint-disable-next-line @typescript-eslint/unbound-method

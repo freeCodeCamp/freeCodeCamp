@@ -143,7 +143,8 @@ model user {
   isClassroomAccount           Boolean? // Undefined
 
   // Relations
-  examAttempts EnvExamAttempt[]
+  examAttempts                      EnvExamAttempt[]
+  examEnvironmentAuthorizationToken ExamEnvironmentAuthorizationToken?
 }
 
 // -----------------------------------
@@ -151,11 +152,13 @@ model user {
 /// An exam for the Exam Environment App as designed by the examiners
 model EnvExam {
   /// Globally unique exam id
-  id           String           @id @default(auto()) @map("_id") @db.ObjectId
+  id            String           @id @default(auto()) @map("_id") @db.ObjectId
   /// All questions for a given exam
-  questionSets EnvQuestionSet[]
+  questionSets  EnvQuestionSet[]
   /// Configuration for exam metadata
-  config       EnvConfig
+  config        EnvConfig
+  /// ObjectIds for required challenges/blocks to take the exam
+  prerequisites String[]         @db.ObjectId
 
   // Relations
   generatedExams EnvGeneratedExam[]
@@ -375,15 +378,13 @@ model UserToken {
   @@index([userId], map: "userId_1")
 }
 
-/// TODO: Token has to outlive the exam attempt
-/// Validation has to be taken as the attempt is requested
-/// to ensure it lives long enough.
 model ExamEnvironmentAuthorizationToken {
   id          String   @id @map("_id")
   createdDate DateTime @db.Date
-  userId      String   @db.ObjectId
+  userId      String   @unique @db.ObjectId
 
-  @@index([userId], map: "userId_1")
+  // Relations
+  user user @relation(fields: [userId], references: [id])
 }
 
 model sessions {

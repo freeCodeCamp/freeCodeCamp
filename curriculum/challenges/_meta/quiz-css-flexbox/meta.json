@@ -1,6 +1,7 @@
 {
   "name": "CSS Flexbox Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-flexbox",
   "order": 82,

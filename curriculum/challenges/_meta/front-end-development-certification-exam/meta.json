@@ -1,6 +1,7 @@
 {
   "name": "Front End Development Certification Exam",
   "blockType": "exam",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "front-end-development-certification-exam",
   "helpCategory": "HTML-CSS",

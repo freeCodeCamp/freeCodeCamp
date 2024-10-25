@@ -1,6 +1,7 @@
 {
   "name": "React State and Hooks Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-react-state-and-hooks",
