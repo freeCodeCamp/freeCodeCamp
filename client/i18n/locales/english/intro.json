@@ -1763,7 +1763,7 @@
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
-          "Test what you've learned in this quiz of semantic HTML knowledge."
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
         ]
       },
       "cfgp": { "title": "16", "intro": [] },
