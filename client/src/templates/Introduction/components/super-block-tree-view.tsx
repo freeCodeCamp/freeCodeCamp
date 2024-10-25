@@ -16,7 +16,7 @@ import Block from './block';
 // 	},
 // });
 
-interface FrontEndDevelopmentTreeViewProps {
+interface SuperBlockTreeViewProps {
   challenges: ChallengeNode['challenge'][];
   superBlock: SuperBlocks;
 }
@@ -33,10 +33,10 @@ interface ChapterNode {
   children: ModuleNode[];
 }
 
-export const FrontEndDevelopmentTreeView = ({
+export const SuperBlockTreeView = ({
   challenges,
   superBlock
-}: FrontEndDevelopmentTreeViewProps) => {
+}: SuperBlockTreeViewProps) => {
   // const classes = useStyles();
   const { t } = useTranslation();
 

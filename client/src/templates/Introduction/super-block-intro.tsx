@@ -32,7 +32,7 @@ import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
-import { FrontEndDevelopmentTreeView } from './components/front-end-development-tree-view';
+import { SuperBlockTreeView } from './components/super-block-tree-view';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -192,6 +192,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.PythonForEverybody
   ];
 
+  const superBlockWithTreeView = [SuperBlocks.FrontEndDevelopment];
+
   const onCertificationDonationAlertClick = () => {
     callGA({
       event: 'donation_related',
@@ -223,36 +225,39 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='medium' />
-              <FrontEndDevelopmentTreeView
-                challenges={challenges}
-                superBlock={superBlock}
-              />
-              <div className='block-ui'>
-                {blocks.map(block => {
-                  const blockChallenges = challenges.filter(
-                    c => c.block === block
-                  );
-                  const blockType = blockChallenges[0].blockType;
+              {superBlockWithTreeView ? (
+                <SuperBlockTreeView
+                  challenges={challenges}
+                  superBlock={superBlock}
+                />
+              ) : (
+                <div className='block-ui'>
+                  {blocks.map(block => {
+                    const blockChallenges = challenges.filter(
+                      c => c.block === block
+                    );
+                    const blockType = blockChallenges[0].blockType;
 
-                  return (
-                    <Block
-                      key={block}
-                      block={block}
-                      blockType={blockType}
-                      challenges={blockChallenges}
+                    return (
+                      <Block
+                        key={block}
+                        block={block}
+                        blockType={blockType}
+                        challenges={blockChallenges}
+                        superBlock={superBlock}
+                      />
+                    );
+                  })}
+                  {!superblockWithoutCert.includes(superBlock) && (
+                    <CertChallenge
+                      certification={certification}
                       superBlock={superBlock}
+                      title={title}
+                      user={user}
                     />
-                  );
-                })}
-                {!superblockWithoutCert.includes(superBlock) && (
-                  <CertChallenge
-                    certification={certification}
-                    superBlock={superBlock}
-                    title={title}
-                    user={user}
-                  />
-                )}
-              </div>
+                  )}
+                </div>
+              )}
               {!isSignedIn && !signInLoading && (
                 <>
                   <Spacer size='large' />
