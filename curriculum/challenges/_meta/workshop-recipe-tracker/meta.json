@@ -1,5 +1,6 @@
 {
   "name": "Build a Recipe Tracker",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
