@@ -82,5 +82,3 @@ assert.lengthOf(
   </body>
 </html>
 ```
-
-

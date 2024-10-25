@@ -94,5 +94,3 @@ assert.equal(document.querySelector('img').parentNode.nodeName, 'A');
   </body>
 </html>
 ```
-
-

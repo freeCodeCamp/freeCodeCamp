@@ -120,5 +120,3 @@ assert.match(
   </body>
 </html>
 ```
-
-

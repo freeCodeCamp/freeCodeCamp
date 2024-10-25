@@ -96,5 +96,3 @@ assert.notMatch(code, /\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/
   </body>
 </html>
 ```
-
-
