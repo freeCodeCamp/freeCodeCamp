@@ -34,7 +34,8 @@
     "serve-ci": "serve -l 8000 -c serve.json public",
     "prestand-alone": "pnpm run prebuild",
     "stand-alone": "gatsby develop",
-    "validate-keys": "ts-node --project ../tsconfig.json ../tools/scripts/lint/validate-keys"
+    "validate-keys": "ts-node --project ../tsconfig.json ../tools/scripts/lint/validate-keys",
+    "lint-css": "stylelint '**/*.css'"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.23.3",
@@ -169,6 +170,7 @@
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
+    "stylelint": "^16.10.0",
     "ts-node": "10.9.2",
     "webpack": "5.90.3"
   }
