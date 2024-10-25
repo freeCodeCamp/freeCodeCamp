@@ -4,14 +4,9 @@ import { useLocation, globalHistory } from '@reach/router';
 interface Props {
   onWindowClose: (event: BeforeUnloadEvent) => void;
   onHistoryChange: () => void;
-  depArr: Array<unknown>;
 }
 
-export const usePageLeave = ({
-  onWindowClose,
-  onHistoryChange,
-  depArr
-}: Props) => {
+export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
   const curLocation = useLocation();
 
   useEffect(() => {
@@ -33,6 +28,5 @@ export const usePageLeave = ({
       window.removeEventListener('beforeunload', onWindowClose);
       unlistenHistory();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, depArr);
+  }, [onWindowClose, onHistoryChange, curLocation]);
 };

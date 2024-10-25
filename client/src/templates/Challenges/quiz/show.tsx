@@ -1,5 +1,5 @@
 import { graphql, navigate } from 'gatsby';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { useTranslation } from 'react-i18next';
@@ -247,25 +247,31 @@ const ShowQuiz = ({
     closeExitQuizModal();
   };
 
-  usePageLeave({
-    depArr: [hasSubmitted, isPassed, exitConfirmed],
-    onWindowClose: event => {
+  const onWindowClose = useCallback(
+    (event: BeforeUnloadEvent) => {
       event.preventDefault();
       window.confirm(t('misc.navigation-warning'));
     },
-    onHistoryChange: () => {
-      // We don't block navigation in the following cases.
-      // - When campers have submitted the quiz:
-      //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
-      //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
-      // - When they have clicked the exit button on the exit modal
-      if (hasSubmitted || exitConfirmed) {
-        return;
-      }
+    [t]
+  );
 
-      void navigate(`${curLocation.pathname}`);
-      openExitQuizModal();
+  const onHistoryChange = useCallback(() => {
+    // We don't block navigation in the following cases.
+    // - When campers have submitted the quiz:
+    //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
+    //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
+    // - When they have clicked the exit button on the exit modal
+    if (hasSubmitted || exitConfirmed) {
+      return;
     }
+
+    void navigate(`${curLocation.pathname}`);
+    openExitQuizModal();
+  }, [curLocation.pathname, hasSubmitted, exitConfirmed, openExitQuizModal]);
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange
   });
 
   function getErrorMessage() {
