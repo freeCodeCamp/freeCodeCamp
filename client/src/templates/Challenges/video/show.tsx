@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { isEqual } from 'lodash-es';
 import { Container, Col, Row, Button } from '@freecodecamp/ui';
 
 // Local Utilities
@@ -75,9 +76,9 @@ interface ShowVideoProps {
 interface ShowVideoState {
   subtitles: string;
   downloadURL: string | null;
-  selectedOption: number | null;
-  answer: number;
-  showWrong: boolean;
+  selectedMcqOptions: (number | null)[];
+  submittedMcqAnswers: (number | null)[];
+  showFeedback: boolean;
   videoIsLoaded: boolean;
 }
 
@@ -88,16 +89,23 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
 
   constructor(props: ShowVideoProps) {
     super(props);
+
+    const {
+      data: {
+        challengeNode: {
+          challenge: { questions }
+        }
+      }
+    } = this.props;
+
     this.state = {
       subtitles: '',
       downloadURL: null,
-      selectedOption: null,
-      answer: 1,
-      showWrong: false,
+      selectedMcqOptions: questions.map(() => null),
+      submittedMcqAnswers: questions.map(() => null),
+      showFeedback: false,
       videoIsLoaded: false
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(): void {
@@ -157,26 +165,43 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
     }
   }
 
-  handleSubmit(solution: number, openCompletionModal: () => void) {
-    if (solution - 1 === this.state.selectedOption) {
-      this.setState({
-        showWrong: false
-      });
-      openCompletionModal();
-    } else {
-      this.setState({
-        showWrong: true
-      });
-    }
-  }
+  handleSubmit = () => {
+    const {
+      data: {
+        challengeNode: {
+          challenge: { questions }
+        }
+      },
+      openCompletionModal
+    } = this.props;
 
-  handleOptionChange = (
-    changeEvent: React.ChangeEvent<HTMLInputElement>
-  ): void => {
+    // subract 1 because the solutions are 1-indexed
+    const mcqSolutions = questions.map(question => question.solution - 1);
+
     this.setState({
-      showWrong: false,
-      selectedOption: parseInt(changeEvent.target.value, 10)
+      submittedMcqAnswers: this.state.selectedMcqOptions,
+      showFeedback: true
     });
+
+    const allMcqAnswersCorrect = isEqual(
+      mcqSolutions,
+      this.state.selectedMcqOptions
+    );
+
+    if (allMcqAnswersCorrect) {
+      openCompletionModal();
+    }
+  };
+
+  handleMcqOptionChange = (
+    questionIndex: number,
+    answerIndex: number
+  ): void => {
+    this.setState(state => ({
+      selectedMcqOptions: state.selectedMcqOptions.map((option, index) =>
+        index === questionIndex ? answerIndex : option
+      )
+    }));
   };
 
   onVideoLoad = () => {
@@ -204,7 +229,6 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
           }
         }
       },
-      openCompletionModal,
       openHelpModal,
       pageContext: {
         challengeMeta: { nextChallengePath, prevChallengePath }
@@ -213,18 +237,13 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
       isChallengeCompleted
     } = this.props;
 
-    const question = questions[0];
-    const { solution } = question;
-
     const blockNameTitle = `${t(
       `intro:${superBlock}.blocks.${block}.title`
     )} - ${title}`;
 
     return (
       <Hotkeys
-        executeChallenge={() => {
-          this.handleSubmit(solution, openCompletionModal);
-        }}
+        executeChallenge={this.handleSubmit}
         containerRef={this.container}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
@@ -260,19 +279,18 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
                 <ChallengeDescription description={description} />
                 <ObserveKeys>
                   <MultipleChoiceQuestions
-                    questions={question}
-                    selectedOption={this.state.selectedOption}
-                    isWrongAnswer={this.state.showWrong}
-                    handleOptionChange={this.handleOptionChange}
+                    questions={questions}
+                    selectedOptions={this.state.selectedMcqOptions}
+                    handleOptionChange={this.handleMcqOptionChange}
+                    submittedMcqAnswers={this.state.submittedMcqAnswers}
+                    showFeedback={this.state.showFeedback}
                   />
                 </ObserveKeys>
                 <Spacer size='medium' />
                 <Button
                   block={true}
                   variant='primary'
-                  onClick={() =>
-                    this.handleSubmit(solution, openCompletionModal)
-                  }
+                  onClick={this.handleSubmit}
                 >
                   {t('buttons.check-answer')}
                 </Button>

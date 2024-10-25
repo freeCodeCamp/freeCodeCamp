@@ -7,7 +7,7 @@ dashedName: step-14
 
 # --description--
 
-Your `calculateQuotient` appears to working correctly but there is one case that you have not tested yet.
+Your `calculateQuotient` appears to be working correctly but there is one case that you have not tested yet.
 
 Add a `console.log` that calls the `calculateQuotient` function with the arguments `3` and `0`.
 

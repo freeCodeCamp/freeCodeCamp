@@ -223,14 +223,22 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               </h2>
               <Spacer size='medium' />
               <div className='block-ui'>
-                {blocks.map(block => (
-                  <Block
-                    key={block}
-                    block={block}
-                    challenges={challenges.filter(c => c.block === block)}
-                    superBlock={superBlock}
-                  />
-                ))}
+                {blocks.map(block => {
+                  const blockChallenges = challenges.filter(
+                    c => c.block === block
+                  );
+                  const blockType = blockChallenges[0].blockType;
+
+                  return (
+                    <Block
+                      key={block}
+                      block={block}
+                      blockType={blockType}
+                      challenges={blockChallenges}
+                      superBlock={superBlock}
+                    />
+                  );
+                })}
                 {!superblockWithoutCert.includes(superBlock) && (
                   <CertChallenge
                     certification={certification}
@@ -291,11 +299,13 @@ export const query = graphql`
           }
           id
           block
+          blockType
           challengeType
           title
           order
           superBlock
           dashedName
+          blockLayout
         }
       }
     }

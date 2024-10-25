@@ -25,8 +25,10 @@ import security from './plugins/security';
 import auth from './plugins/auth';
 import bouncer from './plugins/bouncer';
 import errorHandling from './plugins/error-handling';
-import csrf, { CSRF_COOKIE, CSRF_HEADER } from './plugins/csrf';
+import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
+import shadowCapture from './plugins/shadow-capture';
+
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
 
@@ -35,7 +37,8 @@ import {
   EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FREECODECAMP_NODE_ENV
+  FCC_ENABLE_SHADOW_CAPTURE,
+  FCC_ENABLE_EXAM_ENVIRONMENT
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import {
@@ -103,6 +106,7 @@ export const build = async (
   if (FCC_ENABLE_SWAGGER_UI) {
     void fastify.register(fastifySwagger, {
       openapi: {
+        openapi: '3.1.0',
         info: {
           title: 'freeCodeCamp API',
           version: '1.0.0' // API version
@@ -115,16 +119,20 @@ export const build = async (
         requestInterceptor: req => {
           const csrfTokenCookie = document.cookie
             .split(';')
-            .find(str => str.includes(CSRF_COOKIE));
+            .find(str => str.includes('csrf_token'));
           const [_key, csrfToken] = csrfTokenCookie?.split('=') ?? [];
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          if (csrfToken) req.headers[CSRF_HEADER] = csrfToken.trim();
+          if (csrfToken) req.headers['csrf-token'] = csrfToken.trim();
           return req;
         }
       }
     });
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
+  }
+
+  if (FCC_ENABLE_SHADOW_CAPTURE) {
+    void fastify.register(shadowCapture);
   }
 
   void fastify.register(auth);
@@ -180,8 +188,7 @@ export const build = async (
     }
   });
 
-  // NOTE: Code behind the `FREECODECAMP_NODE_ENV` var is not ready to be deployed yet.
-  if (FREECODECAMP_NODE_ENV !== 'production') {
+  if (FCC_ENABLE_EXAM_ENVIRONMENT) {
     void fastify.register(function (fastify, _opts, done) {
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 

@@ -4,6 +4,7 @@ import { test, expect, Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { alertToBeVisible } from './utils/alerts';
 
 const expectToRenderResetModal = async (page: Page) => {
   await expect(
@@ -21,15 +22,8 @@ const expectToRenderResetModal = async (page: Page) => {
     })
   ).toBeVisible();
 
-  await expect(page.getByText(translations.learn['reset-warn'])).toBeVisible();
   await expect(
     page.getByText(translations.learn['reset-warn-2'])
-  ).toBeVisible();
-
-  await expect(
-    page.getByRole('button', {
-      name: translations.buttons['reset-lesson']
-    })
   ).toBeVisible();
 };
 
@@ -41,6 +35,14 @@ test('should render the modal content correctly', async ({ page }) => {
   await page.getByRole('button', { name: translations.buttons.reset }).click();
 
   await expectToRenderResetModal(page);
+
+  await expect(
+    page.getByRole('button', {
+      name: translations.buttons['reset-lesson']
+    })
+  ).toBeVisible();
+
+  await expect(page.getByText(translations.learn['reset-warn'])).toBeVisible();
 });
 
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {
@@ -190,15 +192,23 @@ test('User can reset on a multi-file project', async ({
   await getEditors(page).fill(sampleText);
   await expect(page.getByText(sampleText)).toBeVisible();
 
-  await page.getByRole('button', { name: translations.buttons.reset }).click();
+  await page.getByRole('button', { name: translations.buttons.revert }).click();
 
   await expectToRenderResetModal(page);
 
+  await expect(
+    page.getByRole('button', {
+      name: translations.buttons['revert-to-saved-code']
+    })
+  ).toBeVisible();
+
   await page
     .getByRole('button', {
-      name: translations.buttons['reset-lesson']
+      name: translations.buttons['revert-to-saved-code']
     })
     .click();
+
+  await expect(page.getByText(translations.learn['revert-warn'])).toBeVisible();
 
   await expect(page.getByText(sampleText)).not.toBeVisible();
 });
@@ -232,6 +242,7 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(savedText);
     await page.keyboard.press('Control+S');
+    await alertToBeVisible(page, translations.flash['code-saved']);
 
     await page.reload();
 
@@ -241,12 +252,12 @@ test.describe('Signed in user', () => {
     await getEditors(page).fill(updatedText);
 
     await page
-      .getByRole('button', { name: translations.buttons.reset })
+      .getByRole('button', { name: translations.buttons.revert })
       .click();
 
     await page
       .getByRole('button', {
-        name: translations.buttons['reset-lesson']
+        name: translations.buttons['revert-to-saved-code']
       })
       .click();
 
@@ -272,6 +283,7 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(savedText);
     await page.keyboard.press('Control+S');
+    await alertToBeVisible(page, translations.flash['code-saved']);
 
     // This second edit should be reset
     await focusEditor({ page, isMobile });
@@ -279,12 +291,12 @@ test.describe('Signed in user', () => {
     await getEditors(page).fill(updatedText);
 
     await page
-      .getByRole('button', { name: translations.buttons.reset })
+      .getByRole('button', { name: translations.buttons.revert })
       .click();
 
     await page
       .getByRole('button', {
-        name: translations.buttons['reset-lesson']
+        name: translations.buttons['revert-to-saved-code']
       })
       .click();
 

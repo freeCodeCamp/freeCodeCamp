@@ -151,11 +151,13 @@ model user {
 /// An exam for the Exam Environment App as designed by the examiners
 model EnvExam {
   /// Globally unique exam id
-  id           String           @id @default(auto()) @map("_id") @db.ObjectId
+  id            String           @id @default(auto()) @map("_id") @db.ObjectId
   /// All questions for a given exam
-  questionSets EnvQuestionSet[]
+  questionSets  EnvQuestionSet[]
   /// Configuration for exam metadata
-  config       EnvConfig
+  config        EnvConfig
+  /// ObjectIds for required challenges/blocks to take the exam
+  prerequisites String[]         @db.ObjectId
 
   // Relations
   generatedExams EnvGeneratedExam[]

@@ -1,6 +1,7 @@
 {
   "name": "Build a Cat Photo App",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,

@@ -24,7 +24,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
     void reply
       .header(
         'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token'
+        'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token, Coderoad-User-Token, Exam-Environment-Authorization-Token'
       )
       .header('Access-Control-Allow-Credentials', true)
       // These 4 are the only methods we use

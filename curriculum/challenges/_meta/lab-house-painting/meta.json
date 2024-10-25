@@ -1,6 +1,7 @@
 {
   "name": "Build a House Painting",
   "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-house-painting",
