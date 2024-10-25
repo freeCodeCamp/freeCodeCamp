@@ -1,11 +1,12 @@
 {
   "name": "HTML Fundamentals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-html-fundamentals",
   "order": 4,
   "superBlock": "front-end-development",
   "helpCategory": "HTML-CSS",
-  "blockType": "lecture",
   "challengeOrder": [
     {
       "id": "670803abcb3e980233da4768",

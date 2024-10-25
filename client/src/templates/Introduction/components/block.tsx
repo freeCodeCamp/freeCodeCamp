@@ -10,10 +10,6 @@ import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import envData from '../../../../config/env.json';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
-import DropDown from '../../../assets/icons/dropdown';
-import GreenNotCompleted from '../../../assets/icons/green-not-completed';
-import GreenPass from '../../../assets/icons/green-pass';
-import { ProgressBar } from '../../../components/Progress/progress-bar';
 import { Link, Spacer } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
@@ -21,8 +17,11 @@ import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
+import CheckMark from './check-mark';
 import Challenges from './challenges';
 import BlockLabel from './block-label';
+import BlockIntros from './block-intros';
+import BlockHeader from './block-header';
 
 import '../intro.css';
 
@@ -57,24 +56,6 @@ interface BlockProps {
   toggleBlock: typeof toggleBlock;
 }
 
-export const BlockIntros = ({ intros }: { intros: string[] }): JSX.Element => {
-  return (
-    <div className='block-description'>
-      {intros.map((title, i) => (
-        <p dangerouslySetInnerHTML={{ __html: title }} key={i} />
-      ))}
-    </div>
-  );
-};
-
-function CheckMark({ isCompleted }: { isCompleted: boolean }): JSX.Element {
-  return isCompleted ? (
-    <GreenPass hushScreenReaderText />
-  ) : (
-    <GreenNotCompleted hushScreenReaderText />
-  );
-}
-
 class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
@@ -83,11 +64,11 @@ class Block extends Component<BlockProps> {
     this.handleBlockClick = this.handleBlockClick.bind(this);
   }
 
-  handleBlockClick(): void {
+  handleBlockClick = (): void => {
     const { block, toggleBlock } = this.props;
     void playTone('block-toggle');
     toggleBlock(block);
-  }
+  };
 
   render(): JSX.Element {
     const {
@@ -142,21 +123,22 @@ class Block extends Component<BlockProps> {
       (completedCount / challengesWithCompleted.length) * 100
     );
 
-    const progressBarRender = (
-      <div aria-hidden='true' className='progress-wrapper'>
-        <div>
-          <ProgressBar now={percentageCompleted} />
-        </div>
-        <span>{`${percentageCompleted}%`}</span>
-      </div>
-    );
+    const courseCompletionStatus = () => {
+      if (completedCount === 0) {
+        return t('learn.not-started');
+      }
+      if (completedCount === challengesWithCompleted.length) {
+        return t('learn.completed');
+      }
+      return `${percentageCompleted}% ${t('learn.completed')}`;
+    };
 
     /**
-     * ChallengeListBlock displays challenges in a list.
+     * LegacyChallengeListBlock displays challenges in a list.
      * This layout is used in backend blocks, The Odin Project blocks, and blocks in legacy certification.
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
      */
-    const ChallengeListBlock = (
+    const LegacyChallengeListBlock = (
       <>
         {' '}
         <ScrollableAnchor id={block}>
@@ -247,16 +229,6 @@ class Block extends Component<BlockProps> {
       </>
     );
 
-    const courseCompletionStatus = () => {
-      if (completedCount === 0) {
-        return t('learn.not-started');
-      }
-      if (completedCount === challengesWithCompleted.length) {
-        return t('learn.completed');
-      }
-      return `${percentageCompleted}% ${t('learn.completed')}`;
-    };
-
     /**
      * ChallengeGridBlock displays challenges in a grid.
      * This layout is used for step-based blocks.
@@ -267,32 +239,17 @@ class Block extends Component<BlockProps> {
         {' '}
         <ScrollableAnchor id={block}>
           <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
-            <h3 className='block-grid-title'>
-              {blockType && <BlockLabel blockType={blockType} />}
-              <button
-                aria-expanded={isExpanded ? 'true' : 'false'}
-                aria-controls={`${block}-panel`}
-                className='block-header'
-                onClick={() => {
-                  this.handleBlockClick();
-                }}
-              >
-                <span className='block-header-button-text map-title'>
-                  <CheckMark isCompleted={isBlockCompleted} />
-                  <span>
-                    {blockTitle}
-                    <span className='sr-only'>
-                      , {courseCompletionStatus()}
-                    </span>
-                  </span>
-                  <DropDown />
-                </span>
-                {!isExpanded &&
-                  !isBlockCompleted &&
-                  completedCount > 0 &&
-                  progressBarRender}
-              </button>
-            </h3>
+            <BlockHeader
+              blockDashed={block}
+              blockTitle={blockTitle}
+              blockType={blockType}
+              completedCount={completedCount}
+              courseCompletionStatus={courseCompletionStatus()}
+              handleClick={this.handleBlockClick}
+              isCompleted={isBlockCompleted}
+              isExpanded={isExpanded}
+              percentageCompleted={percentageCompleted}
+            />
             {!isAudited && (
               <div className='tags-wrapper'>
                 <Link
@@ -320,11 +277,11 @@ class Block extends Component<BlockProps> {
     );
 
     /**
-     * LinkBlock displays the block as a single link.
+     * LegacyLinkBlock displays the block as a single link.
      * This layout is used if the block has a single challenge.
      * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#build-a-survey-form-project
      */
-    const LinkBlock = (
+    const LegacyLinkBlock = (
       <ScrollableAnchor id={block}>
         <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
@@ -366,19 +323,105 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
+    /**
+     * ChallengeListBlock displays challenges in a list.
+     * Created for the new Full Stack Developer Certification,
+     * so we can play with it without affecting the existing block layouts.
+     */
+    const ChallengeListBlock = (
+      <ScrollableAnchor id={block}>
+        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+          <BlockHeader
+            blockDashed={block}
+            blockTitle={blockTitle}
+            blockType={blockType}
+            completedCount={completedCount}
+            courseCompletionStatus={courseCompletionStatus()}
+            handleClick={this.handleBlockClick}
+            isCompleted={isBlockCompleted}
+            isExpanded={isExpanded}
+            percentageCompleted={percentageCompleted}
+          />
+          {!isAudited && (
+            <div className='tags-wrapper'>
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}
+              </Link>
+            </div>
+          )}
+          {isExpanded && (
+            <div id={`${block}-panel`}>
+              <BlockIntros intros={blockIntroArr} />
+              <Challenges
+                challengesWithCompleted={challengesWithCompleted}
+                isProjectBlock={isProjectBlock}
+              />
+            </div>
+          )}
+        </div>
+      </ScrollableAnchor>
+    );
+
+    /**
+     * LinkBlock displays the block as a single link.
+     * This layout is used if the block has a single challenge.
+     * Created for the new Full Stack Developer Certification,
+     * so we can play with it without affecting the existing block layouts.
+     */
+    const LinkBlock = (
+      <ScrollableAnchor id={block}>
+        <div className='block block-grid grid-project-block grid-project-block-no-margin'>
+          <div className='tags-wrapper'>
+            {!isAudited && (
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}{' '}
+              </Link>
+            )}
+          </div>
+          <div className='title-wrapper map-title'>
+            <h3 className='block-grid-title'>
+              <Link
+                className='block-header'
+                onClick={() => {
+                  this.handleBlockClick();
+                }}
+                to={challengesWithCompleted[0].fields.slug}
+              >
+                <CheckMark isCompleted={isBlockCompleted} />
+                {blockType && <BlockLabel blockType={blockType} />}
+                {blockTitle}
+              </Link>
+            </h3>
+          </div>
+          <BlockIntros intros={blockIntroArr} />
+        </div>
+      </ScrollableAnchor>
+    );
+
     const blockRenderer = () => {
       const blockLayout = challenges[0].blockLayout;
 
       // `blockLayout` property isn't available in all challenges
       if (!blockLayout) {
-        if (isProjectBlock) return isGridBlock ? LinkBlock : ProjectListBlock;
-        return isGridBlock ? ChallengeGridBlock : ChallengeListBlock;
+        if (isProjectBlock)
+          return isGridBlock ? LegacyLinkBlock : ProjectListBlock;
+        return isGridBlock ? ChallengeGridBlock : LegacyChallengeListBlock;
       }
 
+      // blockLayout is only being used in new certs at the moment, so I made some new components for them for now to not interfere with the existing ones
       if (blockLayout === BlockLayouts.ChallengeGrid) return ChallengeGridBlock;
       if (blockLayout === BlockLayouts.ChallengeList) return ChallengeListBlock;
       if (blockLayout === BlockLayouts.Link) return LinkBlock;
       if (blockLayout === BlockLayouts.ProjectList) return ProjectListBlock;
+      if (blockLayout === BlockLayouts.LegacyLink) return LegacyLinkBlock;
+      if (blockLayout === BlockLayouts.LegacyChallengeList)
+        return LegacyChallengeListBlock;
     };
 
     return (

@@ -1,6 +1,7 @@
 {
   "name": "HTML Tables and Forms Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-html-tables-and-forms",
   "order": 24,
