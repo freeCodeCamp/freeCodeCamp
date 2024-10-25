@@ -1,6 +1,7 @@
 {
   "name": "Build an Inventory Management Program",
   "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-inventory-management-program",

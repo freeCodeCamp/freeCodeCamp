@@ -69,7 +69,7 @@ test('Checks hotkeys when instruction is focused', async ({
   const description = page.locator('#description');
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
 
   await description.click();
@@ -100,7 +100,7 @@ test('Focuses on the submit button after tests passed', async ({
   await clearEditor({ page, browserName });
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
   await checkButton.click();
 
@@ -126,7 +126,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
   await clearEditor({ page, browserName });
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
 
   await checkButton.click();
@@ -190,7 +190,7 @@ test('should display the text of submit and go to next challenge button accordin
   await clearEditor({ page, browserName });
 
   await editor.fill(
-    '<h2>Cat Photos</h2>\n<p>See more cat photos in our gallery.</p>'
+    '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
   );
 
   await checkButton.click();

@@ -7,6 +7,7 @@
     "first-lesson": "Go to the first lesson",
     "close": "Close",
     "edit": "Edit",
+    "copy": "Copy",
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
@@ -112,7 +113,7 @@
     "big-heading-3": "Earn certifications.",
     "big-heading-4": "All for free.",
     "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
-    "h2-heading-b": "More than 100,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
     "hero-img-description": "freeCodeCamp students at a local study group in South Korea.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -134,6 +135,28 @@
         "occupation": "Software Engineer at <strong>Spotify</strong>",
         "testimony": "\"I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify.\""
       }
+    },
+    "benefits": {
+      "heading": "Why learn with freeCodeCamp:",
+      "list": [
+        {
+          "title": "Large Community",
+          "description": "Join our vibrant  learning community of students, alumni, and educators."
+        },
+        {
+          "title": "Free Education",
+          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+        },
+        {
+          "title": "Extensive Certifications",
+          "description": "Earn industry-recognized, verifiable certifications in high-demand technologies."
+        },
+        {
+          "title": "Comprehensive Curriculum",
+          "description": "Enhance your technical skills with our linear, world-class, project-based curriculum."
+        }
+      ],
+      "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Earn free verified certifications in:",
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
@@ -390,6 +413,7 @@
     "assignment-not-complete": "Please complete the assignments",
     "assignments": "Assignments",
     "question": "Question",
+    "questions": "Questions",
     "explanation": "Explanation",
     "solution-link": "Solution Link",
     "source-code-link": "Source Code Link",
@@ -491,8 +515,8 @@
     "fill-in-the-blank": "Fill in the blank",
     "blank": "blank",
     "quiz": {
-      "correct-answer": "Correct",
-      "incorrect-answer": "Incorrect",
+      "correct-answer": "Correct!",
+      "incorrect-answer": "Incorrect.",
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
     },
@@ -534,7 +558,7 @@
       "transcript-label": "Your Microsoft Transcript Link",
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     },
-    "blockType": {
+    "block-type": {
       "lecture": "Lecture",
       "workshop": "Workshop",
       "lab": "Lab",
@@ -1086,6 +1110,16 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "exam-token": {
+    "exam-token": "Exam Token",
+    "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "generate-exam-token": "Generate Exam Token",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

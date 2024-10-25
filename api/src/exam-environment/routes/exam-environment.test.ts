@@ -24,12 +24,14 @@ describe('/exam-environment/', () => {
   setupServer();
   describe('Authenticated user with exam environment authorization token', () => {
     let superPost: ReturnType<typeof createSuperRequest>;
+    let superGet: ReturnType<typeof createSuperRequest>;
     let examEnvironmentAuthorizationToken: string;
 
     // Authenticate user
     beforeAll(async () => {
       const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
+      superGet = createSuperRequest({ method: 'GET', setCookies });
       await mock.seedEnvExam();
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
@@ -238,6 +240,15 @@ describe('/exam-environment/', () => {
     describe('POST /exam-environment/generated-exam', () => {
       afterEach(async () => {
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
+        // Add prerequisite id to user completed challenge
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            completedChallenges: [
+              { id: mock.exam.prerequisites.at(0)!, completedDate: Date.now() }
+            ]
+          }
+        });
         await mock.seedEnvExam();
       });
 
@@ -260,8 +271,30 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(404);
       });
 
-      xit('should return an error if the exam prerequisites are not met', async () => {
-        // TODO: Waiting on prerequisites
+      it('should return an error if the exam prerequisites are not met', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            completedChallenges: []
+          }
+        });
+
+        const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
+          examId: mock.exam.id
+        };
+        const res = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.body).toStrictEqual({
+          code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(res.status).toBe(403);
       });
 
       it('should return an error if the exam has been attempted in the last 24 hours', async () => {
@@ -532,15 +565,43 @@ describe('/exam-environment/', () => {
     });
 
     xdescribe('POST /exam-environment/screenshot', () => {});
+
+    describe('GET /exam-environment/exams', () => {
+      it('should return 200', async () => {
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+        expect(res.status).toBe(200);
+
+        expect(res.body).toStrictEqual({
+          data: {
+            exams: [
+              {
+                canTake: true,
+                config: {
+                  name: mock.exam.config.name,
+                  note: mock.exam.config.note,
+                  totalTimeInMS: mock.exam.config.totalTimeInMS
+                },
+                id: mock.examId
+              }
+            ]
+          }
+        });
+      });
+    });
   });
 
   describe('Authenticated user without exam environment authorization token', () => {
     let superPost: ReturnType<typeof createSuperRequest>;
+    let superGet: ReturnType<typeof createSuperRequest>;
 
     // Authenticate user
     beforeAll(async () => {
       const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
+      superGet = createSuperRequest({ method: 'GET', setCookies });
       await mock.seedEnvExam();
     });
     describe('POST /exam-environment/exam/attempt', () => {
@@ -596,6 +657,17 @@ describe('/exam-environment/', () => {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }
         });
+      });
+    });
+
+    describe('GET /exam-environment/exams', () => {
+      it('should return 403', async () => {
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          'invalid-token'
+        );
+
+        expect(res.status).toBe(403);
       });
     });
   });

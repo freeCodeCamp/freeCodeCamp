@@ -338,7 +338,8 @@ export const examAttemptSansSubmissionTimeInMS: Static<
 export const exam: EnvExam = {
   id: examId,
   config,
-  questionSets
+  questionSets,
+  prerequisites: ['67112fe1c994faa2c26d0b1d']
 };
 
 export async function seedEnvExam() {
