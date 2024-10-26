@@ -1711,7 +1711,7 @@
       "lab-recipe-page": {
         "title": "Build a Recipe Page",
         "intro": [
-          "For this lab, you will create a web page of your favorite recipe."
+          "For this lab, you will review HTML basics by creating a web page of your favorite recipe. This lab will give you an opportunity to review working with an HTML boilerplate, headings, lists and images."
         ]
       },
       "lecture-html-fundamentals": {
