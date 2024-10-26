@@ -6,6 +6,10 @@
 .certification-namespace h1 {
   margin: 15px 0;
 }
+.certification-namespace h2 {
+  margin: 15px 0;
+}
+
 
 .certificate-wrapper {
   --outline-width: 11px;
