@@ -1788,7 +1788,8 @@
       "lab-book-catalog-table": {
         "title": "Build a Book Catalog Table",
         "intro": [
-          "In this lab, you will create table filled with book information."
+          "In this lab, you will review working with HTML tables by building a table filled with book information.",
+          "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
         ]
       },
       "rsve": { "title": "22", "intro": [] },
