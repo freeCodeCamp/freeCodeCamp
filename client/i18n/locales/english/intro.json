@@ -1721,7 +1721,7 @@
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "For this lab, you will create a web page of a travel agency."
+          "For this lab, you will review working with HTML fundamentals by creating a web page for a travel agency. This lab will give you an opportunity to review working with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element and more."
         ]
       },
       "lecture-working-with-media": {
