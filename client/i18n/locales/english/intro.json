@@ -1738,7 +1738,9 @@
       },
       "review-basic-html": {
         "title": "Basic HTML Review",
-        "intro": ["Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."]
+        "intro": [
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."
+        ]
       },
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
