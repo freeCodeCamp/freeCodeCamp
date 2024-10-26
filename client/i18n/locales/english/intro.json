@@ -1778,7 +1778,10 @@
       },
       "lab-survey-form": {
         "title": "Build a Survey Form",
-        "intro": ["For this lab, you will create a survey form."]
+        "intro": [
+          "For this lab, you will review working with HTML forms by creating a survey form.",
+          "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
       },
       "wgot": { "title": "19", "intro": [] },
       "workshop-final-exams-table": {
