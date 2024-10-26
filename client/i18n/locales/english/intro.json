@@ -1731,7 +1731,9 @@
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
         "intro": [
-          "For this lab, you will create a video compilation web page. This lab will give you the opportunity to practice working with the <code>iframe</code> element."
+          "For this lab, you will create a video compilation web page. This lab will give you the opportunity to practice working with the <code>iframe</code> element."]
+        "intro": [
+          "In these lecture videos, you will learn about the different <code>target</code> attribute values, absolute and relative links and the different links states."
         ]
       },
       "lecture-working-with-links": {
