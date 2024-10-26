@@ -1743,7 +1743,7 @@
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
-          "Test what you've learned in this quiz of basic HTML knowledge."
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
         ]
       },
       "evdc": { "title": "11", "intro": [] },
