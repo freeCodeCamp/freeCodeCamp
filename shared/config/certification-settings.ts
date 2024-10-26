@@ -168,4 +168,80 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.UpcomingPython]: certTypes.upcomingPythonV8
 };
 
-// Rest of the file remains unchanged...
+export const certTypeIdMap = {
+  [certTypes.frontEnd]: certIds.legacyFrontEndChallengeId,
+  [certTypes.backEnd]: certIds.legacyBackEndChallengeId,
+  [certTypes.dataVis]: certIds.legacyDataVisId,
+  [certTypes.infosecQa]: certIds.legacyInfosecQaId,
+  [certTypes.fullStack]: certIds.legacyFullStackId,
+  [certTypes.respWebDesign]: certIds.respWebDesignId,
+  [certTypes.frontEndDevLibs]: certIds.frontEndDevLibsId,
+  [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
+  [certTypes.dataVis2018]: certIds.dataVis2018Id,
+  [certTypes.apisMicroservices]: certIds.apisMicroservicesId,
+  [certTypes.qaV7]: certIds.qaV7Id,
+  [certTypes.infosecV7]: certIds.infosecV7Id,
+  [certTypes.sciCompPyV7]: certIds.sciCompPyV7Id,
+  [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
+  [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
+  [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
+  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
+  [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
+  [certTypes.upcomingPythonV8]: certIds.upcomingPythonV8Id,
+  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id
+};
+
+export const certTypeTitleMap = {
+  [certTypes.frontEnd]: 'Legacy Front End',
+  [certTypes.backEnd]: 'Legacy Back End',
+  [certTypes.dataVis]: 'Legacy Data Visualization',
+  [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
+  [certTypes.fullStack]: 'Legacy Full Stack',
+  [certTypes.respWebDesign]: 'Responsive Web Design',
+  [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
+  [certTypes.jsAlgoDataStruct]:
+    'Legacy JavaScript Algorithms and Data Structures',
+  [certTypes.dataVis2018]: 'Data Visualization',
+  [certTypes.apisMicroservices]: 'Back End Development and APIs',
+  [certTypes.qaV7]: 'Quality Assurance',
+  [certTypes.infosecV7]: 'Information Security',
+  [certTypes.sciCompPyV7]: 'Scientific Computing with Python',
+  [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
+  [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
+  [certTypes.relationalDatabaseV8]: 'Relational Database',
+  [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
+  [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
+  [certTypes.upcomingPythonV8]: 'Upcoming Python',
+  [certTypes.jsAlgoDataStructV8]:
+    'JavaScript Algorithms and Data Structures (Beta)'
+};
+
+export type CertSlug = (typeof Certification)[keyof typeof Certification];
+
+export const linkedInCredentialIds = {
+  [Certification.LegacyFrontEnd]: 'lfe',
+  [Certification.LegacyBackEnd]: 'lbe',
+  [Certification.LegacyDataVis]: 'ldv',
+  [Certification.LegacyInfoSecQa]: 'lisaqa',
+  [Certification.LegacyFullStack]: 'lfs',
+  [Certification.RespWebDesign]: 'rwd',
+  [Certification.FrontEndDevLibs]: 'fedl',
+  [Certification.JsAlgoDataStruct]: 'ljaads',
+  [Certification.DataVis]: 'dv',
+  [Certification.BackEndDevApis]: 'bedaa',
+  [Certification.QualityAssurance]: 'qa',
+  [Certification.InfoSec]: 'is',
+  [Certification.SciCompPy]: 'scwp',
+  [Certification.DataAnalysisPy]: 'dawp',
+  [Certification.MachineLearningPy]: 'mlwp',
+  [Certification.RelationalDb]: 'rd',
+  [Certification.CollegeAlgebraPy]: 'cawp',
+  [Certification.FoundationalCSharp]: 'fcswm',
+  [Certification.FrontEndDevelopment]: 'fed',
+  [Certification.UpcomingPython]: 'up',
+  [Certification.JsAlgoDataStructNew]: 'jaads',
+  [Certification.A2English]: 'a2efd',
+  [Certification.B1English]: 'b1efd'
+};
+
+export const oldDataVizId = '561add10cb82ac38a17513b3';
