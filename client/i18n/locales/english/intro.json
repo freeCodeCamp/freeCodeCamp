@@ -1758,7 +1758,8 @@
       "lab-event-hub": {
         "title": "Build an Event Hub",
         "intro": [
-          "In this lab, you will review working with semantic HTML elements by building an event hub.”, “This lab will give you an opportunity to review working with the <code>header</code>, <code>nav</code>, <code>article</code> elements."
+          "In this lab, you will review working with semantic HTML elements by building an event hub.",
+          "This lab will give you an opportunity to review working with the <code>header</code>, <code>nav</code>, <code>article</code> elements."
         ]
       },
       "ijdq": { "title": "14", "intro": [] },
