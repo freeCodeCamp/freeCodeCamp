@@ -1699,7 +1699,8 @@
       "efpl": { "title": "0", "intro": [] },
       "lecture-what-is-html": {
         "title": "What is HTML?",
-        "intro": ["Learn what HTML is in these lecture videos."]
+        "intro": [""In this lecture video, you will be introduced to HTML(HyperText Markup Language) which is a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are.""]
       },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
