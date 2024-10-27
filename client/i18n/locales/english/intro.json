@@ -1736,7 +1736,9 @@
       },
       "lecture-working-with-links": {
         "title": "Working with Links",
-        "intro": ["Learn about using links in HTML with these lecture videos."]
+        "intro": [
+          "In these lecture videos, you will learn about the different <code>target</code> attribute values, absolute and relative links and the different links states."
+        ]
       },
       "review-basic-html": {
         "title": "Basic HTML Review",
