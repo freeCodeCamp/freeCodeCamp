@@ -1726,7 +1726,9 @@
       },
       "lecture-working-with-media": {
         "title": "Working with Media",
-        "intro": ["Learn about using media in HTML with these lecture videos."]
+        "intro": [
+          "In these lecture videos, you will learn how to work with the <code>audio</code> and <code>video</code> elements as well as with SVG's and more."
+        ]
       },
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
