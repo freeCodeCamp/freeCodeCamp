@@ -13,6 +13,5 @@ RUN bash -c '\
     && nvm alias default $VERSION \
     && npm i -g pnpm@9 \
     && echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix \
-    && PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 pnpm dlx playwright@1.47.1 install \
     && pnpm dlx playwright@1.47.1 install --with-deps chromium \
     && rm -rf ~/.npm ~/.pnpm-store'
