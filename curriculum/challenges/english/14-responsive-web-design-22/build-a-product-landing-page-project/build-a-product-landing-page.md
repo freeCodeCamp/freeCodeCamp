@@ -23,7 +23,7 @@ dashedName: build-a-product-landing-page
 1. The `#email` input field should have placeholder text to let users know what the field is for
 1. The `#email` input field uses HTML5 validation to confirm that the entered text is an email address
 1. Within the form, there is a submit `input` with a corresponding `id="submit"`
-1. When you click the `#submit` element, the email is submitted to a static page (use this mock URL: `https://www.freecodecamp.com/email-submit`)
+1. When you click the `#submit` element, the email is submitted to a static page (use this mock URL: `https://www.freecodecamp.org/email-submit`)
 1. The navbar should always be at the top of the viewport
 1. Your product landing page should have at least one media query
 1. Your product landing page should utilize CSS flexbox at least once
@@ -189,11 +189,11 @@ const el = document.getElementById('submit')
 assert(!!el && el.type === 'submit')
 ```
 
-Your `#form` should have an `action` attribute of `https://www.freecodecamp.com/email-submit`.
+Your `#form` should have an `action` attribute of `https://www.freecodecamp.org/email-submit`.
 
 ```js
 const el = document.getElementById('form')
-assert(!!el && el.action === 'https://www.freecodecamp.com/email-submit')
+assert(!!el && el.action === 'https://www.freecodecamp.org/email-submit')
 ```
 
 Your `#email` should have a `name` attribute of `email`.
