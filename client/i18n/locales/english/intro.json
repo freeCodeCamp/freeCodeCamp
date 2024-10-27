@@ -1721,8 +1721,8 @@
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "For this lab, you will review working with HTML fundamentals by creating a web page for a travel agency. This lab will give you an opportunity to review working with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element and more."
-        ]
+          "In these lecture videos, you will learn about HTML fundamentals like working with the <code>id</code> attribute, the <code>class</code> attribute, the <code>div</code> element, the <code>span</code> element, HTML entities, and more."
+       ]
       },
       "lecture-working-with-media": {
         "title": "Working with Media",
