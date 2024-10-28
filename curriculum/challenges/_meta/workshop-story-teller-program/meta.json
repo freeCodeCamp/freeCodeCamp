@@ -1,0 +1,13 @@
+{
+  "name": "Build a Storyteller App",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "dashedName": "workshop-story-teller-program",
+  "order": 188,
+  "superBlock": "front-end-development",
+  "challengeOrder": [{ "id": "671f99a5dc221afb86fa2dc0", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
