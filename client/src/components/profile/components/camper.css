@@ -7,6 +7,8 @@
 
 .avatar-camper {
   display: flex;
+  position: absolute;
+  top: -165px;
 }
 
 .header {

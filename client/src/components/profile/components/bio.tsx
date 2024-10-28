@@ -34,50 +34,53 @@ const Bio = ({
 
   return (
     <FullWidthRow>
-      <div className='avatar-camper'>
-        <AvatarRenderer
-          isDonating={isDonating}
-          isTopContributor={isTopContributor}
-          picture={picture}
+      <Spacer size={'exLarge'} />
+      <section className='card card-header'>
+        <div className='avatar-camper'>
+          <AvatarRenderer
+            isDonating={isDonating}
+            isTopContributor={isTopContributor}
+            picture={picture}
+          />
+        </div>
+        <div className='profile-edit-container'>
+          <h1>@{username}</h1>
+          {isSessionUser && (
+            <Button
+              onClick={() => setIsEditing(true)}
+              size='small'
+              className='button-fit'
+              aria-label={t('aria.edit-my-profile')}
+            >
+              <FontAwesomeIcon icon={faPen} />
+            </Button>
+          )}
+        </div>
+        {name && <h2>{name}</h2>}
+        <Spacer size={'small'} />
+        {about && <p>{about}</p>}
+        <div className='profile-meta-container'>
+          {joinDate && (
+            <div>
+              <FontAwesomeIcon icon={faCalendar} />
+              <span>{parseDate(joinDate, t)}</span>
+            </div>
+          )}
+          {location && (
+            <div>
+              <FontAwesomeIcon icon={faLocationDot} />
+              <span>{t('profile.from', { location })}</span>
+            </div>
+          )}
+        </div>
+        <SocialIcons
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          username={username}
+          website={website}
         />
-      </div>
-      <div className='profile-edit-container'>
-        <h1>@{username}</h1>
-        {isSessionUser && (
-          <Button
-            onClick={() => setIsEditing(true)}
-            size='small'
-            className='button-fit'
-            aria-label={t('aria.edit-my-profile')}
-          >
-            <FontAwesomeIcon icon={faPen} />
-          </Button>
-        )}
-      </div>
-      {name && <h2>{name}</h2>}
-      <Spacer size={'small'} />
-      {about && <p>{about}</p>}
-      <div className='profile-meta-container'>
-        {joinDate && (
-          <div>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span>{parseDate(joinDate, t)}</span>
-          </div>
-        )}
-        {location && (
-          <div>
-            <FontAwesomeIcon icon={faLocationDot} />
-            <span>{t('profile.from', { location })}</span>
-          </div>
-        )}
-      </div>
-      <SocialIcons
-        githubProfile={githubProfile}
-        linkedin={linkedin}
-        twitter={twitter}
-        username={username}
-        website={website}
-      />
+      </section>
       <hr />
     </FullWidthRow>
   );

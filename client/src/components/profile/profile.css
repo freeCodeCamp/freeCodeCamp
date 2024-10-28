@@ -11,3 +11,7 @@
   background: var(--gray00);
   border: 1px solid var(--gray15);
 }
+
+.card-header {
+  position: relative;
+}
