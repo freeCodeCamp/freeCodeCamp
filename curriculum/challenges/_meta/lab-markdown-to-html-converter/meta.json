@@ -3,6 +3,7 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "blockType": "lab",
+  "blockLayout": "link",
   "dashedName": "lab-markdown-to-html-converter",
   "order": 209,
   "superBlock": "front-end-development",
