@@ -290,6 +290,10 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.blockLayout = meta.blockLayout;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
     challenge.order = meta.order;
+
+    if (!challenge.description) challenge.description = '';
+    if (!challenge.instructions) challenge.instructions = '';
+
     // const superOrder = getSuperOrder(meta.superBlock);
     // NOTE: Use this version when a super block is in beta.
     const superOrder = getSuperOrder(meta.superBlock, {
