@@ -177,6 +177,7 @@ figcaption.caption {
 .landing-top,
 .as-seen-in,
 .certification-section,
+.benefits,
 .testimonials {
   padding: 4vw 15px;
 }
@@ -218,23 +219,25 @@ figcaption.caption {
 
 /* AB testing styles */
 .landing-page-b .mega-heading {
-  font-size: 2rem;
-  margin: 0px 0px 1rem;
+  font-size: 2.5rem;
+  margin: 0px 0px 2rem;
   font-weight: 700;
-  line-height: 3rem;
+  line-height: 2rem;
+}
+
+.landing-page-b .landing-top .btn-cta-big {
+  max-width: fit-content;
+  padding: 12px 20px;
 }
 
 @media (min-width: 500px) {
   .landing-page-b .mega-heading {
     font-size: 3rem;
+    line-height: 2.5rem;
   }
-}
-
-.landing-page-b .landing-top .btn-cta-big {
-  margin: 0px;
-  min-width: 300px;
-  max-width: fit-content;
-  padding: 12px;
+  .landing-page-b .landing-top .btn-cta-big {
+    padding: 12px 40px;
+  }
 }
 
 .landing-page-b .logo-row-title {
@@ -256,4 +259,41 @@ figure.ui-images {
 figure.ui-images img {
   width: 100%;
   height: auto;
+}
+
+.landing-benefits {
+  display: grid;
+  grid-template-columns: 1fr; /* Default: 1 column */
+  gap: 30px; /* Adjust the space between the grid items */
+}
+
+/* When the screen is larger than 700px */
+@media screen and (min-width: 700px) {
+  .landing-benefits {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+  }
+}
+
+.landing-top figure,
+.landing-top figure img {
+  margin-top: 50px;
+  height: 442px;
+  width: 750px;
+}
+
+.landing-benefits svg path {
+  fill: var(--gray-15);
+}
+
+.benefits-container {
+  background: var(--gray-75);
+}
+
+.benefits-container h2,
+.benefits-container h3 {
+  color: var(--gray-10);
+}
+
+.benefits-container p {
+  color: var(--gray-15);
 }

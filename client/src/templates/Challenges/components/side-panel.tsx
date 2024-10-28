@@ -8,6 +8,7 @@ import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { initializeMathJax } from '../../../utils/math-jax';
 import { challengeTestsSelector } from '../redux/selectors';
 import { openModal } from '../redux/actions';
+import { Spacer } from '../../../components/helpers';
 import TestSuite from './test-suite';
 
 import './side-panel.css';
@@ -83,6 +84,7 @@ export function SidePanel({
         </p>
       )}
       {challengeDescription}
+      <Spacer size='medium' />
       {toolPanel}
       <TestSuite tests={tests} />
     </div>
