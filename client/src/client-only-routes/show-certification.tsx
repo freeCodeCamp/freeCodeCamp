@@ -235,11 +235,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const certMonth = certDate.getMonth();
   const certURL = `https://freecodecamp.org${pathname}`;
 
-  const currentTheme =
-    localStorage.getItem('theme') == Themes.Night
-      ? Themes.Night
-      : Themes.Default;
-
   const donationCloseBtn = (
     <div>
       <Button
@@ -278,7 +273,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           data-playwright-test-label='donation-form'
         >
           <MultiTierDonationForm
-            defaultTheme={currentTheme}
+            defaultTheme={Themes.Default}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
             paymentContext={PaymentContext.Certificate}
