@@ -1,5 +1,6 @@
 {
   "name": "Basic HTML Review",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-basic-html",
   "order": 9,

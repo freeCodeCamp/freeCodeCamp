@@ -1,6 +1,7 @@
 {
   "name": "Working with Links",
   "blockType": "lecture",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-links",
   "order": 8,

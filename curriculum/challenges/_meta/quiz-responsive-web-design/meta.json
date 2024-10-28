@@ -1,6 +1,7 @@
 {
   "name": "Responsive Web Design Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-responsive-web-design",
   "order": 107,

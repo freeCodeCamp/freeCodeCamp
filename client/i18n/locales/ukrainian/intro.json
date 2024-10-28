@@ -1697,7 +1697,10 @@
       },
       "lecture-what-is-html": {
         "title": "Що таке HTML?",
-        "intro": ["Дізнайтесь про HTML у цих відеолекціях."]
+        "intro": [
+          "In this lecture video, you will be introduced to HTML (HyperText Markup Language) which is a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+        ]
       },
       "workshop-cat-photo-app": {
         "title": "Створіть застосунок із фото котів",
@@ -1709,38 +1712,50 @@
       "lab-recipe-page": {
         "title": "Створіть сторінку з рецептом",
         "intro": [
-          "У цій лабораторній роботі ви створите вебсторінку з улюбленим рецептом."
+          "For this lab, you will review HTML basics by creating a web page of your favorite recipe. This lab will give you an opportunity to review working with an HTML boilerplate, headings, lists and images."
         ]
       },
       "lecture-html-fundamentals": {
-        "title": "HTML Fundamentals",
-        "intro": ["Learn about HTML fundamentals in these lecture videos."]
+        "title": "Основи HTML",
+        "intro": [
+          "In these lecture videos, you will learn about HTML fundamentals like the <code>id</code> and <code>class</code> attributes, as well as the <code>div</code> and <code>span</code> elements, HTML entities, and more."
+        ]
       },
       "lab-travel-agency-page": {
         "title": "Створіть сторінку туристичної агенції",
         "intro": [
-          "У цій лабораторній роботі ви створите вебсторінку туристичної агенції."
+          "For this lab, you will review working with HTML fundamentals by creating a web page for a travel agency. This lab will give you an opportunity to review working with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element and more."
         ]
       },
-      "vipr": {
-        "title": "6",
-        "intro": []
+      "lecture-working-with-media": {
+        "title": "Робота з медіа",
+        "intro": [
+          "In these lecture videos, you will learn how to work with the <code>audio</code> and <code>video</code> elements as well as with SVG's and more."
+        ]
       },
       "lab-video-compilation-page": {
         "title": "Створіть сторінку із відео",
-        "intro": ["У цій лабораторній роботі ви створите вебсторінку із відео."]
+        "intro": [
+          "For this lab, you will create a video compilation web page. This lab will give you the opportunity to practice working with the <code>iframe</code> element."
+        ]
       },
-      "bzfv": {
-        "title": "8",
-        "intro": []
+      "lecture-working-with-links": {
+        "title": "Робота з посиланнями",
+        "intro": [
+          "In these lecture videos, you will learn about the different <code>target</code> attribute values, absolute and relative links and the different links states."
+        ]
       },
       "review-basic-html": {
         "title": "Повторення основ HTML",
-        "intro": ["Пригадайте основні теми з HTML."]
+        "intro": [
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."
+        ]
       },
       "quiz-basic-html": {
         "title": "Тест «Основи HTML»",
-        "intro": ["Перевірте, що ви дізнались з основ HTML."]
+        "intro": [
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
+        ]
       },
       "evdc": {
         "title": "11",
@@ -1755,7 +1770,8 @@
       "lab-event-hub": {
         "title": "Створіть хаб для подій",
         "intro": [
-          "У цій лабораторній роботі ви створите хаб для подій за допомогою семантичного HTML."
+          "In this lab, you will review working with semantic HTML elements by building an event hub.",
+          "This lab will give you an opportunity to review working with the <code>header</code>, <code>nav</code>, <code>article</code> elements."
         ]
       },
       "ijdq": {
@@ -1764,7 +1780,9 @@
       },
       "quiz-semantic-html": {
         "title": "Тест «Семантичний HTML»",
-        "intro": ["Перевірте, що ви дізнались про семантичний HTML."]
+        "intro": [
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
+        ]
       },
       "cfgp": {
         "title": "16",
@@ -1779,7 +1797,10 @@
       },
       "lab-survey-form": {
         "title": "Створіть форму для опитування",
-        "intro": ["У цій лабораторній роботі ви створите форму для опитування."]
+        "intro": [
+          "For this lab, you will review working with HTML forms by creating a survey form.",
+          "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
       },
       "wgot": {
         "title": "19",
@@ -1794,7 +1815,8 @@
       "lab-book-catalog-table": {
         "title": "Створіть каталог книг",
         "intro": [
-          "У цій лабораторній роботі ви створите таблицю з інформацією про книги."
+          "In this lab, you will review working with HTML tables by building a table filled with book information.",
+          "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
         ]
       },
       "rsve": {
@@ -1807,7 +1829,9 @@
       },
       "quiz-html-tables-and-forms": {
         "title": "Тест «Таблиці та форми в HTML»",
-        "intro": ["Перевірте, що ви дізнались про таблиці та форми в CSS."]
+        "intro": [
+          "The following quiz will test your knowledge of HTML tables and forms."
+        ]
       },
       "ghoc": {
         "title": "25",
@@ -1996,9 +2020,12 @@
         "title": "Тест «Кольори в CSS»",
         "intro": ["Перевірте, що ви дізнались про використання кольорів у CSS."]
       },
-      "jnqt": {
-        "title": "68",
-        "intro": []
+      "workshop-registration-form": {
+        "title": "Створіть реєстраційну форму",
+        "intro": [
+          "Форми HTML можна використовувати для збору інформації від людей, які відвідують вебсторінку.",
+          "У цьому практичному завданні ви навчитесь працювати з формами HTML, створивши сторінку реєстрації. Ви дізнаєтесь, як керувати типами даних, що можна ввести у формі, й деякі нові інструменти CSS для стилізації сторінки."
+        ]
       },
       "vkei": {
         "title": "69",
@@ -2021,10 +2048,10 @@
         ]
       },
       "workshop-rothko-painting": {
-        "title": "Design a Rothko Painting",
+        "title": "Створіть картину Ротко",
         "intro": [
-          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
-          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+          "Кожен елемент HTML є власним блоком із власним простором та кордоном. Це називається блоковою моделлю.",
+          "У цьому практичному завданні ви будете використовувати CSS та блокову модель, щоб створити власну картину в стилі Ротко."
         ]
       },
       "wozq": {
@@ -2048,10 +2075,10 @@
         ]
       },
       "workshop-flexbox-photo-gallery": {
-        "title": "Build a Flexbox Photo Gallery",
+        "title": "Створіть фотогалерею із Flexbox",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
-          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+          "Flexbox допомагає створити вебсторінку, яка матиме хороший вигляд на екрані будь-якого розміру.",
+          "У цьому практичному завданні ви будете використовувати Flexbox, щоб створити адаптивну вебсторінку із фотогалереєю."
         ]
       },
       "uptf": {
@@ -2073,10 +2100,10 @@
         "intro": ["Перевірте, що ви дізнались про гнучкий блок у CSS."]
       },
       "workshop-nutritional-label": {
-        "title": "Build a Nutritional Label",
+        "title": "Створіть харчову етикетку",
         "intro": [
-          "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
+          "Типографія — це мистецтво стилізації тексту, щоб його було легко читати та він відповідав своєму призначенню.",
+          "У цьому практичному завданні ви будете використовувати типографію, щоб створити вебсторінку з харчовою етикеткою. Ви дізнаєтеся, як стилізувати текст, регулювати висоту рядка та позиціювати текст за допомогою CSS."
         ]
       },
       "ujcf": {
@@ -2122,10 +2149,10 @@
         ]
       },
       "workshop-balance-sheet": {
-        "title": "Build a Balance Sheet",
+        "title": "Створіть бухгалтерський баланс",
         "intro": [
-          "You can use CSS pseudo selectors to change specific HTML elements.",
-          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "Псевдоселектори CSS можна використовувати, щоб змінити певні елементи HTML.",
+          "У цьому практичному завданні ви побудуєте бухгалтерський баланс за допомогою псевдоселекторів. Ви дізнаєтеся, як змінити стиль елемента, коли ви наводите на нього курсор, та запускати інші події на вебсторінці."
         ]
       },
       "hcje": {
@@ -2169,10 +2196,10 @@
         "intro": ["Перевірте, що ви дізнались про позиціювання в CSS."]
       },
       "workshop-piano": {
-        "title": "Design a Piano",
+        "title": "Розробіть піаніно",
         "intro": [
-          "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "Адаптивний дизайн повідомляє вебсторінці, як вона має виглядати на екранах різного розміру.",
+          "У цьому практичному завданні ви використовуватимете CSS та адаптивний дизайн, щоб створити піаніно. До того ж, ви більше дізнаєтесь про медіазапити та псевдоселектори."
         ]
       },
       "jkdt": {
@@ -2194,10 +2221,10 @@
         "intro": ["Перевірте, що ви дізнались про адаптацію вебсторінок."]
       },
       "workshop-city-skyline": {
-        "title": "Build a City Skyline",
+        "title": "Створіть панораму міста",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
-          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+          "Змінні CSS допомагають організувати стилі та повторно використовувати їх.",
+          "У цьому практичному завданні ви побудуєте панораму міста. Ви дізнаєтеся, як налаштувати змінні CSS, щоб повторно використовувати їх, коли забажаєте."
         ]
       },
       "vlov": {
@@ -2252,14 +2279,17 @@
         "title": "120",
         "intro": []
       },
-      "adzu": {
-        "title": "121",
-        "intro": []
-      },
       "lab-moon-orbit": {
         "title": "Побудуйте орбіту Місяця",
         "intro": [
           "У цій лабораторній роботі ви створите анімацію оберту Місяця навколо Землі."
+        ]
+      },
+      "workshop-flappy-penguin": {
+        "title": "Створіть пінгвіна Флаппі",
+        "intro": [
+          "Елементи HTML можна змінити, щоб створити хороший дизайн, який привертає увагу читача. Ви можете використовувати трансформації, щоб обертати елементи, масштабувати їх тощо.",
+          "У цьому практичному завданні ви створите пінгвіна. Ви будете використовувати трансформації CSS, щоб позиціювати й змінити розмір частин пінгвіна, створити фон та анімувати роботу."
         ]
       },
       "lugl": {
@@ -2351,7 +2381,7 @@
       "workshop-mathbot": {
         "title": "Створіть математичний бот",
         "intro": [
-          "У цьому практичному занятті ви пригадаєте, як працювати з різними методами математичних об’єктів, створивши математичний бот."
+          "У цьому практичному завданні ви пригадаєте, як працювати з різними методами математичних об’єктів, створивши математичний бот."
         ]
       },
       "lab-fortune-teller": {
@@ -2467,9 +2497,9 @@
         "intro": []
       },
       "workshop-recipe-tracker": {
-        "title": "Build a Recipe Tracker",
+        "title": "Створіть трекер рецептів",
         "intro": [
-          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+          "У цьому практичному завданні ви пригадаєте, як працювати з об’єктами в JavaScript, створивши трекер рецептів."
         ]
       },
       "lab-quiz-game": {
@@ -3386,7 +3416,7 @@
         "title": "Керування пакетами з npm",
         "intro": [
           "npm (Node Package Manager) — це інструмент командного рядка для встановлення, створення та поширення пакетів коду JavaScript, написаного для Node.js. На npm знаходиться багато пакетів з відкритим вихідним кодом, тому спершу ретельно їх дослідіть, щоб вам не довелося виправляти помилки під час роботи з даними чи отримання даних з API.",
-          "У цьому практичному занятті ви вивчите основи використання npm, включно з тим, як працювати з файлом <code>package.json</code> та як керувати встановленими залежностями."
+          "У цьому практичному завданні ви вивчите основи використання npm, включно з тим, як працювати з файлом <code>package.json</code> та як керувати встановленими залежностями."
         ]
       },
       "hjku": {

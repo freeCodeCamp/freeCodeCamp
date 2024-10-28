@@ -135,8 +135,10 @@ const schema = Joi.object()
         'challenge-list',
         'challenge-grid',
         'link',
-        'project-list'
-      )
+        'project-list',
+        'legacy-challenge-list',
+        'legacy-link'
+      ).required()
     }),
     challengeOrder: Joi.number(),
     certification: Joi.string().regex(slugWithSlashRE),
