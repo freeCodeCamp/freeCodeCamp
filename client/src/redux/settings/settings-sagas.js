@@ -29,6 +29,7 @@ import {
   putVerifyCert
 } from '../../utils/ajax';
 import { completedChallengesSelector } from '../selectors';
+import { Themes } from '../../components/settings/theme';
 import {
   submitNewAboutComplete,
   submitNewAboutError,
@@ -113,7 +114,9 @@ function* updateMySoundSaga({ payload: update }) {
 function* updateMyThemeSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyTheme, update);
-    localStorage.setItem('theme', update.theme);
+    const invertedTheme =
+      update.theme === Themes.Night ? Themes.Default : Themes.Night;
+    localStorage.setItem('theme', invertedTheme);
     yield put(updateMyThemeComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
   } catch (e) {

@@ -9,18 +9,11 @@ export enum Themes {
   Default = 'default'
 }
 
-export type ThemeProps = {
-  currentTheme: Themes;
-};
-
-export default function ThemeSettings({
-  currentTheme
-}: ThemeProps): JSX.Element {
+export default function ThemeSettings(): JSX.Element {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-  const invertedTheme =
-    currentTheme === Themes.Night ? Themes.Default : Themes.Night;
+  const currentTheme = localStorage.getItem('theme');
   return (
     <ToggleButtonSetting
       action={t('settings.labels.night-mode')}
@@ -29,7 +22,7 @@ export default function ThemeSettings({
       offLabel={t('buttons.off')}
       onLabel={t('buttons.on')}
       toggleFlag={() => {
-        dispatch(updateMyTheme({ theme: invertedTheme }));
+        dispatch(updateMyTheme({ theme: currentTheme }));
       }}
     />
   );

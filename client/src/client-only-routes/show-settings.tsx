@@ -16,7 +16,6 @@ import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
 import Privacy from '../components/settings/privacy';
-import { Themes, type ThemeProps } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
@@ -31,21 +30,19 @@ import {
   updateMyHonesty,
   updateMyQuincyEmail,
   updateMySound,
-  updateMyTheme,
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-type ShowSettingsProps = Pick<ThemeProps, 'currentTheme'> & {
+type ShowSettingsProps = {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   toggleSoundMode: (sound: boolean) => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
-  updateMyTheme: (theme: Themes) => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User;
@@ -71,7 +68,6 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  updateMyTheme: (theme: Themes) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
