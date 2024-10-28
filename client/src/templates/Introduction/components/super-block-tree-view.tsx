@@ -13,6 +13,7 @@ import './super-block-tree-view.css';
 interface SuperBlockTreeViewProps {
   challenges: ChallengeNode['challenge'][];
   superBlock: SuperBlocks;
+  'aria-labelledby': string;
 }
 
 interface ModuleNode {
@@ -29,7 +30,8 @@ interface ChapterNode {
 
 export const SuperBlockTreeView = ({
   challenges,
-  superBlock
+  superBlock,
+  'aria-labelledby': ariaLabelledBy
 }: SuperBlockTreeViewProps) => {
   const { t } = useTranslation();
 
@@ -81,7 +83,10 @@ export const SuperBlockTreeView = ({
   });
 
   return (
-    <MuiTreeView className='super-block-tree-view'>
+    <MuiTreeView
+      className='super-block-tree-view'
+      aria-labelledby={ariaLabelledBy}
+    >
       {chapterNodes.map(chapterNode => (
         <TreeItem
           className='chapter'

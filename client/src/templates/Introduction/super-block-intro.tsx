@@ -221,14 +221,18 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               />
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='large' />
-              <h2 className='text-center big-subheading'>
+              <h2
+                className='text-center big-subheading'
+                id='super-block-heading'
+              >
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='medium' />
-              {superBlockWithTreeView ? (
+              {superBlockWithTreeView.includes(superBlock) ? (
                 <SuperBlockTreeView
                   challenges={challenges}
                   superBlock={superBlock}
+                  aria-labelledby='super-block-heading'
                 />
               ) : (
                 <div className='block-ui'>
