@@ -1,13 +1,13 @@
 import React from 'react';
 
 const Padding = Object.freeze({
-  xxSmall: 2.5,
-  small: 5,
-  xSmall: 10,
-  medium: 15,
-  large: 30,
-  exLarge: 45,
-  doubleXL: 90
+  xxs: 2.5,
+  xs: 5,
+  s: 10,
+  m: 15,
+  l: 30,
+  xl: 45,
+  xxl: 90
 });
 
 type PaddingKeys = keyof typeof Padding;
