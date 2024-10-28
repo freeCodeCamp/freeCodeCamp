@@ -275,12 +275,12 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
       ({ id }) => id === challenge.id
     );
 
-    const isObjectIdFilename = /[a-z0-9]{24}\.md$/.test(englishPath);
+    const isObjectIdFilename = /\/[a-z0-9]{24}\.md$/.test(englishPath);
     if (isObjectIdFilename) {
       const filename = englishPath.split('/').pop();
       if (filename !== `${challenge.id}.md`) {
         throw Error(
-          `Filename ${filename} does not match challenge id ${challenge.id}`
+          `Filename matches MongoDB ObjectID pattern, but ${filename} does not match challenge id ${challenge.id}`
         );
       }
     }
