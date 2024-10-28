@@ -1716,7 +1716,7 @@
       },
       "lecture-html-fundamentals": {
         "title": "HTML Fundamentals",
-        "intro": ["In these lecture videos, you will learn about HTML fundamentals like working with the <code>id</code> attribute, the <code>class</code> attribute, the <code>div</code> element, the <code>span</code> element, HTML entities, and more."]
+        "intro": ["In these lecture videos, you will learn about HTML fundamentals like the <code>id</code> and <code>class</code> attributes, as well as the <code>div</code> and <code>span</code> elements, HTML entities, and more."]
       },
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
