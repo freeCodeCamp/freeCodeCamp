@@ -24,8 +24,7 @@ const envToLogger = {
 
 const start = async () => {
   const fastify = await build({
-    logger: envToLogger[FREECODECAMP_NODE_ENV],
-    bodyLimit: 1024 * 1024 * 100
+    logger: envToLogger[FREECODECAMP_NODE_ENV]
   });
   try {
     const port = Number(PORT);
