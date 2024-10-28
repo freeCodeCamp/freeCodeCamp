@@ -381,7 +381,7 @@ What is the minimum contrast ratio for graphics?
 
 ---
 
-3:1
+0:1
 
 #### --answer--
 
@@ -435,7 +435,7 @@ Which property aligns text in CSS?
 
 #### --text--
 
-What does the `outline` property affect?
+What is the `outline` property most commonly used to configure?
 
 #### --distractors--
 
