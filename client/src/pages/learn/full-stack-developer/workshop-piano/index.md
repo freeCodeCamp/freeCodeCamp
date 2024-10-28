@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Design a Piano
 block: workshop-piano
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Design a Piano

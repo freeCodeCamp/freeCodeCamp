@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build Flexbox a Photo Gallery
 block: workshop-flexbox-photo-gallery
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Flexbox Photo Gallery

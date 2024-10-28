@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Nutritional Label
 block: workshop-nutritional-label
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Nutritional Label

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Design a Rothko Painting
 block: workshop-rothko-painting
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Design a Rothko Painting

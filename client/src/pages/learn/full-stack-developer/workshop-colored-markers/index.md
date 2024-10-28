@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Set of Colored Markers
 block: workshop-colored-markers
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Set of Colored Markers

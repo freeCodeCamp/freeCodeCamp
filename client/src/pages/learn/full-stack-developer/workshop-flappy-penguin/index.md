@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Flappy Penguin
 block: workshop-flappy-penguin
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Penguin

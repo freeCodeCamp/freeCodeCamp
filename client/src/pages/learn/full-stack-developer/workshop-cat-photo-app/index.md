@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Build a Cat Photo App
 
-This is the first workshop for new frontend cert.
+This is the first workshop for the new full stack developer.

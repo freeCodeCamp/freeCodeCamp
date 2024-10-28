@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Basic HTML Review
 block: review-basic-html
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Basic HTML Review

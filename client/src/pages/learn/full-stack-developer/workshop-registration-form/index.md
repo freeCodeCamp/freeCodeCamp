@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Design a Registration Form
 block: workshop-registration-form
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Design a Registration Form

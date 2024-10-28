@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Working with Media
 block: lecture-working-with-media
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Working with Media

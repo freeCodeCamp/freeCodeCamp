@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Working with Links
 block: lecture-working-with-links
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Working with Links

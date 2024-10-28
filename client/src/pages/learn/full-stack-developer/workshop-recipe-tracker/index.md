@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Recipe Tracker
 block: workshop-recipe-tracker
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Recipe Tracker

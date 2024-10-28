@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Cat Blog Page
 
-This is the second workshop for the new frontend certification.
+This is the second workshop for the new full stack developer certification.

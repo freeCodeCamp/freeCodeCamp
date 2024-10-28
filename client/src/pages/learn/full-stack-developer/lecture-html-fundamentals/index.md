@@ -1,7 +1,7 @@
 ---
 title: Introduction to the HTML Fundamentals
 block: lecture-html-fundamentals
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the HTML Fundamentals

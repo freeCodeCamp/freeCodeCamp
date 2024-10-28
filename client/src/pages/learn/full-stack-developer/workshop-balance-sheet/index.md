@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Balance Sheet
 block: workshop-balance-sheet
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Balance Sheet
