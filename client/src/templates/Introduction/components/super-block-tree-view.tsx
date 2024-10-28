@@ -33,14 +33,14 @@ export const SuperBlockTreeView = ({
 }: SuperBlockTreeViewProps) => {
   const { t } = useTranslation();
 
-  const chapters = uniq(challenges.map(({ chapter }) => chapter));
+  const chapters = uniq(challenges.map(({ chapter }) => chapter)) as string[];
 
   // TODO: Compute the chapter and module completion and add CheckMark icon to the `label`s.
   const chapterNodes: ChapterNode[] = chapters.map(chapter => {
     const modules = uniq(
       challenges
         .filter(challenge => challenge.chapter === chapter)
-        .map(challenge => challenge.module)
+        .map(challenge => challenge.module) as string[]
     );
 
     return {
