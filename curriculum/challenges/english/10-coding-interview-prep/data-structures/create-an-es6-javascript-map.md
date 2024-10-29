@@ -17,7 +17,7 @@ The new version of JavaScript provides us with a built-in Map object which provi
 - `.clear()` removes all key, value pairs 
 - `.keys()` returns a new map iterator object that contains all the keys in insertion order 
 - `.values()` returns a new map iterator object that contains all the values in insertion order 
-- `.entries()` returns an iterator object that contains all the key, value pairs in insertion order
+- `.entries()` returns a new map iterator object that contains all the key, value pairs in insertion order
 
 # --instructions--
 
