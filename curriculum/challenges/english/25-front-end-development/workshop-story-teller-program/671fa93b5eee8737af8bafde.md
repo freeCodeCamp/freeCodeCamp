@@ -14,13 +14,13 @@ Create a function called `displayStory`. Inside the function, log `"You clicked 
 You should have a function called `displayStory`.
 
 ```js
-
+assert.isFunction(displayStory);
 ```
 
 You should log `"You clicked the button"` to the console inside the `displayStory` function.
 
 ```js
-
+assert.match(displayStory.toString(), /console\.log\(["']You clicked the button["']\)/);
 ```
 
 # --seed--
@@ -48,7 +48,7 @@ You should log `"You clicked the button"` to the console inside the `displayStor
             <button class="btn" id="funny-btn">Funny Story</button>
             <button class="btn" id="adventure-btn">Adventure Story</button>
         </div>
-    <p id="result"></p>
+    		<p id="result"></p>
 
 </main>
 <script src="./script.js"></script>
