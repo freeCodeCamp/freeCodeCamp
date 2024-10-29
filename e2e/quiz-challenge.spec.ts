@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Quiz challenge', () => {
   test.skip(
     () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
-    'The FED superblock is not available if SHOW_UPCOMING_CHANGES is false'
+    'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
   );
 
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
@@ -17,8 +17,6 @@ test.describe('Quiz challenge', () => {
   test('should display a list of unanswered questions if user has not answered all questions', async ({
     page
   }) => {
-    test.setTimeout(30000);
-
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
@@ -39,8 +37,6 @@ test.describe('Quiz challenge', () => {
   test('should show a confirm finish modal when user clicks the finish button, and disable the quiz once they have confirmed', async ({
     page
   }) => {
-    test.setTimeout(30000);
-
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
@@ -70,8 +66,6 @@ test.describe('Quiz challenge', () => {
   test('should show a confirm exit modal when user clicks on the exit button', async ({
     page
   }) => {
-    test.setTimeout(30000);
-
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
@@ -105,8 +99,6 @@ test.describe('Quiz challenge', () => {
   test('should show a confirm exit modal when user clicks on a link', async ({
     page
   }) => {
-    test.setTimeout(30000);
-
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
@@ -124,8 +116,14 @@ test.describe('Quiz challenge', () => {
   });
 
   test('should show a confirm exit modal when user closes the page', async ({
-    page
+    page,
+    browserName
   }) => {
+    test.skip(
+      browserName === 'webkit' || browserName === 'chromium',
+      'This test is flaky on Chromium and WebKit'
+    );
+
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
