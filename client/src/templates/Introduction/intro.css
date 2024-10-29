@@ -12,12 +12,17 @@
 }
 
 .block-label {
-  margin: 0 10px 0 0;
   align-self: center;
   height: fit-content;
-  padding: 4px 10px;
-  background-color: var(--secondary-background);
+  padding: 1px 6px 2px;
+  font-size: 0.85rem;
   border: 1px solid;
+  position: relative;
+  top: 1px;
+}
+
+.block-header:hover .block-label {
+  background-color: var(--tertiary-background);
 }
 
 .block-label-lecture {
@@ -554,6 +559,10 @@ a.map-grid-item.challenge-completed {
   margin-bottom: 50px;
   padding: 18px 15px;
   position: relative;
+}
+
+.grid-project-block-no-margin {
+  margin-bottom: 0;
 }
 
 .block-grid.grid-project-block:hover {
