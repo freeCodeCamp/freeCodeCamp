@@ -805,8 +805,8 @@ const allStandardCerts = [
     projects: [
       {
         id: '645147516c245de4d11eb7ba',
-        title: 'Full Stack Developer Certification Exam',
-        link: `${fullStackDeveloperBase}/exam-full-stack-developer-certification/exam-full-stack-developer-certification`,
+        title: 'Certified Full Stack Developer Exam',
+        link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
         certSlug: Certification.FullStackDeveloper
       }
     ]
