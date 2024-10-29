@@ -2465,7 +2465,12 @@
           "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
         ]
       },
-      "ubpx": { "title": "193", "intro": [] },
+      "workshop-music-instrument-filter": {
+        "title": "Build a Music Instrument Filter",
+        "intro": [
+          "In this workshop, you will build a music instrument filter with JavaScript."
+        ]
+      },
       "lbyi": { "title": "194", "intro": [] },
       "lab-real-time-counter": {
         "title": "Build a Real Time Counter",
