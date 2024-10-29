@@ -245,7 +245,7 @@ const ShowQuiz = ({
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <ChallengeDescription description={description} />
-              <Spacer size='m' />
+              <Spacer size='l' />
               <ObserveKeys>
                 <Quiz questions={quizData} disabled={hasSubmitted} />
               </ObserveKeys>
