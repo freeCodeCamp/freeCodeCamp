@@ -6,4 +6,4 @@ certification: full-stack-developer
 
 ## Certified Full Stack Developer
 
-Learn HTML, CSS, JavaScript, Relational Databases, React, and Node.js to become a certified full-stack developer.
+Learn HTML, CSS, JavaScript, Relational Databases, React, and Node.js to become a Certified Full Stack Developer.

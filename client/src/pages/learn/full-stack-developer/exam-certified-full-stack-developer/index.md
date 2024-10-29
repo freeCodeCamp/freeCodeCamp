@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Certified Full Stack Developer Exam
 
-Pass the exam to become a certified Full Stack Developer.
+Pass the exam to become a Certified Full Stack Developer.
