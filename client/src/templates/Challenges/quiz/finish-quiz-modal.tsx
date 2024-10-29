@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
@@ -14,20 +12,14 @@ interface FinishQuizModalProps {
   onFinish: () => void;
 }
 
-const mapStateToProps = createSelector(
-  isFinishQuizModalOpenSelector,
-  (isFinishQuizModalOpen: boolean) => ({
-    isFinishQuizModalOpen
-  })
-);
+const mapStateToProps = (state: unknown) => ({
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  isExitQuizModalOpen: isExitQuizModalOpenSelector(state)
+});
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      closeFinishQuizModal: () => closeModal('finishQuiz')
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  closeExitQuizModal: () => closeModal('exitQuiz')
+};
 
 const FinishQuizModal = ({
   closeFinishQuizModal,
