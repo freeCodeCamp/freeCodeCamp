@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Create a tagname
-        id: tagname
+        id: CTO
         run: |
           echo "tagname=$(git rev-parse --short HEAD)-$(date +%Y%m%d)-$(date +%H%M)" >> $GITHUB_ENV
 
