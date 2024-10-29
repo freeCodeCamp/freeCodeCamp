@@ -1,6 +1,7 @@
 {
   "name": "Computer Basics Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-computer-basics",
   "order": 35,

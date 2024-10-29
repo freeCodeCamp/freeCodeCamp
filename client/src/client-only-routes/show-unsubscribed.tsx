@@ -2,10 +2,9 @@ import type { RouteComponentProps } from '@reach/router';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Container, Panel, Button } from '@freecodecamp/ui';
+import { Container, Panel, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { Spacer } from '../components/helpers';
 import FullWidthRow from '../components/helpers/full-width-row';
 
 const { apiLocation } = envData;
@@ -26,9 +25,9 @@ function ShowUnsubscribed({
       <Container>
         <main>
           <FullWidthRow>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <Panel variant='primary' className='text-center'>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <h2 data-playwright-test-label='main-heading'>
                 {t('misc.unsubscribed')}
               </h2>
@@ -49,7 +48,7 @@ function ShowUnsubscribed({
               </Button>
             </FullWidthRow>
           ) : null}
-          <Spacer size='large' />
+          <Spacer size='l' />
         </main>
       </Container>
     </>

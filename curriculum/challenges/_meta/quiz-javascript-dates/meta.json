@@ -1,6 +1,7 @@
 {
   "name": "JavaScript Dates Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-dates",

@@ -1,5 +1,7 @@
 {
   "name": "Build a File Metadata Microservice",
+  "blockType": "lab",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
@@ -7,6 +9,5 @@
   "order": 376,
   "superBlock": "front-end-development",
   "challengeOrder": [{ "id": "bd7158d8c443edefaeb5bd0f", "title": "Build a File Metadata Microservice" }],
-  "helpCategory": "Backend Development",
-  "blockType": "lab"
+  "helpCategory": "Backend Development"
 }

@@ -3,10 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -24,6 +23,7 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { BlockTypes } from '../../../../../shared/config/blocks';
+import Scene from '../components/scene/scene';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
@@ -69,6 +69,7 @@ const ShowGeneric = ({
         instructions,
         title,
         translationPending,
+        scene,
         superBlock,
         videoId,
         videoLocaleIds
@@ -127,6 +128,9 @@ const ShowGeneric = ({
     setVideoIsLoaded(true);
   };
 
+  // scene
+  const [isScenePlaying, setIsScenePlaying] = useState(false);
+
   // assignments
   const [assignmentsCompleted, setAssignmentsCompleted] = useState(0);
   const allAssignmentsCompleted = assignmentsCompleted === assignments.length;
@@ -151,6 +155,7 @@ const ShowGeneric = ({
       containerRef={container}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
+      playScene={scene ? () => setIsScenePlaying(true) : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -158,7 +163,7 @@ const ShowGeneric = ({
         />
         <Container>
           <Row>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <ChallengeTitle
               isCompleted={isChallengeCompleted}
               translationPending={translationPending}
@@ -166,11 +171,12 @@ const ShowGeneric = ({
               {title}
             </ChallengeTitle>
 
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {description && (
+            {description && (
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
-              )}
-            </Col>
+                <Spacer size='m' />
+              </Col>
+            )}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
@@ -185,12 +191,20 @@ const ShowGeneric = ({
               )}
             </Col>
 
+            {scene && (
+              <Scene
+                scene={scene}
+                isPlaying={isScenePlaying}
+                setIsPlaying={setIsScenePlaying}
+              />
+            )}
+
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (
-                <ChallengeDescription description={instructions} />
+                <ChallengeDescription instructions={instructions} />
               )}
 
-              <Spacer size='medium' />
+              <Spacer size='m' />
 
               {assignments.length > 0 && (
                 <Assignments
@@ -206,7 +220,7 @@ const ShowGeneric = ({
                   : t('buttons.check-answer')}
               </Button>
 
-              <Spacer size='large' />
+              <Spacer size='l' />
             </Col>
             <CompletionModal />
           </Row>
@@ -242,6 +256,43 @@ export const query = graphql`
           tests {
             text
             testString
+          }
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
           }
         }
         superBlock
