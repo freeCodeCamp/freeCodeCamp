@@ -1,10 +1,10 @@
 ---
-title: Introduction to the Draw an Animated Ferris Wheel
+title: Introduction to the Build an Animated Ferris Wheel
 block: workshop-ferris-wheel
 superBlock: front-end-development
 ---
 
-## Introduction to the Draw an Animated Ferris Wheel
+## Introduction to the Build an Animated Ferris Wheel
 
 Have you ever wanted to bring your web pages to life with fun and interactive animations? CSS animation allows you to add movement and interactivity to your web pages, making them more engaging and dynamic. It’s like adding a sprinkle of magic to your design!
 
