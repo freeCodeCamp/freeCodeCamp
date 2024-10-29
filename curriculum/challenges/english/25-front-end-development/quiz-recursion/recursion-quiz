@@ -1,0 +1,266 @@
+---
+id: #56214
+title: Recursion Quiz
+challengeType: 8
+dashedName: quiz-recursion
+---
+
+--question--
+--text--
+Which of the following best defines recursion in programming?
+--distractors--
+A function that uses loops to iterate over a range.
+A technique to store multiple values in a single variable.
+A process where a function terminates immediately without further calls.
+--answer--
+A function calling itself to solve a problem.
+--question--
+
+--question--
+--text--
+What is a base case in recursion?
+--distractors--
+The main function in a recursive program.
+The condition for when a recursive function starts over.
+The first recursive call in the function.
+--answer--
+The condition under which a recursive function stops calling itself.
+--question--
+
+--question--
+--text--
+Which of the following is true about the call stack in recursion?
+--distractors--
+The call stack remains constant regardless of function calls.
+Only the initial function is stored in the call stack.
+Each function call is removed immediately after it’s added.
+--answer--
+Each recursive call adds a new frame to the call stack.
+--question--
+
+--question--
+--text--
+What is the risk of using recursion without a base case?
+--distractors--
+The program will terminate faster.
+The program will run smoothly but slower.
+The program may enter an infinite loop and crash.
+--answer--
+The program may enter an infinite loop and crash.
+--question--
+
+--question--
+--text--
+Which is an example of a base case for finding the factorial of a number?
+--distractors--
+if n > 1
+if n == 2
+if n == 1
+--answer--
+if n == 0
+--question--
+
+--question--
+--text--
+What does tail recursion mean?
+--distractors--
+Recursive calls are at the beginning of the function.
+The function does not have a base case.
+The recursive call is the only statement in the function.
+--answer--
+The recursive call is the last operation in the function.
+--question--
+
+--question--
+--text--
+Which of these recursive functions calculates the factorial of `n`?
+--distractors--
+int factorial(int n) { return n + factorial(n-1); }
+int factorial(int n) { return n * factorial(n+1); }
+int factorial(int n) { return n; }
+--answer--
+int factorial(int n) { if (n <= 1) return 1; return n * factorial(n-1); }
+--question--
+
+--question--
+--text--
+How many recursive calls will the function `factorial(3)` make in total?
+--distractors--
+1
+2
+0
+--answer--
+3
+--question--
+
+--question--
+--text--
+Which best describes head recursion?
+--distractors--
+When the recursive call is the last statement in the function.
+When the function does not call itself.
+When the recursive call occurs before other operations.
+--answer--
+When the recursive call occurs before other operations.
+--question--
+
+--question--
+--text--
+What will be the output of the following code?
+
+int recursion(int n) {
+  if (n <= 0) return 0;
+  return n + recursion(n - 1);
+}
+recursion(3);
+
+--distractors--
+0
+3
+6
+--answer--
+6
+--question--
+
+--question--
+--text--
+Which of the following statements about recursion is false?
+--distractors--
+Recursion can make complex problems easier to solve.
+Recursion can always replace iterative solutions.
+Recursion can lead to high memory usage.
+--answer--
+Recursion can always replace iterative solutions.
+--question--
+
+--question--
+--text--
+What is the primary disadvantage of recursion over iteration?
+--distractors--
+Recursion has fewer base cases.
+Recursion uses fewer variables.
+Recursion is generally faster.
+--answer--
+Recursion can consume more memory due to the call stack.
+--question--
+
+--question--
+--text--
+Which term refers to a recursive function where the call itself is the last operation?
+--distractors--
+Head recursion
+Forward recursion
+Base recursion
+--answer--
+Tail recursion
+--question--
+
+--question--
+--text--
+Which of these functions has a base case?
+
+int recurse(int n) { return recurse(n - 1); }
+
+--distractors--
+Yes, it stops when `n` becomes 0.
+Yes, it only runs once.
+No, it does not stop on any condition.
+--answer--
+No, it does not stop on any condition.
+--question--
+
+--question--
+--text--
+In which scenario is recursion typically more advantageous than iteration?
+--distractors--
+When optimizing for speed.
+When handling low-memory tasks.
+When solving problems with a natural recursive structure, like tree traversal.
+--answer--
+When solving problems with a natural recursive structure, like tree traversal.
+--question--
+
+--question--
+--text--
+What happens to the call stack when a base case is reached?
+--distractors--
+The stack expands to accommodate more calls.
+The stack removes all frames at once.
+The stack unwinds by removing each frame as functions return.
+--answer--
+The stack unwinds by removing each frame as functions return.
+--question--
+
+--question--
+--text--
+What is the base case in this recursive sum function?
+
+int sum(int n) {
+  if (n <= 0) return 0;
+  return n + sum(n - 1);
+}
+
+--distractors--
+return n + sum(n-1);
+if (n > 0)
+return n;
+--answer--
+if (n <= 0) return 0;
+--question--
+
+--question--
+--text--
+What is the result of calling `fibonacci(4)` for the following code?
+
+int fibonacci(int n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+--distractors--
+3
+5
+7
+--answer--
+3
+--question--
+
+--question--
+--text--
+If a recursive function is implemented without a base case, which of the following will occur?
+--distractors--
+The program will terminate after one call.
+The function will run faster.
+The call stack will continuously grow, potentially leading to a stack overflow.
+--answer--
+The call stack will continuously grow, potentially leading to a stack overflow.
+--question--
+
+--question--
+--text--
+In a recursive function, what is the role of the base case?
+--distractors--
+To ensure the recursion does not begin.
+To check that the call stack doesn’t exceed its limit.
+To terminate the recursion and allow the stack to unwind.
+--answer--
+To terminate the recursion and allow the stack to unwind.
+--question--
+
+--question--
+--text--
+What does `return 1 + recurse(n-1)` signify in the following code?
+
+int recurse(int n) {
+  if (n <= 0) return 0;
+  return 1 + recurse(n - 1);
+}
+
+--distractors--
+It terminates the function immediately.
+It calls the function recursively, counting down from `n`.
+It sums up values only for even numbers.
+--answer--
+It calls the function recursively, counting down from `n`.
+--question--
+
