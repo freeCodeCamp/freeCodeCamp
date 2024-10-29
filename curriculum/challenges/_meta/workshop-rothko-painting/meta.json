@@ -1,6 +1,7 @@
 {
   "name": "Design a Rothko Painting",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,

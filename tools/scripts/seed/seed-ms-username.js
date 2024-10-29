@@ -42,7 +42,7 @@ const certifiedUserAccount = {
   msUsername: 'certifieduser'
 };
 
-const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
+const client = new MongoClient(MONGOHQ_URL);
 
 const run = async () => {
   await client.db('admin').command({ ping: 1 });

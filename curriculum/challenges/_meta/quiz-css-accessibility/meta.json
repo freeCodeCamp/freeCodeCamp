@@ -1,6 +1,7 @@
 {
   "name": "CSS Accessibility Quiz",
   "blockType": "quiz",
+  "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-accessibility",
   "order": 92,
