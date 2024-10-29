@@ -21,19 +21,19 @@ The main purpose of the float property in CSS is:
 
 #### --distractors--
 
-To create rounded corners
+To create rounded corners.
 
 ---
 
-To control opacity
+To control opacity.
 
 ---
 
-To center vertically
+To center vertically.
 
 #### --answer--
 
-To align elements to either the left or the right of their container 
+To align elements to either the left or the right of their container.
 
 ### --question--
 
@@ -61,7 +61,7 @@ Which CSS property is used to set the stack order of an element?
 
 #### --text--
 
-What happens when you apply `position: relative` to an element in CSS?   
+What happens when you apply `position: relative` to an element in CSS?
 
 #### --distractors--
 
@@ -109,19 +109,19 @@ If an element has `position: absolute`, what element is it positioned relatively
 
 #### --distractors--
 
-The closest ancestor with `position: fixed`
+The closest ancestor with `position: fixed`.
 
 ---
 
-The closest ancestor with `position: absolute`
+The closest ancestor with `position: absolute`.
 
 ---
 
-The `<body>` element
+The `<body>` element.
 
 #### --answer--
 
-The closest positioned ancestor (with `position: relative`, `absolute` or `fixed`)
+The closest positioned ancestor with `position: relative`, `absolute` or `fixed`.
 
 ### --question--
 
@@ -165,7 +165,7 @@ It will stack on top of all other elements.
 
 #### --answer--
 
-It will always be in the back of all the other elements on the page.
+It will be in the back of other elements on the page. Elements with the same stack level in a stacking context are stacked back-to-front according to document tree order.
 
 ### --question--
 
@@ -253,7 +253,7 @@ Relative positioning allows an element to overlap sibling elements without affec
 
 #### --answer--
 
-The `position: relative` element keeps its space in document flow, but the children absolutely positioned are positioned relative to the `position: relative` parent.
+The `position: relative` element keeps its space in document flow, absolutely positioned children are positioned relative to the parent.
 
 ### --question--
 
