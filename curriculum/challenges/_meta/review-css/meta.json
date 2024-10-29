@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-css",
-  "order": 126,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a9a0a140c2b9d6a75629f", "title": "CSS Review" }

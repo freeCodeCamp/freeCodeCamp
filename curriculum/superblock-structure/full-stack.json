@@ -60,7 +60,10 @@
       "modules": [
         {
           "dashedName": "computer-basics",
-          "blocks": [{ "dashedName": "quiz-computer-basics" }]
+          "blocks": [
+            { "dashedName": "review-computer-basics" },
+            { "dashedName": "quiz-computer-basics" }
+          ]
         },
         {
           "dashedName": "basic-css",
@@ -198,9 +201,13 @@
             { "dashedName": "lab-moon-orbit" },
             { "dashedName": "workshop-flappy-penguin" },
             { "dashedName": "lab-personal-portfolio" },
-            { "dashedName": "review-css-accessibility" },
+            { "dashedName": "review-css-animations" },
             { "dashedName": "quiz-css-animations" }
           ]
+        },
+        {
+          "dashedName": "review-css",
+          "blocks": [{ "dashedName": "review-css" }]
         }
       ]
     },
