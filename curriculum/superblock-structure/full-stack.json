@@ -4,12 +4,9 @@
       "dashedName": "html",
       "modules": [
         {
-          "dashedName": "getting-started-with-freecodecamp",
-          "blocks": [{ "dashedName": "lecture-what-is-html" }]
-        },
-        {
           "dashedName": "basic-html",
           "blocks": [
+            { "dashedName": "lecture-what-is-html" },
             { "dashedName": "workshop-cat-photo-app" },
             { "dashedName": "lab-recipe-page" },
             { "dashedName": "lecture-html-fundamentals" },
