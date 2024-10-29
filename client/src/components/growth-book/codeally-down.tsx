@@ -1,8 +1,7 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/ui';
+import { Alert, Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
-import Spacer from '../../components/helpers/spacer';
 
 const Down = () => {
   const { t } = useTranslation();
@@ -19,7 +18,7 @@ const Down = () => {
           </a>
         </Trans>
       </p>
-      <Spacer size='small' />
+      <Spacer size='xs' />
       <p>{t('intro:misc-text.progress-wont-save')}</p>
     </Alert>
   );
@@ -40,7 +39,7 @@ const Disabled = () => {
           </a>
         </Trans>
       </p>
-      <Spacer size='small' />
+      <Spacer size='xs' />
       <p>{t('intro:misc-text.progress-wont-save')}</p>
     </Alert>
   );
