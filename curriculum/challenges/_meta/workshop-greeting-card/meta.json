@@ -1,0 +1,22 @@
+{
+  "name": "Build a Greeting Card",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-greeting-card",
+  "order": 58,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    {
+      "id": "6720b1f2680ec706ed534acf",
+      "title": "Step 1"
+    },
+    {
+      "id": "6720b3191bbafd269bae0ae8",
+      "title": "Step 2"
+    }
+  ],
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop"
+}

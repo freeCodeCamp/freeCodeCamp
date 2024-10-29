@@ -1904,7 +1904,10 @@
           "Test what you've learned in this quiz of relative and absolute units in CSS."
         ]
       },
-      "ohhu": { "title": "58", "intro": [] },
+      "workshop-greeting-card": {
+        "title": "Build a Greeting Card",
+        "intro": ["", ""]
+      },
       "syga": { "title": "59", "intro": [] },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
