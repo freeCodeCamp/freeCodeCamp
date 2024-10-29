@@ -301,20 +301,21 @@ function ShowClassic({
     setUsingKeyboardInTablist(usingKeyboardInTablist);
   };
 
-  // leave page confiramtion if code is not saved
+  // leave page confirmation if code is not saved
 
   useEffect(() => {
     let isFilesSaved = true;
 
+    const savedChallengeFiles = savedChallenges[0]?.challengeFiles;
+
     if (!challengeFiles) return;
 
     for (let index = 0; index < challengeFiles.length; index++) {
-      if (
-        !savedChallenges[0]?.challengeFiles ||
-        (savedChallenges[0]?.challengeFiles &&
-          savedChallenges[0]?.challengeFiles[index]?.contents !=
-            challengeFiles[index]?.contents)
-      ) {
+      const hasChangedContentAfterSave =
+        savedChallengeFiles &&
+        savedChallengeFiles[index]?.contents != challengeFiles[index]?.contents;
+
+      if (!savedChallengeFiles || hasChangedContentAfterSave) {
         isFilesSaved = false;
       }
     }
