@@ -1,0 +1,13 @@
+{
+  "name": "CSS Typography Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-css-typography",
+  "order": 85,
+  "superBlock": "front-end-development",
+  "challengeOrder": [
+    { "id": "671a9528fc4f1487cf265444", "title": "CSS Typography Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}
