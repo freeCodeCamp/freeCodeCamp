@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Cat Painting
 block: workshop-cat-painting
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Cat Painting

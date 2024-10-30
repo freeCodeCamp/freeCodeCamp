@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Quiz Webpage
 block: workshop-accessibility-quiz
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Quiz Webpage
