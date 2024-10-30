@@ -27,7 +27,7 @@ const schema = Joi.object()
     superBlock: Joi.string().regex(slugWithSlashRE).required(),
     order: Joi.number().when('superBlock', {
       is: 'full-stack-developer',
-      then: Joi.optional(),
+      then: Joi.forbidden(),
       otherwise: Joi.required()
     }),
     usesMultifileEditor: Joi.boolean(),
