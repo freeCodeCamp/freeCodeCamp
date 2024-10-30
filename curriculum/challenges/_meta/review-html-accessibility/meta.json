@@ -5,7 +5,7 @@
   "isUpcomingChange": true,
   "dashedName": "review-html-accessibility",
   "order": 27,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a87a39b88245a579c2271", "title": "HTML Accessibility Review" }
   ],

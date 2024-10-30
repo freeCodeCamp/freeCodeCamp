@@ -5,7 +5,7 @@
   "isUpcomingChange": true,
   "dashedName": "review-css-variables",
   "order": 110,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a98fbaabfba994e3d9a7c", "title": "CSS Variables Review" }
   ],
