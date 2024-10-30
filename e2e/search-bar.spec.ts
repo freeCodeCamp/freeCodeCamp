@@ -73,9 +73,11 @@ test.describe('Search bar', () => {
     const searchInput = await getSearchInput({ page, isMobile });
 
     await expect(searchInput).toBeVisible();
+    // Because we're mocking Algolia requests, the placeholder
+    // should be the default one.
     await expect(searchInput).toHaveAttribute(
       'placeholder',
-      translations.search.placeholder
+      translations.search.placeholder.default
     );
     await expect(
       page.getByRole('button', { name: 'Submit search terms' })

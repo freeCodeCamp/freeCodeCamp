@@ -201,6 +201,12 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   render(): JSX.Element {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
+    // TODO: Refactor this fallback when all translation files are synced
+    const searchPlaceholder = t('search-bar:placeholder').startsWith(
+      'search.placeholder.'
+    )
+      ? t('search.placeholder')
+      : t('search-bar:placeholder');
 
     return (
       <WithInstantSearch>
@@ -223,7 +229,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
                   translations={{
                     submitTitle: t('icons.magnifier'),
                     resetTitle: t('icons.input-reset'),
-                    placeholder: t('search.placeholder')
+                    placeholder: searchPlaceholder
                   }}
                   onFocus={this.handleFocus}
                 />

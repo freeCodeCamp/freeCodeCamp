@@ -5,10 +5,17 @@ import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Spacer } from '@freecodecamp/ui';
+import envData, { clientLocale } from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
 import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
+
+import jpSansBoldURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Bold.woff';
+import jpSansLightURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Light.woff';
+import jpSansRegularURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Regular.woff';
+
 import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
 import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
 import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
@@ -37,12 +44,11 @@ import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
-import { Loader, Spacer } from '../helpers';
+import { Loader } from '../helpers';
 import {
   MAX_MOBILE_WIDTH,
   EX_SMALL_VIEWPORT_HEIGHT
 } from '../../../config/misc';
-import envData from '../../../config/env.json';
 
 import '@freecodecamp/ui/dist/base.css';
 // preload common fonts
@@ -165,6 +171,8 @@ function DefaultLayout({
 
   const useSystemTheme = fetchState.complete && isSignedIn === false;
 
+  const isJapanese = clientLocale === 'japanese';
+
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -207,6 +215,34 @@ function DefaultLayout({
             rel='preload'
             type='font/woff'
           />
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansRegularURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansLightURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansBoldURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+
           <link
             as='font'
             crossOrigin='anonymous'
@@ -257,7 +293,7 @@ function DefaultLayout({
                 />
               </div>
             ) : (
-              <Spacer size={isExSmallViewportHeight ? 'xxSmall' : 'small'} />
+              <Spacer size={isExSmallViewportHeight ? 'xxs' : 'xs'} />
             ))}
           {fetchState.complete && children}
         </div>

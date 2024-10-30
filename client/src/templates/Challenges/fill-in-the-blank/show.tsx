@@ -9,15 +9,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
+import ChallegeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import FillInTheBlanks from '../components/fill-in-the-blanks';
@@ -60,7 +60,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowFillInTheBlankProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
   isChallengeCompleted: boolean;
   initTests: (xs: Test[]) => void;
   openCompletionModal: () => void;
@@ -250,6 +249,7 @@ class ShowFillInTheBlank extends Component<
             title,
             description,
             instructions,
+            explanation,
             superBlock,
             block,
             translationPending,
@@ -287,7 +287,7 @@ class ShowFillInTheBlank extends Component<
           />
           <Container>
             <Row>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <ChallengeTitle
                 isCompleted={isChallengeCompleted}
                 translationPending={translationPending}
@@ -297,7 +297,7 @@ class ShowFillInTheBlank extends Component<
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <PrismFormatted text={description} />
-                <Spacer size='medium' />
+                <Spacer size='m' />
               </Col>
 
               {scene && (
@@ -312,7 +312,7 @@ class ShowFillInTheBlank extends Component<
                 {instructions && (
                   <>
                     <PrismFormatted text={instructions} />
-                    <Spacer size='small' />
+                    <Spacer size='xs' />
                   </>
                 )}
 
@@ -328,7 +328,13 @@ class ShowFillInTheBlank extends Component<
                     handleInputChange={this.handleInputChange}
                   />
                 </ObserveKeys>
-                <Spacer size='medium' />
+
+                {explanation ? (
+                  <ChallegeExplanation explanation={explanation} />
+                ) : (
+                  <Spacer size='m' />
+                )}
+
                 <Button
                   block={true}
                   variant='primary'
@@ -337,11 +343,11 @@ class ShowFillInTheBlank extends Component<
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer size='xxSmall' />
+                <Spacer size='xxs' />
                 <Button block={true} variant='primary' onClick={openHelpModal}>
                   {t('buttons.ask-for-help')}
                 </Button>
-                <Spacer size='large' />
+                <Spacer size='l' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
@@ -368,6 +374,7 @@ export const query = graphql`
         title
         description
         instructions
+        explanation
         challengeType
         helpCategory
         superBlock

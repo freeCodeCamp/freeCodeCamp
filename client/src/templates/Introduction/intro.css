@@ -11,6 +11,50 @@
   overflow-wrap: break-word;
 }
 
+.block-label {
+  align-self: center;
+  height: fit-content;
+  padding: 1px 6px 2px;
+  font-size: 0.85rem;
+  border: 1px solid;
+  position: relative;
+  top: 1px;
+}
+
+.block-header:hover .block-label {
+  background-color: var(--tertiary-background);
+}
+
+.block-label-lecture {
+  border-color: var(--yellow-color);
+  color: var(--yellow-color);
+}
+
+.block-label-workshop {
+  border-color: var(--highlight-color);
+  color: var(--highlight-color);
+}
+
+.block-label-lab {
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.block-label-review {
+  border-color: var(--purple-color);
+  color: var(--purple-color);
+}
+
+.block-label-quiz {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.block-label-exam {
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+}
+
 .block-header {
   display: flex;
   justify-content: space-between;
@@ -515,6 +559,10 @@ a.map-grid-item.challenge-completed {
   margin-bottom: 50px;
   padding: 18px 15px;
   position: relative;
+}
+
+.grid-project-block-no-margin {
+  margin-bottom: 0;
 }
 
 .block-grid.grid-project-block:hover {

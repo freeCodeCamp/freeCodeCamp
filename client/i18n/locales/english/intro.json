@@ -1697,7 +1697,13 @@
     "intro": ["placeholder"],
     "blocks": {
       "efpl": { "title": "0", "intro": [] },
-      "xpmy": { "title": "1", "intro": [] },
+      "lecture-what-is-html": {
+        "title": "What is HTML?",
+        "intro": [
+          "In this lecture video, you will be introduced to HTML (HyperText Markup Language) which is a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+        ]
+      },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
         "intro": [
@@ -1708,24 +1714,51 @@
       "lab-recipe-page": {
         "title": "Build a Recipe Page",
         "intro": [
-          "For this lab, you will create a web page of your favorite recipe."
+          "For this lab, you will review HTML basics by creating a web page of your favorite recipe. This lab will give you an opportunity to review working with an HTML boilerplate, headings, lists and images."
         ]
       },
-      "gwyd": { "title": "4", "intro": [] },
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": [
+          "In these lecture videos, you will learn about HTML fundamentals like the <code>id</code> and <code>class</code> attributes, as well as the <code>div</code> and <code>span</code> elements, HTML entities, and more."
+        ]
+      },
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "For this lab, you will create a web page of a travel agency."
+          "For this lab, you will review working with HTML fundamentals by creating a web page for a travel agency. This lab will give you an opportunity to review working with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element and more."
         ]
       },
-      "vipr": { "title": "6", "intro": [] },
+      "lecture-working-with-media": {
+        "title": "Working with Media",
+        "intro": [
+          "In these lecture videos, you will learn how to work with the <code>audio</code> and <code>video</code> elements as well as with SVG's and more."
+        ]
+      },
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
-        "intro": ["For this lab, you will create a video compilation web page."]
+        "intro": [
+          "For this lab, you will create a video compilation web page. This lab will give you the opportunity to practice working with the <code>iframe</code> element."
+        ]
       },
-      "bzfv": { "title": "8", "intro": [] },
-      "snuv": { "title": "9", "intro": [] },
-      "uowk": { "title": "10", "intro": [] },
+      "lecture-working-with-links": {
+        "title": "Working with Links",
+        "intro": [
+          "In these lecture videos, you will learn about the different <code>target</code> attribute values, absolute and relative links and the different links states."
+        ]
+      },
+      "review-basic-html": {
+        "title": "Basic HTML Review",
+        "intro": [
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."
+        ]
+      },
+      "quiz-basic-html": {
+        "title": "Basic HTML Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
+        ]
+      },
       "evdc": { "title": "11", "intro": [] },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
@@ -1733,9 +1766,25 @@
           "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
-      "szcd": { "title": "13", "intro": [] },
-      "ijdq": { "title": "14", "intro": [] },
-      "pwwg": { "title": "15", "intro": [] },
+      "lab-event-hub": {
+        "title": "Build an Event Hub",
+        "intro": [
+          "In this lab, you will review working with semantic HTML elements by building an event hub.",
+          "This lab will give you an opportunity to review working with the <code>header</code>, <code>nav</code>, <code>article</code> elements."
+        ]
+      },
+      "review-semantic-html": {
+        "title": "Semantic HTML Review",
+        "intro": [
+          "Review the Semantic HTML concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-semantic-html": {
+        "title": "Semantic HTML Quiz",
+        "intro": [
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
+        ]
+      },
       "cfgp": { "title": "16", "intro": [] },
       "workshop-hotel-feedback-form": {
         "title": "Build a Hotel Feedback Form",
@@ -1746,7 +1795,10 @@
       },
       "lab-survey-form": {
         "title": "Build a Survey Form",
-        "intro": ["For this lab, you will create a survey form."]
+        "intro": [
+          "For this lab, you will review working with HTML forms by creating a survey form.",
+          "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
       },
       "wgot": { "title": "19", "intro": [] },
       "workshop-final-exams-table": {
@@ -1755,26 +1807,71 @@
           "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
         ]
       },
-      "xdvu": { "title": "21", "intro": [] },
+      "lab-book-catalog-table": {
+        "title": "Build a Book Catalog Table",
+        "intro": [
+          "In this lab, you will review working with HTML tables by building a table filled with book information.",
+          "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
+        ]
+      },
       "rsve": { "title": "22", "intro": [] },
-      "xzam": { "title": "23", "intro": [] },
-      "isho": { "title": "24", "intro": [] },
+      "review-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Review",
+        "intro": [
+          "Review the HTML Tables and Forms concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of HTML tables and forms."
+        ]
+      },
       "ghoc": { "title": "25", "intro": [] },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": ["In this lab, you will create an accessible checkout page."]
       },
-      "fqai": { "title": "27", "intro": [] },
-      "cayd": { "title": "28", "intro": [] },
-      "pspj": { "title": "29", "intro": [] },
+      "review-html-accessibility": {
+        "title": "HTML Accessibility Review",
+        "intro": [
+          "Review the HTML Accessibility concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-html-accessibility": {
+        "title": "HTML Accessibility Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of HTML accessibility knowledge."
+        ]
+      },
+      "review-html": {
+        "title": "HTML Review",
+        "intro": ["Review the HTML concepts to prepare for the upcoming exam."]
+      },
       "qpra": { "title": "30", "intro": [] },
       "joim": { "title": "31", "intro": [] },
       "gvtb": { "title": "32", "intro": [] },
       "cqhu": { "title": "33", "intro": [] },
-      "tmdc": { "title": "34", "intro": [] },
-      "hqia": { "title": "35", "intro": [] },
+      "review-computer-basics": {
+        "title": "Computer Basics Review",
+        "intro": [
+          "Review the Computer Basics concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-computer-basics": {
+        "title": "Computer Basics Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of basic computer knowledge."
+        ]
+      },
       "dxpc": { "title": "36", "intro": [] },
-      "liti": { "title": "37", "intro": [] },
+      "workshop-cafe-menu": {
+        "title": "Design a Cafe Menu",
+        "intro": [
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+        ]
+      },
       "lab-business-card": {
         "title": "Design a Business Card",
         "intro": [
@@ -1782,8 +1879,18 @@
         ]
       },
       "gnuk": { "title": "39", "intro": [] },
-      "zlfj": { "title": "40", "intro": [] },
-      "ioqd": { "title": "41", "intro": [] },
+      "review-basic-css": {
+        "title": "Basic CSS Review",
+        "intro": [
+          "Review the Basic CSS concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-basic-css": {
+        "title": "Basic CSS Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of basic CSS knowledge."
+        ]
+      },
       "sdul": { "title": "42", "intro": [] },
       "lab-stylized-to-do-list": {
         "title": "Build a Stylized To-Do List",
@@ -1798,123 +1905,372 @@
           "In this lab, you'll design a blog post card using HTML and CSS"
         ]
       },
-      "rzdx": { "title": "46", "intro": [] },
-      "sgpy": { "title": "47", "intro": [] },
+      "review-css-backgrounds-and-borders": {
+        "title": "CSS Backgrounds and Borders Review",
+        "intro": [
+          "Review the CSS Backgrounds and Borders concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-backgrounds-and-borders": {
+        "title": "CSS Backgrounds and Borders Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of backgrounds and borders in CSS."
+        ]
+      },
       "ljmt": { "title": "48", "intro": [] },
       "lxpk": { "title": "49", "intro": [] },
       "lzqy": { "title": "50", "intro": [] },
-      "gvel": { "title": "51", "intro": [] },
-      "hgxz": { "title": "52", "intro": [] },
+      "review-design-fundamentals": {
+        "title": "Design Fundamentals Review",
+        "intro": [
+          "Review the Design Fundamentals concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-design-fundamentals": {
+        "title": "Design Fundamentals Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of UI design fundamentals."
+        ]
+      },
       "bgrw": { "title": "53", "intro": [] },
-      "sbnz": { "title": "54", "intro": [] },
       "lab-event-flyer-page": {
         "title": "Build an Event Flyer Page",
         "intro": [
           "In this lab, you will use absolute and relative CSS units to create an event flyer page."
         ]
       },
-      "ywfm": { "title": "56", "intro": [] },
-      "yspe": { "title": "57", "intro": [] },
+      "review-css-relative-and-absolute-units": {
+        "title": "CSS Relative and Absolute Units Review",
+        "intro": [
+          "Review the CSS Relative and Absolute Units concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-relative-and-absolute-units": {
+        "title": "CSS Relative and Absolute Units Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of relative and absolute units in CSS."
+        ]
+      },
       "ohhu": { "title": "58", "intro": [] },
       "syga": { "title": "59", "intro": [] },
-      "sdym": { "title": "60", "intro": [] },
-      "ivpx": { "title": "61", "intro": [] },
-      "xnph": { "title": "62", "intro": [] },
-      "fvcj": { "title": "63", "intro": [] },
+      "lab-job-application-form": {
+        "title": "Build a Job Application Form",
+        "intro": [
+          "In this lab you will build a job application form and style it using pseudo-classes."
+        ]
+      },
+      "review-css-pseudo-classes": {
+        "title": "CSS Pseudo-classes Review",
+        "intro": [
+          "Review the CSS Pseudo-classes concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-pseudo-classes": {
+        "title": "CSS Pseudo-classes Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of pseudo-classes in CSS."
+        ]
+      },
+      "workshop-colored-markers": {
+        "title": "Build a Set of Colored Markers",
+        "intro": [
+          "In this workshop, you'll build a set of colored markers. You'll practice different ways to set color values and how to pair colors with each other."
+        ]
+      },
       "ogdb": { "title": "64", "intro": [] },
-      "zxiy": { "title": "65", "intro": [] },
-      "qpze": { "title": "66", "intro": [] },
-      "uqiy": { "title": "67", "intro": [] },
-      "jnqt": { "title": "68", "intro": [] },
-      "vkei": { "title": "69", "intro": [] },
-      "jows": { "title": "70", "intro": [] },
-      "ipmw": { "title": "71", "intro": [] },
-      "nxbr": { "title": "72", "intro": [] },
-      "qzcx": { "title": "73", "intro": [] },
-      "wozq": { "title": "74", "intro": [] },
+      "review-css-colors": {
+        "title": "CSS Colors Review",
+        "intro": [
+          "Review the CSS Colors concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-colors": {
+        "title": "CSS Colors Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of using colors in CSS."
+        ]
+      },
+      "workshop-registration-form": {
+        "title": "Design a Registration Form",
+        "intro": [
+          "You can use HTML forms to collect information from people who visit your webpage.",
+          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+        ]
+      },
+      "lab-contact-form": {
+        "title": "Design a Contact Form",
+        "intro": [
+          "In this lab, you will design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "review-styling-forms": {
+        "title": "Styling Forms Review",
+        "intro": [
+          "Review the Styling Forms concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-styling-forms": {
+        "title": "Styling Forms Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of how to style forms using CSS."
+        ]
+      },
+      "woza": { "title": "72", "intro": [] },
+      "workshop-rothko-painting": {
+        "title": "Design a Rothko Painting",
+        "intro": [
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+        ]
+      },
       "lab-confidential-email-page": {
         "title": "Build a Confidential Email Page",
         "intro": [
           "For this lab, you will create a web page of a confidential email using HTML and CSS."
         ]
       },
-      "zter": { "title": "76", "intro": [] },
-      "rfiq": { "title": "77", "intro": [] },
-      "tcwi": { "title": "78", "intro": [] },
-      "uptf": { "title": "79", "intro": [] },
+      "review-css-layout-and-effects": {
+        "title": "CSS Layouts and Effects Review",
+        "intro": [
+          "Review the CSS Layouts and Effects concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-layout-and-effects": {
+        "title": "CSS Layout and Effects Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
+        ]
+      },
+      "ujaf": { "title": "77", "intro": [] },
+      "workshop-flexbox-photo-gallery": {
+        "title": "Build a Flexbox Photo Gallery",
+        "intro": [
+          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
+      },
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
         "intro": [
           "For this lab, you will use flexbox to create a webpage of playing cards."
         ]
       },
-      "kqao": { "title": "81", "intro": [] },
-      "habq": { "title": "82", "intro": [] },
-      "vqut": { "title": "83", "intro": [] },
-      "ujcf": { "title": "84", "intro": [] },
+      "review-css-flexbox": {
+        "title": "CSS Flexbox Review",
+        "intro": [
+          "Review the CSS Flexbox concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-flexbox": {
+        "title": "CSS Flexbox Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of using flexbox in CSS."
+        ]
+      },
+      "ujcf": { "title": "82", "intro": [] },
+      "workshop-nutritional-label": {
+        "title": "Build a Nutritional Label",
+        "intro": [
+          "Typography is the art of styling your text to be easily readable and suit its purpose.",
+          "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
+        ]
+      },
       "lab-newspaper-article": {
         "title": "Build a Newspaper Article",
         "intro": [
           "In this lab, you will build a newspaper article page using HTML and CSS."
         ]
       },
-      "hbme": { "title": "86", "intro": [] },
-      "ioby": { "title": "87", "intro": [] },
-      "dyvj": { "title": "88", "intro": [] },
-      "rjsv": { "title": "89", "intro": [] },
-      "txmt": { "title": "90", "intro": [] },
-      "fnde": { "title": "91", "intro": [] },
-      "gxjm": { "title": "92", "intro": [] },
-      "swpl": { "title": "93", "intro": [] },
-      "hcje": { "title": "94", "intro": [] },
+      "review-css-typography": {
+        "title": "CSS Typography Review",
+        "intro": [
+          "Review the CSS Typography concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-typography": {
+        "title": "CSS Typography Quiz",
+        "intro": ["Test what you've learned in this quiz of typography in CSS."]
+      },
+      "workshop-accessibility-quiz": {
+        "title": "Build a Quiz Webpage",
+        "intro": [
+          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+        ]
+      },
+      "lab-tribute-page": {
+        "title": "Build a Tribute Page",
+        "intro": [
+          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+        ]
+      },
+      "review-css-accessibility": {
+        "title": "CSS Accessibility Review",
+        "intro": [
+          "Review the CSS Accessibility concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-accessibility": {
+        "title": "CSS Accessibility Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of making your webpage accessible with CSS."
+        ]
+      },
+      "haje": { "title": "92", "intro": [] },
+      "workshop-balance-sheet": {
+        "title": "Build a Balance Sheet",
+        "intro": [
+          "You can use CSS pseudo selectors to change specific HTML elements.",
+          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
+      },
       "lab-book-inventory-app": {
         "title": "Build a Book Inventory App",
         "intro": ["For this lab, you will create a book inventory app."]
       },
-      "huyd": { "title": "96", "intro": [] },
-      "kbwy": { "title": "97", "intro": [] },
-      "rxzk": { "title": "98", "intro": [] },
-      "xobh": { "title": "99", "intro": [] },
-      "pgyf": { "title": "100", "intro": [] },
-      "rrtt": { "title": "101", "intro": [] },
-      "rbnd": { "title": "102", "intro": [] },
-      "xebj": { "title": "103", "intro": [] },
-      "jkdt": { "title": "104", "intro": [] },
-      "cbbz": { "title": "105", "intro": [] },
-      "xcti": { "title": "106", "intro": [] },
-      "scec": { "title": "107", "intro": [] },
-      "mtbl": { "title": "108", "intro": [] },
-      "vlov": { "title": "109", "intro": [] },
+      "review-css-attribute-selectors": {
+        "title": "CSS Attribute Selectors Review",
+        "intro": [
+          "Review the CSS Attribute Selectors concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-attribute-selectors": {
+        "title": "CSS Attribute Selectors Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of using attribute selectors in CSS."
+        ]
+      },
+      "rxzq": { "title": "97", "intro": [] },
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
+      },
+      "lab-house-painting": {
+        "title": "Build a House Painting",
+        "intro": ["For this lab, you will build a house painting using CSS."]
+      },
+      "review-css-positioning": {
+        "title": "CSS Positioning Review",
+        "intro": [
+          "Review the CSS Positioning concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-positioning": {
+        "title": "CSS Positioning Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of how positioning works in CSS."
+        ]
+      },
+      "jkdu": { "title": "102", "intro": [] },
+      "workshop-piano": {
+        "title": "Design a Piano",
+        "intro": [
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+        ]
+      },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
+        ]
+      },
+      "review-responsive-web-design": {
+        "title": "Responsive Web Design Review",
+        "intro": [
+          "Review the Responsive Web Design concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-responsive-web-design": {
+        "title": "Responsive Web Design Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of making your webpage responsive."
+        ]
+      },
+      "vlov": { "title": "107", "intro": [] },
+      "workshop-city-skyline": {
+        "title": "Build a City Skyline",
+        "intro": [
+          "CSS variables help you organize your styles and reuse them.",
+          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+        ]
+      },
       "lab-availability-table": {
         "title": "Build an Availability Table",
         "intro": ["For this lab, you will create an availability table."]
       },
-      "sget": { "title": "111", "intro": [] },
-      "huge": { "title": "112", "intro": [] },
+      "review-css-variables": {
+        "title": "CSS Variables Review",
+        "intro": [
+          "Review the CSS Variables concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-variables": {
+        "title": "CSS Variables Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of how using variables in CSS."
+        ]
+      },
+      "nsia": { "title": "112", "intro": [] },
       "agbl": { "title": "113", "intro": [] },
       "ogko": { "title": "114", "intro": [] },
       "harp": { "title": "115", "intro": [] },
-      "nsiq": { "title": "116", "intro": [] },
-      "geuv": { "title": "117", "intro": [] },
-      "fdam": { "title": "118", "intro": [] },
-      "yqma": { "title": "119", "intro": [] },
-      "dorc": { "title": "120", "intro": [] },
-      "adzu": { "title": "121", "intro": [] },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "For this project, you will build a product landing page to market a product of your choice."
+        ]
+      },
+      "review-css-grid": {
+        "title": "CSS Grid Review",
+        "intro": [
+          "Review the CSS Grid concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-grid": {
+        "title": "CSS Grid Quiz",
+        "intro": ["Test what you've learned in this quiz of using grid in CSS."]
+      },
+      "dora": { "title": "119", "intro": [] },
+      "dpaq": { "title": "120", "intro": [] },
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
           "For this lab, you will create an animation of the moon orbiting the earth."
         ]
       },
-      "lugl": { "title": "123", "intro": [] },
+      "workshop-flappy-penguin": {
+        "title": "Build a Flappy Penguin",
+        "intro": [
+          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
+          "In this workshop, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+        ]
+      },
       "lab-personal-portfolio": {
         "title": "Build a Personal Portfolio",
         "intro": [
           "For this project, you will build your own personal portfolio page."
         ]
       },
-      "lvqc": { "title": "125", "intro": [] },
-      "oxbd": { "title": "126", "intro": [] },
+      "review-css-animations": {
+        "title": "CSS Amimations Review",
+        "intro": [
+          "Review the CSS Amimations concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-css-animations": {
+        "title": "CSS Animations Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of using animations in CSS."
+        ]
+      },
+      "review-css": {
+        "title": "CSS Review",
+        "intro": ["Review the CSS concepts to prepare for the upcoming exam."]
+      },
       "wvjx": { "title": "127", "intro": [] },
       "uquz": { "title": "128", "intro": [] },
       "kdgd": { "title": "129", "intro": [] },
@@ -1926,10 +2282,20 @@
           "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
         ]
       },
-      "zmzg": { "title": "132", "intro": [] },
+      "lab-javascript-trivia-bot": {
+        "title": "Build a JavaScript Trivia Bot",
+        "intro": [
+          "In this lab, you will practice working with JavaScript variables and strings by building a trivia bot."
+        ]
+      },
       "dthi": { "title": "133", "intro": [] },
       "yskn": { "title": "134", "intro": [] },
-      "tpni": { "title": "135", "intro": [] },
+      "quiz-javascript-variables-and-data-types": {
+        "title": "JavaScript Variables and Data Types Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Variables and Data Types."
+        ]
+      },
       "hoec": { "title": "136", "intro": [] },
       "workshop-teacher-chatbot": {
         "title": "Build a Teacher Chatbot",
@@ -1940,8 +2306,19 @@
       },
       "axgb": { "title": "138", "intro": [] },
       "rwac": { "title": "139", "intro": [] },
+      "quiz-javascript-strings": {
+        "title": "JavaScript Strings Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Strings."
+        ]
+      },
       "hxwa": { "title": "141", "intro": [] },
-      "xkbo": { "title": "142", "intro": [] },
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
+      },
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
         "intro": [
@@ -1950,10 +2327,18 @@
       },
       "wfyg": { "title": "144", "intro": [] },
       "guqy": { "title": "145", "intro": [] },
-      "nkge": { "title": "146", "intro": [] },
+      "quiz-javascript-math": {
+        "title": "JavaScript Math Quiz",
+        "intro": ["Test what you've learned in this quiz on JavaScript Math."]
+      },
       "hafd": { "title": "147", "intro": [] },
       "phko": { "title": "148", "intro": [] },
-      "wjzt": { "title": "149", "intro": [] },
+      "quiz-javascript-comparisons-and-conditionals": {
+        "title": "JavaScript Comparisons and Conditionals Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Comparisons and Conditionals."
+        ]
+      },
       "tsdq": { "title": "150", "intro": [] },
       "workshop-calculator": {
         "title": "Build a Calculator",
@@ -1987,7 +2372,12 @@
         ]
       },
       "pljo": { "title": "156", "intro": [] },
-      "avln": { "title": "157", "intro": [] },
+      "quiz-javascript-functions": {
+        "title": "JavaScript Functions Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Functions."
+        ]
+      },
       "mexq": { "title": "158", "intro": [] },
       "ifgn": { "title": "159", "intro": [] },
       "workshop-shopping-list": {
@@ -1997,24 +2387,57 @@
           "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
+      "lab-lunch-picker-program": {
+        "title": "Build a Lunch Picker Program",
+        "intro": [
+          "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
+        ]
+      },
       "mokm": { "title": "161", "intro": [] },
       "froz": { "title": "162", "intro": [] },
-      "ozth": { "title": "163", "intro": [] },
+      "quiz-javascript-arrays": {
+        "title": "JavaScript Arrays Quiz",
+        "intro": ["Test what you've learned in this quiz on JavaScript Arrays."]
+      },
       "dvnt": { "title": "164", "intro": [] },
-      "ekdb": { "title": "165", "intro": [] },
-      "ezek": { "title": "166", "intro": [] },
+      "workshop-recipe-tracker": {
+        "title": "Build a Recipe Tracker",
+        "intro": [
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+        ]
+      },
+      "lab-quiz-game": {
+        "title": "Build a Quiz Game",
+        "intro": ["For this lab, you will build a quiz game."]
+      },
       "lab-factorial-calculator": {
         "title": "Build a Factorial Calculator ",
         "intro": ["In this lab, you will build a factorial calculator."]
       },
-      "lgfm": { "title": "168", "intro": [] },
+      "quiz-javascript-objects": {
+        "title": "JavaScript Objects Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Objects."
+        ]
+      },
       "kgtw": { "title": "169", "intro": [] },
-      "ljmq": { "title": "170", "intro": [] },
+      "workshop-sentence-analyzer": {
+        "title": "Build a Sentence Analyzer",
+        "intro": [
+          "In this workshop, you'll review working with JavaScript loops by building a sentence analyzer app."
+        ]
+      },
       "kcci": { "title": "171", "intro": [] },
       "puhe": { "title": "172", "intro": [] },
-      "ttrm": { "title": "173", "intro": [] },
+      "quiz-javascript-loops": {
+        "title": "JavaScript Loops Quiz",
+        "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
+      },
       "hjtr": { "title": "174", "intro": [] },
-      "ccnu": { "title": "175", "intro": [] },
+      "lab-pyramid-generator": {
+        "title": "Build a Pyramid Generator",
+        "intro": ["In this lab you will build a pyramid generator."]
+      },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
@@ -2029,17 +2452,37 @@
       "fbbn": { "title": "179", "intro": [] },
       "lnmg": { "title": "180", "intro": [] },
       "wead": { "title": "181", "intro": [] },
-      "eekl": { "title": "182", "intro": [] },
+      "quiz-javascript-fundamentals": {
+        "title": "JavaScript Fundamentals Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
+        ]
+      },
       "plic": { "title": "183", "intro": [] },
       "vjmm": { "title": "184", "intro": [] },
       "bxtv": { "title": "185", "intro": [] },
       "xiqk": { "title": "186", "intro": [] },
-      "quyu": { "title": "187", "intro": [] },
+      "quiz-javascript-higher-order-functions": {
+        "title": "JavaScript Higher Order Functions Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Higher Order Functions."
+        ]
+      },
       "esfh": { "title": "188", "intro": [] },
       "gibb": { "title": "189", "intro": [] },
-      "whrm": { "title": "190", "intro": [] },
+      "lab-favorite-icon-toggler": {
+        "title": "Build a Favorite Icon Toggler",
+        "intro": [
+          "In this lab, you will build a favorite icon toggler by utilizing JavaScript click events."
+        ]
+      },
       "fhxc": { "title": "191", "intro": [] },
-      "arqa": { "title": "192", "intro": [] },
+      "quiz-dom-manipulation-and-click-event-with-javascript": {
+        "title": "DOM Manipulation and Click Events with JavaScript Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
+        ]
+      },
       "ubpx": { "title": "193", "intro": [] },
       "lbyi": { "title": "194", "intro": [] },
       "lab-real-time-counter": {
@@ -2059,122 +2502,242 @@
           "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
         ]
       },
-      "uglc": { "title": "199", "intro": [] },
-      "vonu": { "title": "200", "intro": [] },
+      "lab-palindrome-checker": {
+        "title": "Build a Palindrome Checker",
+        "intro": [
+          "For this lab, you'll build an application that checks whether a given word is a palindrome."
+        ]
+      },
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "One common aspect of building web applications is processing datasets and outputting information to the screen. In this project, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
+      },
       "iejn": { "title": "201", "intro": [] },
-      "arrr": { "title": "202", "intro": [] },
+      "quiz-javascript-events": {
+        "title": "JavaScript Events Quiz",
+        "intro": ["Test what you've learned in this quiz on JavaScript Events."]
+      },
       "kaqq": { "title": "203", "intro": [] },
-      "ksfc": { "title": "204", "intro": [] },
-      "xeqa": { "title": "205", "intro": [] },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
           "For this lab, you will debug a random background color changer and fix the errors to make it work properly."
         ]
       },
+      "ksfc": { "title": "205", "intro": [] },
+      "quiz-debugging-javascript": {
+        "title": "Debugging JavaScript Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Debugging JavaScript."
+        ]
+      },
       "dqth": { "title": "207", "intro": [] },
       "ilop": { "title": "208", "intro": [] },
       "qrer": { "title": "209", "intro": [] },
-      "unyy": { "title": "210", "intro": [] },
+      "lab-regex-sandbox": {
+        "title": "Build a RegEx Sandbox",
+        "intro": ["In this lab you will build a regex sandbox."]
+      },
       "svsl": { "title": "211", "intro": [] },
-      "wnmj": { "title": "212", "intro": [] },
+      "quiz-javascript-regular-expressions": {
+        "title": "JavaScript Regular Expressions Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Regular Expressions."
+        ]
+      },
       "zalp": { "title": "213", "intro": [] },
       "hhvp": { "title": "214", "intro": [] },
       "egkv": { "title": "215", "intro": [] },
       "qlvw": { "title": "216", "intro": [] },
-      "cyrl": { "title": "217", "intro": [] },
+      "quiz-form-validation-with-javascript": {
+        "title": "Form Validation with JavaScript Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Form Validation with JavaScript."
+        ]
+      },
       "lupt": { "title": "218", "intro": [] },
-      "yvqn": { "title": "219", "intro": [] },
+      "lab-date-conversion": {
+        "title": "Build a Date Conversion Program",
+        "intro": [
+          "In this lab, you will build a program to convert a date from one format to another."
+        ]
+      },
       "xtfk": { "title": "220", "intro": [] },
-      "xnpr": { "title": "221", "intro": [] },
+      "quiz-javascript-dates": {
+        "title": "JavaScript Dates Quiz",
+        "intro": ["Test what you've learned in this quiz on JavaScript Dates."]
+      },
       "lvts": { "title": "222", "intro": [] },
       "foal": { "title": "223", "intro": [] },
       "crzf": { "title": "224", "intro": [] },
       "xofr": { "title": "225", "intro": [] },
-      "bsmn": { "title": "226", "intro": [] },
+      "quiz-javascript-audio-and-video": {
+        "title": "JavaScript Audio and Video Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Audio and Video."
+        ]
+      },
       "pehm": { "title": "227", "intro": [] },
       "cvsw": { "title": "228", "intro": [] },
-      "qjws": { "title": "229", "intro": [] },
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": ["For this lab, you will build a bookmark manager app."]
+      },
       "fgbp": { "title": "230", "intro": [] },
+      "quiz-local-storage-and-crud": {
+        "title": "Local Storage and CRUD Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Local Storage and CRUD."
+        ]
+      },
       "jbst": { "title": "232", "intro": [] },
       "peyf": { "title": "233", "intro": [] },
       "bdqj": { "title": "234", "intro": [] },
       "ndlf": { "title": "235", "intro": [] },
-      "cpmq": { "title": "236", "intro": [] },
+      "quiz-recursion": {
+        "title": "Recursion Quiz",
+        "intro": ["Test what you've learned in this quiz on Recursion."]
+      },
       "yshh": { "title": "237", "intro": [] },
       "wyxz": { "title": "238", "intro": [] },
-      "dtfv": { "title": "239", "intro": [] },
       "lab-quicksort-algorithm": {
         "title": "Build the Quicksort Algorithm",
         "intro": [
           "For this lab, you will implement the Quicksort algorithm using JavaScript."
         ]
       },
-      "manv": { "title": "241", "intro": [] },
+      "dtfv": { "title": "240", "intro": [] },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Searching and Sorting Algorithms."
+        ]
+      },
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
-      "yaxm": { "title": "244", "intro": [] },
-      "bfzo": { "title": "245", "intro": [] },
-      "lofk": { "title": "246", "intro": [] },
-      "udia": { "title": "247", "intro": [] },
-      "wevl": { "title": "248", "intro": [] },
+      "lab-roman-numeral-converter": {
+        "title": "Build a Roman Numeral Converter",
+        "intro": [
+          "For this lab, you'll build an application that converts integers to Roman numerals."
+        ]
+      },
+      "yaxm": { "title": "245", "intro": [] },
+      "lab-telephone-number-validator": {
+        "title": "Build a Telephone Number Validator",
+        "intro": [
+          "For this lab, you'll build an application that checks if a number is a valid United States phone number."
+        ]
+      },
       "lab-cash-register": {
         "title": "Build a Cash Register",
         "intro": ["For this lab, you will build a cash register."]
+      },
+      "udia": { "title": "248", "intro": [] },
+      "quiz-javascript-problem-solving-and-algorithmic-thinking": {
+        "title": "JavaScript Problem Solving and Algorithmic Thinking Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Problem Solving and Algorithmic Thinking."
+        ]
       },
       "xayi": { "title": "250", "intro": [] },
       "mjbe": { "title": "251", "intro": [] },
       "byqx": { "title": "252", "intro": [] },
       "alda": { "title": "253", "intro": [] },
-      "lkyc": { "title": "254", "intro": [] },
+      "quiz-javascript-functional-programming": {
+        "title": "JavaScript Functional Programming Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Functional Programming."
+        ]
+      },
       "cvaf": { "title": "255", "intro": [] },
       "tdgy": { "title": "256", "intro": [] },
       "saxu": { "title": "257", "intro": [] },
       "kagw": { "title": "258", "intro": [] },
       "mbib": { "title": "259", "intro": [] },
       "oxiv": { "title": "260", "intro": [] },
-      "mdrz": { "title": "261", "intro": [] },
+      "quiz-javascript-object-oriented-programming": {
+        "title": "JavaScript Object Oriented Programming Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Object Oriented Programming."
+        ]
+      },
       "nixz": { "title": "262", "intro": [] },
-      "zywg": { "title": "263", "intro": [] },
-      "wraf": { "title": "264", "intro": [] },
+      "lab-stack-class": {
+        "title": "Build a Stack Class",
+        "intro": [
+          "For this lab, you will build a stack class using JavaScript."
+        ]
+      },
       "lab-linked-list-class": {
         "title": "Build a Linked List Class",
         "intro": [
           "For this lab, you will build a linked list class using JavaScript."
         ]
       },
+      "lab-hash-table-class": {
+        "title": "Build a Hash Table Class",
+        "intro": ["For this lab, you will build a hash table using JavaScript."]
+      },
       "muyw": { "title": "266", "intro": [] },
-      "mvzb": { "title": "267", "intro": [] },
+      "quiz-javascript-data-structures": {
+        "title": "JavaScript Data Structures Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Data Structures."
+        ]
+      },
       "rmpy": { "title": "268", "intro": [] },
-      "plfo": { "title": "269", "intro": [] },
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
+        ]
+      },
       "xdyh": { "title": "270", "intro": [] },
-      "ybrh": { "title": "271", "intro": [] },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": ["Test what you've learned in this quiz on Graphs and Trees."]
+      },
       "vjgg": { "title": "272", "intro": [] },
-      "kaui": { "title": "273", "intro": [] },
       "lab-nth-fibonacci-number-generator": {
         "title": "Build the nth Fibonacci number generator",
         "intro": [
           "For this lab, you will implement the nth Fibonacci number generator."
         ]
       },
-      "cfyv": { "title": "275", "intro": [] },
+      "kaui": { "title": "274", "intro": [] },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Dynamic Programming."
+        ]
+      },
       "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
       "fcom": { "title": "278", "intro": [] },
       "ffpt": { "title": "279", "intro": [] },
-      "vyzp": { "title": "280", "intro": [] },
       "lab-pokemon-search-app": {
         "title": "Build a Pokémon Search App",
         "intro": ["For this project, you will build a Pokémon search app."]
       },
-      "fihs": { "title": "282", "intro": [] },
+      "vyzp": { "title": "281", "intro": [] },
+      "quiz-asynchronous-javascript": {
+        "title": "Asynchronous JavaScript Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Asynchronous JavaScript."
+        ]
+      },
       "icdr": { "title": "283", "intro": [] },
       "zdsj": { "title": "284", "intro": [] },
       "mzae": { "title": "285", "intro": [] },
       "gjbf": { "title": "286", "intro": [] },
       "mbpv": { "title": "287", "intro": [] },
       "eeez": { "title": "288", "intro": [] },
-      "xweg": { "title": "289", "intro": [] },
+      "quiz-web-standards": {
+        "title": "Web Standards Quiz",
+        "intro": ["Test what you've learned in this quiz on Web Standards."]
+      },
       "khuu": { "title": "290", "intro": [] },
       "xdly": { "title": "291", "intro": [] },
       "rhhl": { "title": "292", "intro": [] },
@@ -2182,7 +2745,10 @@
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
       "erfj": { "title": "296", "intro": [] },
-      "zcef": { "title": "297", "intro": [] },
+      "quiz-react-basics": {
+        "title": "React Basics Quiz",
+        "intro": ["Test what you've learned in this quiz on React Basics."]
+      },
       "hfwi": { "title": "298", "intro": [] },
       "rnwr": { "title": "299", "intro": [] },
       "oeqv": { "title": "300", "intro": [] },
@@ -2190,7 +2756,12 @@
       "vtpz": { "title": "302", "intro": [] },
       "dfwl": { "title": "303", "intro": [] },
       "adzm": { "title": "304", "intro": [] },
-      "yani": { "title": "305", "intro": [] },
+      "quiz-react-state-and-hooks": {
+        "title": "React State and Hooks Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on React State and Hooks."
+        ]
+      },
       "voks": { "title": "306", "intro": [] },
       "uwum": { "title": "307", "intro": [] },
       "ukem": { "title": "308", "intro": [] },
@@ -2199,25 +2770,41 @@
       "pexz": { "title": "311", "intro": [] },
       "prlo": { "title": "312", "intro": [] },
       "jsnd": { "title": "313", "intro": [] },
-      "lpdx": { "title": "314", "intro": [] },
+      "quiz-advanced-react": {
+        "title": "Advanced React Quiz",
+        "intro": ["Test what you've learned in this quiz on Advanced React."]
+      },
       "tkgg": { "title": "315", "intro": [] },
       "coip": { "title": "316", "intro": [] },
-      "wkxy": { "title": "317", "intro": [] },
+      "quiz-web-performance": {
+        "title": "Web Performance Quiz",
+        "intro": ["Test what you've learned in this quiz on Web Performance."]
+      },
       "hzab": { "title": "318", "intro": [] },
       "ggea": { "title": "319", "intro": [] },
       "vgvz": { "title": "320", "intro": [] },
       "jkfc": { "title": "321", "intro": [] },
-      "jsbo": { "title": "322", "intro": [] },
+      "quiz-typescript": {
+        "title": "TypeScript Quiz",
+        "intro": ["Test what you've learned in this quiz on TypeScript."]
+      },
       "zhhp": { "title": "323", "intro": [] },
       "nwwd": { "title": "324", "intro": [] },
-      "iuad": { "title": "325", "intro": [] },
+      "quiz-css-libraries-and-frameworks": {
+        "title": "CSS Libraries and Frameworks Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on CSS Libraries and Frameworks."
+        ]
+      },
       "gora": { "title": "326", "intro": [] },
       "vpkl": { "title": "327", "intro": [] },
-      "qmur": { "title": "328", "intro": [] },
+      "quiz-testing": {
+        "title": "Testing Quiz",
+        "intro": ["Test what you've learned in this quiz on Testing."]
+      },
       "lzvx": { "title": "329", "intro": [] },
       "mfwu": { "title": "330", "intro": [] },
       "dfcd": { "title": "331", "intro": [] },
-      "vfje": { "title": "332", "intro": [] },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
         "intro": [
@@ -2225,9 +2812,12 @@
           "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
         ]
       },
-      "ovvb": { "title": "334", "intro": [] },
+      "vfje": { "title": "333", "intro": [] },
+      "quiz-bash-commands": {
+        "title": "Bash Commands Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash Commands."]
+      },
       "thsj": { "title": "335", "intro": [] },
-      "cvvu": { "title": "336", "intro": [] },
       "workshop-mario-database": {
         "title": "Build a Mario Database",
         "intro": [
@@ -2241,9 +2831,14 @@
           "For this project, you will build a database of celestial bodies using PostgreSQL."
         ]
       },
-      "oxxf": { "title": "339", "intro": [] },
+      "cvvu": { "title": "338", "intro": [] },
+      "quiz-relational-database": {
+        "title": "Relational Database Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Relational Databases."
+        ]
+      },
       "ynqt": { "title": "340", "intro": [] },
-      "hnta": { "title": "341", "intro": [] },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
         "intro": [
@@ -2251,9 +2846,12 @@
           "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
         ]
       },
-      "keqo": { "title": "343", "intro": [] },
+      "hnta": { "title": "342", "intro": [] },
+      "quiz-bash-scripting": {
+        "title": "Bash Scripting Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash Scripting."]
+      },
       "pegc": { "title": "344", "intro": [] },
-      "udfh": { "title": "345", "intro": [] },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
         "intro": [
@@ -2293,9 +2891,12 @@
           "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
         ]
       },
-      "zygv": { "title": "352", "intro": [] },
+      "udfh": { "title": "351", "intro": [] },
+      "quiz-bash-and-sql": {
+        "title": "Bash and SQL Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+      },
       "movb": { "title": "353", "intro": [] },
-      "dzsr": { "title": "354", "intro": [] },
       "workshop-castle": {
         "title": "Build a Castle",
         "intro": [
@@ -2303,9 +2904,12 @@
           "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "cysa": { "title": "356", "intro": [] },
+      "dzsr": { "title": "355", "intro": [] },
+      "quiz-nano": {
+        "title": "Nano Quiz",
+        "intro": ["Test what you've learned in this quiz on Nano."]
+      },
       "pzmc": { "title": "357", "intro": [] },
-      "trpm": { "title": "358", "intro": [] },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -2325,14 +2929,22 @@
           "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
         ]
       },
-      "mgoc": { "title": "362", "intro": [] },
+      "nfoc": { "title": "361", "intro": [] },
+      "quiz-git": {
+        "title": "Git Quiz",
+        "intro": ["Test what you've learned in this quiz on Git."]
+      },
       "ibmn": { "title": "363", "intro": [] },
       "zpjj": { "title": "364", "intro": [] },
       "ghfk": { "title": "365", "intro": [] },
       "ugfq": { "title": "366", "intro": [] },
-      "pfui": { "title": "367", "intro": [] },
+      "quiz-security-and-privacy": {
+        "title": "Security and Privacy Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Security and Privacy."
+        ]
+      },
       "qjov": { "title": "368", "intro": [] },
-      "niie": { "title": "369", "intro": [] },
       "workshop-npm-packages": {
         "title": "Managing Packages with npm",
         "intro": [
@@ -2340,7 +2952,7 @@
           "In this workshop, you'll learn the basics of using npm, including how to work with the <code>package.json</code> file and how to manage your installed dependencies."
         ]
       },
-      "hjku": { "title": "371", "intro": [] },
+      "hjku": { "title": "370", "intro": [] },
       "workshop-node-and-express": {
         "title": "Basic Node and Express",
         "intro": [
@@ -2350,7 +2962,10 @@
           "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
         ]
       },
-      "zzhp": { "title": "373", "intro": [] },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": ["In this lab you will build a timestamp microservice"]
+      },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
         "intro": [
@@ -2365,19 +2980,32 @@
         "title": "Build an Exercise Tracker",
         "intro": ["In this lab, you will build an exercise tracker"]
       },
+      "lab-file-metadata-microservice": {
+        "title": "Build a File Metadata Microservice",
+        "intro": ["For this lab you will build a file metadata microservice"]
+      },
       "kegi": { "title": "377", "intro": [] },
-      "nqhi": { "title": "378", "intro": [] },
+      "quiz-backend-javascript": {
+        "title": "Backend JavaScript Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on Backend JavaScript."
+        ]
+      },
       "vnfu": { "title": "379", "intro": [] },
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },
       "xbri": { "title": "382", "intro": [] },
-      "kwhp": { "title": "383", "intro": [] },
+      "quiz-tooling-and-deployment": {
+        "title": "Tooling and Deployment Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of tooling and deployment"
+        ]
+      },
       "nkjt": { "title": "384", "intro": [] },
       "pgjj": { "title": "385", "intro": [] },
       "exom": { "title": "386", "intro": [] },
       "bvqc": { "title": "387", "intro": [] },
       "xish": { "title": "388", "intro": [] },
-      "oadg": { "title": "389", "intro": [] },
       "front-end-development-certification-exam": {
         "title": "Front End Development Certification Exam",
         "intro": ["", ""]

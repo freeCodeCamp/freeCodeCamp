@@ -392,10 +392,8 @@ function ShowClassic({
         block={block}
         challengeDescription={
           <ChallengeDescription
-            block={block}
             description={description}
             instructions={instructions}
-            superBlock={superBlock}
           />
         }
         challengeTitle={
@@ -522,11 +520,15 @@ function ShowClassic({
         <CompletionModal />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal />
+        <ResetModal challengeType={challengeType} />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
-          previewTitle={t('learn.project-preview-title')}
+          previewTitle={
+            demoType === 'onClick'
+              ? t('learn.demo-project-title')
+              : t('learn.project-preview-title')
+          }
         />
         <ShortcutsModal />
       </LearnLayout>
