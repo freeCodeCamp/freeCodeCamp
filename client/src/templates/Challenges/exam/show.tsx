@@ -9,11 +9,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Alert, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Alert, Row, Button, Spacer } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
@@ -393,7 +392,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
     return examInProgress ? (
       <Container>
         <Row>
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={12}>
             {examResults ? (
               <ExamResults
@@ -423,7 +422,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   </div>
                 </div>
                 <hr />
-                <Spacer size='medium' />
+                <Spacer size='m' />
 
                 <div className='exam-questions'>
                   <PrismFormatted
@@ -432,7 +431,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     )}
                   />
 
-                  <Spacer size='large' />
+                  <Spacer size='l' />
                   <div className='exam-answers'>
                     {generatedExamQuestions[currentQuestionIndex].answers.map(
                       ({ answer, id }) => (
@@ -466,7 +465,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                     )}
                   </div>
                 </div>
-                <Spacer size='large' />
+                <Spacer size='l' />
 
                 <div className='exam-buttons'>
                   <Button
@@ -507,7 +506,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   )}
                 </div>
 
-                <Spacer size='medium' />
+                <Spacer size='m' />
 
                 <div className='exam-buttons'>
                   <Button
@@ -543,7 +542,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                 >
                   {title}
                 </ChallengeTitle>
-                <Spacer size='medium' />
+                <Spacer size='m' />
 
                 {qualifiedForExam ? (
                   <Alert variant='info'>
@@ -561,7 +560,7 @@ class ShowExam extends Component<ShowExamProps, ShowExamState> {
                   </>
                 )}
                 <PrismFormatted text={description} />
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <PrismFormatted text={instructions} />
 
                 <Button
