@@ -13,23 +13,25 @@ import './super-block-accordion.css';
 interface ChapterProps {
   dashedName: string;
   children: ReactNode;
+  isExpanded: boolean;
 }
 
 interface ModuleProps {
   dashedName: string;
   children: ReactNode;
+  isExpanded: boolean;
 }
 interface SuperBlockTreeViewProps {
   challenges: ChallengeNode['challenge'][];
   superBlock: SuperBlocks;
-  'aria-labelledby': string;
+  chosenBlock: string;
 }
 
-const Chapter = ({ dashedName, children }: ChapterProps) => {
+const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   const { t } = useTranslation();
 
   return (
-    <Disclosure as='li' className='chapter'>
+    <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
       <Disclosure.Button className='chapter-button'>
         {t(`intro:front-end-development.chapters.${dashedName}`)}
         <DropDown />
@@ -41,11 +43,11 @@ const Chapter = ({ dashedName, children }: ChapterProps) => {
   );
 };
 
-const Module = ({ dashedName, children }: ModuleProps) => {
+const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
   const { t } = useTranslation();
 
   return (
-    <Disclosure as='li'>
+    <Disclosure as='li' defaultOpen={isExpanded}>
       <Disclosure.Button className='module-button'>
         <DropDown />
         {t(`intro:front-end-development.modules.${dashedName}`)}
@@ -60,20 +62,30 @@ const Module = ({ dashedName, children }: ModuleProps) => {
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
-  'aria-labelledby': ariaLabelledBy
+  chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const chapters = uniq(challenges.map(({ chapter }) => chapter)) as string[];
+  const chapters = uniq(challenges.map(({ chapter }) => chapter as string));
+
+  // Expand the outer layers in order to reveal the chosen block.
+  const expandedChapter = challenges.find(({ block }) => chosenBlock === block)
+    ?.chapter as string;
+  const expandedModule = challenges.find(({ block }) => chosenBlock === block)
+    ?.module as string;
 
   const content = useMemo(() => {
     return chapters.map(chapter => {
       const modules = uniq(
         challenges
           .filter(challenge => challenge.chapter === chapter)
-          .map(challenge => challenge.module) as string[]
+          .map(challenge => challenge.module as string)
       );
 
       return (
-        <Chapter key={chapter} dashedName={chapter}>
+        <Chapter
+          key={chapter}
+          dashedName={chapter}
+          isExpanded={expandedChapter === chapter}
+        >
           {modules.map(mod => {
             const blocks = uniq(
               challenges
@@ -85,7 +97,11 @@ export const SuperBlockAccordion = ({
             );
 
             return (
-              <Module key={mod} dashedName={mod}>
+              <Module
+                key={mod}
+                dashedName={mod}
+                isExpanded={expandedModule === mod}
+              >
                 {blocks.map(block => {
                   const blockChallenges = challenges.filter(
                     challenge => challenge.block === block
@@ -108,11 +124,7 @@ export const SuperBlockAccordion = ({
         </Chapter>
       );
     });
-  }, [challenges, chapters, superBlock]);
+  }, [challenges, chapters, superBlock, expandedChapter, expandedModule]);
 
-  return (
-    <ul aria-labelledby={ariaLabelledBy} className='super-block-accordion'>
-      {content}
-    </ul>
-  );
+  return <ul className='super-block-accordion'>{content}</ul>;
 };

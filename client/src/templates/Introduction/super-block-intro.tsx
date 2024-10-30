@@ -193,6 +193,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
   ];
 
   const superBlockWithAccordionView = [SuperBlocks.FrontEndDevelopment];
+  const chosenBlock = getChosenBlock();
 
   const onCertificationDonationAlertClick = () => {
     callGA({
@@ -221,10 +222,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               />
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='large' />
-              <h2
-                className='text-center big-subheading'
-                id='super-block-heading'
-              >
+              <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='medium' />
@@ -232,7 +230,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 <SuperBlockAccordion
                   challenges={challenges}
                   superBlock={superBlock}
-                  aria-labelledby='super-block-heading'
+                  chosenBlock={chosenBlock}
                 />
               ) : (
                 <div className='block-ui'>
