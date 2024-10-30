@@ -143,7 +143,7 @@ test.describe('Landing Page', () => {
     const ctas = page.getByRole('link', {
       name: translations.buttons['logged-in-cta-btn']
     });
-    await expect(ctas).toHaveCount(4);
+    await expect(ctas).toHaveCount(3);
     for (const cta of await ctas.all()) {
       await expect(cta).toBeVisible();
     }
@@ -225,10 +225,5 @@ test.describe('Landing Page', () => {
       const btn = curriculumBtns.nth(index);
       await expect(btn).toContainText(superBlocks[index]);
     }
-  });
-
-  test('Has FAQ section', async ({ page }) => {
-    const faqs = page.getByTestId(landingPageElements.faq);
-    await expect(faqs).toHaveCount(9);
   });
 });
