@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
-import { Col } from '@freecodecamp/ui';
+import { Col, Spacer } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
-import { Loader, Spacer } from '../../../../components/helpers';
+import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import { sounds, images, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
@@ -299,7 +299,7 @@ export function Scene({
           </>
         )}
       </div>
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </Col>
   );
 }
