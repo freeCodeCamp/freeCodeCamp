@@ -830,9 +830,9 @@ const allStandardCerts = [
     certSlug: Certification.A2English,
     projects: [
       {
-        id: '651dd3e06ffb500e3f2ce478',
-        title: 'Challenge 1',
-        link: `${a2EnglishBase}/learn-greetings-in-your-first-day-at-the-office/challenge-1`,
+        id: '67223e69dd7f4f472f952d6e',
+        title: 'A2 English for Developers Certification Exam',
+        link: `${a2EnglishBase}/a2-english-for-developers-certification-exam/a2-english-for-developers-certification-exam`,
         certSlug: Certification.A2English
       }
     ]

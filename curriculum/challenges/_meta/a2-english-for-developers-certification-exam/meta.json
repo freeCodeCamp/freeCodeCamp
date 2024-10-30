@@ -1,0 +1,9 @@
+{
+  "name": "A2 English for Developers Certification Exam",
+  "isUpcomingChange": true,
+  "dashedName": "a2-english-for-developers-certification-exam",
+  "order": 27,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [{ "id": "67223e69dd7f4f472f952d6e", "title": "A2 English for Developers Certification Exam" }],
+  "helpCategory": "English"
+}
