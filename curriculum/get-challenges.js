@@ -280,7 +280,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
 }
 
 function isSuperBlockWithChapters(superBlock) {
-  return superBlock === 'front-end-development';
+  return superBlock === 'full-stack-developer';
 }
 
 // This is a slightly weird abstraction, but it lets us define helper functions

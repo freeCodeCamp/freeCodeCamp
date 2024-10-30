@@ -475,9 +475,17 @@
             { "dashedName": "lab-exercise-tracker" },
             { "dashedName": "lab-file-metadata-microservice" },
             { "dashedName": "quiz-backend-javascript" },
-            { "dashedName": "quiz-tooling-and-deployment" },
-            { "dashedName": "front-end-development-certification-exam" }
+            { "dashedName": "quiz-tooling-and-deployment" }
           ]
+        }
+      ]
+    },
+    {
+      "dashedName": "exam-certified-full-stack-developer",
+      "modules": [
+        {
+          "dashedName": "exam-certified-full-stack-developer",
+          "blocks": [{ "dashedName": "exam-certified-full-stack-developer" }]
         }
       ]
     }

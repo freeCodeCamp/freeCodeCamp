@@ -26,7 +26,7 @@ const schema = Joi.object()
     dashedName: Joi.string().regex(slugRE).required(),
     superBlock: Joi.string().regex(slugWithSlashRE).required(),
     order: Joi.number().when('superBlock', {
-      is: 'front-end-development',
+      is: 'full-stack-developer',
       then: Joi.optional(),
       otherwise: Joi.required()
     }),

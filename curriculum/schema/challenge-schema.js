@@ -142,7 +142,7 @@ const schema = Joi.object()
     }),
     challengeOrder: Joi.number(),
     chapter: Joi.string().when('superBlock', {
-      is: 'front-end-development',
+      is: 'full-stack-developer',
       then: Joi.required(),
       otherwise: Joi.optional()
     }),
@@ -201,7 +201,7 @@ const schema = Joi.object()
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
     module: Joi.string().when('superBlock', {
-      is: 'front-end-development',
+      is: 'full-stack-developer',
       then: Joi.required(),
       otherwise: Joi.optional()
     }),
