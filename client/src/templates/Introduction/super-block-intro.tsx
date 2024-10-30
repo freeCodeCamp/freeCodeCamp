@@ -32,7 +32,7 @@ import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
-import { SuperBlockTreeView } from './components/super-block-tree-view';
+import { SuperBlockAccordion } from './components/super-block-accordion';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -192,7 +192,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.PythonForEverybody
   ];
 
-  const superBlockWithTreeView = [SuperBlocks.FrontEndDevelopment];
+  const superBlockWithAccordionView = [SuperBlocks.FrontEndDevelopment];
 
   const onCertificationDonationAlertClick = () => {
     callGA({
@@ -228,8 +228,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='medium' />
-              {superBlockWithTreeView.includes(superBlock) ? (
-                <SuperBlockTreeView
+              {superBlockWithAccordionView.includes(superBlock) ? (
+                <SuperBlockAccordion
                   challenges={challenges}
                   superBlock={superBlock}
                   aria-labelledby='super-block-heading'

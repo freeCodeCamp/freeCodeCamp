@@ -1,4 +1,4 @@
-import React, { Component, KeyboardEventHandler } from 'react';
+import React, { Component } from 'react';
 import type { DefaultTFuncReturn, TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -69,16 +69,6 @@ class Block extends Component<BlockProps> {
     const { block, toggleBlock } = this.props;
     void playTone('block-toggle');
     toggleBlock(block);
-  };
-
-  // The library we use for tree view apparently hijacks/nullifies the keydown event.
-  // This handler is needed in order to allow triggering the block header button with keyboard.
-  handleBlockKeyDown: KeyboardEventHandler<HTMLButtonElement> = event => {
-    if (event.key === 'Enter' || event.key === 'Spacebar') {
-      const { block, toggleBlock } = this.props;
-      void playTone('block-toggle');
-      toggleBlock(block);
-    }
   };
 
   render(): JSX.Element {
@@ -259,7 +249,6 @@ class Block extends Component<BlockProps> {
               completedCount={completedCount}
               courseCompletionStatus={courseCompletionStatus()}
               handleClick={this.handleBlockClick}
-              handleKeyDown={this.handleBlockKeyDown}
               isCompleted={isBlockCompleted}
               isExpanded={isExpanded}
               percentageCompleted={percentageCompleted}
