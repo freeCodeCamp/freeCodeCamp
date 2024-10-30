@@ -144,6 +144,7 @@
         {
           "dashedName": "css-and-accessibility",
           "blocks": [
+            { "dashedName": "workshop-accessibility-quiz" },
             { "dashedName": "lab-tribute-page" },
             { "dashedName": "review-css-accessibility" },
             { "dashedName": "quiz-css-accessibility" }
@@ -161,6 +162,7 @@
         {
           "dashedName": "css-positioning",
           "blocks": [
+            { "dashedName": "workshop-cat-painting" },
             { "dashedName": "lab-house-painting" },
             { "dashedName": "review-css-positioning" },
             { "dashedName": "quiz-css-positioning" }
