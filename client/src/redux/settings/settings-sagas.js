@@ -111,7 +111,7 @@ function* updateMySoundSaga({ payload: update }) {
   }
 }
 
-function* updateMyThemeSaga({ payload: update }) {
+function* toggleThemeSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyTheme, update);
     const invertedTheme =
@@ -229,7 +229,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
-    takeEvery(types.updateMyTheme, updateMyThemeSaga),
+    takeEvery(types.updateMyTheme, toggleThemeSaga),
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
