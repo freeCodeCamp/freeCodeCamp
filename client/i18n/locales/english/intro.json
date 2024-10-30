@@ -2136,7 +2136,13 @@
         ]
       },
       "rxzq": { "title": "97", "intro": [] },
-      "xobq": { "title": "98", "intro": [] },
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
+      },
       "lab-house-painting": {
         "title": "Build a House Painting",
         "intro": ["For this lab, you will build a house painting using CSS."]
