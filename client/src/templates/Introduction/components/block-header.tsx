@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEventHandler } from 'react';
 import { BlockTypes } from '../../../../../shared/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
@@ -12,6 +12,7 @@ interface BlockHeaderProps {
   courseCompletionStatus: string;
   completedCount: number;
   handleClick: () => void;
+  handleKeyDown?: KeyboardEventHandler<HTMLButtonElement>;
   isCompleted: boolean;
   isExpanded: boolean;
   percentageCompleted: number;
@@ -24,6 +25,7 @@ function BlockHeader({
   completedCount,
   courseCompletionStatus,
   handleClick,
+  handleKeyDown,
   isCompleted,
   isExpanded,
   percentageCompleted
@@ -35,6 +37,7 @@ function BlockHeader({
         aria-controls={`${blockDashed}-panel`}
         className='block-header'
         onClick={handleClick}
+        onKeyDown={handleKeyDown}
       >
         <span className='block-header-button-text map-title'>
           <CheckMark isCompleted={isCompleted} />

@@ -95,6 +95,7 @@
     "qrcode.react": "^3.1.0",
     "query-string": "7.1.3",
     "react": "16.14.0",
+    "react-accessible-treeview": "^2.9.1",
     "react-dom": "16.14.0",
     "react-final-form": "6.5.9",
     "react-gtm-module": "2.0.11",
