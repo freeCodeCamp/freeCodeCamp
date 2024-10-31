@@ -279,7 +279,10 @@
         },
         {
           "dashedName": "higher-order-functions-and-callbacks",
-          "blocks": [{ "dashedName": "quiz-javascript-higher-order-functions" }]
+          "blocks": [
+            { "dashedName": "workshop-library-manager" },
+            { "dashedName": "quiz-javascript-higher-order-functions" }
+          ]
         },
         {
           "dashedName": "dom-manipulation-and-events",
