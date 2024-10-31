@@ -5,7 +5,7 @@
   "hasEditableBoundaries": true,
   "dashedName": "workshop-ferris-wheel",
   "order": 120,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "challengeOrder": [

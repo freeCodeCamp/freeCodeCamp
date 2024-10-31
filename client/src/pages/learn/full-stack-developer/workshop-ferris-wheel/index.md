@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build an Animated Ferris Wheel
 block: workshop-ferris-wheel
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build an Animated Ferris Wheel
