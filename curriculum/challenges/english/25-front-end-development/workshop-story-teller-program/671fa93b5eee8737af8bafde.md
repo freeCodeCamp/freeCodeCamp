@@ -40,18 +40,18 @@ assert.match(displayStory.toString(), /console\.log\(["']You clicked the button[
 
 <body>
 
-<h1>Want to hear a short story?</h1>
+    <h1>Want to hear a short story?</h1>
 
-<main class="story-container">
+    <main class="story-container">
         <div class="btn-container">
             <button class="btn" id="scary-btn">Scary Story</button>
             <button class="btn" id="funny-btn">Funny Story</button>
             <button class="btn" id="adventure-btn">Adventure Story</button>
         </div>
-    		<p id="result"></p>
+        <p id="result"></p>
 
-</main>
-<script src="./script.js"></script>
+    </main>
+    <script src="./script.js"></script>
 
 </body>
 
