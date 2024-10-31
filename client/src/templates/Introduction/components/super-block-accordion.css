@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 0;
 }
 
 .super-block-accordion ul {
@@ -20,7 +21,6 @@
   background-color: var(--primary-background);
 }
 
-/* Override default button styles */
 .super-block-accordion .chapter-button {
   border: none;
   background-color: transparent;
