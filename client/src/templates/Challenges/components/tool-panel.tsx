@@ -1,4 +1,4 @@
-import { Dropdown, MenuItem, Button } from '@freecodecamp/ui';
+import { Dropdown, MenuItem, Button, Spacer } from '@freecodecamp/ui';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -14,7 +14,6 @@ import { challengeMetaSelector } from '../redux/selectors';
 
 import { saveChallenge } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
-import { Spacer } from '../../../components/helpers';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 
 const mapStateToProps = createSelector(
@@ -82,14 +81,14 @@ function ToolPanel({
         (challengeType === challengeTypes.multifileCertProject ||
           challengeType === challengeTypes.multifilePythonCertProject) && (
           <>
-            <Spacer size='xxSmall' />
+            <Spacer size='xxs' />
             <Button block={true} variant='primary' onClick={saveChallenge}>
               {isMobile ? t('buttons.save') : t('buttons.save-code')}
             </Button>
           </>
         )}
       <>
-        <Spacer size='xxSmall' />
+        <Spacer size='xxs' />
         <Button block={true} variant='primary' onClick={openResetModal}>
           {isMobile
             ? t(
@@ -104,7 +103,7 @@ function ToolPanel({
               )}
         </Button>
       </>
-      <Spacer size='xxSmall' />
+      <Spacer size='xxs' />
       <Dropdown dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}

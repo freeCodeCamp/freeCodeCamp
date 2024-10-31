@@ -8,8 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
-import Spacer from '../../../components/helpers/spacer';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -198,7 +197,7 @@ class MsTrophy extends Component<MsTrophyProps> {
           <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -220,7 +219,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                 >
                   {t('buttons.verify-trophy')}
                 </Button>
-                <Spacer size='xxSmall' />
+                <Spacer size='xxs' />
                 <Button
                   block={true}
                   variant='primary'
@@ -230,7 +229,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                   {t('buttons.ask-for-help')}
                 </Button>
                 <br />
-                <Spacer size='medium' />
+                <Spacer size='m' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
