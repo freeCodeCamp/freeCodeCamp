@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Storyteller App
-block: workshop-story-teller-program
-superBlock: front-end-development
+block: workshop-story-teller-app
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Storyteller App

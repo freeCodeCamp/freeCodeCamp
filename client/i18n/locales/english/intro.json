@@ -2467,7 +2467,7 @@
           "Test what you've learned in this quiz on JavaScript Higher Order Functions."
         ]
       },
-      "workshop-story-teller-program": {
+      "workshop-story-teller-app": {
         "title": "Build a Storyteller App",
         "intro": [
           "In this workshop, you will build a Storyteller app that will allow you to list different stories based on genre."
