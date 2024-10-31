@@ -6,7 +6,6 @@
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-story-teller-app",
-  "order": 188,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
