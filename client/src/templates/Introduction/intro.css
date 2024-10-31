@@ -598,3 +598,14 @@ a.map-grid-item.challenge-completed {
 .grid-project-block:hover:has(.tags-wrapper a:hover) {
   background: var(--primary-background);
 }
+
+.challenge-grid-block,
+.challenge-list-block,
+.link-block {
+  border: none;
+}
+
+.challenge-grid-block .block-description,
+.challenge-list-block .block-description {
+  padding: 18px 16px;
+}

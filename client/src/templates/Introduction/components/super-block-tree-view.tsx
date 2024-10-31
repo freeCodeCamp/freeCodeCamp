@@ -1,20 +1,14 @@
 import React, { ReactNode } from 'react';
 import { uniq } from 'lodash-es';
-import { makeStyles } from '@material-ui/core/styles';
 import MuiTreeView from '@material-ui/lab/TreeView';
 import TreeItem from '@material-ui/lab/TreeItem';
 import { useTranslation } from 'react-i18next';
 import { ChallengeNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import DropDown from '../../../assets/icons/dropdown';
 import Block from './block';
 
-// const useStyles = makeStyles({
-// 	root: {
-// 		height: 110,
-// 		flexGrow: 1,
-// 		maxWidth: 400,
-// 	},
-// });
+import './super-block-tree-view.css';
 
 interface SuperBlockTreeViewProps {
   challenges: ChallengeNode['challenge'][];
@@ -37,11 +31,11 @@ export const SuperBlockTreeView = ({
   challenges,
   superBlock
 }: SuperBlockTreeViewProps) => {
-  // const classes = useStyles();
   const { t } = useTranslation();
 
   const chapters = uniq(challenges.map(({ chapter }) => chapter));
 
+  // TODO: Compute the chapter and module completion and add CheckMark icon to the `label`s.
   const chapterNodes: ChapterNode[] = chapters.map(chapter => {
     const modules = uniq(
       challenges
@@ -51,7 +45,7 @@ export const SuperBlockTreeView = ({
 
     return {
       id: chapter,
-      label: chapter, // TODO: Add chapter title to intro.json
+      label: t(`intro:front-end-development.chapters.${chapter}`),
       children: modules.map(mod => {
         const blocks = uniq(
           challenges
@@ -64,7 +58,7 @@ export const SuperBlockTreeView = ({
 
         return {
           id: mod,
-          label: mod, // TODO: Add module title to intro.json
+          label: t(`intro:front-end-development.modules.${mod}`),
           children: blocks.map(block => {
             const blockChallenges = challenges.filter(
               challenge => challenge.block === block
@@ -87,15 +81,23 @@ export const SuperBlockTreeView = ({
   });
 
   return (
-    <MuiTreeView>
+    <MuiTreeView className='super-block-tree-view'>
       {chapterNodes.map(chapterNode => (
         <TreeItem
+          className='chapter'
           key={chapterNode.id}
           nodeId={chapterNode.id}
           label={chapterNode.label}
+          icon={<DropDown />}
         >
           {chapterNode.children.map(mod => (
-            <TreeItem key={mod.id} nodeId={mod.id} label={mod.label}>
+            <TreeItem
+              className='module'
+              key={mod.id}
+              nodeId={mod.id}
+              label={mod.label}
+              icon={<DropDown />}
+            >
               {mod.children}
             </TreeItem>
           ))}

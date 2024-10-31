@@ -1,0 +1,66 @@
+/* ------- Tree root starts ------- */
+.super-block-tree-view {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* ------- Tree root ends ------- */
+
+/* ------- TreeItem label starts ------- */
+.super-block-tree-view .MuiTreeItem-content {
+  padding: 16px;
+  display: flex;
+}
+
+/* Override MUI styles */
+.super-block-tree-view .MuiTreeItem-label:hover,
+.super-block-tree-view .MuiTreeItem-root.Mui-selected 
+  > .MuiTreeItem-content .MuiTreeItem-label,
+.super-block-tree-view .MuiTreeItem-root.Mui-selected:hover 
+  > .MuiTreeItem-content .MuiTreeItem-label,
+.super-block-tree-view .MuiTreeItem-root.Mui-selected:focus 
+  > .MuiTreeItem-content .MuiTreeItem-label {
+  background-color: transparent;
+}
+
+.super-block-tree-view .MuiTreeItem-root.chapter > .MuiTreeItem-content {
+  background-color: var(--primary-background);
+  /* Reverse the display order of the content, so that the label text appears first, then the dropdown icon.
+    We only apply this rule to chapters. */
+  flex-direction: row-reverse;
+}
+
+.super-block-tree-view .MuiTreeItem-root .MuiTreeItem-content:hover {
+  background-color: var(--tertiary-background);
+}
+
+.super-block-tree-view .MuiTreeItem-root 
+  > .MuiTreeItem-content .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.super-block-tree-view .MuiTreeItem-root.Mui-expanded 
+  > .MuiTreeItem-content .dropdown-icon {
+  transform: rotate(0deg);
+}
+/* ------- TreeItem label ends ------- */
+
+/* ------- TreeItem content starts ------- */
+.super-block-tree-view .MuiTreeItem-group {
+  margin-top: 4px;
+}
+
+.super-block-tree-view .MuiTreeItem-group a {
+  text-decoration: none;
+}
+
+.super-block-tree-view .MuiTreeItem-root.chapter .MuiTreeItem-group {
+  background-color: var(--primary-background);
+  margin-left: 0;
+  padding: 10px; /* Indent module lists */
+}
+
+.super-block-tree-view .MuiTreeItem-root.module > .MuiTreeItem-group {
+  padding: 10px 30px; /* Indent block lists */
+}
+/* ------- TreeItem content ends ------- */
