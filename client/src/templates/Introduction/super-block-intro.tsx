@@ -8,13 +8,14 @@ import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../shared/config/curriculum';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
+import { Spacer } from '../../components/helpers';
 import callGA from '../../analytics/call-ga';
 import { tryToShowDonationModal } from '../../redux/actions';
 import {
@@ -31,6 +32,7 @@ import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
+import { FrontEndDevelopmentTreeView } from './components/front-end-development-tree-view';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -176,6 +178,26 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const allChallenges = nodes.map(({ challenge }) => challenge);
   const challenges = allChallenges.filter(c => c.superBlock === superBlock);
+  const fedChallenges = [
+    {
+      block: 'lecture-what-is-html',
+      superBlock: 'front-end-development',
+      chapter: 'HTML Chapter',
+      module: 'Basic HTML'
+    },
+    {
+      block: 'workshop-cat-photo-app',
+      superBlock: 'front-end-development',
+      chapter: 'HTML Chapter',
+      module: 'Basic HTML'
+    },
+    {
+      block: 'lab-recipe-page',
+      superBlock: 'front-end-development',
+      chapter: 'HTML Chapter',
+      module: 'Advanced HTML'
+    }
+  ];
   const blocks = uniq(challenges.map(({ block }) => block));
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
@@ -206,7 +228,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size='l' />
+              <Spacer size='large' />
               <LegacyLinks superBlock={superBlock} />
               <SuperBlockIntro
                 superBlock={superBlock}
@@ -216,11 +238,15 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 isDonating={user.isDonating}
               />
               <HelpTranslate superBlock={superBlock} />
-              <Spacer size='l' />
+              <Spacer size='large' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              <Spacer size='m' />
+              <Spacer size='medium' />
+              <FrontEndDevelopmentTreeView
+                challenges={fedChallenges}
+                superBlock={superBlock}
+              />
               <div className='block-ui'>
                 {blocks.map(block => {
                   const blockChallenges = challenges.filter(
@@ -249,20 +275,20 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               </div>
               {!isSignedIn && !signInLoading && (
                 <>
-                  <Spacer size='l' />
+                  <Spacer size='large' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
                 </>
               )}
-              <Spacer size='l' />
+              <Spacer size='large' />
               <h3
                 className='text-center big-block-title'
                 style={{ whiteSpace: 'pre-line' }}
               >
                 {t(`intro:misc-text.browse-other`)}
               </h3>
-              <Spacer size='m' />
+              <Spacer size='medium' />
               <Map allChallenges={allChallenges} />
-              <Spacer size='l' />
+              <Spacer size='large' />
             </Col>
           </Row>
         </main>
