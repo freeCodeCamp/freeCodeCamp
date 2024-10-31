@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-local-storage-and-crud",
-  "order": 231,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66edd3f9bef926f129990425", "title": "Local Storage and CRUD Quiz" }

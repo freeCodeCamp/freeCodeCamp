@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-shopping-list",
-  "order": 155,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {

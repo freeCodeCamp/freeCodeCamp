@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-css-grid",
-  "order": 117,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a99394bedfb9a5bc687c4", "title": "CSS Grid Review" }
