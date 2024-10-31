@@ -118,7 +118,7 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     blockType: Joi.when('superBlock', {
-      is: [SuperBlocks.FrontEndDevelopment],
+      is: [SuperBlocks.FullStackDeveloper],
       then: Joi.valid(
         'workshop',
         'lab',
@@ -130,7 +130,7 @@ const schema = Joi.object()
       otherwise: Joi.valid(null)
     }),
     blockLayout: Joi.when('superBlock', {
-      is: [SuperBlocks.FrontEndDevelopment],
+      is: [SuperBlocks.FullStackDeveloper],
       then: Joi.valid(
         'challenge-list',
         'challenge-grid',

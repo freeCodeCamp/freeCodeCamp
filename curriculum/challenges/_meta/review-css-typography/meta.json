@@ -5,7 +5,7 @@
   "isUpcomingChange": true,
   "dashedName": "review-css-typography",
   "order": 85,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a9528fc4f1487cf265444", "title": "CSS Typography Review" }
   ],
