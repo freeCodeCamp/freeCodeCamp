@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Spacer from '../../../components/helpers/spacer';
+import { Spacer } from '@freecodecamp/ui';
 import PrismFormatted from './prism-formatted';
 
 interface ChallengeExplanationProps {
@@ -16,10 +16,10 @@ function ChallengeExplanation({
     <>
       <details className='explanation'>
         <summary>{t('learn.explanation')}</summary>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <PrismFormatted className={'line-numbers'} text={explanation} />
       </details>
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </>
   );
 }

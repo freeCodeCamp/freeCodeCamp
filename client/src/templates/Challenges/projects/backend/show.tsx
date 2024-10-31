@@ -9,9 +9,8 @@ import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux/selectors';
 import {
@@ -231,7 +230,7 @@ class BackEnd extends Component<BackEndProps> {
           <Container>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <ChallengeTitle
                   isCompleted={isChallengeCompleted}
                   translationPending={translationPending}
@@ -242,7 +241,7 @@ class BackEnd extends Component<BackEndProps> {
                   description={description}
                   instructions={instructions}
                 />
-                <Spacer size='medium' />
+                <Spacer size='m' />
                 <SolutionForm
                   challengeType={challengeType}
                   // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -263,7 +262,7 @@ class BackEnd extends Component<BackEndProps> {
                   output={output}
                 />
                 <TestSuite tests={tests} />
-                <Spacer size='medium' />
+                <Spacer size='m' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
