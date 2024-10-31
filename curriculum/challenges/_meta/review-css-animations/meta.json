@@ -5,7 +5,7 @@
   "isUpcomingChange": true,
   "dashedName": "review-css-animations",
   "order": 124,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a999cc77b7f9bceb4caeb", "title": "CSS Amimations Review" }
   ],
