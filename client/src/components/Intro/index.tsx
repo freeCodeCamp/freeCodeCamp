@@ -1,8 +1,9 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
 import Login from '../Header/components/login';
-import { Link, Spacer, Loader } from '../helpers';
+import { Link, Loader } from '../helpers';
 import IntroDescription from './components/intro-description';
 
 import './intro.css';
@@ -34,22 +35,22 @@ const Intro = ({
   if (pending && !complete) {
     return (
       <>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Loader />
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </>
     );
   } else if (isSignedIn) {
     const { quote, author } = randomQuote();
     return (
       <>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <h1 id='content-start' className='text-center'>
           {name
             ? `${t('learn.welcome-1', { name: name })}`
             : `${t('learn.welcome-2')}`}
         </h1>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <div className='text-center quote-partial'>
           <blockquote className='blockquote' data-testid='quote-block'>
             <span>
@@ -66,7 +67,7 @@ const Intro = ({
         />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <p>
               <Trans i18nKey='learn.start-at-beginning'>
                 <Link to={slug} />
@@ -81,7 +82,7 @@ const Intro = ({
   } else {
     return (
       <>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <h1
           id='content-start'
           className='text-center'
@@ -89,11 +90,11 @@ const Intro = ({
         >
           {t('learn.heading')}
         </h1>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <IntroDescription />
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </>
     );
   }
