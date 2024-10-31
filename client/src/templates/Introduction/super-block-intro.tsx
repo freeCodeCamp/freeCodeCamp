@@ -178,26 +178,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const allChallenges = nodes.map(({ challenge }) => challenge);
   const challenges = allChallenges.filter(c => c.superBlock === superBlock);
-  const fedChallenges = [
-    {
-      block: 'lecture-what-is-html',
-      superBlock: 'front-end-development',
-      chapter: 'HTML Chapter',
-      module: 'Basic HTML'
-    },
-    {
-      block: 'workshop-cat-photo-app',
-      superBlock: 'front-end-development',
-      chapter: 'HTML Chapter',
-      module: 'Basic HTML'
-    },
-    {
-      block: 'lab-recipe-page',
-      superBlock: 'front-end-development',
-      chapter: 'HTML Chapter',
-      module: 'Advanced HTML'
-    }
-  ];
   const blocks = uniq(challenges.map(({ block }) => block));
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
@@ -244,7 +224,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               </h2>
               <Spacer size='medium' />
               <FrontEndDevelopmentTreeView
-                challenges={fedChallenges}
+                challenges={challenges}
                 superBlock={superBlock}
               />
               <div className='block-ui'>
@@ -331,6 +311,8 @@ export const query = graphql`
           superBlock
           dashedName
           blockLayout
+          chapter
+          module
         }
       }
     }

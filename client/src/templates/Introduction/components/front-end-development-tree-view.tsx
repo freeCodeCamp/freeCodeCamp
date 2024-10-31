@@ -4,6 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import MuiTreeView from '@material-ui/lab/TreeView';
 import TreeItem from '@material-ui/lab/TreeItem';
 import { useTranslation } from 'react-i18next';
+import { ChallengeNode } from '../../../redux/prop-types';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import Block from './block';
+import BlockHeader from './block-header';
 
 // const useStyles = makeStyles({
 // 	root: {
@@ -12,6 +16,11 @@ import { useTranslation } from 'react-i18next';
 // 		maxWidth: 400,
 // 	},
 // });
+
+interface FrontEndDevelopmentTreeViewProps {
+  challenges: ChallengeNode['challenge'][];
+  superBlock: SuperBlocks;
+}
 
 interface BlockNode {
   id: string;
@@ -31,14 +40,16 @@ interface ChapterNode {
   children: ModuleNode[];
 }
 
-export const FrontEndDevelopmentTreeView = ({ challenges, superBlock }) => {
+export const FrontEndDevelopmentTreeView = ({
+  challenges,
+  superBlock
+}: FrontEndDevelopmentTreeViewProps) => {
   // const classes = useStyles();
   const { t } = useTranslation();
 
   const chapters = uniq(challenges.map(({ chapter }) => chapter));
 
-  // Each chapter is a tree
-  const trees: ChapterNode[] = chapters.map(chapter => {
+  const chapterNodes: ChapterNode[] = chapters.map(chapter => {
     const modules = uniq(
       challenges
         .filter(challenge => challenge.chapter === chapter)
@@ -62,19 +73,33 @@ export const FrontEndDevelopmentTreeView = ({ challenges, superBlock }) => {
           id: mod,
           label: mod, // TODO: Add module title to intro.json
           children: blocks.map(block => {
+            const blockChallenges = challenges.filter(
+              challenge => challenge.block === block
+            );
+            const blockType = blockChallenges[0].blockType;
+
             return {
               id: block,
-              label: t(`intro:${superBlock}.blocks.${block}.title`),
-              children: (
-                <div>
-                  Block content goes here
-                  <br />
-                  Ipsum porro tempore est fugit et est. Incidunt est incidunt
-                  totam eveniet dolorum. Consequatur itaque esse asperiores at
-                  optio mollitia quo. Sed neque ex vel tempore aspernatur sunt.
-                  Quod cum a dignissimos.
-                </div>
+              // label: t(`intro:${superBlock}.blocks.${block}.title`),
+              label: (
+                <Block
+                  key={block}
+                  block={block}
+                  blockType={blockType}
+                  challenges={blockChallenges}
+                  superBlock={superBlock}
+                />
               )
+
+              // children: (
+              //   <Block
+              //     key={block}
+              //     block={block}
+              //     blockType={blockType}
+              //     challenges={blockChallenges}
+              //     superBlock={superBlock}
+              //   />
+              // )
             };
           })
         };
@@ -83,33 +108,29 @@ export const FrontEndDevelopmentTreeView = ({ challenges, superBlock }) => {
   });
 
   // Recursively render tree items
-  const renderTree = (nodes: ChapterNode) => {
+  const renderTreeItem = (node: ChapterNode | ModuleNode | BlockNode) => {
     const maybeRenderChildren = () => {
-      if (nodes.children) {
-        if (Array.isArray(nodes.children))
-          return nodes.children.map(node => renderTree(node));
-        return nodes.children;
+      if (!node.children) {
+        return null;
       }
 
-      return null;
+      return Array.isArray(node.children)
+        ? node.children.map(child =>
+            renderTreeItem(child as ChapterNode | ModuleNode | BlockNode)
+          )
+        : node.children;
     };
 
     return (
-      <TreeItem key={nodes.id} nodeId={nodes.id} label={nodes.label}>
+      <TreeItem key={node.id} nodeId={node.id} label={node.label}>
         {maybeRenderChildren()}
       </TreeItem>
     );
   };
 
-  return trees.map(tree => (
-    <MuiTreeView
-      key={tree.id}
-      // defaultExpanded={['chapter-html']}
-      // className={classes.root}
-      // defaultCollapseIcon={<ExpandMoreIcon />}
-      // defaultExpandIcon={<ChevronRightIcon />}
-    >
-      {renderTree(tree)}
+  return (
+    <MuiTreeView>
+      {chapterNodes.map(chapterNode => renderTreeItem(chapterNode))}
     </MuiTreeView>
-  ));
+  );
 };
