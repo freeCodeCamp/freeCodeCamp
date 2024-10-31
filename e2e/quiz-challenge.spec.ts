@@ -10,7 +10,7 @@ test.describe('Quiz challenge', () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto(
-      '/learn/front-end-development/quiz-basic-html/quiz-basic-html'
+      '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
     );
   });
 
