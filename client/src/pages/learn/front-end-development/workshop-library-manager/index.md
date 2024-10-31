@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Library Manager
 block: workshop-library-manager
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Library Manager
