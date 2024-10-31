@@ -205,7 +205,7 @@ class Block extends Component<BlockProps> {
     const ProjectListBlock = (
       <>
         <ScrollableAnchor id={block}>
-          <div className='block'>
+          <div className='block project-list-block'>
             <div className='block-header'>
               <h3 className='big-block-title'>{blockTitle}</h3>
               {blockType && <BlockLabel blockType={blockType} />}
@@ -432,6 +432,8 @@ class Block extends Component<BlockProps> {
     return (
       <>
         {blockRenderer()}
+        {/* TODO: Remove this rendering logic. 
+            Instead, add a class name to the blocks that need empty space, and apply a bottom margin to it. */}
         {isGridBlock && !isProjectBlock ? null : <Spacer size='m' />}
       </>
     );

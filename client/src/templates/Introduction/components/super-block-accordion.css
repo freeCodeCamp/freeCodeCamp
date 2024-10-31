@@ -17,7 +17,8 @@
   text-decoration: none;
 }
 
-.super-block-accordion .chapter {
+.super-block-accordion .chapter,
+.super-block-accordion .exam {
   background-color: var(--primary-background);
 }
 

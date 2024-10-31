@@ -1,11 +1,13 @@
 import React, { ReactNode, useMemo } from 'react';
 import { uniq } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
+// TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
 import { ChallengeNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
+import { BlockTypes } from '../../../../../shared/config/blocks';
 import Block from './block';
 
 import './super-block-accordion.css';
@@ -64,16 +66,33 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const chapters = uniq(challenges.map(({ chapter }) => chapter as string));
-
-  // Expand the outer layers in order to reveal the chosen block.
-  const expandedChapter = challenges.find(({ block }) => chosenBlock === block)
-    ?.chapter as string;
-  const expandedModule = challenges.find(({ block }) => chosenBlock === block)
-    ?.module as string;
-
   const content = useMemo(() => {
+    const chapters = uniq(challenges.map(({ chapter }) => chapter as string));
+    const examBlock = challenges.find(
+      ({ blockType }) => blockType === BlockTypes.exam
+    );
+
+    // Expand the outer layers in order to reveal the chosen block.
+    const expandedChapter = challenges.find(
+      ({ block }) => chosenBlock === block
+    )?.chapter as string;
+    const expandedModule = challenges.find(({ block }) => chosenBlock === block)
+      ?.module as string;
+
     return chapters.map(chapter => {
+      if (examBlock && chapter === examBlock.chapter) {
+        return (
+          <li key={examBlock.dashedName} className='exam'>
+            <Block
+              block={examBlock.dashedName}
+              blockType={examBlock.blockType}
+              challenges={[examBlock]}
+              superBlock={superBlock}
+            />
+          </li>
+        );
+      }
+
       const modules = uniq(
         challenges
           .filter(challenge => challenge.chapter === chapter)
@@ -109,13 +128,14 @@ export const SuperBlockAccordion = ({
                   const blockType = blockChallenges[0].blockType;
 
                   return (
-                    <Block
-                      key={block}
-                      block={block}
-                      blockType={blockType}
-                      challenges={blockChallenges}
-                      superBlock={superBlock}
-                    />
+                    <li key={block}>
+                      <Block
+                        block={block}
+                        blockType={blockType}
+                        challenges={blockChallenges}
+                        superBlock={superBlock}
+                      />
+                    </li>
                   );
                 })}
               </Module>
@@ -124,7 +144,7 @@ export const SuperBlockAccordion = ({
         </Chapter>
       );
     });
-  }, [challenges, chapters, superBlock, expandedChapter, expandedModule]);
+  }, [challenges, superBlock, chosenBlock]);
 
   return <ul className='super-block-accordion'>{content}</ul>;
 };
