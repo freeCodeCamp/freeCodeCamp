@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Markdown to HTML Converter
 block: lab-markdown-to-html-converter
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Markdown to HTML Converter
