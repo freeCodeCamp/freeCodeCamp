@@ -8,14 +8,13 @@ import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../shared/config/curriculum';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
-import { Spacer } from '../../components/helpers';
 import callGA from '../../analytics/call-ga';
 import { tryToShowDonationModal } from '../../redux/actions';
 import {
@@ -192,7 +191,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.PythonForEverybody
   ];
 
-  const superBlockWithAccordionView = [SuperBlocks.FrontEndDevelopment];
+  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
   const chosenBlock = getChosenBlock();
 
   const onCertificationDonationAlertClick = () => {
@@ -211,7 +210,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size='large' />
+              <Spacer size='l' />
               <LegacyLinks superBlock={superBlock} />
               <SuperBlockIntro
                 superBlock={superBlock}
@@ -221,11 +220,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 isDonating={user.isDonating}
               />
               <HelpTranslate superBlock={superBlock} />
-              <Spacer size='large' />
+              <Spacer size='l' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               {superBlockWithAccordionView.includes(superBlock) ? (
                 <SuperBlockAccordion
                   challenges={challenges}
@@ -262,20 +261,20 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               )}
               {!isSignedIn && !signInLoading && (
                 <>
-                  <Spacer size='large' />
+                  <Spacer size='l' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
                 </>
               )}
-              <Spacer size='large' />
+              <Spacer size='l' />
               <h3
                 className='text-center big-block-title'
                 style={{ whiteSpace: 'pre-line' }}
               >
                 {t(`intro:misc-text.browse-other`)}
               </h3>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <Map allChallenges={allChallenges} />
-              <Spacer size='large' />
+              <Spacer size='l' />
             </Col>
           </Row>
         </main>

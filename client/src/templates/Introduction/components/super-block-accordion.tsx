@@ -33,7 +33,7 @@ const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   return (
     <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
       <Disclosure.Button className='chapter-button'>
-        {t(`intro:front-end-development.chapters.${dashedName}`)}
+        {t(`intro:full-stack-developer.chapters.${dashedName}`)}
         <DropDown />
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='chapter-panel'>
@@ -50,7 +50,7 @@ const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
     <Disclosure as='li' defaultOpen={isExpanded}>
       <Disclosure.Button className='module-button'>
         <DropDown />
-        {t(`intro:front-end-development.modules.${dashedName}`)}
+        {t(`intro:full-stack-developer.modules.${dashedName}`)}
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='module-panel'>
         {children}
