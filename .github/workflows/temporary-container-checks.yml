@@ -1,6 +1,6 @@
 # TODO: remove this workflow once we use containers in the other workflows. This
 # workflow is intended to prevent regressions until that has been achieved.
-name: CI - E2E - Containers
+name: CI - E2E - Containers - Temp
 on:
   workflow_dispatch:
   workflow_run:
@@ -15,6 +15,10 @@ on:
       - 'main'
       - 'next-**'
       - 'e2e-**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-client:

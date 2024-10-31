@@ -5,8 +5,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-colored-markers",
-  "order": 63,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
