@@ -35,11 +35,11 @@ describe('/exam-environment/', () => {
       await mock.seedEnvExam();
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
-      expect(res.status).toBe(200);
+      expect(res.status).toBe(201);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       examEnvironmentAuthorizationToken =
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        res.body.data.examEnvironmentAuthorizationToken;
+        res.body.examEnvironmentAuthorizationToken;
     });
 
     describe('POST /exam-environment/exam/attempt', () => {
@@ -389,11 +389,9 @@ describe('/exam-environment/', () => {
         expect(res).toMatchObject({
           status: 200,
           body: {
-            data: {
-              examAttempt: {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                id: expect.not.stringMatching(mock.examAttempt.id)
-              }
+            examAttempt: {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+              id: expect.not.stringMatching(mock.examAttempt.id)
             }
           }
         });
@@ -419,9 +417,7 @@ describe('/exam-environment/', () => {
         expect(res).toMatchObject({
           status: 200,
           body: {
-            data: {
-              examAttempt: latestAttempt
-            }
+            examAttempt: latestAttempt
           }
         });
       });
@@ -555,10 +551,8 @@ describe('/exam-environment/', () => {
         expect(res).toMatchObject({
           status: 200,
           body: {
-            data: {
-              examAttempt,
-              exam: userExam
-            }
+            examAttempt,
+            exam: userExam
           }
         });
       });
@@ -644,15 +638,15 @@ describe('/exam-environment/', () => {
       });
     });
 
-    describe('POST /exam-environment/token/verify', () => {
+    describe('GET /exam-environment/token-meta', () => {
       it('should allow a valid request', async () => {
-        const res = await superPost('/exam-environment/token/verify').set(
+        const res = await superGet('/exam-environment/token-meta').set(
           'exam-environment-authorization-token',
           'invalid-token'
         );
 
         expect(res).toMatchObject({
-          status: 200,
+          status: 418,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }
