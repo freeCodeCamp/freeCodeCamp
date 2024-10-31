@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 import { ChallengeNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import Block from './block';
-import BlockHeader from './block-header';
 
 // const useStyles = makeStyles({
 // 	root: {
@@ -22,16 +21,10 @@ interface FrontEndDevelopmentTreeViewProps {
   superBlock: SuperBlocks;
 }
 
-interface BlockNode {
-  id: string;
-  label: string;
-  children: ReactNode;
-}
-
 interface ModuleNode {
   id: string;
   label: string;
-  children: BlockNode[];
+  children: ReactNode[];
 }
 
 interface ChapterNode {
@@ -78,59 +71,36 @@ export const FrontEndDevelopmentTreeView = ({
             );
             const blockType = blockChallenges[0].blockType;
 
-            return {
-              id: block,
-              // label: t(`intro:${superBlock}.blocks.${block}.title`),
-              label: (
-                <Block
-                  key={block}
-                  block={block}
-                  blockType={blockType}
-                  challenges={blockChallenges}
-                  superBlock={superBlock}
-                />
-              )
-
-              // children: (
-              //   <Block
-              //     key={block}
-              //     block={block}
-              //     blockType={blockType}
-              //     challenges={blockChallenges}
-              //     superBlock={superBlock}
-              //   />
-              // )
-            };
+            return (
+              <Block
+                key={block}
+                block={block}
+                blockType={blockType}
+                challenges={blockChallenges}
+                superBlock={superBlock}
+              />
+            );
           })
         };
       })
     };
   });
 
-  // Recursively render tree items
-  const renderTreeItem = (node: ChapterNode | ModuleNode | BlockNode) => {
-    const maybeRenderChildren = () => {
-      if (!node.children) {
-        return null;
-      }
-
-      return Array.isArray(node.children)
-        ? node.children.map(child =>
-            renderTreeItem(child as ChapterNode | ModuleNode | BlockNode)
-          )
-        : node.children;
-    };
-
-    return (
-      <TreeItem key={node.id} nodeId={node.id} label={node.label}>
-        {maybeRenderChildren()}
-      </TreeItem>
-    );
-  };
-
   return (
     <MuiTreeView>
-      {chapterNodes.map(chapterNode => renderTreeItem(chapterNode))}
+      {chapterNodes.map(chapterNode => (
+        <TreeItem
+          key={chapterNode.id}
+          nodeId={chapterNode.id}
+          label={chapterNode.label}
+        >
+          {chapterNode.children.map(mod => (
+            <TreeItem key={mod.id} nodeId={mod.id} label={mod.label}>
+              {mod.children}
+            </TreeItem>
+          ))}
+        </TreeItem>
+      ))}
     </MuiTreeView>
   );
 };
