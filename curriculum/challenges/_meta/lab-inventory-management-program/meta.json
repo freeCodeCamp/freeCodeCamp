@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-inventory-management-program",
-  "order": 178,
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66d75dd0aa65a71600dc669b", "title": "Build an Inventory Management Program" }],
   "helpCategory": "JavaScript"

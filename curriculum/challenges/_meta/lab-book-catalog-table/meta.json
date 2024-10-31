@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-book-catalog-table",
-  "order": 21,
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ec4c8e9878d8441956516f", "title": "Build a Book Catalog Table" }],
   "helpCategory": "HTML-CSS"

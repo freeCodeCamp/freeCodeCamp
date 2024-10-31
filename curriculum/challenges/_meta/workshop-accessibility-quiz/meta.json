@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-accessibility-quiz",
-  "order": 88,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {

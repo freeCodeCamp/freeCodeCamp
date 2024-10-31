@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-css-typography",
-  "order": 87,
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed9010f45ce3ece4053eb8", "title": "CSS Typography Quiz" }],
   "helpCategory": "HTML-CSS"
