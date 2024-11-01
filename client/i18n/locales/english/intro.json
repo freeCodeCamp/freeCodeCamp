@@ -1692,9 +1692,13 @@
       }
     }
   },
-  "front-end-development": {
-    "title": "Front End Development",
-    "intro": ["placeholder"],
+  "full-stack-developer": {
+    "title": "Certified Full Stack Developer Curriculum",
+    "intro": [
+      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
+      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+    ],
     "blocks": {
       "efpl": { "title": "0", "intro": [] },
       "lecture-what-is-html": {
@@ -2086,6 +2090,13 @@
         "title": "CSS Typography Quiz",
         "intro": ["Test what you've learned in this quiz of typography in CSS."]
       },
+      "workshop-accessibility-quiz": {
+        "title": "Build a Quiz Webpage",
+        "intro": [
+          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+        ]
+      },
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
         "intro": [
@@ -2129,7 +2140,13 @@
         ]
       },
       "rxzq": { "title": "97", "intro": [] },
-      "xobq": { "title": "98", "intro": [] },
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
+      },
       "lab-house-painting": {
         "title": "Build a House Painting",
         "intro": ["For this lab, you will build a house painting using CSS."]
@@ -2993,9 +3010,9 @@
       "exom": { "title": "386", "intro": [] },
       "bvqc": { "title": "387", "intro": [] },
       "xish": { "title": "388", "intro": [] },
-      "front-end-development-certification-exam": {
-        "title": "Front End Development Certification Exam",
-        "intro": ["", ""]
+      "exam-certified-full-stack-developer": {
+        "title": "Certified Full Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       }
     }
   },
