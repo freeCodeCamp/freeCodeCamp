@@ -22,9 +22,10 @@ const SearchHits = ({
   handleHits,
   selectedIndex
 }: SearchHitsProps) => {
-  const { results } = useInstantSearch();
+  const { results, uiState } = useInstantSearch();
 
-  const { query, hits } = results;
+  const { hits } = results;
+  const { query } = uiState.news;
 
   const { t } = useTranslation();
   const noHits = isEmpty(results.hits);
@@ -39,7 +40,9 @@ const SearchHits = ({
     {
       objectID: `footer-${query}`,
       query: query,
-      url: noHits ? null : `${searchUrl}?query=${encodeURIComponent(query)}`,
+      url: noHits
+        ? null
+        : `${searchUrl}?query=${encodeURIComponent(query ?? '')}`,
       title: t('search.see-results', { searchQuery: query }),
       _highlightResult: {
         query: {

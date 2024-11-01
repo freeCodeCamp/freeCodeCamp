@@ -80,7 +80,7 @@ function InstantSearchRoot({
   }, []);
 
   const propsQuery = query;
-  function onSearchStateChange({ query }: { query: string | undefined }): void {
+  function onSearchStateChange(query: string | undefined): void {
     if (propsQuery === query || typeof query === 'undefined') {
       return;
     }
@@ -92,7 +92,7 @@ function InstantSearchRoot({
     <InstantSearch
       indexName={newsIndex}
       onStateChange={({ uiState }) => {
-        onSearchStateChange({ query: uiState.newsIndex?.query });
+        onSearchStateChange(uiState.news?.query);
       }}
       searchClient={searchClient}
     >
