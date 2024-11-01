@@ -31,7 +31,7 @@ import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
-import { SuperBlockAccordion } from './components/super-block-accordion';
+import SuperBlockAccordion from './components/super-block-accordion';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';

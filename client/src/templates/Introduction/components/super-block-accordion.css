@@ -67,3 +67,10 @@
 .super-block-accordion .module-panel {
   padding: 0 24px;
 }
+
+.super-block-accordion .chapter-title,
+.super-block-accordion .module-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
