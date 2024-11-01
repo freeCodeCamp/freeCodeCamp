@@ -1754,7 +1754,8 @@
       "review-basic-html": {
         "title": "Basic HTML Review",
         "intro": [
-          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
+          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
         ]
       },
       "quiz-basic-html": {
@@ -1780,7 +1781,8 @@
       "review-semantic-html": {
         "title": "Semantic HTML Review",
         "intro": [
-          "Review the Semantic HTML concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
+          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
         ]
       },
       "quiz-semantic-html": {
