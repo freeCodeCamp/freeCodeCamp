@@ -1,12 +1,12 @@
 {
   "name": "Design a Cafe Menu",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-cafe-menu",
-  "order": 37,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "5f33071498eb2472b87ddee4",

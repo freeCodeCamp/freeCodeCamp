@@ -64,12 +64,12 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.post(
-    '/exam-environment/token/verify',
+  fastify.get(
+    '/exam-environment/token-meta',
     {
-      schema: schemas.examEnvironmentTokenVerify
+      schema: schemas.examEnvironmentTokenMeta
     },
-    tokenVerifyHandler
+    tokenMetaHandler
   );
   done();
 };
@@ -85,9 +85,9 @@ interface JwtPayload {
  *
  * **Note**: This has no guarantees of which user the token is for. Just that one exists in the database.
  */
-async function tokenVerifyHandler(
+async function tokenMetaHandler(
   this: FastifyInstance,
-  req: UpdateReqType<typeof schemas.examEnvironmentTokenVerify>,
+  req: UpdateReqType<typeof schemas.examEnvironmentTokenMeta>,
   reply: FastifyReply
 ) {
   const { 'exam-environment-authorization-token': encodedToken } = req.headers;
@@ -95,8 +95,8 @@ async function tokenVerifyHandler(
   try {
     jwt.verify(encodedToken, JWT_SECRET);
   } catch (e) {
-    // TODO: What to send back here? Request is valid, but token is not?
-    void reply.code(200);
+    // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
+    void reply.code(418);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(JSON.stringify(e))
     );
@@ -107,23 +107,24 @@ async function tokenVerifyHandler(
   const examEnvironmentAuthorizationToken =
     payload.examEnvironmentAuthorizationToken;
 
-  const token = await this.prisma.examEnvironmentAuthorizationToken.findFirst({
+  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
     where: {
       id: examEnvironmentAuthorizationToken
     }
   });
 
   if (!token) {
-    void reply.code(200);
-    return reply.send({
-      data: 'Token does not appear to have been created.'
-    });
+    // Endpoint is valid, but resource does not exists
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+        'Token does not appear to exist'
+      )
+    );
   } else {
     void reply.code(200);
     return reply.send({
-      data: {
-        createdDate: token.createdDate
-      }
+      expireAt: token.expireAt
     });
   }
 }
@@ -170,7 +171,7 @@ async function postExamGeneratedExamHandler(
 
   // Check user has completed prerequisites
   const user = req.user!;
-  const isExamPrerequisitesMet = checkPrerequisites(user, true);
+  const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
     void reply.code(403);
@@ -257,10 +258,8 @@ async function postExamGeneratedExamHandler(
       const userExam = constructUserExam(generated.data, exam);
 
       return reply.send({
-        data: {
-          exam: userExam,
-          examAttempt: lastAttempt
-        }
+        exam: userExam,
+        examAttempt: lastAttempt
       });
     }
   }
@@ -375,10 +374,8 @@ async function postExamGeneratedExamHandler(
 
   void reply.code(200);
   return reply.send({
-    data: {
-      exam: userExam,
-      examAttempt: attempt.data
-    }
+    exam: userExam,
+    examAttempt: attempt.data
   });
 }
 
@@ -582,12 +579,13 @@ async function getExams(
   const exams = await this.prisma.envExam.findMany({
     select: {
       id: true,
-      config: true
+      config: true,
+      prerequisites: true
     }
   });
 
   const availableExams = exams.map(exam => {
-    const isExamPrerequisitesMet = checkPrerequisites(user, true);
+    const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
     return {
       id: exam.id,

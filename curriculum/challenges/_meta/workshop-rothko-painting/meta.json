@@ -1,12 +1,12 @@
 {
   "name": "Design a Rothko Painting",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-rothko-painting",
-  "order": 73,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [
     {
