@@ -3,10 +3,7 @@ import frameRunnerData from '../../../../../client/config/browser-scripts/frame-
 import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
-import {
-  ChallengeFile as PropTypesChallengeFile,
-  ChallengeMeta
-} from '../../../redux/prop-types';
+import { ChallengeFile, ChallengeMeta } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
@@ -24,12 +21,6 @@ import {
   Source
 } from './frame';
 import { WorkerExecutor } from './worker-executor';
-
-interface ChallengeFile extends PropTypesChallengeFile {
-  source: string;
-  index: string;
-  editableContents: string;
-}
 
 interface BuildChallengeData extends Context {
   challengeType: number;
