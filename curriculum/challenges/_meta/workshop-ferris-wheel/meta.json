@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-ferris-wheel",
-  "order": 120,
   "superBlock": "full-stack-developer",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
