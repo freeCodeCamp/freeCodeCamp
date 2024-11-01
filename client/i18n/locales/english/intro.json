@@ -1824,7 +1824,8 @@
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
-          "Review the HTML Tables and Forms concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on HTML forms and tables, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> and more elements."
         ]
       },
       "quiz-html-tables-and-forms": {
