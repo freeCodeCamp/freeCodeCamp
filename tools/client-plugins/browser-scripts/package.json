@@ -35,6 +35,7 @@
     "@types/enzyme-adapter-react-16": "1.0.9",
     "@types/jquery": "3.5.29",
     "@types/lodash-es": "4.17.12",
+    "@typescript/vfs": "^1.6.0",
     "babel-loader": "8.3.0",
     "chai": "4.4.1",
     "copy-webpack-plugin": "9.1.0",

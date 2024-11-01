@@ -92,7 +92,7 @@ export const superBlockList = [
     path: '24-b1-english-for-developers'
   },
   {
-    name: 'Front End Development',
+    name: 'Certified Full Stack Developer',
     path: '25-front-end-development'
   }
 ];

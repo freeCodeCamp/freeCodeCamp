@@ -2,13 +2,13 @@ import React, { useEffect, ReactElement, ReactNode } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Trans } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import { Test } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { initializeMathJax } from '../../../utils/math-jax';
 import { challengeTestsSelector } from '../redux/selectors';
 import { openModal } from '../redux/actions';
-import { Spacer } from '../../../components/helpers';
 import TestSuite from './test-suite';
 
 import './side-panel.css';
@@ -84,7 +84,7 @@ export function SidePanel({
         </p>
       )}
       {challengeDescription}
-      <Spacer size='medium' />
+      <Spacer size='m' />
       {toolPanel}
       <TestSuite tests={tests} />
     </div>

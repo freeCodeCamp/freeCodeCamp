@@ -379,9 +379,11 @@ model UserToken {
 }
 
 model ExamEnvironmentAuthorizationToken {
-  id          String   @id @map("_id")
-  createdDate DateTime @db.Date
-  userId      String   @unique @db.ObjectId
+  /// An ObjectId is used to provide access to the created timestamp
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  /// Used to set an `expireAt` index to delete documents
+  expireAt DateTime @db.Date
+  userId   String   @unique @db.ObjectId
 
   // Relations
   user user @relation(fields: [userId], references: [id])

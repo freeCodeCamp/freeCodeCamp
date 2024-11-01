@@ -10,10 +10,8 @@ export const examEnvironmentPostExamGeneratedExam = {
   }),
   response: {
     200: Type.Object({
-      data: Type.Object({
-        exam: Type.Record(Type.String(), Type.Unknown()),
-        examAttempt: Type.Record(Type.String(), Type.Unknown())
-      })
+      exam: Type.Record(Type.String(), Type.Unknown()),
+      examAttempt: Type.Record(Type.String(), Type.Unknown())
     }),
     403: STANDARD_ERROR,
     404: STANDARD_ERROR,
