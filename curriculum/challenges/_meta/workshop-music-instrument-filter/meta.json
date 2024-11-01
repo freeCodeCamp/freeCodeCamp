@@ -6,8 +6,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-music-instrument-filter",
-  "order": 193,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "6720fc487ab844522b5aa036",

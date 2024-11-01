@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Music Instrument Filter
 block: workshop-music-instrument-filter
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Music Instrument Filter
