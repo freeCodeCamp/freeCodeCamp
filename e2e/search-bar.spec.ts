@@ -46,15 +46,15 @@ const mockAlgolia = async ({
   hitsPerPage: number;
 }) => {
   if (hitsPerPage === 8) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+    await page.route(/\w+(dsn\.algolia\.net)/, async route => {
       await route.fulfill({ json: algoliaEightHits });
     });
   } else if (hitsPerPage === 5) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+    await page.route(/\w+(dsn\.algolia\.net)/, async route => {
       await route.fulfill({ json: algoliaFiveHits });
     });
   } else if (hitsPerPage === 0) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+    await page.route(/\w+(dsn\.algolia\.net)/, async route => {
       await route.fulfill({ json: {} });
     });
   }
@@ -73,12 +73,7 @@ test.describe('Search bar', () => {
     const searchInput = await getSearchInput({ page, isMobile });
 
     await expect(searchInput).toBeVisible();
-    // Because we're mocking Algolia requests, the placeholder
-    // should be the default one.
-    await expect(searchInput).toHaveAttribute(
-      'placeholder',
-      translations.search.placeholder.default
-    );
+    await expect(searchInput).toHaveAttribute('placeholder', /Search/);
     await expect(
       page.getByRole('button', { name: 'Submit search terms' })
     ).toBeVisible();

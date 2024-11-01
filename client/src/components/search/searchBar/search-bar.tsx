@@ -230,7 +230,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
                     this.handleSearch(e);
                   }}
                   translations={{
-                    submitButtonTitle: t('icons.input-submit'),
+                    submitButtonTitle: t('icons.input-search'),
                     resetButtonTitle: t('icons.input-reset')
                   }}
                   placeholder={searchPlaceholder}

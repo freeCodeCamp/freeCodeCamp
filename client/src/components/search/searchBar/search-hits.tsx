@@ -31,11 +31,6 @@ const SearchHits = ({
   const noHits = isEmpty(results.hits);
   const noHitsTitle = t('search.no-tutorials');
 
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    handleHits(allHits);
-  });
-
   const footer = [
     {
       objectID: `footer-${query}`,
@@ -55,13 +50,20 @@ const SearchHits = ({
       }
     }
   ];
+  let allHits = hits;
+  if (noHits) {
+    allHits = [...footer];
+  }
 
-  const allHits = hits.slice(0, 8).concat(footer);
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    handleHits(allHits);
+  });
 
   return (
     <div className='ais-Hits'>
       <ul className='ais-Hits-list' aria-label={t('search.result-list')}>
-        {hits.map((hit: Hit, i: number) => (
+        {allHits.map((hit: Hit, i: number) => (
           <li
             className={
               !noHits && i === selectedIndex
