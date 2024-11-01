@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Project Idea Board
 block: lab-project-idea-board
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Project Idea Board
