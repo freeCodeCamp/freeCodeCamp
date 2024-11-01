@@ -18,6 +18,7 @@ function GreenPass(props: GreenPassProps): JSX.Element {
         viewBox='0 0 200 200'
         width='15'
         xmlns='http://www.w3.org/2000/svg'
+        className='green-pass-icon'
         {...rest}
       >
         <g aria-hidden='true'>

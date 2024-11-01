@@ -65,7 +65,7 @@
 }
 
 .super-block-accordion .module-panel {
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 .super-block-accordion .chapter-title,
@@ -73,4 +73,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* Resize the icons to match the ones on block title */
+.super-block-accordion .green-pass-icon,
+.super-block-accordion .green-not-completed-icon {
+  width: 14px;
+  height: 14px;
 }
