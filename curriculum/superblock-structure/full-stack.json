@@ -333,7 +333,10 @@
             { "dashedName": "quiz-local-storage-and-crud" }
           ]
         },
-        { "dashedName": "classes-and-the-this-keyword", "blocks": [] },
+        {
+          "dashedName": "classes-and-the-this-keyword",
+          "blocks": [{ "dashedName": "lab-bank-account-manager" }]
+        },
         {
           "dashedName": "recursion",
           "blocks": [{ "dashedName": "quiz-recursion" }]
