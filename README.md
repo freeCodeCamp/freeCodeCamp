@@ -193,6 +193,7 @@ Here are our twelve core certifications:
 - [College Algebra with Python: Conclusion](https://www.freecodecamp.org/learn/college-algebra-with-python/#college-algebra-with-python-conclusion)
   <br />
   <br />
+  <br />
   **Projects**: [Multi-Function Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-multi-function-calculator-project), [Graphing Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project), [Three Math Games](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-three-math-games-project), [Financial Calculator](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-financial-calculator-project), [Data Graph Explorer](https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-data-graph-explorer-project)
 
 #### Legacy Full Stack Development Certification
