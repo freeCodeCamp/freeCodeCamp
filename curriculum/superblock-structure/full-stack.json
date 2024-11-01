@@ -341,6 +341,7 @@
         {
           "dashedName": "functional-programming",
           "blocks": [
+            { "dashedName": "lab-sorting-visualizer" },
             { "dashedName": "lab-quicksort-algorithm" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" },
             { "dashedName": "lab-roman-numeral-converter" },

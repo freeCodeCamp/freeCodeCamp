@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Sorting Visualizer
 block: lab-sorting-visualizer
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Sorting Visualizer
