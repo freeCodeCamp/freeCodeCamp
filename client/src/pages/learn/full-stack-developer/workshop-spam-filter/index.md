@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Spam Filter
 block: workshop-spam-filter
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Spam Filter

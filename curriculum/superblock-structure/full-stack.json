@@ -306,6 +306,7 @@
         {
           "dashedName": "basic-regex",
           "blocks": [
+            { "dashedName": "workshop-spam-filter" },
             { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "quiz-javascript-regular-expressions" }
           ]
