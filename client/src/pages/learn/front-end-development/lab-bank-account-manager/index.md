@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Bank Account Management Program
 block: lab-bank-account-manager
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Bank Account Management Program

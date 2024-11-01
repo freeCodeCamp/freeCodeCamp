@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-bank-account-manager",
   "order": 238,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "6718d2d59337c822ecb697ff", "title": "Build a Bank Account Management Program" }],
   "helpCategory": "JavaScript",
   "blockType": "lab",
