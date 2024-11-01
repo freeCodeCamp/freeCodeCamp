@@ -44,7 +44,6 @@ export type SearchBarProps = {
   innerRef?: React.RefObject<HTMLDivElement>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
-  updateSearchQuery: typeof updateSearchQuery;
   isDropdownEnabled?: boolean;
   isSearchFocused?: boolean;
   t: TFunction;
@@ -115,7 +114,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     query?: string
   ): boolean | void => {
     e.preventDefault();
-    const { toggleSearchDropdown, updateSearchQuery } = this.props;
+    const { toggleSearchDropdown } = this.props;
     const { index, hits } = this.state;
     const selectedHit = hits[index];
 
@@ -128,7 +127,6 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
       // Set query to value in search bar if enter is pressed
       query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
     }
-    updateSearchQuery(query);
 
     //clear input value
     const searchInput = e.currentTarget?.children?.[0] as HTMLInputElement;
@@ -225,7 +223,6 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
               <ObserveKeys except={['Space']}>
                 <SearchBox
                   data-playwright-test-label='header-search'
-                  onInput={this.handleChange}
                   onSubmit={e => {
                     this.handleSearch(e);
                   }}

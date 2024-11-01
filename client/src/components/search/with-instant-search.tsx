@@ -81,10 +81,10 @@ function InstantSearchRoot({
 
   const propsQuery = query;
   function onSearchStateChange(query: string | undefined): void {
-    if (propsQuery === query || typeof query === 'undefined') {
+    if (propsQuery === query) {
       return;
     }
-    updateSearchQuery(query);
+    updateSearchQuery(query ?? '');
   }
 
   const hitsPerPage = isSmallHeight ? 8 : 5;

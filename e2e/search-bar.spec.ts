@@ -22,7 +22,7 @@ const getSearchInput = async ({
     await menuButton.click();
   }
 
-  return page.getByLabel('Search');
+  return page.getByPlaceholder('Search our tutorials');
 };
 
 const search = async ({

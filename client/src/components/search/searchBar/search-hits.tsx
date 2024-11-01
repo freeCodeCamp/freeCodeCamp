@@ -51,8 +51,10 @@ const SearchHits = ({
     }
   ];
   let allHits = hits;
-  if (noHits) {
+  if (noHits && query) {
     allHits = [...footer];
+  } else if (noHits && !query) {
+    allHits = [];
   }
 
   useEffect(() => {
