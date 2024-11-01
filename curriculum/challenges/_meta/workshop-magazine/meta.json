@@ -6,8 +6,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-magazine",
-  "order": 113,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "614385513d91ae5c251c2052",

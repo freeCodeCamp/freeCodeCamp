@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Magazine
 block: workshop-magazine
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Magazine
