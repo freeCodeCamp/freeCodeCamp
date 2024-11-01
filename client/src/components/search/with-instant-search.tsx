@@ -3,10 +3,10 @@ import type { WindowLocation } from '@reach/router';
 import algoliasearch from 'algoliasearch/lite';
 import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
-import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
+import { Configure, InstantSearch } from 'react-instantsearch';
 import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
 import { newsIndex } from '../../utils/algolia-locale-setup';
 
@@ -16,14 +16,13 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
-
 // If a key is missing, searches will fail, but the client will still render.
 const searchClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
     : {
         // eslint-disable-next-line @typescript-eslint/no-empty-function
-        search: () => {}
+        search: () => Promise.resolve({ results: [] })
       };
 
 const mapStateToProps = createSelector(
@@ -92,11 +91,12 @@ function InstantSearchRoot({
   return (
     <InstantSearch
       indexName={newsIndex}
-      onSearchStateChange={onSearchStateChange}
+      onStateChange={({ uiState }) => {
+        onSearchStateChange({ query: uiState.newsIndex?.query });
+      }}
       searchClient={searchClient}
-      searchState={{ query }}
     >
-      <Configure hitsPerPage={hitsPerPage} />
+      <Configure hitsPerPage={hitsPerPage} query={propsQuery} />
       {children}
     </InstantSearch>
   );

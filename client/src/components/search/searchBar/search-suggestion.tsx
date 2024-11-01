@@ -1,6 +1,6 @@
 import React from 'react';
-import { Hit } from 'react-instantsearch-core';
-import { Highlight } from 'react-instantsearch-dom';
+import { Highlight } from 'react-instantsearch';
+import type { Hit } from 'instantsearch.js';
 
 interface SuggestionProps {
   hit: Hit;
@@ -21,7 +21,7 @@ const Suggestion = ({
           ? 'fcc_suggestion_footer fcc_suggestion_item'
           : 'fcc_suggestion_item'
       }
-      href={hit.url}
+      href={'#' + hit.objectID}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       rel='noopener noreferrer'
@@ -29,7 +29,7 @@ const Suggestion = ({
     >
       <span className='hit-name'>
         {dropdownFooter ? (
-          <Highlight attribute='query' hit={hit} tagName='strong' />
+          <Highlight attribute='query' hit={hit} highlightedTagName='strong' />
         ) : (
           <Highlight attribute='title' hit={hit} />
         )}

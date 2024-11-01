@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { Hit } from 'react-instantsearch-core';
-import { SearchBox } from 'react-instantsearch-dom';
+import { Hit } from 'instantsearch.js';
+import { SearchBox } from 'react-instantsearch';
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -123,7 +123,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     toggleSearchDropdown(false);
     if (selectedHit) {
       // Redirect to hit / footer selected by arrow keys
-      return window.location.assign(selectedHit.url);
+      return window.location.assign(selectedHit.url as string);
     } else if (!query) {
       // Set query to value in search bar if enter is pressed
       query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
@@ -151,13 +151,18 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
 
   handleMouseEnter = (e: React.SyntheticEvent<HTMLElement, Event>): void => {
     e.persist();
-    const hoveredText = e.currentTarget.innerText;
 
     this.setState(({ hits }) => {
-      const hitsTitles = hits.map(hit => hit.title);
-      const hoveredIndex = hitsTitles.indexOf(hoveredText);
+      const hitsTitles = hits.map(hit => hit.title as string);
 
-      return { index: hoveredIndex };
+      if (e.target instanceof HTMLElement) {
+        const targetText = e.target.textContent;
+        const hoveredIndex = targetText ? hitsTitles.indexOf(targetText) : -1;
+
+        return { index: hoveredIndex };
+      }
+
+      return { index: -1 };
     });
   };
 
@@ -220,25 +225,23 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
               <ObserveKeys except={['Space']}>
                 <SearchBox
                   data-playwright-test-label='header-search'
-                  focusShortcuts={['83', '191']}
-                  onChange={this.handleChange}
+                  onInput={this.handleChange}
                   onSubmit={e => {
                     this.handleSearch(e);
                   }}
-                  showLoadingIndicator={false}
                   translations={{
-                    submitTitle: t('icons.magnifier'),
-                    resetTitle: t('icons.input-reset'),
-                    placeholder: searchPlaceholder
+                    submitButtonTitle: t('icons.input-submit'),
+                    resetButtonTitle: t('icons.input-reset')
                   }}
+                  placeholder={searchPlaceholder}
                   onFocus={this.handleFocus}
                 />
               </ObserveKeys>
               {isDropdownEnabled && isSearchFocused && (
                 <SearchHits
-                  handleHits={this.handleHits}
                   handleMouseEnter={this.handleMouseEnter}
                   handleMouseLeave={this.handleMouseLeave}
+                  handleHits={this.handleHits}
                   selectedIndex={index}
                 />
               )}
