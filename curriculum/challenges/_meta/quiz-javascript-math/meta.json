@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-math",
-  "order": 146,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66edc3ab8c6413c344f401bf", "title": "JavaScript Math Quiz" }

@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-nano",
-  "order": 356,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1b03b922a53cb231e1c0d", "title": "Nano Quiz" }

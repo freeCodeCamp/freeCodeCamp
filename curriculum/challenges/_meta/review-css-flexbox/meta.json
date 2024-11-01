@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-css-flexbox",
-  "order": 80,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a940c69cdee833d4cc312", "title": "CSS Flexbox Review" }

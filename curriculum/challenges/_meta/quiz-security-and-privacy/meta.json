@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-security-and-privacy",
-  "order": 367,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1b0a939e913ccd3d4fa18", "title": "Security and Privacy Quiz" }

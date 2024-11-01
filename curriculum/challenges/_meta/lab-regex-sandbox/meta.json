@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-regex-sandbox",
-  "order": 210,
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66e028680eca7d21db7e1aee", "title": "Build a RegEx Sandbox" }],
   "helpCategory": "JavaScript"

@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-css-accessibility",
-  "order": 90,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a955b74ab5588735800d1", "title": "CSS Accessibility Review" }

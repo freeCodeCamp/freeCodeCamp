@@ -5,7 +5,6 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-events",
-  "order": 202,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66edd0ac31fea6e678eb925a", "title": "JavaScript Events Quiz" }
