@@ -306,8 +306,8 @@
         {
           "dashedName": "basic-regex",
           "blocks": [
-            { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "lab-markdown-to-html-converter" },
+            { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "quiz-javascript-regular-expressions" }
           ]
         },
