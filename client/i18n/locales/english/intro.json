@@ -2221,7 +2221,13 @@
         ]
       },
       "nsia": { "title": "112", "intro": [] },
-      "agbl": { "title": "113", "intro": [] },
+      "workshop-magazine": {
+        "title": "Build a Magazine",
+        "intro": [
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
+        ]
+      },
       "ogko": { "title": "114", "intro": [] },
       "harp": { "title": "115", "intro": [] },
       "lab-product-landing-page": {
