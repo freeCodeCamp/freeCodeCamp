@@ -1862,7 +1862,8 @@
       "review-computer-basics": {
         "title": "Computer Basics Review",
         "intro": [
-          "Review the Computer Basics concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on basic computer and internet concepts, you first need to review.",
+          "Open up this page to review concepts like RAM, Internet service providers, common web browsers, search engines and more."
         ]
       },
       "quiz-computer-basics": {
