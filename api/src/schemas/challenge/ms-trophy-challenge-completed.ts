@@ -2,7 +2,8 @@ import { Type } from '@fastify/type-provider-typebox';
 
 export const msTrophyChallengeCompleted = {
   body: Type.Object({
-    id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
+    id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+    blockId: Type.String()
   }),
   response: {
     200: Type.Object({

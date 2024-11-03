@@ -18,7 +18,8 @@ export const examChallengeCompleted = {
         }),
         { minItems: 1 }
       )
-    })
+    }),
+    blockId: Type.String()
   }),
   response: {
     200: Type.Object({

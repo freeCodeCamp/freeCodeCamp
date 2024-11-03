@@ -3,7 +3,8 @@ import { genericError } from '../types';
 
 export const backendChallengeCompleted = {
   body: Type.Object({
-    id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
+    id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+    blockId: Type.String()
   }),
   response: {
     200: Type.Object({

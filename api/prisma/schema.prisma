@@ -27,6 +27,7 @@ type CompletedChallenge {
   isManuallyApproved Boolean? // Undefined
   solution           String? // Null | Undefined
   examResults        ExamResults? // Undefined
+  blockId            String
 }
 
 type PartiallyCompletedChallenge {
@@ -75,6 +76,7 @@ model user {
   about                        String
   acceptedPrivacyTerms         Boolean
   completedChallenges          CompletedChallenge[]
+  completedBlocks              String[] // Undefined | String[]
   completedExams               CompletedExam[] // Undefined
   currentChallengeId           String?
   donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)

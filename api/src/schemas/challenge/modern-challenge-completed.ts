@@ -15,7 +15,8 @@ export const modernChallengeCompleted = {
           history: Type.Array(Type.String())
         })
       )
-    )
+    ),
+    blockId: Type.String()
   }),
   response: {
     200: Type.Object({

@@ -7,7 +7,8 @@ export const projectCompleted = {
     challengeType: Type.Optional(Type.Number()),
     // The solution must be a valid URL only if it is a `backEndProject`.
     solution: Type.String({ maxLength: 1024 }),
-    githubLink: Type.Optional(Type.String())
+    githubLink: Type.Optional(Type.String()),
+    blockId: Type.String()
   }),
   response: {
     200: Type.Object({

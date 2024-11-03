@@ -1,6 +1,6 @@
 import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { omit, pick } from 'lodash';
+import { omit, pick, uniq } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { getChallenges } from './get-challenges';
 
@@ -69,6 +69,8 @@ export type CompletedChallenge = {
   isManuallyApproved?: boolean | null;
   files?: CompletedChallengeFile[];
   examResults?: ExamResults | null;
+  completedModule?: string;
+  completedChapter?: string;
 };
 
 /**
@@ -216,6 +218,10 @@ export async function updateUserChallengeData(
     challenge => challenge.id !== challengeId
   );
 
+  const completedBlocks = uniq(
+    completedChallenges.filter(challenge => !!challenge.blockId)
+  );
+
   const { savedChallenges: userSavedChallenges } =
     await fastify.prisma.user.update({
       where: { id: user.id },
@@ -226,7 +232,8 @@ export async function updateUserChallengeData(
         needsModeration: needsModeration || undefined,
         savedChallenges: savedChallengesUpdate,
         progressTimestamps: userProgressTimestamps,
-        partiallyCompletedChallenges: userPartiallyCompletedChallenges
+        partiallyCompletedChallenges: userPartiallyCompletedChallenges,
+        completedBlocks
       },
       select: {
         savedChallenges: true

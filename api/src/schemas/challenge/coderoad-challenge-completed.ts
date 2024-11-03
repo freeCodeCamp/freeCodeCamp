@@ -3,7 +3,8 @@ import { genericError } from '../types';
 
 export const coderoadChallengeCompleted = {
   body: Type.Object({
-    tutorialId: Type.String()
+    tutorialId: Type.String(),
+    blockId: Type.String()
   }),
   headers: Type.Object({ 'coderoad-user-token': Type.String() }),
   response: {

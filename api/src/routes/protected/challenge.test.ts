@@ -725,7 +725,8 @@ describe('challengeRoutes', () => {
             completedChallenges: [
               {
                 id: HtmlChallengeId,
-                completedDate: expect.any(Number)
+                completedDate: expect.any(Number),
+                blockId: 'cat-photo-app'
               }
             ]
           });
@@ -763,7 +764,8 @@ describe('challengeRoutes', () => {
                 id: JsProjectId,
                 challengeType: JsProjectBody.challengeType,
                 files: [file],
-                completedDate: expect.any(Number)
+                completedDate: expect.any(Number),
+                blockId: 'cat-photo-app'
               }
             ]
           });
@@ -804,7 +806,8 @@ describe('challengeRoutes', () => {
                 challengeType: multiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
-                isManuallyApproved: false
+                isManuallyApproved: false,
+                blockId: 'cat-photo-app'
               }
             ],
             savedChallenges: [
@@ -868,11 +871,13 @@ describe('challengeRoutes', () => {
                 challengeType: updatedMultiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
-                isManuallyApproved: false
+                isManuallyApproved: false,
+                blockId: 'cat-photo-app'
               },
               {
                 id: HtmlChallengeId,
-                completedDate: expect.any(Number)
+                completedDate: expect.any(Number),
+                blockId: 'cat-photo-app'
               }
             ],
             savedChallenges: [

@@ -529,6 +529,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           username,
           usernameDisplay,
           completedChallenges,
+          completedBlocks,
           progressTimestamps,
           twitter,
           profileUI,
@@ -546,6 +547,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               ...normalizeFlags(flags),
               currentChallengeId: currentChallengeId ?? '',
               completedChallenges: normalizeChallenges(completedChallenges),
+              completedBlocks,
               completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
               calendar: getCalendar(

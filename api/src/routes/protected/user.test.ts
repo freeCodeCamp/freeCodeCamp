@@ -690,6 +690,7 @@ describe('userRoutes', () => {
           // missing in the user document.
           currentChallengeId: '',
           completedChallenges: [],
+          completedBlocks: [],
           completedExams: [],
           completedSurveys: [],
           partiallyCompletedChallenges: [],
