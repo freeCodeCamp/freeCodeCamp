@@ -313,7 +313,10 @@
         },
         {
           "dashedName": "form-validation",
-          "blocks": [{ "dashedName": "quiz-form-validation-with-javascript" }]
+          "blocks": [
+            { "dashedName": "lab-customer-complaint-form" },
+            { "dashedName": "quiz-form-validation-with-javascript" }
+          ]
         },
         {
           "dashedName": "javascript-dates",

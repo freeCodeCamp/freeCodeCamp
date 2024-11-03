@@ -2559,7 +2559,12 @@
           "Test what you've learned in this quiz on JavaScript Regular Expressions."
         ]
       },
-      "zalp": { "title": "213", "intro": [] },
+      "lab-customer-complaint-form": {
+        "title": "Build a Customer Complaint Form",
+        "intro": [
+          "For this lab, you will use JavaScript to validate validate a customer complaint form."
+        ]
+      },
       "hhvp": { "title": "214", "intro": [] },
       "egkv": { "title": "215", "intro": [] },
       "qlvw": { "title": "216", "intro": [] },
