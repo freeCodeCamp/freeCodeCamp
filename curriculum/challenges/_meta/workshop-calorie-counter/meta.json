@@ -1,0 +1,11 @@
+{
+  "name": "Build a Calorie Counter",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-calorie-counter",
+  "order": 212,
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6728a003a8c572474ca4a167", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
