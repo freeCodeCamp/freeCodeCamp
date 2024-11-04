@@ -2627,7 +2627,13 @@
           "Test what you've learned in this quiz on Searching and Sorting Algorithms."
         ]
       },
-      "bnvw": { "title": "242", "intro": [] },
+      "workshop-decimal-to-binary-converter": {
+        "title": "Build a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this workshop, you’ll build a decimal-to-binary converter using JavaScript. You’ll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+        ]
+      },
       "xkhk": { "title": "243", "intro": [] },
       "lab-roman-numeral-converter": {
         "title": "Build a Roman Numeral Converter",

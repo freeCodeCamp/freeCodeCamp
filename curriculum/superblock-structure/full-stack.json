@@ -340,7 +340,10 @@
         },
         {
           "dashedName": "recursion",
-          "blocks": [{ "dashedName": "quiz-recursion" }]
+          "blocks": [
+            { "dashedName": "workshop-decimal-to-binary-converter" },
+            { "dashedName": "quiz-recursion" }
+          ]
         },
         {
           "dashedName": "functional-programming",
