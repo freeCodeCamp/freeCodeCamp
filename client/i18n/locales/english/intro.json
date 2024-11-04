@@ -1754,7 +1754,8 @@
       "review-basic-html": {
         "title": "Basic HTML Review",
         "intro": [
-          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
+          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
         ]
       },
       "quiz-basic-html": {
@@ -1780,7 +1781,8 @@
       "review-semantic-html": {
         "title": "Semantic HTML Review",
         "intro": [
-          "Review the Semantic HTML concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
+          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
         ]
       },
       "quiz-semantic-html": {
@@ -1822,7 +1824,8 @@
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
-          "Review the HTML Tables and Forms concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on HTML forms and tables, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> and more elements."
         ]
       },
       "quiz-html-tables-and-forms": {
@@ -1850,7 +1853,10 @@
       },
       "review-html": {
         "title": "HTML Review",
-        "intro": ["Review the HTML concepts to prepare for the upcoming exam."]
+        "intro": [
+          "Before you take the HTML prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
+        ]
       },
       "qpra": { "title": "30", "intro": [] },
       "joim": { "title": "31", "intro": [] },
@@ -1859,7 +1865,8 @@
       "review-computer-basics": {
         "title": "Computer Basics Review",
         "intro": [
-          "Review the Computer Basics concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on basic computer and internet concepts, you first need to review.",
+          "Open up this page to review concepts like RAM, Internet service providers, common web browsers, search engines and more."
         ]
       },
       "quiz-computer-basics": {
@@ -2217,7 +2224,13 @@
         ]
       },
       "nsia": { "title": "112", "intro": [] },
-      "agbl": { "title": "113", "intro": [] },
+      "workshop-magazine": {
+        "title": "Build a Magazine",
+        "intro": [
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
+        ]
+      },
       "ogko": { "title": "114", "intro": [] },
       "harp": { "title": "115", "intro": [] },
       "lab-product-landing-page": {
@@ -2655,7 +2668,12 @@
       },
       "cvaf": { "title": "255", "intro": [] },
       "tdgy": { "title": "256", "intro": [] },
-      "saxu": { "title": "257", "intro": [] },
+      "lab-project-idea-board": {
+        "title": "Build a Project Idea Board",
+        "intro": [
+          "In this lab, you will build a project idea board using OOP in JavaScript."
+        ]
+      },
       "kagw": { "title": "258", "intro": [] },
       "mbib": { "title": "259", "intro": [] },
       "oxiv": { "title": "260", "intro": [] },
@@ -3010,7 +3028,7 @@
       "xish": { "title": "388", "intro": [] },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
-        "intro": ["", ""]
+        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       }
     }
   },

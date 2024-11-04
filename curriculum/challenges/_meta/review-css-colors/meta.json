@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-css-colors",
-  "order": 65,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "671a90c1cf517678b130419e", "title": "CSS Colors Review" }
