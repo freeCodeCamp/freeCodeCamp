@@ -1848,7 +1848,8 @@
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "Test what you've learned in this quiz of HTML accessibility knowledge."
+          "Before you are quizzed on HTML and accessibility, you first need to review the concepts.",
+          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
         ]
       },
       "review-html": {
