@@ -92,6 +92,7 @@
         {
           "dashedName": "pseudo-classes-and-elements",
           "blocks": [
+            { "dashedName": "workshop-greeting-card" },
             { "dashedName": "lab-job-application-form" },
             { "dashedName": "review-css-pseudo-classes" },
             { "dashedName": "quiz-css-pseudo-classes" }

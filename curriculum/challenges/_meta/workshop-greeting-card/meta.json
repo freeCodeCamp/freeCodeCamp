@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-greeting-card",
-  "order": 58,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
