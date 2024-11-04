@@ -13,27 +13,17 @@ const Suggestion = ({
   handleMouseEnter,
   handleMouseLeave
 }: SuggestionProps): JSX.Element => {
-  const dropdownFooter = hit.objectID.includes('footer-');
   return (
     <a
-      className={
-        dropdownFooter
-          ? 'fcc_suggestion_footer fcc_suggestion_item'
-          : 'fcc_suggestion_item'
-      }
+      className={`fcc_suggestion_item`}
       href={hit.url as string}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      id={hit.__position.toString()}
       rel='noopener noreferrer'
       target='_blank'
     >
-      <span className='hit-name'>
-        {dropdownFooter ? (
-          <Highlight attribute='query' hit={hit} highlightedTagName='strong' />
-        ) : (
-          <Highlight attribute='title' hit={hit} />
-        )}
-      </span>
+      <Highlight attribute='title' hit={hit} />
     </a>
   );
 };
