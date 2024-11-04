@@ -21,7 +21,7 @@ const Suggestion = ({
           ? 'fcc_suggestion_footer fcc_suggestion_item'
           : 'fcc_suggestion_item'
       }
-      href={'#' + hit.objectID}
+      href={hit.url as string}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       rel='noopener noreferrer'
