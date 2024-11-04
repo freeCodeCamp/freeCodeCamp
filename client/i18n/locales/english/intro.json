@@ -1916,7 +1916,8 @@
       "review-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Review",
         "intro": [
-          "Review the CSS Backgrounds and Borders concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS backgrounds and borders, you first need to review.",
+          "Open up this page to review concepts including the <code>background-image</code> property, <code>border</code> property and more."
         ]
       },
       "quiz-css-backgrounds-and-borders": {
