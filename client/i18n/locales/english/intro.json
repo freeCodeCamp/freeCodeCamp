@@ -1948,7 +1948,8 @@
       "review-css-relative-and-absolute-units": {
         "title": "CSS Relative and Absolute Units Review",
         "intro": [
-          "Review the CSS Relative and Absolute Units concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on relative and absolute units, you first need to review.",
+          "Open up this page to review concepts like percentages, <code>px</code>, <code>rem</code>, <code>em</code>, and more."
         ]
       },
       "quiz-css-relative-and-absolute-units": {
