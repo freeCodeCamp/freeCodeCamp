@@ -1893,7 +1893,8 @@
       "review-basic-css": {
         "title": "Basic CSS Review",
         "intro": [
-          "Review the Basic CSS concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on basic CSS concepts, you first need to review.",
+          "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS Specificity and more."
         ]
       },
       "quiz-basic-css": {
