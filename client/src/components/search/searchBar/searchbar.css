@@ -14,6 +14,11 @@
   }
 }
 
+.fcc_searchBar strong,
+.fcc_searchBar a:hover {
+  color: var(--gray-00);
+}
+
 .fcc_search_wrapper {
   position: relative;
 }
@@ -62,6 +67,10 @@
   justify-content: center;
 }
 
+.ais-SearchBox-form button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 :is(.ais-SearchBox-form button:hover)
   :is(.ais-SearchBox-submitIcon, .ais-SearchBox-resetIcon)
   path {
@@ -105,6 +114,10 @@
 
 .fcc_suggestion_item:hover {
   cursor: pointer;
+}
+
+.no-hits-footer.fcc_suggestion_item:hover {
+  cursor: default;
 }
 
 .fcc_sr_only {

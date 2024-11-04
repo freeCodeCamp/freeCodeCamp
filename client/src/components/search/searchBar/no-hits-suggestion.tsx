@@ -1,6 +1,8 @@
 import React from 'react';
 
 interface NoHitsSuggestionProps {
+  handleMouseEnter: (e: React.ChangeEvent<HTMLElement>) => void;
+  handleMouseLeave: (e: React.ChangeEvent<HTMLElement>) => void;
   title: string;
 }
 
