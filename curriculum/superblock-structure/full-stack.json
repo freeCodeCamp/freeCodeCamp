@@ -220,8 +220,10 @@
           "blocks": [
             { "dashedName": "workshop-greeting-bot" },
             { "dashedName": "lab-javascript-trivia-bot" },
+            { "dashedName": "review-javascript-variables-and-data-types" },
             { "dashedName": "quiz-javascript-variables-and-data-types" },
             { "dashedName": "workshop-teacher-chatbot" },
+            { "dashedName": "review-javascript-strings" },
             { "dashedName": "quiz-javascript-strings" }
           ]
         },
@@ -230,7 +232,9 @@
           "blocks": [
             { "dashedName": "workshop-mathbot" },
             { "dashedName": "lab-fortune-teller" },
+            { "dashedName": "review-javascript-math" },
             { "dashedName": "quiz-javascript-math" },
+            { "dashedName": "review-javascript-comparisons-and-conditionals" },
             { "dashedName": "quiz-javascript-comparisons-and-conditionals" }
           ]
         },
@@ -242,14 +246,16 @@
             { "dashedName": "lab-sentence-maker" },
             { "dashedName": "workshop-loan-qualification-checker" },
             { "dashedName": "lab-leap-year-calculator" },
-            { "dashedName": "workshop-shopping-list" },
+            { "dashedName": "review-javascript-functions" },
             { "dashedName": "quiz-javascript-functions" }
           ]
         },
         {
           "dashedName": "javascript-arrays",
           "blocks": [
+            { "dashedName": "workshop-shopping-list" },
             { "dashedName": "lab-lunch-picker-program" },
+            { "dashedName": "review-javascript-arrays" },
             { "dashedName": "quiz-javascript-arrays" }
           ]
         },
@@ -258,7 +264,7 @@
           "blocks": [
             { "dashedName": "workshop-recipe-tracker" },
             { "dashedName": "lab-quiz-game" },
-            { "dashedName": "lab-factorial-calculator" },
+            { "dashedName": "review-javascript-objects" },
             { "dashedName": "quiz-javascript-objects" }
           ]
         },
@@ -266,6 +272,8 @@
           "dashedName": "javascript-loops",
           "blocks": [
             { "dashedName": "workshop-sentence-analyzer" },
+            { "dashedName": "lab-factorial-calculator" },
+            { "dashedName": "review-javascript-loops" },
             { "dashedName": "quiz-javascript-loops" }
           ]
         },
@@ -275,17 +283,24 @@
             { "dashedName": "lab-pyramid-generator" },
             { "dashedName": "lab-gradebook-app" },
             { "dashedName": "lab-inventory-management-program" },
+            { "dashedName": "review-javascript-fundamentals" },
             { "dashedName": "quiz-javascript-fundamentals" }
           ]
         },
         {
           "dashedName": "higher-order-functions-and-callbacks",
-          "blocks": [{ "dashedName": "quiz-javascript-higher-order-functions" }]
+          "blocks": [
+            { "dashedName": "review-javascript-higher-order-functions" },
+            { "dashedName": "quiz-javascript-higher-order-functions" }
+          ]
         },
         {
           "dashedName": "dom-manipulation-and-events",
           "blocks": [
             { "dashedName": "lab-favorite-icon-toggler" },
+            {
+              "dashedName": "review-dom-manipulation-and-click-events-with-javascript"
+            },
             {
               "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript"
             },
@@ -294,6 +309,7 @@
             { "dashedName": "workshop-rps-game" },
             { "dashedName": "lab-palindrome-checker" },
             { "dashedName": "lab-football-team-cards" },
+            { "dashedName": "review-javascript-events" },
             { "dashedName": "quiz-javascript-events" }
           ]
         },
@@ -301,6 +317,7 @@
           "dashedName": "debugging-javascript",
           "blocks": [
             { "dashedName": "lab-random-background-color-changer" },
+            { "dashedName": "review-debugging-javascript" },
             { "dashedName": "quiz-debugging-javascript" }
           ]
         },
@@ -308,39 +325,57 @@
           "dashedName": "basic-regex",
           "blocks": [
             { "dashedName": "lab-regex-sandbox" },
+            { "dashedName": "review-javascript-regular-expressions" },
             { "dashedName": "quiz-javascript-regular-expressions" }
           ]
         },
         {
           "dashedName": "form-validation",
-          "blocks": [{ "dashedName": "quiz-form-validation-with-javascript" }]
+          "blocks": [
+            { "dashedName": "review-form-validation-with-javascript" },
+            { "dashedName": "quiz-form-validation-with-javascript" }
+          ]
         },
         {
           "dashedName": "javascript-dates",
           "blocks": [
             { "dashedName": "lab-date-conversion" },
+            { "dashedName": "review-javascript-dates" },
             { "dashedName": "quiz-javascript-dates" }
           ]
         },
         {
           "dashedName": "audio-and-video-events",
-          "blocks": [{ "dashedName": "quiz-javascript-audio-and-video" }]
+          "blocks": [
+            { "dashedName": "review-javascript-audio-and-video" },
+            { "dashedName": "quiz-javascript-audio-and-video" }
+          ]
         },
-        { "dashedName": "maps-sets-and-json", "blocks": [] },
+        {
+          "dashedName": "maps-sets-and-json",
+          "blocks": [{ "dashedName": "review-javascript-maps-sets-and-json" }]
+        },
         {
           "dashedName": "localstorage-and-crud-operations",
           "blocks": [
             { "dashedName": "lab-bookmark-manager-app" },
+            { "dashedName": "review-local-storage-and-crud" },
             { "dashedName": "quiz-local-storage-and-crud" }
           ]
         },
         {
           "dashedName": "classes-and-the-this-keyword",
-          "blocks": [{ "dashedName": "lab-project-idea-board" }]
+          "blocks": [
+            { "dashedName": "lab-project-idea-board" },
+            { "dashedName": "review-javascript-classes" }
+          ]
         },
         {
           "dashedName": "recursion",
-          "blocks": [{ "dashedName": "quiz-recursion" }]
+          "blocks": [
+            { "dashedName": "review-recursion" },
+            { "dashedName": "quiz-recursion" }
+          ]
         },
         {
           "dashedName": "functional-programming",
@@ -353,6 +388,7 @@
             {
               "dashedName": "quiz-javascript-problem-solving-and-algorithmic-thinking"
             },
+            { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
         },
@@ -369,11 +405,17 @@
             { "dashedName": "lab-nth-fibonacci-number-generator" },
             { "dashedName": "quiz-dynamic-programming" },
             { "dashedName": "lab-pokemon-search-app" },
+            { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
+        },
+        {
+          "dashedName": "review-javascript",
+          "blocks": [{ "dashedName": "review-javascript" }]
         }
       ]
     },
+
     {
       "dashedName": "frontend-libraries",
       "modules": [
@@ -393,19 +435,35 @@
         },
         {
           "dashedName": "performance",
-          "blocks": [{ "dashedName": "quiz-web-performance" }]
+          "blocks": [
+            { "dashedName": "review-web-performance" },
+            { "dashedName": "quiz-web-performance" }
+          ]
         },
         {
           "dashedName": "css-libraries-and-frameworks",
-          "blocks": [{ "dashedName": "quiz-css-libraries-and-frameworks" }]
+          "blocks": [
+            { "dashedName": "review-css-libraries-and-frameworks" },
+            { "dashedName": "quiz-css-libraries-and-frameworks" }
+          ]
         },
         {
           "dashedName": "testing",
-          "blocks": [{ "dashedName": "quiz-testing" }]
+          "blocks": [
+            { "dashedName": "review-testing" },
+            { "dashedName": "quiz-testing" }
+          ]
         },
         {
           "dashedName": "typescript-fundamentals",
-          "blocks": [{ "dashedName": "quiz-typescript" }]
+          "blocks": [
+            { "dashedName": "review-typescript" },
+            { "dashedName": "quiz-typescript" }
+          ]
+        },
+        {
+          "dashedName": "review-front-end-libraries",
+          "blocks": [{ "dashedName": "review-front-end-libraries" }]
         }
       ]
     },
@@ -416,6 +474,7 @@
           "dashedName": "bash-fundamentals",
           "blocks": [
             { "dashedName": "workshop-bash-boilerplate" },
+            { "dashedName": "review-bash-commands" },
             { "dashedName": "quiz-bash-commands" }
           ]
         },
@@ -424,6 +483,7 @@
           "blocks": [
             { "dashedName": "workshop-mario-database" },
             { "dashedName": "lab-celestial-bodies-database" },
+            { "dashedName": "review-relational-database" },
             { "dashedName": "quiz-relational-database" }
           ]
         },
@@ -431,6 +491,7 @@
           "dashedName": "bash-scripting",
           "blocks": [
             { "dashedName": "workshop-bash-five-programs" },
+            { "dashedName": "review-bash-scripting" },
             { "dashedName": "quiz-bash-scripting" }
           ]
         },
@@ -443,6 +504,7 @@
             { "dashedName": "workshop-kitty-ipsum-translator" },
             { "dashedName": "workshop-bike-rental-shop" },
             { "dashedName": "lab-salon-appointment-scheduler" },
+            { "dashedName": "review-bash-and-sql" },
             { "dashedName": "quiz-bash-and-sql" }
           ]
         },
@@ -450,6 +512,7 @@
           "dashedName": "nano",
           "blocks": [
             { "dashedName": "workshop-castle" },
+            { "dashedName": "review-nano" },
             { "dashedName": "quiz-nano" }
           ]
         },
@@ -459,8 +522,13 @@
             { "dashedName": "workshop-sql-reference-object" },
             { "dashedName": "lab-periodic-table-database" },
             { "dashedName": "lab-number-guessing-game" },
+            { "dashedName": "review-git" },
             { "dashedName": "quiz-git" }
           ]
+        },
+        {
+          "dashedName": "review-relational-databases",
+          "blocks": [{ "dashedName": "review-relational-databases" }]
         }
       ]
     },
@@ -470,6 +538,7 @@
         {
           "dashedName": "security-and-privacy",
           "blocks": [
+            { "dashedName": "review-security-and-privacy" },
             { "dashedName": "quiz-security-and-privacy" },
             { "dashedName": "workshop-npm-packages" },
             { "dashedName": "lab-timestamp-microservice" },
