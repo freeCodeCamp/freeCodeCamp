@@ -2559,6 +2559,13 @@
           "Test what you've learned in this quiz on JavaScript Regular Expressions."
         ]
       },
+      "workshop-calorie-counter": {
+        "title": "Build a Calorie Counter",
+        "intro": [
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter project, you'll learn how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "In this practice project, you'll learn basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+        ]
+      },
       "zalp": { "title": "213", "intro": [] },
       "hhvp": { "title": "214", "intro": [] },
       "egkv": { "title": "215", "intro": [] },
@@ -3026,10 +3033,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-calorie-counter": {
-        "title": "Build a Calorie Counter",
-        "intro": ["", ""]
       }
     }
   },
