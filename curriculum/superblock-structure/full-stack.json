@@ -313,7 +313,10 @@
         },
         {
           "dashedName": "form-validation",
-          "blocks": [{ "dashedName": "quiz-form-validation-with-javascript" }]
+          "blocks": [
+            { "dashedName": "workshop-calorie-counter" },
+            { "dashedName": "quiz-form-validation-with-javascript" }
+          ]
         },
         {
           "dashedName": "javascript-dates",
