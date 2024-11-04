@@ -372,7 +372,7 @@ function writeToFrame(content: string, frame?: FrameDocument) {
   // to be null at this point.
   if (frame) {
     frame.open();
-    frame.write(content);
+    frame.write('<!DOCTYPE html>' + content);
     frame.close();
   }
 }
