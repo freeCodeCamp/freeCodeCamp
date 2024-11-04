@@ -1992,7 +1992,8 @@
       "review-css-colors": {
         "title": "CSS Colors Review",
         "intro": [
-          "Review the CSS Colors concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS colors, you first need to review.",
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
         ]
       },
       "quiz-css-colors": {
