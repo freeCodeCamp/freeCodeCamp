@@ -26,9 +26,9 @@ interface TSCompiledMessage {
   error: string;
 }
 
-interface InitRequestEvent extends MessageEvent {
+interface CheckIsReadyRequestEvent extends MessageEvent {
   data: {
-    type: 'init';
+    type: 'check-is-ready';
   };
 }
 
@@ -95,10 +95,12 @@ async function setupTypeScript() {
   return env;
 }
 
-ctx.onmessage = (e: TSCompileEvent | InitRequestEvent | CancelEvent) => {
+ctx.onmessage = (
+  e: TSCompileEvent | CheckIsReadyRequestEvent | CancelEvent
+) => {
   const { data, ports } = e;
-  if (data.type === 'init') {
-    void handleInitRequest(ports[0]);
+  if (data.type === 'check-is-ready') {
+    void handleCheckIsReadyRequest(ports[0]);
   } else if (data.type === 'cancel') {
     handleCancelRequest(data);
   } else {
@@ -113,7 +115,7 @@ function handleCancelRequest({ value }: { value: number }) {
   postMessage({ type: 'is-alive', text: value });
 }
 
-async function handleInitRequest(port: MessagePort) {
+async function handleCheckIsReadyRequest(port: MessagePort) {
   await isTSSetup;
   port.postMessage({ type: 'ready' });
 }
