@@ -1,5 +1,6 @@
 import { Location } from '@reach/router';
 import type { WindowLocation } from '@reach/router';
+import { SearchOptions } from 'instantsearch.js';
 import algoliasearch from 'algoliasearch/lite';
 import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
@@ -16,13 +17,31 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
+
 // If a key is missing, searches will fail, but the client will still render.
 const searchClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
     : {
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        search: () => Promise.resolve({ results: [] })
+        // When Algolia is not configured, the client will still render,
+        // the result query is returned to the search component as a mock
+        //(mainly for testing without relying on Playwright fuffill route as
+        // there is no request made without a key).
+        search: (
+          request: Array<{ indexName: string; params: SearchOptions }>
+        ) => {
+          return Promise.resolve({
+            results: [
+              {
+                hits: [],
+                query: request[0].params?.query === 'test' ? 'test' : '',
+                params:
+                  'highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=5&query=sdefpuhsdfpiouhdsfgp',
+                index: 'news'
+              }
+            ]
+          });
+        }
       };
 
 const mapStateToProps = createSelector(

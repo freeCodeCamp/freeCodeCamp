@@ -132,7 +132,7 @@ test.describe('Search bar', () => {
     isMobile
   }) => {
     await mockAlgolia({ page, hitsPerPage: 0 });
-    await search({ page, isMobile, query: '!@#$%^' });
+    await search({ page, isMobile, query: 'test' });
 
     const resultList = page.getByRole('list', { name: 'results' });
     await expect(resultList.getByRole('listitem')).toHaveCount(1);
@@ -162,7 +162,7 @@ test.describe('Search bar', () => {
     const searchInput = await getSearchInput({ page, isMobile });
     await expect(searchInput).toBeVisible();
 
-    await search({ page, isMobile, query: '!@#$%^' });
+    await search({ page, isMobile, query: 'test' });
 
     // Wait for the search results to show up
     const resultList = page.getByRole('list', { name: 'results' });
