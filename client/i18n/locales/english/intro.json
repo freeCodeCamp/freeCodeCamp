@@ -2096,7 +2096,8 @@
       "review-css-typography": {
         "title": "CSS Typography Review",
         "intro": [
-          "Review the CSS Typography concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of typography, you first need to review.",
+          "Open up this page to review concepts like web safe fonts, the <code>font-family</code> property and more."
         ]
       },
       "quiz-css-typography": {
