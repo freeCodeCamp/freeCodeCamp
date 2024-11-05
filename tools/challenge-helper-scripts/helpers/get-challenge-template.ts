@@ -31,9 +31,9 @@ const buildFrontMatterWithVideo = ({
   challengeType
 }: ChallengeOptions) => `---
 id: ${challengeId.toString()}
+videoId: ADD YOUR VIDEO ID HERE!!!
 title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
-videoId: nVAaxZ34khk
 dashedName: ${dashedName}
 ---`;
 
@@ -530,7 +530,7 @@ const getVideoChallengeTemplate = (
 
 # --description--
 
-Watch the lecture video and answer the questions below.
+${options.title} description.
 
 # --question--
 
