@@ -392,7 +392,6 @@
           "dashedName": "asynchronous-javascript",
           "blocks": [
             { "dashedName": "quiz-javascript-object-oriented-programming" },
-            { "dashedName": "lab-linked-list-class" },
             { "dashedName": "lab-hash-table-class" },
             { "dashedName": "quiz-javascript-data-structures" },
             { "dashedName": "lab-depth-first-search" },

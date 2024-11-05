@@ -2802,12 +2802,6 @@
         ]
       },
       "nixz": { "title": "262", "intro": [] },
-      "lab-linked-list-class": {
-        "title": "Build a Linked List Class",
-        "intro": [
-          "For this lab, you will build a linked list class using JavaScript."
-        ]
-      },
       "lab-hash-table-class": {
         "title": "Build a Hash Table Class",
         "intro": ["For this lab, you will build a hash table using JavaScript."]
