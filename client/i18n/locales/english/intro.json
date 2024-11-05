@@ -2785,14 +2785,26 @@
       "oxiv": { "title": "260", "intro": [] },
       "fjvx": { "title": "261", "intro": [] },
       "nixz": { "title": "262", "intro": [] },
-      "muyw": { "title": "266", "intro": [] },
+      "cdfr": { "title": "263", "intro": [] },
+      "bgtd": { "title": "264", "intro": [] },
+      "ascd": { "title": "265", "intro": [] },
+      "quiz-react-basics": {
+        "title": "React Basics Quiz",
+        "intro": ["Test what you've learned in this quiz on React Basics."]
+      },
       "rugw": { "title": "267", "intro": [] },
       "rmpy": { "title": "268", "intro": [] },
       "dbta": { "title": "269", "intro": [] },
       "rnfe": { "title": "271", "intro": [] },
       "xdyh": { "title": "270", "intro": [] },
       "vjgg": { "title": "272", "intro": [] },
-      "kaui": { "title": "274", "intro": [] },
+      "ceds": { "title": "273", "intro": [] },
+      "quiz-react-state-and-hooks": {
+        "title": "React State and Hooks Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on React State and Hooks."
+        ]
+      },
       "ftmi": { "title": "275", "intro": [] },
       "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
@@ -2800,53 +2812,12 @@
       "ffpt": { "title": "279", "intro": [] },
       "lrof": { "title": "280", "intro": [] },
       "vyzp": { "title": "281", "intro": [] },
-      "icdr": { "title": "283", "intro": [] },
-      "zdsj": { "title": "284", "intro": [] },
-      "mzae": { "title": "285", "intro": [] },
-      "gjbf": { "title": "286", "intro": [] },
-      "mbpv": { "title": "287", "intro": [] },
-      "eeez": { "title": "288", "intro": [] },
-      "quiz-web-standards": {
-        "title": "Web Standards Quiz",
-        "intro": ["Test what you've learned in this quiz on Web Standards."]
-      },
-      "khuu": { "title": "290", "intro": [] },
-      "xdly": { "title": "291", "intro": [] },
-      "rhhl": { "title": "292", "intro": [] },
-      "trvf": { "title": "293", "intro": [] },
-      "kwmg": { "title": "294", "intro": [] },
-      "nodx": { "title": "295", "intro": [] },
-      "erfj": { "title": "296", "intro": [] },
-      "quiz-react-basics": {
-        "title": "React Basics Quiz",
-        "intro": ["Test what you've learned in this quiz on React Basics."]
-      },
-      "hfwi": { "title": "298", "intro": [] },
-      "rnwr": { "title": "299", "intro": [] },
-      "oeqv": { "title": "300", "intro": [] },
-      "rdzk": { "title": "301", "intro": [] },
-      "vtpz": { "title": "302", "intro": [] },
-      "dfwl": { "title": "303", "intro": [] },
-      "adzm": { "title": "304", "intro": [] },
-      "quiz-react-state-and-hooks": {
-        "title": "React State and Hooks Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on React State and Hooks."
-        ]
-      },
-      "voks": { "title": "306", "intro": [] },
-      "uwum": { "title": "307", "intro": [] },
-      "ukem": { "title": "308", "intro": [] },
-      "sdjg": { "title": "309", "intro": [] },
-      "buzx": { "title": "310", "intro": [] },
-      "pexz": { "title": "311", "intro": [] },
-      "prlo": { "title": "312", "intro": [] },
-      "jsnd": { "title": "313", "intro": [] },
+      "zagz": { "title": "282", "intro": [] },
       "quiz-advanced-react": {
         "title": "Advanced React Quiz",
         "intro": ["Test what you've learned in this quiz on Advanced React."]
       },
-      "tkgg": { "title": "315", "intro": [] },
+      "zdsj": { "title": "284", "intro": [] },
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
@@ -2857,20 +2828,7 @@
         "title": "Web Performance Quiz",
         "intro": ["Test what you've learned in this quiz on Web Performance."]
       },
-      "hzab": { "title": "318", "intro": [] },
-      "ggea": { "title": "319", "intro": [] },
-      "vgvz": { "title": "320", "intro": [] },
-      "review-typescript": {
-        "title": "Typescript Review",
-        "intro": [
-          "Review the Typescript concepts to prepare for the upcoming quiz."
-        ]
-      },
-      "quiz-typescript": {
-        "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned in this quiz on TypeScript."]
-      },
-      "zhhp": { "title": "323", "intro": [] },
+      "mbpv": { "title": "287", "intro": [] },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -2883,7 +2841,7 @@
           "Test what you've learned in this quiz on CSS Libraries and Frameworks."
         ]
       },
-      "gora": { "title": "326", "intro": [] },
+      "khuu": { "title": "290", "intro": [] },
       "review-testing": {
         "title": "Testing Review",
         "intro": [
@@ -2894,14 +2852,29 @@
         "title": "Testing Quiz",
         "intro": ["Test what you've learned in this quiz on Testing."]
       },
+      "trvf": { "title": "293", "intro": [] },
+      "kwmg": { "title": "294", "intro": [] },
+      "nodx": { "title": "295", "intro": [] },
+      "erfj": { "title": "296", "intro": [] },
+      "muyw": { "title": "297", "intro": [] },
+      "review-typescript": {
+        "title": "Typescript Review",
+        "intro": [
+          "Review the Typescript concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-typescript": {
+        "title": "TypeScript Quiz",
+        "intro": ["Test what you've learned in this quiz on TypeScript."]
+      },
       "review-front-end-libraries": {
         "title": "Front End Libraries Review",
         "intro": [
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "mfwu": { "title": "330", "intro": [] },
-      "dfcd": { "title": "331", "intro": [] },
+      "rdzk": { "title": "301", "intro": [] },
+      "vtpz": { "title": "302", "intro": [] },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
         "intro": [
@@ -2919,7 +2892,7 @@
         "title": "Bash Commands Quiz",
         "intro": ["Test what you've learned in this quiz on Bash Commands."]
       },
-      "thsj": { "title": "335", "intro": [] },
+      "voks": { "title": "306", "intro": [] },
       "workshop-mario-database": {
         "title": "Build a Mario Database",
         "intro": [
@@ -2945,7 +2918,7 @@
           "Test what you've learned in this quiz on Relational Databases."
         ]
       },
-      "ynqt": { "title": "340", "intro": [] },
+      "pexz": { "title": "311", "intro": [] },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
         "intro": [
@@ -2963,7 +2936,7 @@
         "title": "Bash Scripting Quiz",
         "intro": ["Test what you've learned in this quiz on Bash Scripting."]
       },
-      "pegc": { "title": "344", "intro": [] },
+      "tkgg": { "title": "315", "intro": [] },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
         "intro": [
@@ -3013,7 +2986,7 @@
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
       },
-      "movb": { "title": "353", "intro": [] },
+      "eeez": { "title": "324", "intro": [] },
       "workshop-castle": {
         "title": "Build a Castle",
         "intro": [
@@ -3029,7 +3002,7 @@
         "title": "Nano Quiz",
         "intro": ["Test what you've learned in this quiz on Nano."]
       },
-      "pzmc": { "title": "357", "intro": [] },
+      "rhhl": { "title": "328", "intro": [] },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -3063,8 +3036,8 @@
           "Review the Relational Databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "zpjj": { "title": "364", "intro": [] },
-      "ghfk": { "title": "365", "intro": [] },
+      "thsj": { "title": "335", "intro": [] },
+      "uwum": { "title": "336", "intro": [] },
       "review-security-and-privacy": {
         "title": "Security and Privacy Review",
         "intro": [
@@ -3077,6 +3050,39 @@
           "Test what you've learned in this quiz on Security and Privacy."
         ]
       },
+      "buzx": { "title": "339", "intro": [] },
+      "ynqt": { "title": "340", "intro": [] },
+      "prlo": { "title": "341", "intro": [] },
+      "jsnd": { "title": "342", "intro": [] },
+      "quiz-web-standards": {
+        "title": "Web Standards Quiz",
+        "intro": ["Test what you've learned in this quiz on Web Standards."]
+      },
+
+      "pegc": { "title": "344", "intro": [] },
+      "mzae": { "title": "345", "intro": [] },
+      "gjbf": { "title": "346", "intro": [] },
+      "hzab": { "title": "347", "intro": [] },
+      "ggea": { "title": "348", "intro": [] },
+      "vgvz": { "title": "349", "intro": [] },
+      "hfwi": { "title": "350", "intro": [] },
+      "rnwr": { "title": "351", "intro": [] },
+      "zhhp": { "title": "352", "intro": [] },
+      "movb": { "title": "353", "intro": [] },
+      "ngor": { "title": "354", "intro": [] },
+      "gora": { "title": "355", "intro": [] },
+      "xdly": { "title": "356", "intro": [] },
+      "pzmc": { "title": "357", "intro": [] },
+      "oeqv": { "title": "358", "intro": [] },
+      "mfwu": { "title": "359", "intro": [] },
+      "dfcd": { "title": "360", "intro": [] },
+      "dfwl": { "title": "361", "intro": [] },
+      "adzm": { "title": "362", "intro": [] },
+      "kaui": { "title": "363", "intro": [] },
+      "zpjj": { "title": "364", "intro": [] },
+      "ghfk": { "title": "365", "intro": [] },
+      "ukem": { "title": "366", "intro": [] },
+      "sdjg": { "title": "367", "intro": [] },
       "qjov": { "title": "368", "intro": [] },
       "workshop-npm-packages": {
         "title": "Managing Packages with npm",
@@ -3128,6 +3134,7 @@
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },
       "xbri": { "title": "382", "intro": [] },
+      "icdr": { "title": "383", "intro": [] },
       "quiz-tooling-and-deployment": {
         "title": "Tooling and Deployment Quiz",
         "intro": [
