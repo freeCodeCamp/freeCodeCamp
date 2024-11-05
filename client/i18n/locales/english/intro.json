@@ -1852,7 +1852,12 @@
           "The following quiz will test your knowledge of HTML tables and forms."
         ]
       },
-      "ghoc": { "title": "25", "intro": [] },
+      "lecture-importance-of-accessibility-and-good-html-structure": {
+        "title": "Importance of Accessibility and Good HTML Structure",
+        "intro": [
+          "In these lecture videos, you will learn about importance of accessibility and using good HTML structure."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": ["In this lab, you will create an accessible checkout page."]

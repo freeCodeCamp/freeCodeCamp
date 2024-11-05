@@ -45,6 +45,9 @@
         {
           "dashedName": "html-and-accessibility",
           "blocks": [
+            {
+              "dashedName": "lecture-importance-of-accessibility-and-good-html-structure"
+            },
             { "dashedName": "lab-checkout-page" },
             { "dashedName": "review-html-accessibility" },
             { "dashedName": "quiz-html-accessibility" }
