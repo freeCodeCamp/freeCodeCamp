@@ -393,7 +393,6 @@
           "blocks": [
             { "dashedName": "quiz-javascript-object-oriented-programming" },
             { "dashedName": "quiz-javascript-data-structures" },
-            { "dashedName": "lab-depth-first-search" },
             { "dashedName": "quiz-graphs-and-trees" },
             { "dashedName": "lab-nth-fibonacci-number-generator" },
             { "dashedName": "quiz-dynamic-programming" },
