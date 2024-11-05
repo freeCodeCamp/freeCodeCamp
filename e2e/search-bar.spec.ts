@@ -2,6 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import algoliaEightHits from './fixtures/algolia-eight-hits.json';
 import algoliaFiveHits from './fixtures/algolia-five-hits.json';
+import algoliaNoHits from './fixtures/algolia-no-hits.json';
 
 const haveApiKeys =
   process.env.ALGOLIA_APP_ID !== 'app_id_from_algolia_dashboard' &&
@@ -46,16 +47,16 @@ const mockAlgolia = async ({
   hitsPerPage: number;
 }) => {
   if (hitsPerPage === 8) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+    await page.route(/dsn.algolia.net/, async route => {
       await route.fulfill({ json: algoliaEightHits });
     });
   } else if (hitsPerPage === 5) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+    await page.route(/dsn.algolia.net/, async route => {
       await route.fulfill({ json: algoliaFiveHits });
     });
   } else if (hitsPerPage === 0) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
-      await route.fulfill({ json: {} });
+    await page.route(/dsn.algolia.net/, async route => {
+      await route.fulfill({ json: algoliaNoHits });
     });
   }
 };
@@ -63,10 +64,6 @@ const mockAlgolia = async ({
 test.describe('Search bar', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn');
-
-    // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
-    // Comment out this line if you want to test against the real server.
-    await mockAlgolia({ page, hitsPerPage: 8 });
   });
 
   test('should display correctly', async ({ page, isMobile }) => {
@@ -85,7 +82,7 @@ test.describe('Search bar', () => {
     isMobile
   }) => {
     test.skip(!haveApiKeys, 'This test requires Algolia API keys');
-
+    await mockAlgolia({ page, hitsPerPage: 8 });
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -110,7 +107,7 @@ test.describe('Search bar', () => {
     isMobile
   }) => {
     test.skip(!haveApiKeys, 'This test requires Algolia API keys');
-
+    await mockAlgolia({ page, hitsPerPage: 8 });
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -165,7 +162,7 @@ test.describe('Search bar', () => {
     const searchInput = await getSearchInput({ page, isMobile });
     await expect(searchInput).toBeVisible();
 
-    await searchInput.fill('test');
+    await search({ page, isMobile, query: '!@#$%^' });
 
     // Wait for the search results to show up
     const resultList = page.getByRole('list', { name: 'results' });
