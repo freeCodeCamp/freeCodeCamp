@@ -226,6 +226,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
                   onSubmit={e => {
                     this.handleSearch(e);
                   }}
+                  onInput={this.handleChange}
                   translations={{
                     submitButtonTitle: t('icons.input-search'),
                     resetButtonTitle: t('icons.input-reset')

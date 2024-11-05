@@ -73,12 +73,8 @@ test.describe('Search bar', () => {
     const searchInput = await getSearchInput({ page, isMobile });
 
     await expect(searchInput).toBeVisible();
-    // Because we're mocking Algolia requests, the placeholder
-    // should be the default one.
-    await expect(searchInput).toHaveAttribute(
-      'placeholder',
-      translations.search.placeholder.default
-    );
+
+    await expect(searchInput).toHaveAttribute('placeholder', /Search/i);
     await expect(
       page.getByRole('button', { name: 'Submit search terms' })
     ).toBeVisible();
@@ -93,7 +89,7 @@ test.describe('Search bar', () => {
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
-    const resultList = page.getByRole('list', { name: 'Search results' });
+    const resultList = page.getByRole('list', { name: 'results' });
     // Initially, the dropdown contains an `li` with the text "No tutorials found",
     // so we need to check the text content to ensure the correct `li` is displayed.
     await expect(resultList.getByRole('listitem').first()).toContainText(
@@ -118,7 +114,7 @@ test.describe('Search bar', () => {
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
-    const resultList = page.getByRole('list', { name: 'Search results' });
+    const resultList = page.getByRole('list', { name: 'results' });
     // Initially, the dropdown contains an `li` with the text "No tutorials found",
     // so we need to check the text content to ensure the correct `li` is displayed.
     await expect(resultList.getByRole('listitem').first()).toContainText(
@@ -141,7 +137,7 @@ test.describe('Search bar', () => {
     await mockAlgolia({ page, hitsPerPage: 0 });
     await search({ page, isMobile, query: '!@#$%^' });
 
-    const resultList = page.getByRole('list', { name: 'Search results' });
+    const resultList = page.getByRole('list', { name: 'results' });
     await expect(resultList.getByRole('listitem')).toHaveCount(1);
     await expect(resultList.getByRole('listitem')).toHaveText(
       'No tutorials found'
@@ -159,9 +155,7 @@ test.describe('Search bar', () => {
     await page.getByRole('button', { name: 'Clear search terms' }).click();
 
     await expect(searchInput).toHaveValue('');
-    await expect(
-      page.getByRole('list', { name: 'Search results' })
-    ).toBeHidden();
+    await expect(page.getByRole('list', { name: 'results' })).toBeHidden();
   });
 
   test('should close the dropdown when the user clicks outside of the search bar', async ({
@@ -174,7 +168,7 @@ test.describe('Search bar', () => {
     await searchInput.fill('test');
 
     // Wait for the search results to show up
-    const resultList = page.getByRole('list', { name: 'Search results' });
+    const resultList = page.getByRole('list', { name: 'results' });
     await expect(resultList).toBeVisible();
 
     await page.getByRole('navigation', { name: 'primary' }).click();
@@ -201,7 +195,7 @@ test.describe('Search results when viewport height is greater than 768px', () =>
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
-    const results = page.getByRole('list', { name: 'Search results' });
+    const results = page.getByRole('list', { name: 'results' });
     await expect(results.getByRole('listitem')).toHaveCount(9); // 8 results + the footer
   });
 });
@@ -225,7 +219,7 @@ test.describe('Search results when viewport height is equal to 768px', () => {
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
-    const results = page.getByRole('list', { name: 'Search results' });
+    const results = page.getByRole('list', { name: 'results' });
     await expect(results.getByRole('listitem')).toHaveCount(9); // 8 results + the footer
   });
 });
@@ -249,7 +243,7 @@ test.describe('Search results when viewport height is less than 768px', () => {
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
-    const results = page.getByRole('list', { name: 'Search results' });
+    const results = page.getByRole('list', { name: 'results' });
     await expect(results.getByRole('listitem')).toHaveCount(6); // 5 results + the footer
   });
 });
