@@ -2789,11 +2789,8 @@
       "rugw": { "title": "267", "intro": [] },
       "rmpy": { "title": "268", "intro": [] },
       "dbta": { "title": "269", "intro": [] },
+      "rnfe": { "title": "271", "intro": [] },
       "xdyh": { "title": "270", "intro": [] },
-      "quiz-graphs-and-trees": {
-        "title": "Graphs and Trees Quiz",
-        "intro": ["Test what you've learned in this quiz on Graphs and Trees."]
-      },
       "vjgg": { "title": "272", "intro": [] },
       "kaui": { "title": "274", "intro": [] },
       "quiz-dynamic-programming": {
