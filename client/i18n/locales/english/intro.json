@@ -1816,7 +1816,10 @@
           "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
-      "wgot": { "title": "19", "intro": [] },
+      "lecture-working-with-tables": {
+        "title": "Working with Tables",
+        "intro": ["In these lecture videos, you will learn about HTML tables."]
+      },
       "workshop-final-exams-table": {
         "title": "Build a Final Exams Table",
         "intro": [
@@ -1830,7 +1833,12 @@
           "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
         ]
       },
-      "rsve": { "title": "22", "intro": [] },
+      "lecture-working-with-html-tools": {
+        "title": "Working with HTML Tools",
+        "intro": [
+          "In these lecture videos, you will learn about working with HTML tools."
+        ]
+      },
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [

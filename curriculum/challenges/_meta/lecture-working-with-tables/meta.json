@@ -1,0 +1,10 @@
+{
+  "name": "Working with Tables",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-tables",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672a4e04a24858778f57ebfe", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
