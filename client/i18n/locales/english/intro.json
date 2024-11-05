@@ -2017,7 +2017,8 @@
       "review-styling-forms": {
         "title": "Styling Forms Review",
         "intro": [
-          "Review the Styling Forms concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on styling forms, you first need to review.",
+          "Open up this page to review how to style form inputs, working with <code>appearance: none</code> and more."
         ]
       },
       "quiz-styling-forms": {
