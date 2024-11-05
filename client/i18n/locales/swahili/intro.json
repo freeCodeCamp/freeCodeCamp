@@ -1695,9 +1695,13 @@
       }
     }
   },
-  "front-end-development": {
-    "title": "Front End Development",
-    "intro": ["placeholder"],
+  "full-stack-developer": {
+    "title": "Certified Full Stack Developer Curriculum",
+    "intro": [
+      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
+      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+    ],
     "blocks": {
       "efpl": {
         "title": "0",
@@ -1756,7 +1760,8 @@
       "review-basic-html": {
         "title": "Basic HTML Review",
         "intro": [
-          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
+          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
         ]
       },
       "quiz-basic-html": {
@@ -1785,7 +1790,8 @@
       "review-semantic-html": {
         "title": "Semantic HTML Review",
         "intro": [
-          "Review the Semantic HTML concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
+          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
         ]
       },
       "quiz-semantic-html": {
@@ -1836,7 +1842,8 @@
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
-          "Review the HTML Tables and Forms concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on HTML forms and tables, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> and more elements."
         ]
       },
       "quiz-html-tables-and-forms": {
@@ -1867,7 +1874,10 @@
       },
       "review-html": {
         "title": "HTML Review",
-        "intro": ["Review the HTML concepts to prepare for the upcoming exam."]
+        "intro": [
+          "Before you take the HTML prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
+        ]
       },
       "qpra": {
         "title": "30",
@@ -1888,7 +1898,8 @@
       "review-computer-basics": {
         "title": "Computer Basics Review",
         "intro": [
-          "Review the Computer Basics concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on basic computer and internet concepts, you first need to review.",
+          "Open up this page to review concepts like RAM, Internet service providers, common web browsers, search engines and more."
         ]
       },
       "quiz-computer-basics": {
@@ -2164,6 +2175,13 @@
         "title": "CSS Typography Quiz",
         "intro": ["Test what you've learned in this quiz of typography in CSS."]
       },
+      "workshop-accessibility-quiz": {
+        "title": "Build a Quiz Webpage",
+        "intro": [
+          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+        ]
+      },
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
         "intro": [
@@ -2213,9 +2231,12 @@
         "title": "97",
         "intro": []
       },
-      "xobq": {
-        "title": "98",
-        "intro": []
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
       },
       "lab-house-painting": {
         "title": "Build a House Painting",
@@ -2293,9 +2314,12 @@
         "title": "112",
         "intro": []
       },
-      "agbl": {
-        "title": "113",
-        "intro": []
+      "workshop-magazine": {
+        "title": "Build a Magazine",
+        "intro": [
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
+        ]
       },
       "ogko": {
         "title": "114",
@@ -2974,9 +2998,11 @@
         "title": "256",
         "intro": []
       },
-      "saxu": {
-        "title": "257",
-        "intro": []
+      "lab-project-idea-board": {
+        "title": "Build a Project Idea Board",
+        "intro": [
+          "In this lab, you will build a project idea board using OOP in JavaScript."
+        ]
       },
       "kagw": {
         "title": "258",
@@ -3576,9 +3602,9 @@
         "title": "388",
         "intro": []
       },
-      "front-end-development-certification-exam": {
-        "title": "Front End Development Certification Exam",
-        "intro": ["", ""]
+      "exam-certified-full-stack-developer": {
+        "title": "Certified Full Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       }
     }
   },
