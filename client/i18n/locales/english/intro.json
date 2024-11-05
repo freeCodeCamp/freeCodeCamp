@@ -2747,12 +2747,6 @@
           "Test what you've learned in this quiz on JavaScript Functional Programming."
         ]
       },
-      "lab-quicksort-algorithm": {
-        "title": "Build the Quicksort Algorithm",
-        "intro": [
-          "For this lab, you will implement the Quicksort algorithm using JavaScript."
-        ]
-      },
       "dtfv": { "title": "240", "intro": [] },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
