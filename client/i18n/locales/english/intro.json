@@ -2802,12 +2802,6 @@
         ]
       },
       "nixz": { "title": "262", "intro": [] },
-      "lab-stack-class": {
-        "title": "Build a Stack Class",
-        "intro": [
-          "For this lab, you will build a stack class using JavaScript."
-        ]
-      },
       "lab-linked-list-class": {
         "title": "Build a Linked List Class",
         "intro": [
