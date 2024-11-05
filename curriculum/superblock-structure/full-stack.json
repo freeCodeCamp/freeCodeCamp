@@ -381,7 +381,6 @@
           "dashedName": "functional-programming",
           "blocks": [
             { "dashedName": "quiz-searching-and-sorting-algorithms" },
-            { "dashedName": "lab-roman-numeral-converter" },
             { "dashedName": "lab-telephone-number-validator" },
             { "dashedName": "lab-cash-register" },
             {

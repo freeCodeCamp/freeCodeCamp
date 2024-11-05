@@ -2756,12 +2756,6 @@
       },
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
-      "lab-roman-numeral-converter": {
-        "title": "Build a Roman Numeral Converter",
-        "intro": [
-          "For this lab, you'll build an application that converts integers to Roman numerals."
-        ]
-      },
       "yaxm": { "title": "245", "intro": [] },
       "lab-telephone-number-validator": {
         "title": "Build a Telephone Number Validator",
