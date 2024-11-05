@@ -1,0 +1,10 @@
+{
+  "name": "Working with Forms",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-forms",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6729974ec29be33cb00eb54d", "title": "How Do Forms, Labels, and Inputs Work in HTML?" }],
+  "helpCategory": "HTML-CSS"
+}

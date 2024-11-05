@@ -31,6 +31,7 @@
         {
           "dashedName": "html-forms-and-tables",
           "blocks": [
+            { "dashedName": "lecture-working-with-forms" },
             { "dashedName": "workshop-hotel-feedback-form" },
             { "dashedName": "lab-survey-form" },
             { "dashedName": "workshop-final-exams-table" },

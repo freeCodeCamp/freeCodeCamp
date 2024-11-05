@@ -1796,7 +1796,12 @@
           "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
         ]
       },
-      "cfgp": { "title": "16", "intro": [] },
+      "lecture-working-with-forms": {
+        "title": "Working with Forms",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in HTML."
+        ]
+      },
       "workshop-hotel-feedback-form": {
         "title": "Build a Hotel Feedback Form",
         "intro": [
