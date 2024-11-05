@@ -162,7 +162,7 @@ test.describe('Search bar', () => {
     const searchInput = await getSearchInput({ page, isMobile });
     await expect(searchInput).toBeVisible();
 
-    await search({ page, isMobile, query: 'test' });
+    await searchInput.fill('test');
 
     // Wait for the search results to show up
     const resultList = page.getByRole('list', { name: 'results' });
