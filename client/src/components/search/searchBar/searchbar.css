@@ -153,7 +153,7 @@ and arrow keys */
   padding: 6.5px 8px 8px;
 }
 
-.fcc_suggestion_footer .hit-name .ais-Highlight {
+.fcc_suggestion_footer span[class='ais-Highlight-nonHighlighted'] {
   font-weight: bold;
 }
 

@@ -3,9 +3,10 @@ import { isEmpty } from 'lodash-es';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHits } from 'react-instantsearch';
+import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 import Suggestion from './search-suggestion';
 import NoHitsSuggestion from './no-hits-suggestion';
-
+const searchUrl = searchPageUrl;
 function CustomHits({
   handleMouseEnter,
   handleMouseLeave,
@@ -29,9 +30,8 @@ function CustomHits({
       __position: 8,
       objectID: `footer-${query}`,
       query: query,
-      url: noHits ? null : `${query}?query=${encodeURIComponent(query)}`,
+      url: noHits ? null : `${searchUrl}?query=${encodeURIComponent(query)}`,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      title: t('search.see-results', { searchQuery: query }) ?? '',
       _highlightResult: {
         query: {
           value: `${t('search.see-results', { searchQuery: query })}`,
