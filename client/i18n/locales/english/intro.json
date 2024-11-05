@@ -2757,12 +2757,6 @@
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
       "yaxm": { "title": "245", "intro": [] },
-      "lab-telephone-number-validator": {
-        "title": "Build a Telephone Number Validator",
-        "intro": [
-          "For this lab, you'll build an application that checks if a number is a valid United States phone number."
-        ]
-      },
       "lab-cash-register": {
         "title": "Build a Cash Register",
         "intro": ["For this lab, you will build a cash register."]

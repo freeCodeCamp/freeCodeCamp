@@ -381,7 +381,6 @@
           "dashedName": "functional-programming",
           "blocks": [
             { "dashedName": "quiz-searching-and-sorting-algorithms" },
-            { "dashedName": "lab-telephone-number-validator" },
             { "dashedName": "lab-cash-register" },
             {
               "dashedName": "quiz-javascript-problem-solving-and-algorithmic-thinking"
