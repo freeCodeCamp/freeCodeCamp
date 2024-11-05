@@ -1,0 +1,19 @@
+{
+  "name": "Importance of Semantic HTML",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-importance-of-semantic-html",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67298243760ae980de5266db",
+      "title": "Why Should You Care About Semantic HTML?"
+    },
+    {
+      "id": "672985445d7da807c6b4f406",
+      "title": "Why is it Important to Have Good Structural Hierarchy?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

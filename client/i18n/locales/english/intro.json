@@ -1764,7 +1764,12 @@
           "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
         ]
       },
-      "evdc": { "title": "11", "intro": [] },
+      "lecture-importance-of-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lecture videos, you will learn about semantic HTML and the importance of using it."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [

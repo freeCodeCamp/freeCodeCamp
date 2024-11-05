@@ -21,6 +21,7 @@
         {
           "dashedName": "semantic-html",
           "blocks": [
+            { "dashedName": "lecture-importance-of-semantic-html" },
             { "dashedName": "workshop-blog-page" },
             { "dashedName": "lab-event-hub" },
             { "dashedName": "review-semantic-html" },
