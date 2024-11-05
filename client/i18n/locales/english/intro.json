@@ -2757,10 +2757,6 @@
       "bnvw": { "title": "242", "intro": [] },
       "xkhk": { "title": "243", "intro": [] },
       "yaxm": { "title": "245", "intro": [] },
-      "lab-cash-register": {
-        "title": "Build a Cash Register",
-        "intro": ["For this lab, you will build a cash register."]
-      },
       "udia": { "title": "248", "intro": [] },
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
