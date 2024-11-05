@@ -2044,7 +2044,8 @@
       "review-css-layout-and-effects": {
         "title": "CSS Layouts and Effects Review",
         "intro": [
-          "Review the CSS Layouts and Effects concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS Layouts and Effects, you first need to review.",
+          "Open up this page to review concepts like the <code>transform</code> property, the box model and the <code>overflow</code> property."
         ]
       },
       "quiz-css-layout-and-effects": {
