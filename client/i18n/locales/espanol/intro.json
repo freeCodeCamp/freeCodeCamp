@@ -1697,9 +1697,13 @@
       }
     }
   },
-  "front-end-development": {
-    "title": "Desarrollo Front End",
-    "intro": ["marcador de posición"],
+  "full-stack-developer": {
+    "title": "Certified Full Stack Developer Curriculum",
+    "intro": [
+      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
+      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+    ],
     "blocks": {
       "efpl": {
         "title": "0",
@@ -1713,14 +1717,14 @@
         ]
       },
       "workshop-cat-photo-app": {
-        "title": "Crea una aplicación de fotos de gato",
+        "title": "Build a Cat Photo App",
         "intro": [
-          "HTML significa Lenguaje de marcado de HyperText y representa el contenido y la estructura de una página web.",
-          "En este taller, aprenderás a trabajar con elementos HTML básicos como encabezados, párrafos, imágenes, enlaces y listas."
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
         ]
       },
       "lab-recipe-page": {
-        "title": "Crea una página de recetas",
+        "title": "Build a Recipe Page",
         "intro": [
           "For this lab, you will review HTML basics by creating a web page of your favorite recipe. This lab will give you an opportunity to review working with an HTML boilerplate, headings, lists and images."
         ]
@@ -1732,7 +1736,7 @@
         ]
       },
       "lab-travel-agency-page": {
-        "title": "Crea una página de agencia de viajes",
+        "title": "Build a Travel Agency Page",
         "intro": [
           "For this lab, you will review working with HTML fundamentals by creating a web page for a travel agency. This lab will give you an opportunity to review working with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element and more."
         ]
@@ -1744,7 +1748,7 @@
         ]
       },
       "lab-video-compilation-page": {
-        "title": "Crea una página de compilación de vídeo",
+        "title": "Build a Video Compilation Page",
         "intro": [
           "For this lab, you will create a video compilation web page. This lab will give you the opportunity to practice working with the <code>iframe</code> element."
         ]
@@ -1758,7 +1762,8 @@
       "review-basic-html": {
         "title": "Basic HTML Review",
         "intro": [
-          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts. Open up this review page to see which concepts you need to review."
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
+          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
         ]
       },
       "quiz-basic-html": {
@@ -1772,7 +1777,7 @@
         "intro": []
       },
       "workshop-blog-page": {
-        "title": "Crea una página blog de gatos",
+        "title": "Build a Cat Blog Page",
         "intro": [
           "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
@@ -1787,7 +1792,8 @@
       "review-semantic-html": {
         "title": "Semantic HTML Review",
         "intro": [
-          "Review the Semantic HTML concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
+          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
         ]
       },
       "quiz-semantic-html": {
@@ -1801,14 +1807,14 @@
         "intro": []
       },
       "workshop-hotel-feedback-form": {
-        "title": "Crea un formulario de opinión para hotel",
+        "title": "Build a Hotel Feedback Form",
         "intro": [
-          "En este taller, aprenderás a trabajar con formularios creando un formulario de opinión para hoteles.",
-          "Aprenderás a trabajar con etiquetas, inputs, conjuntos de campos, leyendas, textareas y botones."
+          "In this workshop, you will learn how to work with forms by building a Hotel Feedback Form.",
+          "You will learn how to work with labels, inputs, fieldsets, legends, textareas and buttons."
         ]
       },
       "lab-survey-form": {
-        "title": "Crea un formulario de encuesta",
+        "title": "Build a Survey Form",
         "intro": [
           "For this lab, you will review working with HTML forms by creating a survey form.",
           "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
@@ -1819,9 +1825,9 @@
         "intro": []
       },
       "workshop-final-exams-table": {
-        "title": "Crea una mesa de exámenes finales",
+        "title": "Build a Final Exams Table",
         "intro": [
-          "En este taller, aprenderás a trabajar con tablas HTML construyendo una tabla de exámenes finales."
+          "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
         ]
       },
       "lab-book-catalog-table": {
@@ -1838,7 +1844,8 @@
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
-          "Review the HTML Tables and Forms concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on HTML forms and tables, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> and more elements."
         ]
       },
       "quiz-html-tables-and-forms": {
@@ -1869,7 +1876,10 @@
       },
       "review-html": {
         "title": "HTML Review",
-        "intro": ["Review the HTML concepts to prepare for the upcoming exam."]
+        "intro": [
+          "Before you take the HTML prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
+        ]
       },
       "qpra": {
         "title": "30",
@@ -1890,7 +1900,8 @@
       "review-computer-basics": {
         "title": "Computer Basics Review",
         "intro": [
-          "Review the Computer Basics concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on basic computer and internet concepts, you first need to review.",
+          "Open up this page to review concepts like RAM, Internet service providers, common web browsers, search engines and more."
         ]
       },
       "quiz-computer-basics": {
@@ -1911,9 +1922,9 @@
         ]
       },
       "lab-business-card": {
-        "title": "Diseña una tarjeta de presentación",
+        "title": "Design a Business Card",
         "intro": [
-          "En este laboratorio, crearás una tarjeta de presentación y la estilizarás usando CSS."
+          "In this lab, you'll create a business card and style it using CSS."
         ]
       },
       "gnuk": {
@@ -2166,6 +2177,13 @@
         "title": "CSS Typography Quiz",
         "intro": ["Test what you've learned in this quiz of typography in CSS."]
       },
+      "workshop-accessibility-quiz": {
+        "title": "Build a Quiz Webpage",
+        "intro": [
+          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+        ]
+      },
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
         "intro": [
@@ -2215,9 +2233,12 @@
         "title": "97",
         "intro": []
       },
-      "xobq": {
-        "title": "98",
-        "intro": []
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
       },
       "lab-house-painting": {
         "title": "Build a House Painting",
@@ -2295,9 +2316,12 @@
         "title": "112",
         "intro": []
       },
-      "agbl": {
-        "title": "113",
-        "intro": []
+      "workshop-magazine": {
+        "title": "Build a Magazine",
+        "intro": [
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
+        ]
       },
       "ogko": {
         "title": "114",
@@ -2976,9 +3000,11 @@
         "title": "256",
         "intro": []
       },
-      "saxu": {
-        "title": "257",
-        "intro": []
+      "lab-project-idea-board": {
+        "title": "Build a Project Idea Board",
+        "intro": [
+          "In this lab, you will build a project idea board using OOP in JavaScript."
+        ]
       },
       "kagw": {
         "title": "258",
@@ -3578,9 +3604,9 @@
         "title": "388",
         "intro": []
       },
-      "front-end-development-certification-exam": {
-        "title": "Examen de Certificación en Desarrollo Front End",
-        "intro": ["", ""]
+      "exam-certified-full-stack-developer": {
+        "title": "Certified Full Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       }
     }
   },
