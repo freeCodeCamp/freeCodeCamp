@@ -2827,10 +2827,7 @@
       "clak": { "title": "277", "intro": [] },
       "fcom": { "title": "278", "intro": [] },
       "ffpt": { "title": "279", "intro": [] },
-      "lab-pokemon-search-app": {
-        "title": "Build a Pokémon Search App",
-        "intro": ["For this project, you will build a Pokémon search app."]
-      },
+      "lrof": { "title": "280", "intro": [] },
       "vyzp": { "title": "281", "intro": [] },
       "icdr": { "title": "283", "intro": [] },
       "zdsj": { "title": "284", "intro": [] },
