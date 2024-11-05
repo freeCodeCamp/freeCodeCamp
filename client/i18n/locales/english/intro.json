@@ -1973,7 +1973,8 @@
       "review-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Review",
         "intro": [
-          "Review the CSS Pseudo-classes concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS pseudo-classes and pseudo-elements, you first need to review.",
+          "Open up this page to review concepts like the <code>::before</code> and <code>::after</code> pseudo-elements as well as the <code>:hover</code>, <code>:active</code> pseudo-classes and more."
         ]
       },
       "quiz-css-pseudo-classes": {
