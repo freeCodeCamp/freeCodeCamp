@@ -2709,7 +2709,13 @@
         ]
       },
       "jbst": { "title": "235", "intro": [] },
-      "peyf": { "title": "236", "intro": [] },
+      "workshop-shopping-cart": {
+        "title": "Build a Shopping Cart",
+        "intro": [
+          "In this workshop you'll create a shopping cart using JavaScript classes.",
+          "You will practice how to use the this keyword, create class instances, implement methods for data manipulation and more."
+        ]
+      },
       "lab-project-idea-board": {
         "title": "Build a Project Idea Board",
         "intro": [

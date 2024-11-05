@@ -366,6 +366,7 @@
         {
           "dashedName": "classes-and-the-this-keyword",
           "blocks": [
+            { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
             { "dashedName": "review-javascript-classes" }
           ]
