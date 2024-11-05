@@ -2793,12 +2793,7 @@
       "xdyh": { "title": "270", "intro": [] },
       "vjgg": { "title": "272", "intro": [] },
       "kaui": { "title": "274", "intro": [] },
-      "quiz-dynamic-programming": {
-        "title": "Dynamic Programming Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on Dynamic Programming."
-        ]
-      },
+      "ftmi": { "title": "275", "intro": [] },
       "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
       "fcom": { "title": "278", "intro": [] },

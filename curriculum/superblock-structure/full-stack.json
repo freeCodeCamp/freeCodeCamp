@@ -387,7 +387,6 @@
         {
           "dashedName": "asynchronous-javascript",
           "blocks": [
-            { "dashedName": "quiz-dynamic-programming" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
