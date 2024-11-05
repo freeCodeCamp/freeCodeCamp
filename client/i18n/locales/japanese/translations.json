@@ -7,6 +7,7 @@
     "first-lesson": "最初のレッスンへ",
     "close": "閉じる",
     "edit": "編集",
+    "copy": "コピー",
     "view": "表示",
     "view-code": "コードを表示",
     "view-project": "プロジェクトを表示",
@@ -52,6 +53,8 @@
     "create-post": "フォーラムにヘルプ投稿を作成",
     "cancel": "キャンセル",
     "reset-lesson": "レッスンをリセット",
+    "revert": "復元",
+    "revert-to-saved-code": "保存したコードを復元する",
     "run": "実行",
     "run-test": "テスト実行 (Ctrl + Enter)",
     "check-code": "コードをチェック",
@@ -110,7 +113,7 @@
     "big-heading-3": "認定証を取得する。",
     "big-heading-4": "すべてが無料です。",
     "h2-heading": "2014 年以来、4 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
-    "h2-heading-b": "10 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
+    "h2-heading-b": "<strong>10 万人</strong>を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業に<strong>就職</strong>しました。",
     "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "hero-img-alt": "さまざまな人種、性別の人々がノートパソコンの周りに集まっている様子",
     "hero-img-uis": "freeCodeCamp コードエディター (モバイル版およびデスクトップ版) と、認定証のスクリーンショット",
@@ -133,8 +136,30 @@
         "testimony": "「私はいつも JavaScript を学ぶことに躓いていました。たくさんのコースを受講しましたが、freeCodeCamp に一番のめり込みました。JavaScript だけでなくデータ構造とアルゴリズムも学べることで、ソフトウェアエンジニアとして Spotify という夢の仕事を得るために必要な自信と<strong>スキルを freeCodeCamp は私に与えてくれました</strong>」"
       }
     },
-    "certification-heading": "以下の検証済認定証を無料で取得できます。",
-    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証済認定証を無料で取得:",
+    "benefits": {
+      "heading": "freeCodeCamp で学ぶメリット:",
+      "list": [
+        {
+          "title": "大規模なコミュニティ",
+          "description": "受講者、卒業生、教育者が集まる活気に満ちた学習コミュニティに参加しましょう。"
+        },
+        {
+          "title": "無償教育",
+          "description": "チャリティから学び、学習費用を節約しましょう。有料限定の教材や隠れたコストは一切ありません。"
+        },
+        {
+          "title": "幅広い認定講座",
+          "description": "人気の技術を学んで、業界認知度の高い検証機能付き認定証を獲得しましょう。"
+        },
+        {
+          "title": "包括的なカリキュラム",
+          "description": "世界的に評価されている一貫したプロジェクトベースのカリキュラムで、技術スキルを向上させましょう。"
+        }
+      ],
+      "cta": "今すぐ学習を始める (無料)"
+    },
+    "certification-heading": "以下の検証機能付き認定証を無料で取得できます。",
+    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証機能付き認定証を無料で取得:",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
     "professional-certs-heading": "プロフェッショナル認定証を無料で取得:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
@@ -152,7 +177,7 @@
         "question": "freeCodeCamp ではどのようにしてプログラミングを学べますか？",
         "answer": [
           "ブラウザ、コードエディター、モバイルアプリなどからすぐに使える環境で、段階的に、たくさんのプロジェクトを作成しながら学習します。",
-          "また、無料で検証済認定証を取得できます。"
+          "また、無料で検証機能付き認定証を取得できます。"
         ]
       },
       {
@@ -186,7 +211,7 @@
         ]
       },
       {
-        "question": "無料の検証済認定証はどうすれば取得できますか？",
+        "question": "無料の検証機能付き認定証はどうすれば取得できますか？",
         "answer": [
           "認定証を取得するには、それぞれ 5 つある認定プロジェクトを完成させ、すべてのテストを成功させる必要があります。"
         ]
@@ -200,7 +225,7 @@
     ]
   },
   "settings": {
-    "profile-note": "Note: the profile settings have been moved to the profile page.",
+    "profile-note": "注: プロフィール設定はプロフィールページに移動しました。",
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
     "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
@@ -295,7 +320,7 @@
       "weekly": "Quincy からのメールを毎週受け取る"
     },
     "honesty": {
-      "p1": "検証済認定証を取得する前に、以下の学問的誠実性誓約に同意する必要があります:",
+      "p1": "検証機能付き認定証を取得する前に、以下の学問的誠実性誓約に同意する必要があります:",
       "p2": "「私は、盗作とは他人の作品をコピーして、原作者を明示することなくまるで自分の作品であるかのように提示することであると理解しています。」",
       "p3": "「私は、盗作は知的不正行為であり、発覚した場合、通常は退学または退職などの処分となり得る行為であると理解しています。」",
       "p4": "「jQuery や Bootstrap などのオープンソースライブラリの使用や、オリジナルの作者を明示した短いコードスニペットの使用を除き、私のプロジェクトのコードの 100% は私が書いたもの、または、リアルタイムでペアプログラミングを行った他の freeCodeCamp のカリキュラム受講者とともに書かれたものです。」",
@@ -334,7 +359,7 @@
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}",
-    "edit-my-profile": "Edit My Profile"
+    "edit-my-profile": "プロフィールを編集"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp は皆様からの寄付により支えられている非課税の 501(c)(3) 慈善団体です。(United States Federal Tax Identification Number: 82-0779546)",
@@ -388,7 +413,8 @@
     "assignment-not-complete": "課題を完了してください",
     "assignments": "課題",
     "question": "質問",
-    "explanation": "Explanation",
+    "questions": "質問",
+    "explanation": "解説",
     "solution-link": "回答のリンク",
     "source-code-link": "ソースコードのリンク",
     "ms-link": "Microsoft のリンク",
@@ -420,6 +446,7 @@
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
     "reset-warn-2": "この操作は取り消すことが出来ません.",
+    "revert-warn": "このレッスンを復元してよろしいですか？直近の変更を取り消し、最後に保存したバージョンのコードに戻します。",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
     "donation-record-not-found": "寄付の履歴が見つかりませんでした。",
@@ -488,8 +515,8 @@
     "fill-in-the-blank": "空欄を埋めてください。",
     "blank": "空欄",
     "quiz": {
-      "correct-answer": "正解",
-      "incorrect-answer": "不正解",
+      "correct-answer": "正解！",
+      "incorrect-answer": "不正解です。",
       "unanswered-questions": "以下の質問が未回答です。すべての質問に回答してください: {{ unansweredQuestions }}",
       "have-n-correct-questions": "{{ total }} 問中 {{ correctAnswerCount }} 問正解しました。"
     },
@@ -531,11 +558,11 @@
       "transcript-label": "Microsoft 成績証明書のリンク",
       "invalid-transcript": "成績証明書のリンクが正しくありません。以下の形式になっているか確認してください: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - 特に大文字で示した部分が正しいか確認してください。"
     },
-    "blockType": {
+    "block-type": {
       "lecture": "レクチャー",
       "workshop": "ワークショップ",
       "lab": "ラボ",
-      "review": "レビュー",
+      "review": "復習",
       "quiz": "小テスト",
       "exam": "試験"
     }
@@ -694,11 +721,11 @@
   "search": {
     "label": "検索",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "記事を検索",
+      "numbered": "{{ roundedTotalRecords }} 件以上の記事から検索"
     },
     "see-results": "{{searchQuery}} のすべての結果を見る",
-    "no-tutorials": "投稿が見つかりませんでした",
+    "no-tutorials": "記事が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
     "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした",
     "result-list": "検索結果"
@@ -779,7 +806,7 @@
     "opens-new-window": "新しいウィンドウで開く",
     "rsa-checkbox": "Read-Search-Ask (読む - 検索する - 質問する) メソッドを試しました",
     "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました",
-    "edit-my-profile": "Edit my profile"
+    "edit-my-profile": "プロフィールを編集"
   },
   "flash": {
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
@@ -1030,8 +1057,8 @@
       "a2-english-for-developers": "開発者のための A2 レベル英語認定証",
       "B1 English for Developers": "開発者のための B1 レベル英語",
       "b1-english-for-developers": "開発者のための B1 レベル英語認定証",
-      "Front End Development": "フロントエンド開発",
-      "front-end-development-v9": "フロントエンド開発認定証",
+      "Full Stack Developer": "Full Stack Developer",
+      "full-stack-developer-v9": "Certified Full Stack Developer",
       "Legacy Front End": "(レガシー) フロントエンド",
       "legacy-front-end": "(レガシー) フロントエンド認定証",
       "Legacy Back End": "(レガシー) バックエンド",
@@ -1083,6 +1110,16 @@
     "delete-p3": "仮想マシンを使用するカリキュラムセクションでこの先の進行状況を保存するには、新しいトークンを作成する必要があります。",
     "no-thanks": "いいえ、トークンを維持したいです",
     "yes-please": "はい、トークンを削除します"
+  },
+  "exam-token": {
+    "exam-token": "試験用トークン",
+    "note": "試験用トークンは、試験にアクセスするために必要な秘密鍵です。このトークンを他の人に共有しないでください。",
+    "invalidation": "新しいトークンを生成すると、古いトークンは無効になります。",
+    "generate-exam-token": "試験用トークンを生成",
+    "error": "トークンの生成中にエラーが発生しました。時間を置いて再度お試しください。",
+    "your-exam-token": "あなたの試験用トークンは次のとおりです: {{token}}",
+    "copied": "トークンをクリップボードにコピーしました",
+    "copy-error": "トークンをクリップボードにコピー中にエラーが発生しました"
   },
   "shortcuts": {
     "title": "キーボードショートカット",

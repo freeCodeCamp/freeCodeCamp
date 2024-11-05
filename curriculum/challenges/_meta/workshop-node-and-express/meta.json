@@ -1,12 +1,12 @@
 {
   "name": "Basic Node and Express",
   "blockType": "workshop",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-node-and-express",
-  "order": 372,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "587d7fb0367417b2b2512bed",

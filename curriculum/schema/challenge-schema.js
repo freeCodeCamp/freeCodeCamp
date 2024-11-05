@@ -118,7 +118,7 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     blockType: Joi.when('superBlock', {
-      is: [SuperBlocks.FrontEndDevelopment],
+      is: [SuperBlocks.FullStackDeveloper],
       then: Joi.valid(
         'workshop',
         'lab',
@@ -129,9 +129,25 @@ const schema = Joi.object()
       ).required(),
       otherwise: Joi.valid(null)
     }),
+    blockLayout: Joi.when('superBlock', {
+      is: [SuperBlocks.FullStackDeveloper],
+      then: Joi.valid(
+        'challenge-list',
+        'challenge-grid',
+        'link',
+        'project-list',
+        'legacy-challenge-list',
+        'legacy-link'
+      ).required()
+    }),
     challengeOrder: Joi.number(),
+    chapter: Joi.string().when('superBlock', {
+      is: 'full-stack-developer',
+      then: Joi.required(),
+      otherwise: Joi.optional()
+    }),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(23).required(),
+    challengeType: Joi.number().min(0).max(24).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -184,6 +200,11 @@ const schema = Joi.object()
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
+    module: Joi.string().when('superBlock', {
+      is: 'full-stack-developer',
+      then: Joi.required(),
+      otherwise: Joi.optional()
+    }),
     msTrophyId: Joi.when('challengeType', {
       is: [challengeTypes.msTrophy],
       then: Joi.string().required()

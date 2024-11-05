@@ -1,12 +1,12 @@
 {
   "name": "Build a Greeting Bot",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-greeting-bot",
-  "order": 131,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "66ad8294a0ad902f1b31b612",

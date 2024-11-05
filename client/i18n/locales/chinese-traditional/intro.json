@@ -1681,17 +1681,24 @@
       }
     }
   },
-  "front-end-development": {
-    "title": "Front End Development",
-    "intro": ["placeholder"],
+  "full-stack-developer": {
+    "title": "Certified Full Stack Developer Curriculum",
+    "intro": [
+      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
+      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+    ],
     "blocks": {
       "efpl": {
         "title": "0",
         "intro": []
       },
-      "xpmy": {
-        "title": "1",
-        "intro": []
+      "lecture-what-is-html": {
+        "title": "What is HTML?",
+        "intro": [
+          "In this lecture video, you will be introduced to HTML (HyperText Markup Language) which is a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+        ]
       },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
@@ -1703,39 +1710,50 @@
       "lab-recipe-page": {
         "title": "Build a Recipe Page",
         "intro": [
-          "For this lab, you will create a web page of your favorite recipe."
+          "For this lab, you will review HTML basics by creating a web page of your favorite recipe. This lab will give you an opportunity to review working with an HTML boilerplate, headings, lists and images."
         ]
       },
-      "gwyd": {
-        "title": "4",
-        "intro": []
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": [
+          "In these lecture videos, you will learn about HTML fundamentals like the <code>id</code> and <code>class</code> attributes, as well as the <code>div</code> and <code>span</code> elements, HTML entities, and more."
+        ]
       },
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "For this lab, you will create a web page of a travel agency."
+          "For this lab, you will review working with HTML fundamentals by creating a web page for a travel agency. This lab will give you an opportunity to review working with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element and more."
         ]
       },
-      "vipr": {
-        "title": "6",
-        "intro": []
+      "lecture-working-with-media": {
+        "title": "Working with Media",
+        "intro": [
+          "In these lecture videos, you will learn how to work with the <code>audio</code> and <code>video</code> elements as well as with SVG's and more."
+        ]
       },
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
-        "intro": ["For this lab, you will create a video compilation web page."]
+        "intro": [
+          "For this lab, you will create a video compilation web page. This lab will give you the opportunity to practice working with the <code>iframe</code> element."
+        ]
       },
-      "bzfv": {
-        "title": "8",
-        "intro": []
+      "lecture-working-with-links": {
+        "title": "Working with Links",
+        "intro": [
+          "In these lecture videos, you will learn about the different <code>target</code> attribute values, absolute and relative links and the different links states."
+        ]
       },
-      "snuv": {
-        "title": "9",
-        "intro": []
+      "review-basic-html": {
+        "title": "Basic HTML Review",
+        "intro": [
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
+          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
+        ]
       },
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
-          "Test what you've learned in this quiz of basic HTML knowledge."
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
         ]
       },
       "evdc": {
@@ -1751,17 +1769,21 @@
       "lab-event-hub": {
         "title": "Build an Event Hub",
         "intro": [
-          "In this lab, you will build an event hub using semantic HTML."
+          "In this lab, you will review working with semantic HTML elements by building an event hub.",
+          "This lab will give you an opportunity to review working with the <code>header</code>, <code>nav</code>, <code>article</code> elements."
         ]
       },
-      "ijdq": {
-        "title": "14",
-        "intro": []
+      "review-semantic-html": {
+        "title": "Semantic HTML Review",
+        "intro": [
+          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
+          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
+        ]
       },
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
-          "Test what you've learned in this quiz of semantic HTML knowledge."
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
         ]
       },
       "cfgp": {
@@ -1777,7 +1799,10 @@
       },
       "lab-survey-form": {
         "title": "Build a Survey Form",
-        "intro": ["For this lab, you will create a survey form."]
+        "intro": [
+          "For this lab, you will review working with HTML forms by creating a survey form.",
+          "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
       },
       "wgot": {
         "title": "19",
@@ -1792,21 +1817,25 @@
       "lab-book-catalog-table": {
         "title": "Build a Book Catalog Table",
         "intro": [
-          "In this lab, you will create table filled with book information."
+          "In this lab, you will review working with HTML tables by building a table filled with book information.",
+          "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
         ]
       },
       "rsve": {
         "title": "22",
         "intro": []
       },
-      "xzam": {
-        "title": "23",
-        "intro": []
+      "review-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Review",
+        "intro": [
+          "Before you are quizzed on HTML forms and tables, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> and more elements."
+        ]
       },
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "Test what you've learned in this quiz of HTML tables and forms."
+          "The following quiz will test your knowledge of HTML tables and forms."
         ]
       },
       "ghoc": {
@@ -1817,9 +1846,11 @@
         "title": "Build a Checkout Page",
         "intro": ["In this lab, you will create an accessible checkout page."]
       },
-      "fqai": {
-        "title": "27",
-        "intro": []
+      "review-html-accessibility": {
+        "title": "HTML Accessibility Review",
+        "intro": [
+          "Review the HTML Accessibility concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
@@ -1827,9 +1858,12 @@
           "Test what you've learned in this quiz of HTML accessibility knowledge."
         ]
       },
-      "pspj": {
-        "title": "29",
-        "intro": []
+      "review-html": {
+        "title": "HTML Review",
+        "intro": [
+          "Before you take the HTML prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
+        ]
       },
       "qpra": {
         "title": "30",
@@ -1847,9 +1881,12 @@
         "title": "33",
         "intro": []
       },
-      "tmdc": {
-        "title": "34",
-        "intro": []
+      "review-computer-basics": {
+        "title": "Computer Basics Review",
+        "intro": [
+          "Before you are quizzed on basic computer and internet concepts, you first need to review.",
+          "Open up this page to review concepts like RAM, Internet service providers, common web browsers, search engines and more."
+        ]
       },
       "quiz-computer-basics": {
         "title": "Computer Basics Quiz",
@@ -1878,9 +1915,11 @@
         "title": "39",
         "intro": []
       },
-      "zlfj": {
-        "title": "40",
-        "intro": []
+      "review-basic-css": {
+        "title": "Basic CSS Review",
+        "intro": [
+          "Review the Basic CSS concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-basic-css": {
         "title": "Basic CSS Quiz",
@@ -1906,9 +1945,11 @@
         "title": "45",
         "intro": []
       },
-      "rzdx": {
-        "title": "46",
-        "intro": []
+      "review-css-backgrounds-and-borders": {
+        "title": "CSS Backgrounds and Borders Review",
+        "intro": [
+          "Review the CSS Backgrounds and Borders concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Quiz",
@@ -1928,9 +1969,11 @@
         "title": "50",
         "intro": []
       },
-      "gvel": {
-        "title": "51",
-        "intro": []
+      "review-design-fundamentals": {
+        "title": "Design Fundamentals Review",
+        "intro": [
+          "Review the Design Fundamentals concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-design-fundamentals": {
         "title": "Design Fundamentals Quiz",
@@ -1942,19 +1985,17 @@
         "title": "53",
         "intro": []
       },
-      "sbnz": {
-        "title": "54",
-        "intro": []
-      },
       "lab-event-flyer-page": {
         "title": "Build an Event Flyer Page",
         "intro": [
           "In this lab, you will use absolute and relative CSS units to create an event flyer page."
         ]
       },
-      "ywfm": {
-        "title": "56",
-        "intro": []
+      "review-css-relative-and-absolute-units": {
+        "title": "CSS Relative and Absolute Units Review",
+        "intro": [
+          "Review the CSS Relative and Absolute Units concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-relative-and-absolute-units": {
         "title": "CSS Relative and Absolute Units Quiz",
@@ -1970,13 +2011,17 @@
         "title": "59",
         "intro": []
       },
-      "sdym": {
-        "title": "60",
-        "intro": []
+      "lab-job-application-form": {
+        "title": "Build a Job Application Form",
+        "intro": [
+          "In this lab you will build a job application form and style it using pseudo-classes."
+        ]
       },
-      "ivpx": {
-        "title": "61",
-        "intro": []
+      "review-css-pseudo-classes": {
+        "title": "CSS Pseudo-classes Review",
+        "intro": [
+          "Review the CSS Pseudo-classes concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Quiz",
@@ -1984,21 +2029,21 @@
           "Test what you've learned in this quiz of pseudo-classes in CSS."
         ]
       },
-      "fvcj": {
-        "title": "63",
-        "intro": []
+      "workshop-colored-markers": {
+        "title": "Build a Set of Colored Markers",
+        "intro": [
+          "In this workshop, you'll build a set of colored markers. You'll practice different ways to set color values and how to pair colors with each other."
+        ]
       },
       "ogdb": {
         "title": "64",
         "intro": []
       },
-      "zxiy": {
-        "title": "65",
-        "intro": []
-      },
-      "qpze": {
-        "title": "66",
-        "intro": []
+      "review-css-colors": {
+        "title": "CSS Colors Review",
+        "intro": [
+          "Review the CSS Colors concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-colors": {
         "title": "CSS Colors Quiz",
@@ -2006,13 +2051,12 @@
           "Test what you've learned in this quiz of using colors in CSS."
         ]
       },
-      "jnqt": {
-        "title": "68",
-        "intro": []
-      },
-      "vkei": {
-        "title": "69",
-        "intro": []
+      "workshop-registration-form": {
+        "title": "Design a Registration Form",
+        "intro": [
+          "You can use HTML forms to collect information from people who visit your webpage.",
+          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+        ]
       },
       "lab-contact-form": {
         "title": "Design a Contact Form",
@@ -2020,9 +2064,11 @@
           "In this lab, you will design a contact form in HTML and style it using CSS."
         ]
       },
-      "ipmw": {
-        "title": "71",
-        "intro": []
+      "review-styling-forms": {
+        "title": "Styling Forms Review",
+        "intro": [
+          "Review the Styling Forms concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
@@ -2030,13 +2076,16 @@
           "Test what you've learned in this quiz of how to style forms using CSS."
         ]
       },
-      "qzcx": {
-        "title": "73",
+      "woza": {
+        "title": "72",
         "intro": []
       },
-      "wozq": {
-        "title": "74",
-        "intro": []
+      "workshop-rothko-painting": {
+        "title": "Design a Rothko Painting",
+        "intro": [
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+        ]
       },
       "lab-confidential-email-page": {
         "title": "Build a Confidential Email Page",
@@ -2044,9 +2093,11 @@
           "For this lab, you will create a web page of a confidential email using HTML and CSS."
         ]
       },
-      "zter": {
-        "title": "76",
-        "intro": []
+      "review-css-layout-and-effects": {
+        "title": "CSS Layouts and Effects Review",
+        "intro": [
+          "Review the CSS Layouts and Effects concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-layout-and-effects": {
         "title": "CSS Layout and Effects Quiz",
@@ -2054,13 +2105,16 @@
           "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
         ]
       },
-      "tcwi": {
-        "title": "78",
+      "ujaf": {
+        "title": "77",
         "intro": []
       },
-      "uptf": {
-        "title": "79",
-        "intro": []
+      "workshop-flexbox-photo-gallery": {
+        "title": "Build a Flexbox Photo Gallery",
+        "intro": [
+          "Flexbox helps you design your webpage so that it looks good on any screen size.",
+          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
       },
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
@@ -2068,9 +2122,11 @@
           "For this lab, you will use flexbox to create a webpage of playing cards."
         ]
       },
-      "kqao": {
-        "title": "81",
-        "intro": []
+      "review-css-flexbox": {
+        "title": "CSS Flexbox Review",
+        "intro": [
+          "Review the CSS Flexbox concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
@@ -2078,13 +2134,16 @@
           "Test what you've learned in this quiz of using flexbox in CSS."
         ]
       },
-      "vqut": {
-        "title": "83",
+      "ujcf": {
+        "title": "82",
         "intro": []
       },
-      "ujcf": {
-        "title": "84",
-        "intro": []
+      "workshop-nutritional-label": {
+        "title": "Build a Nutritional Label",
+        "intro": [
+          "Typography is the art of styling your text to be easily readable and suit its purpose.",
+          "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
+        ]
       },
       "lab-newspaper-article": {
         "title": "Build a Newspaper Article",
@@ -2092,21 +2151,22 @@
           "In this lab, you will build a newspaper article page using HTML and CSS."
         ]
       },
-      "hbme": {
-        "title": "86",
-        "intro": []
+      "review-css-typography": {
+        "title": "CSS Typography Review",
+        "intro": [
+          "Review the CSS Typography concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-typography": {
         "title": "CSS Typography Quiz",
         "intro": ["Test what you've learned in this quiz of typography in CSS."]
       },
-      "dyvj": {
-        "title": "88",
-        "intro": []
-      },
-      "rjsv": {
-        "title": "89",
-        "intro": []
+      "workshop-accessibility-quiz": {
+        "title": "Build a Quiz Webpage",
+        "intro": [
+          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+        ]
       },
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
@@ -2114,9 +2174,11 @@
           "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
         ]
       },
-      "fnde": {
-        "title": "91",
-        "intro": []
+      "review-css-accessibility": {
+        "title": "CSS Accessibility Review",
+        "intro": [
+          "Review the CSS Accessibility concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-accessibility": {
         "title": "CSS Accessibility Quiz",
@@ -2124,21 +2186,26 @@
           "Test what you've learned in this quiz of making your webpage accessible with CSS."
         ]
       },
-      "swpl": {
-        "title": "93",
+      "haje": {
+        "title": "92",
         "intro": []
       },
-      "hcje": {
-        "title": "94",
-        "intro": []
+      "workshop-balance-sheet": {
+        "title": "Build a Balance Sheet",
+        "intro": [
+          "You can use CSS pseudo selectors to change specific HTML elements.",
+          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
       },
       "lab-book-inventory-app": {
         "title": "Build a Book Inventory App",
         "intro": ["For this lab, you will create a book inventory app."]
       },
-      "huyd": {
-        "title": "96",
-        "intro": []
+      "review-css-attribute-selectors": {
+        "title": "CSS Attribute Selectors Review",
+        "intro": [
+          "Review the CSS Attribute Selectors concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Quiz",
@@ -2146,21 +2213,26 @@
           "Test what you've learned in this quiz of using attribute selectors in CSS."
         ]
       },
-      "rxzk": {
-        "title": "98",
+      "rxzq": {
+        "title": "97",
         "intro": []
       },
-      "xobh": {
-        "title": "99",
-        "intro": []
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+        ]
       },
       "lab-house-painting": {
         "title": "Build a House Painting",
         "intro": ["For this lab, you will build a house painting using CSS."]
       },
-      "rrtt": {
-        "title": "101",
-        "intro": []
+      "review-css-positioning": {
+        "title": "CSS Positioning Review",
+        "intro": [
+          "Review the CSS Positioning concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-positioning": {
         "title": "CSS Positioning Quiz",
@@ -2168,13 +2240,16 @@
           "Test what you've learned in this quiz of how positioning works in CSS."
         ]
       },
-      "xebj": {
-        "title": "103",
+      "jkdu": {
+        "title": "102",
         "intro": []
       },
-      "jkdt": {
-        "title": "104",
-        "intro": []
+      "workshop-piano": {
+        "title": "Design a Piano",
+        "intro": [
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+        ]
       },
       "lab-technical-documentation-page": {
         "title": "Build a Technical Documentation Page",
@@ -2182,9 +2257,11 @@
           "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic."
         ]
       },
-      "xcti": {
-        "title": "106",
-        "intro": []
+      "review-responsive-web-design": {
+        "title": "Responsive Web Design Review",
+        "intro": [
+          "Review the Responsive Web Design concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-responsive-web-design": {
         "title": "Responsive Web Design Quiz",
@@ -2192,21 +2269,26 @@
           "Test what you've learned in this quiz of making your webpage responsive."
         ]
       },
-      "mtbl": {
-        "title": "108",
+      "vlov": {
+        "title": "107",
         "intro": []
       },
-      "vlov": {
-        "title": "109",
-        "intro": []
+      "workshop-city-skyline": {
+        "title": "Build a City Skyline",
+        "intro": [
+          "CSS variables help you organize your styles and reuse them.",
+          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+        ]
       },
       "lab-availability-table": {
         "title": "Build an Availability Table",
         "intro": ["For this lab, you will create an availability table."]
       },
-      "sget": {
-        "title": "111",
-        "intro": []
+      "review-css-variables": {
+        "title": "CSS Variables Review",
+        "intro": [
+          "Review the CSS Variables concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-variables": {
         "title": "CSS Variables Quiz",
@@ -2214,9 +2296,16 @@
           "Test what you've learned in this quiz of how using variables in CSS."
         ]
       },
-      "agbl": {
-        "title": "113",
+      "nsia": {
+        "title": "112",
         "intro": []
+      },
+      "workshop-magazine": {
+        "title": "Build a Magazine",
+        "intro": [
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
+        ]
       },
       "ogko": {
         "title": "114",
@@ -2226,30 +2315,28 @@
         "title": "115",
         "intro": []
       },
-      "nsiq": {
-        "title": "116",
-        "intro": []
-      },
       "lab-product-landing-page": {
         "title": "Build a Product Landing Page",
         "intro": [
           "For this project, you will build a product landing page to market a product of your choice."
         ]
       },
-      "fdam": {
-        "title": "118",
-        "intro": []
+      "review-css-grid": {
+        "title": "CSS Grid Review",
+        "intro": [
+          "Review the CSS Grid concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
         "intro": ["Test what you've learned in this quiz of using grid in CSS."]
       },
-      "dorc": {
-        "title": "120",
+      "dora": {
+        "title": "119",
         "intro": []
       },
-      "adzu": {
-        "title": "121",
+      "dpaq": {
+        "title": "120",
         "intro": []
       },
       "lab-moon-orbit": {
@@ -2258,9 +2345,12 @@
           "For this lab, you will create an animation of the moon orbiting the earth."
         ]
       },
-      "lugl": {
-        "title": "123",
-        "intro": []
+      "workshop-flappy-penguin": {
+        "title": "Build a Flappy Penguin",
+        "intro": [
+          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
+          "In this workshop, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+        ]
       },
       "lab-personal-portfolio": {
         "title": "Build a Personal Portfolio",
@@ -2268,15 +2358,21 @@
           "For this project, you will build your own personal portfolio page."
         ]
       },
-      "lvqc": {
-        "title": "125",
-        "intro": []
+      "review-css-animations": {
+        "title": "CSS Amimations Review",
+        "intro": [
+          "Review the CSS Amimations concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-css-animations": {
         "title": "CSS Animations Quiz",
         "intro": [
           "Test what you've learned in this quiz of using animations in CSS."
         ]
+      },
+      "review-css": {
+        "title": "CSS Review",
+        "intro": ["Review the CSS concepts to prepare for the upcoming exam."]
       },
       "wvjx": {
         "title": "127",
@@ -2470,9 +2566,11 @@
         "title": "164",
         "intro": []
       },
-      "ekdb": {
-        "title": "165",
-        "intro": []
+      "workshop-recipe-tracker": {
+        "title": "Build a Recipe Tracker",
+        "intro": [
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+        ]
       },
       "lab-quiz-game": {
         "title": "Build a Quiz Game",
@@ -2886,9 +2984,11 @@
         "title": "256",
         "intro": []
       },
-      "saxu": {
-        "title": "257",
-        "intro": []
+      "lab-project-idea-board": {
+        "title": "Build a Project Idea Board",
+        "intro": [
+          "In this lab, you will build a project idea board using OOP in JavaScript."
+        ]
       },
       "kagw": {
         "title": "258",
@@ -3488,9 +3588,9 @@
         "title": "388",
         "intro": []
       },
-      "front-end-development-certification-exam": {
-        "title": "Front End Development Certification Exam",
-        "intro": ["", ""]
+      "exam-certified-full-stack-developer": {
+        "title": "Certified Full Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       }
     }
   },

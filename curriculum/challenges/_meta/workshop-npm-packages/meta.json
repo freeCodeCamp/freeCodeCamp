@@ -1,12 +1,12 @@
 {
   "name": "Managing Packages with npm",
   "blockType": "workshop",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-npm-packages",
-  "order": 369,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "587d7fb3367417b2b2512bfb",
