@@ -2758,12 +2758,6 @@
           "Review the JavaScript Functional Programming concepts to prepare for the upcoming quiz."
         ]
       },
-      "quiz-javascript-problem-solving-and-algorithmic-thinking": {
-        "title": "JavaScript Problem Solving and Algorithmic Thinking Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Problem Solving and Algorithmic Thinking."
-        ]
-      },
       "mjbe": { "title": "251", "intro": [] },
       "byqx": { "title": "252", "intro": [] },
       "alda": { "title": "253", "intro": [] },
