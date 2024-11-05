@@ -2786,13 +2786,9 @@
       "fjvx": { "title": "261", "intro": [] },
       "nixz": { "title": "262", "intro": [] },
       "muyw": { "title": "266", "intro": [] },
-      "quiz-javascript-data-structures": {
-        "title": "JavaScript Data Structures Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Data Structures."
-        ]
-      },
+      "rugw": { "title": "267", "intro": [] },
       "rmpy": { "title": "268", "intro": [] },
+      "dbta": { "title": "269", "intro": [] },
       "xdyh": { "title": "270", "intro": [] },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Quiz",
