@@ -1,0 +1,10 @@
+{
+  "name": "Working with CSS Fonts",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-css-fonts",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa80bc17f355fabd2e9e8", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

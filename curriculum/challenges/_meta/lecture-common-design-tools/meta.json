@@ -1,0 +1,10 @@
+{
+  "name": "Common Design Tools",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-common-design-tools",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa7005c24e45bbd53b20d", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Working with CSS Transforms, Overflow, and Filters",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-css-transforms-overflow-and-filters",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa7e03c2e365e906e5733", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

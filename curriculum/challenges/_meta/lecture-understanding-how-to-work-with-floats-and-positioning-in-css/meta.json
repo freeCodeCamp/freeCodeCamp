@@ -1,0 +1,10 @@
+{
+  "name": "Understanding How to Work with Floats and Positioning in CSS",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-how-to-work-with-floats-and-positioning-in-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa86da9937560d3dfe3d6", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

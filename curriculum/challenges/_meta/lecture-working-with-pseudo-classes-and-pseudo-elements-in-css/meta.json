@@ -1,0 +1,10 @@
+{
+  "name": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa74f761c065c9828a95e", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

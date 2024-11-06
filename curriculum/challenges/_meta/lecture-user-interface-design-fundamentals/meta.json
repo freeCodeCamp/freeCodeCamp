@@ -1,0 +1,10 @@
+{
+  "name": "User Interface Design Fundamentals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-user-interface-design-fundamentals",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa6c9e379285acca5a2aa", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

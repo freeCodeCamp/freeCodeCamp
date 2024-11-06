@@ -1,0 +1,10 @@
+{
+  "name": "Working with Backgrounds and Borders",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-backgrounds-and-borders",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa669960f6a596081fcad", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

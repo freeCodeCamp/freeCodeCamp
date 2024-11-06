@@ -1,0 +1,10 @@
+{
+  "name": "CSS Specificity, the Cascade Algorithm, and Inheritance",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-css-specificity-the-cascade-algorithm-and-inheritance",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa62178d5ff57fe4f98e0", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

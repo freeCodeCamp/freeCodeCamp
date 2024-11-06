@@ -1,0 +1,10 @@
+{
+  "name": "Working with Attribute Selectors",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-attribute-selectors",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa840de72b3607bba4bed", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

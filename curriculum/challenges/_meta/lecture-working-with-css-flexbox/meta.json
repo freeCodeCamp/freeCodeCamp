@@ -1,0 +1,10 @@
+{
+  "name": "Working with CSS Flexbox",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-css-flexbox",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa7f7284b235f46f7d4e9", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

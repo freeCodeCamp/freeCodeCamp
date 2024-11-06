@@ -1,0 +1,10 @@
+{
+  "name": "Styling Lists and Links",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-styling-lists-and-links",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa6441bcd3758e9f52ae0", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

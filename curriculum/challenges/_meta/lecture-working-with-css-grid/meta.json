@@ -1,0 +1,10 @@
+{
+  "name": "Working with CSS Grid",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-css-grid",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa8ac4631d1623ec5cd86", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
