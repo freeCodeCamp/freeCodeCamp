@@ -124,7 +124,7 @@ const ShowQuiz = ({
   // `isPassed` is used as a flag to conditionally render the test or submit button.
   const [isPassed, setIsPassed] = useState(false);
 
-  const [unansweredList, setUnansweredList] = useState<number[]>([]);
+  const [showUnanswered, setShowUnanswered] = useState(false);
 
   const [exitConfirmed, setExitConfirmed] = useState(false);
 
@@ -183,6 +183,11 @@ const ShowQuiz = ({
     onFailure: () => setIsPassed(false)
   });
 
+  const unanswered = quizData.reduce<number[]>(
+    (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
+    []
+  );
+
   useEffect(() => {
     initTests(tests);
     updateChallengeMeta({
@@ -215,12 +220,7 @@ const ShowQuiz = ({
   ]);
 
   const handleFinishQuiz = () => {
-    const unanswered = quizData.reduce<number[]>(
-      (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
-      []
-    );
-
-    setUnansweredList(unanswered);
+    setShowUnanswered(true);
 
     if (unanswered.length === 0) {
       openFinishQuizModal();
@@ -275,9 +275,9 @@ const ShowQuiz = ({
   });
 
   function getErrorMessage() {
-    if (unansweredList.length > 0) {
+    if (showUnanswered && unanswered.length > 0) {
       return t('learn.quiz.unanswered-questions', {
-        unansweredQuestions: unansweredList.join(', ')
+        unansweredQuestions: unanswered.join(', ')
       });
     }
 
