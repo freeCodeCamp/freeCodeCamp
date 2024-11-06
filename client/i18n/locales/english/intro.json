@@ -2072,7 +2072,8 @@
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
-          "Review the CSS Flexbox concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS Flexbox concepts, you first need to review.",
+          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties and more."
         ]
       },
       "quiz-css-flexbox": {
