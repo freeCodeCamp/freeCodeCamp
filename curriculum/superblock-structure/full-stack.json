@@ -297,7 +297,7 @@
         {
           "dashedName": "dom-manipulation-and-events",
           "blocks": [
-            { "dashedName": "workshop-story-teller-app" },
+            { "dashedName": "workshop-storytelling-app" },
             { "dashedName": "lab-favorite-icon-toggler" },
             {
               "dashedName": "review-dom-manipulation-and-click-events-with-javascript"

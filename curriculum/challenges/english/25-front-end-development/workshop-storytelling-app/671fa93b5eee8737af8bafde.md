@@ -1,20 +1,26 @@
 ---
-id: 671fa537114e412950b62089
-title: Step 6
+id: 671fa93b5eee8737af8bafde
+title: Step 10
 challengeType: 0
-dashedName: step-6
+dashedName: step-10
 ---
 
 # --description--
 
-In your JavaScript file, select the `.story-container` `div` and store it in a variable called `storyContainer`.
+Create a function called `displayStory`. Inside the function, log `"You clicked the button"` to the console.
 
 # --hints--
 
-Your `storyContainer` variable should have the value of `document.querySelector(".story-container")`.
+You should have a function called `displayStory`.
 
 ```js
-assert.deepEqual(storyContainer, document.querySelector(".story-container"));
+assert.isFunction(displayStory);
+```
+
+You should log `"You clicked the button"` to the console inside the `displayStory` function.
+
+```js
+assert.match(displayStory.toString(), /console\.log\(["']You clicked the button["']\)/);
 ```
 
 # --seed--
@@ -28,7 +34,7 @@ assert.deepEqual(storyContainer, document.querySelector(".story-container"));
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Storyteller app</title>
+    <title>Storytelling App</title>
     <link rel="stylesheet" href="./styles.css" />
 </head>
 
@@ -43,6 +49,7 @@ assert.deepEqual(storyContainer, document.querySelector(".story-container"));
             <button class="btn" id="adventure-btn">Adventure Story</button>
         </div>
         <p id="result"></p>
+
     </main>
     <script src="./script.js"></script>
 
@@ -52,6 +59,29 @@ assert.deepEqual(storyContainer, document.querySelector(".story-container"));
 ```
 
 ```js
+const storyContainer = document.querySelector(".story-container");
+
+const scaryStoryBtn = document.getElementById("scary-btn");
+const funnyStoryBtn = document.getElementById("funny-btn");
+const adventureStoryBtn = document.getElementById("adventure-btn");
+
+const resultParagraph = document.getElementById("result");
+
+const storyObj = {
+ scary: {
+  story: `In the dark woods, a group of friends stumbled upon an old, abandoned cabin. They enter the cabin and awaken something malevolent that had been dormant for centuries.`,
+  borderColor: "#ee4b2b",
+},
+  funny: {
+    story: `During a camping trip, Mark decided to show off his culinary skills by cooking dinner over an open fire. However, his attempt caused him to burn the dinner as well as his eyebrows off.`,
+    borderColor: "#f1be32",
+  },
+  adventure: {
+    story: `Lost in the heart of the Amazon rain forest, Sarah and Jake stumbled upon an ancient temple. They braved deadly traps and encountered strange wildlife, all while deciphering cryptic clues left behind by a mysterious civilization.`,
+    borderColor: "#acd157",
+  },
+};
+
 --fcc-editable-region--
 
 --fcc-editable-region--

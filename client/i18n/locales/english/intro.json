@@ -2537,10 +2537,10 @@
       },
       "esfh": { "title": "187", "intro": [] },
       "gibb": { "title": "188", "intro": [] },
-      "workshop-story-teller-app": {
-        "title": "Build a Storyteller App",
+      "workshop-storytelling-app": {
+        "title": "Build a Storytelling App",
         "intro": [
-          "In this workshop, you will build a Storyteller app that will allow you to list different stories based on genre."
+          "In this workshop, you will Build a Storytelling App that will allow you to list different stories based on genre."
         ]
       },
       "lab-favorite-icon-toggler": {

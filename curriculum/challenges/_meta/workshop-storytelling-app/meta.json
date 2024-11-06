@@ -1,11 +1,11 @@
 {
-  "name": "Build a Storyteller App",
+  "name": "Build a Storytelling App",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "dashedName": "workshop-story-teller-app",
+  "dashedName": "workshop-storytelling-app",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
