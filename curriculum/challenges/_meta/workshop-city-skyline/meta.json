@@ -1,12 +1,12 @@
 {
   "name": "Build a City Skyline",
   "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-city-skyline",
-  "order": 108,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "5d822fd413a79914d39e98cc",
