@@ -330,6 +330,7 @@
         {
           "dashedName": "localstorage-and-crud-operations",
           "blocks": [
+            { "dashedName": "workshop-todo-app" },
             { "dashedName": "lab-bookmark-manager-app" },
             { "dashedName": "quiz-local-storage-and-crud" }
           ]

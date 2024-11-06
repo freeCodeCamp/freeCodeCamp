@@ -1,0 +1,12 @@
+{
+  "name": "Build a Todo App using Local Storage",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-todo-app",
+  "superBlock": "full-stack-developer",
+  "blockLayout": "link",
+  "blockType": "lab",
+  "challengeOrder": [{ "id": "672baf271f2b0af69a385d79", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

@@ -2593,18 +2593,24 @@
       },
       "pehm": { "title": "227", "intro": [] },
       "cvsw": { "title": "228", "intro": [] },
+      "fgbp": { "title": "230", "intro": [] },
+      "workshop-todo-app": {
+        "title": "Build a Todo App using Local Storage",
+        "intro": [
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this workshop, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+        ]
+      },
       "lab-bookmark-manager-app": {
         "title": "Build a Bookmark Manager App",
         "intro": ["For this lab, you will build a bookmark manager app."]
       },
-      "fgbp": { "title": "230", "intro": [] },
       "quiz-local-storage-and-crud": {
         "title": "Local Storage and CRUD Quiz",
         "intro": [
           "Test what you've learned in this quiz on Local Storage and CRUD."
         ]
       },
-      "jbst": { "title": "232", "intro": [] },
       "peyf": { "title": "233", "intro": [] },
       "bdqj": { "title": "234", "intro": [] },
       "ndlf": { "title": "235", "intro": [] },
