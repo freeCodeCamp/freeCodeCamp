@@ -1,6 +1,6 @@
 import React from 'react';
 import { Highlight } from 'react-instantsearch';
-import type { Hit } from 'instantsearch.js';
+import type { Hit } from './types';
 
 interface SuggestionProps {
   hit: Hit;
@@ -21,7 +21,7 @@ const Suggestion = ({
           ? 'fcc_suggestion_footer fcc_suggestion_item'
           : 'fcc_suggestion_item'
       }
-      href={hit.url as string}
+      href={hit.url}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       rel='noopener noreferrer'

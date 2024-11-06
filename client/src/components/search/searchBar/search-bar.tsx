@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { Hit } from 'instantsearch.js';
 import { SearchBox } from 'react-instantsearch';
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
@@ -18,6 +17,7 @@ import {
   updateSearchQuery
 } from '../redux';
 import WithInstantSearch from '../with-instant-search';
+import type { Hit } from './types';
 
 import './searchbar-base.css';
 import './searchbar.css';
@@ -122,7 +122,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     toggleSearchDropdown(false);
     if (selectedHit) {
       // Redirect to hit / footer selected by arrow keys
-      return window.location.assign(selectedHit.url as string);
+      return window.location.assign(selectedHit.url);
     } else if (!query) {
       // Set query to value in search bar if enter is pressed
       query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
@@ -151,7 +151,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     e.persist();
 
     this.setState(({ hits }) => {
-      const hitsTitles = hits.map(hit => hit.title as string);
+      const hitsTitles = hits.map(hit => hit.title);
 
       if (e.target instanceof HTMLElement) {
         const targetText = e.target.textContent;

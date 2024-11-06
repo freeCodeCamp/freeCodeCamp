@@ -1,6 +1,6 @@
 import { Location } from '@reach/router';
 import type { WindowLocation } from '@reach/router';
-import { SearchOptions } from 'instantsearch.js';
+import type { SearchOptions } from 'instantsearch.js';
 import algoliasearch from 'algoliasearch/lite';
 import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';

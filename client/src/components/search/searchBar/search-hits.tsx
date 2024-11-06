@@ -1,4 +1,3 @@
-import { Hit } from 'instantsearch.js';
 import { isEmpty } from 'lodash-es';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -6,7 +5,10 @@ import { useHits } from 'react-instantsearch';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 import Suggestion from './search-suggestion';
 import NoHitsSuggestion from './no-hits-suggestion';
+import type { Hit } from './types';
+
 const searchUrl = searchPageUrl;
+
 function CustomHits({
   handleMouseEnter,
   handleMouseLeave,
@@ -18,7 +20,7 @@ function CustomHits({
   handleHits: (hits: Hit[]) => void;
   selectedIndex: number;
 }) {
-  const { results } = useHits();
+  const { results } = useHits<Hit>();
   const query = results ? results.query : '';
   const { t } = useTranslation();
 
@@ -31,7 +33,6 @@ function CustomHits({
       objectID: `footer-${query}`,
       query: query,
       url: noHits ? null : `${searchUrl}?query=${encodeURIComponent(query)}`,
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       _highlightResult: {
         query: {
           value: `${t('search.see-results', { searchQuery: query })}`,
@@ -41,11 +42,10 @@ function CustomHits({
       }
     }
   ] as Hit[];
-  const allHits: Hit[] | [] =
+  const allHits: Hit[] =
     results?.hits && results?.query ? [...results.hits, ...footer] : [];
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     handleHits(allHits);
   });
 
