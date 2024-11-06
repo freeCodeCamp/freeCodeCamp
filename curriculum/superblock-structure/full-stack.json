@@ -290,6 +290,7 @@
         {
           "dashedName": "higher-order-functions-and-callbacks",
           "blocks": [
+            { "dashedName": "lab-book-organizer" },
             { "dashedName": "review-javascript-higher-order-functions" },
             { "dashedName": "quiz-javascript-higher-order-functions" }
           ]

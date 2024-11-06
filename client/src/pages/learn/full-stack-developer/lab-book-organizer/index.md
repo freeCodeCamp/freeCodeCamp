@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Book Organizer
 block: lab-book-organizer
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Book Organizer
