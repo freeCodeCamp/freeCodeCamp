@@ -23,7 +23,7 @@ const getSearchInput = async ({
     await menuButton.click();
   }
 
-  return page.getByLabel('Search');
+  return page.getByLabel('Search', { exact: true });
 };
 
 const search = async ({
