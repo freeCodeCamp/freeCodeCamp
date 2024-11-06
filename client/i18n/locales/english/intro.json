@@ -2796,7 +2796,13 @@
         ]
       },
       "mjbe": { "title": "251", "intro": [] },
-      "byqx": { "title": "252", "intro": [] },
+      "workshop-fcc-authors-page": {
+        "title": "Build an fCC Authors Page",
+        "intro": [
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
+        ]
+      },
       "alda": { "title": "253", "intro": [] },
       "cvaf": { "title": "254", "intro": [] },
       "review-asynchronous-javascript": {

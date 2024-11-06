@@ -395,6 +395,7 @@
         {
           "dashedName": "asynchronous-javascript",
           "blocks": [
+            { "dashedName": "workshop-fcc-authors-page" },
             { "dashedName": "quiz-javascript-object-oriented-programming" },
             { "dashedName": "lab-stack-class" },
             { "dashedName": "lab-linked-list-class" },
