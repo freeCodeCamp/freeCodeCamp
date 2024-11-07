@@ -1764,7 +1764,12 @@
           "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
         ]
       },
-      "evdc": { "title": "11", "intro": [] },
+      "lecture-importance-of-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lecture videos, you will learn about semantic HTML and the importance of using it."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
@@ -1791,7 +1796,12 @@
           "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
         ]
       },
-      "cfgp": { "title": "16", "intro": [] },
+      "lecture-working-with-forms": {
+        "title": "Working with Forms",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in HTML."
+        ]
+      },
       "workshop-hotel-feedback-form": {
         "title": "Build a Hotel Feedback Form",
         "intro": [
@@ -1806,7 +1816,10 @@
           "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
-      "wgot": { "title": "19", "intro": [] },
+      "lecture-working-with-tables": {
+        "title": "Working with Tables",
+        "intro": ["In these lecture videos, you will learn about HTML tables."]
+      },
       "workshop-final-exams-table": {
         "title": "Build a Final Exams Table",
         "intro": [
@@ -1820,7 +1833,12 @@
           "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
         ]
       },
-      "rsve": { "title": "22", "intro": [] },
+      "lecture-working-with-html-tools": {
+        "title": "Working with HTML Tools",
+        "intro": [
+          "In these lecture videos, you will learn about working with HTML tools."
+        ]
+      },
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
@@ -1834,7 +1852,12 @@
           "The following quiz will test your knowledge of HTML tables and forms."
         ]
       },
-      "ghoc": { "title": "25", "intro": [] },
+      "lecture-importance-of-accessibility-and-good-html-structure": {
+        "title": "Importance of Accessibility and Good HTML Structure",
+        "intro": [
+          "In these lecture videos, you will learn about importance of accessibility and using good HTML structure."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": ["In this lab, you will create an accessible checkout page."]
