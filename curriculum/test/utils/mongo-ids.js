@@ -1120,21 +1120,6 @@ const duplicatedProjectIds = [
   '587d7fb5367417b2b2512c03',
   '587d7fb5367417b2b2512c04',
 
-  // Basic Node and Express
-  '5a8b073d06fa14fcfde687aa',
-  '587d7fb0367417b2b2512bed',
-  '587d7fb0367417b2b2512bee',
-  '587d7fb0367417b2b2512bef',
-  '587d7fb0367417b2b2512bf0',
-  '587d7fb1367417b2b2512bf1',
-  '587d7fb1367417b2b2512bf2',
-  '587d7fb1367417b2b2512bf3',
-  '587d7fb1367417b2b2512bf4',
-  '587d7fb2367417b2b2512bf5',
-  '587d7fb2367417b2b2512bf6',
-  '587d7fb2367417b2b2512bf7',
-  '587d7fb2367417b2b2512bf8',
-
   // Timestamp Microservice
   'bd7158d8c443edefaeb5bdef',
 
