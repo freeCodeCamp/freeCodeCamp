@@ -2963,10 +2963,6 @@
       },
       "qjov": { "title": "368", "intro": [] },
       "hjku": { "title": "370", "intro": [] },
-      "lab-file-metadata-microservice": {
-        "title": "Build a File Metadata Microservice",
-        "intro": ["For this lab you will build a file metadata microservice"]
-      },
       "kegi": { "title": "377", "intro": [] },
       "quiz-backend-javascript": {
         "title": "Backend JavaScript Quiz",

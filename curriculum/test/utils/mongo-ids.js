@@ -1108,9 +1108,6 @@ const duplicatedProjectIds = [
 
   /*** Back End JavaScript ***/
 
-  // File Metadata Microservice
-  'bd7158d8c443edefaeb5bd0f',
-
   /*** Legacy Only ***/
 
   // Caesars Cipher
