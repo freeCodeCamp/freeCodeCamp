@@ -356,12 +356,6 @@ export function putUpdateMySocials(
   return put('/update-my-socials', update);
 }
 
-export function putUpdateMyTheme(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
-  return put('/update-my-theme', update);
-}
-
 export function putUpdateMyKeyboardShortcuts(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {

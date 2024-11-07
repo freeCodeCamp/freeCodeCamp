@@ -46,13 +46,6 @@ export const updateMySoundComplete = createAction(
 );
 export const updateMySoundError = createAction(types.updateMySoundError);
 
-export const updateMyTheme = createAction(types.updateMyTheme);
-export const updateMyThemeComplete = createAction(
-  types.updateMyThemeComplete,
-  checkForSuccessPayload
-);
-export const updateMyThemeError = createAction(types.updateMyThemeError);
-
 export const updateMyKeyboardShortcuts = createAction(
   types.updateMyKeyboardShortcuts
 );

@@ -14,7 +14,7 @@ import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader, Spacer } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
-import { Themes } from '../components/settings/theme';
+import { LocalStorageThemes } from '../redux/types';
 import { showCert, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
@@ -273,7 +273,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           data-playwright-test-label='donation-form'
         >
           <MultiTierDonationForm
-            defaultTheme={Themes.Default}
+            defaultTheme={LocalStorageThemes.Light}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
             paymentContext={PaymentContext.Certificate}

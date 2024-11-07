@@ -62,3 +62,8 @@ export interface UpdateCardState {
   success: boolean;
   error: string;
 }
+
+export enum LocalStorageThemes {
+  Light = 'light',
+  Dark = 'dark'
+}

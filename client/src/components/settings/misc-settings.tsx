@@ -1,13 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer, FullWidthRow } from '../helpers';
-import ThemeSettings, { ThemeProps } from '../../components/settings/theme';
 import SoundSettings from '../../components/settings/sound';
 import KeyboardShortcutsSettings from '../../components/settings/keyboard-shortcuts';
 import ScrollbarWidthSettings from '../../components/settings/scrollbar-width';
 
-type MiscSettingsProps = ThemeProps & {
-  currentTheme: string;
+type MiscSettingsProps = {
   keyboardShortcuts: boolean;
   sound: boolean;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
@@ -15,7 +13,6 @@ type MiscSettingsProps = ThemeProps & {
 };
 
 const MiscSettings = ({
-  currentTheme,
   keyboardShortcuts,
   sound,
   toggleKeyboardShortcuts,
@@ -27,7 +24,6 @@ const MiscSettings = ({
     <>
       <Spacer size='medium' />
       <FullWidthRow>
-        <ThemeSettings currentTheme={currentTheme} />
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         <KeyboardShortcutsSettings
           keyboardShortcuts={keyboardShortcuts}

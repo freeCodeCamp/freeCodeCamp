@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import { SEARCH_EXPOSED_WIDTH } from '../../../../config/misc';
-import { Themes } from '../../settings/theme';
 import MenuButton from './menu-button';
 import NavLinks, { type NavLinksProps } from './nav-links';
 import NavLogo from './nav-logo';
@@ -20,7 +19,7 @@ const SearchBarOptimized = Loadable(
 
 type UniversalNavProps = Omit<
   NavLinksProps,
-  'updateMyTheme' | 'openSignoutModal'
+  'toggleTheme' | 'openSignoutModal'
 > & {
   fetchState: { pending: boolean };
   searchBarRef?: React.RefObject<HTMLDivElement>;
@@ -46,9 +45,6 @@ const UniversalNav = ({
     ) : (
       <SearchBar innerRef={searchBarRef} />
     );
-
-  const currentTheme =
-    (localStorage.getItem('theme') as Themes) ?? Themes.Default;
 
   return (
     <nav
@@ -89,7 +85,6 @@ const UniversalNav = ({
               hideMenu={hideMenu}
               menuButtonRef={menuButtonRef}
               showMenu={showMenu}
-              currentTheme={currentTheme}
               user={user}
             />
             <AuthOrProfile user={user} />

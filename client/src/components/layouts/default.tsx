@@ -16,6 +16,7 @@ import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-Z
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
+  initializeTheme,
   onlineStatusChange,
   serverStatusChange
 } from '../../redux/actions';
@@ -25,7 +26,8 @@ import {
   userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
-  userFetchStateSelector
+  userFetchStateSelector,
+  themeSelector
 } from '../../redux/selectors';
 
 import { UserFetchState, User } from '../../redux/prop-types';
@@ -50,6 +52,7 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
+import { LocalStorageThemes } from '../../redux/types';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -59,6 +62,7 @@ const mapStateToProps = createSelector(
   isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
+  themeSelector,
   (
     isSignedIn,
     examInProgress: boolean,
@@ -66,7 +70,8 @@ const mapStateToProps = createSelector(
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
-    user: User
+    user: User,
+    theme: LocalStorageThemes
   ) => ({
     isSignedIn,
     examInProgress,
@@ -75,8 +80,8 @@ const mapStateToProps = createSelector(
     isOnline,
     isServerOnline,
     fetchState,
-    theme: user.theme,
-    user
+    user,
+    theme
   })
 );
 
@@ -88,7 +93,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       fetchUser,
       removeFlashMessage,
       onlineStatusChange,
-      serverStatusChange
+      serverStatusChange,
+      initializeTheme
     },
     dispatch
   );
@@ -105,17 +111,6 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   examInProgress: boolean;
   superBlock?: string;
 }
-
-const getSystemTheme = () => {
-  if (localStorage.getItem('theme') != null) {
-    return localStorage.getItem('theme');
-  }
-  return `${
-    window.matchMedia('(prefers-color-scheme: dark)').matches === true
-      ? 'dark-palette'
-      : 'light-palette'
-  }`;
-};
 
 function DefaultLayout({
   children,
@@ -134,7 +129,8 @@ function DefaultLayout({
   superBlock,
   theme,
   user,
-  fetchUser
+  fetchUser,
+  initializeTheme
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
   const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
@@ -145,6 +141,12 @@ function DefaultLayout({
   const isExSmallViewportHeight = useMediaQuery({
     maxHeight: EX_SMALL_VIEWPORT_HEIGHT
   });
+
+  useEffect(() => {
+    initializeTheme();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     // componentDidMount
     if (!isSignedIn) {
@@ -167,8 +169,6 @@ function DefaultLayout({
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
 
-  const useSystemTheme = fetchState.complete && isSignedIn === false;
-
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -178,9 +178,7 @@ function DefaultLayout({
           envData.environment === 'production' && <StagingWarningModal />}
         <Helmet
           bodyAttributes={{
-            class: useSystemTheme
-              ? getSystemTheme()
-              : `${String(theme) === 'night' ? 'dark' : 'light'}-palette`
+            class: `${theme}-palette`
           }}
           meta={[
             {

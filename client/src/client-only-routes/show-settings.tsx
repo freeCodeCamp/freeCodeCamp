@@ -110,7 +110,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
-      theme,
       keyboardShortcuts
     },
     navigate,
@@ -149,7 +148,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             {t('settings.for', { username: username })}
           </h1>
           <MiscSettings
-            currentTheme={theme}
             keyboardShortcuts={keyboardShortcuts}
             sound={sound}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}

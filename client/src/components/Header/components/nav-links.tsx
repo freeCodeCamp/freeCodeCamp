@@ -4,30 +4,38 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { radioLocation } from '../../../../config/env.json';
-import { openSignoutModal } from '../../../redux/actions';
-import { updateMyTheme } from '../../../redux/settings/actions';
+import { openSignoutModal, toggleTheme } from '../../../redux/actions';
 import { Link } from '../../helpers';
-import { type ThemeProps, Themes } from '../../settings/theme';
+import { LocalStorageThemes } from '../../../redux/types';
+import { themeSelector } from '../../../redux/selectors';
 import { User } from '../../../redux/prop-types';
 import SupporterBadge from '../../../assets/icons/supporter-badge';
 
-export interface NavLinksProps extends Pick<ThemeProps, 'currentTheme'> {
+export interface NavLinksProps {
   displayMenu: boolean;
   showMenu: () => void;
   hideMenu: () => void;
   user?: User;
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
+  theme: LocalStorageThemes;
+  toggleTheme: () => void;
 }
 
 const mapDispatchToProps = {
-  updateTheme: (theme: Themes) => updateMyTheme({ theme }),
+  toggleTheme,
   openSignoutModal
 };
+
+const mapStateToProps = createSelector(
+  themeSelector,
+  (theme: LocalStorageThemes) => ({ theme })
+);
 
 interface DonateButtonProps {
   isUserDonating: boolean | undefined;
@@ -70,14 +78,12 @@ function NavLinks({
   openSignoutModal,
   hideMenu,
   displayMenu,
-  user
+  user,
+  theme,
+  toggleTheme
 }: NavLinksProps) {
   const { t } = useTranslation();
-  const {
-    isDonating: isUserDonating,
-    username: currentUserName,
-    theme: currentUserTheme
-  } = user || {};
+  const { isDonating: isUserDonating, username: currentUserName } = user || {};
 
   // the accessibility tree just needs a little more time to pick up the change.
   // This function allows us to set aria-expanded to false and then delay just a bit before setting focus on the button
@@ -131,8 +137,6 @@ function NavLinks({
     hideMenu();
     openSignoutModal();
   };
-
-  const dispatch = useDispatch();
 
   return (
     <ul
@@ -241,44 +245,16 @@ function NavLinks({
       </li>
       <li className='nav-line' key='theme'>
         <button
-          {...(!currentUserName && { 'aria-describedby': 'theme-sign-in' })}
-          aria-disabled={!currentUserName}
-          aria-pressed={currentUserTheme === Themes.Night ? 'true' : 'false'}
-          className={
-            'nav-link nav-link-flex' +
-            (!currentUserName ? ' nav-link-header' : '')
-          }
-          onClick={() => {
-            if (currentUserName) {
-              const invertedTheme =
-                currentUserTheme === Themes.Night
-                  ? Themes.Default
-                  : Themes.Night;
-              dispatch(updateMyTheme({ theme: invertedTheme }));
-            }
-          }}
+          aria-pressed={theme === LocalStorageThemes.Dark ? 'true' : 'false'}
+          className={'nav-link nav-link-flex'}
+          onClick={toggleTheme}
           onKeyDown={currentUserName ? handleMenuKeyDown : handleSignOutKeys}
         >
-          {currentUserName ? (
-            <>
-              <span>{t('settings.labels.night-mode')}</span>
-              {currentUserTheme === Themes.Night ? (
-                <FontAwesomeIcon icon={faCheckSquare} />
-              ) : (
-                <FontAwesomeIcon icon={faSquare} />
-              )}
-            </>
+          <span>{t('settings.labels.night-mode')}</span>
+          {theme === LocalStorageThemes.Dark ? (
+            <FontAwesomeIcon icon={faCheckSquare} />
           ) : (
-            <Fragment key='night-mode'>
-              <span className='sr-only'>{t('settings.labels.night-mode')}</span>
-              <span
-                aria-hidden='true'
-                className='nav-link-dull'
-                id='theme-sign-in'
-              >
-                {t('misc.change-theme')}
-              </span>
-            </Fragment>
+            <FontAwesomeIcon icon={faSquare} />
           )}
         </button>
       </li>
@@ -300,4 +276,7 @@ function NavLinks({
 
 NavLinks.displayName = 'NavLinks';
 
-export default connect(null, mapDispatchToProps)(withTranslation()(NavLinks));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(NavLinks));

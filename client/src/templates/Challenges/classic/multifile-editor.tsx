@@ -2,10 +2,7 @@ import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
-import {
-  userSelector,
-  isDonationModalOpenSelector
-} from '../../../redux/selectors';
+import { isDonationModalOpenSelector } from '../../../redux/selectors';
 import {
   canFocusEditorSelector,
   consoleOutputSelector,
@@ -14,7 +11,6 @@ import {
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
 import { FileKey } from '../../../redux/prop-types';
-import { Themes } from '../../../components/settings/theme';
 import Editor, { type EditorProps } from './editor';
 
 export type VisibleEditors = {
@@ -51,18 +47,15 @@ const mapStateToProps = createSelector(
   canFocusEditorSelector,
   consoleOutputSelector,
   isDonationModalOpenSelector,
-  userSelector,
   (
     visibleEditors: VisibleEditors,
     canFocus: boolean,
     output: string[],
-    open,
-    { theme }: { theme: Themes }
+    open
   ) => ({
     visibleEditors,
     canFocus: open ? false : canFocus,
-    output,
-    theme
+    output
   })
 );
 
