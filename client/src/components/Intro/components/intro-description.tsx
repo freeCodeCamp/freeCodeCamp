@@ -1,7 +1,8 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 import envData from '../../../../config/env.json';
-import { Link, Spacer } from '../../helpers';
+import { Link } from '../../helpers';
 
 import '../intro.css';
 
@@ -14,14 +15,14 @@ function IntroDescription(): JSX.Element {
       className='intro-description'
       data-playwright-test-label='learn-read-this-section'
     >
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <p
         className='text-center'
         data-playwright-test-label='learn-read-this-heading'
       >
         <strong>{t('learn.read-this.heading')}</strong>
       </p>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       {[...Array(8).keys()].map(i => (
         <p key={i} data-playwright-test-label='learn-read-this-p'>
           {t(`learn.read-this.p${i + 1}`)}

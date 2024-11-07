@@ -18,7 +18,8 @@ module.exports = (env = {}) => {
       'sass-compile': './sass-compile.ts',
       'test-evaluator': './test-evaluator.ts',
       'python-worker': './python-worker.ts',
-      'python-test-evaluator': './python-test-evaluator.ts'
+      'python-test-evaluator': './python-test-evaluator.ts',
+      'typescript-worker': './typescript-worker.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {

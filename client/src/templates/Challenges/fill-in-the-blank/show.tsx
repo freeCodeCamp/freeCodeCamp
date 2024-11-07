@@ -9,11 +9,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -33,8 +32,6 @@ import {
 import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 
-// Styles
-import '../video.css';
 import './show.css';
 
 // Redux Setup
@@ -288,7 +285,7 @@ class ShowFillInTheBlank extends Component<
           />
           <Container>
             <Row>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <ChallengeTitle
                 isCompleted={isChallengeCompleted}
                 translationPending={translationPending}
@@ -298,7 +295,7 @@ class ShowFillInTheBlank extends Component<
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <PrismFormatted text={description} />
-                <Spacer size='medium' />
+                <Spacer size='m' />
               </Col>
 
               {scene && (
@@ -313,7 +310,7 @@ class ShowFillInTheBlank extends Component<
                 {instructions && (
                   <>
                     <PrismFormatted text={instructions} />
-                    <Spacer size='small' />
+                    <Spacer size='xs' />
                   </>
                 )}
 
@@ -333,7 +330,7 @@ class ShowFillInTheBlank extends Component<
                 {explanation ? (
                   <ChallegeExplanation explanation={explanation} />
                 ) : (
-                  <Spacer size='medium' />
+                  <Spacer size='m' />
                 )}
 
                 <Button
@@ -344,11 +341,11 @@ class ShowFillInTheBlank extends Component<
                 >
                   {t('buttons.check-answer')}
                 </Button>
-                <Spacer size='xxSmall' />
+                <Spacer size='xxs' />
                 <Button block={true} variant='primary' onClick={openHelpModal}>
                   {t('buttons.ask-for-help')}
                 </Button>
-                <Spacer size='large' />
+                <Spacer size='l' />
               </Col>
               <CompletionModal />
               <HelpModal challengeTitle={title} challengeBlock={blockName} />
