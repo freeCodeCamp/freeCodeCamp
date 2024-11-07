@@ -3044,11 +3044,7 @@
       "ynqt": { "title": "340", "intro": [] },
       "prlo": { "title": "341", "intro": [] },
       "jsnd": { "title": "342", "intro": [] },
-      "quiz-web-standards": {
-        "title": "Web Standards Quiz",
-        "intro": ["Test what you've learned in this quiz on Web Standards."]
-      },
-
+      "sxdc": { "title": "343", "intro": [] },
       "pegc": { "title": "344", "intro": [] },
       "mzae": { "title": "345", "intro": [] },
       "gjbf": { "title": "346", "intro": [] },

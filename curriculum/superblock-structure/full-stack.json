@@ -403,10 +403,7 @@
       "modules": [
         {
           "dashedName": "react-fundamentals",
-          "blocks": [
-            { "dashedName": "quiz-web-standards" },
-            { "dashedName": "quiz-react-basics" }
-          ]
+          "blocks": [{ "dashedName": "quiz-react-basics" }]
         },
         {
           "dashedName": "react-state-hooks-and-routing",
