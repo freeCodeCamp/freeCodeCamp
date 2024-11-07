@@ -2963,12 +2963,6 @@
       },
       "qjov": { "title": "368", "intro": [] },
       "hjku": { "title": "370", "intro": [] },
-      "lab-request-header-parser-microservice": {
-        "title": "Build a Request Header Parser Microservice",
-        "intro": [
-          "In this lab, you will build a request header parser microservice"
-        ]
-      },
       "lab-url-shortener-microservice": {
         "title": "Build a URL Shortener Microservice",
         "intro": ["In this lab, you will build a URL Shortener Microservice"]

@@ -1108,9 +1108,6 @@ const duplicatedProjectIds = [
 
   /*** Back End JavaScript ***/
 
-  // Request Header Parser Microservice
-  'bd7158d8c443edefaeb5bdff',
-
   // URL Shortener Microservice
   'bd7158d8c443edefaeb5bd0e',
 
