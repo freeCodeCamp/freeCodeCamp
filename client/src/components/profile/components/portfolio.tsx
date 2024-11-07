@@ -96,10 +96,12 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           return { portfolio: mutablePortfolio };
         },
         () => {
-          if (key === 'image') {
+          if (key === 'image' && userInput) {
             void this.validateImageLoad(userInput).then(imageValidation => {
               this.setState({ isImageValid: imageValidation });
             });
+          } else if (key === 'image' && !userInput) {
+            this.setState({ isImageValid: { state: 'success', message: '' } });
           }
         }
       );
