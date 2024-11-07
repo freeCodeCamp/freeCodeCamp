@@ -13,8 +13,7 @@ import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
   toggleSearchDropdown,
-  toggleSearchFocused,
-  updateSearchQuery
+  toggleSearchFocused
 } from '../redux';
 import WithInstantSearch from '../with-instant-search';
 import type { Hit } from './types';
@@ -34,16 +33,12 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
-  bindActionCreators(
-    { toggleSearchDropdown, toggleSearchFocused, updateSearchQuery },
-    dispatch
-  );
+  bindActionCreators({ toggleSearchDropdown, toggleSearchFocused }, dispatch);
 
 export type SearchBarProps = {
   innerRef?: React.RefObject<HTMLDivElement>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
-  updateSearchQuery: typeof updateSearchQuery;
   isDropdownEnabled?: boolean;
   isSearchFocused?: boolean;
   t: TFunction;
