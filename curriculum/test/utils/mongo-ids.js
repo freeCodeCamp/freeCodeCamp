@@ -1108,9 +1108,6 @@ const duplicatedProjectIds = [
 
   /*** Back End JavaScript ***/
 
-  // Exercise Tracker
-  '5a8b073d06fa14fcfde687aa',
-
   // File Metadata Microservice
   'bd7158d8c443edefaeb5bd0f',
 
