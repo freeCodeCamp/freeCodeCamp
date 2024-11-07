@@ -545,7 +545,10 @@
       "modules": [
         {
           "dashedName": "security-and-privacy",
-          "blocks": [{ "dashedName": "quiz-security-and-privacy" }]
+          "blocks": [
+            { "dashedName": "review-security-and-privacy" },
+            { "dashedName": "quiz-security-and-privacy" }
+          ]
         }
       ]
     },
