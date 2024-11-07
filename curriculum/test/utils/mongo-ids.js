@@ -1120,9 +1120,6 @@ const duplicatedProjectIds = [
   '587d7fb5367417b2b2512c03',
   '587d7fb5367417b2b2512c04',
 
-  // Timestamp Microservice
-  'bd7158d8c443edefaeb5bdef',
-
   // Request Header Parser Microservice
   'bd7158d8c443edefaeb5bdff',
 

@@ -2970,10 +2970,6 @@
         ]
       },
       "hjku": { "title": "370", "intro": [] },
-      "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": ["In this lab you will build a timestamp microservice"]
-      },
       "lab-request-header-parser-microservice": {
         "title": "Build a Request Header Parser Microservice",
         "intro": [
