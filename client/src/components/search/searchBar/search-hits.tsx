@@ -9,17 +9,19 @@ import type { Hit } from './types';
 
 const searchUrl = searchPageUrl;
 
+interface SearchHitsProps {
+  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
+  handleHits: (hits: Hit[]) => void;
+  selectedIndex: number;
+}
+
 function SearchHits({
   handleMouseEnter,
   handleMouseLeave,
   handleHits,
   selectedIndex
-}: {
-  handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
-  handleMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
-  handleHits: (hits: Hit[]) => void;
-  selectedIndex: number;
-}) {
+}: SearchHitsProps) {
   const { results } = useHits<Hit>();
   const query = results ? results.query : '';
   const { t } = useTranslation();
