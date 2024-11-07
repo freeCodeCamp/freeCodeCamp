@@ -2968,12 +2968,6 @@
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },
       "xbri": { "title": "382", "intro": [] },
-      "quiz-tooling-and-deployment": {
-        "title": "Tooling and Deployment Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of tooling and deployment"
-        ]
-      },
       "nkjt": { "title": "384", "intro": [] },
       "pgjj": { "title": "385", "intro": [] },
       "exom": { "title": "386", "intro": [] },

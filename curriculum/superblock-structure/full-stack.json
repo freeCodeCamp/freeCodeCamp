@@ -469,10 +469,7 @@
       "modules": [
         {
           "dashedName": "security-and-privacy",
-          "blocks": [
-            { "dashedName": "quiz-security-and-privacy" },
-            { "dashedName": "quiz-tooling-and-deployment" }
-          ]
+          "blocks": [{ "dashedName": "quiz-security-and-privacy" }]
         }
       ]
     },
