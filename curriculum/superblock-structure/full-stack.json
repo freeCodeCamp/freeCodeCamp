@@ -520,25 +520,6 @@
       ]
     },
     {
-      "dashedName": "security-and-privacy",
-      "modules": [
-        {
-          "dashedName": "security-and-privacy",
-          "blocks": [
-            { "dashedName": "workshop-npm-packages" },
-            { "dashedName": "lab-timestamp-microservice" },
-            { "dashedName": "workshop-node-and-express" },
-            { "dashedName": "lab-request-header-parser-microservice" },
-            { "dashedName": "lab-url-shortener-microservice" },
-            { "dashedName": "lab-exercise-tracker" },
-            { "dashedName": "lab-file-metadata-microservice" },
-            { "dashedName": "quiz-backend-javascript" },
-            { "dashedName": "quiz-tooling-and-deployment" }
-          ]
-        }
-      ]
-    },
-    {
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {
