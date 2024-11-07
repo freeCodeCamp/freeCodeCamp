@@ -431,7 +431,7 @@ class Block extends Component<BlockProps> {
             </div>
           )}
           {isExpanded && (
-            <div id={`${block}-panel`}>
+            <div id={`${block}-panel`} className='challenge-grid-block-panel'>
               <Challenges
                 challengesWithCompleted={challengesWithCompleted}
                 isProjectBlock={isProjectBlock}
