@@ -1572,6 +1572,12 @@
         "intro": [
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
+      },
+      "a2-english-for-developers-certification-exam": {
+        "title": "A2 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the A2 English for Developers Certification."
+        ]
       }
     }
   },
