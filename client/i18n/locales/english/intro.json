@@ -2963,10 +2963,6 @@
       },
       "qjov": { "title": "368", "intro": [] },
       "hjku": { "title": "370", "intro": [] },
-      "lab-url-shortener-microservice": {
-        "title": "Build a URL Shortener Microservice",
-        "intro": ["In this lab, you will build a URL Shortener Microservice"]
-      },
       "lab-exercise-tracker": {
         "title": "Build an Exercise Tracker",
         "intro": ["In this lab, you will build an exercise tracker"]
