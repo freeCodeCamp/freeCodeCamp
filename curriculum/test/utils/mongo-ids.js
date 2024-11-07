@@ -1108,18 +1108,6 @@ const duplicatedProjectIds = [
 
   /*** Back End JavaScript ***/
 
-  // Managing Packages with NPM
-  '587d7fb3367417b2b2512bfb',
-  '587d7fb3367417b2b2512bfc',
-  '587d7fb4367417b2b2512bfd',
-  '587d7fb4367417b2b2512bfe',
-  '587d7fb4367417b2b2512bff',
-  '587d7fb4367417b2b2512c00',
-  '587d7fb5367417b2b2512c01',
-  '587d7fb5367417b2b2512c02',
-  '587d7fb5367417b2b2512c03',
-  '587d7fb5367417b2b2512c04',
-
   // Request Header Parser Microservice
   'bd7158d8c443edefaeb5bdff',
 
