@@ -521,7 +521,6 @@
           "dashedName": "security-and-privacy",
           "blocks": [
             { "dashedName": "review-security-and-privacy" },
-            { "dashedName": "quiz-security-and-privacy" },
             { "dashedName": "workshop-npm-packages" },
             { "dashedName": "lab-timestamp-microservice" },
             { "dashedName": "workshop-node-and-express" },
