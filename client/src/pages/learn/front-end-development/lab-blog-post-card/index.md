@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Design a Blog Post Card
 block: lab-blog-post-card
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Design a Blog Post Card
