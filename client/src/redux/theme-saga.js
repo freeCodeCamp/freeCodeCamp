@@ -1,7 +1,8 @@
-import { put, takeEvery, select } from 'redux-saga/effects';
+import { put, takeEvery, select, take } from 'redux-saga/effects';
 import { createFlashMessage } from '../components/Flash/redux';
 import { setTheme } from './actions';
-import { themeSelector } from './selectors';
+import { actionTypes } from './action-types';
+import { userThemeSelector } from './selectors';
 
 function* toggleThemeSaga() {
   const data = { type: 'success', message: 'flash.updated-themes' };
@@ -13,15 +14,18 @@ function* toggleThemeSaga() {
 }
 
 function* initalizeThemeSaga() {
+  // Wait for the fetch userComplete action
+  yield take(actionTypes.fetchUserComplete);
+
   let selectTheme;
-  const isStateThemeDark = yield select(themeSelector) === 'dark';
+  const isUserThemeDark = (yield select(userThemeSelector)) === 'night';
   const isLocalStorageThemeDark = localStorage.getItem('theme') === 'dark';
   const isSysThemeDark = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches;
 
   // the order matters here
-  if (isLocalStorageThemeDark || isStateThemeDark || isSysThemeDark) {
+  if (isLocalStorageThemeDark || isUserThemeDark || isSysThemeDark) {
     selectTheme = 'dark';
   } else {
     selectTheme = 'light';

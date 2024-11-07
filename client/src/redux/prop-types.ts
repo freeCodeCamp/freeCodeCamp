@@ -2,8 +2,8 @@ import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
 import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
-import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
+import { UserThemes } from './types';
 
 export type { ChallengeFile, Ext };
 
@@ -313,7 +313,7 @@ export type User = {
   savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean;
   sound: boolean;
-  theme: Themes;
+  theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
   username: string;

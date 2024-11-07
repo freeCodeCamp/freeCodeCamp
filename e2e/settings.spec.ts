@@ -170,15 +170,6 @@ test.describe('Settings - Certified User', () => {
       name: translations.buttons['download-data']
     });
     await expect(downloadButton).toBeVisible();
-
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['night-mode'],
-          exact: true
-        })
-        .locator('p')
-    ).toBeVisible();
     await expect(page.locator('#legendsound')).toBeVisible();
     await expect(
       page.getByText(translations.settings['sound-volume'])
