@@ -254,7 +254,7 @@ const ShowGeneric = ({
                 />
               )}
 
-              {!!questions && (
+              {questions.length > 0 && (
                 <MultipleChoiceQuestions
                   questions={questions}
                   selectedOptions={selectedMcqOptions}
