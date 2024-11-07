@@ -585,7 +585,10 @@
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
       },
-      "d3-dashboard": { "title": "D3 Dashboard", "intro": ["", ""] }
+      "d3-dashboard": {
+        "title": "D3 Dashboard",
+        "intro": ["", ""]
+      }
     }
   },
   "relational-database": {
@@ -1706,7 +1709,10 @@
       "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
     ],
     "blocks": {
-      "efpl": { "title": "0", "intro": [] },
+      "efpl": {
+        "title": "0",
+        "intro": []
+      },
       "lecture-what-is-html": {
         "title": "What is HTML?",
         "intro": [
@@ -1888,10 +1894,22 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": { "title": "30", "intro": [] },
-      "joim": { "title": "31", "intro": [] },
-      "gvtb": { "title": "32", "intro": [] },
-      "cqhu": { "title": "33", "intro": [] },
+      "qpra": {
+        "title": "30",
+        "intro": []
+      },
+      "joim": {
+        "title": "31",
+        "intro": []
+      },
+      "gvtb": {
+        "title": "32",
+        "intro": []
+      },
+      "cqhu": {
+        "title": "33",
+        "intro": []
+      },
       "review-computer-basics": {
         "title": "Computer Basics Review",
         "intro": [
@@ -1905,7 +1923,10 @@
           "Test what you've learned in this quiz of basic computer knowledge."
         ]
       },
-      "dxpc": { "title": "36", "intro": [] },
+      "dxpc": {
+        "title": "36",
+        "intro": []
+      },
       "workshop-cafe-menu": {
         "title": "Design a Cafe Menu",
         "intro": [
@@ -1919,7 +1940,10 @@
           "In this lab, you'll create a business card and style it using CSS."
         ]
       },
-      "gnuk": { "title": "39", "intro": [] },
+      "gnuk": {
+        "title": "39",
+        "intro": []
+      },
       "review-basic-css": {
         "title": "Basic CSS Review",
         "intro": [
@@ -1933,15 +1957,24 @@
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
       },
-      "sdul": { "title": "42", "intro": [] },
+      "sdul": {
+        "title": "42",
+        "intro": []
+      },
       "lab-stylized-to-do-list": {
         "title": "Build a Stylized To-Do List",
         "intro": [
           "In this lab, you'll build a To-Do list and apply different styles to the links"
         ]
       },
-      "humj": { "title": "44", "intro": [] },
-      "pahx": { "title": "45", "intro": [] },
+      "humj": {
+        "title": "44",
+        "intro": []
+      },
+      "pahx": {
+        "title": "45",
+        "intro": []
+      },
       "review-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Review",
         "intro": [
@@ -1955,9 +1988,18 @@
           "Test what you've learned in this quiz of backgrounds and borders in CSS."
         ]
       },
-      "ljmt": { "title": "48", "intro": [] },
-      "lxpk": { "title": "49", "intro": [] },
-      "lzqy": { "title": "50", "intro": [] },
+      "ljmt": {
+        "title": "48",
+        "intro": []
+      },
+      "lxpk": {
+        "title": "49",
+        "intro": []
+      },
+      "lzqy": {
+        "title": "50",
+        "intro": []
+      },
       "review-design-fundamentals": {
         "title": "Design Fundamentals Review",
         "intro": [
@@ -1971,7 +2013,10 @@
           "Test what you've learned in this quiz of UI design fundamentals."
         ]
       },
-      "bgrw": { "title": "53", "intro": [] },
+      "bgrw": {
+        "title": "53",
+        "intro": []
+      },
       "lab-event-flyer-page": {
         "title": "Build an Event Flyer Page",
         "intro": [
@@ -1991,8 +2036,14 @@
           "Test what you've learned in this quiz of relative and absolute units in CSS."
         ]
       },
-      "ohhu": { "title": "58", "intro": [] },
-      "syga": { "title": "59", "intro": [] },
+      "ohhu": {
+        "title": "58",
+        "intro": []
+      },
+      "syga": {
+        "title": "59",
+        "intro": []
+      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
@@ -2018,7 +2069,10 @@
           "In this workshop, you'll build a set of colored markers. You'll practice different ways to set color values and how to pair colors with each other."
         ]
       },
-      "ogdb": { "title": "64", "intro": [] },
+      "ogdb": {
+        "title": "64",
+        "intro": []
+      },
       "review-css-colors": {
         "title": "CSS Colors Review",
         "intro": [
@@ -2058,7 +2112,10 @@
           "Test what you've learned in this quiz of how to style forms using CSS."
         ]
       },
-      "woza": { "title": "72", "intro": [] },
+      "woza": {
+        "title": "72",
+        "intro": []
+      },
       "workshop-rothko-painting": {
         "title": "Design a Rothko Painting",
         "intro": [
@@ -2084,7 +2141,10 @@
           "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
         ]
       },
-      "ujaf": { "title": "77", "intro": [] },
+      "ujaf": {
+        "title": "77",
+        "intro": []
+      },
       "workshop-flexbox-photo-gallery": {
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
@@ -2111,7 +2171,10 @@
           "Test what you've learned in this quiz of using flexbox in CSS."
         ]
       },
-      "ujcf": { "title": "82", "intro": [] },
+      "ujcf": {
+        "title": "82",
+        "intro": []
+      },
       "workshop-nutritional-label": {
         "title": "Build a Nutritional Label",
         "intro": [
@@ -2161,7 +2224,10 @@
           "Test what you've learned in this quiz of making your webpage accessible with CSS."
         ]
       },
-      "haje": { "title": "92", "intro": [] },
+      "haje": {
+        "title": "92",
+        "intro": []
+      },
       "workshop-balance-sheet": {
         "title": "Build a Balance Sheet",
         "intro": [
@@ -2185,7 +2251,10 @@
           "Test what you've learned in this quiz of using attribute selectors in CSS."
         ]
       },
-      "rxzq": { "title": "97", "intro": [] },
+      "rxzq": {
+        "title": "97",
+        "intro": []
+      },
       "workshop-cat-painting": {
         "title": "Build a Cat Painting",
         "intro": [
@@ -2209,7 +2278,10 @@
           "Test what you've learned in this quiz of how positioning works in CSS."
         ]
       },
-      "jkdu": { "title": "102", "intro": [] },
+      "jkdu": {
+        "title": "102",
+        "intro": []
+      },
       "workshop-piano": {
         "title": "Design a Piano",
         "intro": [
@@ -2235,7 +2307,10 @@
           "Test what you've learned in this quiz of making your webpage responsive."
         ]
       },
-      "vlov": { "title": "107", "intro": [] },
+      "vlov": {
+        "title": "107",
+        "intro": []
+      },
       "workshop-city-skyline": {
         "title": "Build a City Skyline",
         "intro": [
@@ -2259,7 +2334,10 @@
           "Test what you've learned in this quiz of how using variables in CSS."
         ]
       },
-      "nsia": { "title": "112", "intro": [] },
+      "nsia": {
+        "title": "112",
+        "intro": []
+      },
       "workshop-magazine": {
         "title": "Build a Magazine",
         "intro": [
@@ -2267,8 +2345,14 @@
           "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
-      "ogko": { "title": "114", "intro": [] },
-      "harp": { "title": "115", "intro": [] },
+      "ogko": {
+        "title": "114",
+        "intro": []
+      },
+      "harp": {
+        "title": "115",
+        "intro": []
+      },
       "lab-product-landing-page": {
         "title": "Build a Product Landing Page",
         "intro": [
@@ -2285,8 +2369,14 @@
         "title": "CSS Grid Quiz",
         "intro": ["Test what you've learned in this quiz of using grid in CSS."]
       },
-      "dora": { "title": "119", "intro": [] },
-      "dpaq": { "title": "120", "intro": [] },
+      "dora": {
+        "title": "119",
+        "intro": []
+      },
+      "dpaq": {
+        "title": "120",
+        "intro": []
+      },
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
@@ -2322,10 +2412,22 @@
         "title": "CSS Review",
         "intro": ["Review the CSS concepts to prepare for the upcoming exam."]
       },
-      "wvjx": { "title": "127", "intro": [] },
-      "uquz": { "title": "128", "intro": [] },
-      "kdgd": { "title": "129", "intro": [] },
-      "wryp": { "title": "130", "intro": [] },
+      "wvjx": {
+        "title": "127",
+        "intro": []
+      },
+      "uquz": {
+        "title": "128",
+        "intro": []
+      },
+      "kdgd": {
+        "title": "129",
+        "intro": []
+      },
+      "wryp": {
+        "title": "130",
+        "intro": []
+      },
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
@@ -2339,7 +2441,10 @@
           "In this lab, you will practice working with JavaScript variables and strings by building a trivia bot."
         ]
       },
-      "dthi": { "title": "132", "intro": [] },
+      "dthi": {
+        "title": "132",
+        "intro": []
+      },
       "review-javascript-variables-and-data-types": {
         "title": "JavaScript Variables and Data Types Review",
         "intro": [
@@ -2352,7 +2457,10 @@
           "Test what you've learned in this quiz on JavaScript Variables and Data Types."
         ]
       },
-      "hoec": { "title": "135", "intro": [] },
+      "hoec": {
+        "title": "135",
+        "intro": []
+      },
       "workshop-teacher-chatbot": {
         "title": "Build a Teacher Chatbot",
         "intro": [
@@ -2360,7 +2468,10 @@
           "You will learn how to work with template literals, and the <code>indexOf</code> method."
         ]
       },
-      "axgb": { "title": "137", "intro": [] },
+      "axgb": {
+        "title": "137",
+        "intro": []
+      },
       "review-javascript-strings": {
         "title": "JavaScript Strings Review",
         "intro": [
@@ -2373,7 +2484,10 @@
           "Test what you've learned in this quiz on JavaScript Strings."
         ]
       },
-      "hxwa": { "title": "140", "intro": [] },
+      "hxwa": {
+        "title": "140",
+        "intro": []
+      },
       "workshop-mathbot": {
         "title": "Build a Mathbot",
         "intro": [
@@ -2386,7 +2500,10 @@
           "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
         ]
       },
-      "wfyg": { "title": "143", "intro": [] },
+      "wfyg": {
+        "title": "143",
+        "intro": []
+      },
       "review-javascript-math": {
         "title": "JavaScript Math Review",
         "intro": [
@@ -2397,7 +2514,10 @@
         "title": "JavaScript Math Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Math."]
       },
-      "hafd": { "title": "146", "intro": [] },
+      "hafd": {
+        "title": "146",
+        "intro": []
+      },
       "review-javascript-comparisons-and-conditionals": {
         "title": "JavaScript Comparisons and Conditionals Review",
         "intro": [
@@ -2410,7 +2530,10 @@
           "Test what you've learned in this quiz on JavaScript Comparisons and Conditionals."
         ]
       },
-      "tsdq": { "title": "149", "intro": [] },
+      "tsdq": {
+        "title": "149",
+        "intro": []
+      },
       "workshop-calculator": {
         "title": "Build a Calculator",
         "intro": [
@@ -2454,7 +2577,10 @@
           "Test what you've learned in this quiz on JavaScript Functions."
         ]
       },
-      "mexq": { "title": "157", "intro": [] },
+      "mexq": {
+        "title": "157",
+        "intro": []
+      },
       "workshop-shopping-list": {
         "title": "Build a Shopping List",
         "intro": [
@@ -2468,7 +2594,10 @@
           "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
         ]
       },
-      "mokm": { "title": "160", "intro": [] },
+      "mokm": {
+        "title": "160",
+        "intro": []
+      },
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
@@ -2479,7 +2608,10 @@
         "title": "JavaScript Arrays Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Arrays."]
       },
-      "dvnt": { "title": "163", "intro": [] },
+      "dvnt": {
+        "title": "163",
+        "intro": []
+      },
       "workshop-recipe-tracker": {
         "title": "Build a Recipe Tracker",
         "intro": [
@@ -2502,7 +2634,10 @@
           "Test what you've learned in this quiz on JavaScript Objects."
         ]
       },
-      "kgtw": { "title": "168", "intro": [] },
+      "kgtw": {
+        "title": "168",
+        "intro": []
+      },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
@@ -2523,7 +2658,10 @@
         "title": "JavaScript Loops Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
       },
-      "hjtr": { "title": "173", "intro": [] },
+      "hjtr": {
+        "title": "173",
+        "intro": []
+      },
       "lab-pyramid-generator": {
         "title": "Build a Pyramid Generator",
         "intro": ["In this lab you will build a pyramid generator."]
@@ -2532,15 +2670,24 @@
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
       },
-      "epfc": { "title": "176", "intro": [] },
+      "epfc": {
+        "title": "176",
+        "intro": []
+      },
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
           "For this lab, you will build an inventory management program using JavaScript."
         ]
       },
-      "fbbn": { "title": "178", "intro": [] },
-      "lnmg": { "title": "179", "intro": [] },
+      "fbbn": {
+        "title": "178",
+        "intro": []
+      },
+      "lnmg": {
+        "title": "179",
+        "intro": []
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -2553,9 +2700,18 @@
           "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
         ]
       },
-      "plic": { "title": "182", "intro": [] },
-      "vjmm": { "title": "183", "intro": [] },
-      "bxtv": { "title": "184", "intro": [] },
+      "plic": {
+        "title": "182",
+        "intro": []
+      },
+      "vjmm": {
+        "title": "183",
+        "intro": []
+      },
+      "bxtv": {
+        "title": "184",
+        "intro": []
+      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
@@ -2568,8 +2724,14 @@
           "Test what you've learned in this quiz on JavaScript Higher Order Functions."
         ]
       },
-      "esfh": { "title": "187", "intro": [] },
-      "gibb": { "title": "188", "intro": [] },
+      "esfh": {
+        "title": "187",
+        "intro": []
+      },
+      "gibb": {
+        "title": "188",
+        "intro": []
+      },
       "lab-favorite-icon-toggler": {
         "title": "Build a Favorite Icon Toggler",
         "intro": [
@@ -2588,8 +2750,14 @@
           "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
         ]
       },
-      "ubpx": { "title": "192", "intro": [] },
-      "lbyi": { "title": "193", "intro": [] },
+      "ubpx": {
+        "title": "192",
+        "intro": []
+      },
+      "lbyi": {
+        "title": "193",
+        "intro": []
+      },
       "lab-real-time-counter": {
         "title": "Build a Real Time Counter",
         "intro": ["In this lab, you will build a real-time character counter"]
@@ -2628,7 +2796,10 @@
         "title": "JavaScript Events Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Events."]
       },
-      "kaqq": { "title": "201", "intro": [] },
+      "kaqq": {
+        "title": "201",
+        "intro": []
+      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
@@ -2647,9 +2818,18 @@
           "Test what you've learned in this quiz on Debugging JavaScript."
         ]
       },
-      "dqth": { "title": "205", "intro": [] },
-      "ilop": { "title": "206", "intro": [] },
-      "qrer": { "title": "207", "intro": [] },
+      "dqth": {
+        "title": "205",
+        "intro": []
+      },
+      "ilop": {
+        "title": "206",
+        "intro": []
+      },
+      "qrer": {
+        "title": "207",
+        "intro": []
+      },
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you will build a regex sandbox."]
@@ -2666,9 +2846,18 @@
           "Test what you've learned in this quiz on JavaScript Regular Expressions."
         ]
       },
-      "zalp": { "title": "211", "intro": [] },
-      "hhvp": { "title": "212", "intro": [] },
-      "egkv": { "title": "213", "intro": [] },
+      "zalp": {
+        "title": "211",
+        "intro": []
+      },
+      "hhvp": {
+        "title": "212",
+        "intro": []
+      },
+      "egkv": {
+        "title": "213",
+        "intro": []
+      },
       "review-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Review",
         "intro": [
@@ -2681,7 +2870,10 @@
           "Test what you've learned in this quiz on Form Validation with JavaScript."
         ]
       },
-      "lupt": { "title": "216", "intro": [] },
+      "lupt": {
+        "title": "216",
+        "intro": []
+      },
       "lab-date-conversion": {
         "title": "Build a Date Conversion Program",
         "intro": [
@@ -2698,9 +2890,18 @@
         "title": "JavaScript Dates Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Dates."]
       },
-      "lvts": { "title": "220", "intro": [] },
-      "foal": { "title": "221", "intro": [] },
-      "crzf": { "title": "222", "intro": [] },
+      "lvts": {
+        "title": "220",
+        "intro": []
+      },
+      "foal": {
+        "title": "221",
+        "intro": []
+      },
+      "crzf": {
+        "title": "222",
+        "intro": []
+      },
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
         "intro": [
@@ -2713,18 +2914,36 @@
           "Test what you've learned in this quiz on JavaScript Audio and Video."
         ]
       },
-      "pehm": { "title": "225", "intro": [] },
-      "cvsw": { "title": "226", "intro": [] },
-      "cvs1": { "title": "227", "intro": [] },
+      "pehm": {
+        "title": "225",
+        "intro": []
+      },
+      "cvsw": {
+        "title": "226",
+        "intro": []
+      },
+      "cvs1": {
+        "title": "227",
+        "intro": []
+      },
       "review-javascript-maps-sets-and-json": {
         "title": "JavaScript Maps, Sets, and JSON Review",
         "intro": [
           "Review the JavaScript Maps, Sets, and JSON concepts to prepare for the upcoming quiz."
         ]
       },
-      "cvs3": { "title": "229", "intro": [] },
-      "fgbp": { "title": "230", "intro": [] },
-      "fgb1": { "title": "231", "intro": [] },
+      "cvs3": {
+        "title": "229",
+        "intro": []
+      },
+      "fgbp": {
+        "title": "230",
+        "intro": []
+      },
+      "fgb1": {
+        "title": "231",
+        "intro": []
+      },
       "lab-bookmark-manager-app": {
         "title": "Build a Bookmark Manager App",
         "intro": ["For this lab, you will build a bookmark manager app."]
@@ -2741,25 +2960,46 @@
           "Test what you've learned in this quiz on Local Storage and CRUD."
         ]
       },
-      "jbst": { "title": "235", "intro": [] },
-      "peyf": { "title": "236", "intro": [] },
+      "jbst": {
+        "title": "235",
+        "intro": []
+      },
+      "peyf": {
+        "title": "236",
+        "intro": []
+      },
       "lab-project-idea-board": {
         "title": "Build a Project Idea Board",
         "intro": [
           "In this lab, you will build a project idea board using OOP in JavaScript."
         ]
       },
-      "ndlf": { "title": "238", "intro": [] },
+      "ndlf": {
+        "title": "238",
+        "intro": []
+      },
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
         "intro": [
           "Review the JavaScript Classes concepts to prepare for the upcoming quiz."
         ]
       },
-      "ndl1": { "title": "240", "intro": [] },
-      "ndl2": { "title": "241", "intro": [] },
-      "ndl3": { "title": "242", "intro": [] },
-      "ndl4": { "title": "243", "intro": [] },
+      "ndl1": {
+        "title": "240",
+        "intro": []
+      },
+      "ndl2": {
+        "title": "241",
+        "intro": []
+      },
+      "ndl3": {
+        "title": "242",
+        "intro": []
+      },
+      "ndl4": {
+        "title": "243",
+        "intro": []
+      },
       "review-recursion": {
         "title": "Recursion Review",
         "intro": [
@@ -2770,10 +3010,22 @@
         "title": "Recursion Quiz",
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
-      "yshh": { "title": "246", "intro": [] },
-      "wyx1": { "title": "247", "intro": [] },
-      "wyx2": { "title": "248", "intro": [] },
-      "wyx3": { "title": "249", "intro": [] },
+      "yshh": {
+        "title": "246",
+        "intro": []
+      },
+      "wyx1": {
+        "title": "247",
+        "intro": []
+      },
+      "wyx2": {
+        "title": "248",
+        "intro": []
+      },
+      "wyx3": {
+        "title": "249",
+        "intro": []
+      },
       "quiz-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Quiz",
         "intro": [
@@ -2786,22 +3038,34 @@
           "For this lab, you will implement the Quicksort algorithm using JavaScript."
         ]
       },
-      "dtfv": { "title": "240", "intro": [] },
+      "dtfv": {
+        "title": "240",
+        "intro": []
+      },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
         "intro": [
           "Test what you've learned in this quiz on Searching and Sorting Algorithms."
         ]
       },
-      "bnvw": { "title": "242", "intro": [] },
-      "xkhk": { "title": "243", "intro": [] },
+      "bnvw": {
+        "title": "242",
+        "intro": []
+      },
+      "xkhk": {
+        "title": "243",
+        "intro": []
+      },
       "lab-roman-numeral-converter": {
         "title": "Build a Roman Numeral Converter",
         "intro": [
           "For this lab, you'll build an application that converts integers to Roman numerals."
         ]
       },
-      "yaxm": { "title": "245", "intro": [] },
+      "yaxm": {
+        "title": "245",
+        "intro": []
+      },
       "lab-telephone-number-validator": {
         "title": "Build a Telephone Number Validator",
         "intro": [
@@ -2812,7 +3076,10 @@
         "title": "Build a Cash Register",
         "intro": ["For this lab, you will build a cash register."]
       },
-      "udia": { "title": "248", "intro": [] },
+      "udia": {
+        "title": "248",
+        "intro": []
+      },
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
         "intro": [
@@ -2825,7 +3092,10 @@
           "Test what you've learned in this quiz on JavaScript Problem Solving and Algorithmic Thinking."
         ]
       },
-      "mjbe": { "title": "251", "intro": [] },
+      "mjbe": {
+        "title": "251",
+        "intro": []
+      },
       "workshop-fcc-authors-page": {
         "title": "Build an fCC Authors Page",
         "intro": [
@@ -2833,8 +3103,14 @@
           "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
         ]
       },
-      "alda": { "title": "253", "intro": [] },
-      "cvaf": { "title": "254", "intro": [] },
+      "alda": {
+        "title": "253",
+        "intro": []
+      },
+      "cvaf": {
+        "title": "254",
+        "intro": []
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -2853,16 +3129,28 @@
           "Review the JavaScript concepts to prepare for the upcoming quiz."
         ]
       },
-      "kagw": { "title": "258", "intro": [] },
-      "mbib": { "title": "259", "intro": [] },
-      "oxiv": { "title": "260", "intro": [] },
+      "kagw": {
+        "title": "258",
+        "intro": []
+      },
+      "mbib": {
+        "title": "259",
+        "intro": []
+      },
+      "oxiv": {
+        "title": "260",
+        "intro": []
+      },
       "quiz-javascript-object-oriented-programming": {
         "title": "JavaScript Object Oriented Programming Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Object Oriented Programming."
         ]
       },
-      "nixz": { "title": "262", "intro": [] },
+      "nixz": {
+        "title": "262",
+        "intro": []
+      },
       "lab-stack-class": {
         "title": "Build a Stack Class",
         "intro": [
@@ -2879,95 +3167,212 @@
         "title": "Build a Hash Table Class",
         "intro": ["For this lab, you will build a hash table using JavaScript."]
       },
-      "muyw": { "title": "266", "intro": [] },
+      "muyw": {
+        "title": "266",
+        "intro": []
+      },
       "quiz-javascript-data-structures": {
         "title": "JavaScript Data Structures Quiz",
         "intro": [
           "Test what you've learned in this quiz on JavaScript Data Structures."
         ]
       },
-      "rmpy": { "title": "268", "intro": [] },
+      "rmpy": {
+        "title": "268",
+        "intro": []
+      },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
         "intro": [
           "For this lab, you will use JavaScript to implement the Depth-First Search algorithm."
         ]
       },
-      "xdyh": { "title": "270", "intro": [] },
+      "xdyh": {
+        "title": "270",
+        "intro": []
+      },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Quiz",
         "intro": ["Test what you've learned in this quiz on Graphs and Trees."]
       },
-      "vjgg": { "title": "272", "intro": [] },
+      "vjgg": {
+        "title": "272",
+        "intro": []
+      },
       "lab-nth-fibonacci-number-generator": {
         "title": "Build the nth Fibonacci number generator",
         "intro": [
           "For this lab, you will implement the nth Fibonacci number generator."
         ]
       },
-      "kaui": { "title": "274", "intro": [] },
+      "kaui": {
+        "title": "274",
+        "intro": []
+      },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
         "intro": [
           "Test what you've learned in this quiz on Dynamic Programming."
         ]
       },
-      "sgau": { "title": "276", "intro": [] },
-      "clak": { "title": "277", "intro": [] },
-      "fcom": { "title": "278", "intro": [] },
-      "ffpt": { "title": "279", "intro": [] },
+      "sgau": {
+        "title": "276",
+        "intro": []
+      },
+      "clak": {
+        "title": "277",
+        "intro": []
+      },
+      "fcom": {
+        "title": "278",
+        "intro": []
+      },
+      "ffpt": {
+        "title": "279",
+        "intro": []
+      },
       "lab-pokemon-search-app": {
         "title": "Build a Pokémon Search App",
         "intro": ["For this project, you will build a Pokémon search app."]
       },
-      "vyzp": { "title": "281", "intro": [] },
-      "icdr": { "title": "283", "intro": [] },
-      "zdsj": { "title": "284", "intro": [] },
-      "mzae": { "title": "285", "intro": [] },
-      "gjbf": { "title": "286", "intro": [] },
-      "mbpv": { "title": "287", "intro": [] },
-      "eeez": { "title": "288", "intro": [] },
+      "vyzp": {
+        "title": "281",
+        "intro": []
+      },
+      "icdr": {
+        "title": "283",
+        "intro": []
+      },
+      "zdsj": {
+        "title": "284",
+        "intro": []
+      },
+      "mzae": {
+        "title": "285",
+        "intro": []
+      },
+      "gjbf": {
+        "title": "286",
+        "intro": []
+      },
+      "mbpv": {
+        "title": "287",
+        "intro": []
+      },
+      "eeez": {
+        "title": "288",
+        "intro": []
+      },
       "quiz-web-standards": {
         "title": "Web Standards Quiz",
         "intro": ["Test what you've learned in this quiz on Web Standards."]
       },
-      "khuu": { "title": "290", "intro": [] },
-      "xdly": { "title": "291", "intro": [] },
-      "rhhl": { "title": "292", "intro": [] },
-      "trvf": { "title": "293", "intro": [] },
-      "kwmg": { "title": "294", "intro": [] },
-      "nodx": { "title": "295", "intro": [] },
-      "erfj": { "title": "296", "intro": [] },
+      "khuu": {
+        "title": "290",
+        "intro": []
+      },
+      "xdly": {
+        "title": "291",
+        "intro": []
+      },
+      "rhhl": {
+        "title": "292",
+        "intro": []
+      },
+      "trvf": {
+        "title": "293",
+        "intro": []
+      },
+      "kwmg": {
+        "title": "294",
+        "intro": []
+      },
+      "nodx": {
+        "title": "295",
+        "intro": []
+      },
+      "erfj": {
+        "title": "296",
+        "intro": []
+      },
       "quiz-react-basics": {
         "title": "React Basics Quiz",
         "intro": ["Test what you've learned in this quiz on React Basics."]
       },
-      "hfwi": { "title": "298", "intro": [] },
-      "rnwr": { "title": "299", "intro": [] },
-      "oeqv": { "title": "300", "intro": [] },
-      "rdzk": { "title": "301", "intro": [] },
-      "vtpz": { "title": "302", "intro": [] },
-      "dfwl": { "title": "303", "intro": [] },
-      "adzm": { "title": "304", "intro": [] },
+      "hfwi": {
+        "title": "298",
+        "intro": []
+      },
+      "rnwr": {
+        "title": "299",
+        "intro": []
+      },
+      "oeqv": {
+        "title": "300",
+        "intro": []
+      },
+      "rdzk": {
+        "title": "301",
+        "intro": []
+      },
+      "vtpz": {
+        "title": "302",
+        "intro": []
+      },
+      "dfwl": {
+        "title": "303",
+        "intro": []
+      },
+      "adzm": {
+        "title": "304",
+        "intro": []
+      },
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
           "Test what you've learned in this quiz on React State and Hooks."
         ]
       },
-      "voks": { "title": "306", "intro": [] },
-      "uwum": { "title": "307", "intro": [] },
-      "ukem": { "title": "308", "intro": [] },
-      "sdjg": { "title": "309", "intro": [] },
-      "buzx": { "title": "310", "intro": [] },
-      "pexz": { "title": "311", "intro": [] },
-      "prlo": { "title": "312", "intro": [] },
-      "jsnd": { "title": "313", "intro": [] },
+      "voks": {
+        "title": "306",
+        "intro": []
+      },
+      "uwum": {
+        "title": "307",
+        "intro": []
+      },
+      "ukem": {
+        "title": "308",
+        "intro": []
+      },
+      "sdjg": {
+        "title": "309",
+        "intro": []
+      },
+      "buzx": {
+        "title": "310",
+        "intro": []
+      },
+      "pexz": {
+        "title": "311",
+        "intro": []
+      },
+      "prlo": {
+        "title": "312",
+        "intro": []
+      },
+      "jsnd": {
+        "title": "313",
+        "intro": []
+      },
       "quiz-advanced-react": {
         "title": "Advanced React Quiz",
         "intro": ["Test what you've learned in this quiz on Advanced React."]
       },
-      "tkgg": { "title": "315", "intro": [] },
+      "tkgg": {
+        "title": "315",
+        "intro": []
+      },
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
@@ -2978,9 +3383,18 @@
         "title": "Web Performance Quiz",
         "intro": ["Test what you've learned in this quiz on Web Performance."]
       },
-      "hzab": { "title": "318", "intro": [] },
-      "ggea": { "title": "319", "intro": [] },
-      "vgvz": { "title": "320", "intro": [] },
+      "hzab": {
+        "title": "318",
+        "intro": []
+      },
+      "ggea": {
+        "title": "319",
+        "intro": []
+      },
+      "vgvz": {
+        "title": "320",
+        "intro": []
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -2991,7 +3405,10 @@
         "title": "TypeScript Quiz",
         "intro": ["Test what you've learned in this quiz on TypeScript."]
       },
-      "zhhp": { "title": "323", "intro": [] },
+      "zhhp": {
+        "title": "323",
+        "intro": []
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -3004,7 +3421,10 @@
           "Test what you've learned in this quiz on CSS Libraries and Frameworks."
         ]
       },
-      "gora": { "title": "326", "intro": [] },
+      "gora": {
+        "title": "326",
+        "intro": []
+      },
       "review-testing": {
         "title": "Testing Review",
         "intro": [
@@ -3021,8 +3441,14 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "mfwu": { "title": "330", "intro": [] },
-      "dfcd": { "title": "331", "intro": [] },
+      "mfwu": {
+        "title": "330",
+        "intro": []
+      },
+      "dfcd": {
+        "title": "331",
+        "intro": []
+      },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
         "intro": [
@@ -3040,7 +3466,10 @@
         "title": "Bash Commands Quiz",
         "intro": ["Test what you've learned in this quiz on Bash Commands."]
       },
-      "thsj": { "title": "335", "intro": [] },
+      "thsj": {
+        "title": "335",
+        "intro": []
+      },
       "workshop-mario-database": {
         "title": "Build a Mario Database",
         "intro": [
@@ -3066,7 +3495,10 @@
           "Test what you've learned in this quiz on Relational Databases."
         ]
       },
-      "ynqt": { "title": "340", "intro": [] },
+      "ynqt": {
+        "title": "340",
+        "intro": []
+      },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
         "intro": [
@@ -3084,7 +3516,10 @@
         "title": "Bash Scripting Quiz",
         "intro": ["Test what you've learned in this quiz on Bash Scripting."]
       },
-      "pegc": { "title": "344", "intro": [] },
+      "pegc": {
+        "title": "344",
+        "intro": []
+      },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
         "intro": [
@@ -3134,7 +3569,10 @@
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
       },
-      "movb": { "title": "353", "intro": [] },
+      "movb": {
+        "title": "353",
+        "intro": []
+      },
       "workshop-castle": {
         "title": "Build a Castle",
         "intro": [
@@ -3150,7 +3588,10 @@
         "title": "Nano Quiz",
         "intro": ["Test what you've learned in this quiz on Nano."]
       },
-      "pzmc": { "title": "357", "intro": [] },
+      "pzmc": {
+        "title": "357",
+        "intro": []
+      },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -3184,8 +3625,14 @@
           "Review the Relational Databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "zpjj": { "title": "364", "intro": [] },
-      "ghfk": { "title": "365", "intro": [] },
+      "zpjj": {
+        "title": "364",
+        "intro": []
+      },
+      "ghfk": {
+        "title": "365",
+        "intro": []
+      },
       "review-security-and-privacy": {
         "title": "Security and Privacy Review",
         "intro": [
@@ -3198,7 +3645,10 @@
           "Test what you've learned in this quiz on Security and Privacy."
         ]
       },
-      "qjov": { "title": "368", "intro": [] },
+      "qjov": {
+        "title": "368",
+        "intro": []
+      },
       "workshop-npm-packages": {
         "title": "Managing Packages with npm",
         "intro": [
@@ -3206,7 +3656,10 @@
           "In this workshop, you'll learn the basics of using npm, including how to work with the <code>package.json</code> file and how to manage your installed dependencies."
         ]
       },
-      "hjku": { "title": "370", "intro": [] },
+      "hjku": {
+        "title": "370",
+        "intro": []
+      },
       "workshop-node-and-express": {
         "title": "Basic Node and Express",
         "intro": [
@@ -3238,28 +3691,58 @@
         "title": "Build a File Metadata Microservice",
         "intro": ["For this lab you will build a file metadata microservice"]
       },
-      "kegi": { "title": "377", "intro": [] },
+      "kegi": {
+        "title": "377",
+        "intro": []
+      },
       "quiz-backend-javascript": {
         "title": "Backend JavaScript Quiz",
         "intro": [
           "Test what you've learned in this quiz on Backend JavaScript."
         ]
       },
-      "vnfu": { "title": "379", "intro": [] },
-      "rlli": { "title": "380", "intro": [] },
-      "rjpv": { "title": "381", "intro": [] },
-      "xbri": { "title": "382", "intro": [] },
+      "vnfu": {
+        "title": "379",
+        "intro": []
+      },
+      "rlli": {
+        "title": "380",
+        "intro": []
+      },
+      "rjpv": {
+        "title": "381",
+        "intro": []
+      },
+      "xbri": {
+        "title": "382",
+        "intro": []
+      },
       "quiz-tooling-and-deployment": {
         "title": "Tooling and Deployment Quiz",
         "intro": [
           "Test what you've learned in this quiz of tooling and deployment"
         ]
       },
-      "nkjt": { "title": "384", "intro": [] },
-      "pgjj": { "title": "385", "intro": [] },
-      "exom": { "title": "386", "intro": [] },
-      "bvqc": { "title": "387", "intro": [] },
-      "xish": { "title": "388", "intro": [] },
+      "nkjt": {
+        "title": "384",
+        "intro": []
+      },
+      "pgjj": {
+        "title": "385",
+        "intro": []
+      },
+      "exom": {
+        "title": "386",
+        "intro": []
+      },
+      "bvqc": {
+        "title": "387",
+        "intro": []
+      },
+      "xish": {
+        "title": "388",
+        "intro": []
+      },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
