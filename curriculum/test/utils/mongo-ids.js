@@ -1029,7 +1029,35 @@ const duplicatedProjectIds = [
   // Shopping Cart
 
   // FCC Authors Page
-
+  '641d9a19bff38d34d5a5edb8',
+  '641da3c6b6fbd742bff6ee40',
+  '641da42481d90c4314c99e94',
+  '641da465273051435d332b15',
+  '641da4b16937be43ba24c63d',
+  '641da51a9810e74411262fcc',
+  '641da5462576784453146ec2',
+  '641da5abaac81844a54adb03',
+  '641da5dd6cd6db44f58b7787',
+  '641da615af82bf454215a992',
+  '641da6570acf7545931ce477',
+  '641da6dcb6e4c9463d54c75b',
+  '641da7071d0d45467cd59977',
+  '641da73b09e7f046c758e0ed',
+  '641da791d0c34a472b8d15b6',
+  '641da7bfbc7f0f477438ad8a',
+  '641da803d9892447d059804e',
+  '641da836581c254815f785fe',
+  '641da86294fd9f485d3c2bf0',
+  '641da895fb7ec648a5bdf19c',
+  '641da8db2a036048ebe6999e',
+  '641da97c987a514959ada414',
+  '641da9aceb788e49a73ebcc9',
+  '641da9ea9b847a49fe6ee9b6',
+  '641daa5ea050f24a7cade6e6',
+  '641daa8c2c3e364ac3650b37',
+  '641daabed8d0584b1150c953',
+  '641daae5e18eae4b562633e4',
+  '641dab13c1b6f14b9828e6b1',
   // Weather App
 
   // Forum Leaderboard

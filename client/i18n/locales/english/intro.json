@@ -1572,6 +1572,12 @@
         "intro": [
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
+      },
+      "a2-english-for-developers-certification-exam": {
+        "title": "A2 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the A2 English for Developers Certification."
+        ]
       }
     }
   },
@@ -1764,7 +1770,12 @@
           "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
         ]
       },
-      "evdc": { "title": "11", "intro": [] },
+      "lecture-importance-of-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lecture videos, you will learn about semantic HTML and the importance of using it."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
@@ -1791,7 +1802,12 @@
           "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
         ]
       },
-      "cfgp": { "title": "16", "intro": [] },
+      "lecture-working-with-forms": {
+        "title": "Working with Forms",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in HTML."
+        ]
+      },
       "workshop-hotel-feedback-form": {
         "title": "Build a Hotel Feedback Form",
         "intro": [
@@ -1806,7 +1822,10 @@
           "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
-      "wgot": { "title": "19", "intro": [] },
+      "lecture-working-with-tables": {
+        "title": "Working with Tables",
+        "intro": ["In these lecture videos, you will learn about HTML tables."]
+      },
       "workshop-final-exams-table": {
         "title": "Build a Final Exams Table",
         "intro": [
@@ -1820,7 +1839,12 @@
           "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
         ]
       },
-      "rsve": { "title": "22", "intro": [] },
+      "lecture-working-with-html-tools": {
+        "title": "Working with HTML Tools",
+        "intro": [
+          "In these lecture videos, you will learn about working with HTML tools."
+        ]
+      },
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
@@ -1834,7 +1858,12 @@
           "The following quiz will test your knowledge of HTML tables and forms."
         ]
       },
-      "ghoc": { "title": "25", "intro": [] },
+      "lecture-importance-of-accessibility-and-good-html-structure": {
+        "title": "Importance of Accessibility and Good HTML Structure",
+        "intro": [
+          "In these lecture videos, you will learn about importance of accessibility and using good HTML structure."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": ["In this lab, you will create an accessible checkout page."]
@@ -1993,7 +2022,8 @@
       "review-css-colors": {
         "title": "CSS Colors Review",
         "intro": [
-          "Review the CSS Colors concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS colors, you first need to review.",
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
         ]
       },
       "quiz-css-colors": {
@@ -2018,7 +2048,8 @@
       "review-styling-forms": {
         "title": "Styling Forms Review",
         "intro": [
-          "Review the Styling Forms concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on styling forms, you first need to review.",
+          "Open up this page to review how to style form inputs, working with <code>appearance: none</code> and more."
         ]
       },
       "quiz-styling-forms": {
@@ -2070,7 +2101,8 @@
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
-          "Review the CSS Flexbox concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS Flexbox concepts, you first need to review.",
+          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties and more."
         ]
       },
       "quiz-css-flexbox": {
@@ -2096,7 +2128,8 @@
       "review-css-typography": {
         "title": "CSS Typography Review",
         "intro": [
-          "Review the CSS Typography concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of typography, you first need to review.",
+          "Open up this page to review concepts like web safe fonts, the <code>font-family</code> property and more."
         ]
       },
       "quiz-css-typography": {
@@ -2759,7 +2792,13 @@
         ]
       },
       "mjbe": { "title": "251", "intro": [] },
-      "byqx": { "title": "252", "intro": [] },
+      "workshop-fcc-authors-page": {
+        "title": "Build an fCC Authors Page",
+        "intro": [
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
+        ]
+      },
       "alda": { "title": "253", "intro": [] },
       "cvaf": { "title": "254", "intro": [] },
       "review-asynchronous-javascript": {
