@@ -1,4 +1,6 @@
 import React from 'react';
+import { isEmpty } from 'lodash';
+
 import { BlockTypes } from '../../../../../shared/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
@@ -48,8 +50,8 @@ function BlockHeader({
           </span>
           <DropDown />
         </span>
-        {blockIntroArr && blockIntroArr.length && (
-          <BlockIntros intros={blockIntroArr} />
+        {!isEmpty(blockIntroArr) && (
+          <BlockIntros intros={blockIntroArr as string[]} />
         )}
         {!isExpanded && !isCompleted && completedCount > 0 && (
           <div aria-hidden='true' className='progress-wrapper'>

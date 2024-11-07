@@ -232,7 +232,7 @@ class Block extends Component<BlockProps> {
     /**
      * LegacyChallengeGridBlock displays challenges in a grid.
      * This layout is used for step-based blocks.
-     * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
+     * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game
      */
     const LegacyChallengeGridBlock = (
       <>
@@ -411,47 +411,44 @@ class Block extends Component<BlockProps> {
      * This layout is specifically used for the new Full Stack Developer Certification.
      */
     const ChallengeGridBlock = (
-      <>
-        {' '}
-        <ScrollableAnchor id={block}>
-          <div
-            className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          >
-            <BlockHeader
-              blockDashed={block}
-              blockTitle={blockTitle}
-              blockType={blockType}
-              completedCount={completedCount}
-              courseCompletionStatus={courseCompletionStatus()}
-              handleClick={this.handleBlockClick}
-              isCompleted={isBlockCompleted}
-              isExpanded={isExpanded}
-              percentageCompleted={percentageCompleted}
-              blockIntroArr={blockIntroArr}
-            />
-            {!isAudited && (
-              <div className='tags-wrapper'>
-                <Link
-                  className='cert-tag'
-                  to={t('links:help-translate-link-url')}
-                >
-                  {t('misc.translation-pending')}
-                </Link>
-              </div>
-            )}
-            {isExpanded && (
-              <div id={`${block}-panel`}>
-                <Challenges
-                  challengesWithCompleted={challengesWithCompleted}
-                  isProjectBlock={isProjectBlock}
-                  isGridMap={true}
-                  blockTitle={blockTitle}
-                />
-              </div>
-            )}
-          </div>
-        </ScrollableAnchor>
-      </>
+      <ScrollableAnchor id={block}>
+        <div
+          className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
+        >
+          <BlockHeader
+            blockDashed={block}
+            blockTitle={blockTitle}
+            blockType={blockType}
+            completedCount={completedCount}
+            courseCompletionStatus={courseCompletionStatus()}
+            handleClick={this.handleBlockClick}
+            isCompleted={isBlockCompleted}
+            isExpanded={isExpanded}
+            percentageCompleted={percentageCompleted}
+            blockIntroArr={blockIntroArr}
+          />
+          {!isAudited && (
+            <div className='tags-wrapper'>
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}
+              </Link>
+            </div>
+          )}
+          {isExpanded && (
+            <div id={`${block}-panel`}>
+              <Challenges
+                challengesWithCompleted={challengesWithCompleted}
+                isProjectBlock={isProjectBlock}
+                isGridMap={true}
+                blockTitle={blockTitle}
+              />
+            </div>
+          )}
+        </div>
+      </ScrollableAnchor>
     );
 
     const blockRenderer = () => {
