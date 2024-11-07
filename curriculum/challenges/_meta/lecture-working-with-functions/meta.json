@@ -1,0 +1,10 @@
+{
+  "name": "Working with Functions",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-functions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d269da46786225e3fe3fd", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Working with Code Editors and IDE's",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-code-editors-and-ides",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d26269456511aa3db614d", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

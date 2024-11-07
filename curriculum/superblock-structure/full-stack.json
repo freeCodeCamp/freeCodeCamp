@@ -221,15 +221,24 @@
     {
       "dashedName": "javascript",
       "modules": [
-        { "dashedName": "code-editors", "blocks": [] },
+        {
+          "dashedName": "code-editors",
+          "blocks": [
+            { "dashedName": "lecture-working-with-code-editors-and-ides" }
+          ]
+        },
         {
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
+            { "dashedName": "lecture-introduction-to-javascript" },
             { "dashedName": "workshop-greeting-bot" },
             { "dashedName": "lab-javascript-trivia-bot" },
+            { "dashedName": "lecture-working-with-data-types" },
             { "dashedName": "review-javascript-variables-and-data-types" },
             { "dashedName": "quiz-javascript-variables-and-data-types" },
+            { "dashedName": "lecture-working-with-strings-in-javascript" },
             { "dashedName": "workshop-teacher-chatbot" },
+            { "dashedName": "lecture-working-with-common-string-methods" },
             { "dashedName": "review-javascript-strings" },
             { "dashedName": "quiz-javascript-strings" }
           ]
@@ -237,10 +246,19 @@
         {
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object"
+            },
             { "dashedName": "workshop-mathbot" },
             { "dashedName": "lab-fortune-teller" },
+            {
+              "dashedName": "lecture-working-with-numbers-and-common-number-methods"
+            },
             { "dashedName": "review-javascript-math" },
             { "dashedName": "quiz-javascript-math" },
+            {
+              "dashedName": "lecture-understanding-comparisons-and-conditionals"
+            },
             { "dashedName": "review-javascript-comparisons-and-conditionals" },
             { "dashedName": "quiz-javascript-comparisons-and-conditionals" }
           ]
@@ -248,6 +266,7 @@
         {
           "dashedName": "javascript-functions",
           "blocks": [
+            { "dashedName": "lecture-working-with-functions" },
             { "dashedName": "workshop-calculator" },
             { "dashedName": "lab-email-masker" },
             { "dashedName": "lab-sentence-maker" },

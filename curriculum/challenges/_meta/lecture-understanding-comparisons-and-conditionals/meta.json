@@ -1,0 +1,10 @@
+{
+  "name": "Understanding Comparisons and Conditionals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-comparisons-and-conditionals",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d26917a8ab3220c038a42", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

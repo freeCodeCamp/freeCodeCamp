@@ -1,0 +1,10 @@
+{
+  "name": "Working with Strings in JavaScript",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-strings-in-javascript",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d2654f78cbf20e0ba4501", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

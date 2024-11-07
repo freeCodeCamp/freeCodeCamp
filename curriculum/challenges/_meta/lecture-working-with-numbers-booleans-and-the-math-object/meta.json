@@ -1,0 +1,10 @@
+{
+  "name": "Working with Numbers, Booleans, and the Math Object",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d266e014ef8216df987d2", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

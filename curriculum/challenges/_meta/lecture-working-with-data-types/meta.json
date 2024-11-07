@@ -1,0 +1,10 @@
+{
+  "name": "Working with Data Types",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-data-types",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d264645e289208e562f10", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

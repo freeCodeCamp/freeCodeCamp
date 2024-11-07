@@ -1,0 +1,10 @@
+{
+  "name": "Working with Numbers and Common Number Methods",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-numbers-and-common-number-methods",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d26809d388621ad1ecd43", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

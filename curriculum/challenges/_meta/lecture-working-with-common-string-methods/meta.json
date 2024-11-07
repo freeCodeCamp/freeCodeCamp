@@ -1,0 +1,10 @@
+{
+  "name": "Working with Common String Methods",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-common-string-methods",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d266034b5242126271995", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

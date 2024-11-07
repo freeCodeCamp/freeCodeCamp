@@ -1,0 +1,10 @@
+{
+  "name": "Introduction to JavaScript",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-javascript",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672d26385dbe73203c4dac81", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
