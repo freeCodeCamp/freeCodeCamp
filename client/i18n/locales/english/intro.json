@@ -2964,12 +2964,6 @@
       "qjov": { "title": "368", "intro": [] },
       "hjku": { "title": "370", "intro": [] },
       "kegi": { "title": "377", "intro": [] },
-      "quiz-backend-javascript": {
-        "title": "Backend JavaScript Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on Backend JavaScript."
-        ]
-      },
       "vnfu": { "title": "379", "intro": [] },
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },

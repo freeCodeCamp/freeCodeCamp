@@ -471,7 +471,6 @@
           "dashedName": "security-and-privacy",
           "blocks": [
             { "dashedName": "quiz-security-and-privacy" },
-            { "dashedName": "quiz-backend-javascript" },
             { "dashedName": "quiz-tooling-and-deployment" }
           ]
         }
