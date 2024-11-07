@@ -20,7 +20,7 @@ import type { Hit } from './types';
 
 import './searchbar-base.css';
 import './searchbar.css';
-import CustomHits from './search-hits';
+import SearchHits from './search-hits';
 
 const searchUrl = searchPageUrl;
 const mapStateToProps = createSelector(
@@ -231,7 +231,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
                 />
               </ObserveKeys>
               {isDropdownEnabled && isSearchFocused && (
-                <CustomHits
+                <SearchHits
                   handleMouseEnter={this.handleMouseEnter}
                   handleMouseLeave={this.handleMouseLeave}
                   handleHits={this.handleHits}

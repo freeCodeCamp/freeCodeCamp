@@ -9,7 +9,7 @@ import type { Hit } from './types';
 
 const searchUrl = searchPageUrl;
 
-function CustomHits({
+function SearchHits({
   handleMouseEnter,
   handleMouseLeave,
   handleHits,
@@ -82,4 +82,4 @@ function CustomHits({
   );
 }
 
-export default CustomHits;
+export default SearchHits;
